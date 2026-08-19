@@ -1,0 +1,338 @@
+---
+export interface Props {
+  translations: {
+    "theme.light": string;
+    "theme.dark": string;
+    "theme.toggle": string;
+    "theme.selectTheme"?: string;
+  };
+  /** Variant: 'navbar' positions dropdown below, 'footer' positions it above */
+  variant?: "navbar" | "footer";
+}
+
+const { translations, variant = "navbar" } = Astro.props;
+
+const themes = [
+  { value: "light", icon: "🌿", label: "Green Light", category: "classic" },
+  { value: "dark", icon: "🌙", label: "Green Dark", category: "classic" },
+  { value: "golden", icon: "☀️", label: "Gold Light", category: "premium" },
+  { value: "golden-dark", icon: "✨", label: "Gold Dark", category: "premium" },
+] as const;
+---
+
+<div class="theme-selector-wrapper" data-theme-switcher="wrapper">
+  <button
+    class="theme-selector-btn"
+    data-theme-switcher="btn"
+    aria-label={translations["theme.toggle"]}
+    aria-haspopup="listbox"
+    aria-expanded="false"
+  >
+    <span class="theme-btn-icon" data-theme-switcher="icon">🌿</span>
+    <span class="theme-btn-label" data-theme-switcher="label">Green Light</span>
+    <svg class="theme-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+      <polyline points="6 9 12 15 18 9"></polyline>
+    </svg>
+  </button>
+
+  <div class="theme-dropdown theme-dropdown--{variant}" data-theme-switcher="dropdown" role="listbox" aria-label={translations["theme.selectTheme"] || "Seleccionar tema"}>
+    <div class="theme-dropdown-section">
+      <span class="theme-category">🌱 Classic</span>
+      <button class="theme-option" data-theme="light" role="option">
+        <span class="theme-option-icon">🌿</span>
+        <span class="theme-option-label">Green Light</span>
+        <span class="theme-option-check">✓</span>
+      </button>
+      <button class="theme-option" data-theme="dark" role="option">
+        <span class="theme-option-icon">🌙</span>
+        <span class="theme-option-label">Green Dark</span>
+        <span class="theme-option-check">✓</span>
+      </button>
+    </div>
+    <div class="theme-dropdown-section">
+      <span class="theme-category">👑 Premium</span>
+      <button class="theme-option" data-theme="golden" role="option">
+        <span class="theme-option-icon">☀️</span>
+        <span class="theme-option-label">Gold Light</span>
+        <span class="theme-option-check">✓</span>
+      </button>
+      <button class="theme-option" data-theme="golden-dark" role="option">
+        <span class="theme-option-icon">✨</span>
+        <span class="theme-option-label">Gold Dark</span>
+        <span class="theme-option-check">✓</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const THEME_KEY = 'webapp-theme';
+
+  const themeMeta: Record<string, { icon: string; label: string }> = {
+    light: { icon: '🌿', label: 'Green Light' },
+    dark: { icon: '🌙', label: 'Green Dark' },
+    golden: { icon: '☀️', label: 'Gold Light' },
+    'golden-dark': { icon: '✨', label: 'Gold Dark' },
+  };
+
+  const VALID_THEMES = Object.keys(themeMeta);
+
+  function getCurrentTheme(): string {
+    return document.documentElement.getAttribute('data-theme') || 'light';
+  }
+
+  function applyTheme(theme: string): void {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem(THEME_KEY, theme);
+    refreshAllInstances();
+  }
+
+  function refreshAllInstances(): void {
+    const current = getCurrentTheme();
+    const meta = themeMeta[current] ?? themeMeta.light;
+
+    document.querySelectorAll('[data-theme-switcher="wrapper"]').forEach((wrapper) => {
+      const iconEl = wrapper.querySelector('[data-theme-switcher="icon"]');
+      const labelEl = wrapper.querySelector('[data-theme-switcher="label"]');
+      if (iconEl) iconEl.textContent = meta.icon;
+      if (labelEl) labelEl.textContent = meta.label;
+
+      // Actualizar aria-selected en las opciones de esta instancia
+      wrapper.querySelectorAll('.theme-option').forEach((opt) => {
+        const el = opt as HTMLElement;
+        const isSelected = el.dataset.theme === current;
+        el.setAttribute('aria-selected', String(isSelected));
+        el.classList.toggle('is-selected', isSelected);
+      });
+    });
+  }
+
+  // Inicializar todas las instancias
+  function initAllInstances(): void {
+    document.querySelectorAll('[data-theme-switcher="wrapper"]').forEach((wrapper) => {
+      const btn = wrapper.querySelector('[data-theme-switcher="btn"]') as HTMLElement | null;
+      const dropdown = wrapper.querySelector('[data-theme-switcher="dropdown"]') as HTMLElement | null;
+      if (!btn || !dropdown) return;
+
+      // Evitar doble bind
+      if ((btn as any).__themeSwitcherBound) return;
+      (btn as any).__themeSwitcherBound = true;
+
+      const instanceClose = () => {
+        btn.setAttribute('aria-expanded', 'false');
+        dropdown.classList.remove('is-open');
+      };
+
+      const instanceToggle = () => {
+        const isOpen = btn.getAttribute('aria-expanded') === 'true';
+        if (isOpen) {
+          instanceClose();
+        } else {
+          // Cerrar todas las demás instancias primero
+          document.querySelectorAll('[data-theme-switcher="dropdown"].is-open').forEach((d) => d.classList.remove('is-open'));
+          document.querySelectorAll('[data-theme-switcher="btn"][aria-expanded="true"]').forEach((b) => b.setAttribute('aria-expanded', 'false'));
+          btn.setAttribute('aria-expanded', 'true');
+          dropdown.classList.add('is-open');
+        }
+      };
+
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        instanceToggle();
+      });
+
+      dropdown.addEventListener('click', (e) => {
+        const target = (e.target as HTMLElement).closest('.theme-option') as HTMLElement | null;
+        if (target?.dataset.theme && VALID_THEMES.includes(target.dataset.theme)) {
+          applyTheme(target.dataset.theme);
+          instanceClose();
+        }
+      });
+    });
+
+    // Sincronizar UI inicial
+    refreshAllInstances();
+  }
+
+  // Cerrar todo al hacer clic fuera
+  document.addEventListener('click', () => {
+    document.querySelectorAll('[data-theme-switcher="dropdown"].is-open').forEach((d) => d.classList.remove('is-open'));
+    document.querySelectorAll('[data-theme-switcher="btn"][aria-expanded="true"]').forEach((b) => b.setAttribute('aria-expanded', 'false'));
+  });
+
+  // Cerrar con Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('[data-theme-switcher="dropdown"].is-open').forEach((d) => d.classList.remove('is-open'));
+      document.querySelectorAll('[data-theme-switcher="btn"][aria-expanded="true"]').forEach((b) => {
+        b.setAttribute('aria-expanded', 'false');
+        (b as HTMLElement).focus();
+      });
+    }
+  });
+
+  // Inicializar después de DOM listo
+  initAllInstances();
+</script>
+
+<style>
+  .theme-selector-wrapper {
+    position: relative;
+    display: inline-flex;
+  }
+
+  .theme-selector-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: 0.45rem 0.85rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-surface-border);
+    border-radius: var(--border-radius);
+    color: var(--color-text);
+    font-family: var(--font-family);
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    box-shadow: var(--shadow-sm);
+    white-space: nowrap;
+  }
+
+  .theme-selector-btn:hover {
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow);
+  }
+
+  .theme-btn-icon {
+    font-size: 1rem;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .theme-btn-label {
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+  }
+
+  .theme-chevron {
+    flex-shrink: 0;
+    transition: transform var(--transition-fast);
+    color: var(--color-text-muted);
+  }
+
+  [aria-expanded="true"] > .theme-chevron {
+    transform: rotate(180deg);
+  }
+
+  /* Dropdown */
+  .theme-dropdown {
+    position: absolute;
+    min-width: 210px;
+    background: var(--color-surface);
+    border: 1px solid var(--color-surface-border);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-lg);
+    padding: var(--space-sm);
+    display: none;
+    flex-direction: column;
+    gap: 2px;
+    z-index: 1100;
+    backdrop-filter: var(--glass-backdrop);
+    -webkit-backdrop-filter: var(--glass-backdrop);
+  }
+
+  .theme-dropdown--navbar {
+    top: calc(100% + 6px);
+    right: 0;
+  }
+
+  .theme-dropdown--footer {
+    bottom: calc(100% + 6px);
+    left: 0;
+  }
+
+  .theme-dropdown.is-open {
+    display: flex;
+  }
+
+  .theme-dropdown-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .theme-category {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+    padding: var(--space-xs) var(--space-sm);
+    border-bottom: 1px solid var(--color-surface-border);
+    margin-bottom: 2px;
+  }
+
+  .theme-option {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    background: transparent;
+    border: none;
+    border-radius: var(--border-radius-sm);
+    color: var(--color-text);
+    font-family: var(--font-family);
+    font-size: var(--font-size-sm);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    text-align: left;
+  }
+
+  .theme-option:hover {
+    background: var(--color-surface-hover);
+  }
+
+  .theme-option.is-selected,
+  .theme-option[aria-selected="true"] {
+    background: var(--color-primary-bg);
+    color: var(--color-primary);
+    font-weight: 600;
+  }
+
+  .theme-option-icon {
+    font-size: 1.1rem;
+    line-height: 1;
+  }
+
+  .theme-option-label {
+    flex: 1;
+    font-weight: inherit;
+  }
+
+  .theme-option-check {
+    color: var(--color-primary);
+    font-weight: 700;
+    font-size: var(--font-size-xs);
+    opacity: 0;
+    transition: opacity var(--transition-fast);
+  }
+
+  .theme-option.is-selected .theme-option-check,
+  .theme-option[aria-selected="true"] .theme-option-check {
+    opacity: 1;
+  }
+
+  /* Responsive: en mobile, dropdown centrado y más ancho */
+  @media (max-width: 640px) {
+    .theme-dropdown {
+      position: fixed;
+      top: 50% !important;
+      left: 50% !important;
+      bottom: auto !important;
+      transform: translate(-50%, -50%);
+      min-width: 260px;
+    }
+  }
+</style>

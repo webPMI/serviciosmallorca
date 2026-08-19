@@ -1,0 +1,99 @@
+---
+import NavbarPublic from "./NavbarPublic.astro";
+import NavbarUser from "./NavbarUser.astro";
+import NavbarManager from "./NavbarManager.astro";
+import NavbarAdmin from "./NavbarAdmin.astro";
+
+interface Props {
+  currentLocale: "es" | "en" | "ca" | string;
+  translations: Record<string, string>;
+  getLangPrefix: (locale: "es" | "en" | "ca") => string;
+}
+
+const { currentLocale, translations, getLangPrefix } = Astro.props;
+const currentPath = Astro.url.pathname;
+---
+
+<div id="navbar-root">
+  <div id="navbar-public-container">
+    <NavbarPublic
+      currentLocale={currentLocale}
+      translations={translations}
+      getLangPrefix={getLangPrefix}
+      currentPath={currentPath}
+    />
+  </div>
+
+  <div id="navbar-user-container" hidden>
+    <NavbarUser
+      currentLocale={currentLocale}
+      translations={translations}
+      getLangPrefix={getLangPrefix}
+      currentPath={currentPath}
+    />
+  </div>
+
+  <div id="navbar-manager-container" hidden>
+    <NavbarManager
+      currentLocale={currentLocale}
+      translations={translations}
+      getLangPrefix={getLangPrefix}
+      currentPath={currentPath}
+    />
+  </div>
+
+  <div id="navbar-admin-container" hidden>
+    <NavbarAdmin
+      currentLocale={currentLocale}
+      translations={translations}
+      getLangPrefix={getLangPrefix}
+      currentPath={currentPath}
+    />
+  </div>
+</div>
+
+<script>
+  import { authStore } from "../lib/authStore";
+  import { initScrollAwareNavbar } from "../lib/scrollAwareNavbar";
+
+  // --------------------------------------------------
+  // Scroll-aware behavior: all .navbar-header elements
+  // hide on scroll down, reappear on scroll up.
+  // --------------------------------------------------
+  initScrollAwareNavbar();
+
+  const publicContainer = document.getElementById("navbar-public-container");
+  const userContainer = document.getElementById("navbar-user-container");
+  const managerContainer = document.getElementById("navbar-manager-container");
+  const adminContainer = document.getElementById("navbar-admin-container");
+
+  // Map role to its container (scales trivially with new roles)
+  const ROLE_CONTAINER: Record<string, HTMLElement | null> = {
+    guest: publicContainer,
+    user: userContainer,
+    manager: managerContainer,
+    admin: adminContainer,
+  };
+
+  // Signal the app is ready after first auth resolution
+  let isFirstLoad = true;
+
+  authStore.subscribe(({ user, role, loading }) => {
+    if (loading) return;
+
+    // Fire app:ready on first auth resolution to hide loading screen
+    if (isFirstLoad) {
+      isFirstLoad = false;
+      window.dispatchEvent(new CustomEvent("app:ready"));
+    }
+
+    const activeRole: string = !user ? "guest" : (role ?? "user");
+
+    // Hide all, then show the active one
+    for (const c of Object.values(ROLE_CONTAINER)) {
+      if (c) c.hidden = true;
+    }
+    const active = ROLE_CONTAINER[activeRole];
+    if (active) active.hidden = false;
+  });
+</script>

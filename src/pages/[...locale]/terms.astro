@@ -1,0 +1,188 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Navbar from "../../components/Navbar.astro";
+import Footer from "../../components/Footer.astro";
+import {
+  getLocaleFromUrl,
+  loadTranslations,
+  getLangPrefix,
+} from "../../i18n";
+
+export const prerender = false;
+
+const locale = getLocaleFromUrl(Astro.url);
+const translations = await loadTranslations(locale);
+---
+
+<BaseLayout title={`${translations["legal.terms.title"]} - ${translations["site.title"]}`} lang={locale}>
+	<Navbar 
+		currentLocale={locale}
+		translations={translations}
+		getLangPrefix={getLangPrefix}
+	/>
+
+	<main class="container section">
+		<div class="legal-container">
+			<div class="legal-header">
+				<h1 class="legal-title">{translations["legal.terms.title"]}</h1>
+				<p class="legal-subtitle">{translations["legal.terms.subtitle"]}</p>
+			</div>
+
+			<div class="legal-content">
+				<section class="legal-section">
+					<h2>{translations["legal.sections.acceptance"]}</h2>
+					<p>{translations["legal.terms.acceptanceContent"]}</p>
+				</section>
+
+				<section class="legal-section">
+					<h2>{translations["legal.sections.services"]}</h2>
+					<p>{translations["legal.terms.servicesContent"]}</p>
+				</section>
+
+				<section class="legal-section">
+					<h2>{translations["legal.sections.obligations"]}</h2>
+					<p>{translations["legal.terms.obligationsContent"]}</p>
+				</section>
+
+				<section class="legal-section">
+					<h2>{translations["legal.sections.privacy"]}</h2>
+					<p>{translations["legal.terms.privacyContent"]}</p>
+				</section>
+
+				<section class="legal-section">
+					<h2>{translations["legal.sections.intellectual"]}</h2>
+					<p>{translations["legal.terms.intellectualContent"]}</p>
+				</section>
+
+				<section class="legal-section">
+					<h2>{translations["legal.sections.liability"]}</h2>
+					<p>{translations["legal.terms.liabilityContent"]}</p>
+				</section>
+
+				<section class="legal-section">
+					<h2>{translations["legal.sections.modifications"]}</h2>
+					<p>{translations["legal.terms.modificationsContent"]}</p>
+				</section>
+
+				<section class="legal-section">
+					<h2>{translations["legal.sections.contact"]}</h2>
+					<p>{translations["legal.terms.contactContent"]}</p>
+				</section>
+			</div>
+
+			<div class="legal-footer">
+				<a href={getLangPrefix(locale)} class="btn btn-primary">
+					{translations["legal.backToHome"]}
+				</a>
+			</div>
+		</div>
+	</main>
+
+	<Footer 
+		currentLocale={locale}
+		translations={translations}
+		getLangPrefix={getLangPrefix}
+	/>
+</BaseLayout>
+
+<style>
+	.legal-container {
+		max-width: 800px;
+		margin: 0 auto;
+		padding: var(--space-2xl) 0;
+	}
+
+	.legal-header {
+		text-align: center;
+		margin-bottom: var(--space-2xl);
+		padding-bottom: var(--space-xl);
+		border-bottom: 2px solid var(--color-surface-border);
+	}
+
+	.legal-title {
+		font-size: var(--font-size-4xl);
+		margin-bottom: var(--space-md);
+		color: var(--color-primary-dark);
+	}
+
+	.legal-subtitle {
+		color: var(--color-text-light);
+		font-size: var(--font-size-base);
+	}
+
+	.legal-content {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-xl);
+		margin-bottom: var(--space-2xl);
+	}
+
+	.legal-section {
+		background-color: var(--color-white);
+		padding: var(--space-xl);
+		border-radius: var(--border-radius);
+		box-shadow: var(--shadow);
+	}
+
+	.legal-section h2 {
+		font-size: var(--font-size-xl);
+		margin-bottom: var(--space-md);
+		color: var(--color-primary-dark);
+	}
+
+	.legal-section p {
+		color: var(--color-text);
+		line-height: 1.8;
+		margin-bottom: var(--space-md);
+	}
+
+	.legal-section ul {
+		list-style-position: inside;
+		color: var(--color-text);
+		line-height: 1.8;
+	}
+
+	.legal-section li {
+		margin-bottom: var(--space-sm);
+	}
+
+	.legal-footer {
+		text-align: center;
+		padding-top: var(--space-xl);
+		border-top: 2px solid var(--color-surface-border);
+	}
+
+	.btn-primary {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		padding: 0.875rem 2rem;
+		background-color: var(--color-primary);
+		color: var(--color-white);
+		border: none;
+		border-radius: var(--border-radius);
+		cursor: pointer;
+		font-family: var(--font-family);
+		font-size: 1rem;
+		font-weight: 600;
+		text-decoration: none;
+		transition: all 0.2s;
+		box-shadow: var(--shadow);
+	}
+
+	.btn-primary:hover {
+		background-color: var(--color-primary-light);
+		transform: translateY(-2px);
+		box-shadow: 0 4px 12px var(--shadow-overlay-md);
+	}
+
+	@media (max-width: 640px) {
+		.legal-title {
+			font-size: var(--font-size-3xl);
+		}
+
+		.legal-section {
+			padding: var(--space-lg);
+		}
+	}
+</style>

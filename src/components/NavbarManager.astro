@@ -1,0 +1,77 @@
+---
+interface Props {
+  currentLocale: "es" | "en" | "ca" | string;
+  translations: Record<string, string>;
+  getLangPrefix: (locale: "es" | "en" | "ca") => string;
+  currentPath: string;
+}
+
+const { currentLocale, translations, getLangPrefix, currentPath } = Astro.props;
+const prefix = getLangPrefix(currentLocale as "es" | "en" | "ca");
+const homeUrl = prefix || "/";
+---
+
+<header class="navbar-header nav-manager">
+  <div class="container navbar-container">
+    <!-- Brand Logo / Title -->
+    <a href={`${homeUrl}dashboard`} class="navbar-brand" aria-label={translations["nav.aria.managerBrand"] || "WebApp Starter Manager Portal"}>
+      <span class="brand-badge badge badge-manager">📋 Manager Portal</span>
+      <span class="brand-title">WebApp Starter</span>
+    </a>
+
+    <!-- Mobile Hamburger Toggle Button -->
+    <button
+      id="manager-menu-toggle"
+      class="mobile-toggle-btn mobile-menu-button"
+      aria-label={translations["nav.aria.openManagerMenu"] || "Abrir menú de gestión"}
+      aria-expanded="false"
+    >
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+
+    <!-- Manager Navigation Menu -->
+    <div id="manager-navbar-menu" class="navbar-menu">
+      <nav class="navbar-links" aria-label={translations["nav.aria.managerNav"] || "Navegación de gestión"}>
+        <a href={`${homeUrl}dashboard`} class="nav-link">
+          📊 {translations["nav.dashboard"] || "Panel"}
+        </a>
+        <a href={`${homeUrl}#clients`} class="nav-link">
+          👥 {translations["nav.clients"] || "Mis Clientes"}
+        </a>
+        <a href={`${homeUrl}profile`} class="nav-link">
+          👤 {translations["nav.profile"] || "Mi Perfil"}
+        </a>
+      </nav>
+
+      <div class="navbar-actions">
+        <div class="user-profile-menu">
+          <a href={`${homeUrl}profile`} class="user-avatar-badge manager-badge" aria-label={translations["nav.profile"] || "Mi Perfil"}>
+            <span id="manager-nav-avatar">🧢</span>
+            <span id="manager-nav-name" class="user-name"></span>
+          </a>
+
+          <button type="button" id="manager-logout-btn" class="btn btn-secondary btn-sm">
+            {translations["nav.logout"] || "Cerrar Sesión"}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  import { initMobileMenuToggle } from "../lib/toggleMobileMenu";
+  import { initAuthNavbar } from "../lib/initAuthNavbar";
+
+  initMobileMenuToggle("manager-menu-toggle", "manager-navbar-menu");
+  initAuthNavbar("manager");
+</script>
+
+<style>
+  .navbar-header {
+    background: var(--glass-bg);
+    border-bottom: 2px solid var(--color-role-manager);
+  }
+</style>

@@ -1,0 +1,336 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Navbar from "../../components/Navbar.astro";
+import Footer from "../../components/Footer.astro";
+import DashboardUser from "../../components/DashboardUser.astro";
+import DashboardManager from "../../components/DashboardManager.astro";
+import DashboardAdmin from "../../components/DashboardAdmin.astro";
+import { getLocaleFromUrl, loadTranslations, getLangPrefix } from "../../i18n";
+
+export const prerender = false;
+
+const locale = getLocaleFromUrl(Astro.url);
+const translations = await loadTranslations(locale);
+const defaultRoleText = locale === "en" ? "User" : locale === "ca" ? "Usuari" : "Usuario";
+const defaultRoleBadge = (translations["dashboard.roleLevel"] || "Nivel: {role} 🏆").replace("{role}", defaultRoleText);
+---
+
+<BaseLayout title={`${translations["dashboard.title"]} - ${translations["site.title"]}`} lang={locale}>
+  <Navbar currentLocale={locale} translations={translations} getLangPrefix={getLangPrefix} />
+
+  <main class="container section">
+    <!-- Header Banner -->
+    <header class="dashboard-header card-glass fade-in">
+      <div class="header-content">
+        <div class="user-avatar flex-center">
+          <span>🔥</span>
+        </div>
+        <div>
+          <h1 class="dashboard-welcome">{translations["dashboard.welcome"]}</h1>
+          <p class="dashboard-subtitle">{translations["dashboard.subtitle"]}</p>
+        </div>
+      </div>
+      <div class="header-badge badge badge-primary" id="role-badge" data-role-pattern={translations["dashboard.roleLevel"] || "Nivel: {role} 🏆"}>{defaultRoleBadge}</div>
+    </header>
+
+    <!-- Role-aware dashboard views -->
+    <div id="dashboard-user-view">
+      <DashboardUser translations={translations} />
+    </div>
+
+    <div id="dashboard-manager-view" hidden>
+      <DashboardManager translations={translations} />
+    </div>
+
+    <div id="dashboard-admin-view" hidden>
+      <DashboardAdmin translations={translations} />
+    </div>
+  </main>
+
+  <Footer translations={translations} currentLocale={locale} getLangPrefix={getLangPrefix} />
+</BaseLayout>
+
+<script>
+  import { authStore } from "../../lib/authStore";
+  import { can, PERMISSIONS } from "../../lib/permissions";
+
+  const roleBadge = document.getElementById("role-badge");
+  const userView = document.getElementById("dashboard-user-view");
+  const managerView = document.getElementById("dashboard-manager-view");
+  const adminView = document.getElementById("dashboard-admin-view");
+
+  const currentLang = document.documentElement.lang || "es";
+  const ROLE_LABELS: Record<string, string> = {
+    guest: currentLang === "en" ? "Guest" : currentLang === "ca" ? "Convidat" : "Invitado",
+    user: currentLang === "en" ? "User" : currentLang === "ca" ? "Usuari" : "Usuario",
+    manager: "Manager",
+    admin: "Admin",
+  };
+
+  const pattern = roleBadge?.dataset.rolePattern || "Nivel: {role} 🏆";
+
+  authStore.subscribe(({ role }) => {
+    // Update role badge
+    if (roleBadge) {
+      const label = ROLE_LABELS[role] ?? role;
+      roleBadge.textContent = pattern.replace("{role}", label);
+    }
+
+    // Show the correct dashboard view
+    if (userView) userView.hidden = true;
+    if (managerView) managerView.hidden = true;
+    if (adminView) adminView.hidden = true;
+
+    if (can(role, PERMISSIONS.VIEW_ADMIN_PANEL)) {
+      if (adminView) adminView.hidden = false;
+    } else if (can(role, PERMISSIONS.VIEW_MANAGER_PANEL)) {
+      if (managerView) managerView.hidden = false;
+    } else {
+      if (userView) userView.hidden = false;
+    }
+  });
+</script>
+
+<style>
+  .dashboard-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-xl);
+    margin-bottom: var(--space-xl);
+    flex-wrap: wrap;
+    gap: var(--space-md);
+  }
+
+  .header-content {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+  }
+
+  .user-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: var(--border-radius-full);
+    background: linear-gradient(135deg, var(--color-primary-light), var(--color-accent));
+    font-size: 1.8rem;
+    box-shadow: var(--shadow-glow);
+  }
+
+  .dashboard-welcome {
+    font-size: var(--font-size-2xl);
+    line-height: 1.2;
+  }
+
+  .dashboard-subtitle {
+    color: var(--color-text-light);
+    font-size: var(--font-size-sm);
+    margin-top: var(--space-xs);
+  }
+
+  .stats-grid {
+    margin-bottom: var(--space-xl);
+  }
+
+  .stat-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .stat-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .stat-icon {
+    font-size: 1.5rem;
+  }
+
+  .stat-trend {
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+  }
+
+  .stat-trend.positive {
+    color: var(--color-success);
+  }
+
+  .stat-value {
+    font-size: var(--font-size-3xl);
+    font-weight: 800;
+    color: var(--color-text);
+  }
+
+  .stat-label {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .dashboard-main-grid {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: var(--space-lg);
+  }
+
+  .card-title-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-lg);
+  }
+
+  .session-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-md);
+    background-color: var(--color-surface);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--color-surface-border);
+    margin-bottom: var(--space-xl);
+    flex-wrap: wrap;
+    gap: var(--space-md);
+  }
+
+  .session-info h4 {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--space-xs);
+  }
+
+  .text-muted {
+    color: var(--color-text-muted);
+    font-size: var(--font-size-xs);
+  }
+
+  .progress-block {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .progress-label-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    color: var(--color-text-light);
+  }
+
+  .progress-track {
+    height: 10px;
+    background-color: var(--color-surface-hover);
+    border-radius: var(--border-radius-full);
+    overflow: hidden;
+  }
+
+  .progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+    border-radius: var(--border-radius-full);
+    transition: width var(--transition-smooth);
+  }
+
+  .card-section-title {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--space-md);
+  }
+
+  .activity-feed {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .activity-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding-bottom: var(--space-sm);
+    border-bottom: 1px solid var(--color-surface-border);
+  }
+
+  .activity-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .activity-icon {
+    font-size: 1.4rem;
+    padding: var(--space-xs);
+    background-color: var(--color-surface-hover);
+    border-radius: var(--border-radius-sm);
+  }
+
+  .activity-details {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .activity-title {
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--color-text);
+  }
+
+  .activity-time {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+  }
+
+  @media (max-width: 900px) {
+    .dashboard-main-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .dashboard-header {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: var(--space-lg);
+    }
+
+    .header-content {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .dashboard-welcome {
+      font-size: var(--font-size-xl);
+    }
+
+    .user-avatar {
+      width: 48px;
+      height: 48px;
+      font-size: 1.4rem;
+    }
+
+    .stat-value {
+      font-size: var(--font-size-2xl);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .session-details {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .session-info h4 {
+      font-size: var(--font-size-base);
+    }
+
+    .activity-item {
+      flex-wrap: wrap;
+    }
+  }
+</style>

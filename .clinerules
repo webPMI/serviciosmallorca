@@ -1,0 +1,45 @@
+# Cline Rules - WebApp Starter
+
+## Modo de Operación
+
+1. **Antes de cualquier cambio de código**, leer el documento `docs/` correspondiente al dominio afectado:
+   - Componentes/páginas → `docs/ARCHITECTURE.md` + `docs/I18N.md`
+   - Estilos → `docs/STYLING.md`
+   - Auth → `docs/AUTH.md`
+   - DevTools → `docs/DEVTOOLS.md`
+   - Infraestructura → `docs/TOOLS.md`
+
+2. **Seguir las 10 Golden Rules** (`docs/GOLDEN_RULES.md`) en cada cambio:
+   - GR-01: Solo variables CSS (`var(--*)`), nunca colores hardcodeados
+   - GR-02: Breakpoints en 480/640/768/900/1024
+   - GR-03: TypeScript explícito en Props y funciones
+   - GR-04: Textos via i18n (`translations["key"]`)
+   - GR-05: Todo feature con tests
+   - GR-06: Documentar cambios en `docs/`
+   - GR-07: aria-* y keyboard nav en elementos interactivos
+   - GR-08: Coordinar cambios multi-dominio
+   - GR-09: Zero console errors, build limpio
+   - GR-10: Build < 60s
+
+## Reglas de Escritura de Código
+
+3. **No hardcodear texto** visible al usuario. Usar `translations["clave"]`.
+4. **No hardcodear colores**. Usar `var(--color-*)`.
+5. **Props con interfaz TypeScript explícita** (nunca `any` implícito).
+6. **Componentes responsive** con `@media` queries donde aplique.
+7. **No usar librerías externas** en DevTools (`public/`) — vanilla JS puro.
+8. **API keys solo via `import.meta.env`** — nunca hardcodeadas.
+
+## Reglas de Documentación
+
+9. **No duplicar información** entre documentos. Si ya existe en `docs/`, referenciar, no reescribir.
+10. **Actualizar `docs/README.md`** si se añade/quita un archivo en `docs/`.
+11. **Docstring obligatorio** en componentes nuevos explicando propósito y Props.
+
+## Verificación Pre-commit
+
+12. Antes de considerar un cambio como completo:
+    - `npm run lint` sin errores
+    - `npm run typecheck` sin errores  
+    - `npm test` 100% pasando
+    - `npm run build` sin errores y < 60s

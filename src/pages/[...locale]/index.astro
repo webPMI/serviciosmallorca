@@ -1,0 +1,142 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Navbar from "../../components/Navbar.astro";
+import Footer from "../../components/Footer.astro";
+import {
+	getLocaleFromUrl,
+	loadTranslations,
+	getLangPrefix,
+	type Locale,
+} from "../../i18n";
+
+export const prerender = false;
+
+const locale = getLocaleFromUrl(Astro.url);
+const translations = await loadTranslations(locale);
+---
+
+<BaseLayout title={translations["site.title"]} lang={locale}>
+<Navbar
+	currentLocale={locale}
+	translations={translations}
+	getLangPrefix={getLangPrefix}
+/>
+
+	<main class="container section">
+		<section class="hero-card card-glass fade-in">
+			<div class="hero-badge badge badge-accent">
+				{translations["home.badge"]}
+			</div>
+			<h1 class="hero-title">{translations["home.heading"]}</h1>
+			<p class="hero-subtitle">{translations["home.subtitle"]}</p>
+
+			<div class="hero-actions">
+				<a href="#features" class="btn btn-primary">
+					<span>{translations["home.explore"]}</span>
+					<svg
+						width="16"
+						height="16"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="2.5"
+					>
+						<line x1="5" y1="12" x2="19" y2="12"></line>
+						<polyline points="12 5 19 12 12 19"></polyline>
+					</svg>
+				</a>
+			</div>
+		</section>
+
+		<section id="features" class="features-section grid-auto">
+			<article class="card hover-lift">
+				<div class="card-icon">⚡</div>
+				<h3>{translations["home.features.training"]}</h3>
+				<p>{translations["home.features.training.description"]}</p>
+			</article>
+
+			<article class="card hover-lift">
+				<div class="card-icon">🔐</div>
+				<h3>{translations["home.features.nutrition"]}</h3>
+				<p>{translations["home.features.nutrition.description"]}</p>
+			</article>
+
+			<article class="card hover-lift">
+				<div class="card-icon">🎨</div>
+				<h3>{translations["home.features.tracking"]}</h3>
+				<p>{translations["home.features.tracking.description"]}</p>
+			</article>
+		</section>
+	</main>
+
+	<Footer
+		translations={translations}
+		currentLocale={locale}
+		getLangPrefix={getLangPrefix}
+	/>
+</BaseLayout>
+
+<style>
+	.hero-card {
+		text-align: center;
+		max-width: 800px;
+		margin: var(--space-xl) auto var(--space-2xl);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: var(--space-md);
+	}
+
+	.hero-title {
+		font-size: clamp(2rem, 5vw, var(--font-size-4xl));
+		margin-top: var(--space-xs);
+	}
+
+	.hero-subtitle {
+		font-size: var(--font-size-lg);
+		color: var(--color-text-light);
+		max-width: 600px;
+	}
+
+	.hero-actions {
+		margin-top: var(--space-md);
+	}
+
+	.features-section {
+		margin-top: var(--space-xl);
+	}
+
+	.card-icon {
+		font-size: 2.5rem;
+		margin-bottom: var(--space-md);
+	}
+
+	.card h3 {
+		margin-bottom: var(--space-xs);
+		font-size: var(--font-size-xl);
+	}
+
+	.card p {
+		color: var(--color-text-light);
+		font-size: var(--font-size-sm);
+	}
+
+	@media (max-width: 640px) {
+		.hero-card {
+			padding: var(--space-lg);
+			margin: var(--space-lg) auto var(--space-xl);
+		}
+
+		.hero-subtitle {
+			font-size: var(--font-size-base);
+		}
+
+		.card-icon {
+			font-size: 2rem;
+		}
+
+		.card h3 {
+			font-size: var(--font-size-lg);
+		}
+	}
+</style>

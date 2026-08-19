@@ -1,0 +1,69 @@
+// =============================================================================
+// Firestore Security Rules — WebApp Starter
+// =============================================================================
+// Roles: guest, user, manager, admin
+// Document path: users/{uid}
+// =============================================================================
+
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // -------------------------------------------------------------------------
+    // Helper functions
+    // -------------------------------------------------------------------------
+
+    /** Returns true if the requester is authenticated. */
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    /** Returns the role of the authenticated user from their own document. */
+    function getUserRole() {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role;
+    }
+
+    /** Returns true if the requester is the owner of the target document. */
+    function isOwner(uid) {
+      return request.auth.uid == uid;
+    }
+
+    // -------------------------------------------------------------------------
+    // Users collection
+    // -------------------------------------------------------------------------
+    match /users/{uid} {
+
+      // Anyone can read their own profile
+      // Managers and admins can read any profile
+      allow read: if isSignedIn() && (
+        isOwner(uid) ||
+        getUserRole() == 'manager' ||
+        getUserRole() == 'admin'
+      );
+
+      // A user can only create their *own* document (on registration)
+      // The role field is forced to "user" — only admin can escalate
+      allow create: if isSignedIn()
+        && isOwner(uid)
+        && request.resource.data.role == 'user'
+        && request.resource.data.keys().hasAll(['role', 'displayName', 'email', 'createdAt', 'updatedAt']);
+
+      // A user can update their own profile (but NOT their role)
+      // Admins can update any field on any user
+      allow update: if isSignedIn() && (
+        (isOwner(uid) && request.resource.data.role == resource.data.role) ||
+        getUserRole() == 'admin'
+      );
+
+      // Only admins can delete users
+      allow delete: if isSignedIn() && getUserRole() == 'admin';
+    }
+
+    // -------------------------------------------------------------------------
+    // Fallback: deny everything else by default
+    // -------------------------------------------------------------------------
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

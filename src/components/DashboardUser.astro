@@ -1,0 +1,227 @@
+---
+interface Props {
+  translations: Record<string, string>;
+}
+
+const { translations } = Astro.props;
+---
+
+<section class="stats-grid grid-auto">
+  <article class="stat-card card hover-lift">
+    <div class="stat-header">
+      <span class="stat-icon">🔑</span>
+      <span class="stat-trend positive">Activo</span>
+    </div>
+    <div class="stat-value">—</div>
+    <div class="stat-label">{translations["dashboard.stats.workouts"]}</div>
+  </article>
+
+  <article class="stat-card card hover-lift">
+    <div class="stat-header">
+      <span class="stat-icon">📡</span>
+      <span class="stat-trend positive">Online</span>
+    </div>
+    <div class="stat-value">—</div>
+    <div class="stat-label">{translations["dashboard.stats.calories"]}</div>
+  </article>
+
+  <article class="stat-card card hover-lift">
+    <div class="stat-header">
+      <span class="stat-icon">⏱️</span>
+      <span class="stat-trend positive">—</span>
+    </div>
+    <div class="stat-value">—</div>
+    <div class="stat-label">{translations["dashboard.stats.hours"]}</div>
+  </article>
+
+  <article class="stat-card card hover-lift">
+    <div class="stat-header">
+      <span class="stat-icon">📅</span>
+      <span class="stat-trend text-gradient">—</span>
+    </div>
+    <div class="stat-value">—</div>
+    <div class="stat-label">{translations["dashboard.stats.streak"]}</div>
+  </article>
+</section>
+
+<div class="dashboard-main-grid">
+  <div class="main-col">
+    <article class="card card-glass">
+      <div class="card-title-row">
+        <h3>{translations["dashboard.nextSession"]}</h3>
+        <span class="badge badge-accent">Pendiente</span>
+      </div>
+      <div class="session-details">
+        <div class="session-info">
+          <p class="text-muted">No hay tareas programadas</p>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <div class="side-col">
+    <article class="card">
+      <h3 class="card-section-title">{translations["dashboard.recentActivity"]}</h3>
+      <ul class="activity-feed">
+        <li class="activity-item">
+          <span class="activity-icon">👤</span>
+          <div class="activity-details">
+            <span class="activity-title">{translations["auth.register.submit"]}</span>
+            <span class="activity-time">Cuenta creada</span>
+          </div>
+          <span class="badge badge-primary">Activo</span>
+        </li>
+      </ul>
+    </article>
+  </div>
+</div>
+
+<style>
+  .stats-grid {
+    margin-bottom: var(--space-xl);
+  }
+
+  .stat-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .stat-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .stat-icon {
+    font-size: 1.5rem;
+  }
+
+  .stat-trend {
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+  }
+
+  .stat-trend.positive {
+    color: var(--color-success);
+  }
+
+  .stat-value {
+    font-size: var(--font-size-3xl);
+    font-weight: 800;
+    color: var(--color-text);
+  }
+
+  .stat-label {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .dashboard-main-grid {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: var(--space-lg);
+  }
+
+  .card-title-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-lg);
+  }
+
+  .session-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-md);
+    background-color: var(--color-surface);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--color-surface-border);
+    margin-bottom: var(--space-xl);
+    flex-wrap: wrap;
+    gap: var(--space-md);
+  }
+
+  .text-muted {
+    color: var(--color-text-muted);
+    font-size: var(--font-size-xs);
+  }
+
+  .card-section-title {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--space-md);
+  }
+
+  .activity-feed {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .activity-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding-bottom: var(--space-sm);
+    border-bottom: 1px solid var(--color-surface-border);
+  }
+
+  .activity-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .activity-icon {
+    font-size: 1.4rem;
+    padding: var(--space-xs);
+    background-color: var(--color-surface-hover);
+    border-radius: var(--border-radius-sm);
+  }
+
+  .activity-details {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .activity-title {
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--color-text);
+  }
+
+  .activity-time {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+  }
+
+  @media (max-width: 900px) {
+    .dashboard-main-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .stat-value {
+      font-size: var(--font-size-2xl);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .session-details {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .activity-item {
+      flex-wrap: wrap;
+    }
+  }
+</style>

@@ -1,0 +1,102 @@
+---
+interface Props {
+  currentLocale: "es" | "en" | "ca";
+  translations: {
+    "nav.es": string;
+    "nav.en": string;
+    "nav.ca": string;
+  };
+  getLangPrefix: (locale: "es" | "en" | "ca") => string;
+  currentPath?: string;
+}
+
+const {
+  currentLocale,
+  translations,
+  getLangPrefix,
+  currentPath = "",
+} = Astro.props;
+
+// Cleanly calculate path suffix (e.g. "/login", "/dashboard", or "")
+const rawPath = currentPath.replace(/^\/(es|en|ca)/, "");
+const targetPath = rawPath === "/" ? "" : (rawPath.startsWith("/") ? rawPath : `/${rawPath}`);
+---
+
+<div class="language-switcher">
+  <span class="language-label">Idioma:</span>
+  <nav class="language-nav" aria-label="Cambiar idioma">
+    <a
+      href={`${getLangPrefix("es")}${targetPath}`}
+      class:list={["language-link", { active: currentLocale === "es" }]}
+    >
+      {translations["nav.es"]}
+    </a>
+    <span class="language-separator">|</span>
+    <a
+      href={`${getLangPrefix("en")}${targetPath}`}
+      class:list={["language-link", { active: currentLocale === "en" }]}
+    >
+      {translations["nav.en"]}
+    </a>
+    <span class="language-separator">|</span>
+    <a
+      href={`${getLangPrefix("ca")}${targetPath}`}
+      class:list={["language-link", { active: currentLocale === "ca" }]}
+    >
+      {translations["nav.ca"]}
+    </a>
+  </nav>
+</div>
+
+<style>
+  .language-switcher {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.35rem 0.75rem;
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-surface-border);
+    border-radius: var(--border-radius-full);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .language-label {
+    font-weight: 600;
+    color: var(--color-text-muted);
+    font-size: var(--font-size-xs);
+  }
+
+  .language-nav {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .language-link {
+    color: var(--color-text-light);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: var(--font-size-xs);
+    padding: 0.2rem 0.5rem;
+    border-radius: var(--border-radius-full);
+    transition: all var(--transition-fast);
+  }
+
+  .language-link:hover {
+    color: var(--color-primary);
+    background-color: var(--color-surface-hover);
+  }
+
+  .language-link.active {
+    color: var(--color-primary);
+    background-color: var(--color-surface);
+    box-shadow: var(--shadow-sm);
+    pointer-events: none;
+  }
+
+  .language-separator {
+    color: var(--color-surface-border);
+    user-select: none;
+    font-size: var(--font-size-xs);
+  }
+</style>

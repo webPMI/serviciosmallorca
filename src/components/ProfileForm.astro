@@ -1,0 +1,792 @@
+---
+import type { Translations } from "../i18n";
+
+interface Props {
+  translations: Translations;
+  locale: string;
+}
+
+const { translations, locale } = Astro.props;
+
+const AVATAR_PRESETS = ["👤", "🚀", "⚡", "👑", "🦊", "🦉", "🎨", "💻", "🌿", "🔥"];
+---
+
+<div class="profile-container">
+  <!-- Profile Header Card -->
+  <div class="profile-card card-glass fade-in">
+    <div class="profile-header-layout">
+      <div class="avatar-wrapper">
+        <div class="current-avatar" id="profile-current-avatar">
+          <span class="avatar-symbol" id="profile-avatar-symbol">👤</span>
+        </div>
+      </div>
+      <div class="profile-header-meta">
+        <div class="profile-title-row">
+          <h1 class="profile-display-name" id="profile-display-name-header">...</h1>
+          <span class="badge badge-primary" id="profile-role-badge">Usuario</span>
+        </div>
+        <p class="profile-email-text" id="profile-email-header">...</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Alerts -->
+  <div id="profile-success-alert" class="alert-success" style="display: none;" role="alert"></div>
+  <div id="profile-error-alert" class="alert-error" style="display: none;" role="alert"></div>
+
+  <!-- Main Profile Form -->
+  <div class="profile-grid">
+    <!-- Section 1: Personal Information -->
+    <section class="card profile-card-section fade-in">
+      <h2 class="section-title">
+        <span class="section-icon">👤</span>
+        {translations["profile.accountInfo"]}
+      </h2>
+
+      <form
+        id="profile-info-form"
+        class="profile-form"
+        data-success-msg={translations["profile.successUpdated"]}
+        data-error-name={translations["auth.nameRequired"]}
+        data-error-general={translations["auth.errors.generalError"]}
+      >
+        <div class="form-group">
+          <label for="profile-name" class="form-label">{translations["profile.name"]}</label>
+          <div class="input-wrapper">
+            <span class="input-icon">✏️</span>
+            <input
+              type="text"
+              id="profile-name"
+              name="displayName"
+              class="form-input"
+              required
+              placeholder="Tu nombre"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="profile-email" class="form-label">{translations["profile.email"]}</label>
+          <div class="input-wrapper">
+            <span class="input-icon">📧</span>
+            <input
+              type="email"
+              id="profile-email"
+              class="form-input form-input-disabled"
+              disabled
+              readonly
+            />
+          </div>
+          <span class="form-helper">El correo no puede modificarse directamente por seguridad.</span>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">{translations["profile.avatar"]}</label>
+          <div class="avatar-presets-grid" id="avatar-presets">
+            {AVATAR_PRESETS.map((icon) => (
+              <button
+                type="button"
+                class="avatar-preset-btn"
+                data-preset={icon}
+                aria-label={`Seleccionar avatar ${icon}`}
+              >
+                {icon}
+              </button>
+            ))}
+          </div>
+
+          <label for="profile-custom-photo" class="form-label-sub">{translations["profile.customAvatarUrl"]}</label>
+          <div class="input-wrapper">
+            <span class="input-icon">🔗</span>
+            <input
+              type="url"
+              id="profile-custom-photo"
+              name="photoURL"
+              class="form-input"
+              placeholder="https://ejemplo.com/tu-foto.jpg"
+            />
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" id="save-profile-btn" class="btn btn-primary">
+            <span class="btn-text">{translations["profile.saveChanges"]}</span>
+            <span class="btn-loader" style="display: none;">⌛</span>
+          </button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Section 2: Security & Password -->
+    <section class="card profile-card-section fade-in">
+      <h2 class="section-title">
+        <span class="section-icon">🔐</span>
+        {translations["profile.changePassword"]}
+      </h2>
+
+      <div id="google-auth-notice" class="alert-info" style="display: none;">
+        <span>ℹ️ {translations["profile.googleAuthNotice"]}</span>
+      </div>
+
+      <form
+        id="profile-password-form"
+        class="profile-form"
+        data-success-msg={translations["profile.successPassword"]}
+        data-error-required={translations["auth.passwordRequired"]}
+        data-error-mismatch={translations["auth.passwordMismatch"]}
+        data-error-weak={translations["auth.errors.weakPassword"]}
+        data-error-reauth={translations["profile.reauthRequired"]}
+        data-error-general={translations["auth.errors.generalError"]}
+        data-strength-weak={translations["auth.passwordStrength.weak"]}
+        data-strength-medium={translations["auth.passwordStrength.medium"]}
+        data-strength-strong={translations["auth.passwordStrength.strong"]}
+      >
+        <div class="form-group">
+          <label for="new-password" class="form-label">{translations["profile.newPassword"]}</label>
+          <div class="input-wrapper">
+            <span class="input-icon">🔒</span>
+            <input
+              type="password"
+              id="new-password"
+              name="newPassword"
+              class="form-input"
+              required
+              placeholder="••••••••"
+              autocomplete="new-password"
+            />
+            <button
+              type="button"
+              id="toggle-new-password"
+              class="toggle-password-btn"
+              aria-label={translations["auth.togglePassword.ariaLabel"]}
+            >
+              👁️
+            </button>
+          </div>
+          <div class="password-strength" id="profilePasswordStrength">
+            <div class="strength-bar">
+              <div class="strength-fill" id="profileStrengthFill"></div>
+            </div>
+            <span class="strength-text" id="profileStrengthText"></span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="confirm-new-password" class="form-label">{translations["profile.confirmNewPassword"]}</label>
+          <div class="input-wrapper">
+            <span class="input-icon">🔒</span>
+            <input
+              type="password"
+              id="confirm-new-password"
+              name="confirmNewPassword"
+              class="form-input"
+              required
+              placeholder="••••••••"
+              autocomplete="new-password"
+            />
+            <button
+              type="button"
+              id="toggle-confirm-new-password"
+              class="toggle-password-btn"
+              aria-label={translations["auth.togglePassword.ariaLabel"]}
+            >
+              👁️
+            </button>
+          </div>
+          <span class="form-error" id="profile-password-error"></span>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" id="update-password-btn" class="btn btn-secondary">
+            <span class="btn-text">{translations["profile.updatePassword"]}</span>
+            <span class="btn-loader" style="display: none;">⌛</span>
+          </button>
+        </div>
+      </form>
+    </section>
+  </div>
+</div>
+
+<script>
+  import { updateProfile, updatePassword } from "firebase/auth";
+  import { auth, db } from "../lib/firebase";
+  import { authStore } from "../lib/authStore";
+  import { getUserProfile, updateUserProfile } from "../lib/userProfile";
+  import { toast } from "../lib/toast";
+
+  // Elements
+  const headerName = document.getElementById("profile-display-name-header");
+  const headerEmail = document.getElementById("profile-email-header");
+  const headerRole = document.getElementById("profile-role-badge");
+  const avatarSymbol = document.getElementById("profile-avatar-symbol");
+  const currentAvatarEl = document.getElementById("profile-current-avatar");
+
+  const infoForm = document.getElementById("profile-info-form") as HTMLFormElement | null;
+  const nameInput = document.getElementById("profile-name") as HTMLInputElement | null;
+  const emailInput = document.getElementById("profile-email") as HTMLInputElement | null;
+  const customPhotoInput = document.getElementById("profile-custom-photo") as HTMLInputElement | null;
+  const saveProfileBtn = document.getElementById("save-profile-btn") as HTMLButtonElement | null;
+
+  const passwordForm = document.getElementById("profile-password-form") as HTMLFormElement | null;
+  const newPasswordInput = document.getElementById("new-password") as HTMLInputElement | null;
+  const confirmNewPasswordInput = document.getElementById("confirm-new-password") as HTMLInputElement | null;
+  const passwordError = document.getElementById("profile-password-error");
+  const updatePasswordBtn = document.getElementById("update-password-btn") as HTMLButtonElement | null;
+  const googleNotice = document.getElementById("google-auth-notice");
+
+  const successAlert = document.getElementById("profile-success-alert");
+  const errorAlert = document.getElementById("profile-error-alert");
+
+  const toggleNewPassBtn = document.getElementById("toggle-new-password");
+  const toggleConfirmPassBtn = document.getElementById("toggle-confirm-new-password");
+  const strengthFill = document.getElementById("profileStrengthFill");
+  const strengthText = document.getElementById("profileStrengthText");
+
+  let selectedAvatar: string | null = null;
+
+  function showSuccess(msg: string) {
+    if (errorAlert) errorAlert.style.display = "none";
+    if (successAlert) {
+      successAlert.textContent = msg;
+      successAlert.style.display = "block";
+      successAlert.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    }
+    toast.success(msg);
+  }
+
+  function showError(msg: string) {
+    if (successAlert) successAlert.style.display = "none";
+    if (errorAlert) {
+      errorAlert.textContent = msg;
+      errorAlert.style.display = "block";
+      errorAlert.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    }
+    toast.error(msg);
+  }
+
+  // Render current avatar
+  function setAvatarDisplay(photo: string | null, name: string | null) {
+    if (!currentAvatarEl) return;
+    if (photo && (photo.startsWith("http://") || photo.startsWith("https://") || photo.startsWith("data:"))) {
+      currentAvatarEl.innerHTML = `<img src="${photo}" alt="Avatar" class="profile-avatar-img" />`;
+    } else if (photo && photo.length <= 4) {
+      currentAvatarEl.innerHTML = `<span class="avatar-symbol">${photo}</span>`;
+    } else {
+      const initial = (name && name[0]) ? name[0].toUpperCase() : "👤";
+      currentAvatarEl.innerHTML = `<span class="avatar-symbol">${initial}</span>`;
+    }
+  }
+
+  // Bind auth state
+  authStore.subscribe(async ({ user, role, initialized }) => {
+    if (!initialized) return;
+
+    if (!user) {
+      // Redirect to login if not authenticated
+      window.location.href = "./login";
+      return;
+    }
+
+    // Populate data
+    const displayName = user.displayName || user.email?.split("@")[0] || "Usuario";
+    if (headerName) headerName.textContent = displayName;
+    if (headerEmail) headerEmail.textContent = user.email || "";
+    if (emailInput) emailInput.value = user.email || "";
+    if (nameInput) nameInput.value = user.displayName || "";
+    if (headerRole) {
+      headerRole.textContent = role.toUpperCase();
+      headerRole.className = `badge badge-${role === "admin" ? "admin" : role === "manager" ? "manager" : "primary"}`;
+    }
+
+    selectedAvatar = user.photoURL;
+    if (customPhotoInput && user.photoURL && (user.photoURL.startsWith("http") || user.photoURL.startsWith("data:"))) {
+      customPhotoInput.value = user.photoURL;
+    }
+
+    setAvatarDisplay(user.photoURL, displayName);
+
+    // Check auth provider (Google vs Password)
+    const isGoogle = user.providerData.some((p) => p.providerId === "google.com");
+    if (isGoogle) {
+      if (passwordForm) passwordForm.style.display = "none";
+      if (googleNotice) googleNotice.style.display = "block";
+    }
+  });
+
+  // Avatar presets selection
+  document.querySelectorAll(".avatar-preset-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      document.querySelectorAll(".avatar-preset-btn").forEach((b) => b.classList.remove("is-selected"));
+      btn.classList.add("is-selected");
+      const icon = btn.getAttribute("data-preset");
+      if (icon) {
+        selectedAvatar = icon;
+        if (customPhotoInput) customPhotoInput.value = "";
+        setAvatarDisplay(icon, nameInput?.value || null);
+      }
+    });
+  });
+
+  // Custom photo input change
+  if (customPhotoInput) {
+    customPhotoInput.addEventListener("input", () => {
+      const val = customPhotoInput.value.trim();
+      if (val) {
+        document.querySelectorAll(".avatar-preset-btn").forEach((b) => b.classList.remove("is-selected"));
+        selectedAvatar = val;
+        setAvatarDisplay(val, nameInput?.value || null);
+      }
+    });
+  }
+
+  // Update Profile Info
+  if (infoForm && nameInput) {
+    infoForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const currentUser = auth.currentUser;
+      if (!currentUser) return;
+
+      const newName = nameInput.value.trim();
+      if (!newName) {
+        showError(infoForm.dataset.errorName || "El nombre es requerido");
+        return;
+      }
+
+      const photoToSave = selectedAvatar || customPhotoInput?.value.trim() || null;
+
+      if (saveProfileBtn) saveProfileBtn.disabled = true;
+
+      try {
+        // 1. Update Firebase Auth Profile
+        await updateProfile(currentUser, {
+          displayName: newName,
+          photoURL: photoToSave,
+        });
+
+        // 2. Update Firestore document
+        await updateUserProfile(db, currentUser.uid, {
+          displayName: newName,
+          photoURL: photoToSave,
+        });
+
+        // 3. Refresh display
+        if (headerName) headerName.textContent = newName;
+        setAvatarDisplay(photoToSave, newName);
+
+        // 4. Update dynamic Navbar if present
+        const navName = document.getElementById("user-nav-name") || document.getElementById("manager-nav-name") || document.getElementById("admin-nav-name");
+        if (navName) navName.textContent = newName;
+
+        showSuccess(infoForm.dataset.successMsg || "¡Perfil actualizado con éxito!");
+      } catch (err: any) {
+        console.error("Error updating profile:", err);
+        showError(err.message || infoForm.dataset.errorGeneral || "Ocurrió un error al procesar tu solicitud.");
+      } finally {
+        if (saveProfileBtn) saveProfileBtn.disabled = false;
+      }
+    });
+  }
+
+  // Password Toggles
+  if (toggleNewPassBtn && newPasswordInput) {
+    toggleNewPassBtn.addEventListener("click", () => {
+      const isPass = newPasswordInput.type === "password";
+      newPasswordInput.type = isPass ? "text" : "password";
+      toggleNewPassBtn.textContent = isPass ? "🙈" : "👁️";
+    });
+  }
+
+  if (toggleConfirmPassBtn && confirmNewPasswordInput) {
+    toggleConfirmPassBtn.addEventListener("click", () => {
+      const isPass = confirmNewPasswordInput.type === "password";
+      confirmNewPasswordInput.type = isPass ? "text" : "password";
+      toggleConfirmPassBtn.textContent = isPass ? "🙈" : "👁️";
+    });
+  }
+
+  // Strength Meter for Profile Password Form
+  if (newPasswordInput && strengthFill && strengthText && passwordForm) {
+    newPasswordInput.addEventListener("input", () => {
+      const val = newPasswordInput.value;
+      let score = 0;
+      if (val.length >= 8) score++;
+      if (/\d/.test(val)) score++;
+      if (/[a-z]/.test(val) && /[A-Z]/.test(val)) score++;
+      if (/[^A-Za-z0-9]/.test(val)) score++;
+
+      if (val.length === 0) {
+        strengthFill.className = "strength-fill";
+        strengthText.textContent = "";
+      } else if (score <= 1) {
+        strengthFill.className = "strength-fill weak";
+        strengthText.textContent = passwordForm.dataset.strengthWeak || "Débil";
+      } else if (score <= 3) {
+        strengthFill.className = "strength-fill medium";
+        strengthText.textContent = passwordForm.dataset.strengthMedium || "Media";
+      } else {
+        strengthFill.className = "strength-fill strong";
+        strengthText.textContent = passwordForm.dataset.strengthStrong || "Fuerte";
+      }
+    });
+  }
+
+  // Update Password
+  if (passwordForm && newPasswordInput && confirmNewPasswordInput) {
+    passwordForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      if (passwordError) passwordError.textContent = "";
+
+      const newPass = newPasswordInput.value;
+      const confirmPass = confirmNewPasswordInput.value;
+
+      if (!newPass) {
+        if (passwordError) passwordError.textContent = passwordForm.dataset.errorRequired || "La contraseña es requerida";
+        return;
+      }
+
+      if (newPass.length < 6) {
+        if (passwordError) passwordError.textContent = passwordForm.dataset.errorWeak || "La contraseña debe tener al menos 6 caracteres.";
+        return;
+      }
+
+      if (newPass !== confirmPass) {
+        if (passwordError) passwordError.textContent = passwordForm.dataset.errorMismatch || "Las contraseñas no coinciden";
+        return;
+      }
+
+      const currentUser = auth.currentUser;
+      if (!currentUser) return;
+
+      if (updatePasswordBtn) updatePasswordBtn.disabled = true;
+
+      try {
+        await updatePassword(currentUser, newPass);
+        passwordForm.reset();
+        if (strengthFill) strengthFill.className = "strength-fill";
+        if (strengthText) strengthText.textContent = "";
+        showSuccess(passwordForm.dataset.successMsg || "¡Contraseña actualizada con éxito!");
+      } catch (err: any) {
+        console.error("Error updating password:", err);
+        if (err.code === "auth/requires-recent-login") {
+          showError(passwordForm.dataset.errorReauth || "Por seguridad, debes haber iniciado sesión recientemente para cambiar tu contraseña.");
+        } else {
+          showError(err.message || passwordForm.dataset.errorGeneral || "Ocurrió un error al procesar tu solicitud.");
+        }
+      } finally {
+        if (updatePasswordBtn) updatePasswordBtn.disabled = false;
+      }
+    });
+  }
+</script>
+
+<style>
+  .profile-container {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+  }
+
+  .profile-card {
+    padding: var(--space-xl);
+    border-radius: var(--border-radius);
+  }
+
+  .profile-header-layout {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xl);
+  }
+
+  .avatar-wrapper {
+    flex-shrink: 0;
+  }
+
+  .current-avatar {
+    width: 84px;
+    height: 84px;
+    border-radius: var(--border-radius-full);
+    background: linear-gradient(135deg, var(--color-primary-light), var(--color-accent));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-glow);
+    overflow: hidden;
+    border: 3px solid var(--color-surface);
+  }
+
+  .avatar-symbol {
+    font-size: 2.5rem;
+    line-height: 1;
+  }
+
+  .profile-avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .profile-header-meta {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .profile-title-row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+  }
+
+  .profile-display-name {
+    font-size: var(--font-size-3xl);
+    font-weight: 800;
+    color: var(--color-text);
+    line-height: 1.2;
+  }
+
+  .profile-email-text {
+    font-size: var(--font-size-base);
+    color: var(--color-text-light);
+  }
+
+  .profile-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: var(--space-xl);
+  }
+
+  .profile-card-section {
+    padding: var(--space-xl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
+
+  .section-title {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    color: var(--color-text);
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding-bottom: var(--space-sm);
+    border-bottom: 1px solid var(--color-surface-border);
+  }
+
+  .section-icon {
+    font-size: 1.3rem;
+  }
+
+  .profile-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .form-label {
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--color-text);
+  }
+
+  .form-label-sub {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+    margin-top: var(--space-xs);
+  }
+
+  .form-helper {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+  }
+
+  .input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .input-icon {
+    position: absolute;
+    left: 0.85rem;
+    font-size: 1.1rem;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .form-input {
+    width: 100%;
+    padding: 0.75rem 1rem 0.75rem 2.8rem;
+    border: 2px solid var(--color-surface-border);
+    border-radius: var(--border-radius);
+    background-color: var(--color-white);
+    color: var(--color-text);
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    transition: all 0.2s ease-in-out;
+  }
+
+  .form-input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px var(--color-primary-ring);
+  }
+
+  .form-input-disabled {
+    background-color: var(--color-bg);
+    color: var(--color-text-muted);
+    cursor: not-allowed;
+    border-style: dashed;
+  }
+
+  .toggle-password-btn {
+    position: absolute;
+    right: 0.75rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    padding: 0.25rem;
+  }
+
+  .avatar-presets-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: var(--space-xs);
+    margin-bottom: var(--space-xs);
+  }
+
+  .avatar-preset-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    background: var(--color-surface);
+    border: 2px solid var(--color-surface-border);
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .avatar-preset-btn:hover {
+    border-color: var(--color-primary);
+    transform: translateY(-2px);
+  }
+
+  .avatar-preset-btn.is-selected {
+    border-color: var(--color-primary);
+    background: var(--color-primary-bg);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .password-strength {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin-top: 0.25rem;
+  }
+
+  .strength-bar {
+    height: 4px;
+    background-color: var(--color-surface-border);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .strength-fill {
+    height: 100%;
+    width: 0%;
+    transition: all 0.3s ease;
+  }
+
+  .strength-fill.weak {
+    width: 33%;
+    background-color: var(--color-danger-light);
+  }
+
+  .strength-fill.medium {
+    width: 66%;
+    background-color: var(--color-warning-light);
+  }
+
+  .strength-fill.strong {
+    width: 100%;
+    background-color: var(--color-success-dark);
+  }
+
+  .strength-text {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-light);
+  }
+
+  .form-error {
+    color: var(--color-danger-light);
+    font-size: var(--font-size-xs);
+    font-weight: 500;
+  }
+
+  .alert-success {
+    background-color: var(--color-success-bg);
+    border: 1px solid var(--color-success-border);
+    color: var(--color-success-light);
+    padding: 0.85rem 1.25rem;
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+  }
+
+  .alert-error {
+    background-color: var(--color-danger-bg);
+    border: 1px solid var(--color-danger-border);
+    color: var(--color-danger-light);
+    padding: 0.85rem 1.25rem;
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+  }
+
+  .alert-info {
+    background-color: var(--color-primary-bg);
+    border: 1px solid var(--color-surface-border);
+    color: var(--color-text);
+    padding: 0.85rem 1.25rem;
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-sm);
+    line-height: 1.5;
+  }
+
+  .form-actions {
+    margin-top: var(--space-sm);
+  }
+
+  @media (max-width: 900px) {
+    .profile-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .profile-header-layout {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .profile-title-row {
+      justify-content: center;
+    }
+
+    .avatar-presets-grid {
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+</style>

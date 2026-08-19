@@ -1,0 +1,158 @@
+---
+import LanguageSwitcher from "./LanguageSwitcher.astro";
+import ThemeSwitcher from "./ThemeSwitcher.astro";
+
+interface Props {
+  currentLocale: "es" | "en" | "ca";
+  translations: Record<string, string>;
+  getLangPrefix: (locale: "es" | "en" | "ca") => string;
+}
+
+const { currentLocale, translations, getLangPrefix } = Astro.props;
+const currentPath = Astro.url.pathname;
+---
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <!-- Brand column -->
+      <div class="footer-col brand-col">
+        <div class="footer-brand">
+          <span class="footer-logo">🚀 WebApp Starter</span>
+        </div>
+        <p class="footer-tagline">{translations["footer.tagline"]}</p>
+      </div>
+
+      <!-- Legal links column -->
+      <div class="footer-col nav-col">
+        <h4 class="footer-heading">{translations["footer.legal"]}</h4>
+        <nav class="footer-nav">
+          <a href={`${getLangPrefix(currentLocale)}terms`} class="footer-link">
+            {translations["footer.terms"]}
+          </a>
+          <a href={`${getLangPrefix(currentLocale)}privacy`} class="footer-link">
+            {translations["footer.privacy"]}
+          </a>
+          <a href="#" class="footer-link">
+            {translations["footer.contact"]}
+          </a>
+        </nav>
+      </div>
+
+      <!-- Controls column (Language + Theme) -->
+      <div class="footer-col controls-col">
+        <h4 class="footer-heading">{translations["footer.preferences"] || "Preferencias"}</h4>
+        <div class="footer-controls">
+          <LanguageSwitcher
+            currentLocale={currentLocale}
+            translations={{
+              "nav.es": translations["nav.es"],
+              "nav.en": translations["nav.en"],
+              "nav.ca": translations["nav.ca"],
+            }}
+            getLangPrefix={getLangPrefix}
+            currentPath={currentPath}
+          />
+
+          <ThemeSwitcher
+            variant="footer"
+            translations={{
+              "theme.light": translations["theme.light"],
+              "theme.dark": translations["theme.dark"],
+              "theme.toggle": translations["theme.toggle"],
+              "theme.selectTheme": translations["theme.selectTheme"],
+            }}
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 {translations["site.title"]}. {translations["footer.rights"]}</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background-color: var(--color-primary-dark);
+    color: var(--color-white);
+    padding-top: var(--space-2xl);
+    padding-bottom: var(--space-lg);
+    border-top: 1px solid var(--footer-border-light);
+    margin-top: auto;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: var(--space-2xl);
+    margin-bottom: var(--space-xl);
+  }
+
+  .footer-logo {
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    color: var(--color-white);
+    display: inline-block;
+    margin-bottom: var(--space-xs);
+  }
+
+  .footer-tagline {
+    color: var(--footer-text-light);
+    font-size: var(--font-size-base);
+    max-width: 320px;
+    line-height: 1.5;
+  }
+
+  .footer-heading {
+    color: var(--color-white);
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    margin-bottom: var(--space-md);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .footer-nav {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .footer-link {
+    color: var(--footer-text-light);
+    text-decoration: none;
+    font-size: var(--font-size-sm);
+    transition: color 0.2s ease;
+  }
+
+  .footer-link:hover {
+    color: var(--color-accent);
+  }
+
+  .footer-controls {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    align-items: flex-start;
+  }
+
+  .footer-bottom {
+    border-top: 1px solid var(--footer-border-light);
+    padding-top: var(--space-md);
+    text-align: center;
+  }
+
+  .footer-bottom p {
+    color: var(--footer-text-muted);
+    font-size: var(--font-size-xs);
+  }
+
+  @media (max-width: 768px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-xl);
+    }
+  }
+</style>

@@ -1,0 +1,203 @@
+---
+import "../styles/global.css";
+import ToastContainer from "../components/ToastContainer.astro";
+
+export interface Props {
+  title: string;
+  lang?: string;
+  description?: string;
+}
+
+const {
+  title,
+  lang = "es",
+  description = "WebApp Starter - Plantilla base para desarrollo rápido de aplicaciones web",
+} = Astro.props;
+
+const loadingText = lang === "en" ? "Loading..." : lang === "ca" ? "Carregant..." : "Cargando...";
+const loadingAria = lang === "en" ? "Loading application" : lang === "ca" ? "Carregant aplicació" : "Cargando aplicación";
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+
+    <!-- Theme initialization script to prevent FOUC (supports 4 themes) -->
+    <script is:inline>
+      (function () {
+        const THEME_KEY = "webapp-theme";
+        const VALID_THEMES = ["light", "dark", "golden", "golden-dark"];
+        const stored = localStorage.getItem(THEME_KEY);
+        if (stored && VALID_THEMES.includes(stored)) {
+          document.documentElement.setAttribute("data-theme", stored);
+        } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+          document.documentElement.setAttribute("data-theme", "dark");
+        } else {
+          document.documentElement.setAttribute("data-theme", "light");
+        }
+      })();
+    </script>
+    <!-- DevTools mode: auto-activate on localhost, or via ?devtools flag -->
+    <script is:inline>
+      (function () {
+        var D = "__devtools_enabled";
+        var isLocalhost =
+          window.location.hostname === "localhost" ||
+          window.location.hostname === "127.0.0.1" ||
+          window.location.hostname === "[::1]";
+        var hasFlag = window.location.search.includes("devtools") || window.location.search.includes("dev");
+        if (isLocalhost || hasFlag) {
+          document.cookie = D + "=1;path=/;max-age=" + 365 * 24 * 60 * 60 + ";SameSite=Lax";
+        }
+        var m = document.cookie.match(new RegExp("(?:^|;\\s*)" + D + "=([^;]+)"));
+        if (m && m[1] === "1") {
+          var ls = document.createElement("script");
+          ls.src = "/devtools-logger.js";
+          document.head.appendChild(ls);
+          var fs = document.createElement("script");
+          fs.src = "/devtools-floating.js";
+          document.head.appendChild(fs);
+        }
+      })();
+    </script>
+
+    <!-- Inline loading screen styles (paints before Astro JS) -->
+    <style is:inline>
+      #app-loading-overlay {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--color-bg, #f8faf9);
+        transition:
+          opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+          visibility 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      #app-loading-overlay.is-hidden {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+      }
+      .loader-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        animation: loaderFadeIn 0.4s ease-out both;
+      }
+      @keyframes loaderFadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(12px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .loader-brand {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .loader-badge {
+        display: inline-block;
+        padding: 0.35rem 1rem;
+        background: rgba(45, 106, 79, 0.1);
+        color: #40916c;
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        border-radius: 9999px;
+      }
+      .loader-title {
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: #1a1a2e;
+        letter-spacing: -0.02em;
+      }
+      .loader-spinner {
+        width: 44px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .spinner-ring {
+        width: 36px;
+        height: 36px;
+        border: 3px solid rgba(0, 0, 0, 0.08);
+        border-top-color: #40916c;
+        border-radius: 50%;
+        animation: spin 0.7s linear infinite;
+      }
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      .loader-text {
+        font-size: 0.875rem;
+        color: #8c8c9e;
+        font-weight: 500;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ============================================================
+    Loading Screen — inline HTML for instant paint.
+    Hidden when app:ready custom event fires or after DOMContentLoaded.
+    ============================================================ -->
+    <!-- Loading Screen -->
+    <div id="app-loading-overlay" role="status" aria-label={loadingAria}>
+      <div class="loader-content">
+        <div class="loader-brand">
+          <span class="loader-badge">🚀 WebApp</span>
+          <span class="loader-title">Starter Template</span>
+        </div>
+        <div class="loader-spinner">
+          <div class="spinner-ring"></div>
+        </div>
+        <p class="loader-text">{loadingText}</p>
+      </div>
+    </div>
+
+    <!-- Global Toast Container for reactive notifications -->
+    <ToastContainer />
+
+    <slot />
+
+    <!-- Loading screen controller (inline, fires before any module JS) -->
+    <script is:inline>
+      (function () {
+        var overlay = document.getElementById("app-loading-overlay");
+        function hide() {
+          if (overlay && !overlay.classList.contains("is-hidden")) {
+            overlay.classList.add("is-hidden");
+          }
+        }
+        // Listen for custom readiness event from authStore or main app
+        window.addEventListener("app:ready", hide, { once: true });
+        // Fallback: hide after DOM is fully ready + small buffer
+        window.addEventListener(
+          "DOMContentLoaded",
+          function () {
+            setTimeout(hide, 600);
+          },
+          { once: true },
+        );
+      })();
+    </script>
+  </body>
+</html>

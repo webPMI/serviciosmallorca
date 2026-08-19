@@ -1,0 +1,151 @@
+---
+// Pure branded loading screen — shows instantly, hides when app signals ready.
+// Uses CSS variables from global.css so it respects the active theme.
+
+export interface Props {
+  lang?: string;
+}
+
+const { lang = "es" } = Astro.props;
+const loadingText = lang === "en" ? "Loading..." : lang === "ca" ? "Carregant..." : "Cargando...";
+const loadingAria = lang === "en" ? "Loading application" : lang === "ca" ? "Carregant aplicació" : "Cargando aplicación";
+---
+
+<div id="app-loading-overlay" role="status" aria-label={loadingAria}>
+  <div class="loader-content">
+    <div class="loader-brand">
+      <span class="loader-badge">🚀 WebApp</span>
+      <span class="loader-title">Starter Template</span>
+    </div>
+    <div class="loader-spinner">
+      <div class="spinner-ring"></div>
+    </div>
+    <p class="loader-text">{loadingText}</p>
+  </div>
+</div>
+
+<style>
+  /* ------------------------------------------------------------------
+     Loading Screen Overlay
+     Full-screen branded overlay with CSS-only spinner.
+     Respects current theme via inherited data-theme on <html>.
+     ------------------------------------------------------------------ */
+  #app-loading-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-bg);
+    transition:
+      opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+      visibility 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  #app-loading-overlay.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .loader-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-lg);
+    animation: loaderFadeIn 0.4s var(--ease-bounce) both;
+  }
+
+  @keyframes loaderFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .loader-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-sm);
+  }
+
+  .loader-badge {
+    display: inline-block;
+    padding: 0.35rem 1rem;
+    background: var(--color-primary-bg);
+    color: var(--color-primary-light);
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    border-radius: var(--border-radius-full);
+  }
+
+  .loader-title {
+    font-size: var(--font-size-2xl);
+    font-weight: 800;
+    color: var(--color-text);
+    letter-spacing: -0.02em;
+  }
+
+  /* CSS-only spinner ring */
+  .loader-spinner {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .spinner-ring {
+    width: 36px;
+    height: 36px;
+    border: 3px solid var(--color-surface-border);
+    border-top-color: var(--color-primary);
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+  }
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .loader-text {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+    font-weight: 500;
+  }
+</style>
+
+<script>
+  // Hide the loading overlay when the app signals readiness.
+  // Falls back to hiding after DOMContentLoaded + a short delay
+  // if the custom event never fires.
+  const overlay = document.getElementById("app-loading-overlay");
+
+  function hideLoader() {
+    if (overlay && !overlay.classList.contains("is-hidden")) {
+      overlay.classList.add("is-hidden");
+    }
+  }
+
+  // Listen for custom readiness event from authStore or main app
+  window.addEventListener("app:ready", hideLoader, { once: true });
+
+  // Fallback: hide after DOM is fully parsed + small buffer
+  window.addEventListener(
+    "DOMContentLoaded",
+    () => {
+      setTimeout(hideLoader, 600);
+    },
+    { once: true },
+  );
+</script>

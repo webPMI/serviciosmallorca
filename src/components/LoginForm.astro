@@ -1,0 +1,485 @@
+---
+import type { Translations } from "../i18n";
+
+interface Props {
+  translations: Translations;
+  registerUrl: string;
+}
+
+const { translations, registerUrl } = Astro.props;
+---
+
+<div class="auth-container">
+  <div class="auth-card card-glass fade-in">
+    <div class="auth-header">
+      <div class="auth-brand-badge">🚀 WebApp Starter</div>
+      <h1 class="auth-title">{translations["auth.login.title"]}</h1>
+      <p class="auth-subtitle">{translations["auth.login.subtitle"]}</p>
+    </div>
+
+    <div id="general-error" class="alert-error" style="display: none;"></div>
+
+    <form
+      class="auth-form"
+      id="login-form"
+      data-error-email={translations["auth.emailRequired"]}
+      data-error-password={translations["auth.passwordRequired"]}
+      data-error-invalid-credential={translations["auth.errors.invalidCredential"]}
+      data-error-too-many={translations["auth.errors.tooManyRequests"]}
+      data-error-login={translations["auth.errors.loginError"]}
+    >
+      <div class="form-group">
+        <label for="email" class="form-label">{translations["auth.login.email"]}</label>
+        <div class="input-wrapper">
+          <span class="input-icon">📧</span>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            class="form-input"
+            required
+            placeholder="tu@email.com"
+            autocomplete="email"
+          />
+        </div>
+        <span class="form-error" id="email-error"></span>
+      </div>
+
+      <div class="form-group">
+        <div class="label-row">
+          <label for="password" class="form-label">{translations["auth.login.password"]}</label>
+          <a href={`${registerUrl.replace("register", "forgot-password")}`} class="forgot-password"
+            >{translations["auth.login.forgotPassword"]}</a
+          >
+        </div>
+        <div class="input-wrapper">
+          <span class="input-icon">🔒</span>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            class="form-input"
+            required
+            placeholder="••••••••"
+            autocomplete="current-password"
+          />
+          <button
+            type="button"
+            id="toggle-password"
+            class="toggle-password-btn"
+            aria-label={translations["auth.togglePassword.ariaLabel"]}
+          >
+            👁️
+          </button>
+        </div>
+        <span class="form-error" id="password-error"></span>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" id="submit-btn" class="btn btn-primary btn-block">
+          <span class="btn-text">{translations["auth.login.submit"]}</span>
+          <span class="btn-loader" style="display: none;">⌛</span>
+        </button>
+      </div>
+
+      <div class="auth-divider">
+        <span>{translations["auth.divider.orContinueWith"]}</span>
+      </div>
+
+      <button type="button" id="google-login-btn" class="btn btn-google btn-block">
+        <svg width="20" height="20" viewBox="0 0 24 24">
+          <path
+            fill="#4285F4"
+            d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+          ></path>
+          <path
+            fill="#34A853"
+            d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+          ></path>
+          <path
+            fill="#FBBC05"
+            d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
+          ></path>
+          <path
+            fill="#EA4335"
+            d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+          ></path>
+        </svg>
+        <span>{translations["auth.google"] || "Continuar con Google"}</span>
+      </button>
+
+      <div class="auth-footer">
+        <a href={registerUrl} class="auth-link">
+          {translations["auth.login.noAccount"]}
+          <strong>{translations["auth.login.registerLink"]}</strong>
+        </a>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+  import { signInWithPopup, signInWithEmailAndPassword } from "firebase/auth";
+  import { auth, googleProvider, db } from "../lib/firebase";
+  import { createUserProfile, getUserProfile } from "../lib/userProfile";
+
+  const form = document.getElementById("login-form") as HTMLFormElement | null;
+  const emailInput = document.getElementById("email") as HTMLInputElement | null;
+  const passwordInput = document.getElementById("password") as HTMLInputElement | null;
+  const emailError = document.getElementById("email-error");
+  const passwordError = document.getElementById("password-error");
+  const generalError = document.getElementById("general-error");
+  const googleBtn = document.getElementById("google-login-btn");
+  const togglePasswordBtn = document.getElementById("toggle-password");
+  const submitBtn = document.getElementById("submit-btn") as HTMLButtonElement | null;
+
+  // Toggle Show/Hide Password
+  if (togglePasswordBtn && passwordInput) {
+    togglePasswordBtn.addEventListener("click", () => {
+      const isPassword = passwordInput.type === "password";
+      passwordInput.type = isPassword ? "text" : "password";
+      togglePasswordBtn.textContent = isPassword ? "🙈" : "👁️";
+    });
+  }
+
+  // Email/Password Login with Firebase
+  if (form && emailInput && passwordInput && emailError && passwordError) {
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      emailError.textContent = "";
+      passwordError.textContent = "";
+      if (generalError) {
+        generalError.style.display = "none";
+        generalError.textContent = "";
+      }
+
+      let hasError = false;
+
+      if (!emailInput.value.trim()) {
+        emailError.textContent = form.dataset.errorEmail || "El correo electrónico es requerido";
+        hasError = true;
+      }
+
+      if (!passwordInput.value) {
+        passwordError.textContent = form.dataset.errorPassword || "La contraseña es requerida";
+        hasError = true;
+      }
+
+      if (hasError) return;
+
+      // State loader
+      if (submitBtn) submitBtn.disabled = true;
+
+      try {
+        await signInWithEmailAndPassword(auth, emailInput.value.trim(), passwordInput.value);
+        sessionStorage.setItem("fromAuth", emailInput.value.trim());
+        window.location.href = "./dashboard";
+      } catch (error: any) {
+        console.error("Error al iniciar sesión:", error);
+        let message = form.dataset.errorLogin || "Ocurrió un error al iniciar sesión. Inténtalo de nuevo.";
+        if (
+          error.code === "auth/invalid-credential" ||
+          error.code === "auth/user-not-found" ||
+          error.code === "auth/wrong-password"
+        ) {
+          message = form.dataset.errorInvalidCredential || "Correo electrónico o contraseña incorrectos.";
+        } else if (error.code === "auth/too-many-requests") {
+          message = form.dataset.errorTooMany || "Demasiados intentos fallidos. Por favor espera unos minutos.";
+        }
+        if (generalError) {
+          generalError.textContent = message;
+          generalError.style.display = "block";
+        }
+      } finally {
+        if (submitBtn) submitBtn.disabled = false;
+      }
+    });
+  }
+
+  // Google Sign-In (creates Firestore profile for new users)
+  if (googleBtn) {
+    googleBtn.addEventListener("click", async () => {
+      try {
+        const result = await signInWithPopup(auth, googleProvider);
+        const user = result.user;
+
+        // Ensure Firestore profile exists (first-time Google sign-in)
+        const existing = await getUserProfile(db, user.uid);
+        if (!existing) {
+          await createUserProfile(db, {
+            uid: user.uid,
+            email: user.email || "",
+            displayName: user.displayName || "Usuario",
+          });
+        }
+
+        window.location.href = "./dashboard";
+      } catch (error: any) {
+        console.error("Error en autenticación con Google:", error);
+        if (generalError) {
+          generalError.textContent = `Error con Google Auth: ${error.message || error}`;
+          generalError.style.display = "block";
+        }
+      }
+    });
+  }
+</script>
+
+<style>
+  .auth-container {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-xl) var(--space-md);
+  }
+
+  .auth-card {
+    width: 100%;
+    max-width: 440px;
+    padding: var(--space-2xl);
+    border-radius: calc(var(--border-radius) * 1.5);
+  }
+
+  .auth-header {
+    text-align: center;
+    margin-bottom: var(--space-xl);
+  }
+
+  .auth-brand-badge {
+    display: inline-block;
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    padding: 0.25rem 0.75rem;
+    background: var(--color-primary-bg);
+    color: var(--color-primary);
+    border-radius: 20px;
+    margin-bottom: var(--space-sm);
+  }
+
+  .auth-title {
+    font-size: var(--font-size-3xl);
+    margin-bottom: var(--space-xs);
+    color: var(--color-text);
+    font-weight: 700;
+  }
+
+  .auth-subtitle {
+    color: var(--color-text-light);
+    font-size: var(--font-size-base);
+  }
+
+  .alert-error {
+    background-color: var(--color-danger-bg);
+    border: 1px solid var(--color-danger-border);
+    color: var(--color-danger-light);
+    padding: 0.75rem 1rem;
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--space-md);
+    text-align: center;
+  }
+
+  .auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .label-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .form-label {
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--color-text);
+  }
+
+  .forgot-password {
+    font-size: var(--font-size-xs);
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .forgot-password:hover {
+    text-decoration: underline;
+  }
+
+  .input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .input-icon {
+    position: absolute;
+    left: 0.85rem;
+    font-size: 1.1rem;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .form-input {
+    width: 100%;
+    padding: 0.8rem 1rem 0.8rem 2.8rem;
+    border: 2px solid var(--color-surface-border);
+    border-radius: var(--border-radius);
+    background-color: var(--color-white);
+    color: var(--color-text);
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    transition: all 0.2s ease-in-out;
+  }
+
+  .form-input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px var(--color-primary-ring);
+  }
+
+  .toggle-password-btn {
+    position: absolute;
+    right: 0.75rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    padding: 0.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .form-error {
+    color: var(--color-danger-light);
+    font-size: var(--font-size-xs);
+    font-weight: 500;
+    min-height: 1rem;
+  }
+
+  .btn-block {
+    width: 100%;
+    padding: 0.85rem;
+    font-size: var(--font-size-base);
+    font-weight: 600;
+  }
+
+  .auth-divider {
+    display: flex;
+    align-items: center;
+    margin: var(--space-md) 0;
+  }
+
+  .auth-divider::before,
+  .auth-divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background-color: var(--color-surface-border);
+  }
+
+  .auth-divider span {
+    padding: 0 var(--space-md);
+    color: var(--color-text-light);
+    font-size: var(--font-size-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .btn-google {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    background-color: var(--color-white);
+    color: var(--color-text);
+    border: 2px solid var(--color-surface-border);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+    box-shadow: var(--shadow);
+  }
+
+  .btn-google:hover {
+    background-color: var(--color-bg);
+    border-color: var(--color-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--shadow-overlay-sm);
+  }
+
+  .btn-google:active {
+    transform: translateY(0);
+  }
+
+  .auth-footer {
+    text-align: center;
+    margin-top: var(--space-md);
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--color-surface-border);
+  }
+
+  .auth-link {
+    color: var(--color-text-light);
+    font-size: var(--font-size-sm);
+    text-decoration: none;
+  }
+
+  .auth-link strong {
+    color: var(--color-primary);
+    margin-left: 0.25rem;
+  }
+
+  .auth-link:hover strong {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 480px) {
+    .auth-card {
+      padding: var(--space-lg);
+      border-radius: var(--border-radius);
+    }
+
+    .auth-title {
+      font-size: var(--font-size-2xl);
+    }
+
+    .auth-subtitle {
+      font-size: var(--font-size-sm);
+    }
+
+    .form-input {
+      padding: 0.7rem 0.9rem 0.7rem 2.5rem;
+      font-size: var(--font-size-sm);
+    }
+
+    .input-icon {
+      left: 0.65rem;
+      font-size: 1rem;
+    }
+
+    .btn-block {
+      padding: 0.75rem;
+      font-size: var(--font-size-sm);
+    }
+
+    .label-row {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--space-xs);
+    }
+  }
+</style>
