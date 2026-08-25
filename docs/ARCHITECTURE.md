@@ -4,11 +4,11 @@
 
 | Capa                   | Tecnología                        | Versión / Tipo                                   |
 | ---------------------- | --------------------------------- | ------------------------------------------------ |
-| **Framework Web**      | Astro (SSR)                       | ^7.1.3 (Node adapter standalone)                 |
-| **Runtime**            | Node.js                           | >=22.12.0                                        |
+| **Framework Web**      | Astro (SSR)                       | ^7.1.3 (@astrojs/cloudflare Edge adapter)        |
+| **Runtime / Edge**     | Cloudflare Pages                  | nodejs_compat (Ultra baja latencia)              |
 | **Autenticación & DB** | Firebase Auth + Cloud Firestore   | ^12.16.0 (`serviciosmallorca`)                   |
 | **Monetización**       | Google AdSense                    | `ca-pub-1988580228487420` (`ads.txt` verificado) |
-| **Testing**            | Vitest                            | ^3.0.7 (57+ unit tests)                          |
+| **Testing**            | Vitest                            | ^3.0.7 (70+ unit tests)                          |
 | **Tipado**             | TypeScript                        | ^6.0.3 (Strict mode)                             |
 | **Estilos**            | CSS Variables + Custom Properties | Nativo (Dark, Light, Golden, Golden-Dark)        |
 
@@ -18,6 +18,7 @@
 
 ```
 servicios-mallorca/
+├── wrangler.json               # Configuración de Cloudflare Pages
 ├── public/
 │   ├── ads.txt                 # Archivo de autorización Google AdSense
 │   ├── devtools.html           # Panel DevTools standalone
@@ -25,15 +26,19 @@ servicios-mallorca/
 │   └── devtools-logger.js      # Logger circular de 500 entradas
 ├── src/
 │   ├── data/                   # Capa de datos estáticos y repositorios
-│   │   ├── categories.ts       # 6 Categorías de servicios en Mallorca
+│   │   ├── categories.ts       # Categorías de servicios en Mallorca
 │   │   ├── zones.ts            # 7 Zonas geográficas insulares
-│   │   ├── services.ts         # Catálogo tipado de negocios auditados
-│   │   └── posts.ts            # Artículos y guías del blog
+│   │   ├── tags.ts             # Catálogo cerrado de tags ortogonales
+│   │   ├── posts.ts            # Artículos y guías del blog
+│   │   └── services/           # 🏛️ Catálogo Modular (1 archivo por negocio)
+│   │       ├── types.ts        # Modelos TypeScript compartidos
+│   │       ├── index.ts        # Agregador central global
+│   │       └── arte-tatuajes/  # 📂 Sector Arte, Tatuajes & Piercing
+│   │           ├── kuyen-art-tattoo.ts
+│   │           ├── box-tattoo-piercing.ts
+│   │           ├── urban-soul-tattoo.ts
+│   │           └── index.ts
 │   ├── i18n/                   # Internacionalización (ES, EN, CA)
-│   │   ├── index.ts            # Helper de carga y resolución de locale
-│   │   ├── es.json             # Español
-│   │   ├── en.json             # Inglés
-│   │   └── ca.json             # Catalán
 │   ├── layouts/
 │   │   └── BaseLayout.astro    # Layout con AdSense, temas, metas y SEO
 │   ├── pages/
@@ -46,29 +51,27 @@ servicios-mallorca/
 │   │       ├── profile.astro           # Perfil de usuario y avatar
 │   │       ├── servicios/
 │   │       │   ├── index.astro         # Directorio con filtros por categoría y zona
-│   │       │   ├── [slug].astro        # Ficha individual con modales Claim / Delete
+│   │       │   ├── [slug].astro        # Ficha individual (Multi-Maps, Galería, Tienda, FAQs)
 │   │       │   └── nuevo.astro         # Alta y propuesta de nuevo negocio
 │   │       └── blog/
-│   │           ├── index.astro         # Catálogo de artículos del blog
-│   │           └── [slug].astro        # Lectura de artículo con AdSense integrado
 │   ├── components/
-│   │   ├── AdSenseSlot.astro       # Componente de anuncios sin CLS
-│   │   ├── ServiceCard.astro       # Tarjeta de servicio
-│   │   ├── BlogCard.astro          # Tarjeta de artículo
-│   │   ├── DashboardAdmin.astro    # Cola de moderación de claims, altas y bajas
-│   │   ├── DashboardManager.astro  # Gestión de negocios verificados
-│   │   ├── DashboardUser.astro     # Dashboard de cliente y solicitudes
-│   │   └── Navbar.astro            # Navegación reactiva según rol
+│   │   ├── MapsRatingBox.astro         # Agregador de reputación multi-mapas
+│   │   ├── VisualGalleryShowcase.astro # Galería mosaico & Visor Lightbox
+│   │   ├── OnlineStoreShowcase.astro   # Tienda online & Productos oficiales
+│   │   ├── SocialFeedSection.astro     # Canales y feed de publicaciones reales
+│   │   ├── AdSenseSlot.astro           # Componente de anuncios sin CLS
+│   │   ├── ServiceCard.astro           # Tarjeta de servicio
+│   │   └── Navbar.astro                # Navegación reactiva
 │   └── lib/
-│       ├── firebase.ts             # Cliente oficial de Firebase
-│       ├── serviceActions.ts       # Operaciones Firestore (Claims, Altas, Bajas)
-│       ├── userProfile.ts          # Sincronización de perfiles en Firestore
-│       ├── validateServices.ts     # Validador de integridad y anti-duplicados
-│       └── authStore.ts            # Store reactivo de autenticación
+│       ├── geoUtils.ts                 # 📍 Motor de Proximidad Haversine (GPS)
+│       ├── firebase.ts                 # Cliente oficial de Firebase
+│       ├── serviceActions.ts           # Operaciones Firestore (Claims, Altas, Bajas)
+│       ├── userProfile.ts              # Sincronización de perfiles en Firestore
+│       └── authStore.ts                # Store reactivo de autenticación
 ├── scripts/
-│   ├── audit-services.ts       # Script de health check de webs y frescura
-│   └── add-service.ts          # Asistente de ingesta y curación interactivo
-└── firestore.rules             # Reglas de seguridad de Firestore en producción
+│   ├── business-intelligence-lookup.ts # 🔎 Minería y scraping para agentes
+│   ├── validate-taxonomy.ts            # Validador de integridad taxonómica
+│   └── audit-services.ts               # Health check de webs y frescura
 ```
 
 ---

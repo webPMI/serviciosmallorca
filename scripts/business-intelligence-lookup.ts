@@ -248,8 +248,28 @@ async function generateIntelligenceReport(query: string, websiteUrl?: string): P
     scrapedData = await scrapeWebsiteData(websiteUrl);
   }
 
-  // Detección de Indexación en Directorios Oficiales
+  // Detección de Indexación en Directorios Oficiales & Guías Gastronómicas
   const directoryIndexingDorks = [
+    {
+      directoryName: "Guía Michelin España (Estrellas / Bib Gourmand)",
+      searchUrl: `https://www.google.com/search?q=site:guide.michelin.com+${encodedQuery}+mallorca`,
+    },
+    {
+      directoryName: "Guía Repsol (Soles & Soletes)",
+      searchUrl: `https://www.google.com/search?q=site:guiarepsol.com+${encodedQuery}+mallorca`,
+    },
+    {
+      directoryName: "TheFork / ElTenedor Reservas",
+      searchUrl: `https://www.google.com/search?q=site:thefork.es+${encodedQuery}+mallorca`,
+    },
+    {
+      directoryName: "TripAdvisor Mallorca",
+      searchUrl: `https://www.google.com/search?q=site:tripadvisor.es+${encodedQuery}+mallorca`,
+    },
+    {
+      directoryName: "ABC Mallorca Directorio & Gastronomía",
+      searchUrl: `https://www.google.com/search?q=site:abc-mallorca.com+${encodedQuery}`,
+    },
     {
       directoryName: "Páginas Amarillas Baleares",
       searchUrl: `https://www.google.com/search?q=site:paginasamarillas.es+${encodedQuery}+mallorca`,
@@ -257,14 +277,6 @@ async function generateIntelligenceReport(query: string, websiteUrl?: string): P
     {
       directoryName: "Cylex España Mallorca",
       searchUrl: `https://www.google.com/search?q=site:cylex.es+${encodedQuery}+mallorca`,
-    },
-    {
-      directoryName: "ABC Mallorca Directorio",
-      searchUrl: `https://www.google.com/search?q=site:abc-mallorca.com+${encodedQuery}`,
-    },
-    {
-      directoryName: "TripAdvisor Mallorca",
-      searchUrl: `https://www.google.com/search?q=site:tripadvisor.es+${encodedQuery}+mallorca`,
     },
     {
       directoryName: "Trustpilot España",
