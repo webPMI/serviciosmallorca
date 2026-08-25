@@ -13,6 +13,9 @@ import { SPAS_SERVICES } from "./spas-bienestar/index.ts";
 import { REFORMAS_SERVICES } from "./reformas-construccion/index.ts";
 import { PROFESIONALES_SERVICES } from "./servicios-profesionales/index.ts";
 import { INMOBILIARIA_SERVICES } from "./inmobiliaria-villas/index.ts";
+import { TRANSPORTE_SERVICES } from "./motor-transporte/index.ts";
+import { JARDINERIA_SERVICES } from "./jardineria-piscinas/index.ts";
+import { SEGURIDAD_SERVICES } from "./tecnologia-seguridad/index.ts";
 
 export * from "./types.ts";
 export { TATTOO_SERVICES } from "./arte-tatuajes/index.ts";
@@ -22,6 +25,9 @@ export { SPAS_SERVICES } from "./spas-bienestar/index.ts";
 export { REFORMAS_SERVICES } from "./reformas-construccion/index.ts";
 export { PROFESIONALES_SERVICES } from "./servicios-profesionales/index.ts";
 export { INMOBILIARIA_SERVICES } from "./inmobiliaria-villas/index.ts";
+export { TRANSPORTE_SERVICES } from "./motor-transporte/index.ts";
+export { JARDINERIA_SERVICES } from "./jardineria-piscinas/index.ts";
+export { SEGURIDAD_SERVICES } from "./tecnologia-seguridad/index.ts";
 
 /**
  * Catálogo Unificado Global (Agregación de todos los módulos sectoriales).
@@ -34,6 +40,9 @@ export const SERVICES: ServiceItem[] = [
   ...REFORMAS_SERVICES,
   ...PROFESIONALES_SERVICES,
   ...INMOBILIARIA_SERVICES,
+  ...TRANSPORTE_SERVICES,
+  ...JARDINERIA_SERVICES,
+  ...SEGURIDAD_SERVICES,
 ].filter((s): s is ServiceItem => Boolean(s && s.id && s.slug));
 
 /**

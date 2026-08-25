@@ -4,8 +4,9 @@ import { caNEduardo } from "./ca-n-eduardo.ts";
 import { adrianQuetglas } from "./adrian-quetglas.ts";
 import { caNaToneta } from "./ca-na-toneta.ts";
 import { vandalPalma } from "./vandal-palma.ts";
+import { elCaminoPalma } from "./el-camino.ts";
 
-export { dinsSantiTaura, caNEduardo, adrianQuetglas, caNaToneta, vandalPalma };
+export { dinsSantiTaura, caNEduardo, adrianQuetglas, caNaToneta, vandalPalma, elCaminoPalma };
 
 /**
  * Catálogo Sectorial: Hostelería, Gastronomía & Restaurantes de Alta Cocina.
@@ -17,4 +18,5 @@ export const RESTAURANT_SERVICES: ServiceItem[] = [
   adrianQuetglas,
   caNaToneta,
   vandalPalma,
+  elCaminoPalma,
 ];
