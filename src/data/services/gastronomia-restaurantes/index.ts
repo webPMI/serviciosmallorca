@@ -39,6 +39,7 @@ import { carniceriaCanXarrier } from "./carniceria-can-xarrier-algaida.ts";
 import { carniceriaCanXim } from "./carniceria-can-xim-alaro.ts";
 import { cellerEsCellerPetra } from "./celler-es-celler-petra.ts";
 import { fornCanPacoCampos } from "./forn-can-paco-campos.ts";
+import { restauranteCanPedro } from "./restaurante-can-pedro-genova.ts";
 
 export {
   dinsSantiTaura,
@@ -81,6 +82,7 @@ export {
   carniceriaCanXim,
   cellerEsCellerPetra,
   fornCanPacoCampos,
+  restauranteCanPedro,
 };
 
 /**
@@ -128,4 +130,5 @@ export const RESTAURANT_SERVICES: ServiceItem[] = [
   carniceriaCanXim,
   cellerEsCellerPetra,
   fornCanPacoCampos,
+  restauranteCanPedro,
 ];

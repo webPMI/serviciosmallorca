@@ -6,12 +6,12 @@
 
 | Segmento de Calidad                             | Total Negocios | Estado en Plataforma                               |
 | :---------------------------------------------- | :------------: | :------------------------------------------------- |
-| ⭐⭐⭐⭐⭐ **5 Estrellas (4.8 - 5.0)**          |     **91**     | 🏆 Excelencia & Top Insular (Público Destacado)    |
-| ⭐⭐⭐⭐ **4 Estrellas (4.0 - 4.7)**            |     **73**     | ⭐ Notable / Recomendado (Público General)         |
+| ⭐⭐⭐⭐⭐ **5 Estrellas (4.8 - 5.0)**          |     **93**     | 🏆 Excelencia & Top Insular (Público Destacado)    |
+| ⭐⭐⭐⭐ **4 Estrellas (4.0 - 4.7)**            |     **74**     | ⭐ Notable / Recomendado (Público General)         |
 | ✨ **Nuevas Aperturas (0 reviews / Recientes)** |     **3**      | 🆕 Insignia 'Nueva Apertura' (Público Destacado)   |
 | ⭐⭐⭐ **3 Estrellas (3.0 - 3.9)**              |     **1**      | 🔹 Directorio Estándar (Público sin insignia)      |
 | ⚠️ **Triaje Interno (< 3.0 / Incompletos)**     |     **0**      | 🔒 Solo Administración (No se publica lista negra) |
-| 📦 **TOTAL NEGOCIOS EN RADAR**                  |    **168**     | **124 Indexados** · **44 Pendientes**              |
+| 📦 **TOTAL NEGOCIOS EN RADAR**                  |    **171**     | **127 Indexados** · **44 Pendientes**              |
 
 ---
 
@@ -43,6 +43,7 @@
 | ✅ Indexado |  **4.9**  |   210   | **71.4 pts** | **Clínica Veterinaria Santa Maria (2005)**                    | Salud & Bienestar            | Es Raiguer & Es Pla (Centro) |                          [Web](https://veterinariasantamaria.com)                           |
 | ✅ Indexado |  **4.9**  |   210   | **71.4 pts** | **Clínica Veterinaria Sineu (2006)**                          | Salud & Bienestar            | Es Raiguer & Es Pla (Centro) |                             [Web](https://veterinariasineu.com)                             |
 | ✅ Indexado |  **4.9**  |   190   | **71.2 pts** | **Bodega Son Prim (Sencelles - 2003)**                        | Gastronomía & Chefs Privados | Es Raiguer & Es Pla (Centro) |                                 [Web](https://sonprim.com)                                  |
+| ✅ Indexado |  **4.9**  |   180   | **71.1 pts** | **Clínica Veterinaria Porreres (2005)**                       | Salud & Bienestar            | Es Raiguer & Es Pla (Centro) |                           [Web](https://veterinariaporreres.com)                            |
 | ✅ Indexado |  **4.8**  |  3200   | **97.8 pts** | **Rafa Nadal Academy & Sports Centre**                        | Salud & Bienestar            | Manacor & Llevant (Este)     |                           [Web](https://www.rafanadalacademy.com)                           |
 | ✅ Indexado |  **4.8**  |  1420   | **90.4 pts** | **Restaurante El Camino Palma**                               | Gastronomía & Chefs Privados | Palma & Bahía                |                             [Web](https://www.elcaminopalma.es)                             |
 | ✅ Indexado |  **4.8**  |   950   | **84.7 pts** | **Bodega Ribas (Consell - 1711)**                             | Gastronomía & Chefs Privados | Es Raiguer & Es Pla (Centro) |                               [Web](https://bodegaribas.com)                                |
@@ -105,6 +106,7 @@
 | ✅ Indexado |  **4.8**  |   140   | **69.4 pts** | **Carpintería & Ebanistería Alaró (1975)**                    | Reformas & Construcción      | Es Raiguer & Es Pla (Centro) |                             [Web](https://carpinteriaalaro.com)                             |
 | ✅ Indexado |  **4.8**  |   145   | **69.4 pts** | **Clima & Frío Balear (Aire Acondicionado & Aerotermia)**     | Reformas & Construcción      | Palma & Bahía                |                             [Web](https://climafriobalear.com)                              |
 | ✅ Indexado |  **4.8**  |   140   | **69.4 pts** | **Jardinería & Paisajismo Serra Mallorca**                    | Reformas & Construcción      | Palma & Bahía                |                             [Web](https://jardineriaserra.com)                              |
+| ✅ Indexado |  **4.8**  |   140   | **69.4 pts** | **Mantenimiento Piscinas & Spas Ponent (Andratx - 2002)**     | Jardinería & Piscinas        | Calvià & Andratx (Suroeste)  |                          [Web](https://piscinasponentandratx.com)                           |
 | ✅ Indexado |  **4.8**  |   130   | **69.2 pts** | **Fontanería & Climatización Pomar (Inca - 1985)**            | Reformas & Construcción      | Es Raiguer & Es Pla (Centro) |                            [Web](https://instalacionespomar.com)                            |
 | ✅ Indexado |  **4.8**  |   120   | **69.1 pts** | **Electricidad & Energía Solar Artà (1998)**                  | Seguridad & Domótica         | Manacor & Llevant (Este)     |                                [Web](https://solararta.com)                                 |
 | ✅ Indexado |  **4.8**  |   120   | **69.1 pts** | **Mantenimiento & Varadero Portitxol Services**               | Náutica & Charters           | Palma & Bahía                |                            [Web](https://varaderoportitxol.com)                             |
@@ -132,6 +134,7 @@
 | ✅ Indexado  |  **4.7**  |   310   | **70.5 pts** | **Garaje Auto-Pla Inca (Taller Mecánico)**        | Transporte VIP & Chófer      | Es Raiguer & Es Pla (Centro) |      [Web](https://autopla-inca.com)      |
 | ✅ Indexado  |  **4.6**  |  2150   | **95.8 pts** | **Clínica Juaneda Palma (1917)**                  | Salud & Bienestar            | Palma & Bahía                |         [Web](https://juaneda.es)         |
 | ✅ Indexado  |  **4.6**  |  2100   | **95.8 pts** | **Forn des Teatre (Palma - 1916)**                | Gastronomía & Chefs Privados | Palma & Bahía                |     [Web](https://forndesteatre.com)      |
+| ✅ Indexado  |  **4.6**  |  3800   | **95.8 pts** | **Restaurante Can Pedro (Gènova - Palma - 1976)** | Gastronomía & Chefs Privados | Palma & Bahía                |        [Web](https://canpedro.es)         |
 | ✅ Indexado  |  **4.6**  |  1980   | **95.6 pts** | **Forn Fondo Palma (1911)**                       | Gastronomía & Chefs Privados | Palma & Bahía                |       [Web](https://fornfondo.com)        |
 | ✅ Indexado  |  **4.6**  |  1650   | **91.4 pts** | **Club Nàutic Portitxol (1928)**                  | Náutica & Charters           | Palma & Bahía                |      [Web](https://cnportitxol.com)       |
 | ✅ Indexado  |  **4.6**  |  1650   | **91.2 pts** | **Restaurante Vandal Palma**                      | Gastronomía & Chefs Privados | Palma & Bahía                |      [Web](https://vandalpalma.com)       |
