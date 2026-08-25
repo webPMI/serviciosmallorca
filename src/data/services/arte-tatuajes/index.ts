@@ -1,16 +1,14 @@
 import type { ServiceItem } from "../types.ts";
 import { kuyenArtTattoo } from "./kuyen-art-tattoo.ts";
 import { boxTattooPiercing } from "./box-tattoo-piercing.ts";
-import { urbanSoulTattoo } from "./urban-soul-tattoo.ts";
 
-export { kuyenArtTattoo, boxTattooPiercing, urbanSoulTattoo };
+export { kuyenArtTattoo, boxTattooPiercing };
 
 /**
  * Catálogo Sectorial: Arte, Tatuajes & Piercing en Mallorca.
- * Agregación modular de negocios verificados bajo el protocolo docs/AGENT_CURATION_SOP.md
+ * Negocios 100% reales y verificados bajo la regla estricta Zero Fake Data (GR-11).
  */
 export const TATTOO_SERVICES: ServiceItem[] = [
   kuyenArtTattoo,
   boxTattooPiercing,
-  urbanSoulTattoo,
 ];
