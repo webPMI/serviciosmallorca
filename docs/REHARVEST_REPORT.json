@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-25T13:45:40.408Z",
+  "timestamp": "2026-08-25T13:48:13.353Z",
   "totalCatalog": 3,
   "processedCount": 3,
   "improvedScoreCount": 0,
@@ -7,11 +7,9 @@
     {
       "serviceId": "kuyen-art-tattoo",
       "name": "Küyen Art & Tattoo Studio",
-      "previousScore": 98,
+      "previousScore": 80,
       "newScore": 80,
-      "addedFields": [
-        "newsMentions"
-      ],
+      "addedFields": [],
       "updatedFields": [
         "lastVerifiedAt",
         "confidenceScore",
@@ -21,11 +19,9 @@
     {
       "serviceId": "box-tattoo-piercing",
       "name": "Box Tattoo Piercing Palma",
-      "previousScore": 92,
+      "previousScore": 56,
       "newScore": 56,
-      "addedFields": [
-        "newsMentions"
-      ],
+      "addedFields": [],
       "updatedFields": [
         "lastVerifiedAt",
         "confidenceScore",

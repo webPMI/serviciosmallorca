@@ -234,6 +234,7 @@ export interface ServiceItem {
     webPhoneMatch?: boolean;
     mapsPhoneMatch?: boolean;
     addressConsistency?: boolean;
+    addressInMallorca?: boolean;
     activeWeb200Ok?: boolean;
     socialMatchScore?: number;
   };

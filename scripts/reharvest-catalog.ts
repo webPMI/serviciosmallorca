@@ -15,7 +15,7 @@
 import { SERVICES } from "../src/data/services/index.ts";
 import type { ServiceItem } from "../src/data/services/types.ts";
 import { harvestBusinessIntelligence } from "../src/lib/scrapers/orchestrator.ts";
-import { writeFileSync } from "node:fs";
+import { writeFileSync, existsSync } from "node:fs";
 import { join } from "node:path";
 
 export interface ReharvestDiff {
@@ -110,17 +110,35 @@ export function smartMergeService(
   };
 }
 
+function toCamelCase(str: string): string {
+  return str.replace(/-([a-z0-9])/gi, (_, g) => g.toUpperCase());
+}
+
 /**
  * Guarda el servicio actualizado como archivo TypeScript en src/data/services/<sector>/<slug>.ts
  */
 function saveServiceToFile(service: ServiceItem, sector: string) {
-  const filePath = join(process.cwd(), "src", "data", "services", sector, `${service.slug}.ts`);
-  const tsContent = `import type { ServiceItem } from "../types";
+  const baseServicesDir = join(process.cwd(), "src", "data", "services");
+  let targetPath = join(baseServicesDir, sector, `${service.slug}.ts`);
 
-export const ${service.slug.replace(/-/g, "_")}: ServiceItem = ${JSON.stringify(service, null, 2)};
+  if (!existsSync(targetPath)) {
+    const candidateFolders = ["arte-tatuajes", "gastronomia-restaurantes", "nautica-charter", "salud-bienestar"];
+    for (const folder of candidateFolders) {
+      const p = join(baseServicesDir, folder, `${service.slug}.ts`);
+      if (existsSync(p)) {
+        targetPath = p;
+        break;
+      }
+    }
+  }
+
+  const varName = toCamelCase(service.slug);
+  const tsContent = `import type { ServiceItem } from "../types.ts";
+
+export const ${varName}: ServiceItem = ${JSON.stringify(service, null, 2)};
 `;
 
-  writeFileSync(filePath, tsContent, "utf-8");
+  writeFileSync(targetPath, tsContent, "utf-8");
 }
 
 async function sleep(ms: number) {
