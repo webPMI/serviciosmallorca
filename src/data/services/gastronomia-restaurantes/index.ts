@@ -1,7 +1,8 @@
 import type { ServiceItem } from "../types.ts";
 import { dinsSantiTaura } from "./dins-santi-taura.ts";
+import { caNEduardo } from "./ca-n-eduardo.ts";
 
-export { dinsSantiTaura };
+export { dinsSantiTaura, caNEduardo };
 
 /**
  * Catálogo Sectorial: Hostelería, Gastronomía & Restaurantes de Alta Cocina.
@@ -9,4 +10,5 @@ export { dinsSantiTaura };
  */
 export const RESTAURANT_SERVICES: ServiceItem[] = [
   dinsSantiTaura,
+  caNEduardo,
 ];
