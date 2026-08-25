@@ -6,12 +6,12 @@
 
 | Segmento de Calidad                             | Total Negocios | Estado en Plataforma                               |
 | :---------------------------------------------- | :------------: | :------------------------------------------------- |
-| ⭐⭐⭐⭐⭐ **5 Estrellas (4.8 - 5.0)**          |     **35**     | 🏆 Excelencia & Top Insular (Público Destacado)    |
+| ⭐⭐⭐⭐⭐ **5 Estrellas (4.8 - 5.0)**          |     **38**     | 🏆 Excelencia & Top Insular (Público Destacado)    |
 | ⭐⭐⭐⭐ **4 Estrellas (4.0 - 4.7)**            |     **66**     | ⭐ Notable / Recomendado (Público General)         |
 | ✨ **Nuevas Aperturas (0 reviews / Recientes)** |     **3**      | 🆕 Insignia 'Nueva Apertura' (Público Destacado)   |
 | ⭐⭐⭐ **3 Estrellas (3.0 - 3.9)**              |     **1**      | 🔹 Directorio Estándar (Público sin insignia)      |
 | ⚠️ **Triaje Interno (< 3.0 / Incompletos)**     |     **0**      | 🔒 Solo Administración (No se publica lista negra) |
-| 📦 **TOTAL NEGOCIOS EN RADAR**                  |    **105**     | **61 Indexados** · **44 Pendientes**               |
+| 📦 **TOTAL NEGOCIOS EN RADAR**                  |    **108**     | **64 Indexados** · **44 Pendientes**               |
 
 ---
 
@@ -22,6 +22,7 @@
 | ✅ Indexado |  **5.0**  |   384   | **79.6 pts** | **Good Luck Tattoo Mallorca**                          | Arte, Tatuajes & Piercing    | Palma & Bahía                |                          [Web](https://goodlucktattoomallorca.com)                          |
 | ✅ Indexado |  **5.0**  |   148   | **72.9 pts** | **Küyen Art & Tattoo Studio**                          | Arte, Tatuajes & Piercing    | Palma & Bahía                |                                 [Web](https://kuyenart.com)                                 |
 | ✅ Indexado |  **4.9**  |   420   | **79.1 pts** | **Belmond La Residencia Spa Deià**                     | Salud & Bienestar            | Serra de Tramuntana          |    [Web](https://www.belmond.com/hotels/europe/mallorca/deia/belmond-la-residencia/spa)     |
+| ✅ Indexado |  **4.9**  |   380   | **78.6 pts** | **Carnicería Ca Na Fina Sóller**                       | Gastronomía & Chefs Privados | Serra de Tramuntana          |                                 [Web](https://canafina.com)                                 |
 | ✅ Indexado |  **4.9**  |   318   | **77.8 pts** | **First Mallorca (Luxury Real Estate)**                | Inmobiliaria & Fincas        | Calvià & Andratx (Suroeste)  |                            [Web](https://www.firstmallorca.com)                             |
 | ✅ Indexado |  **4.9**  |   284   | **77.4 pts** | **Arabella Spa (St. Regis Mardavall)**                 | Salud & Bienestar            | Calvià & Andratx (Suroeste)  | [Web](https://www.marriott.com/hotels/travel/pmixr-the-st-regis-mardavall-mallorca-resort/) |
 | ✅ Indexado |  **4.9**  |   165   | **74.5 pts** | **Son Brull Hotel & Spa (Relais & Châteaux)**          | Salud & Bienestar            | Alcúdia & Pollença (Norte)   |                                 [Web](https://sonbrull.com)                                 |
@@ -41,6 +42,7 @@
 | ✅ Indexado |  **4.8**  |   310   | **76.7 pts** | **Cuatrecasas Abogados Palma**                         | Abogados & Asesoría Fiscal   | Palma & Bahía                |                             [Web](https://www.cuatrecasas.com)                              |
 | ✅ Indexado |  **4.8**  |   280   | **76.3 pts** | **Cerrajería San Miguel Palma (1960)**                 | Reformas & Construcción      | Palma & Bahía                |                           [Web](https://cerrajeriasanmiguel.com)                            |
 | ✅ Indexado |  **4.8**  |   320   |  **76 pts**  | **Engel & Völkers Mallorca**                           | Inmobiliaria & Fincas        | Palma & Bahía                |                    [Web](https://www.engelvoelkers.com/es-es/mallorca/)                     |
+| ✅ Indexado |  **4.8**  |   240   | **75.6 pts** | **Herboristería & Dietética La Remei Palma (1985)**    | Salud & Bienestar            | Palma & Bahía                |                           [Web](https://herboristerialaremei.com)                           |
 | ✅ Indexado |  **4.8**  |   220   | **75.4 pts** | **Digital Cinema Domótica & Audio Mallorca**           | Seguridad & Domótica         | Palma & Bahía                |                               [Web](https://digitalcinema.es)                               |
 | ✅ Indexado |  **4.8**  |   210   | **75.2 pts** | **Carpintería y Ebanistería Fiol (1975)**              | Reformas & Construcción      | Es Raiguer & Es Pla (Centro) |                             [Web](https://carpinteriafiol.com)                              |
 | ✅ Indexado |  **4.8**  |   185   | **74.9 pts** | **Arquitectura 81 Palma (A81)**                        | Reformas & Construcción      | Palma & Bahía                |                                    [Web](https://a81.es)                                    |
@@ -51,6 +53,7 @@
 | ✅ Indexado |  **4.8**  |   340   | **71.9 pts** | **La Barbería de la Lonja Palma**                      | Salud & Bienestar            | Palma & Bahía                |                              [Web](https://barberialonja.com)                               |
 | ✅ Indexado |  **4.8**  |   290   |  **71 pts**  | **Urban Soul Tattoo Studio Palma**                     | Arte, Tatuajes & Piercing    | Palma & Bahía                |                     [Web](https://www.instagram.com/urbansoul.tattoo/)                      |
 | ✅ Indexado |  **4.8**  |   190   |  **70 pts**  | **Fontanería Balear Instalaciones**                    | Reformas & Construcción      | Palma & Bahía                |                             [Web](https://fontaneriabalear.com)                             |
+| ✅ Indexado |  **4.8**  |   190   |  **70 pts**  | **Limpiezas y Mantenimiento Balear**                   | Reformas & Construcción      | Palma & Bahía                |                             [Web](https://limpiezasbalear.com)                              |
 | ✅ Indexado |  **4.8**  |   175   | **69.8 pts** | **Instalaciones Eléctricas Llabrés**                   | Reformas & Construcción      | Es Raiguer & Es Pla (Centro) |                           [Web](https://electricidadllabres.com)                            |
 | ✅ Indexado |  **4.8**  |   160   | **69.6 pts** | **Aluminios y Cristalería Calvià (Son Bugadelles)**    | Reformas & Construcción      | Calvià & Andratx (Suroeste)  |                             [Web](https://aluminioscalvia.com)                              |
 | ✅ Indexado |  **4.8**  |   190   | **61.6 pts** | **Box Tattoo Piercing Palma**                          | Arte, Tatuajes & Piercing    | Palma & Bahía                |                            [Web](https://boxtattoopiercing.com)                             |
