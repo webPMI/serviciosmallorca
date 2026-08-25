@@ -20,8 +20,12 @@ const loadingText = lang === "en" ? "Loading..." : lang === "ca" ? "Carregant...
 const loadingAria =
   lang === "en" ? "Loading application" : lang === "ca" ? "Carregant aplicació" : "Cargando aplicación";
 
-const isProductionDomain =
-  import.meta.env.PROD && !Astro.url.hostname.includes("localhost") && !Astro.url.hostname.includes("127.0.0.1");
+const isAdSenseEnabled = import.meta.env.PUBLIC_ENABLE_ADSENSE === "true";
+const shouldLoadAdSense =
+  isAdSenseEnabled &&
+  import.meta.env.PROD &&
+  !Astro.url.hostname.includes("localhost") &&
+  !Astro.url.hostname.includes("127.0.0.1");
 ---
 
 <!doctype html>
@@ -52,9 +56,9 @@ const isProductionDomain =
       )
     }
 
-    <!-- Google AdSense (Loaded only on verified production domains) -->
+    <!-- Google AdSense (Loaded only when explicitly enabled and on verified production domains) -->
     {
-      isProductionDomain && (
+      shouldLoadAdSense && (
         <script
           is:inline
           async

@@ -8,8 +8,12 @@ interface Props {
 
 const { slotId, format = "auto", responsive = true, className = "" } = Astro.props;
 
+const isAdSenseEnabled = import.meta.env.PUBLIC_ENABLE_ADSENSE === "true";
 const isProductionDomain =
-  import.meta.env.PROD && !Astro.url.hostname.includes("localhost") && !Astro.url.hostname.includes("127.0.0.1");
+  isAdSenseEnabled &&
+  import.meta.env.PROD &&
+  !Astro.url.hostname.includes("localhost") &&
+  !Astro.url.hostname.includes("127.0.0.1");
 ---
 
 <aside class:list={["adsense-container", `adsense-${format}`, className]} aria-label="Espacio publicitario">
