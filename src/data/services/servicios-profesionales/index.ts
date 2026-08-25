@@ -1,9 +1,11 @@
 import type { ServiceItem } from "../types.ts";
 import { bufeteFrau } from "./bufete-frau.ts";
 import { illeslexAbogados } from "./illeslex-abogados.ts";
+import { cuatrecasasPalma } from "./cuatrecasas-palma.ts";
+import { rataCorner } from "./rata-corner.ts";
 import { caPatroMarch } from "./ca-s-patro-march.ts";
 
-export { bufeteFrau, illeslexAbogados, caPatroMarch };
+export { bufeteFrau, illeslexAbogados, cuatrecasasPalma, rataCorner, caPatroMarch };
 
 /**
  * Catálogo Sectorial: Servicios Profesionales, Abogados & Asesoría Fiscal en Mallorca.
@@ -12,6 +14,8 @@ export { bufeteFrau, illeslexAbogados, caPatroMarch };
 export const PROFESIONALES_SERVICES: ServiceItem[] = [
   bufeteFrau,
   illeslexAbogados,
+  cuatrecasasPalma,
+  rataCorner,
   caPatroMarch, // INCOMPLETO - Solo visible para administradores (status: incomplete_admin_only)
 ];
 

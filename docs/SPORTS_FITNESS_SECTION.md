@@ -342,14 +342,14 @@ Claves agrupadas bajo `sports.*`: `sports.hub.title`, `sports.filter.<faceta>`,
 
 #### 📸 Snapshot de estado real (revisión 2026-08-25)
 
-| Fase | Estado        | Evidencia verificada en el repo                                                                  |
-| ---- | ------------- | ------------------------------------------------------------------------------------------------ |
-| F0   | ✅ Hecho      | Este documento                                                                                   |
-| F1   | ✅ Hecho      | `scripts/discovery-targets-sports.json` (9 candidatos) + script npm `discover:sports`            |
-| F2   | ⏭️ Siguiente  | Aún **no existe** `src/data/services/deportes-fitness/`; ninguna categoría SS-15 en `CATEGORIES` |
-| F3   | ✅ Adelantado | `src/lib/jsonLdGenerator.ts` (bloque "Vertical Deportiva") mapea las 12 categorías               |
-| F4   | ❌ Pendiente  | Sin páginas `/servicios/deporte` en `src/pages`                                                  |
-| F5   | ❌ Pendiente  | Sin guías deportivas en `src/data/posts.ts` (ver §2.12.1–2.12.3 para el modelo)                  |
+| Fase | Estado        | Evidencia verificada en el repo                                                                                        |
+| ---- | ------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| F0   | ✅ Hecho      | Este documento                                                                                                         |
+| F1   | ✅ Hecho      | Blueprint minado con resultados verificados (**ver §8**): 2 listos para ingesta, 5 en triaje                           |
+| F2   | ⏭️ Siguiente  | Ingesta de Golf Son Vida + Son Muntaner → crear `src/data/services/deportes-fitness/` y activar `golf` en `CATEGORIES` |
+| F3   | ✅ Adelantado | `src/lib/jsonLdGenerator.ts` (bloque "Vertical Deportiva") mapea las 12 categorías                                     |
+| F4   | ❌ Pendiente  | Sin páginas `/servicios/deporte` en `src/pages`                                                                        |
+| F5   | ❌ Pendiente  | Sin guías deportivas en `src/data/posts.ts` (ver §2.12.1–2.12.3 para el modelo)                                        |
 
 > El adelanto de F3 sobre F2 es seguro: el `switch` de `getSchemaTypeForCategory` solo aplica cuando
 > existan servicios con esas categorías, así que activar F2 no exigirá reescribirlo, solo ajustes finos.
@@ -409,7 +409,7 @@ con web oficial verificable (GR-11).
 - **Candidatos explorados:** 9 de la lista F1
 - **Detectados y categorizados automáticamente:** 7 (2 golf + 3 gimnasios + 2 "otro")
 - **Listos para ingesta (score ≥70, teléfono real):** 2 → Golf Son Vida, Golf Son Muntaner
-- **En triaje (requieren verificación manual de teléfono):** 4 → Basic-Fit, AltaFit, CrossFit, Arabella, Golf Andratx
+- **En triaje (requieren verificación manual de teléfono):** 5 → Basic-Fit, AltaFit, CrossFit, Arabella, Golf Andratx
 - **Telefonos con placeholder `+34 000 000 000` detectados:** 5 de 9 → indica web sin teléfono visible al scrapear
 
 ### 8.2 Tabla de Resultados Detallados
@@ -439,6 +439,7 @@ con web oficial verificable (GR-11).
 ## 9. 📚 Fuentes y documentos relacionados
 
 - **`docs/TAXONOMY_SCALE.md`** — roadmap de escalado (SS-11/SS-15 deportes y aire libre).
+- **[`docs/TOPS_SEO_PLAYBOOK.md`](TOPS_SEO_PLAYBOOK.md)** — cómo hacer tops, destacar fichas (`featured`) y plan SEO/posicionamiento de la vertical.
 - **`docs/TAXONOMY.md`** — sistema conceptual de la taxonomía y regla P-04.
 - **`docs/AGENT_CURATION_SOP.md`** — protocolo de curación (4 pasos atómicos).
 - **`docs/BUSINESS_DISCOVERY_SOP.md`** — checklist maestro y minería de candidatos.

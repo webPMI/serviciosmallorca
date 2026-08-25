@@ -48,13 +48,33 @@ const schemaOrg = {
   publisher: {
     "@type": "Organization",
     name: "Servicios Mallorca",
-    url: "https://serviciosmallorca.es",
+    url: "https://serviciosmallorca.com",
   },
 };
+
+// 🏆 ItemList para rankings editoriales (postType: "top_list") — Rich Results de listas.
+// El orden de relatedServiceIds ES la posición del ranking (docs/TOPS_SEO_PLAYBOOK.md §2).
+const itemListSchema =
+  post.postType === "top_list" && relatedServices.length > 0
+    ? {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        name: title,
+        description: excerpt,
+        numberOfItems: relatedServices.length,
+        itemListElement: relatedServices.map((service, idx) => ({
+          "@type": "ListItem",
+          position: idx + 1,
+          name: service.name,
+          url: `https://serviciosmallorca.com${prefix}servicios/${service.slug}`,
+        })),
+      }
+    : null;
 ---
 
 <BaseLayout title={`${title} - ${translations["site.title"]}`} lang={locale} description={excerpt}>
   <script is:inline type="application/ld+json" set:html={JSON.stringify(schemaOrg)} />
+  {itemListSchema && <script is:inline type="application/ld+json" set:html={JSON.stringify(itemListSchema)} />}
 
   <Navbar currentLocale={locale} translations={translations} getLangPrefix={getLangPrefix} />
 

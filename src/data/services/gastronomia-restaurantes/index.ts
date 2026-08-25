@@ -10,6 +10,10 @@ import { restauranteFlanigan } from "./restaurante-flanigan.ts";
 import { restauranteMarcFosh } from "./restaurante-marc-fosh.ts";
 import { bensDavall } from "./bens-davall.ts";
 import { barBosch } from "./bar-bosch.ts";
+import { cellerSaPremsa } from "./celler-sa-premsa.ts";
+import { cellerCanAmer } from "./celler-can-amer.ts";
+import { fornDeLaSoca } from "./forn-de-la-soca.ts";
+import { bodegaRibas } from "./bodega-ribas.ts";
 
 export {
   dinsSantiTaura,
@@ -23,6 +27,10 @@ export {
   restauranteMarcFosh,
   bensDavall,
   barBosch,
+  cellerSaPremsa,
+  cellerCanAmer,
+  fornDeLaSoca,
+  bodegaRibas,
 };
 
 /**
@@ -41,4 +49,8 @@ export const RESTAURANT_SERVICES: ServiceItem[] = [
   restauranteMarcFosh,
   bensDavall,
   barBosch,
+  cellerSaPremsa,
+  cellerCanAmer,
+  fornDeLaSoca,
+  bodegaRibas,
 ];

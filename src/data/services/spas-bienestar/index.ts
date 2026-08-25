@@ -3,11 +3,33 @@ import { arabellaSpa } from "./arabella-spa.ts";
 import { sonBrullSpa } from "./son-brull-spa.ts";
 import { bodynaSpaMaricel } from "./bodyna-spa-maricel.ts";
 import { belmondLaResidenciaSpa } from "./belmond-la-residencia-spa.ts";
+import { rafaNadalSportsCentre } from "./rafa-nadal-sports-centre.ts";
+import { clinicaJuanedaPalma } from "./clinica-juaneda-palma.ts";
+import { laBarberiaDeLaLonja } from "./la-barberia-de-la-lonja.ts";
+import { clinicaVeterinariaSonDureta } from "./clinica-veterinaria-son-dureta.ts";
 
-export { arabellaSpa, sonBrullSpa, bodynaSpaMaricel, belmondLaResidenciaSpa };
+export {
+  arabellaSpa,
+  sonBrullSpa,
+  bodynaSpaMaricel,
+  belmondLaResidenciaSpa,
+  rafaNadalSportsCentre,
+  clinicaJuanedaPalma,
+  laBarberiaDeLaLonja,
+  clinicaVeterinariaSonDureta,
+};
 
 /**
  * Catálogo Sectorial: Spas, Bienestar, Masajes & Estética en Mallorca.
  * Negocios 100% reales y verificados bajo la regla estricta Zero Fake Data (GR-11).
  */
-export const SPAS_SERVICES: ServiceItem[] = [arabellaSpa, sonBrullSpa, bodynaSpaMaricel, belmondLaResidenciaSpa];
+export const SPAS_SERVICES: ServiceItem[] = [
+  arabellaSpa,
+  sonBrullSpa,
+  bodynaSpaMaricel,
+  belmondLaResidenciaSpa,
+  rafaNadalSportsCentre,
+  clinicaJuanedaPalma,
+  laBarberiaDeLaLonja,
+  clinicaVeterinariaSonDureta,
+];

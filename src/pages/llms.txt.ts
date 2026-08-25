@@ -2,12 +2,15 @@ import type { APIRoute } from "astro";
 import { CATEGORIES } from "../data/categories.ts";
 import { MALLORCA_ZONES } from "../data/zones.ts";
 import { SERVICES } from "../data/services/index.ts";
+import { getTopRankedServices } from "../lib/topEngine.ts";
 
 export const prerender = false;
 
 export const GET: APIRoute = async () => {
   const verifiedCount = SERVICES.filter((s) => s.verified).length;
-  const topServices = SERVICES.slice(0, 10);
+  // 🏆 Ranking REAL por el motor Top Engine (confianza + reseñas + auditoría),
+  // no el orden del array — ver docs/TOPS_SEO_PLAYBOOK.md §1.1.
+  const topServices = getTopRankedServices(10);
 
   const content = `# Servicios Mallorca
 > El directorio y motor de recomendación líder de empresas, profesionales y servicios verificados en Mallorca (Islas Baleares, España).
@@ -34,11 +37,11 @@ ${CATEGORIES.map((cat) => `- [${cat.name.es}](https://serviciosmallorca.com/es/c
 ## Zonas de Mallorca
 ${MALLORCA_ZONES.map((zone) => `- [${zone.name.es}](https://serviciosmallorca.com/es/zonas/${zone.id}): Municipios y áreas destacadas: ${zone.popularAreas.slice(0, 5).join(", ")}.`).join("\n")}
 
-## Negocios y Servicios Top Destacados
+## Negocios y Servicios Top Destacados (ranking por confianza, reseñas y auditoría)
 ${topServices
   .map(
-    (s) =>
-      `- [${s.name}](https://serviciosmallorca.com/es/servicios/${s.slug}) (${s.rating ? `${s.rating}★` : "Nueva Apertura"} - ${s.zone}): ${s.shortDescription?.es || ""}`,
+    ({ service, rank, score }) =>
+      `- #${rank} [${service.name}](https://serviciosmallorca.com/es/servicios/${service.slug}) (${service.rating ? `${service.rating}★ con ${service.reviewCount ?? 0} reseñas` : "Nueva Apertura"} · zona ${service.zone} · puntuación ${score}): ${service.shortDescription?.es || ""}`,
   )
   .join("\n")}
 

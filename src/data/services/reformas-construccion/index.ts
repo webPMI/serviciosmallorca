@@ -1,10 +1,29 @@
 import type { ServiceItem } from "../types.ts";
 import { duranPalma } from "./duran-palma.ts";
+import { construccionesLlullSastre } from "./construcciones-llull-sastre.ts";
+import { bigmatVergerMallorca } from "./bigmat-verger-mallorca.ts";
+import { arquitectura81Palma } from "./arquitectura-81-palma.ts";
+import { fontaneriaBalear } from "./fontaneria-balear.ts";
+import { cerrajeriaSanMiguel } from "./cerrajeria-san-miguel.ts";
 
-export { duranPalma };
+export {
+  duranPalma,
+  construccionesLlullSastre,
+  bigmatVergerMallorca,
+  arquitectura81Palma,
+  fontaneriaBalear,
+  cerrajeriaSanMiguel,
+};
 
 /**
  * Catálogo Sectorial: Reformas, Materiales & Construcción en Mallorca.
  * Negocios 100% reales y verificados bajo la regla estricta Zero Fake Data (GR-11).
  */
-export const REFORMAS_SERVICES: ServiceItem[] = [duranPalma];
+export const REFORMAS_SERVICES: ServiceItem[] = [
+  duranPalma,
+  construccionesLlullSastre,
+  bigmatVergerMallorca,
+  arquitectura81Palma,
+  fontaneriaBalear,
+  cerrajeriaSanMiguel,
+];

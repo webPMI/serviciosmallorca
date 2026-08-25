@@ -176,5 +176,33 @@ describe("Servicios Mallorca Data Layer", () => {
         }
       }
     });
+
+    it("enforces Strict HTTPS Protocol: rejects any insecure http:// URLs across the entire catalog", () => {
+      for (const service of SERVICES) {
+        const allUrls = [
+          service.website,
+          service.image,
+          ...(service.images ?? []),
+          ...(service.gallery ?? []),
+          service.googleMapsUrl,
+          service.appleMapsUrl,
+          service.bingMapsUrl,
+          service.reputationBreakdown?.googleMaps?.url,
+          service.reputationBreakdown?.appleMaps?.url,
+          service.reputationBreakdown?.bingMaps?.url,
+          ...(service.newsMentions?.map((n) => n.url) ?? []),
+          ...(service.pressMentions?.map((p) => p.url) ?? []),
+          ...(service.webDirectories?.map((w) => w.url) ?? []),
+          ...(service.socialLinks ? Object.values(service.socialLinks) : []),
+        ].filter(Boolean) as string[];
+
+        for (const url of allUrls) {
+          expect(
+            url.trim().startsWith("http://"),
+            `URL insegura con http:// detectada en "${service.name}": ${url}`,
+          ).toBe(false);
+        }
+      }
+    });
   });
 });

@@ -178,6 +178,37 @@ export function validateServicesList(services: ServiceItem[]): ValidationResult 
         }
       }
     }
+
+    // 11. Regla Estricta HTTPS Obligatorio: Cero URLs inseguras con http://
+    const allEntityUrls: Array<{ label: string; url?: string }> = [
+      { label: "website", url: service.website },
+      { label: "image", url: service.image },
+      ...(service.images ?? []).map((img, idx) => ({ label: `images[${idx}]`, url: img })),
+      ...(service.gallery ?? []).map((gal, idx) => ({ label: `gallery[${idx}]`, url: gal })),
+      { label: "googleMapsUrl", url: service.googleMapsUrl },
+      { label: "appleMapsUrl", url: service.appleMapsUrl },
+      { label: "bingMapsUrl", url: service.bingMapsUrl },
+      { label: "reputation.googleMaps", url: service.reputationBreakdown?.googleMaps?.url },
+      { label: "reputation.appleMaps", url: service.reputationBreakdown?.appleMaps?.url },
+      { label: "reputation.bingMaps", url: service.reputationBreakdown?.bingMaps?.url },
+      ...(service.newsMentions ?? []).map((n, idx) => ({ label: `newsMentions[${idx}]`, url: n.url })),
+      ...(service.pressMentions ?? []).map((p, idx) => ({ label: `pressMentions[${idx}]`, url: p.url })),
+      ...(service.webDirectories ?? []).map((w, idx) => ({ label: `webDirectories[${idx}]`, url: w.url })),
+      ...(service.socialLinks
+        ? Object.entries(service.socialLinks).map(([k, v]) => ({ label: `socialLinks.${k}`, url: v }))
+        : []),
+    ];
+
+    for (const item of allEntityUrls) {
+      if (item.url && typeof item.url === "string") {
+        const trimmed = item.url.trim();
+        if (trimmed.startsWith("http://")) {
+          errors.push(
+            `Protocolo inseguro HTTP detectado en ${item.label} de "${service.name}": "${trimmed}". Debe actualizarse a HTTPS.`,
+          );
+        }
+      }
+    }
   }
 
   return {
