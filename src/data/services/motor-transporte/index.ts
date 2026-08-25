@@ -5,6 +5,7 @@ import { garajeAutoPla } from "./garaje-auto-pla.ts";
 import { bergantinosBikes } from "./bergantinos-bikes.ts";
 import { tallerHermanosBestard } from "./taller-hermanos-bestard.ts";
 import { mallorcaCyclingCenter } from "./mallorca-cycling-center-muro.ts";
+import { talleresAutoInca } from "./talleres-auto-inca.ts";
 
 export {
   roigPremium,
@@ -13,6 +14,7 @@ export {
   bergantinosBikes,
   tallerHermanosBestard,
   mallorcaCyclingCenter,
+  talleresAutoInca,
 };
 
 /**
@@ -26,4 +28,5 @@ export const TRANSPORTE_SERVICES: ServiceItem[] = [
   bergantinosBikes,
   tallerHermanosBestard,
   mallorcaCyclingCenter,
+  talleresAutoInca,
 ];

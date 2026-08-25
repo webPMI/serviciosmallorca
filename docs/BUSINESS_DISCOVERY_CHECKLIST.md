@@ -6,12 +6,12 @@
 
 | Segmento de Calidad                             | Total Negocios | Estado en Plataforma                               |
 | :---------------------------------------------- | :------------: | :------------------------------------------------- |
-| ⭐⭐⭐⭐⭐ **5 Estrellas (4.8 - 5.0)**          |     **58**     | 🏆 Excelencia & Top Insular (Público Destacado)    |
+| ⭐⭐⭐⭐⭐ **5 Estrellas (4.8 - 5.0)**          |     **61**     | 🏆 Excelencia & Top Insular (Público Destacado)    |
 | ⭐⭐⭐⭐ **4 Estrellas (4.0 - 4.7)**            |     **70**     | ⭐ Notable / Recomendado (Público General)         |
 | ✨ **Nuevas Aperturas (0 reviews / Recientes)** |     **3**      | 🆕 Insignia 'Nueva Apertura' (Público Destacado)   |
 | ⭐⭐⭐ **3 Estrellas (3.0 - 3.9)**              |     **1**      | 🔹 Directorio Estándar (Público sin insignia)      |
 | ⚠️ **Triaje Interno (< 3.0 / Incompletos)**     |     **0**      | 🔒 Solo Administración (No se publica lista negra) |
-| 📦 **TOTAL NEGOCIOS EN RADAR**                  |    **132**     | **88 Indexados** · **44 Pendientes**               |
+| 📦 **TOTAL NEGOCIOS EN RADAR**                  |    **135**     | **91 Indexados** · **44 Pendientes**               |
 
 ---
 
@@ -25,6 +25,7 @@
 | ✅ Indexado |  **4.9**  |   530   | **80.4 pts** | **Can Company (Sineu / Llubí - Porc Negre)**              | Gastronomía & Chefs Privados | Es Raiguer & Es Pla (Centro) |                                [Web](https://cancompany.es)                                 |
 | ✅ Indexado |  **4.9**  |   420   | **79.1 pts** | **Belmond La Residencia Spa Deià**                        | Salud & Bienestar            | Serra de Tramuntana          |    [Web](https://www.belmond.com/hotels/europe/mallorca/deia/belmond-la-residencia/spa)     |
 | ✅ Indexado |  **4.9**  |   420   | **79.1 pts** | **Formatges Sa Cànova (Campos - Quesería Artesana)**      | Gastronomía & Chefs Privados | Santanyí & Migjorn (Sureste) |                            [Web](https://formatgessacanova.com)                             |
+| ✅ Indexado |  **4.9**  |   410   | **78.9 pts** | **Ceràmica Terra Cuita (Pòrtol - 1861)**                  | Arte, Tatuajes & Piercing    | Es Raiguer & Es Pla (Centro) |                                [Web](https://terracuita.com)                                |
 | ✅ Indexado |  **4.9**  |   380   | **78.6 pts** | **Carnicería Ca Na Fina Sóller**                          | Gastronomía & Chefs Privados | Serra de Tramuntana          |                                 [Web](https://canafina.com)                                 |
 | ✅ Indexado |  **4.9**  |   318   | **77.8 pts** | **First Mallorca (Luxury Real Estate)**                   | Inmobiliaria & Fincas        | Calvià & Andratx (Suroeste)  |                            [Web](https://www.firstmallorca.com)                             |
 | ✅ Indexado |  **4.9**  |   284   | **77.4 pts** | **Arabella Spa (St. Regis Mardavall)**                    | Salud & Bienestar            | Calvià & Andratx (Suroeste)  | [Web](https://www.marriott.com/hotels/travel/pmixr-the-st-regis-mardavall-mallorca-resort/) |
@@ -50,6 +51,7 @@
 | ✅ Indexado |  **4.8**  |   380   | **77.4 pts** | **Balearic Properties Pollensa**                          | Inmobiliaria & Fincas        | Alcúdia & Pollença (Norte)   |                           [Web](https://balearic-properties.com)                            |
 | ✅ Indexado |  **4.8**  |   340   | **76.9 pts** | **Bodyna Spa (Hospes Maricel)**                           | Salud & Bienestar            | Calvià & Andratx (Suroeste)  |                  [Web](https://www.hospes.com/es/maricel-spa/bodyna-spa/)                   |
 | ✅ Indexado |  **4.8**  |   310   | **76.7 pts** | **Cuatrecasas Abogados Palma**                            | Abogados & Asesoría Fiscal   | Palma & Bahía                |                             [Web](https://www.cuatrecasas.com)                              |
+| ✅ Indexado |  **4.8**  |   310   | **76.5 pts** | **Carnisseria Can Matas (Sóller - 1920)**                 | Gastronomía & Chefs Privados | Serra de Tramuntana          |                           [Web](https://carnisseriacanmatas.com)                            |
 | ✅ Indexado |  **4.8**  |   280   | **76.3 pts** | **Cerrajería San Miguel Palma (1960)**                    | Reformas & Construcción      | Palma & Bahía                |                           [Web](https://cerrajeriasanmiguel.com)                            |
 | ✅ Indexado |  **4.8**  |   290   | **76.2 pts** | **Caxígalos & Cera Artesanal Palma (1862)**               | Arte, Tatuajes & Piercing    | Palma & Bahía                |                                [Web](https://caxigalos.com)                                 |
 | ✅ Indexado |  **4.8**  |   320   |  **76 pts**  | **Engel & Völkers Mallorca**                              | Inmobiliaria & Fincas        | Palma & Bahía                |                    [Web](https://www.engelvoelkers.com/es-es/mallorca/)                     |
@@ -68,6 +70,7 @@
 | ✅ Indexado |  **4.8**  |   340   | **71.9 pts** | **La Barbería de la Lonja Palma**                         | Salud & Bienestar            | Palma & Bahía                |                              [Web](https://barberialonja.com)                               |
 | ✅ Indexado |  **4.8**  |   290   | **71.2 pts** | **Clínica Veterinaria Manacor (Llevant)**                 | Salud & Bienestar            | Manacor & Llevant (Este)     |                            [Web](https://veterinariamanacor.com)                            |
 | ✅ Indexado |  **4.8**  |   290   |  **71 pts**  | **Urban Soul Tattoo Studio Palma**                        | Arte, Tatuajes & Piercing    | Palma & Bahía                |                     [Web](https://www.instagram.com/urbansoul.tattoo/)                      |
+| ✅ Indexado |  **4.8**  |   220   | **70.4 pts** | **Talleres Auto-Inca (Inca - 1982)**                      | Transporte VIP & Chófer      | Es Raiguer & Es Pla (Centro) |                             [Web](https://talleresautoinca.com)                             |
 | ✅ Indexado |  **4.8**  |   190   |  **70 pts**  | **Fontanería Balear Instalaciones**                       | Reformas & Construcción      | Palma & Bahía                |                             [Web](https://fontaneriabalear.com)                             |
 | ✅ Indexado |  **4.8**  |   190   |  **70 pts**  | **Limpiezas y Mantenimiento Balear**                      | Reformas & Construcción      | Palma & Bahía                |                             [Web](https://limpiezasbalear.com)                              |
 | ✅ Indexado |  **4.8**  |   175   | **69.8 pts** | **Instalaciones Eléctricas Llabrés**                      | Reformas & Construcción      | Es Raiguer & Es Pla (Centro) |                           [Web](https://electricidadllabres.com)                            |

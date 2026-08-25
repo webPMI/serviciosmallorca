@@ -27,6 +27,7 @@ import { formatgesSaCanova } from "./formatges-sa-canova-campos.ts";
 import { oliDeJornets } from "./oli-de-jornets-sencelles.ts";
 import { bodegaCastellMiquel } from "./bodega-castell-miquel.ts";
 import { fornDesTeatre } from "./forn-des-teatre-palma.ts";
+import { carniceriaCanMatas } from "./carniceria-can-matas-soller.ts";
 
 export {
   dinsSantiTaura,
@@ -57,6 +58,7 @@ export {
   oliDeJornets,
   bodegaCastellMiquel,
   fornDesTeatre,
+  carniceriaCanMatas,
 };
 
 /**
@@ -92,4 +94,5 @@ export const RESTAURANT_SERVICES: ServiceItem[] = [
   oliDeJornets,
   bodegaCastellMiquel,
   fornDesTeatre,
+  carniceriaCanMatas,
 ];

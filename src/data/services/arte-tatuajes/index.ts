@@ -7,6 +7,7 @@ import { goodLuckTattoo } from "./good-luck-tattoo.ts";
 import { vidriosGordiola } from "./vidrios-gordiola-algaida.ts";
 import { artesaniaCerasPalma } from "./artesania-ceras-palma.ts";
 import { teixitsVicens } from "./teixits-vicens-pollensa.ts";
+import { ceramicaTerraCuita } from "./ceramica-terra-cuita-portol.ts";
 
 export {
   kuyenArtTattoo,
@@ -17,6 +18,7 @@ export {
   vidriosGordiola,
   artesaniaCerasPalma,
   teixitsVicens,
+  ceramicaTerraCuita,
 };
 
 /**
@@ -32,4 +34,5 @@ export const TATTOO_SERVICES: ServiceItem[] = [
   vidriosGordiola,
   artesaniaCerasPalma,
   teixitsVicens,
+  ceramicaTerraCuita,
 ];
