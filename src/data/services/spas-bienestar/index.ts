@@ -7,6 +7,7 @@ import { rafaNadalSportsCentre } from "./rafa-nadal-sports-centre.ts";
 import { clinicaJuanedaPalma } from "./clinica-juaneda-palma.ts";
 import { laBarberiaDeLaLonja } from "./la-barberia-de-la-lonja.ts";
 import { clinicaVeterinariaSonDureta } from "./clinica-veterinaria-son-dureta.ts";
+import { earthYogaPalma } from "./earth-yoga-palma.ts";
 
 export {
   arabellaSpa,
@@ -17,6 +18,7 @@ export {
   clinicaJuanedaPalma,
   laBarberiaDeLaLonja,
   clinicaVeterinariaSonDureta,
+  earthYogaPalma,
 };
 
 /**
@@ -32,4 +34,5 @@ export const SPAS_SERVICES: ServiceItem[] = [
   clinicaJuanedaPalma,
   laBarberiaDeLaLonja,
   clinicaVeterinariaSonDureta,
+  earthYogaPalma,
 ];

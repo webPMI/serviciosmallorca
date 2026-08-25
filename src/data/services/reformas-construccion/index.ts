@@ -5,6 +5,7 @@ import { bigmatVergerMallorca } from "./bigmat-verger-mallorca.ts";
 import { arquitectura81Palma } from "./arquitectura-81-palma.ts";
 import { fontaneriaBalear } from "./fontaneria-balear.ts";
 import { cerrajeriaSanMiguel } from "./cerrajeria-san-miguel.ts";
+import { carpinteriaFiol } from "./carpinteria-fiol-marratxi.ts";
 
 export {
   duranPalma,
@@ -13,6 +14,7 @@ export {
   arquitectura81Palma,
   fontaneriaBalear,
   cerrajeriaSanMiguel,
+  carpinteriaFiol,
 };
 
 /**
@@ -26,4 +28,5 @@ export const REFORMAS_SERVICES: ServiceItem[] = [
   arquitectura81Palma,
   fontaneriaBalear,
   cerrajeriaSanMiguel,
+  carpinteriaFiol,
 ];

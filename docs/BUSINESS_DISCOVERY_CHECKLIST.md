@@ -6,12 +6,12 @@
 
 | Segmento de Calidad                             | Total Negocios | Estado en Plataforma                               |
 | :---------------------------------------------- | :------------: | :------------------------------------------------- |
-| ⭐⭐⭐⭐⭐ **5 Estrellas (4.8 - 5.0)**          |     **29**     | 🏆 Excelencia & Top Insular (Público Destacado)    |
-| ⭐⭐⭐⭐ **4 Estrellas (4.0 - 4.7)**            |     **63**     | ⭐ Notable / Recomendado (Público General)         |
+| ⭐⭐⭐⭐⭐ **5 Estrellas (4.8 - 5.0)**          |     **31**     | 🏆 Excelencia & Top Insular (Público Destacado)    |
+| ⭐⭐⭐⭐ **4 Estrellas (4.0 - 4.7)**            |     **64**     | ⭐ Notable / Recomendado (Público General)         |
 | ✨ **Nuevas Aperturas (0 reviews / Recientes)** |     **3**      | 🆕 Insignia 'Nueva Apertura' (Público Destacado)   |
 | ⭐⭐⭐ **3 Estrellas (3.0 - 3.9)**              |     **1**      | 🔹 Directorio Estándar (Público sin insignia)      |
 | ⚠️ **Triaje Interno (< 3.0 / Incompletos)**     |     **0**      | 🔒 Solo Administración (No se publica lista negra) |
-| 📦 **TOTAL NEGOCIOS EN RADAR**                  |     **96**     | **52 Indexados** · **44 Pendientes**               |
+| 📦 **TOTAL NEGOCIOS EN RADAR**                  |     **99**     | **55 Indexados** · **44 Pendientes**               |
 
 ---
 
@@ -25,6 +25,7 @@
 | ✅ Indexado |  **4.9**  |   318   | **77.8 pts** | **First Mallorca (Luxury Real Estate)**       | Inmobiliaria & Fincas        | Calvià & Andratx (Suroeste)  |                            [Web](https://www.firstmallorca.com)                             |
 | ✅ Indexado |  **4.9**  |   284   | **77.4 pts** | **Arabella Spa (St. Regis Mardavall)**        | Salud & Bienestar            | Calvià & Andratx (Suroeste)  | [Web](https://www.marriott.com/hotels/travel/pmixr-the-st-regis-mardavall-mallorca-resort/) |
 | ✅ Indexado |  **4.9**  |   165   | **74.5 pts** | **Son Brull Hotel & Spa (Relais & Châteaux)** | Salud & Bienestar            | Alcúdia & Pollença (Norte)   |                                 [Web](https://sonbrull.com)                                 |
+| ✅ Indexado |  **4.9**  |   420   | **74.1 pts** | **Earth Yoga Palma (Santa Catalina)**         | Salud & Bienestar            | Palma & Bahía                |                                 [Web](https://earthyoga.es)                                 |
 | ✅ Indexado |  **4.9**  |   112   | **73.8 pts** | **Illeslex Abogados & Asesores Tributarios**  | Abogados & Asesoría Fiscal   | Palma & Bahía                |                                 [Web](https://illeslex.com)                                 |
 | ✅ Indexado |  **4.9**  |   78    | **72.6 pts** | **Mallorca Global Charter**                   | Náutica & Charters           | Calvià & Andratx (Suroeste)  |                          [Web](https://mallorcaglobalcharter.com)                           |
 | ✅ Indexado |  **4.8**  |  3200   | **97.8 pts** | **Rafa Nadal Academy & Sports Centre**        | Salud & Bienestar            | Manacor & Llevant (Este)     |                           [Web](https://www.rafanadalacademy.com)                           |
@@ -39,6 +40,7 @@
 | ✅ Indexado |  **4.8**  |   280   | **76.3 pts** | **Cerrajería San Miguel Palma (1960)**        | Reformas & Construcción      | Palma & Bahía                |                           [Web](https://cerrajeriasanmiguel.com)                            |
 | ✅ Indexado |  **4.8**  |   320   |  **76 pts**  | **Engel & Völkers Mallorca**                  | Inmobiliaria & Fincas        | Palma & Bahía                |                    [Web](https://www.engelvoelkers.com/es-es/mallorca/)                     |
 | ✅ Indexado |  **4.8**  |   220   | **75.4 pts** | **Digital Cinema Domótica & Audio Mallorca**  | Seguridad & Domótica         | Palma & Bahía                |                               [Web](https://digitalcinema.es)                               |
+| ✅ Indexado |  **4.8**  |   210   | **75.2 pts** | **Carpintería y Ebanistería Fiol (1975)**     | Reformas & Construcción      | Es Raiguer & Es Pla (Centro) |                             [Web](https://carpinteriafiol.com)                              |
 | ✅ Indexado |  **4.8**  |   185   | **74.9 pts** | **Arquitectura 81 Palma (A81)**               | Reformas & Construcción      | Palma & Bahía                |                                    [Web](https://a81.es)                                    |
 | ✅ Indexado |  **4.8**  |   114   |  **74 pts**  | **Bufete Frau Abogados & Asesores**           | Abogados & Asesoría Fiscal   | Palma & Bahía                |                                [Web](https://bufetefrau.com)                                |
 | ✅ Indexado |  **4.8**  |   460   |  **74 pts**  | **DINS Santi Taura**                          | Gastronomía & Chefs Privados | Palma & Bahía                |                              [Web](https://dinssantitaura.com)                              |
@@ -56,6 +58,7 @@
 |    Estado    | ⭐ Rating | Reseñas |    Score     | Negocio                                           | Categoría                    | Zona                         |                    Web                    |
 | :----------: | :-------: | :-----: | :----------: | :------------------------------------------------ | :--------------------------- | :--------------------------- | :---------------------------------------: |
 | ✅ Indexado  |  **4.7**  |  2150   | **96.2 pts** | **Restaurante Forn de Sant Joan**                 | Gastronomía & Chefs Privados | Palma & Bahía                |     [Web](https://forndesantjoan.com)     |
+| ✅ Indexado  |  **4.7**  |  1850   | **89.7 pts** | **Il Tano Santa Catalina (Pizzería Napolitana)**  | Gastronomía & Chefs Privados | Palma & Bahía                |         [Web](https://iltano.com)         |
 | ✅ Indexado  |  **4.7**  |  1250   | **87.4 pts** | **Forn de la Soca (Obrador Històric)**            | Gastronomía & Chefs Privados | Palma & Bahía                |      [Web](https://forndelasoca.com)      |
 | ✅ Indexado  |  **4.7**  |   920   | **83.1 pts** | **Bens d'Avall**                                  | Gastronomía & Chefs Privados | Serra de Tramuntana          |       [Web](https://bensdavall.com)       |
 | ✅ Indexado  |  **4.7**  |   920   | **82.9 pts** | **Ca Na Toneta**                                  | Gastronomía & Chefs Privados | Es Raiguer & Es Pla (Centro) |       [Web](https://canatoneta.com)       |
