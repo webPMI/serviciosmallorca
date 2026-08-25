@@ -137,6 +137,13 @@ export interface GeoCoordinates {
   lng: number;
 }
 
+export interface AuditLogEntry {
+  date: string;
+  author: string;
+  action: string;
+  details?: string;
+}
+
 export interface ServiceItem {
   id: string;
   slug: string;
@@ -183,6 +190,8 @@ export interface ServiceItem {
   socialPosts?: SocialMediaPost[];
   webDirectories?: WebIndexPresence[];
   lastVerifiedAt?: string;
+  createdAt?: string;
+  lastUpdatedAt?: string;
   googleMapsUrl: string;
   appleMapsUrl: string;
   bingMapsUrl: string;
@@ -233,7 +242,9 @@ export interface ServiceItem {
   }>;
   authorityScore?: number; // 0 - 100% basado en apariciones en prensa y directorios
   verificationStatus?: "verified" | "needs_review" | "needs_manual_review" | "unverified" | "pending_audit";
+  sourceConfidence?: "high" | "medium" | "low";
   confidenceScore?: number; // 0 - 100%
+  auditLog?: AuditLogEntry[];
   sourceCrossReference?: {
     webPhoneMatch?: boolean;
     mapsPhoneMatch?: boolean;

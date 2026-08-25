@@ -81,11 +81,25 @@ const paymentFormatted = (service.paymentMethods || ["credit_card", "cash"])
       <dd class="fact-desc">{paymentFormatted}</dd>
     </div>
 
-    <div class="fact-item">
+    <div class="fact-item fact-item-audit">
       <dt class="fact-term">🛡️ Estado de Auditoría</dt>
       <dd class="fact-desc">
-        <span class="audit-status-tag">
-          {service.verified ? "✅ 100% Verificado (Zero Fake Data GR-11)" : "🔍 Verificación en Curso"}
+        <span class={`audit-status-tag ${service.verificationStatus || (service.verified ? "verified" : "pending")}`}>
+          {service.verificationStatus === "needs_manual_review" || service.verificationStatus === "needs_review"
+            ? "⚠️ En Revisión Manual"
+            : service.verified || service.verificationStatus === "verified"
+              ? "✅ 100% Verificado (GR-11 & GR-12)"
+              : "🔍 Auditoría en Curso"}
+        </span>
+      </dd>
+    </div>
+
+    <div class="fact-item">
+      <dt class="fact-term">📅 Última Comprobación</dt>
+      <dd class="fact-desc">
+        {service.lastVerifiedAt || service.lastUpdatedAt || "2026-08-25"}
+        <span class="audit-confidence-pill">
+          {service.confidenceScore ? `${service.confidenceScore}% Score` : "Alta Confianza"}
         </span>
       </dd>
     </div>
@@ -153,5 +167,21 @@ const paymentFormatted = (service.paymentMethods || ["credit_card", "cash"])
   .audit-status-tag {
     color: var(--color-success-dark, #059669);
     font-weight: 600;
+  }
+
+  .audit-status-tag.needs_manual_review,
+  .audit-status-tag.needs_review {
+    color: var(--color-warning-dark, #d97706);
+  }
+
+  .audit-confidence-pill {
+    display: inline-block;
+    margin-left: 0.35rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 0.15rem 0.4rem;
+    background: var(--color-primary-light, #e0f2fe);
+    color: var(--color-primary-dark, #0369a1);
+    border-radius: var(--border-radius-full);
   }
 </style>

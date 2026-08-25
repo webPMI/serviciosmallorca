@@ -336,6 +336,19 @@ export async function harvestBusinessIntelligence(
     curationTemplate.products = serviceData.products;
   }
 
+  const todayStr = new Date().toISOString().split("T")[0];
+  curationTemplate.createdAt = todayStr;
+  curationTemplate.lastUpdatedAt = todayStr;
+  curationTemplate.sourceConfidence = verificationReport.confidenceScore >= 80 ? "high" : verificationReport.confidenceScore >= 50 ? "medium" : "low";
+  curationTemplate.auditLog = [
+    {
+      date: todayStr,
+      author: "curation_orchestrator",
+      action: "initial_data_harvest",
+      details: `Minería automatizada multicanal. Confidence Score: ${verificationReport.confidenceScore}% (${verificationReport.status}).`,
+    },
+  ];
+
   curationTemplate.confidenceScore = verificationReport.confidenceScore;
   curationTemplate.verificationStatus = verificationReport.status;
   curationTemplate.sourceCrossReference = verificationReport.crossReference;
