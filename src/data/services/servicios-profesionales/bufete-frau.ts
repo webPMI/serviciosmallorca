@@ -151,7 +151,7 @@ export const bufeteFrau: ServiceItem = {
   ],
   socialLinks: {
     instagram: "https://www.instagram.com/fraulegal",
-    facebook: "http://www.facebook.com/fraulegal",
+    facebook: "https://www.facebook.com/fraulegal",
   },
   teamMembers: [
     {

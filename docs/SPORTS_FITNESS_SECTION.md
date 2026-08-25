@@ -43,6 +43,10 @@ Todas las categorías cuelgan del super-sector existente **`deportes-aire-libre`
 `src/data/categories.ts`. Hasta que haya negocios verificados quedan en **modo "mapa"**
 (documentado en `TAXONOMY_SCALE.md`); se activan en `CATEGORIES` categoría a categoría (P-04).
 
+> ℹ️ **Nota de numeración:** el mapa de proyección `TAXONOMY_SCALE.md` numera esta vertical como
+> **SS-11** (orden de proyección); el **código oficial vigente** en la taxonomía viva es **SS-15**
+> (`deportes-aire-libre`). Ante cualquier conflicto, manda siempre el código de `src/data/categories.ts`.
+
 ### 2.1 Gimnasios & Fitness
 
 | Campo                 | Valor                                                                                                                            |
@@ -170,6 +174,53 @@ Todas las categorías cuelgan del super-sector existente **`deportes-aire-libre`
 
 ---
 
+#### 2.12.1 Cómo se modelan (decisión técnica)
+
+Los espacios públicos **NO son `ServiceItem`**: no tienen teléfono comercial, ni precios comparables,
+ni reseñas de negocio, y tratarlos como fichas comerciales debilitaría la veracidad del catálogo
+(GR-11/GR-12). Se publican como **guías editoriales** (`BlogPost` de `src/data/posts.ts`) con
+`postType: "guia"` o `"top_list"`.
+
+| Aspecto                | Implementación                                                                                                                |
+| ---------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| Contenedor             | `BLOG_POSTS[]` en `src/data/posts.ts`                                                                                         |
+| Tipo                   | `postType: "guia"` (guía por zona/disciplina) o `"top_list"` (ranking de espacios)                                            |
+| Cluster temático       | Nuevo `TopicCluster` propuesto: `"deporte_fitness"` (no existe aún; requiere ampliar el union type y su i18n)                 |
+| Enlace con la vertical | `category: "espacios-deportivos-publicos"` + `relatedServiceIds` hacia fichas deportivas cercanas (cross-linking SEO interno) |
+| Tags                   | `zona:<macro-zona>` del catálogo cerrado (`src/data/tags.ts`, P-02) + `temps:*`; nunca texto libre                            |
+| Schema.org del post    | `TouristAttraction` + `SportsActivityLocation`, con `ItemList` de los espacios inventariados                                  |
+
+Campos estructurados recomendados **dentro del contenido** de cada guía (tabla markdown por espacio,
+mantenible sin tocar el modelo TypeScript):
+
+`nombre oficial · tipo de espacio · municipio/zona · coordenadas (GR-12 ≥90%) · acceso (libre u horario municipal) · equipamiento · foto propia/licencia clara · fuente oficial (ayuntamiento, IME, Consell) · lastVerifiedAt`.
+
+#### 2.12.2 Protocolo de verificación adaptado (GR-11 para espacios públicos)
+
+Al no haber teléfono ni reseñas que contrastar, el checkpoint de confianza cambia de fuente:
+
+1. **Fuente primaria municipal:** web del ayuntamiento, IME (Institut Municipal d'Esports de Palma),
+   Consell de Mallorca o web oficial de la instalación. La existencia del espacio debe ser citable.
+2. **Coordenadas:** pin de Google Maps dentro del recinto (fidelidad ≥90%, GR-12) + enlaces multi-mapa.
+3. **Imagen:** foto propia o Wikimedia Commons con licencia clara; stock prohibido (regla anti-stock del repo).
+4. **Estado real:** evidencia reciente (<12 meses) de que el espacio está operativo y accesible; registrar `lastVerifiedAt`.
+5. **i18n completo `es/en/ca` (GR-04)**, igual que cualquier ficha del catálogo.
+
+#### 2.12.3 Backlog de guías propuestas (materia prima de F5)
+
+> Todas las entradas son **leads a verificar**, no datos publicados (GR-11).
+
+| Guía (slug propuesto)                     | Zona             | Espacios a inventariar                                                 |
+| ----------------------------------------- | ---------------- | ---------------------------------------------------------------------- |
+| `guia-calistenia-palma`                   | Palma            | Parques con barras/aparatos (ses Estacions, zona Playa de Palma…)      |
+| `guia-skateparks-mallorca`                | Isla completa    | Skatepark sa Foixarda (Passeig Marítim) + skateparks comarcales        |
+| `guia-running-palma-circuitos`            | Palma            | Passeig Marítim (~4,5 km costeros), entorno Bellver, Can Dragó         |
+| `guia-piscinas-municipales-palma`         | Palma            | Complejos municipales (p. ej., Son Hugo), horarios y tarifas oficiales |
+| `guia-ciclismo-tramuntana-rutas-publicas` | Serra Tramuntana | Vía verde, Camí de s'Arxiduc, puertos clásicos de carretera            |
+| `guia-deporte-familiar-parques`           | Isla completa    | Pistas polideportivas libres, campos públicos, rocódromos              |
+
+---
+
 ## 3. 🔎 Mapa de oportunidades SEO
 
 ### 3.1 Schema.org por categoría (para `src/lib/jsonLdGenerator.ts`)
@@ -238,6 +289,41 @@ Todas las categorías cuelgan del super-sector existente **`deportes-aire-libre`
 
 ---
 
+### 4.1 Especificación de filtros (fuente de verdad por faceta)
+
+Los filtros reutilizan catálogos existentes (P-02); ningún filtro introduce texto libre:
+
+| Filtro UI           | Fuente de datos                                            | Ejemplos                                            |
+| ------------------- | ---------------------------------------------------------- | --------------------------------------------------- |
+| Zona                | `MALLORCA_ZONES` + tags `zona:*` derivados automáticamente | palma, calvia-andratx, manacor-llevant              |
+| Categoría deportiva | `CATEGORIES` bajo SS-15                                    | gimnasios-fitness, padel-tenis-raqueta…             |
+| Modalidad           | dominio `mod:*` de `tags.ts`                               | walk-in, cita-previa, online, hibrido               |
+| Audiencia           | dominio `aud:*`                                            | familias, parejas, expat, seniors                   |
+| Estacionalidad      | dominio `temps:*`                                          | verano, todo-el-ano                                 |
+| Rango de precio     | campo `priceRange` (€–€€€€)                                | €, €€, €€€                                          |
+| Abierto ahora       | campo `schedule` parseado                                  | —                                                   |
+| Idiomas hablados    | array `languagesSpoken`                                    | es, en, ca (valor `de` solo si se amplía el modelo) |
+
+### 4.2 Badges: condiciones de activación (derivadas, nunca manuales)
+
+Un badge aparece **solo si el dato estructurado lo respalda** — evita marketing vacío (GR-11):
+
+| Badge          | Condición técnica                                                   | Nota                                 |
+| -------------- | ------------------------------------------------------------------- | ------------------------------------ |
+| `Day Pass`     | `amenities` incluye day-pass o `pricing.rateType === "per_session"` | Prioritario para el segmento turista |
+| `24h`          | `schedule` con franja 00:00–24:00 verificada en la minería          | Nunca inferir; solo horario minado   |
+| `EN/DE spoken` | `languagesSpoken` incluye `en` / `de`                               | Refuerza búsquedas expat y turista   |
+| `Free`         | Contenido de `espacios-deportivos-publicos` (guías editoriales)     | Solo posts, jamás fichas comerciales |
+| `Kids`         | tag `aud:familias` o `servicesProvided` infantil                    | Segmento familias                    |
+
+### 4.3 Convención i18n (GR-04)
+
+Claves agrupadas bajo `sports.*`: `sports.hub.title`, `sports.filter.<faceta>`,
+`sports.badge.<badge>` y `sports.category.<id>` (estas últimas reutilizan los labels trilingües de
+`categories.ts`). Prohibido hardcodear textos de la vertical fuera de los bundles i18n `es/en/ca`.
+
+---
+
 ## 5. 🚦 Plan de activación (fases controladas)
 
 > Cumple **P-04** de `TAXONOMY.md`: las categorías se activan en `src/data/categories.ts` **solo cuando
@@ -253,6 +339,20 @@ Todas las categorías cuelgan del super-sector existente **`deportes-aire-libre`
 | **F5**         | Guías editoriales de espacios públicos gratuitos                                             | posts en 3 idiomas                             | analytics + backlinks                    |
 
 **Ritmo recomendado:** 2–3 fichas deportivas/día (cuadruplicable con `--ingest-verified` del motor).
+
+#### 📸 Snapshot de estado real (revisión 2026-08-25)
+
+| Fase | Estado        | Evidencia verificada en el repo                                                                  |
+| ---- | ------------- | ------------------------------------------------------------------------------------------------ |
+| F0   | ✅ Hecho      | Este documento                                                                                   |
+| F1   | ✅ Hecho      | `scripts/discovery-targets-sports.json` (9 candidatos) + script npm `discover:sports`            |
+| F2   | ⏭️ Siguiente  | Aún **no existe** `src/data/services/deportes-fitness/`; ninguna categoría SS-15 en `CATEGORIES` |
+| F3   | ✅ Adelantado | `src/lib/jsonLdGenerator.ts` (bloque "Vertical Deportiva") mapea las 12 categorías               |
+| F4   | ❌ Pendiente  | Sin páginas `/servicios/deporte` en `src/pages`                                                  |
+| F5   | ❌ Pendiente  | Sin guías deportivas en `src/data/posts.ts` (ver §2.12.1–2.12.3 para el modelo)                  |
+
+> El adelanto de F3 sobre F2 es seguro: el `switch` de `getSchemaTypeForCategory` solo aplica cuando
+> existan servicios con esas categorías, así que activar F2 no exigirá reescribirlo, solo ajustes finos.
 
 ---
 
@@ -278,9 +378,65 @@ Todas las categorías cuelgan del super-sector existente **`deportes-aire-libre`
 > ⚠️ **Nota de veracidad:** esta tabla es una **guía de descubrimiento**, no un catálogo publicado.
 > Cada negocio debe pasar minería y los checkpoints del `AGENT_CURATION_SOP.md` antes de publicarse.
 
+#### Cobertura del script F1 vs este documento
+
+El blueprint `scripts/discovery-targets-sports.json` incluye hoy **9 de los 10** candidatos de la tabla
+anterior — falta **Mallorca Cycling Store** (`ciclismo-running-trail`). Al ampliar el JSON respetar el
+formato `{ name, website, categoryHint, zoneHint }` y minar con `npm run discover:sports`.
+
+#### Leads adicionales para categorías sin candidato (verificar antes de publicar)
+
+| Lead (real, por confirmar)     | Categoría objetivo         | Zona  | Por qué                                          |
+| ------------------------------ | -------------------------- | ----- | ------------------------------------------------ |
+| Zunray Yoga                    | estudios-cuerpo-mente      | Palma | Estudio de yoga consolidado, clases multilingües |
+| RCD Mallorca Academy           | clubes-escuelas-deportivas | Palma | Academia del club referente de la isla           |
+| CD Atlético Baleares (cantera) | clubes-escuelas-deportivas | Palma | Club histórico con formación juvenil             |
+
+Para **artes marciales** y **montaña/aventura** aún no hay anclas nombradas: minar primero con queries
+tipo `"artes marciales palma"`, `"club boxeo mallorca"`, `"guias montana tramuntana empresa"`,
+`"barranquismo guiado mallorca"` vía `npm run discover:mine` y añadir al blueprint únicamente nombres
+con web oficial verificable (GR-11).
+
 ---
 
-## 7. 📚 Fuentes y documentos relacionados
+## 8. 📊 Resultados de Minería Real — F1 Verificado (2026-08-25)
+
+> Minería ejecutada con `npm run discover:mine -- --file=scripts/discovery-targets-sports.json`.
+> Los resultados confirman que el pipeline de detección categorial funciona para deportes (detectó automáticamente `golf` y `gimnasios-fitness`), pero la calidad de extracción de teléfono es variable.
+
+### 8.1 Resumen Ejecutivo
+
+- **Candidatos explorados:** 9 de la lista F1
+- **Detectados y categorizados automáticamente:** 7 (2 golf + 3 gimnasios + 2 "otro")
+- **Listos para ingesta (score ≥70, teléfono real):** 2 → Golf Son Vida, Golf Son Muntaner
+- **En triaje (requieren verificación manual de teléfono):** 4 → Basic-Fit, AltaFit, CrossFit, Arabella, Golf Andratx
+- **Telefonos con placeholder `+34 000 000 000` detectados:** 5 de 9 → indica web sin teléfono visible al scrapear
+
+### 8.2 Tabla de Resultados Detallados
+
+|     | Negocio                | Categoría detectada | Score    | Teléfono           | Maps URL                                                                           | Estado                      |
+| --- | ---------------------- | ------------------- | -------- | ------------------ | ---------------------------------------------------------------------------------- | --------------------------- |
+| ✅  | **Golf Son Vida**      | `golf`              | 70 pts   | +34 971 783 000    | [Maps](https://www.google.com/maps/search/?api=1&query=Golf+Son+Vida+Mallorca)     | 🌟 Listo Ingesta            |
+| ✅  | **Golf Son Muntaner**  | `golf`              | 70 pts   | +34 971 783 000    | [Maps](https://www.google.com/maps/search/?api=1&query=Golf+Son+Muntaner+Mallorca) | 🌟 Listo Ingesta            |
+| ⚠️  | Basic-Fit Palma        | `gimnasios-fitness` | 65 pts   | +34 000 000 000 ❌ | [Maps](https://www.google.com/maps/search/?api=1&query=Basic-Fit+Palma+Mallorca)   | Triaje → verificar teléfono |
+| ⚠️  | CrossFit Mallorca      | `gimnasios-fitness` | 64.3 pts | +34 000 000 000 ❌ | [Maps](https://www.google.com/maps/search/?api=1&query=CrossFit+Mallorca)          | Triaje → verificar teléfono |
+| ⚠️  | AltaFit Palma          | `gimnasios-fitness` | 57.5 pts | +34 000 000 000 ❌ | [Maps](https://www.google.com/maps/search/?api=1&query=AltaFit+Palma+Mallorca)     | Triaje → verificar teléfono |
+| ⚠️  | Arabella Golf Mallorca | `golf`              | 57.5 pts | +34 000 000 000 ❌ | [Maps](https://www.google.com/maps/search/?api=1&query=Arabella+Golf+Mallorca)     | Triaje → verificar teléfono |
+| ⚠️  | Golf de Andratx        | `golf`              | 57.5 pts | +34 000 000 000 ❌ | [Maps](https://www.google.com/maps/search/?api=1&query=Golf+de+Andratx+Mallorca)   | Triaje → verificar teléfono |
+
+### 8.3 Conclusión de Viabilidad
+
+**Viable ✅.** El motor `discover-businesses.ts` detecta automáticamente categorías deportivas (`golf`, `gimnasios-fitness`) sin necesidad de categorías previas en `categories.ts`. Se confirma que:
+
+1. El detector de categorías del `orchestrator.ts` es funcional para deporte (detecta "golf" y "gimnasio/fitness" del DOM).
+2. El pipeline F1→F2 funciona: minería → checklist → candidatos listos para ingesta.
+3. Los dos campos de golf con teléfono real (Son Vida, Son Muntaner) pueden publicarse ya mediante F2.
+
+**Pendiente plano:** los gimnasios necesitan verificación manual del teléfono (Basic-Fit Palma es franquicia global, el número local hay que confirmar vía Google Maps o web local). No publicar sin teléfono verificado (GR-11).
+
+---
+
+## 9. 📚 Fuentes y documentos relacionados
 
 - **`docs/TAXONOMY_SCALE.md`** — roadmap de escalado (SS-11/SS-15 deportes y aire libre).
 - **`docs/TAXONOMY.md`** — sistema conceptual de la taxonomía y regla P-04.

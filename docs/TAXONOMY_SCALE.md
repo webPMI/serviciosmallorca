@@ -62,6 +62,10 @@ Resumen de los 20 dominios macroeconómicos:
 | SS-19  | 🛡️ Seguridad & Emergencias               | 4          | 🟡 Media            |
 | SS-20  | 💰 Finanzas & Seguros                    | 4          | 🟡 Media            |
 
+> ℹ️ Los códigos SS-xx de este mapa son **de proyección**. El orden definitivo vive en
+> `src/data/categories.ts`; p. ej., **Deportes & Aire Libre es SS-15** en la taxonomía viva
+> (aquí figura como SS-11). Ante conflicto, gana siempre `categories.ts`.
+
 ---
 
 ## 4. Taxonomía Detallada por Super-Sector (proyección completa)
@@ -217,6 +221,9 @@ Resumen de los 20 dominios macroeconómicos:
 | `nightlife`              | Discoteca · sala de fiestas · pub de copas · club nocturno                           |
 
 ### SS-11 — ⚽ Deportes & Aire Libre
+
+> ℹ️ Esta vertical es **SS-15 (`deportes-aire-libre`) en la taxonomía viva**
+> (`src/data/categories.ts`). Ver nota sobre códigos de proyección en §3.
 
 > 📖 **Documento maestro de la vertical:** [`docs/SPORTS_FITNESS_SECTION.md`](SPORTS_FITNESS_SECTION.md)
 > (taxonomía completa, SEO, espacios públicos y plan de activación F0→F5).

@@ -271,11 +271,10 @@ export const caNaToneta: ServiceItem = {
     ],
     ca: ["Menú Degustació de Microestació", "Maridatge de Vins Naturals i Biodinàmics", "Terrassa Romàntica a Caimari"],
   },
-  image:
-    "https://www.canatoneta.com/wp-content/themes/canatoneta/timthumb.php?src=http://www.canatoneta.com/wp-content/uploads/2012/06/canatoneta-home-01.jpg&w=794&h=529&q=75",
+  image: "https://www.canatoneta.com/wp-content/uploads/2012/06/canatoneta-home-01.jpg",
   gallery: [
-    "https://www.canatoneta.com/wp-content/themes/canatoneta/timthumb.php?src=http://www.canatoneta.com/wp-content/uploads/2012/06/canatoneta-home-01.jpg&w=794&h=529&q=75",
-    "https://www.canatoneta.com/wp-content/themes/canatoneta/timthumb.php?src=http://www.canatoneta.com/wp-content/uploads/2012/06/canatoneta-home-02.jpg&w=794&h=529&q=75",
+    "https://www.canatoneta.com/wp-content/uploads/2012/06/canatoneta-home-01.jpg",
+    "https://www.canatoneta.com/wp-content/uploads/2012/06/canatoneta-home-02.jpg",
   ],
   schedule: "Mié - Dom: 13:30 - 16:00, 20:00 - 23:00 (Lun y Mar Cerrado)",
   lastVerifiedAt: "2026-08-25",
