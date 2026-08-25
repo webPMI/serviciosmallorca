@@ -15,6 +15,7 @@ import { cellerCanAmer } from "./celler-can-amer.ts";
 import { fornDeLaSoca } from "./forn-de-la-soca.ts";
 import { bodegaRibas } from "./bodega-ribas.ts";
 import { ilTanoSantaCatalina } from "./il-tano-santa-catalina.ts";
+import { canMiquelPalma } from "./can-miquel-palma.ts";
 
 export {
   dinsSantiTaura,
@@ -33,6 +34,7 @@ export {
   fornDeLaSoca,
   bodegaRibas,
   ilTanoSantaCatalina,
+  canMiquelPalma,
 };
 
 /**
@@ -56,4 +58,5 @@ export const RESTAURANT_SERVICES: ServiceItem[] = [
   fornDeLaSoca,
   bodegaRibas,
   ilTanoSantaCatalina,
+  canMiquelPalma,
 ];

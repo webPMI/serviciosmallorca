@@ -6,12 +6,12 @@
 
 | Segmento de Calidad                             | Total Negocios | Estado en Plataforma                               |
 | :---------------------------------------------- | :------------: | :------------------------------------------------- |
-| ⭐⭐⭐⭐⭐ **5 Estrellas (4.8 - 5.0)**          |     **31**     | 🏆 Excelencia & Top Insular (Público Destacado)    |
-| ⭐⭐⭐⭐ **4 Estrellas (4.0 - 4.7)**            |     **64**     | ⭐ Notable / Recomendado (Público General)         |
+| ⭐⭐⭐⭐⭐ **5 Estrellas (4.8 - 5.0)**          |     **33**     | 🏆 Excelencia & Top Insular (Público Destacado)    |
+| ⭐⭐⭐⭐ **4 Estrellas (4.0 - 4.7)**            |     **65**     | ⭐ Notable / Recomendado (Público General)         |
 | ✨ **Nuevas Aperturas (0 reviews / Recientes)** |     **3**      | 🆕 Insignia 'Nueva Apertura' (Público Destacado)   |
 | ⭐⭐⭐ **3 Estrellas (3.0 - 3.9)**              |     **1**      | 🔹 Directorio Estándar (Público sin insignia)      |
 | ⚠️ **Triaje Interno (< 3.0 / Incompletos)**     |     **0**      | 🔒 Solo Administración (No se publica lista negra) |
-| 📦 **TOTAL NEGOCIOS EN RADAR**                  |     **99**     | **55 Indexados** · **44 Pendientes**               |
+| 📦 **TOTAL NEGOCIOS EN RADAR**                  |    **102**     | **58 Indexados** · **44 Pendientes**               |
 
 ---
 
@@ -28,6 +28,7 @@
 | ✅ Indexado |  **4.9**  |   420   | **74.1 pts** | **Earth Yoga Palma (Santa Catalina)**         | Salud & Bienestar            | Palma & Bahía                |                                 [Web](https://earthyoga.es)                                 |
 | ✅ Indexado |  **4.9**  |   112   | **73.8 pts** | **Illeslex Abogados & Asesores Tributarios**  | Abogados & Asesoría Fiscal   | Palma & Bahía                |                                 [Web](https://illeslex.com)                                 |
 | ✅ Indexado |  **4.9**  |   78    | **72.6 pts** | **Mallorca Global Charter**                   | Náutica & Charters           | Calvià & Andratx (Suroeste)  |                          [Web](https://mallorcaglobalcharter.com)                           |
+| ✅ Indexado |  **4.9**  |   310   | **72.5 pts** | **Peluquería Canina & Spa Guau Palma**        | Salud & Bienestar            | Palma & Bahía                |                                [Web](https://guaupalma.com)                                 |
 | ✅ Indexado |  **4.8**  |  3200   | **97.8 pts** | **Rafa Nadal Academy & Sports Centre**        | Salud & Bienestar            | Manacor & Llevant (Este)     |                           [Web](https://www.rafanadalacademy.com)                           |
 | ✅ Indexado |  **4.8**  |  1420   | **90.4 pts** | **Restaurante El Camino Palma**               | Gastronomía & Chefs Privados | Palma & Bahía                |                             [Web](https://www.elcaminopalma.es)                             |
 | ✅ Indexado |  **4.8**  |   950   | **84.7 pts** | **Bodega Ribas (Consell - 1711)**             | Gastronomía & Chefs Privados | Es Raiguer & Es Pla (Centro) |                               [Web](https://bodegaribas.com)                                |
@@ -49,6 +50,7 @@
 | ✅ Indexado |  **4.8**  |   340   | **71.9 pts** | **La Barbería de la Lonja Palma**             | Salud & Bienestar            | Palma & Bahía                |                              [Web](https://barberialonja.com)                               |
 | ✅ Indexado |  **4.8**  |   290   |  **71 pts**  | **Urban Soul Tattoo Studio Palma**            | Arte, Tatuajes & Piercing    | Palma & Bahía                |                     [Web](https://www.instagram.com/urbansoul.tattoo/)                      |
 | ✅ Indexado |  **4.8**  |   190   |  **70 pts**  | **Fontanería Balear Instalaciones**           | Reformas & Construcción      | Palma & Bahía                |                             [Web](https://fontaneriabalear.com)                             |
+| ✅ Indexado |  **4.8**  |   175   | **69.8 pts** | **Instalaciones Eléctricas Llabrés**          | Reformas & Construcción      | Es Raiguer & Es Pla (Centro) |                           [Web](https://electricidadllabres.com)                            |
 | ✅ Indexado |  **4.8**  |   190   | **61.6 pts** | **Box Tattoo Piercing Palma**                 | Arte, Tatuajes & Piercing    | Palma & Bahía                |                            [Web](https://boxtattoopiercing.com)                             |
 
 ---
@@ -70,6 +72,7 @@
 | ✅ Indexado  |  **4.6**  |  1650   | **91.4 pts** | **Club Nàutic Portitxol (1928)**                  | Náutica & Charters           | Palma & Bahía                |      [Web](https://cnportitxol.com)       |
 | ✅ Indexado  |  **4.6**  |  1650   | **91.2 pts** | **Restaurante Vandal Palma**                      | Gastronomía & Chefs Privados | Palma & Bahía                |      [Web](https://vandalpalma.com)       |
 | ✅ Indexado  |  **4.6**  |  1450   | **88.9 pts** | **Celler Can Amer Inca**                          | Gastronomía & Chefs Privados | Es Raiguer & Es Pla (Centro) |         [Web](https://canamer.es)         |
+| ✅ Indexado  |  **4.6**  |  1450   | **88.9 pts** | **Heladería y Pastelería Ca'n Miquel (1930)**     | Gastronomía & Chefs Privados | Palma & Bahía                |        [Web](https://canmiquel.es)        |
 | ✅ Indexado  |  **4.6**  |  1240   | **86.1 pts** | **Restaurante Adrián Quetglas**                   | Gastronomía & Chefs Privados | Palma & Bahía                |     [Web](https://adrianquetglas.es)      |
 | ✅ Indexado  |  **4.6**  |  1120   | **84.6 pts** | **Restaurante Marc Fosh**                         | Gastronomía & Chefs Privados | Palma & Bahía                |        [Web](https://marcfosh.com)        |
 | ✅ Indexado  |  **4.6**  |   980   | **83.1 pts** | **Autocares Mallorca Transunion**                 | Transporte VIP & Chófer      | Palma & Bahía                |       [Web](https://transunion.com)       |
