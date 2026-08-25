@@ -6,12 +6,12 @@
 
 | Segmento de Calidad                             | Total Negocios | Estado en Plataforma                               |
 | :---------------------------------------------- | :------------: | :------------------------------------------------- |
-| ⭐⭐⭐⭐⭐ **5 Estrellas (4.8 - 5.0)**          |     **41**     | 🏆 Excelencia & Top Insular (Público Destacado)    |
+| ⭐⭐⭐⭐⭐ **5 Estrellas (4.8 - 5.0)**          |     **44**     | 🏆 Excelencia & Top Insular (Público Destacado)    |
 | ⭐⭐⭐⭐ **4 Estrellas (4.0 - 4.7)**            |     **69**     | ⭐ Notable / Recomendado (Público General)         |
 | ✨ **Nuevas Aperturas (0 reviews / Recientes)** |     **3**      | 🆕 Insignia 'Nueva Apertura' (Público Destacado)   |
 | ⭐⭐⭐ **3 Estrellas (3.0 - 3.9)**              |     **1**      | 🔹 Directorio Estándar (Público sin insignia)      |
 | ⚠️ **Triaje Interno (< 3.0 / Incompletos)**     |     **0**      | 🔒 Solo Administración (No se publica lista negra) |
-| 📦 **TOTAL NEGOCIOS EN RADAR**                  |    **114**     | **70 Indexados** · **44 Pendientes**               |
+| 📦 **TOTAL NEGOCIOS EN RADAR**                  |    **117**     | **73 Indexados** · **44 Pendientes**               |
 
 ---
 
@@ -29,6 +29,7 @@
 | ✅ Indexado |  **4.9**  |   450   | **74.4 pts** | **Bergantiños Bikes Can Pastilla (Taller & Alquiler)**    | Transporte VIP & Chófer      | Palma & Bahía                |                             [Web](https://bergantinosbikes.com)                             |
 | ✅ Indexado |  **4.9**  |   420   | **74.1 pts** | **Earth Yoga Palma (Santa Catalina)**                     | Salud & Bienestar            | Palma & Bahía                |                                 [Web](https://earthyoga.es)                                 |
 | ✅ Indexado |  **4.9**  |   112   | **73.8 pts** | **Illeslex Abogados & Asesores Tributarios**              | Abogados & Asesoría Fiscal   | Palma & Bahía                |                                 [Web](https://illeslex.com)                                 |
+| ✅ Indexado |  **4.9**  |   390   | **73.7 pts** | **Zunray Yoga Studio Palma (San Feliu)**                  | Salud & Bienestar            | Palma & Bahía                |                                  [Web](https://zunray.com)                                  |
 | ✅ Indexado |  **4.9**  |   78    | **72.6 pts** | **Mallorca Global Charter**                               | Náutica & Charters           | Calvià & Andratx (Suroeste)  |                          [Web](https://mallorcaglobalcharter.com)                           |
 | ✅ Indexado |  **4.9**  |   310   | **72.5 pts** | **Peluquería Canina & Spa Guau Palma**                    | Salud & Bienestar            | Palma & Bahía                |                                [Web](https://guaupalma.com)                                 |
 | ✅ Indexado |  **4.8**  |  3200   | **97.8 pts** | **Rafa Nadal Academy & Sports Centre**                    | Salud & Bienestar            | Manacor & Llevant (Este)     |                           [Web](https://www.rafanadalacademy.com)                           |
@@ -36,6 +37,7 @@
 | ✅ Indexado |  **4.8**  |   950   | **84.7 pts** | **Bodega Ribas (Consell - 1711)**                         | Gastronomía & Chefs Privados | Es Raiguer & Es Pla (Centro) |                               [Web](https://bodegaribas.com)                                |
 | ✅ Indexado |  **4.8**  |   850   | **83.4 pts** | **Pastelería & Bombonería Can Pomar (1902)**              | Gastronomía & Chefs Privados | Santanyí & Migjorn (Sureste) |                                 [Web](https://canpomar.com)                                 |
 | ✅ Indexado |  **4.8**  |   520   | **79.3 pts** | **Roig Premium (VIP Chauffeur & Transfers)**              | Transporte VIP & Chófer      | Palma & Bahía                |                                   [Web](https://roig.com)                                   |
+| ✅ Indexado |  **4.8**  |   470   | **78.7 pts** | **Finca & Bodega Biniagual (Sencelles - S. XIII)**        | Gastronomía & Chefs Privados | Es Raiguer & Es Pla (Centro) |                             [Web](https://finca-biniagual.com)                              |
 | ✅ Indexado |  **4.8**  |   468   | **78.3 pts** | **Oasis Catamarán Palma**                                 | Náutica & Charters           | Palma & Bahía                |                              [Web](https://oasiscatamaran.com)                              |
 | ✅ Indexado |  **4.8**  |   850   | **78.2 pts** | **Rata Corner Llibreria & Cultura**                       | Abogados & Asesoría Fiscal   | Palma & Bahía                |                                [Web](https://ratacorner.com)                                |
 | ✅ Indexado |  **4.8**  |   380   | **77.4 pts** | **Balearic Properties Pollensa**                          | Inmobiliaria & Fincas        | Alcúdia & Pollença (Norte)   |                           [Web](https://balearic-properties.com)                            |
@@ -47,6 +49,7 @@
 | ✅ Indexado |  **4.8**  |   220   | **75.4 pts** | **Digital Cinema Domótica & Audio Mallorca**              | Seguridad & Domótica         | Palma & Bahía                |                               [Web](https://digitalcinema.es)                               |
 | ✅ Indexado |  **4.8**  |   210   | **75.2 pts** | **Carpintería y Ebanistería Fiol (1975)**                 | Reformas & Construcción      | Es Raiguer & Es Pla (Centro) |                             [Web](https://carpinteriafiol.com)                              |
 | ✅ Indexado |  **4.8**  |   185   | **74.9 pts** | **Arquitectura 81 Palma (A81)**                           | Reformas & Construcción      | Palma & Bahía                |                                    [Web](https://a81.es)                                    |
+| ✅ Indexado |  **4.8**  |   135   | **74.3 pts** | **Tapicería & Toldos Balear (1982)**                      | Reformas & Construcción      | Palma & Bahía                |                             [Web](https://tapiceriabalear.com)                              |
 | ✅ Indexado |  **4.8**  |   114   |  **74 pts**  | **Bufete Frau Abogados & Asesores**                       | Abogados & Asesoría Fiscal   | Palma & Bahía                |                                [Web](https://bufetefrau.com)                                |
 | ✅ Indexado |  **4.8**  |   460   |  **74 pts**  | **DINS Santi Taura**                                      | Gastronomía & Chefs Privados | Palma & Bahía                |                              [Web](https://dinssantitaura.com)                              |
 | ✅ Indexado |  **4.8**  |   410   | **72.7 pts** | **Clínica Veterinaria Son Dureta Palma**                  | Salud & Bienestar            | Palma & Bahía                |                           [Web](https://veterinariasonsureta.com)                           |

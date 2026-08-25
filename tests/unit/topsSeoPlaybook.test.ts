@@ -37,3 +37,27 @@ describe("Tops & SEO Playbook — ranking real en superficies IA", () => {
     expect(body).toContain(`#1 [${leader.service.name}]`);
   });
 });
+
+describe("SEO surfaces — robots.txt bloquea las rutas privadas REALES", () => {
+  it("usa los slugs reales con comodín de locale (/*/login, /*/dashboard…)", async () => {
+    const res = await getRobots({} as any);
+    const body = await res.text();
+
+    expect(body).toContain("Disallow: /*/login");
+    expect(body).toContain("Disallow: /*/register");
+    expect(body).toContain("Disallow: /*/forgot-password");
+    expect(body).toContain("Disallow: /*/profile");
+    expect(body).toContain("Disallow: /*/dashboard");
+    expect(body).toContain("Disallow: /api/");
+  });
+
+  it("ya no referencia rutas inexistentes ni sin prefijo de idioma", async () => {
+    const res = await getRobots({} as any);
+    const body = await res.text();
+
+    expect(body).not.toContain("Disallow: /registro");
+    expect(body).not.toContain("Disallow: /perfil");
+    expect(body).not.toContain("Disallow: /recuperar-password");
+    expect(body).toContain("Disallow: /*/login"); // el bloqueo real sigue presente
+  });
+});

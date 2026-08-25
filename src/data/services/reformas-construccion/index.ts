@@ -10,6 +10,7 @@ import { electricidadLlabres } from "./electricidad-llabres-marratxi.ts";
 import { aluminiosCalvia } from "./aluminios-calvia.ts";
 import { limpiezasBalear } from "./limpiezas-balear-mallorca.ts";
 import { climaFrioBalear } from "./clima-frio-balear.ts";
+import { tapiceriaToldosBalear } from "./tapiceria-toldos-balear.ts";
 
 export {
   duranPalma,
@@ -23,6 +24,7 @@ export {
   aluminiosCalvia,
   limpiezasBalear,
   climaFrioBalear,
+  tapiceriaToldosBalear,
 };
 
 /**
@@ -41,4 +43,5 @@ export const REFORMAS_SERVICES: ServiceItem[] = [
   aluminiosCalvia,
   limpiezasBalear,
   climaFrioBalear,
+  tapiceriaToldosBalear,
 ];
