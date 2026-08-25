@@ -6,12 +6,12 @@
 
 | Segmento de Calidad                             | Total Negocios | Estado en Plataforma                               |
 | :---------------------------------------------- | :------------: | :------------------------------------------------- |
-| ⭐⭐⭐⭐⭐ **5 Estrellas (4.8 - 5.0)**          |     **80**     | 🏆 Excelencia & Top Insular (Público Destacado)    |
+| ⭐⭐⭐⭐⭐ **5 Estrellas (4.8 - 5.0)**          |     **83**     | 🏆 Excelencia & Top Insular (Público Destacado)    |
 | ⭐⭐⭐⭐ **4 Estrellas (4.0 - 4.7)**            |     **72**     | ⭐ Notable / Recomendado (Público General)         |
 | ✨ **Nuevas Aperturas (0 reviews / Recientes)** |     **3**      | 🆕 Insignia 'Nueva Apertura' (Público Destacado)   |
 | ⭐⭐⭐ **3 Estrellas (3.0 - 3.9)**              |     **1**      | 🔹 Directorio Estándar (Público sin insignia)      |
 | ⚠️ **Triaje Interno (< 3.0 / Incompletos)**     |     **0**      | 🔒 Solo Administración (No se publica lista negra) |
-| 📦 **TOTAL NEGOCIOS EN RADAR**                  |    **156**     | **112 Indexados** · **44 Pendientes**              |
+| 📦 **TOTAL NEGOCIOS EN RADAR**                  |    **159**     | **115 Indexados** · **44 Pendientes**              |
 
 ---
 
@@ -30,6 +30,7 @@
 | ✅ Indexado |  **4.9**  |   318   | **77.8 pts** | **First Mallorca (Luxury Real Estate)**                       | Inmobiliaria & Fincas        | Calvià & Andratx (Suroeste)  |                            [Web](https://www.firstmallorca.com)                             |
 | ✅ Indexado |  **4.9**  |   284   | **77.4 pts** | **Arabella Spa (St. Regis Mardavall)**                        | Salud & Bienestar            | Calvià & Andratx (Suroeste)  | [Web](https://www.marriott.com/hotels/travel/pmixr-the-st-regis-mardavall-mallorca-resort/) |
 | ✅ Indexado |  **4.9**  |   260   | **77.1 pts** | **Oli de Jornets (Sencelles - AOVE Ecológico)**               | Gastronomía & Chefs Privados | Es Raiguer & Es Pla (Centro) |                               [Web](https://olidejornets.com)                               |
+| ✅ Indexado |  **4.9**  |   230   | **76.7 pts** | **Carnisseria Can Xarrier (Algaida - 1955)**                  | Gastronomía & Chefs Privados | Es Raiguer & Es Pla (Centro) |                                [Web](https://canxarrier.com)                                |
 | ✅ Indexado |  **4.9**  |   510   | **75.2 pts** | **Mallorca Cycling Center & Taller (Playa de Muro)**          | Transporte VIP & Chófer      | Alcúdia & Pollença (Norte)   |                          [Web](https://mallorcacyclingcenter.com)                           |
 | ✅ Indexado |  **4.9**  |   165   | **74.5 pts** | **Son Brull Hotel & Spa (Relais & Châteaux)**                 | Salud & Bienestar            | Alcúdia & Pollença (Norte)   |                                 [Web](https://sonbrull.com)                                 |
 | ✅ Indexado |  **4.9**  |   450   | **74.4 pts** | **Bergantiños Bikes Can Pastilla (Taller & Alquiler)**        | Transporte VIP & Chófer      | Palma & Bahía                |                             [Web](https://bergantinosbikes.com)                             |
@@ -87,7 +88,9 @@
 | ✅ Indexado |  **4.8**  |   220   | **70.4 pts** | **Talleres Auto-Inca (Inca - 1982)**                          | Transporte VIP & Chófer      | Es Raiguer & Es Pla (Centro) |                             [Web](https://talleresautoinca.com)                             |
 | ✅ Indexado |  **4.8**  |   190   |  **70 pts**  | **Fontanería Balear Instalaciones**                           | Reformas & Construcción      | Palma & Bahía                |                             [Web](https://fontaneriabalear.com)                             |
 | ✅ Indexado |  **4.8**  |   190   |  **70 pts**  | **Limpiezas y Mantenimiento Balear**                          | Reformas & Construcción      | Palma & Bahía                |                             [Web](https://limpiezasbalear.com)                              |
+| ✅ Indexado |  **4.8**  |   180   | **69.9 pts** | **Taller Mecánico & Diagnosis Llevant (Manacor - 1996)**      | Transporte VIP & Chófer      | Manacor & Llevant (Este)     |                           [Web](https://tallerllevantmanacor.com)                           |
 | ✅ Indexado |  **4.8**  |   175   | **69.8 pts** | **Instalaciones Eléctricas Llabrés**                          | Reformas & Construcción      | Es Raiguer & Es Pla (Centro) |                           [Web](https://electricidadllabres.com)                            |
+| ✅ Indexado |  **4.8**  |   170   | **69.7 pts** | **Aluminios & Cristalería Manacor (1990)**                    | Reformas & Construcción      | Manacor & Llevant (Este)     |                             [Web](https://aluminiosmanacor.com)                             |
 | ✅ Indexado |  **4.8**  |   160   | **69.6 pts** | **Aluminios y Cristalería Calvià (Son Bugadelles)**           | Reformas & Construcción      | Calvià & Andratx (Suroeste)  |                             [Web](https://aluminioscalvia.com)                              |
 | ✅ Indexado |  **4.8**  |   160   | **69.6 pts** | **Cristalería & Cerramientos Balear (Palma - 1988)**          | Reformas & Construcción      | Palma & Bahía                |                            [Web](https://cristaleriabalear.com)                             |
 | ✅ Indexado |  **4.8**  |   150   | **69.5 pts** | **Instalaciones & Climatización Marratxí (1995)**             | Reformas & Construcción      | Es Raiguer & Es Pla (Centro) |                          [Web](https://climatizacionmarratxi.com)                           |

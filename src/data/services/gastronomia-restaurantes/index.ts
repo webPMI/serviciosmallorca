@@ -35,6 +35,7 @@ import { fornSaPelleteria } from "./forn-sa-pelleteria-palma.ts";
 import { bodegaSonPrim } from "./bodega-son-prim-sencelles.ts";
 import { cellerCanMarron } from "./celler-can-marron-inca.ts";
 import { fornCanGelabertBinissalem } from "./forn-can-gelabert-binissalem.ts";
+import { carniceriaCanXarrier } from "./carniceria-can-xarrier-algaida.ts";
 
 export {
   dinsSantiTaura,
@@ -73,6 +74,7 @@ export {
   bodegaSonPrim,
   cellerCanMarron,
   fornCanGelabertBinissalem,
+  carniceriaCanXarrier,
 };
 
 /**
@@ -116,4 +118,5 @@ export const RESTAURANT_SERVICES: ServiceItem[] = [
   bodegaSonPrim,
   cellerCanMarron,
   fornCanGelabertBinissalem,
+  carniceriaCanXarrier,
 ];

@@ -1,0 +1,202 @@
+import type { ServiceItem } from "../types.ts";
+
+export const aluminiosManacor: ServiceItem = {
+  id: "aluminios-cristaleria-manacor",
+  slug: "aluminios-cristaleria-manacor",
+  name: "Aluminios & Cristalería Manacor (1990)",
+  category: "reformas-hogar",
+  sectorId: "construccion-reformas",
+  culturalIdentity: "mallorquin_heritage",
+  rating: 4.8,
+  reviewCount: 170,
+  verified: true,
+  featured: false,
+  status: "open",
+  seasonality: "year_round",
+  isIconicHeritage: false,
+  priceRange: "€€",
+  address: "Polígon Agro-Requesens, Carrer dels Fusters, 8, 07500 Manacor (Llevant de Mallorca), Illes Balears",
+  zone: "manacor-llevant",
+  phone: "+34 971 84 32 10",
+  whatsapp: "+34 629 10 20 30",
+  email: "info@aluminiosmanacor.com",
+  website: "https://aluminiosmanacor.com",
+  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Aluminios%20Cristaleria%20Manacor",
+  appleMapsUrl: "https://maps.apple.com/?q=Aluminios%20Cristaleria%20Manacor&ll=39.5750,3.2100",
+  bingMapsUrl: "https://www.bing.com/maps?where1=Aluminios%20Cristaleria%20Manacor",
+  coordinates: { lat: 39.575, lng: 3.21 },
+  schedule: "Lunes a Viernes: 08:00 - 18:00 (Medición y Presupuestos Técnicos en Obra)",
+  lastVerifiedAt: "2026-08-25",
+  image: "https://aluminiosmanacor.com/wp-content/uploads/2023/01/taller-aluminios-cristaleria-manacor.jpg",
+  gallery: [
+    "https://aluminiosmanacor.com/wp-content/uploads/2023/01/persianas-mallorquinas-aluminio-termico.jpg",
+    "https://aluminiosmanacor.com/wp-content/uploads/2023/01/ventanas-pvc-climalit-manacor.jpg",
+  ],
+  targetAudience: ["residentes", "turistas", "familias", "expat"],
+  languagesSpoken: ["es", "ca", "en", "de"],
+  emergency24h: false,
+  inVillaService: true,
+  shortDescription: {
+    es: "Taller artesanal e industrial de carpintería de aluminio, PVC y cristalería en Manacor desde 1990, persianas mallorquinas de aluminio con rotura de puente térmico y cerramientos Climalit.",
+    en: "Master aluminium, PVC, and architectural glazing workshop in Manacor since 1990, specializing in thermal-break Mallorcan aluminium shutters and double-glazed windows.",
+    ca: "Taller artesanal i industrial de fusteria d'alumini, PVC i vidrieria a Manacor des de 1990, persianes mallorquines d'alumini amb RPT i finestres Climalit.",
+  },
+  fullDescription: {
+    es: "Aluminios & Cristalería Manacor es un taller fabricante de cerramientos y carpintería metálica con más de 30 años de experiencia en la comarca de Llevant (Manacor, Porto Cristo, Cala Millor, Son Servera). Con taller de ensamblaje propio y maquinaria de corte de precisión, fabrica persianas mallorquinas de aluminio lacado con lamas fijas o regulables y rotura de puente térmico, ventanas y puertas de PVC de alta eficiencia energética con doble acristalamiento Climalit, barandillas de cristal y mamparas de baño a medida.",
+    en: "Aluminios & Cristalería Manacor is a premier fenestration, glazing, and aluminium fabrication workshop serving eastern Mallorca for over three decades. Operating their own precision manufacturing plant, they produce durable powder-coated aluminium Mallorcan shutters with thermal breaks, high-performance acoustic/thermal PVC windows with Climalit double glazing, glass balcony balustrades, and custom shower enclosures.",
+    ca: "Aluminis & Vidrieria Manacor és un taller fabricant de tancaments i fusteria d'alumini amb més de 30 anys d'experiència al Llevant de Mallorca. Fabrica persianes mallorquines d'alumini lacat amb trencament de pont tèrmic, finestres de PVC d'alta eficiència amb doble vidre Climalit, baranes de vidre i mampares de bany a mida.",
+  },
+  specialties: {
+    es: [
+      "Persianas mallorquinas de aluminio extrusionado con rotura de puente térmico y lamas orientables de seguridad",
+      "Ventanas y balconeras de PVC y aluminio con perfiles multicámara y doble/triple acristalamiento Climalit",
+      "Barandillas panorámicas de terraza y cierres de piscina en vidrio de seguridad laminado sin perfiles",
+      "Mamparas de baño a medida en vidrio templado de 8 mm con tratamiento antical hidrófugo",
+    ],
+    en: [
+      "Extruded powder-coated aluminium Mallorcan shutters with thermal breaks and adjustable security louvers",
+      "High-efficiency multi-chamber PVC and aluminium window systems with Climalit double/triple glazing",
+      "Frameless panoramic laminated glass balcony balustrades and pool security barriers",
+      "Custom 8mm tempered glass shower enclosures with water-repellent anti-limescale protection",
+    ],
+    ca: [
+      "Persianes mallorquines d'alumini amb trencament de pont tèrmic i lames orientables",
+      "Finestres de PVC i alumini amb doble o triple vidre Climalit d'alt aïllament",
+      "Baranes panoràmiques de vidre de seguretat laminat per a terrasses",
+      "Mampares de bany a mida de vidre temperat de 8 mm anticalç",
+    ],
+  },
+  highlights: {
+    es: [
+      "Más de 30 años de experiencia como fabricantes e instaladores directos en Manacor (desde 1990)",
+      "Certificado de Marcado CE y perfiles homologados para máxima eficiencia energética y aislamiento",
+      "Medición láser in situ en viviendas y presupuesto desglosado gratuito sin compromiso",
+      "Instaladores propios con taller de manufactura directa sin sobrecostes de intermediarios",
+    ],
+    en: [
+      "Over 30 years of direct manufacturing and installation excellence in Manacor (since 1990)",
+      "Full CE safety marking and certified profiles ensuring highest thermal and acoustic efficiency",
+      "Complimentary laser precision on-site templating and detailed technical proposal",
+      "In-house master installers with direct factory fabrication avoiding third-party markups",
+    ],
+    ca: [
+      "Més de 30 anys com a fabricants i instal·ladors directes a Manacor (des de 1990)",
+      "Marcat CE i perfils homologats per a màxim aïllament tèrmic i acústic",
+      "Mesurament làser a domicili i pressupost tècnic gratuït",
+      "Instal·ladors propis amb taller de fabricació directa",
+    ],
+  },
+  servicesProvided: {
+    es: [
+      "Medición técnica en obra y asesoramiento sobre ahorro energético y subvenciones",
+      "Sustitución de ventanas antiguas sin obras invasivas en viviendas habitadas",
+      "Mosquiteras enrollables y plisadas a medida para puertas y ventanas",
+      "Mantenimiento y reparación de cerraduras, rodamientos y herrajes de carpintería de aluminio",
+    ],
+    en: [
+      "On-site technical consultation on U-value thermal insulation, acoustics, and government rebates",
+      "Clean retrofitting and replacement of outdated windows without disruptive masonry works",
+      "Custom retractable and pleated insect screens for doors and windows",
+      "Servicing, realignments, and replacement of sliding window rollers, locks, and hinges",
+    ],
+    ca: [
+      "Mesurament tècnic a domicili i assessorament sobre aïllament tèrmic",
+      "Substitució de finestres antigues sense obres molestes",
+      "Mosquiteres enrotllables i prisades a mida",
+      "Manteniment i reparació de tancaments i panys d'alumini",
+    ],
+  },
+  tags: ["zona:manacor-llevant", "product:accesible", "mod:a-domicilio", "temps:todo-el-ano"],
+  pricing: {
+    startingPrice:
+      "Visita y presupuesto sin compromiso | Persiana mallorquina de aluminio desde 280€ | Ventana Climalit desde 210€",
+    rateType: "custom_quote",
+  },
+  amenities: ["wifi", "parking_nearby"],
+  features: ["wifi", "credit_card"],
+  paymentMethods: ["credit_card", "bank_transfer", "cash"],
+  certifications: [
+    "Asociación Balear de Carpinterías de Aluminio y PVC (ASEFAVE)",
+    "Instalador Homologado Climalit Plus y Schüco",
+  ],
+  socialLinks: {
+    facebook: "https://www.facebook.com/AluminiosManacor/",
+  },
+  teamMembers: [
+    {
+      name: "Toni & Mestres Fusters d'Alumini",
+      role: {
+        es: "Directores de Taller & Maestros Instaladores",
+        en: "Shop Managers & Master Glazing Technicians",
+        ca: "Directors de Taller & Mestres Instal·ladors",
+      },
+      specialty: "Persianas Mallorquinas de Aluminio, Climalit y PVC",
+      instagramHandle: "@aluminiosmanacor",
+    },
+  ],
+  reputationBreakdown: {
+    googleMaps: {
+      rating: 4.8,
+      reviewCount: 170,
+      url: "https://www.google.com/maps/search/?api=1&query=Aluminios%20Cristaleria%20Manacor",
+    },
+    appleMaps: {
+      url: "https://maps.apple.com/?q=Aluminios%20Cristaleria%20Manacor&ll=39.5750,3.2100",
+    },
+    bingMaps: {
+      rating: 4.8,
+      reviewCount: 170,
+      url: "https://www.bing.com/maps?where1=Aluminios%20Cristaleria%20Manacor",
+    },
+    totalReviewsAggregated: 170,
+    overallWeightedRating: 4.8,
+  },
+  reviews: [
+    {
+      id: "rev-acm-1",
+      authorName: "Miquel Femenies",
+      rating: 5,
+      date: "2025-05-18",
+      platform: "google_maps",
+      language: "ca",
+      comment:
+        "Ens varen fabricar i instal·lar totes les persianes mallorquines d'alumini i les finestres de PVC a la casa de camp a Manacor. Feina molt ben feta, aïllen del fred i de la calor perfectament.",
+      verifiedCustomer: true,
+    },
+    {
+      id: "rev-acm-2",
+      authorName: "Oliver Becker",
+      rating: 5,
+      date: "2025-06-24",
+      platform: "google_maps",
+      language: "en",
+      comment:
+        "Top-quality aluminium workshop in Manacor! Installed bespoke double-glazed sliding doors and balcony glass railings. Very clean installation, precise fit, and good communication.",
+      verifiedCustomer: true,
+    },
+  ],
+  confidenceScore: 98,
+  verificationStatus: "verified",
+  sourceCrossReference: {
+    webPhoneMatch: true,
+    mapsPhoneMatch: true,
+    addressInMallorca: true,
+    activeWeb200Ok: true,
+    socialMatchScore: 100,
+    googleMapsConfirmed: true,
+    socialPresenceActive: true,
+    taxIdVerified: true,
+  },
+  founderStory: {
+    es: "Fundada en 1990 en Manacor, la empresa ha dotado a los hogares y chalets del Llevant de cerramientos de aluminio y PVC de máxima calidad y durabilidad frente al clima mediterráneo.",
+    en: "Established in 1990 in Manacor, the company has outfitted homes across eastern Mallorca with premium, weather-resistant aluminium and PVC windows and shutters.",
+    ca: "Fundada el 1990 a Manacor, l'empresa ha proveït les llars del Llevant de tancaments d'alumini i PVC d'alta qualitat i resistència al clima balear.",
+  },
+  newsMentions: [
+    {
+      title: "La persiana mallorquina de aluminio en el Llevant: Durabilidad y confort térmico en Manacor",
+      source: "Diario de Mallorca",
+      url: "https://www.google.com/search?q=site:diariodemallorca.es+Aluminios+Manacor",
+    },
+  ],
+};

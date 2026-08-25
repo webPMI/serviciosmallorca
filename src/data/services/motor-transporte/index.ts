@@ -6,6 +6,7 @@ import { bergantinosBikes } from "./bergantinos-bikes.ts";
 import { tallerHermanosBestard } from "./taller-hermanos-bestard.ts";
 import { mallorcaCyclingCenter } from "./mallorca-cycling-center-muro.ts";
 import { talleresAutoInca } from "./talleres-auto-inca.ts";
+import { tallerLlevantManacor } from "./taller-mecanico-llevant-manacor.ts";
 
 export {
   roigPremium,
@@ -15,6 +16,7 @@ export {
   tallerHermanosBestard,
   mallorcaCyclingCenter,
   talleresAutoInca,
+  tallerLlevantManacor,
 };
 
 /**
@@ -29,4 +31,5 @@ export const TRANSPORTE_SERVICES: ServiceItem[] = [
   tallerHermanosBestard,
   mallorcaCyclingCenter,
   talleresAutoInca,
+  tallerLlevantManacor,
 ];
