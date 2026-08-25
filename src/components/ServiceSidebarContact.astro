@@ -1,0 +1,153 @@
+---
+import type { ServiceItem } from "../data/services/types";
+import LiveScheduleBadge from "./LiveScheduleBadge.astro";
+import AdSenseSlot from "./AdSenseSlot.astro";
+
+interface Props {
+  service: ServiceItem;
+  translations: Record<string, string>;
+  prefix: string;
+}
+
+const { service, translations, _prefix } = Astro.props as any;
+---
+
+<aside class="detail-sidebar">
+  <div class="contact-card card card-glass sticky-card">
+    <h3 class="contact-title">{translations["services.contact"]}</h3>
+    <p class="contact-subtitle">Contacta de forma directa e inmediata con el proveedor verificado.</p>
+
+    <div class="contact-buttons-stack">
+      <!-- WhatsApp button -->
+      {
+        service.whatsapp && (
+          <a
+            href={`https://wa.me/${service.whatsapp.replace(/[^0-9]/g, "")}?text=Hola,%20he%20visto%20su%20servicio%20en%20Servicios%20Mallorca`}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-primary btn-full whatsapp-btn"
+          >
+            <span>💬</span>
+            <span>{translations["services.whatsapp"]}</span>
+          </a>
+        )
+      }
+
+      <!-- Call button -->
+      {
+        service.phone && (
+          <a href={`tel:${service.phone.replace(/[^0-9+]/g, "")}`} class="btn btn-secondary btn-full">
+            <span>📞</span>
+            <span>
+              {translations["services.call"]} ({service.phone})
+            </span>
+          </a>
+        )
+      }
+
+      <!-- Website button -->
+      {
+        service.website && (
+          <a href={service.website} target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-full">
+            <span>🌐</span>
+            <span>{translations["services.website"]}</span>
+          </a>
+        )
+      }
+
+      <!-- Share button -->
+      <button
+        type="button"
+        id="share-service-btn"
+        class="btn btn-secondary btn-full"
+        data-service-title={service.name}
+        data-service-desc={service.shortDescription?.es || ""}
+      >
+        <span>📤</span>
+        <span>Compartir Negocio</span>
+      </button>
+    </div>
+
+    <!-- Info Details with 1-click copy -->
+    <div class="contact-meta-info">
+      <div class="info-row">
+        <span class="info-label">📍 {translations["services.address"]}:</span>
+        <div class="info-val-wrap">
+          <span class="info-val">{service.address}</span>
+          <button type="button" class="btn-copy-info" data-copy-text={service.address} title="Copiar Dirección">
+            📋
+          </button>
+        </div>
+      </div>
+
+      {
+        service.phone && (
+          <div class="info-row">
+            <span class="info-label">📞 {translations["services.phone"]}:</span>
+            <div class="info-val-wrap">
+              <span class="info-val phone-display-text">{service.phone}</span>
+              <button type="button" class="btn-copy-info" data-copy-text={service.phone} title="Copiar Teléfono">
+                📋
+              </button>
+            </div>
+          </div>
+        )
+      }
+
+      <!-- Live Operational Status Badge -->
+      {
+        service.schedule && (
+          <div class="info-row">
+            <LiveScheduleBadge
+              rawSchedule={service.schedule}
+              phone={service.phone}
+              whatsapp={service.whatsapp}
+              businessName={service.name}
+            />
+          </div>
+        )
+      }
+
+      {
+        service.schedule && (
+          <div class="info-row">
+            <span class="info-label">🕒 {translations["services.schedule"]}:</span>
+            <span class="info-val schedule-display-text">{service.schedule}</span>
+          </div>
+        )
+      }
+
+      <div class="info-row">
+        <span class="info-label">💶 {translations["services.price"]}:</span>
+        <span class="info-val">{service.priceRange}</span>
+      </div>
+
+      {
+        service.tags && service.tags.length > 0 && (
+          <div class="tags-cloud">
+            {service.tags.map((tag: string) => (
+              <span class="tag-pill">#{tag}</span>
+            ))}
+          </div>
+        )
+      }
+
+      <div class="business-owner-actions">
+        <button type="button" id="open-claim-modal-btn" class="btn btn-sm btn-outline-primary">
+          🏢 {translations["services.claimBusiness"]}
+        </button>
+        <button type="button" id="open-report-modal-btn" class="optout-link-btn" style="color: var(--color-warning, #d97706); text-decoration: none;">
+          🚩 {translations["services.reportError"]}
+        </button>
+        <button type="button" id="open-delete-modal-btn" class="optout-link-btn">
+          {translations["services.optoutLink"]}
+        </button>
+      </div>
+    </div>
+
+    <!-- AdSense Sidebar Banner -->
+    <div style="margin-top: var(--space-md);">
+      <AdSenseSlot client="ca-pub-1988580228487420" slot="service-sidebar-banner" format="rectangle" />
+    </div>
+  </div>
+</aside>

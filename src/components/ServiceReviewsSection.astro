@@ -1,50 +1,119 @@
 ---
-import { type Locale } from "../../../i18n";
+import type { ServiceItem } from "../data/services/types";
 
-export const ServiceReviewsSection = ({
-  service,
-  translations,
-  locale
-}: {
-  service: any;
-  translations: any;
-  locale: Locale;
-}) => {
-  return (
-    <section class="card section-box reviews-section" id="reviews-section">
-      <div class="reviews-header-wrap">
-        <div>
-          <h2 class="box-title">{translations["reviews.title"]}</h2>
-          <div class="rating-bar-large">
-            <span class="rating-stars-large">★★★★★</span>
-            <strong class="rating-score">{service.rating.toFixed(1)}</strong>
-            <span class="rating-sub">/ 5.0 ({service.reviewCount} {translations["services.reviews"]})</span>
-          </div>
+interface Props {
+  service: ServiceItem;
+  translations: Record<string, string>;
+  prefix: string;
+}
+
+const { service, translations, prefix } = Astro.props;
+---
+
+<section class="card section-box reviews-section" id="reviews-section">
+  <div class="reviews-header-wrap">
+    <div>
+      <h2 class="box-title">{translations["reviews.title"]}</h2>
+      <div class="rating-bar-large">
+        <span class="rating-stars-large">★★★★★</span>
+        <strong class="rating-score">{service.rating.toFixed(1)}</strong>
+        <span class="rating-sub">/ 5.0 ({service.reviewCount} {translations["services.reviews"]})</span>
+      </div>
+    </div>
+    <button id="toggle-review-form-btn" class="btn btn-primary btn-sm">
+      ✍️ {translations["reviews.leaveReview"]}
+    </button>
+  </div>
+
+  <!-- Review Form Container -->
+  <div id="review-form-container" class="review-form-card" style="display: none;">
+    <div id="review-auth-gate" style="display: none;" class="auth-gate-card">
+      <p class="auth-gate-text">🔒 {translations["reviews.loginRequired"]}</p>
+      <a href={`${prefix}login`} class="btn btn-sm btn-primary">🔑 Iniciar Sesión</a>
+    </div>
+
+    <form id="service-review-form" class="review-form-inner" style="display: none;">
+      <h3 class="form-section-title">⭐ {translations["reviews.leaveReview"]}</h3>
+
+      <div id="review-alert-success" class="alert-success" style="display: none;">
+        {translations["reviews.success"]}
+      </div>
+      <div id="review-alert-error" class="alert-error" style="display: none;"></div>
+
+      <div class="rating-selector-group">
+        <label class="rating-label">{translations["reviews.yourRating"]}:</label>
+        <div class="star-rating-selector" id="star-rating-picker">
+          <button type="button" class="star-picker-btn active" data-rating="1">★</button>
+          <button type="button" class="star-picker-btn active" data-rating="2">★</button>
+          <button type="button" class="star-picker-btn active" data-rating="3">★</button>
+          <button type="button" class="star-picker-btn active" data-rating="4">★</button>
+          <button type="button" class="star-picker-btn active" data-rating="5">★</button>
+        </div>
+        <span id="star-rating-text" class="star-text-val">5 / 5 Excelente</span>
+        <input type="hidden" id="review-rating-val" value="5" />
+      </div>
+
+      <div class="form-group">
+        <textarea
+          id="review-comment-input"
+          class="review-textarea"
+          rows="3"
+          required
+          placeholder={translations["reviews.yourComment"]}></textarea>
+      </div>
+
+      <div class="review-form-actions">
+        <button type="button" id="close-review-form-btn" class="btn btn-sm btn-secondary">Cancelar</button>
+        <button type="submit" id="submit-review-btn" class="btn btn-sm btn-primary">
+          <span>🚀 {translations["reviews.submit"]}</span>
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Verified Client Testimonials from Multi-Maps & Official Sources -->
+  {
+    service.reviews && service.reviews.length > 0 && (
+      <div class="verified-external-reviews-grid">
+        <h3 class="external-reviews-title">💬 Reseñas y Experiencias Verificadas</h3>
+        <div class="reviews-cards-list">
+          {service.reviews.map((rev) => (
+            <div class="verified-review-card">
+              <div class="review-top-meta">
+                <div class="author-info">
+                  <span class="author-avatar">{rev.authorName.charAt(0).toUpperCase()}</span>
+                  <div>
+                    <strong class="author-name">{rev.authorName}</strong>
+                    {rev.verifiedCustomer && <span class="verified-badge">✓ Verificado</span>}
+                  </div>
+                </div>
+                <div class="review-platform-badge">
+                  <span>
+                    {rev.platform === "google_maps"
+                      ? "📍 Google Maps"
+                      : rev.platform === "bing_maps"
+                        ? "🌐 Bing Maps"
+                        : rev.platform === "tripadvisor"
+                          ? "🦉 TripAdvisor"
+                          : "✓ Verificada"}
+                  </span>
+                </div>
+              </div>
+              <div class="review-stars-row">
+                <span class="stars-gold">{"★".repeat(rev.rating)}</span>
+                <span class="review-date">{rev.date}</span>
+              </div>
+              <p class="review-comment-body">«{rev.comment}»</p>
+            </div>
+          ))}
         </div>
       </div>
+    )
+  }
 
-      <div class="faqs-list">
-        {service.reviews && service.reviews.length > 0 && service.reviews.map((review: any) => (
-          <details class="faq-item" key={review.id}>
-            <summary class="faq-question">
-              <strong class="review-author">
-                {review.authorName} 
-                {review.verifiedCustomer && <span class="verified-badge">✓</span>}
-              </strong>
-              <span class="review-meta">
-                ({review.rating} / 5) - {review.date}
-              </span>
-            </summary>
-            <div class="faq-answer">
-              <p class="review-comment">{review.comment}</p>
-              {review.platform && <span class="review-platform">Platform: {review.platform}</span>}
-            </div>
-          </details>
-        ))}
-        {(!service.reviews || service.reviews.length === 0) && (
-          <p class="no-reviews">No hay reseñas disponibles todavía. ¡Sé el primero en dejar una!</p>
-        )}
-      </div>
-    </section>
-  );
-};
+  <div id="reviews-list-container" class="reviews-list-container" data-service-id={service.id}>
+    <div class="reviews-loading">
+      <p>⏳ Cargando opiniones de la comunidad...</p>
+    </div>
+  </div>
+</section>

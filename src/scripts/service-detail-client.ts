@@ -1,0 +1,327 @@
+import { auth, db } from "../lib/firebase";
+import {
+  createServiceClaim,
+  createServiceDeletionRequest,
+  createServiceReport,
+  type ReportCategory,
+} from "../lib/serviceActions";
+import { getServiceOverride } from "../lib/serviceOverrides";
+
+export function initServiceDetailClient() {
+  // Gallery Thumbnail Swapper
+  const mainDisplayImg = document.getElementById("detail-main-display-img") as HTMLImageElement;
+  const thumbBtns = document.querySelectorAll(".thumb-btn");
+
+  thumbBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const newSrc = btn.getAttribute("data-img-url");
+      if (newSrc && mainDisplayImg) {
+        mainDisplayImg.src = newSrc;
+        thumbBtns.forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+      }
+    });
+  });
+
+  // 1-Click Copy Information
+  document.querySelectorAll(".btn-copy-info").forEach((btn) => {
+    btn.addEventListener("click", async () => {
+      const textToCopy = btn.getAttribute("data-copy-text");
+      if (textToCopy) {
+        try {
+          await navigator.clipboard.writeText(textToCopy);
+          const original = btn.textContent;
+          btn.textContent = "✓";
+          setTimeout(() => {
+            btn.textContent = original;
+          }, 1500);
+        } catch {
+          // Fallback
+        }
+      }
+    });
+  });
+
+  // Share Service Button
+  const shareBtn = document.getElementById("share-service-btn");
+  if (shareBtn) {
+    shareBtn.addEventListener("click", async () => {
+      const title = shareBtn.getAttribute("data-service-title") || document.title;
+      const text = shareBtn.getAttribute("data-service-desc") || "";
+      const url = window.location.href;
+
+      if (navigator.share) {
+        try {
+          await navigator.share({ title, text, url });
+        } catch {
+          // Cancelled by user
+        }
+      } else {
+        try {
+          await navigator.clipboard.writeText(url);
+          const span = shareBtn.querySelector("span:last-child");
+          if (span) {
+            const orig = span.textContent;
+            span.textContent = "¡Enlace Copiado!";
+            setTimeout(() => {
+              span.textContent = orig;
+            }, 2000);
+          }
+        } catch {
+          // Fallback
+        }
+      }
+    });
+  }
+
+  // Modal open/close helpers
+  const claimModal = document.getElementById("claim-modal");
+  const deleteModal = document.getElementById("delete-modal");
+  const reportModal = document.getElementById("report-modal");
+  const openClaimBtn = document.getElementById("open-claim-modal-btn");
+  const openDeleteBtn = document.getElementById("open-delete-modal-btn");
+  const openReportBtn = document.getElementById("open-report-modal-btn");
+
+  if (openClaimBtn && claimModal) {
+    openClaimBtn.addEventListener("click", () => {
+      claimModal.style.display = "flex";
+      const user = auth.currentUser;
+      const emailInput = document.getElementById("claim-email") as HTMLInputElement;
+      const nameInput = document.getElementById("claim-name") as HTMLInputElement;
+      if (user && emailInput && !emailInput.value) {
+        emailInput.value = user.email || "";
+      }
+      if (user && nameInput && !nameInput.value) {
+        nameInput.value = user.displayName || "";
+      }
+    });
+  }
+
+  if (openDeleteBtn && deleteModal) {
+    openDeleteBtn.addEventListener("click", () => {
+      deleteModal.style.display = "flex";
+      const user = auth.currentUser;
+      const emailInput = document.getElementById("delete-email") as HTMLInputElement;
+      if (user && emailInput && !emailInput.value) {
+        emailInput.value = user.email || "";
+      }
+    });
+  }
+
+  if (openReportBtn && reportModal) {
+    openReportBtn.addEventListener("click", () => {
+      reportModal.style.display = "flex";
+      const user = auth.currentUser;
+      const emailInput = document.getElementById("report-email") as HTMLInputElement;
+      if (user && emailInput && !emailInput.value) {
+        emailInput.value = user.email || "";
+      }
+    });
+  }
+
+  // Close modals
+  document.querySelectorAll("[data-close-modal]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const modalId = btn.getAttribute("data-close-modal");
+      if (modalId) {
+        const targetModal = document.getElementById(modalId);
+        if (targetModal) targetModal.style.display = "none";
+      }
+    });
+  });
+
+  // Handle Claim Submission
+  const claimForm = document.getElementById("claim-form") as HTMLFormElement;
+  if (claimForm) {
+    claimForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const user = auth.currentUser;
+      const alertSuccess = document.getElementById("claim-alert-success");
+      const alertError = document.getElementById("claim-alert-error");
+      const submitBtn = document.getElementById("claim-submit-btn") as HTMLButtonElement;
+
+      if (alertSuccess) alertSuccess.style.display = "none";
+      if (alertError) alertError.style.display = "none";
+
+      if (!user) {
+        if (alertError) {
+          alertError.textContent = "Debes iniciar sesión con tu cuenta para poder reclamar un negocio.";
+          alertError.style.display = "block";
+        }
+        return;
+      }
+
+      if (submitBtn) submitBtn.disabled = true;
+
+      try {
+        const serviceId = (document.getElementById("claim-service-id") as HTMLInputElement).value;
+        const serviceName = (document.getElementById("claim-service-name") as HTMLInputElement).value;
+        const name = (document.getElementById("claim-name") as HTMLInputElement).value;
+        const email = (document.getElementById("claim-email") as HTMLInputElement).value;
+        const phone = (document.getElementById("claim-phone") as HTMLInputElement).value;
+        const cif = (document.getElementById("claim-cif") as HTMLInputElement).value;
+
+        const claimId = `claim-${serviceId}-${user.uid.slice(0, 8)}`;
+        await createServiceClaim(db, {
+          id: claimId,
+          serviceId,
+          serviceName,
+          applicantUid: user.uid,
+          applicantName: name,
+          applicantEmail: email,
+          applicantPhone: phone,
+          verificationProof: cif,
+        });
+
+        if (alertSuccess) alertSuccess.style.display = "block";
+        claimForm.reset();
+        setTimeout(() => {
+          if (claimModal) claimModal.style.display = "none";
+        }, 2500);
+      } catch (err: any) {
+        if (alertError) {
+          alertError.textContent = `Error al procesar la reclamación: ${err.message || err}`;
+          alertError.style.display = "block";
+        }
+      } finally {
+        if (submitBtn) submitBtn.disabled = false;
+      }
+    });
+  }
+
+  // Handle Deletion Request
+  const deleteForm = document.getElementById("delete-form") as HTMLFormElement;
+  if (deleteForm) {
+    deleteForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const user = auth.currentUser;
+      const alertSuccess = document.getElementById("delete-alert-success");
+      const alertError = document.getElementById("delete-alert-error");
+      const submitBtn = document.getElementById("delete-submit-btn") as HTMLButtonElement;
+
+      if (alertSuccess) alertSuccess.style.display = "none";
+      if (alertError) alertError.style.display = "none";
+
+      if (submitBtn) submitBtn.disabled = true;
+
+      try {
+        const serviceId = (document.getElementById("delete-service-id") as HTMLInputElement).value;
+        const serviceName = (document.getElementById("delete-service-name") as HTMLInputElement).value;
+        const email = (document.getElementById("delete-email") as HTMLInputElement).value;
+        const reason = (document.getElementById("delete-reason") as HTMLTextAreaElement).value;
+
+        const reqId = `del-${serviceId}-${Date.now()}`;
+        await createServiceDeletionRequest(db, {
+          id: reqId,
+          serviceId,
+          serviceName,
+          applicantUid: user?.uid || "anonymous",
+          applicantEmail: email,
+          reason,
+        });
+
+        if (alertSuccess) alertSuccess.style.display = "block";
+        deleteForm.reset();
+        setTimeout(() => {
+          if (deleteModal) deleteModal.style.display = "none";
+        }, 2500);
+      } catch (err: any) {
+        if (alertError) {
+          alertError.textContent = `Error al solicitar la baja: ${err.message || err}`;
+          alertError.style.display = "block";
+        }
+      } finally {
+        if (submitBtn) submitBtn.disabled = false;
+      }
+    });
+  }
+
+  // Handle Report Form
+  const reportForm = document.getElementById("report-form") as HTMLFormElement;
+  if (reportForm) {
+    reportForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const alertSuccess = document.getElementById("report-alert-success");
+      const alertError = document.getElementById("report-alert-error");
+      const submitBtn = document.getElementById("report-submit-btn") as HTMLButtonElement;
+
+      if (alertSuccess) alertSuccess.style.display = "none";
+      if (alertError) alertError.style.display = "none";
+
+      const serviceId = (document.getElementById("report-service-id") as HTMLInputElement).value;
+      const serviceName = (document.getElementById("report-service-name") as HTMLInputElement).value;
+      const category = (document.getElementById("report-category") as HTMLSelectElement).value as ReportCategory;
+      const description = (document.getElementById("report-description") as HTMLTextAreaElement).value.trim();
+      const reporterEmail = (document.getElementById("report-email") as HTMLInputElement).value.trim();
+
+      if (!description) {
+        if (alertError) {
+          alertError.textContent = "Por favor, describe el error o la mejora que propones.";
+          alertError.style.display = "block";
+        }
+        return;
+      }
+
+      if (submitBtn) submitBtn.disabled = true;
+
+      try {
+        const user = auth.currentUser;
+        const reportId = `rep-${serviceId}-${Date.now()}`;
+        await createServiceReport(db, {
+          id: reportId,
+          serviceId,
+          serviceName,
+          category,
+          description,
+          reporterUid: user?.uid,
+          reporterEmail: reporterEmail || user?.email || undefined,
+        });
+
+        if (alertSuccess) alertSuccess.style.display = "block";
+        reportForm.reset();
+        setTimeout(() => {
+          if (reportModal) reportModal.style.display = "none";
+        }, 2500);
+      } catch (err: any) {
+        if (alertError) {
+          alertError.textContent = `Error al enviar el reporte: ${err.message || err}`;
+          alertError.style.display = "block";
+        }
+      } finally {
+        if (submitBtn) submitBtn.disabled = false;
+      }
+    });
+  }
+
+  // Dynamic Override Live Hydration (Overlay Pattern)
+  async function hydrateDynamicOverrides() {
+    try {
+      const slug = window.location.pathname.split("/").filter(Boolean).pop();
+      if (!slug) return;
+
+      const override = await getServiceOverride(db, slug);
+      if (!override) return;
+
+      if (override.phone) {
+        document.querySelectorAll(".phone-display-text").forEach((el) => (el.textContent = override.phone!));
+      }
+      if (override.whatsapp) {
+        document.querySelectorAll(".btn-contact-whatsapp").forEach((btn) => {
+          btn.setAttribute("href", `https://wa.me/${override.whatsapp!.replace(/[^0-9]/g, "")}`);
+        });
+      }
+      if (override.website) {
+        document.querySelectorAll(".btn-contact-web").forEach((btn) => {
+          btn.setAttribute("href", override.website!);
+        });
+      }
+      if (override.schedule) {
+        document.querySelectorAll(".schedule-display-text").forEach((el) => (el.textContent = override.schedule!));
+      }
+    } catch {
+      // Graceful degradation
+    }
+  }
+
+  hydrateDynamicOverrides();
+}

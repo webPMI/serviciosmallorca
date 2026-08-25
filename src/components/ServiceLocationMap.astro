@@ -1,30 +1,34 @@
 ---
-import { type Locale } from "../../../i18n";
+import type { ServiceItem } from "../data/services/types";
 
-export const ServiceLocationMap = ({
-  service,
-  translations,
-  locale
-}: {
-  service: any;
-  translations: any;
-  locale: Locale;
-}) => {
-  return (
-    <section class="card section-box location-map-box">
-      <h2 class="box-title">📍 {translations["services.address"]}: {service.address}</h2>
+interface Props {
+  service: ServiceItem;
+  translations: Record<string, string>;
+}
+
+const { service, translations } = Astro.props;
+---
+
+<section class="card section-box location-map-box">
+  <h2 class="box-title">📍 {translations["services.address"]}: {service.address}</h2>
+  {
+    service.coordinates && (
       <div class="map-embed-wrapper">
         <iframe
           title={`Mapa de ubicación de ${service.name}`}
           class="map-iframe"
           loading="lazy"
           src={`https://www.openstreetmap.org/export/embed.html?bbox=${service.coordinates.lng - 0.008}%2C${service.coordinates.lat - 0.006}%2C${service.coordinates.lng + 0.008}%2C${service.coordinates.lat + 0.006}&layer=mapnik&marker=${service.coordinates.lat}%2C${service.coordinates.lng}`}
-        ></iframe
+        />
       </div>
+    )
+  }
 
-      <div class="maps-navigation-toolbar">
-        <span class="nav-label">🗺️ Abrir indicaciones en:</span>
-        <div class="maps-links-grid">
+  <div class="maps-navigation-toolbar">
+    <span class="nav-label">🗺️ Abrir indicaciones en:</span>
+    <div class="maps-links-grid">
+      {
+        service.googleMapsUrl && (
           <a
             href={service.googleMapsUrl}
             target="_blank"
@@ -33,6 +37,10 @@ export const ServiceLocationMap = ({
           >
             <span>📍 Google Maps</span>
           </a>
+        )
+      }
+      {
+        service.appleMapsUrl && (
           <a
             href={service.appleMapsUrl}
             target="_blank"
@@ -41,6 +49,10 @@ export const ServiceLocationMap = ({
           >
             <span>🍎 Apple Maps</span>
           </a>
+        )
+      }
+      {
+        service.bingMapsUrl && (
           <a
             href={service.bingMapsUrl}
             target="_blank"
@@ -49,8 +61,8 @@ export const ServiceLocationMap = ({
           >
             <span>🌐 Bing Maps</span>
           </a>
-        </div>
-      </div>
-    </section>
-  );
-};
+        )
+      }
+    </div>
+  </div>
+</section>

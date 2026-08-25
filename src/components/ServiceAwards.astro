@@ -1,25 +1,25 @@
 ---
-import { type Locale } from "../../../i18n";
+import type { ServiceItem } from "../data/services/types";
+import type { Locale } from "../i18n";
 
-export const ServiceAwards = ({
-  service,
-  translations,
-  locale
-}: {
-  service: any;
-  translations: any;
+interface Props {
+  service: ServiceItem;
+  translations: Record<string, string>;
   locale: Locale;
-}) => {
-  if (!service.awards || service.awards.length === 0) return null;
+}
 
-  return (
-    <section class="card section-box awards-box">
-      <h2 class="box-title">🏆 Premios & Reconocimientos Oficiales</h2>
+const { service, translations, _locale } = Astro.props as any;
+---
+
+{
+  service.awards && service.awards.length > 0 && (
+    <section class="card section-box">
+      <h2 class="box-title">🏆 {translations["services.awards"] || "Premios & Reconocimientos Oficiales"}</h2>
       <div class="awards-grid">
-        {service.awards.map((award) => (
-          <div class="award-card" key={award.title}>
-            <div class="award-icon">🥇</div>
-            <div class="award-details">
+        {service.awards.map((award: any) => (
+          <div class="award-card">
+            <span class="award-icon">🥇</span>
+            <div>
               <strong class="award-title">
                 {award.url ? (
                   <a href={award.url} target="_blank" rel="noopener noreferrer" class="award-source-link">
@@ -30,7 +30,7 @@ export const ServiceAwards = ({
                 )}
               </strong>
               <span class="award-meta">
-                {award.issuer} {award.year ? `(${award.year})` : ""}
+                {award.issuer} {award.year && `(${award.year})`}
               </span>
               {award.url && (
                 <a href={award.url} target="_blank" rel="noopener noreferrer" class="award-verify-badge">
@@ -42,5 +42,5 @@ export const ServiceAwards = ({
         ))}
       </div>
     </section>
-  );
-};
+  )
+}

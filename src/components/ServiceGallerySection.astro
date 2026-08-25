@@ -1,0 +1,56 @@
+---
+import type { ServiceItem } from "../data/services/types";
+import type { ServiceCategory } from "../data/categories";
+import ServiceImage from "./ServiceImage.astro";
+
+interface Props {
+  service: ServiceItem;
+  category?: ServiceCategory;
+  categoryName: string;
+}
+
+const { service, category, categoryName } = Astro.props;
+---
+
+<div class="gallery-container card">
+  <div class="main-image-wrap">
+    <ServiceImage
+      id="detail-main-display-img"
+      src={service.image}
+      alt={service.name}
+      categoryIcon={category?.icon}
+      categoryName={categoryName}
+      aspectRatio="auto"
+      className="detail-main-img"
+      loading="eager"
+    />
+  </div>
+  {
+    service.gallery && service.gallery.length > 0 && (
+      <div class="gallery-thumbnails" id="gallery-thumbs-row">
+        {service.image && (
+          <button type="button" class="thumb-btn active" data-img-url={service.image}>
+            <img
+              src={service.image}
+              alt={`${service.name} portada`}
+              class="thumb-img"
+              loading="lazy"
+              onerror="this.parentElement.style.display='none';"
+            />
+          </button>
+        )}
+        {service.gallery.map((imgUrl: string, index: number) => (
+          <button type="button" class="thumb-btn" data-img-url={imgUrl}>
+            <img
+              src={imgUrl}
+              alt={`${service.name} foto ${index + 1}`}
+              class="thumb-img"
+              loading="lazy"
+              onerror="this.parentElement.style.display='none';"
+            />
+          </button>
+        ))}
+      </div>
+    )
+  }
+</div>

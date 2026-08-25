@@ -1,26 +1,155 @@
 ---
-import { type Locale } from "../../../i18n";
+import type { ServiceItem } from "../data/services/types";
 
-export const ServiceClaimDeleteModals = ({
-  service,
-  translations,
-  locale
-}: {
-  service: any;
-  translations: any;
-  locale: Locale;
-}) => {
-  return (
-    <section class="card section-box claim-delete-section">
-      <h2 class="box-title">{translations["services.claims"]}</h2>
-      <div class="claims-links">
-        <a href="#" class="btn btn-outline">
-          <span>{translations["services.claim_property"]}</span>
-        </a>
-        <a href="#" class="btn btn-outline">
-          <span>{translations["services.request_deletion"]}</span>
-        </a>
+interface Props {
+  service: ServiceItem;
+  translations: Record<string, string>;
+}
+
+const { service, translations } = Astro.props;
+---
+
+<!-- MODAL: RECLAMAR NEGOCIO -->
+<div id="claim-modal" class="custom-modal-overlay" style="display: none;">
+  <div class="custom-modal-card card-glass">
+    <div class="modal-header-flex">
+      <h3>🏢 {translations["services.claimBusiness"]}</h3>
+      <button type="button" class="modal-close-btn" data-close-modal="claim-modal">&times;</button>
+    </div>
+    <p class="modal-desc">{translations["services.claimSubtitle"]}</p>
+
+    <div id="claim-alert-success" class="alert-success" style="display: none;">
+      {translations["services.claimSuccess"]}
+    </div>
+    <div id="claim-alert-error" class="alert-error" style="display: none;"></div>
+
+    <form id="claim-form" class="modal-form">
+      <input type="hidden" id="claim-service-id" value={service.id} />
+      <input type="hidden" id="claim-service-name" value={service.name} />
+
+      <div class="form-group">
+        <label class="form-label" for="claim-name">Nombre y Apellidos del Solicitante</label>
+        <input type="text" id="claim-name" class="form-input" required placeholder="Tu nombre" />
       </div>
-    </section>
-  );
-};
+
+      <div class="form-group">
+        <label class="form-label" for="claim-email">Correo Electrónico de Contacto</label>
+        <input type="email" id="claim-email" class="form-input" required placeholder="nombre@empresa.com" />
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="claim-phone">{translations["services.claimPhone"]}</label>
+        <input type="tel" id="claim-phone" class="form-input" required placeholder="+34 600 000 000" />
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="claim-cif">{translations["services.claimCif"]}</label>
+        <input type="text" id="claim-cif" class="form-input" required placeholder="CIF o documento acreditativo" />
+      </div>
+
+      <div class="modal-actions">
+        <button type="submit" id="claim-submit-btn" class="btn btn-primary btn-full">
+          {translations["services.claimSubmit"]}
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- MODAL: SOLICITAR BAJA / SUPRESIÓN -->
+<div id="delete-modal" class="custom-modal-overlay" style="display: none;">
+  <div class="custom-modal-card card-glass">
+    <div class="modal-header-flex">
+      <h3>🗑️ {translations["services.deleteRequest"]}</h3>
+      <button type="button" class="modal-close-btn" data-close-modal="delete-modal">&times;</button>
+    </div>
+    <p class="modal-desc">
+      Conforme a la normativa RGPD/LOPD, el titular legítimo puede solicitar la retirada de su ficha en cualquier
+      momento.
+    </p>
+
+    <div id="delete-alert-success" class="alert-success" style="display: none;">
+      {translations["services.deleteSuccess"]}
+    </div>
+    <div id="delete-alert-error" class="alert-error" style="display: none;"></div>
+
+    <form id="delete-form" class="modal-form">
+      <input type="hidden" id="delete-service-id" value={service.id} />
+      <input type="hidden" id="delete-service-name" value={service.name} />
+
+      <div class="form-group">
+        <label class="form-label" for="delete-email">Correo Electrónico del Solicitante</label>
+        <input type="email" id="delete-email" class="form-input" required placeholder="titular@empresa.com" />
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="delete-reason">{translations["services.deleteReason"]}</label>
+        <textarea
+          id="delete-reason"
+          class="form-input form-textarea"
+          required
+          placeholder="Indica el motivo de la supresión o acreditación de titularidad..."></textarea>
+      </div>
+
+      <div class="modal-actions">
+        <button type="submit" id="delete-submit-btn" class="btn btn-danger btn-full">
+          {translations["services.deleteSubmit"]}
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- MODAL: REPORTAR ERROR / SUGERIR CAMBIOS -->
+<div id="report-modal" class="custom-modal-overlay" style="display: none;">
+  <div class="custom-modal-card card-glass">
+    <div class="modal-header-flex">
+      <h3>🚩 {translations["services.reportError"]}</h3>
+      <button type="button" class="modal-close-btn" data-close-modal="report-modal">&times;</button>
+    </div>
+    <p class="modal-desc">{translations["services.reportSubtitle"]}</p>
+
+    <div id="report-alert-success" class="alert-success" style="display: none;">
+      {translations["services.reportSuccess"]}
+    </div>
+    <div id="report-alert-error" class="alert-error" style="display: none;"></div>
+
+    <form id="report-form" class="modal-form">
+      <input type="hidden" id="report-service-id" value={service.id} />
+      <input type="hidden" id="report-service-name" value={service.name} />
+
+      <div class="form-group">
+        <label class="form-label" for="report-category">{translations["services.reportCategory"]}</label>
+        <select id="report-category" class="form-input" required>
+          <option value="horario_incorrecto">{translations["services.reportCat.horario"]}</option>
+          <option value="ubicacion_erronea">{translations["services.reportCat.ubicacion"]}</option>
+          <option value="contacto_invalido">{translations["services.reportCat.contacto"]}</option>
+          <option value="negocio_cerrado">{translations["services.reportCat.cerrado"]}</option>
+          <option value="sugerencia_cambio" selected>{translations["services.reportCat.sugerencia"]}</option>
+          <option value="otro">{translations["services.reportCat.otro"]}</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="report-description">{translations["services.reportDesc"]}</label>
+        <textarea
+          id="report-description"
+          class="form-input form-textarea"
+          required
+          minlength="10"
+          placeholder="Describe con detalle qué información está desactualizada o errónea..."></textarea>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="report-email">Tu correo (opcional, para seguimiento)</label>
+        <input type="email" id="report-email" class="form-input" placeholder="tu@correo.com" />
+      </div>
+
+      <div class="modal-actions">
+        <button type="submit" id="report-submit-btn" class="btn btn-primary btn-full">
+          {translations["services.reportSubmit"]}
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

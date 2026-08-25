@@ -1,26 +1,32 @@
 ---
-import { type Locale } from "../../../i18n";
+import type { BlogPost } from "../data/posts";
+import type { Locale } from "../i18n";
 
-export const ServiceRelatedList = ({
-  service,
-  translations,
-  locale
-}: {
-  service: any;
-  translations: any;
+interface Props {
+  relatedPosts: BlogPost[];
+  translations: Record<string, string>;
   locale: Locale;
-}) => {
-  // Simulación de búsqueda de servicios relacionados (en producción esto vendría de una lógica de categorías/zonas)
-  // Por ahora, usaremos el ID del servicio actual para mostrar ejemplos
-  return (
-    <section class="card section-box related-services">
-      <h2 class="box-title">{translations["services.related"]}</h2>
-      <div class="related-grid">
-        {/* Ejemplo de placeholders - En el futuro se poblará con lógica de base de datos/filtros */}
-        <div class="related-item-placeholder">
-          <p>Negocios relacionados en {service.zone}</p>
-        </div>
+  prefix: string;
+}
+
+const { relatedPosts, translations, locale, prefix } = Astro.props;
+---
+
+{
+  relatedPosts && relatedPosts.length > 0 && (
+    <section class="card section-box">
+      <h2 class="box-title">{translations["blog.relatedServices"]}</h2>
+      <div class="related-posts-list">
+        {relatedPosts.map((post) => (
+          <a href={`${prefix}blog/${post.slug}`} class="related-post-card">
+            <img src={post.coverImage} alt={post.title[locale]} class="related-post-img" />
+            <div>
+              <h4 class="related-post-title">{post.title[locale]}</h4>
+              <span class="related-post-time">⏱️ {post.readTime}</span>
+            </div>
+          </a>
+        ))}
       </div>
     </section>
-  );
-};
+  )
+}

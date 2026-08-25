@@ -1,0 +1,40 @@
+---
+import type { ServiceItem } from "../data/services/types";
+import type { Locale } from "../i18n";
+
+interface Props {
+  service: ServiceItem;
+  locale: Locale;
+}
+
+const { service, locale } = Astro.props;
+---
+
+{
+  service.teamMembers && service.teamMembers.length > 0 && (
+    <section class="card section-box">
+      <h2 class="box-title">🎨 Equipo de Profesionales & Artistas Residentes</h2>
+      <div class="team-grid">
+        {service.teamMembers.map((member: any) => (
+          <div class="team-member-card">
+            {member.avatarUrl ? (
+              <img src={member.avatarUrl} alt={member.name} class="team-avatar" />
+            ) : (
+              <div class="team-avatar-placeholder">{member.name.charAt(0)}</div>
+            )}
+            <div class="team-info">
+              <strong class="team-name">{member.name}</strong>
+              <span class="team-role">{member.role[locale]}</span>
+              {member.specialty && <span class="team-specialty">{member.specialty}</span>}
+              {member.instagramHandle && (
+                <span class="team-ig">
+                  📸 {member.instagramHandle}
+                </span>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  )
+}
