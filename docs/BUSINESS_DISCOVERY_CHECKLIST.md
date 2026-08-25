@@ -6,12 +6,12 @@
 
 | Segmento de Calidad                             | Total Negocios | Estado en Plataforma                               |
 | :---------------------------------------------- | :------------: | :------------------------------------------------- |
-| ⭐⭐⭐⭐⭐ **5 Estrellas (4.8 - 5.0)**          |     **66**     | 🏆 Excelencia & Top Insular (Público Destacado)    |
+| ⭐⭐⭐⭐⭐ **5 Estrellas (4.8 - 5.0)**          |     **69**     | 🏆 Excelencia & Top Insular (Público Destacado)    |
 | ⭐⭐⭐⭐ **4 Estrellas (4.0 - 4.7)**            |     **71**     | ⭐ Notable / Recomendado (Público General)         |
 | ✨ **Nuevas Aperturas (0 reviews / Recientes)** |     **3**      | 🆕 Insignia 'Nueva Apertura' (Público Destacado)   |
 | ⭐⭐⭐ **3 Estrellas (3.0 - 3.9)**              |     **1**      | 🔹 Directorio Estándar (Público sin insignia)      |
 | ⚠️ **Triaje Interno (< 3.0 / Incompletos)**     |     **0**      | 🔒 Solo Administración (No se publica lista negra) |
-| 📦 **TOTAL NEGOCIOS EN RADAR**                  |    **141**     | **97 Indexados** · **44 Pendientes**               |
+| 📦 **TOTAL NEGOCIOS EN RADAR**                  |    **144**     | **100 Indexados** · **44 Pendientes**              |
 
 ---
 
@@ -52,15 +52,18 @@
 | ✅ Indexado |  **4.8**  |   380   | **77.4 pts** | **Forn i Pastisseria Gelabert (Llubí - 1935)**                | Gastronomía & Chefs Privados | Es Raiguer & Es Pla (Centro) |                               [Web](https://forngelabert.com)                               |
 | ✅ Indexado |  **4.8**  |   340   | **76.9 pts** | **Bodyna Spa (Hospes Maricel)**                               | Salud & Bienestar            | Calvià & Andratx (Suroeste)  |                  [Web](https://www.hospes.com/es/maricel-spa/bodyna-spa/)                   |
 | ✅ Indexado |  **4.8**  |   310   | **76.7 pts** | **Cuatrecasas Abogados Palma**                                | Abogados & Asesoría Fiscal   | Palma & Bahía                |                             [Web](https://www.cuatrecasas.com)                              |
+| ✅ Indexado |  **4.8**  |   320   | **76.6 pts** | **Viveros & Jardinería Llabrés (Marratxí - 1970)**            | Reformas & Construcción      | Es Raiguer & Es Pla (Centro) |                              [Web](https://viverosllabres.com)                              |
 | ✅ Indexado |  **4.8**  |   310   | **76.5 pts** | **Carnisseria Can Matas (Sóller - 1920)**                     | Gastronomía & Chefs Privados | Serra de Tramuntana          |                           [Web](https://carnisseriacanmatas.com)                            |
 | ✅ Indexado |  **4.8**  |   280   | **76.3 pts** | **Cerrajería San Miguel Palma (1960)**                        | Reformas & Construcción      | Palma & Bahía                |                           [Web](https://cerrajeriasanmiguel.com)                            |
 | ✅ Indexado |  **4.8**  |   290   | **76.2 pts** | **Caxígalos & Cera Artesanal Palma (1862)**                   | Arte, Tatuajes & Piercing    | Palma & Bahía                |                                [Web](https://caxigalos.com)                                 |
 | ✅ Indexado |  **4.8**  |   320   |  **76 pts**  | **Engel & Völkers Mallorca**                                  | Inmobiliaria & Fincas        | Palma & Bahía                |                    [Web](https://www.engelvoelkers.com/es-es/mallorca/)                     |
 | ✅ Indexado |  **4.8**  |   240   | **75.6 pts** | **Herboristería & Dietética La Remei Palma (1985)**           | Salud & Bienestar            | Palma & Bahía                |                           [Web](https://herboristerialaremei.com)                           |
 | ✅ Indexado |  **4.8**  |   220   | **75.4 pts** | **Digital Cinema Domótica & Audio Mallorca**                  | Seguridad & Domótica         | Palma & Bahía                |                               [Web](https://digitalcinema.es)                               |
+| ✅ Indexado |  **4.8**  |   210   | **75.2 pts** | **Carnisseria Can Toni des Pla (Porreres - 1965)**            | Gastronomía & Chefs Privados | Es Raiguer & Es Pla (Centro) |                              [Web](https://cantonidespla.com)                               |
 | ✅ Indexado |  **4.8**  |   210   | **75.2 pts** | **Carpintería y Ebanistería Fiol (1975)**                     | Reformas & Construcción      | Es Raiguer & Es Pla (Centro) |                             [Web](https://carpinteriafiol.com)                              |
 | ✅ Indexado |  **4.8**  |   210   | **75.2 pts** | **Taller Mecánico Hermanos Bestard (1978)**                   | Transporte VIP & Chófer      | Palma & Bahía                |                          [Web](https://tallerhermanosbestard.com)                           |
 | ✅ Indexado |  **4.8**  |   185   | **74.9 pts** | **Arquitectura 81 Palma (A81)**                               | Reformas & Construcción      | Palma & Bahía                |                                    [Web](https://a81.es)                                    |
+| ✅ Indexado |  **4.8**  |   540   | **74.4 pts** | **Skualo Diving & Snorkel Center (Alcúdia / Can Picafort)**   | Náutica & Charters           | Alcúdia & Pollença (Norte)   |                                  [Web](https://skualo.com)                                  |
 | ✅ Indexado |  **4.8**  |   135   | **74.3 pts** | **Tapicería & Toldos Balear (1982)**                          | Reformas & Construcción      | Palma & Bahía                |                             [Web](https://tapiceriabalear.com)                              |
 | ✅ Indexado |  **4.8**  |   114   |  **74 pts**  | **Bufete Frau Abogados & Asesores**                           | Abogados & Asesoría Fiscal   | Palma & Bahía                |                                [Web](https://bufetefrau.com)                                |
 | ✅ Indexado |  **4.8**  |   460   |  **74 pts**  | **DINS Santi Taura**                                          | Gastronomía & Chefs Privados | Palma & Bahía                |                              [Web](https://dinssantitaura.com)                              |

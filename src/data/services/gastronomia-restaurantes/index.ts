@@ -30,6 +30,7 @@ import { fornDesTeatre } from "./forn-des-teatre-palma.ts";
 import { carniceriaCanMatas } from "./carniceria-can-matas-soller.ts";
 import { cellerCanRipoll } from "./celler-can-ripoll-inca.ts";
 import { fornGelabertLlubi } from "./forn-gelabert-llubi.ts";
+import { carniceriaCanToni } from "./carniceria-can-toni-porreres.ts";
 
 export {
   dinsSantiTaura,
@@ -63,6 +64,7 @@ export {
   carniceriaCanMatas,
   cellerCanRipoll,
   fornGelabertLlubi,
+  carniceriaCanToni,
 };
 
 /**
@@ -101,4 +103,5 @@ export const RESTAURANT_SERVICES: ServiceItem[] = [
   carniceriaCanMatas,
   cellerCanRipoll,
   fornGelabertLlubi,
+  carniceriaCanToni,
 ];

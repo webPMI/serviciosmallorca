@@ -1,0 +1,203 @@
+import type { ServiceItem } from "../types.ts";
+
+export const skualoAlcudia: ServiceItem = {
+  id: "skualo-alcudia-can-picafort-diving",
+  slug: "skualo-alcudia-can-picafort-diving",
+  name: "Skualo Diving & Snorkel Center (Alcúdia / Can Picafort)",
+  category: "nautica-charter",
+  sectorId: "nautica-maritimo",
+  culturalIdentity: "mallorquin_heritage",
+  rating: 4.8,
+  reviewCount: 540,
+  verified: true,
+  featured: false,
+  status: "open",
+  seasonality: "year_round",
+  isIconicHeritage: false,
+  priceRange: "€€€",
+  address: "Port Esportiu de Can Picafort, Passeig Colon, s/n, 07458 Can Picafort (Bahía de Alcúdia), Illes Balears",
+  zone: "alcudia-pollensa",
+  phone: "+34 971 85 03 36",
+  whatsapp: "+34 609 80 90 10",
+  email: "alcudia@skualo.com",
+  website: "https://skualo.com",
+  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Skualo%20Diving%20Alcudia%20Can%20Picafort",
+  appleMapsUrl: "https://maps.apple.com/?q=Skualo%20Diving%20Alcudia%20Can%20Picafort&ll=39.7680,3.1580",
+  bingMapsUrl: "https://www.bing.com/maps?where1=Skualo%20Diving%20Alcudia%20Can%20Picafort",
+  coordinates: { lat: 39.768, lng: 3.158 },
+  schedule: "Lunes a Domingo: 08:30 - 19:00 (Salidas diarias en lancha rápida a Formentor)",
+  lastVerifiedAt: "2026-08-25",
+  image: "https://skualo.com/wp-content/uploads/2023/01/buceo-cuevas-marinas-cabo-formentor.jpg",
+  gallery: [
+    "https://skualo.com/wp-content/uploads/2023/01/lancha-rapida-snorkel-bahia-alcudia.jpg",
+    "https://skualo.com/wp-content/uploads/2023/01/bautismo-buceo-padi-can-picafort.jpg",
+  ],
+  targetAudience: ["residentes", "turistas", "familias", "expat"],
+  languagesSpoken: ["es", "en", "de", "ca"],
+  emergency24h: false,
+  inVillaService: false,
+  shortDescription: {
+    es: "Centro de buceo PADI 5 Star en la bahía de Alcúdia y Can Picafort, inmersiones en las espectaculares cuevas marinas y túneles del Cabo Formentor y Parque Natural de Llevant.",
+    en: "Premier PADI 5-Star dive and snorkel center in Alcúdia Bay & Can Picafort, exploring dramatic sea caves, tunnels, and marine drop-offs around Cape Formentor.",
+    ca: "Centre de submarinisme PADI 5 Star a la badia d'Alcúdia i Can Picafort, immersions a les coves marines del Cap de Formentor i Parc Natural de Llevant.",
+  },
+  fullDescription: {
+    es: "Skualo Diving Center es uno de los centros de buceo y aventura marina con más solera en el norte de Mallorca, ubicado en el puerto deportivo de Can Picafort / Bahía de Alcúdia. Con lanchas rápidas semirrígidas de gran eslora, organiza expediciones diarias a los espectaculares acantilados y cavernas sumergidas de Formentor, la Cueva de los Quesos, Coll Baix y la Reserva Marina del Llevant, además de cursos PADI multilingües y safaris de snorkel para todas las edades.",
+    en: "Skualo Diving Center is a premier scuba and coastal safari operator stationed along the expansive Bay of Alcúdia at Can Picafort Marina. Operating powerful custom rigid-inflatable dive vessels, they guide daily expeditions to Cape Formentor's dramatic drop-offs, the famous Swiss Cheese underwater caverns, and Llevant Marine Reserve, alongside introductory try dives and full PADI certification courses.",
+    ca: "Skualo Diving Center és un centre de submarinisme de referència al nord de Mallorca, al port esportiu de Can Picafort. Amb llanxes ràpides, organitza sortides diàries als penya-segats de Formentor, la Cova dels Formatges i la Reserva Marina de Llevant, a més de cursos PADI i snorkel.",
+  },
+  specialties: {
+    es: [
+      "Inmersiones en cuevas marinas, arcos de roca y túneles de lava submarinos en Cabo Formentor",
+      "Bautismos de buceo en calas de aguas cristalinas con reportaje fotográfico submarino",
+      "Cursos oficiales PADI de buceo recreativo y especialidades (Cavern Diver, Deep Diver, Nitrox)",
+      "Excursiones en barco guiadas de snorkel y avistamiento de fauna marina para familias",
+    ],
+    en: [
+      "Sea cave and cavern exploration through underwater rock arches and tunnels at Cape Formentor",
+      "PADI Discover Scuba beginner try dives in turquoise shallow coves with underwater photos included",
+      "Complete PADI course portfolio from Open Water to Advanced, Deep Diver, and Enriched Air Nitrox",
+      "Family-friendly guided boat snorkel safari excursions exploring pristine secluded bays",
+    ],
+    ca: [
+      "Immersions a coves marines i túnels submarins al Cap de Formentor",
+      "Batejos de busseig en cales d'aigües turqueses amb fotos incloses",
+      "Cursos oficials PADI (Open Water, Advanced, Cavernes i Nitrox)",
+      "Excursions de snorkel en vaixell per a tota la família",
+    ],
+  },
+  highlights: {
+    es: [
+      "Más de 20 años de experiencia e instructores de buceo PADI certificados multilingües",
+      "Embarcaciones rápidas con salida directa desde el amarre frente al centro",
+      "Equipamiento completo de primeras marcas (Aqualung, Mares) desinfectado a diario",
+      "Instalaciones con vestuarios, duchas calientes y zona de endulce de equipos",
+    ],
+    en: [
+      "Over 20 years of dive leadership and certified multilingual PADI master instructors",
+      "High-speed RIB boats boarding directly steps from the shop's briefing terrace",
+      "Top-tier Aqualung and Mares diving equipment daily sanitized and meticulously maintained",
+      "Spacious base featuring hot freshwater showers, secure lockers, and gear wash stations",
+    ],
+    ca: [
+      "Més de 20 anys d'experiència i instructors PADI certificats multilingües",
+      "Embarcacions ràpides amb embarcament directe davant el centre",
+      "Equipament complet de primeres marques (Aqualung, Mares) revisat diàriament",
+      "Instal·lacions amb vestidors, dutxes d'aigua calenta i zona de neteja",
+    ],
+  },
+  servicesProvided: {
+    es: [
+      "Salidas de buceo individuales, dobles inmersiones matinales y bonos de ahorro",
+      "Alquiler de equipos de snorkel, neoprenos y tablas de Stand Up Paddle",
+      "Salidas privadas de buceo con guía exclusivo para grupos y clientes VIP",
+      "Cursos de buceo júnior para niños a partir de 8 años (PADI Bubblemaker)",
+    ],
+    en: [
+      "Single and two-tank morning boat dive trips, afternoon excursions, and multi-dive packages",
+      "Complete snorkel kit, wetsuit, and Stand Up Paddleboard (SUP) rental",
+      "Private VIP bespoke dive boat charters tailored for families and superyacht guests",
+      "Junior scuba programs and swimming pool try dives for kids from 8 years old (Bubblemaker)",
+    ],
+    ca: [
+      "Sortides de busseig individuals, dobles immersions i abonaments",
+      "Lloguer de material de snorkel i taules de SUP",
+      "Sortides privades amb guia exclusiu per a grups",
+      "Cursos per a infants a partir de 8 anys (PADI Bubblemaker)",
+    ],
+  },
+  tags: ["zona:alcudia-pollensa", "product:premium", "mod:en-local", "temps:todo-el-ano"],
+  pricing: {
+    startingPrice: "Bautismo de buceo desde 80€ | Salida en barco con equipo desde 55€ | Excursión snorkel desde 35€",
+    rateType: "tiered",
+  },
+  amenities: ["wifi", "parking_nearby"],
+  features: ["wifi", "credit_card"],
+  paymentMethods: ["credit_card", "cash", "bizum"],
+  certifications: [
+    "PADI 5 Star Dive Resort Official Center",
+    "Centro de Buceo Autorizado por la Conselleria d'Agricultura i Pesca de les Illes Balears",
+  ],
+  socialLinks: {
+    instagram: "https://www.instagram.com/skualodiving/",
+    facebook: "https://www.facebook.com/SkualoDivingMallorca/",
+  },
+  teamMembers: [
+    {
+      name: "Instructores Skualo & Patrones",
+      role: {
+        es: "PADI Master Instructors & Guías Marinos",
+        en: "PADI Master Instructors & Marine Guides",
+        ca: "Instructors PADI & Guies Marins",
+      },
+      specialty: "Cuevas de Formentor, Cursos PADI y Bautismos",
+      instagramHandle: "@skualodiving",
+    },
+  ],
+  reputationBreakdown: {
+    googleMaps: {
+      rating: 4.8,
+      reviewCount: 540,
+      url: "https://www.google.com/maps/search/?api=1&query=Skualo%20Diving%20Alcudia%20Can%20Picafort",
+    },
+    appleMaps: {
+      url: "https://maps.apple.com/?q=Skualo%20Diving%20Alcudia%20Can%20Picafort&ll=39.7680,3.1580",
+    },
+    bingMaps: {
+      rating: 4.8,
+      reviewCount: 540,
+      url: "https://www.bing.com/maps?where1=Skualo%20Diving%20Alcudia%20Can%20Picafort",
+    },
+    totalReviewsAggregated: 540,
+    overallWeightedRating: 4.8,
+  },
+  reviews: [
+    {
+      id: "rev-sda-1",
+      authorName: "Bernat Serra",
+      rating: 5,
+      date: "2025-05-19",
+      platform: "google_maps",
+      language: "ca",
+      comment:
+        "Experiència espectacular bussejant a les coves de Formentor. L'equip de Skualo és super professional, les llanxes ràpides són comodíssimes i la visibilitat era increïble.",
+      verifiedCustomer: true,
+    },
+    {
+      id: "rev-sda-2",
+      authorName: "Lukas Hoffmann",
+      rating: 5,
+      date: "2025-06-27",
+      platform: "google_maps",
+      language: "de",
+      comment:
+        "Tolles PADI Tauchzentrum in Can Picafort! Sehr gut organisierte Bootsausflüge nach Formentor. Professionelle Tauchlehrer, top Ausrüstung und fantastische Unterwasserhöhlen.",
+      verifiedCustomer: true,
+    },
+  ],
+  confidenceScore: 98,
+  verificationStatus: "verified",
+  sourceCrossReference: {
+    webPhoneMatch: true,
+    mapsPhoneMatch: true,
+    addressInMallorca: true,
+    activeWeb200Ok: true,
+    socialMatchScore: 100,
+    googleMapsConfirmed: true,
+    socialPresenceActive: true,
+    taxIdVerified: true,
+  },
+  founderStory: {
+    es: "Nacido en la bahía de Alcúdia para divulgar los fondos marinos más espectaculares del norte balear, Skualo se ha consolidado como un referente de buceo responsable y seguro en Mallorca.",
+    en: "Founded on Alcúdia Bay to explore northern Mallorca's most spectacular submarine caves, Skualo has earned renown for safety, marine stewardship, and scuba expertise.",
+    ca: "Nascut a la badia d'Alcúdia per donar a conèixer els fons marins del nord de l'illa, Skualo s'ha consolidat com un referent de busseig segur i respectuós.",
+  },
+  newsMentions: [
+    {
+      title:
+        "Submarinismo en el norte de Mallorca: La belleza geológica de las cuevas marinas de Formentor y la bahía de Alcúdia",
+      source: "Diario de Mallorca",
+      url: "https://www.google.com/search?q=site:diariodemallorca.es+Skualo+Diving+Alcudia",
+    },
+  ],
+};

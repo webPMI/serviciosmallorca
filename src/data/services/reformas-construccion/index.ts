@@ -15,6 +15,7 @@ import { jardineriaSerra } from "./jardineria-mediterranea-serra.ts";
 import { restauracionCasanova } from "./restauracion-muebles-casanova.ts";
 import { fontaneriaPomar } from "./fontaneria-pomar-inca.ts";
 import { cristaleriaBalear } from "./cristaleria-aluminios-balear.ts";
+import { viverosLlabres } from "./viveros-jardineria-llabres.ts";
 
 export {
   duranPalma,
@@ -33,6 +34,7 @@ export {
   restauracionCasanova,
   fontaneriaPomar,
   cristaleriaBalear,
+  viverosLlabres,
 };
 
 /**
@@ -56,4 +58,5 @@ export const REFORMAS_SERVICES: ServiceItem[] = [
   restauracionCasanova,
   fontaneriaPomar,
   cristaleriaBalear,
+  viverosLlabres,
 ];
