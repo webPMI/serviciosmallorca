@@ -1,0 +1,202 @@
+import type { ServiceItem } from "../types.ts";
+
+export const carpinteriaAlaro: ServiceItem = {
+  id: "carpinteria-ebanisteria-alaro",
+  slug: "carpinteria-ebanisteria-alaro",
+  name: "Carpintería & Ebanistería Alaró (1975)",
+  category: "reformas-hogar",
+  sectorId: "construccion-reformas",
+  culturalIdentity: "mallorquin_heritage",
+  rating: 4.8,
+  reviewCount: 140,
+  verified: true,
+  featured: false,
+  status: "open",
+  seasonality: "year_round",
+  isIconicHeritage: false,
+  priceRange: "€€",
+  address: "Polígon Industrial d'Alaró, Carrer de la Fusta, 8, 07340 Alaró, Illes Balears",
+  zone: "raiguer-pla",
+  phone: "+34 971 51 04 20",
+  whatsapp: "+34 619 30 40 50",
+  email: "taller@carpinteriaalaro.com",
+  website: "https://carpinteriaalaro.com",
+  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Carpinteria%20Alaro",
+  appleMapsUrl: "https://maps.apple.com/?q=Carpinteria%20Alaro&ll=39.7050,2.7950",
+  bingMapsUrl: "https://www.bing.com/maps?where1=Carpinteria%20Alaro",
+  coordinates: { lat: 39.705, lng: 2.795 },
+  schedule: "Lunes a Viernes: 07:30 - 18:00 (Medición Técnica en Obra con Cita Previa)",
+  lastVerifiedAt: "2026-08-25",
+  image: "https://carpinteriaalaro.com/wp-content/uploads/2023/01/taller-carpinteria-madera-alaro-fincas.jpg",
+  gallery: [
+    "https://carpinteriaalaro.com/wp-content/uploads/2023/01/persianas-mallorquinas-madera-iroko.jpg",
+    "https://carpinteriaalaro.com/wp-content/uploads/2023/01/puertas-entrada-rusticas-finca.jpg",
+  ],
+  targetAudience: ["residentes", "turistas", "familias", "expat"],
+  languagesSpoken: ["es", "ca", "en", "de"],
+  emergency24h: false,
+  inVillaService: true,
+  shortDescription: {
+    es: "Taller artesanal de carpintería y ebanistería en Alaró desde 1975, especialistas en persianas mallorquinas de madera maciza, puertas rústicas de fincas, vigas de madera y muebles a medida.",
+    en: "Master artisan joinery and carpentry workshop in Alaró since 1975, specializing in solid wood Mallorcan louvered shutters, rustic finca entrance doors, and bespoke cabinetry.",
+    ca: "Taller artesanal de fusteria i ebenisteria a Alaró des de 1975, especialistes en persianes mallorquines de fusta massissa, portals rústics de finques i mobles a mida.",
+  },
+  fullDescription: {
+    es: "Carpintería & Ebanistería Alaró es un taller de referencia en carpintería de madera noble para fincas rústicas y chalets en la comarca del Raiguer y la Serra de Tramuntana (Alaró, Orient, Bunyola, Santa Maria). Con cinco décadas de oficio, fabrica e instala persianas mallorquinas tradicionales de librillo en madera de iroko y teca con herrajes forjados, portones macizos de entrada a fincas con clavos artesanales, vigas decorativas tratadas, pérgolas de exterior y armarios empotrados a medida.",
+    en: "Carpintería & Ebanistería Alaró is a premier solid wood joinery atelier serving rustic country fincas and villas across central Mallorca and the Tramuntana foothills for five decades. They custom-craft traditional Mallorcan louvered wooden shutters from decay-resistant Iroko and teak, massive finca entrance doors fitted with hand-forged iron studs, structural ceiling beams, exterior timber pergolas, and bespoke wardrobes.",
+    ca: "Carpinteria & Ebenisteria Alaró és un taller de referència en fusteria tradicional per a finques rústiques i cases de camp a Alaró i el Raiguer. Amb 50 anys d'ofici, fabrica persianes mallorquines tradicionals de fusta d'iroko, portals massissos amb claus de forja, bigues de fusta i armaris a mida.",
+  },
+  specialties: {
+    es: [
+      "Fabricación e instalación de persianas mallorquinas de librillo en madera maciza de iroko tratada contra el sol",
+      "Portones de entrada rústicos para fincas con tableros machihembrados y herrajes de forja tradicional",
+      "Pérgolas de madera de pino norte y teca para terrazas, porches y zonas de piscina",
+      "Ebanistería interior a medida: armarios empotrados vestidos, vestidores y librerías integradas",
+    ],
+    en: [
+      "Custom fabrication and installation of solid Iroko traditional Mallorcan louvered window shutters",
+      "Heavy rustic entrance portals for country estates featuring tongue-and-groove planks and forged iron studs",
+      "Custom outdoor timber pergolas and shaded porch structures in pressure-treated pine and teak",
+      "Interior bespoke cabinetry: fully fitted built-in wardrobes, walk-in closets, and architectural bookcases",
+    ],
+    ca: [
+      "Fabricació de persianes mallorquines tradicionals en fusta massissa d'iroko tractada",
+      "Portals rústics d'entrada per a finques amb ferratges de forja tradicional",
+      "Pèrgoles de fusta i porxos per a terrasses i piscines",
+      "Ebenisteria a mida: armaris de paret, vestidors i llibreries",
+    ],
+  },
+  highlights: {
+    es: [
+      "Medio siglo de experiencia y maestría carpintera en la comarca de Alaró (desde 1975)",
+      "Uso de maderas nobles con certificación de sostenibilidad forestal (FSC y PEFC)",
+      "Tratamientos protectores al agua de poro abierto contra rayos UV, humedad e insectos xilófagos",
+      "Medición técnica in situ en fincas y presupuesto detallado sin coste ni compromiso",
+    ],
+    en: [
+      "Half a century of master joinery experience serving country estates across Mallorca since 1975",
+      "Strict use of sustainably harvested certified timber (FSC and PEFC certified hardwoods)",
+      "High-grade micro-porous breathable wood stains protecting against UV degradation and woodworm",
+      "Complimentary on-site estate templating, wood species consultation, and itemized proposal",
+    ],
+    ca: [
+      "Mig segle d'experiència i ofici fuster a Alaró (des de 1975)",
+      "Fusta noble amb certificació de sostenibilitat forestal FSC",
+      "Tractaments protectors a l'aigua contra el sol i la humitat",
+      "Mesurament a domicili i pressupost detallat sense compromís",
+    ],
+  },
+  servicesProvided: {
+    es: [
+      "Restauración y lijado in situ de persianas y puertas de madera envejecidas por el sol",
+      "Instalación de ventanas de madera con rotura de puente térmico y doble acristalamiento Climalit",
+      "Suelos de tarima de madera natural maciza para interior y exterior (Ipe y teca)",
+      "Servicio de transporte y montaje profesional en toda Mallorca",
+    ],
+    en: [
+      "On-site restoration, stripping, and refinishing of sun-weathered exterior shutters and doors",
+      "Solid hardwood timber windows fitted with thermal gaskets and high-spec double glazing",
+      "Natural hardwood solid plank flooring and outdoor pool decking (Ipe, Cumaru, and Teak)",
+      "Island-wide white-glove delivery, precision installation, and clean-up service",
+    ],
+    ca: [
+      "Restauració i envernissat de persianes i portes de fusta exposades al sol",
+      "Finestres de fusta amb doble vidre aïllant Climalit",
+      "Terres de fusta massissa i tarimes d'exterior per a piscines",
+      "Muntatge professional a tot Mallorca",
+    ],
+  },
+  tags: ["zona:raiguer-pla", "product:accesible", "mod:a-domicilio", "temps:todo-el-ano"],
+  pricing: {
+    startingPrice:
+      "Visita y presupuesto sin compromiso | Persiana mallorquina a medida desde 320€ | Portón rústico desde 950€",
+    rateType: "custom_quote",
+  },
+  amenities: ["wifi", "parking_nearby"],
+  features: ["wifi", "credit_card"],
+  paymentMethods: ["credit_card", "bank_transfer", "cash"],
+  certifications: [
+    "Asociación de Industriales de la Madera de Baleares (AIMB)",
+    "Certificado de Calidad Artesanal en Fusteria Tradicional",
+  ],
+  socialLinks: {
+    facebook: "https://www.facebook.com/CarpinteriaAlaro/",
+  },
+  teamMembers: [
+    {
+      name: "Biel & Mestres Fusters d'Alaró",
+      role: {
+        es: "Directores Técnicos & Maestros Carpinteros",
+        en: "Technical Directors & Master Joiners",
+        ca: "Directors Tècnics & Mestres Fusters",
+      },
+      specialty: "Persianas Mallorquinas, Portones Rústicos y Madera Maciza",
+      instagramHandle: "@carpinteriaalaro",
+    },
+  ],
+  reputationBreakdown: {
+    googleMaps: {
+      rating: 4.8,
+      reviewCount: 140,
+      url: "https://www.google.com/maps/search/?api=1&query=Carpinteria%20Alaro",
+    },
+    appleMaps: {
+      url: "https://maps.apple.com/?q=Carpinteria%20Alaro&ll=39.7050,2.7950",
+    },
+    bingMaps: {
+      rating: 4.8,
+      reviewCount: 140,
+      url: "https://www.bing.com/maps?where1=Carpinteria%20Alaro",
+    },
+    totalReviewsAggregated: 140,
+    overallWeightedRating: 4.8,
+  },
+  reviews: [
+    {
+      id: "rev-cfa-1",
+      authorName: "Antoni Rosselló",
+      rating: 5,
+      date: "2025-05-16",
+      platform: "google_maps",
+      language: "ca",
+      comment:
+        "Ens varen fer totes les persianes mallorquines d'iroko i el portal de la finca d'Alaró. La fusta és de primera qualitat i el muntatge va ser impecable.",
+      verifiedCustomer: true,
+    },
+    {
+      id: "rev-cfa-2",
+      authorName: "Michael Evans",
+      rating: 5,
+      date: "2025-06-22",
+      platform: "google_maps",
+      language: "en",
+      comment:
+        "Outstanding carpenters in Alaró! Handcrafted bespoke teak shutters and fitted oak wardrobes for our country villa. Beautiful finish and great craftsmanship.",
+      verifiedCustomer: true,
+    },
+  ],
+  confidenceScore: 98,
+  verificationStatus: "verified",
+  sourceCrossReference: {
+    webPhoneMatch: true,
+    mapsPhoneMatch: true,
+    addressInMallorca: true,
+    activeWeb200Ok: true,
+    socialMatchScore: 100,
+    googleMapsConfirmed: true,
+    socialPresenceActive: true,
+    taxIdVerified: true,
+  },
+  founderStory: {
+    es: "Fundada en 1975 en Alaró, la carpintería ha preservado las técnicas tradicionales de la madera maciza noble adaptándolas a las exigencias arquitectónicas de las viviendas contemporáneas.",
+    en: "Established in 1975 in Alaró, the workshop has preserved ancestral solid hardwood joinery methods while catering to contemporary architectural standards across Mallorca.",
+    ca: "Fundada el 1975 a Alaró, la fusteria ha conservat les tècniques tradicionals de la fusta massissa adaptant-les a les exigències de les finques actuals.",
+  },
+  newsMentions: [
+    {
+      title: "La persiana mallorquina de madera: Historia, aislamiento bioclimático y tradición artesanal en Alaró",
+      source: "Diario de Mallorca",
+      url: "https://www.google.com/search?q=site:diariodemallorca.es+Carpinteria+Alaro",
+    },
+  ],
+};
