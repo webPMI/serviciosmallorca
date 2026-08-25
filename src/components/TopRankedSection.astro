@@ -1,0 +1,267 @@
+---
+import { getWeeklyCuratedTops, getTopRankedServices } from "../lib/topEngine";
+import type { Locale } from "../i18n";
+
+interface Props {
+  locale: Locale;
+  prefix: string;
+  translations: Record<string, string>;
+  mode?: "weekly" | "overall";
+  limit?: number;
+}
+
+const { locale, prefix, translations, mode = "weekly", limit = 3 } = Astro.props;
+
+const rankedItems = mode === "weekly" ? getWeeklyCuratedTops() : getTopRankedServices(limit);
+---
+
+<section class="top-ranked-section" aria-label="Rankings Top Mallorca">
+  <div class="section-header-row">
+    <div>
+      <span class="top-section-badge">{mode === "weekly" ? "✨ Selección de la Semana" : "👑 Rankings de Excelencia"}</span>
+      <h2 class="section-title">
+        {mode === "weekly" ? (locale === "ca" ? "Top 3 Recomanat d'Aquesta Setmana" : locale === "en" ? "Top 3 Recommended This Week" : "Top 3 Recomendado de Esta Semana") : (locale === "ca" ? "Líders per Confiança i Ressenyes" : locale === "en" ? "Top Rated Services in Mallorca" : "Los Negocios Mejor Valorados de Mallorca")}
+      </h2>
+    </div>
+    <span class="top-engine-tag">⚡ Top Engine AI</span>
+  </div>
+
+  <div class="top-cards-grid">
+    {
+      rankedItems.map(({ service, rank, score, badgeLabel, reasons }) => (
+        <article class="card top-service-card card-glass">
+          <div class="top-card-media">
+            <img
+              src={service.image}
+              alt={service.name}
+              class="top-card-img"
+              loading="lazy"
+              decoding="async"
+            />
+            <span class="top-rank-badge">{badgeLabel}</span>
+            <span class="top-score-badge">Score: {score}</span>
+          </div>
+
+          <div class="top-card-body">
+            <div class="top-card-meta">
+              <span class="badge badge-accent">📍 {service.zone.replace(/-/g, " ")}</span>
+              <div class="top-rating-chip">
+                <span class="star-icon">⭐</span>
+                <strong>{service.rating.toFixed(1)}</strong>
+                <span class="review-sub">({service.reviewCount})</span>
+              </div>
+            </div>
+
+            <h3 class="top-card-title">
+              <a href={`${prefix}servicios/${service.slug}`} class="top-card-link">
+                {service.name}
+              </a>
+            </h3>
+
+            <p class="top-card-desc">{service.shortDescription[locale]}</p>
+
+            <ul class="top-reasons-list">
+              {reasons.slice(0, 2).map((r) => (
+                <li class="reason-item">
+                  <span class="reason-bullet">✓</span>
+                  <span>{r}</span>
+                </li>
+              ))}
+            </ul>
+
+            <div class="top-card-footer">
+              <span class="price-indicator">{service.priceRange || "€€"}</span>
+              <a href={`${prefix}servicios/${service.slug}`} class="btn btn-sm btn-primary">
+                <span>{locale === "ca" ? "Veure Fitxa" : locale === "en" ? "View Details" : "Ver Ficha"} ↗</span>
+              </a>
+            </div>
+          </div>
+        </article>
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  .top-ranked-section {
+    margin: var(--space-2xl) 0;
+    width: 100%;
+  }
+
+  .section-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    margin-bottom: var(--space-lg);
+  }
+
+  .top-section-badge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: var(--color-primary);
+  }
+
+  .top-engine-tag {
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.6rem;
+    background: var(--color-surface-hover);
+    border: 1px solid var(--color-surface-border);
+    border-radius: var(--border-radius-full);
+    color: var(--color-text-muted);
+  }
+
+  .top-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-lg);
+  }
+
+  .top-service-card {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    overflow: hidden;
+    border-radius: var(--border-radius-lg);
+    transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+  }
+
+  .top-service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .top-card-media {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+  }
+
+  .top-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  .top-service-card:hover .top-card-img {
+    transform: scale(1.04);
+  }
+
+  .top-rank-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(8px);
+    color: #ffffff;
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 0.3rem 0.65rem;
+    border-radius: var(--border-radius-full);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .top-score-badge {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: var(--color-primary);
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--border-radius-sm);
+  }
+
+  .top-card-body {
+    padding: var(--space-md);
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    flex: 1;
+  }
+
+  .top-card-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+
+  .top-rating-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.85rem;
+  }
+
+  .top-card-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 0;
+  }
+
+  .top-card-link {
+    color: var(--color-text);
+    text-decoration: none;
+  }
+
+  .top-card-link:hover {
+    color: var(--color-primary);
+  }
+
+  .top-card-desc {
+    font-size: 0.875rem;
+    color: var(--color-text-light);
+    line-height: 1.5;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .top-reasons-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .reason-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+  }
+
+  .reason-bullet {
+    color: var(--color-success);
+    font-weight: 800;
+  }
+
+  .top-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: var(--space-sm);
+    margin-top: auto;
+    border-top: 1px solid var(--color-surface-border);
+  }
+
+  .price-indicator {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--color-primary);
+  }
+</style>

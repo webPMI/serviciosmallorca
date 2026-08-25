@@ -4,6 +4,8 @@ import Navbar from "../../components/Navbar.astro";
 import Footer from "../../components/Footer.astro";
 import ServiceCard from "../../components/ServiceCard.astro";
 import BlogCard from "../../components/BlogCard.astro";
+import TopRankedSection from "../../components/TopRankedSection.astro";
+import MallorcaNewsFeed from "../../components/MallorcaNewsFeed.astro";
 import AdSenseSlot from "../../components/AdSenseSlot.astro";
 import { getActiveCategories } from "../../data/categories";
 import { getFeaturedServices, SERVICES } from "../../data/services";
@@ -125,6 +127,9 @@ const featuredPosts = getFeaturedPosts();
             ))
           }
         </div>
+
+        <!-- Dynamic Weekly Top Curated Section -->
+        <TopRankedSection locale={locale} prefix={prefix} translations={translations} mode="weekly" />
       </div>
     </section>
 
@@ -147,6 +152,9 @@ const featuredPosts = getFeaturedPosts();
           ))
         }
       </div>
+
+      <!-- Mallorca Verified Media & Press Mentions Feed -->
+      <MallorcaNewsFeed locale={locale} limit={4} />
     </section>
 
     <!-- TRUST & FEATURES SECTION -->

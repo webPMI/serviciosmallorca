@@ -1,3 +1,6 @@
+export type PostType = "guia" | "top_list" | "noticia" | "tutorial";
+export type TopicCluster = "gastronomia" | "aventura_lifestyle" | "servicios_hogar" | "arte_cultura" | "actualidad";
+
 export interface BlogPost {
   id: string;
   slug: string;
@@ -17,6 +20,8 @@ export interface BlogPost {
     ca: string;
   };
   category: string;
+  postType?: PostType;
+  topicCluster?: TopicCluster;
   author: {
     name: string;
     role: string;
@@ -34,15 +39,17 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     id: "guia-alquiler-yates-mallorca",
     slug: "guia-alquiler-yates-mallorca",
+    postType: "guia",
+    topicCluster: "aventura_lifestyle",
     title: {
-      es: "Guía Definitiva: Cómo Alquilar un Barco o Yate en Mallorca este Año",
-      en: "Ultimate Guide: How to Charter a Boat or Yacht in Mallorca This Year",
-      ca: "Guia Definitiva: Com Llogar una Embarcació o Iot a Mallorca Aquest Any",
+      es: "Guía Definitiva: Cómo Alquilar un Barco o Catamarán en Mallorca este Año",
+      en: "Ultimate Guide: How to Charter a Boat or Catamaran in Mallorca This Year",
+      ca: "Guia Definitiva: Com Llogar una Embarcació o Catamarà a Mallorca Aquest Any",
     },
     excerpt: {
-      es: "Descubre las mejores zonas de navegación (Puerto Portals, Andratx, Cabrera), precios medios, consejos con patrón y cómo elegir la embarcación ideal.",
-      en: "Discover top sailing grounds (Puerto Portals, Andratx, Cabrera), average charter rates, skipper tips, and how to pick the perfect yacht.",
-      ca: "Descobreix les millors zones de navegació (Puerto Portals, Andratx, Cabrera), preus mitjans i consells per llogar amb patró.",
+      es: "Descubre las mejores zonas de navegación (Puerto Portals, Andratx, Bahía de Palma), precios medios, consejos con patrón y cómo elegir la embarcación ideal.",
+      en: "Discover top sailing grounds (Puerto Portals, Andratx, Palma Bay), average charter rates, skipper tips, and how to pick the perfect yacht.",
+      ca: "Descobreix les millors zones de navegació (Puerto Portals, Andratx, Badia de Palma), preus mitjans i consells per llogar amb patró.",
     },
     content: {
       es: `
@@ -50,48 +57,36 @@ Mallorca es uno de los destinos náuticos más codiciados del Mediterráneo. Con
 
 ### 1. ¿Qué tipo de embarcación elegir?
 - **Lanchas a motor (6-10m):** Ideales para excursiones de día rápido entre calas cercanas como Cala Fornells o Illetes.
-- **Veleros:** Para quienes buscan la tranquilidad del viento y una travesía relajada recorriendo la costa de la Serra de Tramuntana.
-- **Catamaranes:** Perfectos para familias o grupos de amigos gracias a su enorme habitabilidad, estabilidad y zona de solárium.
+- **Catamaranes de vela:** Perfectos para familias o grupos de amigos gracias a su enorme habitabilidad, estabilidad y zona de solárium como **Oasis Catamarán**.
 - **Yates a motor de lujo:** Máximo confort, tripulación profesional completa y juguetes acuáticos como Seabob o motos de agua.
 
 ### 2. Los mejores puertos de salida en Mallorca
+- **Muelle de Golondrinas & Port de Palma:** Salida directa para disfrutar de puestas de sol con catering a bordo.
 - **Puerto Portals & Port Adriano:** Puertos de referencia en el suroeste con embarcaciones de alta gama y acceso directo a calas cristalinas.
 - **Port de Sóller:** La puerta de entrada para explorar los impresionantes acantilados de Sa Calobra y Cala Tuent.
-- **Port de Pollença & Alcúdia:** Perfectos para navegar hacia la península de Formentor y calas del norte.
 
 ### 3. Recomendación Verificada de Servicios Mallorca
-Para una experiencia 100% segura y transparente, recomendamos acudir siempre a empresas consolidadas con licencias oficiales y patrones experimentados como **Mallorca Global Charter**.
+Para una experiencia 100% segura y transparente, recomendamos acudir siempre a empresas consolidadas con licencias oficiales y patrones experimentados como **Oasis Catamarán Palma**.
       `,
       en: `
 Mallorca is globally celebrated as one of the prime yacht charter destinations in the Mediterranean. With over 550 km of coast and 200+ coves, experiencing Mallorca by sea is unmatched.
 
 ### 1. Choosing the right boat
 - **Day motorboats (6-10m):** Best for quick bay-hopping to nearby coves like Illetes and Portals Vells.
-- **Sailing yachts:** Ideal for a peaceful experience along the dramatic cliffs of the Serra de Tramuntana.
-- **Catamarans:** Excellent for families and groups due to deck space, stability, and spacious trampolines.
-- **Luxury superyachts:** Supreme comfort with dedicated captain, private chef, and high-end water toys (Seabobs, e-foils).
+- **Sailing Catamarans:** Excellent for families and groups due to deck space, stability, and spacious trampolines, like **Oasis Catamarán**.
+- **Luxury superyachts:** Supreme comfort with dedicated captain, private chef, and high-end water toys.
 
 ### 2. Best departure marinas
+- **Palma Harbor:** Prime sunset sail departures with curated catering.
 - **Puerto Portals & Port Adriano:** Southwest luxury hubs with swift access to turquoise coves.
 - **Port de Sóller:** The gateway to Sa Calobra and Cala Tuent.
-- **Port de Pollença:** Ideal for navigating towards the scenic Cap de Formentor.
-
-### 3. Servicios Mallorca Verified Recommendation
-Always choose licensed operators with verified nautical safety records and full insurance such as **Mallorca Global Charter**.
       `,
       ca: `
 Mallorca és una de les destinacions nàutiques més desitjades del Mediterrani. Amb més de 550 km de costa i més de 200 cales, navegar per l'illa és una vivència inoblidable.
 
 ### 1. Quin tipus d'embarcació triar?
-- **Llanxes a motor:** Ideals per a sortides de dia a cales properes.
-- **Velers:** Per a qui busca la pau de la navegació tradicional vora la Serra de Tramuntana.
-- **Catamarans:** Perfectes per a famílies i grups per la seva estabilitat i amplitud.
+- **Catamarans:** Perfectes per a famílies i grups per la seva estabilitat i amplitud com **Oasis Catamarà**.
 - **Iots de luxe:** Màxim confort, tripulació professional i esports aquàtics.
-
-### 2. Principals ports de sortida
-- **Puerto Portals i Port Adriano:** Referents al sud-oest de l'illa.
-- **Port de Sóller:** Punt de partida cap a Sa Calobra i Cala Tuent.
-- **Port de Pollença:** Ideal per a la badia i el Cap de Formentor.
       `,
     },
     category: "nautica-charter",
@@ -101,173 +96,157 @@ Mallorca és una de les destinacions nàutiques més desitjades del Mediterrani.
       avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80",
     },
     publishDate: "2025-01-15",
-    readTime: "5 min",
-    coverImage: "https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?auto=format&fit=crop&w=1200&q=80",
-    tags: ["Náutica", "Yates", "Mallorca", "Puerto Portals", "Guía"],
-    relatedServiceIds: ["mallorca-global-charter"],
+    readTime: "6 min",
+    coverImage: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=80",
+    tags: ["Navegación", "Yates", "Catamarán", "Puerto Portals", "Mallorca"],
+    relatedServiceIds: ["oasis-catamaran-palma"],
     featured: true,
   },
   {
-    id: "mejores-instaladores-climatizacion-palma",
-    slug: "mejores-instaladores-climatizacion-palma",
+    id: "top-restaurantes-tapas-palma",
+    slug: "top-restaurantes-tapas-palma",
+    postType: "top_list",
+    topicCluster: "gastronomia",
     title: {
-      es: "Cómo Elegir el Mejor Servicio de Climatización y Aerotermia en Mallorca",
-      en: "How to Choose the Best AC and Aerothermal Heating Services in Mallorca",
-      ca: "Com Triar el Millor Servei de Climatització i Aerotèrmia a Mallorca",
+      es: "Top 5 Restaurantes y Barras Gastronómicas con Mejores Reseñas en Palma de Mallorca",
+      en: "Top 5 Tapas Bars & High-End Restaurants with Best Reviews in Palma",
+      ca: "Top 5 Restaurants i Barres Gastronòmiques amb Millors Ressenyes a Palma",
     },
     excerpt: {
-      es: "Análisis de sistemas de eficiencia energética para viviendas en Baleares, mantenimiento preventivo y cómo ahorrar hasta un 60% en tu factura eléctrica.",
-      en: "Energy efficiency analysis for Balearic homes, preventive maintenance tips, and how to save up to 60% on electricity bills.",
-      ca: "Anàlisi de sistemes d'eficiència energètica per a habitatges a Balears, manteniment preventiu i estalvi energètic.",
+      es: "Descubre dónde degustar el mejor marisco de lonja, tapas de autor en directo y producto balear en el Casco Antiguo y Santa Catalina.",
+      en: "Explore where to taste prime coastal seafood, live counter tapas, and authentic Balearic produce in Palma Old Town and Santa Catalina.",
+      ca: "Descobreix on tastar el millor marisc fresc de llotja i tapes d'autor al centre de Palma.",
     },
     content: {
       es: `
-El clima de Mallorca combina veranos muy cálidos con inviernos húmedos. Contar con un sistema de climatización eficiente no solo garantiza el confort, sino que puede reducir radicalmente la factura de luz.
+Palma se ha consolidado como una de las capitales gastronómicas más dinámicas de Europa. La combinación de producto mediterráneo de lonja, tradición culinaria mallorquina y técnicas de vanguardia convierte a la ciudad en un destino culinario imprescindible.
 
-### 1. ¿Por qué la Aerotermia es la reina en Mallorca?
-La aerotermia extrae hasta el 75% de la energía del aire exterior. En climas templados como el balear, su rendimiento (COP) es máximo durante todo el año, permitiendo alimentar tanto el aire acondicionado en verano como el suelo radiante en invierno y el agua caliente sanitaria (ACS).
+### 1. El Camino Palma (Carrer de Can Brondo)
+Con una espectacular barra continua de mármol y cocina abierta en directo, **El Camino Palma** es un referente indiscutible:
+- **Especialidades:** Gamba roja de Sóller con sal de Es Trenc, chipirones con sobrasada y miel, alcachofas confitadas a la brasa.
+- **Ambiente:** Dinámico, cosmopolita y enfocado en el producto fresco del día.
 
-### 2. Claves para elegir instalador en la isla
-- **Homologación oficial RITE:** Asegúrate de que la empresa emita el certificado oficial de instalación.
-- **Servicio técnico propio:** Evita subcontratas que demoran semanas ante averías en plena ola de calor.
-- **Recomendación:** Empresas autorizadas como **Instalia Mallorca** ofrecen presupuestos técnicos claros y cumplimiento de la normativa balear.
+### 2. Consejos para Comer como un Local en Palma
+- **Reserva con antelación:** Los locales de alta demanda gestionan sus reservas exclusivamente vía web con semanas de antelación.
+- **Pide producto de temporada:** No dejes de probar el marisco fresco y los aceites de oliva virgen extra con D.O. Oli de Mallorca.
       `,
       en: `
-Mallorca's climate features hot, sunny summers and humid winters. A high-efficiency climate control system is essential for year-round comfort and massive energy savings.
+Palma stands as one of the most vibrant culinary hotspots in Southern Europe, blending pristine Mediterranean catch with cutting-edge counter dining.
 
-### 1. Why Heat Pump Aerothermal systems lead in Mallorca
-Aerothermal technology draws up to 75% of its energy from the outdoor air. In mild island climates, efficiency (COP) is exceptionally high for cooling, radiant underfloor heating, and domestic hot water.
-
-### 2. What to look for in a contractor
-- **Official RITE certification** and authorized installation warranty.
-- **In-house technical maintenance** to ensure fast response times during summer peak months.
-- **Recommendation:** Licensed contractors such as **Instalia Mallorca** provide transparent quotes and certified compliance.
+### 1. El Camino Palma (Carrer de Can Brondo)
+Featuring an iconic illuminated marble counter, **El Camino Palma** offers an unforgettable open-kitchen experience:
+- **Signature dishes:** Sweet Sóller red prawns, sautéed baby squid with artisanal sobrasada and honey.
+- **Atmosphere:** Lively, chic, and celebrating pure island ingredients.
       `,
       ca: `
-El clima de Mallorca combina estius calorosos amb hiverns humits. Disposar d'un bon sistema de climatització és clau per al confort i l'estalvi en el consum elèctric.
+Palma és un dels epicentres gastronòmics més potents del Mediterrani.
 
-### 1. Per què l'aerotèrmia és la millor opció a Mallorca?
-Extreu gran part de l'energia de l'aire exterior amb una eficiència òptima a les Balears per a fred, calor i aigua calenta sanitària.
-
-### 2. Consells per triar instal·lador
-- Comprovar certificació i homologació oficial RITE.
-- Servei de manteniment preventiu i instal·ladors acreditats com **Instalia Mallorca**.
-      `,
-    },
-    category: "reformas-hogar",
-    author: {
-      name: "Equipo Editorial Servicios Mallorca",
-      role: "Especialistas en Reformas y Eficiencia",
-      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80",
-    },
-    publishDate: "2025-01-20",
-    readTime: "4 min",
-    coverImage: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1200&q=80",
-    tags: ["Climatización", "Aerotermia", "Reformas", "Ahorro Energético", "Palma"],
-    relatedServiceIds: ["instalia-mallorca"],
-    featured: true,
-  },
-  {
-    id: "alta-gastronomia-catering-villas-mallorca",
-    slug: "alta-gastronomia-catering-villas-mallorca",
-    title: {
-      es: "La Alta Gastronomía y el Catering en Villas Exclusivas de Mallorca",
-      en: "Haute Cuisine & Bespoke Catering in Mallorca's Luxury Villas",
-      ca: "L'Alta Gastronomia i el Càtering a Vil·les Exclusives de Mallorca",
-    },
-    excerpt: {
-      es: "Descubre cómo los servicios de catering y chefs privados con raíces de autor elevan las celebraciones y estancias vacacionales en la isla.",
-      en: "Discover how private dining and Michelin-inspired catering elevate celebrations and villa stays across the island.",
-      ca: "Descobreix com els serveis de càtering i xefs privats d'autor transformen les celebracions i estades a l'illa.",
-    },
-    content: {
-      es: `
-La gastronomía mallorquina es rica en contrastes, producto de temporada y tradición mediterránea. Durante las vacaciones o celebraciones familiares, contar con un catering de alta cocina transforma una comida en una experiencia inolvidable.
-
-### Ventajas de un catering de autor en villa
-1. **Personalización absoluta:** Menús diseñados a medida según intolerancias, gustos y preferencias gastronómicas.
-2. **Producto local de lonja y huerto:** Pescado fresco del día, verduras ecológicas de fincas locales y maridaje con vinos de la tierra.
-3. **Servicio integral:** El equipo se encarga de la compra, servicio de mesa con camareros y deja la villa impecable.
-
-Destacamos servicios de referencia como **Fosh Catering**, con menús mediterráneos de vanguardia avalados por el prestigioso chef Marc Fosh.
-      `,
-      en: `
-Mallorca's culinary scene is a vibrant tribute to Mediterranean heritage. Hiring an in-villa catering brigade turns any vacation or celebration into a five-star dining event.
-
-### Key Benefits
-1. **Full customization:** Tailored menus catering to every dietary requirement and culinary style.
-2. **Market-fresh ingredients:** Fresh catch of the day, organic farm produce, and local artisanal cheeses.
-3. **Effortless experience:** Complete service covering grocery shopping, cooking, tableside presentation, wine pairing, and spotless cleanup.
-
-We highlight premier services like **Fosh Catering**, led by acclaimed chef Marc Fosh.
-      `,
-      ca: `
-La gastronomia de Mallorca destaca pel seu producte d'excel·lència i la seva tradició mediterrània. Un servei de càtering d'autor converteix qualsevol celebració en un record únic.
-
-### Avantatges
-1. Menús fets a mida amb producte de mercat i llotja.
-2. Servei integral de cuina, servei de taula i neteja total com el que ofereix **Fosh Catering**.
+### 1. El Camino Palma
+Amb una barra de marbre espectacular i cuina a la vista, **El Camino Palma** destaca per la seva gamba vermella de Sóller i tapes d'autor excepcionals.
       `,
     },
     category: "gastronomia-catering",
     author: {
       name: "Equipo Editorial Servicios Mallorca",
-      role: "Gastronomía Balear",
+      role: "Crítica Gastronómica Balear",
       avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80",
     },
-    publishDate: "2025-01-28",
-    readTime: "4 min",
+    publishDate: "2025-02-10",
+    readTime: "5 min",
     coverImage: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80",
-    tags: ["Catering", "Gastronomía", "Villas Mallorca", "Marc Fosh", "Palma"],
-    relatedServiceIds: ["fosh-catering-mallorca"],
+    tags: ["Restaurantes Palma", "Tapas Palma", "El Camino", "Gamba de Sóller", "Gastronomía"],
+    relatedServiceIds: ["el-camino-palma"],
+    featured: true,
+  },
+  {
+    id: "mejores-spas-talasoterapia-mallorca",
+    slug: "mejores-spas-talasoterapia-mallorca",
+    postType: "top_list",
+    topicCluster: "aventura_lifestyle",
+    title: {
+      es: "Santuarios de Bienestar: Los Mejores Spas y Centros de Talasoterapia en Mallorca",
+      en: "Wellness Sanctuaries: Top Luxury Spas & Thalassotherapy Centers in Mallorca",
+      ca: "Santuari de Benestar: Els Millors Spas i Centres de Talassoteràpia a Mallorca",
+    },
+    excerpt: {
+      es: "Guía de los templos de relajación más exclusivos de la isla: piscinas de agua de mar climatizada, medicina tradicional china y alta cosmética.",
+      en: "Guide to the island's most exclusive relaxation temples: heated seawater pools, traditional Chinese medicine, and luxury skincare.",
+      ca: "Guia dels temples de relaxació més exclusius de l'illa amb piscines d'aigua marina i medicina tradicional.",
+    },
+    content: {
+      es: `
+La combinación de la brisa marina, el clima mediterráneo y spas de clase mundial convierten a Mallorca en el destino ideal para una escapada de desconexión y salud holística.
+
+### 1. Arabella Spa (The St. Regis Mardavall, Calvià)
+Con más de 4.700 m² dedicados al bienestar, **Arabella Spa** es galardonado como uno de los mejores spas de Europa:
+- **Instalaciones:** Piscinas termales de agua de mar natural climatizada, cabinas ayurvédicas, grutas de hielo.
+- **Tratamientos de Autor:** Médicos residentes especialistas en Medicina Tradicional China y rituales faciales antiedad de alta cosmética Valmont.
+      `,
+      en: `
+Mallorca is globally acclaimed for holistic wellness and thalassotherapy retreats.
+
+### 1. Arabella Spa (St. Regis Mardavall, Calvià)
+Spanning 4,700 m², **Arabella Spa** provides hydrotherapy pools, Traditional Chinese Medicine doctors, and Valmont anti-aging treatments.
+      `,
+      ca: `
+Mallorca és la destinació ideal per a la salut holística i el descans absolut.
+
+### 1. Arabella Spa (Calvià)
+Més de 4.700 m² dedicats a la talassoteràpia amb aigua de mar climatitzada i especialistes en Medicina Tradicional Xinesa.
+      `,
+    },
+    category: "salud-bienestar",
+    author: {
+      name: "Equipo Editorial Servicios Mallorca",
+      role: "Salud & Bienestar",
+      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80",
+    },
+    publishDate: "2025-02-18",
+    readTime: "4 min",
+    coverImage: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80",
+    tags: ["Spa Mallorca", "Talasoterapia", "Arabella Spa", "Calvià", "Bienestar"],
+    relatedServiceIds: ["arabella-spa-mallorca"],
     featured: true,
   },
   {
     id: "guia-mejores-estudios-tatuaje-mallorca",
     slug: "guia-mejores-estudios-tatuaje-mallorca",
+    postType: "guia",
+    topicCluster: "arte_cultura",
     title: {
       es: "Guía de los Mejores Estudios de Tatuaje en Mallorca: Estilos, Zonas y Consejos Sanitarios",
       en: "Guide to the Best Tattoo Studios in Mallorca: Styles, Zones, and Hygiene Tips",
       ca: "Guia dels Millors Estudis de Tatuatge a Mallorca: Estils, Zones i Consells Sanitaris",
     },
     excerpt: {
-      es: "Analizamos los estudios de tatuaje y piercing más destacados de Palma, Calvià, Inca, Alcúdia y Manacor. Consejos para elegir artista, estilos (Fine Line, Realismo, Tradicional) y normativas sanitarias.",
-      en: "We review top-rated tattoo and piercing studios across Palma, Calvià, Inca, Alcúdia, and Manacor. Tips on choosing artists, styles, and hygiene standards.",
-      ca: "Analitzem els estudis de tatuatge més destacats de Palma, Calvià, Inca, Alcúdia i Manacor. Consells per triar artista, estils i normativa sanitària.",
+      es: "Analizamos los estudios de tatuaje y piercing más destacados de Palma y Calvià. Consejos para elegir artista, estilos (Fine Line, Realismo, Tradicional) y normativas sanitarias.",
+      en: "We review top-rated tattoo and piercing studios across Palma and Calvià. Tips on choosing artists, styles, and hygiene standards.",
+      ca: "Analitzem els estudis de tatuatge més destacats de Palma i Calvià. Consells per triar artista, estils i normativa sanitària.",
     },
     content: {
       es: `
-Mallorca cuenta con una escena artística de tatuaje de primer nivel europeo. Desde el emblemático Casco Antiguo de Palma hasta localidades como Santa Catalina, Palmanova, Inca o Alcúdia, la isla reúne a reconocidos artistas internacionales y maestros del trazo.
+Mallorca cuenta con una escena artística de tatuaje de primer nivel europeo. Desde el emblemático Casco Antiguo de Palma hasta Passeig Mallorca y Santa Catalina, la isla reúne a reconocidos artistas internacionales y maestros del trazo.
 
 ### 1. Estilos más demandados en la isla
-- **Fine Line & Minimalismo:** Diseños sutiles, microtatuajes botánicos y geometría de alta precisión. Destacan estudios como **Good Luck Tattoo Palma**.
-- **Realismo & Black and Grey:** Retratos, esculturas clásicas y sombras hiperrealistas. El referente galardonado es **Cota Gallery Tattoo Studio** en Santa Catalina (5.0 estrellas con +1.600 reseñas).
-- **Old School & Tradicional:** Líneas sólidas, colores vivos e iconografía marinera clásica con pioneros como **Old Town Tattoos Palma** (desde 2009) y **Castter Tattoo Parlor** en Puerto de Alcúdia (desde 2000).
-- **Neotradicional e Ilustrativo:** Piezas de autor botánicas y de fantasía en **Miskatonic Tattoo Manacor**.
+- **Fine Line & Microrealismo:** Diseños sutiles, microtatuajes botánicos y geometría de alta precisión en **Good Luck Tattoo Mallorca** (5.0 estrellas).
+- **Blackwork & Neotradicional:** Piezas de autor botánicas y de alto contraste.
+- **Old School & Tradicional:** Líneas sólidas y colores vivos.
 
 ### 2. Normativas y Seguridad Sanitaria
 Todos los estudios certificados en Baleares cumplen con la normativa del Govern Balear: material 100% estéril desechable, tintas homologadas por la Agencia Europea de Sustancias Químicas (REACH) y profesionales con titulación higiénico-sanitaria oficial.
       `,
       en: `
-Mallorca features a world-class tattoo scene. From historic Old Town alleys to the trendsetting Santa Catalina and coastal hubs in Calvià and Alcúdia, the island hosts elite resident and international guest artists.
+Mallorca features a world-class tattoo scene with elite resident and international guest artists.
 
 ### 1. Popular Tattoo Styles in Mallorca
-- **Fine Line & Micro Realism:** High-precision subtle tattoos spearheaded by **Good Luck Tattoo Palma**.
-- **Hyperrealism & Black & Grey:** Masterpiece portraits and conceptual sleeves found at **Cota Gallery Tattoo Studio** (5.0 stars with 1,600+ reviews).
-- **American Traditional & Japanese:** Bold, timeless iconography with veterans like **Old Town Tattoos Palma** (est. 2009) and **Castter Tattoo Parlor** in Port d'Alcúdia (est. 2000).
-- **Neotraditional & Illustrative:** Creative bespoke artworks at **Miskatonic Tattoo Manacor**.
-
-### 2. Health & Safety Standards
-All reputable Balearic studios follow rigorous sanitary regulations including EU REACH-compliant pigments and autoclave hospital sterilization.
+- **Fine Line & Micro Realism:** High-precision subtle tattoos spearheaded by **Good Luck Tattoo Mallorca** (5.0 stars).
+- **Blackwork & Realism:** Masterpiece compositions and custom concepts.
       `,
       ca: `
-Mallorca té una escena de tatuatge professional d'alt nivell. Des del centre històric de Palma fins a Santa Catalina, Calvià, Inca o Alcúdia, l'illa compta amb estudis i artistes de gran prestigi.
+Mallorca té una escena de tatuatge professional d'alt nivell.
 
-### 1. Estils destacats a Mallorca
-- **Fine Line & Minimalisme:** Dissenys subtils i elegants a **Good Luck Tattoo Palma**.
-- **Realisme en Ombres:** Retrats i composicions a **Cota Gallery Tattoo Studio** a Santa Catalina.
-- **Tradicional & Old School:** Dissenys clàssics a **Old Town Tattoos Palma** i **Castter Tattoo Parlor** al Port d'Alcúdia.
-- **Il·lustració i Neotradicional:** Creacions d'autor a **Miskatonic Tattoo Manacor**.
+### 1. Estils destacats
+- **Fine Line & Microtatuatges:** Dissenys subtils i elegants a **Good Luck Tattoo Mallorca**.
       `,
     },
     category: "arte-tatuajes",
@@ -279,16 +258,8 @@ Mallorca té una escena de tatuatge professional d'alt nivell. Des del centre hi
     publishDate: "2025-02-15",
     readTime: "5 min",
     coverImage: "https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?auto=format&fit=crop&w=1200&q=80",
-    tags: ["Tatuajes Mallorca", "Tattoo Palma", "Fine Line", "Santa Catalina", "Arte Balear"],
-    relatedServiceIds: [
-      "good-luck-tattoo-palma",
-      "cota-gallery-tattoo",
-      "old-town-tattoos-palma",
-      "castter-tattoo-alcudia",
-      "gm-tattoo-inca",
-      "tattoo-nation-palmanova",
-      "miskatonic-tattoo-manacor",
-    ],
+    tags: ["Tatuajes Mallorca", "Tattoo Palma", "Fine Line", "Paseo Mallorca", "Arte Balear"],
+    relatedServiceIds: ["good-luck-tattoo-mallorca"],
     featured: true,
   },
 ];
@@ -303,4 +274,12 @@ export function getFeaturedPosts(): BlogPost[] {
 
 export function getPostsByCategory(categoryId: string): BlogPost[] {
   return BLOG_POSTS.filter((p) => p.category === categoryId);
+}
+
+export function getPostsByTopicCluster(cluster: TopicCluster): BlogPost[] {
+  return BLOG_POSTS.filter((p) => p.topicCluster === cluster);
+}
+
+export function getPostsByType(type: PostType): BlogPost[] {
+  return BLOG_POSTS.filter((p) => p.postType === type);
 }

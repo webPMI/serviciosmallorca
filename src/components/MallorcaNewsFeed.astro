@@ -1,0 +1,174 @@
+---
+import { SERVICES } from "../data/services";
+import type { Locale } from "../i18n";
+
+interface Props {
+  locale: Locale;
+  limit?: number;
+}
+
+const { locale, limit = 6 } = Astro.props;
+
+// Recopilar todas las menciones de noticias reales de los negocios verificados
+const allMentions = SERVICES.filter((s) => s.newsMentions && s.newsMentions.length > 0)
+  .flatMap((s) =>
+    (s.newsMentions || []).map((m) => ({
+      businessName: s.name,
+      businessSlug: s.slug,
+      businessZone: s.zone,
+      title: m.title,
+      source: m.source,
+      date: m.date || s.lastVerifiedAt || "2025",
+      url: m.url,
+    }))
+  )
+  .slice(0, limit);
+---
+
+{
+  allMentions.length > 0 && (
+    <section class="mallorca-news-feed-section" aria-label="Noticias y Hemeroteca de Mallorca">
+      <div class="news-feed-header">
+        <div>
+          <span class="news-feed-badge">📰 Prensa & Hemeroteca Balear</span>
+          <h2 class="section-title">
+            {locale === "ca"
+              ? "Actualitat i Reconeixement als Mitjans"
+              : locale === "en"
+                ? "Balearic Press & Media Mentions"
+                : "Actualidad y Menciones en Medios de Mallorca"}
+          </h2>
+        </div>
+        <p class="news-feed-subtitle">
+          {locale === "ca"
+            ? "Seguiment de premsa oficial a Diario de Mallorca, Última Hora, Mallorca Magazin i IB3."
+            : locale === "en"
+              ? "Official press coverage across Diario de Mallorca, Última Hora, Mallorca Magazin, and IB3."
+              : "Cobertura informativa en Diario de Mallorca, Última Hora, Mallorca Magazin e IB3."}
+        </p>
+      </div>
+
+      <div class="news-items-grid">
+        {allMentions.map((item) => (
+          <article class="card news-card card-glass">
+            <div class="news-card-top">
+              <span class="news-source-pill">🗞️ {item.source}</span>
+              <span class="news-date">{item.date}</span>
+            </div>
+
+            <h3 class="news-headline">
+              <a href={item.url} target="_blank" rel="noopener noreferrer" class="news-headline-link">
+                {item.title} ↗
+              </a>
+            </h3>
+
+            <div class="news-card-bottom">
+              <span class="news-rel-business">
+                Negocio: <strong>{item.businessName}</strong>
+              </span>
+              <span class="badge badge-accent">📍 {item.businessZone.replace(/-/g, " ")}</span>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+  )
+}
+
+<style>
+  .mallorca-news-feed-section {
+    margin: var(--space-2xl) 0;
+    width: 100%;
+  }
+
+  .news-feed-header {
+    margin-bottom: var(--space-lg);
+  }
+
+  .news-feed-badge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: var(--color-primary);
+  }
+
+  .news-feed-subtitle {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    margin-top: 0.35rem;
+  }
+
+  .news-items-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-md);
+  }
+
+  .news-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    padding: var(--space-md);
+    border-radius: var(--border-radius);
+    transition: transform var(--transition-fast), border-color var(--transition-fast);
+  }
+
+  .news-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--color-primary-light);
+  }
+
+  .news-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .news-source-pill {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    background: var(--color-surface-hover);
+    padding: 0.2rem 0.5rem;
+    border-radius: var(--border-radius-sm);
+  }
+
+  .news-date {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+  }
+
+  .news-headline {
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  .news-headline-link {
+    color: var(--color-text);
+    text-decoration: none;
+  }
+
+  .news-headline-link:hover {
+    color: var(--color-primary);
+  }
+
+  .news-card-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: auto;
+    padding-top: var(--space-xs);
+    border-top: 1px solid var(--color-surface-border);
+  }
+
+  .news-rel-business {
+    font-size: 0.8rem;
+    color: var(--color-text-light);
+  }
+</style>
