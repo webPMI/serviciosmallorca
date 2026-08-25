@@ -1,7 +1,8 @@
 import type { ServiceItem } from "../types.ts";
 import { firstMallorca } from "./first-mallorca.ts";
+import { engelVolkersMallorca } from "./engel-volkers-mallorca.ts";
 
-export { firstMallorca };
+export { firstMallorca, engelVolkersMallorca };
 
 /**
  * Catálogo Sectorial: Inmobiliaria, Villas de Lujo & Fincas en Mallorca.
@@ -9,4 +10,5 @@ export { firstMallorca };
  */
 export const INMOBILIARIA_SERVICES: ServiceItem[] = [
   firstMallorca,
+  engelVolkersMallorca,
 ];

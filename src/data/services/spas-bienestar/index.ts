@@ -1,7 +1,8 @@
 import type { ServiceItem } from "../types.ts";
 import { arabellaSpa } from "./arabella-spa.ts";
+import { sonBrullSpa } from "./son-brull-spa.ts";
 
-export { arabellaSpa };
+export { arabellaSpa, sonBrullSpa };
 
 /**
  * Catálogo Sectorial: Spas, Bienestar, Masajes & Estética en Mallorca.
@@ -9,4 +10,5 @@ export { arabellaSpa };
  */
 export const SPAS_SERVICES: ServiceItem[] = [
   arabellaSpa,
+  sonBrullSpa,
 ];

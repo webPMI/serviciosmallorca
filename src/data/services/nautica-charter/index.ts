@@ -1,7 +1,8 @@
 import type { ServiceItem } from "../types.ts";
 import { oasisCatamaran } from "./oasis-catamaran.ts";
+import { mallorcaGlobalCharter } from "./mallorca-global-charter.ts";
 
-export { oasisCatamaran };
+export { oasisCatamaran, mallorcaGlobalCharter };
 
 /**
  * Catálogo Sectorial: Náutica, Chárter & Actividades Marítimas en Mallorca.
@@ -9,4 +10,5 @@ export { oasisCatamaran };
  */
 export const NAUTICA_SERVICES: ServiceItem[] = [
   oasisCatamaran,
+  mallorcaGlobalCharter,
 ];

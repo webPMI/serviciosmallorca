@@ -1,7 +1,8 @@
 import type { ServiceItem } from "../types.ts";
 import { bufeteFrau } from "./bufete-frau.ts";
+import { illeslexAbogados } from "./illeslex-abogados.ts";
 
-export { bufeteFrau };
+export { bufeteFrau, illeslexAbogados };
 
 /**
  * Catálogo Sectorial: Servicios Profesionales, Abogados & Asesoría Fiscal en Mallorca.
@@ -9,4 +10,5 @@ export { bufeteFrau };
  */
 export const PROFESIONALES_SERVICES: ServiceItem[] = [
   bufeteFrau,
+  illeslexAbogados,
 ];
