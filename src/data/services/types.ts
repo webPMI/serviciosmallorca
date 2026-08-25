@@ -72,7 +72,7 @@ export interface CustomerReview {
   rating: number; // 1 a 5
   date: string; // "2025-06-12"
   platform: "google_maps" | "tripadvisor" | "trustpilot" | "thefork" | "treatwell" | "bing_maps" | "direct";
-  language: "es" | "en" | "de" | "ca";
+  language: "es" | "en" | "de" | "ca" | "fr" | "sv" | "it";
   comment: string;
   verifiedCustomer?: boolean;
 }

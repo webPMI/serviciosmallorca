@@ -3,9 +3,9 @@ import { kuyenArtTattoo } from "./kuyen-art-tattoo.ts";
 import { boxTattooPiercing } from "./box-tattoo-piercing.ts";
 import { macatelaTattoo } from "./macatela-tattoo.ts";
 import { urbanSoulTattoo } from "./urban-soul-tattoo.ts";
-import { goldenRaccoonTattoo } from "./golden-raccoon.ts";
+import { goodLuckTattoo } from "./good-luck-tattoo.ts";
 
-export { kuyenArtTattoo, boxTattooPiercing, macatelaTattoo, urbanSoulTattoo, goldenRaccoonTattoo };
+export { kuyenArtTattoo, boxTattooPiercing, macatelaTattoo, urbanSoulTattoo, goodLuckTattoo };
 
 /**
  * Catálogo Sectorial: Arte, Tatuajes & Piercing en Mallorca.
@@ -16,5 +16,5 @@ export const TATTOO_SERVICES: ServiceItem[] = [
   boxTattooPiercing,
   macatelaTattoo,
   urbanSoulTattoo,
-  goldenRaccoonTattoo,
+  goodLuckTattoo,
 ];
