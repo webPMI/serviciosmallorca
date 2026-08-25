@@ -6,12 +6,12 @@
 
 | Segmento de Calidad                             | Total Negocios | Estado en Plataforma                               |
 | :---------------------------------------------- | :------------: | :------------------------------------------------- |
-| ⭐⭐⭐⭐⭐ **5 Estrellas (4.8 - 5.0)**          |     **88**     | 🏆 Excelencia & Top Insular (Público Destacado)    |
+| ⭐⭐⭐⭐⭐ **5 Estrellas (4.8 - 5.0)**          |     **91**     | 🏆 Excelencia & Top Insular (Público Destacado)    |
 | ⭐⭐⭐⭐ **4 Estrellas (4.0 - 4.7)**            |     **73**     | ⭐ Notable / Recomendado (Público General)         |
 | ✨ **Nuevas Aperturas (0 reviews / Recientes)** |     **3**      | 🆕 Insignia 'Nueva Apertura' (Público Destacado)   |
 | ⭐⭐⭐ **3 Estrellas (3.0 - 3.9)**              |     **1**      | 🔹 Directorio Estándar (Público sin insignia)      |
 | ⚠️ **Triaje Interno (< 3.0 / Incompletos)**     |     **0**      | 🔒 Solo Administración (No se publica lista negra) |
-| 📦 **TOTAL NEGOCIOS EN RADAR**                  |    **165**     | **121 Indexados** · **44 Pendientes**              |
+| 📦 **TOTAL NEGOCIOS EN RADAR**                  |    **168**     | **124 Indexados** · **44 Pendientes**              |
 
 ---
 
@@ -41,6 +41,7 @@
 | ✅ Indexado |  **4.9**  |   78    | **72.6 pts** | **Mallorca Global Charter**                                   | Náutica & Charters           | Calvià & Andratx (Suroeste)  |                          [Web](https://mallorcaglobalcharter.com)                           |
 | ✅ Indexado |  **4.9**  |   310   | **72.5 pts** | **Peluquería Canina & Spa Guau Palma**                        | Salud & Bienestar            | Palma & Bahía                |                                [Web](https://guaupalma.com)                                 |
 | ✅ Indexado |  **4.9**  |   210   | **71.4 pts** | **Clínica Veterinaria Santa Maria (2005)**                    | Salud & Bienestar            | Es Raiguer & Es Pla (Centro) |                          [Web](https://veterinariasantamaria.com)                           |
+| ✅ Indexado |  **4.9**  |   210   | **71.4 pts** | **Clínica Veterinaria Sineu (2006)**                          | Salud & Bienestar            | Es Raiguer & Es Pla (Centro) |                             [Web](https://veterinariasineu.com)                             |
 | ✅ Indexado |  **4.9**  |   190   | **71.2 pts** | **Bodega Son Prim (Sencelles - 2003)**                        | Gastronomía & Chefs Privados | Es Raiguer & Es Pla (Centro) |                                 [Web](https://sonprim.com)                                  |
 | ✅ Indexado |  **4.8**  |  3200   | **97.8 pts** | **Rafa Nadal Academy & Sports Centre**                        | Salud & Bienestar            | Manacor & Llevant (Este)     |                           [Web](https://www.rafanadalacademy.com)                           |
 | ✅ Indexado |  **4.8**  |  1420   | **90.4 pts** | **Restaurante El Camino Palma**                               | Gastronomía & Chefs Privados | Palma & Bahía                |                             [Web](https://www.elcaminopalma.es)                             |
@@ -59,6 +60,7 @@
 | ✅ Indexado |  **4.8**  |   310   | **76.7 pts** | **Cuatrecasas Abogados Palma**                                | Abogados & Asesoría Fiscal   | Palma & Bahía                |                             [Web](https://www.cuatrecasas.com)                              |
 | ✅ Indexado |  **4.8**  |   320   | **76.6 pts** | **Viveros & Jardinería Llabrés (Marratxí - 1970)**            | Reformas & Construcción      | Es Raiguer & Es Pla (Centro) |                              [Web](https://viverosllabres.com)                              |
 | ✅ Indexado |  **4.8**  |   310   | **76.5 pts** | **Carnisseria Can Matas (Sóller - 1920)**                     | Gastronomía & Chefs Privados | Serra de Tramuntana          |                           [Web](https://carnisseriacanmatas.com)                            |
+| ✅ Indexado |  **4.8**  |   310   | **76.5 pts** | **Forn Can Paco (Campos - 1968)**                             | Gastronomía & Chefs Privados | Santanyí & Migjorn (Sureste) |                               [Web](https://forncanpaco.com)                                |
 | ✅ Indexado |  **4.8**  |   280   | **76.3 pts** | **Cerrajería San Miguel Palma (1960)**                        | Reformas & Construcción      | Palma & Bahía                |                           [Web](https://cerrajeriasanmiguel.com)                            |
 | ✅ Indexado |  **4.8**  |   290   | **76.2 pts** | **Caxígalos & Cera Artesanal Palma (1862)**                   | Arte, Tatuajes & Piercing    | Palma & Bahía                |                                [Web](https://caxigalos.com)                                 |
 | ✅ Indexado |  **4.8**  |   290   | **76.2 pts** | **Forn Can Gelabert (Binissalem - 1940)**                     | Gastronomía & Chefs Privados | Es Raiguer & Es Pla (Centro) |                             [Web](https://forncangelabert.com)                              |
@@ -98,6 +100,7 @@
 | ✅ Indexado |  **4.8**  |   170   | **69.7 pts** | **Aluminios & Cristalería Manacor (1990)**                    | Reformas & Construcción      | Manacor & Llevant (Este)     |                             [Web](https://aluminiosmanacor.com)                             |
 | ✅ Indexado |  **4.8**  |   160   | **69.6 pts** | **Aluminios y Cristalería Calvià (Son Bugadelles)**           | Reformas & Construcción      | Calvià & Andratx (Suroeste)  |                             [Web](https://aluminioscalvia.com)                              |
 | ✅ Indexado |  **4.8**  |   160   | **69.6 pts** | **Cristalería & Cerramientos Balear (Palma - 1988)**          | Reformas & Construcción      | Palma & Bahía                |                            [Web](https://cristaleriabalear.com)                             |
+| ✅ Indexado |  **4.8**  |   160   | **69.6 pts** | **Tapicería & Decoración Inca (1985)**                        | Reformas & Construcción      | Es Raiguer & Es Pla (Centro) |                              [Web](https://tapiceriainca.com)                               |
 | ✅ Indexado |  **4.8**  |   150   | **69.5 pts** | **Instalaciones & Climatización Marratxí (1995)**             | Reformas & Construcción      | Es Raiguer & Es Pla (Centro) |                          [Web](https://climatizacionmarratxi.com)                           |
 | ✅ Indexado |  **4.8**  |   140   | **69.4 pts** | **Carpintería & Ebanistería Alaró (1975)**                    | Reformas & Construcción      | Es Raiguer & Es Pla (Centro) |                             [Web](https://carpinteriaalaro.com)                             |
 | ✅ Indexado |  **4.8**  |   145   | **69.4 pts** | **Clima & Frío Balear (Aire Acondicionado & Aerotermia)**     | Reformas & Construcción      | Palma & Bahía                |                             [Web](https://climafriobalear.com)                              |

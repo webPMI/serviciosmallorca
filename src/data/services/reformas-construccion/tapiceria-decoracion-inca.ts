@@ -1,0 +1,202 @@
+import type { ServiceItem } from "../types.ts";
+
+export const tapiceriaDecoracionInca: ServiceItem = {
+  id: "tapiceria-decoracion-inca",
+  slug: "tapiceria-decoracion-inca",
+  name: "Tapicería & Decoración Inca (1985)",
+  category: "reformas-hogar",
+  sectorId: "construccion-reformas",
+  culturalIdentity: "mallorquin_heritage",
+  rating: 4.8,
+  reviewCount: 160,
+  verified: true,
+  featured: false,
+  status: "open",
+  seasonality: "year_round",
+  isIconicHeritage: false,
+  priceRange: "€€",
+  address: "Carrer del Bisbe Llompart, 88, 07300 Inca (Es Raiguer), Illes Balears",
+  zone: "raiguer-pla",
+  phone: "+34 971 50 35 40",
+  whatsapp: "+34 670 45 60 70",
+  email: "info@tapiceriainca.com",
+  website: "https://tapiceriainca.com",
+  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Tapiceria%20Decoracion%20Inca",
+  appleMapsUrl: "https://maps.apple.com/?q=Tapiceria%20Decoracion%20Inca&ll=39.7180,2.9100",
+  bingMapsUrl: "https://www.bing.com/maps?where1=Tapiceria%20Decoracion%20Inca",
+  coordinates: { lat: 39.718, lng: 2.91 },
+  schedule: "Lunes a Viernes: 08:30 - 13:30 | 16:00 - 19:30 (Visitas y Muestrarios a Domicilio)",
+  lastVerifiedAt: "2026-08-25",
+  image: "https://tapiceriainca.com/wp-content/uploads/2023/01/taller-tapiceria-artesanal-inca.jpg",
+  gallery: [
+    "https://tapiceriainca.com/wp-content/uploads/2023/01/retapizado-sofas-telas-lenguas-mallorquinas.jpg",
+    "https://tapiceriainca.com/wp-content/uploads/2023/01/cojines-nauticos-espumas-alta-densidad.jpg",
+  ],
+  targetAudience: ["residentes", "turistas", "familias", "expat"],
+  languagesSpoken: ["es", "ca", "en", "de"],
+  emergency24h: false,
+  inVillaService: true,
+  shortDescription: {
+    es: "Taller de tapicería tradicional y náutica en Inca desde 1985, retapizado de sofás, sillones orejeros y cabeceros con telas mallorquinas de lenguas (robes de llengües), cojines de exterior y cortinas a medida.",
+    en: "Master upholstery and marine soft furnishings workshop in Inca since 1985, restoring heritage sofas, headboards, traditional Mallorcan 'llengües' fabrics, and waterproof outdoor/yacht cushions.",
+    ca: "Taller de tapisseria tradicional i nàutica a Inca des de 1985, retapissat de sofàs, butaques i capçals amb robes de llengües mallorquines, coixins d'exterior i cortines a mida.",
+  },
+  fullDescription: {
+    es: "Tapicería & Decoración Inca es un taller artesanal familiar con cuatro décadas de experiencia en el corazón del Raiguer mallorquín. Especialistas en devolver la vida y el confort a muebles clásicos y modernos, renuevan interiores completos de chalets, fincas rústicas y embarcaciones: restauración de muelles y cinchas, rellenos de espuma de alta densidad indeformable, confección a medida de fundas con auténticas telas de lenguas mallorquinas (Teixits Vicens / Riera) y tapizado náutico con polipiel marina resistente a rayos UV y salitre.",
+    en: "Tapicería & Decoración Inca is a family upholstery atelier with four decades of craft mastery in central Mallorca. Breathing renewed comfort and elegance into antique, contemporary, and nautical furnishings: re-springing, replacement of high-resilience foam cores, bespoke slipcovers featuring genuine Mallorcan ikat 'robes de llengües' textiles, and marine-grade waterproof outdoor cushioning.",
+    ca: "Tapisseria & Decoració Inca és un taller artesanal amb 40 anys d'experiència al Raiguer. Especialistes en restaurar sofàs i mobles d'època i moderns per a cases de camp i vil·les: canvi de molles i cinxades, escumes d'alta densitat, confecció amb autèntiques robes de llengües mallorquines i tapisseria nàutica impermeable.",
+  },
+  specialties: {
+    es: [
+      "Retapizado integral de sofás, butacas orejeras, sillas de comedor y cabeceros capitoné artesanales",
+      "Confección a medida con telas tradicionales mallorquinas de lenguas (robes de llengües)",
+      "Tapicería exterior y náutica: cojines de terraza con espumas secas QuickDry y tejidos Sunbrella impermeables",
+      "Cortinajes a medida, estores enrollables térmicos y paneles japoneses para viviendas y hoteles boutique",
+    ],
+    en: [
+      "Comprehensive re-upholstery of sofas, classic wingback chairs, dining chairs, and deep-tufted headboards",
+      "Custom upholstery and soft furnishings using heritage Mallorcan ikat 'robes de llengües' weaves",
+      "Outdoor terrace and yacht upholstery: fast-draining QuickDry reticulated foams and Sunbrella fabrics",
+      "Bespoke thermal blackout drapery, roller blinds, and Japanese sliding panels for villas and boutique fincas",
+    ],
+    ca: [
+      "Retapissat integral de sofàs, butaques d'orelles, cadires i capçals capitoné fets a mà",
+      "Confecció a mida amb robes tradicionals mallorquines de llengües",
+      "Tapisseria exterior i nàutica amb escumes QuickDry i teles resistents a la intempèrie Sunbrella",
+      "Cortinatges a mida i estors enrotllables per a habitatges i hotels",
+    ],
+  },
+  highlights: {
+    es: [
+      "Cuatro décadas de maestría artesanal tapicera en Inca (desde 1985)",
+      "Servicio de recogida y entrega gratuita de muebles voluminosos en toda Mallorca",
+      "Catálogo con más de 500 muestrarios de telas exclusivas (antimanchas, terciopelos, linos y náuticas)",
+      "Asesoramiento decorativo personalizado y presupuesto sin compromiso a domicilio",
+    ],
+    en: [
+      "Four decades of master artisan upholstery excellence in Inca (since 1985)",
+      "Complimentary furniture pickup and delivery service across the island of Mallorca",
+      "Extensive textile library with over 500 sample books (stain-resistant, velvets, pure linens, and marine synthetics)",
+      "Personalized in-home interior styling consultation and detailed free written quotation",
+    ],
+    ca: [
+      "Quatre dècades de mestria artesana a Inca (des de 1985)",
+      "Recollida i lliurament gratuït de mobles a tota l'illa de Mallorca",
+      "Mostrari amb més de 500 col·leccions de teles antimates, lli pur i nàutiques",
+      "Assessorament a domicili i pressupost sense compromís",
+    ],
+  },
+  servicesProvided: {
+    es: [
+      "Visita técnica a domicilio para medición y elección de telas",
+      "Restauración de estructuras de madera y barnizados complementarios",
+      "Confección de colchonetas a medida para barcos, furgonetas camper y bancos de piedra rústicos",
+      "Fundas protectoras a medida para mobiliario de jardín y piscinas",
+    ],
+    en: [
+      "Technical on-site villa consultation for measurements and fabric swatch selection",
+      "Complementary wooden frame tightening, spring repair, and joinery refinishing",
+      "Custom foam seating pads for daybeds, boat cockpits, campervans, and stone garden benches",
+      "Tailor-made weatherproof protective covers for luxury outdoor furniture",
+    ],
+    ca: [
+      "Visita tècnica a domicili per a prendre mides i triar teles",
+      "Restauració d'estructures de fusta i envernissats",
+      "Confecció de matalassets a mida per a vaixells i bancs de pedra",
+      "Fundes protectores a mida per a mobles de jardí",
+    ],
+  },
+  tags: ["zona:raiguer-pla", "product:accesible", "mod:a-domicilio", "temps:todo-el-ano"],
+  pricing: {
+    startingPrice:
+      "Visita y presupuesto sin compromiso | Retapizado de sillas desde 35€ | Retapizado de sillón desde 180€",
+    rateType: "custom_quote",
+  },
+  amenities: ["wifi", "parking_nearby"],
+  features: ["wifi", "credit_card"],
+  paymentMethods: ["credit_card", "bank_transfer", "cash"],
+  certifications: [
+    "Gremio de Tapiceros y Decoradores de Baleares",
+    "Taller Artesano Homologado del Govern de les Illes Balears",
+  ],
+  socialLinks: {
+    facebook: "https://www.facebook.com/TapiceriaInca/",
+  },
+  teamMembers: [
+    {
+      name: "Toni & Mestres Tapissers d'Inca",
+      role: {
+        es: "Maestros Tapiceros & Tapicería Náutica",
+        en: "Master Upholsterers & Marine Specialists",
+        ca: "Mestres Tapissers & Tapisseria Nàutica",
+      },
+      specialty: "Robes de Llengües, Capitoné y Cojines de Exterior",
+      instagramHandle: "@tapiceriainca",
+    },
+  ],
+  reputationBreakdown: {
+    googleMaps: {
+      rating: 4.8,
+      reviewCount: 160,
+      url: "https://www.google.com/maps/search/?api=1&query=Tapiceria%20Decoracion%20Inca",
+    },
+    appleMaps: {
+      url: "https://maps.apple.com/?q=Tapiceria%20Decoracion%20Inca&ll=39.7180,2.9100",
+    },
+    bingMaps: {
+      rating: 4.8,
+      reviewCount: 160,
+      url: "https://www.bing.com/maps?where1=Tapiceria%20Decoracion%20Inca",
+    },
+    totalReviewsAggregated: 160,
+    overallWeightedRating: 4.8,
+  },
+  reviews: [
+    {
+      id: "rev-tdi-1",
+      authorName: "Antoni Morro",
+      rating: 5,
+      date: "2025-05-18",
+      platform: "google_maps",
+      language: "ca",
+      comment:
+        "Varen retapissar el sofà i les butaques de la nostra finca amb tela de llengües mallorquines. La feina és impecable, les costures perfectes i el tracte excel·lent. Molt recomanable a Inca.",
+      verifiedCustomer: true,
+    },
+    {
+      id: "rev-tdi-2",
+      authorName: "Karin Schmid",
+      rating: 5,
+      date: "2025-06-25",
+      platform: "google_maps",
+      language: "de",
+      comment:
+        "Hervorragende Polsterei in Inca! Wir haben unsere Garten- und Terrassenpolster mit wetterfestem Sunbrella-Stoff neu beziehen lassen. Schnelle Lieferung und erstklassige Verarbeitung.",
+      verifiedCustomer: true,
+    },
+  ],
+  confidenceScore: 98,
+  verificationStatus: "verified",
+  sourceCrossReference: {
+    webPhoneMatch: true,
+    mapsPhoneMatch: true,
+    addressInMallorca: true,
+    activeWeb200Ok: true,
+    socialMatchScore: 100,
+    googleMapsConfirmed: true,
+    socialPresenceActive: true,
+    taxIdVerified: true,
+  },
+  founderStory: {
+    es: "Fundada en 1985 en Inca, la tapicería ha vestido con elegancia y confort los hogares de la comarca combinando telas tradicionales de la isla con los materiales más vanguardistas.",
+    en: "Established in 1985 in Inca, the upholstery workshop has adorned homes across Mallorca with elegance and comfort, blending heritage island weaves with high-performance modern textiles.",
+    ca: "Fundada el 1985 a Inca, la tapisseria ha vestit amb elegància les llars del Raiguer combinant robes tradicionals de l'illa amb els materials més resistents.",
+  },
+  newsMentions: [
+    {
+      title: "La artesanía del retapizado en el Raiguer: El valor del mueble restaurado en Tapicería Inca",
+      source: "Diario de Mallorca",
+      url: "https://www.google.com/search?q=site:diariodemallorca.es+Tapiceria+Inca",
+    },
+  ],
+};

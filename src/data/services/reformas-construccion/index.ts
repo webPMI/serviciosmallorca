@@ -20,6 +20,7 @@ import { carpinteriaAlaro } from "./carpinteria-ebanisteria-alaro.ts";
 import { cerrajeriaRapidaBalear } from "./cerrajeria-rapida-balear.ts";
 import { climaMarratxi } from "./climatizacion-marratxi.ts";
 import { aluminiosManacor } from "./aluminios-cristaleria-manacor.ts";
+import { tapiceriaDecoracionInca } from "./tapiceria-decoracion-inca.ts";
 
 export {
   duranPalma,
@@ -43,6 +44,7 @@ export {
   cerrajeriaRapidaBalear,
   climaMarratxi,
   aluminiosManacor,
+  tapiceriaDecoracionInca,
 };
 
 /**
@@ -71,4 +73,5 @@ export const REFORMAS_SERVICES: ServiceItem[] = [
   cerrajeriaRapidaBalear,
   climaMarratxi,
   aluminiosManacor,
+  tapiceriaDecoracionInca,
 ];
