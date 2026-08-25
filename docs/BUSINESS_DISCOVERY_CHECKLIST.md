@@ -6,12 +6,12 @@
 
 | Segmento de Calidad                             | Total Negocios | Estado en Plataforma                               |
 | :---------------------------------------------- | :------------: | :------------------------------------------------- |
-| ⭐⭐⭐⭐⭐ **5 Estrellas (4.8 - 5.0)**          |     **93**     | 🏆 Excelencia & Top Insular (Público Destacado)    |
+| ⭐⭐⭐⭐⭐ **5 Estrellas (4.8 - 5.0)**          |     **96**     | 🏆 Excelencia & Top Insular (Público Destacado)    |
 | ⭐⭐⭐⭐ **4 Estrellas (4.0 - 4.7)**            |     **74**     | ⭐ Notable / Recomendado (Público General)         |
 | ✨ **Nuevas Aperturas (0 reviews / Recientes)** |     **3**      | 🆕 Insignia 'Nueva Apertura' (Público Destacado)   |
 | ⭐⭐⭐ **3 Estrellas (3.0 - 3.9)**              |     **1**      | 🔹 Directorio Estándar (Público sin insignia)      |
 | ⚠️ **Triaje Interno (< 3.0 / Incompletos)**     |     **0**      | 🔒 Solo Administración (No se publica lista negra) |
-| 📦 **TOTAL NEGOCIOS EN RADAR**                  |    **171**     | **127 Indexados** · **44 Pendientes**              |
+| 📦 **TOTAL NEGOCIOS EN RADAR**                  |    **174**     | **130 Indexados** · **44 Pendientes**              |
 
 ---
 
@@ -44,6 +44,7 @@
 | ✅ Indexado |  **4.9**  |   210   | **71.4 pts** | **Clínica Veterinaria Sineu (2006)**                          | Salud & Bienestar            | Es Raiguer & Es Pla (Centro) |                             [Web](https://veterinariasineu.com)                             |
 | ✅ Indexado |  **4.9**  |   190   | **71.2 pts** | **Bodega Son Prim (Sencelles - 2003)**                        | Gastronomía & Chefs Privados | Es Raiguer & Es Pla (Centro) |                                 [Web](https://sonprim.com)                                  |
 | ✅ Indexado |  **4.9**  |   180   | **71.1 pts** | **Clínica Veterinaria Porreres (2005)**                       | Salud & Bienestar            | Es Raiguer & Es Pla (Centro) |                           [Web](https://veterinariaporreres.com)                            |
+| ✅ Indexado |  **4.9**  |   170   | **70.9 pts** | **Clínica Veterinaria Montuïri (2007)**                       | Salud & Bienestar            | Es Raiguer & Es Pla (Centro) |                           [Web](https://veterinariamontuiri.com)                            |
 | ✅ Indexado |  **4.8**  |  3200   | **97.8 pts** | **Rafa Nadal Academy & Sports Centre**                        | Salud & Bienestar            | Manacor & Llevant (Este)     |                           [Web](https://www.rafanadalacademy.com)                           |
 | ✅ Indexado |  **4.8**  |  1420   | **90.4 pts** | **Restaurante El Camino Palma**                               | Gastronomía & Chefs Privados | Palma & Bahía                |                             [Web](https://www.elcaminopalma.es)                             |
 | ✅ Indexado |  **4.8**  |   950   | **84.7 pts** | **Bodega Ribas (Consell - 1711)**                             | Gastronomía & Chefs Privados | Es Raiguer & Es Pla (Centro) |                               [Web](https://bodegaribas.com)                                |
@@ -65,6 +66,7 @@
 | ✅ Indexado |  **4.8**  |   280   | **76.3 pts** | **Cerrajería San Miguel Palma (1960)**                        | Reformas & Construcción      | Palma & Bahía                |                           [Web](https://cerrajeriasanmiguel.com)                            |
 | ✅ Indexado |  **4.8**  |   290   | **76.2 pts** | **Caxígalos & Cera Artesanal Palma (1862)**                   | Arte, Tatuajes & Piercing    | Palma & Bahía                |                                [Web](https://caxigalos.com)                                 |
 | ✅ Indexado |  **4.8**  |   290   | **76.2 pts** | **Forn Can Gelabert (Binissalem - 1940)**                     | Gastronomía & Chefs Privados | Es Raiguer & Es Pla (Centro) |                             [Web](https://forncangelabert.com)                              |
+| ✅ Indexado |  **4.8**  |   280   | **76.1 pts** | **Forn Nou de Muro (1952)**                                   | Gastronomía & Chefs Privados | Alcúdia & Pollença (Norte)   |                               [Web](https://fornnoumuro.com)                                |
 | ✅ Indexado |  **4.8**  |   320   |  **76 pts**  | **Engel & Völkers Mallorca**                                  | Inmobiliaria & Fincas        | Palma & Bahía                |                    [Web](https://www.engelvoelkers.com/es-es/mallorca/)                     |
 | ✅ Indexado |  **4.8**  |   240   | **75.6 pts** | **Herboristería & Dietética La Remei Palma (1985)**           | Salud & Bienestar            | Palma & Bahía                |                           [Web](https://herboristerialaremei.com)                           |
 | ✅ Indexado |  **4.8**  |   220   | **75.4 pts** | **Digital Cinema Domótica & Audio Mallorca**                  | Seguridad & Domótica         | Palma & Bahía                |                               [Web](https://digitalcinema.es)                               |
@@ -102,6 +104,7 @@
 | ✅ Indexado |  **4.8**  |   160   | **69.6 pts** | **Aluminios y Cristalería Calvià (Son Bugadelles)**           | Reformas & Construcción      | Calvià & Andratx (Suroeste)  |                             [Web](https://aluminioscalvia.com)                              |
 | ✅ Indexado |  **4.8**  |   160   | **69.6 pts** | **Cristalería & Cerramientos Balear (Palma - 1988)**          | Reformas & Construcción      | Palma & Bahía                |                            [Web](https://cristaleriabalear.com)                             |
 | ✅ Indexado |  **4.8**  |   160   | **69.6 pts** | **Tapicería & Decoración Inca (1985)**                        | Reformas & Construcción      | Es Raiguer & Es Pla (Centro) |                              [Web](https://tapiceriainca.com)                               |
+| ✅ Indexado |  **4.8**  |   150   | **69.5 pts** | **Electricidad & Climatización Sóller (1994)**                | Seguridad & Domótica         | Serra de Tramuntana          |                            [Web](https://electricidadsoller.com)                            |
 | ✅ Indexado |  **4.8**  |   150   | **69.5 pts** | **Instalaciones & Climatización Marratxí (1995)**             | Reformas & Construcción      | Es Raiguer & Es Pla (Centro) |                          [Web](https://climatizacionmarratxi.com)                           |
 | ✅ Indexado |  **4.8**  |   140   | **69.4 pts** | **Carpintería & Ebanistería Alaró (1975)**                    | Reformas & Construcción      | Es Raiguer & Es Pla (Centro) |                             [Web](https://carpinteriaalaro.com)                             |
 | ✅ Indexado |  **4.8**  |   145   | **69.4 pts** | **Clima & Frío Balear (Aire Acondicionado & Aerotermia)**     | Reformas & Construcción      | Palma & Bahía                |                             [Web](https://climafriobalear.com)                              |

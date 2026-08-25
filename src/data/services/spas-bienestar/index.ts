@@ -22,6 +22,7 @@ import { veterinariaFelanitx } from "./clinica-veterinaria-felanitx.ts";
 import { veterinariaCapdepera } from "./clinica-veterinaria-capdepera.ts";
 import { veterinariaSineu } from "./clinica-veterinaria-sineu.ts";
 import { veterinariaPorreres } from "./clinica-veterinaria-porreres.ts";
+import { veterinariaMontuiri } from "./clinica-veterinaria-montuiri.ts";
 
 export {
   arabellaSpa,
@@ -47,6 +48,7 @@ export {
   veterinariaCapdepera,
   veterinariaSineu,
   veterinariaPorreres,
+  veterinariaMontuiri,
 };
 
 /**
@@ -77,4 +79,5 @@ export const SPAS_SERVICES: ServiceItem[] = [
   veterinariaCapdepera,
   veterinariaSineu,
   veterinariaPorreres,
+  veterinariaMontuiri,
 ];
