@@ -5,6 +5,7 @@ import Footer from "../../../components/Footer.astro";
 import AdSenseSlot from "../../../components/AdSenseSlot.astro";
 import ServiceImage from "../../../components/ServiceImage.astro";
 import VisualGalleryShowcase from "../../../components/VisualGalleryShowcase.astro";
+import OnlineStoreShowcase from "../../../components/OnlineStoreShowcase.astro";
 import MapsRatingBox from "../../../components/MapsRatingBox.astro";
 import SocialFeedSection from "../../../components/SocialFeedSection.astro";
 import LiveScheduleBadge from "../../../components/LiveScheduleBadge.astro";
@@ -256,6 +257,18 @@ const schemaOrg = {
           gallery={service.gallery}
           currentLocale={locale}
         />
+
+        <!-- Official Online Store & Featured Products (If Available) -->
+        {
+          (service.onlineStore?.hasOnlineStore || (service.products && service.products.length > 0)) && (
+            <OnlineStoreShowcase
+              onlineStore={service.onlineStore}
+              products={service.products}
+              currentLocale={locale}
+              businessName={service.name}
+            />
+          )
+        }
 
         <!-- Team & Resident Artists (If Available) -->
         {

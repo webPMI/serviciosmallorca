@@ -64,6 +64,9 @@ async function scrapeWebsiteData(targetUrl: string): Promise<{
   socialLinks: Record<string, string>;
   detectedAmenities: string[];
   detectedPaymentMethods: string[];
+  onlineStoreDetected?: boolean;
+  storePlatform?: string;
+  storeUrl?: string;
 }> {
   const socialLinks: Record<string, string> = {};
   const detectedAmenities: string[] = ["wifi", "air_conditioning"];
@@ -140,7 +143,30 @@ async function scrapeWebsiteData(targetUrl: string): Promise<{
     if (lowerHtml.includes("apple pay") || lowerHtml.includes("applepay")) detectedPaymentMethods.push("apple_pay");
     if (lowerHtml.includes("bitcoin") || lowerHtml.includes("crypto")) detectedPaymentMethods.push("crypto");
 
-    // 5. Detección de Comodidades
+    // 5. Detección de Tienda Online & E-Commerce
+    let onlineStoreDetected = false;
+    let storePlatform: string | undefined = undefined;
+    let storeUrl: string | undefined = undefined;
+
+    if (lowerHtml.includes("shopify") || lowerHtml.includes("cdn.shopify.com")) {
+      onlineStoreDetected = true;
+      storePlatform = "shopify";
+    } else if (lowerHtml.includes("woocommerce") || lowerHtml.includes("wc-api")) {
+      onlineStoreDetected = true;
+      storePlatform = "woocommerce";
+    } else if (lowerHtml.includes("prestashop")) {
+      onlineStoreDetected = true;
+      storePlatform = "prestashop";
+    } else if (lowerHtml.includes("/shop") || lowerHtml.includes("/tienda") || lowerHtml.includes("/store") || lowerHtml.includes("/productos")) {
+      onlineStoreDetected = true;
+      storePlatform = "custom";
+    }
+
+    if (onlineStoreDetected) {
+      storeUrl = new URL("/shop", baseUrl).href;
+    }
+
+    // 6. Detección de Comodidades
     if (lowerHtml.includes("parking") || lowerHtml.includes("aparcamiento")) detectedAmenities.push("parking_nearby");
     if (lowerHtml.includes("movilidad reducida") || lowerHtml.includes("accesible") || lowerHtml.includes("wheelchair"))
       detectedAmenities.push("wheelchair_accessible");
@@ -178,9 +204,18 @@ async function scrapeWebsiteData(targetUrl: string): Promise<{
       socialLinks,
       detectedAmenities,
       detectedPaymentMethods,
+      onlineStoreDetected,
+      storePlatform,
+      storeUrl,
     };
   } catch {
-    return { galleryImages: [], socialLinks, detectedAmenities, detectedPaymentMethods };
+    return {
+      galleryImages: [],
+      socialLinks,
+      detectedAmenities,
+      detectedPaymentMethods,
+      onlineStoreDetected: false,
+    };
   }
 }
 
@@ -198,11 +233,15 @@ async function generateIntelligenceReport(query: string, websiteUrl?: string): P
     socialLinks: Record<string, string>;
     detectedAmenities: string[];
     detectedPaymentMethods: string[];
+    onlineStoreDetected?: boolean;
+    storePlatform?: string;
+    storeUrl?: string;
   } = {
     galleryImages: [],
     socialLinks: {},
     detectedAmenities: ["wifi", "air_conditioning"],
     detectedPaymentMethods: ["credit_card", "cash"],
+    onlineStoreDetected: false,
   };
 
   if (websiteUrl && websiteUrl.startsWith("http")) {

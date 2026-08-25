@@ -41,6 +41,26 @@ export interface PricingDetail {
   notes?: { es?: string; en?: string; ca?: string };
 }
 
+export interface StoreProduct {
+  id: string;
+  name: { es: string; en: string; ca: string };
+  price: string; // "25,00€" / "Desde 15€"
+  description?: { es?: string; en?: string; ca?: string };
+  category?: string; // "Merchandise" | "Cuidado Posterior" | "Joyería Titanio" | "Prints de Arte" | "Tarjetas Regalo"
+  imageUrl?: string;
+  url?: string; // Enlace directo a comprar en su tienda
+  inStock?: boolean;
+  badge?: string; // "Bestseller" | "Edición Limitada" | "Vegano" | "Exclusivo"
+}
+
+export interface OnlineStoreInfo {
+  hasOnlineStore: boolean;
+  url?: string; // "https://urbansoul.club/shop"
+  platform?: "shopify" | "woocommerce" | "prestashop" | "custom" | "etsy" | "other";
+  shippingToBalearics?: boolean;
+  pickupInStore?: boolean;
+}
+
 export interface BusinessFAQ {
   question: { es: string; en: string; ca: string };
   answer: { es: string; en: string; ca: string };
@@ -191,4 +211,6 @@ export interface ServiceItem {
   image: string;
   gallery: string[];
   schedule: string;
+  onlineStore?: OnlineStoreInfo;
+  products?: StoreProduct[];
 }
