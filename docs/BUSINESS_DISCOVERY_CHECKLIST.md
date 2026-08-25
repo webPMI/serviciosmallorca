@@ -6,12 +6,12 @@
 
 | Segmento de Calidad                             | Total Negocios | Estado en Plataforma                               |
 | :---------------------------------------------- | :------------: | :------------------------------------------------- |
-| ⭐⭐⭐⭐⭐ **5 Estrellas (4.8 - 5.0)**          |     **39**     | 🏆 Excelencia & Top Insular (Público Destacado)    |
-| ⭐⭐⭐⭐ **4 Estrellas (4.0 - 4.7)**            |     **68**     | ⭐ Notable / Recomendado (Público General)         |
+| ⭐⭐⭐⭐⭐ **5 Estrellas (4.8 - 5.0)**          |     **41**     | 🏆 Excelencia & Top Insular (Público Destacado)    |
+| ⭐⭐⭐⭐ **4 Estrellas (4.0 - 4.7)**            |     **69**     | ⭐ Notable / Recomendado (Público General)         |
 | ✨ **Nuevas Aperturas (0 reviews / Recientes)** |     **3**      | 🆕 Insignia 'Nueva Apertura' (Público Destacado)   |
 | ⭐⭐⭐ **3 Estrellas (3.0 - 3.9)**              |     **1**      | 🔹 Directorio Estándar (Público sin insignia)      |
 | ⚠️ **Triaje Interno (< 3.0 / Incompletos)**     |     **0**      | 🔒 Solo Administración (No se publica lista negra) |
-| 📦 **TOTAL NEGOCIOS EN RADAR**                  |    **111**     | **67 Indexados** · **44 Pendientes**               |
+| 📦 **TOTAL NEGOCIOS EN RADAR**                  |    **114**     | **70 Indexados** · **44 Pendientes**               |
 
 ---
 
@@ -34,6 +34,7 @@
 | ✅ Indexado |  **4.8**  |  3200   | **97.8 pts** | **Rafa Nadal Academy & Sports Centre**                    | Salud & Bienestar            | Manacor & Llevant (Este)     |                           [Web](https://www.rafanadalacademy.com)                           |
 | ✅ Indexado |  **4.8**  |  1420   | **90.4 pts** | **Restaurante El Camino Palma**                           | Gastronomía & Chefs Privados | Palma & Bahía                |                             [Web](https://www.elcaminopalma.es)                             |
 | ✅ Indexado |  **4.8**  |   950   | **84.7 pts** | **Bodega Ribas (Consell - 1711)**                         | Gastronomía & Chefs Privados | Es Raiguer & Es Pla (Centro) |                               [Web](https://bodegaribas.com)                                |
+| ✅ Indexado |  **4.8**  |   850   | **83.4 pts** | **Pastelería & Bombonería Can Pomar (1902)**              | Gastronomía & Chefs Privados | Santanyí & Migjorn (Sureste) |                                 [Web](https://canpomar.com)                                 |
 | ✅ Indexado |  **4.8**  |   520   | **79.3 pts** | **Roig Premium (VIP Chauffeur & Transfers)**              | Transporte VIP & Chófer      | Palma & Bahía                |                                   [Web](https://roig.com)                                   |
 | ✅ Indexado |  **4.8**  |   468   | **78.3 pts** | **Oasis Catamarán Palma**                                 | Náutica & Charters           | Palma & Bahía                |                              [Web](https://oasiscatamaran.com)                              |
 | ✅ Indexado |  **4.8**  |   850   | **78.2 pts** | **Rata Corner Llibreria & Cultura**                       | Abogados & Asesoría Fiscal   | Palma & Bahía                |                                [Web](https://ratacorner.com)                                |
@@ -57,6 +58,7 @@
 | ✅ Indexado |  **4.8**  |   175   | **69.8 pts** | **Instalaciones Eléctricas Llabrés**                      | Reformas & Construcción      | Es Raiguer & Es Pla (Centro) |                           [Web](https://electricidadllabres.com)                            |
 | ✅ Indexado |  **4.8**  |   160   | **69.6 pts** | **Aluminios y Cristalería Calvià (Son Bugadelles)**       | Reformas & Construcción      | Calvià & Andratx (Suroeste)  |                             [Web](https://aluminioscalvia.com)                              |
 | ✅ Indexado |  **4.8**  |   145   | **69.4 pts** | **Clima & Frío Balear (Aire Acondicionado & Aerotermia)** | Reformas & Construcción      | Palma & Bahía                |                             [Web](https://climafriobalear.com)                              |
+| ✅ Indexado |  **4.8**  |   120   | **69.1 pts** | **Mantenimiento & Varadero Portitxol Services**           | Náutica & Charters           | Palma & Bahía                |                            [Web](https://varaderoportitxol.com)                             |
 | ✅ Indexado |  **4.8**  |   190   | **61.6 pts** | **Box Tattoo Piercing Palma**                             | Arte, Tatuajes & Piercing    | Palma & Bahía                |                            [Web](https://boxtattoopiercing.com)                             |
 
 ---
@@ -82,6 +84,7 @@
 | ✅ Indexado  |  **4.6**  |  1650   | **91.2 pts** | **Restaurante Vandal Palma**                      | Gastronomía & Chefs Privados | Palma & Bahía                |      [Web](https://vandalpalma.com)       |
 | ✅ Indexado  |  **4.6**  |  1450   | **88.9 pts** | **Celler Can Amer Inca**                          | Gastronomía & Chefs Privados | Es Raiguer & Es Pla (Centro) |         [Web](https://canamer.es)         |
 | ✅ Indexado  |  **4.6**  |  1450   | **88.9 pts** | **Heladería y Pastelería Ca'n Miquel (1930)**     | Gastronomía & Chefs Privados | Palma & Bahía                |        [Web](https://canmiquel.es)        |
+| ✅ Indexado  |  **4.6**  |  1350   | **87.7 pts** | **Vidrios Gordiola (Algaida - 1719)**             | Arte, Tatuajes & Piercing    | Es Raiguer & Es Pla (Centro) |        [Web](https://gordiola.com)        |
 | ✅ Indexado  |  **4.6**  |  1240   | **86.1 pts** | **Restaurante Adrián Quetglas**                   | Gastronomía & Chefs Privados | Palma & Bahía                |     [Web](https://adrianquetglas.es)      |
 | ✅ Indexado  |  **4.6**  |  1120   | **84.6 pts** | **Restaurante Marc Fosh**                         | Gastronomía & Chefs Privados | Palma & Bahía                |        [Web](https://marcfosh.com)        |
 | ✅ Indexado  |  **4.6**  |   980   | **83.1 pts** | **Autocares Mallorca Transunion**                 | Transporte VIP & Chófer      | Palma & Bahía                |       [Web](https://transunion.com)       |

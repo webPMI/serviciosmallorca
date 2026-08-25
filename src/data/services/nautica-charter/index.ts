@@ -3,8 +3,9 @@ import { oasisCatamaran } from "./oasis-catamaran.ts";
 import { mallorcaGlobalCharter } from "./mallorca-global-charter.ts";
 import { attractionCatamarans } from "./attraction-catamarans.ts";
 import { clubNauticPortitxol } from "./club-nautic-portitxol.ts";
+import { varaderoPortitxol } from "./varadero-portitxol-services.ts";
 
-export { oasisCatamaran, mallorcaGlobalCharter, attractionCatamarans, clubNauticPortitxol };
+export { oasisCatamaran, mallorcaGlobalCharter, attractionCatamarans, clubNauticPortitxol, varaderoPortitxol };
 
 /**
  * Catálogo Sectorial: Náutica, Chárter & Actividades Marítimas en Mallorca.
@@ -15,4 +16,5 @@ export const NAUTICA_SERVICES: ServiceItem[] = [
   mallorcaGlobalCharter,
   attractionCatamarans,
   clubNauticPortitxol,
+  varaderoPortitxol,
 ];
