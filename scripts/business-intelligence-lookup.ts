@@ -114,26 +114,80 @@ async function scrapeWebsiteData(targetUrl: string): Promise<{
       favicon = new URL(favicon, baseUrl).href;
     }
 
-    // 3. Extraer Redes Sociales desde los enlaces <a>
-    const linkRegex = /href=["'](https?:\/\/[^"']+)["']/gi;
-    let linkMatch;
-    while ((linkMatch = linkRegex.exec(html)) !== null) {
-      const url = linkMatch[1];
-      if (url.includes("instagram.com/") && !url.includes("instagram.com/p/") && !socialLinks.instagram) {
-        socialLinks.instagram = url;
-      } else if (url.includes("facebook.com/") && !socialLinks.facebook) {
-        socialLinks.facebook = url;
-      } else if (url.includes("tiktok.com/@") && !socialLinks.tiktok) {
-        socialLinks.tiktok = url;
-      } else if (url.includes("youtube.com/") && !socialLinks.youtube) {
+    // 3. Extracción profunda de Redes Sociales (HTML, JSON-LD, iframes y scripts)
+    const cleanedHtml = html.replace(/\\\//g, "/");
+    const rawUrlMatches = cleanedHtml.match(/(?:https?:)?\/\/[^\s"'<>()\\]+/gi) || [];
+
+    for (let rawUrl of rawUrlMatches) {
+      if (rawUrl.startsWith("//")) rawUrl = `https:${rawUrl}`;
+
+      // Limpieza de sufijos comunes de comillas o caracteres extra
+      const url = rawUrl.replace(/[",;)>]+$/, "").trim();
+
+      // YouTube: Canales (@handle, /channel/, /c/, /user/, videos)
+      if (
+        (url.includes("youtube.com/") || url.includes("youtu.be/")) &&
+        !url.includes("/embed/") &&
+        !url.includes("/iframe_api") &&
+        !url.includes("/player_api") &&
+        !socialLinks.youtube
+      ) {
+        // Normalizar canal de YouTube
         socialLinks.youtube = url;
-      } else if (url.includes("pinterest.") && !socialLinks.pinterest) {
-        socialLinks.pinterest = url;
-      } else if (url.includes("linkedin.com/") && !socialLinks.linkedin) {
+      }
+
+      // Facebook: Páginas oficiales de negocio
+      else if (
+        (url.includes("facebook.com/") || url.includes("fb.com/") || url.includes("fb.me/")) &&
+        !url.includes("/sharer") &&
+        !url.includes("/share.php") &&
+        !url.includes("/dialog/") &&
+        !url.includes("/tr/") &&
+        !url.includes("/login") &&
+        !socialLinks.facebook
+      ) {
+        socialLinks.facebook = url;
+      }
+
+      // Instagram
+      else if (
+        (url.includes("instagram.com/") || url.includes("instagr.am/")) &&
+        !url.includes("/sharer") &&
+        !socialLinks.instagram
+      ) {
+        socialLinks.instagram = url;
+      }
+
+      // TikTok
+      else if (url.includes("tiktok.com/@") && !socialLinks.tiktok) {
+        socialLinks.tiktok = url;
+      }
+
+      // LinkedIn
+      else if (url.includes("linkedin.com/") && !socialLinks.linkedin) {
         socialLinks.linkedin = url;
-      } else if ((url.includes("twitter.com/") || url.includes("x.com/")) && !socialLinks.twitter) {
+      }
+
+      // Pinterest
+      else if ((url.includes("pinterest.com/") || url.includes("pinterest.es/")) && !socialLinks.pinterest) {
+        socialLinks.pinterest = url;
+      }
+
+      // Twitter / X
+      else if (
+        (url.includes("twitter.com/") || url.includes("x.com/")) &&
+        !url.includes("/intent/") &&
+        !url.includes("/share") &&
+        !socialLinks.twitter
+      ) {
         socialLinks.twitter = url;
-      } else if (url.includes("whatsapp.com/channel/") && !socialLinks.whatsappChannel) {
+      }
+
+      // WhatsApp Channel
+      else if (
+        (url.includes("whatsapp.com/channel/") || url.includes("chat.whatsapp.com/")) &&
+        !socialLinks.whatsappChannel
+      ) {
         socialLinks.whatsappChannel = url;
       }
     }
@@ -326,8 +380,20 @@ async function generateIntelligenceReport(query: string, websiteUrl?: string): P
     },
   ];
 
-  // Autoridad y Redes
+  // Autoridad y Redes Sociales Oficiales
   const authorityDorks = [
+    {
+      platform: "YouTube Canal Oficial",
+      searchUrl:
+        scrapedData.socialLinks.youtube ||
+        `https://www.google.com/search?q=site:youtube.com+${encodedQuery}+mallorca`,
+    },
+    {
+      platform: "Facebook Página Oficial",
+      searchUrl:
+        scrapedData.socialLinks.facebook ||
+        `https://www.google.com/search?q=site:facebook.com+${encodedQuery}+mallorca`,
+    },
     {
       platform: "Instagram Official",
       searchUrl:
@@ -335,15 +401,15 @@ async function generateIntelligenceReport(query: string, websiteUrl?: string): P
         `https://www.google.com/search?q=site:instagram.com+${encodedQuery}+mallorca`,
     },
     {
-      platform: "Facebook Oficial",
-      searchUrl:
-        scrapedData.socialLinks.facebook ||
-        `https://www.google.com/search?q=site:facebook.com+${encodedQuery}+mallorca`,
-    },
-    {
       platform: "TikTok Oficial",
       searchUrl:
         scrapedData.socialLinks.tiktok || `https://www.google.com/search?q=site:tiktok.com+${encodedQuery}+mallorca`,
+    },
+    {
+      platform: "LinkedIn Empresa",
+      searchUrl:
+        scrapedData.socialLinks.linkedin ||
+        `https://www.google.com/search?q=site:linkedin.com+${encodedQuery}+mallorca`,
     },
     {
       platform: "Pinterest Tableros",
@@ -352,8 +418,8 @@ async function generateIntelligenceReport(query: string, websiteUrl?: string): P
         `https://www.google.com/search?q=site:pinterest.com+${encodedQuery}+mallorca`,
     },
     {
-      platform: "Premios y Convenciones",
-      searchUrl: `https://www.google.com/search?q=${encodedQuery}+"premio"+OR+"award"+OR+"convencion"+mallorca`,
+      platform: "Premios y Reconocimientos Oficiales",
+      searchUrl: `https://www.google.com/search?q=${encodedQuery}+"premio"+OR+"award"+OR+"michelin"+OR+"repsol"+mallorca`,
     },
   ];
 
@@ -586,14 +652,19 @@ async function main() {
     report.extractedMedia.galleryImages.forEach((img, i) => console.log(`    [${i + 1}] ${img}`));
   }
 
-  console.log("\n📱 3. REDES SOCIALES OFICIALES DETECTADAS (Sin límite):");
+  console.log("\n📱 3. REDES SOCIALES OFICIALES DETECTADAS (Web Scrape):");
   if (Object.keys(report.detectedSocialLinks).length > 0) {
     Object.entries(report.detectedSocialLinks).forEach(([net, url]) => {
       console.log(`  • ${net.toUpperCase()}: ${url}`);
     });
   } else {
-    console.log("  • (No se encontraron enlaces a redes en la web o se buscarán por dorks)");
+    console.log("  • (No se encontraron enlaces embebidos directos en el HTML de la web)");
   }
+
+  console.log("\n🔎 3.1. DORKS DE BÚSQUEDA DIRECTA PARA REDES & AUTORIDAD:");
+  report.socialAndAuthorityDorks.forEach((d) => {
+    console.log(`  • ${d.platform}: ${d.searchUrl}`);
+  });
 
   console.log("\n💳 4. MÉTODOS DE PAGO Y COMODIDADES DETECTADAS:");
   console.log(`  • Métodos de Pago: ${report.detectedPaymentMethods.join(", ")}`);
