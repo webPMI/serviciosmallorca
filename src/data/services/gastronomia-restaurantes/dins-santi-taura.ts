@@ -219,12 +219,9 @@ export const dinsSantiTaura: ServiceItem = {
       "Experiència a la Barra / Sala"
     ]
   },
-  "image": "https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?q=80&w=800&auto=format&fit=crop",
+  "image": "https://www.elllorenc.com/images/hotel-fachada.jpg",
   "gallery": [
-    "https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=800&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=800&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1578474846511-04ba529f0b88?q=80&w=800&auto=format&fit=crop"
+    "https://www.elllorenc.com/images/hotel-fachada.jpg",
   ],
   "reputationBreakdown": {
     "googleMaps": {

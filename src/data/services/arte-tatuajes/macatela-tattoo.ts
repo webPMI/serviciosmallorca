@@ -237,9 +237,9 @@ export const macatelaTattoo: ServiceItem = {
       "Pírcing Corporal i Joieria Estèril",
     ],
   },
-  image: "https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?auto=format&fit=crop&w=1200&q=80",
+  image: "https://macatelatattoo.com/wp-content/uploads/2023/10/macatela-studio.jpg",
   gallery: [
-    "https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?auto=format&fit=crop&w=1200&q=80",
+    "https://macatelatattoo.com/wp-content/uploads/2023/10/macatela-studio.jpg",
   ],
   schedule: "Lun - Sáb: 10:30 - 14:00, 16:30 - 20:30 (Domingo Cerrado)",
   lastVerifiedAt: "2026-08-25",

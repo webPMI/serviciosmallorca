@@ -143,6 +143,39 @@ export function validateServicesList(services: ServiceItem[]): ValidationResult 
 
     // 9. Taxonomía: categoría/zona/tags contra catálogos cerrados (docs/TAXONOMY.md §3.1)
     errors.push(...validateTaxonomyRefs(service));
+
+    // 10. Regla Inmutable Zero Fake Data (GR-11): Prohibición de fotos de stock o relleno
+    const FORBIDDEN_IMAGE_DOMAINS = [
+      "unsplash.com",
+      "pexels.com",
+      "pixabay.com",
+      "freepik.com",
+      "placeholder",
+      "dummyimage",
+      "loremflickr",
+      "stock.adobe.com",
+      "shutterstock.com",
+      "gettyimages.com",
+      "istockphoto.com",
+    ];
+
+    const allImageUrls = [
+      service.image,
+      ...(service.images ?? []),
+      ...(service.gallery ?? []),
+      ...(service.socialPosts?.map((p) => p.imageUrl) ?? []),
+    ].filter(Boolean) as string[];
+
+    for (const imgUrl of allImageUrls) {
+      const lower = imgUrl.toLowerCase();
+      for (const forbidden of FORBIDDEN_IMAGE_DOMAINS) {
+        if (lower.includes(forbidden)) {
+          errors.push(
+            `Foto de stock o relleno prohibida detectada en "${service.name}": "${imgUrl}" (Contiene dominio restringido: "${forbidden}")`,
+          );
+        }
+      }
+    }
   }
 
   return {
@@ -150,3 +183,4 @@ export function validateServicesList(services: ServiceItem[]): ValidationResult 
     errors,
   };
 }
+

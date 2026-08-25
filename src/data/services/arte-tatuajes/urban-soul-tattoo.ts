@@ -237,9 +237,9 @@ export const urbanSoulTattoo: ServiceItem = {
       "Pírcing Corporal Professional",
     ],
   },
-  image: "https://images.unsplash.com/photo-1562962230-16e4623d36e6?auto=format&fit=crop&w=1200&q=80",
+  image: "http://www.urbansoul.club/assets/img/hero.jpg",
   gallery: [
-    "https://images.unsplash.com/photo-1562962230-16e4623d36e6?auto=format&fit=crop&w=1200&q=80",
+    "http://www.urbansoul.club/assets/img/hero.jpg",
   ],
   schedule: "Lun - Sáb: 10:30 - 14:00, 16:30 - 20:30 (Domingo Cerrado)",
   lastVerifiedAt: "2026-08-25",

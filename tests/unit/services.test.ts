@@ -142,5 +142,34 @@ describe("Servicios Mallorca Data Layer", () => {
       const uniqueImages = new Set(mainImages);
       expect(uniqueImages.size).toBe(mainImages.length);
     });
+
+    it("enforces Zero Stock Photos Rule (GR-11): rejects Unsplash, Pexels, Pixabay, and other generic placeholders", () => {
+      const forbiddenDomains = [
+        "unsplash.com",
+        "pexels.com",
+        "pixabay.com",
+        "freepik.com",
+        "placeholder",
+        "dummyimage",
+        "loremflickr",
+        "stock.adobe.com",
+        "shutterstock.com",
+      ];
+
+      for (const service of SERVICES) {
+        const allImages = [
+          service.image,
+          ...(service.images ?? []),
+          ...(service.gallery ?? []),
+        ].filter(Boolean) as string[];
+
+        for (const img of allImages) {
+          for (const forbidden of forbiddenDomains) {
+            expect(img.toLowerCase()).not.toContain(forbidden);
+          }
+        }
+      }
+    });
   });
 });
+

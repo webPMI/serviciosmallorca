@@ -188,13 +188,11 @@ export const boxTattooPiercing: ServiceItem = {
       "Canvi i Venda de Joieria Quirúrgica"
     ]
   },
-  "image": "https://images.unsplash.com/photo-1714787283995-7817fef1becf?q=80&w=735&auto=format&fit=crop",
+  "image": "https://i.imgur.com/wnba2lT.jpeg",
   "gallery": [
-    "https://images.pexels.com/photos/17573238/pexels-photo-17573238.jpeg",
-    "https://images.pexels.com/photos/34155039/pexels-photo-34155039.jpeg",
     "https://i.imgur.com/wnba2lT.jpeg",
-    "https://cdn.tatspark.com/images/Watercolor-floral-tattoo-design-for-women-on-forearm-and-hand-7647ceceeb_thumbnail.webp",
-    "https://i.imgur.com/aS7eca7.jpeg"
+    "https://i.imgur.com/aS7eca7.jpeg",
+    "https://cdn.tatspark.com/images/Watercolor-floral-tattoo-design-for-women-on-forearm-and-hand-7647ceceeb_thumbnail.webp"
   ],
   "reputationBreakdown": {
     "googleMaps": {
@@ -255,7 +253,7 @@ export const boxTattooPiercing: ServiceItem = {
       "id": "box-post-1",
       "platform": "instagram",
       "url": "https://instagram.com/boxtattoopiercing",
-      "imageUrl": "https://images.unsplash.com/photo-1714787283995-7817fef1becf?q=80&w=735&auto=format&fit=crop",
+      "imageUrl": "https://i.imgur.com/wnba2lT.jpeg",
       "caption": "Diseño floral fine line personalizado para antebrazo en nuestro estudio de Carrer Jaume II.",
       "date": "2025-11-20",
       "likesCount": 156
@@ -264,19 +262,10 @@ export const boxTattooPiercing: ServiceItem = {
       "id": "box-post-2",
       "platform": "instagram",
       "url": "https://instagram.com/boxtattoopiercing",
-      "imageUrl": "https://images.pexels.com/photos/17573238/pexels-photo-17573238.jpeg",
+      "imageUrl": "https://i.imgur.com/aS7eca7.jpeg",
       "caption": "Cover-up y restauración de tatuaje antiguo terminado con éxito.",
       "date": "2025-10-18",
       "likesCount": 204
-    },
-    {
-      "id": "box-post-3",
-      "platform": "instagram",
-      "url": "https://instagram.com/boxtattoopiercing",
-      "imageUrl": "https://images.pexels.com/photos/34155039/pexels-photo-34155039.jpeg",
-      "caption": "Perforaciones corporales higiénicas con joyería quirúrgica esterilizada.",
-      "date": "2025-09-25",
-      "likesCount": 98
     }
   ],
   "webDirectories": [
