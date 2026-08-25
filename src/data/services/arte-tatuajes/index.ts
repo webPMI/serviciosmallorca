@@ -6,6 +6,7 @@ import { urbanSoulTattoo } from "./urban-soul-tattoo.ts";
 import { goodLuckTattoo } from "./good-luck-tattoo.ts";
 import { vidriosGordiola } from "./vidrios-gordiola-algaida.ts";
 import { artesaniaCerasPalma } from "./artesania-ceras-palma.ts";
+import { teixitsVicens } from "./teixits-vicens-pollensa.ts";
 
 export {
   kuyenArtTattoo,
@@ -15,6 +16,7 @@ export {
   goodLuckTattoo,
   vidriosGordiola,
   artesaniaCerasPalma,
+  teixitsVicens,
 };
 
 /**
@@ -29,4 +31,5 @@ export const TATTOO_SERVICES: ServiceItem[] = [
   goodLuckTattoo,
   vidriosGordiola,
   artesaniaCerasPalma,
+  teixitsVicens,
 ];

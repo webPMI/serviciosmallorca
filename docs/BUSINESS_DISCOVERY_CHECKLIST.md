@@ -6,12 +6,12 @@
 
 | Segmento de Calidad                             | Total Negocios | Estado en Plataforma                               |
 | :---------------------------------------------- | :------------: | :------------------------------------------------- |
-| ⭐⭐⭐⭐⭐ **5 Estrellas (4.8 - 5.0)**          |     **53**     | 🏆 Excelencia & Top Insular (Público Destacado)    |
+| ⭐⭐⭐⭐⭐ **5 Estrellas (4.8 - 5.0)**          |     **56**     | 🏆 Excelencia & Top Insular (Público Destacado)    |
 | ⭐⭐⭐⭐ **4 Estrellas (4.0 - 4.7)**            |     **69**     | ⭐ Notable / Recomendado (Público General)         |
 | ✨ **Nuevas Aperturas (0 reviews / Recientes)** |     **3**      | 🆕 Insignia 'Nueva Apertura' (Público Destacado)   |
 | ⭐⭐⭐ **3 Estrellas (3.0 - 3.9)**              |     **1**      | 🔹 Directorio Estándar (Público sin insignia)      |
 | ⚠️ **Triaje Interno (< 3.0 / Incompletos)**     |     **0**      | 🔒 Solo Administración (No se publica lista negra) |
-| 📦 **TOTAL NEGOCIOS EN RADAR**                  |    **126**     | **82 Indexados** · **44 Pendientes**               |
+| 📦 **TOTAL NEGOCIOS EN RADAR**                  |    **129**     | **85 Indexados** · **44 Pendientes**               |
 
 ---
 
@@ -21,6 +21,7 @@
 | :---------: | :-------: | :-----: | :----------: | :-------------------------------------------------------- | :--------------------------- | :--------------------------- | :-----------------------------------------------------------------------------------------: |
 | ✅ Indexado |  **5.0**  |   384   | **79.6 pts** | **Good Luck Tattoo Mallorca**                             | Arte, Tatuajes & Piercing    | Palma & Bahía                |                          [Web](https://goodlucktattoomallorca.com)                          |
 | ✅ Indexado |  **5.0**  |   148   | **72.9 pts** | **Küyen Art & Tattoo Studio**                             | Arte, Tatuajes & Piercing    | Palma & Bahía                |                                 [Web](https://kuyenart.com)                                 |
+| ✅ Indexado |  **4.9**  |   780   | **83.6 pts** | **Zoea Mallorca Buceo & Charters (Santa Ponsa)**          | Náutica & Charters           | Calvià & Andratx (Suroeste)  |                               [Web](https://zoeamallorca.com)                               |
 | ✅ Indexado |  **4.9**  |   530   | **80.4 pts** | **Can Company (Sineu / Llubí - Porc Negre)**              | Gastronomía & Chefs Privados | Es Raiguer & Es Pla (Centro) |                                [Web](https://cancompany.es)                                 |
 | ✅ Indexado |  **4.9**  |   420   | **79.1 pts** | **Belmond La Residencia Spa Deià**                        | Salud & Bienestar            | Serra de Tramuntana          |    [Web](https://www.belmond.com/hotels/europe/mallorca/deia/belmond-la-residencia/spa)     |
 | ✅ Indexado |  **4.9**  |   420   | **79.1 pts** | **Formatges Sa Cànova (Campos - Quesería Artesana)**      | Gastronomía & Chefs Privados | Santanyí & Migjorn (Sureste) |                            [Web](https://formatgessacanova.com)                             |
@@ -40,10 +41,12 @@
 | ✅ Indexado |  **4.8**  |  1420   | **90.4 pts** | **Restaurante El Camino Palma**                           | Gastronomía & Chefs Privados | Palma & Bahía                |                             [Web](https://www.elcaminopalma.es)                             |
 | ✅ Indexado |  **4.8**  |   950   | **84.7 pts** | **Bodega Ribas (Consell - 1711)**                         | Gastronomía & Chefs Privados | Es Raiguer & Es Pla (Centro) |                               [Web](https://bodegaribas.com)                                |
 | ✅ Indexado |  **4.8**  |   850   | **83.4 pts** | **Pastelería & Bombonería Can Pomar (1902)**              | Gastronomía & Chefs Privados | Santanyí & Migjorn (Sureste) |                                 [Web](https://canpomar.com)                                 |
+| ✅ Indexado |  **4.8**  |   820   | **83.1 pts** | **Teixits Vicens (Pollença - 1854)**                      | Arte, Tatuajes & Piercing    | Alcúdia & Pollença (Norte)   |                              [Web](https://teixitsvicens.com)                               |
 | ✅ Indexado |  **4.8**  |   520   | **79.3 pts** | **Roig Premium (VIP Chauffeur & Transfers)**              | Transporte VIP & Chófer      | Palma & Bahía                |                                   [Web](https://roig.com)                                   |
 | ✅ Indexado |  **4.8**  |   470   | **78.7 pts** | **Finca & Bodega Biniagual (Sencelles - S. XIII)**        | Gastronomía & Chefs Privados | Es Raiguer & Es Pla (Centro) |                             [Web](https://finca-biniagual.com)                              |
 | ✅ Indexado |  **4.8**  |   468   | **78.3 pts** | **Oasis Catamarán Palma**                                 | Náutica & Charters           | Palma & Bahía                |                              [Web](https://oasiscatamaran.com)                              |
 | ✅ Indexado |  **4.8**  |   850   | **78.2 pts** | **Rata Corner Llibreria & Cultura**                       | Abogados & Asesoría Fiscal   | Palma & Bahía                |                                [Web](https://ratacorner.com)                                |
+| ✅ Indexado |  **4.8**  |   390   | **77.7 pts** | **Bodega Castell Miquel (Alaró - Stairway to Heaven)**    | Gastronomía & Chefs Privados | Es Raiguer & Es Pla (Centro) |                              [Web](https://castellmiquel.com)                               |
 | ✅ Indexado |  **4.8**  |   380   | **77.4 pts** | **Balearic Properties Pollensa**                          | Inmobiliaria & Fincas        | Alcúdia & Pollença (Norte)   |                           [Web](https://balearic-properties.com)                            |
 | ✅ Indexado |  **4.8**  |   340   | **76.9 pts** | **Bodyna Spa (Hospes Maricel)**                           | Salud & Bienestar            | Calvià & Andratx (Suroeste)  |                  [Web](https://www.hospes.com/es/maricel-spa/bodyna-spa/)                   |
 | ✅ Indexado |  **4.8**  |   310   | **76.7 pts** | **Cuatrecasas Abogados Palma**                            | Abogados & Asesoría Fiscal   | Palma & Bahía                |                             [Web](https://www.cuatrecasas.com)                              |
