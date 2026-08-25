@@ -37,6 +37,7 @@ import { cellerCanMarron } from "./celler-can-marron-inca.ts";
 import { fornCanGelabertBinissalem } from "./forn-can-gelabert-binissalem.ts";
 import { carniceriaCanXarrier } from "./carniceria-can-xarrier-algaida.ts";
 import { carniceriaCanXim } from "./carniceria-can-xim-alaro.ts";
+import { cellerEsCellerPetra } from "./celler-es-celler-petra.ts";
 
 export {
   dinsSantiTaura,
@@ -77,6 +78,7 @@ export {
   fornCanGelabertBinissalem,
   carniceriaCanXarrier,
   carniceriaCanXim,
+  cellerEsCellerPetra,
 };
 
 /**
@@ -122,4 +124,5 @@ export const RESTAURANT_SERVICES: ServiceItem[] = [
   fornCanGelabertBinissalem,
   carniceriaCanXarrier,
   carniceriaCanXim,
+  cellerEsCellerPetra,
 ];

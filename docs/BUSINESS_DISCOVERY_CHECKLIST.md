@@ -6,12 +6,12 @@
 
 | Segmento de Calidad                             | Total Negocios | Estado en Plataforma                               |
 | :---------------------------------------------- | :------------: | :------------------------------------------------- |
-| ⭐⭐⭐⭐⭐ **5 Estrellas (4.8 - 5.0)**          |     **86**     | 🏆 Excelencia & Top Insular (Público Destacado)    |
-| ⭐⭐⭐⭐ **4 Estrellas (4.0 - 4.7)**            |     **72**     | ⭐ Notable / Recomendado (Público General)         |
+| ⭐⭐⭐⭐⭐ **5 Estrellas (4.8 - 5.0)**          |     **88**     | 🏆 Excelencia & Top Insular (Público Destacado)    |
+| ⭐⭐⭐⭐ **4 Estrellas (4.0 - 4.7)**            |     **73**     | ⭐ Notable / Recomendado (Público General)         |
 | ✨ **Nuevas Aperturas (0 reviews / Recientes)** |     **3**      | 🆕 Insignia 'Nueva Apertura' (Público Destacado)   |
 | ⭐⭐⭐ **3 Estrellas (3.0 - 3.9)**              |     **1**      | 🔹 Directorio Estándar (Público sin insignia)      |
 | ⚠️ **Triaje Interno (< 3.0 / Incompletos)**     |     **0**      | 🔒 Solo Administración (No se publica lista negra) |
-| 📦 **TOTAL NEGOCIOS EN RADAR**                  |    **162**     | **118 Indexados** · **44 Pendientes**              |
+| 📦 **TOTAL NEGOCIOS EN RADAR**                  |    **165**     | **121 Indexados** · **44 Pendientes**              |
 
 ---
 
@@ -31,6 +31,7 @@
 | ✅ Indexado |  **4.9**  |   284   | **77.4 pts** | **Arabella Spa (St. Regis Mardavall)**                        | Salud & Bienestar            | Calvià & Andratx (Suroeste)  | [Web](https://www.marriott.com/hotels/travel/pmixr-the-st-regis-mardavall-mallorca-resort/) |
 | ✅ Indexado |  **4.9**  |   260   | **77.1 pts** | **Oli de Jornets (Sencelles - AOVE Ecológico)**               | Gastronomía & Chefs Privados | Es Raiguer & Es Pla (Centro) |                               [Web](https://olidejornets.com)                               |
 | ✅ Indexado |  **4.9**  |   230   | **76.7 pts** | **Carnisseria Can Xarrier (Algaida - 1955)**                  | Gastronomía & Chefs Privados | Es Raiguer & Es Pla (Centro) |                                [Web](https://canxarrier.com)                                |
+| ✅ Indexado |  **4.9**  |   130   | **75.4 pts** | **Carpintería Naval & Mestres d'Aixa Balear (Palma - 1965)**  | Náutica & Charters           | Palma & Bahía                |                            [Web](https://mestresdaixabalear.com)                            |
 | ✅ Indexado |  **4.9**  |   510   | **75.2 pts** | **Mallorca Cycling Center & Taller (Playa de Muro)**          | Transporte VIP & Chófer      | Alcúdia & Pollença (Norte)   |                          [Web](https://mallorcacyclingcenter.com)                           |
 | ✅ Indexado |  **4.9**  |   165   | **74.5 pts** | **Son Brull Hotel & Spa (Relais & Châteaux)**                 | Salud & Bienestar            | Alcúdia & Pollença (Norte)   |                                 [Web](https://sonbrull.com)                                 |
 | ✅ Indexado |  **4.9**  |   450   | **74.4 pts** | **Bergantiños Bikes Can Pastilla (Taller & Alquiler)**        | Transporte VIP & Chófer      | Palma & Bahía                |                             [Web](https://bergantinosbikes.com)                             |
@@ -89,6 +90,7 @@
 | ✅ Indexado |  **4.8**  |   230   | **70.5 pts** | **Clínica Veterinaria Felanitx (2001)**                       | Salud & Bienestar            | Santanyí & Migjorn (Sureste) |                           [Web](https://veterinariafelanitx.com)                            |
 | ✅ Indexado |  **4.8**  |   230   | **70.5 pts** | **Varadero Alcudiamar & Marine Engineering (Port d'Alcúdia)** | Náutica & Charters           | Alcúdia & Pollença (Norte)   |                                [Web](https://alcudiamar.es)                                 |
 | ✅ Indexado |  **4.8**  |   220   | **70.4 pts** | **Talleres Auto-Inca (Inca - 1982)**                          | Transporte VIP & Chófer      | Es Raiguer & Es Pla (Centro) |                             [Web](https://talleresautoinca.com)                             |
+| ✅ Indexado |  **4.8**  |   190   |  **70 pts**  | **Clínica Veterinaria Capdepera & Cala Rajada (2003)**        | Salud & Bienestar            | Manacor & Llevant (Este)     |                           [Web](https://veterinariacapdepera.com)                           |
 | ✅ Indexado |  **4.8**  |   190   |  **70 pts**  | **Fontanería Balear Instalaciones**                           | Reformas & Construcción      | Palma & Bahía                |                             [Web](https://fontaneriabalear.com)                             |
 | ✅ Indexado |  **4.8**  |   190   |  **70 pts**  | **Limpiezas y Mantenimiento Balear**                          | Reformas & Construcción      | Palma & Bahía                |                             [Web](https://limpiezasbalear.com)                              |
 | ✅ Indexado |  **4.8**  |   180   | **69.9 pts** | **Taller Mecánico & Diagnosis Llevant (Manacor - 1996)**      | Transporte VIP & Chófer      | Manacor & Llevant (Este)     |                           [Web](https://tallerllevantmanacor.com)                           |
@@ -120,6 +122,7 @@
 | ✅ Indexado  |  **4.7**  |   920   | **83.1 pts** | **Bens d'Avall**                                  | Gastronomía & Chefs Privados | Serra de Tramuntana          |       [Web](https://bensdavall.com)       |
 | ✅ Indexado  |  **4.7**  |   890   | **82.9 pts** | **Bodegas José L. Ferrer (Binissalem - 1931)**    | Gastronomía & Chefs Privados | Es Raiguer & Es Pla (Centro) |      [Web](https://vinosferrer.com)       |
 | ✅ Indexado  |  **4.7**  |   920   | **82.9 pts** | **Ca Na Toneta**                                  | Gastronomía & Chefs Privados | Es Raiguer & Es Pla (Centro) |       [Web](https://canatoneta.com)       |
+| ✅ Indexado  |  **4.7**  |   860   | **82.4 pts** | **Celler Es Celler (Petra - 1980)**               | Gastronomía & Chefs Privados | Es Raiguer & Es Pla (Centro) |     [Web](https://escellerpetra.com)      |
 | ✅ Indexado  |  **4.7**  |   860   | **82.2 pts** | **Cruceros Attraction Catamarans Palma**          | Náutica & Charters           | Palma & Bahía                |  [Web](https://attractioncatamarans.com)  |
 | ✅ Indexado  |  **4.7**  |   390   | **76.7 pts** | **Viveros Can Juanito (Jardinería & Paisajismo)** | Jardinería & Piscinas        | Palma & Bahía                |       [Web](https://canjuanito.com)       |
 | ✅ Indexado  |  **4.7**  |   290   | **75.4 pts** | **Construcciones Llull Sastre (1934)**            | Reformas & Construcción      | Palma & Bahía                |      [Web](https://llullsastre.com)       |
