@@ -17,6 +17,7 @@ import { veterinariaAndratx } from "./clinica-veterinaria-andratx.ts";
 import { veterinariaPollensa } from "./clinica-veterinaria-pollensa.ts";
 import { veterinarioLlucmajor } from "./centro-veterinario-llucmajor.ts";
 import { veterinariaSantaMaria } from "./clinica-veterinaria-santa-maria.ts";
+import { veterinariaSantanyi } from "./clinica-veterinaria-santanyi.ts";
 
 export {
   arabellaSpa,
@@ -37,6 +38,7 @@ export {
   veterinariaPollensa,
   veterinarioLlucmajor,
   veterinariaSantaMaria,
+  veterinariaSantanyi,
 };
 
 /**
@@ -62,4 +64,5 @@ export const SPAS_SERVICES: ServiceItem[] = [
   veterinariaPollensa,
   veterinarioLlucmajor,
   veterinariaSantaMaria,
+  veterinariaSantanyi,
 ];

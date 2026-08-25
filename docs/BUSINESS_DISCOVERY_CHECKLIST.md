@@ -6,12 +6,12 @@
 
 | Segmento de Calidad                             | Total Negocios | Estado en Plataforma                               |
 | :---------------------------------------------- | :------------: | :------------------------------------------------- |
-| ⭐⭐⭐⭐⭐ **5 Estrellas (4.8 - 5.0)**          |     **77**     | 🏆 Excelencia & Top Insular (Público Destacado)    |
+| ⭐⭐⭐⭐⭐ **5 Estrellas (4.8 - 5.0)**          |     **80**     | 🏆 Excelencia & Top Insular (Público Destacado)    |
 | ⭐⭐⭐⭐ **4 Estrellas (4.0 - 4.7)**            |     **72**     | ⭐ Notable / Recomendado (Público General)         |
 | ✨ **Nuevas Aperturas (0 reviews / Recientes)** |     **3**      | 🆕 Insignia 'Nueva Apertura' (Público Destacado)   |
 | ⭐⭐⭐ **3 Estrellas (3.0 - 3.9)**              |     **1**      | 🔹 Directorio Estándar (Público sin insignia)      |
 | ⚠️ **Triaje Interno (< 3.0 / Incompletos)**     |     **0**      | 🔒 Solo Administración (No se publica lista negra) |
-| 📦 **TOTAL NEGOCIOS EN RADAR**                  |    **153**     | **109 Indexados** · **44 Pendientes**              |
+| 📦 **TOTAL NEGOCIOS EN RADAR**                  |    **156**     | **112 Indexados** · **44 Pendientes**              |
 
 ---
 
@@ -59,6 +59,7 @@
 | ✅ Indexado |  **4.8**  |   310   | **76.5 pts** | **Carnisseria Can Matas (Sóller - 1920)**                     | Gastronomía & Chefs Privados | Serra de Tramuntana          |                           [Web](https://carnisseriacanmatas.com)                            |
 | ✅ Indexado |  **4.8**  |   280   | **76.3 pts** | **Cerrajería San Miguel Palma (1960)**                        | Reformas & Construcción      | Palma & Bahía                |                           [Web](https://cerrajeriasanmiguel.com)                            |
 | ✅ Indexado |  **4.8**  |   290   | **76.2 pts** | **Caxígalos & Cera Artesanal Palma (1862)**                   | Arte, Tatuajes & Piercing    | Palma & Bahía                |                                [Web](https://caxigalos.com)                                 |
+| ✅ Indexado |  **4.8**  |   290   | **76.2 pts** | **Forn Can Gelabert (Binissalem - 1940)**                     | Gastronomía & Chefs Privados | Es Raiguer & Es Pla (Centro) |                             [Web](https://forncangelabert.com)                              |
 | ✅ Indexado |  **4.8**  |   320   |  **76 pts**  | **Engel & Völkers Mallorca**                                  | Inmobiliaria & Fincas        | Palma & Bahía                |                    [Web](https://www.engelvoelkers.com/es-es/mallorca/)                     |
 | ✅ Indexado |  **4.8**  |   240   | **75.6 pts** | **Herboristería & Dietética La Remei Palma (1985)**           | Salud & Bienestar            | Palma & Bahía                |                           [Web](https://herboristerialaremei.com)                           |
 | ✅ Indexado |  **4.8**  |   220   | **75.4 pts** | **Digital Cinema Domótica & Audio Mallorca**                  | Seguridad & Domótica         | Palma & Bahía                |                               [Web](https://digitalcinema.es)                               |
@@ -79,6 +80,7 @@
 | ✅ Indexado |  **4.8**  |   290   | **71.2 pts** | **Clínica Veterinaria Manacor (Llevant)**                     | Salud & Bienestar            | Manacor & Llevant (Este)     |                            [Web](https://veterinariamanacor.com)                            |
 | ✅ Indexado |  **4.8**  |   270   |  **71 pts**  | **Clínica Veterinaria Pollença (2002)**                       | Salud & Bienestar            | Alcúdia & Pollença (Norte)   |                           [Web](https://veterinariapollensa.com)                            |
 | ✅ Indexado |  **4.8**  |   290   |  **71 pts**  | **Urban Soul Tattoo Studio Palma**                            | Arte, Tatuajes & Piercing    | Palma & Bahía                |                     [Web](https://www.instagram.com/urbansoul.tattoo/)                      |
+| ✅ Indexado |  **4.8**  |   260   | **70.9 pts** | **Clínica Veterinaria Santanyí (2004)**                       | Salud & Bienestar            | Santanyí & Migjorn (Sureste) |                           [Web](https://veterinariasantanyi.com)                            |
 | ✅ Indexado |  **4.8**  |   240   | **70.6 pts** | **Clínica Veterinaria Andratx & Port (1998)**                 | Salud & Bienestar            | Calvià & Andratx (Suroeste)  |                            [Web](https://veterinariaandratx.com)                            |
 | ✅ Indexado |  **4.8**  |   230   | **70.5 pts** | **Cerrajería Rápida Balear (Palma - 1992)**                   | Reformas & Construcción      | Palma & Bahía                |                          [Web](https://cerrajeriarapidabalear.com)                          |
 | ✅ Indexado |  **4.8**  |   230   | **70.5 pts** | **Varadero Alcudiamar & Marine Engineering (Port d'Alcúdia)** | Náutica & Charters           | Alcúdia & Pollença (Norte)   |                                [Web](https://alcudiamar.es)                                 |
@@ -93,6 +95,7 @@
 | ✅ Indexado |  **4.8**  |   145   | **69.4 pts** | **Clima & Frío Balear (Aire Acondicionado & Aerotermia)**     | Reformas & Construcción      | Palma & Bahía                |                             [Web](https://climafriobalear.com)                              |
 | ✅ Indexado |  **4.8**  |   140   | **69.4 pts** | **Jardinería & Paisajismo Serra Mallorca**                    | Reformas & Construcción      | Palma & Bahía                |                             [Web](https://jardineriaserra.com)                              |
 | ✅ Indexado |  **4.8**  |   130   | **69.2 pts** | **Fontanería & Climatización Pomar (Inca - 1985)**            | Reformas & Construcción      | Es Raiguer & Es Pla (Centro) |                            [Web](https://instalacionespomar.com)                            |
+| ✅ Indexado |  **4.8**  |   120   | **69.1 pts** | **Electricidad & Energía Solar Artà (1998)**                  | Seguridad & Domótica         | Manacor & Llevant (Este)     |                                [Web](https://solararta.com)                                 |
 | ✅ Indexado |  **4.8**  |   120   | **69.1 pts** | **Mantenimiento & Varadero Portitxol Services**               | Náutica & Charters           | Palma & Bahía                |                            [Web](https://varaderoportitxol.com)                             |
 | ✅ Indexado |  **4.8**  |   110   |  **69 pts**  | **Electricidad & Domótica Binissalem (1990)**                 | Seguridad & Domótica         | Es Raiguer & Es Pla (Centro) |                          [Web](https://electricidadbinissalem.com)                          |
 | ✅ Indexado |  **4.8**  |   190   | **61.6 pts** | **Box Tattoo Piercing Palma**                                 | Arte, Tatuajes & Piercing    | Palma & Bahía                |                            [Web](https://boxtattoopiercing.com)                             |
