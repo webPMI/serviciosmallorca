@@ -5,6 +5,7 @@
  *
  * GR-04: todos los nombres visibles llevan traducción es/en/ca.
  */
+
 export interface LocalizedText {
   es: string;
   en: string;
@@ -20,7 +21,11 @@ export interface MallorcaZone {
 export const MALLORCA_ZONES: MallorcaZone[] = [
   {
     id: "palma",
-    name: { es: "Palma & Bahía", en: "Palma & Bay", ca: "Palma & Badia" },
+    name: {
+      es: "Palma & Bahía",
+      en: "Palma & Bay",
+      ca: "Palma & Badia",
+    },
     popularAreas: ["Palma Centro", "Santa Catalina", "Portixol", "Son Vida", "Casco Antiguo"],
   },
   {
@@ -34,7 +39,11 @@ export const MALLORCA_ZONES: MallorcaZone[] = [
   },
   {
     id: "tramuntana",
-    name: { es: "Serra de Tramuntana", en: "Serra de Tramuntana", ca: "Serra de Tramuntana" },
+    name: {
+      es: "Serra de Tramuntana",
+      en: "Serra de Tramuntana",
+      ca: "Serra de Tramuntana",
+    },
     popularAreas: ["Sóller", "Port de Sóller", "Valldemossa", "Deià", "Esporles", "Fornalutx"],
   },
   {
@@ -48,7 +57,11 @@ export const MALLORCA_ZONES: MallorcaZone[] = [
   },
   {
     id: "manacor-llevant",
-    name: { es: "Manacor & Llevant (Este)", en: "Manacor & Llevant (East)", ca: "Manacor & Llevant (Est)" },
+    name: {
+      es: "Manacor & Llevant (Este)",
+      en: "Manacor & Llevant (East)",
+      ca: "Manacor & Llevant (Est)",
+    },
     popularAreas: ["Manacor", "Porto Cristo", "Cala Millor", "Cala Ratjada", "Artà"],
   },
   {
