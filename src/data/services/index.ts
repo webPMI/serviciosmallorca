@@ -53,3 +53,12 @@ export function getServicesByCategory(categoryId: string): ServiceItem[] {
 export function getServicesByZone(zoneId: string): ServiceItem[] {
   return SERVICES.filter((s) => s.zone === zoneId && s.status !== "permanently_closed");
 }
+
+export {
+  calculateHaversineDistance,
+  formatDistance,
+  getServicesNearLocation,
+  type GeoCoordinates,
+  type NearbyServiceItem,
+} from "../../lib/geoUtils.ts";
+
