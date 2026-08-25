@@ -4,10 +4,13 @@
 
 ---
 
-## ⚡ Reglas Inmutables de Eficiencia de Tokens & Arquitectura
+## ⚡ Reglas Inmutables de Eficiencia de Tokens & Veracidad (GR-11)
 
-1. **PROHIBIDO QUEMAR TOKENS EN BÚSQUEDAS ITERATIVAS:** Utilizar siempre el script CLI local `scripts/business-intelligence-lookup.ts`, que ejecuta la extracción multimedia, detección de redes, e-commerce y resolución de mapas en un solo proceso local de alto rendimiento.
-2. **ARQUITECTURA 1 ARCHIVO POR NEGOCIO:** Todo nuevo negocio se registra como un módulo independiente en `src/data/services/<sector>/<slug>.ts` (~200 líneas). Nunca escribir en archivos monolíticos.
+1. **PROHIBICIÓN TOTAL DE DATOS SINTÉTICOS O INVENTADOS (GR-11):**
+   - ❌ **PROHIBIDO:** Inventar premios, artículos de prensa ficticios, nombres de personas para reseñas simuladas, historias de fundador o productos inventados.
+   - ✅ **REGLA:** Si un negocio no tiene premios oficiales, `awards` **se omite**. Si no tiene artículos de prensa, `pressMentions` **se omite**. Si no tiene tienda online verificada, `onlineStore` y `products` **se omiten**. Solo se publican datos 100% reales constatables en fuentes oficiales o proporcionados por el titular.
+2. **PROHIBIDO QUEMAR TOKENS EN BÚSQUEDAS ITERATIVAS:** Utilizar siempre el script CLI local `scripts/business-intelligence-lookup.ts`, que ejecuta la extracción multimedia, detección de redes, e-commerce y resolución de mapas en un solo proceso local de alto rendimiento.
+3. **ARQUITECTURA 1 ARCHIVO POR NEGOCIO:** Todo nuevo negocio se registra como un módulo independiente en `src/data/services/<sector>/<slug>.ts` (~200 líneas). Nunca escribir en archivos monolíticos.
 
 ---
 
