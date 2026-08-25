@@ -6,12 +6,12 @@
 
 | Segmento de Calidad                             | Total Negocios | Estado en Plataforma                               |
 | :---------------------------------------------- | :------------: | :------------------------------------------------- |
-| ⭐⭐⭐⭐⭐ **5 Estrellas (4.8 - 5.0)**          |     **83**     | 🏆 Excelencia & Top Insular (Público Destacado)    |
+| ⭐⭐⭐⭐⭐ **5 Estrellas (4.8 - 5.0)**          |     **86**     | 🏆 Excelencia & Top Insular (Público Destacado)    |
 | ⭐⭐⭐⭐ **4 Estrellas (4.0 - 4.7)**            |     **72**     | ⭐ Notable / Recomendado (Público General)         |
 | ✨ **Nuevas Aperturas (0 reviews / Recientes)** |     **3**      | 🆕 Insignia 'Nueva Apertura' (Público Destacado)   |
 | ⭐⭐⭐ **3 Estrellas (3.0 - 3.9)**              |     **1**      | 🔹 Directorio Estándar (Público sin insignia)      |
 | ⚠️ **Triaje Interno (< 3.0 / Incompletos)**     |     **0**      | 🔒 Solo Administración (No se publica lista negra) |
-| 📦 **TOTAL NEGOCIOS EN RADAR**                  |    **159**     | **115 Indexados** · **44 Pendientes**              |
+| 📦 **TOTAL NEGOCIOS EN RADAR**                  |    **162**     | **118 Indexados** · **44 Pendientes**              |
 
 ---
 
@@ -67,7 +67,9 @@
 | ✅ Indexado |  **4.8**  |   210   | **75.2 pts** | **Carnisseria Can Toni des Pla (Porreres - 1965)**            | Gastronomía & Chefs Privados | Es Raiguer & Es Pla (Centro) |                              [Web](https://cantonidespla.com)                               |
 | ✅ Indexado |  **4.8**  |   210   | **75.2 pts** | **Carpintería y Ebanistería Fiol (1975)**                     | Reformas & Construcción      | Es Raiguer & Es Pla (Centro) |                             [Web](https://carpinteriafiol.com)                              |
 | ✅ Indexado |  **4.8**  |   210   | **75.2 pts** | **Taller Mecánico Hermanos Bestard (1978)**                   | Transporte VIP & Chófer      | Palma & Bahía                |                          [Web](https://tallerhermanosbestard.com)                           |
+| ✅ Indexado |  **4.8**  |   190   |  **75 pts**  | **Carnisseria Can Xim (Alaró - 1960)**                        | Gastronomía & Chefs Privados | Es Raiguer & Es Pla (Centro) |                               [Web](https://canximalaro.com)                                |
 | ✅ Indexado |  **4.8**  |   185   | **74.9 pts** | **Arquitectura 81 Palma (A81)**                               | Reformas & Construcción      | Palma & Bahía                |                                    [Web](https://a81.es)                                    |
+| ✅ Indexado |  **4.8**  |   140   | **74.4 pts** | **Cerería & Velas Artesanas Inca (1948)**                     | Arte, Tatuajes & Piercing    | Es Raiguer & Es Pla (Centro) |                               [Web](https://cereriainca.com)                                |
 | ✅ Indexado |  **4.8**  |   540   | **74.4 pts** | **Skualo Diving & Snorkel Center (Alcúdia / Can Picafort)**   | Náutica & Charters           | Alcúdia & Pollença (Norte)   |                                  [Web](https://skualo.com)                                  |
 | ✅ Indexado |  **4.8**  |   135   | **74.3 pts** | **Tapicería & Toldos Balear (1982)**                          | Reformas & Construcción      | Palma & Bahía                |                             [Web](https://tapiceriabalear.com)                              |
 | ✅ Indexado |  **4.8**  |   114   |  **74 pts**  | **Bufete Frau Abogados & Asesores**                           | Abogados & Asesoría Fiscal   | Palma & Bahía                |                                [Web](https://bufetefrau.com)                                |
@@ -84,6 +86,7 @@
 | ✅ Indexado |  **4.8**  |   260   | **70.9 pts** | **Clínica Veterinaria Santanyí (2004)**                       | Salud & Bienestar            | Santanyí & Migjorn (Sureste) |                           [Web](https://veterinariasantanyi.com)                            |
 | ✅ Indexado |  **4.8**  |   240   | **70.6 pts** | **Clínica Veterinaria Andratx & Port (1998)**                 | Salud & Bienestar            | Calvià & Andratx (Suroeste)  |                            [Web](https://veterinariaandratx.com)                            |
 | ✅ Indexado |  **4.8**  |   230   | **70.5 pts** | **Cerrajería Rápida Balear (Palma - 1992)**                   | Reformas & Construcción      | Palma & Bahía                |                          [Web](https://cerrajeriarapidabalear.com)                          |
+| ✅ Indexado |  **4.8**  |   230   | **70.5 pts** | **Clínica Veterinaria Felanitx (2001)**                       | Salud & Bienestar            | Santanyí & Migjorn (Sureste) |                           [Web](https://veterinariafelanitx.com)                            |
 | ✅ Indexado |  **4.8**  |   230   | **70.5 pts** | **Varadero Alcudiamar & Marine Engineering (Port d'Alcúdia)** | Náutica & Charters           | Alcúdia & Pollença (Norte)   |                                [Web](https://alcudiamar.es)                                 |
 | ✅ Indexado |  **4.8**  |   220   | **70.4 pts** | **Talleres Auto-Inca (Inca - 1982)**                          | Transporte VIP & Chófer      | Es Raiguer & Es Pla (Centro) |                             [Web](https://talleresautoinca.com)                             |
 | ✅ Indexado |  **4.8**  |   190   |  **70 pts**  | **Fontanería Balear Instalaciones**                           | Reformas & Construcción      | Palma & Bahía                |                             [Web](https://fontaneriabalear.com)                             |
