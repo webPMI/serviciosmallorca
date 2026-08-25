@@ -5,8 +5,17 @@ import { macatelaTattoo } from "./macatela-tattoo.ts";
 import { urbanSoulTattoo } from "./urban-soul-tattoo.ts";
 import { goodLuckTattoo } from "./good-luck-tattoo.ts";
 import { vidriosGordiola } from "./vidrios-gordiola-algaida.ts";
+import { artesaniaCerasPalma } from "./artesania-ceras-palma.ts";
 
-export { kuyenArtTattoo, boxTattooPiercing, macatelaTattoo, urbanSoulTattoo, goodLuckTattoo, vidriosGordiola };
+export {
+  kuyenArtTattoo,
+  boxTattooPiercing,
+  macatelaTattoo,
+  urbanSoulTattoo,
+  goodLuckTattoo,
+  vidriosGordiola,
+  artesaniaCerasPalma,
+};
 
 /**
  * Catálogo Sectorial: Arte, Tatuajes & Artesanía en Mallorca.
@@ -19,4 +28,5 @@ export const TATTOO_SERVICES: ServiceItem[] = [
   urbanSoulTattoo,
   goodLuckTattoo,
   vidriosGordiola,
+  artesaniaCerasPalma,
 ];

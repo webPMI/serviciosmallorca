@@ -4,8 +4,16 @@ import { autocaresTransunion } from "./autocares-transunion.ts";
 import { garajeAutoPla } from "./garaje-auto-pla.ts";
 import { bergantinosBikes } from "./bergantinos-bikes.ts";
 import { tallerHermanosBestard } from "./taller-hermanos-bestard.ts";
+import { mallorcaCyclingCenter } from "./mallorca-cycling-center-muro.ts";
 
-export { roigPremium, autocaresTransunion, garajeAutoPla, bergantinosBikes, tallerHermanosBestard };
+export {
+  roigPremium,
+  autocaresTransunion,
+  garajeAutoPla,
+  bergantinosBikes,
+  tallerHermanosBestard,
+  mallorcaCyclingCenter,
+};
 
 /**
  * Catálogo Sectorial: Movilidad, Transporte VIP & Chófer en Mallorca.
@@ -17,4 +25,5 @@ export const TRANSPORTE_SERVICES: ServiceItem[] = [
   garajeAutoPla,
   bergantinosBikes,
   tallerHermanosBestard,
+  mallorcaCyclingCenter,
 ];
