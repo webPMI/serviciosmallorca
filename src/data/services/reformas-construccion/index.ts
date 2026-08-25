@@ -9,6 +9,7 @@ import { carpinteriaFiol } from "./carpinteria-fiol-marratxi.ts";
 import { electricidadLlabres } from "./electricidad-llabres-marratxi.ts";
 import { aluminiosCalvia } from "./aluminios-calvia.ts";
 import { limpiezasBalear } from "./limpiezas-balear-mallorca.ts";
+import { climaFrioBalear } from "./clima-frio-balear.ts";
 
 export {
   duranPalma,
@@ -21,6 +22,7 @@ export {
   electricidadLlabres,
   aluminiosCalvia,
   limpiezasBalear,
+  climaFrioBalear,
 };
 
 /**
@@ -38,4 +40,5 @@ export const REFORMAS_SERVICES: ServiceItem[] = [
   electricidadLlabres,
   aluminiosCalvia,
   limpiezasBalear,
+  climaFrioBalear,
 ];

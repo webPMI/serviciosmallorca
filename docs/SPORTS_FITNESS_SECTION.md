@@ -80,9 +80,13 @@ Todas las categorías cuelgan del super-sector existente **`deportes-aire-libre`
 
 ### 2.4 Artes Marciales & Boxeo
 
-| Campo  | Valor                   |
-| ------ | ----------------------- |
-| **id** | `artes-marciales-boxeo` |
+|| Campo | Valor |
+|| --------------------- | ---------------------------------------------------------------------------------------------------------------- |
+|| **id** | `artes-marciales-boxeo` |
+|| **icono** | 🥋 |
+|| **Nombre (es/en/ca)** | Artes Marciales & Boxeo / Martial Arts & Boxing / Arts Marcials & Boxa |
+|| **Tipos de servicio** | Boxeo · kickboxing · muay thai · jiu-jitsu brasileño · judo · karate · taekwondo · MMA · esgrima |
+|| **Tags sugeridos** | `aud:familias`, `mod:cita-previa` |
 
 ### 2.5 Pádel, Tenis & Raqueta
 
@@ -126,17 +130,13 @@ Todas las categorías cuelgan del super-sector existente **`deportes-aire-libre`
 
 ### 2.9 Hípica & Equitación
 
-| Campo                 | Valor                                                                                            |
-| --------------------- | ------------------------------------------------------------------------------------------------ |
-| **id**                | `equitacion-hipica`                                                                              |
-| **icono**             | 🐴                                                                                               |
-| **Nombre (es/en/ca)** | Hípica & Equitación / Horse Riding & Equestrian / Hípica & Equitació                             |
-| **Tipos de servicio** | Centro ecuestre · escuela de hípica · rutas a caballo · horse resort · doma                      |
-| **Tags sugeridos**    | `aud:familias`, `aud:parejas`                                                                    |
-| **icono**             | 🥋                                                                                               |
-| **Nombre (es/en/ca)** | Artes Marciales & Boxeo / Martial Arts & Boxing / Arts Marcials & Boxa                           |
-| **Tipos de servicio** | Boxeo · kickboxing · muay thai · jiu-jitsu brasileño · judo · karate · taekwondo · MMA · esgrima |
-| **Tags sugeridos**    | `aud:familias`, `mod:cita-previa`                                                                |
+| Campo | Valor                 |
+| ----- | --------------------- |
+|       | **id**                | `equitacion-hipica`                                                         |
+|       | **icono**             | 🐴                                                                          |
+|       | **Nombre (es/en/ca)** | Hípica & Equitación / Horse Riding & Equestrian / Hípica & Equitació        |
+|       | **Tipos de servicio** | Centro ecuestre · escuela de hípica · rutas a caballo · horse resort · doma |
+|       | **Tags sugeridos**    | `aud:familias`, `aud:parejas`                                               |
 
 ### 2.10 Senderismo, Montaña & Aventura
 
