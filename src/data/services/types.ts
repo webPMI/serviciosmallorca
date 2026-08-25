@@ -213,4 +213,13 @@ export interface ServiceItem {
   schedule: string;
   onlineStore?: OnlineStoreInfo;
   products?: StoreProduct[];
+  verificationStatus?: "verified" | "needs_manual_review" | "pending_audit";
+  confidenceScore?: number; // 0 - 100%
+  sourceCrossReference?: {
+    webPhoneMatch?: boolean;
+    mapsPhoneMatch?: boolean;
+    addressConsistency?: boolean;
+    activeWeb200Ok?: boolean;
+    socialMatchScore?: number;
+  };
 }

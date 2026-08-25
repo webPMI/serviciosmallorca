@@ -10,6 +10,8 @@
  *   npx tsx scripts/business-intelligence-lookup.ts "Box Tattoo Piercing Palma" --url="https://boxtattoopiercing.com"
  */
 
+import { auditBusinessData, type VerificationReport } from "../src/lib/verificationEngine.ts";
+
 interface LookupResult {
   businessQuery: string;
   websiteProvided?: string;
@@ -51,6 +53,7 @@ interface LookupResult {
     platform: string;
     searchUrl: string;
   }>;
+  verificationReport: VerificationReport;
   curationTemplate: Record<string, any>;
 }
 
@@ -60,6 +63,9 @@ interface LookupResult {
 async function scrapeWebsiteData(targetUrl: string): Promise<{
   ogImage?: string;
   favicon?: string;
+  metaDescription?: string;
+  extractedPhone?: string;
+  extractedEmail?: string;
   galleryImages: string[];
   socialLinks: Record<string, string>;
   detectedAmenities: string[];
@@ -67,10 +73,15 @@ async function scrapeWebsiteData(targetUrl: string): Promise<{
   onlineStoreDetected?: boolean;
   storePlatform?: string;
   storeUrl?: string;
+  httpStatus?: number;
 }> {
   const socialLinks: Record<string, string> = {};
   const detectedAmenities: string[] = ["wifi", "air_conditioning"];
   const detectedPaymentMethods: string[] = ["credit_card", "cash"];
+  let extractedPhone: string | undefined;
+  let extractedEmail: string | undefined;
+  let metaDescription: string | undefined;
+  let httpStatus = 200;
 
   try {
     const controller = new AbortController();
@@ -85,16 +96,46 @@ async function scrapeWebsiteData(targetUrl: string): Promise<{
       },
     });
     clearTimeout(timeout);
+    httpStatus = res.status;
 
     if (!res.ok) {
-      return { galleryImages: [], socialLinks, detectedAmenities, detectedPaymentMethods };
+      return {
+        galleryImages: [],
+        socialLinks,
+        detectedAmenities,
+        detectedPaymentMethods,
+        httpStatus,
+      };
     }
 
     const html = await res.text();
     const baseUrl = new URL(targetUrl);
     const lowerHtml = html.toLowerCase();
 
-    // 1. Extraer og:image y twitter:image
+    // 1. Extraer Meta Description
+    const metaDescMatch =
+      html.match(/<meta\s+name=["']description["']\s+content=["']([^"']+)["']/i) ||
+      html.match(/<meta\s+property=["']og:description["']\s+content=["']([^"']+)["']/i);
+    if (metaDescMatch) {
+      metaDescription = metaDescMatch[1].trim();
+    }
+
+    // 2. Extraer Teléfono y Email
+    const telMatch =
+      html.match(/href=["']tel:([^"']+)["']/i) ||
+      html.match(/(?:\+34\s?|\b)([89]\d{2}[\s.-]?\d{2}[\s.-]?\d{2}[\s.-]?\d{2}|[6-9]\d{2}[\s.-]?\d{3}[\s.-]?\d{3})\b/);
+    if (telMatch) {
+      extractedPhone = telMatch[1].trim();
+    }
+
+    const emailMatch =
+      html.match(/href=["']mailto:([^"']+)["']/i) ||
+      html.match(/([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})/);
+    if (emailMatch) {
+      extractedEmail = emailMatch[1].trim();
+    }
+
+    // 3. Extraer og:image y twitter:image
     const ogMatch =
       html.match(/<meta\s+property=["']og:image["']\s+content=["']([^"']+)["']/i) ||
       html.match(/<meta\s+content=["']([^"']+)["']\s+property=["']og:image["']/i);
@@ -105,7 +146,7 @@ async function scrapeWebsiteData(targetUrl: string): Promise<{
       ogImage = new URL(ogImage, baseUrl).href;
     }
 
-    // 2. Extraer Favicon / Icon
+    // 4. Extraer Favicon / Icon
     const iconMatch =
       html.match(/<link\s+rel=["'](?:shortcut )?icon["']\s+href=["']([^"']+)["']/i) ||
       html.match(/<link\s+rel=["']apple-touch-icon["']\s+href=["']([^"']+)["']/i);
@@ -254,6 +295,9 @@ async function scrapeWebsiteData(targetUrl: string): Promise<{
     return {
       ogImage,
       favicon,
+      metaDescription,
+      extractedPhone,
+      extractedEmail,
       galleryImages: Array.from(gallerySet).slice(0, 8),
       socialLinks,
       detectedAmenities,
@@ -261,6 +305,7 @@ async function scrapeWebsiteData(targetUrl: string): Promise<{
       onlineStoreDetected,
       storePlatform,
       storeUrl,
+      httpStatus,
     };
   } catch {
     return {
@@ -269,8 +314,25 @@ async function scrapeWebsiteData(targetUrl: string): Promise<{
       detectedAmenities,
       detectedPaymentMethods,
       onlineStoreDetected: false,
+      httpStatus: 500,
     };
   }
+}
+
+interface ScrapedWebsiteInfo {
+  ogImage?: string;
+  favicon?: string;
+  metaDescription?: string;
+  extractedPhone?: string;
+  extractedEmail?: string;
+  galleryImages: string[];
+  socialLinks: Record<string, string>;
+  detectedAmenities: string[];
+  detectedPaymentMethods: string[];
+  onlineStoreDetected?: boolean;
+  storePlatform?: string;
+  storeUrl?: string;
+  httpStatus?: number;
 }
 
 async function generateIntelligenceReport(query: string, websiteUrl?: string): Promise<LookupResult> {
@@ -280,17 +342,7 @@ async function generateIntelligenceReport(query: string, websiteUrl?: string): P
   const fullSearchTerm = encodeURIComponent(`${cleanQuery}${locationSuffix}`);
 
   // Scrape website if provided
-  let scrapedData: {
-    ogImage?: string;
-    favicon?: string;
-    galleryImages: string[];
-    socialLinks: Record<string, string>;
-    detectedAmenities: string[];
-    detectedPaymentMethods: string[];
-    onlineStoreDetected?: boolean;
-    storePlatform?: string;
-    storeUrl?: string;
-  } = {
+  let scrapedData: ScrapedWebsiteInfo = {
     galleryImages: [],
     socialLinks: {},
     detectedAmenities: ["wifi", "air_conditioning"],
@@ -438,7 +490,7 @@ async function generateIntelligenceReport(query: string, websiteUrl?: string): P
   const appleMapsUrl = `https://maps.apple.com/?q=${fullSearchTerm}`;
   const bingMapsUrl = `https://www.bing.com/maps?q=${fullSearchTerm}`;
 
-  const curationTemplate = {
+  const curationTemplate: Record<string, any> = {
     id: slug,
     slug: slug,
     name: cleanQuery,
@@ -554,13 +606,13 @@ async function generateIntelligenceReport(query: string, websiteUrl?: string): P
     googleMapsUrl,
     appleMapsUrl,
     bingMapsUrl,
-    phone: "+34 000 000 000",
-    whatsapp: "+34 000 000 000",
-    email: "info@ejemplo.com",
+    phone: scrapedData.extractedPhone || "+34 000 000 000",
+    whatsapp: scrapedData.extractedPhone || "+34 000 000 000",
+    email: scrapedData.extractedEmail || "info@ejemplo.com",
     website: websiteUrl || "",
     tags: ["zona:palma", "product:fine-line", "mod:cita-previa"],
     shortDescription: {
-      es: "",
+      es: scrapedData.metaDescription || "",
       en: "",
       ca: "",
     },
@@ -585,6 +637,25 @@ async function generateIntelligenceReport(query: string, websiteUrl?: string): P
     lastVerifiedAt: new Date().toISOString().split("T")[0],
   };
 
+  // Ejecución de la Triple Verificación y Cálculo de Confianza
+  const verificationReport = auditBusinessData({
+    name: cleanQuery,
+    category: "arte-tatuajes",
+    zone: "palma",
+    address: "Palma, Mallorca",
+    coordinates: { lat: 39.5696, lng: 2.6502 },
+    website: websiteUrl,
+    phone: scrapedData.extractedPhone,
+    extractedWebPhone: scrapedData.extractedPhone,
+    whatsapp: scrapedData.extractedPhone,
+    socialLinks: scrapedData.socialLinks,
+    webHttpStatus: scrapedData.httpStatus,
+  });
+
+  curationTemplate.confidenceScore = verificationReport.confidenceScore;
+  curationTemplate.verificationStatus = verificationReport.status;
+  curationTemplate.sourceCrossReference = verificationReport.crossReference;
+
   return {
     businessQuery: cleanQuery,
     websiteProvided: websiteUrl,
@@ -607,6 +678,7 @@ async function generateIntelligenceReport(query: string, websiteUrl?: string): P
     directoryIndexingDorks: directoryIndexingDorks,
     balearicPressDorks: pressDorks,
     socialAndAuthorityDorks: authorityDorks,
+    verificationReport,
     curationTemplate,
   };
 }
@@ -680,7 +752,27 @@ async function main() {
     console.log(`  • [${p.language.toUpperCase()}] ${p.mediaName}: ${p.searchUrl}`);
   });
 
-  console.log("\n📋 7. PLANTILLA JSON ENRIQUECIDA PARA src/data/services/<sector>.ts:");
+  console.log("\n🛡️ 7. AUDITORÍA DE CONFIANZA & TRIPLE VERIFICACIÓN (Confidence Score):");
+  const vr = report.verificationReport;
+  const statusEmoji = vr.status === "verified" ? "✅" : vr.status === "needs_manual_review" ? "⚠️" : "⏳";
+  console.log(`  • Puntaje de Confianza: ${vr.confidenceScore}% (${statusEmoji} ${vr.status.toUpperCase()})`);
+  console.log(`  • Desglose de Puntos:`);
+  console.log(`    - Coincidencia Telefónica: ${vr.scoreBreakdown.phoneConsistency}/25 pts`);
+  console.log(`    - Precisión Geográfica Mallorca: ${vr.scoreBreakdown.geoAccuracy}/25 pts`);
+  console.log(`    - Disponibilidad Web (HTTP ${report.extractedMedia.ogImage ? "200" : "Status"}): ${vr.scoreBreakdown.webAvailability}/20 pts`);
+  console.log(`    - Huella en Redes Sociales: ${vr.scoreBreakdown.socialFootprint}/15 pts`);
+  console.log(`    - Reputación y Reseñas: ${vr.scoreBreakdown.reputationVolume}/15 pts`);
+
+  if (vr.warnings.length > 0) {
+    console.log(`  • Alertas / Discrepancias Detectadas:`);
+    vr.warnings.forEach((w) => console.log(`    ⚠️ ${w}`));
+  }
+  if (vr.recommendations.length > 0) {
+    console.log(`  • Recomendaciones para el Curador:`);
+    vr.recommendations.forEach((r) => console.log(`    💡 ${r}`));
+  }
+
+  console.log("\n📋 8. PLANTILLA JSON ENRIQUECIDA PARA src/data/services/<sector>/<slug>.ts:");
   console.log(JSON.stringify(report.curationTemplate, null, 2));
   console.log("\n" + "=".repeat(80));
 }
