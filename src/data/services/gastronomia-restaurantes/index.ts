@@ -28,6 +28,7 @@ import { oliDeJornets } from "./oli-de-jornets-sencelles.ts";
 import { bodegaCastellMiquel } from "./bodega-castell-miquel.ts";
 import { fornDesTeatre } from "./forn-des-teatre-palma.ts";
 import { carniceriaCanMatas } from "./carniceria-can-matas-soller.ts";
+import { cellerCanRipoll } from "./celler-can-ripoll-inca.ts";
 
 export {
   dinsSantiTaura,
@@ -59,6 +60,7 @@ export {
   bodegaCastellMiquel,
   fornDesTeatre,
   carniceriaCanMatas,
+  cellerCanRipoll,
 };
 
 /**
@@ -95,4 +97,5 @@ export const RESTAURANT_SERVICES: ServiceItem[] = [
   bodegaCastellMiquel,
   fornDesTeatre,
   carniceriaCanMatas,
+  cellerCanRipoll,
 ];

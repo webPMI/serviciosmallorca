@@ -5,6 +5,7 @@ import { attractionCatamarans } from "./attraction-catamarans.ts";
 import { clubNauticPortitxol } from "./club-nautic-portitxol.ts";
 import { varaderoPortitxol } from "./varadero-portitxol-services.ts";
 import { zoeaBuceoMallorca } from "./zoea-mallorca-buceo.ts";
+import { varaderoAlcudiamar } from "./varadero-alcudiamar.ts";
 
 export {
   oasisCatamaran,
@@ -13,6 +14,7 @@ export {
   clubNauticPortitxol,
   varaderoPortitxol,
   zoeaBuceoMallorca,
+  varaderoAlcudiamar,
 };
 
 /**
@@ -26,4 +28,5 @@ export const NAUTICA_SERVICES: ServiceItem[] = [
   clubNauticPortitxol,
   varaderoPortitxol,
   zoeaBuceoMallorca,
+  varaderoAlcudiamar,
 ];
