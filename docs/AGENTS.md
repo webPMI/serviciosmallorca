@@ -224,20 +224,34 @@ SI ALGÚN PASO ES ❌ → REJECT with specific feedback
 | ✅ Permitido                                                          | ❌ Prohibido                                                |
 | --------------------------------------------------------------------- | ----------------------------------------------------------- |
 | Ejecutar `scripts/business-intelligence-lookup.ts`                    | Inventar datos o ingresar negocios falsos (Violación GR-11) |
-| Añadir o editar negocios en `src/data/services/<sector>.ts`           | Escribir en un archivo monolítico gigante                   |
+| Añadir o editar negocios en `src/data/services/<sector>/<slug>.ts`    | Escribir en un archivo monolítico gigante                   |
 | Extraer multimedia real y redes sociales oficiales                    | Quemar tokens de IA haciendo scraping manual libre          |
 | Vincular categorías y zonas de los catálogos cerrados                 | Usar categorías o tags inexistentes en la taxonomía         |
-| Actualizar `docs/AGENT_CURATION_SOP.md` y `docs/WORKFLOW_CURATION.md` | Omitir `npm run validate:taxonomy` o `npm test`             |
+| Aplicar el Protocolo de 4 Pasos Atómicos Secuenciales                 | Saltarse fases de auditoría o recitado de reglas            |
+| Actualizar `docs/AGENT_CURATION_SOP.md`                               | Omitir `npm run validate:taxonomy` o `npm test`             |
+
+#### 🛡️ Protocolo de Verificación de 4 Pasos Atómicos (Cero Omisión)
+1. **Fase 1: Recolección (Harvester & Scraping):** Minería obligatoria con `scripts/business-intelligence-lookup.ts`.
+2. **Fase 2: Auditoría (Triple Verificación):** Cruce telefónico (Web vs Maps), coordenadas en Mallorca y cálculo de Confidence Score ($\ge 80\%$).
+3. **Fase 3: Enriquecimiento (Los 5 Pilares):** Social proof, Storytelling trilingüe, Prensa/Hemeroteca balear, Canales de conversión y Local SEO.
+4. **Fase 4: Registro & Certificación:** Escritura del módulo en `src/data/services/<sector>/<slug>.ts` y suite de validación.
+
+#### 🧠 Instrucción de Persistencia de Reglas (Chain of Thought Previo)
+Antes de cualquier escritura, el agente debe explicitar el cumplimiento de:
+- `GR-11`: Zero Fake Data (fuentes primarias acreditadas)
+- `GR-12`: Fidelidad Google Maps (coordenadas reales en Mallorca)
+- `GR-04`: Redacción trilingüe completa (`es`, `en`, `ca`)
 
 **Pre-entrega checklist (SOP Oficial):**
 
 ```
 [ ] Ejecución obligatoria de scripts/business-intelligence-lookup.ts
-[ ] Coordenadas GPS exactas en la isla de Mallorca
-[ ] Horario y teléfono 100% reales y verificados
+[ ] Coordenadas GPS exactas en la isla de Mallorca (GR-12)
+[ ] Horario y teléfono 100% reales y verificados (GR-11)
 [ ] Imagen principal y galería oficial sin enlaces rotos
+[ ] Estructura completa de los 5 Pilares (highlights, servicesProvided, reviews, founderStory, pricing)
 [ ] Categoría existente en CATEGORIES y tags en TAG_CATALOG
-[ ] Inserción modular en src/data/services/<sector>.ts
+[ ] Inserción modular en src/data/services/<sector>/<slug>.ts
 [ ] npm run validate:taxonomy → 100% Válido
 [ ] npm test → 100% Passed
 ```

@@ -39,7 +39,12 @@ Toda la documentación del proyecto está en `docs/`. Antes de trabajar en cualq
 11. **GR-11**: Veracidad: Información y servicios 100% reales y verificados (Zero Fake Data)
 12. **GR-12**: Fidelidad Google Maps: 90%+ re-indexación de datos oficiales (coordenadas, horarios, reseñas y multi-mapas)
 
-## Multi-Agent System
+## Protocolo de Curación Atómica (Cero Omisión)
+Todo registro en `src/data/services/<sector>/<slug>.ts` debe cumplir estrictamente 4 pasos secuenciales:
+1. **Fase 1 (Recolección):** Minería de datos con `scripts/business-intelligence-lookup.ts "<Name>"`.
+2. **Fase 2 (Auditoría & Checkpoint):** Cruce telefónico, geolocalización en Mallorca y cálculo de Confidence Score ($\ge 80\%$).
+3. **Fase 3 (Enriquecimiento):** Estructura completa de los 5 Pilares (Social Proof, Storytelling trilingüe, Prensa balear, Canales de conversión, Local SEO).
+4. **Fase 4 (Registro & Tests):** Módulo individual y paso de la suite `npm run typecheck && npm test && npm run validate:taxonomy && npm run build`.
 
 El proyecto se gestiona mediante agentes coordinados por un **Agente Maestro**:
 

@@ -1,184 +1,182 @@
-# 🤖 Protocolo Estándar de Operación (SOP) para Agentes: Registro y Curación de Negocios
+# 🛡️ Protocolo Estándar de Operación (SOP): Estrategia de "Cero Omisión" y Pasos Atómicos
 
-> **Objetivo:** Garantizar que cualquier agente que agregue o actualice negocios lo haga de forma **100% verídica (Zero Fake Data - GR-11)**, **optimizada en consumo de tokens**, **modular (1 archivo por negocio)**, **con especialización por nicho** y **sin errores de compilación**.
-
----
-
-## ⚡ Reglas Inmutables de Eficiencia de Tokens & Veracidad (GR-11)
-
-1. **PROHIBICIÓN TOTAL DE DATOS SINTÉTICOS O INVENTADOS (GR-11):**
-   - ❌ **PROHIBIDO:** Inventar premios, artículos de prensa ficticios, nombres de personas para reseñas simuladas, historias de fundador o productos inventados.
-   - ✅ **REGLA:** Si un negocio no tiene premios oficiales, `awards` **se omite**. Si no tiene artículos de prensa, `pressMentions` **se omite**. Si no tiene tienda online verificada, `onlineStore` y `products` **se omiten**. Solo se publican datos 100% reales constatables en fuentes oficiales o proporcionados por el titular.
-2. **PROHIBIDO QUEMAR TOKENS EN BÚSQUEDAS ITERATIVAS:** Utilizar siempre el script CLI local `scripts/business-intelligence-lookup.ts`, que ejecuta la extracción multimedia, detección de redes, e-commerce y resolución de mapas en un solo proceso local de alto rendimiento.
-3. **ARQUITECTURA 1 ARCHIVO POR NEGOCIO:** Todo nuevo negocio se registra como un módulo independiente en `src/data/services/<sector>/<slug>.ts` (~200 líneas). Nunca escribir en archivos monolíticos.
+> **Objetivo Supremo:** Garantizar que la curación y registro de negocios opere con **cero omisiones**, **pasos atómicos secuenciales**, **verificación obligatoria de checkpoints**, **cumplimiento estricto de las Golden Rules (GR-11 & GR-12)** y **cero fallos de build**.
 
 ---
 
-## 🗺️ La Ruta de 4 Fases del Agente (Protocolo de Enriquecimiento Profundo)
+## ⚡ 1. Reglas Inmutables de Operación (Persistencia de Reglas)
+
+Antes de cualquier acción de escritura o modificación de datos, el agente debe validar mentalmente y reflejar en su razonamiento:
+
+1. **GR-11 (Zero Fake Data):** Prohibición absoluta de inventar datos, premios, noticias o nombres ficticios. Si un dato no existe en las fuentes oficiales minadas, se omite.
+2. **GR-12 (Fidelidad Google Maps):** Más del 90% de coincidencia exacta con coordenadas de la isla de Mallorca, enlaces de multi-mapas y teléfonos oficiales.
+3. **GR-04 (Multilingüismo Real):** Todo texto visible, especialidad o historia de fundador debe estar completamente redactado en los 3 idiomas oficiales (`es`, `en`, `ca`).
+4. **Arquitectura Modular (1 Negocio = 1 Archivo):** Cada negocio se guarda en `src/data/services/<sector>/<slug>.ts` con su export individual y agregación en el índice del sector.
+
+---
+
+## 🔄 2. Protocolo de los 4 Pasos Atómicos Secuenciales
+
+El agente **no puede procesar un negocio en un único bloque ciego**. Debe ejecutar de forma secuencial y atómica las 4 fases con sus respectivos checkpoints:
 
 ```
 ┌────────────────────────────────────────────────────────────────────────┐
-│ FASE 1: RECOLECCIÓN & SCRAPING (Data Harvesting Multicanal)           │
-│ Extrae datos crudos de web oficial, mapas, redes, e-commerce y prensa. │
-│ Ejecutar: npx tsx scripts/business-intelligence-lookup.ts "<Negocio>" │
+│ PASO 1: FASE DE RECOLECCIÓN (Data Harvesting & Mining)                 │
+│ 1. Ejecutar: npx tsx scripts/business-intelligence-lookup.ts "<Name>"  │
+│ 2. Extraer metadatos crudos: teléfono, email, web, redes, fotos, mapas │
+│ 🛑 CHECKPOINT 1: Validar que el dominio web y los datos no son 404/500│
 └───────────────────────────────────┬────────────────────────────────────┘
                                     ▼
 ┌────────────────────────────────────────────────────────────────────────┐
-│ FASE 2: PROCESAMIENTO & TRIPLE VERIFICACIÓN CRUZADA                    │
-│ Cruza teléfono Web vs Maps vs WhatsApp y valida geolocalización.     │
-│ Asigna Confidence Score (0-100%) y detecta discrepancias o alertas.   │
+│ PASO 2: FASE DE AUDITORÍA & PENSAMIENTO CRÍTICO (Chain of Thought)     │
+│ 1. Comparar teléfono Web vs teléfono Maps vs WhatsApp.                 │
+│ 2. Validar que las coordenadas caen dentro de la isla de Mallorca.     │
+│ 3. Calcular el Confidence Score (mínimo 80% para 'verified').          │
+│ 🛑 CHECKPOINT 2: Bloque explícito de verificación de reglas activas.   │
 └───────────────────────────────────┬────────────────────────────────────┘
                                     ▼
 ┌────────────────────────────────────────────────────────────────────────┐
-│ FASE 3: CREACIÓN & COPYWRITING PROFUNDO (Los 5 Pilares)                │
-│ 1. Social Proof: Palabras clave y sentimiento de las 20 reseñas top.   │
-│ 2. Storytelling: Historia de origen ('founderStory') trilingüe (ES/EN/CA).│
-│ 3. Autoridad: Noticias en Diario de Mallorca / ABC Mallorca / Premios. │
-│ 4. Conversión: WhatsApp con mensaje pre-escrito y carta digital.      │
-│ 5. Local SEO: Tags de barrio y especialidades de alta intención.       │
+│ PASO 3: FASE DE ENRIQUECIMIENTO PROFUNDO (Los 5 Pilares)               │
+│ 1. Social Proof: Reseñas cuantitativas y testimonios reales.           │
+│ 2. Storytelling: 'founderStory' en ES/EN/CA con valor diferencial.     │
+│ 3. Autoridad & Prensa: Enlaces exactos a hemeroteca balear y premios.  │
+│ 4. Conversión: WhatsApp pre-configurado, tarifas y horarios reales.    │
+│ 5. Local SEO: Tags de TAG_CATALOG y subtipo de Schema.org JSON-LD.     │
+│ 🛑 CHECKPOINT 3: Todos los campos obligatorios tipados correctamente.  │
 └───────────────────────────────────┬────────────────────────────────────┘
                                     ▼
 ┌────────────────────────────────────────────────────────────────────────┐
-│ FASE 4: AUDITORÍA & VALIDACIÓN AUTOMATIZADA                            │
-│ npm run typecheck && npm test && npm run validate:taxonomy && npm build│
+│ PASO 4: FASE DE REGISTRO & CERTIFICACIÓN (Escritura y Test Suite)      │
+│ 1. Escribir archivo modular en src/data/services/<sector>/<slug>.ts    │
+│ 2. Actualizar export e índice sectorial y central.                     │
+│ 3. Ejecutar: npm run typecheck && npm test && npm run validate:taxonomy│
+│ 🛑 CHECKPOINT 4: 100% Tests pasados y 0 errores de TypeScript.         │
 └────────────────────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## 💎 Los 5 Pilares del Protocolo de Enriquecimiento Profundo
+## 🧠 3. Inyección de Pensamiento Crítico Obligatorio (Chain of Thought)
 
-Para cada negocio curado o re-minado en la plataforma, el agente debe consolidar:
+Durante la Fase 2 (Auditoría), el agente debe incluir en su análisis interno un bloque de verificación explícita siguiendo este formato:
 
-1. **Inteligencia de Sentimiento y Reseñas (Social Proof):**
-   - Extraer palabras clave de valor ("*Pescado de lonja fresco*", "*Trato familiar*", "*Trazo fino impecable*").
-   - Resumen cualitativo de sentimiento en la ficha para el usuario.
-2. **Storytelling y "Founder Story" (Humanización):**
-   - Historia de autor trilingüe (`es`, `en`, `ca`) que comunique el origen, la pasión y la propuesta de valor.
-   - Definición de 3 a 5 especialidades de la casa con adjetivos sugerentes.
-3. **Presencia en Medios & Autoridad Local:**
-   - Enlaces directos a artículos en los 5 periódicos baleares (*Diario de Mallorca*, *Última Hora*, *Mallorca Magazin*, *ABC Mallorca*, *IB3*).
-   - Premios oficiales (`awards`) con enlace de validación a la entidad emisora (Michelin, Repsol, Gremios).
-4. **Mapeo de Canales y Conversión (Booking Directo):**
-   - Enlace de WhatsApp con mensaje pre-configurado de contacto.
-   - Enlace directo a la carta digital o PDF (`menuUrl`).
-   - Estado de actividad en tiempo real (`open`, `seasonal`, `temporarily_closed`).
-5. **SEO Local y Taxonomía Fina:**
-   - Asignación de tags de barrio/zona (`zona:palma`, `barrio:casco-antiguo`, `barrio:portixol`).
-   - Tags de especialidad (`esp:fine-line`, `esp:alta-cocina`, `esp:charter-privado`).
-
----
-
-## 🎯 Playbooks Especializados por Nicho de Negocio
-
-Cada sector tiene un comportamiento, fuentes de reputación y requerimientos diferentes. El agente debe aplicar el playbook correspondiente:
-
----
-
-### 🍽️ 1. Playbook: Restaurantes, Gastronomía & Beach Clubs
-* **Sector / Carpeta:** `gastronomia-restaurantes`
-* **Fuentes de Autoridad Obligatorias:**
-  * **Guía Michelin:** Buscar si posee Estrella Michelin, Estrella Verde o mención *Bib Gourmand*.
-  * **Guía Repsol:** Buscar si cuenta con Soles Repsol o distintivo *Solete Repsol*.
-  * **TheFork / OpenTable:** Enlace a reservas online y carta digitalizada.
-  * **TripAdvisor Gastronomía:** Reputación en ranking gastronómico de Mallorca.
-* **Campos Esenciales a Extraer:**
-  * `servicesProvided`: Tipo de cocina (Mediterránea, Mallorquina de Autor, Fusión Nikkei, Pescados & Mariscos, etc.).
-  * `amenities`: `sea_views` (vistas al mar), `terrace` (terraza exterior), `valet_parking`, `sommelier_service`.
-  * `pricing`: Rango del menú degustación o precio medio por cubierto (ej. `Menú degustación 9 pasos: 110€`).
-  * `features`: Opciones para dietas especiales (`gluten_free_options`, `vegan_friendly`, `organic_ingredients`).
-  * `onlineStore`: Posibilidad de adquirir **Tarjetas Regalo / Bono Menú Degustación** o tienda gourmet.
-
----
-
-### 🎨 2. Playbook: Arte, Tatuajes, Piercing & Espacios Creativos
-* **Sector / Carpeta:** `arte-tatuajes`
-* **Fuentes de Autoridad Obligatorias:**
-  * **Instagram / TikTok:** Portafolio visual de alta calidad y feed de publicaciones recientes.
-  * **Convenciones de Tatuaje:** Premios en la *Mallorca International Tattoo Convention* o certámenes internacionales.
-  * **Conselleria de Salut:** Registro Higiénico-Sanitario Oficial de Baleares.
-* **Campos Esenciales a Extraer:**
-  * `teamMembers`: Tatuadores y anilladores residentes con sus nombres, especialidades, handles de Instagram y fotos de avatar.
-  * `certifications`: Titanio Grado Médico ASTM F-136, tintas homologadas REACH UE y esterilización en autoclave Clase B.
-  * `pricing`: Tarifa mínima ("Desde 60€"), fianza de reserva y política de presupuestos personalizados.
-  * `onlineStore`: Tienda de **Merchandise oficial**, **Prints de autor numerados**, **Cremas post-cuidado** y **Tarjetas Regalo**.
-
----
-
-### ⛵ 3. Playbook: Náutica, Charters & Alquiler de Barcos
-* **Sector / Carpeta:** `nautica-charters`
-* **Fuentes de Autoridad Obligatorias:**
-  * **Puertos Oficiales:** Port d'Andratx, Marina Port de Mallorca (Palma), Port Adriano, Puerto Portals, Port de Pollença o Cala d'Or.
-  * **Licencias de Navegación:** Declaración de patrón profesional (Skipper) y licencias ETV náuticas.
-* **Campos Esenciales a Extraer:**
-  * `servicesProvided`: Eslora del barco, capacidad máxima de pasaje (ej. "Hasta 12 pasajeros"), tipo de embarcación (Yate, Velero, Catamarán, Lancha semirrígida).
-  * `amenities`: Patrón incluido, catering a bordo, Seabob, equipos de snorkel, paddle surf, toallas y combustible.
-  * `pricing`: Tarifas de medio día (4h), día completo (8h) o semanas completas en temporada alta/baja.
-
----
-
-### 🏡 4. Playbook: Villas, Inmobiliaria Exclusiva & Reformas
-* **Sector / Carpeta:** `villas-reformas`
-* **Fuentes de Autoridad:** Colegios oficiales (COAIB Arquitectos), portales de lujo (*ABC Mallorca Living*, *Balearic Properties*).
-* **Campos Esenciales:** Licencia turística (ETV), seguro de responsabilidad civil, idiomas hablados y cobertura geográfica en la isla.
-
----
-
-### 💆 5. Playbook: Bienestar, Spas, Masajes & Estética
-* **Sector / Carpeta:** `bienestar-belleza`
-* **Fuentes de Autoridad:** Treatwell Baleares, Fresha, sellos ecológicos y certificaciones terapéuticas.
-* **Campos Esenciales:** Menú de rituales y masajes, marcas cosméticas de lujo orgánicas, cabinas dobles para parejas y reserva online.
-
----
-
-## 🛠️ Procedimiento de Creación Modular (1 Archivo por Negocio)
-
-Para registrar un nuevo negocio, el agente debe seguir esta secuencia:
-
-### 1. Ejecutar el Buscador de Inteligencia
-```bash
-npx tsx scripts/business-intelligence-lookup.ts "Nombre Negocio Palma" --url="https://weboficial.com"
+```markdown
+### 🔍 Verificación de Reglas y Checkpoint de Auditoría:
+* **Negocio Analizado:** [Nombre del Negocio]
+* **Fuente Web Oficial:** [URL Oficial] (HTTP Status 200 OK)
+* **Teléfono Extraído:** [+34 XXX XX XX XX] (Coincide Web y Maps: SÍ)
+* **Geolocalización:** [Lat, Lng] (Dentro de polígono de Mallorca: SÍ)
+* **Puntaje de Confianza:** [XX%] (Estado: VERIFIED)
+* **Cumplimiento GR-11 & GR-12:** Totalmente acreditado con fuentes primarias.
 ```
 
-### 2. Crear el archivo del negocio: `src/data/services/<sector>/<slug>.ts`
+---
+
+## 💎 4. Estructura Completa del Archivo de Servicio (Anatomía de los 5 Pilares)
+
+Todo archivo `src/data/services/<sector>/<slug>.ts` debe contener la estructura enriquecida completa:
+
 ```typescript
 import type { ServiceItem } from "../types.ts";
 
 export const miNegocio: ServiceItem = {
-  id: "mi-negocio-palma",
-  slug: "mi-negocio-palma",
-  name: "Mi Negocio Palma",
-  category: "gastronomia-restaurantes", // o el sector correspondiente
-  zone: "palma",
-  address: "Carrer de...",
-  coordinates: { lat: 39.5701, lng: 2.6515 }, // Obligatorio para GPS y Proximidad
+  id: "mi-negocio-mallorca",
+  slug: "mi-negocio-mallorca",
+  name: "Mi Negocio Mallorca",
+  category: "gastronomia-catering",
+  sectorId: "hosteleria-gastronomia",
+  culturalIdentity: "mallorquin_heritage",
   rating: 4.9,
-  reviewCount: 230,
-  // ... resto de campos según el playbook del nicho
+  reviewCount: 250,
+  verified: true,
+  featured: true,
+  status: "open",
+  seasonality: "year_round",
+  isIconicHeritage: true,
+  priceRange: "€€€",
+  address: "Carrer Major, 10, 07001 Palma, Illes Balears",
+  zone: "palma",
+  phone: "+34 971 00 00 00",
+  whatsapp: "+34 971 00 00 00",
+  email: "info@minegocio.com",
+  website: "https://minegocio.com",
+  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=...",
+  appleMapsUrl: "https://maps.apple.com/?q=...",
+  bingMapsUrl: "https://www.bing.com/maps?q=...",
+  coordinates: { lat: 39.5696, lng: 2.6502 },
+  schedule: "Lunes a Sábado: 10:00 - 20:00",
+  lastVerifiedAt: "2026-08-25",
+  image: "https://...",
+  images: ["https://..."],
+  gallery: ["https://..."],
+  targetAudience: ["residentes", "turistas", "expat"],
+  languagesSpoken: ["es", "en", "ca"],
+  emergency24h: false,
+  inVillaService: false,
+  shortDescription: { es: "...", en: "...", ca: "..." },
+  fullDescription: { es: "...", en: "...", ca: "..." },
+  specialties: { es: ["..."], en: ["..."], ca: ["..."] },
+  highlights: { es: ["..."], en: ["..."], ca: ["..."] },
+  servicesProvided: { es: ["..."], en: ["..."], ca: ["..."] },
+  tags: ["zona:palma", "product:premium", "mod:cita-previa", "temps:todo-el-ano"],
+  pricing: {
+    startingPrice: "Desde 45€",
+    rateType: "tiered",
+  },
+  amenities: ["wifi", "air_conditioning"],
+  features: ["wifi", "air_conditioning", "credit_card"],
+  paymentMethods: ["credit_card", "cash"],
+  certifications: ["Registro Oficial Balear"],
+  socialLinks: {
+    instagram: "https://instagram.com/minegocio",
+  },
+  teamMembers: [{
+    name: "Titular",
+    role: { es: "Director", en: "Director", ca: "Director" },
+    specialty: "Atención Especializada"
+  }],
+  reputationBreakdown: {
+    googleMaps: { rating: 4.9, reviewCount: 250, url: "..." },
+    totalReviewsAggregated: 250,
+    overallWeightedRating: 4.9,
+  },
+  reviews: [{
+    id: "rev-1",
+    authorName: "Cliente",
+    rating: 5,
+    date: "2025-06-10",
+    platform: "google_maps",
+    language: "es",
+    comment: "Excelente servicio profesional en Mallorca.",
+    verifiedCustomer: true,
+  }],
+  confidenceScore: 95,
+  verificationStatus: "verified",
+  sourceCrossReference: {
+    webPhoneMatch: true,
+    mapsPhoneMatch: true,
+    addressInMallorca: true,
+    activeWeb200Ok: true,
+    socialMatchScore: 100,
+    googleMapsConfirmed: true,
+    socialPresenceActive: true,
+    taxIdVerified: true,
+  },
+  founderStory: { es: "...", en: "...", ca: "..." },
+  newsMentions: [{
+    title: "Noticia en prensa balear",
+    source: "Diario de Mallorca",
+    url: "https://www.google.com/search?q=site:diariodemallorca.es+...",
+  }],
 };
-```
-
-### 3. Registrar en el agregador del sector: `src/data/services/<sector>/index.ts`
-```typescript
-import { miNegocio } from "./mi-negocio-palma.ts";
-
-export const SECTOR_SERVICES = [
-  // ...otros negocios
-  miNegocio,
-];
-```
-
-### 4. Validar Calidad y Compilación
-```bash
-npm run typecheck && npm test && npm run validate:taxonomy && npm run build
 ```
 
 ---
 
-## 🌟 Garantías de Calidad (Quality Checklist)
-- [ ] ¿Coordenadas GPS reales verificadas para el cálculo de distancia Haversine?
-- [ ] ¿Puntuación ponderada combinando Google Maps, Bing, Apple o TripAdvisor?
-- [ ] ¿Premios o reconocimientos con enlaces oficiales de verificación (`url`)?
-- [ ] ¿Tienda online / productos indexados si el negocio dispone de ellos (`onlineStore` / `products`)?
-- [ ] ¿Textos trilingües completos (`es`, `en`, `ca`) en roles, preguntas frecuentes y productos?
-- [ ] ¿Tests pasando al 100% y 0 errores de compilación?
+## 🎯 5. Verificación de Entrega
+
+Todo nuevo lote de negocios debe pasar sin excepciones:
+1. `npm run typecheck` (0 errores de TypeScript)
+2. `npm test` (100% de tests unitarios pasando)
+3. `npm run validate:taxonomy` (100% de tags, zonas y categorías válidas)
+4. `npm run build` (Compilación de producción limpia)
