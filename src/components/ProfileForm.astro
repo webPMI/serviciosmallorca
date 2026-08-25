@@ -12,20 +12,24 @@ const AVATAR_PRESETS = ["👤", "🚀", "⚡", "👑", "🦊", "🦉", "🎨", "
 ---
 
 <div class="profile-container">
-  <!-- Profile Header Card -->
-  <div class="profile-card card-glass fade-in">
-    <div class="profile-header-layout">
-      <div class="avatar-wrapper">
-        <div class="current-avatar" id="profile-current-avatar">
+  <!-- Profile Hero Card -->
+  <div class="profile-hero card-glass fade-in">
+    <div class="profile-hero-inner">
+      <!-- Avatar Large -->
+      <div class="hero-avatar-wrap">
+        <div class="hero-avatar" id="profile-current-avatar">
           <span class="avatar-symbol" id="profile-avatar-symbol">👤</span>
         </div>
+        <div class="hero-avatar-badge" id="profile-role-badge">Usuario</div>
       </div>
-      <div class="profile-header-meta">
-        <div class="profile-title-row">
-          <h1 class="profile-display-name" id="profile-display-name-header">...</h1>
-          <span class="badge badge-primary" id="profile-role-badge">Usuario</span>
+
+      <!-- Name & Email -->
+      <div class="hero-meta">
+        <h1 class="hero-name" id="profile-display-name-header">Cargando...</h1>
+        <p class="hero-email" id="profile-email-header">correo@ejemplo.com</p>
+        <div class="hero-stats">
+          <span class="hero-stat">🌴 Miembro de Servicios Mallorca</span>
         </div>
-        <p class="profile-email-text" id="profile-email-header">...</p>
       </div>
     </div>
   </div>
@@ -34,100 +38,126 @@ const AVATAR_PRESETS = ["👤", "🚀", "⚡", "👑", "🦊", "🦉", "🎨", "
   <div id="profile-success-alert" class="alert-success" style="display: none;" role="alert"></div>
   <div id="profile-error-alert" class="alert-error" style="display: none;" role="alert"></div>
 
-  <!-- Main Profile Form -->
-  <div class="profile-grid">
-    <!-- Section 1: Personal Information -->
-    <section class="card profile-card-section fade-in">
-      <h2 class="section-title">
-        <span class="section-icon">👤</span>
-        {translations["profile.accountInfo"]}
-      </h2>
+  <!-- Tab Navigation -->
+  <div class="profile-tabs">
+    <button class="profile-tab active" id="tab-info" data-tab="info"> 👤 Información de Cuenta </button>
+    <button class="profile-tab" id="tab-security" data-tab="security"> 🔐 Seguridad </button>
+  </div>
 
-      <form
-        id="profile-info-form"
-        class="profile-form"
-        data-success-msg={translations["profile.successUpdated"]}
-        data-error-name={translations["auth.nameRequired"]}
-        data-error-general={translations["auth.errors.generalError"]}
-      >
-        <div class="form-group">
-          <label for="profile-name" class="form-label">{translations["profile.name"]}</label>
-          <div class="input-wrapper">
-            <span class="input-icon">✏️</span>
-            <input
-              type="text"
-              id="profile-name"
-              name="displayName"
-              class="form-input"
-              required
-              placeholder="Tu nombre"
-            />
-          </div>
-        </div>
+  <!-- Tab: Account Info -->
+  <section class="profile-tab-panel active" id="panel-info">
+    <div class="profile-panel-grid">
+      <!-- Left: Form -->
+      <div class="card profile-form-card">
+        <h2 class="panel-title">✏️ Editar Perfil</h2>
 
-        <div class="form-group">
-          <label for="profile-email" class="form-label">{translations["profile.email"]}</label>
-          <div class="input-wrapper">
-            <span class="input-icon">📧</span>
-            <input
-              type="email"
-              id="profile-email"
-              class="form-input form-input-disabled"
-              disabled
-              readonly
-            />
-          </div>
-          <span class="form-helper">El correo no puede modificarse directamente por seguridad.</span>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label">{translations["profile.avatar"]}</label>
-          <div class="avatar-presets-grid" id="avatar-presets">
-            {AVATAR_PRESETS.map((icon) => (
-              <button
-                type="button"
-                class="avatar-preset-btn"
-                data-preset={icon}
-                aria-label={`Seleccionar avatar ${icon}`}
-              >
-                {icon}
-              </button>
-            ))}
+        <form
+          id="profile-info-form"
+          class="profile-form"
+          data-success-msg={translations["profile.successUpdated"]}
+          data-error-name={translations["auth.nameRequired"]}
+          data-error-general={translations["auth.errors.generalError"]}
+        >
+          <div class="form-group">
+            <label for="profile-name" class="form-label">{translations["profile.name"]}</label>
+            <div class="input-wrapper">
+              <span class="input-icon">✏️</span>
+              <input
+                type="text"
+                id="profile-name"
+                name="displayName"
+                class="form-input"
+                required
+                placeholder="Tu nombre completo"
+              />
+            </div>
           </div>
 
-          <label for="profile-custom-photo" class="form-label-sub">{translations["profile.customAvatarUrl"]}</label>
-          <div class="input-wrapper">
-            <span class="input-icon">🔗</span>
-            <input
-              type="url"
-              id="profile-custom-photo"
-              name="photoURL"
-              class="form-input"
-              placeholder="https://ejemplo.com/tu-foto.jpg"
-            />
+          <div class="form-group">
+            <label for="profile-email" class="form-label">{translations["profile.email"]}</label>
+            <div class="input-wrapper">
+              <span class="input-icon">📧</span>
+              <input type="email" id="profile-email" class="form-input form-input-disabled" disabled readonly />
+            </div>
+            <span class="form-helper">El correo no puede modificarse directamente por seguridad.</span>
           </div>
-        </div>
 
-        <div class="form-actions">
-          <button type="submit" id="save-profile-btn" class="btn btn-primary">
-            <span class="btn-text">{translations["profile.saveChanges"]}</span>
-            <span class="btn-loader" style="display: none;">⌛</span>
-          </button>
-        </div>
-      </form>
-    </section>
+          <!-- Avatar Picker -->
+          <div class="form-group">
+            <label class="form-label">{translations["profile.avatar"]}</label>
+            <div class="avatar-presets-grid" id="avatar-presets">
+              {
+                AVATAR_PRESETS.map((icon) => (
+                  <button
+                    type="button"
+                    class="avatar-preset-btn"
+                    data-preset={icon}
+                    aria-label={`Seleccionar avatar ${icon}`}
+                  >
+                    {icon}
+                  </button>
+                ))
+              }
+            </div>
 
-    <!-- Section 2: Security & Password -->
-    <section class="card profile-card-section fade-in">
-      <h2 class="section-title">
-        <span class="section-icon">🔐</span>
-        {translations["profile.changePassword"]}
-      </h2>
+            <label for="profile-custom-photo" class="form-label-sub">{translations["profile.customAvatarUrl"]}</label>
+            <div class="input-wrapper">
+              <span class="input-icon">🔗</span>
+              <input
+                type="url"
+                id="profile-custom-photo"
+                name="photoURL"
+                class="form-input"
+                placeholder="https://ejemplo.com/tu-foto.jpg"
+              />
+            </div>
+          </div>
 
-      <div id="google-auth-notice" class="alert-info" style="display: none;">
-        <span>ℹ️ {translations["profile.googleAuthNotice"]}</span>
+          <div class="form-actions">
+            <button type="submit" id="save-profile-btn" class="btn btn-primary btn-full">
+              <span class="btn-text">{translations["profile.saveChanges"]}</span>
+              <span class="btn-loader" style="display: none;">⌛</span>
+            </button>
+          </div>
+        </form>
       </div>
 
+      <!-- Right: Live Preview -->
+      <div class="card profile-preview-card">
+        <h2 class="panel-title">👁️ Vista Previa</h2>
+        <div class="preview-profile-card">
+          <div class="preview-avatar" id="preview-avatar-display">
+            <span>👤</span>
+          </div>
+          <div class="preview-name" id="preview-name-display">Tu nombre</div>
+          <div class="preview-email" id="preview-email-display">tu@correo.com</div>
+          <div class="preview-badge badge badge-primary" id="preview-role-display">Usuario</div>
+          <div class="preview-joined">🌴 Comunidad Servicios Mallorca</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tab: Security & Password -->
+  <section class="profile-tab-panel" id="panel-security">
+    <div class="card profile-form-card" id="profile-security-section">
+      <h2 class="panel-title">🔐 {translations["profile.changePassword"]}</h2>
+
+      <!-- Google Provider Notice -->
+      <div id="google-auth-notice" class="alert-info" style="display: none;">
+        <span class="notice-icon">🌐</span>
+        <div>
+          <strong>Cuenta vinculada con Google</strong>
+          <p>
+            {
+              translations["profile.googleAuthNotice"] ||
+                "Iniciaste sesión con Google. La gestión y seguridad de tu contraseña se realiza a través de tu cuenta de Google."
+            }
+          </p>
+        </div>
+      </div>
+
+      <!-- Password Change Form for Email/Password users -->
       <form
         id="profile-password-form"
         class="profile-form"
@@ -197,18 +227,18 @@ const AVATAR_PRESETS = ["👤", "🚀", "⚡", "👑", "🦊", "🦉", "🎨", "
         </div>
 
         <div class="form-actions">
-          <button type="submit" id="update-password-btn" class="btn btn-secondary">
+          <button type="submit" id="update-password-btn" class="btn btn-secondary btn-full">
             <span class="btn-text">{translations["profile.updatePassword"]}</span>
             <span class="btn-loader" style="display: none;">⌛</span>
           </button>
         </div>
       </form>
-    </section>
-  </div>
+    </div>
+  </section>
 </div>
 
 <script>
-  import { updateProfile, updatePassword } from "firebase/auth";
+  import { updateProfile, updatePassword, onAuthStateChanged } from "firebase/auth";
   import { auth, db } from "../lib/firebase";
   import { authStore } from "../lib/authStore";
   import { getUserProfile, updateUserProfile } from "../lib/userProfile";
@@ -218,7 +248,6 @@ const AVATAR_PRESETS = ["👤", "🚀", "⚡", "👑", "🦊", "🦉", "🎨", "
   const headerName = document.getElementById("profile-display-name-header");
   const headerEmail = document.getElementById("profile-email-header");
   const headerRole = document.getElementById("profile-role-badge");
-  const avatarSymbol = document.getElementById("profile-avatar-symbol");
   const currentAvatarEl = document.getElementById("profile-current-avatar");
 
   const infoForm = document.getElementById("profile-info-form") as HTMLFormElement | null;
@@ -242,7 +271,25 @@ const AVATAR_PRESETS = ["👤", "🚀", "⚡", "👑", "🦊", "🦉", "🎨", "
   const strengthFill = document.getElementById("profileStrengthFill");
   const strengthText = document.getElementById("profileStrengthText");
 
+  // Preview elements
+  const previewAvatarEl = document.getElementById("preview-avatar-display");
+  const previewNameEl = document.getElementById("preview-name-display");
+  const previewEmailEl = document.getElementById("preview-email-display");
+  const previewRoleEl = document.getElementById("preview-role-display");
+
   let selectedAvatar: string | null = null;
+
+  // --- Tab Switching ---
+  document.querySelectorAll(".profile-tab").forEach((tab) => {
+    tab.addEventListener("click", () => {
+      const target = (tab as HTMLElement).dataset.tab;
+      document.querySelectorAll(".profile-tab").forEach((t) => t.classList.remove("active"));
+      document.querySelectorAll(".profile-tab-panel").forEach((p) => p.classList.remove("active"));
+      tab.classList.add("active");
+      const panel = document.getElementById(`panel-${target}`);
+      if (panel) panel.classList.add("active");
+    });
+  });
 
   function showSuccess(msg: string) {
     if (errorAlert) errorAlert.style.display = "none";
@@ -266,36 +313,52 @@ const AVATAR_PRESETS = ["👤", "🚀", "⚡", "👑", "🦊", "🦉", "🎨", "
 
   // Render current avatar
   function setAvatarDisplay(photo: string | null, name: string | null) {
-    if (!currentAvatarEl) return;
-    if (photo && (photo.startsWith("http://") || photo.startsWith("https://") || photo.startsWith("data:"))) {
-      currentAvatarEl.innerHTML = `<img src="${photo}" alt="Avatar" class="profile-avatar-img" />`;
-    } else if (photo && photo.length <= 4) {
-      currentAvatarEl.innerHTML = `<span class="avatar-symbol">${photo}</span>`;
-    } else {
-      const initial = (name && name[0]) ? name[0].toUpperCase() : "👤";
-      currentAvatarEl.innerHTML = `<span class="avatar-symbol">${initial}</span>`;
+    // Update hero header avatar
+    if (currentAvatarEl) {
+      if (photo && (photo.startsWith("http://") || photo.startsWith("https://") || photo.startsWith("data:"))) {
+        currentAvatarEl.innerHTML = `<img src="${photo}" alt="Avatar" class="profile-avatar-img" />`;
+      } else if (photo && photo.length <= 8) {
+        currentAvatarEl.innerHTML = `<span class="avatar-symbol">${photo}</span>`;
+      } else {
+        const initial = name && name.trim() ? name.trim()[0].toUpperCase() : "👤";
+        currentAvatarEl.innerHTML = `<span class="avatar-symbol">${initial}</span>`;
+      }
+    }
+    // Update preview avatar
+    if (previewAvatarEl) {
+      if (photo && (photo.startsWith("http://") || photo.startsWith("https://") || photo.startsWith("data:"))) {
+        previewAvatarEl.innerHTML = `<img src="${photo}" alt="Avatar" class="preview-avatar-img" />`;
+      } else if (photo && photo.length <= 8) {
+        previewAvatarEl.innerHTML = `<span>${photo}</span>`;
+      } else {
+        const initial = name && name.trim() ? name.trim()[0].toUpperCase() : "👤";
+        previewAvatarEl.innerHTML = `<span>${initial}</span>`;
+      }
     }
   }
 
-  // Bind auth state
-  authStore.subscribe(async ({ user, role, initialized }) => {
-    if (!initialized) return;
+  function populateUser(user: any, role: string = "user") {
+    if (!user) return;
 
-    if (!user) {
-      // Redirect to login if not authenticated
-      window.location.href = "./login";
-      return;
+    const displayName = user.displayName || (user.email ? user.email.split("@")[0] : "Usuario");
+    const email = user.email || "";
+
+    if (headerName) headerName.textContent = displayName;
+    if (headerEmail) headerEmail.textContent = email;
+    if (emailInput) emailInput.value = email;
+    if (nameInput && !nameInput.value) nameInput.value = displayName;
+
+    // Preview sync
+    if (previewNameEl) previewNameEl.textContent = displayName;
+    if (previewEmailEl) previewEmailEl.textContent = email;
+    if (previewRoleEl) {
+      previewRoleEl.textContent = role.toUpperCase();
+      previewRoleEl.className = `preview-badge badge badge-${role === "admin" ? "admin" : role === "manager" ? "manager" : "primary"}`;
     }
 
-    // Populate data
-    const displayName = user.displayName || user.email?.split("@")[0] || "Usuario";
-    if (headerName) headerName.textContent = displayName;
-    if (headerEmail) headerEmail.textContent = user.email || "";
-    if (emailInput) emailInput.value = user.email || "";
-    if (nameInput) nameInput.value = user.displayName || "";
     if (headerRole) {
       headerRole.textContent = role.toUpperCase();
-      headerRole.className = `badge badge-${role === "admin" ? "admin" : role === "manager" ? "manager" : "primary"}`;
+      headerRole.className = `hero-avatar-badge badge-role-${role}`;
     }
 
     selectedAvatar = user.photoURL;
@@ -305,11 +368,55 @@ const AVATAR_PRESETS = ["👤", "🚀", "⚡", "👑", "🦊", "🦉", "🎨", "
 
     setAvatarDisplay(user.photoURL, displayName);
 
-    // Check auth provider (Google vs Password)
-    const isGoogle = user.providerData.some((p) => p.providerId === "google.com");
+    // Highlight preset if matching
+    if (user.photoURL) {
+      document.querySelectorAll(".avatar-preset-btn").forEach((btn) => {
+        if (btn.getAttribute("data-preset") === user.photoURL) {
+          btn.classList.add("is-selected");
+        } else {
+          btn.classList.remove("is-selected");
+        }
+      });
+    }
+
+    // Check Google Auth provider
+    const isGoogle = user.providerData && user.providerData.some((p: any) => p.providerId === "google.com");
     if (isGoogle) {
       if (passwordForm) passwordForm.style.display = "none";
-      if (googleNotice) googleNotice.style.display = "block";
+      if (googleNotice) googleNotice.style.display = "flex";
+    } else {
+      if (passwordForm) passwordForm.style.display = "flex";
+      if (googleNotice) googleNotice.style.display = "none";
+    }
+  }
+
+  // 1. Direct onAuthStateChanged listener
+  onAuthStateChanged(auth, async (user) => {
+    if (!user) {
+      // Redirect if not logged in
+      const currentPath = window.location.pathname;
+      const langPrefix = currentPath.split("/")[1] || "es";
+      window.location.href = `/${langPrefix}/login`;
+      return;
+    }
+
+    // Get Firestore profile role if available
+    let role = "user";
+    try {
+      const profile = await getUserProfile(db, user.uid);
+      if (profile && profile.role) role = profile.role;
+    } catch {
+      // Fallback
+    }
+
+    populateUser(user, role);
+  });
+
+  // 2. AuthStore subscription
+  authStore.subscribe(({ user, role, loading }) => {
+    if (loading) return;
+    if (user) {
+      populateUser(user, role);
     }
   });
 
@@ -336,6 +443,15 @@ const AVATAR_PRESETS = ["👤", "🚀", "⚡", "👑", "🦊", "🦉", "🎨", "
         selectedAvatar = val;
         setAvatarDisplay(val, nameInput?.value || null);
       }
+    });
+  }
+
+  // Live preview: sync name input
+  if (nameInput) {
+    nameInput.addEventListener("input", () => {
+      const val = nameInput.value.trim();
+      if (previewNameEl) previewNameEl.textContent = val || "Tu nombre";
+      if (headerName) headerName.textContent = val || "Tu nombre";
     });
   }
 
@@ -374,7 +490,10 @@ const AVATAR_PRESETS = ["👤", "🚀", "⚡", "👑", "🦊", "🦉", "🎨", "
         setAvatarDisplay(photoToSave, newName);
 
         // 4. Update dynamic Navbar if present
-        const navName = document.getElementById("user-nav-name") || document.getElementById("manager-nav-name") || document.getElementById("admin-nav-name");
+        const navName =
+          document.getElementById("user-nav-name") ||
+          document.getElementById("manager-nav-name") ||
+          document.getElementById("admin-nav-name");
         if (navName) navName.textContent = newName;
 
         showSuccess(infoForm.dataset.successMsg || "¡Perfil actualizado con éxito!");
@@ -440,17 +559,21 @@ const AVATAR_PRESETS = ["👤", "🚀", "⚡", "👑", "🦊", "🦉", "🎨", "
       const confirmPass = confirmNewPasswordInput.value;
 
       if (!newPass) {
-        if (passwordError) passwordError.textContent = passwordForm.dataset.errorRequired || "La contraseña es requerida";
+        if (passwordError)
+          passwordError.textContent = passwordForm.dataset.errorRequired || "La contraseña es requerida";
         return;
       }
 
       if (newPass.length < 6) {
-        if (passwordError) passwordError.textContent = passwordForm.dataset.errorWeak || "La contraseña debe tener al menos 6 caracteres.";
+        if (passwordError)
+          passwordError.textContent =
+            passwordForm.dataset.errorWeak || "La contraseña debe tener al menos 6 caracteres.";
         return;
       }
 
       if (newPass !== confirmPass) {
-        if (passwordError) passwordError.textContent = passwordForm.dataset.errorMismatch || "Las contraseñas no coinciden";
+        if (passwordError)
+          passwordError.textContent = passwordForm.dataset.errorMismatch || "Las contraseñas no coinciden";
         return;
       }
 
@@ -468,7 +591,10 @@ const AVATAR_PRESETS = ["👤", "🚀", "⚡", "👑", "🦊", "🦉", "🎨", "
       } catch (err: any) {
         console.error("Error updating password:", err);
         if (err.code === "auth/requires-recent-login") {
-          showError(passwordForm.dataset.errorReauth || "Por seguridad, debes haber iniciado sesión recientemente para cambiar tu contraseña.");
+          showError(
+            passwordForm.dataset.errorReauth ||
+              "Por seguridad, debes haber iniciado sesión recientemente para cambiar tu contraseña.",
+          );
         } else {
           showError(err.message || passwordForm.dataset.errorGeneral || "Ocurrió un error al procesar tu solicitud.");
         }
@@ -480,106 +606,300 @@ const AVATAR_PRESETS = ["👤", "🚀", "⚡", "👑", "🦊", "🦉", "🎨", "
 </script>
 
 <style>
+  /* ===============================================================
+   * PROFILE FORM — Premium Redesign
+   * =============================================================== */
+
   .profile-container {
-    max-width: 960px;
+    max-width: 1000px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     gap: var(--space-xl);
   }
 
-  .profile-card {
-    padding: var(--space-xl);
-    border-radius: var(--border-radius);
+  /* ── Hero Card ──────────────────────────────────────────────── */
+  .profile-hero {
+    padding: var(--space-2xl, 3rem) var(--space-xl);
+    border-radius: var(--border-radius-xl, 1.5rem);
+    background: linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--color-primary) 12%, var(--color-surface)),
+      color-mix(in srgb, var(--color-accent) 8%, var(--color-surface))
+    );
+    position: relative;
+    overflow: hidden;
   }
 
-  .profile-header-layout {
+  .profile-hero::before {
+    content: "";
+    position: absolute;
+    top: -60px;
+    right: -60px;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--color-primary) 0%, transparent 70%);
+    opacity: 0.08;
+    pointer-events: none;
+  }
+
+  .profile-hero-inner {
     display: flex;
     align-items: center;
-    gap: var(--space-xl);
+    gap: var(--space-2xl, 2.5rem);
+    position: relative;
   }
 
-  .avatar-wrapper {
+  /* Avatar Hero */
+  .hero-avatar-wrap {
     flex-shrink: 0;
+    position: relative;
   }
 
-  .current-avatar {
-    width: 84px;
-    height: 84px;
-    border-radius: var(--border-radius-full);
-    background: linear-gradient(135deg, var(--color-primary-light), var(--color-accent));
+  .hero-avatar {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: var(--shadow-glow);
+    box-shadow:
+      0 8px 32px var(--shadow-overlay, rgba(0, 0, 0, 0.3)),
+      0 0 0 4px var(--color-surface);
     overflow: hidden;
-    border: 3px solid var(--color-surface);
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
   }
 
-  .avatar-symbol {
-    font-size: 2.5rem;
+  .hero-avatar:hover {
+    transform: scale(1.04);
+    box-shadow:
+      0 12px 40px var(--shadow-overlay),
+      0 0 0 4px var(--color-primary);
+  }
+
+  .hero-avatar .avatar-symbol {
+    font-size: 3.5rem;
     line-height: 1;
+    user-select: none;
   }
 
-  .profile-avatar-img {
+  .hero-avatar .profile-avatar-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
 
-  .profile-header-meta {
+  .hero-avatar-badge {
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--color-primary);
+    color: #fff;
+    font-size: 0.65rem;
+    font-weight: 800;
+    padding: 2px 10px;
+    border-radius: 999px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    border: 2px solid var(--color-surface);
+  }
+
+  .badge-role-admin {
+    background: var(--color-danger, #e53e3e);
+  }
+  .badge-role-manager {
+    background: var(--color-accent, #7c3aed);
+  }
+
+  /* Hero Meta */
+  .hero-meta {
     display: flex;
     flex-direction: column;
-    gap: var(--space-xs);
+    gap: 0.3rem;
   }
 
-  .profile-title-row {
+  .hero-name {
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    font-weight: 800;
+    color: var(--color-text);
+    margin: 0;
+    line-height: 1.15;
+  }
+
+  .hero-email {
+    font-size: var(--font-size-base);
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+    margin-top: var(--space-xs);
+  }
+
+  .hero-stat {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+    background: var(--color-surface);
+    padding: 3px 10px;
+    border-radius: 999px;
+    border: 1px solid var(--color-surface-border);
+  }
+
+  /* ── Tab Navigation ─────────────────────────────────────────── */
+  .profile-tabs {
+    display: flex;
+    gap: var(--space-xs);
+    background: var(--color-surface);
+    padding: 5px;
+    border-radius: var(--border-radius-md);
+    border: 1px solid var(--color-surface-border);
+    width: fit-content;
+  }
+
+  .profile-tab {
+    padding: 0.55rem 1.4rem;
+    border: none;
+    background: transparent;
+    color: var(--color-text-muted);
+    font-weight: 600;
+    font-size: var(--font-size-sm);
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+    white-space: nowrap;
+  }
+
+  .profile-tab:hover {
+    color: var(--color-text);
+    background: var(--color-surface-hover);
+  }
+
+  .profile-tab.active {
+    background: var(--color-primary);
+    color: #fff;
+    box-shadow: 0 2px 12px var(--color-primary-ring);
+  }
+
+  /* ── Tab Panels ─────────────────────────────────────────────── */
+  .profile-tab-panel {
+    display: none;
+  }
+
+  .profile-tab-panel.active {
+    display: block;
+    animation: fadeUp 0.25s ease;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Panel grid: Form + Preview side by side */
+  .profile-panel-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: var(--space-xl);
+    align-items: start;
+  }
+
+  .profile-form-card,
+  .profile-preview-card {
+    padding: var(--space-xl);
+    border-radius: var(--border-radius-lg);
+  }
+
+  .panel-title {
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    color: var(--color-text);
+    margin: 0 0 var(--space-lg);
+    padding-bottom: var(--space-sm);
+    border-bottom: 1px solid var(--color-surface-border);
     display: flex;
     align-items: center;
-    gap: var(--space-md);
-    flex-wrap: wrap;
+    gap: var(--space-sm);
   }
 
-  .profile-display-name {
-    font-size: var(--font-size-3xl);
+  /* ── Live Preview Card ──────────────────────────────────────── */
+  .preview-profile-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-xl) var(--space-lg);
+    background: linear-gradient(
+      160deg,
+      color-mix(in srgb, var(--color-primary) 10%, var(--color-surface)),
+      var(--color-surface)
+    );
+    border-radius: var(--border-radius-lg);
+    border: 1px solid var(--color-surface-border);
+    text-align: center;
+  }
+
+  .preview-avatar {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.8rem;
+    box-shadow: 0 4px 20px var(--shadow-overlay);
+    overflow: hidden;
+  }
+
+  .preview-avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .preview-name {
+    font-size: var(--font-size-xl);
     font-weight: 800;
     color: var(--color-text);
     line-height: 1.2;
   }
 
-  .profile-email-text {
-    font-size: var(--font-size-base);
-    color: var(--color-text-light);
+  .preview-email {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
   }
 
-  .profile-grid {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: var(--space-xl);
+  .preview-badge {
+    font-size: var(--font-size-xs);
   }
 
-  .profile-card-section {
-    padding: var(--space-xl);
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-lg);
+  .preview-joined {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+    margin-top: var(--space-xs);
+    padding: 4px 14px;
+    background: var(--color-surface);
+    border-radius: 999px;
+    border: 1px solid var(--color-surface-border);
   }
 
-  .section-title {
-    font-size: var(--font-size-xl);
-    font-weight: 700;
-    color: var(--color-text);
-    display: flex;
-    align-items: center;
-    gap: var(--space-sm);
-    padding-bottom: var(--space-sm);
-    border-bottom: 1px solid var(--color-surface-border);
-  }
-
-  .section-icon {
-    font-size: 1.3rem;
-  }
-
+  /* ── Form Elements ──────────────────────────────────────────── */
   .profile-form {
     display: flex;
     flex-direction: column;
@@ -589,12 +909,12 @@ const AVATAR_PRESETS = ["👤", "🚀", "⚡", "👑", "🦊", "🦉", "🎨", "
   .form-group {
     display: flex;
     flex-direction: column;
-    gap: var(--space-xs);
+    gap: 0.35rem;
   }
 
   .form-label {
     font-size: var(--font-size-sm);
-    font-weight: 600;
+    font-weight: 700;
     color: var(--color-text);
   }
 
@@ -602,10 +922,11 @@ const AVATAR_PRESETS = ["👤", "🚀", "⚡", "👑", "🦊", "🦉", "🎨", "
     font-size: var(--font-size-xs);
     color: var(--color-text-muted);
     margin-top: var(--space-xs);
+    font-weight: 600;
   }
 
   .form-helper {
-    font-size: var(--font-size-xs);
+    font-size: 0.72rem;
     color: var(--color-text-muted);
   }
 
@@ -626,11 +947,11 @@ const AVATAR_PRESETS = ["👤", "🚀", "⚡", "👑", "🦊", "🦉", "🎨", "
   .form-input {
     width: 100%;
     padding: 0.75rem 1rem 0.75rem 2.8rem;
-    border: 2px solid var(--color-surface-border);
-    border-radius: var(--border-radius);
-    background-color: var(--color-white);
+    border: 1px solid var(--color-surface-border);
+    border-radius: var(--border-radius-sm);
+    background-color: var(--color-bg);
     color: var(--color-text);
-    font-family: var(--font-family);
+    font-family: inherit;
     font-size: var(--font-size-base);
     transition: all 0.2s ease-in-out;
   }
@@ -642,10 +963,9 @@ const AVATAR_PRESETS = ["👤", "🚀", "⚡", "👑", "🦊", "🦉", "🎨", "
   }
 
   .form-input-disabled {
-    background-color: var(--color-bg);
-    color: var(--color-text-muted);
+    opacity: 0.65;
     cursor: not-allowed;
-    border-style: dashed;
+    background: var(--color-surface);
   }
 
   .toggle-password-btn {
@@ -656,12 +976,19 @@ const AVATAR_PRESETS = ["👤", "🚀", "⚡", "👑", "🦊", "🦉", "🎨", "
     cursor: pointer;
     font-size: 1.1rem;
     padding: 0.25rem;
+    color: var(--color-text-muted);
+    transition: color 0.15s;
   }
 
+  .toggle-password-btn:hover {
+    color: var(--color-text);
+  }
+
+  /* Avatar Picker */
   .avatar-presets-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: var(--space-xs);
+    gap: 0.4rem;
     margin-bottom: var(--space-xs);
   }
 
@@ -669,26 +996,31 @@ const AVATAR_PRESETS = ["👤", "🚀", "⚡", "👑", "🦊", "🦉", "🎨", "
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.5rem;
-    padding: 0.5rem;
+    font-size: 1.9rem;
+    padding: 0.55rem 0.4rem;
     background: var(--color-surface);
     border: 2px solid var(--color-surface-border);
     border-radius: var(--border-radius-sm);
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: all 0.18s ease;
+    aspect-ratio: 1;
   }
 
   .avatar-preset-btn:hover {
     border-color: var(--color-primary);
-    transform: translateY(-2px);
+    transform: translateY(-3px) scale(1.1);
+    background: var(--color-primary-bg, rgba(99, 102, 241, 0.08));
+    box-shadow: 0 4px 12px var(--color-primary-ring);
   }
 
   .avatar-preset-btn.is-selected {
     border-color: var(--color-primary);
-    background: var(--color-primary-bg);
-    box-shadow: var(--shadow-sm);
+    background: var(--color-primary-bg, rgba(99, 102, 241, 0.12));
+    box-shadow: 0 0 0 3px var(--color-primary);
+    transform: scale(1.05);
   }
 
+  /* Password Strength */
   .password-strength {
     display: flex;
     flex-direction: column;
@@ -707,50 +1039,50 @@ const AVATAR_PRESETS = ["👤", "🚀", "⚡", "👑", "🦊", "🦉", "🎨", "
     height: 100%;
     width: 0%;
     transition: all 0.3s ease;
+    border-radius: 2px;
   }
 
   .strength-fill.weak {
     width: 33%;
-    background-color: var(--color-danger-light);
+    background-color: var(--color-danger);
   }
-
   .strength-fill.medium {
     width: 66%;
-    background-color: var(--color-warning-light);
+    background-color: #f59e0b;
   }
-
   .strength-fill.strong {
     width: 100%;
-    background-color: var(--color-success-dark);
+    background-color: #10b981;
   }
 
   .strength-text {
     font-size: var(--font-size-xs);
-    color: var(--color-text-light);
+    color: var(--color-text-muted);
   }
 
   .form-error {
-    color: var(--color-danger-light);
+    color: var(--color-danger);
     font-size: var(--font-size-xs);
     font-weight: 500;
   }
 
+  /* Alerts */
   .alert-success {
-    background-color: var(--color-success-bg);
-    border: 1px solid var(--color-success-border);
-    color: var(--color-success-light);
+    background-color: var(--color-success-bg, #ecfdf5);
+    border: 1px solid var(--color-success-border, #10b981);
+    color: var(--color-success, #065f46);
     padding: 0.85rem 1.25rem;
-    border-radius: var(--border-radius);
+    border-radius: var(--border-radius-sm);
     font-size: var(--font-size-sm);
     font-weight: 500;
   }
 
   .alert-error {
-    background-color: var(--color-danger-bg);
-    border: 1px solid var(--color-danger-border);
-    color: var(--color-danger-light);
+    background-color: var(--color-danger-bg, #fef2f2);
+    border: 1px solid var(--color-danger-border, #ef4444);
+    color: var(--color-danger, #991b1b);
     padding: 0.85rem 1.25rem;
-    border-radius: var(--border-radius);
+    border-radius: var(--border-radius-sm);
     font-size: var(--font-size-sm);
     font-weight: 500;
   }
@@ -759,34 +1091,111 @@ const AVATAR_PRESETS = ["👤", "🚀", "⚡", "👑", "🦊", "🦉", "🎨", "
     background-color: var(--color-primary-bg);
     border: 1px solid var(--color-surface-border);
     color: var(--color-text);
-    padding: 0.85rem 1.25rem;
-    border-radius: var(--border-radius);
+    padding: 1rem 1.25rem;
+    border-radius: var(--border-radius-sm);
     font-size: var(--font-size-sm);
     line-height: 1.5;
+    display: flex;
+    gap: var(--space-sm);
+    align-items: flex-start;
+  }
+
+  .notice-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  .btn-full {
+    width: 100%;
+    justify-content: center;
+    padding: 0.78rem;
+    font-weight: 700;
+    font-size: var(--font-size-base);
   }
 
   .form-actions {
     margin-top: var(--space-sm);
   }
 
+  /* ── Responsive ─────────────────────────────────────────────── */
   @media (max-width: 900px) {
-    .profile-grid {
+    .profile-panel-grid {
       grid-template-columns: 1fr;
+    }
+
+    .profile-preview-card {
+      order: -1; /* show preview above form on tablet */
+    }
+
+    .preview-profile-card {
+      flex-direction: row;
+      text-align: left;
+      gap: var(--space-lg);
+    }
+
+    .preview-avatar {
+      width: 70px;
+      height: 70px;
+      font-size: 2.2rem;
+      flex-shrink: 0;
     }
   }
 
   @media (max-width: 640px) {
-    .profile-header-layout {
+    .profile-hero-inner {
+      flex-direction: column;
+      text-align: center;
+      gap: var(--space-lg);
+    }
+
+    .hero-meta {
+      align-items: center;
+    }
+
+    .profile-tabs {
+      width: 100%;
+      justify-content: stretch;
+    }
+
+    .profile-tab {
+      flex: 1;
+      text-align: center;
+      padding: 0.55rem 0.5rem;
+      font-size: 0.8rem;
+    }
+
+    .profile-hero {
+      padding: var(--space-xl) var(--space-md);
+    }
+
+    .profile-form-card,
+    .profile-preview-card {
+      padding: var(--space-lg);
+    }
+
+    .preview-profile-card {
       flex-direction: column;
       text-align: center;
     }
 
-    .profile-title-row {
-      justify-content: center;
+    .preview-avatar {
+      width: 80px;
+      height: 80px;
     }
 
     .avatar-presets-grid {
       grid-template-columns: repeat(5, 1fr);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .profile-tabs {
+      flex-direction: column;
+      width: auto;
+    }
+
+    .profile-tab {
+      flex: none;
     }
   }
 </style>

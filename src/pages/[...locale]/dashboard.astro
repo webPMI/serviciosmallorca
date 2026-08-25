@@ -30,7 +30,13 @@ const defaultRoleBadge = (translations["dashboard.roleLevel"] || "Nivel: {role} 
           <p class="dashboard-subtitle">{translations["dashboard.subtitle"]}</p>
         </div>
       </div>
-      <div class="header-badge badge badge-primary" id="role-badge" data-role-pattern={translations["dashboard.roleLevel"] || "Nivel: {role} 🏆"}>{defaultRoleBadge}</div>
+      <div
+        class="header-badge badge badge-primary"
+        id="role-badge"
+        data-role-pattern={translations["dashboard.roleLevel"] || "Nivel: {role} 🏆"}
+      >
+        {defaultRoleBadge}
+      </div>
     </header>
 
     <!-- Role-aware dashboard views -->
@@ -55,6 +61,9 @@ const defaultRoleBadge = (translations["dashboard.roleLevel"] || "Nivel: {role} 
   import { can, PERMISSIONS } from "../../lib/permissions";
 
   const roleBadge = document.getElementById("role-badge");
+  const welcomeTitle = document.querySelector(".dashboard-welcome");
+  const welcomeSubtitle = document.querySelector(".dashboard-subtitle");
+  const avatarSpan = document.querySelector(".user-avatar span");
   const userView = document.getElementById("dashboard-user-view");
   const managerView = document.getElementById("dashboard-manager-view");
   const adminView = document.getElementById("dashboard-admin-view");
@@ -69,11 +78,49 @@ const defaultRoleBadge = (translations["dashboard.roleLevel"] || "Nivel: {role} 
 
   const pattern = roleBadge?.dataset.rolePattern || "Nivel: {role} 🏆";
 
-  authStore.subscribe(({ role }) => {
-    // Update role badge
+  authStore.subscribe(({ role, user }) => {
+    // Update role badge and styling
     if (roleBadge) {
       const label = ROLE_LABELS[role] ?? role;
       roleBadge.textContent = pattern.replace("{role}", label);
+      roleBadge.className = `header-badge badge badge-${role === "admin" ? "admin" : role === "manager" ? "primary" : "accent"}`;
+    }
+
+    // Role-specific Header text
+    if (role === "admin") {
+      if (avatarSpan) avatarSpan.textContent = "👑";
+      if (welcomeTitle)
+        welcomeTitle.textContent =
+          currentLang === "en"
+            ? "⚡ Admin Control Center"
+            : currentLang === "ca"
+              ? "⚡ Centre de Control Administrador"
+              : "⚡ Centro de Control Maestro";
+      if (welcomeSubtitle)
+        welcomeSubtitle.textContent =
+          currentLang === "en"
+            ? "Oversee moderation queues, user accounts, system analytics, and verified listings."
+            : currentLang === "ca"
+              ? "Supervisió de moderació, usuaris, mètriques i catàleg oficial."
+              : "Supervisión de moderación, gestión de usuarios, analíticas y catálogo oficial.";
+    } else if (role === "manager") {
+      if (avatarSpan) avatarSpan.textContent = "🏢";
+      if (welcomeTitle)
+        welcomeTitle.textContent =
+          currentLang === "en"
+            ? "🏢 Business Manager Hub"
+            : currentLang === "ca"
+              ? "🏢 Panell de Gestió de Negocis"
+              : "🏢 Panel de Gestión de Negocios";
+      if (welcomeSubtitle)
+        welcomeSubtitle.textContent =
+          currentLang === "en"
+            ? "Manage your verified business listings, schedules, and community replies."
+            : currentLang === "ca"
+              ? "Gestiona les teves fitxes oficials de negocis i respostes a usuaris."
+              : "Gestiona las fichas de tus negocios verificados y respuestas a clientes.";
+    } else {
+      if (avatarSpan) avatarSpan.textContent = "🌴";
     }
 
     // Show the correct dashboard view
@@ -100,6 +147,27 @@ const defaultRoleBadge = (translations["dashboard.roleLevel"] || "Nivel: {role} 
     margin-bottom: var(--space-xl);
     flex-wrap: wrap;
     gap: var(--space-md);
+    background: linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--color-primary) 10%, var(--color-surface)),
+      color-mix(in srgb, var(--color-accent) 6%, var(--color-surface))
+    );
+    border-radius: var(--border-radius-xl, 1.5rem);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .dashboard-header::after {
+    content: "";
+    position: absolute;
+    bottom: -40px;
+    right: -40px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--color-accent) 0%, transparent 70%);
+    opacity: 0.07;
+    pointer-events: none;
   }
 
   .header-content {
@@ -109,23 +177,33 @@ const defaultRoleBadge = (translations["dashboard.roleLevel"] || "Nivel: {role} 
   }
 
   .user-avatar {
-    width: 60px;
-    height: 60px;
+    width: 64px;
+    height: 64px;
     border-radius: var(--border-radius-full);
     background: linear-gradient(135deg, var(--color-primary-light), var(--color-accent));
-    font-size: 1.8rem;
-    box-shadow: var(--shadow-glow);
+    font-size: 2rem;
+    box-shadow:
+      0 4px 20px var(--shadow-overlay),
+      0 0 0 3px var(--color-surface);
+    flex-shrink: 0;
   }
 
   .dashboard-welcome {
-    font-size: var(--font-size-2xl);
+    font-size: clamp(1.3rem, 3vw, var(--font-size-2xl));
     line-height: 1.2;
+    font-weight: 800;
   }
 
   .dashboard-subtitle {
     color: var(--color-text-light);
     font-size: var(--font-size-sm);
     margin-top: var(--space-xs);
+  }
+
+  .header-badge {
+    font-size: var(--font-size-sm);
+    font-weight: 700;
+    white-space: nowrap;
   }
 
   .stats-grid {
@@ -267,6 +345,7 @@ const defaultRoleBadge = (translations["dashboard.roleLevel"] || "Nivel: {role} 
     padding: var(--space-xs);
     background-color: var(--color-surface-hover);
     border-radius: var(--border-radius-sm);
+    flex-shrink: 0;
   }
 
   .activity-details {
@@ -286,9 +365,22 @@ const defaultRoleBadge = (translations["dashboard.roleLevel"] || "Nivel: {role} 
     color: var(--color-text-muted);
   }
 
+  /* ── Responsive ────────────────────────────────────────────── */
   @media (max-width: 900px) {
     .dashboard-main-grid {
       grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .dashboard-header {
+      padding: var(--space-lg);
+    }
+
+    .user-avatar {
+      width: 52px;
+      height: 52px;
+      font-size: 1.6rem;
     }
   }
 
@@ -296,22 +388,20 @@ const defaultRoleBadge = (translations["dashboard.roleLevel"] || "Nivel: {role} 
     .dashboard-header {
       flex-direction: column;
       align-items: flex-start;
-      padding: var(--space-lg);
+      padding: var(--space-lg) var(--space-md);
     }
 
     .header-content {
-      flex-direction: column;
-      align-items: flex-start;
+      flex-direction: row;
+      width: 100%;
+    }
+
+    .header-badge {
+      align-self: flex-start;
     }
 
     .dashboard-welcome {
       font-size: var(--font-size-xl);
-    }
-
-    .user-avatar {
-      width: 48px;
-      height: 48px;
-      font-size: 1.4rem;
     }
 
     .stat-value {

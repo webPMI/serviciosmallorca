@@ -9,14 +9,14 @@
  * y también se almacenan en memoria para consulta desde el floating button.
  */
 (function () {
-  'use strict';
+  "use strict";
 
   if (window.__devtoolsLogger) return; // singleton
 
   var MAX_ENTRIES = 500;
   var buffer = [];
   var originalConsole = {};
-  var LEVELS = ['debug', 'info', 'log', 'warn', 'error'];
+  var LEVELS = ["debug", "info", "log", "warn", "error"];
 
   // ==========================================================================
   // LOGGER API
@@ -39,7 +39,9 @@
 
     /** Obtener entradas filtradas por nivel */
     getByLevel: function (level) {
-      return buffer.filter(function (e) { return e.level === level; });
+      return buffer.filter(function (e) {
+        return e.level === level;
+      });
     },
 
     /** Obtener las últimas N entradas */
@@ -55,19 +57,27 @@
 
     /** Exportar como texto legible */
     exportText: function () {
-      return buffer.map(function (e) {
-        var time = new Date(e.timestamp).toISOString();
-        var level = e.level.toUpperCase().padEnd(5, ' ');
-        var args = e.args.map(function (a) {
-          if (a === null) return 'null';
-          if (a === undefined) return 'undefined';
-          if (typeof a === 'object') {
-            try { return JSON.stringify(a, null, 0); } catch (ex) { return '[Object]'; }
-          }
-          return String(a);
-        }).join(' ');
-        return '[' + time + '] ' + level + ' | ' + args;
-      }).join('\n');
+      return buffer
+        .map(function (e) {
+          var time = new Date(e.timestamp).toISOString();
+          var level = e.level.toUpperCase().padEnd(5, " ");
+          var args = e.args
+            .map(function (a) {
+              if (a === null) return "null";
+              if (a === undefined) return "undefined";
+              if (typeof a === "object") {
+                try {
+                  return JSON.stringify(a, null, 0);
+                } catch (ex) {
+                  return "[Object]";
+                }
+              }
+              return String(a);
+            })
+            .join(" ");
+          return "[" + time + "] " + level + " | " + args;
+        })
+        .join("\n");
     },
 
     /** Suscribirse a nuevos logs (callback recibe entry) */
@@ -100,12 +110,14 @@
     };
 
     // Capturar stack trace para errores
-    if (level === 'error' || level === 'warn') {
-      try { throw new Error(); } catch (e) {
-        var stack = e.stack || '';
+    if (level === "error" || level === "warn") {
+      try {
+        throw new Error();
+      } catch (e) {
+        var stack = e.stack || "";
         // Limpiar: quitar las primeras líneas (este archivo)
-        var lines = stack.split('\n').slice(3);
-        entry.stack = lines.join('\n').trim();
+        var lines = stack.split("\n").slice(3);
+        entry.stack = lines.join("\n").trim();
       }
     }
 
@@ -118,14 +130,20 @@
     // Notificar suscriptores
     if (logger._subscribers) {
       logger._subscribers.forEach(function (fn) {
-        try { fn(entry); } catch (e) { /* silencioso */ }
+        try {
+          fn(entry);
+        } catch (e) {
+          /* silencioso */
+        }
       });
     }
 
     // Enviar vía postMessage al DevTools panel (si existe target)
     try {
-      window.postMessage({ type: '__DT_LOG', payload: entry }, '*');
-    } catch (e) { /* cross-origin */ }
+      window.postMessage({ type: "__DT_LOG", payload: entry }, "*");
+    } catch (e) {
+      /* cross-origin */
+    }
   }
 
   // ==========================================================================
@@ -136,7 +154,9 @@
       originalConsole[level] = console[level].bind(console);
       console[level] = function () {
         // Llamar al original
-        try { originalConsole[level].apply(console, arguments); } catch (e) { }
+        try {
+          originalConsole[level].apply(console, arguments);
+        } catch (e) {}
 
         // Almacenar en buffer
         pushEntry(level, arguments);
@@ -151,7 +171,7 @@
       origAssert.apply(console, arguments);
       if (!condition) {
         var args = Array.prototype.slice.call(arguments, 1);
-        pushEntry('error', ['Assertion failed:'].concat(args));
+        pushEntry("error", ["Assertion failed:"].concat(args));
       }
     };
   }
@@ -159,9 +179,13 @@
   // ==========================================================================
   // LOG ARCHIVO CARGADO
   // ==========================================================================
-  var nativeLog = originalConsole.log || function () { };
+  var nativeLog = originalConsole.log || function () {};
   nativeLog(
-    '%c📋 DevTools Logger active %c| %cbuffer: ' + MAX_ENTRIES + ' entries %c| %cwindow.__devtoolsLogger',
-    'color:#00d4aa;font-weight:bold', '', 'color:#ffa502', '', 'color:#8899aa'
+    "%c📋 DevTools Logger active %c| %cbuffer: " + MAX_ENTRIES + " entries %c| %cwindow.__devtoolsLogger",
+    "color:#00d4aa;font-weight:bold",
+    "",
+    "color:#ffa502",
+    "",
+    "color:#8899aa",
   );
 })();

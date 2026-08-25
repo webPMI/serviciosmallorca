@@ -1,8 +1,9 @@
 // =============================================================================
-// Firestore Security Rules — WebApp Starter
+// Firestore Security Rules — Servicios Mallorca
 // =============================================================================
 // Roles: guest, user, manager, admin
 // Document path: users/{uid}
+// Last reviewed: 2026-08-25
 // =============================================================================
 
 rules_version = '2';
@@ -28,35 +29,219 @@ service cloud.firestore {
       return request.auth.uid == uid;
     }
 
+    /** Returns true if the field value is a valid https URL or null. */
+    function isValidUrl(val) {
+      return val == null || val.matches('https://.*');
+    }
+
+    /** Returns true if a string field is within a byte range. */
+    function withinLength(val, maxLen) {
+      return val is string && val.size() <= maxLen;
+    }
+
     // -------------------------------------------------------------------------
     // Users collection
     // -------------------------------------------------------------------------
     match /users/{uid} {
 
-      // Anyone can read their own profile
-      // Managers and admins can read any profile
+      // Anyone can read their own profile; Managers and Admins can read any profile
       allow read: if isSignedIn() && (
         isOwner(uid) ||
         getUserRole() == 'manager' ||
         getUserRole() == 'admin'
       );
 
-      // A user can only create their *own* document (on registration)
-      // The role field is forced to "user" — only admin can escalate
+      // A user can only create their own profile document on registration
       allow create: if isSignedIn()
         && isOwner(uid)
         && request.resource.data.role == 'user'
-        && request.resource.data.keys().hasAll(['role', 'displayName', 'email', 'createdAt', 'updatedAt']);
+        && request.resource.data.keys().hasAll(['role', 'displayName', 'email', 'createdAt', 'updatedAt'])
+        && withinLength(request.resource.data.displayName, 120)
+        && withinLength(request.resource.data.email, 254);
 
-      // A user can update their own profile (but NOT their role)
-      // Admins can update any field on any user
+      // A user can update their own profile (cannot escalate their own role)
+      // photoURL must be https:// or null
       allow update: if isSignedIn() && (
-        (isOwner(uid) && request.resource.data.role == resource.data.role) ||
+        (
+          isOwner(uid)
+          && request.resource.data.role == resource.data.role
+          && request.resource.data.email == resource.data.email
+          && (!('photoURL' in request.resource.data) || isValidUrl(request.resource.data.photoURL))
+          && (!('displayName' in request.resource.data) || withinLength(request.resource.data.displayName, 120))
+        ) ||
         getUserRole() == 'admin'
       );
 
       // Only admins can delete users
       allow delete: if isSignedIn() && getUserRole() == 'admin';
+    }
+
+    // -------------------------------------------------------------------------
+    // Services Directory collection (Public read, admin/manager write)
+    // -------------------------------------------------------------------------
+    match /services/{serviceId} {
+      allow read: if true;
+      allow create: if isSignedIn() && (
+        getUserRole() == 'admin' ||
+        getUserRole() == 'manager'
+      );
+      allow update: if isSignedIn() && (
+        getUserRole() == 'admin' ||
+        (getUserRole() == 'manager' && resource.data.ownerUid == request.auth.uid)
+      );
+      allow delete: if isSignedIn() && getUserRole() == 'admin';
+    }
+
+    // -------------------------------------------------------------------------
+    // Service Overrides (Dynamic Manager Overlays)
+    // -------------------------------------------------------------------------
+    match /service_overrides/{slug} {
+      allow read: if true;
+      allow create, update: if isSignedIn() && (
+        getUserRole() == 'admin' ||
+        (getUserRole() == 'manager' && (
+          // Manager can create if setting ownerUid to themselves, or update if already owner
+          (!('ownerUid' in resource.data) && request.resource.data.ownerUid == request.auth.uid) ||
+          resource.data.ownerUid == request.auth.uid
+        ))
+      );
+      allow delete: if isSignedIn() && getUserRole() == 'admin';
+    }
+
+    // -------------------------------------------------------------------------
+    // Service Claims collection (Solicitudes de reclamación)
+    // -------------------------------------------------------------------------
+    match /service_claims/{claimId} {
+      // User can create a claim, read their own claims; Admin can read and update all claims
+      allow create: if isSignedIn()
+        && request.resource.data.applicantUid == request.auth.uid
+        && withinLength(request.resource.data.applicantEmail, 254)
+        && withinLength(request.resource.data.verificationProof, 2000);
+      allow read: if isSignedIn() && (
+        resource.data.applicantUid == request.auth.uid ||
+        getUserRole() == 'admin'
+      );
+      allow update, delete: if isSignedIn() && getUserRole() == 'admin';
+    }
+
+    // -------------------------------------------------------------------------
+    // Service Submissions collection (Altas de nuevos negocios)
+    // -------------------------------------------------------------------------
+    match /service_submissions/{submissionId} {
+      // Authenticated users can submit a new service proposal
+      allow create: if isSignedIn()
+        && request.resource.data.applicantUid == request.auth.uid
+        && withinLength(request.resource.data.name, 200)
+        && withinLength(request.resource.data.description, 5000);
+      allow read: if isSignedIn() && (
+        resource.data.applicantUid == request.auth.uid ||
+        getUserRole() == 'admin'
+      );
+      allow update, delete: if isSignedIn() && getUserRole() == 'admin';
+    }
+
+    // -------------------------------------------------------------------------
+    // Service Deletion Requests (Derecho de supresión / baja)
+    // -------------------------------------------------------------------------
+    match /service_deletion_requests/{requestId} {
+      allow create: if isSignedIn()
+        && request.resource.data.applicantUid == request.auth.uid
+        && withinLength(request.resource.data.reason, 2000);
+      allow read: if isSignedIn() && (
+        resource.data.applicantUid == request.auth.uid ||
+        getUserRole() == 'admin'
+      );
+      allow update, delete: if isSignedIn() && getUserRole() == 'admin';
+    }
+
+    // -------------------------------------------------------------------------
+    // Service Reports & Suggestions (Sugerir cambios o reportar errores)
+    // ⚠️ Require auth to prevent bot spam; anonymous users still use the form
+    //    but must be at least signed in. Open reports capped at 2000 chars.
+    // -------------------------------------------------------------------------
+    match /service_reports/{reportId} {
+      // Require sign-in to prevent automated bot spam
+      allow create: if isSignedIn()
+        && withinLength(request.resource.data.description, 2000)
+        && withinLength(request.resource.data.category, 50)
+        && request.resource.data.keys().hasAll(['serviceId', 'serviceName', 'category', 'description']);
+      allow read: if isSignedIn() && (
+        getUserRole() == 'admin' ||
+        (resource.data.reporterUid != null && resource.data.reporterUid == request.auth.uid)
+      );
+      allow update, delete: if isSignedIn() && getUserRole() == 'admin';
+    }
+
+    // -------------------------------------------------------------------------
+    // Reviews collection (Public read, authenticated create)
+    // -------------------------------------------------------------------------
+    match /reviews/{reviewId} {
+      allow read: if true;
+      allow create: if isSignedIn()
+        && request.resource.data.authorUid == request.auth.uid
+        && withinLength(request.resource.data.comment, 2000)
+        && request.resource.data.rating is int
+        && request.resource.data.rating >= 1
+        && request.resource.data.rating <= 5;
+      allow update, delete: if isSignedIn() && (
+        resource.data.authorUid == request.auth.uid ||
+        getUserRole() == 'admin'
+      );
+    }
+
+    // -------------------------------------------------------------------------
+    // Contact Leads & Inquiries
+    // -------------------------------------------------------------------------
+    match /leads/{leadId} {
+      // Require basic fields to prevent blank spam submissions
+      allow create: if withinLength(request.resource.data.email, 254)
+        && withinLength(request.resource.data.message, 2000)
+        && request.resource.data.keys().hasAll(['email', 'message']);
+      allow read, update: if isSignedIn() && (
+        getUserRole() == 'admin' ||
+        resource.data.recipientUid == request.auth.uid
+      );
+      allow delete: if isSignedIn() && getUserRole() == 'admin';
+    }
+
+    // -------------------------------------------------------------------------
+    // Forum Topics collection (Public read, authenticated create & like)
+    // -------------------------------------------------------------------------
+    match /forum_topics/{topicId} {
+      allow read: if true;
+      allow create: if isSignedIn()
+        && request.resource.data.authorUid == request.auth.uid
+        && withinLength(request.resource.data.title, 300)
+        && withinLength(request.resource.data.body, 10000);
+      allow update: if isSignedIn() && (
+        resource.data.authorUid == request.auth.uid ||
+        getUserRole() == 'admin' ||
+        // Permit like toggles only on these specific counters
+        request.resource.data.diff(resource.data).affectedKeys().hasOnly(['likesCount', 'likedUsers', 'repliesCount'])
+      );
+      allow delete: if isSignedIn() && (
+        resource.data.authorUid == request.auth.uid ||
+        getUserRole() == 'admin'
+      );
+    }
+
+    // -------------------------------------------------------------------------
+    // Forum Replies collection (Public read, authenticated create & like)
+    // -------------------------------------------------------------------------
+    match /forum_replies/{replyId} {
+      allow read: if true;
+      allow create: if isSignedIn()
+        && request.resource.data.authorUid == request.auth.uid
+        && withinLength(request.resource.data.body, 5000);
+      allow update: if isSignedIn() && (
+        resource.data.authorUid == request.auth.uid ||
+        getUserRole() == 'admin' ||
+        request.resource.data.diff(resource.data).affectedKeys().hasOnly(['likesCount', 'likedUsers'])
+      );
+      allow delete: if isSignedIn() && (
+        resource.data.authorUid == request.auth.uid ||
+        getUserRole() == 'admin'
+      );
     }
 
     // -------------------------------------------------------------------------

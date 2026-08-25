@@ -1,0 +1,344 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Navbar from "../../../components/Navbar.astro";
+import Footer from "../../../components/Footer.astro";
+import ServiceCard from "../../../components/ServiceCard.astro";
+import AdSenseSlot from "../../../components/AdSenseSlot.astro";
+import { getPostBySlug } from "../../../data/posts";
+import { CATEGORIES } from "../../../data/categories";
+import { getServiceById } from "../../../data/services";
+import { getLocaleFromUrl, loadTranslations, getLangPrefix, type Locale } from "../../../i18n";
+
+export const prerender = false;
+
+const locale = getLocaleFromUrl(Astro.url) as Locale;
+const translations = await loadTranslations(locale);
+const prefix = getLangPrefix(locale);
+
+const { slug } = Astro.params;
+const post = slug ? getPostBySlug(slug) : undefined;
+
+if (!post) {
+  return Astro.redirect(`${prefix}blog`);
+}
+
+const category = CATEGORIES.find((c) => c.id === post.category);
+const title = post.title[locale];
+const excerpt = post.excerpt[locale];
+const content = post.content[locale];
+
+// Fetch related services
+const relatedServices = post.relatedServiceIds
+  .map((id) => getServiceById(id))
+  .filter((s): s is NonNullable<typeof s> => s !== undefined);
+
+// Schema.org structured data for BlogPosting
+const schemaOrg = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: title,
+  description: excerpt,
+  image: post.coverImage,
+  datePublished: post.publishDate,
+  author: {
+    "@type": "Person",
+    name: post.author.name,
+    jobTitle: post.author.role,
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "Servicios Mallorca",
+    url: "https://serviciosmallorca.es",
+  },
+};
+---
+
+<BaseLayout title={`${title} - ${translations["site.title"]}`} lang={locale} description={excerpt}>
+  <script type="application/ld+json" set:html={JSON.stringify(schemaOrg)} />
+
+  <Navbar currentLocale={locale} translations={translations} getLangPrefix={getLangPrefix} />
+
+  <main class="container section">
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+      <a href={prefix}>{translations["nav.home"]}</a>
+      <span>/</span>
+      <a href={`${prefix}blog`}>{translations["nav.blog"]}</a>
+      <span>/</span>
+      <span class="active-crumb">{title}</span>
+    </nav>
+
+    <!-- Post Article -->
+    <article class="post-layout">
+      <header class="post-header text-center">
+        {
+          category && (
+            <span class="badge badge-accent">
+              {category.icon} {category.name[locale]}
+            </span>
+          )
+        }
+
+        <h1 class="post-main-title">{title}</h1>
+
+        <div class="post-author-bar">
+          <img src={post.author.avatar} alt={post.author.name} class="post-avatar" />
+          <div class="post-author-text">
+            <span class="author-name">{post.author.name}</span>
+            <span class="author-role">{post.author.role}</span>
+          </div>
+          <span class="bar-separator">·</span>
+          <time datetime={post.publishDate} class="publish-time">
+            {translations["blog.published"]}: {post.publishDate}
+          </time>
+          <span class="bar-separator">·</span>
+          <span class="read-time">⏱️ {post.readTime} {translations["blog.readTime"]}</span>
+        </div>
+      </header>
+
+      <!-- Featured Image -->
+      <div class="post-cover-wrap card">
+        <img src={post.coverImage} alt={title} class="post-cover-img" />
+      </div>
+
+      <!-- Post Body -->
+      <div class="post-body card">
+        <div class="lead-paragraph">
+          {excerpt}
+        </div>
+
+        <!-- AdSense In-Article Slot -->
+        <AdSenseSlot format="in-feed" slotId="blog-in-article-1" />
+
+        <div class="content-paragraphs">
+          {
+            content.split("\n\n").map((paragraph) => {
+              const trimmed = paragraph.trim();
+              if (!trimmed) return null;
+              if (trimmed.startsWith("### ")) {
+                return <h3 class="content-h3">{trimmed.replace("### ", "")}</h3>;
+              }
+              if (trimmed.startsWith("- ")) {
+                const items = trimmed.split("\n").map((i) => i.replace(/^- /, ""));
+                return (
+                  <ul class="content-list">
+                    {items.map((item) => (
+                      <li set:html={item.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")} />
+                    ))}
+                  </ul>
+                );
+              }
+              return <p class="content-p" set:html={trimmed.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")} />;
+            })
+          }
+        </div>
+
+        <div class="post-tags-row">
+          <span class="tags-label">Etiquetas:</span>
+          {post.tags.map((tag) => <span class="tag-pill">#{tag}</span>)}
+        </div>
+      </div>
+
+      <!-- Related Services Section -->
+      {
+        relatedServices.length > 0 && (
+          <section class="related-services-section">
+            <div class="section-header">
+              <h2 class="section-title">{translations["blog.relatedServices"]}</h2>
+            </div>
+
+            <div class="related-services-grid">
+              {relatedServices.map((service) => (
+                <ServiceCard
+                  service={service}
+                  currentLocale={locale}
+                  getLangPrefix={getLangPrefix}
+                  translations={translations}
+                />
+              ))}
+            </div>
+          </section>
+        )
+      }
+
+      <!-- Back to Blog Button -->
+      <div class="back-blog-wrap text-center">
+        <a href={`${prefix}blog`} class="btn btn-secondary">
+          ← {translations["blog.backToBlog"]}
+        </a>
+      </div>
+    </article>
+  </main>
+
+  <Footer translations={translations} currentLocale={locale} getLangPrefix={getLangPrefix} />
+</BaseLayout>
+
+<style>
+  .breadcrumb-nav {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-md);
+  }
+
+  .breadcrumb-nav a {
+    color: var(--color-text-light);
+    text-decoration: none;
+  }
+
+  .active-crumb {
+    color: var(--color-primary);
+    font-weight: 600;
+  }
+
+  .post-layout {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .post-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-xl);
+  }
+
+  .post-main-title {
+    font-size: clamp(2rem, 4.5vw, var(--font-size-4xl));
+    font-weight: 800;
+    line-height: 1.2;
+    color: var(--color-text);
+  }
+
+  .post-author-bar {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+    margin-top: var(--space-xs);
+  }
+
+  .post-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: var(--border-radius-full);
+    object-fit: cover;
+  }
+
+  .post-author-text {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .author-name {
+    font-weight: 700;
+    color: var(--color-text);
+  }
+
+  .post-cover-wrap {
+    padding: 0;
+    overflow: hidden;
+    height: 420px;
+    margin-bottom: var(--space-xl);
+  }
+
+  .post-cover-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .post-body {
+    padding: var(--space-2xl);
+    margin-bottom: var(--space-2xl);
+  }
+
+  .lead-paragraph {
+    font-size: var(--font-size-lg);
+    font-weight: 500;
+    color: var(--color-text-light);
+    line-height: 1.7;
+    padding-bottom: var(--space-lg);
+    border-bottom: 1px solid var(--color-surface-border);
+    margin-bottom: var(--space-lg);
+  }
+
+  .content-paragraphs {
+    font-size: var(--font-size-base);
+    line-height: 1.8;
+    color: var(--color-text);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .content-h3 {
+    font-size: var(--font-size-xl);
+    font-weight: 800;
+    margin-top: var(--space-md);
+    color: var(--color-text);
+  }
+
+  .content-list {
+    padding-left: var(--space-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .post-tags-row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    flex-wrap: wrap;
+    padding-top: var(--space-lg);
+    border-top: 1px solid var(--color-surface-border);
+    margin-top: var(--space-xl);
+  }
+
+  .tags-label {
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    color: var(--color-text-muted);
+  }
+
+  .tag-pill {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.6rem;
+    border-radius: var(--border-radius-full);
+    background: var(--color-primary-bg);
+    color: var(--color-primary-dark);
+    font-weight: 600;
+  }
+
+  .related-services-section {
+    margin-bottom: var(--space-2xl);
+  }
+
+  .related-services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--space-lg);
+  }
+
+  .back-blog-wrap {
+    margin-top: var(--space-xl);
+  }
+
+  @media (max-width: 640px) {
+    .post-cover-wrap {
+      height: 240px;
+    }
+
+    .post-body {
+      padding: var(--space-lg);
+    }
+  }
+</style>

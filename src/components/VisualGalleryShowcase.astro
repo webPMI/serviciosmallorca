@@ -1,0 +1,398 @@
+---
+interface Props {
+  businessName: string;
+  mainImage: string;
+  gallery: string[];
+  currentLocale?: "es" | "en" | "ca";
+}
+
+const { businessName, mainImage, gallery = [] } = Astro.props;
+
+const allImages = [mainImage, ...gallery].filter((img) => Boolean(img && img.trim() !== ""));
+const hasImages = allImages.length > 0;
+
+if (!hasImages) {
+  return null;
+}
+---
+
+<section class="card section-box visual-gallery-showcase">
+  <div class="gallery-header-row">
+    <div>
+      <span class="gallery-badge">📸 Portafolio & Galería de Trabajos</span>
+      <h2 class="box-title">Galería Fotográfica Oficial de {businessName}</h2>
+    </div>
+    <span class="gallery-counter-pill">{allImages.length} {allImages.length === 1 ? "foto" : "fotos"}</span>
+  </div>
+
+  <!-- Interactive Mosaic Grid -->
+  <div class="mosaic-gallery-grid" id="interactive-mosaic-grid">
+    {
+      allImages.map((imgUrl, index) => (
+        <div
+          class:list={[
+            "mosaic-item",
+            index === 0 ? "mosaic-hero" : index === 1 || index === 2 ? "mosaic-medium" : "mosaic-small",
+          ]}
+          data-lightbox-trigger={imgUrl}
+          data-image-index={index}
+        >
+          <img
+            src={imgUrl}
+            alt={`${businessName} fotografía ${index + 1}`}
+            loading={index < 2 ? "eager" : "lazy"}
+            decoding="async"
+            class="mosaic-img"
+            onerror="this.closest('.mosaic-item').style.display='none';"
+          />
+          <div class="mosaic-overlay">
+            <span class="zoom-icon">🔍 Ampliar</span>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+
+  <!-- Lightbox Modal Container -->
+  <dialog id="gallery-lightbox-modal" class="lightbox-dialog">
+    <div class="lightbox-backdrop">
+      <div class="lightbox-content-box">
+        <button id="lightbox-close-btn" class="lightbox-btn-close" aria-label="Cerrar vista ampliada">✕</button>
+        <button id="lightbox-prev-btn" class="lightbox-nav-btn prev" aria-label="Foto anterior">‹</button>
+
+        <div class="lightbox-img-wrapper">
+          <img id="lightbox-active-img" src="" alt="Vista ampliada" class="lightbox-img" />
+          <div class="lightbox-caption-bar">
+            <span id="lightbox-caption-text">{businessName}</span>
+            <span id="lightbox-counter-text" class="lightbox-counter">1 / 1</span>
+          </div>
+        </div>
+
+        <button id="lightbox-next-btn" class="lightbox-nav-btn next" aria-label="Foto siguiente">›</button>
+      </div>
+    </div>
+  </dialog>
+</section>
+
+<script is:inline define:vars={{ allImages, businessName }}>
+  let activeIndex = 0;
+  const modal = document.getElementById("gallery-lightbox-modal");
+  const lightboxImg = document.getElementById("lightbox-active-img");
+  const counterText = document.getElementById("lightbox-counter-text");
+  const closeBtn = document.getElementById("lightbox-close-btn");
+  const prevBtn = document.getElementById("lightbox-prev-btn");
+  const nextBtn = document.getElementById("lightbox-next-btn");
+  const triggers = document.querySelectorAll("[data-lightbox-trigger]");
+
+  function updateLightbox(index) {
+    if (!allImages || allImages.length === 0) return;
+    activeIndex = (index + allImages.length) % allImages.length;
+    if (lightboxImg) {
+      lightboxImg.src = allImages[activeIndex];
+    }
+    if (counterText) {
+      counterText.textContent = `${activeIndex + 1} / ${allImages.length}`;
+    }
+  }
+
+  triggers.forEach((item) => {
+    item.addEventListener("click", () => {
+      const idx = parseInt(item.getAttribute("data-image-index") || "0", 10);
+      updateLightbox(idx);
+      if (modal && typeof modal.showModal === "function") {
+        modal.showModal();
+      }
+    });
+  });
+
+  if (closeBtn && modal) {
+    closeBtn.addEventListener("click", () => modal.close());
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal || e.target.classList.contains("lightbox-backdrop")) {
+        modal.close();
+      }
+    });
+  }
+
+  if (prevBtn) {
+    prevBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      updateLightbox(activeIndex - 1);
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      updateLightbox(activeIndex + 1);
+    });
+  }
+
+  document.addEventListener("keydown", (e) => {
+    if (modal && modal.open) {
+      if (e.key === "ArrowLeft") updateLightbox(activeIndex - 1);
+      if (e.key === "ArrowRight") updateLightbox(activeIndex + 1);
+      if (e.key === "Escape") modal.close();
+    }
+  });
+</script>
+
+<style>
+  .visual-gallery-showcase {
+    margin-bottom: var(--space-lg);
+    background: var(--color-surface);
+    border: 1px solid var(--color-surface-border);
+  }
+
+  .gallery-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-md);
+    flex-wrap: wrap;
+  }
+
+  .gallery-badge {
+    display: inline-block;
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-primary);
+    margin-bottom: 0.2rem;
+  }
+
+  .gallery-counter-pill {
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.2rem 0.6rem;
+    background: var(--color-bg);
+    color: var(--color-text-muted);
+    border: 1px solid var(--color-surface-border);
+    border-radius: 999px;
+  }
+
+  /* Mosaic Grid Layout */
+  .mosaic-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 180px;
+    gap: var(--space-sm);
+  }
+
+  .mosaic-item {
+    position: relative;
+    border-radius: var(--border-radius-sm);
+    overflow: hidden;
+    cursor: pointer;
+    background: var(--color-bg);
+    border: 1px solid var(--color-surface-border);
+    transition:
+      transform var(--transition-smooth, 0.3s ease),
+      border-color var(--transition-smooth, 0.3s ease);
+  }
+
+  .mosaic-item:hover {
+    transform: scale(1.02);
+    border-color: var(--color-primary);
+    z-index: 2;
+  }
+
+  .mosaic-hero {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+
+  .mosaic-medium {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+
+  .mosaic-small {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+
+  .mosaic-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    image-orientation: from-image;
+    transition: transform 0.4s ease;
+  }
+
+  .mosaic-item:hover .mosaic-img {
+    transform: scale(1.05);
+  }
+
+  .mosaic-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+  }
+
+  .mosaic-item:hover .mosaic-overlay {
+    opacity: 1;
+  }
+
+  .zoom-icon {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0.65);
+    padding: 0.35rem 0.75rem;
+    border-radius: 999px;
+    backdrop-filter: blur(4px);
+  }
+
+  /* Lightbox Dialog */
+  .lightbox-dialog {
+    border: none;
+    padding: 0;
+    background: transparent;
+    max-width: 100vw;
+    max-height: 100vh;
+    width: 100%;
+    height: 100%;
+  }
+
+  .lightbox-dialog::backdrop {
+    background: rgba(0, 0, 0, 0.88);
+    backdrop-filter: blur(8px);
+  }
+
+  .lightbox-backdrop {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-md);
+    box-sizing: border-box;
+  }
+
+  .lightbox-content-box {
+    position: relative;
+    max-width: 900px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .lightbox-img-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+    max-height: 85vh;
+  }
+
+  .lightbox-img {
+    max-width: 100%;
+    max-height: 75vh;
+    object-fit: contain;
+    border-radius: var(--border-radius-sm);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    image-orientation: from-image;
+  }
+
+  .lightbox-caption-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: var(--space-sm) 0;
+    color: #ffffff;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+
+  .lightbox-counter {
+    color: var(--color-primary);
+  }
+
+  .lightbox-btn-close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    background: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    border: none;
+    font-size: 1.2rem;
+    width: 36px;
+    height: 36px;
+    border-radius: 999px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease;
+  }
+
+  .lightbox-btn-close:hover {
+    background: rgba(255, 255, 255, 0.35);
+  }
+
+  .lightbox-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.6);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 2.2rem;
+    width: 48px;
+    height: 48px;
+    border-radius: 999px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    transition: all 0.2s ease;
+    z-index: 10;
+  }
+
+  .lightbox-nav-btn.prev {
+    left: -20px;
+  }
+
+  .lightbox-nav-btn.next {
+    right: -20px;
+  }
+
+  .lightbox-nav-btn:hover {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+  }
+
+  @media (max-width: 768px) {
+    .mosaic-gallery-grid {
+      grid-template-columns: repeat(2, 1fr);
+      grid-auto-rows: 150px;
+    }
+    .mosaic-hero {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+    .mosaic-medium,
+    .mosaic-small {
+      grid-column: span 1;
+      grid-row: span 1;
+    }
+    .lightbox-nav-btn.prev {
+      left: 5px;
+    }
+    .lightbox-nav-btn.next {
+      right: 5px;
+    }
+  }
+</style>

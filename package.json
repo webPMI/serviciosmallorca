@@ -1,7 +1,7 @@
 {
-  "name": "webapp-starter",
+  "name": "servicios-mallorca",
   "type": "module",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "engines": {
     "node": ">=22.12.0"
   },
@@ -17,7 +17,10 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "typecheck": "tsc --noEmit",
-    "check": "npm run lint && npm run typecheck && npm test",
+    "audit:services": "node --experimental-strip-types scripts/audit-services.ts",
+    "add:service": "node --experimental-strip-types scripts/add-service.ts",
+    "validate:taxonomy": "node --experimental-strip-types scripts/validate-taxonomy.ts",
+    "check": "npm run lint && npm run typecheck && npm test && npm run validate:taxonomy",
     "prepare": "husky"
   },
   "dependencies": {
@@ -41,11 +44,7 @@
     "vitest": "^3.0.7"
   },
   "lint-staged": {
-    "*.{ts,astro}": [
-      "eslint --fix",
-      "prettier --write"
-    ],
-    "*.{json,md,css}": [
+    "*.{ts,astro,json,md,css,js,mjs}": [
       "prettier --write"
     ]
   }

@@ -10,39 +10,25 @@ interface Props {
   currentPath?: string;
 }
 
-const {
-  currentLocale,
-  translations,
-  getLangPrefix,
-  currentPath = "",
-} = Astro.props;
+const { currentLocale, translations, getLangPrefix, currentPath = "" } = Astro.props;
 
-// Cleanly calculate path suffix (e.g. "/login", "/dashboard", or "")
-const rawPath = currentPath.replace(/^\/(es|en|ca)/, "");
-const targetPath = rawPath === "/" ? "" : (rawPath.startsWith("/") ? rawPath : `/${rawPath}`);
+// Cleanly calculate path suffix (e.g. "login", "profile", or "")
+const rawPath = currentPath.replace(/^\/(es|en|ca)(\/|$)/, "");
+const cleanPath = rawPath.replace(/^\/+/, "");
 ---
 
 <div class="language-switcher">
   <span class="language-label">Idioma:</span>
   <nav class="language-nav" aria-label="Cambiar idioma">
-    <a
-      href={`${getLangPrefix("es")}${targetPath}`}
-      class:list={["language-link", { active: currentLocale === "es" }]}
-    >
+    <a href={`${getLangPrefix("es")}${cleanPath}`} class:list={["language-link", { active: currentLocale === "es" }]}>
       {translations["nav.es"]}
     </a>
     <span class="language-separator">|</span>
-    <a
-      href={`${getLangPrefix("en")}${targetPath}`}
-      class:list={["language-link", { active: currentLocale === "en" }]}
-    >
+    <a href={`${getLangPrefix("en")}${cleanPath}`} class:list={["language-link", { active: currentLocale === "en" }]}>
       {translations["nav.en"]}
     </a>
     <span class="language-separator">|</span>
-    <a
-      href={`${getLangPrefix("ca")}${targetPath}`}
-      class:list={["language-link", { active: currentLocale === "ca" }]}
-    >
+    <a href={`${getLangPrefix("ca")}${cleanPath}`} class:list={["language-link", { active: currentLocale === "ca" }]}>
       {translations["nav.ca"]}
     </a>
   </nav>

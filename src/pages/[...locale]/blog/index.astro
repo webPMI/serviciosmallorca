@@ -1,0 +1,160 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Navbar from "../../../components/Navbar.astro";
+import Footer from "../../../components/Footer.astro";
+import BlogCard from "../../../components/BlogCard.astro";
+import AdSenseSlot from "../../../components/AdSenseSlot.astro";
+import { CATEGORIES } from "../../../data/categories";
+import { BLOG_POSTS } from "../../../data/posts";
+import { getLocaleFromUrl, loadTranslations, getLangPrefix, type Locale } from "../../../i18n";
+
+export const prerender = false;
+
+const locale = getLocaleFromUrl(Astro.url) as Locale;
+const translations = await loadTranslations(locale);
+const prefix = getLangPrefix(locale);
+
+const selectedCategory = Astro.url.searchParams.get("categoria") || "";
+const searchQuery = (Astro.url.searchParams.get("q") || "").toLowerCase().trim();
+
+const filteredPosts = BLOG_POSTS.filter((post) => {
+  if (selectedCategory && post.category !== selectedCategory) {
+    return false;
+  }
+  if (searchQuery) {
+    const titleMatch = post.title[locale].toLowerCase().includes(searchQuery);
+    const excerptMatch = post.excerpt[locale].toLowerCase().includes(searchQuery);
+    const tagMatch = post.tags.some((t) => t.toLowerCase().includes(searchQuery));
+    if (!titleMatch && !excerptMatch && !tagMatch) {
+      return false;
+    }
+  }
+  return true;
+});
+---
+
+<BaseLayout
+  title={`${translations["blog.title"]} - ${translations["site.title"]}`}
+  lang={locale}
+  description={translations["blog.subtitle"]}
+>
+  <Navbar currentLocale={locale} translations={translations} getLangPrefix={getLangPrefix} />
+
+  <main class="container section">
+    <header class="blog-header text-center">
+      <span class="badge badge-accent">📝 Blog & Guías</span>
+      <h1 class="blog-main-title">{translations["blog.title"]}</h1>
+      <p class="blog-main-subtitle">{translations["blog.subtitle"]}</p>
+    </header>
+
+    <!-- Filters & Category Pills -->
+    <div class="category-pills-bar">
+      <a href={`${prefix}blog`} class:list={["pill-link", { active: !selectedCategory }]}> 🌟 Todos los Artículos </a>
+      {
+        CATEGORIES.map((cat) => (
+          <a
+            href={`${prefix}blog?categoria=${cat.id}`}
+            class:list={["pill-link", { active: selectedCategory === cat.id }]}
+          >
+            <span>{cat.icon}</span>
+            <span>{cat.name[locale]}</span>
+          </a>
+        ))
+      }
+    </div>
+
+    <!-- Posts Grid -->
+    {
+      filteredPosts.length > 0 ? (
+        <div class="blog-posts-grid">
+          {filteredPosts.map((post) => (
+            <BlogCard post={post} currentLocale={locale} getLangPrefix={getLangPrefix} translations={translations} />
+          ))}
+        </div>
+      ) : (
+        <div class="no-results-box card text-center">
+          <span class="no-results-icon">🔎</span>
+          <h3>No se encontraron artículos</h3>
+          <p>Intenta con otros términos o visualiza todos los artículos.</p>
+          <a href={`${prefix}blog`} class="btn btn-primary btn-sm" style="margin-top: 1rem;">
+            Ver todos los artículos
+          </a>
+        </div>
+      )
+    }
+
+    <!-- AdSense Bottom Slot -->
+    <AdSenseSlot format="horizontal" slotId="blog-directory-bottom" />
+  </main>
+
+  <Footer translations={translations} currentLocale={locale} getLangPrefix={getLangPrefix} />
+</BaseLayout>
+
+<style>
+  .blog-header {
+    margin-bottom: var(--space-xl);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-xs);
+  }
+
+  .blog-main-title {
+    font-size: clamp(2rem, 4vw, var(--font-size-3xl));
+    font-weight: 800;
+  }
+
+  .blog-main-subtitle {
+    color: var(--color-text-muted);
+    font-size: var(--font-size-base);
+    max-width: 600px;
+  }
+
+  .category-pills-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-xs);
+    margin-bottom: var(--space-xl);
+  }
+
+  .pill-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.35rem 0.85rem;
+    border-radius: var(--border-radius-full);
+    background: var(--color-surface);
+    border: 1px solid var(--color-surface-border);
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    color: var(--color-text);
+    text-decoration: none;
+    transition: all var(--transition-fast);
+  }
+
+  .pill-link:hover,
+  .pill-link.active {
+    background: var(--color-primary);
+    color: var(--color-white);
+    border-color: var(--color-primary);
+  }
+
+  .blog-posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: var(--space-lg);
+  }
+
+  .no-results-box {
+    padding: var(--space-2xl);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-xs);
+  }
+
+  .no-results-icon {
+    font-size: 3rem;
+  }
+</style>

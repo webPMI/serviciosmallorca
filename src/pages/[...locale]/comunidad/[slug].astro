@@ -1,0 +1,541 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Navbar from "../../../components/Navbar.astro";
+import Footer from "../../../components/Footer.astro";
+import { getLocaleFromUrl, loadTranslations, getLangPrefix, type Locale } from "../../../i18n";
+
+export const prerender = false;
+
+const locale = getLocaleFromUrl(Astro.url) as Locale;
+const { slug } = Astro.params;
+const translations = await loadTranslations(locale);
+const prefix = getLangPrefix(locale);
+---
+
+<BaseLayout
+  title={`Debate en la Comunidad - ${translations["site.title"]}`}
+  lang={locale}
+  description="Participa en las conversaciones de la comunidad de Servicios Mallorca."
+>
+  <Navbar currentLocale={locale} translations={translations} getLangPrefix={getLangPrefix} />
+
+  <div class="container topic-detail-container" data-slug={slug} id="topic-detail-wrapper">
+    <div class="breadcrumb">
+      <a href={`${prefix}comunidad`}>← {translations["forum.allTopics"]}</a>
+    </div>
+
+    <!-- Main Topic Card -->
+    <article class="card topic-main-card" id="topic-main-card">
+      <div class="topic-loading">
+        <p>⏳ Cargando conversación...</p>
+      </div>
+    </article>
+
+    <!-- Replies & Discussion Thread Section -->
+    <section class="replies-section">
+      <div class="replies-header">
+        <h2 class="replies-title">💬 {translations["forum.replies"]}</h2>
+      </div>
+
+      <!-- Reply Submission Form -->
+      <div class="card reply-form-card">
+        <div id="reply-auth-gate" class="auth-gate-inline" style="display: none;">
+          <p>🔒 {translations["forum.loginRequired"]}</p>
+          <a href={`${prefix}login`} class="btn btn-sm btn-primary">🔑 Iniciar Sesión</a>
+        </div>
+
+        <form id="topic-reply-form" class="reply-form" style="display: none;">
+          <div id="reply-alert-error" class="alert-error" style="display: none;"></div>
+
+          <div class="form-group">
+            <textarea
+              id="reply-content-input"
+              class="reply-textarea"
+              rows="3"
+              required
+              placeholder={translations["forum.replyPlaceholder"]}></textarea>
+          </div>
+
+          <div class="reply-form-actions">
+            <button type="submit" id="submit-reply-btn" class="btn btn-primary btn-sm">
+              <span>🚀 {translations["forum.submitReply"]}</span>
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Replies List Container -->
+      <div id="replies-list-container" class="replies-list-container">
+        <div class="replies-loading">
+          <p>⏳ Cargando respuestas...</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <Footer translations={translations} currentLocale={locale} getLangPrefix={getLangPrefix} />
+</BaseLayout>
+
+<style>
+  .topic-detail-container {
+    max-width: 860px;
+    padding-top: var(--space-xl);
+    padding-bottom: var(--space-3xl);
+  }
+
+  .breadcrumb {
+    margin-bottom: var(--space-md);
+  }
+
+  .breadcrumb a {
+    color: var(--color-text-muted);
+    font-size: var(--font-size-sm);
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .breadcrumb a:hover {
+    color: var(--color-primary);
+  }
+
+  .topic-main-card {
+    padding: var(--space-2xl);
+    border-radius: var(--border-radius-lg);
+    margin-bottom: var(--space-2xl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .topic-loading,
+  .replies-loading,
+  .replies-empty {
+    text-align: center;
+    padding: var(--space-xl);
+    color: var(--color-text-muted);
+    font-size: var(--font-size-sm);
+  }
+
+  .topic-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-sm);
+  }
+
+  .topic-badge {
+    padding: 0.3rem 0.75rem;
+    border-radius: var(--border-radius-full);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    background: var(--color-primary-bg);
+    color: var(--color-primary-dark);
+  }
+
+  .topic-title {
+    font-size: clamp(1.5rem, 3.5vw, var(--font-size-2xl));
+    font-weight: 800;
+    line-height: 1.25;
+    margin: 0;
+  }
+
+  .topic-meta-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding-bottom: var(--space-md);
+    border-bottom: 1px solid var(--color-surface-border);
+  }
+
+  .topic-author-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--color-primary-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+  }
+
+  .topic-author-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .topic-author-name {
+    font-weight: 700;
+    font-size: var(--font-size-sm);
+  }
+
+  .topic-created-date {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+  }
+
+  .topic-body-content {
+    font-size: var(--font-size-base);
+    line-height: 1.7;
+    color: var(--color-text);
+    white-space: pre-wrap;
+  }
+
+  .topic-actions-row {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-top: var(--space-sm);
+  }
+
+  .topic-like-btn {
+    background: var(--color-surface);
+    border: 1px solid var(--color-surface-border);
+    border-radius: var(--border-radius-full);
+    padding: 0.4rem 1rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--color-text);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: all 0.2s ease;
+  }
+
+  .topic-like-btn:hover,
+  .topic-like-btn.liked {
+    background: var(--color-primary-bg);
+    border-color: var(--color-primary);
+    color: var(--color-primary-dark);
+  }
+
+  .replies-section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
+
+  .replies-title {
+    font-size: var(--font-size-xl);
+    font-weight: 800;
+  }
+
+  .reply-form-card {
+    padding: var(--space-lg);
+    border-radius: var(--border-radius-md);
+  }
+
+  .auth-gate-inline {
+    text-align: center;
+    padding: var(--space-md);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-sm);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-light);
+  }
+
+  .reply-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .reply-textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border-radius: var(--border-radius-sm);
+    border: 1px solid var(--color-surface-border);
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-size: var(--font-size-sm);
+    font-family: inherit;
+    resize: vertical;
+  }
+
+  .reply-textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+  }
+
+  .reply-form-actions {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .replies-list-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .reply-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-surface-border);
+    border-radius: var(--border-radius-md);
+    padding: var(--space-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .reply-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.25rem;
+  }
+
+  .reply-author-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .reply-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--color-primary-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+  }
+
+  .reply-author-name {
+    font-weight: 700;
+    font-size: var(--font-size-sm);
+  }
+
+  .reply-date {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+  }
+
+  .reply-content-text {
+    font-size: var(--font-size-sm);
+    line-height: 1.6;
+    color: var(--color-text);
+    white-space: pre-wrap;
+  }
+
+  .alert-error {
+    background: var(--color-danger-bg, #fef2f2);
+    border: 1px solid var(--color-danger-border, #ef4444);
+    color: var(--color-danger, #991b1b);
+    padding: 0.75rem;
+    border-radius: var(--border-radius-sm);
+    font-size: var(--font-size-xs);
+  }
+</style>
+
+<script>
+  import { auth } from "../../../lib/firebase";
+  import {
+    getForumTopicBySlug,
+    getForumReplies,
+    addForumReply,
+    toggleTopicLike,
+    type ForumTopic,
+  } from "../../../lib/community";
+
+  const wrapper = document.getElementById("topic-detail-wrapper");
+  const slug = wrapper?.getAttribute("data-slug") || "";
+  const topicMainCard = document.getElementById("topic-main-card");
+  const repliesContainer = document.getElementById("replies-list-container");
+
+  const replyAuthGate = document.getElementById("reply-auth-gate");
+  const topicReplyForm = document.getElementById("topic-reply-form") as HTMLFormElement;
+  const replyContentInput = document.getElementById("reply-content-input") as HTMLTextAreaElement;
+  const submitReplyBtn = document.getElementById("submit-reply-btn") as HTMLButtonElement;
+  const replyAlertError = document.getElementById("reply-alert-error");
+
+  let currentTopic: ForumTopic | null = null;
+
+  const categoryLabels: Record<string, string> = {
+    recomendaciones: "⭐ Recomendaciones",
+    preguntas: "❓ Preguntas & Dudas",
+    experiencias: "✨ Experiencias",
+    guias: "🗺️ Guías Locales",
+  };
+
+  // Auth gate listener for reply box
+  auth.onAuthStateChanged((user) => {
+    if (user) {
+      if (replyAuthGate) replyAuthGate.style.display = "none";
+      if (topicReplyForm) topicReplyForm.style.display = "flex";
+    } else {
+      if (replyAuthGate) replyAuthGate.style.display = "flex";
+      if (topicReplyForm) topicReplyForm.style.display = "none";
+    }
+  });
+
+  async function loadTopicData() {
+    if (!topicMainCard || !slug) return;
+
+    try {
+      const topic = await getForumTopicBySlug(slug);
+      if (!topic) {
+        topicMainCard.innerHTML = `
+          <div class="topic-loading">
+            <h2>Debate no encontrado</h2>
+            <p>El tema de conversación no existe o ha sido retirado.</p>
+            <a href="/comunidad" class="btn btn-secondary btn-sm" style="margin-top: 1rem;">← Volver al Foro</a>
+          </div>
+        `;
+        return;
+      }
+
+      currentTopic = topic;
+      const user = auth.currentUser;
+      const hasLiked = user ? topic.likedUsers.includes(user.uid) : false;
+      const dateStr = new Date(topic.createdAt).toLocaleDateString("es-ES", {
+        day: "numeric",
+        month: "long",
+        year: "numeric",
+      });
+
+      topicMainCard.innerHTML = `
+        <div class="topic-header-row">
+          <span class="topic-badge">${categoryLabels[topic.category] || topic.category}</span>
+        </div>
+        <h1 class="topic-title">${topic.title}</h1>
+        <div class="topic-meta-row">
+          <div class="topic-author-avatar">${topic.authorAvatar || "🌴"}</div>
+          <div class="topic-author-info">
+            <span class="topic-author-name">${topic.authorName}</span>
+            <span class="topic-created-date">${dateStr}</span>
+          </div>
+        </div>
+        <div class="topic-body-content">${topic.content}</div>
+        <div class="topic-actions-row">
+          <button
+            type="button"
+            id="topic-like-action-btn"
+            class="topic-like-btn ${hasLiked ? "liked" : ""}"
+          >
+            <span>👍 Me gusta (${topic.likesCount || 0})</span>
+          </button>
+        </div>
+      `;
+
+      // Attach like button listener
+      const likeBtn = document.getElementById("topic-like-action-btn");
+      if (likeBtn) {
+        likeBtn.addEventListener("click", async () => {
+          const currentUser = auth.currentUser;
+          if (!currentUser) {
+            alert("Inicia sesión para votar en este debate.");
+            return;
+          }
+          await toggleTopicLike(topic.id, currentUser.uid);
+          loadTopicData();
+        });
+      }
+
+      // Load replies
+      loadReplies(topic.id);
+    } catch (err) {
+      console.error("Error loading topic:", err);
+      topicMainCard.innerHTML = `
+        <div class="topic-loading">
+          <p>No fue posible cargar el debate.</p>
+        </div>
+      `;
+    }
+  }
+
+  async function loadReplies(topicId: string) {
+    if (!repliesContainer) return;
+
+    try {
+      const replies = await getForumReplies(topicId);
+
+      if (replies.length === 0) {
+        repliesContainer.innerHTML = `
+          <div class="replies-empty card">
+            <p>💬 No hay respuestas todavía. ¡Sé el primero en aportar a esta conversación!</p>
+          </div>
+        `;
+        return;
+      }
+
+      repliesContainer.innerHTML = replies
+        .map((r) => {
+          const dateStr = new Date(r.createdAt).toLocaleDateString("es-ES", {
+            day: "numeric",
+            month: "short",
+            hour: "2-digit",
+            minute: "2-digit",
+          });
+
+          return `
+            <div class="reply-card" id="reply-${r.id}">
+              <div class="reply-meta">
+                <div class="reply-author-wrap">
+                  <div class="reply-avatar">${r.authorAvatar || "💬"}</div>
+                  <span class="reply-author-name">${r.authorName}</span>
+                </div>
+                <span class="reply-date">${dateStr}</span>
+              </div>
+              <p class="reply-content-text">${r.content}</p>
+            </div>
+          `;
+        })
+        .join("");
+    } catch (err) {
+      console.error("Error loading replies:", err);
+    }
+  }
+
+  // Handle Reply Submission
+  if (topicReplyForm) {
+    topicReplyForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const user = auth.currentUser;
+
+      if (replyAlertError) replyAlertError.style.display = "none";
+
+      if (!user) {
+        if (replyAlertError) {
+          replyAlertError.textContent = "Debes iniciar sesión para responder.";
+          replyAlertError.style.display = "block";
+        }
+        return;
+      }
+
+      if (!currentTopic) return;
+
+      const content = replyContentInput?.value.trim();
+      if (!content) return;
+
+      if (submitReplyBtn) submitReplyBtn.disabled = true;
+
+      try {
+        await addForumReply({
+          topicId: currentTopic.id,
+          content,
+          authorUid: user.uid,
+          authorName: user.displayName || user.email?.split("@")[0] || "Vecino de Mallorca",
+          authorAvatar: user.photoURL || "💬",
+        });
+
+        replyContentInput.value = "";
+        loadReplies(currentTopic.id);
+      } catch (err: any) {
+        if (replyAlertError) {
+          replyAlertError.textContent = `Error al enviar respuesta: ${err.message || err}`;
+          replyAlertError.style.display = "block";
+        }
+      } finally {
+        if (submitReplyBtn) submitReplyBtn.disabled = false;
+      }
+    });
+  }
+
+  // Initial Load
+  loadTopicData();
+</script>

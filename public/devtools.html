@@ -1,1504 +1,1613 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" data-devtools>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>🛠️ DevTools - WebApp Starter</title>
-  <style>
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    :root {
-      --dt-bg: #1a1a2e;
-      --dt-surface: #16213e;
-      --dt-surface-hover: #1f3460;
-      --dt-border: #2a3a5e;
-      --dt-text: #e0e0e0;
-      --dt-text-muted: #8899aa;
-      --dt-primary: #00d4aa;
-      --dt-primary-dark: #00b894;
-      --dt-accent: #ffb703;
-      --dt-danger: #ff4757;
-      --dt-success: #2ed573;
-      --dt-warning: #ffa502;
-      --dt-radius: 8px;
-      --dt-radius-sm: 6px;
-      --dt-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-      --dt-font: 'Segoe UI', system-ui, -apple-system, sans-serif;
-      --dt-font-mono: 'Cascadia Code', 'Fira Code', 'Consolas', monospace;
-    }
-
-    html,
-    body {
-      height: 100%;
-      font-family: var(--dt-font);
-      background: var(--dt-bg);
-      color: var(--dt-text);
-      overflow: hidden;
-    }
-
-    /* Layout */
-    .devtools-container {
-      display: flex;
-      height: 100vh;
-    }
-
-    /* Sidebar */
-    .sidebar {
-      width: 260px;
-      background: var(--dt-surface);
-      border-right: 1px solid var(--dt-border);
-      display: flex;
-      flex-direction: column;
-      flex-shrink: 0;
-    }
-
-    .sidebar-header {
-      padding: 16px;
-      border-bottom: 1px solid var(--dt-border);
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .sidebar-logo {
-      font-size: 24px;
-    }
-
-    .sidebar-title {
-      font-size: 15px;
-      font-weight: 700;
-      color: var(--dt-primary);
-      letter-spacing: -0.01em;
-    }
-
-    .sidebar-subtitle {
-      font-size: 10px;
-      color: var(--dt-text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
-    .sidebar-nav {
-      flex: 1;
-      padding: 8px;
-      overflow-y: auto;
-    }
-
-    .nav-section {
-      margin-bottom: 4px;
-    }
-
-    .nav-section-label {
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--dt-text-muted);
-      padding: 8px 12px 4px;
-      font-weight: 700;
-    }
-
-    .nav-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      width: 100%;
-      padding: 10px 12px;
-      background: transparent;
-      border: none;
-      border-radius: var(--dt-radius-sm);
-      color: var(--dt-text);
-      font-family: var(--dt-font);
-      font-size: 13px;
-      cursor: pointer;
-      transition: all 0.15s;
-      text-align: left;
-    }
-
-    .nav-item:hover {
-      background: var(--dt-surface-hover);
-    }
-
-    .nav-item.active {
-      background: var(--dt-primary-dark);
-      color: #fff;
-      font-weight: 600;
-    }
-
-    .nav-icon {
-      font-size: 16px;
-      width: 20px;
-      text-align: center;
-    }
-
-    .status-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      margin-left: auto;
-    }
-
-    .status-dot.connected {
-      background: var(--dt-success);
-      box-shadow: 0 0 6px var(--dt-success);
-    }
-
-    .status-dot.disconnected {
-      background: var(--dt-danger);
-      box-shadow: 0 0 6px var(--dt-danger);
-    }
-
-    .sidebar-footer {
-      padding: 12px;
-      border-top: 1px solid var(--dt-border);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-size: 11px;
-      color: var(--dt-text-muted);
-    }
-
-    .sidebar-footer a {
-      color: var(--dt-primary);
-      text-decoration: none;
-    }
-
-    .sidebar-footer a:hover {
-      text-decoration: underline;
-    }
-
-    /* Main content */
-    .main-content {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
-    }
-
-    .main-header {
-      padding: 16px 24px;
-      border-bottom: 1px solid var(--dt-border);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: var(--dt-surface);
-    }
-
-    .main-title {
-      font-size: 18px;
-      font-weight: 700;
-    }
-
-    .main-actions {
-      display: flex;
-      gap: 8px;
-    }
-
-    /* Panels */
-    .panel {
-      flex: 1;
-      overflow-y: auto;
-      padding: 24px;
-      display: none;
-    }
-
-    .panel.active {
-      display: block;
-    }
-
-    .panel-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-    }
-
-    /* Cards */
-    .dt-card {
-      background: var(--dt-surface);
-      border: 1px solid var(--dt-border);
-      border-radius: var(--dt-radius);
-      padding: 20px;
-      box-shadow: var(--dt-shadow);
-    }
-
-    .dt-card-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 16px;
-      padding-bottom: 12px;
-      border-bottom: 1px solid var(--dt-border);
-    }
-
-    .dt-card-title {
-      font-size: 14px;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .dt-card-badge {
-      font-size: 10px;
-      padding: 2px 8px;
-      border-radius: 10px;
-      background: var(--dt-primary-dark);
-      color: #fff;
-      font-weight: 600;
-    }
-
-    /* Buttons */
-    .dt-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 8px 16px;
-      border: none;
-      border-radius: var(--dt-radius-sm);
-      font-family: var(--dt-font);
-      font-size: 12px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.15s;
-      text-transform: uppercase;
-      letter-spacing: 0.03em;
-    }
-
-    .dt-btn-primary {
-      background: var(--dt-primary);
-      color: #1a1a2e;
-    }
-
-    .dt-btn-primary:hover {
-      background: var(--dt-primary-dark);
-    }
-
-    .dt-btn-danger {
-      background: var(--dt-danger);
-      color: #fff;
-    }
-
-    .dt-btn-danger:hover {
-      opacity: 0.85;
-    }
-
-    .dt-btn-outline {
-      background: transparent;
-      border: 1px solid var(--dt-border);
-      color: var(--dt-text);
-    }
-
-    .dt-btn-outline:hover {
-      border-color: var(--dt-primary);
-      color: var(--dt-primary);
-    }
-
-    .dt-btn-sm {
-      padding: 4px 10px;
-      font-size: 10px;
-    }
-
-    .dt-btn-block {
-      width: 100%;
-      justify-content: center;
-    }
-
-    /* Form fields */
-    .dt-field {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-      margin-bottom: 12px;
-    }
-
-    .dt-label {
-      font-size: 11px;
-      font-weight: 600;
-      color: var(--dt-text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    .dt-input,
-    .dt-select {
-      width: 100%;
-      padding: 8px 12px;
-      background: var(--dt-bg);
-      border: 1px solid var(--dt-border);
-      border-radius: var(--dt-radius-sm);
-      color: var(--dt-text);
-      font-family: var(--dt-font);
-      font-size: 13px;
-      transition: border-color 0.15s;
-    }
-
-    .dt-input:focus,
-    .dt-select:focus {
-      outline: none;
-      border-color: var(--dt-primary);
-    }
-
-    .dt-select {
-      cursor: pointer;
-    }
-
-    .dt-radio-group {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    .dt-radio-label {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      font-size: 12px;
-      cursor: pointer;
-      padding: 4px 10px;
-      border-radius: var(--dt-radius-sm);
-      border: 1px solid var(--dt-border);
-      transition: all 0.15s;
-    }
-
-    .dt-radio-label:hover {
-      border-color: var(--dt-primary);
-    }
-
-    .dt-radio-label:has(input:checked) {
-      background: var(--dt-primary-dark);
-      border-color: var(--dt-primary);
-      color: #fff;
-    }
-
-    .dt-radio-label input {
-      accent-color: var(--dt-primary);
-    }
-
-    /* State table */
-    .state-table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-
-    .state-table th,
-    .state-table td {
-      padding: 8px 12px;
-      text-align: left;
-      font-size: 12px;
-      border-bottom: 1px solid var(--dt-border);
-    }
-
-    .state-table th {
-      color: var(--dt-text-muted);
-      font-weight: 600;
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    .state-table td {
-      font-family: var(--dt-font-mono);
-      font-size: 11px;
-    }
-
-    .state-value {
-      max-width: 250px;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-
-    /* Log area */
-    .log-area {
-      background: var(--dt-bg);
-      border: 1px solid var(--dt-border);
-      border-radius: var(--dt-radius-sm);
-      padding: 12px;
-      max-height: 200px;
-      overflow-y: auto;
-      font-family: var(--dt-font-mono);
-      font-size: 11px;
-      line-height: 1.6;
-    }
-
-    .log-entry {
-      padding: 2px 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.03);
-    }
-
-    .log-time {
-      color: var(--dt-text-muted);
-      margin-right: 8px;
-    }
-
-    .log-level-info {
-      color: var(--dt-primary);
-    }
-
-    .log-level-warn {
-      color: var(--dt-warning);
-    }
-
-    .log-level-error {
-      color: var(--dt-danger);
-    }
-
-    .log-level-success {
-      color: var(--dt-success);
-    }
-
-    /* Toast */
-    .toast-container {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      z-index: 9999;
-    }
-
-    .toast {
-      padding: 10px 16px;
-      border-radius: var(--dt-radius-sm);
-      font-size: 12px;
-      font-weight: 600;
-      box-shadow: var(--dt-shadow);
-      animation: slideIn 0.2s ease;
-      max-width: 320px;
-    }
-
-    @keyframes slideIn {
-      from {
-        opacity: 0;
-        transform: translateX(20px);
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🛠️ DevTools - WebApp Starter</title>
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
       }
 
-      to {
-        opacity: 1;
-        transform: translateX(0);
+      :root {
+        --dt-bg: #1a1a2e;
+        --dt-surface: #16213e;
+        --dt-surface-hover: #1f3460;
+        --dt-border: #2a3a5e;
+        --dt-text: #e0e0e0;
+        --dt-text-muted: #8899aa;
+        --dt-primary: #00d4aa;
+        --dt-primary-dark: #00b894;
+        --dt-accent: #ffb703;
+        --dt-danger: #ff4757;
+        --dt-success: #2ed573;
+        --dt-warning: #ffa502;
+        --dt-radius: 8px;
+        --dt-radius-sm: 6px;
+        --dt-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        --dt-font: "Segoe UI", system-ui, -apple-system, sans-serif;
+        --dt-font-mono: "Cascadia Code", "Fira Code", "Consolas", monospace;
       }
-    }
 
-    .toast-success {
-      background: var(--dt-success);
-      color: #1a1a2e;
-    }
+      html,
+      body {
+        height: 100%;
+        font-family: var(--dt-font);
+        background: var(--dt-bg);
+        color: var(--dt-text);
+        overflow: hidden;
+      }
 
-    .toast-error {
-      background: var(--dt-danger);
-      color: #fff;
-    }
+      /* Layout */
+      .devtools-container {
+        display: flex;
+        height: 100vh;
+      }
 
-    .toast-info {
-      background: var(--dt-primary);
-      color: #1a1a2e;
-    }
+      /* Sidebar */
+      .sidebar {
+        width: 260px;
+        background: var(--dt-surface);
+        border-right: 1px solid var(--dt-border);
+        display: flex;
+        flex-direction: column;
+        flex-shrink: 0;
+      }
 
-    /* Scrollbar */
-    ::-webkit-scrollbar {
-      width: 6px;
-    }
+      .sidebar-header {
+        padding: 16px;
+        border-bottom: 1px solid var(--dt-border);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
 
-    ::-webkit-scrollbar-track {
-      background: var(--dt-bg);
-    }
+      .sidebar-logo {
+        font-size: 24px;
+      }
 
-    ::-webkit-scrollbar-thumb {
-      background: var(--dt-border);
-      border-radius: 3px;
-    }
+      .sidebar-title {
+        font-size: 15px;
+        font-weight: 700;
+        color: var(--dt-primary);
+        letter-spacing: -0.01em;
+      }
 
-    /* Empty state */
-    .empty-state {
-      text-align: center;
-      padding: 40px 20px;
-      color: var(--dt-text-muted);
-    }
+      .sidebar-subtitle {
+        font-size: 10px;
+        color: var(--dt-text-muted);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
 
-    .empty-state-icon {
-      font-size: 40px;
-      margin-bottom: 12px;
-    }
+      .sidebar-nav {
+        flex: 1;
+        padding: 8px;
+        overflow-y: auto;
+      }
 
-    .empty-state-text {
-      font-size: 14px;
-    }
-  </style>
-</head>
-<body>
-  <div class="devtools-container">
-    <!-- Sidebar -->
-    <aside class="sidebar">
-      <div class="sidebar-header">
-        <span class="sidebar-logo">🛠️</span>
-        <div>
-          <div class="sidebar-title">DevTools</div>
-          <div class="sidebar-subtitle">WebApp Starter</div>
+      .nav-section {
+        margin-bottom: 4px;
+      }
+
+      .nav-section-label {
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--dt-text-muted);
+        padding: 8px 12px 4px;
+        font-weight: 700;
+      }
+
+      .nav-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+        padding: 10px 12px;
+        background: transparent;
+        border: none;
+        border-radius: var(--dt-radius-sm);
+        color: var(--dt-text);
+        font-family: var(--dt-font);
+        font-size: 13px;
+        cursor: pointer;
+        transition: all 0.15s;
+        text-align: left;
+      }
+
+      .nav-item:hover {
+        background: var(--dt-surface-hover);
+      }
+
+      .nav-item.active {
+        background: var(--dt-primary-dark);
+        color: #fff;
+        font-weight: 600;
+      }
+
+      .nav-icon {
+        font-size: 16px;
+        width: 20px;
+        text-align: center;
+      }
+
+      .status-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        margin-left: auto;
+      }
+
+      .status-dot.connected {
+        background: var(--dt-success);
+        box-shadow: 0 0 6px var(--dt-success);
+      }
+
+      .status-dot.disconnected {
+        background: var(--dt-danger);
+        box-shadow: 0 0 6px var(--dt-danger);
+      }
+
+      .sidebar-footer {
+        padding: 12px;
+        border-top: 1px solid var(--dt-border);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 11px;
+        color: var(--dt-text-muted);
+      }
+
+      .sidebar-footer a {
+        color: var(--dt-primary);
+        text-decoration: none;
+      }
+
+      .sidebar-footer a:hover {
+        text-decoration: underline;
+      }
+
+      /* Main content */
+      .main-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+      }
+
+      .main-header {
+        padding: 16px 24px;
+        border-bottom: 1px solid var(--dt-border);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: var(--dt-surface);
+      }
+
+      .main-title {
+        font-size: 18px;
+        font-weight: 700;
+      }
+
+      .main-actions {
+        display: flex;
+        gap: 8px;
+      }
+
+      /* Panels */
+      .panel {
+        flex: 1;
+        overflow-y: auto;
+        padding: 24px;
+        display: none;
+      }
+
+      .panel.active {
+        display: block;
+      }
+
+      .panel-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+      }
+
+      /* Cards */
+      .dt-card {
+        background: var(--dt-surface);
+        border: 1px solid var(--dt-border);
+        border-radius: var(--dt-radius);
+        padding: 20px;
+        box-shadow: var(--dt-shadow);
+      }
+
+      .dt-card-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 16px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid var(--dt-border);
+      }
+
+      .dt-card-title {
+        font-size: 14px;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .dt-card-badge {
+        font-size: 10px;
+        padding: 2px 8px;
+        border-radius: 10px;
+        background: var(--dt-primary-dark);
+        color: #fff;
+        font-weight: 600;
+      }
+
+      /* Buttons */
+      .dt-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 8px 16px;
+        border: none;
+        border-radius: var(--dt-radius-sm);
+        font-family: var(--dt-font);
+        font-size: 12px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.15s;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+      }
+
+      .dt-btn-primary {
+        background: var(--dt-primary);
+        color: #1a1a2e;
+      }
+
+      .dt-btn-primary:hover {
+        background: var(--dt-primary-dark);
+      }
+
+      .dt-btn-danger {
+        background: var(--dt-danger);
+        color: #fff;
+      }
+
+      .dt-btn-danger:hover {
+        opacity: 0.85;
+      }
+
+      .dt-btn-outline {
+        background: transparent;
+        border: 1px solid var(--dt-border);
+        color: var(--dt-text);
+      }
+
+      .dt-btn-outline:hover {
+        border-color: var(--dt-primary);
+        color: var(--dt-primary);
+      }
+
+      .dt-btn-sm {
+        padding: 4px 10px;
+        font-size: 10px;
+      }
+
+      .dt-btn-block {
+        width: 100%;
+        justify-content: center;
+      }
+
+      /* Form fields */
+      .dt-field {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        margin-bottom: 12px;
+      }
+
+      .dt-label {
+        font-size: 11px;
+        font-weight: 600;
+        color: var(--dt-text-muted);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      .dt-input,
+      .dt-select {
+        width: 100%;
+        padding: 8px 12px;
+        background: var(--dt-bg);
+        border: 1px solid var(--dt-border);
+        border-radius: var(--dt-radius-sm);
+        color: var(--dt-text);
+        font-family: var(--dt-font);
+        font-size: 13px;
+        transition: border-color 0.15s;
+      }
+
+      .dt-input:focus,
+      .dt-select:focus {
+        outline: none;
+        border-color: var(--dt-primary);
+      }
+
+      .dt-select {
+        cursor: pointer;
+      }
+
+      .dt-radio-group {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .dt-radio-label {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        font-size: 12px;
+        cursor: pointer;
+        padding: 4px 10px;
+        border-radius: var(--dt-radius-sm);
+        border: 1px solid var(--dt-border);
+        transition: all 0.15s;
+      }
+
+      .dt-radio-label:hover {
+        border-color: var(--dt-primary);
+      }
+
+      .dt-radio-label:has(input:checked) {
+        background: var(--dt-primary-dark);
+        border-color: var(--dt-primary);
+        color: #fff;
+      }
+
+      .dt-radio-label input {
+        accent-color: var(--dt-primary);
+      }
+
+      /* State table */
+      .state-table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      .state-table th,
+      .state-table td {
+        padding: 8px 12px;
+        text-align: left;
+        font-size: 12px;
+        border-bottom: 1px solid var(--dt-border);
+      }
+
+      .state-table th {
+        color: var(--dt-text-muted);
+        font-weight: 600;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      .state-table td {
+        font-family: var(--dt-font-mono);
+        font-size: 11px;
+      }
+
+      .state-value {
+        max-width: 250px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      /* Log area */
+      .log-area {
+        background: var(--dt-bg);
+        border: 1px solid var(--dt-border);
+        border-radius: var(--dt-radius-sm);
+        padding: 12px;
+        max-height: 200px;
+        overflow-y: auto;
+        font-family: var(--dt-font-mono);
+        font-size: 11px;
+        line-height: 1.6;
+      }
+
+      .log-entry {
+        padding: 2px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+      }
+
+      .log-time {
+        color: var(--dt-text-muted);
+        margin-right: 8px;
+      }
+
+      .log-level-info {
+        color: var(--dt-primary);
+      }
+
+      .log-level-warn {
+        color: var(--dt-warning);
+      }
+
+      .log-level-error {
+        color: var(--dt-danger);
+      }
+
+      .log-level-success {
+        color: var(--dt-success);
+      }
+
+      /* Toast */
+      .toast-container {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        z-index: 9999;
+      }
+
+      .toast {
+        padding: 10px 16px;
+        border-radius: var(--dt-radius-sm);
+        font-size: 12px;
+        font-weight: 600;
+        box-shadow: var(--dt-shadow);
+        animation: slideIn 0.2s ease;
+        max-width: 320px;
+      }
+
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateX(20px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      .toast-success {
+        background: var(--dt-success);
+        color: #1a1a2e;
+      }
+
+      .toast-error {
+        background: var(--dt-danger);
+        color: #fff;
+      }
+
+      .toast-info {
+        background: var(--dt-primary);
+        color: #1a1a2e;
+      }
+
+      /* Scrollbar */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: var(--dt-bg);
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: var(--dt-border);
+        border-radius: 3px;
+      }
+
+      /* Empty state */
+      .empty-state {
+        text-align: center;
+        padding: 40px 20px;
+        color: var(--dt-text-muted);
+      }
+
+      .empty-state-icon {
+        font-size: 40px;
+        margin-bottom: 12px;
+      }
+
+      .empty-state-text {
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="devtools-container">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <span class="sidebar-logo">🛠️</span>
+          <div>
+            <div class="sidebar-title">DevTools</div>
+            <div class="sidebar-subtitle">WebApp Starter</div>
+          </div>
         </div>
-      </div>
 
-      <nav class="sidebar-nav">
-        <div class="nav-section">
-          <div class="nav-section-label">📝 Formularios</div>
-          <button class="nav-item active" data-panel="autofill-login">
-            <span class="nav-icon">🔑</span> Login
-          </button>
-          <button class="nav-item" data-panel="autofill-register">
-            <span class="nav-icon">📝</span> Register
-          </button>
-          <button class="nav-item" data-panel="autofill-forgot">
-            <span class="nav-icon">🔒</span> Forgot Password
-          </button>
-        </div>
-
-        <div class="nav-section">
-          <div class="nav-section-label">📊 Estado App</div>
-          <button class="nav-item" data-panel="state-theme">
-            <span class="nav-icon">🎨</span> Tema & Locale
-          </button>
-          <button class="nav-item" data-panel="state-storage">
-            <span class="nav-icon">💾</span> localStorage
-          </button>
-          <button class="nav-item" data-panel="state-auth">
-            <span class="nav-icon">👤</span> Auth State
-          </button>
-        </div>
-
-        <div class="nav-section">
-          <div class="nav-section-label">⚡ Acciones</div>
-          <button class="nav-item" data-panel="actions-quick">
-            <span class="nav-icon">🚀</span> Quick Actions
-          </button>
-          <button class="nav-item" data-panel="actions-logs">
-            <span class="nav-icon">📋</span> Event Log
-          </button>
-        </div>
-      </nav>
-
-      <div class="sidebar-footer">
-        <span id="connection-status">🔴 No target app</span>
-        <a href="#" id="open-target-btn" title="Abrir app en nueva pestaña">Abrir App ↗</a>
-      </div>
-    </aside>
-
-    <!-- Main Content -->
-    <main class="main-content">
-      <div class="main-header">
-        <h2 class="main-title" id="panel-title">🔑 Autocompletar Login</h2>
-        <div class="main-actions">
-          <button class="dt-btn dt-btn-outline dt-btn-sm" onclick="refreshAll()">🔄 Refresh</button>
-        </div>
-      </div>
-
-      <!-- ====== LOGIN AUTOFILL ====== -->
-      <section class="panel active" id="panel-autofill-login">
-        <div class="panel-grid">
-          <div class="dt-card">
-            <div class="dt-card-header">
-              <span class="dt-card-title">📧 Datos de Login</span>
-            </div>
-            <div class="dt-field">
-              <label class="dt-label">Email</label>
-              <input class="dt-input" id="login-email" type="email" value="test@webapp.com" placeholder="Email para login">
-            </div>
-            <div class="dt-field">
-              <label class="dt-label">Password</label>
-              <input class="dt-input" id="login-password" type="text" value="Test1234!" placeholder="Password para login">
-            </div>
-            <button class="dt-btn dt-btn-primary dt-btn-block" onclick="fillLogin()">
-              🔑 Autocompletar Login
+        <nav class="sidebar-nav">
+          <div class="nav-section">
+            <div class="nav-section-label">📝 Formularios</div>
+            <button class="nav-item active" data-panel="autofill-login"><span class="nav-icon">🔑</span> Login</button>
+            <button class="nav-item" data-panel="autofill-register"><span class="nav-icon">📝</span> Register</button>
+            <button class="nav-item" data-panel="autofill-forgot">
+              <span class="nav-icon">🔒</span> Forgot Password
             </button>
-            <p style="font-size:10px;color:var(--dt-text-muted);margin-top:8px">
-              Rellena los campos <code>#email</code> y <code>#password</code> en el formulario de login de la app.
-            </p>
           </div>
 
-          <div class="dt-card">
-            <div class="dt-card-header">
-              <span class="dt-card-title">🚀 Submit Rápido</span>
-            </div>
-            <div class="dt-field">
-              <label class="dt-label">Email</label>
-              <input class="dt-input" id="login-email-fast" type="email" value="admin@webapp.com" placeholder="Email">
-            </div>
-            <div class="dt-field">
-              <label class="dt-label">Password</label>
-              <input class="dt-input" id="login-password-fast" type="text" value="Admin1234!" placeholder="Password">
-            </div>
-            <button class="dt-btn dt-btn-primary dt-btn-block" onclick="fastLogin()">
-              ⚡ Autocompletar + Submit
-            </button>
+          <div class="nav-section">
+            <div class="nav-section-label">📊 Estado App</div>
+            <button class="nav-item" data-panel="state-theme"><span class="nav-icon">🎨</span> Tema & Locale</button>
+            <button class="nav-item" data-panel="state-storage"><span class="nav-icon">💾</span> localStorage</button>
+            <button class="nav-item" data-panel="state-auth"><span class="nav-icon">👤</span> Auth State</button>
+          </div>
+
+          <div class="nav-section">
+            <div class="nav-section-label">⚡ Acciones</div>
+            <button class="nav-item" data-panel="actions-quick"><span class="nav-icon">🚀</span> Quick Actions</button>
+            <button class="nav-item" data-panel="actions-logs"><span class="nav-icon">📋</span> Event Log</button>
+          </div>
+        </nav>
+
+        <div class="sidebar-footer">
+          <span id="connection-status">🔴 No target app</span>
+          <a href="#" id="open-target-btn" title="Abrir app en nueva pestaña">Abrir App ↗</a>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <div class="main-header">
+          <h2 class="main-title" id="panel-title">🔑 Autocompletar Login</h2>
+          <div class="main-actions">
+            <button class="dt-btn dt-btn-outline dt-btn-sm" onclick="refreshAll()">🔄 Refresh</button>
           </div>
         </div>
-      </section>
 
-      <!-- ====== REGISTER AUTOFILL ====== -->
-      <section class="panel" id="panel-autofill-register">
-        <div class="panel-grid">
-          <div class="dt-card">
-            <div class="dt-card-header">
-              <span class="dt-card-title">👤 Datos de Registro</span>
+        <!-- ====== LOGIN AUTOFILL ====== -->
+        <section class="panel active" id="panel-autofill-login">
+          <div class="panel-grid">
+            <div class="dt-card">
+              <div class="dt-card-header">
+                <span class="dt-card-title">📧 Datos de Login</span>
+              </div>
+              <div class="dt-field">
+                <label class="dt-label">Email</label>
+                <input
+                  class="dt-input"
+                  id="login-email"
+                  type="email"
+                  value="test@webapp.com"
+                  placeholder="Email para login"
+                />
+              </div>
+              <div class="dt-field">
+                <label class="dt-label">Password</label>
+                <input
+                  class="dt-input"
+                  id="login-password"
+                  type="text"
+                  value="Test1234!"
+                  placeholder="Password para login"
+                />
+              </div>
+              <button class="dt-btn dt-btn-primary dt-btn-block" onclick="fillLogin()">🔑 Autocompletar Login</button>
+              <p style="font-size: 10px; color: var(--dt-text-muted); margin-top: 8px">
+                Rellena los campos <code>#email</code> y <code>#password</code> en el formulario de login de la app.
+              </p>
             </div>
-            <div class="dt-field">
-              <label class="dt-label">Nombre completo</label>
-              <input class="dt-input" id="register-name" type="text" value="Test User" placeholder="Nombre">
+
+            <div class="dt-card">
+              <div class="dt-card-header">
+                <span class="dt-card-title">🚀 Submit Rápido</span>
+              </div>
+              <div class="dt-field">
+                <label class="dt-label">Email</label>
+                <input
+                  class="dt-input"
+                  id="login-email-fast"
+                  type="email"
+                  value="admin@webapp.com"
+                  placeholder="Email"
+                />
+              </div>
+              <div class="dt-field">
+                <label class="dt-label">Password</label>
+                <input
+                  class="dt-input"
+                  id="login-password-fast"
+                  type="text"
+                  value="Admin1234!"
+                  placeholder="Password"
+                />
+              </div>
+              <button class="dt-btn dt-btn-primary dt-btn-block" onclick="fastLogin()">
+                ⚡ Autocompletar + Submit
+              </button>
             </div>
-            <div class="dt-field">
-              <label class="dt-label">Email</label>
-              <input class="dt-input" id="register-email" type="email" value="newuser@webapp.com" placeholder="Email">
-            </div>
-            <div class="dt-field">
-              <label class="dt-label">Password</label>
-              <input class="dt-input" id="register-password" type="text" value="StrongP@ss1" placeholder="Password">
-            </div>
-            <div class="dt-field">
-              <label class="dt-label">Confirm Password</label>
-              <input class="dt-input" id="register-confirm" type="text" value="StrongP@ss1" placeholder="Confirmar password">
-            </div>
-            <button class="dt-btn dt-btn-primary dt-btn-block" onclick="fillRegister()">
-              📝 Autocompletar Registro
-            </button>
-            <p style="font-size:10px;color:var(--dt-text-muted);margin-top:8px">
-              Rellena <code>#name</code>, <code>#email</code>, <code>#password</code>, <code>#confirmPassword</code>.
-            </p>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <!-- ====== FORGOT PASSWORD AUTOFILL ====== -->
-      <section class="panel" id="panel-autofill-forgot">
-        <div class="panel-grid">
-          <div class="dt-card">
-            <div class="dt-card-header">
-              <span class="dt-card-title">🔒 Recuperar Contraseña</span>
+        <!-- ====== REGISTER AUTOFILL ====== -->
+        <section class="panel" id="panel-autofill-register">
+          <div class="panel-grid">
+            <div class="dt-card">
+              <div class="dt-card-header">
+                <span class="dt-card-title">👤 Datos de Registro</span>
+              </div>
+              <div class="dt-field">
+                <label class="dt-label">Nombre completo</label>
+                <input class="dt-input" id="register-name" type="text" value="Test User" placeholder="Nombre" />
+              </div>
+              <div class="dt-field">
+                <label class="dt-label">Email</label>
+                <input
+                  class="dt-input"
+                  id="register-email"
+                  type="email"
+                  value="newuser@webapp.com"
+                  placeholder="Email"
+                />
+              </div>
+              <div class="dt-field">
+                <label class="dt-label">Password</label>
+                <input class="dt-input" id="register-password" type="text" value="StrongP@ss1" placeholder="Password" />
+              </div>
+              <div class="dt-field">
+                <label class="dt-label">Confirm Password</label>
+                <input
+                  class="dt-input"
+                  id="register-confirm"
+                  type="text"
+                  value="StrongP@ss1"
+                  placeholder="Confirmar password"
+                />
+              </div>
+              <button class="dt-btn dt-btn-primary dt-btn-block" onclick="fillRegister()">
+                📝 Autocompletar Registro
+              </button>
+              <p style="font-size: 10px; color: var(--dt-text-muted); margin-top: 8px">
+                Rellena <code>#name</code>, <code>#email</code>, <code>#password</code>, <code>#confirmPassword</code>.
+              </p>
             </div>
-            <div class="dt-field">
-              <label class="dt-label">Email</label>
-              <input class="dt-input" id="forgot-email" type="email" value="test@webapp.com" placeholder="Email para recuperación">
-            </div>
-            <button class="dt-btn dt-btn-primary dt-btn-block" onclick="fillForgotPassword()">
-              🔒 Autocompletar Forgot Password
-            </button>
-            <p style="font-size:10px;color:var(--dt-text-muted);margin-top:8px">
-              Rellena el campo <code>#email</code> en el formulario de forgot-password.
-            </p>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <!-- ====== STATE: THEME & LOCALE ====== -->
-      <section class="panel" id="panel-state-theme">
-        <div class="panel-grid">
-          <div class="dt-card">
-            <div class="dt-card-header">
-              <span class="dt-card-title">🎨 Tema Actual</span>
-              <span class="dt-card-badge" id="current-theme-badge">light</span>
+        <!-- ====== FORGOT PASSWORD AUTOFILL ====== -->
+        <section class="panel" id="panel-autofill-forgot">
+          <div class="panel-grid">
+            <div class="dt-card">
+              <div class="dt-card-header">
+                <span class="dt-card-title">🔒 Recuperar Contraseña</span>
+              </div>
+              <div class="dt-field">
+                <label class="dt-label">Email</label>
+                <input
+                  class="dt-input"
+                  id="forgot-email"
+                  type="email"
+                  value="test@webapp.com"
+                  placeholder="Email para recuperación"
+                />
+              </div>
+              <button class="dt-btn dt-btn-primary dt-btn-block" onclick="fillForgotPassword()">
+                🔒 Autocompletar Forgot Password
+              </button>
+              <p style="font-size: 10px; color: var(--dt-text-muted); margin-top: 8px">
+                Rellena el campo <code>#email</code> en el formulario de forgot-password.
+              </p>
             </div>
-            <div class="dt-field">
-              <label class="dt-label">Forzar tema</label>
-              <div class="dt-radio-group">
-                <label class="dt-radio-label"><input type="radio" name="force-theme" value="light"> 🌿 Light</label>
-                <label class="dt-radio-label"><input type="radio" name="force-theme" value="dark"> 🌙 Dark</label>
-                <label class="dt-radio-label"><input type="radio" name="force-theme" value="golden"> ☀️ Golden</label>
-                <label class="dt-radio-label"><input type="radio" name="force-theme" value="golden-dark"> ✨ Golden Dark</label>
+          </div>
+        </section>
+
+        <!-- ====== STATE: THEME & LOCALE ====== -->
+        <section class="panel" id="panel-state-theme">
+          <div class="panel-grid">
+            <div class="dt-card">
+              <div class="dt-card-header">
+                <span class="dt-card-title">🎨 Tema Actual</span>
+                <span class="dt-card-badge" id="current-theme-badge">light</span>
+              </div>
+              <div class="dt-field">
+                <label class="dt-label">Forzar tema</label>
+                <div class="dt-radio-group">
+                  <label class="dt-radio-label"><input type="radio" name="force-theme" value="light" /> 🌿 Light</label>
+                  <label class="dt-radio-label"><input type="radio" name="force-theme" value="dark" /> 🌙 Dark</label>
+                  <label class="dt-radio-label"
+                    ><input type="radio" name="force-theme" value="golden" /> ☀️ Golden</label
+                  >
+                  <label class="dt-radio-label"
+                    ><input type="radio" name="force-theme" value="golden-dark" /> ✨ Golden Dark</label
+                  >
+                </div>
+              </div>
+              <button class="dt-btn dt-btn-primary dt-btn-block" onclick="forceTheme()">🎨 Aplicar Tema</button>
+              <button class="dt-btn dt-btn-outline dt-btn-block" style="margin-top: 8px" onclick="resetTheme()">
+                🔄 Reset a Preferencia del Sistema
+              </button>
+            </div>
+
+            <div class="dt-card">
+              <div class="dt-card-header">
+                <span class="dt-card-title">🌍 Locale Actual</span>
+                <span class="dt-card-badge" id="current-locale-badge">es</span>
+              </div>
+              <div class="dt-field">
+                <label class="dt-label">Idioma del navegador</label>
+                <input class="dt-input" id="browser-locale" type="text" readonly placeholder="Detectando..." />
+              </div>
+              <div class="dt-field">
+                <label class="dt-label">Cookie 'locale'</label>
+                <input class="dt-input" id="cookie-locale" type="text" readonly placeholder="No establecida" />
+              </div>
+              <div class="dt-field">
+                <label class="dt-label">Forzar locale</label>
+                <div class="dt-radio-group">
+                  <label class="dt-radio-label"><input type="radio" name="force-locale" value="es" /> 🇪🇸 ES</label>
+                  <label class="dt-radio-label"><input type="radio" name="force-locale" value="en" /> 🇬🇧 EN</label>
+                  <label class="dt-radio-label"><input type="radio" name="force-locale" value="ca" /> 🇦🇩 CA</label>
+                </div>
+              </div>
+              <button class="dt-btn dt-btn-primary dt-btn-block" onclick="forceLocale()">
+                🌍 Establecer Cookie locale
+              </button>
+              <p style="font-size: 10px; color: var(--dt-text-muted); margin-top: 8px">
+                Establece la cookie <code>locale</code>. Recarga la app para que el middleware redirija.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ====== STATE: localStorage ====== -->
+        <section class="panel" id="panel-state-storage">
+          <div class="panel-grid">
+            <div class="dt-card" style="grid-column: 1 / -1">
+              <div class="dt-card-header">
+                <span class="dt-card-title">💾 localStorage Keys</span>
+                <button class="dt-btn dt-btn-outline dt-btn-sm" onclick="refreshStorage()">🔄 Refresh</button>
+              </div>
+              <table class="state-table" id="storage-table">
+                <thead>
+                  <tr>
+                    <th>Key</th>
+                    <th>Value</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody id="storage-tbody"></tbody>
+              </table>
+              <div style="margin-top: 12px; display: flex; gap: 8px">
+                <button class="dt-btn dt-btn-danger dt-btn-sm" onclick="clearAllStorage()">🗑️ Clear All</button>
+                <button class="dt-btn dt-btn-outline dt-btn-sm" onclick="copyStorage()">📋 Copy as JSON</button>
               </div>
             </div>
-            <button class="dt-btn dt-btn-primary dt-btn-block" onclick="forceTheme()">
-              🎨 Aplicar Tema
-            </button>
-            <button class="dt-btn dt-btn-outline dt-btn-block" style="margin-top:8px" onclick="resetTheme()">
-              🔄 Reset a Preferencia del Sistema
-            </button>
           </div>
+        </section>
 
-          <div class="dt-card">
-            <div class="dt-card-header">
-              <span class="dt-card-title">🌍 Locale Actual</span>
-              <span class="dt-card-badge" id="current-locale-badge">es</span>
-            </div>
-            <div class="dt-field">
-              <label class="dt-label">Idioma del navegador</label>
-              <input class="dt-input" id="browser-locale" type="text" readonly placeholder="Detectando...">
-            </div>
-            <div class="dt-field">
-              <label class="dt-label">Cookie 'locale'</label>
-              <input class="dt-input" id="cookie-locale" type="text" readonly placeholder="No establecida">
-            </div>
-            <div class="dt-field">
-              <label class="dt-label">Forzar locale</label>
-              <div class="dt-radio-group">
-                <label class="dt-radio-label"><input type="radio" name="force-locale" value="es"> 🇪🇸 ES</label>
-                <label class="dt-radio-label"><input type="radio" name="force-locale" value="en"> 🇬🇧 EN</label>
-                <label class="dt-radio-label"><input type="radio" name="force-locale" value="ca"> 🇦🇩 CA</label>
+        <!-- ====== STATE: AUTH ====== -->
+        <section class="panel" id="panel-state-auth">
+          <div class="panel-grid">
+            <div class="dt-card" style="grid-column: 1 / -1">
+              <div class="dt-card-header">
+                <span class="dt-card-title">👤 Auth Store State</span>
+                <button class="dt-btn dt-btn-outline dt-btn-sm" onclick="refreshAuth()">🔄 Refresh</button>
+              </div>
+              <table class="state-table" id="auth-table">
+                <thead>
+                  <tr>
+                    <th>Property</th>
+                    <th>Value</th>
+                  </tr>
+                </thead>
+                <tbody id="auth-tbody"></tbody>
+              </table>
+              <div style="margin-top: 12px; display: flex; gap: 8px">
+                <button class="dt-btn dt-btn-danger dt-btn-sm" onclick="clearAuthState()">
+                  🚪 Sign Out (si hay sesión)
+                </button>
               </div>
             </div>
-            <button class="dt-btn dt-btn-primary dt-btn-block" onclick="forceLocale()">
-              🌍 Establecer Cookie locale
-            </button>
-            <p style="font-size:10px;color:var(--dt-text-muted);margin-top:8px">
-              Establece la cookie <code>locale</code>. Recarga la app para que el middleware redirija.
-            </p>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <!-- ====== STATE: localStorage ====== -->
-      <section class="panel" id="panel-state-storage">
-        <div class="panel-grid">
-          <div class="dt-card" style="grid-column: 1 / -1">
-            <div class="dt-card-header">
-              <span class="dt-card-title">💾 localStorage Keys</span>
-              <button class="dt-btn dt-btn-outline dt-btn-sm" onclick="refreshStorage()">🔄 Refresh</button>
-            </div>
-            <table class="state-table" id="storage-table">
-              <thead>
-                <tr><th>Key</th><th>Value</th><th>Action</th></tr>
-              </thead>
-              <tbody id="storage-tbody">
-              </tbody>
-            </table>
-            <div style="margin-top:12px;display:flex;gap:8px">
-              <button class="dt-btn dt-btn-danger dt-btn-sm" onclick="clearAllStorage()">🗑️ Clear All</button>
-              <button class="dt-btn dt-btn-outline dt-btn-sm" onclick="copyStorage()">📋 Copy as JSON</button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ====== STATE: AUTH ====== -->
-      <section class="panel" id="panel-state-auth">
-        <div class="panel-grid">
-          <div class="dt-card" style="grid-column: 1 / -1">
-            <div class="dt-card-header">
-              <span class="dt-card-title">👤 Auth Store State</span>
-              <button class="dt-btn dt-btn-outline dt-btn-sm" onclick="refreshAuth()">🔄 Refresh</button>
-            </div>
-            <table class="state-table" id="auth-table">
-              <thead>
-                <tr><th>Property</th><th>Value</th></tr>
-              </thead>
-              <tbody id="auth-tbody">
-              </tbody>
-            </table>
-            <div style="margin-top:12px;display:flex;gap:8px">
-              <button class="dt-btn dt-btn-danger dt-btn-sm" onclick="clearAuthState()">🚪 Sign Out (si hay sesión)</button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ====== QUICK ACTIONS ====== -->
-      <section class="panel" id="panel-actions-quick">
-        <div class="panel-grid">
-          <div class="dt-card">
-            <div class="dt-card-header">
-              <span class="dt-card-title">⚡ Quick Actions</span>
-            </div>
-            <div style="display:flex;flex-direction:column;gap:8px">
-              <button class="dt-btn dt-btn-primary dt-btn-block" onclick="quickAction('clearStorage')">
-                🗑️ Limpiar localStorage
-              </button>
-              <button class="dt-btn dt-btn-outline dt-btn-block" onclick="quickAction('reloadTarget')">
-                🔄 Recargar App Principal
-              </button>
-              <button class="dt-btn dt-btn-primary dt-btn-block" onclick="quickAction('injectFloating')">
-                🎯 Inyectar Floating Button en App
-              </button>
-              <button class="dt-btn dt-btn-outline dt-btn-block" onclick="quickAction('openAllForms')">
-                📝 Abrir todas las URLs de formularios
-              </button>
-              <button class="dt-btn dt-btn-danger dt-btn-block" onclick="quickAction('hardReset')">
-                ⚠️ Hard Reset (clear storage + cookies + reload)
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ====== APP LOGS (real-time) ====== -->
-      <section class="panel" id="panel-actions-logs">
-        <div class="panel-grid">
-          <div class="dt-card" style="grid-column: 1 / -1">
-            <div class="dt-card-header">
-              <span class="dt-card-title">📋 App Logs (real-time)</span>
-              <div style="display:flex;gap:6px">
-                <select class="dt-select" id="log-filter-level" onchange="applyLogFilter()" style="width:auto;font-size:10px;padding:2px 6px">
-                  <option value="all">All levels</option>
-                  <option value="error">Errors only</option>
-                  <option value="warn">Warnings only</option>
-                  <option value="info">Info only</option>
-                  <option value="log">Logs only</option>
-                  <option value="debug">Debug only</option>
-                </select>
-                <button class="dt-btn dt-btn-outline dt-btn-sm" onclick="copyAppLogs()">📋 Copy</button>
-                <button class="dt-btn dt-btn-outline dt-btn-sm" onclick="clearAppLogs()">🗑️ Clear</button>
-                <button class="dt-btn dt-btn-sm dt-btn-primary" id="log-auto-scroll" onclick="toggleAutoScroll()">📌 Auto</button>
+        <!-- ====== QUICK ACTIONS ====== -->
+        <section class="panel" id="panel-actions-quick">
+          <div class="panel-grid">
+            <div class="dt-card">
+              <div class="dt-card-header">
+                <span class="dt-card-title">⚡ Quick Actions</span>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 8px">
+                <button class="dt-btn dt-btn-primary dt-btn-block" onclick="quickAction('clearStorage')">
+                  🗑️ Limpiar localStorage
+                </button>
+                <button class="dt-btn dt-btn-outline dt-btn-block" onclick="quickAction('reloadTarget')">
+                  🔄 Recargar App Principal
+                </button>
+                <button class="dt-btn dt-btn-primary dt-btn-block" onclick="quickAction('injectFloating')">
+                  🎯 Inyectar Floating Button en App
+                </button>
+                <button class="dt-btn dt-btn-outline dt-btn-block" onclick="quickAction('openAllForms')">
+                  📝 Abrir todas las URLs de formularios
+                </button>
+                <button class="dt-btn dt-btn-danger dt-btn-block" onclick="quickAction('hardReset')">
+                  ⚠️ Hard Reset (clear storage + cookies + reload)
+                </button>
               </div>
             </div>
-            <div class="log-area" id="app-log-area" style="max-height:500px;font-size:10px">
-              <div class="empty-state">
-                <div class="empty-state-icon">📋</div>
-                <div class="empty-state-text">Esperando logs de la app...</div>
+          </div>
+        </section>
+
+        <!-- ====== APP LOGS (real-time) ====== -->
+        <section class="panel" id="panel-actions-logs">
+          <div class="panel-grid">
+            <div class="dt-card" style="grid-column: 1 / -1">
+              <div class="dt-card-header">
+                <span class="dt-card-title">📋 App Logs (real-time)</span>
+                <div style="display: flex; gap: 6px">
+                  <select
+                    class="dt-select"
+                    id="log-filter-level"
+                    onchange="applyLogFilter()"
+                    style="width: auto; font-size: 10px; padding: 2px 6px"
+                  >
+                    <option value="all">All levels</option>
+                    <option value="error">Errors only</option>
+                    <option value="warn">Warnings only</option>
+                    <option value="info">Info only</option>
+                    <option value="log">Logs only</option>
+                    <option value="debug">Debug only</option>
+                  </select>
+                  <button class="dt-btn dt-btn-outline dt-btn-sm" onclick="copyAppLogs()">📋 Copy</button>
+                  <button class="dt-btn dt-btn-outline dt-btn-sm" onclick="clearAppLogs()">🗑️ Clear</button>
+                  <button class="dt-btn dt-btn-sm dt-btn-primary" id="log-auto-scroll" onclick="toggleAutoScroll()">
+                    📌 Auto
+                  </button>
+                </div>
+              </div>
+              <div class="log-area" id="app-log-area" style="max-height: 500px; font-size: 10px">
+                <div class="empty-state">
+                  <div class="empty-state-icon">📋</div>
+                  <div class="empty-state-text">Esperando logs de la app...</div>
+                </div>
+              </div>
+              <div style="margin-top: 8px; font-size: 9px; color: var(--dt-text-muted)">
+                <span id="log-stats">0 entries | 0 err | 0 warn</span>
+                <span style="margin-left: 16px">Los logs se reciben vía postMessage del logger de la app</span>
               </div>
             </div>
-            <div style="margin-top:8px;font-size:9px;color:var(--dt-text-muted)">
-              <span id="log-stats">0 entries | 0 err | 0 warn</span>
-              <span style="margin-left:16px">Los logs se reciben vía postMessage del logger de la app</span>
-            </div>
           </div>
-        </div>
-      </section>
-    </main>
-  </div>
+        </section>
+      </main>
+    </div>
 
-  <!-- Toast container -->
-  <div class="toast-container" id="toast-container"></div>
+    <!-- Toast container -->
+    <div class="toast-container" id="toast-container"></div>
 
-  <script>
-    // ==========================================================================
-    // CONSTANTS
-    // ==========================================================================
-    const THEME_KEY = 'webapp-theme';
-    const LOCALE_COOKIE = 'locale';
-    const VALID_THEMES = ['light', 'dark', 'golden', 'golden-dark'];
-    const VALID_LOCALES = ['es', 'en', 'ca'];
+    <script>
+      // ==========================================================================
+      // CONSTANTS
+      // ==========================================================================
+      const THEME_KEY = "webapp-theme";
+      const LOCALE_COOKIE = "locale";
+      const VALID_THEMES = ["light", "dark", "golden", "golden-dark"];
+      const VALID_LOCALES = ["es", "en", "ca"];
 
-    // ==========================================================================
-    // UTILITIES
-    // ==========================================================================
-    function getTargetWindow() {
-      if (window.opener && !window.opener.closed) return window.opener;
-      return null;
-    }
-
-    function hasTargetWindow() {
-      return getTargetWindow() !== null;
-    }
-
-    function readCookie(name) {
-      const match = document.cookie.match(new RegExp('(?:^|;\\s*)' + name + '=([^;]+)'));
-      return match ? decodeURIComponent(match[1]) : null;
-    }
-
-    function setCookie(name, value, days = 365) {
-      const d = new Date();
-      d.setTime(d.getTime() + days * 24 * 60 * 60 * 1000);
-      document.cookie = name + '=' + encodeURIComponent(value) + ';path=/;expires=' + d.toUTCString() + ';SameSite=Lax';
-      addLog('info', `Cookie '${name}' = '${value}' establecida`);
-    }
-
-    function deleteCookie(name) {
-      document.cookie = name + '=;path=/;expires=Thu, 01 Jan 1970 00:00:00 GMT;SameSite=Lax';
-    }
-
-    function toast(message, type = 'info') {
-      const container = document.getElementById('toast-container');
-      const el = document.createElement('div');
-      el.className = `toast toast-${type}`;
-      el.textContent = message;
-      container.appendChild(el);
-      addLog(type, message);
-      setTimeout(() => el.remove(), 3000);
-    }
-
-    function addLog(level, message) {
-      const container = document.getElementById('log-area');
-      // Eliminar empty state si existe
-      const empty = container.querySelector('.empty-state');
-      if (empty) empty.remove();
-
-      const time = new Date().toLocaleTimeString();
-      const entry = document.createElement('div');
-      entry.className = 'log-entry';
-      entry.innerHTML = `<span class="log-time">[${time}]</span><span class="log-level-${level}">${message}</span>`;
-      container.prepend(entry);
-
-      // Mantener máximo 200 logs
-      while (container.children.length > 200) {
-        container.lastChild.remove();
+      // ==========================================================================
+      // UTILITIES
+      // ==========================================================================
+      function getTargetWindow() {
+        if (window.opener && !window.opener.closed) return window.opener;
+        return null;
       }
-    }
 
-    function clearLogs() {
-      const container = document.getElementById('log-area');
-      container.innerHTML = '<div class="empty-state"><div class="empty-state-icon">📋</div><div class="empty-state-text">No hay eventos registrados aún</div></div>';
-    }
-
-    // ==========================================================================
-    // TARGET WINDOW OPERATIONS
-    // ==========================================================================
-    function fillField(targetDoc, selector, value) {
-      const el = targetDoc.querySelector(selector);
-      if (!el) {
-        toast(`Campo no encontrado: ${selector}`, 'error');
-        return false;
+      function hasTargetWindow() {
+        return getTargetWindow() !== null;
       }
-      // Usar setter nativo para disparar eventos React/Astro
-      const nativeSetter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value')?.set;
-      if (nativeSetter) {
-        nativeSetter.call(el, value);
-      } else {
-        el.value = value;
+
+      function readCookie(name) {
+        const match = document.cookie.match(new RegExp("(?:^|;\\s*)" + name + "=([^;]+)"));
+        return match ? decodeURIComponent(match[1]) : null;
       }
-      el.dispatchEvent(new Event('input', { bubbles: true }));
-      el.dispatchEvent(new Event('change', { bubbles: true }));
-      return true;
-    }
 
-    function fillLogin() {
-      const target = getTargetWindow();
-      if (!target) { toast('No hay app principal abierta. Usa "Abrir App" en el sidebar.', 'error'); return; }
+      function setCookie(name, value, days = 365) {
+        const d = new Date();
+        d.setTime(d.getTime() + days * 24 * 60 * 60 * 1000);
+        document.cookie =
+          name + "=" + encodeURIComponent(value) + ";path=/;expires=" + d.toUTCString() + ";SameSite=Lax";
+        addLog("info", `Cookie '${name}' = '${value}' establecida`);
+      }
 
-      const email = document.getElementById('login-email').value;
-      const password = document.getElementById('login-password').value;
-      const doc = target.document;
+      function deleteCookie(name) {
+        document.cookie = name + "=;path=/;expires=Thu, 01 Jan 1970 00:00:00 GMT;SameSite=Lax";
+      }
 
-      let ok = true;
-      ok = fillField(doc, '#email', email) && ok;
-      ok = fillField(doc, '#password', password) && ok;
+      function toast(message, type = "info") {
+        const container = document.getElementById("toast-container");
+        const el = document.createElement("div");
+        el.className = `toast toast-${type}`;
+        el.textContent = message;
+        container.appendChild(el);
+        addLog(type, message);
+        setTimeout(() => el.remove(), 3000);
+      }
 
-      if (ok) toast('✅ Formulario de Login autocompletado', 'success');
-    }
+      function addLog(level, message) {
+        const container = document.getElementById("log-area");
+        // Eliminar empty state si existe
+        const empty = container.querySelector(".empty-state");
+        if (empty) empty.remove();
 
-    function fastLogin() {
-      const target = getTargetWindow();
-      if (!target) { toast('No hay app principal abierta', 'error'); return; }
+        const time = new Date().toLocaleTimeString();
+        const entry = document.createElement("div");
+        entry.className = "log-entry";
+        entry.innerHTML = `<span class="log-time">[${time}]</span><span class="log-level-${level}">${message}</span>`;
+        container.prepend(entry);
 
-      const email = document.getElementById('login-email-fast').value;
-      const password = document.getElementById('login-password-fast').value;
-      const doc = target.document;
+        // Mantener máximo 200 logs
+        while (container.children.length > 200) {
+          container.lastChild.remove();
+        }
+      }
 
-      let ok = true;
-      ok = fillField(doc, '#email', email) && ok;
-      ok = fillField(doc, '#password', password) && ok;
+      function clearLogs() {
+        const container = document.getElementById("log-area");
+        container.innerHTML =
+          '<div class="empty-state"><div class="empty-state-icon">📋</div><div class="empty-state-text">No hay eventos registrados aún</div></div>';
+      }
 
-      if (!ok) return;
-
-      // Intentar submit
-      const form = doc.querySelector('#login-form');
-      if (form) {
-        const submitBtn = form.querySelector('button[type="submit"]');
-        if (submitBtn) {
-          submitBtn.click();
-          toast('⚡ Login submit ejecutado', 'success');
+      // ==========================================================================
+      // TARGET WINDOW OPERATIONS
+      // ==========================================================================
+      function fillField(targetDoc, selector, value) {
+        const el = targetDoc.querySelector(selector);
+        if (!el) {
+          toast(`Campo no encontrado: ${selector}`, "error");
+          return false;
+        }
+        // Usar setter nativo para disparar eventos React/Astro
+        const nativeSetter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, "value")?.set;
+        if (nativeSetter) {
+          nativeSetter.call(el, value);
         } else {
-          form.dispatchEvent(new Event('submit', { bubbles: true, cancelable: true }));
-          toast('⚡ Form submit disparado', 'success');
+          el.value = value;
         }
-      } else {
-        toast('Formulario #login-form no encontrado', 'error');
+        el.dispatchEvent(new Event("input", { bubbles: true }));
+        el.dispatchEvent(new Event("change", { bubbles: true }));
+        return true;
       }
-    }
 
-    function fillRegister() {
-      const target = getTargetWindow();
-      if (!target) { toast('No hay app principal abierta', 'error'); return; }
+      function fillLogin() {
+        const target = getTargetWindow();
+        if (!target) {
+          toast('No hay app principal abierta. Usa "Abrir App" en el sidebar.', "error");
+          return;
+        }
 
-      const name = document.getElementById('register-name').value;
-      const email = document.getElementById('register-email').value;
-      const password = document.getElementById('register-password').value;
-      const confirm = document.getElementById('register-confirm').value;
-      const doc = target.document;
+        const email = document.getElementById("login-email").value;
+        const password = document.getElementById("login-password").value;
+        const doc = target.document;
 
-      let ok = true;
-      ok = fillField(doc, '#name', name) && ok;
-      ok = fillField(doc, '#email', email) && ok;
-      ok = fillField(doc, '#password', password) && ok;
-      ok = fillField(doc, '#confirmPassword', confirm) && ok;
+        let ok = true;
+        ok = fillField(doc, "#email", email) && ok;
+        ok = fillField(doc, "#password", password) && ok;
 
-      if (ok) toast('✅ Formulario de Registro autocompletado', 'success');
-    }
-
-    function fillForgotPassword() {
-      const target = getTargetWindow();
-      if (!target) { toast('No hay app principal abierta', 'error'); return; }
-
-      const email = document.getElementById('forgot-email').value;
-      const doc = target.document;
-
-      if (fillField(doc, '#email', email)) {
-        toast('✅ Formulario Forgot Password autocompletado', 'success');
+        if (ok) toast("✅ Formulario de Login autocompletado", "success");
       }
-    }
 
-    // ==========================================================================
-    // STATE OPERATIONS
-    // ==========================================================================
-    function forceTheme() {
-      const selected = document.querySelector('input[name="force-theme"]:checked');
-      if (!selected) { toast('Selecciona un tema', 'error'); return; }
+      function fastLogin() {
+        const target = getTargetWindow();
+        if (!target) {
+          toast("No hay app principal abierta", "error");
+          return;
+        }
 
-      const theme = selected.value;
-      const target = getTargetWindow();
-      if (target && !target.closed) {
-        target.document.documentElement.setAttribute('data-theme', theme);
-        target.localStorage.setItem(THEME_KEY, theme);
-      }
-      localStorage.setItem(THEME_KEY, theme);
+        const email = document.getElementById("login-email-fast").value;
+        const password = document.getElementById("login-password-fast").value;
+        const doc = target.document;
 
-      // Tambien intentar via postMessage por si el target no es opener directo
-      try { window.postMessage({ type: 'SET_THEME', theme }, '*'); } catch (e) { }
+        let ok = true;
+        ok = fillField(doc, "#email", email) && ok;
+        ok = fillField(doc, "#password", password) && ok;
 
-      document.getElementById('current-theme-badge').textContent = theme;
-      toast(`🎨 Tema forzado a: ${theme}`, 'success');
-      updateThemeUI();
-    }
+        if (!ok) return;
 
-    function resetTheme() {
-      const target = getTargetWindow();
-      if (target && !target.closed) {
-        target.localStorage.removeItem(THEME_KEY);
-      }
-      localStorage.removeItem(THEME_KEY);
-
-      document.querySelectorAll('input[name="force-theme"]').forEach(r => r.checked = false);
-      document.getElementById('current-theme-badge').textContent = 'system';
-      toast('🔄 Tema reseteado a preferencia del sistema', 'info');
-    }
-
-    function forceLocale() {
-      const selected = document.querySelector('input[name="force-locale"]:checked');
-      if (!selected) { toast('Selecciona un locale', 'error'); return; }
-
-      const locale = selected.value;
-      setCookie(LOCALE_COOKIE, locale);
-      document.getElementById('cookie-locale').value = locale;
-      document.getElementById('current-locale-badge').textContent = locale.toUpperCase();
-      toast(`🌍 Cookie 'locale' establecida a '${locale}'. Recarga la app para aplicar.`, 'success');
-    }
-
-    function refreshStorage() {
-      const tbody = document.getElementById('storage-tbody');
-      const keys = [];
-
-      // Intentar leer del target window si está disponible
-      const target = getTargetWindow();
-      const storageSource = (target && !target.closed) ? target.localStorage : localStorage;
-
-      for (let i = 0; i < storageSource.length; i++) {
-        const key = storageSource.key(i);
-        if (key) {
-          const value = storageSource.getItem(key);
-          keys.push({ key, value: value ?? '' });
+        // Intentar submit
+        const form = doc.querySelector("#login-form");
+        if (form) {
+          const submitBtn = form.querySelector('button[type="submit"]');
+          if (submitBtn) {
+            submitBtn.click();
+            toast("⚡ Login submit ejecutado", "success");
+          } else {
+            form.dispatchEvent(new Event("submit", { bubbles: true, cancelable: true }));
+            toast("⚡ Form submit disparado", "success");
+          }
+        } else {
+          toast("Formulario #login-form no encontrado", "error");
         }
       }
 
-      if (keys.length === 0) {
-        tbody.innerHTML = '<tr><td colspan="3" style="text-align:center;color:var(--dt-text-muted);padding:20px">No hay keys en localStorage</td></tr>';
-        return;
+      function fillRegister() {
+        const target = getTargetWindow();
+        if (!target) {
+          toast("No hay app principal abierta", "error");
+          return;
+        }
+
+        const name = document.getElementById("register-name").value;
+        const email = document.getElementById("register-email").value;
+        const password = document.getElementById("register-password").value;
+        const confirm = document.getElementById("register-confirm").value;
+        const doc = target.document;
+
+        let ok = true;
+        ok = fillField(doc, "#name", name) && ok;
+        ok = fillField(doc, "#email", email) && ok;
+        ok = fillField(doc, "#password", password) && ok;
+        ok = fillField(doc, "#confirmPassword", confirm) && ok;
+
+        if (ok) toast("✅ Formulario de Registro autocompletado", "success");
       }
 
-      tbody.innerHTML = keys.map(k => `
+      function fillForgotPassword() {
+        const target = getTargetWindow();
+        if (!target) {
+          toast("No hay app principal abierta", "error");
+          return;
+        }
+
+        const email = document.getElementById("forgot-email").value;
+        const doc = target.document;
+
+        if (fillField(doc, "#email", email)) {
+          toast("✅ Formulario Forgot Password autocompletado", "success");
+        }
+      }
+
+      // ==========================================================================
+      // STATE OPERATIONS
+      // ==========================================================================
+      function forceTheme() {
+        const selected = document.querySelector('input[name="force-theme"]:checked');
+        if (!selected) {
+          toast("Selecciona un tema", "error");
+          return;
+        }
+
+        const theme = selected.value;
+        const target = getTargetWindow();
+        if (target && !target.closed) {
+          target.document.documentElement.setAttribute("data-theme", theme);
+          target.localStorage.setItem(THEME_KEY, theme);
+        }
+        localStorage.setItem(THEME_KEY, theme);
+
+        // Tambien intentar via postMessage por si el target no es opener directo
+        try {
+          window.postMessage({ type: "SET_THEME", theme }, "*");
+        } catch (e) {}
+
+        document.getElementById("current-theme-badge").textContent = theme;
+        toast(`🎨 Tema forzado a: ${theme}`, "success");
+        updateThemeUI();
+      }
+
+      function resetTheme() {
+        const target = getTargetWindow();
+        if (target && !target.closed) {
+          target.localStorage.removeItem(THEME_KEY);
+        }
+        localStorage.removeItem(THEME_KEY);
+
+        document.querySelectorAll('input[name="force-theme"]').forEach((r) => (r.checked = false));
+        document.getElementById("current-theme-badge").textContent = "system";
+        toast("🔄 Tema reseteado a preferencia del sistema", "info");
+      }
+
+      function forceLocale() {
+        const selected = document.querySelector('input[name="force-locale"]:checked');
+        if (!selected) {
+          toast("Selecciona un locale", "error");
+          return;
+        }
+
+        const locale = selected.value;
+        setCookie(LOCALE_COOKIE, locale);
+        document.getElementById("cookie-locale").value = locale;
+        document.getElementById("current-locale-badge").textContent = locale.toUpperCase();
+        toast(`🌍 Cookie 'locale' establecida a '${locale}'. Recarga la app para aplicar.`, "success");
+      }
+
+      function refreshStorage() {
+        const tbody = document.getElementById("storage-tbody");
+        const keys = [];
+
+        // Intentar leer del target window si está disponible
+        const target = getTargetWindow();
+        const storageSource = target && !target.closed ? target.localStorage : localStorage;
+
+        for (let i = 0; i < storageSource.length; i++) {
+          const key = storageSource.key(i);
+          if (key) {
+            const value = storageSource.getItem(key);
+            keys.push({ key, value: value ?? "" });
+          }
+        }
+
+        if (keys.length === 0) {
+          tbody.innerHTML =
+            '<tr><td colspan="3" style="text-align:center;color:var(--dt-text-muted);padding:20px">No hay keys en localStorage</td></tr>';
+          return;
+        }
+
+        tbody.innerHTML = keys
+          .map(
+            (k) => `
         <tr>
           <td><span style="color:var(--dt-primary);font-weight:600">${escapeHtml(k.key)}</span></td>
-          <td><span class="state-value" title="${escapeHtml(k.value)}">${escapeHtml(k.value.length > 60 ? k.value.substring(0, 60) + '...' : k.value)}</span></td>
+          <td><span class="state-value" title="${escapeHtml(k.value)}">${escapeHtml(k.value.length > 60 ? k.value.substring(0, 60) + "..." : k.value)}</span></td>
           <td><button class="dt-btn dt-btn-danger dt-btn-sm" onclick="deleteStorageKey('${escapeHtml(k.key)}')">🗑️</button></td>
         </tr>
-      `).join('');
+      `,
+          )
+          .join("");
 
-      addLog('info', `localStorage: ${keys.length} keys leídas`);
-    }
-
-    function deleteStorageKey(key) {
-      const target = getTargetWindow();
-      if (target && !target.closed) target.localStorage.removeItem(key);
-      localStorage.removeItem(key);
-      toast(`🗑️ Key '${key}' eliminada`, 'info');
-      refreshStorage();
-    }
-
-    function clearAllStorage() {
-      if (!confirm('¿Eliminar todas las keys de localStorage?')) return;
-      const target = getTargetWindow();
-      if (target && !target.closed) target.localStorage.clear();
-      localStorage.clear();
-      refreshStorage();
-      toast('🗑️ localStorage limpiado completamente', 'info');
-    }
-
-    function copyStorage() {
-      const obj = {};
-      const target = getTargetWindow();
-      const source = (target && !target.closed) ? target.localStorage : localStorage;
-      for (let i = 0; i < source.length; i++) {
-        const key = source.key(i);
-        if (key) obj[key] = source.getItem(key);
-      }
-      navigator.clipboard.writeText(JSON.stringify(obj, null, 2))
-        .then(() => toast('📋 localStorage copiado como JSON al portapapeles', 'success'))
-        .catch(() => toast('Error al copiar', 'error'));
-    }
-
-    function refreshAuth() {
-      const tbody = document.getElementById('auth-tbody');
-      const target = getTargetWindow();
-
-      if (!target || target.closed) {
-        tbody.innerHTML = '<tr><td colspan="2" style="text-align:center;color:var(--dt-text-muted);padding:20px">No hay conexión con la app</td></tr>';
-        return;
+        addLog("info", `localStorage: ${keys.length} keys leídas`);
       }
 
-      // Intentar acceder al authStore de la app
-      try {
-        const authStoreModule = target.window && target.window['authStore'];
-        if (authStoreModule && typeof authStoreModule.getState === 'function') {
-          const state = authStoreModule.getState();
-          const rows = [
-            ['user', state.user ? `${state.user.displayName || state.user.email} (${state.user.uid})` : 'null'],
-            ['role', state.role || 'guest'],
-            ['loading', String(state.loading || false)],
-          ];
-          tbody.innerHTML = rows.map(r => `
+      function deleteStorageKey(key) {
+        const target = getTargetWindow();
+        if (target && !target.closed) target.localStorage.removeItem(key);
+        localStorage.removeItem(key);
+        toast(`🗑️ Key '${key}' eliminada`, "info");
+        refreshStorage();
+      }
+
+      function clearAllStorage() {
+        if (!confirm("¿Eliminar todas las keys de localStorage?")) return;
+        const target = getTargetWindow();
+        if (target && !target.closed) target.localStorage.clear();
+        localStorage.clear();
+        refreshStorage();
+        toast("🗑️ localStorage limpiado completamente", "info");
+      }
+
+      function copyStorage() {
+        const obj = {};
+        const target = getTargetWindow();
+        const source = target && !target.closed ? target.localStorage : localStorage;
+        for (let i = 0; i < source.length; i++) {
+          const key = source.key(i);
+          if (key) obj[key] = source.getItem(key);
+        }
+        navigator.clipboard
+          .writeText(JSON.stringify(obj, null, 2))
+          .then(() => toast("📋 localStorage copiado como JSON al portapapeles", "success"))
+          .catch(() => toast("Error al copiar", "error"));
+      }
+
+      function refreshAuth() {
+        const tbody = document.getElementById("auth-tbody");
+        const target = getTargetWindow();
+
+        if (!target || target.closed) {
+          tbody.innerHTML =
+            '<tr><td colspan="2" style="text-align:center;color:var(--dt-text-muted);padding:20px">No hay conexión con la app</td></tr>';
+          return;
+        }
+
+        // Intentar acceder al authStore de la app
+        try {
+          const authStoreModule = target.window && target.window["authStore"];
+          if (authStoreModule && typeof authStoreModule.getState === "function") {
+            const state = authStoreModule.getState();
+            const rows = [
+              ["user", state.user ? `${state.user.displayName || state.user.email} (${state.user.uid})` : "null"],
+              ["role", state.role || "guest"],
+              ["loading", String(state.loading || false)],
+            ];
+            tbody.innerHTML = rows
+              .map(
+                (r) => `
             <tr>
               <td style="font-weight:600">${r[0]}</td>
               <td><span class="state-value">${escapeHtml(r[1])}</span></td>
             </tr>
-          `).join('');
-          addLog('success', 'AuthStore leído correctamente');
-          return;
-        }
-      } catch (e) {
-        // Fallback: no se pudo acceder al authStore
-      }
-
-      tbody.innerHTML = '<tr><td colspan="2" style="text-align:center;color:var(--dt-warning);padding:20px">⚠️ No se pudo acceder al authStore.<br>Asegúrate de que la app expone <code>window.authStore</code>.</td></tr>';
-    }
-
-    function clearAuthState() {
-      const target = getTargetWindow();
-      if (target && !target.closed) {
-        try {
-          const authStore = target.window && target.window['authStore'];
-          if (authStore && typeof authStore.logout === 'function') {
-            authStore.logout();
-            toast('🚪 SignOut ejecutado en la app', 'success');
-            addLog('info', 'authStore.logout() ejecutado');
+          `,
+              )
+              .join("");
+            addLog("success", "AuthStore leído correctamente");
             return;
           }
-        } catch (e) { }
-      }
-      toast('⚠️ No se pudo ejecutar logout en la app', 'error');
-    }
-
-    // ==========================================================================
-    // QUICK ACTIONS
-    // ==========================================================================
-    function quickAction(action) {
-      switch (action) {
-        case 'clearStorage':
-          const target = getTargetWindow();
-          if (target && !target.closed) target.localStorage.clear();
-          localStorage.clear();
-          refreshStorage();
-          toast('🗑️ localStorage limpiado', 'info');
-          break;
-
-        case 'reloadTarget':
-          const t = getTargetWindow();
-          if (t && !t.closed) {
-            t.location.reload();
-            toast('🔄 App principal recargada', 'success');
-          } else {
-            toast('No hay app principal para recargar', 'error');
-          }
-          break;
-
-        case 'openAllForms':
-          const base = getTargetBaseUrl();
-          const locales = ['es', 'en', 'ca'];
-          locales.forEach(loc => {
-            window.open(`${base}/${loc}/login`, '_blank');
-            window.open(`${base}/${loc}/register`, '_blank');
-            window.open(`${base}/${loc}/forgot-password`, '_blank');
-          });
-          toast(`📝 Formularios abiertos en ${locales.length * 3} pestañas`, 'info');
-          break;
-
-        case 'injectFloating':
-          const it = getTargetWindow();
-          if (it && !it.closed) {
-            // Inyectar floating button en la app target
-            const script = it.document.createElement('script');
-            script.src = '/devtools-floating.js';
-            it.document.head.appendChild(script);
-            toast('🎯 Floating button inyectado en la app', 'success');
-            addLog('info', 'devtools-floating.js inyectado en target window');
-          } else {
-            toast('No hay app target. Abre la app primero.', 'error');
-          }
-          break;
-
-        case 'hardReset':
-          if (!confirm('⚠️ Esto limpiará localStorage, cookies y recargará la app. ¿Continuar?')) return;
-          const ht = getTargetWindow();
-          if (ht && !ht.closed) {
-            ht.localStorage.clear();
-            ht.location.reload();
-          }
-          localStorage.clear();
-          VALID_LOCALES.forEach(l => deleteCookie(l));
-          deleteCookie('locale');
-          document.cookie.split(';').forEach(c => {
-            const name = c.split('=')[0].trim();
-            if (name) deleteCookie(name);
-          });
-          toast('⚠️ Hard reset ejecutado', 'info');
-          addLog('warn', 'HARD RESET: localStorage + cookies + reload');
-          break;
-      }
-    }
-
-    function getTargetBaseUrl() {
-      const target = getTargetWindow();
-      if (target && !target.closed) {
-        return target.location.origin;
-      }
-      return window.location.origin;
-    }
-
-    // ==========================================================================
-    // UI UPDATES
-    // ==========================================================================
-    function updateThemeUI() {
-      const storedTheme = localStorage.getItem(THEME_KEY);
-      const badge = document.getElementById('current-theme-badge');
-      if (storedTheme && VALID_THEMES.includes(storedTheme)) {
-        badge.textContent = storedTheme;
-        const radio = document.querySelector(`input[name="force-theme"][value="${storedTheme}"]`);
-        if (radio) radio.checked = true;
-      } else {
-        badge.textContent = 'system (light/dark)';
-      }
-    }
-
-    function updateLocaleUI() {
-      const cookieLocale = readCookie(LOCALE_COOKIE);
-      const badge = document.getElementById('current-locale-badge');
-      const cookieInput = document.getElementById('cookie-locale');
-      const browserInput = document.getElementById('browser-locale');
-
-      if (cookieLocale && VALID_LOCALES.includes(cookieLocale)) {
-        badge.textContent = cookieLocale.toUpperCase();
-        cookieInput.value = cookieLocale;
-        const radio = document.querySelector(`input[name="force-locale"][value="${cookieLocale}"]`);
-        if (radio) radio.checked = true;
-      } else {
-        badge.textContent = 'sin cookie';
-        cookieInput.value = '(no establecida)';
-      }
-
-      if (navigator.language) {
-        browserInput.value = navigator.language;
-      }
-    }
-
-    function updateConnectionStatus() {
-      const statusEl = document.getElementById('connection-status');
-      if (hasTargetWindow()) {
-        statusEl.innerHTML = '🟢 Target app conectada';
-      } else {
-        statusEl.innerHTML = '🔴 No target app';
-      }
-    }
-
-    function refreshAll() {
-      updateThemeUI();
-      updateLocaleUI();
-      updateConnectionStatus();
-      refreshStorage();
-      refreshAuth();
-      addLog('info', '🔄 Refresh completo');
-    }
-
-    // ==========================================================================
-    // NAVIGATION
-    // ==========================================================================
-    const panelTitles = {
-      'autofill-login': '🔑 Autocompletar Login',
-      'autofill-register': '📝 Autocompletar Register',
-      'autofill-forgot': '🔒 Autocompletar Forgot Password',
-      'state-theme': '🎨 Tema & Locale',
-      'state-storage': '💾 localStorage',
-      'state-auth': '👤 Auth State',
-      'actions-quick': '⚡ Quick Actions',
-      'actions-logs': '📋 Event Log',
-    };
-
-    document.querySelectorAll('.nav-item').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const panelId = btn.dataset.panel;
-        if (!panelId) return;
-
-        // Actualizar nav
-        document.querySelectorAll('.nav-item').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-
-        // Actualizar panel
-        document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
-        const panel = document.getElementById('panel-' + panelId);
-        if (panel) {
-          panel.classList.add('active');
-          document.getElementById('panel-title').textContent = panelTitles[panelId] || panelId;
+        } catch (e) {
+          // Fallback: no se pudo acceder al authStore
         }
 
-        // Refrescar datos del panel
-        if (panelId === 'state-storage') refreshStorage();
-        if (panelId === 'state-auth') refreshAuth();
-        if (panelId === 'state-theme') { updateThemeUI(); updateLocaleUI(); }
-        if (panelId === 'actions-logs') { /* ya está lleno */ }
-      });
-    });
-
-    // ==========================================================================
-    // OPEN TARGET APP
-    // ==========================================================================
-    document.getElementById('open-target-btn').addEventListener('click', (e) => {
-      e.preventDefault();
-      const w = window.open('/', '_blank');
-      if (w) {
-        toast('🟢 App abierta en nueva pestaña', 'success');
-        addLog('info', 'App abierta como target window');
+        tbody.innerHTML =
+          '<tr><td colspan="2" style="text-align:center;color:var(--dt-warning);padding:20px">⚠️ No se pudo acceder al authStore.<br>Asegúrate de que la app expone <code>window.authStore</code>.</td></tr>';
       }
-    });
 
-    // ==========================================================================
-    // ESCAPE HTML
-    // ==========================================================================
-    function escapeHtml(str) {
-      const div = document.createElement('div');
-      div.textContent = str;
-      return div.innerHTML;
-    }
+      function clearAuthState() {
+        const target = getTargetWindow();
+        if (target && !target.closed) {
+          try {
+            const authStore = target.window && target.window["authStore"];
+            if (authStore && typeof authStore.logout === "function") {
+              authStore.logout();
+              toast("🚪 SignOut ejecutado en la app", "success");
+              addLog("info", "authStore.logout() ejecutado");
+              return;
+            }
+          } catch (e) {}
+        }
+        toast("⚠️ No se pudo ejecutar logout en la app", "error");
+      }
 
-    // ==========================================================================
-    // APP LOGS (real-time from devtools-logger.js)
-    // ==========================================================================
-    const appLogEntries = [];
-    const MAX_APP_LOGS = 500;
-    let appLogFilter = 'all';
-    let appLogAutoScroll = true;
+      // ==========================================================================
+      // QUICK ACTIONS
+      // ==========================================================================
+      function quickAction(action) {
+        switch (action) {
+          case "clearStorage":
+            const target = getTargetWindow();
+            if (target && !target.closed) target.localStorage.clear();
+            localStorage.clear();
+            refreshStorage();
+            toast("🗑️ localStorage limpiado", "info");
+            break;
 
-    function addAppLogEntry(entry) {
-      appLogEntries.push(entry);
-      if (appLogEntries.length > MAX_APP_LOGS) appLogEntries.shift();
-      if (document.getElementById('panel-actions-logs').classList.contains('active')) {
+          case "reloadTarget":
+            const t = getTargetWindow();
+            if (t && !t.closed) {
+              t.location.reload();
+              toast("🔄 App principal recargada", "success");
+            } else {
+              toast("No hay app principal para recargar", "error");
+            }
+            break;
+
+          case "openAllForms":
+            const base = getTargetBaseUrl();
+            const locales = ["es", "en", "ca"];
+            locales.forEach((loc) => {
+              window.open(`${base}/${loc}/login`, "_blank");
+              window.open(`${base}/${loc}/register`, "_blank");
+              window.open(`${base}/${loc}/forgot-password`, "_blank");
+            });
+            toast(`📝 Formularios abiertos en ${locales.length * 3} pestañas`, "info");
+            break;
+
+          case "injectFloating":
+            const it = getTargetWindow();
+            if (it && !it.closed) {
+              // Inyectar floating button en la app target
+              const script = it.document.createElement("script");
+              script.src = "/devtools-floating.js";
+              it.document.head.appendChild(script);
+              toast("🎯 Floating button inyectado en la app", "success");
+              addLog("info", "devtools-floating.js inyectado en target window");
+            } else {
+              toast("No hay app target. Abre la app primero.", "error");
+            }
+            break;
+
+          case "hardReset":
+            if (!confirm("⚠️ Esto limpiará localStorage, cookies y recargará la app. ¿Continuar?")) return;
+            const ht = getTargetWindow();
+            if (ht && !ht.closed) {
+              ht.localStorage.clear();
+              ht.location.reload();
+            }
+            localStorage.clear();
+            VALID_LOCALES.forEach((l) => deleteCookie(l));
+            deleteCookie("locale");
+            document.cookie.split(";").forEach((c) => {
+              const name = c.split("=")[0].trim();
+              if (name) deleteCookie(name);
+            });
+            toast("⚠️ Hard reset ejecutado", "info");
+            addLog("warn", "HARD RESET: localStorage + cookies + reload");
+            break;
+        }
+      }
+
+      function getTargetBaseUrl() {
+        const target = getTargetWindow();
+        if (target && !target.closed) {
+          return target.location.origin;
+        }
+        return window.location.origin;
+      }
+
+      // ==========================================================================
+      // UI UPDATES
+      // ==========================================================================
+      function updateThemeUI() {
+        const storedTheme = localStorage.getItem(THEME_KEY);
+        const badge = document.getElementById("current-theme-badge");
+        if (storedTheme && VALID_THEMES.includes(storedTheme)) {
+          badge.textContent = storedTheme;
+          const radio = document.querySelector(`input[name="force-theme"][value="${storedTheme}"]`);
+          if (radio) radio.checked = true;
+        } else {
+          badge.textContent = "system (light/dark)";
+        }
+      }
+
+      function updateLocaleUI() {
+        const cookieLocale = readCookie(LOCALE_COOKIE);
+        const badge = document.getElementById("current-locale-badge");
+        const cookieInput = document.getElementById("cookie-locale");
+        const browserInput = document.getElementById("browser-locale");
+
+        if (cookieLocale && VALID_LOCALES.includes(cookieLocale)) {
+          badge.textContent = cookieLocale.toUpperCase();
+          cookieInput.value = cookieLocale;
+          const radio = document.querySelector(`input[name="force-locale"][value="${cookieLocale}"]`);
+          if (radio) radio.checked = true;
+        } else {
+          badge.textContent = "sin cookie";
+          cookieInput.value = "(no establecida)";
+        }
+
+        if (navigator.language) {
+          browserInput.value = navigator.language;
+        }
+      }
+
+      function updateConnectionStatus() {
+        const statusEl = document.getElementById("connection-status");
+        if (hasTargetWindow()) {
+          statusEl.innerHTML = "🟢 Target app conectada";
+        } else {
+          statusEl.innerHTML = "🔴 No target app";
+        }
+      }
+
+      function refreshAll() {
+        updateThemeUI();
+        updateLocaleUI();
+        updateConnectionStatus();
+        refreshStorage();
+        refreshAuth();
+        addLog("info", "🔄 Refresh completo");
+      }
+
+      // ==========================================================================
+      // NAVIGATION
+      // ==========================================================================
+      const panelTitles = {
+        "autofill-login": "🔑 Autocompletar Login",
+        "autofill-register": "📝 Autocompletar Register",
+        "autofill-forgot": "🔒 Autocompletar Forgot Password",
+        "state-theme": "🎨 Tema & Locale",
+        "state-storage": "💾 localStorage",
+        "state-auth": "👤 Auth State",
+        "actions-quick": "⚡ Quick Actions",
+        "actions-logs": "📋 Event Log",
+      };
+
+      document.querySelectorAll(".nav-item").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const panelId = btn.dataset.panel;
+          if (!panelId) return;
+
+          // Actualizar nav
+          document.querySelectorAll(".nav-item").forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
+
+          // Actualizar panel
+          document.querySelectorAll(".panel").forEach((p) => p.classList.remove("active"));
+          const panel = document.getElementById("panel-" + panelId);
+          if (panel) {
+            panel.classList.add("active");
+            document.getElementById("panel-title").textContent = panelTitles[panelId] || panelId;
+          }
+
+          // Refrescar datos del panel
+          if (panelId === "state-storage") refreshStorage();
+          if (panelId === "state-auth") refreshAuth();
+          if (panelId === "state-theme") {
+            updateThemeUI();
+            updateLocaleUI();
+          }
+          if (panelId === "actions-logs") {
+            /* ya está lleno */
+          }
+        });
+      });
+
+      // ==========================================================================
+      // OPEN TARGET APP
+      // ==========================================================================
+      document.getElementById("open-target-btn").addEventListener("click", (e) => {
+        e.preventDefault();
+        const w = window.open("/", "_blank");
+        if (w) {
+          toast("🟢 App abierta en nueva pestaña", "success");
+          addLog("info", "App abierta como target window");
+        }
+      });
+
+      // ==========================================================================
+      // ESCAPE HTML
+      // ==========================================================================
+      function escapeHtml(str) {
+        const div = document.createElement("div");
+        div.textContent = str;
+        return div.innerHTML;
+      }
+
+      // ==========================================================================
+      // APP LOGS (real-time from devtools-logger.js)
+      // ==========================================================================
+      const appLogEntries = [];
+      const MAX_APP_LOGS = 500;
+      let appLogFilter = "all";
+      let appLogAutoScroll = true;
+
+      function addAppLogEntry(entry) {
+        appLogEntries.push(entry);
+        if (appLogEntries.length > MAX_APP_LOGS) appLogEntries.shift();
+        if (document.getElementById("panel-actions-logs").classList.contains("active")) {
+          renderAppLogs();
+        }
+      }
+
+      function formatLogTime(ts) {
+        const d = new Date(ts);
+        return d.toLocaleTimeString() + "." + String(d.getMilliseconds()).padStart(3, "0");
+      }
+
+      function renderAppLogs() {
+        const area = document.getElementById("app-log-area");
+        const filtered = appLogFilter === "all" ? appLogEntries : appLogEntries.filter((e) => e.level === appLogFilter);
+
+        if (filtered.length === 0) {
+          area.innerHTML =
+            '<div class="empty-state"><div class="empty-state-icon">📋</div><div class="empty-state-text">No hay logs que coincidan con el filtro</div></div>';
+        } else {
+          area.innerHTML = filtered
+            .slice()
+            .reverse()
+            .map((e) => {
+              const time = formatLogTime(e.timestamp);
+              const args = e.args
+                .map((a) => {
+                  if (a === null) return '<span style="color:#8899aa">null</span>';
+                  if (a === undefined) return '<span style="color:#8899aa">undefined</span>';
+                  if (typeof a === "object") {
+                    try {
+                      return (
+                        '<span style="color:#ffa502">' + escapeHtml(JSON.stringify(a).substring(0, 200)) + "</span>"
+                      );
+                    } catch (ex) {
+                      return "[Object]";
+                    }
+                  }
+                  return escapeHtml(String(a).substring(0, 300));
+                })
+                .join(" ");
+              return (
+                '<div style="padding:1px 0;border-bottom:1px solid rgba(255,255,255,0.03);font-size:10px;line-height:1.5">' +
+                '<span style="color:#8899aa">' +
+                time +
+                "</span> " +
+                '<span style="color:' +
+                ({ error: "#ff4757", warn: "#ffa502", info: "#00d4aa", log: "#e0e0e0", debug: "#8899aa" }[e.level] ||
+                  "#e0e0e0") +
+                ';font-weight:600">' +
+                e.level.toUpperCase().padEnd(5, " ") +
+                "</span> " +
+                args +
+                "</div>"
+              );
+            })
+            .join("");
+        }
+
+        // Stats
+        const total = appLogEntries.length;
+        const errs = appLogEntries.filter((e) => e.level === "error").length;
+        const warns = appLogEntries.filter((e) => e.level === "warn").length;
+        document.getElementById("log-stats").textContent = total + " entries | " + errs + " err | " + warns + " warn";
+
+        // Auto-scroll
+        if (appLogAutoScroll) area.scrollTop = area.scrollHeight;
+      }
+
+      function applyLogFilter() {
+        appLogFilter = document.getElementById("log-filter-level").value;
         renderAppLogs();
       }
-    }
 
-    function formatLogTime(ts) {
-      const d = new Date(ts);
-      return d.toLocaleTimeString() + '.' + String(d.getMilliseconds()).padStart(3, '0');
-    }
-
-    function renderAppLogs() {
-      const area = document.getElementById('app-log-area');
-      const filtered = appLogFilter === 'all'
-        ? appLogEntries
-        : appLogEntries.filter(e => e.level === appLogFilter);
-
-      if (filtered.length === 0) {
-        area.innerHTML = '<div class="empty-state"><div class="empty-state-icon">📋</div><div class="empty-state-text">No hay logs que coincidan con el filtro</div></div>';
-      } else {
-        area.innerHTML = filtered.slice().reverse().map(e => {
-          const time = formatLogTime(e.timestamp);
-          const args = e.args.map(a => {
-            if (a === null) return '<span style="color:#8899aa">null</span>';
-            if (a === undefined) return '<span style="color:#8899aa">undefined</span>';
-            if (typeof a === 'object') {
-              try { return '<span style="color:#ffa502">' + escapeHtml(JSON.stringify(a).substring(0, 200)) + '</span>'; }
-              catch (ex) { return '[Object]'; }
-            }
-            return escapeHtml(String(a).substring(0, 300));
-          }).join(' ');
-          return '<div style="padding:1px 0;border-bottom:1px solid rgba(255,255,255,0.03);font-size:10px;line-height:1.5">' +
-            '<span style="color:#8899aa">' + time + '</span> ' +
-            '<span style="color:' + ({error:'#ff4757',warn:'#ffa502',info:'#00d4aa',log:'#e0e0e0',debug:'#8899aa'}[e.level]||'#e0e0e0') + ';font-weight:600">' + e.level.toUpperCase().padEnd(5, ' ') + '</span> ' +
-            args +
-            '</div>';
-        }).join('');
+      function toggleAutoScroll() {
+        appLogAutoScroll = !appLogAutoScroll;
+        const btn = document.getElementById("log-auto-scroll");
+        btn.textContent = appLogAutoScroll ? "📌 Auto" : "📌 Manual";
+        btn.style.background = appLogAutoScroll ? "" : "#ffa502";
       }
 
-      // Stats
-      const total = appLogEntries.length;
-      const errs = appLogEntries.filter(e => e.level === 'error').length;
-      const warns = appLogEntries.filter(e => e.level === 'warn').length;
-      document.getElementById('log-stats').textContent = total + ' entries | ' + errs + ' err | ' + warns + ' warn';
+      function copyAppLogs() {
+        const filtered = appLogFilter === "all" ? appLogEntries : appLogEntries.filter((e) => e.level === appLogFilter);
+        const text = filtered
+          .map((e) => {
+            const time = formatLogTime(e.timestamp);
+            const args = e.args
+              .map((a) => {
+                if (a === null) return "null";
+                if (a === undefined) return "undefined";
+                if (typeof a === "object") {
+                  try {
+                    return JSON.stringify(a);
+                  } catch (ex) {
+                    return "[Object]";
+                  }
+                }
+                return String(a);
+              })
+              .join(" ");
+            return "[" + time + "] " + e.level.toUpperCase().padEnd(5, " ") + " | " + args;
+          })
+          .join("\n");
+        navigator.clipboard
+          .writeText(text)
+          .then(() => toast("📋 " + filtered.length + " logs copied", "success"))
+          .catch(() => toast("Error copying", "error"));
+      }
 
-      // Auto-scroll
-      if (appLogAutoScroll) area.scrollTop = area.scrollHeight;
-    }
+      function clearAppLogs() {
+        appLogEntries.length = 0;
+        renderAppLogs();
+        toast("🗑️ App logs cleared", "info");
+      }
 
-    function applyLogFilter() {
-      appLogFilter = document.getElementById('log-filter-level').value;
-      renderAppLogs();
-    }
+      // ==========================================================================
+      // INIT
+      // ==========================================================================
+      function init() {
+        updateConnectionStatus();
+        updateThemeUI();
+        updateLocaleUI();
+        addLog("info", "🛠️ DevTools inicializado");
 
-    function toggleAutoScroll() {
-      appLogAutoScroll = !appLogAutoScroll;
-      const btn = document.getElementById('log-auto-scroll');
-      btn.textContent = appLogAutoScroll ? '📌 Auto' : '📌 Manual';
-      btn.style.background = appLogAutoScroll ? '' : '#ffa502';
-    }
+        // Escuchar mensajes de la app principal (postMessage)
+        window.addEventListener("message", (event) => {
+          if (!event.data) return;
+          if (event.data.type === "DEVTOOLS_STATE") {
+            addLog("info", `📡 Estado recibido de la app: ${JSON.stringify(event.data.payload).substring(0, 80)}`);
+          }
+          // Logs del logger (devtools-logger.js envía tipo __DT_LOG)
+          if (event.data.type === "__DT_LOG" && event.data.payload) {
+            addAppLogEntry(event.data.payload);
+          }
+        });
 
-    function copyAppLogs() {
-      const filtered = appLogFilter === 'all'
-        ? appLogEntries
-        : appLogEntries.filter(e => e.level === appLogFilter);
-      const text = filtered.map(e => {
-        const time = formatLogTime(e.timestamp);
-        const args = e.args.map(a => {
-          if (a === null) return 'null';
-          if (a === undefined) return 'undefined';
-          if (typeof a === 'object') { try { return JSON.stringify(a); } catch (ex) { return '[Object]'; } }
-          return String(a);
-        }).join(' ');
-        return '[' + time + '] ' + e.level.toUpperCase().padEnd(5, ' ') + ' | ' + args;
-      }).join('\n');
-      navigator.clipboard.writeText(text)
-        .then(() => toast('📋 ' + filtered.length + ' logs copied', 'success'))
-        .catch(() => toast('Error copying', 'error'));
-    }
+        // Polling periódico de conexión
+        setInterval(updateConnectionStatus, 3000);
+        setInterval(refreshStorage, 5000);
+      }
 
-    function clearAppLogs() {
-      appLogEntries.length = 0;
-      renderAppLogs();
-      toast('🗑️ App logs cleared', 'info');
-    }
-
-    // ==========================================================================
-    // INIT
-    // ==========================================================================
-    function init() {
-      updateConnectionStatus();
-      updateThemeUI();
-      updateLocaleUI();
-      addLog('info', '🛠️ DevTools inicializado');
-
-      // Escuchar mensajes de la app principal (postMessage)
-      window.addEventListener('message', (event) => {
-        if (!event.data) return;
-        if (event.data.type === 'DEVTOOLS_STATE') {
-          addLog('info', `📡 Estado recibido de la app: ${JSON.stringify(event.data.payload).substring(0, 80)}`);
-        }
-        // Logs del logger (devtools-logger.js envía tipo __DT_LOG)
-        if (event.data.type === '__DT_LOG' && event.data.payload) {
-          addAppLogEntry(event.data.payload);
-        }
-      });
-
-      // Polling periódico de conexión
-      setInterval(updateConnectionStatus, 3000);
-      setInterval(refreshStorage, 5000);
-    }
-
-    init();
-  </script>
-</body>
+      init();
+    </script>
+  </body>
 </html>

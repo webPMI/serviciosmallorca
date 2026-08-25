@@ -2,187 +2,261 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Navbar from "../../components/Navbar.astro";
 import Footer from "../../components/Footer.astro";
-import {
-  getLocaleFromUrl,
-  loadTranslations,
-  getLangPrefix,
-} from "../../i18n";
+import { getLocaleFromUrl, loadTranslations, getLangPrefix } from "../../i18n";
 
 export const prerender = false;
 
 const locale = getLocaleFromUrl(Astro.url);
 const translations = await loadTranslations(locale);
+const prefix = getLangPrefix(locale);
 ---
 
-<BaseLayout title={`${translations["legal.terms.title"]} - ${translations["site.title"]}`} lang={locale}>
-	<Navbar 
-		currentLocale={locale}
-		translations={translations}
-		getLangPrefix={getLangPrefix}
-	/>
+<BaseLayout
+  title={`${translations["legal.terms.title"] || "Términos de Servicio"} - ${translations["site.title"]}`}
+  lang={locale}
+  description={translations["legal.terms.subtitle"] ||
+    "Condiciones Generales de Uso del Directorio y Comunidad de Servicios Mallorca"}
+>
+  <Navbar currentLocale={locale} translations={translations} getLangPrefix={getLangPrefix} />
 
-	<main class="container section">
-		<div class="legal-container">
-			<div class="legal-header">
-				<h1 class="legal-title">{translations["legal.terms.title"]}</h1>
-				<p class="legal-subtitle">{translations["legal.terms.subtitle"]}</p>
-			</div>
+  <main class="container section">
+    <div class="legal-wrapper">
+      <!-- Terms Header Hero -->
+      <header class="legal-hero card-glass fade-in">
+        <div class="legal-badge-row">
+          <span class="badge badge-primary"
+            >📜 {translations["legal.badgeRegulation"] || "Marco Legal LSSI-CE & RGPD"}</span
+          >
+          <span class="badge badge-secondary"
+            >📅 {translations["legal.badgeUpdated"] || "Actualizado: Agosto 2026"}</span
+          >
+        </div>
+        <h1 class="legal-title">{translations["legal.terms.title"] || "Términos de Servicio"}</h1>
+        <p class="legal-subtitle">
+          {
+            translations["legal.terms.subtitle"] ||
+              "Condiciones de uso, normas de la comunidad y directrices para usuarios y titulares de negocios en Mallorca."
+          }
+        </p>
+      </header>
 
-			<div class="legal-content">
-				<section class="legal-section">
-					<h2>{translations["legal.sections.acceptance"]}</h2>
-					<p>{translations["legal.terms.acceptanceContent"]}</p>
-				</section>
+      <!-- Terms Content Sections -->
+      <div class="legal-sections-grid">
+        <section class="card card-glass legal-card">
+          <div class="section-icon-header">
+            <span class="sec-icon">✅</span>
+            <h2>{translations["legal.sections.acceptance"]}</h2>
+          </div>
+          <p>{translations["legal.terms.acceptanceContent"]}</p>
+        </section>
 
-				<section class="legal-section">
-					<h2>{translations["legal.sections.services"]}</h2>
-					<p>{translations["legal.terms.servicesContent"]}</p>
-				</section>
+        <section class="card card-glass legal-card">
+          <div class="section-icon-header">
+            <span class="sec-icon">🏢</span>
+            <h2>{translations["legal.sections.services"]}</h2>
+          </div>
+          <p>{translations["legal.terms.servicesContent"]}</p>
+          <div class="terms-callout-note">
+            <strong>🥇 Compromiso Zero Fake Data:</strong> El 100% de los negocios publicados son contrastados contra registros
+            oficiales y perfiles de Google Maps. Los titulares pueden verificar su titularidad para gestionar horarios, canales
+            de contacto y datos de atención.
+          </div>
+        </section>
 
-				<section class="legal-section">
-					<h2>{translations["legal.sections.obligations"]}</h2>
-					<p>{translations["legal.terms.obligationsContent"]}</p>
-				</section>
+        <section class="card card-glass legal-card">
+          <div class="section-icon-header">
+            <span class="sec-icon">👤</span>
+            <h2>{translations["legal.sections.obligations"]}</h2>
+          </div>
+          <p>{translations["legal.terms.obligationsContent"]}</p>
+          <ul class="legal-bullet-list">
+            <li>
+              <strong>Veracidad de Reseñas:</strong> Las valoraciones deben responder a vivencias reales de consumo o contratación.
+            </li>
+            <li>
+              <strong>Prohibición de Spam:</strong> Queda prohibida la publicación automatizada de comentarios o suplantación
+              de identidad.
+            </li>
+            <li>
+              <strong>Respeto en la Comunidad:</strong> No se tolerarán insultos, lenguaje de odio o difamación en los debates
+              del foro.
+            </li>
+          </ul>
+        </section>
 
-				<section class="legal-section">
-					<h2>{translations["legal.sections.privacy"]}</h2>
-					<p>{translations["legal.terms.privacyContent"]}</p>
-				</section>
+        <section class="card card-glass legal-card">
+          <div class="section-icon-header">
+            <span class="sec-icon">🔒</span>
+            <h2>{translations["legal.sections.privacy"]}</h2>
+          </div>
+          <p>{translations["legal.terms.privacyContent"]}</p>
+        </section>
 
-				<section class="legal-section">
-					<h2>{translations["legal.sections.intellectual"]}</h2>
-					<p>{translations["legal.terms.intellectualContent"]}</p>
-				</section>
+        <section class="card card-glass legal-card">
+          <div class="section-icon-header">
+            <span class="sec-icon">💡</span>
+            <h2>{translations["legal.sections.intellectual"]}</h2>
+          </div>
+          <p>{translations["legal.terms.intellectualContent"]}</p>
+        </section>
 
-				<section class="legal-section">
-					<h2>{translations["legal.sections.liability"]}</h2>
-					<p>{translations["legal.terms.liabilityContent"]}</p>
-				</section>
+        <section class="card card-glass legal-card">
+          <div class="section-icon-header">
+            <span class="sec-icon">⚠️</span>
+            <h2>{translations["legal.sections.liability"]}</h2>
+          </div>
+          <p>{translations["legal.terms.liabilityContent"]}</p>
+        </section>
 
-				<section class="legal-section">
-					<h2>{translations["legal.sections.modifications"]}</h2>
-					<p>{translations["legal.terms.modificationsContent"]}</p>
-				</section>
+        <section class="card card-glass legal-card">
+          <div class="section-icon-header">
+            <span class="sec-icon">🔄</span>
+            <h2>{translations["legal.sections.modifications"]}</h2>
+          </div>
+          <p>{translations["legal.terms.modificationsContent"]}</p>
+        </section>
 
-				<section class="legal-section">
-					<h2>{translations["legal.sections.contact"]}</h2>
-					<p>{translations["legal.terms.contactContent"]}</p>
-				</section>
-			</div>
+        <section class="card card-glass legal-card">
+          <div class="section-icon-header">
+            <span class="sec-icon">⚖️</span>
+            <h2>{translations["legal.sections.contact"]}</h2>
+          </div>
+          <p>{translations["legal.terms.contactContent"]}</p>
+        </section>
+      </div>
 
-			<div class="legal-footer">
-				<a href={getLangPrefix(locale)} class="btn btn-primary">
-					{translations["legal.backToHome"]}
-				</a>
-			</div>
-		</div>
-	</main>
+      <!-- Legal Footer Back Link -->
+      <footer class="legal-footer-nav">
+        <a href={prefix} class="btn btn-secondary">
+          ← {translations["legal.backToHome"] || "Volver al Inicio"}
+        </a>
+      </footer>
+    </div>
+  </main>
 
-	<Footer 
-		currentLocale={locale}
-		translations={translations}
-		getLangPrefix={getLangPrefix}
-	/>
+  <Footer currentLocale={locale} translations={translations} getLangPrefix={getLangPrefix} />
 </BaseLayout>
 
 <style>
-	.legal-container {
-		max-width: 800px;
-		margin: 0 auto;
-		padding: var(--space-2xl) 0;
-	}
+  .legal-wrapper {
+    max-width: 920px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+  }
 
-	.legal-header {
-		text-align: center;
-		margin-bottom: var(--space-2xl);
-		padding-bottom: var(--space-xl);
-		border-bottom: 2px solid var(--color-surface-border);
-	}
+  .legal-hero {
+    padding: var(--space-2xl) var(--space-xl);
+    border-radius: var(--border-radius-xl, 1.5rem);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-md);
+    background: linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--color-primary) 12%, var(--color-surface)),
+      color-mix(in srgb, var(--color-accent) 8%, var(--color-surface))
+    );
+  }
 
-	.legal-title {
-		font-size: var(--font-size-4xl);
-		margin-bottom: var(--space-md);
-		color: var(--color-primary-dark);
-	}
+  .legal-badge-row {
+    display: flex;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 
-	.legal-subtitle {
-		color: var(--color-text-light);
-		font-size: var(--font-size-base);
-	}
+  .legal-title {
+    font-size: clamp(2rem, 4vw, var(--font-size-4xl));
+    font-weight: 800;
+    color: var(--color-text);
+    margin: 0;
+    line-height: 1.15;
+  }
 
-	.legal-content {
-		display: flex;
-		flex-direction: column;
-		gap: var(--space-xl);
-		margin-bottom: var(--space-2xl);
-	}
+  .legal-subtitle {
+    font-size: var(--font-size-base);
+    color: var(--color-text-light);
+    max-width: 680px;
+    line-height: 1.6;
+    margin: 0;
+  }
 
-	.legal-section {
-		background-color: var(--color-white);
-		padding: var(--space-xl);
-		border-radius: var(--border-radius);
-		box-shadow: var(--shadow);
-	}
+  .legal-sections-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
 
-	.legal-section h2 {
-		font-size: var(--font-size-xl);
-		margin-bottom: var(--space-md);
-		color: var(--color-primary-dark);
-	}
+  .legal-card {
+    padding: var(--space-xl);
+    border-radius: var(--border-radius-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
 
-	.legal-section p {
-		color: var(--color-text);
-		line-height: 1.8;
-		margin-bottom: var(--space-md);
-	}
+  .section-icon-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding-bottom: var(--space-sm);
+    border-bottom: 1px solid var(--color-surface-border);
+  }
 
-	.legal-section ul {
-		list-style-position: inside;
-		color: var(--color-text);
-		line-height: 1.8;
-	}
+  .sec-icon {
+    font-size: 1.5rem;
+  }
 
-	.legal-section li {
-		margin-bottom: var(--space-sm);
-	}
+  .section-icon-header h2 {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    color: var(--color-text);
+    margin: 0;
+  }
 
-	.legal-footer {
-		text-align: center;
-		padding-top: var(--space-xl);
-		border-top: 2px solid var(--color-surface-border);
-	}
+  .legal-card p {
+    font-size: var(--font-size-base);
+    color: var(--color-text);
+    line-height: 1.75;
+    margin: 0;
+  }
 
-	.btn-primary {
-		display: inline-flex;
-		align-items: center;
-		gap: 0.5rem;
-		padding: 0.875rem 2rem;
-		background-color: var(--color-primary);
-		color: var(--color-white);
-		border: none;
-		border-radius: var(--border-radius);
-		cursor: pointer;
-		font-family: var(--font-family);
-		font-size: 1rem;
-		font-weight: 600;
-		text-decoration: none;
-		transition: all 0.2s;
-		box-shadow: var(--shadow);
-	}
+  .legal-bullet-list {
+    padding-left: var(--space-lg);
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    color: var(--color-text-light);
+    font-size: var(--font-size-sm);
+    line-height: 1.6;
+  }
 
-	.btn-primary:hover {
-		background-color: var(--color-primary-light);
-		transform: translateY(-2px);
-		box-shadow: 0 4px 12px var(--shadow-overlay-md);
-	}
+  .terms-callout-note {
+    background: var(--color-bg);
+    padding: var(--space-md);
+    border-radius: var(--border-radius-sm);
+    border-left: 3px solid var(--color-primary);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+    line-height: 1.6;
+  }
 
-	@media (max-width: 640px) {
-		.legal-title {
-			font-size: var(--font-size-3xl);
-		}
+  .legal-footer-nav {
+    text-align: center;
+    padding: var(--space-md) 0 var(--space-xl);
+  }
 
-		.legal-section {
-			padding: var(--space-lg);
-		}
-	}
+  @media (max-width: 640px) {
+    .legal-hero {
+      padding: var(--space-xl) var(--space-md);
+    }
+
+    .legal-card {
+      padding: var(--space-lg);
+    }
+  }
 </style>

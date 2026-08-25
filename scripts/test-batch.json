@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Fontanería Bilfont",
+    "category": "reformas-hogar",
+    "zone": "palma",
+    "address": "Carrer d'Hiroshima 27, 07004 Palma, Mallorca",
+    "rating": 4.9,
+    "reviewCount": 88,
+    "priceRange": "€€",
+    "verified": true,
+    "featured": false,
+    "status": "open",
+    "lastVerifiedAt": "2026-08-25",
+    "googleMapsUrl": "https://maps.google.com/?q=Carrer+d+Hiroshima+27+Palma",
+    "phone": "+34 628 792 123",
+    "whatsapp": "+34 628 792 123",
+    "email": "bilfont@gmail.com",
+    "website": "https://fontaneriabilfont.com",
+    "tags": ["Fontanería", "Urgencias 24h", "Desatascos", "Palma", "Instalador Autorizado"],
+    "shortDescription": {
+      "es": "Empresa autorizada de fontanería en Palma con más de 30 años de experiencia en averías, fugas y desatascos.",
+      "en": "Authorized plumbing contractor in Palma with over 30 years of experience in leak repairs and unblocking.",
+      "ca": "Empresa autoritzada de fontaneria a Palma amb més de 30 anys d'experiència en avaries i desembussos."
+    },
+    "fullDescription": {
+      "es": "Fontanería Bilfont es un referente en servicios de fontanería urgente y mantenimiento en Palma de Mallorca. Con más de 30 años de trayectoria y acreditación oficial de Industria, resuelven fugas, humedades, cambio de bajantes, termos eléctricos y desatascos en toda la bahía de Palma.",
+      "en": "Fontanería Bilfont is a trusted plumbing and emergency contractor in Palma de Mallorca. Backed by 30+ years of local experience and industry certification, they handle leaks, pipe repairs, boiler installations, and drainage unblocking.",
+      "ca": "Fontaneria Bilfont és un referent en serveis de fontaneria urgent i manteniment a Palma de Mallorca. Amb més de 30 anys d'experiència i acreditació oficial d'Indústria."
+    },
+    "highlights": {
+      "es": [
+        "Más de 30 años de trayectoria y acreditación oficial por Industria",
+        "Atención de urgencias para fugas de agua y desatascos",
+        "Presupuestos claros sin sorpresas y garantía por escrito",
+        "Cobertura rápida en Palma, Marratxí y Calvià"
+      ],
+      "en": [
+        "Over 30 years of proven expertise and official industry license",
+        "Fast response for emergency pipe bursts and drain unblocking",
+        "Transparent quotes with written warranty",
+        "Swift coverage across Palma, Marratxí, and Calvià"
+      ],
+      "ca": [
+        "Més de 30 anys d'experiència i acreditació oficial d'Indústria",
+        "Atenció d'urgències per a fuites d'aigua i desembussos",
+        "Pressuposts clars i garantia per escrit",
+        "Cobertura ràpida a Palma i municipis propers"
+      ]
+    },
+    "servicesProvided": {
+      "es": [
+        "Reparación de fugas y tuberías",
+        "Desatascos de tuberías y arquetas",
+        "Instalación de termos y calentadores",
+        "Boletines de agua y certificados"
+      ],
+      "en": [
+        "Leak detection and pipe repairs",
+        "Drain and sewer unblocking",
+        "Water heater installation",
+        "Official water certificates"
+      ],
+      "ca": ["Reparació de fuites i canonades", "Desembussos", "Instal·lació de termos", "Butlletins d'aigua"]
+    },
+    "image": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80",
+    "gallery": [
+      "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=800&q=80"
+    ],
+    "schedule": "Lun - Vie: 08:00 - 19:00 | Urgencias 24h"
+  }
+]

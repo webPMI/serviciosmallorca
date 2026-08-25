@@ -2,177 +2,373 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Navbar from "../../components/Navbar.astro";
 import Footer from "../../components/Footer.astro";
-import {
-  getLocaleFromUrl,
-  loadTranslations,
-  getLangPrefix,
-} from "../../i18n";
+import { getLocaleFromUrl, loadTranslations, getLangPrefix } from "../../i18n";
 
 export const prerender = false;
 
 const locale = getLocaleFromUrl(Astro.url);
 const translations = await loadTranslations(locale);
+const prefix = getLangPrefix(locale);
 ---
 
-<BaseLayout title={`${translations["legal.privacy.title"]} - ${translations["site.title"]}`} lang={locale}>
-	<Navbar 
-		currentLocale={locale}
-		translations={translations}
-		getLangPrefix={getLangPrefix}
-	/>
+<BaseLayout
+  title={`${translations["legal.privacy.title"] || "Política de Privacidad"} - ${translations["site.title"]}`}
+  lang={locale}
+  description={translations["legal.privacy.subtitle"] ||
+    "Política de Privacidad y Protección de Datos conforme al RGPD y LOPD-GDD en Servicios Mallorca"}
+>
+  <Navbar currentLocale={locale} translations={translations} getLangPrefix={getLangPrefix} />
 
-	<main class="container section">
-		<div class="legal-container">
-			<div class="legal-header">
-				<h1 class="legal-title">{translations["legal.privacy.title"]}</h1>
-				<p class="legal-subtitle">{translations["legal.privacy.subtitle"]}</p>
-			</div>
+  <main class="container section">
+    <div class="legal-wrapper">
+      <!-- Legal Header Hero -->
+      <header class="legal-hero card-glass fade-in">
+        <div class="legal-badge-row">
+          <span class="badge badge-primary"
+            >🛡️ {translations["legal.badgeRegulation"] || "Cumplimiento RGPD & LOPD-GDD"}</span
+          >
+          <span class="badge badge-secondary"
+            >📅 {translations["legal.badgeUpdated"] || "Actualizado: Agosto 2026"}</span
+          >
+        </div>
+        <h1 class="legal-title">{translations["legal.privacy.title"] || "Política de Privacidad"}</h1>
+        <p class="legal-subtitle">
+          {
+            translations["legal.privacy.subtitle"] ||
+              "En Servicios Mallorca nos tomamos muy en serio la seguridad y privacidad de tus datos personales. Conoce con total transparencia cómo protegemos tu información."
+          }
+        </p>
+      </header>
 
-			<div class="legal-content">
-				<section class="legal-section">
-					<h2>{translations["legal.privacy.dataCollection"]}</h2>
-					<p>{translations["legal.privacy.dataCollectionContent"]}</p>
-				</section>
+      <!-- Quick Action Box: Business Management & ARCO Rights -->
+      <section class="card card-glass legal-action-box fade-in">
+        <div class="action-box-text">
+          <span class="action-box-icon">⚖️</span>
+          <div>
+            <h3>
+              {translations["legal.privacy.businessActionTitle"] || "Gestión de Fichas y Derechos para Titulares"}
+            </h3>
+            <p>
+              {
+                translations["legal.privacy.businessActionDesc"] ||
+                  "Si eres titular o representante legal de un negocio en Mallorca, puedes reclamar la propiedad para personalizarlo o ejercer tu derecho de supresión de ficha de forma inmediata."
+              }
+            </p>
+          </div>
+        </div>
+        <div class="action-box-buttons">
+          <a href={`${prefix}servicios`} class="btn btn-primary btn-sm">
+            {translations["legal.privacy.claimBtn"] || "🏢 Reclamar Negocio"}
+          </a>
+          <a href={`${prefix}servicios`} class="btn btn-secondary btn-sm">
+            {translations["legal.privacy.deleteBtn"] || "🗑️ Solicitar Baja RGPD"}
+          </a>
+        </div>
+      </section>
 
-				<section class="legal-section">
-					<h2>{translations["legal.privacy.dataUse"]}</h2>
-					<p>{translations["legal.privacy.dataUseContent"]}</p>
-				</section>
+      <!-- Legal Content Sections -->
+      <div class="legal-sections-grid">
+        <section class="card card-glass legal-card">
+          <div class="section-icon-header">
+            <span class="sec-icon">📥</span>
+            <h2>{translations["legal.privacy.dataCollection"]}</h2>
+          </div>
+          <p>{translations["legal.privacy.dataCollectionContent"]}</p>
+          <ul class="legal-bullet-list">
+            <li>
+              <strong>Datos de cuenta:</strong> Nombre, dirección de correo electrónico, fotografía o avatar seleccionado.
+            </li>
+            <li>
+              <strong>Datos de interacción:</strong> Reseñas voluntarias, votos, temas y respuestas publicados en el foro
+              de la comunidad.
+            </li>
+            <li>
+              <strong>Datos de verificación empresarial:</strong> CIF, acreditación de titularidad y teléfono de contacto
+              para reclamaciones de negocio.
+            </li>
+          </ul>
+        </section>
 
-				<section class="legal-section">
-					<h2>{translations["legal.privacy.dataSharing"]}</h2>
-					<p>{translations["legal.privacy.dataSharingContent"]}</p>
-				</section>
+        <section class="card card-glass legal-card">
+          <div class="section-icon-header">
+            <span class="sec-icon">🎯</span>
+            <h2>{translations["legal.privacy.dataUse"]}</h2>
+          </div>
+          <p>{translations["legal.privacy.dataUseContent"]}</p>
+        </section>
 
-				<section class="legal-section">
-					<h2>{translations["legal.privacy.userRights"]}</h2>
-					<p>{translations["legal.privacy.userRightsContent"]}</p>
-				</section>
+        <section class="card card-glass legal-card">
+          <div class="section-icon-header">
+            <span class="sec-icon">🤝</span>
+            <h2>{translations["legal.privacy.dataSharing"]}</h2>
+          </div>
+          <p>{translations["legal.privacy.dataSharingContent"]}</p>
+          <div class="adsense-disclosure-note">
+            <strong>🌐 Publicidad contextual de Google:</strong> Los usuarios pueden gestionar o deshabilitar la personalización
+            de anuncios en cualquier momento accediendo a la <a
+              href="https://adssettings.google.com/authenticated"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="link-highlight">Configuración de Anuncios de Google ↗</a
+            >.
+          </div>
+        </section>
 
-				<section class="legal-section">
-					<h2>{translations["legal.privacy.security"]}</h2>
-					<p>{translations["legal.privacy.securityContent"]}</p>
-				</section>
+        <section class="card card-glass legal-card">
+          <div class="section-icon-header">
+            <span class="sec-icon">⚖️</span>
+            <h2>{translations["legal.privacy.userRights"]}</h2>
+          </div>
+          <p>{translations["legal.privacy.userRightsContent"]}</p>
+          <div class="rights-tags-cloud">
+            <span class="right-pill">✓ Acceso</span>
+            <span class="right-pill">✓ Rectificación</span>
+            <span class="right-pill">✓ Supresión (Derecho al Olvido)</span>
+            <span class="right-pill">✓ Limitación</span>
+            <span class="right-pill">✓ Portabilidad</span>
+            <span class="right-pill">✓ Oposición</span>
+          </div>
+        </section>
 
-				<section class="legal-section">
-					<h2>{translations["legal.privacy.cookies"]}</h2>
-					<p>{translations["legal.privacy.cookiesContent"]}</p>
-				</section>
-			</div>
+        <section class="card card-glass legal-card">
+          <div class="section-icon-header">
+            <span class="sec-icon">🔐</span>
+            <h2>{translations["legal.privacy.security"]}</h2>
+          </div>
+          <p>{translations["legal.privacy.securityContent"]}</p>
+        </section>
 
-			<div class="legal-footer">
-				<a href={getLangPrefix(locale)} class="btn btn-primary">
-					{translations["legal.backToHome"]}
-				</a>
-			</div>
-		</div>
-	</main>
+        <section class="card card-glass legal-card">
+          <div class="section-icon-header">
+            <span class="sec-icon">🍪</span>
+            <h2>{translations["legal.privacy.cookies"]}</h2>
+          </div>
+          <p>{translations["legal.privacy.cookiesContent"]}</p>
+        </section>
+      </div>
 
-	<Footer 
-		currentLocale={locale}
-		translations={translations}
-		getLangPrefix={getLangPrefix}
-	/>
+      <!-- Legal Footer Back Link -->
+      <footer class="legal-footer-nav">
+        <a href={prefix} class="btn btn-secondary">
+          ← {translations["legal.backToHome"] || "Volver al Inicio"}
+        </a>
+      </footer>
+    </div>
+  </main>
+
+  <Footer currentLocale={locale} translations={translations} getLangPrefix={getLangPrefix} />
 </BaseLayout>
 
 <style>
-	.legal-container {
-		max-width: 800px;
-		margin: 0 auto;
-		padding: var(--space-2xl) 0;
-	}
+  .legal-wrapper {
+    max-width: 920px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+  }
 
-	.legal-header {
-		text-align: center;
-		margin-bottom: var(--space-2xl);
-		padding-bottom: var(--space-xl);
-		border-bottom: 2px solid var(--color-surface-border);
-	}
+  .legal-hero {
+    padding: var(--space-2xl) var(--space-xl);
+    border-radius: var(--border-radius-xl, 1.5rem);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-md);
+    background: linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--color-primary) 12%, var(--color-surface)),
+      color-mix(in srgb, var(--color-accent) 8%, var(--color-surface))
+    );
+  }
 
-	.legal-title {
-		font-size: var(--font-size-4xl);
-		margin-bottom: var(--space-md);
-		color: var(--color-primary-dark);
-	}
+  .legal-badge-row {
+    display: flex;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 
-	.legal-subtitle {
-		color: var(--color-text-light);
-		font-size: var(--font-size-base);
-	}
+  .legal-title {
+    font-size: clamp(2rem, 4vw, var(--font-size-4xl));
+    font-weight: 800;
+    color: var(--color-text);
+    margin: 0;
+    line-height: 1.15;
+  }
 
-	.legal-content {
-		display: flex;
-		flex-direction: column;
-		gap: var(--space-xl);
-		margin-bottom: var(--space-2xl);
-	}
+  .legal-subtitle {
+    font-size: var(--font-size-base);
+    color: var(--color-text-light);
+    max-width: 680px;
+    line-height: 1.6;
+    margin: 0;
+  }
 
-	.legal-section {
-		background-color: var(--color-white);
-		padding: var(--space-xl);
-		border-radius: var(--border-radius);
-		box-shadow: var(--shadow);
-	}
+  .legal-action-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-xl);
+    border-radius: var(--border-radius-lg);
+    gap: var(--space-lg);
+    border-left: 4px solid var(--color-primary);
+  }
 
-	.legal-section h2 {
-		font-size: var(--font-size-xl);
-		margin-bottom: var(--space-md);
-		color: var(--color-primary-dark);
-	}
+  .action-box-text {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-md);
+  }
 
-	.legal-section p {
-		color: var(--color-text);
-		line-height: 1.8;
-		margin-bottom: var(--space-md);
-	}
+  .action-box-icon {
+    font-size: 2.2rem;
+    line-height: 1;
+    flex-shrink: 0;
+  }
 
-	.legal-section ul {
-		list-style-position: inside;
-		color: var(--color-text);
-		line-height: 1.8;
-	}
+  .action-box-text h3 {
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    margin: 0 0 var(--space-xs);
+    color: var(--color-text);
+  }
 
-	.legal-section li {
-		margin-bottom: var(--space-sm);
-	}
+  .action-box-text p {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+    margin: 0;
+    line-height: 1.5;
+  }
 
-	.legal-footer {
-		text-align: center;
-		padding-top: var(--space-xl);
-		border-top: 2px solid var(--color-surface-border);
-	}
+  .action-box-buttons {
+    display: flex;
+    gap: var(--space-sm);
+    flex-shrink: 0;
+  }
 
-	.btn-primary {
-		display: inline-flex;
-		align-items: center;
-		gap: 0.5rem;
-		padding: 0.875rem 2rem;
-		background-color: var(--color-primary);
-		color: var(--color-white);
-		border: none;
-		border-radius: var(--border-radius);
-		cursor: pointer;
-		font-family: var(--font-family);
-		font-size: 1rem;
-		font-weight: 600;
-		text-decoration: none;
-		transition: all 0.2s;
-		box-shadow: var(--shadow);
-	}
+  .legal-sections-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
 
-	.btn-primary:hover {
-		background-color: var(--color-primary-light);
-		transform: translateY(-2px);
-		box-shadow: 0 4px 12px var(--shadow-overlay-md);
-	}
+  .legal-card {
+    padding: var(--space-xl);
+    border-radius: var(--border-radius-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
 
-	@media (max-width: 640px) {
-		.legal-title {
-			font-size: var(--font-size-3xl);
-		}
+  .section-icon-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding-bottom: var(--space-sm);
+    border-bottom: 1px solid var(--color-surface-border);
+  }
 
-		.legal-section {
-			padding: var(--space-lg);
-		}
-	}
+  .sec-icon {
+    font-size: 1.5rem;
+  }
+
+  .section-icon-header h2 {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    color: var(--color-text);
+    margin: 0;
+  }
+
+  .legal-card p {
+    font-size: var(--font-size-base);
+    color: var(--color-text);
+    line-height: 1.75;
+    margin: 0;
+  }
+
+  .legal-bullet-list {
+    padding-left: var(--space-lg);
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    color: var(--color-text-light);
+    font-size: var(--font-size-sm);
+    line-height: 1.6;
+  }
+
+  .adsense-disclosure-note {
+    background: var(--color-bg);
+    padding: var(--space-md);
+    border-radius: var(--border-radius-sm);
+    border-left: 3px solid var(--color-accent);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+    line-height: 1.6;
+  }
+
+  .link-highlight {
+    color: var(--color-primary);
+    font-weight: 600;
+    text-decoration: underline;
+  }
+
+  .rights-tags-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+    margin-top: var(--space-xs);
+  }
+
+  .right-pill {
+    background: var(--color-primary-bg);
+    color: var(--color-primary-dark);
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    padding: 5px 12px;
+    border-radius: 999px;
+    border: 1px solid var(--color-surface-border);
+  }
+
+  .legal-footer-nav {
+    text-align: center;
+    padding: var(--space-md) 0 var(--space-xl);
+  }
+
+  @media (max-width: 768px) {
+    .legal-action-box {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .action-box-buttons {
+      width: 100%;
+    }
+
+    .action-box-buttons .btn {
+      flex: 1;
+      text-align: center;
+      justify-content: center;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .legal-hero {
+      padding: var(--space-xl) var(--space-md);
+    }
+
+    .legal-card {
+      padding: var(--space-lg);
+    }
+
+    .action-box-buttons {
+      flex-direction: column;
+    }
+
+    .action-box-buttons .btn {
+      width: 100%;
+    }
+  }
 </style>

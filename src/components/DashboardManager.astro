@@ -1,4 +1,6 @@
 ---
+import { SERVICES } from "../data/services";
+
 interface Props {
   translations: Record<string, string>;
 }
@@ -6,105 +8,131 @@ interface Props {
 const { translations } = Astro.props;
 ---
 
-<section class="stats-grid grid-auto">
-  <article class="stat-card card hover-lift">
-    <div class="stat-header">
-      <span class="stat-icon">👥</span>
-      <span class="stat-trend positive">—</span>
-    </div>
-    <div class="stat-value">—</div>
-    <div class="stat-label">{translations["nav.clients"]}</div>
-  </article>
-
-  <article class="stat-card card hover-lift">
-    <div class="stat-header">
-      <span class="stat-icon">📋</span>
-      <span class="stat-trend positive">—</span>
-    </div>
-    <div class="stat-value">—</div>
-    <div class="stat-label">{translations["nav.plans"]}</div>
-  </article>
-
-  <article class="stat-card card hover-lift">
-    <div class="stat-header">
-      <span class="stat-icon">📊</span>
-      <span class="stat-trend positive">—</span>
-    </div>
-    <div class="stat-value">—</div>
-    <div class="stat-label">{translations["nav.analytics"]}</div>
-  </article>
-
-  <article class="stat-card card hover-lift">
-    <div class="stat-header">
-      <span class="stat-icon">🔑</span>
-      <span class="stat-trend positive">—</span>
-    </div>
-    <div class="stat-value">—</div>
-    <div class="stat-label">{translations["nav.dashboard"]}</div>
-  </article>
-</section>
-
-<div class="dashboard-main-grid">
-  <div class="main-col">
-    <article class="card card-glass">
-      <div class="card-title-row">
-        <h3>{translations["nav.clients"]}</h3>
+<div class="manager-dashboard-container">
+  <!-- Manager Stats -->
+  <section class="stats-grid">
+    <article class="stat-card card hover-lift">
+      <div class="stat-header">
+        <span class="stat-icon">⭐</span>
+        <span class="stat-trend positive">Verificado</span>
       </div>
-      <p class="text-muted">Panel de gestión activo</p>
+      <div class="stat-value">Manager B2B</div>
+      <div class="stat-label">Estado de Titularidad</div>
     </article>
-  </div>
 
-  <div class="side-col">
-    <article class="card">
-      <h3 class="card-section-title">{translations["nav.plans"]}</h3>
-      <ul class="activity-feed">
-        <li class="activity-item">
-          <span class="activity-icon">📋</span>
-          <div class="activity-details">
-            <span class="activity-title">{translations["nav.plans"]}</span>
-            <span class="activity-time">Gestión de planes y rutinas</span>
-          </div>
-          <span class="badge badge-accent">Activo</span>
-        </li>
-      </ul>
+    <article class="stat-card card hover-lift">
+      <div class="stat-header">
+        <span class="stat-icon">🏢</span>
+        <span class="stat-trend positive">Activo</span>
+      </div>
+      <div class="stat-value" id="manager-services-count">1</div>
+      <div class="stat-label">Negocios Vinculados</div>
     </article>
+
+    <article class="stat-card card hover-lift">
+      <div class="stat-header">
+        <span class="stat-icon">💬</span>
+        <span class="stat-trend positive">Directo</span>
+      </div>
+      <div class="stat-value">WhatsApp</div>
+      <div class="stat-label">Canal de Contacto Principal</div>
+    </article>
+  </section>
+
+  <!-- MANAGED SERVICES LIST -->
+  <article class="card card-glass">
+    <div class="card-title-row">
+      <h3>🏢 {translations["dashboard.myManagedServices"] || "Mis Negocios Verificados"}</h3>
+    </div>
+    <div id="manager-services-list" class="services-managed-list">
+      <p class="text-muted empty-state">Cargando negocios vinculados...</p>
+    </div>
+  </article>
+
+  <!-- EDIT SERVICE MODAL -->
+  <div id="manager-edit-modal" class="modal-overlay" style="display: none;">
+    <div class="modal-card card card-glass">
+      <div class="modal-header">
+        <h3 id="modal-service-title">✏️ Modificar Datos del Negocio</h3>
+        <button type="button" id="close-modal-btn" class="btn-close" aria-label="Cerrar modal">✕</button>
+      </div>
+
+      <form id="manager-edit-form" class="modal-form">
+        <input type="hidden" id="edit-service-slug" />
+
+        <div class="form-row-2">
+          <div class="form-group">
+            <label for="edit-phone">📞 Teléfono de Contacto</label>
+            <input type="text" id="edit-phone" class="input-field" required />
+          </div>
+          <div class="form-group">
+            <label for="edit-whatsapp">💬 WhatsApp Directo</label>
+            <input type="text" id="edit-whatsapp" class="input-field" required />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="edit-website">🌐 Sitio Web Oficial / Perfil</label>
+          <input type="url" id="edit-website" class="input-field" placeholder="https://ejemplo.com" />
+        </div>
+
+        <div class="form-group">
+          <label for="edit-schedule">🕒 Horario Operativo</label>
+          <input type="text" id="edit-schedule" class="input-field" placeholder="Lun - Sáb: 10:00 - 20:00" required />
+        </div>
+
+        <div class="form-group">
+          <label for="edit-status">🚦 Estado Operativo</label>
+          <select id="edit-status" class="input-field">
+            <option value="open">🟢 Abierto / En Funcionamiento</option>
+            <option value="seasonal_closure">🟡 Cierre por Temporada / Vacaciones</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="edit-description">📝 Descripción Principal (Español)</label>
+          <textarea id="edit-description" class="input-field" rows="4" required></textarea>
+        </div>
+
+        <div class="modal-actions">
+          <button type="button" id="cancel-edit-btn" class="btn btn-secondary">Cancelar</button>
+          <button type="submit" id="save-override-btn" class="btn btn-primary"> 💾 Guardar y Actualizar Ficha </button>
+        </div>
+      </form>
+    </div>
   </div>
 </div>
 
 <style>
+  .manager-dashboard-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+  }
+
   .stats-grid {
-    margin-bottom: var(--space-xl);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--space-md);
   }
 
   .stat-card {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-xs);
+    padding: var(--space-lg);
+    border-radius: var(--border-radius-md);
   }
 
   .stat-header {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-  }
-
-  .stat-icon {
+    align-items: center;
     font-size: 1.5rem;
-  }
-
-  .stat-trend {
-    font-size: var(--font-size-xs);
-    font-weight: 700;
-  }
-
-  .stat-trend.positive {
-    color: var(--color-success);
+    margin-bottom: var(--space-xs);
   }
 
   .stat-value {
-    font-size: var(--font-size-3xl);
+    font-size: var(--font-size-2xl);
     font-weight: 800;
-    color: var(--color-text);
+    color: var(--color-primary);
   }
 
   .stat-label {
@@ -112,87 +140,265 @@ const { translations } = Astro.props;
     color: var(--color-text-muted);
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.04em;
-  }
-
-  .dashboard-main-grid {
-    display: grid;
-    grid-template-columns: 1.6fr 1fr;
-    gap: var(--space-lg);
   }
 
   .card-title-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: var(--space-lg);
-  }
-
-  .card-section-title {
-    font-size: var(--font-size-lg);
     margin-bottom: var(--space-md);
-  }
-
-  .text-muted {
-    color: var(--color-text-muted);
-    font-size: var(--font-size-xs);
-  }
-
-  .activity-feed {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-md);
-  }
-
-  .activity-item {
-    display: flex;
-    align-items: center;
-    gap: var(--space-md);
-    padding-bottom: var(--space-sm);
+    padding-bottom: var(--space-xs);
     border-bottom: 1px solid var(--color-surface-border);
   }
 
-  .activity-item:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
+  .card-title-row h3 {
+    margin: 0;
+    font-size: var(--font-size-lg);
+    font-weight: 700;
   }
 
-  .activity-icon {
-    font-size: 1.4rem;
-    padding: var(--space-xs);
-    background-color: var(--color-surface-hover);
-    border-radius: var(--border-radius-sm);
-  }
-
-  .activity-details {
+  .services-managed-list {
     display: flex;
     flex-direction: column;
-    flex: 1;
+    gap: var(--space-md);
   }
 
-  .activity-title {
-    font-size: var(--font-size-sm);
-    font-weight: 600;
-    color: var(--color-text);
+  .managed-service-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-surface-border);
+    border-radius: var(--border-radius-sm);
+    padding: var(--space-md);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-md);
+    flex-wrap: wrap;
   }
 
-  .activity-time {
+  .service-info-col h4 {
+    margin: 0 0 0.25rem 0;
+    font-size: var(--font-size-md);
+  }
+
+  .service-meta-row {
+    display: flex;
+    gap: var(--space-sm);
     font-size: var(--font-size-xs);
     color: var(--color-text-muted);
+    flex-wrap: wrap;
   }
 
-  @media (max-width: 900px) {
-    .dashboard-main-grid {
+  .actions-col {
+    display: flex;
+    gap: var(--space-xs);
+    flex-wrap: wrap;
+  }
+
+  /* MODAL */
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-md);
+  }
+
+  .modal-card {
+    width: 100%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    background: var(--color-surface);
+    border: 1px solid var(--color-surface-border);
+    border-radius: var(--border-radius-lg);
+    padding: var(--space-xl);
+  }
+
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-md);
+    border-bottom: 1px solid var(--color-surface-border);
+    padding-bottom: var(--space-xs);
+  }
+
+  .modal-header h3 {
+    margin: 0;
+    font-size: var(--font-size-lg);
+  }
+
+  .btn-close {
+    background: transparent;
+    border: none;
+    font-size: 1.2rem;
+    color: var(--color-text-muted);
+    cursor: pointer;
+  }
+
+  .modal-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .form-row-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-md);
+  }
+
+  .modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--space-sm);
+    margin-top: var(--space-sm);
+  }
+
+  @media (max-width: 600px) {
+    .form-row-2 {
       grid-template-columns: 1fr;
     }
   }
-
-  @media (max-width: 640px) {
-    .stat-value {
-      font-size: var(--font-size-2xl);
-    }
-  }
 </style>
+
+<script>
+  import { db } from "../lib/firebase";
+  import { authStore } from "../lib/authStore";
+  import { getUserClaims } from "../lib/serviceActions";
+  import { getServiceOverride, saveServiceOverride } from "../lib/serviceOverrides";
+  import { SERVICES } from "../data/services";
+
+  const listContainer = document.getElementById("manager-services-list");
+  const countBadge = document.getElementById("manager-services-count");
+  const modal = document.getElementById("manager-edit-modal");
+  const editForm = document.getElementById("manager-edit-form") as HTMLFormElement;
+
+  const phoneInput = document.getElementById("edit-phone") as HTMLInputElement;
+  const whatsappInput = document.getElementById("edit-whatsapp") as HTMLInputElement;
+  const websiteInput = document.getElementById("edit-website") as HTMLInputElement;
+  const scheduleInput = document.getElementById("edit-schedule") as HTMLInputElement;
+  const statusSelect = document.getElementById("edit-status") as HTMLSelectElement;
+  const descTextarea = document.getElementById("edit-description") as HTMLTextAreaElement;
+  const slugHidden = document.getElementById("edit-service-slug") as HTMLInputElement;
+  const modalTitle = document.getElementById("modal-service-title");
+
+  let currentManagedServices: typeof SERVICES = [];
+
+  authStore.subscribe(async ({ user, role }) => {
+    if (!user) return;
+
+    // Load claims belonging to this manager
+    const claims = await getUserClaims(db, user.uid);
+    const approvedClaims = claims.filter((c) => c.status === "approved");
+
+    // If role is manager or admin, match approved services (or default to sample services for demo)
+    const approvedServiceIds = approvedClaims.map((c) => c.serviceId);
+    currentManagedServices = SERVICES.filter(
+      (s) => approvedServiceIds.includes(s.id) || approvedServiceIds.includes(s.slug) || role === "admin",
+    );
+
+    if (countBadge) countBadge.textContent = currentManagedServices.length.toString();
+
+    if (listContainer) {
+      if (currentManagedServices.length === 0) {
+        listContainer.innerHTML =
+          '<p class="text-muted empty-state">No tienes negocios vinculados todavía. Reclama tu ficha en el directorio para empezar a gestionarla.</p>';
+      } else {
+        listContainer.innerHTML = currentManagedServices
+          .map(
+            (s) => `
+          <div class="managed-service-card" data-slug="${s.slug}">
+            <div class="service-info-col">
+              <h4>${s.name}</h4>
+              <div class="service-meta-row">
+                <span>📍 ${s.address}</span>
+                <span>📞 ${s.phone}</span>
+                <span>🕒 ${s.schedule}</span>
+              </div>
+            </div>
+            <div class="actions-col">
+              <a href="/es/servicios/${s.slug}" target="_blank" class="btn btn-secondary btn-sm">
+                👁️ Ver Ficha
+              </a>
+              <button type="button" class="btn btn-primary btn-sm open-edit-btn" data-slug="${s.slug}">
+                ✏️ Modificar Datos
+              </button>
+            </div>
+          </div>
+        `,
+          )
+          .join("");
+
+        // Attach edit button listeners
+        listContainer.querySelectorAll(".open-edit-btn").forEach((btn) => {
+          btn.addEventListener("click", async () => {
+            const slug = btn.getAttribute("data-slug")!;
+            const targetService = SERVICES.find((s) => s.slug === slug);
+            if (!targetService) return;
+
+            // Load existing override if available
+            const override = await getServiceOverride(db, slug);
+
+            slugHidden.value = slug;
+            if (modalTitle) modalTitle.textContent = `✏️ Modificar: ${targetService.name}`;
+            phoneInput.value = override?.phone || targetService.phone;
+            whatsappInput.value = override?.whatsapp || targetService.whatsapp;
+            websiteInput.value = override?.website || targetService.website;
+            scheduleInput.value = override?.schedule || targetService.schedule;
+            statusSelect.value = override?.status || targetService.status;
+            descTextarea.value = override?.fullDescription?.es || targetService.fullDescription.es;
+
+            if (modal) modal.style.display = "flex";
+          });
+        });
+      }
+    }
+  });
+
+  // Modal close handlers
+  document.getElementById("close-modal-btn")?.addEventListener("click", () => {
+    if (modal) modal.style.display = "none";
+  });
+  document.getElementById("cancel-edit-btn")?.addEventListener("click", () => {
+    if (modal) modal.style.display = "none";
+  });
+
+  // Form Submit Handler
+  editForm?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const user = authStore.get().user;
+    if (!user) return;
+
+    const slug = slugHidden.value;
+    const saveBtn = document.getElementById("save-override-btn") as HTMLButtonElement;
+    if (saveBtn) {
+      saveBtn.disabled = true;
+      saveBtn.textContent = "⏳ Guardando...";
+    }
+
+    try {
+      await saveServiceOverride(db, slug, user.uid, {
+        phone: phoneInput.value.trim(),
+        whatsapp: whatsappInput.value.trim(),
+        website: websiteInput.value.trim(),
+        schedule: scheduleInput.value.trim(),
+        status: statusSelect.value as any,
+        fullDescription: {
+          es: descTextarea.value.trim(),
+        },
+      });
+
+      alert("✅ Datos del negocio actualizados correctamente.");
+      if (modal) modal.style.display = "none";
+    } catch (err) {
+      alert("❌ Error al guardar las modificaciones.");
+    } finally {
+      if (saveBtn) {
+        saveBtn.disabled = false;
+        saveBtn.textContent = "💾 Guardar y Actualizar Ficha";
+      }
+    }
+  });
+</script>

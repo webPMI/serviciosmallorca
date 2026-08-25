@@ -30,12 +30,25 @@ const themes = [
   >
     <span class="theme-btn-icon" data-theme-switcher="icon">🌿</span>
     <span class="theme-btn-label" data-theme-switcher="label">Green Light</span>
-    <svg class="theme-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+    <svg
+      class="theme-chevron"
+      width="12"
+      height="12"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2.5"
+    >
       <polyline points="6 9 12 15 18 9"></polyline>
     </svg>
   </button>
 
-  <div class="theme-dropdown theme-dropdown--{variant}" data-theme-switcher="dropdown" role="listbox" aria-label={translations["theme.selectTheme"] || "Seleccionar tema"}>
+  <div
+    class="theme-dropdown theme-dropdown--{variant}"
+    data-theme-switcher="dropdown"
+    role="listbox"
+    aria-label={translations["theme.selectTheme"] || "Seleccionar tema"}
+  >
     <div class="theme-dropdown-section">
       <span class="theme-category">🌱 Classic</span>
       <button class="theme-option" data-theme="light" role="option">
@@ -66,23 +79,23 @@ const themes = [
 </div>
 
 <script>
-  const THEME_KEY = 'webapp-theme';
+  const THEME_KEY = "webapp-theme";
 
   const themeMeta: Record<string, { icon: string; label: string }> = {
-    light: { icon: '🌿', label: 'Green Light' },
-    dark: { icon: '🌙', label: 'Green Dark' },
-    golden: { icon: '☀️', label: 'Gold Light' },
-    'golden-dark': { icon: '✨', label: 'Gold Dark' },
+    light: { icon: "🌿", label: "Green Light" },
+    dark: { icon: "🌙", label: "Green Dark" },
+    golden: { icon: "☀️", label: "Gold Light" },
+    "golden-dark": { icon: "✨", label: "Gold Dark" },
   };
 
   const VALID_THEMES = Object.keys(themeMeta);
 
   function getCurrentTheme(): string {
-    return document.documentElement.getAttribute('data-theme') || 'light';
+    return document.documentElement.getAttribute("data-theme") || "light";
   }
 
   function applyTheme(theme: string): void {
-    document.documentElement.setAttribute('data-theme', theme);
+    document.documentElement.setAttribute("data-theme", theme);
     localStorage.setItem(THEME_KEY, theme);
     refreshAllInstances();
   }
@@ -98,11 +111,11 @@ const themes = [
       if (labelEl) labelEl.textContent = meta.label;
 
       // Actualizar aria-selected en las opciones de esta instancia
-      wrapper.querySelectorAll('.theme-option').forEach((opt) => {
+      wrapper.querySelectorAll(".theme-option").forEach((opt) => {
         const el = opt as HTMLElement;
         const isSelected = el.dataset.theme === current;
-        el.setAttribute('aria-selected', String(isSelected));
-        el.classList.toggle('is-selected', isSelected);
+        el.setAttribute("aria-selected", String(isSelected));
+        el.classList.toggle("is-selected", isSelected);
       });
     });
   }
@@ -119,30 +132,34 @@ const themes = [
       (btn as any).__themeSwitcherBound = true;
 
       const instanceClose = () => {
-        btn.setAttribute('aria-expanded', 'false');
-        dropdown.classList.remove('is-open');
+        btn.setAttribute("aria-expanded", "false");
+        dropdown.classList.remove("is-open");
       };
 
       const instanceToggle = () => {
-        const isOpen = btn.getAttribute('aria-expanded') === 'true';
+        const isOpen = btn.getAttribute("aria-expanded") === "true";
         if (isOpen) {
           instanceClose();
         } else {
           // Cerrar todas las demás instancias primero
-          document.querySelectorAll('[data-theme-switcher="dropdown"].is-open').forEach((d) => d.classList.remove('is-open'));
-          document.querySelectorAll('[data-theme-switcher="btn"][aria-expanded="true"]').forEach((b) => b.setAttribute('aria-expanded', 'false'));
-          btn.setAttribute('aria-expanded', 'true');
-          dropdown.classList.add('is-open');
+          document
+            .querySelectorAll('[data-theme-switcher="dropdown"].is-open')
+            .forEach((d) => d.classList.remove("is-open"));
+          document
+            .querySelectorAll('[data-theme-switcher="btn"][aria-expanded="true"]')
+            .forEach((b) => b.setAttribute("aria-expanded", "false"));
+          btn.setAttribute("aria-expanded", "true");
+          dropdown.classList.add("is-open");
         }
       };
 
-      btn.addEventListener('click', (e) => {
+      btn.addEventListener("click", (e) => {
         e.stopPropagation();
         instanceToggle();
       });
 
-      dropdown.addEventListener('click', (e) => {
-        const target = (e.target as HTMLElement).closest('.theme-option') as HTMLElement | null;
+      dropdown.addEventListener("click", (e) => {
+        const target = (e.target as HTMLElement).closest(".theme-option") as HTMLElement | null;
         if (target?.dataset.theme && VALID_THEMES.includes(target.dataset.theme)) {
           applyTheme(target.dataset.theme);
           instanceClose();
@@ -155,17 +172,21 @@ const themes = [
   }
 
   // Cerrar todo al hacer clic fuera
-  document.addEventListener('click', () => {
-    document.querySelectorAll('[data-theme-switcher="dropdown"].is-open').forEach((d) => d.classList.remove('is-open'));
-    document.querySelectorAll('[data-theme-switcher="btn"][aria-expanded="true"]').forEach((b) => b.setAttribute('aria-expanded', 'false'));
+  document.addEventListener("click", () => {
+    document.querySelectorAll('[data-theme-switcher="dropdown"].is-open').forEach((d) => d.classList.remove("is-open"));
+    document
+      .querySelectorAll('[data-theme-switcher="btn"][aria-expanded="true"]')
+      .forEach((b) => b.setAttribute("aria-expanded", "false"));
   });
 
   // Cerrar con Escape
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-      document.querySelectorAll('[data-theme-switcher="dropdown"].is-open').forEach((d) => d.classList.remove('is-open'));
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      document
+        .querySelectorAll('[data-theme-switcher="dropdown"].is-open')
+        .forEach((d) => d.classList.remove("is-open"));
       document.querySelectorAll('[data-theme-switcher="btn"][aria-expanded="true"]').forEach((b) => {
-        b.setAttribute('aria-expanded', 'false');
+        b.setAttribute("aria-expanded", "false");
         (b as HTMLElement).focus();
       });
     }

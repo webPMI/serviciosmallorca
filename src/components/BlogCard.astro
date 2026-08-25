@@ -1,0 +1,184 @@
+---
+import type { BlogPost } from "../data/posts";
+import { CATEGORIES } from "../data/categories";
+
+interface Props {
+  post: BlogPost;
+  currentLocale: "es" | "en" | "ca";
+  getLangPrefix: (locale: "es" | "en" | "ca") => string;
+  translations: Record<string, string>;
+}
+
+const { post, currentLocale, getLangPrefix, translations } = Astro.props;
+const prefix = getLangPrefix(currentLocale);
+const category = CATEGORIES.find((c) => c.id === post.category);
+
+const title = post.title[currentLocale];
+const excerpt = post.excerpt[currentLocale];
+const detailUrl = `${prefix}blog/${post.slug}`;
+---
+
+<article class="blog-card card hover-lift">
+  <div class="blog-media">
+    <img
+      src={post.coverImage}
+      alt={title}
+      loading="lazy"
+      class="blog-img"
+      onerror="this.src='https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80'"
+    />
+    {
+      category && (
+        <span class="badge badge-accent blog-category-badge">
+          {category.icon} {category.name[currentLocale]}
+        </span>
+      )
+    }
+  </div>
+
+  <div class="blog-body">
+    <div class="blog-meta">
+      <time datetime={post.publishDate}>{post.publishDate}</time>
+      <span class="meta-dot">·</span>
+      <span>{post.readTime} {translations["blog.readTime"] || "de lectura"}</span>
+    </div>
+
+    <h3 class="blog-title">
+      <a href={detailUrl}>{title}</a>
+    </h3>
+
+    <p class="blog-excerpt">{excerpt}</p>
+
+    <div class="blog-author-row">
+      <img
+        src={post.author.avatar}
+        alt={post.author.name}
+        class="author-avatar"
+        loading="lazy"
+        onerror="this.style.display='none'"
+      />
+      <div class="author-info">
+        <span class="author-name">{post.author.name}</span>
+        <span class="author-role">{post.author.role}</span>
+      </div>
+    </div>
+  </div>
+</article>
+
+<style>
+  .blog-card {
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border: 1px solid var(--color-surface-border);
+    border-radius: var(--border-radius);
+    background: var(--color-surface);
+    transition:
+      transform var(--transition-smooth),
+      box-shadow var(--transition-smooth);
+  }
+
+  .blog-media {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    background: var(--color-bg);
+  }
+
+  .blog-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  .blog-card:hover .blog-img {
+    transform: scale(1.05);
+  }
+
+  .blog-category-badge {
+    position: absolute;
+    top: var(--space-sm);
+    left: var(--space-sm);
+  }
+
+  .blog-body {
+    padding: var(--space-md);
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: var(--space-xs);
+  }
+
+  .blog-meta {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+
+  .meta-dot {
+    font-weight: bold;
+  }
+
+  .blog-title {
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    line-height: 1.35;
+    margin-top: var(--space-xs);
+  }
+
+  .blog-title a {
+    color: var(--color-text);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+  }
+
+  .blog-title a:hover {
+    color: var(--color-primary);
+  }
+
+  .blog-excerpt {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-light);
+    line-height: 1.5;
+    flex-grow: 1;
+    margin: var(--space-xs) 0;
+  }
+
+  .blog-author-row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding-top: var(--space-sm);
+    border-top: 1px solid var(--color-surface-border);
+    margin-top: auto;
+  }
+
+  .author-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: var(--border-radius-full);
+    object-fit: cover;
+  }
+
+  .author-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .author-name {
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    color: var(--color-text);
+  }
+
+  .author-role {
+    font-size: 0.7rem;
+    color: var(--color-text-muted);
+  }
+</style>

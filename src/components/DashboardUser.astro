@@ -6,222 +6,205 @@ interface Props {
 const { translations } = Astro.props;
 ---
 
-<section class="stats-grid grid-auto">
-  <article class="stat-card card hover-lift">
-    <div class="stat-header">
-      <span class="stat-icon">🔑</span>
-      <span class="stat-trend positive">Activo</span>
+<div class="user-dashboard-container">
+  <!-- Quick Actions Banner -->
+  <div class="card card-glass quick-actions-banner">
+    <div>
+      <h2 class="banner-title">🌴 Bienvenido a tu espacio de Servicios Mallorca</h2>
+      <p class="text-muted">
+        Explora los mejores servicios de la isla, guarda tus favoritos o da de alta y reclama tu propio negocio.
+      </p>
     </div>
-    <div class="stat-value">—</div>
-    <div class="stat-label">{translations["dashboard.stats.workouts"]}</div>
-  </article>
-
-  <article class="stat-card card hover-lift">
-    <div class="stat-header">
-      <span class="stat-icon">📡</span>
-      <span class="stat-trend positive">Online</span>
+    <div class="actions-group">
+      <a href="./servicios/nuevo" class="btn btn-primary btn-sm">➕ Publicar Negocio</a>
+      <a href="./servicios" class="btn btn-secondary btn-sm">🔍 Explorar Servicios</a>
     </div>
-    <div class="stat-value">—</div>
-    <div class="stat-label">{translations["dashboard.stats.calories"]}</div>
-  </article>
-
-  <article class="stat-card card hover-lift">
-    <div class="stat-header">
-      <span class="stat-icon">⏱️</span>
-      <span class="stat-trend positive">—</span>
-    </div>
-    <div class="stat-value">—</div>
-    <div class="stat-label">{translations["dashboard.stats.hours"]}</div>
-  </article>
-
-  <article class="stat-card card hover-lift">
-    <div class="stat-header">
-      <span class="stat-icon">📅</span>
-      <span class="stat-trend text-gradient">—</span>
-    </div>
-    <div class="stat-value">—</div>
-    <div class="stat-label">{translations["dashboard.stats.streak"]}</div>
-  </article>
-</section>
-
-<div class="dashboard-main-grid">
-  <div class="main-col">
-    <article class="card card-glass">
-      <div class="card-title-row">
-        <h3>{translations["dashboard.nextSession"]}</h3>
-        <span class="badge badge-accent">Pendiente</span>
-      </div>
-      <div class="session-details">
-        <div class="session-info">
-          <p class="text-muted">No hay tareas programadas</p>
-        </div>
-      </div>
-    </article>
   </div>
 
-  <div class="side-col">
-    <article class="card">
-      <h3 class="card-section-title">{translations["dashboard.recentActivity"]}</h3>
-      <ul class="activity-feed">
-        <li class="activity-item">
-          <span class="activity-icon">👤</span>
-          <div class="activity-details">
-            <span class="activity-title">{translations["auth.register.submit"]}</span>
-            <span class="activity-time">Cuenta creada</span>
-          </div>
-          <span class="badge badge-primary">Activo</span>
-        </li>
-      </ul>
+  <!-- User Submissions & Claims Section -->
+  <div class="user-status-grid">
+    <article class="card card-glass">
+      <div class="card-title-row">
+        <h3>🏢 {translations["dashboard.myClaims"] || "Mis Solicitudes de Negocio"}</h3>
+      </div>
+      <div id="user-claims-list" class="requests-list">
+        <p class="text-muted empty-state">Cargando tus solicitudes...</p>
+      </div>
+    </article>
+
+    <article class="card card-glass">
+      <div class="card-title-row">
+        <h3>📝 {translations["dashboard.submissionsTitle"] || "Mis Propuestas de Nuevos Negocios"}</h3>
+      </div>
+      <div id="user-subs-list" class="requests-list">
+        <p class="text-muted empty-state">Cargando tus propuestas...</p>
+      </div>
     </article>
   </div>
 </div>
 
 <style>
-  .stats-grid {
-    margin-bottom: var(--space-xl);
-  }
-
-  .stat-card {
+  .user-dashboard-container {
     display: flex;
     flex-direction: column;
-    gap: var(--space-xs);
-  }
-
-  .stat-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .stat-icon {
-    font-size: 1.5rem;
-  }
-
-  .stat-trend {
-    font-size: var(--font-size-xs);
-    font-weight: 700;
-  }
-
-  .stat-trend.positive {
-    color: var(--color-success);
-  }
-
-  .stat-value {
-    font-size: var(--font-size-3xl);
-    font-weight: 800;
-    color: var(--color-text);
-  }
-
-  .stat-label {
-    font-size: var(--font-size-xs);
-    color: var(--color-text-muted);
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-  }
-
-  .dashboard-main-grid {
-    display: grid;
-    grid-template-columns: 1.6fr 1fr;
     gap: var(--space-lg);
   }
 
-  .card-title-row {
+  .quick-actions-banner {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    margin-bottom: var(--space-lg);
-  }
-
-  .session-details {
-    display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: var(--space-md);
-    background-color: var(--color-surface);
-    border-radius: var(--border-radius);
-    border: 1px solid var(--color-surface-border);
-    margin-bottom: var(--space-xl);
+    padding: var(--space-xl);
+    border-radius: var(--border-radius-lg);
+    gap: var(--space-md);
     flex-wrap: wrap;
+  }
+
+  .banner-title {
+    font-size: var(--font-size-xl);
+    font-weight: 800;
+    margin-bottom: 0.25rem;
+  }
+
+  .actions-group {
+    display: flex;
+    gap: var(--space-sm);
+  }
+
+  .user-status-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: var(--space-md);
   }
 
-  .text-muted {
-    color: var(--color-text-muted);
-    font-size: var(--font-size-xs);
-  }
-
-  .card-section-title {
-    font-size: var(--font-size-lg);
+  .card-title-row {
     margin-bottom: var(--space-md);
-  }
-
-  .activity-feed {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-md);
-  }
-
-  .activity-item {
-    display: flex;
-    align-items: center;
-    gap: var(--space-md);
-    padding-bottom: var(--space-sm);
+    padding-bottom: var(--space-xs);
     border-bottom: 1px solid var(--color-surface-border);
   }
 
-  .activity-item:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
+  .card-title-row h3 {
+    font-size: var(--font-size-base);
+    font-weight: 700;
+    margin: 0;
   }
 
-  .activity-icon {
-    font-size: 1.4rem;
-    padding: var(--space-xs);
-    background-color: var(--color-surface-hover);
-    border-radius: var(--border-radius-sm);
-  }
-
-  .activity-details {
+  .requests-list {
     display: flex;
     flex-direction: column;
-    flex: 1;
+    gap: var(--space-sm);
   }
 
-  .activity-title {
-    font-size: var(--font-size-sm);
-    font-weight: 600;
-    color: var(--color-text);
-  }
-
-  .activity-time {
+  .empty-state {
+    font-style: italic;
     font-size: var(--font-size-xs);
-    color: var(--color-text-muted);
   }
 
-  @media (max-width: 900px) {
-    .dashboard-main-grid {
+  .user-item-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-surface-border);
+    border-radius: var(--border-radius-sm);
+    padding: var(--space-sm);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+  }
+
+  @media (max-width: 768px) {
+    .user-status-grid {
       grid-template-columns: 1fr;
     }
-  }
 
-  @media (max-width: 640px) {
-    .stat-value {
-      font-size: var(--font-size-2xl);
+    .quick-actions-banner {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .actions-group {
+      width: 100%;
+      flex-wrap: wrap;
+    }
+
+    .actions-group .btn {
+      flex: 1;
+      text-align: center;
+      justify-content: center;
     }
   }
 
   @media (max-width: 480px) {
-    .session-details {
-      flex-direction: column;
-      align-items: stretch;
+    .banner-title {
+      font-size: var(--font-size-lg);
     }
 
-    .activity-item {
-      flex-wrap: wrap;
+    .actions-group {
+      flex-direction: column;
+    }
+
+    .actions-group .btn {
+      width: 100%;
     }
   }
 </style>
+
+<script>
+  import { auth, db } from "../lib/firebase";
+  import { getUserClaims, getUserSubmissions } from "../lib/serviceActions";
+
+  async function loadUserData() {
+    auth.onAuthStateChanged(async (user) => {
+      if (!user) return;
+
+      // 1. Claims
+      const claims = await getUserClaims(db, user.uid);
+      const claimsContainer = document.getElementById("user-claims-list");
+      if (claimsContainer) {
+        if (claims.length === 0) {
+          claimsContainer.innerHTML =
+            '<p class="text-muted empty-state">No has solicitado reclamar ningún negocio aún.</p>';
+        } else {
+          claimsContainer.innerHTML = claims
+            .map(
+              (c) => `
+            <div class="user-item-card">
+              <div>
+                <strong>${c.serviceName}</strong>
+                <div class="text-muted" style="font-size: 0.75rem;">ID: ${c.serviceId}</div>
+              </div>
+              <span class="badge ${c.status === "approved" ? "badge-primary" : c.status === "pending" ? "badge-accent" : "badge-secondary"}">${c.status.toUpperCase()}</span>
+            </div>
+          `,
+            )
+            .join("");
+        }
+      }
+
+      // 2. Submissions
+      const submissions = await getUserSubmissions(db, user.uid);
+      const subsContainer = document.getElementById("user-subs-list");
+      if (subsContainer) {
+        if (submissions.length === 0) {
+          subsContainer.innerHTML = '<p class="text-muted empty-state">No has propuesto nuevos negocios aún.</p>';
+        } else {
+          subsContainer.innerHTML = submissions
+            .map(
+              (s) => `
+            <div class="user-item-card">
+              <div>
+                <strong>${s.name}</strong>
+                <div class="text-muted" style="font-size: 0.75rem;">${s.category} · 📍 ${s.zone}</div>
+              </div>
+              <span class="badge ${s.status === "approved" ? "badge-primary" : s.status === "pending" ? "badge-accent" : "badge-secondary"}">${s.status.toUpperCase()}</span>
+            </div>
+          `,
+            )
+            .join("");
+        }
+      }
+    });
+  }
+
+  loadUserData();
+</script>

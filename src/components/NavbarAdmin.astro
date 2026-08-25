@@ -14,9 +14,13 @@ const homeUrl = prefix || "/";
 <header class="navbar-header nav-admin">
   <div class="container navbar-container">
     <!-- Brand Logo / Title -->
-    <a href={`${homeUrl}dashboard`} class="navbar-brand" aria-label={translations["nav.aria.adminBrand"] || "WebApp Starter Admin Console"}>
+    <a
+      href={`${homeUrl}dashboard`}
+      class="navbar-brand"
+      aria-label={translations["nav.aria.adminBrand"] || "Servicios Mallorca Admin Console"}
+    >
       <span class="brand-badge badge badge-admin">⚡ Admin Console</span>
-      <span class="brand-title">WebApp Starter</span>
+      <span class="brand-title">Servicios Mallorca</span>
     </a>
 
     <!-- Mobile Hamburger Toggle Button -->
@@ -34,23 +38,30 @@ const homeUrl = prefix || "/";
     <!-- Admin Navigation Menu -->
     <div id="admin-navbar-menu" class="navbar-menu">
       <nav class="navbar-links" aria-label={translations["nav.aria.adminNav"] || "Navegación de administración"}>
-        <a href={`${homeUrl}dashboard`} class="nav-link">
+        <a href={`${homeUrl}dashboard`} class:list={["nav-link", { active: currentPath.includes("/dashboard") }]}>
           📊 {translations["nav.dashboard"] || "Panel"}
         </a>
-        <a href={`${homeUrl}#users`} class="nav-link">
-          👥 {translations["nav.users"] || "Gestión Usuarios"}
+        <a href={`${homeUrl}servicios`} class:list={["nav-link", { active: currentPath.includes("/servicios") }]}>
+          🌴 {translations["nav.services"] || "Servicios"}
         </a>
-        <a href={`${homeUrl}#analytics`} class="nav-link">
-          📈 {translations["nav.analytics"] || "Analíticas"}
+        <a href={`${homeUrl}comunidad`} class:list={["nav-link", { active: currentPath.includes("/comunidad") }]}>
+          💬 {translations["nav.community"] || "Comunidad"}
         </a>
-        <a href={`${homeUrl}profile`} class="nav-link">
+        <a href={`${homeUrl}blog`} class:list={["nav-link", { active: currentPath.includes("/blog") }]}>
+          📰 {translations["nav.blog"] || "Blog"}
+        </a>
+        <a href={`${homeUrl}profile`} class:list={["nav-link", { active: currentPath.includes("/profile") }]}>
           👤 {translations["nav.profile"] || "Mi Perfil"}
         </a>
       </nav>
 
       <div class="navbar-actions">
         <div class="user-profile-menu">
-          <a href={`${homeUrl}profile`} class="user-avatar-badge admin-badge" aria-label={translations["nav.profile"] || "Mi Perfil"}>
+          <a
+            href={`${homeUrl}profile`}
+            class="user-avatar-badge admin-badge"
+            aria-label={translations["nav.profile"] || "Mi Perfil"}
+          >
             <span id="admin-nav-avatar">👑</span>
             <span id="admin-nav-name" class="user-name"></span>
           </a>

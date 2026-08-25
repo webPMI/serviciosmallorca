@@ -1,0 +1,173 @@
+---
+interface Props {
+  src?: string;
+  alt: string;
+  categoryIcon?: string;
+  categoryName?: string;
+  className?: string;
+  aspectRatio?: "16/9" | "4/3" | "1/1" | "21/9" | "auto";
+  loading?: "lazy" | "eager";
+  id?: string;
+}
+
+const {
+  src,
+  alt,
+  categoryIcon = "📍",
+  categoryName = "Servicio Mallorca",
+  className = "",
+  aspectRatio = "16/9",
+  loading = "lazy",
+  id,
+} = Astro.props;
+
+const hasValidSrc = Boolean(src && src.trim().length > 0);
+---
+
+<div class:list={["service-image-wrapper", `ratio-${aspectRatio.replace("/", "-")}`, className]}>
+  {
+    hasValidSrc ? (
+      <img
+        id={id}
+        src={src}
+        alt={alt}
+        loading={loading}
+        decoding="async"
+        class="service-real-img"
+        onerror="this.style.display='none'; if(this.nextElementSibling) this.nextElementSibling.style.display='flex';"
+      />
+    ) : null
+  }
+
+  <div
+    class="service-img-placeholder"
+    style={hasValidSrc ? "display: none;" : "display: flex;"}
+    aria-label={`Imagen no disponible para ${alt}`}
+  >
+    <div class="placeholder-content">
+      <div class="placeholder-icon-wrap">
+        <span class="placeholder-icon">{categoryIcon}</span>
+      </div>
+      <span class="placeholder-title">{alt}</span>
+      <span class="placeholder-badge">
+        <span>📸</span>
+        <span>Foto no disponible</span>
+      </span>
+      <span class="placeholder-category">{categoryName}</span>
+    </div>
+  </div>
+</div>
+
+<style>
+  .service-image-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: var(--color-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ratio-16-9 {
+    aspect-ratio: 16 / 9;
+  }
+
+  .ratio-4-3 {
+    aspect-ratio: 4 / 3;
+  }
+
+  .ratio-1-1 {
+    aspect-ratio: 1 / 1;
+  }
+
+  .ratio-21-9 {
+    aspect-ratio: 21 / 9;
+  }
+
+  .ratio-auto {
+    height: 100%;
+  }
+
+  .service-real-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    image-orientation: from-image;
+    display: block;
+    transition: transform var(--transition-smooth, 0.4s ease);
+  }
+
+  .service-image-wrapper:hover .service-real-img {
+    transform: scale(1.04);
+  }
+
+  .service-img-placeholder {
+    width: 100%;
+    height: 100%;
+    min-height: 180px;
+    background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-bg) 100%);
+    border: 1px dashed var(--color-surface-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: var(--space-md);
+    box-sizing: border-box;
+  }
+
+  .placeholder-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+    max-width: 90%;
+  }
+
+  .placeholder-icon-wrap {
+    width: 52px;
+    height: 52px;
+    border-radius: var(--border-radius-full);
+    background: var(--color-primary-bg);
+    border: 1px solid color-mix(in srgb, var(--color-primary) 30%, transparent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.2rem;
+  }
+
+  .placeholder-icon {
+    font-size: 1.6rem;
+  }
+
+  .placeholder-title {
+    font-size: var(--font-size-sm);
+    font-weight: 700;
+    color: var(--color-text);
+    line-height: 1.2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+
+  .placeholder-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    background: var(--color-surface);
+    border: 1px solid var(--color-surface-border);
+    padding: 2px 8px;
+    border-radius: 999px;
+  }
+
+  .placeholder-category {
+    font-size: var(--font-size-xs);
+    color: var(--color-primary);
+    font-weight: 600;
+  }
+</style>

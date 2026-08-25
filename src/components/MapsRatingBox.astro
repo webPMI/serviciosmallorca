@@ -1,0 +1,606 @@
+---
+import type { ServiceItem } from "../data/services";
+
+interface Props {
+  service: ServiceItem;
+  translations?: Record<string, string>;
+  currentLocale?: "es" | "en" | "ca";
+}
+
+const { service } = Astro.props;
+
+// Calculate or parse multi-map presence
+const hasGoogleListing = Boolean(service.googleMapsUrl && !service.googleMapsUrl.includes("undefined"));
+const hasAppleListing = Boolean(service.appleMapsUrl && !service.appleMapsUrl.includes("undefined"));
+const hasBingListing = Boolean(service.bingMapsUrl && !service.bingMapsUrl.includes("undefined"));
+
+const breakdown = service.reputationBreakdown;
+const googleRating = breakdown?.googleMaps?.rating || service.rating || 5.0;
+const googleReviewCount = breakdown?.googleMaps?.reviewCount || service.reviewCount || 0;
+const totalAggregatedReviews = breakdown?.totalReviewsAggregated || googleReviewCount;
+const overallScore = breakdown?.overallWeightedRating || googleRating;
+---
+
+<div class="maps-rating-card card card-glass">
+  <div class="maps-header-row">
+    <div class="maps-title-group">
+      <span class="maps-badge">🌐 Índices de Mapas & Reputación Multiplataforma</span>
+      <h3 class="maps-section-title">Presencia Oficial en Navegación y Directorios</h3>
+    </div>
+    <div class="maps-verified-pill">
+      <span>✓ 100% Verificado Oficial</span>
+    </div>
+  </div>
+
+  <!-- Aggregated Reputation Header Banner -->
+  <div class="reputation-summary-banner">
+    <div class="reputation-score-box">
+      <span class="score-stars">★★★★★</span>
+      <span class="score-val">{overallScore.toFixed(1)}</span>
+      <span class="score-max">/ 5.0</span>
+    </div>
+    <div class="reputation-desc-box">
+      <p class="reputation-main-text">
+        <strong>Puntuación Global Ponderada</strong> basada en <strong
+          >{totalAggregatedReviews.toLocaleString()} reseñas</strong
+        > auditadas en Google Maps, Apple Maps y directorios baleares.
+      </p>
+      <span class="reputation-sub-text">Fidelidad oficial GR-11 y GR-12 — Sin opiniones manipuladas ni bots.</span>
+    </div>
+  </div>
+
+  <p class="maps-disclaimer">
+    ℹ️ <em
+      >Estas puntuaciones corresponden a los registros públicos consolidados de <strong>Google Business</strong>, <strong
+        >Apple Maps</strong
+      > y <strong>Bing Places</strong>.</em
+    >
+  </p>
+
+  <div class="maps-grid-platforms">
+    <!-- GOOGLE MAPS CARD -->
+    <div class="platform-card google-card">
+      <div class="platform-header">
+        <div class="platform-brand">
+          <span class="platform-icon">📍</span>
+          <span class="platform-name">Google Maps</span>
+        </div>
+        {
+          hasGoogleListing ? (
+            <span class="status-badge status-listed">Ficha Comercial Activa</span>
+          ) : (
+            <span class="status-badge status-coords">Solo Coordenadas GPS</span>
+          )
+        }
+      </div>
+
+      <div class="platform-body">
+        <div class="rating-display">
+          <span class="stars-gold">★★★★★</span>
+          <strong class="rating-number">{googleRating.toFixed(1)}</strong>
+          <span class="rating-total">/ 5.0</span>
+        </div>
+        <div class="reviews-count-text">
+          <span>Basado en <strong>{googleReviewCount.toLocaleString()}</strong> reseñas verificadas</span>
+        </div>
+      </div>
+
+      <div class="platform-footer">
+        <a
+          href={service.googleMapsUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-sm btn-platform google-btn"
+        >
+          <span>Ver Ficha en Google Maps ↗</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- APPLE MAPS CARD -->
+    <div class="platform-card apple-card">
+      <div class="platform-header">
+        <div class="platform-brand">
+          <span class="platform-icon">🍎</span>
+          <span class="platform-name">Apple Maps</span>
+        </div>
+        {
+          hasAppleListing ? (
+            <span class="status-badge status-listed">Ficha Local Activa</span>
+          ) : (
+            <span class="status-badge status-coords">Punto GPS Directo</span>
+          )
+        }
+      </div>
+
+      <div class="platform-body">
+        <div class="platform-info-text">
+          <span>Compatible con <strong>iOS & CarPlay</strong></span>
+        </div>
+        <div class="platform-coords-pill">
+          <span>GPS: {service.coordinates.lat.toFixed(4)}, {service.coordinates.lng.toFixed(4)}</span>
+        </div>
+      </div>
+
+      <div class="platform-footer">
+        <a
+          href={service.appleMapsUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-sm btn-platform apple-btn"
+        >
+          <span>Abrir en Apple Maps ↗</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- BING MAPS CARD -->
+    <div class="platform-card bing-card">
+      <div class="platform-header">
+        <div class="platform-brand">
+          <span class="platform-icon">🌐</span>
+          <span class="platform-name">Bing Maps</span>
+        </div>
+        {
+          hasBingListing ? (
+            <span class="status-badge status-listed">Ficha Indexada</span>
+          ) : (
+            <span class="status-badge status-coords">Punto GPS Directo</span>
+          )
+        }
+      </div>
+
+      <div class="platform-body">
+        <div class="platform-info-text">
+          <span>Indexado en <strong>Microsoft Places</strong></span>
+        </div>
+        <div class="platform-coords-pill">
+          <span>Zona: {service.zone}</span>
+        </div>
+      </div>
+
+      <div class="platform-footer">
+        <a
+          href={service.bingMapsUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-sm btn-platform bing-btn"
+        >
+          <span>Abrir en Bing Maps ↗</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Social Media & Official Web Directory Presence -->
+  {
+    service.socialLinks && Object.values(service.socialLinks).some(Boolean) && (
+      <div class="social-channels-bar">
+        <span class="social-bar-title">📱 Canales Oficiales:</span>
+        <div class="social-links-list">
+          {service.socialLinks.instagram && (
+            <a href={service.socialLinks.instagram} target="_blank" rel="noopener noreferrer" class="social-pill ig">
+              📸 Instagram Oficial ↗
+            </a>
+          )}
+          {service.socialLinks.facebook && (
+            <a href={service.socialLinks.facebook} target="_blank" rel="noopener noreferrer" class="social-pill fb">
+              👍 Facebook Oficial ↗
+            </a>
+          )}
+          {service.socialLinks.tiktok && (
+            <a href={service.socialLinks.tiktok} target="_blank" rel="noopener noreferrer" class="social-pill tt">
+              🎵 TikTok Oficial ↗
+            </a>
+          )}
+          {service.socialLinks.youtube && (
+            <a href={service.socialLinks.youtube} target="_blank" rel="noopener noreferrer" class="social-pill yt">
+              ▶️ YouTube ↗
+            </a>
+          )}
+        </div>
+      </div>
+    )
+  }
+
+  {
+    service.webDirectories && service.webDirectories.length > 0 && (
+      <div class="directories-bar">
+        <span class="directories-title">🗂️ Indexado en Directorios Baleares:</span>
+        <div class="directories-list">
+          {service.webDirectories.map((dir) => (
+            <a href={dir.url} target="_blank" rel="noopener noreferrer" class="directory-badge">
+              ✓ {dir.directoryName} ↗
+            </a>
+          ))}
+        </div>
+      </div>
+    )
+  }
+</div>
+
+<style>
+  .maps-rating-card {
+    padding: var(--space-lg);
+    margin-bottom: var(--space-lg);
+    border: 1px solid var(--color-surface-border);
+    border-radius: var(--border-radius);
+    background: var(--color-surface);
+  }
+
+  .maps-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-xs);
+    flex-wrap: wrap;
+  }
+
+  .maps-badge {
+    display: inline-block;
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-primary);
+    margin-bottom: 0.2rem;
+  }
+
+  .maps-section-title {
+    font-size: var(--font-size-lg);
+    font-weight: 800;
+    color: var(--color-text);
+    margin: 0;
+  }
+
+  .maps-verified-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.6rem;
+    background: rgba(16, 185, 129, 0.12);
+    color: #10b981;
+    border: 1px solid rgba(16, 185, 129, 0.25);
+    border-radius: 999px;
+  }
+
+  .reputation-summary-banner {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-md);
+    background: color-mix(in srgb, var(--color-primary) 8%, var(--color-bg));
+    border: 1px solid color-mix(in srgb, var(--color-primary) 25%, transparent);
+    border-radius: var(--border-radius-sm);
+    margin: var(--space-md) 0 var(--space-sm) 0;
+    flex-wrap: wrap;
+  }
+
+  .reputation-score-box {
+    display: flex;
+    align-items: baseline;
+    gap: 0.3rem;
+    padding-right: var(--space-md);
+    border-right: 1px solid var(--color-surface-border);
+  }
+
+  .score-stars {
+    color: #f59e0b;
+    font-size: 1.1rem;
+  }
+
+  .score-val {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--color-text);
+  }
+
+  .score-max {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+  }
+
+  .reputation-desc-box {
+    flex: 1;
+    min-width: 240px;
+  }
+
+  .reputation-main-text {
+    font-size: 0.88rem;
+    color: var(--color-text);
+    margin: 0 0 0.2rem 0;
+  }
+
+  .reputation-sub-text {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+  }
+
+  .maps-disclaimer {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    margin: 0 0 var(--space-md) 0;
+    line-height: 1.4;
+  }
+
+  .maps-grid-platforms {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--space-md);
+  }
+
+  .platform-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: var(--space-md);
+    background: var(--color-bg);
+    border: 1px solid var(--color-surface-border);
+    border-radius: var(--border-radius-sm);
+    transition:
+      transform var(--transition-smooth),
+      border-color var(--transition-smooth);
+  }
+
+  .platform-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--color-primary);
+  }
+
+  .platform-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-sm);
+    gap: var(--space-xs);
+  }
+
+  .platform-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .platform-icon {
+    font-size: 1.2rem;
+  }
+
+  .platform-name {
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--color-text);
+  }
+
+  .status-badge {
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 0.2rem 0.5rem;
+    border-radius: 999px;
+  }
+
+  .status-listed {
+    background: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+    border: 1px solid rgba(16, 185, 129, 0.25);
+  }
+
+  .status-coords {
+    background: rgba(100, 116, 139, 0.1);
+    color: var(--color-text-muted);
+    border: 1px solid var(--color-surface-border);
+  }
+
+  .platform-body {
+    margin-bottom: var(--space-md);
+  }
+
+  .rating-display {
+    display: flex;
+    align-items: baseline;
+    gap: 0.35rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .stars-gold {
+    color: #f59e0b;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+  }
+
+  .rating-number {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--color-text);
+  }
+
+  .rating-total {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+  }
+
+  .reviews-count-text {
+    font-size: 0.78rem;
+    color: var(--color-text-muted);
+    line-height: 1.3;
+  }
+
+  .platform-info-text {
+    font-size: 0.85rem;
+    color: var(--color-text);
+    margin-bottom: 0.4rem;
+  }
+
+  .platform-coords-pill {
+    display: inline-block;
+    font-size: 0.72rem;
+    color: var(--color-text-muted);
+    background: var(--color-surface);
+    padding: 0.15rem 0.4rem;
+    border-radius: var(--border-radius-xs);
+    border: 1px solid var(--color-surface-border);
+  }
+
+  .btn-platform {
+    width: 100%;
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.45rem 0.75rem;
+  }
+
+  .google-btn {
+    background: color-mix(in srgb, #4285f4 15%, transparent);
+    color: #4285f4;
+    border: 1px solid color-mix(in srgb, #4285f4 35%, transparent);
+  }
+
+  .google-btn:hover {
+    background: #4285f4;
+    color: #ffffff;
+  }
+
+  .apple-btn {
+    background: color-mix(in srgb, #000000 10%, var(--color-surface));
+    color: var(--color-text);
+    border: 1px solid var(--color-surface-border);
+  }
+
+  .apple-btn:hover {
+    background: var(--color-text);
+    color: var(--color-bg);
+  }
+
+  .bing-btn {
+    background: color-mix(in srgb, #008272 15%, transparent);
+    color: #008272;
+    border: 1px solid color-mix(in srgb, #008272 35%, transparent);
+  }
+
+  .bing-btn:hover {
+    background: #008272;
+    color: #ffffff;
+  }
+
+  .social-channels-bar {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    margin-top: var(--space-md);
+    padding-top: var(--space-md);
+    border-top: 1px dashed var(--color-surface-border);
+    flex-wrap: wrap;
+  }
+
+  .social-bar-title {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--color-text);
+  }
+
+  .social-links-list {
+    display: flex;
+    gap: var(--space-xs);
+    flex-wrap: wrap;
+  }
+
+  .social-pill {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.2rem 0.55rem;
+    border-radius: 999px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .social-pill.ig {
+    background: rgba(225, 48, 108, 0.1);
+    color: #e1306c;
+    border: 1px solid rgba(225, 48, 108, 0.3);
+  }
+  .social-pill.ig:hover {
+    background: #e1306c;
+    color: white;
+  }
+
+  .social-pill.fb {
+    background: rgba(24, 119, 242, 0.1);
+    color: #1877f2;
+    border: 1px solid rgba(24, 119, 242, 0.3);
+  }
+  .social-pill.fb:hover {
+    background: #1877f2;
+    color: white;
+  }
+
+  .social-pill.tt {
+    background: rgba(0, 0, 0, 0.1);
+    color: var(--color-text);
+    border: 1px solid var(--color-surface-border);
+  }
+  .social-pill.tt:hover {
+    background: var(--color-text);
+    color: var(--color-bg);
+  }
+
+  .social-pill.yt {
+    background: rgba(255, 0, 0, 0.1);
+    color: #ff0000;
+    border: 1px solid rgba(255, 0, 0, 0.3);
+  }
+  .social-pill.yt:hover {
+    background: #ff0000;
+    color: white;
+  }
+
+  .directories-bar {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    margin-top: var(--space-sm);
+    flex-wrap: wrap;
+  }
+
+  .directories-title {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--color-text-muted);
+  }
+
+  .directories-list {
+    display: flex;
+    gap: 0.3rem;
+    flex-wrap: wrap;
+  }
+
+  .directory-badge {
+    font-size: 0.72rem;
+    color: var(--color-text-muted);
+    background: var(--color-bg);
+    border: 1px solid var(--color-surface-border);
+    padding: 0.15rem 0.5rem;
+    border-radius: var(--border-radius-xs);
+    text-decoration: none;
+  }
+
+  .directory-badge:hover {
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+  }
+
+  @media (max-width: 640px) {
+    .reputation-summary-banner {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .reputation-score-box {
+      border-right: none;
+      border-bottom: 1px solid var(--color-surface-border);
+      padding-right: 0;
+      padding-bottom: var(--space-xs);
+      width: 100%;
+    }
+  }
+</style>

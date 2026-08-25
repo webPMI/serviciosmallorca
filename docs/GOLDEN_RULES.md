@@ -122,6 +122,39 @@ Comando: `npm test` (Vitest)
 
 ---
 
+## GR-11: Veracidad y Fiabilidad de la Información (Zero Fake Data)
+
+**Todo servicio, empresa, teléfono, dirección física, sitio web y dato publicado en Servicios Mallorca DEBE ser 100% real, corroborado y verificable.**
+
+- ❌ PROHIBIDO incluir empresas, números de teléfono, correos electrónicos o reseñas ficticias o inventadas.
+- ✅ Los datos de negocios deben provenir de fuentes oficiales corroboradas (sitio web oficial, Google Business verificado, registro oficial o contacto directo).
+- ✅ Cada ficha de servicio debe tener enlaces operativos a su web oficial, teléfono de atención real y dirección física verídica en Mallorca.
+
+---
+
+## GR-12: Protocolo de Indexación y Fidelidad de Datos Google Maps (90%+ Re-indexación)
+
+**El 90%+ de la estructura de datos de cada ficha DEBE re-indexarse y sincronizarse directamente desde los perfiles oficiales de Google Maps / Google Business Profile.**
+
+- ✅ **Nombre Comercial Oficial:** Nombre exacto registrado en Google Maps.
+- ✅ **Ubicación & Coordenadas GPS:** Dirección completa con calle, número, código postal y coordenadas geográficas (`lat`, `lng`) verificadas en Mallorca.
+- ✅ **Calificación y Reseñas Reales:** Puntuación (1.0 - 5.0) y contador verídico de reseñas públicas de Google.
+- ✅ **Horario Operativo Real:** Días y franjas horarias reales de atención al cliente extraídas de la ficha de Google Maps.
+- ✅ **Indexación Multiplataforma de Mapas:** Cada ficha debe incluir enlace directo oficial a Google Maps (`googleMapsUrl`), Apple Maps (`appleMapsUrl`) y Bing Maps (`bingMapsUrl`), además del Schema.org enriquecido con `hasMap` y `GeoCoordinates`.
+
+---
+
+## GR-13: Seguridad del Usuario y Protección de Datos (RGPD, LOPDGDD y Firebase Security)
+
+**La seguridad de la información, el blindaje de credenciales y la privacidad de los usuarios son PRIORIDADES INMUTABLES en todo el sistema.**
+
+- ✅ **Reglas Firestore Blindadas:** Todo cambio en colecciones o documentos debe estar explícitamente autorizado en `firestore.rules` siguiendo el principio de mínimo privilegio. La mutación de roles de usuario desde cliente está terminantemente prohibida.
+- ✅ **Cabeceras de Seguridad HTTP:** Todo renderizado SSR debe aplicar cabeceras `X-Frame-Options`, `X-Content-Type-Options`, `Referrer-Policy`, `Permissions-Policy` y `Cache-Control: no-store` en rutas privadas (`/dashboard`, `/profile`).
+- ✅ **Validación Estricta de Carga Útil:** Los campos de texto libre deben poseer límites de longitud (`withinLength`), y los enlaces/avatares deben validar protocolo `https://`.
+- ✅ **Derechos ARCO Inmediatos:** El sistema debe ofrecer siempre mecanismos accesibles y sin trabas para que cualquier usuario o titular de negocio ejerza su derecho de acceso, rectificación o supresión de datos.
+
+---
+
 ## Auditoría del Agente Maestro
 
 Antes de aceptar cualquier cambio, el Agente Maestro verifica:
@@ -137,4 +170,7 @@ Antes de aceptar cualquier cambio, el Agente Maestro verifica:
 [ ] GR-08: ¿Pasó la revisión del Agente Maestro?
 [ ] GR-09: ¿Build sin errores? ¿Tests pasando?
 [ ] GR-10: ¿Build time < 60s?
+[ ] GR-11: ¿Información y servicios 100% reales y verificados (Zero Fake Data)?
+[ ] GR-12: ¿Fidelidad de datos Google Maps (coordenadas, horarios, reseñas y multi-mapas)?
+[ ] GR-13: ¿Seguridad de datos de usuario, cabeceras HTTP y reglas Firestore blindadas?
 ```

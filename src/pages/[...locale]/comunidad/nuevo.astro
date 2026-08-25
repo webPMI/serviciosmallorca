@@ -1,0 +1,308 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Navbar from "../../../components/Navbar.astro";
+import Footer from "../../../components/Footer.astro";
+import { getLocaleFromUrl, loadTranslations, getLangPrefix, type Locale } from "../../../i18n";
+
+export const prerender = false;
+
+const locale = getLocaleFromUrl(Astro.url) as Locale;
+const translations = await loadTranslations(locale);
+const prefix = getLangPrefix(locale);
+---
+
+<BaseLayout
+  title={`${translations["forum.createTopicTitle"]} - ${translations["site.title"]}`}
+  lang={locale}
+  description={translations["forum.createTopicSubtitle"]}
+>
+  <Navbar currentLocale={locale} translations={translations} getLangPrefix={getLangPrefix} />
+
+  <div class="container create-topic-container">
+    <div class="breadcrumb">
+      <a href={`${prefix}comunidad`}>← {translations["forum.allTopics"]}</a>
+    </div>
+
+    <div class="card form-card">
+      <header class="form-header">
+        <span class="badge badge-accent">💬 {translations["nav.community"]}</span>
+        <h1 class="form-title">{translations["forum.createTopicTitle"]}</h1>
+        <p class="form-subtitle">{translations["forum.createTopicSubtitle"]}</p>
+      </header>
+
+      <!-- Auth Guard for Guests -->
+      <div id="create-auth-gate" class="auth-gate-box" style="display: none;">
+        <p class="auth-gate-desc">🔒 {translations["forum.loginRequiredCreate"]}</p>
+        <div class="auth-gate-buttons">
+          <a href={`${prefix}login`} class="btn btn-primary">🔑 Iniciar Sesión</a>
+          <a href={`${prefix}register`} class="btn btn-secondary">Registrarse</a>
+        </div>
+      </div>
+
+      <!-- Topic Form -->
+      <form id="create-topic-form" class="topic-form" style="display: none;">
+        <div id="topic-alert-success" class="alert-success" style="display: none;">
+          ¡Debate publicado con éxito! Redirigiendo a la conversación...
+        </div>
+        <div id="topic-alert-error" class="alert-error" style="display: none;"></div>
+
+        <div class="form-group">
+          <label for="topic-title" class="form-label">{translations["forum.topicTitle"]} *</label>
+          <input
+            type="text"
+            id="topic-title"
+            class="form-input"
+            required
+            minlength="5"
+            maxlength="120"
+            placeholder="Ej: ¿Cuál es el mejor fontanero de urgencias en Palma o Calvià?"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="topic-category" class="form-label">{translations["forum.topicCategory"]} *</label>
+          <select id="topic-category" class="form-input form-select" required>
+            <option value="recomendaciones">⭐ {translations["forum.cat.recomendaciones"]}</option>
+            <option value="preguntas" selected>❓ {translations["forum.cat.preguntas"]}</option>
+            <option value="experiencias">✨ {translations["forum.cat.experiencias"]}</option>
+            <option value="guias">🗺️ {translations["forum.cat.guias"]}</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="topic-content" class="form-label">{translations["forum.topicContent"]} *</label>
+          <textarea
+            id="topic-content"
+            class="form-input form-textarea"
+            rows="6"
+            required
+            minlength="15"
+            placeholder="Describe con detalle tu duda, experiencia o recomendación para que otros vecinos puedan ayudarte..."
+          ></textarea>
+        </div>
+
+        <div class="form-actions">
+          <a href={`${prefix}comunidad`} class="btn btn-secondary">Cancelar</a>
+          <button type="submit" id="submit-topic-btn" class="btn btn-primary">
+            <span>🚀 {translations["forum.publishTopic"]}</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <Footer translations={translations} currentLocale={locale} getLangPrefix={getLangPrefix} />
+</BaseLayout>
+
+<style>
+  .create-topic-container {
+    max-width: 760px;
+    padding-top: var(--space-xl);
+    padding-bottom: var(--space-3xl);
+  }
+
+  .breadcrumb {
+    margin-bottom: var(--space-md);
+  }
+
+  .breadcrumb a {
+    color: var(--color-text-muted);
+    font-size: var(--font-size-sm);
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .breadcrumb a:hover {
+    color: var(--color-primary);
+  }
+
+  .form-card {
+    padding: var(--space-2xl);
+    border-radius: var(--border-radius-lg);
+  }
+
+  .form-header {
+    margin-bottom: var(--space-xl);
+  }
+
+  .form-title {
+    font-size: clamp(1.5rem, 3vw, var(--font-size-2xl));
+    font-weight: 800;
+    margin-top: var(--space-xs);
+    margin-bottom: var(--space-xs);
+  }
+
+  .form-subtitle {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-light);
+    line-height: 1.5;
+  }
+
+  .auth-gate-box {
+    text-align: center;
+    padding: var(--space-2xl) var(--space-md);
+    background: var(--color-bg);
+    border-radius: var(--border-radius-md);
+  }
+
+  .auth-gate-desc {
+    font-size: var(--font-size-base);
+    color: var(--color-text-light);
+    margin-bottom: var(--space-md);
+  }
+
+  .auth-gate-buttons {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-sm);
+  }
+
+  .topic-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .form-label {
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    color: var(--color-text);
+  }
+
+  .form-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border-radius: var(--border-radius-sm);
+    border: 1px solid var(--color-surface-border);
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-size: var(--font-size-sm);
+    font-family: inherit;
+    transition: border-color 0.2s ease;
+  }
+
+  .form-input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+  }
+
+  .form-select {
+    cursor: pointer;
+  }
+
+  .form-textarea {
+    resize: vertical;
+    min-height: 140px;
+    line-height: 1.5;
+  }
+
+  .form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--space-sm);
+    margin-top: var(--space-md);
+  }
+
+  .alert-success {
+    background: var(--color-success-bg, #ecfdf5);
+    border: 1px solid var(--color-success-border, #10b981);
+    color: var(--color-success, #065f46);
+    padding: 0.75rem;
+    border-radius: var(--border-radius-sm);
+    font-size: var(--font-size-xs);
+  }
+
+  .alert-error {
+    background: var(--color-danger-bg, #fef2f2);
+    border: 1px solid var(--color-danger-border, #ef4444);
+    color: var(--color-danger, #991b1b);
+    padding: 0.75rem;
+    border-radius: var(--border-radius-sm);
+    font-size: var(--font-size-xs);
+  }
+</style>
+
+<script>
+  import { auth } from "../../../lib/firebase";
+  import { createForumTopic, type ForumCategory } from "../../../lib/community";
+
+  const authGate = document.getElementById("create-auth-gate");
+  const topicForm = document.getElementById("create-topic-form") as HTMLFormElement;
+  const alertSuccess = document.getElementById("topic-alert-success");
+  const alertError = document.getElementById("topic-alert-error");
+  const submitBtn = document.getElementById("submit-topic-btn") as HTMLButtonElement;
+
+  // Check Auth State on mount
+  auth.onAuthStateChanged((user) => {
+    if (user) {
+      if (authGate) authGate.style.display = "none";
+      if (topicForm) topicForm.style.display = "flex";
+    } else {
+      if (authGate) authGate.style.display = "block";
+      if (topicForm) topicForm.style.display = "none";
+    }
+  });
+
+  if (topicForm) {
+    topicForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const user = auth.currentUser;
+
+      if (alertSuccess) alertSuccess.style.display = "none";
+      if (alertError) alertError.style.display = "none";
+
+      if (!user) {
+        if (alertError) {
+          alertError.textContent = "Debes iniciar sesión para publicar un debate.";
+          alertError.style.display = "block";
+        }
+        return;
+      }
+
+      const title = (document.getElementById("topic-title") as HTMLInputElement).value.trim();
+      const category = (document.getElementById("topic-category") as HTMLSelectElement).value as ForumCategory;
+      const content = (document.getElementById("topic-content") as HTMLTextAreaElement).value.trim();
+
+      if (!title || !content) {
+        if (alertError) {
+          alertError.textContent = "Por favor, completa todos los campos requeridos.";
+          alertError.style.display = "block";
+        }
+        return;
+      }
+
+      if (submitBtn) submitBtn.disabled = true;
+
+      try {
+        const { slug } = await createForumTopic({
+          title,
+          category,
+          content,
+          authorUid: user.uid,
+          authorName: user.displayName || user.email?.split("@")[0] || "Vecino de Mallorca",
+          authorAvatar: user.photoURL || "🌴",
+        });
+
+        if (alertSuccess) alertSuccess.style.display = "block";
+        topicForm.reset();
+
+        setTimeout(() => {
+          window.location.href = `/comunidad/${slug}`;
+        }, 1200);
+      } catch (err: any) {
+        if (alertError) {
+          alertError.textContent = `Error al crear el debate: ${err.message || err}`;
+          alertError.style.display = "block";
+        }
+      } finally {
+        if (submitBtn) submitBtn.disabled = false;
+      }
+    });
+  }
+</script>

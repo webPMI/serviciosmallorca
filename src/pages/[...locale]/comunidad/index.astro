@@ -1,0 +1,422 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Navbar from "../../../components/Navbar.astro";
+import Footer from "../../../components/Footer.astro";
+import { getLocaleFromUrl, loadTranslations, getLangPrefix, type Locale } from "../../../i18n";
+
+export const prerender = false;
+
+const locale = getLocaleFromUrl(Astro.url) as Locale;
+const translations = await loadTranslations(locale);
+const prefix = getLangPrefix(locale);
+---
+
+<BaseLayout
+  title={`${translations["forum.title"]} - ${translations["site.title"]}`}
+  lang={locale}
+  description={translations["forum.subtitle"]}
+>
+  <Navbar currentLocale={locale} translations={translations} getLangPrefix={getLangPrefix} />
+
+  <div class="container community-container">
+    <!-- Header Section -->
+    <header class="community-header">
+      <div class="community-header-text">
+        <span class="badge badge-accent">💬 {translations["nav.community"]}</span>
+        <h1 class="community-title">{translations["forum.title"]}</h1>
+        <p class="community-subtitle">{translations["forum.subtitle"]}</p>
+      </div>
+
+      <a href={`${prefix}comunidad/nuevo`} class="btn btn-primary create-topic-btn">
+        <span>✍️ {translations["forum.newTopic"]}</span>
+      </a>
+    </header>
+
+    <!-- Category Filter Bar -->
+    <div class="forum-nav-toolbar">
+      <div class="category-pills-scroll" id="forum-cat-filters">
+        <button class="cat-pill active" data-category="todas">
+          🌴 {translations["forum.cat.todas"]}
+        </button>
+        <button class="cat-pill" data-category="recomendaciones">
+          ⭐ {translations["forum.cat.recomendaciones"]}
+        </button>
+        <button class="cat-pill" data-category="preguntas">
+          ❓ {translations["forum.cat.preguntas"]}
+        </button>
+        <button class="cat-pill" data-category="experiencias">
+          ✨ {translations["forum.cat.experiencias"]}
+        </button>
+        <button class="cat-pill" data-category="guias">
+          🗺️ {translations["forum.cat.guias"]}
+        </button>
+      </div>
+    </div>
+
+    <!-- Forum Discussions Feed -->
+    <main class="forum-feed-layout">
+      <div id="topics-list-container" class="topics-list-container" data-locale-prefix={prefix}>
+        <div class="topics-loading card">
+          <p>⏳ Cargando conversaciones de la comunidad...</p>
+        </div>
+      </div>
+
+      <!-- Community Sidebar -->
+      <aside class="forum-sidebar">
+        <div class="card card-glass forum-info-card">
+          <h3 class="forum-sidebar-title">🌴 Normas de Convivencia</h3>
+          <ul class="forum-rules-list">
+            <li>✅ Comparte recomendaciones y experiencias reales en Mallorca.</li>
+            <li>✅ Trata con respeto y cordialidad a todos los vecinos.</li>
+            <li>❌ Prohibido spam comercial indiscriminado o datos falsos.</li>
+          </ul>
+        </div>
+
+        <div class="card forum-cta-card">
+          <h4 class="cta-title">¿Buscas un profesional?</h4>
+          <p class="cta-desc">Explora el catálogo de empresas y artesanos 100% verificados en la isla.</p>
+          <a href={`${prefix}servicios`} class="btn btn-secondary btn-sm btn-full"> 🔍 Ver Directorio </a>
+        </div>
+      </aside>
+    </main>
+  </div>
+
+  <Footer translations={translations} currentLocale={locale} getLangPrefix={getLangPrefix} />
+</BaseLayout>
+
+<style>
+  .community-container {
+    padding-top: var(--space-xl);
+    padding-bottom: var(--space-3xl);
+  }
+
+  .community-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    margin-bottom: var(--space-xl);
+    background: var(--color-surface);
+    padding: var(--space-xl);
+    border-radius: var(--border-radius-lg);
+    border: 1px solid var(--color-surface-border);
+  }
+
+  .community-header-text {
+    max-width: 700px;
+  }
+
+  .community-title {
+    font-size: clamp(1.75rem, 3.5vw, var(--font-size-3xl));
+    font-weight: 800;
+    margin-top: var(--space-xs);
+    margin-bottom: var(--space-xs);
+  }
+
+  .community-subtitle {
+    font-size: var(--font-size-base);
+    color: var(--color-text-light);
+    line-height: 1.5;
+  }
+
+  .create-topic-btn {
+    white-space: nowrap;
+    align-self: center;
+  }
+
+  .forum-nav-toolbar {
+    margin-bottom: var(--space-xl);
+  }
+
+  .category-pills-scroll {
+    display: flex;
+    gap: var(--space-xs);
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    scrollbar-width: thin;
+  }
+
+  .cat-pill {
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius-full);
+    border: 1px solid var(--color-surface-border);
+    background: var(--color-surface);
+    color: var(--color-text-light);
+    font-weight: 600;
+    font-size: var(--font-size-xs);
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+  }
+
+  .cat-pill:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+  }
+
+  .cat-pill.active {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: var(--color-white, #fff);
+  }
+
+  .forum-feed-layout {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: var(--space-xl);
+    align-items: flex-start;
+  }
+
+  .topics-list-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .topics-loading,
+  .topics-empty {
+    padding: var(--space-2xl);
+    text-align: center;
+    color: var(--color-text-muted);
+    font-size: var(--font-size-sm);
+  }
+
+  .topic-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-surface-border);
+    border-radius: var(--border-radius-md);
+    padding: var(--space-lg);
+    text-decoration: none;
+    color: var(--color-text);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    transition:
+      transform 0.2s ease,
+      border-color 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+
+  .topic-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--color-primary-light);
+    box-shadow: var(--shadow-md);
+  }
+
+  .topic-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-sm);
+  }
+
+  .topic-category-badge {
+    padding: 0.25rem 0.65rem;
+    border-radius: var(--border-radius-full);
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background: var(--color-primary-bg);
+    color: var(--color-primary-dark);
+  }
+
+  .topic-date {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+  }
+
+  .topic-title {
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    color: var(--color-text);
+    margin: 0;
+    line-height: 1.3;
+  }
+
+  .topic-excerpt {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-light);
+    line-height: 1.5;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .topic-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: var(--space-xs);
+    border-top: 1px solid var(--color-surface-border);
+    margin-top: var(--space-xs);
+  }
+
+  .topic-author {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+  }
+
+  .topic-avatar {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--color-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+  }
+
+  .topic-stats {
+    display: flex;
+    gap: var(--space-md);
+    font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+    font-weight: 600;
+  }
+
+  .forum-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
+
+  .forum-sidebar-title {
+    font-size: var(--font-size-base);
+    font-weight: 700;
+    margin-bottom: var(--space-sm);
+  }
+
+  .forum-rules-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    font-size: var(--font-size-xs);
+    line-height: 1.5;
+    color: var(--color-text-light);
+  }
+
+  .cta-title {
+    font-size: var(--font-size-base);
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+  }
+
+  .cta-desc {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-light);
+    margin-bottom: var(--space-md);
+    line-height: 1.4;
+  }
+
+  @media (max-width: 900px) {
+    .forum-feed-layout {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<script>
+  import { getForumTopics, type ForumCategory } from "../../../lib/community";
+
+  const topicsContainer = document.getElementById("topics-list-container");
+  const prefix = topicsContainer?.getAttribute("data-locale-prefix") || "/";
+  const catButtons = document.querySelectorAll(".cat-pill");
+
+  let currentCategory: ForumCategory = "todas";
+
+  const categoryLabels: Record<string, string> = {
+    recomendaciones: "⭐ Recomendaciones",
+    preguntas: "❓ Preguntas & Dudas",
+    experiencias: "✨ Experiencias",
+    guias: "🗺️ Guías Locales",
+  };
+
+  async function loadTopics(category: ForumCategory = "todas") {
+    if (!topicsContainer) return;
+
+    topicsContainer.innerHTML = `
+      <div class="topics-loading card">
+        <p>⏳ Cargando conversaciones...</p>
+      </div>
+    `;
+
+    try {
+      const topics = await getForumTopics(category);
+
+      if (topics.length === 0) {
+        topicsContainer.innerHTML = `
+          <div class="topics-empty card">
+            <p>💬 No hay debates en esta categoría todavía. ¡Sé el primero en iniciar una conversación!</p>
+            <a href="${prefix}comunidad/nuevo" class="btn btn-primary btn-sm" style="margin-top: 1rem;">
+              ✍️ Iniciar Primer Debate
+            </a>
+          </div>
+        `;
+        return;
+      }
+
+      topicsContainer.innerHTML = topics
+        .map((t) => {
+          const catName = categoryLabels[t.category] || t.category;
+          const dateStr = new Date(t.createdAt).toLocaleDateString("es-ES", {
+            day: "numeric",
+            month: "short",
+          });
+
+          return `
+            <a href="${prefix}comunidad/${t.slug}" class="topic-card">
+              <div class="topic-card-header">
+                <span class="topic-category-badge">${catName}</span>
+                <span class="topic-date">${dateStr}</span>
+              </div>
+              <h3 class="topic-title">${t.title}</h3>
+              <p class="topic-excerpt">${t.content}</p>
+              <div class="topic-card-footer">
+                <div class="topic-author">
+                  <div class="topic-avatar">${t.authorAvatar || "🌴"}</div>
+                  <span>${t.authorName}</span>
+                </div>
+                <div class="topic-stats">
+                  <span>👍 ${t.likesCount || 0}</span>
+                  <span>💬 ${t.repliesCount || 0} respuestas</span>
+                </div>
+              </div>
+            </a>
+          `;
+        })
+        .join("");
+    } catch (err) {
+      console.error("Error fetching topics:", err);
+      topicsContainer.innerHTML = `
+        <div class="topics-empty card">
+          <p>Ocurrió un error al cargar las conversaciones del foro.</p>
+        </div>
+      `;
+    }
+  }
+
+  // Filter Buttons
+  catButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      catButtons.forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+      const selected = (btn.getAttribute("data-category") || "todas") as ForumCategory;
+      currentCategory = selected;
+      loadTopics(selected);
+    });
+  });
+
+  // Initial load
+  loadTopics("todas");
+</script>

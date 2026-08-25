@@ -1,0 +1,369 @@
+---
+import type { SocialMediaLinks, SocialMediaPost } from "../data/services";
+
+interface Props {
+  businessName: string;
+  socialLinks?: SocialMediaLinks;
+  socialPosts?: SocialMediaPost[];
+  currentLocale?: "es" | "en" | "ca";
+}
+
+const { businessName, socialLinks, socialPosts = [] } = Astro.props;
+
+const hasSocials = Boolean(socialLinks && Object.values(socialLinks).some(Boolean));
+const hasPosts = socialPosts && socialPosts.length > 0;
+
+if (!hasSocials && !hasPosts) {
+  return null;
+}
+---
+
+<section class="card section-box social-feed-section">
+  <div class="social-feed-header">
+    <div>
+      <span class="social-badge">📱 Comunidad & Redes Oficiales</span>
+      <h2 class="box-title">Feed de Publicaciones & Redes de {businessName}</h2>
+    </div>
+
+    {
+      socialLinks?.instagram && (
+        <a
+          href={socialLinks.instagram}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-sm btn-instagram-follow"
+        >
+          <span>📸 Seguir en Instagram ↗</span>
+        </a>
+      )
+    }
+  </div>
+
+  <!-- Social Media Profiles Bar -->
+  {
+    hasSocials && (
+      <div class="social-profiles-grid">
+        {socialLinks?.instagram && (
+          <a href={socialLinks.instagram} target="_blank" rel="noopener noreferrer" class="social-card ig-card">
+            <div class="social-card-icon">📸</div>
+            <div class="social-card-info">
+              <span class="social-platform-title">Instagram Oficial</span>
+              <span class="social-handle">@{socialLinks.instagram.replace(/\/$/, "").split("/").pop()}</span>
+            </div>
+            <span class="social-arrow">↗</span>
+          </a>
+        )}
+
+        {socialLinks?.facebook && (
+          <a href={socialLinks.facebook} target="_blank" rel="noopener noreferrer" class="social-card fb-card">
+            <div class="social-card-icon">👍</div>
+            <div class="social-card-info">
+              <span class="social-platform-title">Facebook</span>
+              <span class="social-handle">Página Oficial</span>
+            </div>
+            <span class="social-arrow">↗</span>
+          </a>
+        )}
+
+        {socialLinks?.tiktok && (
+          <a href={socialLinks.tiktok} target="_blank" rel="noopener noreferrer" class="social-card tt-card">
+            <div class="social-card-icon">🎵</div>
+            <div class="social-card-info">
+              <span class="social-platform-title">TikTok</span>
+              <span class="social-handle">Vídeos & Reels</span>
+            </div>
+            <span class="social-arrow">↗</span>
+          </a>
+        )}
+
+        {socialLinks?.pinterest && (
+          <a href={socialLinks.pinterest} target="_blank" rel="noopener noreferrer" class="social-card pin-card">
+            <div class="social-card-icon">📌</div>
+            <div class="social-card-info">
+              <span class="social-platform-title">Pinterest</span>
+              <span class="social-handle">Tableros & Diseños</span>
+            </div>
+            <span class="social-arrow">↗</span>
+          </a>
+        )}
+
+        {socialLinks?.youtube && (
+          <a href={socialLinks.youtube} target="_blank" rel="noopener noreferrer" class="social-card yt-card">
+            <div class="social-card-icon">▶️</div>
+            <div class="social-card-info">
+              <span class="social-platform-title">YouTube</span>
+              <span class="social-handle">Canal Oficial</span>
+            </div>
+            <span class="social-arrow">↗</span>
+          </a>
+        )}
+
+        {socialLinks?.linkedin && (
+          <a href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer" class="social-card in-card">
+            <div class="social-card-icon">💼</div>
+            <div class="social-card-info">
+              <span class="social-platform-title">LinkedIn</span>
+              <span class="social-handle">Perfil Empresa</span>
+            </div>
+            <span class="social-arrow">↗</span>
+          </a>
+        )}
+
+        {socialLinks?.twitter && (
+          <a href={socialLinks.twitter} target="_blank" rel="noopener noreferrer" class="social-card x-card">
+            <div class="social-card-icon">✖️</div>
+            <div class="social-card-info">
+              <span class="social-platform-title">X / Twitter</span>
+              <span class="social-handle">Actualizaciones</span>
+            </div>
+            <span class="social-arrow">↗</span>
+          </a>
+        )}
+
+        {socialLinks?.whatsappChannel && (
+          <a href={socialLinks.whatsappChannel} target="_blank" rel="noopener noreferrer" class="social-card wa-card">
+            <div class="social-card-icon">🟢</div>
+            <div class="social-card-info">
+              <span class="social-platform-title">Canal WhatsApp</span>
+              <span class="social-handle">Novedades Directas</span>
+            </div>
+            <span class="social-arrow">↗</span>
+          </a>
+        )}
+      </div>
+    )
+  }
+
+  <!-- Posts Grid (Instagram Feed Style) -->
+  {
+    hasPosts && (
+      <div class="social-posts-container">
+        <h3 class="social-posts-subtitle">✨ Últimos Trabajos y Publicaciones</h3>
+        <div class="social-posts-grid">
+          {socialPosts.map((post) => (
+            <a href={post.url} target="_blank" rel="noopener noreferrer" class="social-post-card">
+              <div class="post-img-wrapper">
+                <img
+                  src={post.imageUrl}
+                  alt={post.caption || `Publicación de ${businessName}`}
+                  loading="lazy"
+                  class="post-img"
+                />
+                <div class="post-overlay">
+                  <span class="post-platform-icon">
+                    {post.platform === "instagram" ? "📸" : post.platform === "tiktok" ? "🎵" : "👍"}
+                  </span>
+                  {post.likesCount && <span class="post-likes">❤️ {post.likesCount}</span>}
+                  {post.caption && <p class="post-caption-preview">{post.caption}</p>}
+                </div>
+              </div>
+              {post.date && <span class="post-date-tag">{post.date}</span>}
+            </a>
+          ))}
+        </div>
+      </div>
+    )
+  }
+</section>
+
+<style>
+  .social-feed-section {
+    margin-bottom: var(--space-lg);
+    background: var(--color-surface);
+    border: 1px solid var(--color-surface-border);
+  }
+
+  .social-feed-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: var(--space-md);
+    margin-bottom: var(--space-md);
+    flex-wrap: wrap;
+  }
+
+  .social-badge {
+    display: inline-block;
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-primary);
+    margin-bottom: 0.2rem;
+  }
+
+  .btn-instagram-follow {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    color: #ffffff;
+    font-weight: 700;
+    border: none;
+    padding: 0.45rem 0.9rem;
+    border-radius: var(--border-radius-sm);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    transition:
+      transform var(--transition-smooth),
+      opacity var(--transition-smooth);
+  }
+
+  .btn-instagram-follow:hover {
+    transform: translateY(-2px);
+    opacity: 0.95;
+    color: #ffffff;
+  }
+
+  .social-profiles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-sm);
+    margin-bottom: var(--space-md);
+  }
+
+  .social-card {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-sm) var(--space-md);
+    background: var(--color-bg);
+    border: 1px solid var(--color-surface-border);
+    border-radius: var(--border-radius-sm);
+    text-decoration: none;
+    transition: all var(--transition-smooth);
+  }
+
+  .social-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--color-primary);
+  }
+
+  .social-card-icon {
+    font-size: 1.4rem;
+  }
+
+  .social-card-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .social-platform-title {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+    font-weight: 600;
+  }
+
+  .social-handle {
+    font-size: 0.85rem;
+    color: var(--color-text);
+    font-weight: 700;
+  }
+
+  .social-arrow {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+  }
+
+  .social-posts-container {
+    padding-top: var(--space-md);
+    border-top: 1px dashed var(--color-surface-border);
+  }
+
+  .social-posts-subtitle {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin: 0 0 var(--space-md) 0;
+  }
+
+  .social-posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: var(--space-sm);
+  }
+
+  .social-post-card {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    border-radius: var(--border-radius-sm);
+    overflow: hidden;
+    background: var(--color-bg);
+    border: 1px solid var(--color-surface-border);
+    transition:
+      transform var(--transition-smooth),
+      border-color var(--transition-smooth);
+  }
+
+  .social-post-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--color-primary);
+  }
+
+  .post-img-wrapper {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background: var(--color-surface);
+  }
+
+  .post-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    image-orientation: from-image;
+    transition: transform 0.3s ease;
+  }
+
+  .social-post-card:hover .post-img {
+    transform: scale(1.06);
+  }
+
+  .post-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-sm);
+    opacity: 0;
+    transition: opacity 0.25s ease;
+    color: #ffffff;
+    text-align: center;
+  }
+
+  .social-post-card:hover .post-overlay {
+    opacity: 1;
+  }
+
+  .post-platform-icon {
+    font-size: 1.3rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .post-likes {
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+  }
+
+  .post-caption-preview {
+    font-size: 0.72rem;
+    line-height: 1.3;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .post-date-tag {
+    font-size: 0.7rem;
+    color: var(--color-text-muted);
+    padding: 0.3rem 0.5rem;
+    text-align: right;
+  }
+</style>

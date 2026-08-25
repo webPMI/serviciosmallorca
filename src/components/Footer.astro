@@ -18,23 +18,29 @@ const currentPath = Astro.url.pathname;
       <!-- Brand column -->
       <div class="footer-col brand-col">
         <div class="footer-brand">
-          <span class="footer-logo">🚀 WebApp Starter</span>
+          <span class="footer-logo">🌴 Servicios Mallorca</span>
         </div>
         <p class="footer-tagline">{translations["footer.tagline"]}</p>
       </div>
 
-      <!-- Legal links column -->
+      <!-- Quick links column -->
       <div class="footer-col nav-col">
-        <h4 class="footer-heading">{translations["footer.legal"]}</h4>
+        <h4 class="footer-heading">{translations["nav.services"] || "Servicios"}</h4>
         <nav class="footer-nav">
+          <a href={`${getLangPrefix(currentLocale)}servicios`} class="footer-link">
+            {translations["nav.services"] || "Directorio"}
+          </a>
+          <a href={`${getLangPrefix(currentLocale)}comunidad`} class="footer-link">
+            💬 {translations["nav.community"] || "Comunidad & Foro"}
+          </a>
+          <a href={`${getLangPrefix(currentLocale)}blog`} class="footer-link">
+            {translations["nav.blog"] || "Blog & Guías"}
+          </a>
           <a href={`${getLangPrefix(currentLocale)}terms`} class="footer-link">
             {translations["footer.terms"]}
           </a>
           <a href={`${getLangPrefix(currentLocale)}privacy`} class="footer-link">
             {translations["footer.privacy"]}
-          </a>
-          <a href="#" class="footer-link">
-            {translations["footer.contact"]}
           </a>
         </nav>
       </div>

@@ -1,0 +1,514 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Navbar from "../../../components/Navbar.astro";
+import Footer from "../../../components/Footer.astro";
+import ServiceCard from "../../../components/ServiceCard.astro";
+import AdSenseSlot from "../../../components/AdSenseSlot.astro";
+import { CATEGORIES, getActiveCategories } from "../../../data/categories";
+import { MALLORCA_ZONES } from "../../../data/zones";
+import { SERVICES } from "../../../data/services";
+import { getLocaleFromUrl, loadTranslations, getLangPrefix, type Locale } from "../../../i18n";
+
+export const prerender = false;
+
+const locale = getLocaleFromUrl(Astro.url) as Locale;
+const translations = await loadTranslations(locale);
+const prefix = getLangPrefix(locale);
+
+const activeCategories = getActiveCategories(SERVICES);
+
+// Query parameters from URL for initial SSR rendering
+const selectedCategory = Astro.url.searchParams.get("categoria") || "";
+const selectedZone = Astro.url.searchParams.get("zona") || "";
+const searchQuery = (Astro.url.searchParams.get("q") || "").toLowerCase().trim();
+
+// Filter services for initial SSR
+const initialFilteredServices = SERVICES.filter((service) => {
+  if (selectedCategory && service.category !== selectedCategory) {
+    return false;
+  }
+  if (selectedZone && service.zone !== selectedZone) {
+    return false;
+  }
+  if (searchQuery) {
+    const nameMatch = service.name.toLowerCase().includes(searchQuery);
+    const descMatch = service.shortDescription[locale].toLowerCase().includes(searchQuery);
+    const tagMatch = service.tags.some((t) => t.toLowerCase().includes(searchQuery));
+    if (!nameMatch && !descMatch && !tagMatch) {
+      return false;
+    }
+  }
+  return true;
+});
+---
+
+<BaseLayout
+  title={`${translations["services.title"]} - ${translations["site.title"]}`}
+  lang={locale}
+  description={translations["services.subtitle"]}
+>
+  <Navbar currentLocale={locale} translations={translations} getLangPrefix={getLangPrefix} />
+
+  <main class="container section">
+    <!-- Header -->
+    <header class="directory-header text-center fade-in">
+      <span class="badge badge-primary">🌴 Mallorca</span>
+      <h1 class="directory-title">{translations["services.title"]}</h1>
+      <p class="directory-subtitle">{translations["services.subtitle"]}</p>
+    </header>
+
+    <!-- Interactive Search & Filters Bar -->
+    <section class="filters-card card card-glass fade-in">
+      <form id="directory-filter-form" method="GET" action={`${prefix}servicios`} class="filters-form">
+        <!-- Search Input with live search icon -->
+        <div class="filter-group filter-search">
+          <span class="search-icon-inside">🔍</span>
+          <input
+            type="text"
+            id="live-search-input"
+            name="q"
+            value={searchQuery}
+            placeholder={translations["home.search.placeholder"] || "Buscar por nombre, especialidad o zona..."}
+            class="input-field with-icon"
+            aria-label="Buscar servicios"
+            autocomplete="off"
+          />
+          <button
+            type="button"
+            id="clear-search-btn"
+            class="clear-search-btn"
+            style={searchQuery ? "display:block;" : "display:none;"}>✕</button
+          >
+        </div>
+
+        <!-- Category Dropdown (Only populated with active categories) -->
+        {
+          activeCategories.length > 0 && (
+            <div class="filter-group">
+              <select
+                id="category-filter-select"
+                name="categoria"
+                class="select-field"
+                aria-label="Filtrar por categoría"
+              >
+                <option value="">{translations["services.allCategories"]}</option>
+                {activeCategories.map((cat) => (
+                  <option value={cat.id} selected={selectedCategory === cat.id}>
+                    {cat.icon} {cat.name[locale]}
+                  </option>
+                ))}
+              </select>
+            </div>
+          )
+        }
+
+        <!-- Zone Dropdown -->
+        <div class="filter-group">
+          <select id="zone-filter-select" name="zona" class="select-field" aria-label="Filtrar por zona">
+            <option value="">{translations["services.allZones"]}</option>
+            {
+              MALLORCA_ZONES.map((zone) => (
+                <option value={zone.id} selected={selectedZone === zone.id}>
+                  📍 {zone.name[locale]}
+                </option>
+              ))
+            }
+          </select>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="filter-actions">
+          <button type="submit" class="btn btn-primary btn-sm">
+            {translations["home.search.button"]}
+          </button>
+          <a
+            id="reset-filters-btn"
+            href={`${prefix}servicios`}
+            class="btn btn-secondary btn-sm"
+            style={selectedCategory || selectedZone || searchQuery ? "display:inline-flex;" : "display:none;"}
+          >
+            Limpiar
+          </a>
+        </div>
+      </form>
+    </section>
+
+    <!-- Category Quick Filter Pills (Only active categories) -->
+    {
+      activeCategories.length > 0 && (
+        <div class="category-pills-bar">
+          <a href={`${prefix}servicios`} class:list={["pill-link", { active: !selectedCategory }]} data-cat-pill="">
+            <span>🌟</span>
+            <span>{translations["services.allCategories"]}</span>
+          </a>
+          {activeCategories.map((cat) => (
+            <a
+              href={`${prefix}servicios?categoria=${cat.id}${selectedZone ? `&zona=${selectedZone}` : ""}`}
+              class:list={["pill-link", { active: selectedCategory === cat.id }]}
+              data-cat-pill={cat.id}
+            >
+              <span>{cat.icon}</span>
+              <span>{cat.name[locale]}</span>
+            </a>
+          ))}
+        </div>
+      )
+    }
+
+    <!-- Active Filter & Count Stats Toolbar -->
+    <div class="results-stats-toolbar">
+      <div class="results-count-text">
+        <span class="count-badge" id="results-count-num">{initialFilteredServices.length}</span>
+        <span>servicios verificados disponibles en Mallorca</span>
+      </div>
+      <div class="quick-add-service-cta">
+        <a href={`${prefix}dashboard`} class="btn btn-outline-primary btn-xs">
+          <span>+ Publicar Negocio</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Results Directory Grid -->
+    <div id="services-grid" class="services-directory-grid">
+      {
+        SERVICES.map((service) => {
+          const isMatch = initialFilteredServices.some((s) => s.id === service.id);
+          return (
+            <div
+              class="service-item-wrapper"
+              data-id={service.id}
+              data-name={service.name.toLowerCase()}
+              data-desc={service.shortDescription[locale].toLowerCase()}
+              data-tags={service.tags.join(" ").toLowerCase()}
+              data-category={service.category}
+              data-zone={service.zone}
+              style={isMatch ? "display:block;" : "display:none;"}
+            >
+              <ServiceCard
+                service={service}
+                currentLocale={locale}
+                getLangPrefix={getLangPrefix}
+                translations={translations}
+              />
+            </div>
+          );
+        })
+      }
+    </div>
+
+    <!-- No Results Box -->
+    <div
+      id="no-results-box"
+      class="no-results-box card card-glass text-center"
+      style={initialFilteredServices.length === 0 ? "display:flex;" : "display:none;"}
+    >
+      <span class="no-results-icon">🔎</span>
+      <h3>{translations["services.noResults"]}</h3>
+      <p>Prueba a buscar por otra palabra clave, cambiar de categoría o restablecer los filtros.</p>
+      <button type="button" id="no-results-reset-btn" class="btn btn-primary btn-sm" style="margin-top: 1rem;">
+        Ver todos los servicios
+      </button>
+    </div>
+
+    <!-- AdSense Bottom Slot -->
+    <AdSenseSlot format="horizontal" slotId="services-directory-bottom" />
+  </main>
+
+  <Footer translations={translations} currentLocale={locale} getLangPrefix={getLangPrefix} />
+</BaseLayout>
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    const searchInput = document.getElementById("live-search-input");
+    const categorySelect = document.getElementById("category-filter-select");
+    const zoneSelect = document.getElementById("zone-filter-select");
+    const clearBtn = document.getElementById("clear-search-btn");
+    const resetBtn = document.getElementById("reset-filters-btn");
+    const noResultsResetBtn = document.getElementById("no-results-reset-btn");
+    const countNum = document.getElementById("results-count-num");
+    const noResultsBox = document.getElementById("no-results-box");
+    const items = Array.from(document.querySelectorAll(".service-item-wrapper"));
+    const catPills = Array.from(document.querySelectorAll("[data-cat-pill]"));
+
+    function applyFilters() {
+      const q = (searchInput?.value || "").toLowerCase().trim();
+      const cat = categorySelect?.value || "";
+      const zone = zoneSelect?.value || "";
+
+      if (clearBtn) {
+        clearBtn.style.display = q ? "block" : "none";
+      }
+
+      if (resetBtn) {
+        resetBtn.style.display = q || cat || zone ? "inline-flex" : "none";
+      }
+
+      // Update cat pills active state
+      catPills.forEach((pill) => {
+        const pillCat = pill.getAttribute("data-cat-pill");
+        if (pillCat === cat) {
+          pill.classList.add("active");
+        } else {
+          pill.classList.remove("active");
+        }
+      });
+
+      let visibleCount = 0;
+
+      items.forEach((el) => {
+        const itemCat = el.getAttribute("data-category") || "";
+        const itemZone = el.getAttribute("data-zone") || "";
+        const name = el.getAttribute("data-name") || "";
+        const desc = el.getAttribute("data-desc") || "";
+        const tags = el.getAttribute("data-tags") || "";
+
+        let match = true;
+
+        if (cat && itemCat !== cat) match = false;
+        if (zone && itemZone !== zone) match = false;
+        if (q && !name.includes(q) && !desc.includes(q) && !tags.includes(q)) match = false;
+
+        if (match) {
+          el.style.display = "block";
+          visibleCount++;
+        } else {
+          el.style.display = "none";
+        }
+      });
+
+      if (countNum) countNum.textContent = String(visibleCount);
+
+      if (noResultsBox) {
+        noResultsBox.style.display = visibleCount === 0 ? "flex" : "none";
+      }
+    }
+
+    // Debounced live typing search
+    let debounceTimer;
+    searchInput?.addEventListener("input", () => {
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(applyFilters, 150);
+    });
+
+    categorySelect?.addEventListener("change", applyFilters);
+    zoneSelect?.addEventListener("change", applyFilters);
+
+    clearBtn?.addEventListener("click", () => {
+      if (searchInput) searchInput.value = "";
+      applyFilters();
+      searchInput?.focus();
+    });
+
+    const resetAll = () => {
+      if (searchInput) searchInput.value = "";
+      if (categorySelect) categorySelect.value = "";
+      if (zoneSelect) zoneSelect.value = "";
+      applyFilters();
+    };
+
+    resetBtn?.addEventListener("click", (e) => {
+      e.preventDefault();
+      resetAll();
+    });
+
+    noResultsResetBtn?.addEventListener("click", resetAll);
+  });
+</script>
+
+<style>
+  .directory-header {
+    margin-bottom: var(--space-xl);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-xs);
+  }
+
+  .directory-title {
+    font-size: clamp(2rem, 4vw, var(--font-size-4xl));
+    font-weight: 800;
+    margin: 0;
+    line-height: 1.15;
+  }
+
+  .directory-subtitle {
+    color: var(--color-text-muted);
+    font-size: var(--font-size-base);
+    max-width: 620px;
+    margin: 0;
+  }
+
+  .filters-card {
+    padding: var(--space-md);
+    margin-bottom: var(--space-md);
+    border-radius: var(--border-radius-lg);
+  }
+
+  .filters-form {
+    display: grid;
+    grid-template-columns: 2fr 1.2fr 1.2fr auto;
+    gap: var(--space-sm);
+    align-items: center;
+  }
+
+  .filter-search {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .search-icon-inside {
+    position: absolute;
+    left: 0.85rem;
+    font-size: 0.95rem;
+    pointer-events: none;
+    opacity: 0.6;
+  }
+
+  .clear-search-btn {
+    position: absolute;
+    right: 0.75rem;
+    background: none;
+    border: none;
+    font-size: 0.9rem;
+    cursor: pointer;
+    color: var(--color-text-muted);
+    padding: 0.2rem;
+  }
+
+  .input-field.with-icon {
+    padding-left: 2.3rem;
+    padding-right: 2rem;
+  }
+
+  .input-field,
+  .select-field {
+    width: 100%;
+    padding: 0.75rem 0.95rem;
+    border-radius: var(--border-radius-sm);
+    border: 1px solid var(--color-surface-border);
+    background: var(--color-surface);
+    color: var(--color-text);
+    font-family: inherit;
+    font-size: var(--font-size-sm);
+    outline: none;
+    transition: all var(--transition-fast);
+  }
+
+  .input-field:focus,
+  .select-field:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary) 20%, transparent);
+  }
+
+  .filter-actions {
+    display: flex;
+    gap: var(--space-xs);
+  }
+
+  .category-pills-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+    margin-bottom: var(--space-md);
+  }
+
+  .pill-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.4rem 0.95rem;
+    border-radius: var(--border-radius-full);
+    background: var(--color-surface);
+    border: 1px solid var(--color-surface-border);
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    color: var(--color-text);
+    text-decoration: none;
+    transition: all var(--transition-fast);
+  }
+
+  .pill-link:hover,
+  .pill-link.active {
+    background: var(--color-primary);
+    color: var(--color-white);
+    border-color: var(--color-primary);
+    transform: translateY(-1px);
+  }
+
+  .results-stats-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-lg);
+    padding: var(--space-xs) 0;
+    border-bottom: 1px solid var(--color-surface-border);
+  }
+
+  .results-count-text {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-light);
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+  }
+
+  .count-badge {
+    background: var(--color-primary-bg);
+    color: var(--color-primary-dark);
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-size: var(--font-size-xs);
+  }
+
+  .btn-xs {
+    padding: 0.35rem 0.75rem;
+    font-size: var(--font-size-xs);
+  }
+
+  .services-directory-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: var(--space-lg);
+  }
+
+  .service-item-wrapper {
+    transition: transform var(--transition-fast);
+  }
+
+  .no-results-box {
+    padding: var(--space-2xl);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-xs);
+  }
+
+  .no-results-icon {
+    font-size: 3.5rem;
+  }
+
+  @media (max-width: 900px) {
+    .filters-form {
+      grid-template-columns: 1fr 1fr;
+    }
+    .filter-actions {
+      grid-column: span 2;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .filters-form {
+      grid-template-columns: 1fr;
+    }
+    .filter-actions {
+      grid-column: span 1;
+    }
+    .results-stats-toolbar {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--space-xs);
+    }
+  }
+</style>

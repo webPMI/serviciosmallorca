@@ -21,6 +21,7 @@ Toda la documentación del proyecto está en `docs/`. Antes de trabajar en cualq
 - [I18N.md](docs/I18N.md) — 🌍 Internacionalización (3 idiomas)
 - [AUTH.md](docs/AUTH.md) — 🔐 Firebase Auth, roles, AuthStore
 - [DEVTOOLS.md](docs/DEVTOOLS.md) — 🛠️ Logger, Floating Button, DevTools Panel
+- [AGENT_CURATION_SOP.md](docs/AGENT_CURATION_SOP.md) — 🤖 Protocolo SOP para Agentes: Registro y Curación de Negocios
 - [email-templates.md](docs/email-templates.md) — 📧 Plantillas de correo Firebase
 
 ## Golden Rules (Resumen)
@@ -35,19 +36,22 @@ Toda la documentación del proyecto está en `docs/`. Antes de trabajar en cualq
 8. **GR-08**: Agente Maestro coordina y audita cambios
 9. **GR-09**: Zero console errors, build limpio
 10. **GR-10**: Build < 60s en desarrollo local
+11. **GR-11**: Veracidad: Información y servicios 100% reales y verificados (Zero Fake Data)
+12. **GR-12**: Fidelidad Google Maps: 90%+ re-indexación de datos oficiales (coordenadas, horarios, reseñas y multi-mapas)
 
 ## Multi-Agent System
 
 El proyecto se gestiona mediante agentes coordinados por un **Agente Maestro**:
 
-| Agente      | Dominio                                         |
-| ----------- | ----------------------------------------------- |
-| `@frontend` | `src/components/`, `src/pages/`, `src/layouts/` |
-| `@styling`  | `src/styles/global.css`                         |
-| `@devtools` | `public/devtools*.js`, `public/devtools.html`   |
-| `@testing`  | `tests/`                                        |
-| `@docs`     | `docs/`, `README.md`, `AGENTS.md`, `CLAUDE.md`  |
-| `@auth`     | `src/lib/`, `src/middleware.ts`                 |
+| Agente      | Dominio                                                         |
+| ----------- | --------------------------------------------------------------- |
+| `@frontend` | `src/components/`, `src/pages/`, `src/layouts/`                 |
+| `@styling`  | `src/styles/global.css`                                         |
+| `@curation` | `src/data/services/`, `scripts/business-intelligence-lookup.ts` |
+| `@devtools` | `public/devtools*.js`, `public/devtools.html`                   |
+| `@testing`  | `tests/`                                                        |
+| `@docs`     | `docs/`, `README.md`, `AGENTS.md`, `CLAUDE.md`                  |
+| `@auth`     | `src/lib/`, `src/middleware.ts`                                 |
 
 ## Project Structure
 

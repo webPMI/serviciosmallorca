@@ -1,0 +1,102 @@
+---
+interface Props {
+  slotId?: string;
+  format?: "auto" | "rectangle" | "horizontal" | "in-feed";
+  responsive?: boolean;
+  className?: string;
+}
+
+const { slotId = "1988580228487420", format = "auto", responsive = true, className = "" } = Astro.props;
+
+const isProductionDomain =
+  import.meta.env.PROD && !Astro.url.hostname.includes("localhost") && !Astro.url.hostname.includes("127.0.0.1");
+---
+
+<aside class:list={["adsense-container", `adsense-${format}`, className]} aria-label="Espacio publicitario">
+  <span class="ad-label">Publicidad</span>
+  {
+    isProductionDomain ? (
+      <>
+        <ins
+          class="adsbygoogle"
+          style="display:block"
+          data-ad-client="ca-pub-1988580228487420"
+          data-ad-slot={slotId}
+          data-ad-format={format === "in-feed" ? "fluid" : format}
+          data-full-width-responsive={responsive ? "true" : "false"}
+        />
+        <script is:inline>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </>
+    ) : (
+      <div class="adsense-placeholder">
+        <div class="placeholder-badge">Google AdSense Space</div>
+        <div class="placeholder-meta">
+          <span>Client: ca-pub-1988580228487420</span>
+          <span>·</span>
+          <span>Slot: {slotId}</span>
+          <span>·</span>
+          <span>Formato: {format}</span>
+        </div>
+      </div>
+    )
+  }
+</aside>
+
+<style>
+  .adsense-container {
+    width: 100%;
+    margin: var(--space-lg) auto;
+    padding: var(--space-xs);
+    background: var(--color-surface);
+    border: 1px dashed var(--color-surface-border);
+    border-radius: var(--border-radius-sm);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ad-label {
+    display: block;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+    margin-bottom: 0.25rem;
+  }
+
+  .adsense-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-bg);
+    border-radius: var(--border-radius-sm);
+    padding: var(--space-md);
+    min-height: 90px;
+    gap: 0.25rem;
+  }
+
+  .adsense-rectangle .adsense-placeholder {
+    min-height: 250px;
+  }
+
+  .adsense-horizontal .adsense-placeholder {
+    min-height: 90px;
+  }
+
+  .placeholder-badge {
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    color: var(--color-primary);
+    background: var(--color-primary-bg);
+    padding: 0.2rem 0.6rem;
+    border-radius: var(--border-radius-full);
+  }
+
+  .placeholder-meta {
+    font-size: 0.7rem;
+    color: var(--color-text-muted);
+    display: flex;
+    gap: 0.35rem;
+  }
+</style>

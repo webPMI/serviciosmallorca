@@ -1,5 +1,6 @@
 ---
 import ThemeSwitcher from "./ThemeSwitcher.astro";
+import LanguageSwitcher from "./LanguageSwitcher.astro";
 
 interface Props {
   currentLocale: "es" | "en" | "ca" | string;
@@ -9,20 +10,21 @@ interface Props {
 }
 
 const { currentLocale, translations, getLangPrefix, currentPath } = Astro.props;
-const prefix = getLangPrefix(currentLocale as "es" | "en" | "ca");
+const localeTyped = (currentLocale as "es" | "en" | "ca") || "es";
+const prefix = getLangPrefix(localeTyped);
 const homeUrl = prefix || "/";
 
 // Helper para detectar si un enlace está activo
 const isActive = (path: string): boolean => {
-  // Normalizar paths para comparación
   const normalizedCurrent = currentPath.split("#")[0].replace(/\/$/, "") || "/";
   const normalizedTarget = path.split("#")[0].replace(/\/$/, "") || "/";
   return normalizedCurrent === normalizedTarget;
 };
 
 const isHomeActive = isActive(homeUrl);
-const isFeaturesActive =
-  isActive(`${homeUrl}#features`) || currentPath === homeUrl;
+const isServicesActive = isActive(`${homeUrl}servicios`) || currentPath.includes("/servicios");
+const isBlogActive = isActive(`${homeUrl}blog`) || currentPath.includes("/blog");
+const isCommunityActive = isActive(`${homeUrl}comunidad`) || currentPath.includes("/comunidad");
 const isLoginActive = isActive(`${homeUrl}login`);
 const isRegisterActive = isActive(`${homeUrl}register`);
 ---
@@ -30,9 +32,9 @@ const isRegisterActive = isActive(`${homeUrl}register`);
 <header class="navbar-header nav-public">
   <div class="container navbar-container">
     <!-- Brand Logo / Title -->
-    <a href={homeUrl} class="navbar-brand" aria-label={translations["nav.aria.publicBrand"] || "WebApp Starter Home"}>
-      <span class="brand-badge badge badge-primary">🚀 WebApp</span>
-      <span class="brand-title">Starter Template</span>
+    <a href={homeUrl} class="navbar-brand" aria-label={translations["nav.aria.publicBrand"] || "Servicios Mallorca"}>
+      <span class="brand-badge badge badge-primary">🌴 Mallorca</span>
+      <span class="brand-title">Servicios Mallorca</span>
     </a>
 
     <!-- Mobile Hamburger Toggle Button -->
@@ -59,16 +61,42 @@ const isRegisterActive = isActive(`${homeUrl}register`);
           {translations["nav.home"] || "Inicio"}
         </a>
         <a
-          href={`${homeUrl}#features`}
+          href={`${homeUrl}servicios`}
           class="nav-link"
-          class:list={["nav-link", { active: isFeaturesActive }]}
-          aria-current={isFeaturesActive ? "page" : undefined}
+          class:list={["nav-link", { active: isServicesActive }]}
+          aria-current={isServicesActive ? "page" : undefined}
         >
-          {translations["nav.features"] || "Características"}
+          {translations["nav.services"] || "Servicios"}
+        </a>
+        <a
+          href={`${homeUrl}comunidad`}
+          class="nav-link"
+          class:list={["nav-link", { active: isCommunityActive }]}
+          aria-current={isCommunityActive ? "page" : undefined}
+        >
+          💬 {translations["nav.community"] || "Comunidad"}
+        </a>
+        <a
+          href={`${homeUrl}blog`}
+          class="nav-link"
+          class:list={["nav-link", { active: isBlogActive }]}
+          aria-current={isBlogActive ? "page" : undefined}
+        >
+          {translations["nav.blog"] || "Blog & Guías"}
         </a>
       </nav>
 
       <div class="navbar-actions">
+        <LanguageSwitcher
+          currentLocale={localeTyped}
+          translations={{
+            "nav.es": translations["nav.es"] || "ES",
+            "nav.en": translations["nav.en"] || "EN",
+            "nav.ca": translations["nav.ca"] || "CA",
+          }}
+          getLangPrefix={getLangPrefix}
+          currentPath={currentPath}
+        />
         <ThemeSwitcher
           translations={{
             "theme.light": translations["theme.light"],
@@ -81,12 +109,7 @@ const isRegisterActive = isActive(`${homeUrl}register`);
           <a
             href={`${homeUrl}login`}
             class="btn btn-secondary btn-sm"
-            class:list={[
-              "btn",
-              "btn-secondary",
-              "btn-sm",
-              { active: isLoginActive },
-            ]}
+            class:list={["btn", "btn-secondary", "btn-sm", { active: isLoginActive }]}
             aria-current={isLoginActive ? "page" : undefined}
           >
             {translations["nav.login"] || "Iniciar Sesión"}
@@ -94,12 +117,7 @@ const isRegisterActive = isActive(`${homeUrl}register`);
           <a
             href={`${homeUrl}register`}
             class="btn btn-primary btn-sm"
-            class:list={[
-              "btn",
-              "btn-primary",
-              "btn-sm",
-              { active: isRegisterActive },
-            ]}
+            class:list={["btn", "btn-primary", "btn-sm", { active: isRegisterActive }]}
             aria-current={isRegisterActive ? "page" : undefined}
           >
             {translations["nav.register"] || "Registrarse"}

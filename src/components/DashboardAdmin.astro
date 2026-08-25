@@ -1,117 +1,408 @@
 ---
+import { SERVICES } from "../data/services";
+import { CATEGORIES } from "../data/categories";
+import { MALLORCA_ZONES } from "../data/zones";
+
 interface Props {
   translations: Record<string, string>;
 }
 
 const { translations } = Astro.props;
+
+// Compute live catalog metrics
+const totalServices = SERVICES.length;
+const totalReviews = SERVICES.reduce((acc, s) => acc + s.reviewCount, 0);
+const avgRating = (SERVICES.reduce((acc, s) => acc + s.rating, 0) / (totalServices || 1)).toFixed(1);
+const verifiedCount = SERVICES.filter((s) => s.verified).length;
 ---
 
-<section class="stats-grid grid-auto">
-  <article class="stat-card card hover-lift">
-    <div class="stat-header">
-      <span class="stat-icon">👥</span>
-      <span class="stat-trend positive">—</span>
-    </div>
-    <div class="stat-value">—</div>
-    <div class="stat-label">{translations["nav.users"]}</div>
-  </article>
+<div class="admin-dashboard-container">
+  <!-- Admin Navigation Tabs -->
+  <nav class="admin-tabs-nav card card-glass" aria-label="Pestañas de Administración">
+    <button type="button" class="admin-tab-btn active" data-tab="moderation">
+      <span>🛡️</span>
+      <span>Moderación y Solicitudes</span>
+      <span class="tab-badge" id="tab-badge-pending-total">0</span>
+    </button>
+    <button type="button" class="admin-tab-btn" data-tab="users">
+      <span>👥</span>
+      <span>Gestión de Usuarios</span>
+    </button>
+    <button type="button" class="admin-tab-btn" data-tab="analytics">
+      <span>📈</span>
+      <span>Analíticas y Métricas</span>
+    </button>
+    <button type="button" class="admin-tab-btn" data-tab="services">
+      <span>🏢</span>
+      <span>Catálogo ({totalServices})</span>
+    </button>
+  </nav>
 
-  <article class="stat-card card hover-lift">
-    <div class="stat-header">
-      <span class="stat-icon">📋</span>
-      <span class="stat-trend positive">—</span>
-    </div>
-    <div class="stat-value">—</div>
-    <div class="stat-label">{translations["nav.analytics"]}</div>
-  </article>
+  <!-- ======================================================================= -->
+  <!-- TAB 1: MODERACIÓN Y COLAS -->
+  <!-- ======================================================================= -->
+  <div id="admin-tab-moderation" class="admin-tab-panel active">
+    <!-- Quick Stats -->
+    <section class="stats-grid">
+      <article class="stat-card card hover-lift">
+        <div class="stat-header">
+          <span class="stat-icon">🏢</span>
+          <span class="stat-trend neutral" id="stat-claims-count">0</span>
+        </div>
+        <div class="stat-value" id="stat-claims-val">0</div>
+        <div class="stat-label">Reclamaciones Pendientes</div>
+      </article>
 
-  <article class="stat-card card hover-lift">
-    <div class="stat-header">
-      <span class="stat-icon">📈</span>
-      <span class="stat-trend positive">—</span>
-    </div>
-    <div class="stat-value">—</div>
-    <div class="stat-label">{translations["nav.settings"]}</div>
-  </article>
+      <article class="stat-card card hover-lift">
+        <div class="stat-header">
+          <span class="stat-icon">📝</span>
+          <span class="stat-trend neutral" id="stat-subs-count">0</span>
+        </div>
+        <div class="stat-value" id="stat-subs-val">0</div>
+        <div class="stat-label">Nuevas Altas Pendientes</div>
+      </article>
 
-  <article class="stat-card card hover-lift">
-    <div class="stat-header">
-      <span class="stat-icon">⚙️</span>
-    </div>
-    <div class="stat-value">—</div>
-    <div class="stat-label">{translations["nav.settings"]}</div>
-  </article>
-</section>
+      <article class="stat-card card hover-lift">
+        <div class="stat-header">
+          <span class="stat-icon">🗑️</span>
+          <span class="stat-trend neutral" id="stat-dels-count">0</span>
+        </div>
+        <div class="stat-value" id="stat-dels-val">0</div>
+        <div class="stat-label">Solicitudes de Baja</div>
+      </article>
 
-<div class="dashboard-main-grid">
-  <div class="main-col">
-    <article class="card card-glass">
-      <div class="card-title-row">
-        <h3>{translations["nav.users"]}</h3>
+      <article class="stat-card card hover-lift">
+        <div class="stat-header">
+          <span class="stat-icon">🚩</span>
+          <span class="stat-trend neutral" id="stat-reports-count">0</span>
+        </div>
+        <div class="stat-value" id="stat-reports-val">0</div>
+        <div class="stat-label">Reportes de la Comunidad</div>
+      </article>
+    </section>
+
+    <!-- Moderation Queues -->
+    <div class="moderation-sections-grid">
+      <!-- 1. CLAIMS -->
+      <article class="card card-glass moderation-card">
+        <div class="card-title-row">
+          <h3>
+            🏢 Solicitudes de Reclamación de Negocio ({translations["dashboard.claimsTitle"] || "Acreditaciones"})
+          </h3>
+        </div>
+        <div id="admin-claims-list" class="queue-list">
+          <p class="text-muted empty-state">Cargando reclamaciones...</p>
+        </div>
+      </article>
+
+      <!-- 2. SUBMISSIONS -->
+      <article class="card card-glass moderation-card">
+        <div class="card-title-row">
+          <h3>📝 Propuestas de Nuevos Negocios ({translations["dashboard.submissionsTitle"] || "Altas"})</h3>
+        </div>
+        <div id="admin-subs-list" class="queue-list">
+          <p class="text-muted empty-state">Cargando propuestas...</p>
+        </div>
+      </article>
+
+      <!-- 3. DELETIONS -->
+      <article class="card card-glass moderation-card">
+        <div class="card-title-row">
+          <h3>🗑️ Solicitudes de Supresión / Baja RGPD</h3>
+        </div>
+        <div id="admin-dels-list" class="queue-list">
+          <p class="text-muted empty-state">Cargando solicitudes de baja...</p>
+        </div>
+      </article>
+
+      <!-- 4. COMMUNITY REPORTS -->
+      <article class="card card-glass moderation-card">
+        <div class="card-title-row">
+          <h3>🚩 Sugerencias y Reportes de Datos de la Comunidad</h3>
+        </div>
+        <div id="admin-reports-list" class="queue-list">
+          <p class="text-muted empty-state">Cargando reportes...</p>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <!-- ======================================================================= -->
+  <!-- TAB 2: GESTIÓN DE USUARIOS (USER MANAGEMENT) -->
+  <!-- ======================================================================= -->
+  <div id="admin-tab-users" class="admin-tab-panel" style="display: none;">
+    <article class="card card-glass moderation-card">
+      <div class="card-title-row flex-between">
+        <div>
+          <h3>👥 Gestión de Usuarios y Permisos</h3>
+          <p class="text-muted" style="font-size: var(--font-size-xs); margin: 0.2rem 0 0 0;">
+            Administra los roles del sistema (Usuario, Manager, Admin) y credenciales en Firestore.
+          </p>
+        </div>
+        <button type="button" id="refresh-users-btn" class="btn btn-secondary btn-sm"> 🔄 Actualizar Usuarios </button>
       </div>
-      <p class="text-muted">Panel de administración activo</p>
+
+      <div class="users-filter-bar">
+        <input
+          type="text"
+          id="user-search-input"
+          class="input-field"
+          placeholder="Buscar usuario por nombre o correo electrónico..."
+        />
+      </div>
+
+      <div id="admin-users-list" class="users-table-wrap">
+        <p class="text-muted empty-state">Cargando directorio de usuarios...</p>
+      </div>
     </article>
   </div>
 
-  <div class="side-col">
-    <article class="card">
-      <h3 class="card-section-title">{translations["nav.settings"]}</h3>
-      <ul class="activity-feed">
-        <li class="activity-item">
-          <span class="activity-icon">🔐</span>
-          <div class="activity-details">
-            <span class="activity-title">Firebase Auth</span>
-            <span class="activity-time">Configurado</span>
-          </div>
-          <span class="badge badge-accent">Activo</span>
-        </li>
-        <li class="activity-item">
-          <span class="activity-icon">🌍</span>
-          <div class="activity-details">
-            <span class="activity-title">i18n</span>
-            <span class="activity-time">ES · EN · CA</span>
-          </div>
-          <span class="badge badge-accent">Activo</span>
-        </li>
-      </ul>
+  <!-- ======================================================================= -->
+  <!-- TAB 3: ANALÍTICAS Y MÉTRICAS -->
+  <!-- ======================================================================= -->
+  <div id="admin-tab-analytics" class="admin-tab-panel" style="display: none;">
+    <section class="stats-grid">
+      <article class="stat-card card hover-lift">
+        <div class="stat-header">
+          <span class="stat-icon">🏢</span>
+        </div>
+        <div class="stat-value">{totalServices}</div>
+        <div class="stat-label">Negocios Verificados</div>
+      </article>
+
+      <article class="stat-card card hover-lift">
+        <div class="stat-header">
+          <span class="stat-icon">⭐</span>
+        </div>
+        <div class="stat-value">{avgRating} / 5.0</div>
+        <div class="stat-label">Puntuación Media</div>
+      </article>
+
+      <article class="stat-card card hover-lift">
+        <div class="stat-header">
+          <span class="stat-icon">💬</span>
+        </div>
+        <div class="stat-value">{totalReviews.toLocaleString()}</div>
+        <div class="stat-label">Reseñas Públicas Indexadas</div>
+      </article>
+
+      <article class="stat-card card hover-lift">
+        <div class="stat-header">
+          <span class="stat-icon">🛡️</span>
+        </div>
+        <div class="stat-value">{verifiedCount} ({((verifiedCount / totalServices) * 100).toFixed(0)}%)</div>
+        <div class="stat-label">Tasa de Verificación Oficial</div>
+      </article>
+    </section>
+
+    <!-- Analytics Breakdown Grid -->
+    <div class="analytics-breakdown-grid">
+      <!-- Zone distribution -->
+      <article class="card card-glass moderation-card">
+        <div class="card-title-row">
+          <h3>📍 Distribución por Zonas de Mallorca</h3>
+        </div>
+        <div class="bar-chart-list">
+          {
+            MALLORCA_ZONES.map((zone) => {
+              const count = SERVICES.filter((s) => s.zone === zone.id).length;
+              const pct = totalServices > 0 ? (count / totalServices) * 100 : 0;
+              return (
+                <div class="chart-row">
+                  <div class="chart-label-wrap">
+                    <span class="chart-label">{zone.name.es}</span>
+                    <span class="chart-count">
+                      {count} negocios ({pct.toFixed(0)}%)
+                    </span>
+                  </div>
+                  <div class="chart-bar-track">
+                    <div class="chart-bar-fill" style={`width: ${pct}%;`} />
+                  </div>
+                </div>
+              );
+            })
+          }
+        </div>
+      </article>
+
+      <!-- Category distribution -->
+      <article class="card card-glass moderation-card">
+        <div class="card-title-row">
+          <h3>🏷️ Cobertura por Categorías</h3>
+        </div>
+        <div class="bar-chart-list">
+          {
+            CATEGORIES.map((cat) => {
+              const count = SERVICES.filter((s) => s.category === cat.id).length;
+              const pct = totalServices > 0 ? (count / totalServices) * 100 : 0;
+              return (
+                <div class="chart-row">
+                  <div class="chart-label-wrap">
+                    <span class="chart-label">
+                      {cat.icon} {cat.name.es}
+                    </span>
+                    <span class="chart-count">{count} servicios</span>
+                  </div>
+                  <div class="chart-bar-track">
+                    <div class="chart-bar-fill accent" style={`width: ${pct}%;`} />
+                  </div>
+                </div>
+              );
+            })
+          }
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <!-- ======================================================================= -->
+  <!-- TAB 4: CATÁLOGO Y DIRECTORIO DE NEGOCIOS -->
+  <!-- ======================================================================= -->
+  <div id="admin-tab-services" class="admin-tab-panel" style="display: none;">
+    <article class="card card-glass moderation-card">
+      <div class="card-title-row flex-between">
+        <div>
+          <h3>🏢 Negocios Registrados en el Catálogo ({totalServices})</h3>
+          <p class="text-muted" style="font-size: var(--font-size-xs); margin: 0.2rem 0 0 0;">
+            Supervisa el estado, enlaces oficiales a Google Maps y datos de contacto de todas las fichas activas.
+          </p>
+        </div>
+        <a href="/es/servicios" target="_blank" class="btn btn-primary btn-sm"> 👁️ Ver Directorio Público </a>
+      </div>
+
+      <div class="catalog-services-table">
+        {
+          SERVICES.map((s, idx) => (
+            <div class="catalog-item-card">
+              <div class="catalog-header">
+                <div class="catalog-info-left">
+                  <span class="catalog-idx">#{idx + 1}</span>
+                  <div>
+                    <h4 class="catalog-name">{s.name}</h4>
+                    <div class="catalog-tags">
+                      <span class="badge badge-primary">{s.category}</span>
+                      <span class="badge badge-accent">📍 {s.zone}</span>
+                      <span class="badge badge-success">
+                        ⭐ {s.rating.toFixed(1)} ({s.reviewCount})
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="catalog-actions-right">
+                  <a href={`/es/servicios/${s.slug}`} target="_blank" class="btn btn-secondary btn-xs">
+                    Ver Ficha ↗
+                  </a>
+                  <a
+                    href={s.googleMapsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-outline-primary btn-xs"
+                  >
+                    📍 Google Maps
+                  </a>
+                </div>
+              </div>
+              <div class="catalog-body-meta">
+                <span>
+                  <strong>Dirección:</strong> {s.address}
+                </span>
+                <span>
+                  <strong>Tel:</strong> {s.phone}
+                </span>
+                <span>
+                  <strong>Horario:</strong> {s.schedule}
+                </span>
+              </div>
+            </div>
+          ))
+        }
+      </div>
     </article>
   </div>
 </div>
 
 <style>
+  .admin-dashboard-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
+
+  /* TABS NAV */
+  .admin-tabs-nav {
+    display: flex;
+    gap: var(--space-xs);
+    padding: var(--space-xs);
+    border-radius: var(--border-radius-lg);
+    overflow-x: auto;
+    background: var(--color-surface);
+    border: 1px solid var(--color-surface-border);
+  }
+
+  .admin-tab-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.65rem 1.1rem;
+    border-radius: var(--border-radius-md);
+    background: transparent;
+    border: none;
+    font-size: var(--font-size-sm);
+    font-weight: 700;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    white-space: nowrap;
+  }
+
+  .admin-tab-btn:hover {
+    color: var(--color-text);
+    background: var(--color-bg);
+  }
+
+  .admin-tab-btn.active {
+    background: var(--color-primary);
+    color: #ffffff;
+  }
+
+  .tab-badge {
+    background: rgba(0, 0, 0, 0.2);
+    color: inherit;
+    font-size: 0.7rem;
+    padding: 2px 6px;
+    border-radius: 999px;
+    font-weight: 800;
+  }
+
+  .admin-tab-panel {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
+
   .stats-grid {
-    margin-bottom: var(--space-xl);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--space-md);
   }
 
   .stat-card {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-xs);
+    padding: var(--space-lg);
+    border-radius: var(--border-radius-md);
   }
 
   .stat-header {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-  }
-
-  .stat-icon {
+    align-items: center;
     font-size: 1.5rem;
-  }
-
-  .stat-trend {
-    font-size: var(--font-size-xs);
-    font-weight: 700;
-  }
-
-  .stat-trend.positive {
-    color: var(--color-success);
+    margin-bottom: var(--space-xs);
   }
 
   .stat-value {
-    font-size: var(--font-size-3xl);
+    font-size: var(--font-size-2xl);
     font-weight: 800;
-    color: var(--color-text);
+    color: var(--color-primary);
   }
 
   .stat-label {
@@ -119,87 +410,670 @@ const { translations } = Astro.props;
     color: var(--color-text-muted);
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.04em;
+    margin-top: 0.2rem;
   }
 
-  .dashboard-main-grid {
-    display: grid;
-    grid-template-columns: 1.6fr 1fr;
+  .moderation-sections-grid {
+    display: flex;
+    flex-direction: column;
     gap: var(--space-lg);
   }
 
+  .moderation-card {
+    padding: var(--space-xl);
+    border-radius: var(--border-radius-lg);
+  }
+
   .card-title-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: var(--space-lg);
-  }
-
-  .card-section-title {
-    font-size: var(--font-size-lg);
     margin-bottom: var(--space-md);
-  }
-
-  .text-muted {
-    color: var(--color-text-muted);
-    font-size: var(--font-size-xs);
-  }
-
-  .activity-feed {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-md);
-  }
-
-  .activity-item {
-    display: flex;
-    align-items: center;
-    gap: var(--space-md);
     padding-bottom: var(--space-sm);
     border-bottom: 1px solid var(--color-surface-border);
   }
 
-  .activity-item:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
+  .flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
   }
 
-  .activity-icon {
-    font-size: 1.4rem;
-    padding: var(--space-xs);
-    background-color: var(--color-surface-hover);
-    border-radius: var(--border-radius-sm);
+  .card-title-row h3 {
+    margin: 0;
+    font-size: var(--font-size-lg);
+    font-weight: 700;
   }
 
-  .activity-details {
+  .queue-list {
     display: flex;
     flex-direction: column;
-    flex: 1;
+    gap: var(--space-md);
   }
 
-  .activity-title {
+  .empty-state {
+    font-style: italic;
     font-size: var(--font-size-sm);
-    font-weight: 600;
+    padding: var(--space-md) 0;
+  }
+
+  .moderation-item-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-surface-border);
+    border-radius: var(--border-radius-sm);
+    padding: var(--space-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+  }
+
+  .item-title {
+    font-weight: 700;
     color: var(--color-text);
   }
 
-  .activity-time {
+  .item-meta {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+  }
+
+  .item-proof {
+    background: var(--color-bg);
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--border-radius-sm);
+    font-size: var(--font-size-xs);
+    border-left: 3px solid var(--color-primary);
+  }
+
+  .actions-flex {
+    display: flex;
+    gap: var(--space-sm);
+    margin-top: var(--space-xs);
+    flex-wrap: wrap;
+  }
+
+  /* USER MANAGEMENT */
+  .users-filter-bar {
+    margin-bottom: var(--space-md);
+  }
+
+  .users-table-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .user-row-card {
+    background: var(--color-bg);
+    border: 1px solid var(--color-surface-border);
+    border-radius: var(--border-radius-sm);
+    padding: var(--space-md);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+  }
+
+  .user-info-group {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+  }
+
+  .user-avatar-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--color-primary-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+  }
+
+  .user-details {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .user-name {
+    font-weight: 700;
+    font-size: var(--font-size-sm);
+  }
+
+  .user-email {
     font-size: var(--font-size-xs);
     color: var(--color-text-muted);
   }
 
-  @media (max-width: 900px) {
-    .dashboard-main-grid {
-      grid-template-columns: 1fr;
-    }
+  .user-actions-group {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    flex-wrap: wrap;
   }
 
-  @media (max-width: 640px) {
-    .stat-value {
-      font-size: var(--font-size-2xl);
+  /* ANALYTICS */
+  .analytics-breakdown-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--space-lg);
+  }
+
+  .bar-chart-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .chart-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .chart-label-wrap {
+    display: flex;
+    justify-content: space-between;
+    font-size: var(--font-size-xs);
+  }
+
+  .chart-label {
+    font-weight: 600;
+    color: var(--color-text);
+  }
+
+  .chart-count {
+    color: var(--color-text-muted);
+  }
+
+  .chart-bar-track {
+    width: 100%;
+    height: 8px;
+    background: var(--color-bg);
+    border-radius: 999px;
+    overflow: hidden;
+    border: 1px solid var(--color-surface-border);
+  }
+
+  .chart-bar-fill {
+    height: 100%;
+    background: var(--color-primary);
+    border-radius: 999px;
+    transition: width 0.6s ease;
+  }
+
+  .chart-bar-fill.accent {
+    background: var(--color-accent, #f59e0b);
+  }
+
+  /* CATALOG */
+  .catalog-services-table {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .catalog-item-card {
+    background: var(--color-bg);
+    border: 1px solid var(--color-surface-border);
+    border-radius: var(--border-radius-sm);
+    padding: var(--space-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .catalog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+  }
+
+  .catalog-info-left {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-sm);
+  }
+
+  .catalog-idx {
+    font-size: var(--font-size-xs);
+    font-weight: 800;
+    color: var(--color-text-muted);
+    padding-top: 2px;
+  }
+
+  .catalog-name {
+    margin: 0 0 0.25rem 0;
+    font-size: var(--font-size-sm);
+    font-weight: 700;
+  }
+
+  .catalog-tags {
+    display: flex;
+    gap: 0.35rem;
+    flex-wrap: wrap;
+  }
+
+  .catalog-actions-right {
+    display: flex;
+    gap: var(--space-xs);
+  }
+
+  .catalog-body-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    font-size: var(--font-size-xs);
+    color: var(--color-text-light);
+    border-top: 1px dashed var(--color-surface-border);
+    padding-top: var(--space-xs);
+    margin-top: 0.2rem;
+  }
+
+  @media (max-width: 768px) {
+    .admin-tabs-nav {
+      flex-wrap: nowrap;
+    }
+    .user-row-card {
+      flex-direction: column;
+      align-items: flex-start;
     }
   }
 </style>
+
+<script>
+  import { db } from "../lib/firebase";
+  import {
+    getAllClaims,
+    getAllSubmissions,
+    getAllDeletionRequests,
+    updateClaimStatus,
+    updateSubmissionStatus,
+    updateDeletionRequestStatus,
+    getAllReports,
+    updateReportStatus,
+  } from "../lib/serviceActions";
+  import { getAllUsers, updateUserRole } from "../lib/userProfile";
+  import type { UserRole } from "../lib/authStore";
+
+  // Tab switching logic
+  const tabBtns = document.querySelectorAll(".admin-tab-btn");
+  const tabPanels = document.querySelectorAll(".admin-tab-panel");
+
+  function switchTab(targetTab: string) {
+    tabBtns.forEach((btn) => {
+      if (btn.getAttribute("data-tab") === targetTab) {
+        btn.classList.add("active");
+      } else {
+        btn.classList.remove("active");
+      }
+    });
+
+    tabPanels.forEach((panel) => {
+      if (panel.id === `admin-tab-${targetTab}`) {
+        panel.style.display = "flex";
+      } else {
+        panel.style.display = "none";
+      }
+    });
+  }
+
+  tabBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const tab = btn.getAttribute("data-tab");
+      if (tab) {
+        switchTab(tab);
+        const url = new URL(window.location.href);
+        url.searchParams.set("tab", tab);
+        window.history.replaceState({}, "", url.toString());
+      }
+    });
+  });
+
+  // URL query param tab activation
+  const currentTabParam = new URLSearchParams(window.location.search).get("tab");
+  if (currentTabParam && ["moderation", "users", "analytics", "services"].includes(currentTabParam)) {
+    switchTab(currentTabParam);
+  }
+
+  // ---------------------------------------------------------------------------
+  // Load Moderation & Queues Data
+  // ---------------------------------------------------------------------------
+  async function loadAdminData() {
+    // 1. Claims
+    const claims = await getAllClaims(db);
+    const claimsContainer = document.getElementById("admin-claims-list");
+    const statClaims = document.getElementById("stat-claims-val");
+    const pendingClaims = claims.filter((c) => c.status === "pending").length;
+    if (statClaims) statClaims.textContent = pendingClaims.toString();
+
+    if (claimsContainer) {
+      if (claims.length === 0) {
+        claimsContainer.innerHTML =
+          '<p class="text-muted empty-state">No hay solicitudes de reclamación registradas.</p>';
+      } else {
+        claimsContainer.innerHTML = claims
+          .map(
+            (c) => `
+          <div class="moderation-item-card" data-claim-id="${c.id}">
+            <div class="item-header">
+              <span class="item-title">🏢 ${c.serviceName} (ID: ${c.serviceId})</span>
+              <span class="badge ${c.status === "pending" ? "badge-accent" : c.status === "approved" ? "badge-primary" : "badge-secondary"}">${c.status.toUpperCase()}</span>
+            </div>
+            <div class="item-meta">
+              <span>👤 Solicitante: <strong>${c.applicantName}</strong></span>
+              <span>📧 ${c.applicantEmail}</span>
+              <span>📞 ${c.applicantPhone}</span>
+            </div>
+            <div class="item-proof">
+              <strong>Acreditación/CIF:</strong> ${c.verificationProof}
+            </div>
+            ${
+              c.status === "pending"
+                ? `
+              <div class="actions-flex">
+                <button type="button" class="btn btn-primary btn-sm approve-claim-btn" data-id="${c.id}" data-uid="${c.applicantUid}">✓ Aprobar y asignar rol Manager</button>
+                <button type="button" class="btn btn-secondary btn-sm reject-claim-btn" data-id="${c.id}">✕ Rechazar</button>
+              </div>
+            `
+                : ""
+            }
+          </div>
+        `,
+          )
+          .join("");
+
+        claimsContainer.querySelectorAll(".approve-claim-btn").forEach((btn) => {
+          btn.addEventListener("click", async () => {
+            const id = btn.getAttribute("data-id")!;
+            const uid = btn.getAttribute("data-uid")!;
+            await updateClaimStatus(db, id, "approved", uid);
+            loadAdminData();
+          });
+        });
+
+        claimsContainer.querySelectorAll(".reject-claim-btn").forEach((btn) => {
+          btn.addEventListener("click", async () => {
+            const id = btn.getAttribute("data-id")!;
+            await updateClaimStatus(db, id, "rejected");
+            loadAdminData();
+          });
+        });
+      }
+    }
+
+    // 2. Submissions
+    const submissions = await getAllSubmissions(db);
+    const subsContainer = document.getElementById("admin-subs-list");
+    const statSubs = document.getElementById("stat-subs-val");
+    const pendingSubs = submissions.filter((s) => s.status === "pending").length;
+    if (statSubs) statSubs.textContent = pendingSubs.toString();
+
+    if (subsContainer) {
+      if (submissions.length === 0) {
+        subsContainer.innerHTML =
+          '<p class="text-muted empty-state">No hay propuestas de nuevos negocios pendientes.</p>';
+      } else {
+        subsContainer.innerHTML = submissions
+          .map(
+            (s) => `
+          <div class="moderation-item-card" data-sub-id="${s.id}">
+            <div class="item-header">
+              <span class="item-title">📝 ${s.name} [${s.category} · 📍 ${s.zone}]</span>
+              <span class="badge ${s.status === "pending" ? "badge-accent" : s.status === "approved" ? "badge-primary" : "badge-secondary"}">${s.status.toUpperCase()}</span>
+            </div>
+            <div class="item-meta">
+              <span>👤 Proponente: ${s.applicantName} (${s.applicantEmail})</span>
+              <span>📞 ${s.phone}</span>
+              ${s.website ? `<span>🌐 <a href="${s.website}" target="_blank">${s.website}</a></span>` : ""}
+              <span>📍 ${s.address}</span>
+            </div>
+            <div class="item-proof">
+              <strong>Descripción:</strong> ${s.description}
+            </div>
+            ${
+              s.status === "pending"
+                ? `
+              <div class="actions-flex">
+                <button type="button" class="btn btn-primary btn-sm approve-sub-btn" data-id="${s.id}">✓ Aprobar Propuesta</button>
+                <button type="button" class="btn btn-secondary btn-sm reject-sub-btn" data-id="${s.id}">✕ Rechazar</button>
+              </div>
+            `
+                : ""
+            }
+          </div>
+        `,
+          )
+          .join("");
+
+        subsContainer.querySelectorAll(".approve-sub-btn").forEach((btn) => {
+          btn.addEventListener("click", async () => {
+            const id = btn.getAttribute("data-id")!;
+            await updateSubmissionStatus(db, id, "approved");
+            loadAdminData();
+          });
+        });
+
+        subsContainer.querySelectorAll(".reject-sub-btn").forEach((btn) => {
+          btn.addEventListener("click", async () => {
+            const id = btn.getAttribute("data-id")!;
+            await updateSubmissionStatus(db, id, "rejected");
+            loadAdminData();
+          });
+        });
+      }
+    }
+
+    // 3. Deletions
+    const deletions = await getAllDeletionRequests(db);
+    const delsContainer = document.getElementById("admin-dels-list");
+    const statDels = document.getElementById("stat-dels-val");
+    const pendingDels = deletions.filter((d) => d.status === "pending").length;
+    if (statDels) statDels.textContent = pendingDels.toString();
+
+    if (delsContainer) {
+      if (deletions.length === 0) {
+        delsContainer.innerHTML = '<p class="text-muted empty-state">No hay solicitudes de baja pendientes.</p>';
+      } else {
+        delsContainer.innerHTML = deletions
+          .map(
+            (d) => `
+          <div class="moderation-item-card" data-del-id="${d.id}">
+            <div class="item-header">
+              <span class="item-title">🗑️ Solicitud de Supresión: ${d.serviceName}</span>
+              <span class="badge ${d.status === "pending" ? "badge-danger" : "badge-secondary"}">${d.status.toUpperCase()}</span>
+            </div>
+            <div class="item-meta">
+              <span>📧 Contacto: ${d.applicantEmail}</span>
+            </div>
+            <div class="item-proof">
+              <strong>Motivo:</strong> ${d.reason}
+            </div>
+            ${
+              d.status === "pending"
+                ? `
+              <div class="actions-flex">
+                <button type="button" class="btn btn-danger btn-sm process-del-btn" data-id="${d.id}">Tramitar Baja / Marcar Procesado</button>
+              </div>
+            `
+                : ""
+            }
+          </div>
+        `,
+          )
+          .join("");
+
+        delsContainer.querySelectorAll(".process-del-btn").forEach((btn) => {
+          btn.addEventListener("click", async () => {
+            const id = btn.getAttribute("data-id")!;
+            await updateDeletionRequestStatus(db, id, "processed");
+            loadAdminData();
+          });
+        });
+      }
+    }
+
+    // 4. Reports
+    const reports = await getAllReports(db);
+    const reportsContainer = document.getElementById("admin-reports-list");
+    const statReports = document.getElementById("stat-reports-val");
+    const pendingReports = reports.filter((r) => r.status === "pending").length;
+    if (statReports) statReports.textContent = pendingReports.toString();
+
+    const totalPending = pendingClaims + pendingSubs + pendingDels + pendingReports;
+    const badgeTotal = document.getElementById("tab-badge-pending-total");
+    if (badgeTotal) badgeTotal.textContent = totalPending.toString();
+
+    if (reportsContainer) {
+      if (reports.length === 0) {
+        reportsContainer.innerHTML =
+          '<p class="text-muted empty-state">No hay reportes de la comunidad pendientes. 🎉</p>';
+      } else {
+        const categoryLabels: Record<string, string> = {
+          horario_incorrecto: "🕒 Horario incorrecto",
+          ubicacion_erronea: "📍 Ubicación errónea",
+          contacto_invalido: "📞 Contacto inválido",
+          negocio_cerrado: "🔒 Negocio cerrado",
+          sugerencia_cambio: "💡 Sugerencia de mejora",
+          otro: "📝 Otro",
+        };
+
+        reportsContainer.innerHTML = reports
+          .map(
+            (r) => `
+          <div class="moderation-item-card" data-report-id="${r.id}">
+            <div class="item-header">
+              <span class="item-title">${categoryLabels[r.category] || "🚩 Reporte"} — ${r.serviceName}</span>
+              <span class="badge ${r.status === "pending" ? "badge-accent" : "badge-secondary"}">${r.status.toUpperCase()}</span>
+            </div>
+            <div class="item-meta">
+              <span>👤 Reportero: ${r.reporterEmail || "Anónimo / Comunidad"}</span>
+            </div>
+            <div class="item-proof">
+              <strong>Detalle:</strong> ${r.description}
+            </div>
+            ${
+              r.status === "pending"
+                ? `
+              <div class="actions-flex">
+                <button type="button" class="btn btn-primary btn-sm resolve-report-btn" data-id="${r.id}">✓ Marcar como Resuelto</button>
+              </div>
+            `
+                : ""
+            }
+          </div>
+        `,
+          )
+          .join("");
+
+        reportsContainer.querySelectorAll(".resolve-report-btn").forEach((btn) => {
+          btn.addEventListener("click", async () => {
+            const id = btn.getAttribute("data-id")!;
+            await updateReportStatus(db, id, "processed");
+            loadAdminData();
+          });
+        });
+      }
+    }
+  }
+
+  // ---------------------------------------------------------------------------
+  // Load Users List (Tab 2)
+  // ---------------------------------------------------------------------------
+  async function loadUsersList() {
+    const usersContainer = document.getElementById("admin-users-list");
+    if (!usersContainer) return;
+
+    try {
+      const users = await getAllUsers(db);
+      if (users.length === 0) {
+        usersContainer.innerHTML =
+          '<p class="text-muted empty-state">No hay usuarios registrados en la base de datos.</p>';
+        return;
+      }
+
+      function renderUsers(filteredUsers: typeof users) {
+        if (!usersContainer) return;
+        usersContainer.innerHTML = filteredUsers
+          .map(
+            (u) => `
+          <div class="user-row-card" data-user-uid="${u.uid}">
+            <div class="user-info-group">
+              <div class="user-avatar-circle">
+                ${u.photoURL ? `<img src="${u.photoURL}" alt="${u.displayName}" style="width:100%;height:100%;border-radius:50%;object-fit:cover;" />` : "👤"}
+              </div>
+              <div class="user-details">
+                <span class="user-name">${u.displayName || "Usuario sin nombre"}</span>
+                <span class="user-email">${u.email}</span>
+              </div>
+            </div>
+            <div class="user-actions-group">
+              <span class="badge ${u.role === "admin" ? "badge-admin" : u.role === "manager" ? "badge-primary" : "badge-secondary"}">
+                ${u.role ? u.role.toUpperCase() : "USER"}
+              </span>
+              <button type="button" class="btn btn-outline-primary btn-xs change-role-btn" data-uid="${u.uid}" data-target-role="manager">
+                Hacer Manager
+              </button>
+              <button type="button" class="btn btn-secondary btn-xs change-role-btn" data-uid="${u.uid}" data-target-role="user">
+                Usuario Normal
+              </button>
+              <button type="button" class="btn btn-danger btn-xs change-role-btn" data-uid="${u.uid}" data-target-role="admin">
+                Hacer Admin
+              </button>
+            </div>
+          </div>
+        `,
+          )
+          .join("");
+
+        // Attach role change listeners
+        usersContainer.querySelectorAll(".change-role-btn").forEach((btn) => {
+          btn.addEventListener("click", async () => {
+            const uid = btn.getAttribute("data-uid")!;
+            const targetRole = btn.getAttribute("data-target-role") as UserRole;
+            btn.setAttribute("disabled", "true");
+            await updateUserRole(db, uid, targetRole);
+            loadUsersList();
+          });
+        });
+      }
+
+      renderUsers(users);
+
+      // Search filter
+      const searchInput = document.getElementById("user-search-input") as HTMLInputElement;
+      searchInput?.addEventListener("input", () => {
+        const query = searchInput.value.toLowerCase().trim();
+        const filtered = users.filter(
+          (u) =>
+            u.displayName?.toLowerCase().includes(query) ||
+            u.email?.toLowerCase().includes(query) ||
+            u.role?.toLowerCase().includes(query),
+        );
+        renderUsers(filtered);
+      });
+    } catch {
+      usersContainer.innerHTML = '<p class="text-muted empty-state">Error cargando usuarios.</p>';
+    }
+  }
+
+  document.getElementById("refresh-users-btn")?.addEventListener("click", loadUsersList);
+
+  // Initial load
+  loadAdminData();
+  loadUsersList();
+</script>

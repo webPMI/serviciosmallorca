@@ -1,0 +1,282 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Navbar from "../../../components/Navbar.astro";
+import Footer from "../../../components/Footer.astro";
+import { CATEGORIES } from "../../../data/categories";
+import { MALLORCA_ZONES } from "../../../data/zones";
+import { getLocaleFromUrl, loadTranslations, getLangPrefix, type Locale } from "../../../i18n";
+
+export const prerender = false;
+
+const locale = getLocaleFromUrl(Astro.url) as Locale;
+const translations = await loadTranslations(locale);
+const prefix = getLangPrefix(locale);
+---
+
+<BaseLayout
+  title={`${translations["services.newBusinessTitle"]} - ${translations["site.title"]}`}
+  lang={locale}
+  description={translations["services.newBusinessSubtitle"]}
+>
+  <Navbar currentLocale={locale} translations={translations} getLangPrefix={getLangPrefix} />
+
+  <main class="container section">
+    <div class="submit-service-container">
+      <header class="text-center section-header">
+        <span class="badge badge-accent">🌴 Publicar Negocio</span>
+        <h1 class="page-title">{translations["services.newBusinessTitle"]}</h1>
+        <p class="page-subtitle">{translations["services.newBusinessSubtitle"]}</p>
+      </header>
+
+      <div class="card card-glass form-card">
+        <div id="submit-alert-success" class="alert-success" style="display: none;">
+          {translations["services.newBusinessSuccess"]}
+        </div>
+        <div id="submit-alert-error" class="alert-error" style="display: none;"></div>
+
+        <form id="new-service-form" class="form-grid">
+          <div class="form-group span-2">
+            <label class="form-label" for="srv-name">Nombre Comercial de la Empresa / Servicio *</label>
+            <input type="text" id="srv-name" class="form-input" required placeholder="Ej. Mallorca Yacht Charters" />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="srv-category">Categoría Principal *</label>
+            <select id="srv-category" class="form-input" required>
+              {
+                CATEGORIES.map((c) => (
+                  <option value={c.id}>
+                    {c.icon} {c.name[locale]}
+                  </option>
+                ))
+              }
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="srv-zone">Zona en Mallorca *</label>
+            <select id="srv-zone" class="form-input" required>
+              {MALLORCA_ZONES.map((z) => <option value={z.id}>📍 {z.name}</option>)}
+            </select>
+          </div>
+
+          <div class="form-group span-2">
+            <label class="form-label" for="srv-address">Dirección Física o Puerto Base en Mallorca *</label>
+            <input
+              type="text"
+              id="srv-address"
+              class="form-input"
+              required
+              placeholder="Ej. Puerto Portals, Local 12, Calvià"
+            />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="srv-phone">Teléfono de Contacto Directo *</label>
+            <input type="tel" id="srv-phone" class="form-input" required placeholder="+34 600 000 000" />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="srv-website">Sitio Web Oficial</label>
+            <input type="url" id="srv-website" class="form-input" placeholder="https://tuempresa.com" />
+          </div>
+
+          <div class="form-group span-2">
+            <label class="form-label" for="srv-desc">Descripción de tus Servicios y Especialidades *</label>
+            <textarea
+              id="srv-desc"
+              class="form-input form-textarea"
+              required
+              placeholder="Describe los servicios que prestas, años de experiencia, marcas con las que trabajas..."
+            ></textarea>
+          </div>
+
+          <div class="form-actions span-2">
+            <button type="submit" id="submit-service-btn" class="btn btn-primary btn-full">
+              Enviar Solicitud de Publicación
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <Footer translations={translations} currentLocale={locale} getLangPrefix={getLangPrefix} />
+</BaseLayout>
+
+<style>
+  .submit-service-container {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    margin-bottom: var(--space-xl);
+  }
+
+  .page-title {
+    font-size: var(--font-size-3xl);
+    font-weight: 800;
+    margin: var(--space-xs) 0;
+    color: var(--color-text);
+  }
+
+  .page-subtitle {
+    color: var(--color-text-muted);
+    font-size: var(--font-size-base);
+  }
+
+  .form-card {
+    padding: var(--space-2xl);
+    border-radius: var(--border-radius-lg);
+  }
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-md);
+  }
+
+  .span-2 {
+    grid-column: span 2;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .form-label {
+    font-size: var(--font-size-sm);
+    font-weight: 700;
+    color: var(--color-text);
+  }
+
+  .form-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border-radius: var(--border-radius-sm);
+    border: 1px solid var(--color-surface-border);
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-size: var(--font-size-base);
+    font-family: inherit;
+  }
+
+  .form-input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px var(--color-primary-ring);
+  }
+
+  .form-textarea {
+    min-height: 120px;
+    resize: vertical;
+  }
+
+  .btn-full {
+    width: 100%;
+    justify-content: center;
+    padding: 0.85rem;
+    font-weight: 700;
+  }
+
+  .alert-success {
+    background: var(--color-success-bg, #ecfdf5);
+    border: 1px solid var(--color-success-border, #10b981);
+    color: var(--color-success, #065f46);
+    padding: 1rem;
+    border-radius: var(--border-radius-sm);
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--space-md);
+    text-align: center;
+  }
+
+  .alert-error {
+    background: var(--color-danger-bg, #fef2f2);
+    border: 1px solid var(--color-danger-border, #ef4444);
+    color: var(--color-danger, #991b1b);
+    padding: 1rem;
+    border-radius: var(--border-radius-sm);
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--space-md);
+    text-align: center;
+  }
+
+  @media (max-width: 640px) {
+    .form-grid {
+      grid-template-columns: 1fr;
+    }
+    .span-2 {
+      grid-column: span 1;
+    }
+    .form-card {
+      padding: var(--space-lg);
+    }
+  }
+</style>
+
+<script>
+  import { auth, db } from "../../../lib/firebase";
+  import { createServiceSubmission } from "../../../lib/serviceActions";
+
+  const form = document.getElementById("new-service-form") as HTMLFormElement;
+  if (form) {
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const user = auth.currentUser;
+      const alertSuccess = document.getElementById("submit-alert-success");
+      const alertError = document.getElementById("submit-alert-error");
+      const submitBtn = document.getElementById("submit-service-btn") as HTMLButtonElement;
+
+      if (alertSuccess) alertSuccess.style.display = "none";
+      if (alertError) alertError.style.display = "none";
+
+      if (!user) {
+        if (alertError) {
+          alertError.textContent = "Debes iniciar sesión con tu cuenta para proponer la publicación de un negocio.";
+          alertError.style.display = "block";
+        }
+        return;
+      }
+
+      if (submitBtn) submitBtn.disabled = true;
+
+      try {
+        const name = (document.getElementById("srv-name") as HTMLInputElement).value;
+        const category = (document.getElementById("srv-category") as HTMLSelectElement).value;
+        const zone = (document.getElementById("srv-zone") as HTMLSelectElement).value;
+        const address = (document.getElementById("srv-address") as HTMLInputElement).value;
+        const phone = (document.getElementById("srv-phone") as HTMLInputElement).value;
+        const website = (document.getElementById("srv-website") as HTMLInputElement).value;
+        const description = (document.getElementById("srv-desc") as HTMLTextAreaElement).value;
+
+        const subId = `sub-${Date.now()}-${user.uid.slice(0, 6)}`;
+        await createServiceSubmission(db, {
+          id: subId,
+          applicantUid: user.uid,
+          applicantName: user.displayName || name,
+          applicantEmail: user.email || "",
+          name,
+          category,
+          zone,
+          address,
+          phone,
+          website,
+          description,
+        });
+
+        if (alertSuccess) alertSuccess.style.display = "block";
+        form.reset();
+      } catch (err: any) {
+        if (alertError) {
+          alertError.textContent = `Error al registrar el negocio: ${err.message || err}`;
+          alertError.style.display = "block";
+        }
+      } finally {
+        if (submitBtn) submitBtn.disabled = false;
+      }
+    });
+  }
+</script>

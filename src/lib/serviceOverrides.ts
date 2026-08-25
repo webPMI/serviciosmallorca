@@ -1,0 +1,135 @@
+/**
+ * serviceOverrides.ts
+ *
+ * Capa Híbrida Estático-Dinámica (Overlay Pattern) con Caché en Memoria (TTL 5 min).
+ * Permite a los gestores de negocio verificados actualizar datos sin incurrir en costes
+ * innecesarios de lectura a base de datos para los visitantes de la plataforma.
+ */
+
+import type { ServiceItem, ServiceStatus } from "../data/services";
+import type { Firestore } from "firebase/firestore";
+
+export interface ServiceOverride {
+  ownerUid: string;
+  updatedAt: any;
+  phone?: string;
+  whatsapp?: string;
+  email?: string;
+  website?: string;
+  schedule?: string;
+  status?: ServiceStatus;
+  fullDescription?: {
+    es?: string;
+    en?: string;
+    ca?: string;
+  };
+  highlights?: {
+    es?: string[];
+    en?: string[];
+    ca?: string[];
+  };
+  servicesProvided?: {
+    es?: string[];
+    en?: string[];
+    ca?: string[];
+  };
+  gallery?: string[];
+  image?: string;
+}
+
+// -----------------------------------------------------------------------------
+// In-Memory Cache Layer (Cero coste en lecturas repetidas de Firebase)
+// -----------------------------------------------------------------------------
+interface CacheEntry {
+  override: ServiceOverride | null;
+  cachedAt: number;
+}
+
+const OVERRIDES_CACHE = new Map<string, CacheEntry>();
+const CACHE_TTL_MS = 5 * 60 * 1000; // 5 minutos TTL
+
+export async function getServiceOverride(db: Firestore | undefined, slug: string): Promise<ServiceOverride | null> {
+  if (!db) return null;
+
+  // 1. Check in-memory cache
+  const cached = OVERRIDES_CACHE.get(slug);
+  const now = Date.now();
+  if (cached && now - cached.cachedAt < CACHE_TTL_MS) {
+    return cached.override;
+  }
+
+  // 2. Fetch from Firestore
+  try {
+    const { doc, getDoc } = await import("firebase/firestore");
+    const snap = await getDoc(doc(db, "service_overrides", slug));
+    const override = snap.exists() ? (snap.data() as ServiceOverride) : null;
+
+    // Save to cache
+    OVERRIDES_CACHE.set(slug, { override, cachedAt: now });
+    return override;
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Combina un servicio estático con su superposición dinámica (si existe).
+ */
+export function mergeServiceWithOverride(staticService: ServiceItem, override: ServiceOverride | null): ServiceItem {
+  if (!override) return staticService;
+
+  return {
+    ...staticService,
+    phone: override.phone || staticService.phone,
+    whatsapp: override.whatsapp || staticService.whatsapp,
+    email: override.email || staticService.email,
+    website: override.website || staticService.website,
+    schedule: override.schedule || staticService.schedule,
+    status: override.status || staticService.status,
+    image: override.image || staticService.image,
+    gallery: override.gallery && override.gallery.length > 0 ? override.gallery : staticService.gallery,
+    fullDescription: {
+      es: override.fullDescription?.es || staticService.fullDescription.es,
+      en: override.fullDescription?.en || staticService.fullDescription.en,
+      ca: override.fullDescription?.ca || staticService.fullDescription.ca,
+    },
+    highlights: {
+      es: override.highlights?.es || staticService.highlights.es,
+      en: override.highlights?.en || staticService.highlights.en,
+      ca: override.highlights?.ca || staticService.highlights.ca,
+    },
+    servicesProvided: {
+      es: override.servicesProvided?.es || staticService.servicesProvided.es,
+      en: override.servicesProvided?.en || staticService.servicesProvided.en,
+      ca: override.servicesProvided?.ca || staticService.servicesProvided.ca,
+    },
+  };
+}
+
+/**
+ * Guarda una modificación de negocio en Firestore y actualiza la caché local.
+ */
+export async function saveServiceOverride(
+  db: Firestore,
+  slug: string,
+  managerUid: string,
+  data: Partial<Omit<ServiceOverride, "ownerUid" | "updatedAt">>,
+): Promise<void> {
+  const { doc, setDoc, serverTimestamp } = await import("firebase/firestore");
+  const overrideDoc: ServiceOverride = {
+    ...data,
+    ownerUid: managerUid,
+    updatedAt: serverTimestamp(),
+  };
+
+  await setDoc(doc(db, "service_overrides", slug), overrideDoc, { merge: true });
+
+  // Invalidate and update local cache
+  OVERRIDES_CACHE.set(slug, {
+    override: {
+      ...overrideDoc,
+      updatedAt: new Date().toISOString(),
+    },
+    cachedAt: Date.now(),
+  });
+}

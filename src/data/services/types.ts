@@ -1,0 +1,192 @@
+export type ServiceStatus = "open" | "seasonal_closure" | "permanently_closed";
+export type SeasonalityType = "year_round" | "summer_season" | "winter_season";
+export type CulturalIdentity =
+  | "mallorquin_heritage" // Clásico Mallorquín de siempre / Tradición e historia de la isla
+  | "german_oriented" // Orientado a comunidad y turismo alemán (Deutsche Community)
+  | "british_oriented" // Orientado a comunidad y visitantes británicos (UK / English Speaking)
+  | "scandinavian_oriented" // Orientado a comunidad nórdica / escandinava (Nordic Standards)
+  | "french_oriented" // Orientado a comunidad francófona
+  | "international_luxury" // Enfoque internacional cosmopolita y de lujo
+  | "local_spanish"; // Nacional / Peninsular
+
+export interface PressMention {
+  mediaName: string; // "Diario de Mallorca", "Mallorca Magazin", "ABC Mallorca", "Forbes", etc.
+  title: string;
+  url?: string;
+  date?: string;
+  quote?: string;
+}
+
+export interface BusinessAward {
+  title: string; // "1er Premio Mejor Tatuaje Black & Grey" / "Sol Repsol 2025"
+  issuer: string; // Entidad otorgante
+  year?: number;
+  category?: string;
+}
+
+export interface TeamMember {
+  name: string;
+  role: { es: string; en: string; ca: string };
+  specialty?: string;
+  instagramHandle?: string;
+  avatarUrl?: string;
+}
+
+export interface PricingDetail {
+  startingPrice?: string; // "Desde 60€" / "From 60€"
+  depositRequired?: string; // "Señal de reserva: 30€"
+  rateType?: "fixed" | "hourly" | "custom_quote" | "tiered";
+  notes?: { es?: string; en?: string; ca?: string };
+}
+
+export interface BusinessFAQ {
+  question: { es: string; en: string; ca: string };
+  answer: { es: string; en: string; ca: string };
+}
+
+export interface CustomerReview {
+  id: string;
+  authorName: string;
+  rating: number; // 1 a 5
+  date: string; // "2025-06-12"
+  platform: "google_maps" | "tripadvisor" | "trustpilot" | "thefork" | "treatwell" | "bing_maps" | "direct";
+  language: "es" | "en" | "de" | "ca";
+  comment: string;
+  verifiedCustomer?: boolean;
+}
+
+export interface PlatformScore {
+  rating: number;
+  reviewCount: number;
+  url: string;
+}
+
+export interface ReputationBreakdown {
+  googleMaps?: PlatformScore;
+  appleMaps?: { rating?: number; reviewCount?: number; url: string };
+  bingMaps?: PlatformScore;
+  tripadvisor?: PlatformScore;
+  trustpilot?: PlatformScore;
+  thefork?: PlatformScore;
+  treatwell?: PlatformScore;
+  totalReviewsAggregated: number;
+  overallWeightedRating: number;
+}
+
+export interface SocialMediaLinks {
+  instagram?: string;
+  facebook?: string;
+  tiktok?: string;
+  youtube?: string;
+  pinterest?: string;
+  linkedin?: string;
+  twitter?: string;
+  whatsappChannel?: string;
+}
+
+export interface SocialMediaPost {
+  id: string;
+  platform: "instagram" | "tiktok" | "facebook" | "pinterest";
+  url: string;
+  imageUrl: string;
+  caption?: string;
+  date?: string;
+  likesCount?: number;
+}
+
+export interface WebIndexPresence {
+  directoryName: string; // "Páginas Amarillas", "Cylex", "ABC Mallorca", "Bodas.net", "TripAdvisor"
+  url: string;
+  indexed: boolean;
+}
+
+export interface AuthorityProfile {
+  platform: "tripadvisor" | "thefork" | "treatwell" | "trustpilot" | "yelp" | "instagram" | "tiktok";
+  url: string;
+  rating?: number;
+  reviewCount?: number;
+  handle?: string;
+}
+
+export interface GeoCoordinates {
+  lat: number;
+  lng: number;
+}
+
+export interface ServiceItem {
+  id: string;
+  slug: string;
+  name: string;
+  category: string;
+  secondaryCategories?: string[];
+  zone: string;
+  address: string;
+  coordinates: GeoCoordinates;
+  rating: number;
+  reviewCount: number;
+  priceRange: "€" | "€€" | "€€€" | "€€€€";
+  verified: boolean;
+  featured: boolean;
+  status: ServiceStatus;
+  seasonality?: SeasonalityType;
+  culturalIdentity?: CulturalIdentity;
+  isIconicHeritage?: boolean; // Negocio emblemático histórico que toda persona que visita Mallorca debe conocer
+  targetAudience?: string[]; // ["alemanes", "britanicos", "residentes", "turistas", "familias"]
+  languagesSpoken?: string[]; // ["es", "en", "de", "ca", "fr", "sv", "it"]
+  emergency24h?: boolean;
+  inVillaService?: boolean;
+  features?: string[];
+  paymentMethods?: string[]; // ["credit_card", "cash", "bizum", "apple_pay", "crypto"]
+  amenities?: string[]; // ["wifi", "air_conditioning", "wheelchair_accessible", "parking_nearby", "pet_friendly"]
+  certifications?: string[]; // ["Higiénico Sanitario Balear", "Titanio ASTM F-136", "Registro Sanitario"]
+  pricing?: PricingDetail;
+  teamMembers?: TeamMember[];
+  faqs?: BusinessFAQ[];
+  foundedYear?: number;
+  founderName?: string;
+  founderStory?: {
+    es?: string;
+    en?: string;
+    ca?: string;
+  };
+  pressMentions?: PressMention[];
+  awards?: BusinessAward[];
+  authorityProfiles?: AuthorityProfile[];
+  reputationBreakdown?: ReputationBreakdown;
+  reviews?: CustomerReview[];
+  socialLinks?: SocialMediaLinks;
+  socialPosts?: SocialMediaPost[];
+  webDirectories?: WebIndexPresence[];
+  lastVerifiedAt: string;
+  googleMapsUrl: string;
+  appleMapsUrl: string;
+  bingMapsUrl: string;
+  phone: string;
+  whatsapp: string;
+  email: string;
+  website: string;
+  tags: string[];
+  shortDescription: {
+    es: string;
+    en: string;
+    ca: string;
+  };
+  fullDescription: {
+    es: string;
+    en: string;
+    ca: string;
+  };
+  highlights: {
+    es: string[];
+    en: string[];
+    ca: string[];
+  };
+  servicesProvided: {
+    es: string[];
+    en: string[];
+    ca: string[];
+  };
+  image: string;
+  gallery: string[];
+  schedule: string;
+}

@@ -1,0 +1,202 @@
+---
+import { getLiveBusinessStatus, SCHEDULE_DISCLAIMER } from "../lib/scheduleParser";
+import type { ServiceStatus } from "../data/services";
+
+interface Props {
+  scheduleText: string;
+  serviceStatus?: ServiceStatus;
+  phone?: string;
+  whatsapp?: string;
+  businessName?: string;
+  showDisclaimer?: boolean;
+}
+
+const {
+  scheduleText,
+  serviceStatus = "open",
+  phone,
+  whatsapp,
+  businessName = "este negocio",
+  showDisclaimer = true,
+} = Astro.props;
+
+const status = getLiveBusinessStatus(scheduleText, serviceStatus);
+const whatsappClean = whatsapp?.replace(/[^0-9]/g, "") || "";
+const prefilledWaMessage = encodeURIComponent(
+  `Hola ${businessName}, he visto vuestro horario en Servicios Mallorca y quería consultar si estáis disponibles hoy.`,
+);
+---
+
+<div class="live-schedule-widget">
+  <div class={`status-pill ${status.statusClass}`}>
+    <span class="status-indicator-dot"></span>
+    <span class="status-label">{status.statusText}</span>
+  </div>
+
+  {
+    showDisclaimer && (
+      <div class="schedule-disclaimer-card">
+        <div class="disclaimer-header">
+          <span class="disclaimer-icon">⚠️</span>
+          <p class="disclaimer-text">
+            <strong>Horario orientativo:</strong> Puede verse alterado en festivos, vacaciones o imprevistos. Te
+            recomendamos confirmar antes de desplazarte.
+          </p>
+        </div>
+
+        {(whatsapp || phone) && (
+          <div class="quick-confirm-actions">
+            {whatsapp && (
+              <a
+                href={`https://wa.me/${whatsappClean}?text=${prefilledWaMessage}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-confirm-wa"
+              >
+                <span>💬 Confirmar por WhatsApp</span>
+              </a>
+            )}
+            {phone && (
+              <a href={`tel:${phone}`} class="btn-confirm-phone">
+                <span>📞 Llamar: {phone}</span>
+              </a>
+            )}
+          </div>
+        )}
+      </div>
+    )
+  }
+</div>
+
+<style>
+  .live-schedule-widget {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    margin: var(--space-xs) 0;
+  }
+
+  .status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.35rem 0.75rem;
+    border-radius: 9999px;
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    width: fit-content;
+  }
+
+  .status-indicator-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+  }
+
+  /* Open State */
+  .status-pill.open {
+    background: rgba(16, 185, 129, 0.15);
+    color: #10b981;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+  }
+  .status-pill.open .status-indicator-dot {
+    background: #10b981;
+    box-shadow: 0 0 8px #10b981;
+  }
+
+  /* Closing Soon State */
+  .status-pill.closing_soon {
+    background: rgba(245, 158, 11, 0.15);
+    color: #f59e0b;
+    border: 1px solid rgba(245, 158, 11, 0.3);
+  }
+  .status-pill.closing_soon .status-indicator-dot {
+    background: #f59e0b;
+    box-shadow: 0 0 8px #f59e0b;
+  }
+
+  /* Closed State */
+  .status-pill.closed {
+    background: rgba(239, 68, 68, 0.15);
+    color: #ef4444;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+  }
+  .status-pill.closed .status-indicator-dot {
+    background: #ef4444;
+  }
+
+  /* Seasonal State */
+  .status-pill.seasonal {
+    background: rgba(139, 92, 246, 0.15);
+    color: #8b5cf6;
+    border: 1px solid rgba(139, 92, 246, 0.3);
+  }
+  .status-pill.seasonal .status-indicator-dot {
+    background: #8b5cf6;
+  }
+
+  /* Disclaimer Card */
+  .schedule-disclaimer-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-surface-border);
+    border-radius: var(--border-radius-md);
+    padding: var(--space-sm);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .disclaimer-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
+
+  .disclaimer-icon {
+    font-size: 1rem;
+    line-height: 1.2;
+  }
+
+  .disclaimer-text {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  .quick-confirm-actions {
+    display: flex;
+    gap: var(--space-xs);
+    flex-wrap: wrap;
+    margin-top: 0.25rem;
+  }
+
+  .btn-confirm-wa,
+  .btn-confirm-phone {
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.3rem 0.6rem;
+    border-radius: var(--border-radius-sm);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .btn-confirm-wa {
+    background: #25d366;
+    color: #ffffff;
+  }
+  .btn-confirm-wa:hover {
+    background: #1eb954;
+  }
+
+  .btn-confirm-phone {
+    background: var(--color-bg);
+    color: var(--color-text);
+    border: 1px solid var(--color-surface-border);
+  }
+  .btn-confirm-phone:hover {
+    border-color: var(--color-primary);
+  }
+</style>

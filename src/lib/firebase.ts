@@ -1,23 +1,33 @@
 import { initializeApp, getApps, getApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
-import { getAnalytics } from "firebase/analytics";
+import { getAnalytics, isSupported } from "firebase/analytics";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBRDBaaSYufdiT92d2NO59ye4XMIW0kems",
-  authDomain: "test-app-ea107.firebaseapp.com",
-  projectId: "test-app-ea107",
-  storageBucket: "test-app-ea107.firebasestorage.app",
-  messagingSenderId: "335807990622",
-  appId: "1:335807990622:web:d98815d9a0aabc526a9dcf",
-  measurementId: "G-93WD7Y7CG2",
+  apiKey: "AIzaSyBeh-ylABQWqgiHOnnG8p85wXNlnKgL7jg",
+  authDomain: "serviciosmallorca.firebaseapp.com",
+  projectId: "serviciosmallorca",
+  storageBucket: "serviciosmallorca.firebasestorage.app",
+  messagingSenderId: "447334695021",
+  appId: "1:447334695021:web:be1fb816461387666dbf64",
+  measurementId: "G-PMT1ZM3WQN",
 };
 
 // Initialize Firebase only once
-const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApp();
-export { app };
+export const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApp();
 export const auth = getAuth(app);
-auth.languageCode = "es"; // Idioma por defecto para correos y flujos de auth
+if (typeof document !== "undefined") {
+  auth.languageCode = document.documentElement.lang || "es";
+}
 export const db = getFirestore(app);
 export const googleProvider = new GoogleAuthProvider();
-export const analytics = getAnalytics(app);
+
+// Safe Analytics initialization (Client-side only)
+export let analytics: any = null;
+if (typeof window !== "undefined") {
+  isSupported().then((supported) => {
+    if (supported) {
+      analytics = getAnalytics(app);
+    }
+  });
+}

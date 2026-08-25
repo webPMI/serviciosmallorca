@@ -217,6 +217,33 @@ SI ALGÚN PASO ES ❌ → REJECT with specific feedback
 
 ---
 
+### 7. Agente de Curación e Inteligencia de Negocios (`@curation`)
+
+**Dominio:** `src/data/services/`, `scripts/business-intelligence-lookup.ts`, `docs/AGENT_CURATION_SOP.md`
+
+| ✅ Permitido                                                          | ❌ Prohibido                                                |
+| --------------------------------------------------------------------- | ----------------------------------------------------------- |
+| Ejecutar `scripts/business-intelligence-lookup.ts`                    | Inventar datos o ingresar negocios falsos (Violación GR-11) |
+| Añadir o editar negocios en `src/data/services/<sector>.ts`           | Escribir en un archivo monolítico gigante                   |
+| Extraer multimedia real y redes sociales oficiales                    | Quemar tokens de IA haciendo scraping manual libre          |
+| Vincular categorías y zonas de los catálogos cerrados                 | Usar categorías o tags inexistentes en la taxonomía         |
+| Actualizar `docs/AGENT_CURATION_SOP.md` y `docs/WORKFLOW_CURATION.md` | Omitir `npm run validate:taxonomy` o `npm test`             |
+
+**Pre-entrega checklist (SOP Oficial):**
+
+```
+[ ] Ejecución obligatoria de scripts/business-intelligence-lookup.ts
+[ ] Coordenadas GPS exactas en la isla de Mallorca
+[ ] Horario y teléfono 100% reales y verificados
+[ ] Imagen principal y galería oficial sin enlaces rotos
+[ ] Categoría existente en CATEGORIES y tags en TAG_CATALOG
+[ ] Inserción modular en src/data/services/<sector>.ts
+[ ] npm run validate:taxonomy → 100% Válido
+[ ] npm test → 100% Passed
+```
+
+---
+
 ## 📡 Protocolo de Comunicación entre Agentes
 
 ### Formato de Request (Agente → Maestro)

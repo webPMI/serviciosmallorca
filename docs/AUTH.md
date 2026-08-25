@@ -1,122 +1,74 @@
-# 🔐 Autenticación - WebApp Starter
+# 🔐 Autenticación y Gestión de Roles — Servicios Mallorca
 
 > **Dominio del Agente Auth & Data (`@auth`)**
 
-## Stack de Autenticación
+## 1. Stack de Autenticación y Base de Datos
 
-| Componente    | Tecnología                                  |
-| ------------- | ------------------------------------------- |
-| Auth Provider | Firebase Authentication                     |
-| Database      | Firestore (roles de usuario)                |
-| Auth UI       | LoginForm, RegisterForm, ForgotPasswordForm |
+| Componente        | Tecnología                                        | Propósito                                      |
+| ----------------- | ------------------------------------------------- | ---------------------------------------------- |
+| **Auth Provider** | Firebase Authentication                           | Email/Password, Google Sign-In, Password Reset |
+| **Database**      | Cloud Firestore (`serviciosmallorca`)             | Perfiles, roles, claims B2B, altas y bajas     |
+| **Auth UI**       | `LoginForm`, `RegisterForm`, `ForgotPasswordForm` | Formularios accesibles 100% multilingües       |
 
-## Configuración de Firebase (`src/lib/firebase.ts`)
+---
 
-```typescript
-const firebaseConfig = {
-  apiKey: import.meta.env.PUBLIC_FIREBASE_API_KEY,
-  authDomain: import.meta.env.PUBLIC_FIREBASE_AUTH_DOMAIN,
-  projectId: import.meta.env.PUBLIC_FIREBASE_PROJECT_ID,
-  storageBucket: import.meta.env.PUBLIC_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: import.meta.env.PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
-  appId: import.meta.env.PUBLIC_FIREBASE_APP_ID,
-};
-```
-
-## Roles de Usuario
-
-| Rol         | Acceso                                       | Navbar          |
-| ----------- | -------------------------------------------- | --------------- |
-| `guest`     | Páginas públicas (home, login, register)     | `NavbarPublic`  |
-| `user`      | Dashboard básico                             | `NavbarUser`    |
-| \`manager\` | Dashboard + gestión de clientes              | `NavbarManager` |
-| `admin`     | Dashboard + analíticas + gestión de usuarios | `NavbarAdmin`   |
-
-## Flujo de Autenticación
-
-### Login
+## 2. Matriz de Roles y Niveles de Acceso
 
 ```
-LoginForm → signInWithEmailAndPassword(email, password)
-          → Google Sign-In (signInWithPopup)
-          → authStore detecta cambio → actualiza Navbar
+┌──────────────┐      ┌──────────────┐      ┌──────────────┐      ┌──────────────┐
+│    GUEST     │      │     USER     │      │   MANAGER    │      │    ADMIN     │
+│ (Visitante)  │ ───> │   (Cliente)  │ ───> │  (Negocio)   │ ───> │(Superusuario)│
+└──────────────┘      └──────────────┘      └──────────────┘      └──────────────┘
 ```
 
-### Register
+| Rol           | Descripción                    | Capacidades en Servicios Mallorca                                                | Navbar          |
+| ------------- | ------------------------------ | -------------------------------------------------------------------------------- | --------------- |
+| **`guest`**   | Visitante anónimo              | Consulta catálogo, lee blog, usa filtros y contacto directo                      | `NavbarPublic`  |
+| **`user`**    | Usuario cliente                | Guarda favoritos, deja reseñas, solicita reclamar negocio y propone altas        | `NavbarUser`    |
+| **`manager`** | Titular verificado de negocio  | Gestiona y personaliza la información de su empresa verificada                   | `NavbarManager` |
+| **`admin`**   | Administrador de la plataforma | Aprueba/rechaza reclamaciones, modera altas, procesa bajas RGPD y gestiona roles | `NavbarAdmin`   |
 
-```
-RegisterForm → createUserWithEmailAndPassword(email, password)
-             → updateProfile(displayName)
-             → authStore detecta cambio → actualiza Navbar
-```
+---
 
-### Forgot Password
+## 3. Flujos de Operaciones de Negocio (B2B)
 
-```
-ForgotPasswordForm → sendPasswordResetEmail(auth, email)
-                   → Firebase envía email con link de restablecimiento
-```
+### 3.1 Reclamación de Ficha Existente (_Service Claim_)
 
-## AuthStore (`src/lib/authStore.ts`)
+1. El titular accede a su negocio en `/servicios/[slug]`.
+2. Pulsa **"Reclamar este negocio"** y completa el formulario con su CIF y teléfono de contacto.
+3. Se crea un documento en la colección `service_claims` con estado `pending`.
+4. El administrador revisa la acreditación desde `/dashboard` y pulsa **"Aprobar"**.
+5. El sistema escala automáticamente el rol del usuario a **`manager`** y le asigna el servicio.
 
-**Patrón:** Observer (pub/sub)
+### 3.2 Solicitud de Baja / Supresión (_Right to Erasure - RGPD_)
 
-```typescript
-class AuthStore {
-  private state: AuthState = { user: null, role: "guest", loading: true };
+1. El titular solicita la retirada de la ficha desde `/servicios/[slug]` indicando el motivo.
+2. Se registra en `service_deletion_requests`.
+3. El administrador procesa la solicitud y la ficha queda retirada del catálogo.
 
-  // Suscribirse a cambios de auth
-  authStore.subscribe(({ user, role, loading }) => {
-    // Actualizar UI según rol
-  });
+### 3.3 Propuesta de Nuevo Negocio (_Service Submission_)
 
-  // Obtener estado actual
-  const state = authStore.getState();
+1. Cualquier empresa o autónomo accede a `/servicios/nuevo`.
+2. Completa los datos comerciales, zona, categoría y descripción.
+3. Se registra en `service_submissions` para validación editorial previa a su publicación oficial.
 
-  // Logout
-  await authStore.logout();
-}
-```
+---
 
-**Detección de rol:**
+## 4. Reglas de Seguridad Firestore (`firestore.rules`)
 
-1. Custom Claims de Firebase (`user.getIdTokenResult().claims.role`)
-2. Documento Firestore (`users/{uid}.role`)
-3. Default: `"user"`
+Desplegadas en el proyecto oficial `serviciosmallorca`:
 
-## Componentes de Auth & Perfil
+- `users/{uid}`: Lectura propia o de administradores; modificación de rol reservada exclusivamente para `admin`.
+- `services/{serviceId}`: Lectura pública; escritura restringida a `admin` y `manager` titular.
+- `service_claims/{claimId}`: Creación por usuario autenticado; moderación solo por `admin`.
+- `service_submissions/{submissionId}`: Creación por usuario; moderación solo por `admin`.
+- `service_deletion_requests/{requestId}`: Creación por usuario; tramitación solo por `admin`.
 
-| Componente                 | IDs del formulario                             | Campos                                                                             |
-| -------------------------- | ---------------------------------------------- | ---------------------------------------------------------------------------------- |
-| `LoginForm.astro`          | `#login-form`                                  | `#email`, `#password`                                                              |
-| `RegisterForm.astro`       | `#register-form`                               | `#name`, `#email`, `#password`, `#confirmPassword`                                 |
-| `ForgotPasswordForm.astro` | `#forgot-password-form`                        | `#email`                                                                           |
-| `ProfileForm.astro`        | `#profile-info-form`, `#profile-password-form` | `#profile-name`, `#profile-custom-photo`, `#new-password`, `#confirm-new-password` |
+---
 
-## Módulo de Perfil Firestore (`src/lib/userProfile.ts`)
+## 5. Módulo de Acciones Firestore (`src/lib/serviceActions.ts`)
 
-Gestiona la sincronización del documento `users/{uid}`:
-
-- `createUserProfile(db, input)`: Crea la ficha con `role: "user"`, `displayName`, `email`, `createdAt`, `updatedAt`.
-- `getUserProfile(db, uid)`: Lee la ficha y rol desde Firestore.
-- `updateUserProfile(db, uid, data)`: Actualiza `displayName`, `photoURL` y renueva `updatedAt`.
-
-## Manejo de Errores de Firebase
-
-```typescript
-// Códigos comunes manejados:
-auth/invalid-credential     → "Correo o contraseña incorrectos"
-auth/user-not-found         → "Usuario no encontrado"
-auth/wrong-password         → "Contraseña incorrecta"
-auth/email-already-in-use   → "El email ya está registrado"
-auth/weak-password          → "Contraseña muy débil"
-auth/too-many-requests      → "Demasiados intentos"
-```
-
-## Reglas del Agente Auth
-
-- ✅ Manejar todos los códigos de error de Firebase
-- ✅ Usar `import.meta.env` para API keys (nunca hardcodear)
-- ✅ El AuthStore debe ser reactivo (suscriptores)
-- ❌ No exponer tokens o secretos en el cliente
-- ❌ No usar Firebase Admin SDK en el frontend
+- `createServiceClaim(db, claim)`: Registro de reclamación.
+- `updateClaimStatus(db, id, "approved", uid)`: Aprobación y escalación de rol a `manager`.
+- `createServiceSubmission(db, submission)`: Envío de propuesta de negocio.
+- `createServiceDeletionRequest(db, request)`: Solicitud formal de baja.

@@ -18,37 +18,34 @@ import { authStore } from "./authStore";
 type RolePrefix = "user" | "manager" | "admin";
 
 const ROLE_FALLBACK: Record<RolePrefix, string> = {
-    user: "Atleta",
-    manager: "Manager",
-    admin: "Admin",
+  user: "Atleta",
+  manager: "Manager",
+  admin: "Admin",
 };
 
 export function initAuthNavbar(prefix: RolePrefix): void {
-    const userNameEl = document.getElementById(`${prefix}-nav-name`);
-    const userAvatarEl = document.getElementById(`${prefix}-nav-avatar`);
-    const logoutBtn = document.getElementById(`${prefix}-logout-btn`);
+  const userNameEl = document.getElementById(`${prefix}-nav-name`);
+  const userAvatarEl = document.getElementById(`${prefix}-nav-avatar`);
+  const logoutBtn = document.getElementById(`${prefix}-logout-btn`);
 
-    // 1. Reactive user info
-    authStore.subscribe(({ user }) => {
-        if (!user) return;
+  // 1. Reactive user info
+  authStore.subscribe(({ user }) => {
+    if (!user) return;
 
-        if (userNameEl) {
-            userNameEl.textContent =
-                user.displayName ||
-                user.email?.split("@")[0] ||
-                ROLE_FALLBACK[prefix];
-        }
-
-        if (userAvatarEl && user.photoURL) {
-            userAvatarEl.innerHTML = `<img src="${user.photoURL}" alt="Avatar" class="avatar-img" />`;
-        }
-    });
-
-    // 2. Logout
-    if (logoutBtn) {
-        logoutBtn.addEventListener("click", async () => {
-            await authStore.logout();
-            window.location.href = "./";
-        });
+    if (userNameEl) {
+      userNameEl.textContent = user.displayName || user.email?.split("@")[0] || ROLE_FALLBACK[prefix];
     }
+
+    if (userAvatarEl && user.photoURL) {
+      userAvatarEl.innerHTML = `<img src="${user.photoURL}" alt="Avatar" class="avatar-img" />`;
+    }
+  });
+
+  // 2. Logout
+  if (logoutBtn) {
+    logoutBtn.addEventListener("click", async () => {
+      await authStore.logout();
+      window.location.href = "./";
+    });
+  }
 }

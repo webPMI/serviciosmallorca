@@ -3,11 +3,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import Navbar from "../../components/Navbar.astro";
 import Footer from "../../components/Footer.astro";
 import ProfileForm from "../../components/ProfileForm.astro";
-import {
-  getLocaleFromUrl,
-  loadTranslations,
-  getLangPrefix,
-} from "../../i18n";
+import { getLocaleFromUrl, loadTranslations, getLangPrefix } from "../../i18n";
 
 export const prerender = false;
 
@@ -16,21 +12,13 @@ const translations = await loadTranslations(locale);
 ---
 
 <BaseLayout title={`${translations["profile.title"]} - ${translations["site.title"]}`} lang={locale}>
-  <Navbar 
-    currentLocale={locale}
-    translations={translations}
-    getLangPrefix={getLangPrefix}
-  />
+  <Navbar currentLocale={locale} translations={translations} getLangPrefix={getLangPrefix} />
 
   <main class="container section">
     <ProfileForm translations={translations} locale={locale} />
   </main>
 
-  <Footer 
-    translations={translations}
-    currentLocale={locale}
-    getLangPrefix={getLangPrefix}
-  />
+  <Footer translations={translations} currentLocale={locale} getLangPrefix={getLangPrefix} />
 </BaseLayout>
 
 <style>

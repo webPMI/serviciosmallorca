@@ -17,33 +17,30 @@ const MENU_ACTIVE_CLASS = "is-active";
  * Handles `aria-expanded`, toggles `.is-active` on both the toggle and menu,
  * and returns a cleanup function.
  */
-export function initMobileMenuToggle(
-    toggleId: string,
-    menuId: string,
-): () => void {
-    const toggleBtn = document.getElementById(toggleId);
-    const menu = document.getElementById(menuId);
+export function initMobileMenuToggle(toggleId: string, menuId: string): () => void {
+  const toggleBtn = document.getElementById(toggleId);
+  const menu = document.getElementById(menuId);
 
-    if (!toggleBtn || !menu) {
-        // Silently skip when elements are not in the DOM (e.g. a different
-        // navbar variant is mounted)
-        return () => { };
-    }
+  if (!toggleBtn || !menu) {
+    // Silently skip when elements are not in the DOM (e.g. a different
+    // navbar variant is mounted)
+    return () => {};
+  }
 
-    // Narrow types for TS — after the guard both are guaranteed non-null
-    const btn = toggleBtn;
-    const el = menu;
+  // Narrow types for TS — after the guard both are guaranteed non-null
+  const btn = toggleBtn;
+  const el = menu;
 
-    function onClick(): void {
-        const isExpanded = btn.getAttribute("aria-expanded") === "true";
-        btn.setAttribute("aria-expanded", String(!isExpanded));
-        el.classList.toggle(MENU_ACTIVE_CLASS);
-        btn.classList.toggle(MENU_ACTIVE_CLASS);
-    }
+  function onClick(): void {
+    const isExpanded = btn.getAttribute("aria-expanded") === "true";
+    btn.setAttribute("aria-expanded", String(!isExpanded));
+    el.classList.toggle(MENU_ACTIVE_CLASS);
+    btn.classList.toggle(MENU_ACTIVE_CLASS);
+  }
 
-    btn.addEventListener("click", onClick);
+  btn.addEventListener("click", onClick);
 
-    return () => {
-        btn.removeEventListener("click", onClick);
-    };
+  return () => {
+    btn.removeEventListener("click", onClick);
+  };
 }

@@ -11,11 +11,15 @@ export interface Props {
 const {
   title,
   lang = "es",
-  description = "WebApp Starter - Plantilla base para desarrollo rápido de aplicaciones web",
+  description = "Servicios Mallorca - Guía y directorio de los mejores servicios y profesionales en Mallorca",
 } = Astro.props;
 
 const loadingText = lang === "en" ? "Loading..." : lang === "ca" ? "Carregant..." : "Cargando...";
-const loadingAria = lang === "en" ? "Loading application" : lang === "ca" ? "Carregant aplicació" : "Cargando aplicación";
+const loadingAria =
+  lang === "en" ? "Loading application" : lang === "ca" ? "Carregant aplicació" : "Cargando aplicación";
+
+const isProductionDomain =
+  import.meta.env.PROD && !Astro.url.hostname.includes("localhost") && !Astro.url.hostname.includes("127.0.0.1");
 ---
 
 <!doctype html>
@@ -27,7 +31,24 @@ const loadingAria = lang === "en" ? "Loading application" : lang === "ca" ? "Car
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
+
+    <!-- Security meta tags -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <!-- Prevent browsers from caching sensitive pages via JS -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <title>{title}</title>
+
+    <!-- Google AdSense (Loaded only on verified production domains) -->
+    {
+      isProductionDomain && (
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1988580228487420"
+          crossorigin="anonymous"
+        />
+      )
+    }
 
     <!-- Theme initialization script to prevent FOUC (supports 4 themes) -->
     <script is:inline>
@@ -163,8 +184,8 @@ const loadingAria = lang === "en" ? "Loading application" : lang === "ca" ? "Car
     <div id="app-loading-overlay" role="status" aria-label={loadingAria}>
       <div class="loader-content">
         <div class="loader-brand">
-          <span class="loader-badge">🚀 WebApp</span>
-          <span class="loader-title">Starter Template</span>
+          <span class="loader-badge">🌴 Mallorca</span>
+          <span class="loader-title">Servicios Mallorca</span>
         </div>
         <div class="loader-spinner">
           <div class="spinner-ring"></div>

@@ -1,0 +1,220 @@
+---
+import type { ServiceItem } from "../data/services";
+import { CATEGORIES } from "../data/categories";
+import { MALLORCA_ZONES } from "../data/zones";
+import ServiceImage from "./ServiceImage.astro";
+import LiveScheduleBadge from "./LiveScheduleBadge.astro";
+
+interface Props {
+  service: ServiceItem;
+  currentLocale: "es" | "en" | "ca";
+  getLangPrefix: (locale: "es" | "en" | "ca") => string;
+  translations: Record<string, string>;
+}
+
+const { service, currentLocale, getLangPrefix, translations } = Astro.props;
+const prefix = getLangPrefix(currentLocale);
+const category = CATEGORIES.find((c) => c.id === service.category);
+const zone = MALLORCA_ZONES.find((z) => z.id === service.zone);
+
+const categoryName = category?.name[currentLocale] || service.category;
+const zoneName = zone?.name[currentLocale] || service.zone;
+const shortDesc = service.shortDescription[currentLocale];
+const detailUrl = `${prefix}servicios/${service.slug}`;
+---
+
+<article class="service-card card hover-lift">
+  <div class="card-media">
+    <ServiceImage
+      src={service.image}
+      alt={service.name}
+      categoryIcon={category?.icon}
+      categoryName={categoryName}
+      aspectRatio="16/9"
+      className="card-media-img"
+    />
+    <div class="media-badges">
+      {service.isIconicHeritage && <span class="badge badge-heritage">🌴 Clásico Mallorquín</span>}
+      {service.culturalIdentity === "german_oriented" && <span class="badge badge-community">🇩🇪 Deutsch</span>}
+      {service.culturalIdentity === "british_oriented" && <span class="badge badge-community">🇬🇧 English</span>}
+      {
+        service.verified && (
+          <span class="badge badge-success">✓ {translations["services.verifiedBadge"] || "Verificado"}</span>
+        )
+      }
+      <span class="badge badge-price">{service.priceRange}</span>
+    </div>
+  </div>
+
+  <div class="card-body">
+    <div class="service-meta">
+      <span class="service-cat">
+        {category?.icon}
+        {categoryName}
+      </span>
+      <span class="service-zone">📍 {zoneName}</span>
+    </div>
+
+    <LiveScheduleBadge scheduleText={service.schedule} serviceStatus={service.status} showDisclaimer={false} />
+
+    <h3 class="service-title">
+      <a href={detailUrl}>{service.name}</a>
+    </h3>
+
+    <p class="service-desc">{shortDesc}</p>
+
+    <div class="service-footer">
+      <div class="service-rating">
+        <span class="star">★</span>
+        <strong class="rating-num">{service.rating.toFixed(1)}</strong>
+        <span class="rating-count">({service.reviewCount} {translations["services.reviews"] || "reseñas"})</span>
+      </div>
+
+      <a href={detailUrl} class="btn btn-primary btn-sm">
+        {translations["services.viewDetails"] || "Ver ficha"}
+      </a>
+    </div>
+  </div>
+</article>
+
+<style>
+  .service-card {
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border: 1px solid var(--color-surface-border);
+    border-radius: var(--border-radius);
+    background: var(--color-surface);
+    transition:
+      transform var(--transition-smooth),
+      box-shadow var(--transition-smooth);
+  }
+
+  .card-media {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    background: var(--color-bg);
+  }
+
+  .service-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  .service-card:hover .service-img {
+    transform: scale(1.05);
+  }
+
+  .media-badges {
+    position: absolute;
+    top: var(--space-sm);
+    right: var(--space-sm);
+    display: flex;
+    gap: var(--space-xs);
+  }
+
+  .badge-price {
+    background: var(--glass-bg);
+    color: var(--color-text);
+    backdrop-filter: var(--glass-backdrop);
+    font-weight: 700;
+  }
+
+  .badge-heritage {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 0.68rem;
+    box-shadow: 0 2px 6px rgba(217, 119, 6, 0.35);
+  }
+
+  .badge-community {
+    background: var(--color-surface);
+    color: var(--color-text);
+    border: 1px solid var(--color-surface-border);
+    font-weight: 700;
+    font-size: 0.68rem;
+  }
+
+  .card-body {
+    padding: var(--space-md);
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: var(--space-xs);
+  }
+
+  .service-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+    font-weight: 600;
+  }
+
+  .service-cat {
+    color: var(--color-primary);
+  }
+
+  .service-title {
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    line-height: 1.3;
+    margin-top: var(--space-xs);
+  }
+
+  .service-title a {
+    color: var(--color-text);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+  }
+
+  .service-title a:hover {
+    color: var(--color-primary);
+  }
+
+  .service-desc {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-light);
+    line-height: 1.5;
+    flex-grow: 1;
+    margin: var(--space-xs) 0;
+  }
+
+  .service-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: var(--space-sm);
+    border-top: 1px solid var(--color-surface-border);
+    margin-top: auto;
+  }
+
+  .service-rating {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: var(--font-size-sm);
+  }
+
+  .star {
+    color: var(--color-accent);
+    font-size: 1.1rem;
+  }
+
+  .rating-num {
+    color: var(--color-text);
+  }
+
+  .rating-count {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+  }
+</style>
