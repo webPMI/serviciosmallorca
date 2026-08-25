@@ -4,5 +4,15 @@
   "compatibility_flags": [
     "nodejs_compat"
   ],
-  "workers_dev": true
+  "workers_dev": true,
+  "routes": [
+    {
+      "pattern": "serviciosmallorca.com",
+      "custom_domain": true
+    },
+    {
+      "pattern": "www.serviciosmallorca.com",
+      "custom_domain": true
+    }
+  ]
 }
