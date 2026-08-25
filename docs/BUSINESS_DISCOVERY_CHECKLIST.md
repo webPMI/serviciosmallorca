@@ -6,12 +6,12 @@
 
 | Segmento de Calidad                             | Total Negocios | Estado en Plataforma                               |
 | :---------------------------------------------- | :------------: | :------------------------------------------------- |
-| ⭐⭐⭐⭐⭐ **5 Estrellas (4.8 - 5.0)**          |     **75**     | 🏆 Excelencia & Top Insular (Público Destacado)    |
-| ⭐⭐⭐⭐ **4 Estrellas (4.0 - 4.7)**            |     **71**     | ⭐ Notable / Recomendado (Público General)         |
+| ⭐⭐⭐⭐⭐ **5 Estrellas (4.8 - 5.0)**          |     **77**     | 🏆 Excelencia & Top Insular (Público Destacado)    |
+| ⭐⭐⭐⭐ **4 Estrellas (4.0 - 4.7)**            |     **72**     | ⭐ Notable / Recomendado (Público General)         |
 | ✨ **Nuevas Aperturas (0 reviews / Recientes)** |     **3**      | 🆕 Insignia 'Nueva Apertura' (Público Destacado)   |
 | ⭐⭐⭐ **3 Estrellas (3.0 - 3.9)**              |     **1**      | 🔹 Directorio Estándar (Público sin insignia)      |
 | ⚠️ **Triaje Interno (< 3.0 / Incompletos)**     |     **0**      | 🔒 Solo Administración (No se publica lista negra) |
-| 📦 **TOTAL NEGOCIOS EN RADAR**                  |    **150**     | **106 Indexados** · **44 Pendientes**              |
+| 📦 **TOTAL NEGOCIOS EN RADAR**                  |    **153**     | **109 Indexados** · **44 Pendientes**              |
 
 ---
 
@@ -38,6 +38,7 @@
 | ✅ Indexado |  **4.9**  |   390   | **73.7 pts** | **Zunray Yoga Studio Palma (San Feliu)**                      | Salud & Bienestar            | Palma & Bahía                |                                  [Web](https://zunray.com)                                  |
 | ✅ Indexado |  **4.9**  |   78    | **72.6 pts** | **Mallorca Global Charter**                                   | Náutica & Charters           | Calvià & Andratx (Suroeste)  |                          [Web](https://mallorcaglobalcharter.com)                           |
 | ✅ Indexado |  **4.9**  |   310   | **72.5 pts** | **Peluquería Canina & Spa Guau Palma**                        | Salud & Bienestar            | Palma & Bahía                |                                [Web](https://guaupalma.com)                                 |
+| ✅ Indexado |  **4.9**  |   210   | **71.4 pts** | **Clínica Veterinaria Santa Maria (2005)**                    | Salud & Bienestar            | Es Raiguer & Es Pla (Centro) |                          [Web](https://veterinariasantamaria.com)                           |
 | ✅ Indexado |  **4.9**  |   190   | **71.2 pts** | **Bodega Son Prim (Sencelles - 2003)**                        | Gastronomía & Chefs Privados | Es Raiguer & Es Pla (Centro) |                                 [Web](https://sonprim.com)                                  |
 | ✅ Indexado |  **4.8**  |  3200   | **97.8 pts** | **Rafa Nadal Academy & Sports Centre**                        | Salud & Bienestar            | Manacor & Llevant (Este)     |                           [Web](https://www.rafanadalacademy.com)                           |
 | ✅ Indexado |  **4.8**  |  1420   | **90.4 pts** | **Restaurante El Camino Palma**                               | Gastronomía & Chefs Privados | Palma & Bahía                |                             [Web](https://www.elcaminopalma.es)                             |
@@ -87,6 +88,7 @@
 | ✅ Indexado |  **4.8**  |   175   | **69.8 pts** | **Instalaciones Eléctricas Llabrés**                          | Reformas & Construcción      | Es Raiguer & Es Pla (Centro) |                           [Web](https://electricidadllabres.com)                            |
 | ✅ Indexado |  **4.8**  |   160   | **69.6 pts** | **Aluminios y Cristalería Calvià (Son Bugadelles)**           | Reformas & Construcción      | Calvià & Andratx (Suroeste)  |                             [Web](https://aluminioscalvia.com)                              |
 | ✅ Indexado |  **4.8**  |   160   | **69.6 pts** | **Cristalería & Cerramientos Balear (Palma - 1988)**          | Reformas & Construcción      | Palma & Bahía                |                            [Web](https://cristaleriabalear.com)                             |
+| ✅ Indexado |  **4.8**  |   150   | **69.5 pts** | **Instalaciones & Climatización Marratxí (1995)**             | Reformas & Construcción      | Es Raiguer & Es Pla (Centro) |                          [Web](https://climatizacionmarratxi.com)                           |
 | ✅ Indexado |  **4.8**  |   140   | **69.4 pts** | **Carpintería & Ebanistería Alaró (1975)**                    | Reformas & Construcción      | Es Raiguer & Es Pla (Centro) |                             [Web](https://carpinteriaalaro.com)                             |
 | ✅ Indexado |  **4.8**  |   145   | **69.4 pts** | **Clima & Frío Balear (Aire Acondicionado & Aerotermia)**     | Reformas & Construcción      | Palma & Bahía                |                             [Web](https://climafriobalear.com)                              |
 | ✅ Indexado |  **4.8**  |   140   | **69.4 pts** | **Jardinería & Paisajismo Serra Mallorca**                    | Reformas & Construcción      | Palma & Bahía                |                             [Web](https://jardineriaserra.com)                              |
@@ -105,6 +107,7 @@
 | ✅ Indexado  |  **4.7**  |  1620   | **92.1 pts** | **Forn Sant Francesc (Inca - 1905)**              | Gastronomía & Chefs Privados | Es Raiguer & Es Pla (Centro) |    [Web](https://fornsantfrancesc.com)    |
 | ✅ Indexado  |  **4.7**  |  1850   | **89.7 pts** | **Il Tano Santa Catalina (Pizzería Napolitana)**  | Gastronomía & Chefs Privados | Palma & Bahía                |         [Web](https://iltano.com)         |
 | ✅ Indexado  |  **4.7**  |  1250   | **87.4 pts** | **Forn de la Soca (Obrador Històric)**            | Gastronomía & Chefs Privados | Palma & Bahía                |      [Web](https://forndelasoca.com)      |
+| ✅ Indexado  |  **4.7**  |   980   | **83.9 pts** | **Celler Can Marrón (Inca - 1928)**               | Gastronomía & Chefs Privados | Es Raiguer & Es Pla (Centro) |    [Web](https://cellercanmarron.com)     |
 | ✅ Indexado  |  **4.7**  |   920   | **83.1 pts** | **Bens d'Avall**                                  | Gastronomía & Chefs Privados | Serra de Tramuntana          |       [Web](https://bensdavall.com)       |
 | ✅ Indexado  |  **4.7**  |   890   | **82.9 pts** | **Bodegas José L. Ferrer (Binissalem - 1931)**    | Gastronomía & Chefs Privados | Es Raiguer & Es Pla (Centro) |      [Web](https://vinosferrer.com)       |
 | ✅ Indexado  |  **4.7**  |   920   | **82.9 pts** | **Ca Na Toneta**                                  | Gastronomía & Chefs Privados | Es Raiguer & Es Pla (Centro) |       [Web](https://canatoneta.com)       |

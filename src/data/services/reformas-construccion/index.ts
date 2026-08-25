@@ -18,6 +18,7 @@ import { cristaleriaBalear } from "./cristaleria-aluminios-balear.ts";
 import { viverosLlabres } from "./viveros-jardineria-llabres.ts";
 import { carpinteriaAlaro } from "./carpinteria-ebanisteria-alaro.ts";
 import { cerrajeriaRapidaBalear } from "./cerrajeria-rapida-balear.ts";
+import { climaMarratxi } from "./climatizacion-marratxi.ts";
 
 export {
   duranPalma,
@@ -39,6 +40,7 @@ export {
   viverosLlabres,
   carpinteriaAlaro,
   cerrajeriaRapidaBalear,
+  climaMarratxi,
 };
 
 /**
@@ -65,4 +67,5 @@ export const REFORMAS_SERVICES: ServiceItem[] = [
   viverosLlabres,
   carpinteriaAlaro,
   cerrajeriaRapidaBalear,
+  climaMarratxi,
 ];
