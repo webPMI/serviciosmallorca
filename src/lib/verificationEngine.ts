@@ -51,6 +51,160 @@ export interface VerificationReport {
 }
 
 /**
+ * Dominios restringidos de bancos de imágenes genéricos o stock.
+ */
+export const FORBIDDEN_STOCK_DOMAINS = [
+  "unsplash.com",
+  "pexels.com",
+  "pixabay.com",
+  "freepik.com",
+  "placeholder",
+  "dummyimage",
+  "loremflickr",
+  "stock.adobe.com",
+  "shutterstock.com",
+  "gettyimages.com",
+  "istockphoto.com",
+] as const;
+
+/**
+ * Patrones de imágenes basura, placeholders o assets de plugins que no deben usarse como fotos del negocio.
+ */
+export const FORBIDDEN_IMAGE_PATTERNS = [
+  /flag/i,
+  /bandera/i,
+  /plugin/i,
+  /revslider/i,
+  /dummy/i,
+  /pixel/i,
+  /analytics/i,
+  /1x1/i,
+  /icon/i,
+  /favicon/i,
+  /spinner/i,
+  /loader/i,
+  /sample/i,
+  /placeholder/i,
+];
+
+export interface ImageVerificationResult {
+  isValid: boolean;
+  trustLevel: "high_trust_domain" | "social_trust" | "unverified";
+  reason?: string;
+}
+
+/**
+ * Valida la calidad estructural de una imagen (rechaza stock, placeholders, banderas y plugins).
+ */
+export function validateImageQuality(imageUrl?: string): { isValid: boolean; reason?: string } {
+  if (!imageUrl || typeof imageUrl !== "string" || imageUrl.trim() === "") {
+    return { isValid: false, reason: "URL de imagen vacía o ausente." };
+  }
+
+  const cleanUrl = imageUrl.trim().toLowerCase();
+
+  // 1. Detección de bancos de stock
+  for (const forbidden of FORBIDDEN_STOCK_DOMAINS) {
+    if (cleanUrl.includes(forbidden)) {
+      return {
+        isValid: false,
+        reason: `Imagen descartada: Proviene del banco de imágenes de stock "${forbidden}". Solo se admiten fotos reales de fuentes oficiales (GR-11).`,
+      };
+    }
+  }
+
+  // 2. Detección de patrones basura (placeholders, banderas, assets de plugins)
+  for (const pattern of FORBIDDEN_IMAGE_PATTERNS) {
+    if (pattern.test(cleanUrl)) {
+      return {
+        isValid: false,
+        reason: `Imagen descartada: Coincide con patrón de placeholder, icono o plugin (${pattern}).`,
+      };
+    }
+  }
+
+  return { isValid: true };
+}
+
+/**
+ * Valida la titularidad y trazabilidad de origen de una imagen respecto a la web del negocio o sus canales oficiales.
+ */
+export function verifyImageOwnership(
+  imageUrl?: string,
+  businessWebsite?: string,
+  _socialLinks?: Record<string, string | undefined>
+): ImageVerificationResult {
+  const quality = validateImageQuality(imageUrl);
+  if (!quality.isValid) {
+    return { isValid: false, trustLevel: "unverified", reason: quality.reason };
+  }
+
+  if (!imageUrl) {
+    return { isValid: false, trustLevel: "unverified", reason: "URL ausente." };
+  }
+
+  // Si es un asset local alojado en el propio proyecto (/images/...)
+  if (imageUrl.startsWith("/")) {
+    return { isValid: true, trustLevel: "high_trust_domain" };
+  }
+
+  try {
+    const imgUrlObj = new URL(imageUrl);
+    const imgHost = imgUrlObj.hostname.toLowerCase().replace(/^www\./, "");
+
+    // 1. Verificación de Dominio Propio (High Trust)
+    if (businessWebsite && businessWebsite.startsWith("http")) {
+      try {
+        const siteHost = new URL(businessWebsite).hostname.toLowerCase().replace(/^www\./, "");
+        if (imgHost === siteHost || imgHost.endsWith(`.${siteHost}`)) {
+          return { isValid: true, trustLevel: "high_trust_domain" };
+        }
+      } catch {
+        // Continuar si falla el parseo de businessWebsite
+      }
+    }
+
+    // CDNs oficiales conocidos utilizados por empresas
+    const TRUSTED_BUSINESS_CDNS = [
+      "uploadcare.engelvoelkers.com",
+      "ucarecdn.com",
+      "storyblok.com",
+      "marriott.com",
+      "cache.marriott.com",
+      "tatspark.com",
+      "imgur.com",
+      "i.imgur.com",
+    ];
+
+    if (TRUSTED_BUSINESS_CDNS.some((cdn) => imgHost.includes(cdn))) {
+      return { isValid: true, trustLevel: "high_trust_domain" };
+    }
+
+    // 2. Verificación de Redes Sociales y Google Maps (Social Trust)
+    const SOCIAL_CDNS = [
+      "cdninstagram.com",
+      "fbcdn.net",
+      "googleusercontent.com",
+      "ggpht.com",
+      "licdn.com",
+    ];
+
+    if (SOCIAL_CDNS.some((scdn) => imgHost.includes(scdn))) {
+      return { isValid: true, trustLevel: "social_trust" };
+    }
+
+    // Si no coincide con el dominio ni con CDNs conocidos, pero pasa la calidad, se acepta como unverified
+    return {
+      isValid: true,
+      trustLevel: "unverified",
+      reason: `Imagen no pertenece al dominio principal (${imgHost}), pero pasó los filtros de calidad de stock.`,
+    };
+  } catch {
+    return { isValid: false, trustLevel: "unverified", reason: "URL de imagen malformada." };
+  }
+}
+
+/**
  * Normaliza números de teléfono para comparación estricta (omite prefijos +34, 0034, espacios y guiones).
  */
 export function normalizePhoneNumber(rawPhone?: string): string {

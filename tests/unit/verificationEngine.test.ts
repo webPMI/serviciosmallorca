@@ -94,4 +94,49 @@ describe("Verification Engine (Multi-Source Auditor)", () => {
       expect(report.warnings.length).toBeGreaterThan(0);
     });
   });
+
+  describe("Image Quality and Ownership Verification (Triple Validation Gate)", () => {
+    it("rejects generic stock photo domains (Unsplash, Pexels, Pixabay, etc.)", async () => {
+      const { validateImageQuality } = await import("../../src/lib/verificationEngine");
+      expect(validateImageQuality("https://images.unsplash.com/photo-123").isValid).toBe(false);
+      expect(validateImageQuality("https://images.pexels.com/photos/456").isValid).toBe(false);
+      expect(validateImageQuality("https://pixabay.com/get/abc.jpg").isValid).toBe(false);
+      expect(validateImageQuality("https://img.freepik.com/free-photo/pic.jpg").isValid).toBe(false);
+    });
+
+    it("rejects dummy, flag, icon and placeholder patterns", async () => {
+      const { validateImageQuality } = await import("../../src/lib/verificationEngine");
+      expect(validateImageQuality("https://sitio.com/wp-content/plugins/revslider/dummy.png").isValid).toBe(false);
+      expect(validateImageQuality("https://sitio.com/flags/es.png").isValid).toBe(false);
+      expect(validateImageQuality("https://sitio.com/favicon-32x32.png").isValid).toBe(false);
+      expect(validateImageQuality("https://sitio.com/images/1x1.gif").isValid).toBe(false);
+    });
+
+    it("accepts and verifies high trust domain images belonging to official website", async () => {
+      const { verifyImageOwnership } = await import("../../src/lib/verificationEngine");
+      const res = verifyImageOwnership(
+        "https://kuyenart.com/images/kuyen_entrada.jpg",
+        "https://kuyenart.com"
+      );
+      expect(res.isValid).toBe(true);
+      expect(res.trustLevel).toBe("high_trust_domain");
+    });
+
+    it("accepts trusted CDN and social media images with proper trust level", async () => {
+      const { verifyImageOwnership } = await import("../../src/lib/verificationEngine");
+      const cdnRes = verifyImageOwnership(
+        "https://uploadcare.engelvoelkers.com/assets/villa1.jpg",
+        "https://engelvoelkers.com"
+      );
+      expect(cdnRes.isValid).toBe(true);
+      expect(cdnRes.trustLevel).toBe("high_trust_domain");
+
+      const socialRes = verifyImageOwnership(
+        "https://scontent.cdninstagram.com/v/t51.2885-15/photo.jpg",
+        "https://mibar.com"
+      );
+      expect(socialRes.isValid).toBe(true);
+      expect(socialRes.trustLevel).toBe("social_trust");
+    });
+  });
 });

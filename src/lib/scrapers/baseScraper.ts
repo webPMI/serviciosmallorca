@@ -5,6 +5,8 @@
  * teléfonos, emails, favicons, imágenes OpenGraph y generación de mapas.
  */
 
+import { validateImageQuality } from "../verificationEngine.ts";
+
 export interface BaseScrapeResult {
   httpStatus: number;
   html: string;
@@ -84,11 +86,16 @@ export function extractBaseMetadata(html: string, baseUrl: URL, httpStatus: numb
   const twitterMatch = html.match(/<meta\s+name=["']twitter:image["']\s+content=["']([^"']+)["']/i);
 
   let ogImage = ogMatch ? ogMatch[1] : twitterMatch ? twitterMatch[1] : undefined;
-  if (ogImage && !ogImage.startsWith("http")) {
-    try {
-      ogImage = new URL(ogImage, baseUrl).href;
-    } catch {
-      // Ignorar si falla la URL
+  if (ogImage) {
+    if (!ogImage.startsWith("http")) {
+      try {
+        ogImage = new URL(ogImage, baseUrl).href;
+      } catch {
+        ogImage = undefined;
+      }
+    }
+    if (ogImage && !validateImageQuality(ogImage).isValid) {
+      ogImage = undefined;
     }
   }
 
@@ -126,7 +133,9 @@ export function extractBaseMetadata(html: string, baseUrl: URL, httpStatus: numb
           continue;
         }
       }
-      gallerySet.add(src);
+      if (validateImageQuality(src).isValid) {
+        gallerySet.add(src);
+      }
     }
   }
 

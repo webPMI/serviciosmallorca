@@ -11,7 +11,11 @@ import { extractSocialLinks, generateSocialDorks } from "./socialScraper.ts";
 import { scrapeRestaurantData } from "./restaurantScraper.ts";
 import { scrapeArtCultureData } from "./artCultureScraper.ts";
 import { scrapeServiceData } from "./serviceScraper.ts";
-import { auditBusinessData, type VerificationReport } from "../verificationEngine.ts";
+import {
+  auditBusinessData,
+  verifyImageOwnership,
+  type VerificationReport,
+} from "../verificationEngine.ts";
 
 export interface HarvestedIntelligenceResult {
   businessQuery: string;
@@ -153,7 +157,7 @@ export async function harvestBusinessIntelligence(
     directoryDorks = serviceData.generalDirectoryDorks;
   }
 
-  // 5. Slug y Preparación Multimedia
+  // 5. Slug y Preparación Multimedia Validativa (Triple Validación de Origen)
   const slug = cleanName
     .toLowerCase()
     .normalize("NFD")
@@ -162,8 +166,15 @@ export async function harvestBusinessIntelligence(
     .replace(/(^-|-$)/g, "");
 
   const cleanSlug = slug || "nuevo-servicio";
-  const mainImage = baseData.ogImage || (baseData.galleryImages[0] ?? "");
-  const gallery = baseData.galleryImages.filter((img) => img !== mainImage);
+
+  const candidateImages = [baseData.ogImage, ...baseData.galleryImages].filter(Boolean) as string[];
+  const verifiedImages = candidateImages.filter((img) => {
+    const ownership = verifyImageOwnership(img, targetUrl, socialLinks as Record<string, string | undefined>);
+    return ownership.isValid;
+  });
+
+  const mainImage = verifiedImages[0] ?? "";
+  const gallery = verifiedImages.filter((img) => img !== mainImage);
 
   // 6. Auditoría y Triple Verificación Cruzada
   const verificationReport = auditBusinessData({
