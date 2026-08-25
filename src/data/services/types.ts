@@ -140,6 +140,7 @@ export interface ServiceItem {
   slug: string;
   name: string;
   category: string;
+  sectorId?: string;
   secondaryCategories?: string[];
   zone: string;
   address: string;
@@ -179,7 +180,7 @@ export interface ServiceItem {
   socialLinks?: SocialMediaLinks;
   socialPosts?: SocialMediaPost[];
   webDirectories?: WebIndexPresence[];
-  lastVerifiedAt: string;
+  lastVerifiedAt?: string;
   googleMapsUrl: string;
   appleMapsUrl: string;
   bingMapsUrl: string;
@@ -198,18 +199,19 @@ export interface ServiceItem {
     en: string;
     ca: string;
   };
-  highlights: {
+  highlights?: {
     es: string[];
     en: string[];
     ca: string[];
   };
-  servicesProvided: {
+  servicesProvided?: {
     es: string[];
     en: string[];
     ca: string[];
   };
   image: string;
-  gallery: string[];
+  images?: string[];
+  gallery?: string[];
   schedule: string;
   onlineStore?: OnlineStoreInfo;
   products?: StoreProduct[];
@@ -237,5 +239,8 @@ export interface ServiceItem {
     addressInMallorca?: boolean;
     activeWeb200Ok?: boolean;
     socialMatchScore?: number;
+    googleMapsConfirmed?: boolean;
+    socialPresenceActive?: boolean;
+    taxIdVerified?: boolean;
   };
 }

@@ -94,14 +94,14 @@ export function mergeServiceWithOverride(staticService: ServiceItem, override: S
       ca: override.fullDescription?.ca || staticService.fullDescription.ca,
     },
     highlights: {
-      es: override.highlights?.es || staticService.highlights.es,
-      en: override.highlights?.en || staticService.highlights.en,
-      ca: override.highlights?.ca || staticService.highlights.ca,
+      es: override.highlights?.es || staticService.highlights?.es || [],
+      en: override.highlights?.en || staticService.highlights?.en || [],
+      ca: override.highlights?.ca || staticService.highlights?.ca || [],
     },
     servicesProvided: {
-      es: override.servicesProvided?.es || staticService.servicesProvided.es,
-      en: override.servicesProvided?.en || staticService.servicesProvided.en,
-      ca: override.servicesProvided?.ca || staticService.servicesProvided.ca,
+      es: override.servicesProvided?.es || staticService.servicesProvided?.es || [],
+      en: override.servicesProvided?.en || staticService.servicesProvided?.en || [],
+      ca: override.servicesProvided?.ca || staticService.servicesProvided?.ca || [],
     },
   };
 }
