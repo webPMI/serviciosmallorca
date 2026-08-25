@@ -9,7 +9,7 @@ interface Props {
   prefix: string;
 }
 
-const { service, translations, _prefix } = Astro.props as any;
+const { service, translations } = Astro.props;
 ---
 
 <aside class="detail-sidebar">
@@ -99,7 +99,8 @@ const { service, translations, _prefix } = Astro.props as any;
         service.schedule && (
           <div class="info-row">
             <LiveScheduleBadge
-              rawSchedule={service.schedule}
+              scheduleText={service.schedule}
+              serviceStatus={service.status}
               phone={service.phone}
               whatsapp={service.whatsapp}
               businessName={service.name}
@@ -147,7 +148,7 @@ const { service, translations, _prefix } = Astro.props as any;
 
     <!-- AdSense Sidebar Banner -->
     <div style="margin-top: var(--space-md);">
-      <AdSenseSlot client="ca-pub-1988580228487420" slot="service-sidebar-banner" format="rectangle" />
+      <AdSenseSlot slotId="service-sidebar-banner" format="rectangle" />
     </div>
   </div>
 </aside>

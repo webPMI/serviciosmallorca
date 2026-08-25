@@ -11,7 +11,7 @@ const { translations, locale } = Astro.props;
 const AVATAR_PRESETS = ["👤", "🚀", "⚡", "👑", "🦊", "🦉", "🎨", "💻", "🌿", "🔥"];
 ---
 
-<div class="profile-container">
+<div class="profile-container" data-locale={locale}>
   <!-- Profile Hero Card -->
   <div class="profile-hero card-glass fade-in">
     <div class="profile-hero-inner">

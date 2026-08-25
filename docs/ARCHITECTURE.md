@@ -20,89 +20,55 @@
 servicios-mallorca/
 ├── wrangler.json               # Configuración de Cloudflare Pages
 ├── public/
-│   ├── ads.txt                 # Archivo de autorización Google AdSense
-│   ├── devtools.html           # Panel DevTools standalone
-│   ├── devtools-floating.js    # Botón flotante context-aware
-│   └── devtools-logger.js      # Logger circular de 500 entradas
 ├── src/
-│   ├── data/                   # Capa de datos estáticos y repositorios
-│   │   ├── categories.ts       # Categorías de servicios en Mallorca
-│   │   ├── zones.ts            # 7 Zonas geográficas insulares
-│   │   ├── tags.ts             # Catálogo cerrado de tags ortogonales
-│   │   ├── posts.ts            # Artículos y guías del blog
-│   │   └── services/           # 🏛️ Catálogo Modular (1 archivo por negocio)
-│   │       ├── types.ts        # Modelos TypeScript compartidos
-│   │       ├── index.ts        # Agregador central global
-│   │       └── arte-tatuajes/  # 📂 Sector Arte, Tatuajes & Piercing
-│   │           ├── kuyen-art-tattoo.ts
-│   │           ├── box-tattoo-piercing.ts
-│   │           ├── urban-soul-tattoo.ts
-│   │           └── index.ts
-│   ├── i18n/                   # Internacionalización (ES, EN, CA)
-│   ├── layouts/
-│   │   └── BaseLayout.astro    # Layout con AdSense, temas, metas y SEO
-│   ├── pages/
-│   │   └── [...locale]/
-│   │       ├── index.astro             # Portada con buscador y destacados
-│   │       ├── dashboard.astro         # Panel según rol (User, Manager, Admin)
-│   │       ├── login.astro             # Inicio de sesión (Email + Google)
-│   │       ├── register.astro          # Registro de cuentas
-│   │       ├── forgot-password.astro   # Recuperación de credenciales
-│   │       ├── profile.astro           # Perfil de usuario y avatar
-│   │       ├── servicios/
-│   │       │   ├── index.astro         # Directorio con filtros por categoría y zona
-│   │       │   ├── [slug].astro        # Ficha individual (Multi-Maps, Galería, Tienda, FAQs)
-│   │       │   └── nuevo.astro         # Alta y propuesta de nuevo negocio
-│   │       └── blog/
-│   ├── components/
-│   │   ├── MapsRatingBox.astro         # Agregador de reputación multi-mapas
-│   │   ├── VisualGalleryShowcase.astro # Galería mosaico & Visor Lightbox
-│   │   ├── OnlineStoreShowcase.astro   # Tienda online & Productos oficiales
-│   │   ├── SocialFeedSection.astro     # Canales y feed de publicaciones reales
-│   │   ├── AdSenseSlot.astro           # Componente de anuncios sin CLS
-│   │   ├── ServiceCard.astro           # Tarjeta de servicio
-│   │   └── Navbar.astro                # Navegación reactiva
-│   └── lib/
-│       ├── geoUtils.ts                 # 📍 Motor de Proximidad Haversine (GPS)
-│       ├── firebase.ts                 # Cliente oficial de Firebase
-│       ├── serviceActions.ts           # Operaciones Firestore (Claims, Altas, Bajas)
-│       ├── userProfile.ts              # Sincronización de perfiles en Firestore
-│       └── authStore.ts                # Store reactivo de autenticación
 ├── scripts/
-│   ├── business-intelligence-lookup.ts # 🔎 Minería y scraping para agentes
-│   ├── validate-taxonomy.ts            # Validador de integridad taxonómica
-│   └── audit-services.ts               # Health check de webs y frescura
+├── tests/
+├── docs/
+└── AGENTS.md
 ```
 
+## 3. Módulos de Inteligencia y Curación
+
+### 🔬 Motor de Minería (`scripts/`)
+El sistema utiliza un orquestador de búsqueda que puede ejecutar:
+- **Deep Scraping:** Extracción de metadatos, precios, imágenes y redes sociales de sitios web oficiales.
+- **Social Analysis:** Extracción de enlaces de bio (Linktree, Instagram, TikTok) y validación de contenido.
+- **Cross-Reference:** Validación cruzada de datos entre múltiples fuentes (Google Maps, Directorios, Web).
+- **Data Enrichment:** Generación automática de especialidades, historias de autor y búsqueda de noticias locales.
+
+### 🛠️ Ecosistema de Utilidades (`public/`, `src/components/`)
+Herramientas gratuitas para el usuario:
+- **Image Web Editor:** Edición rápida de contenido visual.
+- **Auralist:** Curación de audio y contenido sonoro.
+- **Geolocalización:** Herramientas de mapas y coordenadas.
+- **Calculadoras:** Herramientas de presupuestos y conversiones.
+
+## 4. Flujo de Datos y Validación
+
+1. **Input:** Búsqueda por nombre/geolocalización.
+2. **Minería:** `scripts/business-intelligence-lookup.ts` extrae datos crudos.
+3. **Auditoría:** `src/lib/verificationEngine.ts` valida la veracidad y genera un `confidenceScore`.
+4. **Curación:** Agente `@curation` redacta el contenido en 3 idiomas y asigna especialidades.
+5. **Publicación:** El negocio se inserta en `src/data/services/` y se refleja en la UI.
+
 ---
 
-## 3. Esquema de Colecciones en Cloud Firestore
+## 5. Módulos de Negocio (Catálogo)
 
-| Colección                   | Documento        | Campos Principales                                         | Permisos                                 |
-| --------------------------- | ---------------- | ---------------------------------------------------------- | ---------------------------------------- |
-| `users`                     | `{uid}`          | `role`, `displayName`, `email`, `createdAt`, `updatedAt`   | Lectura propia/admin, escritura propia   |
-| `services`                  | `{serviceId}`    | `name`, `category`, `zone`, `phone`, `website`, `ownerUid` | Lectura pública, escritura Admin/Manager |
-| `service_claims`            | `{claimId}`      | `serviceId`, `applicantUid`, `verificationProof`, `status` | Creación usuario, gestión Admin          |
-| `service_submissions`       | `{submissionId}` | `name`, `category`, `address`, `phone`, `status`           | Creación usuario, gestión Admin          |
-| `service_deletion_requests` | `{requestId}`    | `serviceId`, `applicantUid`, `reason`, `status`            | Creación usuario, tramitación Admin      |
-| `reviews`                   | `{reviewId}`     | `serviceId`, `authorUid`, `rating`, `comment`, `createdAt` | Lectura pública, creación usuario        |
+| Sector | Especialidades Clave |
+| --- | --- |
+| **Gastronomía** | Restaurantes, Menús, Especialidades, Reservas |
+| **Arte & Tatuajes** | Estudios, Galería, Piercing, Artistas |
+| **Náutica** | Charters, Mantenimiento, Yates, Deportes Acuáticos |
+| **Servicios** | Estética, Bienestar, Salud, B2B |
 
 ---
 
-## 4. 📋 Tareas Pendientes & Roadmap de Refactorización
+## 6. Roadmap de Desarrollo
 
-### 🧩 Refactorización Modular de `src/pages/[...locale]/servicios/[slug].astro`
-
-- **Objetivo:** Reducir la página de detalle de servicio de **~2.650 líneas a < 150 líneas**, optimizando drásticamente el consumo de tokens para agentes de IA y aislando el ámbito CSS.
-- **Componentes a Extraer a `src/components/`:**
-  1. `ServiceHeaderHero.astro`: Breadcrumbs, título `h1`, badges de categoría y botón compartir.
-  2. `ServiceSidebarInfo.astro`: Teléfono con copia en portapapeles, dirección, estado en vivo y CTAs de contacto.
-  3. `ServiceLocationMap.astro`: Coordenadas, mapa interactivo y accesos directos a Google / Apple / Bing Maps.
-  4. `ServiceBookingModal.astro`: Modal interactivo de reserva de cita y solicitud de presupuesto.
-  5. `ServiceClaimDeleteModals.astro`: Diálogos modales para reclamación de propiedad y propuesta de baja.
-  6. `ServiceReviewsSection.astro`: Formulario de publicación y listado de opiniones de la comunidad.
-  7. `ServiceRelatedList.astro`: Negocios recomendados en la misma categoría o zona insular.
-- **Beneficios:**
-  - Reducción del 85% en tokens consumidos por interacción con IA en la ficha de servicios.
-  - Cero riesgo de conflictos de CSS o JavaScript entre secciones.
-  - Pruebas y mantenimiento atómico de cada componente.
+- [x] Refactorización Modular de la URL de Servicios.
+- [x] Motor de Minería y Vitrina E-Commerce.
+- [x] Protocolo de Curación de Alta Fidelidad.
+- [ ] Dashboard de Verificación y Gestión de Alertas.
+- [ ] Sistema de Notificaciones en Tiempo Real.
+- [ ] Integración con APIs de Reservas Directas.

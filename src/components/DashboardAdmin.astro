@@ -229,7 +229,7 @@ const withNewsCount = SERVICES.filter(
               extractedWebPhone: s.phone,
               whatsapp: s.whatsapp,
               socialLinks: s.socialLinks,
-              reviewsCount: s.reviewCount,
+              reviewCount: s.reviewCount,
             });
 
             const score = s.confidenceScore ?? audit.confidenceScore;
@@ -973,10 +973,11 @@ const withNewsCount = SERVICES.filter(
     });
 
     tabPanels.forEach((panel) => {
+      const htmlPanel = panel as HTMLElement;
       if (panel.id === `admin-tab-${targetTab}`) {
-        panel.style.display = "flex";
+        htmlPanel.style.display = "flex";
       } else {
-        panel.style.display = "none";
+        htmlPanel.style.display = "none";
       }
     });
   }

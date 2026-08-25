@@ -54,7 +54,7 @@ const schemaOrg = {
 ---
 
 <BaseLayout title={`${title} - ${translations["site.title"]}`} lang={locale} description={excerpt}>
-  <script type="application/ld+json" set:html={JSON.stringify(schemaOrg)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(schemaOrg)} />
 
   <Navbar currentLocale={locale} translations={translations} getLangPrefix={getLangPrefix} />
 

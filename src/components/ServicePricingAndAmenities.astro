@@ -8,12 +8,18 @@ interface Props {
 }
 
 const { service, locale } = Astro.props;
+
+const specList: string[] = Array.isArray(service.specialties)
+  ? service.specialties
+  : (service.specialties as any)?.[locale] ?? [];
+const hasSpecialties = specList.length > 0;
+const hasPricingSection = Boolean(service.pricing || service.menuUrl || hasSpecialties);
 ---
 
 <div class="pricing-amenities-wrap">
   <!-- Pricing & Rate Information or Digital Menu (If Available) -->
   {
-    (service.pricing || service.menuUrl || (service.specialties && service.specialties[locale]?.length > 0)) && (
+    hasPricingSection && (
       <section class="card section-box pricing-section">
         <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: var(--space-md);">
           <h2 class="box-title" style="margin: 0; padding: 0; border: none;">

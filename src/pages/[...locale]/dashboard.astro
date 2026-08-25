@@ -78,7 +78,7 @@ const defaultRoleBadge = (translations["dashboard.roleLevel"] || "Nivel: {role} 
 
   const pattern = roleBadge?.dataset.rolePattern || "Nivel: {role} 🏆";
 
-  authStore.subscribe(({ role, user }) => {
+  authStore.subscribe(({ role }) => {
     // Update role badge and styling
     if (roleBadge) {
       const label = ROLE_LABELS[role] ?? role;

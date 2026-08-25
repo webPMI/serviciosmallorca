@@ -1,13 +1,13 @@
 ---
 import type { ServiceItem } from "../data/services/types";
 import type { ServiceCategory } from "../data/categories";
-import type { Zone } from "../data/zones";
+import type { MallorcaZone } from "../data/zones";
 import type { Locale } from "../i18n";
 
 interface Props {
   service: ServiceItem;
   category?: ServiceCategory;
-  zone?: Zone;
+  zone?: MallorcaZone;
   translations: Record<string, string>;
   locale: Locale;
 }

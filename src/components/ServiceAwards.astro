@@ -5,10 +5,10 @@ import type { Locale } from "../i18n";
 interface Props {
   service: ServiceItem;
   translations: Record<string, string>;
-  locale: Locale;
+  locale?: Locale;
 }
 
-const { service, translations, _locale } = Astro.props as any;
+const { service, translations } = Astro.props;
 ---
 
 {

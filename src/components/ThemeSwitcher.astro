@@ -11,16 +11,9 @@ export interface Props {
 }
 
 const { translations, variant = "navbar" } = Astro.props;
-
-const themes = [
-  { value: "light", icon: "🌿", label: "Green Light", category: "classic" },
-  { value: "dark", icon: "🌙", label: "Green Dark", category: "classic" },
-  { value: "golden", icon: "☀️", label: "Gold Light", category: "premium" },
-  { value: "golden-dark", icon: "✨", label: "Gold Dark", category: "premium" },
-] as const;
 ---
 
-<div class="theme-selector-wrapper" data-theme-switcher="wrapper">
+<div class="theme-selector-wrapper" data-theme-switcher="wrapper" data-variant={variant}>
   <button
     class="theme-selector-btn"
     data-theme-switcher="btn"

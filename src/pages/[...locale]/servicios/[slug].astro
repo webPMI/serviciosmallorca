@@ -44,7 +44,6 @@ if (!service) {
 const category = CATEGORIES.find((c) => c.id === service.category);
 const zone = MALLORCA_ZONES.find((z) => z.id === service.zone);
 const categoryName = category?.name[locale] || service.category;
-const zoneName = zone?.name[locale] || service.zone;
 const relatedPosts = BLOG_POSTS.filter((p) => p.relatedServiceIds.includes(service.id));
 
 // Schema.org structured data for Local SEO and AI Search Engines (Perplexity, ChatGPT, SGE)
@@ -58,22 +57,18 @@ const schemaOrg = {
   url: service.website || Astro.url.href,
   hasMap: service.googleMapsUrl,
   sameAs: [service.googleMapsUrl, service.appleMapsUrl, service.bingMapsUrl, service.website].filter(Boolean),
-  priceRange: service.priceRange,
-  openingHours: service.schedule,
-  geo: service.coordinates
-    ? {
-        "@type": "GeoCoordinates",
-        latitude: service.coordinates.lat,
-        longitude: service.coordinates.lng,
-      }
-    : undefined,
   address: {
     "@type": "PostalAddress",
     streetAddress: service.address,
-    addressLocality: "Palma de Mallorca",
+    addressLocality: "Palma",
     addressRegion: "Illes Balears",
-    postalCode: "07002",
+    postalCode: "07001",
     addressCountry: "ES",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: service.coordinates.lat,
+    longitude: service.coordinates.lng,
   },
   aggregateRating: {
     "@type": "AggregateRating",
@@ -82,7 +77,7 @@ const schemaOrg = {
     bestRating: "5",
     worstRating: "1",
   },
-  description: service.fullDescription[locale],
+  priceRange: service.priceRange,
 };
 ---
 
@@ -92,7 +87,7 @@ const schemaOrg = {
   description={service.shortDescription[locale]}
 >
   <!-- Schema.org for Local SEO -->
-  <script type="application/ld+json" set:html={JSON.stringify(schemaOrg)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(schemaOrg)} />
 
   <Navbar currentLocale={locale} translations={translations} getLangPrefix={getLangPrefix} />
 

@@ -333,8 +333,6 @@ const prefix = getLangPrefix(locale);
   const prefix = topicsContainer?.getAttribute("data-locale-prefix") || "/";
   const catButtons = document.querySelectorAll(".cat-pill");
 
-  let currentCategory: ForumCategory = "todas";
-
   const categoryLabels: Record<string, string> = {
     recomendaciones: "⭐ Recomendaciones",
     preguntas: "❓ Preguntas & Dudas",
@@ -412,7 +410,6 @@ const prefix = getLangPrefix(locale);
       catButtons.forEach((b) => b.classList.remove("active"));
       btn.classList.add("active");
       const selected = (btn.getAttribute("data-category") || "todas") as ForumCategory;
-      currentCategory = selected;
       loadTopics(selected);
     });
   });

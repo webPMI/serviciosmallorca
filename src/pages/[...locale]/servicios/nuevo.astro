@@ -10,7 +10,6 @@ export const prerender = false;
 
 const locale = getLocaleFromUrl(Astro.url) as Locale;
 const translations = await loadTranslations(locale);
-const prefix = getLangPrefix(locale);
 ---
 
 <BaseLayout
