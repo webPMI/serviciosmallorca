@@ -73,6 +73,7 @@ async function scrapeWebsiteData(targetUrl: string): Promise<{
   onlineStoreDetected?: boolean;
   storePlatform?: string;
   storeUrl?: string;
+  menuUrl?: string;
   extractedProducts?: Array<{
     id: string;
     name: { es: string; en: string; ca: string };
@@ -242,6 +243,29 @@ async function scrapeWebsiteData(targetUrl: string): Promise<{
       }
     }
 
+    // 3.1. Detección Inteligente de Carta / Menú / Precios
+    let detectedMenuUrl: string | undefined;
+    for (const rawUrl of rawUrlMatches) {
+      const lowerU = rawUrl.toLowerCase();
+      if (
+        (lowerU.includes("/menu") ||
+          lowerU.includes("/carta") ||
+          lowerU.includes("/carta-digital") ||
+          lowerU.includes("/food") ||
+          lowerU.includes("/speisekarte") ||
+          lowerU.includes("/tarifas") ||
+          lowerU.includes("/precios") ||
+          (lowerU.endsWith(".pdf") && (lowerU.includes("menu") || lowerU.includes("carta")))) &&
+        !detectedMenuUrl
+      ) {
+        try {
+          detectedMenuUrl = new URL(rawUrl, baseUrl).href;
+        } catch {
+          detectedMenuUrl = rawUrl;
+        }
+      }
+    }
+
     // 4. Detección de Bizum, Apple Pay, Cripto
     if (lowerHtml.includes("bizum")) detectedPaymentMethods.push("bizum");
     if (lowerHtml.includes("apple pay") || lowerHtml.includes("applepay")) detectedPaymentMethods.push("apple_pay");
@@ -388,6 +412,7 @@ async function scrapeWebsiteData(targetUrl: string): Promise<{
       onlineStoreDetected,
       storePlatform,
       storeUrl,
+      menuUrl: detectedMenuUrl,
       extractedProducts,
       httpStatus,
     };
@@ -417,6 +442,7 @@ interface ScrapedWebsiteInfo {
   onlineStoreDetected?: boolean;
   storePlatform?: string;
   storeUrl?: string;
+  menuUrl?: string;
   extractedProducts?: Array<{
     id: string;
     name: { es: string; en: string; ca: string };
@@ -746,6 +772,10 @@ async function generateIntelligenceReport(query: string, websiteUrl?: string): P
     webHttpStatus: scrapedData.httpStatus,
   });
 
+  if (scrapedData.menuUrl) {
+    curationTemplate.menuUrl = scrapedData.menuUrl;
+  }
+
   if (scrapedData.onlineStoreDetected) {
     curationTemplate.onlineStore = {
       hasOnlineStore: true,
@@ -860,6 +890,11 @@ async function main() {
         console.log(`    [${idx + 1}] ${p.name.es} (${p.price}) ➔ ${p.url || "En tienda"}`);
       });
     }
+  }
+
+  if (report.curationTemplate.menuUrl) {
+    console.log("\n🍽️ 4.2. CARTA DIGITAL / MENÚ DETECTADO:");
+    console.log(`  • Enlace Directo a Carta: ${report.curationTemplate.menuUrl}`);
   }
 
   console.log("\n🗂️ 5. INDEXACIÓN EN DIRECTORIOS Y OTRAS WEBS BALEARES:");

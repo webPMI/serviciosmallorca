@@ -34,6 +34,31 @@ export const dinsSantiTaura: ServiceItem = {
     "2 Soles Repsol (Guía Repsol)",
     "Travellers' Choice TripAdvisor",
   ],
+  menuUrl: "https://dinssantitaura.com/menus/",
+  specialties: {
+    es: [
+      "Menú Degustación Raíces Mallorquinas",
+      "Pescado de Lonja Balear a la Sal",
+      "Lechona de Porc Negre Mallorquí Confitada",
+      "Arroz Meloso de Gamba Roja de Sóller",
+      "Maridaje de Vinos de la D.O. Binissalem y Pla i Llevant",
+    ],
+    en: [
+      "Majorcan Heritage Tasting Menu",
+      "Balearic Market Fresh Fish in Sea Salt",
+      "Confit Porc Negre (Majorcan Native Black Pig)",
+      "Creamy Rice with Sóller Red Prawns",
+      "Wine Pairing from Balearic D.O. Binissalem",
+    ],
+    ca: [
+      "Menú Degustació Arrels Mallorquines",
+      "Peix de Llotja Balear a la Sal",
+      "Porcella de Porc Negre Mallorquí Confitada",
+      "Arròs Melós de Gamba Vermella de Sóller",
+      "Maridatge de Vins de D.O. Binissalem i Pla i Llevant",
+    ],
+  },
+  authorityScore: 98,
   pricing: {
     startingPrice: "Menú Degustación: 110€",
     depositRequired: "Reserva previa online garantizada con tarjeta",

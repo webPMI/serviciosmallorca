@@ -11,25 +11,58 @@ const { service, locale } = Astro.props;
 ---
 
 <div class="pricing-amenities-wrap">
-  <!-- Pricing & Rate Information (If Available) -->
+  <!-- Pricing & Rate Information or Digital Menu (If Available) -->
   {
-    service.pricing && (
+    (service.pricing || service.menuUrl || (service.specialties && service.specialties[locale]?.length > 0)) && (
       <section class="card section-box pricing-section">
-        <h2 class="box-title">💶 Tarifas Orientativas & Condiciones</h2>
-        <div class="pricing-card-inner">
-          {service.pricing.startingPrice && (
-            <div class="pricing-pill-highlight">
-              <span class="pricing-label">Precio Mínimo:</span>
-              <strong class="pricing-val">{service.pricing.startingPrice}</strong>
-            </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: var(--space-md);">
+          <h2 class="box-title" style="margin: 0; padding: 0; border: none;">
+            {service.category.includes("gastronomia") ? "🍽️ Menú & Carta Gastronómica" : "💶 Tarifas Orientativas & Condiciones"}
+          </h2>
+          {service.menuUrl && (
+            <a
+              href={service.menuUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-sm btn-primary"
+              style="font-size: 0.85rem; padding: 0.4rem 0.8rem;"
+            >
+              <span>📜 Ver Carta Completa ↗</span>
+            </a>
           )}
-          {service.pricing.depositRequired && (
-            <p class="pricing-note">
-              📌 <strong>Reserva:</strong> {service.pricing.depositRequired}
-            </p>
-          )}
-          {service.pricing.notes?.[locale] && <p class="pricing-note-sub">{service.pricing.notes[locale]}</p>}
         </div>
+
+        {service.specialties?.[locale] && service.specialties[locale].length > 0 && (
+          <div style="margin-bottom: var(--space-md);">
+            <strong style="display: block; font-size: 0.9rem; color: var(--color-text-muted); margin-bottom: 0.4rem;">
+              ⭐ Especialidades de la Casa:
+            </strong>
+            <div class="chips-row">
+              {service.specialties[locale].map((spec: string) => (
+                <span class="chip-item" style="border-color: var(--color-accent); font-weight: 500;">
+                  🍴 {spec}
+                </span>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {service.pricing && (
+          <div class="pricing-card-inner">
+            {service.pricing.startingPrice && (
+              <div class="pricing-pill-highlight">
+                <span class="pricing-label">Precio Mínimo / Menú:</span>
+                <strong class="pricing-val">{service.pricing.startingPrice}</strong>
+              </div>
+            )}
+            {service.pricing.depositRequired && (
+              <p class="pricing-note">
+                📌 <strong>Reserva:</strong> {service.pricing.depositRequired}
+              </p>
+            )}
+            {service.pricing.notes?.[locale] && <p class="pricing-note-sub">{service.pricing.notes[locale]}</p>}
+          </div>
+        )}
       </section>
     )
   }
