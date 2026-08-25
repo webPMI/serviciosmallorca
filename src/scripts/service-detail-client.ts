@@ -6,8 +6,11 @@ import {
   type ReportCategory,
 } from "../lib/serviceActions";
 import { getServiceOverride } from "../lib/serviceOverrides";
+import { initAutomaticClickTracking } from "../lib/conversionTracking";
 
 export function initServiceDetailClient() {
+  initAutomaticClickTracking();
+
   // Gallery Thumbnail Swapper
   const mainDisplayImg = document.getElementById("detail-main-display-img") as HTMLImageElement;
   const thumbBtns = document.querySelectorAll(".thumb-btn");

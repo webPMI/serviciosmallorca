@@ -77,35 +77,39 @@ const { service, translations, prefix } = Astro.props;
       <div class="verified-external-reviews-grid">
         <h3 class="external-reviews-title">💬 Reseñas y Experiencias Verificadas</h3>
         <div class="reviews-cards-list">
-          {service.reviews.map((rev) => (
-            <div class="verified-review-card">
-              <div class="review-top-meta">
-                <div class="author-info">
-                  <span class="author-avatar">{rev.authorName.charAt(0).toUpperCase()}</span>
-                  <div>
-                    <strong class="author-name">{rev.authorName}</strong>
-                    {rev.verifiedCustomer && <span class="verified-badge">✓ Verificado</span>}
+          {service.reviews
+            .sort((a, b) => (b.isHighlight ? 1 : 0) - (a.isHighlight ? 1 : 0))
+            .map((rev) => (
+              <div class={`verified-review-card ${rev.isHighlight ? "highlighted-review" : ""}`}>
+                <div class="review-top-meta">
+                  <div class="author-info">
+                    <span class="author-avatar">{rev.authorName.charAt(0).toUpperCase()}</span>
+                    <div>
+                      <strong class="author-name">{rev.authorName}</strong>
+                      {rev.verifiedCustomer && <span class="verified-badge">✓ Verificado</span>}
+                      {rev.isHighlight && <span class="badge-highlight-review">⭐ Destacada</span>}
+                    </div>
+                  </div>
+                  <div class="review-platform-badge">
+                    <span>
+                      {rev.platform === "google_maps"
+                        ? "📍 Google Maps"
+                        : rev.platform === "bing_maps"
+                          ? "🌐 Bing Maps"
+                          : rev.platform === "tripadvisor"
+                            ? "🦉 TripAdvisor"
+                            : "✓ Verificada"}
+                    </span>
                   </div>
                 </div>
-                <div class="review-platform-badge">
-                  <span>
-                    {rev.platform === "google_maps"
-                      ? "📍 Google Maps"
-                      : rev.platform === "bing_maps"
-                        ? "🌐 Bing Maps"
-                        : rev.platform === "tripadvisor"
-                          ? "🦉 TripAdvisor"
-                          : "✓ Verificada"}
-                  </span>
+                <div class="review-stars-row">
+                  <span class="stars-gold">{"★".repeat(rev.rating)}</span>
+                  <span class="review-date">{rev.date}</span>
                 </div>
+                {rev.quoteHighlight && <p class="review-quote-highlight">"{rev.quoteHighlight}"</p>}
+                <p class="review-comment-body">«{rev.comment}»</p>
               </div>
-              <div class="review-stars-row">
-                <span class="stars-gold">{"★".repeat(rev.rating)}</span>
-                <span class="review-date">{rev.date}</span>
-              </div>
-              <p class="review-comment-body">«{rev.comment}»</p>
-            </div>
-          ))}
+            ))}
         </div>
       </div>
     )

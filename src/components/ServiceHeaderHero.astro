@@ -51,6 +51,8 @@ const waText = encodeURIComponent(`Hola, he visto su servicio ${service.name} en
               target="_blank"
               rel="noopener noreferrer"
               class="btn btn-sm btn-primary hero-btn-whatsapp"
+              data-track-event="whatsapp_click"
+              data-service-id={service.id}
             >
               <span>💬</span>
               <span>WhatsApp</span>
@@ -59,13 +61,23 @@ const waText = encodeURIComponent(`Hola, he visto su servicio ${service.name} en
         }
         {
           cleanPhone && (
-            <a href={`tel:${cleanPhone}`} class="btn btn-sm btn-secondary hero-btn-phone">
+            <a
+              href={`tel:${cleanPhone}`}
+              class="btn btn-sm btn-secondary hero-btn-phone"
+              data-track-event="phone_click"
+              data-service-id={service.id}
+            >
               <span>📞</span>
               <span>{locale === "ca" ? "Telefonar" : locale === "en" ? "Call" : "Llamar"}</span>
             </a>
           )
         }
-        <a href="#ubicacion" class="btn btn-sm btn-outline hero-btn-map">
+        <a
+          href="#ubicacion"
+          class="btn btn-sm btn-outline hero-btn-map"
+          data-track-event="directions_click"
+          data-service-id={service.id}
+        >
           <span>📍</span>
           <span>{locale === "ca" ? "Com arribar" : locale === "en" ? "Directions" : "Cómo llegar"}</span>
         </a>

@@ -75,6 +75,8 @@ export interface CustomerReview {
   language: "es" | "en" | "de" | "ca" | "fr" | "sv" | "it";
   comment: string;
   verifiedCustomer?: boolean;
+  isHighlight?: boolean;
+  quoteHighlight?: string;
 }
 
 export interface PlatformScore {
