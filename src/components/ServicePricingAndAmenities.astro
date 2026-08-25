@@ -32,20 +32,26 @@ const { service, locale } = Astro.props;
           )}
         </div>
 
-        {service.specialties?.[locale] && service.specialties[locale].length > 0 && (
-          <div style="margin-bottom: var(--space-md);">
-            <strong style="display: block; font-size: 0.9rem; color: var(--color-text-muted); margin-bottom: 0.4rem;">
-              ⭐ Especialidades de la Casa:
-            </strong>
-            <div class="chips-row">
-              {service.specialties[locale].map((spec: string) => (
-                <span class="chip-item" style="border-color: var(--color-accent); font-weight: 500;">
-                  🍴 {spec}
-                </span>
-              ))}
+        {(() => {
+          const specList: string[] = Array.isArray(service.specialties)
+            ? service.specialties
+            : service.specialties?.[locale] ?? [];
+          if (specList.length === 0) return null;
+          return (
+            <div style="margin-bottom: var(--space-md);">
+              <strong style="display: block; font-size: 0.9rem; color: var(--color-text-muted); margin-bottom: 0.4rem;">
+                ⭐ Especialidades de la Casa:
+              </strong>
+              <div class="chips-row">
+                {specList.map((spec: string) => (
+                  <span class="chip-item" style="border-color: var(--color-accent); font-weight: 500;">
+                    🍴 {spec}
+                  </span>
+                ))}
+              </div>
             </div>
-          </div>
-        )}
+          );
+        })()}
 
         {service.pricing && (
           <div class="pricing-card-inner">

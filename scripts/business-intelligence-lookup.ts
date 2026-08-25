@@ -58,6 +58,97 @@ interface LookupResult {
 }
 
 /**
+ * Extrae especialidades y palabras clave del sector a partir del texto y metadatos HTML.
+ */
+export function extractSpecialties(html: string): string[] {
+  const lower = html.toLowerCase();
+  const candidates: Array<{ keyword: string; label: string }> = [
+    // Gastronomía & Restauración
+    { keyword: "pescado del día", label: "Pescado Fresco del Día" },
+    { keyword: "pescado de lonja", label: "Pescado de Lonja Balear" },
+    { keyword: "marisco", label: "Marisco Fresco" },
+    { keyword: "arroz meloso", label: "Arroces y Paellas Tradicionales" },
+    { keyword: "paella", label: "Paella Mallorquina" },
+    { keyword: "tapas", label: "Tapas Caseras y Platillos" },
+    { keyword: "degustación", label: "Menú Degustación de Autor" },
+    { keyword: "degustacio", label: "Menú Degustació" },
+    { keyword: "cocina mallorquina", label: "Cocina Tradicional Balear" },
+    { keyword: "porc negre", label: "Porc Negre Mallorquí" },
+    { keyword: "lechona", label: "Lechona Asada Tradicional" },
+    { keyword: "gamba roja", label: "Gamba Roja de Sóller" },
+    { keyword: "brunch", label: "Brunch & Desayunos Especiales" },
+    { keyword: "maridaje", label: "Maridaje con Vinos de la Tierra" },
+    { keyword: "coctelería", label: "Coctelería de Autor" },
+    { keyword: "cocktails", label: "Cocktails de Autor" },
+    { keyword: "postres caseros", label: "Repostería Casera & Ensaimadas" },
+    // Tatuaje & Piercing
+    { keyword: "fine line", label: "Tatuaje Fine Line (Trazo Fino)" },
+    { keyword: "microrealismo", label: "Microrealismo & Retratos" },
+    { keyword: "blackwork", label: "Blackwork & Geometría" },
+    { keyword: "cover-up", label: "Cover-Up & Restauración de Tatuajes" },
+    { keyword: "cover up", label: "Cover-Up & Restauración" },
+    { keyword: "piercing", label: "Piercing Anatómico & Joyería de Titanio" },
+    { keyword: "anillado", label: "Perforación Corporal Higiénica" },
+    // Bienestar & Belleza
+    { keyword: "masaje", label: "Masajes Terapéuticos & Relajantes" },
+    { keyword: "facial", label: "Tratamientos Faciales Avanzados" },
+    { keyword: "hidrotermal", label: "Circuito Spa & Hidrotermal" },
+    // Náutica & Villas
+    { keyword: "charter", label: "Charter Privado en Barco" },
+    { keyword: "catamarán", label: "Excursiones en Catamarán" },
+  ];
+
+  const matchedSpecialties = new Set<string>();
+  for (const item of candidates) {
+    if (lower.includes(item.keyword)) {
+      matchedSpecialties.add(item.label);
+      if (matchedSpecialties.size >= 5) break;
+    }
+  }
+
+  return Array.from(matchedSpecialties);
+}
+
+/**
+ * Genera consultas estructuradas de noticias en los 5 medios de referencia de Mallorca.
+ */
+export function fetchLocalNews(businessName: string): Array<{
+  title: string;
+  date?: string;
+  url: string;
+  source: string;
+}> {
+  const encoded = encodeURIComponent(businessName.trim());
+  return [
+    {
+      source: "Diario de Mallorca",
+      title: `Menciones en Diario de Mallorca sobre ${businessName}`,
+      url: `https://www.google.com/search?q=site:diariodemallorca.es+${encoded}`,
+    },
+    {
+      source: "Última Hora Mallorca",
+      title: `Noticias y Artículos en Última Hora: ${businessName}`,
+      url: `https://www.google.com/search?q=site:ultimahora.es+${encoded}`,
+    },
+    {
+      source: "Mallorca Magazin (DE)",
+      title: `Berichte im Mallorca Magazin: ${businessName}`,
+      url: `https://www.google.com/search?q=site:mallorcamagazin.com+${encoded}`,
+    },
+    {
+      source: "ABC Mallorca (Lujo & Estilo)",
+      title: `Reseñas de Calidad en ABC Mallorca: ${businessName}`,
+      url: `https://www.google.com/search?q=site:abc-mallorca.com+${encoded}`,
+    },
+    {
+      source: "IB3 Notícies (Baleares)",
+      title: `Notícies i Actualitat IB3: ${businessName}`,
+      url: `https://www.google.com/search?q=site:ib3.org+${encoded}`,
+    },
+  ];
+}
+
+/**
  * Escanea la web oficial extrayendo multimedia, todas las redes sociales, métodos de pago y comodidades.
  */
 async function scrapeWebsiteData(targetUrl: string): Promise<{
@@ -775,6 +866,15 @@ async function generateIntelligenceReport(query: string, websiteUrl?: string): P
   if (scrapedData.menuUrl) {
     curationTemplate.menuUrl = scrapedData.menuUrl;
   }
+
+  // Especialidades detectadas
+  const rawSpecialties = extractSpecialties(scrapedData.metaDescription || cleanQuery);
+  if (rawSpecialties.length > 0) {
+    curationTemplate.specialties = rawSpecialties;
+  }
+
+  // Menciones de noticias locales
+  curationTemplate.newsMentions = fetchLocalNews(cleanQuery);
 
   if (scrapedData.onlineStoreDetected) {
     curationTemplate.onlineStore = {

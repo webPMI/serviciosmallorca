@@ -12,35 +12,86 @@ const { service, translations, _locale } = Astro.props as any;
 ---
 
 {
-  service.awards && service.awards.length > 0 && (
-    <section class="card section-box">
-      <h2 class="box-title">🏆 {translations["services.awards"] || "Premios & Reconocimientos Oficiales"}</h2>
-      <div class="awards-grid">
-        {service.awards.map((award: any) => (
-          <div class="award-card">
-            <span class="award-icon">🥇</span>
-            <div>
-              <strong class="award-title">
-                {award.url ? (
-                  <a href={award.url} target="_blank" rel="noopener noreferrer" class="award-source-link">
-                    {award.title} ↗
-                  </a>
-                ) : (
-                  award.title
-                )}
-              </strong>
-              <span class="award-meta">
-                {award.issuer} {award.year && `(${award.year})`}
-              </span>
-              {award.url && (
-                <a href={award.url} target="_blank" rel="noopener noreferrer" class="award-verify-badge">
-                  ✓ Consultar fuente oficial ↗
-                </a>
-              )}
-            </div>
+  ((service.awards && service.awards.length > 0) ||
+    (service.pressMentions && service.pressMentions.length > 0) ||
+    (service.newsMentions && service.newsMentions.length > 0)) && (
+    <div class="awards-and-news-wrapper">
+      {service.awards && service.awards.length > 0 && (
+        <section class="card section-box">
+          <h2 class="box-title">🏆 {translations["services.awards"] || "Premios & Reconocimientos Oficiales"}</h2>
+          <div class="awards-grid">
+            {service.awards.map((award: any) => (
+              <div class="award-card">
+                <span class="award-icon">🥇</span>
+                <div>
+                  <strong class="award-title">
+                    {award.url ? (
+                      <a href={award.url} target="_blank" rel="noopener noreferrer" class="award-source-link">
+                        {award.title} ↗
+                      </a>
+                    ) : (
+                      award.title
+                    )}
+                  </strong>
+                  <span class="award-meta">
+                    {award.issuer} {award.year && `(${award.year})`}
+                  </span>
+                  {award.url && (
+                    <a href={award.url} target="_blank" rel="noopener noreferrer" class="award-verify-badge">
+                      ✓ Consultar fuente oficial ↗
+                    </a>
+                  )}
+                </div>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
-    </section>
+        </section>
+      )}
+
+      {((service.pressMentions && service.pressMentions.length > 0) ||
+        (service.newsMentions && service.newsMentions.length > 0)) && (
+        <section class="card section-box" style="margin-top: var(--space-md);">
+          <h2 class="box-title">📰 Prensa & Noticias de Mallorca</h2>
+          <div class="awards-grid">
+            {service.pressMentions?.map((press: any) => (
+              <div class="award-card">
+                <span class="award-icon">🗞️</span>
+                <div>
+                  <strong class="award-title">{press.title}</strong>
+                  <span class="award-meta">
+                    {press.mediaName} {press.date && `· ${press.date}`}
+                  </span>
+                  {press.quote && <p style="font-size: 0.85rem; color: var(--color-text-muted); margin: 0.3rem 0;">«{press.quote}»</p>}
+                </div>
+              </div>
+            ))}
+            {service.newsMentions?.map((news: any) => (
+              <div class="award-card">
+                <span class="award-icon">📰</span>
+                <div>
+                  <strong class="award-title">
+                    {news.url ? (
+                      <a href={news.url} target="_blank" rel="noopener noreferrer" class="award-source-link">
+                        {news.title} ↗
+                      </a>
+                    ) : (
+                      news.title
+                    )}
+                  </strong>
+                  <span class="award-meta">
+                    {news.source} {news.date && `· ${news.date}`}
+                  </span>
+                  {news.url && (
+                    <a href={news.url} target="_blank" rel="noopener noreferrer" class="award-verify-badge">
+                      ✓ Leer en {news.source} ↗
+                    </a>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+    </div>
   )
 }

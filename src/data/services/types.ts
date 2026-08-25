@@ -214,13 +214,21 @@ export interface ServiceItem {
   onlineStore?: OnlineStoreInfo;
   products?: StoreProduct[];
   menuUrl?: string; // Enlace directo a la carta digital o PDF del menú
-  specialties?: {
-    es: string[];
-    en: string[];
-    ca: string[];
-  };
+  specialties?:
+    | string[]
+    | {
+        es: string[];
+        en: string[];
+        ca: string[];
+      };
+  newsMentions?: Array<{
+    title: string;
+    date?: string;
+    url: string;
+    source: string;
+  }>;
   authorityScore?: number; // 0 - 100% basado en apariciones en prensa y directorios
-  verificationStatus?: "verified" | "needs_manual_review" | "pending_audit";
+  verificationStatus?: "verified" | "needs_review" | "needs_manual_review" | "unverified" | "pending_audit";
   confidenceScore?: number; // 0 - 100%
   sourceCrossReference?: {
     webPhoneMatch?: boolean;
