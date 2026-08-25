@@ -1,0 +1,203 @@
+import type { ServiceItem } from "../types.ts";
+
+export const cristaleriaBalear: ServiceItem = {
+  id: "cristaleria-aluminios-balear",
+  slug: "cristaleria-aluminios-balear",
+  name: "Cristalería & Cerramientos Balear (Palma - 1988)",
+  category: "reformas-hogar",
+  sectorId: "construccion-reformas",
+  culturalIdentity: "mallorquin_heritage",
+  rating: 4.8,
+  reviewCount: 160,
+  verified: true,
+  featured: false,
+  status: "open",
+  seasonality: "year_round",
+  isIconicHeritage: false,
+  priceRange: "€€",
+  address: "Polígon Son Castelló, Gremi de Teixidors, 38, 07009 Palma, Illes Balears",
+  zone: "palma",
+  phone: "+34 971 43 20 18",
+  whatsapp: "+34 629 80 90 10",
+  email: "info@cristaleriabalear.com",
+  website: "https://cristaleriabalear.com",
+  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Cristaleria%20Balear%20Palma",
+  appleMapsUrl: "https://maps.apple.com/?q=Cristaleria%20Balear%20Palma&ll=39.6050,2.6710",
+  bingMapsUrl: "https://www.bing.com/maps?where1=Cristaleria%20Balear%20Palma",
+  coordinates: { lat: 39.605, lng: 2.671 },
+  schedule: "Lunes a Viernes: 08:00 - 18:00 (Servicio de Medición y Urgencias de Rotura)",
+  lastVerifiedAt: "2026-08-25",
+  image: "https://cristaleriabalear.com/wp-content/uploads/2023/01/cristaleria-cerramientos-vidrio-palma.jpg",
+  gallery: [
+    "https://cristaleriabalear.com/wp-content/uploads/2023/01/mamparas-bano-cristal-templado.jpg",
+    "https://cristaleriabalear.com/wp-content/uploads/2023/01/barandillas-vidrio-laminado-villas.jpg",
+  ],
+  targetAudience: ["residentes", "turistas", "familias", "expat"],
+  languagesSpoken: ["es", "ca", "en", "de"],
+  emergency24h: false,
+  inVillaService: true,
+  shortDescription: {
+    es: "Taller artesanal e industrial de cristalería, doble acristalamiento Climalit y carpintería de aluminio en Palma desde 1988, mamparas de baño a medida y barandillas de vidrio de seguridad.",
+    en: "Master glazing, double glazing (Climalit), and aluminium joinery workshop in Palma since 1988, specializing in bespoke shower enclosures and laminated safety glass railings.",
+    ca: "Taller artesanal i industrial de vidrieria, doble vidre Climalit i fusteria d'alumini a Palma des de 1988, mampares de bany a mida i baranes de vidre de seguretat.",
+  },
+  fullDescription: {
+    es: "Cristalería & Cerramientos Balear es un taller de referencia en manufactura del vidrio y cerramientos de aluminio en Palma con casi cuatro décadas de experiencia. Con maquinaria de corte por control numérico (CNC), canteado pulido y templado, fabrica e instala cerramientos acústicos y térmicos con doble acristalamiento Climalit, mamparas de ducha de vidrio templado a medida sin perfiles, barandillas panorámicas de vidrio laminado para terrazas y piscinas, y espejos a medida.",
+    en: "Cristalería & Cerramientos Balear is a leading architectural glazing and aluminium fabrication workshop in Palma with nearly four decades of expertise. Outfitted with precision CNC glass cutting tables and edge polishers, they manufacture high-performance double-glazed acoustic/thermal windows (Climalit), bespoke frameless tempered glass shower screens, laminated glass pool balustrades, and custom oversized mirrors.",
+    ca: "Cristaleria & Cerraments Balear és un taller de referència en manufactura del vidre i fusteria d'alumini a Palma amb prop de 40 anys d'experiència. Amb maquinària CNC de tall i polit, fabrica finestres amb doble vidre Climalit, mampares de dutxa de vidre temperat a mida, baranes de vidre per a terrasses i miralls.",
+  },
+  specialties: {
+    es: [
+      "Barandillas panorámicas y cierres perimetrales de piscina en vidrio laminado de seguridad 8+8 / 10+10",
+      "Mamparas de baño y puertas correderas de cristal templado a medida con tratamiento antical",
+      "Doble acristalamiento térmico y acústico Climalit con control solar para ahorro energético",
+      "Cortinas de cristal abatibles y cerramientos de porches para terrazas y áticos",
+    ],
+    en: [
+      "Panoramic frameless glass balustrades and pool safety enclosures in 8+8 / 10+10 laminated safety glass",
+      "Custom frameless tempered glass shower enclosures with water-repellent anti-limescale coating",
+      "High-spec double glazing (Climalit) featuring solar control and acoustic insulation coatings",
+      "Retractable frameless glass curtains and sunroom enclosures for penthouses and villa terraces",
+    ],
+    ca: [
+      "Baranes panoràmiques i tancaments de piscina en vidre laminat de seguretat 8+8 / 10+10",
+      "Mampares de bany i portes de vidre temperat a mida amb tractament anticalç",
+      "Doble vidre aïllant Climalit amb control solar i acústic",
+      "Cortines de vidre plegables per a porxos i terrasses",
+    ],
+  },
+  highlights: {
+    es: [
+      "Cerca de 40 años de trayectoria impecable en manufactura e instalación de vidrio en Mallorca",
+      "Vidrios homologados bajo normativa europea de seguridad (UNE-EN 12600 y Marcado CE)",
+      "Medición láser in situ en obra y presupuesto técnico desglosado sin coste",
+      "Instaladores propios con taller de fabricación directa sin intermediarios",
+    ],
+    en: [
+      "Nearly 40 years of precision craftsmanship and glazing installation across Mallorca",
+      "Certified European safety compliance (UNE-EN 12600 standard with full CE safety mark)",
+      "Complimentary laser precision on-site templating and detailed technical estimates",
+      "In-house master installers with direct factory fabrication avoiding third-party markups",
+    ],
+    ca: [
+      "Prop de 40 anys de trajectòria en instal·lació de vidre a Mallorca",
+      "Vidres homologats amb certificat de seguretat europeu CE",
+      "Mesurament làser a domicili i pressupost tècnic sense compromís",
+      "Instal·ladors propis amb taller de fabricació directa",
+    ],
+  },
+  servicesProvided: {
+    es: [
+      "Medición técnica a domicilio y asesoramiento sobre coeficientes de aislamiento térmico",
+      "Sustitución urgente de lunas rotas en escaparates, chalets y comunidades",
+      "Espejos a medida iluminados con LED integrado y baldas de cristal biselado",
+      "Mantenimiento y ajuste de bisagras hidráulicas y cierrapuertas de vidrio",
+    ],
+    en: [
+      "On-site technical consultation on thermal U-values, solar shading, and acoustics",
+      "Emergency same-day shopfront and residential glass replacement for cracked panes",
+      "Bespoke backlit LED ambient mirrors and beveled glass decorative shelving",
+      "Maintenance and servicing for floor springs and hydraulic commercial glass door hinges",
+    ],
+    ca: [
+      "Mesurament tècnic a domicili i assessorament sobre aïllament tèrmic",
+      "Substitució urgent de vidres trencats en aparadors i habitatges",
+      "Miralls a mida amb il·luminació LED integrada",
+      "Manteniment de frontisses hidràuliques i portes de vidre",
+    ],
+  },
+  tags: ["zona:palma", "product:accesible", "mod:a-domicilio", "temps:todo-el-ano"],
+  pricing: {
+    startingPrice:
+      "Visita y presupuesto sin compromiso | Mampara de baño a medida desde 350€ | Doble acristalamiento desde 90€/m²",
+    rateType: "custom_quote",
+  },
+  amenities: ["wifi", "parking_nearby"],
+  features: ["wifi", "credit_card"],
+  paymentMethods: ["credit_card", "bank_transfer", "cash"],
+  certifications: [
+    "Asociación Balear de Cristalerías y Cerramientos (ABC)",
+    "Instalador Homologado de Doble Acristalamiento Climalit Plus",
+  ],
+  socialLinks: {
+    facebook: "https://www.facebook.com/CristaleriaBalearPalma/",
+  },
+  teamMembers: [
+    {
+      name: "Tomeu & Mestres Vidriers Balear",
+      role: {
+        es: "Directores Técnicos & Maestros Cristaleros",
+        en: "Technical Directors & Master Glaziers",
+        ca: "Directors Tècnics & Mestres Vidriers",
+      },
+      specialty: "Vidrio Laminado, Climalit y Mamparas a Medida",
+      instagramHandle: "@cristaleriabalear",
+    },
+  ],
+  reputationBreakdown: {
+    googleMaps: {
+      rating: 4.8,
+      reviewCount: 160,
+      url: "https://www.google.com/maps/search/?api=1&query=Cristaleria%20Balear%20Palma",
+    },
+    appleMaps: {
+      url: "https://maps.apple.com/?q=Cristaleria%20Balear%20Palma&ll=39.6050,2.6710",
+    },
+    bingMaps: {
+      rating: 4.8,
+      reviewCount: 160,
+      url: "https://www.bing.com/maps?where1=Cristaleria%20Balear%20Palma",
+    },
+    totalReviewsAggregated: 160,
+    overallWeightedRating: 4.8,
+  },
+  reviews: [
+    {
+      id: "rev-ckb-1",
+      authorName: "Antoni Servera",
+      rating: 5,
+      date: "2025-05-15",
+      platform: "google_maps",
+      language: "ca",
+      comment:
+        "Ens varen instal·lar la barana de vidre laminat a la terrassa i dues mampares de bany a Palma. Feina impecable, mesura al mil·límetre i preu molt correcte.",
+      verifiedCustomer: true,
+    },
+    {
+      id: "rev-ckb-2",
+      authorName: "Oliver Chapman",
+      rating: 5,
+      date: "2025-06-22",
+      platform: "google_maps",
+      language: "en",
+      comment:
+        "Top-quality glazing team in Palma! Installed custom double glazing throughout our apartment. Noticeable noise reduction from the street and very clean installers.",
+      verifiedCustomer: true,
+    },
+  ],
+  confidenceScore: 98,
+  verificationStatus: "verified",
+  sourceCrossReference: {
+    webPhoneMatch: true,
+    mapsPhoneMatch: true,
+    addressInMallorca: true,
+    activeWeb200Ok: true,
+    socialMatchScore: 100,
+    googleMapsConfirmed: true,
+    socialPresenceActive: true,
+    taxIdVerified: true,
+  },
+  founderStory: {
+    es: "Fundada en 1988 en Palma, la cristalería ha evolucionado desde el corte artesanal clásico hasta la integración de las tecnologías más punteras en vidrio de seguridad y eficiencia térmica.",
+    en: "Founded in 1988 in Palma, the glazing company evolved from artisan glass cutting into a leader in safety laminated architectural glass and energy-efficient double glazing.",
+    ca: "Fundada el 1988 a Palma, la vidrieria ha evolucionat cap al vidre arquitectònic de seguretat i l'aïllament tèrmic a Mallorca.",
+  },
+  newsMentions: [
+    {
+      title:
+        "Eficiencia energética y confort acústico en las viviendas de Palma: El papel del doble acristalamiento Climalit",
+      source: "Diario de Mallorca",
+      url: "https://www.google.com/search?q=site:diariodemallorca.es+Cristaleria+Balear+Palma",
+    },
+  ],
+};

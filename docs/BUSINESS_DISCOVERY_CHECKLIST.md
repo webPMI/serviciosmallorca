@@ -6,12 +6,12 @@
 
 | Segmento de Calidad                             | Total Negocios | Estado en Plataforma                               |
 | :---------------------------------------------- | :------------: | :------------------------------------------------- |
-| ⭐⭐⭐⭐⭐ **5 Estrellas (4.8 - 5.0)**          |     **63**     | 🏆 Excelencia & Top Insular (Público Destacado)    |
+| ⭐⭐⭐⭐⭐ **5 Estrellas (4.8 - 5.0)**          |     **66**     | 🏆 Excelencia & Top Insular (Público Destacado)    |
 | ⭐⭐⭐⭐ **4 Estrellas (4.0 - 4.7)**            |     **71**     | ⭐ Notable / Recomendado (Público General)         |
 | ✨ **Nuevas Aperturas (0 reviews / Recientes)** |     **3**      | 🆕 Insignia 'Nueva Apertura' (Público Destacado)   |
 | ⭐⭐⭐ **3 Estrellas (3.0 - 3.9)**              |     **1**      | 🔹 Directorio Estándar (Público sin insignia)      |
 | ⚠️ **Triaje Interno (< 3.0 / Incompletos)**     |     **0**      | 🔒 Solo Administración (No se publica lista negra) |
-| 📦 **TOTAL NEGOCIOS EN RADAR**                  |    **138**     | **94 Indexados** · **44 Pendientes**               |
+| 📦 **TOTAL NEGOCIOS EN RADAR**                  |    **141**     | **97 Indexados** · **44 Pendientes**               |
 
 ---
 
@@ -49,6 +49,7 @@
 | ✅ Indexado |  **4.8**  |   850   | **78.2 pts** | **Rata Corner Llibreria & Cultura**                           | Abogados & Asesoría Fiscal   | Palma & Bahía                |                                [Web](https://ratacorner.com)                                |
 | ✅ Indexado |  **4.8**  |   390   | **77.7 pts** | **Bodega Castell Miquel (Alaró - Stairway to Heaven)**        | Gastronomía & Chefs Privados | Es Raiguer & Es Pla (Centro) |                              [Web](https://castellmiquel.com)                               |
 | ✅ Indexado |  **4.8**  |   380   | **77.4 pts** | **Balearic Properties Pollensa**                              | Inmobiliaria & Fincas        | Alcúdia & Pollença (Norte)   |                           [Web](https://balearic-properties.com)                            |
+| ✅ Indexado |  **4.8**  |   380   | **77.4 pts** | **Forn i Pastisseria Gelabert (Llubí - 1935)**                | Gastronomía & Chefs Privados | Es Raiguer & Es Pla (Centro) |                               [Web](https://forngelabert.com)                               |
 | ✅ Indexado |  **4.8**  |   340   | **76.9 pts** | **Bodyna Spa (Hospes Maricel)**                               | Salud & Bienestar            | Calvià & Andratx (Suroeste)  |                  [Web](https://www.hospes.com/es/maricel-spa/bodyna-spa/)                   |
 | ✅ Indexado |  **4.8**  |   310   | **76.7 pts** | **Cuatrecasas Abogados Palma**                                | Abogados & Asesoría Fiscal   | Palma & Bahía                |                             [Web](https://www.cuatrecasas.com)                              |
 | ✅ Indexado |  **4.8**  |   310   | **76.5 pts** | **Carnisseria Can Matas (Sóller - 1920)**                     | Gastronomía & Chefs Privados | Serra de Tramuntana          |                           [Web](https://carnisseriacanmatas.com)                            |
@@ -70,12 +71,14 @@
 | ✅ Indexado |  **4.8**  |   340   | **71.9 pts** | **La Barbería de la Lonja Palma**                             | Salud & Bienestar            | Palma & Bahía                |                              [Web](https://barberialonja.com)                               |
 | ✅ Indexado |  **4.8**  |   290   | **71.2 pts** | **Clínica Veterinaria Manacor (Llevant)**                     | Salud & Bienestar            | Manacor & Llevant (Este)     |                            [Web](https://veterinariamanacor.com)                            |
 | ✅ Indexado |  **4.8**  |   290   |  **71 pts**  | **Urban Soul Tattoo Studio Palma**                            | Arte, Tatuajes & Piercing    | Palma & Bahía                |                     [Web](https://www.instagram.com/urbansoul.tattoo/)                      |
+| ✅ Indexado |  **4.8**  |   240   | **70.6 pts** | **Clínica Veterinaria Andratx & Port (1998)**                 | Salud & Bienestar            | Calvià & Andratx (Suroeste)  |                            [Web](https://veterinariaandratx.com)                            |
 | ✅ Indexado |  **4.8**  |   230   | **70.5 pts** | **Varadero Alcudiamar & Marine Engineering (Port d'Alcúdia)** | Náutica & Charters           | Alcúdia & Pollença (Norte)   |                                [Web](https://alcudiamar.es)                                 |
 | ✅ Indexado |  **4.8**  |   220   | **70.4 pts** | **Talleres Auto-Inca (Inca - 1982)**                          | Transporte VIP & Chófer      | Es Raiguer & Es Pla (Centro) |                             [Web](https://talleresautoinca.com)                             |
 | ✅ Indexado |  **4.8**  |   190   |  **70 pts**  | **Fontanería Balear Instalaciones**                           | Reformas & Construcción      | Palma & Bahía                |                             [Web](https://fontaneriabalear.com)                             |
 | ✅ Indexado |  **4.8**  |   190   |  **70 pts**  | **Limpiezas y Mantenimiento Balear**                          | Reformas & Construcción      | Palma & Bahía                |                             [Web](https://limpiezasbalear.com)                              |
 | ✅ Indexado |  **4.8**  |   175   | **69.8 pts** | **Instalaciones Eléctricas Llabrés**                          | Reformas & Construcción      | Es Raiguer & Es Pla (Centro) |                           [Web](https://electricidadllabres.com)                            |
 | ✅ Indexado |  **4.8**  |   160   | **69.6 pts** | **Aluminios y Cristalería Calvià (Son Bugadelles)**           | Reformas & Construcción      | Calvià & Andratx (Suroeste)  |                             [Web](https://aluminioscalvia.com)                              |
+| ✅ Indexado |  **4.8**  |   160   | **69.6 pts** | **Cristalería & Cerramientos Balear (Palma - 1988)**          | Reformas & Construcción      | Palma & Bahía                |                            [Web](https://cristaleriabalear.com)                             |
 | ✅ Indexado |  **4.8**  |   145   | **69.4 pts** | **Clima & Frío Balear (Aire Acondicionado & Aerotermia)**     | Reformas & Construcción      | Palma & Bahía                |                             [Web](https://climafriobalear.com)                              |
 | ✅ Indexado |  **4.8**  |   140   | **69.4 pts** | **Jardinería & Paisajismo Serra Mallorca**                    | Reformas & Construcción      | Palma & Bahía                |                             [Web](https://jardineriaserra.com)                              |
 | ✅ Indexado |  **4.8**  |   130   | **69.2 pts** | **Fontanería & Climatización Pomar (Inca - 1985)**            | Reformas & Construcción      | Es Raiguer & Es Pla (Centro) |                            [Web](https://instalacionespomar.com)                            |
