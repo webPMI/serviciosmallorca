@@ -1,279 +1,253 @@
 import type { ServiceItem } from "../types.ts";
 
 export const dinsSantiTaura: ServiceItem = {
-  "id": "dins-santi-taura",
-  "slug": "dins-santi-taura",
-  "name": "DINS Santi Taura",
-  "category": "gastronomia-catering",
-  "secondaryCategories": [],
-  "zone": "palma",
-  "address": "Plaça de Llorenç Villalonga, 4, 07001 Palma, Illes Balears",
-  "coordinates": {
-    "lat": 39.5662,
-    "lng": 2.6538
+  id: "dins-santi-taura",
+  slug: "dins-santi-taura",
+  name: "DINS Santi Taura",
+  category: "gastronomia-catering",
+  secondaryCategories: [],
+  zone: "palma",
+  address: "Plaça de Llorenç Villalonga, 4, 07001 Palma, Illes Balears",
+  coordinates: {
+    lat: 39.5662,
+    lng: 2.6538,
   },
-  "rating": 4.8,
-  "reviewCount": 460,
-  "priceRange": "€€€€",
-  "verified": true,
-  "featured": true,
-  "status": "open",
-  "seasonality": "year_round",
-  "culturalIdentity": "mallorquin_heritage",
-  "isIconicHeritage": true,
-  "targetAudience": [
-    "residentes",
-    "turistas",
-    "parejas",
-    "alemanes",
-    "britanicos"
-  ],
-  "languagesSpoken": [
-    "es",
-    "ca",
-    "en",
-    "de"
-  ],
-  "emergency24h": false,
-  "inVillaService": false,
-  "features": [
-    "wifi",
-    "air_conditioning",
-    "credit_card"
-  ],
-  "paymentMethods": [
-    "credit_card",
-    "cash",
-    "apple_pay"
-  ],
-  "amenities": [
-    "wifi",
-    "air_conditioning",
-    "wheelchair_accessible",
-    "parking_nearby"
-  ],
-  "certifications": [
+  rating: 4.8,
+  reviewCount: 460,
+  priceRange: "€€€€",
+  verified: true,
+  featured: true,
+  status: "open",
+  seasonality: "year_round",
+  culturalIdentity: "mallorquin_heritage",
+  isIconicHeritage: true,
+  targetAudience: ["residentes", "turistas", "parejas", "alemanes", "britanicos"],
+  languagesSpoken: ["es", "ca", "en", "de"],
+  emergency24h: false,
+  inVillaService: false,
+  features: ["wifi", "air_conditioning", "credit_card"],
+  paymentMethods: ["credit_card", "cash", "apple_pay"],
+  amenities: ["wifi", "air_conditioning", "wheelchair_accessible", "parking_nearby"],
+  certifications: [
     "1 Estrella Michelin (Guía Michelin España)",
     "2 Soles Repsol (Guía Repsol)",
-    "Travellers' Choice TripAdvisor"
+    "Travellers' Choice TripAdvisor",
   ],
-  "menuUrl": "https://dinssantitaura.com/menus/",
-  "specialties": {
-    "es": [
+  menuUrl: "https://dinssantitaura.com/menus/",
+  specialties: {
+    es: [
       "Menú Degustación Raíces Mallorquinas",
       "Pescado de Lonja Balear a la Sal",
       "Lechona de Porc Negre Mallorquí Confitada",
       "Arroz Meloso de Gamba Roja de Sóller",
-      "Maridaje de Vinos de la D.O. Binissalem y Pla i Llevant"
+      "Maridaje de Vinos de la D.O. Binissalem y Pla i Llevant",
     ],
-    "en": [
+    en: [
       "Majorcan Heritage Tasting Menu",
       "Balearic Market Fresh Fish in Sea Salt",
       "Confit Porc Negre (Majorcan Native Black Pig)",
       "Creamy Rice with Sóller Red Prawns",
-      "Wine Pairing from Balearic D.O. Binissalem"
+      "Wine Pairing from Balearic D.O. Binissalem",
     ],
-    "ca": [
+    ca: [
       "Menú Degustació Arrels Mallorquines",
       "Peix de Llotja Balear a la Sal",
       "Porcella de Porc Negre Mallorquí Confitada",
       "Arròs Melós de Gamba Vermella de Sóller",
-      "Maridatge de Vins de D.O. Binissalem i Pla i Llevant"
-    ]
+      "Maridatge de Vins de D.O. Binissalem i Pla i Llevant",
+    ],
   },
-  "authorityScore": 98,
-  "pricing": {
-    "startingPrice": "Menú Degustación: 110€",
-    "depositRequired": "Reserva previa online garantizada con tarjeta",
-    "rateType": "tiered",
-    "notes": {
-      "es": "Experiencia de alta cocina mallorquina en formato menú degustación con maridaje opcional de vinos baleares y nacionales.",
-      "en": "Contemporary Majorcan fine dining tasting menu with optional Balearic and national wine pairing.",
-      "ca": "Experiència d'alta cuina mallorquina en format menú degustació amb maridatge opcional de vins."
-    }
+  authorityScore: 98,
+  pricing: {
+    startingPrice: "Menú Degustación: 110€",
+    depositRequired: "Reserva previa online garantizada con tarjeta",
+    rateType: "tiered",
+    notes: {
+      es: "Experiencia de alta cocina mallorquina en formato menú degustación con maridaje opcional de vinos baleares y nacionales.",
+      en: "Contemporary Majorcan fine dining tasting menu with optional Balearic and national wine pairing.",
+      ca: "Experiència d'alta cuina mallorquina en format menú degustació amb maridatge opcional de vins.",
+    },
   },
-  "teamMembers": [
+  teamMembers: [
     {
-      "name": "Santi Taura",
-      "role": {
-        "es": "Chef Propietario & Director Gastronómico",
-        "en": "Chef Owner & Gastronomic Director",
-        "ca": "Xef Propietari i Director Gastronòmic"
+      name: "Santi Taura",
+      role: {
+        es: "Chef Propietario & Director Gastronómico",
+        en: "Chef Owner & Gastronomic Director",
+        ca: "Xef Propietari i Director Gastronòmic",
       },
-      "specialty": "Recetario Histórico Mallorquín & Producto Local Balear",
-      "instagramHandle": "@santitaura"
-    }
+      specialty: "Recetario Histórico Mallorquín & Producto Local Balear",
+      instagramHandle: "@santitaura",
+    },
   ],
-  "awards": [
+  awards: [
     {
-      "title": "1 Estrella Michelin",
-      "issuer": "Guía Michelin España",
-      "year": 2024,
-      "category": "Alta Gastronomía",
-      "url": "https://guide.michelin.com/es/es/illes-balears/palma-de-mallorca/restaurante/dins-santi-taura"
+      title: "1 Estrella Michelin",
+      issuer: "Guía Michelin España",
+      year: 2024,
+      category: "Alta Gastronomía",
+      url: "https://guide.michelin.com/es/es/illes-balears/palma-de-mallorca/restaurante/dins-santi-taura",
     },
     {
-      "title": "2 Soles Repsol",
-      "issuer": "Guía Repsol",
-      "year": 2024,
-      "category": "Cocina con Identidad",
-      "url": "https://www.guiarepsol.com/es/fichas/restaurante/dins-santi-taura-188616/"
-    }
+      title: "2 Soles Repsol",
+      issuer: "Guía Repsol",
+      year: 2024,
+      category: "Cocina con Identidad",
+      url: "https://www.guiarepsol.com/es/fichas/restaurante/dins-santi-taura-188616/",
+    },
   ],
-  "faqs": [
+  faqs: [
     {
-      "question": {
-        "es": "¿Cómo se gestionan las reservas?",
-        "en": "How do reservations work?",
-        "ca": "Com es gestionen les reserves?"
+      question: {
+        es: "¿Cómo se gestionan las reservas?",
+        en: "How do reservations work?",
+        ca: "Com es gestionen les reserves?",
       },
-      "answer": {
-        "es": "Las reservas se realizan exclusivamente a través de la plataforma oficial online de dinssantitaura.com con antelación recomendada de varias semanas.",
-        "en": "Reservations are made exclusively via the official booking platform on dinssantitaura.com, recommended several weeks in advance.",
-        "ca": "Les reserves es fan exclusivament a través de la plataforma oficial de dinssantitaura.com."
-      }
+      answer: {
+        es: "Las reservas se realizan exclusivamente a través de la plataforma oficial online de dinssantitaura.com con antelación recomendada de varias semanas.",
+        en: "Reservations are made exclusively via the official booking platform on dinssantitaura.com, recommended several weeks in advance.",
+        ca: "Les reserves es fan exclusivament a través de la plataforma oficial de dinssantitaura.com.",
+      },
     },
     {
-      "question": {
-        "es": "¿Se adaptan los menús a intolerancias o alergias?",
-        "en": "Can menus be adapted for allergies or dietary restrictions?",
-        "ca": "S'adapten els menús a al·lèrgies o intoleràncies?"
+      question: {
+        es: "¿Se adaptan los menús a intolerancias o alergias?",
+        en: "Can menus be adapted for allergies or dietary restrictions?",
+        ca: "S'adapten els menús a al·lèrgies o intoleràncies?",
       },
-      "answer": {
-        "es": "Sí, siempre que se notifiquen con un mínimo de 48 horas de antelación al realizar la reserva.",
-        "en": "Yes, provided they are notified at least 48 hours in advance when booking.",
-        "ca": "Sí, sempre que s'avisi amb un mínim de 48 hores d'antelació en fer la reserva."
-      }
-    }
+      answer: {
+        es: "Sí, siempre que se notifiquen con un mínimo de 48 horas de antelación al realizar la reserva.",
+        en: "Yes, provided they are notified at least 48 hours in advance when booking.",
+        ca: "Sí, sempre que s'avisi amb un mínim de 48 hores d'antelació en fer la reserva.",
+      },
+    },
   ],
-  "foundedYear": 2019,
-  "founderName": "Santi Taura",
-  "founderStory": {
-    "es": "DINS Santi Taura nace de la pasión del chef Santi Taura por investigar, recuperar y reinterpretar el recetario histórico de las Islas Baleares, utilizando materias primas de productores locales y pesca del día.",
-    "en": "DINS Santi Taura was born from chef Santi Taura's passion for researching, preserving, and reinterpreting historical Balearic cuisine using local seasonal produce.",
-    "ca": "DINS Santi Taura neix de la passió del xef Santi Taura per recuperar i reinterpretar el receptari històric de Mallorca amb producte local."
+  foundedYear: 2019,
+  founderName: "Santi Taura",
+  founderStory: {
+    es: "DINS Santi Taura nace de la pasión del chef Santi Taura por investigar, recuperar y reinterpretar el recetario histórico de las Islas Baleares, utilizando materias primas de productores locales y pesca del día.",
+    en: "DINS Santi Taura was born from chef Santi Taura's passion for researching, preserving, and reinterpreting historical Balearic cuisine using local seasonal produce.",
+    ca: "DINS Santi Taura neix de la passió del xef Santi Taura per recuperar i reinterpretar el receptari històric de Mallorca amb producte local.",
   },
-  "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=DINS%20Santi%20Taura%20Palma%20Mallorca",
-  "appleMapsUrl": "https://maps.apple.com/?q=DINS%20Santi%20Taura%20Palma",
-  "bingMapsUrl": "https://www.bing.com/maps?q=DINS%20Santi%20Taura%20Palma",
-  "phone": "+34 971 67 77 70",
-  "whatsapp": "+34 680 50 48 82",
-  "email": "info@dinssantitaura.com",
-  "website": "https://dinssantitaura.com",
-  "tags": [
+  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=DINS%20Santi%20Taura%20Palma%20Mallorca",
+  appleMapsUrl: "https://maps.apple.com/?q=DINS%20Santi%20Taura%20Palma",
+  bingMapsUrl: "https://www.bing.com/maps?q=DINS%20Santi%20Taura%20Palma",
+  phone: "+34 971 67 77 70",
+  whatsapp: "+34 680 50 48 82",
+  email: "info@dinssantitaura.com",
+  website: "https://dinssantitaura.com",
+  tags: [
     "zona:palma",
     "zona:casco-antiguo",
     "product:lujo",
     "product:premium",
     "mod:cita-previa",
     "mod:en-local",
-    "temps:todo-el-ano"
+    "temps:todo-el-ano",
   ],
-  "shortDescription": {
-    "es": "Restaurante con 1 Estrella Michelin y 2 Soles Repsol en Sa Calatrava, liderado por el chef Santi Taura.",
-    "en": "1 Michelin Star & 2 Repsol Suns restaurant in Sa Calatrava, led by chef Santi Taura.",
-    "ca": "Restaurant amb 1 Estrella Michelin i 2 Sols Repsol a Sa Calatrava, liderat pel xef Santi Taura."
+  shortDescription: {
+    es: "Restaurante con 1 Estrella Michelin y 2 Soles Repsol en Sa Calatrava, liderado por el chef Santi Taura.",
+    en: "1 Michelin Star & 2 Repsol Suns restaurant in Sa Calatrava, led by chef Santi Taura.",
+    ca: "Restaurant amb 1 Estrella Michelin i 2 Sols Repsol a Sa Calatrava, liderat pel xef Santi Taura.",
   },
-  "fullDescription": {
-    "es": "DINS Santi Taura, galardonado con 1 Estrella Michelin y 2 Soles Repsol, está ubicado en el barrio histórico de Sa Calatrava (Hotel El Llorenç Parc de la Mar). El chef Santi Taura ofrece un viaje gastronómico a través de las raíces, recetas ancestrales y sabores auténticos de Mallorca con una técnica contemporánea impecable.",
-    "en": "DINS Santi Taura, awarded 1 Michelin Star and 2 Repsol Suns, is located in Palma's historic Sa Calatrava neighborhood. Chef Santi Taura delivers a culinary journey through traditional Majorcan heritage with modern precision.",
-    "ca": "DINS Santi Taura, guardonat amb 1 Estrella Michelin i 2 Sols Repsol, està situat al barri històric de Sa Calatrava. El xef Santi Taura ofereix un viatge gastronòmic a través de les arrels i receptes ancestrals de Mallorca."
+  fullDescription: {
+    es: "DINS Santi Taura, galardonado con 1 Estrella Michelin y 2 Soles Repsol, está ubicado en el barrio histórico de Sa Calatrava (Hotel El Llorenç Parc de la Mar). El chef Santi Taura ofrece un viaje gastronómico a través de las raíces, recetas ancestrales y sabores auténticos de Mallorca con una técnica contemporánea impecable.",
+    en: "DINS Santi Taura, awarded 1 Michelin Star and 2 Repsol Suns, is located in Palma's historic Sa Calatrava neighborhood. Chef Santi Taura delivers a culinary journey through traditional Majorcan heritage with modern precision.",
+    ca: "DINS Santi Taura, guardonat amb 1 Estrella Michelin i 2 Sols Repsol, està situat al barri històric de Sa Calatrava. El xef Santi Taura ofereix un viatge gastronòmic a través de les arrels i receptes ancestrals de Mallorca.",
   },
-  "highlights": {
-    "es": [
+  highlights: {
+    es: [
       "Distinguido con 1 Estrella Michelin y 2 Soles Repsol",
       "Cocina de autor basada en la historia y tradición balear",
       "Ubicación exclusiva en Sa Calatrava junto al Parc de la Mar",
-      "Carta de vinos con amplia selección de bodegas de Mallorca"
+      "Carta de vinos con amplia selección de bodegas de Mallorca",
     ],
-    "en": [
+    en: [
       "Awarded 1 Michelin Star and 2 Repsol Suns",
       "Signature cuisine rooted in Balearic culinary heritage",
       "Prime location in historic Sa Calatrava near Parc de la Mar",
-      "Curated wine list featuring top Majorcan vineyards"
+      "Curated wine list featuring top Majorcan vineyards",
     ],
-    "ca": [
+    ca: [
       "Distingit amb 1 Estrella Michelin i 2 Sols Repsol",
       "Cuina d'autor basada en la història i tradició balear",
       "Ubicació exclusiva a Sa Calatrava devora el Parc de la Mar",
-      "Carta de vins amb àmplia selecció de cellers de Mallorca"
-    ]
+      "Carta de vins amb àmplia selecció de cellers de Mallorca",
+    ],
   },
-  "servicesProvided": {
-    "es": [
+  servicesProvided: {
+    es: [
       "Menú Degustación Gastronómico DINS",
       "Maridaje de Vinos de Mallorca y Nacionales",
       "Servicio de Sumiller y Coctelería de Autor",
-      "Experiencia Gastronómica en Barra / Sala"
+      "Experiencia Gastronómica en Barra / Sala",
     ],
-    "en": [
+    en: [
       "DINS Gastronomic Tasting Menu",
       "Majorcan & National Wine Pairing",
       "Sommelier Service & Signature Cocktails",
-      "Chef Counter & Dining Room Experience"
+      "Chef Counter & Dining Room Experience",
     ],
-    "ca": [
+    ca: [
       "Menú Degustació Gastronòmic DINS",
       "Maridatge de Vins de Mallorca i Nacionals",
       "Servei de Sommelier i Cocteleria d'Autor",
-      "Experiència a la Barra / Sala"
-    ]
+      "Experiència a la Barra / Sala",
+    ],
   },
-  "image": "https://www.elllorenc.com/images/hotel-fachada.jpg",
-  "gallery": [
-    "https://www.elllorenc.com/images/hotel-fachada.jpg",
+  image: "https://www.elllorenc.com/images/hotel-fachada.jpg",
+  gallery: ["https://www.elllorenc.com/images/hotel-fachada.jpg"],
+  reputationBreakdown: {
+    googleMaps: {
+      rating: 4.8,
+      reviewCount: 460,
+      url: "https://www.google.com/maps/search/?api=1&query=DINS%20Santi%20Taura%20Palma%20Mallorca",
+    },
+    totalReviewsAggregated: 460,
+    overallWeightedRating: 4.8,
+  },
+  socialLinks: {
+    instagram: "https://www.instagram.com/dinssantitaura/",
+    facebook: "https://www.facebook.com/dinssantitaura/",
+  },
+  webDirectories: [
+    {
+      directoryName: "Guía Michelin España",
+      url: "https://guide.michelin.com/es/es/illes-balears/palma-de-mallorca/restaurante/dins-santi-taura",
+      indexed: true,
+    },
+    {
+      directoryName: "Guía Repsol",
+      url: "https://www.guiarepsol.com/es/fichas/restaurante/dins-santi-taura-188616/",
+      indexed: true,
+    },
   ],
-  "reputationBreakdown": {
-    "googleMaps": {
-      "rating": 4.8,
-      "reviewCount": 460,
-      "url": "https://www.google.com/maps/search/?api=1&query=DINS%20Santi%20Taura%20Palma%20Mallorca"
-    },
-    "totalReviewsAggregated": 460,
-    "overallWeightedRating": 4.8
+  schedule: "Mar - Sáb: 13:00 - 15:30 / 19:30 - 22:30",
+  lastVerifiedAt: "2026-08-25",
+  verificationStatus: "needs_manual_review",
+  confidenceScore: 76,
+  sourceCrossReference: {
+    webPhoneMatch: true,
+    mapsPhoneMatch: false,
+    addressInMallorca: true,
+    activeWeb200Ok: true,
+    socialMatchScore: 8,
   },
-  "socialLinks": {
-    "instagram": "https://www.instagram.com/dinssantitaura/",
-    "facebook": "https://www.facebook.com/dinssantitaura/"
-  },
-  "webDirectories": [
+  newsMentions: [
     {
-      "directoryName": "Guía Michelin España",
-      "url": "https://guide.michelin.com/es/es/illes-balears/palma-de-mallorca/restaurante/dins-santi-taura",
-      "indexed": true
+      source: "Diario de Mallorca",
+      title: "Noticias en Diario de Mallorca: DINS Santi Taura",
+      url: "https://www.google.com/search?q=site:diariodemallorca.es+DINS%20Santi%20Taura",
     },
     {
-      "directoryName": "Guía Repsol",
-      "url": "https://www.guiarepsol.com/es/fichas/restaurante/dins-santi-taura-188616/",
-      "indexed": true
-    }
+      source: "Última Hora Mallorca",
+      title: "Noticias en Última Hora Mallorca: DINS Santi Taura",
+      url: "https://www.google.com/search?q=site:ultimahora.es+DINS%20Santi%20Taura",
+    },
+    {
+      source: "Mallorca Magazin (Alemán)",
+      title: "Noticias en Mallorca Magazin (Alemán): DINS Santi Taura",
+      url: "https://www.google.com/search?q=site:mallorcamagazin.com+DINS%20Santi%20Taura",
+    },
   ],
-  "schedule": "Mar - Sáb: 13:00 - 15:30 / 19:30 - 22:30",
-  "lastVerifiedAt": "2026-08-25",
-  "verificationStatus": "needs_manual_review",
-  "confidenceScore": 76,
-  "sourceCrossReference": {
-    "webPhoneMatch": true,
-    "mapsPhoneMatch": false,
-    "addressInMallorca": true,
-    "activeWeb200Ok": true,
-    "socialMatchScore": 8
-  },
-  "newsMentions": [
-    {
-      "source": "Diario de Mallorca",
-      "title": "Noticias en Diario de Mallorca: DINS Santi Taura",
-      "url": "https://www.google.com/search?q=site:diariodemallorca.es+DINS%20Santi%20Taura"
-    },
-    {
-      "source": "Última Hora Mallorca",
-      "title": "Noticias en Última Hora Mallorca: DINS Santi Taura",
-      "url": "https://www.google.com/search?q=site:ultimahora.es+DINS%20Santi%20Taura"
-    },
-    {
-      "source": "Mallorca Magazin (Alemán)",
-      "title": "Noticias en Mallorca Magazin (Alemán): DINS Santi Taura",
-      "url": "https://www.google.com/search?q=site:mallorcamagazin.com+DINS%20Santi%20Taura"
-    }
-  ]
 };

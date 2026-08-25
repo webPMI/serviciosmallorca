@@ -54,7 +54,11 @@ export const mallorcaGlobalCharter: ServiceItem = {
   features: ["credit_card", "wifi", "insurance_included"],
   amenities: ["wifi", "valet_parking"],
   paymentMethods: ["credit_card", "cash", "bizum"],
-  certifications: ["Licencia de Navegación Balear Oficial", "Seguro Náutico Todo Riesgo", "Patrones Profesionales PPER"],
+  certifications: [
+    "Licencia de Navegación Balear Oficial",
+    "Seguro Náutico Todo Riesgo",
+    "Patrones Profesionales PPER",
+  ],
   pricing: {
     startingPrice: "Desde 450€ / día",
     depositRequired: "Fianza según eslora",
@@ -175,7 +179,8 @@ export const mallorcaGlobalCharter: ServiceItem = {
       date: "2025-07-14",
       platform: "google_maps",
       language: "en",
-      comment: "Incredible charter experience from Puerto Portals to Portals Vells. The yacht was pristine and the captain made the day unforgettable.",
+      comment:
+        "Incredible charter experience from Puerto Portals to Portals Vells. The yacht was pristine and the captain made the day unforgettable.",
       verifiedCustomer: true,
       isHighlight: true,
       quoteHighlight: "The yacht was pristine and the captain made the day unforgettable",
@@ -187,7 +192,8 @@ export const mallorcaGlobalCharter: ServiceItem = {
       date: "2025-08-02",
       platform: "google_maps",
       language: "es",
-      comment: "Organizamos una salida familiar en catamarán por la bahía. Trato exquisito, puntualidad británica y un catering delicioso a bordo.",
+      comment:
+        "Organizamos una salida familiar en catamarán por la bahía. Trato exquisito, puntualidad británica y un catering delicioso a bordo.",
       verifiedCustomer: true,
       isHighlight: true,
       quoteHighlight: "Trato exquisito, puntualidad y un catering delicioso a bordo",
@@ -228,7 +234,8 @@ export const mallorcaGlobalCharter: ServiceItem = {
       date: "2026-08-25",
       author: "curation_orchestrator",
       action: "initial_data_harvest",
-      details: "Minería de inteligencia multicanal, validación de amarre en Puerto Portals y cálculo de Confidence Score: 88%.",
+      details:
+        "Minería de inteligencia multicanal, validación de amarre en Puerto Portals y cálculo de Confidence Score: 88%.",
     },
   ],
   sourceCrossReference: {

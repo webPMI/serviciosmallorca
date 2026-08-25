@@ -7,9 +7,7 @@ describe("Conversion Tracking & Telemetry Engine", () => {
   });
 
   it("handles trackConversion safely with metadata", () => {
-    expect(() =>
-      trackConversion("el-camino-palma", "whatsapp_click", { source: "hero_button" })
-    ).not.toThrow();
+    expect(() => trackConversion("el-camino-palma", "whatsapp_click", { source: "hero_button" })).not.toThrow();
   });
 
   it("initializes automatic click tracking safely", () => {

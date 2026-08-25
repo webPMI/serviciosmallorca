@@ -11,6 +11,7 @@ import { getActiveCategories } from "../../data/categories";
 import { getFeaturedServices, SERVICES } from "../../data/services";
 import { getFeaturedPosts } from "../../data/posts";
 import { getLocaleFromUrl, loadTranslations, getLangPrefix, type Locale } from "../../i18n";
+import { generateHomepageJsonLd } from "../../lib/jsonLdGenerator";
 
 export const prerender = false;
 
@@ -21,12 +22,16 @@ const prefix = getLangPrefix(locale);
 const activeCategories = getActiveCategories(SERVICES);
 const featuredServices = getFeaturedServices();
 const featuredPosts = getFeaturedPosts();
+
+const canonicalUrl = `https://serviciosmallorca.com${prefix}`;
+const homepageJsonLd = generateHomepageJsonLd(locale, canonicalUrl);
 ---
 
 <BaseLayout
   title={`${translations["site.title"]} - ${translations["site.tagline"]}`}
   lang={locale}
   description={translations["home.subtitle"]}
+  jsonLd={homepageJsonLd}
 >
   <Navbar currentLocale={locale} translations={translations} getLangPrefix={getLangPrefix} />
 

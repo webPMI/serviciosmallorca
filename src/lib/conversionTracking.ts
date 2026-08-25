@@ -23,7 +23,7 @@ export interface ConversionEventPayload {
 export function trackConversion(
   serviceId: string,
   eventType: ConversionEventType,
-  metadata: Record<string, string | number | boolean> = {}
+  metadata: Record<string, string | number | boolean> = {},
 ): void {
   if (typeof window === "undefined" || !serviceId) return;
 
@@ -53,7 +53,7 @@ export function trackConversion(
         // Silencioso en cliente para evitar interrupciones
       });
     }
-  } catch (err) {
+  } catch {
     // Graceful fallback
   }
 }

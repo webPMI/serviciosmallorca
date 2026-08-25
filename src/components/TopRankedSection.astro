@@ -18,9 +18,23 @@ const rankedItems = mode === "weekly" ? getWeeklyCuratedTops() : getTopRankedSer
 <section class="top-ranked-section" aria-label="Rankings Top Mallorca">
   <div class="section-header-row">
     <div>
-      <span class="top-section-badge">{mode === "weekly" ? "✨ Selección de la Semana" : "👑 Rankings de Excelencia"}</span>
+      <span class="top-section-badge"
+        >{mode === "weekly" ? "✨ Selección de la Semana" : "👑 Rankings de Excelencia"}</span
+      >
       <h2 class="section-title">
-        {mode === "weekly" ? (locale === "ca" ? "Top 3 Recomanat d'Aquesta Setmana" : locale === "en" ? "Top 3 Recommended This Week" : "Top 3 Recomendado de Esta Semana") : (locale === "ca" ? "Líders per Confiança i Ressenyes" : locale === "en" ? "Top Rated Services in Mallorca" : "Los Negocios Mejor Valorados de Mallorca")}
+        {
+          mode === "weekly"
+            ? locale === "ca"
+              ? "Top 3 Recomanat d'Aquesta Setmana"
+              : locale === "en"
+                ? "Top 3 Recommended This Week"
+                : "Top 3 Recomendado de Esta Semana"
+            : locale === "ca"
+              ? "Líders per Confiança i Ressenyes"
+              : locale === "en"
+                ? "Top Rated Services in Mallorca"
+                : "Los Negocios Mejor Valorados de Mallorca"
+        }
       </h2>
     </div>
     <span class="top-engine-tag">⚡ Top Engine AI</span>
@@ -31,13 +45,7 @@ const rankedItems = mode === "weekly" ? getWeeklyCuratedTops() : getTopRankedSer
       rankedItems.map(({ service, rank, score, badgeLabel, reasons }) => (
         <article class="card top-service-card card-glass">
           <div class="top-card-media">
-            <img
-              src={service.image}
-              alt={service.name}
-              class="top-card-img"
-              loading="lazy"
-              decoding="async"
-            />
+            <img src={service.image} alt={service.name} class="top-card-img" loading="lazy" decoding="async" />
             <span class="top-rank-badge">{badgeLabel}</span>
             <span class="top-score-badge">Score: {score}</span>
           </div>
@@ -47,8 +55,8 @@ const rankedItems = mode === "weekly" ? getWeeklyCuratedTops() : getTopRankedSer
               <span class="badge badge-accent">📍 {service.zone.replace(/-/g, " ")}</span>
               <div class="top-rating-chip">
                 <span class="star-icon">⭐</span>
-                <strong>{service.rating.toFixed(1)}</strong>
-                <span class="review-sub">({service.reviewCount})</span>
+                <strong>{service.rating ? service.rating.toFixed(1) : "N/A"}</strong>
+                <span class="review-sub">({service.reviewCount ?? "N/A"})</span>
               </div>
             </div>
 
@@ -127,7 +135,9 @@ const rankedItems = mode === "weekly" ? getWeeklyCuratedTops() : getTopRankedSer
     padding: 0;
     overflow: hidden;
     border-radius: var(--border-radius-lg);
-    transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+    transition:
+      transform var(--transition-smooth),
+      box-shadow var(--transition-smooth);
   }
 
   .top-service-card:hover {

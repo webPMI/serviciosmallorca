@@ -390,7 +390,7 @@ const { translations } = Astro.props;
 
       alert("✅ Datos del negocio actualizados correctamente.");
       if (modal) modal.style.display = "none";
-    } catch (err) {
+    } catch {
       alert("❌ Error al guardar las modificaciones.");
     } finally {
       if (saveBtn) {

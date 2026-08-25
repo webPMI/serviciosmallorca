@@ -23,7 +23,7 @@ export const POST: APIRoute = async ({ request }) => {
         "Cache-Control": "no-store",
       },
     });
-  } catch (error) {
+  } catch {
     return new Response(JSON.stringify({ error: "Invalid JSON body" }), {
       status: 400,
       headers: { "Content-Type": "application/json" },

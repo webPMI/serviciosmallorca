@@ -7,6 +7,4 @@ export { duranPalma };
  * Catálogo Sectorial: Reformas, Materiales & Construcción en Mallorca.
  * Negocios 100% reales y verificados bajo la regla estricta Zero Fake Data (GR-11).
  */
-export const REFORMAS_SERVICES: ServiceItem[] = [
-  duranPalma,
-];
+export const REFORMAS_SERVICES: ServiceItem[] = [duranPalma];

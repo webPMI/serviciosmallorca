@@ -142,12 +142,7 @@ export const trablisaSeguridad: ServiceItem = {
       ca: "Estudi de seguretat gratuït i sense compromís a qualsevol punt de Mallorca.",
     },
   },
-  amenities: [
-    "parking_nearby",
-    "wheelchair_accessible",
-    "wifi",
-    "air_conditioning",
-  ],
+  amenities: ["parking_nearby", "wheelchair_accessible", "wifi", "air_conditioning"],
   features: ["wifi", "air_conditioning", "credit_card"],
   paymentMethods: ["credit_card"],
   certifications: [
@@ -165,12 +160,12 @@ export const trablisaSeguridad: ServiceItem = {
     {
       name: "Dirección Operativa Trablisa",
       role: {
-        "es": "Directores de Seguridad & CRA",
-        "en": "Security Operations Directors",
-        "ca": "Directors de Seguretat i CRA"
+        es: "Directores de Seguridad & CRA",
+        en: "Security Operations Directors",
+        ca: "Directors de Seguretat i CRA",
       },
-      specialty: "Protección Residencial y Perimetral Balear"
-    }
+      specialty: "Protección Residencial y Perimetral Balear",
+    },
   ],
   reputationBreakdown: {
     googleMaps: {
@@ -189,7 +184,8 @@ export const trablisaSeguridad: ServiceItem = {
       date: "2025-06-25",
       platform: "google_maps",
       language: "ca",
-      comment: "Tenim l'alarma de la casa i del negoci amb Trablisa des de fa més de 10 anys. La resposta de la central receptora és immediata.",
+      comment:
+        "Tenim l'alarma de la casa i del negoci amb Trablisa des de fa més de 10 anys. La resposta de la central receptora és immediata.",
       verifiedCustomer: true,
     },
     {
@@ -199,7 +195,8 @@ export const trablisaSeguridad: ServiceItem = {
       date: "2025-04-14",
       platform: "google_maps",
       language: "en",
-      comment: "Excellent smart alarm setup for our villa in Son Vida. The mobile app and quick response patrol give absolute peace of mind.",
+      comment:
+        "Excellent smart alarm setup for our villa in Son Vida. The mobile app and quick response patrol give absolute peace of mind.",
       verifiedCustomer: true,
     },
   ],

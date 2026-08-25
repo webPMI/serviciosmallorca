@@ -221,23 +221,26 @@ SI ALGÚN PASO ES ❌ → REJECT with specific feedback
 
 **Dominio:** `src/data/services/`, `scripts/business-intelligence-lookup.ts`, `docs/AGENT_CURATION_SOP.md`
 
-| ✅ Permitido                                                          | ❌ Prohibido                                                |
-| --------------------------------------------------------------------- | ----------------------------------------------------------- |
-| Ejecutar `scripts/business-intelligence-lookup.ts`                    | Inventar datos o ingresar negocios falsos (Violación GR-11) |
-| Añadir o editar negocios en `src/data/services/<sector>/<slug>.ts`    | Escribir en un archivo monolítico gigante                   |
-| Extraer multimedia real y redes sociales oficiales                    | Quemar tokens de IA haciendo scraping manual libre          |
-| Vincular categorías y zonas de los catálogos cerrados                 | Usar categorías o tags inexistentes en la taxonomía         |
-| Aplicar el Protocolo de 4 Pasos Atómicos Secuenciales                 | Saltarse fases de auditoría o recitado de reglas            |
-| Actualizar `docs/AGENT_CURATION_SOP.md`                               | Omitir `npm run validate:taxonomy` o `npm test`             |
+| ✅ Permitido                                                       | ❌ Prohibido                                                |
+| ------------------------------------------------------------------ | ----------------------------------------------------------- |
+| Ejecutar `scripts/business-intelligence-lookup.ts`                 | Inventar datos o ingresar negocios falsos (Violación GR-11) |
+| Añadir o editar negocios en `src/data/services/<sector>/<slug>.ts` | Escribir en un archivo monolítico gigante                   |
+| Extraer multimedia real y redes sociales oficiales                 | Quemar tokens de IA haciendo scraping manual libre          |
+| Vincular categorías y zonas de los catálogos cerrados              | Usar categorías o tags inexistentes en la taxonomía         |
+| Aplicar el Protocolo de 4 Pasos Atómicos Secuenciales              | Saltarse fases de auditoría o recitado de reglas            |
+| Actualizar `docs/AGENT_CURATION_SOP.md`                            | Omitir `npm run validate:taxonomy` o `npm test`             |
 
 #### 🛡️ Protocolo de Verificación de 4 Pasos Atómicos (Cero Omisión)
+
 1. **Fase 1: Recolección (Harvester & Scraping):** Minería obligatoria con `scripts/business-intelligence-lookup.ts`.
 2. **Fase 2: Auditoría (Triple Verificación):** Cruce telefónico (Web vs Maps), coordenadas en Mallorca y cálculo de Confidence Score ($\ge 80\%$).
 3. **Fase 3: Enriquecimiento (Los 5 Pilares):** Social proof, Storytelling trilingüe, Prensa/Hemeroteca balear, Canales de conversión y Local SEO.
 4. **Fase 4: Registro & Certificación:** Escritura del módulo en `src/data/services/<sector>/<slug>.ts` y suite de validación.
 
 #### 🧠 Instrucción de Persistencia de Reglas (Chain of Thought Previo)
+
 Antes de cualquier escritura, el agente debe explicitar el cumplimiento de:
+
 - `GR-11`: Zero Fake Data (fuentes primarias acreditadas)
 - `GR-12`: Fidelidad Google Maps (coordenadas reales en Mallorca)
 - `GR-04`: Redacción trilingüe completa (`es`, `en`, `ca`)

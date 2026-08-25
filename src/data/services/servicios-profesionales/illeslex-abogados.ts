@@ -40,16 +40,15 @@ export const illeslexAbogados: ServiceItem = {
   emergency24h: false,
   inVillaService: false,
   image: "https://illeslex.com/imagenes/paginas/foto-quienes-homeezu.jpg",
-  images: [
-    "https://illeslex.com/imagenes/paginas/foto-quienes-homeezu.jpg",
-  ],
-  gallery: [
-    "https://illeslex.com/imagenes/paginas/foto-quienes-homeezu.jpg",
-  ],
+  images: ["https://illeslex.com/imagenes/paginas/foto-quienes-homeezu.jpg"],
+  gallery: ["https://illeslex.com/imagenes/paginas/foto-quienes-homeezu.jpg"],
   features: ["wifi", "air_conditioning", "credit_card"],
   amenities: ["wifi", "air_conditioning"],
   paymentMethods: ["credit_card", "bank_transfer"],
-  certifications: ["Ilustre Colegio de Abogados de Baleares (ICAIB)", "Asociación Española de Asesores Fiscales (AEDAF)"],
+  certifications: [
+    "Ilustre Colegio de Abogados de Baleares (ICAIB)",
+    "Asociación Española de Asesores Fiscales (AEDAF)",
+  ],
   pricing: {
     startingPrice: "Primera consulta y estudio de viabilidad disponible",
     rateType: "custom_quote",
@@ -180,7 +179,8 @@ export const illeslexAbogados: ServiceItem = {
       date: "2025-04-10",
       platform: "google_maps",
       language: "de",
-      comment: "Hervorragende rechtliche Begleitung beim Hauskauf auf Mallorca. Sehr gründliche Prüfung der Baugenehmigungen und exzellente deutsche Beratung.",
+      comment:
+        "Hervorragende rechtliche Begleitung beim Hauskauf auf Mallorca. Sehr gründliche Prüfung der Baugenehmigungen und exzellente deutsche Beratung.",
       verifiedCustomer: true,
       isHighlight: true,
       quoteHighlight: "Sehr gründliche Prüfung der Baugenehmigungen und exzellente Beratung",
@@ -192,7 +192,8 @@ export const illeslexAbogados: ServiceItem = {
       date: "2025-06-22",
       platform: "google_maps",
       language: "ca",
-      comment: "Molt professionals i resolutius en la tramitació d'una herència complexa a Palma. Tracte proper, clar i de total confiança.",
+      comment:
+        "Molt professionals i resolutius en la tramitació d'una herència complexa a Palma. Tracte proper, clar i de total confiança.",
       verifiedCustomer: true,
       isHighlight: true,
       quoteHighlight: "Molt professionals i resolutius en tramitacions a Palma",

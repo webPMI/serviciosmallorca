@@ -130,7 +130,8 @@ export const adrianQuetglas: ServiceItem = {
       date: "2026-07-02",
       platform: "google_maps",
       language: "es",
-      comment: "Experiencia de estrella Michelin insuperable en relación calidad-precio. El menú de mediodía es una auténtica joya en Palma.",
+      comment:
+        "Experiencia de estrella Michelin insuperable en relación calidad-precio. El menú de mediodía es una auténtica joya en Palma.",
       verifiedCustomer: true,
     },
     {
@@ -140,7 +141,8 @@ export const adrianQuetglas: ServiceItem = {
       date: "2026-05-18",
       platform: "tripadvisor",
       language: "en",
-      comment: "Fabulous 7-course tasting menu with masterfully paired wines. The borscht interpretation was unforgettable.",
+      comment:
+        "Fabulous 7-course tasting menu with masterfully paired wines. The borscht interpretation was unforgettable.",
       verifiedCustomer: true,
     },
   ],

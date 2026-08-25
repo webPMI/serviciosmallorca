@@ -1,131 +1,109 @@
 import type { ServiceItem } from "../types.ts";
 
 export const boxTattooPiercing: ServiceItem = {
-  "id": "box-tattoo-piercing",
-  "slug": "box-tattoo-piercing",
-  "name": "Box Tattoo Piercing Palma",
-  "category": "arte-tatuajes",
-  "secondaryCategories": [],
-  "zone": "palma",
-  "address": "Carrer de Jaume II, 12, 07001 Palma, Illes Balears",
-  "coordinates": {
-    "lat": 39.5701,
-    "lng": 2.6515
+  id: "box-tattoo-piercing",
+  slug: "box-tattoo-piercing",
+  name: "Box Tattoo Piercing Palma",
+  category: "arte-tatuajes",
+  secondaryCategories: [],
+  zone: "palma",
+  address: "Carrer de Jaume II, 12, 07001 Palma, Illes Balears",
+  coordinates: {
+    lat: 39.5701,
+    lng: 2.6515,
   },
-  "rating": 4.8,
-  "reviewCount": 190,
-  "priceRange": "€€",
-  "verified": true,
-  "featured": false,
-  "status": "open",
-  "seasonality": "year_round",
-  "culturalIdentity": "mallorquin_heritage",
-  "targetAudience": [
-    "residentes",
-    "turistas",
-    "familias",
-    "alemanes"
-  ],
-  "languagesSpoken": [
-    "es",
-    "en",
-    "ca",
-    "de"
-  ],
-  "emergency24h": false,
-  "inVillaService": false,
-  "features": [
-    "wifi",
-    "air_conditioning",
-    "credit_card"
-  ],
-  "paymentMethods": [
-    "credit_card",
-    "cash",
-    "bizum",
-    "apple_pay"
-  ],
-  "amenities": [
-    "wifi",
-    "air_conditioning",
-    "wheelchair_accessible"
-  ],
-  "certifications": [
+  rating: 4.8,
+  reviewCount: 190,
+  priceRange: "€€",
+  verified: true,
+  featured: false,
+  status: "open",
+  seasonality: "year_round",
+  culturalIdentity: "mallorquin_heritage",
+  targetAudience: ["residentes", "turistas", "familias", "alemanes"],
+  languagesSpoken: ["es", "en", "ca", "de"],
+  emergency24h: false,
+  inVillaService: false,
+  features: ["wifi", "air_conditioning", "credit_card"],
+  paymentMethods: ["credit_card", "cash", "bizum", "apple_pay"],
+  amenities: ["wifi", "air_conditioning", "wheelchair_accessible"],
+  certifications: [
     "Higiénico Sanitario Oficial del Govern Balear",
     "Acero Quirúrgico 316L y Titanio Médico",
-    "Autorización Sanitaria Municipal"
+    "Autorización Sanitaria Municipal",
   ],
-  "pricing": {
-    "startingPrice": "Desde 50€",
-    "rateType": "custom_quote",
-    "notes": {
-      "es": "Asesoramiento presencial y presupuesto inmediato en el centro comercial de Palma.",
-      "en": "Walk-in consultations and instant quotes in downtown Palma.",
-      "ca": "Assessorament presencial i pressupost al moment al carrer Jaume II."
-    }
+  pricing: {
+    startingPrice: "Desde 50€",
+    rateType: "custom_quote",
+    notes: {
+      es: "Asesoramiento presencial y presupuesto inmediato en el centro comercial de Palma.",
+      en: "Walk-in consultations and instant quotes in downtown Palma.",
+      ca: "Assessorament presencial i pressupost al moment al carrer Jaume II.",
+    },
   },
-  "teamMembers": [
+  teamMembers: [
     {
-      "name": "Equipo Box Tattoo Palma",
-      "role": {
-        "es": "Tatuadores & Anilladores Profesionales",
-        "en": "Professional Tattoo Artists & Piercers",
-        "ca": "Tatuadors i Anelladors Professionals"
+      name: "Equipo Box Tattoo Palma",
+      role: {
+        es: "Tatuadores & Anilladores Profesionales",
+        en: "Professional Tattoo Artists & Piercers",
+        ca: "Tatuadors i Anelladors Professionals",
       },
-      "specialty": "Cover-ups Complejos, Tradicional Americano & Piercing Anatómico",
-      "instagramHandle": "@boxtattoopiercing"
-    }
+      specialty: "Cover-ups Complejos, Tradicional Americano & Piercing Anatómico",
+      instagramHandle: "@boxtattoopiercing",
+    },
   ],
-  "awards": [
+  awards: [
     {
-      "title": "Reconocimiento a la Trayectoria en Cover-ups",
-      "issuer": "Gremio de Tatuadores de Baleares",
-      "year": 2023,
-      "url": "https://www.google.com/search?q=Gremio+Tatuadores+Baleares+Box+Tattoo+Palma"
-    }
+      title: "Reconocimiento a la Trayectoria en Cover-ups",
+      issuer: "Gremio de Tatuadores de Baleares",
+      year: 2023,
+      url: "https://www.google.com/search?q=Gremio+Tatuadores+Baleares+Box+Tattoo+Palma",
+    },
   ],
-  "pressMentions": [
+  pressMentions: [
     {
-      "mediaName": "Última Hora Mallorca",
-      "title": "El auge del tatuaje tradicional y los piercings de precisión en el centro peatonal de Palma",
-      "date": "2024-03-22",
-      "quote": "Box Tattoo destaca por su ubicación estratégica en Carrer Jaume II y su maestría en rediseño de tatuajes antiguos."
-    }
+      mediaName: "Última Hora Mallorca",
+      title: "El auge del tatuaje tradicional y los piercings de precisión en el centro peatonal de Palma",
+      date: "2024-03-22",
+      quote:
+        "Box Tattoo destaca por su ubicación estratégica en Carrer Jaume II y su maestría en rediseño de tatuajes antiguos.",
+    },
   ],
-  "faqs": [
+  faqs: [
     {
-      "question": {
-        "es": "¿Realizáis coberturas de tatuajes antiguos (Cover-ups)?",
-        "en": "Do you perform cover-ups on old tattoos?",
-        "ca": "Feu cover-ups de tatuatges antics?"
+      question: {
+        es: "¿Realizáis coberturas de tatuajes antiguos (Cover-ups)?",
+        en: "Do you perform cover-ups on old tattoos?",
+        ca: "Feu cover-ups de tatuatges antics?",
       },
-      "answer": {
-        "es": "Sí, somos especialistas en rediseño y cobertura de tatuajes antiguos, borrosos o no deseados. Analizamos el tono de la tinta previa para diseñar una pieza superior que cubra al 100%.",
-        "en": "Yes, we specialize in redesigning and covering old, faded, or unwanted tattoos with strategic shading and custom geometry.",
-        "ca": "Sí, som especialistes en redisseny i cobertura de tatuatges antics amb un estudi de contrast i tons."
-      }
+      answer: {
+        es: "Sí, somos especialistas en rediseño y cobertura de tatuajes antiguos, borrosos o no deseados. Analizamos el tono de la tinta previa para diseñar una pieza superior que cubra al 100%.",
+        en: "Yes, we specialize in redesigning and covering old, faded, or unwanted tattoos with strategic shading and custom geometry.",
+        ca: "Sí, som especialistes en redisseny i cobertura de tatuatges antics amb un estudi de contrast i tons.",
+      },
     },
     {
-      "question": {
-        "es": "¿Hacéis piercings en el momento sin cita previa?",
-        "en": "Do you do walk-in piercings without appointment?",
-        "ca": "Feu pírcings al moment sense cita prèvia?"
+      question: {
+        es: "¿Hacéis piercings en el momento sin cita previa?",
+        en: "Do you do walk-in piercings without appointment?",
+        ca: "Feu pírcings al moment sense cita prèvia?",
       },
-      "answer": {
-        "es": "Sí, disponemos de servicio walk-in para todo tipo de perforaciones corporales y faciales con material esterilizado de grado médico.",
-        "en": "Yes, walk-in piercings are available daily with medical-grade sterilized jewelry.",
-        "ca": "Sí, disposem de servei walk-in per a perforacions amb material esterilitzat."
-      }
-    }
+      answer: {
+        es: "Sí, disponemos de servicio walk-in para todo tipo de perforaciones corporales y faciales con material esterilizado de grado médico.",
+        en: "Yes, walk-in piercings are available daily with medical-grade sterilized jewelry.",
+        ca: "Sí, disposem de servei walk-in per a perforacions amb material esterilitzat.",
+      },
+    },
   ],
-  "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Box%20Tattoo%20Piercing%20Jaume%20II%20Palma",
-  "appleMapsUrl": "https://maps.apple.com/?q=Box%20Tattoo%20Piercing%20Palma",
-  "bingMapsUrl": "https://www.bing.com/maps?q=Box%20Tattoo%20Piercing%20Palma",
-  "phone": "+34 656 68 57 82",
-  "whatsapp": "+34 656 68 57 82",
-  "email": "info@boxtattoopiercing.com",
-  "website": "https://boxtattoopiercing.com",
-  "tags": [
+  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Box%20Tattoo%20Piercing%20Jaume%20II%20Palma",
+  appleMapsUrl: "https://maps.apple.com/?q=Box%20Tattoo%20Piercing%20Palma",
+  bingMapsUrl: "https://www.bing.com/maps?q=Box%20Tattoo%20Piercing%20Palma",
+  phone: "+34 656 68 57 82",
+  whatsapp: "+34 656 68 57 82",
+  email: "info@boxtattoopiercing.com",
+  website: "https://boxtattoopiercing.com",
+  tags: [
     "zona:palma",
     "zona:palma-centro",
     "product:piercing-titanio",
@@ -133,179 +111,180 @@ export const boxTattooPiercing: ServiceItem = {
     "mod:walk-in",
     "mod:cita-previa",
     "mod:en-local",
-    "temps:todo-el-ano"
+    "temps:todo-el-ano",
   ],
-  "shortDescription": {
-    "es": "Estudio céntrico en Carrer Jaume II especializado en tatuajes personalizados, cover-ups y piercings.",
-    "en": "Downtown studio on Carrer Jaume II specializing in custom tattoos, cover-ups, and piercings.",
-    "ca": "Estudi cèntric al Carrer Jaume II especialitzat en tatuatges personalitzats, cover-ups i pírcings."
+  shortDescription: {
+    es: "Estudio céntrico en Carrer Jaume II especializado en tatuajes personalizados, cover-ups y piercings.",
+    en: "Downtown studio on Carrer Jaume II specializing in custom tattoos, cover-ups, and piercings.",
+    ca: "Estudi cèntric al Carrer Jaume II especialitzat en tatuatges personalitzats, cover-ups i pírcings.",
   },
-  "fullDescription": {
-    "es": "Box Tattoo Piercing está situado en el eje peatonal de Carrer de Jaume II en Palma. Ofrecen asesoramiento técnico integral para coberturas complejas de tatuajes antiguos, estilos tradicionales y perforaciones corporales higiénicas con amplia variedad de joyería quirúrgica.",
-    "en": "Box Tattoo Piercing is located on Palma's historic pedestrian street Carrer Jaume II. Offering full expert advice for complex cover-ups, bold traditional ink, and sanitary body piercings with a broad selection of surgical jewelry.",
-    "ca": "Box Tattoo Piercing està situat al carrer Jaume II de Palma. Ofereixen assessorament per a cobertures complexes, tatuatges tradicionals i perforacions higièniques amb joieria quirúrgica."
+  fullDescription: {
+    es: "Box Tattoo Piercing está situado en el eje peatonal de Carrer de Jaume II en Palma. Ofrecen asesoramiento técnico integral para coberturas complejas de tatuajes antiguos, estilos tradicionales y perforaciones corporales higiénicas con amplia variedad de joyería quirúrgica.",
+    en: "Box Tattoo Piercing is located on Palma's historic pedestrian street Carrer Jaume II. Offering full expert advice for complex cover-ups, bold traditional ink, and sanitary body piercings with a broad selection of surgical jewelry.",
+    ca: "Box Tattoo Piercing està situat al carrer Jaume II de Palma. Ofereixen assessorament per a cobertures complexes, tatuatges tradicionals i perforacions higièniques amb joieria quirúrgica.",
   },
-  "highlights": {
-    "es": [
+  highlights: {
+    es: [
       "Asesoramiento y presupuesto presencial sin compromiso",
       "Ubicación privilegiada en la calle comercial peatonal Jaume II",
       "Especialistas acreditados en cover-ups complejos",
-      "Perforaciones con material quirúrgico y titanio esterilizado"
+      "Perforaciones con material quirúrgico y titanio esterilizado",
     ],
-    "en": [
+    en: [
       "Free upfront consultations with no obligation",
       "Prime location on pedestrian shopping street Jaume II",
       "Certified specialists in complex tattoo cover-ups",
-      "Body piercings performed with surgical-grade sterilized tools"
+      "Body piercings performed with surgical-grade sterilized tools",
     ],
-    "ca": [
+    ca: [
       "Assessorament i pressupost presencial sense compromís",
       "Ubicació privilegiada al carrer comercial Jaume II",
       "Especialistes acreditats en cover-ups",
-      "Perforacions amb material quirúrgic i titani esterilitzat"
-    ]
+      "Perforacions amb material quirúrgic i titani esterilitzat",
+    ],
   },
-  "servicesProvided": {
-    "es": [
+  servicesProvided: {
+    es: [
       "Cover-Up & Cobertura de Tatuajes Antiguos",
       "Piercings Anatómicos & Faciales",
       "Tatuajes Fine Line & Lettering",
       "Tradicional Americano & Color",
-      "Cambio & Venta de Joyería Quirúrgica"
+      "Cambio & Venta de Joyería Quirúrgica",
     ],
-    "en": [
+    en: [
       "Cover-Up & Old Tattoo Redesign",
       "Anatomical & Facial Piercing",
       "Fine Line & Lettering",
       "Traditional American & Color Tattoo",
-      "Surgical Jewelry Replacement & Sales"
+      "Surgical Jewelry Replacement & Sales",
     ],
-    "ca": [
+    ca: [
       "Cover-Up i Cobertura de Tatuatges",
       "Pírcings Anatòmics i Facials",
       "Fine Line i Lettering",
       "Tradicional Americà i Color",
-      "Canvi i Venda de Joieria Quirúrgica"
-    ]
+      "Canvi i Venda de Joieria Quirúrgica",
+    ],
   },
-  "image": "https://i.imgur.com/wnba2lT.jpeg",
-  "gallery": [
+  image: "https://i.imgur.com/wnba2lT.jpeg",
+  gallery: [
     "https://i.imgur.com/wnba2lT.jpeg",
     "https://i.imgur.com/aS7eca7.jpeg",
-    "https://cdn.tatspark.com/images/Watercolor-floral-tattoo-design-for-women-on-forearm-and-hand-7647ceceeb_thumbnail.webp"
+    "https://cdn.tatspark.com/images/Watercolor-floral-tattoo-design-for-women-on-forearm-and-hand-7647ceceeb_thumbnail.webp",
   ],
-  "reputationBreakdown": {
-    "googleMaps": {
-      "rating": 4.8,
-      "reviewCount": 190,
-      "url": "https://www.google.com/maps/search/?api=1&query=Box%20Tattoo%20Piercing%20Jaume%20II%20Palma"
+  reputationBreakdown: {
+    googleMaps: {
+      rating: 4.8,
+      reviewCount: 190,
+      url: "https://www.google.com/maps/search/?api=1&query=Box%20Tattoo%20Piercing%20Jaume%20II%20Palma",
     },
-    "bingMaps": {
-      "rating": 4.8,
-      "reviewCount": 18,
-      "url": "https://www.bing.com/maps?q=Box%20Tattoo%20Piercing%20Palma"
+    bingMaps: {
+      rating: 4.8,
+      reviewCount: 18,
+      url: "https://www.bing.com/maps?q=Box%20Tattoo%20Piercing%20Palma",
     },
-    "tripadvisor": {
-      "rating": 4.8,
-      "reviewCount": 15,
-      "url": "https://www.google.com/search?q=site:tripadvisor.es+Box+Tattoo+Piercing+Palma"
+    tripadvisor: {
+      rating: 4.8,
+      reviewCount: 15,
+      url: "https://www.google.com/search?q=site:tripadvisor.es+Box+Tattoo+Piercing+Palma",
     },
-    "totalReviewsAggregated": 223,
-    "overallWeightedRating": 4.8
+    totalReviewsAggregated: 223,
+    overallWeightedRating: 4.8,
   },
-  "reviews": [
+  reviews: [
     {
-      "id": "box-rev-1",
-      "authorName": "Antònia Font",
-      "rating": 5,
-      "date": "2025-10-18",
-      "platform": "google_maps",
-      "language": "ca",
-      "comment": "Molt bon tracte i màxima professionalitat al carrer Jaume II. Em vaig fer un pírcing i tot impecable.",
-      "verifiedCustomer": true
+      id: "box-rev-1",
+      authorName: "Antònia Font",
+      rating: 5,
+      date: "2025-10-18",
+      platform: "google_maps",
+      language: "ca",
+      comment: "Molt bon tracte i màxima professionalitat al carrer Jaume II. Em vaig fer un pírcing i tot impecable.",
+      verifiedCustomer: true,
     },
     {
-      "id": "box-rev-2",
-      "authorName": "David Muñoz",
-      "rating": 5,
-      "date": "2025-08-04",
-      "platform": "google_maps",
-      "language": "es",
-      "comment": "Me hicieron un cover-up de un tatuaje antiguo y el resultado superó todas mis expectativas. 100% recomendable.",
-      "verifiedCustomer": true
+      id: "box-rev-2",
+      authorName: "David Muñoz",
+      rating: 5,
+      date: "2025-08-04",
+      platform: "google_maps",
+      language: "es",
+      comment:
+        "Me hicieron un cover-up de un tatuaje antiguo y el resultado superó todas mis expectativas. 100% recomendable.",
+      verifiedCustomer: true,
     },
     {
-      "id": "box-rev-3",
-      "authorName": "Hannah Becker",
-      "rating": 5,
-      "date": "2025-06-19",
-      "platform": "tripadvisor",
-      "language": "de",
-      "comment": "Tolles Studio mitten in Palma. Schneller Walk-in Piercing Service und sehr freundliches Team.",
-      "verifiedCustomer": true
-    }
+      id: "box-rev-3",
+      authorName: "Hannah Becker",
+      rating: 5,
+      date: "2025-06-19",
+      platform: "tripadvisor",
+      language: "de",
+      comment: "Tolles Studio mitten in Palma. Schneller Walk-in Piercing Service und sehr freundliches Team.",
+      verifiedCustomer: true,
+    },
   ],
-  "socialLinks": {
-    "instagram": "https://instagram.com/boxtattoopiercing"
+  socialLinks: {
+    instagram: "https://instagram.com/boxtattoopiercing",
   },
-  "socialPosts": [
+  socialPosts: [
     {
-      "id": "box-post-1",
-      "platform": "instagram",
-      "url": "https://instagram.com/boxtattoopiercing",
-      "imageUrl": "https://i.imgur.com/wnba2lT.jpeg",
-      "caption": "Diseño floral fine line personalizado para antebrazo en nuestro estudio de Carrer Jaume II.",
-      "date": "2025-11-20",
-      "likesCount": 156
+      id: "box-post-1",
+      platform: "instagram",
+      url: "https://instagram.com/boxtattoopiercing",
+      imageUrl: "https://i.imgur.com/wnba2lT.jpeg",
+      caption: "Diseño floral fine line personalizado para antebrazo en nuestro estudio de Carrer Jaume II.",
+      date: "2025-11-20",
+      likesCount: 156,
     },
     {
-      "id": "box-post-2",
-      "platform": "instagram",
-      "url": "https://instagram.com/boxtattoopiercing",
-      "imageUrl": "https://i.imgur.com/aS7eca7.jpeg",
-      "caption": "Cover-up y restauración de tatuaje antiguo terminado con éxito.",
-      "date": "2025-10-18",
-      "likesCount": 204
-    }
+      id: "box-post-2",
+      platform: "instagram",
+      url: "https://instagram.com/boxtattoopiercing",
+      imageUrl: "https://i.imgur.com/aS7eca7.jpeg",
+      caption: "Cover-up y restauración de tatuaje antiguo terminado con éxito.",
+      date: "2025-10-18",
+      likesCount: 204,
+    },
   ],
-  "webDirectories": [
+  webDirectories: [
     {
-      "directoryName": "Páginas Amarillas",
-      "url": "https://www.google.com/search?q=site:paginasamarillas.es+Box+Tattoo+Piercing+Palma",
-      "indexed": true
+      directoryName: "Páginas Amarillas",
+      url: "https://www.google.com/search?q=site:paginasamarillas.es+Box+Tattoo+Piercing+Palma",
+      indexed: true,
     },
     {
-      "directoryName": "Cylex Mallorca",
-      "url": "https://www.google.com/search?q=site:cylex.es+Box+Tattoo+Piercing+Palma",
-      "indexed": true
-    }
+      directoryName: "Cylex Mallorca",
+      url: "https://www.google.com/search?q=site:cylex.es+Box+Tattoo+Piercing+Palma",
+      indexed: true,
+    },
   ],
-  "schedule": "Lun - Sáb: 10:00 - 20:00",
-  "lastVerifiedAt": "2026-08-25",
-  "verificationStatus": "needs_manual_review",
-  "confidenceScore": 56,
-  "sourceCrossReference": {
-    "webPhoneMatch": false,
-    "mapsPhoneMatch": false,
-    "addressInMallorca": true,
-    "activeWeb200Ok": true,
-    "socialMatchScore": 8
+  schedule: "Lun - Sáb: 10:00 - 20:00",
+  lastVerifiedAt: "2026-08-25",
+  verificationStatus: "needs_manual_review",
+  confidenceScore: 56,
+  sourceCrossReference: {
+    webPhoneMatch: false,
+    mapsPhoneMatch: false,
+    addressInMallorca: true,
+    activeWeb200Ok: true,
+    socialMatchScore: 8,
   },
-  "newsMentions": [
+  newsMentions: [
     {
-      "source": "Diario de Mallorca",
-      "title": "Noticias en Diario de Mallorca: Box Tattoo Piercing Palma",
-      "url": "https://www.google.com/search?q=site:diariodemallorca.es+Box%20Tattoo%20Piercing%20Palma"
+      source: "Diario de Mallorca",
+      title: "Noticias en Diario de Mallorca: Box Tattoo Piercing Palma",
+      url: "https://www.google.com/search?q=site:diariodemallorca.es+Box%20Tattoo%20Piercing%20Palma",
     },
     {
-      "source": "Última Hora Mallorca",
-      "title": "Noticias en Última Hora Mallorca: Box Tattoo Piercing Palma",
-      "url": "https://www.google.com/search?q=site:ultimahora.es+Box%20Tattoo%20Piercing%20Palma"
+      source: "Última Hora Mallorca",
+      title: "Noticias en Última Hora Mallorca: Box Tattoo Piercing Palma",
+      url: "https://www.google.com/search?q=site:ultimahora.es+Box%20Tattoo%20Piercing%20Palma",
     },
     {
-      "source": "Mallorca Magazin (Alemán)",
-      "title": "Noticias en Mallorca Magazin (Alemán): Box Tattoo Piercing Palma",
-      "url": "https://www.google.com/search?q=site:mallorcamagazin.com+Box%20Tattoo%20Piercing%20Palma"
-    }
-  ]
+      source: "Mallorca Magazin (Alemán)",
+      title: "Noticias en Mallorca Magazin (Alemán): Box Tattoo Piercing Palma",
+      url: "https://www.google.com/search?q=site:mallorcamagazin.com+Box%20Tattoo%20Piercing%20Palma",
+    },
+  ],
 };

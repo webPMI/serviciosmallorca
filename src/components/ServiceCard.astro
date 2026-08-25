@@ -66,8 +66,10 @@ const detailUrl = `${prefix}servicios/${service.slug}`;
     <div class="service-footer">
       <div class="service-rating">
         <span class="star">★</span>
-        <strong class="rating-num">{service.rating.toFixed(1)}</strong>
-        <span class="rating-count">({service.reviewCount} {translations["services.reviews"] || "reseñas"})</span>
+        <strong class="rating-num">{service.rating ? service.rating.toFixed(1) : "N/A"}</strong>
+        <span class="rating-count"
+          >({service.reviewCount ?? "N/A"} {translations["services.reviews"] || "reseñas"})</span
+        >
       </div>
 
       <a href={detailUrl} class="btn btn-primary btn-sm">

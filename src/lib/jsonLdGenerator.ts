@@ -29,6 +29,31 @@ function getSchemaTypeForCategory(category: string, sectorId?: string): string |
       return ["LocalBusiness", "Florist", "HomeAndConstructionBusiness"];
     case "tecnologia-seguridad":
       return ["LocalBusiness", "SecurityService"];
+    // 🏋️ Vertical Deportiva (docs/SPORTS_FITNESS_SECTION.md §3.1)
+    case "gimnasios-fitness":
+      return ["SportsActivityLocation", "ExerciseGym", "HealthClub"];
+    case "entrenamiento-personal":
+      return ["SportsActivityLocation", "PersonalTrainer"];
+    case "estudios-cuerpo-mente":
+      return ["HealthClub", "SportsActivityLocation"];
+    case "artes-marciales-boxeo":
+      return ["SportsActivityLocation"];
+    case "padel-tenis-raqueta":
+      return ["SportsActivityLocation", "TennisComplex"];
+    case "natacion-deportes-acuaticos":
+      return ["SportsActivityLocation", "SwimmingPool"];
+    case "ciclismo-running-trail":
+      return ["SportsActivityLocation", "LocalBusiness"];
+    case "golf":
+      return ["GolfCourse", "SportsActivityLocation"];
+    case "equitacion-hipica":
+      return ["LocalBusiness", "SportsActivityLocation"];
+    case "deportes-montana-aventura":
+      return ["SportsActivityLocation", "TouristInformationCenter"];
+    case "clubes-escuelas-deportivas":
+      return ["SportsClub", "SportsActivityLocation"];
+    case "espacios-deportivos-publicos":
+      return ["TouristAttraction", "SportsActivityLocation"];
     default:
       return "LocalBusiness";
   }
@@ -41,7 +66,7 @@ function getSchemaTypeForCategory(category: string, sectorId?: string): string |
 export function generateServiceJsonLd(
   service: ServiceItem,
   locale: Locale = "es",
-  canonicalUrl?: string
+  canonicalUrl?: string,
 ): Record<string, any> {
   const schemaType = getSchemaTypeForCategory(service.category, service.sectorId);
 
@@ -119,13 +144,15 @@ export function generateServiceJsonLd(
       "@type": "AdministrativeArea",
       name: "Mallorca, Illes Balears",
     },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: service.rating,
-      reviewCount: service.reviewCount > 0 ? service.reviewCount : 1,
-      bestRating: "5",
-      worstRating: "1",
-    },
+    aggregateRating: service.rating
+      ? {
+          "@type": "AggregateRating",
+          ratingValue: service.rating,
+          reviewCount: service.reviewCount && service.reviewCount > 0 ? service.reviewCount : 1,
+          bestRating: "5",
+          worstRating: "1",
+        }
+      : undefined,
   };
 
   if (reviewsSchema.length > 0) {
@@ -159,4 +186,72 @@ export function generateServiceJsonLd(
   }
 
   return jsonLd;
+}
+
+/**
+ * Genera el marcado JSON-LD completo para la página de inicio (Homepage),
+ * estructurando WebSite con SearchAction, Organization e ItemList de servicios destacados.
+ */
+export function generateHomepageJsonLd(
+  locale: Locale = "es",
+  canonicalUrl = "https://serviciosmallorca.com",
+): Record<string, any>[] {
+  const siteNames: Record<Locale, string> = {
+    es: "Servicios Mallorca - Directorio de Empresas y Profesionales",
+    en: "Servicios Mallorca - Verified Businesses and Directory in Mallorca",
+    ca: "Servicios Mallorca - Directori d'Empreses i Serveis a Mallorca",
+  };
+
+  const descriptions: Record<Locale, string> = {
+    es: "Guía y directorio de los mejores servicios, restaurantes, náutica, spas y empresas verificadas en Mallorca.",
+    en: "Premier directory and guide to top-rated verified businesses, restaurants, yacht charters, and spas in Mallorca.",
+    ca: "Guia i directori dels millors serveis, restaurants, nàutica, spas i empreses verificades a Mallorca.",
+  };
+
+  return [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://serviciosmallorca.com/#website",
+      url: canonicalUrl,
+      name: siteNames[locale] || siteNames.es,
+      alternateName: ["Servicios Mallorca", "ServiciosMallorca.com", "Mallorca Services Directory"],
+      description: descriptions[locale] || descriptions.es,
+      inLanguage: locale,
+      potentialAction: {
+        "@type": "SearchAction",
+        target: {
+          "@type": "EntryPoint",
+          urlTemplate: "https://serviciosmallorca.com/es/servicios?q={search_term_string}",
+        },
+        "query-input": "required name=search_term_string",
+      },
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "https://serviciosmallorca.com/#organization",
+      name: "Servicios Mallorca",
+      url: "https://serviciosmallorca.com",
+      logo: "https://serviciosmallorca.com/favicon.svg",
+      description: descriptions[locale] || descriptions.es,
+      areaServed: {
+        "@type": "AdministrativeArea",
+        name: "Mallorca, Illes Balears, España",
+      },
+      knowsAbout: [
+        "Restaurantes de Alta Cocina en Mallorca",
+        "Chárter Náutico y Alquiler de Barcos en Mallorca",
+        "Spas y Centros de Bienestar en Mallorca",
+        "Reformas y Construcción en Baleares",
+        "Inmobiliaria y Villas de Lujo en Mallorca",
+      ],
+      contactPoint: {
+        "@type": "ContactPoint",
+        contactType: "customer service",
+        availableLanguage: ["Spanish", "English", "Catalan", "German"],
+        areaServed: "ES-IB",
+      },
+    },
+  ];
 }

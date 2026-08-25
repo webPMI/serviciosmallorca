@@ -22,6 +22,8 @@ Toda la documentación del proyecto está en `docs/`. Antes de trabajar en cualq
 - [AUTH.md](docs/AUTH.md) — 🔐 Firebase Auth, roles, AuthStore
 - [DEVTOOLS.md](docs/DEVTOOLS.md) — 🛠️ Logger, Floating Button, DevTools Panel
 - [AGENT_CURATION_SOP.md](docs/AGENT_CURATION_SOP.md) — 🤖 Protocolo SOP para Agentes: Registro y Curación de Negocios
+- [BUSINESS_DISCOVERY_SOP.md](docs/BUSINESS_DISCOVERY_SOP.md) — 🔎 Checklist Maestro: descubrimiento, minería y ranking por categoría/puntaje/alfabético (`npm run discover`, `npm run discover:mine`)
+- [SPORTS_FITNESS_SECTION.md](docs/SPORTS_FITNESS_SECTION.md) — 🏋️ Vertical deportiva: gimnasios, centros deportivos y espacios públicos (taxonomía, SEO, plan de activación)
 - [email-templates.md](docs/email-templates.md) — 📧 Plantillas de correo Firebase
 
 ## Golden Rules (Resumen)
@@ -40,7 +42,9 @@ Toda la documentación del proyecto está en `docs/`. Antes de trabajar en cualq
 12. **GR-12**: Fidelidad Google Maps: 90%+ re-indexación de datos oficiales (coordenadas, horarios, reseñas y multi-mapas)
 
 ## Protocolo de Curación Atómica (Cero Omisión)
+
 Todo registro en `src/data/services/<sector>/<slug>.ts` debe cumplir estrictamente 4 pasos secuenciales:
+
 1. **Fase 1 (Recolección):** Minería de datos con `scripts/business-intelligence-lookup.ts "<Name>"`.
 2. **Fase 2 (Auditoría & Checkpoint):** Cruce telefónico, geolocalización en Mallorca y cálculo de Confidence Score ($\ge 80\%$).
 3. **Fase 3 (Enriquecimiento):** Estructura completa de los 5 Pilares (Social Proof, Storytelling trilingüe, Prensa balear, Canales de conversión, Local SEO).

@@ -31,7 +31,19 @@ const hasReviews = Boolean(service.reviewCount && service.reviewCount > 0);
       hasPricing && (
         <a href="#tarifas" class="quick-nav-pill">
           <span>💶</span>
-          <span>{service.category.includes("gastronomia") ? (locale === "ca" ? "Carta" : locale === "en" ? "Menu" : "Carta & Menú") : (locale === "ca" ? "Tarifes" : locale === "en" ? "Pricing" : "Tarifas")}</span>
+          <span>
+            {service.category.includes("gastronomia")
+              ? locale === "ca"
+                ? "Carta"
+                : locale === "en"
+                  ? "Menu"
+                  : "Carta & Menú"
+              : locale === "ca"
+                ? "Tarifes"
+                : locale === "en"
+                  ? "Pricing"
+                  : "Tarifas"}
+          </span>
         </a>
       )
     }
@@ -49,7 +61,10 @@ const hasReviews = Boolean(service.reviewCount && service.reviewCount > 0);
       hasReviews && (
         <a href="#resenas" class="quick-nav-pill">
           <span>⭐</span>
-          <span>{locale === "ca" ? "Ressenyes" : locale === "en" ? "Reviews" : "Reseñas"} ({service.rating.toFixed(1)})</span>
+          <span>
+            {locale === "ca" ? "Ressenyes" : locale === "en" ? "Reviews" : "Reseñas"} (
+            {service.rating ? service.rating.toFixed(1) : "N/A"})
+          </span>
         </a>
       )
     }

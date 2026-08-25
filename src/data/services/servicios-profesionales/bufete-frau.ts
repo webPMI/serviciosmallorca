@@ -141,12 +141,7 @@ export const bufeteFrau: ServiceItem = {
       ca: "Honoraris transparents segons les directrius de l'Il·lustre Col·legi d'Advocats de les Illes Balears.",
     },
   },
-  amenities: [
-    "wifi",
-    "air_conditioning",
-    "wheelchair_accessible",
-    "parking_nearby",
-  ],
+  amenities: ["wifi", "air_conditioning", "wheelchair_accessible", "parking_nearby"],
   features: ["wifi", "air_conditioning", "credit_card"],
   paymentMethods: ["credit_card", "cash"],
   certifications: [
@@ -162,12 +157,12 @@ export const bufeteFrau: ServiceItem = {
     {
       name: "José Frau Greenacre",
       role: {
-        "es": "Socio Fundador & Abogado Senior",
-        "en": "Founding Partner & Senior Lawyer",
-        "ca": "Soci Fundador i Advocat Sènior"
+        es: "Socio Fundador & Abogado Senior",
+        en: "Founding Partner & Senior Lawyer",
+        ca: "Soci Fundador i Advocat Sènior",
       },
-      specialty: "Derecho Inmobiliario y Patrimonial Internacional"
-    }
+      specialty: "Derecho Inmobiliario y Patrimonial Internacional",
+    },
   ],
   reputationBreakdown: {
     googleMaps: {
@@ -186,7 +181,8 @@ export const bufeteFrau: ServiceItem = {
       date: "2025-06-11",
       platform: "google_maps",
       language: "en",
-      comment: "José Frau and his team handled our villa purchase in Port d'Andratx with utter precision and clarity. Outstanding bilingual legal advice.",
+      comment:
+        "José Frau and his team handled our villa purchase in Port d'Andratx with utter precision and clarity. Outstanding bilingual legal advice.",
       verifiedCustomer: true,
     },
     {
@@ -196,7 +192,8 @@ export const bufeteFrau: ServiceItem = {
       date: "2025-03-24",
       platform: "google_maps",
       language: "es",
-      comment: "Grandes profesionales. Nos resolvieron una herencia compleja con bienes internacionales de manera rápida y transparente.",
+      comment:
+        "Grandes profesionales. Nos resolvieron una herencia compleja con bienes internacionales de manera rápida y transparente.",
       verifiedCustomer: true,
     },
   ],

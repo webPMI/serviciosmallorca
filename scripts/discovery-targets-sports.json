@@ -1,0 +1,56 @@
+[
+  {
+    "name": "Basic-Fit Palma",
+    "website": "https://www.basic-fit.com",
+    "categoryHint": "gimnasios-fitness",
+    "zoneHint": "palma"
+  },
+  {
+    "name": "AltaFit Palma",
+    "website": "https://altafit.es",
+    "categoryHint": "gimnasios-fitness",
+    "zoneHint": "palma"
+  },
+  {
+    "name": "CrossFit Mallorca",
+    "website": "https://crossfitmallorca.com",
+    "categoryHint": "gimnasios-fitness",
+    "zoneHint": "palma"
+  },
+  {
+    "name": "Rafa Nadal Sports Centre",
+    "website": "https://www.rafanadalacademy.com",
+    "categoryHint": "padel-tenis-raqueta",
+    "zoneHint": "manacor-llevant"
+  },
+  {
+    "name": "Golf Son Vida",
+    "website": "https://www.golfsonvida.com",
+    "categoryHint": "golf",
+    "zoneHint": "palma"
+  },
+  {
+    "name": "Golf Son Muntaner",
+    "website": "https://www.golfsonmuntaner.com",
+    "categoryHint": "golf",
+    "zoneHint": "palma"
+  },
+  {
+    "name": "Golf de Andratx",
+    "website": "https://golf-andratx.com",
+    "categoryHint": "golf",
+    "zoneHint": "calvia-andratx"
+  },
+  {
+    "name": "Arabella Golf Mallorca",
+    "website": "https://www.arabellagolf.com",
+    "categoryHint": "golf",
+    "zoneHint": "palma"
+  },
+  {
+    "name": "Club Natació Palma",
+    "website": "https://www.cnpalma.es",
+    "categoryHint": "natacion-deportes-acuaticos",
+    "zoneHint": "palma"
+  }
+]

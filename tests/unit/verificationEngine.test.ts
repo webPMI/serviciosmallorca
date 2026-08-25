@@ -114,10 +114,7 @@ describe("Verification Engine (Multi-Source Auditor)", () => {
 
     it("accepts and verifies high trust domain images belonging to official website", async () => {
       const { verifyImageOwnership } = await import("../../src/lib/verificationEngine");
-      const res = verifyImageOwnership(
-        "https://kuyenart.com/images/kuyen_entrada.jpg",
-        "https://kuyenart.com"
-      );
+      const res = verifyImageOwnership("https://kuyenart.com/images/kuyen_entrada.jpg", "https://kuyenart.com");
       expect(res.isValid).toBe(true);
       expect(res.trustLevel).toBe("high_trust_domain");
     });
@@ -126,14 +123,14 @@ describe("Verification Engine (Multi-Source Auditor)", () => {
       const { verifyImageOwnership } = await import("../../src/lib/verificationEngine");
       const cdnRes = verifyImageOwnership(
         "https://uploadcare.engelvoelkers.com/assets/villa1.jpg",
-        "https://engelvoelkers.com"
+        "https://engelvoelkers.com",
       );
       expect(cdnRes.isValid).toBe(true);
       expect(cdnRes.trustLevel).toBe("high_trust_domain");
 
       const socialRes = verifyImageOwnership(
         "https://scontent.cdninstagram.com/v/t51.2885-15/photo.jpg",
-        "https://mibar.com"
+        "https://mibar.com",
       );
       expect(socialRes.isValid).toBe(true);
       expect(socialRes.trustLevel).toBe("social_trust");

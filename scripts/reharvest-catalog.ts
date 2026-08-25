@@ -40,7 +40,7 @@ export interface ReharvestReport {
  */
 export function smartMergeService(
   existing: ServiceItem,
-  harvestedTemplate: Record<string, any>
+  harvestedTemplate: Record<string, any>,
 ): { merged: ServiceItem; diff: ReharvestDiff } {
   const merged: ServiceItem = { ...existing };
   const addedFields: string[] = [];
@@ -64,7 +64,11 @@ export function smartMergeService(
     merged.onlineStore = harvestedTemplate.onlineStore;
     addedFields.push("onlineStore");
   }
-  if (harvestedTemplate.products && harvestedTemplate.products.length > 0 && (!existing.products || existing.products.length === 0)) {
+  if (
+    harvestedTemplate.products &&
+    harvestedTemplate.products.length > 0 &&
+    (!existing.products || existing.products.length === 0)
+  ) {
     merged.products = harvestedTemplate.products;
     addedFields.push(`products (${harvestedTemplate.products.length} productos)`);
   }
@@ -180,7 +184,9 @@ export async function runReharvest(options: {
       if (diff.newScore > diff.previousScore) improvedCount++;
       diffs.push(diff);
 
-      console.log(`  • Score: ${diff.previousScore}% ➔ ${diff.newScore}% (${diff.newScore >= 85 ? "✅ VERIFICADO" : "⚠️ TRIAJE"})`);
+      console.log(
+        `  • Score: ${diff.previousScore}% ➔ ${diff.newScore}% (${diff.newScore >= 85 ? "✅ VERIFICADO" : "⚠️ TRIAJE"})`,
+      );
       if (diff.addedFields.length > 0) {
         console.log(`  • ✨ Campos Nuevos Incorporados: ${diff.addedFields.join(", ")}`);
       } else {

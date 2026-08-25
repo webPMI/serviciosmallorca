@@ -33,11 +33,7 @@ export const vandalPalma: ServiceItem = {
   features: ["wifi", "air_conditioning", "credit_card", "sommelier_service", "terrace"],
   paymentMethods: ["credit_card", "cash", "apple_pay"],
   amenities: ["wifi", "air_conditioning", "wheelchair_accessible", "terrace"],
-  certifications: [
-    "Recomendado Guía Repsol",
-    "Manipulador de Alimentos Balear",
-    "Registro Sanitario Oficial",
-  ],
+  certifications: ["Recomendado Guía Repsol", "Manipulador de Alimentos Balear", "Registro Sanitario Oficial"],
   pricing: {
     startingPrice: "45.00€",
     depositRequired: "Reserva previa con tarjeta de crédito recomendada",
@@ -145,7 +141,8 @@ export const vandalPalma: ServiceItem = {
       date: "2026-07-11",
       platform: "google_maps",
       language: "es",
-      comment: "Una de las experiencias gastronómicas más divertidas y sorprendentes de Palma. El tartar de atún y el maridaje con cócteles son sublimes.",
+      comment:
+        "Una de las experiencias gastronómicas más divertidas y sorprendentes de Palma. El tartar de atún y el maridaje con cócteles son sublimes.",
       verifiedCustomer: true,
     },
     {
@@ -155,7 +152,8 @@ export const vandalPalma: ServiceItem = {
       date: "2026-05-30",
       platform: "tripadvisor",
       language: "en",
-      comment: "Incredible energy, vibrant atmosphere, and world-class food. The wine & cocktail pairings make every bite exciting.",
+      comment:
+        "Incredible energy, vibrant atmosphere, and world-class food. The wine & cocktail pairings make every bite exciting.",
       verifiedCustomer: true,
     },
   ],
@@ -282,9 +280,7 @@ export const vandalPalma: ServiceItem = {
     ],
   },
   image: "https://www.vandalpalma.com/wp-content/uploads/2023/04/vandal-interior.jpg",
-  gallery: [
-    "https://www.vandalpalma.com/wp-content/uploads/2023/04/vandal-interior.jpg",
-  ],
+  gallery: ["https://www.vandalpalma.com/wp-content/uploads/2023/04/vandal-interior.jpg"],
   schedule: "Mar - Sáb: 19:30 - 00:30 (Dom y Lun Cerrado)",
   lastVerifiedAt: "2026-08-25",
   confidenceScore: 98,

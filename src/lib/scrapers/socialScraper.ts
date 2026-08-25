@@ -129,13 +129,11 @@ export function generateSocialDorks(businessName: string, foundSocials: SocialLi
   return [
     {
       platform: "YouTube Canal Oficial",
-      searchUrl:
-        foundSocials.youtube || `https://www.google.com/search?q=site:youtube.com+${encodedQuery}+mallorca`,
+      searchUrl: foundSocials.youtube || `https://www.google.com/search?q=site:youtube.com+${encodedQuery}+mallorca`,
     },
     {
       platform: "Facebook Página Oficial",
-      searchUrl:
-        foundSocials.facebook || `https://www.google.com/search?q=site:facebook.com+${encodedQuery}+mallorca`,
+      searchUrl: foundSocials.facebook || `https://www.google.com/search?q=site:facebook.com+${encodedQuery}+mallorca`,
     },
     {
       platform: "Instagram Official",
@@ -144,13 +142,11 @@ export function generateSocialDorks(businessName: string, foundSocials: SocialLi
     },
     {
       platform: "TikTok Oficial",
-      searchUrl:
-        foundSocials.tiktok || `https://www.google.com/search?q=site:tiktok.com+${encodedQuery}+mallorca`,
+      searchUrl: foundSocials.tiktok || `https://www.google.com/search?q=site:tiktok.com+${encodedQuery}+mallorca`,
     },
     {
       platform: "LinkedIn Empresa",
-      searchUrl:
-        foundSocials.linkedin || `https://www.google.com/search?q=site:linkedin.com+${encodedQuery}+mallorca`,
+      searchUrl: foundSocials.linkedin || `https://www.google.com/search?q=site:linkedin.com+${encodedQuery}+mallorca`,
     },
     {
       platform: "Pinterest Tableros",

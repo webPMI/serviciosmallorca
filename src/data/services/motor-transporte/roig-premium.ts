@@ -106,12 +106,7 @@ export const roigPremium: ServiceItem = {
       "Alquiler de Coches de Alta Gama",
       "Transporte para Bodas y Eventos",
     ],
-    en: [
-      "PMI Airport VIP Transfers",
-      "Hourly Chauffeur Service",
-      "Premium Car Rental",
-      "Wedding & Event Transport",
-    ],
+    en: ["PMI Airport VIP Transfers", "Hourly Chauffeur Service", "Premium Car Rental", "Wedding & Event Transport"],
     ca: [
       "Trasllats Aeroport PMI",
       "Xofer Privat per Hores",
@@ -142,11 +137,7 @@ export const roigPremium: ServiceItem = {
       ca: "Preu tancat garantit sense suplements per retards de vol.",
     },
   },
-  amenities: [
-    "wifi",
-    "air_conditioning",
-    "wheelchair_accessible",
-  ],
+  amenities: ["wifi", "air_conditioning", "wheelchair_accessible"],
   features: ["wifi", "air_conditioning", "credit_card"],
   paymentMethods: ["credit_card", "apple_pay"],
   certifications: [
@@ -164,12 +155,12 @@ export const roigPremium: ServiceItem = {
     {
       name: "Rafael Roig Grimalt",
       role: {
-        "es": "Director General / Dirección de Grupo",
-        "en": "Managing Director",
-        "ca": "Director General"
+        es: "Director General / Dirección de Grupo",
+        en: "Managing Director",
+        ca: "Director General",
       },
-      specialty: "Gestión de Transporte y Movilidad Balear"
-    }
+      specialty: "Gestión de Transporte y Movilidad Balear",
+    },
   ],
   reputationBreakdown: {
     googleMaps: {
@@ -188,7 +179,8 @@ export const roigPremium: ServiceItem = {
       date: "2025-07-14",
       platform: "google_maps",
       language: "de",
-      comment: "Perfekter VIP-Transfer vom Flughafen Palma direkt zu unserer Finca in Santanyí. Der Fahrer war überpünktlich und äußerst professionell.",
+      comment:
+        "Perfekter VIP-Transfer vom Flughafen Palma direkt zu unserer Finca in Santanyí. Der Fahrer war überpünktlich und äußerst professionell.",
       verifiedCustomer: true,
     },
     {
@@ -198,7 +190,8 @@ export const roigPremium: ServiceItem = {
       date: "2025-06-20",
       platform: "google_maps",
       language: "es",
-      comment: "Servicio impecable para la boda de mi hermana. Las furgonetas Mercedes Clase V estaban relucientes y los chóferes fueron amabilísimos.",
+      comment:
+        "Servicio impecable para la boda de mi hermana. Las furgonetas Mercedes Clase V estaban relucientes y los chóferes fueron amabilísimos.",
       verifiedCustomer: true,
     },
   ],

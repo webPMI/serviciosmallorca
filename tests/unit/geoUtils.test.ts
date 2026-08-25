@@ -1,9 +1,5 @@
 import { describe, it, expect } from "vitest";
-import {
-  calculateHaversineDistance,
-  formatDistance,
-  getServicesNearLocation,
-} from "../../src/lib/geoUtils.ts";
+import { calculateHaversineDistance, formatDistance, getServicesNearLocation } from "../../src/lib/geoUtils.ts";
 import { SERVICES } from "../../src/data/services/index.ts";
 
 describe("geoUtils - Haversine Proximity Engine", () => {

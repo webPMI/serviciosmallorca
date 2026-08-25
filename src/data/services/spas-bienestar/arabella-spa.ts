@@ -139,12 +139,7 @@ export const arabellaSpa: ServiceItem = {
       ca: "Accés al circuit de spa inclòs amb tractaments superiors a 50 minuts.",
     },
   },
-  amenities: [
-    "wifi",
-    "air_conditioning",
-    "wheelchair_accessible",
-    "parking_nearby",
-  ],
+  amenities: ["wifi", "air_conditioning", "wheelchair_accessible", "parking_nearby"],
   features: ["wifi", "air_conditioning", "credit_card"],
   paymentMethods: ["credit_card", "cash", "apple_pay"],
   certifications: [
@@ -160,12 +155,12 @@ export const arabellaSpa: ServiceItem = {
     {
       name: "Terapeutas y Médicos Arabella Spa",
       role: {
-        "es": "Especialistas en Bienestar & MTC",
-        "en": "Wellness & TCM Specialists",
-        "ca": "Especialistes en Benestar i MTC"
+        es: "Especialistas en Bienestar & MTC",
+        en: "Wellness & TCM Specialists",
+        ca: "Especialistes en Benestar i MTC",
       },
-      specialty: "Talasoterapia y Medicina Oriental"
-    }
+      specialty: "Talasoterapia y Medicina Oriental",
+    },
   ],
   reputationBreakdown: {
     googleMaps: {

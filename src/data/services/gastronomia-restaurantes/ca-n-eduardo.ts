@@ -141,7 +141,8 @@ export const caNEduardo: ServiceItem = {
       date: "2026-06-14",
       platform: "google_maps",
       language: "es",
-      comment: "Insuperable arroz a banda y gamba roja fresca de Sóller. Las vistas a la Catedral y al puerto al atardecer son las mejores de Palma.",
+      comment:
+        "Insuperable arroz a banda y gamba roja fresca de Sóller. Las vistas a la Catedral y al puerto al atardecer son las mejores de Palma.",
       verifiedCustomer: true,
     },
     {
@@ -151,7 +152,8 @@ export const caNEduardo: ServiceItem = {
       date: "2026-05-22",
       platform: "tripadvisor",
       language: "en",
-      comment: "Outstanding salt-baked wild sea bass and fresh oysters right over the fishing harbor. Exceptional wine list.",
+      comment:
+        "Outstanding salt-baked wild sea bass and fresh oysters right over the fishing harbor. Exceptional wine list.",
       verifiedCustomer: true,
     },
   ],

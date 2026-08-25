@@ -27,7 +27,11 @@ const waText = encodeURIComponent(`Hola, he visto su servicio ${service.name} en
     <div class="header-badges">
       <span class="badge badge-primary">{category?.icon} {categoryName}</span>
       <span class="badge badge-accent">📍 {zoneName}</span>
-      {service.verified && <span class="badge badge-success">✓ {translations["services.verifiedBadge"] || "Verificado"}</span>}
+      {
+        service.verified && (
+          <span class="badge badge-success">✓ {translations["services.verifiedBadge"] || "Verificado"}</span>
+        )
+      }
       <span class="badge badge-price">{service.priceRange}</span>
       {service.schedule && <LiveScheduleBadge scheduleText={service.schedule} currentLocale={locale} />}
     </div>
@@ -38,8 +42,10 @@ const waText = encodeURIComponent(`Hola, he visto su servicio ${service.name} en
     <div class="header-action-row">
       <div class="rating-bar">
         <span class="rating-stars" aria-hidden="true">★★★★★</span>
-        <strong class="rating-val">{service.rating.toFixed(1)}</strong>
-        <span class="rating-reviews">({service.reviewCount} {translations["services.reviews"] || "reseñas"})</span>
+        <strong class="rating-val">{service.rating ? service.rating.toFixed(1) : "N/A"}</strong>
+        <span class="rating-reviews"
+          >({service.reviewCount ?? "N/A"} {translations["services.reviews"] || "reseñas"})</span
+        >
       </div>
 
       <!-- Quick Action Buttons Above the Fold -->

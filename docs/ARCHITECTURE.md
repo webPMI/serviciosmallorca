@@ -30,14 +30,18 @@ servicios-mallorca/
 ## 3. Módulos de Inteligencia y Curación
 
 ### 🔬 Motor de Minería (`scripts/`)
+
 El sistema utiliza un orquestador de búsqueda que puede ejecutar:
+
 - **Deep Scraping:** Extracción de metadatos, precios, imágenes y redes sociales de sitios web oficiales.
 - **Social Analysis:** Extracción de enlaces de bio (Linktree, Instagram, TikTok) y validación de contenido.
 - **Cross-Reference:** Validación cruzada de datos entre múltiples fuentes (Google Maps, Directorios, Web).
 - **Data Enrichment:** Generación automática de especialidades, historias de autor y búsqueda de noticias locales.
 
 ### 🛠️ Ecosistema de Utilidades (`public/`, `src/components/`)
+
 Herramientas gratuitas para el usuario:
+
 - **Image Web Editor:** Edición rápida de contenido visual.
 - **Auralist:** Curación de audio y contenido sonoro.
 - **Geolocalización:** Herramientas de mapas y coordenadas.
@@ -55,12 +59,12 @@ Herramientas gratuitas para el usuario:
 
 ## 5. Módulos de Negocio (Catálogo)
 
-| Sector | Especialidades Clave |
-| --- | --- |
-| **Gastronomía** | Restaurantes, Menús, Especialidades, Reservas |
-| **Arte & Tatuajes** | Estudios, Galería, Piercing, Artistas |
-| **Náutica** | Charters, Mantenimiento, Yates, Deportes Acuáticos |
-| **Servicios** | Estética, Bienestar, Salud, B2B |
+| Sector              | Especialidades Clave                               |
+| ------------------- | -------------------------------------------------- |
+| **Gastronomía**     | Restaurantes, Menús, Especialidades, Reservas      |
+| **Arte & Tatuajes** | Estudios, Galería, Piercing, Artistas              |
+| **Náutica**         | Charters, Mantenimiento, Yates, Deportes Acuáticos |
+| **Servicios**       | Estética, Bienestar, Salud, B2B                    |
 
 ---
 

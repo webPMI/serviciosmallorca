@@ -26,28 +26,28 @@ El foro pasa de ser un apendice conversacional a ser el **motor de retencion dia
 
 ### 1.1 Objetivos medibles
 
-|| Objetivo                              | Metrica                        | Target Fase 2  |
+|| Objetivo | Metrica | Target Fase 2 |
 || ------------------------------------- | ------------------------------ | -------------- |
-|| Habito diario                         | Usuarios recurrentes semanales | 40%+ del total |
-|| Contenido generado por usuarios (UGC) | Temas nuevos/semana            | 25+            |
-|| Bolsa de trabajo activa               | Ofertas activas simultaneas    | 50+            |
-|| Profundidad                           | Respuestas por tema            | 5+ media       |
-|| SEO por UGC                           | Paginas de tema indexadas      | 500+           |
+|| Habito diario | Usuarios recurrentes semanales | 40%+ del total |
+|| Contenido generado por usuarios (UGC) | Temas nuevos/semana | 25+ |
+|| Bolsa de trabajo activa | Ofertas activas simultaneas | 50+ |
+|| Profundidad | Respuestas por tema | 5+ media |
+|| SEO por UGC | Paginas de tema indexadas | 500+ |
 
 ---
 
 ## 2. Estado Actual del Foro (lo que ya existe)
 
-|| Componente                                         | Estado      | Ubicacion                                   |
+|| Componente | Estado | Ubicacion |
 || -------------------------------------------------- | ----------- | ------------------------------------------- |
-|| Listado de temas con filtro por categoria          | Funcional   | src/pages/[...locale]/comunidad/index.astro |
-|| Creacion de temas (auth requerida)                 | Funcional   | comunidad/nuevo.astro                       |
-|| Detalle de tema con respuestas                     | Funcional   | comunidad/[slug].astro                      |
-|| Sistema de likes en temas                          | Funcional   | toggleTopicLike()                           |
-|| Respuestas anidadas planas (1 nivel)               | Funcional   | addForumReply()                             |
-|| Contadores repliesCount/likesCount                 | Funcional   | Firestore increment                         |
-|| Reglas Firestore (lectura publica, escritura auth) | Desplegadas | firestore.rules sec. forum_topics           |
-|| Tests unitarios del modulo                         | Funcionales | tests/unit/community.test.ts                |
+|| Listado de temas con filtro por categoria | Funcional | src/pages/[...locale]/comunidad/index.astro |
+|| Creacion de temas (auth requerida) | Funcional | comunidad/nuevo.astro |
+|| Detalle de tema con respuestas | Funcional | comunidad/[slug].astro |
+|| Sistema de likes en temas | Funcional | toggleTopicLike() |
+|| Respuestas anidadas planas (1 nivel) | Funcional | addForumReply() |
+|| Contadores repliesCount/likesCount | Funcional | Firestore increment |
+|| Reglas Firestore (lectura publica, escritura auth) | Desplegadas | firestore.rules sec. forum_topics |
+|| Tests unitarios del modulo | Funcionales | tests/unit/community.test.ts |
 
 ---
 
@@ -55,13 +55,13 @@ El foro pasa de ser un apendice conversacional a ser el **motor de retencion dia
 
 ### 3.1 Tabla resumen
 
-|| #   | Categoria                        | id            | Icono | Subcategorias                                                | Potencial retencion        |
+|| # | Categoria | id | Icono | Subcategorias | Potencial retencion |
 || --- | -------------------------------- | ------------- | ----- | ----------------------------------------------------------- | -------------------------- |
-|| 1   | **Bolsa de Trabajo**             | empleo        | 💼    | ofertas / solicitudes                                        | MUY ALTO (consulta diaria) |
-|| 2   | **Formacion y Cursos**           | formacion     | 🎓    | profesionales / idiomas / hosteleria / oficios / tecnologia   | MEDIO-ALTO (estacional)    |
-|| 3   | **Servicios e Intercambios**     | intercambios  | 🤝    | trueque / habilidades / colaboracion / ayuda mutua           | ALTO (recurrente)          |
-|| 4   | **Turismo y Experiencias**       | turismo       | 🏝️    | recomendaciones / experiencias / guias / rutas                 | MEDIO-ALTO (evergreen)     |
-|| 5   | **Emprendimiento y Networking** | emprendimiento| 💼    | socios / networking / consejos / oportunidades               | MEDIO (eventual)           |
+|| 1 | **Bolsa de Trabajo** | empleo | 💼 | ofertas / solicitudes | MUY ALTO (consulta diaria) |
+|| 2 | **Formacion y Cursos** | formacion | 🎓 | profesionales / idiomas / hosteleria / oficios / tecnologia | MEDIO-ALTO (estacional) |
+|| 3 | **Servicios e Intercambios** | intercambios | 🤝 | trueque / habilidades / colaboracion / ayuda mutua | ALTO (recurrente) |
+|| 4 | **Turismo y Experiencias** | turismo | 🏝️ | recomendaciones / experiencias / guias / rutas | MEDIO-ALTO (evergreen) |
+|| 5 | **Emprendimiento y Networking** | emprendimiento| 💼 | socios / networking / consejos / oportunidades | MEDIO (eventual) |
 
 ### 3.2 Justificacion de cada categoria
 
@@ -114,10 +114,10 @@ export type ForumCategory =
 
 ### 4.1 Tipos de publicacion
 
-|| Tipo                          | id      | Quien publica                                            | Verificacion                                                                            |
+|| Tipo | id | Quien publica | Verificacion |
 || ----------------------------- | ------- | -------------------------------------------------------- | --------------------------------------------------------------------------------------- |
-|| **Oferta de empleo**          | oferta  | Empresas y particulares que buscan trabajador            | Badge Empresa Verificada si el autor es manager de un negocio verificado del directorio |
-|| **Solicitud / Busco trabajo** | demanda | Personas que buscan empleo u ofrecen servicios puntuales | Cuenta autenticada; badge opcional Perfil Completo                                      |
+|| **Oferta de empleo** | oferta | Empresas y particulares que buscan trabajador | Badge Empresa Verificada si el autor es manager de un negocio verificado del directorio |
+|| **Solicitud / Busco trabajo** | demanda | Personas que buscan empleo u ofrecen servicios puntuales | Cuenta autenticada; badge opcional Perfil Completo |
 
 ### 4.2 Esquema de datos (TypeScript)
 
@@ -126,12 +126,7 @@ export type ForumCategory =
 export type JobKind = "oferta" | "demanda";
 
 export type JobContractType =
-  | "indefinido"
-  | "temporal"
-  | "media-jornada"
-  | "practicas"
-  | "por-encargo"
-  | "sin-especificar";
+  "indefinido" | "temporal" | "media-jornada" | "practicas" | "por-encargo" | "sin-especificar";
 
 export interface JobMeta {
   kind: JobKind;
@@ -164,11 +159,11 @@ Query SIEMPRE filtra: status == active AND expiresAt > now()
 
 ### 5.1 Indices compuestos requeridos
 
-|| Query                      | Indice                                                     |
+|| Query | Indice |
 || -------------------------- | ---------------------------------------------------------- |
 || Bolsa activa por categoria | category ASC + status ASC + expiresAt ASC + createdAt DESC |
-|| Mis temas                  | authorUid ASC + createdAt DESC                             |
-|| Feed general existente     | category ASC + createdAt DESC (ya existe)                  |
+|| Mis temas | authorUid ASC + createdAt DESC |
+|| Feed general existente | category ASC + createdAt DESC (ya existe) |
 
 ### 5.2 Reglas de seguridad (delta propuesto)
 
@@ -189,12 +184,12 @@ match /forum_topics/{topicId} {
 
 ## 6. Integracion con Monetizacion AdSense
 
-|| Efecto               | Mecanismo                                 | Estimacion                                 |
+|| Efecto | Mecanismo | Estimacion |
 || -------------------- | ----------------------------------------- | ------------------------------------------ |
-|| Frecuencia de visita | Consulta diaria de ofertas nuevas         | +30-50% sesiones/semana por usuario activo |
-|| Paginas por sesion   | Listado -> detalle -> relacionados        | +1.5 paginas                               |
-|| Impresiones nuevas   | In-feed ads dentro de listados de empleo  | slot cada 5 anuncios                       |
-|| Contenido indexable  | Cada oferta = pagina unica con Schema.org | +500 URLs SEO a medio plazo                |
+|| Frecuencia de visita | Consulta diaria de ofertas nuevas | +30-50% sesiones/semana por usuario activo |
+|| Paginas por sesion | Listado -> detalle -> relacionados | +1.5 paginas |
+|| Impresiones nuevas | In-feed ads dentro de listados de empleo | slot cada 5 anuncios |
+|| Contenido indexable | Cada oferta = pagina unica con Schema.org | +500 URLs SEO a medio plazo |
 
 ---
 
@@ -223,11 +218,11 @@ jobs.form.title / sector / zone / contract / salary / apply
 
 || Fase | Accion | Prioridad |
 || ---- | ------ | --------- |
-|| F1   | Implementar taxonomia 5 categorias + tipos TypeScript | Alta |
-|| F2   | Bolsa de trabajo: jobMeta, validacion, expiracion | Alta |
-|| F3   | Interfaz publica: filtros, listado, detalle | Alta |
-|| F4   | Moderacion: reportes, admin panel | Media |
-|| F5   | Optimizacion SEO + Schema.org para ofertas | Media |
+|| F1 | Implementar taxonomia 5 categorias + tipos TypeScript | Alta |
+|| F2 | Bolsa de trabajo: jobMeta, validacion, expiracion | Alta |
+|| F3 | Interfaz publica: filtros, listado, detalle | Alta |
+|| F4 | Moderacion: reportes, admin panel | Media |
+|| F5 | Optimizacion SEO + Schema.org para ofertas | Media |
 
 ---
 

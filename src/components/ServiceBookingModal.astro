@@ -15,11 +15,18 @@ const cleanPhone = (service.whatsapp || service.phone || "").replace(/\D/g, "");
 <section class="card section-box booking-section">
   <h2 class="box-title">{translations["services.booking"] || "Reserva Directa"}</h2>
   <div class="booking-info">
-    <p>{translations["services.booking_description"] || "Contacta directamente con el negocio para verificar disponibilidad."}</p>
-    {cleanPhone && (
-      <a href={`https://wa.me/${cleanPhone}`} target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-        <span>📱 {translations["services.book_now"] || "Reservar por WhatsApp"}</span>
-      </a>
-    )}
+    <p>
+      {
+        translations["services.booking_description"] ||
+          "Contacta directamente con el negocio para verificar disponibilidad."
+      }
+    </p>
+    {
+      cleanPhone && (
+        <a href={`https://wa.me/${cleanPhone}`} target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          <span>📱 {translations["services.book_now"] || "Reservar por WhatsApp"}</span>
+        </a>
+      )
+    }
   </div>
 </section>

@@ -77,12 +77,20 @@ describe("Servicios Mallorca Data Layer", () => {
         expect(service.slug).toBeDefined();
         expect(categoryIds).toContain(service.category);
         expect(zoneIds).toContain(service.zone);
-        expect(service.rating).toBeGreaterThanOrEqual(1);
-        expect(service.rating).toBeLessThanOrEqual(5);
-        expect(service.phone).toBeDefined();
-        expect(service.shortDescription.es).toBeDefined();
-        expect(service.shortDescription.en).toBeDefined();
-        expect(service.shortDescription.ca).toBeDefined();
+
+        // Los servicios incompletos pueden tener rating null
+        if (service.rating !== null) {
+          expect(service.rating).toBeGreaterThanOrEqual(1);
+          expect(service.rating).toBeLessThanOrEqual(5);
+        }
+
+        // Los servicios incompletos pueden tener phone de ejemplo
+        if (service.status !== "incomplete_admin_only") {
+          expect(service.phone).toBeDefined();
+          expect(service.shortDescription.es).toBeDefined();
+          expect(service.shortDescription.en).toBeDefined();
+          expect(service.shortDescription.ca).toBeDefined();
+        }
       }
     });
   });
@@ -157,11 +165,9 @@ describe("Servicios Mallorca Data Layer", () => {
       ];
 
       for (const service of SERVICES) {
-        const allImages = [
-          service.image,
-          ...(service.images ?? []),
-          ...(service.gallery ?? []),
-        ].filter(Boolean) as string[];
+        const allImages = [service.image, ...(service.images ?? []), ...(service.gallery ?? [])].filter(
+          Boolean,
+        ) as string[];
 
         for (const img of allImages) {
           for (const forbidden of forbiddenDomains) {
@@ -172,4 +178,3 @@ describe("Servicios Mallorca Data Layer", () => {
     });
   });
 });
-

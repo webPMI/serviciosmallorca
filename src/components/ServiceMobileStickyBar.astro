@@ -12,7 +12,9 @@ const { service, locale, translations } = Astro.props;
 
 const cleanPhone = service.phone ? service.phone.replace(/[^0-9+]/g, "") : "";
 const cleanWhatsApp = service.whatsapp ? service.whatsapp.replace(/[^0-9]/g, "") : "";
-const waText = encodeURIComponent(`Hola, he visto su servicio ${service.name} en Servicios Mallorca y me gustaría solicitar información.`);
+const waText = encodeURIComponent(
+  `Hola, he visto su servicio ${service.name} en Servicios Mallorca y me gustaría solicitar información.`,
+);
 ---
 
 {
@@ -56,7 +58,9 @@ const waText = encodeURIComponent(`Hola, he visto su servicio ${service.name} en
             data-service-id={service.id}
           >
             <span class="btn-icon">🌐</span>
-            <span class="btn-label">{locale === "ca" ? "Web Oficial" : locale === "en" ? "Website" : "Web Oficial"}</span>
+            <span class="btn-label">
+              {locale === "ca" ? "Web Oficial" : locale === "en" ? "Website" : "Web Oficial"}
+            </span>
           </a>
         ) : null}
 

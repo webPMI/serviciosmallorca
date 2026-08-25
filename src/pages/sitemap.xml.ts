@@ -112,7 +112,7 @@ ${urls
     ${(u.alternates || [])
       .map((alt) => `    <xhtml:link rel="alternate" hreflang="${alt.lang}" href="${alt.href}" />`)
       .join("\n")}
-  </url>`
+  </url>`,
   )
   .join("\n")}
 </urlset>`;

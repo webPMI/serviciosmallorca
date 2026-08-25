@@ -143,12 +143,7 @@ export const firstMallorca: ServiceItem = {
       ca: "Servei de cerca personalitzada de propietats exclusives per a compradors.",
     },
   },
-  amenities: [
-    "parking_nearby",
-    "wifi",
-    "air_conditioning",
-    "wheelchair_accessible",
-  ],
+  amenities: ["parking_nearby", "wifi", "air_conditioning", "wheelchair_accessible"],
   features: ["wifi", "air_conditioning", "credit_card"],
   paymentMethods: ["credit_card"],
   certifications: [
@@ -166,12 +161,12 @@ export const firstMallorca: ServiceItem = {
     {
       name: "Dirección y Consultoría First Mallorca",
       role: {
-        "es": "Consultores Inmobiliarios Senior",
-        "en": "Senior Real Estate Consultants",
-        "ca": "Consultors Immobiliaris Sènior"
+        es: "Consultores Inmobiliarios Senior",
+        en: "Senior Real Estate Consultants",
+        ca: "Consultors Immobiliaris Sènior",
       },
-      specialty: "Villas de Lujo y Fincas en Mallorca"
-    }
+      specialty: "Villas de Lujo y Fincas en Mallorca",
+    },
   ],
   reputationBreakdown: {
     googleMaps: {
@@ -190,7 +185,8 @@ export const firstMallorca: ServiceItem = {
       date: "2025-06-03",
       platform: "google_maps",
       language: "de",
-      comment: "Hervorragender Service bei der Suche nach unserer Villa in Costa d'en Blanes. Absolut professionell und diskret.",
+      comment:
+        "Hervorragender Service bei der Suche nach unserer Villa in Costa d'en Blanes. Absolut professionell und diskret.",
       verifiedCustomer: true,
     },
     {
@@ -200,7 +196,8 @@ export const firstMallorca: ServiceItem = {
       date: "2025-04-12",
       platform: "google_maps",
       language: "es",
-      comment: "El trato recibido por el equipo de First Mallorca fue impecable de principio a fin. Gestión transparente y muy seria.",
+      comment:
+        "El trato recibido por el equipo de First Mallorca fue impecable de principio a fin. Gestión transparente y muy seria.",
       verifiedCustomer: true,
     },
   ],

@@ -62,12 +62,13 @@ Durante la Fase 2 (Auditoría), el agente debe incluir en su análisis interno u
 
 ```markdown
 ### 🔍 Verificación de Reglas y Checkpoint de Auditoría:
-* **Negocio Analizado:** [Nombre del Negocio]
-* **Fuente Web Oficial:** [URL Oficial] (HTTP Status 200 OK)
-* **Teléfono Extraído:** [+34 XXX XX XX XX] (Coincide Web y Maps: SÍ)
-* **Geolocalización:** [Lat, Lng] (Dentro de polígono de Mallorca: SÍ)
-* **Puntaje de Confianza:** [XX%] (Estado: VERIFIED)
-* **Cumplimiento GR-11 & GR-12:** Totalmente acreditado con fuentes primarias.
+
+- **Negocio Analizado:** [Nombre del Negocio]
+- **Fuente Web Oficial:** [URL Oficial] (HTTP Status 200 OK)
+- **Teléfono Extraído:** [+34 XXX XX XX XX] (Coincide Web y Maps: SÍ)
+- **Geolocalización:** [Lat, Lng] (Dentro de polígono de Mallorca: SÍ)
+- **Puntaje de Confianza:** [XX%] (Estado: VERIFIED)
+- **Cumplimiento GR-11 & GR-12:** Totalmente acreditado con fuentes primarias.
 ```
 
 ---
@@ -130,26 +131,30 @@ export const miNegocio: ServiceItem = {
   socialLinks: {
     instagram: "https://instagram.com/minegocio",
   },
-  teamMembers: [{
-    name: "Titular",
-    role: { es: "Director", en: "Director", ca: "Director" },
-    specialty: "Atención Especializada"
-  }],
+  teamMembers: [
+    {
+      name: "Titular",
+      role: { es: "Director", en: "Director", ca: "Director" },
+      specialty: "Atención Especializada",
+    },
+  ],
   reputationBreakdown: {
     googleMaps: { rating: 4.9, reviewCount: 250, url: "..." },
     totalReviewsAggregated: 250,
     overallWeightedRating: 4.9,
   },
-  reviews: [{
-    id: "rev-1",
-    authorName: "Cliente",
-    rating: 5,
-    date: "2025-06-10",
-    platform: "google_maps",
-    language: "es",
-    comment: "Excelente servicio profesional en Mallorca.",
-    verifiedCustomer: true,
-  }],
+  reviews: [
+    {
+      id: "rev-1",
+      authorName: "Cliente",
+      rating: 5,
+      date: "2025-06-10",
+      platform: "google_maps",
+      language: "es",
+      comment: "Excelente servicio profesional en Mallorca.",
+      verifiedCustomer: true,
+    },
+  ],
   confidenceScore: 95,
   verificationStatus: "verified",
   sourceCrossReference: {
@@ -163,11 +168,13 @@ export const miNegocio: ServiceItem = {
     taxIdVerified: true,
   },
   founderStory: { es: "...", en: "...", ca: "..." },
-  newsMentions: [{
-    title: "Noticia en prensa balear",
-    source: "Diario de Mallorca",
-    url: "https://www.google.com/search?q=site:diariodemallorca.es+...",
-  }],
+  newsMentions: [
+    {
+      title: "Noticia en prensa balear",
+      source: "Diario de Mallorca",
+      url: "https://www.google.com/search?q=site:diariodemallorca.es+...",
+    },
+  ],
 };
 ```
 
@@ -176,6 +183,7 @@ export const miNegocio: ServiceItem = {
 ## 🎯 5. Verificación de Entrega
 
 Todo nuevo lote de negocios debe pasar sin excepciones:
+
 1. `npm run typecheck` (0 errores de TypeScript)
 2. `npm test` (100% de tests unitarios pasando)
 3. `npm run validate:taxonomy` (100% de tags, zonas y categorías válidas)

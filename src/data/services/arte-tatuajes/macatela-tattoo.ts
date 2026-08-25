@@ -129,7 +129,8 @@ export const macatelaTattoo: ServiceItem = {
       date: "2026-06-25",
       platform: "google_maps",
       language: "es",
-      comment: "Tatuaje tradicional perfecto. Líneas limpias, colores vivos y un trato súper profesional e higiénico. 100% recomendable en Palma centro.",
+      comment:
+        "Tatuaje tradicional perfecto. Líneas limpias, colores vivos y un trato súper profesional e higiénico. 100% recomendable en Palma centro.",
       verifiedCustomer: true,
     },
     {
@@ -139,7 +140,8 @@ export const macatelaTattoo: ServiceItem = {
       date: "2026-05-14",
       platform: "google_maps",
       language: "en",
-      comment: "Walked in during my holiday in Palma. Super clean studio, fast consultation, and amazing blackwork piece. Highly recommended!",
+      comment:
+        "Walked in during my holiday in Palma. Super clean studio, fast consultation, and amazing blackwork piece. Highly recommended!",
       verifiedCustomer: true,
     },
   ],
@@ -238,9 +240,7 @@ export const macatelaTattoo: ServiceItem = {
     ],
   },
   image: "https://macatelatattoo.com/wp-content/uploads/2023/10/macatela-studio.jpg",
-  gallery: [
-    "https://macatelatattoo.com/wp-content/uploads/2023/10/macatela-studio.jpg",
-  ],
+  gallery: ["https://macatelatattoo.com/wp-content/uploads/2023/10/macatela-studio.jpg"],
   schedule: "Lun - Sáb: 10:30 - 14:00, 16:30 - 20:30 (Domingo Cerrado)",
   lastVerifiedAt: "2026-08-25",
   confidenceScore: 97,

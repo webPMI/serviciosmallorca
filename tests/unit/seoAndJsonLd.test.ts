@@ -8,8 +8,12 @@ import { roigPremium } from "../../src/data/services/motor-transporte/roig-premi
 
 describe("SEO & Schema.org JSON-LD Generation", () => {
   it("generates valid LocalBusiness Restaurant schema for Gastronomía", () => {
-    const jsonLd = generateServiceJsonLd(elCaminoPalma, "es", "https://serviciosmallorca.com/es/servicios/el-camino-palma");
-    
+    const jsonLd = generateServiceJsonLd(
+      elCaminoPalma,
+      "es",
+      "https://serviciosmallorca.com/es/servicios/el-camino-palma",
+    );
+
     expect(jsonLd["@context"]).toBe("https://schema.org");
     expect(jsonLd["@type"]).toBe("Restaurant");
     expect(jsonLd.name).toBe("Restaurante El Camino Palma");
@@ -23,7 +27,7 @@ describe("SEO & Schema.org JSON-LD Generation", () => {
 
   it("generates valid TattooParlor schema for Arte & Tatuajes", () => {
     const jsonLd = generateServiceJsonLd(goodLuckTattoo, "es");
-    
+
     expect(jsonLd["@type"]).toEqual(["LocalBusiness", "TattooParlor"]);
     expect(jsonLd.name).toBe("Good Luck Tattoo Mallorca");
     expect(jsonLd.aggregateRating.ratingValue).toBe(5.0);
@@ -32,7 +36,7 @@ describe("SEO & Schema.org JSON-LD Generation", () => {
 
   it("generates valid LegalService schema for Bufete Frau", () => {
     const jsonLd = generateServiceJsonLd(bufeteFrau, "en");
-    
+
     expect(jsonLd["@type"]).toBe("LegalService");
     expect(jsonLd.name).toBe("Bufete Frau Abogados & Asesores");
     expect(jsonLd.telephone).toBe("+34 971 22 80 36");
@@ -41,7 +45,7 @@ describe("SEO & Schema.org JSON-LD Generation", () => {
 
   it("generates valid AutoRental schema for Roig Premium", () => {
     const jsonLd = generateServiceJsonLd(roigPremium, "es");
-    
+
     expect(jsonLd["@type"]).toEqual(["LocalBusiness", "AutoRental"]);
     expect(jsonLd.name).toBe("Roig Premium (VIP Chauffeur & Transfers)");
     expect(jsonLd.areaServed.name).toBe("Mallorca, Illes Balears");

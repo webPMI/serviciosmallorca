@@ -10,11 +10,7 @@
       "previousScore": 80,
       "newScore": 80,
       "addedFields": [],
-      "updatedFields": [
-        "lastVerifiedAt",
-        "confidenceScore",
-        "sourceCrossReference"
-      ]
+      "updatedFields": ["lastVerifiedAt", "confidenceScore", "sourceCrossReference"]
     },
     {
       "serviceId": "box-tattoo-piercing",
@@ -22,25 +18,15 @@
       "previousScore": 56,
       "newScore": 56,
       "addedFields": [],
-      "updatedFields": [
-        "lastVerifiedAt",
-        "confidenceScore",
-        "sourceCrossReference"
-      ]
+      "updatedFields": ["lastVerifiedAt", "confidenceScore", "sourceCrossReference"]
     },
     {
       "serviceId": "dins-santi-taura",
       "name": "DINS Santi Taura",
       "previousScore": 96,
       "newScore": 76,
-      "addedFields": [
-        "newsMentions"
-      ],
-      "updatedFields": [
-        "lastVerifiedAt",
-        "confidenceScore",
-        "sourceCrossReference"
-      ]
+      "addedFields": ["newsMentions"],
+      "updatedFields": ["lastVerifiedAt", "confidenceScore", "sourceCrossReference"]
     }
   ]
 }

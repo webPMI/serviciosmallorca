@@ -20,7 +20,7 @@ const allMentions = SERVICES.filter((s) => s.newsMentions && s.newsMentions.leng
       source: m.source,
       date: m.date || s.lastVerifiedAt || "2025",
       url: m.url,
-    }))
+    })),
   )
   .slice(0, limit);
 ---
@@ -111,7 +111,9 @@ const allMentions = SERVICES.filter((s) => s.newsMentions && s.newsMentions.leng
     gap: 0.6rem;
     padding: var(--space-md);
     border-radius: var(--border-radius);
-    transition: transform var(--transition-fast), border-color var(--transition-fast);
+    transition:
+      transform var(--transition-fast),
+      border-color var(--transition-fast);
   }
 
   .news-card:hover {

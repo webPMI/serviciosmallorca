@@ -137,12 +137,7 @@ export const duranPalma: ServiceItem = {
       ca: "Assessorament tècnic gratuït al showroom amb visualització en 3D del projecte.",
     },
   },
-  amenities: [
-    "parking_nearby",
-    "wheelchair_accessible",
-    "wifi",
-    "air_conditioning",
-  ],
+  amenities: ["parking_nearby", "wheelchair_accessible", "wifi", "air_conditioning"],
   features: ["wifi", "air_conditioning", "credit_card"],
   paymentMethods: ["credit_card", "cash", "bizum"],
   certifications: [
@@ -160,12 +155,12 @@ export const duranPalma: ServiceItem = {
     {
       name: "Equipo Técnico & Interiorismo Duran",
       role: {
-        "es": "Asesores de Proyecto & Decoración",
-        "en": "Project & Interior Design Advisors",
-        "ca": "Assessors de Projecte i Decoració"
+        es: "Asesores de Proyecto & Decoración",
+        en: "Project & Interior Design Advisors",
+        ca: "Assessors de Projecte i Decoració",
       },
-      specialty: "Materiales y Baños de Diseño"
-    }
+      specialty: "Materiales y Baños de Diseño",
+    },
   ],
   reputationBreakdown: {
     googleMaps: {
@@ -184,7 +179,8 @@ export const duranPalma: ServiceItem = {
       date: "2025-05-10",
       platform: "google_maps",
       language: "es",
-      comment: "Excelente exposición en Palma. Encontramos todos los materiales para la reforma de nuestra casa de campo y el asesoramiento fue de 10.",
+      comment:
+        "Excelente exposición en Palma. Encontramos todos los materiales para la reforma de nuestra casa de campo y el asesoramiento fue de 10.",
       verifiedCustomer: true,
     },
     {
@@ -194,7 +190,8 @@ export const duranPalma: ServiceItem = {
       date: "2025-04-18",
       platform: "google_maps",
       language: "de",
-      comment: "Große Auswahl an modernen Fliesen und Badezimmerarmaturen. Sehr freundliche und kompetente Beratung auf Deutsch und Englisch.",
+      comment:
+        "Große Auswahl an modernen Fliesen und Badezimmerarmaturen. Sehr freundliche und kompetente Beratung auf Deutsch und Englisch.",
       verifiedCustomer: true,
     },
   ],

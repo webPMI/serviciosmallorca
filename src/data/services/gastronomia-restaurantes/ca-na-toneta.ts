@@ -140,7 +140,8 @@ export const caNaToneta: ServiceItem = {
       date: "2026-06-18",
       platform: "google_maps",
       language: "ca",
-      comment: "Autenticitat absoluta. Les coques de xeixa i el tractament dels vegetals de l'hort són pura màgia de la Serra de Tramuntana.",
+      comment:
+        "Autenticitat absoluta. Les coques de xeixa i el tractament dels vegetals de l'hort són pura màgia de la Serra de Tramuntana.",
       verifiedCustomer: true,
     },
     {
@@ -150,7 +151,8 @@ export const caNaToneta: ServiceItem = {
       date: "2026-04-12",
       platform: "tripadvisor",
       language: "en",
-      comment: "One of the most extraordinary dining experiences in the Mediterranean. Every course tells a real story of Majorcan nature.",
+      comment:
+        "One of the most extraordinary dining experiences in the Mediterranean. Every course tells a real story of Majorcan nature.",
       verifiedCustomer: true,
     },
   ],
@@ -267,13 +269,10 @@ export const caNaToneta: ServiceItem = {
       "Natural and Biodynamic Wine Pairing",
       "Romantic Garden Terrace in Caimari",
     ],
-    ca: [
-      "Menú Degustació de Microestació",
-      "Maridatge de Vins Naturals i Biodinàmics",
-      "Terrassa Romàntica a Caimari",
-    ],
+    ca: ["Menú Degustació de Microestació", "Maridatge de Vins Naturals i Biodinàmics", "Terrassa Romàntica a Caimari"],
   },
-  image: "https://www.canatoneta.com/wp-content/themes/canatoneta/timthumb.php?src=http://www.canatoneta.com/wp-content/uploads/2012/06/canatoneta-home-01.jpg&w=794&h=529&q=75",
+  image:
+    "https://www.canatoneta.com/wp-content/themes/canatoneta/timthumb.php?src=http://www.canatoneta.com/wp-content/uploads/2012/06/canatoneta-home-01.jpg&w=794&h=529&q=75",
   gallery: [
     "https://www.canatoneta.com/wp-content/themes/canatoneta/timthumb.php?src=http://www.canatoneta.com/wp-content/uploads/2012/06/canatoneta-home-01.jpg&w=794&h=529&q=75",
     "https://www.canatoneta.com/wp-content/themes/canatoneta/timthumb.php?src=http://www.canatoneta.com/wp-content/uploads/2012/06/canatoneta-home-02.jpg&w=794&h=529&q=75",

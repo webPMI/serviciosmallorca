@@ -1,7 +1,7 @@
-import type { ServiceItem } from "../data/services";
-import { CATEGORIES } from "../data/categories";
-import { MALLORCA_ZONES } from "../data/zones";
-import { isValidTag } from "../data/tags";
+import type { ServiceItem } from "../data/services/index.ts";
+import { CATEGORIES } from "../data/categories.ts";
+import { MALLORCA_ZONES } from "../data/zones.ts";
+import { isValidTag } from "../data/tags.ts";
 
 /**
  * Valida las referencias taxonómicas (docs/TAXONOMY.md §3.1) de un registro del
@@ -109,8 +109,10 @@ export function validateServicesList(services: ServiceItem[]): ValidationResult 
     if (!service.address) {
       errors.push(`Dirección requerida ausente en "${service.name}"`);
     }
-    if (!service.rating || service.rating < 1 || service.rating > 5) {
-      errors.push(`Rating inválido en "${service.name}": ${service.rating}`);
+    if (service.status !== "incomplete_admin_only") {
+      if (!service.rating || service.rating < 1 || service.rating > 5) {
+        errors.push(`Rating inválido en "${service.name}": ${service.rating}`);
+      }
     }
     if (!service.schedule) {
       errors.push(`Horario operativo requerido ausente en "${service.name}"`);
@@ -183,4 +185,3 @@ export function validateServicesList(services: ServiceItem[]): ValidationResult 
     errors,
   };
 }
-

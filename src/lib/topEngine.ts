@@ -11,7 +11,7 @@ export interface RankedService {
 
 /**
  * Calcula la puntuación ponderada de un negocio para los rankings "Top".
- * 
+ *
  * Algoritmo multicriterio:
  * - Rating (40%): Calificación ponderada de 1 a 5 convertida a base 100.
  * - Volumen de Reseñas (25%): Normalizado hasta un máximo de 500 reseñas.
@@ -19,8 +19,10 @@ export interface RankedService {
  * - Calidad de Contenido & Fidelidad (15%): Fotos reales, horario y contacto directo.
  */
 export function calculateBusinessScore(service: ServiceItem): number {
-  const ratingNorm = (service.rating / 5.0) * 100;
-  const reviewCountNorm = Math.min(100, (service.reviewCount / 400) * 100);
+  const rating = service.rating ?? 0; // Usar 0 si rating es null
+  const reviewCount = service.reviewCount ?? 0; // Usar 0 si reviewCount es null
+  const ratingNorm = (rating / 5.0) * 100;
+  const reviewCountNorm = Math.min(100, (reviewCount / 400) * 100);
   const confidenceScore = service.confidenceScore || (service.verified ? 90 : 60);
 
   let contentBonus = 0;
@@ -29,11 +31,7 @@ export function calculateBusinessScore(service: ServiceItem): number {
   if (service.schedule) contentBonus += 25;
   if (service.gallery && service.gallery.length >= 3) contentBonus += 25;
 
-  const finalScore =
-    ratingNorm * 0.40 +
-    reviewCountNorm * 0.25 +
-    confidenceScore * 0.20 +
-    contentBonus * 0.15;
+  const finalScore = ratingNorm * 0.4 + reviewCountNorm * 0.25 + confidenceScore * 0.2 + contentBonus * 0.15;
 
   return Math.round(finalScore * 10) / 10;
 }
@@ -41,18 +39,15 @@ export function calculateBusinessScore(service: ServiceItem): number {
 /**
  * Devuelve los negocios mejor valorados de una categoría específica.
  */
-export function getTopServicesByCategory(
-  category: string,
-  limit = 5
-): RankedService[] {
+export function getTopServicesByCategory(category: string, limit = 5): RankedService[] {
   const filtered = SERVICES.filter((s) => s.category === category && s.status !== "permanently_closed");
 
   const ranked = filtered
     .map((service) => {
       const score = calculateBusinessScore(service);
       const reasons: string[] = [];
-      if (service.rating >= 4.8) reasons.push("⭐ Calificación de excelencia (4.8+)");
-      if (service.reviewCount >= 100) reasons.push("💬 Gran volumen de reseñas verificadas");
+      if (service.rating && service.rating >= 4.8) reasons.push("⭐ Calificación de excelencia (4.8+)");
+      if (service.reviewCount && service.reviewCount >= 100) reasons.push("💬 Gran volumen de reseñas verificadas");
       if (service.verified) reasons.push("✅ 100% Auditado por Servicios Mallorca");
       if (service.isIconicHeritage) reasons.push("🏛️ Negocio histórico o emblemático");
 
@@ -80,7 +75,7 @@ export function getTopRankedServices(limit = 10): RankedService[] {
     .map((service) => {
       const score = calculateBusinessScore(service);
       const reasons: string[] = [];
-      if (service.rating >= 4.8) reasons.push("⭐ Calificación sobresaliente");
+      if (service.rating && service.rating >= 4.8) reasons.push("⭐ Calificación sobresaliente");
       if (service.verified) reasons.push("✅ Auditoría de confianza superada");
 
       return {

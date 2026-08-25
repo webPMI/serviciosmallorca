@@ -20,8 +20,8 @@ interface MapAuditReport {
   coordinates: { lat: number; lng: number };
   google: {
     isEntityProfile: boolean;
-    rating: number;
-    reviewCount: number;
+    rating?: number;
+    reviewCount?: number;
     url: string;
   };
   apple: {
@@ -59,8 +59,8 @@ export function auditMapsPresence(serviceNameQuery?: string): MapAuditReport[] {
       coordinates: s.coordinates,
       google: {
         isEntityProfile: isGoogleEntity,
-        rating: s.rating,
-        reviewCount: s.reviewCount,
+        rating: s.rating ?? undefined,
+        reviewCount: s.reviewCount ?? undefined,
         url: s.googleMapsUrl,
       },
       apple: {
@@ -95,7 +95,9 @@ if (reports.length === 0) {
 reports.forEach((r, idx) => {
   console.log(`[${idx + 1}/${reports.length}] 🏢 ${r.name} (${r.id})`);
   console.log(`  📍 Zona: ${r.zone} | Coordenadas: [${r.coordinates.lat}, ${r.coordinates.lng}]`);
-  console.log(`  ⭐ Google Maps: ${r.google.rating.toFixed(1)} / 5.0 (${r.google.reviewCount} reseñas públicas)`);
+  const ratingText = r.google.rating ? r.google.rating.toFixed(1) : "N/A";
+  const reviewCountText = r.google.reviewCount ?? "N/A";
+  console.log(`  ⭐ Google Maps: ${ratingText} / 5.0 (${reviewCountText} reseñas públicas)`);
   console.log(
     `     Tipo Ficha: ${r.google.isEntityProfile ? "✅ Ficha Comercial Oficial (Google Place Card)" : "⚠️ Coordenadas GPS directas"}`,
   );

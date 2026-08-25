@@ -129,7 +129,8 @@ export const urbanSoulTattoo: ServiceItem = {
       date: "2026-06-19",
       platform: "google_maps",
       language: "es",
-      comment: "Increíble tatuaje realista de mi perro. Las sombras y la mirada son idénticas a la foto original. Higiene y trato impecables.",
+      comment:
+        "Increíble tatuaje realista de mi perro. Las sombras y la mirada son idénticas a la foto original. Higiene y trato impecables.",
       verifiedCustomer: true,
     },
     {
@@ -139,7 +140,8 @@ export const urbanSoulTattoo: ServiceItem = {
       date: "2026-04-28",
       platform: "google_maps",
       language: "en",
-      comment: "Super professional tattoo artists in Palma. Did a fine-line forearm piece and the healing was 100% clean and crisp.",
+      comment:
+        "Super professional tattoo artists in Palma. Did a fine-line forearm piece and the healing was 100% clean and crisp.",
       verifiedCustomer: true,
     },
   ],
@@ -238,9 +240,7 @@ export const urbanSoulTattoo: ServiceItem = {
     ],
   },
   image: "http://www.urbansoul.club/assets/img/hero.jpg",
-  gallery: [
-    "http://www.urbansoul.club/assets/img/hero.jpg",
-  ],
+  gallery: ["http://www.urbansoul.club/assets/img/hero.jpg"],
   schedule: "Lun - Sáb: 10:30 - 14:00, 16:30 - 20:30 (Domingo Cerrado)",
   lastVerifiedAt: "2026-08-25",
   confidenceScore: 97,

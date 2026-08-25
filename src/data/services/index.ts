@@ -31,6 +31,7 @@ export { SEGURIDAD_SERVICES } from "./tecnologia-seguridad/index.ts";
 
 /**
  * Catálogo Unificado Global (Agregación de todos los módulos sectoriales).
+ * Incluye TODOS los servicios, incluso los incompletos (para administradores).
  */
 export const SERVICES: ServiceItem[] = [
   ...TATTOO_SERVICES,
@@ -44,6 +45,12 @@ export const SERVICES: ServiceItem[] = [
   ...JARDINERIA_SERVICES,
   ...SEGURIDAD_SERVICES,
 ].filter((s): s is ServiceItem => Boolean(s && s.id && s.slug));
+
+/**
+ * Catálogo Público (Solo servicios completos y verificados para usuarios).
+ * Excluye negocios con status "incomplete_admin_only".
+ */
+export const PUBLIC_SERVICES: ServiceItem[] = SERVICES.filter((s) => s.status !== "incomplete_admin_only");
 
 /**
  * Busca un negocio por su ID o slug canónico.
@@ -84,4 +91,3 @@ export {
   type GeoCoordinates,
   type NearbyServiceItem,
 } from "../../lib/geoUtils.ts";
-

@@ -31,7 +31,7 @@ export interface ServiceScrapeResult {
 export async function scrapeServiceData(
   html: string,
   baseUrl: URL,
-  businessName: string
+  businessName: string,
 ): Promise<ServiceScrapeResult> {
   const encodedQuery = encodeURIComponent(businessName.trim());
   const lowerHtml = html.toLowerCase();
@@ -45,16 +45,12 @@ export async function scrapeServiceData(
   // 2. Detección de Comodidades
   const amenities = ["wifi", "air_conditioning"];
   if (lowerHtml.includes("parking") || lowerHtml.includes("aparcamiento")) amenities.push("parking_nearby");
-  if (
-    lowerHtml.includes("movilidad reducida") ||
-    lowerHtml.includes("accesible") ||
-    lowerHtml.includes("wheelchair")
-  ) {
+  if (lowerHtml.includes("movilidad reducida") || lowerHtml.includes("accesible") || lowerHtml.includes("wheelchair")) {
     amenities.push("wheelchair_accessible");
   }
   if (lowerHtml.includes("pet friendly") || lowerHtml.includes("mascotas")) amenities.push("pet_friendly");
 
-  // 3. E-Commerce & Shopify Extraction
+  // 3. E-Commerce & Shopify Extraction — con filtrado de falsos positivos
   let onlineStore: { hasOnlineStore: boolean; platform: string; url: string } | undefined;
   const products: StoreProductItem[] = [];
 
@@ -92,11 +88,14 @@ export async function scrapeServiceData(
       // Fallback
     }
   } else if (lowerHtml.includes("woocommerce") || lowerHtml.includes("wc-api")) {
-    onlineStore = {
-      hasOnlineStore: true,
-      platform: "woocommerce",
-      url: new URL("/shop", baseUrl).href,
-    };
+    // Confirmar que no es solo una referencia en CSS/JS
+    if (!lowerHtml.match(/\.(css|js|svg|png|jpg|webp|ico)/i)) {
+      onlineStore = {
+        hasOnlineStore: true,
+        platform: "woocommerce",
+        url: new URL("/shop", baseUrl).href,
+      };
+    }
   } else if (lowerHtml.includes("prestashop")) {
     onlineStore = {
       hasOnlineStore: true,
@@ -104,10 +103,14 @@ export async function scrapeServiceData(
       url: new URL("/tienda", baseUrl).href,
     };
   } else if (
-    lowerHtml.includes("/shop") ||
-    lowerHtml.includes("/tienda") ||
-    lowerHtml.includes("/store") ||
-    lowerHtml.includes("/productos")
+    (lowerHtml.includes("/shop") ||
+      lowerHtml.includes("/tienda") ||
+      lowerHtml.includes("/store") ||
+      lowerHtml.includes("/productos")) &&
+    !lowerHtml.includes("/wp-content/") &&
+    !lowerHtml.includes("/wp-includes/") &&
+    !lowerHtml.includes(".min.css") &&
+    !lowerHtml.includes(".min.js")
   ) {
     onlineStore = {
       hasOnlineStore: true,

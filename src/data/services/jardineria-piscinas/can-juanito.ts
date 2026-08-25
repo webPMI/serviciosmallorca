@@ -140,11 +140,7 @@ export const canJuanito: ServiceItem = {
       ca: "Visita tècnica inicial a finques de tota l'illa per a estudi de paisatgisme.",
     },
   },
-  amenities: [
-    "parking_nearby",
-    "wheelchair_accessible",
-    "wifi",
-  ],
+  amenities: ["parking_nearby", "wheelchair_accessible", "wifi"],
   features: ["wifi", "air_conditioning", "credit_card"],
   paymentMethods: ["credit_card", "cash", "bizum"],
   certifications: [
@@ -168,12 +164,12 @@ export const canJuanito: ServiceItem = {
     {
       name: "Equipo de Paisajismo Can Juanito",
       role: {
-        "es": "Paisajistas & Ingenieros Agrónomos",
-        "en": "Landscape Architects & Agronomists",
-        "ca": "Paisatgistes i Enginyers Agrònoms"
+        es: "Paisajistas & Ingenieros Agrónomos",
+        en: "Landscape Architects & Agronomists",
+        ca: "Paisatgistes i Enginyers Agrònoms",
       },
-      specialty: "Flora Mediterránea y Xerojardinería"
-    }
+      specialty: "Flora Mediterránea y Xerojardinería",
+    },
   ],
   reputationBreakdown: {
     googleMaps: {
@@ -192,7 +188,8 @@ export const canJuanito: ServiceItem = {
       date: "2025-05-18",
       platform: "google_maps",
       language: "ca",
-      comment: "El millor viver de Mallorca sense dubte. Vam comprar dues oliveres centenàries per a la finca i el trasplantament va ser perfecte.",
+      comment:
+        "El millor viver de Mallorca sense dubte. Vam comprar dues oliveres centenàries per a la finca i el trasplantament va ser perfecte.",
       verifiedCustomer: true,
     },
     {
@@ -202,7 +199,8 @@ export const canJuanito: ServiceItem = {
       date: "2025-04-02",
       platform: "google_maps",
       language: "de",
-      comment: "Wunderschöne Gärtnerei mit riesiger Auswahl an mediterranen Pflanzen. Sehr kompetente Beratung zur Bewässerung.",
+      comment:
+        "Wunderschöne Gärtnerei mit riesiger Auswahl an mediterranen Pflanzen. Sehr kompetente Beratung zur Bewässerung.",
       verifiedCustomer: true,
     },
   ],

@@ -15,16 +15,16 @@ const isLongText = descText.length > 280;
 <section class="card section-box" id="sobre-nosotros">
   <h2 class="box-title">
     <span>ℹ️</span>
-    <span>{locale === "ca" ? "Sobre aquest Servei" : locale === "en" ? "About this Service" : "Acerca de este Negocio"}</span>
+    <span
+      >{
+        locale === "ca" ? "Sobre aquest Servei" : locale === "en" ? "About this Service" : "Acerca de este Negocio"
+      }</span
+    >
   </h2>
 
-  <div class={`desc-content-wrapper ${isLongText ? 'is-collapsible' : ''}`} id="service-desc-wrapper">
+  <div class={`desc-content-wrapper ${isLongText ? "is-collapsible" : ""}`} id="service-desc-wrapper">
     <p class="desc-text" id="service-desc-paragraph">{descText}</p>
-    {
-      isLongText && (
-        <div class="desc-fade-overlay" id="desc-fade-overlay" aria-hidden="true" />
-      )
-    }
+    {isLongText && <div class="desc-fade-overlay" id="desc-fade-overlay" aria-hidden="true" />}
   </div>
 
   {
@@ -37,8 +37,12 @@ const isLongText = descText.length > 280;
           aria-expanded="false"
           aria-controls="service-desc-wrapper"
         >
-          <span class="toggle-text-more">📖 {locale === "ca" ? "Veure més detalls" : locale === "en" ? "Read full details" : "Ver más detalles"}</span>
-          <span class="toggle-text-less" style="display: none;">🔼 {locale === "ca" ? "Veure menys" : locale === "en" ? "Show less" : "Ver menos"}</span>
+          <span class="toggle-text-more">
+            📖 {locale === "ca" ? "Veure més detalls" : locale === "en" ? "Read full details" : "Ver más detalles"}
+          </span>
+          <span class="toggle-text-less" style="display: none;">
+            🔼 {locale === "ca" ? "Veure menys" : locale === "en" ? "Show less" : "Ver menos"}
+          </span>
         </button>
       </div>
     )
@@ -55,10 +59,10 @@ const isLongText = descText.length > 280;
     btn.addEventListener("click", () => {
       const isExpanded = wrapper.classList.toggle("is-expanded");
       btn.setAttribute("aria-expanded", String(isExpanded));
-      
+
       const moreText = btn.querySelector(".toggle-text-more") as HTMLElement;
       const lessText = btn.querySelector(".toggle-text-less") as HTMLElement;
-      
+
       if (moreText && lessText) {
         moreText.style.display = isExpanded ? "none" : "inline";
         lessText.style.display = isExpanded ? "inline" : "none";

@@ -27,6 +27,7 @@ export interface VerificationInput {
   reviewCount?: number;
   rating?: number;
   webHttpStatus?: number;
+  webAccessibility?: "active" | "not_found" | "server_error" | "timeout" | "error";
 }
 
 export interface VerificationReport {
@@ -132,7 +133,7 @@ export function validateImageQuality(imageUrl?: string): { isValid: boolean; rea
 export function verifyImageOwnership(
   imageUrl?: string,
   businessWebsite?: string,
-  _socialLinks?: Record<string, string | undefined>
+  _socialLinks?: Record<string, string | undefined>,
 ): ImageVerificationResult {
   const quality = validateImageQuality(imageUrl);
   if (!quality.isValid) {
@@ -181,13 +182,7 @@ export function verifyImageOwnership(
     }
 
     // 2. Verificación de Redes Sociales y Google Maps (Social Trust)
-    const SOCIAL_CDNS = [
-      "cdninstagram.com",
-      "fbcdn.net",
-      "googleusercontent.com",
-      "ggpht.com",
-      "licdn.com",
-    ];
+    const SOCIAL_CDNS = ["cdninstagram.com", "fbcdn.net", "googleusercontent.com", "ggpht.com", "licdn.com"];
 
     if (SOCIAL_CDNS.some((scdn) => imgHost.includes(scdn))) {
       return { isValid: true, trustLevel: "social_trust" };
@@ -294,12 +289,17 @@ export function auditBusinessData(input: VerificationInput): VerificationReport 
   // 3. Disponibilidad y Web Oficial (Max 20 pts)
   let activeWeb200Ok = false;
   if (input.website && input.website.startsWith("http")) {
-    if (input.webHttpStatus === 200 || input.webHttpStatus === undefined) {
+    // Priorizar webAccessibility sobre webHttpStatus si está disponible
+    if (input.webAccessibility === "active" || input.webHttpStatus === 200 || input.webHttpStatus === undefined) {
       webScore = 20;
       activeWeb200Ok = true;
-    } else if (input.webHttpStatus >= 300 && input.webHttpStatus < 400) {
-      webScore = 15; // Redirección
-    } else {
+    } else if (input.webAccessibility === "not_found" || input.webHttpStatus === 404) {
+      webScore = 5;
+      warnings.push("La web oficial devuelve código 404 (No Encontrada).");
+      recommendations.push("Verificar si la URL ha cambiado o el negocio ha cerrado.");
+    } else if (input.webAccessibility === "server_error" || input.webHttpStatus === 500) {
+      webScore = 5;
+      warnings.push("La web oficial devuelve código 500 (Error del Servidor).");
       webScore = 5;
       warnings.push(`La web oficial devuelve código HTTP ${input.webHttpStatus}.`);
     }

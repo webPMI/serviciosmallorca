@@ -137,7 +137,12 @@ const { service, translations } = Astro.props;
         <button type="button" id="open-claim-modal-btn" class="btn btn-sm btn-outline-primary">
           🏢 {translations["services.claimBusiness"]}
         </button>
-        <button type="button" id="open-report-modal-btn" class="optout-link-btn" style="color: var(--color-warning, #d97706); text-decoration: none;">
+        <button
+          type="button"
+          id="open-report-modal-btn"
+          class="optout-link-btn"
+          style="color: var(--color-warning, #d97706); text-decoration: none;"
+        >
           🚩 {translations["services.reportError"]}
         </button>
         <button type="button" id="open-delete-modal-btn" class="optout-link-btn">

@@ -70,7 +70,7 @@ async function sleep(ms: number) {
 
 export async function runBulkIngestion(
   candidates: BatchCandidate[],
-  options: { saveFiles?: boolean; delayMs?: number } = {}
+  options: { saveFiles?: boolean; delayMs?: number } = {},
 ): Promise<BatchIngestionSummary> {
   const delayMs = options.delayMs ?? 600;
   console.log("=".repeat(80));

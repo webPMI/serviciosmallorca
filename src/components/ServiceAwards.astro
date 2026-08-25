@@ -61,7 +61,9 @@ const { service, translations } = Astro.props;
                   <span class="award-meta">
                     {press.mediaName} {press.date && `· ${press.date}`}
                   </span>
-                  {press.quote && <p style="font-size: 0.85rem; color: var(--color-text-muted); margin: 0.3rem 0;">«{press.quote}»</p>}
+                  {press.quote && (
+                    <p style="font-size: 0.85rem; color: var(--color-text-muted); margin: 0.3rem 0;">«{press.quote}»</p>
+                  )}
                 </div>
               </div>
             ))}

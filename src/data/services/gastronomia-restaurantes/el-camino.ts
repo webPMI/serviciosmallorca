@@ -142,17 +142,10 @@ export const elCaminoPalma: ServiceItem = {
       ca: "El restaurant no disposa de telèfon; les reserves es gestionen exclusivament online.",
     },
   },
-  amenities: [
-    "air_conditioning",
-    "wifi",
-    "wheelchair_accessible",
-  ],
+  amenities: ["air_conditioning", "wifi", "wheelchair_accessible"],
   features: ["wifi", "air_conditioning", "credit_card"],
   paymentMethods: ["credit_card", "cash", "apple_pay"],
-  certifications: [
-    "Guía Michelin — Recomendado Selección Gastronómica",
-    "Sello de Calidad Producto Balear",
-  ],
+  certifications: ["Guía Michelin — Recomendado Selección Gastronómica", "Sello de Calidad Producto Balear"],
   socialLinks: {
     instagram: "https://www.instagram.com/el_camino_palma/",
   },
@@ -160,12 +153,12 @@ export const elCaminoPalma: ServiceItem = {
     {
       name: "Eddie Hart",
       role: {
-        "es": "Fundador & Creador del Concepto",
-        "en": "Founder & Concept Creator",
-        "ca": "Fundador i Creador del Concepte"
+        es: "Fundador & Creador del Concepto",
+        en: "Founder & Concept Creator",
+        ca: "Fundador i Creador del Concepte",
       },
-      specialty: "Restauración y Barras Gastronómicas"
-    }
+      specialty: "Restauración y Barras Gastronómicas",
+    },
   ],
   reputationBreakdown: {
     googleMaps: {
@@ -184,7 +177,8 @@ export const elCaminoPalma: ServiceItem = {
       date: "2025-07-22",
       platform: "google_maps",
       language: "es",
-      comment: "Increíble la experiencia en la barra. Las gambas de Sóller y los chipirones con sobrasada fueron espectaculares. El ambiente es vibrante y el servicio impecable.",
+      comment:
+        "Increíble la experiencia en la barra. Las gambas de Sóller y los chipirones con sobrasada fueron espectaculares. El ambiente es vibrante y el servicio impecable.",
       verifiedCustomer: true,
     },
     {
@@ -194,7 +188,8 @@ export const elCaminoPalma: ServiceItem = {
       date: "2025-06-18",
       platform: "google_maps",
       language: "en",
-      comment: "By far the best tapas bar in Palma. Sitting at the marble counter watching the chefs prepare each dish was magical.",
+      comment:
+        "By far the best tapas bar in Palma. Sitting at the marble counter watching the chefs prepare each dish was magical.",
       verifiedCustomer: true,
     },
   ],

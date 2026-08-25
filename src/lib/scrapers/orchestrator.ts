@@ -6,16 +6,13 @@
  * y ejecuta la auditoría multivariable de confianza (GR-11 Zero Fake Data).
  */
 
-import { fetchHtmlWithTimeout, extractBaseMetadata, generateMapUrls } from "./baseScraper.ts";
+import { fetchHtmlWithTimeout, extractBaseMetadata, generateMapUrls, formatSpanishPhone } from "./baseScraper.ts";
 import { extractSocialLinks, generateSocialDorks } from "./socialScraper.ts";
 import { scrapeRestaurantData } from "./restaurantScraper.ts";
 import { scrapeArtCultureData } from "./artCultureScraper.ts";
 import { scrapeServiceData } from "./serviceScraper.ts";
-import {
-  auditBusinessData,
-  verifyImageOwnership,
-  type VerificationReport,
-} from "../verificationEngine.ts";
+import { auditBusinessData, verifyImageOwnership, type VerificationReport } from "../verificationEngine.ts";
+import { translateText } from "../translator.ts";
 
 export interface HarvestedIntelligenceResult {
   businessQuery: string;
@@ -46,11 +43,63 @@ export interface HarvestedIntelligenceResult {
 
 /**
  * Detecta inteligentemente la categoría del negocio a partir del nombre o texto HTML.
+ * Usa detección por palabrasclave con contexto: descarta matches superficiales.
  */
 export function detectBusinessCategory(query: string, rawHtml = ""): string {
   const text = `${query} ${rawHtml}`.toLowerCase();
 
-  // 1. Náutica y Chárter (Revisar antes para no confundir 'charter' con 'arte')
+  // --- Contexto fuerte: keywords en título, headings, meta description, nombre de dominio ---
+  const strongSignal = extractStrongContext(text, rawHtml);
+
+  // 0. Reformas & Construcción — detectar PRIMERO antes de gastronomía
+  // Palabras fuertes de construcción que excluyen hostelería
+  const constructionStrong =
+    text.includes("materiales") ||
+    text.includes("construcc") ||
+    text.includes("pavimentos") ||
+    text.includes("reformas") ||
+    text.includes("revestimientos") ||
+    text.includes("baños") ||
+    text.includes("banos") ||
+    text.includes("sanitarios") ||
+    text.includes("instalacion") ||
+    text.includes("instalaciones") ||
+    text.includes("fontaneria") ||
+    text.includes("plomeria") ||
+    text.includes("plomería") ||
+    text.includes("cimientos") ||
+    text.includes("hormigon") ||
+    text.includes("hormigón") ||
+    text.includes("ceramica") ||
+    text.includes("cerámica") ||
+    text.includes("piedra natural") ||
+    (text.includes("mantenimiento") &&
+      !text.includes("restaurante") &&
+      !text.includes("gastronom") &&
+      !text.includes("barra de") &&
+      !text.includes("mesas") &&
+      !text.includes("comida") &&
+      !text.includes("cocina") &&
+      !text.includes("pub") &&
+      !text.includes("cervecer") &&
+      !text.includes("vinater") &&
+      !text.includes("bodega"));
+  // Confirmar con contexto fuerte: título o meta que mencione construcción
+  const constructionContext = strongSignal.some(
+    (s) =>
+      s.includes("construcc") ||
+      s.includes("materiales") ||
+      s.includes("reformas") ||
+      s.includes("pavimentos") ||
+      s.includes("baños") ||
+      s.includes("sanitarios") ||
+      s.includes("construcción"),
+  );
+  if (constructionStrong || constructionContext) {
+    return "reformas-construccion";
+  }
+
+  // 1. Náutica y Chárter
   if (
     text.includes("charter") ||
     text.includes("barco") ||
@@ -58,37 +107,77 @@ export function detectBusinessCategory(query: string, rawHtml = ""): string {
     text.includes("nautic") ||
     text.includes("boat") ||
     text.includes("catamaran") ||
-    text.includes("velero")
+    text.includes("velero") ||
+    strongSignal.some(
+      (s) =>
+        s.includes("charter") ||
+        s.includes("barco") ||
+        s.includes("yate") ||
+        s.includes("nautic") ||
+        s.includes("boat"),
+    )
   ) {
     return "nautica-charter";
   }
 
-  // 2. Gastronomía & Restauración
+  // 2. Arte, Tatuaje y Piercing — keywords explícitas de tatuaje/piercing
+  if (
+    text.includes("tattoo") ||
+    text.includes("tatuaje") ||
+    text.includes("piercing") ||
+    text.includes("tatuadores") ||
+    // "arte" o "galeria" con contexto de tatuaje/tinta
+    (text.includes("arte") &&
+      (text.includes("tatu") || text.includes("ink") || text.includes("piercing") || text.includes("tattoo"))) ||
+    (text.includes("galeria") &&
+      (text.includes("tatu") || text.includes("tattoo") || text.includes("piercing") || text.includes("ink"))) ||
+    (text.includes("ink") &&
+      (text.includes("tatu") || text.includes("tattoo") || text.includes("studi") || text.includes("piercing")))
+  ) {
+    return "arte-tatuajes";
+  }
+
+  // 3. Gastronomía & Restauración — keywords explícitas de hostelería,
+  //    descartando contexto de construcción/materiales
   if (
     text.includes("restaurante") ||
     text.includes("gastronom") ||
     text.includes("chef") ||
-    text.includes("michelin") ||
-    text.includes("repsol") ||
     text.includes("tapas") ||
     text.includes("paella") ||
     text.includes("bodega") ||
     text.includes("bar ") ||
     text.includes("comida") ||
-    text.includes("cocina")
+    // "cocina" solo si no hay contexto de construcción
+    (text.includes("cocina") &&
+      !text.includes("materiales") &&
+      !text.includes("construcc") &&
+      !text.includes("pavimentos") &&
+      !text.includes("reformas") &&
+      !text.includes("revestimientos") &&
+      !text.includes("baños") &&
+      !text.includes("banos") &&
+      !text.includes("sanitarios") &&
+      !text.includes("instalacion") &&
+      !text.includes("instalaciones") &&
+      !text.includes("plomeria") &&
+      !text.includes("fontaneria"))
   ) {
     return "gastronomia-restaurantes";
   }
 
-  // 3. Arte, Tatuaje y Piercing (Límites de palabra para 'arte' e 'ink')
+  // 3. Arte, Tatuaje y Piercing
   if (
     text.includes("tattoo") ||
     text.includes("tatuaje") ||
     text.includes("piercing") ||
-    /\barte\b/i.test(text) ||
-    /\bink\b/i.test(text) ||
-    text.includes("galeria") ||
-    text.includes("exposicion")
+    (text.includes("art") &&
+      (text.includes("ink") ||
+        text.includes("tatu") ||
+        text.includes("tattoo") ||
+        text.includes("piercing") ||
+        text.includes("galeria"))) ||
+    text.includes("ink")
   ) {
     return "arte-tatuajes";
   }
@@ -108,12 +197,52 @@ export function detectBusinessCategory(query: string, rawHtml = ""): string {
   return "servicios-profesionales";
 }
 
+/** Extrae señales fuertes: título, meta description, h1-h6, nombre de dominio canónico */
+function extractStrongContext(_text = "", rawHtml = ""): string[] {
+  const signals: string[] = [];
+  // Meta description
+  const descMatch = rawHtml.match(/<meta\s+name=["']description["']\s+content=["'](.*?)["']/is);
+  if (descMatch && descMatch[1]) signals.push(descMatch[1].trim().toLowerCase());
+  // Título del documento
+  const titleMatch = rawHtml.match(/<title[^>]*>(.*?)<\/title>/is);
+  if (titleMatch && titleMatch[1]) signals.push(titleMatch[1].trim().toLowerCase());
+  // H1
+  const h1Match = rawHtml.match(/<h1[^>]*>(.*?)<\/h1>/is);
+  if (h1Match && h1Match[1])
+    signals.push(
+      h1Match[1]
+        .replace(/<[^>]+>/g, "")
+        .trim()
+        .toLowerCase(),
+    );
+  // H2
+  const h2Match = rawHtml.match(/<h2[^>]*>(.*?)<\/h2>/is);
+  if (h2Match && h2Match[1])
+    signals.push(
+      h2Match[1]
+        .replace(/<[^>]+>/g, "")
+        .trim()
+        .toLowerCase(),
+    );
+  // URL canónica
+  const canonicalMatch = rawHtml.match(/<link\s+rel=["']canonical["']\s+href=["']([^"']+)["']/is);
+  if (canonicalMatch && canonicalMatch[1]) {
+    try {
+      const url = new URL(canonicalMatch[1]);
+      signals.push(url.hostname.toLowerCase());
+    } catch {
+      /* ignore */
+    }
+  }
+  return signals;
+}
+
 /**
  * Orquesta la minería de datos coordinando especialistas por dominio.
  */
 export async function harvestBusinessIntelligence(
   businessName: string,
-  websiteUrl?: string
+  websiteUrl?: string,
 ): Promise<HarvestedIntelligenceResult> {
   const cleanName = businessName.trim();
   const targetUrl = websiteUrl || "";
@@ -122,6 +251,18 @@ export async function harvestBusinessIntelligence(
   const { html, httpStatus, baseUrl } = targetUrl
     ? await fetchHtmlWithTimeout(targetUrl)
     : { html: "", httpStatus: 0, baseUrl: new URL("https://ejemplo.com") };
+
+  // 1.1. Manejo mejorado de webs caídas (HTTP 500, 404, timeout)
+  const webAccessibility =
+    httpStatus === 200
+      ? "active"
+      : httpStatus === 404
+        ? "not_found"
+        : httpStatus === 500
+          ? "server_error"
+          : httpStatus === 0
+            ? "timeout"
+            : "error";
 
   const baseData = extractBaseMetadata(html, baseUrl, httpStatus);
   const mapUrls = generateMapUrls(cleanName);
@@ -153,6 +294,33 @@ export async function harvestBusinessIntelligence(
     domainSpecialties = artData.specialties;
     domainCertifications = artData.certifications;
     directoryDorks = artData.artDorks;
+  } else if (detectedCategory === "reformas-construccion") {
+    directoryDorks = serviceData.generalDirectoryDorks;
+    domainCertifications = [
+      "ISO 9001 - Gestión de Calidad en Construcción",
+      "Registro de Empresa de las Illes Balears",
+    ];
+  } else if (detectedCategory === "inmobiliaria-villas") {
+    directoryDorks = serviceData.generalDirectoryDorks;
+    domainCertifications = [];
+  } else if (detectedCategory === "jardineria-piscinas") {
+    directoryDorks = serviceData.generalDirectoryDorks;
+    domainCertifications = ["Certificado de Instalador Autorizado de Piscinas", "ISO 9001 - Gestión de Calidad"];
+  } else if (detectedCategory === "motor-transporte") {
+    directoryDorks = serviceData.generalDirectoryDorks;
+    domainCertifications = ["Fingerprint Vehicle Registration - ITV", "ISO 9001 - Servicios Mecánicos"];
+  } else if (detectedCategory === "nautica-charter") {
+    directoryDorks = serviceData.generalDirectoryDorks;
+    domainCertifications = ["Licencia de Chárter Balear", "Seguro de Navegación Predial"];
+  } else if (detectedCategory === "servicios-profesionales") {
+    directoryDorks = serviceData.generalDirectoryDorks;
+    domainCertifications = [];
+  } else if (detectedCategory === "spas-bienestar") {
+    directoryDorks = serviceData.generalDirectoryDorks;
+    domainCertifications = ["Registro Sanitario Balear - Centro de Bienestar", "Autorización Actividades Resort"];
+  } else if (detectedCategory === "tecnologia-seguridad") {
+    directoryDorks = serviceData.generalDirectoryDorks;
+    domainCertifications = ["ISO 27001 - Seguridad de la Información", "Certificado de Instalador Autorizado"];
   } else {
     directoryDorks = serviceData.generalDirectoryDorks;
   }
@@ -181,7 +349,7 @@ export async function harvestBusinessIntelligence(
     name: cleanName,
     category: detectedCategory,
     zone: "palma",
-    address: "Palma, Mallorca",
+    address: baseData.extractedAddress || "Palma, Mallorca",
     coordinates: { lat: 39.5696, lng: 2.6502 },
     website: targetUrl || undefined,
     phone: baseData.extractedPhone,
@@ -189,9 +357,28 @@ export async function harvestBusinessIntelligence(
     whatsapp: baseData.extractedPhone,
     socialLinks: socialLinks,
     webHttpStatus: httpStatus > 0 ? httpStatus : undefined,
+    webAccessibility: webAccessibility, // Información adicional de accesibilidad
   });
 
   // 7. Generación de Plantilla JSON para src/data/services/<sector>/<slug>.ts
+  const extractedAddress = baseData.extractedAddress || "Palma, Mallorca";
+  const addressAccuracy = baseData.extractedAddress ? "extracted_from_html" : "generic";
+  const extractedCoordinates = baseData.extractedCoordinates || { lat: 39.5696, lng: 2.6502 };
+  const coordinatesAccuracy = baseData.extractedCoordinates ? "extracted_from_html" : "generic";
+  const extractedRating = baseData.extractedRating;
+  const ratingSource = extractedRating ? "extracted_from_html" : "pending_google_maps_extraction";
+  const extractedReviewCount = baseData.extractedReviewCount;
+  const reviewCountSource = extractedReviewCount ? "extracted_from_html" : "pending_google_maps_extraction";
+
+  // 6.1. Determinar estado basado en confidence score
+  const shouldMarkAsIncomplete = verificationReport.confidenceScore < 50 || webAccessibility !== "active";
+  const businessStatus = shouldMarkAsIncomplete ? "incomplete_admin_only" : "open";
+  const isVerified = !shouldMarkAsIncomplete; // Solo verificado si confidence score >= 50 y web accesible
+
+  const metaDescriptionEs = baseData.metaDescription || "";
+  const translatedEn = metaDescriptionEs ? await translateText(metaDescriptionEs, "en") : "";
+  const translatedCa = metaDescriptionEs ? await translateText(metaDescriptionEs, "ca") : "";
+
   const curationTemplate: Record<string, any> = {
     id: cleanSlug,
     slug: cleanSlug,
@@ -199,14 +386,18 @@ export async function harvestBusinessIntelligence(
     category: detectedCategory,
     secondaryCategories: [],
     zone: "palma",
-    address: "Palma, Mallorca",
-    coordinates: { lat: 39.5696, lng: 2.6502 },
-    rating: 5.0,
-    reviewCount: 0,
+    address: extractedAddress,
+    addressAccuracy: addressAccuracy, // Flag para saber si la dirección es precisa o genérica
+    coordinates: extractedCoordinates,
+    coordinatesAccuracy: coordinatesAccuracy, // Flag para saber si las coordenadas son precisas o genéricas
+    rating: extractedRating || null, // Usar rating extraído del HTML si existe
+    ratingSource: ratingSource, // Flag para saber de dónde viene el rating
+    reviewCount: extractedReviewCount || null, // Usar reviewCount extraído del HTML si existe
+    reviewCountSource: reviewCountSource, // Flag para saber de dónde vienen las reseñas
     priceRange: detectedCategory.includes("gastronomia") ? "€€€" : "€€",
-    verified: true,
+    verified: isVerified,
     featured: false,
-    status: "open",
+    status: businessStatus,
     seasonality: "year_round",
     culturalIdentity: "mallorquin_heritage",
     isIconicHeritage: false,
@@ -258,33 +449,22 @@ export async function harvestBusinessIntelligence(
     },
     reputationBreakdown: {
       googleMaps: {
-        rating: 5.0,
-        reviewCount: 0,
+        rating: null, // Debe extraerse de Google Maps real
+        reviewCount: null, // Debe extraerse de Google Maps real
         url: mapUrls.googleMapsUrl,
       },
       appleMaps: {
         url: mapUrls.appleMapsUrl,
       },
       bingMaps: {
-        rating: 5.0,
-        reviewCount: 0,
+        rating: null, // Debe extraerse de Bing Maps real
+        reviewCount: null, // Debe extraerse de Bing Maps real
         url: mapUrls.bingMapsUrl,
       },
-      totalReviewsAggregated: 0,
-      overallWeightedRating: 5.0,
+      totalReviewsAggregated: null, // No inventar datos
+      overallWeightedRating: null, // No inventar datos
     },
-    reviews: [
-      {
-        id: "rev-1",
-        authorName: "Cliente Verificado",
-        rating: 5,
-        date: new Date().toISOString().split("T")[0],
-        platform: "google_maps",
-        language: "es",
-        comment: "Excelente servicio, trato profesional e inmejorable ubicación en Mallorca.",
-        verifiedCustomer: true,
-      },
-    ],
+    reviews: [], // No inventar reseñas - deben extraerse de Google Maps real
     socialLinks: socialLinks,
     socialPosts: [],
     webDirectories: directoryDorks.slice(0, 2).map((d) => ({
@@ -303,15 +483,15 @@ export async function harvestBusinessIntelligence(
     googleMapsUrl: mapUrls.googleMapsUrl,
     appleMapsUrl: mapUrls.appleMapsUrl,
     bingMapsUrl: mapUrls.bingMapsUrl,
-    phone: baseData.extractedPhone || "+34 000 000 000",
-    whatsapp: baseData.extractedPhone || "+34 000 000 000",
-    email: baseData.extractedEmail || "info@ejemplo.com",
+    phone: formatSpanishPhone(baseData.extractedPhone) || "+34 000 000 000",
+    whatsapp: formatSpanishPhone(baseData.extractedPhone) || "+34 000 000 000",
+    email: baseData.extractedEmail || "",
     website: targetUrl || "",
     tags: ["zona:palma", "mod:cita-previa"],
     shortDescription: {
-      es: baseData.metaDescription || "",
-      en: "",
-      ca: "",
+      es: metaDescriptionEs,
+      en: translatedEn,
+      ca: translatedCa,
     },
     fullDescription: {
       es: "",
@@ -330,8 +510,9 @@ export async function harvestBusinessIntelligence(
     },
     image: mainImage,
     gallery: gallery,
-    schedule: "Lun - Sáb: 10:00 - 20:00",
+    schedule: "",
     lastVerifiedAt: new Date().toISOString().split("T")[0],
+    webAccessibility: webAccessibility, // Estado de accesibilidad de la web: active, not_found, server_error, timeout, error
   };
 
   if (menuUrl) {
@@ -350,7 +531,8 @@ export async function harvestBusinessIntelligence(
   const todayStr = new Date().toISOString().split("T")[0];
   curationTemplate.createdAt = todayStr;
   curationTemplate.lastUpdatedAt = todayStr;
-  curationTemplate.sourceConfidence = verificationReport.confidenceScore >= 80 ? "high" : verificationReport.confidenceScore >= 50 ? "medium" : "low";
+  curationTemplate.sourceConfidence =
+    verificationReport.confidenceScore >= 80 ? "high" : verificationReport.confidenceScore >= 50 ? "medium" : "low";
   curationTemplate.auditLog = [
     {
       date: todayStr,

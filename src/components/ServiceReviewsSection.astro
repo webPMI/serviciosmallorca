@@ -16,8 +16,8 @@ const { service, translations, prefix } = Astro.props;
       <h2 class="box-title">{translations["reviews.title"]}</h2>
       <div class="rating-bar-large">
         <span class="rating-stars-large">★★★★★</span>
-        <strong class="rating-score">{service.rating.toFixed(1)}</strong>
-        <span class="rating-sub">/ 5.0 ({service.reviewCount} {translations["services.reviews"]})</span>
+        <strong class="rating-score">{service.rating ? service.rating.toFixed(1) : "N/A"}</strong>
+        <span class="rating-sub">/ 5.0 ({service.reviewCount ?? "N/A"} {translations["services.reviews"]})</span>
       </div>
     </div>
     <button id="toggle-review-form-btn" class="btn btn-primary btn-sm">

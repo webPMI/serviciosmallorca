@@ -30,7 +30,21 @@ export function scrapeRestaurantData(html: string, baseUrl: URL, businessName: s
         lowerU.includes("/food") ||
         lowerU.includes("/speisekarte") ||
         (lowerU.endsWith(".pdf") && (lowerU.includes("menu") || lowerU.includes("carta")))) &&
-      !menuUrl
+      !menuUrl &&
+      // Excluir rutas de WordPress/plugins/CSS/JS (falso positivo)
+      !lowerU.includes("/wp-content/") &&
+      !lowerU.includes("/wp-includes/") &&
+      !lowerU.includes(".min.css") &&
+      !lowerU.includes(".min.js") &&
+      !lowerU.includes("/tags/") &&
+      !lowerU.includes("/category/") &&
+      !lowerU.includes("?ver=") &&
+      !lowerU.includes("/feed/") &&
+      !lowerU.includes("/comments/") &&
+      !lowerU.includes("/rtl/") &&
+      !lowerU.includes("/images/") &&
+      !lowerU.includes("/css/") &&
+      !lowerU.includes("/js/")
     ) {
       try {
         menuUrl = new URL(rawUrl, baseUrl).href;

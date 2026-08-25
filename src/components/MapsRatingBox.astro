@@ -15,9 +15,9 @@ const hasAppleListing = Boolean(service.appleMapsUrl && !service.appleMapsUrl.in
 const hasBingListing = Boolean(service.bingMapsUrl && !service.bingMapsUrl.includes("undefined"));
 
 const breakdown = service.reputationBreakdown;
-const googleRating = breakdown?.googleMaps?.rating || service.rating || 5.0;
-const googleReviewCount = breakdown?.googleMaps?.reviewCount || service.reviewCount || 0;
-const totalAggregatedReviews = breakdown?.totalReviewsAggregated || googleReviewCount;
+const googleRating = breakdown?.googleMaps?.rating ?? service.rating ?? 5.0;
+const googleReviewCount = breakdown?.googleMaps?.reviewCount ?? service.reviewCount ?? 0;
+const totalAggregatedReviews = breakdown?.totalReviewsAggregated ?? googleReviewCount;
 const overallScore = breakdown?.overallWeightedRating || googleRating;
 ---
 

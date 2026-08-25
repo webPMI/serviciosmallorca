@@ -33,6 +33,40 @@ export const onRequest = defineMiddleware(async (context, next) => {
   const { url, request, cookies, redirect } = context;
   const pathname = url.pathname;
 
+  // ── Markdown Content Negotiation (AI Agents & LLMs) ─────────────────────
+  const acceptHeader = request.headers.get("accept") || "";
+  const wantsMarkdown =
+    acceptHeader.includes("text/markdown") ||
+    acceptHeader.includes("text/x-markdown") ||
+    url.searchParams.get("format") === "md";
+
+  if (wantsMarkdown && !pathname.startsWith("/api/")) {
+    const mdResponse = `# Servicios Mallorca
+> El directorio y motor de recomendación líder de empresas, profesionales y servicios verificados en Mallorca (Islas Baleares, España).
+
+## Superficies de Descubrimiento para Agentes de IA
+- **Sitemap Markdown:** https://serviciosmallorca.com/sitemap.md
+- **LLMs.txt:** https://serviciosmallorca.com/llms.txt
+- **LLMs Full Index:** https://serviciosmallorca.com/llms-full.txt
+- **Agent Manifest:** https://serviciosmallorca.com/.well-known/agents.json
+- **MCP Server Card:** https://serviciosmallorca.com/.well-known/mcp/server-card.json
+- **Guía para Agentes (AGENTS.md):** https://serviciosmallorca.com/AGENTS.md
+
+## Catálogo de Servicios y Empresas
+Explora el directorio completo y las valoraciones de restaurantes Michelin, chárters náuticos, reformas de villas, spas y servicios profesionales en https://serviciosmallorca.com/sitemap.md.
+`;
+
+    return new Response(mdResponse.trim() + "\n", {
+      status: 200,
+      headers: {
+        "Content-Type": "text/markdown; charset=utf-8",
+        Vary: "Accept",
+        "Cache-Control": "public, max-age=3600",
+        ...SECURITY_HEADERS,
+      },
+    });
+  }
+
   // ── Locale detection & redirect ──────────────────────────────────────────
   const segments = pathname.split("/").filter(Boolean);
   const firstSegment = segments[0] as string | undefined;
@@ -53,6 +87,7 @@ export const onRequest = defineMiddleware(async (context, next) => {
     for (const [key, value] of Object.entries(SECURITY_HEADERS)) {
       response.headers.set(key, value);
     }
+    response.headers.set("Vary", "Accept, Accept-Language");
 
     // ── Cache-Control: no-store for private/authenticated pages ─────────────
     const isPrivate = PRIVATE_ROUTE_PATTERNS.some((re) => re.test(pathname));
@@ -75,5 +110,6 @@ export const onRequest = defineMiddleware(async (context, next) => {
   for (const [key, value] of Object.entries(SECURITY_HEADERS)) {
     response.headers.set(key, value);
   }
+  response.headers.set("Vary", "Accept, Accept-Language");
   return response;
 });

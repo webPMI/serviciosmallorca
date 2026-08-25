@@ -91,8 +91,8 @@ async function runCatalogRefreshAudit() {
       phone: service.phone,
       coordinates: service.coordinates,
       socialLinks: service.socialLinks,
-      rating: service.rating,
-      reviewCount: service.reviewCount,
+      rating: service.rating ?? undefined,
+      reviewCount: service.reviewCount ?? undefined,
     });
 
     results.push({
@@ -119,7 +119,7 @@ async function runCatalogRefreshAudit() {
       GPS: r.coordinatesValid ? "✅ OK" : "❌ OUT",
       "Últ. Verif.": r.lastVerifiedAt,
       Estado: r.warnings.length === 0 ? "🟢 100% OK" : `⚠️ ${r.warnings.length} Alertas`,
-    }))
+    })),
   );
 
   const total = results.length;

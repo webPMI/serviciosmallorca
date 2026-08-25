@@ -26,11 +26,7 @@ const { service, locale } = Astro.props;
               <strong class="team-name">{member.name}</strong>
               <span class="team-role">{member.role[locale]}</span>
               {member.specialty && <span class="team-specialty">{member.specialty}</span>}
-              {member.instagramHandle && (
-                <span class="team-ig">
-                  📸 {member.instagramHandle}
-                </span>
-              )}
+              {member.instagramHandle && <span class="team-ig">📸 {member.instagramHandle}</span>}
             </div>
           </div>
         ))}

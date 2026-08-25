@@ -356,7 +356,7 @@ export function initServiceDetailClient() {
       {
         rootMargin: "-120px 0px -60% 0px",
         threshold: 0.1,
-      }
+      },
     );
 
     document.querySelectorAll(".section-box[id]").forEach((section) => {

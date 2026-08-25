@@ -13,93 +13,97 @@ const hasPricing = Boolean(service.pricing);
 const hasAmenities = Boolean(
   (service.amenities && service.amenities.length > 0) ||
   (service.paymentMethods && service.paymentMethods.length > 0) ||
-  (service.certifications && service.certifications.length > 0)
+  (service.certifications && service.certifications.length > 0),
 );
 ---
 
 <div class="sidebar-info-container">
   {/* Precios y Tarifas */}
-  {hasPricing && (
-    <section class="card section-box pricing-section">
-      <h2 class="box-title">💶 Tarifas Orientativas & Condiciones</h2>
-      <div class="pricing-card-inner">
-        {service.pricing?.startingPrice && (
-          <div class="pricing-pill-highlight">
-            <span class="pricing-label">Precio Mínimo:</span>
-            <strong class="pricing-val">{service.pricing.startingPrice}</strong>
-          </div>
-        )}
-        {service.pricing?.depositRequired && (
-          <p class="pricing-note">
-            📌 <strong>Reserva:</strong> {service.pricing.depositRequired}
-          </p>
-        )}
-        {service.pricing?.notes?.[locale] && <p class="pricing-note-sub">{service.pricing.notes[locale]}</p>}
-      </div>
-    </section>
-  )}
+  {
+    hasPricing && (
+      <section class="card section-box pricing-section">
+        <h2 class="box-title">💶 Tarifas Orientativas & Condiciones</h2>
+        <div class="pricing-card-inner">
+          {service.pricing?.startingPrice && (
+            <div class="pricing-pill-highlight">
+              <span class="pricing-label">Precio Mínimo:</span>
+              <strong class="pricing-val">{service.pricing.startingPrice}</strong>
+            </div>
+          )}
+          {service.pricing?.depositRequired && (
+            <p class="pricing-note">
+              📌 <strong>Reserva:</strong> {service.pricing.depositRequired}
+            </p>
+          )}
+          {service.pricing?.notes?.[locale] && <p class="pricing-note-sub">{service.pricing.notes[locale]}</p>}
+        </div>
+      </section>
+    )
+  }
 
   {/* Comodidades, Pagos y Certificaciones */}
-  {hasAmenities && (
-    <section class="card section-box amenities-payments-box">
-      <h2 class="box-title">✨ Comodidades, Métodos de Pago & Certificaciones</h2>
+  {
+    hasAmenities && (
+      <section class="card section-box amenities-payments-box">
+        <h2 class="box-title">✨ Comodidades, Métodos de Pago & Certificaciones</h2>
 
-      {service.paymentMethods && service.paymentMethods.length > 0 && (
-        <div class="amenity-group">
-          <span class="amenity-group-title">💳 Métodos de Pago Aceptados:</span>
-          <div class="chips-row">
-            {service.paymentMethods.map((pm: string) => (
-              <span class="chip-item">
-                {pm === "credit_card"
-                  ? "💳 Tarjeta"
-                  : pm === "cash"
-                    ? "💶 Efectivo"
-                    : pm === "bizum"
-                      ? "📱 Bizum"
-                      : pm === "apple_pay"
-                        ? "🍎 Apple Pay"
-                        : pm === "crypto"
-                          ? "₿ Cripto"
-                          : pm}
-              </span>
-            ))}
+        {service.paymentMethods && service.paymentMethods.length > 0 && (
+          <div class="amenity-group">
+            <span class="amenity-group-title">💳 Métodos de Pago Aceptados:</span>
+            <div class="chips-row">
+              {service.paymentMethods.map((pm: string) => (
+                <span class="chip-item">
+                  {pm === "credit_card"
+                    ? "💳 Tarjeta"
+                    : pm === "cash"
+                      ? "💶 Efectivo"
+                      : pm === "bizum"
+                        ? "📱 Bizum"
+                        : pm === "apple_pay"
+                          ? "🍎 Apple Pay"
+                          : pm === "crypto"
+                            ? "₿ Cripto"
+                            : pm}
+                </span>
+              ))}
+            </div>
           </div>
-        </div>
-      )}
+        )}
 
-      {service.amenities && service.amenities.length > 0 && (
-        <div class="amenity-group">
-          <span class="amenity-group-title">🛋️ Comodidades e Instalaciones:</span>
-          <div class="chips-row">
-            {service.amenities.map((am: string) => (
-              <span class="chip-item">
-                {am === "wifi"
-                  ? "📶 Wi-Fi Gratis"
-                  : am === "air_conditioning"
-                    ? "❄️ Climatizado"
-                    : am === "wheelchair_accessible"
-                      ? "♿ Accesible PMR"
-                    : am === "parking_nearby"
-                      ? "🅿️ Parking Cercano"
-                      : am === "pet_friendly"
-                        ? "🐾 Pet Friendly"
-                        : am}
-              </span>
-            ))}
+        {service.amenities && service.amenities.length > 0 && (
+          <div class="amenity-group">
+            <span class="amenity-group-title">🛋️ Comodidades e Instalaciones:</span>
+            <div class="chips-row">
+              {service.amenities.map((am: string) => (
+                <span class="chip-item">
+                  {am === "wifi"
+                    ? "📶 Wi-Fi Gratis"
+                    : am === "air_conditioning"
+                      ? "❄️ Climatizado"
+                      : am === "wheelchair_accessible"
+                        ? "♿ Accesible PMR"
+                        : am === "parking_nearby"
+                          ? "🅿️ Parking Cercano"
+                          : am === "pet_friendly"
+                            ? "🐾 Pet Friendly"
+                            : am}
+                </span>
+              ))}
+            </div>
           </div>
-        </div>
-      )}
+        )}
 
-      {service.certifications && service.certifications.length > 0 && (
-        <div class="amenity-group">
-          <span class="amenity-group-title">🛡️ Certificaciones Oficiales:</span>
-          <div class="chips-row">
-            {service.certifications.map((cert: string) => (
-              <span class="chip-item cert-item">✓ {cert}</span>
-            ))}
+        {service.certifications && service.certifications.length > 0 && (
+          <div class="amenity-group">
+            <span class="amenity-group-title">🛡️ Certificaciones Oficiales:</span>
+            <div class="chips-row">
+              {service.certifications.map((cert: string) => (
+                <span class="chip-item cert-item">✓ {cert}</span>
+              ))}
+            </div>
           </div>
-        </div>
-      )}
-    </section>
-  )}
+        )}
+      </section>
+    )
+  }
 </div>

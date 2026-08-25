@@ -66,6 +66,28 @@ npx tsx scripts/business-intelligence-lookup.ts "Nombre del Local Palma" --url="
 
 El script extrae multimedia oficial, detecta perfiles sociales, genera dorks de reputación en directorios y devuelve el JSON listo para insertar en [`src/data/services/<sector>.ts`](src/data/services/).
 
+### 📋 Checklist Maestro & Descubrimiento de Negocios
+
+Para **buscar y priorizar** los negocios de Mallorca organizados por **categoría → puntaje → alfabético**:
+
+```bash
+# Regenera el checklist (docs/BUSINESS_DISCOVERY_CHECKLIST.md/.json) desde el catálogo + blueprint
+npm run discover:businesses
+
+# Mina candidatos reales (scripts/discovery-targets.json) y añádelos al checklist
+npx tsx scripts/discover-businesses.ts --mine --file="scripts/discovery-targets.json"
+```
+
+Procedimiento completo: [`docs/BUSINESS_DISCOVERY_SOP.md`](docs/BUSINESS_DISCOVERY_SOP.md).
+
+### 🏋️ Vertical Deportiva (Nuevo)
+
+Gimnasios, centros deportivos, estudios especializados y **espacios públicos de actividad física**:
+
+- 📖 Documento maestro: [`docs/SPORTS_FITNESS_SECTION.md`](docs/SPORTS_FITNESS_SECTION.md) (12 categorías, SEO, guías gratuitas).
+- 🔎 Blueprint de descubrimiento deportivo ya integrado en `npm run discover`.
+- 🎯 Primer lote de candidatos reales: `scripts/discovery-targets-sports.json` (minar con `npm run discover:mine -- --file="scripts/discovery-targets-sports.json"`).
+
 ---
 
 ## 📚 Documentación Técnica

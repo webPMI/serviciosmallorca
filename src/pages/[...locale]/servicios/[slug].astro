@@ -52,8 +52,10 @@ const zoneName = zone?.name[locale] || service.zone;
 const relatedPosts = BLOG_POSTS.filter((p) => p.relatedServiceIds.includes(service.id));
 
 // Dynamic Localized SEO Title & Meta Description with Search Intent
-const seoTitle = `${service.name} (${zoneName}, Mallorca) | ${categoryName} | ⭐ ${service.rating.toFixed(1)}`;
-const cleanDescText = (service.shortDescription?.[locale] || service.fullDescription?.[locale] || "").replace(/\s+/g, " ").trim();
+const seoTitle = `${service.name} (${zoneName}, Mallorca) | ${categoryName} | ⭐ ${service.rating ? service.rating.toFixed(1) : "N/A"}`;
+const cleanDescText = (service.shortDescription?.[locale] || service.fullDescription?.[locale] || "")
+  .replace(/\s+/g, " ")
+  .trim();
 const seoDescription = cleanDescText.length > 155 ? `${cleanDescText.slice(0, 152)}...` : cleanDescText;
 const canonicalUrl = `${Astro.url.origin}${Astro.url.pathname}`;
 
@@ -61,11 +63,7 @@ const canonicalUrl = `${Astro.url.origin}${Astro.url.pathname}`;
 const schemaOrg = generateServiceJsonLd(service, locale, canonicalUrl);
 ---
 
-<BaseLayout
-  title={seoTitle}
-  lang={locale}
-  description={seoDescription}
->
+<BaseLayout title={seoTitle} lang={locale} description={seoDescription}>
   <!-- Schema.org for Local SEO & LLM Ingestion -->
   <script is:inline type="application/ld+json" set:html={JSON.stringify(schemaOrg)} />
 
@@ -82,13 +80,7 @@ const schemaOrg = generateServiceJsonLd(service, locale, canonicalUrl);
     </nav>
 
     <!-- Header Section (Breadcrumbs, Title, Badges, Quick Actions) -->
-    <ServiceHeaderHero
-      service={service}
-      category={category}
-      zone={zone}
-      translations={translations}
-      locale={locale}
-    />
+    <ServiceHeaderHero service={service} category={category} zone={zone} translations={translations} locale={locale} />
 
     <!-- Quick Navigation (Pill Tabs for Zero-Friction Deep Linking) -->
     <ServiceQuickNav service={service} locale={locale} translations={translations} />
@@ -97,11 +89,7 @@ const schemaOrg = generateServiceJsonLd(service, locale, canonicalUrl);
     <div class="detail-grid">
       <!-- Left Column: Media, Portfolio, Details & Reviews -->
       <div class="detail-content">
-        <ServiceGallerySection
-          service={service}
-          category={category}
-          categoryName={categoryName}
-        />
+        <ServiceGallerySection service={service} category={category} categoryName={categoryName} />
 
         <!-- Semantic AI Quick Facts Box -->
         <ServiceQuickFacts

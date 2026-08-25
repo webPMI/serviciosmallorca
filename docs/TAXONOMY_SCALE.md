@@ -218,17 +218,26 @@ Resumen de los 20 dominios macroeconómicos:
 
 ### SS-11 — ⚽ Deportes & Aire Libre
 
-| Categoría (id propuesto) | Tipos de negocio / servicios                                                          |
-| ------------------------ | ------------------------------------------------------------------------------------- |
-| `gimnasos-box`           | Gimnasio · box crossfit · estudio de fitness · pilates/yoga · entrenamiento funcional |
-| `personal-training`      | Entrenador personal · coach de bienestar · preparación física · online coach          |
-| `esports-aqua`           | Deportes acuáticos · surf · windsurf · kitesurf · wakeboard · jet ski                 |
-| `senderisme-trekking`    | Ruta de senderismo · trekk por la Tramuntana · guía de montaña · trail                |
-| `golf`                   | Campo de golf · club de golf · escuela de golf · pitch & putt                         |
-| `cicloturisme`           | Ruta en bici · club ciclista · gravel · MTB · alquiler con guía                       |
-| `equitacio`              | Centro ecuestre · escuela de hípica · rutas a caballo · horse resort                  |
-| `padel-tenis`            | Pista de pádel · club de tenis · escuela de pádel · alquiler de pista                 |
-| `esports-aventura`       | Tirolina · escalada · rafting · puenting · quad · paintball · disc golf               |
+> 📖 **Documento maestro de la vertical:** [`docs/SPORTS_FITNESS_SECTION.md`](SPORTS_FITNESS_SECTION.md)
+> (taxonomía completa, SEO, espacios públicos y plan de activación F0→F5).
+
+| Categoría (id propuesto)          | Tipos de negocio / servicios                                                                                                      |
+| --------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| `gimnasios-fitness`               | Gimnasio · box crossfit · entrenamiento funcional · HIIT/bootcamp · musculación · sala cardio                                     |
+| `entrenamiento-personal`          | Entrenador personal · coach de bienestar · preparación física · online coach · readaptación                                       |
+| `estudios-cuerpo-mente`           | Estudio de yoga · pilates reformer · barre · gyrotonic · meditación · stretching · danza                                          |
+| `artes-marciales-boxeo`           | Boxeo · kickboxing · muay thai · jiu-jitsu · judo · karate · taekwondo · MMA · esgrima                                            |
+| `padel-tenis-raqueta`             | Club de pádel · alquiler de pista · escuela de pádel · tenis · pickleball · bádminton · squash                                    |
+| `natacion-deportes-acuaticos`     | Club de natación · piscina cubierta · escuela de natación · surf · paddle surf · kitesurf                                         |
+| `ciclismo-running-trail`          | Club ciclista · alquiler bici con guía · bike fit · club de running · trail · rutas guiadas                                       |
+| `golf`                            | Campo de golf · club de golf · escuela de golf · pitch & putt · simulador indoor                                                  |
+| `equitacion-hipica`               | Centro ecuestre · escuela de hípica · rutas a caballo · horse resort · doma                                                       |
+| `deportes-montana-aventura`       | Guía de montaña · senderismo · trekking · escalada · barranquismo · parque de aventura                                            |
+| `clubes-escuelas-deportivas`      | Escuela de fútbol · baloncesto · fútbol sala · voleibol · multideporte infantil · campus                                          |
+| `espacios-deportivos-publicos` ⭐ | Parques de calistenia · skateparks · pistas públicas · circuitos de running · velódromo · piscinas y campos públicos · rocódromos |
+
+> ⭐ `espacios-deportivos-publicos` es la categoría **diferenciadora**: puntos de interés gratuitos
+> que se modelan como **guías editoriales** (no fichas de negocio) para SEO long-tail y autoridad local.
 
 ### SS-12 — 🧹 Hogar, Limpieza & Mantenimiento
 

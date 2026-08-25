@@ -143,11 +143,7 @@ export const goodLuckTattoo: ServiceItem = {
       ca: "Preus tancats abans de la sessió amb tintes homologades.",
     },
   },
-  amenities: [
-    "air_conditioning",
-    "wifi",
-    "wheelchair_accessible",
-  ],
+  amenities: ["air_conditioning", "wifi", "wheelchair_accessible"],
   features: ["wifi", "air_conditioning", "credit_card"],
   paymentMethods: ["credit_card", "cash", "bizum"],
   certifications: [
@@ -164,12 +160,12 @@ export const goodLuckTattoo: ServiceItem = {
     {
       name: "Tatuadores Residentes Good Luck",
       role: {
-        "es": "Artistas del Tatuaje & Diseñadores",
-        "en": "Tattoo Artists & Designers",
-        "ca": "Artistes del Tatuatge i Dissenyadors"
+        es: "Artistas del Tatuaje & Diseñadores",
+        en: "Tattoo Artists & Designers",
+        ca: "Artistes del Tatuatge i Dissenyadors",
       },
-      specialty: "Realismo, Fine Line y Traditional"
-    }
+      specialty: "Realismo, Fine Line y Traditional",
+    },
   ],
   reputationBreakdown: {
     googleMaps: {
@@ -188,7 +184,8 @@ export const goodLuckTattoo: ServiceItem = {
       date: "2025-06-28",
       platform: "google_maps",
       language: "ca",
-      comment: "Tracte immillorable i professionalitat màxima. El traç de la línia fina és finíssim i la cicatrització ha estat perfecta.",
+      comment:
+        "Tracte immillorable i professionalitat màxima. El traç de la línia fina és finíssim i la cicatrització ha estat perfecta.",
       verifiedCustomer: true,
     },
     {
@@ -198,7 +195,8 @@ export const goodLuckTattoo: ServiceItem = {
       date: "2025-05-14",
       platform: "google_maps",
       language: "en",
-      comment: "Best tattoo studio in Palma without question. The artists are super friendly, hygienic, and extremely talented with custom designs.",
+      comment:
+        "Best tattoo studio in Palma without question. The artists are super friendly, hygienic, and extremely talented with custom designs.",
       verifiedCustomer: true,
     },
   ],

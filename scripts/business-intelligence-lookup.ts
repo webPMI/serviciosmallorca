@@ -111,7 +111,9 @@ async function main() {
   console.log(`  • Desglose de Puntos:`);
   console.log(`    - Coincidencia Telefónica: ${vr.scoreBreakdown.phoneConsistency}/25 pts`);
   console.log(`    - Precisión Geográfica Mallorca: ${vr.scoreBreakdown.geoAccuracy}/25 pts`);
-  console.log(`    - Disponibilidad Web (HTTP ${report.extractedMedia.ogImage ? "200" : "Status"}): ${vr.scoreBreakdown.webAvailability}/20 pts`);
+  console.log(
+    `    - Disponibilidad Web (HTTP ${report.extractedMedia.ogImage ? "200" : "Status"}): ${vr.scoreBreakdown.webAvailability}/20 pts`,
+  );
   console.log(`    - Huella en Redes Sociales: ${vr.scoreBreakdown.socialFootprint}/15 pts`);
   console.log(`    - Reputación y Reseñas: ${vr.scoreBreakdown.reputationVolume}/15 pts`);
 

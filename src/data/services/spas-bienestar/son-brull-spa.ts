@@ -178,7 +178,8 @@ export const sonBrullSpa: ServiceItem = {
       date: "2025-06-20",
       platform: "google_maps",
       language: "en",
-      comment: "A true oasis of calm in northern Mallorca. The signature olive oil massage was sublime and the spa facilities are world-class.",
+      comment:
+        "A true oasis of calm in northern Mallorca. The signature olive oil massage was sublime and the spa facilities are world-class.",
       verifiedCustomer: true,
       isHighlight: true,
       quoteHighlight: "The signature olive oil massage was sublime and facilities are world-class",
@@ -190,7 +191,8 @@ export const sonBrullSpa: ServiceItem = {
       date: "2025-07-11",
       platform: "google_maps",
       language: "ca",
-      comment: "L'entorn de Pollença i la tranquil·litat del spa fan que sigui una de les millors experiències de descans a l'illa. Servei immillorable.",
+      comment:
+        "L'entorn de Pollença i la tranquil·litat del spa fan que sigui una de les millors experiències de descans a l'illa. Servei immillorable.",
       verifiedCustomer: true,
       isHighlight: true,
       quoteHighlight: "Una de les millors experiències de descans a l'illa",

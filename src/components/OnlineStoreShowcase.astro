@@ -107,41 +107,24 @@ const t = titles[currentLocale] || titles.es;
             <article class="product-card hover-lift">
               {product.imageUrl && (
                 <div class="product-media">
-                  <img
-                    src={product.imageUrl}
-                    alt={name}
-                    loading="lazy"
-                    decoding="async"
-                    class="product-img"
-                  />
-                  {product.badge && (
-                    <span class="product-badge">{product.badge}</span>
-                  )}
+                  <img src={product.imageUrl} alt={name} loading="lazy" decoding="async" class="product-img" />
+                  {product.badge && <span class="product-badge">{product.badge}</span>}
                 </div>
               )}
 
               <div class="product-content">
-                {product.category && (
-                  <span class="product-category">{product.category}</span>
-                )}
+                {product.category && <span class="product-category">{product.category}</span>}
                 <h3 class="product-name">{name}</h3>
                 {desc && <p class="product-desc">{desc}</p>}
 
                 <div class="product-footer">
                   <div class="product-pricing">
                     <span class="product-price">{product.price}</span>
-                    {product.inStock !== false && (
-                      <span class="stock-badge">✓ {t.inStock}</span>
-                    )}
+                    {product.inStock !== false && <span class="stock-badge">✓ {t.inStock}</span>}
                   </div>
 
                   {targetUrl !== "#" && (
-                    <a
-                      href={targetUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="product-buy-btn"
-                    >
+                    <a href={targetUrl} target="_blank" rel="noopener noreferrer" class="product-buy-btn">
                       {t.buyProduct} ↗
                     </a>
                   )}
@@ -159,11 +142,7 @@ const t = titles[currentLocale] || titles.es;
   .store-showcase-box {
     margin-bottom: var(--space-xl);
     border: 1px solid var(--color-surface-border);
-    background: linear-gradient(
-      145deg,
-      var(--color-surface),
-      rgba(238, 108, 77, 0.04)
-    );
+    background: linear-gradient(145deg, var(--color-surface), rgba(238, 108, 77, 0.04));
     border-radius: var(--border-radius-lg);
     padding: var(--space-xl);
   }
@@ -256,7 +235,10 @@ const t = titles[currentLocale] || titles.es;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease,
+      border-color 0.2s ease;
   }
 
   .product-card:hover {
@@ -363,7 +345,9 @@ const t = titles[currentLocale] || titles.es;
     padding: 0.4rem 0.85rem;
     border-radius: var(--border-radius-sm);
     text-decoration: none;
-    transition: background 0.2s ease, color 0.2s ease;
+    transition:
+      background 0.2s ease,
+      color 0.2s ease;
   }
 
   .product-buy-btn:hover {

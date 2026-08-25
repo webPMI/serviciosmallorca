@@ -55,7 +55,11 @@ export const engelVolkersMallorca: ServiceItem = {
   features: ["wifi", "air_conditioning", "credit_card", "parking_nearby"],
   amenities: ["wifi", "air_conditioning"],
   paymentMethods: ["credit_card", "bank_transfer"],
-  certifications: ["API Colegiado Balear", "Registro Oficial Agentes Inmobiliarios Baleares ROAIIB", "Engel & Völkers Luxury Certified"],
+  certifications: [
+    "API Colegiado Balear",
+    "Registro Oficial Agentes Inmobiliarios Baleares ROAIIB",
+    "Engel & Völkers Luxury Certified",
+  ],
   pricing: {
     startingPrice: "Consultoría de valoración gratuita",
     rateType: "custom_quote",
@@ -179,7 +183,8 @@ export const engelVolkersMallorca: ServiceItem = {
       date: "2025-05-19",
       platform: "google_maps",
       language: "de",
-      comment: "Sehr professionelle Beratung beim Immobilienkauf in Son Vida. Transparenter Ablauf vom ersten Kontakt bis zum Notartermin.",
+      comment:
+        "Sehr professionelle Beratung beim Immobilienkauf in Son Vida. Transparenter Ablauf vom ersten Kontakt bis zum Notartermin.",
       verifiedCustomer: true,
       isHighlight: true,
       quoteHighlight: "Sehr professionelle Beratung und transparenter Ablauf bis zum Notartermin",
@@ -191,7 +196,8 @@ export const engelVolkersMallorca: ServiceItem = {
       date: "2025-07-28",
       platform: "google_maps",
       language: "es",
-      comment: "Excelente gestión en la venta de nuestro ático en Palma. Gran discreción, valoración acertada y rapidez en encontrar comprador.",
+      comment:
+        "Excelente gestión en la venta de nuestro ático en Palma. Gran discreción, valoración acertada y rapidez en encontrar comprador.",
       verifiedCustomer: true,
       isHighlight: true,
       quoteHighlight: "Gran discreción, valoración acertada y rapidez",

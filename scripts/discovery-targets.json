@@ -1,0 +1,348 @@
+[
+  {
+    "name": "Restaurante Zaranda Mallorca",
+    "website": "https://zaranda.es",
+    "categoryHint": "gastronomia-catering",
+    "zoneHint": "palma"
+  },
+  {
+    "name": "Restaurante Marc Fosh",
+    "website": "https://marcfosh.com",
+    "categoryHint": "gastronomia-catering",
+    "zoneHint": "palma"
+  },
+  {
+    "name": "Bens d'Avall",
+    "website": "https://bensdavall.com",
+    "categoryHint": "gastronomia-catering",
+    "zoneHint": "tramuntana"
+  },
+  {
+    "name": "Restaurante Andreu Genestra",
+    "website": "https://andreugenestra.com",
+    "categoryHint": "gastronomia-catering",
+    "zoneHint": "raiguer-pla"
+  },
+  {
+    "name": "Restaurante Maca de Castro",
+    "website": "https://macadecastro.com",
+    "categoryHint": "gastronomia-catering",
+    "zoneHint": "alcudia-pollensa"
+  },
+  {
+    "name": "Celler Can Amer Inca",
+    "website": "https://canamer.es",
+    "categoryHint": "gastronomia-catering",
+    "zoneHint": "raiguer-pla"
+  },
+  {
+    "name": "Restaurante Es Fum",
+    "website": "https://stregis.com",
+    "categoryHint": "gastronomia-catering",
+    "zoneHint": "calvia-andratx"
+  },
+  {
+    "name": "Restaurante Ola del Mar Portixol",
+    "website": "https://oladelmar.es",
+    "categoryHint": "gastronomia-catering",
+    "zoneHint": "palma"
+  },
+  {
+    "name": "Restaurante Illeta Camp de Mar",
+    "website": "https://restauranteilleta.com",
+    "categoryHint": "gastronomia-catering",
+    "zoneHint": "calvia-andratx"
+  },
+  {
+    "name": "Celler Sa Premsa Palma",
+    "website": "https://cellersapremsa.com",
+    "categoryHint": "gastronomia-catering",
+    "zoneHint": "palma"
+  },
+  {
+    "name": "Bar Bosch Palma",
+    "website": "https://barbosch.es",
+    "categoryHint": "gastronomia-catering",
+    "zoneHint": "palma"
+  },
+  {
+    "name": "Palma Yacht Charter",
+    "website": "https://palmayachtcharter.com",
+    "categoryHint": "nautica-charter",
+    "zoneHint": "palma"
+  },
+  {
+    "name": "Cruceros Attraction Palma",
+    "website": "https://attractioncatamarans.com",
+    "categoryHint": "nautica-charter",
+    "zoneHint": "palma"
+  },
+  {
+    "name": "Sea Mallorca Charter Port Adriano",
+    "website": "https://seamallorcacharter.com",
+    "categoryHint": "nautica-charter",
+    "zoneHint": "calvia-andratx"
+  },
+  {
+    "name": "Real Club Náutico de Palma",
+    "website": "https://rcnp.es",
+    "categoryHint": "nautica-charter",
+    "zoneHint": "palma"
+  },
+  {
+    "name": "Club Náutico Portitxol",
+    "website": "https://cnportitxol.com",
+    "categoryHint": "nautica-charter",
+    "zoneHint": "palma"
+  },
+  {
+    "name": "Marina Port de Mallorca",
+    "website": "https://portdemallorca.com",
+    "categoryHint": "nautica-charter",
+    "zoneHint": "palma"
+  },
+  {
+    "name": "Puerto Portals Marina",
+    "website": "https://puertoportals.com",
+    "categoryHint": "nautica-charter",
+    "zoneHint": "calvia-andratx"
+  },
+  {
+    "name": "Port Adriano Marina",
+    "website": "https://portadriano.com",
+    "categoryHint": "nautica-charter",
+    "zoneHint": "calvia-andratx"
+  },
+  {
+    "name": "Bodyna Spa Hospes Maricel",
+    "website": "https://hospes.com/maricel",
+    "categoryHint": "salud-bienestar",
+    "zoneHint": "calvia-andratx"
+  },
+  {
+    "name": "Talise Spa Jumeirah Port Soller",
+    "website": "https://jumeirah.com",
+    "categoryHint": "salud-bienestar",
+    "zoneHint": "tramuntana"
+  },
+  {
+    "name": "Belmond La Residencia Spa Deia",
+    "website": "https://belmond.com",
+    "categoryHint": "salud-bienestar",
+    "zoneHint": "tramuntana"
+  },
+  {
+    "name": "Son Brull Spa Pollensa",
+    "website": "https://sonbrull.com",
+    "categoryHint": "salud-bienestar",
+    "zoneHint": "alcudia-pollensa"
+  },
+  {
+    "name": "Hammam Palma Baños Arabes",
+    "website": "https://hammampalma.com",
+    "categoryHint": "salud-bienestar",
+    "zoneHint": "palma"
+  },
+  {
+    "name": "Clinica Juaneda Palma",
+    "website": "https://juaneda.es",
+    "categoryHint": "salud-bienestar",
+    "zoneHint": "palma"
+  },
+  {
+    "name": "Good Luck Tattoo Palma",
+    "website": "https://goodlucktattoomallorca.com",
+    "categoryHint": "arte-tatuajes",
+    "zoneHint": "palma"
+  },
+  {
+    "name": "Lafideltattoo Palma",
+    "website": "https://lafideltattoo.com",
+    "categoryHint": "arte-tatuajes",
+    "zoneHint": "palma"
+  },
+  {
+    "name": "Gordian Tattoo Palma",
+    "website": "https://gordiantattoo.com",
+    "categoryHint": "arte-tatuajes",
+    "zoneHint": "palma"
+  },
+  {
+    "name": "Gordiola Vidrio Soplado Algaida",
+    "website": "https://gordiola.com",
+    "categoryHint": "arte-tatuajes",
+    "zoneHint": "raiguer-pla"
+  },
+  {
+    "name": "Lafiore Vidrio Artesanal S'Esgleieta",
+    "website": "https://lafiore.com",
+    "categoryHint": "arte-tatuajes",
+    "zoneHint": "tramuntana"
+  },
+  {
+    "name": "Engel & Völkers Mallorca",
+    "website": "https://engelvoelkers.com/mallorca",
+    "categoryHint": "inmobiliaria-villas",
+    "zoneHint": "palma"
+  },
+  {
+    "name": "Kuhn & Partner Real Estate",
+    "website": "https://kuhn-partner.com",
+    "categoryHint": "inmobiliaria-villas",
+    "zoneHint": "palma"
+  },
+  {
+    "name": "Porta Mallorquina Real Estate",
+    "website": "https://porta-mallorquina.es",
+    "categoryHint": "inmobiliaria-villas",
+    "zoneHint": "palma"
+  },
+  {
+    "name": "Balearic Properties Pollensa",
+    "website": "https://balearic-properties.com",
+    "categoryHint": "inmobiliaria-villas",
+    "zoneHint": "alcudia-pollensa"
+  },
+  {
+    "name": "Mallorca Gold Luxury Real Estate",
+    "website": "https://mallorcagold.com",
+    "categoryHint": "inmobiliaria-villas",
+    "zoneHint": "palma"
+  },
+  {
+    "name": "Arquitectura 81 Palma",
+    "website": "https://a81.es",
+    "categoryHint": "reformas-hogar",
+    "zoneHint": "palma"
+  },
+  {
+    "name": "Grupo Ferrá Construcción",
+    "website": "https://grupoferra.com",
+    "categoryHint": "reformas-hogar",
+    "zoneHint": "palma"
+  },
+  {
+    "name": "Construcciones Llull Sastre",
+    "website": "https://llullsastre.com",
+    "categoryHint": "reformas-hogar",
+    "zoneHint": "palma"
+  },
+  {
+    "name": "BigMat Verger Mallorca",
+    "website": "https://bigmatverger.com",
+    "categoryHint": "reformas-hogar",
+    "zoneHint": "manacor-llevant"
+  },
+  {
+    "name": "Instalaciones Fonfred Climatizacion",
+    "website": "https://fonfred.com",
+    "categoryHint": "reformas-hogar",
+    "zoneHint": "palma"
+  },
+  {
+    "name": "Cuatrecasas Abogados Palma",
+    "website": "https://cuatrecasas.com",
+    "categoryHint": "servicios-profesionales",
+    "zoneHint": "palma"
+  },
+  {
+    "name": "Garrigues Abogados Palma",
+    "website": "https://garrigues.com",
+    "categoryHint": "servicios-profesionales",
+    "zoneHint": "palma"
+  },
+  {
+    "name": "Illeslex Abogados Palma",
+    "website": "https://illeslex.com",
+    "categoryHint": "servicios-profesionales",
+    "zoneHint": "palma"
+  },
+  {
+    "name": "Gestoría Oliver Palma",
+    "website": "https://gestoriaoliver.com",
+    "categoryHint": "servicios-profesionales",
+    "zoneHint": "palma"
+  },
+  {
+    "name": "Ripoll & Mateu Abogados Mallorca",
+    "website": "https://ripollmateu.com",
+    "categoryHint": "servicios-profesionales",
+    "zoneHint": "palma"
+  },
+  {
+    "name": "Roig Rent a Car & Transfers",
+    "website": "https://roig.com",
+    "categoryHint": "motor-transporte",
+    "zoneHint": "migjorn"
+  },
+  {
+    "name": "Mallorca VTC Chauffeur",
+    "website": "https://mallorcavtc.com",
+    "categoryHint": "motor-transporte",
+    "zoneHint": "palma"
+  },
+  {
+    "name": "Autocares Mallorca Transunion",
+    "website": "https://transunion.com",
+    "categoryHint": "motor-transporte",
+    "zoneHint": "palma"
+  },
+  {
+    "name": "Viveros Can Juanito",
+    "website": "https://canjuanito.com",
+    "categoryHint": "jardineria-piscinas",
+    "zoneHint": "palma"
+  },
+  {
+    "name": "Piscinas Mallorca Blue",
+    "website": "https://piscinasmallorca.com",
+    "categoryHint": "jardineria-piscinas",
+    "zoneHint": "palma"
+  },
+  {
+    "name": "Jardineria Balear Palma",
+    "website": "https://jardineriabalear.com",
+    "categoryHint": "jardineria-piscinas",
+    "zoneHint": "palma"
+  },
+  {
+    "name": "Trablisa Seguridad y Alarmas",
+    "website": "https://trablisa.es",
+    "categoryHint": "tecnologia-seguridad",
+    "zoneHint": "palma"
+  },
+  {
+    "name": "Digital Cinema Domotica Mallorca",
+    "website": "https://digitalcinema.es",
+    "categoryHint": "tecnologia-seguridad",
+    "zoneHint": "palma"
+  },
+  {
+    "name": "Fibwi Telecomunicaciones Mallorca",
+    "website": "https://fibwi.com",
+    "categoryHint": "tecnologia-seguridad",
+    "zoneHint": "raiguer-pla"
+  },
+  {
+    "name": "Noma Beach Club Palma",
+    "website": "https://nomabeachpalma.com",
+    "categoryHint": "gastronomia-catering",
+    "zoneHint": "palma",
+    "isNew": true
+  },
+  {
+    "name": "Studio Botanico Palma Spa",
+    "website": "https://studiobotanicopalma.com",
+    "categoryHint": "salud-bienestar",
+    "zoneHint": "palma",
+    "isNew": true
+  },
+  {
+    "name": "Talleres Son Castelló Reparaciones",
+    "website": "https://talleressoncastello.com",
+    "categoryHint": "motor-transporte",
+    "zoneHint": "palma",
+    "rating": 3.7,
+    "reviewCount": 45
+  }
+]

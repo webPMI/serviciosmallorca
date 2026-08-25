@@ -23,14 +23,14 @@ npm run dev
 
 ## Comandos
 
-| Comando               | Descripción                                       |
-| --------------------- | ------------------------------------------------- |
-| `npm run dev`         | Inicia servidor de desarrollo en `localhost:4321` |
-| `npm run build`       | Build de producción para Cloudflare Pages (@astrojs/cloudflare) |
-| `npm run preview`     | Vista previa del build de producción edge                       |
-| `npm test`            | Ejecutar tests unitarios (Vitest)                               |
-| `npm run test:watch`  | Tests en modo watch                                             |
-| `npm run typecheck`   | TypeScript type checking estricto                               |
+| Comando              | Descripción                                                     |
+| -------------------- | --------------------------------------------------------------- |
+| `npm run dev`        | Inicia servidor de desarrollo en `localhost:4321`               |
+| `npm run build`      | Build de producción para Cloudflare Pages (@astrojs/cloudflare) |
+| `npm run preview`    | Vista previa del build de producción edge                       |
+| `npm test`           | Ejecutar tests unitarios (Vitest)                               |
+| `npm run test:watch` | Tests en modo watch                                             |
+| `npm run typecheck`  | TypeScript type checking estricto                               |
 
 ## Estructura de Desarrollo
 

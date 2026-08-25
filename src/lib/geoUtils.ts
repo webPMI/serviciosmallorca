@@ -17,22 +17,14 @@ const EARTH_RADIUS_KM = 6371;
  * Calcula la distancia ortodrómica en kilómetros entre dos coordenadas
  * geográficas utilizando la fórmula de Haversine (precisión métrica).
  */
-export function calculateHaversineDistance(
-  lat1: number,
-  lon1: number,
-  lat2: number,
-  lon2: number
-): number {
+export function calculateHaversineDistance(lat1: number, lon1: number, lat2: number, lon2: number): number {
   const toRad = (angle: number) => (angle * Math.PI) / 180;
   const dLat = toRad(lat2 - lat1);
   const dLon = toRad(lon2 - lon1);
 
   const a =
     Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-    Math.cos(toRad(lat1)) *
-      Math.cos(toRad(lat2)) *
-      Math.sin(dLon / 2) *
-      Math.sin(dLon / 2);
+    Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) * Math.sin(dLon / 2) * Math.sin(dLon / 2);
 
   const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
   const distance = EARTH_RADIUS_KM * c;
@@ -61,12 +53,16 @@ export function getServicesNearLocation(
   services: ServiceItem[],
   userLocation: GeoCoordinates,
   maxDistanceKm?: number,
-  locale: Locale = "es"
+  locale: Locale = "es",
 ): NearbyServiceItem[] {
   const withDistance: NearbyServiceItem[] = [];
 
   for (const service of services) {
-    if (!service.coordinates || typeof service.coordinates.lat !== "number" || typeof service.coordinates.lng !== "number") {
+    if (
+      !service.coordinates ||
+      typeof service.coordinates.lat !== "number" ||
+      typeof service.coordinates.lng !== "number"
+    ) {
       continue;
     }
 
@@ -74,7 +70,7 @@ export function getServicesNearLocation(
       userLocation.lat,
       userLocation.lng,
       service.coordinates.lat,
-      service.coordinates.lng
+      service.coordinates.lng,
     );
 
     if (maxDistanceKm !== undefined && distanceKm > maxDistanceKm) {

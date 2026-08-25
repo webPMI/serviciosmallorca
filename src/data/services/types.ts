@@ -1,4 +1,4 @@
-export type ServiceStatus = "open" | "seasonal_closure" | "permanently_closed";
+export type ServiceStatus = "open" | "seasonal_closure" | "permanently_closed" | "incomplete_admin_only";
 export type SeasonalityType = "year_round" | "summer_season" | "winter_season";
 export type CulturalIdentity =
   | "mallorquin_heritage" // Clásico Mallorquín de siempre / Tradición e historia de la isla
@@ -80,21 +80,21 @@ export interface CustomerReview {
 }
 
 export interface PlatformScore {
-  rating: number;
-  reviewCount: number;
+  rating: number | null; // Permite null cuando no hay datos disponibles
+  reviewCount: number | null; // Permite null cuando no hay datos disponibles
   url: string;
 }
 
 export interface ReputationBreakdown {
   googleMaps?: PlatformScore;
-  appleMaps?: { rating?: number; reviewCount?: number; url: string };
+  appleMaps?: { rating?: number | null; reviewCount?: number | null; url: string };
   bingMaps?: PlatformScore;
   tripadvisor?: PlatformScore;
   trustpilot?: PlatformScore;
   thefork?: PlatformScore;
   treatwell?: PlatformScore;
-  totalReviewsAggregated: number;
-  overallWeightedRating: number;
+  totalReviewsAggregated: number | null; // Permite null cuando no hay datos
+  overallWeightedRating: number | null; // Permite null cuando no hay datos
 }
 
 export interface SocialMediaLinks {
@@ -153,16 +153,22 @@ export interface ServiceItem {
   secondaryCategories?: string[];
   zone: string;
   address: string;
+  addressAccuracy?: "extracted_from_html" | "generic" | "verified_manual"; // Flag para precisión de dirección
   coordinates: GeoCoordinates;
-  rating: number;
-  reviewCount: number;
+  coordinatesAccuracy?: "extracted_from_html" | "generic" | "verified_manual"; // Flag para precisión de coordenadas
+  rating: number | null; // Permite null cuando no hay rating disponible aún
+  ratingSource?: "extracted_from_html" | "pending_google_maps_extraction" | "verified_manual"; // Flag para origen del rating
+  reviewCount: number | null; // Permite null cuando no hay reseñas disponibles aún
+  reviewCountSource?: "extracted_from_html" | "pending_google_maps_extraction" | "verified_manual"; // Flag para origen de reseñas
   priceRange: "€" | "€€" | "€€€" | "€€€€";
   verified: boolean;
   featured: boolean;
   status: ServiceStatus;
+  webAccessibility?: "active" | "not_found" | "server_error" | "timeout" | "error"; // Estado de accesibilidad de la web
   seasonality?: SeasonalityType;
   culturalIdentity?: CulturalIdentity;
   isIconicHeritage?: boolean; // Negocio emblemático histórico que toda persona que visita Mallorca debe conocer
+  isNewOpening?: boolean; // Nueva apertura / Negocio reciente sin histórico previo de reseñas
   targetAudience?: string[]; // ["alemanes", "britanicos", "residentes", "turistas", "familias"]
   languagesSpoken?: string[]; // ["es", "en", "de", "ca", "fr", "sv", "it"]
   emergency24h?: boolean;

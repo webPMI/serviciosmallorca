@@ -143,12 +143,7 @@ export const oasisCatamaran: ServiceItem = {
       ca: "Sortides compartides des de 65€/adult amb dinar i begudes incloses. Tarifes de xàrter privat a mida.",
     },
   },
-  amenities: [
-    "wifi",
-    "wheelchair_accessible",
-    "air_conditioning",
-    "parking_nearby",
-  ],
+  amenities: ["wifi", "wheelchair_accessible", "air_conditioning", "parking_nearby"],
   features: ["wifi", "air_conditioning", "credit_card"],
   paymentMethods: ["credit_card", "cash", "bizum", "apple_pay"],
   certifications: [
@@ -165,12 +160,12 @@ export const oasisCatamaran: ServiceItem = {
     {
       name: "Capitanía & Tripulación Oasis",
       role: {
-        "es": "Patrones & Guías Marítimos",
-        "en": "Skippers & Marine Guides",
-        "ca": "Patrons & Guies Marítims"
+        es: "Patrones & Guías Marítimos",
+        en: "Skippers & Marine Guides",
+        ca: "Patrons & Guies Marítims",
       },
-      specialty: "Navegación a Vela y Seguridad en Bahía de Palma"
-    }
+      specialty: "Navegación a Vela y Seguridad en Bahía de Palma",
+    },
   ],
   reputationBreakdown: {
     googleMaps: {
@@ -189,7 +184,8 @@ export const oasisCatamaran: ServiceItem = {
       date: "2025-08-02",
       platform: "google_maps",
       language: "fr",
-      comment: "Une expérience inoubliable ! Le mouillage à Cala Blava était sublime, l'équipage aux petits soins et le barbecue délicieux.",
+      comment:
+        "Une expérience inoubliable ! Le mouillage à Cala Blava était sublime, l'équipage aux petits soins et le barbecue délicieux.",
       verifiedCustomer: true,
     },
     {
@@ -199,7 +195,8 @@ export const oasisCatamaran: ServiceItem = {
       date: "2025-07-19",
       platform: "google_maps",
       language: "es",
-      comment: "La mejor excursión en barco de Palma. El catamarán navega muy suave, la comida a bordo es excelente y los paddle surf dieron muchísimo juego.",
+      comment:
+        "La mejor excursión en barco de Palma. El catamarán navega muy suave, la comida a bordo es excelente y los paddle surf dieron muchísimo juego.",
       verifiedCustomer: true,
     },
   ],

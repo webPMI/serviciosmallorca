@@ -12,9 +12,7 @@
       "category": "gastronomia-restaurantes",
       "confidenceScore": 76,
       "status": "needs_manual_review",
-      "warnings": [
-        "Volumen de reseñas públicas bajo o no consolidado."
-      ],
+      "warnings": ["Volumen de reseñas públicas bajo o no consolidado."],
       "hasStore": false,
       "hasMenu": true,
       "template": {
@@ -38,38 +36,14 @@
         "seasonality": "year_round",
         "culturalIdentity": "mallorquin_heritage",
         "isIconicHeritage": false,
-        "targetAudience": [
-          "residentes",
-          "turistas",
-          "alemanes",
-          "britanicos"
-        ],
-        "languagesSpoken": [
-          "es",
-          "en",
-          "ca"
-        ],
+        "targetAudience": ["residentes", "turistas", "alemanes", "britanicos"],
+        "languagesSpoken": ["es", "en", "ca"],
         "emergency24h": false,
         "inVillaService": false,
-        "features": [
-          "wifi",
-          "air_conditioning",
-          "credit_card"
-        ],
-        "paymentMethods": [
-          "credit_card",
-          "cash"
-        ],
-        "amenities": [
-          "wifi",
-          "air_conditioning",
-          "parking_nearby",
-          "pet_friendly"
-        ],
-        "certifications": [
-          "Manipulador de Alimentos Balear",
-          "Registro Sanitario Oficial"
-        ],
+        "features": ["wifi", "air_conditioning", "credit_card"],
+        "paymentMethods": ["credit_card", "cash"],
+        "amenities": ["wifi", "air_conditioning", "parking_nearby", "pet_friendly"],
+        "certifications": ["Manipulador de Alimentos Balear", "Registro Sanitario Oficial"],
         "pricing": {
           "startingPrice": "Menú: 45€",
           "depositRequired": "Reserva previa recomendada",
@@ -180,10 +154,7 @@
         "whatsapp": "656 738 214",
         "email": "info@elllorenc.com",
         "website": "https://dinssantitaura.com",
-        "tags": [
-          "zona:palma",
-          "mod:cita-previa"
-        ],
+        "tags": ["zona:palma", "mod:cita-previa"],
         "shortDescription": {
           "es": "SANTI TAURA INTERPRETA LA GASTRONOMÍA MALLORQUINA DESDE UN PUNTO DE VISTA ACTUAL SIN OLVIDAR LAS RAÍCES.",
           "en": "",
@@ -209,10 +180,7 @@
         "schedule": "Lun - Sáb: 10:00 - 20:00",
         "lastVerifiedAt": "2026-08-25",
         "menuUrl": "https://dinssantitaura.com/backoffice/pdf/files/3menu-degustacion_es.pdf",
-        "specialties": [
-          "Menú Degustación de Autor",
-          "Menú Degustació"
-        ],
+        "specialties": ["Menú Degustación de Autor", "Menú Degustació"],
         "confidenceScore": 76,
         "verificationStatus": "needs_manual_review",
         "sourceCrossReference": {
@@ -230,9 +198,7 @@
       "category": "gastronomia-restaurantes",
       "confidenceScore": 80,
       "status": "verified",
-      "warnings": [
-        "Volumen de reseñas públicas bajo o no consolidado."
-      ],
+      "warnings": ["Volumen de reseñas públicas bajo o no consolidado."],
       "hasStore": true,
       "hasMenu": false,
       "template": {
@@ -256,37 +222,14 @@
         "seasonality": "year_round",
         "culturalIdentity": "mallorquin_heritage",
         "isIconicHeritage": false,
-        "targetAudience": [
-          "residentes",
-          "turistas",
-          "alemanes",
-          "britanicos"
-        ],
-        "languagesSpoken": [
-          "es",
-          "en",
-          "ca"
-        ],
+        "targetAudience": ["residentes", "turistas", "alemanes", "britanicos"],
+        "languagesSpoken": ["es", "en", "ca"],
         "emergency24h": false,
         "inVillaService": false,
-        "features": [
-          "wifi",
-          "air_conditioning",
-          "credit_card"
-        ],
-        "paymentMethods": [
-          "credit_card",
-          "cash",
-          "bizum"
-        ],
-        "amenities": [
-          "wifi",
-          "air_conditioning"
-        ],
-        "certifications": [
-          "Manipulador de Alimentos Balear",
-          "Registro Sanitario Oficial"
-        ],
+        "features": ["wifi", "air_conditioning", "credit_card"],
+        "paymentMethods": ["credit_card", "cash", "bizum"],
+        "amenities": ["wifi", "air_conditioning"],
+        "certifications": ["Manipulador de Alimentos Balear", "Registro Sanitario Oficial"],
         "pricing": {
           "startingPrice": "Menú: 45€",
           "depositRequired": "Reserva previa recomendada",
@@ -398,10 +341,7 @@
         "whatsapp": "34632416757",
         "email": "info@kuyenart.com",
         "website": "https://kuyenart.com",
-        "tags": [
-          "zona:palma",
-          "mod:cita-previa"
-        ],
+        "tags": ["zona:palma", "mod:cita-previa"],
         "shortDescription": {
           "es": "Estudio de arte, tatuaje y piercing de autor en Palma de Mallorca. Diseños únicos, realismo y joyería de alta calidad. Reserva tu cita.",
           "en": "",
@@ -483,35 +423,14 @@
         "seasonality": "year_round",
         "culturalIdentity": "mallorquin_heritage",
         "isIconicHeritage": false,
-        "targetAudience": [
-          "residentes",
-          "turistas",
-          "alemanes",
-          "britanicos"
-        ],
-        "languagesSpoken": [
-          "es",
-          "en",
-          "ca"
-        ],
+        "targetAudience": ["residentes", "turistas", "alemanes", "britanicos"],
+        "languagesSpoken": ["es", "en", "ca"],
         "emergency24h": false,
         "inVillaService": false,
-        "features": [
-          "wifi",
-          "air_conditioning",
-          "credit_card"
-        ],
-        "paymentMethods": [
-          "credit_card",
-          "cash"
-        ],
-        "amenities": [
-          "wifi",
-          "air_conditioning"
-        ],
-        "certifications": [
-          "Higiénico Sanitario Balear"
-        ],
+        "features": ["wifi", "air_conditioning", "credit_card"],
+        "paymentMethods": ["credit_card", "cash"],
+        "amenities": ["wifi", "air_conditioning"],
+        "certifications": ["Higiénico Sanitario Balear"],
         "pricing": {
           "startingPrice": "Desde 60€",
           "depositRequired": "Reserva previa recomendada",
@@ -622,10 +541,7 @@
         "whatsapp": "+34 000 000 000",
         "email": "boxtattoopiercing@gmail.com",
         "website": "https://boxtattoopiercing.com",
-        "tags": [
-          "zona:palma",
-          "mod:cita-previa"
-        ],
+        "tags": ["zona:palma", "mod:cita-previa"],
         "shortDescription": {
           "es": "",
           "en": "",
@@ -704,36 +620,14 @@
         "seasonality": "year_round",
         "culturalIdentity": "mallorquin_heritage",
         "isIconicHeritage": false,
-        "targetAudience": [
-          "residentes",
-          "turistas",
-          "alemanes",
-          "britanicos"
-        ],
-        "languagesSpoken": [
-          "es",
-          "en",
-          "ca"
-        ],
+        "targetAudience": ["residentes", "turistas", "alemanes", "britanicos"],
+        "languagesSpoken": ["es", "en", "ca"],
         "emergency24h": false,
         "inVillaService": false,
-        "features": [
-          "wifi",
-          "air_conditioning",
-          "credit_card"
-        ],
-        "paymentMethods": [
-          "credit_card",
-          "cash"
-        ],
-        "amenities": [
-          "wifi",
-          "air_conditioning"
-        ],
-        "certifications": [
-          "Manipulador de Alimentos Balear",
-          "Registro Sanitario Oficial"
-        ],
+        "features": ["wifi", "air_conditioning", "credit_card"],
+        "paymentMethods": ["credit_card", "cash"],
+        "amenities": ["wifi", "air_conditioning"],
+        "certifications": ["Manipulador de Alimentos Balear", "Registro Sanitario Oficial"],
         "pricing": {
           "startingPrice": "Menú: 45€",
           "depositRequired": "Reserva previa recomendada",
@@ -842,10 +736,7 @@
         "whatsapp": "+34 000 000 000",
         "email": "info@ejemplo.com",
         "website": "",
-        "tags": [
-          "zona:palma",
-          "mod:cita-previa"
-        ],
+        "tags": ["zona:palma", "mod:cita-previa"],
         "shortDescription": {
           "es": "",
           "en": "",
