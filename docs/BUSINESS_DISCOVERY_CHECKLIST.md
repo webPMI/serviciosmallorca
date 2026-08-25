@@ -6,12 +6,12 @@
 
 | Segmento de Calidad                             | Total Negocios | Estado en Plataforma                               |
 | :---------------------------------------------- | :------------: | :------------------------------------------------- |
-| ⭐⭐⭐⭐⭐ **5 Estrellas (4.8 - 5.0)**          |     **50**     | 🏆 Excelencia & Top Insular (Público Destacado)    |
+| ⭐⭐⭐⭐⭐ **5 Estrellas (4.8 - 5.0)**          |     **53**     | 🏆 Excelencia & Top Insular (Público Destacado)    |
 | ⭐⭐⭐⭐ **4 Estrellas (4.0 - 4.7)**            |     **69**     | ⭐ Notable / Recomendado (Público General)         |
 | ✨ **Nuevas Aperturas (0 reviews / Recientes)** |     **3**      | 🆕 Insignia 'Nueva Apertura' (Público Destacado)   |
 | ⭐⭐⭐ **3 Estrellas (3.0 - 3.9)**              |     **1**      | 🔹 Directorio Estándar (Público sin insignia)      |
 | ⚠️ **Triaje Interno (< 3.0 / Incompletos)**     |     **0**      | 🔒 Solo Administración (No se publica lista negra) |
-| 📦 **TOTAL NEGOCIOS EN RADAR**                  |    **123**     | **79 Indexados** · **44 Pendientes**               |
+| 📦 **TOTAL NEGOCIOS EN RADAR**                  |    **126**     | **82 Indexados** · **44 Pendientes**               |
 
 ---
 
@@ -27,6 +27,7 @@
 | ✅ Indexado |  **4.9**  |   380   | **78.6 pts** | **Carnicería Ca Na Fina Sóller**                          | Gastronomía & Chefs Privados | Serra de Tramuntana          |                                 [Web](https://canafina.com)                                 |
 | ✅ Indexado |  **4.9**  |   318   | **77.8 pts** | **First Mallorca (Luxury Real Estate)**                   | Inmobiliaria & Fincas        | Calvià & Andratx (Suroeste)  |                            [Web](https://www.firstmallorca.com)                             |
 | ✅ Indexado |  **4.9**  |   284   | **77.4 pts** | **Arabella Spa (St. Regis Mardavall)**                    | Salud & Bienestar            | Calvià & Andratx (Suroeste)  | [Web](https://www.marriott.com/hotels/travel/pmixr-the-st-regis-mardavall-mallorca-resort/) |
+| ✅ Indexado |  **4.9**  |   260   | **77.1 pts** | **Oli de Jornets (Sencelles - AOVE Ecológico)**           | Gastronomía & Chefs Privados | Es Raiguer & Es Pla (Centro) |                               [Web](https://olidejornets.com)                               |
 | ✅ Indexado |  **4.9**  |   510   | **75.2 pts** | **Mallorca Cycling Center & Taller (Playa de Muro)**      | Transporte VIP & Chófer      | Alcúdia & Pollença (Norte)   |                          [Web](https://mallorcacyclingcenter.com)                           |
 | ✅ Indexado |  **4.9**  |   165   | **74.5 pts** | **Son Brull Hotel & Spa (Relais & Châteaux)**             | Salud & Bienestar            | Alcúdia & Pollença (Norte)   |                                 [Web](https://sonbrull.com)                                 |
 | ✅ Indexado |  **4.9**  |   450   | **74.4 pts** | **Bergantiños Bikes Can Pastilla (Taller & Alquiler)**    | Transporte VIP & Chófer      | Palma & Bahía                |                             [Web](https://bergantinosbikes.com)                             |
@@ -57,8 +58,10 @@
 | ✅ Indexado |  **4.8**  |   135   | **74.3 pts** | **Tapicería & Toldos Balear (1982)**                      | Reformas & Construcción      | Palma & Bahía                |                             [Web](https://tapiceriabalear.com)                              |
 | ✅ Indexado |  **4.8**  |   114   |  **74 pts**  | **Bufete Frau Abogados & Asesores**                       | Abogados & Asesoría Fiscal   | Palma & Bahía                |                                [Web](https://bufetefrau.com)                                |
 | ✅ Indexado |  **4.8**  |   460   |  **74 pts**  | **DINS Santi Taura**                                      | Gastronomía & Chefs Privados | Palma & Bahía                |                              [Web](https://dinssantitaura.com)                              |
+| ✅ Indexado |  **4.8**  |   115   |  **74 pts**  | **Restauración de Muebles Antiguos Casanova (1980)**      | Reformas & Construcción      | Palma & Bahía                |                           [Web](https://restauracioncasanova.com)                           |
 | ✅ Indexado |  **4.8**  |   410   | **72.7 pts** | **Clínica Veterinaria Son Dureta Palma**                  | Salud & Bienestar            | Palma & Bahía                |                           [Web](https://veterinariasonsureta.com)                           |
 | ✅ Indexado |  **4.8**  |   380   | **72.2 pts** | **Macatela Tattoo Studio Palma**                          | Arte, Tatuajes & Piercing    | Palma & Bahía                |                      [Web](https://www.instagram.com/macatela_tattoo/)                      |
+| ✅ Indexado |  **4.8**  |   340   | **71.9 pts** | **Clínica Veterinaria Santa Catalina (Palma)**            | Salud & Bienestar            | Palma & Bahía                |                         [Web](https://veterinariasantacatalina.com)                         |
 | ✅ Indexado |  **4.8**  |   340   | **71.9 pts** | **La Barbería de la Lonja Palma**                         | Salud & Bienestar            | Palma & Bahía                |                              [Web](https://barberialonja.com)                               |
 | ✅ Indexado |  **4.8**  |   290   |  **71 pts**  | **Urban Soul Tattoo Studio Palma**                        | Arte, Tatuajes & Piercing    | Palma & Bahía                |                     [Web](https://www.instagram.com/urbansoul.tattoo/)                      |
 | ✅ Indexado |  **4.8**  |   190   |  **70 pts**  | **Fontanería Balear Instalaciones**                       | Reformas & Construcción      | Palma & Bahía                |                             [Web](https://fontaneriabalear.com)                             |

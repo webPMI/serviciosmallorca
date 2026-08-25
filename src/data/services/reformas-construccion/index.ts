@@ -12,6 +12,7 @@ import { limpiezasBalear } from "./limpiezas-balear-mallorca.ts";
 import { climaFrioBalear } from "./clima-frio-balear.ts";
 import { tapiceriaToldosBalear } from "./tapiceria-toldos-balear.ts";
 import { jardineriaSerra } from "./jardineria-mediterranea-serra.ts";
+import { restauracionCasanova } from "./restauracion-muebles-casanova.ts";
 
 export {
   duranPalma,
@@ -27,6 +28,7 @@ export {
   climaFrioBalear,
   tapiceriaToldosBalear,
   jardineriaSerra,
+  restauracionCasanova,
 };
 
 /**
@@ -47,4 +49,5 @@ export const REFORMAS_SERVICES: ServiceItem[] = [
   climaFrioBalear,
   tapiceriaToldosBalear,
   jardineriaSerra,
+  restauracionCasanova,
 ];

@@ -24,6 +24,7 @@ import { canPomar } from "./can-pomar-campos.ts";
 import { bodegaBiniagual } from "./bodega-biniagual.ts";
 import { canCompany } from "./can-company-sineu.ts";
 import { formatgesSaCanova } from "./formatges-sa-canova-campos.ts";
+import { oliDeJornets } from "./oli-de-jornets-sencelles.ts";
 
 export {
   dinsSantiTaura,
@@ -51,6 +52,7 @@ export {
   bodegaBiniagual,
   canCompany,
   formatgesSaCanova,
+  oliDeJornets,
 };
 
 /**
@@ -83,4 +85,5 @@ export const RESTAURANT_SERVICES: ServiceItem[] = [
   bodegaBiniagual,
   canCompany,
   formatgesSaCanova,
+  oliDeJornets,
 ];
