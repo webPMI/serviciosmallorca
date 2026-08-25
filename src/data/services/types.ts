@@ -22,6 +22,8 @@ export interface BusinessAward {
   issuer: string; // Entidad otorgante
   year?: number;
   category?: string;
+  url?: string; // Enlace a la noticia, acta del jurado o web oficial del premio
+  certificateUrl?: string; // Imagen o PDF del diploma acreditativo
 }
 
 export interface TeamMember {

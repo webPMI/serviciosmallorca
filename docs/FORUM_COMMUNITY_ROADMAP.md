@@ -70,20 +70,19 @@ Cada categoria responde a una necesidad REAL y verificable de residentes y traba
 
 ---
 
-## 3. Taxonomia Propuesta: 6 Categorias Principales
+## 3. Taxonomia Propuesta: 5 Categorias Principales
 
-La bolsa de trabajo es la categoria estrella; las otras 4 nuevas se disenaron para el contexto mallorquin y la categoria Cafe absorbe el contenido legacy sin migracion forzosa.
+La bolsa de trabajo es la categoria estrella; las otras 4 se disenaron especificamente para el contexto mallorquin.
 
 ### 3.1 Tabla resumen
 
-| #   | Categoria                  | id       | Icono | Subcategorias                                    | Potencial retencion        |
-| --- | -------------------------- | -------- | ----- | ------------------------------------------------ | -------------------------- |
-| 1   | **Bolsa de Trabajo**       | empleo   | 💼    | ofertas / solicitudes                            | MUY ALTO (consulta diaria) |
-| 2   | **Vivienda y Alquileres**  | vivienda | 🏠    | larga-estancia / compartir / traspasos           | ALTO (busqueda intensiva)  |
-| 3   | **Compra-Venta y Mercado** | mercado  | 🛒    | segunda-mano / herramientas / vehiculos / gratis | ALTO (recurrente)          |
-| 4   | **Eventos y Quedadas**     | eventos  | 📅    | cultura / deporte / networking / solidario       | MEDIO-ALTO (estacional)    |
-| 5   | **Avisos y Vecindario**    | avisos   | 🚨    | perdidos / alertas / recomendaciones             | MEDIO (habito local)       |
-| 6   | **Cafe Comunidad**         | cafe     | ☕    | preguntas / experiencias / guias (legacy)        | MEDIO (social)             |
+| #   | Categoria                        | id            | Icono | Subcategorias                                                | Potencial retencion        |
+| --- | -------------------------------- | ------------- | ----- | ----------------------------------------------------------- | -------------------------- |
+| 1   | **Bolsa de Trabajo**             | empleo        | 💼    | ofertas / solicitudes                                        | MUY ALTO (consulta diaria) |
+| 2   | **Formacion y Cursos**           | formacion     | �    | profesionales / idiomas / hosteleria / oficios / tecnologia   | MEDIO-ALTO (estacional)    |
+| 3   | **Servicios e Intercambios**     | intercambios  | 🤝    | trueque / habilidades / colaboracion / ayuda mutua           | ALTO (recurrente)          |
+| 4   | **Turismo y Experiencias**       | turismo       | 🏝️    | recomendaciones / experiencias / guias / rutas                 | MEDIO-ALTO (evergreen)     |
+| 5   | **Emprendimiento y Networking** | emprendimiento| �    | socios / networking / consejos / oportunidades               | MEDIO (eventual)           |
 
 ### 3.2 Justificacion de cada categoria nueva
 

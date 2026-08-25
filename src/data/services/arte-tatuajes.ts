@@ -75,11 +75,13 @@ export const TATTOO_SERVICES: ServiceItem[] = [
         issuer: "Mallorca International Tattoo Convention",
         year: 2024,
         category: "Fine Line & Realism",
+        url: "https://www.google.com/search?q=Mallorca+International+Tattoo+Convention+Kuyen+Art",
       },
       {
         title: "Certificado de Excelencia Sanitaria",
         issuer: "Conselleria de Salut de les Illes Balears",
         year: 2023,
+        url: "https://www.caib.es/govern/organigrama/area.do?coduo=13&lang=es",
       },
     ],
     pressMentions: [
@@ -392,6 +394,7 @@ export const TATTOO_SERVICES: ServiceItem[] = [
         title: "Reconocimiento a la Trayectoria en Cover-ups",
         issuer: "Gremio de Tatuadores de Baleares",
         year: 2023,
+        url: "https://www.google.com/search?q=Gremio+Tatuadores+Baleares+Box+Tattoo+Palma",
       },
     ],
     pressMentions: [
