@@ -16,6 +16,7 @@ import { fornDeLaSoca } from "./forn-de-la-soca.ts";
 import { bodegaRibas } from "./bodega-ribas.ts";
 import { ilTanoSantaCatalina } from "./il-tano-santa-catalina.ts";
 import { canMiquelPalma } from "./can-miquel-palma.ts";
+import { fornFondoPalma } from "./forn-fondo-palma.ts";
 
 export {
   dinsSantiTaura,
@@ -35,6 +36,7 @@ export {
   bodegaRibas,
   ilTanoSantaCatalina,
   canMiquelPalma,
+  fornFondoPalma,
 };
 
 /**
@@ -59,4 +61,5 @@ export const RESTAURANT_SERVICES: ServiceItem[] = [
   bodegaRibas,
   ilTanoSantaCatalina,
   canMiquelPalma,
+  fornFondoPalma,
 ];

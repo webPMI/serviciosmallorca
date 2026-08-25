@@ -7,6 +7,7 @@ import { fontaneriaBalear } from "./fontaneria-balear.ts";
 import { cerrajeriaSanMiguel } from "./cerrajeria-san-miguel.ts";
 import { carpinteriaFiol } from "./carpinteria-fiol-marratxi.ts";
 import { electricidadLlabres } from "./electricidad-llabres-marratxi.ts";
+import { aluminiosCalvia } from "./aluminios-calvia.ts";
 
 export {
   duranPalma,
@@ -17,6 +18,7 @@ export {
   cerrajeriaSanMiguel,
   carpinteriaFiol,
   electricidadLlabres,
+  aluminiosCalvia,
 };
 
 /**
@@ -32,4 +34,5 @@ export const REFORMAS_SERVICES: ServiceItem[] = [
   cerrajeriaSanMiguel,
   carpinteriaFiol,
   electricidadLlabres,
+  aluminiosCalvia,
 ];
