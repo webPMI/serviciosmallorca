@@ -5,6 +5,7 @@ import Footer from "../../../components/Footer.astro";
 import ServiceHeaderHero from "../../../components/ServiceHeaderHero.astro";
 import ServiceQuickNav from "../../../components/ServiceQuickNav.astro";
 import ServiceMobileStickyBar from "../../../components/ServiceMobileStickyBar.astro";
+import ServiceQuickFacts from "../../../components/ServiceQuickFacts.astro";
 import ServiceGallerySection from "../../../components/ServiceGallerySection.astro";
 import ServiceDescription from "../../../components/ServiceDescription.astro";
 import ServiceHighlights from "../../../components/ServiceHighlights.astro";
@@ -28,6 +29,7 @@ import { CATEGORIES } from "../../../data/categories";
 import { MALLORCA_ZONES } from "../../../data/zones";
 import { BLOG_POSTS } from "../../../data/posts";
 import { getLocaleFromUrl, loadTranslations, getLangPrefix, type Locale } from "../../../i18n";
+import { generateServiceJsonLd } from "../../../lib/jsonLdGenerator";
 import "../../../styles/service-detail.css";
 
 export const prerender = false;
@@ -46,49 +48,25 @@ if (!service) {
 const category = CATEGORIES.find((c) => c.id === service.category);
 const zone = MALLORCA_ZONES.find((z) => z.id === service.zone);
 const categoryName = category?.name[locale] || service.category;
+const zoneName = zone?.name[locale] || service.zone;
 const relatedPosts = BLOG_POSTS.filter((p) => p.relatedServiceIds.includes(service.id));
 
+// Dynamic Localized SEO Title & Meta Description with Search Intent
+const seoTitle = `${service.name} (${zoneName}, Mallorca) | ${categoryName} | ⭐ ${service.rating.toFixed(1)}`;
+const cleanDescText = (service.shortDescription?.[locale] || service.fullDescription?.[locale] || "").replace(/\s+/g, " ").trim();
+const seoDescription = cleanDescText.length > 155 ? `${cleanDescText.slice(0, 152)}...` : cleanDescText;
+const canonicalUrl = `${Astro.url.origin}${Astro.url.pathname}`;
+
 // Schema.org structured data for Local SEO and AI Search Engines (Perplexity, ChatGPT, SGE)
-const schemaOrg = {
-  "@context": "https://schema.org",
-  "@type": service.category === "arte-tatuajes" ? ["LocalBusiness", "TattooParlor"] : "LocalBusiness",
-  name: service.name,
-  image: service.image,
-  telephone: service.phone,
-  email: service.email,
-  url: service.website || Astro.url.href,
-  hasMap: service.googleMapsUrl,
-  sameAs: [service.googleMapsUrl, service.appleMapsUrl, service.bingMapsUrl, service.website].filter(Boolean),
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: service.address,
-    addressLocality: "Palma",
-    addressRegion: "Illes Balears",
-    postalCode: "07001",
-    addressCountry: "ES",
-  },
-  geo: {
-    "@type": "GeoCoordinates",
-    latitude: service.coordinates.lat,
-    longitude: service.coordinates.lng,
-  },
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: service.rating,
-    reviewCount: service.reviewCount,
-    bestRating: "5",
-    worstRating: "1",
-  },
-  priceRange: service.priceRange,
-};
+const schemaOrg = generateServiceJsonLd(service, locale, canonicalUrl);
 ---
 
 <BaseLayout
-  title={`${service.name} - ${translations["site.title"]}`}
+  title={seoTitle}
   lang={locale}
-  description={service.shortDescription[locale]}
+  description={seoDescription}
 >
-  <!-- Schema.org for Local SEO -->
+  <!-- Schema.org for Local SEO & LLM Ingestion -->
   <script is:inline type="application/ld+json" set:html={JSON.stringify(schemaOrg)} />
 
   <Navbar currentLocale={locale} translations={translations} getLangPrefix={getLangPrefix} />
@@ -123,6 +101,15 @@ const schemaOrg = {
           service={service}
           category={category}
           categoryName={categoryName}
+        />
+
+        <!-- Semantic AI Quick Facts Box -->
+        <ServiceQuickFacts
+          service={service}
+          category={category}
+          zone={zone}
+          locale={locale}
+          translations={translations}
         />
 
         <ServiceDescription service={service} locale={locale} />
