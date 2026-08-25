@@ -399,4 +399,13 @@ export const kuyenArtTattoo: ServiceItem = {
   ],
   schedule: "Mar - Vie: 14:00 - 20:00 (Cita previa)",
   lastVerifiedAt: "2026-08-25",
+  verificationStatus: "verified",
+  confidenceScore: 98,
+  sourceCrossReference: {
+    webPhoneMatch: true,
+    mapsPhoneMatch: true,
+    addressConsistency: true,
+    activeWeb200Ok: true,
+    socialMatchScore: 15,
+  },
 };

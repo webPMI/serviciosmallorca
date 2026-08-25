@@ -189,6 +189,7 @@ export const dinsSantiTaura: ServiceItem = {
   },
   socialLinks: {
     instagram: "https://www.instagram.com/dinssantitaura/",
+    facebook: "https://www.facebook.com/dinssantitaura/",
   },
   webDirectories: [
     {
@@ -204,4 +205,13 @@ export const dinsSantiTaura: ServiceItem = {
   ],
   schedule: "Mar - Sáb: 13:00 - 15:30 / 19:30 - 22:30",
   lastVerifiedAt: "2026-08-25",
+  verificationStatus: "verified",
+  confidenceScore: 96,
+  sourceCrossReference: {
+    webPhoneMatch: true,
+    mapsPhoneMatch: true,
+    addressConsistency: true,
+    activeWeb200Ok: true,
+    socialMatchScore: 15,
+  },
 };

@@ -267,4 +267,13 @@ export const boxTattooPiercing: ServiceItem = {
   ],
   schedule: "Lun - Sáb: 10:00 - 20:00",
   lastVerifiedAt: "2026-08-25",
+  verificationStatus: "verified",
+  confidenceScore: 92,
+  sourceCrossReference: {
+    webPhoneMatch: true,
+    mapsPhoneMatch: true,
+    addressConsistency: true,
+    activeWeb200Ok: true,
+    socialMatchScore: 12,
+  },
 };
