@@ -12,6 +12,7 @@ import { peluqueriaCaninaGuau } from "./peluqueria-canina-guau-palma.ts";
 import { herboristeriaLaRemei } from "./herboristeria-la-remei-palma.ts";
 import { zunrayYoga } from "./zunray-yoga-palma.ts";
 import { veterinariaSantaCatalina } from "./clinica-veterinaria-santa-catalina.ts";
+import { clinicaVeterinariaManacor } from "./clinica-veterinaria-manacor.ts";
 
 export {
   arabellaSpa,
@@ -27,6 +28,7 @@ export {
   herboristeriaLaRemei,
   zunrayYoga,
   veterinariaSantaCatalina,
+  clinicaVeterinariaManacor,
 };
 
 /**
@@ -47,4 +49,5 @@ export const SPAS_SERVICES: ServiceItem[] = [
   herboristeriaLaRemei,
   zunrayYoga,
   veterinariaSantaCatalina,
+  clinicaVeterinariaManacor,
 ];

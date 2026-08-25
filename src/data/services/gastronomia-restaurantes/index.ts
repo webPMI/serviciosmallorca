@@ -26,6 +26,7 @@ import { canCompany } from "./can-company-sineu.ts";
 import { formatgesSaCanova } from "./formatges-sa-canova-campos.ts";
 import { oliDeJornets } from "./oli-de-jornets-sencelles.ts";
 import { bodegaCastellMiquel } from "./bodega-castell-miquel.ts";
+import { fornDesTeatre } from "./forn-des-teatre-palma.ts";
 
 export {
   dinsSantiTaura,
@@ -55,6 +56,7 @@ export {
   formatgesSaCanova,
   oliDeJornets,
   bodegaCastellMiquel,
+  fornDesTeatre,
 };
 
 /**
@@ -89,4 +91,5 @@ export const RESTAURANT_SERVICES: ServiceItem[] = [
   formatgesSaCanova,
   oliDeJornets,
   bodegaCastellMiquel,
+  fornDesTeatre,
 ];

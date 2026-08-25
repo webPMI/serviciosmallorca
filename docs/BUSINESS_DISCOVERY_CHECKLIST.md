@@ -6,12 +6,12 @@
 
 | Segmento de Calidad                             | Total Negocios | Estado en Plataforma                               |
 | :---------------------------------------------- | :------------: | :------------------------------------------------- |
-| ⭐⭐⭐⭐⭐ **5 Estrellas (4.8 - 5.0)**          |     **56**     | 🏆 Excelencia & Top Insular (Público Destacado)    |
-| ⭐⭐⭐⭐ **4 Estrellas (4.0 - 4.7)**            |     **69**     | ⭐ Notable / Recomendado (Público General)         |
+| ⭐⭐⭐⭐⭐ **5 Estrellas (4.8 - 5.0)**          |     **58**     | 🏆 Excelencia & Top Insular (Público Destacado)    |
+| ⭐⭐⭐⭐ **4 Estrellas (4.0 - 4.7)**            |     **70**     | ⭐ Notable / Recomendado (Público General)         |
 | ✨ **Nuevas Aperturas (0 reviews / Recientes)** |     **3**      | 🆕 Insignia 'Nueva Apertura' (Público Destacado)   |
 | ⭐⭐⭐ **3 Estrellas (3.0 - 3.9)**              |     **1**      | 🔹 Directorio Estándar (Público sin insignia)      |
 | ⚠️ **Triaje Interno (< 3.0 / Incompletos)**     |     **0**      | 🔒 Solo Administración (No se publica lista negra) |
-| 📦 **TOTAL NEGOCIOS EN RADAR**                  |    **129**     | **85 Indexados** · **44 Pendientes**               |
+| 📦 **TOTAL NEGOCIOS EN RADAR**                  |    **132**     | **88 Indexados** · **44 Pendientes**               |
 
 ---
 
@@ -66,6 +66,7 @@
 | ✅ Indexado |  **4.8**  |   380   | **72.2 pts** | **Macatela Tattoo Studio Palma**                          | Arte, Tatuajes & Piercing    | Palma & Bahía                |                      [Web](https://www.instagram.com/macatela_tattoo/)                      |
 | ✅ Indexado |  **4.8**  |   340   | **71.9 pts** | **Clínica Veterinaria Santa Catalina (Palma)**            | Salud & Bienestar            | Palma & Bahía                |                         [Web](https://veterinariasantacatalina.com)                         |
 | ✅ Indexado |  **4.8**  |   340   | **71.9 pts** | **La Barbería de la Lonja Palma**                         | Salud & Bienestar            | Palma & Bahía                |                              [Web](https://barberialonja.com)                               |
+| ✅ Indexado |  **4.8**  |   290   | **71.2 pts** | **Clínica Veterinaria Manacor (Llevant)**                 | Salud & Bienestar            | Manacor & Llevant (Este)     |                            [Web](https://veterinariamanacor.com)                            |
 | ✅ Indexado |  **4.8**  |   290   |  **71 pts**  | **Urban Soul Tattoo Studio Palma**                        | Arte, Tatuajes & Piercing    | Palma & Bahía                |                     [Web](https://www.instagram.com/urbansoul.tattoo/)                      |
 | ✅ Indexado |  **4.8**  |   190   |  **70 pts**  | **Fontanería Balear Instalaciones**                       | Reformas & Construcción      | Palma & Bahía                |                             [Web](https://fontaneriabalear.com)                             |
 | ✅ Indexado |  **4.8**  |   190   |  **70 pts**  | **Limpiezas y Mantenimiento Balear**                      | Reformas & Construcción      | Palma & Bahía                |                             [Web](https://limpiezasbalear.com)                              |
@@ -73,6 +74,7 @@
 | ✅ Indexado |  **4.8**  |   160   | **69.6 pts** | **Aluminios y Cristalería Calvià (Son Bugadelles)**       | Reformas & Construcción      | Calvià & Andratx (Suroeste)  |                             [Web](https://aluminioscalvia.com)                              |
 | ✅ Indexado |  **4.8**  |   145   | **69.4 pts** | **Clima & Frío Balear (Aire Acondicionado & Aerotermia)** | Reformas & Construcción      | Palma & Bahía                |                             [Web](https://climafriobalear.com)                              |
 | ✅ Indexado |  **4.8**  |   140   | **69.4 pts** | **Jardinería & Paisajismo Serra Mallorca**                | Reformas & Construcción      | Palma & Bahía                |                             [Web](https://jardineriaserra.com)                              |
+| ✅ Indexado |  **4.8**  |   130   | **69.2 pts** | **Fontanería & Climatización Pomar (Inca - 1985)**        | Reformas & Construcción      | Es Raiguer & Es Pla (Centro) |                            [Web](https://instalacionespomar.com)                            |
 | ✅ Indexado |  **4.8**  |   120   | **69.1 pts** | **Mantenimiento & Varadero Portitxol Services**           | Náutica & Charters           | Palma & Bahía                |                            [Web](https://varaderoportitxol.com)                             |
 | ✅ Indexado |  **4.8**  |   190   | **61.6 pts** | **Box Tattoo Piercing Palma**                             | Arte, Tatuajes & Piercing    | Palma & Bahía                |                            [Web](https://boxtattoopiercing.com)                             |
 
@@ -94,6 +96,7 @@
 | ✅ Indexado  |  **4.7**  |   290   | **75.4 pts** | **Construcciones Llull Sastre (1934)**            | Reformas & Construcción      | Palma & Bahía                |      [Web](https://llullsastre.com)       |
 | ✅ Indexado  |  **4.7**  |   310   | **70.5 pts** | **Garaje Auto-Pla Inca (Taller Mecánico)**        | Transporte VIP & Chófer      | Es Raiguer & Es Pla (Centro) |      [Web](https://autopla-inca.com)      |
 | ✅ Indexado  |  **4.6**  |  2150   | **95.8 pts** | **Clínica Juaneda Palma (1917)**                  | Salud & Bienestar            | Palma & Bahía                |         [Web](https://juaneda.es)         |
+| ✅ Indexado  |  **4.6**  |  2100   | **95.8 pts** | **Forn des Teatre (Palma - 1916)**                | Gastronomía & Chefs Privados | Palma & Bahía                |     [Web](https://forndesteatre.com)      |
 | ✅ Indexado  |  **4.6**  |  1980   | **95.6 pts** | **Forn Fondo Palma (1911)**                       | Gastronomía & Chefs Privados | Palma & Bahía                |       [Web](https://fornfondo.com)        |
 | ✅ Indexado  |  **4.6**  |  1650   | **91.4 pts** | **Club Nàutic Portitxol (1928)**                  | Náutica & Charters           | Palma & Bahía                |      [Web](https://cnportitxol.com)       |
 | ✅ Indexado  |  **4.6**  |  1650   | **91.2 pts** | **Restaurante Vandal Palma**                      | Gastronomía & Chefs Privados | Palma & Bahía                |      [Web](https://vandalpalma.com)       |
