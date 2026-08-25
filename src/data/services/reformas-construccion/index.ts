@@ -17,6 +17,7 @@ import { fontaneriaPomar } from "./fontaneria-pomar-inca.ts";
 import { cristaleriaBalear } from "./cristaleria-aluminios-balear.ts";
 import { viverosLlabres } from "./viveros-jardineria-llabres.ts";
 import { carpinteriaAlaro } from "./carpinteria-ebanisteria-alaro.ts";
+import { cerrajeriaRapidaBalear } from "./cerrajeria-rapida-balear.ts";
 
 export {
   duranPalma,
@@ -37,6 +38,7 @@ export {
   cristaleriaBalear,
   viverosLlabres,
   carpinteriaAlaro,
+  cerrajeriaRapidaBalear,
 };
 
 /**
@@ -62,4 +64,5 @@ export const REFORMAS_SERVICES: ServiceItem[] = [
   cristaleriaBalear,
   viverosLlabres,
   carpinteriaAlaro,
+  cerrajeriaRapidaBalear,
 ];

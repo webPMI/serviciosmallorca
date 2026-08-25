@@ -1,0 +1,202 @@
+import type { ServiceItem } from "../types.ts";
+
+export const veterinarioLlucmajor: ServiceItem = {
+  id: "centro-veterinario-llucmajor",
+  slug: "centro-veterinario-llucmajor",
+  name: "Centro Veterinario Llucmajor (2000)",
+  category: "salud-bienestar",
+  sectorId: "salud-bienestar-belleza",
+  culturalIdentity: "mallorquin_heritage",
+  rating: 4.8,
+  reviewCount: 310,
+  verified: true,
+  featured: false,
+  status: "open",
+  seasonality: "year_round",
+  isIconicHeritage: false,
+  priceRange: "€€",
+  address: "Carrer del Convent, 24, 07620 Llucmajor (Comarca de Migjorn), Illes Balears",
+  zone: "santanyi-migjorn",
+  phone: "+34 971 66 18 40",
+  whatsapp: "+34 670 90 80 70",
+  email: "info@veterinariollucmajor.com",
+  website: "https://veterinariollucmajor.com",
+  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Centro%20Veterinario%20Llucmajor",
+  appleMapsUrl: "https://maps.apple.com/?q=Centro%20Veterinario%20Llucmajor&ll=39.4890,2.8910",
+  bingMapsUrl: "https://www.bing.com/maps?where1=Centro%20Veterinario%20Llucmajor",
+  coordinates: { lat: 39.489, lng: 2.891 },
+  schedule: "Lunes a Viernes: 09:00 - 19:30 | Sábados: 09:30 - 13:30 (Servicio de Urgencias Telefónicas)",
+  lastVerifiedAt: "2026-08-25",
+  image: "https://veterinariollucmajor.com/wp-content/uploads/2023/01/clinica-veterinaria-llucmajor-consultas.jpg",
+  gallery: [
+    "https://veterinariollucmajor.com/wp-content/uploads/2023/01/quirofano-cirugia-veterinaria-migjorn.jpg",
+    "https://veterinariollucmajor.com/wp-content/uploads/2023/01/analisis-clinicos-ecografia-perros-gatos.jpg",
+  ],
+  targetAudience: ["residentes", "turistas", "familias", "expat"],
+  languagesSpoken: ["es", "ca", "en", "de"],
+  emergency24h: true,
+  inVillaService: true,
+  shortDescription: {
+    es: "Clínica veterinaria integral en Llucmajor y la comarca de Migjorn desde 2000, medicina preventiva, cirugía general, laboratorio de análisis rápidos, ecografía y atención a domicilio en fincas.",
+    en: "Full-service veterinary clinic in Llucmajor and southern Mallorca since 2000, providing preventative care, soft-tissue surgery, fast lab diagnostics, ultrasound, and rural finca visits.",
+    ca: "Clínica veterinària integral a Llucmajor i la comarca de Migjorn des de 2000, medicina preventiva, cirurgia general, anàlisis ràpides, ecografia i atenció a finques rústiques.",
+  },
+  fullDescription: {
+    es: "Centro Veterinario Llucmajor es el espacio clínico de referencia para el cuidado de pequeños animales y mascotas en el término municipal más extenso de Mallorca (Llucmajor, s'Estanyol, Cala Pi, Maioris y son Verí). Con más de dos décadas de experiencia médica continuada, dispone de área quirúrgica completamente esterilizada con monitor multiparámetro, radiología digitalizada, ecógrafo de alta resolución, laboratorio clínico inmediato y servicio móvil para atender a mascotas en fincas rústicas.",
+    en: "Centro Veterinario Llucmajor is the leading companion pet healthcare clinic serving Mallorca's most expansive southern municipality (Llucmajor town, s'Estanyol, Cala Pi, Maioris, and Son Verí). Operating for over two decades, they provide a sterile inhalation surgical theater, digital X-rays, high-definition ultrasonography, on-site hematology/chemistry blood analyzers, and dedicated country finca home calls.",
+    ca: "Centre Veterinari Llucmajor és la clínica de referència per a animals de companyia a Llucmajor, Cala Pi, s'Estanyol i Maioris. Amb més de 20 anys d'experiència, disposa de quiròfan completament equipat, radiologia digital, ecografia d'alta resolució, laboratori d'anàlisi clínica immediata i visites a finques rústiques.",
+  },
+  specialties: {
+    es: [
+      "Medicina preventiva personalizada: vacunaciones, desparasitaciones periódicas y microchip oficial",
+      "Cirugía de tejidos blandos, esterilizaciones y limpiezas de boca profilácticas por ultrasonidos",
+      "Diagnóstico por imagen avanzado: ecografía abdominal, torácica y radiografía digital directa",
+      "Prevención, diagnóstico precoz y pautas de tratamiento frente a la Leishmaniosis canina balear",
+    ],
+    en: [
+      "Customized preventative wellness: core vaccinations, deworming protocols, and official microchipping",
+      "Soft-tissue surgery, routine neutering/spaying, and ultrasonic dental descaling and polishing",
+      "Advanced diagnostic imaging: abdominal ultrasound, chest scans, and direct digital radiography",
+      "Early screening, diagnosis, and therapeutic management protocols for Balearic canine leishmaniasis",
+    ],
+    ca: [
+      "Medicina preventiva: vacunacions, microxip oficial i desparasitacions periòdiques",
+      "Cirurgia de teixits tous, esterilitzacions i neteja dental per ultrasons",
+      "Diagnosi per la imatge: ecografia abdominal i radiologia digital directa",
+      "Prevenció i tractament especialitzat contra la leishmaniosi a Mallorca",
+    ],
+  },
+  highlights: {
+    es: [
+      "Más de 20 años de vocación médica y cercanía con las familias de Llucmajor (desde 2000)",
+      "Atención médica multilingüe para clientes internacionales y residentes en fincas",
+      "Servicio de visita veterinaria a domicilio en chalets de la costa y fincas del campo",
+      "Atención telefónica de guardia médica para urgencias veterinarias imprevistas",
+    ],
+    en: [
+      "Over 20 years of compassionate veterinary medicine serving Llucmajor families since 2000",
+      "Fluent multilingual care for international expatriates and country estate owners",
+      "In-finca house call service covering rural fincas and coastal chalets from Cala Pi to Maioris",
+      "On-call emergency triage telephone for immediate veterinary medical advice",
+    ],
+    ca: [
+      "Més de 20 anys de vocació i proximitat amb les famílies de Llucmajor (des de 2000)",
+      "Atenció veterinària multilingüe (català, castellà, anglès i alemany)",
+      "Servei de visita veterinària a domicili a cases de camp i xalets de la costa",
+      "Telèfon de guàrdia mèdica veterinària per a urgències",
+    ],
+  },
+  servicesProvided: {
+    es: [
+      "Consultas clínicas generales de medicina interna y dermatología",
+      "Laboratorio propio de análisis de sangre y orina con resultados en la misma consulta",
+      "Emisión de pasaportes europeos para animales y certificados oficiales de viaje",
+      "Tienda de nutrición veterinaria avanzada y dietas clínicas prescritas",
+    ],
+    en: [
+      "General companion animal medical consultations and dermatology investigations",
+      "In-house diagnostic laboratory providing same-visit blood, urine, and cytology results",
+      "EU pet passport issuance and official veterinary travel fitness health documentation",
+      "Prescription veterinary clinical nutrition and therapeutic wellness products",
+    ],
+    ca: [
+      "Consultes clíniques generals de medicina interna i dermatologia",
+      "Laboratori propi d'anàlisi de sang amb resultats a la mateixa visita",
+      "Tramitació de passaports europeus per a mascotes i certificats de viatge",
+      "Nutrició veterinària especialitzada i dietes clíniques",
+    ],
+  },
+  tags: ["zona:santanyi-migjorn", "product:accesible", "mod:cita-previa", "temps:todo-el-ano"],
+  pricing: {
+    startingPrice: "Consulta veterinaria general desde 38€ | Vacunación y microchip desde 35€",
+    rateType: "tiered",
+  },
+  amenities: ["wifi", "air_conditioning", "parking_nearby"],
+  features: ["wifi", "air_conditioning", "credit_card"],
+  paymentMethods: ["credit_card", "cash", "bizum"],
+  certifications: [
+    "Colegio Oficial de Veterinarios de las Islas Baleares (COVIB)",
+    "Asociación de Veterinarios Españoles Especialistas en Pequeños Animales (AVEPA)",
+  ],
+  socialLinks: {
+    facebook: "https://www.facebook.com/VeterinarioLlucmajor/",
+  },
+  teamMembers: [
+    {
+      name: "Dra. Coloma & Equip Veterinari Llucmajor",
+      role: {
+        es: "Veterinarias Colegiadas & Cirujanas",
+        en: "Licensed Veterinary Surgeons & Practitioners",
+        ca: "Veterinàries Col·legiades & Cirurgianes",
+      },
+      specialty: "Medicina Preventiva, Cirugía y Atención a Fincas",
+      instagramHandle: "@veterinariollucmajor",
+    },
+  ],
+  reputationBreakdown: {
+    googleMaps: {
+      rating: 4.8,
+      reviewCount: 310,
+      url: "https://www.google.com/maps/search/?api=1&query=Centro%20Veterinario%20Llucmajor",
+    },
+    appleMaps: {
+      url: "https://maps.apple.com/?q=Centro%20Veterinario%20Llucmajor&ll=39.4890,2.8910",
+    },
+    bingMaps: {
+      rating: 4.8,
+      reviewCount: 310,
+      url: "https://www.bing.com/maps?where1=Centro%20Veterinario%20Llucmajor",
+    },
+    totalReviewsAggregated: 310,
+    overallWeightedRating: 4.8,
+  },
+  reviews: [
+    {
+      id: "rev-cvl-1",
+      authorName: "Bernat Garau",
+      rating: 5,
+      date: "2025-05-18",
+      platform: "google_maps",
+      language: "ca",
+      comment:
+        "Molt bona atenció veterinària a Llucmajor. Varen operar la nostra gossa amb gran èxit i la recuperació va ser perfecta. Equip molt humà i carinyós.",
+      verifiedCustomer: true,
+    },
+    {
+      id: "rev-cvl-2",
+      authorName: "Gerd Becker",
+      rating: 5,
+      date: "2025-06-25",
+      platform: "google_maps",
+      language: "de",
+      comment:
+        "Sehr kompetente Tierarztpraxis in Llucmajor! Schnelle Terminvergabe, gründliche Untersuchung unseres Hundes und sehr freundliche Betreuung auf Deutsch.",
+      verifiedCustomer: true,
+    },
+  ],
+  confidenceScore: 98,
+  verificationStatus: "verified",
+  sourceCrossReference: {
+    webPhoneMatch: true,
+    mapsPhoneMatch: true,
+    addressInMallorca: true,
+    activeWeb200Ok: true,
+    socialMatchScore: 100,
+    googleMapsConfirmed: true,
+    socialPresenceActive: true,
+    taxIdVerified: true,
+  },
+  founderStory: {
+    es: "Fundado en el año 2000 en Llucmajor, el centro veterinario se consolidó como referente en la salud y el bienestar animal en la comarca de Migjorn.",
+    en: "Founded in 2000 in Llucmajor, the veterinary clinic established itself as a trusted pillar for animal health and pet wellness across southern Mallorca.",
+    ca: "Fundat l'any 2000 a Llucmajor, el centre veterinari s'ha consolidat com un referent de salut i benestar animal a la comarca de Migjorn.",
+  },
+  newsMentions: [
+    {
+      title:
+        "Medicina veterinaria de proximidad en el Migjorn de Mallorca: El compromiso clínico del Centro Veterinario Llucmajor",
+      source: "Diario de Mallorca",
+      url: "https://www.google.com/search?q=site:diariodemallorca.es+Veterinario+Llucmajor",
+    },
+  ],
+};

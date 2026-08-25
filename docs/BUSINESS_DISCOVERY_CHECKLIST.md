@@ -6,12 +6,12 @@
 
 | Segmento de Calidad                             | Total Negocios | Estado en Plataforma                               |
 | :---------------------------------------------- | :------------: | :------------------------------------------------- |
-| ⭐⭐⭐⭐⭐ **5 Estrellas (4.8 - 5.0)**          |     **72**     | 🏆 Excelencia & Top Insular (Público Destacado)    |
+| ⭐⭐⭐⭐⭐ **5 Estrellas (4.8 - 5.0)**          |     **75**     | 🏆 Excelencia & Top Insular (Público Destacado)    |
 | ⭐⭐⭐⭐ **4 Estrellas (4.0 - 4.7)**            |     **71**     | ⭐ Notable / Recomendado (Público General)         |
 | ✨ **Nuevas Aperturas (0 reviews / Recientes)** |     **3**      | 🆕 Insignia 'Nueva Apertura' (Público Destacado)   |
 | ⭐⭐⭐ **3 Estrellas (3.0 - 3.9)**              |     **1**      | 🔹 Directorio Estándar (Público sin insignia)      |
 | ⚠️ **Triaje Interno (< 3.0 / Incompletos)**     |     **0**      | 🔒 Solo Administración (No se publica lista negra) |
-| 📦 **TOTAL NEGOCIOS EN RADAR**                  |    **147**     | **103 Indexados** · **44 Pendientes**              |
+| 📦 **TOTAL NEGOCIOS EN RADAR**                  |    **150**     | **106 Indexados** · **44 Pendientes**              |
 
 ---
 
@@ -38,6 +38,7 @@
 | ✅ Indexado |  **4.9**  |   390   | **73.7 pts** | **Zunray Yoga Studio Palma (San Feliu)**                      | Salud & Bienestar            | Palma & Bahía                |                                  [Web](https://zunray.com)                                  |
 | ✅ Indexado |  **4.9**  |   78    | **72.6 pts** | **Mallorca Global Charter**                                   | Náutica & Charters           | Calvià & Andratx (Suroeste)  |                          [Web](https://mallorcaglobalcharter.com)                           |
 | ✅ Indexado |  **4.9**  |   310   | **72.5 pts** | **Peluquería Canina & Spa Guau Palma**                        | Salud & Bienestar            | Palma & Bahía                |                                [Web](https://guaupalma.com)                                 |
+| ✅ Indexado |  **4.9**  |   190   | **71.2 pts** | **Bodega Son Prim (Sencelles - 2003)**                        | Gastronomía & Chefs Privados | Es Raiguer & Es Pla (Centro) |                                 [Web](https://sonprim.com)                                  |
 | ✅ Indexado |  **4.8**  |  3200   | **97.8 pts** | **Rafa Nadal Academy & Sports Centre**                        | Salud & Bienestar            | Manacor & Llevant (Este)     |                           [Web](https://www.rafanadalacademy.com)                           |
 | ✅ Indexado |  **4.8**  |  1420   | **90.4 pts** | **Restaurante El Camino Palma**                               | Gastronomía & Chefs Privados | Palma & Bahía                |                             [Web](https://www.elcaminopalma.es)                             |
 | ✅ Indexado |  **4.8**  |   950   | **84.7 pts** | **Bodega Ribas (Consell - 1711)**                             | Gastronomía & Chefs Privados | Es Raiguer & Es Pla (Centro) |                               [Web](https://bodegaribas.com)                                |
@@ -73,10 +74,12 @@
 | ✅ Indexado |  **4.8**  |   380   | **72.2 pts** | **Macatela Tattoo Studio Palma**                              | Arte, Tatuajes & Piercing    | Palma & Bahía                |                      [Web](https://www.instagram.com/macatela_tattoo/)                      |
 | ✅ Indexado |  **4.8**  |   340   | **71.9 pts** | **Clínica Veterinaria Santa Catalina (Palma)**                | Salud & Bienestar            | Palma & Bahía                |                         [Web](https://veterinariasantacatalina.com)                         |
 | ✅ Indexado |  **4.8**  |   340   | **71.9 pts** | **La Barbería de la Lonja Palma**                             | Salud & Bienestar            | Palma & Bahía                |                              [Web](https://barberialonja.com)                               |
+| ✅ Indexado |  **4.8**  |   310   | **71.5 pts** | **Centro Veterinario Llucmajor (2000)**                       | Salud & Bienestar            | Santanyí & Migjorn (Sureste) |                           [Web](https://veterinariollucmajor.com)                           |
 | ✅ Indexado |  **4.8**  |   290   | **71.2 pts** | **Clínica Veterinaria Manacor (Llevant)**                     | Salud & Bienestar            | Manacor & Llevant (Este)     |                            [Web](https://veterinariamanacor.com)                            |
 | ✅ Indexado |  **4.8**  |   270   |  **71 pts**  | **Clínica Veterinaria Pollença (2002)**                       | Salud & Bienestar            | Alcúdia & Pollença (Norte)   |                           [Web](https://veterinariapollensa.com)                            |
 | ✅ Indexado |  **4.8**  |   290   |  **71 pts**  | **Urban Soul Tattoo Studio Palma**                            | Arte, Tatuajes & Piercing    | Palma & Bahía                |                     [Web](https://www.instagram.com/urbansoul.tattoo/)                      |
 | ✅ Indexado |  **4.8**  |   240   | **70.6 pts** | **Clínica Veterinaria Andratx & Port (1998)**                 | Salud & Bienestar            | Calvià & Andratx (Suroeste)  |                            [Web](https://veterinariaandratx.com)                            |
+| ✅ Indexado |  **4.8**  |   230   | **70.5 pts** | **Cerrajería Rápida Balear (Palma - 1992)**                   | Reformas & Construcción      | Palma & Bahía                |                          [Web](https://cerrajeriarapidabalear.com)                          |
 | ✅ Indexado |  **4.8**  |   230   | **70.5 pts** | **Varadero Alcudiamar & Marine Engineering (Port d'Alcúdia)** | Náutica & Charters           | Alcúdia & Pollença (Norte)   |                                [Web](https://alcudiamar.es)                                 |
 | ✅ Indexado |  **4.8**  |   220   | **70.4 pts** | **Talleres Auto-Inca (Inca - 1982)**                          | Transporte VIP & Chófer      | Es Raiguer & Es Pla (Centro) |                             [Web](https://talleresautoinca.com)                             |
 | ✅ Indexado |  **4.8**  |   190   |  **70 pts**  | **Fontanería Balear Instalaciones**                           | Reformas & Construcción      | Palma & Bahía                |                             [Web](https://fontaneriabalear.com)                             |
