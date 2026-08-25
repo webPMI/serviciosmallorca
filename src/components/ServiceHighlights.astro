@@ -13,7 +13,7 @@ const { service, translations, locale } = Astro.props;
 
 {
   service.highlights && service.highlights[locale]?.length > 0 && (
-    <section class="card section-box">
+    <section class="card section-box" id="destacados">
       <h2 class="box-title">{translations["services.highlights"]}</h2>
       <ul class="highlights-list">
         {service.highlights[locale].map((item: string) => (

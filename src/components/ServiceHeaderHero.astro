@@ -3,6 +3,7 @@ import type { ServiceItem } from "../data/services/types";
 import type { ServiceCategory } from "../data/categories";
 import type { MallorcaZone } from "../data/zones";
 import type { Locale } from "../i18n";
+import LiveScheduleBadge from "./LiveScheduleBadge.astro";
 
 interface Props {
   service: ServiceItem;
@@ -15,6 +16,10 @@ interface Props {
 const { service, category, zone, translations, locale } = Astro.props;
 const categoryName = category?.name[locale] || service.category;
 const zoneName = zone?.name[locale] || service.zone;
+
+const cleanPhone = service.phone ? service.phone.replace(/[^0-9+]/g, "") : "";
+const cleanWhatsApp = service.whatsapp ? service.whatsapp.replace(/[^0-9]/g, "") : "";
+const waText = encodeURIComponent(`Hola, he visto su servicio ${service.name} en Servicios Mallorca.`);
 ---
 
 <header class="service-detail-header">
@@ -22,17 +27,49 @@ const zoneName = zone?.name[locale] || service.zone;
     <div class="header-badges">
       <span class="badge badge-primary">{category?.icon} {categoryName}</span>
       <span class="badge badge-accent">📍 {zoneName}</span>
-      {service.verified && <span class="badge badge-success">✓ {translations["services.verifiedBadge"]}</span>}
+      {service.verified && <span class="badge badge-success">✓ {translations["services.verifiedBadge"] || "Verificado"}</span>}
       <span class="badge badge-price">{service.priceRange}</span>
+      {service.schedule && <LiveScheduleBadge scheduleText={service.schedule} currentLocale={locale} />}
     </div>
 
     <h1 class="detail-title">{service.name}</h1>
     <p class="detail-lead">{service.shortDescription[locale]}</p>
 
-    <div class="rating-bar">
-      <span class="rating-stars">★★★★★</span>
-      <strong class="rating-val">{service.rating.toFixed(1)}</strong>
-      <span class="rating-reviews">({service.reviewCount} {translations["services.reviews"]})</span>
+    <div class="header-action-row">
+      <div class="rating-bar">
+        <span class="rating-stars" aria-hidden="true">★★★★★</span>
+        <strong class="rating-val">{service.rating.toFixed(1)}</strong>
+        <span class="rating-reviews">({service.reviewCount} {translations["services.reviews"] || "reseñas"})</span>
+      </div>
+
+      <!-- Quick Action Buttons Above the Fold -->
+      <div class="hero-quick-actions">
+        {
+          cleanWhatsApp && (
+            <a
+              href={`https://wa.me/${cleanWhatsApp}?text=${waText}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-sm btn-primary hero-btn-whatsapp"
+            >
+              <span>💬</span>
+              <span>WhatsApp</span>
+            </a>
+          )
+        }
+        {
+          cleanPhone && (
+            <a href={`tel:${cleanPhone}`} class="btn btn-sm btn-secondary hero-btn-phone">
+              <span>📞</span>
+              <span>{locale === "ca" ? "Telefonar" : locale === "en" ? "Call" : "Llamar"}</span>
+            </a>
+          )
+        }
+        <a href="#ubicacion" class="btn btn-sm btn-outline hero-btn-map">
+          <span>📍</span>
+          <span>{locale === "ca" ? "Com arribar" : locale === "en" ? "Directions" : "Cómo llegar"}</span>
+        </a>
+      </div>
     </div>
   </div>
 </header>

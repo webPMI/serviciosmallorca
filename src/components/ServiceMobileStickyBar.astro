@@ -1,0 +1,68 @@
+---
+import type { ServiceItem } from "../data/services/types";
+import type { Locale } from "../i18n";
+
+interface Props {
+  service: ServiceItem;
+  locale: Locale;
+  translations: Record<string, string>;
+}
+
+const { service, locale, translations } = Astro.props;
+
+const cleanPhone = service.phone ? service.phone.replace(/[^0-9+]/g, "") : "";
+const cleanWhatsApp = service.whatsapp ? service.whatsapp.replace(/[^0-9]/g, "") : "";
+const waText = encodeURIComponent(`Hola, he visto su servicio ${service.name} en Servicios Mallorca y me gustaría solicitar información.`);
+---
+
+{
+  (cleanWhatsApp || cleanPhone || service.website) && (
+    <aside class="mobile-sticky-bar" aria-label="Acciones Rápidas Móvil">
+      <div class="mobile-sticky-container">
+        {cleanWhatsApp ? (
+          <a
+            href={`https://wa.me/${cleanWhatsApp}?text=${waText}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="mobile-sticky-btn mobile-btn-whatsapp"
+            aria-label="WhatsApp Directo"
+          >
+            <span class="btn-icon">💬</span>
+            <span class="btn-label">WhatsApp</span>
+          </a>
+        ) : null}
+
+        {cleanPhone ? (
+          <a
+            href={`tel:${cleanPhone}`}
+            class="mobile-sticky-btn mobile-btn-call"
+            aria-label="Llamar por Teléfono"
+          >
+            <span class="btn-icon">📞</span>
+            <span class="btn-label">{locale === "ca" ? "Telefonar" : locale === "en" ? "Call" : "Llamar"}</span>
+          </a>
+        ) : service.website ? (
+          <a
+            href={service.website}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="mobile-sticky-btn mobile-btn-web"
+            aria-label="Web Oficial"
+          >
+            <span class="btn-icon">🌐</span>
+            <span class="btn-label">{locale === "ca" ? "Web Oficial" : locale === "en" ? "Website" : "Web Oficial"}</span>
+          </a>
+        ) : null}
+
+        <a
+          href="#ubicacion"
+          class="mobile-sticky-btn mobile-btn-location"
+          aria-label="Ver Ubicación en Mapa"
+        >
+          <span class="btn-icon">📍</span>
+          <span class="btn-label">{locale === "ca" ? "Mapa" : locale === "en" ? "Map" : "Mapa"}</span>
+        </a>
+      </div>
+    </aside>
+  )
+}

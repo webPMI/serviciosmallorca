@@ -1,0 +1,62 @@
+---
+import type { ServiceItem } from "../data/services/types";
+import type { Locale } from "../i18n";
+
+interface Props {
+  service: ServiceItem;
+  locale: Locale;
+  translations: Record<string, string>;
+}
+
+const { service, locale, translations } = Astro.props;
+
+const hasPricing = Boolean(service.pricing || service.menuUrl || service.specialties);
+const hasGallery = Boolean(service.gallery && service.gallery.length > 0);
+const hasReviews = Boolean(service.reviewCount && service.reviewCount > 0);
+---
+
+<nav class="quick-nav-bar" id="service-quick-nav" aria-label="Acceso Rápido">
+  <div class="quick-nav-scroll">
+    <a href="#sobre-nosotros" class="quick-nav-pill active">
+      <span>ℹ️</span>
+      <span>{locale === "ca" ? "Sobre Nosaltres" : locale === "en" ? "About" : "Sobre Nosotros"}</span>
+    </a>
+
+    <a href="#destacados" class="quick-nav-pill">
+      <span>✨</span>
+      <span>{locale === "ca" ? "Destacats" : locale === "en" ? "Highlights" : "Destacados"}</span>
+    </a>
+
+    {
+      hasPricing && (
+        <a href="#tarifas" class="quick-nav-pill">
+          <span>💶</span>
+          <span>{service.category.includes("gastronomia") ? (locale === "ca" ? "Carta" : locale === "en" ? "Menu" : "Carta & Menú") : (locale === "ca" ? "Tarifes" : locale === "en" ? "Pricing" : "Tarifas")}</span>
+        </a>
+      )
+    }
+
+    {
+      hasGallery && (
+        <a href="#galeria" class="quick-nav-pill">
+          <span>📸</span>
+          <span>{locale === "ca" ? "Galeria" : locale === "en" ? "Gallery" : "Galería"}</span>
+        </a>
+      )
+    }
+
+    {
+      hasReviews && (
+        <a href="#resenas" class="quick-nav-pill">
+          <span>⭐</span>
+          <span>{locale === "ca" ? "Ressenyes" : locale === "en" ? "Reviews" : "Reseñas"} ({service.rating.toFixed(1)})</span>
+        </a>
+      )
+    }
+
+    <a href="#ubicacion" class="quick-nav-pill">
+      <span>📍</span>
+      <span>{locale === "ca" ? "Ubicació" : locale === "en" ? "Location" : "Ubicación"}</span>
+    </a>
+  </div>
+</nav>

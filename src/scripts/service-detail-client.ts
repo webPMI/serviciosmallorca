@@ -323,5 +323,43 @@ export function initServiceDetailClient() {
     }
   }
 
+  // Quick Nav Pills Active State & Smooth Scroll-Spy
+  const quickNavPills = document.querySelectorAll(".quick-nav-pill");
+  if (quickNavPills.length > 0) {
+    quickNavPills.forEach((pill) => {
+      pill.addEventListener("click", () => {
+        quickNavPills.forEach((p) => p.classList.remove("active"));
+        pill.classList.add("active");
+      });
+    });
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute("id");
+            if (id) {
+              quickNavPills.forEach((pill) => {
+                const href = pill.getAttribute("href");
+                if (href === `#${id}`) {
+                  quickNavPills.forEach((p) => p.classList.remove("active"));
+                  pill.classList.add("active");
+                }
+              });
+            }
+          }
+        });
+      },
+      {
+        rootMargin: "-120px 0px -60% 0px",
+        threshold: 0.1,
+      }
+    );
+
+    document.querySelectorAll(".section-box[id]").forEach((section) => {
+      observer.observe(section);
+    });
+  }
+
   hydrateDynamicOverrides();
 }

@@ -16,7 +16,7 @@ const hasSpecialties = specList.length > 0;
 const hasPricingSection = Boolean(service.pricing || service.menuUrl || hasSpecialties);
 ---
 
-<div class="pricing-amenities-wrap">
+<div class="pricing-amenities-wrap" id="tarifas">
   <!-- Pricing & Rate Information or Digital Menu (If Available) -->
   {
     hasPricingSection && (

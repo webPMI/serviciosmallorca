@@ -9,7 +9,7 @@ interface Props {
 const { service, translations } = Astro.props;
 ---
 
-<section class="card section-box location-map-box">
+<section class="card section-box location-map-box" id="ubicacion">
   <h2 class="box-title">📍 {translations["services.address"]}: {service.address}</h2>
   {
     service.coordinates && (
