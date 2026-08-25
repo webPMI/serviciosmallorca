@@ -1,8 +1,9 @@
 import type { ServiceItem } from "../types.ts";
 import { kuyenArtTattoo } from "./kuyen-art-tattoo.ts";
 import { boxTattooPiercing } from "./box-tattoo-piercing.ts";
+import { macatelaTattoo } from "./macatela-tattoo.ts";
 
-export { kuyenArtTattoo, boxTattooPiercing };
+export { kuyenArtTattoo, boxTattooPiercing, macatelaTattoo };
 
 /**
  * Catálogo Sectorial: Arte, Tatuajes & Piercing en Mallorca.
@@ -11,4 +12,5 @@ export { kuyenArtTattoo, boxTattooPiercing };
 export const TATTOO_SERVICES: ServiceItem[] = [
   kuyenArtTattoo,
   boxTattooPiercing,
+  macatelaTattoo,
 ];

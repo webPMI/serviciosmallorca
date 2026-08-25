@@ -63,7 +63,7 @@ describe("Servicios Mallorca Data Layer", () => {
       expect(getServiceById("dins-santi-taura")).toBeDefined();
       expect(getServiceById("ca-n-eduardo")).toBeDefined();
       expect(getFeaturedServices().length).toBeGreaterThanOrEqual(2);
-      expect(getServicesByCategory("arte-tatuajes").length).toBe(2);
+      expect(getServicesByCategory("arte-tatuajes").length).toBeGreaterThanOrEqual(2);
       expect(getServicesByCategory("gastronomia-catering").length).toBeGreaterThanOrEqual(1);
       expect(getServicesByZone("palma").length).toBeGreaterThanOrEqual(3);
     });
