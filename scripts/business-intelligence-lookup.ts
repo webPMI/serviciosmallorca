@@ -73,6 +73,15 @@ async function scrapeWebsiteData(targetUrl: string): Promise<{
   onlineStoreDetected?: boolean;
   storePlatform?: string;
   storeUrl?: string;
+  extractedProducts?: Array<{
+    id: string;
+    name: { es: string; en: string; ca: string };
+    price: string;
+    imageUrl?: string;
+    url?: string;
+    category?: string;
+    inStock?: boolean;
+  }>;
   httpStatus?: number;
 }> {
   const socialLinks: Record<string, string> = {};
@@ -238,27 +247,101 @@ async function scrapeWebsiteData(targetUrl: string): Promise<{
     if (lowerHtml.includes("apple pay") || lowerHtml.includes("applepay")) detectedPaymentMethods.push("apple_pay");
     if (lowerHtml.includes("bitcoin") || lowerHtml.includes("crypto")) detectedPaymentMethods.push("crypto");
 
-    // 5. Detección de Tienda Online & E-Commerce
+    // 5. Detección y Extracción de Tienda Online & E-Commerce
     let onlineStoreDetected = false;
     let storePlatform: string | undefined = undefined;
     let storeUrl: string | undefined = undefined;
+    const extractedProducts: Array<{
+      id: string;
+      name: { es: string; en: string; ca: string };
+      price: string;
+      imageUrl?: string;
+      url?: string;
+      category?: string;
+      inStock?: boolean;
+    }> = [];
 
     if (lowerHtml.includes("shopify") || lowerHtml.includes("cdn.shopify.com")) {
       onlineStoreDetected = true;
       storePlatform = "shopify";
+      storeUrl = new URL("/collections/all", baseUrl).href;
+
+      // Intentar extracción de productos reales mediante la API pública de Shopify
+      try {
+        const shopifyApiUrl = new URL("/products.json?limit=6", baseUrl).href;
+        const shopifyRes = await fetch(shopifyApiUrl, {
+          signal: AbortSignal.timeout(3000),
+          headers: { "User-Agent": "Mozilla/5.0" },
+        });
+        if (shopifyRes.ok) {
+          const shopifyData = await shopifyRes.json();
+          if (shopifyData.products && Array.isArray(shopifyData.products)) {
+            for (const p of shopifyData.products.slice(0, 6)) {
+              const priceVal = p.variants?.[0]?.price;
+              extractedProducts.push({
+                id: `prod-${p.id}`,
+                name: { es: p.title, en: p.title, ca: p.title },
+                price: priceVal ? `${parseFloat(priceVal).toFixed(2)}€` : "Consultar",
+                imageUrl: p.images?.[0]?.src,
+                url: new URL(`/products/${p.handle}`, baseUrl).href,
+                category: p.product_type || "Catálogo Oficial",
+                inStock: p.variants?.[0]?.available ?? true,
+              });
+            }
+          }
+        }
+      } catch {
+        // Fallback silencioso
+      }
     } else if (lowerHtml.includes("woocommerce") || lowerHtml.includes("wc-api")) {
       onlineStoreDetected = true;
       storePlatform = "woocommerce";
+      storeUrl = new URL("/shop", baseUrl).href;
     } else if (lowerHtml.includes("prestashop")) {
       onlineStoreDetected = true;
       storePlatform = "prestashop";
-    } else if (lowerHtml.includes("/shop") || lowerHtml.includes("/tienda") || lowerHtml.includes("/store") || lowerHtml.includes("/productos")) {
+      storeUrl = new URL("/tienda", baseUrl).href;
+    } else if (
+      lowerHtml.includes("/shop") ||
+      lowerHtml.includes("/tienda") ||
+      lowerHtml.includes("/store") ||
+      lowerHtml.includes("/productos")
+    ) {
       onlineStoreDetected = true;
       storePlatform = "custom";
+      storeUrl = new URL("/shop", baseUrl).href;
     }
 
-    if (onlineStoreDetected) {
-      storeUrl = new URL("/shop", baseUrl).href;
+    // 5.1. Deep Dive de Bio-links (Linktree, Beacons, Bio.site)
+    for (const rawUrl of rawUrlMatches) {
+      if (
+        (rawUrl.includes("linktr.ee/") || rawUrl.includes("beacons.ai/") || rawUrl.includes("bio.site/")) &&
+        !rawUrl.includes("/sitemap")
+      ) {
+        try {
+          const bioRes = await fetch(rawUrl, {
+            signal: AbortSignal.timeout(3000),
+            headers: { "User-Agent": "Mozilla/5.0" },
+          });
+          if (bioRes.ok) {
+            const bioHtml = await bioRes.text();
+            const bioCleaned = bioHtml.replace(/\\\//g, "/");
+            const bioUrls = bioCleaned.match(/(?:https?:)?\/\/[^\s"'<>()\\]+/gi) || [];
+            for (let bUrl of bioUrls) {
+              bUrl = bUrl.replace(/[",;)>]+$/, "").trim();
+              if (bUrl.includes("youtube.com/") && !socialLinks.youtube && !bUrl.includes("/embed/")) {
+                socialLinks.youtube = bUrl;
+              } else if (bUrl.includes("facebook.com/") && !socialLinks.facebook && !bUrl.includes("/sharer")) {
+                socialLinks.facebook = bUrl;
+              } else if (bUrl.includes("tiktok.com/@") && !socialLinks.tiktok) {
+                socialLinks.tiktok = bUrl;
+              }
+            }
+          }
+        } catch {
+          // Fallback
+        }
+      }
     }
 
     // 6. Detección de Comodidades
@@ -305,15 +388,17 @@ async function scrapeWebsiteData(targetUrl: string): Promise<{
       onlineStoreDetected,
       storePlatform,
       storeUrl,
+      extractedProducts,
       httpStatus,
     };
   } catch {
     return {
       galleryImages: [],
       socialLinks,
-      detectedAmenities,
-      detectedPaymentMethods,
+      detectedAmenities: [],
+      detectedPaymentMethods: [],
       onlineStoreDetected: false,
+      extractedProducts: [],
       httpStatus: 500,
     };
   }
@@ -332,6 +417,15 @@ interface ScrapedWebsiteInfo {
   onlineStoreDetected?: boolean;
   storePlatform?: string;
   storeUrl?: string;
+  extractedProducts?: Array<{
+    id: string;
+    name: { es: string; en: string; ca: string };
+    price: string;
+    imageUrl?: string;
+    url?: string;
+    category?: string;
+    inStock?: boolean;
+  }>;
   httpStatus?: number;
 }
 
@@ -652,6 +746,20 @@ async function generateIntelligenceReport(query: string, websiteUrl?: string): P
     webHttpStatus: scrapedData.httpStatus,
   });
 
+  if (scrapedData.onlineStoreDetected) {
+    curationTemplate.onlineStore = {
+      hasOnlineStore: true,
+      url: scrapedData.storeUrl || websiteUrl,
+      platform: scrapedData.storePlatform || "custom",
+      shippingToBalearics: true,
+      pickupInStore: true,
+    };
+  }
+
+  if (scrapedData.extractedProducts && scrapedData.extractedProducts.length > 0) {
+    curationTemplate.products = scrapedData.extractedProducts;
+  }
+
   curationTemplate.confidenceScore = verificationReport.confidenceScore;
   curationTemplate.verificationStatus = verificationReport.status;
   curationTemplate.sourceCrossReference = verificationReport.crossReference;
@@ -741,6 +849,18 @@ async function main() {
   console.log("\n💳 4. MÉTODOS DE PAGO Y COMODIDADES DETECTADAS:");
   console.log(`  • Métodos de Pago: ${report.detectedPaymentMethods.join(", ")}`);
   console.log(`  • Comodidades:     ${report.detectedAmenities.join(", ")}`);
+
+  if (report.curationTemplate.onlineStore) {
+    console.log("\n🛍️ 4.1. TIENDA ONLINE & PRODUCTOS EXTRAÍDOS (E-Commerce):");
+    console.log(`  • Plataforma: ${report.curationTemplate.onlineStore.platform.toUpperCase()}`);
+    console.log(`  • URL Catálogo: ${report.curationTemplate.onlineStore.url}`);
+    if (report.curationTemplate.products && report.curationTemplate.products.length > 0) {
+      console.log(`  • Productos Destacados (${report.curationTemplate.products.length}):`);
+      report.curationTemplate.products.forEach((p: any, idx: number) => {
+        console.log(`    [${idx + 1}] ${p.name.es} (${p.price}) ➔ ${p.url || "En tienda"}`);
+      });
+    }
+  }
 
   console.log("\n🗂️ 5. INDEXACIÓN EN DIRECTORIOS Y OTRAS WEBS BALEARES:");
   report.directoryIndexingDorks.forEach((d) => {
