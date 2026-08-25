@@ -19,13 +19,14 @@ export { RESTAURANT_SERVICES } from "./gastronomia-restaurantes/index.ts";
 export const SERVICES: ServiceItem[] = [
   ...TATTOO_SERVICES,
   ...RESTAURANT_SERVICES,
-];
+].filter((s): s is ServiceItem => Boolean(s && s.id && s.slug));
 
 /**
  * Busca un negocio por su ID o slug canónico.
  */
 export function getServiceById(id: string): ServiceItem | undefined {
-  return SERVICES.find((s) => s.id === id || s.slug === id);
+  if (!id) return undefined;
+  return SERVICES.find((s) => s && (s.id === id || s.slug === id));
 }
 
 /**

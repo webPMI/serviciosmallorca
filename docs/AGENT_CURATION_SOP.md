@@ -14,34 +14,58 @@
 
 ---
 
-## 🗺️ La Ruta de 5 Pasos del Agente
+## 🗺️ La Ruta de 4 Fases del Agente (Protocolo de Enriquecimiento Profundo)
 
 ```
 ┌────────────────────────────────────────────────────────────────────────┐
-│ 1. MINERÍA AUTOMATIZADA CON EL SCRIPT CLI LOCAL                       │
-│    npx tsx scripts/business-intelligence-lookup.ts                     │
+│ FASE 1: RECOLECCIÓN & SCRAPING (Data Harvesting Multicanal)           │
+│ Extrae datos crudos de web oficial, mapas, redes, e-commerce y prensa. │
+│ Ejecutar: npx tsx scripts/business-intelligence-lookup.ts "<Negocio>" │
 └───────────────────────────────────┬────────────────────────────────────┘
                                     ▼
 ┌────────────────────────────────────────────────────────────────────────┐
-│ 2. APLICACIÓN DEL PLAYBOOK POR NICHO / SECTOR                          │
-│    Restaurantes, Tatuajes, Náutica, Villas, Spas o Servicios           │
+│ FASE 2: PROCESAMIENTO & TRIPLE VERIFICACIÓN CRUZADA                    │
+│ Cruza teléfono Web vs Maps vs WhatsApp y valida geolocalización.     │
+│ Asigna Confidence Score (0-100%) y detecta discrepancias o alertas.   │
 └───────────────────────────────────┬────────────────────────────────────┘
                                     ▼
 ┌────────────────────────────────────────────────────────────────────────┐
-│ 3. TAXONOMÍA, GPS & MULTI-MAPAS (Puntuación Ponderada)                 │
-│    Google/Bing/Apple/TripAdvisor + Coordenadas para Motor Haversine    │
+│ FASE 3: CREACIÓN & COPYWRITING PROFUNDO (Los 5 Pilares)                │
+│ 1. Social Proof: Palabras clave y sentimiento de las 20 reseñas top.   │
+│ 2. Storytelling: Historia de origen ('founderStory') trilingüe (ES/EN/CA).│
+│ 3. Autoridad: Noticias en Diario de Mallorca / ABC Mallorca / Premios. │
+│ 4. Conversión: WhatsApp con mensaje pre-escrito y carta digital.      │
+│ 5. Local SEO: Tags de barrio y especialidades de alta intención.       │
 └───────────────────────────────────┬────────────────────────────────────┘
                                     ▼
 ┌────────────────────────────────────────────────────────────────────────┐
-│ 4. CREACIÓN MODULAR ATÓMICA                                            │
-│    src/data/services/<sector>/<slug>.ts + export en index.ts           │
-└───────────────────────────────────┬────────────────────────────────────┘
-                                    ▼
-┌────────────────────────────────────────────────────────────────────────┐
-│ 5. VERIFICACIÓN Y VALIDACIÓN AUTOMATIZADA                              │
-│    npm run typecheck && npm test && npm run validate:taxonomy          │
+│ FASE 4: AUDITORÍA & VALIDACIÓN AUTOMATIZADA                            │
+│ npm run typecheck && npm test && npm run validate:taxonomy && npm build│
 └────────────────────────────────────────────────────────────────────────┘
 ```
+
+---
+
+## 💎 Los 5 Pilares del Protocolo de Enriquecimiento Profundo
+
+Para cada negocio curado o re-minado en la plataforma, el agente debe consolidar:
+
+1. **Inteligencia de Sentimiento y Reseñas (Social Proof):**
+   - Extraer palabras clave de valor ("*Pescado de lonja fresco*", "*Trato familiar*", "*Trazo fino impecable*").
+   - Resumen cualitativo de sentimiento en la ficha para el usuario.
+2. **Storytelling y "Founder Story" (Humanización):**
+   - Historia de autor trilingüe (`es`, `en`, `ca`) que comunique el origen, la pasión y la propuesta de valor.
+   - Definición de 3 a 5 especialidades de la casa con adjetivos sugerentes.
+3. **Presencia en Medios & Autoridad Local:**
+   - Enlaces directos a artículos en los 5 periódicos baleares (*Diario de Mallorca*, *Última Hora*, *Mallorca Magazin*, *ABC Mallorca*, *IB3*).
+   - Premios oficiales (`awards`) con enlace de validación a la entidad emisora (Michelin, Repsol, Gremios).
+4. **Mapeo de Canales y Conversión (Booking Directo):**
+   - Enlace de WhatsApp con mensaje pre-configurado de contacto.
+   - Enlace directo a la carta digital o PDF (`menuUrl`).
+   - Estado de actividad en tiempo real (`open`, `seasonal`, `temporarily_closed`).
+5. **SEO Local y Taxonomía Fina:**
+   - Asignación de tags de barrio/zona (`zona:palma`, `barrio:casco-antiguo`, `barrio:portixol`).
+   - Tags de especialidad (`esp:fine-line`, `esp:alta-cocina`, `esp:charter-privado`).
 
 ---
 
