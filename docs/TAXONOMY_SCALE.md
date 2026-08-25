@@ -1,6 +1,6 @@
 # 🚀 Taxonomía de Escalado Completo — Todos los Negocios de Mallorca
 
-> **Mapa de crecimiento masivo.** Proyección exhaustiva de la taxonomía para cubrir **miles de negocios reales** de Mallorca, más allá de las 7 categorías iniciales.
+> **Mapa de crecimiento masivo.** Proyección exhaustiva de la taxonomía para cubrir **miles de negocios reales** de Mallorca, más allá de las categorías iniciales.
 >
 > **Fuente de verdad de clasificación:** `docs/TAXONOMY.md` (sistema conceptual, 4 niveles y convenciones). Este documento proyecta **QUÉ** categorías y tipos de servicio debe soportar el sistema para escalar, pero **NO activa** nada en `src/data/` hasta que cada categoría tenga negocios reales verificados (**GR-11** / **GR-12**).
 
@@ -14,12 +14,12 @@
 
 ## 1. Por qué es necesario este mapa de escalado
 
-Las **7 categorías actuales** cubren solo una fracción del tejido empresarial mallorquín (reformas, náutica, salud, gastronomía, motor, servicios profesionales y arte). Mallorca, como economía turística de altísima densidad, agrupa actividad en **~20 macrodóminios** con **~200 categorías** y **miles de tipos de negocio**:
+Las **10 categorías activas** (con **71 fichas verificadas** publicadas) cubren solo una fracción del tejido empresarial mallorquín — desde reformas y náutica hasta spas, tecnología o inmobiliaria. Mallorca, como economía turística de altísima densidad, agrupa actividad en **~20 macrodóminios** con **~200 categorías** y **miles de tipos de negocio**:
 
-| Escenario                 | Categorías activas | Tipos de servicio | Negocios modelables |
-| ------------------------- | ------------------ | ----------------- | ------------------- |
-| Actual                    | 7                  | ~44               | ~30 verificados     |
-| **Proyectado (este doc)** | **~200**           | **~4.000+**       | **miles reales**    |
+| Escenario                 | Categorías activas | Tipos de servicio | Negocios modelables  |
+| ------------------------- | ------------------ | ----------------- | -------------------- |
+| Actual                    | 10                 | ~65               | 71 fichas publicadas |
+| **Proyectado (este doc)** | **~200**           | **~4.000+**       | **miles reales**     |
 
 > El objetivo no es llenar la web con categorías vacías, sino disponer del **esquema completo** para ir activando categorías a medida que se curan negocios reales (P-04 de `TAXONOMY.md`, GR-11).
 

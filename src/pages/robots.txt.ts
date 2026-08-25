@@ -8,12 +8,14 @@ export const GET: APIRoute = async () => {
 
 User-agent: *
 Allow: /
+# Rutas privadas reales (bajo prefijo de locale: /es|en|ca/...).
+# Ver docs/TOPS_SEO_PLAYBOOK.md §4 y tests/unit/topsSeoPlaybook.test.ts.
 Disallow: /api/
-Disallow: /admin/
-Disallow: /login
-Disallow: /registro
-Disallow: /recuperar-password
-Disallow: /perfil
+Disallow: /*/login
+Disallow: /*/register
+Disallow: /*/forgot-password
+Disallow: /*/profile
+Disallow: /*/dashboard
 
 # ==============================================================================
 # OpenAI Agents (ChatGPT, Search, Browsing & Training)

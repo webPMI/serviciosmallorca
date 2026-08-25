@@ -1,5 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { GET as getLlms } from "../../src/pages/llms.txt.ts";
+import { GET as getRobots } from "../../src/pages/robots.txt.ts";
 import { getTopRankedServices, calculateBusinessScore } from "../../src/lib/topEngine";
 
 /**

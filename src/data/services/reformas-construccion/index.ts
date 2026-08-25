@@ -11,6 +11,7 @@ import { aluminiosCalvia } from "./aluminios-calvia.ts";
 import { limpiezasBalear } from "./limpiezas-balear-mallorca.ts";
 import { climaFrioBalear } from "./clima-frio-balear.ts";
 import { tapiceriaToldosBalear } from "./tapiceria-toldos-balear.ts";
+import { jardineriaSerra } from "./jardineria-mediterranea-serra.ts";
 
 export {
   duranPalma,
@@ -25,6 +26,7 @@ export {
   limpiezasBalear,
   climaFrioBalear,
   tapiceriaToldosBalear,
+  jardineriaSerra,
 };
 
 /**
@@ -44,4 +46,5 @@ export const REFORMAS_SERVICES: ServiceItem[] = [
   limpiezasBalear,
   climaFrioBalear,
   tapiceriaToldosBalear,
+  jardineriaSerra,
 ];

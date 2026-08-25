@@ -22,6 +22,7 @@ import { fornSantFrancesc } from "./forn-sant-francesc-inca.ts";
 import { bodegasJoseLFerrer } from "./bodegas-jose-l-ferrer.ts";
 import { canPomar } from "./can-pomar-campos.ts";
 import { bodegaBiniagual } from "./bodega-biniagual.ts";
+import { canCompany } from "./can-company-sineu.ts";
 
 export {
   dinsSantiTaura,
@@ -47,6 +48,7 @@ export {
   bodegasJoseLFerrer,
   canPomar,
   bodegaBiniagual,
+  canCompany,
 };
 
 /**
@@ -77,4 +79,5 @@ export const RESTAURANT_SERVICES: ServiceItem[] = [
   bodegasJoseLFerrer,
   canPomar,
   bodegaBiniagual,
+  canCompany,
 ];

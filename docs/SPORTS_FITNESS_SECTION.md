@@ -440,6 +440,7 @@ con web oficial verificable (GR-11).
 
 - **`docs/TAXONOMY_SCALE.md`** — roadmap de escalado (SS-11/SS-15 deportes y aire libre).
 - **[`docs/TOPS_SEO_PLAYBOOK.md`](TOPS_SEO_PLAYBOOK.md)** — cómo hacer tops, destacar fichas (`featured`) y plan SEO/posicionamiento de la vertical.
+- **[`docs/SPORTS_TECHNICAL_DESIGN.md`](SPORTS_TECHNICAL_DESIGN.md)** — diseño técnico Fase 0: scrapers deportivos especializados y separación del orquestador.
 - **`docs/TAXONOMY.md`** — sistema conceptual de la taxonomía y regla P-04.
 - **`docs/AGENT_CURATION_SOP.md`** — protocolo de curación (4 pasos atómicos).
 - **`docs/BUSINESS_DISCOVERY_SOP.md`** — checklist maestro y minería de candidatos.

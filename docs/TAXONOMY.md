@@ -82,7 +82,9 @@ Un sector agrupa 1 o más categorías afines. Se definen **10 sectores**:
 
 ### 4.2 Categorías actuales (nivel 2) y su sector
 
-Las 7 categorías existentes se agrupan bajo los sectores. **No se renombran; solo se añade el vínculo `sectorId`.**
+Las 10 categorías activas se agrupan bajo los sectores. **No se renombran; solo se añade el vínculo `sectorId`.**
+
+> 🔎 **Estado vivo:** la fuente de verdad es `CATEGORIES` en `src/data/categories.ts`; esta tabla puede quedar por detrás del código.
 
 | Categoría (`id`)          | Sector                    | Icon |
 | ------------------------- | ------------------------- | ---- |
