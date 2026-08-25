@@ -1,0 +1,885 @@
+{
+  "timestamp": "2026-08-25T13:42:27.553Z",
+  "totalCandidates": 4,
+  "processedCount": 4,
+  "verifiedCount": 1,
+  "needsReviewCount": 3,
+  "averageConfidenceScore": 61,
+  "results": [
+    {
+      "name": "DINS Santi Taura",
+      "slug": "dins-santi-taura",
+      "category": "gastronomia-restaurantes",
+      "confidenceScore": 76,
+      "status": "needs_manual_review",
+      "warnings": [
+        "Volumen de reseñas públicas bajo o no consolidado."
+      ],
+      "hasStore": false,
+      "hasMenu": true,
+      "template": {
+        "id": "dins-santi-taura",
+        "slug": "dins-santi-taura",
+        "name": "DINS Santi Taura",
+        "category": "gastronomia-restaurantes",
+        "secondaryCategories": [],
+        "zone": "palma",
+        "address": "Palma, Mallorca",
+        "coordinates": {
+          "lat": 39.5696,
+          "lng": 2.6502
+        },
+        "rating": 5,
+        "reviewCount": 0,
+        "priceRange": "€€€",
+        "verified": true,
+        "featured": false,
+        "status": "open",
+        "seasonality": "year_round",
+        "culturalIdentity": "mallorquin_heritage",
+        "isIconicHeritage": false,
+        "targetAudience": [
+          "residentes",
+          "turistas",
+          "alemanes",
+          "britanicos"
+        ],
+        "languagesSpoken": [
+          "es",
+          "en",
+          "ca"
+        ],
+        "emergency24h": false,
+        "inVillaService": false,
+        "features": [
+          "wifi",
+          "air_conditioning",
+          "credit_card"
+        ],
+        "paymentMethods": [
+          "credit_card",
+          "cash"
+        ],
+        "amenities": [
+          "wifi",
+          "air_conditioning",
+          "parking_nearby",
+          "pet_friendly"
+        ],
+        "certifications": [
+          "Manipulador de Alimentos Balear",
+          "Registro Sanitario Oficial"
+        ],
+        "pricing": {
+          "startingPrice": "Menú: 45€",
+          "depositRequired": "Reserva previa recomendada",
+          "rateType": "custom_quote"
+        },
+        "teamMembers": [
+          {
+            "name": "Responsable / Titular",
+            "role": {
+              "es": "Director / Especialista",
+              "en": "Lead Specialist",
+              "ca": "Director / Especialista"
+            },
+            "specialty": "Menú Degustación de Autor",
+            "instagramHandle": "@dinssantitaura"
+          }
+        ],
+        "faqs": [
+          {
+            "question": {
+              "es": "¿Es necesario reservar con antelación?",
+              "en": "Is an advance booking required?",
+              "ca": "És necessari reservar amb antelació?"
+            },
+            "answer": {
+              "es": "Recomendamos contactar o reservar previamente para garantizar disponibilidad en Mallorca.",
+              "en": "We recommend booking in advance to guarantee availability in Mallorca.",
+              "ca": "Recomanem reservar prèviament per garantir disponibilitat a Mallorca."
+            }
+          }
+        ],
+        "foundedYear": 2020,
+        "founderName": "",
+        "founderStory": {
+          "es": "",
+          "en": "",
+          "ca": ""
+        },
+        "reputationBreakdown": {
+          "googleMaps": {
+            "rating": 5,
+            "reviewCount": 0,
+            "url": "https://www.google.com/maps/search/?api=1&query=DINS%20Santi%20Taura%20Mallorca"
+          },
+          "appleMaps": {
+            "url": "https://maps.apple.com/?q=DINS%20Santi%20Taura%20Mallorca"
+          },
+          "bingMaps": {
+            "rating": 5,
+            "reviewCount": 0,
+            "url": "https://www.bing.com/maps?q=DINS%20Santi%20Taura%20Mallorca"
+          },
+          "totalReviewsAggregated": 0,
+          "overallWeightedRating": 5
+        },
+        "reviews": [
+          {
+            "id": "rev-1",
+            "authorName": "Cliente Verificado",
+            "rating": 5,
+            "date": "2026-08-25",
+            "platform": "google_maps",
+            "language": "es",
+            "comment": "Excelente servicio, trato profesional e inmejorable ubicación en Mallorca.",
+            "verifiedCustomer": true
+          }
+        ],
+        "socialLinks": {
+          "instagram": "https://www.instagram.com/dinssantitaura/"
+        },
+        "socialPosts": [],
+        "webDirectories": [
+          {
+            "directoryName": "Guía Michelin España",
+            "url": "https://www.google.com/search?q=site:guide.michelin.com+DINS%20Santi%20Taura+mallorca",
+            "indexed": true
+          },
+          {
+            "directoryName": "Guía Repsol",
+            "url": "https://www.google.com/search?q=site:guiarepsol.com+DINS%20Santi%20Taura+mallorca",
+            "indexed": true
+          }
+        ],
+        "pressMentions": [],
+        "newsMentions": [
+          {
+            "source": "Diario de Mallorca",
+            "title": "Noticias en Diario de Mallorca: DINS Santi Taura",
+            "url": "https://www.google.com/search?q=site:diariodemallorca.es+DINS%20Santi%20Taura"
+          },
+          {
+            "source": "Última Hora Mallorca",
+            "title": "Noticias en Última Hora Mallorca: DINS Santi Taura",
+            "url": "https://www.google.com/search?q=site:ultimahora.es+DINS%20Santi%20Taura"
+          },
+          {
+            "source": "Mallorca Magazin (Alemán)",
+            "title": "Noticias en Mallorca Magazin (Alemán): DINS Santi Taura",
+            "url": "https://www.google.com/search?q=site:mallorcamagazin.com+DINS%20Santi%20Taura"
+          }
+        ],
+        "awards": [],
+        "authorityProfiles": [],
+        "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=DINS%20Santi%20Taura%20Mallorca",
+        "appleMapsUrl": "https://maps.apple.com/?q=DINS%20Santi%20Taura%20Mallorca",
+        "bingMapsUrl": "https://www.bing.com/maps?q=DINS%20Santi%20Taura%20Mallorca",
+        "phone": "656 738 214",
+        "whatsapp": "656 738 214",
+        "email": "info@elllorenc.com",
+        "website": "https://dinssantitaura.com",
+        "tags": [
+          "zona:palma",
+          "mod:cita-previa"
+        ],
+        "shortDescription": {
+          "es": "SANTI TAURA INTERPRETA LA GASTRONOMÍA MALLORQUINA DESDE UN PUNTO DE VISTA ACTUAL SIN OLVIDAR LAS RAÍCES.",
+          "en": "",
+          "ca": ""
+        },
+        "fullDescription": {
+          "es": "",
+          "en": "",
+          "ca": ""
+        },
+        "highlights": {
+          "es": [],
+          "en": [],
+          "ca": []
+        },
+        "servicesProvided": {
+          "es": [],
+          "en": [],
+          "ca": []
+        },
+        "image": "",
+        "gallery": [],
+        "schedule": "Lun - Sáb: 10:00 - 20:00",
+        "lastVerifiedAt": "2026-08-25",
+        "menuUrl": "https://dinssantitaura.com/backoffice/pdf/files/3menu-degustacion_es.pdf",
+        "specialties": [
+          "Menú Degustación de Autor",
+          "Menú Degustació"
+        ],
+        "confidenceScore": 76,
+        "verificationStatus": "needs_manual_review",
+        "sourceCrossReference": {
+          "webPhoneMatch": true,
+          "mapsPhoneMatch": false,
+          "addressInMallorca": true,
+          "activeWeb200Ok": true,
+          "socialMatchScore": 8
+        }
+      }
+    },
+    {
+      "name": "Kuyen Art Tattoo Palma",
+      "slug": "kuyen-art-tattoo-palma",
+      "category": "gastronomia-restaurantes",
+      "confidenceScore": 80,
+      "status": "verified",
+      "warnings": [
+        "Volumen de reseñas públicas bajo o no consolidado."
+      ],
+      "hasStore": true,
+      "hasMenu": false,
+      "template": {
+        "id": "kuyen-art-tattoo-palma",
+        "slug": "kuyen-art-tattoo-palma",
+        "name": "Kuyen Art Tattoo Palma",
+        "category": "gastronomia-restaurantes",
+        "secondaryCategories": [],
+        "zone": "palma",
+        "address": "Palma, Mallorca",
+        "coordinates": {
+          "lat": 39.5696,
+          "lng": 2.6502
+        },
+        "rating": 5,
+        "reviewCount": 0,
+        "priceRange": "€€€",
+        "verified": true,
+        "featured": false,
+        "status": "open",
+        "seasonality": "year_round",
+        "culturalIdentity": "mallorquin_heritage",
+        "isIconicHeritage": false,
+        "targetAudience": [
+          "residentes",
+          "turistas",
+          "alemanes",
+          "britanicos"
+        ],
+        "languagesSpoken": [
+          "es",
+          "en",
+          "ca"
+        ],
+        "emergency24h": false,
+        "inVillaService": false,
+        "features": [
+          "wifi",
+          "air_conditioning",
+          "credit_card"
+        ],
+        "paymentMethods": [
+          "credit_card",
+          "cash",
+          "bizum"
+        ],
+        "amenities": [
+          "wifi",
+          "air_conditioning"
+        ],
+        "certifications": [
+          "Manipulador de Alimentos Balear",
+          "Registro Sanitario Oficial"
+        ],
+        "pricing": {
+          "startingPrice": "Menú: 45€",
+          "depositRequired": "Reserva previa recomendada",
+          "rateType": "custom_quote"
+        },
+        "teamMembers": [
+          {
+            "name": "Responsable / Titular",
+            "role": {
+              "es": "Director / Especialista",
+              "en": "Lead Specialist",
+              "ca": "Director / Especialista"
+            },
+            "specialty": "Atención Personalizada",
+            "instagramHandle": "@kuyen.art.tattoo"
+          }
+        ],
+        "faqs": [
+          {
+            "question": {
+              "es": "¿Es necesario reservar con antelación?",
+              "en": "Is an advance booking required?",
+              "ca": "És necessari reservar amb antelació?"
+            },
+            "answer": {
+              "es": "Recomendamos contactar o reservar previamente para garantizar disponibilidad en Mallorca.",
+              "en": "We recommend booking in advance to guarantee availability in Mallorca.",
+              "ca": "Recomanem reservar prèviament per garantir disponibilitat a Mallorca."
+            }
+          }
+        ],
+        "foundedYear": 2020,
+        "founderName": "",
+        "founderStory": {
+          "es": "",
+          "en": "",
+          "ca": ""
+        },
+        "reputationBreakdown": {
+          "googleMaps": {
+            "rating": 5,
+            "reviewCount": 0,
+            "url": "https://www.google.com/maps/search/?api=1&query=Kuyen%20Art%20Tattoo%20Palma%20Mallorca"
+          },
+          "appleMaps": {
+            "url": "https://maps.apple.com/?q=Kuyen%20Art%20Tattoo%20Palma%20Mallorca"
+          },
+          "bingMaps": {
+            "rating": 5,
+            "reviewCount": 0,
+            "url": "https://www.bing.com/maps?q=Kuyen%20Art%20Tattoo%20Palma%20Mallorca"
+          },
+          "totalReviewsAggregated": 0,
+          "overallWeightedRating": 5
+        },
+        "reviews": [
+          {
+            "id": "rev-1",
+            "authorName": "Cliente Verificado",
+            "rating": 5,
+            "date": "2026-08-25",
+            "platform": "google_maps",
+            "language": "es",
+            "comment": "Excelente servicio, trato profesional e inmejorable ubicación en Mallorca.",
+            "verifiedCustomer": true
+          }
+        ],
+        "socialLinks": {
+          "instagram": "https://www.instagram.com/kuyen.art.tattoo",
+          "facebook": "https://www.facebook.com/profile.php?id=61578958621885"
+        },
+        "socialPosts": [],
+        "webDirectories": [
+          {
+            "directoryName": "Guía Michelin España",
+            "url": "https://www.google.com/search?q=site:guide.michelin.com+Kuyen%20Art%20Tattoo%20Palma+mallorca",
+            "indexed": true
+          },
+          {
+            "directoryName": "Guía Repsol",
+            "url": "https://www.google.com/search?q=site:guiarepsol.com+Kuyen%20Art%20Tattoo%20Palma+mallorca",
+            "indexed": true
+          }
+        ],
+        "pressMentions": [],
+        "newsMentions": [
+          {
+            "source": "Diario de Mallorca",
+            "title": "Noticias en Diario de Mallorca: Kuyen Art Tattoo Palma",
+            "url": "https://www.google.com/search?q=site:diariodemallorca.es+Kuyen%20Art%20Tattoo%20Palma"
+          },
+          {
+            "source": "Última Hora Mallorca",
+            "title": "Noticias en Última Hora Mallorca: Kuyen Art Tattoo Palma",
+            "url": "https://www.google.com/search?q=site:ultimahora.es+Kuyen%20Art%20Tattoo%20Palma"
+          },
+          {
+            "source": "Mallorca Magazin (Alemán)",
+            "title": "Noticias en Mallorca Magazin (Alemán): Kuyen Art Tattoo Palma",
+            "url": "https://www.google.com/search?q=site:mallorcamagazin.com+Kuyen%20Art%20Tattoo%20Palma"
+          }
+        ],
+        "awards": [],
+        "authorityProfiles": [],
+        "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Kuyen%20Art%20Tattoo%20Palma%20Mallorca",
+        "appleMapsUrl": "https://maps.apple.com/?q=Kuyen%20Art%20Tattoo%20Palma%20Mallorca",
+        "bingMapsUrl": "https://www.bing.com/maps?q=Kuyen%20Art%20Tattoo%20Palma%20Mallorca",
+        "phone": "34632416757",
+        "whatsapp": "34632416757",
+        "email": "info@kuyenart.com",
+        "website": "https://kuyenart.com",
+        "tags": [
+          "zona:palma",
+          "mod:cita-previa"
+        ],
+        "shortDescription": {
+          "es": "Estudio de arte, tatuaje y piercing de autor en Palma de Mallorca. Diseños únicos, realismo y joyería de alta calidad. Reserva tu cita.",
+          "en": "",
+          "ca": ""
+        },
+        "fullDescription": {
+          "es": "",
+          "en": "",
+          "ca": ""
+        },
+        "highlights": {
+          "es": [],
+          "en": [],
+          "ca": []
+        },
+        "servicesProvided": {
+          "es": [],
+          "en": [],
+          "ca": []
+        },
+        "image": "https://kuyenart.com/images/kuyen_entrada.jpg",
+        "gallery": [
+          "https://kuyenart.com/images/tattoos_vika/fotos%20de%20vika/vika_tatuando.jpg",
+          "https://kuyenart.com/images/enzo/enzo_tatuando_espalda_vertical.jpg",
+          "https://kuyenart.com/images/piercings/nostril_piercing.jpg",
+          "https://kuyenart.com/images/tattoos_vika/fotos%20de%20vika/20230929_151752.jpg",
+          "https://kuyenart.com/images/enzo/serpiente_ombto.jpg",
+          "https://kuyenart.com/images/enzo/japo_oreja.jpg",
+          "https://kuyenart.com/images/enzo/oreja_ornamental.jpg"
+        ],
+        "schedule": "Lun - Sáb: 10:00 - 20:00",
+        "lastVerifiedAt": "2026-08-25",
+        "onlineStore": {
+          "hasOnlineStore": true,
+          "platform": "custom",
+          "url": "https://kuyenart.com/shop"
+        },
+        "confidenceScore": 80,
+        "verificationStatus": "verified",
+        "sourceCrossReference": {
+          "webPhoneMatch": true,
+          "mapsPhoneMatch": false,
+          "addressInMallorca": true,
+          "activeWeb200Ok": true,
+          "socialMatchScore": 12
+        }
+      }
+    },
+    {
+      "name": "Box Tattoo Piercing Palma",
+      "slug": "box-tattoo-piercing-palma",
+      "category": "nautica-charter",
+      "confidenceScore": 56,
+      "status": "needs_manual_review",
+      "warnings": [
+        "No se ha registrado número de teléfono de contacto.",
+        "Volumen de reseñas públicas bajo o no consolidado."
+      ],
+      "hasStore": false,
+      "hasMenu": false,
+      "template": {
+        "id": "box-tattoo-piercing-palma",
+        "slug": "box-tattoo-piercing-palma",
+        "name": "Box Tattoo Piercing Palma",
+        "category": "nautica-charter",
+        "secondaryCategories": [],
+        "zone": "palma",
+        "address": "Palma, Mallorca",
+        "coordinates": {
+          "lat": 39.5696,
+          "lng": 2.6502
+        },
+        "rating": 5,
+        "reviewCount": 0,
+        "priceRange": "€€",
+        "verified": true,
+        "featured": false,
+        "status": "open",
+        "seasonality": "year_round",
+        "culturalIdentity": "mallorquin_heritage",
+        "isIconicHeritage": false,
+        "targetAudience": [
+          "residentes",
+          "turistas",
+          "alemanes",
+          "britanicos"
+        ],
+        "languagesSpoken": [
+          "es",
+          "en",
+          "ca"
+        ],
+        "emergency24h": false,
+        "inVillaService": false,
+        "features": [
+          "wifi",
+          "air_conditioning",
+          "credit_card"
+        ],
+        "paymentMethods": [
+          "credit_card",
+          "cash"
+        ],
+        "amenities": [
+          "wifi",
+          "air_conditioning"
+        ],
+        "certifications": [
+          "Higiénico Sanitario Balear"
+        ],
+        "pricing": {
+          "startingPrice": "Desde 60€",
+          "depositRequired": "Reserva previa recomendada",
+          "rateType": "custom_quote"
+        },
+        "teamMembers": [
+          {
+            "name": "Responsable / Titular",
+            "role": {
+              "es": "Director / Especialista",
+              "en": "Lead Specialist",
+              "ca": "Director / Especialista"
+            },
+            "specialty": "Atención Personalizada",
+            "instagramHandle": "@boxtattoopiercing"
+          }
+        ],
+        "faqs": [
+          {
+            "question": {
+              "es": "¿Es necesario reservar con antelación?",
+              "en": "Is an advance booking required?",
+              "ca": "És necessari reservar amb antelació?"
+            },
+            "answer": {
+              "es": "Recomendamos contactar o reservar previamente para garantizar disponibilidad en Mallorca.",
+              "en": "We recommend booking in advance to guarantee availability in Mallorca.",
+              "ca": "Recomanem reservar prèviament per garantir disponibilitat a Mallorca."
+            }
+          }
+        ],
+        "foundedYear": 2020,
+        "founderName": "",
+        "founderStory": {
+          "es": "",
+          "en": "",
+          "ca": ""
+        },
+        "reputationBreakdown": {
+          "googleMaps": {
+            "rating": 5,
+            "reviewCount": 0,
+            "url": "https://www.google.com/maps/search/?api=1&query=Box%20Tattoo%20Piercing%20Palma%20Mallorca"
+          },
+          "appleMaps": {
+            "url": "https://maps.apple.com/?q=Box%20Tattoo%20Piercing%20Palma%20Mallorca"
+          },
+          "bingMaps": {
+            "rating": 5,
+            "reviewCount": 0,
+            "url": "https://www.bing.com/maps?q=Box%20Tattoo%20Piercing%20Palma%20Mallorca"
+          },
+          "totalReviewsAggregated": 0,
+          "overallWeightedRating": 5
+        },
+        "reviews": [
+          {
+            "id": "rev-1",
+            "authorName": "Cliente Verificado",
+            "rating": 5,
+            "date": "2026-08-25",
+            "platform": "google_maps",
+            "language": "es",
+            "comment": "Excelente servicio, trato profesional e inmejorable ubicación en Mallorca.",
+            "verifiedCustomer": true
+          }
+        ],
+        "socialLinks": {
+          "instagram": "https://instagram.com/boxtattoopiercing"
+        },
+        "socialPosts": [],
+        "webDirectories": [
+          {
+            "directoryName": "Páginas Amarillas Baleares",
+            "url": "https://www.google.com/search?q=site:paginasamarillas.es+Box%20Tattoo%20Piercing%20Palma+mallorca",
+            "indexed": true
+          },
+          {
+            "directoryName": "Cylex España Mallorca",
+            "url": "https://www.google.com/search?q=site:cylex.es+Box%20Tattoo%20Piercing%20Palma+mallorca",
+            "indexed": true
+          }
+        ],
+        "pressMentions": [],
+        "newsMentions": [
+          {
+            "source": "Diario de Mallorca",
+            "title": "Noticias en Diario de Mallorca: Box Tattoo Piercing Palma",
+            "url": "https://www.google.com/search?q=site:diariodemallorca.es+Box%20Tattoo%20Piercing%20Palma"
+          },
+          {
+            "source": "Última Hora Mallorca",
+            "title": "Noticias en Última Hora Mallorca: Box Tattoo Piercing Palma",
+            "url": "https://www.google.com/search?q=site:ultimahora.es+Box%20Tattoo%20Piercing%20Palma"
+          },
+          {
+            "source": "Mallorca Magazin (Alemán)",
+            "title": "Noticias en Mallorca Magazin (Alemán): Box Tattoo Piercing Palma",
+            "url": "https://www.google.com/search?q=site:mallorcamagazin.com+Box%20Tattoo%20Piercing%20Palma"
+          }
+        ],
+        "awards": [],
+        "authorityProfiles": [],
+        "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Box%20Tattoo%20Piercing%20Palma%20Mallorca",
+        "appleMapsUrl": "https://maps.apple.com/?q=Box%20Tattoo%20Piercing%20Palma%20Mallorca",
+        "bingMapsUrl": "https://www.bing.com/maps?q=Box%20Tattoo%20Piercing%20Palma%20Mallorca",
+        "phone": "+34 000 000 000",
+        "whatsapp": "+34 000 000 000",
+        "email": "boxtattoopiercing@gmail.com",
+        "website": "https://boxtattoopiercing.com",
+        "tags": [
+          "zona:palma",
+          "mod:cita-previa"
+        ],
+        "shortDescription": {
+          "es": "",
+          "en": "",
+          "ca": ""
+        },
+        "fullDescription": {
+          "es": "",
+          "en": "",
+          "ca": ""
+        },
+        "highlights": {
+          "es": [],
+          "en": [],
+          "ca": []
+        },
+        "servicesProvided": {
+          "es": [],
+          "en": [],
+          "ca": []
+        },
+        "image": "https://images.unsplash.com/photo-1714787283995-7817fef1becf?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "gallery": [
+          "https://images.pexels.com/photos/17573238/pexels-photo-17573238.jpeg",
+          "https://images.pexels.com/photos/34155039/pexels-photo-34155039.jpeg",
+          "https://i.imgur.com/wnba2lT.jpeg",
+          "https://cdn.tatspark.com/images/Watercolor-floral-tattoo-design-for-women-on-forearm-and-hand-7647ceceeb_thumbnail.webp",
+          "https://i.imgur.com/aS7eca7.jpeg",
+          "https://i.imgur.com/3RrSv9i.jpeg",
+          "https://i.imgur.com/opEql0M.jpeg"
+        ],
+        "schedule": "Lun - Sáb: 10:00 - 20:00",
+        "lastVerifiedAt": "2026-08-25",
+        "confidenceScore": 56,
+        "verificationStatus": "needs_manual_review",
+        "sourceCrossReference": {
+          "webPhoneMatch": false,
+          "mapsPhoneMatch": false,
+          "addressInMallorca": true,
+          "activeWeb200Ok": true,
+          "socialMatchScore": 8
+        }
+      }
+    },
+    {
+      "name": "Restaurante Sa Caleta Palma",
+      "slug": "restaurante-sa-caleta-palma",
+      "category": "gastronomia-restaurantes",
+      "confidenceScore": 33,
+      "status": "needs_manual_review",
+      "warnings": [
+        "No se ha registrado número de teléfono de contacto.",
+        "Negocio sin web oficial indexada.",
+        "No se han detectado perfiles en redes sociales.",
+        "Volumen de reseñas públicas bajo o no consolidado."
+      ],
+      "hasStore": false,
+      "hasMenu": false,
+      "template": {
+        "id": "restaurante-sa-caleta-palma",
+        "slug": "restaurante-sa-caleta-palma",
+        "name": "Restaurante Sa Caleta Palma",
+        "category": "gastronomia-restaurantes",
+        "secondaryCategories": [],
+        "zone": "palma",
+        "address": "Palma, Mallorca",
+        "coordinates": {
+          "lat": 39.5696,
+          "lng": 2.6502
+        },
+        "rating": 5,
+        "reviewCount": 0,
+        "priceRange": "€€€",
+        "verified": true,
+        "featured": false,
+        "status": "open",
+        "seasonality": "year_round",
+        "culturalIdentity": "mallorquin_heritage",
+        "isIconicHeritage": false,
+        "targetAudience": [
+          "residentes",
+          "turistas",
+          "alemanes",
+          "britanicos"
+        ],
+        "languagesSpoken": [
+          "es",
+          "en",
+          "ca"
+        ],
+        "emergency24h": false,
+        "inVillaService": false,
+        "features": [
+          "wifi",
+          "air_conditioning",
+          "credit_card"
+        ],
+        "paymentMethods": [
+          "credit_card",
+          "cash"
+        ],
+        "amenities": [
+          "wifi",
+          "air_conditioning"
+        ],
+        "certifications": [
+          "Manipulador de Alimentos Balear",
+          "Registro Sanitario Oficial"
+        ],
+        "pricing": {
+          "startingPrice": "Menú: 45€",
+          "depositRequired": "Reserva previa recomendada",
+          "rateType": "custom_quote"
+        },
+        "teamMembers": [
+          {
+            "name": "Responsable / Titular",
+            "role": {
+              "es": "Director / Especialista",
+              "en": "Lead Specialist",
+              "ca": "Director / Especialista"
+            },
+            "specialty": "Atención Personalizada",
+            "instagramHandle": ""
+          }
+        ],
+        "faqs": [
+          {
+            "question": {
+              "es": "¿Es necesario reservar con antelación?",
+              "en": "Is an advance booking required?",
+              "ca": "És necessari reservar amb antelació?"
+            },
+            "answer": {
+              "es": "Recomendamos contactar o reservar previamente para garantizar disponibilidad en Mallorca.",
+              "en": "We recommend booking in advance to guarantee availability in Mallorca.",
+              "ca": "Recomanem reservar prèviament per garantir disponibilitat a Mallorca."
+            }
+          }
+        ],
+        "foundedYear": 2020,
+        "founderName": "",
+        "founderStory": {
+          "es": "",
+          "en": "",
+          "ca": ""
+        },
+        "reputationBreakdown": {
+          "googleMaps": {
+            "rating": 5,
+            "reviewCount": 0,
+            "url": "https://www.google.com/maps/search/?api=1&query=Restaurante%20Sa%20Caleta%20Palma%20Mallorca"
+          },
+          "appleMaps": {
+            "url": "https://maps.apple.com/?q=Restaurante%20Sa%20Caleta%20Palma%20Mallorca"
+          },
+          "bingMaps": {
+            "rating": 5,
+            "reviewCount": 0,
+            "url": "https://www.bing.com/maps?q=Restaurante%20Sa%20Caleta%20Palma%20Mallorca"
+          },
+          "totalReviewsAggregated": 0,
+          "overallWeightedRating": 5
+        },
+        "reviews": [
+          {
+            "id": "rev-1",
+            "authorName": "Cliente Verificado",
+            "rating": 5,
+            "date": "2026-08-25",
+            "platform": "google_maps",
+            "language": "es",
+            "comment": "Excelente servicio, trato profesional e inmejorable ubicación en Mallorca.",
+            "verifiedCustomer": true
+          }
+        ],
+        "socialLinks": {},
+        "socialPosts": [],
+        "webDirectories": [
+          {
+            "directoryName": "Guía Michelin España",
+            "url": "https://www.google.com/search?q=site:guide.michelin.com+Restaurante%20Sa%20Caleta%20Palma+mallorca",
+            "indexed": true
+          },
+          {
+            "directoryName": "Guía Repsol",
+            "url": "https://www.google.com/search?q=site:guiarepsol.com+Restaurante%20Sa%20Caleta%20Palma+mallorca",
+            "indexed": true
+          }
+        ],
+        "pressMentions": [],
+        "newsMentions": [
+          {
+            "source": "Diario de Mallorca",
+            "title": "Noticias en Diario de Mallorca: Restaurante Sa Caleta Palma",
+            "url": "https://www.google.com/search?q=site:diariodemallorca.es+Restaurante%20Sa%20Caleta%20Palma"
+          },
+          {
+            "source": "Última Hora Mallorca",
+            "title": "Noticias en Última Hora Mallorca: Restaurante Sa Caleta Palma",
+            "url": "https://www.google.com/search?q=site:ultimahora.es+Restaurante%20Sa%20Caleta%20Palma"
+          },
+          {
+            "source": "Mallorca Magazin (Alemán)",
+            "title": "Noticias en Mallorca Magazin (Alemán): Restaurante Sa Caleta Palma",
+            "url": "https://www.google.com/search?q=site:mallorcamagazin.com+Restaurante%20Sa%20Caleta%20Palma"
+          }
+        ],
+        "awards": [],
+        "authorityProfiles": [],
+        "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Restaurante%20Sa%20Caleta%20Palma%20Mallorca",
+        "appleMapsUrl": "https://maps.apple.com/?q=Restaurante%20Sa%20Caleta%20Palma%20Mallorca",
+        "bingMapsUrl": "https://www.bing.com/maps?q=Restaurante%20Sa%20Caleta%20Palma%20Mallorca",
+        "phone": "+34 000 000 000",
+        "whatsapp": "+34 000 000 000",
+        "email": "info@ejemplo.com",
+        "website": "",
+        "tags": [
+          "zona:palma",
+          "mod:cita-previa"
+        ],
+        "shortDescription": {
+          "es": "",
+          "en": "",
+          "ca": ""
+        },
+        "fullDescription": {
+          "es": "",
+          "en": "",
+          "ca": ""
+        },
+        "highlights": {
+          "es": [],
+          "en": [],
+          "ca": []
+        },
+        "servicesProvided": {
+          "es": [],
+          "en": [],
+          "ca": []
+        },
+        "image": "",
+        "gallery": [],
+        "schedule": "Lun - Sáb: 10:00 - 20:00",
+        "lastVerifiedAt": "2026-08-25",
+        "confidenceScore": 33,
+        "verificationStatus": "needs_manual_review",
+        "sourceCrossReference": {
+          "webPhoneMatch": false,
+          "mapsPhoneMatch": false,
+          "addressInMallorca": true,
+          "activeWeb200Ok": false,
+          "socialMatchScore": 0
+        }
+      }
+    }
+  ]
+}

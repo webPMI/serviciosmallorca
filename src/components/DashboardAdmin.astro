@@ -2,6 +2,7 @@
 import { SERVICES } from "../data/services";
 import { CATEGORIES } from "../data/categories";
 import { MALLORCA_ZONES } from "../data/zones";
+import { auditBusinessData } from "../lib/verificationEngine";
 
 interface Props {
   translations: Record<string, string>;
@@ -217,8 +218,22 @@ const withNewsCount = SERVICES.filter(
       <div class="qc-services-list" style="display: flex; flex-direction: column; gap: var(--space-md); margin-top: var(--space-md);">
         {
           SERVICES.map((s) => {
-            const score = s.confidenceScore ?? (s.verified ? 92 : 65);
-            const isNeedReview = score < 85 || s.verificationStatus === "needs_manual_review";
+            const audit = auditBusinessData({
+              name: s.name,
+              category: s.category,
+              zone: s.zone,
+              address: s.address,
+              coordinates: s.coordinates,
+              website: s.website,
+              phone: s.phone,
+              extractedWebPhone: s.phone,
+              whatsapp: s.whatsapp,
+              socialLinks: s.socialLinks,
+              reviewsCount: s.reviewCount,
+            });
+
+            const score = s.confidenceScore ?? audit.confidenceScore;
+            const isNeedReview = score < 85 || audit.status === "needs_manual_review" || s.verificationStatus === "needs_manual_review";
             const statusLabel = score >= 85 ? "VERIFICADO" : "REQUIERE REVISIÓN";
 
             return (
@@ -296,6 +311,15 @@ const withNewsCount = SERVICES.filter(
                     )}
                   </div>
                 </div>
+
+                {audit.warnings.length > 0 && (
+                  <div style="margin-top: 0.6rem; padding: 0.5rem 0.75rem; background: rgba(239, 68, 68, 0.08); border-left: 3px solid var(--color-danger); border-radius: var(--radius-xs); font-size: 0.8rem;">
+                    <strong style="color: var(--color-danger); display: block; margin-bottom: 0.2rem;">🚩 Discrepancias / Alertas Detectadas:</strong>
+                    {audit.warnings.map((w) => (
+                      <div style="color: var(--color-text); margin-top: 0.1rem;">• {w}</div>
+                    ))}
+                  </div>
+                )}
               </div>
             );
           })
