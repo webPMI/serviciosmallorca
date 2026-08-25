@@ -1,0 +1,103 @@
+---
+import { type Locale } from "../../../i18n";
+
+export const ServiceSidebarInfo = ({
+  service,
+  translations,
+  locale
+}: {
+  service: any;
+  translations: any;
+  locale: Locale;
+}) => {
+  return (
+    <div class="sidebar-info-container">
+      {/* Precios y Tarifas */}
+      {service.pricing && (
+        <section class="card section-box pricing-section">
+          <h2 class="box-title">💶 Tarifas Orientativas & Condiciones</h2>
+          <div class="pricing-card-inner">
+            {service.pricing.startingPrice && (
+              <div class="pricing-pill-highlight">
+                <span class="pricing-label">Precio Mínimo:</span>
+                <strong class="pricing-val">{service.pricing.startingPrice}</strong>
+              </div>
+            )}
+            {service.pricing.depositRequired && (
+              <p class="pricing-note">
+                📌 <strong>Reserva:</strong> {service.pricing.depositRequired}
+              </p>
+            )}
+            {service.pricing.notes?.[locale] && <p class="pricing-note-sub">{service.pricing.notes[locale]}</p>}
+          </div>
+        </section>
+      )}
+
+      {/* Comodidades, Pagos y Certificaciones */}
+      {((service.amenities && service.amenities.length > 0) ||
+        (service.paymentMethods && service.paymentMethods.length > 0) ||
+        (service.certifications && service.certifications.length > 0)) && (
+        <section class="card section-box amenities-payments-box">
+          <h2 class="box-title">✨ Comodidades, Métodos de Pago & Certificaciones</h2>
+
+          {service.paymentMethods && service.paymentMethods.length > 0 && (
+            <div class="amenity-group">
+              <span class="amenity-group-title">💳 Métodos de Pago Aceptados:</span>
+              <div class="chips-row">
+                {service.paymentMethods.map((pm) => (
+                  <span class="chip-item">
+                    {pm === "credit_card"
+                      ? "💳 Tarjeta"
+                      : pm === "cash"
+                        ? "💶 Efectivo"
+                        : pm === "bizum"
+                          ? "📱 Bizum"
+                          : pm === "apple_pay"
+                            ? "🍎 Apple Pay"
+                            : pm === "crypto"
+                              ? "₿ Cripto"
+                              : pm}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {service.amenities && service.amenities.length > 0 && (
+            <div class="amenity-group">
+              <span class="amenity-group-title">🛋️ Comodidades e Instalaciones:</span>
+              <div class="chips-row">
+                {service.amenities.map((am) => (
+                  <span class="chip-item">
+                    {am === "wifi"
+                      ? "📶 Wi-Fi Gratis"
+                      : am === "air_conditioning"
+                        ? "❄️ Climatizado"
+                        : am === "wheelchair_accessible"
+                          ? "♿ Accesible PMR"
+                        : am === "parking_nearby"
+                          ? "🅿️ Parking Cercano"
+                          : am === "pet_friendly"
+                            ? "🐾 Pet Friendly"
+                            : am}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {service.certifications && service.certifications.length > 0 && (
+            <div class="amenity-group">
+              <span class="amenity-group-title">🛡️ Certificaciones Oficiales:</span>
+              <div class="chips-row">
+                {service.certifications.map((cert) => (
+                  <span class="chip-item cert-item">✓ {cert}</span>
+                ))}
+              </div>
+            </div>
+          )}
+        </section>
+      )}
+    </div>
+  );
+};

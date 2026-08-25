@@ -96,25 +96,13 @@ const schemaOrg = {
     </nav>
 
     <!-- Header Section -->
-    <div class="service-detail-header">
-      <div class="header-main">
-        <div class="header-badges">
-          <span class="badge badge-primary">{category?.icon} {categoryName}</span>
-          <span class="badge badge-accent">📍 {zoneName}</span>
-          {service.verified && <span class="badge badge-success">✓ {translations["services.verifiedBadge"]}</span>}
-          <span class="badge badge-price">{service.priceRange}</span>
-        </div>
-
-        <h1 class="detail-title">{service.name}</h1>
-        <p class="detail-lead">{service.shortDescription[locale]}</p>
-
-        <div class="rating-bar">
-          <span class="rating-stars">★★★★★</span>
-          <strong class="rating-val">{service.rating.toFixed(1)}</strong>
-          <span class="rating-reviews">({service.reviewCount} {translations["services.reviews"]})</span>
-        </div>
-      </div>
-    </div>
+    <ServiceHeaderHero 
+      service={service} 
+      category={category} 
+      zone={zone} 
+      translations={translations} 
+      locale={locale} 
+    />
 
     <!-- Layout Grid: Main Content & Sidebar -->
     <div class="detail-grid">

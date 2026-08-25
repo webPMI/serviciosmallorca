@@ -1,0 +1,50 @@
+---
+import { type Locale } from "../../../i18n";
+
+export const ServiceReviewsSection = ({
+  service,
+  translations,
+  locale
+}: {
+  service: any;
+  translations: any;
+  locale: Locale;
+}) => {
+  return (
+    <section class="card section-box reviews-section" id="reviews-section">
+      <div class="reviews-header-wrap">
+        <div>
+          <h2 class="box-title">{translations["reviews.title"]}</h2>
+          <div class="rating-bar-large">
+            <span class="rating-stars-large">★★★★★</span>
+            <strong class="rating-score">{service.rating.toFixed(1)}</strong>
+            <span class="rating-sub">/ 5.0 ({service.reviewCount} {translations["services.reviews"]})</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="faqs-list">
+        {service.reviews && service.reviews.length > 0 && service.reviews.map((review: any) => (
+          <details class="faq-item" key={review.id}>
+            <summary class="faq-question">
+              <strong class="review-author">
+                {review.authorName} 
+                {review.verifiedCustomer && <span class="verified-badge">✓</span>}
+              </strong>
+              <span class="review-meta">
+                ({review.rating} / 5) - {review.date}
+              </span>
+            </summary>
+            <div class="faq-answer">
+              <p class="review-comment">{review.comment}</p>
+              {review.platform && <span class="review-platform">Platform: {review.platform}</span>}
+            </div>
+          </details>
+        ))}
+        {(!service.reviews || service.reviews.length === 0) && (
+          <p class="no-reviews">No hay reseñas disponibles todavía. ¡Sé el primero en dejar una!</p>
+        )}
+      </div>
+    </section>
+  );
+};

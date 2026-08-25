@@ -6,21 +6,19 @@
  */
 
 import type { ServiceItem } from "./types.ts";
-import { TATTOO_SERVICES } from "./arte-tatuajes.ts";
+import { TATTOO_SERVICES } from "./arte-tatuajes/index.ts";
+import { RESTAURANT_SERVICES } from "./gastronomia-restaurantes/index.ts";
 
 export * from "./types.ts";
-export { TATTOO_SERVICES } from "./arte-tatuajes.ts";
+export { TATTOO_SERVICES } from "./arte-tatuajes/index.ts";
+export { RESTAURANT_SERVICES } from "./gastronomia-restaurantes/index.ts";
 
 /**
  * Catálogo Unificado Global (Agregación de todos los módulos sectoriales).
  */
 export const SERVICES: ServiceItem[] = [
   ...TATTOO_SERVICES,
-  // Aquí se irán agregando los futuros módulos sectoriales:
-  // ...NAUTICAL_SERVICES,
-  // ...RESTAURANT_SERVICES,
-  // ...VILLAS_SERVICES,
-  // ...WELLNESS_SERVICES,
+  ...RESTAURANT_SERVICES,
 ];
 
 /**

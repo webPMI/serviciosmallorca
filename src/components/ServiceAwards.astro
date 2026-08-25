@@ -1,0 +1,46 @@
+---
+import { type Locale } from "../../../i18n";
+
+export const ServiceAwards = ({
+  service,
+  translations,
+  locale
+}: {
+  service: any;
+  translations: any;
+  locale: Locale;
+}) => {
+  if (!service.awards || service.awards.length === 0) return null;
+
+  return (
+    <section class="card section-box awards-box">
+      <h2 class="box-title">🏆 Premios & Reconocimientos Oficiales</h2>
+      <div class="awards-grid">
+        {service.awards.map((award) => (
+          <div class="award-card" key={award.title}>
+            <div class="award-icon">🥇</div>
+            <div class="award-details">
+              <strong class="award-title">
+                {award.url ? (
+                  <a href={award.url} target="_blank" rel="noopener noreferrer" class="award-source-link">
+                    {award.title} ↗
+                  </a>
+                ) : (
+                  award.title
+                )}
+              </strong>
+              <span class="award-meta">
+                {award.issuer} {award.year ? `(${award.year})` : ""}
+              </span>
+              {award.url && (
+                <a href={award.url} target="_blank" rel="noopener noreferrer" class="award-verify-badge">
+                  ✓ Consultar fuente oficial ↗
+                </a>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+};
