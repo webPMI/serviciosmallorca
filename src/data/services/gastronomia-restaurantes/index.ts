@@ -8,6 +8,8 @@ import { elCaminoPalma } from "./el-camino.ts";
 import { fornDeSantJoan } from "./forn-de-sant-joan.ts";
 import { restauranteFlanigan } from "./restaurante-flanigan.ts";
 import { restauranteMarcFosh } from "./restaurante-marc-fosh.ts";
+import { bensDavall } from "./bens-davall.ts";
+import { barBosch } from "./bar-bosch.ts";
 
 export {
   dinsSantiTaura,
@@ -19,6 +21,8 @@ export {
   fornDeSantJoan,
   restauranteFlanigan,
   restauranteMarcFosh,
+  bensDavall,
+  barBosch,
 };
 
 /**
@@ -35,4 +39,6 @@ export const RESTAURANT_SERVICES: ServiceItem[] = [
   fornDeSantJoan,
   restauranteFlanigan,
   restauranteMarcFosh,
+  bensDavall,
+  barBosch,
 ];

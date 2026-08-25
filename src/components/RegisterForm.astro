@@ -328,7 +328,12 @@ const { translations, loginUrl } = Astro.props;
       } catch (error: any) {
         console.error("Error en registro con Google:", error);
         if (generalError) {
-          generalError.textContent = `Error con Google Auth: ${error.message || error}`;
+          if (error.code === "auth/unauthorized-domain") {
+            generalError.textContent =
+              "Dominio no autorizado en Firebase para Google Sign-In. Por favor agrega 'serviciosmallorca.com' en Firebase Console -> Authentication -> Settings -> Dominios autorizados.";
+          } else {
+            generalError.textContent = `Error con Google Auth: ${error.message || error}`;
+          }
           generalError.style.display = "block";
         }
       }

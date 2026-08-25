@@ -366,6 +366,26 @@ export async function generateChecklist(
     }
   }
 
+  // 2.5 Persistencia: fusionar candidatos ya descubiertos (source: discovery) del JSON previo.
+  // Evita que la ejecución normal (sin --mine) borre el trabajo acumulado de descubrimientos previos.
+  if (existsSync(OUT_JSON)) {
+    try {
+      const prev = JSON.parse(readFileSync(OUT_JSON, "utf-8"));
+      const prevItems: ChecklistItem[] = Array.isArray(prev) ? prev : [];
+      const seen = new Set(items.map((i) => i.slug || i.id));
+      for (const p of prevItems) {
+        if (p.source !== "discovery") continue; // solo candidatos, nunca el catálogo
+        const key = p.slug || p.id;
+        if (key && !seen.has(key)) {
+          items.push(p);
+          seen.add(key);
+        }
+      }
+    } catch {
+      // JSON previo corrupto: se ignora y se regenera desde el catálogo
+    }
+  }
+
   // 3. Ordenación Rigurosa: 1) Categoría → 2) Calidad de Mayor a Menor (Quality Rank) → 3) Nombre
   items.sort((a, b) => {
     const catCmp = a.categoryLabel.localeCompare(b.categoryLabel, "es");
