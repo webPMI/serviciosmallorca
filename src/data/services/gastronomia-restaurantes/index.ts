@@ -172,8 +172,14 @@ import { bodegasGalmesIRibotSantaMargalida } from "./bodegas-galmes-i-ribot-sant
 import { restauranteEsRacoDesPortSoller } from "./restaurante-es-raco-des-port-soller.ts";
 import { cellerBarRandaAlgaida } from "./celler-bar-randa-algaida.ts";
 import { bodegasCanVerduraBinissalem } from "./bodegas-can-verdura-binissalem.ts";
+import { restauranteSesOliveresPortSoller } from "./restaurante-ses-oliveres-port-soller.ts";
+import { restauranteCafeNouSoller } from "./restaurante-cafe-nou-soller.ts";
+import { bodegas7103PetitCellerSantaMaria } from "./bodegas-7103-petit-celler-santa-maria.ts";
 
 export {
+  restauranteSesOliveresPortSoller,
+  restauranteCafeNouSoller,
+  bodegas7103PetitCellerSantaMaria,
   restauranteEsRacoDesPortSoller,
   cellerBarRandaAlgaida,
   bodegasCanVerduraBinissalem,
@@ -527,4 +533,7 @@ export const RESTAURANT_SERVICES: ServiceItem[] = [
   restauranteEsRacoDesPortSoller,
   cellerBarRandaAlgaida,
   bodegasCanVerduraBinissalem,
+  restauranteSesOliveresPortSoller,
+  restauranteCafeNouSoller,
+  bodegas7103PetitCellerSantaMaria,
 ];
