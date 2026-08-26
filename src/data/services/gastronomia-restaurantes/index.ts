@@ -94,8 +94,14 @@ import { canCostaValldemossa } from "./can-costa-valldemossa.ts";
 import { bodegasVinyesMortitx } from "./bodegas-vinyes-mortitx.ts";
 import { bodegaBarahonaCasaManolo } from "./bodega-barahona-casa-manolo.ts";
 import { restauranteClubNauticArenal } from "./restaurante-club-nautic-arenal.ts";
+import { elBungalowCiudadJardin } from "./el-bungalow-ciudad-jardin.ts";
+import { elCastilloDelBosque } from "./el-castillo-del-bosque-felanitx.ts";
+import { saCuinaDeNainaSencelles } from "./sa-cuina-de-naina-sencelles.ts";
 
 export {
+  elBungalowCiudadJardin,
+  elCastilloDelBosque,
+  saCuinaDeNainaSencelles,
   bodegasVinyesMortitx,
   bodegaBarahonaCasaManolo,
   restauranteClubNauticArenal,
@@ -293,4 +299,7 @@ export const RESTAURANT_SERVICES: ServiceItem[] = [
   bodegasVinyesMortitx,
   bodegaBarahonaCasaManolo,
   restauranteClubNauticArenal,
+  elBungalowCiudadJardin,
+  elCastilloDelBosque,
+  saCuinaDeNainaSencelles,
 ];

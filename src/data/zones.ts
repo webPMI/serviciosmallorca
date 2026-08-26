@@ -28,7 +28,7 @@ export const MALLORCA_ZONES: MallorcaZone[] = [
       ca: "Palma & Badia",
       de: "Palma & Bucht",
     },
-    popularAreas: ["Palma Centro", "Santa Catalina", "Portixol", "Son Vida", "Casco Antiguo"],
+    popularAreas: ["Palma Centro", "Santa Catalina", "Portixol", "Son Vida", "Casco Antiguo", "Ciutat Jardí"],
   },
   {
     id: "calvia-andratx",
@@ -105,6 +105,7 @@ export const MALLORCA_ZONES: MallorcaZone[] = [
       "Cala Figuera",
       "Portocolom",
       "S'Arenal",
+      "Felanitx",
     ],
   },
   {
@@ -115,7 +116,7 @@ export const MALLORCA_ZONES: MallorcaZone[] = [
       ca: "Es Raiguer & Es Pla (Centre)",
       de: "Es Raiguer & Es Pla (Inselmitte)",
     },
-    popularAreas: ["Inca", "Binissalem", "Santa Maria del Camí", "Alaró", "Sineu", "Selva"],
+    popularAreas: ["Inca", "Binissalem", "Santa Maria del Camí", "Alaró", "Sineu", "Selva", "Sencelles"],
   },
 ];
 
