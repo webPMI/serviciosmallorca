@@ -287,5 +287,12 @@
   "nav.aria.openAdminMenu": "Open admin menu",
   "nav.aria.openManagerMenu": "Open manager menu",
   "nav.aria.openUserMenu": "Open user menu",
-  "nav.aria.openPublicMenu": "Open navigation menu"
+  "nav.aria.openPublicMenu": "Open navigation menu",
+  "404.title": "Page Not Found (404)",
+  "404.subtitle": "Looks like you wandered off the island route.",
+  "404.description": "The cove, business, or page you are looking for does not exist or has been moved.",
+  "404.backHome": "Back to Home",
+  "404.exploreServices": "Explore Services",
+  "404.exploreSports": "Sports & Courts",
+  "404.exploreTours": "Experience Tours"
 }

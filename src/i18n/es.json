@@ -277,5 +277,12 @@
   "nav.aria.openAdminMenu": "Abrir menú de administración",
   "nav.aria.openManagerMenu": "Abrir menú de gestión",
   "nav.aria.openUserMenu": "Abrir menú de usuario",
-  "nav.aria.openPublicMenu": "Abrir menú de navegación"
+  "nav.aria.openPublicMenu": "Abrir menú de navegación",
+  "404.title": "Página no encontrada (404)",
+  "404.subtitle": "Parece que te has desviado de la ruta en la isla.",
+  "404.description": "La cala, el servicio o la página que buscas no existe o ha cambiado de dirección.",
+  "404.backHome": "Volver al Inicio",
+  "404.exploreServices": "Explorar Servicios",
+  "404.exploreSports": "Pistas & Deporte",
+  "404.exploreTours": "Rutas de Experiencia"
 }

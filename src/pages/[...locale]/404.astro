@@ -1,0 +1,167 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Navbar from "../../components/Navbar.astro";
+import Footer from "../../components/Footer.astro";
+import { getLocaleFromUrl, loadTranslations, getLangPrefix, type Locale } from "../../i18n";
+
+export const prerender = false;
+
+const locale = getLocaleFromUrl(Astro.url) as Locale;
+const translations = await loadTranslations(locale);
+const prefix = getLangPrefix(locale);
+---
+
+<BaseLayout
+  title={`${translations["404.title"] || "404 - Página no encontrada"} | Servicios Mallorca`}
+  lang={locale}
+  description={translations["404.description"] || "La página que buscas no existe o ha cambiado de dirección."}
+>
+  <Navbar currentLocale={locale} translations={translations} getLangPrefix={getLangPrefix} />
+
+  <main class="container section error-404-container">
+    <div class="error-404-card card card-glass">
+      <div class="error-404-visual">
+        <span class="error-code">404</span>
+        <div class="island-icon-wrap">
+          <span class="island-emoji">🏝️</span>
+          <span class="compass-emoji">🧭</span>
+        </div>
+      </div>
+
+      <div class="badge badge-accent">
+        <span
+          >📍 {
+            locale === "de"
+              ? "Route verloren"
+              : locale === "en"
+                ? "Off the Route"
+                : locale === "ca"
+                  ? "Fora de Ruta"
+                  : "Fuera de Ruta"
+          }</span
+        >
+      </div>
+
+      <h1 class="error-title">{translations["404.title"] || "Página no encontrada"}</h1>
+      <p class="error-lead">{translations["404.subtitle"] || "Parece que te has desviado de la ruta en la isla."}</p>
+      <p class="error-desc text-muted">
+        {
+          translations["404.description"] ||
+            "La cala, el servicio o la página que buscas no existe o ha cambiado de dirección."
+        }
+      </p>
+
+      <!-- Quick Island Recovery Actions -->
+      <div class="error-action-grid">
+        <a href={prefix} class="btn btn-primary btn-lg hover-lift">
+          <span>🏠 {translations["404.backHome"] || "Volver al Inicio"}</span>
+        </a>
+        <a href={`${prefix}servicios`} class="btn btn-secondary hover-lift">
+          <span>🔍 {translations["404.exploreServices"] || "Explorar Servicios"}</span>
+        </a>
+        <a href={`${prefix}deporte`} class="btn btn-secondary hover-lift">
+          <span>🎾 {translations["404.exploreSports"] || "Pistas & Deporte"}</span>
+        </a>
+        <a href={`${prefix}favoritos`} class="btn btn-outline hover-lift">
+          <span
+            >❤️ {
+              locale === "de"
+                ? "Meine Favoriten"
+                : locale === "en"
+                  ? "My Favorites"
+                  : locale === "ca"
+                    ? "Els Meus Preferits"
+                    : "Mis Favoritos"
+            }</span
+          >
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <Footer translations={translations} currentLocale={locale} getLangPrefix={getLangPrefix} />
+</BaseLayout>
+
+<style>
+  .error-404-container {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-2xl) var(--space-md);
+  }
+
+  .error-404-card {
+    max-width: 680px;
+    width: 100%;
+    text-align: center;
+    padding: var(--space-3xl) var(--space-xl);
+    border-radius: var(--border-radius-xl);
+    border: 1px solid var(--color-surface-border);
+    box-shadow: var(--shadow-xl);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .error-404-visual {
+    position: relative;
+    margin-bottom: var(--space-md);
+  }
+
+  .error-code {
+    font-size: clamp(5rem, 15vw, 8.5rem);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -0.05em;
+    background: linear-gradient(135deg, var(--color-primary), #3b82f6, #06b6d4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 0.9;
+  }
+
+  .island-icon-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 2.25rem;
+    margin-top: -1.5rem;
+  }
+
+  .error-title {
+    font-size: clamp(1.5rem, 4vw, 2.25rem);
+    font-weight: 800;
+    margin-top: var(--space-md);
+    margin-bottom: var(--space-xs);
+    color: var(--color-text);
+  }
+
+  .error-lead {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: var(--space-xs);
+  }
+
+  .error-desc {
+    max-width: 480px;
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--space-2xl);
+    line-height: 1.6;
+  }
+
+  .error-action-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+    width: 100%;
+    max-width: 520px;
+  }
+
+  @media (max-width: 640px) {
+    .error-action-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

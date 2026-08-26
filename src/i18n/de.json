@@ -273,5 +273,12 @@
   "nav.aria.openAdminMenu": "Admin-Menü öffnen",
   "nav.aria.openManagerMenu": "Manager-Menü öffnen",
   "nav.aria.openUserMenu": "Benutzer-Menü öffnen",
-  "nav.aria.openPublicMenu": "Navigationsmenü öffnen"
+  "nav.aria.openPublicMenu": "Navigationsmenü öffnen",
+  "404.title": "Seite nicht gefunden (404)",
+  "404.subtitle": "Sie scheinen von der Inselfahrt abgekommen zu sein.",
+  "404.description": "Die gesuchte Bucht, das Geschäft oder die Seite existiert nicht oder wurde verschoben.",
+  "404.backHome": "Zur Startseite",
+  "404.exploreServices": "Dienstleistungen entdecken",
+  "404.exploreSports": "Sport & Padel",
+  "404.exploreTours": "Erlebnisrouten"
 }

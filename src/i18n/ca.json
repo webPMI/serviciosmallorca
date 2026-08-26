@@ -277,5 +277,12 @@
   "nav.aria.openAdminMenu": "Obrir menú d'administració",
   "nav.aria.openManagerMenu": "Obrir menú de gestió",
   "nav.aria.openUserMenu": "Obrir menú d'usuari",
-  "nav.aria.openPublicMenu": "Obrir menú de navegació"
+  "nav.aria.openPublicMenu": "Obrir menú de navegació",
+  "404.title": "Pàgina no trobada (404)",
+  "404.subtitle": "Sembla que t'has desviat de la ruta a l'illa.",
+  "404.description": "La cala, el servei o la pàgina que cerques no existeix o ha canviat d'adreça.",
+  "404.backHome": "Tornar a l'Inici",
+  "404.exploreServices": "Explorar Serveis",
+  "404.exploreSports": "Pistes & Esport",
+  "404.exploreTours": "Rutes d'Experiència"
 }
