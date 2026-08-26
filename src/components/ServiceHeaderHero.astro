@@ -104,6 +104,21 @@ const smartCta = getSmartActionCta(
           <span>📍</span>
           <span>{locale === "ca" ? "Com arribar" : locale === "en" ? "Directions" : "Cómo llegar"}</span>
         </a>
+        <button
+          type="button"
+          class="btn btn-sm btn-outline hero-btn-share"
+          data-open-modal="social-share-modal"
+          title={translations["services.share"] || "Compartir Negocio"}
+          aria-label={translations["services.share"] || "Compartir Negocio"}
+        >
+          <span>📤</span>
+          <span
+            >{
+              translations["services.share"] ||
+                (locale === "de" ? "Teilen" : locale === "en" ? "Share" : locale === "ca" ? "Compartir" : "Compartir")
+            }</span
+          >
+        </button>
         <FavoriteButton
           businessId={service.id}
           businessName={service.name}

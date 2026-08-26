@@ -6,6 +6,10 @@ export interface Props {
   title: string;
   lang?: string;
   description?: string;
+  image?: string;
+  ogType?: string;
+  canonicalUrl?: string;
+  twitterCard?: "summary" | "summary_large_image";
   jsonLd?: Record<string, any> | Array<Record<string, any>>;
 }
 
@@ -13,8 +17,33 @@ const {
   title,
   lang = "es",
   description = "Servicios Mallorca - Guía y directorio de los mejores servicios y profesionales en Mallorca",
+  image,
+  ogType = "website",
+  canonicalUrl,
+  twitterCard = "summary_large_image",
   jsonLd,
 } = Astro.props;
+
+const currentOrigin = Astro.url.origin || "https://serviciosmallorca.com";
+const pageCanonical = canonicalUrl || `${currentOrigin}${Astro.url.pathname}`;
+
+// Imagen absoluta para Open Graph y Twitter Cards
+let absoluteImageUrl = `${currentOrigin}/images/categories/gastronomia.svg`;
+if (image) {
+  if (image.startsWith("http://") || image.startsWith("https://")) {
+    absoluteImageUrl = image;
+  } else {
+    absoluteImageUrl = `${currentOrigin}${image.startsWith("/") ? image : `/${image}`}`;
+  }
+}
+
+const ogLocaleMap: Record<string, string> = {
+  es: "es_ES",
+  en: "en_GB",
+  ca: "ca_ES",
+  de: "de_DE",
+};
+const ogLocale = ogLocaleMap[lang] || "es_ES";
 
 const loadingText = lang === "en" ? "Loading..." : lang === "ca" ? "Carregant..." : "Cargando...";
 const loadingAria =
@@ -37,6 +66,22 @@ const shouldLoadAdSense =
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
+    <link rel="canonical" href={pageCanonical} />
+
+    <!-- Open Graph / Facebook / WhatsApp / Telegram Meta Tags -->
+    <meta property="og:site_name" content="Servicios Mallorca" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={pageCanonical} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:image" content={absoluteImageUrl} />
+    <meta property="og:locale" content={ogLocale} />
+
+    <!-- Twitter / X Meta Tags -->
+    <meta name="twitter:card" content={twitterCard} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={absoluteImageUrl} />
 
     <!-- Security meta tags -->
     <meta http-equiv="X-Content-Type-Options" content="nosniff" />

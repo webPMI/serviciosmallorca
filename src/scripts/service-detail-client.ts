@@ -45,35 +45,25 @@ export function initServiceDetailClient() {
     });
   });
 
-  // Share Service Button
-  const shareBtn = document.getElementById("share-service-btn");
-  if (shareBtn) {
-    shareBtn.addEventListener("click", async () => {
-      const title = shareBtn.getAttribute("data-service-title") || document.title;
-      const text = shareBtn.getAttribute("data-service-desc") || "";
-      const url = window.location.href;
-
-      if (navigator.share) {
-        try {
-          await navigator.share({ title, text, url });
-        } catch {
-          // Cancelled by user
-        }
-      } else {
-        try {
-          await navigator.clipboard.writeText(url);
-          const span = shareBtn.querySelector("span:last-child");
-          if (span) {
-            const orig = span.textContent;
-            span.textContent = "¡Enlace Copiado!";
-            setTimeout(() => {
-              span.textContent = orig;
-            }, 2000);
-          }
-        } catch {
-          // Fallback
+  // Open modals via data-open-modal
+  document.querySelectorAll("[data-open-modal]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const modalId = btn.getAttribute("data-open-modal");
+      if (modalId) {
+        const targetModal = document.getElementById(modalId);
+        if (targetModal) {
+          targetModal.style.display = "flex";
         }
       }
+    });
+  });
+
+  // Share Service Button Fallback
+  const shareBtn = document.getElementById("share-service-btn");
+  const shareModal = document.getElementById("social-share-modal");
+  if (shareBtn && shareModal) {
+    shareBtn.addEventListener("click", () => {
+      shareModal.style.display = "flex";
     });
   }
 

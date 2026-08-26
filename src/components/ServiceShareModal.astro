@@ -1,0 +1,625 @@
+---
+/**
+ * src/components/ServiceShareModal.astro
+ *
+ * 📤 Modal Interactivo de Alta Fidelidad para Compartir Negocios en Redes Sociales.
+ * Genera copys con formato enriquecido, descripción, emojis y hashtags inteligentes.
+ *
+ * Soporta WhatsApp, Twitter/X, Telegram, LinkedIn, Facebook, Email y Copia directa con 1-click.
+ */
+
+import type { ServiceItem } from "../data/services/types";
+import { generateSocialShareData } from "../lib/socialShareHelper";
+import type { Locale } from "../i18n";
+import { CATEGORIES } from "../data/categories";
+
+interface Props {
+  service: ServiceItem;
+  locale: Locale;
+  translations: Record<string, string>;
+  pageUrl?: string;
+}
+
+const { service, locale, translations, pageUrl = "" } = Astro.props;
+
+const category = CATEGORIES.find((c) => c.id === service.category);
+const categoryName = category?.name[locale] || service.category;
+const categoryIcon = category?.icon || "🌴";
+
+const shareData = generateSocialShareData(service, locale, pageUrl);
+
+// Traducciones locales para el modal
+const labels = {
+  title:
+    translations["services.shareModalTitle"] ||
+    (locale === "de"
+      ? "Diesen Eintrag teilen"
+      : locale === "en"
+        ? "Share this business"
+        : locale === "ca"
+          ? "Compartir aquest negoci"
+          : "Compartir este negocio"),
+  subtitle:
+    translations["services.shareModalSubtitle"] ||
+    (locale === "de"
+      ? "Empfehle dieses geprüfte Unternehmen mit Freunden oder in deinen Netzwerken."
+      : locale === "en"
+        ? "Recommend this verified business with friends or on your social networks."
+        : locale === "ca"
+          ? "Recomana aquest negoci verificat amb amics o a les teves xarxes."
+          : "Recomienda este negocio verificado con amigos o en tus redes sociales."),
+  previewTitle:
+    translations["services.sharePreview"] ||
+    (locale === "de"
+      ? "Vorschau des Beitrags"
+      : locale === "en"
+        ? "Post preview"
+        : locale === "ca"
+          ? "Previsualització de la publicació"
+          : "Vista previa del mensaje"),
+  copyPostBtn:
+    translations["services.copyFullPost"] ||
+    (locale === "de"
+      ? "Text mit Hashtags kopieren"
+      : locale === "en"
+        ? "Copy post with hashtags"
+        : locale === "ca"
+          ? "Copiar text amb hashtags"
+          : "Copiar texto con hashtags"),
+  copyLinkBtn:
+    translations["services.copyLink"] ||
+    (locale === "de"
+      ? "Link kopieren"
+      : locale === "en"
+        ? "Copy link"
+        : locale === "ca"
+          ? "Copiar enllaç"
+          : "Copiar enlace directo"),
+  nativeShareBtn:
+    translations["services.nativeShare"] ||
+    (locale === "de"
+      ? "Über dein Gerät teilen"
+      : locale === "en"
+        ? "Share via your device"
+        : locale === "ca"
+          ? "Compartir des del dispositiu"
+          : "Compartir con apps del móvil"),
+  copiedToast:
+    translations["services.copiedToast"] ||
+    (locale === "de"
+      ? "In die Zwischenablage kopiert!"
+      : locale === "en"
+        ? "Copied to clipboard!"
+        : locale === "ca"
+          ? "Copiat al porta-retalls!"
+          : "¡Copiado al portapapeles!"),
+};
+---
+
+<!-- MODAL CONTAINER -->
+<div
+  id="social-share-modal"
+  class="custom-modal-overlay"
+  style="display: none;"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="share-modal-title"
+>
+  <div class="custom-modal-card share-modal-card card-glass">
+    <!-- Header -->
+    <div class="modal-header-flex">
+      <div class="share-header-text">
+        <h3 id="share-modal-title" class="share-title-text">
+          <span class="share-icon-badge">📤</span>
+          <span>{labels.title}</span>
+        </h3>
+        <p class="modal-desc">{labels.subtitle}</p>
+      </div>
+      <button type="button" class="modal-close-btn" data-close-modal="social-share-modal" aria-label="Cerrar modal"
+        >&times;</button
+      >
+    </div>
+
+    <!-- Live Preview Card -->
+    <div class="share-preview-box">
+      <div class="share-preview-header">
+        <span class="preview-badge">{labels.previewTitle}</span>
+        <span class="preview-category">{categoryIcon} {categoryName}</span>
+      </div>
+      <div class="share-preview-content">
+        <div class="share-preview-headline">
+          <strong>{service.name}</strong>
+          {shareData.ratingText && <span class="preview-rating">{shareData.ratingText}</span>}
+        </div>
+        <p class="share-preview-desc">
+          {shareData.shortDescription || service.shortDescription?.es || "Servicio profesional verificado en Mallorca."}
+        </p>
+        <div class="share-preview-hashtags">
+          {shareData.hashtags.map((tag) => <span class="preview-tag">{tag}</span>)}
+        </div>
+      </div>
+    </div>
+
+    <!-- 1-Click Platform Grid -->
+    <div class="share-channels-title">
+      <span>Elige dónde compartir:</span>
+    </div>
+
+    <div class="share-platforms-grid">
+      <!-- WhatsApp -->
+      <a
+        href={shareData.shareUrls.whatsapp}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="share-platform-btn platform-whatsapp"
+        data-share-platform="whatsapp"
+        data-service-id={service.id}
+      >
+        <span class="platform-icon">💬</span>
+        <span class="platform-name">WhatsApp</span>
+      </a>
+
+      <!-- X / Twitter -->
+      <a
+        href={shareData.shareUrls.twitter}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="share-platform-btn platform-twitter"
+        data-share-platform="twitter"
+        data-service-id={service.id}
+      >
+        <span class="platform-icon">𝕏</span>
+        <span class="platform-name">Twitter / X</span>
+      </a>
+
+      <!-- Telegram -->
+      <a
+        href={shareData.shareUrls.telegram}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="share-platform-btn platform-telegram"
+        data-share-platform="telegram"
+        data-service-id={service.id}
+      >
+        <span class="platform-icon">✈️</span>
+        <span class="platform-name">Telegram</span>
+      </a>
+
+      <!-- LinkedIn -->
+      <a
+        href={shareData.shareUrls.linkedin}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="share-platform-btn platform-linkedin"
+        data-share-platform="linkedin"
+        data-service-id={service.id}
+      >
+        <span class="platform-icon">💼</span>
+        <span class="platform-name">LinkedIn</span>
+      </a>
+
+      <!-- Facebook -->
+      <a
+        href={shareData.shareUrls.facebook}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="share-platform-btn platform-facebook"
+        data-share-platform="facebook"
+        data-service-id={service.id}
+      >
+        <span class="platform-icon">📘</span>
+        <span class="platform-name">Facebook</span>
+      </a>
+
+      <!-- Email -->
+      <a
+        href={shareData.shareUrls.email}
+        class="share-platform-btn platform-email"
+        data-share-platform="email"
+        data-service-id={service.id}
+      >
+        <span class="platform-icon">✉️</span>
+        <span class="platform-name">Email</span>
+      </a>
+    </div>
+
+    <!-- Quick Copy Action Area -->
+    <div class="share-copy-actions">
+      <!-- Hidden Textarea for copying full text -->
+      <textarea id="share-full-text-source" class="visually-hidden" readonly tabindex="-1" aria-hidden="true"
+        >{shareData.fullShareText}</textarea
+      >
+
+      <!-- Copy Full Post (Description + Hashtags + Link) -->
+      <button
+        type="button"
+        id="copy-full-share-btn"
+        class="btn btn-primary btn-full share-action-btn"
+        data-service-id={service.id}
+      >
+        <span class="btn-icon">📋</span>
+        <span class="btn-text">{labels.copyPostBtn}</span>
+      </button>
+
+      <!-- Copy Clean URL -->
+      <button
+        type="button"
+        id="copy-url-share-btn"
+        class="btn btn-secondary btn-full share-action-btn"
+        data-share-url={pageUrl}
+        data-service-id={service.id}
+      >
+        <span class="btn-icon">🔗</span>
+        <span class="btn-text">{labels.copyLinkBtn}</span>
+      </button>
+
+      <!-- Native Device Share (Visible only if supported) -->
+      <button
+        type="button"
+        id="native-device-share-btn"
+        class="btn btn-outline btn-full share-action-btn"
+        style="display: none;"
+        data-share-title={shareData.nativeSharePayload.title}
+        data-share-text={shareData.nativeSharePayload.text}
+        data-share-url={shareData.nativeSharePayload.url}
+        data-service-id={service.id}
+      >
+        <span class="btn-icon">📲</span>
+        <span class="btn-text">{labels.nativeShareBtn}</span>
+      </button>
+    </div>
+
+    <!-- Feedback Toast Notice inside modal -->
+    <div id="share-modal-toast" class="share-modal-toast" style="display: none;">
+      <span>✅</span>
+      <span id="share-modal-toast-text">{labels.copiedToast}</span>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Base Modal Card Overrides for Share */
+  .share-modal-card {
+    max-width: 540px;
+    width: 95%;
+    padding: var(--space-lg, 1.5rem);
+    border-radius: var(--radius-xl, 16px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+  }
+
+  .share-header-text {
+    flex: 1;
+  }
+
+  .share-title-text {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0;
+    color: var(--color-text);
+  }
+
+  .share-icon-badge {
+    font-size: 1.3rem;
+  }
+
+  /* Live Preview Box */
+  .share-preview-box {
+    background: var(--color-surface-card, rgba(255, 255, 255, 0.04));
+    border: 1px solid var(--color-border, rgba(255, 255, 255, 0.1));
+    border-radius: var(--radius-md, 10px);
+    padding: 0.9rem;
+    margin: 1rem 0;
+    font-size: 0.88rem;
+    line-height: 1.45;
+  }
+
+  .share-preview-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--color-text-muted);
+  }
+
+  .preview-badge {
+    background: var(--color-primary-transparent, rgba(212, 175, 55, 0.15));
+    color: var(--color-primary, #d4af37);
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    font-weight: 700;
+  }
+
+  .share-preview-headline {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.35rem;
+    color: var(--color-text);
+  }
+
+  .preview-rating {
+    font-size: 0.8rem;
+    color: var(--color-accent, #e5a93c);
+    font-weight: 600;
+  }
+
+  .share-preview-desc {
+    margin: 0 0 0.5rem 0;
+    color: var(--color-text-light, rgba(255, 255, 255, 0.8));
+    font-size: 0.85rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .share-preview-hashtags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+  }
+
+  .preview-tag {
+    font-size: 0.75rem;
+    color: var(--color-primary, #d4af37);
+    background: rgba(212, 175, 55, 0.08);
+    padding: 0.1rem 0.4rem;
+    border-radius: 3px;
+    font-family: monospace;
+  }
+
+  .share-channels-title {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--color-text-muted);
+    margin-bottom: 0.6rem;
+  }
+
+  /* Grid de Plataformas */
+  .share-platforms-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.6rem;
+    margin-bottom: 1.2rem;
+  }
+
+  @media (max-width: 480px) {
+    .share-platforms-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .share-platform-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.65rem 0.5rem;
+    border-radius: var(--radius-md, 8px);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: #ffffff;
+    transition:
+      transform var(--transition-fast, 0.2s),
+      filter var(--transition-fast, 0.2s);
+    text-align: center;
+  }
+
+  .share-platform-btn:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+  }
+
+  .platform-whatsapp {
+    background: #25d366;
+    color: #ffffff !important;
+  }
+
+  .platform-twitter {
+    background: #111111;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff !important;
+  }
+
+  .platform-telegram {
+    background: #0088cc;
+    color: #ffffff !important;
+  }
+
+  .platform-linkedin {
+    background: #0a66c2;
+    color: #ffffff !important;
+  }
+
+  .platform-facebook {
+    background: #1877f2;
+    color: #ffffff !important;
+  }
+
+  .platform-email {
+    background: #4a5568;
+    color: #ffffff !important;
+  }
+
+  /* Acciones de Copia */
+  .share-copy-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .share-action-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+  }
+
+  /* Toast Feedback */
+  .share-modal-toast {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: #10b981;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.88rem;
+    padding: 0.6rem 1rem;
+    border-radius: var(--radius-md, 8px);
+    margin-top: 0.8rem;
+    animation: fadeInToast 0.25s ease-out;
+  }
+
+  @keyframes fadeInToast {
+    from {
+      opacity: 0;
+      transform: translateY(6px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
+</style>
+
+<script>
+  import { trackConversion } from "../lib/conversionTracking";
+
+  function initShareModal() {
+    const modal = document.getElementById("social-share-modal");
+    if (!modal) return;
+
+    const copyPostBtn = document.getElementById("copy-full-share-btn");
+    const copyUrlBtn = document.getElementById("copy-url-share-btn");
+    const nativeShareBtn = document.getElementById("native-device-share-btn");
+    const toast = document.getElementById("share-modal-toast");
+    const toastText = document.getElementById("share-modal-toast-text");
+    const fullTextSource = document.getElementById("share-full-text-source") as HTMLTextAreaElement | null;
+
+    let toastTimer: any = null;
+
+    function showToast(msg: string) {
+      if (!toast) return;
+      if (toastText) toastText.textContent = msg;
+      toast.style.display = "flex";
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
+        toast.style.display = "none";
+      }, 2500);
+    }
+
+    // Activar botón nativo si está soportado
+    if (navigator.share && nativeShareBtn) {
+      nativeShareBtn.style.display = "flex";
+    }
+
+    // Copiar Post Completo con Hashtags
+    if (copyPostBtn && fullTextSource) {
+      copyPostBtn.addEventListener("click", async () => {
+        const text = fullTextSource.value || "";
+        const serviceId = copyPostBtn.getAttribute("data-service-id") || "";
+        try {
+          await navigator.clipboard.writeText(text);
+          showToast("¡Texto con hashtags copiado al portapapeles! 📋");
+          if (serviceId) trackConversion(serviceId, "share_click", { type: "copy_full_post" });
+        } catch {
+          // Fallback selección manual
+          fullTextSource.select();
+          document.execCommand("copy");
+          showToast("¡Texto copiado! 📋");
+        }
+      });
+    }
+
+    // Copiar Solo URL
+    if (copyUrlBtn) {
+      copyUrlBtn.addEventListener("click", async () => {
+        const url = copyUrlBtn.getAttribute("data-share-url") || window.location.href;
+        const serviceId = copyUrlBtn.getAttribute("data-service-id") || "";
+        try {
+          await navigator.clipboard.writeText(url);
+          showToast("¡Enlace directo copiado! 🔗");
+          if (serviceId) trackConversion(serviceId, "share_click", { type: "copy_url" });
+        } catch {
+          // Fallback
+        }
+      });
+    }
+
+    // Compartir Nativo de Dispositivo
+    if (nativeShareBtn) {
+      nativeShareBtn.addEventListener("click", async () => {
+        const title = nativeShareBtn.getAttribute("data-share-title") || document.title;
+        const text = nativeShareBtn.getAttribute("data-share-text") || "";
+        const url = nativeShareBtn.getAttribute("data-share-url") || window.location.href;
+        const serviceId = nativeShareBtn.getAttribute("data-service-id") || "";
+
+        if (navigator.share) {
+          try {
+            await navigator.share({ title, text, url });
+            if (serviceId) trackConversion(serviceId, "share_click", { type: "native_share" });
+          } catch {
+            // Usuario canceló
+          }
+        }
+      });
+    }
+
+    // Tracking de clicks en enlaces de plataformas
+    document.querySelectorAll<HTMLAnchorElement>("[data-share-platform]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const platform = btn.getAttribute("data-share-platform") || "unknown";
+        const serviceId = btn.getAttribute("data-service-id") || "";
+        if (serviceId) {
+          trackConversion(serviceId, "share_click", { platform });
+        }
+      });
+    });
+
+    // Cerrar modal con ESC
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && modal.style.display !== "none") {
+        modal.style.display = "none";
+      }
+    });
+
+    // Cerrar al pulsar en el overlay
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.style.display = "none";
+      }
+    });
+  }
+
+  // Inicializar en carga y en navegaciones Astro
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initShareModal);
+  } else {
+    initShareModal();
+  }
+  document.addEventListener("astro:page-load", initShareModal);
+</script>

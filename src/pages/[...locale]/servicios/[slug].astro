@@ -25,6 +25,7 @@ import SmartMatchRecommendations from "../../../components/SmartMatchRecommendat
 import BusinessQualityFeedbackModal from "../../../components/BusinessQualityFeedbackModal.astro";
 import ServiceSidebarContact from "../../../components/ServiceSidebarContact.astro";
 import ServiceClaimDeleteModals from "../../../components/ServiceClaimDeleteModals.astro";
+import ServiceShareModal from "../../../components/ServiceShareModal.astro";
 
 import { getServiceById } from "../../../data/services";
 import { CATEGORIES } from "../../../data/categories";
@@ -65,7 +66,14 @@ const canonicalUrl = `${Astro.url.origin}${Astro.url.pathname}`;
 const schemaOrg = generateServiceJsonLd(service, locale, canonicalUrl);
 ---
 
-<BaseLayout title={seoTitle} lang={locale} description={seoDescription}>
+<BaseLayout
+  title={seoTitle}
+  lang={locale}
+  description={seoDescription}
+  image={service.image}
+  canonicalUrl={canonicalUrl}
+  ogType="business.business"
+>
   <!-- Schema.org for Local SEO & LLM Ingestion -->
   <script is:inline type="application/ld+json" set:html={JSON.stringify(schemaOrg)} />
 
@@ -98,8 +106,9 @@ const schemaOrg = generateServiceJsonLd(service, locale, canonicalUrl);
           service={service}
           category={category}
           zone={zone}
+          categoryName={categoryName}
+          zoneName={zoneName}
           locale={locale}
-          translations={translations}
         />
 
         <ServiceDescription service={service} locale={locale} />
@@ -150,6 +159,9 @@ const schemaOrg = generateServiceJsonLd(service, locale, canonicalUrl);
 
     <!-- Modals (Claim Ownership, Delete Request, Report Error) -->
     <ServiceClaimDeleteModals service={service} translations={translations} />
+
+    <!-- Modal Social Share Enriquecido -->
+    <ServiceShareModal service={service} locale={locale} translations={translations} pageUrl={canonicalUrl} />
 
     <!-- Mobile Sticky Conversion Bar -->
     <ServiceMobileStickyBar service={service} locale={locale} translations={translations} />
