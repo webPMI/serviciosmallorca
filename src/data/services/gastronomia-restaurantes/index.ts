@@ -45,6 +45,16 @@ import { restauranteZaranda } from "./restaurante-zaranda.ts";
 import { restauranteMacaDeCastro } from "./restaurante-maca-de-castro.ts";
 import { restauranteAndreuGenestra } from "./restaurante-andreu-genestra.ts";
 import { restauranteToquePalma } from "./restaurante-toque-palma.ts";
+import { restauranteOlaDelMar } from "./restaurante-ola-del-mar.ts";
+import { restauranteEmilioInnobar } from "./restaurante-emilio-innobar.ts";
+import { restauranteDukePalma } from "./restaurante-duke-palma.ts";
+import { restauranteRitziPortals } from "./restaurante-ritzi-portals.ts";
+import { restauranteBaibenPortals } from "./restaurante-baiben-portals.ts";
+import { restauranteCoastByEast } from "./restaurante-coast-by-east.ts";
+import { restauranteMarDeNudos } from "./restaurante-mar-de-nudos.ts";
+import { restauranteAromataPalma } from "./restaurante-aromata-palma.ts";
+import { restauranteStagierBar } from "./restaurante-stagier-bar.ts";
+import { restauranteLasTerrazasBendinat } from "./restaurante-las-terrazas-bendinat.ts";
 
 export {
   restauranteToquePalma,
@@ -93,6 +103,16 @@ export {
   restauranteZaranda,
   restauranteMacaDeCastro,
   restauranteAndreuGenestra,
+  restauranteOlaDelMar,
+  restauranteEmilioInnobar,
+  restauranteDukePalma,
+  restauranteRitziPortals,
+  restauranteBaibenPortals,
+  restauranteCoastByEast,
+  restauranteMarDeNudos,
+  restauranteAromataPalma,
+  restauranteStagierBar,
+  restauranteLasTerrazasBendinat,
 };
 
 /**
@@ -146,4 +166,14 @@ export const RESTAURANT_SERVICES: ServiceItem[] = [
   restauranteMacaDeCastro,
   restauranteAndreuGenestra,
   restauranteToquePalma,
+  restauranteOlaDelMar,
+  restauranteEmilioInnobar,
+  restauranteDukePalma,
+  restauranteRitziPortals,
+  restauranteBaibenPortals,
+  restauranteCoastByEast,
+  restauranteMarDeNudos,
+  restauranteAromataPalma,
+  restauranteStagierBar,
+  restauranteLasTerrazasBendinat,
 ];
