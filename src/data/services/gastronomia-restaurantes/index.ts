@@ -88,8 +88,14 @@ import { restauranteGolfAlcanada } from "./restaurante-golf-alcanada.ts";
 import { laCantinaClubNauticCalaRatjada } from "./la-cantina-club-nautic-cala-ratjada.ts";
 import { canNofrePalma } from "./can-nofre-palma.ts";
 import { cellerSaTravessa } from "./celler-sa-travessa-inca.ts";
+import { bodegasAngelSantaMaria } from "./bodegas-angel-santa-maria.ts";
+import { sieteFuegosSantaPonsa } from "./siete-fuegos-santa-ponsa.ts";
+import { canCostaValldemossa } from "./can-costa-valldemossa.ts";
 
 export {
+  bodegasAngelSantaMaria,
+  sieteFuegosSantaPonsa,
+  canCostaValldemossa,
   laCantinaClubNauticCalaRatjada,
   canNofrePalma,
   cellerSaTravessa,
@@ -275,4 +281,7 @@ export const RESTAURANT_SERVICES: ServiceItem[] = [
   laCantinaClubNauticCalaRatjada,
   canNofrePalma,
   cellerSaTravessa,
+  bodegasAngelSantaMaria,
+  sieteFuegosSantaPonsa,
+  canCostaValldemossa,
 ];
