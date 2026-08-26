@@ -40,6 +40,7 @@ export const MALLORCA_ZONES: MallorcaZone[] = [
       "Coll d'en Rabassa",
       "Can Pastilla",
       "Paseo Marítimo",
+      "El Molinar",
     ],
   },
   {

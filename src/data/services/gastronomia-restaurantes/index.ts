@@ -163,8 +163,14 @@ import { bodegasCanAxartellPollenca } from "./bodegas-can-axartell-pollenca.ts";
 import { restauranteCnSEstanyol } from "./restaurante-cn-s-estanyol.ts";
 import { cellerSaPlacaLloseta } from "./celler-sa-placa-lloseta.ts";
 import { bodegasMesquidaMoraPorreres } from "./bodegas-mesquida-mora-porreres.ts";
+import { restauranteAgapantoPortSoller } from "./restaurante-agapanto-port-soller.ts";
+import { cellerCanCarrossaLloseta } from "./celler-can-carrossa-lloseta.ts";
+import { bodegasAvaViSencelles } from "./bodegas-ava-vi-sencelles.ts";
 
 export {
+  restauranteAgapantoPortSoller,
+  cellerCanCarrossaLloseta,
+  bodegasAvaViSencelles,
   restauranteCnSEstanyol,
   cellerSaPlacaLloseta,
   bodegasMesquidaMoraPorreres,
@@ -500,4 +506,7 @@ export const RESTAURANT_SERVICES: ServiceItem[] = [
   restauranteCnSEstanyol,
   cellerSaPlacaLloseta,
   bodegasMesquidaMoraPorreres,
+  restauranteAgapantoPortSoller,
+  cellerCanCarrossaLloseta,
+  bodegasAvaViSencelles,
 ];
