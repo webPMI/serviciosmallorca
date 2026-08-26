@@ -91,8 +91,14 @@ import { cellerSaTravessa } from "./celler-sa-travessa-inca.ts";
 import { bodegasAngelSantaMaria } from "./bodegas-angel-santa-maria.ts";
 import { sieteFuegosSantaPonsa } from "./siete-fuegos-santa-ponsa.ts";
 import { canCostaValldemossa } from "./can-costa-valldemossa.ts";
+import { bodegasVinyesMortitx } from "./bodegas-vinyes-mortitx.ts";
+import { bodegaBarahonaCasaManolo } from "./bodega-barahona-casa-manolo.ts";
+import { restauranteClubNauticArenal } from "./restaurante-club-nautic-arenal.ts";
 
 export {
+  bodegasVinyesMortitx,
+  bodegaBarahonaCasaManolo,
+  restauranteClubNauticArenal,
   bodegasAngelSantaMaria,
   sieteFuegosSantaPonsa,
   canCostaValldemossa,
@@ -284,4 +290,7 @@ export const RESTAURANT_SERVICES: ServiceItem[] = [
   bodegasAngelSantaMaria,
   sieteFuegosSantaPonsa,
   canCostaValldemossa,
+  bodegasVinyesMortitx,
+  bodegaBarahonaCasaManolo,
+  restauranteClubNauticArenal,
 ];

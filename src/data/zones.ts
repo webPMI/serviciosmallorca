@@ -104,6 +104,7 @@ export const MALLORCA_ZONES: MallorcaZone[] = [
       "Colònia de Sant Jordi",
       "Cala Figuera",
       "Portocolom",
+      "S'Arenal",
     ],
   },
   {
