@@ -139,8 +139,14 @@ import { bodegasCanFeliuPorreres } from "./bodegas-can-feliu-porreres.ts";
 import { restauranteCnColoniaSantPere } from "./restaurante-cn-colonia-sant-pere.ts";
 import { cellerSonToreoSineu } from "./celler-son-toreo-sineu.ts";
 import { bodegasSonPuigPuigpunyent } from "./bodegas-son-puig-puigpunyent.ts";
+import { restauranteClubNauticPortitxol } from "./restaurante-club-nautic-portitxol.ts";
+import { cellerSaSiniSantaMaria } from "./celler-sa-sini-santa-maria.ts";
+import { bodegasOliverMoraguesAlgaida } from "./bodegas-oliver-moragues-algaida.ts";
 
 export {
+  restauranteClubNauticPortitxol,
+  cellerSaSiniSantaMaria,
+  bodegasOliverMoraguesAlgaida,
   restauranteCnColoniaSantPere,
   cellerSonToreoSineu,
   bodegasSonPuigPuigpunyent,
@@ -428,4 +434,7 @@ export const RESTAURANT_SERVICES: ServiceItem[] = [
   restauranteCnColoniaSantPere,
   cellerSonToreoSineu,
   bodegasSonPuigPuigpunyent,
+  restauranteClubNauticPortitxol,
+  cellerSaSiniSantaMaria,
+  bodegasOliverMoraguesAlgaida,
 ];
