@@ -151,8 +151,14 @@ import { bodegasCondeDeSuyrotColoniaSantPere } from "./bodegas-conde-de-suyrot-c
 import { restauranteCnCanPicafort } from "./restaurante-cn-can-picafort.ts";
 import { cellerSaFondaMuro } from "./celler-sa-fonda-muro.ts";
 import { bodegasEsVergerEsporles } from "./bodegas-es-verger-esporles.ts";
+import { restauranteYachtClubCalaDor } from "./restaurante-yacht-club-cala-dor.ts";
+import { cellerCanFontSineu } from "./celler-can-font-sineu.ts";
+import { bodegasSonCampanerSencelles } from "./bodegas-son-campaner-sencelles.ts";
 
 export {
+  restauranteYachtClubCalaDor,
+  cellerCanFontSineu,
+  bodegasSonCampanerSencelles,
   restauranteCnCanPicafort,
   cellerSaFondaMuro,
   bodegasEsVergerEsporles,
@@ -464,4 +470,7 @@ export const RESTAURANT_SERVICES: ServiceItem[] = [
   restauranteCnCanPicafort,
   cellerSaFondaMuro,
   bodegasEsVergerEsporles,
+  restauranteYachtClubCalaDor,
+  cellerCanFontSineu,
+  bodegasSonCampanerSencelles,
 ];
