@@ -86,7 +86,16 @@ export const MALLORCA_ZONES: MallorcaZone[] = [
       ca: "Santanyí & Migjorn (Sud-est)",
       de: "Santanyí & Migjorn (Südosten)",
     },
-    popularAreas: ["Santanyí", "Cala d'Or", "Porto Petro", "Ses Salines", "Campos", "Llucmajor"],
+    popularAreas: [
+      "Santanyí",
+      "Cala d'Or",
+      "Porto Petro",
+      "Ses Salines",
+      "Campos",
+      "Llucmajor",
+      "Colònia de Sant Jordi",
+      "Cala Figuera",
+    ],
   },
   {
     id: "raiguer-pla",

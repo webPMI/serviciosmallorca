@@ -77,8 +77,12 @@ import { bodegasVinsMiquelGelabert } from "./bodegas-vins-miquel-gelabert.ts";
 import { caNantunaFornalutx } from "./ca-nantuna-fornalutx.ts";
 import { fetASollerFabricaGelats } from "./fet-a-soller-fabrica-gelats.ts";
 import { esVergerAlaro } from "./es-verger-alaro.ts";
+import { cassaiBeachHouse } from "./cassai-beach-house-colonia-sant-jordi.ts";
+import { puraVidaCalaFiguera } from "./pura-vida-cala-figuera.ts";
 
 export {
+  cassaiBeachHouse,
+  puraVidaCalaFiguera,
   esVergerAlaro,
   caNantunaFornalutx,
   fetASollerFabricaGelats,
@@ -242,4 +246,6 @@ export const RESTAURANT_SERVICES: ServiceItem[] = [
   caNantunaFornalutx,
   fetASollerFabricaGelats,
   esVergerAlaro,
+  cassaiBeachHouse,
+  puraVidaCalaFiguera,
 ];
