@@ -100,8 +100,14 @@ import { saCuinaDeNainaSencelles } from "./sa-cuina-de-naina-sencelles.ts";
 import { canPintxoSoller } from "./can-pintxo-soller.ts";
 import { canMarchManacor } from "./can-march-manacor.ts";
 import { bodegasBordoyLlucmajor } from "./bodegas-bordoy-llucmajor.ts";
+import { canTorratPlayaPalma } from "./can-torrat-playa-palma.ts";
+import { canJoanDeSAigoPalma } from "./can-joan-de-saigo-palma.ts";
+import { saTorreSantaEugenia } from "./sa-torre-santa-eugenia.ts";
 
 export {
+  canTorratPlayaPalma,
+  canJoanDeSAigoPalma,
+  saTorreSantaEugenia,
   canPintxoSoller,
   canMarchManacor,
   bodegasBordoyLlucmajor,
@@ -311,4 +317,7 @@ export const RESTAURANT_SERVICES: ServiceItem[] = [
   canPintxoSoller,
   canMarchManacor,
   bodegasBordoyLlucmajor,
+  canTorratPlayaPalma,
+  canJoanDeSAigoPalma,
+  saTorreSantaEugenia,
 ];
