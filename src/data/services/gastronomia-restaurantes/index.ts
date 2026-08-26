@@ -85,8 +85,14 @@ import { bodegaCanVidalet } from "./bodega-can-vidalet-pollensa.ts";
 import { losPatosPlayaMuro } from "./los-patos-playa-muro.ts";
 import { caNignasiInca } from "./ca-nignasi-inca.ts";
 import { restauranteGolfAlcanada } from "./restaurante-golf-alcanada.ts";
+import { laCantinaClubNauticCalaRatjada } from "./la-cantina-club-nautic-cala-ratjada.ts";
+import { canNofrePalma } from "./can-nofre-palma.ts";
+import { cellerSaTravessa } from "./celler-sa-travessa-inca.ts";
 
 export {
+  laCantinaClubNauticCalaRatjada,
+  canNofrePalma,
+  cellerSaTravessa,
   losPatosPlayaMuro,
   caNignasiInca,
   restauranteGolfAlcanada,
@@ -266,4 +272,7 @@ export const RESTAURANT_SERVICES: ServiceItem[] = [
   losPatosPlayaMuro,
   caNignasiInca,
   restauranteGolfAlcanada,
+  laCantinaClubNauticCalaRatjada,
+  canNofrePalma,
+  cellerSaTravessa,
 ];
