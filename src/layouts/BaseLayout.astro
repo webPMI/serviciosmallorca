@@ -49,9 +49,9 @@ const loadingText = lang === "en" ? "Loading..." : lang === "ca" ? "Carregant...
 const loadingAria =
   lang === "en" ? "Loading application" : lang === "ca" ? "Carregant aplicació" : "Cargando aplicación";
 
-const isAdSenseEnabled = import.meta.env.PUBLIC_ENABLE_ADSENSE === "true";
+const isAdSenseDisabled = import.meta.env.PUBLIC_ENABLE_ADSENSE === "false";
 const shouldLoadAdSense =
-  isAdSenseEnabled &&
+  !isAdSenseDisabled &&
   import.meta.env.PROD &&
   !Astro.url.hostname.includes("localhost") &&
   !Astro.url.hostname.includes("127.0.0.1");
