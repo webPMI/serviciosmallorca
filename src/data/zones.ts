@@ -93,7 +93,17 @@ export const MALLORCA_ZONES: MallorcaZone[] = [
       ca: "Manacor & Llevant (Est)",
       de: "Manacor & Llevant (Osten)",
     },
-    popularAreas: ["Manacor", "Porto Cristo", "Cala Millor", "Cala Ratjada", "Artà", "Capdepera", "Canyamel"],
+    popularAreas: [
+      "Manacor",
+      "Porto Cristo",
+      "Cala Millor",
+      "Cala Ratjada",
+      "Artà",
+      "Capdepera",
+      "Canyamel",
+      "Son Servera",
+      "Cala Bona",
+    ],
   },
   {
     id: "santanyi-migjorn",
@@ -136,6 +146,7 @@ export const MALLORCA_ZONES: MallorcaZone[] = [
       "Sencelles",
       "Santa Eugènia",
       "Algaida",
+      "Llubí",
     ],
   },
 ];

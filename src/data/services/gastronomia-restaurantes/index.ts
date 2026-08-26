@@ -109,8 +109,14 @@ import { bodegasCanMajoralAlgaida } from "./bodegas-can-majoral-algaida.ts";
 import { barEspanyaPalma } from "./bar-espanya-palma.ts";
 import { bodegasCanColetoPetra } from "./bodegas-can-coleto-petra.ts";
 import { restauranteClubNauticSaRapita } from "./restaurante-club-nautic-sa-rapita.ts";
+import { restauranteSonFlorianaCalaBona } from "./restaurante-son-floriana-cala-bona.ts";
+import { restauranteClubNauticPortocolom } from "./restaurante-club-nautic-portocolom.ts";
+import { bodegasSonRamonLlubi } from "./bodegas-son-ramon-llubi.ts";
 
 export {
+  restauranteSonFlorianaCalaBona,
+  restauranteClubNauticPortocolom,
+  bodegasSonRamonLlubi,
   barEspanyaPalma,
   bodegasCanColetoPetra,
   restauranteClubNauticSaRapita,
@@ -338,4 +344,7 @@ export const RESTAURANT_SERVICES: ServiceItem[] = [
   barEspanyaPalma,
   bodegasCanColetoPetra,
   restauranteClubNauticSaRapita,
+  restauranteSonFlorianaCalaBona,
+  restauranteClubNauticPortocolom,
+  bodegasSonRamonLlubi,
 ];
