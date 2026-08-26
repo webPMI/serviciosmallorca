@@ -37,6 +37,7 @@ export const MALLORCA_ZONES: MallorcaZone[] = [
       "Ciutat Jardí",
       "Platja de Palma",
       "Cala Gamba",
+      "Coll d'en Rabassa",
     ],
   },
   {

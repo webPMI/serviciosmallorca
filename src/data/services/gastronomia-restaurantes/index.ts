@@ -124,8 +124,14 @@ import { bodegasRamanyaSantaMaria } from "./bodegas-ramanya-santa-maria.ts";
 import { restauranteSaRoquetaPortixol } from "./restaurante-sa-roqueta-portixol.ts";
 import { cellerElMoliPollenca } from "./celler-el-moli-pollenca.ts";
 import { bodegasJaumeDePuntiroSantaMaria } from "./bodegas-jaume-de-puntiro-santa-maria.ts";
+import { restauranteEsCanyisPortSoller } from "./restaurante-es-canyis-port-soller.ts";
+import { bodegasTiannaNegreBinissalem } from "./bodegas-tianna-negre-binissalem.ts";
+import { restauranteElPenon1957Palma } from "./restaurante-el-penon-1957-palma.ts";
 
 export {
+  restauranteEsCanyisPortSoller,
+  bodegasTiannaNegreBinissalem,
+  restauranteElPenon1957Palma,
   restauranteSaRoquetaPortixol,
   cellerElMoliPollenca,
   bodegasJaumeDePuntiroSantaMaria,
@@ -383,4 +389,7 @@ export const RESTAURANT_SERVICES: ServiceItem[] = [
   restauranteSaRoquetaPortixol,
   cellerElMoliPollenca,
   bodegasJaumeDePuntiroSantaMaria,
+  restauranteEsCanyisPortSoller,
+  bodegasTiannaNegreBinissalem,
+  restauranteElPenon1957Palma,
 ];
