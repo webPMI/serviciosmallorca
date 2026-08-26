@@ -37,3 +37,13 @@ jobs:
 
       - name: 🏗️ Execute Production Build Smoke Test (GR-10)
         run: npm run build
+
+      - name: 🚀 Deploy to Cloudflare Workers (Auto-Deploy on Main Push)
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push' && env.CLOUDFLARE_API_TOKEN != ''
+        uses: cloudflare/wrangler-action@v3
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID || 'dbd535725cc4f3bc69288909ae46b920' }}
+          command: deploy
