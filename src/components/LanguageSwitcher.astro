@@ -122,7 +122,13 @@ const cleanPath = rawPath.replace(/^\/+/, "");
         const href = target.getAttribute("href") || "";
         const match = href.match(/^\/(es|en|ca|de)(\/|$)/);
         if (match && match[1]) {
-          document.cookie = `locale=${match[1]}; path=/; max-age=31536000; SameSite=Lax`;
+          const selectedLocale = match[1];
+          document.cookie = `locale=${selectedLocale}; path=/; max-age=31536000; SameSite=Lax`;
+          try {
+            localStorage.setItem("preferred_locale", selectedLocale);
+          } catch {
+            // Ignore localStorage quota errors
+          }
         }
       });
     });
@@ -133,4 +139,5 @@ const cleanPath = rawPath.replace(/^\/+/, "");
   } else {
     setupLanguageCookie();
   }
+  document.addEventListener("astro:page-load", setupLanguageCookie);
 </script>

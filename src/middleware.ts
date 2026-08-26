@@ -22,11 +22,11 @@ const SECURITY_HEADERS: Record<string, string> = {
 
 // Private routes whose responses should never be cached by browsers/CDNs
 const PRIVATE_ROUTE_PATTERNS = [
-  /\/(es|en|ca)\/dashboard/,
-  /\/(es|en|ca)\/profile/,
-  /\/(es|en|ca)\/login/,
-  /\/(es|en|ca)\/register/,
-  /\/(es|en|ca)\/forgot-password/,
+  /\/(es|en|ca|de)\/dashboard/,
+  /\/(es|en|ca|de)\/profile/,
+  /\/(es|en|ca|de)\/login/,
+  /\/(es|en|ca|de)\/register/,
+  /\/(es|en|ca|de)\/forgot-password/,
 ];
 
 export const onRequest = defineMiddleware(async (context, next) => {
