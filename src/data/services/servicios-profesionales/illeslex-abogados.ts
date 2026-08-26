@@ -66,11 +66,13 @@ export const illeslexAbogados: ServiceItem = {
     es: "Bufete de abogados y asesores fiscales en Palma especializado en derecho inmobiliario, urbanismo balear, sucesiones y fiscalidad internacional.",
     en: "Palma law and tax consulting firm specialized in real estate law, Balearic zoning, international taxation, and wealth planning.",
     ca: "Despatx d'advocats i assessors fiscals a Palma especialitzat en dret immobiliari, urbanisme balear, successions i fiscalitat internacional.",
+    de: "Renommierte Rechts- und Steuerkanzlei in Palma – umfassende juristische Beratung für internationale Immobilieninvestoren.",
   },
   fullDescription: {
     es: "Illeslex Abogados es una firma jurídica y tributaria de referencia en las Islas Baleares con sede en el centro financiero de Palma. Con más de 20 años de práctica ininterrumpida, el despacho asesora a particulares, inversores extranjeros y empresas en operaciones de compraventa de inmuebles de alto valor, licencias urbanísticas en suelo rústico y urbano, fiscalidad para no residentes, herencias transfronterizas y derecho societario. Su equipo de letrados y economistas presta servicio fluido en español, inglés, alemán, catalán, francés y holandés.",
     en: "Illeslex Abogados is a leading legal and tax practice based in central Palma de Mallorca. With over two decades of excellence, the firm assists international private clients and corporations navigating complex real estate acquisitions, urban planning regulations, non-resident tax liabilities, cross-border inheritance, and corporate restructuring across the Balearic Islands.",
     ca: "Illeslex Abogados és un despatx jurídic i fiscal de referència a Palma amb més de vint anys d'experiència en transaccions immobiliàries d'alt valor, llicències urbanístiques, fiscalitat de no residents i planificació d'herències a les Illes Balears.",
+    de: "Illeslex Abogados bietet hochspezialisierte Rechtsberatung für ausländische Privatpersonen und Firmen auf Mallorca. Mit über 20 Jahren Erfahrung deckt die Kanzlei Immobilienrecht, Stadtplanungsrecht, Steueroptimierung und Zivilrecht ab.",
   },
   specialties: {
     es: [
@@ -94,6 +96,7 @@ export const illeslexAbogados: ServiceItem = {
       "Herències i successions transfrontereres",
       "Dret mercantil i societari",
     ],
+    de: ["Immobilien- & Baurecht", "Stadtplanung & Baulizenzen", "Steuerrecht", "Zivil- & Gesellschaftsrecht"],
   },
   highlights: {
     es: [
@@ -113,6 +116,12 @@ export const illeslexAbogados: ServiceItem = {
       "Assessorament especialitzat en 6 idiomes europeus",
       "Equip multidisciplinari d'advocats col·legiats i economistes",
       "Ubicació cèntrica al costat del Passeig del Born a Palma",
+    ],
+    de: [
+      "Über 20 Jahre juristische Erfahrung im balearischen Immobilien- und Baurecht",
+      "Fokus auf deutsche, britische und internationale Mandanten",
+      "Zentraler Kanzleisitz im Bankenviertel von Palma",
+      "Anerkannt für Gründlichkeit, Verhandlungskompetenz und Diskretion",
     ],
   },
   servicesProvided: {
@@ -134,6 +143,12 @@ export const illeslexAbogados: ServiceItem = {
       "Liquidació d'imposts de no residents i patrimoni",
       "Redacció de contractes i acompanyament a notaria",
     ],
+    de: [
+      "Rechtliche Begleitung beim Erwerb von Villen, Fincas und Grundstücken",
+      "Bau- und Lizenzprüfungen bei Sanierungen und Neubauten",
+      "Steuerberatung für Residenten und Nicht-Residenten",
+      "Erbrechtliche Beratung und Nachlassregelungen",
+    ],
   },
   foundedYear: 2002,
   founderName: "Javier Blas & Fina Méndez",
@@ -149,6 +164,7 @@ export const illeslexAbogados: ServiceItem = {
         es: "Socio Director / Abogado",
         en: "Managing Partner / Attorney",
         ca: "Soci Director / Advocat",
+        de: "Partner & Fachanwalt für Immobilienrecht",
       },
       specialty: "Derecho Inmobiliario y Urbanismo Balear",
     },

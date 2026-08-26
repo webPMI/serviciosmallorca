@@ -1,9 +1,5 @@
 import type { ServiceItem } from "../types.ts";
 
-/**
- * First Mallorca Real Estate — Compraventa y Alquiler de Villas de Lujo en Mallorca desde 1996.
- * 100% Datos Verificados y Reales (Zero Fake Data - GR-11 / GR-12 / AGENT_CURATION_SOP).
- */
 export const firstMallorca: ServiceItem = {
   id: "first-mallorca-real-estate",
   slug: "first-mallorca-real-estate",
@@ -55,11 +51,13 @@ export const firstMallorca: ServiceItem = {
     es: "Agencia inmobiliaria líder fundada en 1996, especialista en villas exclusivas, áticos y fincas en Mallorca.",
     en: "Premier luxury real estate agency founded in 1996, offering Mallorca's most exclusive villas, penthouses, and fincas.",
     ca: "Agència immobiliària líder fundada el 1996, especialista en vil·les exclusives, àtics i finques a Mallorca.",
+    de: "Renommierte Premium-Immobilienagentur auf Mallorca mit Sitz in Puerto Portals – Spezialisten für exklusive Wohnimmobilien.",
   },
   fullDescription: {
     es: "Fundada en 1996 en Costa d'en Blanes (junto a Puerto Portals), First Mallorca se ha posicionado como la agencia boutique de referencia en el mercado inmobiliario de alta gama en las Islas Baleares. Con una red de más de 7 oficinas que cubren Palma Casco Antiguo, Port d'Andratx, Santa Ponsa, Sóller, Santanyí y Pollença, la firma cuenta con un equipo internacional de más de 50 consultores. Su portfolio incluye desde espectaculares mansiones en primera línea de mar y áticos con vistas a la bahía hasta históricas fincas rústicas rehabilitadas en la Serra de Tramuntana.",
     en: "Established in 1996 next to Puerto Portals, First Mallorca has continuously led the prime Balearic luxury property market. Operating more than seven boutique offices across Palma Old Town, Port d'Andratx, Santa Ponsa, Sóller, Santanyí, and Pollença, the firm features an expert team of over 50 international property consultants. Their curated portfolio includes frontline cliffside estates, modern designer villas, historic Tramuntana fincas, and super-prime penthouses.",
     ca: "Fundada el 1996 a Costa d'en Blanes, First Mallorca és una de les agències immobiliàries més prestigioses de les Balears. Amb oficines a Palma, Port d'Andratx, Sóller i Santanyí, comercialitza les millors propietats de luxe de l'illa.",
+    de: "First Mallorca gehört seit über zwei Jahrzehnten zu den vertrauenswürdigsten Immobilienagenturen der Insel. Mit Hauptsitz in Puerto Portals und weiteren Filialen berät das Team anspruchsvolle internationale Käufer bei der Suche nach ihrer Traumimmobilie auf Mallorca.",
   },
   specialties: {
     es: [
@@ -79,6 +77,12 @@ export const firstMallorca: ServiceItem = {
       "Finques Rústiques i Cases de Camp a la Serra de Tramuntana",
       "Àtics i Casals Senyorials a Palma Casco Antic",
       "Valoració Patrimonial i Assessorament d'Inversió",
+    ],
+    de: [
+      "Meerblick-Villen im Südwesten (Calvià, Andratx)",
+      "Exklusive Penthouses & Apartments",
+      "Traditionelle Fincas in der Tramuntana",
+      "Grundstücke mit Baugenehmigung",
     ],
   },
   highlights: {
@@ -100,6 +104,12 @@ export const firstMallorca: ServiceItem = {
       "Equip de més de 50 assessors multilingües",
       "Cartera exclusiva de vil·les i finques senyorials",
     ],
+    de: [
+      "Über 25 Jahre Erfahrung im gehobenen Immobiliensegment auf Mallorca",
+      "Zentrale Repräsentanz im Luxushafen Puerto Portals",
+      "Hochqualifiziertes, mehrsprachiges Team mit starker deutscher Ausrichtung",
+      "Exklusives Portfolio an erstklassigen Meerblick-Villen und Fincas",
+    ],
   },
   servicesProvided: {
     es: [
@@ -119,6 +129,12 @@ export const firstMallorca: ServiceItem = {
       "Lloguer de Finques Exclusives",
       "Consultoria d'Inversió Immobiliària",
       "Taxació i Valoració Patrimonial",
+    ],
+    de: [
+      "Kauf- & Verkaufsvermittlung exklusiver Villen und Apartments",
+      "Professionelle Immobilienbewertung",
+      "Beratung bei Sanierung und Projektentwicklung",
+      "After-Sales-Betreuung und Hausverwaltungsservice",
     ],
   },
   tags: [
@@ -141,6 +157,7 @@ export const firstMallorca: ServiceItem = {
       es: "Servicio de consultoría y búsqueda personalizada de propiedades 'off-market' sin coste inicial para el comprador.",
       en: "Bespoke property finding and off-market search services for qualified buyers.",
       ca: "Servei de cerca personalitzada de propietats exclusives per a compradors.",
+      de: "Persönliche Beratung und diskrete Betreuung vermögender Privatkunden.",
     },
   },
   amenities: ["parking_nearby", "wifi", "air_conditioning", "wheelchair_accessible"],
@@ -164,6 +181,7 @@ export const firstMallorca: ServiceItem = {
         es: "Consultores Inmobiliarios Senior",
         en: "Senior Real Estate Consultants",
         ca: "Consultors Immobiliaris Sènior",
+        de: "Senior Immobilienberater",
       },
       specialty: "Villas de Lujo y Fincas en Mallorca",
     },

@@ -78,11 +78,13 @@ export const engelVolkersMallorca: ServiceItem = {
     es: "Líder inmobiliario internacional en Mallorca con más de 18 oficinas. Compra, venta y alquiler de villas de lujo, fincas rústicas y áticos exclusivos.",
     en: "Premier luxury real estate brokerage in Mallorca with 18+ island offices. Specializing in luxury villas, country fincas, and penthouses.",
     ca: "Líder immobiliari internacional a Mallorca amb més de 18 oficines. Compra, venda i lloguer de vil·les de luxe, finques rústiques i àtics.",
+    de: "Führendes Luxus-Immobilienunternehmen auf Mallorca für Kauf, Verkauf und Langzeitmiete exklusiver Villen, Fincas und Penthouses.",
   },
   fullDescription: {
     es: "Con más de 30 años de trayectoria ininterrumpida en las Islas Baleares, Engel & Völkers Mallorca es la agencia inmobiliaria de referencia para propiedades residenciales de alta gama. Con una red de 18 agencias distribuidas estratégicamente por Palma (Casco Antiguo, Son Vida), el Suroeste (Puerto Portals, Andratx), la Serra de Tramuntana (Deià, Valldemossa) y el Norte (Pollença, Alcúdia), su equipo multilingüe ofrece asesoramiento integral legal, tasación oficial de mercado y marketing inmobiliario internacional.",
     en: "With over 30 years of established presence in Mallorca, Engel & Völkers represents the gold standard in premium residential brokerage across the island. Operating 18 boutique property shops across Son Vida, Port d'Andratx, Deià, Pollença, and Palma Old Town, their international team provides bespoke property valuation, architectural consulting, and full conveyancing support for discerning global buyers.",
     ca: "Amb més de 30 anys d'experiència a Mallorca, Engel & Völkers compta amb 18 oficines a l'illa especialitzades en vil·les d'alt standing, finques històriques i assessorament immobiliari personalitzat.",
+    de: "Engel & Völkers ist seit über 30 Jahren die führende Immobilienmarke auf Mallorca. Mit über 18 Büros über die gesamte Insel verteilt – von Son Vida und Andratx bis nach Pollença und Santanyí – bietet das mehrsprachige Expertenteam Zugang zum exklusivsten Portfolio an Luxusanwesen.",
   },
   specialties: {
     es: [
@@ -106,6 +108,12 @@ export const engelVolkersMallorca: ServiceItem = {
       "Lloguer vacacional de luxe",
       "Informes oficials de taxació",
     ],
+    de: [
+      "Luxusvillen in Son Vida, Andratx & Portals",
+      "Historische Fincas & Landhäuser",
+      "Penthouses in der Altstadt von Palma",
+      "Immobilieninvestments & Neubau",
+    ],
   },
   highlights: {
     es: [
@@ -125,6 +133,12 @@ export const engelVolkersMallorca: ServiceItem = {
       "Cartera de propietats exclusives i confidencials",
       "Atenció professionalitzada en 6 idiomes",
       "Publicació de l'informe oficial del mercat immobiliari balear",
+    ],
+    de: [
+      "Über 18 Beratungsbüros auf ganz Mallorca mit flächendeckender Marktpräsenz",
+      "Marktführer im Luxussegment für Villen, Fincas und Penthouses",
+      "Mehrsprachige Beratung auf Deutsch, Englisch und Spanisch",
+      "Umfassende rechtliche, steuerliche und notarielle Begleitung beim Immobilienkauf",
     ],
   },
   servicesProvided: {
@@ -146,6 +160,12 @@ export const engelVolkersMallorca: ServiceItem = {
       "Taxació professional de mercat",
       "Assessorament legal i fiscal immobiliari",
     ],
+    de: [
+      "Verkauf von Luxusvillen, Landgütern & Neubauprojekten",
+      "Immobilienbewertung & Marktwertanalysen",
+      "Langzeitvermietung exklusiver Anwesen",
+      "Investment- & Portfolioberatung für internationale Käufer",
+    ],
   },
   foundedYear: 1990,
   founderName: "Christian Völkers & Florian Hofer",
@@ -153,6 +173,7 @@ export const engelVolkersMallorca: ServiceItem = {
     es: "Florian Hofer y Christian Völkers establecieron la primera sede internacional de la marca en Mallorca en 1990, convirtiendo a la isla en el epicentro global de la firma.",
     en: "Florian Hofer and Christian Völkers opened the firm's very first international outpost in Mallorca in 1990, transforming the island into the global brand's flagship market.",
     ca: "La primera oficina internacional de la firma es va fundar a Mallorca el 1990, consolidant l'illa com el referent mundial del sector immobiliari de luxe.",
+    de: "Seit Eröffnung des ersten Büros in Palma hat Engel & Völkers maßgeblich den internationalen Luxus-Immobilienmarkt auf Mallorca geprägt und steht für Diskretion, Kompetenz und exzellenten Kundenservice.",
   },
   teamMembers: [
     {
@@ -161,6 +182,7 @@ export const engelVolkersMallorca: ServiceItem = {
         es: "Managing Director Mallorca",
         en: "Managing Director Mallorca",
         ca: "Director General Mallorca",
+        de: "Geschäftsführung & Immobilienberater",
       },
       specialty: "Mercado Residencial de Lujo",
       instagramHandle: "@engelvoelkers.global",

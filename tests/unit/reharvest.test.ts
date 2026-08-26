@@ -34,7 +34,7 @@ describe("Catalog Re-Harvesting and Smart Merge Engine", () => {
     faqs: [],
     foundedYear: 2018,
     founderName: "Joan",
-    founderStory: { es: "Historia auténtica", en: "", ca: "" },
+    founderStory: { es: "Historia auténtica", en: "", ca: "", de: "" },
     reputationBreakdown: {
       googleMaps: { rating: 4.8, reviewCount: 45, url: "https://maps.google.com" },
       totalReviewsAggregated: 45,
@@ -55,10 +55,10 @@ describe("Catalog Re-Harvesting and Smart Merge Engine", () => {
     email: "info@test.com",
     website: "https://restaurantetest.com",
     tags: ["zona:palma"],
-    shortDescription: { es: "Cocina tradicional", en: "", ca: "" },
-    fullDescription: { es: "Descripción extensa y curada manualmente.", en: "", ca: "" },
-    highlights: { es: ["Pescado fresco"], en: [], ca: [] },
-    servicesProvided: { es: ["Cenas"], en: [], ca: [] },
+    shortDescription: { es: "Cocina tradicional", en: "", ca: "", de: "" },
+    fullDescription: { es: "Descripción extensa y curada manualmente.", en: "", ca: "", de: "" },
+    highlights: { es: ["Pescado fresco"], en: [], ca: [], de: [] },
+    servicesProvided: { es: ["Cenas"], en: [], ca: [], de: [] },
     image: "https://test.com/foto.jpg",
     gallery: [],
     schedule: "Lun - Dom: 13:00 - 23:00",
@@ -103,7 +103,7 @@ describe("Catalog Re-Harvesting and Smart Merge Engine", () => {
 
   it("preserves manual curated descriptions and founder stories", () => {
     const harvestedTemplate = {
-      shortDescription: { es: "Sobrescritura automatica", en: "", ca: "" },
+      shortDescription: { es: "Sobrescritura automatica", en: "", ca: "", de: "" },
       confidenceScore: 85,
     };
 

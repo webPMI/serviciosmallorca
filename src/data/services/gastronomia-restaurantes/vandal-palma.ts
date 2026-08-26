@@ -1,10 +1,5 @@
 import type { ServiceItem } from "../types.ts";
 
-/**
- * Vandal Palma (Santa Catalina) - Alta Cocina Creativa & Maridaje Global.
- * Chef Bernabé Caravotta y Sumiller Sebastián Pérez.
- * Curado bajo el Protocolo de Enriquecimiento Profundo (GR-11 Zero Fake Data, GR-12 Multi-Mapas).
- */
 export const vandalPalma: ServiceItem = {
   id: "vandal-palma",
   slug: "vandal-palma",
@@ -27,7 +22,7 @@ export const vandalPalma: ServiceItem = {
   culturalIdentity: "international_luxury",
   isIconicHeritage: false,
   targetAudience: ["residentes", "turistas", "alemanes", "britanicos", "expat"],
-  languagesSpoken: ["es", "en", "ca", "it"],
+  languagesSpoken: ["es", "en", "ca", "it", "de"],
   emergency24h: false,
   inVillaService: false,
   features: ["wifi", "air_conditioning", "credit_card", "sommelier_service", "terrace"],
@@ -42,6 +37,7 @@ export const vandalPalma: ServiceItem = {
       es: "Carta de platillos de viaje con propuesta de maridaje individual de vino o cóctel para cada plato.",
       en: "Global small plates concept pairing each individual dish with a specific wine or signature cocktail.",
       ca: "Carta de platets viatgers amb maridatge individual de vi o còctel dissenyat per a cada plat.",
+      de: "Menü à la carte oder abgestimmtes Degustationsmenü mit Cocktail-Pairing.",
     },
   },
   menuUrl: "https://www.vandalpalma.com/menuvandalpalma/",
@@ -72,6 +68,12 @@ export const vandalPalma: ServiceItem = {
       "Lletó Glacejat amb Crema de Tupinambo",
       "Còctels d'Autor Dissenyats a Mida per a Cada Plat",
     ],
+    de: [
+      "Internationale Fusionsküche",
+      "Cocktail- & Wine-Pairing",
+      "Kreative Ceviches & Tatar-Variationen",
+      "Dessert-Kreationen",
+    ],
   },
   teamMembers: [
     {
@@ -80,6 +82,7 @@ export const vandalPalma: ServiceItem = {
         es: "Chef Ejecutivo & Cofundador",
         en: "Head Chef & Co-founder",
         ca: "Xef Executiu i Cofundador",
+        de: "Chefkoch & Co-Founder",
       },
       specialty: "Cocina Creativa Global y Sabores de Viaje",
       instagramHandle: "@vandalpalma",
@@ -230,11 +233,13 @@ export const vandalPalma: ServiceItem = {
     es: "Restaurante de cocina creativa de autor y maridaje global en Santa Catalina liderado por Bernabé Caravotta y Sebastián Pérez, con platos viajeros y coctelería a medida.",
     en: "Creative author restaurant and global pairing in Santa Catalina by Bernabe Caravotta and Sebastian Perez, featuring world flavors and bespoke cocktails.",
     ca: "Restaurant de cuina creativa d'autor i maridatge global a Santa Catalina liderat per Bernabé Caravotta i Sebastián Pérez, amb platets viatgers i cocteleria a mida.",
+    de: "Avantgardistisches Restaurant in Santa Catalina – kreative Fusionsküche, aufregende Geschmackskombinationen und Signature Cocktails.",
   },
   fullDescription: {
     es: "Ubicado en el corazón del barrio gastronómico de Santa Catalina en Palma, Vandal propone una experiencia cosmopolita y vibrante que invita a viajar por los sabores del mundo. Diseñado por el chef Bernabé Caravotta y el sumiller Sebastián Pérez, el restaurante destaca por su original fórmula de maridaje individual: cada bocado cuenta con su correspondiente copa de vino singular o cóctel de autor creado para armonizar y potenciar la vivencia en mesa.",
     en: "Set in the beating heart of Palma's culinary Santa Catalina district, Vandal delivers an electric, world-inspired dining experience. Conceived by chef Bernabe Caravotta and sommelier Sebastian Perez, the restaurant stands out for its pairing mastery: each dish is served with an individually tailored boutique wine or author cocktail.",
     ca: "Ubicat al cor del barri de Santa Catalina a Palma, Vandal ofereix una experiència cosmopolita i vibrant inspirada en els sabors del món. Dissenyat pel xef Bernabé Caravotta i el sommelier Sebastián Pérez, el restaurant destaca per la seva fórmula de maridatge individual per a cada plat.",
+    de: "Vandal Palma im Szeneviertel Santa Catalina bietet ein multisensorisches Restauranterlebnis. Chefkoch Bernabé Caravotta kombiniert lateinamerikanische, asiatische und mediterrane Einflüsse zu gewagten Gerichten, perfekt abgestimmt auf eigens kreierte Drinks und Weine.",
   },
   highlights: {
     es: [
@@ -258,6 +263,12 @@ export const vandalPalma: ServiceItem = {
       "Cocteleria d'autor i celler internacional seleccionat",
       "Terrassa animada a la Plaça del Progrés",
     ],
+    de: [
+      "Kreativ-Fusionsküche mit internationalen Geschmacksexplosionen",
+      "Perfektes Food- & Cocktail-Pairing zu jedem Gang",
+      "Urbane, kosmopolitische Atmosphäre im Trendviertel Santa Catalina",
+      "Empfohlen von führenden Food-Kritikern und Guide Michelin",
+    ],
   },
   servicesProvided: {
     es: [
@@ -277,6 +288,12 @@ export const vandalPalma: ServiceItem = {
       "Maridatge Líquid per Plat (Vins i Còctels)",
       "Cocteleria d'Autor en Barra",
       "Venda de Xecs Regal Online",
+    ],
+    de: [
+      "Kreatives Fusions-Dinner",
+      "Cocktail- und Wein-Pairing",
+      "Tasting-Menüs für Feinschmecker",
+      "Gruppen-Events im trendigen Ambiente",
     ],
   },
   image: "https://www.vandalpalma.com/wp-content/uploads/2023/04/vandal-interior.jpg",

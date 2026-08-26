@@ -1,0 +1,246 @@
+---
+import { getSmartMatchCrossSell, type SmartMatchRecommendation } from "../lib/smartMatchEngine";
+import type { ServiceItem } from "../data/services/types";
+import { CATEGORIES } from "../data/categories";
+import type { Locale } from "../i18n";
+
+interface Props {
+  currentService: ServiceItem;
+  currentLocale: Locale;
+  getLangPrefix: (locale: Locale) => string;
+  limit?: number;
+}
+
+const { currentService, currentLocale, getLangPrefix, limit = 3 } = Astro.props;
+const prefix = getLangPrefix(currentLocale);
+
+const recommendations: SmartMatchRecommendation[] = getSmartMatchCrossSell(currentService, limit, currentLocale);
+
+if (recommendations.length === 0) {
+  return null;
+}
+---
+
+<section class="smart-match-section card card-glass" id="smart-match-recommendations">
+  <div class="smart-match-header">
+    <div class="badge badge-primary">⚡ Smart-Match Mallorca</div>
+    <h3 class="smart-match-title">
+      {
+        currentLocale === "de"
+          ? "Passende Empfehlungen in der Umgebung"
+          : currentLocale === "en"
+            ? "Complementary Recommendations Nearby"
+            : currentLocale === "ca"
+              ? "Recomanacions a prop del teu pla"
+              : "Combina tu Visita: Recomendaciones de Proximidad"
+      }
+    </h3>
+    <p class="smart-match-subtitle">
+      {
+        currentLocale === "de"
+          ? "Handverlesene und geprüfte Dienstleister in unmittelbarer Nähe für ein perfektes Erlebnis."
+          : currentLocale === "en"
+            ? "Top-rated verified local services nearby to complete your day in Mallorca."
+            : currentLocale === "ca"
+              ? "Serveis verificats d'alta puntuació per complementar la teva experiència."
+              : "Servicios complementarios verificados y cercanos seleccionados para una experiencia perfecta."
+      }
+    </p>
+  </div>
+
+  <div class="smart-match-grid">
+    {
+      recommendations.map((rec) => {
+        const cat = CATEGORIES.find((c) => c.id === rec.service.category);
+        const catName = cat?.name[currentLocale] || rec.service.category;
+
+        return (
+          <article class="rec-card card hover-lift">
+            <div class="rec-media">
+              <img src={rec.service.image} alt={rec.service.name} class="rec-img" loading="lazy" decoding="async" />
+              {rec.formattedDistance && <span class="rec-dist-badge">📍 {rec.formattedDistance}</span>}
+            </div>
+
+            <div class="rec-body">
+              <div class="rec-meta">
+                <span class="rec-cat">
+                  {cat?.icon} {catName}
+                </span>
+                <span class="rec-rating">⭐ {rec.service.rating ? rec.service.rating.toFixed(1) : "5.0"}</span>
+              </div>
+
+              <h4 class="rec-name">
+                <a href={`${prefix}servicios/${rec.service.slug}`}>{rec.service.name}</a>
+              </h4>
+
+              <div class="rec-reason-box">
+                <span class="reason-label">
+                  💡{" "}
+                  {currentLocale === "de"
+                    ? "Warum passend?"
+                    : currentLocale === "en"
+                      ? "Why this match?"
+                      : currentLocale === "ca"
+                        ? "Per què combina?"
+                        : "¿Por qué combina?"}
+                </span>
+                <p class="reason-text">{rec.crossSellReason[currentLocale] || rec.crossSellReason.es}</p>
+              </div>
+
+              <a href={`${prefix}servicios/${rec.service.slug}`} class="btn btn-secondary btn-sm rec-btn">
+                <span>
+                  {currentLocale === "de"
+                    ? "Details ansehen ↗"
+                    : currentLocale === "en"
+                      ? "View Details ↗"
+                      : currentLocale === "ca"
+                        ? "Veure fitxa ↗"
+                        : "Ver Ficha ↗"}
+                </span>
+              </a>
+            </div>
+          </article>
+        );
+      })
+    }
+  </div>
+</section>
+
+<style>
+  .smart-match-section {
+    margin-top: var(--space-2xl);
+    padding: var(--space-xl);
+  }
+
+  .smart-match-header {
+    margin-bottom: var(--space-lg);
+  }
+
+  .smart-match-title {
+    font-size: var(--font-size-2xl);
+    margin: var(--space-xs) 0;
+    color: var(--color-text);
+  }
+
+  .smart-match-subtitle {
+    font-size: var(--font-size-base);
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+
+  .smart-match-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+    gap: var(--space-md);
+  }
+
+  .rec-card {
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--color-surface-border);
+  }
+
+  .rec-media {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: var(--color-surface-hover);
+    overflow: hidden;
+  }
+
+  .rec-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  .rec-card:hover .rec-img {
+    transform: scale(1.04);
+  }
+
+  .rec-dist-badge {
+    position: absolute;
+    bottom: 0.5rem;
+    right: 0.5rem;
+    background: rgba(0, 0, 0, 0.75);
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.2rem 0.5rem;
+    border-radius: var(--border-radius-full);
+    backdrop-filter: blur(6px);
+  }
+
+  .rec-body {
+    padding: var(--space-md);
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 0.4rem;
+  }
+
+  .rec-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.75rem;
+  }
+
+  .rec-cat {
+    font-weight: 700;
+    color: var(--color-primary);
+  }
+
+  .rec-rating {
+    font-weight: 700;
+    color: var(--color-text);
+  }
+
+  .rec-name {
+    font-size: 1.05rem;
+    margin: 0;
+  }
+
+  .rec-name a {
+    color: var(--color-text);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+  }
+
+  .rec-name a:hover {
+    color: var(--color-primary);
+  }
+
+  .rec-reason-box {
+    background: rgba(64, 145, 108, 0.08);
+    border: 1px dashed var(--color-primary-border);
+    border-radius: var(--border-radius-sm);
+    padding: 0.4rem 0.6rem;
+    margin-top: 0.2rem;
+  }
+
+  .reason-label {
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    display: block;
+    margin-bottom: 0.1rem;
+  }
+
+  .reason-text {
+    font-size: 0.78rem;
+    color: var(--color-text);
+    margin: 0;
+    line-height: 1.35;
+  }
+
+  .rec-btn {
+    margin-top: auto;
+    text-align: center;
+    justify-content: center;
+  }
+</style>

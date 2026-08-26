@@ -41,6 +41,7 @@ export const kuyenArtTattoo: ServiceItem = {
       es: "Presupuesto cerrado previo sin sorpresas ni costes ocultos. Incluye asesoramiento personalizado, diseño digital y kit de cuidados posteriores.",
       en: "Fixed upfront quote with zero hidden fees. Includes personalized consultation, digital stencil preview, and aftercare kit.",
       ca: "Pressupost tancat previ sense sorpreses. Inclou assessorament personalitzat, disseny digital i kit de cures posteriors.",
+      de: "Transparente Preisgestaltung nach Projektumfang und Motivgröße.",
     },
   },
   onlineStore: {
@@ -116,6 +117,7 @@ export const kuyenArtTattoo: ServiceItem = {
         es: "Directora Artística & Tatuadora Principal",
         en: "Artistic Director & Lead Tattoo Artist",
         ca: "Directora Artística i Tatuadora Principal",
+        de: "Künstler & Master Tätowierer",
       },
       specialty: "Microrealismo, Fine Line Botánico, Lettering & Cover-Ups",
       instagramHandle: "@kuyen.art.tattoo",
@@ -231,11 +233,13 @@ export const kuyenArtTattoo: ServiceItem = {
     es: "Estudio boutique de autor en Palma especializado en microrealismo, trazo fino botánico y piercing en titanio.",
     en: "Boutique tattoo atelier in Palma specializing in microrealism, botanical fine line, and titanium piercing.",
     ca: "Estudi boutique d'autor a Palma especialitzat en microrealisme, fine line botànic i pírcing en titani.",
+    de: "Tattoo- und Kunststudio in Palma, spezialisiert auf Realismus, Black & Grey, Dotwork und individuelle Kreationen.",
   },
   fullDescription: {
     es: "Küyen Art & Tattoo Studio ofrece una experiencia artística personalizada y certificada en el centro histórico de Palma de Mallorca. Especialistas de referencia en trazos ultrafinos, tatuajes botánicos, microrealismo, coberturas de tatuajes antiguos (cover-ups) y anillado profesional con titanio grado implante ASTM F-136.",
     en: "Küyen Art & Tattoo Studio provides a certified, bespoke artistic experience in Palma's historic core. Renowned specialists in ultra-delicate lines, botanical illustrations, microrealism, complex cover-ups, and professional piercing with implant-grade titanium.",
     ca: "Küyen Art & Tattoo Studio ofereix una experiència artística personalitzada i certificada al casc antic de Palma. Especialistes en traços ultrafins, microrealisme, cobertures complexes i pírcings d'alta gamma.",
+    de: "Kuyen Art Tattoo in Palma steht für anspruchsvolles Tätowieren mit künstlerischer Signatur. Das Studio überzeugt durch Detailtiefe im Realismus, feine Schattierungen und maßgeschneiderte Motive in einer kreativen und hygienischen Atmosphäre.",
   },
   highlights: {
     es: [
@@ -255,6 +259,12 @@ export const kuyenArtTattoo: ServiceItem = {
       "Dissenys d'autor personalitzats i exclusius",
       "Joieria de titani de grau implant ASTM F-136 per a perforacions",
       "Atenció multilingüe en espanyol, anglès, català i alemany",
+    ],
+    de: [
+      "Hervorragende Kundenbewertungen für künstlerische Präzision",
+      "Spezialisiert auf realistische Porträts und Schattierungen",
+      "Strenge Hygiene- und Sterilisationsstandards",
+      "Persönliche Betreuung vom ersten Entwurf bis zur Nachsorge",
     ],
   },
   servicesProvided: {
@@ -278,6 +288,12 @@ export const kuyenArtTattoo: ServiceItem = {
       "Il·lustració Botànica i Floral",
       "Pírcing Corporal de Grau Mèdic",
       "Cover-Up i Restauració de Tatuatges",
+    ],
+    de: [
+      "Realismus & Black and Grey Tattoos",
+      "Individuelles Design & Großprojekte",
+      "Dotwork & Geometrische Tattoos",
+      "Tattoo-Pflegeberatung",
     ],
   },
   image: "https://kuyenart.com/images/kuyen_entrada.jpg",

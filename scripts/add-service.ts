@@ -282,7 +282,7 @@ export async function addServices(itemsToAdd: Partial<ServiceItem>[]): Promise<v
       email: item.email || `info@${slug}.com`,
       website: item.website || "",
       targetAudience: item.targetAudience || ["residentes", "turistas", "expat"],
-      languagesSpoken: item.languagesSpoken || ["es", "en", "ca"],
+      languagesSpoken: item.languagesSpoken || ["es", "en", "ca", "de"],
       emergency24h: item.emergency24h ?? false,
       inVillaService: item.inVillaService ?? false,
       features: item.features || ["wifi", "air_conditioning", "credit_card"],

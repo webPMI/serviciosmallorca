@@ -34,7 +34,20 @@ npm run dev
 
 ## Estructura de Desarrollo
 
-### Flujo Git recomendado
+### Flujo Git y Sincronización Obligatoria (GR-14)
+
+> ⚠️ **REGLA DE ORO GR-14 (Pre-Flight Git Fetch):** Si han transcurrido varias horas (> 12 horas o al iniciar una nueva jornada), es **OBLIGATORIO** verificar si el repositorio remoto en GitHub (`origin/main`) avanzó antes de editar o curar nuevos servicios en local.
+
+```bash
+# 1. Comprobar estado remoto sin alterar tu árbol de trabajo
+git fetch origin
+git status
+
+# 2. Si origin/main tiene nuevos commits (behind), actualizar antes de editar:
+git pull origin main
+```
+
+Flujo estándar de ramas:
 
 ```
 main ← feature/nombre ← PR → review → merge

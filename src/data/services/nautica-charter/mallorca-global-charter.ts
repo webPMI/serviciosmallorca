@@ -81,11 +81,13 @@ export const mallorcaGlobalCharter: ServiceItem = {
     es: "Alquiler exclusivo de yates de lujo, lanchas a motor y catamaranes en Puerto Portals y Palma. Salidas privadas con patrón profesional y experiencias a medida.",
     en: "Exclusive luxury yacht charter, motorboats, and catamarans in Puerto Portals and Palma. Bespoke private day charters with certified skippers.",
     ca: "Lloguer exclusiu de iots de luxe, llanxes i catamarans a Puerto Portals i Palma. Eixides privades a mida amb patró professional.",
+    de: "Exklusiver Yachtcharter-Dienstleister in Puerto Portals und Palma – Luxusmotoryachten, Segelkatamarane und Eventcharter.",
   },
   fullDescription: {
     es: "Mallorca Global Charter es una compañía de referencia en Baleares para el alquiler de embarcaciones exclusivas. Con base principal en el prestigioso Puerto Portals y amarres en el Paseo Marítimo de Palma, gestiona una flota moderna de yates a motor, lanchas semirrígidas de alta velocidad y catamaranes para eventos privados. Su servicio incluye rutas personalizadas hacia las calas vírgenes de Cabrera, Es Trenc y la costa de la Serra de Tramuntana, servicio de catering gourmet a bordo y juguetes acuáticos de última generación (Seabob, snorkel, paddle surf).",
     en: "Mallorca Global Charter is a leading yacht charter company in the Balearics, operating from the prestigious marina of Puerto Portals and Palma harbor. Offering an immaculate fleet of luxury motor yachts, day boats, and spacious catamarans, they specialize in tailor-made coastal itineraries to Cabrera National Park, Es Trenc, and the Tramuntana cliffs, complete with gourmet onboard catering and premium water toys.",
     ca: "Mallorca Global Charter és una empresa de referència a les Balears per al lloguer d'embarcacions exclusives amb base a Puerto Portals i Palma. Ofereix rutes personalitzades cap a cales verges, servei de càtering gurmet a bord i patrons professionals titulats.",
+    de: "Mallorca Global Charter bietet maßgeschneiderte Chartererlebnisse auf den Balearen. Mit einer handverlesenen Flotte modernster Yachten, erfahrenen Kapitänen und individuellem Bordservice werden Traumtörns zu den schönsten Buchten Mallorcas, Ibizas und Formenteras wahr.",
   },
   specialties: {
     es: [
@@ -109,6 +111,12 @@ export const mallorcaGlobalCharter: ServiceItem = {
       "Excursions al Parc Nacional de Cabrera",
       "Esports aquàtics d'última generació",
     ],
+    de: [
+      "Luxus-Motoryachten",
+      "Katamaran-Charter",
+      "Privattörns nach Cabrera & Dragonera",
+      "Wassersport & Seabob-Verleih",
+    ],
   },
   highlights: {
     es: [
@@ -128,6 +136,12 @@ export const mallorcaGlobalCharter: ServiceItem = {
       "Amarratges preferents a Puerto Portals i Palma",
       "Patrons locals amb més de 15 anys d'experiència a les Balears",
       "Atenció multilingüe i contractació directa sense comissions ocultes",
+    ],
+    de: [
+      "Große Auswahl an modernen Motoryachten und Katamaranen (12 bis 35 Meter)",
+      "Liegeplätze in renommierten Marinas wie Puerto Portals und Club de Mar Palma",
+      "Kompletter Service inklusive Bord-Catering, Wassersport-Equipment und Skipper",
+      "Individuelle Routenplanung für Tagesausflüge und Wochentörns",
     ],
   },
   servicesProvided: {
@@ -149,6 +163,12 @@ export const mallorcaGlobalCharter: ServiceItem = {
       "Catamarans per a celebracions i esdeveniments",
       "Trasllats marítims VIP entre Mallorca i Eivissa",
     ],
+    de: [
+      "Tages- und Wochen-Yachtcharter mit Crew",
+      "Katamaran-Ausflüge für private Feiern und Firmenveranstaltungen",
+      "Vermietung von Wasserspielzeugen (Seabob, E-Foil, Stand-Up Paddle)",
+      "VIP-Catering und Sommelier-Service an Bord",
+    ],
   },
   teamMembers: [
     {
@@ -157,6 +177,7 @@ export const mallorcaGlobalCharter: ServiceItem = {
         es: "Director de Operaciones Náuticas",
         en: "Fleet Operations Director",
         ca: "Director d'Operacions Nàutiques",
+        de: "Charter Broker & Kapitän",
       },
       specialty: "Navegación Balear y Seguridad Marítima",
       instagramHandle: "@mallorcaglobalcharter",

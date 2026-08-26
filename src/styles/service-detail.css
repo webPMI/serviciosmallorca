@@ -119,25 +119,28 @@
   background: var(--glass-bg);
   backdrop-filter: var(--glass-backdrop);
   -webkit-backdrop-filter: var(--glass-backdrop);
-  border-top: 1px solid var(--color-surface-border);
-  border-bottom: 1px solid var(--color-surface-border);
-  margin-left: calc(-1 * var(--space-md));
-  margin-right: calc(-1 * var(--space-md));
-  padding: 0.5rem var(--space-md);
+  border: 1px solid var(--color-surface-border);
+  border-radius: var(--border-radius-full);
+  padding: 0.35rem 0.6rem;
   margin-bottom: var(--space-lg);
   box-shadow: var(--shadow-sm);
   transition: all var(--transition-fast);
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .quick-nav-scroll {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.4rem;
   overflow-x: auto;
   overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none; /* Firefox */
-  padding-bottom: 2px;
+  padding: 2px 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .quick-nav-scroll::-webkit-scrollbar {
@@ -148,11 +151,11 @@
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  padding: 0.4rem 0.85rem;
+  padding: 0.35rem 0.75rem;
   background: var(--color-surface);
   border: 1px solid var(--color-surface-border);
   border-radius: var(--border-radius-full);
-  font-size: 0.825rem;
+  font-size: 0.8rem;
   font-weight: 600;
   color: var(--color-text-light);
   white-space: nowrap;
@@ -179,7 +182,7 @@
    ========================================================================== */
 .detail-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
   gap: var(--space-xl);
   align-items: start;
   width: 100%;
@@ -196,14 +199,18 @@
 .detail-content {
   min-width: 0;
   width: 100%;
+  max-width: 100%;
   display: flex;
   flex-direction: column;
   gap: var(--space-lg);
+  box-sizing: border-box;
 }
 
 .detail-sidebar {
   min-width: 0;
   width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .sticky-card {
@@ -437,12 +444,16 @@
   gap: 0.75rem;
   padding-top: var(--space-md);
   border-top: 1px solid var(--color-surface-border);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .info-row {
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .info-label {
@@ -458,13 +469,19 @@
   align-items: center;
   justify-content: space-between;
   gap: 0.5rem;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 .info-val {
   font-size: 0.9rem;
   font-weight: 500;
   color: var(--color-text);
+  overflow-wrap: anywhere;
   word-break: break-word;
+  min-width: 0;
+  flex: 1;
 }
 
 .btn-copy-info {

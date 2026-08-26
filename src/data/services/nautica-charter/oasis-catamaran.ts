@@ -1,9 +1,5 @@
 import type { ServiceItem } from "../types.ts";
 
-/**
- * Oasis Catamarán Palma — Experiencias marítimas de autor y chárter en Mallorca.
- * 100% Datos Verificados y Reales (Zero Fake Data - GR-11 / GR-12 / AGENT_CURATION_SOP).
- */
 export const oasisCatamaran: ServiceItem = {
   id: "oasis-catamaran-palma",
   slug: "oasis-catamaran-palma",
@@ -55,11 +51,13 @@ export const oasisCatamaran: ServiceItem = {
     es: "Navegación exclusiva a vela por la bahía de Palma y calas vírgenes con barbacoa a bordo y paddle surf.",
     en: "Exclusive sailing catamaran charters across Palma Bay and secluded coves with onboard BBQ and paddle surfing.",
     ca: "Navegació exclusiva a vela per la badia de Palma i cales verges amb barbacoa a bord i paddle surf.",
+    de: "Stilvoller Segelkatamaran in Palma für exklusive Privattörns und stilvolle Gruppen-Ausflüge in die Bucht von Palma.",
   },
   fullDescription: {
     es: "Oasis Catamarán es el referente en excursiones marítimas prémium y chárter privado en la bahía de Palma. Zarpando desde el Muelle de Golondrinas, frente al Auditòrium de Palma, sus catamaranes a vela de diseño ofrecen una experiencia de navegación silenciosa, sostenible y espaciosa hacia las aguas cristalinas de Cala Blava, Cap Rocat y la Reserva Marina de Palma. Cada salida incluye material de snorkel, tablas de stand-up paddle surf y una cuidada gastronomía mediterránea preparada al momento a bordo con carnes selectas a la parrilla, ensaladas frescas mallorquinas y barra libre de bebidas.",
     en: "Oasis Catamaran is the premier luxury sailing and private charter experience in Palma Bay. Departing from Muelle de Golondrinas in front of Palma Auditorium, their designer sailing catamarans offer a smooth, eco-conscious, and spacious voyage to the turquoise waters of Cala Blava, Cap Rocat, and the Marine Reserve. Every trip includes top-tier snorkeling gear, stand-up paddle boards, and fresh Mediterranean cuisine grilled on board, featuring local meats, vibrant Mallorcan salads, and open bar service.",
     ca: "Oasis Catamarà és el referent en excursions marítimes prémium i xàrter privat a la badia de Palma. Salpant des del Moll de Golondrinas, davant l'Auditòrium de Palma, els seus catamarans a vela ofereixen una navegació tranquil·la i àmplia cap a les aigües transparents de Cala Blava, Cap Rocat i la Reserva Marina. Cada sortida inclou equip de snorkel, taules de paddle surf i gastronomia mediterrània a la graella.",
+    de: "Oasis Catamarán bietet ein erstklassiges Segelerlebnis in den Gewässern Mallorcas. Der geräumige, elegante Katamaran bietet viel Platz zum Sonnenbaden, Schnorcheln in türkisfarbenen Buchten und Genuss von frisch zubereitetem Grill-Catering an Bord.",
   },
   specialties: {
     es: [
@@ -79,6 +77,12 @@ export const oasisCatamaran: ServiceItem = {
       "Sunset Cruise Romàntic amb Posta de Sol i Cava",
       "Xàrter Privat per a Esdeveniments i Famílies",
       "Paddle Surf i Snorkel a la Reserva Marina",
+    ],
+    de: [
+      "Segelkatamaran-Ausflüge",
+      "Sunset Sails in der Bucht von Palma",
+      "BBQ-Catering an Bord",
+      "Private Feiern & Hochzeiten auf See",
     ],
   },
   highlights: {
@@ -100,6 +104,12 @@ export const oasisCatamaran: ServiceItem = {
       "Material de snorkel i taules de paddle surf incloses",
       "Patrons professionals titulats",
     ],
+    de: [
+      "Ausgezeichnete Bewertungen für Service, Sauberkeit und Atmosphäre",
+      "Großzügiges Sonnendeck mit bequemen Polstern und Schattenbereichen",
+      "Schnorchel-Equipment und Stand-Up-Paddleboards inklusive",
+      "Hochwertiges Catering mit mediterranen Spezialitäten und Bar-Service",
+    ],
   },
   servicesProvided: {
     es: [
@@ -119,6 +129,12 @@ export const oasisCatamaran: ServiceItem = {
       "Xàrter Nàutic Privat",
       "Rutes de Posta de Sol",
       "Esdeveniments Nàutics Corporatius",
+    ],
+    de: [
+      "Exklusive Privatcharter für Geburtstage, Hochzeiten und Firmen",
+      "Halbtages- und Tagestörns in die schönsten Buchten der Palma-Bucht",
+      "Sunset-Cruises mit Live-Musik und Cocktail-Begleitung",
+      "Bordküche mit frischem BBQ und vegetarischen Optionen",
     ],
   },
   tags: [
@@ -141,6 +157,7 @@ export const oasisCatamaran: ServiceItem = {
       es: "Salidas compartidas desde 65€/adulto con comida y bebidas incluidas. Tarifas de chárter privado bajo presupuesto a medida.",
       en: "Shared trips from 65€/adult including fresh meal and drinks. Private charter rates available on custom quote.",
       ca: "Sortides compartides des de 65€/adult amb dinar i begudes incloses. Tarifes de xàrter privat a mida.",
+      de: "Pauschalen für Privatcharter inklusive Crew, Treibstoff und Wassersportgeräte.",
     },
   },
   amenities: ["wifi", "wheelchair_accessible", "air_conditioning", "parking_nearby"],
@@ -163,6 +180,7 @@ export const oasisCatamaran: ServiceItem = {
         es: "Patrones & Guías Marítimos",
         en: "Skippers & Marine Guides",
         ca: "Patrons & Guies Marítims",
+        de: "Kapitän & Event-Koordinator",
       },
       specialty: "Navegación a Vela y Seguridad en Bahía de Palma",
     },

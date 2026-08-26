@@ -1,0 +1,178 @@
+---
+interface Props {
+  businessId: string;
+  businessName: string;
+  businessSlug: string;
+  category?: string;
+  image?: string;
+  size?: "sm" | "md" | "lg";
+  className?: string;
+}
+
+const { businessId, businessName, businessSlug, category = "", image = "", size = "md", className = "" } = Astro.props;
+---
+
+<button
+  type="button"
+  class:list={["favorite-toggle-btn", `fav-size-${size}`, className]}
+  data-fav-id={businessId}
+  data-fav-name={businessName}
+  data-fav-slug={businessSlug}
+  data-fav-cat={category}
+  data-fav-img={image}
+  aria-label={`Guardar ${businessName} en favoritos`}
+  title="Guardar en mis favoritos"
+>
+  <svg class="fav-heart-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+    <path
+      class="heart-path"
+      d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+    ></path>
+  </svg>
+</button>
+
+<style>
+  .favorite-toggle-btn {
+    background: rgba(255, 255, 255, 0.88);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: var(--border-radius-full);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    backdrop-filter: blur(8px);
+    transition:
+      transform var(--transition-fast),
+      background-color var(--transition-fast),
+      box-shadow var(--transition-fast);
+    padding: 0;
+    z-index: 10;
+  }
+
+  :global([data-theme="dark"]) .favorite-toggle-btn {
+    background: rgba(30, 41, 59, 0.85);
+    border-color: rgba(255, 255, 255, 0.12);
+  }
+
+  .fav-size-sm {
+    width: 32px;
+    height: 32px;
+  }
+
+  .fav-size-md {
+    width: 38px;
+    height: 38px;
+  }
+
+  .fav-size-lg {
+    width: 44px;
+    height: 44px;
+  }
+
+  .fav-heart-icon {
+    width: 55%;
+    height: 55%;
+    fill: transparent;
+    stroke: var(--color-text-muted);
+    stroke-width: 2;
+    transition:
+      fill 0.25s ease,
+      stroke 0.25s ease,
+      transform 0.25s ease;
+  }
+
+  .favorite-toggle-btn:hover {
+    transform: scale(1.12);
+    box-shadow: var(--shadow-md);
+  }
+
+  .favorite-toggle-btn:hover .fav-heart-icon {
+    stroke: #ef4444;
+  }
+
+  /* Active / Favorited State */
+  .favorite-toggle-btn.is-favorited .fav-heart-icon {
+    fill: #ef4444;
+    stroke: #ef4444;
+    transform: scale(1.08);
+  }
+</style>
+
+<script>
+  const FAV_STORAGE_KEY = "mallorca_user_favorites";
+
+  function getSavedFavorites(): string[] {
+    try {
+      const data = localStorage.getItem(FAV_STORAGE_KEY);
+      return data ? JSON.parse(data) : [];
+    } catch {
+      return [];
+    }
+  }
+
+  function saveFavorite(id: string) {
+    try {
+      const list = getSavedFavorites();
+      if (!list.includes(id)) {
+        list.push(id);
+        localStorage.setItem(FAV_STORAGE_KEY, JSON.stringify(list));
+      }
+    } catch (e) {
+      console.warn("Error saving favorite:", e);
+    }
+  }
+
+  function removeFavorite(id: string) {
+    try {
+      let list = getSavedFavorites();
+      list = list.filter((item) => item !== id);
+      localStorage.setItem(FAV_STORAGE_KEY, JSON.stringify(list));
+    } catch (e) {
+      console.warn("Error removing favorite:", e);
+    }
+  }
+
+  function syncFavoriteButtons() {
+    const saved = getSavedFavorites();
+    document.querySelectorAll(".favorite-toggle-btn").forEach((btn) => {
+      const id = btn.getAttribute("data-fav-id");
+      if (id && saved.includes(id)) {
+        btn.classList.add("is-favorited");
+      } else {
+        btn.classList.remove("is-favorited");
+      }
+    });
+  }
+
+  function initFavoritesHandler() {
+    syncFavoriteButtons();
+
+    document.querySelectorAll(".favorite-toggle-btn").forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+
+        const id = btn.getAttribute("data-fav-id");
+        const name = btn.getAttribute("data-fav-name") || "Negocio";
+        if (!id) return;
+
+        const isFav = btn.classList.contains("is-favorited");
+        if (isFav) {
+          removeFavorite(id);
+          btn.classList.remove("is-favorited");
+        } else {
+          saveFavorite(id);
+          btn.classList.add("is-favorited");
+        }
+
+        window.dispatchEvent(new CustomEvent("favorites:updated", { detail: { id, isFavorited: !isFav } }));
+      });
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initFavoritesHandler);
+  } else {
+    initFavoritesHandler();
+  }
+</script>

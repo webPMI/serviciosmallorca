@@ -7,7 +7,7 @@
 
 export interface StoreProductItem {
   id: string;
-  name: { es: string; en: string; ca: string };
+  name: { es: string; en: string; ca: string; de?: string };
   price: string;
   imageUrl?: string;
   url?: string;
@@ -74,7 +74,7 @@ export async function scrapeServiceData(
             const priceVal = p.variants?.[0]?.price;
             products.push({
               id: `prod-${p.id}`,
-              name: { es: p.title, en: p.title, ca: p.title },
+              name: { es: p.title, en: p.title, ca: p.title, de: p.title },
               price: priceVal ? `${parseFloat(priceVal).toFixed(2)}€` : "Consultar",
               imageUrl: p.images?.[0]?.src,
               url: new URL(`/products/${p.handle}`, baseUrl).href,

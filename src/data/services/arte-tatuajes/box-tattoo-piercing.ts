@@ -39,6 +39,7 @@ export const boxTattooPiercing: ServiceItem = {
       es: "Asesoramiento presencial y presupuesto inmediato en el centro comercial de Palma.",
       en: "Walk-in consultations and instant quotes in downtown Palma.",
       ca: "Assessorament presencial i pressupost al moment al carrer Jaume II.",
+      de: "Persönliche Beratung und sofortiger Kostenvoranschlag im Stadtzentrum von Palma.",
     },
   },
   teamMembers: [
@@ -48,6 +49,7 @@ export const boxTattooPiercing: ServiceItem = {
         es: "Tatuadores & Anilladores Profesionales",
         en: "Professional Tattoo Artists & Piercers",
         ca: "Tatuadors i Anelladors Professionals",
+        de: "Professionelle Tätowierer & Piercer",
       },
       specialty: "Cover-ups Complejos, Tradicional Americano & Piercing Anatómico",
       instagramHandle: "@boxtattoopiercing",
@@ -117,11 +119,13 @@ export const boxTattooPiercing: ServiceItem = {
     es: "Estudio céntrico en Carrer Jaume II especializado en tatuajes personalizados, cover-ups y piercings.",
     en: "Downtown studio on Carrer Jaume II specializing in custom tattoos, cover-ups, and piercings.",
     ca: "Estudi cèntric al Carrer Jaume II especialitzat en tatuatges personalitzats, cover-ups i pírcings.",
+    de: "Zentrales Studio in der Carrer Jaume II, spezialisiert auf individuelle Tattoos, Cover-ups und professionelle Piercings.",
   },
   fullDescription: {
     es: "Box Tattoo Piercing está situado en el eje peatonal de Carrer de Jaume II en Palma. Ofrecen asesoramiento técnico integral para coberturas complejas de tatuajes antiguos, estilos tradicionales y perforaciones corporales higiénicas con amplia variedad de joyería quirúrgica.",
     en: "Box Tattoo Piercing is located on Palma's historic pedestrian street Carrer Jaume II. Offering full expert advice for complex cover-ups, bold traditional ink, and sanitary body piercings with a broad selection of surgical jewelry.",
     ca: "Box Tattoo Piercing està situat al carrer Jaume II de Palma. Ofereixen assessorament per a cobertures complexes, tatuatges tradicionals i perforacions higièniques amb joieria quirúrgica.",
+    de: "Box Tattoo Piercing befindet sich in der Fußgängerzone der Carrer de Jaume II in Palma. Geboten werden umfassende Beratung für anspruchsvolle Cover-ups alter Tattoos, traditionelle Stile sowie hygienische Körperpiercings mit einer großen Auswahl an medizinischem Schmuck.",
   },
   highlights: {
     es: [
@@ -141,6 +145,12 @@ export const boxTattooPiercing: ServiceItem = {
       "Ubicació privilegiada al carrer comercial Jaume II",
       "Especialistes acreditats en cover-ups",
       "Perforacions amb material quirúrgic i titani esterilitzat",
+    ],
+    de: [
+      "Kostenlose Vor-Ort-Beratung und unverbindlicher Kostenvoranschlag",
+      "Erstklassige Lage in der Fußgängerzone Carrer Jaume II im Zentrum von Palma",
+      "Anerkannte Spezialisten für komplexe Cover-ups alter Tattoos",
+      "Piercings mit medizinisch sterilisiertem Titan und Chirurgenstahl",
     ],
   },
   servicesProvided: {
@@ -164,6 +174,13 @@ export const boxTattooPiercing: ServiceItem = {
       "Fine Line i Lettering",
       "Tradicional Americà i Color",
       "Canvi i Venda de Joieria Quirúrgica",
+    ],
+    de: [
+      "Cover-up & Neugestaltung alter Tattoos",
+      "Anatomische & Gesichts-Piercings",
+      "Fine Line & Lettering Tattoos",
+      "Traditional American & Farbtattoos",
+      "Wechsel & Verkauf von medizinischem Schmuck",
     ],
   },
   image: "https://i.imgur.com/wnba2lT.jpeg",

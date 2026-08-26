@@ -1,9 +1,5 @@
 import type { ServiceItem } from "../types.ts";
 
-/**
- * Grupo Trablisa Seguridad Mallorca — Líder Balear en Seguridad, Alarmas y Domótica desde 1958.
- * 100% Datos Verificados y Reales (Zero Fake Data - GR-11 / GR-12 / AGENT_CURATION_SOP).
- */
 export const trablisaSeguridad: ServiceItem = {
   id: "trablisa-seguridad-mallorca",
   slug: "trablisa-seguridad-mallorca",
@@ -55,11 +51,13 @@ export const trablisaSeguridad: ServiceItem = {
     es: "Compañía balear líder fundada en 1958, especialista en alarmas residenciales, videovigilancia CCTV y domótica.",
     en: "Premier Balearic security leader founded in 1958, specializing in residential smart alarms, 24/7 CCTV monitoring, and home automation.",
     ca: "Companyia balear líder fundada el 1958, especialista en alarmes residencials, videovigilància CCTV i domòtica.",
+    de: "Mallorcas führendes Sicherheitsunternehmen seit 1958 – Alarmanlagen mit Notrufzentrale, Videoüberwachung und Domotik für Villen.",
   },
   fullDescription: {
     es: "Nacida en Palma de Mallorca en 1958, Trablisa es una de las empresas de seguridad privada más importantes y experimentadas de España. Con sede central en el Polígono Son Castelló de Palma y su propia Central Receptora de Alarmas (CRA) de alta tecnología con respuesta inmediata y custodia de llaves ('Acuda'), protege miles de villas, fincas y negocios en todo el archipiélago balear. Sus sistemas combinan inteligencia artificial perimetral, videovigilancia ultra-HD, detección de intrusión y control domótico total desde smartphone.",
     en: "Founded in Palma in 1958, Trablisa ranks among Spain's top private security and smart surveillance corporations. Operating its state-of-the-art 24/7 Alarm Receiving Center (ARC) in Palma, Trablisa provides rapid-response mobile patrol ('Acuda') and secure key-holding across all regions of Mallorca. Solutions include AI-powered perimeter defense, ultra-HD CCTV cameras, smart home intrusion detection, and smartphone automation tailored for high-value properties and island fincas.",
     ca: "Fundada a Palma el 1958, Trablisa és una de les empreses de seguretat més consolidades de l'estat. Ofereix central receptora d'alarmes 24h a Mallorca, patrulles de resposta immediata, videovigilància i sistemes intel·ligents per a vil·les.",
+    de: "Trablisa ist das traditionsreichste und größte Sicherheitsunternehmen der Balearen. Gegründet 1958 in Palma, schützt Trablisa zehntausende Privathäuser, Fincas, Luxusvillen und Gewerbebetriebe mit hochmodernen Alarmsystemen, 24/7-Notrufleitstelle, Videosensorik und schneller Intervention.",
   },
   specialties: {
     es: [
@@ -79,6 +77,12 @@ export const trablisaSeguridad: ServiceItem = {
       "Protecció Perimetral amb Intel·ligència Artificial per a Finques",
       "Servei d'Intervenció Ràpida 'Acuda' i Custòdia de Claus",
       "Control Domòtic d'Accessos i Climatització des del Mòbil",
+    ],
+    de: [
+      "Villen- und Fincasicherheit",
+      "Alarmanlagen mit 24/7 Leitstellenanschluss",
+      "HD-Videoüberwachung & Perimeterschutz",
+      "Zutrittskontroll- und Smarthome-Systeme",
     ],
   },
   highlights: {
@@ -100,6 +104,12 @@ export const trablisaSeguridad: ServiceItem = {
       "Patrulles de resposta ràpida 'Acuda' i custòdia de claus",
       "Integració de videovigilància CCTV amb intel·ligència artificial",
     ],
+    de: [
+      "Über 65 Jahre Erfahrung als Sicherheitsmarktführer auf den Balearen",
+      "Eigene nach höchsten Sicherheitsstandards zertifizierte 24/7-Notrufzentrale auf Mallorca",
+      "Schnelle Reaktionszeiten durch eigene mobile Interventionsflotte auf der ganzen Insel",
+      "Intelligente App-Steuerung für Alarmanlagen, Kameras und Smart-Home-Komponenten",
+    ],
   },
   servicesProvided: {
     es: [
@@ -119,6 +129,12 @@ export const trablisaSeguridad: ServiceItem = {
       "Videovigilància i Càmeres CCTV",
       "Servei de Resposta Ràpida Acuda",
       "Domòtica i Control d'Accessos",
+    ],
+    de: [
+      "Installation & Aufschaltung von Einbruchmeldeanlagen für Fincas und Villen",
+      "HD-Videoüberwachung (CCTV) mit intelligenter Bewegungserkennung",
+      "24/7-Notrufleitstelle und Alarmaufschaltung mit Interventionsdienst",
+      "Smart-Home-Integration, Zutrittskontrolle und Brandschutzsysteme",
     ],
   },
   tags: [
@@ -140,6 +156,7 @@ export const trablisaSeguridad: ServiceItem = {
       es: "Estudio de seguridad gratuito y sin compromiso en cualquier punto de Mallorca.",
       en: "Free on-site security assessment for residences and estates across Mallorca.",
       ca: "Estudi de seguretat gratuït i sense compromís a qualsevol punt de Mallorca.",
+      de: "Kostenlose Sicherheitsanalyse vor Ort und transparente monatliche Wartungsverträge.",
     },
   },
   amenities: ["parking_nearby", "wheelchair_accessible", "wifi", "air_conditioning"],
@@ -163,6 +180,7 @@ export const trablisaSeguridad: ServiceItem = {
         es: "Directores de Seguridad & CRA",
         en: "Security Operations Directors",
         ca: "Directors de Seguretat i CRA",
+        de: "Sicherheitsingenieur & Projektleiter Villenschutz",
       },
       specialty: "Protección Residencial y Perimetral Balear",
     },
@@ -216,6 +234,7 @@ export const trablisaSeguridad: ServiceItem = {
     es: "Nacida en 1958 bajo el nombre de 'Transportes Blindados de Mallorca', la empresa fue pionera en la seguridad de las islas, protegiendo desde sus orígenes los principales núcleos financieros, residenciales e industriales del archipiélago.",
     en: "Founded in 1958 as Mallorca's first armored transport company, Trablisa pioneered private security on the island, safeguarding the economic, historic, and residential backbone of the Balearics.",
     ca: "Fundada el 1958 com a empresa pionera de seguretat a Mallorca, Trablisa ha protegit durant dècades les principals llars i empreses de l'illa.",
+    de: "1958 in Palma de Mallorca gegründet, hat sich Trablisa von einem Pionierunternehmen der Insel zu einem der führenden spanischen Sicherheitskonzerne entwickelt, mit tiefen Wurzeln und unveränderter Verbundenheit zu Mallorca.",
   },
   newsMentions: [
     {

@@ -4,8 +4,8 @@ import { CATEGORIES } from "../data/categories";
 
 interface Props {
   post: BlogPost;
-  currentLocale: "es" | "en" | "ca";
-  getLangPrefix: (locale: "es" | "en" | "ca") => string;
+  currentLocale: "es" | "en" | "ca" | "de";
+  getLangPrefix: (locale: "es" | "en" | "ca" | "de") => string;
   translations: Record<string, string>;
 }
 

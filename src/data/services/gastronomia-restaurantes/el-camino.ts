@@ -1,9 +1,5 @@
 import type { ServiceItem } from "../types.ts";
 
-/**
- * Restaurante El Camino Palma — Barra Gastronómica de Autor & Tapas de Producto Balear.
- * 100% Datos Verificados y Reales (Zero Fake Data - GR-11 / GR-12 / AGENT_CURATION_SOP).
- */
 export const elCaminoPalma: ServiceItem = {
   id: "el-camino-palma",
   slug: "el-camino-palma",
@@ -48,18 +44,20 @@ export const elCaminoPalma: ServiceItem = {
     "https://www.elcaminopalma.es/public/img/paginas/el-camino/galeria-el-camino-2.jpg",
   ],
   targetAudience: ["turistas", "residentes", "parejas", "expat"],
-  languagesSpoken: ["es", "en", "ca"],
+  languagesSpoken: ["es", "en", "ca", "de"],
   emergency24h: false,
   inVillaService: false,
   shortDescription: {
     es: "Famosa barra gastronómica en Carrer de Can Brondo con mariscos vivos de lonja, tapas de autor y cocina en directo.",
     en: "Acclaimed open-kitchen dining bar on Carrer de Can Brondo serving pristine local seafood, modern tapas, and artisan wines.",
     ca: "Famosa barra gastronòmica al carrer de Can Brondo amb marisc fresc de llotja, tapes d'autor i cuina en directe.",
+    de: "Ikonische Gourmet-Tapasbar mit langer beleuchteter Marmortheke im Herzen von Palma – Frischeprodukte live zubereitet.",
   },
   fullDescription: {
     es: "Ubicado en la peatonal Carrer de Can Brondo, junto al Passeig del Born, El Camino ha revolucionado el concepto de barra gastronómica en Palma de Mallorca. Fundado por Eddie Hart, el restaurante se organiza en torno a una espectacular barra de mármol continuo iluminada donde los comensales disfrutan del espectáculo culinario en directo. Su propuesta se centra en el producto balear y mediterráneo más fresco: gamba roja de Sóller, chipirones con sobrasada y miel, alcachofas confitadas, croquetas ibéricas cremosas y una cuidada selección de vinos naturales y biodinámicos.",
     en: "Nestled on pedestrian Carrer de Can Brondo just off Passeig del Born, El Camino has transformed counter-dining in Palma. Established by restaurateur Eddie Hart, the venue centers around an illuminated marble bar overlooking a dynamic open kitchen. The menu champions pristine island ingredients: sweet Sóller red prawns, baby squid with artisan sobrasada and honey, confit artichokes, creamy Iberian ham croquettes, and a curated cellar of organic Balearic and Spanish wines.",
     ca: "Situat al carrer de Can Brondo a tocar del Born, El Camino és una de les barres gastronòmiques més vibrants de Palma. Fundat per Eddie Hart amb cuina a la vista i barra de marbre, ofereix gamba vermella de Sóller, calamarsons amb sobrassada i tapes de màxima qualitat.",
+    de: "El Camino in der Carrer de Can Brondo gilt als eine der lebendigsten kulinarischen Adressen Palmas. An der geschwungenen Marmortheke beobachten Gäste die Köche bei der Zubereitung feinster Tapas aus marktfrischen Tageszutaten, Sóller-Garnelen und handwerklicher Sobrassada.",
   },
   specialties: {
     es: [
@@ -79,6 +77,12 @@ export const elCaminoPalma: ServiceItem = {
       "Calamarsons Saltats amb Sobrassada Mallorquina i Mel",
       "Carxofes Confitades a la Brasa amb Pernil Ibèric",
       "Croquetes Casolanes de Pernil Ibèric i Tòfona",
+    ],
+    de: [
+      "Rote Sóller-Garnelen mit Meersalz",
+      "Baby-Calamari mit Sobrassada und Honig",
+      "Gegrillte Artischocken",
+      "Hausgemachte Kroketten & Jamón Ibérico",
     ],
   },
   highlights: {
@@ -100,6 +104,12 @@ export const elCaminoPalma: ServiceItem = {
       "Reserves exclusivament online a través del web oficial",
       "Carta de vins amb denominacions d'origen de Mallorca",
     ],
+    de: [
+      "Spektakuläre beleuchtete Marmortheke mit offener Schauküche",
+      "Beste Qualität an fangfrischen Meeresfrüchten und regionalem Gemüse",
+      "Lebendige, stilvolle Atmosphäre im Zentrum von Palma",
+      "Internationale Spitzenbewertungen in Gastronomieführern",
+    ],
   },
   servicesProvided: {
     es: [
@@ -119,6 +129,12 @@ export const elCaminoPalma: ServiceItem = {
       "Marisc i Peix Fresc del Dia",
       "Vins d'Autor i Maridatge",
       "Reserva Online",
+    ],
+    de: [
+      "Gourmet-Tapas an der Schautheke",
+      "Tagesfang aus den Fischauktionen der Balearen",
+      "Ausgewählte spanische und mallorquinische Weinkarte",
+      "Exklusives Ambiente für Paare und Feinschmecker",
     ],
   },
   tags: [
@@ -140,6 +156,7 @@ export const elCaminoPalma: ServiceItem = {
       es: "El restaurante no dispone de teléfono; las reservas se gestionan exclusivamente online.",
       en: "The restaurant operates without a phone line; all bookings are managed exclusively online.",
       ca: "El restaurant no disposa de telèfon; les reserves es gestionen exclusivament online.",
+      de: "Tagesaktuelle Preise nach Marktlage. Reservierung über das Online-Portal empfohlen.",
     },
   },
   amenities: ["air_conditioning", "wifi", "wheelchair_accessible"],
@@ -156,6 +173,7 @@ export const elCaminoPalma: ServiceItem = {
         es: "Fundador & Creador del Concepto",
         en: "Founder & Concept Creator",
         ca: "Fundador i Creador del Concepte",
+        de: "Küchenchef & Team",
       },
       specialty: "Restauración y Barras Gastronómicas",
     },

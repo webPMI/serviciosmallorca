@@ -1,0 +1,76 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Navbar from "../../components/Navbar.astro";
+import Footer from "../../components/Footer.astro";
+import SportsExplorer from "../../components/SportsExplorer.astro";
+import { getLocaleFromUrl, loadTranslations, getLangPrefix, type Locale } from "../../i18n";
+
+export const prerender = false;
+
+const locale = getLocaleFromUrl(Astro.url) as Locale;
+const translations = await loadTranslations(locale);
+const prefix = getLangPrefix(locale);
+
+const pageTitles: Record<Locale, string> = {
+  es: "Deporte & Bienestar en Mallorca - Pistas de Pádel, Running, Calistenia y Clubs",
+  en: "Sports & Wellbeing in Mallorca - Padel Courts, Running Routes, Gyms & Studios",
+  ca: "Esport & Benestar a Mallorca - Pistes de Pàdel, Running, Cal·listènia i Clubs",
+  de: "Sport & Wellness auf Mallorca - Padel-Plätze, Laufstrecken, Calisthenics & Yoga",
+};
+
+const pageDescriptions: Record<Locale, string> = {
+  es: "Guía interactiva de pistas de pádel, parques de calistenia, circuitos de running y centros deportivos verificados en Mallorca con filtro de sombra y agua.",
+  en: "Interactive guide to padel courts, calisthenics parks, running tracks, and verified sports centers across Mallorca with shade and water filters.",
+  ca: "Guia interactiva de pistes de pàdel, parcs de cal·listènia, circuits de running i centres esportius a Mallorca.",
+  de: "Interaktiver Guide für Padel-Plätze, Calisthenics-Parks, Laufstrecken und geprüfte Sportzentren auf Mallorca.",
+};
+---
+
+<BaseLayout title={`${pageTitles[locale]} | Servicios Mallorca`} lang={locale} description={pageDescriptions[locale]}>
+  <Navbar currentLocale={locale} translations={translations} getLangPrefix={getLangPrefix} />
+
+  <main class="container section">
+    <!-- Breadcrumbs Navigation -->
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+      <a href={prefix}>{translations["nav.home"] || "Inicio"}</a>
+      <span>/</span>
+      <span class="active-crumb"
+        >{
+          currentLocale === "de"
+            ? "Sport & Wellness"
+            : currentLocale === "en"
+              ? "Sports & Wellbeing"
+              : currentLocale === "ca"
+                ? "Esport & Benestar"
+                : "Deporte & Bienestar"
+        }</span
+      >
+    </nav>
+
+    <!-- Sports Explorer Interactive Component -->
+    <SportsExplorer currentLocale={locale} translations={translations} />
+  </main>
+
+  <Footer translations={translations} currentLocale={locale} getLangPrefix={getLangPrefix} />
+</BaseLayout>
+
+<style>
+  .breadcrumb-nav {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-lg);
+  }
+
+  .breadcrumb-nav a {
+    color: var(--color-primary);
+    text-decoration: none;
+  }
+
+  .active-crumb {
+    color: var(--color-text);
+    font-weight: 600;
+  }
+</style>

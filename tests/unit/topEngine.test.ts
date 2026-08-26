@@ -42,4 +42,11 @@ describe("Top Engine - Multi-criteria Ranking Algorithm", () => {
       expect(item.service.zone).toBe("palma");
     });
   });
+
+  it("applies German locale authority boosts and localized reason badges", () => {
+    const topGerman = getTopServicesByCategory("gastronomia-catering", 3, "de");
+    expect(topGerman.length).toBeGreaterThan(0);
+    expect(topGerman[0].badgeLabel).toContain("Top #1 Kategorie");
+    expect(topGerman[0].reasons.length).toBeGreaterThan(0);
+  });
 });

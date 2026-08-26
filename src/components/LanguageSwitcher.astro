@@ -1,19 +1,20 @@
 ---
 interface Props {
-  currentLocale: "es" | "en" | "ca";
+  currentLocale: "es" | "en" | "ca" | "de";
   translations: {
     "nav.es": string;
     "nav.en": string;
     "nav.ca": string;
+    "nav.de"?: string;
   };
-  getLangPrefix: (locale: "es" | "en" | "ca") => string;
+  getLangPrefix: (locale: "es" | "en" | "ca" | "de") => string;
   currentPath?: string;
 }
 
 const { currentLocale, translations, getLangPrefix, currentPath = "" } = Astro.props;
 
 // Cleanly calculate path suffix (e.g. "login", "profile", or "")
-const rawPath = currentPath.replace(/^\/(es|en|ca)(\/|$)/, "");
+const rawPath = currentPath.replace(/^\/(es|en|ca|de)(\/|$)/, "");
 const cleanPath = rawPath.replace(/^\/+/, "");
 ---
 
@@ -30,6 +31,10 @@ const cleanPath = rawPath.replace(/^\/+/, "");
     <span class="language-separator">|</span>
     <a href={`${getLangPrefix("ca")}${cleanPath}`} class:list={["language-link", { active: currentLocale === "ca" }]}>
       {translations["nav.ca"]}
+    </a>
+    <span class="language-separator">|</span>
+    <a href={`${getLangPrefix("de")}${cleanPath}`} class:list={["language-link", { active: currentLocale === "de" }]}>
+      {translations["nav.de"] || "DE"}
     </a>
   </nav>
 </div>
@@ -86,3 +91,24 @@ const cleanPath = rawPath.replace(/^\/+/, "");
     font-size: var(--font-size-xs);
   }
 </style>
+
+<script>
+  function setupLanguageCookie() {
+    document.querySelectorAll(".language-link").forEach((link) => {
+      link.addEventListener("click", (e) => {
+        const target = e.currentTarget as HTMLAnchorElement;
+        const href = target.getAttribute("href") || "";
+        const match = href.match(/^\/(es|en|ca|de)(\/|$)/);
+        if (match && match[1]) {
+          document.cookie = `locale=${match[1]}; path=/; max-age=31536000; SameSite=Lax`;
+        }
+      });
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", setupLanguageCookie);
+  } else {
+    setupLanguageCookie();
+  }
+</script>

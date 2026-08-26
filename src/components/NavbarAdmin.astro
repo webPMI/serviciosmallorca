@@ -1,13 +1,13 @@
 ---
 interface Props {
-  currentLocale: "es" | "en" | "ca" | string;
+  currentLocale: "es" | "en" | "ca" | "de" | string;
   translations: Record<string, string>;
-  getLangPrefix: (locale: "es" | "en" | "ca") => string;
+  getLangPrefix: (locale: "es" | "en" | "ca" | "de") => string;
   currentPath: string;
 }
 
 const { currentLocale, translations, getLangPrefix, currentPath } = Astro.props;
-const prefix = getLangPrefix(currentLocale as "es" | "en" | "ca");
+const prefix = getLangPrefix((currentLocale as "es" | "en" | "ca" | "de") || "es");
 const homeUrl = prefix || "/";
 ---
 

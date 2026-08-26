@@ -1,9 +1,5 @@
 import type { ServiceItem } from "../types.ts";
 
-/**
- * Macatela Tattoo Palma (Carrer dels Oms) - Estudio de Tatuaje Tradicional y Blackwork.
- * Curado bajo el Protocolo de Enriquecimiento Profundo (GR-11 Zero Fake Data, GR-12 Multi-Mapas).
- */
 export const macatelaTattoo: ServiceItem = {
   id: "macatela-tattoo",
   slug: "macatela-tattoo",
@@ -26,7 +22,7 @@ export const macatelaTattoo: ServiceItem = {
   culturalIdentity: "mallorquin_heritage",
   isIconicHeritage: false,
   targetAudience: ["residentes", "turistas", "alemanes", "britanicos", "expat"],
-  languagesSpoken: ["es", "ca", "en"],
+  languagesSpoken: ["es", "ca", "en", "de"],
   emergency24h: false,
   inVillaService: false,
   features: ["wifi", "air_conditioning", "credit_card"],
@@ -46,6 +42,7 @@ export const macatelaTattoo: ServiceItem = {
       es: "Presupuestos cerrados para piezas pequeñas y medianas; tarifa por sesión para proyectos grandes de espalda o manga completa.",
       en: "Fixed price quotes for small and medium pieces; hourly or day-rate for full sleeve and back projects.",
       ca: "Pressupostos tancats per a peces petites i mitjanes; tarifa per sessió per a projectes grans.",
+      de: "Kostenvoranschlag nach individuellem Entwurf und Vorbesprechung.",
     },
   },
   specialties: {
@@ -70,6 +67,7 @@ export const macatelaTattoo: ServiceItem = {
       "Lettering i Cal·ligrafia Personalitzada",
       "Pírcing Corporal amb Titani Grau Implant ASTM F-136",
     ],
+    de: ["Neotraditional", "Anime / Manga Art", "Farbtattoos", "Blackwork"],
   },
   teamMembers: [
     {
@@ -78,6 +76,7 @@ export const macatelaTattoo: ServiceItem = {
         es: "Artistas Tatuadores Residentes",
         en: "Resident Tattoo Artists",
         ca: "Artistes Tatuadors Residents",
+        de: "Resident Tätowierer",
       },
       specialty: "Old School, Blackwork y Neotradicional",
       instagramHandle: "@macatela_tattoo",
@@ -187,11 +186,13 @@ export const macatelaTattoo: ServiceItem = {
     es: "Estudio de tatuaje y piercing profesional en el Carrer dels Oms de Palma, especializado en estilo tradicional americano, blackwork, lettering y piezas flash personalizadas.",
     en: "Professional tattoo and body piercing studio on Carrer dels Oms in Palma, specializing in American traditional, blackwork, lettering, and custom flash.",
     ca: "Estudi de tatuatge i pírcing professional al carrer dels Oms de Palma, especialitzat en estil tradicional americà, blackwork i dissenys personalitzats.",
+    de: "Kreatives Tattoo-Studio in Palma mit Spezialisierung auf Neotraditional, Blackwork, Anime und ausdrucksstarke Farbmotive.",
   },
   fullDescription: {
     es: "Ubicado en la animada arteria peatonal del Carrer dels Oms en el centro de Palma, Macatela Tattoo Studio es un espacio de referencia para los amantes del arte corporal bien ejecutado. Su equipo de artistas domina las técnicas del tatuaje tradicional clásico, el blackwork botánico y geométrico, y el lettering personalizado. Cumpliendo rigurosamente con todos los estándares higiénico-sanitarios y empleando material esterilizado de un solo uso, el estudio ofrece un trato cercano y consultoría personalizada para cada proyecto.",
     en: "Located on the lively pedestrian Carrer dels Oms in downtown Palma, Macatela Tattoo Studio stands as a premier destination for solid, well-crafted body art. Their resident artists master classic American traditional, botanical and geometric blackwork, and bespoke lettering. Fully compliant with rigorous European health and safety regulations, the studio pairs uncompromising hygiene with friendly consultation.",
     ca: "Situat al concorregut carrer dels Oms al centre de Palma, Macatela Tattoo Studio és un espai de referència per als amants del tatuatge tradicional i el blackwork sòlid. Amb màxim compliment dels protocols sanitaris i material d'un sol ús, l'estudi ofereix assessorament proper per a tota mena de projectes d'art corporal.",
+    de: "Macatela Tattoo Palma verbindet lebendige Farben, saubere Linienführung und zeitgenössische Designs. Bekannt für Neotraditional, Anime-Tattoos und dynamische Farbkompositionen in entspannter Studioatmosphäre.",
   },
   highlights: {
     es: [
@@ -215,6 +216,12 @@ export const macatelaTattoo: ServiceItem = {
       "Pírcing professional amb joieria de titani homologat ASTM F-136",
       "Compliment estricte de la normativa europea REACH de tintes",
     ],
+    de: [
+      "Einzigartiger Autorenstil mit lebendigen Farbpaletten",
+      "Fokus auf Neotraditional, Anime und Pop-Culture Art",
+      "Höchste Hygienestandards mit REACH-konformen Pigmenten",
+      "Hohe Zufriedenheit bei Einheimischen und Inselbesuchern",
+    ],
   },
   servicesProvided: {
     es: [
@@ -237,6 +244,12 @@ export const macatelaTattoo: ServiceItem = {
       "Neotradicional i Color",
       "Lettering i Cal·ligrafia",
       "Pírcing Corporal i Joieria Estèril",
+    ],
+    de: [
+      "Neotraditional Tattoos",
+      "Anime- & Pop-Kultur-Tattoos",
+      "Farbtätowierungen & Blackwork",
+      "Individuelle Motivberatung",
     ],
   },
   image: "https://i.imgur.com/Kz8L2rU.jpeg",

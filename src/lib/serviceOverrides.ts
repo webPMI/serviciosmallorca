@@ -22,16 +22,19 @@ export interface ServiceOverride {
     es?: string;
     en?: string;
     ca?: string;
+    de?: string;
   };
   highlights?: {
     es?: string[];
     en?: string[];
     ca?: string[];
+    de?: string[];
   };
   servicesProvided?: {
     es?: string[];
     en?: string[];
     ca?: string[];
+    de?: string[];
   };
   gallery?: string[];
   image?: string;
@@ -92,16 +95,19 @@ export function mergeServiceWithOverride(staticService: ServiceItem, override: S
       es: override.fullDescription?.es || staticService.fullDescription.es,
       en: override.fullDescription?.en || staticService.fullDescription.en,
       ca: override.fullDescription?.ca || staticService.fullDescription.ca,
+      de: override.fullDescription?.de || staticService.fullDescription.de,
     },
     highlights: {
       es: override.highlights?.es || staticService.highlights?.es || [],
       en: override.highlights?.en || staticService.highlights?.en || [],
       ca: override.highlights?.ca || staticService.highlights?.ca || [],
+      de: override.highlights?.de || staticService.highlights?.de || [],
     },
     servicesProvided: {
       es: override.servicesProvided?.es || staticService.servicesProvided?.es || [],
       en: override.servicesProvided?.en || staticService.servicesProvided?.en || [],
       ca: override.servicesProvided?.ca || staticService.servicesProvided?.ca || [],
+      de: override.servicesProvided?.de || staticService.servicesProvided?.de || [],
     },
   };
 }

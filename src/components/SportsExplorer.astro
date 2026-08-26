@@ -1,0 +1,1010 @@
+---
+import type { SportsFacilityPOI, SportActivityType } from "../data/sports/types";
+import { SPORTS_FACILITIES } from "../data/sports/facilities";
+import type { Locale } from "../i18n";
+
+interface Props {
+  currentLocale: Locale;
+  translations: Record<string, string>;
+  initialActivity?: string;
+  initialZone?: string;
+}
+
+const { currentLocale, translations, initialActivity = "all", initialZone = "all" } = Astro.props;
+
+const ACTIVITIES: Array<{ id: string; icon: string; name: Record<Locale, string> }> = [
+  { id: "all", icon: "🏆", name: { es: "Todas", en: "All", ca: "Totes", de: "Alle" } },
+  { id: "padel", icon: "🎾", name: { es: "Pádel", en: "Padel", ca: "Pàdel", de: "Padel" } },
+  { id: "tenis", icon: "🎾", name: { es: "Tenis", en: "Tennis", ca: "Tennis", de: "Tennis" } },
+  { id: "running", icon: "🏃", name: { es: "Running", en: "Running", ca: "Running", de: "Laufsport" } },
+  { id: "ciclismo", icon: "🚴", name: { es: "Ciclismo", en: "Cycling", ca: "Ciclisme", de: "Radsport" } },
+  {
+    id: "calistenia",
+    icon: "💪",
+    name: { es: "Calistenia", en: "Calisthenics", ca: "Cal·listènia", de: "Calisthenics" },
+  },
+  {
+    id: "yoga_pilates",
+    icon: "🧘",
+    name: { es: "Yoga & Pilates", en: "Yoga & Pilates", ca: "Ioga & Pilates", de: "Yoga & Pilates" },
+  },
+  { id: "natacion", icon: "🏊", name: { es: "Natación", en: "Swimming", ca: "Natació", de: "Schwimmen" } },
+];
+
+const ZONES: Array<{ id: string; name: Record<Locale, string> }> = [
+  { id: "all", name: { es: "Toda Mallorca", en: "All Mallorca", ca: "Tota Mallorca", de: "Ganz Mallorca" } },
+  {
+    id: "palma",
+    name: { es: "Palma Centro & Bahía", en: "Palma Center & Bay", ca: "Palma Centre", de: "Palma Zentrum" },
+  },
+  {
+    id: "calvia",
+    name: { es: "Calvià & Andratx", en: "Calvià & Andratx", ca: "Calvià & Andratx", de: "Calvià & Andratx" },
+  },
+  { id: "nord", name: { es: "Nord & Bahías", en: "North & Bays", ca: "Nord & Badies", de: "Norden & Buchten" } },
+  {
+    id: "llevant",
+    name: { es: "Llevant & Manacor", en: "Llevant & Manacor", ca: "Llevant & Manacor", de: "Llevant & Manacor" },
+  },
+];
+---
+
+<div class="sports-explorer-container" id="sports-explorer">
+  <!-- Interactive View Switcher Header -->
+  <div class="sports-header-bar">
+    <div class="sports-title-wrap">
+      <div class="badge badge-sports">⚡ Deporte & Bienestar Mallorca</div>
+      <h2 class="sports-main-heading">
+        {
+          currentLocale === "de"
+            ? "Sportstätten & Outdoor-Zonen"
+            : currentLocale === "en"
+              ? "Sports Facilities & Outdoor Zones"
+              : currentLocale === "ca"
+                ? "Zones Esportives & Aire Lliure"
+                : "Instalaciones Deportivas & Zonas al Aire Libre"
+        }
+      </h2>
+      <p class="sports-subtitle">
+        {
+          currentLocale === "de"
+            ? "Finden Sie verifizierte Padel-Plätze, Laufstrecken, Calisthenics-Parks und Yoga-Studios auf Mallorca."
+            : currentLocale === "en"
+              ? "Explore verified padel courts, running tracks, calisthenics parks, and yoga studios across Mallorca."
+              : currentLocale === "ca"
+                ? "Descobreix pistes de pàdel, rutes de running, parcs de cal·listènia i centres de ioga verificats."
+                : "Encuentra pistas de pádel, circuitos de running, parques de calistenia y estudios de yoga verificados en Mallorca."
+        }
+      </p>
+    </div>
+
+    <!-- Mode Switcher Tabs (Explorar / Buscar / Recomendados) -->
+    <div class="sports-mode-tabs" role="tablist" aria-label="Modo de visualización deportiva">
+      <button
+        type="button"
+        class="mode-tab active"
+        data-mode="buscar"
+        role="tab"
+        aria-selected="true"
+        aria-controls="panel-buscar"
+      >
+        <span>🔍</span>
+        <span
+          >{
+            currentLocale === "de"
+              ? "Filter & Suchen"
+              : currentLocale === "en"
+                ? "Search & Filters"
+                : currentLocale === "ca"
+                  ? "Cercar & Filtres"
+                  : "Buscar & Filtros"
+          }</span
+        >
+      </button>
+      <button
+        type="button"
+        class="mode-tab"
+        data-mode="explorar"
+        role="tab"
+        aria-selected="false"
+        aria-controls="panel-explorar"
+      >
+        <span>🗺️</span>
+        <span
+          >{
+            currentLocale === "de"
+              ? "Kartenansicht"
+              : currentLocale === "en"
+                ? "Map Explorer"
+                : currentLocale === "ca"
+                  ? "Mapa Interactiu"
+                  : "Explorar Mapa"
+          }</span
+        >
+      </button>
+      <button
+        type="button"
+        class="mode-tab"
+        data-mode="recomendados"
+        role="tab"
+        aria-selected="false"
+        aria-controls="panel-recomendados"
+      >
+        <span>⭐</span>
+        <span
+          >{
+            currentLocale === "de"
+              ? "Top-Empfehlungen"
+              : currentLocale === "en"
+                ? "Recommended"
+                : currentLocale === "ca"
+                  ? "Recomanats"
+                  : "Recomendados"
+          }</span
+        >
+      </button>
+    </div>
+  </div>
+
+  <!-- Active Layer Filter Bar -->
+  <div class="sports-filter-panel card card-glass" id="sports-filter-panel">
+    <!-- Activity Chips -->
+    <div class="filter-group">
+      <label class="filter-label"
+        >🎯 {
+          currentLocale === "de"
+            ? "Sportart wählen:"
+            : currentLocale === "en"
+              ? "Select Sport:"
+              : currentLocale === "ca"
+                ? "Selecciona esport:"
+                : "Tipo de Actividad:"
+        }</label
+      >
+      <div class="activity-chips-scroll">
+        {
+          ACTIVITIES.map((act) => (
+            <button
+              type="button"
+              class={`chip-btn ${act.id === initialActivity ? "active" : ""}`}
+              data-activity={act.id}
+            >
+              <span>{act.icon}</span>
+              <span>{act.name[currentLocale]}</span>
+            </button>
+          ))
+        }
+      </div>
+    </div>
+
+    <!-- Zones Dropdown & Amenity Filters -->
+    <div class="filter-secondary-row">
+      <div class="zone-selector-wrap">
+        <label for="zone-select" class="filter-label"
+          >📍 {
+            currentLocale === "de"
+              ? "Zone / Region:"
+              : currentLocale === "en"
+                ? "Zone / Area:"
+                : currentLocale === "ca"
+                  ? "Zona / Àrea:"
+                  : "Zona de Mallorca:"
+          }</label
+        >
+        <select id="zone-select" class="sports-select" aria-label="Seleccionar zona de Mallorca">
+          {
+            ZONES.map((z) => (
+              <option value={z.id} selected={z.id === initialZone}>
+                {z.name[currentLocale]}
+              </option>
+            ))
+          }
+        </select>
+      </div>
+
+      <!-- Amenity Toggle Pills -->
+      <div class="amenities-toggles-wrap">
+        <span class="filter-label"
+          >✨ {
+            currentLocale === "de"
+              ? "Ausstattung:"
+              : currentLocale === "en"
+                ? "Amenities:"
+                : currentLocale === "ca"
+                  ? "Comoditats:"
+                  : "Comodidades Clave:"
+          }</span
+        >
+        <div class="toggle-pills-row">
+          <button type="button" class="toggle-pill" data-amenity="tieneSombra" aria-pressed="false">
+            <span>🌳</span>
+            <span
+              >{
+                currentLocale === "de"
+                  ? "Mit Schatten"
+                  : currentLocale === "en"
+                    ? "Shaded"
+                    : currentLocale === "ca"
+                      ? "Amb ombra"
+                      : "Con Sombra"
+              }</span
+            >
+          </button>
+          <button type="button" class="toggle-pill" data-amenity="fuenteAgua" aria-pressed="false">
+            <span>💧</span>
+            <span
+              >{
+                currentLocale === "de"
+                  ? "Trinkwasser"
+                  : currentLocale === "en"
+                    ? "Water Tap"
+                    : currentLocale === "ca"
+                      ? "Aigua potable"
+                      : "Fuente de Agua"
+              }</span
+            >
+          </button>
+          <button type="button" class="toggle-pill" data-amenity="accesiblePmr" aria-pressed="false">
+            <span>♿</span>
+            <span
+              >{
+                currentLocale === "de"
+                  ? "Barrierefrei"
+                  : currentLocale === "en"
+                    ? "Accessible"
+                    : currentLocale === "ca"
+                      ? "Accessible PMR"
+                      : "Accesible PMR"
+              }</span
+            >
+          </button>
+          <button type="button" class="toggle-pill" data-amenity="petFriendly" aria-pressed="false">
+            <span>🐾</span>
+            <span
+              >{
+                currentLocale === "de"
+                  ? "Hunde erlaubt"
+                  : currentLocale === "en"
+                    ? "Pet Friendly"
+                    : currentLocale === "ca"
+                      ? "Admet mascotes"
+                      : "Pet Friendly"
+              }</span
+            >
+          </button>
+          <button type="button" class="toggle-pill" data-amenity="gratis" aria-pressed="false">
+            <span>🆓</span>
+            <span
+              >{
+                currentLocale === "de"
+                  ? "Kostenlos"
+                  : currentLocale === "en"
+                    ? "Free Public"
+                    : currentLocale === "ca"
+                      ? "Gratuït"
+                      : "Acceso Gratuito"
+              }</span
+            >
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Map View Container (Hidden initially until toggled or in split mode) -->
+  <div class="sports-map-view" id="sports-map-view" style="display: none;">
+    <div class="map-interactive-wrapper card">
+      <div class="map-interactive-header">
+        <div class="map-badge-live">🟢 Mapa en Vivo de Instalaciones</div>
+        <span class="map-instructions"
+          >{
+            currentLocale === "de"
+              ? "Klicken Sie auf eine Markierung, um Details zu sehen"
+              : currentLocale === "en"
+                ? "Click any pin to inspect sports details"
+                : currentLocale === "ca"
+                  ? "Clica una xarxa per veure detalls"
+                  : "Haz clic en un punto para ver detalles de la pista"
+          }</span
+        >
+      </div>
+      <div class="map-embed-placeholder" id="sports-interactive-map">
+        <!-- Interactive Multi-Pin Map View -->
+        <iframe
+          title="Mapa de Instalaciones Deportivas en Mallorca"
+          class="sports-iframe-map"
+          src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d196884.28821949163!2d2.6502!3d39.5696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1spistas%20padel%20running%20calistenia%20mallorca!5e0!3m2!1ses!2ses!4v1719000000000!5m2!1ses!2ses"
+          loading="lazy"
+          allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Facilities Grid & POI Cards -->
+  <div class="sports-facilities-grid" id="facilities-grid">
+    {
+      SPORTS_FACILITIES.map((facility) => (
+        <article
+          class="sports-poi-card card"
+          data-facility-id={facility.id}
+          data-activities={JSON.stringify(facility.activityTypes)}
+          data-zone={facility.zone}
+          data-amenity-sombra={String(facility.amenities.tieneSombra)}
+          data-amenity-agua={String(facility.amenities.fuenteAgua)}
+          data-amenity-pmr={String(facility.amenities.accesiblePmr)}
+          data-amenity-pet={String(facility.amenities.petFriendly)}
+          data-amenity-gratis={String(facility.pricing.isFree)}
+        >
+          <div class="poi-media-wrap">
+            <img src={facility.image} alt={facility.name} class="poi-img" loading="lazy" decoding="async" />
+            <div class="poi-overlay-badges">
+              <span class={`status-pill status-${facility.status}`}>
+                {facility.status === "open" ? "🟢 Abierto" : "🟡 Mantenimiento"}
+              </span>
+              {facility.pricing.isFree ? (
+                <span class="price-pill free-pill">🆓 Acceso Libre</span>
+              ) : (
+                <span class="price-pill paid-pill">💶 Club Oficial</span>
+              )}
+            </div>
+          </div>
+
+          <div class="poi-content">
+            <div class="poi-header-row">
+              <span class="poi-zone-tag">📍 {facility.zone.toUpperCase()}</span>
+              <div class="poi-rating">
+                <span class="poi-star">⭐</span>
+                <strong>{facility.rating.toFixed(1)}</strong>
+                <span class="poi-reviews">({facility.reviewCount})</span>
+              </div>
+            </div>
+
+            <h3 class="poi-title">{facility.name}</h3>
+
+            <p class="poi-surface">
+              <span>🏟️</span>
+              <strong>{facility.surfaceLabel[currentLocale] || facility.surfaceLabel.es}</strong>
+            </p>
+
+            <p class="poi-description">{facility.description[currentLocale] || facility.description.es}</p>
+
+            <div class="poi-amenities-row">
+              {facility.amenities.tieneSombra && (
+                <span class="amenity-mini-badge" title="Dispone de Sombra">
+                  🌳 Sombra
+                </span>
+              )}
+              {facility.amenities.fuenteAgua && (
+                <span class="amenity-mini-badge" title="Agua Potable">
+                  💧 Agua
+                </span>
+              )}
+              {facility.amenities.accesiblePmr && (
+                <span class="amenity-mini-badge" title="Accesible PMR">
+                  ♿ PMR
+                </span>
+              )}
+              {facility.amenities.iluminacionNocturna && (
+                <span class="amenity-mini-badge" title="Iluminación Nocturna">
+                  💡 Iluminada
+                </span>
+              )}
+              {facility.amenities.petFriendly && (
+                <span class="amenity-mini-badge" title="Admite Mascotas">
+                  🐾 Pet Friendly
+                </span>
+              )}
+              {facility.amenities.vestuariosDuchas && (
+                <span class="amenity-mini-badge" title="Vestuarios y Duchas">
+                  🚿 Vestuarios
+                </span>
+              )}
+            </div>
+
+            {facility.crossSellRecommendations && facility.crossSellRecommendations.length > 0 && (
+              <div class="poi-cross-sell">
+                <span class="cross-sell-badge">💡 Plan Deportivo Completo:</span>
+                <p class="cross-sell-text">
+                  {facility.crossSellRecommendations[0].reason[currentLocale] ||
+                    facility.crossSellRecommendations[0].reason.es}
+                </p>
+              </div>
+            )}
+
+            <div class="poi-actions-row">
+              <a
+                href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(facility.name + " " + facility.address)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-secondary btn-sm"
+              >
+                <span>🧭 Como Llegar</span>
+              </a>
+
+              {facility.bookingUrl ? (
+                <a href={facility.bookingUrl} target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                  <span>📅 Reservar Pista ↗</span>
+                </a>
+              ) : facility.contactPhone ? (
+                <a href={`tel:${facility.contactPhone}`} class="btn btn-primary btn-sm">
+                  <span>📞 Llamar</span>
+                </a>
+              ) : (
+                <span class="btn btn-sm btn-disabled">✓ Entrada Libre</span>
+              )}
+            </div>
+          </div>
+        </article>
+      ))
+    }
+  </div>
+</div>
+
+<style>
+  .sports-explorer-container {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: var(--space-2xl);
+    box-sizing: border-box;
+  }
+
+  .sports-header-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    margin-bottom: var(--space-lg);
+  }
+
+  .badge-sports {
+    background: rgba(16, 185, 129, 0.15);
+    color: var(--color-primary-light);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    margin-bottom: var(--space-xs);
+  }
+
+  .sports-main-heading {
+    font-size: var(--font-size-3xl);
+    margin-bottom: var(--space-xs);
+  }
+
+  .sports-subtitle {
+    color: var(--color-text-muted);
+    font-size: var(--font-size-base);
+    max-width: 680px;
+    margin: 0;
+  }
+
+  /* Mode Switcher Tabs */
+  .sports-mode-tabs {
+    display: flex;
+    gap: 0.4rem;
+    background: var(--color-surface);
+    padding: 0.3rem;
+    border-radius: var(--border-radius-full);
+    border: 1px solid var(--color-surface-border);
+  }
+
+  .mode-tab {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.45rem 0.85rem;
+    border: none;
+    background: transparent;
+    color: var(--color-text-light);
+    font-weight: 700;
+    font-size: 0.85rem;
+    border-radius: var(--border-radius-full);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+  }
+
+  .mode-tab:hover {
+    color: var(--color-primary);
+  }
+
+  .mode-tab.active {
+    background: var(--color-primary);
+    color: #ffffff;
+    box-shadow: var(--shadow-sm);
+  }
+
+  /* Filter Panel */
+  .sports-filter-panel {
+    margin-bottom: var(--space-xl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .filter-label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--color-text-muted);
+    margin-bottom: 0.4rem;
+  }
+
+  .activity-chips-scroll {
+    display: flex;
+    gap: 0.5rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding-bottom: 4px;
+  }
+
+  .activity-chips-scroll::-webkit-scrollbar {
+    display: none;
+  }
+
+  .chip-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.45rem 0.85rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-surface-border);
+    border-radius: var(--border-radius-full);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-text);
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all var(--transition-fast);
+    flex-shrink: 0;
+  }
+
+  .chip-btn:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+  }
+
+  .chip-btn.active {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: #ffffff;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .filter-secondary-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    padding-top: var(--space-sm);
+    border-top: 1px solid var(--color-surface-border);
+  }
+
+  .zone-selector-wrap {
+    min-width: 220px;
+  }
+
+  .sports-select {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    border-radius: var(--border-radius-sm);
+    background: var(--color-surface);
+    border: 1px solid var(--color-surface-border);
+    color: var(--color-text);
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+
+  .toggle-pills-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .toggle-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.35rem 0.7rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-surface-border);
+    border-radius: var(--border-radius-sm);
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-text-light);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+  }
+
+  .toggle-pill:hover {
+    border-color: var(--color-primary-light);
+  }
+
+  .toggle-pill.active {
+    background: rgba(16, 185, 129, 0.15);
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    font-weight: 700;
+  }
+
+  /* Map View */
+  .sports-map-view {
+    margin-bottom: var(--space-xl);
+  }
+
+  .map-interactive-wrapper {
+    padding: var(--space-sm);
+    overflow: hidden;
+  }
+
+  .map-interactive-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-xs) var(--space-sm) var(--space-sm);
+  }
+
+  .map-badge-live {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #10b981;
+  }
+
+  .map-instructions {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+  }
+
+  .sports-iframe-map {
+    width: 100%;
+    height: 380px;
+    border: none;
+    border-radius: var(--border-radius-sm);
+  }
+
+  /* Facilities Grid */
+  .sports-facilities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+    gap: var(--space-lg);
+  }
+
+  .sports-poi-card {
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: all var(--transition-smooth);
+  }
+
+  .sports-poi-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-primary-light);
+  }
+
+  .poi-media-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: var(--color-surface-hover);
+  }
+
+  .poi-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  .sports-poi-card:hover .poi-img {
+    transform: scale(1.04);
+  }
+
+  .poi-overlay-badges {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    right: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .status-pill {
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--border-radius-full);
+    font-size: 0.75rem;
+    font-weight: 700;
+    background: rgba(0, 0, 0, 0.65);
+    color: #ffffff;
+    backdrop-filter: blur(8px);
+  }
+
+  .status-open {
+    border: 1px solid #10b981;
+  }
+
+  .price-pill {
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--border-radius-full);
+    font-size: 0.75rem;
+    font-weight: 700;
+    backdrop-filter: blur(8px);
+  }
+
+  .free-pill {
+    background: rgba(16, 185, 129, 0.85);
+    color: #ffffff;
+  }
+
+  .paid-pill {
+    background: rgba(217, 119, 6, 0.85);
+    color: #ffffff;
+  }
+
+  .poi-content {
+    padding: var(--space-md);
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 0.6rem;
+  }
+
+  .poi-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .poi-zone-tag {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: var(--color-primary);
+    letter-spacing: 0.5px;
+  }
+
+  .poi-rating {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.85rem;
+  }
+
+  .poi-star {
+    color: #f59e0b;
+  }
+
+  .poi-reviews {
+    color: var(--color-text-muted);
+    font-size: 0.75rem;
+  }
+
+  .poi-title {
+    font-size: 1.15rem;
+    margin: 0;
+    color: var(--color-text);
+  }
+
+  .poi-surface {
+    font-size: 0.825rem;
+    color: var(--color-text-muted);
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    margin: 0;
+  }
+
+  .poi-description {
+    font-size: 0.875rem;
+    color: var(--color-text-light);
+    line-height: 1.45;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .poi-amenities-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-top: auto;
+    padding-top: 0.4rem;
+  }
+
+  .amenity-mini-badge {
+    font-size: 0.75rem;
+    padding: 0.15rem 0.45rem;
+    background: var(--color-surface-hover);
+    border: 1px solid var(--color-surface-border);
+    border-radius: var(--border-radius-xs);
+    color: var(--color-text);
+  }
+
+  .poi-cross-sell {
+    background: rgba(64, 145, 108, 0.08);
+    border: 1px dashed var(--color-primary-border);
+    border-radius: var(--border-radius-sm);
+    padding: 0.45rem 0.6rem;
+    margin-top: 0.2rem;
+  }
+
+  .cross-sell-badge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    display: block;
+    margin-bottom: 0.15rem;
+  }
+
+  .cross-sell-text {
+    font-size: 0.78rem;
+    color: var(--color-text);
+    margin: 0;
+    line-height: 1.35;
+  }
+
+  .poi-actions-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.4rem;
+  }
+
+  .poi-actions-row .btn {
+    flex: 1;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .btn-disabled {
+    background: var(--color-surface-hover);
+    color: var(--color-text-muted);
+    border: 1px solid var(--color-surface-border);
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: default;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media (max-width: 640px) {
+    .sports-header-bar {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .sports-mode-tabs {
+      width: 100%;
+      justify-content: space-between;
+    }
+
+    .mode-tab {
+      flex: 1;
+      justify-content: center;
+      padding: 0.4rem 0.5rem;
+      font-size: 0.775rem;
+    }
+
+    .filter-secondary-row {
+      flex-direction: column;
+    }
+
+    .zone-selector-wrap {
+      width: 100%;
+    }
+  }
+</style>
+
+<script>
+  function initSportsExplorer() {
+    const root = document.getElementById("sports-explorer");
+    if (!root) return;
+
+    const modeTabs = root.querySelectorAll<HTMLButtonElement>(".mode-tab");
+    const chipBtns = root.querySelectorAll<HTMLButtonElement>(".chip-btn");
+    const zoneSelect = root.querySelector<HTMLSelectElement>("#zone-select");
+    const togglePills = root.querySelectorAll<HTMLButtonElement>(".toggle-pill");
+    const mapSection = root.querySelector<HTMLElement>("#sports-map-view");
+    const cards = root.querySelectorAll<HTMLElement>(".sports-poi-card");
+
+    let currentActivity = "all";
+    let currentZone = zoneSelect?.value || "all";
+    const activeAmenities: Record<string, boolean> = {
+      tieneSombra: false,
+      fuenteAgua: false,
+      accesiblePmr: false,
+      petFriendly: false,
+      gratis: false,
+    };
+
+    function filterCards() {
+      cards.forEach((card) => {
+        const activities: string[] = JSON.parse(card.dataset.activities || "[]");
+        const zone = card.dataset.zone || "";
+        const sombra = card.dataset.amenitySombra === "true";
+        const agua = card.dataset.amenityAgua === "true";
+        const pmr = card.dataset.amenityPmr === "true";
+        const pet = card.dataset.amenityPet === "true";
+        const gratis = card.dataset.amenityGratis === "true";
+
+        const matchActivity = currentActivity === "all" || activities.includes(currentActivity);
+        const matchZone = currentZone === "all" || zone === currentZone;
+        const matchSombra = !activeAmenities.tieneSombra || sombra;
+        const matchAgua = !activeAmenities.fuenteAgua || agua;
+        const matchPmr = !activeAmenities.accesiblePmr || pmr;
+        const matchPet = !activeAmenities.petFriendly || pet;
+        const matchGratis = !activeAmenities.gratis || gratis;
+
+        if (matchActivity && matchZone && matchSombra && matchAgua && matchPmr && matchPet && matchGratis) {
+          card.style.display = "flex";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    }
+
+    // 1. Mode Switching
+    modeTabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        modeTabs.forEach((t) => {
+          t.classList.remove("active");
+          t.setAttribute("aria-selected", "false");
+        });
+        tab.classList.add("active");
+        tab.setAttribute("aria-selected", "true");
+
+        const mode = tab.dataset.mode;
+        if (mode === "explorar") {
+          if (mapSection) mapSection.style.display = "block";
+        } else if (mode === "recomendados") {
+          if (mapSection) mapSection.style.display = "none";
+          // Activar actividades recomendadas
+          currentActivity = "padel";
+          chipBtns.forEach((c) => c.classList.toggle("active", c.dataset.activity === "padel"));
+          filterCards();
+        } else {
+          if (mapSection) mapSection.style.display = "none";
+        }
+      });
+    });
+
+    // 2. Activity Chips
+    chipBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        chipBtns.forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        currentActivity = btn.dataset.activity || "all";
+        filterCards();
+      });
+    });
+
+    // 3. Zone Select
+    zoneSelect?.addEventListener("change", () => {
+      currentZone = zoneSelect.value;
+      filterCards();
+    });
+
+    // 4. Amenity Toggles
+    togglePills.forEach((pill) => {
+      pill.addEventListener("click", () => {
+        const key = pill.dataset.amenity;
+        if (!key) return;
+        activeAmenities[key] = !activeAmenities[key];
+        pill.classList.toggle("active", activeAmenities[key]);
+        pill.setAttribute("aria-pressed", String(activeAmenities[key]));
+        filterCards();
+      });
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initSportsExplorer);
+  } else {
+    initSportsExplorer();
+  }
+</script>

@@ -74,11 +74,13 @@ export const sonBrullSpa: ServiceItem = {
     es: "Exclusivo santuario de spa y bienestar en un antiguo monasterio del siglo XVIII en Pollença. Rituales holísticos con ingredientes 100% naturales de Mallorca.",
     en: "Exclusive luxury spa sanctuary in an 18th-century monastery in Pollença. Holistic treatments utilizing 100% natural, local Mallorcan ingredients.",
     ca: "Santuari de benestar i spa exclusiu en un monestir del segle XVIII a Pollença. Tractaments holístics amb ingredients 100% naturals de Mallorca.",
+    de: "Exklusives Boutique-Spa im Relais & Châteaux Son Brull (Pollença) – Naturbehandlungen mit Oliven- und Mandelölen aus eigenem Anbau.",
   },
   fullDescription: {
     es: "Son Brull Spa, ubicado en el prestigioso hotel de 5 estrellas Relais & Châteaux a los pies de la Serra de Tramuntana en Pollença, es el único spa de Mallorca que basa la totalidad de sus tratamientos en productos naturales elaborados con ingredientes autóctonos de la isla. Sus rituales de autor emplean el aceite de oliva virgen extra de su propia finca, flor de sal de Es Trenc, almendras dulces de Mallorca y chumbera silvestre. Cuenta con sauna, baño de vapor, piscina termal interior climatizada y zona de relajación con vistas a los olivares.",
     en: "Son Brull Spa, situated within the acclaimed 5-star Relais & Châteaux property at the foothills of the Tramuntana mountains in Pollença, is celebrated for its bespoke treatments rooted entirely in handcrafted, organic Mallorcan botanicals. Using estate-pressed extra virgin olive oil, local almond oils, and Es Trenc fleur de sel, the sanctuary offers a heated indoor pool, steam room, and panoramic outdoor relaxation loungers.",
     ca: "Son Brull Spa, situat al prestigiós hotel Relais & Châteaux de Pollença, ofereix una experiència holística única a Mallorca basada en ingredients naturals de la seva pròpia finca com l'oli d'oliva verge, ametles mallorquines i flor de sal d'Es Trenc.",
+    de: "Das Spa des 5-Sterne-Hotels Son Brull am Fuße der Tramuntana bei Pollença ist ganz der mediterranen Naturheilkunde gewidmet. Alle Behandlungen basieren auf biologischen Ölen aus handgeernteten Mandeln, Oliven und Kräutern der hoteleigenen Finca.",
   },
   specialties: {
     es: [
@@ -102,6 +104,12 @@ export const sonBrullSpa: ServiceItem = {
       "Circuit termal privat amb sauna i bany turc",
       "Tractaments facials ecològics",
     ],
+    de: [
+      "Mallorquinische Naturkosmetik",
+      "Mandelöl- & Olivenöl-Massagen",
+      "Thermalbereich mit Bergblick",
+      "Private Spa-Rituale für Paare",
+    ],
   },
   highlights: {
     es: [
@@ -121,6 +129,12 @@ export const sonBrullSpa: ServiceItem = {
       "Ingredients botànics 100% orgànics de la pròpia finca",
       "Piscina termal coberta amb vistes als oliverars de Pollença",
       "Guardonat amb Michelin Key 2025 i distinció Relais & Châteaux",
+    ],
+    de: [
+      "Einzigartiges Öko-Spa im historischen Klostergut Son Brull (Relais & Châteaux)",
+      "100 % natürliche Inhaltsstoffe aus eigenem biologischem Finca-Anbau",
+      "Sauna, Dampfbad und beheizter Außenpool mit Traumblick auf die Weinberge",
+      "Ganzheitliche Entspannung abseits des Massentourismus im Norden Mallorcas",
     ],
   },
   servicesProvided: {
@@ -142,6 +156,12 @@ export const sonBrullSpa: ServiceItem = {
       "Circuits d'hidroteràpia i sauna",
       "Paquets de relaxació de dia sencer",
     ],
+    de: [
+      "Körperpeelings mit mallorquinischem Meersalz und Mandelöl",
+      "Entspannende Ganzkörpermassagen mit warmem Olivenöl",
+      "Hydrotherapie, Dampfbad und finnische Sauna",
+      "Yoga-Einheiten im Garten und Wellness-Tagesprogramme",
+    ],
   },
   foundedYear: 2003,
   founderName: "Familia Suau",
@@ -157,6 +177,7 @@ export const sonBrullSpa: ServiceItem = {
         es: "Directora de Spa & Terapias Holísticas",
         en: "Spa & Holistic Therapies Director",
         ca: "Directora de Spa i Teràpies",
+        de: "Leitende Therapeutin & Wellnessberaterin",
       },
       specialty: "Naturopatía y Terapias Mediterráneas",
     },

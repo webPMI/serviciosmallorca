@@ -16,6 +16,7 @@ export interface VerificationInput {
   phone?: string;
   extractedWebPhone?: string;
   extractedMapsPhone?: string;
+  extractedSocialPhone?: string;
   whatsapp?: string;
   socialLinks?: {
     instagram?: string;
@@ -43,12 +44,52 @@ export interface VerificationReport {
   crossReference: {
     webPhoneMatch: boolean;
     mapsPhoneMatch: boolean;
+    socialPhoneMatch: boolean;
+    hasCriticalPhoneMismatch: boolean;
     addressInMallorca: boolean;
     activeWeb200Ok: boolean;
     socialMatchScore: number;
   };
   warnings: string[];
   recommendations: string[];
+}
+
+export interface UserIntentBadges {
+  isEmergency24h: boolean;
+  isUrgentService: boolean;
+  hasInVillaService: boolean;
+  hasAppointmentRequired: boolean;
+}
+
+/**
+ * Detecta puntos de dolor e intención de búsqueda del usuario para destacar badges de urgencia.
+ */
+export function extractUserIntentFlags(rawText: string): UserIntentBadges {
+  const t = rawText.toLowerCase();
+  return {
+    isEmergency24h: t.includes("24h") || t.includes("24 horas") || t.includes("urgencias 24"),
+    isUrgentService:
+      t.includes("urgente") ||
+      t.includes("averia") ||
+      t.includes("averías") ||
+      t.includes("emergencia") ||
+      t.includes("mismo dia") ||
+      t.includes("mismo día"),
+    hasInVillaService:
+      t.includes("a domicilio") ||
+      t.includes("en villa") ||
+      t.includes("in-villa") ||
+      t.includes("a tu casa") ||
+      t.includes("desplazamiento a"),
+    hasAppointmentRequired:
+      t.includes("cita previa") ||
+      t.includes("citas previas") ||
+      t.includes("cita") ||
+      t.includes("citas") ||
+      t.includes("reserva previa") ||
+      t.includes("bajo cita") ||
+      t.includes("reserva obligatoria"),
+  };
 }
 
 /**
@@ -99,40 +140,31 @@ export interface ImageVerificationResult {
  */
 export function validateImageQuality(imageUrl?: string): { isValid: boolean; reason?: string } {
   if (!imageUrl || typeof imageUrl !== "string" || imageUrl.trim() === "") {
-    return { isValid: false, reason: "URL de imagen vacía o ausente." };
+    return { isValid: false, reason: "URL de imagen vacía o inválida." };
   }
 
-  const cleanUrl = imageUrl.trim().toLowerCase();
+  const urlLower = imageUrl.toLowerCase();
 
-  // 1. Detección de bancos de stock
-  for (const forbidden of FORBIDDEN_STOCK_DOMAINS) {
-    if (cleanUrl.includes(forbidden)) {
-      return {
-        isValid: false,
-        reason: `Imagen descartada: Proviene del banco de imágenes de stock "${forbidden}". Solo se admiten fotos reales de fuentes oficiales (GR-11).`,
-      };
-    }
+  // 1. Descartar dominios de stock explícitos
+  if (FORBIDDEN_STOCK_DOMAINS.some((domain) => urlLower.includes(domain))) {
+    return { isValid: false, reason: `Dominio de imagen de stock restringido: ${imageUrl}` };
   }
 
-  // 2. Detección de patrones basura (placeholders, banderas, assets de plugins)
-  for (const pattern of FORBIDDEN_IMAGE_PATTERNS) {
-    if (pattern.test(cleanUrl)) {
-      return {
-        isValid: false,
-        reason: `Imagen descartada: Coincide con patrón de placeholder, icono o plugin (${pattern}).`,
-      };
-    }
+  // 2. Descartar patrones de placeholders o assets
+  if (FORBIDDEN_IMAGE_PATTERNS.some((pattern) => pattern.test(urlLower))) {
+    return { isValid: false, reason: `Patrón de imagen no válido detectado: ${imageUrl}` };
   }
 
   return { isValid: true };
 }
 
 /**
- * Valida la titularidad y trazabilidad de origen de una imagen respecto a la web del negocio o sus canales oficiales.
+ * Verifica la propiedad de una imagen contrastándola contra el dominio oficial del negocio
+ * y contra sus CDNs oficiales de redes sociales.
  */
 export function verifyImageOwnership(
-  imageUrl?: string,
-  businessWebsite?: string,
+  imageUrl: string,
+  businessWebsiteUrl?: string,
   _socialLinks?: Record<string, string | undefined>,
 ): ImageVerificationResult {
   const quality = validateImageQuality(imageUrl);
@@ -140,41 +172,35 @@ export function verifyImageOwnership(
     return { isValid: false, trustLevel: "unverified", reason: quality.reason };
   }
 
-  if (!imageUrl) {
-    return { isValid: false, trustLevel: "unverified", reason: "URL ausente." };
-  }
-
-  // Si es un asset local alojado en el propio proyecto (/images/...)
-  if (imageUrl.startsWith("/")) {
-    return { isValid: true, trustLevel: "high_trust_domain" };
-  }
-
   try {
-    const imgUrlObj = new URL(imageUrl);
-    const imgHost = imgUrlObj.hostname.toLowerCase().replace(/^www\./, "");
+    const imgObj = new URL(imageUrl);
+    const imgHost = imgObj.hostname.toLowerCase();
 
-    // 1. Verificación de Dominio Propio (High Trust)
-    if (businessWebsite && businessWebsite.startsWith("http")) {
+    // 1. Verificación contra dominio propio de la web oficial
+    if (businessWebsiteUrl && businessWebsiteUrl.startsWith("http")) {
       try {
-        const siteHost = new URL(businessWebsite).hostname.toLowerCase().replace(/^www\./, "");
+        const siteObj = new URL(businessWebsiteUrl);
+        const siteHost = siteObj.hostname.toLowerCase();
+
+        // Coincidencia de dominio principal o subdominio (ej: img.minegocio.com vs minegocio.com)
         if (imgHost === siteHost || imgHost.endsWith(`.${siteHost}`)) {
           return { isValid: true, trustLevel: "high_trust_domain" };
         }
       } catch {
-        // Continuar si falla el parseo de businessWebsite
+        /* ignore */
       }
     }
 
-    // CDNs oficiales conocidos utilizados por empresas
+    // CDNs de plataformas de confianza
     const TRUSTED_BUSINESS_CDNS = [
-      "uploadcare.engelvoelkers.com",
-      "ucarecdn.com",
-      "storyblok.com",
-      "marriott.com",
-      "cache.marriott.com",
-      "tatspark.com",
-      "imgur.com",
-      "i.imgur.com",
+      "cloudinary.com",
+      "imgix.net",
+      "shopify.com",
+      "squarespace-cdn.com",
+      "wixstatic.com",
+      "wp.com",
+      "google.com",
+      "gstatic.com",
     ];
 
     if (TRUSTED_BUSINESS_CDNS.some((cdn) => imgHost.includes(cdn))) {
@@ -236,6 +262,9 @@ export function isCoordinateWithinMallorca(lat?: number, lng?: number): boolean 
 
 /**
  * Ejecuta la auditoría cruzada multivariable y calcula el Confidence Score (0-100%).
+ * Implementa Consistencia Cruzada Estricta (Double-Check):
+ * Si el teléfono del sitio web contradice al de Redes Sociales o Maps,
+ * el puntaje se penaliza (<80%) y el estado se fuerza a "needs_manual_review".
  */
 export function auditBusinessData(input: VerificationInput): VerificationReport {
   let phoneScore = 0;
@@ -250,22 +279,35 @@ export function auditBusinessData(input: VerificationInput): VerificationReport 
   const mainPhone = input.phone || input.whatsapp;
   const webPhone = input.extractedWebPhone;
   const mapsPhone = input.extractedMapsPhone;
+  const socialPhone = input.extractedSocialPhone;
 
-  // 1. Verificación Telefónica (Max 25 pts)
+  // 1. Verificación Telefónica Cruzada (Max 25 pts)
   const webPhoneMatch = Boolean(mainPhone && webPhone && arePhonesMatching(mainPhone, webPhone));
   const mapsPhoneMatch = Boolean(mainPhone && mapsPhone && arePhonesMatching(mainPhone, mapsPhone));
+  const socialPhoneMatch = Boolean(mainPhone && socialPhone && arePhonesMatching(mainPhone, socialPhone));
+
+  // Detección de discrepancia crítica entre fuentes activas
+  let hasCriticalPhoneMismatch = false;
+  if (webPhone && socialPhone && !arePhonesMatching(webPhone, socialPhone)) {
+    hasCriticalPhoneMismatch = true;
+    warnings.push("🚩 Discrepancia Crítica: El teléfono de la Web no coincide con el teléfono de Redes Sociales.");
+    recommendations.push("Contactar con el titular para verificar el canal de contacto preferente.");
+  } else if (webPhone && mapsPhone && !arePhonesMatching(webPhone, mapsPhone)) {
+    hasCriticalPhoneMismatch = true;
+    warnings.push("🚩 Discrepancia Crítica: El teléfono de la Web difiere del número indexado en Google Maps.");
+    recommendations.push("Comprobar cuál es el teléfono de atención al cliente activo.");
+  }
 
   if (mainPhone) {
-    if (webPhoneMatch && mapsPhoneMatch) {
+    if (hasCriticalPhoneMismatch) {
+      phoneScore = 5; // Fuerte penalización por contradicción entre fuentes oficiales
+    } else if (webPhoneMatch && (mapsPhoneMatch || socialPhoneMatch)) {
       phoneScore = 25; // Triple coincidencia perfecta
-    } else if (webPhoneMatch || mapsPhoneMatch) {
+    } else if (webPhoneMatch || mapsPhoneMatch || socialPhoneMatch) {
       phoneScore = 20; // Doble coincidencia
-    } else if (webPhone && mapsPhone && arePhonesMatching(webPhone, mapsPhone)) {
-      phoneScore = 15;
-      warnings.push("El teléfono principal difiere del encontrado en Web y Maps.");
     } else {
       phoneScore = 10;
-      if (webPhone || mapsPhone) {
+      if (webPhone || mapsPhone || socialPhone) {
         warnings.push("Discrepancia en números de teléfono entre fuentes.");
         recommendations.push("Confirmar con el titular el número oficial preferente.");
       }
@@ -289,7 +331,6 @@ export function auditBusinessData(input: VerificationInput): VerificationReport 
   // 3. Disponibilidad y Web Oficial (Max 20 pts)
   let activeWeb200Ok = false;
   if (input.website && input.website.startsWith("http")) {
-    // Priorizar webAccessibility sobre webHttpStatus si está disponible
     if (input.webAccessibility === "active" || input.webHttpStatus === 200 || input.webHttpStatus === undefined) {
       webScore = 20;
       activeWeb200Ok = true;
@@ -300,6 +341,7 @@ export function auditBusinessData(input: VerificationInput): VerificationReport 
     } else if (input.webAccessibility === "server_error" || input.webHttpStatus === 500) {
       webScore = 5;
       warnings.push("La web oficial devuelve código 500 (Error del Servidor).");
+    } else {
       webScore = 5;
       warnings.push(`La web oficial devuelve código HTTP ${input.webHttpStatus}.`);
     }
@@ -341,12 +383,17 @@ export function auditBusinessData(input: VerificationInput): VerificationReport 
     warnings.push("Volumen de reseñas públicas bajo o no consolidado.");
   }
 
-  const confidenceScore = Math.min(100, phoneScore + geoScore + webScore + socialScore + repScore);
+  let confidenceScore = Math.min(100, phoneScore + geoScore + webScore + socialScore + repScore);
+
+  // Si existe discrepancia crítica entre fuentes oficiales, limitar el score al 75% máximo
+  if (hasCriticalPhoneMismatch && confidenceScore >= 80) {
+    confidenceScore = 75;
+  }
 
   let status: "verified" | "needs_manual_review" | "pending_audit" = "pending_audit";
-  if (confidenceScore >= 80 && !warnings.some((w) => w.includes("Discrepancia"))) {
+  if (confidenceScore >= 80 && !hasCriticalPhoneMismatch && !warnings.some((w) => w.includes("Discrepancia"))) {
     status = "verified";
-  } else if (confidenceScore >= 50 || warnings.length > 0) {
+  } else if (confidenceScore >= 50 || warnings.length > 0 || hasCriticalPhoneMismatch) {
     status = "needs_manual_review";
   }
 
@@ -363,6 +410,8 @@ export function auditBusinessData(input: VerificationInput): VerificationReport 
     crossReference: {
       webPhoneMatch,
       mapsPhoneMatch,
+      socialPhoneMatch,
+      hasCriticalPhoneMismatch,
       addressInMallorca,
       activeWeb200Ok,
       socialMatchScore: socialScore,

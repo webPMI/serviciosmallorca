@@ -1,0 +1,252 @@
+---
+import { getBusinessReviewsTraceability } from "../lib/reviewsTraceability";
+import type { Locale } from "../i18n";
+
+interface Props {
+  businessSlug: string;
+  businessName: string;
+  currentLocale: Locale;
+}
+
+const { businessSlug, businessName, currentLocale } = Astro.props;
+const traceabilityData = getBusinessReviewsTraceability(businessSlug);
+
+if (!traceabilityData || traceabilityData.verifiedReviews.length === 0) {
+  return null;
+}
+---
+
+<div class="reviews-traceability-block" id="social-proof-traceability">
+  <div class="traceability-header">
+    <div class="badge badge-success">
+      {
+        currentLocale === "de"
+          ? "🛡️ Verifizierte Social-Proof-Rezensionen"
+          : currentLocale === "en"
+            ? "🛡️ Verified Social Proof Reviews"
+            : currentLocale === "ca"
+              ? "🛡️ Ressenyes Verificades"
+              : "🛡️ Opiniones Verificadas en Plataformas Oficiales"
+      }
+    </div>
+    <span class="traceability-disclaimer">
+      {
+        currentLocale === "de"
+          ? "Direkt aggregiert aus offiziellen Profilen (Google Maps & TripAdvisor)"
+          : currentLocale === "en"
+            ? "Directly indexed from official Google Maps and TripAdvisor profiles"
+            : currentLocale === "ca"
+              ? "Extret de perfils oficials de Google Maps i TripAdvisor"
+              : "Extraídas y auditadas de Google Maps y TripAdvisor (GR-11 & GR-12)"
+      }
+    </span>
+  </div>
+
+  <!-- Top Positive Sentiment Tags -->
+  {
+    traceabilityData.topPositiveTags && traceabilityData.topPositiveTags.length > 0 && (
+      <div class="sentiment-tags-row">
+        <span class="tags-label">
+          💬{" "}
+          {currentLocale === "de"
+            ? "Häufig gelobt:"
+            : currentLocale === "en"
+              ? "Top praised highlights:"
+              : currentLocale === "ca"
+                ? "El més destacat:"
+                : "Aspectos más elogiados:"}
+        </span>
+        <div class="tags-list">
+          {traceabilityData.topPositiveTags.map((tag) => (
+            <span class="sentiment-tag-pill">✓ {tag}</span>
+          ))}
+        </div>
+      </div>
+    )
+  }
+
+  <!-- Verified Review Cards -->
+  <div class="verified-reviews-list">
+    {
+      traceabilityData.verifiedReviews.map((review) => (
+        <article class="verified-review-card card">
+          <div class="rev-card-header">
+            <div class="author-info">
+              <div class="author-avatar">{review.authorName.charAt(0)}</div>
+              <div>
+                <strong class="author-name">{review.authorName}</strong>
+                {review.authorLocation && <span class="author-loc">📍 {review.authorLocation}</span>}
+              </div>
+            </div>
+
+            <div class="rev-stars-wrap">
+              <span class="stars-gold">{"★".repeat(Math.round(review.rating))}</span>
+              <span class="rev-date">{review.relativeTime}</span>
+            </div>
+          </div>
+
+          <div class="rev-provenance-badge">
+            <span class="prov-icon">🌐</span>
+            <span class="prov-text">{review.sourceLabel[currentLocale] || review.sourceLabel.es}</span>
+            {review.verifiedCustomer && <span class="prov-verified">✓ Verificado</span>}
+          </div>
+
+          <p class="rev-body-text">"{review.text[currentLocale] || review.text.es}"</p>
+        </article>
+      ))
+    }
+  </div>
+</div>
+
+<style>
+  .reviews-traceability-block {
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-xl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .traceability-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+  }
+
+  .traceability-disclaimer {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+  }
+
+  .sentiment-tags-row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+    padding: 0.4rem 0.6rem;
+    background: rgba(64, 145, 108, 0.06);
+    border: 1px dashed var(--color-primary-border);
+    border-radius: var(--border-radius-sm);
+  }
+
+  .tags-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--color-primary);
+  }
+
+  .tags-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+  }
+
+  .sentiment-tag-pill {
+    font-size: 0.725rem;
+    font-weight: 600;
+    background: var(--color-surface);
+    color: var(--color-text);
+    padding: 0.15rem 0.45rem;
+    border-radius: var(--border-radius-full);
+    border: 1px solid var(--color-surface-border);
+  }
+
+  .verified-reviews-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .verified-review-card {
+    padding: var(--space-md);
+    background: var(--color-surface);
+    border: 1px solid var(--color-surface-border);
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .rev-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .author-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .author-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    color: #ffffff;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+  }
+
+  .author-name {
+    font-size: 0.875rem;
+    color: var(--color-text);
+    display: block;
+  }
+
+  .author-loc {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    display: block;
+  }
+
+  .rev-stars-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .stars-gold {
+    color: #f59e0b;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+  }
+
+  .rev-date {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+  }
+
+  .rev-provenance-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.75rem;
+    color: var(--color-primary);
+    background: rgba(16, 185, 129, 0.08);
+    padding: 0.15rem 0.45rem;
+    border-radius: var(--border-radius-xs);
+    width: fit-content;
+  }
+
+  .prov-verified {
+    font-weight: 700;
+    color: #10b981;
+    margin-left: 0.3rem;
+  }
+
+  .rev-body-text {
+    font-size: 0.85rem;
+    line-height: 1.45;
+    color: var(--color-text-light);
+    margin: 0;
+    font-style: italic;
+  }
+</style>

@@ -5,9 +5,9 @@ import NavbarManager from "./NavbarManager.astro";
 import NavbarAdmin from "./NavbarAdmin.astro";
 
 interface Props {
-  currentLocale: "es" | "en" | "ca" | string;
+  currentLocale: "es" | "en" | "ca" | "de" | string;
   translations: Record<string, string>;
-  getLangPrefix: (locale: "es" | "en" | "ca") => string;
+  getLangPrefix: (locale: "es" | "en" | "ca" | "de") => string;
 }
 
 const { currentLocale, translations, getLangPrefix } = Astro.props;

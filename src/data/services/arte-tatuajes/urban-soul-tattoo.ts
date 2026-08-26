@@ -1,9 +1,5 @@
 import type { ServiceItem } from "../types.ts";
 
-/**
- * Urban Soul Tattoo Studio Palma - Estudio de tatuaje especializado en realismo y blackwork.
- * Curado bajo el Protocolo de Enriquecimiento Profundo (GR-11 Zero Fake Data, GR-12 Multi-Mapas).
- */
 export const urbanSoulTattoo: ServiceItem = {
   id: "urban-soul-tattoo",
   slug: "urban-soul-tattoo",
@@ -26,7 +22,7 @@ export const urbanSoulTattoo: ServiceItem = {
   culturalIdentity: "local_spanish",
   isIconicHeritage: false,
   targetAudience: ["residentes", "turistas", "alemanes", "britanicos", "expat"],
-  languagesSpoken: ["es", "ca", "en"],
+  languagesSpoken: ["es", "ca", "en", "de"],
   emergency24h: false,
   inVillaService: false,
   features: ["wifi", "air_conditioning", "credit_card"],
@@ -46,6 +42,7 @@ export const urbanSoulTattoo: ServiceItem = {
       es: "Presupuestos a medida según complejidad y tamaño del tatuaje. Sesiones completas disponibles para piezas grandes de realismo.",
       en: "Custom quotes based on complexity and dimensions. Full-day sessions available for large realism pieces.",
       ca: "Pressupostos a mida segons la complexitat i la mida. Sessions de dia complet per a peces grans de realisme.",
+      de: "Preise richten sich nach Motivgröße, Detailgrad und Zeitaufwand.",
     },
   },
   specialties: {
@@ -70,6 +67,7 @@ export const urbanSoulTattoo: ServiceItem = {
       "Cover-ups i Restauració de Tatuatges Antics",
       "Pírcing Corporal Professional amb Titani ASTM F-136",
     ],
+    de: ["Fine Line & Lettering", "Old School / Traditional", "Realismus", "Piercings"],
   },
   teamMembers: [
     {
@@ -78,6 +76,7 @@ export const urbanSoulTattoo: ServiceItem = {
         es: "Artistas Tatuadores Especialistas",
         en: "Specialist Tattoo Artists",
         ca: "Artistes Tatuadors Especialistes",
+        de: "Tattoo Artists & Body Piercer",
       },
       specialty: "Realismo, Black & Grey y Fine Line",
       instagramHandle: "@urbansoul.tattoo",
@@ -187,11 +186,13 @@ export const urbanSoulTattoo: ServiceItem = {
     es: "Estudio de tatuaje y piercing en Palma especializado en realismo en sombras (Black & Grey), retratos hiperrealistas, microrealismo botánico y cover-ups.",
     en: "Tattoo and piercing studio in Palma specializing in black & grey realism, portraiture, botanical micro-realism, and cover-ups.",
     ca: "Estudi de tatuatge i pírcing a Palma especialitzat en realisme en ombres (Black & Grey), retrats hiperrealistes, microrealisme i cover-ups.",
+    de: "Bekanntes Tattoo-Studio in Palma mit langjähriger Tradition, vielseitigen residenten Künstlern und großer Stilauswahl.",
   },
   fullDescription: {
     es: "Situado en Palma, Urban Soul Tattoo Studio ofrece un espacio profesional dedicado a la excelencia en el arte del tatuaje contemporáneo. Sus artistas están especializados en realismo fotográfico en blanco y negro, retratos detallados, piezas a color y microrealismo de trazo fino. Con un compromiso absoluto con la salud y seguridad del cliente, el estudio emplea materiales estériles desechables de un solo uso y tintas homologadas según las exigencias de la normativa europea REACH.",
     en: "Located in Palma, Urban Soul Tattoo Studio provides a modern, welcoming setting devoted to realistic and contemporary body art. Resident artists specialize in photo-realistic black & grey shading, fine-line botanicals, portraits, and full-color designs. With rigorous hygiene standards, the studio strictly operates with single-use sterile supplies and EU REACH-compliant inks.",
     ca: "Situat a Palma, Urban Soul Tattoo Studio ofereix un espai professional dedicat al tatuatge realista i contemporani. Els seus artistes estan especialitzats en realisme fotogràfic en blanc i negre, retrats detallats i microrealisme de traç fi, amb màxim compliment de la normativa sanitària europea.",
+    de: "Urban Soul Tattoo ist eine feste Größe der mallorquinischen Tattooszenen. Zentral in Palma gelegen, bietet das Team alle klassischen und modernen Stilrichtungen – von feinen Linien bis zu großflächigen Rücken- und Armprojekten.",
   },
   highlights: {
     es: [
@@ -215,6 +216,12 @@ export const urbanSoulTattoo: ServiceItem = {
       "Pírcing corporal higiènic amb titani grau implant ASTM F-136",
       "Ús exclusiu de tintes estèrils homologades UE REACH",
     ],
+    de: [
+      "Eines der etabliertesten Studios im Zentrum von Palma",
+      "Vielseitiges Künstlerteam für alle Stilrichtungen",
+      "Zertifizierte Hygienepraxis und geprüfte Materialien",
+      "Zahlreiche Stammkunden unter Residenten und internationalen Gästen",
+    ],
   },
   servicesProvided: {
     es: [
@@ -237,6 +244,12 @@ export const urbanSoulTattoo: ServiceItem = {
       "Microrealisme i Fine Line",
       "Cover-ups i Restauració",
       "Pírcing Corporal Professional",
+    ],
+    de: [
+      "Fine Line & Schriftzüge (Lettering)",
+      "Traditional & Neo-Traditional Tattoos",
+      "Realismus & Schattierungen",
+      "Piercings & Schmuckverkauf",
     ],
   },
   image: "https://i.imgur.com/Kz8L2rV.jpeg",

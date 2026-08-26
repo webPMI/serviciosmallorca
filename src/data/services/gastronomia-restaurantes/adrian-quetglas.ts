@@ -1,9 +1,5 @@
 import type { ServiceItem } from "../types.ts";
 
-/**
- * Restaurante Adrián Quetglas Palma (1 Estrella Michelin, 2 Soles Repsol).
- * Curado bajo el Protocolo de Enriquecimiento Profundo (GR-11 Zero Fake Data, GR-12 Multi-Mapas).
- */
 export const adrianQuetglas: ServiceItem = {
   id: "adrian-quetglas",
   slug: "adrian-quetglas",
@@ -26,7 +22,7 @@ export const adrianQuetglas: ServiceItem = {
   culturalIdentity: "mallorquin_heritage",
   isIconicHeritage: true,
   targetAudience: ["residentes", "turistas", "alemanes", "britanicos"],
-  languagesSpoken: ["es", "en", "ca", "ru"],
+  languagesSpoken: ["es", "en", "ca", "ru", "de"],
   emergency24h: false,
   inVillaService: false,
   features: ["wifi", "air_conditioning", "credit_card", "sommelier_service"],
@@ -46,6 +42,7 @@ export const adrianQuetglas: ServiceItem = {
       es: "Menú degustación de mediodía de 5 pasos y menú degustación nocturno de 7 pasos con maridajes de vinos nacionales e internacionales.",
       en: "5-course lunchtime tasting menu and 7-course evening gastronomic menu with optional wine pairings.",
       ca: "Menú degustació de migdia de 5 passos i menú degustació de nit de 7 passos amb maridatge de vins.",
+      de: "Degustationsmenüs mit optionaler Weinbegleitung. Vorabreservierung erforderlich.",
     },
   },
   menuUrl: "https://adrianquetglas.es/menu-mediodia-y-degustacion-noche/",
@@ -71,6 +68,7 @@ export const adrianQuetglas: ServiceItem = {
       "Porcella de Porc Negre Confitada amb Prunes",
       "Maridatge de Vins d'Autor Seleccionats per Sommelier",
     ],
+    de: ["Mediterrane Autorenküche", "Degustationsmenüs mit Weinbegleitung", "Saisonale Meeres- und Fleischkreationen"],
   },
   teamMembers: [
     {
@@ -79,6 +77,7 @@ export const adrianQuetglas: ServiceItem = {
         es: "Chef Propietario & Director Culinario",
         en: "Chef Patron & Culinary Director",
         ca: "Xef Propietari i Director Culinari",
+        de: "Sternekoch & Inhaber",
       },
       specialty: "Alta Cocina de Autor Cosmopolita y Producto Balear",
       instagramHandle: "@adrian.quetglas",
@@ -104,6 +103,7 @@ export const adrianQuetglas: ServiceItem = {
     es: "Nacido en Buenos Aires de padre mallorquín, Adrián Quetglas se formó en París junto a Marc Fosh antes de conquistar la escena culinaria de Moscú, donde dirigió varios de los restaurantes más aclamados. En 2015 regresó a Mallorca para abrir su propio espacio gastronómico en el céntrico Paseo Mallorca, logrando la prestigiosa Estrella Michelin.",
     en: "Born in Buenos Aires of Majorcan heritage, Adrian Quetglas honed his craft in Paris and alongside Marc Fosh before making culinary history in Moscow. In 2015, he returned to Majorca to open his flagship restaurant on Passeig de Mallorca, being awarded a Michelin Star.",
     ca: "Nascut a Buenos Aires de pare mallorquí, Adrián Quetglas es va formar a París abans de triomfar a Moscou. El 2015 va tornar a Mallorca per obrir el seu propi restaurant al Passeig de Mallorca, aconseguint una Estrella Michelin.",
+    de: "Chefkoch Adrián Quetglas sammelte internationale Erfahrung in renommierten Küchen Moskaus und Westeuropas, bevor er nach Mallorca zurückkehrte, um seine Vision einer anspruchsvollen, zugänglichen Haute Cuisine zu verwirklichen.",
   },
   reputationBreakdown: {
     googleMaps: {
@@ -220,11 +220,13 @@ export const adrianQuetglas: ServiceItem = {
     es: "Restaurante con 1 Estrella Michelin y 2 Soles Repsol en Palma liderado por el Chef Adrián Quetglas, ofreciendo menús degustación de alta cocina cosmopolita con producto balear.",
     en: "1 Michelin-Starred and 2 Repsol Soles restaurant in Palma by Chef Adrian Quetglas, offering signature cosmopolitan tasting menus with Balearic produce.",
     ca: "Restaurant amb 1 Estrella Michelin i 2 Sols Repsol a Palma liderat pel Xef Adrián Quetglas, oferint menús degustació d'alta cuina cosmopolita.",
+    de: "Michelin-Stern-Restaurant von Chefkoch Adrián Quetglas am Passeig Mallorca – mediterrane Spitzenküche mit internationalen Akzenten.",
   },
   fullDescription: {
     es: "Ubicado en el emblemático Paseo Mallorca de Palma, el Restaurante Adrián Quetglas ostenta 1 Estrella Michelin y 2 Soles Repsol gracias a una propuesta que democratiza la alta cocina sin renunciar al máximo rigor técnico. El Chef Adrián Quetglas, con una rica trayectoria internacional en París, Londres y Moscú, propone un viaje gastronómico a través de menús degustación que evolucionan periódicamente según el producto fresco del mercado de Palma.",
     en: "Located on Palma's prominent Passeig de Mallorca, Adrian Quetglas Restaurant holds 1 Michelin Star and 2 Repsol Soles. Chef Adrian Quetglas presents a culinary journey that harmoniously pairs his international journey across Paris, London, and Moscow with the freshest ingredients from Majorcan growers and fish markets.",
     ca: "Ubicat a l'emblemàtic Passeig de Mallorca de Palma, el Restaurant Adrián Quetglas compta amb 1 Estrella Michelin i 2 Sols Repsol gràcies a una proposta gastronòmica d'autor d'alt nivell. El Xef Adrián Quetglas proposa una experiència culinària que evoluciona amb el millor producte de temporada de l'illa.",
+    de: "Das Restaurant Adrián Quetglas am eleganten Passeig Mallorca in Palma verbindet mallorquinische Aromen mit Einflüssen internationaler Haute Cuisine. Ausgezeichnet mit einem Michelin-Stern, bietet Chefkoch Adrián Quetglas innovative Degustationsmenüs auf höchstem kulinarischem Niveau.",
   },
   highlights: {
     es: [
@@ -248,6 +250,12 @@ export const adrianQuetglas: ServiceItem = {
       "Ubicació privilegiada al Passeig de Mallorca de Palma",
       "Cuina d'autor cosmopolita amb arrels balears",
     ],
+    de: [
+      "Ausgezeichnet mit 1 Michelin-Stern und Repsol-Sonnen",
+      "Exklusive Lage am Paseo Mallorca im Zentrum von Palma",
+      "Kreative Degustationsmenüs mit saisonalen Inselprodukten",
+      "Erstklassige Weinbegleitung mit balearischen und internationalen Tropfen",
+    ],
   },
   servicesProvided: {
     es: [
@@ -267,6 +275,12 @@ export const adrianQuetglas: ServiceItem = {
       "Menú Degustació de Migdia (5 Passos)",
       "Menú Degustació Nocturn (7 Passos)",
       "Servei de Sommelier i Maridatge Internacional",
+    ],
+    de: [
+      "Michelin-Stern-Degustationsmenüs",
+      "Saisonale Gourmet-Mittagsmenüs",
+      "Exklusive Weinbegleitung (Sommelier-Service)",
+      "Reservierungen für besondere Anlässe und Firmenevents",
     ],
   },
   image: "https://adrianquetglas.es/wp-content/uploads/2025/01/adrian-quetglas-vinos.jpg",

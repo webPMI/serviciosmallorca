@@ -155,6 +155,16 @@ Comando: `npm test` (Vitest)
 
 ---
 
+## GR-14: Sincronización Continua con GitHub (Pre-Flight Git Fetch)
+
+**Antes de iniciar cualquier sesión de trabajo o si han transcurrido varias horas (> 12h o un nuevo día), es MANDATORIO e INMUTABLE verificar si el repositorio en GitHub (`origin/main`) avanzó con nuevos commits y sincronizar el entorno local antes de continuar.**
+
+- ✅ **Protocolo de Inicio Obligatorio:** Ejecutar siempre `git fetch origin` y `git status` para comprobar si el repositorio remoto tiene cambios pendientes.
+- ✅ **Actualización Previa a la Edición:** Si existen commits remotos (`ahead` en origin), hacer `git pull` antes de comenzar a escribir código o minar negocios para evitar bifurcaciones, colisiones de curación y deuda técnica.
+- ❌ **Prohibido:** Empezar a trabajar en local con un repositorio desactualizado respecto al upstream de GitHub.
+
+---
+
 ## Auditoría del Agente Maestro
 
 Antes de aceptar cualquier cambio, el Agente Maestro verifica:
@@ -163,7 +173,7 @@ Antes de aceptar cualquier cambio, el Agente Maestro verifica:
 [ ] GR-01: ¿Todos los colores usan variables CSS?
 [ ] GR-02: ¿El componente es responsive?
 [ ] GR-03: ¿Props y funciones tienen tipos TypeScript?
-[ ] GR-04: ¿Textos visibles usan i18n?
+[ ] GR-04: ¿Textos visibles usan i18n (es, en, ca, de)?
 [ ] GR-05: ¿Hay tests para el nuevo código?
 [ ] GR-06: ¿Está documentado en docs/?
 [ ] GR-07: ¿Elementos interactivos tienen aria-*?
@@ -173,4 +183,5 @@ Antes de aceptar cualquier cambio, el Agente Maestro verifica:
 [ ] GR-11: ¿Información y servicios 100% reales y verificados (Zero Fake Data)?
 [ ] GR-12: ¿Fidelidad de datos Google Maps (coordenadas, horarios, reseñas y multi-mapas)?
 [ ] GR-13: ¿Seguridad de datos de usuario, cabeceras HTTP y reglas Firestore blindadas?
+[ ] GR-14: ¿Repositorio local sincronizado con la última versión de GitHub (Pre-Flight Git Fetch)?
 ```

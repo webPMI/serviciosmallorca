@@ -8,16 +8,19 @@ export interface BlogPost {
     es: string;
     en: string;
     ca: string;
+    de: string;
   };
   excerpt: {
     es: string;
     en: string;
     ca: string;
+    de: string;
   };
   content: {
     es: string;
     en: string;
     ca: string;
+    de: string;
   };
   category: string;
   postType?: PostType;
@@ -45,11 +48,13 @@ export const BLOG_POSTS: BlogPost[] = [
       es: "Guía Definitiva: Cómo Alquilar un Barco o Catamarán en Mallorca este Año",
       en: "Ultimate Guide: How to Charter a Boat or Catamaran in Mallorca This Year",
       ca: "Guia Definitiva: Com Llogar una Embarcació o Catamarà a Mallorca Aquest Any",
+      de: "Ultimativer Ratgeber: Wie Sie dieses Jahr ein Boot oder einen Katamaran auf Mallorca mieten",
     },
     excerpt: {
       es: "Descubre las mejores zonas de navegación (Puerto Portals, Andratx, Bahía de Palma), precios medios, consejos con patrón y cómo elegir la embarcación ideal.",
       en: "Discover top sailing grounds (Puerto Portals, Andratx, Palma Bay), average charter rates, skipper tips, and how to pick the perfect yacht.",
       ca: "Descobreix les millors zones de navegació (Puerto Portals, Andratx, Badia de Palma), preus mitjans i consells per llogar amb patró.",
+      de: "Entdecken Sie die besten Segelreviere (Puerto Portals, Andratx, Bucht von Palma), Richtpreise, Tipps mit Skipper und wie Sie das perfekte Boot auswählen.",
     },
     content: {
       es: `
@@ -88,6 +93,19 @@ Mallorca és una de les destinacions nàutiques més desitjades del Mediterrani.
 - **Catamarans:** Perfectes per a famílies i grups per la seva estabilitat i amplitud com **Oasis Catamarà**.
 - **Iots de luxe:** Màxim confort, tripulació professional i esports aquàtics.
       `,
+      de: `
+Mallorca gehört zu den begehrtesten Wassersportzielen im Mittelmeer. Mit über 550 Kilometern Küstenlinie und mehr de 200 Buchten ist es ein unvergleichliches Erlebnis, die Insel vom Meer aus zu entdecken.
+
+### 1. Welches Boot passt zu Ihnen?
+- **Motorboote (6-10 m):** Ideal für Tagesausflüge zu nahegelegenen Buchten wie Illetes oder Portals Vells.
+- **Segelkatamarane:** Perfekt für Familien und Gruppen dank großzügigem Platzangebot, Stabilität und Sonnennetzen, wie z. B. **Oasis Catamarán**.
+- **Luxus-Motoryachten:** Höchster Komfort mit professioneller Crew, Privatkoch und Wassersport-Toys (Seabob, Jetski).
+
+### 2. Die besten Ausgangshäfen auf Mallorca
+- **Hafen von Palma:** Direkte Ausfahrten für Sonnenuntergangstouren mit Catering an Bord.
+- **Puerto Portals & Port Adriano:** Exklusive Yachthäfen im Südwesten mit schnellem Zugang zu türkisfarbenen Buchten.
+- **Port de Sóller:** Das Tor zur imposanten Steilküste der Serra de Tramuntana (Sa Calobra, Cala Tuent).
+      `,
     },
     category: "nautica-charter",
     author: {
@@ -111,11 +129,13 @@ Mallorca és una de les destinacions nàutiques més desitjades del Mediterrani.
       es: "Top 5 Restaurantes y Barras Gastronómicas con Mejores Reseñas en Palma de Mallorca",
       en: "Top 5 Tapas Bars & High-End Restaurants with Best Reviews in Palma",
       ca: "Top 5 Restaurants i Barres Gastronòmiques amb Millors Ressenyes a Palma",
+      de: "Top 5 Restaurants & Tapas-Bars mit den besten Bewertungen in Palma de Mallorca",
     },
     excerpt: {
       es: "Descubre dónde degustar el mejor marisco de lonja, tapas de autor en directo y producto balear en el Casco Antiguo y Santa Catalina.",
       en: "Explore where to taste prime coastal seafood, live counter tapas, and authentic Balearic produce in Palma Old Town and Santa Catalina.",
       ca: "Descobreix on tastar el millor marisc fresc de llotja i tapes d'autor al centre de Palma.",
+      de: "Entdecken Sie fangfrische Meeresfrüchte, kreative Live-Tapas an der Marmortheke und balearische Spitzenprodukte in der Altstadt und in Santa Catalina.",
     },
     content: {
       es: `
@@ -144,6 +164,14 @@ Palma és un dels epicentres gastronòmics més potents del Mediterrani.
 ### 1. El Camino Palma
 Amb una barra de marbre espectacular i cuina a la vista, **El Camino Palma** destaca per la seva gamba vermella de Sóller i tapes d'autor excepcionals.
       `,
+      de: `
+Palma hat sich zu einer der dynamischsten kulinarischen Hauptstädte Südeuropas entwickelt. Frische Meeresfrüchte aus dem Hafen, mallorquinische Rezepturen und moderne Küchenkunst machen die Stadt zu einem Paradies für Genießer.
+
+### 1. El Camino Palma (Carrer de Can Brondo)
+Mit seiner spektakulären Marmortheke und der offenen Schauküche ist **El Camino Palma** eine absolute Institution:
+- **Spezialitäten:** Rote Sóller-Garnelen mit Meersalz aus Es Trenc, Baby-Calamari mit Sobrassada und Honig, gegrillte Artischocken.
+- **Atmosphäre:** Lebendig, stilvoll und mit Fokus auf absolut frische Tagesprodukte.
+      `,
     },
     category: "gastronomia-catering",
     author: {
@@ -167,11 +195,13 @@ Amb una barra de marbre espectacular i cuina a la vista, **El Camino Palma** des
       es: "Santuarios de Bienestar: Los Mejores Spas y Centros de Talasoterapia en Mallorca",
       en: "Wellness Sanctuaries: Top Luxury Spas & Thalassotherapy Centers in Mallorca",
       ca: "Santuari de Benestar: Els Millors Spas i Centres de Talassoteràpia a Mallorca",
+      de: "Wellness-Oasen: Die besten Luxus-Spas & Thalassotherapie-Zentren auf Mallorca",
     },
     excerpt: {
       es: "Guía de los templos de relajación más exclusivos de la isla: piscinas de agua de mar climatizada, medicina tradicional china y alta cosmética.",
       en: "Guide to the island's most exclusive relaxation temples: heated seawater pools, traditional Chinese medicine, and luxury skincare.",
       ca: "Guia dels temples de relaxació més exclusius de l'illa amb piscines d'aigua marina i medicina tradicional.",
+      de: "Führer zu den exklusivsten Entspannungstempeln der Insel: beheizte Meerwasserpools, Traditionelle Chinesische Medizin und Valmont-Kosmetik.",
     },
     content: {
       es: `
@@ -193,6 +223,14 @@ Mallorca és la destinació ideal per a la salut holística i el descans absolut
 
 ### 1. Arabella Spa (Calvià)
 Més de 4.700 m² dedicats a la talassoteràpia amb aigua de mar climatitzada i especialistes en Medicina Tradicional Xinesa.
+      `,
+      de: `
+Die Kombination aus Meeresbrise, mediterranem Klima und erstklassigen Wellnessresorts macht Mallorca zum idealen Ort für Regeneration und ganzheitliche Gesundheit.
+
+### 1. Arabella Spa (The St. Regis Mardavall, Calvià)
+Auf über 4.700 m² bietet das **Arabella Spa** eines der führenden Wellnesserlebnisse Europas:
+- **Ausstattung:** Beheizte Meerwasser-Hydrotherapiebecken, ayurvedische Behandlungsräume, Eisgrotte und Saunalandschaft.
+- **Exklusive Behandlungen:** Residente Ärzte für Traditionelle Chinesische Medizin und Anti-Aging-Rituale von Valmont.
       `,
     },
     category: "salud-bienestar",
@@ -217,11 +255,13 @@ Més de 4.700 m² dedicats a la talassoteràpia amb aigua de mar climatitzada i 
       es: "Guía de los Mejores Estudios de Tatuaje en Mallorca: Estilos, Zonas y Consejos Sanitarios",
       en: "Guide to the Best Tattoo Studios in Mallorca: Styles, Zones, and Hygiene Tips",
       ca: "Guia dels Millors Estudis de Tatuatge a Mallorca: Estils, Zones i Consells Sanitaris",
+      de: "Ratgeber: Die besten Tattoo-Studios auf Mallorca – Stile, Regionen & Hygiene-Tipps",
     },
     excerpt: {
       es: "Analizamos los estudios de tatuaje y piercing más destacados de Palma y Calvià. Consejos para elegir artista, estilos (Fine Line, Realismo, Tradicional) y normativas sanitarias.",
       en: "We review top-rated tattoo and piercing studios across Palma and Calvià. Tips on choosing artists, styles, and hygiene standards.",
       ca: "Analitzem els estudis de tatuatge més destacats de Palma i Calvià. Consells per triar artista, estils i normativa sanitària.",
+      de: "Wir stellen die führenden Tattoo- und Piercing-Studios in Palma und Calvià vor. Tipps zur Künstlerwahl, Stilrichtungen (Fine Line, Realismus, Traditional) und Hygiene-Vorschriften.",
     },
     content: {
       es: `
@@ -248,6 +288,16 @@ Mallorca té una escena de tatuatge professional d'alt nivell.
 ### 1. Estils destacats
 - **Fine Line & Microtatuatges:** Dissenys subtils i elegants a **Good Luck Tattoo Mallorca**.
       `,
+      de: `
+Mallorca verfügt über eine hochkarätige Tattoo- und Kunstszene mit renommierten residenten und internationalen Gastkünstlern.
+
+### 1. Beliebte Tattoo-Stile auf Mallorca
+- **Fine Line & Mikrorealismus:** Filigrane florale Motive und präzise feine Linien, meisterhaft umgesetzt im Studio **Good Luck Tattoo Mallorca** (5,0 Sterne).
+- **Blackwork & Realismus:** Detailreiche Kunstwerke und maßgeschneiderte Konzepte.
+
+### 2. Hygiene & Standards
+Zertifizierte Studios auf den Balearen erfüllen strenge behördliche Auflagen: 100 % steriles Einwegmaterial, REACH-konforme Farbpigmente und geprüfte Fachausbildung.
+      `,
     },
     category: "arte-tatuajes",
     author: {
@@ -260,6 +310,161 @@ Mallorca té una escena de tatuatge professional d'alt nivell.
     coverImage: "https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?auto=format&fit=crop&w=1200&q=80",
     tags: ["Tatuajes Mallorca", "Tattoo Palma", "Fine Line", "Paseo Mallorca", "Arte Balear"],
     relatedServiceIds: ["good-luck-tattoo-mallorca"],
+    featured: true,
+  },
+  {
+    id: "mejores-rutas-trekking-mallorca",
+    slug: "mejores-rutas-trekking-mallorca",
+    postType: "guia",
+    topicCluster: "aventura_lifestyle",
+    title: {
+      es: "Las 5 Mejores Rutas de Trekking y Senderismo en la Serra de Tramuntana",
+      en: "Top 5 Trekking and Hiking Routes in the Serra de Tramuntana",
+      ca: "Les 5 Millors Rutes de Trekking i Senderisme a la Serra de Tramuntana",
+      de: "Die 5 besten Wander- und Trekkingrouten im Tramuntana-Gebirge",
+    },
+    excerpt: {
+      es: "Descubre los senderos más espectaculares de Mallorca: desde el Barranc de Biniaraix hasta el Camí de s'Arxiduc y el Torrent de Pareis.",
+      en: "Discover Mallorca's most breathtaking trails: from the stone steps of Barranc de Biniaraix to the iconic Camí de s'Arxiduc.",
+      ca: "Descobreix els senders més espectaculars de Mallorca: el Barranc de Biniaraix, el Camí de s'Arxiduc i el Torrent de Pareis.",
+      de: "Entdecken Sie Mallorcas spektakulärste Wanderwege: von der Schlucht Barranc de Biniaraix bis zum berühmten Camí de s'Arxiduc.",
+    },
+    content: {
+      es: `
+La Serra de Tramuntana, declarada Patrimonio Mundial por la UNESCO, es un paraíso para los amantes del senderismo y la naturaleza mediterránea.
+
+### 1. Barranc de Biniaraix (Sóller - Fornalutx)
+- **Dificultad:** Media | **Distancia:** 8 km | **Desnivel:** +500m
+- **Lo mejor:** Camino empedrado medieval escalonado entre olivos milenarios y acequias de agua viva.
+
+### 2. Camí de s'Arxiduc (Valldemossa)
+- **Dificultad:** Media-Alta | **Distancia:** 11 km | **Desnivel:** +600m
+- **Lo mejor:** Vistas panorámicas vertiginosas sobre Sa Foradada y el Mar Balear.
+
+### 3. Recuperación y Bienestar tras el Trekking
+Tras una intensa jornada por la montaña, recomendamos relajar la musculatura en centros termales certificados de Mallorca como **Son Brull Spa & Wellness (Pollensa)** o alquilar material de rendimiento en **Mallorca Cycling Center**.
+      `,
+      en: `
+The Serra de Tramuntana (UNESCO World Heritage Site) offers some of the most dramatic mountain and coastal hikes in Southern Europe.
+
+### 1. Barranc de Biniaraix
+- **Difficulty:** Moderate | **Distance:** 8 km | **Elevation:** +500m
+- **Highlight:** Ancient cobbled pilgrimage path winding through ancient olive groves.
+
+### 2. Camí de s'Arxiduc (Valldemossa)
+- **Difficulty:** Moderate-High | **Distance:** 11 km | **Elevation:** +600m
+- **Highlight:** Stunning clifftop sea views over Sa Foradada peninsula.
+
+### 3. Post-Hike Recovery
+Complement your hiking journey with thermal relaxation at **Son Brull Spa & Wellness** in Pollensa.
+      `,
+      ca: `
+La Serra de Tramuntana (Patrimoni de la Humanitat UNESCO) és el tresor natural de Mallorca per excel·lència.
+
+### 1. Barranc de Biniaraix
+- **Dificultat:** Mitjana | **Distància:** 8 km
+- **Destacat:** Camí de pedra en sec entre oliveres mil·lenàries.
+
+### 2. Recuperació i Benestar
+Relaxa't després de la ruta a **Son Brull Spa & Wellness** a Pollença.
+      `,
+      de: `
+Die Serra de Tramuntana (UNESCO-Welterbe) ist ein wahres Paradies für Wander- und Naturliebhaber auf Mallorca.
+
+### 1. Barranc de Biniaraix (Sóller - Fornalutx)
+- **Schwierigkeit:** Mittel | **Distanz:** 8 km | **Höhenmeter:** +500m
+- **Highlights:** Historischer Kopfsteinpflasterweg entlang alter Olivenhaine und Wasserläufe.
+
+### 2. Camí de s'Arxiduc (Valldemossa)
+- **Schwierigkeit:** Mittel-Schwer | **Distanz:** 11 km | **Höhenmeter:** +600m
+- **Highlights:** Atemberaubender Panoramablick auf die Halbinsel Sa Foradada und das Mittelmeer.
+
+### 3. Erholung nach der Wandertour
+Nach einer anstrengenden Tour empfiehlt sich ein Besuch im **Son Brull Spa & Wellness (Pollença)** für eine wohltuende Sportmassage mit lokalem Mandelöl.
+      `,
+    },
+    category: "deportes-aire-libre",
+    author: {
+      name: "Equipo Editorial Servicios Mallorca",
+      role: "Senderismo & Guía de Montaña",
+      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80",
+    },
+    publishDate: "2025-02-20",
+    readTime: "7 min",
+    coverImage: "https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=1200&q=80",
+    tags: ["Trekking Mallorca", "Serra de Tramuntana", "Senderismo", "Sóller", "Valldemossa"],
+    relatedServiceIds: ["son-brull-spa-mallorca", "mallorca-cycling-center-playa-muro"],
+    featured: true,
+  },
+  {
+    id: "cellers-hornos-historicos-mallorca",
+    slug: "cellers-hornos-historicos-mallorca",
+    postType: "top_list",
+    topicCluster: "gastronomia",
+    title: {
+      es: "Ruta de Hornos Centenarios y Cellers Tradicionales de Mallorca",
+      en: "Historic Bakeries and Traditional Cellers of Mallorca",
+      ca: "Ruta de Forns Centenaris i Cellers Tradicionals de Mallorca",
+      de: "Route der historischen Bäckereien und traditionellen Cellers auf Mallorca",
+    },
+    excerpt: {
+      es: "Un viaje a la auténtica gastronomía de la isla: ensaimadas de manteca artesana, cocarrois de xeixa y cellers con bóvedas góticas.",
+      en: "A cultural taste of authentic Mallorca: heritage sourdough ensaimadas, savory cocarrois, and medieval wine cellers.",
+      ca: "Un viatge a la gastronomia autèntica: ensaïmades artesanes, cocarrois i cellers amb voltes gòtiques.",
+      de: "Eine Reise zur authentischen Insel-Gastronomie: handgefertigte Ensaimadas, herzhafte Cocarrois und historische Weinkeller.",
+    },
+    content: {
+      es: `
+La gastronomía popular de Mallorca conserva secretos artesanales de siglos de historia en sus hornos de leña y antiguos cellers de vino.
+
+### 1. Forn Sant Francesc (Inca)
+Ganador del premio a la Mejor Ensaimada del Mundo, este obrador fundado en el siglo XIX elabora piezas de hojaldrado perfecto y rellenos gourmet de crema tostada, albaricoque y chocolate.
+
+### 2. Celler Can Ripoll (Inca)
+Ubicado en una bodega del siglo XVII con bóvedas de piedra y enormes botas de vino, es el santuario de platos como la Porcella rostida, el Frit mallorquí y el Tumbet.
+
+### 3. Forn Fondo & Forn de la Soca (Palma)
+Templos de la repostería histórica balear en el centro de Palma, recuperando recetas conventuales perdidas.
+      `,
+      en: `
+Mallorca's traditional gastronomy preserves centuries-old baking and culinary techniques in its stone ovens and cellar halls.
+
+### 1. Forn Sant Francesc (Inca)
+Home to the World Best Ensaimada Winner, baking exquisite artisanal pastries since the 19th century.
+
+### 2. Celler Can Ripoll (Inca)
+Housed in a 17th-century wine cellar beneath majestic stone arches, serving legendary roast suckling pig and Frit mallorquí.
+      `,
+      ca: `
+La gastronomia tradicional de Mallorca guarda segles d'història als seus forns de llenya i cellers històrics.
+
+### 1. Forn Sant Francesc (Inca)
+Guardonat amb la Millor Ensaïmada del Món, manté viva la tradició des del segle XIX.
+
+### 2. Celler Can Ripoll (Inca)
+El temple del frit i la porcella sota bótes històriques del segle XVII.
+      `,
+      de: `
+Die traditionsreiche mallorquinische Gastronomie bewahrt jahrhundertealte Handwerkskunst in Holzbacköfen und historischen Weinkellern.
+
+### 1. Forn Sant Francesc (Inca)
+Gewinner des Preises für die beste Ensaimada der Welt – meisterhafte Handarbeit seit dem 19. Jahrhundert.
+
+### 2. Celler Can Ripoll (Inca)
+Ein historischer Gewölbekeller aus dem 17. Jahrhundert mit authentischer mallorquinischer Küche (Spanferkel, Frit Mallorquí).
+      `,
+    },
+    category: "gastronomia-catering",
+    author: {
+      name: "Equipo Editorial Servicios Mallorca",
+      role: "Gastronomía & Patrimonio Balear",
+      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80",
+    },
+    publishDate: "2025-02-22",
+    readTime: "6 min",
+    coverImage: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1200&q=80",
+    tags: ["Ensaimada Mallorca", "Forn Sant Francesc", "Celler Can Ripoll", "Inca", "Gastronomia Tradicional"],
+    relatedServiceIds: ["forn-sant-francesc-inca", "celler-can-ripoll-inca"],
     featured: true,
   },
 ];

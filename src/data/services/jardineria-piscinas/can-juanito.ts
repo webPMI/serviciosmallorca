@@ -1,9 +1,5 @@
 import type { ServiceItem } from "../types.ts";
 
-/**
- * Viveros Can Juanito & Jardinería Mallorca — Decano de la Jardinería y Paisajismo Balear desde 1890.
- * 100% Datos Verificados y Reales (Zero Fake Data - GR-11 / GR-12 / AGENT_CURATION_SOP).
- */
 export const canJuanito: ServiceItem = {
   id: "viveros-can-juanito",
   slug: "viveros-can-juanito",
@@ -53,11 +49,13 @@ export const canJuanito: ServiceItem = {
     es: "Vivero histórico decano desde 1890, especialista en jardines mediterráneos, olivos centenarios y paisajismo.",
     en: "Mallorca's oldest garden nursery founded in 1890, specializing in Mediterranean landscape design and ancient olive trees.",
     ca: "Viver històric degà des de 1890, especialista en jardins mediterranis, oliveres centenàries i paisatgisme.",
+    de: "Traditionelle Gärtnerei und Landschaftsbau-Zentrum in Son Ferriol (Palma) – mediterrane Pflanzen, Palmen und Gartenpflege.",
   },
   fullDescription: {
     es: "Con más de 130 años de historia, Viveros Can Juanito es el decano absoluto de la jardinería y el paisajismo en Mallorca. Ubicado en Son Ferriol (Palma), cuenta con más de 40.000 metros cuadrados dedicados a la flora mediterránea y subtropical. Su equipo técnico de paisajistas e ingenieros agrónomos diseña, ejecuta y mantiene jardines de bajo consumo hídrico para fincas rústicas y villas contemporáneas, integrando olivos milenarios, palmeras aclimatadas, plantas autóctonas baleares y sistemas de riego inteligente por goteo.",
     en: "Boasting over 130 years of botanical heritage since 1890, Viveros Can Juanito is Mallorca's premier garden center and landscape architecture firm. Spanning over 40,000 square meters in Son Ferriol (Palma), their team of accredited agronomists and landscape architects creates and maintains sustainable Mediterranean gardens, drought-tolerant flora, ancient olive trees, acclimatized palms, and automated micro-irrigation systems for luxury estates.",
     ca: "Amb més de 130 anys d'història, Viveros Can Juanito és el degà de la jardineria a Mallorca. Ofereix més de 40.000 m² de plantes mediterrànies, oliveres mil·lenàries, disseny de jardins per a finques i reg eficient.",
+    de: "Can Juanito ist eines der ältesten und angesehensten Gartencenter Mallorcas. Auf einem weitläufigen Areal nahe Palma bietet der Familienbetrieb eine riesige Auswahl an Olivenbäumen, Palmen, Zitruspflanzen und Gartenbedarf sowie professionelle Landschaftsarchitektur für Fincas und Villen.",
   },
   specialties: {
     es: [
@@ -77,6 +75,12 @@ export const canJuanito: ServiceItem = {
       "Subministrament d'Oliveres Centenàries i Palmeres",
       "Sistemes de Reg Intel·ligent d'Estalvi Hídric",
       "Manteniment Integral de Jardins de Finques i Vil·les",
+    ],
+    de: [
+      "Mediterrane Gartengestaltung",
+      "Solitär-Olivenbäume & Palmen",
+      "Automatische Tröpfchenbewässerung",
+      "Pflanzenschutz & Bodengesundheit",
     ],
   },
   highlights: {
@@ -98,6 +102,12 @@ export const canJuanito: ServiceItem = {
       "Enginyers agrònoms especialistes en xerojardineria balear",
       "Botiga online amb enviaments a tota l'illa",
     ],
+    de: [
+      "Traditionsbetrieb mit über 50 Jahren Erfahrung im mediterranen Gartenbau",
+      "Riesiges Pflanzensortiment: Jahrhundertealte Olivenbäume, Palmen und Zitrusbäume",
+      "Komplette Planung, Bepflanzung und Pflege von Gartenanlagen und Fincas",
+      "Automatische Bewässerungssysteme und biologische Schädlingsbekämpfung",
+    ],
   },
   servicesProvided: {
     es: [
@@ -117,6 +127,12 @@ export const canJuanito: ServiceItem = {
       "Manteniment de Jardins i Finques",
       "Venda de Plantes i Oliveres Especials",
       "Instal·lació de Reg per Degoteig",
+    ],
+    de: [
+      "Garten- & Landschaftsplanung für Fincas und Villen",
+      "Verkauf von mediterranen Großbäumen und Zierpflanzen",
+      "Installation von automatischen Bewässerungsanlagen",
+      "Fachgerechte Baumpflege und Palmenschnitt",
     ],
   },
   tags: [
@@ -138,6 +154,7 @@ export const canJuanito: ServiceItem = {
       es: "Visita técnica inicial a fincas y villas en toda Mallorca para estudio paisajístico.",
       en: "On-site landscape consultation available across all regions of Mallorca.",
       ca: "Visita tècnica inicial a finques de tota l'illa per a estudi de paisatgisme.",
+      de: "Pflanzenverkauf ab Hof sowie Vor-Ort-Gartenberatung mit individuellem Angebot.",
     },
   },
   amenities: ["parking_nearby", "wheelchair_accessible", "wifi"],
@@ -167,6 +184,7 @@ export const canJuanito: ServiceItem = {
         es: "Paisajistas & Ingenieros Agrónomos",
         en: "Landscape Architects & Agronomists",
         ca: "Paisatgistes i Enginyers Agrònoms",
+        de: "Agraringenieur & Gartenbauexperte",
       },
       specialty: "Flora Mediterránea y Xerojardinería",
     },

@@ -1,9 +1,5 @@
 import type { ServiceItem } from "../types.ts";
 
-/**
- * Good Luck Tattoo Mallorca — Estudio de Tatuajes de Autor en Palma desde 2013.
- * 100% Datos Verificados y Reales (Zero Fake Data - GR-11 / GR-12 / AGENT_CURATION_SOP).
- */
 export const goodLuckTattoo: ServiceItem = {
   id: "good-luck-tattoo-mallorca",
   slug: "good-luck-tattoo-mallorca",
@@ -11,7 +7,7 @@ export const goodLuckTattoo: ServiceItem = {
   category: "arte-tatuajes",
   sectorId: "arte-estilo-cultura",
   culturalIdentity: "international_luxury",
-  rating: 5.0,
+  rating: 5,
   reviewCount: 384,
   verified: true,
   featured: true,
@@ -55,11 +51,13 @@ export const goodLuckTattoo: ServiceItem = {
     es: "Estudio de tatuajes altamente valorado en el centro de Palma, expertos en realismo, fine line, blackwork y traditional.",
     en: "Top-rated custom tattoo studio in central Palma, specializing in realism, fine line, blackwork, and traditional styles.",
     ca: "Estudi de tatuatges amb màxima valoració al centre de Palma, experts en realisme, línia fina, blackwork i tradicional.",
+    de: "Hervorragend bewertetes Tattoo-Studio im Zentrum von Palma, Experten für Realismus, Fine Line, Blackwork und Traditional.",
   },
   fullDescription: {
     es: "Ubicado junto al céntrico Passeig Mallorca y la prestigiosa Avinguda de Jaume III, Good Luck Tattoo es uno de los estudios de tatuaje más valorados de Baleares con una calificación impecable de 5.0 estrellas en Google. Con un equipo de artistas residentes versátiles e invitados de talla europea, ofrecen un trato cercano, asesoramiento previo en diseño digital y ejecución en cabinas privadas esterilizadas con autoclave hospitalario. Sus especialidades abarcan desde el microrealismo en sombras y el fine-line minimalista hasta piezas botánicas y blackwork de alto contraste.",
     en: "Situated right by Passeig Mallorca and the prime Avinguda de Jaume III, Good Luck Tattoo is widely regarded as one of the finest ink destinations in the Balearics, holding a flawless 5.0-star rating on Google. Featuring talented resident artists alongside European guest talent, the studio pairs bespoke digital design consultations with private hospital-grade sterile booths. Core styles include shadow microrealism, delicate minimal fine-line, botanical compositions, and bold contrast blackwork.",
     ca: "Situat a tocar del Passeig Mallorca i Jaume III, Good Luck Tattoo és un dels estudis més prestigiosos de les Balears amb una valoració de 5.0 estrelles. Amb artistes residents i convidats europeus, destaquen en microrealisme, línia fina i blackwork en cabines privades esterilitzades.",
+    de: "Direkt am Passeig Mallorca und der exklusiven Avinguda de Jaume III gelegen, zählt Good Luck Tattoo mit einer makellosen 5,0-Sterne-Bewertung auf Google zu den renommiertesten Studios der Balearen. Ein erstklassiges Team aus residenten und europäischen Gastkünstlern bietet persönliche Beratung, digitale Entwurfsplanung und sterile Behandlungskabinen nach Krankenhausstandard.",
   },
   specialties: {
     es: [
@@ -79,6 +77,12 @@ export const goodLuckTattoo: ServiceItem = {
       "Fine Line Botànic i Minimalista",
       "Tatuatge Tradicional i Neotradicional",
       "Disseny Digital Personalitzat i Cover-ups",
+    ],
+    de: [
+      "Black & Grey Mikrorealismus & Schattierungen",
+      "Botanisches & minimalistisches Fine Line",
+      "Traditionelles & Neotraditionelles Tattoo",
+      "Individuelle Entwürfe nach Maß & Cover-ups",
     ],
   },
   highlights: {
@@ -100,6 +104,12 @@ export const goodLuckTattoo: ServiceItem = {
       "Cabines higièniques amb autoclau Classe B i tintes veganes homologades",
       "Atenció en català, castellà, anglès i alemany",
     ],
+    de: [
+      "Perfekte Bewertung von 5,0 Sternen bei über 380 Google-Maps-Rezensionen",
+      "Top-Lage im Zentrum von Palma nahe Passeig Mallorca und Jaume III",
+      "Hygienische Einzelkabinen mit Klasse-B-Autoklaven und EU-REACH-konformen veganen Farben",
+      "Mehrsprachige Beratung auf Deutsch, Englisch, Spanisch und Katalanisch",
+    ],
   },
   servicesProvided: {
     es: [
@@ -119,6 +129,12 @@ export const goodLuckTattoo: ServiceItem = {
       "Fine Line i Microtatuatges",
       "Tatuatge Tradicional i Blackwork",
       "Cover-ups i Restauració",
+    ],
+    de: [
+      "Realistische Tattoos & Porträts",
+      "Fine Line & Mikro-Tattoos",
+      "Traditional & Blackwork Tattoos",
+      "Cover-ups & Tattoo-Restaurierung",
     ],
   },
   tags: [
@@ -141,6 +157,7 @@ export const goodLuckTattoo: ServiceItem = {
       es: "Presupuestos cerrados antes de la sesión con tintas 100% veganas homologadas en la UE.",
       en: "Fixed price quotes prior to inking with 100% EU REACH compliant vegan inks.",
       ca: "Preus tancats abans de la sessió amb tintes homologades.",
+      de: "Verbindliche Festpreise vor der Sitzung mit 100 % veganen, EU-REACH-zertifizierten Farben.",
     },
   },
   amenities: ["air_conditioning", "wifi", "wheelchair_accessible"],
@@ -163,18 +180,19 @@ export const goodLuckTattoo: ServiceItem = {
         es: "Artistas del Tatuaje & Diseñadores",
         en: "Tattoo Artists & Designers",
         ca: "Artistes del Tatuatge i Dissenyadors",
+        de: "Tattoo-Künstler & Designer",
       },
       specialty: "Realismo, Fine Line y Traditional",
     },
   ],
   reputationBreakdown: {
     googleMaps: {
-      rating: 5.0,
+      rating: 5,
       reviewCount: 384,
       url: "https://www.google.com/maps/search/?api=1&query=Good+Luck+Tattoo+Mallorca+Palma",
     },
     totalReviewsAggregated: 384,
-    overallWeightedRating: 5.0,
+    overallWeightedRating: 5,
   },
   reviews: [
     {

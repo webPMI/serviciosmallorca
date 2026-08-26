@@ -3,13 +3,14 @@
  * Cada negocio referencia exactamente 1 zona; las etiquetas geo finas (`zona:<slug>`)
  * se derivan de `popularAreas` mediante `normalizeToKebabAscii()` (src/data/tags.ts).
  *
- * GR-04: todos los nombres visibles llevan traducción es/en/ca.
+ * GR-04: todos los nombres visibles llevan traducción es/en/ca/de.
  */
 
 export interface LocalizedText {
   es: string;
   en: string;
   ca: string;
+  de: string;
 }
 
 export interface MallorcaZone {
@@ -25,6 +26,7 @@ export const MALLORCA_ZONES: MallorcaZone[] = [
       es: "Palma & Bahía",
       en: "Palma & Bay",
       ca: "Palma & Badia",
+      de: "Palma & Bucht",
     },
     popularAreas: ["Palma Centro", "Santa Catalina", "Portixol", "Son Vida", "Casco Antiguo"],
   },
@@ -34,6 +36,7 @@ export const MALLORCA_ZONES: MallorcaZone[] = [
       es: "Calvià & Andratx (Suroeste)",
       en: "Calvià & Andratx (Southwest)",
       ca: "Calvià & Andratx (Sud-oest)",
+      de: "Calvià & Andratx (Südwesten)",
     },
     popularAreas: ["Puerto Portals", "Port Adriano", "Santa Ponsa", "Palmanova", "Port d'Andratx"],
   },
@@ -43,6 +46,7 @@ export const MALLORCA_ZONES: MallorcaZone[] = [
       es: "Serra de Tramuntana",
       en: "Serra de Tramuntana",
       ca: "Serra de Tramuntana",
+      de: "Serra de Tramuntana",
     },
     popularAreas: ["Sóller", "Port de Sóller", "Valldemossa", "Deià", "Esporles", "Fornalutx"],
   },
@@ -52,6 +56,7 @@ export const MALLORCA_ZONES: MallorcaZone[] = [
       es: "Alcúdia & Pollença (Norte)",
       en: "Alcúdia & Pollença (North)",
       ca: "Alcúdia & Pollença (Nord)",
+      de: "Alcúdia & Pollença (Norden)",
     },
     popularAreas: ["Port de Pollença", "Port d'Alcúdia", "Playa de Muro", "Can Picafort"],
   },
@@ -61,6 +66,7 @@ export const MALLORCA_ZONES: MallorcaZone[] = [
       es: "Manacor & Llevant (Este)",
       en: "Manacor & Llevant (East)",
       ca: "Manacor & Llevant (Est)",
+      de: "Manacor & Llevant (Osten)",
     },
     popularAreas: ["Manacor", "Porto Cristo", "Cala Millor", "Cala Ratjada", "Artà"],
   },
@@ -70,6 +76,7 @@ export const MALLORCA_ZONES: MallorcaZone[] = [
       es: "Santanyí & Migjorn (Sureste)",
       en: "Santanyí & Migjorn (Southeast)",
       ca: "Santanyí & Migjorn (Sud-est)",
+      de: "Santanyí & Migjorn (Südosten)",
     },
     popularAreas: ["Santanyí", "Cala d'Or", "Porto Petro", "Ses Salines", "Campos", "Llucmajor"],
   },
@@ -79,6 +86,7 @@ export const MALLORCA_ZONES: MallorcaZone[] = [
       es: "Es Raiguer & Es Pla (Centro)",
       en: "Es Raiguer & Es Pla (Centre)",
       ca: "Es Raiguer & Es Pla (Centre)",
+      de: "Es Raiguer & Es Pla (Inselmitte)",
     },
     popularAreas: ["Inca", "Binissalem", "Santa Maria del Camí", "Alaró", "Sineu"],
   },

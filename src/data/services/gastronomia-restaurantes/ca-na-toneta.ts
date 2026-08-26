@@ -1,10 +1,5 @@
 import type { ServiceItem } from "../types.ts";
 
-/**
- * Ca Na Toneta (Caimari, Selva) - Estrella Verde Michelin & 1 Sol Repsol.
- * Cocina de temporada radical de las hermanas Maria y Teresa Solivellas.
- * Curado bajo el Protocolo de Enriquecimiento Profundo (GR-11 Zero Fake Data, GR-12 Multi-Mapas).
- */
 export const caNaToneta: ServiceItem = {
   id: "ca-na-toneta",
   slug: "ca-na-toneta",
@@ -27,7 +22,7 @@ export const caNaToneta: ServiceItem = {
   culturalIdentity: "mallorquin_heritage",
   isIconicHeritage: true,
   targetAudience: ["residentes", "turistas", "alemanes", "britanicos"],
-  languagesSpoken: ["es", "ca", "en"],
+  languagesSpoken: ["es", "ca", "en", "de"],
   emergency24h: false,
   inVillaService: false,
   features: ["wifi", "air_conditioning", "credit_card", "terrace", "sommelier_service"],
@@ -46,6 +41,7 @@ export const caNaToneta: ServiceItem = {
       es: "Menú degustación ciego de temporada basado estrictamente en la cosecha diaria del huerto propio y pequeños productores de la Serra.",
       en: "Blind seasonal tasting menu curated strictly according to the daily harvest from their organic garden and Tramuntana growers.",
       ca: "Menú degustació cec de temporada basat estrictament en la collita diària de l'hort propi i petits productors de la Serra.",
+      de: "Festes saisonales Degustationsmenü. Vorabreservierung dringend empfohlen.",
     },
   },
   menuUrl: "https://canatoneta.com",
@@ -71,6 +67,12 @@ export const caNaToneta: ServiceItem = {
       "Peix de Roca amb Sofregit Tradicional de la Serra",
       "Selecció de Vins Naturals i Biodinàmics de Mallorca",
     ],
+    de: [
+      "Saisonale mallorquinische Naturküche",
+      "Traditionelle Inselbackwaren & Cocas",
+      "Gemüse- und Wildkräuterkreationen",
+      "Bio-Weine aus Mallorca",
+    ],
   },
   teamMembers: [
     {
@@ -79,6 +81,7 @@ export const caNaToneta: ServiceItem = {
         es: "Chef Ejecutiva & Guardiana del Paisaje Culinario",
         en: "Head Chef & Culinary Director",
         ca: "Xef Executiva i Guardiana del Paisatge Culinari",
+        de: "Chefköchin & Slow-Food-Botschafterin",
       },
       specialty: "Cocina Balear de Microtemporada y Variedades Autóctonas",
       instagramHandle: "@canatoneta",
@@ -114,6 +117,7 @@ export const caNaToneta: ServiceItem = {
     es: "En el pueblo de Caimari, a los pies de la Serra de Tramuntana, las hermanas Maria y Teresa Solivellas transformaron la casa de su madre, Toneta, en uno de los proyectos gastronómicos más respetados y auténticos del Mediterráneo. Su incansable labor en defensa de la soberanía alimentaria y el producto autóctono les ha valido la Estrella Verde Michelin y el reconocimiento internacional.",
     en: "In the picturesque village of Caimari nestled at the foothills of the Tramuntana mountains, sisters Maria and Teresa Solivellas turned their mother Toneta's family home into one of the Mediterranean's most respected farm-to-table culinary sanctuaries. Their defense of Majorcan heirloom varieties earned them a Michelin Green Star.",
     ca: "Al poble de Caimari, als peus de la Serra de Tramuntana, les germanes Maria i Teresa Solivellas varen transformar la casa de sa mare, na Toneta, en un dels santuaris gastronòmics més autèntics del Mediterrani, reconegut amb l'Estrella Verda Michelin.",
+    de: "Maria und Teresa Solivellas verwandelten das Haus ihrer Familie in Caimari in einen Zufluchtsort für unverfälschte mallorquinische Esskultur und nachhaltige Landwirtschaft.",
   },
   reputationBreakdown: {
     googleMaps: {
@@ -229,11 +233,13 @@ export const caNaToneta: ServiceItem = {
     es: "Templo gastronómico en Caimari con Estrella Verde Michelin y 1 Sol Repsol liderado por las hermanas Solivellas, especializado en cocina de microtemporada y producto de la Serra.",
     en: "Michelin Green-Starred and 1 Repsol Sol restaurant in Caimari by the Solivellas sisters, showcasing radical seasonal cuisine and local Tramuntana harvest.",
     ca: "Temple gastronòmic a Caimari amb Estrella Verda Michelin i 1 Sol Repsol liderat per les germanes Solivellas, especialitzat en cuina de microestació i producte autòcton.",
+    de: "Idyllisches Restaurant am Fuße der Tramuntana in Caimari – authentische, nachhaltige Inselküche aus eigenem biologischem Anbau.",
   },
   fullDescription: {
     es: "Enclavado en el pintoresco pueblo de Caimari, a los pies de la Serra de Tramuntana, Ca Na Toneta es un icono internacional de la cocina de proximidad. Dirigido por las hermanas Maria y Teresa Solivellas, el restaurante trabaja en íntima comunión con su propio huerto ecológico y pequeños productores locales, ofreciendo menús degustación que cambian al ritmo de la naturaleza y honran las variedades autóctonas de Mallorca.",
     en: "Located in the scenic mountain village of Caimari, Ca Na Toneta is an international benchmark for farm-to-table Mediterranean gastronomy. Helmed by sisters Maria and Teresa Solivellas, the restaurant operates in seamless synergy with its organic garden and local artisan producers, delivering blind seasonal menus that celebrate the biodiversity of Majorca.",
     ca: "Enclavat al poble de Caimari, als peus de la Serra de Tramuntana, Ca Na Toneta és un referent internacional de la cuina de proximitat. Dirigit per les germanes Maria i Teresa Solivellas, el restaurant elabora menús degustació que canvien amb el cicle de la terra i reten tribut a les varietats ancestrals de Mallorca.",
+    de: "Geführt von den Schwestern Maria und Teresa Solivellas im malerischen Bergdorf Caimari, feiert Ca Na Toneta die Essenz Mallorcas. Serviert wird ein saisonales Überraschungsmenü aus lokalen Bio-Zutaten, alten Inselgetreidesorten und Erntefrüchten des eigenen Gemüsegartens.",
   },
   highlights: {
     es: [
@@ -257,6 +263,12 @@ export const caNaToneta: ServiceItem = {
       "Pioneres en la recuperació de la farina de xeixa tradicional",
       "Selecció de vins naturals de les Illes Balears",
     ],
+    de: [
+      "Pioniere der nachhaltigen 'Kilómetro Cero'-Slow-Food-Bewegung auf Mallorca",
+      "Malerische Innenhof-Terrasse im ruhigen Dorf Caimari am Fuße des Gebirges",
+      "Biologische Zutaten aus eigenem Anbau und von ausgewählten Kleinbauern",
+      "Ausgezeichnet mit dem Grünen Michelin-Stern für Nachhaltigkeit",
+    ],
   },
   servicesProvided: {
     es: [
@@ -270,6 +282,12 @@ export const caNaToneta: ServiceItem = {
       "Romantic Garden Terrace in Caimari",
     ],
     ca: ["Menú Degustació de Microestació", "Maridatge de Vins Naturals i Biodinàmics", "Terrassa Romàntica a Caimari"],
+    de: [
+      "Saisonales Slow-Food-Degustationsmenü",
+      "Naturweine und handwerkliche balearische Weinauswahl",
+      "Romantisches Speisen im Innenhofgarten",
+      "Kulinarische Workshops und saisonale Events",
+    ],
   },
   image: "https://www.canatoneta.com/wp-content/uploads/2012/06/canatoneta-home-01.jpg",
   gallery: [

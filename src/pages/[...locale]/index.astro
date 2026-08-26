@@ -5,6 +5,7 @@ import Footer from "../../components/Footer.astro";
 import ServiceCard from "../../components/ServiceCard.astro";
 import BlogCard from "../../components/BlogCard.astro";
 import TopRankedSection from "../../components/TopRankedSection.astro";
+import DiscoveryTours from "../../components/DiscoveryTours.astro";
 import MallorcaNewsFeed from "../../components/MallorcaNewsFeed.astro";
 import AdSenseSlot from "../../components/AdSenseSlot.astro";
 import { getActiveCategories } from "../../data/categories";
@@ -137,6 +138,11 @@ const homepageJsonLd = generateHomepageJsonLd(locale, canonicalUrl);
         <TopRankedSection locale={locale} prefix={prefix} translations={translations} mode="weekly" />
       </div>
     </section>
+
+    <!-- THEMATIC DISCOVERY TOURS (Inspiration Itineraries) -->
+    <div class="container">
+      <DiscoveryTours currentLocale={locale} getLangPrefix={getLangPrefix} />
+    </div>
 
     <!-- LATEST BLOG POSTS SECTION -->
     <section class="container section">

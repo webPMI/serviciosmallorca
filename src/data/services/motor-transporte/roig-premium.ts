@@ -1,9 +1,5 @@
 import type { ServiceItem } from "../types.ts";
 
-/**
- * Roig Premium (Mobility & Experiences) — Transporte Ejecutivo y VIP Chauffeur en Mallorca desde 1953.
- * 100% Datos Verificados y Reales (Zero Fake Data - GR-11 / GR-12 / AGENT_CURATION_SOP).
- */
 export const roigPremium: ServiceItem = {
   id: "roig-premium-transfers",
   slug: "roig-premium-transfers",
@@ -53,11 +49,13 @@ export const roigPremium: ServiceItem = {
     es: "Flota prémium Mercedes-Benz con chófer privado, traslados VIP desde el aeropuerto PMI y eventos en Mallorca.",
     en: "Premier Mercedes-Benz private chauffeur fleet, VIP airport transfers from PMI, and bespoke event mobility in Mallorca.",
     ca: "Flota prémium Mercedes-Benz amb xofer privat, trasllats VIP des de l'aeroport PMI i esdeveniments a Mallorca.",
+    de: "Führender Chauffeur- und VIP-Mobilitätsdienst auf Mallorca – High-End-Flughafentransfers und Luxusautovermietung.",
   },
   fullDescription: {
     es: "Con más de 70 años de historia ininterrumpida desde su fundación en 1953 en s'Horta (Felanitx) por Rafael Roig Oliver, Roig es la compañía de transporte y movilidad de referencia en las Islas Baleares. Su división 'Roig Premium' está especializada en el servicio de chófer privado de alto standing y traslados ejecutivos en vehículos de gama alta (Mercedes-Benz Clase S, Clase E y furgonetas ejecutivas Clase V). Ofrece recepción VIP en la terminal del Aeropuerto de Palma de Mallorca (PMI) con seguimiento de vuelo en tiempo real, traslados a villas y hoteles de lujo, servicios de disposición por horas para compras o reuniones, y transporte para bodas y eventos exclusivos.",
     en: "Founded in 1953 in s'Horta (Felanitx) by Rafael Roig Oliver, Roig has delivered first-class road transportation in Mallorca for over seven decades. The 'Roig Premium' executive division specializes in high-end private chauffeur services with a modern fleet of Mercedes-Benz S-Class, E-Class, and V-Class luxury vans. Highlights include VIP meet-and-greet at Palma Airport (PMI) with live flight monitoring, direct villa and superyacht transfers, hourly on-demand chauffeur hire, and bespoke event mobility.",
     ca: "Amb més de 70 anys d'història des de 1953 a s'Horta per Rafael Roig Oliver, Roig és la companyia de transport líder a Mallorca. La divisió Roig Premium ofereix xofer privat amb Mercedes-Benz de luxe, trasllats a l'aeroport PMI i serveis per a esdeveniments exclusius.",
+    de: "Roig Premium bietet erstklassige Mobilitätslösungen für anspruchsvolle Reisende auf Mallorca. Von diskreten Chauffeurdiensten mit Mercedes S-Klasse und V-Klasse über VIP-Transfers ab dem Flughafen Palma bis hin zur Anmietung von Luxusfahrzeugen und Sportwagen.",
   },
   specialties: {
     es: [
@@ -78,6 +76,7 @@ export const roigPremium: ServiceItem = {
       "Flota Mercedes-Benz Classe S i Minivans Classe V",
       "Transport per a Esdeveniments, Casaments i Iots",
     ],
+    de: ["VIP Airport Transfers", "Privatchauffeur-Service", "Mercedes-Benz Flotte", "Event- & Hochzeitstransfers"],
   },
   highlights: {
     es: [
@@ -98,6 +97,12 @@ export const roigPremium: ServiceItem = {
       "Monitoratge de vols en temps real a l'aeroport de Palma",
       "Atenció multilingüe en català, castellà, anglès i alemany",
     ],
+    de: [
+      "Mehr als 70 Jahre Erfahrung im Mobilitäts- und Transportsektor auf Mallorca",
+      "Moderne Premium-Flotte (Mercedes S-Klasse, V-Klasse, E-Klasse und Range Rover)",
+      "Pünktlicher 24/7-Flughafentransfer mit persönlichem Meet & Greet",
+      "Zweisprachige, diskrete und ortskundige Berufschauffeure",
+    ],
   },
   servicesProvided: {
     es: [
@@ -112,6 +117,12 @@ export const roigPremium: ServiceItem = {
       "Xofer Privat per Hores",
       "Lloguer de Cotxes d'Alta Gamma",
       "Transport per a Casaments i Esdeveniments",
+    ],
+    de: [
+      "VIP-Flughafentransfers Palma de Mallorca (PMI)",
+      "Privatchauffeur auf Stunden- oder Tagesbasis",
+      "Exklusiver Transport für Hochzeiten, Events und Yachten",
+      "Vermietung von Premium- und Luxusfahrzeugen",
     ],
   },
   tags: [
@@ -135,6 +146,7 @@ export const roigPremium: ServiceItem = {
       es: "Precio cerrado garantizado sin suplementos ocultos por retrasos de vuelo o equipaje.",
       en: "Guaranteed fixed fares with zero hidden surcharges for flight delays or excess luggage.",
       ca: "Preu tancat garantit sense suplements per retards de vol.",
+      de: "Transparente Festpreise für Flughafentransfers sowie stundenweise Buchung.",
     },
   },
   amenities: ["wifi", "air_conditioning", "wheelchair_accessible"],
@@ -158,6 +170,7 @@ export const roigPremium: ServiceItem = {
         es: "Director General / Dirección de Grupo",
         en: "Managing Director",
         ca: "Director General",
+        de: "Flottenleiter & VIP Chauffeur Service",
       },
       specialty: "Gestión de Transporte y Movilidad Balear",
     },
@@ -211,6 +224,7 @@ export const roigPremium: ServiceItem = {
     es: "En 1953, Rafael Roig Oliver adquirió su primer vehículo en s'Horta (Felanitx) para prestar servicio de taxi a los primeros viajeros que llegaban a Cala d'Or. Con esfuerzo familiar y una constante vocación de servicio, la empresa creció incorporando autocares y flotas de alta gama hasta convertirse en el mayor referente de movilidad de las Islas Baleares.",
     en: "In 1953, Rafael Roig Oliver acquired his first vehicle in s'Horta (Felanitx) to provide taxi services to the earliest travelers exploring Cala d'Or. Through dedication and steadfast service commitment, the family business expanded with coach services and luxury vehicle fleets, establishing itself as the leading mobility authority in the Balearics.",
     ca: "L'any 1953, Rafael Roig Oliver va adquirir el seu primer vehicle a s'Horta per donar servei de taxi a Cala d'Or. Amb esforç familiar, l'empresa va créixer fins a convertir-se en el referent principal de mobilitat a les Illes Balears.",
+    de: "Seit der Gründung im Jahr 1953 durch die Familie Roig hat sich das Unternehmen vom lokalen Transportbetrieb zum führenden Mobilitätspartner für Luxushotels, Yachten und Privatkunden auf Mallorca entwickelt.",
   },
   newsMentions: [
     {

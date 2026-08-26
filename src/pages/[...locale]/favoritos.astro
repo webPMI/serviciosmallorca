@@ -1,0 +1,200 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Navbar from "../../components/Navbar.astro";
+import Footer from "../../components/Footer.astro";
+import { SERVICES } from "../../data/services";
+import { CATEGORIES } from "../../data/categories";
+import { MALLORCA_ZONES } from "../../data/zones";
+import { getLocaleFromUrl, loadTranslations, getLangPrefix, type Locale } from "../../i18n";
+
+export const prerender = false;
+
+const locale = getLocaleFromUrl(Astro.url) as Locale;
+const translations = await loadTranslations(locale);
+const prefix = getLangPrefix(locale);
+
+const titles: Record<Locale, string> = {
+  es: "Mis Negocios Guardados e Itinerario Personal",
+  en: "My Saved Businesses & Personal Itinerary",
+  ca: "Els Meus Negocis Guardats i Itinerari Personal",
+  de: "Gespeicherte Favoriten & Persönliche Reiseroute",
+};
+
+const subtitles: Record<Locale, string> = {
+  es: "Gestiona tu lista de favoritos y planifica tu experiencia personalizada en Mallorca.",
+  en: "Manage your favorite places and plan your bespoke Mallorca journey.",
+  ca: "Gestiona la teva llista de preferits i planifica la teva experiència a Mallorca.",
+  de: "Verwalten Sie Ihre Favoriten und planen Sie Ihr persönliches Mallorca-Erlebnis.",
+};
+---
+
+<BaseLayout title={`${titles[locale]} | Servicios Mallorca`} lang={locale} description={subtitles[locale]}>
+  <Navbar currentLocale={locale} translations={translations} getLangPrefix={getLangPrefix} />
+
+  <main class="container section">
+    <!-- Breadcrumbs Navigation -->
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+      <a href={prefix}>{translations["nav.home"] || "Inicio"}</a>
+      <span>/</span>
+      <span aria-current="page">{titles[locale]}</span>
+    </nav>
+
+    <header class="page-header" style="margin-bottom: var(--space-xl);">
+      <div class="badge badge-primary">❤️ Wishlist & Retención</div>
+      <h1 class="page-title">{titles[locale]}</h1>
+      <p class="page-subtitle">{subtitles[locale]}</p>
+    </header>
+
+    <!-- Empty State Container -->
+    <div
+      id="favorites-empty-state"
+      class="card card-glass"
+      style="display: none; text-align: center; padding: var(--space-2xl);"
+    >
+      <div style="font-size: 3rem; margin-bottom: var(--space-md);">🤍</div>
+      <h3>
+        {
+          locale === "de"
+            ? "Noch keine Favoriten gespeichert"
+            : locale === "en"
+              ? "No favorites saved yet"
+              : locale === "ca"
+                ? "Encara no tens preferits"
+                : "Aún no has guardado ningún negocio"
+        }
+      </h3>
+      <p class="text-muted" style="max-width: 450px; margin: var(--space-xs) auto var(--space-lg);">
+        {
+          locale === "de"
+            ? "Klicken Sie auf das Herz-Symbol bei einem Geschäft oder Restaurant, um es hier für Ihren Mallorca-Aufenthalt zu speichern."
+            : locale === "en"
+              ? "Click the heart icon on any business or restaurant to save it to your personal Mallorca list."
+              : locale === "ca"
+                ? "Fes clic a la icona del cor a qualsevol negoci per guardar-lo a la teva llista."
+                : "Haz clic en el icono del corazón en cualquier negocio o restaurante para guardarlo en tu lista personal."
+        }
+      </p>
+      <a href={`${prefix}servicios`} class="btn btn-primary">
+        <span
+          >{
+            locale === "de"
+              ? "Katalog durchstöbern →"
+              : locale === "en"
+                ? "Explore Directory →"
+                : locale === "ca"
+                  ? "Explorar Catàleg →"
+                  : "Explorar Catálogo →"
+          }</span
+        >
+      </a>
+    </div>
+
+    <!-- Dynamic Favorites Grid -->
+    <div
+      id="favorites-grid"
+      class="services-grid"
+      data-services={JSON.stringify(SERVICES)}
+      data-prefix={prefix}
+      data-locale={locale}
+    >
+      <!-- Populated dynamically by client JS -->
+    </div>
+  </main>
+
+  <Footer translations={translations} currentLocale={locale} getLangPrefix={getLangPrefix} />
+</BaseLayout>
+
+<script>
+  const FAV_KEY = "mallorca_user_favorites";
+
+  function renderFavorites() {
+    const grid = document.getElementById("favorites-grid");
+    const empty = document.getElementById("favorites-empty-state");
+    if (!grid || !empty) return;
+
+    let savedIds: string[] = [];
+    try {
+      const raw = localStorage.getItem(FAV_KEY);
+      savedIds = raw ? JSON.parse(raw) : [];
+    } catch {
+      savedIds = [];
+    }
+
+    if (savedIds.length === 0) {
+      grid.style.display = "none";
+      empty.style.display = "block";
+      return;
+    }
+
+    const allServices = JSON.parse(grid.getAttribute("data-services") || "[]");
+    const prefix = grid.getAttribute("data-prefix") || "/es/";
+    const locale = grid.getAttribute("data-locale") || "es";
+
+    const favoriteServices = allServices.filter((s: any) => savedIds.includes(s.id));
+
+    if (favoriteServices.length === 0) {
+      grid.style.display = "none";
+      empty.style.display = "block";
+      return;
+    }
+
+    empty.style.display = "none";
+    grid.style.display = "grid";
+    grid.innerHTML = "";
+
+    favoriteServices.forEach((s: any) => {
+      const card = document.createElement("article");
+      card.className = "service-card card hover-lift";
+      card.innerHTML = `
+        <div class="card-media">
+          <img src="${s.image}" alt="${s.name}" class="service-real-img" style="aspect-ratio: 16/9; object-fit: cover; width: 100%;" />
+          <div class="media-badges">
+            <span class="badge badge-success">✓ Verificado</span>
+            <span class="badge badge-price">${s.priceRange || "€€"}</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="service-meta">
+            <span class="service-cat">📍 ${s.zone}</span>
+            <span class="service-rating">⭐ ${s.rating ? s.rating.toFixed(1) : "5.0"}</span>
+          </div>
+          <h3 class="service-title">
+            <a href="${prefix}servicios/${s.slug}">${s.name}</a>
+          </h3>
+          <p class="service-desc">${s.shortDescription[locale] || s.shortDescription.es || ""}</p>
+          <div class="service-card-actions" style="margin-top: auto; display: flex; gap: 0.5rem;">
+            <a href="${prefix}servicios/${s.slug}" class="btn btn-primary btn-sm" style="flex: 1; text-align: center;">
+              Ver Ficha ↗
+            </a>
+            <button type="button" class="btn btn-secondary btn-sm remove-fav-btn" data-id="${s.id}" title="Eliminar de favoritos">
+              🗑️
+            </button>
+          </div>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+
+    // Event listeners para eliminar de la lista
+    grid.querySelectorAll(".remove-fav-btn").forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        const id = (e.currentTarget as HTMLElement).getAttribute("data-id");
+        if (id) {
+          try {
+            const list = JSON.parse(localStorage.getItem(FAV_KEY) || "[]").filter((x: string) => x !== id);
+            localStorage.setItem(FAV_KEY, JSON.stringify(list));
+            renderFavorites();
+          } catch {}
+        }
+      });
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", renderFavorites);
+  } else {
+    renderFavorites();
+  }
+
+  window.addEventListener("favorites:updated", renderFavorites);
+</script>

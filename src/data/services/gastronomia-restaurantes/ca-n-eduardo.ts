@@ -1,9 +1,5 @@
 import type { ServiceItem } from "../types.ts";
 
-/**
- * Ca n'Eduardo Palma - Restaurante emblemático de pescados y mariscos desde 1943.
- * Curado bajo el Protocolo de Enriquecimiento Profundo (GR-11 Zero Fake Data, GR-12 Multi-Mapas).
- */
 export const caNEduardo: ServiceItem = {
   id: "ca-n-eduardo",
   slug: "ca-n-eduardo",
@@ -45,6 +41,7 @@ export const caNEduardo: ServiceItem = {
       es: "Carta especializada en pescados salvajes de la lonja de Palma al peso, arroces marineros y mariscos vivos.",
       en: "Specialized menu featuring wild catch of the day priced by weight, traditional seafood rice and live lobster.",
       ca: "Carta especialitzada en peix salvatge de la llotja de Palma al pes, arrossos mariners i marisc viu.",
+      de: "Frischer Fisch nach Tagesgewicht. Tischreservierung mit Kathedralenblick empfohlen.",
     },
   },
   menuUrl: "https://caneduardo.com/carta/",
@@ -70,6 +67,12 @@ export const caNEduardo: ServiceItem = {
       "Gall de Sant Pere Fregit amb Alls",
       "Peix Fresc de Llotja a la Sal",
     ],
+    de: [
+      "Fangfrischer Wildfisch (Dorade, Wolfsbarsch, Drachenkopf)",
+      "Mallorquinische Caldereta de Bogavante",
+      "Rote Sóller-Garnelen",
+      "Klassische Meeresfrüchte-Paella",
+    ],
   },
   teamMembers: [
     {
@@ -78,6 +81,7 @@ export const caNEduardo: ServiceItem = {
         es: "Jefe de Cocina & Chef Ejecutivo",
         en: "Head Chef & Culinary Director",
         ca: "Cap de Cuina i Director Culinari",
+        de: "Küchenchef & Restaurantleitung",
       },
       specialty: "Arroces Marineros & Cocina Tradicional de Lonja",
       instagramHandle: "@caneduardorestaurante",
@@ -115,6 +119,7 @@ export const caNEduardo: ServiceItem = {
     es: "Fundado en 1943 en el epicentro del puerto pesquero de Palma, Ca n'Eduardo nació para rendir tributo a la riqueza del mar balear. Durante más de ocho décadas, ha sido el punto de encuentro de navegantes, residentes y visitantes ilustres en busca del mejor producto de lonja con la majestuosa Catedral de Palma como telón de fondo.",
     en: "Established in 1943 at the heart of Palma's fishing port, Ca n'Eduardo was founded to celebrate the bounty of the Balearic sea. For over eight decades, it has remained the landmark destination for mariners, locals, and discerning travelers seeking market-fresh seafood paired with iconic views of Palma Cathedral.",
     ca: "Fundat el 1943 a l'epicentre del port pesquer de Palma, Ca n'Eduardo va néixer per retre tribut a la riquesa de la mar balear. Durant més de vuit dècades, ha estat el punt de trobada de navegants i residents a la recerca del millor producte de llotja amb la Seu de Palma com a fons.",
+    de: "Gegründet 1943 direkt an der Fischbörse, wird Ca n'Eduardo seit Generationen für seine kompromisslose Frische und familiäre Gastfreundschaft geschätzt.",
   },
   reputationBreakdown: {
     googleMaps: {
@@ -230,11 +235,13 @@ export const caNEduardo: ServiceItem = {
     es: "Restaurante marinero emblemático en Palma desde 1943 situado sobre la Lonja pesquera, especializado en mariscos vivos, arroces y pescados salvajes con vistas a la Catedral.",
     en: "Historic seafood restaurant in Palma since 1943 located above the Fish Market, renowned for live lobster, paellas, and fresh catch with Cathedral views.",
     ca: "Restaurant mariner emblemàtic a Palma des de 1943 situat sobre la Llotja pesquera, especialitzat en marisc viu, arrossos i peix salvatge amb vistes a la Seu.",
+    de: "Traditionsreiches Fisch- und Meeresfrüchterestaurant am Hafen von Palma mit spektakulärem Blick auf die Kathedrale La Seu.",
   },
   fullDescription: {
     es: "Situado en un enclave privilegiado sobre la histórica Lonja de Pescado del puerto de Palma, Ca n'Eduardo es un icono indiscutible de la gastronomía balear desde 1943. Con más de 80 años de trayectoria ininterrumpida, el restaurante fusiona la tradición marinera con las técnicas más depuradas para ensalzar el auténtico sabor del Mediterráneo. Sus comensales disfrutan de calderetas de langosta, gamba roja fresca de Sóller, pescados salvajes a la sal y arroces caldosos mientras contemplan panorámicas inigualables de la Catedral de Santa María y los veleros de la bahía.",
     en: "Situated in an exclusive waterfront location directly above Palma's historic Fish Market, Ca n'Eduardo has stood as an indisputable icon of Balearic seafood since 1943. With over 80 years of culinary mastery, the restaurant pairs seafaring heritage with refined techniques to showcase the finest catches of the Mediterranean. Guests indulge in traditional lobster stews, Sóller red prawns, salt-baked wild fish, and savory paellas accompanied by breathtaking panoramas of Santa Maria Cathedral and the marina.",
     ca: "Situat en un indret privilegiat sobre la històrica Llotja de Peix del port de Palma, Ca n'Eduardo és un referent absolut de la gastronomia marinera des de 1943. Amb més de vuit dècades de tradició, el restaurant ofereix el millor peix de llotja fresca, calderetes de llagosta balear, gamba vermella de Sóller i arrossos tradicionals amb vistes panoràmiques directes a la Seu i a la badia de Palma.",
+    de: "Seit über 75 Jahren ist Ca n'Eduardo die führende Adresse für fangfrischen Fisch und Meeresfrüchte direkt an der Fischbörse (Llotja) im Hafen von Palma. Gäste genießen maritime Klassiker, Paellas und Calderetas mit herrlichem Panoramablick auf das Meer und die Kathedrale.",
   },
   highlights: {
     es: [
@@ -258,6 +265,12 @@ export const caNEduardo: ServiceItem = {
       "Arrossos mariners i calderetes de llagosta de recepta tradicional",
       "Selecció de vins destacats amb D.O. de Mallorca",
     ],
+    de: [
+      "Über 75 Jahre Tradition direkt an der Fischauktionshalle im Hafen von Palma",
+      "Spektakuläre Aussichtsterrasse auf die Kathedrale La Seu und die Bucht",
+      "Fangfrischer Edelfisch, Hummer und Meeresfrüchte aus mallorquinischen Gewässern",
+      "Perfekt für Geschäftsessen, Familienfeiern und maritime Feinschmecker",
+    ],
   },
   servicesProvided: {
     es: [
@@ -280,6 +293,12 @@ export const caNEduardo: ServiceItem = {
       "Arrossos i Paelles Marineres",
       "Marisqueria amb Viver Propi",
       "Salons Privats per a Esdeveniments",
+    ],
+    de: [
+      "Fangfrischer Fisch & Meeresfrüchte nach Tagesangebot",
+      "Mallorquinische Paellas & Hummereintöpfe (Caldereta)",
+      "Panoramaterrasse mit Hafenblick",
+      "Veranstaltungen und private Feierlichkeiten",
     ],
   },
   image: "https://www.caneduardo.com/wp-content/uploads/2018/08/wines-can-eduardo-restaurant.jpg",

@@ -277,6 +277,13 @@ const withNewsCount = SERVICES.filter(
                   <div style="display: flex; gap: 0.4rem; flex-wrap: wrap;">
                     <button
                       type="button"
+                      class="btn btn-xs btn-success one-click-verify-btn"
+                      data-service-slug={s.slug}
+                    >
+                      ⚡ Validar (95%)
+                    </button>
+                    <button
+                      type="button"
                       class="btn btn-xs btn-secondary copy-raw-json-btn"
                       data-service-slug={s.slug}
                       data-service-json={JSON.stringify(s)}

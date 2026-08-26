@@ -1,5 +1,6 @@
 ---
 import type { ServiceItem } from "../data/services/types";
+import ServiceReviewsTraceability from "./ServiceReviewsTraceability.astro";
 
 interface Props {
   service: ServiceItem;
@@ -11,6 +12,7 @@ const { service, translations, prefix } = Astro.props;
 ---
 
 <section class="card section-box reviews-section" id="resenas">
+  <ServiceReviewsTraceability businessSlug={service.slug} businessName={service.name} currentLocale="es" />
   <div class="reviews-header-wrap">
     <div>
       <h2 class="box-title">{translations["reviews.title"]}</h2>

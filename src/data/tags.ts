@@ -21,8 +21,8 @@ export interface TagDef {
   label: LocalizedText;
 }
 
-function def(domain: TagDomain, value: string, es: string, en: string, ca: string): TagDef {
-  return { id: `${domain}:${value}`, domain, label: { es, en, ca } };
+function def(domain: TagDomain, value: string, es: string, en: string, ca: string, de: string): TagDef {
+  return { id: `${domain}:${value}`, domain, label: { es, en, ca, de } };
 }
 
 /** Normaliza texto libre a slug kebab-case ASCII (translitera à/ñ/ç… → a/n/c). */
@@ -41,51 +41,51 @@ export function normalizeToKebabAscii(input: string): string {
 
 /** Segmento de producto/precio y estilos especializados — docs/TAXONOMY.md §5.2 */
 const PRODUCT_TAGS: TagDef[] = [
-  def("product", "lujo", "Lujo", "Luxury", "Luxe"),
-  def("product", "premium", "Premium", "Premium", "Premium"),
-  def("product", "accesible", "Accesible", "Affordable", "Assequible"),
-  def("product", "familiar", "Familiar", "Family-friendly", "Familiar"),
-  def("product", "adultos", "Solo adultos", "Adults only", "Només adults"),
-  def("product", "fine-line", "Fine Line", "Fine Line", "Fine Line"),
-  def("product", "piercing-titanio", "Piercing Titanio", "Titanium Piercing", "Pírcing Titani"),
-  def("product", "traditional", "Tradicional", "Traditional", "Tradicional"),
-  def("product", "neotradicional", "Neotradicional", "Neotraditional", "Neotradicional"),
-  def("product", "realismo", "Realismo", "Realism", "Realisme"),
-  def("product", "blackwork", "Blackwork", "Blackwork", "Blackwork"),
-  def("product", "lettering", "Lettering", "Lettering", "Lettering"),
+  def("product", "lujo", "Lujo", "Luxury", "Luxe", "Luxus"),
+  def("product", "premium", "Premium", "Premium", "Premium", "Premium"),
+  def("product", "accesible", "Accesible", "Affordable", "Assequible", "Erschwinglich"),
+  def("product", "familiar", "Familiar", "Family-friendly", "Familiar", "Familienfreundlich"),
+  def("product", "adultos", "Solo adultos", "Adults only", "Només adults", "Nur für Erwachsene"),
+  def("product", "fine-line", "Fine Line", "Fine Line", "Fine Line", "Fine Line"),
+  def("product", "piercing-titanio", "Piercing Titanio", "Titanium Piercing", "Pírcing Titani", "Titan-Piercing"),
+  def("product", "traditional", "Tradicional", "Traditional", "Tradicional", "Traditional"),
+  def("product", "neotradicional", "Neotradicional", "Neotraditional", "Neotradicional", "Neotraditional"),
+  def("product", "realismo", "Realismo", "Realism", "Realisme", "Realismus"),
+  def("product", "blackwork", "Blackwork", "Blackwork", "Blackwork", "Blackwork"),
+  def("product", "lettering", "Lettering", "Lettering", "Lettering", "Lettering"),
 ];
 
 /** Modalidad de prestación */
 const MOD_TAGS: TagDef[] = [
-  def("mod", "a-domicilio", "A domicilio", "At home", "A domicili"),
-  def("mod", "en-local", "En local", "In-store", "Al local"),
-  def("mod", "online", "Online", "Online", "En línia"),
-  def("mod", "hibrido", "Híbrido", "Hybrid", "Híbrid"),
-  def("mod", "cita-previa", "Cita previa", "By appointment", "Cita prèvia"),
-  def("mod", "walk-in", "Walk-in (Sin cita)", "Walk-in", "Sense cita"),
+  def("mod", "a-domicilio", "A domicilio", "At home", "A domicili", "Hausbesuch / Vor Ort"),
+  def("mod", "en-local", "En local", "In-store", "Al local", "Im Geschäft"),
+  def("mod", "online", "Online", "Online", "En línia", "Online"),
+  def("mod", "hibrido", "Híbrido", "Hybrid", "Híbrid", "Hybrid"),
+  def("mod", "cita-previa", "Cita previa", "By appointment", "Cita prèvia", "Nach Terminvereinbarung"),
+  def("mod", "walk-in", "Walk-in (Sin cita)", "Walk-in", "Sense cita", "Ohne Termin (Walk-in)"),
 ];
 
 /** Extras/equipación incluidos */
 const AMB_TAGS: TagDef[] = [
-  def("amb", "patron", "Con patrón incluido", "Skipper included", "Amb patró inclòs"),
-  def("amb", "conductor", "Con conductor incluido", "Driver included", "Amb conductor inclòs"),
-  def("amb", "catering", "Con catering incluido", "Catering included", "Amb càtering inclòs"),
+  def("amb", "patron", "Con patrón incluido", "Skipper included", "Amb patró inclòs", "Inklusive Skipper"),
+  def("amb", "conductor", "Con conductor incluido", "Driver included", "Amb conductor inclòs", "Inklusive Fahrer"),
+  def("amb", "catering", "Con catering incluido", "Catering included", "Amb càtering inclòs", "Inklusive Catering"),
 ];
 
 /** Audiencia objetivo */
 const AUD_TAGS: TagDef[] = [
-  def("aud", "familias", "Familias", "Families", "Famílies"),
-  def("aud", "parejas", "Parejas", "Couples", "Parelles"),
-  def("aud", "expat", "Expatriados", "Expats", "Expatriats"),
-  def("aud", "b2b", "Empresas (B2B)", "Business (B2B)", "Empreses (B2B)"),
-  def("aud", "seniors", "Seniors", "Seniors", "Sèniors"),
+  def("aud", "familias", "Familias", "Families", "Famílies", "Familien"),
+  def("aud", "parejas", "Parejas", "Couples", "Parelles", "Paare"),
+  def("aud", "expat", "Expatriados", "Expats", "Expatriats", "Expats / Residenten"),
+  def("aud", "b2b", "Empresas (B2B)", "Business (B2B)", "Empreses (B2B)", "Unternehmen (B2B)"),
+  def("aud", "seniors", "Seniors", "Seniors", "Sèniors", "Senioren"),
 ];
 
 /** Estacionalidad */
 const TEMPS_TAGS: TagDef[] = [
-  def("temps", "verano", "Verano", "Summer", "Estiu"),
-  def("temps", "invierno", "Invierno", "Winter", "Hivern"),
-  def("temps", "todo-el-ano", "Todo el año", "All year round", "Tot l'any"),
+  def("temps", "verano", "Verano", "Summer", "Estiu", "Sommer"),
+  def("temps", "invierno", "Invierno", "Winter", "Hivern", "Winter"),
+  def("temps", "todo-el-ano", "Todo el año", "All year round", "Tot l'any", "Ganzjährig"),
 ];
 
 /* ------------------------------------------------------------------ */
@@ -100,11 +100,11 @@ const TEMPS_TAGS: TagDef[] = [
 export function buildZoneTags(): TagDef[] {
   const tags: TagDef[] = [];
   for (const zone of MALLORCA_ZONES) {
-    tags.push(def("zona", zone.id, zone.name.es, zone.name.en, zone.name.ca));
+    tags.push(def("zona", zone.id, zone.name.es, zone.name.en, zone.name.ca, zone.name.de));
     for (const area of zone.popularAreas) {
       const value = normalizeToKebabAscii(area);
       // Los topónimos propios no se traducen (GR-12: fidelidad al nombre oficial)
-      tags.push(def("zona", value, area, area, area));
+      tags.push(def("zona", value, area, area, area, area));
     }
   }
   return tags;

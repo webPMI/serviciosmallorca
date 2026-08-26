@@ -4,6 +4,8 @@ import type { ServiceCategory } from "../data/categories";
 import type { MallorcaZone } from "../data/zones";
 import type { Locale } from "../i18n";
 import LiveScheduleBadge from "./LiveScheduleBadge.astro";
+import FavoriteButton from "./FavoriteButton.astro";
+import { getSmartActionCta } from "../lib/smartCtaEngine";
 
 interface Props {
   service: ServiceItem;
@@ -19,7 +21,15 @@ const zoneName = zone?.name[locale] || service.zone;
 
 const cleanPhone = service.phone ? service.phone.replace(/[^0-9+]/g, "") : "";
 const cleanWhatsApp = service.whatsapp ? service.whatsapp.replace(/[^0-9]/g, "") : "";
-const waText = encodeURIComponent(`Hola, he visto su servicio ${service.name} en Servicios Mallorca.`);
+const smartCta = getSmartActionCta(
+  service.category,
+  service.name,
+  locale,
+  service.phone,
+  service.whatsapp,
+  service.website,
+  service.menuUrl,
+);
 ---
 
 <header class="service-detail-header">
@@ -33,7 +43,7 @@ const waText = encodeURIComponent(`Hola, he visto su servicio ${service.name} en
         )
       }
       <span class="badge badge-price">{service.priceRange}</span>
-      {service.schedule && <LiveScheduleBadge scheduleText={service.schedule} currentLocale={locale} />}
+      {service.schedule && <LiveScheduleBadge scheduleText={service.schedule} locale={locale} />}
     </div>
 
     <h1 class="detail-title">{service.name}</h1>
@@ -51,17 +61,17 @@ const waText = encodeURIComponent(`Hola, he visto su servicio ${service.name} en
       <!-- Quick Action Buttons Above the Fold -->
       <div class="hero-quick-actions">
         {
-          cleanWhatsApp && (
+          smartCta.url !== "#" && (
             <a
-              href={`https://wa.me/${cleanWhatsApp}?text=${waText}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn btn-sm btn-primary hero-btn-whatsapp"
-              data-track-event="whatsapp_click"
+              href={smartCta.url}
+              target={smartCta.isExternal ? "_blank" : "_self"}
+              rel={smartCta.isExternal ? "noopener noreferrer" : undefined}
+              class="btn btn-sm btn-primary hero-btn-smart-action"
+              data-track-event={smartCta.trackingEvent}
               data-service-id={service.id}
             >
-              <span>💬</span>
-              <span>WhatsApp</span>
+              <span>{smartCta.icon}</span>
+              <span>{smartCta.label}</span>
             </a>
           )
         }
@@ -87,6 +97,14 @@ const waText = encodeURIComponent(`Hola, he visto su servicio ${service.name} en
           <span>📍</span>
           <span>{locale === "ca" ? "Com arribar" : locale === "en" ? "Directions" : "Cómo llegar"}</span>
         </a>
+        <FavoriteButton
+          businessId={service.id}
+          businessName={service.name}
+          businessSlug={service.slug}
+          category={service.category}
+          image={service.image}
+          size="md"
+        />
       </div>
     </div>
   </div>

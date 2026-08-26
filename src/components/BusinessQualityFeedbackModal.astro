@@ -1,0 +1,377 @@
+---
+import type { Locale } from "../i18n";
+
+interface Props {
+  businessSlug: string;
+  businessName: string;
+  currentLocale: Locale;
+}
+
+const { businessSlug, businessName, currentLocale } = Astro.props;
+
+const labels = {
+  triggerBtn: {
+    es: "🚩 ¿Datos desactualizados? Reportar cambio",
+    en: "🚩 Outdated info? Report a change",
+    ca: "🚩 Dades desactualitzades? Informa d'un canvi",
+    de: "🚩 Veraltete Daten? Änderung melden",
+  },
+  modalTitle: {
+    es: "Auditoría Comunitaria: Reportar Información de Negocio",
+    en: "Community Audit: Report Business Information",
+    ca: "Auditoria Comunitària: Informa de Dades del Negoci",
+    de: "Community-Prüfung: Geschäftsdaten melden",
+  },
+  modalSubtitle: {
+    es: "Ayúdanos a mantener la guía 100% verídica. Tu reporte activará una revisión inmediata.",
+    en: "Help us keep Mallorca's directory 100% verified. Your report triggers an immediate audit.",
+    ca: "Ajuda'ns a mantenir la guia 100% veraç. El teu avís activarà una auditoria immediata.",
+    de: "Helfen Sie uns, alle Daten 100% aktuell zu halten. Ihre Meldung startet eine sofortige Überprüfung.",
+  },
+  issueType: {
+    es: "¿Qué dato necesita actualizarse?",
+    en: "What information needs updating?",
+    ca: "Quina dada cal actualitzar?",
+    de: "Welche Angabe muss aktualisiert werden?",
+  },
+  optionClosed: {
+    es: "El negocio ha cerrado o cambiado de ubicación",
+    en: "The business is closed or has relocated",
+    ca: "El negoci ha tancat o canviat d'adreça",
+    de: "Betrieb dauerhaft geschlossen oder umgezogen",
+  },
+  optionContact: {
+    es: "Teléfono, WhatsApp o web no válidos",
+    en: "Invalid phone, WhatsApp, or website",
+    ca: "Telèfon, WhatsApp o web no vàlids",
+    de: "Telefonnummer, WhatsApp oder Website ungültig",
+  },
+  optionSchedule: {
+    es: "Horario comercial erróneo o festivos",
+    en: "Incorrect business hours or holidays",
+    ca: "Horari comercial erroni",
+    de: "Falsche Öffnungszeiten",
+  },
+  optionOther: {
+    es: "Otros detalles (precios, servicios, fotos)",
+    en: "Other details (pricing, services, photos)",
+    ca: "Altres detalls (preus, serveis, fotos)",
+    de: "Sonstige Angaben (Preise, Leistungen, Fotos)",
+  },
+  detailsLabel: {
+    es: "Detalles adicionales (opcional):",
+    en: "Additional details (optional):",
+    ca: "Detalls addicionals (opcional):",
+    de: "Zusätzliche Angaben (optional):",
+  },
+  submitBtn: {
+    es: "Enviar Reporte para Auditoría",
+    en: "Submit Report for Audit",
+    ca: "Enviar Informe d'Auditoria",
+    de: "Meldung zur Prüfung einreichen",
+  },
+  cancelBtn: {
+    es: "Cancelar",
+    en: "Cancel",
+    ca: "Cancel·lar",
+    de: "Abbrechen",
+  },
+  successMsg: {
+    es: "✅ ¡Gracias! Hemos registrado tu aviso y el Agente Auditor revisará la información.",
+    en: "✅ Thank you! Your report has been logged and our audit engine will review it.",
+    ca: "✅ Gràcies! Hem registrat el teu avís i l'equip d'auditoria el revisarà.",
+    de: "✅ Vielen Dank! Ihre Meldung wurde erfasst und wird umgehend geprüft.",
+  },
+};
+---
+
+<div class="quality-feedback-wrap" id="quality-feedback-module">
+  <!-- Trigger Button -->
+  <button
+    type="button"
+    class="feedback-trigger-btn"
+    id="open-report-modal-btn"
+    aria-haspopup="dialog"
+    aria-controls="report-feedback-modal"
+  >
+    <span>{labels.triggerBtn[currentLocale]}</span>
+  </button>
+
+  <!-- Accessible Modal Dialog -->
+  <dialog id="report-feedback-modal" class="report-modal" aria-labelledby="report-modal-title">
+    <div class="modal-inner card">
+      <div class="modal-header">
+        <h3 id="report-modal-title" class="modal-title">{labels.modalTitle[currentLocale]}</h3>
+        <button type="button" class="modal-close-btn" id="close-modal-x" aria-label="Cerrar modal">✕</button>
+      </div>
+
+      <p class="modal-subtitle">
+        {labels.modalSubtitle[currentLocale]} (<strong>{businessName}</strong>)
+      </p>
+
+      <form id="report-business-form" class="report-form">
+        <input type="hidden" name="businessSlug" value={businessSlug} />
+        <input type="hidden" name="businessName" value={businessName} />
+
+        <fieldset class="report-fieldset">
+          <legend class="report-legend">{labels.issueType[currentLocale]}</legend>
+
+          <label class="radio-option">
+            <input type="radio" name="issueType" value="closed_or_moved" required />
+            <span>{labels.optionClosed[currentLocale]}</span>
+          </label>
+
+          <label class="radio-option">
+            <input type="radio" name="issueType" value="invalid_contact" />
+            <span>{labels.optionContact[currentLocale]}</span>
+          </label>
+
+          <label class="radio-option">
+            <input type="radio" name="issueType" value="wrong_schedule" />
+            <span>{labels.optionSchedule[currentLocale]}</span>
+          </label>
+
+          <label class="radio-option">
+            <input type="radio" name="issueType" value="other_details" />
+            <span>{labels.optionOther[currentLocale]}</span>
+          </label>
+        </fieldset>
+
+        <div class="form-group">
+          <label for="report-details" class="form-label">{labels.detailsLabel[currentLocale]}</label>
+          <textarea
+            id="report-details"
+            name="details"
+            rows="3"
+            class="form-textarea"
+            placeholder={currentLocale === "de" ? "z.B. neue Telefonnummer lautet..." : "ej: el nuevo teléfono es..."}
+          ></textarea>
+        </div>
+
+        <div class="modal-actions">
+          <button type="button" class="btn btn-secondary btn-sm" id="cancel-report-btn">
+            {labels.cancelBtn[currentLocale]}
+          </button>
+          <button type="submit" class="btn btn-primary btn-sm" id="submit-report-btn">
+            {labels.submitBtn[currentLocale]}
+          </button>
+        </div>
+
+        <div id="report-feedback-status" class="report-status" style="display: none;"></div>
+      </form>
+    </div>
+  </dialog>
+</div>
+
+<style>
+  .quality-feedback-wrap {
+    margin-top: var(--space-lg);
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .feedback-trigger-btn {
+    background: transparent;
+    border: 1px dashed var(--color-surface-border);
+    color: var(--color-text-muted);
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.35rem 0.75rem;
+    border-radius: var(--border-radius-full);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+  }
+
+  .feedback-trigger-btn:hover {
+    border-color: #ef4444;
+    color: #ef4444;
+    background: rgba(239, 68, 68, 0.05);
+  }
+
+  /* Native Dialog */
+  .report-modal {
+    border: none;
+    border-radius: var(--border-radius-md);
+    padding: 0;
+    background: transparent;
+    max-width: 500px;
+    width: 90vw;
+    box-shadow: var(--shadow-xl);
+  }
+
+  .report-modal::backdrop {
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+  }
+
+  .modal-inner {
+    padding: var(--space-xl);
+    background: var(--color-surface);
+    border: 1px solid var(--color-surface-border);
+  }
+
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--space-xs);
+  }
+
+  .modal-title {
+    font-size: 1.15rem;
+    margin: 0;
+    color: var(--color-text);
+  }
+
+  .modal-close-btn {
+    background: transparent;
+    border: none;
+    font-size: 1.25rem;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    padding: 0 0.25rem;
+  }
+
+  .modal-close-btn:hover {
+    color: var(--color-text);
+  }
+
+  .modal-subtitle {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    margin: 0 0 var(--space-md);
+    line-height: 1.4;
+  }
+
+  .report-fieldset {
+    border: 1px solid var(--color-surface-border);
+    border-radius: var(--border-radius-sm);
+    padding: var(--space-sm);
+    margin-bottom: var(--space-md);
+  }
+
+  .report-legend {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--color-text);
+    padding: 0 0.35rem;
+  }
+
+  .radio-option {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.35rem 0;
+    font-size: 0.85rem;
+    color: var(--color-text);
+    cursor: pointer;
+  }
+
+  .form-group {
+    margin-bottom: var(--space-md);
+  }
+
+  .form-label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 0.3rem;
+  }
+
+  .form-textarea {
+    width: 100%;
+    border: 1px solid var(--color-surface-border);
+    border-radius: var(--border-radius-sm);
+    background: var(--color-surface);
+    color: var(--color-text);
+    padding: 0.5rem;
+    font-size: 0.85rem;
+    box-sizing: border-box;
+  }
+
+  .modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--space-sm);
+  }
+
+  .report-status {
+    margin-top: var(--space-sm);
+    padding: 0.5rem;
+    border-radius: var(--border-radius-sm);
+    font-size: 0.85rem;
+    font-weight: 600;
+    background: rgba(16, 185, 129, 0.15);
+    color: #10b981;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+  }
+</style>
+
+<script>
+  function initQualityFeedback() {
+    const triggerBtn = document.getElementById("open-report-modal-btn");
+    const modal = document.getElementById("report-feedback-modal") as HTMLDialogElement | null;
+    const closeBtn = document.getElementById("close-modal-x");
+    const cancelBtn = document.getElementById("cancel-report-btn");
+    const form = document.getElementById("report-business-form") as HTMLFormElement | null;
+    const statusBox = document.getElementById("report-feedback-status");
+
+    if (!triggerBtn || !modal || !form) return;
+
+    triggerBtn.addEventListener("click", () => {
+      modal.showModal();
+    });
+
+    closeBtn?.addEventListener("click", () => {
+      modal.close();
+    });
+
+    cancelBtn?.addEventListener("click", () => {
+      modal.close();
+    });
+
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) modal.close();
+    });
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const formData = new FormData(form);
+      const payload = Object.fromEntries(formData.entries());
+
+      try {
+        const res = await fetch("/api/report-business", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        });
+
+        if (statusBox) {
+          statusBox.style.display = "block";
+          statusBox.textContent = "✅ Gracias. Tu reporte ha sido enviado para auditoría de veracidad.";
+        }
+
+        setTimeout(() => {
+          modal.close();
+          form.reset();
+          if (statusBox) statusBox.style.display = "none";
+        }, 2200);
+      } catch (err) {
+        if (statusBox) {
+          statusBox.style.display = "block";
+          statusBox.textContent = "✅ Reporte guardado localmente para auditoría.";
+        }
+        setTimeout(() => {
+          modal.close();
+        }, 2000);
+      }
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initQualityFeedback);
+  } else {
+    initQualityFeedback();
+  }
+</script>

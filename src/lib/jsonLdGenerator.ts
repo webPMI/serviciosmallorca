@@ -117,7 +117,11 @@ export function generateServiceJsonLd(
     "@type": schemaType,
     "@id": `${canonicalUrl || "https://serviciosmallorca.com"}/#business`,
     name: service.name,
-    description: service.shortDescription?.[locale] || service.fullDescription?.[locale],
+    description:
+      (service.shortDescription as any)?.[locale] ||
+      (service.fullDescription as any)?.[locale] ||
+      service.shortDescription?.es ||
+      service.fullDescription?.es,
     url: canonicalUrl || service.website || "https://serviciosmallorca.com",
     image: service.images && service.images.length > 0 ? service.images : [service.image].filter(Boolean),
     telephone: service.phone || undefined,
@@ -200,12 +204,14 @@ export function generateHomepageJsonLd(
     es: "Servicios Mallorca - Directorio de Empresas y Profesionales",
     en: "Servicios Mallorca - Verified Businesses and Directory in Mallorca",
     ca: "Servicios Mallorca - Directori d'Empreses i Serveis a Mallorca",
+    de: "Servicios Mallorca - Geprüftes Branchen- und Unternehmensverzeichnis auf Mallorca",
   };
 
   const descriptions: Record<Locale, string> = {
     es: "Guía y directorio de los mejores servicios, restaurantes, náutica, spas y empresas verificadas en Mallorca.",
     en: "Premier directory and guide to top-rated verified businesses, restaurants, yacht charters, and spas in Mallorca.",
     ca: "Guia i directori dels millors serveis, restaurants, nàutica, spas i empreses verificades a Mallorca.",
+    de: "Exklusiver Guide und Verzeichnis für geprüfte Dienstleistungen, Restaurants, Yachtcharter und Unternehmen auf Mallorca.",
   };
 
   return [

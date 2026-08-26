@@ -91,7 +91,19 @@ describe("Verification Engine (Multi-Source Auditor)", () => {
       });
 
       expect(report.status).toBe("needs_manual_review");
+      expect(report.confidenceScore).toBeLessThan(80);
+      expect(report.crossReference.hasCriticalPhoneMismatch).toBe(true);
       expect(report.warnings.length).toBeGreaterThan(0);
+    });
+
+    it("extracts user intent and pain points from service texts", async () => {
+      const { extractUserIntentFlags } = await import("../../src/lib/verificationEngine");
+      const flags = extractUserIntentFlags(
+        "Servicio de reformas y fontanería urgente con atención 24 horas y citas previas",
+      );
+      expect(flags.isEmergency24h).toBe(true);
+      expect(flags.isUrgentService).toBe(true);
+      expect(flags.hasAppointmentRequired).toBe(true);
     });
   });
 

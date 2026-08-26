@@ -21,6 +21,8 @@ import MapsRatingBox from "../../../components/MapsRatingBox.astro";
 import SocialFeedSection from "../../../components/SocialFeedSection.astro";
 import ServiceReviewsSection from "../../../components/ServiceReviewsSection.astro";
 import ServiceRelatedList from "../../../components/ServiceRelatedList.astro";
+import SmartMatchRecommendations from "../../../components/SmartMatchRecommendations.astro";
+import BusinessQualityFeedbackModal from "../../../components/BusinessQualityFeedbackModal.astro";
 import ServiceSidebarContact from "../../../components/ServiceSidebarContact.astro";
 import ServiceClaimDeleteModals from "../../../components/ServiceClaimDeleteModals.astro";
 
@@ -138,6 +140,8 @@ const schemaOrg = generateServiceJsonLd(service, locale, canonicalUrl);
 
         <ServiceReviewsSection service={service} translations={translations} prefix={prefix} />
         <ServiceRelatedList relatedPosts={relatedPosts} translations={translations} locale={locale} prefix={prefix} />
+        <SmartMatchRecommendations currentService={service} currentLocale={locale} getLangPrefix={getLangPrefix} />
+        <BusinessQualityFeedbackModal businessSlug={service.slug} businessName={service.name} currentLocale={locale} />
       </div>
 
       <!-- Right Column: Sticky Contact Card -->

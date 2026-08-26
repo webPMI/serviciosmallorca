@@ -24,6 +24,7 @@ describe("Servicios Mallorca Data Layer", () => {
         expect(cat.name.es).toBeDefined();
         expect(cat.name.en).toBeDefined();
         expect(cat.name.ca).toBeDefined();
+        expect(cat.name.de).toBeDefined();
         expect(cat.icon).toBeDefined();
       }
 
@@ -48,6 +49,7 @@ describe("Servicios Mallorca Data Layer", () => {
         expect(zone.name.es).toBeDefined();
         expect(zone.name.en).toBeDefined();
         expect(zone.name.ca).toBeDefined();
+        expect(zone.name.de).toBeDefined();
         expect(zone.popularAreas.length).toBeGreaterThan(0);
       }
     });
@@ -77,15 +79,12 @@ describe("Servicios Mallorca Data Layer", () => {
         expect(service.slug).toBeDefined();
         expect(categoryIds).toContain(service.category);
         expect(zoneIds).toContain(service.zone);
-
-        // Los servicios incompletos pueden tener rating null
-        if (service.rating !== null) {
+        if (service.rating !== null && service.rating !== undefined) {
           expect(service.rating).toBeGreaterThanOrEqual(1);
           expect(service.rating).toBeLessThanOrEqual(5);
         }
 
-        // Los servicios incompletos pueden tener phone de ejemplo
-        if (service.status !== "incomplete_admin_only") {
+        if (service.status !== ("incomplete_admin_only" as any)) {
           expect(service.phone).toBeDefined();
           expect(service.shortDescription.es).toBeDefined();
           expect(service.shortDescription.en).toBeDefined();
@@ -103,6 +102,7 @@ describe("Servicios Mallorca Data Layer", () => {
         expect(post.title.es).toBeDefined();
         expect(post.title.en).toBeDefined();
         expect(post.title.ca).toBeDefined();
+        expect(post.title.de).toBeDefined();
         expect(post.author.name).toBeDefined();
       }
     });

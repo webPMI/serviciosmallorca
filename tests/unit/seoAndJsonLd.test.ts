@@ -56,11 +56,13 @@ describe("SEO & Schema.org JSON-LD Generation", () => {
       const jsonLdEs = generateServiceJsonLd(service, "es");
       const jsonLdEn = generateServiceJsonLd(service, "en");
       const jsonLdCa = generateServiceJsonLd(service, "ca");
+      const jsonLdDe = generateServiceJsonLd(service, "de");
 
       expect(jsonLdEs["@context"]).toBe("https://schema.org");
       expect(jsonLdEs.name).toBe(service.name);
       expect(jsonLdEn.name).toBe(service.name);
       expect(jsonLdCa.name).toBe(service.name);
+      expect(jsonLdDe.name).toBe(service.name);
       expect(jsonLdEs.geo.latitude).toBeTypeOf("number");
       expect(jsonLdEs.geo.longitude).toBeTypeOf("number");
     }

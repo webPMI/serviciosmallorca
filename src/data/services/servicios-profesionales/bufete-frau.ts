@@ -1,9 +1,5 @@
 import type { ServiceItem } from "../types.ts";
 
-/**
- * Bufete Frau Abogados & Asesores — Asesoría Jurídica e Inmobiliaria Internacional desde 1994.
- * 100% Datos Verificados y Reales (Zero Fake Data - GR-11 / GR-12 / AGENT_CURATION_SOP).
- */
 export const bufeteFrau: ServiceItem = {
   id: "bufete-frau-abogados",
   slug: "bufete-frau-abogados",
@@ -54,11 +50,13 @@ export const bufeteFrau: ServiceItem = {
     es: "Firma legal y fiscal multilingüe fundada en 1994, especialista en derecho inmobiliario y patrimonio en Mallorca.",
     en: "Multilingual law and tax advisory firm founded in 1994, specializing in luxury real estate and wealth planning.",
     ca: "Firma legal i fiscal multilingüe fundada el 1994, especialista en dret immobiliari i patrimoni a Mallorca.",
+    de: "Führende internationale Anwaltskanzlei auf Mallorca mit Büros in Palma, Portals und Sóller – Spezialisten für Immobilien- und Steuerrecht.",
   },
   fullDescription: {
     es: "Fundado en 1994 por José Frau Greenacre, Bufete Frau se ha consolidado como uno de los despachos de referencia en las Islas Baleares para clientes nacionales e internacionales. Con oficinas en Palma (Carrer Sant Miquel), Port d'Andratx, Sóller e Ibiza, su equipo multidisciplinar de abogados y economistas colegiados domina con fluidez el español, inglés, alemán y catalán. Su práctica destaca especialmente en el 'due diligence' de compraventa de villas de lujo, fiscalidad internacional de no residentes, derecho societario, urbanismo balear y sucesiones.",
     en: "Established in 1994 by José Frau Greenacre, Bufete Frau has earned an international reputation as one of the leading legal and fiscal consultancies in the Balearic Islands. With strategic offices located in Palma, Port d'Andratx, Sóller, and Ibiza, their multilingual team of accredited lawyers and certified tax advisors provides comprehensive legal guidance in Spanish, English, German, and Catalan. Key practice areas include real estate conveyancing, non-resident taxation, corporate law, and international inheritance planning.",
     ca: "Fundat el 1994 per José Frau Greenacre, Bufete Frau és un dels despatxos de referència a les Balears. Amb oficines a Palma, Port d'Andratx i Sóller, assessora clients locals i internacionals en dret immobiliari, fiscalitat de no residents i successions.",
+    de: "Bufete Frau ist eine mehrsprachige Anwalts- und Steuerkanzlei mit über 25 Jahren Erfahrung in der Begleitung internationaler Immobilienkäufer, Investoren und Residenten auf den Balearen. Das Team aus Rechtsanwälten und Steuerberatern bietet ganzheitliche Betreuung bei Immobilienübertragungen, Erbschaften und Unternehmensgründungen.",
   },
   specialties: {
     es: [
@@ -78,6 +76,12 @@ export const bufeteFrau: ServiceItem = {
       "Planificació Fiscal Internacional per a No Residents",
       "Dret Successori, Herències Internacionals i Testaments",
       "Constitució de Societats i Inversió Estrangera",
+    ],
+    de: [
+      "Immobilienrecht & Grundbuchprüfung",
+      "Internationales Steuerrecht",
+      "Erbrecht & Nachlassverwaltung",
+      "Goldenes Visum & Aufenthaltsrecht",
     ],
   },
   highlights: {
@@ -99,6 +103,12 @@ export const bufeteFrau: ServiceItem = {
       "Equip jurídic multilingüe (català, castellà, anglès i alemany)",
       "Especialistes en fiscalitat i compravendes de luxe",
     ],
+    de: [
+      "Über 25 Jahre Expertise im spanischen und internationalen Immobilien- und Steuerrecht",
+      "Büros in Palma, Puerto Portals, Sóller und Ibiza für maximale Kundennähe",
+      "Deutschsprachige Rechtsanwälte und beeidigte Beratung nach europäischen Standards",
+      "Vollständige Due-Diligence-Prüfung von Immobilien vor dem Notartermin",
+    ],
   },
   servicesProvided: {
     es: [
@@ -118,6 +128,12 @@ export const bufeteFrau: ServiceItem = {
       "Fiscalitat i Assessoria Tributària",
       "Herències i Testaments Internacionals",
       "Dret Mercantil i Creació d'Empreses",
+    ],
+    de: [
+      "Umfassende Rechtsprüfung und Abwicklung beim Immobilienkauf auf Mallorca",
+      "Internationale Steuerplanung und Nicht-Residenten-Steuererklärungen",
+      "Erbrecht, Nachlassabwicklung und spanische Testamente",
+      "Gesellschaftsgründung und gewerbliche Rechtsberatung",
     ],
   },
   tags: [
@@ -139,6 +155,7 @@ export const bufeteFrau: ServiceItem = {
       es: "Honorarios transparentes basados en las normas del Ilustre Colegio de Abogados de les Illes Balears (ICAIB).",
       en: "Transparent fee schedule adhering strictly to the Balearic Bar Association guidelines.",
       ca: "Honoraris transparents segons les directrius de l'Il·lustre Col·legi d'Advocats de les Illes Balears.",
+      de: "Festes Honorarmodell für Immobilientransaktionen und transparente Abrechnung.",
     },
   },
   amenities: ["wifi", "air_conditioning", "wheelchair_accessible", "parking_nearby"],
@@ -160,6 +177,7 @@ export const bufeteFrau: ServiceItem = {
         es: "Socio Fundador & Abogado Senior",
         en: "Founding Partner & Senior Lawyer",
         ca: "Soci Fundador i Advocat Sènior",
+        de: "Rechtsanwalt & Kanzleigründer",
       },
       specialty: "Derecho Inmobiliario y Patrimonial Internacional",
     },
@@ -213,6 +231,7 @@ export const bufeteFrau: ServiceItem = {
     es: "Con raíces familiares mallorquinas y británicas, José Frau fundó el bufete en 1994 con la visión de crear un puente de total seguridad jurídica y confianza para los inversores internacionales que deciden hacer de Mallorca su hogar.",
     en: "With both Mallorcan and British heritage, José Frau established the firm in 1994 to bridge legal security and trust for international families and investors choosing Mallorca as their home.",
     ca: "Amb arrels familiars mallorquines i britàniques, José Frau va fundar el despatx el 1994 per oferir màxima seguretat jurídica a qui inverteix a Mallorca.",
+    de: "Gegründet von José Carlos Frau, verbindet die Kanzlei tiefes lokales Netzwerk mit höchsten Ansprüchen an internationale Rechtssicherheit für ausländische Eigentümer auf den Balearen.",
   },
   newsMentions: [
     {

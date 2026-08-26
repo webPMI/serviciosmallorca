@@ -61,9 +61,9 @@ export function detectBusinessCategory(query: string, rawHtml = ""): string {
     text.includes("revestimientos") ||
     text.includes("baños") ||
     text.includes("banos") ||
-    text.includes("sanitarios") ||
-    text.includes("instalacion") ||
-    text.includes("instalaciones") ||
+    text.includes("instalacion electrica") ||
+    text.includes("instalaciones electricas") ||
+    text.includes("instalacion de fontaneria") ||
     text.includes("fontaneria") ||
     text.includes("plomeria") ||
     text.includes("plomería") ||
@@ -192,6 +192,29 @@ export function detectBusinessCategory(query: string, rawHtml = ""): string {
     text.includes("wellness")
   ) {
     return "salud-bienestar";
+  }
+
+  // 5. Deportes, Fitness & Actividades al Aire Libre
+  if (
+    text.includes("padel") ||
+    text.includes("pádel") ||
+    text.includes("tenis") ||
+    text.includes("tennis") ||
+    text.includes("gimnasio") ||
+    text.includes("gym") ||
+    text.includes("fitness") ||
+    text.includes("cycling") ||
+    text.includes("ciclismo") ||
+    text.includes("bicicleta") ||
+    text.includes("trekking") ||
+    text.includes("senderismo") ||
+    text.includes("calistenia") ||
+    text.includes("yoga") ||
+    text.includes("crossfit") ||
+    text.includes("pistas de") ||
+    text.includes("deport")
+  ) {
+    return "deportes-aire-libre";
   }
 
   return "servicios-profesionales";
@@ -413,6 +436,12 @@ export async function harvestBusinessIntelligence(
       startingPrice: detectedCategory.includes("gastronomia") ? "Menú: 45€" : "Desde 60€",
       depositRequired: "Reserva previa recomendada",
       rateType: "custom_quote",
+      notes: {
+        es: "Tarifas personalizadas y presupuestos sin compromiso.",
+        en: "Custom quotes with no obligation.",
+        ca: "Tarifes personalitzades i pressupostos sense compromís.",
+        de: "Individuelle Angebote und unverbindliche Kostenvoranschläge.",
+      },
     },
     teamMembers: [
       {
@@ -421,6 +450,7 @@ export async function harvestBusinessIntelligence(
           es: "Director / Especialista",
           en: "Lead Specialist",
           ca: "Director / Especialista",
+          de: "Leitender Spezialist / Geschäftsführer",
         },
         specialty: domainSpecialties[0] || "Atención Personalizada",
         instagramHandle: socialLinks.instagram ? `@${socialLinks.instagram.replace(/\/$/, "").split("/").pop()}` : "",
@@ -432,11 +462,13 @@ export async function harvestBusinessIntelligence(
           es: "¿Es necesario reservar con antelación?",
           en: "Is an advance booking required?",
           ca: "És necessari reservar amb antelació?",
+          de: "Ist eine vorherige Reservierung erforderlich?",
         },
         answer: {
           es: "Recomendamos contactar o reservar previamente para garantizar disponibilidad en Mallorca.",
           en: "We recommend booking in advance to guarantee availability in Mallorca.",
           ca: "Recomanem reservar prèviament per garantir disponibilitat a Mallorca.",
+          de: "Wir empfehlen eine vorherige Reservierung oder Kontaktaufnahme, um die Verfügbarkeit auf Mallorca zu sichern.",
         },
       },
     ],
@@ -446,6 +478,7 @@ export async function harvestBusinessIntelligence(
       es: "",
       en: "",
       ca: "",
+      de: "",
     },
     reputationBreakdown: {
       googleMaps: {
@@ -492,21 +525,25 @@ export async function harvestBusinessIntelligence(
       es: metaDescriptionEs,
       en: translatedEn,
       ca: translatedCa,
+      de: "",
     },
     fullDescription: {
       es: "",
       en: "",
       ca: "",
+      de: "",
     },
     highlights: {
       es: [],
       en: [],
       ca: [],
+      de: [],
     },
     servicesProvided: {
       es: [],
       en: [],
       ca: [],
+      de: [],
     },
     image: mainImage,
     gallery: gallery,

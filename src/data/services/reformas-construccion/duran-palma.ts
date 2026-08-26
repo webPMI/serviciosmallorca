@@ -1,9 +1,5 @@
 import type { ServiceItem } from "../types.ts";
 
-/**
- * Duran Palma (Guillermo Durán S.A.) — Materiales, Baños, Pavimentos & Reformas Integrales en Mallorca desde 1921.
- * 100% Datos Verificados y Reales (Zero Fake Data - GR-11 / GR-12 / AGENT_CURATION_SOP).
- */
 export const duranPalma: ServiceItem = {
   id: "duran-palma",
   slug: "duran-palma",
@@ -51,11 +47,13 @@ export const duranPalma: ServiceItem = {
     es: "Centenario líder balear en materiales de construcción, pavimentos cerámicos, diseño de baños y reformas.",
     en: "Centennial Balearic leader in premium building supplies, designer ceramic tiles, luxury bathrooms, and turnkey renovations.",
     ca: "Líder centenari balear en materials de construcció, paviments ceràmics, banys de disseny i reformes integrals.",
+    de: "Führender Anbieter für Baustoffe, hochwertige Fliesen, Designbäder und Komplettsanierungen auf Mallorca seit 1921.",
   },
   fullDescription: {
     es: "Fundada en 1921, Duran (Guillermo Durán S.A.) es una de las instituciones empresariales más emblemáticas y respetadas de Mallorca. Con un imponente showroom central en el Polígono Can Valero de Palma y centros especializados en Calvià, Alcúdia y Santanyí, ofrece soluciones integrales tanto a particulares como a arquitectos y promotores. Su catálogo abarca desde materiales estructurales de construcción y aislamientos térmicos de máxima eficiencia hasta pavimentos de piedra natural balear, griferías de autor, mobiliario de cocina de vanguardia y servicios de diseño 3D para reformas de viviendas y fincas rústicas.",
     en: "Founded in 1921, Duran (Guillermo Durán S.A.) stands as one of Mallorca's most iconic and reliable construction and interior architecture institutions. Boasting an expansive flagship showroom in Palma as well as locations across Calvià, Alcúdia, and Santanyí, Duran provides end-to-end solutions for luxury residences, historic fincas, and modern architectural developments. Their portfolio spans high-efficiency insulation, authentic Balearic natural stone, designer bathroom fixtures, contemporary kitchens, and 3D architectural rendering.",
     ca: "Fundada l'any 1921, Duran és una de les empreses més emblemàtiques de Mallorca. Amb una gran exposició a Palma i centres a Calvià, Alcúdia i Santanyí, ofereix materials de construcció, ceràmica, banys de luxe i reformes integrals.",
+    de: "Duran ist seit über einem Jahrhundert der Maßstab für Bau, Architektur und Inneneinrichtung auf Mallorca. Mit modernen Showrooms in Palma, Calvià und Alcúdia bietet Duran eine unvergleichliche Auswahl an Feinsteinzeug, Santanyí-Naturstein, Designer-Bädern, Küchen und innovativer Haustechnik.",
   },
   specialties: {
     es: [
@@ -75,6 +73,12 @@ export const duranPalma: ServiceItem = {
       "Disseny i Reforma Integral de Banys i Cuines",
       "Materials Sostenibles i Aïllament Tèrmic Eficient",
       "Pedra Natural Balear i Acabats Rústics",
+    ],
+    de: [
+      "Designbäder & Luxuskeramik",
+      "Naturstein & Feinsteinzeug für Innen- und Außenbereiche",
+      "Maßgeschneiderte Küchenplanung",
+      "Klimatisierung & Sanitärinstallationen",
     ],
   },
   highlights: {
@@ -96,6 +100,12 @@ export const duranPalma: ServiceItem = {
       "Distribuïdors oficials de marques líders europees",
       "Assessorament tècnic amb infografia 3D",
     ],
+    de: [
+      "Mehr als 100 Jahre Tradition und Marktführerschaft im Bausektor der Balearen",
+      "Große Erlebnis-Showrooms in Palma, Calvià und Alcúdia",
+      "Exklusive Vertretung internationaler Top-Marken für Fliesen, Bäder und Küchen",
+      "Fachberatung für Architekten, Bauherren, Bauträger und private Sanierer",
+    ],
   },
   servicesProvided: {
     es: [
@@ -116,6 +126,12 @@ export const duranPalma: ServiceItem = {
       "Equipament de Bany i Sanitaris",
       "Mobiliari i Electrodomèstics de Cuina",
     ],
+    de: [
+      "Fachberatung für Neubau- und Renovierungsprojekte",
+      "Lieferung von Premium-Fliesen, Parkett und Naturstein",
+      "Planung und Ausstattung kompletter Luxusbäder und Küchen",
+      "Energieeffiziente Haustechnik, Fußbodenheizung und Sanitärsysteme",
+    ],
   },
   tags: [
     "zona:palma",
@@ -135,6 +151,7 @@ export const duranPalma: ServiceItem = {
       es: "Asesoramiento técnico gratuito en showroom con visualización 3D del proyecto de reforma.",
       en: "Free technical consultation in showroom with 3D project rendering for renovation clients.",
       ca: "Assessorament tècnic gratuït al showroom amb visualització en 3D del projecte.",
+      de: "Kostenfreie Fachberatung im Showroom; detaillierte Leistungsangebote für Bauprojekte.",
     },
   },
   amenities: ["parking_nearby", "wheelchair_accessible", "wifi", "air_conditioning"],
@@ -158,6 +175,7 @@ export const duranPalma: ServiceItem = {
         es: "Asesores de Proyecto & Decoración",
         en: "Project & Interior Design Advisors",
         ca: "Assessors de Projecte i Decoració",
+        de: "Projektberater & Innenarchitekt",
       },
       specialty: "Materiales y Baños de Diseño",
     },
@@ -211,6 +229,7 @@ export const duranPalma: ServiceItem = {
     es: "Lo que comenzó en 1921 como un almacén de cales y yesos fundado por Guillermo Durán se ha transformado, tras un siglo de dedicación y evolución técnica, en el mayor referente de las Islas Baleares para edificar y decorar hogares mediterráneos.",
     en: "What began in 1921 as a modest lime and plaster business founded by Guillermo Durán has grown, across a century of innovation, into the Balearics' most respected destination for building and styling island homes.",
     ca: "El que va començar l'any 1921 com un magatzem de calç fundat per Guillermo Durán ha esdevingut, després d'un segle, el major referent de les Balears per a la construcció.",
+    de: "Gegründet im Jahr 1921 als Familienunternehmen in Palma, hat Duran über vier Generationen hinweg die architektonische Entwicklung und Sanierungskultur Mallorcas entscheidend mitgestaltet.",
   },
   newsMentions: [
     {

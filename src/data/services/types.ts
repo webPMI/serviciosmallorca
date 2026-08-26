@@ -28,7 +28,7 @@ export interface BusinessAward {
 
 export interface TeamMember {
   name: string;
-  role: { es: string; en: string; ca: string };
+  role: { es: string; en: string; ca: string; de?: string };
   specialty?: string;
   instagramHandle?: string;
   avatarUrl?: string;
@@ -38,14 +38,14 @@ export interface PricingDetail {
   startingPrice?: string; // "Desde 60€" / "From 60€"
   depositRequired?: string; // "Señal de reserva: 30€"
   rateType?: "fixed" | "hourly" | "custom_quote" | "tiered";
-  notes?: { es?: string; en?: string; ca?: string };
+  notes?: { es?: string; en?: string; ca?: string; de?: string };
 }
 
 export interface StoreProduct {
   id: string;
-  name: { es: string; en: string; ca: string };
+  name: { es: string; en: string; ca: string; de?: string };
   price: string; // "25,00€" / "Desde 15€"
-  description?: { es?: string; en?: string; ca?: string };
+  description?: { es?: string; en?: string; ca?: string; de?: string };
   category?: string; // "Merchandise" | "Cuidado Posterior" | "Joyería Titanio" | "Prints de Arte" | "Tarjetas Regalo"
   imageUrl?: string;
   url?: string; // Enlace directo a comprar en su tienda
@@ -62,8 +62,8 @@ export interface OnlineStoreInfo {
 }
 
 export interface BusinessFAQ {
-  question: { es: string; en: string; ca: string };
-  answer: { es: string; en: string; ca: string };
+  question: { es: string; en: string; ca: string; de?: string };
+  answer: { es: string; en: string; ca: string; de?: string };
 }
 
 export interface CustomerReview {
@@ -186,6 +186,7 @@ export interface ServiceItem {
     es?: string;
     en?: string;
     ca?: string;
+    de?: string;
   };
   pressMentions?: PressMention[];
   awards?: BusinessAward[];
@@ -210,21 +211,25 @@ export interface ServiceItem {
     es: string;
     en: string;
     ca: string;
+    de?: string;
   };
   fullDescription: {
     es: string;
     en: string;
     ca: string;
+    de?: string;
   };
   highlights?: {
     es: string[];
     en: string[];
     ca: string[];
+    de?: string[];
   };
   servicesProvided?: {
     es: string[];
     en: string[];
     ca: string[];
+    de?: string[];
   };
   image: string;
   images?: string[];
@@ -239,6 +244,7 @@ export interface ServiceItem {
         es: string[];
         en: string[];
         ca: string[];
+        de?: string[];
       };
   newsMentions?: Array<{
     title: string;

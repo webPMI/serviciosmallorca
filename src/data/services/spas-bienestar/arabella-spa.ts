@@ -1,9 +1,5 @@
 import type { ServiceItem } from "../types.ts";
 
-/**
- * Arabella Spa Mallorca (The St. Regis Mardavall) — Bienestar y Talasoterapia de Lujo.
- * 100% Datos Verificados y Reales (Zero Fake Data - GR-11 / GR-12 / AGENT_CURATION_SOP).
- */
 export const arabellaSpa: ServiceItem = {
   id: "arabella-spa-mallorca",
   slug: "arabella-spa-mallorca",
@@ -53,11 +49,13 @@ export const arabellaSpa: ServiceItem = {
     es: "El santuario de bienestar y talasoterapia más exclusivo de Mallorca con tratamientos de Medicina Tradicional China.",
     en: "Mallorca's most prestigious wellness and thalassotherapy sanctuary featuring bespoke Traditional Chinese Medicine treatments.",
     ca: "El santuari de benestar i talassoteràpia més exclusiu de Mallorca amb tractaments de Medicina Tradicional Xinesa.",
+    de: "Europas führendes Luxus-Spa im The St. Regis Mardavall (Calvià) – Thalassotherapie, TCM-Ärzte und Valmont-Behandlungen.",
   },
   fullDescription: {
     es: "Ubicado en el resort de cinco estrellas The St. Regis Mardavall en la costa de Calvià, Arabella Spa es reconocido internacionalmente como uno de los centros de bienestar más prestigiosos del Mediterráneo. Con más de 4.700 metros cuadrados dedicados a la salud holística, cuenta con médicos especialistas residentes en Medicina Tradicional China, piscinas termales de agua de mar climatizada, cabinas de masaje ayurvédico, saunas finlandesas, grutas de hielo y tratamientos faciales antiedad de alta cosmética.",
     en: "Located within the five-star St. Regis Mardavall resort in Calvià, Arabella Spa is globally renowned as one of the Mediterranean's finest wellness temples. Spanning over 4,700 square meters, it integrates resident Traditional Chinese Medicine doctors, heated indoor and outdoor seawater hydrotherapy pools, Ayurvedic massage pavilions, Finnish saunas, ice caves, and advanced anti-aging skincare therapies.",
     ca: "Situat a l'exclusiu complex The St. Regis Mardavall a Calvià, Arabella Spa és un dels centres de benestar més reconeguts del Mediterrani, amb piscines d'aigua de mar, saunes i especialistes en Medicina Tradicional Xinesa.",
+    de: "Das Arabella Spa im 5-Sterne-Resort The St. Regis Mardavall Mallorca ist eine Oase der Ruhe auf über 4.700 m². Mit beheizten Meerwasserbecken, traditioneller chinesischer Medizin (TCM), Ayurveda und Kosmetikritualen von Valmont und Maria Galland setzt es internationale Maßstäbe für ganzheitliches Wohlbefinden.",
   },
   specialties: {
     es: [
@@ -77,6 +75,12 @@ export const arabellaSpa: ServiceItem = {
       "Medicina Tradicional Xinesa i Acupuntura",
       "Massatges Balinesos i Rituals Ayurvèdics",
       "Tractaments Facials Antiedat de Luxe",
+    ],
+    de: [
+      "Thalassotherapie & Meerwasserpools",
+      "Traditionelle Chinesische Medizin (TCM)",
+      "Valmont Anti-Aging Kosmetik",
+      "Ayurveda & Entspannungsmassagen",
     ],
   },
   highlights: {
@@ -98,6 +102,12 @@ export const arabellaSpa: ServiceItem = {
       "Piscines d'aigua marina climatitzada i circuit termal",
       "Tractaments exclusius amb cosmètica Valmont i Maria Galland",
     ],
+    de: [
+      "Mehrfach als bestes Hotel-Spa Europas ausgezeichnet",
+      "Großer Meerwasser-Thalasso-Parcours mit Whirlpools und Eisgrotte",
+      "Residente Ärzte für Traditionelle Chinesische Medizin und Akupunktur",
+      "Exklusive Gesichts- und Körperrituale von Valmont und Maria Galland",
+    ],
   },
   servicesProvided: {
     es: [
@@ -118,6 +128,12 @@ export const arabellaSpa: ServiceItem = {
       "Massatges Terapèutics i Ayurvèdics",
       "Rituels Facials Antiedat",
     ],
+    de: [
+      "Thalassotherapie-Rundgänge in beheiztem Meerwasser",
+      "Konsultationen & Akupunktur bei Fachärzten für TCM",
+      "Anti-Aging-Gesichtsbehandlungen von Valmont",
+      "Ayurvedische Massagen und ganzheitliche Körpertherapien",
+    ],
   },
   tags: [
     "zona:calvia-andratx",
@@ -137,6 +153,7 @@ export const arabellaSpa: ServiceItem = {
       es: "Acceso al circuito de spa incluido con la reserva de tratamientos individuales superiores a 50 minutos.",
       en: "Full hydrothermal circuit access included with individual treatments of 50+ minutes.",
       ca: "Accés al circuit de spa inclòs amb tractaments superiors a 50 minuts.",
+      de: "Tages-Spa-Pässe und individuelle Behandlungspakete auf Anfrage.",
     },
   },
   amenities: ["wifi", "air_conditioning", "wheelchair_accessible", "parking_nearby"],
@@ -158,6 +175,7 @@ export const arabellaSpa: ServiceItem = {
         es: "Especialistas en Bienestar & MTC",
         en: "Wellness & TCM Specialists",
         ca: "Especialistes en Benestar i MTC",
+        de: "Spa-Direktion & Leitender TCM-Arzt",
       },
       specialty: "Talasoterapia y Medicina Oriental",
     },

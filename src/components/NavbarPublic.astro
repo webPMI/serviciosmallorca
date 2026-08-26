@@ -3,14 +3,14 @@ import ThemeSwitcher from "./ThemeSwitcher.astro";
 import LanguageSwitcher from "./LanguageSwitcher.astro";
 
 interface Props {
-  currentLocale: "es" | "en" | "ca" | string;
+  currentLocale: "es" | "en" | "ca" | "de" | string;
   translations: Record<string, string>;
-  getLangPrefix: (locale: "es" | "en" | "ca") => string;
+  getLangPrefix: (locale: "es" | "en" | "ca" | "de") => string;
   currentPath: string;
 }
 
 const { currentLocale, translations, getLangPrefix, currentPath } = Astro.props;
-const localeTyped = (currentLocale as "es" | "en" | "ca") || "es";
+const localeTyped = (currentLocale as "es" | "en" | "ca" | "de") || "es";
 const prefix = getLangPrefix(localeTyped);
 const homeUrl = prefix || "/";
 
@@ -23,6 +23,7 @@ const isActive = (path: string): boolean => {
 
 const isHomeActive = isActive(homeUrl);
 const isServicesActive = isActive(`${homeUrl}servicios`) || currentPath.includes("/servicios");
+const isSportsActive = isActive(`${homeUrl}deporte`) || currentPath.includes("/deporte");
 const isBlogActive = isActive(`${homeUrl}blog`) || currentPath.includes("/blog");
 const isCommunityActive = isActive(`${homeUrl}comunidad`) || currentPath.includes("/comunidad");
 const isLoginActive = isActive(`${homeUrl}login`);
@@ -67,6 +68,14 @@ const isRegisterActive = isActive(`${homeUrl}register`);
           aria-current={isServicesActive ? "page" : undefined}
         >
           {translations["nav.services"] || "Servicios"}
+        </a>
+        <a
+          href={`${homeUrl}deporte`}
+          class="nav-link"
+          class:list={["nav-link", { active: isSportsActive }]}
+          aria-current={isSportsActive ? "page" : undefined}
+        >
+          {translations["nav.sports"] || "Deporte"}
         </a>
         <a
           href={`${homeUrl}comunidad`}

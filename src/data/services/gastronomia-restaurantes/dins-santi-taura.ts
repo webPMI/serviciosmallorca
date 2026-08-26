@@ -56,6 +56,11 @@ export const dinsSantiTaura: ServiceItem = {
       "Arròs Melós de Gamba Vermella de Sóller",
       "Maridatge de Vins de D.O. Binissalem i Pla i Llevant",
     ],
+    de: [
+      "Historische Inselgastronomie",
+      "Mallorquinische Spezialitäten wie Porcella & Panades Gourmet",
+      "Degustationsmenü DINS",
+    ],
   },
   authorityScore: 98,
   pricing: {
@@ -66,6 +71,7 @@ export const dinsSantiTaura: ServiceItem = {
       es: "Experiencia de alta cocina mallorquina en formato menú degustación con maridaje opcional de vinos baleares y nacionales.",
       en: "Contemporary Majorcan fine dining tasting menu with optional Balearic and national wine pairing.",
       ca: "Experiència d'alta cuina mallorquina en format menú degustació amb maridatge opcional de vins.",
+      de: "Ausschließliches Degustationsmenü mit Vorabreservierung über die Website.",
     },
   },
   teamMembers: [
@@ -75,6 +81,7 @@ export const dinsSantiTaura: ServiceItem = {
         es: "Chef Propietario & Director Gastronómico",
         en: "Chef Owner & Gastronomic Director",
         ca: "Xef Propietari i Director Gastronòmic",
+        de: "Master Chef & Inhaber",
       },
       specialty: "Recetario Histórico Mallorquín & Producto Local Balear",
       instagramHandle: "@santitaura",
@@ -128,6 +135,7 @@ export const dinsSantiTaura: ServiceItem = {
     es: "DINS Santi Taura nace de la pasión del chef Santi Taura por investigar, recuperar y reinterpretar el recetario histórico de las Islas Baleares, utilizando materias primas de productores locales y pesca del día.",
     en: "DINS Santi Taura was born from chef Santi Taura's passion for researching, preserving, and reinterpreting historical Balearic cuisine using local seasonal produce.",
     ca: "DINS Santi Taura neix de la passió del xef Santi Taura per recuperar i reinterpretar el receptari històric de Mallorca amb producte local.",
+    de: "Santi Taura widmet seit über zwei Jahrzehnten seine Leidenschaft der Erforschung vergessener mallorquinischer Rezepte und lokaler Kulturtraditionen.",
   },
   googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=DINS%20Santi%20Taura%20Palma%20Mallorca",
   appleMapsUrl: "https://maps.apple.com/?q=DINS%20Santi%20Taura%20Palma",
@@ -149,11 +157,13 @@ export const dinsSantiTaura: ServiceItem = {
     es: "Restaurante con 1 Estrella Michelin y 2 Soles Repsol en Sa Calatrava, liderado por el chef Santi Taura.",
     en: "1 Michelin Star & 2 Repsol Suns restaurant in Sa Calatrava, led by chef Santi Taura.",
     ca: "Restaurant amb 1 Estrella Michelin i 2 Sols Repsol a Sa Calatrava, liderat pel xef Santi Taura.",
+    de: "Michelin-Stern-Erlebnis von Santi Taura in Palma – historische mallorquinische Rezepturen modern und meisterhaft interpretiert.",
   },
   fullDescription: {
     es: "DINS Santi Taura, galardonado con 1 Estrella Michelin y 2 Soles Repsol, está ubicado en el barrio histórico de Sa Calatrava (Hotel El Llorenç Parc de la Mar). El chef Santi Taura ofrece un viaje gastronómico a través de las raíces, recetas ancestrales y sabores auténticos de Mallorca con una técnica contemporánea impecable.",
     en: "DINS Santi Taura, awarded 1 Michelin Star and 2 Repsol Suns, is located in Palma's historic Sa Calatrava neighborhood. Chef Santi Taura delivers a culinary journey through traditional Majorcan heritage with modern precision.",
     ca: "DINS Santi Taura, guardonat amb 1 Estrella Michelin i 2 Sols Repsol, està situat al barri històric de Sa Calatrava. El xef Santi Taura ofereix un viatge gastronòmic a través de les arrels i receptes ancestrals de Mallorca.",
+    de: "DINS Santi Taura im Boutique-Hotel El Llorenç Parc de la Mar in Palma nimmt Gäste mit auf eine gastronomische Zeitreise durch die Kulturgeschichte der Balearen. Chefkoch Santi Taura interpretiert historische Rezepturen mit moderner Präzision und tiefem Respekt vor dem Inselerbe.",
   },
   highlights: {
     es: [
@@ -174,6 +184,12 @@ export const dinsSantiTaura: ServiceItem = {
       "Ubicació exclusiva a Sa Calatrava devora el Parc de la Mar",
       "Carta de vins amb àmplia selecció de cellers de Mallorca",
     ],
+    de: [
+      "Ausgezeichnet mit 1 Michelin-Stern und 2 Repsol-Sonnen",
+      "Exklusive Lage im Luxushotel El Llorenç im historischen Viertel Calatrava",
+      "Intimes Tresen-Erlebnis mit Blick auf die Live-Zubereitung",
+      "Tiefgründige gastronomische Hommage an die Kulturgeschichte Mallorcas",
+    ],
   },
   servicesProvided: {
     es: [
@@ -193,6 +209,12 @@ export const dinsSantiTaura: ServiceItem = {
       "Maridatge de Vins de Mallorca i Nacionals",
       "Servei de Sommelier i Cocteleria d'Autor",
       "Experiència a la Barra / Sala",
+    ],
+    de: [
+      "Historisches Gourmet-Degustationsmenü",
+      "Chef's Table Live-Erlebnis an der Küchentheke",
+      "Sommelier-Weinbegleitung mit seltenen balearischen Tropfen",
+      "Privates Gourmet-Dining für kleine Gruppen",
     ],
   },
   image: "https://www.elllorenc.com/images/hotel-fachada.jpg",
