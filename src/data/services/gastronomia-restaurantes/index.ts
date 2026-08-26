@@ -160,8 +160,14 @@ import { bodegasSonJulianaSantaEugenia } from "./bodegas-son-juliana-santa-eugen
 import { restauranteCnArenal } from "./restaurante-cn-arenal.ts";
 import { restauranteCnPortocolom } from "./restaurante-cn-portocolom.ts";
 import { bodegasCanAxartellPollenca } from "./bodegas-can-axartell-pollenca.ts";
+import { restauranteCnSEstanyol } from "./restaurante-cn-s-estanyol.ts";
+import { cellerSaPlacaLloseta } from "./celler-sa-placa-lloseta.ts";
+import { bodegasMesquidaMoraPorreres } from "./bodegas-mesquida-mora-porreres.ts";
 
 export {
+  restauranteCnSEstanyol,
+  cellerSaPlacaLloseta,
+  bodegasMesquidaMoraPorreres,
   restauranteCnArenal,
   restauranteCnPortocolom,
   bodegasCanAxartellPollenca,
@@ -491,4 +497,7 @@ export const RESTAURANT_SERVICES: ServiceItem[] = [
   restauranteCnArenal,
   restauranteCnPortocolom,
   bodegasCanAxartellPollenca,
+  restauranteCnSEstanyol,
+  cellerSaPlacaLloseta,
+  bodegasMesquidaMoraPorreres,
 ];

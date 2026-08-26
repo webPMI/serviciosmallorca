@@ -168,6 +168,7 @@ export const MALLORCA_ZONES: MallorcaZone[] = [
       "Sant Joan",
       "Porreres",
       "Lloseta",
+      "Costitx",
     ],
   },
 ];
