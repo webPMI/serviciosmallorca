@@ -130,8 +130,14 @@ import { restauranteElPenon1957Palma } from "./restaurante-el-penon-1957-palma.t
 import { restauranteClubNauticSEstanyol } from "./restaurante-club-nautic-s-estanyol.ts";
 import { restauranteCanTroncaSantJoan } from "./restaurante-can-tronca-sant-joan.ts";
 import { bodegasSonBordilsInca } from "./bodegas-son-bordils-inca.ts";
+import { restauranteCmSanAntonioCanPastilla } from "./restaurante-cm-san-antonio-can-pastilla.ts";
+import { cellerPagesPalma } from "./celler-pages-palma.ts";
+import { bodegasSonVivesBanyalbufar } from "./bodegas-son-vives-banyalbufar.ts";
 
 export {
+  restauranteCmSanAntonioCanPastilla,
+  cellerPagesPalma,
+  bodegasSonVivesBanyalbufar,
   restauranteClubNauticSEstanyol,
   restauranteCanTroncaSantJoan,
   bodegasSonBordilsInca,
@@ -401,4 +407,7 @@ export const RESTAURANT_SERVICES: ServiceItem[] = [
   restauranteClubNauticSEstanyol,
   restauranteCanTroncaSantJoan,
   bodegasSonBordilsInca,
+  restauranteCmSanAntonioCanPastilla,
+  cellerPagesPalma,
+  bodegasSonVivesBanyalbufar,
 ];

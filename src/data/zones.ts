@@ -38,6 +38,7 @@ export const MALLORCA_ZONES: MallorcaZone[] = [
       "Platja de Palma",
       "Cala Gamba",
       "Coll d'en Rabassa",
+      "Can Pastilla",
     ],
   },
   {
@@ -67,7 +68,17 @@ export const MALLORCA_ZONES: MallorcaZone[] = [
       ca: "Serra de Tramuntana",
       de: "Serra de Tramuntana",
     },
-    popularAreas: ["Sóller", "Port de Sóller", "Valldemossa", "Deià", "Esporles", "Fornalutx", "Escorca"],
+    popularAreas: [
+      "Sóller",
+      "Port de Sóller",
+      "Valldemossa",
+      "Deià",
+      "Esporles",
+      "Fornalutx",
+      "Escorca",
+      "Banyalbufar",
+      "Estellencs",
+    ],
   },
   {
     id: "alcudia-pollensa",
