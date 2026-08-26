@@ -12,23 +12,14 @@ const prefix = getLangPrefix(locale);
 
 const searchPlaceholder =
   locale === "de"
-    ? "Suche nach Restaurants, Spas, Booten oder Sport..."
+    ? "Suche nach Restaurants, Spas, Booten, Sport..."
     : locale === "en"
-      ? "Search for restaurants, spas, boat charters, sports..."
+      ? "Search restaurants, spas, boat charters, sports..."
       : locale === "ca"
         ? "Cerca restaurants, spas, embarcacions, esports..."
         : "Buscar restaurantes, spas, barcos, deportes...";
 
-const searchBtnText = locale === "de" ? "Suchen" : locale === "en" ? "Search" : locale === "ca" ? "Cercar" : "Buscar";
-
-const categoriesTitle =
-  locale === "de"
-    ? "Oder entdecke beliebte Kategorien:"
-    : locale === "en"
-      ? "Or explore popular categories:"
-      : locale === "ca"
-        ? "O explora categories populars:"
-        : "O explora categorías populares:";
+const searchBtnText = locale === "de" ? "Buscar" : locale === "en" ? "Search" : locale === "ca" ? "Cercar" : "Buscar";
 
 const categoryLinks = [
   {
@@ -45,38 +36,19 @@ const categoryLinks = [
   },
   {
     icon: "✨",
-    label:
-      locale === "de"
-        ? "Spas & Wellness"
-        : locale === "en"
-          ? "Spas & Wellness"
-          : locale === "ca"
-            ? "Spas & Benestar"
-            : "Spas & Bienestar",
+    label: locale === "de" ? "Wellness" : locale === "en" ? "Wellness" : locale === "ca" ? "Benestar" : "Bienestar",
     url: `${prefix}servicios?category=salud-bienestar`,
   },
   {
     icon: "⛵",
     label:
-      locale === "de"
-        ? "Yachtcharter"
-        : locale === "en"
-          ? "Boat Charter"
-          : locale === "ca"
-            ? "Nàutica & Xàrter"
-            : "Náutica & Chárter",
+      locale === "de" ? "Yachtcharter" : locale === "en" ? "Boat Charter" : locale === "ca" ? "Nàutica" : "Náutica",
     url: `${prefix}servicios?category=nautica-charter`,
   },
   {
     icon: "🎾",
     label:
-      locale === "de"
-        ? "Sport & Padel"
-        : locale === "en"
-          ? "Sports & Padel"
-          : locale === "ca"
-            ? "Esport & Pàdel"
-            : "Deporte & Pádel",
+      locale === "de" ? "Sport & Padel" : locale === "en" ? "Sports & Padel" : locale === "ca" ? "Esport" : "Deportes",
     url: `${prefix}deporte`,
   },
   {
@@ -87,8 +59,8 @@ const categoryLinks = [
         : locale === "en"
           ? "Tattoo & Art"
           : locale === "ca"
-            ? "Art & Tatuatges"
-            : "Arte & Tatuajes",
+            ? "Art"
+            : "Arte & Tattoos",
     url: `${prefix}servicios?category=arte-tatuajes`,
   },
   {
@@ -99,8 +71,8 @@ const categoryLinks = [
         : locale === "en"
           ? "Villas & Reform"
           : locale === "ca"
-            ? "Reformes & Llar"
-            : "Reformas & Hogar",
+            ? "Reformes"
+            : "Reformas",
     url: `${prefix}servicios?category=reformas-construccion`,
   },
 ];
@@ -109,46 +81,46 @@ const categoryLinks = [
 <BaseLayout
   title={`${translations["404.title"] || "404 - Página no encontrada"} | Servicios Mallorca`}
   lang={locale}
-  description={translations["404.description"] || "La página que buscas no existe o ha cambiado de dirección."}
+  description={translations["404.description"] ||
+    "La cala o el servicio que buscas no existe o ha cambiado de dirección."}
 >
   <Navbar currentLocale={locale} translations={translations} getLangPrefix={getLangPrefix} />
 
-  <main class="container section error-404-container">
-    <div class="error-404-card card card-glass">
-      <div class="error-404-visual">
-        <span class="error-code">404</span>
-        <div class="island-icon-wrap">
-          <span class="island-emoji">🏝️</span>
-          <span class="compass-emoji">🧭</span>
-        </div>
+  <main class="page-404-wrapper">
+    <div class="glow-bg" aria-hidden="true"></div>
+
+    <div class="page-404-container">
+      <!-- 404 Hero Visual -->
+      <div class="hero-visual">
+        <div class="compass-badge">🧭</div>
+        <span class="code-number">404</span>
       </div>
 
-      <div class="badge badge-accent">
+      <div class="location-tag">
         <span
           >📍 {
             locale === "de"
-              ? "Route verloren"
+              ? "Inselroute nicht gefunden"
               : locale === "en"
-                ? "Off the Route"
+                ? "Island route not found"
                 : locale === "ca"
-                  ? "Fora de Ruta"
-                  : "Fuera de Ruta"
+                  ? "Ruta fora de mapa"
+                  : "Fuera de ruta en la isla"
           }</span
         >
       </div>
 
-      <h1 class="error-title">{translations["404.title"] || "Página no encontrada"}</h1>
-      <p class="error-lead">{translations["404.subtitle"] || "Parece que te has desviado de la ruta en la isla."}</p>
-      <p class="error-desc text-muted">
+      <h1 class="headline">{translations["404.title"] || "Página no encontrada"}</h1>
+      <p class="subheadline">
         {
           translations["404.description"] ||
-            "La cala, el servicio o la página que buscas no existe o ha cambiado de dirección."
+            "La cala, el servicio o la página que buscas no existe o ha cambiado de ubicación."
         }
       </p>
 
-      <!-- Search Box in 404 Page -->
-      <form action={`${prefix}servicios`} method="GET" class="error-search-box">
-        <div class="search-input-group">
+      <!-- Sleek Search Bar -->
+      <form action={`${prefix}servicios`} method="GET" class="search-form">
+        <div class="search-bar">
           <span class="search-icon">🔍</span>
           <input
             type="text"
@@ -156,49 +128,36 @@ const categoryLinks = [
             placeholder={searchPlaceholder}
             class="search-input"
             aria-label={searchPlaceholder}
+            autocomplete="off"
             required
           />
-          <button type="submit" class="btn btn-primary btn-sm search-submit-btn">
+          <button type="submit" class="search-btn">
             {searchBtnText}
           </button>
         </div>
       </form>
 
-      <!-- Category Shortcut Pills -->
-      <div class="category-shortcuts-section">
-        <p class="shortcuts-title">{categoriesTitle}</p>
-        <div class="category-pills-grid">
+      <!-- Minimalist Category Chips -->
+      <div class="shortcuts-box">
+        <div class="chips-row">
           {
             categoryLinks.map((cat) => (
-              <a href={cat.url} class="category-pill-link hover-lift">
-                <span class="pill-icon">{cat.icon}</span>
-                <span class="pill-label">{cat.label}</span>
+              <a href={cat.url} class="chip-item">
+                <span class="chip-icon">{cat.icon}</span>
+                <span class="chip-label">{cat.label}</span>
               </a>
             ))
           }
         </div>
       </div>
 
-      <!-- Quick Island Recovery Actions -->
-      <div class="error-action-grid">
-        <a href={prefix} class="btn btn-primary btn-lg hover-lift">
+      <!-- Action Navigation -->
+      <div class="actions-row">
+        <a href={prefix} class="btn btn-primary btn-action">
           <span>🏠 {translations["404.backHome"] || "Volver al Inicio"}</span>
         </a>
-        <a href={`${prefix}servicios`} class="btn btn-secondary hover-lift">
-          <span>🔍 {translations["404.exploreServices"] || "Explorar Servicios"}</span>
-        </a>
-        <a href={`${prefix}favoritos`} class="btn btn-outline hover-lift">
-          <span
-            >❤️ {
-              locale === "de"
-                ? "Meine Favoriten"
-                : locale === "en"
-                  ? "My Favorites"
-                  : locale === "ca"
-                    ? "Els Meus Preferits"
-                    : "Mis Favoritos"
-            }</span
-          >
+        <a href={`${prefix}servicios`} class="btn btn-secondary btn-action">
+          <span>🏝️ {translations["404.exploreServices"] || "Explorar Servicios"}</span>
         </a>
       </div>
     </div>
@@ -208,178 +167,246 @@ const categoryLinks = [
 </BaseLayout>
 
 <style>
-  .error-404-container {
-    min-height: 75vh;
+  .page-404-wrapper {
+    position: relative;
+    min-height: 80vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: var(--space-8);
-    padding-bottom: var(--space-12);
+    padding: clamp(2rem, 5vw, 4rem) 1.25rem;
+    overflow: hidden;
   }
 
-  .error-404-card {
-    max-width: 680px;
+  .glow-bg {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: clamp(300px, 60vw, 700px);
+    height: clamp(300px, 60vw, 700px);
+    background: radial-gradient(circle, rgba(201, 147, 62, 0.12) 0%, rgba(201, 147, 62, 0.03) 45%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .page-404-container {
+    position: relative;
+    z-index: 1;
+    max-width: 620px;
     width: 100%;
     margin: 0 auto;
     text-align: center;
-    padding: var(--space-8);
-    border-radius: var(--border-radius-2xl);
-    border: 1px solid var(--color-surface-border);
-    box-shadow: var(--shadow-xl);
-    backdrop-filter: blur(16px);
+    background: var(--color-surface, #ffffff);
+    border: 1px solid var(--color-surface-border, rgba(0, 0, 0, 0.08));
+    border-radius: var(--border-radius-2xl, 24px);
+    padding: clamp(2rem, 5vw, 3.5rem) clamp(1.5rem, 4vw, 2.5rem);
+    box-shadow:
+      0 20px 40px -15px rgba(0, 0, 0, 0.07),
+      0 0 0 1px rgba(0, 0, 0, 0.03);
+    backdrop-filter: blur(12px);
   }
 
-  .error-404-visual {
-    position: relative;
+  [data-theme="golden-dark"] .page-404-container,
+  [data-theme="dark"] .page-404-container {
+    background: rgba(26, 18, 5, 0.85);
+    border-color: rgba(201, 147, 62, 0.2);
+    box-shadow:
+      0 25px 50px -12px rgba(0, 0, 0, 0.5),
+      0 0 0 1px rgba(201, 147, 62, 0.15);
+  }
+
+  .hero-visual {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: var(--space-2);
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
   }
 
-  .error-code {
-    font-size: clamp(4.5rem, 12vw, 7.5rem);
+  .compass-badge {
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    animation: float-compass 3s ease-in-out infinite;
+  }
+
+  .code-number {
+    font-size: clamp(3.75rem, 10vw, 5.5rem);
     font-weight: 900;
     line-height: 1;
-    letter-spacing: -0.05em;
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent, #c9933e) 100%);
+    letter-spacing: -0.04em;
+    background: linear-gradient(135deg, var(--color-primary, #c9933e) 0%, var(--color-accent, #e5a93c) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    opacity: 0.9;
   }
 
-  .island-icon-wrap {
-    position: absolute;
-    display: flex;
-    gap: var(--space-1);
-    font-size: 2.2rem;
-    bottom: -8px;
-    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+  @keyframes float-compass {
+    0%,
+    100% {
+      transform: translateY(0) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-6px) rotate(8deg);
+    }
   }
 
-  .error-title {
-    font-size: clamp(1.5rem, 4vw, 2.25rem);
-    font-weight: 800;
-    margin-top: var(--space-3);
-    margin-bottom: var(--space-1);
-    color: var(--color-text);
-  }
-
-  .error-lead {
-    font-size: var(--font-size-lg);
+  .location-tag {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.75rem;
     font-weight: 600;
-    color: var(--color-text);
-    margin-bottom: var(--space-2);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-primary, #c9933e);
+    background: rgba(201, 147, 62, 0.08);
+    padding: 0.25rem 0.85rem;
+    border-radius: 9999px;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(201, 147, 62, 0.2);
   }
 
-  .error-desc {
-    font-size: var(--font-size-sm);
+  .headline {
+    font-size: clamp(1.4rem, 3.5vw, 1.85rem);
+    font-weight: 800;
+    color: var(--color-text, #1e293b);
+    margin: 0 0 0.5rem 0;
+    line-height: 1.25;
+  }
+
+  .subheadline {
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    color: var(--color-text-muted, #64748b);
     max-width: 480px;
-    margin: 0 auto var(--space-6);
+    margin: 0 auto 1.75rem auto;
+    line-height: 1.55;
   }
 
-  /* Search Box */
-  .error-search-box {
-    margin-bottom: var(--space-6);
+  /* Search Bar */
+  .search-form {
+    max-width: 480px;
+    margin: 0 auto 1.5rem auto;
   }
 
-  .search-input-group {
+  .search-bar {
     display: flex;
     align-items: center;
-    background: var(--color-surface);
-    border: 1px solid var(--color-surface-border);
-    border-radius: var(--border-radius-full);
-    padding: 0.35rem 0.5rem 0.35rem 1rem;
-    box-shadow: var(--shadow-sm);
-    transition: all var(--transition-fast);
+    background: var(--color-bg, #f8fafc);
+    border: 1.5px solid var(--color-surface-border, #e2e8f0);
+    border-radius: 9999px;
+    padding: 0.35rem 0.4rem 0.35rem 1rem;
+    transition: all 0.25s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
   }
 
-  .search-input-group:focus-within {
-    border-color: var(--color-primary);
-    box-shadow: 0 0 0 3px var(--color-primary-light, rgba(201, 147, 62, 0.2));
+  .search-bar:focus-within {
+    border-color: var(--color-primary, #c9933e);
+    box-shadow: 0 0 0 3px rgba(201, 147, 62, 0.2);
+    background: var(--color-surface, #ffffff);
   }
 
   .search-icon {
-    font-size: 1.1rem;
+    font-size: 1rem;
     margin-right: 0.5rem;
-    color: var(--color-text-muted);
+    opacity: 0.6;
   }
 
   .search-input {
     flex: 1;
     border: none;
     background: transparent;
-    font-size: var(--font-size-sm);
-    color: var(--color-text);
     outline: none;
-    min-width: 0;
+    font-size: 0.9rem;
+    color: var(--color-text, #1e293b);
+    width: 100%;
   }
 
-  .search-submit-btn {
-    border-radius: var(--border-radius-full);
-    padding: 0.4rem 1.1rem;
-    flex-shrink: 0;
+  .search-input::placeholder {
+    color: var(--color-text-muted, #94a3b8);
   }
 
-  /* Category Shortcuts */
-  .category-shortcuts-section {
-    margin-bottom: var(--space-6);
+  .search-btn {
+    background: var(--color-primary, #c9933e);
+    color: #ffffff;
+    border: none;
+    padding: 0.55rem 1.1rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-radius: 9999px;
+    cursor: pointer;
+    transition:
+      background 0.2s ease,
+      transform 0.15s ease;
+    white-space: nowrap;
   }
 
-  .shortcuts-title {
-    font-size: var(--font-size-xs);
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--color-text-muted);
-    margin-bottom: var(--space-3);
+  .search-btn:hover {
+    background: var(--color-primary-dark, #a8762b);
+    transform: translateY(-1px);
   }
 
-  .category-pills-grid {
+  /* Chips */
+  .shortcuts-box {
+    margin-bottom: 2rem;
+  }
+
+  .chips-row {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: var(--space-2);
+    gap: 0.45rem;
   }
 
-  .category-pill-link {
+  .chip-item {
     display: inline-flex;
     align-items: center;
-    gap: 0.4rem;
-    padding: 0.4rem 0.85rem;
-    background: var(--color-surface);
-    border: 1px solid var(--color-surface-border);
-    border-radius: var(--border-radius-full);
+    gap: 0.35rem;
+    padding: 0.35rem 0.75rem;
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--color-text, #334155);
+    background: var(--color-bg, #f1f5f9);
+    border: 1px solid var(--color-surface-border, #e2e8f0);
+    border-radius: 9999px;
     text-decoration: none;
-    color: var(--color-text);
-    font-size: var(--font-size-xs);
-    font-weight: 600;
-    transition: all var(--transition-fast);
+    transition: all 0.2s ease;
   }
 
-  .category-pill-link:hover {
-    border-color: var(--color-primary);
-    background: var(--color-surface-hover);
-    color: var(--color-primary);
+  .chip-item:hover {
+    background: var(--color-surface, #ffffff);
+    border-color: var(--color-primary, #c9933e);
+    color: var(--color-primary, #c9933e);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   }
 
-  .error-action-grid {
+  /* Actions */
+  .actions-row {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: var(--space-3);
+    gap: 0.75rem;
   }
 
-  @media (max-width: 640px) {
-    .error-404-card {
-      padding: var(--space-5) var(--space-4);
+  .btn-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.7rem 1.4rem;
+    font-size: 0.88rem;
+    font-weight: 600;
+    border-radius: var(--border-radius-lg, 12px);
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  @media (max-width: 480px) {
+    .page-404-container {
+      padding: 2rem 1.25rem;
     }
 
-    .error-action-grid {
+    .actions-row {
       flex-direction: column;
     }
 
-    .error-action-grid .btn {
+    .btn-action {
       width: 100%;
     }
   }
