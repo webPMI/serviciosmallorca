@@ -148,8 +148,14 @@ import { bodegasVinsNadalBinissalem } from "./bodegas-vins-nadal-binissalem.ts";
 import { restauranteCnCalaRatjada } from "./restaurante-cn-cala-ratjada.ts";
 import { restauranteMarIVentBanyalbufar } from "./restaurante-mar-i-vent-banyalbufar.ts";
 import { bodegasCondeDeSuyrotColoniaSantPere } from "./bodegas-conde-de-suyrot-colonia-sant-pere.ts";
+import { restauranteCnCanPicafort } from "./restaurante-cn-can-picafort.ts";
+import { cellerSaFondaMuro } from "./celler-sa-fonda-muro.ts";
+import { bodegasEsVergerEsporles } from "./bodegas-es-verger-esporles.ts";
 
 export {
+  restauranteCnCanPicafort,
+  cellerSaFondaMuro,
+  bodegasEsVergerEsporles,
   restauranteCnCalaRatjada,
   restauranteMarIVentBanyalbufar,
   bodegasCondeDeSuyrotColoniaSantPere,
@@ -455,4 +461,7 @@ export const RESTAURANT_SERVICES: ServiceItem[] = [
   restauranteCnCalaRatjada,
   restauranteMarIVentBanyalbufar,
   bodegasCondeDeSuyrotColoniaSantPere,
+  restauranteCnCanPicafort,
+  cellerSaFondaMuro,
+  bodegasEsVergerEsporles,
 ];
