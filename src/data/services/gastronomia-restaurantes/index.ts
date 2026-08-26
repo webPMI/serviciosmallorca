@@ -59,8 +59,12 @@ import { marYMarPeguera } from "./mar-y-mar-peguera.ts";
 import { laHaciendaPeguera } from "./la-hacienda-peguera.ts";
 import { stayPortDePollenca } from "./stay-port-de-pollenca.ts";
 import { canBoquetaSoller } from "./can-boqueta-soller.ts";
+import { trespaisPortAndratx } from "./trespais-port-andratx.ts";
+import { laTerrazaAlcanada } from "./la-terraza-alcanada.ts";
 
 export {
+  trespaisPortAndratx,
+  laTerrazaAlcanada,
   stayPortDePollenca,
   canBoquetaSoller,
   marYMarPeguera,
@@ -188,4 +192,6 @@ export const RESTAURANT_SERVICES: ServiceItem[] = [
   laHaciendaPeguera,
   stayPortDePollenca,
   canBoquetaSoller,
+  trespaisPortAndratx,
+  laTerrazaAlcanada,
 ];

@@ -38,7 +38,15 @@ export const MALLORCA_ZONES: MallorcaZone[] = [
       ca: "Calvià & Andratx (Sud-oest)",
       de: "Calvià & Andratx (Südwesten)",
     },
-    popularAreas: ["Puerto Portals", "Port Adriano", "Santa Ponsa", "Palmanova", "Peguera", "Port d'Andratx"],
+    popularAreas: [
+      "Puerto Portals",
+      "Port Adriano",
+      "Santa Ponsa",
+      "Palmanova",
+      "Peguera",
+      "Port d'Andratx",
+      "Andratx",
+    ],
   },
   {
     id: "tramuntana",
@@ -58,7 +66,7 @@ export const MALLORCA_ZONES: MallorcaZone[] = [
       ca: "Alcúdia & Pollença (Nord)",
       de: "Alcúdia & Pollença (Norden)",
     },
-    popularAreas: ["Port de Pollença", "Port d'Alcúdia", "Playa de Muro", "Can Picafort"],
+    popularAreas: ["Port de Pollença", "Port d'Alcúdia", "Alcúdia", "Alcanada", "Playa de Muro", "Can Picafort"],
   },
   {
     id: "manacor-llevant",
