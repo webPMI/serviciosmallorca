@@ -82,8 +82,14 @@ import { puraVidaCalaFiguera } from "./pura-vida-cala-figuera.ts";
 import { esGuixEscorca } from "./es-guix-escorca.ts";
 import { saLlotjaPortocolom } from "./sa-llotja-portocolom.ts";
 import { bodegaCanVidalet } from "./bodega-can-vidalet-pollensa.ts";
+import { losPatosPlayaMuro } from "./los-patos-playa-muro.ts";
+import { caNignasiInca } from "./ca-nignasi-inca.ts";
+import { restauranteGolfAlcanada } from "./restaurante-golf-alcanada.ts";
 
 export {
+  losPatosPlayaMuro,
+  caNignasiInca,
+  restauranteGolfAlcanada,
   esGuixEscorca,
   saLlotjaPortocolom,
   bodegaCanVidalet,
@@ -257,4 +263,7 @@ export const RESTAURANT_SERVICES: ServiceItem[] = [
   esGuixEscorca,
   saLlotjaPortocolom,
   bodegaCanVidalet,
+  losPatosPlayaMuro,
+  caNignasiInca,
+  restauranteGolfAlcanada,
 ];
