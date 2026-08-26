@@ -25,6 +25,8 @@
     "discover:sports": "node --experimental-strip-types scripts/discover-businesses.ts --mine --file=scripts/discovery-targets-sports.json",
     "rank:businesses": "node --experimental-strip-types scripts/rank-and-organize-businesses.ts",
     "validate:taxonomy": "node --experimental-strip-types scripts/validate-taxonomy.ts",
+    "ingest:batch": "node --experimental-strip-types scripts/batch-ingest.ts",
+    "audit:anomaly": "node --experimental-strip-types scripts/anomaly-audit.ts",
     "check": "npm run lint && npm run typecheck && npm test && npm run validate:taxonomy",
     "prepare": "husky"
   },
