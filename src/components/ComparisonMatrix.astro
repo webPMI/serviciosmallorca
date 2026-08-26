@@ -1,0 +1,522 @@
+---
+import type { RankedService } from "../lib/topEngine";
+import type { Locale } from "../i18n";
+import ServiceImage from "./ServiceImage.astro";
+import { getSmartActionCta } from "../lib/smartCtaEngine";
+
+interface Props {
+  rankedServices: RankedService[];
+  currentLocale: Locale;
+  getLangPrefix: (locale: Locale) => string;
+  translations: Record<string, string>;
+  categorySlug?: string;
+  categoryName?: string;
+}
+
+const {
+  rankedServices,
+  currentLocale,
+  getLangPrefix,
+  translations,
+  categorySlug = "default",
+  categoryName = "Servicios",
+} = Astro.props;
+
+const prefix = getLangPrefix(currentLocale);
+---
+
+<div class="comparison-matrix-container" id="comparison-engine-root">
+  <!-- Interactive Attribute Filter Chips -->
+  <div class="filter-toolbar card">
+    <div class="filter-toolbar-header">
+      <span class="filter-title"
+        >⚡ {currentLocale === "de" ? "Interaktiver Filter nach Merkmalen:" : "Filtros rápidos por atributos:"}</span
+      >
+      <span class="filter-count" id="active-matches-count"
+        >{rankedServices.length} {currentLocale === "de" ? "Ergebnisse" : "negocios"}</span
+      >
+    </div>
+
+    <div class="filter-chips-row">
+      <button type="button" class="filter-chip active" data-filter="all">
+        <span>✨ {currentLocale === "de" ? "Alle anzeigen" : "Todos"}</span>
+      </button>
+      <button type="button" class="filter-chip" data-filter="terrace">
+        <span>☀️ {currentLocale === "de" ? "Terrasse" : "Con Terraza"}</span>
+      </button>
+      <button type="button" class="filter-chip" data-filter="seaViews">
+        <span>🌊 {currentLocale === "de" ? "Meerblick" : "Vistas al Mar"}</span>
+      </button>
+      <button type="button" class="filter-chip" data-filter="petFriendly">
+        <span>🐾 {currentLocale === "de" ? "Haustierfreundlich" : "Pet Friendly"}</span>
+      </button>
+      <button type="button" class="filter-chip" data-filter="wheelchairAccessible">
+        <span>♿ {currentLocale === "de" ? "Barrierefrei (PMR)" : "Accesible PMR"}</span>
+      </button>
+      <button type="button" class="filter-chip" data-filter="onlineBooking">
+        <span>📅 {currentLocale === "de" ? "Online-Buchung" : "Reserva Online"}</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Comparative Ranked Grid -->
+  <div class="comparison-grid" id="comparison-cards-grid">
+    {
+      rankedServices.map(({ service, rank, score, breakdown, badgeLabel }) => {
+        const smartCta = getSmartActionCta(
+          service.category,
+          service.name,
+          currentLocale,
+          service.phone,
+          service.whatsapp,
+          service.website,
+          service.menuUrl,
+        );
+
+        const caps = service.capabilities || {};
+        const specialties = Array.isArray(service.specialties)
+          ? service.specialties
+          : service.specialties?.[currentLocale] || service.specialties?.es || [];
+
+        return (
+          <article
+            class="comparison-card card hover-lift"
+            data-terrace={caps.terrace ? "true" : "false"}
+            data-seaviews={caps.seaViews ? "true" : "false"}
+            data-petfriendly={caps.petFriendly ? "true" : "false"}
+            data-wheelchair={caps.wheelchairAccessible ? "true" : "false"}
+            data-onlinebooking={caps.onlineBooking ? "true" : "false"}
+          >
+            <div class="rank-ribbon">
+              <span class="rank-pos">#{rank}</span>
+              {badgeLabel && <span class="rank-badge-text">{badgeLabel}</span>}
+            </div>
+
+            <div class="card-media-wrap">
+              <ServiceImage
+                src={service.image}
+                alt={service.name}
+                categorySlug={service.category}
+                aspectRatio="16/9"
+                className="comparison-img"
+              />
+              <div class="quality-score-badge" title="Puntuación de Calidad 20/30/30/20">
+                <span class="score-num">{score}</span>
+                <span class="score-label">/100 QS</span>
+              </div>
+            </div>
+
+            <div class="card-content">
+              <h3 class="business-title">
+                <a href={`${prefix}servicios/${service.slug}`}>{service.name}</a>
+              </h3>
+
+              <div class="meta-row">
+                <span class="rating-pill">
+                  ⭐ {service.rating?.toFixed(1) || "4.8"} ({service.reviewCount || 0} res.)
+                </span>
+                <span class="zone-pill">📍 {service.address.split(",")[0]}</span>
+                <span class="price-pill">{service.priceRange || "€€"}</span>
+              </div>
+
+              <div class="quality-breakdown-bar">
+                <div class="metric-col" title={`Veracidad de Datos: ${breakdown.dataVeracity}/30 pts`}>
+                  <span class="metric-name">🛡️ Datos</span>
+                  <div class="progress-bg">
+                    <div class="progress-fill veracity" style={`width: ${(breakdown.dataVeracity / 30) * 100}%`} />
+                  </div>
+                  <span class="metric-val">{breakdown.dataVeracity}/30</span>
+                </div>
+                <div class="metric-col" title={`Popularidad Real: ${breakdown.popularity}/30 pts`}>
+                  <span class="metric-name">👥 Reputación</span>
+                  <div class="progress-bg">
+                    <div class="progress-fill popularity" style={`width: ${(breakdown.popularity / 30) * 100}%`} />
+                  </div>
+                  <span class="metric-val">{breakdown.popularity}/30</span>
+                </div>
+                <div class="metric-col" title={`Afinidad y Servicios: ${breakdown.intentAffinity}/20 pts`}>
+                  <span class="metric-name">⚡ Servicios</span>
+                  <div class="progress-bg">
+                    <div class="progress-fill affinity" style={`width: ${(breakdown.intentAffinity / 20) * 100}%`} />
+                  </div>
+                  <span class="metric-val">{breakdown.intentAffinity}/20</span>
+                </div>
+              </div>
+
+              {specialties.length > 0 && (
+                <div class="specialties-section">
+                  <span class="specialties-heading">
+                    🌟 {currentLocale === "de" ? "Spezialitäten des Hauses:" : "Especialidades destacadas:"}
+                  </span>
+                  <ul class="specialties-list">
+                    {specialties.slice(0, 3).map((spec: string) => (
+                      <li class="spec-item">• {spec}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              <div class="capabilities-row">
+                {caps.terrace && <span class="cap-pill">☀️ Terraza</span>}
+                {caps.seaViews && <span class="cap-pill">🌊 Vistas al Mar</span>}
+                {caps.petFriendly && <span class="cap-pill">🐾 Pet Friendly</span>}
+                {caps.wheelchairAccessible && <span class="cap-pill">♿ PMR</span>}
+                {caps.onlineBooking && <span class="cap-pill">📅 Cita Online</span>}
+              </div>
+
+              <div class="action-footer">
+                <a href={`${prefix}servicios/${service.slug}`} class="btn btn-secondary btn-sm">
+                  {translations["services.viewDetails"] || "Ver Ficha Completa"}
+                </a>
+                <a
+                  href={smartCta.href}
+                  target={smartCta.external ? "_blank" : undefined}
+                  rel={smartCta.external ? "noopener noreferrer" : undefined}
+                  class="btn btn-primary btn-sm cta-direct-btn"
+                >
+                  <span>{smartCta.icon}</span>
+                  <span>{smartCta.label}</span>
+                </a>
+              </div>
+            </div>
+          </article>
+        );
+      })
+    }
+  </div>
+</div>
+
+<script is:inline>
+  document.addEventListener("astro:page-load", () => {
+    const root = document.getElementById("comparison-engine-root");
+    if (!root) return;
+
+    const chips = root.querySelectorAll(".filter-chip");
+    const cards = root.querySelectorAll(".comparison-card");
+    const countDisplay = document.getElementById("active-matches-count");
+
+    chips.forEach((chip) => {
+      chip.addEventListener("click", () => {
+        chips.forEach((c) => c.classList.remove("active"));
+        chip.classList.add("active");
+
+        const filter = chip.getAttribute("data-filter");
+        let visibleCount = 0;
+
+        cards.forEach((card) => {
+          if (filter === "all") {
+            card.style.display = "flex";
+            visibleCount++;
+          } else {
+            const attrKey = `data-${filter.toLowerCase()}`;
+            const matches = card.getAttribute(attrKey) === "true";
+            if (matches) {
+              card.style.display = "flex";
+              visibleCount++;
+            } else {
+              card.style.display = "none";
+            }
+          }
+        });
+
+        if (countDisplay) {
+          countDisplay.textContent = `${visibleCount} negocios`;
+        }
+      });
+    });
+  });
+</script>
+
+<style>
+  .comparison-matrix-container {
+    width: 100%;
+    margin: var(--space-6) 0;
+  }
+
+  .filter-toolbar {
+    padding: var(--space-4) var(--space-5);
+    margin-bottom: var(--space-6);
+    border-radius: var(--border-radius-xl);
+    background: var(--color-surface);
+    border: 1px solid var(--color-surface-border);
+  }
+
+  .filter-toolbar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-3);
+  }
+
+  .filter-title {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--color-text);
+  }
+
+  .filter-count {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    background: rgba(201, 147, 62, 0.1);
+    padding: 0.2rem 0.6rem;
+    border-radius: 9999px;
+  }
+
+  .filter-chips-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .filter-chip {
+    background: var(--color-bg);
+    border: 1px solid var(--color-surface-border);
+    color: var(--color-text-muted);
+    padding: 0.4rem 0.85rem;
+    border-radius: 9999px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .filter-chip:hover {
+    border-color: var(--color-primary);
+    color: var(--color-text);
+  }
+
+  .filter-chip.active {
+    background: var(--color-primary);
+    color: #ffffff;
+    border-color: var(--color-primary);
+    box-shadow: 0 2px 8px rgba(201, 147, 62, 0.3);
+  }
+
+  .comparison-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: var(--space-6);
+  }
+
+  .comparison-card {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border-radius: var(--border-radius-xl);
+    overflow: hidden;
+    background: var(--color-surface);
+    border: 1px solid var(--color-surface-border);
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+
+  .rank-ribbon {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(8px);
+    color: #fde047;
+    padding: 0.3rem 0.75rem;
+    border-radius: 9999px;
+    font-weight: 800;
+    font-size: 0.82rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(253, 224, 71, 0.3);
+  }
+
+  .card-media-wrap {
+    position: relative;
+    width: 100%;
+  }
+
+  .quality-score-badge {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    background: rgba(15, 23, 42, 0.9);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(201, 147, 62, 0.4);
+    padding: 0.25rem 0.6rem;
+    border-radius: 8px;
+    color: #ffffff;
+    display: flex;
+    align-items: baseline;
+    gap: 2px;
+  }
+
+  .score-num {
+    font-size: 1.1rem;
+    font-weight: 900;
+    color: #fde047;
+  }
+
+  .score-label {
+    font-size: 0.65rem;
+    color: #94a3b8;
+    font-weight: 600;
+  }
+
+  .card-content {
+    padding: var(--space-5);
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .business-title {
+    font-size: 1.15rem;
+    font-weight: 800;
+    margin: 0 0 0.5rem 0;
+    color: var(--color-text);
+  }
+
+  .business-title a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .business-title a:hover {
+    color: var(--color-primary);
+  }
+
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: var(--space-4);
+    font-size: 0.78rem;
+    font-weight: 600;
+  }
+
+  .rating-pill {
+    color: #eab308;
+    background: rgba(234, 179, 8, 0.1);
+    padding: 0.15rem 0.5rem;
+    border-radius: 6px;
+  }
+
+  .zone-pill {
+    color: var(--color-text-muted);
+  }
+
+  .price-pill {
+    color: var(--color-primary);
+    font-weight: 700;
+  }
+
+  /* Quality Breakdown Progress Bars */
+  .quality-breakdown-bar {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    background: var(--color-bg);
+    padding: 0.5rem;
+    border-radius: 8px;
+    margin-bottom: var(--space-4);
+    border: 1px solid var(--color-surface-border);
+  }
+
+  .metric-col {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .metric-name {
+    font-size: 0.68rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+  }
+
+  .progress-bg {
+    height: 4px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 9999px;
+    overflow: hidden;
+  }
+
+  .progress-fill.veracity {
+    background: #10b981;
+    height: 100%;
+  }
+  .progress-fill.popularity {
+    background: #f59e0b;
+    height: 100%;
+  }
+  .progress-fill.affinity {
+    background: #6366f1;
+    height: 100%;
+  }
+
+  .metric-val {
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: var(--color-text);
+  }
+
+  /* Specialties list */
+  .specialties-section {
+    margin-bottom: var(--space-4);
+  }
+
+  .specialties-heading {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 0.35rem;
+  }
+
+  .specialties-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .spec-item {
+    font-size: 0.78rem;
+    color: var(--color-text-muted);
+    line-height: 1.35;
+  }
+
+  .capabilities-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-bottom: var(--space-5);
+  }
+
+  .cap-pill {
+    font-size: 0.72rem;
+    padding: 0.2rem 0.55rem;
+    border-radius: 9999px;
+    background: rgba(201, 147, 62, 0.08);
+    color: var(--color-primary);
+    border: 1px solid rgba(201, 147, 62, 0.2);
+    font-weight: 600;
+  }
+
+  .action-footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    margin-top: auto;
+  }
+
+  .cta-direct-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+  }
+</style>

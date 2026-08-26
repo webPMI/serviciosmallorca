@@ -1,67 +1,127 @@
 import { SERVICES } from "../data/services";
-import type { ServiceItem } from "../data/services/types";
+import type { ServiceItem, BusinessCapabilities } from "../data/services/types";
+
+export interface QualityScoreBreakdown {
+  visualQuality: number; // 0 - 20 pts
+  dataVeracity: number; // 0 - 30 pts
+  popularity: number; // 0 - 30 pts
+  intentAffinity: number; // 0 - 20 pts
+  total: number; // 0 - 100 pts
+}
 
 export interface RankedService {
   service: ServiceItem;
   rank: number;
   score: number; // 0 - 100
+  breakdown: QualityScoreBreakdown;
   badgeLabel?: string;
   reasons: string[];
 }
 
+export interface ComparisonFilterParams {
+  category?: string;
+  sectorId?: string;
+  zone?: string;
+  capabilities?: Array<keyof BusinessCapabilities>;
+  priceRange?: string;
+  minScore?: number;
+  locale?: string;
+  limit?: number;
+}
+
 /**
- * Calcula la puntuación ponderada de un negocio para los rankings "Top".
+ * Calcula la puntuación ponderada y el desglose de calidad bajo el modelo 20/30/30/20:
  *
- * Algoritmo multicriterio:
- * - Rating (40%): Calificación ponderada de 1 a 5 convertida a base 100.
- * - Volumen de Reseñas (25%): Normalizado hasta un máximo de 500 reseñas.
- * - Confidence Score / Verificación (20%): Auditoría estricta GR-11.
- * - Calidad de Contenido & Fidelidad (15%): Fotos reales, horario y contacto directo.
- * - Bonus de Mercado Localizado (Locale-Targeting): Para el mercado DACH ('de'),
- *   prioriza atención multilingüe en alemán, sellos oficiales y alta confianza.
+ * 1. Calidad Visual (20%): Fotos verificadas, galería fotográfica y ausencia de fallbacks.
+ * 2. Veracidad de Datos (30%): Confidence score, coincidencia telefónica y geolocalización.
+ * 3. Popularidad Real (30%): Calificación ponderada, volumen de reseñas y premios oficiales.
+ * 4. Afinidad de Usuario (20%): Matriz de capacidades (terraza, PMR, pet friendly, reservas).
  */
-export function calculateBusinessScore(service: ServiceItem, locale?: string): number {
-  const rating = service.rating ?? 0;
-  const reviewCount = service.reviewCount ?? 0;
-  const ratingNorm = (rating / 5.0) * 100;
-  const reviewCountNorm = Math.min(100, (reviewCount / 400) * 100);
-  const confidenceScore = service.confidenceScore || (service.verified ? 90 : 60);
+export function calculateBusinessScore(service: ServiceItem, locale = "es"): number {
+  const breakdown = calculateQualityBreakdown(service, locale);
+  return breakdown.total;
+}
 
-  let contentBonus = 0;
-  if (service.phone) contentBonus += 25;
-  if (service.whatsapp) contentBonus += 25;
-  if (service.schedule) contentBonus += 25;
-  if (service.gallery && service.gallery.length >= 3) contentBonus += 25;
-
-  let baseScore = ratingNorm * 0.4 + reviewCountNorm * 0.25 + confidenceScore * 0.2 + contentBonus * 0.15;
-
-  // Localización Dinámica para Mercado Alemán (DACH)
-  if (locale === "de") {
-    let germanBoost = 0;
-    if (service.languagesSpoken?.includes("de") || service.culturalIdentity === "german_oriented") {
-      germanBoost += 6;
-    }
-    if (service.targetAudience?.includes("expat") || service.targetAudience?.includes("turistas")) {
-      germanBoost += 3;
-    }
-    if (service.certifications && service.certifications.length > 0) {
-      germanBoost += 3;
-    }
-    baseScore = Math.min(100, baseScore + germanBoost);
+/**
+ * Genera el desglose analítico de puntuación de calidad (Quality Score Breakdown).
+ */
+export function calculateQualityBreakdown(service: ServiceItem, locale = "es"): QualityScoreBreakdown {
+  // 1. Calidad Visual (Max 20 pts)
+  let visualQuality = 0;
+  if (service.image && !service.image.includes("default.svg") && !service.image.includes("placeholder")) {
+    visualQuality += 12;
+  } else {
+    visualQuality += 6;
+  }
+  if (service.gallery && service.gallery.length >= 2) {
+    visualQuality += 8;
+  } else if (service.gallery && service.gallery.length >= 1) {
+    visualQuality += 4;
   }
 
-  return Math.round(baseScore * 10) / 10;
+  // 2. Veracidad de Datos (Max 30 pts)
+  const confidence = service.confidenceScore ?? (service.verified ? 95 : 70);
+  const dataVeracity = Math.round((confidence / 100) * 30 * 10) / 10;
+
+  // 3. Popularidad Real (Max 30 pts)
+  const rating = service.rating ?? 4.0;
+  const reviewCount = service.reviewCount ?? 0;
+  const ratingScore = ((rating - 3.5) / 1.5) * 18; // Base 18 pts
+  const reviewScore = Math.min(8, (reviewCount / 200) * 8); // Base 8 pts
+  let awardsBonus = 0;
+  if (service.isIconicHeritage || (service.awards && service.awards.length > 0)) {
+    awardsBonus += 4;
+  }
+  const popularity = Math.min(30, Math.max(10, Math.round((ratingScore + reviewScore + awardsBonus) * 10) / 10));
+
+  // 4. Afinidad de Usuario & Capacidades (Max 20 pts)
+  let intentAffinity = 0;
+  if (service.phone || service.whatsapp) intentAffinity += 5;
+  if (service.schedule) intentAffinity += 4;
+  if (service.website || service.menuUrl) intentAffinity += 4;
+
+  const caps = service.capabilities || {};
+  let capCount = 0;
+  if (caps.terrace) capCount++;
+  if (caps.petFriendly) capCount++;
+  if (caps.wheelchairAccessible) capCount++;
+  if (caps.seaViews) capCount++;
+  if (caps.onlineBooking) capCount++;
+  if (caps.inVillaService) capCount++;
+  if (caps.emergency24h) capCount++;
+
+  intentAffinity += Math.min(7, capCount * 2);
+
+  // Boost Localizado para Mercado Alemán (DACH)
+  if (locale === "de") {
+    if (service.languagesSpoken?.includes("de") || service.culturalIdentity === "german_oriented") {
+      intentAffinity = Math.min(20, intentAffinity + 2);
+    }
+  }
+
+  const total = Math.min(100, Math.round((visualQuality + dataVeracity + popularity + intentAffinity) * 10) / 10);
+
+  return {
+    visualQuality: Math.min(20, visualQuality),
+    dataVeracity: Math.min(30, dataVeracity),
+    popularity: Math.min(30, popularity),
+    intentAffinity: Math.min(20, intentAffinity),
+    total,
+  };
 }
 
 /**
  * Devuelve los negocios mejor valorados de una categoría específica con soporte de localización.
  */
 export function getTopServicesByCategory(category: string, limit = 5, locale = "es"): RankedService[] {
-  const filtered = SERVICES.filter((s) => s.category === category && s.status !== "permanently_closed");
+  const filtered = SERVICES.filter(
+    (s) => (s.category === category || s.sectors?.includes(category)) && s.status !== "permanently_closed",
+  );
 
   const ranked = filtered
     .map((service) => {
-      const score = calculateBusinessScore(service, locale);
+      const breakdown = calculateQualityBreakdown(service, locale);
+      const score = breakdown.total;
       const reasons: string[] = [];
 
       if (locale === "de") {
@@ -70,9 +130,6 @@ export function getTopServicesByCategory(category: string, limit = 5, locale = "
           reasons.push("🇩🇪 Deutschsprachiger Service");
         }
         if (service.verified) reasons.push("🛡️ Geprüfte Qualität & Vertrauensindex");
-        if (service.certifications && service.certifications.length > 0) {
-          reasons.push("🏅 Offizielle balearische Registrierung");
-        }
         if (service.isIconicHeritage) reasons.push("🏛️ Traditioneller Traditionsbetrieb");
       } else {
         if (service.rating && service.rating >= 4.8) reasons.push("⭐ Calificación de excelencia (4.8+)");
@@ -84,6 +141,7 @@ export function getTopServicesByCategory(category: string, limit = 5, locale = "
       return {
         service,
         score,
+        breakdown,
         reasons,
       };
     })
@@ -113,27 +171,18 @@ export function getTopServicesByCategory(category: string, limit = 5, locale = "
 }
 
 /**
- * Devuelve los mejores negocios globales de la isla de Mallorca.
+ * Filtra los mejores negocios de una zona geográfica específica.
  */
-export function getTopRankedServices(limit = 10, locale = "es"): RankedService[] {
-  const ranked = SERVICES.filter((s) => s.status !== "permanently_closed")
+export function getTopServicesByZone(zone: string, limit = 5, locale = "es"): RankedService[] {
+  const filtered = SERVICES.filter((s) => s.zone === zone && s.status !== "permanently_closed");
+  const ranked = filtered
     .map((service) => {
-      const score = calculateBusinessScore(service, locale);
-      const reasons: string[] = [];
-
-      if (locale === "de") {
-        if (service.rating && service.rating >= 4.8) reasons.push("⭐ Herausragende Bewertung");
-        if (service.languagesSpoken?.includes("de")) reasons.push("🇩🇪 Deutschsprachige Betreuung");
-        if (service.verified) reasons.push("🛡️ Vollständig geprüfter Partner");
-      } else {
-        if (service.rating && service.rating >= 4.8) reasons.push("⭐ Calificación sobresaliente");
-        if (service.verified) reasons.push("✅ Auditoría de confianza superada");
-      }
-
+      const breakdown = calculateQualityBreakdown(service, locale);
       return {
         service,
-        score,
-        reasons,
+        score: breakdown.total,
+        breakdown,
+        reasons: service.rating && service.rating >= 4.7 ? ["⭐ Calificación Destacada"] : ["🛡️ Verificado"],
       };
     })
     .sort((a, b) => b.score - a.score)
@@ -142,66 +191,164 @@ export function getTopRankedServices(limit = 10, locale = "es"): RankedService[]
   return ranked.map((item, idx) => ({
     ...item,
     rank: idx + 1,
-    badgeLabel:
-      locale === "de"
-        ? idx === 0
-          ? "👑 Top #1 Mallorca"
-          : `#${idx + 1} Geprüft`
-        : idx === 0
-          ? "👑 Top #1 Mallorca"
-          : `#${idx + 1} Destacado`,
+    badgeLabel: `Top #${idx + 1} ${zone}`,
   }));
 }
 
 /**
- * Devuelve una selección curada semanal (Top 3 de la Semana) calculada de forma determinista
- * rotando cada 7 días para mantener el contenido fresco para usuarios y motores de IA.
+ * Devuelve el Top 3 curado de la semana con rotación determinista.
  */
-export function getWeeklyCuratedTops(date = new Date()): RankedService[] {
+export function getWeeklyCuratedTops(date = new Date(), locale = "es"): RankedService[] {
   const verifiedServices = SERVICES.filter((s) => s.verified && s.status !== "permanently_closed");
   if (verifiedServices.length === 0) return [];
 
-  // Calcular número de semana en el año
+  // Calcular número de semana del año para rotación
   const startOfYear = new Date(date.getFullYear(), 0, 1);
-  const pastDaysOfYear = (date.getTime() - startOfYear.getTime()) / 86400000;
-  const weekNumber = Math.ceil((pastDaysOfYear + startOfYear.getDay() + 1) / 7);
+  const weekNumber = Math.ceil(((date.getTime() - startOfYear.getTime()) / 86400000 + startOfYear.getDay() + 1) / 7);
 
-  const total = verifiedServices.length;
-  const startIndex = (weekNumber * 3) % total;
+  const startIndex = (weekNumber * 3) % verifiedServices.length;
+  const weeklyServices: ServiceItem[] = [];
 
-  const selected: ServiceItem[] = [];
-  for (let i = 0; i < Math.min(3, total); i++) {
-    selected.push(verifiedServices[(startIndex + i) % total]);
+  for (let i = 0; i < 3; i++) {
+    weeklyServices.push(verifiedServices[(startIndex + i) % verifiedServices.length]);
   }
 
-  return selected.map((service, idx) => ({
-    service,
+  return weeklyServices.map((service, idx) => {
+    const breakdown = calculateQualityBreakdown(service, locale);
+    return {
+      service,
+      rank: idx + 1,
+      score: breakdown.total,
+      breakdown,
+      badgeLabel: locale === "de" ? "✨ Wöchentliche Auswahl" : "✨ Selección Semanal",
+      reasons: ["🏆 Destacado de la Semana", "✅ 100% Verificado"],
+    };
+  });
+}
+
+/**
+ * Consulta de Lista Comparativa Multicriterio con Filtros por Capacidades.
+ */
+export function getComparisonList(params: ComparisonFilterParams = {}): RankedService[] {
+  const { category, sectorId, zone, capabilities = [], priceRange, minScore = 70, locale = "es", limit = 20 } = params;
+
+  let results = SERVICES.filter((s) => s.status !== "permanently_closed");
+
+  if (category) {
+    results = results.filter((s) => s.category === category || s.sectors?.includes(category));
+  }
+  if (sectorId) {
+    results = results.filter((s) => s.sectorId === sectorId || s.sectors?.includes(sectorId));
+  }
+  if (zone) {
+    results = results.filter((s) => s.zone === zone);
+  }
+  if (priceRange) {
+    results = results.filter((s) => s.priceRange === priceRange);
+  }
+  if (capabilities.length > 0) {
+    results = results.filter((s) => {
+      const caps = s.capabilities || {};
+      return capabilities.every((cap) => Boolean(caps[cap]));
+    });
+  }
+
+  const ranked = results
+    .map((service) => {
+      const breakdown = calculateQualityBreakdown(service, locale);
+      const reasons: string[] = [];
+      if (service.rating && service.rating >= 4.7) reasons.push("⭐ Calificación Sobresaliente");
+      if (service.capabilities?.terrace) reasons.push("☀️ Terraza al aire libre");
+      if (service.capabilities?.seaViews) reasons.push("🌊 Vistas al mar");
+      if (service.capabilities?.petFriendly) reasons.push("🐾 Pet Friendly");
+      if (service.capabilities?.wheelchairAccessible) reasons.push("♿ Accesible PMR");
+
+      return {
+        service,
+        score: breakdown.total,
+        breakdown,
+        reasons,
+      };
+    })
+    .filter((r) => r.score >= minScore)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, limit);
+
+  return ranked.map((item, idx) => ({
+    ...item,
     rank: idx + 1,
-    score: calculateBusinessScore(service),
-    badgeLabel: `✨ Selección Semanal #${idx + 1}`,
-    reasons: [
-      "⭐ Destacado de la semana en Baleares",
-      "✅ Datos y contacto verificados",
-      "📍 Alta preferencia de usuarios locales",
-    ],
   }));
 }
 
 /**
- * Devuelve los negocios mejor valorados filtrados por zona geográfica de Mallorca.
+ * Devuelve los mejores negocios globales de la isla de Mallorca.
  */
-export function getTopServicesByZone(zone: string, limit = 5): RankedService[] {
-  return SERVICES.filter((s) => s.zone === zone && s.status !== "permanently_closed")
-    .map((service) => ({
-      service,
-      score: calculateBusinessScore(service),
-      reasons: ["📍 Líder en su zona geográfica", "⭐ Calificación contrastada"],
-    }))
+export function getTopRankedServices(limit = 10, locale = "es"): RankedService[] {
+  const ranked = SERVICES.filter((s) => s.status !== "permanently_closed")
+    .map((service) => {
+      const breakdown = calculateQualityBreakdown(service, locale);
+      return {
+        service,
+        score: breakdown.total,
+        breakdown,
+        reasons: service.rating && service.rating >= 4.8 ? ["⭐ Calidad Superior"] : ["🛡️ Verificado"],
+      };
+    })
     .sort((a, b) => b.score - a.score)
-    .slice(0, limit)
-    .map((item, idx) => ({
-      ...item,
-      rank: idx + 1,
-      badgeLabel: `Top #${idx + 1} ${zone.replace(/-/g, " ")}`,
-    }));
+    .slice(0, limit);
+
+  return ranked.map((item, idx) => ({
+    ...item,
+    rank: idx + 1,
+    badgeLabel: idx === 0 ? "👑 Top #1 Mallorca" : `#${idx + 1}`,
+  }));
+}
+
+/**
+ * Genera FAQs Dinámicas y Estructuradas (FAQPage Schema) para SEO Long-Tail y Motores de IA.
+ */
+export function generateDynamicFaqs(
+  categoryName: string,
+  zoneName = "Mallorca",
+  topServices: RankedService[] = [],
+  locale = "es",
+) {
+  const top1 = topServices[0]?.service;
+  const top2 = topServices[1]?.service;
+
+  const faqs = [
+    {
+      question:
+        locale === "de"
+          ? `Welche sind die besten geprüften Anbieter für ${categoryName} in ${zoneName}?`
+          : `¿Cuáles son los mejores negocios y profesionales de ${categoryName} en ${zoneName}?`,
+      answer: top1
+        ? locale === "de"
+          ? `Basierend auf unserem unabhängigen Qualitäts- und Vertrauensindex führen ${top1.name} (Bewertung ${top1.rating}★) ${top2 ? `und ${top2.name} (Bewertung ${top2.rating}★)` : ""} die Rangliste in ${zoneName} an.`
+          : `Según nuestro índice de calidad y veracidad multi-fuente, los líderes destacados en ${zoneName} son ${top1.name} (puntuación ${top1.rating}★ con ${top1.reviewCount} reseñas) ${top2 ? `y ${top2.name} (${top2.rating}★)` : ""}.`
+        : `En Servicios Mallorca dispones de una selección 100% auditada con horarios, teléfonos directos y geolocalización precisa.`,
+    },
+    {
+      question:
+        locale === "de"
+          ? `Wie werden die Unternehmen in der Bestenliste von ${categoryName} bewertet?`
+          : `¿Cómo se calcula el ranking y el Score de Calidad de ${categoryName}?`,
+      answer:
+        locale === "de"
+          ? `Die Platzierung erfolgt über einen automatischen 4-Säulen-Index: Datenwahrheit (30%), Kundenbewertungen & Reputation (30%), Visuelle Qualität (20%) und Benutzeraffinität & Serviceleistungen (20%).`
+          : `El ranking se calcula mediante un algoritmo transparente de 4 pilares: Veracidad de Datos (30%), Popularidad y Reseñas Reales (30%), Calidad Visual (20%) y Matriz de Capacidades y Atención al Usuario (20%).`,
+    },
+    {
+      question:
+        locale === "de"
+          ? `Gibt es in ${zoneName} Optionen mit Online-Reservierung oder barrierefreiem Zugang?`
+          : `¿Hay opciones con terraza, reservas online o accesibilidad PMR en ${zoneName}?`,
+      answer:
+        locale === "de"
+          ? `Ja, Sie können die Liste interaktiv filtern, um gezielt Betriebe mit Terrasse, Barrierefreiheit (PMR) oder Online-Terminen anzuzeigen.`
+          : `Sí, nuestra tabla comparativa dinámica permite filtrar al instante por terraza al aire libre, pet friendly, accesibilidad para personas con movilidad reducida (PMR) y reserva directa.`,
+    },
+  ];
+
+  return faqs;
 }

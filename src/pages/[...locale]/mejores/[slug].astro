@@ -1,0 +1,326 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Navbar from "../../../components/Navbar.astro";
+import Footer from "../../../components/Footer.astro";
+import ComparisonMatrix from "../../../components/ComparisonMatrix.astro";
+import { getLocaleFromUrl, loadTranslations, getLangPrefix, type Locale } from "../../../i18n";
+import { CATEGORIES } from "../../../data/categories";
+import { MALLORCA_ZONES } from "../../../data/zones";
+import { getComparisonList, generateDynamicFaqs } from "../../../lib/topEngine";
+
+export const prerender = false;
+
+const locale = getLocaleFromUrl(Astro.url) as Locale;
+const translations = await loadTranslations(locale);
+const prefix = getLangPrefix(locale);
+
+const { slug } = Astro.params;
+
+// Map canonical slug to category & zone
+const hubConfigs: Record<
+  string,
+  {
+    categoryId: string;
+    zoneId?: string;
+    title: { es: string; en: string; ca: string; de: string };
+    desc: { es: string; en: string; ca: string; de: string };
+  }
+> = {
+  "restaurantes-palma": {
+    categoryId: "gastronomia-catering",
+    zoneId: "palma",
+    title: {
+      es: "Los Mejores Restaurantes de Palma (Guía y Comparativa Verificada)",
+      en: "Best Restaurants in Palma (Verified Guide & Comparison)",
+      ca: "Els Millors Restaurants de Palma (Guia i Comparativa Verificada)",
+      de: "Die besten Restaurants in Palma (Verifizierter Guide & Vergleich)",
+    },
+    desc: {
+      es: "Descubre los restaurantes más destacados en Palma: cocina mediterránea, alta gastronomía, mariscos y opciones con terraza auditadas por Servicios Mallorca.",
+      en: "Discover top-rated restaurants in Palma: Mediterranean cuisine, fine dining, seafood and waterfront terraces audited by Servicios Mallorca.",
+      ca: "Descobreix els restaurants més destacats a Palma: cuina mediterrània, alta gastronomia, mariscs i terrasses auditades.",
+      de: "Entdecken Sie Spitzenrestaurants in Palma: mediterrane Küche, Fine Dining, Meeresfrüchte und Terrassen, geprüft von Servicios Mallorca.",
+    },
+  },
+  "spas-bienestar-mallorca": {
+    categoryId: "salud-bienestar",
+    title: {
+      es: "Los Mejores Spas y Centros de Bienestar en Mallorca",
+      en: "Best Spas & Wellness Retreats in Mallorca",
+      ca: "Els Millors Spas i Centres de Benestar a Mallorca",
+      de: "Die besten Spas & Wellness-Oasen auf Mallorca",
+    },
+    desc: {
+      es: "Comparativa de circuitos termales, tratamientos faciales, masajes y centros de hidroterapia con puntuación de calidad contrastada.",
+      en: "Comparison of thermal circuits, facial treatments, holistic massages and wellness clinics with verified quality ratings.",
+      ca: "Comparativa de circuits termals, tractaments facials, massatges i clíniques de benestar a Mallorca.",
+      de: "Vergleich von Thermalbädern, Massagen, Thalassotherapie und Luxus-Spas mit transparentem Qualitäts-Index.",
+    },
+  },
+  "nautica-charter-calvia": {
+    categoryId: "nautica-charter",
+    zoneId: "calvia-andratx",
+    title: {
+      es: "Los Mejores Chárters Náuticos y Alquiler de Yates en Calvià & Andratx",
+      en: "Best Luxury Yacht Charters & Boat Rentals in Calvià & Andratx",
+      ca: "Els Millors Xàrters Nàutics i Lloguer de Iots a Calvià i Andratx",
+      de: "Die besten Yachtcharter & Bootsvermietungen in Calvià & Andratx",
+    },
+    desc: {
+      es: "Selección oficial de yates con patrón, catamaranes y excursiones privadas en Puerto Portals y Port Adriano.",
+      en: "Official selection of skippered yachts, luxury catamarans and private sea excursions in Puerto Portals & Port Adriano.",
+      ca: "Selecció oficial de iots amb patró, catamarans i excursions privades a Puerto Portals i Port Adriano.",
+      de: "Offizielle Auswahl an Yachten mit Skipper, Katamaranen und Privatausflügen in Puerto Portals und Port Adriano.",
+    },
+  },
+  "deporte-padel-mallorca": {
+    categoryId: "deportes-aire-libre",
+    title: {
+      es: "Los Mejores Clubs de Pádel, Tenis y Deporte en Mallorca",
+      en: "Best Padel & Tennis Clubs and Fitness Centers in Mallorca",
+      ca: "Els Millors Clubs de Pàdel, Tennis i Esport a Mallorca",
+      de: "Die besten Padel- & Tennis-Clubs und Sportzentren auf Mallorca",
+    },
+    desc: {
+      es: "Pistas panorámicas, academias oficiales, entrenadores personales y gimnasios de alto rendimiento.",
+      en: "Panoramic courts, official academies, personal training and high-performance sports facilities.",
+      ca: "Pistes panoràmiques, acadèmies oficials, entrenadors personals i gimnasos d'alt rendiment.",
+      de: "Panoramaplätze, offizielle Akademien, Personal Training und Spitzen-Fitnesszentren.",
+    },
+  },
+  "tatuajes-estudios-palma": {
+    categoryId: "arte-tatuajes",
+    zoneId: "palma",
+    title: {
+      es: "Los Mejores Estudios de Tatuajes y Piercing en Palma",
+      en: "Best Tattoo Studios & Piercing in Palma",
+      ca: "Els Millors Estudis de Tatuatges i Pírcing a Palma",
+      de: "Die besten Tattoo-Studios & Piercings in Palma",
+    },
+    desc: {
+      es: "Estudios higiénico-sanitarios oficiales con especialistas en realismo, fine line, traditional y piercing anatómico.",
+      en: "Certified hygienic tattoo studios specializing in realism, fine line, traditional styles and anatomic piercings.",
+      ca: "Estudis higiènico-sanitaris oficials amb especialistes en realisme, fine line i pírcing.",
+      de: "Zertifizierte Tattoo-Studios mit Experten für Realismus, Fine Line, Traditional und Piercings.",
+    },
+  },
+};
+
+const config = hubConfigs[slug || ""] || {
+  categoryId: "gastronomia-catering",
+  title: {
+    es: `Mejores Servicios en Mallorca: ${slug}`,
+    en: `Best Services in Mallorca: ${slug}`,
+    ca: `Millors Serveis a Mallorca: ${slug}`,
+    de: `Beste Dienstleister auf Mallorca: ${slug}`,
+  },
+  desc: {
+    es: "Guía y comparativa de negocios verificados con puntuación de calidad 20/30/30/20.",
+    en: "Verified business guide and comparison with transparent 20/30/30/20 quality rating.",
+    ca: "Guia i comparativa de negocis verificats a Mallorca.",
+    de: "Geprüfter Leitfaden und Vergleich von Dienstleistern auf Mallorca.",
+  },
+};
+
+const category = CATEGORIES.find((c) => c.id === config.categoryId);
+const categoryName = category?.name[locale] || config.categoryId;
+const zone = config.zoneId ? MALLORCA_ZONES.find((z) => z.id === config.zoneId) : undefined;
+const zoneName = zone?.name[locale] || "Mallorca";
+
+const rankedServices = getComparisonList({
+  category: config.categoryId,
+  zone: config.zoneId,
+  locale,
+  limit: 15,
+});
+
+const faqs = generateDynamicFaqs(categoryName, zoneName, rankedServices, locale);
+
+// Schema.org Structured Data
+const jsonLdItemList = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  itemListElement: rankedServices.map((item, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    name: item.service.name,
+    url: `https://serviciosmallorca.com${prefix}servicios/${item.service.slug}`,
+  })),
+};
+
+const jsonLdFaq = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.answer,
+    },
+  })),
+};
+---
+
+<BaseLayout title={`${config.title[locale]} | Servicios Mallorca`} lang={locale} description={config.desc[locale]}>
+  <Navbar currentLocale={locale} translations={translations} getLangPrefix={getLangPrefix} />
+
+  <!-- Structured Data for Search Engines & AI Bots -->
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLdItemList)} />
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLdFaq)} />
+
+  <main class="top-hub-page">
+    <div class="container section">
+      <!-- Breadcrumbs -->
+      <nav class="breadcrumbs-bar" aria-label="Breadcrumbs">
+        <a href={prefix}>🏠 {translations["nav.home"] || "Inicio"}</a>
+        <span>›</span>
+        <a href={`${prefix}servicios?category=${config.categoryId}`}>{categoryName}</a>
+        <span>›</span>
+        <span class="active-crumb">{config.title[locale]}</span>
+      </nav>
+
+      <!-- Header Hero -->
+      <header class="hub-hero">
+        <div class="hero-badge">
+          <span>🏆 {locale === "de" ? "Offizieller Qualitäts-Vergleich" : "Comparativa Oficial de Calidad"}</span>
+        </div>
+        <h1 class="hub-headline">{config.title[locale]}</h1>
+        <p class="hub-subtitle">{config.desc[locale]}</p>
+      </header>
+
+      <!-- Interactive Comparison Engine -->
+      <ComparisonMatrix
+        rankedServices={rankedServices}
+        currentLocale={locale}
+        getLangPrefix={getLangPrefix}
+        translations={translations}
+        categorySlug={config.categoryId}
+        categoryName={categoryName}
+      />
+
+      <!-- Long-Tail AI FAQ Section -->
+      <section class="faqs-section card">
+        <h2 class="faqs-title">
+          💡 {locale === "de" ? "Häufig gestellte Fragen (FAQs)" : "Preguntas Frecuentes & Consejos de Expertos"}
+        </h2>
+        <div class="faqs-list">
+          {
+            faqs.map((faq) => (
+              <details class="faq-item">
+                <summary class="faq-question">{faq.question}</summary>
+                <p class="faq-answer">{faq.answer}</p>
+              </details>
+            ))
+          }
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <Footer currentLocale={locale} translations={translations} getLangPrefix={getLangPrefix} />
+</BaseLayout>
+
+<style>
+  .top-hub-page {
+    padding-top: var(--space-4);
+    padding-bottom: var(--space-12);
+  }
+
+  .breadcrumbs-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-4);
+    flex-wrap: wrap;
+  }
+
+  .breadcrumbs-bar a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .breadcrumbs-bar a:hover {
+    color: var(--color-primary);
+  }
+
+  .active-crumb {
+    color: var(--color-text);
+    font-weight: 600;
+  }
+
+  .hub-hero {
+    margin-bottom: var(--space-6);
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    padding: 0.3rem 0.8rem;
+    border-radius: 9999px;
+    background: rgba(201, 147, 62, 0.1);
+    color: var(--color-primary);
+    border: 1px solid rgba(201, 147, 62, 0.25);
+    font-size: 0.78rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+  }
+
+  .hub-headline {
+    font-size: clamp(1.6rem, 4vw, 2.35rem);
+    font-weight: 900;
+    color: var(--color-text);
+    margin: 0 0 0.5rem 0;
+    line-height: 1.2;
+  }
+
+  .hub-subtitle {
+    font-size: 1.05rem;
+    color: var(--color-text-muted);
+    max-width: 800px;
+    line-height: 1.5;
+  }
+
+  .faqs-section {
+    margin-top: var(--space-10);
+    padding: var(--space-6);
+    border-radius: var(--border-radius-xl);
+    background: var(--color-surface);
+    border: 1px solid var(--color-surface-border);
+  }
+
+  .faqs-title {
+    font-size: 1.3rem;
+    font-weight: 800;
+    margin-bottom: var(--space-5);
+    color: var(--color-text);
+  }
+
+  .faqs-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .faq-item {
+    background: var(--color-bg);
+    border: 1px solid var(--color-surface-border);
+    border-radius: 12px;
+    padding: var(--space-4);
+    cursor: pointer;
+  }
+
+  .faq-question {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--color-text);
+  }
+
+  .faq-answer {
+    margin-top: var(--space-3);
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+  }
+</style>
