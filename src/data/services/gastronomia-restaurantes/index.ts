@@ -69,8 +69,14 @@ import { pastisseriaCanMolinasValldemossa } from "./pastisseria-can-molinas-vall
 import { terraePortDePollenca } from "./terrae-port-de-pollenca.ts";
 import { laudatSantanyi } from "./laudat-santanyi.ts";
 import { portPetitCalaDor } from "./port-petit-cala-dor.ts";
+import { feraPalma } from "./fera-palma.ts";
+import { miceliSelva } from "./miceli-selva.ts";
+import { bodegasMaciaBatle } from "./bodegas-macia-batle.ts";
 
 export {
+  feraPalma,
+  miceliSelva,
+  bodegasMaciaBatle,
   terraePortDePollenca,
   laudatSantanyi,
   portPetitCalaDor,
@@ -218,4 +224,7 @@ export const RESTAURANT_SERVICES: ServiceItem[] = [
   terraePortDePollenca,
   laudatSantanyi,
   portPetitCalaDor,
+  feraPalma,
+  miceliSelva,
+  bodegasMaciaBatle,
 ];

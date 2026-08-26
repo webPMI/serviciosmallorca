@@ -96,7 +96,7 @@ export const MALLORCA_ZONES: MallorcaZone[] = [
       ca: "Es Raiguer & Es Pla (Centre)",
       de: "Es Raiguer & Es Pla (Inselmitte)",
     },
-    popularAreas: ["Inca", "Binissalem", "Santa Maria del Camí", "Alaró", "Sineu"],
+    popularAreas: ["Inca", "Binissalem", "Santa Maria del Camí", "Alaró", "Sineu", "Selva"],
   },
 ];
 
