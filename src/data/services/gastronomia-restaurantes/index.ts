@@ -190,8 +190,14 @@ import { bodegasSonArtiguesPorreres } from "./bodegas-son-artigues-porreres.ts";
 import { restauranteEsCruceVilafranca } from "./restaurante-es-cruce-vilafranca.ts";
 import { barSHostalMontuiri } from "./bar-s-hostal-montuiri.ts";
 import { bodegasVinsToniGelabertManacor } from "./bodegas-vins-toni-gelabert-manacor.ts";
+import { restauranteCalDimoniAlgaida } from "./restaurante-cal-dimoni-algaida.ts";
+import { restauranteMiradorDeCabrera } from "./restaurante-mirador-de-cabrera.ts";
+import { bodegasCanXanetPollensa } from "./bodegas-can-xanet-pollensa.ts";
 
 export {
+  restauranteCalDimoniAlgaida,
+  restauranteMiradorDeCabrera,
+  bodegasCanXanetPollensa,
   restauranteEsCruceVilafranca,
   barSHostalMontuiri,
   bodegasVinsToniGelabertManacor,
@@ -581,4 +587,7 @@ export const RESTAURANT_SERVICES: ServiceItem[] = [
   restauranteEsCruceVilafranca,
   barSHostalMontuiri,
   bodegasVinsToniGelabertManacor,
+  restauranteCalDimoniAlgaida,
+  restauranteMiradorDeCabrera,
+  bodegasCanXanetPollensa,
 ];
