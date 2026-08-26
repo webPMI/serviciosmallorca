@@ -133,8 +133,14 @@ import { bodegasSonBordilsInca } from "./bodegas-son-bordils-inca.ts";
 import { restauranteCmSanAntonioCanPastilla } from "./restaurante-cm-san-antonio-can-pastilla.ts";
 import { cellerPagesPalma } from "./celler-pages-palma.ts";
 import { bodegasSonVivesBanyalbufar } from "./bodegas-son-vives-banyalbufar.ts";
+import { restauranteClubNauticPortoCristo } from "./restaurante-club-nautic-porto-cristo.ts";
+import { restauranteCaNOlesaPollenca } from "./restaurante-ca-n-olesa-pollenca.ts";
+import { bodegasCanFeliuPorreres } from "./bodegas-can-feliu-porreres.ts";
 
 export {
+  restauranteClubNauticPortoCristo,
+  restauranteCaNOlesaPollenca,
+  bodegasCanFeliuPorreres,
   restauranteCmSanAntonioCanPastilla,
   cellerPagesPalma,
   bodegasSonVivesBanyalbufar,
@@ -410,4 +416,7 @@ export const RESTAURANT_SERVICES: ServiceItem[] = [
   restauranteCmSanAntonioCanPastilla,
   cellerPagesPalma,
   bodegasSonVivesBanyalbufar,
+  restauranteClubNauticPortoCristo,
+  restauranteCaNOlesaPollenca,
+  bodegasCanFeliuPorreres,
 ];

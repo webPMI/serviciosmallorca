@@ -163,6 +163,7 @@ export const MALLORCA_ZONES: MallorcaZone[] = [
       "Algaida",
       "Llubí",
       "Sant Joan",
+      "Porreres",
     ],
   },
 ];
