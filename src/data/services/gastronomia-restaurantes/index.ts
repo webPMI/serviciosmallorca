@@ -74,8 +74,12 @@ import { miceliSelva } from "./miceli-selva.ts";
 import { bodegasMaciaBatle } from "./bodegas-macia-batle.ts";
 import { porxadaDeSaTorreCanyamel } from "./porxada-de-sa-torre-canyamel.ts";
 import { bodegasVinsMiquelGelabert } from "./bodegas-vins-miquel-gelabert.ts";
+import { caNantunaFornalutx } from "./ca-nantuna-fornalutx.ts";
+import { fetASollerFabricaGelats } from "./fet-a-soller-fabrica-gelats.ts";
 
 export {
+  caNantunaFornalutx,
+  fetASollerFabricaGelats,
   porxadaDeSaTorreCanyamel,
   bodegasVinsMiquelGelabert,
   feraPalma,
@@ -233,4 +237,6 @@ export const RESTAURANT_SERVICES: ServiceItem[] = [
   bodegasMaciaBatle,
   porxadaDeSaTorreCanyamel,
   bodegasVinsMiquelGelabert,
+  caNantunaFornalutx,
+  fetASollerFabricaGelats,
 ];
