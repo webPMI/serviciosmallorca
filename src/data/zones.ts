@@ -76,7 +76,7 @@ export const MALLORCA_ZONES: MallorcaZone[] = [
       ca: "Manacor & Llevant (Est)",
       de: "Manacor & Llevant (Osten)",
     },
-    popularAreas: ["Manacor", "Porto Cristo", "Cala Millor", "Cala Ratjada", "Artà"],
+    popularAreas: ["Manacor", "Porto Cristo", "Cala Millor", "Cala Ratjada", "Artà", "Capdepera", "Canyamel"],
   },
   {
     id: "santanyi-migjorn",

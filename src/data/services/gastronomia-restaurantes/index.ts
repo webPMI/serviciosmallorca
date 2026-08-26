@@ -72,8 +72,12 @@ import { portPetitCalaDor } from "./port-petit-cala-dor.ts";
 import { feraPalma } from "./fera-palma.ts";
 import { miceliSelva } from "./miceli-selva.ts";
 import { bodegasMaciaBatle } from "./bodegas-macia-batle.ts";
+import { porxadaDeSaTorreCanyamel } from "./porxada-de-sa-torre-canyamel.ts";
+import { bodegasVinsMiquelGelabert } from "./bodegas-vins-miquel-gelabert.ts";
 
 export {
+  porxadaDeSaTorreCanyamel,
+  bodegasVinsMiquelGelabert,
   feraPalma,
   miceliSelva,
   bodegasMaciaBatle,
@@ -227,4 +231,6 @@ export const RESTAURANT_SERVICES: ServiceItem[] = [
   feraPalma,
   miceliSelva,
   bodegasMaciaBatle,
+  porxadaDeSaTorreCanyamel,
+  bodegasVinsMiquelGelabert,
 ];
