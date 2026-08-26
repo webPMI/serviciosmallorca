@@ -12,8 +12,10 @@ import { portAdrianoBoatCharter } from "./port-adriano-boat-charter.ts";
 import { realClubNauticoPalma } from "./real-club-nautico-palma.ts";
 import { easyBoatsMallorca } from "./easy-boats-mallorca.ts";
 import { marinaPortDeMallorca } from "./marina-port-de-mallorca.ts";
+import { nautinortChartersPollensa } from "./nautinort-charters-pollensa.ts";
 
 export {
+  nautinortChartersPollensa,
   oasisCatamaran,
   mallorcaGlobalCharter,
   attractionCatamarans,
@@ -47,4 +49,5 @@ export const NAUTICA_SERVICES: ServiceItem[] = [
   realClubNauticoPalma,
   easyBoatsMallorca,
   marinaPortDeMallorca,
+  nautinortChartersPollensa,
 ];

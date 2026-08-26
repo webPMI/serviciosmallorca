@@ -61,8 +61,24 @@ import { stayPortDePollenca } from "./stay-port-de-pollenca.ts";
 import { canBoquetaSoller } from "./can-boqueta-soller.ts";
 import { trespaisPortAndratx } from "./trespais-port-andratx.ts";
 import { laTerrazaAlcanada } from "./la-terraza-alcanada.ts";
+import { vinoDelMarPortAdriano } from "./vino-del-mar-port-adriano.ts";
+import { lasOlasSantaPonsa } from "./las-olas-santa-ponsa.ts";
+import { casXorcSoller } from "./cas-xorc-soller.ts";
+import { namaDeia } from "./nama-deia.ts";
+import { pastisseriaCanMolinasValldemossa } from "./pastisseria-can-molinas-valldemossa.ts";
+import { terraePortDePollenca } from "./terrae-port-de-pollenca.ts";
+import { laudatSantanyi } from "./laudat-santanyi.ts";
+import { portPetitCalaDor } from "./port-petit-cala-dor.ts";
 
 export {
+  terraePortDePollenca,
+  laudatSantanyi,
+  portPetitCalaDor,
+  casXorcSoller,
+  namaDeia,
+  pastisseriaCanMolinasValldemossa,
+  vinoDelMarPortAdriano,
+  lasOlasSantaPonsa,
   trespaisPortAndratx,
   laTerrazaAlcanada,
   stayPortDePollenca,
@@ -194,4 +210,12 @@ export const RESTAURANT_SERVICES: ServiceItem[] = [
   canBoquetaSoller,
   trespaisPortAndratx,
   laTerrazaAlcanada,
+  vinoDelMarPortAdriano,
+  lasOlasSantaPonsa,
+  casXorcSoller,
+  namaDeia,
+  pastisseriaCanMolinasValldemossa,
+  terraePortDePollenca,
+  laudatSantanyi,
+  portPetitCalaDor,
 ];
