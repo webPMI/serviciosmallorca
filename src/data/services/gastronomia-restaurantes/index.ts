@@ -41,6 +41,9 @@ import { cellerEsCellerPetra } from "./celler-es-celler-petra.ts";
 import { fornCanPacoCampos } from "./forn-can-paco-campos.ts";
 import { restauranteCanPedro } from "./restaurante-can-pedro-genova.ts";
 import { fornNouMuro } from "./forn-nou-muro.ts";
+import { restauranteZaranda } from "./restaurante-zaranda.ts";
+import { restauranteMacaDeCastro } from "./restaurante-maca-de-castro.ts";
+import { restauranteAndreuGenestra } from "./restaurante-andreu-genestra.ts";
 import { restauranteToquePalma } from "./restaurante-toque-palma.ts";
 
 export {
@@ -87,6 +90,9 @@ export {
   fornCanPacoCampos,
   restauranteCanPedro,
   fornNouMuro,
+  restauranteZaranda,
+  restauranteMacaDeCastro,
+  restauranteAndreuGenestra,
 };
 
 /**
@@ -136,5 +142,8 @@ export const RESTAURANT_SERVICES: ServiceItem[] = [
   fornCanPacoCampos,
   restauranteCanPedro,
   fornNouMuro,
+  restauranteZaranda,
+  restauranteMacaDeCastro,
+  restauranteAndreuGenestra,
   restauranteToquePalma,
 ];

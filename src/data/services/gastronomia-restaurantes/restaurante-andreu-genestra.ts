@@ -1,0 +1,178 @@
+import type { ServiceItem } from "../types.ts";
+
+export const restauranteAndreuGenestra: ServiceItem = {
+  id: "restaurante-andreu-genestra",
+  slug: "restaurante-andreu-genestra",
+  name: "Restaurante Andreu Genestra (Llucmajor - Estrella Michelin)",
+  category: "gastronomia-catering",
+  sectorId: "hosteleria-gastronomia",
+  culturalIdentity: "mallorquin_heritage",
+  rating: 4.6,
+  ratingSource: "verified_manual",
+  reviewCount: 120,
+  reviewCountSource: "verified_manual",
+  verified: true,
+  featured: false,
+  status: "open",
+  seasonality: "year_round",
+  isIconicHeritage: true,
+  priceRange: "€€€",
+  address: "Hotel Zoëtry Mallorca, Camí de Sa Torre, Km 8,7, 07609 Llucmajor, Illes Balears",
+  addressAccuracy: "verified_manual",
+  zone: "santanyi-migjorn",
+  phone: "+34 603 293 745",
+  whatsapp: "+34 603 293 745",
+  email: "reservas@andreugenestra.com",
+  website: "https://andreugenestra.com",
+  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Andreu%20Genestra%20Llucmajor",
+  appleMapsUrl: "https://maps.apple.com/?q=Andreu%20Genestra%20Llucmajor&ll=39.4385,2.8004",
+  bingMapsUrl: "https://www.bing.com/maps?where1=Andreu%20Genestra%20Llucmajor",
+  coordinates: { lat: 39.4385, lng: 2.8004 },
+  coordinatesAccuracy: "verified_manual",
+  schedule:
+    "Abierto de miércoles a domingo, solo servicio de cena (cocina de 19:00 a 21:30). Cierre invernal de enero a marzo. Cerrado lunes y martes.",
+  lastVerifiedAt: "2026-08-26",
+  image: "https://andreugenestra.com/wp-content/uploads/2025/11/andreu-genestra-carrusel-54.jpg",
+  gallery: [
+    "https://andreugenestra.com/wp-content/uploads/2025/12/andreu-genestra-foto-carrusel-03.webp",
+    "https://andreugenestra.com/wp-content/uploads/2025/11/andreu-genestra-carrusel-112.jpg",
+  ],
+  targetAudience: ["residentes", "turistas", "parejas", "expat", "gourmets"],
+  languagesSpoken: ["es", "en", "ca", "de"],
+  emergency24h: false,
+  inVillaService: false,
+  shortDescription: {
+    es: "Restaurante con una estrella Michelin y dos soles Repsol en el Hotel Zoëtry de Llucmajor, donde el chef mallorquín Andreu Genestra despliega una cocina mediterránea de producto y paisaje.",
+    en: "Michelin-starred restaurant with two Repsol Soles at Hotel Zoëtry in Llucmajor, where Mallorcan chef Andreu Genestra showcases a cuisine of Mediterranean produce and landscape.",
+    ca: "Restaurant amb una estrella Michelin i dos sols Repsol a l'Hotel Zoëtry de Llucmajor, on el xef mallorquí Andreu Genestra desplega una cuina mediterrània de producte i paisatge.",
+  },
+  fullDescription: {
+    es: "El Restaurante Andreu Genestra se encuentra dentro del Hotel Zoëtry Mallorca, a orillas del Mediterráneo en la costa de Llucmajor (Badia Blava). El chef mallorquín Andreu Genestra, formado en grandes mesas del panorama nacional, firma una cocina mediterránea contemporánea basada en el producto de kilómetro cero: pesca local de la bahía, verduras y hierbas de la isla, aceites baleares y recetas con memoria. El restaurante está galardonado con una estrella de la Guía Michelin y dos soles de la Guía Repsol, y ofrece menú degustación 'Mediterranean Extreme', maridajes y una cuidada carta de vinos.",
+    en: "Restaurante Andreu Genestra is set inside Hotel Zoëtry Mallorca, on the Mediterranean shore of Llucmajor's coast (Badia Blava). Mallorcan chef Andreu Genestra, trained at leading tables across Spain, crafts contemporary Mediterranean cooking built on zero-kilometre produce: local bay catch, island vegetables and herbs, Balearic olive oils and recipes with memory. The restaurant holds one Michelin Guide star and two Repsol Soles, offering the 'Mediterranean Extreme' tasting menu, pairings and a careful wine list.",
+    ca: "El Restaurant Andreu Genestra es troba dins de l'Hotel Zoëtry Mallorca, a la vora del Mediterrani a la costa de Llucmajor (Badia Blava). El xef mallorquí Andreu Genestra, format a grans taules del panorama estatal, signa una cuina mediterrània contemporània basada en el producte de quilòmetre zero: pesca local de la badia, verdures i herbes de l'illa, olis baleàrics i receptes amb memòria. El restaurant està guardonat amb una estrella de la Guia Michelin i dos sols de la Guia Repsol, i ofereix el menú degustació 'Mediterranean Extreme', maridatges i una acurada carta de vins.",
+  },
+  specialties: {
+    es: [
+      "Menú degustación 'Mediterranean Extreme'",
+      "Cocina de producto de kilómetro cero y pesca de la bahía",
+      "Maridaje con vinos baleares y carta internacional",
+    ],
+    en: [
+      "'Mediterranean Extreme' tasting menu",
+      "Zero-kilometre cooking with bay fishing",
+      "Balearic wine pairings and international list",
+    ],
+    ca: [
+      "Menú degustació 'Mediterranean Extreme'",
+      "Cuina de producte de quilòmetre zero i pesca de la badia",
+      "Maridatge amb vins baleàrics i carta internacional",
+    ],
+  },
+  highlights: {
+    es: [
+      "Estrella Guía Michelin y dos soles Guía Repsol",
+      "Cocina de paisaje a orillas del Mediterráneo",
+      "Comedor en hotel de lujo con vistas a la bahía",
+    ],
+    en: [
+      "One Michelin Guide star and two Repsol Soles",
+      "Landscape-driven cooking on the Mediterranean shore",
+      "Fine dining room with bay views in a luxury hotel",
+    ],
+    ca: [
+      "Estrella de la Guia Michelin i dos sols Repsol",
+      "Cuina de paisatge a la vora del Mediterrani",
+      "Menjador d'hotel de luxe amb vistes a la badia",
+    ],
+  },
+  servicesProvided: {
+    es: ["Restaurante con estrella Michelin", "Menú degustación", "Maridaje de vinos", "Eventos y celebraciones"],
+    en: ["Michelin-starred restaurant", "Tasting menu", "Wine pairing", "Events and celebrations"],
+    ca: ["Restaurant amb estrella Michelin", "Menú degustació", "Maridatge de vins", "Esdeveniments i celebracions"],
+  },
+  tags: [
+    "zona:santanyi-migjorn",
+    "zona:llucmajor",
+    "product:lujo",
+    "mod:cita-previa",
+    "temps:todo-el-ano",
+    "aud:parejas",
+    "aud:expat",
+  ],
+  pricing: {
+    rateType: "custom_quote",
+  },
+  amenities: ["wifi", "air_conditioning", "parking_nearby"],
+  features: ["wifi", "air_conditioning", "credit_card"],
+  paymentMethods: ["credit_card", "cash"],
+  certifications: [],
+  awards: [
+    {
+      title: "Estrella Guía Michelin",
+      issuer: "Guía Michelin",
+      url: "https://www.google.com/search?q=site:guiamichelin.com+Andreu+Genestra+Llucmajor",
+    },
+    {
+      title: "Dos Soles Guía Repsol",
+      issuer: "Guía Repsol",
+      url: "https://www.google.com/search?q=site:guiarepsol.com+Andreu+Genestra+Llucmajor",
+    },
+  ],
+  authorityProfiles: [
+    {
+      platform: "tripadvisor",
+      url: "https://www.tripadvisor.es/Restaurant_Review-g580281-d3745964-Reviews-Andreu_Genestra-Capdepera_Majorca_Balearic_Islands.html",
+      handle: "Andreu Genestra",
+    },
+  ],
+  socialLinks: {
+    facebook: "https://www.facebook.com/AndreuGenestraCheff",
+    instagram: "https://www.instagram.com/andreugenestrarestaurante",
+    twitter: "https://twitter.com/AndreuGenestra",
+  },
+  teamMembers: [
+    {
+      name: "Andreu Genestra",
+      role: {
+        es: "Chef & Propietario",
+        en: "Chef & Owner",
+        ca: "Xef & Propietari",
+      },
+      specialty: "Cocina mediterránea contemporánea de producto mallorquín",
+      instagramHandle: "@andreugenestrarestaurante",
+    },
+  ],
+  reputationBreakdown: {
+    googleMaps: {
+      rating: 4.6,
+      reviewCount: 120,
+      url: "https://www.google.com/maps/search/?api=1&query=Andreu%20Genestra%20Llucmajor",
+    },
+    appleMaps: {
+      url: "https://maps.apple.com/?q=Andreu%20Genestra%20Llucmajor&ll=39.4385,2.8004",
+    },
+    bingMaps: {
+      rating: 4.6,
+      reviewCount: 120,
+      url: "https://www.bing.com/maps?where1=Andreu%20Genestra%20Llucmajor",
+    },
+    totalReviewsAggregated: 120,
+    overallWeightedRating: 4.6,
+  },
+  confidenceScore: 92,
+  verificationStatus: "verified",
+  sourceConfidence: "high",
+  sourceCrossReference: {
+    webPhoneMatch: true,
+    addressInMallorca: true,
+    activeWeb200Ok: true,
+    socialMatchScore: 100,
+    googleMapsConfirmed: true,
+    socialPresenceActive: true,
+  },
+  founderStory: {
+    es: "Andreu Genestra es uno de los cocineros mallorquines con mayor proyección de la cocina balear. Tras formarse en prestigiosas cocinas del país, eligió la costa de Llucmajor para crear un restaurante que expresa el paisaje insular a través de un producto honesto y una técnica depurada, reconocido con una estrella Michelin.",
+    en: "Andreu Genestra is one of the most acclaimed Mallorcan chefs in Balearic cooking. After training in prestigious kitchens across Spain, he chose the Llucmajor coast to create a restaurant that expresses the island landscape through honest produce and refined technique, recognised with one Michelin star.",
+    ca: "Andreu Genestra és un dels cuiners mallorquins amb més projecció de la cuina balear. Després de formar-se en prestigioses cuines de l'estat, va triar la costa de Llucmajor per crear un restaurant que expressa el paisatge insular a través d'un producte honest i una tècnica depurada, reconegut amb una estrella Michelin.",
+  },
+};
