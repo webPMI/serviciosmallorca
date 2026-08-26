@@ -36,6 +36,7 @@ export const MALLORCA_ZONES: MallorcaZone[] = [
       "Casco Antiguo",
       "Ciutat Jardí",
       "Platja de Palma",
+      "Cala Gamba",
     ],
   },
   {
@@ -54,6 +55,7 @@ export const MALLORCA_ZONES: MallorcaZone[] = [
       "Peguera",
       "Port d'Andratx",
       "Andratx",
+      "Es Capdellà",
     ],
   },
   {
