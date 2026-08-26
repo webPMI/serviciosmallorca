@@ -141,8 +141,11 @@ export const canBoquetaSoller: ServiceItem = {
     ca: "Després de formar-se amb grans xefs de la gastronomia estatal, Kiko Martorell va tornar al seu Sóller natal per retre homenatge als sabors de la seva terra. Ca'n Boqueta s'ha consolidat com un referent indiscutible on la calidesa del tracte i la creativitat als fogons fan que cada visitant se senti acollit.",
     de: "Nach Stationen bei renommierten spanischen Spitzenköchen kehrte Chef Kiko Martorell in seine Heimatstadt Sóller zurück. Seine Vision: die traditionsreiche Küche der Insel mit handwerklicher Perfektion und besten lokalen Produkten zeitgemäß zu interpretieren. Das Ca'n Boqueta gilt heute als kulinarische Oase, in der leidenschaftliche Kochkunst und herzliche Gastfreundschaft verschmelzen.",
   },
-  image: "/images/services/can-boqueta-soller.svg",
-  gallery: [],
+  image: "https://canboqueta.com/wp-content/uploads/2021/05/canboqueta-patio-soller.jpg",
+  gallery: [
+    "https://canboqueta.com/wp-content/uploads/2021/05/canboqueta-porcella-confitada.jpg",
+    "https://canboqueta.com/wp-content/uploads/2021/05/canboqueta-postre-naranja.jpg",
+  ],
   schedule: "Martes a Domingo: 13:00 - 16:30 | Jueves a Sábado también: 19:45 - 23:30 (Lunes cerrado)",
   confidenceScore: 98,
   verificationStatus: "verified",
