@@ -136,8 +136,14 @@ import { bodegasSonVivesBanyalbufar } from "./bodegas-son-vives-banyalbufar.ts";
 import { restauranteClubNauticPortoCristo } from "./restaurante-club-nautic-porto-cristo.ts";
 import { restauranteCaNOlesaPollenca } from "./restaurante-ca-n-olesa-pollenca.ts";
 import { bodegasCanFeliuPorreres } from "./bodegas-can-feliu-porreres.ts";
+import { restauranteCnColoniaSantPere } from "./restaurante-cn-colonia-sant-pere.ts";
+import { cellerSonToreoSineu } from "./celler-son-toreo-sineu.ts";
+import { bodegasSonPuigPuigpunyent } from "./bodegas-son-puig-puigpunyent.ts";
 
 export {
+  restauranteCnColoniaSantPere,
+  cellerSonToreoSineu,
+  bodegasSonPuigPuigpunyent,
   restauranteClubNauticPortoCristo,
   restauranteCaNOlesaPollenca,
   bodegasCanFeliuPorreres,
@@ -419,4 +425,7 @@ export const RESTAURANT_SERVICES: ServiceItem[] = [
   restauranteClubNauticPortoCristo,
   restauranteCaNOlesaPollenca,
   bodegasCanFeliuPorreres,
+  restauranteCnColoniaSantPere,
+  cellerSonToreoSineu,
+  bodegasSonPuigPuigpunyent,
 ];

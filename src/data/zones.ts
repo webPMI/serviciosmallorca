@@ -78,6 +78,7 @@ export const MALLORCA_ZONES: MallorcaZone[] = [
       "Escorca",
       "Banyalbufar",
       "Estellencs",
+      "Puigpunyent",
     ],
   },
   {
@@ -117,6 +118,7 @@ export const MALLORCA_ZONES: MallorcaZone[] = [
       "Canyamel",
       "Son Servera",
       "Cala Bona",
+      "Colònia de Sant Pere",
     ],
   },
   {
