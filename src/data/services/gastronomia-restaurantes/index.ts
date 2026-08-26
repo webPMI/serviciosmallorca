@@ -166,8 +166,14 @@ import { bodegasMesquidaMoraPorreres } from "./bodegas-mesquida-mora-porreres.ts
 import { restauranteAgapantoPortSoller } from "./restaurante-agapanto-port-soller.ts";
 import { cellerCanCarrossaLloseta } from "./celler-can-carrossa-lloseta.ts";
 import { bodegasAvaViSencelles } from "./bodegas-ava-vi-sencelles.ts";
+import { restauranteRocamarPortAndratx } from "./restaurante-rocamar-port-andratx.ts";
+import { restauranteLuna36Soller } from "./restaurante-luna-36-soller.ts";
+import { bodegasGalmesIRibotSantaMargalida } from "./bodegas-galmes-i-ribot-santa-margalida.ts";
 
 export {
+  restauranteRocamarPortAndratx,
+  restauranteLuna36Soller,
+  bodegasGalmesIRibotSantaMargalida,
   restauranteAgapantoPortSoller,
   cellerCanCarrossaLloseta,
   bodegasAvaViSencelles,
@@ -509,4 +515,7 @@ export const RESTAURANT_SERVICES: ServiceItem[] = [
   restauranteAgapantoPortSoller,
   cellerCanCarrossaLloseta,
   bodegasAvaViSencelles,
+  restauranteRocamarPortAndratx,
+  restauranteLuna36Soller,
+  bodegasGalmesIRibotSantaMargalida,
 ];

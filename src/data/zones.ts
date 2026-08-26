@@ -100,6 +100,7 @@ export const MALLORCA_ZONES: MallorcaZone[] = [
       "Can Picafort",
       "Pollença",
       "Muro",
+      "Santa Margalida",
     ],
   },
   {
@@ -170,6 +171,7 @@ export const MALLORCA_ZONES: MallorcaZone[] = [
       "Porreres",
       "Lloseta",
       "Costitx",
+      "Petra",
     ],
   },
 ];
