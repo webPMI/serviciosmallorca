@@ -118,8 +118,14 @@ import { bodegasSebastiaPastorSantaMaria } from "./bodegas-sebastia-pastor-santa
 import { restauranteClubNauticCalaGamba } from "./restaurante-club-nautic-cala-gamba.ts";
 import { restauranteSaVinyaEsCapdella } from "./restaurante-sa-vinya-es-capdella.ts";
 import { bodegasViReiLlucmajor } from "./bodegas-vi-rei-llucmajor.ts";
+import { restauranteRcnPortPollenca } from "./restaurante-rcn-port-pollenca.ts";
+import { cellerSaVinyaBinissalem } from "./celler-sa-vinya-binissalem.ts";
+import { bodegasRamanyaSantaMaria } from "./bodegas-ramanya-santa-maria.ts";
 
 export {
+  restauranteRcnPortPollenca,
+  cellerSaVinyaBinissalem,
+  bodegasRamanyaSantaMaria,
   restauranteClubNauticCalaGamba,
   restauranteSaVinyaEsCapdella,
   bodegasViReiLlucmajor,
@@ -365,4 +371,7 @@ export const RESTAURANT_SERVICES: ServiceItem[] = [
   restauranteClubNauticCalaGamba,
   restauranteSaVinyaEsCapdella,
   bodegasViReiLlucmajor,
+  restauranteRcnPortPollenca,
+  cellerSaVinyaBinissalem,
+  bodegasRamanyaSantaMaria,
 ];
