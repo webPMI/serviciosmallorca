@@ -142,8 +142,14 @@ import { bodegasSonPuigPuigpunyent } from "./bodegas-son-puig-puigpunyent.ts";
 import { restauranteClubNauticPortitxol } from "./restaurante-club-nautic-portitxol.ts";
 import { cellerSaSiniSantaMaria } from "./celler-sa-sini-santa-maria.ts";
 import { bodegasOliverMoraguesAlgaida } from "./bodegas-oliver-moragues-algaida.ts";
+import { restauranteClubDeVelaPortAndratx } from "./restaurante-club-de-vela-port-andratx.ts";
+import { restauranteMiramarPortAlcudia } from "./restaurante-miramar-port-alcudia.ts";
+import { bodegasVinsNadalBinissalem } from "./bodegas-vins-nadal-binissalem.ts";
 
 export {
+  restauranteClubDeVelaPortAndratx,
+  restauranteMiramarPortAlcudia,
+  bodegasVinsNadalBinissalem,
   restauranteClubNauticPortitxol,
   cellerSaSiniSantaMaria,
   bodegasOliverMoraguesAlgaida,
@@ -437,4 +443,7 @@ export const RESTAURANT_SERVICES: ServiceItem[] = [
   restauranteClubNauticPortitxol,
   cellerSaSiniSantaMaria,
   bodegasOliverMoraguesAlgaida,
+  restauranteClubDeVelaPortAndratx,
+  restauranteMiramarPortAlcudia,
+  bodegasVinsNadalBinissalem,
 ];
