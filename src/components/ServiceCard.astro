@@ -104,6 +104,45 @@ const smartCta = getSmartActionCta(
 
     <p class="service-desc">{shortDesc}</p>
 
+    {
+      (service.capabilities?.petFriendly ||
+        service.capabilities?.wheelchairAccessible ||
+        service.capabilities?.kidsArea ||
+        service.capabilities?.terrace ||
+        service.capabilities?.seaViews ||
+        service.amenities?.includes("pet_friendly") ||
+        service.amenities?.includes("wheelchair_accessible") ||
+        service.amenities?.includes("terrace")) && (
+        <div class="service-capabilities-row">
+          {(service.capabilities?.petFriendly || service.amenities?.includes("pet_friendly")) && (
+            <span class="cap-pill" title="Admite mascotas">
+              🐾 Pet Friendly
+            </span>
+          )}
+          {(service.capabilities?.wheelchairAccessible || service.amenities?.includes("wheelchair_accessible")) && (
+            <span class="cap-pill" title="Accesible PMR">
+              ♿ Accesible
+            </span>
+          )}
+          {(service.capabilities?.terrace || service.amenities?.includes("terrace")) && (
+            <span class="cap-pill" title="Terraza exterior">
+              ☀️ Terraza
+            </span>
+          )}
+          {(service.capabilities?.seaViews || service.amenities?.includes("sea_views")) && (
+            <span class="cap-pill" title="Vistas al mar">
+              🌊 Vistas Mar
+            </span>
+          )}
+          {(service.capabilities?.kidsArea || service.amenities?.includes("kids_area")) && (
+            <span class="cap-pill" title="Zona infantil">
+              👶 Familiar
+            </span>
+          )}
+        </div>
+      )
+    }
+
     <div class="service-footer">
       <div class="service-rating">
         <span class="star">★</span>
@@ -292,6 +331,25 @@ const smartCta = getSmartActionCta(
 
   .rating-num {
     color: var(--color-text);
+  }
+
+  .service-capabilities-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin: 0.35rem 0 0.5rem 0;
+  }
+
+  .cap-pill {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.68rem;
+    font-weight: 500;
+    padding: 0.15rem 0.45rem;
+    border-radius: var(--border-radius-full, 9999px);
+    background: var(--color-surface, #f8fafc);
+    border: 1px solid var(--color-surface-border, #e2e8f0);
+    color: var(--color-text, #334155);
   }
 
   .rating-count {

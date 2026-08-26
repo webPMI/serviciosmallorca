@@ -1,4 +1,4 @@
-import type { ServiceItem } from "../../data/services/types.ts";
+import type { ServiceItem, BusinessCapabilities } from "../../data/services/types.ts";
 
 export interface GeoQueryParams {
   lat: number;
@@ -9,6 +9,9 @@ export interface GeoQueryParams {
 export interface ServiceQueryParams {
   category?: string;
   sectorId?: string;
+  sectors?: string[];
+  specialties?: string[];
+  capabilities?: Partial<BusinessCapabilities>;
   zone?: string;
   tags?: string[];
   minRating?: number;

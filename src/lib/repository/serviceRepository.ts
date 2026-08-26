@@ -27,7 +27,8 @@ export class ServiceRepository {
   }
 
   /**
-   * Consulta dinámica con soporte para filtros de texto, categoría, zona, rating y geolocalización
+   * Consulta dinámica con soporte para grafos de relación, sectores múltiples,
+   * matriz de capacidades e intención de usuario, y geolocalización Haversine.
    */
   public async query(params: ServiceQueryParams = {}): Promise<PaginatedResult<ServiceWithDistance>> {
     let result: ServiceWithDistance[] = [...this.data];
@@ -47,27 +48,121 @@ export class ServiceRepository {
       result = result.filter((s) => s.featured);
     }
 
-    // 4. Filtro por Categoría
+    // 4. Filtro por Categoría / Sectores Múltiples (Grafo de relaciones)
     if (params.category) {
-      result = result.filter((s) => s.category === params.category);
+      result = result.filter((s) => {
+        return (
+          s.category === params.category ||
+          s.secondaryCategories?.includes(params.category!) ||
+          s.sectors?.includes(params.category!)
+        );
+      });
     }
 
-    // 5. Filtro por Sector Macro
+    if (params.sectors && params.sectors.length > 0) {
+      result = result.filter((s) => {
+        return params.sectors!.some(
+          (sec) =>
+            s.sectorId === sec ||
+            s.category === sec ||
+            s.sectors?.includes(sec) ||
+            s.secondaryCategories?.includes(sec),
+        );
+      });
+    }
+
+    // 5. Filtro por Especialidades
+    if (params.specialties && params.specialties.length > 0) {
+      result = result.filter((s) => {
+        return params.specialties!.some((spec) => {
+          if (s.tags?.includes(spec) || s.tags?.includes(`product:${spec}`) || s.features?.includes(spec)) {
+            return true;
+          }
+          if (!s.specialties) return false;
+          if (Array.isArray(s.specialties)) {
+            return s.specialties.includes(spec);
+          }
+          return Boolean(
+            s.specialties.es?.includes(spec) ||
+            s.specialties.en?.includes(spec) ||
+            s.specialties.ca?.includes(spec) ||
+            s.specialties.de?.includes(spec),
+          );
+        });
+      });
+    }
+
+    // 6. Filtro por Matriz de Capacidades (Intención de Usuario)
+    if (params.capabilities) {
+      const caps = params.capabilities;
+      result = result.filter((s) => {
+        // Pet friendly
+        if (caps.petFriendly) {
+          const isPet =
+            s.capabilities?.petFriendly ||
+            s.amenities?.includes("pet_friendly") ||
+            s.features?.includes("pet_friendly");
+          if (!isPet) return false;
+        }
+        // Wheelchair / Accesibilidad PMR
+        if (caps.wheelchairAccessible) {
+          const isPmr =
+            s.capabilities?.wheelchairAccessible ||
+            s.amenities?.includes("wheelchair_accessible") ||
+            s.features?.includes("accessible");
+          if (!isPmr) return false;
+        }
+        // Kids Area
+        if (caps.kidsArea) {
+          const isKids =
+            s.capabilities?.kidsArea || s.targetAudience?.includes("familias") || s.amenities?.includes("kids_area");
+          if (!isKids) return false;
+        }
+        // Urgencias 24h
+        if (caps.emergency24h) {
+          if (!s.emergency24h && !s.capabilities?.emergency24h) return false;
+        }
+        // Servicio en Villa / Domicilio
+        if (caps.inVillaService) {
+          if (!s.inVillaService && !s.capabilities?.inVillaService) return false;
+        }
+        // Terraza
+        if (caps.terrace) {
+          const hasTerrace =
+            s.capabilities?.terrace || s.amenities?.includes("terrace") || s.features?.includes("terrace");
+          if (!hasTerrace) return false;
+        }
+        // Vistas al Mar
+        if (caps.seaViews) {
+          const hasSea =
+            s.capabilities?.seaViews || s.amenities?.includes("sea_views") || s.features?.includes("sea_views");
+          if (!hasSea) return false;
+        }
+        // Reserva Online
+        if (caps.onlineBooking) {
+          const hasBooking = s.capabilities?.onlineBooking || (s.website && s.website.startsWith("http"));
+          if (!hasBooking) return false;
+        }
+        return true;
+      });
+    }
+
+    // 7. Filtro por Sector Macro
     if (params.sectorId) {
-      result = result.filter((s) => s.sectorId === params.sectorId);
+      result = result.filter((s) => s.sectorId === params.sectorId || s.sectors?.includes(params.sectorId!));
     }
 
-    // 6. Filtro por Zona Geográfica
+    // 8. Filtro por Zona Geográfica
     if (params.zone) {
       result = result.filter((s) => s.zone === params.zone);
     }
 
-    // 7. Filtro por Puntuación Mínima
+    // 9. Filtro por Puntuación Mínima
     if (params.minRating !== undefined) {
       result = result.filter((s) => (s.rating || 0) >= (params.minRating ?? 0));
     }
 
-    // 8. Filtro por Etiquetas (Tags)
+    // 10. Filtro por Etiquetas (Tags)
     if (params.tags && params.tags.length > 0) {
       result = result.filter((s) => {
         if (!s.tags || s.tags.length === 0) return false;
@@ -75,7 +170,7 @@ export class ServiceRepository {
       });
     }
 
-    // 9. Filtro por Texto Libre (Búsqueda inteligente)
+    // 11. Filtro por Texto Libre (Búsqueda inteligente)
     if (params.query && params.query.trim().length > 0) {
       const q = params.query.toLowerCase().trim();
       result = result.filter((s) => {
@@ -87,11 +182,24 @@ export class ServiceRepository {
           s.shortDescription.ca?.toLowerCase().includes(q);
         const matchAddress = s.address.toLowerCase().includes(q);
         const matchTags = s.tags?.some((t) => t.toLowerCase().includes(q)) ?? false;
-        return matchName || matchDesc || matchAddress || matchTags;
+        let matchSpecs = false;
+        if (s.specialties) {
+          if (Array.isArray(s.specialties)) {
+            matchSpecs = s.specialties.some((sp) => sp.toLowerCase().includes(q));
+          } else {
+            matchSpecs = Boolean(
+              s.specialties.es?.some((sp) => sp.toLowerCase().includes(q)) ||
+              s.specialties.en?.some((sp) => sp.toLowerCase().includes(q)) ||
+              s.specialties.ca?.some((sp) => sp.toLowerCase().includes(q)) ||
+              s.specialties.de?.some((sp) => sp.toLowerCase().includes(q)),
+            );
+          }
+        }
+        return matchName || matchDesc || matchAddress || matchTags || matchSpecs;
       });
     }
 
-    // 10. Filtro Geo-espacial (Radio en Km usando Haversine)
+    // 12. Filtro Geo-espacial (Radio en Km usando Haversine)
     if (params.geo) {
       const { lat, lng, radiusKm } = params.geo;
       result = result
@@ -106,7 +214,7 @@ export class ServiceRepository {
         .filter((s) => s.distanceKm !== undefined && s.distanceKm <= radiusKm);
     }
 
-    // 11. Ordenación
+    // 13. Ordenación
     const sortBy = params.sortBy || (params.geo ? "distance" : "rating");
     const sortOrder = params.sortOrder || (sortBy === "distance" ? "asc" : "desc");
 
@@ -124,7 +232,7 @@ export class ServiceRepository {
       return sortOrder === "desc" ? -comparison : comparison;
     });
 
-    // 12. Paginación
+    // 14. Paginación
     const page = Math.max(1, params.page || 1);
     const pageSize = Math.max(1, Math.min(100, params.pageSize || 20));
     const total = result.length;

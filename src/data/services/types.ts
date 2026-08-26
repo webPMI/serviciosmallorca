@@ -144,12 +144,29 @@ export interface AuditLogEntry {
   details?: string;
 }
 
+export interface BusinessCapabilities {
+  petFriendly?: boolean; // Admite mascotas
+  wheelchairAccessible?: boolean; // Apto para personas con movilidad reducida (PMR)
+  kidsArea?: boolean; // Zona infantil o de juegos
+  terrace?: boolean; // Terraza al aire libre
+  seaViews?: boolean; // Vistas al mar
+  parkingAvailable?: boolean; // Aparcamiento propio o cercano
+  onlineBooking?: boolean; // Reserva directa online
+  inVillaService?: boolean; // Servicio a domicilio / en villa
+  emergency24h?: boolean; // Servicio de urgencia 24 horas
+  wifi?: boolean; // Conexión WiFi
+  takeaway?: boolean; // Servicio para llevar / delivery
+  privateRooms?: boolean; // Salas privadas o eventos
+}
+
 export interface ServiceItem {
   id: string;
   slug: string;
   name: string;
   category: string;
   sectorId?: string;
+  sectors?: string[]; // Array de sectores macroeconómicos vinculados
+  capabilities?: BusinessCapabilities; // Matriz de capacidades e intención de usuario
   secondaryCategories?: string[];
   zone: string;
   address: string;
