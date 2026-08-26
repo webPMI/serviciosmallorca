@@ -4,6 +4,8 @@ import { sonBrullSpa } from "./son-brull-spa.ts";
 import { bodynaSpaMaricel } from "./bodyna-spa-maricel.ts";
 import { hammamPalmaSpa } from "./hammam-palma-spa.ts";
 import { belmondLaResidenciaSpa } from "./belmond-la-residencia-spa.ts";
+import { taliseSpaJumeirah } from "./talise-spa-jumeirah.ts";
+import { capRocatSpa } from "./cap-rocat-spa.ts";
 import { rafaNadalSportsCentre } from "./rafa-nadal-sports-centre.ts";
 import { clinicaJuanedaPalma } from "./clinica-juaneda-palma.ts";
 import { laBarberiaDeLaLonja } from "./la-barberia-de-la-lonja.ts";
@@ -29,7 +31,10 @@ export {
   arabellaSpa,
   sonBrullSpa,
   bodynaSpaMaricel,
+  hammamPalmaSpa,
   belmondLaResidenciaSpa,
+  taliseSpaJumeirah,
+  capRocatSpa,
   rafaNadalSportsCentre,
   clinicaJuanedaPalma,
   laBarberiaDeLaLonja,
@@ -62,6 +67,8 @@ export const SPAS_SERVICES: ServiceItem[] = [
   bodynaSpaMaricel,
   hammamPalmaSpa,
   belmondLaResidenciaSpa,
+  taliseSpaJumeirah,
+  capRocatSpa,
   rafaNadalSportsCentre,
   clinicaJuanedaPalma,
   laBarberiaDeLaLonja,
