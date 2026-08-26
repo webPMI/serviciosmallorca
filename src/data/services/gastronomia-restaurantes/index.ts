@@ -106,8 +106,14 @@ import { saTorreSantaEugenia } from "./sa-torre-santa-eugenia.ts";
 import { quinceCantinaPortoCristo } from "./quince-cantina-porto-cristo.ts";
 import { bodegasButxetMuro } from "./bodegas-butxet-muro.ts";
 import { bodegasCanMajoralAlgaida } from "./bodegas-can-majoral-algaida.ts";
+import { barEspanyaPalma } from "./bar-espanya-palma.ts";
+import { bodegasCanColetoPetra } from "./bodegas-can-coleto-petra.ts";
+import { restauranteClubNauticSaRapita } from "./restaurante-club-nautic-sa-rapita.ts";
 
 export {
+  barEspanyaPalma,
+  bodegasCanColetoPetra,
+  restauranteClubNauticSaRapita,
   quinceCantinaPortoCristo,
   bodegasButxetMuro,
   bodegasCanMajoralAlgaida,
@@ -329,4 +335,7 @@ export const RESTAURANT_SERVICES: ServiceItem[] = [
   quinceCantinaPortoCristo,
   bodegasButxetMuro,
   bodegasCanMajoralAlgaida,
+  barEspanyaPalma,
+  bodegasCanColetoPetra,
+  restauranteClubNauticSaRapita,
 ];
