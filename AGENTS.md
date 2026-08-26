@@ -21,7 +21,7 @@ Toda la documentación del proyecto está en `docs/`. Antes de trabajar en cualq
 - [I18N.md](docs/I18N.md) — 🌍 Internacionalización (4 idiomas)
 - [AUTH.md](docs/AUTH.md) — 🔐 Firebase Auth, roles, AuthStore
 - [DEVTOOLS.md](docs/DEVTOOLS.md) — 🛠️ Logger, Floating Button, DevTools Panel
-- [AGENT_CURATION_SOP.md](docs/AGENT_CURATION_SOP.md) — 🤖 Protocolo SOP para Agentes: Registro y Curación de Negocios
+- [AGENT_CURATION_SOP.md](docs/AGENT_CURATION_SOP.md) — 🤖 SOP v2.0 para Agentes: Analista de Inteligencia de Negocios, 4 fases, 5 Pilares, Checklist de salida
 - [BUSINESS_DISCOVERY_SOP.md](docs/BUSINESS_DISCOVERY_SOP.md) — 🔎 Checklist Maestro: descubrimiento, minería y ranking por categoría/puntaje/alfabético (`npm run discover`, `npm run discover:mine`)
 - [SPORTS_FITNESS_SECTION.md](docs/SPORTS_FITNESS_SECTION.md) — 🏋️ Vertical deportiva: gimnasios, centros deportivos y espacios públicos (taxonomía, SEO, plan de activación)
 - [email-templates.md](docs/email-templates.md) — 📧 Plantillas de correo Firebase

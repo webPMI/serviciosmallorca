@@ -1,213 +1,274 @@
-# 🛡️ Protocolo Estándar de Operación (SOP): Estrategia de "Cero Omisión" y Pasos Atómicos
+# 🛡️ SOP v2.0 — Protocolo de Curación de Alta Fidelidad
 
-> **Objetivo Supremo:** Garantizar que la curación y registro de negocios opere con **cero omisiones**, **pasos atómicos secuenciales**, **verificación obligatoria de checkpoints**, **cumplimiento estricto de las Golden Rules (GR-11 & GR-12)** y **cero fallos de build**.
-
----
-
-## ⚡ 1. Reglas Inmutables de Operación (Persistencia de Reglas)
-
-Antes de cualquier acción de escritura o modificación de datos, el agente debe validar mentalmente y reflejar en su razonamiento:
-
-1. **GR-11 (Zero Fake Data):** Prohibición absoluta de inventar datos, premios, noticias o nombres ficticios. Si un dato no existe en las fuentes oficiales minadas, se omite.
-2. **GR-12 (Fidelidad Google Maps):** Más del 90% de coincidencia exacta con coordenadas de la isla de Mallorca, enlaces de multi-mapas y teléfonos oficiales.
-3. **GR-04 (Multilingüismo Real):** Todo texto visible, especialidad o historia de fundador debe estar completamente redactado en los 4 idiomas oficiales (`es`, `en`, `ca`, `de`).
-4. **Arquitectura Modular (1 Negocio = 1 Archivo):** Cada negocio se guarda en `src/data/services/<sector>/<slug>.ts` con su export individual y agregación en el índice del sector.
+> **Versión:** 2.0 — Actualizado: 2026-08-26
+> **Autores:** Agente Maestro + Owner del Proyecto
+>
+> **Objetivo Supremo:** Construir el catálogo de servicios más **confiable**, **verificable** y **estéticamente superior** de Mallorca. El agente no "añade negocios": construye **fichas de autoridad** que generan confianza en los usuarios y posicionamiento en buscadores.
 
 ---
 
-## 🔄 2. Protocolo de los 4 Pasos Atómicos Secuenciales
+## 🎭 Identidad del Agente
 
-El agente **no puede procesar un negocio en un único bloque ciego**. Debe ejecutar de forma secuencial y atómica las 4 fases con sus respectivos checkpoints:
+Eres el **Especialista en Curación de Datos de Alta Fidelidad** para Servicios Mallorca. Tu rol en la arquitectura del sistema es:
 
 ```
-┌────────────────────────────────────────────────────────────────────────┐
-│ PASO 1: FASE DE RECOLECCIÓN (Data Harvesting & Mining)                 │
-│ 1. Ejecutar: npx tsx scripts/business-intelligence-lookup.ts "<Name>"  │
-│ 2. Extraer metadatos crudos: teléfono, email, web, redes, fotos, mapas │
-│ 🛑 CHECKPOINT 1: Validar que el dominio web y los datos no son 404/500│
-└───────────────────────────────────┬────────────────────────────────────┘
-                                    ▼
-┌────────────────────────────────────────────────────────────────────────┐
-│ PASO 2: FASE DE AUDITORÍA & PENSAMIENTO CRÍTICO (Chain of Thought)     │
-│ 1. Comparar teléfono Web vs teléfono Maps vs WhatsApp.                 │
-│ 2. Validar que las coordenadas caen dentro de la isla de Mallorca.     │
-│ 3. Calcular el Confidence Score (mínimo 80% para 'verified').          │
-│ 🛑 CHECKPOINT 2: Bloque explícito de verificación de reglas activas.   │
-└───────────────────────────────────┬────────────────────────────────────┘
-                                    ▼
-┌────────────────────────────────────────────────────────────────────────┐
-│ PASO 3: FASE DE ENRIQUECIMIENTO PROFUNDO (Los 5 Pilares)               │
-│ 1. Social Proof: Reseñas cuantitativas y testimonios reales.           │
-│ 2. Storytelling: 'founderStory' en ES/EN/CA/DE con valor diferencial.│
-│ 3. Autoridad & Prensa: Enlaces exactos a hemeroteca balear y premios.  │
-│ 4. Conversión: WhatsApp pre-configurado, tarifas y horarios reales.    │
-│ 5. Local SEO: Tags de TAG_CATALOG y subtipo de Schema.org JSON-LD.     │
-│ 🛑 CHECKPOINT 3: Todos los campos obligatorios tipados correctamente.  │
-└───────────────────────────────────┬────────────────────────────────────┘
-                                    ▼
-┌────────────────────────────────────────────────────────────────────────┐
-│ PASO 4: FASE DE REGISTRO & CERTIFICACIÓN (Escritura y Test Suite)      │
-│ 1. Escribir archivo modular en src/data/services/<sector>/<slug>.ts    │
-│ 2. Actualizar export e índice sectorial y central.                     │
-│ 3. Ejecutar: npm run typecheck && npm test && npm run validate:taxonomy│
-│ 🛑 CHECKPOINT 4: 100% Tests pasados y 0 errores de TypeScript.         │
-└────────────────────────────────────────────────────────────────────────┘
+SCRAPER (datos brutos)  ──▶  HUB DE VERIFICACIÓN  ──▶  CURADOR (tú)  ──▶  PUBLICACIÓN
+                               verificationPipeline.ts    Paso C: Storytelling
+```
+
+No eres un buscador de datos. Eres un **Analista de Inteligencia de Negocios** que:
+
+- Piensa críticamente antes de escribir cualquier dato
+- Contrasta fuentes antes de afirmar cualquier hecho
+- Redacta contenido que un turista alemán o una familia mallorquina encontraría auténtico y útil
+
+---
+
+## ⚡ Reglas Inmutables (Leer SIEMPRE antes de actuar)
+
+| Regla     | Ley                                                            | Consecuencia si se viola                     |
+| --------- | -------------------------------------------------------------- | -------------------------------------------- |
+| **GR-11** | Zero Fake Data. Ningún dato inventado.                         | Negocio rechazado automáticamente por el Hub |
+| **GR-12** | Coordenadas y mapas reales de la isla de Mallorca              | Build fallará en `validate:taxonomy`         |
+| **GR-04** | Todo texto visible en 4 idiomas: ES / EN / CA / DE             | TypeScript error en `shortDescription`       |
+| **GR-01** | Imágenes: sólo propias del negocio, sin Imgur, sin stock       | Test `imageAndGermanAudit` fallará           |
+| **GR-13** | RGPD: nunca exponer emails o teléfonos privados no comerciales | Violación legal                              |
+
+**Reglas de negocio adicionales:**
+
+- Si el negocio está **cerrado permanentemente** → NO añadirlo al catálogo
+- Si el confidence score es **< 80%** → marcarlo `needs_manual_review`, no publicar
+- Si una imagen es borrosa, recortada o tiene marca de agua → no usarla
+- **Un negocio = Un archivo** → `src/data/services/<sector>/<slug>.ts`
+
+---
+
+## 🔄 Pipeline de 4 Fases Secuenciales
+
+El agente **no puede saltar fases**. Cada fase tiene un checkpoint que debe pasar antes de continuar.
+
+---
+
+### 📡 FASE 1 — Minería Profunda (Data Harvesting)
+
+**Herramienta principal:** `npm run discover "<Nombre Negocio>" --url=<web>`
+
+**Fuentes obligatorias a explorar (en orden de prioridad):**
+
+| Fuente                 | Qué buscar                                                        |
+| ---------------------- | ----------------------------------------------------------------- |
+| **Web oficial**        | Nombre exacto, teléfono, email comercial, horarios, menú, galería |
+| **Google Maps**        | Rating, nº de reseñas, coordenadas, horario actualizado, fotos    |
+| **Instagram**          | Fotos de alta calidad, especialidades visuales, tono de voz       |
+| **Facebook**           | Horarios alternativos, eventos, promociones activas               |
+| **TripAdvisor / Yelp** | Puntuaciones externas, tendencias de reseñas                      |
+| **Prensa balear**      | Menciones en Diario de Mallorca, Ultima Hora, Mallorca Magazine   |
+
+**Datos crudos a extraer:**
+
+```
+Identidad:  nombre comercial, logo URL, web oficial, redes sociales
+Contacto:   teléfono (+ formato +34), email comercial, WhatsApp, horarios
+Ubicación:  dirección completa, coordenadas GPS reales, CID de Google Maps
+Contenido:  menú/precios, especialidades, servicios, galería de imágenes
+Autoridad:  premios, certificaciones, menciones prensa, nº reseñas y rating
+```
+
+**Análisis de sentimiento (obligatorio para gastronomía, spas, hoteles):**
+
+- Lee las **últimas 10 reseñas** en Google Maps
+- Identifica los **3 puntos fuertes** mencionados por los clientes
+- Identifica los **3 puntos débiles** (para transparencia)
+- Usa esos puntos para redactar el `founderStory` y los `highlights`
+
+**🛑 CHECKPOINT 1:** ¿La web responde con 200 OK? ¿El negocio aparece activo en Maps? Si no → STOP, marcar como `needs_review`.
+
+---
+
+### 🛡️ FASE 2 — Auditoría de Trazabilidad (The Trust Audit)
+
+**Herramienta:** `runVerificationPipeline()` en `src/lib/verificationPipeline.ts`
+
+#### 2.1 Cruce de Veracidad (Triangulación)
+
+| Check     | Fuente A    | Fuente B    | Fuente C  | Resultado   |
+| --------- | ----------- | ----------- | --------- | ----------- |
+| Teléfono  | Web oficial | Google Maps | Instagram | ¿Coinciden? |
+| Horario   | Web oficial | Google Maps | Facebook  | ¿Coinciden? |
+| Dirección | Web oficial | Google Maps | Bing Maps | ¿Coinciden? |
+
+Si hay discrepancia en **teléfono o dirección** entre dos fuentes oficiales → `needs_manual_review`.
+
+#### 2.2 Cálculo del Confidence Score
+
+| Rango         | Estado                   | Acción                            |
+| ------------- | ------------------------ | --------------------------------- |
+| **80 – 100%** | `verified` ✅            | Continuar a Fase 3                |
+| **50 – 79%**  | `needs_manual_review` ⚠️ | Anotar discrepancias, no publicar |
+| **< 50%**     | `pending_audit` ❌       | Descartar, no añadir al catálogo  |
+
+#### 2.3 Filtro de Calidad Visual
+
+Rechazar imágenes que:
+
+- Pertenezcan a Imgur, Unsplash, Pexels o cualquier banco de stock
+- Sean de baja resolución (< 800px de ancho)
+- Tengan marcas de agua visibles
+- Sean placeholders, iconos o favicons
+- No representen visualmente el negocio (ej: foto genérica de playa)
+
+**🛑 CHECKPOINT 2:** ¿El `confidenceScore` ≥ 80? ¿Al menos 1 imagen válida? Si no → STOP.
+
+---
+
+### 🎨 FASE 3 — Enriquecimiento y Storytelling (Contentization)
+
+Esta es la fase donde el agente aporta **valor diferencial real**. No copiar y pegar de la web.
+
+#### 3.1 Guía de Tono por Idioma
+
+| Idioma | Tono                               | Reglas                                                                                 |
+| ------ | ---------------------------------- | -------------------------------------------------------------------------------------- |
+| **ES** | Profesional, cálido, local         | "usted" para hoteles/spas; "tú" para cafés/estudios                                    |
+| **EN** | Directo, elegante, acogedor        | Avoid "amazing" or "incredible" — use specific details                                 |
+| **CA** | Cercano, auténtico, orgulloso      | Terminología local, respeto por la identidad balear                                    |
+| **DE** | Preciso, informativo, estructurado | Usa términos que un turista alemán buscaría (ej: "Fischrestaurant" no "Seafood Place") |
+
+#### 3.2 Copywriting Prohibido vs. Permitido
+
+| ❌ Prohibido (genérico) | ✅ Permitido (real y específico)                                         |
+| ----------------------- | ------------------------------------------------------------------------ |
+| "Excelente servicio"    | "Atención personalizada por el chef-propietario desde 1998"              |
+| "Comida deliciosa"      | "Especialistas en caldereta de langosta y arroces de autor"              |
+| "Increíble experiencia" | "Vista directa al puerto con puesta de sol sobre la Serra de Tramuntana" |
+| "Gran ambiente"         | "Ambiente familiar con terraza cubierta y zona de juegos para niños"     |
+| "Los mejores tatuajes"  | "Especialistas en fine-line y realismo en blanco y negro"                |
+
+#### 3.3 Los 5 Pilares de Enriquecimiento
+
+**Pilar 1 — Social Proof (Reputación):**
+
+- Rating real extraído de Maps (no inventado)
+- Nº de reseñas verificado
+- Top 3 frases textuales de reseñas reales (con atribución)
+
+**Pilar 2 — Storytelling (Historia de Autor):**
+
+- Busca si el fundador tiene historia pública (entrevistas, Instagram, prensa)
+- Redacta `founderStory` en los 4 idiomas: ≥ 80 palabras por idioma
+- Incluye el **propósito**, la **especialidad** y el **vínculo con Mallorca**
+
+**Pilar 3 — Autoridad & Prensa:**
+
+- Busca en: Diario de Mallorca, Ultima Hora, Mallorca Magazine, Guía Michelin, Condé Nast
+- Si hay premios o menciones → incluirlos en el campo `awards[]`
+
+**Pilar 4 — Canales de Conversión:**
+
+- WhatsApp configurado con mensaje pre-rellenado contextual
+- URL de reserva directa (si tiene TheFork, OpenTable, Booksy, Planity...)
+- URL de menú o tarifa (si existe)
+
+**Pilar 5 — Local SEO:**
+
+- Tags de la taxonomía aprobada (`zona:*`, `product:*`, `mod:*`, `amb:*`, `aud:*`, `temps:*`)
+- Sin tags inventadas — sólo del catálogo en `src/data/tags.ts`
+- `capabilities` rellenadas a partir de datos reales (no por defecto)
+
+**🛑 CHECKPOINT 3:** ¿Todos los campos `shortDescription`, `fullDescription`, `specialties`, `highlights` están en los 4 idiomas? ¿Los tags existen en `src/data/tags.ts`? Si no → STOP.
+
+---
+
+### 🚀 FASE 4 — Registro y Validación de Producción
+
+#### 4.1 Creación del módulo TypeScript
+
+Archivo: `src/data/services/<sector>/<slug>.ts`
+
+**Reglas de estructura:**
+
+- Seguir exactamente la interfaz `ServiceItem` de `src/data/services/types.ts`
+- `id` y `slug` deben ser únicos en todo el catálogo
+- `image` y `gallery[]` deben ser rutas a archivos existentes en `/public/images/` o SVG banners
+
+#### 4.2 Registro en el índice del sector
+
+En `src/data/services/<sector>/index.ts`:
+
+1. Añadir el import del nuevo módulo
+2. Añadir el export nombrado
+3. Añadir el objeto al array `SECTOR_SERVICES`
+
+#### 4.3 Suite de Validación Obligatoria
+
+```bash
+npm run typecheck        # 0 errores TypeScript
+npm test                 # 100% tests pasados (0 failures)
+npm run validate:taxonomy # Taxonomía válida
+npm run audit:quality    # 0 negocios con score < 80%
+npm run build            # Build limpio sin errores
+```
+
+#### 4.4 Reporte de Verificación
+
+```bash
+npm run report:verify <slug>
+```
+
+El reporte debe mostrar:
+
+- `confidenceScore` ≥ 80%
+- `verificationStatus: "verified"`
+- 0 discrepancias críticas en triangulación
+
+**🛑 CHECKPOINT 4:** ¿Todos los comandos terminan con código 0? ¿El reporte muestra `verified`? Si no → corregir antes de hacer commit.
+
+---
+
+## 🛑 Manejo de Excepciones
+
+| Situación                           | Acción                                                                                           |
+| ----------------------------------- | ------------------------------------------------------------------------------------------------ |
+| Negocio cerrado permanentemente     | `status: "permanently_closed"` — NO publicar                                                     |
+| Web con error 404 o 500             | Usar Maps + redes como fuentes primarias. Si score < 80 → `needs_review`                         |
+| Sin teléfono en ninguna fuente      | Usar WhatsApp si existe. Si tampoco → campo vacío, no inventar                                   |
+| Sin imágenes válidas                | Usar SVG banner de categoría. Campo `gallery: []` vacío                                          |
+| Datos contradictorios entre fuentes | Usar siempre la versión de Google Maps como fuente de verdad                                     |
+| Score 50–79%                        | Crear módulo con `verificationStatus: "needs_manual_review"` y `status: "incomplete_admin_only"` |
+| Prensa o premios no verificables    | Omitir. No inventar menciones                                                                    |
+
+---
+
+## 📋 Checklist de Salida (Pre-Commit)
+
+Antes de hacer `git commit`, verificar cada ítem:
+
+```
+[ ] El slug es único en todo el catálogo (src/data/services/index.ts)
+[ ] Las coordenadas caen dentro del bounding box de Mallorca (lat 39.15–40.0, lng 2.25–3.55)
+[ ] El googleMapsUrl contiene "google.com/maps" (no "maps.google.com")
+[ ] Todas las imágenes son rutas locales (/public/...) o URLs verificadas (no Imgur)
+[ ] shortDescription tiene ES/EN/CA/DE con contenido real (no "PENDIENTE")
+[ ] founderStory tiene los 4 idiomas con ≥ 80 palabras cada uno
+[ ] Los tags existen todos en src/data/tags.ts
+[ ] El negocio está exportado en el index.ts del sector
+[ ] npm run typecheck → 0 errores
+[ ] npm test → 0 failures
+[ ] npm run report:verify <slug> → confidenceScore ≥ 80%
 ```
 
 ---
 
-## 🧠 3. Inyección de Pensamiento Crítico Obligatorio (Chain of Thought)
+## 🔗 Recursos de Referencia
 
-Durante la Fase 2 (Auditoría), el agente debe incluir en su análisis interno un bloque de verificación explícita siguiendo este formato:
-
-```markdown
-### 🔍 Verificación de Reglas y Checkpoint de Auditoría:
-
-- **Negocio Analizado:** [Nombre del Negocio]
-- **Fuente Web Oficial:** [URL Oficial] (HTTP Status 200 OK)
-- **Teléfono Extraído:** [+34 XXX XX XX XX] (Coincide Web y Maps: SÍ)
-- **Geolocalización:** [Lat, Lng] (Dentro de polígono de Mallorca: SÍ)
-- **Puntaje de Confianza:** [XX%] (Estado: VERIFIED)
-- **Cumplimiento GR-11 & GR-12:** Totalmente acreditado con fuentes primarias.
-```
-
----
-
-## 💎 4. Estructura Completa del Archivo de Servicio (Anatomía de los 5 Pilares)
-
-Todo archivo `src/data/services/<sector>/<slug>.ts` debe contener la estructura enriquecida completa:
-
-```typescript
-import type { ServiceItem } from "../types.ts";
-
-export const miNegocio: ServiceItem = {
-  id: "mi-negocio-mallorca",
-  slug: "mi-negocio-mallorca",
-  name: "Mi Negocio Mallorca",
-  category: "gastronomia-catering",
-  sectorId: "hosteleria-gastronomia",
-  culturalIdentity: "mallorquin_heritage",
-  rating: 4.9,
-  reviewCount: 250,
-  verified: true,
-  featured: true,
-  status: "open",
-  seasonality: "year_round",
-  isIconicHeritage: true,
-  priceRange: "€€€",
-  address: "Carrer Major, 10, 07001 Palma, Illes Balears",
-  zone: "palma",
-  phone: "+34 971 00 00 00",
-  whatsapp: "+34 971 00 00 00",
-  email: "info@minegocio.com",
-  website: "https://minegocio.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=...",
-  appleMapsUrl: "https://maps.apple.com/?q=...",
-  bingMapsUrl: "https://www.bing.com/maps?q=...",
-  coordinates: { lat: 39.5696, lng: 2.6502 },
-  schedule: "Lunes a Sábado: 10:00 - 20:00",
-  lastVerifiedAt: "2026-08-25",
-  image: "https://...",
-  images: ["https://..."],
-  gallery: ["https://..."],
-  targetAudience: ["residentes", "turistas", "expat"],
-  languagesSpoken: ["es", "en", "ca", "de"],
-  emergency24h: false,
-  inVillaService: false,
-  shortDescription: { es: "...", en: "...", ca: "...", de: "..." },
-  fullDescription: { es: "...", en: "...", ca: "...", de: "..." },
-  specialties: { es: ["..."], en: ["..."], ca: ["..."], de: ["..."] },
-  highlights: { es: ["..."], en: ["..."], ca: ["..."], de: ["..."] },
-  servicesProvided: { es: ["..."], en: ["..."], ca: ["..."], de: ["..."] },
-  tags: ["zona:palma", "product:premium", "mod:cita-previa", "temps:todo-el-ano"],
-  pricing: {
-    startingPrice: "Desde 45€",
-    rateType: "tiered",
-  },
-  amenities: ["wifi", "air_conditioning"],
-  features: ["wifi", "air_conditioning", "credit_card"],
-  paymentMethods: ["credit_card", "cash"],
-  certifications: ["Registro Oficial Balear"],
-  socialLinks: {
-    instagram: "https://instagram.com/minegocio",
-  },
-  teamMembers: [
-    {
-      name: "Titular",
-      role: { es: "Director", en: "Director", ca: "Director", de: "Direktor" },
-      specialty: "Atención Especializada",
-    },
-  ],
-  reputationBreakdown: {
-    googleMaps: { rating: 4.9, reviewCount: 250, url: "..." },
-    totalReviewsAggregated: 250,
-    overallWeightedRating: 4.9,
-  },
-  reviews: [
-    {
-      id: "rev-1",
-      authorName: "Cliente",
-      rating: 5,
-      date: "2025-06-10",
-      platform: "google_maps",
-      language: "es",
-      comment: "Excelente servicio profesional en Mallorca.",
-      verifiedCustomer: true,
-    },
-  ],
-  confidenceScore: 95,
-  verificationStatus: "verified",
-  sourceCrossReference: {
-    webPhoneMatch: true,
-    mapsPhoneMatch: true,
-    addressInMallorca: true,
-    activeWeb200Ok: true,
-    socialMatchScore: 100,
-    googleMapsConfirmed: true,
-    socialPresenceActive: true,
-    taxIdVerified: true,
-  },
-  founderStory: { es: "...", en: "...", ca: "...", de: "..." },
-  newsMentions: [
-    {
-      title: "Noticia en prensa balear",
-      source: "Diario de Mallorca",
-      url: "https://www.google.com/search?q=site:diariodemallorca.es+...",
-    },
-  ],
-};
-```
-
----
-
-## 💎 5. Protocolo de "Alta Fidelidad" (Calidad sobre Cantidad)
-
-Para maximizar el valor de la plataforma y el posicionamiento SEO, cada incorporación exige:
-
-1. **Triple Contraste de Fuentes (Web + Google Maps + Redes):**
-   - Coincidencia estricta de teléfono, coordenadas en Mallorca y horarios reales.
-   - Si un negocio aparece cerrado en Maps o su web responde con error 404/500, se descarta automáticamente.
-2. **Cero Descripciones Genéricas:**
-   - Prohibido el texto de relleno ("excelente comida", "gran servicio"). Se requiere documentar especialidades tangibles, origen de la materia prima, certificaciones y comodidades reales.
-3. **Curación Fotográfica de Alto Nivel:**
-   - Selección de las mejores imágenes reales en alta definición. Prohibidas fotos borrosas, marcas de agua de terceros o logos genéricos.
-4. **Smart-CTA Adaptativo por Vertical:**
-   - Gastronomía: `Reservar Mesa / Ver Carta`
-   - Tatuajes & Piercing: `Pedir Presupuesto / Ver Portafolio`
-   - Náutica & Chárter: `Consultar Chárter / Ver Yates`
-   - Deportes & Gimnasios: `Ver Disponibilidad / Contactar`
-   - Bienestar & Spas: `Reservar Tratamiento / Consultar Menú Spa`
-5. **Reporte de Calidad y Verificación Obligatorio:**
-   - Para cada lote incorporado, el agente debe emitir el reporte con las fuentes contrastadas, el confidence score y los motivos de recomendación verificada.
-
----
-
-## 🎯 6. Verificación de Entrega
-
-Todo nuevo lote de negocios debe pasar sin excepciones:
-
-1. `npm run typecheck` (0 errores de TypeScript)
-2. `npm test` (100% de tests unitarios pasando)
-3. `npm run validate:taxonomy` (100% de tags, zonas y categorías válidas)
-4. `npm run audit:quality` (100% de cumplimiento de Hard Gates de Calidad)
-5. `npm run build` (Compilación de producción limpia en Cloudflare Workers)
+| Recurso                                                                                                                                     | Propósito                             |
+| ------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------- |
+| [`src/data/services/types.ts`](file:///c:/Users/ink.enzo/Desktop/p/servicios-mallorca/src/data/services/types.ts)                           | Esquema oficial `ServiceItem`         |
+| [`src/data/tags.ts`](file:///c:/Users/ink.enzo/Desktop/p/servicios-mallorca/src/data/tags.ts)                                               | Catálogo cerrado de tags permitidos   |
+| [`src/data/zones.ts`](file:///c:/Users/ink.enzo/Desktop/p/servicios-mallorca/src/data/zones.ts)                                             | Zonas geográficas válidas             |
+| [`src/lib/verificationPipeline.ts`](file:///c:/Users/ink.enzo/Desktop/p/servicios-mallorca/src/lib/verificationPipeline.ts)                 | Hub de Verificación centralizado      |
+| [`scripts/business-intelligence-lookup.ts`](file:///c:/Users/ink.enzo/Desktop/p/servicios-mallorca/scripts/business-intelligence-lookup.ts) | Herramienta de minería                |
+| [`scripts/curate-business.ts`](file:///c:/Users/ink.enzo/Desktop/p/servicios-mallorca/scripts/curate-business.ts)                           | CLI de curación (Fase 3 → módulo .ts) |
+| [`docs/GOLDEN_RULES.md`](file:///c:/Users/ink.enzo/Desktop/p/servicios-mallorca/docs/GOLDEN_RULES.md)                                       | Reglas inmutables del proyecto        |
+| [`docs/I18N.md`](file:///c:/Users/ink.enzo/Desktop/p/servicios-mallorca/docs/I18N.md)                                                       | Guía de internacionalización          |
+| [`docs/STYLING.md`](file:///c:/Users/ink.enzo/Desktop/p/servicios-mallorca/docs/STYLING.md)                                                 | Variables CSS y diseño                |
