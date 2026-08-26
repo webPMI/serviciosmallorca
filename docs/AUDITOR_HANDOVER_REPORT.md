@@ -106,16 +106,16 @@ npm run build
 
 ---
 
-## 📌 5. Instrucciones de Uso para el Agente Auditor
+---
 
-Para auditar un nuevo negocio en el catálogo:
+## 🚀 6. Registro de Decisiones de Arquitectura (Audit Log Reciente)
 
-```bash
-npx tsx scripts/business-intelligence-lookup.ts "Nombre Negocio Palma" --url="https://webnegocio.com"
-```
+### Hito: Taxonomía Dinámica por Grafos, Matriz de Capacidades y Edge Workers CI/CD
 
-El reporte entregará:
-
-1. Puntuación de Confianza (`0-100%`) y estado (`VERIFIED` o `NEEDS_MANUAL_REVIEW`).
-2. Desglose detallado de inconsistencias o datos faltantes.
-3. Plantilla JSON lista para guardar en `src/data/services/<sector>/<slug>.ts`.
+- **Fecha:** 26 de Agosto de 2026
+- **Decisión 1 (Desacoplamiento de Categorías):** Sustitución del modelo de categorías estáticas únicas por un sistema de **Sectores Macroeconómicos múltiples (`sectors: string[]`)** y **Especialidades granulares (`specialties`)**. Un negocio (ej. Agroturismo con pádel y restaurante) ahora se indexa en múltiples sectores simultáneamente sin duplicar código ni fichas.
+- **Decisión 2 (Matriz de Capacidades):** Introducción de la interfaz `BusinessCapabilities` (`petFriendly`, `wheelchairAccessible`, `kidsArea`, `terrace`, `seaViews`, `onlineBooking`, `emergency24h`, `inVillaService`) para soportar búsquedas multidimensionales por intención del usuario.
+- **Decisión 3 (Experiencia Visual Sin Saltos):** Implementación de **Skeleton Shimmer Loader** en `ServiceImage.astro` con transición suave (`opacity: 0 -> 1`) al dispararse el evento `onload` y fallback automático ante imágenes rotas.
+- **Decisión 4 (Automatización CI/CD en Cloudflare Workers):** Adición de 5 Quality Gates secuenciales en `.github/workflows/ci.yml` con auto-despliegue mediante `wrangler deploy` en push a `main`.
+- **Decisión 5 (Auditoría Continua de Imágenes y Anomalías):** Creación de `scripts/audit-and-harvest-images.ts` (100% cobertura en los 140 negocios) y `scripts/anomaly-audit.ts` (alerta ante caídas de confianza >10% y muestreo aleatorio del 5%).
+- **Estado de Pruebas:** 32 suites / 174 tests unitarios e integrados pasando al 100%. Build de producción en 700ms.

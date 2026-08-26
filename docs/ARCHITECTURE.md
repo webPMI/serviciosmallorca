@@ -2,15 +2,16 @@
 
 ## 1. Stack Tecnológico
 
-| Capa                   | Tecnología                        | Versión / Tipo                                   |
-| ---------------------- | --------------------------------- | ------------------------------------------------ |
-| **Framework Web**      | Astro (SSR)                       | ^7.1.3 (@astrojs/cloudflare Edge adapter)        |
-| **Runtime / Edge**     | Cloudflare Pages                  | nodejs_compat (Ultra baja latencia)              |
-| **Autenticación & DB** | Firebase Auth + Cloud Firestore   | ^12.16.0 (`serviciosmallorca`)                   |
-| **Monetización**       | Google AdSense                    | `ca-pub-1988580228487420` (`ads.txt` verificado) |
-| **Testing**            | Vitest                            | ^3.0.7 (70+ unit tests)                          |
-| **Tipado**             | TypeScript                        | ^6.0.3 (Strict mode)                             |
-| **Estilos**            | CSS Variables + Custom Properties | Nativo (Dark, Light, Golden, Golden-Dark)        |
+| Capa                      | Tecnología                        | Versión / Tipo                                                    |
+| :------------------------ | :-------------------------------- | :---------------------------------------------------------------- |
+| **Framework Web**         | Astro 5 (SSR en Modo Server)      | `astro` ^7.1.3 con `@astrojs/cloudflare`                          |
+| **Runtime Edge**          | Cloudflare Workers                | `nodejs_compat` con sesiones KV y Workers Assets (`dist/client/`) |
+| **Autenticación & DB**    | Firebase Auth + Cloud Firestore   | ^12.16.0 (`serviciosmallorca`)                                    |
+| **Monetización**          | Google AdSense                    | `ca-pub-1918580228487420` (`ads.txt` verificado)                  |
+| **Testing**               | Vitest                            | ^3.0.7 (32 suites / 174 tests de integridad y confianza)          |
+| **Tipado**                | TypeScript                        | ^6.0.3 (Strict mode, cero `any` en producción)                    |
+| **Estilos**               | CSS Variables + Custom Properties | Nativo (Temas: Golden por defecto, Golden-Dark, Dark, Light)      |
+| **CI / CD & Auto-Deploy** | GitHub Actions + Wrangler CLI     | Despliegue automático tras pasar 5 Quality Gates                  |
 
 ---
 
@@ -18,61 +19,101 @@
 
 ```
 servicios-mallorca/
-├── wrangler.json               # Configuración de Cloudflare Pages
-├── public/
+├── .github/workflows/
+│   └── ci.yml                          # CI/CD: Typecheck, Taxonomía, 174 Tests, Build & Auto-Deploy
+├── wrangler.json                       # Configuración de Cloudflare Workers y dominios custom
 ├── src/
+│   ├── i18n/                           # Internacionalización (es, en, ca, de)
+│   ├── layouts/
+│   │   └── BaseLayout.astro            # Layout base (Init Theme Golden + Anti-FOUC + DevTools)
+│   ├── pages/
+│   │   ├── [...locale]/                # Rutas multi-idioma (/es/, /en/, /ca/, /de/)
+│   │   │   ├── 404.astro               # Página 404 personalizada con buscador y atajos
+│   │   │   └── servicios/              # Catálogo, fichas de negocio y filtros multidimensionales
+│   │   └── 404.astro                   # Fallback 404 global
+│   ├── styles/
+│   │   ├── global.css                  # Variables CSS, tokens, temas y skeleton shimmer
+│   │   └── service-detail.css          # Estilos de alta fidelidad para fichas de negocio
+│   ├── components/                     # Componentes de UI
+│   │   ├── ServiceCard.astro           # Tarjeta con badges de capacidades y Smart-Action CTA
+│   │   ├── ServiceImage.astro          # Skeleton Shimmer Loader + Fade-in + Fallback
+│   │   ├── LanguageSwitcher.astro      # Selector responsive con soporte completo para DE
+│   │   ├── FavoriteButton.astro        # Sistema de retención y favoritos (localStorage)
+│   │   └── BusinessQualityFeedbackModal.astro # Feedback comunitario y reporte de discrepancias
+│   ├── lib/
+│   │   ├── repository/                 # Repositorio universal y consultas espaciales
+│   │   │   ├── types.ts                # Interfaces de consultas multidimensionales
+│   │   │   └── serviceRepository.ts    # Motor de consultas con Haversine y Grafos
+│   │   ├── verificationEngine.ts       # Motor de confianza (GR-11 Zero Fake Data, >80% score)
+│   │   ├── geoUtils.ts                 # Distancia ortodrómica Haversine y formato métrico
+│   │   ├── smartCtaEngine.ts           # Botones de acción inteligentes por sector
+│   │   └── translator.ts               # Motor de traducción multilingüe automatizado
+│   └── middleware.ts                   # Detección de idioma y protección de rutas privadas
+├── data/
+│   ├── categories.ts                   # Taxonomía y sectores macroeconómicos
+│   ├── zones.ts                        # Delimitación y geolocalización de zonas de Mallorca
+│   └── services/                       # 140 negocios 100% verificados y estructurados
 ├── scripts/
-├── tests/
-├── docs/
-└── AGENTS.md
+│   ├── batch-ingest.ts                 # Ingesta por lotes (Landing Zone -> Verificación -> Aprobación)
+│   ├── anomaly-audit.ts                # Monitor de calidad (>10% drop alert y muestreo 5%)
+│   ├── audit-and-harvest-images.ts     # Auditor y recolector de imágenes del catálogo
+│   └── validate-taxonomy.ts            # Validador canónico de taxonomía
+└── tests/                              # 32 suites unitarias y de integración (174 tests)
 ```
 
-## 3. Módulos de Inteligencia y Curación
+---
 
-### 🔬 Motor de Minería (`scripts/`)
+## 3. Modelo de Taxonomía Dinámica por Grafos de Intersección
 
-El sistema utiliza un orquestador de búsqueda que puede ejecutar:
+Para permitir la escalabilidad hacia miles de negocios y evitar categorías compuestas rígidas, la plataforma implementa una **Taxonomía Desacoplada**:
 
-- **Deep Scraping:** Extracción de metadatos, precios, imágenes y redes sociales de sitios web oficiales.
-- **Social Analysis:** Extracción de enlaces de bio (Linktree, Instagram, TikTok) y validación de contenido.
-- **Cross-Reference:** Validación cruzada de datos entre múltiples fuentes (Google Maps, Directorios, Web).
-- **Data Enrichment:** Generación automática de especialidades, historias de autor y búsqueda de noticias locales.
+```mermaid
+graph TD
+    B[Negocio: Finca Agroturismo & Pádel] --> S1[Sector: Gastronomía & Hostelería]
+    B --> S2[Sector: Deportes & Fitness]
+    B --> S3[Sector: Alojamiento & Turismo]
+    B --> SP1[Especialidad: Paellas a la leña]
+    B --> SP2[Especialidad: Torneos de Pádel]
+    B --> CAP[Matriz de Capacidades]
+    CAP --> C1[🐾 Pet Friendly]
+    CAP --> C2[♿ Accesible PMR]
+    CAP --> C3[☀️ Terraza Exterior]
+    CAP --> C4[🚗 Parking Propio]
+    CAP --> C5[📅 Reserva Online]
+```
 
-### 🛠️ Ecosistema de Utilidades (`public/`, `src/components/`)
+### Matriz de Capacidades (`BusinessCapabilities`)
 
-Herramientas gratuitas para el usuario:
-
-- **Image Web Editor:** Edición rápida de contenido visual.
-- **Auralist:** Curación de audio y contenido sonoro.
-- **Geolocalización:** Herramientas de mapas y coordenadas.
-- **Calculadoras:** Herramientas de presupuestos y conversiones.
-
-## 4. Flujo de Datos y Validación
-
-1. **Input:** Búsqueda por nombre/geolocalización.
-2. **Minería:** `scripts/business-intelligence-lookup.ts` extrae datos crudos.
-3. **Auditoría:** `src/lib/verificationEngine.ts` valida la veracidad y genera un `confidenceScore`.
-4. **Curación:** Agente `@curation` redacta el contenido en 4 idiomas (es/en/ca/de) y asigna especialidades.
-5. **Publicación:** El negocio se inserta en `src/data/services/` y se refleja en la UI.
+1. `petFriendly`: Admite mascotas.
+2. `wheelchairAccessible`: Apto para personas con movilidad reducida (PMR).
+3. `kidsArea`: Zona infantil / Familiar.
+4. `terrace`: Terraza al aire libre.
+5. `seaViews`: Vistas al mar.
+6. `parkingAvailable`: Aparcamiento propio o cercano.
+7. `onlineBooking`: Reserva directa online.
+8. `emergency24h`: Servicio de urgencias 24 horas.
+9. `inVillaService`: Servicio en villa / a domicilio.
 
 ---
 
-## 5. Módulos de Negocio (Catálogo)
+## 4. Pipeline de Producción y Verificación de Datos (GR-11 & GR-12)
 
-| Sector              | Especialidades Clave                               |
-| ------------------- | -------------------------------------------------- |
-| **Gastronomía**     | Restaurantes, Menús, Especialidades, Reservas      |
-| **Arte & Tatuajes** | Estudios, Galería, Piercing, Artistas              |
-| **Náutica**         | Charters, Mantenimiento, Yates, Deportes Acuáticos |
-| **Servicios**       | Estética, Bienestar, Salud, B2B                    |
+```mermaid
+graph LR
+    A[Lote Crudo: JSON / Scraping] --> B[Zona de Aterrizaje: src/data/raw_landing/]
+    B --> C[Motor de Verificación: verificationEngine.ts]
+    C -->|Confidence Score >= 80%| D[✅ Estado: Approved -> Publicación]
+    C -->|Confidence Score < 80%| E[⚠️ Estado: Needs Review -> Cola de Auditoría]
+    D --> F[Monitor de Anomalías: scripts/anomaly-audit.ts]
+    F -->|Drop Rate > 10%| G[🚨 Congelación & Alerta de Sector]
+    F -->|Normal| H[🔍 Muestreo Aleatorio 5% para Agente Maestro]
+```
 
 ---
 
-## 6. Roadmap de Desarrollo
+## 5. Rendimiento Visual y Resiliencia de Activos
 
-- [x] Refactorización Modular de la URL de Servicios.
-- [x] Motor de Minería y Vitrina E-Commerce.
-- [x] Protocolo de Curación de Alta Fidelidad.
-- [ ] Dashboard de Verificación y Gestión de Alertas.
-- [ ] Sistema de Notificaciones en Tiempo Real.
-- [ ] Integración con APIs de Reservas Directas.
+1. **Skeleton Shimmer Loader:** Mientras las imágenes se descargan (`loading="lazy"`), se despliega una capa animada por gradientes CSS.
+2. **Smooth Fade-In:** Al dispararse el evento `onload`, la imagen real emerge con una transición suave (`opacity: 0 -> 1` en 400ms).
+3. **Fallback Automático:** Ante cualquier fallo de red o enlace roto (`onerror`), se sustituye por un placeholder enriquecido con el nombre e insignia del negocio.
+4. **Fidelidad de Coordenadas:** 100% de los negocios poseen coordenadas dentro de la delimitación geográfica de la isla de Mallorca.

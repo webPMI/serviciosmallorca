@@ -1,131 +1,127 @@
-# 🎨 Sistema de Estilos - WebApp Starter
+# 🎨 Sistema de Estilos & Diseño — Servicios Mallorca
 
-> **Dominio del Agente Estilos (`@styling`)** - `src/styles/global.css`
+> **Dominio del Agente Estilos (`@styling`)** — `src/styles/global.css` & `src/styles/service-detail.css`
 
-## Sistema de Temas
+---
 
-El proyecto usa **4 temas** mediante el atributo `data-theme` en `<html>`:
+## 1. Sistema de Temas (Mediterranean Palette)
 
-| Tema         | Selector                     | Paleta                           |
-| ------------ | ---------------------------- | -------------------------------- |
-| Green Light  | `:root` (default)            | Verde `#2d6a4f` sobre `#f8faf9`  |
-| Green Dark   | `[data-theme="dark"]`        | Verde `#40916c` sobre `#0f172a`  |
-| Golden Light | `[data-theme="golden"]`      | Dorado `#d4a017` sobre `#fdf8f0` |
-| Golden Dark  | `[data-theme="golden-dark"]` | Dorado `#d4a017` sobre `#1a1205` |
+El proyecto prioriza por defecto la paleta **Mediterránea Dorada (Golden)** y soporta 4 temas mediante el atributo `data-theme` en `<html>`:
 
-## Variables CSS por Categoría
+| Tema             | Selector                                      | Paleta                                        | Uso Principal         |
+| :--------------- | :-------------------------------------------- | :-------------------------------------------- | :-------------------- |
+| **Golden Light** | `[data-theme="golden"]` _(Default)_           | Dorado `#d4a017` sobre arena cálido `#fdf8f0` | Tema oficial diurno   |
+| **Golden Dark**  | `[data-theme="golden-dark"]` _(Default Dark)_ | Dorado `#d4a017` sobre noche balear `#1a1205` | Tema oficial nocturno |
+| **Green Light**  | `:root` / `[data-theme="green"]`              | Verde pino `#2d6a4f` sobre `#f8faf9`          | Alternativo natural   |
+| **Green Dark**   | `[data-theme="dark"]`                         | Verde esmeralda `#40916c` sobre `#0f172a`     | Alternativo oscuro    |
 
-### Marca & Paleta Principal
+### Script Anti-FOUC en `BaseLayout.astro`
 
-```css
---color-primary       /* Color principal */
---color-primary-light /* Variante clara */
---color-primary-dark  /* Variante oscura */
---color-accent        /* Color de acento */
---color-accent-hover  /* Hover del acento */
+El tema se inicializa en el `<head>` antes del renderizado HTML para evitar parpadeos:
+
+```js
+const savedTheme = localStorage.getItem("theme");
+const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+const defaultTheme = prefersDark ? "golden-dark" : "golden";
+const theme = savedTheme || defaultTheme;
+document.documentElement.setAttribute("data-theme", theme);
 ```
 
-### Superficies & Fondos
+---
+
+## 2. Micro-Animaciones & Skeleton Shimmer Loader
+
+### Shimmer Wave para Carga de Imágenes (`ServiceImage.astro`)
 
 ```css
---color-bg             /* Fondo principal */
---color-surface        /* Superficie de tarjetas */
---color-surface-hover  /* Hover de superficies */
---color-surface-border /* Bordes de superficies */
---color-white          /* Blanco (varía por tema) */
+.service-img-skeleton {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: var(--color-surface-hover, #e2e8f0);
+  overflow: hidden;
+}
+
+.skeleton-shimmer {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.25) 50%, transparent 100%);
+  background-size: 200% 100%;
+  animation: skeleton-wave 1.6s infinite cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes skeleton-wave {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
 ```
 
-### Vidrio / Glassmorphism
+### Transición Suave de Imágenes (_Zero Layout Shift_)
 
 ```css
---glass-bg       /* Fondo translucent */
---glass-border   /* Borde translucent */
---glass-shadow   /* Sombra del glass */
---glass-backdrop /* blur del backdrop */
+.service-real-img {
+  opacity: 0;
+  transform: scale(1.02);
+  transition:
+    opacity 0.4s ease-out,
+    transform 0.4s ease-out;
+}
+
+.service-real-img.is-loaded {
+  opacity: 1;
+  transform: scale(1);
+}
 ```
 
-### Texto
+---
+
+## 3. Componentes y Badges del Sistema de Grafos
+
+### Píldoras de Capacidades (`.service-capabilities-row` & `.cap-pill`)
+
+Diseñadas para identificar rápidamente atributos de intención de búsqueda:
 
 ```css
---color-text        /* Texto principal */
---color-text-light  /* Texto secundario */
---color-text-muted  /* Texto terciario/deshabilitado */
+.service-capabilities-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0.35rem 0 0.5rem 0;
+}
+
+.cap-pill {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.68rem;
+  font-weight: 500;
+  padding: 0.15rem 0.45rem;
+  border-radius: var(--border-radius-full, 9999px);
+  background: var(--color-surface, #f8fafc);
+  border: 1px solid var(--color-surface-border, #e2e8f0);
+  color: var(--color-text, #334155);
+}
 ```
 
-### Colores de Estado
+### Botones de Acción Inteligente (`.smart-action-btn`)
 
-```css
---color-success / --color-success-light / --color-success-bg / --color-success-border
---color-danger  / --color-danger-light  / --color-danger-bg  / --color-danger-border
---color-warning / --color-warning-light / --color-warning-bg / --color-warning-border
---color-info
-```
+Botones contextuales que varían automáticamente por sector:
 
-### Colores de Rol
+- Gastronomía: _"Reserva Mesa"_ / _"Ver Carta"_.
+- Estética y Tatuajes: _"Pedir Presupuesto"_ / _"Pedir Cita"_.
+- Urgencias y Reformas: _"Llamar 24h"_ / _"WhatsApp Directo"_.
 
-```css
---color-role-user       /* Primary por defecto */
---color-role-manager      /* Azul #3b82f6 */
---color-role-admin      /* Púrpura #8b5cf6 */
---color-role-*-bg       /* Fondo con opacidad */
---color-role-*-border   /* Borde con opacidad */
-```
+---
 
-### Sombras
+## 4. Breakpoints y Diseño Adaptable (GR-02)
 
-```css
---shadow-sm    /* Sutil */
---shadow       /* Normal */
---shadow-md    /* Medio */
---shadow-lg    /* Grande */
---shadow-glow  /* Brillo (primary/accent) */
-```
-
-## Utilidades CSS
-
-### Componentes base
-
-- `.card` - Tarjeta estándar con hover lift
-- `.card-glass` - Tarjeta glassmórfica
-- `.btn` / `.btn-primary` / `.btn-secondary` / `.btn-accent` / `.btn-outline`
-- `.badge` / `.badge-primary` / `.badge-accent`
-- `.text-gradient` - Texto con gradiente
-
-### Layout
-
-- `.container` - Contenedor centrado (`max-width: 1200px`)
-- `.section` - Sección con padding vertical
-- `.grid-auto` - Grid responsivo (`repeat(auto-fit, minmax(280px, 1fr))`)
-- `.flex-center` - Flexbox centrado
-
-### Utilidades
-
-- `.hover-lift` - Elevación en hover
-- `.fade-in` - Animación de entrada
-
-## Breakpoints
-
-| Breakpoint | Uso principal           |
-| ---------- | ----------------------- |
-| `480px`    | Small mobile            |
-| `640px`    | Mobile (hamburger menu) |
-| `768px`    | Tablet                  |
-| `900px`    | Dashboard grid collapse |
-| `1024px`   | Desktop                 |
-
-## Añadir un Nuevo Tema
-
-1. Crear bloque `[data-theme="nombre"]` en `global.css`
-2. Definir TODAS las variables (usar los temas existentes como template)
-3. Añadir el tema a `VALID_THEMES` en:
-   - `src/layouts/BaseLayout.astro`
-   - `public/devtools-floating.js`
-   - `public/devtools.html` (panel Theme & Locale)
-
-## Reglas del Agente Estilos
-
-- ✅ Usar siempre `var(--*)` para colores
-- ✅ Toda variable nueva debe tener contraparte en los 4 temas
-- ✅ Breakpoints consistentes con el proyecto
-- ❌ No hardcodear colores en componentes
-- ❌ No duplicar estilos entre componentes
+| Breakpoint | Ancho (px)       | Comportamiento                                                                         |
+| :--------- | :--------------- | :------------------------------------------------------------------------------------- |
+| **xs**     | `< 480px`        | Móvil compacto: Selector de idioma sin texto (solo bandera/código), grid de 1 columna. |
+| **sm**     | `480px - 640px`  | Móvil amplio: Tarjetas de servicio en columna completa, acciones en fila.              |
+| **md**     | `641px - 768px`  | Tablet: Grid de 2 columnas para el catálogo, menú hamburguesa activo.                  |
+| **lg**     | `769px - 1024px` | Portátil: Grid de 3 columnas, barra de navegación expandida.                           |
+| **xl**     | `> 1024px`       | Desktop: Grid de 3-4 columnas, layout extendido con mapa lateral.                      |
