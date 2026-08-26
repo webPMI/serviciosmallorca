@@ -172,6 +172,7 @@ export const MALLORCA_ZONES: MallorcaZone[] = [
       "Lloseta",
       "Costitx",
       "Petra",
+      "Randa",
     ],
   },
 ];

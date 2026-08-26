@@ -169,8 +169,14 @@ import { bodegasAvaViSencelles } from "./bodegas-ava-vi-sencelles.ts";
 import { restauranteRocamarPortAndratx } from "./restaurante-rocamar-port-andratx.ts";
 import { restauranteLuna36Soller } from "./restaurante-luna-36-soller.ts";
 import { bodegasGalmesIRibotSantaMargalida } from "./bodegas-galmes-i-ribot-santa-margalida.ts";
+import { restauranteEsRacoDesPortSoller } from "./restaurante-es-raco-des-port-soller.ts";
+import { cellerBarRandaAlgaida } from "./celler-bar-randa-algaida.ts";
+import { bodegasCanVerduraBinissalem } from "./bodegas-can-verdura-binissalem.ts";
 
 export {
+  restauranteEsRacoDesPortSoller,
+  cellerBarRandaAlgaida,
+  bodegasCanVerduraBinissalem,
   restauranteRocamarPortAndratx,
   restauranteLuna36Soller,
   bodegasGalmesIRibotSantaMargalida,
@@ -518,4 +524,7 @@ export const RESTAURANT_SERVICES: ServiceItem[] = [
   restauranteRocamarPortAndratx,
   restauranteLuna36Soller,
   bodegasGalmesIRibotSantaMargalida,
+  restauranteEsRacoDesPortSoller,
+  cellerBarRandaAlgaida,
+  bodegasCanVerduraBinissalem,
 ];
