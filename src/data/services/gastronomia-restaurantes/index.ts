@@ -55,8 +55,12 @@ import { restauranteMarDeNudos } from "./restaurante-mar-de-nudos.ts";
 import { restauranteAromataPalma } from "./restaurante-aromata-palma.ts";
 import { restauranteStagierBar } from "./restaurante-stagier-bar.ts";
 import { restauranteLasTerrazasBendinat } from "./restaurante-las-terrazas-bendinat.ts";
+import { marYMarPeguera } from "./mar-y-mar-peguera.ts";
+import { laHaciendaPeguera } from "./la-hacienda-peguera.ts";
 
 export {
+  marYMarPeguera,
+  laHaciendaPeguera,
   restauranteToquePalma,
   dinsSantiTaura,
   caNEduardo,
@@ -176,4 +180,6 @@ export const RESTAURANT_SERVICES: ServiceItem[] = [
   restauranteAromataPalma,
   restauranteStagierBar,
   restauranteLasTerrazasBendinat,
+  marYMarPeguera,
+  laHaciendaPeguera,
 ];

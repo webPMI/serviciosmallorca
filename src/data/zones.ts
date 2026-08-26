@@ -38,7 +38,7 @@ export const MALLORCA_ZONES: MallorcaZone[] = [
       ca: "Calvià & Andratx (Sud-oest)",
       de: "Calvià & Andratx (Südwesten)",
     },
-    popularAreas: ["Puerto Portals", "Port Adriano", "Santa Ponsa", "Palmanova", "Port d'Andratx"],
+    popularAreas: ["Puerto Portals", "Port Adriano", "Santa Ponsa", "Palmanova", "Peguera", "Port d'Andratx"],
   },
   {
     id: "tramuntana",
