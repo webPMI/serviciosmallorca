@@ -97,8 +97,14 @@ import { restauranteClubNauticArenal } from "./restaurante-club-nautic-arenal.ts
 import { elBungalowCiudadJardin } from "./el-bungalow-ciudad-jardin.ts";
 import { elCastilloDelBosque } from "./el-castillo-del-bosque-felanitx.ts";
 import { saCuinaDeNainaSencelles } from "./sa-cuina-de-naina-sencelles.ts";
+import { canPintxoSoller } from "./can-pintxo-soller.ts";
+import { canMarchManacor } from "./can-march-manacor.ts";
+import { bodegasBordoyLlucmajor } from "./bodegas-bordoy-llucmajor.ts";
 
 export {
+  canPintxoSoller,
+  canMarchManacor,
+  bodegasBordoyLlucmajor,
   elBungalowCiudadJardin,
   elCastilloDelBosque,
   saCuinaDeNainaSencelles,
@@ -302,4 +308,7 @@ export const RESTAURANT_SERVICES: ServiceItem[] = [
   elBungalowCiudadJardin,
   elCastilloDelBosque,
   saCuinaDeNainaSencelles,
+  canPintxoSoller,
+  canMarchManacor,
+  bodegasBordoyLlucmajor,
 ];
