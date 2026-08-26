@@ -31,6 +31,7 @@
     "audit:images": "node --experimental-strip-types scripts/audit-and-harvest-images.ts",
     "audit:images:live": "node --experimental-strip-types scripts/verify-all-image-urls.ts",
     "audit:quality": "node --experimental-strip-types scripts/deep-data-scrubbing.ts",
+    "report:verify": "node --experimental-strip-types scripts/generate-verification-report.ts",
     "check": "npm run lint && npm run typecheck && npm test && npm run validate:taxonomy",
     "prepare": "husky"
   },

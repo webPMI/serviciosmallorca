@@ -167,7 +167,7 @@ export const miNegocio: ServiceItem = {
     socialPresenceActive: true,
     taxIdVerified: true,
   },
-  founderStory: { es: "...", en: "...", ca: "..." },
+  founderStory: { es: "...", en: "...", ca: "...", de: "..." },
   newsMentions: [
     {
       title: "Noticia en prensa balear",
@@ -180,11 +180,34 @@ export const miNegocio: ServiceItem = {
 
 ---
 
-## 🎯 5. Verificación de Entrega
+## 💎 5. Protocolo de "Alta Fidelidad" (Calidad sobre Cantidad)
+
+Para maximizar el valor de la plataforma y el posicionamiento SEO, cada incorporación exige:
+
+1. **Triple Contraste de Fuentes (Web + Google Maps + Redes):**
+   - Coincidencia estricta de teléfono, coordenadas en Mallorca y horarios reales.
+   - Si un negocio aparece cerrado en Maps o su web responde con error 404/500, se descarta automáticamente.
+2. **Cero Descripciones Genéricas:**
+   - Prohibido el texto de relleno ("excelente comida", "gran servicio"). Se requiere documentar especialidades tangibles, origen de la materia prima, certificaciones y comodidades reales.
+3. **Curación Fotográfica de Alto Nivel:**
+   - Selección de las mejores imágenes reales en alta definición. Prohibidas fotos borrosas, marcas de agua de terceros o logos genéricos.
+4. **Smart-CTA Adaptativo por Vertical:**
+   - Gastronomía: `Reservar Mesa / Ver Carta`
+   - Tatuajes & Piercing: `Pedir Presupuesto / Ver Portafolio`
+   - Náutica & Chárter: `Consultar Chárter / Ver Yates`
+   - Deportes & Gimnasios: `Ver Disponibilidad / Contactar`
+   - Bienestar & Spas: `Reservar Tratamiento / Consultar Menú Spa`
+5. **Reporte de Calidad y Verificación Obligatorio:**
+   - Para cada lote incorporado, el agente debe emitir el reporte con las fuentes contrastadas, el confidence score y los motivos de recomendación verificada.
+
+---
+
+## 🎯 6. Verificación de Entrega
 
 Todo nuevo lote de negocios debe pasar sin excepciones:
 
 1. `npm run typecheck` (0 errores de TypeScript)
 2. `npm test` (100% de tests unitarios pasando)
 3. `npm run validate:taxonomy` (100% de tags, zonas y categorías válidas)
-4. `npm run build` (Compilación de producción limpia)
+4. `npm run audit:quality` (100% de cumplimiento de Hard Gates de Calidad)
+5. `npm run build` (Compilación de producción limpia en Cloudflare Workers)
