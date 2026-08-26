@@ -184,8 +184,14 @@ import { bodegasVinaTaujanaSantaEugenia } from "./bodegas-vina-taujana-santa-eug
 import { restauranteLaCaracolaPortoPetro } from "./restaurante-la-caracola-porto-petro.ts";
 import { restauranteLArcadaCalaFiguera } from "./restaurante-l-arcada-cala-figuera.ts";
 import { bodegasSantaCatarinaSencelles } from "./bodegas-santa-catarina-sencelles.ts";
+import { restauranteEsBergantPortoPetro } from "./restaurante-es-bergant-porto-petro.ts";
+import { restauranteEsCellerDePetra } from "./restaurante-es-celler-de-petra.ts";
+import { bodegasSonArtiguesPorreres } from "./bodegas-son-artigues-porreres.ts";
 
 export {
+  restauranteEsBergantPortoPetro,
+  restauranteEsCellerDePetra,
+  bodegasSonArtiguesPorreres,
   restauranteLaCaracolaPortoPetro,
   restauranteLArcadaCalaFiguera,
   bodegasSantaCatarinaSencelles,
@@ -563,4 +569,7 @@ export const RESTAURANT_SERVICES: ServiceItem[] = [
   restauranteLaCaracolaPortoPetro,
   restauranteLArcadaCalaFiguera,
   bodegasSantaCatarinaSencelles,
+  restauranteEsBergantPortoPetro,
+  restauranteEsCellerDePetra,
+  bodegasSonArtiguesPorreres,
 ];
