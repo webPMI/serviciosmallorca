@@ -56,7 +56,7 @@ export const MALLORCA_ZONES: MallorcaZone[] = [
       ca: "Serra de Tramuntana",
       de: "Serra de Tramuntana",
     },
-    popularAreas: ["Sóller", "Port de Sóller", "Valldemossa", "Deià", "Esporles", "Fornalutx"],
+    popularAreas: ["Sóller", "Port de Sóller", "Valldemossa", "Deià", "Esporles", "Fornalutx", "Escorca"],
   },
   {
     id: "alcudia-pollensa",
@@ -66,7 +66,15 @@ export const MALLORCA_ZONES: MallorcaZone[] = [
       ca: "Alcúdia & Pollença (Nord)",
       de: "Alcúdia & Pollença (Norden)",
     },
-    popularAreas: ["Port de Pollença", "Port d'Alcúdia", "Alcúdia", "Alcanada", "Playa de Muro", "Can Picafort"],
+    popularAreas: [
+      "Port de Pollença",
+      "Port d'Alcúdia",
+      "Alcúdia",
+      "Alcanada",
+      "Playa de Muro",
+      "Can Picafort",
+      "Pollença",
+    ],
   },
   {
     id: "manacor-llevant",
@@ -95,6 +103,7 @@ export const MALLORCA_ZONES: MallorcaZone[] = [
       "Llucmajor",
       "Colònia de Sant Jordi",
       "Cala Figuera",
+      "Portocolom",
     ],
   },
   {
