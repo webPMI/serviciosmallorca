@@ -27,11 +27,8 @@ export const fornSantFrancesc: ServiceItem = {
   coordinates: { lat: 39.7212, lng: 2.911 },
   schedule: "Lunes a Sábado: 07:30 - 20:00 | Domingos: 08:00 - 14:00",
   lastVerifiedAt: "2026-08-25",
-  image: "https://fornsantfrancesc.com/wp-content/uploads/2022/04/forn-sant-francesc-ensaimada-inca.jpg",
-  gallery: [
-    "https://fornsantfrancesc.com/wp-content/uploads/2022/04/forn-sant-francesc-obrador-artesanal.jpg",
-    "https://fornsantfrancesc.com/wp-content/uploads/2022/04/panades-cocarrois-inca.jpg",
-  ],
+  image: "/images/services/forn-sant-francesc-inca.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],
   emergency24h: false,

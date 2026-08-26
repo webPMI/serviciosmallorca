@@ -27,11 +27,8 @@ export const fornFondoPalma: ServiceItem = {
   coordinates: { lat: 39.5715, lng: 2.6488 },
   schedule: "Lunes a Sábado: 08:30 - 20:30 | Domingo: 09:00 - 14:00",
   lastVerifiedAt: "2026-08-25",
-  image: "https://fornfondo.com/wp-content/uploads/2022/03/forn-fondo-fachada-historica-palma.jpg",
-  gallery: [
-    "https://fornfondo.com/wp-content/uploads/2022/03/forn-fondo-ensaimadas-artesanas.jpg",
-    "https://fornfondo.com/wp-content/uploads/2022/03/forn-fondo-panades-cocarrois.jpg",
-  ],
+  image: "/images/services/forn-fondo-palma.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],
   emergency24h: false,

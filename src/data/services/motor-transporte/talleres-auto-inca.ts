@@ -27,11 +27,8 @@ export const talleresAutoInca: ServiceItem = {
   coordinates: { lat: 39.715, lng: 2.905 },
   schedule: "Lunes a Viernes: 08:00 - 13:30 | 15:00 - 19:00 (Sábados y Domingos Cerrado)",
   lastVerifiedAt: "2026-08-25",
-  image: "https://talleresautoinca.com/wp-content/uploads/2023/01/taller-mecanico-chapa-pintura-inca.jpg",
-  gallery: [
-    "https://talleresautoinca.com/wp-content/uploads/2023/01/cabina-pintura-ecologica-horno.jpg",
-    "https://talleresautoinca.com/wp-content/uploads/2023/01/bancada-reparacion-carroceria-itv.jpg",
-  ],
+  image: "/images/services/talleres-auto-inca-mecanica.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],
   emergency24h: false,

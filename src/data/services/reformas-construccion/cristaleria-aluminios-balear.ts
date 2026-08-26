@@ -27,11 +27,8 @@ export const cristaleriaBalear: ServiceItem = {
   coordinates: { lat: 39.605, lng: 2.671 },
   schedule: "Lunes a Viernes: 08:00 - 18:00 (Servicio de Medición y Urgencias de Rotura)",
   lastVerifiedAt: "2026-08-25",
-  image: "https://cristaleriabalear.com/wp-content/uploads/2023/01/cristaleria-cerramientos-vidrio-palma.jpg",
-  gallery: [
-    "https://cristaleriabalear.com/wp-content/uploads/2023/01/mamparas-bano-cristal-templado.jpg",
-    "https://cristaleriabalear.com/wp-content/uploads/2023/01/barandillas-vidrio-laminado-villas.jpg",
-  ],
+  image: "/images/services/cristaleria-aluminios-balear.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],
   emergency24h: false,

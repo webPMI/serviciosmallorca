@@ -27,11 +27,8 @@ export const canCompany: ServiceItem = {
   coordinates: { lat: 39.6582, lng: 3.0112 },
   schedule: "Lunes a Viernes: 08:30 - 18:00 | Sábados: 09:00 - 13:30 (Visitas a la Finca con Reserva)",
   lastVerifiedAt: "2026-08-25",
-  image: "https://cancompany.es/wp-content/uploads/2022/04/can-company-sobrasada-porc-negre-sineu.jpg",
-  gallery: [
-    "https://cancompany.es/wp-content/uploads/2022/04/porc-negre-mallorqui-pastos.jpg",
-    "https://cancompany.es/wp-content/uploads/2022/04/secadero-natural-embutidos-sineu.jpg",
-  ],
+  image: "/images/services/can-company-sineu.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],
   emergency24h: false,

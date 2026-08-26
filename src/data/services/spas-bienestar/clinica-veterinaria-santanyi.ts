@@ -27,11 +27,8 @@ export const veterinariaSantanyi: ServiceItem = {
   coordinates: { lat: 39.356, lng: 3.131 },
   schedule: "Lunes a Viernes: 09:30 - 19:30 | Sábados: 10:00 - 13:30 (Urgencias Telefónicas Disponibles)",
   lastVerifiedAt: "2026-08-25",
-  image: "https://veterinariasantanyi.com/wp-content/uploads/2023/01/clinica-veterinaria-santanyi-consultas.jpg",
-  gallery: [
-    "https://veterinariasantanyi.com/wp-content/uploads/2023/01/quirofano-veterinario-santanyi-cala-dor.jpg",
-    "https://veterinariasantanyi.com/wp-content/uploads/2023/01/analisis-clinicos-ecografia-santanyi.jpg",
-  ],
+  image: "/images/services/clinica-veterinaria-santanyi.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],
   emergency24h: true,

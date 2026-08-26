@@ -27,11 +27,8 @@ export const carpinteriaNavalMestres: ServiceItem = {
   coordinates: { lat: 39.561, lng: 2.673 },
   schedule: "Lunes a Viernes: 08:00 - 18:00 (Presupuestos Técnicos y Varada de Embarcaciones)",
   lastVerifiedAt: "2026-08-25",
-  image: "https://mestresdaixabalear.com/wp-content/uploads/2023/01/carpinteria-naval-mestres-aixa-portitxol.jpg",
-  gallery: [
-    "https://mestresdaixabalear.com/wp-content/uploads/2023/01/restauracion-llauts-madera-palma.jpg",
-    "https://mestresdaixabalear.com/wp-content/uploads/2023/01/cubiertas-teca-calafateado-yates.jpg",
-  ],
+  image: "/images/services/carpinteria-naval-mestres-daixa.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],
   emergency24h: false,

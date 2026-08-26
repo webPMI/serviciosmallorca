@@ -28,11 +28,8 @@ export const restauranteStagierBar: ServiceItem = {
   coordinates: { lat: 39.5721, lng: 2.6391 },
   schedule: "Martes a Sábado: 13:30 - 15:30, 20:00 - 23:00",
   lastVerifiedAt: "2026-08-26",
-  image: "https://stagierbar.com/wp-content/uploads/2023/04/stagier-bar-tapas-gourmet.jpg",
-  gallery: [
-    "https://stagierbar.com/wp-content/uploads/2023/04/stagier-bar-interior-santa-catalina.jpg",
-    "https://stagierbar.com/wp-content/uploads/2023/04/stagier-croqueta-truffle.jpg",
-  ],
+  image: "/images/services/restaurante-stagier-bar.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "gourmet", "jovenes"],
   languagesSpoken: ["es", "en", "ca"],
   emergency24h: false,

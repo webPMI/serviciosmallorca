@@ -28,11 +28,8 @@ export const restauranteBaibenPortals: ServiceItem = {
   coordinates: { lat: 39.5318, lng: 2.5505 },
   schedule: "Lunes a Domingo: 12:00 - 00:00",
   lastVerifiedAt: "2026-08-26",
-  image: "https://baibenportals.com/wp-content/uploads/2023/08/baiben-terrace-yachts.jpg",
-  gallery: [
-    "https://baibenportals.com/wp-content/uploads/2023/08/baiben-dish-signature.jpg",
-    "https://baibenportals.com/wp-content/uploads/2023/08/baiben-cocktail-sunset.jpg",
-  ],
+  image: "/images/services/restaurante-baiben-portals.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "expat", "gourmet"],
   languagesSpoken: ["es", "en", "de"],
   emergency24h: false,

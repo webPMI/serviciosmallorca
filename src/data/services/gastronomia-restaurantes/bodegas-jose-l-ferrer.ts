@@ -27,11 +27,8 @@ export const bodegasJoseLFerrer: ServiceItem = {
   coordinates: { lat: 39.6842, lng: 2.8415 },
   schedule: "Lunes a Viernes: 09:00 - 19:00 | Sábados: 10:00 - 18:00 | Domingos: 10:00 - 14:00",
   lastVerifiedAt: "2026-08-25",
-  image: "https://vinosferrer.com/wp-content/uploads/2022/04/bodegas-jose-l-ferrer-fachada-binissalem.jpg",
-  gallery: [
-    "https://vinosferrer.com/wp-content/uploads/2022/04/bodegas-jose-l-ferrer-sala-crianza.jpg",
-    "https://vinosferrer.com/wp-content/uploads/2022/04/cata-maridada-vinos-mallorca.jpg",
-  ],
+  image: "/images/services/bodegas-jose-l-ferrer.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de", "fr"],
   emergency24h: false,

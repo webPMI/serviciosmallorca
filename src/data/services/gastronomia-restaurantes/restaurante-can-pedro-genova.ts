@@ -27,11 +27,8 @@ export const restauranteCanPedro: ServiceItem = {
   coordinates: { lat: 39.558, lng: 2.602 },
   schedule: "Lunes a Domingo: 13:00 - 23:30 (Cocina Ininterrumpida todos los días)",
   lastVerifiedAt: "2026-08-25",
-  image: "https://canpedro.es/wp-content/uploads/2023/01/restaurante-can-pedro-genova-palma.jpg",
-  gallery: [
-    "https://canpedro.es/wp-content/uploads/2023/01/caracoles-mallorquina-alioli-can-pedro.jpg",
-    "https://canpedro.es/wp-content/uploads/2023/01/chuletillas-cordero-brasa-carbon-encina.jpg",
-  ],
+  image: "/images/services/restaurante-can-pedro-genova.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],
   emergency24h: false,

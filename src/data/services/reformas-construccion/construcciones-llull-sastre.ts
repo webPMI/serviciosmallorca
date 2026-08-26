@@ -27,11 +27,8 @@ export const construccionesLlullSastre: ServiceItem = {
   coordinates: { lat: 39.6042, lng: 2.6735 },
   schedule: "Lunes a Viernes: 08:00 - 18:00 (Sábados y Domingos Cerrado)",
   lastVerifiedAt: "2026-08-25",
-  image: "https://llullsastre.com/wp-content/uploads/2022/04/llull-sastre-villa-luxury.jpg",
-  gallery: [
-    "https://llullsastre.com/wp-content/uploads/2022/04/llull-sastre-finca-rehabilitacion.jpg",
-    "https://llullsastre.com/wp-content/uploads/2022/04/llull-sastre-oficinas-centrales.jpg",
-  ],
+  image: "/images/services/construcciones-llull-sastre.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],
   emergency24h: false,

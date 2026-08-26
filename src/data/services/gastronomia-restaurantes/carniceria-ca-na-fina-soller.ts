@@ -27,11 +27,8 @@ export const carniceriaCaNaFina: ServiceItem = {
   coordinates: { lat: 39.7668, lng: 2.7162 },
   schedule: "Lunes a Sábado: 08:30 - 14:00 | 17:00 - 20:00 (Domingos Cerrado)",
   lastVerifiedAt: "2026-08-25",
-  image: "https://canafina.com/wp-content/uploads/2023/01/carniceria-ca-na-fina-soller-sobrassada.jpg",
-  gallery: [
-    "https://canafina.com/wp-content/uploads/2023/01/embutidos-artesanos-porc-negre.jpg",
-    "https://canafina.com/wp-content/uploads/2023/01/cordero-de-pastura-tramuntana.jpg",
-  ],
+  image: "/images/services/carniceria-ca-na-fina-soller.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de", "fr"],
   emergency24h: false,

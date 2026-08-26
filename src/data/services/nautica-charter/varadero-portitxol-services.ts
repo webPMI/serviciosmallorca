@@ -27,11 +27,8 @@ export const varaderoPortitxol: ServiceItem = {
   coordinates: { lat: 39.562, lng: 2.671 },
   schedule: "Lunes a Viernes: 08:00 - 18:00 | Sábados: 08:30 - 13:30 (Emergencias Náuticas)",
   lastVerifiedAt: "2026-08-25",
-  image: "https://varaderoportitxol.com/wp-content/uploads/2023/01/varadero-portitxol-mantenimiento-barcos.jpg",
-  gallery: [
-    "https://varaderoportitxol.com/wp-content/uploads/2023/01/antifouling-patente-casco-mallorca.jpg",
-    "https://varaderoportitxol.com/wp-content/uploads/2023/01/carpinteria-naval-teca-embarcaciones.jpg",
-  ],
+  image: "/images/services/varadero-portitxol-services.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],
   emergency24h: true,

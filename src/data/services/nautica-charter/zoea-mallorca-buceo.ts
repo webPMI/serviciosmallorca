@@ -27,11 +27,8 @@ export const zoeaBuceoMallorca: ServiceItem = {
   coordinates: { lat: 39.5165, lng: 2.482 },
   schedule: "Lunes a Domingo: 08:30 - 19:30 (Salidas diarias a Reservas Marinas)",
   lastVerifiedAt: "2026-08-25",
-  image: "https://zoeamallorca.com/wp-content/uploads/2023/01/barco-buceo-reservas-marinas-calvia.jpg",
-  gallery: [
-    "https://zoeamallorca.com/wp-content/uploads/2023/01/buceo-islas-malgrats-el-toro.jpg",
-    "https://zoeamallorca.com/wp-content/uploads/2023/01/bautismo-buceo-santa-ponsa.jpg",
-  ],
+  image: "/images/services/zoea-mallorca-buceo-charter.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "en", "de", "ca"],
   emergency24h: false,

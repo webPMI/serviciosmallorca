@@ -27,11 +27,8 @@ export const veterinariaAndratx: ServiceItem = {
   coordinates: { lat: 39.5765, lng: 2.422 },
   schedule: "Lunes a Viernes: 09:00 - 19:30 | Sábados: 09:30 - 13:30 (Urgencias 24h Disponibles)",
   lastVerifiedAt: "2026-08-25",
-  image: "https://veterinariaandratx.com/wp-content/uploads/2023/01/clinica-veterinaria-andratx-consultas.jpg",
-  gallery: [
-    "https://veterinariaandratx.com/wp-content/uploads/2023/01/quirofano-veterinario-anestesia-inhalatoria.jpg",
-    "https://veterinariaandratx.com/wp-content/uploads/2023/01/analisis-clinicos-mascotas-port-andratx.jpg",
-  ],
+  image: "/images/services/clinica-veterinaria-andratx.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],
   emergency24h: true,

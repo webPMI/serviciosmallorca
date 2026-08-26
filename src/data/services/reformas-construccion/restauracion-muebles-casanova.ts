@@ -27,11 +27,8 @@ export const restauracionCasanova: ServiceItem = {
   coordinates: { lat: 39.5722, lng: 2.636 },
   schedule: "Lunes a Viernes: 08:30 - 13:30 | 15:30 - 19:00 (Sábados con Cita Previa)",
   lastVerifiedAt: "2026-08-25",
-  image: "https://restauracioncasanova.com/wp-content/uploads/2023/01/taller-restauracion-muebles-antiguos-palma.jpg",
-  gallery: [
-    "https://restauracioncasanova.com/wp-content/uploads/2023/01/barnizado-muneca-gomalaca-madera-noble.jpg",
-    "https://restauracioncasanova.com/wp-content/uploads/2023/01/restauracion-comodas-mallorquinas-marqueteria.jpg",
-  ],
+  image: "/images/services/restauracion-muebles-casanova.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],
   emergency24h: false,

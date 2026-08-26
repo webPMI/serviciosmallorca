@@ -27,11 +27,8 @@ export const fornGelabertLlubi: ServiceItem = {
   coordinates: { lat: 39.6995, lng: 3.005 },
   schedule: "Lunes a Domingo: 07:00 - 14:00 | 17:00 - 20:30 (Abierto todos los días)",
   lastVerifiedAt: "2026-08-25",
-  image: "https://forngelabert.com/wp-content/uploads/2023/01/forn-gelabert-horno-lena-llubi.jpg",
-  gallery: [
-    "https://forngelabert.com/wp-content/uploads/2023/01/cremadillos-hojaldre-crema-sobrasada.jpg",
-    "https://forngelabert.com/wp-content/uploads/2023/01/ensaimada-albaricoques-porreres.jpg",
-  ],
+  image: "/images/services/forn-gelabert-llubi.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],
   emergency24h: false,

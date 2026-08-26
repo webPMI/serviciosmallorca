@@ -27,11 +27,8 @@ export const fontaneriaPomar: ServiceItem = {
   coordinates: { lat: 39.719, lng: 2.911 },
   schedule: "Lunes a Viernes: 08:00 - 18:30 (Servicio de Urgencias de Fugas y Calderas)",
   lastVerifiedAt: "2026-08-25",
-  image: "https://instalacionespomar.com/wp-content/uploads/2023/01/fontaneria-aerotermia-instalaciones-inca.jpg",
-  gallery: [
-    "https://instalacionespomar.com/wp-content/uploads/2023/01/suelo-radiante-bomba-calor.jpg",
-    "https://instalacionespomar.com/wp-content/uploads/2023/01/descalcificadores-agua-mallorca.jpg",
-  ],
+  image: "/images/services/fontaneria-instalaciones-pomar-inca.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],
   emergency24h: true,

@@ -27,11 +27,8 @@ export const tapiceriaToldosBalear: ServiceItem = {
   coordinates: { lat: 39.6055, lng: 2.6698 },
   schedule: "Lunes a Viernes: 08:00 - 13:30 | 15:00 - 18:30 (Sábados y Domingos Cerrado)",
   lastVerifiedAt: "2026-08-25",
-  image: "https://tapiceriabalear.com/wp-content/uploads/2023/01/tapiceria-artesanal-muebles-mallorca.jpg",
-  gallery: [
-    "https://tapiceriabalear.com/wp-content/uploads/2023/01/toldos-pergolas-terrazas-villas.jpg",
-    "https://tapiceriabalear.com/wp-content/uploads/2023/01/tapiceria-nautica-barcos-palma.jpg",
-  ],
+  image: "/images/services/tapiceria-toldos-balear.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],
   emergency24h: false,

@@ -27,11 +27,8 @@ export const rataCorner: ServiceItem = {
   coordinates: { lat: 39.5714, lng: 2.6538 },
   schedule: "Lunes a Sábado: 10:00 - 14:00 | 16:30 - 20:30 (Domingos Cerrado)",
   lastVerifiedAt: "2026-08-25",
-  image: "https://ratacorner.com/wp-content/uploads/2023/02/rata-corner-fachada-llibreria.jpg",
-  gallery: [
-    "https://ratacorner.com/wp-content/uploads/2023/02/rata-corner-interior-libros.jpg",
-    "https://ratacorner.com/wp-content/uploads/2023/02/rata-corner-vinilos-cafe.jpg",
-  ],
+  image: "/images/services/rata-corner-palma.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en"],
   emergency24h: false,

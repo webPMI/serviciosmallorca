@@ -135,7 +135,7 @@ export const capRocatSpa: ServiceItem = {
       "Paar-Verwöhnpakete mit eisgekühltem Cava und Früchten",
     ],
   },
-  image: "/images/categories/cap-rocat-spa.svg",
+  image: "/images/services/cap-rocat-spa-wellness-mallorca.svg",
   gallery: ["/images/categories/cap-rocat-spa.svg"],
   schedule: "Lunes a Domingo: 10:00 - 20:00 (Cita previa obligatoria)",
   lastVerifiedAt: "2026-08-26",

@@ -28,11 +28,8 @@ export const restauranteLasTerrazasBendinat: ServiceItem = {
   coordinates: { lat: 39.5312, lng: 2.5694 },
   schedule: "Lunes a Domingo: 13:00 - 16:00, 19:30 - 23:00 (Abril a Octubre)",
   lastVerifiedAt: "2026-08-26",
-  image: "https://hotelbendinat.es/wp-content/uploads/2023/04/terrazas-bendinat-mar-acantilado.jpg",
-  gallery: [
-    "https://hotelbendinat.es/wp-content/uploads/2023/04/paella-marisco-bendinat.jpg",
-    "https://hotelbendinat.es/wp-content/uploads/2023/04/sunset-las-terrazas-bendinat.jpg",
-  ],
+  image: "/images/services/restaurante-las-terrazas-bendinat.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "gourmet"],
   languagesSpoken: ["es", "en", "de", "ca"],
   emergency24h: false,

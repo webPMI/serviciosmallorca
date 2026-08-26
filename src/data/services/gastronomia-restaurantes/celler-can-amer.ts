@@ -173,11 +173,8 @@ export const cellerCanAmer: ServiceItem = {
     ca: ["Dinars i sopars gurmet", "Menú degustació", "Tastos de vins privats", "Cuina de temporada"],
     de: ["Gourmet-Lunch & Dinner", "Degustationsmenü", "Private Weinverkostungen", "Saisonale Küche"],
   },
-  image: "https://canamer.es/images/celler-can-amer-boveda.jpg",
-  gallery: [
-    "https://canamer.es/images/celler-can-amer-plato-autor.jpg",
-    "https://canamer.es/images/celler-can-amer-bodega.jpg",
-  ],
+  image: "/images/services/celler-can-amer.svg",
+  gallery: [],
   schedule: "Mar - Sáb: 13:00 - 15:30, 20:00 - 23:00 | Dom: 13:00 - 16:00 | Lun: Cerrado",
   lastVerifiedAt: "2026-08-26",
   createdAt: "2026-08-26",

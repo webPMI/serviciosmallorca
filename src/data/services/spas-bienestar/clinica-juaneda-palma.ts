@@ -27,11 +27,8 @@ export const clinicaJuanedaPalma: ServiceItem = {
   coordinates: { lat: 39.5768, lng: 2.6312 },
   schedule: "Lunes a Domingo: 24 Horas (Servicio de Urgencias y Hospitalización Permanente)",
   lastVerifiedAt: "2026-08-25",
-  image: "https://juaneda.es/wp-content/uploads/2022/06/clinica-juaneda-palma-fachada.jpg",
-  gallery: [
-    "https://juaneda.es/wp-content/uploads/2022/06/juaneda-quirofano-tecnologia.jpg",
-    "https://juaneda.es/wp-content/uploads/2022/06/juaneda-habitacion-suite.jpg",
-  ],
+  image: "/images/services/clinica-juaneda-palma.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de", "fr", "sv"],
   emergency24h: true,

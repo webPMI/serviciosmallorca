@@ -27,11 +27,8 @@ export const carpinteriaFiol: ServiceItem = {
   coordinates: { lat: 39.5982, lng: 2.7012 },
   schedule: "Lunes a Viernes: 08:00 - 13:00 | 15:00 - 18:30 (Sábados y Domingos Cerrado)",
   lastVerifiedAt: "2026-08-25",
-  image: "https://carpinteriafiol.com/wp-content/uploads/2022/04/carpinteria-fiol-taller-madera.jpg",
-  gallery: [
-    "https://carpinteriafiol.com/wp-content/uploads/2022/04/persianas-mallorquinas-madera-iroko.jpg",
-    "https://carpinteriafiol.com/wp-content/uploads/2022/04/muebles-a-medida-armarios-cocinas.jpg",
-  ],
+  image: "/images/services/carpinteria-fiol-marratxi.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],
   emergency24h: false,

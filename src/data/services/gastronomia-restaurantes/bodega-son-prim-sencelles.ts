@@ -27,11 +27,8 @@ export const bodegaSonPrim: ServiceItem = {
   coordinates: { lat: 39.658, lng: 2.902 },
   schedule: "Lunes a Sábado: 10:00 - 18:00 (Visitas Guiadas a la Bodega con Cata de Vinos)",
   lastVerifiedAt: "2026-08-25",
-  image: "https://sonprim.com/wp-content/uploads/2023/01/bodega-son-prim-vinedos-sencelles.jpg",
-  gallery: [
-    "https://sonprim.com/wp-content/uploads/2023/01/sala-barricas-roble-frances-son-prim.jpg",
-    "https://sonprim.com/wp-content/uploads/2023/01/cata-vinos-monovarietales-maridaje.jpg",
-  ],
+  image: "/images/services/bodega-son-prim-sencelles.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],
   emergency24h: false,

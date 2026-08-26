@@ -142,11 +142,8 @@ export const marYMarPeguera: ServiceItem = {
     ca: "Nascut de la passió pel litoral balear i la gastronomia de producte fresc, Mar y Mar s'ha consolidat a Peguera com un punt de trobada on el ritme pausat de la mar s'uneix al millor peix de l'illa. Amb un equip professional i un emplaçament sobre l'arena, ofereix una experiència que celebra l'estil de vida mediterrani.",
     de: "Gegründet aus der Leidenschaft für die mallorquinische Küste und ehrliche Produktküche, hat sich das Mar y Mar in Peguera als Institution etabliert. Hier verbindet sich die entspannte Atmosphäre des Meeres mit exzellentem Frischfisch und herzlicher Gastfreundschaft zu einem unvergesslichen mediterranen Gesamterlebnis.",
   },
-  image: "https://marymar-mallorca.com/wp-content/uploads/2021/06/marymar-terraza-peguera.jpg",
-  gallery: [
-    "https://marymar-mallorca.com/wp-content/uploads/2021/06/marymar-paella-marisco.jpg",
-    "https://marymar-mallorca.com/wp-content/uploads/2021/06/marymar-vistas-mar.jpg",
-  ],
+  image: "/images/services/mar-y-mar-peguera.svg",
+  gallery: [],
   schedule: "Lunes a Domingo: 12:00 - 23:00 (Cocina: 12:30 - 22:00)",
   confidenceScore: 95,
   verificationStatus: "verified",

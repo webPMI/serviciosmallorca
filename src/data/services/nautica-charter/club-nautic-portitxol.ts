@@ -27,11 +27,8 @@ export const clubNauticPortitxol: ServiceItem = {
   coordinates: { lat: 39.5614, lng: 2.6712 },
   schedule: "Lunes a Domingo: 08:00 - 23:00 (Oficinas: 09:00 - 18:00)",
   lastVerifiedAt: "2026-08-25",
-  image: "https://cnportitxol.com/wp-content/uploads/2023/04/club-nautic-portitxol-puerto.jpg",
-  gallery: [
-    "https://cnportitxol.com/wp-content/uploads/2023/04/portitxol-embarcaciones-pantalan.jpg",
-    "https://cnportitxol.com/wp-content/uploads/2023/04/portitxol-restaurante-mar.jpg",
-  ],
+  image: "/images/services/club-nautic-portitxol.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],
   emergency24h: false,

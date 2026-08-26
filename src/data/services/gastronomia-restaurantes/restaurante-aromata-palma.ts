@@ -28,11 +28,8 @@ export const restauranteAromataPalma: ServiceItem = {
   coordinates: { lat: 39.5735, lng: 2.6457 },
   schedule: "Martes a Sábado: 13:00 - 15:30, 20:00 - 22:30",
   lastVerifiedAt: "2026-08-26",
-  image: "https://aromatarestaurant.com/wp-content/uploads/2023/05/aromata-patio-palacio.jpg",
-  gallery: [
-    "https://aromatarestaurant.com/wp-content/uploads/2023/05/aromata-degustacion-dish.jpg",
-    "https://aromatarestaurant.com/wp-content/uploads/2023/05/andreu-genestra-chef-aromata.jpg",
-  ],
+  image: "/images/services/restaurante-aromata-palma.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "gourmet"],
   languagesSpoken: ["es", "en", "ca", "de"],
   emergency24h: false,

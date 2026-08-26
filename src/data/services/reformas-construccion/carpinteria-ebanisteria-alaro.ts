@@ -27,11 +27,8 @@ export const carpinteriaAlaro: ServiceItem = {
   coordinates: { lat: 39.705, lng: 2.795 },
   schedule: "Lunes a Viernes: 07:30 - 18:00 (Medición Técnica en Obra con Cita Previa)",
   lastVerifiedAt: "2026-08-25",
-  image: "https://carpinteriaalaro.com/wp-content/uploads/2023/01/taller-carpinteria-madera-alaro-fincas.jpg",
-  gallery: [
-    "https://carpinteriaalaro.com/wp-content/uploads/2023/01/persianas-mallorquinas-madera-iroko.jpg",
-    "https://carpinteriaalaro.com/wp-content/uploads/2023/01/puertas-entrada-rusticas-finca.jpg",
-  ],
+  image: "/images/services/carpinteria-ebanisteria-alaro.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],
   emergency24h: false,

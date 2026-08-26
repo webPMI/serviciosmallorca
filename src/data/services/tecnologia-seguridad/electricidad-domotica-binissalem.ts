@@ -27,12 +27,8 @@ export const electricidadBinissalem: ServiceItem = {
   coordinates: { lat: 39.688, lng: 2.842 },
   schedule: "Lunes a Viernes: 08:00 - 18:30 (Servicio de Urgencias Eléctricas 24h)",
   lastVerifiedAt: "2026-08-25",
-  image:
-    "https://electricidadbinissalem.com/wp-content/uploads/2023/01/instalador-electricista-domotica-fincas-mallorca.jpg",
-  gallery: [
-    "https://electricidadbinissalem.com/wp-content/uploads/2023/01/cuadros-electricos-automatizacion-knx.jpg",
-    "https://electricidadbinissalem.com/wp-content/uploads/2023/01/placas-solares-fotovoltaicas-autoconsumo.jpg",
-  ],
+  image: "/images/services/electricidad-domotica-binissalem.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],
   emergency24h: true,

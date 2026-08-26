@@ -27,11 +27,8 @@ export const piscinasPonentAndratx: ServiceItem = {
   coordinates: { lat: 39.576, lng: 2.421 },
   schedule: "Lunes a Viernes: 08:00 - 18:30 (Servicio de Mantenimiento y Guardias en Villas)",
   lastVerifiedAt: "2026-08-25",
-  image: "https://piscinasponentandratx.com/wp-content/uploads/2023/01/mantenimiento-piscinas-villas-andratx.jpg",
-  gallery: [
-    "https://piscinasponentandratx.com/wp-content/uploads/2023/01/cloracion-salina-bombas-calor-piscinas.jpg",
-    "https://piscinasponentandratx.com/wp-content/uploads/2023/01/limpieza-fondos-tratamiento-quimico-agua.jpg",
-  ],
+  image: "/images/services/piscinas-spas-ponent-andratx.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],
   emergency24h: true,

@@ -27,11 +27,8 @@ export const oliDeJornets: ServiceItem = {
   coordinates: { lat: 39.645, lng: 2.901 },
   schedule: "Lunes a Viernes: 09:00 - 17:00 | Visitas al Olivar y Almazara con Cita Previa",
   lastVerifiedAt: "2026-08-25",
-  image: "https://olidejornets.com/wp-content/uploads/2023/01/finca-jornets-olivos-centenarios-sencelles.jpg",
-  gallery: [
-    "https://olidejornets.com/wp-content/uploads/2023/01/almazara-prensado-frio-aove.jpg",
-    "https://olidejornets.com/wp-content/uploads/2023/01/botella-aove-ecologico-mallorca.jpg",
-  ],
+  image: "/images/services/oli-de-jornets-sencelles.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],
   emergency24h: false,

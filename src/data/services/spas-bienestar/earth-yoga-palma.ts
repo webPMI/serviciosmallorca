@@ -27,11 +27,8 @@ export const earthYogaPalma: ServiceItem = {
   coordinates: { lat: 39.5742, lng: 2.6412 },
   schedule: "Lunes a Viernes: 08:00 - 21:00 | Sábados y Domingos: 09:00 - 14:00",
   lastVerifiedAt: "2026-08-25",
-  image: "https://earthyoga.es/wp-content/uploads/2022/03/earth-yoga-palma-sala-shala.jpg",
-  gallery: [
-    "https://earthyoga.es/wp-content/uploads/2022/03/earth-yoga-clase-vinyasa.jpg",
-    "https://earthyoga.es/wp-content/uploads/2022/03/earth-yoga-meditacion-patio.jpg",
-  ],
+  image: "/images/services/earth-yoga-palma.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "expat"],
   languagesSpoken: ["es", "en", "ca", "de"],
   emergency24h: false,

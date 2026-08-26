@@ -27,11 +27,8 @@ export const bigmatVergerMallorca: ServiceItem = {
   coordinates: { lat: 39.5678, lng: 3.2012 },
   schedule: "Lunes a Viernes: 07:30 - 19:30 | Sábados: 08:00 - 13:00 (Domingos Cerrado)",
   lastVerifiedAt: "2026-08-25",
-  image: "https://bigmatverger.com/wp-content/uploads/2022/03/bigmat-verger-showroom-manacor.jpg",
-  gallery: [
-    "https://bigmatverger.com/wp-content/uploads/2022/03/bigmat-verger-ceramica-diseno.jpg",
-    "https://bigmatverger.com/wp-content/uploads/2022/03/bigmat-verger-camion-grua-reparto.jpg",
-  ],
+  image: "/images/services/bigmat-verger-mallorca.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],
   emergency24h: false,

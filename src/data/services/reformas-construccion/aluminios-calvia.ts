@@ -27,11 +27,8 @@ export const aluminiosCalvia: ServiceItem = {
   coordinates: { lat: 39.5245, lng: 2.5012 },
   schedule: "Lunes a Viernes: 08:00 - 13:00 | 14:30 - 18:00 (Sábados y Domingos Cerrado)",
   lastVerifiedAt: "2026-08-25",
-  image: "https://aluminioscalvia.com/wp-content/uploads/2023/01/ventanas-aluminio-minimalista-mallorca.jpg",
-  gallery: [
-    "https://aluminioscalvia.com/wp-content/uploads/2023/01/barandillas-cristal-villas-calvia.jpg",
-    "https://aluminioscalvia.com/wp-content/uploads/2023/01/cerramientos-cortinas-cristal-terrazas.jpg",
-  ],
+  image: "/images/services/aluminios-cristaleria-calvia.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],
   emergency24h: false,

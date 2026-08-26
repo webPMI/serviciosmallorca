@@ -27,11 +27,8 @@ export const cellerEsCellerPetra: ServiceItem = {
   coordinates: { lat: 39.614, lng: 3.112 },
   schedule: "Lunes a Domingo: 13:00 - 16:00 | 20:00 - 23:30 (Abierto todos los días)",
   lastVerifiedAt: "2026-08-25",
-  image: "https://escellerpetra.com/wp-content/uploads/2023/01/es-celler-petra-comedor-rustico.jpg",
-  gallery: [
-    "https://escellerpetra.com/wp-content/uploads/2023/01/sopes-mallorquines-greixonera-petra.jpg",
-    "https://escellerpetra.com/wp-content/uploads/2023/01/porcella-rostida-patates-celler.jpg",
-  ],
+  image: "/images/services/celler-es-celler-petra.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],
   emergency24h: false,

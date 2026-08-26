@@ -27,11 +27,8 @@ export const tallerLlevantManacor: ServiceItem = {
   coordinates: { lat: 39.574, lng: 3.212 },
   schedule: "Lunes a Viernes: 08:00 - 13:30 | 15:00 - 19:00 (Sábados y Domingos Cerrado)",
   lastVerifiedAt: "2026-08-25",
-  image: "https://tallerllevantmanacor.com/wp-content/uploads/2023/01/taller-mecanico-diagnosis-manacor.jpg",
-  gallery: [
-    "https://tallerllevantmanacor.com/wp-content/uploads/2023/01/diagnosis-electronica-cajas-automaticas.jpg",
-    "https://tallerllevantmanacor.com/wp-content/uploads/2023/01/mantenimiento-frenos-itv-manacor.jpg",
-  ],
+  image: "/images/services/taller-mecanico-llevant-manacor.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],
   emergency24h: false,

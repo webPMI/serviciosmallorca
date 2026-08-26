@@ -27,11 +27,8 @@ export const canMiquelPalma: ServiceItem = {
   coordinates: { lat: 39.571, lng: 2.6432 },
   schedule: "Lunes a Domingo: 09:00 - 23:30",
   lastVerifiedAt: "2026-08-25",
-  image: "https://canmiquel.es/wp-content/uploads/2022/04/can-miquel-helados-artesanos-palma.jpg",
-  gallery: [
-    "https://canmiquel.es/wp-content/uploads/2022/04/can-miquel-vitrina-sabores.jpg",
-    "https://canmiquel.es/wp-content/uploads/2022/04/can-miquel-ensaimada-helada.jpg",
-  ],
+  image: "/images/services/can-miquel-palma.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],
   emergency24h: false,

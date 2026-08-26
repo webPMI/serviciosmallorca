@@ -27,11 +27,8 @@ export const veterinariaFelanitx: ServiceItem = {
   coordinates: { lat: 39.469, lng: 3.149 },
   schedule: "Lunes a Viernes: 09:30 - 19:30 | Sábados: 10:00 - 13:30 (Urgencias Telefónicas Disponibles)",
   lastVerifiedAt: "2026-08-25",
-  image: "https://veterinariafelanitx.com/wp-content/uploads/2023/01/clinica-veterinaria-felanitx-consultas.jpg",
-  gallery: [
-    "https://veterinariafelanitx.com/wp-content/uploads/2023/01/quirofano-veterinario-felanitx-portocolom.jpg",
-    "https://veterinariafelanitx.com/wp-content/uploads/2023/01/analisis-clinicos-mascotas-felanitx.jpg",
-  ],
+  image: "/images/services/clinica-veterinaria-felanitx.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],
   emergency24h: true,

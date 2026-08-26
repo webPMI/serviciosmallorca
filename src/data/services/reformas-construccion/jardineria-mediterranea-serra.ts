@@ -27,11 +27,8 @@ export const jardineriaSerra: ServiceItem = {
   coordinates: { lat: 39.6125, lng: 2.645 },
   schedule: "Lunes a Viernes: 07:30 - 18:00 | Sábados: 08:00 - 13:00 (Urgencias de Poda y Riego)",
   lastVerifiedAt: "2026-08-25",
-  image: "https://jardineriaserra.com/wp-content/uploads/2023/01/jardineria-mediterranea-villas-mallorca.jpg",
-  gallery: [
-    "https://jardineriaserra.com/wp-content/uploads/2023/01/poda-palmeras-altura-seguridad.jpg",
-    "https://jardineriaserra.com/wp-content/uploads/2023/01/riego-por-goteo-inteligente.jpg",
-  ],
+  image: "/images/services/jardineria-paisajismo-serra.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],
   emergency24h: false,

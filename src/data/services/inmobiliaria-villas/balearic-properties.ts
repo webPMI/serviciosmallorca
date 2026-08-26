@@ -27,11 +27,8 @@ export const balearicProperties: ServiceItem = {
   coordinates: { lat: 39.8765, lng: 3.0162 },
   schedule: "Lunes a Viernes: 09:00 - 19:00 | Sábados: 10:00 - 14:00",
   lastVerifiedAt: "2026-08-25",
-  image: "https://balearic-properties.com/wp-content/uploads/2023/02/balearic-properties-pollensa-office.jpg",
-  gallery: [
-    "https://balearic-properties.com/wp-content/uploads/2023/02/villa-luxury-pollensa-balearic.jpg",
-    "https://balearic-properties.com/wp-content/uploads/2023/02/finca-rustica-norte-mallorca.jpg",
-  ],
+  image: "/images/services/balearic-properties.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "expat"],
   languagesSpoken: ["es", "en", "de", "ca", "fr"],
   emergency24h: false,

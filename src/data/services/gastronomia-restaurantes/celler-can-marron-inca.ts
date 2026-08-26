@@ -27,11 +27,8 @@ export const cellerCanMarron: ServiceItem = {
   coordinates: { lat: 39.722, lng: 2.907 },
   schedule: "Lunes a Domingo: 13:00 - 16:00 | 20:00 - 23:00 (Martes Noche Cerrado)",
   lastVerifiedAt: "2026-08-25",
-  image: "https://cellercanmarron.com/wp-content/uploads/2023/01/celler-can-marron-bovedas-inca.jpg",
-  gallery: [
-    "https://cellercanmarron.com/wp-content/uploads/2023/01/porcella-mallorquina-forn-lleny.jpg",
-    "https://cellercanmarron.com/wp-content/uploads/2023/01/frit-mallorqui-botifarro.jpg",
-  ],
+  image: "/images/services/celler-can-marron-inca.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],
   emergency24h: false,

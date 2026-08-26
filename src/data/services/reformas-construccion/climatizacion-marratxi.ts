@@ -27,12 +27,8 @@ export const climaMarratxi: ServiceItem = {
   coordinates: { lat: 39.619, lng: 2.738 },
   schedule: "Lunes a Viernes: 08:00 - 18:30 (Servicio Técnico y Urgencias de Clima)",
   lastVerifiedAt: "2026-08-25",
-  image:
-    "https://climatizacionmarratxi.com/wp-content/uploads/2023/01/instalacion-aire-acondicionado-aerotermia-mallorca.jpg",
-  gallery: [
-    "https://climatizacionmarratxi.com/wp-content/uploads/2023/01/climatizacion-conductos-daikin-mitsubishi.jpg",
-    "https://climatizacionmarratxi.com/wp-content/uploads/2023/01/bomba-calor-aerotermia-suelo-radiante.jpg",
-  ],
+  image: "/images/services/climatizacion-marratxi-servicios.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],
   emergency24h: false,

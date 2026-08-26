@@ -163,10 +163,10 @@ export const cellerSaPremsa: ServiceItem = {
     ca: ["Dinars i sopars tradicionals", "Menú del dia", "Reserves per a grups", "Plats típics mallorquins"],
     de: ["Traditionelles Mittag- & Abendessen", "Tagesmenü", "Gruppenreservierungen", "Mallorquinische Spezialitäten"],
   },
-  image: "https://cellersapremsa.com/images/celler-sa-premsa-salon-principal.jpg",
+  image: "https://www.cellersapremsa.com/images/home/nosotros2.jpg",
   gallery: [
-    "https://cellersapremsa.com/images/celler-sa-premsa-platos-tradicionales.jpg",
-    "https://cellersapremsa.com/images/celler-sa-premsa-porcella.jpg",
+    "https://www.cellersapremsa.com/images/home/galeria/1.jpg",
+    "https://www.cellersapremsa.com/images/home/galeria/2.jpg",
   ],
   schedule: "Lun - Sáb: 13:00 - 16:00, 19:30 - 23:00 | Dom: Cerrado",
   lastVerifiedAt: "2026-08-26",

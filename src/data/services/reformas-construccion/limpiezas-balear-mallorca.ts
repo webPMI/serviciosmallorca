@@ -27,11 +27,8 @@ export const limpiezasBalear: ServiceItem = {
   coordinates: { lat: 39.5935, lng: 2.6742 },
   schedule: "Lunes a Viernes: 07:30 - 19:30 | Sábados: 08:00 - 14:00 (Urgencias y Fines de Obra)",
   lastVerifiedAt: "2026-08-25",
-  image: "https://limpiezasbalear.com/wp-content/uploads/2023/01/limpieza-profesional-villas-mallorca.jpg",
-  gallery: [
-    "https://limpiezasbalear.com/wp-content/uploads/2023/01/limpieza-cristales-altura-osmosis.jpg",
-    "https://limpiezasbalear.com/wp-content/uploads/2023/01/limpieza-fin-de-obra-palma.jpg",
-  ],
+  image: "/images/services/limpiezas-balear-mallorca.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],
   emergency24h: false,

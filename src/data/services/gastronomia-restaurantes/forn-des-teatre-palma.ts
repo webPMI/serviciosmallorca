@@ -27,11 +27,8 @@ export const fornDesTeatre: ServiceItem = {
   coordinates: { lat: 39.5714, lng: 2.6515 },
   schedule: "Lunes a Domingo: 08:00 - 20:30 (Horario continuo)",
   lastVerifiedAt: "2026-08-25",
-  image: "https://forndesteatre.com/wp-content/uploads/2023/01/fachada-modernista-forn-des-teatre-palma.jpg",
-  gallery: [
-    "https://forndesteatre.com/wp-content/uploads/2023/01/ensaimada-lisa-crema-chocolate.jpg",
-    "https://forndesteatre.com/wp-content/uploads/2023/01/panades-cocarrois-horno-lena.jpg",
-  ],
+  image: "/images/services/forn-des-teatre-palma.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],
   emergency24h: false,

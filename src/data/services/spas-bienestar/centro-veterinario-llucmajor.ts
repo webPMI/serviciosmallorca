@@ -27,11 +27,8 @@ export const veterinarioLlucmajor: ServiceItem = {
   coordinates: { lat: 39.489, lng: 2.891 },
   schedule: "Lunes a Viernes: 09:00 - 19:30 | Sábados: 09:30 - 13:30 (Servicio de Urgencias Telefónicas)",
   lastVerifiedAt: "2026-08-25",
-  image: "https://veterinariollucmajor.com/wp-content/uploads/2023/01/clinica-veterinaria-llucmajor-consultas.jpg",
-  gallery: [
-    "https://veterinariollucmajor.com/wp-content/uploads/2023/01/quirofano-cirugia-veterinaria-migjorn.jpg",
-    "https://veterinariollucmajor.com/wp-content/uploads/2023/01/analisis-clinicos-ecografia-perros-gatos.jpg",
-  ],
+  image: "/images/services/centro-veterinario-llucmajor.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],
   emergency24h: true,

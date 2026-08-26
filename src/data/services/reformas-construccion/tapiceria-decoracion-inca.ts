@@ -27,11 +27,8 @@ export const tapiceriaDecoracionInca: ServiceItem = {
   coordinates: { lat: 39.718, lng: 2.91 },
   schedule: "Lunes a Viernes: 08:30 - 13:30 | 16:00 - 19:30 (Visitas y Muestrarios a Domicilio)",
   lastVerifiedAt: "2026-08-25",
-  image: "https://tapiceriainca.com/wp-content/uploads/2023/01/taller-tapiceria-artesanal-inca.jpg",
-  gallery: [
-    "https://tapiceriainca.com/wp-content/uploads/2023/01/retapizado-sofas-telas-lenguas-mallorquinas.jpg",
-    "https://tapiceriainca.com/wp-content/uploads/2023/01/cojines-nauticos-espumas-alta-densidad.jpg",
-  ],
+  image: "/images/services/tapiceria-decoracion-inca.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],
   emergency24h: false,

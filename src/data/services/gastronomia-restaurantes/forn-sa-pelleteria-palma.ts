@@ -27,11 +27,8 @@ export const fornSaPelleteria: ServiceItem = {
   coordinates: { lat: 39.5678, lng: 2.6535 },
   schedule: "Lunes a Sábado: 07:30 - 14:30 | 17:00 - 20:30 (Domingos Cerrado)",
   lastVerifiedAt: "2026-08-25",
-  image: "https://fornsapelleteria.com/wp-content/uploads/2023/01/forn-sa-pelleteria-horno-madera-palma.jpg",
-  gallery: [
-    "https://fornsapelleteria.com/wp-content/uploads/2023/01/pan-moreno-mallorquin-xeixa.jpg",
-    "https://fornsapelleteria.com/wp-content/uploads/2023/01/ensaimada-crema-chocolate-calatrava.jpg",
-  ],
+  image: "/images/services/forn-sa-pelleteria-palma.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],
   emergency24h: false,

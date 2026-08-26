@@ -27,11 +27,8 @@ export const bergantinosBikes: ServiceItem = {
   coordinates: { lat: 39.5372, lng: 2.7145 },
   schedule: "Lunes a Domingo: 09:00 - 19:30",
   lastVerifiedAt: "2026-08-25",
-  image: "https://bergantinosbikes.com/wp-content/uploads/2023/02/bergantinos-bikes-tienda-taller.jpg",
-  gallery: [
-    "https://bergantinosbikes.com/wp-content/uploads/2023/02/taller-reparacion-bicicletas-mallorca.jpg",
-    "https://bergantinosbikes.com/wp-content/uploads/2023/02/alquiler-ebike-bicicletas-carretera.jpg",
-  ],
+  image: "/images/services/bergantinos-bikes-mallorca.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],
   emergency24h: false,

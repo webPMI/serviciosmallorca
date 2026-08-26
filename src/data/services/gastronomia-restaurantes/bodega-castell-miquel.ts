@@ -27,11 +27,8 @@ export const bodegaCastellMiquel: ServiceItem = {
   coordinates: { lat: 39.712, lng: 2.8055 },
   schedule: "Lunes a Viernes: 10:00 - 17:00 | Sábados: 10:00 - 14:00 (Visitas y Catas Guiadas)",
   lastVerifiedAt: "2026-08-25",
-  image: "https://castellmiquel.com/wp-content/uploads/2023/01/bodega-castell-miquel-bancales-alaro.jpg",
-  gallery: [
-    "https://castellmiquel.com/wp-content/uploads/2023/01/stairway-to-heaven-vinedos-tramuntana.jpg",
-    "https://castellmiquel.com/wp-content/uploads/2023/01/cata-vinos-castillo-alaro.jpg",
-  ],
+  image: "/images/services/bodega-castell-miquel-alaro.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],
   emergency24h: false,

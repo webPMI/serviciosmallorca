@@ -27,12 +27,8 @@ export const veterinariaSantaCatalina: ServiceItem = {
   coordinates: { lat: 39.5708, lng: 2.6392 },
   schedule: "Lunes a Viernes: 09:30 - 20:00 | Sábados: 10:00 - 13:30 | Urgencias 24h de Guardia",
   lastVerifiedAt: "2026-08-25",
-  image:
-    "https://veterinariasantacatalina.com/wp-content/uploads/2023/01/clinica-veterinaria-santa-catalina-consulta.jpg",
-  gallery: [
-    "https://veterinariasantacatalina.com/wp-content/uploads/2023/01/quirofano-veterinario-ecografia.jpg",
-    "https://veterinariasantacatalina.com/wp-content/uploads/2023/01/atencion-felina-cat-friendly.jpg",
-  ],
+  image: "/images/services/clinica-veterinaria-santa-catalina.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],
   emergency24h: true,

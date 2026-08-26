@@ -27,11 +27,8 @@ export const cerrajeriaRapidaBalear: ServiceItem = {
   coordinates: { lat: 39.578, lng: 2.662 },
   schedule: "Lunes a Domingo: 24 Horas (Servicio Urgente 24/7 de Apertura de Puertas)",
   lastVerifiedAt: "2026-08-25",
-  image: "https://cerrajeriarapidabalear.com/wp-content/uploads/2023/01/cerrajero-urgente-apertura-puertas-palma.jpg",
-  gallery: [
-    "https://cerrajeriarapidabalear.com/wp-content/uploads/2023/01/cerraduras-seguridad-antibumping-fichet.jpg",
-    "https://cerrajeriarapidabalear.com/wp-content/uploads/2023/01/apertura-cajas-fuertes-vehiculos-palma.jpg",
-  ],
+  image: "/images/services/cerrajeria-rapida-balear.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],
   emergency24h: true,

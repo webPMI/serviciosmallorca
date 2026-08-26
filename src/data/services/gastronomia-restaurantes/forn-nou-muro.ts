@@ -27,11 +27,8 @@ export const fornNouMuro: ServiceItem = {
   coordinates: { lat: 39.736, lng: 3.056 },
   schedule: "Lunes a Domingo: 07:00 - 14:00 | 17:00 - 20:30 (Abierto todos los días)",
   lastVerifiedAt: "2026-08-25",
-  image: "https://fornnoumuro.com/wp-content/uploads/2023/01/forn-nou-muro-obrador-tradicional.jpg",
-  gallery: [
-    "https://fornnoumuro.com/wp-content/uploads/2023/01/ensaimada-artesana-muro-llonguets.jpg",
-    "https://fornnoumuro.com/wp-content/uploads/2023/01/coca-pimientos-torrados-verdura-muro.jpg",
-  ],
+  image: "/images/services/forn-nou-muro.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],
   emergency24h: false,

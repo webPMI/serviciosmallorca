@@ -27,11 +27,8 @@ export const cellerCanRipoll: ServiceItem = {
   coordinates: { lat: 39.721, lng: 2.909 },
   schedule: "Lunes a Domingo: 13:00 - 16:00 | 20:00 - 23:00 (Miércoles Noche Cerrado)",
   lastVerifiedAt: "2026-08-25",
-  image: "https://cellercanripoll.com/wp-content/uploads/2023/01/celler-can-ripoll-botas-roble-gigantes-inca.jpg",
-  gallery: [
-    "https://cellercanripoll.com/wp-content/uploads/2023/01/arroz-brut-mallorquin-lechal.jpg",
-    "https://cellercanripoll.com/wp-content/uploads/2023/01/patio-historico-jardin-celler.jpg",
-  ],
+  image: "/images/services/celler-can-ripoll-inca.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],
   emergency24h: false,

@@ -27,11 +27,8 @@ export const barBosch: ServiceItem = {
   coordinates: { lat: 39.5714, lng: 2.6469 },
   schedule: "Lunes a Domingo: 07:30 - 23:30 (Abierto 365 días al año)",
   lastVerifiedAt: "2026-08-25",
-  image: "https://barbosch.es/wp-content/uploads/2022/03/bar-bosch-terraza-palma.jpg",
-  gallery: [
-    "https://barbosch.es/wp-content/uploads/2022/03/bar-bosch-llonguet-sobrasada.jpg",
-    "https://barbosch.es/wp-content/uploads/2022/03/bar-bosch-fachada-historica.jpg",
-  ],
+  image: "/images/services/bar-bosch.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],
   emergency24h: false,

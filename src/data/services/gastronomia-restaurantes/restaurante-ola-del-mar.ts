@@ -28,11 +28,8 @@ export const restauranteOlaDelMar: ServiceItem = {
   coordinates: { lat: 39.5601, lng: 2.6712 },
   schedule: "Lunes a Domingo: 13:00 - 16:00, 20:00 - 23:30",
   lastVerifiedAt: "2026-08-26",
-  image: "https://oladelmar.es/wp-content/uploads/2023/04/terraza-ola-del-mar-portixol.jpg",
-  gallery: [
-    "https://oladelmar.es/wp-content/uploads/2023/04/arroz-bogavante-portixol.jpg",
-    "https://oladelmar.es/wp-content/uploads/2023/04/pescado-fresco-salvaje.jpg",
-  ],
+  image: "/images/services/restaurante-ola-del-mar.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "gourmet"],
   languagesSpoken: ["es", "en", "ca", "de"],
   emergency24h: false,

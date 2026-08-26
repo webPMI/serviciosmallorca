@@ -27,11 +27,8 @@ export const bensDavall: ServiceItem = {
   coordinates: { lat: 39.7712, lng: 2.6734 },
   schedule: "Miércoles a Domingo: 13:00 - 15:30 | 19:30 - 22:30",
   lastVerifiedAt: "2026-08-25",
-  image: "https://bensdavall.com/wp-content/uploads/2023/04/bens-davall-restaurante-terraza-mar.jpg",
-  gallery: [
-    "https://bensdavall.com/wp-content/uploads/2023/04/bens-davall-plato-gourmet.jpg",
-    "https://bensdavall.com/wp-content/uploads/2023/04/bens-davall-vistas-acantilado.jpg",
-  ],
+  image: "/images/services/bens-davall.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "expat"],
   languagesSpoken: ["es", "en", "ca", "de", "fr"],
   emergency24h: false,

@@ -27,11 +27,8 @@ export const cerrajeriaSanMiguel: ServiceItem = {
   coordinates: { lat: 39.5745, lng: 2.6521 },
   schedule: "Lunes a Viernes: 08:30 - 19:30 | Servicio de Urgencias 24h",
   lastVerifiedAt: "2026-08-25",
-  image: "https://cerrajeriasanmiguel.com/wp-content/uploads/2023/01/cerrajeria-san-miguel-taller.jpg",
-  gallery: [
-    "https://cerrajeriasanmiguel.com/wp-content/uploads/2023/01/copia-llaves-seguridad-palma.jpg",
-    "https://cerrajeriasanmiguel.com/wp-content/uploads/2023/01/apertura-puertas-urgente-mallorca.jpg",
-  ],
+  image: "/images/services/cerrajeria-san-miguel-palma.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en"],
   emergency24h: true,

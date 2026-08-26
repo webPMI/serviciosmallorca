@@ -28,11 +28,8 @@ export const restauranteDukePalma: ServiceItem = {
   coordinates: { lat: 39.5714, lng: 2.6385 },
   schedule: "Lunes a Domingo: 13:00 - 16:00, 19:30 - 23:30",
   lastVerifiedAt: "2026-08-26",
-  image: "https://dukerestaurant.com/wp-content/uploads/2023/06/duke-santa-catalina-ceviche.jpg",
-  gallery: [
-    "https://dukerestaurant.com/wp-content/uploads/2023/06/duke-thai-curry-palma.jpg",
-    "https://dukerestaurant.com/wp-content/uploads/2023/06/duke-terrace-vibe.jpg",
-  ],
+  image: "/images/services/restaurante-duke-palma.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "expat", "jovenes"],
   languagesSpoken: ["es", "en", "sv", "de"],
   emergency24h: false,

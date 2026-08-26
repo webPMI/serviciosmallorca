@@ -27,11 +27,8 @@ export const aluminiosManacor: ServiceItem = {
   coordinates: { lat: 39.575, lng: 3.21 },
   schedule: "Lunes a Viernes: 08:00 - 18:00 (Medición y Presupuestos Técnicos en Obra)",
   lastVerifiedAt: "2026-08-25",
-  image: "https://aluminiosmanacor.com/wp-content/uploads/2023/01/taller-aluminios-cristaleria-manacor.jpg",
-  gallery: [
-    "https://aluminiosmanacor.com/wp-content/uploads/2023/01/persianas-mallorquinas-aluminio-termico.jpg",
-    "https://aluminiosmanacor.com/wp-content/uploads/2023/01/ventanas-pvc-climalit-manacor.jpg",
-  ],
+  image: "/images/services/aluminios-cristaleria-manacor.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],
   emergency24h: false,

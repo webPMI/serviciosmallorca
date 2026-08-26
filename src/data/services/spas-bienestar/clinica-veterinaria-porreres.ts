@@ -27,11 +27,8 @@ export const veterinariaPorreres: ServiceItem = {
   coordinates: { lat: 39.518, lng: 3.023 },
   schedule: "Lunes a Viernes: 09:30 - 19:30 | Sábados: 10:00 - 13:30 (Urgencias Telefónicas Disponibles)",
   lastVerifiedAt: "2026-08-25",
-  image: "https://veterinariaporreres.com/wp-content/uploads/2023/01/clinica-veterinaria-porreres-consultas.jpg",
-  gallery: [
-    "https://veterinariaporreres.com/wp-content/uploads/2023/01/quirofano-veterinario-porreres-pla.jpg",
-    "https://veterinariaporreres.com/wp-content/uploads/2023/01/analisis-clinicos-ecografia-porreres.jpg",
-  ],
+  image: "/images/services/clinica-veterinaria-porreres.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],
   emergency24h: true,

@@ -27,11 +27,8 @@ export const fornCanPacoCampos: ServiceItem = {
   coordinates: { lat: 39.431, lng: 3.018 },
   schedule: "Lunes a Domingo: 06:30 - 14:00 | 17:00 - 20:30 (Abierto todos los días)",
   lastVerifiedAt: "2026-08-25",
-  image: "https://forncanpaco.com/wp-content/uploads/2023/01/forn-can-paco-campos-mostrador.jpg",
-  gallery: [
-    "https://forncanpaco.com/wp-content/uploads/2023/01/cremadillos-hojaldre-crema-campos.jpg",
-    "https://forncanpaco.com/wp-content/uploads/2023/01/panades-cordero-guisantes-forn-paco.jpg",
-  ],
+  image: "/images/services/forn-can-paco-campos.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],
   emergency24h: false,

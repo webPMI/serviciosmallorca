@@ -27,11 +27,8 @@ export const mallorcaCyclingCenter: ServiceItem = {
   coordinates: { lat: 39.8125, lng: 3.118 },
   schedule: "Lunes a Domingo: 08:30 - 19:30 (Abierto todo el año para cicloturistas)",
   lastVerifiedAt: "2026-08-25",
-  image: "https://mallorcacyclingcenter.com/wp-content/uploads/2023/01/alquiler-bicicletas-carbono-playa-de-muro.jpg",
-  gallery: [
-    "https://mallorcacyclingcenter.com/wp-content/uploads/2023/01/taller-mecanico-shimano-service-center.jpg",
-    "https://mallorcacyclingcenter.com/wp-content/uploads/2023/01/estudio-biomecanico-ciclista-mallorca.jpg",
-  ],
+  image: "/images/services/mallorca-cycling-center-muro.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "en", "de", "ca"],
   emergency24h: false,

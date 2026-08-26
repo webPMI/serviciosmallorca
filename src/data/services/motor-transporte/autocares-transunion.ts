@@ -27,11 +27,8 @@ export const autocaresTransunion: ServiceItem = {
   coordinates: { lat: 39.6012, lng: 2.6714 },
   schedule: "Lunes a Domingo: 24 Horas (Operaciones y Transfers Ininterrumpidos)",
   lastVerifiedAt: "2026-08-25",
-  image: "https://transunion.com/wp-content/uploads/2023/03/transunion-autocar-flota.jpg",
-  gallery: [
-    "https://transunion.com/wp-content/uploads/2023/03/transunion-minibus-vip.jpg",
-    "https://transunion.com/wp-content/uploads/2023/03/transunion-transfer-aeropuerto.jpg",
-  ],
+  image: "/images/services/autocares-transunion.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],
   emergency24h: true,

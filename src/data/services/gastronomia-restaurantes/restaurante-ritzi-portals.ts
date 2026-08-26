@@ -28,11 +28,8 @@ export const restauranteRitziPortals: ServiceItem = {
   coordinates: { lat: 39.5329, lng: 2.5518 },
   schedule: "Lunes a Domingo: 12:30 - 01:00",
   lastVerifiedAt: "2026-08-26",
-  image: "https://ritzi-portals.com/wp-content/uploads/2023/07/ritzi-puerto-portals-yachts.jpg",
-  gallery: [
-    "https://ritzi-portals.com/wp-content/uploads/2023/07/ritzi-pasta-tartufo.jpg",
-    "https://ritzi-portals.com/wp-content/uploads/2023/07/ritzi-lounge-terrace.jpg",
-  ],
+  image: "/images/services/restaurante-ritzi-portals.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "expat", "nautica"],
   languagesSpoken: ["es", "en", "de", "it"],
   emergency24h: false,

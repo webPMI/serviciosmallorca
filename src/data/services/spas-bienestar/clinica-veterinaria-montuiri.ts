@@ -27,11 +27,8 @@ export const veterinariaMontuiri: ServiceItem = {
   coordinates: { lat: 39.57, lng: 2.983 },
   schedule: "Lunes a Viernes: 09:30 - 19:30 | Sábados: 10:00 - 13:30 (Urgencias Telefónicas Disponibles)",
   lastVerifiedAt: "2026-08-25",
-  image: "https://veterinariamontuiri.com/wp-content/uploads/2023/01/clinica-veterinaria-montuiri-consultas.jpg",
-  gallery: [
-    "https://veterinariamontuiri.com/wp-content/uploads/2023/01/quirofano-veterinario-montuiri-pla.jpg",
-    "https://veterinariamontuiri.com/wp-content/uploads/2023/01/analisis-clinicos-ecografia-mascotas.jpg",
-  ],
+  image: "/images/services/clinica-veterinaria-montuiri.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],
   emergency24h: true,

@@ -163,11 +163,8 @@ export const bodynaSpaMaricel: ServiceItem = {
     ca: ["Massatges vora mar", "Circuit d'hidroteràpia", "Tractaments facials", "Day Pass de Spa"],
     de: ["Massagen am Meer", "Hydrotherapie-Zirkel", "Cinq Mondes Gesichtsbehandlungen", "Spa-Tageskarten"],
   },
-  image: "https://hospes.com/images/bodyna-spa-maricel-cuevas.jpg",
-  gallery: [
-    "https://hospes.com/images/bodyna-spa-maricel-infinity.jpg",
-    "https://hospes.com/images/bodyna-spa-maricel-masaje.jpg",
-  ],
+  image: "/images/services/bodyna-spa-maricel.svg",
+  gallery: [],
   schedule: "Lun - Dom: 10:00 - 20:00",
   lastVerifiedAt: "2026-08-26",
   createdAt: "2026-08-26",

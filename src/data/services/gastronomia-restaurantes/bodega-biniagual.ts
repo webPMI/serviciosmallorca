@@ -27,11 +27,8 @@ export const bodegaBiniagual: ServiceItem = {
   coordinates: { lat: 39.6612, lng: 2.871 },
   schedule: "Lunes a Viernes: 10:00 - 17:00 | Visitas a la Bodega y Finca con Cita Previa",
   lastVerifiedAt: "2026-08-25",
-  image: "https://finca-biniagual.com/wp-content/uploads/2022/04/finca-biniagual-pueblo-medieval-mallorca.jpg",
-  gallery: [
-    "https://finca-biniagual.com/wp-content/uploads/2022/04/bodega-biniagual-vinedos-centenarios.jpg",
-    "https://finca-biniagual.com/wp-content/uploads/2022/04/bodega-biniagual-cata-jardin-historico.jpg",
-  ],
+  image: "/images/services/bodega-finca-biniagual.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],
   emergency24h: false,

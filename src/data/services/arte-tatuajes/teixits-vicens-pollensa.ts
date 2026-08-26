@@ -27,10 +27,10 @@ export const teixitsVicens: ServiceItem = {
   coordinates: { lat: 39.8725, lng: 3.018 },
   schedule: "Lunes a Viernes: 09:00 - 19:30 | Sábados: 09:30 - 14:00 (Visitas al Taller Textil)",
   lastVerifiedAt: "2026-08-25",
-  image: "https://teixitsvicens.com/wp-content/uploads/2023/01/taller-textil-telas-lenguas-pollensa.jpg",
+  image: "https://teixitsvicens.com/wp-content/uploads/2026/04/telas-home-1.jpg",
   gallery: [
-    "https://teixitsvicens.com/wp-content/uploads/2023/01/tela-llengues-ikat-mallorca-artesanal.jpg",
-    "https://teixitsvicens.com/wp-content/uploads/2023/01/cojines-tapiceria-mediterranea.jpg",
+    "https://teixitsvicens.com/wp-content/uploads/2025/12/urdimbre-tela-mallorquina-768x1024.jpg",
+    "https://teixitsvicens.com/wp-content/uploads/2026/04/cojines2.jpg",
   ],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],

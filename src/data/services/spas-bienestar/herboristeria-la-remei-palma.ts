@@ -27,11 +27,8 @@ export const herboristeriaLaRemei: ServiceItem = {
   coordinates: { lat: 39.5812, lng: 2.6515 },
   schedule: "Lunes a Viernes: 09:30 - 13:30 | 16:30 - 20:00 | Sábados: 10:00 - 13:30 (Domingos Cerrado)",
   lastVerifiedAt: "2026-08-25",
-  image: "https://herboristerialaremei.com/wp-content/uploads/2023/01/herboristeria-plantas-medicinales-palma.jpg",
-  gallery: [
-    "https://herboristerialaremei.com/wp-content/uploads/2023/01/cosmetica-natural-aceites-esenciales.jpg",
-    "https://herboristerialaremei.com/wp-content/uploads/2023/01/alimentacion-ecologica-dietetica.jpg",
-  ],
+  image: "/images/services/herboristeria-la-remei-palma.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en"],
   emergency24h: false,

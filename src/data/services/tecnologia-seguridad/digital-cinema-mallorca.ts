@@ -27,11 +27,8 @@ export const digitalCinemaMallorca: ServiceItem = {
   coordinates: { lat: 39.6025, lng: 2.6728 },
   schedule: "Lunes a Viernes: 09:00 - 18:30 (Sábados con Cita Previa)",
   lastVerifiedAt: "2026-08-25",
-  image: "https://digitalcinema.es/wp-content/uploads/2023/02/digital-cinema-home-cinema-luxury.jpg",
-  gallery: [
-    "https://digitalcinema.es/wp-content/uploads/2023/02/digital-cinema-domotica-lutron.jpg",
-    "https://digitalcinema.es/wp-content/uploads/2023/02/digital-cinema-sonido-hifi.jpg",
-  ],
+  image: "/images/services/digital-cinema-mallorca.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],
   emergency24h: true,

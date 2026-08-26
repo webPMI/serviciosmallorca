@@ -296,8 +296,11 @@ export const vandalPalma: ServiceItem = {
       "Gruppen-Events im trendigen Ambiente",
     ],
   },
-  image: "https://www.vandalpalma.com/wp-content/uploads/2023/04/vandal-interior.jpg",
-  gallery: ["https://www.vandalpalma.com/wp-content/uploads/2023/04/vandal-interior.jpg"],
+  image: "https://www.vandalpalma.com/wp-content/uploads/2026/06/POB05293-1-scaled.jpg",
+  gallery: [
+    "https://www.vandalpalma.com/wp-content/uploads/2026/06/POB05188-scaled.jpg",
+    "https://www.vandalpalma.com/wp-content/uploads/2023/05/vandalgesto-1-e1683028691964.jpg",
+  ],
   schedule: "Mar - Sáb: 19:30 - 00:30 (Dom y Lun Cerrado)",
   lastVerifiedAt: "2026-08-25",
   confidenceScore: 98,

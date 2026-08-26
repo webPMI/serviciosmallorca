@@ -27,11 +27,8 @@ export const ilTanoSantaCatalina: ServiceItem = {
   coordinates: { lat: 39.5718, lng: 2.6375 },
   schedule: "Lunes a Domingo: 13:00 - 16:00 | 19:30 - 23:30",
   lastVerifiedAt: "2026-08-25",
-  image: "https://iltano.com/wp-content/uploads/2022/05/il-tano-pizza-napolitana-horno.jpg",
-  gallery: [
-    "https://iltano.com/wp-content/uploads/2022/05/il-tano-local-santa-catalina.jpg",
-    "https://iltano.com/wp-content/uploads/2022/05/il-tano-pasta-fresca-burrata.jpg",
-  ],
+  image: "/images/services/il-tano-santa-catalina.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "it", "en", "ca"],
   emergency24h: false,

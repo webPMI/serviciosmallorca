@@ -27,11 +27,8 @@ export const cereriaArtesanaInca: ServiceItem = {
   coordinates: { lat: 39.7205, lng: 2.9085 },
   schedule: "Lunes a Viernes: 09:30 - 13:30 | 16:30 - 20:00 | Sábados: 10:00 - 13:30",
   lastVerifiedAt: "2026-08-25",
-  image: "https://cereriainca.com/wp-content/uploads/2023/01/cereria-artesana-velas-miel-inca.jpg",
-  gallery: [
-    "https://cereriainca.com/wp-content/uploads/2023/01/velas-cera-abeja-natural-mallorca.jpg",
-    "https://cereriainca.com/wp-content/uploads/2023/01/cirios-decorativos-aromas-tramuntana.jpg",
-  ],
+  image: "/images/services/cereria-artesana-inca.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],
   emergency24h: false,

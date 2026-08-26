@@ -27,11 +27,8 @@ export const tallerHermanosBestard: ServiceItem = {
   coordinates: { lat: 39.5785, lng: 2.6342 },
   schedule: "Lunes a Viernes: 08:00 - 13:30 | 15:00 - 19:00 (Sábados y Domingos Cerrado)",
   lastVerifiedAt: "2026-08-25",
-  image: "https://tallerhermanosbestard.com/wp-content/uploads/2023/01/taller-mecanico-palma-elevadores.jpg",
-  gallery: [
-    "https://tallerhermanosbestard.com/wp-content/uploads/2023/01/diagnosis-electronica-coches-mallorca.jpg",
-    "https://tallerhermanosbestard.com/wp-content/uploads/2023/01/revision-pre-itv-neumaticos.jpg",
-  ],
+  image: "/images/services/taller-hermanos-bestard-palma.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],
   emergency24h: false,

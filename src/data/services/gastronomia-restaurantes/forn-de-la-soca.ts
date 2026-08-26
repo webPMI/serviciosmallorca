@@ -27,11 +27,8 @@ export const fornDeLaSoca: ServiceItem = {
   coordinates: { lat: 39.5698, lng: 2.6501 },
   schedule: "Lunes a Sábado: 08:30 - 20:00 | Domingo: 09:00 - 14:30",
   lastVerifiedAt: "2026-08-25",
-  image: "https://forndelasoca.com/wp-content/uploads/2021/04/forn-de-la-soca-aparador-ensaimades.jpg",
-  gallery: [
-    "https://forndelasoca.com/wp-content/uploads/2021/04/forn-de-la-soca-panades.jpg",
-    "https://forndelasoca.com/wp-content/uploads/2021/04/forn-de-la-soca-obrador-historic.jpg",
-  ],
+  image: "/images/services/forn-de-la-soca.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],
   emergency24h: false,

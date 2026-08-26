@@ -27,11 +27,8 @@ export const belmondLaResidenciaSpa: ServiceItem = {
   coordinates: { lat: 39.7483, lng: 2.6489 },
   schedule: "Lunes a Domingo: 10:00 - 20:00 (Temporada de primavera a otoño)",
   lastVerifiedAt: "2026-08-25",
-  image: "https://www.belmond.com/media/la-residencia-deia-spa-outdoor.jpg",
-  gallery: [
-    "https://www.belmond.com/media/la-residencia-deia-massage-olive-trees.jpg",
-    "https://www.belmond.com/media/la-residencia-deia-indoor-pool.jpg",
-  ],
+  image: "/images/services/belmond-la-residencia-spa.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "expat"],
   languagesSpoken: ["es", "en", "ca", "de", "fr"],
   emergency24h: false,

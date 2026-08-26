@@ -217,8 +217,8 @@ export const dinsSantiTaura: ServiceItem = {
       "Privates Gourmet-Dining für kleine Gruppen",
     ],
   },
-  image: "https://www.elllorenc.com/images/hotel-fachada.jpg",
-  gallery: ["https://www.elllorenc.com/images/hotel-fachada.jpg"],
+  image: "/images/services/dins-santi-taura.svg",
+  gallery: [],
   reputationBreakdown: {
     googleMaps: {
       rating: 4.8,

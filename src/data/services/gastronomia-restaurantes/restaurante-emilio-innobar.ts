@@ -28,11 +28,8 @@ export const restauranteEmilioInnobar: ServiceItem = {
   coordinates: { lat: 39.5732, lng: 2.6454 },
   schedule: "Martes a Sábado: 13:00 - 15:30, 19:30 - 23:00",
   lastVerifiedAt: "2026-08-26",
-  image: "https://emilioinnobar.com/wp-content/uploads/2023/05/emilio-innobar-sashimi-palma.jpg",
-  gallery: [
-    "https://emilioinnobar.com/wp-content/uploads/2023/05/emilio-tasting-dishes.jpg",
-    "https://emilioinnobar.com/wp-content/uploads/2023/05/emilio-interior-casco-antiguo.jpg",
-  ],
+  image: "/images/services/restaurante-emilio-innobar.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "expat", "gourmet"],
   languagesSpoken: ["es", "en", "de"],
   emergency24h: false,

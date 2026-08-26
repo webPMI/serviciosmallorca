@@ -27,11 +27,8 @@ export const climaFrioBalear: ServiceItem = {
   coordinates: { lat: 39.6012, lng: 2.6685 },
   schedule: "Lunes a Viernes: 08:00 - 18:30 | Servicio de Averías Urgentes de Climatización",
   lastVerifiedAt: "2026-08-25",
-  image: "https://climafriobalear.com/wp-content/uploads/2023/02/instalacion-aerotermia-villas-mallorca.jpg",
-  gallery: [
-    "https://climafriobalear.com/wp-content/uploads/2023/02/aire-acondicionado-conductos-daikin.jpg",
-    "https://climafriobalear.com/wp-content/uploads/2023/02/suelo-radiante-climatizacion-eficiente.jpg",
-  ],
+  image: "/images/services/clima-frio-balear.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],
   emergency24h: true,

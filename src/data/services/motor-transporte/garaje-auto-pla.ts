@@ -27,11 +27,8 @@ export const garajeAutoPla: ServiceItem = {
   coordinates: { lat: 39.7185, lng: 2.9112 },
   schedule: "Lunes a Viernes: 08:00 - 13:00 | 15:00 - 19:00 (Sábados y Domingos Cerrado)",
   lastVerifiedAt: "2026-08-25",
-  image: "https://autopla-inca.com/wp-content/uploads/2023/02/taller-mecanico-inca-elevador.jpg",
-  gallery: [
-    "https://autopla-inca.com/wp-content/uploads/2023/02/diagnosis-electronica-coches.jpg",
-    "https://autopla-inca.com/wp-content/uploads/2023/02/pre-itv-neumaticos-inca.jpg",
-  ],
+  image: "/images/services/garaje-auto-pla-inca.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en"],
   emergency24h: false,

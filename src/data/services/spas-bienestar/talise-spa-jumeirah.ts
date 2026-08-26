@@ -128,7 +128,7 @@ export const taliseSpaJumeirah: ServiceItem = {
       "Day-Spa-Pässe inklusive vollem Thermal- und Poolzugang",
     ],
   },
-  image: "/images/categories/talise-spa-soller.svg",
+  image: "/images/services/talise-spa-jumeirah-port-soller.svg",
   gallery: ["/images/categories/talise-spa-soller.svg"],
   schedule: "Lunes a Domingo: 10:00 - 20:00 (Reserva previa recomendada)",
   lastVerifiedAt: "2026-08-26",

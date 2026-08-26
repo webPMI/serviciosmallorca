@@ -27,11 +27,8 @@ export const arquitectura81Palma: ServiceItem = {
   coordinates: { lat: 39.5824, lng: 2.6542 },
   schedule: "Lunes a Viernes: 08:30 - 18:30 (Sábados y Domingos Cerrado)",
   lastVerifiedAt: "2026-08-25",
-  image: "https://a81.es/wp-content/uploads/2023/01/a81-arquitectura-villa-mallorca.jpg",
-  gallery: [
-    "https://a81.es/wp-content/uploads/2023/01/a81-interiorismo-lujo.jpg",
-    "https://a81.es/wp-content/uploads/2023/01/a81-rehabilitacion-finca.jpg",
-  ],
+  image: "/images/services/arquitectura-81-palma.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],
   emergency24h: false,

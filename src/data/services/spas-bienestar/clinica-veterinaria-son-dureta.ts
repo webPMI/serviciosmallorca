@@ -27,11 +27,8 @@ export const clinicaVeterinariaSonDureta: ServiceItem = {
   coordinates: { lat: 39.5782, lng: 2.6241 },
   schedule: "Lunes a Viernes: 09:30 - 20:00 | Sábados: 10:00 - 13:30 (Urgencias 24h Telefónicas)",
   lastVerifiedAt: "2026-08-25",
-  image: "https://veterinariasonsureta.com/wp-content/uploads/2023/03/clinica-veterinaria-son-dureta-consulta.jpg",
-  gallery: [
-    "https://veterinariasonsureta.com/wp-content/uploads/2023/03/veterinaria-quirofano-perros-gatos.jpg",
-    "https://veterinariasonsureta.com/wp-content/uploads/2023/03/peluqueria-canina-son-dureta.jpg",
-  ],
+  image: "/images/services/clinica-veterinaria-son-dureta.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],
   emergency24h: true,

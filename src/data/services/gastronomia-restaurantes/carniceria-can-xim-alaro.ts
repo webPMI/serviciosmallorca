@@ -27,11 +27,8 @@ export const carniceriaCanXim: ServiceItem = {
   coordinates: { lat: 39.706, lng: 2.791 },
   schedule: "Lunes a Sábado: 08:30 - 14:00 | 17:00 - 20:00 (Domingos Cerrado)",
   lastVerifiedAt: "2026-08-25",
-  image: "https://canximalaro.com/wp-content/uploads/2023/01/carnisseria-can-xim-alaro-plaza.jpg",
-  gallery: [
-    "https://canximalaro.com/wp-content/uploads/2023/01/sobrasada-casera-alaro-botifarrons.jpg",
-    "https://canximalaro.com/wp-content/uploads/2023/01/lechona-cerdo-negro-castell-alaro.jpg",
-  ],
+  image: "/images/services/carniceria-can-xim-alaro.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],
   emergency24h: false,

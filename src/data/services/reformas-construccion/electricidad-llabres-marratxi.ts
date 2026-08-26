@@ -27,11 +27,8 @@ export const electricidadLlabres: ServiceItem = {
   coordinates: { lat: 39.6198, lng: 2.7532 },
   schedule: "Lunes a Viernes: 08:00 - 19:00 | Servicio de Averías Eléctricas Urgentes",
   lastVerifiedAt: "2026-08-25",
-  image: "https://electricidadllabres.com/wp-content/uploads/2023/02/electricista-mallorca-cuadro-electrico.jpg",
-  gallery: [
-    "https://electricidadllabres.com/wp-content/uploads/2023/02/iluminacion-led-villas-mallorca.jpg",
-    "https://electricidadllabres.com/wp-content/uploads/2023/02/boletin-electrico-certificado-caib.jpg",
-  ],
+  image: "/images/services/electricidad-llabres-marratxi.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en"],
   emergency24h: true,

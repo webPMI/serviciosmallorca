@@ -178,11 +178,8 @@ export const electricTattooPalma: ServiceItem = {
     ca: ["Tatuatges a mida", "Dissenys flash tradicionals", "Cover-up i restauració", "Assessorament"],
     de: ["Individuelle Tattoos", "Traditionelle Flash-Motive", "Cover-up & Nachstechen", "Beratung"],
   },
-  image: "https://electrictattoopalma.com/images/electric-tattoo-estudio.jpg",
-  gallery: [
-    "https://electrictattoopalma.com/images/electric-tattoo-flash-wall.jpg",
-    "https://electrictattoopalma.com/images/electric-tattoo-work.jpg",
-  ],
+  image: "/images/services/electric-tattoo-palma.svg",
+  gallery: [],
   schedule: "Lun - Sáb: 11:00 - 20:00 | Dom: Cerrado",
   lastVerifiedAt: "2026-08-26",
   createdAt: "2026-08-26",

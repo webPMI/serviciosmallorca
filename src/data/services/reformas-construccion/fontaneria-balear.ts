@@ -27,11 +27,8 @@ export const fontaneriaBalear: ServiceItem = {
   coordinates: { lat: 39.5794, lng: 2.6712 },
   schedule: "Lunes a Viernes: 08:00 - 19:00 | Urgencias 24h Disponibles",
   lastVerifiedAt: "2026-08-25",
-  image: "https://fontaneriabalear.com/wp-content/uploads/2023/02/fontanero-mallorca-reparacion-tuberias.jpg",
-  gallery: [
-    "https://fontaneriabalear.com/wp-content/uploads/2023/02/instalacion-termo-electrico-palma.jpg",
-    "https://fontaneriabalear.com/wp-content/uploads/2023/02/deteccion-fugas-agua-mallorca.jpg",
-  ],
+  image: "/images/services/fontaneria-balear.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en"],
   emergency24h: true,

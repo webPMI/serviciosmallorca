@@ -27,11 +27,8 @@ export const electricidadSoller: ServiceItem = {
   coordinates: { lat: 39.766, lng: 2.715 },
   schedule: "Lunes a Viernes: 08:00 - 18:30 (Servicio de Urgencias Eléctricas 24h en Tramuntana)",
   lastVerifiedAt: "2026-08-25",
-  image: "https://electricidadsoller.com/wp-content/uploads/2023/01/instalaciones-electricas-climatizacion-soller.jpg",
-  gallery: [
-    "https://electricidadsoller.com/wp-content/uploads/2023/01/aerotermia-aire-acondicionado-tramuntana.jpg",
-    "https://electricidadsoller.com/wp-content/uploads/2023/01/domotica-iluminacion-fincas-soller.jpg",
-  ],
+  image: "/images/services/electricidad-climatizacion-soller.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de", "fr"],
   emergency24h: true,

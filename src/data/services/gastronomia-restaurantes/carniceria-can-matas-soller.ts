@@ -27,11 +27,8 @@ export const carniceriaCanMatas: ServiceItem = {
   coordinates: { lat: 39.7658, lng: 2.716 },
   schedule: "Lunes a Sábado: 08:30 - 14:00 | 17:00 - 20:00 (Domingos Cerrado)",
   lastVerifiedAt: "2026-08-25",
-  image: "https://carnisseriacanmatas.com/wp-content/uploads/2023/01/carniceria-tradicional-calle-luna-soller.jpg",
-  gallery: [
-    "https://carnisseriacanmatas.com/wp-content/uploads/2023/01/sobrasada-casera-soller-camaiot.jpg",
-    "https://carnisseriacanmatas.com/wp-content/uploads/2023/01/cordero-lechal-tramuntana.jpg",
-  ],
+  image: "/images/services/carniceria-can-matas-soller.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],
   emergency24h: false,

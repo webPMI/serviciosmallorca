@@ -28,11 +28,8 @@ export const restauranteMarDeNudos: ServiceItem = {
   coordinates: { lat: 39.5678, lng: 2.6451 },
   schedule: "Lunes a Domingo: 13:00 - 00:30",
   lastVerifiedAt: "2026-08-26",
-  image: "https://mardenudos.com/wp-content/uploads/2023/04/mar-de-nudos-moll-vell-terrace.jpg",
-  gallery: [
-    "https://mardenudos.com/wp-content/uploads/2023/04/mar-de-nudos-sushi-dish.jpg",
-    "https://mardenudos.com/wp-content/uploads/2023/04/mar-de-nudos-yachts-cathedral.jpg",
-  ],
+  image: "/images/services/restaurante-mar-de-nudos.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "expat", "nautica"],
   languagesSpoken: ["es", "en", "de", "it"],
   emergency24h: false,

@@ -27,11 +27,8 @@ export const ceramicaTerraCuita: ServiceItem = {
   coordinates: { lat: 39.625, lng: 2.748 },
   schedule: "Lunes a Viernes: 09:00 - 19:30 | Sábados: 09:30 - 14:00 (Visitas a la Ollería Tradicional)",
   lastVerifiedAt: "2026-08-25",
-  image: "https://terracuita.com/wp-content/uploads/2023/01/taller-alfareria-ceramica-portol-marratxi.jpg",
-  gallery: [
-    "https://terracuita.com/wp-content/uploads/2023/01/greixoneres-barro-cocina-mallorquina.jpg",
-    "https://terracuita.com/wp-content/uploads/2023/01/siurells-artesanales-pintados-mano.jpg",
-  ],
+  image: "/images/services/ceramica-terra-cuita-portol.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],
   emergency24h: false,

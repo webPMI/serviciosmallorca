@@ -135,8 +135,11 @@ export const easyBoatsMallorca: ServiceItem = {
       "Kaufberatung, Gutachten und Liegeplatzmanagement",
     ],
   },
-  image: "/images/categories/easy-boats-portals.svg",
-  gallery: ["/images/categories/easy-boats-portals.svg"],
+  image: "https://www.easyboats.com/wp-content/uploads/2025/02/vanquish-58-uai-720x540.jpg",
+  gallery: [
+    "https://www.easyboats.com/wp-content/uploads/2021/12/easyboats-home-page-charter-b-uai-720x540.jpg",
+    "https://www.easyboats.com/wp-content/uploads/2021/12/easyboats-about-us-xisco-lorenzo-vila-founders-color-uai-720x540.jpg",
+  ],
   schedule: "Lunes a Domingo: 09:00 - 20:00 (Temporada alta) | 09:30 - 18:00 (Invierno)",
   lastVerifiedAt: "2026-08-26",
   confidenceScore: 97,

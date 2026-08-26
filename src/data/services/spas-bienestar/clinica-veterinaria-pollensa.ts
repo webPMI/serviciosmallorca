@@ -27,11 +27,8 @@ export const veterinariaPollensa: ServiceItem = {
   coordinates: { lat: 39.878, lng: 3.018 },
   schedule: "Lunes a Viernes: 09:30 - 19:30 | Sábados: 10:00 - 13:30 (Servicio de Urgencias Telefónicas)",
   lastVerifiedAt: "2026-08-25",
-  image: "https://veterinariapollensa.com/wp-content/uploads/2023/01/clinica-veterinaria-pollensa-consultas.jpg",
-  gallery: [
-    "https://veterinariapollensa.com/wp-content/uploads/2023/01/quirofano-veterinario-ecografia-pollensa.jpg",
-    "https://veterinariapollensa.com/wp-content/uploads/2023/01/analisis-clinicos-mascotas-port-pollensa.jpg",
-  ],
+  image: "/images/services/clinica-veterinaria-pollensa.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],
   emergency24h: true,

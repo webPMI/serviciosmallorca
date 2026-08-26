@@ -27,11 +27,8 @@ export const solarArta: ServiceItem = {
   coordinates: { lat: 39.694, lng: 3.351 },
   schedule: "Lunes a Viernes: 08:00 - 18:30 (Servicio de Urgencias Eléctricas 24h en Llevant)",
   lastVerifiedAt: "2026-08-25",
-  image: "https://solararta.com/wp-content/uploads/2023/01/placas-solares-fincas-arta-llevant.jpg",
-  gallery: [
-    "https://solararta.com/wp-content/uploads/2023/01/baterias-litio-autoconsumo-solar.jpg",
-    "https://solararta.com/wp-content/uploads/2023/01/cuadros-electricos-boletin-cie-arta.jpg",
-  ],
+  image: "/images/services/electricidad-solar-arta.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],
   emergency24h: true,

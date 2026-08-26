@@ -27,11 +27,8 @@ export const zunrayYoga: ServiceItem = {
   coordinates: { lat: 39.5702, lng: 2.6455 },
   schedule: "Lunes a Viernes: 08:30 - 21:00 | Sábados: 09:30 - 13:30 (Domingos Talleres)",
   lastVerifiedAt: "2026-08-25",
-  image: "https://zunray.com/wp-content/uploads/2022/04/zunray-yoga-patio-palacio-palma.jpg",
-  gallery: [
-    "https://zunray.com/wp-content/uploads/2022/04/zunray-yoga-sala-principal.jpg",
-    "https://zunray.com/wp-content/uploads/2022/04/clase-yoga-anusara-palma.jpg",
-  ],
+  image: "/images/services/zunray-yoga-studio-palma.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "expat"],
   languagesSpoken: ["es", "en", "de", "ca"],
   emergency24h: false,

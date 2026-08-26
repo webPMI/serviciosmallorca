@@ -27,11 +27,8 @@ export const carniceriaCanXarrier: ServiceItem = {
   coordinates: { lat: 39.559, lng: 2.894 },
   schedule: "Lunes a Sábado: 08:30 - 14:00 | 17:00 - 20:00 (Domingos Cerrado)",
   lastVerifiedAt: "2026-08-25",
-  image: "https://canxarrier.com/wp-content/uploads/2023/01/carnisseria-can-xarrier-algaida.jpg",
-  gallery: [
-    "https://canxarrier.com/wp-content/uploads/2023/01/sobrasada-porc-negre-artesanal.jpg",
-    "https://canxarrier.com/wp-content/uploads/2023/01/cordero-pastura-algaida.jpg",
-  ],
+  image: "/images/services/carniceria-can-xarrier-algaida.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],
   emergency24h: false,

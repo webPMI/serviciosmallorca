@@ -168,11 +168,8 @@ export const palmaPadelClub: ServiceItem = {
     ca: ["Lloguer de pistes de pàdel", "Classes de pàdel", "Tornejos de cap de setmana", "Venda de pales"],
     de: ["Platzmiete", "Einzel- & Gruppentraining", "Turniere & Ligen", "Schlägerverleih & Shop"],
   },
-  image: "https://palmapadel.es/images/palma-padel-pistas-panoramicas.jpg",
-  gallery: [
-    "https://palmapadel.es/images/palma-padel-partido.jpg",
-    "https://palmapadel.es/images/palma-padel-clubhouse.jpg",
-  ],
+  image: "/images/services/palma-padel-club.svg",
+  gallery: [],
   schedule: "Lun - Dom: 08:00 - 23:30",
   lastVerifiedAt: "2026-08-26",
   createdAt: "2026-08-26",

@@ -27,11 +27,8 @@ export const skualoAlcudia: ServiceItem = {
   coordinates: { lat: 39.768, lng: 3.158 },
   schedule: "Lunes a Domingo: 08:30 - 19:00 (Salidas diarias en lancha rápida a Formentor)",
   lastVerifiedAt: "2026-08-25",
-  image: "https://skualo.com/wp-content/uploads/2023/01/buceo-cuevas-marinas-cabo-formentor.jpg",
-  gallery: [
-    "https://skualo.com/wp-content/uploads/2023/01/lancha-rapida-snorkel-bahia-alcudia.jpg",
-    "https://skualo.com/wp-content/uploads/2023/01/bautismo-buceo-padi-can-picafort.jpg",
-  ],
+  image: "/images/services/skualo-alcudia-can-picafort-diving.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "en", "de", "ca"],
   emergency24h: false,

@@ -27,11 +27,8 @@ export const clinicaVeterinariaManacor: ServiceItem = {
   coordinates: { lat: 39.5695, lng: 3.2085 },
   schedule: "Lunes a Viernes: 09:00 - 20:00 | Sábados: 09:30 - 13:30 (Urgencias 24h Disponibles)",
   lastVerifiedAt: "2026-08-25",
-  image: "https://veterinariamanacor.com/wp-content/uploads/2023/01/clinica-veterinaria-manacor-instalaciones.jpg",
-  gallery: [
-    "https://veterinariamanacor.com/wp-content/uploads/2023/01/quirofano-cirugia-veterinaria-llevant.jpg",
-    "https://veterinariamanacor.com/wp-content/uploads/2023/01/diagnostico-rayos-x-ecografia-perros.jpg",
-  ],
+  image: "/images/services/clinica-veterinaria-manacor.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],
   emergency24h: true,

@@ -28,11 +28,8 @@ export const restauranteCoastByEast: ServiceItem = {
   coordinates: { lat: 39.4952, lng: 2.4789 },
   schedule: "Lunes a Domingo: 12:00 - 01:00",
   lastVerifiedAt: "2026-08-26",
-  image: "https://coast-mallorca.com/wp-content/uploads/2023/06/coast-port-adriano-pool-terrace.jpg",
-  gallery: [
-    "https://coast-mallorca.com/wp-content/uploads/2023/06/coast-sushi-robata-grill.jpg",
-    "https://coast-mallorca.com/wp-content/uploads/2023/06/coast-sunset-port-adriano.jpg",
-  ],
+  image: "/images/services/restaurante-coast-by-east.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "expat", "nautica"],
   languagesSpoken: ["es", "en", "de"],
   emergency24h: false,

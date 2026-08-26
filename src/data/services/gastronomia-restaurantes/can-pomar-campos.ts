@@ -27,11 +27,8 @@ export const canPomar: ServiceItem = {
   coordinates: { lat: 39.4312, lng: 3.0185 },
   schedule: "Lunes a Domingo: 08:00 - 14:00 | 17:00 - 20:30",
   lastVerifiedAt: "2026-08-25",
-  image: "https://canpomar.com/wp-content/uploads/2022/04/can-pomar-campos-fachada-historica.jpg",
-  gallery: [
-    "https://canpomar.com/wp-content/uploads/2022/04/ensaimada-sobrasada-miel-can-pomar.jpg",
-    "https://canpomar.com/wp-content/uploads/2022/04/bombones-artesanos-chocolates.jpg",
-  ],
+  image: "/images/services/can-pomar-campos.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],
   emergency24h: false,

@@ -252,7 +252,7 @@ export const macatelaTattoo: ServiceItem = {
       "Individuelle Motivberatung",
     ],
   },
-  image: "/images/categories/macatela-tattoo.svg",
+  image: "/images/services/macatela-tattoo.svg",
   gallery: ["/images/categories/macatela-tattoo.svg"],
   schedule: "Lun - Sáb: 10:30 - 14:00, 16:30 - 20:30 (Domingo Cerrado)",
   lastVerifiedAt: "2026-08-25",

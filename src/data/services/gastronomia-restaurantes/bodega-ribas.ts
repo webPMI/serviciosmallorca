@@ -27,11 +27,8 @@ export const bodegaRibas: ServiceItem = {
   coordinates: { lat: 39.6685, lng: 2.8124 },
   schedule: "Lunes a Viernes: 10:00 - 18:00 | Sábados: 10:00 - 15:00 (Visitas con Cita Previa)",
   lastVerifiedAt: "2026-08-25",
-  image: "https://bodegaribas.com/wp-content/uploads/2022/04/bodega-ribas-fachada-historica-consell.jpg",
-  gallery: [
-    "https://bodegaribas.com/wp-content/uploads/2022/04/bodega-ribas-sala-barricas.jpg",
-    "https://bodegaribas.com/wp-content/uploads/2022/04/bodega-ribas-cata-jardin.jpg",
-  ],
+  image: "/images/services/bodega-ribas-consell.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],
   emergency24h: false,

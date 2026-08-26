@@ -27,11 +27,8 @@ export const veterinariaCapdepera: ServiceItem = {
   coordinates: { lat: 39.704, lng: 3.433 },
   schedule: "Lunes a Viernes: 09:30 - 19:30 | Sábados: 10:00 - 13:30 (Urgencias Telefónicas Disponibles)",
   lastVerifiedAt: "2026-08-25",
-  image: "https://veterinariacapdepera.com/wp-content/uploads/2023/01/clinica-veterinaria-capdepera-consultas.jpg",
-  gallery: [
-    "https://veterinariacapdepera.com/wp-content/uploads/2023/01/quirofano-veterinario-capdepera-cala-rajada.jpg",
-    "https://veterinariacapdepera.com/wp-content/uploads/2023/01/analisis-clinicos-ecografia-llevant.jpg",
-  ],
+  image: "/images/services/clinica-veterinaria-capdepera.svg",
+  gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],
   emergency24h: true,
