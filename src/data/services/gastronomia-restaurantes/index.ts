@@ -154,8 +154,14 @@ import { bodegasEsVergerEsporles } from "./bodegas-es-verger-esporles.ts";
 import { restauranteYachtClubCalaDor } from "./restaurante-yacht-club-cala-dor.ts";
 import { cellerCanFontSineu } from "./celler-can-font-sineu.ts";
 import { bodegasSonCampanerSencelles } from "./bodegas-son-campaner-sencelles.ts";
+import { restauranteClubDeMarPalma } from "./restaurante-club-de-mar-palma.ts";
+import { restauranteCaNAmerLloseta } from "./restaurante-ca-n-amer-lloseta.ts";
+import { bodegasSonJulianaSantaEugenia } from "./bodegas-son-juliana-santa-eugenia.ts";
 
 export {
+  restauranteClubDeMarPalma,
+  restauranteCaNAmerLloseta,
+  bodegasSonJulianaSantaEugenia,
   restauranteYachtClubCalaDor,
   cellerCanFontSineu,
   bodegasSonCampanerSencelles,
@@ -473,4 +479,7 @@ export const RESTAURANT_SERVICES: ServiceItem[] = [
   restauranteYachtClubCalaDor,
   cellerCanFontSineu,
   bodegasSonCampanerSencelles,
+  restauranteClubDeMarPalma,
+  restauranteCaNAmerLloseta,
+  bodegasSonJulianaSantaEugenia,
 ];

@@ -39,6 +39,7 @@ export const MALLORCA_ZONES: MallorcaZone[] = [
       "Cala Gamba",
       "Coll d'en Rabassa",
       "Can Pastilla",
+      "Paseo Marítimo",
     ],
   },
   {
@@ -166,6 +167,7 @@ export const MALLORCA_ZONES: MallorcaZone[] = [
       "Llubí",
       "Sant Joan",
       "Porreres",
+      "Lloseta",
     ],
   },
 ];
