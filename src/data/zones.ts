@@ -82,6 +82,7 @@ export const MALLORCA_ZONES: MallorcaZone[] = [
       "Playa de Muro",
       "Can Picafort",
       "Pollença",
+      "Muro",
     ],
   },
   {
@@ -133,6 +134,7 @@ export const MALLORCA_ZONES: MallorcaZone[] = [
       "Selva",
       "Sencelles",
       "Santa Eugènia",
+      "Algaida",
     ],
   },
 ];

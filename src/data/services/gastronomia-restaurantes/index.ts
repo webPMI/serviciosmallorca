@@ -103,8 +103,14 @@ import { bodegasBordoyLlucmajor } from "./bodegas-bordoy-llucmajor.ts";
 import { canTorratPlayaPalma } from "./can-torrat-playa-palma.ts";
 import { canJoanDeSAigoPalma } from "./can-joan-de-saigo-palma.ts";
 import { saTorreSantaEugenia } from "./sa-torre-santa-eugenia.ts";
+import { quinceCantinaPortoCristo } from "./quince-cantina-porto-cristo.ts";
+import { bodegasButxetMuro } from "./bodegas-butxet-muro.ts";
+import { bodegasCanMajoralAlgaida } from "./bodegas-can-majoral-algaida.ts";
 
 export {
+  quinceCantinaPortoCristo,
+  bodegasButxetMuro,
+  bodegasCanMajoralAlgaida,
   canTorratPlayaPalma,
   canJoanDeSAigoPalma,
   saTorreSantaEugenia,
@@ -320,4 +326,7 @@ export const RESTAURANT_SERVICES: ServiceItem[] = [
   canTorratPlayaPalma,
   canJoanDeSAigoPalma,
   saTorreSantaEugenia,
+  quinceCantinaPortoCristo,
+  bodegasButxetMuro,
+  bodegasCanMajoralAlgaida,
 ];
