@@ -9,6 +9,7 @@ import { artesaniaCerasPalma } from "./artesania-ceras-palma.ts";
 import { teixitsVicens } from "./teixits-vicens-pollensa.ts";
 import { ceramicaTerraCuita } from "./ceramica-terra-cuita-portol.ts";
 import { cereriaArtesanaInca } from "./cereria-artesana-inca.ts";
+import { electricTattooPalma } from "./electric-tattoo-palma.ts";
 
 export {
   kuyenArtTattoo,
@@ -21,6 +22,7 @@ export {
   teixitsVicens,
   ceramicaTerraCuita,
   cereriaArtesanaInca,
+  electricTattooPalma,
 };
 
 /**
@@ -38,4 +40,5 @@ export const TATTOO_SERVICES: ServiceItem[] = [
   teixitsVicens,
   ceramicaTerraCuita,
   cereriaArtesanaInca,
+  electricTattooPalma,
 ];

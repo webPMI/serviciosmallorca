@@ -41,8 +41,10 @@ import { cellerEsCellerPetra } from "./celler-es-celler-petra.ts";
 import { fornCanPacoCampos } from "./forn-can-paco-campos.ts";
 import { restauranteCanPedro } from "./restaurante-can-pedro-genova.ts";
 import { fornNouMuro } from "./forn-nou-muro.ts";
+import { restauranteToquePalma } from "./restaurante-toque-palma.ts";
 
 export {
+  restauranteToquePalma,
   dinsSantiTaura,
   caNEduardo,
   adrianQuetglas,
@@ -134,4 +136,5 @@ export const RESTAURANT_SERVICES: ServiceItem[] = [
   fornCanPacoCampos,
   restauranteCanPedro,
   fornNouMuro,
+  restauranteToquePalma,
 ];

@@ -2,6 +2,7 @@ import type { ServiceItem } from "../types.ts";
 import { arabellaSpa } from "./arabella-spa.ts";
 import { sonBrullSpa } from "./son-brull-spa.ts";
 import { bodynaSpaMaricel } from "./bodyna-spa-maricel.ts";
+import { hammamPalmaSpa } from "./hammam-palma-spa.ts";
 import { belmondLaResidenciaSpa } from "./belmond-la-residencia-spa.ts";
 import { rafaNadalSportsCentre } from "./rafa-nadal-sports-centre.ts";
 import { clinicaJuanedaPalma } from "./clinica-juaneda-palma.ts";
@@ -59,6 +60,7 @@ export const SPAS_SERVICES: ServiceItem[] = [
   arabellaSpa,
   sonBrullSpa,
   bodynaSpaMaricel,
+  hammamPalmaSpa,
   belmondLaResidenciaSpa,
   rafaNadalSportsCentre,
   clinicaJuanedaPalma,

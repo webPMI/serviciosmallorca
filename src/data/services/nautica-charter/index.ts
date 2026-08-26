@@ -8,6 +8,8 @@ import { zoeaBuceoMallorca } from "./zoea-mallorca-buceo.ts";
 import { varaderoAlcudiamar } from "./varadero-alcudiamar.ts";
 import { skualoAlcudia } from "./skualo-alcudia-diving.ts";
 import { carpinteriaNavalMestres } from "./carpinteria-naval-mestres-daixa.ts";
+import { portAdrianoBoatCharter } from "./port-adriano-boat-charter.ts";
+import { realClubNauticoPalma } from "./real-club-nautico-palma.ts";
 
 export {
   oasisCatamaran,
@@ -19,6 +21,8 @@ export {
   varaderoAlcudiamar,
   skualoAlcudia,
   carpinteriaNavalMestres,
+  portAdrianoBoatCharter,
+  realClubNauticoPalma,
 };
 
 /**
@@ -35,4 +39,6 @@ export const NAUTICA_SERVICES: ServiceItem[] = [
   varaderoAlcudiamar,
   skualoAlcudia,
   carpinteriaNavalMestres,
+  portAdrianoBoatCharter,
+  realClubNauticoPalma,
 ];
