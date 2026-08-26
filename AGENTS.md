@@ -18,7 +18,7 @@ Toda la documentación del proyecto está en `docs/`. Antes de trabajar en cualq
 - [DEVELOPMENT.md](docs/DEVELOPMENT.md) — 🛠️ Setup, comandos, testing
 - [TOOLS.md](docs/TOOLS.md) — 🛠️ Tools & infraestructura: ESLint, Prettier, Git Hooks, MCP
 - [STYLING.md](docs/STYLING.md) — 🎨 Sistema de temas, variables CSS, breakpoints
-- [I18N.md](docs/I18N.md) — 🌍 Internacionalización (3 idiomas)
+- [I18N.md](docs/I18N.md) — 🌍 Internacionalización (4 idiomas)
 - [AUTH.md](docs/AUTH.md) — 🔐 Firebase Auth, roles, AuthStore
 - [DEVTOOLS.md](docs/DEVTOOLS.md) — 🛠️ Logger, Floating Button, DevTools Panel
 - [AGENT_CURATION_SOP.md](docs/AGENT_CURATION_SOP.md) — 🤖 Protocolo SOP para Agentes: Registro y Curación de Negocios
@@ -68,7 +68,7 @@ El proyecto se gestiona mediante agentes coordinados por un **Agente Maestro**:
 
 ```
 src/
-├── i18n/                    # Internationalization (es, en, ca)
+├── i18n/                    # Internationalization (es, en, ca, de)
 ├── layouts/
 │   └── BaseLayout.astro    # Base layout (theme init + devtools init)
 ├── pages/

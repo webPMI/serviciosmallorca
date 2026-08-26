@@ -16,7 +16,7 @@
 | 2    | src/lib/community.ts (bloque categorias)                                    | Taxonomia F1             |
 | 3    | firestore.rules (bloque forum_topics)                                       | H-01, H-03, H-04         |
 | 4    | tests/unit/community.test.ts                                                | H-02 + cobertura helpers |
-| 5    | src/i18n/{es,en,ca}.json                                                    | GR-04                    |
+| 5    | src/i18n/{es,en,ca,de}.json                                                 | GR-04                    |
 | 6    | src/components/forum/ForumCategoryNav.astro (NUEVO)                         | UI navegacion            |
 | 7    | src/pages/[...locale]/comunidad/index.astro (integracion)                   | Cableado final           |
 
@@ -256,7 +256,7 @@ Ejecutar: npx vitest run tests/unit/community.test.ts
 
 ## Paso 5 — i18n: claves nuevas en los 3 JSON (GR-04)
 
-Anadir EXACTAMENTE estas claves a es.json, en.json y ca.json (misma clave, paridad verificada por tests).
+Anadir EXACTAMENTE estas claves a es.json, en.json, ca.json y de.json (misma clave, paridad verificada por tests).
 
 ```json
 // src/i18n/es.json

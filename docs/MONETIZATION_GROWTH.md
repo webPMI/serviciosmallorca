@@ -314,7 +314,7 @@ MENSUAL
 | robots.txt         | No existe     | Crear con directivas de crawl         | CRITICA   |
 | OpenGraph meta     | No existe     | Anadir og:* y twitter:* en BaseLayout | ALTA      |
 | Canonical tags     | No existe     | Anadir link rel=canonical             | MEDIA     |
-| hreflang tags      | No existe     | Anadir hreflang es/en/ca              | ALTA      |
+| hreflang tags      | No existe     | Anadir hreflang es/en/ca/de           | ALTA      |
 | Schema.org JSON-LD | Parcial       | Expandir a FAQ y BreadcrumbList       | MEDIA     |
 | Image optimization | Unsplash URLs | lazy loading + width/height attrs     | MEDIA     |
 

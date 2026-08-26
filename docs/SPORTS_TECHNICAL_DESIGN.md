@@ -430,7 +430,7 @@ return "servicios-profesionales";
 | Filtros deportivos        | Modalidad (24h, day-pass, membership, cita-previa, walk-in), idioma (EN/DE spoken), precio, horario, zona |
 | Badges                    | Day Pass, 24h, EN/DE spoken, Free (espacios públicos)                                                     |
 | Mapa de espacios públicos | Capa interactiva con parques de calistenia, pistas, circuitos (guías editoriales, no fichas de negocio)   |
-| Guías editoriales         | Posts en 3 idiomas: rutas de running, parques de calistenia por zona, mejores zonas de ciclismo           |
+| Guías editoriales         | Posts en 4 idiomas: rutas de running, parques de calistenia por zona, mejores zonas de ciclismo           |
 
 **Admin:**
 

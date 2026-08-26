@@ -95,7 +95,7 @@ Verificar en los canales oficiales de la empresa:
 
 ### Paso 4: Inserción en el Catálogo
 
-Añadir el registro a `SERVICES` en [`src/data/services.ts`](file:///c:/Users/ink.enzo/Desktop/p/servicios-mallorca/src/data/services.ts) con descripciones completas y puntos fuertes en los 3 idiomas (`es`, `en`, `ca`).
+Añadir el registro a `SERVICES` en [`src/data/services.ts`](file:///c:/Users/ink.enzo/Desktop/p/servicios-mallorca/src/data/services.ts) con descripciones completas y puntos fuertes en los 4 idiomas (`es`, `en`, `ca`, `de`).
 
 ---
 

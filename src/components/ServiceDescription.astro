@@ -8,7 +8,12 @@ interface Props {
 }
 
 const { service, locale } = Astro.props;
-const descText = service.fullDescription[locale] || service.shortDescription[locale] || "";
+const descText =
+  service.fullDescription[locale] ||
+  service.shortDescription[locale] ||
+  service.fullDescription.en ||
+  service.shortDescription.en ||
+  "";
 const isLongText = descText.length > 280;
 ---
 

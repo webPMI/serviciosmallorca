@@ -52,7 +52,7 @@ Herramientas gratuitas para el usuario:
 1. **Input:** Búsqueda por nombre/geolocalización.
 2. **Minería:** `scripts/business-intelligence-lookup.ts` extrae datos crudos.
 3. **Auditoría:** `src/lib/verificationEngine.ts` valida la veracidad y genera un `confidenceScore`.
-4. **Curación:** Agente `@curation` redacta el contenido en 3 idiomas y asigna especialidades.
+4. **Curación:** Agente `@curation` redacta el contenido en 4 idiomas (es/en/ca/de) y asigna especialidades.
 5. **Publicación:** El negocio se inserta en `src/data/services/` y se refleja en la UI.
 
 ---

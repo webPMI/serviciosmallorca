@@ -45,11 +45,13 @@ export const restauranteMacaDeCastro: ServiceItem = {
     es: "Restaurante con estrella Guía Michelin y dos soles Repsol en Alcúdia, donde la chef Maca de Castro defiende una cocina de producto, honestidad y memoria gastronómica balear.",
     en: "Michelin Guide-starred restaurant with two Repsol Soles in Alcúdia, where chef Maca de Castro champions honest, produce-driven cooking rooted in Balearic gastronomic memory.",
     ca: "Restaurant amb estrella de la Guia Michelin i dos sols Repsol a Alcúdia, on la xef Maca de Castro defensa una cuina de producte, honestedat i memòria gastronòmica balear.",
+    de: "Mit einem Michelin-Stern und zwei Repsol-Soles ausgezeichnetes Restaurant in Alcúdia, in dem Köchin Maca de Castro eine ehrliche, produktorientierte Küche mit balearischem Gedächtnis verteidigt.",
   },
   fullDescription: {
     es: "Maca de Castro es una de las grandes referencias de la cocina mallorquina. Su restaurante, situado en la bahía de Alcúdia junto a Port d'Alcúdia, pertenece al grupo gastronómico DCastro y transmite los sabores insulares de siempre: el Mediterráneo, la honestidad del producto local y la sabiduría de la tradición. La chef Maca de Castro trabaja con pescados de la bahía, productos de la huerta del Pla y la Serra y una despensa de pequeños productores de la isla, ofreciendo menús degustación que conectan la cocina de raíz con una técnica precisa y contemporánea. Reconocida con una estrella de la Guía Michelin y dos soles de la Guía Repsol.",
     en: "Maca de Castro is one of the great references of Mallorcan cuisine. Her restaurant, set on Alcúdia Bay near Port d'Alcúdia, belongs to the DCastro gastronomic group and conveys the island's timeless flavours: the Mediterranean, honest local produce and the wisdom of tradition. Chef Maca de Castro works with bay fish, market vegetables from Es Pla and the Serra, and a pantry of small island producers, offering tasting menus that link heritage cooking to precise, contemporary technique. Awarded one Michelin Guide star and two Repsol Soles.",
     ca: "Maca de Castro és una de les grans referències de la cuina mallorquina. El seu restaurant, situat a la badia d'Alcúdia, al costat del Port d'Alcúdia, pertany al grup gastronòmic DCastro i transmet els sabors insulars de sempre: el Mediterrani, l'honestedat del producte local i la saviesa de la tradició. La xef Maca de Castro treballa amb peixos de la badia, producte de l'horta del Pla i la Serra i una despensa de petits productors de l'illa, amb menús degustació que connecten la cuina d'arrel amb una tècnica precisa i contemporània. Guardonada amb una estrella de la Guia Michelin i dos sols de la Guia Repsol.",
+    de: "Maca de Castro ist eine der großen Referenzen der mallorquinischen Küche. Ihr Restaurant an der Bucht von Alcúdia gehört zur Gastronomiegruppe DCastro und vermittelt die zeitlosen Aromen der Insel: das Mittelmeer, die Ehrlichkeit lokaler Produkte und die Weisheit der Tradition. Köchin Maca de Castro arbeitet mit Fischen aus der Bucht, Gemüse von den Märkten des Pla und der Serra sowie einer Speisekammer kleiner Inselproduzenten. Die Degustationsmenüs verbinden verwurzelte Küche mit präziser, zeitgenössischer Technik. Ausgezeichnet mit einem Michelin-Stern und zwei Repsol-Soles.",
   },
   specialties: {
     es: [
@@ -66,6 +68,11 @@ export const restauranteMacaDeCastro: ServiceItem = {
       "Menús degustació de producte local mallorquí",
       "Peixos i mariscs de la badia d'Alcúdia",
       "Postres d'ametlla, figa i receptari balear",
+    ],
+    de: [
+      "Degustationsmenüs auf Basis mallorquinischer Lokalprodukte",
+      "Fisch und Meeresfrüchte aus der Bucht von Alcúdia",
+      "Desserts mit Mandel, Feige und balearischem Rezeptgut",
     ],
   },
   highlights: {
@@ -84,11 +91,17 @@ export const restauranteMacaDeCastro: ServiceItem = {
       "Cuina d'autora amb rebost de petits productors",
       "Emplaçament a la badia d'Alcúdia",
     ],
+    de: [
+      "Ein Michelin-Stern und zwei Repsol-Soles",
+      "Autorenküche mit Speisekammer kleiner Produzenten",
+      "Lage an der Bucht von Alcúdia",
+    ],
   },
   servicesProvided: {
     es: ["Restaurante de alta cocina", "Menús degustación", "Maridaje de vinos", "Comedor para grupos y celebraciones"],
     en: ["Fine dining restaurant", "Tasting menus", "Wine pairing", "Dining room for groups and celebrations"],
     ca: ["Restaurant d'alta cuina", "Menús degustació", "Maridatge de vins", "Menjador per a grups i celebracions"],
+    de: ["Restaurant der Haute Cuisine", "Degustationsmenüs", "Weinbegleitung", "Speisesaal für Gruppen und Feiern"],
   },
   tags: [
     "zona:alcudia-pollensa",
@@ -129,6 +142,7 @@ export const restauranteMacaDeCastro: ServiceItem = {
         es: "Chef & Propietaria",
         en: "Chef & Owner",
         ca: "Xef & Propietària",
+        de: "Köchin & Inhaberin",
       },
       specialty: "Cocina de producto con memoria gastronómica balear",
       instagramHandle: "@maca_de_castro",
@@ -166,5 +180,6 @@ export const restauranteMacaDeCastro: ServiceItem = {
     es: "Maca de Castro, cocinera de Alcúdia formada junto a grandes maestros de la cocina española, regresó a su tierra para abrir su propio restaurante y construir una cocina que defiende el producto mallorquín con honestidad, convirtiéndose en la primera mujer con estrella Michelin en Baleares.",
     en: "Maca de Castro, a chef from Alcúdia trained alongside masters of Spanish cooking, returned to her homeland to open her own restaurant and build a kitchen that defends Mallorcan produce with honesty, becoming the first female Michelin-starred chef in the Balearic Islands.",
     ca: "Maca de Castro, cuinera d'Alcúdia formada al costat de grans mestres de la cuina espanyola, va tornar a la seva terra per obrir el seu propi restaurant i construir una cuina que defensa el producte mallorquí amb honestedat, convertint-se en la primera dona amb estrella Michelin a les Balears.",
+    de: "Maca de Castro, Köchin aus Alcúdia und ausgebildet bei großen Meistern der spanischen Küche, kehrte in ihre Heimat zurück, um ihr eigenes Restaurant zu eröffnen und eine Küche zu schaffen, die das mallorquinische Produkt mit Ehrlichkeit verteidigt – als erste Frau mit Michelin-Stern auf den Balearen.",
   },
 };

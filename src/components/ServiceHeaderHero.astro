@@ -47,7 +47,7 @@ const smartCta = getSmartActionCta(
     </div>
 
     <h1 class="detail-title">{service.name}</h1>
-    <p class="detail-lead">{service.shortDescription[locale]}</p>
+    <p class="detail-lead">{service.shortDescription[locale] || service.shortDescription.en}</p>
 
     <div class="header-action-row">
       <div class="rating-bar">

@@ -40,7 +40,7 @@
 ```typescript
 // ✅ CORRECTO
 interface Props {
-  currentLocale: "es" | "en" | "ca";
+  currentLocale: "es" | "en" | "ca" | "de";
   translations: Record<string, string>;
 }
 
@@ -52,7 +52,7 @@ const { data } = Astro.props; // sin tipo
 
 ## GR-04: Internacionalización Completa
 
-**Todo texto visible DEBE pasar por el sistema i18n.** Las claves deben existir en los 3 archivos de locale (`es.json`, `en.json`, `ca.json`) con el mismo nombre.
+**Todo texto visible DEBE pasar por el sistema i18n.** Las claves deben existir en los 4 archivos de locale (`es.json`, `en.json`, `ca.json`, `de.json`) con el mismo nombre. Los contenidos de negocio (shortDescription, fullDescription, specialties, etc.) deben estar redactados en los 4 idiomas; si un locale falta, la UI hará fallback a `en`/`es` pero no debe quedar texto vacío.
 
 - ✅ `{translations["nav.home"]}`
 - ❌ `Inicio` (hardcodeado)

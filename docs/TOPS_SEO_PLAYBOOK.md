@@ -62,15 +62,15 @@ Los bloques del motor posicionan la home; los **posts `top_list` son los que cap
 > fichas verificadas** publicadas. Un top con huecos destruye E-E-A-T. Si falta masa crítica, ingesta
 > fichas primero (SOP de curación).
 
-| Paso | Acción                                                                                                          | Validación                                 |
-| ---- | --------------------------------------------------------------------------------------------------------------- | ------------------------------------------ |
-| 1    | Elegir **keyword objetivo** del mapa §3.2 del doc deportivo; slug `top-<categoria>-<zona>-<año>`                | Keyword con intención transaccional/local  |
-| 2    | **Seed list** desde `getTopServicesByCategory()` + Checklist Tier S/A; solo fichas `verified` con teléfono real | 0 candidatos sin verificar (GR-11)         |
-| 3    | Ordenar por **score del motor**, nunca a mano ni por criterios comerciales ocultos                              | Orden reproducible ejecutando el motor     |
-| 4    | Redactar en **es/en/ca**: intro con intención de búsqueda, tarjeta por negocio (datos de su ficha), FAQ breve   | GR-04; datos idénticos a la ficha enlazada |
-| 5    | Incluir bloque **"Metodología"** transparente: pesos de §1.1 y mención de `lastVerifiedAt`                      | E-E-A-T: criterios auditables públicamente |
-| 6    | Cablear `BlogPost`: `postType:"top_list"`, `relatedServiceIds`, tags `zona:*`, año en título y refresh anual    | Enlace interno a TODAS las fichas del top  |
-| 7    | Publicar, enviar a GSC (inspección URL) y difundir en canal editorial                                           | `npm run check` verde y URL indexable      |
+| Paso | Acción                                                                                                           | Validación                                 |
+| ---- | ---------------------------------------------------------------------------------------------------------------- | ------------------------------------------ |
+| 1    | Elegir **keyword objetivo** del mapa §3.2 del doc deportivo; slug `top-<categoria>-<zona>-<año>`                 | Keyword con intención transaccional/local  |
+| 2    | **Seed list** desde `getTopServicesByCategory()` + Checklist Tier S/A; solo fichas `verified` con teléfono real  | 0 candidatos sin verificar (GR-11)         |
+| 3    | Ordenar por **score del motor**, nunca a mano ni por criterios comerciales ocultos                               | Orden reproducible ejecutando el motor     |
+| 4    | Redactar en **es/en/ca/de**: intro con intención de búsqueda, tarjeta por negocio (datos de su ficha), FAQ breve | GR-04; datos idénticos a la ficha enlazada |
+| 5    | Incluir bloque **"Metodología"** transparente: pesos de §1.1 y mención de `lastVerifiedAt`                       | E-E-A-T: criterios auditables públicamente |
+| 6    | Cablear `BlogPost`: `postType:"top_list"`, `relatedServiceIds`, tags `zona:*`, año en título y refresh anual     | Enlace interno a TODAS las fichas del top  |
+| 7    | Publicar, enviar a GSC (inspección URL) y difundir en canal editorial                                            | `npm run check` verde y URL indexable      |
 
 **Estructura recomendada:** H1 keyword+año → contexto local → caja Metodología → cards #N..#1
 (nombre, zona, rating/reseñas reales, diferencial, enlace a ficha) → FAQ 3-4 preguntas → CTA categorías.
@@ -181,7 +181,7 @@ Hub /servicios/deporte ──► Categoría "gimnasios-fitness" ──► Fichas
 1. **`lastVerifiedAt` visible** en fichas y tops — nadie más enseña fecha de auditoría.
 2. **Metodología pública** de ranking (pesos de §1.1 citados dentro de cada top).
 3. **Fuentes municipales citadas** en guías de espacios públicos (enlaces salientes de autoridad).
-4. **Trilingüe real** es/en/ca — competencia casi nula en catalán para deporte local.
+4. **Multilingüe real** es/en/ca/de — competencia casi nula en catalán y alemán para deporte local.
 5. **Zero stock photos** — imágenes propias/licenciadas como señal de experiencia de primera mano.
 
 ---

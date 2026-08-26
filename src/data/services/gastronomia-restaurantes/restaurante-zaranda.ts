@@ -45,11 +45,13 @@ export const restauranteZaranda: ServiceItem = {
     es: "Restaurante de alta cocina con dos estrellas Michelin en el Hotel Es Princep de Palma, donde el chef Fernando Pérez Arellano eleva el producto mallorquín con técnica contemporánea y memoria mediterránea.",
     en: "Two-Michelin-star fine dining restaurant inside Hotel Es Princep in Palma, where chef Fernando Pérez Arellano elevates Mallorcan ingredients with contemporary technique and Mediterranean memory.",
     ca: "Restaurant de alta cuina amb dues estrelles Michelin a l'Hotel Es Princep de Palma, on el xef Fernando Pérez Arellano eleva el producte mallorquí amb tècnica contemporània i memòria mediterrània.",
+    de: "Zwei-Sterne-Restaurant der Haute Cuisine im Hotel Es Princep in Palma, wo Küchenchef Fernando Pérez Arellano mallorquinische Produkte mit zeitgenössischer Technik und mediterraner Erinnerung veredelt.",
   },
   fullDescription: {
     es: "Zaranda es uno de los templos de la alta gastronomía de Mallorca, galardonado con dos estrellas Michelin y un sol de la Guía Repsol. Se encuentra en el corazón histórico de Palma, junto a la Catedral, dentro del hotel boutique de cinco estrellas Es Princep. El chef Fernando Pérez Arellano propone una cocina de producto isleño, con pescados y mariscos de la bahía, huerta mallorquina, aceites y hierbas de la Serra, tratada con técnica fina y personalidad propia. La experiencia transcurre en un comedor acogedor con un menú degustación que cada temporada reinterpreta la despensa balear.",
     en: "Zaranda is one of Mallorca's fine dining landmarks, holding two Michelin stars and one Sol Repsol. It sits in Palma's historic heart, steps from the Cathedral, inside the five-star boutique Hotel Es Princep. Chef Fernando Pérez Arellano crafts island-driven cuisine —bay fish and shellfish, Mallorcan market vegetables, mountain herbs and olive oils— with refined technique and a distinctive voice. The intimate dining room hosts a seasonal tasting menu that reinterprets the Balearic pantry.",
     ca: "Zaranda és un dels temples de l'alta gastronomia de Mallorca, guardonat amb dues estrelles Michelin i un sol de la Guia Repsol. Es troba al cor històric de Palma, al costat de la Catedral, dins de l'hotel boutique de cinc estrelles Es Princep. El xef Fernando Pérez Arellano proposa una cuina de producte illenc, amb peixos i mariscs de la badia, horta mallorquina, herbes i olis de la Serra, tractada amb tècnica fina i personalitat pròpia. El menú degustació reinterpreta cada temporada el rebost balear.",
+    de: "Zaranda ist einer der Tempel der gehobenen Gastronomie Mallorcas und mit zwei Michelin-Sternen sowie einem Sol der Guía Repsol ausgezeichnet. Das Restaurant liegt im historischen Herzen von Palma, neben der Kathedrale, im Boutique-Hotel Es Princep (5 Sterne). Küchenchef Fernando Pérez Arellano kreiert eine Küche des Inselprodukts – Fisch und Meeresfrüchte aus der Bucht, mallorquinisches Gemüse, Öle und Kräuter aus der Serra – mit feiner Technik und eigener Handschrift. Ein saisonales Degustationsmenü interpretiert die balearische Speisekammer neu.",
   },
   specialties: {
     es: [
@@ -66,6 +68,11 @@ export const restauranteZaranda: ServiceItem = {
       "Menú degustació de producte mallorquí amb dues estrelles Michelin",
       "Cuina de temporada amb peixos i mariscs de la badia de Palma",
       "Maridatge de vins baleàrics i grans referències internacionals",
+    ],
+    de: [
+      "Zwei-Sterne-Degustationsmenü auf Basis mallorquinischer Produkte",
+      "Saisonale Küche mit Fisch und Meeresfrüchten aus der Bucht von Palma",
+      "Weinbegleitung mit balearischen Lagen und internationalen Klassikern",
     ],
   },
   highlights: {
@@ -84,11 +91,17 @@ export const restauranteZaranda: ServiceItem = {
       "Emplaçament històric al costat de la Catedral de Palma",
       "Cuina d'autor amb arrel mallorquina i temporada real",
     ],
+    de: [
+      "Zwei Michelin-Sterne und ein Sol der Guía Repsol",
+      "Historische Lage neben der Kathedrale von Palma",
+      "Autorenküche mit mallorquinischer Wurzel und echter Saisonalität",
+    ],
   },
   servicesProvided: {
     es: ["Restaurante de alta cocina", "Menús degustación", "Maridaje de vinos", "Eventos y celebraciones privadas"],
     en: ["Fine dining restaurant", "Tasting menus", "Wine pairing", "Private events and celebrations"],
     ca: ["Restaurant d'alta cuina", "Menús degustació", "Maridatge de vins", "Esdeveniments i celebracions privades"],
+    de: ["Restaurant der Haute Cuisine", "Degustationsmenüs", "Weinbegleitung", "Private Veranstaltungen und Feiern"],
   },
   tags: [
     "zona:palma",
@@ -129,6 +142,7 @@ export const restauranteZaranda: ServiceItem = {
         es: "Chef Ejecutivo & Propietario",
         en: "Executive Chef & Owner",
         ca: "Xef Executiu & Propietari",
+        de: "Executive Chef & Inhaber",
       },
       specialty: "Alta cocina mediterránea con producto mallorquín",
       instagramHandle: "@zarandarest",
@@ -166,5 +180,6 @@ export const restauranteZaranda: ServiceItem = {
     es: "Bajo la dirección del chef Fernando Pérez Arellano, Zaranda abrió en el céntrico Hotel Es Princep de Palma y logró en pocos años dos estrellas Michelin, convirtiéndose en embajadora de la despensa mallorquina en la alta cocina española.",
     en: "Led by chef Fernando Pérez Arellano, Zaranda opened at Palma's central Hotel Es Princep and earned two Michelin stars within a few years, becoming an ambassador of Mallorcan produce in Spanish haute cuisine.",
     ca: "Sota la direcció del xef Fernando Pérez Arellano, Zaranda va obrir al cèntric Hotel Es Princep de Palma i va aconseguir en pocs anys dues estrelles Michelin, convertint-se en ambaixadora del rebost mallorquí a l'alta cuina espanyola.",
+    de: "Unter der Leitung von Küchenchef Fernando Pérez Arellano eröffnete Zaranda im zentralen Hotel Es Princep in Palma und erlangte innerhalb weniger Jahre zwei Michelin-Sterne – als Botschafterin der mallorquinischen Speisekammer in der spanischen Haute Cuisine.",
   },
 };

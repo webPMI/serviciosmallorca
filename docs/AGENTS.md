@@ -379,7 +379,7 @@ Los agentes DEBEN pasar por el Maestro cuando:
 ```
 @frontend: src/pages/[...locale]/perfil.astro  (nuevo archivo)
 @styling:  src/styles/global.css                (añade variables)
-@i18n:     src/i18n/{es,en,ca}.json            (añade claves)
+@i18n:     src/i18n/{es,en,ca,de}.json     (añade claves)
 → Sin solapamiento → PARALELO SEGURO ✅
 ```
 

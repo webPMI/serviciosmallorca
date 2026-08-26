@@ -45,11 +45,13 @@ export const restauranteAndreuGenestra: ServiceItem = {
     es: "Restaurante con una estrella Michelin y dos soles Repsol en el Hotel Zoëtry de Llucmajor, donde el chef mallorquín Andreu Genestra despliega una cocina mediterránea de producto y paisaje.",
     en: "Michelin-starred restaurant with two Repsol Soles at Hotel Zoëtry in Llucmajor, where Mallorcan chef Andreu Genestra showcases a cuisine of Mediterranean produce and landscape.",
     ca: "Restaurant amb una estrella Michelin i dos sols Repsol a l'Hotel Zoëtry de Llucmajor, on el xef mallorquí Andreu Genestra desplega una cuina mediterrània de producte i paisatge.",
+    de: "Mit einem Michelin-Stern und zwei Repsol-Soles ausgezeichnetes Restaurant im Hotel Zoëtry in Llucmajor, in dem der mallorquinische Küchenchef Andreu Genestra eine mediterrane Küche aus Produkt und Landschaft entfaltet.",
   },
   fullDescription: {
     es: "El Restaurante Andreu Genestra se encuentra dentro del Hotel Zoëtry Mallorca, a orillas del Mediterráneo en la costa de Llucmajor (Badia Blava). El chef mallorquín Andreu Genestra, formado en grandes mesas del panorama nacional, firma una cocina mediterránea contemporánea basada en el producto de kilómetro cero: pesca local de la bahía, verduras y hierbas de la isla, aceites baleares y recetas con memoria. El restaurante está galardonado con una estrella de la Guía Michelin y dos soles de la Guía Repsol, y ofrece menú degustación 'Mediterranean Extreme', maridajes y una cuidada carta de vinos.",
     en: "Restaurante Andreu Genestra is set inside Hotel Zoëtry Mallorca, on the Mediterranean shore of Llucmajor's coast (Badia Blava). Mallorcan chef Andreu Genestra, trained at leading tables across Spain, crafts contemporary Mediterranean cooking built on zero-kilometre produce: local bay catch, island vegetables and herbs, Balearic olive oils and recipes with memory. The restaurant holds one Michelin Guide star and two Repsol Soles, offering the 'Mediterranean Extreme' tasting menu, pairings and a careful wine list.",
     ca: "El Restaurant Andreu Genestra es troba dins de l'Hotel Zoëtry Mallorca, a la vora del Mediterrani a la costa de Llucmajor (Badia Blava). El xef mallorquí Andreu Genestra, format a grans taules del panorama estatal, signa una cuina mediterrània contemporània basada en el producte de quilòmetre zero: pesca local de la badia, verdures i herbes de l'illa, olis baleàrics i receptes amb memòria. El restaurant està guardonat amb una estrella de la Guia Michelin i dos sols de la Guia Repsol, i ofereix el menú degustació 'Mediterranean Extreme', maridatges i una acurada carta de vins.",
+    de: "Das Restaurant Andreu Genestra befindet sich im Hotel Zoëtry Mallorca an der Mittelmeerküste von Llucmajor (Badia Blava). Der mallorquinische Küchenchef Andreu Genestra, ausgebildet an führenden Tischen des Landes, zeichnet für eine zeitgenössische mediterrane Küche verantwortlich, die auf Produkten der Region basiert: lokaler Fang aus der Bucht, Gemüse und Kräuter der Insel, balearische Öle und Rezepte mit Erinnerung. Das Restaurant wurde mit einem Michelin-Stern und zwei Repsol-Soles ausgezeichnet und bietet das Degustationsmenü „Mediterranean Extreme“, Weinbegleitung und eine sorgfältige Weinkarte.",
   },
   specialties: {
     es: [
@@ -66,6 +68,11 @@ export const restauranteAndreuGenestra: ServiceItem = {
       "Menú degustació 'Mediterranean Extreme'",
       "Cuina de producte de quilòmetre zero i pesca de la badia",
       "Maridatge amb vins baleàrics i carta internacional",
+    ],
+    de: [
+      "Degustationsmenü „Mediterranean Extreme“",
+      "Küche mit Produkten aus der Region und Fang aus der Bucht",
+      "Balearische Weinbegleitung und internationale Weinkarte",
     ],
   },
   highlights: {
@@ -84,11 +91,17 @@ export const restauranteAndreuGenestra: ServiceItem = {
       "Cuina de paisatge a la vora del Mediterrani",
       "Menjador d'hotel de luxe amb vistes a la badia",
     ],
+    de: [
+      "Ein Michelin-Stern und zwei Repsol-Soles",
+      "Landschaftsküche am Mittelmeer",
+      "Feinschmeckerrestaurant mit Buchtblick im Luxushotel",
+    ],
   },
   servicesProvided: {
     es: ["Restaurante con estrella Michelin", "Menú degustación", "Maridaje de vinos", "Eventos y celebraciones"],
     en: ["Michelin-starred restaurant", "Tasting menu", "Wine pairing", "Events and celebrations"],
     ca: ["Restaurant amb estrella Michelin", "Menú degustació", "Maridatge de vins", "Esdeveniments i celebracions"],
+    de: ["Michelin-Sterne-Restaurant", "Degustationsmenü", "Weinbegleitung", "Veranstaltungen und Feiern"],
   },
   tags: [
     "zona:santanyi-migjorn",
@@ -137,6 +150,7 @@ export const restauranteAndreuGenestra: ServiceItem = {
         es: "Chef & Propietario",
         en: "Chef & Owner",
         ca: "Xef & Propietari",
+        de: "Küchenchef & Inhaber",
       },
       specialty: "Cocina mediterránea contemporánea de producto mallorquín",
       instagramHandle: "@andreugenestrarestaurante",
@@ -174,5 +188,6 @@ export const restauranteAndreuGenestra: ServiceItem = {
     es: "Andreu Genestra es uno de los cocineros mallorquines con mayor proyección de la cocina balear. Tras formarse en prestigiosas cocinas del país, eligió la costa de Llucmajor para crear un restaurante que expresa el paisaje insular a través de un producto honesto y una técnica depurada, reconocido con una estrella Michelin.",
     en: "Andreu Genestra is one of the most acclaimed Mallorcan chefs in Balearic cooking. After training in prestigious kitchens across Spain, he chose the Llucmajor coast to create a restaurant that expresses the island landscape through honest produce and refined technique, recognised with one Michelin star.",
     ca: "Andreu Genestra és un dels cuiners mallorquins amb més projecció de la cuina balear. Després de formar-se en prestigioses cuines de l'estat, va triar la costa de Llucmajor per crear un restaurant que expressa el paisatge insular a través d'un producte honest i una tècnica depurada, reconegut amb una estrella Michelin.",
+    de: "Andreu Genestra ist einer der profiliertesten mallorquinischen Köche der balearischen Küche. Nach seiner Ausbildung in prestigeträchtigen Küchen des Landes wählte er die Küste von Llucmajor, um ein Restaurant zu schaffen, das die Insellandschaft durch ehrliche Produkte und verfeinerte Technik ausdrückt – ausgezeichnet mit einem Michelin-Stern.",
   },
 };

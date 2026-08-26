@@ -346,6 +346,7 @@ const labels = {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(payload),
         });
+        void res;
 
         if (statusBox) {
           statusBox.style.display = "block";
@@ -357,7 +358,7 @@ const labels = {
           form.reset();
           if (statusBox) statusBox.style.display = "none";
         }, 2200);
-      } catch (err) {
+      } catch {
         if (statusBox) {
           statusBox.style.display = "block";
           statusBox.textContent = "✅ Reporte guardado localmente para auditoría.";

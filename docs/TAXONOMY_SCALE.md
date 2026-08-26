@@ -402,4 +402,4 @@ Todo el crecimiento respeta `TAXONOMY.md` §9 (migración no destructiva). Fases
 - **`SCALABILITY_AND_ARCHITECTURE.md`** — fases de crecimiento del pipeline (0→200→1.000+).
 - **`ARCHITECTURE.md`** — estructura de `src/data/` y esquema Firestore.
 - **`GOLDEN_RULES.md`** — GR-11 (Zero Fake Data), GR-12 (fidelidad Maps) son el filtro para activar categorías.
-- **`STYLING.md`** / **`I18N.md`** — cada categoría nueva necesita variable CSS e i18n en 3 idiomas.
+- **`STYLING.md`** / **`I18N.md`** — cada categoría nueva necesita variable CSS e i18n en 4 idiomas.

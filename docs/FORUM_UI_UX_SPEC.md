@@ -227,7 +227,7 @@ getForumTopics(category) mantiene firma: si recibe valor legacy filtra por el; l
 
 ## 5. Catalogo i18n completo (GR-04)
 
-Tabla base es.json (en y ca espejo con misma clave). Formato clave | es | en | ca resumido; implementar los 3 archivos siempre.
+Tabla base es.json (en, ca y de espejo con misma clave). Formato clave | es | en | ca | de resumido; implementar los 4 archivos siempre.
 
 | Clave                                    | es                                       |
 | ---------------------------------------- | ---------------------------------------- |

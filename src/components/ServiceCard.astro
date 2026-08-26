@@ -21,7 +21,7 @@ const zone = MALLORCA_ZONES.find((z) => z.id === service.zone);
 
 const categoryName = category?.name[currentLocale] || service.category;
 const zoneName = zone?.name[currentLocale] || service.zone;
-const shortDesc = service.shortDescription[currentLocale];
+const shortDesc = service.shortDescription[currentLocale] || service.shortDescription.en;
 const detailUrl = `${prefix}servicios/${service.slug}`;
 
 const smartCta = getSmartActionCta(

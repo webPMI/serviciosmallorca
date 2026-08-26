@@ -10,7 +10,7 @@ Antes de cualquier acción de escritura o modificación de datos, el agente debe
 
 1. **GR-11 (Zero Fake Data):** Prohibición absoluta de inventar datos, premios, noticias o nombres ficticios. Si un dato no existe en las fuentes oficiales minadas, se omite.
 2. **GR-12 (Fidelidad Google Maps):** Más del 90% de coincidencia exacta con coordenadas de la isla de Mallorca, enlaces de multi-mapas y teléfonos oficiales.
-3. **GR-04 (Multilingüismo Real):** Todo texto visible, especialidad o historia de fundador debe estar completamente redactado en los 3 idiomas oficiales (`es`, `en`, `ca`).
+3. **GR-04 (Multilingüismo Real):** Todo texto visible, especialidad o historia de fundador debe estar completamente redactado en los 4 idiomas oficiales (`es`, `en`, `ca`, `de`).
 4. **Arquitectura Modular (1 Negocio = 1 Archivo):** Cada negocio se guarda en `src/data/services/<sector>/<slug>.ts` con su export individual y agregación en el índice del sector.
 
 ---
@@ -38,7 +38,7 @@ El agente **no puede procesar un negocio en un único bloque ciego**. Debe ejecu
 ┌────────────────────────────────────────────────────────────────────────┐
 │ PASO 3: FASE DE ENRIQUECIMIENTO PROFUNDO (Los 5 Pilares)               │
 │ 1. Social Proof: Reseñas cuantitativas y testimonios reales.           │
-│ 2. Storytelling: 'founderStory' en ES/EN/CA con valor diferencial.     │
+│ 2. Storytelling: 'founderStory' en ES/EN/CA/DE con valor diferencial.│
 │ 3. Autoridad & Prensa: Enlaces exactos a hemeroteca balear y premios.  │
 │ 4. Conversión: WhatsApp pre-configurado, tarifas y horarios reales.    │
 │ 5. Local SEO: Tags de TAG_CATALOG y subtipo de Schema.org JSON-LD.     │
@@ -111,14 +111,14 @@ export const miNegocio: ServiceItem = {
   images: ["https://..."],
   gallery: ["https://..."],
   targetAudience: ["residentes", "turistas", "expat"],
-  languagesSpoken: ["es", "en", "ca"],
+  languagesSpoken: ["es", "en", "ca", "de"],
   emergency24h: false,
   inVillaService: false,
-  shortDescription: { es: "...", en: "...", ca: "..." },
-  fullDescription: { es: "...", en: "...", ca: "..." },
-  specialties: { es: ["..."], en: ["..."], ca: ["..."] },
-  highlights: { es: ["..."], en: ["..."], ca: ["..."] },
-  servicesProvided: { es: ["..."], en: ["..."], ca: ["..."] },
+  shortDescription: { es: "...", en: "...", ca: "...", de: "..." },
+  fullDescription: { es: "...", en: "...", ca: "...", de: "..." },
+  specialties: { es: ["..."], en: ["..."], ca: ["..."], de: ["..."] },
+  highlights: { es: ["..."], en: ["..."], ca: ["..."], de: ["..."] },
+  servicesProvided: { es: ["..."], en: ["..."], ca: ["..."], de: ["..."] },
   tags: ["zona:palma", "product:premium", "mod:cita-previa", "temps:todo-el-ano"],
   pricing: {
     startingPrice: "Desde 45€",
@@ -134,7 +134,7 @@ export const miNegocio: ServiceItem = {
   teamMembers: [
     {
       name: "Titular",
-      role: { es: "Director", en: "Director", ca: "Director" },
+      role: { es: "Director", en: "Director", ca: "Director", de: "Direktor" },
       specialty: "Atención Especializada",
     },
   ],

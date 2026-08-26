@@ -204,7 +204,7 @@ Al no haber teléfono ni reseñas que contrastar, el checkpoint de confianza cam
 2. **Coordenadas:** pin de Google Maps dentro del recinto (fidelidad ≥90%, GR-12) + enlaces multi-mapa.
 3. **Imagen:** foto propia o Wikimedia Commons con licencia clara; stock prohibido (regla anti-stock del repo).
 4. **Estado real:** evidencia reciente (<12 meses) de que el espacio está operativo y accesible; registrar `lastVerifiedAt`.
-5. **i18n completo `es/en/ca` (GR-04)**, igual que cualquier ficha del catálogo.
+5. **i18n completo `es/en/ca/de` (GR-04)**, igual que cualquier ficha del catálogo.
 
 #### 2.12.3 Backlog de guías propuestas (materia prima de F5)
 
@@ -263,7 +263,7 @@ Al no haber teléfono ni reseñas que contrastar, el checkpoint de confianza cam
 3. **Rankings anuales** — "Top gimnasios de Palma 2026" (reutiliza el motor de ranking del checklist).
 4. **FAQ trilingües** — "¿Cuánto cuesta un gimnasio en Palma?", "¿Dónde entrenar yoga en inglés?", "¿Dónde alquilar una bici de carretera?".
 5. **Siempre con datos reales** (GR-11): fotos, horarios, precios y mapas verificados + `lastVerifiedAt`.
-6. **i18n en 3 idiomas** (es/en/ca) en todo contenido y filtros (GR-04).
+6. **i18n en 4 idiomas** (es/en/ca/de) en todo contenido y filtros (GR-04).
 
 ### 3.4 Impacto esperado
 
@@ -293,16 +293,16 @@ Al no haber teléfono ni reseñas que contrastar, el checkpoint de confianza cam
 
 Los filtros reutilizan catálogos existentes (P-02); ningún filtro introduce texto libre:
 
-| Filtro UI           | Fuente de datos                                            | Ejemplos                                            |
-| ------------------- | ---------------------------------------------------------- | --------------------------------------------------- |
-| Zona                | `MALLORCA_ZONES` + tags `zona:*` derivados automáticamente | palma, calvia-andratx, manacor-llevant              |
-| Categoría deportiva | `CATEGORIES` bajo SS-15                                    | gimnasios-fitness, padel-tenis-raqueta…             |
-| Modalidad           | dominio `mod:*` de `tags.ts`                               | walk-in, cita-previa, online, hibrido               |
-| Audiencia           | dominio `aud:*`                                            | familias, parejas, expat, seniors                   |
-| Estacionalidad      | dominio `temps:*`                                          | verano, todo-el-ano                                 |
-| Rango de precio     | campo `priceRange` (€–€€€€)                                | €, €€, €€€                                          |
-| Abierto ahora       | campo `schedule` parseado                                  | —                                                   |
-| Idiomas hablados    | array `languagesSpoken`                                    | es, en, ca (valor `de` solo si se amplía el modelo) |
+| Filtro UI           | Fuente de datos                                            | Ejemplos                                |
+| ------------------- | ---------------------------------------------------------- | --------------------------------------- |
+| Zona                | `MALLORCA_ZONES` + tags `zona:*` derivados automáticamente | palma, calvia-andratx, manacor-llevant  |
+| Categoría deportiva | `CATEGORIES` bajo SS-15                                    | gimnasios-fitness, padel-tenis-raqueta… |
+| Modalidad           | dominio `mod:*` de `tags.ts`                               | walk-in, cita-previa, online, hibrido   |
+| Audiencia           | dominio `aud:*`                                            | familias, parejas, expat, seniors       |
+| Estacionalidad      | dominio `temps:*`                                          | verano, todo-el-ano                     |
+| Rango de precio     | campo `priceRange` (€–€€€€)                                | €, €€, €€€                              |
+| Abierto ahora       | campo `schedule` parseado                                  | —                                       |
+| Idiomas hablados    | array `languagesSpoken`                                    | es, en, ca, de                          |
 
 ### 4.2 Badges: condiciones de activación (derivadas, nunca manuales)
 
@@ -320,7 +320,7 @@ Un badge aparece **solo si el dato estructurado lo respalda** — evita marketin
 
 Claves agrupadas bajo `sports.*`: `sports.hub.title`, `sports.filter.<faceta>`,
 `sports.badge.<badge>` y `sports.category.<id>` (estas últimas reutilizan los labels trilingües de
-`categories.ts`). Prohibido hardcodear textos de la vertical fuera de los bundles i18n `es/en/ca`.
+`categories.ts`). Prohibido hardcodear textos de la vertical fuera de los bundles i18n `es/en/ca/de`.
 
 ---
 
@@ -335,8 +335,8 @@ Claves agrupadas bajo `sports.*`: `sports.hub.title`, `sports.filter.<faceta>`,
 | **F1**         | Primer lote de candidatos reales (gimnasios, pádel, golf, natación)                          | `scripts/discovery-targets-sports.json`        | minería real vía `npm run discover:mine` |
 | **F2**         | Curar 4–6 fichas deportivas reales (SOP 4 pasos) y activar sus categorías en `categories.ts` | `src/data/services/deportes-fitness/`          | `typecheck && test && validate:taxonomy` |
 | **F3**         | Mapeo Schema.org deportivo en `jsonLdGenerator.ts`                                           | tipos `ExerciseGym`, `SportsActivityLocation`… | tests + Rich Snippets                    |
-| **F4**         | Hub `/servicios/deporte` + filtros + badges                                                  | páginas Astro + i18n `es/en/ca`                | build + Lighthouse                       |
-| **F5**         | Guías editoriales de espacios públicos gratuitos                                             | posts en 3 idiomas                             | analytics + backlinks                    |
+| **F4**         | Hub `/servicios/deporte` + filtros + badges                                                  | páginas Astro + i18n `es/en/ca/de`             | build + Lighthouse                       |
+| **F5**         | Guías editoriales de espacios públicos gratuitos                                             | posts en 4 idiomas                             | analytics + backlinks                    |
 
 **Ritmo recomendado:** 2–3 fichas deportivas/día (cuadruplicable con `--ingest-verified` del motor).
 

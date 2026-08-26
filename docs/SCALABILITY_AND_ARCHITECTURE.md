@@ -142,7 +142,7 @@ El script [`scripts/audit-services.ts`](file:///c:/Users/ink.enzo/Desktop/p/serv
 ## 6. Control de Calidad y Reglas de Desarrollo (Golden Rules)
 
 1. **GR-01 (Estilos):** 100% variables CSS en `global.css` (cero estilos inline o utilidades no estándar).
-2. **GR-04 (i18n):** Todo texto visible proviene de `es.json`, `en.json`, `ca.json` con paridad total.
+2. **GR-04 (i18n):** Todo texto visible proviene de `es.json`, `en.json`, `ca.json`, `de.json` con paridad total.
 3. **GR-05 (Tests):** `npm test` debe validar integridad, tipos y ausencia de duplicados antes de cada commit.
 4. **GR-11 (Zero Fake Data):** Prohibido publicar datos ficticios o no corroborados.
 

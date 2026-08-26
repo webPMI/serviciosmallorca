@@ -84,5 +84,5 @@ Antes de aprobar cualquier funcionalidad que involucre datos:
 - [ ] ¿Se valida que ningún dato sensible se guarde en `localStorage` no cifrado?
 - [ ] ¿El formulario valida longitudes máximas y protocolos `https://`?
 - [ ] ¿Las reglas de Firestore bloquean escrituras directas no autorizadas?
-- [ ] ¿Los textos legales y de consentimiento están disponibles en los 3 idiomas (`es`, `en`, `ca`)?
+- [ ] ¿Los textos legales y de consentimiento están disponibles en los 4 idiomas (`es`, `en`, `ca`, `de`)?
 - [ ] ¿Las llamadas a bases de datos usan tipos estrictos de TypeScript?

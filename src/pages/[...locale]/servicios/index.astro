@@ -32,7 +32,9 @@ const initialFilteredServices = SERVICES.filter((service) => {
   }
   if (searchQuery) {
     const nameMatch = service.name.toLowerCase().includes(searchQuery);
-    const descMatch = service.shortDescription[locale].toLowerCase().includes(searchQuery);
+    const descMatch = (service.shortDescription[locale] || service.shortDescription.en)
+      .toLowerCase()
+      .includes(searchQuery);
     const tagMatch = service.tags.some((t) => t.toLowerCase().includes(searchQuery));
     if (!nameMatch && !descMatch && !tagMatch) {
       return false;
@@ -178,7 +180,7 @@ const initialFilteredServices = SERVICES.filter((service) => {
               class="service-item-wrapper"
               data-id={service.id}
               data-name={service.name.toLowerCase()}
-              data-desc={service.shortDescription[locale].toLowerCase()}
+              data-desc={(service.shortDescription[locale] || service.shortDescription.en).toLowerCase()}
               data-tags={service.tags.join(" ").toLowerCase()}
               data-category={service.category}
               data-zone={service.zone}

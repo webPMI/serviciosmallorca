@@ -122,7 +122,7 @@ servicios-mallorca/
 │   │       ├── types.ts        # Modelos TypeScript de negocios y reputación
 │   │       ├── arte-tatuajes.ts# Módulo sectorial
 │   │       └── index.ts        # Repositorio y métodos de consulta
-│   ├── i18n/                   # Traducciones (es.json, en.json, ca.json)
+│   ├── i18n/                   # Traducciones (es.json, en.json, ca.json, de.json)
 │   ├── layouts/
 │   │   └── BaseLayout.astro    # Layout base global con SEO y analytics
 │   ├── pages/

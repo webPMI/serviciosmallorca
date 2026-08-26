@@ -237,7 +237,7 @@ Estos sectores se preparan en la taxonomía pero **NO se materializan** en `CATE
 | `id` / `slug` de sector y categoría | `kebab-case` ASCII (sin tildes, sin `ñ`)               | `nautica-charter`   |
 | Etiqueta                            | `dominio:valor` en minúsculas, sin espacios            | `product:lujo`      |
 | Clave i18n de etiqueta              | `tags.{dominio}.{valor}`                               | `tags.product.lujo` |
-| Descripciones                       | Siempre en 3 idiomas `es` / `en` / `ca`                | —                   |
+| Descripciones                       | Siempre en 4 idiomas `es` / `en` / `ca` / `de`         | —                   |
 | Nombre de negocio                   | Capitalización oficial del negocio (GR-12)             | `G & M Tattoo Inca` |
 | Emojis en iconos                    | Solo en `categories.ts` / `sectors.ts`, nunca en datos | ⛵                  |
 | Acentos/`ñ` en técnico              | ASCII transliterado (`ñ`→`n`, `à`→`a`)                 | `funeraria`         |
