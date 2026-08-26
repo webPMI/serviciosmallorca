@@ -141,10 +141,10 @@ export const laHaciendaPeguera: ServiceItem = {
     ca: "Fundat amb el compromís d'oferir la millor carn a la brasa en un ambient acollidor, La Hacienda és des de fa dècades un clàssic a Peguera. El domini del foc de carbó, la frescor del producte i un tracte familiar el converteixen en una visita obligada a Calvià.",
     de: "Gegründet mit dem Anspruch, perfekten Fleischgenuss in herzlicher Atmosphäre zu bieten, ist das La Hacienda seit Jahrzehnten eine beliebte Adresse in Peguera. Das Gespür für den Holzkohlegrill, frischeste Zutaten und ein engagierter Familienservice machen jedes Abendessen hier zu einem echten Genuss.",
   },
-  image: "https://hacienda-steakhouse.es/wp-content/uploads/2021/05/hacienda-chuleton-brasa.jpg",
+  image: "https://hacienda-steakhouse.es/wp-content/uploads/2022/05/LaHacienda_imagenes_menu_desktop-03.jpg",
   gallery: [
-    "https://hacienda-steakhouse.es/wp-content/uploads/2021/05/hacienda-terraza-peguera.jpg",
-    "https://hacienda-steakhouse.es/wp-content/uploads/2021/05/hacienda-salon-rustico.jpg",
+    "https://hacienda-steakhouse.es/wp-content/uploads/2022/05/LaHacienda_imagenes_menu_desktop-04.jpg",
+    "https://hacienda-steakhouse.es/wp-content/uploads/2022/05/LaHacienda_imagenes_menu_desktop-05.jpg",
   ],
   schedule: "Lunes a Domingo: 18:00 - 00:00",
   confidenceScore: 92,
