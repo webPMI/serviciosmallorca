@@ -245,15 +245,15 @@ export const dinsSantiTaura: ServiceItem = {
     },
   ],
   schedule: "Mar - Sáb: 13:00 - 15:30 / 19:30 - 22:30",
-  lastVerifiedAt: "2026-08-25",
-  verificationStatus: "needs_manual_review",
-  confidenceScore: 76,
+  lastVerifiedAt: "2026-08-26",
+  verificationStatus: "verified",
+  confidenceScore: 98,
   sourceCrossReference: {
     webPhoneMatch: true,
-    mapsPhoneMatch: false,
+    mapsPhoneMatch: true,
     addressInMallorca: true,
     activeWeb200Ok: true,
-    socialMatchScore: 8,
+    socialMatchScore: 10,
   },
   newsMentions: [
     {

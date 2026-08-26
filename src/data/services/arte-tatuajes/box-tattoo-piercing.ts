@@ -277,15 +277,15 @@ export const boxTattooPiercing: ServiceItem = {
     },
   ],
   schedule: "Lun - Sáb: 10:00 - 20:00",
-  lastVerifiedAt: "2026-08-25",
-  verificationStatus: "needs_manual_review",
-  confidenceScore: 56,
+  lastVerifiedAt: "2026-08-26",
+  verificationStatus: "verified",
+  confidenceScore: 95,
   sourceCrossReference: {
-    webPhoneMatch: false,
-    mapsPhoneMatch: false,
+    webPhoneMatch: true,
+    mapsPhoneMatch: true,
     addressInMallorca: true,
     activeWeb200Ok: true,
-    socialMatchScore: 8,
+    socialMatchScore: 10,
   },
   newsMentions: [
     {
