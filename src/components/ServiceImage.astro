@@ -4,6 +4,7 @@ interface Props {
   alt: string;
   categoryIcon?: string;
   categoryName?: string;
+  categorySlug?: string;
   className?: string;
   aspectRatio?: "16/9" | "4/3" | "1/1" | "21/9" | "auto";
   loading?: "lazy" | "eager";
@@ -15,18 +16,39 @@ const {
   alt,
   categoryIcon = "📍",
   categoryName = "Servicio Mallorca",
+  categorySlug = "default",
   className = "",
   aspectRatio = "16/9",
   loading = "lazy",
   id,
 } = Astro.props;
 
-const hasValidSrc = Boolean(src && src.trim().length > 0);
+// Determine category banner fallback
+const categoryBanners: Record<string, string> = {
+  "gastronomia-catering": "/images/categories/gastronomia-catering.svg",
+  "salud-bienestar": "/images/categories/salud-bienestar.svg",
+  "nautica-charter": "/images/categories/nautica-charter.svg",
+  "deportes-aire-libre": "/images/categories/deportes.svg",
+  deporte: "/images/categories/deportes.svg",
+  "reformas-hogar": "/images/categories/reformas-hogar.svg",
+  "inmobiliaria-villas": "/images/categories/inmobiliaria-villas.svg",
+  "arte-tatuajes": "/images/categories/arte-tatuajes.svg",
+  "servicios-profesionales": "/images/categories/servicios-profesionales.svg",
+  "motor-transporte": "/images/categories/motor-transporte.svg",
+};
+
+const fallbackBanner = categoryBanners[categorySlug] || "/images/categories/default.svg";
+
+// Block known broken hosts like expired Imgur URLs
+const isKnownBrokenUrl = Boolean(
+  src && (src.includes("imgur.com") || src.includes("placeholder") || src.includes("dummy")),
+);
+const validSrc = !isKnownBrokenUrl && Boolean(src && src.trim().length > 0) ? src : null;
 ---
 
 <div class:list={["service-image-wrapper", `ratio-${aspectRatio.replace("/", "-")}`, className]}>
   {
-    hasValidSrc && (
+    validSrc && (
       <div class="service-img-skeleton" aria-hidden="true">
         <div class="skeleton-shimmer" />
         <div class="skeleton-icon-placeholder">
@@ -37,36 +59,30 @@ const hasValidSrc = Boolean(src && src.trim().length > 0);
   }
 
   {
-    hasValidSrc ? (
+    validSrc ? (
       <img
         id={id}
-        src={src}
+        src={validSrc}
         alt={alt}
         loading={loading}
         decoding="async"
         class="service-real-img"
         onload="this.classList.add('is-loaded'); const sk = this.parentElement.querySelector('.service-img-skeleton'); if(sk) sk.classList.add('fade-out');"
-        onerror="this.style.display='none'; const sk = this.parentElement.querySelector('.service-img-skeleton'); if(sk) sk.remove(); if(this.nextElementSibling) this.nextElementSibling.style.display='flex';"
+        onerror="this.style.display='none'; const sk = this.parentElement.querySelector('.service-img-skeleton'); if(sk) sk.remove(); const fb = this.parentElement.querySelector('.service-img-fallback-banner'); if(fb) fb.style.display='block';"
       />
     ) : null
   }
 
-  <!-- Graceful Fallback if image fails or is absent -->
+  <!-- Guaranteed High-Definition Fallback Banner -->
   <div
-    class="service-img-placeholder"
-    style={hasValidSrc ? "display: none;" : "display: flex;"}
-    aria-label={`Imagen no disponible para ${alt}`}
+    class="service-img-fallback-banner"
+    style={validSrc ? "display: none;" : "display: block;"}
+    aria-label={`Imagen de ${alt}`}
   >
-    <div class="placeholder-content">
-      <div class="placeholder-icon-wrap">
-        <span class="placeholder-icon">{categoryIcon}</span>
-      </div>
-      <span class="placeholder-title">{alt}</span>
-      <span class="placeholder-badge">
-        <span>📸</span>
-        <span>Foto no disponible</span>
-      </span>
-      <span class="placeholder-category">{categoryName}</span>
+    <img src={fallbackBanner} alt={`${alt} - ${categoryName}`} loading={loading} class="fallback-banner-img" />
+    <div class="banner-overlay">
+      <span class="banner-title">{alt}</span>
+      <span class="banner-cat-tag">{categoryIcon} {categoryName}</span>
     </div>
   </div>
 </div>
@@ -76,7 +92,7 @@ const hasValidSrc = Boolean(src && src.trim().length > 0);
     position: relative;
     width: 100%;
     overflow: hidden;
-    background: var(--color-surface, #f1f5f9);
+    background: var(--color-surface, #1e293b);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -98,75 +114,16 @@ const hasValidSrc = Boolean(src && src.trim().length > 0);
     aspect-ratio: 21 / 9;
   }
 
-  .ratio-auto {
-    height: 100%;
-  }
-
-  /* Skeleton Shimmer Styles */
-  .service-img-skeleton {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--color-surface-hover, #e2e8f0);
-    overflow: hidden;
-    transition:
-      opacity 0.35s ease-out,
-      visibility 0.35s ease-out;
-  }
-
-  .service-img-skeleton.fade-out {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-  }
-
-  .skeleton-shimmer {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.25) 50%, transparent 100%);
-    background-size: 200% 100%;
-    animation: skeleton-wave 1.6s infinite cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  [data-theme="golden-dark"] .skeleton-shimmer,
-  [data-theme="dark"] .skeleton-shimmer {
-    background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.08) 50%, transparent 100%);
-  }
-
-  .skeleton-icon-placeholder {
-    opacity: 0.35;
-    transform: scale(1.4);
-    filter: grayscale(1);
-  }
-
-  .skeleton-icon {
-    font-size: 2rem;
-  }
-
-  @keyframes skeleton-wave {
-    0% {
-      transform: translateX(-100%);
-    }
-    100% {
-      transform: translateX(100%);
-    }
-  }
-
-  /* Smooth image transition */
   .service-real-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    image-orientation: from-image;
-    display: block;
     opacity: 0;
     transform: scale(1.02);
     transition:
-      opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-      transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      opacity 0.4s ease-in-out,
+      transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    display: block;
   }
 
   .service-real-img.is-loaded {
@@ -174,69 +131,100 @@ const hasValidSrc = Boolean(src && src.trim().length > 0);
     transform: scale(1);
   }
 
-  /* Fallback placeholder */
-  .service-img-placeholder {
+  /* Skeleton Layer */
+  .service-img-skeleton {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background: linear-gradient(135deg, rgba(201, 147, 62, 0.08) 0%, rgba(201, 147, 62, 0.02) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: opacity 0.3s ease-out;
+  }
+
+  .service-img-skeleton.fade-out {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .skeleton-shimmer {
+    position: absolute;
+    top: 0;
+    left: -100%;
     width: 100%;
     height: 100%;
+    background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.12) 50%, transparent 100%);
+    animation: skeleton-wave 1.6s infinite ease-in-out;
+  }
+
+  .skeleton-icon-placeholder {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: rgba(201, 147, 62, 0.12);
+    border: 1px solid rgba(201, 147, 62, 0.25);
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, var(--color-surface, #f8fafc) 0%, var(--color-surface-hover, #f1f5f9) 100%);
-    padding: var(--space-4, 1rem);
-    text-align: center;
-    border: 1px dashed var(--color-surface-border, #cbd5e1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   }
 
-  .placeholder-content {
+  .skeleton-icon {
+    font-size: 1.5rem;
+    opacity: 0.8;
+  }
+
+  @keyframes skeleton-wave {
+    0% {
+      left: -100%;
+    }
+    100% {
+      left: 100%;
+    }
+  }
+
+  /* Guaranteed Fallback Banner */
+  .service-img-fallback-banner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .fallback-banner-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .banner-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.2) 60%, transparent 100%);
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: var(--space-1, 0.25rem);
+    justify-content: flex-end;
+    padding: 1rem;
+    color: #ffffff;
   }
 
-  .placeholder-icon-wrap {
-    width: 48px;
-    height: 48px;
-    border-radius: var(--border-radius-full, 9999px);
-    background: var(--color-surface, #ffffff);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: var(--shadow-sm, 0 1px 2px rgba(0, 0, 0, 0.05));
-    margin-bottom: var(--space-1, 0.25rem);
-  }
-
-  .placeholder-icon {
-    font-size: 1.5rem;
-  }
-
-  .placeholder-title {
+  .banner-title {
+    font-size: 0.95rem;
     font-weight: 700;
-    font-size: var(--font-size-xs, 0.75rem);
-    color: var(--color-text, #1e293b);
-    max-width: 200px;
+    line-height: 1.25;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+    margin-bottom: 0.25rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
   }
 
-  .placeholder-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.25rem;
-    font-size: 0.65rem;
+  .banner-cat-tag {
+    font-size: 0.72rem;
     font-weight: 600;
-    color: var(--color-text-muted, #64748b);
-    background: var(--color-surface, #ffffff);
-    padding: 0.15rem 0.5rem;
-    border-radius: var(--border-radius-full, 9999px);
-    border: 1px solid var(--color-surface-border, #e2e8f0);
-  }
-
-  .placeholder-category {
-    font-size: 0.65rem;
-    color: var(--color-primary, #c9933e);
-    font-weight: 600;
+    color: #fde047;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
   }
 </style>

@@ -183,12 +183,8 @@ export const boxTattooPiercing: ServiceItem = {
       "Wechsel & Verkauf von medizinischem Schmuck",
     ],
   },
-  image: "https://i.imgur.com/wnba2lT.jpeg",
-  gallery: [
-    "https://i.imgur.com/wnba2lT.jpeg",
-    "https://i.imgur.com/aS7eca7.jpeg",
-    "https://cdn.tatspark.com/images/Watercolor-floral-tattoo-design-for-women-on-forearm-and-hand-7647ceceeb_thumbnail.webp",
-  ],
+  image: "/images/categories/box-tattoo-palma.svg",
+  gallery: ["/images/categories/box-tattoo-palma.svg"],
   reputationBreakdown: {
     googleMaps: {
       rating: 4.8,
@@ -249,7 +245,7 @@ export const boxTattooPiercing: ServiceItem = {
       id: "box-post-1",
       platform: "instagram",
       url: "https://instagram.com/boxtattoopiercing",
-      imageUrl: "https://i.imgur.com/wnba2lT.jpeg",
+      imageUrl: "/images/categories/arte-tatuajes.svg",
       caption: "Diseño floral fine line personalizado para antebrazo en nuestro estudio de Carrer Jaume II.",
       date: "2025-11-20",
       likesCount: 156,
@@ -258,7 +254,7 @@ export const boxTattooPiercing: ServiceItem = {
       id: "box-post-2",
       platform: "instagram",
       url: "https://instagram.com/boxtattoopiercing",
-      imageUrl: "https://i.imgur.com/aS7eca7.jpeg",
+      imageUrl: "/images/categories/arte-tatuajes.svg",
       caption: "Cover-up y restauración de tatuaje antiguo terminado con éxito.",
       date: "2025-10-18",
       likesCount: 204,

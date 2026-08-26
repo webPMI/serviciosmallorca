@@ -20,6 +20,7 @@ const { service, category, categoryName } = Astro.props;
       alt={service.name}
       categoryIcon={category?.icon}
       categoryName={categoryName}
+      categorySlug={service.category}
       aspectRatio="auto"
       className="detail-main-img"
       loading="eager"

@@ -10,6 +10,7 @@ describe("Critical Fixes: Image Assets & German (DE) Locale Parity", () => {
         service.image.startsWith("http") || service.image.startsWith("/"),
         `Imagen inválida en ${service.name}: ${service.image}`,
       ).toBe(true);
+      expect(service.image.includes("imgur.com"), `Imagen de imgur.com prohibida en ${service.name}`).toBe(false);
 
       // Si tiene galería, validar que cada imagen de la galería sea una URL válida
       if (service.gallery && service.gallery.length > 0) {
@@ -18,6 +19,7 @@ describe("Critical Fixes: Image Assets & German (DE) Locale Parity", () => {
             typeof img === "string" && (img.startsWith("http") || img.startsWith("/")),
             `Foto de galería inválida #${idx} en ${service.name}`,
           ).toBe(true);
+          expect(img.includes("imgur.com"), `Foto de galería de imgur.com prohibida en ${service.name}`).toBe(false);
         }
       }
     }
