@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+  <defs>
+    <linearGradient id="boqueta-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#142115"/>
+      <stop offset="50%" stop-color="#1e3422"/>
+      <stop offset="100%" stop-color="#2d4a32"/>
+    </linearGradient>
+    <linearGradient id="orange-soller" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f57c00"/>
+      <stop offset="100%" stop-color="#ffb74d"/>
+    </linearGradient>
+    <filter id="shadow-boqueta" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#boqueta-bg)"/>
+
+  <!-- Tramuntana & Valley Elements -->
+  <circle cx="1080" cy="150" r="230" fill="#f57c00" opacity="0.08"/>
+  <circle cx="140" cy="540" r="180" fill="#2d4a32" opacity="0.3"/>
+  <path d="M0,530 Q350,470 700,520 T1200,500 L1200,675 L0,675 Z" fill="#09120a" opacity="0.5"/>
+
+  <!-- Main Content Graphic -->
+  <g transform="translate(600, 290)" filter="url(#shadow-boqueta)" text-anchor="middle">
+    <!-- Icon Circle -->
+    <circle cx="0" cy="-60" r="65" fill="url(#orange-soller)" opacity="0.95"/>
+    <text x="0" y="-42" font-size="48" text-anchor="middle">🍊</text>
+
+    <!-- Business Title -->
+    <text x="0" y="55" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="44" font-weight="800" fill="#ffffff" letter-spacing="1">
+      Restaurante Ca'n Boqueta
+    </text>
+
+    <!-- Subtitle / Location -->
+    <text x="0" y="105" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="600" fill="url(#orange-soller)" letter-spacing="2">
+      GRAN VIA, 43 · SÓLLER (VALLE DE LOS NARANJOS)
+    </text>
+
+    <!-- Tags / Highlights -->
+    <text x="0" y="150" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#e0e0e0" opacity="0.9">
+      Chef Kiko Martorell · Guía Michelin &amp; Repsol · Menú Degustación de Temporada · Patio Interior
+    </text>
+  </g>
+
+  <!-- Verified Badge -->
+  <g transform="translate(80, 80)">
+    <rect width="190" height="42" rx="21" fill="rgba(245, 124, 0, 0.2)" stroke="#ffb74d" stroke-width="1.5"/>
+    <text x="95" y="27" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700" fill="#ffe0b2" text-anchor="middle">
+      🛡️ VERIFICADO 98%
+    </text>
+  </g>
+
+  <!-- Brand Watermark -->
+  <text x="1120" y="620" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="700" fill="#ffffff" opacity="0.4" text-anchor="end">
+    SERVICIOS MALLORCA
+  </text>
+</svg>

@@ -57,8 +57,12 @@ import { restauranteStagierBar } from "./restaurante-stagier-bar.ts";
 import { restauranteLasTerrazasBendinat } from "./restaurante-las-terrazas-bendinat.ts";
 import { marYMarPeguera } from "./mar-y-mar-peguera.ts";
 import { laHaciendaPeguera } from "./la-hacienda-peguera.ts";
+import { stayPortDePollenca } from "./stay-port-de-pollenca.ts";
+import { canBoquetaSoller } from "./can-boqueta-soller.ts";
 
 export {
+  stayPortDePollenca,
+  canBoquetaSoller,
   marYMarPeguera,
   laHaciendaPeguera,
   restauranteToquePalma,
@@ -182,4 +186,6 @@ export const RESTAURANT_SERVICES: ServiceItem[] = [
   restauranteLasTerrazasBendinat,
   marYMarPeguera,
   laHaciendaPeguera,
+  stayPortDePollenca,
+  canBoquetaSoller,
 ];
