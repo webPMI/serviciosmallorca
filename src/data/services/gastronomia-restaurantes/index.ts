@@ -145,8 +145,14 @@ import { bodegasOliverMoraguesAlgaida } from "./bodegas-oliver-moragues-algaida.
 import { restauranteClubDeVelaPortAndratx } from "./restaurante-club-de-vela-port-andratx.ts";
 import { restauranteMiramarPortAlcudia } from "./restaurante-miramar-port-alcudia.ts";
 import { bodegasVinsNadalBinissalem } from "./bodegas-vins-nadal-binissalem.ts";
+import { restauranteCnCalaRatjada } from "./restaurante-cn-cala-ratjada.ts";
+import { restauranteMarIVentBanyalbufar } from "./restaurante-mar-i-vent-banyalbufar.ts";
+import { bodegasCondeDeSuyrotColoniaSantPere } from "./bodegas-conde-de-suyrot-colonia-sant-pere.ts";
 
 export {
+  restauranteCnCalaRatjada,
+  restauranteMarIVentBanyalbufar,
+  bodegasCondeDeSuyrotColoniaSantPere,
   restauranteClubDeVelaPortAndratx,
   restauranteMiramarPortAlcudia,
   bodegasVinsNadalBinissalem,
@@ -446,4 +452,7 @@ export const RESTAURANT_SERVICES: ServiceItem[] = [
   restauranteClubDeVelaPortAndratx,
   restauranteMiramarPortAlcudia,
   bodegasVinsNadalBinissalem,
+  restauranteCnCalaRatjada,
+  restauranteMarIVentBanyalbufar,
+  bodegasCondeDeSuyrotColoniaSantPere,
 ];
