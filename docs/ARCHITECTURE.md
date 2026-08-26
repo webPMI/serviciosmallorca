@@ -8,7 +8,7 @@
 | **Runtime Edge**          | Cloudflare Workers                | `nodejs_compat` con sesiones KV y Workers Assets (`dist/client/`) |
 | **Autenticación & DB**    | Firebase Auth + Cloud Firestore   | ^12.16.0 (`serviciosmallorca`)                                    |
 | **Monetización**          | Google AdSense                    | `ca-pub-1918580228487420` (`ads.txt` verificado)                  |
-| **Testing**               | Vitest                            | ^3.0.7 (32 suites / 174 tests de integridad y confianza)          |
+| **Testing**               | Vitest                            | ^3.0.7 (33 suites / 178 tests de integridad y confianza)          |
 | **Tipado**                | TypeScript                        | ^6.0.3 (Strict mode, cero `any` en producción)                    |
 | **Estilos**               | CSS Variables + Custom Properties | Nativo (Temas: Golden por defecto, Golden-Dark, Dark, Light)      |
 | **CI / CD & Auto-Deploy** | GitHub Actions + Wrangler CLI     | Despliegue automático tras pasar 5 Quality Gates                  |
@@ -20,7 +20,7 @@
 ```
 servicios-mallorca/
 ├── .github/workflows/
-│   └── ci.yml                          # CI/CD: Typecheck, Taxonomía, 174 Tests, Build & Auto-Deploy
+│   └── ci.yml                          # CI/CD: Typecheck, Taxonomía, 178 Tests, Build & Auto-Deploy
 ├── wrangler.json                       # Configuración de Cloudflare Workers y dominios custom
 ├── src/
 │   ├── i18n/                           # Internacionalización (es, en, ca, de)
@@ -29,14 +29,17 @@ servicios-mallorca/
 │   ├── pages/
 │   │   ├── [...locale]/                # Rutas multi-idioma (/es/, /en/, /ca/, /de/)
 │   │   │   ├── 404.astro               # Página 404 personalizada con buscador y atajos
+│   │   │   ├── mejores/[slug].astro    # Hubs de Comparativa Dinámica y Long-Tail SEO
 │   │   │   └── servicios/              # Catálogo, fichas de negocio y filtros multidimensionales
+│   │   ├── mejores/[slug].astro        # Fallback de comparativa dinámica
 │   │   └── 404.astro                   # Fallback 404 global
 │   ├── styles/
 │   │   ├── global.css                  # Variables CSS, tokens, temas y skeleton shimmer
 │   │   └── service-detail.css          # Estilos de alta fidelidad para fichas de negocio
 │   ├── components/                     # Componentes de UI
+│   │   ├── ComparisonMatrix.astro      # Tabla Comparativa Dinámica con Filtros por Atributos y QS
 │   │   ├── ServiceCard.astro           # Tarjeta con badges de capacidades y Smart-Action CTA
-│   │   ├── ServiceImage.astro          # Skeleton Shimmer Loader + Fade-in + Fallback
+│   │   ├── ServiceImage.astro          # Skeleton Shimmer Loader + Fade-in + HD Vector Banners
 │   │   ├── LanguageSwitcher.astro      # Selector responsive con soporte completo para DE
 │   │   ├── FavoriteButton.astro        # Sistema de retención y favoritos (localStorage)
 │   │   └── BusinessQualityFeedbackModal.astro # Feedback comunitario y reporte de discrepancias
