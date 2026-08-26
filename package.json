@@ -32,6 +32,8 @@
     "audit:images:live": "node --experimental-strip-types scripts/verify-all-image-urls.ts",
     "audit:quality": "node --experimental-strip-types scripts/deep-data-scrubbing.ts",
     "report:verify": "node --experimental-strip-types scripts/generate-verification-report.ts",
+    "curate": "node --experimental-strip-types scripts/curate-business.ts",
+    "gate:check": "node --experimental-strip-types -e \"import('./src/lib/verificationPipeline.ts').then(m=>console.log('✅ Verification gate:', m.VERIFICATION_GATE))\"",
     "check": "npm run lint && npm run typecheck && npm test && npm run validate:taxonomy",
     "prepare": "husky"
   },

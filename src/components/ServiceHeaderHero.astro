@@ -20,7 +20,6 @@ const categoryName = category?.name[locale] || service.category;
 const zoneName = zone?.name[locale] || service.zone;
 
 const cleanPhone = service.phone ? service.phone.replace(/[^0-9+]/g, "") : "";
-const cleanWhatsApp = service.whatsapp ? service.whatsapp.replace(/[^0-9]/g, "") : "";
 const smartCta = getSmartActionCta(
   service.category,
   service.name,

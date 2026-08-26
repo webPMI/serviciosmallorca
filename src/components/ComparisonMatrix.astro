@@ -13,14 +13,7 @@ interface Props {
   categoryName?: string;
 }
 
-const {
-  rankedServices,
-  currentLocale,
-  getLangPrefix,
-  translations,
-  categorySlug = "default",
-  categoryName = "Servicios",
-} = Astro.props;
+const { rankedServices, currentLocale, getLangPrefix, translations } = Astro.props;
 
 const prefix = getLangPrefix(currentLocale);
 ---
@@ -169,9 +162,9 @@ const prefix = getLangPrefix(currentLocale);
                   {translations["services.viewDetails"] || "Ver Ficha Completa"}
                 </a>
                 <a
-                  href={smartCta.href}
-                  target={smartCta.external ? "_blank" : undefined}
-                  rel={smartCta.external ? "noopener noreferrer" : undefined}
+                  href={smartCta.url}
+                  target={smartCta.isExternal ? "_blank" : undefined}
+                  rel={smartCta.isExternal ? "noopener noreferrer" : undefined}
                   class="btn btn-primary btn-sm cta-direct-btn"
                 >
                   <span>{smartCta.icon}</span>

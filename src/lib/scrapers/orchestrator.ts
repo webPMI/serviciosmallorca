@@ -18,6 +18,8 @@ export interface HarvestedIntelligenceResult {
   businessQuery: string;
   detectedCategory: string;
   websiteProvided?: string;
+  /** ISO timestamp de cuándo se extrajeron los datos. Trazabilidad para el Hub. */
+  extractionTimestamp: string;
   extractedMedia: {
     mainImage?: string;
     ogImage?: string;
@@ -583,10 +585,13 @@ export async function harvestBusinessIntelligence(
   curationTemplate.verificationStatus = verificationReport.status;
   curationTemplate.sourceCrossReference = verificationReport.crossReference;
 
+  const extractionTimestamp = new Date().toISOString();
+
   return {
     businessQuery: cleanName,
     detectedCategory,
     websiteProvided: targetUrl || undefined,
+    extractionTimestamp,
     extractedMedia: {
       mainImage,
       ogImage: baseData.ogImage,

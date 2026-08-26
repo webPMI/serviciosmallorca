@@ -1,16 +1,14 @@
 ---
-import type { SportsFacilityPOI, SportActivityType } from "../data/sports/types";
 import { SPORTS_FACILITIES } from "../data/sports/facilities";
 import type { Locale } from "../i18n";
 
 interface Props {
   currentLocale: Locale;
-  translations: Record<string, string>;
   initialActivity?: string;
   initialZone?: string;
 }
 
-const { currentLocale, translations, initialActivity = "all", initialZone = "all" } = Astro.props;
+const { currentLocale, initialActivity = "all", initialZone = "all" } = Astro.props;
 
 const ACTIVITIES: Array<{ id: string; icon: string; name: Record<Locale, string> }> = [
   { id: "all", icon: "🏆", name: { es: "Todas", en: "All", ca: "Totes", de: "Alle" } },

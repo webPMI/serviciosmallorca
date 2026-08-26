@@ -88,7 +88,7 @@ function formatNextOpening(type: "today" | "tomorrow" | "monday", timeStr: strin
  */
 export function getLiveBusinessStatus(
   scheduleText?: string,
-  serviceStatus: "open" | "seasonal_closure" | "permanently_closed" = "open",
+  serviceStatus: "open" | "seasonal_closure" | "permanently_closed" | "incomplete_admin_only" | undefined = "open",
   now: Date = new Date(),
   locale: Locale = "es",
 ): LiveStatusResult {

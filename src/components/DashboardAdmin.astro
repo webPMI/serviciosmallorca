@@ -245,7 +245,7 @@ const withNewsCount = SERVICES.filter(
               extractedWebPhone: s.phone,
               whatsapp: s.whatsapp,
               socialLinks: s.socialLinks,
-              reviewCount: s.reviewCount,
+              reviewCount: s.reviewCount ?? undefined,
             });
 
             const score = s.confidenceScore ?? audit.confidenceScore;

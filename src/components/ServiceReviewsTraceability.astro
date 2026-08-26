@@ -8,7 +8,7 @@ interface Props {
   currentLocale: Locale;
 }
 
-const { businessSlug, businessName, currentLocale } = Astro.props;
+const { businessSlug, currentLocale } = Astro.props;
 const traceabilityData = getBusinessReviewsTraceability(businessSlug);
 
 if (!traceabilityData || traceabilityData.verifiedReviews.length === 0) {

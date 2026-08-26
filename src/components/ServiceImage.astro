@@ -67,8 +67,8 @@ const validSrc = !isKnownBrokenUrl && Boolean(src && src.trim().length > 0) ? sr
         loading={loading}
         decoding="async"
         class="service-real-img"
-        onload="this.classList.add('is-loaded'); const sk = this.parentElement.querySelector('.service-img-skeleton'); if(sk) sk.classList.add('fade-out');"
-        onerror="this.style.display='none'; const sk = this.parentElement.querySelector('.service-img-skeleton'); if(sk) sk.remove(); const fb = this.parentElement.querySelector('.service-img-fallback-banner'); if(fb) fb.style.display='block';"
+        onload="this.classList.add('is-loaded'); const sk1 = this.parentElement.querySelector('.service-img-skeleton'); if(sk1) sk1.classList.add('fade-out');"
+        onerror="this.style.display='none'; const sk2 = this.parentElement.querySelector('.service-img-skeleton'); if(sk2) sk2.remove(); const fb = this.parentElement.querySelector('.service-img-fallback-banner'); if(fb) fb.style.display='block';"
       />
     ) : null
   }
