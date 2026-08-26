@@ -129,6 +129,7 @@ export const MALLORCA_ZONES: MallorcaZone[] = [
       "S'Arenal",
       "Felanitx",
       "Sa Ràpita",
+      "S'Estanyol",
     ],
   },
   {
@@ -150,6 +151,7 @@ export const MALLORCA_ZONES: MallorcaZone[] = [
       "Santa Eugènia",
       "Algaida",
       "Llubí",
+      "Sant Joan",
     ],
   },
 ];

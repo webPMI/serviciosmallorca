@@ -127,8 +127,14 @@ import { bodegasJaumeDePuntiroSantaMaria } from "./bodegas-jaume-de-puntiro-sant
 import { restauranteEsCanyisPortSoller } from "./restaurante-es-canyis-port-soller.ts";
 import { bodegasTiannaNegreBinissalem } from "./bodegas-tianna-negre-binissalem.ts";
 import { restauranteElPenon1957Palma } from "./restaurante-el-penon-1957-palma.ts";
+import { restauranteClubNauticSEstanyol } from "./restaurante-club-nautic-s-estanyol.ts";
+import { restauranteCanTroncaSantJoan } from "./restaurante-can-tronca-sant-joan.ts";
+import { bodegasSonBordilsInca } from "./bodegas-son-bordils-inca.ts";
 
 export {
+  restauranteClubNauticSEstanyol,
+  restauranteCanTroncaSantJoan,
+  bodegasSonBordilsInca,
   restauranteEsCanyisPortSoller,
   bodegasTiannaNegreBinissalem,
   restauranteElPenon1957Palma,
@@ -392,4 +398,7 @@ export const RESTAURANT_SERVICES: ServiceItem[] = [
   restauranteEsCanyisPortSoller,
   bodegasTiannaNegreBinissalem,
   restauranteElPenon1957Palma,
+  restauranteClubNauticSEstanyol,
+  restauranteCanTroncaSantJoan,
+  bodegasSonBordilsInca,
 ];
