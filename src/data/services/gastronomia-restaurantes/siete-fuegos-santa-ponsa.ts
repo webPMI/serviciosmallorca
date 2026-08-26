@@ -140,8 +140,7 @@ export const sieteFuegosSantaPonsa: ServiceItem = {
     ca: "7Fuegos uneix la passió pel foc i la brasa amb l'entorn mariner del Club Nàutic de Santa Ponça.",
     de: "7Fuegos entstand aus der Leidenschaft für echtes Grillhandwerk und verwandelte die Terrasse des Club Náutico Santa Ponsa in eine beliebte Genussoase.",
   },
-  image:
-    "https://static.wixstatic.com/media/a7cb66_46f494bd1ac0426d869877ebcfd0694d~mv2.jpg/v1/fill/w_980,h_716,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/a7cb66_46f494bd1ac0426d869877ebcfd0694d~mv2.jpg",
+  image: "/images/services/siete-fuegos-santa-ponsa.svg",
   gallery: [
     "https://static.wixstatic.com/media/180ba81999a64ad3aa42735d409ecab6.jpg/v1/fill/w_980,h_651,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/180ba81999a64ad3aa42735d409ecab6.jpg",
     "https://static.wixstatic.com/media/11062b_f6202975ed774d00955eadbb31285b2b~mv2.jpg/v1/fill/w_980,h_652,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11062b_f6202975ed774d00955eadbb31285b2b~mv2.jpg",

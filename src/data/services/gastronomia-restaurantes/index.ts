@@ -178,8 +178,14 @@ import { bodegas7103PetitCellerSantaMaria } from "./bodegas-7103-petit-celler-sa
 import { restauranteNautilusPortSoller } from "./restaurante-nautilus-port-soller.ts";
 import { restauranteSaBarcaPortSoller } from "./restaurante-sa-barca-port-soller.ts";
 import { bodegasCanRamisSencelles } from "./bodegas-can-ramis-sencelles.ts";
+import { restauranteCanGavellaCanPicafort } from "./restaurante-can-gavella-can-picafort.ts";
+import { restauranteCanPescadorPlayaDeMuro } from "./restaurante-can-pescador-playa-de-muro.ts";
+import { bodegasVinaTaujanaSantaEugenia } from "./bodegas-vina-taujana-santa-eugenia.ts";
 
 export {
+  restauranteCanGavellaCanPicafort,
+  restauranteCanPescadorPlayaDeMuro,
+  bodegasVinaTaujanaSantaEugenia,
   restauranteNautilusPortSoller,
   restauranteSaBarcaPortSoller,
   bodegasCanRamisSencelles,
@@ -545,4 +551,7 @@ export const RESTAURANT_SERVICES: ServiceItem[] = [
   restauranteNautilusPortSoller,
   restauranteSaBarcaPortSoller,
   bodegasCanRamisSencelles,
+  restauranteCanGavellaCanPicafort,
+  restauranteCanPescadorPlayaDeMuro,
+  bodegasVinaTaujanaSantaEugenia,
 ];
