@@ -181,8 +181,14 @@ import { bodegasCanRamisSencelles } from "./bodegas-can-ramis-sencelles.ts";
 import { restauranteCanGavellaCanPicafort } from "./restaurante-can-gavella-can-picafort.ts";
 import { restauranteCanPescadorPlayaDeMuro } from "./restaurante-can-pescador-playa-de-muro.ts";
 import { bodegasVinaTaujanaSantaEugenia } from "./bodegas-vina-taujana-santa-eugenia.ts";
+import { restauranteLaCaracolaPortoPetro } from "./restaurante-la-caracola-porto-petro.ts";
+import { restauranteLArcadaCalaFiguera } from "./restaurante-l-arcada-cala-figuera.ts";
+import { bodegasSantaCatarinaSencelles } from "./bodegas-santa-catarina-sencelles.ts";
 
 export {
+  restauranteLaCaracolaPortoPetro,
+  restauranteLArcadaCalaFiguera,
+  bodegasSantaCatarinaSencelles,
   restauranteCanGavellaCanPicafort,
   restauranteCanPescadorPlayaDeMuro,
   bodegasVinaTaujanaSantaEugenia,
@@ -554,4 +560,7 @@ export const RESTAURANT_SERVICES: ServiceItem[] = [
   restauranteCanGavellaCanPicafort,
   restauranteCanPescadorPlayaDeMuro,
   bodegasVinaTaujanaSantaEugenia,
+  restauranteLaCaracolaPortoPetro,
+  restauranteLArcadaCalaFiguera,
+  bodegasSantaCatarinaSencelles,
 ];
