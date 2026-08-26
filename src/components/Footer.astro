@@ -52,9 +52,10 @@ const currentPath = Astro.url.pathname;
           <LanguageSwitcher
             currentLocale={currentLocale}
             translations={{
-              "nav.es": translations["nav.es"],
-              "nav.en": translations["nav.en"],
-              "nav.ca": translations["nav.ca"],
+              "nav.es": translations["nav.es"] || "ES",
+              "nav.en": translations["nav.en"] || "EN",
+              "nav.ca": translations["nav.ca"] || "CA",
+              "nav.de": translations["nav.de"] || "DE",
             }}
             getLangPrefix={getLangPrefix}
             currentPath={currentPath}
