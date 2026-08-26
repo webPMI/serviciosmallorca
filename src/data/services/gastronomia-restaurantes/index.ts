@@ -187,8 +187,14 @@ import { bodegasSantaCatarinaSencelles } from "./bodegas-santa-catarina-sencelle
 import { restauranteEsBergantPortoPetro } from "./restaurante-es-bergant-porto-petro.ts";
 import { restauranteEsCellerDePetra } from "./restaurante-es-celler-de-petra.ts";
 import { bodegasSonArtiguesPorreres } from "./bodegas-son-artigues-porreres.ts";
+import { restauranteEsCruceVilafranca } from "./restaurante-es-cruce-vilafranca.ts";
+import { barSHostalMontuiri } from "./bar-s-hostal-montuiri.ts";
+import { bodegasVinsToniGelabertManacor } from "./bodegas-vins-toni-gelabert-manacor.ts";
 
 export {
+  restauranteEsCruceVilafranca,
+  barSHostalMontuiri,
+  bodegasVinsToniGelabertManacor,
   restauranteEsBergantPortoPetro,
   restauranteEsCellerDePetra,
   bodegasSonArtiguesPorreres,
@@ -572,4 +578,7 @@ export const RESTAURANT_SERVICES: ServiceItem[] = [
   restauranteEsBergantPortoPetro,
   restauranteEsCellerDePetra,
   bodegasSonArtiguesPorreres,
+  restauranteEsCruceVilafranca,
+  barSHostalMontuiri,
+  bodegasVinsToniGelabertManacor,
 ];

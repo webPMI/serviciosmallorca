@@ -173,6 +173,8 @@ export const MALLORCA_ZONES: MallorcaZone[] = [
       "Costitx",
       "Petra",
       "Randa",
+      "Vilafranca de Bonany",
+      "Montuïri",
     ],
   },
 ];
