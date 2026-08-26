@@ -121,8 +121,14 @@ import { bodegasViReiLlucmajor } from "./bodegas-vi-rei-llucmajor.ts";
 import { restauranteRcnPortPollenca } from "./restaurante-rcn-port-pollenca.ts";
 import { cellerSaVinyaBinissalem } from "./celler-sa-vinya-binissalem.ts";
 import { bodegasRamanyaSantaMaria } from "./bodegas-ramanya-santa-maria.ts";
+import { restauranteSaRoquetaPortixol } from "./restaurante-sa-roqueta-portixol.ts";
+import { cellerElMoliPollenca } from "./celler-el-moli-pollenca.ts";
+import { bodegasJaumeDePuntiroSantaMaria } from "./bodegas-jaume-de-puntiro-santa-maria.ts";
 
 export {
+  restauranteSaRoquetaPortixol,
+  cellerElMoliPollenca,
+  bodegasJaumeDePuntiroSantaMaria,
   restauranteRcnPortPollenca,
   cellerSaVinyaBinissalem,
   bodegasRamanyaSantaMaria,
@@ -374,4 +380,7 @@ export const RESTAURANT_SERVICES: ServiceItem[] = [
   restauranteRcnPortPollenca,
   cellerSaVinyaBinissalem,
   bodegasRamanyaSantaMaria,
+  restauranteSaRoquetaPortixol,
+  cellerElMoliPollenca,
+  bodegasJaumeDePuntiroSantaMaria,
 ];
