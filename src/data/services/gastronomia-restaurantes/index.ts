@@ -76,8 +76,10 @@ import { porxadaDeSaTorreCanyamel } from "./porxada-de-sa-torre-canyamel.ts";
 import { bodegasVinsMiquelGelabert } from "./bodegas-vins-miquel-gelabert.ts";
 import { caNantunaFornalutx } from "./ca-nantuna-fornalutx.ts";
 import { fetASollerFabricaGelats } from "./fet-a-soller-fabrica-gelats.ts";
+import { esVergerAlaro } from "./es-verger-alaro.ts";
 
 export {
+  esVergerAlaro,
   caNantunaFornalutx,
   fetASollerFabricaGelats,
   porxadaDeSaTorreCanyamel,
@@ -239,4 +241,5 @@ export const RESTAURANT_SERVICES: ServiceItem[] = [
   bodegasVinsMiquelGelabert,
   caNantunaFornalutx,
   fetASollerFabricaGelats,
+  esVergerAlaro,
 ];
