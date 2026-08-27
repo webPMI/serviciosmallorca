@@ -1,0 +1,360 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Navbar from "../../components/Navbar.astro";
+import Footer from "../../components/Footer.astro";
+import { getLocaleFromUrl, loadTranslations, getLangPrefix, type Locale } from "../../i18n";
+
+export const prerender = false;
+
+const locale = getLocaleFromUrl(Astro.url) as Locale;
+const translations = await loadTranslations(locale);
+const prefix = getLangPrefix(locale);
+
+const pageTitles: Record<Locale, string> = {
+  es: "Nuestra Misión: Promedio Positivo, Bienestar & Apoyo al Comercio Local en Mallorca",
+  en: "Our Mission: Positive Growth, Well-being & Support for Local Businesses in Mallorca",
+  ca: "La Nostra Missió: Mitjana Positiva, Benestar i Suport al Comerç Local a Mallorca",
+  de: "Unsere Mission: Positiver Einfluss, Wohlbefinden & Förderung des lokalen Gewerbes auf Mallorca",
+};
+
+const pageDescriptions: Record<Locale, string> = {
+  es: "Un ecosistema independiente diseñado para conectar a residentes y visitantes con el tejido comercial auténtico, fomentando hábitos saludables, deporte, accesibilidad y decisiones informadas.",
+  en: "An independent platform connecting residents and visitors with Mallorca's authentic businesses, encouraging healthy habits, sports, accessibility, and informed choices.",
+  ca: "Una plataforma independent per connectar residents i visitants amb el comerç autèntic de Mallorca, fomentant hàbits saludables, esport i decisions informades.",
+  de: "Eine unabhängige Plattform, die Residenten und Besucher mit dem authentischen Gewerbe Mallorcas verbindet – für gesunde Gewohnheiten, Sport und fundierte Entscheidungen.",
+};
+---
+
+<BaseLayout title={`${pageTitles[locale]} | Servicios Mallorca`} lang={locale} description={pageDescriptions[locale]}>
+  <Navbar currentLocale={locale} translations={translations} getLangPrefix={getLangPrefix} />
+
+  <main class="container section">
+    <!-- Breadcrumbs Navigation -->
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+      <a href={prefix}>{translations["nav.home"] || "Inicio"}</a>
+      <span>/</span>
+      <span class="active-crumb"
+        >{
+          locale === "de"
+            ? "Über uns"
+            : locale === "en"
+              ? "About Us"
+              : locale === "ca"
+                ? "Sobre Nosaltres"
+                : "Sobre Nosotros"
+        }</span
+      >
+    </nav>
+
+    <!-- Header Hero -->
+    <header class="mission-hero">
+      <span class="badge-mission"
+        >🌿 {
+          locale === "de"
+            ? "Transparenz & Engagement"
+            : locale === "en"
+              ? "Transparency & Mission"
+              : "Transparencia & Compromiso Local"
+        }</span
+      >
+      <h1 class="hero-title">{pageTitles[locale]}</h1>
+      <p class="hero-subtitle">{pageDescriptions[locale]}</p>
+    </header>
+
+    <!-- Core Pillars Grid -->
+    <div class="pillars-grid">
+      <article class="pillar-card card-glass">
+        <div class="pillar-icon">⚖️</div>
+        <h2>
+          {
+            locale === "de"
+              ? "Ein positiver Durchschnitt für alle"
+              : locale === "en"
+                ? "A Positive Benchmark for All"
+                : "Un Promedio Positivo para Todos"
+          }
+        </h2>
+        <p>
+          {
+            locale === "de"
+              ? "Wir heben nicht nur Luxusangebote hervor, sondern die gesamte Bandbreite Mallorcas: von kleinen traditionellen Handwerksbetrieben bis zu modernen Dienstleistern. Unser Ziel ist es, jedem ehrlichen Geschäft Sichtbarkeit zu geben."
+              : locale === "en"
+                ? "We don't just spotlight high-end luxury; we showcase the real diversity of Mallorca. From small heritage workshops to modern service providers, our goal is to give visibility to every authentic local business."
+                : locale === "ca"
+                  ? "No mostram només serveis de luxe, sinó tota la diversitat real de Mallorca: des de petits tallers artesans fins a empreses modernes. Volem donar visibilitat a cada negoci honest."
+                  : "No nos limitamos a mostrar únicamente la oferta de lujo o las grandes marcas; visibilizamos la diversidad real de Mallorca. Desde pequeños talleres artesanos de barrio hasta empresas consolidadas, ayudamos a que cada negocio honesto tenga su espacio."
+          }
+        </p>
+      </article>
+
+      <article class="pillar-card card-glass">
+        <div class="pillar-icon">🏃‍♂️</div>
+        <h2>
+          {
+            locale === "de"
+              ? "Gesunde Gewohnheiten & Wohlbefinden"
+              : locale === "en"
+                ? "Healthy Habits & Active Living"
+                : "Hábitos Saludables & Bienestar"
+          }
+        </h2>
+        <p>
+          {
+            locale === "de"
+              ? "Wir möchten Menschen dabei unterstützen, bewusste Entscheidungen zu treffen: gesunde Ernährung mit regionalen Produkten (Km0), Sport an der frischen Luft und Entspannung für Körper und Geist."
+              : locale === "en"
+                ? "We empower users to build healthier lifestyles: wholesome local Km0 dining, outdoor sports in nature, and balanced wellness options across the island."
+                : locale === "ca"
+                  ? "Ajudam les persones a prendre millors decisions: alimentació saludable amb producte Km0, esport a l'aire lliure i descans conscient."
+                  : "Facilitamos herramientas para tomar mejores decisiones en el día a día: gastronomía saludable con producto local de Km0, instalaciones deportivas al aire libre y opciones de bienestar integral."
+          }
+        </p>
+      </article>
+
+      <article class="pillar-card card-glass">
+        <div class="pillar-icon">🛡️</div>
+        <h2>
+          {
+            locale === "de"
+              ? "Geprüfte Daten & Keine Fantasie"
+              : locale === "en"
+                ? "Zero Fake Data & Real Verification"
+                : "Veracidad & Cero Fantasía"
+          }
+        </h2>
+        <p>
+          {
+            locale === "de"
+              ? "Jeder Eintrag wird mit offiziellen Registern, echten Telefonnummern (+34) und verifizierten Adressen abgeglichen. Keine gekauften Bewertungen, keine Scheinfirmen."
+              : locale === "en"
+                ? "Every single business is cross-checked against official records, real +34 contact numbers, and physical coordinates. No fake reviews, no vanity metrics."
+                : locale === "ca"
+                  ? "Cada negoci és auditat amb registres oficials, telèfons reals +34 i coordenades físiques. Cero dades falses ni ressenyes manipulades."
+                  : "Auditamos cada ficha contrastando números de teléfono reales (+34), coordenadas geográficas y licencias oficiales. Sin promesas vacías ni negocios fantasma."
+          }
+        </p>
+      </article>
+
+      <article class="pillar-card card-glass">
+        <div class="pillar-icon">🤝</div>
+        <h2>
+          {
+            locale === "de"
+              ? "Brücke zum lokalen Handel"
+              : locale === "en"
+                ? "Direct Bridge to Local Commerce"
+                : "Conexión Directa y Accesible"
+          }
+        </h2>
+        <p>
+          {
+            locale === "de"
+              ? "Wir erleichtern den direkten Kontakt ohne Zwischengebühren: Direktanruf, WhatsApp und Maps-Navigation, damit Besucher und Residenten mühelos den passenden Partner finden."
+              : locale === "en"
+                ? "We connect consumers directly with local businesses without friction or hidden markups: 1-click WhatsApp, verified phone calls, and direct map routing."
+                : locale === "ca"
+                  ? "Facilitam el contacte directe sense intermediaris: trucada directa, WhatsApp i rutes per facilitar la vida a residents i visitants."
+                  : "Fomentamos la comunicación fluida sin intermediarios ni comisiones abusivas: contacto directo vía WhatsApp, llamada telefónica y mapas precisos."
+          }
+        </p>
+      </article>
+    </div>
+
+    <!-- Practical Tools CTA Box -->
+    <section class="tools-cta-box card-glass">
+      <div class="tools-cta-content">
+        <h2>
+          {
+            locale === "de"
+              ? "Entdecken Sie die Werkzeuge für Ihren Alltag"
+              : locale === "en"
+                ? "Tools Designed to Simplify Your Island Life"
+                : "Herramientas Diseñadas para Facilitar tu Vida"
+          }
+        </h2>
+        <p>
+          {
+            locale === "de"
+              ? "Nutzen Sie unseren Sport-Finder mit Schattenfiltern, die kuratierten Themenrouten und den historischen Hub der Insel."
+              : locale === "en"
+                ? "Access our outdoor sports locator with shade/water filters, themed signature tours, and Mallorca's living heritage catalog."
+                : locale === "ca"
+                  ? "Fes servir el nostre cercador d'esports amb filtres d'ombra i aigua, les rutes temàtiques i el catàleg de patrimoni històric."
+                  : "Utiliza nuestro explorador deportivo con filtros de sombra y agua, las rutas temáticas de autor y el catálogo de memoria histórica balear."
+          }
+        </p>
+        <div class="tools-cta-actions">
+          <a href={`${prefix}deporte`} class="btn btn-primary"
+            >🏃 {
+              locale === "de" ? "Sportstätten entdecken" : locale === "en" ? "Explore Sports" : "Explorar Deporte"
+            }</a
+          >
+          <a href={`${prefix}tours`} class="btn btn-secondary"
+            >🗺️ {locale === "de" ? "Themenrouten" : locale === "en" ? "Signature Tours" : "Ver Rutas"}</a
+          >
+          <a href={`${prefix}servicios`} class="btn btn-outline"
+            >🌴 {locale === "de" ? "Gesamtes Verzeichnis" : locale === "en" ? "Full Directory" : "Directorio"}</a
+          >
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer translations={translations} currentLocale={locale} getLangPrefix={getLangPrefix} />
+</BaseLayout>
+
+<style>
+  .breadcrumb-nav {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-lg);
+  }
+
+  .breadcrumb-nav a {
+    color: var(--color-primary);
+    text-decoration: none;
+  }
+
+  .active-crumb {
+    color: var(--color-text);
+    font-weight: 600;
+  }
+
+  .mission-hero {
+    text-align: center;
+    max-width: 840px;
+    margin: 0 auto 3rem;
+  }
+
+  .badge-mission {
+    display: inline-block;
+    padding: 0.35rem 0.9rem;
+    background: rgba(16, 185, 129, 0.12);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    border-radius: var(--border-radius-full);
+    color: #10b981;
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 1rem;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 4.5vw, var(--font-size-3xl));
+    font-weight: 800;
+    color: var(--color-text);
+    line-height: 1.2;
+    margin-bottom: var(--space-sm);
+  }
+
+  .hero-subtitle {
+    font-size: var(--font-size-lg);
+    color: var(--color-text-light);
+    line-height: 1.6;
+  }
+
+  .pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-lg);
+    margin-bottom: 4rem;
+  }
+
+  .pillar-card {
+    padding: var(--space-xl);
+    border-radius: var(--border-radius-lg);
+    background: var(--color-surface);
+    border: 1px solid var(--color-surface-border);
+    transition:
+      transform var(--transition-base),
+      border-color var(--transition-base);
+  }
+
+  .pillar-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--color-primary);
+  }
+
+  .pillar-icon {
+    font-size: 2.2rem;
+    margin-bottom: var(--space-md);
+  }
+
+  .pillar-card h2 {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: var(--space-sm);
+  }
+
+  .pillar-card p {
+    font-size: var(--font-size-base);
+    color: var(--color-text-light);
+    line-height: 1.6;
+  }
+
+  .tools-cta-box {
+    padding: var(--space-2xl);
+    border-radius: var(--border-radius-xl);
+    background: radial-gradient(ellipse at center, rgba(30, 144, 255, 0.08) 0%, var(--color-surface) 100%);
+    border: 1px solid var(--color-primary-border);
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .tools-cta-content h2 {
+    font-size: var(--font-size-2xl);
+    font-weight: 800;
+    color: var(--color-text);
+    margin-bottom: var(--space-sm);
+  }
+
+  .tools-cta-content p {
+    font-size: var(--font-size-base);
+    color: var(--color-text-light);
+    line-height: 1.6;
+    margin-bottom: var(--space-lg);
+  }
+
+  .tools-cta-actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+  }
+
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.65rem 1.25rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--color-surface-border);
+    background: transparent;
+    color: var(--color-text);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: var(--font-size-sm);
+    transition: all var(--transition-base);
+  }
+
+  .btn-outline:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+  }
+
+  @media (max-width: 640px) {
+    .pillars-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .tools-cta-actions {
+      flex-direction: column;
+    }
+  }
+</style>

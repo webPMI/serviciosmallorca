@@ -467,6 +467,177 @@ Ein historischer Gewölbekeller aus dem 17. Jahrhundert mit authentischer mallor
     relatedServiceIds: ["forn-sant-francesc-inca", "celler-can-ripoll-inca"],
     featured: true,
   },
+  {
+    id: "guia-vida-saludable-bienestar-mallorca",
+    slug: "guia-vida-saludable-bienestar-mallorca",
+    postType: "guia",
+    topicCluster: "aventura_lifestyle",
+    title: {
+      es: "Vida Saludable y Bienestar en Mallorca: Deporte al Aire Libre, Comer Sano y Buenos Hábitos",
+      en: "Healthy Living & Wellbeing in Mallorca: Outdoor Sports, Clean Eating & Positive Habits",
+      ca: "Vida Saludable i Benestar a Mallorca: Esport a l'Aire Lliure, Menjar Sa i Bons Hàbits",
+      de: "Gesundes Leben & Wohlbefinden auf Mallorca: Outdoor-Sport, bewusste Ernährung & gesunde Gewohnheiten",
+    },
+    excerpt: {
+      es: "Descubre cómo construir un estilo de vida equilibrado en Mallorca combinando parques deportivos al aire libre, alimentación Km0, circuitos de sombra y bienestar integral.",
+      en: "Learn how to build a balanced lifestyle in Mallorca combining outdoor fitness parks, local Km0 dining, shaded routes, and mindful wellness.",
+      ca: "Descobreix com gaudir d'un estil de vida equilibrat a Mallorca combinant parcs esportius, producte Km0, zones d'ombra i benestar.",
+      de: "Erfahren Sie, wie Sie auf Mallorca einen ausgewogenen Lebensstil gestalten: Outdoor-Fitnessparks, regionale Km0-Küche, schattige Routen und ganzheitliche Erholung.",
+    },
+    content: {
+      es: `
+Vivir o visitar Mallorca ofrece una oportunidad única para reconectar con hábitos de vida saludables. La combinación de clima mediterráneo, mar y montaña permite integrar el movimiento, la buena nutrición y el descanso de forma natural en el día a día.
+
+### 1. Movimiento y Deporte al Aire Libre
+No es necesario encerrarse entre cuatro paredes para mantenerse en forma. En Mallorca disponemos de:
+- **Circuitos de Running y Paseo Marítimo:** Rutas continuas desde Palma hasta El Arenal o en el Paseo de Pollença.
+- **Parques de Calistenia y Street Workout:** Espacios públicos equipados con barras y sombra natural en parques municipales.
+- **Pistas de Pádel y Tenis:** Clubs accesibles tanto en núcleos urbanos como en zonas de costa.
+
+### 2. Alimentación Consciente y Producto Local (Km0)
+Comer bien en Mallorca es sinónimo de apoyar a los productores de la tierra:
+- **Mercados de Abastos (Mercat de l'Olivar, Santa Catalina, Sineu):** Pescado fresco de lonja, frutas de temporada y verduras de huerta balear.
+- **Restauración con Compromiso Km0:** Restaurantes que priorizan ingredientes de cercanía, reduciendo la huella de carbono y asegurando el máximo valor nutricional.
+
+### 3. Salud Mental y Desconexión
+El bienestar no es solo físico: encontrar momentos de calma en calas tranquilas, practicar yoga con vistas a la Tramuntana y respetar el descanso son pilares fundamentales para una vida plena en la isla.
+      `,
+      en: `
+Living in or visiting Mallorca provides a unique setting to embrace wholesome, balanced habits. The Mediterranean climate, pristine sea, and rugged Tramuntana mountains make it easy to incorporate fitness, clean nutrition, and mindful rest into daily life.
+
+### 1. Outdoor Fitness & Active Lifestyle
+- **Scenic Running & Coastal Promenades:** Continuous scenic routes along Palma Bay, Port de Sóller, and Pollença.
+- **Public Calisthenics & Fitness Parks:** Municipal outdoor workout stations featuring pull-up rigs and shade.
+- **Padel & Tennis Facilities:** Accessible courts across both urban centers and coastal villages.
+
+### 2. Clean Nutrition & Local Km0 Produce
+- **Local Farmers' Markets (L'Olivar, Santa Catalina, Inca):** Fresh fish from local fleets, organic fruits, and Balearic vegetables.
+- **Km0 Committed Dining:** Independent bistros sourcing straight from Mallorcan orchards and coastal cooperatives.
+
+### 3. Mindfulness & Restoration
+True wellness balances exertion with restorative pause: peaceful morning walks in Tramuntana coves and dedicated yoga retreats help cultivate sustained vitality.
+      `,
+      ca: `
+Viure o visitar Mallorca ofereix un entorn immillorable per cuidar la salut i adoptar hàbits positius.
+
+### 1. Esport a l'Aire Lliure
+- Circuits de running davant la mar i parcs de cal·listènia públics amb ombra i aigua.
+- Pistes de pàdel i instal·lacions municipals a tota l'illa.
+
+### 2. Producte Local Km0
+- Compra als mercats tradicionals i aposta per restaurants que cuinen amb producte fresc de la terra.
+
+### 3. Benestar Integral
+- Rutes de senderisme a la Serra de Tramuntana i moments de desconnexió en espais naturals protegits.
+      `,
+      de: `
+Mallorca bietet die perfekten Rahmenbedingungen für einen aktiven, gesunden und ausgeglichenen Lebensstil.
+
+### 1. Bewegung & Outdoor-Sport
+- **Lauf- und Radstrecken:** Entlang der Bucht von Palma oder auf malerischen Wegen im Tramuntana-Gebirge.
+- **Öffentliche Calisthenics-Parks:** Kostenlose Trainingsanlagen mit Schatten und Trinkwasserbrunnen.
+- **Padel & Tennis:** Moderne Sportanlagen auf der gesamten Insel.
+
+### 2. Frische Km0-Ernährung
+- **Wochenmärkte & Markthallen:** Frischer Fisch, erntefrisches Gemüse und mallorquinisches Olivenöl.
+- **Nachhaltige Gastronomie:** Lokale Restaurants mit Fokus auf saisonale, gesunde Zutaten.
+      `,
+    },
+    category: "salud-bienestar",
+    author: {
+      name: "Equipo Editorial Servicios Mallorca",
+      role: "Bienestar & Vida Saludable",
+      avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80",
+    },
+    publishDate: "2025-02-24",
+    readTime: "5 min",
+    coverImage: "https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=1200&q=80",
+    tags: ["Vida Saludable", "Deporte Mallorca", "Comer Sano", "Km0", "Bienestar"],
+    relatedServiceIds: ["rafa-nadal-sports-centre", "kuyen-art-tattoo"],
+    featured: true,
+  },
+  {
+    id: "guia-apoyo-comercio-local-mallorca",
+    slug: "guia-apoyo-comercio-local-mallorca",
+    postType: "guia",
+    topicCluster: "servicios_hogar",
+    title: {
+      es: "Apoyo al Comercio Local en Mallorca: Cómo Elegir Servicios Honestos y Fomentar la Economía Real",
+      en: "Supporting Local Businesses in Mallorca: How to Choose Trusted Services and Strengthen the Island Economy",
+      ca: "Suport al Comerç Local a Mallorca: Com Triar Serveis Honestos i Enfortir l'Economia Real",
+      de: "Förderung des lokalen Gewerbes auf Mallorca: So wählen Sie ehrliche Dienstleister und stärken die Inselwirtschaft",
+    },
+    excerpt: {
+      es: "El comercio de proximidad es el verdadero motor de Mallorca. Aprende a identificar profesionales transparentes, talleres artesanos y negocios con arraigo en la comunidad.",
+      en: "Neighborhood commerce is Mallorca's authentic backbone. Learn how to identify transparent tradespeople, artisan ateliers, and long-standing local enterprises.",
+      ca: "El comerç de proximitat és el motor real de Mallorca. Aprèn a identificar professionals transparents, tallers artesans i negocis de confiança.",
+      de: "Das lokale Gewerbe ist das Herzstück Mallorcas. Erfahren Sie, wie Sie transparente Handwerker, Traditionsbetriebe und vertrauenswürdige Dienstleister finden.",
+    },
+    content: {
+      es: `
+En un mundo cada vez más digitalizado, el contacto humano, la honestidad y el oficio bien hecho marcan la diferencia. En Servicios Mallorca apostamos firmemente por dar visibilidad a toda la escala comercial de la isla, desde los pequeños autónomos hasta las empresas familiares con décadas de servicio.
+
+### 1. El Valor del 'Promedio Positivo'
+No buscamos calificar los negocios con criterios superficiales o de postureo; buscamos destacar la **accesibilidad, la buena comunicación y la capacidad de adaptación** de cada comercio. Un buen electricista local, un taller de cerámica o un fisioterapeuta de barrio merecen la misma visibilidad y respeto que una gran firma internacional.
+
+### 2. Cómo Identificar un Servicio de Confianza
+- **Transparencia en Precios y Presupuestos:** Proveedores que ofrecen presupuestos detallados por escrito antes de iniciar el trabajo.
+- **Comunicación Directa:** Facilidad para hablar por teléfono (+34) o WhatsApp sin intermediarios ni plataformas que cobren comisiones abusivas.
+- **Arraigo y Memoria:** Negocios que forman parte del tejido vecinal y cuidan su reputación a largo plazo.
+
+### 3. El Impacto de tus Decisiones de Compra
+Cada vez que eliges un servicio local en Mallorca, estás reinvirtiendo en la educación, la sostenibilidad y el futuro de las familias de la isla. Nuestra misión es facilitarte las herramientas necesarias para que esa elección sea siempre sencilla, rápida y fiable.
+      `,
+      en: `
+In an increasingly digital age, genuine craftsmanship, personal accountability, and fair pricing define real value. At Servicios Mallorca, we are committed to providing an open, balanced platform for tradespeople, artisans, and family-owned enterprises across the island.
+
+### 1. The Principle of a 'Positive Benchmark'
+We avoid vanity metrics and exaggerated hype. Instead, we champion **accessibility, clear communication, and dependable service**. An honest local plumber, a boutique framing studio, or a neighborhood baker deserves equal appreciation and discoverability.
+
+### 2. Identifying Trustworthy Providers
+- **Upfront Pricing:** Clear, itemized written estimates before project commencement.
+- **Direct Dialogue:** Unhindered communication via local +34 phone lines and WhatsApp with zero hidden agent fees.
+- **Community Longevity:** Enterprises that take pride in their local neighborhood standing and long-term customer relationships.
+
+### 3. Reinvesting in Mallorca
+Every service booked locally circulates wealth directly back into Balearic communities, supporting local families and sustainable growth.
+      `,
+      ca: `
+El comerç de proximitat és la garantia d'un futur sostenible per a Mallorca.
+
+### 1. La Filosofia del 'Promig Positiu'
+Reconeixem l'esforç de cada professional autònom i empresa familiar que treballa amb honestedat i bon tracte.
+
+### 2. Criteris de Confiança
+- Pressupostos clars sense costos ocults.
+- Comunicació directa sense comissions d'intermediaris.
+- Compromís amb la qualitat i el servei post-venda.
+      `,
+      de: `
+Echtes Handwerk, Verlässlichkeit und faire Kommunikation machen den Unterschied im mallorquinischen Alltag aus.
+
+### 1. Unser Ansatz: Ein positiver Durchschnitt
+Wir verzichten auf oberflächliche Marketingfloskeln. Wir bewerten und fördern **Erreichbarkeit, faire Preise und kundenorientierten Service** – vom Meisterhandwerker bis zum familiären Nachbarschaftsbetrieb.
+
+### 2. Vertrauenswürdige Dienstleister erkennen
+- Verbindliche Kostenvoranschläge ohne versteckte Zusatzkosten.
+- Direkter Draht via lokaler Telefonnummer (+34) und WhatsApp ohne Provisionsaufschläge.
+- Feste Verwurzelung in der Gemeinde und nachhaltige Kundenzufriedenheit.
+      `,
+    },
+    category: "servicios-profesionales",
+    author: {
+      name: "Equipo Editorial Servicios Mallorca",
+      role: "Economía Local & Sostenibilidad",
+      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80",
+    },
+    publishDate: "2025-02-25",
+    readTime: "5 min",
+    coverImage: "https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=1200&q=80",
+    tags: ["Comercio Local", "Economia Mallorca", "Profesionales", "Sostenibilidad", "Guia Balear"],
+    relatedServiceIds: ["fibwi-telecomunicaciones", "viveros-santa-maria"],
+    featured: true,
+  },
 ];
 
 export function getPostBySlug(slug: string): BlogPost | undefined {
