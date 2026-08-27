@@ -22,7 +22,13 @@ vi.mock("firebase/firestore", () => ({
   serverTimestamp: fb.serverTimestamp,
 }));
 
-import { getServiceOverride, mergeServiceWithOverride, saveServiceOverride } from "../../src/lib/serviceOverrides";
+import {
+  getServiceOverride,
+  mergeServiceWithOverride,
+  saveServiceOverride,
+  setAllowDatabaseOverrides,
+  isDatabaseOverridesEnabled,
+} from "../../src/lib/serviceOverrides";
 import type { ServiceItem } from "../../src/data/services";
 import type { ServiceOverride } from "../../src/lib/serviceOverrides";
 
@@ -151,6 +157,81 @@ describe("mergeServiceWithOverride · Merge parcial overlay", () => {
       fullDescription: { es: "overwritten" },
     });
     expect(JSON.stringify(staticService)).toBe(before);
+  });
+
+  it("respeta la variable ALLOW_DATABASE_OVERRIDES cuando está desactivada", () => {
+    setAllowDatabaseOverrides(false);
+    expect(isDatabaseOverridesEnabled()).toBe(false);
+
+    const merged = mergeServiceWithOverride(staticService, {
+      ownerUid: "u1",
+      phone: "+34699999999",
+    });
+    expect(merged.phone).toBe("+34971111000"); // conserva el estático porque está deshabilitado
+
+    // Restaurar a activo
+    setAllowDatabaseOverrides(true);
+    expect(isDatabaseOverridesEnabled()).toBe(true);
+
+    const mergedActive = mergeServiceWithOverride(staticService, {
+      ownerUid: "u1",
+      phone: "+34699999999",
+    });
+    expect(mergedActive.phone).toBe("+34699999999");
+  });
+
+  it("archiva datos obsoletos en evolutionHistory y purga datos erróneos (Zero Fake Data)", () => {
+    const override = {
+      ownerUid: "u1",
+      phone: "+34971999888",
+      evolutionHistory: [
+        {
+          date: "2026-08",
+          type: "address_change" as const,
+          action: "preserve_history" as const,
+          title: {
+            es: "Traslado de taller",
+            en: "Workshop relocation",
+            ca: "Trasllat de taller",
+            de: "Werkstattumzug",
+          },
+          description: {
+            es: "Ampliación a nuevo local en Palma",
+            en: "Expansion to new Palma shop",
+            ca: "Ampliació a nou local",
+            de: "Erweiterung",
+          },
+          previousValue: "Carrer Antic 12",
+          newValue: "Avinguda Nova 45",
+          isObsoleteHistorical: true,
+        },
+        {
+          date: "2026-08",
+          type: "correction_purged" as const,
+          action: "purge_erroneous" as const,
+          title: {
+            es: "Dato falso eliminado",
+            en: "Purged fake entry",
+            ca: "Dada falsa purgada",
+            de: "Gelöschter Fehleintrag",
+          },
+          description: {
+            es: "Teléfono incorrecto eliminado",
+            en: "Purged phone",
+            ca: "Telèfon purgat",
+            de: "Gelöscht",
+          },
+        },
+      ],
+    };
+
+    const merged = mergeServiceWithOverride(staticService, override);
+    expect(merged.phone).toBe("+34971999888");
+    expect(merged.evolutionHistory).toHaveLength(1);
+    expect(merged.evolutionHistory?.[0].type).toBe("address_change");
+    expect(merged.evolutionHistory?.[0].isObsoleteHistorical).toBe(true);
+    // Verifica que el registro erróneo no fue archivado
+    expect(merged.evolutionHistory?.some((e) => e.action === "purge_erroneous")).toBe(false);
   });
 });
 

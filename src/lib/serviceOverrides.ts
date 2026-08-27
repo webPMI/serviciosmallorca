@@ -1,13 +1,19 @@
-/**
- * serviceOverrides.ts
- *
- * Capa Híbrida Estático-Dinámica (Overlay Pattern) con Caché en Memoria (TTL 5 min).
- * Permite a los gestores de negocio verificados actualizar datos sin incurrir en costes
- * innecesarios de lectura a base de datos para los visitantes de la plataforma.
- */
-
-import type { ServiceItem, ServiceStatus } from "../data/services";
+import type { ServiceItem, ServiceStatus, ServiceEvolutionEntry } from "../data/services";
 import type { Firestore } from "firebase/firestore";
+
+/**
+ * Variable global configurable que controla si se permite editar y sobreescribir contenido
+ * dinámicamente desde la base de datos (Firestore / Manager Console).
+ */
+let ALLOW_DATABASE_OVERRIDES = true;
+
+export function setAllowDatabaseOverrides(enabled: boolean): void {
+  ALLOW_DATABASE_OVERRIDES = enabled;
+}
+
+export function isDatabaseOverridesEnabled(): boolean {
+  return ALLOW_DATABASE_OVERRIDES;
+}
 
 export interface ServiceOverride {
   ownerUid: string;
@@ -18,6 +24,8 @@ export interface ServiceOverride {
   website?: string;
   schedule?: string;
   status?: ServiceStatus;
+  isObsolete?: boolean;
+  evolutionHistory?: ServiceEvolutionEntry[];
   fullDescription?: {
     es?: string;
     en?: string;
@@ -78,9 +86,15 @@ export async function getServiceOverride(db: Firestore | undefined, slug: string
 
 /**
  * Combina un servicio estático con su superposición dinámica (si existe).
+ * Gestiona el archivo de contenido obsoleto en la evolución histórica y la purga de errores.
  */
 export function mergeServiceWithOverride(staticService: ServiceItem, override: ServiceOverride | null): ServiceItem {
-  if (!override) return staticService;
+  if (!override || !isDatabaseOverridesEnabled()) return staticService;
+
+  // Filtrar entradas de evolución: conservar histórico legítimo y purgar datos erróneos
+  const existingHistory = staticService.evolutionHistory || [];
+  const overrideHistory = (override.evolutionHistory || []).filter((h) => h.action !== "purge_erroneous");
+  const mergedHistory = [...existingHistory, ...overrideHistory];
 
   return {
     ...staticService,
@@ -92,6 +106,7 @@ export function mergeServiceWithOverride(staticService: ServiceItem, override: S
     status: override.status || staticService.status,
     image: override.image || staticService.image,
     gallery: override.gallery && override.gallery.length > 0 ? override.gallery : staticService.gallery,
+    evolutionHistory: mergedHistory.length > 0 ? mergedHistory : undefined,
     fullDescription: {
       es: override.fullDescription?.es || staticService.fullDescription.es,
       en: override.fullDescription?.en || staticService.fullDescription.en,

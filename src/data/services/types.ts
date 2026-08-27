@@ -160,6 +160,31 @@ export interface AuditLogEntry {
   details?: string;
 }
 
+export type EvolutionAction = "preserve_history" | "purge_erroneous" | "direct_update";
+
+export type EvolutionType =
+  | "address_change"
+  | "rebranding"
+  | "expansion"
+  | "ownership_transfer"
+  | "century_milestone"
+  | "service_update"
+  | "schedule_update"
+  | "correction_purged";
+
+export interface ServiceEvolutionEntry {
+  id?: string;
+  date: string; // e.g. "2026-08", "2024-05", "1998"
+  type: EvolutionType;
+  action: EvolutionAction;
+  title: { es: string; en: string; ca: string; de: string };
+  description: { es: string; en: string; ca: string; de: string };
+  previousValue?: string | Record<string, unknown>;
+  newValue?: string | Record<string, unknown>;
+  isObsoleteHistorical?: boolean; // Si es true, representa historia real pasada y se preserva en la línea de tiempo
+  verifiedBy?: string; // e.g. "Editorial Team", "Manager Verified"
+}
+
 export interface BusinessCapabilities {
   petFriendly?: boolean; // Admite mascotas
   wheelchairAccessible?: boolean; // Apto para personas con movilidad reducida (PMR)
@@ -313,4 +338,6 @@ export interface ServiceItem {
     socialPresenceActive?: boolean;
     taxIdVerified?: boolean;
   };
+  allowLiveEdits?: boolean; // Permite o restringe ediciones directas desde BD/Manager
+  evolutionHistory?: ServiceEvolutionEntry[]; // Memoria histórica de la evolución del servicio
 }
