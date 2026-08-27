@@ -24,6 +24,8 @@ const isActive = (path: string): boolean => {
 const isHomeActive = isActive(homeUrl);
 const isServicesActive = isActive(`${homeUrl}servicios`) || currentPath.includes("/servicios");
 const isSportsActive = isActive(`${homeUrl}deporte`) || currentPath.includes("/deporte");
+const isToursActive = isActive(`${homeUrl}tours`) || currentPath.includes("/tours");
+const isHistoryActive = isActive(`${homeUrl}memoria-historica`) || currentPath.includes("/memoria-historica");
 const isBlogActive = isActive(`${homeUrl}blog`) || currentPath.includes("/blog");
 const isCommunityActive = isActive(`${homeUrl}comunidad`) || currentPath.includes("/comunidad");
 const isLoginActive = isActive(`${homeUrl}login`);
@@ -75,7 +77,23 @@ const isRegisterActive = isActive(`${homeUrl}register`);
           class:list={["nav-link", { active: isSportsActive }]}
           aria-current={isSportsActive ? "page" : undefined}
         >
-          {translations["nav.sports"] || "Deporte"}
+          🏃 {translations["nav.sports"] || "Deporte"}
+        </a>
+        <a
+          href={`${homeUrl}tours`}
+          class="nav-link"
+          class:list={["nav-link", { active: isToursActive }]}
+          aria-current={isToursActive ? "page" : undefined}
+        >
+          🗺️ {translations["nav.tours"] || "Rutas"}
+        </a>
+        <a
+          href={`${homeUrl}memoria-historica`}
+          class="nav-link"
+          class:list={["nav-link", { active: isHistoryActive }]}
+          aria-current={isHistoryActive ? "page" : undefined}
+        >
+          🏛️ {translations["nav.history"] || "Memoria"}
         </a>
         <a
           href={`${homeUrl}comunidad`}
@@ -91,7 +109,7 @@ const isRegisterActive = isActive(`${homeUrl}register`);
           class:list={["nav-link", { active: isBlogActive }]}
           aria-current={isBlogActive ? "page" : undefined}
         >
-          {translations["nav.blog"] || "Blog & Guías"}
+          📰 {translations["nav.blog"] || "Blog"}
         </a>
       </nav>
 

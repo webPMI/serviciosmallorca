@@ -36,11 +36,11 @@ const pageDescriptions: Record<Locale, string> = {
       <span>/</span>
       <span class="active-crumb"
         >{
-          currentLocale === "de"
+          locale === "de"
             ? "Sport & Wellness"
-            : currentLocale === "en"
+            : locale === "en"
               ? "Sports & Wellbeing"
-              : currentLocale === "ca"
+              : locale === "ca"
                 ? "Esport & Benestar"
                 : "Deporte & Bienestar"
         }</span

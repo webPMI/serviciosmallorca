@@ -45,6 +45,27 @@ const currentPath = Astro.url.pathname;
         </nav>
       </div>
 
+      <!-- Specialized Hubs column -->
+      <div class="footer-col nav-col">
+        <h4 class="footer-heading">
+          {currentLocale === "de" ? "Entdecken" : currentLocale === "en" ? "Explore" : "Explorar"}
+        </h4>
+        <nav class="footer-nav">
+          <a href={`${getLangPrefix(currentLocale)}deporte`} class="footer-link">
+            🏃 {translations["nav.sports"] || "Deporte & Parques"}
+          </a>
+          <a href={`${getLangPrefix(currentLocale)}tours`} class="footer-link">
+            🗺️ {translations["nav.tours"] || "Rutas & Tours"}
+          </a>
+          <a href={`${getLangPrefix(currentLocale)}memoria-historica`} class="footer-link">
+            🏛️ {translations["nav.history"] || "Memoria Histórica"}
+          </a>
+          <a href={`${getLangPrefix(currentLocale)}favoritos`} class="footer-link">
+            ❤️ {translations["nav.favorites"] || "Favoritos & Wishlist"}
+          </a>
+        </nav>
+      </div>
+
       <!-- Controls column (Language + Theme) -->
       <div class="footer-col controls-col">
         <h4 class="footer-heading">{translations["footer.preferences"] || "Preferencias"}</h4>
@@ -92,8 +113,8 @@ const currentPath = Astro.url.pathname;
 
   .footer-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: var(--space-2xl);
+    grid-template-columns: 1.8fr 1fr 1fr 1.2fr;
+    gap: var(--space-xl);
     margin-bottom: var(--space-xl);
   }
 
