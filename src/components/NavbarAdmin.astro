@@ -44,6 +44,18 @@ const homeUrl = prefix || "/";
         <a href={`${homeUrl}servicios`} class:list={["nav-link", { active: currentPath.includes("/servicios") }]}>
           🌴 {translations["nav.services"] || "Servicios"}
         </a>
+        <a href={`${homeUrl}deporte`} class:list={["nav-link", { active: currentPath.includes("/deporte") }]}>
+          🏃 {translations["nav.sports"] || "Deporte"}
+        </a>
+        <a href={`${homeUrl}tours`} class:list={["nav-link", { active: currentPath.includes("/tours") }]}>
+          🗺️ {translations["nav.tours"] || "Rutas"}
+        </a>
+        <a
+          href={`${homeUrl}memoria-historica`}
+          class:list={["nav-link", { active: currentPath.includes("/memoria-historica") }]}
+        >
+          🏛️ {translations["nav.history"] || "Memoria"}
+        </a>
         <a href={`${homeUrl}comunidad`} class:list={["nav-link", { active: currentPath.includes("/comunidad") }]}>
           💬 {translations["nav.community"] || "Comunidad"}
         </a>
