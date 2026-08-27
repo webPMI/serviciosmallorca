@@ -43,7 +43,7 @@ const prefix = getLangPrefix(locale);
       <!-- Quick Action Box: Business Management & ARCO Rights -->
       <section class="card card-glass legal-action-box fade-in">
         <div class="action-box-text">
-          <span class="action-box-icon">⚖️</span>
+          <span class="action-box-icon">🤝</span>
           <div>
             <h3>
               {translations["legal.privacy.businessActionTitle"] || "Gestión de Fichas y Derechos para Titulares"}
@@ -51,7 +51,7 @@ const prefix = getLangPrefix(locale);
             <p>
               {
                 translations["legal.privacy.businessActionDesc"] ||
-                  "Si eres titular o representante legal de un negocio en Mallorca, puedes reclamar la propiedad para personalizarlo o ejercer tu derecho de supresión de ficha de forma inmediata."
+                  "Si eres titular o representante legal de un negocio en Mallorca, puedes reclamar la propiedad para personalizarlo, actualizar canales de contacto directo o solicitar la baja sin ningún coste ni fricción."
               }
             </p>
           </div>
@@ -64,6 +64,31 @@ const prefix = getLangPrefix(locale);
             {translations["legal.privacy.deleteBtn"] || "🗑️ Solicitar Baja RGPD"}
           </a>
         </div>
+      </section>
+
+      <!-- Ethical Privacy & Transparency Callout -->
+      <section class="card card-glass legal-card positive-privacy-card">
+        <div class="section-icon-header">
+          <span class="sec-icon">🌿</span>
+          <h2>
+            {
+              locale === "de"
+                ? "Unser Versprechen für ethischen Datenschutz"
+                : locale === "en"
+                  ? "Our Ethical Privacy Commitment"
+                  : "Nuestro Compromiso de Privacidad Ética"
+            }
+          </h2>
+        </div>
+        <p>
+          {
+            locale === "de"
+              ? "Wir verkaufen Ihre Daten niemals an Dritte oder aggressive Marketingnetzwerke. Unsere Plattform dient ausschließlich dazu, Einwohner und Besucher sicher und direkt mit ehrlichen lokalen Unternehmen auf Mallorca zu verbinden."
+              : locale === "en"
+                ? "We never sell your personal information to third-party brokers or telemarketing lists. Our platform exists solely to securely and directly connect consumers with authentic local businesses."
+                : "Jamás comercializamos tus datos personales ni los transferimos a redes de publicidad invasiva. Nuestro único propósito es facilitar una conexión segura, directa y constructiva entre la comunidad y el comercio de Mallorca."
+          }
+        </p>
       </section>
 
       <!-- Legal Content Sections -->

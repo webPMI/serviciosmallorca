@@ -50,6 +50,87 @@ const prefix = getLangPrefix(locale);
           <p>{translations["legal.terms.acceptanceContent"]}</p>
         </section>
 
+        <!-- Coexistence & Positive Benchmark Charter -->
+        <section class="card card-glass legal-card positive-charter-card">
+          <div class="section-icon-header">
+            <span class="sec-icon">🌿</span>
+            <h2>
+              {
+                locale === "de"
+                  ? "Charta für positives Zusammenleben & Förderung"
+                  : locale === "en"
+                    ? "Positive Coexistence & Local Support Charter"
+                    : "Carta de Convivencia y Promedio Positivo"
+              }
+            </h2>
+          </div>
+          <p>
+            {
+              locale === "de"
+                ? "Servicios Mallorca versteht sich als Brücke zwischen Einwohnern, Besuchern und dem lokalen Handel. Wir fördern einen konstruktiven Dialog, gegenseitigen Respekt und die Wertschätzung für das ehrliche Handwerk auf der Insel."
+                : locale === "en"
+                  ? "Servicios Mallorca is a constructive bridge between residents, visitors, and local businesses. We champion constructive dialogue, mutual respect, and genuine appreciation for honest craftsmanship."
+                  : "Servicios Mallorca nace como un puente positivo entre residentes, visitantes y el comercio local. Promovemos un diálogo constructivo, el respeto mutuo y la valoración del esfuerzo diario de quienes trabajan en la isla."
+            }
+          </p>
+          <ul class="legal-bullet-list">
+            <li>
+              <strong
+                >{
+                  locale === "de"
+                    ? "Toleranz & Konstruktive Kritik:"
+                    : locale === "en"
+                      ? "Tolerance & Constructive Feedback:"
+                      : "Tolerancia y Crítica Constructiva:"
+                }</strong
+              >
+              {
+                locale === "de"
+                  ? " Meinungsverschiedenheiten sollten mit Sachlichkeit und Wohlwollen formuliert werden. Destruktive Angriffe oder Diffamierungen haben auf unserer Plattform keinen Platz."
+                  : locale === "en"
+                    ? " Feedback should be grounded, respectful, and geared towards improvement. Destructive attacks or smear campaigns are strictly avoided."
+                    : " Las opiniones deben expresarse con respeto y cordialidad. Creemos en el valor de ayudar a los comercios a mejorar y crecer, evitando el desprestigio injustificado."
+              }
+            </li>
+            <li>
+              <strong
+                >{
+                  locale === "de"
+                    ? "Begleitung beim digitalen Wandel:"
+                    : locale === "en"
+                      ? "Supporting Digital Evolution:"
+                      : "Acompañamiento en la Evolución Digital:"
+                }</strong
+              >
+              {
+                locale === "de"
+                  ? " Viele traditionelle Betriebe digitalisieren sich schrittweise. Wir bieten ihnen kostenfreie Sichtbarkeit und direkte Kommunikationskanäle (WhatsApp, Telefon)."
+                  : locale === "en"
+                    ? " Many heritage workshops are gradually modernizing. We offer fair, free visibility and frictionless direct channels (WhatsApp, phone)."
+                    : " Muchos talleres tradicionales y autónomos están en proceso de adaptación digital. Facilitamos su visibilidad sin barreras técnicas ni comisiones ocultas."
+              }
+            </li>
+            <li>
+              <strong
+                >{
+                  locale === "de"
+                    ? "Gesunde Gewohnheiten & Lebensqualität:"
+                    : locale === "en"
+                      ? "Healthy Habits & Well-being:"
+                      : "Hábitos Saludables y Bienestar:"
+                }</strong
+              >
+              {
+                locale === "de"
+                  ? " Wir fördern nachhaltigen Konsum (Km0), Sport an der frischen Luft und den Schutz der Natur auf Mallorca."
+                  : locale === "en"
+                    ? " We encourage sustainable Km0 choices, outdoor sports, and mindful preservation of Mallorca's natural environment."
+                    : " Fomentamos el consumo de proximidad (Km0), el deporte al aire libre y la toma de decisiones informadas y responsables."
+              }
+            </li>
+          </ul>
+        </section>
+
         <section class="card card-glass legal-card">
           <div class="section-icon-header">
             <span class="sec-icon">🏢</span>
@@ -57,9 +138,9 @@ const prefix = getLangPrefix(locale);
           </div>
           <p>{translations["legal.terms.servicesContent"]}</p>
           <div class="terms-callout-note">
-            <strong>🥇 Compromiso Zero Fake Data:</strong> El 100% de los negocios publicados son contrastados contra registros
-            oficiales y perfiles de Google Maps. Los titulares pueden verificar su titularidad para gestionar horarios, canales
-            de contacto y datos de atención.
+            <strong>🥇 Compromiso Zero Fake Data & Apoyo al Comercio:</strong> El 100% de los negocios publicados son contrastados
+            contra registros oficiales y perfiles de Google Maps. Los titulares pueden verificar su titularidad de forma ágil
+            y gratuita para gestionar horarios, canales de contacto directo (WhatsApp, llamada) y datos de atención.
           </div>
         </section>
 
@@ -71,15 +152,16 @@ const prefix = getLangPrefix(locale);
           <p>{translations["legal.terms.obligationsContent"]}</p>
           <ul class="legal-bullet-list">
             <li>
-              <strong>Veracidad de Reseñas:</strong> Las valoraciones deben responder a vivencias reales de consumo o contratación.
+              <strong>Veracidad y Buena Fe:</strong> Las valoraciones deben responder a vivencias reales de consumo o contratación
+              formuladas con tono positivo y respetuoso.
             </li>
             <li>
-              <strong>Prohibición de Spam:</strong> Queda prohibida la publicación automatizada de comentarios o suplantación
-              de identidad.
+              <strong>Prohibición de Spam y Cuentas Falsas:</strong> Queda prohibida la publicación automatizada de comentarios
+              o la suplantación de identidad.
             </li>
             <li>
               <strong>Respeto en la Comunidad:</strong> No se tolerarán insultos, lenguaje de odio o difamación en los debates
-              del foro.
+              del foro de residentes.
             </li>
           </ul>
         </section>
