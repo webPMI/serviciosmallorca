@@ -5,6 +5,7 @@
 | Documento                                                                | Descripción                                                                                                                   | Audiencia                           |
 | ------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------- | ----------------------------------- |
 | **[GOLDEN_RULES.md](GOLDEN_RULES.md)**                                   | 🥇 Reglas inmutables del proyecto (13 reglas incl. Seguridad & Zero Fake Data)                                                | Todos los agentes y desarrolladores |
+| **[STRESS_TEST_PLAN.md](STRESS_TEST_PLAN.md)**                           | 🧪 Plan de estres & cobertura: campañas v1.x, hallazgos corregidos, umbrales CI y deuda consciente (rondas 1-2)               | @testing, @maestro                  |
 | [**BUSINESS_REGISTRATION_PROCESS.md**](BUSINESS_REGISTRATION_PROCESS.md) | 🏢 Proceso oficial de registro, curación, verificación y publicación de negocios                                              | Editores, @maestro, @frontend       |
 | **[BUSINESS_DISCOVERY_SOP.md](BUSINESS_DISCOVERY_SOP.md)**               | 🔎 SOP del checklist maestro: descubrir, minar y priorizar negocios de Mallorca (categoría→puntaje→alfabético)                | Editores y agentes                  |
 | **[SPORTS_FITNESS_SECTION.md](SPORTS_FITNESS_SECTION.md)**               | 🏋️ Vertical Deportiva: taxonomía (12 categorías), SEO, espacios públicos gratuitos y plan de activación F0→F5                 | Editores, @maestro, @frontend       |
@@ -47,7 +48,7 @@
 - **Frontend**: [ARCHITECTURE.md](ARCHITECTURE.md), [STYLING.md](STYLING.md), [I18N.md](I18N.md)
 - **Auth**: [AUTH.md](AUTH.md), [email-templates.md](email-templates.md)
 - **DevTools**: [DEVTOOLS.md](DEVTOOLS.md)
-- **Testing**: [DEVELOPMENT.md](DEVELOPMENT.md#testing)
+- **Testing**: [STRESS_TEST_PLAN.md](STRESS_TEST_PLAN.md), [DEVELOPMENT.md](DEVELOPMENT.md#testing)
 - **Tools & CI**: [TOOLS.md](TOOLS.md)
 
 ## Flujo de Trabajo

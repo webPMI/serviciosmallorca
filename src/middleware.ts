@@ -101,7 +101,9 @@ Explora el directorio completo y las valoraciones de restaurantes Michelin, chá
 
   // Root redirect
   if (pathname === "/" || pathname === "") {
-    const detected = detectUserLocale(request);
+    const cookieLocale = cookies.get("locale")?.value;
+    const detected =
+      cookieLocale && LOCALES.includes(cookieLocale as any) ? (cookieLocale as any) : detectUserLocale(request);
     const prefix = getLangPrefix(detected);
     return redirect(prefix, 302);
   }

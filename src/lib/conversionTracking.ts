@@ -59,10 +59,16 @@ export function trackConversion(
 }
 
 /**
- * Inicializa escuchadores automáticos en el DOM para elementos con data-track-event
+ * Inicializa escuchadores automáticos en el DOM para elementos con data-track-event.
+ *
+ * Idempotente por diseño (guard de módulo): aunque se invoque múltiples veces
+ * (multi-layout, HMR, hydration repetida) solo registra UN listener delegado,
+ * evitando beacons duplicados por cada click.
  */
 export function initAutomaticClickTracking(): void {
   if (typeof window === "undefined") return;
+  if ((globalThis as { __smClickTrackingInitialized?: boolean }).__smClickTrackingInitialized) return;
+  (globalThis as { __smClickTrackingInitialized?: boolean }).__smClickTrackingInitialized = true;
 
   document.addEventListener("click", (e) => {
     const target = (e.target as HTMLElement)?.closest("[data-track-event]") as HTMLElement | null;

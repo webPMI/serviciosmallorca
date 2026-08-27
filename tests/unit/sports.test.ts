@@ -39,24 +39,37 @@ describe("Sports & Wellbeing POI Module (Deporte & Bienestar Mallorca)", () => {
 
   it("filters facilities accurately by activity type", () => {
     const padelFacilities = getSportsFacilitiesByActivity("padel");
-    expect(padelFacilities.length).toBeGreaterThanOrEqual(2);
+    expect(padelFacilities.length).toBeGreaterThanOrEqual(1);
     expect(padelFacilities.some((f) => f.id === "pins-padel-palma")).toBe(true);
 
     const singleFacility = getSportsFacilityById("pins-padel-palma");
     expect(singleFacility).toBeDefined();
     expect(singleFacility?.name).toBe("Pins Pádel Club Palma");
 
+    // Zunray cerró en 2021 → ahora opera como Sadhana Works (GR-11 Zero Fake Data)
     const yogaFacilities = getSportsFacilitiesByActivity("yoga_pilates");
     expect(yogaFacilities.length).toBeGreaterThanOrEqual(1);
-    expect(yogaFacilities.some((f) => f.id === "zunray-yoga-studio-palma")).toBe(true);
+    expect(yogaFacilities.some((f) => f.id === "sadhana-works-yoga-palma")).toBe(true);
+
+    // Los nuevos gimnasios deben existir y estar correctamente tipados
+    const gymFacilities = getSportsFacilitiesByActivity("fitness_gym");
+    expect(gymFacilities.length).toBeGreaterThanOrEqual(4);
+    expect(gymFacilities.some((f) => f.id === "basic-fit-palma-avda-portugal")).toBe(true);
+    expect(gymFacilities.some((f) => f.id === "vivagym-porto-pi-palma")).toBe(true);
+    expect(gymFacilities.some((f) => f.id === "crossfit-mallorca-santa-ponca")).toBe(true);
   });
 
   it("filters facilities accurately by geographical zone", () => {
     const palmaFacilities = getSportsFacilitiesByZone("palma");
-    expect(palmaFacilities.length).toBeGreaterThanOrEqual(3);
+    // Palma: Pins Pádel, Paseo Marítimo, Parc de la Mar, Sadhana Works, Mallorca Cycling Center, Basic-Fit, VivaGym = 7
+    expect(palmaFacilities.length).toBeGreaterThanOrEqual(5);
 
     const llevantFacilities = getSportsFacilitiesByZone("llevant");
     expect(llevantFacilities.some((f) => f.id === "rafa-nadal-sports-centre-manacor")).toBe(true);
+
+    // CrossFit Mallorca está en Santa Ponça → zona calvia-andratx
+    const calviaFacilities = getSportsFacilitiesByZone("calvia-andratx");
+    expect(calviaFacilities.some((f) => f.id === "crossfit-mallorca-santa-ponca")).toBe(true);
   });
 
   it("provides contextual cross-selling links to nearby verified services", () => {

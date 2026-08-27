@@ -81,7 +81,10 @@ Autoridad:  premios, certificaciones, menciones prensa, nº reseñas y rating
 - Identifica los **3 puntos débiles** (para transparencia)
 - Usa esos puntos para redactar el `founderStory` y los `highlights`
 
-**🛑 CHECKPOINT 1:** ¿La web responde con 200 OK? ¿El negocio aparece activo en Maps? Si no → STOP, marcar como `needs_review`.
+**🛑 CHECKPOINT 1 (Filtro de Integridad de Datos):**
+
+- **Check 1 (Contacto Real):** ¿El teléfono es real, activo y en formato `+34`? ¿Coincide en la web oficial y en el perfil de Google Maps?
+- **Check 2 (Actividad Comercial):** ¿La web responde con 200 OK o existe ficha activa en Google Maps? Si el negocio figura como cerrado permanentemente → STOP, descartar.
 
 ---
 
@@ -107,17 +110,20 @@ Si hay discrepancia en **teléfono o dirección** entre dos fuentes oficiales �
 | **50 – 79%**  | `needs_manual_review` ⚠️ | Anotar discrepancias, no publicar |
 | **< 50%**     | `pending_audit` ❌       | Descartar, no añadir al catálogo  |
 
-#### 2.3 Filtro de Calidad Visual
+#### 2.3 Filtro de Calidad Visual Estricto
 
 Rechazar imágenes que:
 
-- Pertenezcan a Imgur, Unsplash, Pexels o cualquier banco de stock
-- Sean de baja resolución (< 800px de ancho)
-- Tengan marcas de agua visibles
-- Sean placeholders, iconos o favicons
-- No representen visualmente el negocio (ej: foto genérica de playa)
+- Pertenezcan a Imgur, Unsplash, Pexels o cualquier banco de stock genérico
+- Sean de baja resolución (< 800px de ancho) o estén pixeladas
+- Tengan marcas de agua visibles o copyright superpuesto
+- Sean placeholders, favicons, logos recortados o capturas de pantalla de baja calidad
+- No representen las instalaciones reales o los servicios del negocio
 
-**🛑 CHECKPOINT 2:** ¿El `confidenceScore` ≥ 80? ¿Al menos 1 imagen válida? Si no → STOP.
+**🛑 CHECKPOINT 2 (Filtro de Fidelidad Visual & Score):**
+
+- **Check 2 (Imagen Propia de Alta Resolución):** ¿Todas las imágenes (`image` y `gallery`) son de alta calidad, verificables y pertenecen al local o servicio?
+- **Confidence Gate:** ¿El `confidenceScore` es $\ge 80\%$? Si no → STOP, no publicar.
 
 ---
 
@@ -150,12 +156,12 @@ Esta es la fase donde el agente aporta **valor diferencial real**. No copiar y p
 
 - Rating real extraído de Maps (no inventado)
 - Nº de reseñas verificado
-- Top 3 frases textuales de reseñas reales (con atribución)
+- Top reseñas textuales reales (con atribución)
 
 **Pilar 2 — Storytelling (Historia de Autor):**
 
 - Busca si el fundador tiene historia pública (entrevistas, Instagram, prensa)
-- Redacta `founderStory` en los 4 idiomas: ≥ 80 palabras por idioma
+- Redacta `founderStory` en los 4 idiomas: $\ge 80$ palabras por idioma
 - Incluye el **propósito**, la **especialidad** y el **vínculo con Mallorca**
 
 **Pilar 3 — Autoridad & Prensa:**
@@ -163,11 +169,11 @@ Esta es la fase donde el agente aporta **valor diferencial real**. No copiar y p
 - Busca en: Diario de Mallorca, Ultima Hora, Mallorca Magazine, Guía Michelin, Condé Nast
 - Si hay premios o menciones → incluirlos en el campo `awards[]`
 
-**Pilar 4 — Canales de Conversión:**
+**Pilar 4 — Canales de Conversión & Enlaces Activos:**
 
 - WhatsApp configurado con mensaje pre-rellenado contextual
-- URL de reserva directa (si tiene TheFork, OpenTable, Booksy, Planity...)
-- URL de menú o tarifa (si existe)
+- URL de reserva directa (TheFork, OpenTable, Booksy, Planity, web oficial) comprobada y activa
+- URL de menú o tarifa si existe (200 OK)
 
 **Pilar 5 — Local SEO:**
 
@@ -175,7 +181,10 @@ Esta es la fase donde el agente aporta **valor diferencial real**. No copiar y p
 - Sin tags inventadas — sólo del catálogo en `src/data/tags.ts`
 - `capabilities` rellenadas a partir de datos reales (no por defecto)
 
-**🛑 CHECKPOINT 3:** ¿Todos los campos `shortDescription`, `fullDescription`, `specialties`, `highlights` están en los 4 idiomas? ¿Los tags existen en `src/data/tags.ts`? Si no → STOP.
+**🛑 CHECKPOINT 3 (Filtro de Canales & Textos Cuadrilingües):**
+
+- **Check 3 (Canales Activos):** ¿Los enlaces de reserva directa, menú/tarifas y WhatsApp funcionan correctamente?
+- **Cuadrilingüe Completo:** ¿Todos los campos (`shortDescription`, `fullDescription`, `specialties`, `highlights`, `servicesProvided`, `founderStory`) están en los 4 idiomas (ES/EN/CA/DE) sin textos comodín tipo "PENDIENTE"? Si no → STOP.
 
 ---
 

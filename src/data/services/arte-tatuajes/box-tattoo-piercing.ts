@@ -108,13 +108,18 @@ export const boxTattooPiercing: ServiceItem = {
   tags: [
     "zona:palma",
     "zona:palma-centro",
+    "product:coverup-arreglo",
     "product:piercing-titanio",
+    "product:traditional",
+    "product:fine-line",
     "product:blackwork",
     "mod:walk-in",
     "mod:cita-previa",
     "mod:en-local",
+    "aud:expat",
     "temps:todo-el-ano",
   ],
+  subcategories: ["coverup-arreglo", "piercing-titanio", "traditional", "fine-line", "blackwork"],
   shortDescription: {
     es: "Estudio céntrico en Carrer Jaume II especializado en tatuajes personalizados, cover-ups y piercings.",
     en: "Downtown studio on Carrer Jaume II specializing in custom tattoos, cover-ups, and piercings.",

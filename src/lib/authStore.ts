@@ -39,8 +39,10 @@ class AuthStore {
             role = tokenResult.claims.role as UserRole;
           } else {
             const userDoc = await getDoc(doc(this.db, "users", user.uid));
-            if (userDoc.exists() && userDoc.data().role) {
-              role = userDoc.data().role as UserRole;
+            const exists = typeof userDoc.exists === "function" ? userDoc.exists() : Boolean(userDoc.exists);
+            const data = userDoc.data();
+            if (exists && data?.role) {
+              role = data.role as UserRole;
             }
           }
         } catch (e) {

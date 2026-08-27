@@ -1,0 +1,263 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Navbar from "../../../components/Navbar.astro";
+import Footer from "../../../components/Footer.astro";
+import { getLocaleFromUrl, loadTranslations, getLangPrefix, type Locale } from "../../../i18n";
+import { SIGNATURE_TOURS, getHydratedTourBySlug } from "../../../lib/experienceTours.ts";
+
+export const prerender = false;
+
+const locale = getLocaleFromUrl(Astro.url) as Locale;
+const translations = await loadTranslations(locale);
+const prefix = getLangPrefix(locale);
+
+const hydratedTours = SIGNATURE_TOURS.map((t) => getHydratedTourBySlug(t.slug) || t);
+
+const titles: Record<Locale, string> = {
+  es: "Rutas de Experiencia & Tours Temáticos en Mallorca",
+  en: "Experience Tours & Curated Signature Routes in Mallorca",
+  ca: "Rutes d'Experiència i Tours Temàtics a Mallorca",
+  de: "Erlebnis-Routen & Ausgewählte Signature-Touren auf Mallorca",
+};
+
+const descriptions: Record<Locale, string> = {
+  es: "Itinerarios temáticos conectados con SmartMatch para descubrir la artesanía, náutica, gastronomía y bienestar de Mallorca paso a paso.",
+  en: "SmartMatch connected themed itineraries exploring artisan crafts, yachting, cuisine, and wellness across Mallorca step by step.",
+  ca: "Itineraris temàtics connectats amb SmartMatch per descobrir l'artesania, nàutica, gastronomia i benestar de Mallorca pas a pas.",
+  de: "Mit SmartMatch vernetzte thematische Reiserouten für Handwerkskunst, Yachting, Kulinarik und Entspannung auf Mallorca.",
+};
+---
+
+<BaseLayout title={`${titles[locale]} | Servicios Mallorca`} lang={locale} description={descriptions[locale]}>
+  <Navbar currentLocale={locale} translations={translations} getLangPrefix={getLangPrefix} />
+
+  <main class="container section">
+    <!-- Breadcrumbs Navigation -->
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+      <a href={prefix}>{translations["nav.home"] || "Inicio"}</a>
+      <span>/</span>
+      <span class="active-crumb">{titles[locale]}</span>
+    </nav>
+
+    <!-- Header Hero -->
+    <header class="tours-hero">
+      <span class="badge-tour"
+        >🗺️ {
+          locale === "de" ? "SmartMatch Routen" : locale === "en" ? "Curated Itineraries" : "Rutas de Experiencia"
+        }</span
+      >
+      <h1 class="hero-title">{titles[locale]}</h1>
+      <p class="hero-subtitle">{descriptions[locale]}</p>
+    </header>
+
+    <!-- Tours Grid -->
+    <div class="tours-grid">
+      {
+        hydratedTours.map((tour) => (
+          <article class="tour-card">
+            <div class="tour-card-header">
+              <span class="badge-theme">{tour.theme.replace("_", " & ").toUpperCase()}</span>
+              <span class="tour-meta">
+                ⏱️ {tour.estimatedTotalHours}h | 🚗 {tour.totalDistanceKm} km
+              </span>
+            </div>
+            <h2 class="tour-title">{tour.title[locale] || tour.title.es}</h2>
+            {/* Stops Timeline Preview */}
+            <div class="stops-preview">
+              <span class="stops-count">
+                📍 {tour.stops.length} {locale === "de" ? "Stationen" : locale === "en" ? "Stops" : "Paradas"}:
+              </span>
+              <ul class="stops-list">
+                {tour.stops.map((stop) => (
+                  <li>
+                    <span class="stop-num">{stop.stopNumber}</span>
+                    <span class="stop-name">{stop.service.name}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div class="tour-card-footer">
+              <a href={`${prefix}/tours/${tour.slug}`} class="btn-tour">
+                {locale === "de"
+                  ? "Komplette Route ansehen"
+                  : locale === "en"
+                    ? "Explore Full Itinerary"
+                    : "Ver Itinerario Completo"}{" "}
+                &rarr;
+              </a>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </main>
+
+  <Footer translations={translations} currentLocale={locale} getLangPrefix={getLangPrefix} />
+</BaseLayout>
+
+<style>
+  .breadcrumb-nav {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    margin-bottom: 1.5rem;
+  }
+  .breadcrumb-nav a {
+    color: var(--color-accent);
+    text-decoration: none;
+  }
+  .active-crumb {
+    color: var(--color-text-main);
+    font-weight: 500;
+  }
+  .tours-hero {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+  }
+  .badge-tour {
+    display: inline-block;
+    padding: 0.35rem 0.85rem;
+    background: rgba(212, 175, 55, 0.15);
+    border: 1px solid var(--color-accent);
+    border-radius: 9999px;
+    color: var(--color-accent);
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  .hero-title {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: var(--color-text-main);
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+  }
+  .hero-subtitle {
+    font-size: 1.125rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+  }
+  .tours-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+  }
+  .tour-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 1rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+  .tour-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  }
+  .tour-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  .badge-theme {
+    background: rgba(212, 175, 55, 0.12);
+    color: var(--color-accent);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.6rem;
+    border-radius: 0.375rem;
+  }
+  .tour-meta {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+  }
+  .tour-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--color-text-main);
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+  }
+  .tour-subtitle {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+  .stops-preview {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 0.75rem;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .stops-count {
+    display: block;
+    font-size: 0.825rem;
+    font-weight: 600;
+    color: var(--color-text-main);
+    margin-bottom: 0.5rem;
+  }
+  .stops-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .stops-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+  }
+  .stop-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.25rem;
+    height: 1.25rem;
+    background: var(--color-accent);
+    color: #000;
+    font-size: 0.7rem;
+    font-weight: 700;
+    border-radius: 9999px;
+    flex-shrink: 0;
+  }
+  .stop-name {
+    color: var(--color-text-main);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .tour-card-footer {
+    margin-top: auto;
+  }
+  .btn-tour {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    background: var(--color-accent);
+    color: #000;
+    font-size: 0.95rem;
+    font-weight: 700;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+  }
+  .btn-tour:hover {
+    opacity: 0.9;
+  }
+</style>

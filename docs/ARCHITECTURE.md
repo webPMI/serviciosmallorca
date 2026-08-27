@@ -1,4 +1,4 @@
-# 🏗️ Arquitectura Completa — Servicios Mallorca
+# 🏗️ Arquitectura del Sistema & Estructura de Resiliencia — Servicios Mallorca
 
 ## 1. Stack Tecnológico
 
@@ -8,19 +8,67 @@
 | **Runtime Edge**          | Cloudflare Workers                | `nodejs_compat` con sesiones KV y Workers Assets (`dist/client/`) |
 | **Autenticación & DB**    | Firebase Auth + Cloud Firestore   | ^12.16.0 (`serviciosmallorca`)                                    |
 | **Monetización**          | Google AdSense                    | `ca-pub-1918580228487420` (`ads.txt` verificado)                  |
-| **Testing**               | Vitest                            | ^3.0.7 (33 suites / 178 tests de integridad y confianza)          |
+| **Testing**               | Vitest                            | ^3.0.7 (38 suites / 238 tests de integridad y confianza)          |
 | **Tipado**                | TypeScript                        | ^6.0.3 (Strict mode, cero `any` en producción)                    |
 | **Estilos**               | CSS Variables + Custom Properties | Nativo (Temas: Golden por defecto, Golden-Dark, Dark, Light)      |
 | **CI / CD & Auto-Deploy** | GitHub Actions + Wrangler CLI     | Despliegue automático tras pasar 5 Quality Gates                  |
 
 ---
 
-## 2. Estructura de Directorios
+## 2. Estructura de Resiliencia en Tres Capas
+
+La arquitectura desacopla el ciclo de vida del dato en tres niveles estancos para asegurar alta disponibilidad y veracidad:
+
+```mermaid
+graph TD
+    subgraph Capa de Ingesta [1. Ingestion Layer]
+        A1[Mining Engine / Orchestrator] --> A2[Scrapers Especializados]
+        A2 -->|Timeout / Fail| A3[Fallback: Google Maps + Cached Snapshots]
+        A2 -->|Éxito| A4[RawBusinessData Stage]
+    end
+
+    subgraph Capa de Validación [2. Validation Layer - The Guardian]
+        A4 --> B1[verificationPipeline.ts]
+        B1 --> B2[Triangulación Cruzada 3 Fuentes]
+        B2 --> B3[Cálculo Confidence Score]
+        B3 -->|Score >= 80%| B4[Aprobado: Catálogo Oficial]
+        B3 -->|Score < 80%| B5[Rechazado: needs_manual_review]
+    end
+
+    subgraph Capa de Distribución [3. Delivery Layer - Edge SSR]
+        B4 --> C1[Astro Server Engine]
+        C1 --> C2[In-Memory TTL Cache 5 min]
+        C2 --> C3[Cloudflare Edge Workers]
+        C3 --> C4[Usuario Final <200ms TTFB]
+    end
+```
+
+### 2.1 Capa de Ingesta (Ingestion Layer)
+
+- **Extracción Resiliente:** El orquestador (`src/lib/scrapers/orchestrator.ts`) coordina scrapers primarios y secundarios.
+- **Mecanismo de Fallback:** Si la web oficial del comercio responde con timeout o 5xx, el sistema cambia automáticamente a la extracción en Google Maps Places API y registros públicos de Baleares.
+- **Aislamiento de Errores:** Ningún fallo de red en la ingesta afecta al catálogo en producción ni degrada la experiencia de usuario.
+
+### 2.2 Capa de Validación (Validation Layer — El Guardián)
+
+- **Motor de Confianza (`src/lib/verificationEngine.ts` y `src/lib/verificationPipeline.ts`):** Actúa como aduana infranqueable.
+- **Triple Triangulación:** Comprueba teléfono (+34), coordenadas dentro de la delimitación geográfica de Mallorca (lat 39.15–40.0, lng 2.25–3.55) y concordancia de horarios.
+- **Quality Gates Automáticos:** Bloqueo de build y publicación si el Confidence Score es `< 80%` o si se detecta información no verificada (GR-11 Zero Fake Data).
+
+### 2.3 Capa de Distribución (Delivery Layer)
+
+- **Edge SSR Ultrarrápido:** Renderizado en el borde mediante Cloudflare Workers con tiempos de respuesta inferiores a 200ms.
+- **Capa Híbrida Overlay (`src/lib/serviceOverrides.ts`):** Permite actualizaciones dinámicas por dueños de negocios validados combinando datos estáticos compilados con superposiciones dinámicas en Firestore cacheadas en memoria (TTL 5 min).
+- **Traducción Zero-Token (`src/lib/translator.ts`):** Internacionalización instantánea cuadrilingüe (ES/EN/CA/DE) sin consumo de tokens externos en runtime.
+
+---
+
+## 3. Estructura de Directorios
 
 ```
 servicios-mallorca/
 ├── .github/workflows/
-│   └── ci.yml                          # CI/CD: Typecheck, Taxonomía, 178 Tests, Build & Auto-Deploy
+│   └── ci.yml                          # CI/CD: Typecheck, Taxonomía, 238 Tests, Build & Auto-Deploy
 ├── wrangler.json                       # Configuración de Cloudflare Workers y dominios custom
 ├── src/
 │   ├── i18n/                           # Internacionalización (es, en, ca, de)
@@ -45,78 +93,39 @@ servicios-mallorca/
 │   │   └── BusinessQualityFeedbackModal.astro # Feedback comunitario y reporte de discrepancias
 │   ├── lib/
 │   │   ├── repository/                 # Repositorio universal y consultas espaciales
-│   │   │   ├── types.ts                # Interfaces de consultas multidimensionales
-│   │   │   └── serviceRepository.ts    # Motor de consultas con Haversine y Grafos
-│   │   ├── verificationEngine.ts       # Motor de confianza (GR-11 Zero Fake Data, >80% score)
+│   │   ├── verificationEngine.ts       # Motor de confianza (GR-11 Zero Fake Data, >=80% score)
+│   │   ├── verificationPipeline.ts     # Hub centralizado de auditoría y checkpoints
+│   │   ├── serviceOverrides.ts         # Overlay dinámico con caché TTL 5m
+│   │   ├── authStore.ts                # Gestión de sesiones y roles Firebase
 │   │   ├── geoUtils.ts                 # Distancia ortodrómica Haversine y formato métrico
 │   │   ├── smartCtaEngine.ts           # Botones de acción inteligentes por sector
 │   │   └── translator.ts               # Motor de traducción multilingüe automatizado
 │   └── middleware.ts                   # Detección de idioma y protección de rutas privadas
-├── data/
+├── src/data/
 │   ├── categories.ts                   # Taxonomía y sectores macroeconómicos
 │   ├── zones.ts                        # Delimitación y geolocalización de zonas de Mallorca
-│   └── services/                       # 140 negocios 100% verificados y estructurados
+│   ├── tags.ts                         # Catálogo cerrado de etiquetas de autoridad (100+ nichos)
+│   └── services/                       # 310+ negocios estructurados por sectores modulares
+├── src/lib/
+│   ├── taxonomyTree.ts                 # Árbol jerárquico multinivel e inferencia de tags de nicho
+│   ├── verificationEngine.ts           # Triple verificación y auditoría de veracidad
+│   ├── historicalHub.ts                # Observatorio de longevidad y memoria histórica
+│   ├── experienceTours.ts              # Motor dinámico de rutas temáticas SmartMatch
+│   └── sportsSearch.ts                 # Motor unificado de deportes e instalaciones públicas
 ├── scripts/
-│   ├── batch-ingest.ts                 # Ingesta por lotes (Landing Zone -> Verificación -> Aprobación)
-│   ├── anomaly-audit.ts                # Monitor de calidad (>10% drop alert y muestreo 5%)
-│   ├── audit-and-harvest-images.ts     # Auditor y recolector de imágenes del catálogo
-│   └── validate-taxonomy.ts            # Validador canónico de taxonomía
-└── tests/                              # 32 suites unitarias y de integración (174 tests)
+│   ├── discover-businesses.ts          # Motor de descubrimiento y minería
+│   ├── curate-business.ts              # CLI de curación de alta fidelidad
+│   ├── generate-verification-report.ts # Generador de informes oficiales de verificación
+│   ├── validate-taxonomy.ts            # Validador canónico de taxonomía
+│   └── anomaly-audit.ts                # Monitor de calidad (>10% drop alert)
+└── tests/                              # 46 suites unitarias y de integración (316 tests)
 ```
 
 ---
 
-## 3. Modelo de Taxonomía Dinámica por Grafos de Intersección
+## 4. Rendimiento Visual y Resiliencia de Activos
 
-Para permitir la escalabilidad hacia miles de negocios y evitar categorías compuestas rígidas, la plataforma implementa una **Taxonomía Desacoplada**:
-
-```mermaid
-graph TD
-    B[Negocio: Finca Agroturismo & Pádel] --> S1[Sector: Gastronomía & Hostelería]
-    B --> S2[Sector: Deportes & Fitness]
-    B --> S3[Sector: Alojamiento & Turismo]
-    B --> SP1[Especialidad: Paellas a la leña]
-    B --> SP2[Especialidad: Torneos de Pádel]
-    B --> CAP[Matriz de Capacidades]
-    CAP --> C1[🐾 Pet Friendly]
-    CAP --> C2[♿ Accesible PMR]
-    CAP --> C3[☀️ Terraza Exterior]
-    CAP --> C4[🚗 Parking Propio]
-    CAP --> C5[📅 Reserva Online]
-```
-
-### Matriz de Capacidades (`BusinessCapabilities`)
-
-1. `petFriendly`: Admite mascotas.
-2. `wheelchairAccessible`: Apto para personas con movilidad reducida (PMR).
-3. `kidsArea`: Zona infantil / Familiar.
-4. `terrace`: Terraza al aire libre.
-5. `seaViews`: Vistas al mar.
-6. `parkingAvailable`: Aparcamiento propio o cercano.
-7. `onlineBooking`: Reserva directa online.
-8. `emergency24h`: Servicio de urgencias 24 horas.
-9. `inVillaService`: Servicio en villa / a domicilio.
-
----
-
-## 4. Pipeline de Producción y Verificación de Datos (GR-11 & GR-12)
-
-```mermaid
-graph LR
-    A[Lote Crudo: JSON / Scraping] --> B[Zona de Aterrizaje: src/data/raw_landing/]
-    B --> C[Motor de Verificación: verificationEngine.ts]
-    C -->|Confidence Score >= 80%| D[✅ Estado: Approved -> Publicación]
-    C -->|Confidence Score < 80%| E[⚠️ Estado: Needs Review -> Cola de Auditoría]
-    D --> F[Monitor de Anomalías: scripts/anomaly-audit.ts]
-    F -->|Drop Rate > 10%| G[🚨 Congelación & Alerta de Sector]
-    F -->|Normal| H[🔍 Muestreo Aleatorio 5% para Agente Maestro]
-```
-
----
-
-## 5. Rendimiento Visual y Resiliencia de Activos
-
-1. **Skeleton Shimmer Loader:** Mientras las imágenes se descargan (`loading="lazy"`), se despliega una capa animada por gradientes CSS.
+1. **Skeleton Shimmer Loader:** Mientras las imágenes se descargan (`loading="lazy"`), se despliega una capa animada por gradientes CSS nativos.
 2. **Smooth Fade-In:** Al dispararse el evento `onload`, la imagen real emerge con una transición suave (`opacity: 0 -> 1` en 400ms).
-3. **Fallback Automático:** Ante cualquier fallo de red o enlace roto (`onerror`), se sustituye por un placeholder enriquecido con el nombre e insignia del negocio.
-4. **Fidelidad de Coordenadas:** 100% de los negocios poseen coordenadas dentro de la delimitación geográfica de la isla de Mallorca.
+3. **Fallback SVG Multi-Nivel:** Ante cualquier fallo de red o enlace roto (`onerror`), se sustituye dinámicamente por un banner SVG optimizado del sector correspondiente sin romper la maquetación.
+4. **Fidelidad de Coordenadas:** 100% de los negocios poseen coordenadas reales dentro del bounding box geográfico de la isla de Mallorca.

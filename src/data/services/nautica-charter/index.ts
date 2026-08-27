@@ -14,6 +14,12 @@ import { easyBoatsMallorca } from "./easy-boats-mallorca.ts";
 import { marinaPortDeMallorca } from "./marina-port-de-mallorca.ts";
 import { nautinortChartersPollensa } from "./nautinort-charters-pollensa.ts";
 import { skualoPortoCristo } from "./skualo-porto-cristo.ts";
+import { puertoPortalsMarina } from "./puerto-portals-marina.ts";
+import { marinaDeCalaDorService } from "./marina-de-cala-dor.ts";
+import { clubDeMarMallorcaService } from "./club-de-mar-mallorca.ts";
+import { portDeSollerMarinaService } from "./port-de-soller-marina.ts";
+import { ribClubMallorcaService } from "./rib-club-mallorca.ts";
+import { clubNauticPortocolomService } from "./portocolom-yacht-club.ts";
 
 export {
   skualoPortoCristo,
@@ -31,6 +37,12 @@ export {
   realClubNauticoPalma,
   easyBoatsMallorca,
   marinaPortDeMallorca,
+  puertoPortalsMarina,
+  marinaDeCalaDorService,
+  clubDeMarMallorcaService,
+  portDeSollerMarinaService,
+  ribClubMallorcaService,
+  clubNauticPortocolomService,
 };
 
 /**
@@ -53,4 +65,10 @@ export const NAUTICA_SERVICES: ServiceItem[] = [
   marinaPortDeMallorca,
   nautinortChartersPollensa,
   skualoPortoCristo,
+  puertoPortalsMarina,
+  marinaDeCalaDorService,
+  clubDeMarMallorcaService,
+  portDeSollerMarinaService,
+  ribClubMallorcaService,
+  clubNauticPortocolomService,
 ];

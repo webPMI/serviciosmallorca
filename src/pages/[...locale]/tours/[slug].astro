@@ -1,0 +1,398 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Navbar from "../../../components/Navbar.astro";
+import Footer from "../../../components/Footer.astro";
+import { getLocaleFromUrl, loadTranslations, getLangPrefix, type Locale } from "../../../i18n";
+import { getHydratedTourBySlug, SIGNATURE_TOURS } from "../../../lib/experienceTours.ts";
+
+export const prerender = false;
+
+const { slug } = Astro.params;
+const locale = getLocaleFromUrl(Astro.url) as Locale;
+const translations = await loadTranslations(locale);
+const prefix = getLangPrefix(locale);
+
+const tour = getHydratedTourBySlug(slug || "");
+
+if (!tour) {
+  return Astro.redirect(`${prefix}/tours`);
+}
+
+const pageTitle = `${tour.title[locale] || tour.title.es} | Servicios Mallorca`;
+const pageDescription = tour.subtitle[locale] || tour.subtitle.es;
+---
+
+<BaseLayout title={pageTitle} lang={locale} description={pageDescription}>
+  <Navbar currentLocale={locale} translations={translations} getLangPrefix={getLangPrefix} />
+
+  <main class="container section">
+    <!-- Breadcrumbs Navigation -->
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+      <a href={prefix}>{translations["nav.home"] || "Inicio"}</a>
+      <span>/</span>
+      <a href={`${prefix}/tours`}>{locale === "de" ? "Touren" : locale === "en" ? "Tours" : "Rutas"}</a>
+      <span>/</span>
+      <span class="active-crumb">{tour.title[locale] || tour.title.es}</span>
+    </nav>
+
+    <!-- Tour Header -->
+    <header class="tour-header">
+      <div class="header-badges">
+        <span class="badge-theme">🌟 {tour.theme.replace("_", " & ").toUpperCase()}</span>
+        <span class="badge-zone">📍 {tour.zone.toUpperCase()}</span>
+      </div>
+      <h1 class="tour-title">{tour.title[locale] || tour.title.es}</h1>
+      <p class="tour-subtitle">{tour.subtitle[locale] || tour.subtitle.es}</p>
+
+      <div class="tour-quick-facts">
+        <div class="fact-item">
+          <span class="fact-icon">⏱️</span>
+          <div>
+            <strong class="fact-val">{tour.estimatedTotalHours} Horas</strong>
+            <span class="fact-lbl"
+              >{locale === "de" ? "Geschätzte Dauer" : locale === "en" ? "Est. Duration" : "Duración Estimada"}</span
+            >
+          </div>
+        </div>
+        <div class="fact-item">
+          <span class="fact-icon">🚗</span>
+          <div>
+            <strong class="fact-val">{tour.totalDistanceKm} km</strong>
+            <span class="fact-lbl"
+              >{locale === "de" ? "Fahrstrecke" : locale === "en" ? "Total Route" : "Distancia Total"}</span
+            >
+          </div>
+        </div>
+        <div class="fact-item">
+          <span class="fact-icon">📍</span>
+          <div>
+            <strong class="fact-val">{tour.stops.length} Paradas</strong>
+            <span class="fact-lbl">{locale === "de" ? "Stationen" : locale === "en" ? "Stops" : "Puntos Clave"}</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Tour Highlights -->
+    <section class="tour-highlights-box">
+      <h2>
+        ✨ {
+          locale === "de" ? "Höhepunkte der Route" : locale === "en" ? "Tour Highlights" : "Puntos Fuertes de la Ruta"
+        }
+      </h2>
+      <ul>
+        {(tour.highlights[locale] || tour.highlights.es || []).map((h) => <li>{h}</li>)}
+      </ul>
+    </section>
+
+    <!-- Timeline Itinerary Steps -->
+    <section class="itinerary-timeline">
+      <h2>
+        🚩 {
+          locale === "de"
+            ? "Detaillierter Reiseverlauf"
+            : locale === "en"
+              ? "Step-by-Step Itinerary"
+              : "Itinerario Paso a Paso"
+        }
+      </h2>
+
+      <div class="timeline-container">
+        {
+          tour.stops.map((stop, idx) => (
+            <div class="timeline-step">
+              <div class="step-marker">
+                <span class="step-num">{stop.stopNumber}</span>
+                {idx < tour.stops.length - 1 && <div class="step-line" />}
+              </div>
+
+              <div class="step-content">
+                <div class="step-header">
+                  <span class="step-role-badge">
+                    {stop.role === "experience_anchor"
+                      ? "🌟 Experiencia Principal"
+                      : stop.role === "wellness_relax"
+                        ? "💆 Relax & Bienestar"
+                        : stop.role === "nautical_transport"
+                          ? "⛵ Náutica & Mar"
+                          : "🍽️ Gastronomía"}
+                  </span>
+                  <span class="step-duration">⏳ ~{stop.recommendedDurationMinutes} min</span>
+                </div>
+
+                <h3 class="step-title">{stop.service.name}</h3>
+                <p class="step-address">📍 {stop.service.address || stop.service.zone}</p>
+                <p class="step-desc">{stop.stepDescription[locale] || stop.stepDescription.es}</p>
+
+                <div class="step-actions">
+                  <a href={`${prefix}/servicios/${stop.service.slug}`} class="btn-step-primary">
+                    {locale === "de" ? "Ficha del Negocio" : locale === "en" ? "View Business" : "Ver Negocio"} &rarr;
+                  </a>
+                  {stop.service.googleMapsUrl && (
+                    <a
+                      href={stop.service.googleMapsUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="btn-step-maps"
+                    >
+                      🗺️ {locale === "de" ? "Google Maps" : "Cómo llegar"}
+                    </a>
+                  )}
+                </div>
+
+                {stop.travelDistanceToNextKm !== undefined && (
+                  <div class="next-travel-notice">
+                    🚗{" "}
+                    {locale === "de"
+                      ? "Fahrt zur nächsten Station:"
+                      : locale === "en"
+                        ? "Drive to next stop:"
+                        : "Desplazamiento hasta la siguiente parada:"}{" "}
+                    <strong>
+                      {stop.formattedDistanceToNext} (~{Math.round(stop.travelDistanceToNextKm * 1.5 + 5)} min)
+                    </strong>
+                  </div>
+                )}
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+  </main>
+
+  <Footer translations={translations} currentLocale={locale} getLangPrefix={getLangPrefix} />
+</BaseLayout>
+
+<style>
+  .breadcrumb-nav {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    margin-bottom: 1.5rem;
+  }
+  .breadcrumb-nav a {
+    color: var(--color-accent);
+    text-decoration: none;
+  }
+  .active-crumb {
+    color: var(--color-text-main);
+    font-weight: 500;
+  }
+  .tour-header {
+    margin-bottom: 2.5rem;
+  }
+  .header-badges {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+  .badge-theme {
+    background: rgba(212, 175, 55, 0.15);
+    color: var(--color-accent);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.6rem;
+    border-radius: 0.375rem;
+    border: 1px solid var(--color-accent);
+  }
+  .badge-zone {
+    background: var(--color-surface);
+    color: var(--color-text-main);
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.6rem;
+    border-radius: 0.375rem;
+    border: 1px solid var(--color-border);
+  }
+  .tour-title {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: var(--color-text-main);
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+  }
+  .tour-subtitle {
+    font-size: 1.125rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+  .tour-quick-facts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 1rem;
+    padding: 1.5rem;
+  }
+  .fact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .fact-icon {
+    font-size: 1.75rem;
+  }
+  .fact-val {
+    display: block;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--color-text-main);
+  }
+  .fact-lbl {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+  }
+  .tour-highlights-box {
+    background: linear-gradient(180deg, var(--color-surface) 0%, rgba(212, 175, 55, 0.05) 100%);
+    border: 1px solid var(--color-border);
+    border-radius: 1rem;
+    padding: 1.75rem;
+    margin-bottom: 3rem;
+  }
+  .tour-highlights-box h2 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--color-text-main);
+    margin-bottom: 1rem;
+  }
+  .tour-highlights-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .tour-highlights-box li {
+    font-size: 0.95rem;
+    color: var(--color-text-main);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .tour-highlights-box li::before {
+    content: "✓";
+    color: var(--color-accent);
+    font-weight: 700;
+  }
+  .itinerary-timeline {
+    margin-bottom: 4rem;
+  }
+  .itinerary-timeline h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--color-text-main);
+    margin-bottom: 2rem;
+  }
+  .timeline-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .timeline-step {
+    display: flex;
+    gap: 1.5rem;
+  }
+  .step-marker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .step-num {
+    width: 2.25rem;
+    height: 2.25rem;
+    background: var(--color-accent);
+    color: #000;
+    font-size: 1.1rem;
+    font-weight: 800;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+  }
+  .step-line {
+    width: 2px;
+    background: var(--color-border);
+    flex-grow: 1;
+    margin: 0.5rem 0;
+  }
+  .step-content {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 1rem;
+    padding: 1.75rem;
+    flex-grow: 1;
+  }
+  .step-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+  }
+  .step-role-badge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--color-accent);
+  }
+  .step-duration {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+  }
+  .step-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--color-text-main);
+    margin-bottom: 0.35rem;
+  }
+  .step-address {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    margin-bottom: 0.75rem;
+  }
+  .step-desc {
+    font-size: 0.95rem;
+    color: var(--color-text-main);
+    line-height: 1.5;
+    margin-bottom: 1.25rem;
+  }
+  .step-actions {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+  }
+  .btn-step-primary {
+    background: var(--color-accent);
+    color: #000;
+    font-size: 0.875rem;
+    font-weight: 700;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    text-decoration: none;
+  }
+  .btn-step-maps {
+    background: transparent;
+    color: var(--color-text-main);
+    border: 1px solid var(--color-border);
+    font-size: 0.875rem;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    text-decoration: none;
+  }
+  .next-travel-notice {
+    font-size: 0.85rem;
+    background: var(--color-bg);
+    border-left: 3px solid var(--color-accent);
+    padding: 0.6rem 0.85rem;
+    border-radius: 0.25rem;
+    color: var(--color-text-muted);
+  }
+</style>

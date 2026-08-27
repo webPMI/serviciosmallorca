@@ -198,19 +198,27 @@ export function extractBaseMetadata(html: string, baseUrl: URL, httpStatus: numb
     }
   }
 
-  // 5. Galería de Fotos del Body
+  // 5. Galería de Fotos del Body (Filtrado de Calidad HD y Exclusión de Miniaturas/Stock)
   const imgRegex = /<img[^>]+src=["']([^"']+)["'][^>]*>/gi;
   const gallerySet = new Set<string>();
-  let match;
+  if (ogImage && validateImageQuality(ogImage).isValid) {
+    gallerySet.add(ogImage);
+  }
 
+  let match;
   while ((match = imgRegex.exec(html)) !== null) {
     let src = match[1];
+    const srcLower = src.toLowerCase();
     if (
-      !src.includes("data:image") &&
-      !src.includes("icon") &&
-      !src.includes("logo") &&
-      !src.includes("pixel") &&
-      !src.endsWith(".svg")
+      !srcLower.includes("data:image") &&
+      !srcLower.includes("icon") &&
+      !srcLower.includes("logo") &&
+      !srcLower.includes("pixel") &&
+      !srcLower.includes("avatar") &&
+      !srcLower.includes("thumb") &&
+      !srcLower.includes("1x1") &&
+      !srcLower.includes("widget") &&
+      !srcLower.endsWith(".svg")
     ) {
       if (!src.startsWith("http")) {
         try {

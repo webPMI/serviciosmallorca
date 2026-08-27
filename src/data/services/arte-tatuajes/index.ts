@@ -10,6 +10,15 @@ import { teixitsVicens } from "./teixits-vicens-pollensa.ts";
 import { ceramicaTerraCuita } from "./ceramica-terra-cuita-portol.ts";
 import { cereriaArtesanaInca } from "./cereria-artesana-inca.ts";
 import { electricTattooPalma } from "./electric-tattoo-palma.ts";
+import { lafioreVidrioArtesanal } from "./lafiore-vidrio-artesanal.ts";
+import { ccaAndratxService } from "./cca-andratx.ts";
+import { galeriaPelairesService } from "./galeria-pelaires.ts";
+import { museuSaBassaBlancaService } from "./museu-sa-bassa-blanca.ts";
+import { galeriaKewenigService } from "./galeria-kewenig.ts";
+import { galeriaMaiorService } from "./galeria-maior.ts";
+import { galeriaBaroService } from "./galeria-baro.ts";
+import { fundacioMiroMallorcaService } from "./fundacio-miro-mallorca.ts";
+import { esBaluardMuseuService } from "./es-baluard-museu.ts";
 
 export {
   kuyenArtTattoo,
@@ -23,6 +32,15 @@ export {
   ceramicaTerraCuita,
   cereriaArtesanaInca,
   electricTattooPalma,
+  lafioreVidrioArtesanal,
+  ccaAndratxService,
+  galeriaPelairesService,
+  museuSaBassaBlancaService,
+  galeriaKewenigService,
+  galeriaMaiorService,
+  galeriaBaroService,
+  fundacioMiroMallorcaService,
+  esBaluardMuseuService,
 };
 
 /**
@@ -41,4 +59,13 @@ export const TATTOO_SERVICES: ServiceItem[] = [
   ceramicaTerraCuita,
   cereriaArtesanaInca,
   electricTattooPalma,
+  lafioreVidrioArtesanal,
+  ccaAndratxService,
+  galeriaPelairesService,
+  museuSaBassaBlancaService,
+  galeriaKewenigService,
+  galeriaMaiorService,
+  galeriaBaroService,
+  fundacioMiroMallorcaService,
+  esBaluardMuseuService,
 ];

@@ -1,23 +1,24 @@
 # 🗂️ Sistema de Taxonomía — Servicios Mallorca
 
-> **Documento maestro de clasificación.** Define la jerarquía canónica (**Sectores → Categorías → Tipos de Servicio → Etiquetas**) que estructura de forma profesional y escalable la base de datos de negocios de Mallorca.
+> **Documento maestro de clasificación.** Define la jerarquía canónica (**Macro-Bloques → Categorías → Subcategorías de Nicho → Etiquetas de Producto**) que estructura de forma profesional y escalable la base de datos de negocios de Mallorca (100+ especialidades).
 
-| Referencia                | Alcance                                                                              |
-| ------------------------- | ------------------------------------------------------------------------------------ |
-| **Fuente de verdad**      | Este documento (`docs/TAXONOMY.md`) es la única referencia canónica de nomenclatura. |
-| **Implementación actual** | `src/data/categories.ts`, `src/data/zones.ts`, `src/data/services.ts`                |
-| **Reglas que lo rigen**   | GR-06 (docs), GR-04 (i18n), GR-11 (Zero Fake Data), GR-12 (fidelidad Maps)           |
+| Referencia                | Alcance                                                                                      |
+| ------------------------- | -------------------------------------------------------------------------------------------- |
+| **Fuente de verdad**      | Este documento (`docs/TAXONOMY.md`) es la única referencia canónica de nomenclatura.         |
+| **Implementación actual** | `src/data/categories.ts`, `src/data/tags.ts`, `src/lib/taxonomyTree.ts`, `src/data/zones.ts` |
+| **Reglas que lo rigen**   | GR-06 (docs), GR-04 (i18n), GR-11 (Zero Fake Data), GR-12 (fidelidad Maps)                   |
 
 ---
 
 ## 1. Propósito y Alcance
 
-El objetivo es que **cada negocio pueda encontrarse por 4 vías complementarias y no excluyentes**:
+El objetivo es que **cada negocio pueda encontrarse por 5 vías complementarias y no excluyentes**:
 
-1. **Por Sector** → búsqueda amplia ("todo lo de construcción en Mallorca").
-2. **Por Categoría** → navegación intermedia con icono y color ("reformas & hogar").
-3. **Por Tipo de Servicio** → precisión del negocio ("fontanería").
-4. **Por Etiquetas** → filtros transversales ("lujo", "zona:puerto-portals", "con-patrón", "familias").
+1. **Por Macro-Bloque** → navegación de alto nivel (Estética, Artes Visuales, Gastronomía Epicúrea, Náutica & Deportes).
+2. **Por Categoría Principal & Multicategorías** → navegación intermedia (`categories: string[]`).
+3. **Por Subcategoría de Nicho** → especialidad precisa (`subcategories: string[]`).
+4. **Por Etiquetas de Producto (`product:*`)** → filtros dinámicos transversales (`product:fine-line`, `product:vidrio-soplado`, `product:enoturismo`, `product:charter-yates`).
+5. **Por Zona Geográfica (`zona:*`)** → perímetro de actuación (`zona:palma`, `zona:calvia-andratx`, etc.).
 
 ---
 
@@ -25,22 +26,22 @@ El objetivo es que **cada negocio pueda encontrarse por 4 vías complementarias 
 
 | #    | Principio                                                                                                                      | Regla                 |
 | ---- | ------------------------------------------------------------------------------------------------------------------------------ | --------------------- |
-| P-01 | **Jerarquía estable:** un servicio tiene SIEMPRE 1 `categoría`, 1 `zona` y N `tags`. Nunca se elimina un nivel; se añade.      | GR-06                 |
+| P-01 | **Jerarquía flexible:** un servicio tiene `category` obligatoria y puede tener `categories` y `subcategories` adicionales.     | GR-06                 |
 | P-02 | **Etiquetas normalizadas, no libres.** Las `tags` no son texto suelto: pertenecen a catálogos cerrados con prefijo de dominio. | Arquitectura de datos |
-| P-03 | **i18n completo:** nombres, descripciones y etiquetas legibles llevan traducción `es` / `en` / `ca`.                           | GR-04                 |
+| P-03 | **i18n completo:** nombres, descripciones y etiquetas legibles llevan traducción `es` / `en` / `ca` / `de`.                    | GR-04                 |
 | P-04 | **Veracidad primero:** la taxonomía ubica negocios reales verificados; no crea categorías vacías por relleno.                  | GR-11, GR-12          |
 | P-05 | **Extensible sin romper:** nuevos sectores/categorías nacen por consenso del Agente Maestro y quedan documentados aquí.        | GR-08                 |
 | P-06 | **Sin duplicación:** este documento es la única fuente de nomenclatura; el resto de `docs/` lo referencia.                     | Regla nº 9            |
 
 ---
 
-## 3. Arquitectura Jerárquica (4 Niveles)
+## 3. Arquitectura Jerárquica Multicapa (100+ Nichos)
 
 ```
-NIVEL 1 · SECTOR              (macro-dominio industrial)           ~8-10
-   └── NIVEL 2 · CATEGORÍA        (agrupación con icono + color)   1-3 por sector
-        └── NIVEL 3 · TIPO DE SERVICIO (actividad concreta)        N por categoría
-             └── NIVEL 4 · ETIQUETAS  (metadatos transversales)    N por servicio
+NIVEL 1 · MACRO-BLOQUE / SUPER-SECTOR   (Macro-dominio industrial)       4 Bloques Principales / 21 SuperSectores
+   └── NIVEL 2 · CATEGORÍAS             (Agrupación temática)            N por bloque
+        └── NIVEL 3 · SUBCATEGORÍAS     (Especialidades de nicho)        100+ especialidades
+             └── NIVEL 4 · ETIQUETAS    (Metadatos transversales)        product:*, mod:*, aud:*, amb:*, temps:*
 ```
 
 ### 3.1 Correspondencia con el modelo actual (`ServiceItem`)
@@ -200,11 +201,17 @@ Cada "tipo" es una clave técnica normalizada con traducciones. Subdivisión ori
 **Geográficas (`zona:`)** — derivadas de `MALLORCA_ZONES.popularAreas` y normalizadas en kebab-case ASCII:
 `zona:palma-centro`, `zona:santa-catalina`, `zona:portixol`, `zona:son-vida`, `zona:puerto-portals`, `zona:port-adriano`, `zona:santa-pona`, `zona:palma-nova`, `zona:port-d-andratx`, `zona:soller`, `zona:port-de-soller`, `zona:valldemossa`, `zona:deya`, `zona:esporles`, `zona:fornalutx`, `zona:port-de-pollenca`, `zona:port-d-alcudia`, `zona:playa-de-muro`, `zona:can-picafort`, `zona:manacor`, `zona:porto-cristo`, `zona:cala-millor`, `zona:cala-ratjada`, `zona:arta`, `zona:santanyi`, `zona:cala-d-or`, `zona:porto-petro`, `zona:ses-salines`, `zona:campos`, `zona:llucmajor`, `zona:inca`, `zona:binissalem`, `zona:santa-maria-del-cami`, `zona:alaro`, `zona:sineu`.
 
-**Producto/Segmento (`product:`):** `product:lujo`, `product:premium`, `product:accesible`.
+**Producto/Segmento & Nichos Especializados (`product:`):**
 
-**Modalidad (`mod:`):** `mod:a-domicilio`, `mod:en-local`, `mod:online`, `mod:hibrido`.
+- _Gama & Audiencia:_ `product:lujo`, `product:premium`, `product:accesible`, `product:familiar`, `product:adultos`.
+- _Estética & Tatuaje:_ `product:fine-line`, `product:realismo`, `product:traditional`, `product:neotradicional`, `product:blackwork`, `product:lettering`, `product:piercing-titanio`, `product:estetica-facial`, `product:unas-pestanas`.
+- _Artes Visuales & Artesanía:_ `product:galeria-arte`, `product:arte-contemporaneo`, `product:ceramica-balear`, `product:vidrio-soplado`, `product:escultura`, `product:diseno-interiores`, `product:joyeria-artesanal`.
+- _Gastronomía Epicúrea:_ `product:pescados-mariscos`, `product:tapas-autor`, `product:enoturismo`, `product:cafe-especialidad`, `product:pasteleria-artesanal`.
+- _Náutica & Aventura:_ `product:charter-yates`, `product:alquiler-barcos`, `product:buceo`, `product:deportes-acuaticos`, `product:padel-tenis`, `product:senderismo-rutas`, `product:yoga-bienestar`.
 
-**Equipación (`amb:`):** `amb:patron`, `amb:conductor`, `amb:catering`, `amb:skipper`.
+**Modalidad (`mod:`):** `mod:a-domicilio`, `mod:en-local`, `mod:online`, `mod:hibrido`, `mod:cita-previa`, `mod:walk-in`.
+
+**Equipación (`amb:`):** `amb:patron`, `amb:conductor`, `amb:catering`.
 
 **Audiencia (`aud:`):** `aud:familias`, `aud:parejas`, `aud:expat`, `aud:b2b`, `aud:seniors`.
 

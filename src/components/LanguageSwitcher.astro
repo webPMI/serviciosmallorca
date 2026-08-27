@@ -21,19 +21,35 @@ const cleanPath = rawPath.replace(/^\/+/, "");
 <div class="language-switcher">
   <span class="language-label">Idioma:</span>
   <nav class="language-nav" aria-label="Cambiar idioma">
-    <a href={`${getLangPrefix("es")}${cleanPath}`} class:list={["language-link", { active: currentLocale === "es" }]}>
+    <a
+      href={`${getLangPrefix("es")}${cleanPath}`}
+      data-locale="es"
+      class:list={["language-link", { active: currentLocale === "es" }]}
+    >
       {translations["nav.es"]}
     </a>
     <span class="language-separator">|</span>
-    <a href={`${getLangPrefix("en")}${cleanPath}`} class:list={["language-link", { active: currentLocale === "en" }]}>
+    <a
+      href={`${getLangPrefix("en")}${cleanPath}`}
+      data-locale="en"
+      class:list={["language-link", { active: currentLocale === "en" }]}
+    >
       {translations["nav.en"]}
     </a>
     <span class="language-separator">|</span>
-    <a href={`${getLangPrefix("ca")}${cleanPath}`} class:list={["language-link", { active: currentLocale === "ca" }]}>
+    <a
+      href={`${getLangPrefix("ca")}${cleanPath}`}
+      data-locale="ca"
+      class:list={["language-link", { active: currentLocale === "ca" }]}
+    >
       {translations["nav.ca"]}
     </a>
     <span class="language-separator">|</span>
-    <a href={`${getLangPrefix("de")}${cleanPath}`} class:list={["language-link", { active: currentLocale === "de" }]}>
+    <a
+      href={`${getLangPrefix("de")}${cleanPath}`}
+      data-locale="de"
+      class:list={["language-link", { active: currentLocale === "de" }]}
+    >
       {translations["nav.de"] || "DE"}
     </a>
   </nav>

@@ -1,4 +1,4 @@
-import { SERVICES } from "../data/services";
+import { SERVICES } from "../data/services/index.ts";
 import type { ServiceItem, BusinessCapabilities } from "../data/services/types";
 
 export interface QualityScoreBreakdown {

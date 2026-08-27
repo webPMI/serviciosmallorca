@@ -9,6 +9,22 @@ export type CulturalIdentity =
   | "international_luxury" // Enfoque internacional cosmopolita y de lujo
   | "local_spanish"; // Nacional / Peninsular
 
+export type ClosureReason =
+  | "retirement" // Jubilación sin relevo generacional
+  | "economic" // Inviabilidad económica o cambios de mercado
+  | "relocation" // Traslado de sede o cambio de municipio
+  | "gentrification_lease" // Finalización de contrato de alquiler / incremento de renta
+  | "acquisition" // Venta o absorción por grupo empresarial
+  | "generational_gap" // Falta de continuidad familiar
+  | "urban_reform" // Obras urbanísticas o cambio de uso del inmueble
+  | "unknown"; // Cierre confirmado sin motivo documentado
+
+export type HistoricalSignificance =
+  | "centenary_heritage" // Negocio centenario emblemático (+100 años)
+  | "historical_landmark" // Hito comercial e histórico (+30 a +50 años)
+  | "commercial_pioneer" // Pionero en su sector en Mallorca (+10 a +20 años)
+  | "standard";
+
 export interface PressMention {
   mediaName: string; // "Diario de Mallorca", "Mallorca Magazin", "ABC Mallorca", "Forbes", etc.
   title: string;
@@ -164,6 +180,8 @@ export interface ServiceItem {
   slug: string;
   name: string;
   category: string;
+  categories?: string[]; // Múltiples categorías transversales
+  subcategories?: string[]; // Especialidades y nichos específicos
   sectorId?: string;
   sectors?: string[]; // Array de sectores macroeconómicos vinculados
   capabilities?: BusinessCapabilities; // Matriz de capacidades e intención de usuario
@@ -198,6 +216,16 @@ export interface ServiceItem {
   teamMembers?: TeamMember[];
   faqs?: BusinessFAQ[];
   foundedYear?: number;
+  closureYear?: number; // Año de cese de actividad oficial
+  closureReason?: ClosureReason; // Motivo clasificado de cierre para Business Intelligence
+  closureDetails?: {
+    es?: string;
+    en?: string;
+    ca?: string;
+    de?: string;
+  };
+  yearsInOperation?: number; // Años totales de actividad en Mallorca
+  historicalSignificance?: HistoricalSignificance; // Valor patrimonial o histórico del comercio
   founderName?: string;
   founderStory?: {
     es?: string;

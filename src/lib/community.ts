@@ -18,7 +18,7 @@ import {
   arrayRemove,
   increment,
 } from "firebase/firestore";
-import { db } from "./firebase";
+import { db } from "./firebase.ts";
 
 // -----------------------------------------------------------------------------
 // Interfaces & Types
@@ -84,7 +84,8 @@ export async function getServiceReviews(serviceId: string): Promise<ServiceRevie
         createdTime = d.getTime();
       } else if (typeof data.createdAt === "string") {
         createdStr = data.createdAt;
-        createdTime = new Date(data.createdAt).getTime() || Date.now();
+        const parsed = new Date(data.createdAt).getTime();
+        createdTime = isNaN(parsed) ? 0 : parsed;
       }
       return {
         id: docSnap.id,
@@ -117,16 +118,17 @@ export async function addServiceReview(params: {
   rating: number;
   comment: string;
 }): Promise<string> {
-  const docRef = await addDoc(collection(db, "reviews"), {
+  const reviewsCol = collection(db, "reviews");
+  const docRef = await addDoc(reviewsCol, {
     serviceId: params.serviceId,
     authorUid: params.authorUid,
     authorName: params.authorName,
     authorAvatar: params.authorAvatar || "👤",
     rating: Math.min(5, Math.max(1, params.rating)),
     comment: params.comment.trim(),
-    createdAt: serverTimestamp(),
     helpfulCount: 0,
     helpfulUsers: [],
+    createdAt: serverTimestamp(),
   });
   return docRef.id;
 }
@@ -134,9 +136,10 @@ export async function addServiceReview(params: {
 export async function toggleReviewHelpful(reviewId: string, userUid: string): Promise<boolean> {
   const ref = doc(db, "reviews", reviewId);
   const snap = await getDoc(ref);
-  if (!snap.exists()) return false;
+  const exists = typeof snap.exists === "function" ? snap.exists() : Boolean(snap.exists);
+  if (!exists) return false;
 
-  const data = snap.data();
+  const data = snap.data() || {};
   const helpfulUsers: string[] = Array.isArray(data.helpfulUsers) ? data.helpfulUsers : [];
   const hasVoted = helpfulUsers.includes(userUid);
 
@@ -186,7 +189,7 @@ export async function getForumTopics(category?: ForumCategory): Promise<ForumTop
     }
     const snap = await getDocs(q);
     return snap.docs.map((docSnap) => {
-      const data = docSnap.data();
+      const data = docSnap.data() || {};
       let createdStr = new Date().toISOString();
       if (data.createdAt && typeof data.createdAt.toDate === "function") {
         createdStr = data.createdAt.toDate().toISOString();
@@ -221,8 +224,9 @@ export async function getForumTopicBySlug(slug: string): Promise<ForumTopic | nu
     if (snap.empty) {
       // Fallback: try by document ID
       const directSnap = await getDoc(doc(db, "forum_topics", slug));
-      if (!directSnap.exists()) return null;
-      const data = directSnap.data();
+      const directExists = typeof directSnap.exists === "function" ? directSnap.exists() : Boolean(directSnap.exists);
+      if (!directExists) return null;
+      const data = directSnap.data() || {};
       let createdStr = new Date().toISOString();
       if (data.createdAt && typeof data.createdAt.toDate === "function") {
         createdStr = data.createdAt.toDate().toISOString();
@@ -244,7 +248,7 @@ export async function getForumTopicBySlug(slug: string): Promise<ForumTopic | nu
     }
 
     const docSnap = snap.docs[0];
-    const data = docSnap.data();
+    const data = docSnap.data() || {};
     let createdStr = new Date().toISOString();
     if (data.createdAt && typeof data.createdAt.toDate === "function") {
       createdStr = data.createdAt.toDate().toISOString();
@@ -272,7 +276,7 @@ export async function getForumTopicBySlug(slug: string): Promise<ForumTopic | nu
 export async function createForumTopic(params: {
   title: string;
   content: string;
-  category: ForumCategory;
+  category?: ForumCategory;
   authorUid: string;
   authorName: string;
   authorAvatar?: string;
@@ -297,9 +301,10 @@ export async function createForumTopic(params: {
 export async function toggleTopicLike(topicId: string, userUid: string): Promise<boolean> {
   const ref = doc(db, "forum_topics", topicId);
   const snap = await getDoc(ref);
-  if (!snap.exists()) return false;
+  const exists = typeof snap.exists === "function" ? snap.exists() : Boolean(snap.exists);
+  if (!exists) return false;
 
-  const data = snap.data();
+  const data = snap.data() || {};
   const likedUsers: string[] = Array.isArray(data.likedUsers) ? data.likedUsers : [];
   const hasLiked = likedUsers.includes(userUid);
 

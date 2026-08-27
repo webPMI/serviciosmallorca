@@ -4,8 +4,16 @@ import { digitalCinemaMallorca } from "./digital-cinema-mallorca.ts";
 import { electricidadBinissalem } from "./electricidad-domotica-binissalem.ts";
 import { solarArta } from "./energia-solar-arta.ts";
 import { electricidadSoller } from "./electricidad-climatizacion-soller.ts";
+import { fibwiTelecomunicaciones } from "./fibwi-telecomunicaciones.ts";
 
-export { trablisaSeguridad, digitalCinemaMallorca, electricidadBinissalem, solarArta, electricidadSoller };
+export {
+  trablisaSeguridad,
+  digitalCinemaMallorca,
+  electricidadBinissalem,
+  solarArta,
+  electricidadSoller,
+  fibwiTelecomunicaciones,
+};
 
 /**
  * Catálogo Sectorial: Tecnología, Seguridad & Domótica en Mallorca.
@@ -17,4 +25,5 @@ export const SEGURIDAD_SERVICES: ServiceItem[] = [
   electricidadBinissalem,
   solarArta,
   electricidadSoller,
+  fibwiTelecomunicaciones,
 ];

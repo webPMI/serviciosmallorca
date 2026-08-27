@@ -11,7 +11,7 @@ import type { Firestore } from "firebase/firestore";
 
 export interface ServiceOverride {
   ownerUid: string;
-  updatedAt: any;
+  updatedAt?: any;
   phone?: string;
   whatsapp?: string;
   email?: string;
@@ -65,7 +65,8 @@ export async function getServiceOverride(db: Firestore | undefined, slug: string
   try {
     const { doc, getDoc } = await import("firebase/firestore");
     const snap = await getDoc(doc(db, "service_overrides", slug));
-    const override = snap.exists() ? (snap.data() as ServiceOverride) : null;
+    const exists = typeof snap.exists === "function" ? snap.exists() : Boolean(snap.exists);
+    const override = exists ? (snap.data() as ServiceOverride) : null;
 
     // Save to cache
     OVERRIDES_CACHE.set(slug, { override, cachedAt: now });
