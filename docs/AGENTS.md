@@ -265,7 +265,7 @@ El agente `@curation` procesa periódicamente la cola `community_feedback` en Cl
 ```
 [ ] Ejecución obligatoria de scripts/business-intelligence-lookup.ts
 [ ] Coordenadas GPS exactas en la isla de Mallorca (GR-12)
-[ ] Horario y teléfono 100% reales y verificados (GR-11)
+[ ] Horario y teléfono reales contrastados en fuentes oficiales (GR-11)
 [ ] Imagen principal y galería oficial sin enlaces rotos
 [ ] Estructura completa de los 5 Pilares (highlights, servicesProvided, reviews, founderStory, pricing)
 [ ] Categoría existente en CATEGORIES y tags en TAG_CATALOG

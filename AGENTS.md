@@ -39,9 +39,9 @@ Toda la documentación del proyecto está en `docs/`. Antes de trabajar en cualq
 8. **GR-08**: Agente Maestro coordina y audita cambios
 9. **GR-09**: Zero console errors, build limpio
 10. **GR-10**: Build < 60s en desarrollo local
-11. **GR-11**: Veracidad: Información y servicios 100% reales y verificados (Zero Fake Data)
+11. **GR-11**: Veracidad y Contraste: Búsqueda continua en fuentes públicas oficiales y datos contrastados (Zero Fake Data)
 12. **GR-12**: Fidelidad Google Maps: 90%+ re-indexación de datos oficiales (coordenadas, horarios, reseñas y multi-mapas)
-13. **GR-13**: Seguridad del Usuario: RGPD, cabeceras HTTP y reglas Firestore blindadas
+13. **GR-13**: Seguridad del Usuario, RGPD y Cero Exposición del Stack Backend en UI Pública
 14. **GR-14**: Sincronización Continua con GitHub: Pre-flight `git fetch origin` y `git pull` obligatorio antes de iniciar o tras >12h sin sincronizar
 15. **GR-15**: Telemetría, Logs Resilientes y Control de Calidad en Producción (Cloudflare D1 con deduplicación anti-spam y cero flooding)
 16. **GR-16**: Registro de Versiones y Trazabilidad Temporal de Despliegues (`src/data/changelog.ts`, timestamp exacto y `/actualizaciones`)

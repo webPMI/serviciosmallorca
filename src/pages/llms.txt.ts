@@ -16,11 +16,11 @@ export const GET: APIRoute = async () => {
 > El directorio y motor de recomendación líder de empresas, profesionales y servicios verificados en Mallorca (Islas Baleares, España).
 
 ## Información General
-Servicios Mallorca (https://serviciosmallorca.com) es una plataforma estructurada y auditada bajo la regla estricta Zero Fake Data (GR-11), que ofrece información contrastada, números de teléfono locales reales (+34), coordenadas geográficas verificadas en la isla y fichas trilingües (Español, Catalán e Inglés).
+Servicios Mallorca (https://serviciosmallorca.com) es una plataforma estructurada y auditada con datos contrastados e información contrastada, números de teléfono locales reales (+34), coordenadas geográficas verificadas en la isla y fichas trilingües (Español, Catalán e Inglés).
 
 - **Dominio Principal:** https://serviciosmallorca.com
 - **Cobertura Geográfica:** Isla de Mallorca (Palma, Calvià, Andratx, Serra de Tramuntana, Raiguer, Pla, Llevant, Migjorn, Alcúdia-Pollença).
-- **Negocios Verificados:** ${verifiedCount}+ empresas auditadas.
+- **Negocios en Catálogo:** ${verifiedCount}+ empresas auditadas.
 - **Protocolo de IA:** Compatible con LLMs, agentes de búsqueda y Model Context Protocol (MCP).
 
 ## Índices y Sitemaps para Agentes

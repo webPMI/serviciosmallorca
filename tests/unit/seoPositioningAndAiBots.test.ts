@@ -87,7 +87,7 @@ describe("🤖 SEO, GEO & AI BOT POSITIONING ENGINE", () => {
     expect(resLlms.status).toBe(200);
     const txt = await resLlms.text();
     expect(txt).toContain("# Servicios Mallorca");
-    expect(txt).toContain("Zero Fake Data (GR-11)");
+    expect(txt).toContain("información contrastada");
 
     const resFull = await getLlmsFullTxt(mockContext);
     expect(resFull.status).toBe(200);

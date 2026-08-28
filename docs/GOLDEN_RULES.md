@@ -208,9 +208,9 @@ Antes de aceptar cualquier cambio, el Agente Maestro verifica:
 [ ] GR-08: ¿Pasó la revisión del Agente Maestro?
 [ ] GR-09: ¿Build sin errores? ¿Tests pasando?
 [ ] GR-10: ¿Build time < 60s?
-[ ] GR-11: ¿Información y servicios 100% reales y verificados (Zero Fake Data)?
+[ ] GR-11: ¿Información y servicios contrastados exhaustivamente en fuentes públicas oficiales (Zero Fake Data)?
 [ ] GR-12: ¿Fidelidad de datos Google Maps (coordenadas, horarios, reseñas y multi-mapas)?
-[ ] GR-13: ¿Seguridad de datos de usuario, cabeceras HTTP y reglas Firestore blindadas?
+[ ] GR-13: ¿Seguridad de datos de usuario, reglas Firestore blindadas y cero exposición de stack backend en UI pública?
 [ ] GR-14: ¿Repositorio local sincronizado con la última versión de GitHub (Pre-Flight Git Fetch)?
 [ ] GR-15: ¿Telemetría y registro de errores conectado a Cloudflare D1 sin catch silenciosos?
 [ ] GR-16: ¿Versión, fecha y hora exacta de actualización registradas en src/data/changelog.ts y visibles en /actualizaciones?

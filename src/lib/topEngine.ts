@@ -221,7 +221,7 @@ export function getWeeklyCuratedTops(date = new Date(), locale = "es"): RankedSe
       score: breakdown.total,
       breakdown,
       badgeLabel: locale === "de" ? "✨ Wöchentliche Auswahl" : "✨ Selección Semanal",
-      reasons: ["🏆 Destacado de la Semana", "✅ 100% Verificado"],
+      reasons: ["🏆 Destacado de la Semana", "✅ Información Contrastada"],
     };
   });
 }

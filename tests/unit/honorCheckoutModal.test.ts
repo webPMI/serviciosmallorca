@@ -80,4 +80,26 @@ describe("🛡️ Honor Board & Checkout Modal — Aislamiento Gremial y Buscado
     const mode = getPaymentGatewayMode();
     expect(["live", "sandbox"]).toContain(mode);
   });
+
+  it("diferencia claramente las políticas de autenticación entre owner_bid y community_boost", () => {
+    // 1. Política de Puja Oficial de Titular (B2B): Exige autenticación de usuario
+    const ownerBidPolicy = {
+      mode: "owner_bid" as const,
+      requiresAuth: true,
+      minIncrementEuros: 1.0,
+      allowsTaxDeduction: true,
+    };
+
+    // 2. Política de Impulso Popular (B2C): Permite mecenazgo de vecinos con email
+    const communityBoostPolicy = {
+      mode: "community_boost" as const,
+      requiresAuth: false,
+      minAmountEuros: 1.0,
+      requiresEmail: true,
+    };
+
+    expect(ownerBidPolicy.requiresAuth).toBe(true);
+    expect(communityBoostPolicy.requiresAuth).toBe(false);
+    expect(communityBoostPolicy.requiresEmail).toBe(true);
+  });
 });

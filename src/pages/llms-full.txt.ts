@@ -7,11 +7,11 @@ export const prerender = false;
 
 export const GET: APIRoute = async () => {
   let content = `# Servicios Mallorca - Índice Completo para Modelos de Lenguaje (LLMs & Agentes IA)
-> Catálogo exhaustivo y auditado de empresas, profesionales, gastronomía, instalaciones técnicas, náutica, deportes, bienestar y servicios verificados en Mallorca (Islas Baleares, España).
-> Información 100% real y contrastada bajo la norma estricta Zero Fake Data (GR-11).
+> Catálogo exhaustivo y auditado de empresas, profesionales, gastronomía, instalaciones técnicas, náutica, deportes, bienestar y servicios en Mallorca (Islas Baleares, España).
+> Información contrastada continuamente en fuentes públicas oficiales.
 
 - **Dominio:** https://serviciosmallorca.com
-- **Negocios Verificados:** ${SERVICES.length}
+- **Negocios en Catálogo:** ${SERVICES.length}
 - **Última Actualización:** ${new Date().toISOString().split("T")[0]}
 
 ================================================================================

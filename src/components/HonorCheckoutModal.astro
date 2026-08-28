@@ -67,6 +67,9 @@ const verifiedBusinessesData = JSON.stringify(
   data-i18n-submit-owner={translations["honor.modal.submitOwner"] || "👑 Pujar Récord & Tomar el Puesto #1"}
   data-i18n-default-biz={translations["honor.modal.defaultBizPlaceholder"] || "Comercio de Mallorca"}
   data-i18n-select-prompt={translations["honor.modal.selectBizPlaceholder"] || "Seleccionar Comercio de Mallorca..."}
+  data-i18n-continue-step2={translations["honor.modal.continueToStep2"] || "Continuar al Importe & Pago SSL →"}
+  data-i18n-login-to-continue={translations["honor.modal.loginToContinue"] ||
+    "🔒 Inicia sesión como titular para continuar"}
   aria-hidden="true"
   role="dialog"
   aria-modal="true"
@@ -114,6 +117,36 @@ const verifiedBusinessesData = JSON.stringify(
         <button type="button" class="mode-tab" id="tab-owner-bid" role="tab" aria-selected="false">
           <span>{translations["honor.modal.tabOwner"] || "👑 Puja Oficial de Titular (+1€)"}</span>
         </button>
+      </div>
+
+      <!-- Owner Authentication Gate (Shown when mode === 'owner_bid' and user is not authenticated) -->
+      <div id="owner-auth-gate" class="owner-auth-gate-box" style="display: none;">
+        <div class="auth-gate-icon">🔐</div>
+        <div class="auth-gate-content">
+          <h4 class="auth-gate-title">
+            {translations["honor.modal.ownerAuthRequired"] || "Identificación de Titular Requerida"}
+          </h4>
+          <p class="auth-gate-desc">
+            {
+              translations["honor.modal.ownerAuthDesc"] ||
+                "Para pujar oficialmente en nombre de este comercio y vincularlo a tu panel de control, debes iniciar sesión o registrarte como titular."
+            }
+          </p>
+          <a
+            href={`${prefix}login?returnUrl=${encodeURIComponent(prefix + "cuadro-de-honor")}&intent=boost`}
+            id="btn-owner-login-trigger"
+            class="btn btn-primary btn-sm"
+          >
+            <span>{translations["honor.modal.loginBtn"] || "🔑 Iniciar Sesión / Registrarse"}</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Owner Logged In Indicator (Shown when mode === 'owner_bid' and user IS authenticated) -->
+      <div id="owner-auth-badge" class="owner-auth-badge" style="display: none;">
+        <span class="auth-icon">✅</span>
+        <span class="auth-label">{translations["honor.modal.ownerLoggedInAs"] || "👤 Titular Autenticado:"}</span>
+        <strong id="owner-auth-user-display" class="auth-username"></strong>
       </div>
 
       <!-- Selected Business Display Card -->
@@ -289,7 +322,9 @@ const verifiedBusinessesData = JSON.stringify(
       <!-- Step 1 Action Button -->
       <div class="modal-actions-footer">
         <button type="button" id="btn-next-step-1" class="btn btn-primary btn-lg btn-full">
-          <span>{translations["honor.modal.continueToStep2"] || "Continuar al Importe & Pago SSL →"}</span>
+          <span id="btn-next-step-1-text"
+            >{translations["honor.modal.continueToStep2"] || "Continuar al Importe & Pago SSL →"}</span
+          >
         </button>
       </div>
     </div>
@@ -706,6 +741,72 @@ const verifiedBusinessesData = JSON.stringify(
     border: 1px solid var(--color-surface-border);
     border-radius: var(--border-radius-sm, 8px);
     padding: 10px 14px;
+  }
+
+  /* Owner Authentication Gate & Badges */
+  .owner-auth-gate-box {
+    background: var(--color-surface);
+    border: 1px solid var(--color-primary);
+    border-radius: var(--border-radius-sm, 8px);
+    padding: 12px 14px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 4px;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .auth-gate-icon {
+    font-size: 1.6rem;
+    flex-shrink: 0;
+  }
+
+  .auth-gate-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .auth-gate-title {
+    font-size: 0.9rem;
+    font-weight: 800;
+    color: var(--color-primary);
+    margin: 0;
+  }
+
+  .auth-gate-desc {
+    font-size: 0.78rem;
+    color: var(--color-text-muted);
+    margin: 0;
+    line-height: 1.35;
+  }
+
+  .owner-auth-badge {
+    background: var(--color-success-bg, rgba(34, 197, 94, 0.1));
+    border: 1px solid var(--color-success, #22c55e);
+    border-radius: var(--border-radius-sm, 6px);
+    padding: 6px 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.78rem;
+  }
+
+  .owner-auth-badge .auth-label {
+    color: var(--color-text-muted);
+    font-weight: 600;
+  }
+
+  .owner-auth-badge .auth-username {
+    color: var(--color-success, #22c55e);
+    font-weight: 700;
+  }
+
+  .btn-disabled {
+    opacity: 0.55;
+    cursor: not-allowed !important;
+    pointer-events: none;
   }
 
   .target-icon {
@@ -1371,11 +1472,17 @@ const verifiedBusinessesData = JSON.stringify(
     const stepInd3 = document.getElementById("step-indicator-3");
 
     // Navigation Buttons
-    const btnNextStep1 = document.getElementById("btn-next-step-1");
+    const btnNextStep1 = document.getElementById("btn-next-step-1") as HTMLButtonElement | null;
+    const btnNextStep1Text = document.getElementById("btn-next-step-1-text");
     const btnBackStep2 = document.getElementById("btn-back-step-2");
     const submitBtn = document.getElementById("submit-honor-btn") as HTMLButtonElement | null;
     const btnSubmitSpinner = document.getElementById("btn-submit-spinner");
     const btnSubmitText = document.getElementById("btn-submit-text");
+
+    // Owner Auth Gate Elements
+    const ownerAuthGate = document.getElementById("owner-auth-gate");
+    const ownerAuthBadge = document.getElementById("owner-auth-badge");
+    const ownerAuthUserDisplay = document.getElementById("owner-auth-user-display");
 
     // Step 1 Inputs
     const modeInput = document.getElementById("input-checkout-mode") as HTMLInputElement | null;
@@ -1429,6 +1536,71 @@ const verifiedBusinessesData = JSON.stringify(
     const receiptPrintBtn = document.getElementById("receipt-print-btn");
 
     if (!modal || !amountInput) return;
+
+    // Auth state synchronization
+    function updateAuthModeView() {
+      const user = authStore.getState().user;
+      const isOwnerMode = modeInput?.value === "owner_bid";
+
+      if (isOwnerMode) {
+        if (!user) {
+          if (ownerAuthGate) ownerAuthGate.style.display = "flex";
+          if (ownerAuthBadge) ownerAuthBadge.style.display = "none";
+          if (btnNextStep1) {
+            btnNextStep1.disabled = true;
+            btnNextStep1.classList.add("btn-disabled");
+          }
+          if (btnNextStep1Text) {
+            btnNextStep1Text.textContent =
+              modal.getAttribute("data-i18n-login-to-continue") || "🔒 Inicia sesión como titular para continuar";
+          }
+        } else {
+          if (ownerAuthGate) ownerAuthGate.style.display = "none";
+          if (ownerAuthBadge) {
+            ownerAuthBadge.style.display = "flex";
+            if (ownerAuthUserDisplay) {
+              ownerAuthUserDisplay.textContent = user.displayName || user.email?.split("@")[0] || "Titular";
+            }
+          }
+          if (btnNextStep1) {
+            btnNextStep1.disabled = false;
+            btnNextStep1.classList.remove("btn-disabled");
+          }
+          if (btnNextStep1Text) {
+            btnNextStep1Text.textContent =
+              modal.getAttribute("data-i18n-continue-step2") || "Continuar al Importe & Pago SSL →";
+          }
+          if (nameInput && (!nameInput.value || nameInput.value === "Vecino de Mallorca")) {
+            nameInput.value = user.displayName || user.email?.split("@")[0] || "Titular";
+          }
+          if (emailInput && !emailInput.value) {
+            emailInput.value = user.email || "";
+          }
+        }
+      } else {
+        // Community Boost mode
+        if (ownerAuthGate) ownerAuthGate.style.display = "none";
+        if (ownerAuthBadge) ownerAuthBadge.style.display = "none";
+        if (btnNextStep1) {
+          btnNextStep1.disabled = false;
+          btnNextStep1.classList.remove("btn-disabled");
+        }
+        if (btnNextStep1Text) {
+          btnNextStep1Text.textContent =
+            modal.getAttribute("data-i18n-continue-step2") || "Continuar al Importe & Pago SSL →";
+        }
+        if (user) {
+          if (nameInput && !nameInput.value) {
+            nameInput.value = user.displayName || user.email?.split("@")[0] || "Vecino de Mallorca";
+          }
+          if (emailInput && !emailInput.value) {
+            emailInput.value = user.email || "";
+          }
+        }
+      }
+    }
+
+    authStore.subscribe(updateAuthModeView);
 
     // Business data and Honor Lists
     interface HonorListItem {
@@ -1549,6 +1721,7 @@ const verifiedBusinessesData = JSON.stringify(
         btnSubmitText.textContent =
           modal.getAttribute("data-i18n-submit-community") || "⚡ Completar Aportación & Aupar al Podio";
       }
+      updateAuthModeView();
     });
 
     tabOwner?.addEventListener("click", () => {
@@ -1561,6 +1734,7 @@ const verifiedBusinessesData = JSON.stringify(
         btnSubmitText.textContent =
           modal.getAttribute("data-i18n-submit-owner") || "👑 Pujar Récord & Tomar el Puesto #1";
       }
+      updateAuthModeView();
     });
 
     // Calculations in Step 2
@@ -1623,6 +1797,16 @@ const verifiedBusinessesData = JSON.stringify(
     // Step 1 -> Step 2 Validation & Navigation
     btnNextStep1?.addEventListener("click", () => {
       let isValid = true;
+
+      // Check Owner Authentication if in owner_bid mode
+      if (modeInput?.value === "owner_bid" && !authStore.getState().user) {
+        if (ownerAuthGate) ownerAuthGate.style.display = "flex";
+        if (btnNextStep1) {
+          btnNextStep1.disabled = true;
+          btnNextStep1.classList.add("btn-disabled");
+        }
+        isValid = false;
+      }
 
       // Validate Business selected
       if (!serviceIdInput?.value) {
@@ -1877,6 +2061,7 @@ const verifiedBusinessesData = JSON.stringify(
       if (submitBtn) submitBtn.disabled = false;
       if (btnSubmitSpinner) btnSubmitSpinner.style.display = "none";
 
+      updateAuthModeView();
       recalculateInvoice();
       modal.classList.add("is-active");
       modal.setAttribute("aria-hidden", "false");
