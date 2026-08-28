@@ -38,6 +38,12 @@ describe("🚀 Changelog & Beta v0.01 Data Integrity (GR-03, GR-04, GR-16)", () 
     expect(latest.summary.ca).toBeTruthy();
     expect(latest.summary.de).toBeTruthy();
 
+    // VersionLabel i18n
+    expect(latest.versionLabel.es).toBeTruthy();
+    expect(latest.versionLabel.en).toBeTruthy();
+    expect(latest.versionLabel.ca).toBeTruthy();
+    expect(latest.versionLabel.de).toBeTruthy();
+
     // Highlights i18n
     expect(latest.highlights.es.length).toBeGreaterThan(0);
     expect(latest.highlights.en.length).toBeGreaterThan(0);

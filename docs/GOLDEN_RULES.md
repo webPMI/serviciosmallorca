@@ -122,12 +122,13 @@ Comando: `npm test` (Vitest)
 
 ---
 
-## GR-11: Veracidad y Fiabilidad de la Información (Zero Fake Data)
+## GR-11: Veracidad, Búsqueda Continua y Transparencia de Verificación (Zero Fake Data)
 
-**Todo servicio, empresa, teléfono, dirección física, sitio web y dato publicado en Servicios Mallorca DEBE ser 100% real, corroborado y verificable.**
+**Todo servicio, empresa, teléfono, dirección física, sitio web y dato publicado en Servicios Mallorca DEBE ser real y contrastado exhaustivamente contra fuentes públicas oficiales.**
 
+- ❌ **Prohibido atribuir verificación oficial sin intervención humana:** NUNCA se debe afirmar de cara al usuario que un negocio está "100% verificado" si el proceso no ha sido formalmente validado por un representante humano del propio negocio.
+- ✅ **Comunicación Clara y Honesta:** Se comunicará que realizamos una búsqueda continua en fuentes oficiales (Google Maps, registros y sitios web oficiales) aplicando pasos exhaustivos de contraste, invitando a la comunidad y a los propios titulares a corroborar y sugerir cambios.
 - ❌ PROHIBIDO incluir empresas, números de teléfono, correos electrónicos o reseñas ficticias o inventadas.
-- ✅ Los datos de negocios deben provenir de fuentes oficiales corroboradas (sitio web oficial, Google Business verificado, registro oficial o contacto directo).
 - ✅ Cada ficha de servicio debe tener enlaces operativos a su web oficial, teléfono de atención real y dirección física verídica en Mallorca.
 
 ---
@@ -144,10 +145,11 @@ Comando: `npm test` (Vitest)
 
 ---
 
-## GR-13: Seguridad del Usuario y Protección de Datos (RGPD, LOPDGDD y Firebase Security)
+## GR-13: Seguridad del Usuario, Protección de Datos y No-Exposición de Backend
 
-**La seguridad de la información, el blindaje de credenciales y la privacidad de los usuarios son PRIORIDADES INMUTABLES en todo el sistema.**
+**La seguridad de la información, el blindaje de credenciales, la privacidad de los usuarios y la no-exposición de la arquitectura interna son PRIORIDADES INMUTABLES en todo el sistema.**
 
+- 🛑 **Prohibición de Exponer el Stack Backend en UI Pública (Security by Minimization):** Queda terminantemente PROHIBIDO revelar nombres de proveedores de hosting, motores de base de datos, bindings internos o detalles de infraestructura de backend (ej. Cloudflare Workers, D1, Firestore) en textos, mensajes o interfaces visibles al usuario final, con el fin de evitar el reconocimiento y mapeo de vectores de ataque.
 - ✅ **Reglas Firestore Blindadas:** Todo cambio en colecciones o documentos debe estar explícitamente autorizado en `firestore.rules` siguiendo el principio de mínimo privilegio. La mutación de roles de usuario desde cliente está terminantemente prohibida.
 - ✅ **Cabeceras de Seguridad HTTP:** Todo renderizado SSR debe aplicar cabeceras `X-Frame-Options`, `X-Content-Type-Options`, `Referrer-Policy`, `Permissions-Policy` y `Cache-Control: no-store` en rutas privadas (`/dashboard`, `/profile`).
 - ✅ **Validación Estricta de Carga Útil:** Los campos de texto libre deben poseer límites de longitud (`withinLength`), y los enlaces/avatares deben validar protocolo `https://`.

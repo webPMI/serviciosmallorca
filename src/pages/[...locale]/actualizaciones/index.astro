@@ -17,19 +17,170 @@ const translations = await loadTranslations(locale);
 const prefix = getLangPrefix(locale);
 const formattedLastUpdate = getFormattedBuildTimestamp(locale);
 
-const pageTitles = {
-  es: `Registro de Actualizaciones & Versión Beta (${CURRENT_PLATFORM_VERSION}) - Servicios Mallorca`,
-  en: `Platform Updates & Beta Changelog (${CURRENT_PLATFORM_VERSION}) - Servicios Mallorca`,
-  ca: `Registre d'Actualitzacions i Versió Beta (${CURRENT_PLATFORM_VERSION}) - Serveis Mallorca`,
-  de: `Plattform-Updates & Beta-Changelog (${CURRENT_PLATFORM_VERSION}) - Servicios Mallorca`,
+const i18nTexts = {
+  es: {
+    pageTitle: `Registro de Actualizaciones & Versión Beta (${CURRENT_PLATFORM_VERSION}) - Servicios Mallorca`,
+    pageDescription: `Conoce las últimas novedades, mejoras técnicas, correcciones y el registro de versiones de Servicios Mallorca (${CURRENT_PLATFORM_VERSION}).`,
+    heroBadgeVersion: `🚀 Versión ${CURRENT_PLATFORM_VERSION}`,
+    heroBadgeTransparency: "🌴 Transparencia & Desarrollo Activo",
+    heroBadgeLastUpdate: `⏱️ Última actualización: ${formattedLastUpdate} (UTC+2)`,
+    heroTitle: "Centro de Actualizaciones, Mejoras y Registro de Versiones",
+    heroSubtitle:
+      "Servicios Mallorca nace con un compromiso inquebrantable de transparencia, datos reales y meritocracia. En este registro documentamos cada mejora, corrección y nueva herramienta.",
+    statBusinesses: "Comercios en Catálogo",
+    statSuites: "Suites de Calidad",
+    statData: "Fuentes Públicas Reales",
+    principle1Title: "Búsqueda y Contraste Continuo",
+    principle1Desc:
+      "Recopilamos y contrastamos información constantemente desde fuentes públicas oficiales (Google Maps, registros y webs oficiales) para mantener las fichas al día, invitando a titulares y vecinos a colaborar.",
+    principle2Title: "Despliegue Continuo y Resiliente",
+    principle2Desc:
+      "Toda actualización pasa por 612 tests automatizados y validación de taxonomía antes de publicarse en la red global de alta velocidad.",
+    principle3Title: "Meritocracia y Claridad",
+    principle3Desc:
+      "Subastas de reconocimiento transparentes desde 1,00€, visualización continua a simple vista y comunicación clara y directa sin tecnicismos.",
+    timelineTitle: "📦 Historial de Versiones & Lanzamientos",
+    timelineDesc: "Evolución detallada de cada despliegue con sus características y optimizaciones.",
+    highlightsTitle: "✨ Hitos & Novedades Destacadas:",
+    feedbackTitle: "¿Tienes una sugerencia, has detectado un fallo o quieres compartir una buena noticia?",
+    feedbackDesc:
+      "Tu opinión nos ayuda a construir la mejor guía de servicios para Mallorca. Nuestro equipo y agentes revisan cada propuesta con dedicación.",
+    btnExplore: "Explorar Comercios del Catálogo →",
+    btnHonor: "Ver Cuadro de Honor (desde 1€) →",
+    roadmapTitle: "🗺️ Próximos Pasos (Roadmap v0.02 - 2026)",
+    roadmapF1Step: "Fase 1",
+    roadmapF1Title: "Escalado a 1.000 Comercios",
+    roadmapF1Desc: "Cobertura integral en los 53 municipios de Mallorca.",
+    roadmapF2Step: "Fase 2",
+    roadmapF2Title: "Instalaciones Deportivas & Parques",
+    roadmapF2Desc: "Mapeo de calistenia, pistas de pádel y centros de entrenamiento.",
+    roadmapF3Step: "Fase 3",
+    roadmapF3Title: "Buzón Ciudadano & Buenas Noticias",
+    roadmapF3Desc: "Muro de agradecimientos y canal directo para sugerencias.",
+  },
+  en: {
+    pageTitle: `Platform Updates & Beta Changelog (${CURRENT_PLATFORM_VERSION}) - Servicios Mallorca`,
+    pageDescription: `Explore the latest features, technical improvements, fixes, and release history of Servicios Mallorca (${CURRENT_PLATFORM_VERSION}).`,
+    heroBadgeVersion: `🚀 Version ${CURRENT_PLATFORM_VERSION}`,
+    heroBadgeTransparency: "🌴 Transparency & Active Development",
+    heroBadgeLastUpdate: `⏱️ Last update: ${formattedLastUpdate} (UTC+2)`,
+    heroTitle: "Platform Changelog, Updates & Release Log",
+    heroSubtitle:
+      "Servicios Mallorca is built on strict transparency, genuine verified public data, and local meritocracy. Here we document every single release, fix, and new platform tool.",
+    statBusinesses: "Local Businesses",
+    statSuites: "Quality Suites",
+    statData: "Genuine Public Data",
+    principle1Title: "Continuous Research & Contrast",
+    principle1Desc:
+      "We constantly gather and contrast data from official public sources (Google Maps, official websites) to keep listings fresh, inviting business owners and locals to corroborate.",
+    principle2Title: "Continuous Resilient Delivery",
+    principle2Desc:
+      "Every release runs through 612 automated test suites and taxonomy validation before publishing to our high-speed global network.",
+    principle3Title: "Meritocracy & Clarity",
+    principle3Desc:
+      "Transparent community recognition bids starting at €1.00, continuous layout view, and clear natural communication without technical jargon.",
+    timelineTitle: "📦 Release History & Changelog",
+    timelineDesc: "Detailed log of every deployment with its features and performance optimizations.",
+    highlightsTitle: "✨ Key Milestones & Highlights:",
+    feedbackTitle: "Have a suggestion, spotted an error, or want to share good local news?",
+    feedbackDesc:
+      "Your feedback helps us build the best local directory for Mallorca. Our team and research agents review every submission carefully.",
+    btnExplore: "Explore Directory Listings →",
+    btnHonor: "View Honor Board (from €1) →",
+    roadmapTitle: "🗺️ Upcoming Milestones (Roadmap v0.02 - 2026)",
+    roadmapF1Step: "Phase 1",
+    roadmapF1Title: "Scaling to 1,000 Businesses",
+    roadmapF1Desc: "Comprehensive coverage across all 53 Mallorca municipalities.",
+    roadmapF2Step: "Phase 2",
+    roadmapF2Title: "Sports Facilities & Parks",
+    roadmapF2Desc: "Mapping outdoor calisthenics, padel courts, and fitness centers.",
+    roadmapF3Step: "Phase 3",
+    roadmapF3Title: "Community Voice & Good News Feed",
+    roadmapF3Desc: "Public gratitude wall and direct suggestion pipeline.",
+  },
+  ca: {
+    pageTitle: `Registre d'Actualitzacions i Versió Beta (${CURRENT_PLATFORM_VERSION}) - Serveis Mallorca`,
+    pageDescription: `Descobreix les darreres novetats, millores tècniques, correccions i l'historial de versions de Serveis Mallorca (${CURRENT_PLATFORM_VERSION}).`,
+    heroBadgeVersion: `🚀 Versió ${CURRENT_PLATFORM_VERSION}`,
+    heroBadgeTransparency: "🌴 Transparència & Desenvolupament Actiu",
+    heroBadgeLastUpdate: `⏱️ Darrera actualització: ${formattedLastUpdate} (UTC+2)`,
+    heroTitle: "Centre d'Actualitzacions, Millores i Registre de Versions",
+    heroSubtitle:
+      "Servicios Mallorca neix amb un compromís infranquejable de transparència, dades reals i meritocràcia. En aquest registre documentem cada millora, correcció i nova eina.",
+    statBusinesses: "Comerços en Catàleg",
+    statSuites: "Suites de Qualitat",
+    statData: "Fonts Públiques Reals",
+    principle1Title: "Cerca i Contrast Continu",
+    principle1Desc:
+      "Recopilem informació constantment des de fonts públiques oficials (Google Maps, registres i webs oficials) per mantenir les dades al dia, convidant a titulars i veïns a col·laborar.",
+    principle2Title: "Desplegament Continu i Resilient",
+    principle2Desc:
+      "Cada actualització passa per 612 proves automatitzades i validació de taxonomia abans de publicar-se a la xarxa global d'alta velocitat.",
+    principle3Title: "Meritocràcia i Transparència",
+    principle3Desc:
+      "Subhastes de reconeixement transparents des d'1,00€, visualització contínua a simple vista i llenguatge natural sense tecnicismes.",
+    timelineTitle: "📦 Historial de Versions & Llançaments",
+    timelineDesc: "Evolució detallada de cada desplegament amb les seves característiques i optimitzacions.",
+    highlightsTitle: "✨ Fites i Novetats Destacades:",
+    feedbackTitle: "Tens un suggeriment, has detectat una errada o vols compartir una bona notícia?",
+    feedbackDesc:
+      "La teva opinió ens ajuda a construir la millor guia de serveis per a Mallorca. El nostre equip i agents revisen cada proposta amb dedicació.",
+    btnExplore: "Explorar Comerços del Catàleg →",
+    btnHonor: "Veure Quadre d'Honor (des d'1€) →",
+    roadmapTitle: "🗺️ Propers Passos (Full de Ruta v0.02 - 2026)",
+    roadmapF1Step: "Fase 1",
+    roadmapF1Title: "Escalat a 1.000 Comerços",
+    roadmapF1Desc: "Cobertura integral als 53 municipis de Mallorca.",
+    roadmapF2Step: "Fase 2",
+    roadmapF2Title: "Instal·lacions Esportives & Parcs",
+    roadmapF2Desc: "Mapeig de cal·listènia, pistes de pàdel i centres d'entrenament.",
+    roadmapF3Step: "Fase 3",
+    roadmapF3Title: "Bústia Ciutadana & Bones Notícies",
+    roadmapF3Desc: "Mur públic d'agraïments i canal directe per a suggeriments.",
+  },
+  de: {
+    pageTitle: `Plattform-Updates & Beta-Changelog (${CURRENT_PLATFORM_VERSION}) - Servicios Mallorca`,
+    pageDescription: `Entdecken Sie die neuesten Funktionen, technischen Verbesserungen, Fixes und die Versionshistorie von Servicios Mallorca (${CURRENT_PLATFORM_VERSION}).`,
+    heroBadgeVersion: `🚀 Version ${CURRENT_PLATFORM_VERSION}`,
+    heroBadgeTransparency: "🌴 Transparenz & Aktive Entwicklung",
+    heroBadgeLastUpdate: `⏱️ Letzte Aktualisierung: ${formattedLastUpdate} (UTC+2)`,
+    heroTitle: "Plattform-Updates, Versionsprotokoll & Changelog",
+    heroSubtitle:
+      "Servicios Mallorca basiert auf absoluter Transparenz, verifizierten Echtzeitdaten und lokaler Exzellenz. Hier dokumentieren wir alle Verbesserungen und Updates.",
+    statBusinesses: "Gelistete Betriebe",
+    statSuites: "Qualitäts-Suites",
+    statData: "Geprüfte Echtdaten",
+    principle1Title: "Kontinuierliche Recherche",
+    principle1Desc:
+      "Wir recherchieren und vergleichen fortlaufend Informationen aus offiziellen Quellen (Google Maps, Websites), um Einträge aktuell zu halten, und laden Inhaber zur Prüfung ein.",
+    principle2Title: "Resiliente Bereitstellung",
+    principle2Desc:
+      "Jedes Update durchläuft 612 automatisierte Tests und Taxonomieprüfungen vor dem Rollout im globalen Highspeed-Netzwerk.",
+    principle3Title: "Meritokratie & Klarheit",
+    principle3Desc:
+      "Transparente Ehrentafel-Gebote ab 1,00€, direkte Gesamtansicht und klare Sprache ohne Fachchinesisch.",
+    timelineTitle: "📦 Versionshistorie & Release-Log",
+    timelineDesc: "Detailliertes Protokoll jedes Deployments mit neuen Funktionen und Optimierungen.",
+    highlightsTitle: "✨ Wichtigste Meilensteine & Highlights:",
+    feedbackTitle: "Haben Sie einen Vorschlag, einen Fehler entdeckt oder möchten gute Nachrichten teilen?",
+    feedbackDesc:
+      "Ihr Feedback hilft uns, das beste Verzeichnis für Mallorca aufzubauen. Unser Team und unsere Recherche-Agenten prüfen jeden Hinweis sorgfältig.",
+    btnExplore: "Gelistete Betriebe ansehen →",
+    btnHonor: "Ehrentafel ansehen (ab 1€) →",
+    roadmapTitle: "🗺️ Nächste Schritte (Roadmap v0.02 - 2026)",
+    roadmapF1Step: "Phase 1",
+    roadmapF1Title: "Erweiterung auf 1.000 Betriebe",
+    roadmapF1Desc: "Vollständige Abdeckung aller 53 Gemeinden Mallorcas.",
+    roadmapF2Step: "Phase 2",
+    roadmapF2Title: "Sportanlagen & Parks",
+    roadmapF2Desc: "Erfassung von Calisthenics-Parks, Padel-Plätzen und Fitnessstudios.",
+    roadmapF3Step: "Phase 3",
+    roadmapF3Title: "Bürger-Feedback & Gute Nachrichten",
+    roadmapF3Desc: "Öffentliche Ehrentafel für Danksagungen und direktes Feedback.",
+  },
 };
 
-const pageDescriptions = {
-  es: `Conoce las últimas novedades, mejoras técnicas, correcciones y el registro de versiones de Servicios Mallorca (${CURRENT_PLATFORM_VERSION}).`,
-  en: `Explore the latest features, technical improvements, fixes, and release history of Servicios Mallorca (${CURRENT_PLATFORM_VERSION}).`,
-  ca: `Descobreix les darreres novetats, millores tècniques, correccions i l'historial de versions de Serveis Mallorca (${CURRENT_PLATFORM_VERSION}).`,
-  de: `Entdecken Sie die neuesten Funktionen, technischen Verbesserungen, Fixes und die Versionshistorie von Servicios Mallorca (${CURRENT_PLATFORM_VERSION}).`,
-};
+const t = i18nTexts[locale] || i18nTexts.es;
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -44,66 +195,41 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       position: 2,
-      name: "Actualizaciones & Changelog",
+      name: t.heroTitle,
       item: `https://serviciosmallorca.com${prefix}actualizaciones`,
     },
   ],
 };
 ---
 
-<BaseLayout
-  title={pageTitles[locale] || pageTitles.es}
-  description={pageDescriptions[locale] || pageDescriptions.es}
-  lang={locale}
-  jsonLd={breadcrumbSchema}
->
+<BaseLayout title={t.pageTitle} description={t.pageDescription} lang={locale} jsonLd={breadcrumbSchema}>
   <Navbar currentLocale={locale} translations={translations} getLangPrefix={getLangPrefix} />
 
   <main class="changelog-main-container">
     <!-- Hero Header -->
     <header class="changelog-hero card card-glass">
       <div class="hero-top-badge">
-        <span class="badge badge-accent">🚀 Versión {CURRENT_PLATFORM_VERSION}</span>
-        <span class="badge badge-primary">🌴 Transparencia & Desarrollo Activo</span>
+        <span class="badge badge-accent">{t.heroBadgeVersion}</span>
+        <span class="badge badge-primary">{t.heroBadgeTransparency}</span>
         <span class="badge badge-secondary" title={`Timestamp ISO: ${PLATFORM_LAST_BUILD_TIMESTAMP}`}>
-          ⏱️ Última actualización: {formattedLastUpdate} (UTC+2)
+          {t.heroBadgeLastUpdate}
         </span>
       </div>
-      <h1 class="hero-title">
-        {
-          locale === "ca"
-            ? "Centre d'Actualitzacions, Millores i Registre de Versions"
-            : locale === "en"
-              ? "Platform Changelog, Updates & Release Log"
-              : locale === "de"
-                ? "Plattform-Updates, Versionsprotokoll & Changelog"
-                : "Centro de Actualizaciones, Mejoras y Registro de Versiones"
-        }
-      </h1>
-      <p class="hero-subtitle">
-        {
-          locale === "ca"
-            ? "Servicios Mallorca neix amb un compromís infranquejable de transparència, dades 100% reals i meritocràcia. En aquest registre documentem cada millora, correcció i nova eina."
-            : locale === "en"
-              ? "Servicios Mallorca is built on strict transparency, genuine verified data, and local meritocracy. Here we document every single release, fix, and new platform tool."
-              : locale === "de"
-                ? "Servicios Mallorca basiert auf absoluter Transparenz, verifizierten Echtzeitdaten und lokaler Exzellenz. Hier dokumentieren wir alle Verbesserungen und Updates."
-                : "Servicios Mallorca nace con un compromiso inquebrantable de transparencia, datos 100% reales y meritocracia. En este registro documentamos cada mejora, corrección y nueva herramienta."
-        }
-      </p>
+      <h1 class="hero-title">{t.heroTitle}</h1>
+      <p class="hero-subtitle">{t.heroSubtitle}</p>
 
       <div class="hero-stats-row">
         <div class="stat-pill">
           <span class="stat-num">313+</span>
-          <span class="stat-lbl">Negocios Verificados</span>
+          <span class="stat-lbl">{t.statBusinesses}</span>
         </div>
         <div class="stat-pill">
-          <span class="stat-num">74</span>
-          <span class="stat-lbl">Suites de Calidad</span>
+          <span class="stat-num">75</span>
+          <span class="stat-lbl">{t.statSuites}</span>
         </div>
         <div class="stat-pill">
-          <span class="stat-num">100%</span>
-          <span class="stat-lbl">Zero Fake Data</span>
+          <span class="stat-num">Audit</span>
+          <span class="stat-lbl">{t.statData}</span>
         </div>
         <div class="stat-pill">
           <span class="stat-num">&lt;300ms</span>
@@ -115,41 +241,33 @@ const breadcrumbSchema = {
     <!-- Beta Transparency Principles -->
     <section class="principles-grid">
       <div class="principle-card card">
-        <div class="principle-icon">🛡️</div>
-        <h3>100% Datos Verificados</h3>
-        <p>
-          Cada comercio y teléfono es corroborado oficialmente en Google Maps y fuentes de Baleares antes de su
-          incorporación al directorio.
-        </p>
+        <div class="principle-icon">🔎</div>
+        <h3>{t.principle1Title}</h3>
+        <p>{t.principle1Desc}</p>
       </div>
       <div class="principle-card card">
         <div class="principle-icon">⚡</div>
-        <h3>Despliegue Continuo Blindado</h3>
-        <p>
-          Toda actualización pasa por 609 tests automatizados y validación de taxonomía antes de publicarse en la red
-          Edge de Cloudflare Workers.
-        </p>
+        <h3>{t.principle2Title}</h3>
+        <p>{t.principle2Desc}</p>
       </div>
       <div class="principle-card card">
         <div class="principle-icon">👑</div>
-        <h3>Meritocracia & Claridad</h3>
-        <p>
-          Subastas de reconocimiento transparentes desde 1,00€, visualización continua a simple vista y eliminación de
-          jerga técnica interna.
-        </p>
+        <h3>{t.principle3Title}</h3>
+        <p>{t.principle3Desc}</p>
       </div>
     </section>
 
     <!-- Timeline of Releases -->
     <section class="releases-section">
       <div class="section-title-wrap">
-        <h2 class="section-title">📦 Historial de Versiones & Lanzamientos</h2>
-        <p class="section-desc">Evolución detallada de cada despliegue con sus características y optimizaciones.</p>
+        <h2 class="section-title">{t.timelineTitle}</h2>
+        <p class="section-desc">{t.timelineDesc}</p>
       </div>
 
       <div class="timeline-container">
         {
           CHANGELOG_RELEASES.map((rel) => {
+            const relLabel = rel.versionLabel[locale] || rel.versionLabel.es;
             const relSummary = rel.summary[locale] || rel.summary.es;
             const relHighlights = rel.highlights[locale] || rel.highlights.es;
 
@@ -157,7 +275,7 @@ const breadcrumbSchema = {
               <article class="release-timeline-card card">
                 <div class="release-card-header">
                   <div class="version-meta">
-                    <span class="version-tag">{rel.versionLabel}</span>
+                    <span class="version-tag">{relLabel}</span>
                     <time datetime={rel.date} class="version-date">
                       📅 {rel.date}
                     </time>
@@ -168,7 +286,7 @@ const breadcrumbSchema = {
                 <p class="release-summary-text">{relSummary}</p>
 
                 <div class="release-highlights-box">
-                  <h4>✨ Hitos & Novedades Destacadas:</h4>
+                  <h4>{t.highlightsTitle}</h4>
                   <ul class="highlights-list">
                     {relHighlights.map((hl) => (
                       <li>{hl}</li>
@@ -214,17 +332,14 @@ const breadcrumbSchema = {
     <section class="feedback-cta-card card card-glass">
       <div class="feedback-icon">💬</div>
       <div class="feedback-info">
-        <h3>¿Tienes una sugerencia, has detectado un fallo o quieres compartir una buena noticia?</h3>
-        <p>
-          Tu opinión nos ayuda a construir la mejor guía de servicios para Mallorca. Nuestro equipo y agentes de
-          inteligencia revisan cada propuesta con dedicación.
-        </p>
+        <h3>{t.feedbackTitle}</h3>
+        <p>{t.feedbackDesc}</p>
         <div class="feedback-actions">
           <a href={`${prefix}servicios`} class="btn btn-primary">
-            <span>Explorar Comercios Verificados →</span>
+            <span>{t.btnExplore}</span>
           </a>
           <a href={`${prefix}cuadro-de-honor`} class="btn btn-secondary">
-            <span>Ver Cuadro de Honor (desde 1€) →</span>
+            <span>{t.btnHonor}</span>
           </a>
         </div>
       </div>
@@ -232,22 +347,22 @@ const breadcrumbSchema = {
 
     <!-- Upcoming Roadmap -->
     <section class="roadmap-preview card">
-      <h3>🗺️ Próximos Pasos (Roadmap v0.02 - 2026)</h3>
+      <h3>{t.roadmapTitle}</h3>
       <div class="roadmap-grid">
         <div class="roadmap-item">
-          <span class="roadmap-step">Fase 1</span>
-          <strong>Escalado a 1.000 Comercios</strong>
-          <p>Cobertura integral en los 53 municipios de Mallorca.</p>
+          <span class="roadmap-step">{t.roadmapF1Step}</span>
+          <strong>{t.roadmapF1Title}</strong>
+          <p>{t.roadmapF1Desc}</p>
         </div>
         <div class="roadmap-item">
-          <span class="roadmap-step">Fase 2</span>
-          <strong>Instalaciones Deportivas</strong>
-          <p>Mapeo de calistenia, pistas de pádel y boxes de fitness.</p>
+          <span class="roadmap-step">{t.roadmapF2Step}</span>
+          <strong>{t.roadmapF2Title}</strong>
+          <p>{t.roadmapF2Desc}</p>
         </div>
         <div class="roadmap-item">
-          <span class="roadmap-step">Fase 3</span>
-          <strong>Buzón Ciudadano Interactivo</strong>
-          <p>Muro de buenas noticias y canal directo de sugerencias.</p>
+          <span class="roadmap-step">{t.roadmapF3Step}</span>
+          <strong>{t.roadmapF3Title}</strong>
+          <p>{t.roadmapF3Desc}</p>
         </div>
       </div>
     </section>

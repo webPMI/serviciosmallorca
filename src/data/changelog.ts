@@ -32,7 +32,12 @@ export interface ChangelogEntry {
 
 export interface ReleaseLog {
   version: string;
-  versionLabel: string;
+  versionLabel: {
+    es: string;
+    en: string;
+    ca: string;
+    de: string;
+  };
   type: ReleaseType;
   date: string; // ISO 8601
   summary: {
@@ -52,7 +57,7 @@ export interface ReleaseLog {
 
 export const CURRENT_PLATFORM_VERSION = "0.01-beta";
 export const PLATFORM_RELEASE_DATE = "2026-08-28";
-export const PLATFORM_LAST_BUILD_TIMESTAMP = "2026-08-28T13:28:00+02:00";
+export const PLATFORM_LAST_BUILD_TIMESTAMP = "2026-08-28T13:31:00+02:00";
 
 /**
  * Devuelve la fecha y hora formateada de la última actualización según el idioma.
@@ -81,39 +86,44 @@ export function getFormattedBuildTimestamp(locale: "es" | "en" | "ca" | "de" = "
 export const CHANGELOG_RELEASES: ReleaseLog[] = [
   {
     version: "0.01",
-    versionLabel: "v0.01-beta · Lanzamiento y Cimentación del Ecosistema Balear",
+    versionLabel: {
+      es: "v0.01-beta · Lanzamiento y Cimentación del Ecosistema Balear",
+      en: "v0.01-beta · Launch & Foundation of the Balearic Ecosystem",
+      ca: "v0.01-beta · Llançament i Fonamentació de l'Ecosistema Balear",
+      de: "v0.01-beta · Start & Grundsteinlegung des Balearen-Ökosystems",
+    },
     type: "BETA",
     date: "2026-08-28",
     summary: {
-      es: "Primera versión pública beta de Servicios Mallorca: catálogo verificado de 313 comercios, Cuadro de Honor meritocrático, diseño 100% responsivo y arquitectura Cloudflare Edge.",
-      en: "First public beta release of Servicios Mallorca: verified directory of 313 local businesses, merit-based Honor Board, 100% responsive design, and Cloudflare Edge architecture.",
-      ca: "Primera versió pública beta de Serveis Mallorca: catàleg verificat de 313 comerços, Quadre d'Honor meritocràtic, disseny 100% adaptatiu i arquitectura Cloudflare Edge.",
-      de: "Erste öffentliche Beta-Version von Servicios Mallorca: verifiziertes Verzeichnis von 313 Betrieben, Honor Board, 100% responsives Design und Cloudflare Edge-Architektur.",
+      es: "Primera versión pública beta de Servicios Mallorca: catálogo de 313 comercios auditados mediante búsqueda continua en fuentes oficiales, Cuadro de Honor meritocrático, diseño 100% responsivo y arquitectura de alta velocidad.",
+      en: "First public beta release of Servicios Mallorca: directory of 313 local businesses audited through continuous public research, merit-based Honor Board, 100% responsive design, and high-speed architecture.",
+      ca: "Primera versió pública beta de Serveis Mallorca: catàleg de 313 comerços auditats mitjançant recerca contínua en fonts oficials, Quadre d'Honor meritocràtic, disseny 100% adaptatiu i arquitectura d'alta velocitat.",
+      de: "Erste öffentliche Beta-Version von Servicios Mallorca: Verzeichnis von 313 Betrieben, auditiert durch stetige Recherche offizieller Quellen, Honor Board, 100% responsives Design und Highspeed-Architektur.",
     },
     highlights: {
       es: [
-        "313 Comercios y Servicios Reales verificados bajo la regla Zero Fake Data (GR-11).",
+        "313 Comercios auditados mediante búsqueda constante en fuentes públicas e intentos de verificación exhaustiva.",
         "Cuadro de Honor Balear con vista continua 'a simple vista' y pujas iniciales reales desde 1,00€.",
         "Dropdown del Directorio sincronizado alfabéticamente con contador en tiempo real de comercios disponibles.",
         "Navbar Unificado y optimizado (<850px en escritorio, drawer táctil sin duplicación en móvil).",
         "Buscador predictivo en vivo y geolocalización precisa en las 6 comarcas de Mallorca.",
       ],
       en: [
-        "313 verified local businesses audited under the strict Zero Fake Data rule (GR-11).",
+        "313 businesses audited through continuous public intelligence and exhaustive contrast steps.",
         "Honor Board with full continuous view and genuine €1.00 starting baseline bids.",
         "Directory dropdown sorted alphabetically with real-time business counts per category.",
         "Unified streamlined Navbar (<850px on desktop, zero DOM duplicates in mobile drawer).",
         "Predictive live search and precise GPS geolocation across all 6 Mallorca regions.",
       ],
       ca: [
-        "313 Comerços i Serveis Reals verificats sota la regla Zero Fake Data (GR-11).",
+        "313 Comerços auditats mitjançant cerca constant en fonts públiques i verificació exhaustiva.",
         "Quadre d'Honor Balear amb visualització contínua i licitacions inicials des d'1,00€.",
         "Desplegable del Directori sincronitzat alfabèticament amb comptador en temps real.",
         "Barra de navegació unificada (<850px a l'escriptori, drawer tàctil sense duplicats).",
         "Cercador predictiu en viu i geolocalització exacta a les 6 comarques de Mallorca.",
       ],
       de: [
-        "313 geprüfte Unternehmen auf Mallorca nach dem Zero Fake Data-Standard (GR-11).",
+        "313 Unternehmen, auditiert durch kontinuierliche Recherche in offiziellen Quellen.",
         "Ehrentafel mit kontinuierlicher Gesamtansicht und echten Startgeboten ab 1,00€.",
         "Verzeichnis-Dropdown alphabetisch sortiert mit Echtzeitanzeige der Betriebe pro Kategorie.",
         "Einheitliche, kompakte Navigation (<850px Desktop, ohne Duplikate auf Mobilgeräten).",
@@ -172,34 +182,34 @@ export const CHANGELOG_RELEASES: ReleaseLog[] = [
       {
         category: "SECURITY",
         title: {
-          es: "Purga de Jerga Técnica y Blindaje de Lenguaje de Usuario",
-          en: "Jargon Purge & Clean User Experience Language",
-          ca: "Purga d'Acònims Tècnics i Llenguatge Clar d'Usuari",
-          de: "Entfernung technischer Kürzel & Klare Benutzersprache",
+          es: "Lenguaje Claro y Profesional para el Usuario",
+          en: "Clean and Professional User Experience Language",
+          ca: "Llenguatge Clar i Professional per a l'Usuari",
+          de: "Verständliche und professionelle Benutzersprache",
         },
         description: {
-          es: "Eliminación de siglas internas de desarrollo (GR-11, GR-01) en las interfaces visibles para hablar a residentes y turistas en un tono natural, profesional y transparente.",
-          en: "Removal of internal technical acronyms across all user-facing screens for clean, natural and accessible communication.",
-          ca: "Eliminació de sigles tècniques a la interfície pública per oferir un tracte natural, clar i professional.",
-          de: "Entfernung interner Entwicklerkürzel auf allen öffentlichen Seiten für eine verständliche und kundennahe Kommunikation.",
+          es: "Revisión de todas las interfaces visibles para hablar a residentes y turistas en un tono natural, profesional y transparente sin tecnicismos.",
+          en: "Review of all user-facing interfaces to communicate in a natural, clear and transparent tone without technical jargon.",
+          ca: "Revisió de totes les interfícies públiques per oferir un tracte natural, clar i professional sense tecnicismes.",
+          de: "Überarbeitung aller Benutzeroberflächen für eine transparente, kundennahe und verständliche Kommunikation.",
         },
         badgeText: { es: "Claridad", en: "Clarity", ca: "Claredat", de: "Klarheit" },
       },
       {
         category: "PERFORMANCE",
         title: {
-          es: "Despliegue y Edge Healthcheck en Cloudflare Workers",
-          en: "Cloudflare Workers Edge Deploy & Live Healthchecks",
-          ca: "Desplegament i Verificació en Viu a Cloudflare Workers",
-          de: "Cloudflare Workers Edge Deployment & Live Healthchecks",
+          es: "Alta Velocidad de Carga y Verificación Continua",
+          en: "High Loading Speed & Continuous Healthchecks",
+          ca: "Alta Velocitat de Càrrega i Verificació Contínua",
+          de: "Hohe Ladegeschwindigkeit & Kontinuierliche Prüfung",
         },
         description: {
-          es: "Pipeline de entrega continua con 74 suites de prueba (609 tests unitarios) y verificación en vivo HTTP 200/302 en <300ms.",
-          en: "Continuous delivery pipeline with 74 test suites (609 unit tests) and live HTTP 200/302 verification in <300ms.",
-          ca: "Pipeline de desplegament continu amb 74 suites de test (609 proves) i verificació en viu en menys de 300ms.",
-          de: "Continuous-Deployment-Pipeline mit 74 Test-Suites (609 Unit-Tests) und Live-Überprüfung in unter 300ms.",
+          es: "Arquitectura optimizada con 75 suites de prueba (612 tests unitarios) y verificación en vivo de respuesta en <300ms.",
+          en: "Optimized architecture with 75 test suites (612 unit tests) and live response verification in <300ms.",
+          ca: "Arquitectura optimitzada amb 75 suites de test (612 proves) i verificació en viu de resposta en menys de 300ms.",
+          de: "Optimierte Architektur mit 75 Test-Suites (612 Unit-Tests) und Live-Antwortzeitprüfung in unter 300ms.",
         },
-        badgeText: { es: "Infraestructura", en: "Infrastructure", ca: "Infraestructura", de: "Infrastruktur" },
+        badgeText: { es: "Velocidad", en: "Speed", ca: "Velocitat", de: "Geschwindigkeit" },
       },
     ],
   },
