@@ -9,13 +9,352 @@ export const prerender = false;
 const locale = getLocaleFromUrl(Astro.url) as Locale;
 const translations = await loadTranslations(locale);
 const prefix = getLangPrefix(locale);
+
+const i18nContent = {
+  es: {
+    pageTitle: "Planes, Tarifas y Registro de Empresas en Mallorca | Servicios Mallorca",
+    pageDesc:
+      "Descubre cómo dar de alta o reclamar tu negocio en Servicios Mallorca. Alta gratuita, verificación de titularidad y puestos de honor desde 1€.",
+    chip: "Guía Oficial para Empresas & Profesionales de Mallorca",
+    heroTitle1: "Haz Crecer tu Negocio en el Directorio ",
+    heroTitle2: "Verificado de Mallorca",
+    heroSubtitle:
+      "Transparencia y control total. Reclamación y verificación fiscal 100% gratuita (0€). Destaca en el Cuadro de Honor mediante micro-subastas comunitarias desde solo 1.00€.",
+    btnSearch: "🔍 Buscar & Reclamar mi Negocio",
+    btnHonor: "👑 Ver Puestos de Honor (+1€)",
+    stepsTitle: "El Proceso en 3 Pasos Claros",
+    stepsSubtitle:
+      "Blindado, sin fricción y 100% seguro para garantizar que solo los dueños legítimos gestionen cada ficha.",
+    step1Badge: "Paso 1 · Gratuito",
+    step1Title: "Localiza o Da de Alta",
+    step1Desc:
+      "Encuentra la ficha de tu empresa en nuestro directorio o solicita una nueva alta con tus datos oficiales (NIF/CIF, dirección balear, teléfono y web).",
+    step2Badge: "Paso 2 · Auditoría",
+    step2Title: "Auditoría Fiscal & Cesión",
+    step2Desc:
+      "Nuestro sistema multi-auditor valida la titularidad contra la AEAT y dominios corporativos. Te cedemos el mando oficial exclusivo de la ficha.",
+    step3Badge: "Paso 3 · Crecimiento",
+    step3Title: "Mando Total & Podio (+1€)",
+    step3Desc:
+      "Edita horarios, fotos y ofertas en tiempo real. Activa reservas directas y patrocina el puesto #1 del Cuadro de Honor superando el récord anterior por solo 1.00€ más.",
+    pricingTitle: "Tabla de Tarifas Transparentes",
+    pricingSubtitle: "Sin cuotas mensuales obligatorias ni comisiones abusivas sobre tus ventas.",
+    t1Name: "Ficha Pública Básica",
+    t1Desc: "Presencia indexada en Google y directorio balear.",
+    t1Period: "/ para siempre",
+    t1Perk1: "Indexación en buscadores (SEO Local)",
+    t1Perk2: "Teléfono, WhatsApp y enlace a Web",
+    t1Perk3: "Geolocalización en Google & Apple Maps",
+    t1Perk4: "Recepción de reseñas comunitarias",
+    t1Btn: "Localizar mi Ficha",
+    t2Ribbon: "⭐ Más Recomendado",
+    t2Name: "Titular Oficial Acreditado",
+    t2Desc: "Cesión formal del mando tras verificación fiscal.",
+    t2Period: "/ verificación gratuita",
+    t2Perk1: "Todo lo de la Ficha Básica",
+    t2Perk2: "Insignia Dorada: Verificado Oficial (Nivel 3)",
+    t2Perk3: "Panel de Control & Edición en Vivo",
+    t2Perk4: "Gestión de galería, horarios y ofertas",
+    t2Perk5: "Activación de botones de Reserva Directa",
+    t2Perk6: "Respuesta oficial a reseñas de clientes",
+    t2Perk7: "Apto para postular al Cuadro de Honor",
+    t2Btn: "Reclamar Titularidad (0€)",
+    t3Ribbon: "👑 Máxima Autoridad",
+    t3Name: "Puesto de Honor en Podio",
+    t3Desc: "Subasta comunitaria dinámica justa e incremental.",
+    t3Price: "Desde 1.00€",
+    t3Period: "/ puja récord +1€",
+    t3Perk1: "Todo lo del Titular Oficial",
+    t3Perk2: "Puesto #1 Diamante, #2 Oro o #3 Plata",
+    t3Perk3: "Aparición prioritaria en la Portada Balear",
+    t3Perk4: "Badge exclusivo de Patrocinador de Honor",
+    t3Perk5: "Enlace destacado con dedicatoria corporativa",
+    t3Perk6: "Mención en newsletter y guías temáticas",
+    t3Btn: "⚡ Pujar en Cuadro de Honor",
+    securityTitle: "🔒 Plataforma de Pagos Segura & Certificada",
+    securityDesc:
+      "Todos los micro-patrocinios del Cuadro de Honor se procesan mediante cifrado SSL de 256 bits a través de proveedores bancarios europeos auditados.",
+    securityCard: "Tarjetas Visa / Mastercard / Amex",
+    securityBizum: "Bizum Instantáneo",
+    securityApple: "Apple Pay & Google Pay",
+    securityInvoice: "Factura con IVA deducible",
+    zeroFakeTitle: "Compromiso Zero Fake Data",
+    zeroFakeDesc:
+      "Solo comercios con un índice de confianza ≥ 80% y actividad contrastada en Mallorca pueden comprar puestos de honor. El dinero nunca comprará reputación falsa.",
+    faqTitle: "Preguntas Frecuentes para Propietarios",
+    faqSubtitle: "Resolvemos las dudas más comunes sobre la cesión de fichas y los puestos de honor.",
+    faq1Q: "¿Por qué es gratuita la reclamación y edición de mi ficha?",
+    faq1A:
+      "Creemos firmemente en apoyar al comercio local balear. Toda empresa tiene derecho a mantener sus datos de contacto, horarios y dirección 100% actualizados sin pagar nada.",
+    faq2Q: "¿Cómo funciona la subasta del Cuadro de Honor (+1€)?",
+    faq2A:
+      "Cada lista gremial tiene un podio (#1, #2, #3). Si el primer puesto tiene un récord de 5.00€, cualquier titular elegible puede superarlo aportando exactamente 6.00€ (+1.00€).",
+    faq3Q: "¿Qué ocurre si alguien intenta reclamar un negocio que no es suyo?",
+    faq3A:
+      "Nuestro motor de seguridad exige validación de NIF/CIF oficial de la AEAT y verificación del dominio corporativo o línea telefónica. Si no se acredita la titularidad, la solicitud se rechaza automáticamente.",
+    faq4Q: "¿Puedo dar de alta un emprendimiento nuevo que aún no aparece?",
+    faq4A:
+      "¡Sí! Puedes enviar una solicitud de alta en 2 minutos. Nuestro equipo la auditará y la publicará en menos de 24 horas laborables.",
+  },
+  en: {
+    pageTitle: "Plans, Pricing & Business Registration in Mallorca | Servicios Mallorca",
+    pageDesc:
+      "Discover how to list or claim your business on Servicios Mallorca. Free listing, ownership verification, and honor spots from €1.",
+    chip: "Official Guide for Mallorca Businesses & Professionals",
+    heroTitle1: "Grow Your Business in the ",
+    heroTitle2: "Verified Directory of Mallorca",
+    heroSubtitle:
+      "Full transparency and control. 100% free ownership claim & fiscal verification (€0). Stand out on the Honor Board via community micro-auctions from just €1.00.",
+    btnSearch: "🔍 Search & Claim My Business",
+    btnHonor: "👑 View Honor Spots (+1€)",
+    stepsTitle: "The Process in 3 Clear Steps",
+    stepsSubtitle: "Secure, frictionless, and reliable to ensure only legitimate owners manage each listing.",
+    step1Badge: "Step 1 · Free",
+    step1Title: "Locate or List",
+    step1Desc:
+      "Find your business listing in our directory of over 300 verified services or submit a new listing with your official details.",
+    step2Badge: "Step 2 · Audit",
+    step2Title: "Fiscal Audit & Transfer",
+    step2Desc:
+      "Our multi-auditor engine verifies ownership against official tax records and corporate domains, transferring exclusive dashboard control to you.",
+    step3Badge: "Step 3 · Growth",
+    step3Title: "Total Control & Podium (+1€)",
+    step3Desc:
+      "Edit schedules, photos, and offers in real time. Enable direct bookings and sponsor spot #1 on the Honor Board by outbidding the previous record by just €1.00.",
+    pricingTitle: "Transparent Pricing Matrix",
+    pricingSubtitle: "No mandatory monthly fees or excessive sales commissions.",
+    t1Name: "Basic Public Listing",
+    t1Desc: "Search indexed presence across Google and Balearic directory.",
+    t1Period: "/ forever",
+    t1Perk1: "Local SEO Search Indexing",
+    t1Perk2: "Phone, WhatsApp & Website Link",
+    t1Perk3: "Geolocation on Google & Apple Maps",
+    t1Perk4: "Community Review Reception",
+    t1Btn: "Locate My Listing",
+    t2Ribbon: "⭐ Most Popular",
+    t2Name: "Accredited Official Owner",
+    t2Desc: "Formal management transfer after fiscal verification.",
+    t2Period: "/ free verification",
+    t2Perk1: "Everything in Basic Listing",
+    t2Perk2: "Golden Badge: Official Verified (Level 3)",
+    t2Perk3: "Live Control Panel & Live Editing",
+    t2Perk4: "Gallery, Schedule & Promo Management",
+    t2Perk5: "Direct Booking Buttons Activation",
+    t2Perk6: "Official Responses to Customer Reviews",
+    t2Perk7: "Eligible to Nominate for Honor Board",
+    t2Btn: "Claim Ownership (€0)",
+    t3Ribbon: "👑 Highest Authority",
+    t3Name: "Podium Honor Spot",
+    t3Desc: "Dynamic, fair, and incremental community auction.",
+    t3Price: "From €1.00",
+    t3Period: "/ record bid +1€",
+    t3Perk1: "Everything in Official Owner",
+    t3Perk2: "#1 Diamond, #2 Gold or #3 Silver Spot",
+    t3Perk3: "Priority Placement on Balearic Homepage",
+    t3Perk4: "Exclusive Honor Sponsor Badge",
+    t3Perk5: "Featured Link with Corporate Dedication",
+    t3Perk6: "Mention in Newsletters & Curated Guides",
+    t3Btn: "⚡ Bid on Honor Board",
+    securityTitle: "🔒 Certified & Secure Payment Platform",
+    securityDesc:
+      "All Honor Board sponsorships are processed with 256-bit SSL encryption via audited European banking providers.",
+    securityCard: "Visa / Mastercard / Amex Cards",
+    securityBizum: "Instant Bizum",
+    securityApple: "Apple Pay & Google Pay",
+    securityInvoice: "Tax Invoice with Deductible VAT",
+    zeroFakeTitle: "Zero Fake Data Commitment",
+    zeroFakeDesc:
+      "Only businesses with a confidence score ≥ 80% and proven local activity in Mallorca can purchase honor spots. Money will never buy fake reputation.",
+    faqTitle: "Frequently Asked Questions for Business Owners",
+    faqSubtitle: "Answering the most common questions about listing claims and honor spots.",
+    faq1Q: "Why is claiming and editing my listing free?",
+    faq1A:
+      "We believe in supporting Balearic local business. Every enterprise has the right to keep its contact details, hours, and address 100% updated at no cost.",
+    faq2Q: "How does the Honor Board (+1€) auction work?",
+    faq2A:
+      "Each guild list features a podium (#1, #2, #3). If the top spot holds a record of €5.00, any eligible owner can lead it by contributing exactly €6.00 (+€1.00).",
+    faq3Q: "What happens if someone attempts to claim a business they do not own?",
+    faq3A:
+      "Our security engine requires official tax identification and validation via corporate email or registered phone. Unverified claims are automatically rejected.",
+    faq4Q: "Can I register a new business that is not listed yet?",
+    faq4A:
+      "Yes! You can submit a new listing application in 2 minutes. Our editorial team will audit and publish it in under 24 business hours.",
+  },
+  ca: {
+    pageTitle: "Plans, Tarifes i Registre d'Empreses a Mallorca | Servicios Mallorca",
+    pageDesc:
+      "Descobreix com donar d'alta o reclamar el teu negoci a Servicios Mallorca. Alta gratuïta, verificació de titularitat i llocs d'honor des d'1€.",
+    chip: "Guia Oficial per a Empreses i Professionals de Mallorca",
+    heroTitle1: "Fes Créixer el teu Negoci al Directori ",
+    heroTitle2: "Verificat de Mallorca",
+    heroSubtitle:
+      "Transparència i control total. Reclamació i verificació fiscal 100% gratuïta (0€). Destaca al Quadre d'Honor mitjançant micro-subhastes comunitàries des de només 1.00€.",
+    btnSearch: "🔍 Cercar & Reclamar el meu Negoci",
+    btnHonor: "👑 Veure Llocs d'Honor (+1€)",
+    stepsTitle: "El Procés en 3 Passos Clars",
+    stepsSubtitle:
+      "Blindat, sense fricció i 100% segur per garantir que només els propietaris legítims gestionin cada fitxa.",
+    step1Badge: "Pas 1 · Gratuït",
+    step1Title: "Localitza o Dóna d'Alta",
+    step1Desc:
+      "Troba la fitxa de la teva empresa al nostre directori de més de 300 serveis o sol·licita una nova alta amb les teves dades oficials.",
+    step2Badge: "Pas 2 · Auditoria",
+    step2Title: "Auditoria Fiscal & Cessió",
+    step2Desc:
+      "El nostre sistema multi-auditor valida la titularitat contra l'AEAT i dominis corporatius. Et cedim el comandament oficial exclusiu de la fitxa.",
+    step3Badge: "Pas 3 · Creixement",
+    step3Title: "Comandament Total & Podi (+1€)",
+    step3Desc:
+      "Edita horaris, fotos i ofertes en temps real. Activa reserves directes i patrocina el lloc #1 del Quadre d'Honor superant el rècord anterior per només 1.00€ més.",
+    pricingTitle: "Taula de Tarifes Transparents",
+    pricingSubtitle: "Sense quotes mensuals obligatòries ni comissions abusives sobre les teves vendes.",
+    t1Name: "Fitxa Pública Bàsica",
+    t1Desc: "Presència indexada a Google i directori balear.",
+    t1Period: "/ per sempre",
+    t1Perk1: "Indexació a cercadors (SEO Local)",
+    t1Perk2: "Telèfon, WhatsApp i enllaç a Web",
+    t1Perk3: "Geolocalització a Google & Apple Maps",
+    t1Perk4: "Recepció de ressenyes comunitàries",
+    t1Btn: "Localitzar la meva Fitxa",
+    t2Ribbon: "⭐ Més Recomanat",
+    t2Name: "Titular Oficial Acreditat",
+    t2Desc: "Cessió formal del comandament després de verificació fiscal.",
+    t2Period: "/ verificació gratuïta",
+    t2Perk1: "Tot el de la Fitxa Bàsica",
+    t2Perk2: "Insígnia Daurada: Verificat Oficial (Nivell 3)",
+    t2Perk3: "Panell de Control & Edició en Viu",
+    t2Perk4: "Gestió de galeria, horaris i ofertes",
+    t2Perk5: "Activació de botons de Reserva Directa",
+    t2Perk6: "Resposta oficial a ressenyes de clients",
+    t2Perk7: "Apte per a postular al Quadre d'Honor",
+    t2Btn: "Reclamar Titularitat (0€)",
+    t3Ribbon: "👑 Màxima Autoritat",
+    t3Name: "Lloc d'Honor al Podi",
+    t3Desc: "Subhasta comunitària dinàmica justa i incremental.",
+    t3Price: "Des d'1.00€",
+    t3Period: "/ puja rècord +1€",
+    t3Perk1: "Tot el del Titular Oficial",
+    t3Perk2: "Lloc #1 Diamant, #2 Or o #3 Plata",
+    t3Perk3: "Aparició prioritària a la Portada Balear",
+    t3Perk4: "Badge exclusiu de Patrocinador d'Honor",
+    t3Perk5: "Enllaç destacat amb dedicatòria corporativa",
+    t3Perk6: "Menció a newsletter i guies temàtiques",
+    t3Btn: "⚡ Pujar al Quadre d'Honor",
+    securityTitle: "🔒 Plataforma de Pagaments Segura & Certificada",
+    securityDesc:
+      "Tots els micro-patrocinis del Quadre d'Honor es processen mitjançant xifratge SSL de 256 bits a través de proveïdors bancaris europeus auditats.",
+    securityCard: "Targetes Visa / Mastercard / Amex",
+    securityBizum: "Bizum Instantani",
+    securityApple: "Apple Pay & Google Pay",
+    securityInvoice: "Factura amb IVA deduïble",
+    zeroFakeTitle: "Compromís Zero Fake Data",
+    zeroFakeDesc:
+      "Només comerços amb un índex de confiança ≥ 80% i activitat contrastada a Mallorca poden comprar llocs d'honor. Els diners mai no compraran reputació falsa.",
+    faqTitle: "Preguntes Freqüents per a Propietaris",
+    faqSubtitle: "Resolem els dubtes més comuns sobre la cessió de fitxes i els llocs d'honor.",
+    faq1Q: "Per què és gratuïta la reclamació i edició de la meva fitxa?",
+    faq1A:
+      "Creiem fermament en recolzar el comerç local balear. Tota empresa té dret a mantenir les seves dades de contacte, horaris i adreça 100% actualitzades sense pagar res.",
+    faq2Q: "Com funciona la subhasta del Quadre d'Honor (+1€)?",
+    faq2A:
+      "Cada llista gremial té un podi (#1, #2, #3). Si el primer lloc té un rècord de 5.00€, qualsevol titular elegible pot superar-lo aportant exactament 6.00€ (+1.00€).",
+    faq3Q: "Què passa si algú intenta reclamar un negoci que no és seu?",
+    faq3A:
+      "El nostre motor de seguretat exigeix validació de NIF/CIF oficial de l'AEAT i verificació del domini corporatiu o línia telefònica. Si no s'acredita la titularitat, la sol·licitud es rebutja automàticament.",
+    faq4Q: "Puc donar d'alta un emprenedoria nova que encara no apareix?",
+    faq4A:
+      "Sí! Pots enviar una sol·licitud d'alta en 2 minuts. El nostre equip l'auditarà i la publicarà en menys de 24 hores laborables.",
+  },
+  de: {
+    pageTitle: "Tarife, Preise & Unternehmensregistrierung auf Mallorca | Servicios Mallorca",
+    pageDesc:
+      "Erfahren Sie, wie Sie Ihr Unternehmen auf Servicios Mallorca eintragen oder beanspruchen. Kostenloser Eintrag, Inhaberverifizierung und Ehrenplätze ab 1€.",
+    chip: "Offizieller Leitfaden für Unternehmen & Fachkräfte auf Mallorca",
+    heroTitle1: "Bringen Sie Ihr Unternehmen im ",
+    heroTitle2: "Verifizierten Mallorca-Verzeichnis voran",
+    heroSubtitle:
+      "Vollständige Transparenz und Kontrolle. 100% kostenlose Inhaberbeanspruchung & Steuerprüfung (0€). Glänzen Sie auf der Ehrentafel durch faire Community-Mikroauktionen ab nur 1,00€.",
+    btnSearch: "🔍 Mein Unternehmen suchen & beanspruchen",
+    btnHonor: "👑 Ehrenplätze ansehen (+1€)",
+    stepsTitle: "Der Prozess in 3 klaren Schritten",
+    stepsSubtitle: "Sicher, reibungslos und geschützt, damit nur rechtmäßige Inhaber ihren Eintrag verwalten.",
+    step1Badge: "Schritt 1 · Kostenlos",
+    step1Title: "Finden oder Neu eintragen",
+    step1Desc:
+      "Finden Sie Ihr Unternehmen in unserem Verzeichnis mit über 300 geprüften Diensten oder beantragen Sie einen neuen Eintrag mit offiziellen Daten.",
+    step2Badge: "Schritt 2 · Audit",
+    step2Title: "Steuerprüfung & Übertragung",
+    step2Desc:
+      "Unser Multi-Auditor-System prüft die Inhaberschaft gegen offizielle Steuerregister und Firmendomains. Wir übertragen Ihnen die exklusive Verwaltung.",
+    step3Badge: "Schritt 3 · Wachstum",
+    step3Title: "Volle Kontrolle & Podium (+1€)",
+    step3Desc:
+      "Bearbeiten Sie Öffnungszeiten, Fotos und Aktionen in Echtzeit. Aktivieren Sie Direktbuchungen und sponsern Sie Platz #1 auf der Ehrentafel für nur 1,00€ mehr.",
+    pricingTitle: "Transparente Tarifübersicht",
+    pricingSubtitle: "Keine obligatorischen Monatsgebühren oder überhöhte Verkaufsprovisionen.",
+    t1Name: "Öffentlicher Basiseintrag",
+    t1Desc: "Indexierte Präsenz bei Google und im Balearen-Verzeichnis.",
+    t1Period: "/ für immer",
+    t1Perk1: "Lokale SEO-Suchmaschinenindexierung",
+    t1Perk2: "Telefon, WhatsApp & Website-Link",
+    t1Perk3: "Geolokalisierung auf Google & Apple Maps",
+    t1Perk4: "Erhalt von Kundenrezensionen",
+    t1Btn: "Meinen Eintrag finden",
+    t2Ribbon: "⭐ Sehr Empfohlen",
+    t2Name: "Akkreditierter Offizieller Inhaber",
+    t2Desc: "Formelle Übertragung nach steuerlicher Prüfung.",
+    t2Period: "/ kostenlose Verifizierung",
+    t2Perk1: "Alles aus dem Basiseintrag",
+    t2Perk2: "Goldenes Abzeichen: Offiziell verifiziert (Stufe 3)",
+    t2Perk3: "Live-Dashboard & Echtzeit-Bearbeitung",
+    t2Perk4: "Verwaltung von Galerie, Zeiten & Angeboten",
+    t2Perk5: "Aktivierung von Direktbuchungs-Buttons",
+    t2Perk6: "Offizielle Antworten auf Kundenbewertungen",
+    t2Perk7: "Berechtigt für Nominierungen auf der Ehrentafel",
+    t2Btn: "Inhaberschaft beanspruchen (0€)",
+    t3Ribbon: "👑 Höchste Autorität",
+    t3Name: "Ehrenplatz auf dem Podium",
+    t3Desc: "Faire, dynamische und schrittweise Community-Auktion.",
+    t3Price: "Ab 1,00€",
+    t3Period: "/ Rekordgebot +1€",
+    t3Perk1: "Alles aus dem Offiziellen Inhaber",
+    t3Perk2: "Platz #1 Diamant, #2 Gold oder #3 Silber",
+    t3Perk3: "Prioritäre Platzierung auf der Balearen-Startseite",
+    t3Perk4: "Exklusives Ehren-Sponsor-Badge",
+    t3Perk5: "Hervorgehobener Link mit Unternehmenswidmung",
+    t3Perk6: "Erwähnung in Newslettern & kuratierten Guides",
+    t3Btn: "⚡ Auf Ehrentafel bieten",
+    securityTitle: "🔒 Zertifizierte & Sichere Zahlungsplattform",
+    securityDesc:
+      "Alle Ehrentafel-Patenschaften werden mit 256-Bit-SSL-Verschlüsselung über geprüfte europäische Bankdienstleister abgewickelt.",
+    securityCard: "Visa / Mastercard / Amex Karten",
+    securityBizum: "Sofortiges Bizum",
+    securityApple: "Apple Pay & Google Pay",
+    securityInvoice: "Rechnung mit abzugsfähiger MwSt.",
+    zeroFakeTitle: "Zero Fake Data Verpflichtung",
+    zeroFakeDesc:
+      "Nur Unternehmen mit einem Vertrauenswert von ≥ 80% und nachgewiesener lokaler Aktivität können Ehrenplätze erwerben. Geld kann niemals gefälschten Ruf kaufen.",
+    faqTitle: "Häufig gestellte Fragen für Inhaber",
+    faqSubtitle: "Wir beantworten die häufigsten Fragen zur Übernahme von Einträgen und Ehrenplätzen.",
+    faq1Q: "Warum ist das Beanspruchen und Bearbeiten meines Eintrags kostenlos?",
+    faq1A:
+      "Wir glauben an die Unterstützung lokaler balearenweiter Betriebe. Jedes Unternehmen hat das Recht, Kontaktdaten und Öffnungszeiten kostenlos aktuell zu halten.",
+    faq2Q: "Wie funktioniert die Auktion der Ehrentafel (+1€)?",
+    faq2A:
+      "Jede Zunftliste hat ein Podium (#1, #2, #3). Wenn der Spitzenplatz bei 5,00€ liegt, kann jeder berechtigte Inhaber mit genau 6,00€ (+1,00€) die Führung übernehmen.",
+    faq3Q: "Was passiert, wenn jemand versucht, ein fremdes Unternehmen zu beanspruchen?",
+    faq3A:
+      "Unser Sicherheitssystem verlangt offizielle Steuerdaten und Prüfung über Firmen-E-Mail oder Telefonleitung. Unberechtigte Anträge werden automatisch abgewiesen.",
+    faq4Q: "Kann ich ein neues Unternehmen eintragen, das noch nicht gelistet ist?",
+    faq4A:
+      "Ja! Sie können in 2 Minuten einen Neueintrag einreichen. Unser Redaktionsteam prüft und veröffentlicht ihn innerhalb von 24 Werktagsstunden.",
+  },
+};
+
+const c = i18nContent[locale] || i18nContent.es;
 ---
 
-<BaseLayout
-  title="Planes, Tarifas y Registro de Empresas en Mallorca | Servicios Mallorca"
-  description="Descubre cómo dar de alta o reclamar tu negocio en Servicios Mallorca. Alta gratuita, verificación de titularidad y puestos de honor desde 1€."
-  lang={locale}
->
+<BaseLayout title={c.pageTitle} description={c.pageDesc} lang={locale}>
   <Navbar currentLocale={locale} translations={translations} getLangPrefix={getLangPrefix} />
 
   <main class="join-page-container container" id="main-content">
@@ -23,22 +362,21 @@ const prefix = getLangPrefix(locale);
     <header class="join-hero text-center">
       <div class="hero-chip">
         <span class="pulse-dot"></span>
-        <span>Guía Oficial para Empresas & Profesionales de Mallorca</span>
+        <span>{c.chip}</span>
       </div>
       <h1 class="join-hero-title">
-        Haz Crecer tu Negocio en el Directorio <span class="gradient-text">Verificado de Mallorca</span>
+        {c.heroTitle1}<span class="gradient-text">{c.heroTitle2}</span>
       </h1>
       <p class="join-hero-subtitle">
-        Transparencia y control total. Reclamación y verificación fiscal 100% gratuita (0€). Destaca en el Cuadro de
-        Honor mediante micro-subastas comunitarias desde solo 1.00€.
+        {c.heroSubtitle}
       </p>
 
       <div class="hero-cta-group">
         <a href={`${prefix}servicios`} class="btn btn-accent btn-lg">
-          <span>🔍 Buscar & Reclamar mi Negocio</span>
+          <span>{c.btnSearch}</span>
         </a>
         <a href={`${prefix}cuadro-de-honor`} class="btn btn-secondary btn-lg">
-          <span>👑 Ver Puestos de Honor (+1€)</span>
+          <span>{c.btnHonor}</span>
         </a>
       </div>
     </header>
@@ -46,40 +384,37 @@ const prefix = getLangPrefix(locale);
     <!-- 3 Steps Section -->
     <section class="steps-section" aria-labelledby="steps-heading">
       <div class="section-header text-center">
-        <h2 id="steps-heading" class="section-title">El Proceso en 3 Pasos Claros</h2>
+        <h2 id="steps-heading" class="section-title">{c.stepsTitle}</h2>
         <p class="section-subtitle">
-          Blindado, sin fricción y 100% seguro para garantizar que solo los dueños legítimos gestionen cada ficha.
+          {c.stepsSubtitle}
         </p>
       </div>
 
       <div class="steps-grid">
         <div class="step-card card card-glass">
-          <div class="step-badge">Paso 1 · Gratuito</div>
+          <div class="step-badge">{c.step1Badge}</div>
           <div class="step-icon">📍</div>
-          <h3 class="step-title">Localiza o Da de Alta</h3>
+          <h3 class="step-title">{c.step1Title}</h3>
           <p class="step-desc">
-            Encuentra la ficha de tu empresa en nuestro directorio de más de 300 servicios o solicita una nueva alta con
-            tus datos oficiales (NIF/CIF, dirección balear, teléfono y web).
+            {c.step1Desc}
           </p>
         </div>
 
         <div class="step-card card card-glass step-featured">
-          <div class="step-badge">Paso 2 · Auditoría</div>
+          <div class="step-badge">{c.step2Badge}</div>
           <div class="step-icon">🛡️</div>
-          <h3 class="step-title">Auditoría Fiscal & Cesión</h3>
+          <h3 class="step-title">{c.step2Title}</h3>
           <p class="step-desc">
-            Nuestro sistema multi-auditor y equipo humano validan la titularidad contra la AEAT y los dominios
-            corporativos. Te cedemos el mando oficial exclusivo de la ficha.
+            {c.step2Desc}
           </p>
         </div>
 
         <div class="step-card card card-glass">
-          <div class="step-badge">Paso 3 · Crecimiento</div>
+          <div class="step-badge">{c.step3Badge}</div>
           <div class="step-icon">⚡</div>
-          <h3 class="step-title">Mando Total & Podio (+1€)</h3>
+          <h3 class="step-title">{c.step3Title}</h3>
           <p class="step-desc">
-            Edita horarios, fotos y descripciones en tiempo real. Activa reservas directas y patrocina el puesto #1 del
-            Cuadro de Honor superando el récord anterior por solo 1.00€ más.
+            {c.step3Desc}
           </p>
         </div>
       </div>
@@ -88,76 +423,76 @@ const prefix = getLangPrefix(locale);
     <!-- Pricing Comparison Matrix -->
     <section class="pricing-section" aria-labelledby="pricing-heading">
       <div class="section-header text-center">
-        <h2 id="pricing-heading" class="section-title">Tabla de Tarifas Transparentes</h2>
-        <p class="section-subtitle">Sin cuotas mensuales obligatorias ni comisiones abusivas sobre tus ventas.</p>
+        <h2 id="pricing-heading" class="section-title">{c.pricingTitle}</h2>
+        <p class="section-subtitle">{c.pricingSubtitle}</p>
       </div>
 
       <div class="pricing-cards-grid">
         <!-- Tier 1: Ficha Básica -->
         <div class="pricing-card card card-glass">
           <div class="tier-header">
-            <h3 class="tier-name">Ficha Pública Básica</h3>
-            <p class="tier-desc">Presencia indexada en Google y directorio balear.</p>
+            <h3 class="tier-name">{c.t1Name}</h3>
+            <p class="tier-desc">{c.t1Desc}</p>
             <div class="tier-price">
               <span class="price-amount">0€</span>
-              <span class="price-period">/ para siempre</span>
+              <span class="price-period">{c.t1Period}</span>
             </div>
           </div>
           <ul class="tier-perks">
-            <li>✅ Indexación en buscadores (SEO Local)</li>
-            <li>✅ Teléfono, WhatsApp y enlace a Web</li>
-            <li>✅ Geolocalización en Google & Apple Maps</li>
-            <li>✅ Recepción de reseñas comunitarias</li>
-            <li>❌ Edición directa de contenidos</li>
-            <li>❌ Insignia de Verificación Oficial</li>
-            <li>❌ Puesto destacado en Cuadro de Honor</li>
+            <li>✅ {c.t1Perk1}</li>
+            <li>✅ {c.t1Perk2}</li>
+            <li>✅ {c.t1Perk3}</li>
+            <li>✅ {c.t1Perk4}</li>
+            <li>❌ Insignia Oficial</li>
+            <li>❌ Panel Live</li>
+            <li>❌ Podio Cuadro Honor</li>
           </ul>
-          <a href={`${prefix}servicios`} class="btn btn-secondary btn-full"> Localizar mi Ficha </a>
+          <a href={`${prefix}servicios`} class="btn btn-secondary btn-full"> {c.t1Btn} </a>
         </div>
 
         <!-- Tier 2: Titular Verificado (Oficial) -->
         <div class="pricing-card card card-glass tier-popular">
-          <div class="popular-ribbon">⭐ Más Recomendado</div>
+          <div class="popular-ribbon">{c.t2Ribbon}</div>
           <div class="tier-header">
-            <h3 class="tier-name">Titular Oficial Acreditado</h3>
-            <p class="tier-desc">Cesión formal del mando tras verificación fiscal.</p>
+            <h3 class="tier-name">{c.t2Name}</h3>
+            <p class="tier-desc">{c.t2Desc}</p>
             <div class="tier-price">
               <span class="price-amount">0€</span>
-              <span class="price-period">/ verificación gratuita</span>
+              <span class="price-period">{c.t2Period}</span>
             </div>
           </div>
           <ul class="tier-perks">
-            <li>✅ <strong>Todo lo de la Ficha Básica</strong></li>
-            <li>✅ <strong>Insignia Dorada: Verificado Oficial (Nivel 3)</strong></li>
-            <li>✅ <strong>Panel de Control & Edición en Vivo</strong></li>
-            <li>✅ <strong>Gestión de galería, horarios y ofertas</strong></li>
-            <li>✅ <strong>Activación de botones de Reserva Directa</strong></li>
-            <li>✅ <strong>Respuesta oficial a reseñas de clientes</strong></li>
-            <li>✅ <strong>Apto para postular al Cuadro de Honor</strong></li>
+            <li>✅ <strong>{c.t2Perk1}</strong></li>
+            <li>✅ <strong>{c.t2Perk2}</strong></li>
+            <li>✅ <strong>{c.t2Perk3}</strong></li>
+            <li>✅ <strong>{c.t2Perk4}</strong></li>
+            <li>✅ <strong>{c.t2Perk5}</strong></li>
+            <li>✅ <strong>{c.t2Perk6}</strong></li>
+            <li>✅ <strong>{c.t2Perk7}</strong></li>
           </ul>
-          <a href={`${prefix}servicios`} class="btn btn-primary btn-full"> Reclamar Titularidad (0€) </a>
+          <a href={`${prefix}servicios`} class="btn btn-primary btn-full"> {c.t2Btn} </a>
         </div>
 
         <!-- Tier 3: Cuadro de Honor -->
         <div class="pricing-card card card-glass tier-gold">
-          <div class="popular-ribbon gold-ribbon">👑 Máxima Autoridad</div>
+          <div class="popular-ribbon gold-ribbon">{c.t3Ribbon}</div>
           <div class="tier-header">
-            <h3 class="tier-name">Puesto de Honor en Podio</h3>
-            <p class="tier-desc">Subasta comunitaria dinámica justa e incremental.</p>
+            <h3 class="tier-name">{c.t3Name}</h3>
+            <p class="tier-desc">{c.t3Desc}</p>
             <div class="tier-price">
-              <span class="price-amount">Desde 1.00€</span>
-              <span class="price-period">/ puja récord +1€</span>
+              <span class="price-amount">{c.t3Price}</span>
+              <span class="price-period">{c.t3Period}</span>
             </div>
           </div>
           <ul class="tier-perks">
-            <li>✅ <strong>Todo lo del Titular Oficial</strong></li>
-            <li>✅ <strong>Puesto #1 Diamante, #2 Oro o #3 Plata</strong></li>
-            <li>✅ <strong>Aparición prioritaria en la Portada Balear</strong></li>
-            <li>✅ <strong>Badge exclusivo de Patrocinador de Honor</strong></li>
-            <li>✅ <strong>Enlace destacado con dedicatoria corporativa</strong></li>
-            <li>✅ <strong>Mención en newsletter y guías temáticas</strong></li>
+            <li>✅ <strong>{c.t3Perk1}</strong></li>
+            <li>✅ <strong>{c.t3Perk2}</strong></li>
+            <li>✅ <strong>{c.t3Perk3}</strong></li>
+            <li>✅ <strong>{c.t3Perk4}</strong></li>
+            <li>✅ <strong>{c.t3Perk5}</strong></li>
+            <li>✅ <strong>{c.t3Perk6}</strong></li>
           </ul>
-          <a href={`${prefix}cuadro-de-honor`} class="btn btn-accent btn-full"> ⚡ Pujar en Cuadro de Honor </a>
+          <a href={`${prefix}cuadro-de-honor`} class="btn btn-accent btn-full"> {c.t3Btn} </a>
         </div>
       </div>
     </section>
@@ -166,25 +501,23 @@ const prefix = getLangPrefix(locale);
     <section class="payment-trust-section card card-glass">
       <div class="trust-grid">
         <div class="trust-text">
-          <h2 class="trust-title">🔒 Plataforma de Pagos Segura & Certificada</h2>
+          <h2 class="trust-title">{c.securityTitle}</h2>
           <p class="trust-desc">
-            Todos los micro-patrocinios del Cuadro de Honor se procesan mediante cifrado SSL de 256 bits a través de
-            Stripe y proveedores bancarios europeos auditados.
+            {c.securityDesc}
           </p>
           <div class="trust-badges-row">
-            <div class="t-badge"><span>💳</span> Tarjetas Visa / Mastercard / Amex</div>
-            <div class="t-badge"><span>📱</span> Bizum Instantáneo</div>
-            <div class="t-badge"><span>🍏</span> Apple Pay & Google Pay</div>
-            <div class="t-badge"><span>🧾</span> Factura con IVA deducible</div>
+            <div class="t-badge"><span>💳</span> {c.securityCard}</div>
+            <div class="t-badge"><span>📱</span> {c.securityBizum}</div>
+            <div class="t-badge"><span>🍏</span> {c.securityApple}</div>
+            <div class="t-badge"><span>🧾</span> {c.securityInvoice}</div>
           </div>
         </div>
         <div class="trust-guarantee">
           <div class="guarantee-box">
             <span class="g-icon">🛡️</span>
-            <h4>Compromiso Zero Fake Data</h4>
+            <h4>{c.zeroFakeTitle}</h4>
             <p>
-              Solo comercios con un índice de confianza $\ge 80\%$ y actividad contrastada en Mallorca pueden comprar
-              puestos de honor. El dinero nunca comprará reputación falsa.
+              {c.zeroFakeDesc}
             </p>
           </div>
         </div>
@@ -194,43 +527,38 @@ const prefix = getLangPrefix(locale);
     <!-- FAQ Section -->
     <section class="join-faq-section" aria-labelledby="faq-heading">
       <div class="section-header text-center">
-        <h2 id="faq-heading" class="section-title">Preguntas Frecuentes para Propietarios</h2>
+        <h2 id="faq-heading" class="section-title">{c.faqTitle}</h2>
         <p class="section-subtitle">
-          Resolvemos las dudas más comunes sobre la cesión de fichas y los puestos de honor.
+          {c.faqSubtitle}
         </p>
       </div>
 
       <div class="faq-accordion-grid">
         <div class="faq-item card card-glass">
-          <h3 class="faq-q">¿Por qué es gratuita la reclamación y edición de mi ficha?</h3>
+          <h3 class="faq-q">{c.faq1Q}</h3>
           <p class="faq-a">
-            Creemos firmemente en apoyar al comercio local balear. Toda empresa tiene derecho a mantener sus datos de
-            contacto, horarios y dirección 100% actualizados sin pagar nada.
+            {c.faq1A}
           </p>
         </div>
 
         <div class="faq-item card card-glass">
-          <h3 class="faq-q">¿Cómo funciona la subasta del Cuadro de Honor (+1€)?</h3>
+          <h3 class="faq-q">{c.faq2Q}</h3>
           <p class="faq-a">
-            Cada lista gremial (Gastronomía, Instalaciones, Náutica, etc.) tiene un podio (#1, #2, #3). Si el primer
-            puesto tiene un récord de 5.00€, cualquier titular elegible puede superarlo aportando exactamente 6.00€
-            (+1.00€).
+            {c.faq2A}
           </p>
         </div>
 
         <div class="faq-item card card-glass">
-          <h3 class="faq-q">¿Qué ocurre si alguien intenta reclamar un negocio que no es suyo?</h3>
+          <h3 class="faq-q">{c.faq3Q}</h3>
           <p class="faq-a">
-            Nuestro motor de seguridad exige validación de NIF/CIF oficial de la AEAT y verificación del dominio
-            corporativo o línea telefónica. Si no se acredita la titularidad, la solicitud se rechaza automáticamente.
+            {c.faq3A}
           </p>
         </div>
 
         <div class="faq-item card card-glass">
-          <h3 class="faq-q">¿Puedo dar de alta un emprendimiento nuevo que aún no aparece?</h3>
+          <h3 class="faq-q">{c.faq4Q}</h3>
           <p class="faq-a">
-            ¡Sí! Puedes enviar una solicitud de alta en 2 minutos. Nuestro equipo la auditará y la publicará en menos de
-            24 horas laborables.
+            {c.faq4A}
           </p>
         </div>
       </div>

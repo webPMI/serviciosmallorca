@@ -4,7 +4,6 @@ import Navbar from "../../components/Navbar.astro";
 import Footer from "../../components/Footer.astro";
 import { getLocaleFromUrl, loadTranslations, getLangPrefix, type Locale } from "../../i18n";
 import { HONOR_LISTS, getDefaultHonorSpots, calculateNextBidPrice } from "../../lib/honorBoardEngine";
-import { PUBLIC_SERVICES } from "../../data/services";
 import HonorCheckoutModal from "../../components/HonorCheckoutModal.astro";
 
 export const prerender = false;
@@ -17,9 +16,10 @@ const defaultSpots = getDefaultHonorSpots();
 ---
 
 <BaseLayout
-  title={`Cuadro de Honor & Reconocimiento Comunitario - ${translations["site.title"]}`}
+  title={`${translations["honor.title"] || "Cuadro de Honor & Reconocimiento Comunitario"} - ${translations["site.title"] || "Servicios Mallorca"}`}
   lang={locale}
-  description="Mercado de Autoridad y Cuadro de Honor: reconoce y patrocina a los mejores profesionales, artesanos y negocios de Mallorca con transparencia."
+  description={translations["honor.subtitle"] ||
+    "Mercado de Autoridad y Cuadro de Honor: reconoce y patrocina a los mejores profesionales de Mallorca."}
 >
   <Navbar currentLocale={locale} translations={translations} getLangPrefix={getLangPrefix} />
 
@@ -27,22 +27,25 @@ const defaultSpots = getDefaultHonorSpots();
     <!-- Hero Section -->
     <header class="honor-hero card card-glass">
       <div class="hero-badge">
-        <span class="badge badge-accent">👑 Cuadro de Honor Balear</span>
-        <span class="badge badge-primary">💎 Subastas de Reconocimiento (+1€)</span>
+        <span class="badge badge-accent">{translations["honor.badge"] || "👑 Cuadro de Honor Balear"}</span>
+        <span class="badge badge-primary"
+          >{translations["honor.auctions"] || "💎 Subastas de Reconocimiento (+1€)"}</span
+        >
       </div>
-      <h1 class="hero-title">Puestos de Honor & Prestigio de Mallorca</h1>
+      <h1 class="hero-title">{translations["honor.title"] || "Puestos de Honor & Prestigio de Mallorca"}</h1>
       <p class="hero-subtitle">
-        Un espacio transparente y meritocrático donde vecinos, clientes y gremios impulsan a sus referentes favoritos.
-        Cada puesto de honor requiere un respaldo mínimo de 1€ sobre el récord anterior.
-        <strong>Solo negocios reales y verificados (Zero Fake Data) pueden optar al podio.</strong>
+        {
+          translations["honor.subtitle"] ||
+            "Un espacio transparente y meritocrático donde vecinos, clientes y gremios impulsan a sus referentes favoritos."
+        }
       </p>
 
       <div class="hero-actions">
         <a href="#listas" class="btn btn-primary">
-          <span>🏆 Explorar Listas de Honor</span>
+          <span>{translations["honor.exploreLists"] || "🏆 Explorar Listas de Honor"}</span>
         </a>
         <a href={`${prefix}comunidad`} class="btn btn-secondary">
-          <span>💬 Muro Comunitario & Rutas</span>
+          <span>{translations["honor.communityWall"] || "💬 Muro Comunitario & Rutas"}</span>
         </a>
       </div>
     </header>
@@ -51,12 +54,12 @@ const defaultSpots = getDefaultHonorSpots();
     <section class="trust-guarantee-banner card">
       <div class="guarantee-icon">🛡️</div>
       <div class="guarantee-content">
-        <h3>Garantía Ética de Calidad</h3>
+        <h3>{translations["honor.guaranteeTitle"] || "Garantía Ética de Calidad"}</h3>
         <p>
-          A diferencia de la publicidad tradicional, en Servicios Mallorca <strong
-            >no se puede comprar visibilidad para negocios mediocres o falsos</strong
-          >. Para que una empresa sea postulada al Cuadro de Honor, debe haber superado una auditoría oficial con un
-          índice de confianza $\ge 80\%$.
+          {
+            translations["honor.guaranteeDesc"] ||
+              "A diferencia de la publicidad tradicional, en Servicios Mallorca no se puede comprar visibilidad para negocios mediocres o falsos."
+          }
         </p>
       </div>
     </section>
@@ -64,9 +67,12 @@ const defaultSpots = getDefaultHonorSpots();
     <!-- Categories Tabs & Grid -->
     <section id="listas" class="honor-section">
       <div class="section-header">
-        <h2 class="section-title">Listas de Reconocimiento Activas</h2>
+        <h2 class="section-title">{translations["honor.activeListsTitle"] || "Listas de Reconocimiento Activas"}</h2>
         <p class="section-desc">
-          Selecciona una categoría gremial para ver los líderes actuales o nominar a tu negocio preferido.
+          {
+            translations["honor.activeListsDesc"] ||
+              "Selecciona una categoría gremial para ver los líderes actuales o nominar a tu negocio preferido."
+          }
         </p>
       </div>
 
@@ -104,8 +110,10 @@ const defaultSpots = getDefaultHonorSpots();
                   </div>
                   <div class="panel-bid-info">
                     <div class="price-chip">
-                      <span class="price-label">Puesto #1 Actual:</span>
-                      <span class="price-val">{topBid > 0 ? `${topBid.toFixed(2)}€` : "Libre"}</span>
+                      <span class="price-label">{translations["honor.topCurrent"] || "Puesto #1 Actual:"}</span>
+                      <span class="price-val">
+                        {topBid > 0 ? `${topBid.toFixed(2)}€` : translations["honor.free"] || "Libre"}
+                      </span>
                     </div>
                     <div class="panel-actions-group">
                       <button
@@ -115,7 +123,10 @@ const defaultSpots = getDefaultHonorSpots();
                         data-next-price={nextPrice}
                         data-mode="owner_bid"
                       >
-                        👑 Posicionar mi Negocio ({nextPrice.toFixed(2)}€)
+                        {(translations["honor.positionMyBiz"] || "👑 Posicionar mi Negocio ({price}€)").replace(
+                          "{price}",
+                          nextPrice.toFixed(2),
+                        )}
                       </button>
                       <button
                         class="btn btn-secondary btn-sm open-nominate-modal"
@@ -124,7 +135,7 @@ const defaultSpots = getDefaultHonorSpots();
                         data-next-price="1.00"
                         data-mode="community_boost"
                       >
-                        ❤️ Impulso Popular (desde 1€)
+                        {translations["honor.popularBoost"] || "❤️ Impulso Popular (desde 1€)"}
                       </button>
                     </div>
                   </div>
@@ -137,7 +148,11 @@ const defaultSpots = getDefaultHonorSpots();
                         class={`spot-card card ${spot.position === 1 ? "spot-diamond" : spot.position === 2 ? "spot-gold" : "spot-silver"}`}
                       >
                         <div class="spot-rank-badge">
-                          {spot.position === 1 ? "💎 #1 Diamante" : spot.position === 2 ? "🥇 #2 Oro" : "🥈 #3 Plata"}
+                          {spot.position === 1
+                            ? translations["honor.diamond"] || "💎 #1 Diamante"
+                            : spot.position === 2
+                              ? translations["honor.gold"] || "🥇 #2 Oro"
+                              : translations["honor.silver"] || "🥈 #3 Plata"}
                         </div>
 
                         <div class="spot-card-body">
@@ -155,13 +170,18 @@ const defaultSpots = getDefaultHonorSpots();
 
                             <div class="spot-meta">
                               <span class="meta-tag">📍 {spot.zone}</span>
-                              <span class="meta-tag trust-tag">🛡️ {spot.confidenceScore}% Confianza</span>
+                              <span class="meta-tag trust-tag">
+                                🛡️ {spot.confidenceScore}% {translations["honor.confidence"] || "Confianza"}
+                              </span>
                               <span class="meta-tag bid-tag">💰 {spot.currentBidEuros.toFixed(2)}€</span>
                             </div>
 
                             {spot.sponsorMessage && (
                               <blockquote class="spot-quote">
-                                "{spot.sponsorMessage}"<cite>— Patrocinado por {spot.sponsorName}</cite>
+                                "{spot.sponsorMessage}"
+                                <cite>
+                                  — {translations["honor.sponsoredBy"] || "Patrocinado por"} {spot.sponsorName}
+                                </cite>
                               </blockquote>
                             )}
                           </div>
@@ -169,7 +189,7 @@ const defaultSpots = getDefaultHonorSpots();
 
                         <div class="spot-card-footer">
                           <a href={`${prefix}servicios/${spot.serviceSlug}`} class="btn btn-secondary btn-sm">
-                            Ver Ficha Completa
+                            {translations["honor.viewDetails"] || "Ver Ficha Completa"}
                           </a>
                           <button
                             class="btn btn-primary btn-sm open-nominate-modal"
@@ -181,7 +201,10 @@ const defaultSpots = getDefaultHonorSpots();
                             data-next-price={calculateNextBidPrice(spot.currentBidEuros)}
                             data-mode="owner_bid"
                           >
-                            Superar con {(spot.currentBidEuros + 1).toFixed(2)}€
+                            {(translations["honor.outbid"] || "Superar con {price}€").replace(
+                              "{price}",
+                              (spot.currentBidEuros + 1).toFixed(2),
+                            )}
                           </button>
                         </div>
                       </article>
@@ -190,10 +213,10 @@ const defaultSpots = getDefaultHonorSpots();
                 ) : (
                   <div class="empty-spots card">
                     <div class="empty-icon">🌟</div>
-                    <h4>¡Sé el primero en liderar este podio!</h4>
+                    <h4>{translations["honor.emptyTitle"] || "¡Sé el primero en liderar este podio!"}</h4>
                     <p>
-                      Aún no hay candidaturas en esta lista. Con solo 1.00€ puedes colocar a tu negocio o profesional
-                      favorito en el puesto #1.
+                      {translations["honor.emptyDesc"] ||
+                        "Aún no hay candidaturas en esta lista. Con solo 1.00€ puedes colocar a tu negocio o profesional favorito en el puesto #1."}
                     </p>
                     <div class="empty-actions">
                       <button
@@ -203,7 +226,7 @@ const defaultSpots = getDefaultHonorSpots();
                         data-next-price="1.00"
                         data-mode="owner_bid"
                       >
-                        🏆 Inaugurar Puesto #1 por 1.00€
+                        {translations["honor.inaugurate"] || "🏆 Inaugurar Puesto #1 por 1.00€"}
                       </button>
                     </div>
                   </div>

@@ -105,7 +105,13 @@ Explora el directorio completo y las valoraciones de restaurantes Michelin, chá
     const detected =
       cookieLocale && LOCALES.includes(cookieLocale as any) ? (cookieLocale as any) : detectUserLocale(request);
     const prefix = getLangPrefix(detected);
-    return redirect(prefix, 302);
+    // Hardening GR-13 (28/08/2026): la redirección 302 también viaja con las cabeceras de
+    // seguridad (antes se devolvía sin HSTS/nosniff, detectado por la suite de middleware).
+    const redirectResponse = redirect(prefix, 302);
+    for (const [key, value] of Object.entries(SECURITY_HEADERS)) {
+      redirectResponse.headers.set(key, value);
+    }
+    return redirectResponse;
   }
 
   const response = await next();

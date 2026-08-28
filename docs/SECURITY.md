@@ -86,3 +86,23 @@ Antes de aprobar cualquier funcionalidad que involucre datos:
 - [ ] ¿Las reglas de Firestore bloquean escrituras directas no autorizadas?
 - [ ] ¿Los textos legales y de consentimiento están disponibles en los 4 idiomas (`es`, `en`, `ca`, `de`)?
 - [ ] ¿Las llamadas a bases de datos usan tipos estrictos de TypeScript?
+
+---
+
+## 7. Campaña de Endurecimiento y Cobertura de Seguridad v2 (28/08/2026)
+
+Ampliación de testing orientada a **verificar —no solo declarar—** las garantías de este documento:
+
+| Cobertura nueva       | Suite / Herramienta                                    | Qué verifica                                                                                                                                                                                                                                                          |
+| --------------------- | ------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Cabeceras HTTP SSR    | `tests/unit/middlewareSecurityHeaders.test.ts`         | Las 6 cabeceras de §4 en rutas locale/no-locale, `no-store` en rutas privadas, flags de cookie `locale`, negociación Markdown y **redirección raíz 302 con cabeceras** (fix aplicado)                                                                                 |
+| Reglas Firestore      | `tests/unit/firestoreRulesStatic.test.ts`              | Análisis estático de `firestore.rules`: deny-all global, inmutabilidad de rol/email, `https://` en `photoURL`, límites de longitud, aislamiento por UID, ratings acotados, bids ≥ 1 €, prohibición de `write: if true`                                                |
+| Bridge IA adversarial | `tests/unit/geminiBridge.security.test.ts`             | Fugas de API key en todas las superficies, pollution (`__proto__`), vectores XSS servidos como JSON, spoofing de Host (DNS-rebinding), JSON profundo, métodos incorrectos, path traversal de modelo                                                                   |
+| Auditoría de secretos | `npm run audit:security` (`scripts/security-audit.ts`) | Escaneo de claves/secretos hardcodeados en `src/`, `scripts/`, `public/`, `tests/`, `docs/` (Google/OpenAI/privadas/JWT/DB-creds + genérico); `.env`/`.gemini-bridge` no trackeados; `npm audit --omit=dev` opcional con `--deps`. Exit 1 con hallazgos: apto para CI |
+
+**Hardening aplicado (28/08/2026):** la redirección raíz (`/` → `/{locale}`) ahora incluye las
+cabeceras de seguridad de §4 (antes el 302 se devolvía sin ellas; detectado por la nueva suite).
+
+**Recomendación futura (no bloqueante):** evaluar una `Content-Security-Policy` estricta en
+producción una vez inventariados los scripts inline de terceros (AdSense, Firebase SDK), idealmente
+en modo `Report-Only` durante unas semanas antes de forzarla.

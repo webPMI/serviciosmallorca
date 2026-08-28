@@ -172,12 +172,14 @@ const descriptions: Record<Locale, string> = {
                   </blockquote>
                 )}
                 <div class="card-footer">
-                  <a href={`${prefix}/servicios/${item.slug}`} class="btn-history">
+                  <a href={`${prefix}servicios/${item.slug}`} class="btn-history">
                     {locale === "de"
                       ? "Geschichte & Details ansehen"
                       : locale === "en"
                         ? "View History & Details"
-                        : "Ver Historia y Detalles"}{" "}
+                        : locale === "ca"
+                          ? "Veure Història i Detalls"
+                          : "Ver Historia y Detalles"}{" "}
                     &rarr;
                   </a>
                 </div>
@@ -197,14 +199,20 @@ const descriptions: Record<Locale, string> = {
               ? "Alle Traditions- und Vorzeigebetriebe"
               : locale === "en"
                 ? "Full Heritage & Landmark Archive"
-                : "Catálogo Histórico Completo (+15 a +100 Años)"
+                : locale === "ca"
+                  ? "Catàleg Històric Complet (+15 a +100 Anys)"
+                  : "Catálogo Histórico Completo (+15 a +100 Años)"
           }
         </h2>
         <p>
           {
             locale === "de"
               ? "Entdecken Sie die Geschichte und Widerstandskraft des balearischen Unternehmertums."
-              : "Conoce las historias de autor y la resiliencia comercial de la isla de Mallorca."
+              : locale === "en"
+                ? "Discover the artisanal stories and commercial resilience of Mallorca."
+                : locale === "ca"
+                  ? "Coneix les històries d'autor i la resiliència comercial de l'illa de Mallorca."
+                  : "Conoce las historias de autor y la resiliencia comercial de la isla de Mallorca."
           }
         </p>
       </div>
@@ -218,7 +226,17 @@ const descriptions: Record<Locale, string> = {
             return (
               <article class={`heritage-card ${isClosed ? "closed-memorial" : ""}`}>
                 <div class="card-header">
-                  <span class="badge-legacy">{isClosed ? "🕊️ Memoria Histórica" : `⏳ ${years} Años`}</span>
+                  <span class="badge-legacy">
+                    {isClosed
+                      ? locale === "de"
+                        ? "🕊️ Historisches Archiv"
+                        : locale === "en"
+                          ? "🕊️ Historical Memorial"
+                          : locale === "ca"
+                            ? "🕊️ Memòria Històrica"
+                            : "🕊️ Memoria Histórica"
+                      : `⏳ ${years} ${locale === "de" ? "Jahre" : locale === "en" ? "Years" : locale === "ca" ? "Anys" : "Años"}`}
+                  </span>
                   <span class="significance-tag">{significance.replace("_", " ")}</span>
                 </div>
                 <h3 class="business-name">{item.name}</h3>
@@ -231,14 +249,22 @@ const descriptions: Record<Locale, string> = {
                         ? "Schließungsgrund:"
                         : locale === "en"
                           ? "Closure Reason:"
-                          : "Motivo histórico de cese:"}
+                          : locale === "ca"
+                            ? "Motiu històric de cessament:"
+                            : "Motivo histórico de cese:"}
                     </strong>{" "}
                     {item.closureReason} ({item.closureYear})
                   </div>
                 )}
                 <div class="card-footer">
-                  <a href={`${prefix}/servicios/${item.slug}`} class="btn-history-outline">
-                    {locale === "de" ? "Ficha Histórica" : locale === "en" ? "Historical Record" : "Ficha Histórica"}{" "}
+                  <a href={`${prefix}servicios/${item.slug}`} class="btn-history-outline">
+                    {locale === "de"
+                      ? "Historischer Eintrag"
+                      : locale === "en"
+                        ? "Historical Record"
+                        : locale === "ca"
+                          ? "Fitxa Històrica"
+                          : "Ficha Histórica"}{" "}
                     &rarr;
                   </a>
                 </div>

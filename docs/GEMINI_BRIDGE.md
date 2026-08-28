@@ -84,6 +84,9 @@ La suite levanta el bridge y un **stub local** del upstream (inyectado vía `GEM
 interno del factory) y cubre: health sin fugas de key, CSP/nonce, chat con eco, multi-turno con
 historial, errores 400/413/403/429/503/404, ring buffer `maxEntries` y exportación MD/JSON.
 
+Cobertura adversarial adicional en `tests/unit/geminiBridge.security.test.ts` (fugas de secretos,
+`__proto__`, XSS, DNS-rebinding, DoS lógico, path traversal) — ver `docs/SECURITY.md` §7.
+
 ## Excepciones de Golden Rules (justificadas)
 
 - **GR-01 / GR-04 no aplican**: es una herramienta standalone local (como la DevTools Suite),

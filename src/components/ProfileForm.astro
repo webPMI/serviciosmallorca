@@ -1,5 +1,6 @@
 ---
-import type { Translations } from "../i18n";
+import type { Translations, Locale } from "../i18n";
+import { getLangPrefix } from "../i18n";
 
 interface Props {
   translations: Translations;
@@ -7,11 +8,12 @@ interface Props {
 }
 
 const { translations, locale } = Astro.props;
+const prefix = getLangPrefix(locale as Locale);
 
 const AVATAR_PRESETS = ["👤", "🚀", "⚡", "👑", "🦊", "🦉", "🎨", "💻", "🌿", "🔥"];
 ---
 
-<div class="profile-container" data-locale={locale}>
+<div class="profile-container" data-locale={locale} data-prefix={prefix}>
   <!-- Profile Hero Card -->
   <div class="profile-hero card-glass fade-in">
     <div class="profile-hero-inner">
@@ -40,9 +42,15 @@ const AVATAR_PRESETS = ["👤", "🚀", "⚡", "👑", "🦊", "🦉", "🎨", "
 
   <!-- Tab Navigation -->
   <div class="profile-tabs">
-    <button class="profile-tab active" id="tab-info" data-tab="info"> 👤 Información de Cuenta </button>
-    <button class="profile-tab" id="tab-business" data-tab="business"> 🏢 Mi Negocio & Impulsos </button>
-    <button class="profile-tab" id="tab-security" data-tab="security"> 🔐 Seguridad </button>
+    <button class="profile-tab active" id="tab-info" data-tab="info">
+      {translations["profile.tabInfo"] || "👤 Información de Cuenta"}
+    </button>
+    <button class="profile-tab" id="tab-business" data-tab="business">
+      {translations["profile.tabBusiness"] || "🏢 Mi Negocio & Impulsos"}
+    </button>
+    <button class="profile-tab" id="tab-security" data-tab="security">
+      {translations["profile.tabSecurity"] || "🔐 Seguridad"}
+    </button>
   </div>
 
   <!-- Tab: Account Info -->
@@ -50,7 +58,7 @@ const AVATAR_PRESETS = ["👤", "🚀", "⚡", "👑", "🦊", "🦉", "🎨", "
     <div class="profile-panel-grid">
       <!-- Left: Form -->
       <div class="card profile-form-card">
-        <h2 class="panel-title">✏️ Editar Perfil</h2>
+        <h2 class="panel-title">✏️ {translations["profile.accountInfo"] || "Editar Perfil"}</h2>
 
         <form
           id="profile-info-form"
@@ -123,56 +131,57 @@ const AVATAR_PRESETS = ["👤", "🚀", "⚡", "👑", "🦊", "🦉", "🎨", "
         </form>
       </div>
 
-      <!-- Right: Live Preview -->
-      <div class="card profile-preview-card">
-        <h2 class="panel-title">👁️ Vista Previa</h2>
-        <div class="preview-profile-card">
-          <div class="preview-avatar" id="preview-avatar-display">
-            <span>👤</span>
-          </div>
-          <div class="preview-name" id="preview-name-display">Tu nombre</div>
-          <div class="preview-email" id="preview-email-display">tu@correo.com</div>
-          <div class="preview-badge badge badge-primary" id="preview-role-display">Usuario</div>
-          <div class="preview-joined">🌴 Comunidad Servicios Mallorca</div>
+      <!-- Right: Role and System Info -->
+      <div class="card profile-info-card">
+        <h2 class="panel-title">🛡️ {translations["profile.role"] || "Rol en el Sistema"}</h2>
+        <div class="role-display-box" id="role-display-box">
+          <div class="role-badge-large" id="role-badge-large">Usuario</div>
+          <p class="role-description" id="role-description">Acceso para gestionar tu cuenta personal y favoritos.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Tab: My Business & Boosts -->
+  <!-- Tab: Claimed Business & Boosts -->
   <section class="profile-tab-panel" id="panel-business">
     <div class="business-panel-stack">
-      <!-- Success Boost Notification -->
-      <div id="boost-success-banner" class="boost-success-card card card-glass" style="display: none;">
+      <!-- Flash Notification of recent boost transaction -->
+      <div id="boost-success-banner" class="boost-success-banner" style="display: none;">
         <div class="boost-banner-header">
-          <span class="boost-icon">🎉</span>
+          <span class="boost-banner-icon">🎉</span>
           <div>
-            <h3 class="boost-title">¡Aportación e Impulso Registrado con Éxito!</h3>
+            <h3 class="boost-title">
+              {translations["profile.boostSuccessTitle"] || "¡Aportación e Impulso Registrado con Éxito!"}
+            </h3>
             <p class="boost-subtitle">
-              Tu micro-patrocinio ha sido contabilizado en la bolsa comunitaria y el comercio ha sido añadido a tus
-              favoritos.
+              {
+                translations["profile.boostSuccessSubtitle"] ||
+                  "Tu micro-patrocinio ha sido contabilizado en la bolsa comunitaria y el comercio ha sido añadido a tus favoritos."
+              }
             </p>
           </div>
         </div>
         <div class="boost-meta-strip">
-          <span id="boost-amount-label">Importe: 0.00€</span>
+          <span id="boost-amount-label">{translations["profile.boostMetaAmount"] || "Importe:"} 0.00€</span>
           <span>·</span>
-          <span id="boost-slug-label">Comercio: -</span>
+          <span id="boost-slug-label">{translations["profile.boostMetaBiz"] || "Comercio:"} -</span>
           <span>·</span>
-          <span>Factura emitida con 21% IVA</span>
+          <span>{translations["profile.boostMetaInvoice"] || "Factura emitida con 21% IVA"}</span>
         </div>
       </div>
 
       <!-- Claimed Business Audit Status Card -->
       <div class="card profile-form-card">
         <div class="section-title-row">
-          <h2 class="panel-title">🏢 Mi Empresa / Ficha Reclamada</h2>
+          <h2 class="panel-title">{translations["profile.claimedTitle"] || "🏢 Mi Empresa / Ficha Reclamada"}</h2>
           <span class="badge badge-accent" id="business-status-badge">Verificando...</span>
         </div>
 
         <div id="no-business-box" class="business-empty-state">
-          <p>Aún no tienes ninguna empresa reclamada bajo tu cuenta.</p>
-          <a href="/es/unete" class="btn btn-accent btn-sm"> 🚀 Ver Pasos para Reclamar o Registrar Negocio (0€) </a>
+          <p>{translations["profile.noBusiness"] || "Aún no tienes ninguna empresa reclamada bajo tu cuenta."}</p>
+          <a href={`${prefix}unete`} class="btn btn-accent btn-sm">
+            {translations["profile.claimCta"] || "🚀 Ver Pasos para Reclamar o Registrar Negocio (0€)"}
+          </a>
         </div>
 
         <div id="claimed-business-box" class="claimed-status-box" style="display: none;">
@@ -181,22 +190,32 @@ const AVATAR_PRESETS = ["👤", "🚀", "⚡", "👑", "🦊", "🦉", "🎨", "
             <div>
               <h3 id="claimed-business-name" class="claimed-name">Nombre Empresa</h3>
               <p id="claimed-audit-desc" class="claimed-audit-text">
-                ⏳ Solicitud de cesión en proceso de validación fiscal por nuestro equipo de auditoría.
+                {
+                  translations["profile.claimedPending"] ||
+                    "⏳ Solicitud de cesión en proceso de validación fiscal por nuestro equipo de auditoría."
+                }
               </p>
             </div>
           </div>
           <div class="claimed-actions">
-            <a href="/es/cuadro-de-honor" class="btn btn-secondary btn-sm"> 👑 Ver mi Puesto en Cuadro de Honor </a>
-            <a href="/es/unete" class="btn btn-outline-secondary btn-sm"> 📋 Guía de Tarifas & Mando </a>
+            <a href={`${prefix}cuadro-de-honor`} class="btn btn-secondary btn-sm">
+              {translations["profile.viewHonorSpot"] || "👑 Ver mi Puesto en Cuadro de Honor"}
+            </a>
+            <a href={`${prefix}unete`} class="btn btn-outline-secondary btn-sm">
+              {translations["profile.pricingGuide"] || "📋 Guía de Tarifas & Mando"}
+            </a>
           </div>
         </div>
       </div>
 
       <!-- Community Boosts & Backed Favorites Card -->
       <div class="card profile-form-card">
-        <h2 class="panel-title">❤️ Mis Negocios Favoritos Aupados</h2>
+        <h2 class="panel-title">{translations["profile.backedFavsTitle"] || "❤️ Mis Negocios Favoritos Aupados"}</h2>
         <p class="panel-description">
-          Comercios de Mallorca que has respaldado con tu deseo e impulso popular comunitario.
+          {
+            translations["profile.backedFavsDesc"] ||
+              "Comercios de Mallorca que has respaldado con tu deseo e impulso popular comunitario."
+          }
         </p>
         <div class="favs-boosted-grid" id="favs-boosted-list">
           <div class="empty-favs-txt">Cargando tus negocios respaldados...</div>

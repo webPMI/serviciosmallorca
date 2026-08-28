@@ -54,20 +54,20 @@ const verifiedBusinesses = PUBLIC_SERVICES.filter((s) => (s.confidenceScore ?? 0
 
     <!-- Progress Steps Header -->
     <div class="checkout-steps-track">
-      <div class="step-badge active"><span>1</span> Importe & Datos</div>
+      <div class="step-badge active"><span>1</span> {translations["honor.modal.step1"] || "Importe & Datos"}</div>
       <div class="step-arrow">→</div>
-      <div class="step-badge active"><span>2</span> Pasarela SSL</div>
+      <div class="step-badge active"><span>2</span> {translations["honor.modal.step2"] || "Pasarela SSL"}</div>
       <div class="step-arrow">→</div>
-      <div class="step-badge active"><span>3</span> Factura 21% IVA</div>
+      <div class="step-badge active"><span>3</span> {translations["honor.modal.step3"] || "Factura 21% IVA"}</div>
     </div>
 
     <!-- Mode Switcher Tabs -->
     <div class="checkout-mode-tabs" role="tablist">
       <button type="button" class="mode-tab active" id="tab-community-boost" role="tab" aria-selected="true">
-        <span>❤️ Impulso Popular (Vecinos & Fans)</span>
+        <span>{translations["honor.modal.tabCommunity"] || "❤️ Impulso Popular (Vecinos & Fans)"}</span>
       </button>
       <button type="button" class="mode-tab" id="tab-owner-bid" role="tab" aria-selected="false">
-        <span>👑 Puja Oficial de Titular (+1€)</span>
+        <span>{translations["honor.modal.tabOwner"] || "👑 Puja Oficial de Titular (+1€)"}</span>
       </button>
     </div>
 
@@ -83,11 +83,19 @@ const verifiedBusinesses = PUBLIC_SERVICES.filter((s) => (s.confidenceScore ?? 0
         <div class="target-icon">🏢</div>
         <div class="target-details">
           <div class="target-title-row">
-            <span class="target-label">Negocio a Impulsar / Posicionar:</span>
-            <button type="button" id="btn-toggle-biz-select" class="btn-change-biz"> ✏️ Elegir / Cambiar </button>
+            <span class="target-label"
+              >{translations["honor.modal.bizTarget"] || "Negocio a Impulsar / Posicionar:"}</span
+            >
+            <button type="button" id="btn-toggle-biz-select" class="btn-change-biz">
+              {translations["honor.modal.chooseBiz"] || "✏️ Elegir / Cambiar"}
+            </button>
           </div>
           <strong id="display-target-name" class="target-name">
-            {preselectedServiceName || "Seleccionar Comercio de Mallorca..."}
+            {
+              preselectedServiceName ||
+                translations["honor.modal.selectBizPlaceholder"] ||
+                "Seleccionar Comercio de Mallorca..."
+            }
           </strong>
         </div>
       </div>
@@ -98,11 +106,15 @@ const verifiedBusinesses = PUBLIC_SERVICES.filter((s) => (s.confidenceScore ?? 0
         id="biz-selector-group"
         style={preselectedServiceName ? "display: none;" : "display: block;"}
       >
-        <label for="select-honor-business" class="form-label"
-          >Selecciona el Comercio Verificado (Zero Fake Data) *</label
-        >
+        <label for="select-honor-business" class="form-label">
+          {translations["honor.modal.selectBizPrompt"] || "Selecciona el Comercio Verificado (Zero Fake Data) *"}
+        </label>
         <select id="select-honor-business" class="form-input form-select-biz">
-          <option value="">-- Elige el negocio que deseas aupar o posicionar --</option>
+          <option value=""
+            >{
+              translations["honor.modal.selectBizPlaceholder"] || "-- Elige el negocio que deseas aupar o posicionar --"
+            }</option
+          >
           {
             verifiedBusinesses.map((s) => (
               <option
@@ -114,31 +126,38 @@ const verifiedBusinesses = PUBLIC_SERVICES.filter((s) => (s.confidenceScore ?? 0
                 data-score={s.confidenceScore || 90}
                 selected={s.id === preselectedServiceId}
               >
-                {s.name} ({s.zone}) · {s.confidenceScore || 90}% Confianza
+                {s.name} ({s.zone}) · {s.confidenceScore || 90}% {translations["honor.confidence"] || "Confianza"}
               </option>
             ))
           }
         </select>
-        <span class="form-helper"
-          >Solo se admiten comercios de Mallorca con auditoría oficial y score &ge; 80% (Regla GR-11).</span
-        >
+        <span class="form-helper">
+          {
+            translations["honor.modal.selectBizHelper"] ||
+              "Solo se admiten comercios de Mallorca con auditoría oficial y score ≥ 80% (Regla GR-11)."
+          }
+        </span>
       </div>
 
       <!-- User Information (Auto-Filled from AuthStore) -->
       <div class="form-row-grid">
         <div class="form-group">
-          <label for="input-backer-name" class="form-label">Tu Nombre o Alias Público *</label>
+          <label for="input-backer-name" class="form-label"
+            >{translations["honor.modal.backerName"] || "Tu Nombre o Alias Público *"}</label
+          >
           <input
             type="text"
             id="input-backer-name"
             name="backerName"
             class="form-input"
-            placeholder="Ej. Joan García (Vecino de Inca)"
+            placeholder={translations["honor.modal.backerNamePlaceholder"] || "Ej. Joan García (Vecino de Inca)"}
             required
           />
         </div>
         <div class="form-group">
-          <label for="input-backer-email" class="form-label">Email para Factura / Notificación *</label>
+          <label for="input-backer-email" class="form-label"
+            >{translations["honor.modal.backerEmail"] || "Email para Factura / Notificación *"}</label
+          >
           <input
             type="email"
             id="input-backer-email"
@@ -152,13 +171,16 @@ const verifiedBusinesses = PUBLIC_SERVICES.filter((s) => (s.confidenceScore ?? 0
 
       <!-- Dedication Message / Reason -->
       <div class="form-group">
-        <label for="input-backer-message" class="form-label">Dedicatoria o Motivo del Apoyo (Opcional)</label>
+        <label for="input-backer-message" class="form-label"
+          >{translations["honor.modal.dedication"] || "Dedicatoria o Motivo del Apoyo (Opcional)"}</label
+        >
         <input
           type="text"
           id="input-backer-message"
           name="backerMessage"
           class="form-input"
-          placeholder="Ej. 'El mejor pan artesanal de Mallorca desde 1862'"
+          placeholder={translations["honor.modal.dedicationPlaceholder"] ||
+            "Ej. 'El mejor pan artesanal de Mallorca desde 1862'"}
           maxlength="140"
         />
       </div>
@@ -166,8 +188,12 @@ const verifiedBusinesses = PUBLIC_SERVICES.filter((s) => (s.confidenceScore ?? 0
       <!-- Amount Selector & Quick Chips -->
       <div class="amount-selection-box">
         <div class="amount-header">
-          <label for="input-bid-amount" class="form-label">Importe a Aportar (€) *</label>
-          <span id="label-min-hint" class="min-hint">Mínimo requerido: {minBidRequired.toFixed(2)}€</span>
+          <label for="input-bid-amount" class="form-label"
+            >{translations["honor.modal.amount"] || "Importe a Aportar (€) *"}</label
+          >
+          <span id="label-min-hint" class="min-hint"
+            >{translations["honor.modal.minRequired"] || "Mínimo requerido:"} {minBidRequired.toFixed(2)}€</span
+          >
         </div>
 
         <div class="amount-input-row">
@@ -187,7 +213,9 @@ const verifiedBusinesses = PUBLIC_SERVICES.filter((s) => (s.confidenceScore ?? 0
         <!-- Real-time Collision / Uniqueness Status Chip -->
         <div id="collision-status-box" class="collision-chip collision-ok">
           <span class="collision-icon">✨</span>
-          <span id="collision-msg-text">Importe disponible y conforme con la regla +1€</span>
+          <span id="collision-msg-text"
+            >{translations["honor.modal.collisionOk"] || "Importe disponible y conforme con la regla +1€"}</span
+          >
         </div>
 
         <!-- Quick Amount Chips -->
@@ -203,37 +231,40 @@ const verifiedBusinesses = PUBLIC_SERVICES.filter((s) => (s.confidenceScore ?? 0
       <!-- Live Fiscal Invoice Breakdown -->
       <div class="invoice-summary-box">
         <div class="summary-line">
-          <span>Subtotal Base:</span>
+          <span>{translations["honor.modal.subtotal"] || "Subtotal Base:"}</span>
           <span id="calc-subtotal">0.83€</span>
         </div>
         <div class="summary-line">
-          <span>IVA Balear (21%):</span>
+          <span>{translations["honor.modal.tax"] || "IVA Balear (21%):"}</span>
           <span id="calc-tax">0.17€</span>
         </div>
         <div class="summary-line summary-total">
-          <strong>Total a Pagar:</strong>
+          <strong>{translations["honor.modal.total"] || "Total a Pagar:"}</strong>
           <strong id="calc-total" class="total-amount">{minBidRequired.toFixed(2)}€</strong>
         </div>
         <div class="invoice-preview-chip">
-          <span>🧾 Factura Oficial: <code id="calc-invoice-id">INV-HONOR-...</code></span>
+          <span
+            >🧾 {translations["honor.modal.invoiceNum"] || "Factura Oficial:"}
+            <code id="calc-invoice-id">INV-HONOR-...</code></span
+          >
         </div>
       </div>
 
       <!-- Payment Method Selector -->
       <div class="payment-methods-selector">
-        <span class="form-label">Método de Pago Seguro:</span>
+        <span class="form-label">{translations["honor.modal.paymentMethod"] || "Método de Pago Seguro:"}</span>
         <div class="payment-tabs-grid">
           <label class="pay-radio active">
             <input type="radio" name="paymentMethod" value="card" checked />
-            <span class="pay-label">💳 Tarjeta SSL</span>
+            <span class="pay-label">{translations["honor.modal.card"] || "💳 Tarjeta SSL"}</span>
           </label>
           <label class="pay-radio">
             <input type="radio" name="paymentMethod" value="bizum" />
-            <span class="pay-label">📱 Bizum</span>
+            <span class="pay-label">{translations["honor.modal.bizum"] || "📱 Bizum"}</span>
           </label>
           <label class="pay-radio">
             <input type="radio" name="paymentMethod" value="apple_pay" />
-            <span class="pay-label">🍏 Apple / Google Pay</span>
+            <span class="pay-label">{translations["honor.modal.applePay"] || "🍏 Apple / Google Pay"}</span>
           </label>
         </div>
       </div>
@@ -242,10 +273,15 @@ const verifiedBusinesses = PUBLIC_SERVICES.filter((s) => (s.confidenceScore ?? 0
       <div class="modal-actions-footer">
         <button type="submit" id="submit-honor-btn" class="btn btn-accent btn-lg btn-full pulse-hover">
           <span id="btn-submit-spinner" class="btn-spinner" style="display: none;">🔒</span>
-          <span id="btn-submit-text">⚡ Completar Aportación & Aupar al Podio</span>
+          <span id="btn-submit-text"
+            >{translations["honor.modal.submitCommunity"] || "⚡ Completar Aportación & Aupar al Podio"}</span
+          >
         </button>
         <p class="security-guarantee-txt">
-          🔒 Pago blindado anti-duplicados · Cifrado SSL 256 bits · Factura fiscal con 21% IVA deducible
+          {
+            translations["honor.modal.security"] ||
+              "🔒 Pago blindado anti-duplicados · Cifrado SSL 256 bits · Factura fiscal con 21% IVA deducible"
+          }
         </p>
       </div>
     </form>
@@ -254,46 +290,51 @@ const verifiedBusinesses = PUBLIC_SERVICES.filter((s) => (s.confidenceScore ?? 0
     <div id="checkout-success-view" class="checkout-success-screen" style="display: none;">
       <div class="success-header-badge">
         <span class="success-big-icon">🎉</span>
-        <h3 class="success-title">¡Aportación Confirmada con Éxito!</h3>
-        <p class="success-subtitle">Tu impulso ha sido validado e incorporado al Cuadro de Honor de Mallorca.</p>
+        <h3 class="success-title">{translations["honor.modal.successTitle"] || "¡Aportación Confirmada con Éxito!"}</h3>
+        <p class="success-subtitle">
+          {
+            translations["honor.modal.successSubtitle"] ||
+              "Tu impulso ha sido validado e incorporado al Cuadro de Honor de Mallorca."
+          }
+        </p>
       </div>
 
       <div class="receipt-card">
         <div class="receipt-row">
-          <span>Negocio Impulsado:</span>
+          <span>{translations["honor.modal.receiptBiz"] || "Negocio Impulsado:"}</span>
           <strong id="receipt-biz-name" class="receipt-highlight">Forn Inca Tradició</strong>
         </div>
         <div class="receipt-row">
-          <span>Importe Aportado:</span>
+          <span>{translations["honor.modal.receiptAmount"] || "Importe Aportado:"}</span>
           <strong id="receipt-total-amount" class="receipt-price">25.00€</strong>
         </div>
         <div class="receipt-row receipt-sub">
-          <span>Subtotal Base (sin IVA):</span>
+          <span>{translations["honor.modal.receiptSubtotal"] || "Subtotal Base (sin IVA):"}</span>
           <span id="receipt-subtotal">20.66€</span>
         </div>
         <div class="receipt-row receipt-sub">
-          <span>IVA Balear (21%):</span>
+          <span>{translations["honor.modal.receiptTax"] || "IVA Balear (21%):"}</span>
           <span id="receipt-tax">4.34€</span>
         </div>
         <div class="receipt-row receipt-sub">
-          <span>Nº Factura Fiscal:</span>
+          <span>{translations["honor.modal.receiptInvoice"] || "Nº Factura Fiscal:"}</span>
           <code id="receipt-invoice-id">INV-HONOR-2026-XXXX</code>
         </div>
         <div class="receipt-row receipt-sub">
-          <span>Fecha & Hora:</span>
+          <span>{translations["honor.modal.receiptDateTime"] || "Fecha & Hora:"}</span>
           <span id="receipt-datetime">28/08/2026</span>
         </div>
       </div>
 
       <div class="success-actions-grid">
         <a id="receipt-link-honor" href={`${prefix}cuadro-de-honor`} class="btn btn-accent btn-full">
-          👑 Ver Puesto en Cuadro de Honor
+          {translations["honor.modal.viewHonor"] || "👑 Ver Puesto en Cuadro de Honor"}
         </a>
         <a id="receipt-link-profile" href={`${prefix}profile?tab=business`} class="btn btn-secondary btn-full">
-          👤 Ir a Mi Perfil & Negocios
+          {translations["honor.modal.viewProfile"] || "👤 Ir a Mi Perfil & Negocios"}
         </a>
         <button type="button" id="receipt-print-btn" class="btn btn-outline-secondary btn-full btn-sm">
-          🖨️ Imprimir Factura Fiscal / PDF
+          {translations["honor.modal.printInvoice"] || "🖨️ Imprimir Factura Fiscal / PDF"}
         </button>
       </div>
     </div>
