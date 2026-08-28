@@ -170,6 +170,36 @@ const AVATAR_PRESETS = ["👤", "🚀", "⚡", "👑", "🦊", "🦉", "🎨", "
         </div>
       </div>
 
+      <!-- Outbid / Displacement Alert Card (Motor de Rivalidad Recurrente) -->
+      <div
+        id="displacement-alert-card"
+        class="displacement-alert-card card"
+        style="display: none; border-left: 4px solid #ef4444; background: rgba(239, 68, 68, 0.08);"
+      >
+        <div class="displacement-alert-header" style="display: flex; gap: 12px; align-items: flex-start;">
+          <span class="alert-icon-anim" style="font-size: 1.5rem;">👑⚠️</span>
+          <div>
+            <h3 class="displacement-title" style="color: #f87171; margin: 0 0 4px 0; font-size: 1.05rem;">
+              ¡Atención! Has sido superado en el Cuadro de Honor
+            </h3>
+            <p id="displacement-desc" style="font-size: 0.85rem; color: #cbd5e1; margin: 0;">
+              Tu negocio ha pasado al puesto #2. Recupera la corona #1 ahora mismo.
+            </p>
+          </div>
+        </div>
+        <div
+          class="displacement-action-row"
+          style="margin-top: 12px; display: flex; gap: 10px; align-items: center; flex-wrap: wrap;"
+        >
+          <a id="displacement-reclaim-btn" href="#" class="btn btn-accent btn-sm pulse-hover">
+            ⚡ Recuperar Puesto #1 (+1€)
+          </a>
+          <button type="button" id="displacement-dismiss-btn" class="btn btn-outline-secondary btn-sm">
+            Entendido
+          </button>
+        </div>
+      </div>
+
       <!-- Claimed Business Audit Status Card -->
       <div class="card profile-form-card">
         <div class="section-title-row">
@@ -750,6 +780,35 @@ const AVATAR_PRESETS = ["👤", "🚀", "⚡", "👑", "🦊", "🦉", "🎨", "
         statusBadge.textContent = "Sin Negocio";
         statusBadge.className = "badge badge-secondary";
       }
+    }
+
+    // Populate displacement alerts (Rivalry & Outbid Engine)
+    const displacementCard = document.getElementById("displacement-alert-card");
+    const displacementDesc = document.getElementById("displacement-desc");
+    const displacementReclaimBtn = document.getElementById("displacement-reclaim-btn") as HTMLAnchorElement | null;
+    const displacementDismissBtn = document.getElementById("displacement-dismiss-btn");
+
+    try {
+      const allAlerts: any[] = JSON.parse(localStorage.getItem("sm_displacement_alerts") || "[]");
+      const unreadAlert = allAlerts.find((a) => !a.read);
+      if (unreadAlert && displacementCard) {
+        displacementCard.style.display = "block";
+        if (displacementDesc) {
+          displacementDesc.textContent = `${unreadAlert.newLeaderServiceName} ha superado a tu negocio en el puesto #1 (${unreadAlert.categoryTitle}) con una puja de ${Number(unreadAlert.newLeaderBidEuros || 0).toFixed(2)}€. Recupera tu trono #1 ahora mismo por ${Number(unreadAlert.counterBidPriceEuros || 1).toFixed(2)}€.`;
+        }
+        if (displacementReclaimBtn) {
+          displacementReclaimBtn.href = unreadAlert.oneClickReclaimUrl || "#";
+        }
+        if (displacementDismissBtn) {
+          displacementDismissBtn.addEventListener("click", () => {
+            unreadAlert.read = true;
+            localStorage.setItem("sm_displacement_alerts", JSON.stringify(allAlerts));
+            displacementCard.style.display = "none";
+          });
+        }
+      }
+    } catch (err) {
+      console.warn("Could not check displacement alerts:", err);
     }
 
     // Populate favorites and backed businesses

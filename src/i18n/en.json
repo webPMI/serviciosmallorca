@@ -379,5 +379,18 @@
   "profile.boostSuccessSubtitle": "Your micro-sponsorship has been added to the community pool and the business is saved in your favorites.",
   "profile.boostMetaAmount": "Amount:",
   "profile.boostMetaBiz": "Business:",
-  "profile.boostMetaInvoice": "Invoice issued with 21% VAT"
+  "profile.boostMetaInvoice": "Invoice issued with 21% VAT",
+  "honor.modal.b2bCheckbox": "Request Business/Self-Employed Tax Invoice (21% Deductible VAT)",
+  "honor.modal.b2bTaxId": "Company Tax ID (CIF / NIF) *",
+  "honor.modal.b2bLegalName": "Legal Company / Trade Name *",
+  "honor.modal.b2bAddress": "Registered Tax Address (Street, Postal Code, City) *",
+  "honor.modal.b2bCustomer": "Invoiced to Business:",
+  "boostWall.kicker": "Community Authority Pool",
+  "boostWall.title": "🏆 Community Boosts & Neighbor Backing Wall",
+  "boostWall.subtitle": "Meet the locals and customers who elevated this business to the Honor Board through micro-sponsorships.",
+  "boostWall.addBoostBtn": "Add My Boost (from €1)",
+  "boostWall.totalRaised": "Accumulated Community Pool:",
+  "boostWall.backersCount": "Supporting Neighbors:",
+  "boostWall.rankStatus": "Podium Standing:",
+  "boostWall.topNominated": "Featured Benchmark"
 }

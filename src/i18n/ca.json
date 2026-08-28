@@ -379,5 +379,18 @@
   "profile.boostSuccessSubtitle": "El teu micro-patrocini ha estat comptabilitzat a la bossa comunitària i el comerç s'ha afegit als teus favorits.",
   "profile.boostMetaAmount": "Import:",
   "profile.boostMetaBiz": "Comerç:",
-  "profile.boostMetaInvoice": "Factura emesa amb 21% IVA"
+  "profile.boostMetaInvoice": "Factura emesa amb 21% IVA",
+  "honor.modal.b2bCheckbox": "Sol·licitar Factura Fiscal per a Empresa / Autònom (Deducció 21% IVA)",
+  "honor.modal.b2bTaxId": "CIF / NIF d'Empresa *",
+  "honor.modal.b2bLegalName": "Raó Social / Nom Fiscal *",
+  "honor.modal.b2bAddress": "Adreça Fiscal (Carrer, CP, Municipi) *",
+  "honor.modal.b2bCustomer": "Facturat a Empresa:",
+  "boostWall.kicker": "Bossa d'Autoritat Veïnal",
+  "boostWall.title": "🏆 Muro d'Impulsos Populars & Suport Veïnal",
+  "boostWall.subtitle": "Descobreix els veïns i clients que han aupat aquest comerç al Quadre d'Honor amb el seu micro-patrocini.",
+  "boostWall.addBoostBtn": "Sumar el Meu Impuls (des d'1€)",
+  "boostWall.totalRaised": "Bossa Popular Acumulada:",
+  "boostWall.backersCount": "Veïns que Donen Suport:",
+  "boostWall.rankStatus": "Estatus Gremial:",
+  "boostWall.topNominated": "Comerç Destacat"
 }

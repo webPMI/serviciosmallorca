@@ -100,6 +100,15 @@ Ampliación de testing orientada a **verificar —no solo declarar—** las gara
 | Bridge IA adversarial | `tests/unit/geminiBridge.security.test.ts`             | Fugas de API key en todas las superficies, pollution (`__proto__`), vectores XSS servidos como JSON, spoofing de Host (DNS-rebinding), JSON profundo, métodos incorrectos, path traversal de modelo                                                                   |
 | Auditoría de secretos | `npm run audit:security` (`scripts/security-audit.ts`) | Escaneo de claves/secretos hardcodeados en `src/`, `scripts/`, `public/`, `tests/`, `docs/` (Google/OpenAI/privadas/JWT/DB-creds + genérico); `.env`/`.gemini-bridge` no trackeados; `npm audit --omit=dev` opcional con `--deps`. Exit 1 con hallazgos: apto para CI |
 
+**Hallazgo real y remediación (28/08/2026, primer pase de `audit:security`):**
+`src/lib/firebase.ts` contenía la configuración Firebase **hardcodeada** (violación de
+«API keys solo via `import.meta.env`»). Migrada a variables `PUBLIC_FIREBASE_*`; los valores
+reales viven ahora solo en `.env` (local, gitignored). ⚠️ **Acción requerida del owner:** añadir
+las variables `PUBLIC_FIREBASE_*` al entorno de build de Cloudflare antes del próximo deploy
+(Astro las inlinea durante el build). Las claves Web de Firebase no son secretas por diseño (la
+protección real está en `firestore.rules` + dominios autorizados + App Check), pero la rotación
+sin redeploy exige que vivan en el entorno, no en el código.
+
 **Hardening aplicado (28/08/2026):** la redirección raíz (`/` → `/{locale}`) ahora incluye las
 cabeceras de seguridad de §4 (antes el 302 se devolvía sin ellas; detectado por la nueva suite).
 

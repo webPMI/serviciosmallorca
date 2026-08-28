@@ -727,6 +727,12 @@ const defaultSpots = getDefaultHonorSpots();
   }
 
   /* Responsive Media Queries */
+  @media (max-width: 1024px) {
+    .honor-container {
+      padding: var(--space-lg) var(--space-sm) var(--space-2xl);
+    }
+  }
+
   @media (max-width: 900px) {
     .panel-header {
       flex-direction: column;
@@ -740,27 +746,42 @@ const defaultSpots = getDefaultHonorSpots();
   }
 
   @media (max-width: 640px) {
+    .honor-container {
+      overflow-x: hidden;
+      padding: var(--space-md) var(--space-xs) var(--space-xl);
+    }
     .trust-guarantee-banner {
       flex-direction: column;
       text-align: center;
       gap: var(--space-sm);
+      padding: var(--space-md);
+    }
+    .spots-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-md);
     }
     .panel-bid-info {
       flex-direction: column;
       align-items: stretch;
       gap: var(--space-sm);
+      width: 100%;
     }
     .panel-actions-group {
       flex-direction: column;
       width: 100%;
+      gap: var(--space-2xs);
     }
     .panel-actions-group .btn {
       width: 100%;
       justify-content: center;
+      white-space: normal;
+      text-align: center;
+      padding: 0.6rem 0.8rem;
     }
     .price-chip {
       align-items: center;
       text-align: center;
+      width: 100%;
     }
     .hero-actions {
       flex-direction: column;
@@ -773,19 +794,28 @@ const defaultSpots = getDefaultHonorSpots();
   }
 
   @media (max-width: 480px) {
-    .honor-container {
-      padding: var(--space-md) var(--space-xs) var(--space-2xl);
+    .honor-hero {
+      padding: var(--space-lg) var(--space-sm);
+    }
+    .hero-title {
+      font-size: 1.5rem;
     }
     .panel-info {
       flex-direction: column;
       align-items: flex-start;
       gap: var(--space-xs);
     }
+    .spot-card {
+      padding: var(--space-md);
+    }
     .spot-card-footer {
       flex-direction: column;
+      gap: var(--space-xs);
     }
     .spot-card-footer .btn {
       width: 100%;
+      min-width: 100%;
+      padding: 0.6rem 0.8rem;
     }
   }
 </style>

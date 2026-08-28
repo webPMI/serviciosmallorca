@@ -7,6 +7,7 @@
  */
 
 import type { ServiceItem } from "../data/services";
+import { createDisplacementAlert, type DisplacementAlert } from "./displacementNotificationEngine.ts";
 
 export type HonorCategory =
   | "elite-general"
@@ -417,6 +418,7 @@ export interface ProcessBidResult {
   tier?: HonorTier;
   updatedList: HonorSpotEntry[];
   displacedCount: number;
+  displacementAlert?: DisplacementAlert;
 }
 
 /**
@@ -518,12 +520,28 @@ export function processHonorBid(
   const newPosition = updatedList.findIndex((e) => e.id === newEntry.id) + 1;
   const displacedCount = sortedList.length;
 
+  // 6. Generar alerta de desplazamiento para el líder anterior si es superado
+  let displacementAlert = undefined;
+  if (sortedList.length > 0 && sortedList[0].serviceId !== service.id) {
+    const previousLeader = sortedList[0];
+    displacementAlert = createDisplacementAlert({
+      category: listCategory,
+      categoryTitle: listDef.title.es,
+      displacedServiceId: previousLeader.serviceId,
+      displacedServiceName: previousLeader.serviceName,
+      newLeaderServiceId: service.id,
+      newLeaderServiceName: service.name,
+      newLeaderBidEuros: Number(safeBid.toFixed(2)),
+    });
+  }
+
   return {
     success: true,
     newPosition,
     tier: getHonorTier(newPosition),
     updatedList,
     displacedCount,
+    displacementAlert,
   };
 }
 

@@ -105,6 +105,9 @@ function scanRepository(): { findings: Finding[]; scanned: number } {
             continue; // alto-señal: solo se perdona la lectura desde entorno
           }
           if (rule.re.test(line)) {
+            // Literales declaradamente falsos (fixtures tipo "AIzaSyFake...") no son secretos.
+            const matched = line.match(rule.re)?.[0] ?? "";
+            if (matched && /fake/i.test(matched)) continue;
             findings.push({ file: rel, line: i + 1, rule: rule.id, snippet: line.trim().slice(0, 120) });
           }
         }

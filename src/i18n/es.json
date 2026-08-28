@@ -379,5 +379,18 @@
   "profile.boostSuccessSubtitle": "Tu micro-patrocinio ha sido contabilizado en la bolsa comunitaria y el comercio ha sido añadido a tus favoritos.",
   "profile.boostMetaAmount": "Importe:",
   "profile.boostMetaBiz": "Comercio:",
-  "profile.boostMetaInvoice": "Factura emitida con 21% IVA"
+  "profile.boostMetaInvoice": "Factura emitida con 21% IVA",
+  "honor.modal.b2bCheckbox": "Solicitar Factura Fiscal para Empresa / Autónomo (Deducción 21% IVA)",
+  "honor.modal.b2bTaxId": "CIF / NIF de Empresa *",
+  "honor.modal.b2bLegalName": "Razón Social / Nombre Fiscal *",
+  "honor.modal.b2bAddress": "Dirección Fiscal (Calle, CP, Municipio) *",
+  "honor.modal.b2bCustomer": "Facturado a Empresa:",
+  "boostWall.kicker": "Bolsa de Autoridad Vecinal",
+  "boostWall.title": "🏆 Muro de Impulsos Populares & Respaldo Vecinal",
+  "boostWall.subtitle": "Descubre a los vecinos y clientes que han aupado a este comercio en el Cuadro de Honor con su micro-patrocinio.",
+  "boostWall.addBoostBtn": "Sumar mi Impulso (desde 1€)",
+  "boostWall.totalRaised": "Bolsa Popular Acumulada:",
+  "boostWall.backersCount": "Vecinos que Apoyan:",
+  "boostWall.rankStatus": "Estatus Gremial:",
+  "boostWall.topNominated": "Comercio Destacado"
 }

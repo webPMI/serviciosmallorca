@@ -55,4 +55,10 @@ describe("📱 RESPONSIVE DESIGN & MOBILE VIEWPORTS (GR-02)", () => {
     expect(matrixAstro).toContain("minmax(min(100%, 280px), 1fr)");
     expect(matrixAstro).toContain("@media (max-width: 480px)");
   });
+
+  it("debe contener media queries responsivas para el modal de Honor", () => {
+    const modalAstro = fs.readFileSync(path.resolve(process.cwd(), "src/components/HonorCheckoutModal.astro"), "utf-8");
+    expect(modalAstro).toContain("@media (max-width: 600px)");
+    expect(modalAstro).toContain("@media (max-width: 380px)");
+  });
 });

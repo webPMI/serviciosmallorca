@@ -185,6 +185,60 @@ const verifiedBusinesses = PUBLIC_SERVICES.filter((s) => (s.confidenceScore ?? 0
         />
       </div>
 
+      <!-- B2B Fiscal Invoice Drawer (Empresa / Autónomo) -->
+      <div class="b2b-invoice-toggle-box card">
+        <label class="b2b-checkbox-label">
+          <input type="checkbox" id="checkbox-b2b-invoice" name="isB2BInvoice" />
+          <span
+            >🏢 {
+              translations["honor.modal.b2bCheckbox"] ||
+                "Solicitar Factura Fiscal para Empresa / Autónomo (Deducción 21% IVA)"
+            }</span
+          >
+        </label>
+
+        <div id="b2b-fields-drawer" class="b2b-fields-drawer" style="display: none; margin-top: 10px;">
+          <div class="form-row-grid">
+            <div class="form-group">
+              <label for="input-b2b-taxid" class="form-label"
+                >{translations["honor.modal.b2bTaxId"] || "CIF / NIF de Empresa *"}</label
+              >
+              <input
+                type="text"
+                id="input-b2b-taxid"
+                name="b2bTaxId"
+                class="form-input"
+                placeholder="Ej. B-07123456 o 43123456Z"
+              />
+            </div>
+            <div class="form-group">
+              <label for="input-b2b-legalname" class="form-label"
+                >{translations["honor.modal.b2bLegalName"] || "Razón Social / Nombre Fiscal *"}</label
+              >
+              <input
+                type="text"
+                id="input-b2b-legalname"
+                name="b2bLegalName"
+                class="form-input"
+                placeholder="Ej. Hostelería Balear S.L."
+              />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="input-b2b-address" class="form-label"
+              >{translations["honor.modal.b2bAddress"] || "Dirección Fiscal (Calle, CP, Municipio) *"}</label
+            >
+            <input
+              type="text"
+              id="input-b2b-address"
+              name="b2bAddress"
+              class="form-input"
+              placeholder="Ej. Carrer del Sindicat 12, 07002 Palma"
+            />
+          </div>
+        </div>
+      </div>
+
       <!-- Amount Selector & Quick Chips -->
       <div class="amount-selection-box">
         <div class="amount-header">
@@ -315,6 +369,10 @@ const verifiedBusinesses = PUBLIC_SERVICES.filter((s) => (s.confidenceScore ?? 0
         <div class="receipt-row receipt-sub">
           <span>{translations["honor.modal.receiptTax"] || "IVA Balear (21%):"}</span>
           <span id="receipt-tax">4.34€</span>
+        </div>
+        <div id="receipt-b2b-row" class="receipt-row receipt-sub" style="display: none;">
+          <span>{translations["honor.modal.b2bCustomer"] || "Facturado a Empresa:"}</span>
+          <span id="receipt-b2b-info">Empresa S.L. (B-07123456)</span>
         </div>
         <div class="receipt-row receipt-sub">
           <span>{translations["honor.modal.receiptInvoice"] || "Nº Factura Fiscal:"}</span>
@@ -862,10 +920,44 @@ const verifiedBusinesses = PUBLIC_SERVICES.filter((s) => (s.confidenceScore ?? 0
   }
 
   @media (max-width: 600px) {
+    .honor-modal-dialog {
+      padding: var(--space-md, 1rem);
+      max-height: 95vh;
+    }
     .form-row-grid,
     .checkout-mode-tabs,
     .payment-tabs-grid {
       grid-template-columns: 1fr;
+    }
+    .checkout-steps-track {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 4px;
+      font-size: 0.72rem;
+    }
+    .step-badge {
+      font-size: 0.72rem;
+    }
+    .quick-chips-row {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 4px;
+    }
+    .chip-btn {
+      padding: 4px 2px;
+      text-align: center;
+    }
+    .modal-main-title {
+      font-size: 1.15rem;
+    }
+  }
+
+  @media (max-width: 380px) {
+    .quick-chips-row {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .checkout-steps-track .step-arrow {
+      display: none;
     }
   }
 </style>
@@ -902,6 +994,21 @@ const verifiedBusinesses = PUBLIC_SERVICES.filter((s) => (s.confidenceScore ?? 0
     const collisionStatusBox = document.getElementById("collision-status-box");
     const collisionMsgText = document.getElementById("collision-msg-text");
     const idempotencyKeyInput = document.getElementById("input-idempotency-key") as HTMLInputElement | null;
+
+    // B2B Elements
+    const checkboxB2B = document.getElementById("checkbox-b2b-invoice") as HTMLInputElement | null;
+    const b2bDrawer = document.getElementById("b2b-fields-drawer");
+    const b2bTaxIdInput = document.getElementById("input-b2b-taxid") as HTMLInputElement | null;
+    const b2bLegalNameInput = document.getElementById("input-b2b-legalname") as HTMLInputElement | null;
+    const b2bAddressInput = document.getElementById("input-b2b-address") as HTMLInputElement | null;
+    const receiptB2BRow = document.getElementById("receipt-b2b-row");
+    const receiptB2BInfo = document.getElementById("receipt-b2b-info");
+
+    if (checkboxB2B && b2bDrawer) {
+      checkboxB2B.addEventListener("change", () => {
+        b2bDrawer.style.display = checkboxB2B.checked ? "block" : "none";
+      });
+    }
 
     if (!modal || !form || !amountInput) return;
 
@@ -1130,6 +1237,11 @@ const verifiedBusinesses = PUBLIC_SERVICES.filter((s) => (s.confidenceScore ?? 0
           localStorage.setItem("user_favorites", JSON.stringify(favs));
         }
 
+        const isB2B = Boolean(checkboxB2B?.checked);
+        const b2bTaxId = b2bTaxIdInput?.value.trim() || "";
+        const b2bLegalName = b2bLegalNameInput?.value.trim() || "";
+        const b2bAddress = b2bAddressInput?.value.trim() || "";
+
         const transactions = JSON.parse(localStorage.getItem("user_honor_transactions") || "[]");
         transactions.unshift({
           invoiceId,
@@ -1142,6 +1254,10 @@ const verifiedBusinesses = PUBLIC_SERVICES.filter((s) => (s.confidenceScore ?? 0
           backerEmail,
           mode,
           idempotencyKey,
+          isB2B,
+          b2bTaxId,
+          b2bLegalName,
+          b2bAddress,
           at: new Date().toISOString(),
         });
         localStorage.setItem("user_honor_transactions", JSON.stringify(transactions));
@@ -1155,6 +1271,9 @@ const verifiedBusinesses = PUBLIC_SERVICES.filter((s) => (s.confidenceScore ?? 0
             mode,
             idempotencyKey,
             invoiceId,
+            isB2B,
+            b2bTaxId,
+            b2bLegalName,
             at: new Date().toISOString(),
           }),
         );
@@ -1173,6 +1292,15 @@ const verifiedBusinesses = PUBLIC_SERVICES.filter((s) => (s.confidenceScore ?? 0
           if (receiptTax) receiptTax.textContent = `${taxVal.toFixed(2)}€`;
           if (receiptInvoiceId) receiptInvoiceId.textContent = invoiceId;
           if (receiptDatetime) receiptDatetime.textContent = new Date().toLocaleString("es-ES");
+
+          if (checkboxB2B?.checked && receiptB2BRow && receiptB2BInfo) {
+            receiptB2BRow.style.display = "flex";
+            const name = b2bLegalNameInput?.value.trim() || "Empresa";
+            const cif = b2bTaxIdInput?.value.trim() || "NIF";
+            receiptB2BInfo.textContent = `${name} (${cif})`;
+          } else if (receiptB2BRow) {
+            receiptB2BRow.style.display = "none";
+          }
         }
       }, 1000);
     });

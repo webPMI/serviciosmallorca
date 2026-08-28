@@ -379,5 +379,18 @@
   "profile.boostSuccessSubtitle": "Ihr Mikro-Sponsoring wurde dem Community-Pool hinzugefügt und das Unternehmen wurde zu Ihren Favoriten hinzugefügt.",
   "profile.boostMetaAmount": "Betrag:",
   "profile.boostMetaBiz": "Unternehmen:",
-  "profile.boostMetaInvoice": "Rechnung ausgestellt mit 21% MwSt."
+  "profile.boostMetaInvoice": "Rechnung ausgestellt mit 21% MwSt.",
+  "honor.modal.b2bCheckbox": "Steuerrechnung für Unternehmen / Selbstständige anfordern (21% abzugsfähige MwSt.)",
+  "honor.modal.b2bTaxId": "Steuernummer des Unternehmens (CIF / NIF) *",
+  "honor.modal.b2bLegalName": "Offizieller Firmenname / Handelsname *",
+  "honor.modal.b2bAddress": "Steueradresse (Straße, PLZ, Ort) *",
+  "honor.modal.b2bCustomer": "Rechnungsempfänger Firma:",
+  "boostWall.kicker": "Bürgerlicher Autoritätspool",
+  "boostWall.title": "🏆 Muro der Community-Förderungen & Nachbarschaftshilfe",
+  "boostWall.subtitle": "Entdecken Sie die Anwohner und Kunden, die diesen Betrieb durch Mikro-Sponsoring auf die Ehrentafel gehoben haben.",
+  "boostWall.addBoostBtn": "Meinen Beitrag hinzufügen (ab 1€)",
+  "boostWall.totalRaised": "Gesammelter Community-Pool:",
+  "boostWall.backersCount": "Unterstützende Nachbarn:",
+  "boostWall.rankStatus": "Podium-Status:",
+  "boostWall.topNominated": "Hervorgehobener Betrieb"
 }

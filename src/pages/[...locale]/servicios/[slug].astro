@@ -27,6 +27,7 @@ import ServiceSidebarContact from "../../../components/ServiceSidebarContact.ast
 import ServiceClaimDeleteModals from "../../../components/ServiceClaimDeleteModals.astro";
 import ServiceShareModal from "../../../components/ServiceShareModal.astro";
 import HonorCheckoutModal from "../../../components/HonorCheckoutModal.astro";
+import CommunityBoostWall from "../../../components/CommunityBoostWall.astro";
 
 import { getServiceById } from "../../../data/services";
 import { CATEGORIES } from "../../../data/categories";
@@ -139,6 +140,14 @@ const schemaOrg = generateServiceJsonLd(service, locale, canonicalUrl);
           socialLinks={service.socialLinks}
           socialPosts={service.socialPosts}
           currentLocale={locale}
+        />
+
+        <CommunityBoostWall
+          serviceId={service.id}
+          serviceName={service.name}
+          serviceSlug={service.slug}
+          category={service.category}
+          translations={translations}
         />
 
         <ServiceReviewsSection service={service} translations={translations} prefix={prefix} />

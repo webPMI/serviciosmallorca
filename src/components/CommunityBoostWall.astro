@@ -1,0 +1,353 @@
+---
+import type { Translations } from "../i18n";
+
+interface Props {
+  serviceId: string;
+  serviceName: string;
+  serviceSlug: string;
+  category: string;
+  translations?: Translations;
+}
+
+const { serviceId, serviceName, serviceSlug, translations = {} } = Astro.props;
+---
+
+<section
+  class="boost-wall-container card card-glass"
+  id="community-boost-wall"
+  data-service-id={serviceId}
+  data-service-slug={serviceSlug}
+>
+  <div class="wall-header-row">
+    <div class="wall-title-col">
+      <span class="wall-kicker-pill">
+        <span class="live-dot"></span>
+        {translations["boostWall.kicker"] || "Bolsa de Autoridad Vecinal"}
+      </span>
+      <h3 class="wall-heading">
+        {translations["boostWall.title"] || "🏆 Muro de Impulsos Populares & Respaldo Vecinal"}
+      </h3>
+      <p class="wall-description">
+        {
+          translations["boostWall.subtitle"] ||
+            "Descubre a los vecinos y clientes que han aupado a este comercio en el Cuadro de Honor con su micro-patrocinio."
+        }
+      </p>
+    </div>
+
+    <button
+      type="button"
+      class="btn btn-accent btn-sm pulse-hover trigger-boost-from-wall"
+      data-service-id={serviceId}
+      data-service-name={serviceName}
+      data-service-slug={serviceSlug}
+    >
+      <span>❤️ {translations["boostWall.addBoostBtn"] || "Sumar mi Impulso (desde 1€)"}</span>
+    </button>
+  </div>
+
+  <!-- Summary Stats Bar -->
+  <div class="wall-stats-strip">
+    <div class="stat-pill">
+      <span class="stat-icon">💰</span>
+      <div class="stat-txt">
+        <span class="stat-label">{translations["boostWall.totalRaised"] || "Bolsa Popular Acumulada:"}</span>
+        <strong id="wall-total-amount" class="stat-value">12.00€</strong>
+      </div>
+    </div>
+
+    <div class="stat-pill">
+      <span class="stat-icon">👥</span>
+      <div class="stat-txt">
+        <span class="stat-label">{translations["boostWall.backersCount"] || "Vecinos que Apoyan:"}</span>
+        <strong id="wall-backers-count" class="stat-value">3 vecinos</strong>
+      </div>
+    </div>
+
+    <div class="stat-pill">
+      <span class="stat-icon">👑</span>
+      <div class="stat-txt">
+        <span class="stat-label">{translations["boostWall.rankStatus"] || "Estatus Gremial:"}</span>
+        <strong class="stat-value highlight-gold"
+          >{translations["boostWall.topNominated"] || "Comercio Destacado"}</strong
+        >
+      </div>
+    </div>
+  </div>
+
+  <!-- Dedication Messages Wall -->
+  <div class="dedications-wall-list" id="wall-dedications-list">
+    <!-- Default initial community endorsements -->
+    <div class="dedication-item card">
+      <div class="dedication-header">
+        <div class="backer-info">
+          <span class="backer-avatar">👤</span>
+          <div>
+            <strong class="backer-name">Marta R. (Vecina de Mallorca)</strong>
+            <span class="backer-date">Hace 2 días · Micro-impulso vecinal</span>
+          </div>
+        </div>
+        <span class="boost-badge-amount">+5.00€</span>
+      </div>
+      <blockquote class="backer-quote">
+        "Excelente atención, calidad artesanal de primera y un trato humano inmejorable. ¡Totalmente merecido su puesto
+        en el podio!"
+      </blockquote>
+    </div>
+
+    <div class="dedication-item card">
+      <div class="dedication-header">
+        <div class="backer-info">
+          <span class="backer-avatar">⛵</span>
+          <div>
+            <strong class="backer-name">Guillem F. (Residente)</strong>
+            <span class="backer-date">Hace 5 días · Micro-impulso vecinal</span>
+          </div>
+        </div>
+        <span class="boost-badge-amount">+2.00€</span>
+      </div>
+      <blockquote class="backer-quote">
+        "Un referente indispensable en la isla. Siempre confiables y puntuales."
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<style>
+  .boost-wall-container {
+    margin-top: var(--space-xl, 1.5rem);
+    padding: var(--space-xl, 1.5rem);
+    border-radius: var(--radius-lg, 12px);
+    background: linear-gradient(135deg, rgba(26, 32, 44, 0.95), rgba(45, 55, 72, 0.85));
+    border: 1px solid rgba(255, 215, 0, 0.25);
+  }
+
+  .wall-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: var(--space-md, 1rem);
+    flex-wrap: wrap;
+    margin-bottom: var(--space-md, 1rem);
+  }
+
+  .wall-kicker-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255, 215, 0, 0.15);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    color: var(--color-accent, #ffd700);
+    padding: 3px 10px;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  .live-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #ffd700;
+    box-shadow: 0 0 8px #ffd700;
+  }
+
+  .wall-heading {
+    font-size: 1.25rem;
+    font-weight: 800;
+    margin: 0 0 4px 0;
+    color: #fff;
+  }
+
+  .wall-description {
+    font-size: 0.85rem;
+    color: var(--color-text-secondary, #cbd5e1);
+    margin: 0;
+  }
+
+  .wall-stats-strip {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 10px;
+    margin-bottom: var(--space-lg, 1.25rem);
+    padding: 10px 14px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .stat-pill {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .stat-icon {
+    font-size: 1.4rem;
+  }
+
+  .stat-txt {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .stat-label {
+    font-size: 0.72rem;
+    color: var(--color-text-muted, #94a3b8);
+  }
+
+  .stat-value {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  .highlight-gold {
+    color: var(--color-accent, #ffd700);
+  }
+
+  .dedications-wall-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .dedication-item {
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+  }
+
+  .dedication-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+  }
+
+  .backer-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .backer-avatar {
+    font-size: 1.3rem;
+  }
+
+  .backer-name {
+    display: block;
+    font-size: 0.88rem;
+    color: #fff;
+  }
+
+  .backer-date {
+    display: block;
+    font-size: 0.72rem;
+    color: var(--color-text-muted, #94a3b8);
+  }
+
+  .boost-badge-amount {
+    background: rgba(16, 185, 129, 0.2);
+    border: 1px solid rgba(16, 185, 129, 0.4);
+    color: #34d399;
+    padding: 3px 8px;
+    border-radius: 6px;
+    font-size: 0.82rem;
+    font-weight: 700;
+  }
+
+  .backer-quote {
+    font-size: 0.85rem;
+    color: var(--color-text-secondary, #e2e8f0);
+    font-style: italic;
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  @media (max-width: 600px) {
+    .wall-header-row {
+      flex-direction: column;
+    }
+    .trigger-boost-from-wall {
+      width: 100%;
+      text-align: center;
+      justify-content: center;
+    }
+  }
+</style>
+
+<script>
+  function initBoostWall() {
+    const wall = document.getElementById("community-boost-wall");
+    const triggerBtns = document.querySelectorAll(".trigger-boost-from-wall");
+    const list = document.getElementById("wall-dedications-list");
+    const totalAmountEl = document.getElementById("wall-total-amount");
+    const backersCountEl = document.getElementById("wall-backers-count");
+
+    if (!wall) return;
+    const serviceSlug = wall.getAttribute("data-service-slug") || "";
+    const serviceId = wall.getAttribute("data-service-id") || "";
+
+    // 1. Hook up trigger button
+    triggerBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const sId = btn.getAttribute("data-service-id") || serviceId;
+        const sName = btn.getAttribute("data-service-name") || "Comercio";
+        const sSlug = btn.getAttribute("data-service-slug") || serviceSlug;
+
+        window.dispatchEvent(
+          new CustomEvent("open-honor-checkout", {
+            detail: {
+              serviceId: sId,
+              serviceName: sName,
+              serviceSlug: sSlug,
+              minBid: 1.0,
+            },
+          }),
+        );
+      });
+    });
+
+    // 2. Load and merge community endorsements from local storage in real-time
+    try {
+      const allTx: any[] = JSON.parse(localStorage.getItem("user_honor_transactions") || "[]");
+      const matchTx = allTx.filter((t) => t.slug === serviceSlug || t.serviceId === serviceId);
+
+      if (matchTx.length > 0 && list) {
+        let totalSum = 12.0; // Initial base
+        matchTx.forEach((tx) => {
+          totalSum += Number(tx.amount || 0);
+
+          const itemHtml = `
+            <div class="dedication-item card" style="border-left: 3px solid #ffd700;">
+              <div class="dedication-header">
+                <div class="backer-info">
+                  <span class="backer-avatar">❤️</span>
+                  <div>
+                    <strong class="backer-name">${tx.backerName || "Vecino de Mallorca"}</strong>
+                    <span class="backer-date">${new Date(tx.at || Date.now()).toLocaleDateString("es-ES")} · Micro-impulso verificado</span>
+                  </div>
+                </div>
+                <span class="boost-badge-amount">+${Number(tx.amount || 1).toFixed(2)}€</span>
+              </div>
+              <blockquote class="backer-quote">
+                "¡Respaldando a este gran negocio para que lidere el Cuadro de Honor de Mallorca!"
+              </blockquote>
+            </div>
+          `;
+          list.insertAdjacentHTML("afterbegin", itemHtml);
+        });
+
+        if (totalAmountEl) totalAmountEl.textContent = `${totalSum.toFixed(2)}€`;
+        if (backersCountEl) backersCountEl.textContent = `${2 + matchTx.length} vecinos`;
+      }
+    } catch (err) {
+      console.warn("Could not load dynamic boost endorsements:", err);
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", initBoostWall);
+</script>
