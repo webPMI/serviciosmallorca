@@ -36,6 +36,7 @@
     "curate": "node --experimental-strip-types scripts/curate-business.ts",
     "gate:check": "node --experimental-strip-types -e \"import('./src/lib/verificationPipeline.ts').then(m=>console.log('✅ Verification gate:', m.VERIFICATION_GATE))\"",
     "check": "npm run lint && npm run typecheck && npm test && npm run validate:taxonomy",
+    "gemini:bridge": "node --experimental-strip-types scripts/gemini-bridge.ts",
     "prepare": "husky"
   },
   "dependencies": {

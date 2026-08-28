@@ -27,3 +27,6 @@ pnpm-debug.log*
 .wrangler/
 
 coverage/
+
+# Gemini Bridge — registro local de comunicación IA⇄Gemini (datos privados, no subir nunca)
+.gemini-bridge/

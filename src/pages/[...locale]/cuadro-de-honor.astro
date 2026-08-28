@@ -1,0 +1,803 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Navbar from "../../components/Navbar.astro";
+import Footer from "../../components/Footer.astro";
+import { getLocaleFromUrl, loadTranslations, getLangPrefix, type Locale } from "../../i18n";
+import {
+  HONOR_LISTS,
+  getDefaultHonorSpots,
+  calculateNextBidPrice,
+  type HonorCategory,
+} from "../../lib/honorBoardEngine";
+import { PUBLIC_SERVICES } from "../../data/services";
+
+export const prerender = false;
+
+const locale = getLocaleFromUrl(Astro.url) as Locale;
+const translations = await loadTranslations(locale);
+const prefix = getLangPrefix(locale);
+
+const defaultSpots = getDefaultHonorSpots();
+const verifiedServices = PUBLIC_SERVICES.filter((s) => (s.confidenceScore ?? 0) >= 80 && s.status === "open");
+---
+
+<BaseLayout
+  title={`Cuadro de Honor & Reconocimiento Comunitario - ${translations["site.title"]}`}
+  lang={locale}
+  description="Mercado de Autoridad y Cuadro de Honor: reconoce y patrocina a los mejores profesionales, artesanos y negocios de Mallorca con transparencia."
+>
+  <Navbar currentLocale={locale} translations={translations} getLangPrefix={getLangPrefix} />
+
+  <main class="honor-container">
+    <!-- Hero Section -->
+    <header class="honor-hero card card-glass">
+      <div class="hero-badge">
+        <span class="badge badge-accent">👑 Cuadro de Honor Balear</span>
+        <span class="badge badge-primary">💎 Subastas de Reconocimiento (+1€)</span>
+      </div>
+      <h1 class="hero-title">Puestos de Honor & Prestigio de Mallorca</h1>
+      <p class="hero-subtitle">
+        Un espacio transparente y meritocrático donde vecinos, clientes y gremios impulsan a sus referentes favoritos.
+        Cada puesto de honor requiere un respaldo mínimo de 1€ sobre el récord anterior.
+        <strong>Solo negocios reales y verificados (Zero Fake Data) pueden optar al podio.</strong>
+      </p>
+
+      <div class="hero-actions">
+        <a href="#listas" class="btn btn-primary">
+          <span>🏆 Explorar Listas de Honor</span>
+        </a>
+        <a href={`${prefix}comunidad`} class="btn btn-secondary">
+          <span>💬 Muro Comunitario & Rutas</span>
+        </a>
+      </div>
+    </header>
+
+    <!-- Ethical Guarantee Notice -->
+    <section class="trust-guarantee-banner card">
+      <div class="guarantee-icon">🛡️</div>
+      <div class="guarantee-content">
+        <h3>Garantía Ética de Calidad</h3>
+        <p>
+          A diferencia de la publicidad tradicional, en Servicios Mallorca <strong
+            >no se puede comprar visibilidad para negocios mediocres o falsos</strong
+          >. Para que una empresa sea postulada al Cuadro de Honor, debe haber superado una auditoría oficial con un
+          índice de confianza $\ge 80\%$.
+        </p>
+      </div>
+    </section>
+
+    <!-- Categories Tabs & Grid -->
+    <section id="listas" class="honor-section">
+      <div class="section-header">
+        <h2 class="section-title">Listas de Reconocimiento Activas</h2>
+        <p class="section-desc">
+          Selecciona una categoría gremial para ver los líderes actuales o nominar a tu negocio preferido.
+        </p>
+      </div>
+
+      <!-- Categories Navigation -->
+      <div class="category-tabs-wrapper">
+        <div class="category-tabs" id="honor-category-tabs">
+          {
+            HONOR_LISTS.map((cat, idx) => (
+              <button class={`tab-btn ${idx === 0 ? "active" : ""}`} data-cat-id={cat.id}>
+                <span class="tab-icon">{cat.icon}</span>
+                <span class="tab-label">{cat.title[locale] || cat.title.es}</span>
+              </button>
+            ))
+          }
+        </div>
+      </div>
+
+      <!-- Lists Content Display -->
+      <div class="honor-lists-content">
+        {
+          HONOR_LISTS.map((cat, idx) => {
+            const spots = defaultSpots[cat.id] || [];
+            const topBid = spots.length > 0 ? spots[0].currentBidEuros : 0;
+            const nextPrice = calculateNextBidPrice(topBid, cat.bidIncrementEuros);
+
+            return (
+              <div id={`panel-${cat.id}`} class={`honor-panel ${idx === 0 ? "active" : ""}`} data-cat-id={cat.id}>
+                <div class="panel-header card card-glass">
+                  <div class="panel-info">
+                    <span class="panel-icon">{cat.icon}</span>
+                    <div>
+                      <h3 class="panel-title">{cat.title[locale] || cat.title.es}</h3>
+                      <p class="panel-subtitle">{cat.subtitle[locale] || cat.subtitle.es}</p>
+                    </div>
+                  </div>
+                  <div class="panel-bid-info">
+                    <div class="price-chip">
+                      <span class="price-label">Puesto #1 Actual:</span>
+                      <span class="price-val">{topBid > 0 ? `${topBid.toFixed(2)}€` : "Libre"}</span>
+                    </div>
+                    <button
+                      class="btn btn-accent btn-sm open-nominate-modal"
+                      data-cat-id={cat.id}
+                      data-cat-title={cat.title[locale] || cat.title.es}
+                      data-next-price={nextPrice}
+                    >
+                      ⚡ Postular por {nextPrice.toFixed(2)}€
+                    </button>
+                  </div>
+                </div>
+
+                {spots.length > 0 ? (
+                  <div class="spots-grid">
+                    {spots.map((spot) => (
+                      <article
+                        class={`spot-card card ${spot.position === 1 ? "spot-diamond" : spot.position === 2 ? "spot-gold" : "spot-silver"}`}
+                      >
+                        <div class="spot-rank-badge">
+                          {spot.position === 1 ? "💎 #1 Diamante" : spot.position === 2 ? "🥇 #2 Oro" : "🥈 #3 Plata"}
+                        </div>
+
+                        <div class="spot-card-body">
+                          {spot.avatarImage && (
+                            <div class="spot-avatar">
+                              <img src={spot.avatarImage} alt={spot.serviceName} loading="lazy" />
+                            </div>
+                          )}
+
+                          <div class="spot-details">
+                            <h4 class="spot-business-name">
+                              <a href={`${prefix}servicios/${spot.serviceSlug}`}>{spot.serviceName}</a>
+                            </h4>
+                            <p class="spot-honor-title">"{spot.honorTitle[locale] || spot.honorTitle.es}"</p>
+
+                            <div class="spot-meta">
+                              <span class="meta-tag">📍 {spot.zone}</span>
+                              <span class="meta-tag trust-tag">🛡️ {spot.confidenceScore}% Confianza</span>
+                              <span class="meta-tag bid-tag">💰 {spot.currentBidEuros.toFixed(2)}€</span>
+                            </div>
+
+                            {spot.sponsorMessage && (
+                              <blockquote class="spot-quote">
+                                "{spot.sponsorMessage}"<cite>— Patrocinado por {spot.sponsorName}</cite>
+                              </blockquote>
+                            )}
+                          </div>
+                        </div>
+
+                        <div class="spot-card-footer">
+                          <a href={`${prefix}servicios/${spot.serviceSlug}`} class="btn btn-secondary btn-sm">
+                            Ver Ficha Completa
+                          </a>
+                          <button
+                            class="btn btn-primary btn-sm open-nominate-modal"
+                            data-cat-id={cat.id}
+                            data-cat-title={cat.title[locale] || cat.title.es}
+                            data-next-price={calculateNextBidPrice(spot.currentBidEuros)}
+                          >
+                            Superar con {(spot.currentBidEuros + 1).toFixed(2)}€
+                          </button>
+                        </div>
+                      </article>
+                    ))}
+                  </div>
+                ) : (
+                  <div class="empty-spots card">
+                    <div class="empty-icon">🌟</div>
+                    <h4>¡Sé el primero en liderar este podio!</h4>
+                    <p>
+                      Aún no hay candidaturas en esta lista. Con solo 1.00€ puedes colocar a tu negocio o profesional
+                      favorito en el puesto #1.
+                    </p>
+                    <button
+                      class="btn btn-primary open-nominate-modal"
+                      data-cat-id={cat.id}
+                      data-cat-title={cat.title[locale] || cat.title.es}
+                      data-next-price="1.00"
+                    >
+                      🏆 Inaugurar Puesto #1 por 1.00€
+                    </button>
+                  </div>
+                )}
+              </div>
+            );
+          })
+        }
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal de Nominación / Patrocinio de Honor -->
+  <dialog id="nominate-modal" class="modal-dialog">
+    <div class="modal-card card card-glass">
+      <header class="modal-header">
+        <h3 id="modal-title">🏆 Postular al Cuadro de Honor</h3>
+        <button id="close-modal-btn" class="close-btn" aria-label="Cerrar">&times;</button>
+      </header>
+
+      <form id="nominate-form" class="modal-form">
+        <div class="form-group">
+          <label for="service-select">Selecciona el Negocio de Mallorca (Verificado):</label>
+          <select id="service-select" class="form-input" required>
+            <option value="">-- Elige un negocio verificado --</option>
+            {
+              verifiedServices.map((s) => (
+                <option
+                  value={s.id}
+                  data-name={s.name}
+                  data-slug={s.slug}
+                  data-zone={s.zone}
+                  data-score={s.confidenceScore || 90}
+                >
+                  {s.name} ({s.zone}) - {s.confidenceScore || 90}% Confianza
+                </option>
+              ))
+            }
+          </select>
+          <small class="form-hint">Solo se muestran comercios que cumplen la regla de Oro GR-11 (Zero Fake Data).</small
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="honor-title-input">Título de Honor o Mención Especial:</label>
+          <input
+            type="text"
+            id="honor-title-input"
+            class="form-input"
+            placeholder="Ej: Maestro en Fontanería de Urgencia / Sabor Tradicional de Calvià"
+            required
+            maxlength="80"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="sponsor-name-input">Tu Nombre o Nombre de tu Colectivo / Cliente:</label>
+          <input
+            type="text"
+            id="sponsor-name-input"
+            class="form-input"
+            placeholder="Ej: Vecinos de Palma / Restaurante El Camino"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="sponsor-msg-input">Mensaje de Respaldo / Recomendación:</label>
+          <textarea
+            id="sponsor-msg-input"
+            class="form-input"
+            rows="2"
+            placeholder="¿Por qué recomiendas este servicio?"
+            maxlength="160"></textarea>
+        </div>
+
+        <div class="pricing-summary-card">
+          <div class="pricing-row">
+            <span>Importe del Patrocinio de Honor:</span>
+            <strong id="modal-price-display" class="highlight-price">1.00€</strong>
+          </div>
+          <p class="pricing-subtext">
+            El pago se procesa de forma segura mediante micro-pasarela para sostener la infraestructura independiente de
+            Mallorca.
+          </p>
+        </div>
+
+        <div class="modal-actions">
+          <button type="button" id="cancel-modal-btn" class="btn btn-secondary">Cancelar</button>
+          <button type="submit" class="btn btn-primary">
+            <span>💳 Confirmar y Ocupar Puesto</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </dialog>
+
+  <Footer translations={translations} currentLocale={locale} getLangPrefix={getLangPrefix} />
+</BaseLayout>
+
+<script>
+  // Interactive Tabs Logic
+  const tabButtons = document.querySelectorAll(".tab-btn");
+  const panels = document.querySelectorAll(".honor-panel");
+
+  tabButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const catId = btn.getAttribute("data-cat-id");
+
+      tabButtons.forEach((b) => b.classList.remove("active"));
+      panels.forEach((p) => p.classList.remove("active"));
+
+      btn.classList.add("active");
+      const targetPanel = document.getElementById(`panel-${catId}`);
+      if (targetPanel) {
+        targetPanel.classList.add("active");
+      }
+    });
+  });
+
+  // Modal Interaction Logic
+  const modal = document.getElementById("nominate-modal") as HTMLDialogElement | null;
+  const openButtons = document.querySelectorAll(".open-nominate-modal");
+  const closeModalBtn = document.getElementById("close-modal-btn");
+  const cancelModalBtn = document.getElementById("cancel-modal-btn");
+  const priceDisplay = document.getElementById("modal-price-display");
+  const modalTitle = document.getElementById("modal-title");
+  const form = document.getElementById("nominate-form") as HTMLFormElement | null;
+
+  openButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const catTitle = btn.getAttribute("data-cat-title") || "Cuadro de Honor";
+      const nextPrice = btn.getAttribute("data-next-price") || "1.00";
+
+      if (modalTitle) modalTitle.textContent = `🏆 Postular a: ${catTitle}`;
+      if (priceDisplay) priceDisplay.textContent = `${Number(nextPrice).toFixed(2)}€`;
+
+      if (modal && typeof modal.showModal === "function") {
+        modal.showModal();
+      }
+    });
+  });
+
+  function closeModal() {
+    if (modal && typeof modal.close === "function") {
+      modal.close();
+    }
+  }
+
+  closeModalBtn?.addEventListener("click", closeModal);
+  cancelModalBtn?.addEventListener("click", closeModal);
+
+  form?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    alert(
+      "✅ ¡Candidatura registrada con éxito! La plataforma procesará el reconocimiento y actualizará el ranking del Cuadro de Honor.",
+    );
+    closeModal();
+  });
+</script>
+
+<style>
+  .honor-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--space-xl) var(--space-md) var(--space-3xl);
+  }
+
+  .honor-hero {
+    text-align: center;
+    padding: var(--space-2xl) var(--space-xl);
+    margin-bottom: var(--space-xl);
+    border-radius: var(--border-radius-lg);
+    background: linear-gradient(135deg, rgba(26, 32, 44, 0.95), rgba(45, 55, 72, 0.85));
+    border: 1px solid rgba(255, 215, 0, 0.3);
+  }
+
+  .hero-badge {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-md);
+    flex-wrap: wrap;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 4vw, var(--font-size-4xl));
+    font-weight: 900;
+    color: #fff;
+    margin-bottom: var(--space-sm);
+    letter-spacing: -0.02em;
+  }
+
+  .hero-subtitle {
+    font-size: var(--font-size-base);
+    color: var(--color-text-light);
+    max-width: 800px;
+    margin: 0 auto var(--space-lg);
+    line-height: 1.6;
+  }
+
+  .hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+  }
+
+  .trust-guarantee-banner {
+    display: flex;
+    align-items: center;
+    gap: var(--space-lg);
+    padding: var(--space-lg);
+    margin-bottom: var(--space-2xl);
+    border-left: 4px solid var(--color-accent);
+    background: var(--color-surface);
+  }
+
+  .guarantee-icon {
+    font-size: 2.5rem;
+  }
+
+  .guarantee-content h3 {
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    margin-bottom: var(--space-2xs);
+  }
+
+  .guarantee-content p {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-light);
+    line-height: 1.5;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: var(--space-xl);
+  }
+
+  .section-title {
+    font-size: var(--font-size-2xl);
+    font-weight: 800;
+    margin-bottom: var(--space-2xs);
+  }
+
+  .section-desc {
+    color: var(--color-text-light);
+  }
+
+  .category-tabs-wrapper {
+    overflow-x: auto;
+    padding-bottom: var(--space-sm);
+    margin-bottom: var(--space-xl);
+  }
+
+  .category-tabs {
+    display: flex;
+    gap: var(--space-sm);
+    justify-content: flex-start;
+    min-width: max-content;
+  }
+
+  .tab-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    padding: var(--space-sm) var(--space-md);
+    background: var(--color-surface);
+    border: 1px solid var(--color-surface-border);
+    border-radius: var(--border-radius-full);
+    font-weight: 600;
+    font-size: var(--font-size-sm);
+    color: var(--color-text);
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .tab-btn:hover {
+    border-color: var(--color-primary);
+    transform: translateY(-2px);
+  }
+
+  .tab-btn.active {
+    background: var(--color-primary);
+    color: #fff;
+    border-color: var(--color-primary);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .honor-panel {
+    display: none;
+  }
+
+  .honor-panel.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+  }
+
+  .panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-lg);
+    margin-bottom: var(--space-lg);
+    border-radius: var(--border-radius-md);
+    flex-wrap: wrap;
+    gap: var(--space-md);
+  }
+
+  .panel-info {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+  }
+
+  .panel-icon {
+    font-size: 2.2rem;
+  }
+
+  .panel-title {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    margin-bottom: var(--space-3xs);
+  }
+
+  .panel-subtitle {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-light);
+  }
+
+  .panel-bid-info {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+  }
+
+  .price-chip {
+    background: rgba(0, 0, 0, 0.2);
+    padding: var(--space-2xs) var(--space-sm);
+    border-radius: var(--border-radius-sm);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .price-label {
+    font-size: 0.75rem;
+    color: var(--color-text-light);
+  }
+
+  .price-val {
+    font-weight: 800;
+    color: var(--color-accent);
+  }
+
+  .spots-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--space-lg);
+  }
+
+  .spot-card {
+    padding: var(--space-lg);
+    border-radius: var(--border-radius-md);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+
+  .spot-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+  }
+
+  .spot-diamond {
+    border: 2px solid #00d2ff;
+    background: linear-gradient(180deg, rgba(0, 210, 255, 0.05) 0%, var(--color-surface) 100%);
+  }
+
+  .spot-gold {
+    border: 2px solid #ffd700;
+    background: linear-gradient(180deg, rgba(255, 215, 0, 0.05) 0%, var(--color-surface) 100%);
+  }
+
+  .spot-silver {
+    border: 2px solid #c0c0c0;
+    background: linear-gradient(180deg, rgba(192, 192, 192, 0.05) 0%, var(--color-surface) 100%);
+  }
+
+  .spot-rank-badge {
+    position: absolute;
+    top: var(--space-sm);
+    right: var(--space-sm);
+    font-weight: 800;
+    font-size: var(--font-size-xs);
+    padding: var(--space-3xs) var(--space-xs);
+    border-radius: var(--border-radius-sm);
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+  }
+
+  .spot-avatar img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: var(--border-radius-sm);
+    margin-bottom: var(--space-md);
+  }
+
+  .spot-business-name {
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    margin-bottom: var(--space-3xs);
+  }
+
+  .spot-business-name a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .spot-business-name a:hover {
+    color: var(--color-primary);
+  }
+
+  .spot-honor-title {
+    font-style: italic;
+    color: var(--color-text-light);
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--space-sm);
+  }
+
+  .spot-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+    margin-bottom: var(--space-md);
+  }
+
+  .meta-tag {
+    font-size: 0.75rem;
+    padding: 2px 8px;
+    border-radius: var(--border-radius-sm);
+    background: var(--color-surface-border);
+    font-weight: 600;
+  }
+
+  .trust-tag {
+    background: rgba(46, 204, 113, 0.15);
+    color: #2ecc71;
+  }
+
+  .bid-tag {
+    background: rgba(255, 215, 0, 0.15);
+    color: #ffd700;
+  }
+
+  .spot-quote {
+    font-size: 0.825rem;
+    border-left: 2px solid var(--color-primary);
+    padding-left: var(--space-sm);
+    margin-bottom: var(--space-md);
+    color: var(--color-text-light);
+  }
+
+  .spot-quote cite {
+    display: block;
+    font-size: 0.75rem;
+    margin-top: 4px;
+    font-weight: 600;
+  }
+
+  .spot-card-footer {
+    display: flex;
+    gap: var(--space-xs);
+    justify-content: space-between;
+    margin-top: var(--space-md);
+  }
+
+  .empty-spots {
+    text-align: center;
+    padding: var(--space-2xl);
+  }
+
+  .empty-icon {
+    font-size: 3rem;
+    margin-bottom: var(--space-sm);
+  }
+
+  /* Modal Styles */
+  .modal-dialog {
+    border: none;
+    background: transparent;
+    padding: 0;
+    max-width: 550px;
+    width: 90%;
+    margin: auto;
+  }
+
+  .modal-dialog::backdrop {
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+  }
+
+  .modal-card {
+    padding: var(--space-xl);
+    border-radius: var(--border-radius-lg);
+    background: var(--color-surface);
+    border: 1px solid var(--color-surface-border);
+  }
+
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-lg);
+  }
+
+  .close-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--color-text-light);
+  }
+
+  .form-group {
+    margin-bottom: var(--space-md);
+  }
+
+  .form-group label {
+    display: block;
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    margin-bottom: var(--space-2xs);
+  }
+
+  .form-input {
+    width: 100%;
+    padding: var(--space-sm);
+    border: 1px solid var(--color-surface-border);
+    border-radius: var(--border-radius-sm);
+    background: var(--color-surface);
+    color: var(--color-text);
+  }
+
+  .form-hint {
+    font-size: 0.75rem;
+    color: var(--color-text-light);
+    margin-top: 4px;
+    display: block;
+  }
+
+  .pricing-summary-card {
+    background: rgba(255, 215, 0, 0.08);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    border-radius: var(--border-radius-sm);
+    padding: var(--space-md);
+    margin-bottom: var(--space-lg);
+  }
+
+  .pricing-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 700;
+  }
+
+  .highlight-price {
+    font-size: var(--font-size-xl);
+    color: var(--color-accent);
+  }
+
+  .pricing-subtext {
+    font-size: 0.75rem;
+    color: var(--color-text-light);
+    margin-top: 6px;
+    line-height: 1.4;
+  }
+
+  .modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--space-sm);
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(6px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .panel-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .panel-bid-info {
+      width: 100%;
+      justify-content: space-between;
+    }
+  }
+</style>

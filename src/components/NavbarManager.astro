@@ -59,6 +59,12 @@ const homeUrl = prefix || "/";
         <a href={`${homeUrl}comunidad`} class:list={["nav-link", { active: currentPath.includes("/comunidad") }]}>
           💬 {translations["nav.community"] || "Comunidad"}
         </a>
+        <a
+          href={`${homeUrl}cuadro-de-honor`}
+          class:list={["nav-link", { active: currentPath.includes("/cuadro-de-honor") }]}
+        >
+          👑 {translations["nav.honor"] || "Cuadro de Honor"}
+        </a>
         <a href={`${homeUrl}blog`} class:list={["nav-link", { active: currentPath.includes("/blog") }]}>
           📰 {translations["nav.blog"] || "Blog"}
         </a>
