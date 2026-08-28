@@ -1,164 +1,188 @@
 # 📢 Voz de la Comunidad: Sistema de Feedback, Quejas, Reclamaciones y Buenas Noticias
 
-> **Documento de Especificación y Diseño Técnico para la Futura Implementación (Roadmap 2026)**  
-> **Objetivo:** Dotar a Servicios Mallorca de un canal bidireccional y transparente donde residentes, turistas y propietarios expresen qué necesita la plataforma, qué errores o fallos detectan y qué comercios o experiencias destacan positivamente.
+> **Documento Maestro de Arquitectura, Especificación de IA y Plan de Trabajo (Roadmap 2026)**  
+> **Objetivo:** Dotar a Servicios Mallorca de un canal bidireccional, ético y transparente donde residentes, visitantes y comercios puedan expresar qué nos falta, qué fallos detectan y qué buenas experiencias destacan, integrando un panel de administración visual y un agente de IA autónomo para la resolución automática de incidencias.
 
 ---
 
-## 🎯 1. Visión y Propósito Estratégico
+## 🧭 1. Puntos de Acceso e Integración en la UI (Omnicanalidad)
 
-Para mantener un ecosistema vivo, ético y líder en las Islas Baleares, la plataforma debe escuchar activamente a sus usuarios:
+Para garantizar la máxima usabilidad sin saturar la navegación, el sistema será accesible desde 5 puntos estratégicos:
 
-1. **Detectar qué nos hace falta:** Demandas de nuevos oficios, gremios en pueblos remotos de la Part Forana (Tramuntana, Pla, Raiguer, Migjorn, Llevant) o funcionalidades ausentes en la web.
-2. **Identificar qué nos falla:** Discrepancias en fichas de negocios (teléfonos cambiados, horarios no sincronizados, negocios traspasados/cerrados) o fallos de usabilidad.
-3. **Celebrar lo que más gusta (Buenas Noticias):** Dar visibilidad a historias de excelencia artesanal, atención sobresaliente y comercios tradicionales que enorgullecen a Mallorca.
+```mermaid
+graph LR
+    Nav[1. Navbar & Drawer] -->|Enlace 'Comunidad'| HubPage[Página /buzon-comunitario]
+    Footer[2. Footer Global] -->|Enlaces directos| HubPage
+    ServicePage[3. Ficha de Negocio] -->|Botones de Acción| Modal[Modal Contextual 'Reportar / Agradecer']
+    FloatBtn[4. Botón Flotante / Widget] --> Modal
+    AdminNav[5. Navbar Admin /admin/feedback] --> AdminPanel[Panel de Control Visual & Triage]
+```
+
+### Detalle de Puntos de Entrada
+
+1. **Navbar & Drawer Móvil ([`NavbarPublic.astro`](file:///c:/Users/ink.enzo/Desktop/p/servicios-mallorca/src/components/NavbarPublic.astro)):**
+   - Nuevo ítem en el menú: `💬 Comunidad` ➔ Despliega opciones: _Buzón de Sugerencias_, _Buenas Noticias de Mallorca_ y _Bolsa de Empleo_.
+2. **Ficha de Servicio ([`src/pages/[...locale]/servicios/[slug].astro`](file:///c:/Users/ink.enzo/Desktop/p/servicios-mallorca/src/pages/[...locale]/servicios/[slug].astro)):**
+   - Botón `⚠️ Informar de un error en esta ficha` (precarga automáticamente el ID, nombre y zona del comercio).
+   - Botón `🌟 Dejar un Agradecimiento o Buena Noticia` (vincula el testimonio al negocio).
+3. **Pie de Página ([`Footer.astro`](file:///c:/Users/ink.enzo/Desktop/p/servicios-mallorca/src/components/Footer.astro)):**
+   - Enlace `Buzón Ciudadano & Feedback`, `¿Qué nos falta?`, `Reportar Incidencia`.
+4. **Página Dedicada Cuatrilingüe:**
+   - `/es/comunidad/buzon`, `/en/community/voice`, `/ca/comunitat/veu`, `/de/community/stimme`.
+5. **Panel del Administrador ([`NavbarAdmin.astro`](file:///c:/Users/ink.enzo/Desktop/p/servicios-mallorca/src/components/NavbarAdmin.astro)):**
+   - Acceso a `/admin/feedback` con badge numérico en tiempo real que indica reclamaciones o sugerencias pendientes de revisión.
 
 ---
 
-## 🧭 2. Tipologías de Mensajes de la Comunidad
+## 📋 2. WBS: Lista Maestra de Tareas y Subtareas por Fases
 
-El sistema categorizará el feedback en **4 canales bien diferenciados**:
+```text
+[ ] FASE 0: Arquitectura de Datos & Backend D1 / Firestore
+    [ ] 0.1 Definir migración SQL D1 en scripts/migrations/0004_community_voice.sql
+    [ ] 0.2 Crear interfaces TypeScript y validadores Zod en src/lib/communityVoiceEngine.ts
+    [ ] 0.3 Configurar rate-limiting por IP (máx 3 envíos/hora anónimos) y Cloudflare Turnstile
+    [ ] 0.4 Suite de tests unitarios tests/unit/communityVoiceEngine.test.ts
+
+[ ] FASE 1: Componentes Frontend & Endpoint de Envíos
+    [ ] 1.1 Diseñar componente modal accesible src/components/CommunityVoiceModal.astro (GR-01, GR-02, GR-07)
+    [ ] 1.2 Implementar selector dinámico de tipo (Buenas Noticias / Reclamación / Sugerencia / Bug)
+    [ ] 1.3 Integrar autocomplete de comercios verificados con aislamiento de categoría
+    [ ] 1.4 Crear endpoint SSR /api/feedback/submit.ts con logging estructurado en D1
+    [ ] 1.5 Incorporar claves i18n en es.json, en.json, ca.json, de.json (GR-04)
+
+[ ] FASE 2: Muro Público de Buenas Noticias & Testimonios de Mallorca
+    [ ] 2.1 Crear página /buenas-noticias con layout visual tipo masonry / cards
+    [ ] 2.2 Filtros por municipio (Palma, Inca, Manacor, Calvià, Sóller, etc.)
+    [ ] 2.3 Sistema de micro-reacciones éticas (❤️ Gracias, 👏 Gran Trabajo, 🏆 Referente Local)
+    [ ] 2.4 Esquema SEO Review / Testimonial en JSON-LD para Google Search
+
+[ ] FASE 3: Panel de Administración Visual (/admin/feedback)
+    [ ] 3.1 Crear vista protegida src/pages/[...locale]/admin/feedback.astro con rol 'admin'
+    [ ] 3.2 Tabla dinámica con filtros por tipo, estado, sentimiento y municipio
+    [ ] 3.3 Acciones rápidas: [Aprobar Muro], [Solicitar Auditoría IA], [Resolver], [Descartar Spam]
+    [ ] 3.4 Métricas visuales: NPS de la plataforma, tiempo medio de resolución de quejas y mapa de calor
+    [ ] 3.5 Contador de alertas pendientes en NavbarAdmin.astro
+
+[ ] FASE 4: Agente de IA para Auditoría y Auto-Reparación de Fichas
+    [ ] 4.1 Crear motor de análisis semántico en scripts/ai-feedback-analyst.ts vía GeminiBridge
+    [ ] 4.2 Extracción de entidades (teléfono nuevo, horario reportado, cierre permanente)
+    [ ] 4.3 Verificación cruzada automática con scrapers de Google Maps / Bing
+    [ ] 4.4 Generación de propuestas de parches (Git Diff) en src/data/services/
+    [ ] 4.5 Notificación en DevTools y Panel Admin con botón 'Aplicar Corrección Sugerida (1-Click)'
+```
+
+---
+
+## 🖥️ 3. Panel Visual de Administración (`/admin/feedback`)
+
+El Administrador dispondrá de una consola de gestión intuitiva y en tiempo real:
 
 ```mermaid
 graph TD
-    User([Usuario / Vecino de Mallorca]) --> Selector{¿Qué deseas compartir?}
-    Selector -->|🌟 Experiencia Positiva| GoodNews[Buenas Noticias & Agradecimientos]
-    Selector -->|📢 Incidencia de Comercio| BizClaim[Reclamación / Discrepancia de Negocio]
-    Selector -->|💡 Propuesta de Mejora| FeatureRequest[Sugerencias de Plataforma]
-    Selector -->|🐛 Incidencia Técnica| BugReport[Reporte de Error o Bug]
+    Admin[Administrador Autenticado] --> AdminView[Dashboard /admin/feedback]
+    AdminView --> Stats[Barra de KPIs: Total Pendientes, NPS, Reclamaciones Abiertas]
+    AdminView --> FilterBar[Filtros: Tipo, Municipio, Nivel de Urgencia, Sentimiento IA]
+    AdminView --> FeedList[Listado Interactivo de Feedback]
 
-    GoodNews --> Moderation[Moderación & Muro Público de Gratitud]
-    BizClaim --> AuditPipeline[Disparador de Auditoría / Protocolo GR-11]
-    FeatureRequest --> Backlog[Panel de Innovación & Demanda Local]
-    BugReport --> D1Telemetry[Registro D1 Telemetry / Error Tracking]
+    FeedList -->|Acción 1| BtnApprove[Aprobar para Muro de Buenas Noticias]
+    FeedList -->|Acción 2| BtnAiAudit[Ejecutar Auditoría con Agente IA]
+    FeedList -->|Acción 3| BtnResolve[Marcar Resuelto & Notificar Usuario]
+    FeedList -->|Acción 4| BtnSpam[Bloquear IP / Descartar Spam]
 ```
 
-### 🌟 A. Buenas Noticias & Muro de Gratitud Local
+### Características de la Consola de Administración:
 
-- **Propósito:** Reconocer públicamente el buen hacer de negocios, profesionales o eventos de Mallorca.
-- **Campos:** Comercio vinculado (opcional), Municipio, Historia/Experiencia, Fotos reales (opcional), Nombre/Alias del autor.
-- **Destino:** Se publican (tras moderación anti-spam) en el _Muro de Buenas Noticias de Mallorca_ y suman puntos al cálculo de confianza popular del negocio.
-
-### 📢 B. Reclamaciones & Discrepancias sobre Fichas
-
-- **Propósito:** Denunciar información inexacta o mala praxis para mantener la regla **Zero Fake Data (GR-11)**.
-- **Motivos frecuentes:**
-  - `Negocio cerrado permanentemente o traspasado`
-  - `Teléfono o dirección errónea`
-  - `Horarios publicados no coinciden con la realidad`
-  - `Precios o condiciones abusivas no declaradas`
-- **Destino:** Crea una tarea de auditoría prioritaria en `scripts/reharvest-intelligence.ts` y notifica al titular verificado si la ficha está reclamada.
-
-### 💡 C. Sugerencias de Plataforma ("¿Qué nos hace falta?")
-
-- **Propósito:** Co-crear la evolución de Servicios Mallorca con los residentes.
-- **Ejemplos:** "Añadir filtro para restaurantes con menú celíaco en Inca", "Crear una sección para guías de senderismo local en Sóller".
-- **Destino:** Votación comunitaria (Upvotes) en el Panel de Sugerencias.
-
-### 🐛 D. Reporte Técnico de Errores ("¿Qué nos falla?")
-
-- **Propósito:** Notificar bugs en dispositivos móviles, errores visuales o enlaces rotos.
-- **Captura automática:** Dispositivo, navegador, viewport, URL actual y log contextual de consola (vía `devtools-logger.js`).
+1. **Badge en Vivo:** Si hay 3 reclamaciones sin atender, el botón de administración en el Navbar mostrará `Admin (3 🔔)`.
+2. **Clasificación por Colores de Urgencia:**
+   - 🔴 **Rojo (Crítico):** Ficha reportada como cerrada o con teléfono de emergencias erróneo.
+   - 🟡 **Amarillo (Medio):** Sugerencia de plataforma o cambio menor de horario.
+   - 🟢 **Verde (Positivo):** Buena noticia o elogio a un comercio.
+   - 🟣 **Morado (Técnico):** Bug de frontend o reporte de error 404/500.
+3. **Respuesta Pública o Privada:** El administrador puede redactar una respuesta oficial que se enviará por email al usuario o se publicará debajo del testimonio.
 
 ---
 
-## 🏗️ 3. Arquitectura Técnica y Modelo de Datos
+## 🤖 4. Conexión de Agentes de IA a la Base de Datos (Auditoría & Auto-Reparación)
 
-### Esquema de Base de Datos (Cloudflare D1 / Firestore)
+La inteligencia artificial no solo clasifica el texto, sino que **actúa como un perito digital auditor** para mantener la regla **Zero Fake Data (GR-11)** sin sobrecargar al equipo humano:
 
-```typescript
-export type FeedbackType = "GOOD_NEWS" | "BIZ_CLAIM" | "FEATURE_SUGGESTION" | "BUG_REPORT";
-export type FeedbackStatus = "PENDING_REVIEW" | "APPROVED_PUBLIC" | "IN_AUDIT" | "RESOLVED" | "DISCARDED";
+```mermaid
+sequenceDiagram
+    autonumber
+    actor User as Usuario / Vecino
+    participant API as /api/feedback/submit
+    participant D1 as Cloudflare D1
+    participant Agent as Agente IA (@curation)
+    participant Maps as Google Maps / Web Oficial
+    participant Admin as Panel Admin
 
-export interface CommunityVoiceEntry {
-  id: string; // "fb_2026_xxxx"
-  type: FeedbackType;
-  status: FeedbackStatus;
-  createdAt: string; // ISO 8601
-  locale: "es" | "en" | "ca" | "de";
+    User->>API: Envía queja ("El teléfono de Pastelería X cambió a 971-123456")
+    API->>D1: Registra entrada con status = 'PENDING_REVIEW'
+    Agent->>D1: Cron nocturno o trigger lee reportes pendientes
+    Agent->>Maps: Comprueba Google Business & Web Oficial de Pastelería X
+    Maps-->>Agent: Devuelve teléfono corroborado: +34 971 12 34 56
+    Agent->>Agent: Genera parche Git Diff para src/data/services/.../pasteleria-x.ts
+    Agent->>D1: Actualiza status = 'AI_VERIFIED_READY_TO_MERGE'
+    Agent->>Admin: Publica alerta: "Parche de corrección listo para aprobar en 1-Click"
+    Admin->>Admin: Pulsa 'Aplicar Parche' ➔ Git Commit & Deploy automático
+```
 
-  // Datos del Emisor (RGPD Friendly / GR-13)
-  userUid?: string;
-  userName: string; // "Miquel B." o "Anónimo"
-  userEmail?: string; // Para avisar cuando su propuesta sea atendida
-  isResident: boolean; // ¿Residente en Mallorca?
+### Capacidades del Agente IA (`@curation` + `GeminiBridge`):
 
-  // Contenido
-  title: string;
-  message: string;
-  zoneId?: string; // "palma", "manacor", "soller"...
-  serviceSlug?: string; // Negocio relacionado (si aplica)
-  sentimentScore?: number; // -1.0 (Crítico) a +1.0 (Excelente)
+1. **Detección de Guerras Comerciales & Spam:** Si un competidor envía múltiples quejas falsas sobre otro negocio desde la misma IP/patrón, el modelo detecta la anomalía, calcula un `RiskScore: 0.95` y bloquea el intento.
+2. **Prospección de Nuevos Negocios Solicitados:** Si varios usuarios solicitan _"Falta una escuela de vela en Portocolom"_, el agente ejecuta `scripts/business-intelligence-lookup.ts "Escuela Vela Portocolom"` y prepara la ficha preliminar con geolocalización balear corroborada.
+3. **Análisis de Sentimiento Cuatrilingüe:** Interpreta expresiones idiomáticas en Catalán Balear (_"Molt bon tracte i producte autèntic"_), Alemán (_"Hervorragender Handwerker"_), Inglés y Español.
 
-  // Metadatos Técnicos
-  userAgent?: string;
-  viewportSize?: string;
-  currentUrl?: string;
-  ipHash?: string; // Hash unidireccional para anti-spam
+---
 
-  // Resolución y Auditoría
-  moderatedBy?: string;
-  moderatorNotes?: string;
-  publicReply?: string; // Respuesta oficial de la plataforma
-  resolvedAt?: string;
-}
+## 🛡️ 5. Esquema de Base de Datos Cloudflare D1 (`schema_community_voice.sql`)
+
+```sql
+CREATE TABLE IF NOT EXISTS community_feedback (
+  id TEXT PRIMARY KEY,
+  type TEXT NOT NULL CHECK(type IN ('GOOD_NEWS', 'BIZ_CLAIM', 'FEATURE_SUGGESTION', 'BUG_REPORT')),
+  status TEXT NOT NULL DEFAULT 'PENDING_REVIEW' CHECK(status IN ('PENDING_REVIEW', 'APPROVED_PUBLIC', 'IN_AUDIT', 'AI_VERIFIED_READY', 'RESOLVED', 'DISCARDED')),
+  created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+  locale TEXT NOT NULL DEFAULT 'es',
+
+  -- Autor (RGPD Blindado)
+  user_name TEXT NOT NULL,
+  user_email TEXT,
+  is_resident BOOLEAN DEFAULT 0,
+  user_ip_hash TEXT NOT NULL,
+
+  -- Contenido
+  title TEXT NOT NULL,
+  message TEXT NOT NULL,
+  zone_id TEXT,
+  service_slug TEXT,
+
+  -- IA & Telemetría
+  sentiment_score REAL DEFAULT 0.0,
+  ai_audit_verdict TEXT,
+  ai_suggested_diff TEXT,
+  risk_score REAL DEFAULT 0.0,
+
+  -- Resolución
+  moderated_by TEXT,
+  moderator_notes TEXT,
+  public_reply TEXT,
+  resolved_at DATETIME
+);
+
+CREATE INDEX IF NOT EXISTS idx_feedback_status ON community_feedback(status);
+CREATE INDEX IF NOT EXISTS idx_feedback_service ON community_feedback(service_slug);
+CREATE INDEX IF NOT EXISTS idx_feedback_type ON community_feedback(type);
 ```
 
 ---
 
-## 🔒 4. Seguridad, Privacidad y Anti-Spam (GR-11 & GR-13)
+## 🥇 6. Cumplimiento de Golden Rules
 
-1. **Protección Anti-Spam y Bots:**
-   - Integración con **Cloudflare Turnstile** invisible en el formulario.
-   - Límite de envíos por IP (máximo 3 reportes por hora por usuario no registrado).
-2. **Cumplimiento RGPD (GR-13):**
-   - Casilla explícita de consentimiento para tratamiento del mensaje.
-   - Opción de publicar bajo seudónimo/alias para proteger la privacidad del usuario.
-   - Derecho de supresión inmediato previa petición.
-3. **Blindaje contra Difamaciones o Guerras Comerciales:**
-   - Las reclamaciones negativas sobre un negocio **nunca se publican automáticamente sin verificación**. Se inicia un protocolo de comprobación telefónica o revisión de fuentes oficiales antes de aplicar cualquier sanción al `confidenceScore`.
-
----
-
-## 📈 5. Impacto en el Algoritmo de Confianza (Confidence Engine)
-
-El feedback verificado retroalimenta dinámicamente la reputación del negocio en el catálogo:
-
-| Tipo de Feedback Comprobado                     | Impacto en Confidence Score | Acción Automática                                        |
-| :---------------------------------------------- | :-------------------------- | :------------------------------------------------------- |
-| **3+ Buenas Noticias Verificadas**              | 📈 +3% a +5% de Confianza   | Insignia _"Comercio Amado por la Comunidad"_             |
-| **Horario o Teléfono Corregido por Usuario**    | 🔄 Re-indexación inmediata  | Ficha actualizada con sello _"Verificada recientemente"_ |
-| **Negocio Reportado como Cerrado (Confirmado)** | 🛑 Desactivación temporal   | Marcado como `permanently_closed` (Zero Fake Data)       |
-| **Reclamación de Mal Servicio Corroborada**     | 📉 -5% a -10% de Confianza  | Notificación al propietario con opción de respuesta      |
-
----
-
-## 🚀 6. Fases de Implementación Propuestas
-
-### 📌 Fase 1: Componente Flotante & Página de Feedback `/buzon-comunitario`
-
-- Creación de [`src/components/CommunityVoiceModal.astro`](file:///c:/Users/ink.enzo/Desktop/p/servicios-mallorca/src/components/CommunityVoiceModal.astro).
-- Ruta cuatrilingüe `/es/comunidad/buzon`, `/en/community/voice`, `/ca/comunitat/veu`, `/de/community/stimme`.
-- Endpoint SSR seguro en `/api/feedback/submit.ts` con validación Zod y log en D1.
-
-### 📌 Fase 2: Muro de Buenas Noticias de Mallorca
-
-- Sección visual en la página de inicio o en `/buenas-noticias` donde se celebran historias locales y comercios destacados por los vecinos.
-- Filtros por municipio (Palma, Inca, Manacor, Calvià, Alcúdia, etc.).
-
-### 📌 Fase 3: Cuadro de Mando para Administradores
-
-- Vista protegida en `/admin/feedback` para clasificar sugerencias, aprobar buenas noticias y gestionar discrepancias de fichas.
-- Gráficos de tendencias de satisfacción y palabras clave más demandadas.
-
----
-
-## 📝 7. Checklist de Cumplimiento de Golden Rules
-
-- [x] **GR-01:** Uso estricto de variables CSS de `global.css` para el diseño de modales y tarjetas.
-- [x] **GR-02:** Responsive completo en breakpoints 480 / 640 / 768 / 1024 px.
-- [x] **GR-03:** Tipado estricto en TypeScript (`CommunityVoiceEntry`).
-- [x] **GR-04:** Textos 100% traducidos en los 4 idiomas (`es`, `en`, `ca`, `de`).
-- [x] **GR-11:** Cero reseñas falsas: verificación obligatoria antes de alterar puntuaciones de negocios.
-- [x] **GR-13:** Blindaje RGPD y cabeceras de seguridad.
-- [x] **GR-15:** Telemetría conectada a Cloudflare D1.
+- [x] **GR-01 (Estilos Centralizados):** Todos los componentes visuales usarán variables de `src/styles/global.css`.
+- [x] **GR-02 (Responsividad):** Vistas fluidas adaptadas a móviles de 480px y 640px.
+- [x] **GR-03 (TypeScript Estricto):** Tipos explícitos para todas las solicitudes y respuestas de la API.
+- [x] **GR-04 (Internacionalización):** 100% de los textos traducidos a `es`, `en`, `ca`, `de`.
+- [x] **GR-11 (Zero Fake Data):** Ninguna queja o buena noticia altera fichas ni puntuaciones sin validación estricta previa.
+- [x] **GR-13 (Seguridad & RGPD):** Anonimización de IPs y derecho de supresión de datos.
+- [x] **GR-15 (Telemetría D1):** Logs estructurados y prevención de flooding en la base de datos.
