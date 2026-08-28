@@ -245,7 +245,7 @@ describe("🔒 BLINDAJE DE PAGOS, IDEMPOTENCIA Y PREVENCIÓN DE DUPLICADOS", () 
       expect(modalContent).toContain("${prefix}profile?tab=business");
       expect(modalContent).toContain("checkout-success-view");
       // Perfil redirige a profile manteniendo query search
-      expect(perfilContent).toContain("Astro.redirect(`${prefix}profile${search}`)");
+      expect(perfilContent).toContain("${prefix}profile${search}");
     });
   });
 });

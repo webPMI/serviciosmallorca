@@ -2,6 +2,7 @@
 import type { Locale } from "../i18n";
 import { getLangPrefix } from "../i18n";
 import type { HonorCategory } from "../lib/honorBoardEngine";
+import { PUBLIC_SERVICES } from "../data/services";
 
 interface Props {
   locale?: Locale;
@@ -24,6 +25,7 @@ const {
 } = Astro.props;
 
 const prefix = getLangPrefix(locale);
+const verifiedBusinesses = PUBLIC_SERVICES.filter((s) => (s.confidenceScore ?? 0) >= 80 && s.status === "open");
 ---
 
 <!-- Modal de Checkout Premium & Impulso Comunitario -->
@@ -76,15 +78,50 @@ const prefix = getLangPrefix(locale);
       <input type="hidden" id="input-min-required" value={minBidRequired} />
       <input type="hidden" id="input-idempotency-key" name="idempotencyKey" value="" />
 
-      <!-- Business Target Indicator -->
-      <div class="business-target-card">
+      <!-- Business Target Indicator & Selector -->
+      <div class="business-target-card" id="business-target-card">
         <div class="target-icon">🏢</div>
         <div class="target-details">
-          <span class="target-label">Negocio a Impulsar:</span>
+          <div class="target-title-row">
+            <span class="target-label">Negocio a Impulsar / Posicionar:</span>
+            <button type="button" id="btn-toggle-biz-select" class="btn-change-biz"> ✏️ Elegir / Cambiar </button>
+          </div>
           <strong id="display-target-name" class="target-name">
-            {preselectedServiceName || "Seleccionar Comercio..."}
+            {preselectedServiceName || "Seleccionar Comercio de Mallorca..."}
           </strong>
         </div>
+      </div>
+
+      <!-- Verified Business Selector Dropdown -->
+      <div
+        class="form-group"
+        id="biz-selector-group"
+        style={preselectedServiceName ? "display: none;" : "display: block;"}
+      >
+        <label for="select-honor-business" class="form-label"
+          >Selecciona el Comercio Verificado (Zero Fake Data) *</label
+        >
+        <select id="select-honor-business" class="form-input form-select-biz">
+          <option value="">-- Elige el negocio que deseas aupar o posicionar --</option>
+          {
+            verifiedBusinesses.map((s) => (
+              <option
+                value={s.id}
+                data-slug={s.slug}
+                data-name={s.name}
+                data-category={s.category}
+                data-zone={s.zone}
+                data-score={s.confidenceScore || 90}
+                selected={s.id === preselectedServiceId}
+              >
+                {s.name} ({s.zone}) · {s.confidenceScore || 90}% Confianza
+              </option>
+            ))
+          }
+        </select>
+        <span class="form-helper"
+          >Solo se admiten comercios de Mallorca con auditoría oficial y score &ge; 80% (Regla GR-11).</span
+        >
       </div>
 
       <!-- User Information (Auto-Filled from AuthStore) -->
@@ -549,6 +586,44 @@ const prefix = getLangPrefix(locale);
     margin-bottom: var(--space-md, 1rem);
   }
 
+  .target-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 2px;
+  }
+
+  .btn-change-biz {
+    background: rgba(255, 215, 0, 0.12);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    color: var(--color-accent, #ffd700);
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .btn-change-biz:hover {
+    background: var(--color-accent, #ffd700);
+    color: #000;
+  }
+
+  .form-select-biz {
+    cursor: pointer;
+    background: rgba(15, 23, 42, 0.95);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    color: #fff;
+  }
+
+  .form-select-biz option {
+    background: #0f172a;
+    color: #fff;
+    padding: 8px;
+  }
+
   .target-icon {
     font-size: 1.5rem;
   }
@@ -819,7 +894,7 @@ const prefix = getLangPrefix(locale);
         if (collisionMsgText) {
           collisionMsgText.textContent = "✨ Importe disponible y conforme con la regla +1€";
         }
-        if (submitBtn && form.getAttribute("data-submitting") !== "true") {
+        if (submitBtn && form?.getAttribute("data-submitting") !== "true") {
           submitBtn.disabled = false;
         }
       }
@@ -864,12 +939,53 @@ const prefix = getLangPrefix(locale);
       if (btnSubmitText) btnSubmitText.textContent = "👑 Pujar Récord & Tomar el Puesto #1";
     });
 
-    // 5. Open Modal Trigger Dispatcher
+    // 5. Business Selector Dropdown Logic
+    const selectHonorBiz = document.getElementById("select-honor-business") as HTMLSelectElement | null;
+    const bizSelectorGroup = document.getElementById("biz-selector-group");
+    const btnToggleBiz = document.getElementById("btn-toggle-biz-select");
+
+    if (btnToggleBiz && bizSelectorGroup) {
+      btnToggleBiz.addEventListener("click", () => {
+        const isHidden = bizSelectorGroup.style.display === "none";
+        bizSelectorGroup.style.display = isHidden ? "block" : "none";
+      });
+    }
+
+    if (selectHonorBiz) {
+      selectHonorBiz.addEventListener("change", () => {
+        const opt = selectHonorBiz.options[selectHonorBiz.selectedIndex];
+        if (opt && opt.value) {
+          const bizId = opt.value;
+          const bizSlug = opt.getAttribute("data-slug") || "";
+          const bizName = opt.getAttribute("data-name") || opt.textContent?.split("·")[0].trim() || "";
+          if (serviceIdInput) serviceIdInput.value = bizId;
+          if (serviceSlugInput) serviceSlugInput.value = bizSlug;
+          if (targetNameDisplay) targetNameDisplay.textContent = bizName;
+          if (bizSelectorGroup) bizSelectorGroup.style.display = "none";
+        }
+      });
+    }
+
+    // 6. Open Modal Trigger Dispatcher
     window.addEventListener("open-honor-checkout", (e: any) => {
       const data = e.detail || {};
       if (data.serviceId && serviceIdInput) serviceIdInput.value = data.serviceId;
       if (data.serviceSlug && serviceSlugInput) serviceSlugInput.value = data.serviceSlug;
       if (data.serviceName && targetNameDisplay) targetNameDisplay.textContent = data.serviceName;
+
+      if (selectHonorBiz && data.serviceId) {
+        selectHonorBiz.value = data.serviceId;
+        if (bizSelectorGroup) bizSelectorGroup.style.display = "none";
+      } else if (bizSelectorGroup && !data.serviceId && !data.serviceSlug) {
+        bizSelectorGroup.style.display = "block";
+      }
+
+      if (data.mode === "owner_bid") {
+        tabOwner?.click();
+      } else if (data.mode === "community_boost") {
+        tabCommunity?.click();
+      }
+
       if (data.minBid && amountInput) {
         amountInput.value = data.minBid.toString();
         if (minRequiredInput) minRequiredInput.value = data.minBid.toString();

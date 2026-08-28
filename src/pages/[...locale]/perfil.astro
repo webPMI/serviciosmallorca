@@ -5,7 +5,22 @@ export const prerender = false;
 
 const locale = getLocaleFromUrl(Astro.url);
 const prefix = getLangPrefix(locale);
-const search = Astro.url.search;
-
-return Astro.redirect(`${prefix}profile${search}`);
+const search = Astro.url.search || "";
+const targetUrl = `${prefix}profile${search}`;
 ---
+
+<!doctype html>
+<html lang={locale}>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="refresh" content={`0;url=${targetUrl}`} />
+    <link rel="canonical" href={targetUrl} />
+    <title>Redireccionando a Perfil...</title>
+  </head>
+  <body>
+    <script define:vars={{ targetUrl }} is:inline>
+      window.location.replace(targetUrl);
+    </script>
+    <p>Redireccionando a tu perfil... <a href={targetUrl}>Haz clic aquí si no eres redirigido automáticamente</a>.</p>
+  </body>
+</html>

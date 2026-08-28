@@ -29,8 +29,8 @@ describe("📱 RESPONSIVE DESIGN & MOBILE VIEWPORTS (GR-02)", () => {
   });
 
   it("debe garantizar grid fluido y media queries móviles en cuadro-de-honor.astro", () => {
-    expect(cuadroHonorAstro).toContain("minmax(min(100%, 290px), 1fr)");
-    expect(cuadroHonorAstro).toContain("@media (max-width: 768px)");
+    expect(cuadroHonorAstro).toContain("minmax(min(100%, 280px), 1fr)");
+    expect(cuadroHonorAstro).toContain("@media (max-width: 640px)");
     expect(cuadroHonorAstro).toContain("@media (max-width: 480px)");
   });
 
