@@ -91,11 +91,24 @@ describe("trustEngine · Arquitectura de Verificación de Seguridad (Trust Layer
       expect(calculateTrustLevel(communityService, NOW)).toBe("level_2_community");
     });
 
-    it("asigna Nivel 3 (Official Trust) a servicios con titular verificado y 100% de confianza", () => {
+    it("mantiene en Nivel 2 (Comunitario) a servicios de alta calidad no reclamados aún", () => {
+      const unclaimedService: ServiceItem = {
+        ...baseService,
+        confidenceScore: 100,
+        verificationStatus: "verified_community",
+        lastValidatedAt: NOW.toISOString(),
+      };
+      // Sin cesión de titularidad (isClaimed = false/undefined), no asciende a nivel 3
+      expect(calculateTrustLevel(unclaimedService, NOW)).toBe("level_2_community");
+    });
+
+    it("asigna Nivel 3 (Official Trust) a servicios formalmente reclamados y cedidos a su titular", () => {
       const officialService: ServiceItem = {
         ...baseService,
         confidenceScore: 100,
         verificationStatus: "verified_official",
+        isClaimed: true,
+        claimedByUid: "manager_owner_123",
         sourceCrossReference: { taxIdVerified: true },
         lastValidatedAt: NOW.toISOString(),
       };
@@ -139,6 +152,8 @@ describe("trustEngine · Arquitectura de Verificación de Seguridad (Trust Layer
         ...baseService,
         confidenceScore: 100,
         verificationStatus: "verified_official",
+        isClaimed: true,
+        claimedByUid: "manager_123",
         lastValidatedAt: NOW.toISOString(),
       };
 

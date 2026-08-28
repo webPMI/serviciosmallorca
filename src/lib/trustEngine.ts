@@ -61,26 +61,30 @@ export function calculateDecayedConfidenceScore(service: ServiceItem, currentDat
 }
 
 /**
- * Determina el Nivel de Confianza (Trust Level) de un negocio en base a su verificación y score dinámico.
+ * Determina el Nivel de Confianza (Trust Level) de un negocio en base a su verificación y cesión de titularidad.
+ * Regla de Oro: No se valida oficialmente a nivel público hasta que alguien lo reclama y es cedido.
  */
 export function calculateTrustLevel(service: ServiceItem, currentDate: Date = new Date()): TrustLevel {
   const effectiveScore = calculateDecayedConfidenceScore(service, currentDate);
   const status = service.verificationStatus;
+  const isClaimedAndTransferred = Boolean(service.isClaimed || service.claimedByUid || (service as any).managerUid);
 
-  // Nivel 3 (Verificación Oficial): Estatus oficial y titular verificado con 100% de confianza
+  // Nivel 3 (Verificación Oficial): Requiere OBLIGATORIAMENTE que el negocio haya sido reclamado y cedido
   if (
-    status === "verified_official" ||
-    (service.verified && service.sourceCrossReference?.taxIdVerified && effectiveScore >= 95)
+    isClaimedAndTransferred &&
+    (status === "verified_official" ||
+      (service.verified && service.sourceCrossReference?.taxIdVerified && effectiveScore >= 90) ||
+      effectiveScore >= 95)
   ) {
     return "level_3_official";
   }
 
-  // Nivel 2 (Verificación Comunitaria): Puntaje efectivo >= 80%
+  // Nivel 2 (Verificación Comunitaria / Calidad Contrastada): Puntaje efectivo >= 80%
   if (effectiveScore >= 80 && status !== "needs_review" && status !== "needs_manual_review") {
     return "level_2_community";
   }
 
-  // Nivel 1 (Modo Descubrimiento / Observación): Datos iniciales o en revisión
+  // Nivel 1 (Modo Descubrimiento / Observación): Datos iniciales o no reclamados
   return "level_1_discovery";
 }
 
@@ -223,6 +227,10 @@ export function isAuthorizedToEdit(
   if (userRole === "manager") {
     // Si hay un titular asignado en base de datos, debe coincidir exactamente
     if (overrideOwnerUid && overrideOwnerUid === userUid) {
+      return true;
+    }
+    // Si la ficha fue cedida oficialmente a este titular
+    if (service.claimedByUid && service.claimedByUid === userUid && service.isClaimed) {
       return true;
     }
     // Si la ficha estática tiene asignado un UID de gestor

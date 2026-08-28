@@ -372,5 +372,8 @@ export interface ServiceItem {
     taxIdVerified?: boolean;
   };
   allowLiveEdits?: boolean; // Permite o restringe ediciones directas desde BD/Manager
+  isClaimed?: boolean; // True si el negocio ha sido formalmente reclamado y cedido a su titular
+  claimedByUid?: string; // UID del titular verificado que ostenta el mando
+  claimedAt?: string; // Fecha ISO de cesión oficial de la ficha
   evolutionHistory?: ServiceEvolutionEntry[]; // Memoria histórica de la evolución del servicio
 }

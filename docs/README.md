@@ -30,7 +30,7 @@
 | **[I18N.md](I18N.md)**                                                   | 🌍 Internacionalización: locales, flujo de detección, traducciones                                                            | @frontend                           |
 | **[AUTH.md](AUTH.md)**                                                   | 🔐 Autenticación: Firebase, roles, flujos de auth                                                                             | @auth, @frontend                    |
 | **[DEVTOOLS.md](DEVTOOLS.md)**                                           | 🛠️ DevTools Suite: logger, floating button, panel                                                                             | @devtools                           |
-| **[GEMINI_BRIDGE.md](GEMINI_BRIDGE.md)**                                 | 🔒 Puente local IA⇄Gemini (modelo de Antigravity) con panel de análisis de comunicación                                       | @maestro, @curation, dev            |
+| **[GEMINI_BRIDGE.md](GEMINI_BRIDGE.md)**                                 | 🔒 Puente local IA⇄Gemini con descubrimiento de modelos en vivo y análisis de comunicación                                    | @maestro, @curation, dev            |
 | **[email-templates.md](email-templates.md)**                             | 📧 Plantillas de correo de Firebase Auth                                                                                      | @auth                               |
 
 ## Quick Links

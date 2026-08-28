@@ -9,14 +9,21 @@ JSON/Markdown.
 
 ---
 
-## ⚠️ Nota de veracidad (GR-11)
+## ⚠️ Nota de veracidad (GR-11) — los modelos caducan, la herramienta no
 
-- **"Gemini 3.7" no existe.** Google Antigravity (el IDE agéntico de Google) usa **Gemini 3 Pro**,
-  disponible en la API como `gemini-3-pro-preview`.
-- Antigravity **no expone una API local pública** para apps de terceros. El canal soportado y
-  seguro para hablar con ese mismo modelo es la **Gemini API oficial** (Google AI Studio), que es
-  lo que implementa este bridge. El modelo es configurable, así que cualquier ID válido funciona
-  (`gemini-2.5-flash`, `gemini-2.5-pro`, etc.).
+- **Corrección registrada (28/08/2026):** la primera versión de este doc afirmaba que "Gemini
+  3.7 no existe". **Era falso**: [Gemini 3.7 Flash](https://ai.google.dev/gemini-api/docs/models)
+  es estable desde el **13/08/2026** y `gemini-3-pro-preview` ya figura como **SHUT DOWN**.
+  Lección aprendida y registrada: el conocimiento de un agente queda obsoleto en semanas; no
+  afirmar fechas de vigencia de catálogos de terceros sin verificar en vivo.
+- Por eso el bridge **no depende de IDs hardcodeados**: acepta cualquier ID (vía `GEMINI_MODEL`,
+  `--model=` o el campo `model` de cada petición) y expone **`GET /api/models`**, que consulta
+  ListModels de la Gemini API **en vivo** y devuelve los modelos disponibles para TU clave,
+  filtrando los que no soportan `generateContent`. La UI incluye un botón «📋 modelos» que los
+  carga en un autocompletado — así el descubrimiento de versiones nuevas (3.6, 3.7, Nano Banana
+  2, etc.) es automático y no requiere actualizar código.
+- Antigravity no publica una API local pública para apps de terceros; el canal soportado para
+  hablar con los modelos de Gemini es la **Gemini API oficial** (Google AI Studio).
 
 ---
 
@@ -40,6 +47,7 @@ responde `503` con instrucciones. El análisis de comunicación funciona en cuan
 | GET    | `/api/health`                   | Estado, modelo y si hay API key (nunca su valor)                       |
 | POST   | `/api/comms/clear`              | Vacía el registro en memoria                                           |
 | GET    | `/api/export?format=md\|json`   | Exporta el registro como archivo adjunto                               |
+| GET    | `/api/models`                   | Descubre EN VIVO los modelos disponibles con tu clave (ListModels)     |
 
 ## Seguridad (GR-13)
 
@@ -57,12 +65,12 @@ responde `503` con instrucciones. El análisis de comunicación funciona en cuan
 
 ## Configuración
 
-| Variable                | Default                | Descripción                                       |
-| ----------------------- | ---------------------- | ------------------------------------------------- |
-| `GEMINI_API_KEY`        | —                      | Clave de AI Studio (requerida para chatear)       |
-| `GEMINI_MODEL`          | `gemini-3-pro-preview` | Cualquier ID de modelo válido de la Gemini API    |
-| `GEMINI_BRIDGE_PORT`    | `8785`                 | Puerto local del servidor                         |
-| `GEMINI_BRIDGE_PERSIST` | `0`                    | `1` → persiste en `.gemini-bridge/comm-log.jsonl` |
+| Variable                | Default            | Descripción                                                                  |
+| ----------------------- | ------------------ | ---------------------------------------------------------------------------- |
+| `GEMINI_API_KEY`        | —                  | Clave de AI Studio (requerida para chatear)                                  |
+| `GEMINI_MODEL`          | `gemini-3.7-flash` | Cualquier ID válido; alias `gemini-flash-latest`; descubre con `/api/models` |
+| `GEMINI_BRIDGE_PORT`    | `8785`             | Puerto local del servidor                                                    |
+| `GEMINI_BRIDGE_PERSIST` | `0`                | `1` → persiste en `.gemini-bridge/comm-log.jsonl`                            |
 
 Flags CLI: `--port=N`, `--model=ID`, `--persist`, `--help`.
 

@@ -23,14 +23,17 @@
  *
  * Variables de entorno:
  *   GEMINI_API_KEY        clave de https://aistudio.google.com/apikey (obligatoria para chatear)
- *   GEMINI_MODEL          default: gemini-3-pro-preview (el de Google Antigravity)
+ *   GEMINI_MODEL          default: gemini-3.7-flash (estable desde 13/08/2026; alias: gemini-flash-latest)
  *   GEMINI_BRIDGE_PORT    default: 8785
  *   GEMINI_BRIDGE_PERSIST "1" → persiste el registro en .gemini-bridge/comm-log.jsonl
  *   GEMINI_BASE_URL       solo para tests/stubs (default: API oficial de Google)
  *
- * Nota de veracidad (GR-11): "Gemini 3.7" no existe. Antigravity usa Gemini 3 Pro
- * (`gemini-3-pro-preview`). Antigravity no expone una API local pública para apps de
- * terceros; este bridge usa la Gemini API oficial, el canal soportado para ese modelo.
+ * Nota de veracidad (GR-11): el catálogo de modelos de IA cambia cada pocas semanas y el
+ * conocimiento de un agente queda obsoleto rápido. Este bridge NO depende de IDs hardcodeados:
+ * acepta cualquier ID (env/CLI/petición) y expone GET /api/models para descubrir EN VIVO los
+ * modelos disponibles con tu clave (ListModels de la Gemini API). Contexto verificado el
+ * 28/08/2026 en ai.google.dev: Gemini 3.7 Flash estable (13/08/2026); gemini-3-pro-preview
+ * está SHUT DOWN. Si el default fallase algún día, GET /api/models dará el ID correcto.
  */
 
 import { createServer, type IncomingMessage, type Server, type ServerResponse } from "node:http";
@@ -44,7 +47,7 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 
 const BRIDGE_VERSION = "1.0.0";
 const DEFAULT_PORT = 8785;
-const DEFAULT_MODEL = "gemini-3-pro-preview";
+const DEFAULT_MODEL = "gemini-3.7-flash"; // estable desde 13/08/2026 — si falla, GET /api/models da el ID vivo
 const DEFAULT_BASE_URL = "https://generativelanguage.googleapis.com";
 const DEFAULT_MAX_ENTRIES = 500;
 const DEFAULT_BODY_LIMIT = 256 * 1024;
@@ -352,6 +355,21 @@ export function parseChatPayload(raw: unknown): ParsedChat | string {
 export type GeminiCallResult =
   | { ok: true; text: string; usage: GeminiUsage | null; finishReason: string | null; modelVersion: string | null }
   | { ok: false; status: number; error: string };
+
+interface GeminiModelsResponse {
+  models?: Array<{
+    name?: string;
+    displayName?: string;
+    description?: string;
+    supportedGenerationMethods?: string[];
+  }>;
+}
+
+export interface ModelInfo {
+  id: string;
+  displayName: string;
+  description: string;
+}
 
 interface GeminiRawResponse {
   candidates?: Array<{
@@ -746,6 +764,49 @@ export function createBridge(options: BridgeOptions = {}): BridgeInstance {
       return;
     }
 
+    if (path === "/api/models" && method === "GET") {
+      // Descubrimiento EN VIVO de modelos (anti-obsolescencia): nunca depender de IDs memorizados.
+      if (cfg.apiKey.length === 0) {
+        jsonOut(503, { ok: false, error: "GEMINI_API_KEY no configurada. Añádela a .env y reinicia el bridge." });
+        return;
+      }
+      try {
+        const res = await fetch(cfg.baseUrl + "/v1beta/models?pageSize=200", {
+          headers: { "x-goog-api-key": cfg.apiKey },
+        });
+        const rawText = await res.text();
+        if (!res.ok) {
+          let msg = "Upstream HTTP " + String(res.status);
+          try {
+            const parsedErr = JSON.parse(rawText) as { error?: { message?: string } };
+            if (parsedErr.error && typeof parsedErr.error.message === "string") msg += ": " + parsedErr.error.message;
+          } catch {
+            // cuerpo no-JSON
+          }
+          jsonOut(mapUpstreamStatus(res.status), { ok: false, error: redactSecrets(msg, secrets) });
+          return;
+        }
+        const parsed = JSON.parse(rawText) as GeminiModelsResponse;
+        const models: ModelInfo[] = [];
+        for (const m of parsed.models ?? []) {
+          if (!m.name) continue;
+          const id = m.name.replace(/^models\//, "");
+          if (!MODEL_ID_RE.test(id)) continue;
+          const methods = m.supportedGenerationMethods ?? [];
+          if (methods.length > 0 && !methods.includes("generateContent")) continue;
+          models.push({ id, displayName: m.displayName ?? id, description: m.description ?? "" });
+        }
+        models.sort((a, b) => a.id.localeCompare(b.id));
+        jsonOut(200, { ok: true, count: models.length, default: cfg.model, models });
+      } catch (err: unknown) {
+        jsonOut(502, {
+          ok: false,
+          error: "Fallo de red listando modelos: " + (err instanceof Error ? err.message : String(err)),
+        });
+      }
+      return;
+    }
+
     if (path === "/api/chat" && method === "POST") {
       const chatCheck = chatLimiter.check(ip);
       if (!chatCheck.allowed) {
@@ -953,7 +1014,7 @@ const UI_BODY = `<body>
   <span class="badge" id="bLat">—</span>
   <span class="badge" id="uptime">0s</span>
 </header>
-<div id="banner">⚠️ <strong>GEMINI_API_KEY no configurada.</strong> Añade <code>GEMINI_API_KEY</code> a tu <code>.env</code> (clave gratuita de <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener noreferrer">Google AI Studio</a>) y reinicia <code>npm run gemini:bridge</code>. Modelo por defecto: <code>gemini-3-pro-preview</code> (el que usa Google Antigravity).</div>
+<div id="banner">⚠️ <strong>GEMINI_API_KEY no configurada.</strong> Añade <code>GEMINI_API_KEY</code> a tu <code>.env</code> (clave gratuita de <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener noreferrer">Google AI Studio</a>) y reinicia <code>npm run gemini:bridge</code>. Modelo por defecto: <code>gemini-3.7-flash</code> (estable 13/08/2026). Pulsa «📋 modelos» para ver los disponibles con tu clave.</div>
 <div class="cards">
   <div class="card"><div class="k">Peticiones</div><div class="v" id="cTotal">0</div></div>
   <div class="card"><div class="k">Errores</div><div class="v" id="cErrors">0</div></div>
@@ -972,7 +1033,9 @@ const UI_BODY = `<body>
         <textarea id="systemBox" rows="2" aria-label="System prompt" placeholder="Instrucciones de sistema para Gemini…"></textarea>
       </details>
       <div class="row">
-        <input type="text" id="modelBox" size="26" aria-label="Modelo de Gemini" placeholder="modelo (vacío = por defecto)">
+        <input type="text" id="modelBox" size="26" list="modelList" aria-label="Modelo de Gemini" placeholder="modelo (vacío = por defecto)">
+        <button type="button" class="ghost" id="modelsBtn" aria-label="Cargar modelos disponibles con tu clave">📋 modelos</button>
+        <datalist id="modelList"></datalist>
         <label><input type="checkbox" id="useHist" checked> incluir historial</label>
       </div>
       <textarea id="msg" aria-label="Mensaje para Gemini" placeholder="Escribe tu mensaje… (Enter envía · Shift+Enter salto de línea)"></textarea>
@@ -1146,6 +1209,27 @@ const UI_BODY = `<body>
     $("chatStatus").textContent = "Conversación limpiada (el registro de 📡 se conserva)";
   });
   $("refreshBtn").addEventListener("click", refresh);
+  $("modelsBtn").addEventListener("click", function () {
+    $("chatStatus").textContent = "Cargando modelos disponibles…";
+    fetchJSON("/api/models")
+      .then(function (r) {
+        if (r.status === 200 && r.json.ok) {
+          var dl = $("modelList");
+          var html = "";
+          for (var i = 0; i < r.json.models.length; i++) {
+            var mo = r.json.models[i];
+            html += '<option value="' + esc(mo.id) + '">' + esc(mo.displayName) + "</option>";
+          }
+          dl.innerHTML = html;
+          $("chatStatus").textContent = r.json.count + " modelos cargados (escríbelos o elígelos en 'modelo')";
+        } else {
+          $("chatStatus").textContent = "No se pudieron cargar modelos: " + (r.json && r.json.error ? r.json.error : "HTTP " + r.status);
+        }
+      })
+      .catch(function (err) {
+        $("chatStatus").textContent = "Fallo de red cargando modelos: " + err;
+      });
+  });
   $("onlyErr").addEventListener("change", refreshComms);
   $("q").addEventListener("input", refreshComms);
   $("expJson").addEventListener("click", function () { window.location.href = "/api/export?format=json"; });
@@ -1181,7 +1265,7 @@ function printHelp(): void {
   console.log("");
   console.log("  🔒 Gemini Bridge v" + BRIDGE_VERSION + " — puente local IA ⇄ Gemini + panel de análisis");
   console.log("");
-  console.log("  Uso: npm run gemini:bridge [-- --port=8785 --model=gemini-3-pro-preview --persist]");
+  console.log("  Uso: npm run gemini:bridge [-- --port=8785 --model=gemini-3.7-flash --persist]");
   console.log("");
   console.log("  Flags:");
   console.log("    --port=N        puerto del servidor (default 8785 o GEMINI_BRIDGE_PORT)");
@@ -1189,7 +1273,7 @@ function printHelp(): void {
   console.log("    --persist       persiste el registro en .gemini-bridge/comm-log.jsonl");
   console.log("    --help          muestra esta ayuda");
   console.log("");
-  console.log("  Endpoints: GET / · POST /api/chat · GET /api/comms · GET /api/stats");
+  console.log("  Endpoints: GET / · POST /api/chat · GET /api/comms · GET /api/stats · GET /api/models");
   console.log("             GET /api/health · POST /api/comms/clear · GET /api/export?format=md|json");
   console.log("");
 }

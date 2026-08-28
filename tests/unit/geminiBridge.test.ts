@@ -15,6 +15,31 @@ function startStub(): Promise<{ server: Server; port: number }> {
       });
       req.on("end", () => {
         const url = req.url ?? "";
+        if (url.includes("/v1beta/models") && !url.includes(":generateContent")) {
+          res.writeHead(200, { "content-type": "application/json" });
+          res.end(
+            JSON.stringify({
+              models: [
+                {
+                  name: "models/gemini-3.7-flash",
+                  displayName: "Gemini 3.7 Flash",
+                  supportedGenerationMethods: ["generateContent"],
+                },
+                {
+                  name: "models/gemini-embed-001",
+                  displayName: "Embeddings",
+                  supportedGenerationMethods: ["embedContent"],
+                },
+                {
+                  name: "models/banana-2",
+                  displayName: "Banana 2",
+                  supportedGenerationMethods: ["generateContent"],
+                },
+              ],
+            }),
+          );
+          return;
+        }
         if (!url.includes(":generateContent")) {
           res.writeHead(404, { "content-type": "application/json" });
           res.end("{}");
@@ -312,5 +337,39 @@ describe("Gemini Bridge (puente local IA ⇄ Gemini + análisis de comunicación
   it("endpoint desconocido responde 404", async () => {
     const res = await fetch("http://127.0.0.1:" + String(port) + "/api/whatever");
     expect(res.status).toBe(404);
+  });
+
+  it("GET /api/models descubre modelos EN VIVO y filtra por generateContent", async () => {
+    const res = await fetch("http://127.0.0.1:" + String(port) + "/api/models");
+    expect(res.status).toBe(200);
+    const json = (await res.json()) as {
+      ok: boolean;
+      count: number;
+      default: string;
+      models: Array<{ id: string; displayName: string }>;
+    };
+    expect(json.ok).toBe(true);
+    const ids = json.models.map((m) => m.id);
+    expect(ids).toContain("gemini-3.7-flash");
+    expect(ids).toContain("banana-2");
+    expect(ids).not.toContain("gemini-embed-001"); // embeddings filtrados: no soportan generateContent
+    expect(json.default).toBe("stub-gemini");
+  });
+
+  it("GET /api/models sin clave responde 503", async () => {
+    const noKey = createBridge({
+      port: 0,
+      model: "stub-gemini",
+      apiKey: "",
+      baseUrl: "http://127.0.0.1:" + String(stubPort),
+      quiet: true,
+    });
+    const p = await noKey.start();
+    try {
+      const res = await fetch("http://127.0.0.1:" + String(p) + "/api/models");
+      expect(res.status).toBe(503);
+    } finally {
+      await noKey.stop();
+    }
   });
 });

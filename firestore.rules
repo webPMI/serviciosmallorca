@@ -173,7 +173,7 @@ service cloud.firestore {
     }
 
     // -------------------------------------------------------------------------
-    // Reviews collection (Public read, authenticated create)
+    // Reviews collection (Public read, authenticated create & helpful toggle)
     // -------------------------------------------------------------------------
     match /reviews/{reviewId} {
       allow read: if true;
@@ -183,7 +183,12 @@ service cloud.firestore {
         && request.resource.data.rating is int
         && request.resource.data.rating >= 1
         && request.resource.data.rating <= 5;
-      allow update, delete: if isSignedIn() && (
+      allow update: if isSignedIn() && (
+        resource.data.authorUid == request.auth.uid ||
+        getUserRole() == 'admin' ||
+        request.resource.data.diff(resource.data).affectedKeys().hasOnly(['helpfulCount', 'helpfulUsers'])
+      );
+      allow delete: if isSignedIn() && (
         resource.data.authorUid == request.auth.uid ||
         getUserRole() == 'admin'
       );
@@ -212,7 +217,10 @@ service cloud.firestore {
       allow create: if isSignedIn()
         && request.resource.data.authorUid == request.auth.uid
         && withinLength(request.resource.data.title, 300)
-        && withinLength(request.resource.data.body, 10000);
+        && (
+          ('content' in request.resource.data && withinLength(request.resource.data.content, 10000)) ||
+          ('body' in request.resource.data && withinLength(request.resource.data.body, 10000))
+        );
       allow update: if isSignedIn() && (
         resource.data.authorUid == request.auth.uid ||
         getUserRole() == 'admin' ||
@@ -232,7 +240,10 @@ service cloud.firestore {
       allow read: if true;
       allow create: if isSignedIn()
         && request.resource.data.authorUid == request.auth.uid
-        && withinLength(request.resource.data.body, 5000);
+        && (
+          ('content' in request.resource.data && withinLength(request.resource.data.content, 5000)) ||
+          ('body' in request.resource.data && withinLength(request.resource.data.body, 5000))
+        );
       allow update: if isSignedIn() && (
         resource.data.authorUid == request.auth.uid ||
         getUserRole() == 'admin' ||
@@ -242,6 +253,23 @@ service cloud.firestore {
         resource.data.authorUid == request.auth.uid ||
         getUserRole() == 'admin'
       );
+    }
+
+    // -------------------------------------------------------------------------
+    // Honor Nominations & Spot Sponsorships (Cuadro de Honor)
+    // -------------------------------------------------------------------------
+    match /honor_nominations/{nominationId} {
+      allow create: if isSignedIn()
+        && request.resource.data.applicantUid == request.auth.uid
+        && withinLength(request.resource.data.serviceId, 150)
+        && withinLength(request.resource.data.sponsorName, 120)
+        && request.resource.data.bidAmount is number
+        && request.resource.data.bidAmount >= 1.0;
+      allow read: if isSignedIn() && (
+        resource.data.applicantUid == request.auth.uid ||
+        getUserRole() == 'admin'
+      );
+      allow update, delete: if isSignedIn() && getUserRole() == 'admin';
     }
 
     // -------------------------------------------------------------------------
