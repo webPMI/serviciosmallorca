@@ -135,6 +135,21 @@ En localhost, el DevTools se activa automáticamente:
 
 Atajos de teclado: `Ctrl+Shift+H/L/E/B/D/T/1-4`
 
+## Protocolo de Despliegue y Registro de Versiones (GR-16)
+
+Antes de realizar cualquier despliegue a producción mediante `npm run ship`, es **OBLIGATORIO** actualizar la trazabilidad de la versión:
+
+1. **Actualizar Timestamp y Versión:** En `src/data/changelog.ts`, ajustar `PLATFORM_LAST_BUILD_TIMESTAMP` con la fecha/hora actual (ISO 8601) y la versión correspondiente (`CURRENT_PLATFORM_VERSION`).
+2. **Registrar Cambios en el Changelog:** Añadir las entradas del release (`FEATURE`, `FIX`, `PERFORMANCE`, `SECURITY`) en los 4 idiomas (`es`, `en`, `ca`, `de`).
+3. **Paso de Quality Gates:**
+   ```bash
+   npm run typecheck && npm run validate:taxonomy && npm test && npm run audit:full
+   ```
+4. **Despliegue y Sincronización:**
+   ```bash
+   npm run ship "tipo(scope): descripción clara del cambio"
+   ```
+
 ## Variables de Entorno
 
 ```env

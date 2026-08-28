@@ -52,6 +52,31 @@ export interface ReleaseLog {
 
 export const CURRENT_PLATFORM_VERSION = "0.01-beta";
 export const PLATFORM_RELEASE_DATE = "2026-08-28";
+export const PLATFORM_LAST_BUILD_TIMESTAMP = "2026-08-28T13:28:00+02:00";
+
+/**
+ * Devuelve la fecha y hora formateada de la última actualización según el idioma.
+ */
+export function getFormattedBuildTimestamp(locale: "es" | "en" | "ca" | "de" = "es"): string {
+  const d = new Date(PLATFORM_LAST_BUILD_TIMESTAMP);
+  const options: Intl.DateTimeFormatOptions = {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+    timeZone: "Europe/Madrid",
+  };
+
+  const localeMap = {
+    es: "es-ES",
+    en: "en-GB",
+    ca: "ca-ES",
+    de: "de-DE",
+  };
+
+  return d.toLocaleDateString(localeMap[locale] || "es-ES", options);
+}
 
 export const CHANGELOG_RELEASES: ReleaseLog[] = [
   {

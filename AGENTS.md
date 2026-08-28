@@ -44,6 +44,7 @@ Toda la documentación del proyecto está en `docs/`. Antes de trabajar en cualq
 13. **GR-13**: Seguridad del Usuario: RGPD, cabeceras HTTP y reglas Firestore blindadas
 14. **GR-14**: Sincronización Continua con GitHub: Pre-flight `git fetch origin` y `git pull` obligatorio antes de iniciar o tras >12h sin sincronizar
 15. **GR-15**: Telemetría, Logs Resilientes y Control de Calidad en Producción (Cloudflare D1 con deduplicación anti-spam y cero flooding)
+16. **GR-16**: Registro de Versiones y Trazabilidad Temporal de Despliegues (`src/data/changelog.ts`, timestamp exacto y `/actualizaciones`)
 
 ## Protocolo de Curación Atómica (Cero Omisión)
 

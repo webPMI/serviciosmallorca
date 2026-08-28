@@ -62,17 +62,23 @@ Yo, [NOMBRE DEL AGENTE], me comprometo a:
 
 ```
 [ ] PASO 1 - GR-01: Revisar diff completo. ¿Algún color hardcodeado?
-[ ] PASO 2 - GR-02: ¿El componente/página tiene @media queries?
+[ ] PASO 2 - GR-02: ¿El componente/página tiene @media queries y es responsive?
 [ ] PASO 3 - GR-03: ¿Props y funciones con tipos TypeScript explícitos?
-[ ] PASO 4 - GR-04: ¿Textos visibles usan translations, no strings hardcodeados?
+[ ] PASO 4 - GR-04: ¿Textos visibles usan translations (es, en, ca, de), no strings hardcodeados?
 [ ] PASO 5 - GR-05: ¿Se añadieron tests? ¿npm test pasa 100%?
-[ ] PASO 6 - GR-06: ¿Se actualizó la documentación correspondiente?
+[ ] PASO 6 - GR-06: ¿Se actualizó la documentación correspondiente en docs/?
 [ ] PASO 7 - GR-07: ¿Elementos interactivos tienen aria-* y keyboard support?
 [ ] PASO 8 - GR-08: ¿Esta revisión es ejecutada por el Agente Maestro?
-[ ] PASO 9 - GR-09: ¿npm run build sin errores? ¿0 errores TS?
+[ ] PASO 9 - GR-09: ¿npm run build sin errores? ¿0 errores TS en typecheck?
 [ ] PASO 10 - GR-10: ¿Tiempo de build < 60s?
+[ ] PASO 11 - GR-11: ¿Información 100% verídica sin datos ficticios (Zero Fake Data)?
+[ ] PASO 12 - GR-12: ¿Fidelidad de datos Google Maps (coordenadas, horarios, reseñas)?
+[ ] PASO 13 - GR-13: ¿Seguridad de usuario, RGPD y reglas Firestore blindadas?
+[ ] PASO 14 - GR-14: ¿Sincronización continua con GitHub (Pre-flight Git Fetch)?
+[ ] PASO 15 - GR-15: ¿Telemetría y logs conectados a Cloudflare D1 sin catch silenciosos?
+[ ] PASO 16 - GR-16: ¿Versión, fecha y hora exacta registradas en changelog.ts y visibles en /actualizaciones?
 
-SOLO SI LOS 10 PASOS SON ✅ → MERGE
+SOLO SI LOS 16 PASOS SON ✅ → MERGE / DEPLOY
 SI ALGÚN PASO ES ❌ → REJECT with specific feedback
 ```
 

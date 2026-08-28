@@ -362,6 +362,8 @@
   "honor.modal.submitCommunity": "⚡ Complete Backing & Boost to Podium",
   "honor.modal.submitOwner": "👑 Bid Record & Claim Spot #1",
   "honor.modal.security": "🔒 Duplicate-proof payment · 256-bit SSL encryption · Tax invoice with 21% deductible VAT",
+  "honor.modal.sandboxNotice": "🛡️ Demo / Sandbox Mode Active: Live payment gateway is undergoing technical audit. No real charges will be issued.",
+  "honor.modal.sandboxBadge": "🧪 DEMO / SANDBOX MODE",
   "honor.modal.successTitle": "Backing Confirmed Successfully!",
   "honor.modal.successSubtitle": "Your boost has been validated and added to Mallorca's Honor Board.",
   "honor.modal.receiptBiz": "Boosted Business:",

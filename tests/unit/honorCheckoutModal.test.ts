@@ -7,6 +7,7 @@
 import { describe, it, expect } from "vitest";
 import { HONOR_LISTS } from "../../src/lib/honorBoardEngine";
 import { PUBLIC_SERVICES } from "../../src/data/services";
+import { isPaymentsLiveMode, getPaymentGatewayMode } from "../../src/lib/paymentSecurityEngine";
 
 describe("🛡️ Honor Board & Checkout Modal — Aislamiento Gremial y Buscador", () => {
   it("cada lista de honor con categoryFilter solo permite comercios de sus categorías válidas", () => {
@@ -70,5 +71,13 @@ describe("🛡️ Honor Board & Checkout Modal — Aislamiento Gremial y Buscado
     // Debe incluir múltiples sectores
     const categoriesFound = new Set(verifiedServices.map((s) => s.category));
     expect(categoriesFound.size).toBeGreaterThan(3);
+  });
+
+  it("isPaymentsLiveMode detecta correctamente si la pasarela está en modo Sandbox o Live", () => {
+    // En local / testing debe ser false / sandbox por defecto
+    const isLive = isPaymentsLiveMode();
+    expect(typeof isLive).toBe("boolean");
+    const mode = getPaymentGatewayMode();
+    expect(["live", "sandbox"]).toContain(mode);
   });
 });

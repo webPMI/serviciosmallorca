@@ -38,6 +38,28 @@ const inFlightPaymentLocks = new Map<string, number>();
 const completedPaymentLedger = new Map<string, { timestamp: number; amount: number; serviceId: string }>();
 
 /**
+ * Comprueba si la pasarela de pagos está en modo real de producción (Stripe Live)
+ * o en modo Sandbox / Demostración.
+ */
+export function isPaymentsLiveMode(): boolean {
+  try {
+    return (
+      (import.meta as any)?.env?.PUBLIC_PAYMENTS_LIVE === "true" ||
+      (typeof process !== "undefined" && (process as any)?.env?.PUBLIC_PAYMENTS_LIVE === "true")
+    );
+  } catch {
+    return false;
+  }
+}
+
+/**
+ * Retorna el descriptor de modo de la pasarela.
+ */
+export function getPaymentGatewayMode(): "live" | "sandbox" {
+  return isPaymentsLiveMode() ? "live" : "sandbox";
+}
+
+/**
  * Genera una clave de idempotencia única para una sesión de pago.
  */
 export function generatePaymentIdempotencyKey(serviceId: string, amount: number, backerEmail: string = ""): string {

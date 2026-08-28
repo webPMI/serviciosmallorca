@@ -3,6 +3,7 @@ import type { Locale } from "../i18n";
 import { getLangPrefix } from "../i18n";
 import type { HonorCategory } from "../lib/honorBoardEngine";
 import { HONOR_LISTS } from "../lib/honorBoardEngine";
+import { isPaymentsLiveMode } from "../lib/paymentSecurityEngine";
 import { PUBLIC_SERVICES } from "../data/services";
 
 interface Props {
@@ -26,6 +27,7 @@ const {
 } = Astro.props;
 
 const prefix = getLangPrefix(locale);
+const isLive = isPaymentsLiveMode();
 const verifiedBusinesses = PUBLIC_SERVICES.filter((s) => (s.confidenceScore ?? 0) >= 80 && s.status === "open");
 
 const honorListsData = JSON.stringify(
@@ -304,6 +306,22 @@ const verifiedBusinessesData = JSON.stringify(
           </strong>
         </div>
       </div>
+
+      {
+        !isLive && (
+          <div class="sandbox-banner-box">
+            <div class="sandbox-badge-row">
+              <span class="sandbox-pill">
+                {translations["honor.modal.sandboxBadge"] || "🧪 MODO DEMOSTRACIÓN / SANDBOX"}
+              </span>
+            </div>
+            <p class="sandbox-notice-text">
+              {translations["honor.modal.sandboxNotice"] ||
+                "🛡️ Modo Demostración / Sandbox Activo: Pasarela bancaria real en fase de auditoría técnica. Ningún cargo real será emitido."}
+            </p>
+          </div>
+        )
+      }
 
       <!-- Amount Selector & Quick Chips -->
       <div class="amount-selection-box">
@@ -949,6 +967,40 @@ const verifiedBusinessesData = JSON.stringify(
     font-size: 0.9rem;
     color: var(--color-text);
     word-break: break-word;
+  }
+
+  /* Sandbox / Demo Mode Banner */
+  .sandbox-banner-box {
+    background: var(--color-surface);
+    border: 1px dashed var(--color-warning, #eab308);
+    border-radius: var(--border-radius-sm, 8px);
+    padding: 8px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .sandbox-badge-row {
+    display: flex;
+    align-items: center;
+  }
+
+  .sandbox-pill {
+    font-size: 0.68rem;
+    font-weight: 800;
+    color: var(--color-warning, #eab308);
+    background: rgba(234, 179, 8, 0.12);
+    border: 1px solid rgba(234, 179, 8, 0.3);
+    padding: 2px 6px;
+    border-radius: var(--border-radius-sm, 4px);
+    letter-spacing: 0.03em;
+  }
+
+  .sandbox-notice-text {
+    font-size: 0.73rem;
+    color: var(--color-text-muted);
+    margin: 0;
+    line-height: 1.35;
   }
 
   /* Amount Selection */

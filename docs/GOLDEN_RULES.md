@@ -169,7 +169,7 @@ Comando: `npm test` (Vitest)
 
 ## GR-15: Telemetría, Logs Resilientes y Control de Calidad en Producción (Cloudflare D1)
 
-**Todo fallo crítico, excepción SSR, error en cliente y evento financiero anómalo DEBE registrarse de forma estructurada y persistente en el sistema de telemetría D1 (`src/lib/d1Logger.ts`), aplicando deduplicación inteligente para prevenir sobrecarga por errores masivos repetidos.**
+Todo fallo crítico, excepción SSR, error en cliente y evento financiero anómalo DEBE registrarse de forma estructurada y persistente en el sistema de telemetría D1 (`src/lib/d1Logger.ts`), aplicando deduplicación inteligente para prevenir sobrecarga por errores masivos repetidos.
 
 - ✅ **Cero `try...catch` Silenciosos:** Queda terminantemente prohibido usar bloques `catch (e) {}` vacíos que oculten errores. Deben registrarse con nivel (`ERROR`, `FATAL`, `SECURITY`, `WARN`) y categoría (`SSR`, `API`, `AUTH`, `PAYMENT`, `DATABASE`, `TAXONOMY`, `CLIENT_JS`).
 - ✅ **Deduplicación Anti-Spam (Zero Flooding):** El sistema agrupa ráfagas de errores idénticos en ventanas de 5 minutos mediante fingerprint hashing (`level:category:msg:status:url`), evitando saturar D1 si miles de usuarios sufren la misma caída. Los eventos de `SECURITY` y `PAYMENT` siempre se registran sin excepción.
@@ -177,6 +177,17 @@ Comando: `npm test` (Vitest)
 - ✅ **Telemetría de Cliente en Segundo Plano:** Los errores de JavaScript en el navegador se reportan a `/api/logs/ingest` usando `navigator.sendBeacon` sin bloquear la experiencia del usuario, con deduplicación en memoria del cliente.
 - ✅ **Modo Resiliente / Zero-Crash:** El logger debe operar de forma segura y sin arrojar excepciones si el binding de base de datos no está disponible.
 - 📖 Consulta la documentación completa en [docs/LOGGING_AND_QUALITY_CONTROL.md](LOGGING_AND_QUALITY_CONTROL.md).
+
+---
+
+## GR-16: Registro de Versiones, Changelog y Trazabilidad Temporal de Despliegues
+
+**Todo despliegue a producción, release o ciclo de actualización técnica o de catálogo DEBE registrarse fehacientemente con su versión semántica, fecha y hora exacta de compilación (timestamp UTC/Europe-Madrid) en `src/data/changelog.ts` y documentarse en el Centro de Actualizaciones (`/actualizaciones`).**
+
+- ✅ **Fidelidad Temporal Obligatoria:** Actualizar `PLATFORM_LAST_BUILD_TIMESTAMP` con la fecha y hora ISO 8601 exacta del despliegue para que los usuarios y auditores conozcan con precisión la frescura de los datos.
+- ✅ **Registro de Novedades y Correcciones:** Toda nueva funcionalidad (`FEATURE`), arreglo (`FIX`), optimización (`PERFORMANCE`), ajuste de seguridad (`SECURITY`) o curación de catálogo debe incorporarse al array `CHANGELOG_RELEASES` en los 4 idiomas oficiales (`es`, `en`, `ca`, `de`).
+- ✅ **Banner Informativo de Versión:** Toda versión preliminar debe comunicar su estado mediante el componente `BetaBanner.astro` permitiendo acceso instantáneo al registro de cambios y al canal de feedback de la comunidad.
+- ❌ **Prohibido:** Desplegar cambios de calado a producción sin actualizar el changelog o dejando fechas y horas desactualizadas respecto al commit de despliegue.
 
 ---
 
@@ -200,4 +211,5 @@ Antes de aceptar cualquier cambio, el Agente Maestro verifica:
 [ ] GR-13: ¿Seguridad de datos de usuario, cabeceras HTTP y reglas Firestore blindadas?
 [ ] GR-14: ¿Repositorio local sincronizado con la última versión de GitHub (Pre-Flight Git Fetch)?
 [ ] GR-15: ¿Telemetría y registro de errores conectado a Cloudflare D1 sin catch silenciosos?
+[ ] GR-16: ¿Versión, fecha y hora exacta de actualización registradas en src/data/changelog.ts y visibles en /actualizaciones?
 ```

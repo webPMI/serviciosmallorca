@@ -1,11 +1,28 @@
 import { describe, it, expect } from "vitest";
-import { CHANGELOG_RELEASES, CURRENT_PLATFORM_VERSION, PLATFORM_RELEASE_DATE } from "../../src/data/changelog";
+import {
+  CHANGELOG_RELEASES,
+  CURRENT_PLATFORM_VERSION,
+  PLATFORM_RELEASE_DATE,
+  PLATFORM_LAST_BUILD_TIMESTAMP,
+  getFormattedBuildTimestamp,
+} from "../../src/data/changelog";
 
-describe("🚀 Changelog & Beta v0.01 Data Integrity (GR-03, GR-04)", () => {
-  it("defines a valid semantic version for the current platform", () => {
+describe("🚀 Changelog & Beta v0.01 Data Integrity (GR-03, GR-04, GR-16)", () => {
+  it("defines a valid semantic version and ISO 8601 build timestamp (GR-16)", () => {
     expect(CURRENT_PLATFORM_VERSION).toMatch(/^\d+\.\d+(-[a-z0-9]+)?$/);
     expect(CURRENT_PLATFORM_VERSION).toBe("0.01-beta");
     expect(PLATFORM_RELEASE_DATE).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+    expect(PLATFORM_LAST_BUILD_TIMESTAMP).toMatch(/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}/);
+
+    const formattedEs = getFormattedBuildTimestamp("es");
+    const formattedEn = getFormattedBuildTimestamp("en");
+    const formattedCa = getFormattedBuildTimestamp("ca");
+    const formattedDe = getFormattedBuildTimestamp("de");
+
+    expect(formattedEs).toBeTruthy();
+    expect(formattedEn).toBeTruthy();
+    expect(formattedCa).toBeTruthy();
+    expect(formattedDe).toBeTruthy();
   });
 
   it("contains at least one active release log with complete 4-language translations", () => {

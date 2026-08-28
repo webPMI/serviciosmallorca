@@ -3,13 +3,19 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
 import Navbar from "../../../components/Navbar.astro";
 import Footer from "../../../components/Footer.astro";
 import { getLocaleFromUrl, loadTranslations, getLangPrefix, type Locale } from "../../../i18n";
-import { CHANGELOG_RELEASES, CURRENT_PLATFORM_VERSION } from "../../../data/changelog";
+import {
+  CHANGELOG_RELEASES,
+  CURRENT_PLATFORM_VERSION,
+  PLATFORM_LAST_BUILD_TIMESTAMP,
+  getFormattedBuildTimestamp,
+} from "../../../data/changelog";
 
 export const prerender = false;
 
 const locale = getLocaleFromUrl(Astro.url) as Locale;
 const translations = await loadTranslations(locale);
 const prefix = getLangPrefix(locale);
+const formattedLastUpdate = getFormattedBuildTimestamp(locale);
 
 const pageTitles = {
   es: `Registro de Actualizaciones & Versión Beta (${CURRENT_PLATFORM_VERSION}) - Servicios Mallorca`,
@@ -59,6 +65,9 @@ const breadcrumbSchema = {
       <div class="hero-top-badge">
         <span class="badge badge-accent">🚀 Versión {CURRENT_PLATFORM_VERSION}</span>
         <span class="badge badge-primary">🌴 Transparencia & Desarrollo Activo</span>
+        <span class="badge badge-secondary" title={`Timestamp ISO: ${PLATFORM_LAST_BUILD_TIMESTAMP}`}>
+          ⏱️ Última actualización: {formattedLastUpdate} (UTC+2)
+        </span>
       </div>
       <h1 class="hero-title">
         {

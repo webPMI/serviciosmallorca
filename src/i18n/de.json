@@ -362,6 +362,8 @@
   "honor.modal.submitCommunity": "⚡ Beitrag abschließen & auf das Podium heben",
   "honor.modal.submitOwner": "👑 Rekord bieten & Platz #1 beanspruchen",
   "honor.modal.security": "🔒 Duplikatsichere Zahlung · 256-Bit SSL-Verschlüsselung · Steuerrechnung mit 21% abzugsfähiger MwSt.",
+  "honor.modal.sandboxNotice": "🛡️ Demo- / Sandbox-Modus aktiv: Reale Zahlungsplattform in technischer Auditphase. Es werden keine echten Gebühren erhoben.",
+  "honor.modal.sandboxBadge": "🧪 DEMO- / SANDBOX-MODUS",
   "honor.modal.successTitle": "Beitrag erfolgreich bestätigt!",
   "honor.modal.successSubtitle": "Ihr Schub wurde validiert und in die Ehrentafel von Mallorca aufgenommen.",
   "honor.modal.receiptBiz": "Gefördertes Unternehmen:",

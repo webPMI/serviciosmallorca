@@ -362,6 +362,8 @@
   "honor.modal.submitCommunity": "⚡ Completar Aportación & Aupar al Podio",
   "honor.modal.submitOwner": "👑 Pujar Récord & Tomar el Puesto #1",
   "honor.modal.security": "🔒 Pago blindado anti-duplicados · Cifrado SSL 256 bits · Factura fiscal con 21% IVA deducible",
+  "honor.modal.sandboxNotice": "🛡️ Modo Demostración / Sandbox Activo: Pasarela bancaria real en fase de auditoría técnica. Ningún cargo real será emitido.",
+  "honor.modal.sandboxBadge": "🧪 MODO DEMOSTRACIÓN / SANDBOX",
   "honor.modal.successTitle": "¡Aportación Confirmada con Éxito!",
   "honor.modal.successSubtitle": "Tu impulso ha sido validado e incorporado al Cuadro de Honor de Mallorca.",
   "honor.modal.receiptBiz": "Negocio Impulsado:",
