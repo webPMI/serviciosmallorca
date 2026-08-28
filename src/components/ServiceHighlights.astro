@@ -8,15 +8,15 @@ interface Props {
   locale: Locale;
 }
 
-const { service, translations, locale } = Astro.props;
+const items = service.highlights?.[locale] || [];
 ---
 
 {
-  service.highlights && service.highlights[locale]?.length > 0 && (
+  items.length > 0 && (
     <section class="card section-box" id="destacados">
       <h2 class="box-title">{translations["services.highlights"]}</h2>
       <ul class="highlights-list">
-        {service.highlights[locale].map((item: string) => (
+        {items.map((item: string) => (
           <li class="highlight-item">
             <span class="check-icon">✓</span>
             <span>{item}</span>

@@ -94,7 +94,7 @@ const schemaOrg = generateServiceJsonLd(service, locale, canonicalUrl);
     <ServiceHeaderHero service={service} category={category} zone={zone} translations={translations} locale={locale} />
 
     <!-- Quick Navigation (Pill Tabs for Zero-Friction Deep Linking) -->
-    <ServiceQuickNav service={service} locale={locale} translations={translations} />
+    <ServiceQuickNav service={service} locale={locale} />
 
     <!-- Layout Grid: Main Content & Sidebar -->
     <div class="detail-grid">
@@ -103,14 +103,7 @@ const schemaOrg = generateServiceJsonLd(service, locale, canonicalUrl);
         <ServiceGallerySection service={service} category={category} categoryName={categoryName} />
 
         <!-- Semantic AI Quick Facts Box -->
-        <ServiceQuickFacts
-          service={service}
-          category={category}
-          zone={zone}
-          categoryName={categoryName}
-          zoneName={zoneName}
-          locale={locale}
-        />
+        <ServiceQuickFacts service={service} category={category} zone={zone} locale={locale} />
 
         <ServiceDescription service={service} locale={locale} />
         <ServiceHighlights service={service} translations={translations} locale={locale} />

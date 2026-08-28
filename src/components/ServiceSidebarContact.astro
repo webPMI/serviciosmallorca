@@ -6,10 +6,10 @@ import AdSenseSlot from "./AdSenseSlot.astro";
 interface Props {
   service: ServiceItem;
   translations: Record<string, string>;
-  prefix: string;
+  prefix?: string;
 }
 
-const { service, translations } = Astro.props;
+const { service, translations, prefix = "/es/" } = Astro.props;
 ---
 
 <aside class="detail-sidebar">

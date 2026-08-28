@@ -1,7 +1,7 @@
 ---
 import type { Locale } from "../i18n";
 import { getLangPrefix } from "../i18n";
-import { HONOR_LISTS, type HonorCategory } from "../lib/honorBoardEngine";
+import type { HonorCategory } from "../lib/honorBoardEngine";
 
 interface Props {
   locale?: Locale;
@@ -27,7 +27,15 @@ const prefix = getLangPrefix(locale);
 ---
 
 <!-- Modal de Checkout Premium & Impulso Comunitario -->
-<div id="honor-checkout-modal" class="honor-modal-backdrop" aria-hidden="true" role="dialog" aria-modal="true">
+<div
+  id="honor-checkout-modal"
+  class="honor-modal-backdrop"
+  data-prefix={prefix}
+  data-default-category={preselectedCategory}
+  aria-hidden="true"
+  role="dialog"
+  aria-modal="true"
+>
   <div class="honor-modal-dialog card card-glass">
     <div class="modal-header-row">
       <div class="modal-title-wrap">

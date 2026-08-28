@@ -533,7 +533,7 @@ const labels = {
     }
 
     // Activar botón nativo si está soportado
-    if (navigator.share && nativeShareBtn) {
+    if (typeof navigator !== "undefined" && typeof navigator.share === "function" && nativeShareBtn) {
       nativeShareBtn.style.display = "flex";
     }
 

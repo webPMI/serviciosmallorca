@@ -9,10 +9,9 @@ interface Props {
   category?: ServiceCategory;
   zone?: MallorcaZone;
   locale: Locale;
-  translations: Record<string, string>;
 }
 
-const { service, category, zone, locale, translations } = Astro.props;
+const { service, category, zone, locale } = Astro.props;
 
 const categoryName = category?.name[locale] || service.category;
 const zoneName = zone?.name[locale] || service.zone;
