@@ -9,6 +9,18 @@ interface Props {
 const { currentLocale, translations, getLangPrefix, currentPath } = Astro.props;
 const prefix = getLangPrefix((currentLocale as "es" | "en" | "ca" | "de") || "es");
 const homeUrl = prefix || "/";
+
+const isDashboardActive = currentPath.includes("/dashboard");
+const isServicesActive = currentPath.includes("/servicios");
+const isSportsActive = currentPath.includes("/deporte");
+const isToursActive = currentPath.includes("/tours");
+const isHistoryActive = currentPath.includes("/memoria-historica");
+const isCommunityActive = currentPath.includes("/comunidad");
+const isHonorActive = currentPath.includes("/cuadro-de-honor");
+const isBlogActive = currentPath.includes("/blog");
+const isProfileActive = currentPath.includes("/profile");
+
+const isMoreActive = isHistoryActive || isCommunityActive || isHonorActive || isBlogActive;
 ---
 
 <header class="navbar-header nav-user">
@@ -38,38 +50,77 @@ const homeUrl = prefix || "/";
     <!-- User Navigation Menu -->
     <div id="user-navbar-menu" class="navbar-menu">
       <nav class="navbar-links" aria-label={translations["nav.aria.userNav"] || "Navegación de usuario"}>
-        <a href={`${homeUrl}dashboard`} class:list={["nav-link", { active: currentPath.includes("/dashboard") }]}>
+        <a href={`${homeUrl}dashboard`} class:list={["nav-link", { active: isDashboardActive }]}>
           📊 {translations["nav.dashboard"] || "Panel"}
         </a>
-        <a href={`${homeUrl}servicios`} class:list={["nav-link", { active: currentPath.includes("/servicios") }]}>
+        <a href={`${homeUrl}servicios`} class:list={["nav-link", { active: isServicesActive }]}>
           🌴 {translations["nav.services"] || "Servicios"}
         </a>
-        <a href={`${homeUrl}deporte`} class:list={["nav-link", { active: currentPath.includes("/deporte") }]}>
+        <a href={`${homeUrl}deporte`} class:list={["nav-link", { active: isSportsActive }]}>
           🏃 {translations["nav.sports"] || "Deporte"}
         </a>
-        <a href={`${homeUrl}tours`} class:list={["nav-link", { active: currentPath.includes("/tours") }]}>
+        <a href={`${homeUrl}tours`} class:list={["nav-link", { active: isToursActive }]}>
           🗺️ {translations["nav.tours"] || "Rutas"}
         </a>
+        <a href={`${homeUrl}profile`} class:list={["nav-link", { active: isProfileActive }]}>
+          👤 {translations["nav.profile"] || "Mi Perfil"}
+        </a>
+
+        <!-- Dropdown "Más ▾" (Desktop) -->
+        <div class:list={["nav-more-dropdown", { active: isMoreActive }]}>
+          <button
+            class:list={["nav-link", "nav-more-btn", { active: isMoreActive }]}
+            aria-haspopup="true"
+            aria-expanded="false"
+            id="user-more-trigger"
+            type="button"
+          >
+            {translations["nav.more"] || "Más"}
+            <span class="nav-more-chevron" aria-hidden="true">▾</span>
+          </button>
+          <div class="nav-more-panel" role="menu" aria-labelledby="user-more-trigger">
+            <a
+              href={`${homeUrl}memoria-historica`}
+              class:list={["nav-more-item", { active: isHistoryActive }]}
+              role="menuitem"
+            >
+              🏛️ {translations["nav.history"] || "Memoria"}
+            </a>
+            <a
+              href={`${homeUrl}comunidad`}
+              class:list={["nav-more-item", { active: isCommunityActive }]}
+              role="menuitem"
+            >
+              💬 {translations["nav.community"] || "Comunidad"}
+            </a>
+            <a
+              href={`${homeUrl}cuadro-de-honor`}
+              class:list={["nav-more-item", { active: isHonorActive }]}
+              role="menuitem"
+            >
+              👑 {translations["nav.honor"] || "Cuadro de Honor"}
+            </a>
+            <a href={`${homeUrl}blog`} class:list={["nav-more-item", { active: isBlogActive }]} role="menuitem">
+              📰 {translations["nav.blog"] || "Blog"}
+            </a>
+          </div>
+        </div>
+
+        <!-- Mobile Drawer Links (Solo en Drawer Móvil) -->
         <a
           href={`${homeUrl}memoria-historica`}
-          class:list={["nav-link", { active: currentPath.includes("/memoria-historica") }]}
+          class:list={["nav-link", "nav-mobile-only", { active: isHistoryActive }]}
         >
           🏛️ {translations["nav.history"] || "Memoria"}
         </a>
-        <a href={`${homeUrl}comunidad`} class:list={["nav-link", { active: currentPath.includes("/comunidad") }]}>
+        <a href={`${homeUrl}comunidad`} class:list={["nav-link", "nav-mobile-only", { active: isCommunityActive }]}>
           💬 {translations["nav.community"] || "Comunidad"}
         </a>
-        <a
-          href={`${homeUrl}cuadro-de-honor`}
-          class:list={["nav-link", { active: currentPath.includes("/cuadro-de-honor") }]}
-        >
+        <a href={`${homeUrl}cuadro-de-honor`} class:list={["nav-link", "nav-mobile-only", { active: isHonorActive }]}>
           👑 {translations["nav.honor"] || "Cuadro de Honor"}
         </a>
-        <a href={`${homeUrl}blog`} class:list={["nav-link", { active: currentPath.includes("/blog") }]}>
+        <a href={`${homeUrl}blog`} class:list={["nav-link", "nav-mobile-only", { active: isBlogActive }]}>
           📰 {translations["nav.blog"] || "Blog"}
-        </a>
-        <a href={`${homeUrl}profile`} class:list={["nav-link", { active: currentPath.includes("/profile") }]}>
-          👤 {translations["nav.profile"] || "Mi Perfil"}
         </a>
       </nav>
 
@@ -99,6 +150,40 @@ const homeUrl = prefix || "/";
 
   initMobileMenuToggle("user-menu-toggle", "user-navbar-menu");
   initAuthNavbar("user");
+
+  // Dropdown "Más ▾" toggle
+  const trigger = document.getElementById("user-more-trigger");
+  const dropdown = trigger?.closest(".nav-more-dropdown");
+  const panel = dropdown?.querySelector(".nav-more-panel");
+
+  if (trigger && dropdown && panel) {
+    function openMore() {
+      trigger!.setAttribute("aria-expanded", "true");
+      dropdown!.classList.add("open");
+    }
+    function closeMore() {
+      trigger!.setAttribute("aria-expanded", "false");
+      dropdown!.classList.remove("open");
+    }
+
+    trigger.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const isOpen = dropdown!.classList.contains("open");
+      isOpen ? closeMore() : openMore();
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!dropdown!.contains(e.target as Node)) closeMore();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeMore();
+    });
+
+    panel.querySelectorAll("a").forEach((a) => {
+      a.addEventListener("click", closeMore);
+    });
+  }
 </script>
 
 <style>

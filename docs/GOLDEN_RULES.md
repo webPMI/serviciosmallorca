@@ -169,11 +169,12 @@ Comando: `npm test` (Vitest)
 
 ## GR-15: Telemetría, Logs Resilientes y Control de Calidad en Producción (Cloudflare D1)
 
-**Todo fallo crítico, excepción SSR, error en cliente y evento financiero anómalo DEBE registrarse de forma estructurada y persistente en el sistema de telemetría D1 (`src/lib/d1Logger.ts`).**
+**Todo fallo crítico, excepción SSR, error en cliente y evento financiero anómalo DEBE registrarse de forma estructurada y persistente en el sistema de telemetría D1 (`src/lib/d1Logger.ts`), aplicando deduplicación inteligente para prevenir sobrecarga por errores masivos repetidos.**
 
 - ✅ **Cero `try...catch` Silenciosos:** Queda terminantemente prohibido usar bloques `catch (e) {}` vacíos que oculten errores. Deben registrarse con nivel (`ERROR`, `FATAL`, `SECURITY`, `WARN`) y categoría (`SSR`, `API`, `AUTH`, `PAYMENT`, `DATABASE`, `TAXONOMY`, `CLIENT_JS`).
+- ✅ **Deduplicación Anti-Spam (Zero Flooding):** El sistema agrupa ráfagas de errores idénticos en ventanas de 5 minutos mediante fingerprint hashing (`level:category:msg:status:url`), evitando saturar D1 si miles de usuarios sufren la misma caída. Los eventos de `SECURITY` y `PAYMENT` siempre se registran sin excepción.
 - ✅ **Captura Universal SSR:** Todo renderizado en `src/middleware.ts` captura excepciones 500 y las persiste en la tabla `server_error_logs` con `stack trace`, URL, método, IP y User-Agent.
-- ✅ **Telemetría de Cliente en Segundo Plano:** Los errores de JavaScript en el navegador se reportan a `/api/logs/ingest` usando `navigator.sendBeacon` sin bloquear la experiencia del usuario.
+- ✅ **Telemetría de Cliente en Segundo Plano:** Los errores de JavaScript en el navegador se reportan a `/api/logs/ingest` usando `navigator.sendBeacon` sin bloquear la experiencia del usuario, con deduplicación en memoria del cliente.
 - ✅ **Modo Resiliente / Zero-Crash:** El logger debe operar de forma segura y sin arrojar excepciones si el binding de base de datos no está disponible.
 - 📖 Consulta la documentación completa en [docs/LOGGING_AND_QUALITY_CONTROL.md](LOGGING_AND_QUALITY_CONTROL.md).
 

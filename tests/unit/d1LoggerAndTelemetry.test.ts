@@ -103,4 +103,47 @@ describe("🛡️ Cloudflare D1 Error Logger & Telemetry Suite (2026)", () => {
     expect(logs[0].metadata).toEqual({ cardBrand: "visa" });
     expect(mockPrepare).toHaveBeenCalledWith(expect.stringContaining("WHERE level = ? AND category = ?"));
   });
+
+  it("aplica deduplicación inteligente (anti-spam) en ráfagas de errores idénticos", async () => {
+    const mockRun = vi.fn().mockResolvedValue({ success: true });
+    const mockBind = vi.fn().mockReturnValue({ run: mockRun });
+    const mockPrepare = vi.fn().mockReturnValue({ bind: mockBind });
+    const mockExec = vi.fn().mockResolvedValue(true);
+
+    const mockD1 = { exec: mockExec, prepare: mockPrepare };
+
+    const entry: ServerLogEntry = {
+      level: "ERROR",
+      category: "ROUTING",
+      message: "404 Not Found route spam test",
+      url: "/es/recurso-inexistente-123",
+      status: 404,
+    };
+
+    // 1er intento: debe registrarse normalmente
+    const res1 = await logToD1(mockD1, entry);
+    expect(res1.success).toBe(true);
+    expect(res1.throttled).toBeFalsy();
+
+    // 2do intento inmediato: debe ser silenciado / throttled para proteger D1
+    const res2 = await logToD1(mockD1, entry);
+    expect(res2.success).toBe(true);
+    expect(res2.throttled).toBe(true);
+
+    // 3er intento inmediato: sigue silenciado
+    const res3 = await logToD1(mockD1, entry);
+    expect(res3.throttled).toBe(true);
+
+    // Errores de SECURITY y PAYMENT NO se silencian nunca
+    const secEntry: ServerLogEntry = {
+      level: "SECURITY",
+      category: "AUTH",
+      message: "CSRF token mismatch detected",
+      url: "/api/checkout",
+    };
+    const secRes1 = await logToD1(mockD1, secEntry);
+    const secRes2 = await logToD1(mockD1, secEntry);
+    expect(secRes1.throttled).toBeFalsy();
+    expect(secRes2.throttled).toBeFalsy();
+  });
 });

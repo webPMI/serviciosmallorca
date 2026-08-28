@@ -9,6 +9,10 @@
 
 let isReporterInitialized = false;
 
+// Evitar inundar la red con el mismo error en bucles de JavaScript
+const seenErrors = new Set<string>();
+const MAX_SEEN_ERRORS = 50;
+
 export function initClientErrorReporter(): void {
   if (typeof window === "undefined" || isReporterInitialized) return;
   isReporterInitialized = true;
@@ -16,6 +20,11 @@ export function initClientErrorReporter(): void {
   // 1. Captura de errores estándar de JavaScript
   window.addEventListener("error", (event: ErrorEvent) => {
     try {
+      const errorKey = `${event.message}:${event.filename}:${event.lineno}`;
+      if (seenErrors.has(errorKey)) return;
+      if (seenErrors.size >= MAX_SEEN_ERRORS) seenErrors.clear();
+      seenErrors.add(errorKey);
+
       const payload = {
         level: "ERROR",
         category: "CLIENT_JS",
@@ -36,6 +45,11 @@ export function initClientErrorReporter(): void {
       const reason = event.reason;
       const message = typeof reason === "string" ? reason : reason?.message || "Unhandled Promise Rejection";
       const stack = reason?.stack;
+
+      const rejectionKey = `rejection:${message}:${window.location.pathname}`;
+      if (seenErrors.has(rejectionKey)) return;
+      if (seenErrors.size >= MAX_SEEN_ERRORS) seenErrors.clear();
+      seenErrors.add(rejectionKey);
 
       const payload = {
         level: "WARN",

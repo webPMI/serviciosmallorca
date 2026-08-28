@@ -3,7 +3,8 @@ import { queryD1Logs, type LogLevel, type LogCategory } from "../../../lib/d1Log
 
 export const prerender = false;
 
-export const GET: APIRoute = async ({ request }) => {
+export const GET: APIRoute = async (context) => {
+  const { request } = context;
   try {
     const url = new URL(request.url);
 
@@ -11,7 +12,7 @@ export const GET: APIRoute = async ({ request }) => {
     const level = url.searchParams.get("level") as LogLevel | undefined;
     const category = url.searchParams.get("category") as LogCategory | undefined;
 
-    const logs = await queryD1Logs(undefined, { limit, level, category });
+    const logs = await queryD1Logs(context, { limit, level, category });
 
     return new Response(
       JSON.stringify({

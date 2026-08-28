@@ -48,24 +48,103 @@ CREATE INDEX IF NOT EXISTS idx_logs_level ON server_error_logs(level);
 CREATE INDEX IF NOT EXISTS idx_logs_category ON server_error_logs(category);
 `;
 
+// ── D1 BINDING HELPER ───────────────────────────────────────────────────────
+export function getD1Binding(context?: any): any {
+  if (context?.locals?.runtime?.env?.DB) return context.locals.runtime.env.DB;
+  if (context?.locals?.DB) return context.locals.DB;
+  if (context?.env?.DB) return context.env.DB;
+  if ((globalThis as any)?.DB) return (globalThis as any).DB;
+  if (context && typeof context.prepare === "function") return context;
+  return undefined;
+}
+
+// ── DEDUPLICACIÓN DE ERRORES (ANTI-SPAM / RATE-LIMITING) ────────────────────
+interface DedupEntry {
+  firstSeen: number;
+  lastSeen: number;
+  count: number;
+}
+
+// Cache en memoria con TTL de 5 minutos para evitar inundar D1 con miles del mismo error
+const dedupCache = new Map<string, DedupEntry>();
+const DEDUP_WINDOW_MS = 5 * 60 * 1000; // 5 minutos
+
+function generateDedupKey(entry: ServerLogEntry): string {
+  const cleanMsg = (entry.message || "").replace(/\d+/g, "X").slice(0, 150);
+  const cleanUrl = (entry.url || "").split("?")[0];
+  return `${entry.level}:${entry.category}:${cleanMsg}:${entry.status || 0}:${cleanUrl}`;
+}
+
+export function shouldThrottleLog(entry: ServerLogEntry): { throttle: boolean; count: number } {
+  // Errores de seguridad o transacciones financieras críticas siempre se registran
+  if (entry.level === "SECURITY" || entry.category === "PAYMENT") {
+    return { throttle: false, count: 1 };
+  }
+
+  const key = generateDedupKey(entry);
+  const now = Date.now();
+  const existing = dedupCache.get(key);
+
+  if (existing) {
+    if (now - existing.firstSeen < DEDUP_WINDOW_MS) {
+      existing.count += 1;
+      existing.lastSeen = now;
+      // Permitir el primer registro, y luego solo avisar cada 20 repeticiones
+      const shouldLog = existing.count === 20 || existing.count === 50 || existing.count % 100 === 0;
+      return { throttle: !shouldLog, count: existing.count };
+    } else {
+      // Ventana expirada, resetear contador
+      dedupCache.set(key, { firstSeen: now, lastSeen: now, count: 1 });
+      return { throttle: false, count: 1 };
+    }
+  }
+
+  // Limpieza periódica de caché si crece demasiado
+  if (dedupCache.size > 1000) {
+    for (const [k, v] of dedupCache.entries()) {
+      if (now - v.lastSeen > DEDUP_WINDOW_MS) dedupCache.delete(k);
+    }
+  }
+
+  dedupCache.set(key, { firstSeen: now, lastSeen: now, count: 1 });
+  return { throttle: false, count: 1 };
+}
+
 let isTableInitialized = false;
+
+export function _resetTableInitializedForTesting(): void {
+  isTableInitialized = false;
+  dedupCache.clear();
+}
 
 /**
  * Registra un error o evento de auditoría en la base de datos Cloudflare D1.
  * Si el binding D1 no está disponible (ej. entorno de desarrollo o pruebas), registra en consola y memoria sin romper la ejecución.
  */
 export async function logToD1(
-  d1Binding: any,
+  d1BindingOrContext: any,
   entry: ServerLogEntry,
-): Promise<{ success: boolean; logId: string; error?: string }> {
+): Promise<{ success: boolean; logId: string; throttled?: boolean; error?: string }> {
+  const d1Binding = getD1Binding(d1BindingOrContext);
+  const { throttle, count } = shouldThrottleLog(entry);
+
+  if (throttle) {
+    return { success: true, logId: "throttled_duplicate", throttled: true };
+  }
+
   const logId = entry.id || `log_${Date.now()}_${Math.random().toString(36).slice(2, 9)}`;
   const timestamp = entry.timestamp || new Date().toISOString();
-  const metaStr = entry.metadata ? JSON.stringify(entry.metadata) : null;
+
+  const enrichedMetadata = {
+    ...(entry.metadata || {}),
+    ...(count > 1 ? { _duplicateOccurrencesInWindow: count } : {}),
+  };
+  const metaStr = JSON.stringify(enrichedMetadata);
 
   // Log formateado en consola para monitorización en tiempo real
   const icon = entry.level === "SECURITY" ? "🚨" : entry.level === "FATAL" || entry.level === "ERROR" ? "💥" : "⚠️";
   console.error(
-    `[D1-Logger] ${icon} [${entry.level}] [${entry.category}] ${entry.message} ${entry.url ? `(URL: ${entry.url})` : ""}`,
+    `[D1-Logger] ${icon} [${entry.level}] [${entry.category}] ${entry.message} ${count > 1 ? `(Repetido x${count})` : ""} ${entry.url ? `(URL: ${entry.url})` : ""}`,
   );
 
   // Si no hay binding D1 presente, salimos con éxito en modo fallback

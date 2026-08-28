@@ -3,7 +3,8 @@ import { logToD1, type LogLevel, type LogCategory } from "../../../lib/d1Logger"
 
 export const prerender = false;
 
-export const POST: APIRoute = async ({ request }) => {
+export const POST: APIRoute = async (context) => {
+  const { request } = context;
   try {
     const body = await request.json();
 
@@ -25,7 +26,7 @@ export const POST: APIRoute = async ({ request }) => {
     const clientIp = request.headers.get("cf-connecting-ip") || request.headers.get("x-forwarded-for") || undefined;
     const userAgent = request.headers.get("user-agent") || undefined;
 
-    const result = await logToD1(undefined, {
+    const result = await logToD1(context, {
       level,
       category,
       message: String(body.message || "Error no especificado en cliente").slice(0, 1000),
@@ -39,7 +40,7 @@ export const POST: APIRoute = async ({ request }) => {
       metadata: body.metadata && typeof body.metadata === "object" ? body.metadata : undefined,
     });
 
-    return new Response(JSON.stringify({ success: true, logId: result.logId }), {
+    return new Response(JSON.stringify({ success: true, logId: result.logId, throttled: result.throttled }), {
       status: 200,
       headers: { "Content-Type": "application/json" },
     });

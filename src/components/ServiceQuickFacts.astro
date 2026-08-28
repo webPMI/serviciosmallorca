@@ -82,17 +82,9 @@ const paymentFormatted = (service.paymentMethods || ["credit_card", "cash"])
     </div>
 
     <div class="fact-item fact-item-audit">
-      <dt class="fact-term">🛡️ Estado de Auditoría</dt>
+      <dt class="fact-term">🛡️ Origen de Datos</dt>
       <dd class="fact-desc">
-        <span class={`audit-status-tag ${service.verificationStatus || (service.verified ? "verified" : "pending")}`}>
-          {
-            service.verificationStatus === "needs_manual_review" || service.verificationStatus === "needs_review"
-              ? "⚠️ En Revisión Manual"
-              : service.verified || service.verificationStatus === "verified"
-                ? "✅ 100% Verificado (GR-11 & GR-12)"
-                : "🔍 Auditoría en Curso"
-          }
-        </span>
+        <span class="audit-status-tag verified"> 🤖 Curación IA · Fuentes: Google Maps, web oficial </span>
       </dd>
     </div>
 

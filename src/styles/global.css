@@ -837,6 +837,80 @@ object {
   transition: all var(--transition-fast);
 }
 
+/* ── Dropdown "Más ▾" ─────────────────────────────────────────── */
+.nav-more-dropdown {
+  position: relative;
+}
+
+.nav-more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-family: inherit;
+}
+
+.nav-more-chevron {
+  font-size: 0.65em;
+  line-height: 1;
+  transition: transform var(--transition-fast);
+}
+
+.nav-more-dropdown.open .nav-more-chevron {
+  transform: rotate(180deg);
+}
+
+.nav-more-panel {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  min-width: 200px;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-surface-border);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-lg);
+  padding: 6px;
+  z-index: 9999;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.nav-more-dropdown.open .nav-more-panel {
+  display: flex;
+}
+
+.nav-more-item {
+  display: block;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text-light);
+  text-decoration: none;
+  border-radius: var(--border-radius-sm);
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.nav-more-item:hover {
+  color: var(--color-primary);
+  background-color: var(--color-surface-hover);
+}
+
+.nav-more-item.active {
+  color: var(--color-primary);
+  background-color: var(--color-primary-bg);
+  border: 1px solid var(--color-primary-border);
+  font-weight: 700;
+}
+
+/* Links que sólo aparecen en el drawer móvil ── */
+.nav-mobile-only {
+  display: none;
+}
+
 /* Footer */
 .app-footer {
   background-color: var(--color-surface);
@@ -1073,6 +1147,15 @@ object {
 
   .mobile-toggle-btn.is-active .hamburger-line:nth-child(3) {
     transform: translateY(-8.5px) rotate(-45deg);
+  }
+
+  /* En el drawer móvil: ocultar el dropdown ▾ y mostrar los links sueltos */
+  .nav-more-dropdown {
+    display: none;
+  }
+
+  .nav-mobile-only {
+    display: flex;
   }
 
   .footer-grid {

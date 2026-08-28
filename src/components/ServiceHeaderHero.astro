@@ -36,19 +36,6 @@ const smartCta = getSmartActionCta(
     <div class="header-badges">
       <span class="badge badge-primary">{category?.icon} {categoryName}</span>
       <span class="badge badge-accent">📍 {zoneName}</span>
-      {
-        service.verified && (
-          <span
-            class="badge badge-success"
-            title="Auditoría Oficial Multi-Canal (Web, Teléfono y Geolocalización en Mallorca)"
-          >
-            🛡️{" "}
-            {locale === "de"
-              ? `Geprüft (${service.confidenceScore ?? 95}%)`
-              : `Verificado (${service.confidenceScore ?? 95}%)`}
-          </span>
-        )
-      }
       <span class="badge badge-price">{service.priceRange}</span>
       {service.schedule && <LiveScheduleBadge scheduleText={service.schedule} locale={locale} />}
     </div>

@@ -127,7 +127,7 @@ Explora el directorio completo y las valoraciones de restaurantes Michelin, chá
     return response;
   } catch (ssrError: any) {
     // 🛡️ Capturar y persistir error SSR crítico en Cloudflare D1
-    await logToD1(undefined, {
+    await logToD1(context, {
       level: "ERROR",
       category: "SSR",
       message: ssrError?.message || "Excepción no controlada en renderizado SSR",

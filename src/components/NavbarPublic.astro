@@ -33,6 +33,9 @@ const isHonorActive = isActive(`${homeUrl}cuadro-de-honor`) || currentPath.inclu
 const isJoinActive = isActive(`${homeUrl}unete`) || currentPath.includes("/unete");
 const isLoginActive = isActive(`${homeUrl}login`);
 const isRegisterActive = isActive(`${homeUrl}register`);
+
+// ¿Algún link del grupo "Más" está activo?
+const isMoreActive = isHistoryActive || isCommunityActive || isHonorActive || isBlogActive || isAboutActive;
 ---
 
 <header class="navbar-header nav-public">
@@ -58,9 +61,9 @@ const isRegisterActive = isActive(`${homeUrl}register`);
     <!-- Public Navigation Menu -->
     <div id="public-navbar-menu" class="navbar-menu">
       <nav class="navbar-links" aria-label={translations["nav.aria.publicNav"] || "Navegación pública"}>
+        <!-- ── ENLACES PRIMARIOS (siempre visibles en desktop) ── -->
         <a
           href={homeUrl}
-          class="nav-link"
           class:list={["nav-link", { active: isHomeActive }]}
           aria-current={isHomeActive ? "page" : undefined}
         >
@@ -68,7 +71,6 @@ const isRegisterActive = isActive(`${homeUrl}register`);
         </a>
         <a
           href={`${homeUrl}servicios`}
-          class="nav-link"
           class:list={["nav-link", { active: isServicesActive }]}
           aria-current={isServicesActive ? "page" : undefined}
         >
@@ -76,7 +78,6 @@ const isRegisterActive = isActive(`${homeUrl}register`);
         </a>
         <a
           href={`${homeUrl}deporte`}
-          class="nav-link"
           class:list={["nav-link", { active: isSportsActive }]}
           aria-current={isSportsActive ? "page" : undefined}
         >
@@ -84,56 +85,107 @@ const isRegisterActive = isActive(`${homeUrl}register`);
         </a>
         <a
           href={`${homeUrl}tours`}
-          class="nav-link"
           class:list={["nav-link", { active: isToursActive }]}
           aria-current={isToursActive ? "page" : undefined}
         >
           🗺️ {translations["nav.tours"] || "Rutas"}
         </a>
         <a
+          href={`${homeUrl}unete`}
+          class:list={["nav-link", "nav-highlight-link", { active: isJoinActive }]}
+          aria-current={isJoinActive ? "page" : undefined}
+        >
+          🚀 {translations["nav.join"] || "Para Empresas"}
+        </a>
+
+        <!-- ── DROPDOWN "MÁS ▾" — agrupa enlaces secundarios en desktop ── -->
+        <div class:list={["nav-more-dropdown", { active: isMoreActive }]}>
+          <button
+            class:list={["nav-link", "nav-more-btn", { active: isMoreActive }]}
+            aria-haspopup="true"
+            aria-expanded="false"
+            id="nav-more-trigger"
+            type="button"
+          >
+            {translations["nav.more"] || "Más"}
+            <span class="nav-more-chevron" aria-hidden="true">▾</span>
+          </button>
+          <div class="nav-more-panel" role="menu" aria-labelledby="nav-more-trigger">
+            <a
+              href={`${homeUrl}memoria-historica`}
+              class:list={["nav-more-item", { active: isHistoryActive }]}
+              role="menuitem"
+              aria-current={isHistoryActive ? "page" : undefined}
+            >
+              🏛️ {translations["nav.history"] || "Memoria"}
+            </a>
+            <a
+              href={`${homeUrl}comunidad`}
+              class:list={["nav-more-item", { active: isCommunityActive }]}
+              role="menuitem"
+              aria-current={isCommunityActive ? "page" : undefined}
+            >
+              💬 {translations["nav.community"] || "Comunidad"}
+            </a>
+            <a
+              href={`${homeUrl}cuadro-de-honor`}
+              class:list={["nav-more-item", { active: isHonorActive }]}
+              role="menuitem"
+              aria-current={isHonorActive ? "page" : undefined}
+            >
+              👑 {translations["nav.honor"] || "Cuadro de Honor"}
+            </a>
+            <a
+              href={`${homeUrl}blog`}
+              class:list={["nav-more-item", { active: isBlogActive }]}
+              role="menuitem"
+              aria-current={isBlogActive ? "page" : undefined}
+            >
+              📰 {translations["nav.blog"] || "Blog"}
+            </a>
+            <a
+              href={`${homeUrl}sobre-nosotros`}
+              class:list={["nav-more-item", { active: isAboutActive }]}
+              role="menuitem"
+              aria-current={isAboutActive ? "page" : undefined}
+            >
+              🌿 {translations["nav.about"] || "Misión"}
+            </a>
+          </div>
+        </div>
+
+        <!-- ── ENLACES SECUNDARIOS VISIBLES SOLO EN EL DRAWER MÓVIL ── -->
+        <a
           href={`${homeUrl}memoria-historica`}
-          class="nav-link"
-          class:list={["nav-link", { active: isHistoryActive }]}
+          class:list={["nav-link", "nav-mobile-only", { active: isHistoryActive }]}
           aria-current={isHistoryActive ? "page" : undefined}
         >
           🏛️ {translations["nav.history"] || "Memoria"}
         </a>
         <a
           href={`${homeUrl}comunidad`}
-          class="nav-link"
-          class:list={["nav-link", { active: isCommunityActive }]}
+          class:list={["nav-link", "nav-mobile-only", { active: isCommunityActive }]}
           aria-current={isCommunityActive ? "page" : undefined}
         >
           💬 {translations["nav.community"] || "Comunidad"}
         </a>
         <a
           href={`${homeUrl}cuadro-de-honor`}
-          class="nav-link"
-          class:list={["nav-link", { active: isHonorActive }]}
+          class:list={["nav-link", "nav-mobile-only", { active: isHonorActive }]}
           aria-current={isHonorActive ? "page" : undefined}
         >
           👑 {translations["nav.honor"] || "Cuadro de Honor"}
         </a>
         <a
-          href={`${homeUrl}unete`}
-          class="nav-link nav-highlight-link"
-          class:list={["nav-link", "nav-highlight-link", { active: isJoinActive }]}
-          aria-current={isJoinActive ? "page" : undefined}
-        >
-          🚀 {translations["nav.join"] || "Para Empresas"}
-        </a>
-        <a
           href={`${homeUrl}blog`}
-          class="nav-link"
-          class:list={["nav-link", { active: isBlogActive }]}
+          class:list={["nav-link", "nav-mobile-only", { active: isBlogActive }]}
           aria-current={isBlogActive ? "page" : undefined}
         >
           📰 {translations["nav.blog"] || "Blog"}
         </a>
         <a
           href={`${homeUrl}sobre-nosotros`}
-          class="nav-link"
-          class:list={["nav-link", { active: isAboutActive }]}
+          class:list={["nav-link", "nav-mobile-only", { active: isAboutActive }]}
           aria-current={isAboutActive ? "page" : undefined}
         >
           🌿 {translations["nav.about"] || "Misión"}
@@ -163,7 +215,6 @@ const isRegisterActive = isActive(`${homeUrl}register`);
         <div class="auth-buttons">
           <a
             href={`${homeUrl}login`}
-            class="btn btn-secondary btn-sm"
             class:list={["btn", "btn-secondary", "btn-sm", { active: isLoginActive }]}
             aria-current={isLoginActive ? "page" : undefined}
           >
@@ -171,7 +222,6 @@ const isRegisterActive = isActive(`${homeUrl}register`);
           </a>
           <a
             href={`${homeUrl}register`}
-            class="btn btn-primary btn-sm"
             class:list={["btn", "btn-primary", "btn-sm", { active: isRegisterActive }]}
             aria-current={isRegisterActive ? "page" : undefined}
           >
@@ -186,4 +236,48 @@ const isRegisterActive = isActive(`${homeUrl}register`);
 <script>
   import { initMobileMenuToggle } from "../lib/toggleMobileMenu";
   initMobileMenuToggle("public-menu-toggle", "public-navbar-menu");
+
+  // ── Dropdown "Más ▾" toggle ──────────────────────────────────────────────
+  const trigger = document.getElementById("nav-more-trigger");
+  const dropdown = trigger?.closest(".nav-more-dropdown");
+  const panel = dropdown?.querySelector(".nav-more-panel");
+
+  if (trigger && dropdown && panel) {
+    function openMore() {
+      trigger!.setAttribute("aria-expanded", "true");
+      dropdown!.classList.add("open");
+    }
+    function closeMore() {
+      trigger!.setAttribute("aria-expanded", "false");
+      dropdown!.classList.remove("open");
+    }
+
+    trigger.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const isOpen = dropdown!.classList.contains("open");
+      isOpen ? closeMore() : openMore();
+    });
+
+    // Cerrar al hacer clic fuera
+    document.addEventListener("click", (e) => {
+      if (!dropdown!.contains(e.target as Node)) closeMore();
+    });
+
+    // Cerrar con Escape
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeMore();
+    });
+
+    // Cerrar al navegar a un ítem
+    panel.querySelectorAll("a").forEach((a) => {
+      a.addEventListener("click", closeMore);
+    });
+  }
 </script>
+
+<style>
+  .navbar-header {
+    background: var(--glass-bg);
+    border-bottom: 1px solid var(--color-surface-border);
+  }
+</style>

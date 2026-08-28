@@ -181,8 +181,30 @@ npx wrangler d1 execute servicios-mallorca-db --remote --command="SELECT timesta
 
 ---
 
-## 7. Protocolo de Calidad Continua (Checklist de Incidencias)
+## 8. Deduplicación Inteligente y Prevención de Flooding (Anti-Spam)
 
-1. **Revisión Diaria de Logs:** El equipo de desarrollo consulta `/api/logs/query?level=ERROR` para identificar anomalías emergentes.
-2. **Prioridad Inmediata a `SECURITY` y `FATAL`:** Cualquier log con nivel `SECURITY` o `FATAL` activa un ticket de resolución urgente.
-3. **Cero `try...catch` Vacíos:** Queda estrictamente prohibido silenciar errores con bloques vacíos `catch (e) {}` sin emitir el registro correspondiente a `logToD1`.
+Si un fallo generalizado afecta a miles de usuarios simultáneamente (ej. caída temporal de una API externa), registrar miles de filas idénticas colapsaría el límite de operaciones de Cloudflare D1.
+
+El motor de deduplicación (`src/lib/d1Logger.ts`) implementa una **ventana deslizante de 5 minutos** con las siguientes reglas:
+
+1. **Fingerprint Hashing:** Calcula una firma única `${level}:${category}:${normalizedMessage}:${status}:${url}`.
+2. **Primer Registro Inmediato:** El primer error se persiste y se imprime en consola de inmediato.
+3. **Throttling Progresivo:** Las repeticiones en la misma ventana de 5 minutos se silencian, registrando únicamente hitos de frecuencia (repetición 20, 50, 100...) enriquecidas con `_duplicateOccurrencesInWindow`.
+4. **Excepciones de Alta Prioridad:** Los logs de nivel `SECURITY` y categoría `PAYMENT` **nunca se silencian** para garantizar la trazabilidad de auditoría financiera completa.
+5. **Deduplicación en Navegador:** `client-error-reporter.ts` mantiene un registro en memoria de firmas de error para evitar que bucles infinitos en el cliente (como un `setInterval` roto) saturen el endpoint de ingesta.
+
+---
+
+## 9. Checklist Maestro de Cobertura de Logs por Módulo
+
+| Módulo / Archivo                            | Nivel / Categoría           | Evento Auditado                                   | Estado          |
+| ------------------------------------------- | --------------------------- | ------------------------------------------------- | --------------- |
+| `src/middleware.ts`                         | `ERROR` / `SSR`             | Caídas 500 durante renderizado HTML               | ✅ Implementado |
+| `src/scripts/client-error-reporter.ts`      | `ERROR` / `CLIENT_JS`       | Excepciones no controladas en navegador           | ✅ Implementado |
+| `src/pages/api/logs/ingest.ts`              | `INFO/ERROR` / `API`        | Ingesta de errores de cliente hacia D1            | ✅ Implementado |
+| `src/pages/api/logs/query.ts`               | `INFO` / `API`              | Consulta y monitorización técnica                 | ✅ Implementado |
+| `src/lib/honorBoardEngine.ts`               | `ERROR/PAYMENT` / `PAYMENT` | Fallos en checkout, idempotencia e impulsos       | ✅ Protegido    |
+| `src/lib/displacementNotificationEngine.ts` | `WARN` / `API`              | Fallos en envío de emails/push de superación      | ✅ Protegido    |
+| `src/lib/managerSecurityEngine.ts`          | `SECURITY` / `AUTH`         | Intentos de elevación o dominios de correo falsos | ✅ Protegido    |
+| `src/pages/api/report-business.ts`          | `INFO` / `API`              | Reportes de negocios con datos obsoletos          | ✅ Protegido    |
+| `src/pages/api/track-conversion.ts`         | `INFO` / `API`              | Telemetría de clics a llamada, web y maps         | ✅ Protegido    |

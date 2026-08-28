@@ -70,15 +70,7 @@ const smartCta = getSmartActionCta(
         )
       }
       {service.culturalIdentity === "british_oriented" && <span class="badge badge-community">🇬🇧 English</span>}
-      {
-        service.verified && (
-          <span class="badge badge-success">
-            {currentLocale === "de"
-              ? `🛡️ Geprüft (${service.confidenceScore ?? 95}%)`
-              : `✓ ${translations["services.verifiedBadge"] || "Verificado"}`}
-          </span>
-        )
-      }
+
       <span class="badge badge-price">{service.priceRange}</span>
     </div>
   </div>

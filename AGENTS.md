@@ -43,7 +43,7 @@ Toda la documentación del proyecto está en `docs/`. Antes de trabajar en cualq
 12. **GR-12**: Fidelidad Google Maps: 90%+ re-indexación de datos oficiales (coordenadas, horarios, reseñas y multi-mapas)
 13. **GR-13**: Seguridad del Usuario: RGPD, cabeceras HTTP y reglas Firestore blindadas
 14. **GR-14**: Sincronización Continua con GitHub: Pre-flight `git fetch origin` y `git pull` obligatorio antes de iniciar o tras >12h sin sincronizar
-15. **GR-15**: Telemetría, Logs Resilientes y Control de Calidad en Producción (Cloudflare D1)
+15. **GR-15**: Telemetría, Logs Resilientes y Control de Calidad en Producción (Cloudflare D1 con deduplicación anti-spam y cero flooding)
 
 ## Protocolo de Curación Atómica (Cero Omisión)
 
