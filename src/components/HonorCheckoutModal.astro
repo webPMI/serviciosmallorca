@@ -28,7 +28,7 @@ const prefix = getLangPrefix(locale);
 const verifiedBusinesses = PUBLIC_SERVICES.filter((s) => (s.confidenceScore ?? 0) >= 80 && s.status === "open");
 ---
 
-<!-- Modal de Checkout Premium & Impulso Comunitario -->
+<!-- Modal de Checkout & Posicionamiento (Multi-step Wizard, Theme Adaptive, Validated) -->
 <div
   id="honor-checkout-modal"
   class="honor-modal-backdrop"
@@ -38,7 +38,8 @@ const verifiedBusinesses = PUBLIC_SERVICES.filter((s) => (s.confidenceScore ?? 0
   role="dialog"
   aria-modal="true"
 >
-  <div class="honor-modal-dialog card card-glass">
+  <div class="honor-modal-dialog">
+    <!-- Header -->
     <div class="modal-header-row">
       <div class="modal-title-wrap">
         <span class="live-pill">
@@ -52,33 +53,37 @@ const verifiedBusinesses = PUBLIC_SERVICES.filter((s) => (s.confidenceScore ?? 0
       <button type="button" class="modal-close-btn" id="close-honor-modal-btn" aria-label="Cerrar modal"> ✕ </button>
     </div>
 
-    <!-- Progress Steps Header -->
-    <div class="checkout-steps-track">
-      <div class="step-badge active"><span>1</span> {translations["honor.modal.step1"] || "Importe & Datos"}</div>
-      <div class="step-arrow">→</div>
-      <div class="step-badge active"><span>2</span> {translations["honor.modal.step2"] || "Pasarela SSL"}</div>
-      <div class="step-arrow">→</div>
-      <div class="step-badge active"><span>3</span> {translations["honor.modal.step3"] || "Factura 21% IVA"}</div>
+    <!-- Progress Steps Header (1 -> 2 -> 3) -->
+    <div class="checkout-steps-track" role="navigation" aria-label="Pasos de checkout">
+      <div class="step-badge active" id="step-indicator-1">
+        <span class="step-num">1</span>
+        <span class="step-label">{translations["honor.modal.step1"] || "Datos & Negocio"}</span>
+      </div>
+      <div class="step-arrow" id="step-arrow-1">→</div>
+      <div class="step-badge" id="step-indicator-2">
+        <span class="step-num">2</span>
+        <span class="step-label">{translations["honor.modal.step2"] || "Importe & Pago SSL"}</span>
+      </div>
+      <div class="step-arrow" id="step-arrow-2">→</div>
+      <div class="step-badge" id="step-indicator-3">
+        <span class="step-num">3</span>
+        <span class="step-label">{translations["honor.modal.step3"] || "Factura 21% IVA"}</span>
+      </div>
     </div>
 
-    <!-- Mode Switcher Tabs -->
-    <div class="checkout-mode-tabs" role="tablist">
-      <button type="button" class="mode-tab active" id="tab-community-boost" role="tab" aria-selected="true">
-        <span>{translations["honor.modal.tabCommunity"] || "❤️ Impulso Popular (Vecinos & Fans)"}</span>
-      </button>
-      <button type="button" class="mode-tab" id="tab-owner-bid" role="tab" aria-selected="false">
-        <span>{translations["honor.modal.tabOwner"] || "👑 Puja Oficial de Titular (+1€)"}</span>
-      </button>
-    </div>
+    <!-- Step 1 Pane: Negocio y Datos del Pagador -->
+    <div id="checkout-step-1" class="wizard-pane">
+      <!-- Mode Switcher Tabs -->
+      <div class="checkout-mode-tabs" role="tablist">
+        <button type="button" class="mode-tab active" id="tab-community-boost" role="tab" aria-selected="true">
+          <span>{translations["honor.modal.tabCommunity"] || "❤️ Impulso Popular (Vecinos & Fans)"}</span>
+        </button>
+        <button type="button" class="mode-tab" id="tab-owner-bid" role="tab" aria-selected="false">
+          <span>{translations["honor.modal.tabOwner"] || "👑 Puja Oficial de Titular (+1€)"}</span>
+        </button>
+      </div>
 
-    <form id="honor-checkout-form" class="checkout-form-stack" novalidate>
-      <input type="hidden" id="input-checkout-mode" name="checkoutMode" value="community_boost" />
-      <input type="hidden" id="input-service-id" name="serviceId" value={preselectedServiceId} />
-      <input type="hidden" id="input-service-slug" name="serviceSlug" value={preselectedServiceSlug} />
-      <input type="hidden" id="input-min-required" value={minBidRequired} />
-      <input type="hidden" id="input-idempotency-key" name="idempotencyKey" value="" />
-
-      <!-- Business Target Indicator & Selector -->
+      <!-- Selected Business Display Card -->
       <div class="business-target-card" id="business-target-card">
         <div class="target-icon">🏢</div>
         <div class="target-details">
@@ -148,24 +153,20 @@ const verifiedBusinesses = PUBLIC_SERVICES.filter((s) => (s.confidenceScore ?? 0
           <input
             type="text"
             id="input-backer-name"
-            name="backerName"
             class="form-input"
             placeholder={translations["honor.modal.backerNamePlaceholder"] || "Ej. Joan García (Vecino de Inca)"}
             required
           />
+          <span id="err-backer-name" class="inline-error" style="display: none;">Por favor introduce tu nombre.</span>
         </div>
         <div class="form-group">
           <label for="input-backer-email" class="form-label"
             >{translations["honor.modal.backerEmail"] || "Email para Factura / Notificación *"}</label
           >
-          <input
-            type="email"
-            id="input-backer-email"
-            name="backerEmail"
-            class="form-input"
-            placeholder="tu-email@gmail.com"
-            required
-          />
+          <input type="email" id="input-backer-email" class="form-input" placeholder="tu-email@gmail.com" required />
+          <span id="err-backer-email" class="inline-error" style="display: none;"
+            >Introduce un email válido para la factura.</span
+          >
         </div>
       </div>
 
@@ -177,7 +178,6 @@ const verifiedBusinesses = PUBLIC_SERVICES.filter((s) => (s.confidenceScore ?? 0
         <input
           type="text"
           id="input-backer-message"
-          name="backerMessage"
           class="form-input"
           placeholder={translations["honor.modal.dedicationPlaceholder"] ||
             "Ej. 'El mejor pan artesanal de Mallorca desde 1862'"}
@@ -186,9 +186,9 @@ const verifiedBusinesses = PUBLIC_SERVICES.filter((s) => (s.confidenceScore ?? 0
       </div>
 
       <!-- B2B Fiscal Invoice Drawer (Empresa / Autónomo) -->
-      <div class="b2b-invoice-toggle-box card">
+      <div class="b2b-invoice-toggle-box">
         <label class="b2b-checkbox-label">
-          <input type="checkbox" id="checkbox-b2b-invoice" name="isB2BInvoice" />
+          <input type="checkbox" id="checkbox-b2b-invoice" />
           <span
             >🏢 {
               translations["honor.modal.b2bCheckbox"] ||
@@ -203,25 +203,15 @@ const verifiedBusinesses = PUBLIC_SERVICES.filter((s) => (s.confidenceScore ?? 0
               <label for="input-b2b-taxid" class="form-label"
                 >{translations["honor.modal.b2bTaxId"] || "CIF / NIF de Empresa *"}</label
               >
-              <input
-                type="text"
-                id="input-b2b-taxid"
-                name="b2bTaxId"
-                class="form-input"
-                placeholder="Ej. B-07123456 o 43123456Z"
-              />
+              <input type="text" id="input-b2b-taxid" class="form-input" placeholder="Ej. B-07123456 o 43123456Z" />
+              <span id="err-b2b-taxid" class="inline-error" style="display: none;">Introduce un CIF/NIF válido.</span>
             </div>
             <div class="form-group">
               <label for="input-b2b-legalname" class="form-label"
                 >{translations["honor.modal.b2bLegalName"] || "Razón Social / Nombre Fiscal *"}</label
               >
-              <input
-                type="text"
-                id="input-b2b-legalname"
-                name="b2bLegalName"
-                class="form-input"
-                placeholder="Ej. Hostelería Balear S.L."
-              />
+              <input type="text" id="input-b2b-legalname" class="form-input" placeholder="Ej. Hostelería Balear S.L." />
+              <span id="err-b2b-legalname" class="inline-error" style="display: none;">Introduce la razón social.</span>
             </div>
           </div>
           <div class="form-group">
@@ -231,11 +221,29 @@ const verifiedBusinesses = PUBLIC_SERVICES.filter((s) => (s.confidenceScore ?? 0
             <input
               type="text"
               id="input-b2b-address"
-              name="b2bAddress"
               class="form-input"
               placeholder="Ej. Carrer del Sindicat 12, 07002 Palma"
             />
           </div>
+        </div>
+      </div>
+
+      <!-- Step 1 Action Button -->
+      <div class="modal-actions-footer">
+        <button type="button" id="btn-next-step-1" class="btn btn-primary btn-lg btn-full">
+          <span>Continuar al Importe & Pago SSL →</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Step 2 Pane: Importe & Pasarela de Pago SSL -->
+    <div id="checkout-step-2" class="wizard-pane" style="display: none;">
+      <!-- Quick Review of Target Business -->
+      <div class="selected-biz-summary">
+        <span class="sum-icon">📍</span>
+        <div class="sum-text">
+          <span class="sum-label">Destinatario del patrocinio:</span>
+          <strong id="summary-biz-name" class="sum-val">Comercio de Mallorca</strong>
         </div>
       </div>
 
@@ -255,7 +263,6 @@ const verifiedBusinesses = PUBLIC_SERVICES.filter((s) => (s.confidenceScore ?? 0
           <input
             type="number"
             id="input-bid-amount"
-            name="bidAmount"
             class="form-input amount-input"
             step="1"
             min="1"
@@ -264,7 +271,7 @@ const verifiedBusinesses = PUBLIC_SERVICES.filter((s) => (s.confidenceScore ?? 0
           />
         </div>
 
-        <!-- Real-time Collision / Uniqueness Status Chip -->
+        <!-- Real-time Collision Status Chip -->
         <div id="collision-status-box" class="collision-chip collision-ok">
           <span class="collision-icon">✨</span>
           <span id="collision-msg-text"
@@ -323,24 +330,34 @@ const verifiedBusinesses = PUBLIC_SERVICES.filter((s) => (s.confidenceScore ?? 0
         </div>
       </div>
 
-      <!-- Submit CTA Button (Blindado contra doble clic) -->
-      <div class="modal-actions-footer">
-        <button type="submit" id="submit-honor-btn" class="btn btn-accent btn-lg btn-full pulse-hover">
-          <span id="btn-submit-spinner" class="btn-spinner" style="display: none;">🔒</span>
-          <span id="btn-submit-text"
-            >{translations["honor.modal.submitCommunity"] || "⚡ Completar Aportación & Aupar al Podio"}</span
-          >
+      <!-- Step 2 Actions Footer -->
+      <div class="step-2-actions-row">
+        <button type="button" id="btn-back-step-2" class="btn btn-secondary">
+          <span>← Modificar Datos</span>
         </button>
-        <p class="security-guarantee-txt">
-          {
-            translations["honor.modal.security"] ||
-              "🔒 Pago blindado anti-duplicados · Cifrado SSL 256 bits · Factura fiscal con 21% IVA deducible"
-          }
-        </p>
+        <button type="button" id="submit-honor-btn" class="btn btn-primary btn-lg pulse-hover btn-flex-grow">
+          <span id="btn-submit-spinner" class="btn-spinner" style="display: none;">🔒</span>
+          <span id="btn-submit-text">{translations["honor.modal.submitCommunity"] || "⚡ Confirmar y Pagar"}</span>
+        </button>
       </div>
+      <p class="security-guarantee-txt">
+        {
+          translations["honor.modal.security"] ||
+            "🔒 Pago blindado anti-duplicados · Cifrado SSL 256 bits · Factura fiscal con 21% IVA deducible"
+        }
+      </p>
+    </div>
+
+    <!-- Hidden Form Fields for State & Idempotency -->
+    <form id="honor-checkout-form" style="display: none;">
+      <input type="hidden" id="input-checkout-mode" name="checkoutMode" value="community_boost" />
+      <input type="hidden" id="input-service-id" name="serviceId" value={preselectedServiceId} />
+      <input type="hidden" id="input-service-slug" name="serviceSlug" value={preselectedServiceSlug} />
+      <input type="hidden" id="input-min-required" value={minBidRequired} />
+      <input type="hidden" id="input-idempotency-key" name="idempotencyKey" value="" />
     </form>
 
-    <!-- Post-Payment Receipt & Success View (Pantalla de Confirmación y Factura) -->
+    <!-- Step 3 Pane: Factura & Recibo de Éxito -->
     <div id="checkout-success-view" class="checkout-success-screen" style="display: none;">
       <div class="success-header-badge">
         <span class="success-big-icon">🎉</span>
@@ -385,13 +402,13 @@ const verifiedBusinesses = PUBLIC_SERVICES.filter((s) => (s.confidenceScore ?? 0
       </div>
 
       <div class="success-actions-grid">
-        <a id="receipt-link-honor" href={`${prefix}cuadro-de-honor`} class="btn btn-accent btn-full">
+        <a id="receipt-link-honor" href={`${prefix}cuadro-de-honor`} class="btn btn-primary btn-full">
           {translations["honor.modal.viewHonor"] || "👑 Ver Puesto en Cuadro de Honor"}
         </a>
         <a id="receipt-link-profile" href={`${prefix}profile?tab=business`} class="btn btn-secondary btn-full">
           {translations["honor.modal.viewProfile"] || "👤 Ir a Mi Perfil & Negocios"}
         </a>
-        <button type="button" id="receipt-print-btn" class="btn btn-outline-secondary btn-full btn-sm">
+        <button type="button" id="receipt-print-btn" class="btn btn-secondary btn-full btn-sm">
           {translations["honor.modal.printInvoice"] || "🖨️ Imprimir Factura Fiscal / PDF"}
         </button>
       </div>
@@ -400,6 +417,7 @@ const verifiedBusinesses = PUBLIC_SERVICES.filter((s) => (s.confidenceScore ?? 0
 </div>
 
 <style>
+  /* Base Backdrop */
   .honor-modal-backdrop {
     display: none;
     position: fixed;
@@ -407,8 +425,8 @@ const verifiedBusinesses = PUBLIC_SERVICES.filter((s) => (s.confidenceScore ?? 0
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(10, 15, 29, 0.85);
-    backdrop-filter: blur(12px);
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(10px);
     z-index: 99999;
     align-items: center;
     justify-content: center;
@@ -422,25 +440,28 @@ const verifiedBusinesses = PUBLIC_SERVICES.filter((s) => (s.confidenceScore ?? 0
     opacity: 1;
   }
 
+  /* Modal Dialog Box — 100% Theme Reactive */
   .honor-modal-dialog {
     width: 100%;
     max-width: 580px;
     max-height: 90vh;
     overflow-y: auto;
-    background: linear-gradient(145deg, rgba(26, 32, 44, 0.98), rgba(15, 23, 42, 0.99));
-    border: 1px solid rgba(255, 215, 0, 0.35);
-    border-radius: var(--radius-xl, 16px);
-    box-shadow:
-      0 25px 60px -15px rgba(0, 0, 0, 0.8),
-      0 0 35px rgba(255, 215, 0, 0.15);
+    background: var(--color-surface);
+    color: var(--color-text);
+    border: 1px solid var(--color-surface-border);
+    border-radius: var(--border-radius, 16px);
+    box-shadow: var(--shadow-lg);
     padding: var(--space-xl, 1.75rem);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md, 1rem);
   }
 
   .modal-header-row {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: var(--space-md, 1rem);
+    gap: var(--space-sm);
   }
 
   .live-pill {
@@ -449,11 +470,11 @@ const verifiedBusinesses = PUBLIC_SERVICES.filter((s) => (s.confidenceScore ?? 0
     gap: 6px;
     font-size: 0.75rem;
     font-weight: 700;
-    color: var(--color-accent, #ffd700);
-    background: rgba(255, 215, 0, 0.1);
-    border: 1px solid rgba(255, 215, 0, 0.25);
+    color: var(--color-primary);
+    background: var(--color-primary-bg);
+    border: 1px solid var(--color-primary-border);
     padding: 2px 10px;
-    border-radius: 999px;
+    border-radius: var(--border-radius-full, 9999px);
     margin-bottom: 4px;
   }
 
@@ -461,47 +482,48 @@ const verifiedBusinesses = PUBLIC_SERVICES.filter((s) => (s.confidenceScore ?? 0
     width: 7px;
     height: 7px;
     border-radius: 50%;
-    background: var(--color-accent, #ffd700);
-    box-shadow: 0 0 8px var(--color-accent, #ffd700);
+    background: var(--color-primary);
+    box-shadow: 0 0 8px var(--color-primary);
   }
 
   .modal-main-title {
-    font-size: 1.35rem;
+    font-size: 1.3rem;
     font-weight: 800;
     margin: 0;
-    color: var(--color-text, #fff);
+    color: var(--color-text);
+    line-height: 1.25;
   }
 
   .modal-close-btn {
-    background: rgba(255, 255, 255, 0.08);
-    border: none;
-    color: var(--color-text-secondary, #cbd5e1);
-    width: 32px;
-    height: 32px;
+    background: var(--color-surface-hover);
+    border: 1px solid var(--color-surface-border);
+    color: var(--color-text);
+    width: 34px;
+    height: 34px;
     border-radius: 50%;
     font-size: 1rem;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background 0.2s;
+    transition: background var(--transition-fast);
+    flex-shrink: 0;
   }
 
   .modal-close-btn:hover {
-    background: rgba(255, 255, 255, 0.2);
-    color: #fff;
+    background: var(--color-surface-border);
   }
 
-  /* Mode Switcher */
+  /* Progress Steps Header */
   .checkout-steps-track {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
-    margin-bottom: var(--space-md, 1rem);
     padding: 8px 12px;
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
+    background: var(--color-bg);
+    border: 1px solid var(--color-surface-border);
+    border-radius: var(--border-radius-sm, 8px);
     font-size: 0.78rem;
   }
 
@@ -509,55 +531,429 @@ const verifiedBusinesses = PUBLIC_SERVICES.filter((s) => (s.confidenceScore ?? 0
     display: flex;
     align-items: center;
     gap: 5px;
-    color: var(--color-text-muted, #94a3b8);
+    color: var(--color-text-muted);
     font-weight: 600;
   }
 
   .step-badge.active {
-    color: var(--color-accent, #ffd700);
-  }
-
-  .step-badge span {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    background: rgba(255, 215, 0, 0.2);
-    font-size: 0.7rem;
+    color: var(--color-primary);
     font-weight: 700;
   }
 
+  .step-badge.done {
+    color: var(--color-success);
+  }
+
+  .step-badge .step-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--color-surface-border);
+    color: var(--color-text-muted);
+    font-size: 0.72rem;
+    font-weight: 700;
+  }
+
+  .step-badge.active .step-num {
+    background: var(--color-primary);
+    color: var(--color-btn-primary-text, #fff);
+  }
+
+  .step-badge.done .step-num {
+    background: var(--color-success);
+    color: #fff;
+  }
+
   .step-arrow {
-    color: rgba(255, 255, 255, 0.3);
+    color: var(--color-text-muted);
     font-size: 0.8rem;
+  }
+
+  /* Wizard Panes */
+  .wizard-pane {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md, 1rem);
+  }
+
+  /* Mode Switcher */
+  .checkout-mode-tabs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+    background: var(--color-bg);
+    border: 1px solid var(--color-surface-border);
+    padding: 4px;
+    border-radius: var(--border-radius-sm, 8px);
+  }
+
+  .mode-tab {
+    background: transparent;
+    border: none;
+    padding: 8px 10px;
+    border-radius: var(--border-radius-sm, 6px);
+    color: var(--color-text-light);
+    font-weight: 600;
+    font-size: 0.82rem;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    text-align: center;
+  }
+
+  .mode-tab.active {
+    background: var(--color-surface);
+    color: var(--color-primary);
+    font-weight: 700;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--color-surface-border);
+  }
+
+  /* Target Business Card */
+  .business-target-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--color-bg);
+    border: 1px solid var(--color-surface-border);
+    border-radius: var(--border-radius-sm, 8px);
+    padding: 10px 14px;
+  }
+
+  .target-icon {
+    font-size: 1.6rem;
+    flex-shrink: 0;
+  }
+
+  .target-details {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .target-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 2px;
+  }
+
+  .target-label {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    font-weight: 600;
+  }
+
+  .btn-change-biz {
+    background: transparent;
+    border: none;
+    color: var(--color-primary);
+    font-size: 0.75rem;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 2px 4px;
+  }
+
+  .btn-change-biz:hover {
+    text-decoration: underline;
+  }
+
+  .target-name {
+    font-size: 0.95rem;
+    color: var(--color-text);
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Form Elements */
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .form-label {
+    font-size: 0.84rem;
+    font-weight: 700;
+    color: var(--color-text);
+  }
+
+  .form-input {
+    width: 100%;
+    padding: 9px 12px;
+    background: var(--color-surface);
+    color: var(--color-text);
+    border: 1px solid var(--color-surface-border);
+    border-radius: var(--border-radius-sm, 8px);
+    font-size: 0.9rem;
+    font-family: inherit;
+    transition: border-color var(--transition-fast);
+  }
+
+  .form-input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px var(--color-primary-ring);
+  }
+
+  .form-helper {
+    font-size: 0.72rem;
+    color: var(--color-text-muted);
+  }
+
+  .inline-error {
+    font-size: 0.75rem;
+    color: var(--color-danger);
+    font-weight: 600;
+  }
+
+  .form-row-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-sm, 0.75rem);
+  }
+
+  /* B2B Drawer */
+  .b2b-invoice-toggle-box {
+    background: var(--color-bg);
+    border: 1px solid var(--color-surface-border);
+    border-radius: var(--border-radius-sm, 8px);
+    padding: 10px 14px;
+  }
+
+  .b2b-checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--color-text);
+    cursor: pointer;
+  }
+
+  /* Summary of Business in Step 2 */
+  .selected-biz-summary {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--color-primary-bg);
+    border: 1px solid var(--color-primary-border);
+    border-radius: var(--border-radius-sm, 8px);
+    padding: 8px 12px;
+  }
+
+  .sum-icon {
+    font-size: 1.2rem;
+  }
+
+  .sum-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sum-label {
+    font-size: 0.7rem;
+    color: var(--color-text-muted);
+    font-weight: 600;
+  }
+
+  .sum-val {
+    font-size: 0.9rem;
+    color: var(--color-text);
+  }
+
+  /* Amount Selection */
+  .amount-selection-box {
+    background: var(--color-bg);
+    border: 1px solid var(--color-surface-border);
+    border-radius: var(--border-radius-sm, 8px);
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .amount-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .min-hint {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    font-weight: 600;
+  }
+
+  .amount-input-row {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .currency-symbol {
+    position: absolute;
+    left: 12px;
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--color-primary);
+  }
+
+  .amount-input {
+    padding-left: 32px;
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--color-primary);
   }
 
   .collision-chip {
     display: flex;
     align-items: center;
     gap: 6px;
-    padding: 6px 12px;
-    border-radius: 6px;
-    font-size: 0.8rem;
-    margin-top: 8px;
-    transition: all 0.2s ease;
+    padding: 5px 10px;
+    border-radius: var(--border-radius-sm, 6px);
+    font-size: 0.78rem;
   }
 
   .collision-ok {
-    background: rgba(16, 185, 129, 0.15);
-    border: 1px solid rgba(16, 185, 129, 0.3);
-    color: #34d399;
+    background: var(--color-success-bg);
+    border: 1px solid var(--color-success-border);
+    color: var(--color-success);
   }
 
   .collision-warning {
-    background: rgba(239, 68, 68, 0.15);
-    border: 1px solid rgba(239, 68, 68, 0.3);
-    color: #f87171;
+    background: var(--color-danger-bg);
+    border: 1px solid var(--color-danger-border);
+    color: var(--color-danger);
   }
 
-  /* Success Screen & Receipt Styles */
+  .quick-chips-row {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 6px;
+  }
+
+  .chip-btn {
+    background: var(--color-surface);
+    border: 1px solid var(--color-surface-border);
+    color: var(--color-text);
+    padding: 6px 4px;
+    border-radius: var(--border-radius-sm, 6px);
+    font-size: 0.8rem;
+    font-weight: 700;
+    cursor: pointer;
+    text-align: center;
+    transition: all var(--transition-fast);
+  }
+
+  .chip-btn:hover {
+    background: var(--color-primary-bg);
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+  }
+
+  /* Invoice Summary */
+  .invoice-summary-box {
+    background: var(--color-bg);
+    border: 1px solid var(--color-surface-border);
+    border-radius: var(--border-radius-sm, 8px);
+    padding: 10px 14px;
+  }
+
+  .summary-line {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.82rem;
+    color: var(--color-text-light);
+    margin-bottom: 4px;
+  }
+
+  .summary-total {
+    border-top: 1px solid var(--color-surface-border);
+    padding-top: 6px;
+    margin-top: 6px;
+    font-size: 0.95rem;
+    color: var(--color-text);
+  }
+
+  .total-amount {
+    color: var(--color-primary);
+    font-size: 1.15rem;
+  }
+
+  .invoice-preview-chip {
+    font-size: 0.72rem;
+    color: var(--color-text-muted);
+    margin-top: 4px;
+  }
+
+  .invoice-preview-chip code {
+    color: var(--color-primary);
+    font-weight: 600;
+  }
+
+  /* Payment Radios */
+  .payment-tabs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+    margin-top: 4px;
+  }
+
+  .pay-radio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-surface);
+    border: 1px solid var(--color-surface-border);
+    padding: 8px 6px;
+    border-radius: var(--border-radius-sm, 8px);
+    cursor: pointer;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--color-text);
+    transition: all var(--transition-fast);
+  }
+
+  .pay-radio input {
+    display: none;
+  }
+
+  .pay-radio.active {
+    background: var(--color-primary-bg);
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    font-weight: 700;
+  }
+
+  /* Actions Footer */
+  .modal-actions-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .step-2-actions-row {
+    display: flex;
+    gap: 8px;
+  }
+
+  .btn-flex-grow {
+    flex: 1;
+  }
+
+  .security-guarantee-txt {
+    text-align: center;
+    font-size: 0.72rem;
+    color: var(--color-text-muted);
+    margin: 4px 0 0 0;
+  }
+
+  /* Success Screen & Receipt */
   .checkout-success-screen {
     display: flex;
     flex-direction: column;
@@ -567,67 +963,67 @@ const verifiedBusinesses = PUBLIC_SERVICES.filter((s) => (s.confidenceScore ?? 0
 
   .success-header-badge {
     text-align: center;
-    padding: var(--space-md, 1rem) 0;
+    padding: var(--space-sm, 0.5rem) 0;
   }
 
   .success-big-icon {
-    font-size: 3rem;
+    font-size: 2.8rem;
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
   }
 
   .success-title {
-    font-size: 1.35rem;
+    font-size: 1.25rem;
     font-weight: 800;
-    color: #34d399;
-    margin: 0 0 6px 0;
+    color: var(--color-success);
+    margin: 0 0 4px 0;
   }
 
   .success-subtitle {
-    font-size: 0.85rem;
-    color: var(--color-text-secondary, #cbd5e1);
+    font-size: 0.84rem;
+    color: var(--color-text-light);
     margin: 0;
   }
 
   .receipt-card {
-    background: rgba(0, 0, 0, 0.3);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 10px;
+    background: var(--color-bg);
+    border: 1px solid var(--color-surface-border);
+    border-radius: var(--border-radius-sm, 8px);
     padding: var(--space-md, 1rem);
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 6px;
   }
 
   .receipt-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    color: var(--color-text);
   }
 
   .receipt-highlight {
-    color: #fff;
-    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-text);
   }
 
   .receipt-price {
-    font-size: 1.25rem;
-    color: var(--color-accent, #ffd700);
+    font-size: 1.15rem;
+    color: var(--color-primary);
   }
 
   .receipt-sub {
-    font-size: 0.78rem;
-    color: var(--color-text-muted, #94a3b8);
-    border-top: 1px dashed rgba(255, 255, 255, 0.08);
-    padding-top: 6px;
+    font-size: 0.76rem;
+    color: var(--color-text-muted);
+    border-top: 1px dashed var(--color-surface-border);
+    padding-top: 4px;
   }
 
   .success-actions-grid {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    margin-top: 8px;
   }
 
   .btn-spinner {
@@ -645,280 +1041,7 @@ const verifiedBusinesses = PUBLIC_SERVICES.filter((s) => (s.confidenceScore ?? 0
     }
   }
 
-  .checkout-mode-tabs {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
-    background: rgba(0, 0, 0, 0.3);
-    padding: 4px;
-    border-radius: 10px;
-    margin-bottom: var(--space-md, 1rem);
-  }
-
-  .mode-tab {
-    background: transparent;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 8px;
-    font-size: 0.82rem;
-    font-weight: 700;
-    color: var(--color-text-secondary, #94a3b8);
-    cursor: pointer;
-    transition: all 0.2s;
-  }
-
-  .mode-tab.active {
-    background: var(--color-primary, #2563eb);
-    color: var(--color-btn-primary-text, #ffffff);
-    font-weight: 800;
-    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
-  }
-
-  .business-target-card {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    padding: 10px 14px;
-    border-radius: 10px;
-    margin-bottom: var(--space-md, 1rem);
-  }
-
-  .target-title-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 2px;
-  }
-
-  .btn-change-biz {
-    background: rgba(255, 215, 0, 0.12);
-    border: 1px solid rgba(255, 215, 0, 0.3);
-    color: var(--color-accent, #ffd700);
-    padding: 2px 8px;
-    border-radius: 6px;
-    font-size: 0.72rem;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.2s;
-  }
-
-  .btn-change-biz:hover {
-    background: var(--color-accent, #ffd700);
-    color: #000;
-  }
-
-  .form-select-biz {
-    cursor: pointer;
-    background: rgba(15, 23, 42, 0.95);
-    border: 1px solid rgba(255, 215, 0, 0.3);
-    color: #fff;
-  }
-
-  .form-select-biz option {
-    background: #0f172a;
-    color: #fff;
-    padding: 8px;
-  }
-
-  .target-icon {
-    font-size: 1.5rem;
-  }
-
-  .target-label {
-    display: block;
-    font-size: 0.75rem;
-    color: var(--color-text-muted, #94a3b8);
-  }
-
-  .target-name {
-    font-size: 0.95rem;
-    color: var(--color-accent, #ffd700);
-  }
-
-  .form-row-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-md, 1rem);
-    margin-bottom: var(--space-sm, 0.75rem);
-  }
-
-  .form-group {
-    margin-bottom: var(--space-sm, 0.75rem);
-  }
-
-  .form-label {
-    display: block;
-    font-size: 0.82rem;
-    font-weight: 600;
-    color: var(--color-text-secondary, #cbd5e1);
-    margin-bottom: 4px;
-  }
-
-  .form-input {
-    width: 100%;
-    padding: 8px 12px;
-    background: rgba(15, 23, 42, 0.8);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 8px;
-    color: #fff;
-    font-size: 0.9rem;
-    outline: none;
-    transition: border 0.2s;
-  }
-
-  .form-input:focus {
-    border-color: var(--color-accent, #ffd700);
-  }
-
-  /* Amount Box */
-  .amount-selection-box {
-    background: rgba(255, 215, 0, 0.05);
-    border: 1px solid rgba(255, 215, 0, 0.2);
-    border-radius: 10px;
-    padding: var(--space-md, 1rem);
-    margin-bottom: var(--space-md, 1rem);
-  }
-
-  .amount-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 6px;
-  }
-
-  .min-hint {
-    font-size: 0.75rem;
-    color: var(--color-accent, #ffd700);
-    font-weight: 600;
-  }
-
-  .amount-input-row {
-    position: relative;
-    display: flex;
-    align-items: center;
-    margin-bottom: 8px;
-  }
-
-  .currency-symbol {
-    position: absolute;
-    left: 14px;
-    font-size: 1.3rem;
-    font-weight: 800;
-    color: var(--color-accent, #ffd700);
-  }
-
-  .amount-input {
-    padding-left: 36px;
-    font-size: 1.4rem;
-    font-weight: 900;
-    color: var(--color-accent, #ffd700);
-  }
-
-  .quick-chips-row {
-    display: flex;
-    gap: 6px;
-    flex-wrap: wrap;
-  }
-
-  .chip-btn {
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    color: #fff;
-    padding: 4px 10px;
-    border-radius: 6px;
-    font-size: 0.78rem;
-    font-weight: 700;
-    cursor: pointer;
-  }
-
-  .chip-btn:hover {
-    background: var(--color-accent, #ffd700);
-    color: #000;
-  }
-
-  /* Invoice Summary */
-  .invoice-summary-box {
-    background: rgba(0, 0, 0, 0.25);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 8px;
-    padding: 10px 14px;
-    margin-bottom: var(--space-md, 1rem);
-  }
-
-  .summary-line {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.82rem;
-    color: var(--color-text-secondary, #cbd5e1);
-    margin-bottom: 4px;
-  }
-
-  .summary-total {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 6px;
-    margin-top: 6px;
-    font-size: 1rem;
-    color: #fff;
-  }
-
-  .total-amount {
-    color: var(--color-accent, #ffd700);
-    font-size: 1.2rem;
-  }
-
-  .invoice-preview-chip {
-    font-size: 0.72rem;
-    color: var(--color-text-muted, #94a3b8);
-    margin-top: 4px;
-  }
-
-  .invoice-preview-chip code {
-    color: #60a5fa;
-  }
-
-  /* Payment Radio */
-  .payment-tabs-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 6px;
-    margin-top: 4px;
-    margin-bottom: var(--space-lg, 1.25rem);
-  }
-
-  .pay-radio {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    padding: 8px 6px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 0.78rem;
-    font-weight: 600;
-  }
-
-  .pay-radio input {
-    display: none;
-  }
-
-  .pay-radio.active {
-    background: rgba(59, 130, 246, 0.2);
-    border-color: var(--color-primary-light, #60a5fa);
-    color: #fff;
-  }
-
-  .security-guarantee-txt {
-    text-align: center;
-    font-size: 0.72rem;
-    color: var(--color-text-muted, #94a3b8);
-    margin-top: 8px;
-    margin-bottom: 0;
-  }
-
+  /* Responsive Media Queries (GR-02) */
   @media (max-width: 600px) {
     .honor-modal-dialog {
       padding: var(--space-md, 1rem);
@@ -926,26 +1049,18 @@ const verifiedBusinesses = PUBLIC_SERVICES.filter((s) => (s.confidenceScore ?? 0
     }
     .form-row-grid,
     .checkout-mode-tabs,
-    .payment-tabs-grid {
+    .payment-tabs-grid,
+    .step-2-actions-row {
       grid-template-columns: 1fr;
+      flex-direction: column;
     }
     .checkout-steps-track {
-      flex-wrap: wrap;
-      justify-content: center;
       gap: 4px;
       font-size: 0.72rem;
+      padding: 6px 8px;
     }
-    .step-badge {
-      font-size: 0.72rem;
-    }
-    .quick-chips-row {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 4px;
-    }
-    .chip-btn {
-      padding: 4px 2px;
-      text-align: center;
+    .step-badge .step-label {
+      font-size: 0.7rem;
     }
     .modal-main-title {
       font-size: 1.15rem;
@@ -967,127 +1082,86 @@ const verifiedBusinesses = PUBLIC_SERVICES.filter((s) => (s.confidenceScore ?? 0
 
   function initHonorCheckoutClient() {
     const modal = document.getElementById("honor-checkout-modal");
-    const form = document.getElementById("honor-checkout-form") as HTMLFormElement | null;
     const closeBtn = document.getElementById("close-honor-modal-btn");
-    const nameInput = document.getElementById("input-backer-name") as HTMLInputElement | null;
-    const emailInput = document.getElementById("input-backer-email") as HTMLInputElement | null;
-    const amountInput = document.getElementById("input-bid-amount") as HTMLInputElement | null;
+
+    // Panes
+    const step1Pane = document.getElementById("checkout-step-1");
+    const step2Pane = document.getElementById("checkout-step-2");
+    const successPane = document.getElementById("checkout-success-view");
+
+    // Indicators
+    const stepInd1 = document.getElementById("step-indicator-1");
+    const stepInd2 = document.getElementById("step-indicator-2");
+    const stepInd3 = document.getElementById("step-indicator-3");
+
+    // Navigation Buttons
+    const btnNextStep1 = document.getElementById("btn-next-step-1");
+    const btnBackStep2 = document.getElementById("btn-back-step-2");
+    const submitBtn = document.getElementById("submit-honor-btn") as HTMLButtonElement | null;
+    const btnSubmitSpinner = document.getElementById("btn-submit-spinner");
+    const btnSubmitText = document.getElementById("btn-submit-text");
+
+    // Step 1 Inputs
     const modeInput = document.getElementById("input-checkout-mode") as HTMLInputElement | null;
-    const targetNameDisplay = document.getElementById("display-target-name");
     const serviceIdInput = document.getElementById("input-service-id") as HTMLInputElement | null;
     const serviceSlugInput = document.getElementById("input-service-slug") as HTMLInputElement | null;
     const minRequiredInput = document.getElementById("input-min-required") as HTMLInputElement | null;
+    const idempotencyKeyInput = document.getElementById("input-idempotency-key") as HTMLInputElement | null;
+    const targetNameDisplay = document.getElementById("display-target-name");
+    const summaryBizName = document.getElementById("summary-biz-name");
 
+    const nameInput = document.getElementById("input-backer-name") as HTMLInputElement | null;
+    const emailInput = document.getElementById("input-backer-email") as HTMLInputElement | null;
+    const messageInput = document.getElementById("input-backer-message") as HTMLInputElement | null;
+
+    // Error labels
+    const errName = document.getElementById("err-backer-name");
+    const errEmail = document.getElementById("err-backer-email");
+    const errTaxId = document.getElementById("err-b2b-taxid");
+    const errLegalName = document.getElementById("err-b2b-legalname");
+
+    // B2B Inputs
+    const checkboxB2B = document.getElementById("checkbox-b2b-invoice") as HTMLInputElement | null;
+    const b2bDrawer = document.getElementById("b2b-fields-drawer");
+    const b2bTaxIdInput = document.getElementById("input-b2b-taxid") as HTMLInputElement | null;
+    const b2bLegalNameInput = document.getElementById("input-b2b-legalname") as HTMLInputElement | null;
+    const b2bAddressInput = document.getElementById("input-b2b-address") as HTMLInputElement | null;
+
+    // Step 2 Inputs & Calculations
+    const amountInput = document.getElementById("input-bid-amount") as HTMLInputElement | null;
     const calcSubtotal = document.getElementById("calc-subtotal");
     const calcTax = document.getElementById("calc-tax");
     const calcTotal = document.getElementById("calc-total");
     const calcInvoiceId = document.getElementById("calc-invoice-id");
-    const btnSubmitText = document.getElementById("btn-submit-text");
+    const collisionStatusBox = document.getElementById("collision-status-box");
+    const collisionMsgText = document.getElementById("collision-msg-text");
 
     const tabCommunity = document.getElementById("tab-community-boost");
     const tabOwner = document.getElementById("tab-owner-bid");
     const chipBtns = document.querySelectorAll(".chip-btn");
     const payRadios = document.querySelectorAll(".pay-radio");
 
-    const submitBtn = document.getElementById("submit-honor-btn") as HTMLButtonElement | null;
-    const btnSubmitSpinner = document.getElementById("btn-submit-spinner");
-    const collisionStatusBox = document.getElementById("collision-status-box");
-    const collisionMsgText = document.getElementById("collision-msg-text");
-    const idempotencyKeyInput = document.getElementById("input-idempotency-key") as HTMLInputElement | null;
-
-    // B2B Elements
-    const checkboxB2B = document.getElementById("checkbox-b2b-invoice") as HTMLInputElement | null;
-    const b2bDrawer = document.getElementById("b2b-fields-drawer");
-    const b2bTaxIdInput = document.getElementById("input-b2b-taxid") as HTMLInputElement | null;
-    const b2bLegalNameInput = document.getElementById("input-b2b-legalname") as HTMLInputElement | null;
-    const b2bAddressInput = document.getElementById("input-b2b-address") as HTMLInputElement | null;
+    // Receipt Elements
+    const receiptBizName = document.getElementById("receipt-biz-name");
+    const receiptTotalAmount = document.getElementById("receipt-total-amount");
+    const receiptSubtotal = document.getElementById("receipt-subtotal");
+    const receiptTax = document.getElementById("receipt-tax");
+    const receiptInvoiceId = document.getElementById("receipt-invoice-id");
+    const receiptDatetime = document.getElementById("receipt-datetime");
     const receiptB2BRow = document.getElementById("receipt-b2b-row");
     const receiptB2BInfo = document.getElementById("receipt-b2b-info");
+    const receiptPrintBtn = document.getElementById("receipt-print-btn");
 
+    if (!modal || !amountInput) return;
+
+    // Toggle B2B Drawer
     if (checkboxB2B && b2bDrawer) {
       checkboxB2B.addEventListener("change", () => {
         b2bDrawer.style.display = checkboxB2B.checked ? "block" : "none";
       });
     }
 
-    if (!modal || !form || !amountInput) return;
-
-    // 1. Live Recalculate Fiscal Invoice & Collision Check
-    function recalculateInvoice() {
-      const amount = Math.max(1, Number(amountInput?.value) || 1);
-      const minRequired = Number(minRequiredInput?.value) || 1;
-      const subtotal = Number((amount / 1.21).toFixed(2));
-      const tax = Number((amount - subtotal).toFixed(2));
-
-      if (calcSubtotal) calcSubtotal.textContent = `${subtotal.toFixed(2)}€`;
-      if (calcTax) calcTax.textContent = `${tax.toFixed(2)}€`;
-      if (calcTotal) calcTotal.textContent = `${amount.toFixed(2)}€`;
-      if (calcInvoiceId) {
-        calcInvoiceId.textContent = `INV-HONOR-${Date.now().toString(36).toUpperCase()}`;
-      }
-
-      // Validar monto contra mínimo
-      if (amount < minRequired) {
-        if (collisionStatusBox) {
-          collisionStatusBox.className = "collision-chip collision-warning";
-        }
-        if (collisionMsgText) {
-          collisionMsgText.textContent = `⚠️ Importe inferior al mínimo requerido (${minRequired.toFixed(2)}€). Debe superar el récord en +1€`;
-        }
-        if (submitBtn) submitBtn.disabled = true;
-      } else {
-        if (collisionStatusBox) {
-          collisionStatusBox.className = "collision-chip collision-ok";
-        }
-        if (collisionMsgText) {
-          collisionMsgText.textContent = "✨ Importe disponible y conforme con la regla +1€";
-        }
-        if (submitBtn && form?.getAttribute("data-submitting") !== "true") {
-          submitBtn.disabled = false;
-        }
-      }
-    }
-
-    amountInput.addEventListener("input", recalculateInvoice);
-
-    // 2. Quick Chips
-    chipBtns.forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const add = Number(btn.getAttribute("data-add") || 1);
-        const current = Number(amountInput.value) || 1;
-        amountInput.value = (current + add).toString();
-        recalculateInvoice();
-      });
-    });
-
-    // 3. Payment Radio Toggle
-    payRadios.forEach((radio) => {
-      radio.addEventListener("click", () => {
-        payRadios.forEach((r) => r.classList.remove("active"));
-        radio.classList.add("active");
-      });
-    });
-
-    // 4. Mode Tab Toggle
-    tabCommunity?.addEventListener("click", () => {
-      tabCommunity.classList.add("active");
-      tabCommunity.setAttribute("aria-selected", "true");
-      tabOwner?.classList.remove("active");
-      tabOwner?.setAttribute("aria-selected", "false");
-      if (modeInput) modeInput.value = "community_boost";
-      if (btnSubmitText) btnSubmitText.textContent = "⚡ Completar Aportación & Aupar al Podio";
-    });
-
-    tabOwner?.addEventListener("click", () => {
-      tabOwner.classList.add("active");
-      tabOwner.setAttribute("aria-selected", "true");
-      tabCommunity?.classList.remove("active");
-      tabCommunity?.setAttribute("aria-selected", "false");
-      if (modeInput) modeInput.value = "owner_bid";
-      if (btnSubmitText) btnSubmitText.textContent = "👑 Pujar Récord & Tomar el Puesto #1";
-    });
-
-    // 5. Business Selector Dropdown Logic
+    // Step 1 Business Dropdown Toggle
     const selectHonorBiz = document.getElementById("select-honor-business") as HTMLSelectElement | null;
     const bizSelectorGroup = document.getElementById("biz-selector-group");
     const btnToggleBiz = document.getElementById("btn-toggle-biz-select");
@@ -1109,110 +1183,176 @@ const verifiedBusinesses = PUBLIC_SERVICES.filter((s) => (s.confidenceScore ?? 0
           if (serviceIdInput) serviceIdInput.value = bizId;
           if (serviceSlugInput) serviceSlugInput.value = bizSlug;
           if (targetNameDisplay) targetNameDisplay.textContent = bizName;
+          if (summaryBizName) summaryBizName.textContent = bizName;
           if (bizSelectorGroup) bizSelectorGroup.style.display = "none";
         }
       });
     }
 
-    // 6. Open Modal Trigger Dispatcher
-    window.addEventListener("open-honor-checkout", (e: any) => {
-      const data = e.detail || {};
-      if (data.serviceId && serviceIdInput) serviceIdInput.value = data.serviceId;
-      if (data.serviceSlug && serviceSlugInput) serviceSlugInput.value = data.serviceSlug;
-      if (data.serviceName && targetNameDisplay) targetNameDisplay.textContent = data.serviceName;
+    // Mode Toggle
+    tabCommunity?.addEventListener("click", () => {
+      tabCommunity.classList.add("active");
+      tabCommunity.setAttribute("aria-selected", "true");
+      tabOwner?.classList.remove("active");
+      tabOwner?.setAttribute("aria-selected", "false");
+      if (modeInput) modeInput.value = "community_boost";
+      if (btnSubmitText) btnSubmitText.textContent = "⚡ Confirmar y Aupar al Podio";
+    });
 
-      if (selectHonorBiz && data.serviceId) {
-        selectHonorBiz.value = data.serviceId;
-        if (bizSelectorGroup) bizSelectorGroup.style.display = "none";
-      } else if (bizSelectorGroup && !data.serviceId && !data.serviceSlug) {
-        bizSelectorGroup.style.display = "block";
+    tabOwner?.addEventListener("click", () => {
+      tabOwner.classList.add("active");
+      tabOwner.setAttribute("aria-selected", "true");
+      tabCommunity?.classList.remove("active");
+      tabCommunity?.setAttribute("aria-selected", "false");
+      if (modeInput) modeInput.value = "owner_bid";
+      if (btnSubmitText) btnSubmitText.textContent = "👑 Pujar Récord & Tomar el Puesto #1";
+    });
+
+    // Calculations in Step 2
+    function recalculateInvoice() {
+      const amount = Math.max(1, Number(amountInput?.value) || 1);
+      const minRequired = Number(minRequiredInput?.value) || 1;
+      const subtotal = Number((amount / 1.21).toFixed(2));
+      const tax = Number((amount - subtotal).toFixed(2));
+
+      if (calcSubtotal) calcSubtotal.textContent = `${subtotal.toFixed(2)}€`;
+      if (calcTax) calcTax.textContent = `${tax.toFixed(2)}€`;
+      if (calcTotal) calcTotal.textContent = `${amount.toFixed(2)}€`;
+      if (calcInvoiceId) {
+        calcInvoiceId.textContent = `INV-HONOR-${Date.now().toString(36).toUpperCase()}`;
       }
 
-      if (data.mode === "owner_bid") {
-        tabOwner?.click();
-      } else if (data.mode === "community_boost") {
-        tabCommunity?.click();
-      }
-
-      if (data.minBid && amountInput) {
-        amountInput.value = data.minBid.toString();
-        if (minRequiredInput) minRequiredInput.value = data.minBid.toString();
-      }
-
-      // Generar clave de idempotencia única para esta sesión de checkout
-      const randomKey = `idemp_${data.serviceId || "serv"}_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`;
-      if (idempotencyKeyInput) idempotencyKeyInput.value = randomKey;
-
-      // Auto-fill from authStore
-      const currentUser = authStore.getState().user;
-      if (currentUser) {
-        if (nameInput && !nameInput.value) {
-          nameInput.value = currentUser.displayName || currentUser.email?.split("@")[0] || "Vecino Autenticado";
+      if (amount < minRequired) {
+        if (collisionStatusBox) {
+          collisionStatusBox.className = "collision-chip collision-warning";
         }
-        if (emailInput && !emailInput.value) {
-          emailInput.value = currentUser.email || "";
+        if (collisionMsgText) {
+          collisionMsgText.textContent = `⚠️ Importe inferior al mínimo requerido (${minRequired.toFixed(2)}€). Debe superar el récord en +1€`;
+        }
+        if (submitBtn) submitBtn.disabled = true;
+      } else {
+        if (collisionStatusBox) {
+          collisionStatusBox.className = "collision-chip collision-ok";
+        }
+        if (collisionMsgText) {
+          collisionMsgText.textContent = "✨ Importe disponible y conforme con la regla +1€";
+        }
+        if (submitBtn) submitBtn.disabled = false;
+      }
+    }
+
+    amountInput.addEventListener("input", recalculateInvoice);
+
+    // Quick Chips
+    chipBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const add = Number(btn.getAttribute("data-add") || 1);
+        const current = Number(amountInput.value) || 1;
+        amountInput.value = (current + add).toString();
+        recalculateInvoice();
+      });
+    });
+
+    // Payment Radio Selector
+    payRadios.forEach((radio) => {
+      radio.addEventListener("click", () => {
+        payRadios.forEach((r) => r.classList.remove("active"));
+        radio.classList.add("active");
+      });
+    });
+
+    // Step 1 -> Step 2 Validation & Navigation
+    btnNextStep1?.addEventListener("click", () => {
+      let isValid = true;
+
+      // Validate Business selected
+      if (!serviceIdInput?.value && selectHonorBiz && !selectHonorBiz.value) {
+        if (bizSelectorGroup) bizSelectorGroup.style.display = "block";
+        selectHonorBiz?.focus();
+        isValid = false;
+      }
+
+      // Validate Name
+      const nameVal = nameInput?.value.trim() || "";
+      if (nameVal.length < 2) {
+        if (errName) errName.style.display = "block";
+        nameInput?.focus();
+        isValid = false;
+      } else if (errName) {
+        errName.style.display = "none";
+      }
+
+      // Validate Email
+      const emailVal = emailInput?.value.trim() || "";
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(emailVal)) {
+        if (errEmail) errEmail.style.display = "block";
+        if (isValid) emailInput?.focus();
+        isValid = false;
+      } else if (errEmail) {
+        errEmail.style.display = "none";
+      }
+
+      // Validate B2B if checked
+      if (checkboxB2B?.checked) {
+        const taxId = b2bTaxIdInput?.value.trim() || "";
+        const legalName = b2bLegalNameInput?.value.trim() || "";
+        if (taxId.length < 5) {
+          if (errTaxId) errTaxId.style.display = "block";
+          if (isValid) b2bTaxIdInput?.focus();
+          isValid = false;
+        } else if (errTaxId) {
+          errTaxId.style.display = "none";
+        }
+
+        if (legalName.length < 2) {
+          if (errLegalName) errLegalName.style.display = "block";
+          if (isValid) b2bLegalNameInput?.focus();
+          isValid = false;
+        } else if (errLegalName) {
+          errLegalName.style.display = "none";
         }
       }
 
-      // Reset submitting status
-      form.removeAttribute("data-submitting");
-      if (submitBtn) submitBtn.disabled = false;
-      if (btnSubmitSpinner) btnSubmitSpinner.style.display = "none";
+      if (!isValid) return;
+
+      // Go to Step 2
+      if (step1Pane) step1Pane.style.display = "none";
+      if (step2Pane) step2Pane.style.display = "flex";
+      if (summaryBizName && targetNameDisplay) {
+        summaryBizName.textContent = targetNameDisplay.textContent || "Comercio de Mallorca";
+      }
+
+      stepInd1?.classList.remove("active");
+      stepInd1?.classList.add("done");
+      stepInd2?.classList.add("active");
 
       recalculateInvoice();
-      modal.classList.add("is-active");
-      modal.setAttribute("aria-hidden", "false");
     });
 
-    const successView = document.getElementById("checkout-success-view");
-    const receiptBizName = document.getElementById("receipt-biz-name");
-    const receiptTotalAmount = document.getElementById("receipt-total-amount");
-    const receiptSubtotal = document.getElementById("receipt-subtotal");
-    const receiptTax = document.getElementById("receipt-tax");
-    const receiptInvoiceId = document.getElementById("receipt-invoice-id");
-    const receiptDatetime = document.getElementById("receipt-datetime");
-    const receiptPrintBtn = document.getElementById("receipt-print-btn");
+    // Step 2 -> Step 1 (Back Button)
+    btnBackStep2?.addEventListener("click", () => {
+      if (step2Pane) step2Pane.style.display = "none";
+      if (step1Pane) step1Pane.style.display = "flex";
 
-    if (receiptPrintBtn) {
-      receiptPrintBtn.addEventListener("click", () => {
-        window.print();
-      });
-    }
-
-    // Close Modal and Reset Views
-    function closeModal() {
-      modal?.classList.remove("is-active");
-      modal?.setAttribute("aria-hidden", "true");
-      form?.removeAttribute("data-submitting");
-      if (form) form.style.display = "flex";
-      if (successView) successView.style.display = "none";
-      if (submitBtn) submitBtn.disabled = false;
-      if (btnSubmitSpinner) btnSubmitSpinner.style.display = "none";
-    }
-
-    closeBtn?.addEventListener("click", closeModal);
-    modal.addEventListener("click", (e) => {
-      if (e.target === modal) closeModal();
+      stepInd2?.classList.remove("active");
+      stepInd1?.classList.remove("done");
+      stepInd1?.classList.add("active");
     });
 
-    // 6. Form Submission con Procesamiento Real y Pantalla de Factura
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-
-      // Guardar contra doble clic rápido o envíos múltiples concurrentes
-      if (form.getAttribute("data-submitting") === "true") {
-        return;
-      }
-      form.setAttribute("data-submitting", "true");
-
+    // Step 2 -> Confirm & Process Payment
+    submitBtn?.addEventListener("click", () => {
       const amount = Number(amountInput.value) || 1;
       const minRequired = Number(minRequiredInput?.value) || 1;
 
       if (amount < minRequired) {
         alert(`El importe debe ser de al menos ${minRequired.toFixed(2)}€.`);
-        form.removeAttribute("data-submitting");
         return;
       }
+
+      if (submitBtn) submitBtn.disabled = true;
+      if (btnSubmitSpinner) btnSubmitSpinner.style.display = "inline-block";
+      if (btnSubmitText) btnSubmitText.textContent = "🔒 Conectando con pasarela SSL...";
 
       const backerName = nameInput?.value.trim() || "Vecino de Mallorca";
       const backerEmail = emailInput?.value.trim() || "";
@@ -1224,12 +1364,7 @@ const verifiedBusinesses = PUBLIC_SERVICES.filter((s) => (s.confidenceScore ?? 0
       const subtotalVal = Number((amount / 1.21).toFixed(2));
       const taxVal = Number((amount - subtotalVal).toFixed(2));
 
-      // Deshabilitar botón inmediatamente y mostrar estado de procesamiento seguro
-      if (submitBtn) submitBtn.disabled = true;
-      if (btnSubmitSpinner) btnSubmitSpinner.style.display = "inline-block";
-      if (btnSubmitText) btnSubmitText.textContent = "🔒 Conectando con pasarela bancaria SSL...";
-
-      // Registrar transacción en el histórico del usuario
+      // Persist local records
       try {
         const favs = JSON.parse(localStorage.getItem("user_favorites") || "[]");
         if (!favs.includes(slug)) {
@@ -1261,31 +1396,15 @@ const verifiedBusinesses = PUBLIC_SERVICES.filter((s) => (s.confidenceScore ?? 0
           at: new Date().toISOString(),
         });
         localStorage.setItem("user_honor_transactions", JSON.stringify(transactions));
-        localStorage.setItem(
-          "last_boost_meta",
-          JSON.stringify({
-            slug,
-            amount,
-            backerName,
-            backerEmail,
-            mode,
-            idempotencyKey,
-            invoiceId,
-            isB2B,
-            b2bTaxId,
-            b2bLegalName,
-            at: new Date().toISOString(),
-          }),
-        );
       } catch (err) {
         console.warn("Storage warning:", err);
       }
 
-      // Simular verificación 3DS y mostrar pantalla de factura/éxito dentro del modal
+      // Finish 3DS and advance to Step 3 (Receipt)
       setTimeout(() => {
-        if (form) form.style.display = "none";
-        if (successView) {
-          successView.style.display = "flex";
+        if (step2Pane) step2Pane.style.display = "none";
+        if (successPane) {
+          successPane.style.display = "flex";
           if (receiptBizName) receiptBizName.textContent = bizName;
           if (receiptTotalAmount) receiptTotalAmount.textContent = `${amount.toFixed(2)}€`;
           if (receiptSubtotal) receiptSubtotal.textContent = `${subtotalVal.toFixed(2)}€`;
@@ -1302,7 +1421,85 @@ const verifiedBusinesses = PUBLIC_SERVICES.filter((s) => (s.confidenceScore ?? 0
             receiptB2BRow.style.display = "none";
           }
         }
-      }, 1000);
+
+        stepInd2?.classList.remove("active");
+        stepInd2?.classList.add("done");
+        stepInd3?.classList.add("done");
+      }, 900);
+    });
+
+    if (receiptPrintBtn) {
+      receiptPrintBtn.addEventListener("click", () => {
+        window.print();
+      });
+    }
+
+    // Modal Triggers & Event Listeners
+    window.addEventListener("open-honor-checkout", (e: any) => {
+      const data = e.detail || {};
+      if (data.serviceId && serviceIdInput) serviceIdInput.value = data.serviceId;
+      if (data.serviceSlug && serviceSlugInput) serviceSlugInput.value = data.serviceSlug;
+      if (data.serviceName && targetNameDisplay) targetNameDisplay.textContent = data.serviceName;
+
+      if (selectHonorBiz && data.serviceId) {
+        selectHonorBiz.value = data.serviceId;
+        if (bizSelectorGroup) bizSelectorGroup.style.display = "none";
+      } else if (bizSelectorGroup && !data.serviceId && !data.serviceSlug) {
+        bizSelectorGroup.style.display = "block";
+      }
+
+      if (data.mode === "owner_bid") {
+        tabOwner?.click();
+      } else if (data.mode === "community_boost") {
+        tabCommunity?.click();
+      }
+
+      if (data.minBid && amountInput) {
+        amountInput.value = data.minBid.toString();
+        if (minRequiredInput) minRequiredInput.value = data.minBid.toString();
+      }
+
+      // Idempotency Key
+      const randomKey = `idemp_${data.serviceId || "serv"}_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`;
+      if (idempotencyKeyInput) idempotencyKeyInput.value = randomKey;
+
+      // Auto-fill from AuthStore
+      const currentUser = authStore.getState().user;
+      if (currentUser) {
+        if (nameInput && !nameInput.value) {
+          nameInput.value = currentUser.displayName || currentUser.email?.split("@")[0] || "Vecino Autenticado";
+        }
+        if (emailInput && !emailInput.value) {
+          emailInput.value = currentUser.email || "";
+        }
+      }
+
+      // Reset Step Panes to Step 1
+      if (step1Pane) step1Pane.style.display = "flex";
+      if (step2Pane) step2Pane.style.display = "none";
+      if (successPane) successPane.style.display = "none";
+
+      stepInd1?.classList.add("active");
+      stepInd1?.classList.remove("done");
+      stepInd2?.classList.remove("active", "done");
+      stepInd3?.classList.remove("active", "done");
+
+      if (submitBtn) submitBtn.disabled = false;
+      if (btnSubmitSpinner) btnSubmitSpinner.style.display = "none";
+
+      recalculateInvoice();
+      modal.classList.add("is-active");
+      modal.setAttribute("aria-hidden", "false");
+    });
+
+    function closeModal() {
+      modal?.classList.remove("is-active");
+      modal?.setAttribute("aria-hidden", "true");
+    }
+
+    closeBtn?.addEventListener("click", closeModal);
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) closeModal();
     });
   }
 
