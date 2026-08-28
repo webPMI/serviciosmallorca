@@ -342,3 +342,162 @@ export function getDefaultHonorSpots(): Record<HonorCategory, HonorSpotEntry[]> 
     "emprendimientos-emergentes": [],
   };
 }
+
+export type HonorTier = "DIAMOND" | "GOLD" | "SILVER" | "BRONZE" | "HONOR_SCROLL";
+
+/**
+ * Devuelve la insignia o medalla según la posición en la cola de honor.
+ */
+export function getHonorTier(position: number): HonorTier {
+  if (position === 1) return "DIAMOND";
+  if (position === 2) return "GOLD";
+  if (position === 3) return "SILVER";
+  if (position === 4) return "BRONZE";
+  return "HONOR_SCROLL";
+}
+
+export interface HonorInvoice {
+  bidAmountEuros: number;
+  subtotalEuros: number;
+  taxRatePercent: number; // 21%
+  taxAmountEuros: number;
+  currency: "EUR";
+  invoiceNumber: string;
+  issuedAt: string;
+}
+
+/**
+ * Calcula el desglose fiscal e IVA (21% balear/español) para la facturación instantánea.
+ */
+export function calculateHonorInvoice(bidAmountEuros: number, taxRate: number = 0.21): HonorInvoice {
+  const safeBid = Math.max(0, Number(bidAmountEuros) || 0);
+  const subtotal = Number((safeBid / (1 + taxRate)).toFixed(2));
+  const tax = Number((safeBid - subtotal).toFixed(2));
+
+  return {
+    bidAmountEuros: safeBid,
+    subtotalEuros: subtotal,
+    taxRatePercent: Math.round(taxRate * 100),
+    taxAmountEuros: tax,
+    currency: "EUR",
+    invoiceNumber: `INV-HONOR-${Date.now().toString(36).toUpperCase()}`,
+    issuedAt: new Date().toISOString(),
+  };
+}
+
+export interface HonorBidSubmission {
+  serviceId: string;
+  sponsorName: string;
+  sponsorMessage?: string;
+  bidAmountEuros: number;
+  honorTitle?: {
+    es?: string;
+    en?: string;
+    ca?: string;
+    de?: string;
+  };
+  nominatedAt?: string;
+}
+
+export interface ProcessBidResult {
+  success: boolean;
+  error?: string;
+  newPosition?: number;
+  tier?: HonorTier;
+  updatedList: HonorSpotEntry[];
+  displacedCount: number;
+}
+
+/**
+ * Procesa una nueva puja en la cola de honor ejecutando el desplazamiento en cadena (+1€ Infinito).
+ */
+export function processHonorBid(
+  currentList: HonorSpotEntry[],
+  submission: HonorBidSubmission,
+  listCategory: HonorCategory,
+  service: ServiceItem,
+): ProcessBidResult {
+  // 1. Validar elegibilidad del negocio (Zero Fake Data & GR-11)
+  const eligibility = isEligibleForHonorSpot(service);
+  if (!eligibility.eligible) {
+    return {
+      success: false,
+      error: eligibility.reason || "El negocio no es apto para el Cuadro de Honor.",
+      updatedList: currentList,
+      displacedCount: 0,
+    };
+  }
+
+  // 2. Validar aislamiento de categoría gremial
+  const listDef = HONOR_LISTS.find((l) => l.id === listCategory);
+  if (!listDef) {
+    return {
+      success: false,
+      error: `La categoría de honor "${listCategory}" no existe.`,
+      updatedList: currentList,
+      displacedCount: 0,
+    };
+  }
+
+  if (listDef.categoryFilter && listDef.categoryFilter.length > 0) {
+    if (!listDef.categoryFilter.includes(service.category)) {
+      return {
+        success: false,
+        error: `El negocio pertenece a la categoría "${service.category}", incompatible con la lista gremial "${listDef.title.es}".`,
+        updatedList: currentList,
+        displacedCount: 0,
+      };
+    }
+  }
+
+  // 3. Validar importe de puja requerido (+1€ sobre el líder actual)
+  const sortedList = rankHonorList(currentList);
+  const currentTopBid = sortedList.length > 0 ? sortedList[0].currentBidEuros : 0;
+  const requiredMinBid = calculateNextBidPrice(currentTopBid, listDef.bidIncrementEuros);
+  const safeBid = Number(submission.bidAmountEuros);
+
+  if (isNaN(safeBid) || !isFinite(safeBid) || safeBid < requiredMinBid) {
+    return {
+      success: false,
+      error: `La puja de ${submission.bidAmountEuros}€ es insuficiente o inválida. Se requiere un mínimo de ${requiredMinBid}€ (+${listDef.bidIncrementEuros}€ sobre el récord actual de ${currentTopBid}€).`,
+      updatedList: sortedList,
+      displacedCount: 0,
+    };
+  }
+
+  // 4. Crear nueva entrada de honor y desplazar la cola
+  const newEntry: HonorSpotEntry = {
+    id: `spot-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`,
+    position: 1,
+    serviceId: service.id,
+    serviceName: service.name,
+    serviceSlug: service.slug,
+    category: service.category,
+    zone: service.zone,
+    honorTitle: {
+      es: submission.honorTitle?.es || `Referente Destacado: ${service.name}`,
+      en: submission.honorTitle?.en || `Top Benchmark: ${service.name}`,
+      ca: submission.honorTitle?.ca || `Referent Destacat: ${service.name}`,
+      de: submission.honorTitle?.de || `Hervorragende Referenz: ${service.name}`,
+    },
+    currentBidEuros: Number(safeBid.toFixed(2)),
+    sponsorName: submission.sponsorName.trim(),
+    sponsorMessage: submission.sponsorMessage?.trim(),
+    nominatedAt: submission.nominatedAt || new Date().toISOString(),
+    confidenceScore: service.confidenceScore ?? (service.verified ? 90 : 50),
+    isVerified: Boolean(service.verified),
+    avatarImage: service.image,
+  };
+
+  const updatedList = rankHonorList([newEntry, ...sortedList]);
+  const newPosition = updatedList.findIndex((e) => e.id === newEntry.id) + 1;
+  const displacedCount = sortedList.length;
+
+  return {
+    success: true,
+    newPosition,
+    tier: getHonorTier(newPosition),
+    updatedList,
+    displacedCount,
+  };
+}
