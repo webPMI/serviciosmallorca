@@ -56,6 +56,23 @@ describe("📡 telemetry: captura de errores cliente → /api/telemetry", () => 
     expect(warnSpy).toHaveBeenCalled();
   });
 
+  it("sin window (SSR): url/path/screenSize vacíos y envío intacto", async () => {
+    const fetchMock = vi.fn().mockResolvedValue(new Response("{}", { status: 200 }));
+    vi.stubGlobal("fetch", fetchMock);
+    const descriptor = Object.getOwnPropertyDescriptor(globalThis, "window");
+    try {
+      delete (globalThis as unknown as { window?: unknown }).window;
+      await captureFrontendError(new Error("ssr"));
+    } finally {
+      if (descriptor) Object.defineProperty(globalThis, "window", descriptor);
+    }
+    const body = JSON.parse((fetchMock.mock.calls[0][1] as { body: string }).body);
+    expect(body.message).toBe("ssr");
+    expect(body.url).toBe("");
+    expect(body.metadata.path).toBe("");
+    expect(body.metadata.screenSize).toBe("");
+  });
+
   it("aborta a los 3 segundos si el endpoint no responde y lo tolera", async () => {
     vi.useFakeTimers();
     const fetchMock = vi.fn((_url: string, opts: { signal: AbortSignal }) => {

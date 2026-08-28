@@ -45,6 +45,10 @@ export function initServiceDetailClient() {
     });
   });
 
+  const claimModal = document.getElementById("claim-modal");
+  const deleteModal = document.getElementById("delete-modal");
+  const reportModal = document.getElementById("report-modal");
+
   // Open modals via data-open-modal
   document.querySelectorAll("[data-open-modal]").forEach((btn) => {
     btn.addEventListener("click", () => {
@@ -67,50 +71,31 @@ export function initServiceDetailClient() {
     });
   }
 
-  // Modal open/close helpers
-  const claimModal = document.getElementById("claim-modal");
-  const deleteModal = document.getElementById("delete-modal");
-  const reportModal = document.getElementById("report-modal");
-  const openClaimBtn = document.getElementById("open-claim-modal-btn");
-  const openDeleteBtn = document.getElementById("open-delete-modal-btn");
-  const openReportBtn = document.getElementById("open-report-modal-btn");
+  // Abrir modales mediante selector universal [data-open-modal]
+  document.querySelectorAll("[data-open-modal]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const modalId = btn.getAttribute("data-open-modal");
+      if (!modalId) return;
+      const targetModal = document.getElementById(modalId);
+      if (!targetModal) return;
 
-  if (openClaimBtn && claimModal) {
-    openClaimBtn.addEventListener("click", () => {
-      claimModal.style.display = "flex";
+      targetModal.style.display = "flex";
       const user = auth.currentUser;
-      const emailInput = document.getElementById("claim-email") as HTMLInputElement;
-      const nameInput = document.getElementById("claim-name") as HTMLInputElement;
-      if (user && emailInput && !emailInput.value) {
-        emailInput.value = user.email || "";
-      }
-      if (user && nameInput && !nameInput.value) {
-        nameInput.value = user.displayName || "";
+
+      if (modalId === "claim-modal") {
+        const emailInput = document.getElementById("claim-email") as HTMLInputElement;
+        const nameInput = document.getElementById("claim-name") as HTMLInputElement;
+        if (user && emailInput && !emailInput.value) emailInput.value = user.email || "";
+        if (user && nameInput && !nameInput.value) nameInput.value = user.displayName || "";
+      } else if (modalId === "report-modal") {
+        const emailInput = document.getElementById("report-email") as HTMLInputElement;
+        if (user && emailInput && !emailInput.value) emailInput.value = user.email || "";
+      } else if (modalId === "delete-modal") {
+        const emailInput = document.getElementById("delete-email") as HTMLInputElement;
+        if (user && emailInput && !emailInput.value) emailInput.value = user.email || "";
       }
     });
-  }
-
-  if (openDeleteBtn && deleteModal) {
-    openDeleteBtn.addEventListener("click", () => {
-      deleteModal.style.display = "flex";
-      const user = auth.currentUser;
-      const emailInput = document.getElementById("delete-email") as HTMLInputElement;
-      if (user && emailInput && !emailInput.value) {
-        emailInput.value = user.email || "";
-      }
-    });
-  }
-
-  if (openReportBtn && reportModal) {
-    openReportBtn.addEventListener("click", () => {
-      reportModal.style.display = "flex";
-      const user = auth.currentUser;
-      const emailInput = document.getElementById("report-email") as HTMLInputElement;
-      if (user && emailInput && !emailInput.value) {
-        emailInput.value = user.email || "";
-      }
-    });
-  }
+  });
 
   // Close modals
   document.querySelectorAll("[data-close-modal]").forEach((btn) => {

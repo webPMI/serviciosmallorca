@@ -28,6 +28,7 @@ import ServiceClaimDeleteModals from "../../../components/ServiceClaimDeleteModa
 import ServiceShareModal from "../../../components/ServiceShareModal.astro";
 import HonorCheckoutModal from "../../../components/HonorCheckoutModal.astro";
 import CommunityBoostWall from "../../../components/CommunityBoostWall.astro";
+import UnclaimedDataDisclaimer from "../../../components/UnclaimedDataDisclaimer.astro";
 
 import { getServiceById } from "../../../data/services";
 import { CATEGORIES } from "../../../data/categories";
@@ -101,6 +102,9 @@ const schemaOrg = generateServiceJsonLd(service, locale, canonicalUrl);
     <div class="detail-grid">
       <!-- Left Column: Media, Portfolio, Details & Reviews -->
       <div class="detail-content">
+        <!-- Transparency & Public Data Notice -->
+        <UnclaimedDataDisclaimer service={service} locale={locale} translations={translations} />
+
         <ServiceGallerySection service={service} category={category} categoryName={categoryName} />
 
         <!-- Semantic AI Quick Facts Box -->

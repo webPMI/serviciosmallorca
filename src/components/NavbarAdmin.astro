@@ -19,8 +19,6 @@ const isCommunityActive = currentPath.includes("/comunidad");
 const isHonorActive = currentPath.includes("/cuadro-de-honor");
 const isBlogActive = currentPath.includes("/blog");
 const isProfileActive = currentPath.includes("/profile");
-
-const isMoreActive = isHistoryActive || isCommunityActive || isHonorActive || isBlogActive;
 ---
 
 <header class="navbar-header nav-admin">
@@ -50,85 +48,53 @@ const isMoreActive = isHistoryActive || isCommunityActive || isHonorActive || is
     <!-- Admin Navigation Menu -->
     <div id="admin-navbar-menu" class="navbar-menu">
       <nav class="navbar-links" aria-label={translations["nav.aria.adminNav"] || "Navegación de administración"}>
-        <a href={`${homeUrl}dashboard`} class:list={["nav-link", { active: isDashboardActive }]}>
+        <!-- ── SECCIÓN 1: ADMINISTRACIÓN & AUDITORÍA ── -->
+        <span class="nav-section-title">⚡ {translations["nav.section.admin"] || "Administración Central"}</span>
+
+        <a href={`${homeUrl}dashboard`} class:list={["nav-link", "nav-desktop-link", { active: isDashboardActive }]}>
           📊 {translations["nav.dashboard"] || "Panel"}
         </a>
-        <a href={`${homeUrl}servicios`} class:list={["nav-link", { active: isServicesActive }]}>
+        <a href={`${homeUrl}servicios`} class:list={["nav-link", "nav-desktop-link", { active: isServicesActive }]}>
           🌴 {translations["nav.services"] || "Servicios"}
         </a>
-        <a href={`${homeUrl}deporte`} class:list={["nav-link", { active: isSportsActive }]}>
+        <a href={`${homeUrl}deporte`} class:list={["nav-link", "nav-desktop-link", { active: isSportsActive }]}>
           🏃 {translations["nav.sports"] || "Deporte"}
         </a>
-        <a href={`${homeUrl}tours`} class:list={["nav-link", { active: isToursActive }]}>
-          🗺️ {translations["nav.tours"] || "Rutas"}
+        <a href={`${homeUrl}tours`} class:list={["nav-link", "nav-drawer-only", { active: isToursActive }]}>
+          🗺️ {translations["nav.tours"] || "Rutas & Experiencias"}
         </a>
-        <a href={`${homeUrl}profile`} class:list={["nav-link", { active: isProfileActive }]}>
-          👤 {translations["nav.profile"] || "Mi Perfil"}
-        </a>
-
-        <!-- Dropdown "Más ▾" (Desktop) -->
-        <div class:list={["nav-more-dropdown", { active: isMoreActive }]}>
-          <button
-            class:list={["nav-link", "nav-more-btn", { active: isMoreActive }]}
-            aria-haspopup="true"
-            aria-expanded="false"
-            id="admin-more-trigger"
-            type="button"
-          >
-            {translations["nav.more"] || "Más"}
-            <span class="nav-more-chevron" aria-hidden="true">▾</span>
-          </button>
-          <div class="nav-more-panel" role="menu" aria-labelledby="admin-more-trigger">
-            <a
-              href={`${homeUrl}memoria-historica`}
-              class:list={["nav-more-item", { active: isHistoryActive }]}
-              role="menuitem"
-            >
-              🏛️ {translations["nav.history"] || "Memoria"}
-            </a>
-            <a
-              href={`${homeUrl}comunidad`}
-              class:list={["nav-more-item", { active: isCommunityActive }]}
-              role="menuitem"
-            >
-              💬 {translations["nav.community"] || "Comunidad"}
-            </a>
-            <a
-              href={`${homeUrl}cuadro-de-honor`}
-              class:list={["nav-more-item", { active: isHonorActive }]}
-              role="menuitem"
-            >
-              👑 {translations["nav.honor"] || "Cuadro de Honor"}
-            </a>
-            <a href={`${homeUrl}blog`} class:list={["nav-more-item", { active: isBlogActive }]} role="menuitem">
-              📰 {translations["nav.blog"] || "Blog"}
-            </a>
-          </div>
-        </div>
-
-        <!-- Mobile Drawer Links (Solo en Drawer Móvil) -->
         <a
           href={`${homeUrl}memoria-historica`}
-          class:list={["nav-link", "nav-mobile-only", { active: isHistoryActive }]}
+          class:list={["nav-link", "nav-drawer-only", { active: isHistoryActive }]}
         >
-          🏛️ {translations["nav.history"] || "Memoria"}
+          🏛️ {translations["nav.history"] || "Memoria Histórica"}
         </a>
-        <a href={`${homeUrl}comunidad`} class:list={["nav-link", "nav-mobile-only", { active: isCommunityActive }]}>
-          💬 {translations["nav.community"] || "Comunidad"}
-        </a>
-        <a href={`${homeUrl}cuadro-de-honor`} class:list={["nav-link", "nav-mobile-only", { active: isHonorActive }]}>
+
+        <!-- ── SECCIÓN 2: COMUNIDAD & ÉLITE ── -->
+        <span class="nav-section-title">🌟 {translations["nav.section.community"] || "Comunidad & Reconocimiento"}</span
+        >
+
+        <a href={`${homeUrl}cuadro-de-honor`} class:list={["nav-link", "nav-desktop-link", { active: isHonorActive }]}>
           👑 {translations["nav.honor"] || "Cuadro de Honor"}
         </a>
-        <a href={`${homeUrl}blog`} class:list={["nav-link", "nav-mobile-only", { active: isBlogActive }]}>
-          📰 {translations["nav.blog"] || "Blog"}
+        <a href={`${homeUrl}comunidad`} class:list={["nav-link", "nav-desktop-link", { active: isCommunityActive }]}>
+          💬 {translations["nav.community"] || "Comunidad"}
+        </a>
+        <a href={`${homeUrl}blog`} class:list={["nav-link", "nav-drawer-only", { active: isBlogActive }]}>
+          📰 {translations["nav.blog"] || "Blog & Noticias"}
         </a>
       </nav>
 
+      <!-- ── SECCIÓN 3: PERFIL DE ADMINISTRADOR & SESIÓN ── -->
       <div class="navbar-actions">
+        <span class="nav-section-title drawer-prefs-title"
+          >👑 {translations["nav.section.adminAccount"] || "Consola de Super-Admin"}</span
+        >
+
         <div class="user-profile-menu">
           <a
             href={`${homeUrl}profile`}
-            class="user-avatar-badge admin-badge"
+            class:list={["user-avatar-badge", "admin-badge", { active: isProfileActive }]}
             aria-label={translations["nav.profile"] || "Mi Perfil"}
           >
             <span id="admin-nav-avatar">👑</span>
@@ -150,40 +116,6 @@ const isMoreActive = isHistoryActive || isCommunityActive || isHonorActive || is
 
   initMobileMenuToggle("admin-menu-toggle", "admin-navbar-menu");
   initAuthNavbar("admin");
-
-  // Dropdown "Más ▾" toggle
-  const trigger = document.getElementById("admin-more-trigger");
-  const dropdown = trigger?.closest(".nav-more-dropdown");
-  const panel = dropdown?.querySelector(".nav-more-panel");
-
-  if (trigger && dropdown && panel) {
-    function openMore() {
-      trigger!.setAttribute("aria-expanded", "true");
-      dropdown!.classList.add("open");
-    }
-    function closeMore() {
-      trigger!.setAttribute("aria-expanded", "false");
-      dropdown!.classList.remove("open");
-    }
-
-    trigger.addEventListener("click", (e) => {
-      e.stopPropagation();
-      const isOpen = dropdown!.classList.contains("open");
-      isOpen ? closeMore() : openMore();
-    });
-
-    document.addEventListener("click", (e) => {
-      if (!dropdown!.contains(e.target as Node)) closeMore();
-    });
-
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") closeMore();
-    });
-
-    panel.querySelectorAll("a").forEach((a) => {
-      a.addEventListener("click", closeMore);
-    });
-  }
 </script>
 
 <style>

@@ -766,6 +766,13 @@ object {
   align-items: center;
   gap: 2px;
   flex-wrap: nowrap;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.navbar-links::-webkit-scrollbar {
+  display: none;
 }
 
 .nav-link {
@@ -777,6 +784,7 @@ object {
   transition: all var(--transition-fast);
   white-space: nowrap;
   text-decoration: none;
+  flex-shrink: 0;
 }
 
 .nav-link:hover {
@@ -829,86 +837,24 @@ object {
   z-index: 10001;
 }
 
+.nav-section-title {
+  display: none;
+}
+
+.nav-drawer-only {
+  display: none;
+}
+
+.nav-desktop-link {
+  display: inline-flex;
+}
+
 .hamburger-line {
   width: 100%;
   height: 3px;
   background-color: var(--color-text);
   border-radius: 2px;
   transition: all var(--transition-fast);
-}
-
-/* ── Dropdown "Más ▾" ─────────────────────────────────────────── */
-.nav-more-dropdown {
-  position: relative;
-}
-
-.nav-more-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 3px;
-  cursor: pointer;
-  background: none;
-  border: none;
-  font-family: inherit;
-}
-
-.nav-more-chevron {
-  font-size: 0.65em;
-  line-height: 1;
-  transition: transform var(--transition-fast);
-}
-
-.nav-more-dropdown.open .nav-more-chevron {
-  transform: rotate(180deg);
-}
-
-.nav-more-panel {
-  display: none;
-  position: absolute;
-  top: calc(100% + 8px);
-  left: 0;
-  min-width: 200px;
-  background-color: var(--color-surface);
-  border: 1px solid var(--color-surface-border);
-  border-radius: var(--border-radius-md);
-  box-shadow: var(--shadow-lg);
-  padding: 6px;
-  z-index: 9999;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.nav-more-dropdown.open .nav-more-panel {
-  display: flex;
-}
-
-.nav-more-item {
-  display: block;
-  padding: 0.5rem 0.75rem;
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--color-text-light);
-  text-decoration: none;
-  border-radius: var(--border-radius-sm);
-  transition: all var(--transition-fast);
-  white-space: nowrap;
-}
-
-.nav-more-item:hover {
-  color: var(--color-primary);
-  background-color: var(--color-surface-hover);
-}
-
-.nav-more-item.active {
-  color: var(--color-primary);
-  background-color: var(--color-primary-bg);
-  border: 1px solid var(--color-primary-border);
-  font-weight: 700;
-}
-
-/* Links que sólo aparecen en el drawer móvil ── */
-.nav-mobile-only {
-  display: none;
 }
 
 /* Footer */
@@ -1064,21 +1010,23 @@ object {
     position: fixed;
     top: 0;
     right: -100%;
-    width: min(85vw, 340px);
+    width: min(88vw, 360px);
     height: 100vh;
-    max-height: 100vh;
+    height: 100dvh;
+    max-height: 100dvh;
     background-color: var(--color-surface);
     border-left: 1px solid var(--color-surface-border);
     box-shadow: var(--shadow-lg);
     flex-direction: column;
     justify-content: flex-start;
     align-items: stretch;
-    padding: var(--space-xl) var(--space-lg) var(--space-2xl);
+    padding: var(--space-lg) var(--space-md) 6rem;
     gap: var(--space-md);
     transition: right var(--transition-smooth);
     z-index: 10000;
     margin-left: 0;
     overflow-y: auto;
+    overscroll-behavior: contain;
     -webkit-overflow-scrolling: touch;
   }
 
@@ -1086,15 +1034,39 @@ object {
     right: 0;
   }
 
+  .nav-section-title {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-primary);
+    padding: 0.75rem 0.4rem 0.25rem;
+    border-bottom: 1px solid var(--color-surface-border);
+    margin-top: 0.25rem;
+  }
+
+  .nav-section-title:first-child {
+    padding-top: 0;
+    margin-top: 0;
+  }
+
+  .nav-drawer-only {
+    display: flex;
+  }
+
   .navbar-links {
     flex-direction: column;
     align-items: stretch;
-    gap: 4px;
+    gap: 3px;
+    width: 100%;
   }
 
   .navbar-links .nav-link {
-    padding: 0.6rem 0.8rem;
-    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    padding: 0.65rem 0.85rem;
+    font-size: 0.92rem;
     border-radius: var(--border-radius-sm);
     width: 100%;
     white-space: normal;
@@ -1111,7 +1083,7 @@ object {
 
   .auth-buttons {
     flex-direction: column;
-    gap: 6px;
+    gap: 8px;
     width: 100%;
   }
 
@@ -1119,18 +1091,21 @@ object {
     width: 100%;
     justify-content: center;
     text-align: center;
+    padding: 0.65rem 1rem;
+    font-size: 0.9rem;
   }
 
   .user-profile-menu {
     flex-direction: column;
     align-items: stretch;
     width: 100%;
-    gap: 6px;
+    gap: 8px;
   }
 
   .user-avatar-badge {
     width: 100%;
     justify-content: center;
+    padding: 0.65rem;
   }
 
   .mobile-toggle-btn {
@@ -1147,15 +1122,6 @@ object {
 
   .mobile-toggle-btn.is-active .hamburger-line:nth-child(3) {
     transform: translateY(-8.5px) rotate(-45deg);
-  }
-
-  /* En el drawer móvil: ocultar el dropdown ▾ y mostrar los links sueltos */
-  .nav-more-dropdown {
-    display: none;
-  }
-
-  .nav-mobile-only {
-    display: flex;
   }
 
   .footer-grid {

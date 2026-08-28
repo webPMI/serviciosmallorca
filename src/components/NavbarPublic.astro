@@ -26,16 +26,13 @@ const isServicesActive = isActive(`${homeUrl}servicios`) || currentPath.includes
 const isSportsActive = isActive(`${homeUrl}deporte`) || currentPath.includes("/deporte");
 const isToursActive = isActive(`${homeUrl}tours`) || currentPath.includes("/tours");
 const isHistoryActive = isActive(`${homeUrl}memoria-historica`) || currentPath.includes("/memoria-historica");
-const isAboutActive = isActive(`${homeUrl}sobre-nosotros`) || currentPath.includes("/sobre-nosotros");
-const isBlogActive = isActive(`${homeUrl}blog`) || currentPath.includes("/blog");
 const isCommunityActive = isActive(`${homeUrl}comunidad`) || currentPath.includes("/comunidad");
 const isHonorActive = isActive(`${homeUrl}cuadro-de-honor`) || currentPath.includes("/cuadro-de-honor");
 const isJoinActive = isActive(`${homeUrl}unete`) || currentPath.includes("/unete");
+const isBlogActive = isActive(`${homeUrl}blog`) || currentPath.includes("/blog");
+const isAboutActive = isActive(`${homeUrl}sobre-nosotros`) || currentPath.includes("/sobre-nosotros");
 const isLoginActive = isActive(`${homeUrl}login`);
 const isRegisterActive = isActive(`${homeUrl}register`);
-
-// ¿Algún link del grupo "Más" está activo?
-const isMoreActive = isHistoryActive || isCommunityActive || isHonorActive || isBlogActive || isAboutActive;
 ---
 
 <header class="navbar-header nav-public">
@@ -61,35 +58,81 @@ const isMoreActive = isHistoryActive || isCommunityActive || isHonorActive || is
     <!-- Public Navigation Menu -->
     <div id="public-navbar-menu" class="navbar-menu">
       <nav class="navbar-links" aria-label={translations["nav.aria.publicNav"] || "Navegación pública"}>
-        <!-- ── ENLACES PRIMARIOS (siempre visibles en desktop) ── -->
+        <!-- ── SECCIÓN 1: EXPLORAR MALLORCA ── -->
+        <span class="nav-section-title">🧭 {translations["nav.section.explore"] || "Explorar Mallorca"}</span>
+
         <a
           href={homeUrl}
-          class:list={["nav-link", { active: isHomeActive }]}
+          class:list={["nav-link", "nav-desktop-link", { active: isHomeActive }]}
           aria-current={isHomeActive ? "page" : undefined}
         >
           {translations["nav.home"] || "Inicio"}
         </a>
         <a
           href={`${homeUrl}servicios`}
-          class:list={["nav-link", { active: isServicesActive }]}
+          class:list={["nav-link", "nav-desktop-link", { active: isServicesActive }]}
           aria-current={isServicesActive ? "page" : undefined}
         >
-          {translations["nav.services"] || "Servicios"}
+          🌴 {translations["nav.services"] || "Servicios"}
         </a>
         <a
           href={`${homeUrl}deporte`}
-          class:list={["nav-link", { active: isSportsActive }]}
+          class:list={["nav-link", "nav-desktop-link", { active: isSportsActive }]}
           aria-current={isSportsActive ? "page" : undefined}
         >
           🏃 {translations["nav.sports"] || "Deporte"}
         </a>
         <a
           href={`${homeUrl}tours`}
-          class:list={["nav-link", { active: isToursActive }]}
+          class:list={["nav-link", "nav-drawer-only", { active: isToursActive }]}
           aria-current={isToursActive ? "page" : undefined}
         >
-          🗺️ {translations["nav.tours"] || "Rutas"}
+          🗺️ {translations["nav.tours"] || "Rutas & Experiencias"}
         </a>
+        <a
+          href={`${homeUrl}memoria-historica`}
+          class:list={["nav-link", "nav-drawer-only", { active: isHistoryActive }]}
+          aria-current={isHistoryActive ? "page" : undefined}
+        >
+          🏛️ {translations["nav.history"] || "Memoria Histórica"}
+        </a>
+
+        <!-- ── SECCIÓN 2: COMUNIDAD & ÉLITE ── -->
+        <span class="nav-section-title">🌟 {translations["nav.section.community"] || "Comunidad & Reconocimiento"}</span
+        >
+
+        <a
+          href={`${homeUrl}cuadro-de-honor`}
+          class:list={["nav-link", "nav-desktop-link", { active: isHonorActive }]}
+          aria-current={isHonorActive ? "page" : undefined}
+        >
+          👑 {translations["nav.honor"] || "Cuadro de Honor"}
+        </a>
+        <a
+          href={`${homeUrl}comunidad`}
+          class:list={["nav-link", "nav-desktop-link", { active: isCommunityActive }]}
+          aria-current={isCommunityActive ? "page" : undefined}
+        >
+          💬 {translations["nav.community"] || "Comunidad"}
+        </a>
+        <a
+          href={`${homeUrl}blog`}
+          class:list={["nav-link", "nav-drawer-only", { active: isBlogActive }]}
+          aria-current={isBlogActive ? "page" : undefined}
+        >
+          📰 {translations["nav.blog"] || "Blog & Guías"}
+        </a>
+        <a
+          href={`${homeUrl}sobre-nosotros`}
+          class:list={["nav-link", "nav-drawer-only", { active: isAboutActive }]}
+          aria-current={isAboutActive ? "page" : undefined}
+        >
+          🌿 {translations["nav.about"] || "Sobre Nosotros"}
+        </a>
+
+        <!-- ── SECCIÓN 3: EMPRESAS ── -->
+        <span class="nav-section-title">💼 {translations["nav.section.business"] || "Empresas & Profesionales"}</span>
+
         <a
           href={`${homeUrl}unete`}
           class:list={["nav-link", "nav-highlight-link", { active: isJoinActive }]}
@@ -97,102 +140,14 @@ const isMoreActive = isHistoryActive || isCommunityActive || isHonorActive || is
         >
           🚀 {translations["nav.join"] || "Para Empresas"}
         </a>
-
-        <!-- ── DROPDOWN "MÁS ▾" — agrupa enlaces secundarios en desktop ── -->
-        <div class:list={["nav-more-dropdown", { active: isMoreActive }]}>
-          <button
-            class:list={["nav-link", "nav-more-btn", { active: isMoreActive }]}
-            aria-haspopup="true"
-            aria-expanded="false"
-            id="nav-more-trigger"
-            type="button"
-          >
-            {translations["nav.more"] || "Más"}
-            <span class="nav-more-chevron" aria-hidden="true">▾</span>
-          </button>
-          <div class="nav-more-panel" role="menu" aria-labelledby="nav-more-trigger">
-            <a
-              href={`${homeUrl}memoria-historica`}
-              class:list={["nav-more-item", { active: isHistoryActive }]}
-              role="menuitem"
-              aria-current={isHistoryActive ? "page" : undefined}
-            >
-              🏛️ {translations["nav.history"] || "Memoria"}
-            </a>
-            <a
-              href={`${homeUrl}comunidad`}
-              class:list={["nav-more-item", { active: isCommunityActive }]}
-              role="menuitem"
-              aria-current={isCommunityActive ? "page" : undefined}
-            >
-              💬 {translations["nav.community"] || "Comunidad"}
-            </a>
-            <a
-              href={`${homeUrl}cuadro-de-honor`}
-              class:list={["nav-more-item", { active: isHonorActive }]}
-              role="menuitem"
-              aria-current={isHonorActive ? "page" : undefined}
-            >
-              👑 {translations["nav.honor"] || "Cuadro de Honor"}
-            </a>
-            <a
-              href={`${homeUrl}blog`}
-              class:list={["nav-more-item", { active: isBlogActive }]}
-              role="menuitem"
-              aria-current={isBlogActive ? "page" : undefined}
-            >
-              📰 {translations["nav.blog"] || "Blog"}
-            </a>
-            <a
-              href={`${homeUrl}sobre-nosotros`}
-              class:list={["nav-more-item", { active: isAboutActive }]}
-              role="menuitem"
-              aria-current={isAboutActive ? "page" : undefined}
-            >
-              🌿 {translations["nav.about"] || "Misión"}
-            </a>
-          </div>
-        </div>
-
-        <!-- ── ENLACES SECUNDARIOS VISIBLES SOLO EN EL DRAWER MÓVIL ── -->
-        <a
-          href={`${homeUrl}memoria-historica`}
-          class:list={["nav-link", "nav-mobile-only", { active: isHistoryActive }]}
-          aria-current={isHistoryActive ? "page" : undefined}
-        >
-          🏛️ {translations["nav.history"] || "Memoria"}
-        </a>
-        <a
-          href={`${homeUrl}comunidad`}
-          class:list={["nav-link", "nav-mobile-only", { active: isCommunityActive }]}
-          aria-current={isCommunityActive ? "page" : undefined}
-        >
-          💬 {translations["nav.community"] || "Comunidad"}
-        </a>
-        <a
-          href={`${homeUrl}cuadro-de-honor`}
-          class:list={["nav-link", "nav-mobile-only", { active: isHonorActive }]}
-          aria-current={isHonorActive ? "page" : undefined}
-        >
-          👑 {translations["nav.honor"] || "Cuadro de Honor"}
-        </a>
-        <a
-          href={`${homeUrl}blog`}
-          class:list={["nav-link", "nav-mobile-only", { active: isBlogActive }]}
-          aria-current={isBlogActive ? "page" : undefined}
-        >
-          📰 {translations["nav.blog"] || "Blog"}
-        </a>
-        <a
-          href={`${homeUrl}sobre-nosotros`}
-          class:list={["nav-link", "nav-mobile-only", { active: isAboutActive }]}
-          aria-current={isAboutActive ? "page" : undefined}
-        >
-          🌿 {translations["nav.about"] || "Misión"}
-        </a>
       </nav>
 
+      <!-- ── SECCIÓN 4: ACCIONES & PREFERENCIAS ── -->
       <div class="navbar-actions">
+        <span class="nav-section-title drawer-prefs-title"
+          >⚙️ {translations["nav.section.preferences"] || "Preferencias & Acceso"}</span
+        >
+
         <LanguageSwitcher
           currentLocale={localeTyped}
           translations={{
@@ -236,43 +191,6 @@ const isMoreActive = isHistoryActive || isCommunityActive || isHonorActive || is
 <script>
   import { initMobileMenuToggle } from "../lib/toggleMobileMenu";
   initMobileMenuToggle("public-menu-toggle", "public-navbar-menu");
-
-  // ── Dropdown "Más ▾" toggle ──────────────────────────────────────────────
-  const trigger = document.getElementById("nav-more-trigger");
-  const dropdown = trigger?.closest(".nav-more-dropdown");
-  const panel = dropdown?.querySelector(".nav-more-panel");
-
-  if (trigger && dropdown && panel) {
-    function openMore() {
-      trigger!.setAttribute("aria-expanded", "true");
-      dropdown!.classList.add("open");
-    }
-    function closeMore() {
-      trigger!.setAttribute("aria-expanded", "false");
-      dropdown!.classList.remove("open");
-    }
-
-    trigger.addEventListener("click", (e) => {
-      e.stopPropagation();
-      const isOpen = dropdown!.classList.contains("open");
-      isOpen ? closeMore() : openMore();
-    });
-
-    // Cerrar al hacer clic fuera
-    document.addEventListener("click", (e) => {
-      if (!dropdown!.contains(e.target as Node)) closeMore();
-    });
-
-    // Cerrar con Escape
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") closeMore();
-    });
-
-    // Cerrar al navegar a un ítem
-    panel.querySelectorAll("a").forEach((a) => {
-      a.addEventListener("click", closeMore);
-    });
-  }
 </script>
 
 <style>

@@ -161,13 +161,27 @@ const initialFilteredServices = SERVICES.filter((service) => {
     <div class="results-stats-toolbar">
       <div class="results-count-text">
         <span class="count-badge" id="results-count-num">{initialFilteredServices.length}</span>
-        <span>servicios verificados disponibles en Mallorca</span>
+        <span
+          >{translations["services.catalogCount"] || "servicios y comercios en Mallorca (Curación pública & IA)"}</span
+        >
       </div>
       <div class="quick-add-service-cta">
         <a href={`${prefix}dashboard`} class="btn btn-outline-primary btn-xs">
           <span>+ Publicar Negocio</span>
         </a>
       </div>
+    </div>
+
+    <!-- Banner Informativo de Transparencia del Directorio -->
+    <div class="directory-transparency-banner">
+      <p>
+        <span
+          >🤖 <strong>Transparencia Informativa:</strong> Los datos de comercios no reclamados se recopilan de fuentes públicas
+          abiertas (Google Maps y webs oficiales) para facilitar el contacto. Recomendamos verificar horarios y precios con
+          cada establecimiento antes de acudir. ¿Eres titular? <a href={`${prefix}dashboard`}>Reclama tu ficha gratis</a
+          >.</span
+        >
+      </p>
     </div>
 
     <!-- Results Directory Grid -->
@@ -512,5 +526,26 @@ const initialFilteredServices = SERVICES.filter((service) => {
       align-items: flex-start;
       gap: var(--space-xs);
     }
+  }
+
+  .directory-transparency-banner {
+    margin: 0.75rem 0 1.25rem 0;
+    padding: 0.75rem 1rem;
+    border-radius: var(--border-radius-sm, 6px);
+    background: rgba(245, 158, 11, 0.08);
+    border: 1px solid rgba(245, 158, 11, 0.25);
+    font-size: 0.82rem;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+  }
+
+  .directory-transparency-banner p {
+    margin: 0;
+  }
+
+  .directory-transparency-banner a {
+    color: var(--color-primary);
+    font-weight: 600;
+    text-decoration: underline;
   }
 </style>

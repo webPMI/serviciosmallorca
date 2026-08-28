@@ -1,0 +1,236 @@
+---
+import type { ServiceItem } from "../data/services/types";
+import type { Locale } from "../i18n";
+
+interface Props {
+  service: ServiceItem;
+  locale: Locale;
+  translations: Record<string, string>;
+}
+
+const { service, locale, translations } = Astro.props;
+
+const isOwnerVerified = Boolean(service.isClaimed && service.claimedByUid);
+
+const texts = {
+  es: {
+    badge: "🤖 Ficha de Información Pública (Curación IA)",
+    title: "Aviso de Transparencia: Datos Recopilados de Fuentes Públicas",
+    description:
+      "La información de este negocio (horarios, contacto, precios y servicios) ha sido recopilada automáticamente a partir de registros públicos, Google Maps y la web oficial para facilitar el contacto con este servicio. Debido a posibles actualizaciones imprevistas, te recomendamos verificar los datos directamente en sus canales oficiales antes de acudir.",
+    ownerPrompt:
+      "¿Eres el propietario o titular de este negocio? Reclama tu ficha gratis para verificarla, personalizarla y garantizar que los datos estén siempre 100% actualizados.",
+    claimBtn: "🏢 Reclamar Titularidad (Gratis)",
+    reportBtn: "🚩 Reportar dato erróneo",
+    verifiedTitle: "👑 Ficha Oficial Gestionada por el Titular",
+    verifiedDesc: "Este comercio ha sido formalmente reclamado y verificado por su titular registrado.",
+  },
+  en: {
+    badge: "🤖 Public Information Listing (AI-Curated)",
+    title: "Transparency Notice: Publicly Sourced Information",
+    description:
+      "This business's information (schedules, contact info, price ranges, and services) was gathered from open public sources, Google Maps, and official websites to help users find and reach local services. Because changes may occur, we recommend verifying details directly via the business's official channels before visiting.",
+    ownerPrompt:
+      "Are you the owner or manager of this business? Claim your listing for free to verify it, customize your profile, and keep your official information 100% accurate.",
+    claimBtn: "🏢 Claim Business Listing (Free)",
+    reportBtn: "🚩 Report Incorrect Data",
+    verifiedTitle: "👑 Official Profile Managed by Verified Owner",
+    verifiedDesc: "This business has been formally claimed and verified by its registered owner.",
+  },
+  ca: {
+    badge: "🤖 Fitxa d'Informació Pública (Curació IA)",
+    title: "Avís de Transparència: Dades Recopilades de Fonts Públiques",
+    description:
+      "La informació d'aquest negoci (horaris, contacte, preus i serveis) ha estat recopilada a partir de registres públics, Google Maps i la web oficial per facilitar el contacte amb aquest servei. A causa de possibles canvis imprevistos, et recomanem comprovar les dades directament als seus canals oficials abans d'anar-hi.",
+    ownerPrompt:
+      "Ets el propietari o titular d'aquest negoci? Reclama la teva fitxa de franc per verificar-la, personalitzar-la i garantir que les dades estiguin sempre 100% actualitzades.",
+    claimBtn: "🏢 Reclamar Titularitat (Gratis)",
+    reportBtn: "🚩 Reportar dada errònia",
+    verifiedTitle: "👑 Fitxa Oficial Gestionada pel Titular",
+    verifiedDesc: "Aquest comerç ha estat formalment reclamat i verificat pel seu titular registrat.",
+  },
+  de: {
+    badge: "🤖 Öffentliches Unternehmensprofil (KI-Zusammenstellung)",
+    title: "Transparenzhinweis: Aus öffentlichen Quellen zusammengestellt",
+    description:
+      "Die Angaben zu diesem Unternehmen (Öffnungszeiten, Kontaktdaten, Preise und Dienstleistungen) wurden aus öffentlich zugänglichen Quellen, Google Maps und offiziellen Webseiten aggregiert. Da Änderungen vorkommen können, empfehlen wir, wichtige Angaben vor Ihrem Besuch direkt über die offiziellen Kanäle des Unternehmens zu prüfen.",
+    ownerPrompt:
+      "Sind Sie der Inhaber oder Geschäftsführer dieses Unternehmens? Beanspruchen Sie Ihren Eintrag kostenlos, um Ihr Profil zu verifizieren, anzupassen und stets aktuell zu halten.",
+    claimBtn: "🏢 Unternehmensprofil beanspruchen (Kostenlos)",
+    reportBtn: "🚩 Fehlerhafte Daten melden",
+    verifiedTitle: "👑 Offizielles Profil vom verifizierten Inhaber verwaltet",
+    verifiedDesc: "Dieses Unternehmen wurde offiziell beansprucht und durch den registrierten Inhaber verifiziert.",
+  },
+};
+
+const t = texts[locale] || texts.es;
+---
+
+{
+  isOwnerVerified ? (
+    <div class="transparency-notice-box verified-owner-box">
+      <div class="notice-header">
+        <span class="notice-badge verified-badge">👑 {t.verifiedTitle}</span>
+      </div>
+      <p class="notice-text">{t.verifiedDesc}</p>
+    </div>
+  ) : (
+    <div class="transparency-notice-box unverified-notice-box" role="region" aria-label={t.title}>
+      <div class="notice-header">
+        <span class="notice-badge public-badge">{t.badge}</span>
+        <span class="notice-disclaimer-tag">⚠️ No verificado por el titular</span>
+      </div>
+
+      <h4 class="notice-title">{t.title}</h4>
+      <p class="notice-text">{t.description}</p>
+
+      <div class="notice-owner-banner">
+        <p class="notice-owner-prompt">
+          <strong>💼 {t.ownerPrompt}</strong>
+        </p>
+        <div class="notice-actions">
+          <button
+            type="button"
+            class="btn btn-sm btn-primary claim-trigger-btn"
+            data-open-modal="claim-modal"
+            id="unclaimed-notice-claim-btn"
+          >
+            {t.claimBtn}
+          </button>
+          <button
+            type="button"
+            class="btn btn-sm btn-ghost report-trigger-btn"
+            data-open-modal="report-modal"
+            id="unclaimed-notice-report-btn"
+          >
+            {t.reportBtn}
+          </button>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+<style>
+  .transparency-notice-box {
+    margin: 1.5rem 0;
+    padding: 1.25rem 1.5rem;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+  }
+
+  .unverified-notice-box {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.08) 0%, rgba(217, 119, 6, 0.03) 100%);
+    border: 1px solid rgba(245, 158, 11, 0.35);
+    border-left: 4px solid var(--color-warning, #f59e0b);
+  }
+
+  .verified-owner-box {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(5, 150, 105, 0.03) 100%);
+    border: 1px solid rgba(16, 185, 129, 0.35);
+    border-left: 4px solid var(--color-success, #10b981);
+  }
+
+  .notice-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .notice-badge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.25rem 0.6rem;
+    border-radius: 9999px;
+  }
+
+  .public-badge {
+    background: rgba(245, 158, 11, 0.18);
+    color: #d97706;
+    border: 1px solid rgba(245, 158, 11, 0.4);
+  }
+
+  :global(.dark) .public-badge {
+    color: #fbbf24;
+    background: rgba(245, 158, 11, 0.25);
+  }
+
+  .notice-disclaimer-tag {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+  }
+
+  .notice-title {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--color-text);
+  }
+
+  .notice-text {
+    margin: 0 0 1rem 0;
+    font-size: 0.88rem;
+    line-height: 1.6;
+    color: var(--color-text-muted);
+  }
+
+  .notice-owner-banner {
+    background: var(--color-surface, rgba(255, 255, 255, 0.6));
+    border: 1px solid var(--color-surface-border, rgba(0, 0, 0, 0.08));
+    border-radius: var(--border-radius-sm, 6px);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  :global(.dark) .notice-owner-banner {
+    background: rgba(15, 23, 42, 0.6);
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+
+  .notice-owner-prompt {
+    margin: 0;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: var(--color-text);
+  }
+
+  .notice-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .claim-trigger-btn {
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .report-trigger-btn {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+  .report-trigger-btn:hover {
+    color: var(--color-danger, #ef4444);
+  }
+
+  @media (max-width: 640px) {
+    .transparency-notice-box {
+      padding: 1rem;
+    }
+    .notice-actions {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+</style>
