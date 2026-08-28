@@ -3,16 +3,15 @@ import { queryD1Logs, type LogLevel, type LogCategory } from "../../../lib/d1Log
 
 export const prerender = false;
 
-export const GET: APIRoute = async ({ request, locals }) => {
+export const GET: APIRoute = async ({ request }) => {
   try {
-    const d1 = (locals as any)?.runtime?.env?.DB;
     const url = new URL(request.url);
 
     const limit = Number(url.searchParams.get("limit")) || 50;
     const level = url.searchParams.get("level") as LogLevel | undefined;
     const category = url.searchParams.get("category") as LogCategory | undefined;
 
-    const logs = await queryD1Logs(d1, { limit, level, category });
+    const logs = await queryD1Logs(undefined, { limit, level, category });
 
     return new Response(
       JSON.stringify({

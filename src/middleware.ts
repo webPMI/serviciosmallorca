@@ -33,7 +33,6 @@ const PRIVATE_ROUTE_PATTERNS = [
 export const onRequest = defineMiddleware(async (context, next) => {
   const { url, request, cookies, redirect } = context;
   const pathname = url.pathname;
-  const d1 = (context.locals as any)?.runtime?.env?.DB;
 
   // ── Markdown Content Negotiation (AI Agents & LLMs) ─────────────────────
   const acceptHeader = request.headers.get("accept") || "";
@@ -128,7 +127,7 @@ Explora el directorio completo y las valoraciones de restaurantes Michelin, chá
     return response;
   } catch (ssrError: any) {
     // 🛡️ Capturar y persistir error SSR crítico en Cloudflare D1
-    await logToD1(d1, {
+    await logToD1(undefined, {
       level: "ERROR",
       category: "SSR",
       message: ssrError?.message || "Excepción no controlada en renderizado SSR",

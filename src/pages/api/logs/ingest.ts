@@ -3,9 +3,8 @@ import { logToD1, type LogLevel, type LogCategory } from "../../../lib/d1Logger"
 
 export const prerender = false;
 
-export const POST: APIRoute = async ({ request, locals }) => {
+export const POST: APIRoute = async ({ request }) => {
   try {
-    const d1 = (locals as any)?.runtime?.env?.DB;
     const body = await request.json();
 
     const level: LogLevel = ["INFO", "WARN", "ERROR", "FATAL", "SECURITY"].includes(body.level) ? body.level : "ERROR";
@@ -26,7 +25,7 @@ export const POST: APIRoute = async ({ request, locals }) => {
     const clientIp = request.headers.get("cf-connecting-ip") || request.headers.get("x-forwarded-for") || undefined;
     const userAgent = request.headers.get("user-agent") || undefined;
 
-    const result = await logToD1(d1, {
+    const result = await logToD1(undefined, {
       level,
       category,
       message: String(body.message || "Error no especificado en cliente").slice(0, 1000),
