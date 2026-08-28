@@ -8,6 +8,7 @@ import TopRankedSection from "../../components/TopRankedSection.astro";
 import DiscoveryTours from "../../components/DiscoveryTours.astro";
 import MallorcaNewsFeed from "../../components/MallorcaNewsFeed.astro";
 import AdSenseSlot from "../../components/AdSenseSlot.astro";
+import BusinessJoinBanner from "../../components/BusinessJoinBanner.astro";
 import { getActiveCategories } from "../../data/categories";
 import { getFeaturedServices, SERVICES } from "../../data/services";
 import { getFeaturedPosts } from "../../data/posts";
@@ -453,19 +454,10 @@ const homepageJsonLd = generateHomepageJsonLd(locale, canonicalUrl);
       </div>
     </section>
 
-    <!-- CTA SECTION -->
-    <section class="container section">
-      <div class="cta-banner card-glass">
-        <div class="cta-content">
-          <span class="cta-badge">🌴 Mallorca Pro Network</span>
-          <h2 class="cta-title">{translations["home.cta.title"]}</h2>
-          <p class="cta-subtitle">{translations["home.cta.subtitle"]}</p>
-          <a href={`${prefix}register`} class="btn btn-primary btn-lg">
-            {translations["home.cta.button"]}
-          </a>
-        </div>
-      </div>
-    </section>
+    <!-- BUSINESS ONBOARDING & PRICING BANNER -->
+    <div class="container">
+      <BusinessJoinBanner locale={locale} translations={translations} />
+    </div>
   </main>
 
   <Footer translations={translations} currentLocale={locale} getLangPrefix={getLangPrefix} />

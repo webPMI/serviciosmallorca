@@ -32,6 +32,19 @@ const prefix = getLangPrefix(locale);
       </a>
     </header>
 
+    <!-- Business & Entrepreneur Notice -->
+    <div class="forum-business-callout card card-glass">
+      <span class="callout-icon">🚀</span>
+      <div class="callout-content">
+        <strong>¿Tienes un nuevo emprendimiento o empresa en Mallorca?</strong>
+        <span
+          >Participa en el foro, comparte tus novedades o <a href={`${prefix}unete`} class="link-gold"
+            >reclama tu ficha oficial y consulta tarifas aquí →</a
+          ></span
+        >
+      </div>
+    </div>
+
     <!-- Category Filter Bar -->
     <div class="forum-nav-toolbar">
       <div class="category-pills-scroll" id="forum-cat-filters">
@@ -129,6 +142,44 @@ const prefix = getLangPrefix(locale);
   .create-topic-btn {
     white-space: nowrap;
     align-self: center;
+  }
+
+  .forum-business-callout {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: var(--space-md, 1rem) var(--space-lg, 1.5rem);
+    margin-bottom: var(--space-xl, 2rem);
+    background: rgba(255, 215, 0, 0.05);
+    border: 1px solid rgba(255, 215, 0, 0.25);
+    border-radius: var(--radius-lg, 12px);
+  }
+
+  .callout-icon {
+    font-size: 1.6rem;
+    flex-shrink: 0;
+  }
+
+  .callout-content {
+    font-size: 0.92rem;
+    color: var(--color-text, #fff);
+    line-height: 1.4;
+  }
+
+  .callout-content strong {
+    display: block;
+    color: var(--color-accent, #ffd700);
+    margin-bottom: 2px;
+  }
+
+  .link-gold {
+    color: var(--color-accent, #ffd700);
+    font-weight: 700;
+    text-decoration: underline;
+  }
+
+  .link-gold:hover {
+    color: #fff;
   }
 
   .forum-nav-toolbar {

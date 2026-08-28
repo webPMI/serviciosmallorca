@@ -1,0 +1,574 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Navbar from "../../components/Navbar.astro";
+import Footer from "../../components/Footer.astro";
+import { getLocaleFromUrl, loadTranslations, getLangPrefix, type Locale } from "../../i18n";
+import { HONOR_LISTS } from "../../lib/honorBoardEngine";
+
+export const prerender = false;
+
+const locale = getLocaleFromUrl(Astro.url) as Locale;
+const translations = await loadTranslations(locale);
+const prefix = getLangPrefix(locale);
+---
+
+<BaseLayout
+  title="Planes, Tarifas y Registro de Empresas en Mallorca | Servicios Mallorca"
+  description="Descubre cómo dar de alta o reclamar tu negocio en Servicios Mallorca. Alta gratuita, verificación de titularidad y puestos de honor desde 1€."
+  currentLocale={locale}
+>
+  <Navbar currentLocale={locale} translations={translations} />
+
+  <main class="join-page-container container" id="main-content">
+    <!-- Hero Section -->
+    <header class="join-hero text-center">
+      <div class="hero-chip">
+        <span class="pulse-dot"></span>
+        <span>Guía Oficial para Empresas & Profesionales de Mallorca</span>
+      </div>
+      <h1 class="join-hero-title">
+        Haz Crecer tu Negocio en el Directorio <span class="gradient-text">Verificado de Mallorca</span>
+      </h1>
+      <p class="join-hero-subtitle">
+        Transparencia y control total. Reclamación y verificación fiscal 100% gratuita (0€). Destaca en el Cuadro de
+        Honor mediante micro-subastas comunitarias desde solo 1.00€.
+      </p>
+
+      <div class="hero-cta-group">
+        <a href={`${prefix}servicios`} class="btn btn-accent btn-lg">
+          <span>🔍 Buscar & Reclamar mi Negocio</span>
+        </a>
+        <a href={`${prefix}cuadro-de-honor`} class="btn btn-secondary btn-lg">
+          <span>👑 Ver Puestos de Honor (+1€)</span>
+        </a>
+      </div>
+    </header>
+
+    <!-- 3 Steps Section -->
+    <section class="steps-section" aria-labelledby="steps-heading">
+      <div class="section-header text-center">
+        <h2 id="steps-heading" class="section-title">El Proceso en 3 Pasos Claros</h2>
+        <p class="section-subtitle">
+          Blindado, sin fricción y 100% seguro para garantizar que solo los dueños legítimos gestionen cada ficha.
+        </p>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card card card-glass">
+          <div class="step-badge">Paso 1 · Gratuito</div>
+          <div class="step-icon">📍</div>
+          <h3 class="step-title">Localiza o Da de Alta</h3>
+          <p class="step-desc">
+            Encuentra la ficha de tu empresa en nuestro directorio de más de 300 servicios o solicita una nueva alta con
+            tus datos oficiales (NIF/CIF, dirección balear, teléfono y web).
+          </p>
+        </div>
+
+        <div class="step-card card card-glass step-featured">
+          <div class="step-badge">Paso 2 · Auditoría</div>
+          <div class="step-icon">🛡️</div>
+          <h3 class="step-title">Auditoría Fiscal & Cesión</h3>
+          <p class="step-desc">
+            Nuestro sistema multi-auditor y equipo humano validan la titularidad contra la AEAT y los dominios
+            corporativos. Te cedemos el mando oficial exclusivo de la ficha.
+          </p>
+        </div>
+
+        <div class="step-card card card-glass">
+          <div class="step-badge">Paso 3 · Crecimiento</div>
+          <div class="step-icon">⚡</div>
+          <h3 class="step-title">Mando Total & Podio (+1€)</h3>
+          <p class="step-desc">
+            Edita horarios, fotos y descripciones en tiempo real. Activa reservas directas y patrocina el puesto #1 del
+            Cuadro de Honor superando el récord anterior por solo 1.00€ más.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Comparison Matrix -->
+    <section class="pricing-section" aria-labelledby="pricing-heading">
+      <div class="section-header text-center">
+        <h2 id="pricing-heading" class="section-title">Tabla de Tarifas Transparentes</h2>
+        <p class="section-subtitle">Sin cuotas mensuales obligatorias ni comisiones abusivas sobre tus ventas.</p>
+      </div>
+
+      <div class="pricing-cards-grid">
+        <!-- Tier 1: Ficha Básica -->
+        <div class="pricing-card card card-glass">
+          <div class="tier-header">
+            <h3 class="tier-name">Ficha Pública Básica</h3>
+            <p class="tier-desc">Presencia indexada en Google y directorio balear.</p>
+            <div class="tier-price">
+              <span class="price-amount">0€</span>
+              <span class="price-period">/ para siempre</span>
+            </div>
+          </div>
+          <ul class="tier-perks">
+            <li>✅ Indexación en buscadores (SEO Local)</li>
+            <li>✅ Teléfono, WhatsApp y enlace a Web</li>
+            <li>✅ Geolocalización en Google & Apple Maps</li>
+            <li>✅ Recepción de reseñas comunitarias</li>
+            <li>❌ Edición directa de contenidos</li>
+            <li>❌ Insignia de Verificación Oficial</li>
+            <li>❌ Puesto destacado en Cuadro de Honor</li>
+          </ul>
+          <a href={`${prefix}servicios`} class="btn btn-secondary btn-full"> Localizar mi Ficha </a>
+        </div>
+
+        <!-- Tier 2: Titular Verificado (Oficial) -->
+        <div class="pricing-card card card-glass tier-popular">
+          <div class="popular-ribbon">⭐ Más Recomendado</div>
+          <div class="tier-header">
+            <h3 class="tier-name">Titular Oficial Acreditado</h3>
+            <p class="tier-desc">Cesión formal del mando tras verificación fiscal.</p>
+            <div class="tier-price">
+              <span class="price-amount">0€</span>
+              <span class="price-period">/ verificación gratuita</span>
+            </div>
+          </div>
+          <ul class="tier-perks">
+            <li>✅ <strong>Todo lo de la Ficha Básica</strong></li>
+            <li>✅ <strong>Insignia Dorada: Verificado Oficial (Nivel 3)</strong></li>
+            <li>✅ <strong>Panel de Control & Edición en Vivo</strong></li>
+            <li>✅ <strong>Gestión de galería, horarios y ofertas</strong></li>
+            <li>✅ <strong>Activación de botones de Reserva Directa</strong></li>
+            <li>✅ <strong>Respuesta oficial a reseñas de clientes</strong></li>
+            <li>✅ <strong>Apto para postular al Cuadro de Honor</strong></li>
+          </ul>
+          <a href={`${prefix}servicios`} class="btn btn-primary btn-full"> Reclamar Titularidad (0€) </a>
+        </div>
+
+        <!-- Tier 3: Cuadro de Honor -->
+        <div class="pricing-card card card-glass tier-gold">
+          <div class="popular-ribbon gold-ribbon">👑 Máxima Autoridad</div>
+          <div class="tier-header">
+            <h3 class="tier-name">Puesto de Honor en Podio</h3>
+            <p class="tier-desc">Subasta comunitaria dinámica justa e incremental.</p>
+            <div class="tier-price">
+              <span class="price-amount">Desde 1.00€</span>
+              <span class="price-period">/ puja récord +1€</span>
+            </div>
+          </div>
+          <ul class="tier-perks">
+            <li>✅ <strong>Todo lo del Titular Oficial</strong></li>
+            <li>✅ <strong>Puesto #1 Diamante, #2 Oro o #3 Plata</strong></li>
+            <li>✅ <strong>Aparición prioritaria en la Portada Balear</strong></li>
+            <li>✅ <strong>Badge exclusivo de Patrocinador de Honor</strong></li>
+            <li>✅ <strong>Enlace destacado con dedicatoria corporativa</strong></li>
+            <li>✅ <strong>Mención en newsletter y guías temáticas</strong></li>
+          </ul>
+          <a href={`${prefix}cuadro-de-honor`} class="btn btn-accent btn-full"> ⚡ Pujar en Cuadro de Honor </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Payment Gateways & Security -->
+    <section class="payment-trust-section card card-glass">
+      <div class="trust-grid">
+        <div class="trust-text">
+          <h2 class="trust-title">🔒 Plataforma de Pagos Segura & Certificada</h2>
+          <p class="trust-desc">
+            Todos los micro-patrocinios del Cuadro de Honor se procesan mediante cifrado SSL de 256 bits a través de
+            Stripe y proveedores bancarios europeos auditados.
+          </p>
+          <div class="trust-badges-row">
+            <div class="t-badge"><span>💳</span> Tarjetas Visa / Mastercard / Amex</div>
+            <div class="t-badge"><span>📱</span> Bizum Instantáneo</div>
+            <div class="t-badge"><span>🍏</span> Apple Pay & Google Pay</div>
+            <div class="t-badge"><span>🧾</span> Factura con IVA deducible</div>
+          </div>
+        </div>
+        <div class="trust-guarantee">
+          <div class="guarantee-box">
+            <span class="g-icon">🛡️</span>
+            <h4>Compromiso Zero Fake Data</h4>
+            <p>
+              Solo comercios con un índice de confianza $\ge 80\%$ y actividad contrastada en Mallorca pueden comprar
+              puestos de honor. El dinero nunca comprará reputación falsa.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="join-faq-section" aria-labelledby="faq-heading">
+      <div class="section-header text-center">
+        <h2 id="faq-heading" class="section-title">Preguntas Frecuentes para Propietarios</h2>
+        <p class="section-subtitle">
+          Resolvemos las dudas más comunes sobre la cesión de fichas y los puestos de honor.
+        </p>
+      </div>
+
+      <div class="faq-accordion-grid">
+        <div class="faq-item card card-glass">
+          <h3 class="faq-q">¿Por qué es gratuita la reclamación y edición de mi ficha?</h3>
+          <p class="faq-a">
+            Creemos firmemente en apoyar al comercio local balear. Toda empresa tiene derecho a mantener sus datos de
+            contacto, horarios y dirección 100% actualizados sin pagar nada.
+          </p>
+        </div>
+
+        <div class="faq-item card card-glass">
+          <h3 class="faq-q">¿Cómo funciona la subasta del Cuadro de Honor (+1€)?</h3>
+          <p class="faq-a">
+            Cada lista gremial (Gastronomía, Instalaciones, Náutica, etc.) tiene un podio (#1, #2, #3). Si el primer
+            puesto tiene un récord de 5.00€, cualquier titular elegible puede superarlo aportando exactamente 6.00€
+            (+1.00€).
+          </p>
+        </div>
+
+        <div class="faq-item card card-glass">
+          <h3 class="faq-q">¿Qué ocurre si alguien intenta reclamar un negocio que no es suyo?</h3>
+          <p class="faq-a">
+            Nuestro motor de seguridad exige validación de NIF/CIF oficial de la AEAT y verificación del dominio
+            corporativo o línea telefónica. Si no se acredita la titularidad, la solicitud se rechaza automáticamente.
+          </p>
+        </div>
+
+        <div class="faq-item card card-glass">
+          <h3 class="faq-q">¿Puedo dar de alta un emprendimiento nuevo que aún no aparece?</h3>
+          <p class="faq-a">
+            ¡Sí! Puedes enviar una solicitud de alta en 2 minutos. Nuestro equipo la auditará y la publicará en menos de
+            24 horas laborables.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer translations={translations} currentLocale={locale} getLangPrefix={getLangPrefix} />
+</BaseLayout>
+
+<style>
+  .join-page-container {
+    padding-top: var(--space-2xl, 3rem);
+    padding-bottom: var(--space-3xl, 4rem);
+  }
+
+  .join-hero {
+    max-width: 850px;
+    margin: 0 auto var(--space-3xl, 4rem) auto;
+  }
+
+  .hero-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 215, 0, 0.1);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    color: var(--color-accent, #ffd700);
+    padding: 6px 16px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: var(--space-md, 1rem);
+  }
+
+  .pulse-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--color-accent, #ffd700);
+    box-shadow: 0 0 8px var(--color-accent, #ffd700);
+  }
+
+  .join-hero-title {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 900;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    margin-bottom: var(--space-md, 1rem);
+  }
+
+  .join-hero-subtitle {
+    font-size: 1.15rem;
+    color: var(--color-text-secondary, #cbd5e1);
+    line-height: 1.6;
+    margin-bottom: var(--space-xl, 2rem);
+  }
+
+  .hero-cta-group {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--space-md, 1rem);
+  }
+
+  .section-header {
+    margin-bottom: var(--space-2xl, 2.5rem);
+  }
+
+  .section-title {
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-weight: 800;
+    margin-bottom: var(--space-xs, 0.5rem);
+  }
+
+  .section-subtitle {
+    font-size: 1.05rem;
+    color: var(--color-text-secondary, #94a3b8);
+    max-width: 650px;
+    margin: 0 auto;
+  }
+
+  /* Steps Section */
+  .steps-section {
+    margin-bottom: var(--space-3xl, 4rem);
+  }
+
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg, 1.5rem);
+  }
+
+  .step-card {
+    padding: var(--space-xl, 2rem);
+    position: relative;
+    border-radius: var(--radius-lg, 12px);
+    transition: transform 0.25s ease;
+  }
+
+  .step-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .step-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 3px 10px;
+    border-radius: 999px;
+    color: var(--color-accent, #ffd700);
+  }
+
+  .step-icon {
+    font-size: 2.2rem;
+    margin-bottom: var(--space-md, 1rem);
+  }
+
+  .step-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: var(--space-xs, 0.5rem);
+  }
+
+  .step-desc {
+    font-size: 0.95rem;
+    color: var(--color-text-secondary, #cbd5e1);
+    line-height: 1.6;
+  }
+
+  .step-featured {
+    border-color: rgba(59, 130, 246, 0.4);
+    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.1);
+  }
+
+  /* Pricing Cards Grid */
+  .pricing-section {
+    margin-bottom: var(--space-3xl, 4rem);
+  }
+
+  .pricing-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-xl, 2rem);
+    align-items: stretch;
+  }
+
+  .pricing-card {
+    padding: var(--space-xl, 2rem);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border-radius: var(--radius-xl, 16px);
+  }
+
+  .tier-popular {
+    border: 2px solid var(--color-primary, #2563eb);
+    transform: scale(1.03);
+    box-shadow: 0 20px 40px rgba(37, 99, 235, 0.2);
+  }
+
+  .tier-gold {
+    border: 2px solid var(--color-accent, #ffd700);
+    box-shadow: 0 20px 40px rgba(255, 215, 0, 0.15);
+  }
+
+  .popular-ribbon {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--color-primary, #2563eb);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 800;
+    padding: 3px 14px;
+    border-radius: 999px;
+    letter-spacing: 0.5px;
+  }
+
+  .gold-ribbon {
+    background: var(--color-accent, #ffd700);
+    color: #000;
+  }
+
+  .tier-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: var(--space-lg, 1.5rem);
+    margin-bottom: var(--space-lg, 1.5rem);
+  }
+
+  .tier-name {
+    font-size: 1.3rem;
+    font-weight: 800;
+    margin-bottom: 4px;
+  }
+
+  .tier-desc {
+    font-size: 0.85rem;
+    color: var(--color-text-secondary, #94a3b8);
+    min-height: 38px;
+  }
+
+  .tier-price {
+    margin-top: var(--space-md, 1rem);
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+  }
+
+  .price-amount {
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--color-accent, #ffd700);
+  }
+
+  .price-period {
+    font-size: 0.85rem;
+    color: var(--color-text-secondary, #cbd5e1);
+  }
+
+  .tier-perks {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--space-xl, 2rem) 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: 1;
+    font-size: 0.9rem;
+    color: var(--color-text, #fff);
+  }
+
+  /* Payment Trust */
+  .payment-trust-section {
+    padding: var(--space-2xl, 2.5rem);
+    margin-bottom: var(--space-3xl, 4rem);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .trust-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: var(--space-2xl, 2.5rem);
+    align-items: center;
+  }
+
+  .trust-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: var(--space-sm, 0.75rem);
+  }
+
+  .trust-desc {
+    color: var(--color-text-secondary, #cbd5e1);
+    line-height: 1.6;
+    margin-bottom: var(--space-lg, 1.5rem);
+  }
+
+  .trust-badges-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-sm, 0.75rem);
+  }
+
+  .t-badge {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .guarantee-box {
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    border-radius: var(--radius-lg, 12px);
+    padding: var(--space-lg, 1.5rem);
+  }
+
+  .g-icon {
+    font-size: 2rem;
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  .guarantee-box h4 {
+    color: #34d399;
+    font-weight: 800;
+    margin-bottom: 6px;
+  }
+
+  .guarantee-box p {
+    font-size: 0.85rem;
+    color: var(--color-text-secondary, #cbd5e1);
+    line-height: 1.5;
+  }
+
+  /* FAQ */
+  .faq-accordion-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-lg, 1.5rem);
+  }
+
+  .faq-item {
+    padding: var(--space-lg, 1.5rem);
+  }
+
+  .faq-q {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--color-accent, #ffd700);
+  }
+
+  .faq-a {
+    font-size: 0.95rem;
+    color: var(--color-text-secondary, #cbd5e1);
+    line-height: 1.6;
+  }
+
+  @media (max-width: 992px) {
+    .steps-grid,
+    .pricing-cards-grid,
+    .trust-grid,
+    .faq-accordion-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .tier-popular {
+      transform: none;
+    }
+  }
+</style>

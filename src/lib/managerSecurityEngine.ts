@@ -83,10 +83,13 @@ export function validateBalearicPhone(phone: string): boolean {
 
 /**
  * Detecta si un correo electrónico proviene de proveedores temporales / desechables.
+ * Incluye comprobación recursiva de subdominios.
  */
 export function isDisposableEmail(email: string): boolean {
-  const domain = email.split("@")[1]?.toLowerCase() || "";
-  const disposableDomains = new Set([
+  const domain = email.split("@")[1]?.toLowerCase().trim() || "";
+  if (!domain) return true;
+
+  const disposableDomains = [
     "tempmail.com",
     "10minutemail.com",
     "guerrillamail.com",
@@ -95,12 +98,14 @@ export function isDisposableEmail(email: string): boolean {
     "throwawaymail.com",
     "yopmail.com",
     "trashmail.com",
-  ]);
-  return disposableDomains.has(domain);
+  ];
+
+  return disposableDomains.some((d) => domain === d || domain.endsWith(`.${d}`));
 }
 
 /**
  * Comprueba si el dominio del correo coincide con la web oficial del negocio.
+ * Soporta subdominios legítimos corporativos (ej. reservas@staff.restaurante.com).
  */
 export function isMatchingCorporateDomain(email: string, businessWebsite: string): boolean {
   if (!email || !businessWebsite) return false;
@@ -108,11 +113,14 @@ export function isMatchingCorporateDomain(email: string, businessWebsite: string
     const emailDomain = email
       .split("@")[1]
       ?.toLowerCase()
+      .trim()
       .replace(/^www\./, "");
     const parsedUrl = new URL(businessWebsite.startsWith("http") ? businessWebsite : `https://${businessWebsite}`);
     const webDomain = parsedUrl.hostname.toLowerCase().replace(/^www\./, "");
 
-    return Boolean(emailDomain && webDomain && (emailDomain === webDomain || webDomain.endsWith(`.${emailDomain}`)));
+    if (!emailDomain || !webDomain) return false;
+
+    return emailDomain === webDomain || emailDomain.endsWith(`.${webDomain}`) || webDomain.endsWith(`.${emailDomain}`);
   } catch {
     return false;
   }

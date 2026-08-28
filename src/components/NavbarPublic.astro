@@ -30,6 +30,7 @@ const isAboutActive = isActive(`${homeUrl}sobre-nosotros`) || currentPath.includ
 const isBlogActive = isActive(`${homeUrl}blog`) || currentPath.includes("/blog");
 const isCommunityActive = isActive(`${homeUrl}comunidad`) || currentPath.includes("/comunidad");
 const isHonorActive = isActive(`${homeUrl}cuadro-de-honor`) || currentPath.includes("/cuadro-de-honor");
+const isJoinActive = isActive(`${homeUrl}unete`) || currentPath.includes("/unete");
 const isLoginActive = isActive(`${homeUrl}login`);
 const isRegisterActive = isActive(`${homeUrl}register`);
 ---
@@ -112,6 +113,14 @@ const isRegisterActive = isActive(`${homeUrl}register`);
           aria-current={isHonorActive ? "page" : undefined}
         >
           👑 {translations["nav.honor"] || "Cuadro de Honor"}
+        </a>
+        <a
+          href={`${homeUrl}unete`}
+          class="nav-link nav-highlight-link"
+          class:list={["nav-link", "nav-highlight-link", { active: isJoinActive }]}
+          aria-current={isJoinActive ? "page" : undefined}
+        >
+          🚀 {translations["nav.join"] || "Para Empresas"}
         </a>
         <a
           href={`${homeUrl}blog`}

@@ -1,0 +1,330 @@
+---
+import type { Locale } from "../i18n";
+import { getLangPrefix } from "../i18n";
+
+interface Props {
+  locale?: Locale;
+  translations?: Record<string, string>;
+  title?: string;
+  subtitle?: string;
+}
+
+const { locale = "es" as Locale, translations = {}, title, subtitle } = Astro.props;
+
+const prefix = getLangPrefix(locale);
+
+const defaultTitle = translations["join.banner.title"] || "¿Tienes un negocio o servicio en Mallorca?";
+const defaultSubtitle =
+  translations["join.banner.subtitle"] ||
+  "Únete a la mayor plataforma verificada de la isla. Reclama tu ficha gratis, gestiona tus datos y destaca en el Cuadro de Honor desde 1€.";
+---
+
+<section class="business-join-banner-wrap" aria-labelledby="join-banner-heading">
+  <div class="business-join-banner card card-glass">
+    <div class="banner-badge-row">
+      <span class="live-pulse-badge">
+        <span class="pulse-dot"></span>
+        {translations["join.banner.badge"] || "🚀 Espacio para Empresas & Profesionales"}
+      </span>
+      <span class="badge badge-accent">
+        {translations["join.banner.freeBadge"] || "Alta & Reclamación 100% Gratuita (0€)"}
+      </span>
+    </div>
+
+    <div class="banner-content-grid">
+      <div class="banner-text-col">
+        <h2 id="join-banner-heading" class="banner-title">
+          {title || defaultTitle}
+        </h2>
+        <p class="banner-description">
+          {subtitle || defaultSubtitle}
+        </p>
+
+        <div class="banner-steps-chips">
+          <div class="step-chip">
+            <span class="step-num">1</span>
+            <span class="step-txt">{translations["join.step1.short"] || "Reclama o Registra (0€)"}</span>
+          </div>
+          <div class="step-chip">
+            <span class="step-num">2</span>
+            <span class="step-txt">{translations["join.step2.short"] || "Auditoría Fiscal & Cesión"}</span>
+          </div>
+          <div class="step-chip">
+            <span class="step-num">3</span>
+            <span class="step-txt">{translations["join.step3.short"] || "Mando Total & Podio (+1€)"}</span>
+          </div>
+        </div>
+
+        <div class="banner-actions">
+          <a href={`${prefix}unete`} class="btn btn-accent btn-lg pulse-hover">
+            <span>⚡ Ver Planes, Tarifas & Pasos</span>
+            <span class="arrow-icon">→</span>
+          </a>
+          <a href={`${prefix}cuadro-de-honor`} class="btn btn-secondary btn-lg">
+            <span>👑 Ver Cuadro de Honor</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="banner-visual-col">
+        <div class="pricing-mini-card">
+          <div class="mini-card-header">
+            <span class="mini-title">Tarifas Transparentes</span>
+            <span class="mini-badge">Zero Sorpresas</span>
+          </div>
+          <ul class="mini-features-list">
+            <li>
+              <span class="check-icon">✅</span>
+              <div>
+                <strong>Ficha Verificada:</strong>
+                <span>0€ para siempre</span>
+              </div>
+            </li>
+            <li>
+              <span class="check-icon">✅</span>
+              <div>
+                <strong>Cesión de Mando:</strong>
+                <span>Edita datos & horarios 100% gratis</span>
+              </div>
+            </li>
+            <li>
+              <span class="check-icon">💎</span>
+              <div>
+                <strong>Puestos de Honor:</strong>
+                <span>Subasta comunitaria desde solo 1.00€</span>
+              </div>
+            </li>
+          </ul>
+          <div class="payment-methods-strip">
+            <span class="pay-tag">💳 Tarjetas</span>
+            <span class="pay-tag">📱 Bizum</span>
+            <span class="pay-tag">🍏 Apple Pay</span>
+            <span class="pay-tag">🔒 Stripe SSL</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .business-join-banner-wrap {
+    margin: var(--space-2xl, 3rem) 0;
+    width: 100%;
+  }
+
+  .business-join-banner {
+    position: relative;
+    padding: var(--space-xl, 2rem);
+    background: linear-gradient(135deg, rgba(26, 32, 44, 0.95), rgba(15, 23, 42, 0.98));
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    border-radius: var(--radius-xl, 16px);
+    box-shadow:
+      0 20px 40px -15px rgba(0, 0, 0, 0.5),
+      0 0 25px rgba(255, 215, 0, 0.1);
+    overflow: hidden;
+  }
+
+  .business-join-banner::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(255, 215, 0, 0.15), transparent 70%);
+    pointer-events: none;
+  }
+
+  .banner-badge-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm, 0.75rem);
+    align-items: center;
+    margin-bottom: var(--space-md, 1rem);
+  }
+
+  .live-pulse-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--color-primary-light, #60a5fa);
+    background: rgba(59, 130, 246, 0.15);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    padding: 4px 12px;
+    border-radius: 999px;
+  }
+
+  .pulse-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--color-accent, #ffd700);
+    box-shadow: 0 0 8px var(--color-accent, #ffd700);
+    animation: pulseGlow 1.5s infinite;
+  }
+
+  @keyframes pulseGlow {
+    0%,
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.3);
+      opacity: 0.6;
+    }
+  }
+
+  .banner-content-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 0.9fr;
+    gap: var(--space-xl, 2rem);
+    align-items: center;
+  }
+
+  .banner-title {
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+    font-weight: 800;
+    color: var(--color-text, #ffffff);
+    line-height: 1.25;
+    margin-bottom: var(--space-sm, 0.75rem);
+    letter-spacing: -0.02em;
+  }
+
+  .banner-description {
+    font-size: 1.05rem;
+    color: var(--color-text-secondary, #cbd5e1);
+    line-height: 1.6;
+    margin-bottom: var(--space-lg, 1.5rem);
+  }
+
+  .banner-steps-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm, 0.75rem);
+    margin-bottom: var(--space-lg, 1.5rem);
+  }
+
+  .step-chip {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+  }
+
+  .step-num {
+    background: var(--color-accent, #ffd700);
+    color: #000;
+    font-weight: 800;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+  }
+
+  .step-txt {
+    color: var(--color-text, #fff);
+    font-weight: 600;
+  }
+
+  .banner-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md, 1rem);
+  }
+
+  .pricing-mini-card {
+    background: rgba(15, 23, 42, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: var(--radius-lg, 12px);
+    padding: var(--space-lg, 1.5rem);
+    backdrop-filter: blur(10px);
+  }
+
+  .mini-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: var(--space-sm, 0.75rem);
+    margin-bottom: var(--space-md, 1rem);
+  }
+
+  .mini-title {
+    font-weight: 700;
+    color: var(--color-accent, #ffd700);
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .mini-badge {
+    font-size: 0.75rem;
+    background: rgba(16, 185, 129, 0.2);
+    color: #34d399;
+    border: 1px solid rgba(16, 185, 129, 0.4);
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-weight: 600;
+  }
+
+  .mini-features-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--space-md, 1rem) 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .mini-features-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.88rem;
+    color: var(--color-text, #fff);
+  }
+
+  .mini-features-list li strong {
+    display: block;
+    color: var(--color-accent, #ffd700);
+  }
+
+  .mini-features-list li span {
+    color: var(--color-text-secondary, #94a3b8);
+    font-size: 0.8rem;
+  }
+
+  .payment-methods-strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: var(--space-sm, 0.75rem);
+  }
+
+  .pay-tag {
+    font-size: 0.72rem;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 3px 8px;
+    border-radius: 4px;
+    color: var(--color-text-secondary, #cbd5e1);
+  }
+
+  @media (max-width: 900px) {
+    .banner-content-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
