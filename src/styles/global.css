@@ -423,6 +423,15 @@ object {
   box-sizing: border-box;
 }
 
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 290px), 1fr));
+  gap: var(--space-lg);
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
 .flex-center {
   display: flex;
   align-items: center;

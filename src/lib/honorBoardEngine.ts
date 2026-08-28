@@ -476,7 +476,21 @@ export function processHonorBid(
     };
   }
 
-  // 4. Crear nueva entrada de honor y desplazar la cola
+  // 4. Validar unicidad estricta de importe (No-Colisión en Cuadro de Honor)
+  const normalizedSafeBid = Number(safeBid.toFixed(2));
+  const collision = sortedList.find(
+    (spot) => Math.abs(spot.currentBidEuros - normalizedSafeBid) < 0.009 && spot.serviceId !== service.id,
+  );
+  if (collision) {
+    return {
+      success: false,
+      error: `Ya existe un comercio con exactamente ${normalizedSafeBid}€ (${collision.serviceName}). En el Cuadro de Honor cada importe debe ser único; aporta al menos +${listDef.bidIncrementEuros}€ para superarlo.`,
+      updatedList: sortedList,
+      displacedCount: 0,
+    };
+  }
+
+  // 5. Crear nueva entrada de honor y desplazar la cola
   const newEntry: HonorSpotEntry = {
     id: `spot-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`,
     position: 1,

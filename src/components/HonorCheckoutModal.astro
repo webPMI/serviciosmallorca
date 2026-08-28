@@ -50,6 +50,15 @@ const prefix = getLangPrefix(locale);
       <button type="button" class="modal-close-btn" id="close-honor-modal-btn" aria-label="Cerrar modal"> ✕ </button>
     </div>
 
+    <!-- Progress Steps Header -->
+    <div class="checkout-steps-track">
+      <div class="step-badge active"><span>1</span> Importe & Datos</div>
+      <div class="step-arrow">→</div>
+      <div class="step-badge active"><span>2</span> Pasarela SSL</div>
+      <div class="step-arrow">→</div>
+      <div class="step-badge active"><span>3</span> Factura 21% IVA</div>
+    </div>
+
     <!-- Mode Switcher Tabs -->
     <div class="checkout-mode-tabs" role="tablist">
       <button type="button" class="mode-tab active" id="tab-community-boost" role="tab" aria-selected="true">
@@ -65,6 +74,7 @@ const prefix = getLangPrefix(locale);
       <input type="hidden" id="input-service-id" name="serviceId" value={preselectedServiceId} />
       <input type="hidden" id="input-service-slug" name="serviceSlug" value={preselectedServiceSlug} />
       <input type="hidden" id="input-min-required" value={minBidRequired} />
+      <input type="hidden" id="input-idempotency-key" name="idempotencyKey" value="" />
 
       <!-- Business Target Indicator -->
       <div class="business-target-card">
@@ -120,7 +130,7 @@ const prefix = getLangPrefix(locale);
       <div class="amount-selection-box">
         <div class="amount-header">
           <label for="input-bid-amount" class="form-label">Importe a Aportar (€) *</label>
-          <span id="label-min-hint" class="min-hint">Mínimo sugerido: {minBidRequired.toFixed(2)}€</span>
+          <span id="label-min-hint" class="min-hint">Mínimo requerido: {minBidRequired.toFixed(2)}€</span>
         </div>
 
         <div class="amount-input-row">
@@ -135,6 +145,12 @@ const prefix = getLangPrefix(locale);
             value={minBidRequired}
             required
           />
+        </div>
+
+        <!-- Real-time Collision / Uniqueness Status Chip -->
+        <div id="collision-status-box" class="collision-chip collision-ok">
+          <span class="collision-icon">✨</span>
+          <span id="collision-msg-text">Importe disponible y conforme con la regla +1€</span>
         </div>
 
         <!-- Quick Amount Chips -->
@@ -172,7 +188,7 @@ const prefix = getLangPrefix(locale);
         <div class="payment-tabs-grid">
           <label class="pay-radio active">
             <input type="radio" name="paymentMethod" value="card" checked />
-            <span class="pay-label">💳 Tarjeta</span>
+            <span class="pay-label">💳 Tarjeta SSL</span>
           </label>
           <label class="pay-radio">
             <input type="radio" name="paymentMethod" value="bizum" />
@@ -185,13 +201,14 @@ const prefix = getLangPrefix(locale);
         </div>
       </div>
 
-      <!-- Submit CTA Button -->
+      <!-- Submit CTA Button (Blindado contra doble clic) -->
       <div class="modal-actions-footer">
         <button type="submit" id="submit-honor-btn" class="btn btn-accent btn-lg btn-full pulse-hover">
+          <span id="btn-submit-spinner" class="btn-spinner" style="display: none;">🔒</span>
           <span id="btn-submit-text">⚡ Completar Aportación & Aupar al Podio</span>
         </button>
         <p class="security-guarantee-txt">
-          🔒 Pago seguro con cifrado SSL 256 bits · Sin comisiones ocultas · Factura inmediata
+          🔒 Pago blindado anti-duplicados · Cifrado SSL 256 bits · Factura fiscal con 21% IVA deducible
         </p>
       </div>
     </form>
@@ -292,10 +309,89 @@ const prefix = getLangPrefix(locale);
   }
 
   /* Mode Switcher */
+  .checkout-steps-track {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: var(--space-md, 1rem);
+    padding: 8px 12px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    font-size: 0.78rem;
+  }
+
+  .step-badge {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--color-text-muted, #94a3b8);
+    font-weight: 600;
+  }
+
+  .step-badge.active {
+    color: var(--color-accent, #ffd700);
+  }
+
+  .step-badge span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: rgba(255, 215, 0, 0.2);
+    font-size: 0.7rem;
+    font-weight: 700;
+  }
+
+  .step-arrow {
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 0.8rem;
+  }
+
+  .collision-chip {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    margin-top: 8px;
+    transition: all 0.2s ease;
+  }
+
+  .collision-ok {
+    background: rgba(16, 185, 129, 0.15);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    color: #34d399;
+  }
+
+  .collision-warning {
+    background: rgba(239, 68, 68, 0.15);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    color: #f87171;
+  }
+
+  .btn-spinner {
+    display: inline-block;
+    animation: spin 1s infinite linear;
+    margin-right: 6px;
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
   .checkout-mode-tabs {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 6px;
+    gap: 8px;
     background: rgba(0, 0, 0, 0.3);
     padding: 4px;
     border-radius: 10px;
@@ -563,11 +659,18 @@ const prefix = getLangPrefix(locale);
     const chipBtns = document.querySelectorAll(".chip-btn");
     const payRadios = document.querySelectorAll(".pay-radio");
 
+    const submitBtn = document.getElementById("submit-honor-btn") as HTMLButtonElement | null;
+    const btnSubmitSpinner = document.getElementById("btn-submit-spinner");
+    const collisionStatusBox = document.getElementById("collision-status-box");
+    const collisionMsgText = document.getElementById("collision-msg-text");
+    const idempotencyKeyInput = document.getElementById("input-idempotency-key") as HTMLInputElement | null;
+
     if (!modal || !form || !amountInput) return;
 
-    // 1. Live Recalculate Fiscal Invoice
+    // 1. Live Recalculate Fiscal Invoice & Collision Check
     function recalculateInvoice() {
       const amount = Math.max(1, Number(amountInput?.value) || 1);
+      const minRequired = Number(minRequiredInput?.value) || 1;
       const subtotal = Number((amount / 1.21).toFixed(2));
       const tax = Number((amount - subtotal).toFixed(2));
 
@@ -576,6 +679,27 @@ const prefix = getLangPrefix(locale);
       if (calcTotal) calcTotal.textContent = `${amount.toFixed(2)}€`;
       if (calcInvoiceId) {
         calcInvoiceId.textContent = `INV-HONOR-${Date.now().toString(36).toUpperCase()}`;
+      }
+
+      // Validar monto contra mínimo
+      if (amount < minRequired) {
+        if (collisionStatusBox) {
+          collisionStatusBox.className = "collision-chip collision-warning";
+        }
+        if (collisionMsgText) {
+          collisionMsgText.textContent = `⚠️ Importe inferior al mínimo requerido (${minRequired.toFixed(2)}€). Debe superar el récord en +1€`;
+        }
+        if (submitBtn) submitBtn.disabled = true;
+      } else {
+        if (collisionStatusBox) {
+          collisionStatusBox.className = "collision-chip collision-ok";
+        }
+        if (collisionMsgText) {
+          collisionMsgText.textContent = "✨ Importe disponible y conforme con la regla +1€";
+        }
+        if (submitBtn && form.getAttribute("data-submitting") !== "true") {
+          submitBtn.disabled = false;
+        }
       }
     }
 
@@ -629,6 +753,10 @@ const prefix = getLangPrefix(locale);
         if (minRequiredInput) minRequiredInput.value = data.minBid.toString();
       }
 
+      // Generar clave de idempotencia única para esta sesión de checkout
+      const randomKey = `idemp_${data.serviceId || "serv"}_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`;
+      if (idempotencyKeyInput) idempotencyKeyInput.value = randomKey;
+
       // Auto-fill from authStore
       const currentUser = authStore.getState().user;
       if (currentUser) {
@@ -640,6 +768,11 @@ const prefix = getLangPrefix(locale);
         }
       }
 
+      // Reset submitting status
+      form.removeAttribute("data-submitting");
+      if (submitBtn) submitBtn.disabled = false;
+      if (btnSubmitSpinner) btnSubmitSpinner.style.display = "none";
+
       recalculateInvoice();
       modal.classList.add("is-active");
       modal.setAttribute("aria-hidden", "false");
@@ -649,6 +782,9 @@ const prefix = getLangPrefix(locale);
     function closeModal() {
       modal?.classList.remove("is-active");
       modal?.setAttribute("aria-hidden", "true");
+      form?.removeAttribute("data-submitting");
+      if (submitBtn) submitBtn.disabled = false;
+      if (btnSubmitSpinner) btnSubmitSpinner.style.display = "none";
     }
 
     closeBtn?.addEventListener("click", closeModal);
@@ -656,13 +792,35 @@ const prefix = getLangPrefix(locale);
       if (e.target === modal) closeModal();
     });
 
-    // 6. Form Submission Simulation & Redirect to Profile
+    // 6. Form Submission con Blindaje Anti-Doble Clic & Anti-Duplicados
     form.addEventListener("submit", (e) => {
       e.preventDefault();
+
+      // Guardar contra doble clic rápido o envíos múltiples concurrentes
+      if (form.getAttribute("data-submitting") === "true") {
+        return;
+      }
+      form.setAttribute("data-submitting", "true");
+
       const amount = Number(amountInput.value) || 1;
+      const minRequired = Number(minRequiredInput?.value) || 1;
+
+      if (amount < minRequired) {
+        alert(`El importe debe ser de al menos ${minRequired.toFixed(2)}€.`);
+        form.removeAttribute("data-submitting");
+        return;
+      }
+
       const backerName = nameInput?.value.trim() || "Vecino de Mallorca";
+      const backerEmail = emailInput?.value.trim() || "";
       const slug = serviceSlugInput?.value || "servicio";
       const mode = modeInput?.value || "community_boost";
+      const idempotencyKey = idempotencyKeyInput?.value || `idemp_${Date.now()}`;
+
+      // Deshabilitar botón inmediatamente y mostrar spinner de seguridad
+      if (submitBtn) submitBtn.disabled = true;
+      if (btnSubmitSpinner) btnSubmitSpinner.style.display = "inline-block";
+      if (btnSubmitText) btnSubmitText.textContent = "🔒 Procesando pago seguro...";
 
       // Guardar en favoritos locales y registrar metadatos de aportación
       try {
@@ -673,19 +831,16 @@ const prefix = getLangPrefix(locale);
         }
         localStorage.setItem(
           "last_boost_meta",
-          JSON.stringify({ slug, amount, backerName, mode, at: new Date().toISOString() }),
+          JSON.stringify({ slug, amount, backerName, backerEmail, mode, idempotencyKey, at: new Date().toISOString() }),
         );
       } catch (err) {
         console.warn("Storage warning:", err);
       }
 
-      // Feedback visual
-      if (btnSubmitText) btnSubmitText.textContent = "⏳ Procesando pago seguro...";
-
       setTimeout(() => {
         closeModal();
         // Redireccionar al perfil con los parámetros de éxito
-        window.location.href = `/es/perfil?boostSuccess=1&amount=${amount}&slug=${encodeURIComponent(slug)}&mode=${mode}`;
+        window.location.href = `/es/perfil?boostSuccess=1&amount=${amount}&slug=${encodeURIComponent(slug)}&mode=${mode}&idemp=${encodeURIComponent(idempotencyKey)}`;
       }, 750);
     });
   }

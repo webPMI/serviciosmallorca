@@ -570,4 +570,34 @@ const prefix = getLangPrefix(locale);
       transform: none;
     }
   }
+
+  @media (max-width: 640px) {
+    .trust-badges-row {
+      grid-template-columns: 1fr;
+    }
+    .payment-trust-section {
+      padding: var(--space-lg, 1.5rem) var(--space-md, 1rem);
+    }
+    .pricing-card {
+      padding: var(--space-lg, 1.5rem) var(--space-md, 1rem);
+    }
+    .step-card {
+      padding: var(--space-lg, 1.5rem) var(--space-md, 1rem);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-cta-group {
+      flex-direction: column;
+      width: 100%;
+    }
+    .hero-cta-group .btn {
+      width: 100%;
+      text-align: center;
+      justify-content: center;
+    }
+    .join-hero-title {
+      font-size: 1.85rem;
+    }
+  }
 </style>

@@ -300,27 +300,27 @@ const descriptions: Record<Locale, string> = {
   }
   .stats-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr));
+    gap: 1rem;
     margin-bottom: 3.5rem;
   }
   .stat-card {
     background: var(--color-surface);
     border: 1px solid var(--color-border);
     border-radius: 1rem;
-    padding: 1.5rem;
+    padding: 1.25rem 1rem;
     text-align: center;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   }
   .stat-number {
     display: block;
-    font-size: 2.25rem;
+    font-size: 2rem;
     font-weight: 800;
     color: var(--color-accent);
     margin-bottom: 0.25rem;
   }
   .stat-label {
-    font-size: 0.875rem;
+    font-size: 0.82rem;
     color: var(--color-text-muted);
     font-weight: 500;
   }
@@ -342,7 +342,7 @@ const descriptions: Record<Locale, string> = {
   }
   .cards-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
     gap: 1.5rem;
   }
   .heritage-card {
