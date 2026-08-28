@@ -1442,6 +1442,7 @@ const verifiedBusinesses = PUBLIC_SERVICES.filter((s) => (s.confidenceScore ?? 0
           tax: taxVal,
           backerName,
           backerEmail,
+          backerMessage: messageInput?.value.trim() || "",
           mode,
           idempotencyKey,
           isB2B,

@@ -61,4 +61,10 @@ describe("📱 RESPONSIVE DESIGN & MOBILE VIEWPORTS (GR-02)", () => {
     expect(modalAstro).toContain("@media (max-width: 600px)");
     expect(modalAstro).toContain("@media (max-width: 380px)");
   });
+
+  it("debe activar el menú drawer responsivo para el navbar en max-width: 1024px", () => {
+    expect(globalCss).toContain("@media (max-width: 1024px)");
+    expect(globalCss).toContain(".mobile-toggle-btn");
+    expect(globalCss).toContain(".navbar-menu.is-active");
+  });
 });

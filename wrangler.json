@@ -3,6 +3,13 @@
   "compatibility_date": "2026-08-25",
   "compatibility_flags": ["nodejs_compat"],
   "workers_dev": true,
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "servicios-mallorca-db",
+      "database_id": "servicios-mallorca-db-id"
+    }
+  ],
   "routes": [
     {
       "pattern": "serviciosmallorca.com",
