@@ -129,3 +129,25 @@ servicios-mallorca/
 2. **Smooth Fade-In:** Al dispararse el evento `onload`, la imagen real emerge con una transición suave (`opacity: 0 -> 1` en 400ms).
 3. **Fallback SVG Multi-Nivel:** Ante cualquier fallo de red o enlace roto (`onerror`), se sustituye dinámicamente por un banner SVG optimizado del sector correspondiente sin romper la maquetación.
 4. **Fidelidad de Coordenadas:** 100% de los negocios poseen coordenadas reales dentro del bounding box geográfico de la isla de Mallorca.
+
+---
+
+## 5. Subsistema de Voz de la Comunidad & Auto-Reparación con Agentes IA
+
+Para garantizar una plataforma viva y retroalimentada por sus residentes, la arquitectura integra un subsistema de retroalimentación comunitaria (ver [USER_FEEDBACK_AND_COMMUNITY_VOICE.md](USER_FEEDBACK_AND_COMMUNITY_VOICE.md)):
+
+```mermaid
+graph TD
+    User[Residente / Turista] -->|Queja, Sugerencia o Buena Noticia| EdgeAPI[/api/feedback/submit/]
+    EdgeAPI -->|Validación Zod + Turnstile| D1[(Cloudflare D1: community_feedback)]
+    D1 --> AdminPanel[Panel Visual /admin/feedback]
+    D1 --> AgentAi[Agente IA de Inteligencia @curation]
+    AgentAi -->|Cruce con Google Maps / Web Oficial| Verification{¿Corroborado >= 90%?}
+    Verification -->|Sí| AutoDiff[Genera Parche Git Diff en src/data/services/]
+    AutoDiff --> AdminPanel
+    AdminPanel -->|Aprobación 1-Click| GitHubDeploy[GitHub Commit & Wrangler Auto-Deploy]
+```
+
+- **Muro de Buenas Noticias:** Espacio público para visibilizar la excelencia artesanal y el servicio destacado en la isla.
+- **Canal de Reclamaciones:** Protocolo automático de auditoría cuando los usuarios alertan sobre teléfonos desactualizados, cierres no informados o discrepancias horarias.
+- **Auto-Reparación IA:** El agente `@curation` asiste al administrador preparando parches de código listos para fusionar tras comprobar los datos en fuentes oficiales (Zero Fake Data / GR-11).

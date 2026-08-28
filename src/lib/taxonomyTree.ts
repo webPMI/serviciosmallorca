@@ -68,7 +68,7 @@ export const TAXONOMY_TREE: TaxonomyBlockNode[] = [
             id: "fine-line",
             tag: "product:fine-line",
             name: { es: "Tatuaje Fine-Line", en: "Fine Line Tattoo", ca: "Tatuatge Fine-Line", de: "Fine-Line-Tattoo" },
-            keywords: ["fine-line", "fineline", "linea fina", "minimalista", "microtatuaje"],
+            keywords: ["fine-line", "fine line", "fineline", "linea fina", "línea fina", "minimalista", "microtatuaje"],
           },
           {
             id: "micro-tatuaje",
@@ -558,7 +558,7 @@ export const TAXONOMY_TREE: TaxonomyBlockNode[] = [
             id: "padel-tenis",
             tag: "product:padel-tenis",
             name: { es: "Pádel & Tenis", en: "Padel & Tennis", ca: "Pàdel i Tennis", de: "Padel & Tennis" },
-            keywords: ["padel", "tenis", "pista", "raqueta", "partido"],
+            keywords: ["padel", "pádel", "pàdel", "tenis", "tennis", "pista", "raqueta", "partido"],
           },
           {
             id: "senderismo-rutas",
@@ -569,7 +569,7 @@ export const TAXONOMY_TREE: TaxonomyBlockNode[] = [
               ca: "Senderisme",
               de: "Bergwandern",
             },
-            keywords: ["senderismo", "trail", "montaña", "tramuntana", "excursion"],
+            keywords: ["senderismo", "trail", "montaña", "tramuntana", "excursion", "excursión"],
           },
           {
             id: "yoga-bienestar",
@@ -580,7 +580,7 @@ export const TAXONOMY_TREE: TaxonomyBlockNode[] = [
               ca: "Ioga i Benestar",
               de: "Yoga & Wellness",
             },
-            keywords: ["yoga", "pilates", "meditacion", "bienestar", "asanas"],
+            keywords: ["yoga", "pilates", "meditacion", "meditación", "bienestar", "asanas"],
           },
         ],
       },
@@ -594,13 +594,18 @@ export const TAXONOMY_TREE: TaxonomyBlockNode[] = [
 export function inferNicheTags(service: ServiceItem): string[] {
   const currentTags = new Set<string>(service.tags || []);
   const searchableText = [
-    service.name,
-    service.category,
-    service.shortDescription.es || "",
-    service.shortDescription.en || "",
+    service.name || "",
+    service.category || "",
+    service.shortDescription?.es || "",
+    service.shortDescription?.en || "",
+    service.shortDescription?.ca || "",
+    service.shortDescription?.de || "",
     service.fullDescription?.es || "",
+    service.fullDescription?.en || "",
     ...(service.highlights?.es || []),
+    ...(service.highlights?.en || []),
     ...(service.servicesProvided?.es || []),
+    ...(service.servicesProvided?.en || []),
   ]
     .join(" ")
     .toLowerCase();

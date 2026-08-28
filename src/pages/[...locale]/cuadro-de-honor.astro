@@ -170,7 +170,6 @@ const honorJsonLd = {
   openButtons.forEach((btn) => {
     btn.addEventListener("click", () => {
       const catId = btn.getAttribute("data-cat-id") || "elite-general";
-      const catTitle = btn.getAttribute("data-cat-title") || "Cuadro de Honor";
       const serviceId = btn.getAttribute("data-service-id") || "";
       const serviceSlug = btn.getAttribute("data-service-slug") || "";
       const serviceName = btn.getAttribute("data-service-name") || "";
@@ -180,10 +179,11 @@ const honorJsonLd = {
       window.dispatchEvent(
         new CustomEvent("open-honor-checkout", {
           detail: {
+            catId,
             category: catId,
             serviceId,
             serviceSlug,
-            serviceName: serviceName || `Comercio en ${catTitle}`,
+            serviceName: serviceName || "",
             minBid: nextPrice,
             mode,
           },
@@ -195,16 +195,19 @@ const honorJsonLd = {
   // Auto-reopen modal if returning from login / auth redirect with intent
   const params = new URLSearchParams(window.location.search);
   if (params.get("intent") === "boost" || params.get("openCheckout") === "1") {
-    const serviceName = params.get("serviceName") || "Referente de Cuadro de Honor";
+    const serviceName = params.get("serviceName") || "";
     const minBid = Number(params.get("amount") || params.get("minBid") || "1.00");
     const serviceId = params.get("serviceId") || "";
     const serviceSlug = params.get("serviceSlug") || "";
     const mode = params.get("mode") || "community_boost";
+    const catId = params.get("catId") || params.get("category") || "elite-general";
 
     setTimeout(() => {
       window.dispatchEvent(
         new CustomEvent("open-honor-checkout", {
           detail: {
+            catId,
+            category: catId,
             serviceId,
             serviceSlug,
             serviceName,

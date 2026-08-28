@@ -115,7 +115,7 @@ export const HONOR_LISTS: HonorListDefinition[] = [
       ca: "Bodegues històriques, forns tradicionals i gastronomia d'arrel mallorquina.",
       de: "Historische Bodegas, traditionelle Bäckereien und mallorquinische Gastronomie.",
     },
-    categoryFilter: ["gastronomia-restaurantes"],
+    categoryFilter: ["gastronomia-catering", "gastronomia-restaurantes"],
     basePriceEuros: 1.0,
     bidIncrementEuros: 1.0,
   },

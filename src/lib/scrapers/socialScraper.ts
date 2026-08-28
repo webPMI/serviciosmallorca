@@ -44,6 +44,8 @@ export async function extractSocialLinks(html: string): Promise<SocialLinksResul
       !url.includes("/share.php") &&
       !url.includes("/dialog/") &&
       !url.includes("/tr/") &&
+      !url.includes("/tr?") &&
+      !url.includes("/tr?") &&
       !url.includes("/login") &&
       !socialLinks.facebook
     ) {

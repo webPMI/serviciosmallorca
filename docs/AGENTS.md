@@ -245,6 +245,15 @@ Antes de cualquier escritura, el agente debe explicitar el cumplimiento de:
 - `GR-12`: Fidelidad Google Maps (coordenadas reales en Mallorca)
 - `GR-04`: Redacción trilingüe completa (`es`, `en`, `ca`)
 
+#### 🤖 Triage Autónomo de Voz de la Comunidad (Feedback & Reclamaciones)
+
+El agente `@curation` procesa periódicamente la cola `community_feedback` en Cloudflare D1:
+
+- **Reclamaciones de Datos:** Comprueba discrepancias reportadas (teléfonos, horarios, cierres) contra Google Business Profile y webs oficiales.
+- **Generación de Parches:** Prepara un `Git Diff` validado para aprobación del administrador en 1 clic.
+- **Nuevas Demandas:** Ejecuta minería preliminar de comercios solicitados por los vecinos en zonas desatendidas.
+- 📖 Consulta el flujo completo en [docs/USER_FEEDBACK_AND_COMMUNITY_VOICE.md](USER_FEEDBACK_AND_COMMUNITY_VOICE.md).
+
 **Pre-entrega checklist (SOP Oficial):**
 
 ```

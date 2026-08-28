@@ -2,6 +2,7 @@
 import type { Locale } from "../i18n";
 import { getLangPrefix } from "../i18n";
 import type { HonorCategory } from "../lib/honorBoardEngine";
+import { HONOR_LISTS } from "../lib/honorBoardEngine";
 import { PUBLIC_SERVICES } from "../data/services";
 
 interface Props {
@@ -26,6 +27,25 @@ const {
 
 const prefix = getLangPrefix(locale);
 const verifiedBusinesses = PUBLIC_SERVICES.filter((s) => (s.confidenceScore ?? 0) >= 80 && s.status === "open");
+
+const honorListsData = JSON.stringify(
+  HONOR_LISTS.map((l) => ({
+    id: l.id,
+    categoryFilter: l.categoryFilter || [],
+    title: l.title[locale] || l.title.es,
+  })),
+);
+
+const verifiedBusinessesData = JSON.stringify(
+  verifiedBusinesses.map((b) => ({
+    id: b.id,
+    slug: b.slug,
+    name: b.name,
+    category: b.category,
+    zone: b.zone,
+    score: b.confidenceScore || 90,
+  })),
+);
 ---
 
 <!-- Modal de Checkout & Posicionamiento (Multi-step Wizard, Theme Adaptive, Validated) -->
@@ -34,6 +54,17 @@ const verifiedBusinesses = PUBLIC_SERVICES.filter((s) => (s.confidenceScore ?? 0
   class="honor-modal-backdrop"
   data-prefix={prefix}
   data-default-category={preselectedCategory}
+  data-honor-lists={honorListsData}
+  data-verified-businesses={verifiedBusinessesData}
+  data-i18n-connecting={translations["honor.modal.connectingSsl"] || "🔒 Conectando con pasarela SSL..."}
+  data-i18n-min-required-alert={translations["honor.modal.minRequiredAlert"] ||
+    "⚠️ Importe inferior al mínimo requerido ({price}€). Debe superar el récord en +1€"}
+  data-i18n-collision-ok={translations["honor.modal.collisionOk"] ||
+    "✨ Importe disponible y conforme con la regla +1€"}
+  data-i18n-submit-community={translations["honor.modal.submitCommunity"] || "⚡ Completar Aportación & Aupar al Podio"}
+  data-i18n-submit-owner={translations["honor.modal.submitOwner"] || "👑 Pujar Récord & Tomar el Puesto #1"}
+  data-i18n-default-biz={translations["honor.modal.defaultBizPlaceholder"] || "Comercio de Mallorca"}
+  data-i18n-select-prompt={translations["honor.modal.selectBizPlaceholder"] || "Seleccionar Comercio de Mallorca..."}
   aria-hidden="true"
   role="dialog"
   aria-modal="true"
@@ -105,21 +136,40 @@ const verifiedBusinesses = PUBLIC_SERVICES.filter((s) => (s.confidenceScore ?? 0
         </div>
       </div>
 
-      <!-- Verified Business Selector Dropdown -->
+      <!-- Live Searchable Business Picker with Guild Isolation -->
       <div
         class="form-group"
         id="biz-selector-group"
         style={preselectedServiceName ? "display: none;" : "display: block;"}
       >
-        <label for="select-honor-business" class="form-label">
-          {translations["honor.modal.selectBizPrompt"] || "Selecciona el Comercio Verificado (Zero Fake Data) *"}
-        </label>
-        <select id="select-honor-business" class="form-input form-select-biz">
-          <option value=""
-            >{
-              translations["honor.modal.selectBizPlaceholder"] || "-- Elige el negocio que deseas aupar o posicionar --"
-            }</option
-          >
+        <div class="biz-picker-header">
+          <label for="input-search-biz" class="form-label">
+            {translations["honor.modal.selectBizPrompt"] || "Selecciona el Comercio Verificado *"}
+          </label>
+          <span id="biz-category-badge" class="biz-category-badge">🏆 Élite Balear</span>
+        </div>
+
+        <div class="search-biz-box">
+          <input
+            type="text"
+            id="input-search-biz"
+            class="form-input search-biz-input"
+            placeholder={locale === "ca"
+              ? "🔍 Escriu per cercar comerç o municipi..."
+              : locale === "en"
+                ? "🔍 Type to search business or municipality..."
+                : locale === "de"
+                  ? "🔍 Nach Betrieb oder Ort suchen..."
+                  : "🔍 Escribe para buscar comercio o municipio..."}
+            autocomplete="off"
+          />
+          <div id="biz-search-results-list" class="biz-results-dropdown">
+            <!-- Populated dynamically via JS based on active honor category filter -->
+          </div>
+        </div>
+
+        <select id="select-honor-business" style="display: none;">
+          <option value="">{translations["honor.modal.selectBizPlaceholder"] || "-- Elige el negocio --"}</option>
           {
             verifiedBusinesses.map((s) => (
               <option
@@ -131,12 +181,12 @@ const verifiedBusinesses = PUBLIC_SERVICES.filter((s) => (s.confidenceScore ?? 0
                 data-score={s.confidenceScore || 90}
                 selected={s.id === preselectedServiceId}
               >
-                {s.name} ({s.zone}) · {s.confidenceScore || 90}% {translations["honor.confidence"] || "Confianza"}
+                {s.name} ({s.zone})
               </option>
             ))
           }
         </select>
-        <span class="form-helper">
+        <span class="form-helper" id="biz-filter-helper-text">
           {
             translations["honor.modal.selectBizHelper"] ||
               "Solo se admiten comercios reales de Mallorca con verificación oficial y nivel de confianza garantizado (≥ 80%)."
@@ -157,16 +207,18 @@ const verifiedBusinesses = PUBLIC_SERVICES.filter((s) => (s.confidenceScore ?? 0
             placeholder={translations["honor.modal.backerNamePlaceholder"] || "Ej. Joan García (Vecino de Inca)"}
             required
           />
-          <span id="err-backer-name" class="inline-error" style="display: none;">Por favor introduce tu nombre.</span>
+          <span id="err-backer-name" class="inline-error" style="display: none;">
+            {translations["honor.modal.errName"] || "Por favor introduce tu nombre."}
+          </span>
         </div>
         <div class="form-group">
           <label for="input-backer-email" class="form-label"
             >{translations["honor.modal.backerEmail"] || "Email para Factura / Notificación *"}</label
           >
           <input type="email" id="input-backer-email" class="form-input" placeholder="tu-email@gmail.com" required />
-          <span id="err-backer-email" class="inline-error" style="display: none;"
-            >Introduce un email válido para la factura.</span
-          >
+          <span id="err-backer-email" class="inline-error" style="display: none;">
+            {translations["honor.modal.errEmail"] || "Introduce un email válido para la factura."}
+          </span>
         </div>
       </div>
 
@@ -204,14 +256,18 @@ const verifiedBusinesses = PUBLIC_SERVICES.filter((s) => (s.confidenceScore ?? 0
                 >{translations["honor.modal.b2bTaxId"] || "CIF / NIF de Empresa *"}</label
               >
               <input type="text" id="input-b2b-taxid" class="form-input" placeholder="Ej. B-07123456 o 43123456Z" />
-              <span id="err-b2b-taxid" class="inline-error" style="display: none;">Introduce un CIF/NIF válido.</span>
+              <span id="err-b2b-taxid" class="inline-error" style="display: none;">
+                {translations["honor.modal.errTaxId"] || "Introduce un CIF/NIF válido."}
+              </span>
             </div>
             <div class="form-group">
               <label for="input-b2b-legalname" class="form-label"
                 >{translations["honor.modal.b2bLegalName"] || "Razón Social / Nombre Fiscal *"}</label
               >
               <input type="text" id="input-b2b-legalname" class="form-input" placeholder="Ej. Hostelería Balear S.L." />
-              <span id="err-b2b-legalname" class="inline-error" style="display: none;">Introduce la razón social.</span>
+              <span id="err-b2b-legalname" class="inline-error" style="display: none;">
+                {translations["honor.modal.errLegalName"] || "Introduce la razón social."}
+              </span>
             </div>
           </div>
           <div class="form-group">
@@ -231,7 +287,7 @@ const verifiedBusinesses = PUBLIC_SERVICES.filter((s) => (s.confidenceScore ?? 0
       <!-- Step 1 Action Button -->
       <div class="modal-actions-footer">
         <button type="button" id="btn-next-step-1" class="btn btn-primary btn-lg btn-full">
-          <span>Continuar al Importe & Pago SSL →</span>
+          <span>{translations["honor.modal.continueToStep2"] || "Continuar al Importe & Pago SSL →"}</span>
         </button>
       </div>
     </div>
@@ -242,8 +298,10 @@ const verifiedBusinesses = PUBLIC_SERVICES.filter((s) => (s.confidenceScore ?? 0
       <div class="selected-biz-summary">
         <span class="sum-icon">📍</span>
         <div class="sum-text">
-          <span class="sum-label">Destinatario del patrocinio:</span>
-          <strong id="summary-biz-name" class="sum-val">Comercio de Mallorca</strong>
+          <span class="sum-label">{translations["honor.modal.recipientLabel"] || "Destinatario del patrocinio:"}</span>
+          <strong id="summary-biz-name" class="sum-val">
+            {preselectedServiceName || translations["honor.modal.defaultBizPlaceholder"] || "Comercio de Mallorca"}
+          </strong>
         </div>
       </div>
 
@@ -333,7 +391,7 @@ const verifiedBusinesses = PUBLIC_SERVICES.filter((s) => (s.confidenceScore ?? 0
       <!-- Step 2 Actions Footer -->
       <div class="step-2-actions-row">
         <button type="button" id="btn-back-step-2" class="btn btn-secondary">
-          <span>← Modificar Datos</span>
+          <span>{translations["honor.modal.backStep1"] || "← Modificar Datos"}</span>
         </button>
         <button type="button" id="submit-honor-btn" class="btn btn-primary btn-lg pulse-hover btn-flex-grow">
           <span id="btn-submit-spinner" class="btn-spinner" style="display: none;">🔒</span>
@@ -727,6 +785,117 @@ const verifiedBusinesses = PUBLIC_SERVICES.filter((s) => (s.confidenceScore ?? 0
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: var(--space-sm, 0.75rem);
+  }
+
+  /* Searchable Business Picker Styles */
+  .biz-picker-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 2px;
+    flex-wrap: wrap;
+  }
+
+  .biz-category-badge {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    background: var(--color-primary-bg, rgba(234, 88, 12, 0.1));
+    border: 1px solid var(--color-primary);
+    padding: 2px 8px;
+    border-radius: var(--border-radius-full, 9999px);
+  }
+
+  .search-biz-box {
+    position: relative;
+    width: 100%;
+  }
+
+  .search-biz-input {
+    font-size: 0.86rem;
+    padding: 8px 10px;
+  }
+
+  .biz-results-dropdown {
+    max-height: 190px;
+    overflow-y: auto;
+    background: var(--color-surface);
+    border: 1px solid var(--color-surface-border);
+    border-radius: var(--border-radius-sm, 8px);
+    margin-top: 4px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .biz-result-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 7px 10px;
+    border-bottom: 1px solid var(--color-surface-border);
+    cursor: pointer;
+    transition: background var(--transition-fast);
+    gap: 8px;
+  }
+
+  .biz-result-item:last-child {
+    border-bottom: none;
+  }
+
+  .biz-result-item:hover,
+  .biz-result-item.selected {
+    background: var(--color-primary-bg, rgba(234, 88, 12, 0.08));
+  }
+
+  .biz-result-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    flex: 1;
+    min-width: 0;
+  }
+
+  .biz-result-name {
+    font-size: 0.84rem;
+    font-weight: 700;
+    color: var(--color-text);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .biz-result-meta {
+    font-size: 0.7rem;
+    color: var(--color-text-muted);
+    display: flex;
+    gap: 6px;
+    align-items: center;
+  }
+
+  .biz-result-score {
+    color: var(--color-success);
+    font-weight: 700;
+  }
+
+  .biz-result-select-btn {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    background: transparent;
+    border: 1px solid var(--color-primary);
+    border-radius: var(--border-radius-sm, 6px);
+    padding: 2px 7px;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  .biz-empty-results {
+    padding: 12px;
+    font-size: 0.78rem;
+    color: var(--color-text-muted);
+    text-align: center;
   }
 
   /* B2B Drawer */
@@ -1209,38 +1378,111 @@ const verifiedBusinesses = PUBLIC_SERVICES.filter((s) => (s.confidenceScore ?? 0
 
     if (!modal || !amountInput) return;
 
-    // Toggle B2B Drawer
-    if (checkboxB2B && b2bDrawer) {
-      checkboxB2B.addEventListener("change", () => {
-        b2bDrawer.style.display = checkboxB2B.checked ? "block" : "none";
+    // Business data and Honor Lists
+    interface HonorListItem {
+      id: string;
+      categoryFilter: string[];
+      title: string;
+    }
+    interface BizItem {
+      id: string;
+      slug: string;
+      name: string;
+      category: string;
+      zone: string;
+      score: number;
+    }
+
+    const honorLists: HonorListItem[] = JSON.parse(modal.getAttribute("data-honor-lists") || "[]");
+    const allBusinesses: BizItem[] = JSON.parse(modal.getAttribute("data-verified-businesses") || "[]");
+    let currentCategoryId = modal.getAttribute("data-default-category") || "elite-general";
+
+    const inputSearchBiz = document.getElementById("input-search-biz") as HTMLInputElement | null;
+    const bizSearchResultsList = document.getElementById("biz-search-results-list");
+    const bizCategoryBadge = document.getElementById("biz-category-badge");
+    const bizSelectorGroup = document.getElementById("biz-selector-group");
+    const btnToggleBiz = document.getElementById("btn-toggle-biz-select");
+    const selectHonorBiz = document.getElementById("select-honor-business") as HTMLSelectElement | null;
+
+    function renderBusinessList(catId: string, query = "") {
+      if (!bizSearchResultsList) return;
+
+      const activeList = honorLists.find((l) => l.id === catId);
+      const categoryFilters = activeList?.categoryFilter || [];
+
+      if (bizCategoryBadge) {
+        bizCategoryBadge.textContent = activeList?.title || "🏆 Élite Balear";
+      }
+
+      const q = query.toLowerCase().trim();
+      const eligible = allBusinesses.filter((b) => {
+        // 1. Strict Category Isolation: if honor list has categoryFilter, business MUST belong to one of them
+        if (categoryFilters.length > 0 && !categoryFilters.includes(b.category)) {
+          return false;
+        }
+        // 2. Query filter
+        if (!q) return true;
+        return (
+          b.name.toLowerCase().includes(q) || b.zone.toLowerCase().includes(q) || b.category.toLowerCase().includes(q)
+        );
+      });
+
+      if (eligible.length === 0) {
+        bizSearchResultsList.innerHTML = `<div class="biz-empty-results">No se encontraron comercios elegibles en esta categoría gremial.</div>`;
+        return;
+      }
+
+      bizSearchResultsList.innerHTML = eligible
+        .map(
+          (b) => `
+        <div class="biz-result-item ${serviceIdInput?.value === b.id ? "selected" : ""}" data-id="${b.id}" data-slug="${b.slug}" data-name="${b.name}" data-zone="${b.zone}">
+          <div class="biz-result-info">
+            <strong class="biz-result-name">${b.name}</strong>
+            <span class="biz-result-meta">📍 ${b.zone} · <span class="biz-result-score">🛡️ ${b.score}% Confianza</span></span>
+          </div>
+          <button type="button" class="biz-result-select-btn">Elegir</button>
+        </div>
+      `,
+        )
+        .join("");
+
+      // Bind click on items
+      bizSearchResultsList.querySelectorAll(".biz-result-item").forEach((el) => {
+        el.addEventListener("click", () => {
+          const id = el.getAttribute("data-id") || "";
+          const slug = el.getAttribute("data-slug") || "";
+          const name = el.getAttribute("data-name") || "";
+          const zone = el.getAttribute("data-zone") || "";
+
+          if (serviceIdInput) serviceIdInput.value = id;
+          if (serviceSlugInput) serviceSlugInput.value = slug;
+          if (targetNameDisplay) targetNameDisplay.textContent = `${name} (${zone})`;
+          if (summaryBizName) summaryBizName.textContent = `${name} (${zone})`;
+          if (selectHonorBiz) selectHonorBiz.value = id;
+          if (bizSelectorGroup) bizSelectorGroup.style.display = "none";
+        });
       });
     }
 
-    // Step 1 Business Dropdown Toggle
-    const selectHonorBiz = document.getElementById("select-honor-business") as HTMLSelectElement | null;
-    const bizSelectorGroup = document.getElementById("biz-selector-group");
-    const btnToggleBiz = document.getElementById("btn-toggle-biz-select");
+    inputSearchBiz?.addEventListener("input", (e) => {
+      renderBusinessList(currentCategoryId, (e.target as HTMLInputElement).value);
+    });
 
     if (btnToggleBiz && bizSelectorGroup) {
       btnToggleBiz.addEventListener("click", () => {
         const isHidden = bizSelectorGroup.style.display === "none";
         bizSelectorGroup.style.display = isHidden ? "block" : "none";
+        if (isHidden) {
+          renderBusinessList(currentCategoryId, inputSearchBiz?.value || "");
+          inputSearchBiz?.focus();
+        }
       });
     }
 
-    if (selectHonorBiz) {
-      selectHonorBiz.addEventListener("change", () => {
-        const opt = selectHonorBiz.options[selectHonorBiz.selectedIndex];
-        if (opt && opt.value) {
-          const bizId = opt.value;
-          const bizSlug = opt.getAttribute("data-slug") || "";
-          const bizName = opt.getAttribute("data-name") || opt.textContent?.split("·")[0].trim() || "";
-          if (serviceIdInput) serviceIdInput.value = bizId;
-          if (serviceSlugInput) serviceSlugInput.value = bizSlug;
-          if (targetNameDisplay) targetNameDisplay.textContent = bizName;
-          if (summaryBizName) summaryBizName.textContent = bizName;
-          if (bizSelectorGroup) bizSelectorGroup.style.display = "none";
-        }
+    // Toggle B2B Drawer
+    if (checkboxB2B && b2bDrawer) {
+      checkboxB2B.addEventListener("change", () => {
+        b2bDrawer.style.display = checkboxB2B.checked ? "block" : "none";
       });
     }
 
@@ -1251,7 +1493,10 @@ const verifiedBusinesses = PUBLIC_SERVICES.filter((s) => (s.confidenceScore ?? 0
       tabOwner?.classList.remove("active");
       tabOwner?.setAttribute("aria-selected", "false");
       if (modeInput) modeInput.value = "community_boost";
-      if (btnSubmitText) btnSubmitText.textContent = "⚡ Confirmar y Aupar al Podio";
+      if (btnSubmitText) {
+        btnSubmitText.textContent =
+          modal.getAttribute("data-i18n-submit-community") || "⚡ Completar Aportación & Aupar al Podio";
+      }
     });
 
     tabOwner?.addEventListener("click", () => {
@@ -1260,7 +1505,10 @@ const verifiedBusinesses = PUBLIC_SERVICES.filter((s) => (s.confidenceScore ?? 0
       tabCommunity?.classList.remove("active");
       tabCommunity?.setAttribute("aria-selected", "false");
       if (modeInput) modeInput.value = "owner_bid";
-      if (btnSubmitText) btnSubmitText.textContent = "👑 Pujar Récord & Tomar el Puesto #1";
+      if (btnSubmitText) {
+        btnSubmitText.textContent =
+          modal.getAttribute("data-i18n-submit-owner") || "👑 Pujar Récord & Tomar el Puesto #1";
+      }
     });
 
     // Calculations in Step 2
@@ -1282,7 +1530,10 @@ const verifiedBusinesses = PUBLIC_SERVICES.filter((s) => (s.confidenceScore ?? 0
           collisionStatusBox.className = "collision-chip collision-warning";
         }
         if (collisionMsgText) {
-          collisionMsgText.textContent = `⚠️ Importe inferior al mínimo requerido (${minRequired.toFixed(2)}€). Debe superar el récord en +1€`;
+          const tpl =
+            modal.getAttribute("data-i18n-min-required-alert") ||
+            "⚠️ Importe inferior al mínimo requerido ({price}€). Debe superar el récord en +1€";
+          collisionMsgText.textContent = tpl.replace("{price}", minRequired.toFixed(2));
         }
         if (submitBtn) submitBtn.disabled = true;
       } else {
@@ -1290,7 +1541,8 @@ const verifiedBusinesses = PUBLIC_SERVICES.filter((s) => (s.confidenceScore ?? 0
           collisionStatusBox.className = "collision-chip collision-ok";
         }
         if (collisionMsgText) {
-          collisionMsgText.textContent = "✨ Importe disponible y conforme con la regla +1€";
+          collisionMsgText.textContent =
+            modal.getAttribute("data-i18n-collision-ok") || "✨ Importe disponible y conforme con la regla +1€";
         }
         if (submitBtn) submitBtn.disabled = false;
       }
@@ -1321,9 +1573,10 @@ const verifiedBusinesses = PUBLIC_SERVICES.filter((s) => (s.confidenceScore ?? 0
       let isValid = true;
 
       // Validate Business selected
-      if (!serviceIdInput?.value && selectHonorBiz && !selectHonorBiz.value) {
+      if (!serviceIdInput?.value) {
         if (bizSelectorGroup) bizSelectorGroup.style.display = "block";
-        selectHonorBiz?.focus();
+        renderBusinessList(currentCategoryId, inputSearchBiz?.value || "");
+        inputSearchBiz?.focus();
         isValid = false;
       }
 
@@ -1375,7 +1628,8 @@ const verifiedBusinesses = PUBLIC_SERVICES.filter((s) => (s.confidenceScore ?? 0
       if (step1Pane) step1Pane.style.display = "none";
       if (step2Pane) step2Pane.style.display = "flex";
       if (summaryBizName && targetNameDisplay) {
-        summaryBizName.textContent = targetNameDisplay.textContent || "Comercio de Mallorca";
+        summaryBizName.textContent =
+          targetNameDisplay.textContent || modal.getAttribute("data-i18n-default-biz") || "Comercio de Mallorca";
       }
 
       stepInd1?.classList.remove("active");
@@ -1400,14 +1654,28 @@ const verifiedBusinesses = PUBLIC_SERVICES.filter((s) => (s.confidenceScore ?? 0
       const amount = Number(amountInput.value) || 1;
       const minRequired = Number(minRequiredInput?.value) || 1;
 
+      if (!serviceIdInput?.value) {
+        // Return to step 1 to pick business
+        if (step2Pane) step2Pane.style.display = "none";
+        if (step1Pane) step1Pane.style.display = "flex";
+        if (bizSelectorGroup) bizSelectorGroup.style.display = "block";
+        renderBusinessList(currentCategoryId, "");
+        return;
+      }
+
       if (amount < minRequired) {
-        alert(`El importe debe ser de al menos ${minRequired.toFixed(2)}€.`);
+        const tpl =
+          modal.getAttribute("data-i18n-min-required-alert") ||
+          "⚠️ Importe inferior al mínimo requerido ({price}€). Debe superar el récord en +1€";
+        alert(tpl.replace("{price}", minRequired.toFixed(2)));
         return;
       }
 
       if (submitBtn) submitBtn.disabled = true;
       if (btnSubmitSpinner) btnSubmitSpinner.style.display = "inline-block";
-      if (btnSubmitText) btnSubmitText.textContent = "🔒 Conectando con pasarela SSL...";
+      if (btnSubmitText) {
+        btnSubmitText.textContent = modal.getAttribute("data-i18n-connecting") || "🔒 Conectando con pasarela SSL...";
+      }
 
       const backerName = nameInput?.value.trim() || "Vecino de Mallorca";
       const backerEmail = emailInput?.value.trim() || "";
@@ -1493,15 +1761,29 @@ const verifiedBusinesses = PUBLIC_SERVICES.filter((s) => (s.confidenceScore ?? 0
     // Modal Triggers & Event Listeners
     window.addEventListener("open-honor-checkout", (e: any) => {
       const data = e.detail || {};
-      if (data.serviceId && serviceIdInput) serviceIdInput.value = data.serviceId;
-      if (data.serviceSlug && serviceSlugInput) serviceSlugInput.value = data.serviceSlug;
-      if (data.serviceName && targetNameDisplay) targetNameDisplay.textContent = data.serviceName;
+      currentCategoryId = data.catId || data.categoryId || data.defaultCategory || "elite-general";
 
-      if (selectHonorBiz && data.serviceId) {
-        selectHonorBiz.value = data.serviceId;
+      if (data.serviceId) {
+        if (serviceIdInput) serviceIdInput.value = data.serviceId;
+        if (serviceSlugInput) serviceSlugInput.value = data.serviceSlug || "";
+        if (targetNameDisplay) targetNameDisplay.textContent = data.serviceName || "Comercio de Mallorca";
+        if (summaryBizName) summaryBizName.textContent = data.serviceName || "Comercio de Mallorca";
         if (bizSelectorGroup) bizSelectorGroup.style.display = "none";
-      } else if (bizSelectorGroup && !data.serviceId && !data.serviceSlug) {
-        bizSelectorGroup.style.display = "block";
+      } else {
+        // Clear selection and show category-isolated business picker
+        if (serviceIdInput) serviceIdInput.value = "";
+        if (serviceSlugInput) serviceSlugInput.value = "";
+        if (targetNameDisplay) {
+          targetNameDisplay.textContent =
+            modal.getAttribute("data-i18n-select-prompt") || "-- Elige el negocio que deseas aupar o posicionar --";
+        }
+        if (summaryBizName) {
+          summaryBizName.textContent =
+            modal.getAttribute("data-i18n-select-prompt") || "-- Elige el negocio que deseas aupar o posicionar --";
+        }
+        if (bizSelectorGroup) bizSelectorGroup.style.display = "block";
+        if (inputSearchBiz) inputSearchBiz.value = "";
+        renderBusinessList(currentCategoryId, "");
       }
 
       if (data.mode === "owner_bid") {

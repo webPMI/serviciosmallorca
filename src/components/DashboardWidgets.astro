@@ -1,0 +1,142 @@
+<style>
+  .dashboard-widgets-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: var(--space-md);
+    margin-bottom: var(--space-xl);
+  }
+
+  .widget-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-surface-border);
+    border-radius: var(--border-radius-md);
+    padding: var(--space-lg);
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .widget-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px var(--shadow-overlay);
+    border-color: var(--color-primary);
+  }
+
+  .widget-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-md);
+  }
+
+  .widget-icon {
+    font-size: 1.8rem;
+    background: var(--color-surface-hover);
+    padding: 0.5rem;
+    border-radius: var(--border-radius-sm);
+  }
+
+  .widget-title {
+    font-size: var(--font-size-sm);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+  }
+
+  .widget-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .widget-value {
+    font-size: var(--font-size-2xl);
+    font-weight: 800;
+    color: var(--color-text);
+  }
+
+  .widget-link {
+    font-size: var(--font-size-xs);
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: var(--space-xs);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    transition: color 0.2s ease;
+  }
+
+  .widget-link:hover {
+    color: var(--color-accent);
+  }
+
+  @media (max-width: 640px) {
+    .dashboard-widgets-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+{Astro.props}
+
+<div class="dashboard-widgets-grid">
+  <!-- Widget: Favoritos -->
+  <a href="/favoritos" class="widget-card">
+    <div class="widget-header">
+      <span class="widget-icon">⭐</span>
+      <span class="widget-title">{translations["dashboard.favorites"] || "Favoritos"}</span>
+    </div>
+    <div class="widget-content">
+      <p class="widget-value">Mis Destinos</p>
+      <span class="widget-link">{translations["nav.favorites"]} &rarr;</span>
+    </div>
+  </a>
+
+  <!-- Widget: HonorBoard -->
+  <a href="/cuadro-de-honor" class="widget-card">
+    <div class="widget-header">
+      <span class="widget-icon">🏆</span>
+      <span class="widget-title">{translations["dashboard.honor"] || "Cuadro de Honor"}</span>
+    </div>
+    <div class="widget-content">
+      <p class="widget-value">Reconocimientos</p>
+      <span class="widget-link">{translations["nav.honor"]} &rarr;</span>
+    </div>
+  </a>
+
+  <!-- Widget: Verificación (Solo para managers/owners) -->
+  {
+    authStore.getState().role === "manager" && (
+      <a href="/servicios" class="widget-card">
+        <div class="widget-header">
+          <span class="widget-icon">🛡️</span>
+          <span class="widget-title">{translations["dashboard.status"] || "Estado del Negocio"}</span>
+        </div>
+        <div class="widget-content">
+          <p class="widget-value">Mis Negocios</p>
+          <span class="widget-link">{translations["nav.services"]} &rarr;</span>
+        </div>
+      </a>
+    )
+  }
+
+  <!-- Widget: Comunidad -->
+  <a href="/comunidad" class="widget-card">
+    <div class="widget-header">
+      <span class="widget-icon">💬</span>
+      <span class="widget-title">{translations["dashboard.community"] || "Comunidad"}</span>
+    </div>
+    <div class="widget-content">
+      <p class="widget-value">Participar</p>
+      <span class="widget-link">{translations["nav.community"]} &rarr;</span>
+    </div>
+  </a>
+</div>
+<EOF />
