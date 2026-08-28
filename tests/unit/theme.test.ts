@@ -18,6 +18,15 @@ describe("Global Theme System", () => {
     expect(cssContent).toContain('[data-theme="dark"]');
   });
 
+  it("contains enhanced contrast golden theme selectors and tokens", () => {
+    expect(cssContent).toContain('[data-theme="golden"]');
+    expect(cssContent).toContain('[data-theme="golden-dark"]');
+    expect(cssContent).toContain("--color-primary: #7a5808;");
+    expect(cssContent).toContain("--color-text: #180d05;");
+    expect(cssContent).toContain("--color-primary: #e6b325;");
+    expect(cssContent).toContain("--color-text: #fdfaf4;");
+  });
+
   it("includes core glassmorphism and layout utility classes", () => {
     expect(cssContent).toContain(".card-glass");
     expect(cssContent).toContain(".btn-primary");
