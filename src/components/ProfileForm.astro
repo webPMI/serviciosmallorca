@@ -996,11 +996,12 @@ const AVATAR_PRESETS = ["👤", "🚀", "⚡", "👑", "🦊", "🦉", "🎨", "
     padding: 5px;
     border-radius: var(--border-radius-md);
     border: 1px solid var(--color-surface-border);
-    width: fit-content;
+    max-width: 100%;
+    flex-wrap: wrap;
   }
 
   .profile-tab {
-    padding: 0.55rem 1.4rem;
+    padding: 0.55rem 1rem;
     border: none;
     background: transparent;
     color: var(--color-text-muted);
@@ -1010,7 +1011,10 @@ const AVATAR_PRESETS = ["👤", "🚀", "⚡", "👑", "🦊", "🦉", "🎨", "
     cursor: pointer;
     transition: all 0.2s ease;
     font-family: inherit;
-    white-space: nowrap;
+    white-space: normal;
+    text-align: center;
+    word-break: break-word;
+    line-height: 1.25;
   }
 
   .profile-tab:hover {
