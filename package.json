@@ -19,6 +19,7 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "typecheck": "tsc --noEmit",
+    "audit:full": "node --experimental-strip-types scripts/run-full-audit.ts",
     "audit:services": "node --experimental-strip-types scripts/audit-services.ts",
     "audit:refresh": "node --experimental-strip-types scripts/refresh-catalog.ts",
     "add:service": "node --experimental-strip-types scripts/add-service.ts",
