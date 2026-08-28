@@ -201,3 +201,148 @@ export function evaluateClaimSecurity(
     recommendedAction,
   };
 }
+
+/**
+ * Sanitiza texto de entrada de usuario contra vectores XSS, inyección HTML,
+ * caracteres de control y caracteres Unicode invisibles / homóglifos.
+ */
+export function sanitizeUserInput(input: string, maxLength: number = 2000): string {
+  if (typeof input !== "string") return "";
+
+  let sanitized = input
+    // 1. Eliminar caracteres de control y formatos invisibles (Zero-Width Space, RTL override)
+    .replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F-\u009F\u200B-\u200F\u202A-\u202E\uFEFF]/g, "")
+    // 2. Escapar etiquetas HTML esenciales
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#x27;")
+    .replace(/\//g, "&#x2F;");
+
+  // 3. Truncar a longitud máxima segura
+  if (sanitized.length > maxLength) {
+    sanitized = sanitized.substring(0, maxLength);
+  }
+
+  return sanitized.trim();
+}
+
+/**
+ * Valida URLs para evitar Open Redirects y ataques SSRF.
+ * Solo permite protocolos seguros (https:) y rechaza javascript:, data:, file:, etc.
+ */
+export function validateSafeRedirectUrl(
+  url: string,
+  allowedHosts: string[] = ["serviciosmallorca.com", "localhost"],
+): boolean {
+  if (!url || typeof url !== "string") return false;
+  const clean = url.trim();
+
+  // Rechazar esquemas peligrosos
+  const dangerousSchemes = /^(javascript|data|vbscript|file|about):/i;
+  if (dangerousSchemes.test(clean)) return false;
+
+  // Rutas relativas seguras
+  if (clean.startsWith("/") && !clean.startsWith("//") && !clean.startsWith("/\\")) {
+    return true;
+  }
+
+  try {
+    const parsed = new URL(clean);
+    if (parsed.protocol !== "https:" && parsed.protocol !== "http:") {
+      return false;
+    }
+
+    // Comprobar IPs internas / SSRF (169.254.x.x, 127.0.0.1, 0.0.0.0, 10.x.x.x, 192.168.x.x)
+    const hostname = parsed.hostname.toLowerCase();
+    const isInternalIp =
+      hostname === "127.0.0.1" ||
+      hostname === "0.0.0.0" ||
+      hostname === "::1" ||
+      hostname.startsWith("169.254.") ||
+      hostname.startsWith("10.") ||
+      hostname.startsWith("192.168.");
+
+    if (isInternalIp && !allowedHosts.includes(hostname) && !allowedHosts.includes("localhost")) {
+      return false;
+    }
+
+    return allowedHosts.some((host) => hostname === host || hostname.endsWith(`.${host}`));
+  } catch {
+    return false;
+  }
+}
+
+// Memoria volátil para control de tasa (Rate Limiter en memoria)
+const rateLimitBuckets = new Map<string, { count: number; resetAt: number }>();
+
+/**
+ * Control de tasa para evitar ataques de fuerza bruta y bombardeo de peticiones.
+ */
+export function checkRateLimit(
+  key: string,
+  maxRequests: number = 10,
+  windowMs: number = 60000,
+  now: number = Date.now(),
+): { allowed: boolean; remaining: number; resetMs: number } {
+  const bucket = rateLimitBuckets.get(key);
+
+  if (!bucket || now >= bucket.resetAt) {
+    rateLimitBuckets.set(key, { count: 1, resetAt: now + windowMs });
+    return { allowed: true, remaining: maxRequests - 1, resetMs: windowMs };
+  }
+
+  if (bucket.count < maxRequests) {
+    bucket.count += 1;
+    return { allowed: true, remaining: maxRequests - bucket.count, resetMs: bucket.resetAt - now };
+  }
+
+  return { allowed: false, remaining: 0, resetMs: bucket.resetAt - now };
+}
+
+export function resetRateLimitBuckets(): void {
+  rateLimitBuckets.clear();
+}
+
+/**
+ * Valida la seguridad y legitimidad de una reseña comunitaria.
+ */
+export function validateReviewSecurity(review: {
+  text: string;
+  rating: number;
+  authorUid?: string;
+  businessId?: string;
+}): { safe: boolean; reason?: string } {
+  if (!review.authorUid || review.authorUid.trim().length < 3) {
+    return { safe: false, reason: "El autor de la reseña debe estar autenticado." };
+  }
+
+  if (!review.businessId || review.businessId.trim().length < 2) {
+    return { safe: false, reason: "ID de negocio no especificado o inválido." };
+  }
+
+  if (typeof review.rating !== "number" || isNaN(review.rating) || !isFinite(review.rating)) {
+    return { safe: false, reason: "La puntuación debe ser un número válido." };
+  }
+
+  if (review.rating < 1 || review.rating > 5 || !Number.isInteger(review.rating)) {
+    return { safe: false, reason: "La puntuación debe ser un entero entre 1 y 5 estrellas." };
+  }
+
+  if (!review.text || review.text.trim().length < 5) {
+    return { safe: false, reason: "El contenido de la reseña debe tener al menos 5 caracteres." };
+  }
+
+  if (review.text.length > 3000) {
+    return { safe: false, reason: "El contenido de la reseña excede el límite máximo de 3000 caracteres." };
+  }
+
+  // Detectar enlaces de spam masivo o URLs sospechosas
+  const urlCount = (review.text.match(/https?:\/\//gi) || []).length;
+  if (urlCount > 2) {
+    return { safe: false, reason: "No se permiten más de 2 enlaces externos en una reseña comunitaria." };
+  }
+
+  return { safe: true };
+}

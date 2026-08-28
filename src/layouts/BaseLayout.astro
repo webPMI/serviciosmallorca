@@ -27,6 +27,19 @@ const {
 const currentOrigin = Astro.url.origin || "https://serviciosmallorca.com";
 const pageCanonical = canonicalUrl || `${currentOrigin}${Astro.url.pathname}`;
 
+// Alternates Multilingües para SEO Internacional e IA (hreflang)
+const rawPath = Astro.url.pathname;
+const pathWithoutLocale = rawPath.replace(/^\/(es|en|ca|de)(\/|$)/, "/");
+const cleanSuffix = pathWithoutLocale.length > 1 ? pathWithoutLocale : "";
+
+const hreflangAlternates = [
+  { lang: "es", href: `${currentOrigin}/es${cleanSuffix}` },
+  { lang: "en", href: `${currentOrigin}/en${cleanSuffix}` },
+  { lang: "ca", href: `${currentOrigin}/ca${cleanSuffix}` },
+  { lang: "de", href: `${currentOrigin}/de${cleanSuffix}` },
+  { lang: "x-default", href: `${currentOrigin}/es${cleanSuffix}` },
+];
+
 // Imagen absoluta para Open Graph y Twitter Cards
 let absoluteImageUrl = `${currentOrigin}/images/categories/gastronomia.svg`;
 if (image) {
@@ -44,6 +57,41 @@ const ogLocaleMap: Record<string, string> = {
   de: "de_DE",
 };
 const ogLocale = ogLocaleMap[lang] || "es_ES";
+
+// Structured Data Global (WebSite con SearchAction y Organization)
+const globalWebsiteSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": `${currentOrigin}/#website`,
+      url: currentOrigin,
+      name: "Servicios Mallorca",
+      description: "Guía y directorio oficial de empresas, profesionales y servicios verificados en Mallorca",
+      inLanguage: ["es", "en", "ca", "de"],
+      potentialAction: {
+        "@type": "SearchAction",
+        target: {
+          "@type": "EntryPoint",
+          urlTemplate: `${currentOrigin}/${lang}/servicios?q={search_term_string}`,
+        },
+        "query-input": "required name=search_term_string",
+      },
+    },
+    {
+      "@type": "Organization",
+      "@id": `${currentOrigin}/#organization`,
+      name: "Servicios Mallorca",
+      url: currentOrigin,
+      logo: `${currentOrigin}/favicon.svg`,
+      areaServed: {
+        "@type": "AdministrativeArea",
+        name: "Mallorca, Illes Balears, España",
+      },
+      knowsAbout: ["Servicios profesionales", "Restaurantes", "Náutica", "Reformas", "Salud y Belleza", "Deporte"],
+    },
+  ],
+};
 
 const loadingText = lang === "en" ? "Loading..." : lang === "ca" ? "Carregant..." : "Cargando...";
 const loadingAria =
@@ -68,6 +116,20 @@ const shouldLoadAdSense =
     <meta name="description" content={description} />
     <link rel="canonical" href={pageCanonical} />
 
+    <!-- Hreflang Alternates Multilingües (SEO Internacional & AI Positioning) -->
+    {hreflangAlternates.map((alt) => <link rel="alternate" hreflang={alt.lang} href={alt.href} />)}
+
+    <!-- Robots & AI Crawling Directives (Google, ChatGPT, Claude, Perplexity) -->
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+
+    <!-- Geo & Local SEO Tags (Mallorca / Islas Baleares) -->
+    <meta name="geo.region" content="ES-IB" />
+    <meta name="geo.placename" content="Mallorca, Illes Balears, España" />
+    <meta name="geo.position" content="39.6953;3.0176" />
+    <meta name="ICBM" content="39.6953, 3.0176" />
+
     <!-- Open Graph / Facebook / WhatsApp / Telegram Meta Tags -->
     <meta property="og:site_name" content="Servicios Mallorca" />
     <meta property="og:title" content={title} />
@@ -86,11 +148,12 @@ const shouldLoadAdSense =
     <!-- Security meta tags -->
     <meta http-equiv="X-Content-Type-Options" content="nosniff" />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
-    <!-- Prevent browsers from caching sensitive pages via JS -->
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <title>{title}</title>
 
-    <!-- Structured Data JSON-LD -->
+    <!-- Global WebSite & Organization JSON-LD -->
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(globalWebsiteSchema)} />
+
+    <!-- Page Specific Structured Data JSON-LD -->
     {
       jsonLd && (
         <script

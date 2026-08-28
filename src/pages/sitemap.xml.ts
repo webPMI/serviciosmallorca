@@ -1,11 +1,14 @@
 import type { APIRoute } from "astro";
-import { SERVICES } from "../data/services";
-import { BLOG_POSTS } from "../data/posts";
+import { SERVICES } from "../data/services/index.ts";
+import { CATEGORIES } from "../data/categories.ts";
+import { MALLORCA_ZONES } from "../data/zones.ts";
+import { DISCOVERY_TOURS } from "../data/discoveryTours.ts";
+import { BLOG_POSTS } from "../data/posts.ts";
 
 export const prerender = false;
 
 const SITE_URL = "https://serviciosmallorca.com";
-const LOCALES = ["es", "en", "ca"] as const;
+const LOCALES = ["es", "en", "ca", "de"] as const;
 
 export const GET: APIRoute = async () => {
   const now = new Date().toISOString().split("T")[0];
@@ -18,87 +21,80 @@ export const GET: APIRoute = async () => {
     alternates?: Array<{ lang: string; href: string }>;
   }> = [];
 
-  // 1. Homepages
-  LOCALES.forEach((lang) => {
-    const prefix = lang === "es" ? "" : `/${lang}`;
-    urls.push({
-      loc: `${SITE_URL}${prefix}/`,
-      lastmod: now,
-      changefreq: "daily",
-      priority: "1.0",
-      alternates: LOCALES.map((l) => ({
-        lang: l,
-        href: `${SITE_URL}${l === "es" ? "" : `/${l}`}/`,
-      })),
+  function addMultilingualUrl(pathSuffix: string, priority = "0.8", changefreq = "weekly", lastmod = now) {
+    const cleanPath = pathSuffix.startsWith("/") ? pathSuffix : `/${pathSuffix}`;
+    const pathWithoutSlash = cleanPath === "/" ? "" : cleanPath;
+
+    LOCALES.forEach((lang) => {
+      const pageLoc = `${SITE_URL}/${lang}${pathWithoutSlash}`;
+      urls.push({
+        loc: pageLoc,
+        lastmod,
+        changefreq,
+        priority,
+        alternates: [
+          ...LOCALES.map((l) => ({
+            lang: l,
+            href: `${SITE_URL}/${l}${pathWithoutSlash}`,
+          })),
+          {
+            lang: "x-default",
+            href: `${SITE_URL}/es${pathWithoutSlash}`,
+          },
+        ],
+      });
     });
+  }
+
+  // 1. Homepages (Máxima prioridad)
+  addMultilingualUrl("/", "1.0", "daily", now);
+
+  // 2. Secciones Principales y Mercados de Autoridad
+  addMultilingualUrl("/servicios", "0.95", "daily", now);
+  addMultilingualUrl("/cuadro-de-honor", "0.95", "daily", now);
+  addMultilingualUrl("/unete", "0.90", "weekly", now);
+  addMultilingualUrl("/deporte", "0.90", "weekly", now);
+  addMultilingualUrl("/memoria-historica", "0.85", "monthly", now);
+  addMultilingualUrl("/comunidad", "0.85", "daily", now);
+  addMultilingualUrl("/sobre-nosotros", "0.70", "monthly", now);
+  addMultilingualUrl("/terms", "0.40", "yearly", now);
+  addMultilingualUrl("/privacy", "0.40", "yearly", now);
+
+  // 3. Hubs de Categorías Sectoriales
+  CATEGORIES.forEach((cat) => {
+    addMultilingualUrl(`/categorias/${cat.slug}`, "0.90", "weekly", now);
   });
 
-  // 2. Directorio Principal de Servicios
-  LOCALES.forEach((lang) => {
-    const prefix = lang === "es" ? "" : `/${lang}`;
-    urls.push({
-      loc: `${SITE_URL}${prefix}/servicios`,
-      lastmod: now,
-      changefreq: "daily",
-      priority: "0.9",
-      alternates: LOCALES.map((l) => ({
-        lang: l,
-        href: `${SITE_URL}${l === "es" ? "" : `/${l}`}/servicios`,
-      })),
-    });
+  // 4. Hubs de Zonas y Comarcas de Mallorca
+  MALLORCA_ZONES.forEach((zone) => {
+    addMultilingualUrl(`/zonas/${zone.id}`, "0.85", "weekly", now);
   });
 
-  // 3. Fichas de Negocios y Servicios (Todos los 10+ sectores)
+  // 5. Rutas y Tours Experienciales
+  if (DISCOVERY_TOURS && Array.isArray(DISCOVERY_TOURS)) {
+    DISCOVERY_TOURS.forEach((tour) => {
+      addMultilingualUrl(`/tours/${tour.slug}`, "0.80", "weekly", now);
+    });
+  }
+
+  // 6. Fichas de Negocios y Servicios (Todos los comercios verificados y activos)
   SERVICES.forEach((service) => {
-    LOCALES.forEach((lang) => {
-      const prefix = lang === "es" ? "" : `/${lang}`;
-      urls.push({
-        loc: `${SITE_URL}${prefix}/servicios/${service.slug}`,
-        lastmod: service.lastVerifiedAt || now,
-        changefreq: "weekly",
-        priority: "0.85",
-        alternates: LOCALES.map((l) => ({
-          lang: l,
-          href: `${SITE_URL}${l === "es" ? "" : `/${l}`}/servicios/${service.slug}`,
-        })),
-      });
-    });
+    if (service.status !== "permanently_closed") {
+      addMultilingualUrl(
+        `/servicios/${service.slug}`,
+        service.confidenceScore && service.confidenceScore >= 90 ? "0.85" : "0.75",
+        "weekly",
+        service.lastVerifiedAt || now,
+      );
+    }
   });
 
-  // 4. Artículos del Blog & Guías Locales
-  BLOG_POSTS.forEach((post) => {
-    LOCALES.forEach((lang) => {
-      const prefix = lang === "es" ? "" : `/${lang}`;
-      urls.push({
-        loc: `${SITE_URL}${prefix}/blog/${post.slug}`,
-        lastmod: post.publishDate || now,
-        changefreq: "monthly",
-        priority: "0.7",
-        alternates: LOCALES.map((l) => ({
-          lang: l,
-          href: `${SITE_URL}${l === "es" ? "" : `/${l}`}/blog/${post.slug}`,
-        })),
-      });
+  // 7. Artículos del Blog & Guías Locales
+  if (BLOG_POSTS && Array.isArray(BLOG_POSTS)) {
+    BLOG_POSTS.forEach((post) => {
+      addMultilingualUrl(`/blog/${post.slug}`, "0.75", "monthly", post.publishDate || now);
     });
-  });
-
-  // 5. Páginas Estáticas e Institucionales
-  const staticRoutes = ["comunidad", "sobre-nosotros", "contacto", "terminos", "privacidad"];
-  staticRoutes.forEach((route) => {
-    LOCALES.forEach((lang) => {
-      const prefix = lang === "es" ? "" : `/${lang}`;
-      urls.push({
-        loc: `${SITE_URL}${prefix}/${route}`,
-        lastmod: now,
-        changefreq: "monthly",
-        priority: "0.5",
-        alternates: LOCALES.map((l) => ({
-          lang: l,
-          href: `${SITE_URL}${l === "es" ? "" : `/${l}`}/${route}`,
-        })),
-      });
-    });
-  });
+  }
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
