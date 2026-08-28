@@ -8,6 +8,7 @@ interface Props {
   locale: Locale;
 }
 
+const { service, translations, locale } = Astro.props;
 const items = service.servicesProvided?.[locale] || [];
 ---
 

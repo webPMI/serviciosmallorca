@@ -4,9 +4,10 @@ import type { Locale } from "../i18n";
 
 interface Props {
   service: ServiceItem;
+  locale?: Locale;
 }
 
-const { service } = Astro.props;
+const { service, locale = "es" } = Astro.props;
 
 const cleanPhone = service.phone ? service.phone.replace(/[^0-9+]/g, "") : "";
 const cleanWhatsApp = service.whatsapp ? service.whatsapp.replace(/[^0-9]/g, "") : "";

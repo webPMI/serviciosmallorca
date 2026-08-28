@@ -166,8 +166,8 @@ const jsonLdFaq = {
   <Navbar currentLocale={locale} translations={translations} getLangPrefix={getLangPrefix} />
 
   <!-- Structured Data for Search Engines & AI Bots -->
-  <script type="application/ld+json" set:html={JSON.stringify(jsonLdItemList)} />
-  <script type="application/ld+json" set:html={JSON.stringify(jsonLdFaq)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLdItemList)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLdFaq)} />
 
   <main class="top-hub-page">
     <div class="container section">
