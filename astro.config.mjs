@@ -15,4 +15,12 @@ export default defineConfig({
       prefixDefaultLocale: true,
     },
   },
+  vite: {
+    optimizeDeps: {
+      exclude: ["astro:middleware", "astro_middleware", "virtual:astro*"],
+    },
+    ssr: {
+      external: ["node:async_hooks"],
+    },
+  },
 });
