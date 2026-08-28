@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import ToastContainer from "../components/ToastContainer.astro";
+import BetaBanner from "../components/BetaBanner.astro";
 
 export interface Props {
   title: string;
@@ -338,6 +339,9 @@ const shouldLoadAdSense =
 
     <!-- Global Toast Container for reactive notifications -->
     <ToastContainer />
+
+    <!-- Top Informative Beta Banner (v0.01) -->
+    <BetaBanner currentLocale={lang as any} />
 
     <slot />
 

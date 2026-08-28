@@ -39,6 +39,9 @@ const currentPath = Astro.url.pathname;
           <a href={`${getLangPrefix(currentLocale)}sobre-nosotros`} class="footer-link">
             🌿 {translations["nav.about"] || "Sobre Nosotros"}
           </a>
+          <a href={`${getLangPrefix(currentLocale)}actualizaciones`} class="footer-link">
+            🚀 {translations["nav.changelog"] || "Actualizaciones & Beta v0.01"}
+          </a>
           <a href={`${getLangPrefix(currentLocale)}terms`} class="footer-link">
             {translations["footer.terms"]}
           </a>

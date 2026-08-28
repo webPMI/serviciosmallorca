@@ -1,0 +1,621 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Navbar from "../../../components/Navbar.astro";
+import Footer from "../../../components/Footer.astro";
+import { getLocaleFromUrl, loadTranslations, getLangPrefix, type Locale } from "../../../i18n";
+import { CHANGELOG_RELEASES, CURRENT_PLATFORM_VERSION } from "../../../data/changelog";
+
+export const prerender = false;
+
+const locale = getLocaleFromUrl(Astro.url) as Locale;
+const translations = await loadTranslations(locale);
+const prefix = getLangPrefix(locale);
+
+const pageTitles = {
+  es: `Registro de Actualizaciones & Versión Beta (${CURRENT_PLATFORM_VERSION}) - Servicios Mallorca`,
+  en: `Platform Updates & Beta Changelog (${CURRENT_PLATFORM_VERSION}) - Servicios Mallorca`,
+  ca: `Registre d'Actualitzacions i Versió Beta (${CURRENT_PLATFORM_VERSION}) - Serveis Mallorca`,
+  de: `Plattform-Updates & Beta-Changelog (${CURRENT_PLATFORM_VERSION}) - Servicios Mallorca`,
+};
+
+const pageDescriptions = {
+  es: `Conoce las últimas novedades, mejoras técnicas, correcciones y el registro de versiones de Servicios Mallorca (${CURRENT_PLATFORM_VERSION}).`,
+  en: `Explore the latest features, technical improvements, fixes, and release history of Servicios Mallorca (${CURRENT_PLATFORM_VERSION}).`,
+  ca: `Descobreix les darreres novetats, millores tècniques, correccions i l'historial de versions de Serveis Mallorca (${CURRENT_PLATFORM_VERSION}).`,
+  de: `Entdecken Sie die neuesten Funktionen, technischen Verbesserungen, Fixes und die Versionshistorie von Servicios Mallorca (${CURRENT_PLATFORM_VERSION}).`,
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: translations["nav.home"] || "Inicio",
+      item: `https://serviciosmallorca.com${prefix}`,
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Actualizaciones & Changelog",
+      item: `https://serviciosmallorca.com${prefix}actualizaciones`,
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={pageTitles[locale] || pageTitles.es}
+  description={pageDescriptions[locale] || pageDescriptions.es}
+  lang={locale}
+  jsonLd={breadcrumbSchema}
+>
+  <Navbar currentLocale={locale} translations={translations} getLangPrefix={getLangPrefix} />
+
+  <main class="changelog-main-container">
+    <!-- Hero Header -->
+    <header class="changelog-hero card card-glass">
+      <div class="hero-top-badge">
+        <span class="badge badge-accent">🚀 Versión {CURRENT_PLATFORM_VERSION}</span>
+        <span class="badge badge-primary">🌴 Transparencia & Desarrollo Activo</span>
+      </div>
+      <h1 class="hero-title">
+        {
+          locale === "ca"
+            ? "Centre d'Actualitzacions, Millores i Registre de Versions"
+            : locale === "en"
+              ? "Platform Changelog, Updates & Release Log"
+              : locale === "de"
+                ? "Plattform-Updates, Versionsprotokoll & Changelog"
+                : "Centro de Actualizaciones, Mejoras y Registro de Versiones"
+        }
+      </h1>
+      <p class="hero-subtitle">
+        {
+          locale === "ca"
+            ? "Servicios Mallorca neix amb un compromís infranquejable de transparència, dades 100% reals i meritocràcia. En aquest registre documentem cada millora, correcció i nova eina."
+            : locale === "en"
+              ? "Servicios Mallorca is built on strict transparency, genuine verified data, and local meritocracy. Here we document every single release, fix, and new platform tool."
+              : locale === "de"
+                ? "Servicios Mallorca basiert auf absoluter Transparenz, verifizierten Echtzeitdaten und lokaler Exzellenz. Hier dokumentieren wir alle Verbesserungen und Updates."
+                : "Servicios Mallorca nace con un compromiso inquebrantable de transparencia, datos 100% reales y meritocracia. En este registro documentamos cada mejora, corrección y nueva herramienta."
+        }
+      </p>
+
+      <div class="hero-stats-row">
+        <div class="stat-pill">
+          <span class="stat-num">313+</span>
+          <span class="stat-lbl">Negocios Verificados</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-num">74</span>
+          <span class="stat-lbl">Suites de Calidad</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-num">100%</span>
+          <span class="stat-lbl">Zero Fake Data</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-num">&lt;300ms</span>
+          <span class="stat-lbl">Edge Speed</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Beta Transparency Principles -->
+    <section class="principles-grid">
+      <div class="principle-card card">
+        <div class="principle-icon">🛡️</div>
+        <h3>100% Datos Verificados</h3>
+        <p>
+          Cada comercio y teléfono es corroborado oficialmente en Google Maps y fuentes de Baleares antes de su
+          incorporación al directorio.
+        </p>
+      </div>
+      <div class="principle-card card">
+        <div class="principle-icon">⚡</div>
+        <h3>Despliegue Continuo Blindado</h3>
+        <p>
+          Toda actualización pasa por 609 tests automatizados y validación de taxonomía antes de publicarse en la red
+          Edge de Cloudflare Workers.
+        </p>
+      </div>
+      <div class="principle-card card">
+        <div class="principle-icon">👑</div>
+        <h3>Meritocracia & Claridad</h3>
+        <p>
+          Subastas de reconocimiento transparentes desde 1,00€, visualización continua a simple vista y eliminación de
+          jerga técnica interna.
+        </p>
+      </div>
+    </section>
+
+    <!-- Timeline of Releases -->
+    <section class="releases-section">
+      <div class="section-title-wrap">
+        <h2 class="section-title">📦 Historial de Versiones & Lanzamientos</h2>
+        <p class="section-desc">Evolución detallada de cada despliegue con sus características y optimizaciones.</p>
+      </div>
+
+      <div class="timeline-container">
+        {
+          CHANGELOG_RELEASES.map((rel) => {
+            const relSummary = rel.summary[locale] || rel.summary.es;
+            const relHighlights = rel.highlights[locale] || rel.highlights.es;
+
+            return (
+              <article class="release-timeline-card card">
+                <div class="release-card-header">
+                  <div class="version-meta">
+                    <span class="version-tag">{rel.versionLabel}</span>
+                    <time datetime={rel.date} class="version-date">
+                      📅 {rel.date}
+                    </time>
+                  </div>
+                  <span class="badge badge-accent">{rel.type} RELEASE</span>
+                </div>
+
+                <p class="release-summary-text">{relSummary}</p>
+
+                <div class="release-highlights-box">
+                  <h4>✨ Hitos & Novedades Destacadas:</h4>
+                  <ul class="highlights-list">
+                    {relHighlights.map((hl) => (
+                      <li>{hl}</li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div class="release-entries-grid">
+                  {rel.entries.map((entry) => {
+                    const entryTitle = entry.title[locale] || entry.title.es;
+                    const entryDesc = entry.description[locale] || entry.description.es;
+                    const badge = entry.badgeText ? entry.badgeText[locale] || entry.badgeText.es : entry.category;
+
+                    const catColorClass =
+                      entry.category === "FEATURE"
+                        ? "cat-feature"
+                        : entry.category === "FIX"
+                          ? "cat-fix"
+                          : entry.category === "PERFORMANCE"
+                            ? "cat-perf"
+                            : "cat-sec";
+
+                    return (
+                      <div class={`entry-item card ${catColorClass}`}>
+                        <div class="entry-header">
+                          <span class="entry-badge">{badge}</span>
+                          <span class="entry-cat">{entry.category}</span>
+                        </div>
+                        <h5 class="entry-title">{entryTitle}</h5>
+                        <p class="entry-desc">{entryDesc}</p>
+                      </div>
+                    );
+                  })}
+                </div>
+              </article>
+            );
+          })
+        }
+      </div>
+    </section>
+
+    <!-- Community Feedback & Voice Hub -->
+    <section class="feedback-cta-card card card-glass">
+      <div class="feedback-icon">💬</div>
+      <div class="feedback-info">
+        <h3>¿Tienes una sugerencia, has detectado un fallo o quieres compartir una buena noticia?</h3>
+        <p>
+          Tu opinión nos ayuda a construir la mejor guía de servicios para Mallorca. Nuestro equipo y agentes de
+          inteligencia revisan cada propuesta con dedicación.
+        </p>
+        <div class="feedback-actions">
+          <a href={`${prefix}servicios`} class="btn btn-primary">
+            <span>Explorar Comercios Verificados →</span>
+          </a>
+          <a href={`${prefix}cuadro-de-honor`} class="btn btn-secondary">
+            <span>Ver Cuadro de Honor (desde 1€) →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Upcoming Roadmap -->
+    <section class="roadmap-preview card">
+      <h3>🗺️ Próximos Pasos (Roadmap v0.02 - 2026)</h3>
+      <div class="roadmap-grid">
+        <div class="roadmap-item">
+          <span class="roadmap-step">Fase 1</span>
+          <strong>Escalado a 1.000 Comercios</strong>
+          <p>Cobertura integral en los 53 municipios de Mallorca.</p>
+        </div>
+        <div class="roadmap-item">
+          <span class="roadmap-step">Fase 2</span>
+          <strong>Instalaciones Deportivas</strong>
+          <p>Mapeo de calistenia, pistas de pádel y boxes de fitness.</p>
+        </div>
+        <div class="roadmap-item">
+          <span class="roadmap-step">Fase 3</span>
+          <strong>Buzón Ciudadano Interactivo</strong>
+          <p>Muro de buenas noticias y canal directo de sugerencias.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer translations={translations} currentLocale={locale} getLangPrefix={getLangPrefix} />
+</BaseLayout>
+
+<style>
+  .changelog-main-container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: var(--space-xl) var(--space-md) var(--space-3xl);
+    box-sizing: border-box;
+    min-width: 0;
+  }
+
+  /* Hero Section */
+  .changelog-hero {
+    text-align: center;
+    padding: clamp(var(--space-lg), 4vw, var(--space-2xl)) clamp(var(--space-md), 3vw, var(--space-xl));
+    margin-bottom: var(--space-2xl);
+    border-radius: var(--border-radius-lg);
+    background: var(--color-surface);
+    border: 1px solid var(--color-surface-border);
+    box-shadow: var(--shadow-md);
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .hero-top-badge {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-md);
+    flex-wrap: wrap;
+  }
+
+  .hero-title {
+    font-size: clamp(1.4rem, 3.5vw, var(--font-size-3xl));
+    font-weight: 900;
+    color: var(--color-text);
+    margin-bottom: var(--space-sm);
+    line-height: 1.25;
+    word-break: break-word;
+  }
+
+  .hero-subtitle {
+    font-size: var(--font-size-base);
+    color: var(--color-text-light);
+    max-width: 800px;
+    margin: 0 auto var(--space-lg);
+    line-height: 1.6;
+    word-break: break-word;
+  }
+
+  .hero-stats-row {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+    margin-top: var(--space-md);
+  }
+
+  .stat-pill {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 8px 18px;
+    border-radius: var(--border-radius-full);
+    border: 1px solid var(--color-surface-border);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 120px;
+  }
+
+  .stat-num {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--color-accent);
+  }
+
+  .stat-lbl {
+    font-size: 0.72rem;
+    color: var(--color-text-light);
+    font-weight: 600;
+  }
+
+  /* Principles Grid */
+  .principles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+    gap: var(--space-lg);
+    margin-bottom: var(--space-3xl);
+  }
+
+  .principle-card {
+    padding: var(--space-lg);
+    border-radius: var(--border-radius-md);
+    background: var(--color-surface);
+    border: 1px solid var(--color-surface-border);
+  }
+
+  .principle-icon {
+    font-size: 2.2rem;
+    margin-bottom: var(--space-xs);
+  }
+
+  .principle-card h3 {
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    margin-bottom: var(--space-2xs);
+  }
+
+  .principle-card p {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-light);
+    line-height: 1.5;
+  }
+
+  /* Releases Timeline */
+  .releases-section {
+    margin-bottom: var(--space-3xl);
+  }
+
+  .section-title-wrap {
+    text-align: center;
+    margin-bottom: var(--space-xl);
+  }
+
+  .section-title {
+    font-size: var(--font-size-2xl);
+    font-weight: 800;
+    margin-bottom: var(--space-2xs);
+  }
+
+  .section-desc {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-light);
+  }
+
+  .timeline-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2xl);
+  }
+
+  .release-timeline-card {
+    padding: var(--space-xl);
+    border-radius: var(--border-radius-lg);
+    background: var(--color-surface);
+    border: 1px solid var(--color-surface-border);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .release-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-md);
+    padding-bottom: var(--space-sm);
+    border-bottom: 1px solid var(--color-surface-border);
+  }
+
+  .version-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+  }
+
+  .version-tag {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--color-primary);
+  }
+
+  .version-date {
+    font-size: 0.8rem;
+    color: var(--color-text-light);
+  }
+
+  .release-summary-text {
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+    margin-bottom: var(--space-lg);
+    color: var(--color-text);
+  }
+
+  .release-highlights-box {
+    background: rgba(46, 204, 113, 0.06);
+    border: 1px solid rgba(46, 204, 113, 0.2);
+    border-radius: var(--border-radius-md);
+    padding: var(--space-md) var(--space-lg);
+    margin-bottom: var(--space-xl);
+  }
+
+  .release-highlights-box h4 {
+    font-size: var(--font-size-sm);
+    font-weight: 700;
+    color: #2ecc71;
+    margin-bottom: var(--space-xs);
+  }
+
+  .highlights-list {
+    margin: 0;
+    padding-left: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 0.88rem;
+    line-height: 1.45;
+  }
+
+  .release-entries-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    gap: var(--space-md);
+  }
+
+  .entry-item {
+    padding: var(--space-md);
+    border-radius: var(--border-radius-sm);
+    background: var(--color-bg);
+    border: 1px solid var(--color-surface-border);
+  }
+
+  .cat-feature {
+    border-left: 3px solid var(--color-primary);
+  }
+
+  .cat-fix {
+    border-left: 3px solid #e74c3c;
+  }
+
+  .cat-perf {
+    border-left: 3px solid #3498db;
+  }
+
+  .cat-sec {
+    border-left: 3px solid #9b59b6;
+  }
+
+  .entry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-xs);
+  }
+
+  .entry-badge {
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: var(--border-radius-full);
+    background: var(--color-surface-border);
+  }
+
+  .entry-cat {
+    font-size: 0.68rem;
+    font-weight: 800;
+    color: var(--color-text-light);
+    letter-spacing: 0.05em;
+  }
+
+  .entry-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: var(--space-2xs);
+  }
+
+  .entry-desc {
+    font-size: 0.82rem;
+    color: var(--color-text-light);
+    line-height: 1.45;
+    margin: 0;
+  }
+
+  /* Feedback CTA Card */
+  .feedback-cta-card {
+    display: flex;
+    align-items: center;
+    gap: var(--space-lg);
+    padding: var(--space-xl);
+    border-radius: var(--border-radius-lg);
+    margin-bottom: var(--space-2xl);
+    background: linear-gradient(135deg, rgba(234, 88, 12, 0.08) 0%, rgba(255, 215, 0, 0.05) 100%);
+    border: 1px solid var(--color-surface-border);
+  }
+
+  .feedback-icon {
+    font-size: 3rem;
+    flex-shrink: 0;
+  }
+
+  .feedback-info h3 {
+    font-size: var(--font-size-lg);
+    font-weight: 800;
+    margin-bottom: var(--space-2xs);
+  }
+
+  .feedback-info p {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-light);
+    margin-bottom: var(--space-md);
+    line-height: 1.5;
+  }
+
+  .feedback-actions {
+    display: flex;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+  }
+
+  /* Roadmap Section */
+  .roadmap-preview {
+    padding: var(--space-lg);
+    border-radius: var(--border-radius-md);
+    background: var(--color-surface);
+    border: 1px solid var(--color-surface-border);
+  }
+
+  .roadmap-preview h3 {
+    font-size: var(--font-size-lg);
+    font-weight: 800;
+    margin-bottom: var(--space-md);
+    text-align: center;
+  }
+
+  .roadmap-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+    gap: var(--space-md);
+  }
+
+  .roadmap-item {
+    background: var(--color-bg);
+    padding: var(--space-md);
+    border-radius: var(--border-radius-sm);
+    border: 1px solid var(--color-surface-border);
+  }
+
+  .roadmap-step {
+    font-size: 0.72rem;
+    font-weight: 800;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .roadmap-item strong {
+    font-size: 0.95rem;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .roadmap-item p {
+    font-size: 0.8rem;
+    color: var(--color-text-light);
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  @media (max-width: 640px) {
+    .feedback-cta-card {
+      flex-direction: column;
+      text-align: center;
+      padding: var(--space-lg);
+    }
+    .feedback-actions {
+      justify-content: center;
+    }
+    .release-timeline-card {
+      padding: var(--space-md);
+    }
+  }
+</style>

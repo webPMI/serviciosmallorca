@@ -1,0 +1,187 @@
+---
+import type { Locale } from "../i18n";
+import { getLangPrefix } from "../i18n";
+import { CURRENT_PLATFORM_VERSION } from "../data/changelog";
+
+interface Props {
+  currentLocale: Locale;
+  translations?: Record<string, string>;
+}
+
+const { currentLocale } = Astro.props;
+const prefix = getLangPrefix(currentLocale);
+
+const bannerTexts = {
+  es: {
+    badge: `BETA ${CURRENT_PLATFORM_VERSION}`,
+    main: "Plataforma en desarrollo activo para Mallorca.",
+    linkText: "Ver novedades, mejoras & dejar feedback →",
+    ariaClose: "Cerrar aviso de versión beta",
+  },
+  en: {
+    badge: `BETA ${CURRENT_PLATFORM_VERSION}`,
+    main: "Platform under active development for Mallorca.",
+    linkText: "View changelog, updates & send feedback →",
+    ariaClose: "Dismiss beta version banner",
+  },
+  ca: {
+    badge: `BETA ${CURRENT_PLATFORM_VERSION}`,
+    main: "Plataforma en desenvolupament actiu per a Mallorca.",
+    linkText: "Veure novetats, millores i deixar suggeriments →",
+    ariaClose: "Tancar avís de versió beta",
+  },
+  de: {
+    badge: `BETA ${CURRENT_PLATFORM_VERSION}`,
+    main: "Plattform in aktiver Entwicklung für Mallorca.",
+    linkText: "Neuerungen, Updates & Feedback einsehen →",
+    ariaClose: "Beta-Hinweis schließen",
+  },
+};
+
+const text = bannerTexts[currentLocale] || bannerTexts.es;
+---
+
+<aside id="platform-beta-banner" class="beta-banner-wrapper" aria-label="Aviso de versión beta">
+  <div class="beta-banner-container">
+    <div class="beta-banner-content">
+      <span class="beta-badge">{text.badge}</span>
+      <span class="beta-main-text">{text.main}</span>
+      <a href={`${prefix}actualizaciones`} class="beta-link">
+        {text.linkText}
+      </a>
+    </div>
+
+    <button type="button" id="close-beta-banner-btn" class="beta-close-btn" aria-label={text.ariaClose}> ✕ </button>
+  </div>
+</aside>
+
+<script is:inline>
+  (function () {
+    try {
+      const STORAGE_KEY = "sm_dismiss_beta_v001";
+      const banner = document.getElementById("platform-beta-banner");
+      const closeBtn = document.getElementById("close-beta-banner-btn");
+
+      if (sessionStorage.getItem(STORAGE_KEY) === "true") {
+        if (banner) banner.style.display = "none";
+        return;
+      }
+
+      if (closeBtn && banner) {
+        closeBtn.addEventListener("click", function () {
+          banner.style.opacity = "0";
+          banner.style.transform = "translateY(-100%)";
+          setTimeout(function () {
+            banner.style.display = "none";
+          }, 200);
+          sessionStorage.setItem(STORAGE_KEY, "true");
+        });
+      }
+    } catch (_) {}
+  })();
+</script>
+
+<style>
+  .beta-banner-wrapper {
+    background: linear-gradient(90deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    color: #ffffff;
+    border-bottom: 1px solid rgba(255, 215, 0, 0.25);
+    font-size: 0.82rem;
+    padding: 6px 12px;
+    position: relative;
+    z-index: 99;
+    transition:
+      opacity 0.2s ease,
+      transform 0.2s ease;
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  .beta-banner-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .beta-banner-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    flex: 1;
+    min-width: 0;
+  }
+
+  .beta-badge {
+    font-size: 0.68rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    background: var(--color-accent, #ffd700);
+    color: #1a1a2e;
+    padding: 2px 8px;
+    border-radius: var(--border-radius-full, 9999px);
+    flex-shrink: 0;
+  }
+
+  .beta-main-text {
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+  }
+
+  .beta-link {
+    color: var(--color-accent, #ffd700);
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color var(--transition-fast, 0.15s ease);
+    white-space: nowrap;
+  }
+
+  .beta-link:hover {
+    color: #ffffff;
+  }
+
+  .beta-close-btn {
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+    cursor: pointer;
+    padding: 4px 6px;
+    line-height: 1;
+    border-radius: var(--border-radius-sm, 4px);
+    transition: all var(--transition-fast, 0.15s ease);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .beta-close-btn:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  @media (max-width: 640px) {
+    .beta-banner-wrapper {
+      padding: 6px 10px;
+      font-size: 0.76rem;
+    }
+    .beta-banner-content {
+      gap: 6px;
+    }
+    .beta-link {
+      white-space: normal;
+      display: inline-block;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .beta-main-text {
+      display: none; /* Mantener compacto en móviles extra pequeños */
+    }
+  }
+</style>
