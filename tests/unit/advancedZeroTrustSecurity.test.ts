@@ -28,7 +28,8 @@ import {
   calculateHonorInvoice,
   type HonorSpotEntry,
 } from "../../src/lib/honorBoardEngine.ts";
-import { can, PERMISSIONS, type UserRole } from "../../src/lib/permissions.ts";
+import { can, PERMISSIONS } from "../../src/lib/permissions.ts";
+import type { UserRole } from "../../src/lib/authStore.ts";
 import type { ServiceItem } from "../../src/data/services/index.ts";
 
 const mockService: ServiceItem = {
@@ -254,7 +255,7 @@ describe("🛡️ PRUEBAS DE SEGURIDAD ZERO-TRUST Y RESISTENCIA CONTRA ATAQUES A
         );
 
         expect(result.success).toBe(true);
-        expect(result.isNewLeader).toBe(true);
+        expect(result.newPosition).toBe(1);
         expect(result.updatedList[0].serviceId).toBe(`negocio-${i}`);
         expect(result.updatedList[0].currentBidEuros).toBe(i);
         expect(result.updatedList.length).toBe(i);
@@ -284,27 +285,61 @@ describe("🛡️ PRUEBAS DE SEGURIDAD ZERO-TRUST Y RESISTENCIA CONTRA ATAQUES A
       expect(subCentBid.success).toBe(true);
       expect(subCentBid.updatedList[0].currentBidEuros).toBe(1.0); // Redondeado limpiamente a 2 decimales
     });
+
+    it("debe calcular la factura fiscal (21% IVA) sin desbordamiento para importes extremos", () => {
+      const invoice = calculateHonorInvoice(100000.0);
+      expect(invoice.bidAmountEuros).toBe(100000.0);
+      expect(invoice.subtotalEuros + invoice.taxAmountEuros).toBe(100000.0);
+      expect(invoice.invoiceNumber).toMatch(/^INV-HONOR-/);
+    });
+
+    it("debe blindar el impulso comunitario popular contra importes corruptos", () => {
+      const hostileBoost = processCommunityBoost(
+        [],
+        {
+          serviceId: "restaurante-mar-palma",
+          backerName: "Vecino",
+          amountEuros: -50,
+        },
+        "artesanos-sabor",
+        mockService,
+      );
+      expect(hostileBoost.success).toBe(false);
+      expect(hostileBoost.error).toContain("mínima es de 1.00€");
+    });
   });
 
   // ===========================================================================
   // 6. MATRIZ DE AUTORIZACIÓN Y CONTROL DE ACCESO BASADO EN ROLES (RBAC)
   // ===========================================================================
-  describe("6. Matriz de Autorización RBAC y Barreras Anti-Escalada", () => {
+  describe("6. Matriz de Autorización RBAC, Identidad Fiscal y Correos Efímeros", () => {
+    it("debe validar exhaustivamente NIFs, NIEs y CIFs rechazando secuencias inválidas", () => {
+      expect(validateSpanishTaxId("12345678Z")).toBe(true); // DNI válido (12345678 % 23 = 14 -> Z)
+      expect(validateSpanishTaxId("B07123456")).toBe(true); // CIF societario Balear válido
+      expect(validateSpanishTaxId("99999999X")).toBe(false); // Letra de control corrupta
+      expect(validateSpanishTaxId("A123")).toBe(false); // Longitud insuficiente
+    });
+
+    it("debe detectar correos desechables con múltiples niveles de subdominios", () => {
+      expect(isDisposableEmail("attacker@sub.sub.mailinator.com")).toBe(true);
+      expect(isDisposableEmail("legit@restaurante.es")).toBe(false);
+    });
+
     it("debe denegar permisos administrativos a roles de usuario estándar y manager", () => {
       const userRole: UserRole = "user";
       const managerRole: UserRole = "manager";
       const adminRole: UserRole = "admin";
 
-      expect(can(userRole, PERMISSIONS.MANAGE_SYSTEM)).toBe(false);
-      expect(can(userRole, PERMISSIONS.DELETE_ANY_SERVICE)).toBe(false);
-      expect(can(userRole, PERMISSIONS.CHANGE_USER_ROLES)).toBe(false);
+      expect(can(userRole, PERMISSIONS.MANAGE_SETTINGS)).toBe(false);
+      expect(can(userRole, PERMISSIONS.VIEW_ADMIN_PANEL)).toBe(false);
+      expect(can(userRole, PERMISSIONS.MANAGE_USERS)).toBe(false);
 
-      expect(can(managerRole, PERMISSIONS.MANAGE_SYSTEM)).toBe(false);
-      expect(can(managerRole, PERMISSIONS.CHANGE_USER_ROLES)).toBe(false);
+      expect(can(managerRole, PERMISSIONS.MANAGE_SETTINGS)).toBe(false);
+      expect(can(managerRole, PERMISSIONS.MANAGE_USERS)).toBe(false);
 
-      expect(can(adminRole, PERMISSIONS.MANAGE_SYSTEM)).toBe(true);
-      expect(can(adminRole, PERMISSIONS.DELETE_ANY_SERVICE)).toBe(true);
-      expect(can(adminRole, PERMISSIONS.CHANGE_USER_ROLES)).toBe(true);
+      expect(can(adminRole, PERMISSIONS.MANAGE_SETTINGS)).toBe(true);
+      expect(can(adminRole, PERMISSIONS.VIEW_ADMIN_PANEL)).toBe(true);
+      expect(can(adminRole, PERMISSIONS.MANAGE_USERS)).toBe(true);
     });
   });
 });
