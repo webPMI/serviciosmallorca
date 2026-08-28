@@ -839,8 +839,9 @@ const prefix = getLangPrefix(locale);
 
       setTimeout(() => {
         closeModal();
+        const prefix = modal.getAttribute("data-prefix") || "/es/";
         // Redireccionar al perfil con los parámetros de éxito
-        window.location.href = `/es/perfil?boostSuccess=1&amount=${amount}&slug=${encodeURIComponent(slug)}&mode=${mode}&idemp=${encodeURIComponent(idempotencyKey)}`;
+        window.location.href = `${prefix}profile?boostSuccess=1&amount=${amount}&slug=${encodeURIComponent(slug)}&mode=${mode}&idemp=${encodeURIComponent(idempotencyKey)}`;
       }, 750);
     });
   }

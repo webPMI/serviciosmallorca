@@ -231,5 +231,20 @@ describe("🔒 BLINDAJE DE PAGOS, IDEMPOTENCIA Y PREVENCIÓN DE DUPLICADOS", () 
       expect(res.allowed).toBe(false);
       expect(res.error).toContain("correo electrónico válido");
     });
+
+    it("debe garantizar que HonorCheckoutModal y perfil.astro preservan la navegación y parámetros de éxito", async () => {
+      const fs = await import("fs");
+      const path = await import("path");
+      const modalContent = fs.readFileSync(
+        path.resolve(process.cwd(), "src/components/HonorCheckoutModal.astro"),
+        "utf-8",
+      );
+      const perfilContent = fs.readFileSync(path.resolve(process.cwd(), "src/pages/[...locale]/perfil.astro"), "utf-8");
+
+      // Modal redirige a ${prefix}profile preservando idioma
+      expect(modalContent).toContain("${prefix}profile?boostSuccess=1");
+      // Perfil redirige a profile manteniendo query search
+      expect(perfilContent).toContain("Astro.redirect(`${prefix}profile${search}`)");
+    });
   });
 });

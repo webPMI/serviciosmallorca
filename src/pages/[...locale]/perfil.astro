@@ -1,0 +1,11 @@
+---
+import { getLocaleFromUrl, getLangPrefix } from "../../i18n";
+
+export const prerender = false;
+
+const locale = getLocaleFromUrl(Astro.url);
+const prefix = getLangPrefix(locale);
+const search = Astro.url.search;
+
+return Astro.redirect(`${prefix}profile${search}`);
+---
