@@ -324,6 +324,28 @@ const verifiedServices = PUBLIC_SERVICES.filter((s) => (s.confidenceScore ?? 0) 
       );
     });
   });
+
+  // Auto-reopen modal if returning from login / auth redirect with intent
+  const params = new URLSearchParams(window.location.search);
+  if (params.get("intent") === "boost" || params.get("openCheckout") === "1") {
+    const serviceName = params.get("serviceName") || "Referente de Cuadro de Honor";
+    const minBid = Number(params.get("amount") || params.get("minBid") || "1.00");
+    const serviceId = params.get("serviceId") || "";
+    const serviceSlug = params.get("serviceSlug") || "";
+
+    setTimeout(() => {
+      window.dispatchEvent(
+        new CustomEvent("open-honor-checkout", {
+          detail: {
+            serviceId,
+            serviceSlug,
+            serviceName,
+            minBid,
+          },
+        }),
+      );
+    }, 150);
+  }
 </script>
 
 <style>

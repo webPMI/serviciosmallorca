@@ -25,11 +25,13 @@ describe("Global Theme System", () => {
     expect(cssContent).toContain("--color-text: #180d05;");
     expect(cssContent).toContain("--color-primary: #e6b325;");
     expect(cssContent).toContain("--color-text: #fdfaf4;");
+    expect(cssContent).toContain("--color-btn-primary-text: #180d05;");
   });
 
-  it("includes core glassmorphism and layout utility classes", () => {
+  it("includes core glassmorphism and layout utility classes with dynamic button text contrast", () => {
     expect(cssContent).toContain(".card-glass");
     expect(cssContent).toContain(".btn-primary");
+    expect(cssContent).toContain("color: var(--color-btn-primary-text");
     expect(cssContent).toContain(".btn-secondary");
     expect(cssContent).toContain(".badge");
     expect(cssContent).toContain(".grid-auto");

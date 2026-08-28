@@ -281,7 +281,8 @@ const prefix = getLangPrefix(currentLocale);
 
   .filter-chip.active {
     background: var(--color-primary);
-    color: #ffffff;
+    color: var(--color-btn-primary-text, #ffffff);
+    font-weight: 800;
     border-color: var(--color-primary);
     box-shadow: 0 2px 8px rgba(201, 147, 62, 0.3);
   }

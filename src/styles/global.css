@@ -27,6 +27,8 @@
   --color-text: #1a1a2e;
   --color-text-light: #555568;
   --color-text-muted: #8c8c9e;
+  --color-btn-primary-text: #ffffff;
+  --color-btn-accent-text: #1a1a2e;
 
   /* Colores de Estado */
   --color-success: #38b000;
@@ -141,6 +143,8 @@
   --color-text: #180d05;
   --color-text-light: #3d2f24;
   --color-text-muted: #5e4f40;
+  --color-btn-primary-text: #ffffff;
+  --color-btn-accent-text: #180d05;
 
   /* Colores de Estado */
   --color-success: #1b5e20;
@@ -223,6 +227,8 @@
   --color-text: #fdfaf4;
   --color-text-light: #e5d8c3;
   --color-text-muted: #b8a78e;
+  --color-btn-primary-text: #180d05;
+  --color-btn-accent-text: #180d05;
 
   /* Colores de Estado */
   --color-success-bg: rgba(46, 125, 50, 0.25);
@@ -279,6 +285,8 @@
   --color-text: #f8fafc;
   --color-text-light: #cbd5e1;
   --color-text-muted: #64748b;
+  --color-btn-primary-text: #ffffff;
+  --color-btn-accent-text: #120b02;
 
   --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.2);
   --shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
@@ -499,14 +507,15 @@ object {
 
 .btn-primary {
   background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
-  color: #ffffff;
+  color: var(--color-btn-primary-text, #ffffff);
+  font-weight: 700;
 }
 
 .btn-primary:hover {
   background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary));
   transform: translateY(-2px);
   box-shadow: var(--shadow-glow);
-  color: #ffffff;
+  color: var(--color-btn-primary-text, #ffffff);
 }
 
 .btn-secondary {
@@ -517,18 +526,20 @@ object {
 
 .btn-secondary:hover {
   background-color: var(--color-primary);
-  color: #ffffff;
+  color: var(--color-btn-primary-text, #ffffff);
   transform: translateY(-2px);
 }
 
 .btn-accent {
   background: linear-gradient(135deg, var(--color-accent), var(--color-accent-hover));
-  color: #1a1a2e;
+  color: var(--color-btn-accent-text, #180d05);
+  font-weight: 700;
 }
 
 .btn-accent:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 15px rgba(255, 183, 3, 0.4);
+  color: var(--color-btn-accent-text, #180d05);
 }
 
 .btn-outline {
@@ -539,7 +550,7 @@ object {
 
 .btn-outline:hover {
   background: var(--color-primary);
-  color: #ffffff;
+  color: var(--color-btn-primary-text, #ffffff);
   transform: translateY(-2px);
 }
 

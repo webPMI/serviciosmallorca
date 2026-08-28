@@ -138,7 +138,15 @@ export function initServiceDetailClient() {
 
       if (!user) {
         if (alertError) {
-          alertError.textContent = "Debes iniciar sesión con tu cuenta para poder reclamar un negocio.";
+          const currentUrl = window.location.pathname + window.location.search;
+          const prefix = currentUrl.startsWith("/en")
+            ? "/en/"
+            : currentUrl.startsWith("/ca")
+              ? "/ca/"
+              : currentUrl.startsWith("/de")
+                ? "/de/"
+                : "/es/";
+          alertError.innerHTML = `Debes iniciar sesión con tu cuenta para reclamar este negocio. <a href="${prefix}login?returnTo=${encodeURIComponent(currentUrl)}&intent=claim" style="color: var(--color-accent, #ffd700); text-decoration: underline; font-weight: bold; margin-left: 6px;">👉 Iniciar Sesión aquí</a>`;
           alertError.style.display = "block";
         }
         return;
@@ -376,4 +384,31 @@ export function initServiceDetailClient() {
   }
 
   hydrateDynamicOverrides();
+
+  // Auto-reabrir modal tras autenticación fluida si viene con intent
+  const urlParams = new URLSearchParams(window.location.search);
+  const intent = urlParams.get("intent");
+  if (intent === "boost") {
+    const serviceId = urlParams.get("serviceId") || boostBtn?.getAttribute("data-service-id") || "";
+    const serviceName = urlParams.get("serviceName") || boostBtn?.getAttribute("data-service-name") || "";
+    const serviceSlug = urlParams.get("serviceSlug") || boostBtn?.getAttribute("data-service-slug") || "";
+    const minBid = Number(urlParams.get("amount") || urlParams.get("minBid") || "1.00");
+
+    setTimeout(() => {
+      window.dispatchEvent(
+        new CustomEvent("open-honor-checkout", {
+          detail: {
+            serviceId,
+            serviceName,
+            serviceSlug,
+            minBid,
+          },
+        }),
+      );
+    }, 200);
+  } else if (intent === "claim" && claimModal) {
+    setTimeout(() => {
+      claimModal.style.display = "flex";
+    }, 200);
+  }
 }

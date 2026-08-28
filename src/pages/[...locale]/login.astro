@@ -10,13 +10,15 @@ export const prerender = false;
 const locale = getLocaleFromUrl(Astro.url);
 const translations = await loadTranslations(locale);
 const langPrefix = getLangPrefix(locale);
+const search = Astro.url.search || "";
+const registerUrl = `${langPrefix}register${search}`;
 ---
 
 <BaseLayout title={`${translations["auth.login.title"]} - ${translations["site.title"]}`} lang={locale}>
   <Navbar currentLocale={locale} translations={translations} getLangPrefix={getLangPrefix} />
 
   <main class="container section">
-    <LoginForm translations={translations} registerUrl={`${langPrefix}register`} />
+    <LoginForm translations={translations} registerUrl={registerUrl} />
   </main>
 
   <Footer translations={translations} currentLocale={locale} getLangPrefix={getLangPrefix} />

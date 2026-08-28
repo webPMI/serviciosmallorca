@@ -168,13 +168,23 @@ const { translations, registerUrl } = Astro.props;
 
       if (hasError) return;
 
-      // State loader
-      if (submitBtn) submitBtn.disabled = true;
+      // Helper para redirección fluida tras login
+      function getRedirectTarget(): string {
+        const urlParams = new URLSearchParams(window.location.search);
+        const returnTo =
+          urlParams.get("returnTo") || urlParams.get("redirect") || sessionStorage.getItem("auth_return_to");
+        sessionStorage.removeItem("auth_return_to");
+
+        if (returnTo && returnTo.startsWith("/") && !returnTo.startsWith("//")) {
+          return returnTo;
+        }
+        return "./dashboard";
+      }
 
       try {
         await signInWithEmailAndPassword(auth, emailInput.value.trim(), passwordInput.value);
         sessionStorage.setItem("fromAuth", emailInput.value.trim());
-        window.location.href = "./dashboard";
+        window.location.href = getRedirectTarget();
       } catch (error: any) {
         console.error("Error al iniciar sesión:", error);
         let message = form.dataset.errorLogin || "Ocurrió un error al iniciar sesión. Inténtalo de nuevo.";
@@ -214,7 +224,13 @@ const { translations, registerUrl } = Astro.props;
           });
         }
 
-        window.location.href = "./dashboard";
+        const urlParams = new URLSearchParams(window.location.search);
+        const returnTo =
+          urlParams.get("returnTo") || urlParams.get("redirect") || sessionStorage.getItem("auth_return_to");
+        sessionStorage.removeItem("auth_return_to");
+        const target = returnTo && returnTo.startsWith("/") && !returnTo.startsWith("//") ? returnTo : "./dashboard";
+
+        window.location.href = target;
       } catch (error: any) {
         console.error("Error en autenticación con Google:", error);
         if (generalError) {

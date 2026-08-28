@@ -278,6 +278,19 @@ const { translations, loginUrl } = Astro.props;
 
       if (submitBtn) submitBtn.disabled = true;
 
+      // Helper para redirección fluida tras registro
+      function getRedirectTarget(): string {
+        const urlParams = new URLSearchParams(window.location.search);
+        const returnTo =
+          urlParams.get("returnTo") || urlParams.get("redirect") || sessionStorage.getItem("auth_return_to");
+        sessionStorage.removeItem("auth_return_to");
+
+        if (returnTo && returnTo.startsWith("/") && !returnTo.startsWith("//")) {
+          return returnTo;
+        }
+        return "./dashboard";
+      }
+
       try {
         const userCredential = await createUserWithEmailAndPassword(auth, emailInput.value.trim(), passwordInput.value);
         await updateProfile(userCredential.user, {
@@ -290,7 +303,7 @@ const { translations, loginUrl } = Astro.props;
           displayName: nameInput.value.trim(),
         });
         sessionStorage.setItem("fromAuth", emailInput.value.trim());
-        window.location.href = "./dashboard";
+        window.location.href = getRedirectTarget();
       } catch (error: any) {
         console.error("Error al registrarse:", error);
         let message = form.dataset.errorRegister || "Error al crear la cuenta.";
@@ -324,7 +337,14 @@ const { translations, loginUrl } = Astro.props;
         });
 
         sessionStorage.setItem("fromAuth", user.email || user.displayName || "Google");
-        window.location.href = "./dashboard";
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const returnTo =
+          urlParams.get("returnTo") || urlParams.get("redirect") || sessionStorage.getItem("auth_return_to");
+        sessionStorage.removeItem("auth_return_to");
+        const target = returnTo && returnTo.startsWith("/") && !returnTo.startsWith("//") ? returnTo : "./dashboard";
+
+        window.location.href = target;
       } catch (error: any) {
         console.error("Error en registro con Google:", error);
         if (generalError) {

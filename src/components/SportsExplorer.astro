@@ -505,7 +505,8 @@ const ZONES: Array<{ id: string; name: Record<Locale, string> }> = [
 
   .mode-tab.active {
     background: var(--color-primary);
-    color: #ffffff;
+    color: var(--color-btn-primary-text, #ffffff);
+    font-weight: 800;
     box-shadow: var(--shadow-sm);
   }
 
@@ -564,7 +565,8 @@ const ZONES: Array<{ id: string; name: Record<Locale, string> }> = [
   .chip-btn.active {
     background: var(--color-primary);
     border-color: var(--color-primary);
-    color: #ffffff;
+    color: var(--color-btn-primary-text, #ffffff);
+    font-weight: 800;
     box-shadow: var(--shadow-sm);
   }
 
