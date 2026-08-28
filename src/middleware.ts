@@ -75,12 +75,16 @@ Explora el directorio completo y las valoraciones de restaurantes Michelin, chá
     const firstSegment = segments[0] as string | undefined;
 
     if (firstSegment && LOCALES.includes(firstSegment as any)) {
+      const isProd =
+        (typeof process !== "undefined" && process?.env?.NODE_ENV === "production") ||
+        Boolean((import.meta as any).env?.PROD);
+
       cookies.set("locale", firstSegment, {
         path: "/",
         maxAge: 365 * 24 * 60 * 60,
         sameSite: "lax",
         // In production (HTTPS) mark as secure
-        secure: process.env.NODE_ENV === "production",
+        secure: isProd,
         httpOnly: false, // needs to be readable client-side for i18n
       });
 

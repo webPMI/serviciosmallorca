@@ -4,7 +4,8 @@
 
 | Documento                                                                | Descripción                                                                                                                   | Audiencia                           |
 | ------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------- | ----------------------------------- |
-| **[GOLDEN_RULES.md](GOLDEN_RULES.md)**                                   | 🥇 Reglas inmutables del proyecto (13 reglas incl. Seguridad & Zero Fake Data)                                                | Todos los agentes y desarrolladores |
+| **[GOLDEN_RULES.md](GOLDEN_RULES.md)**                                   | 🥇 Reglas inmutables del proyecto (15 reglas incl. GR-15 Logs Resilientes D1)                                                 | Todos los agentes y desarrolladores |
+| **[LOGGING_AND_QUALITY_CONTROL.md](LOGGING_AND_QUALITY_CONTROL.md)**     | 📊 Sistema universal de logs, telemetría y control de calidad en Cloudflare D1 (GR-15)                                        | Todos los desarrolladores y agentes |
 | **[STRESS_TEST_PLAN.md](STRESS_TEST_PLAN.md)**                           | 🧪 Plan de estres & cobertura: campañas v1.x, hallazgos corregidos, umbrales CI y deuda consciente (rondas 1-2)               | @testing, @maestro                  |
 | [**BUSINESS_REGISTRATION_PROCESS.md**](BUSINESS_REGISTRATION_PROCESS.md) | 🏢 Proceso oficial de registro, curación, verificación y publicación de negocios                                              | Editores, @maestro, @frontend       |
 | **[BUSINESS_DISCOVERY_SOP.md](BUSINESS_DISCOVERY_SOP.md)**               | 🔎 SOP del checklist maestro: descubrir, minar y priorizar negocios de Mallorca (categoría→puntaje→alfabético)                | Editores y agentes                  |

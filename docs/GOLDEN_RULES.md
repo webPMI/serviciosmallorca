@@ -155,6 +155,8 @@ Comando: `npm test` (Vitest)
 
 ---
 
+---
+
 ## GR-14: Sincronización Continua con GitHub (Pre-Flight Git Fetch)
 
 **Antes de iniciar cualquier sesión de trabajo o si han transcurrido varias horas (> 12h o un nuevo día), es MANDATORIO e INMUTABLE verificar si el repositorio en GitHub (`origin/main`) avanzó con nuevos commits y sincronizar el entorno local antes de continuar.**
@@ -162,6 +164,18 @@ Comando: `npm test` (Vitest)
 - ✅ **Protocolo de Inicio Obligatorio:** Ejecutar siempre `git fetch origin` y `git status` para comprobar si el repositorio remoto tiene cambios pendientes.
 - ✅ **Actualización Previa a la Edición:** Si existen commits remotos (`ahead` en origin), hacer `git pull` antes de comenzar a escribir código o minar negocios para evitar bifurcaciones, colisiones de curación y deuda técnica.
 - ❌ **Prohibido:** Empezar a trabajar en local con un repositorio desactualizado respecto al upstream de GitHub.
+
+---
+
+## GR-15: Telemetría, Logs Resilientes y Control de Calidad en Producción (Cloudflare D1)
+
+**Todo fallo crítico, excepción SSR, error en cliente y evento financiero anómalo DEBE registrarse de forma estructurada y persistente en el sistema de telemetría D1 (`src/lib/d1Logger.ts`).**
+
+- ✅ **Cero `try...catch` Silenciosos:** Queda terminantemente prohibido usar bloques `catch (e) {}` vacíos que oculten errores. Deben registrarse con nivel (`ERROR`, `FATAL`, `SECURITY`, `WARN`) y categoría (`SSR`, `API`, `AUTH`, `PAYMENT`, `DATABASE`, `TAXONOMY`, `CLIENT_JS`).
+- ✅ **Captura Universal SSR:** Todo renderizado en `src/middleware.ts` captura excepciones 500 y las persiste en la tabla `server_error_logs` con `stack trace`, URL, método, IP y User-Agent.
+- ✅ **Telemetría de Cliente en Segundo Plano:** Los errores de JavaScript en el navegador se reportan a `/api/logs/ingest` usando `navigator.sendBeacon` sin bloquear la experiencia del usuario.
+- ✅ **Modo Resiliente / Zero-Crash:** El logger debe operar de forma segura y sin arrojar excepciones si el binding de base de datos no está disponible.
+- 📖 Consulta la documentación completa en [docs/LOGGING_AND_QUALITY_CONTROL.md](LOGGING_AND_QUALITY_CONTROL.md).
 
 ---
 
@@ -184,4 +198,5 @@ Antes de aceptar cualquier cambio, el Agente Maestro verifica:
 [ ] GR-12: ¿Fidelidad de datos Google Maps (coordenadas, horarios, reseñas y multi-mapas)?
 [ ] GR-13: ¿Seguridad de datos de usuario, cabeceras HTTP y reglas Firestore blindadas?
 [ ] GR-14: ¿Repositorio local sincronizado con la última versión de GitHub (Pre-Flight Git Fetch)?
+[ ] GR-15: ¿Telemetría y registro de errores conectado a Cloudflare D1 sin catch silenciosos?
 ```

@@ -20,6 +20,7 @@ Toda la documentación del proyecto está en `docs/`. Antes de trabajar en cualq
 - [STYLING.md](docs/STYLING.md) — 🎨 Sistema de temas, variables CSS, breakpoints
 - [I18N.md](docs/I18N.md) — 🌍 Internacionalización (4 idiomas)
 - [AUTH.md](docs/AUTH.md) — 🔐 Firebase Auth, roles, AuthStore
+- [LOGGING_AND_QUALITY_CONTROL.md](docs/LOGGING_AND_QUALITY_CONTROL.md) — 📊 Telemetría y Logs Resilientes en Cloudflare D1
 - [DEVTOOLS.md](docs/DEVTOOLS.md) — 🛠️ Logger, Floating Button, DevTools Panel
 - [AGENT_CURATION_SOP.md](docs/AGENT_CURATION_SOP.md) — 🤖 SOP v2.0 para Agentes: Analista de Inteligencia de Negocios, 4 fases, 5 Pilares, Checklist de salida
 - [BUSINESS_DISCOVERY_SOP.md](docs/BUSINESS_DISCOVERY_SOP.md) — 🔎 Checklist Maestro: descubrimiento, minería y ranking por categoría/puntaje/alfabético (`npm run discover`, `npm run discover:mine`)
@@ -42,6 +43,7 @@ Toda la documentación del proyecto está en `docs/`. Antes de trabajar en cualq
 12. **GR-12**: Fidelidad Google Maps: 90%+ re-indexación de datos oficiales (coordenadas, horarios, reseñas y multi-mapas)
 13. **GR-13**: Seguridad del Usuario: RGPD, cabeceras HTTP y reglas Firestore blindadas
 14. **GR-14**: Sincronización Continua con GitHub: Pre-flight `git fetch origin` y `git pull` obligatorio antes de iniciar o tras >12h sin sincronizar
+15. **GR-15**: Telemetría, Logs Resilientes y Control de Calidad en Producción (Cloudflare D1)
 
 ## Protocolo de Curación Atómica (Cero Omisión)
 
