@@ -12,12 +12,5 @@
       "pattern": "www.serviciosmallorca.com",
       "custom_domain": true
     }
-  ],
-  "d1_databases": [
-    {
-      "binding": "DB",
-      "database_name": "servicios-mallorca-db",
-      "database_id": "YOUR_D1_DATABASE_ID"
-    }
   ]
 }
