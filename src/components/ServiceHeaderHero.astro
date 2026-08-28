@@ -6,6 +6,7 @@ import type { Locale } from "../i18n";
 import LiveScheduleBadge from "./LiveScheduleBadge.astro";
 import FavoriteButton from "./FavoriteButton.astro";
 import { getSmartActionCta } from "../lib/smartCtaEngine";
+import { isBusinessHonorRecognized } from "../lib/honorBoardEngine";
 
 interface Props {
   service: ServiceItem;
@@ -18,6 +19,17 @@ interface Props {
 const { service, category, zone, translations, locale } = Astro.props;
 const categoryName = category?.name[locale] || service.category;
 const zoneName = zone?.name[locale] || service.zone;
+
+const honorInfo = isBusinessHonorRecognized(service.id);
+const isHonorRecognized =
+  honorInfo.recognized || Boolean(service.communityBoostTotal && service.communityBoostTotal > 0);
+
+const honorTitles: Record<Locale, string> = {
+  es: "🏆 Reconocido por la Comunidad",
+  en: "🏆 Community Recognized",
+  ca: "🏆 Reconegut per la Comunitat",
+  de: "🏆 Von der Community ausgezeichnet",
+};
 
 const cleanPhone = service.phone ? service.phone.replace(/[^0-9+]/g, "") : "";
 const smartCta = getSmartActionCta(
@@ -34,6 +46,21 @@ const smartCta = getSmartActionCta(
 <header class="service-detail-header">
   <div class="header-main">
     <div class="header-badges">
+      {
+        isHonorRecognized && (
+          <span
+            class="badge badge-honor-gold"
+            title={
+              honorInfo.sponsorName
+                ? `Impulsado por: ${honorInfo.sponsorName}${honorInfo.sponsorMessage ? ` ("${honorInfo.sponsorMessage}")` : ""}`
+                : "Destacado en el Cuadro de Honor por respaldo comunitario de Mallorca"
+            }
+          >
+            <span>{honorTitles[locale] || honorTitles.es}</span>
+            {honorInfo.sponsorName && <span class="sponsor-subtext">· {honorInfo.sponsorName}</span>}
+          </span>
+        )
+      }
       <span class="badge badge-primary">{category?.icon} {categoryName}</span>
       <span class="badge badge-accent">📍 {zoneName}</span>
       <span class="badge badge-price">{service.priceRange}</span>

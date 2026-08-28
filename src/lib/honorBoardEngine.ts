@@ -8,6 +8,7 @@
 
 import type { ServiceItem } from "../data/services";
 import { createDisplacementAlert, type DisplacementAlert } from "./displacementNotificationEngine.ts";
+import { logToD1 } from "./d1Logger.ts";
 
 export type HonorCategory =
   | "elite-general"
@@ -413,6 +414,7 @@ export interface HonorBidSubmission {
 
 export interface ProcessBidResult {
   success: boolean;
+  auditId?: string;
   error?: string;
   newPosition?: number;
   tier?: HonorTier;
@@ -422,13 +424,45 @@ export interface ProcessBidResult {
 }
 
 /**
- * Procesa una nueva puja en la cola de honor ejecutando el desplazamiento en cadena (+1€ Infinito).
+ * Comprueba si un negocio está actualmente reconocido en alguna de las listas del Cuadro de Honor.
+ */
+export function isBusinessHonorRecognized(serviceId: string): {
+  recognized: boolean;
+  sponsorName?: string;
+  sponsorMessage?: string;
+  honorTitle?: { es: string; en: string; ca: string; de: string };
+  category?: HonorCategory;
+  position?: number;
+  currentBidEuros?: number;
+} {
+  const defaultSpots = getDefaultHonorSpots();
+  for (const [catKey, spots] of Object.entries(defaultSpots)) {
+    const found = spots.find((s) => s.serviceId === serviceId);
+    if (found) {
+      return {
+        recognized: true,
+        sponsorName: found.sponsorName,
+        sponsorMessage: found.sponsorMessage,
+        honorTitle: found.honorTitle,
+        category: catKey as HonorCategory,
+        position: found.position,
+        currentBidEuros: found.currentBidEuros,
+      };
+    }
+  }
+  return { recognized: false };
+}
+
+/**
+ * Procesa una nueva puja en la cola de honor ejecutando el desplazamiento en cadena (+1€ Infinito)
+ * y persistiendo auditoría en D1 en tiempo real.
  */
 export function processHonorBid(
   currentList: HonorSpotEntry[],
   submission: HonorBidSubmission,
   listCategory: HonorCategory,
   service: ServiceItem,
+  d1Binding?: any,
 ): ProcessBidResult {
   // 1. Validar elegibilidad del negocio (Zero Fake Data & GR-11)
   const eligibility = isEligibleForHonorSpot(service);
@@ -519,6 +553,7 @@ export function processHonorBid(
   const updatedList = rankHonorList([newEntry, ...sortedList]);
   const newPosition = updatedList.findIndex((e) => e.id === newEntry.id) + 1;
   const displacedCount = sortedList.length;
+  const auditId = `audit_honor_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`;
 
   // 6. Generar alerta de desplazamiento para el líder anterior si es superado
   let displacementAlert = undefined;
@@ -535,8 +570,31 @@ export function processHonorBid(
     });
   }
 
+  // 7. Registro de auditoría financiera persistente en Cloudflare D1
+  if (d1Binding) {
+    logToD1(d1Binding, {
+      level: "INFO",
+      category: "PAYMENT",
+      message: `Puja del Cuadro de Honor procesada con éxito (+${Number(safeBid.toFixed(2))}€) por "${submission.sponsorName}" para "${service.name}"`,
+      url: `/cuadro-de-honor?categoria=${listCategory}`,
+      metadata: {
+        auditId,
+        serviceId: service.id,
+        serviceName: service.name,
+        bidAmountEuros: Number(safeBid.toFixed(2)),
+        sponsorName: submission.sponsorName,
+        sponsorMessage: submission.sponsorMessage,
+        listCategory,
+        newPosition,
+        displacedCount,
+        hasDisplacementAlert: Boolean(displacementAlert),
+      },
+    }).catch(() => {});
+  }
+
   return {
     success: true,
+    auditId,
     newPosition,
     tier: getHonorTier(newPosition),
     updatedList,

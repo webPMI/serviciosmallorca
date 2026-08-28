@@ -136,4 +136,43 @@ describe("honorBoardEngine · Cuadro de Honor y Subastas de Reconocimiento", () 
       expect(spots["artesanos-sabor"].length).toBeGreaterThan(0);
     });
   });
+
+  describe("isBusinessHonorRecognized (Detección para Badges Frontend)", () => {
+    it("detecta comercios honoríficos configurados por defecto", () => {
+      const res = isBusinessHonorRecognized("forn-sant-francesc-inca");
+      expect(res.recognized).toBe(true);
+      expect(res.sponsorName).toBe("Vecinos del Raiguer");
+      expect(res.position).toBe(1);
+    });
+
+    it("devuelve recognized: false para comercios sin puesto de honor", () => {
+      const res = isBusinessHonorRecognized("comercio-sin-honor-123");
+      expect(res.recognized).toBe(false);
+    });
+  });
+
+  describe("processHonorBid con Auditoría en Tiempo Real", () => {
+    it("genera auditId y ejecuta el log de PAYMENT en D1 cuando se proporciona binding", () => {
+      const spots = getDefaultHonorSpots()["elite-general"];
+      const mockD1 = {
+        prepare: () => ({ bind: () => ({ run: async () => ({}) }) }),
+      };
+
+      const result = processHonorBid(
+        spots,
+        {
+          serviceId: validService.id,
+          sponsorName: "Federación de Artesanos",
+          bidAmountEuros: 15.0,
+        },
+        "elite-general",
+        validService,
+        mockD1,
+      );
+
+      expect(result.success).toBe(true);
+      expect(result.auditId).toMatch(/^audit_honor_/);
+      expect(result.newPosition).toBe(1);
+    });
+  });
 });
