@@ -1,5 +1,34 @@
 export type ServiceStatus = "open" | "seasonal_closure" | "permanently_closed" | "incomplete_admin_only";
 export type SeasonalityType = "year_round" | "summer_season" | "winter_season";
+
+export type TrustLevel =
+  | "level_1_discovery" // Nivel 1: Observación Pública (Discovery Mode)
+  | "level_2_community" // Nivel 2: Verificación Comunitaria (Community Trust)
+  | "level_3_official"; // Nivel 3: Verificación Oficial (Premium Trust)
+
+export type ExtendedVerificationStatus =
+  "unverified" | "pending_audit" | "verified_community" | "verified_official" | "needs_review" | "needs_manual_review";
+
+export interface DetailedAuditTrailEntry {
+  id: string;
+  timestamp: string;
+  action: "created" | "updated" | "verified" | "claimed" | "decayed" | "status_change" | "purged" | "audited";
+  fieldChanged?: string;
+  oldValue?: unknown;
+  newValue?: unknown;
+  authorRole: "system" | "curator" | "manager" | "admin";
+  authorUid?: string;
+  reason?: string;
+}
+
+export interface ClosureHistoryRecord {
+  date: string;
+  previousStatus: ServiceStatus;
+  newStatus: ServiceStatus;
+  reason?: ClosureReason | string;
+  documentedBy: string;
+}
+
 export type CulturalIdentity =
   | "mallorquin_heritage" // Clásico Mallorquín de siempre / Tradición e historia de la isla
   | "german_oriented" // Orientado a comunidad y turismo alemán (Deutsche Community)
@@ -323,10 +352,14 @@ export interface ServiceItem {
     source: string;
   }>;
   authorityScore?: number; // 0 - 100% basado en apariciones en prensa y directorios
-  verificationStatus?: "verified" | "needs_review" | "needs_manual_review" | "unverified" | "pending_audit";
+  verificationStatus?: ExtendedVerificationStatus | "verified";
+  trustLevel?: TrustLevel; // Nivel de Confianza: 1 (Descubrimiento), 2 (Comunidad), 3 (Oficial)
+  lastValidatedAt?: string; // Fecha ISO de la última verificación activa
   sourceConfidence?: "high" | "medium" | "low";
   confidenceScore?: number; // 0 - 100%
   auditLog?: AuditLogEntry[];
+  auditTrail?: DetailedAuditTrailEntry[]; // Registro de auditoría granular
+  closureHistory?: ClosureHistoryRecord[]; // Historial de transiciones de estado
   sourceCrossReference?: {
     webPhoneMatch?: boolean;
     mapsPhoneMatch?: boolean;
