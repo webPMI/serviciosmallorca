@@ -2,20 +2,144 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Navbar from "../../components/Navbar.astro";
 import Footer from "../../components/Footer.astro";
-import { getLocaleFromUrl, loadTranslations, getLangPrefix } from "../../i18n";
+import { getLocaleFromUrl, loadTranslations, getLangPrefix, type Locale } from "../../i18n";
 
 export const prerender = false;
 
-const locale = getLocaleFromUrl(Astro.url);
+const locale = getLocaleFromUrl(Astro.url) as Locale;
 const translations = await loadTranslations(locale);
 const prefix = getLangPrefix(locale);
+
+const i18nPrivacy = {
+  es: {
+    pageTitle: "Política de Privacidad y Protección de Datos",
+    pageSubtitle:
+      "En Servicios Mallorca nos tomamos muy en serio la seguridad y privacidad de tus datos personales conforme al RGPD y la LOPD-GDD.",
+    badgeRegulation: "Cumplimiento RGPD & LOPD-GDD",
+    badgeUpdated: "Actualizado: Agosto 2026",
+    actionTitle: "Gestión de Fichas y Derechos para Titulares",
+    actionDesc:
+      "Si eres titular o representante legal de un negocio en Mallorca, puedes reclamar la propiedad para personalizarlo, actualizar canales de contacto directo o solicitar la baja sin ningún coste ni fricción.",
+    btnClaim: "🏢 Reclamar Negocio",
+    btnDelete: "🗑️ Solicitar Baja RGPD",
+    ethicalTitle: "Nuestro Compromiso de Privacidad Ética",
+    ethicalDesc:
+      "Jamás comercializamos tus datos personales ni los transferimos a redes de publicidad invasiva. Nuestro único propósito es facilitar una conexión segura, directa y constructiva entre la comunidad y el comercio de Mallorca.",
+    dataCollectionTitle: "Recogida y Tipología de Datos",
+    itemAccount: "Datos de cuenta: Nombre, correo electrónico, fotografía o avatar seleccionado.",
+    itemInteraction: "Datos de interacción: Reseñas voluntarias, votos, temas y respuestas publicados en el foro.",
+    itemBusiness:
+      "Datos de verificación empresarial: CIF, acreditación de titularidad y teléfono de contacto para reclamaciones.",
+    adDisclosureTitle: "Publicidad contextual de Google:",
+    adDisclosureDesc:
+      " Puedes gestionar o deshabilitar la personalización de anuncios en cualquier momento accediendo a la ",
+    adLinkText: "Configuración de Anuncios de Google ↗",
+    rightsAccess: "✓ Acceso",
+    rightsRectification: "✓ Rectificación",
+    rightsErasure: "✓ Supresión (Olvido)",
+    rightsRestriction: "✓ Limitación",
+    rightsPortability: "✓ Portabilidad",
+    rightsObjection: "✓ Oposición",
+    backHome: "Volver al Inicio",
+  },
+  en: {
+    pageTitle: "Privacy Policy & Data Protection",
+    pageSubtitle:
+      "At Servicios Mallorca, we take the security and privacy of your personal data very seriously in compliance with GDPR and Spanish data protection laws.",
+    badgeRegulation: "GDPR & LOPD-GDD Compliant",
+    badgeUpdated: "Updated: August 2026",
+    actionTitle: "Listing Management & Rights for Business Owners",
+    actionDesc:
+      "If you are the owner or legal representative of a local business in Mallorca, you can claim your profile, update direct contact channels, or request complete removal with zero cost or friction.",
+    btnClaim: "🏢 Claim Business Profile",
+    btnDelete: "🗑️ Request GDPR Erasure",
+    ethicalTitle: "Our Ethical Privacy Commitment",
+    ethicalDesc:
+      "We never sell your personal data or transfer it to aggressive marketing brokers. Our sole purpose is to securely and directly connect the community with local commerce.",
+    dataCollectionTitle: "Data Collection & Categories",
+    itemAccount: "Account details: Name, email address, profile picture or chosen avatar.",
+    itemInteraction: "Community data: Voluntary reviews, ratings, questions, and replies posted in local forums.",
+    itemBusiness: "Business verification data: Tax ID (CIF), ownership proof, and contact phone for verified claims.",
+    adDisclosureTitle: "Google Contextual Advertising:",
+    adDisclosureDesc: " You can customize or disable personalized ad preferences at any time by visiting ",
+    adLinkText: "Google Ads Settings ↗",
+    rightsAccess: "✓ Access",
+    rightsRectification: "✓ Rectification",
+    rightsErasure: "✓ Erasure (Right to be Forgotten)",
+    rightsRestriction: "✓ Restriction",
+    rightsPortability: "✓ Portability",
+    rightsObjection: "✓ Objection",
+    backHome: "Back to Home",
+  },
+  ca: {
+    pageTitle: "Política de Privadesa i Protecció de Dades",
+    pageSubtitle:
+      "A Servicios Mallorca ens prenem molt seriosament la seguretat i privadesa de les teves dades personals segons el RGPD i la LOPD-GDD.",
+    badgeRegulation: "Compliment RGPD & LOPD-GDD",
+    badgeUpdated: "Actualitzat: Agost 2026",
+    actionTitle: "Gestió de Fitxes i Drets per a Titulars",
+    actionDesc:
+      "Si ets titular o representant legal d'un negoci a Mallorca, pots reclamar la propietat per personalitzar-lo, actualitzar canals de contacte directe o sol·licitar la baixa sense cost ni friccions.",
+    btnClaim: "🏢 Reclamar Negoci",
+    btnDelete: "🗑️ Sol·licitar Baixa RGPD",
+    ethicalTitle: "El Nostre Compromís de Privadesa Ètica",
+    ethicalDesc:
+      "Mai comercialitzam les teves dades personals ni les transferim a xarxes publicitàries invasives. El nostre objectiu és facilitar una connexió segura i directa amb el comerç de Mallorca.",
+    dataCollectionTitle: "Recollida i Tipologia de Dades",
+    itemAccount: "Dades de compte: Nom, adreça de correu electrònic, fotografia o avatar seleccionat.",
+    itemInteraction: "Dades d'interacció: Ressenyes voluntàries, vots, temes i respostes publicades a la comunitat.",
+    itemBusiness:
+      "Dades de verificació empresarial: CIF, acreditació de titularitat i telèfon de contacte per reclamacions.",
+    adDisclosureTitle: "Publicitat contextual de Google:",
+    adDisclosureDesc: " Pots gestionar o deshabilitar la personalització d'anuncis en qualsevol moment visitant la ",
+    adLinkText: "Configuració d'Anuncis de Google ↗",
+    rightsAccess: "✓ Accés",
+    rightsRectification: "✓ Rectificació",
+    rightsErasure: "✓ Supressió (Dret a l'Oblit)",
+    rightsRestriction: "✓ Limitació",
+    rightsPortability: "✓ Portabilitat",
+    rightsObjection: "✓ Oposició",
+    backHome: "Tornar a l'Inici",
+  },
+  de: {
+    pageTitle: "Datenschutzerklärung & Datenschutz",
+    pageSubtitle:
+      "Bei Servicios Mallorca nehmen wir die Sicherheit und den Schutz Ihrer personenbezogenen Daten gemäß der DSGVO und dem spanischen Datenschutzrecht sehr ernst.",
+    badgeRegulation: "DSGVO & LOPD-GDD Konform",
+    badgeUpdated: "Aktualisiert: August 2026",
+    actionTitle: "Eintragsverwaltung & Rechte für Betriebsinhaber",
+    actionDesc:
+      "Wenn Sie Inhaber oder gesetzlicher Vertreter eines Unternehmens auf Mallorca sind, können Sie Ihren Eintrag beanspruchen, Direktkontakte aktualisieren oder eine vollständige Löschung beantragen.",
+    btnClaim: "🏢 Eintrag beanspruchen",
+    btnDelete: "🗑️ DSGVO-Löschung anfordern",
+    ethicalTitle: "Unser Versprechen für ethischen Datenschutz",
+    ethicalDesc:
+      "Wir verkaufen Ihre Daten niemals an Dritte oder aggressive Werbenetzwerke. Unsere Plattform dient ausschließlich dazu, Sie sicher und direkt mit ehrlichen Betrieben auf Mallorca zu verbinden.",
+    dataCollectionTitle: "Datenerfassung & Kategorien",
+    itemAccount: "Kontodaten: Name, E-Mail-Adresse, Profilfoto oder ausgewählter Avatar.",
+    itemInteraction: "Community-Daten: Freiwillige Bewertungen, Abstimmungen und Beiträge im Forum.",
+    itemBusiness:
+      "Unternehmensprüfung: Steuernummer (CIF), Inhabernachweis und Telefonnummer für beanspruchte Profile.",
+    adDisclosureTitle: "Google Kontextwerbung:",
+    adDisclosureDesc: " Sie können personalisierte Werbung jederzeit verwalten oder deaktivieren unter ",
+    adLinkText: "Google Anzeigeneinstellungen ↗",
+    rightsAccess: "✓ Auskunft",
+    rightsRectification: "✓ Berichtigung",
+    rightsErasure: "✓ Löschung (Recht auf Vergessenwerden)",
+    rightsRestriction: "✓ Einschränkung",
+    rightsPortability: "✓ Datenübertragbarkeit",
+    rightsObjection: "✓ Widerspruch",
+    backHome: "Zur Startseite",
+  },
+};
+
+const t = i18nPrivacy[locale] || i18nPrivacy.es;
 ---
 
 <BaseLayout
-  title={`${translations["legal.privacy.title"] || "Política de Privacidad"} - ${translations["site.title"]}`}
+  title={`${t.pageTitle} - ${translations["site.title"] || "Servicios Mallorca"}`}
   lang={locale}
-  description={translations["legal.privacy.subtitle"] ||
-    "Política de Privacidad y Protección de Datos conforme al RGPD y LOPD-GDD en Servicios Mallorca"}
+  description={t.pageSubtitle}
 >
   <Navbar currentLocale={locale} translations={translations} getLangPrefix={getLangPrefix} />
 
@@ -24,20 +148,11 @@ const prefix = getLangPrefix(locale);
       <!-- Legal Header Hero -->
       <header class="legal-hero card-glass fade-in">
         <div class="legal-badge-row">
-          <span class="badge badge-primary"
-            >🛡️ {translations["legal.badgeRegulation"] || "Cumplimiento RGPD & LOPD-GDD"}</span
-          >
-          <span class="badge badge-secondary"
-            >📅 {translations["legal.badgeUpdated"] || "Actualizado: Agosto 2026"}</span
-          >
+          <span class="badge badge-primary">🛡️ {t.badgeRegulation}</span>
+          <span class="badge badge-secondary">📅 {t.badgeUpdated}</span>
         </div>
-        <h1 class="legal-title">{translations["legal.privacy.title"] || "Política de Privacidad"}</h1>
-        <p class="legal-subtitle">
-          {
-            translations["legal.privacy.subtitle"] ||
-              "En Servicios Mallorca nos tomamos muy en serio la seguridad y privacidad de tus datos personales. Conoce con total transparencia cómo protegemos tu información."
-          }
-        </p>
+        <h1 class="legal-title">{t.pageTitle}</h1>
+        <p class="legal-subtitle">{t.pageSubtitle}</p>
       </header>
 
       <!-- Quick Action Box: Business Management & ARCO Rights -->
@@ -45,23 +160,16 @@ const prefix = getLangPrefix(locale);
         <div class="action-box-text">
           <span class="action-box-icon">🤝</span>
           <div>
-            <h3>
-              {translations["legal.privacy.businessActionTitle"] || "Gestión de Fichas y Derechos para Titulares"}
-            </h3>
-            <p>
-              {
-                translations["legal.privacy.businessActionDesc"] ||
-                  "Si eres titular o representante legal de un negocio en Mallorca, puedes reclamar la propiedad para personalizarlo, actualizar canales de contacto directo o solicitar la baja sin ningún coste ni fricción."
-              }
-            </p>
+            <h3>{t.actionTitle}</h3>
+            <p>{t.actionDesc}</p>
           </div>
         </div>
         <div class="action-box-buttons">
           <a href={`${prefix}servicios`} class="btn btn-primary btn-sm">
-            {translations["legal.privacy.claimBtn"] || "🏢 Reclamar Negocio"}
+            {t.btnClaim}
           </a>
           <a href={`${prefix}servicios`} class="btn btn-secondary btn-sm">
-            {translations["legal.privacy.deleteBtn"] || "🗑️ Solicitar Baja RGPD"}
+            {t.btnDelete}
           </a>
         </div>
       </section>
@@ -70,25 +178,9 @@ const prefix = getLangPrefix(locale);
       <section class="card card-glass legal-card positive-privacy-card">
         <div class="section-icon-header">
           <span class="sec-icon">🌿</span>
-          <h2>
-            {
-              locale === "de"
-                ? "Unser Versprechen für ethischen Datenschutz"
-                : locale === "en"
-                  ? "Our Ethical Privacy Commitment"
-                  : "Nuestro Compromiso de Privacidad Ética"
-            }
-          </h2>
+          <h2>{t.ethicalTitle}</h2>
         </div>
-        <p>
-          {
-            locale === "de"
-              ? "Wir verkaufen Ihre Daten niemals an Dritte oder aggressive Marketingnetzwerke. Unsere Plattform dient ausschließlich dazu, Einwohner und Besucher sicher und direkt mit ehrlichen lokalen Unternehmen auf Mallorca zu verbinden."
-              : locale === "en"
-                ? "We never sell your personal information to third-party brokers or telemarketing lists. Our platform exists solely to securely and directly connect consumers with authentic local businesses."
-                : "Jamás comercializamos tus datos personales ni los transferimos a redes de publicidad invasiva. Nuestro único propósito es facilitar una conexión segura, directa y constructiva entre la comunidad y el comercio de Mallorca."
-          }
-        </p>
+        <p>{t.ethicalDesc}</p>
       </section>
 
       <!-- Legal Content Sections -->
@@ -96,20 +188,18 @@ const prefix = getLangPrefix(locale);
         <section class="card card-glass legal-card">
           <div class="section-icon-header">
             <span class="sec-icon">📥</span>
-            <h2>{translations["legal.privacy.dataCollection"]}</h2>
+            <h2>{t.dataCollectionTitle}</h2>
           </div>
           <p>{translations["legal.privacy.dataCollectionContent"]}</p>
           <ul class="legal-bullet-list">
             <li>
-              <strong>Datos de cuenta:</strong> Nombre, dirección de correo electrónico, fotografía o avatar seleccionado.
+              <strong>{t.itemAccount.split(":")[0]}:</strong>{t.itemAccount.split(":")[1]}
             </li>
             <li>
-              <strong>Datos de interacción:</strong> Reseñas voluntarias, votos, temas y respuestas publicados en el foro
-              de la comunidad.
+              <strong>{t.itemInteraction.split(":")[0]}:</strong>{t.itemInteraction.split(":")[1]}
             </li>
             <li>
-              <strong>Datos de verificación empresarial:</strong> CIF, acreditación de titularidad y teléfono de contacto
-              para reclamaciones de negocio.
+              <strong>{t.itemBusiness.split(":")[0]}:</strong>{t.itemBusiness.split(":")[1]}
             </li>
           </ul>
         </section>
@@ -117,7 +207,7 @@ const prefix = getLangPrefix(locale);
         <section class="card card-glass legal-card">
           <div class="section-icon-header">
             <span class="sec-icon">🎯</span>
-            <h2>{translations["legal.privacy.dataUse"]}</h2>
+            <h2>{translations["legal.privacy.dataUse"] || "Finalidad del Tratamiento"}</h2>
           </div>
           <p>{translations["legal.privacy.dataUseContent"]}</p>
         </section>
@@ -125,16 +215,16 @@ const prefix = getLangPrefix(locale);
         <section class="card card-glass legal-card">
           <div class="section-icon-header">
             <span class="sec-icon">🤝</span>
-            <h2>{translations["legal.privacy.dataSharing"]}</h2>
+            <h2>{translations["legal.privacy.dataSharing"] || "Cesión de Datos a Terceros"}</h2>
           </div>
           <p>{translations["legal.privacy.dataSharingContent"]}</p>
           <div class="adsense-disclosure-note">
-            <strong>🌐 Publicidad contextual de Google:</strong> Los usuarios pueden gestionar o deshabilitar la personalización
-            de anuncios en cualquier momento accediendo a la <a
+            <strong>🌐 {t.adDisclosureTitle}</strong>{t.adDisclosureDesc}
+            <a
               href="https://adssettings.google.com/authenticated"
               target="_blank"
               rel="noopener noreferrer"
-              class="link-highlight">Configuración de Anuncios de Google ↗</a
+              class="link-highlight">{t.adLinkText}</a
             >.
           </div>
         </section>
@@ -142,23 +232,23 @@ const prefix = getLangPrefix(locale);
         <section class="card card-glass legal-card">
           <div class="section-icon-header">
             <span class="sec-icon">⚖️</span>
-            <h2>{translations["legal.privacy.userRights"]}</h2>
+            <h2>{translations["legal.privacy.userRights"] || "Tus Derechos ARCO"}</h2>
           </div>
           <p>{translations["legal.privacy.userRightsContent"]}</p>
           <div class="rights-tags-cloud">
-            <span class="right-pill">✓ Acceso</span>
-            <span class="right-pill">✓ Rectificación</span>
-            <span class="right-pill">✓ Supresión (Derecho al Olvido)</span>
-            <span class="right-pill">✓ Limitación</span>
-            <span class="right-pill">✓ Portabilidad</span>
-            <span class="right-pill">✓ Oposición</span>
+            <span class="right-pill">{t.rightsAccess}</span>
+            <span class="right-pill">{t.rightsRectification}</span>
+            <span class="right-pill">{t.rightsErasure}</span>
+            <span class="right-pill">{t.rightsRestriction}</span>
+            <span class="right-pill">{t.rightsPortability}</span>
+            <span class="right-pill">{t.rightsObjection}</span>
           </div>
         </section>
 
         <section class="card card-glass legal-card">
           <div class="section-icon-header">
             <span class="sec-icon">🔐</span>
-            <h2>{translations["legal.privacy.security"]}</h2>
+            <h2>{translations["legal.privacy.security"] || "Seguridad de la Información"}</h2>
           </div>
           <p>{translations["legal.privacy.securityContent"]}</p>
         </section>
@@ -166,7 +256,7 @@ const prefix = getLangPrefix(locale);
         <section class="card card-glass legal-card">
           <div class="section-icon-header">
             <span class="sec-icon">🍪</span>
-            <h2>{translations["legal.privacy.cookies"]}</h2>
+            <h2>{translations["legal.privacy.cookies"] || "Política de Cookies"}</h2>
           </div>
           <p>{translations["legal.privacy.cookiesContent"]}</p>
         </section>
@@ -175,7 +265,7 @@ const prefix = getLangPrefix(locale);
       <!-- Legal Footer Back Link -->
       <footer class="legal-footer-nav">
         <a href={prefix} class="btn btn-secondary">
-          ← {translations["legal.backToHome"] || "Volver al Inicio"}
+          ← {t.backHome}
         </a>
       </footer>
     </div>
@@ -201,11 +291,8 @@ const prefix = getLangPrefix(locale);
     flex-direction: column;
     align-items: center;
     gap: var(--space-md);
-    background: linear-gradient(
-      135deg,
-      color-mix(in srgb, var(--color-primary) 12%, var(--color-surface)),
-      color-mix(in srgb, var(--color-accent) 8%, var(--color-surface))
-    );
+    background: var(--color-surface);
+    border: 1px solid var(--color-surface-border);
   }
 
   .legal-badge-row {
@@ -220,51 +307,50 @@ const prefix = getLangPrefix(locale);
     font-weight: 800;
     color: var(--color-text);
     margin: 0;
-    line-height: 1.15;
   }
 
   .legal-subtitle {
     font-size: var(--font-size-base);
     color: var(--color-text-light);
-    max-width: 680px;
-    line-height: 1.6;
+    max-width: 720px;
     margin: 0;
+    line-height: 1.6;
   }
 
   .legal-action-box {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: var(--space-xl);
+    padding: var(--space-lg) var(--space-xl);
     border-radius: var(--border-radius-lg);
+    background: linear-gradient(135deg, rgba(234, 88, 12, 0.08) 0%, rgba(255, 215, 0, 0.05) 100%);
+    border: 1px solid var(--color-surface-border);
     gap: var(--space-lg);
-    border-left: 4px solid var(--color-primary);
   }
 
   .action-box-text {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: var(--space-md);
   }
 
   .action-box-icon {
-    font-size: 2.2rem;
-    line-height: 1;
+    font-size: 2.5rem;
     flex-shrink: 0;
   }
 
   .action-box-text h3 {
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-base);
     font-weight: 700;
-    margin: 0 0 var(--space-xs);
     color: var(--color-text);
+    margin: 0 0 4px;
   }
 
   .action-box-text p {
     font-size: var(--font-size-sm);
-    color: var(--color-text-muted);
+    color: var(--color-text-light);
     margin: 0;
-    line-height: 1.5;
+    line-height: 1.4;
   }
 
   .action-box-buttons {
@@ -273,26 +359,29 @@ const prefix = getLangPrefix(locale);
     flex-shrink: 0;
   }
 
+  .positive-privacy-card {
+    border-left: 4px solid #10b981;
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.06) 0%, rgba(16, 185, 129, 0.01) 100%);
+  }
+
   .legal-sections-grid {
     display: flex;
     flex-direction: column;
-    gap: var(--space-lg);
+    gap: var(--space-xl);
   }
 
   .legal-card {
     padding: var(--space-xl);
     border-radius: var(--border-radius-lg);
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-md);
+    background: var(--color-surface);
+    border: 1px solid var(--color-surface-border);
   }
 
   .section-icon-header {
     display: flex;
     align-items: center;
     gap: var(--space-sm);
-    padding-bottom: var(--space-sm);
-    border-bottom: 1px solid var(--color-surface-border);
+    margin-bottom: var(--space-md);
   }
 
   .sec-icon {
@@ -300,7 +389,7 @@ const prefix = getLangPrefix(locale);
   }
 
   .section-icon-header h2 {
-    font-size: var(--font-size-xl);
+    font-size: var(--font-size-lg);
     font-weight: 700;
     color: var(--color-text);
     margin: 0;
@@ -309,29 +398,36 @@ const prefix = getLangPrefix(locale);
   .legal-card p {
     font-size: var(--font-size-base);
     color: var(--color-text);
-    line-height: 1.75;
-    margin: 0;
+    line-height: 1.65;
+    margin: 0 0 var(--space-md);
+  }
+
+  .legal-card p:last-child {
+    margin-bottom: 0;
   }
 
   .legal-bullet-list {
-    padding-left: var(--space-lg);
-    margin: 0;
+    margin: var(--space-md) 0 0;
+    padding-left: 1.25rem;
     display: flex;
     flex-direction: column;
-    gap: var(--space-xs);
-    color: var(--color-text-light);
+    gap: var(--space-sm);
+  }
+
+  .legal-bullet-list li {
     font-size: var(--font-size-sm);
-    line-height: 1.6;
+    color: var(--color-text);
+    line-height: 1.55;
   }
 
   .adsense-disclosure-note {
-    background: var(--color-bg);
-    padding: var(--space-md);
+    background: rgba(52, 152, 219, 0.06);
+    border: 1px solid rgba(52, 152, 219, 0.2);
     border-radius: var(--border-radius-sm);
-    border-left: 3px solid var(--color-accent);
+    padding: var(--space-md);
+    margin-top: var(--space-md);
     font-size: var(--font-size-sm);
-    color: var(--color-text-muted);
-    line-height: 1.6;
+    line-height: 1.5;
   }
 
   .link-highlight {
@@ -344,56 +440,32 @@ const prefix = getLangPrefix(locale);
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-xs);
-    margin-top: var(--space-xs);
+    margin-top: var(--space-md);
   }
 
   .right-pill {
-    background: var(--color-primary-bg);
-    color: var(--color-primary-dark);
+    padding: 6px 12px;
+    border-radius: var(--border-radius-full);
+    background: var(--color-surface-border);
     font-size: var(--font-size-xs);
-    font-weight: 700;
-    padding: 5px 12px;
-    border-radius: 999px;
-    border: 1px solid var(--color-surface-border);
+    font-weight: 600;
+    color: var(--color-text);
   }
 
   .legal-footer-nav {
     text-align: center;
-    padding: var(--space-md) 0 var(--space-xl);
+    margin-top: var(--space-lg);
   }
 
   @media (max-width: 768px) {
     .legal-action-box {
       flex-direction: column;
       align-items: flex-start;
+      padding: var(--space-md);
     }
-
     .action-box-buttons {
       width: 100%;
-    }
-
-    .action-box-buttons .btn {
-      flex: 1;
-      text-align: center;
-      justify-content: center;
-    }
-  }
-
-  @media (max-width: 640px) {
-    .legal-hero {
-      padding: var(--space-xl) var(--space-md);
-    }
-
-    .legal-card {
-      padding: var(--space-lg);
-    }
-
-    .action-box-buttons {
       flex-direction: column;
-    }
-
-    .action-box-buttons .btn {
-      width: 100%;
     }
   }
 </style>

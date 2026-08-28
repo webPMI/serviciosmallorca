@@ -172,7 +172,17 @@ const ZONES: Array<{ id: string; name: Record<Locale, string> }> = [
   <div class="sports-map-view" id="sports-map-view" style="display: none;">
     <div class="map-interactive-wrapper card">
       <div class="map-interactive-header">
-        <div class="map-badge-live">🟢 Mapa en Vivo de Instalaciones</div>
+        <div class="map-badge-live">
+          {
+            currentLocale === "de"
+              ? "🟢 Live-Sportstättenkarte"
+              : currentLocale === "ca"
+                ? "🟢 Mapa en Viu d'Instal·lacions"
+                : currentLocale === "en"
+                  ? "🟢 Live Sports Map"
+                  : "🟢 Mapa en Vivo de Instalaciones"
+          }
+        </div>
         <span class="map-instructions">
           {
             currentLocale === "de"
@@ -187,7 +197,13 @@ const ZONES: Array<{ id: string; name: Record<Locale, string> }> = [
       </div>
       <div class="map-embed-placeholder" id="sports-interactive-map">
         <iframe
-          title="Mapa de Instalaciones Deportivas en Mallorca"
+          title={currentLocale === "de"
+            ? "Karte der Sportstätten auf Mallorca"
+            : currentLocale === "ca"
+              ? "Mapa d'Instal·lacions Esportives a Mallorca"
+              : currentLocale === "en"
+                ? "Sports Facilities Map in Mallorca"
+                : "Mapa de Instalaciones Deportivas en Mallorca"}
           class="sports-iframe-map"
           src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d196884.28821949163!2d2.6502!3d39.5696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1spistas%20padel%20running%20calistenia%20mallorca!5e0!3m2!1ses!2ses!4v1719000000000!5m2!1ses!2ses"
           loading="lazy"

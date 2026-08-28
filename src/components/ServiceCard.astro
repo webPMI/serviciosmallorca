@@ -59,7 +59,13 @@ const smartCta = getSmartActionCta(
       {
         service.isIconicHeritage && (
           <span class="badge badge-heritage">
-            {currentLocale === "de" ? "🏛️ Traditionsbetrieb" : "🌴 Clásico Mallorquín"}
+            {currentLocale === "de"
+              ? "🏛️ Traditionsbetrieb"
+              : currentLocale === "ca"
+                ? "🌴 Clàssic Mallorquí"
+                : currentLocale === "en"
+                  ? "🌴 Mallorcan Classic"
+                  : "🌴 Clásico Mallorquín"}
           </span>
         )
       }
@@ -73,8 +79,26 @@ const smartCta = getSmartActionCta(
 
       {
         service.isClaimed && service.claimedByUid ? (
-          <span class="badge badge-claimed-owner" title="Ficha verificada y gestionada por su titular">
-            👑 {currentLocale === "de" ? "Verifizierter Inhaber" : "Titular Verificado"}
+          <span
+            class="badge badge-claimed-owner"
+            title={
+              currentLocale === "de"
+                ? "Profil verifiziert und vom Inhaber verwaltet"
+                : currentLocale === "ca"
+                  ? "Fitxa verificada i gestionada pel seu titular"
+                  : currentLocale === "en"
+                    ? "Listing verified and managed by registered owner"
+                    : "Ficha verificada y gestionada por su titular"
+            }
+          >
+            👑{" "}
+            {currentLocale === "de"
+              ? "Verifizierter Inhaber"
+              : currentLocale === "ca"
+                ? "Titular Verificat"
+                : currentLocale === "en"
+                  ? "Verified Owner"
+                  : "Titular Verificado"}
           </span>
         ) : (
           <span
@@ -82,10 +106,21 @@ const smartCta = getSmartActionCta(
             title={
               currentLocale === "de"
                 ? "Aus öffentlichen Quellen aggregiert · Ausstehende Inhaber-Verifizierung"
-                : "Datos de fuentes públicas · Pendiente de validación por el titular"
+                : currentLocale === "ca"
+                  ? "Dades de fonts públiques · Pendent de validació pel titular"
+                  : currentLocale === "en"
+                    ? "Sourced from public registries · Pending human owner verification"
+                    : "Datos de fuentes públicas · Pendiente de validación por el titular"
             }
           >
-            🤖 {currentLocale === "de" ? "Öffentliche Daten" : "Datos Públicos"}
+            🤖{" "}
+            {currentLocale === "de"
+              ? "Öffentliche Daten"
+              : currentLocale === "ca"
+                ? "Dades Públiques"
+                : currentLocale === "en"
+                  ? "Public Data"
+                  : "Datos Públicos"}
           </span>
         )
       }

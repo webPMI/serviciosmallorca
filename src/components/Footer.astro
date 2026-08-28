@@ -54,7 +54,16 @@ const currentPath = Astro.url.pathname;
       <!-- Specialized Hubs column -->
       <div class="footer-col nav-col">
         <h4 class="footer-heading">
-          {currentLocale === "de" ? "Entdecken" : currentLocale === "en" ? "Explore" : "Explorar"}
+          {
+            translations["nav.section.explore"] ||
+              (currentLocale === "de"
+                ? "Entdecken"
+                : currentLocale === "en"
+                  ? "Explore"
+                  : currentLocale === "ca"
+                    ? "Explorar"
+                    : "Explorar")
+          }
         </h4>
         <nav class="footer-nav">
           <a href={`${getLangPrefix(currentLocale)}deporte`} class="footer-link">

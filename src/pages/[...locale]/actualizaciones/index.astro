@@ -335,10 +335,27 @@ const breadcrumbSchema = {
         <h3>{t.feedbackTitle}</h3>
         <p>{t.feedbackDesc}</p>
         <div class="feedback-actions">
-          <a href={`${prefix}servicios`} class="btn btn-primary">
+          <button
+            type="button"
+            class="btn btn-primary"
+            onclick="window.openCommunityVoiceModal && window.openCommunityVoiceModal({ type: 'SUGGESTION' })"
+          >
+            <span
+              >✨ {
+                locale === "de"
+                  ? "Hinweis oder Feedback hinterlassen"
+                  : locale === "en"
+                    ? "Leave Feedback or Suggestion"
+                    : locale === "ca"
+                      ? "Deixar Suggeriment o Notícia"
+                      : "Dejar Sugerencia o Noticia"
+              } →</span
+            >
+          </button>
+          <a href={`${prefix}servicios`} class="btn btn-secondary">
             <span>{t.btnExplore}</span>
           </a>
-          <a href={`${prefix}cuadro-de-honor`} class="btn btn-secondary">
+          <a href={`${prefix}cuadro-de-honor`} class="btn btn-outline">
             <span>{t.btnHonor}</span>
           </a>
         </div>

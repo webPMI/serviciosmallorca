@@ -57,11 +57,11 @@ const defaultSubtitle =
 
         <div class="banner-actions">
           <a href={`${prefix}unete`} class="btn btn-accent btn-lg pulse-hover">
-            <span>⚡ Ver Planes, Tarifas & Pasos</span>
+            <span>{translations["join.banner.cta"] || "⚡ Ver Planes, Tarifas & Pasos"}</span>
             <span class="arrow-icon">→</span>
           </a>
           <a href={`${prefix}cuadro-de-honor`} class="btn btn-secondary btn-lg">
-            <span>👑 Ver Cuadro de Honor</span>
+            <span>{translations["join.banner.honorCta"] || "👑 Ver Cuadro de Honor"}</span>
           </a>
         </div>
       </div>
@@ -69,29 +69,29 @@ const defaultSubtitle =
       <div class="banner-visual-col">
         <div class="pricing-mini-card">
           <div class="mini-card-header">
-            <span class="mini-title">Tarifas Transparentes</span>
-            <span class="mini-badge">Zero Sorpresas</span>
+            <span class="mini-title">{translations["join.banner.pricingTitle"] || "Tarifas Transparentes"}</span>
+            <span class="mini-badge">{translations["join.banner.noSurprises"] || "Zero Sorpresas"}</span>
           </div>
           <ul class="mini-features-list">
             <li>
               <span class="check-icon">✅</span>
               <div>
-                <strong>Ficha Verificada:</strong>
-                <span>0€ para siempre</span>
+                <strong>{translations["join.banner.feat1Title"] || "Ficha Verificada:"}</strong>
+                <span>{translations["join.banner.feat1Desc"] || "0€ para siempre"}</span>
               </div>
             </li>
             <li>
               <span class="check-icon">✅</span>
               <div>
-                <strong>Cesión de Mando:</strong>
-                <span>Edita datos & horarios 100% gratis</span>
+                <strong>{translations["join.banner.feat2Title"] || "Cesión de Mando:"}</strong>
+                <span>{translations["join.banner.feat2Desc"] || "Edita datos & horarios 100% gratis"}</span>
               </div>
             </li>
             <li>
               <span class="check-icon">💎</span>
               <div>
-                <strong>Puestos de Honor:</strong>
-                <span>Subasta comunitaria desde solo 1.00€</span>
+                <strong>{translations["join.banner.feat3Title"] || "Puestos de Honor:"}</strong>
+                <span>{translations["join.banner.feat3Desc"] || "Subasta comunitaria desde solo 1.00€"}</span>
               </div>
             </li>
           </ul>

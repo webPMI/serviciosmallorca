@@ -2,20 +2,141 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Navbar from "../../components/Navbar.astro";
 import Footer from "../../components/Footer.astro";
-import { getLocaleFromUrl, loadTranslations, getLangPrefix } from "../../i18n";
+import { getLocaleFromUrl, loadTranslations, getLangPrefix, type Locale } from "../../i18n";
 
 export const prerender = false;
 
-const locale = getLocaleFromUrl(Astro.url);
+const locale = getLocaleFromUrl(Astro.url) as Locale;
 const translations = await loadTranslations(locale);
 const prefix = getLangPrefix(locale);
+
+const i18nTerms = {
+  es: {
+    pageTitle: "Términos de Servicio y Normas de Uso",
+    pageSubtitle:
+      "Condiciones de uso, normas de la comunidad y directrices para usuarios y titulares de negocios en Mallorca.",
+    badgeRegulation: "Marco Legal LSSI-CE & RGPD",
+    badgeUpdated: "Actualizado: Agosto 2026",
+    positiveCharterTitle: "Carta de Convivencia y Promedio Positivo",
+    positiveCharterDesc:
+      "Servicios Mallorca nace como un puente positivo entre residentes, visitantes y el comercio local. Promovemos un diálogo constructivo, el respeto mutuo y la valoración del esfuerzo diario de quienes trabajan en la isla.",
+    toleranceTitle: "Tolerancia y Crítica Constructiva:",
+    toleranceDesc:
+      " Las opiniones deben expresarse con respeto y cordialidad. Creemos en el valor de ayudar a los comercios a mejorar y crecer, evitando el desprestigio injustificado.",
+    digitalTitle: "Acompañamiento en la Evolución Digital:",
+    digitalDesc:
+      " Muchos talleres tradicionales y autónomos están en proceso de adaptación digital. Facilitamos su visibilidad sin barreras técnicas ni comisiones ocultas.",
+    habitsTitle: "Hábitos Saludables y Bienestar:",
+    habitsDesc:
+      " Fomentamos el consumo de proximidad (Km0), el deporte al aire libre y la toma de decisiones informadas y responsables.",
+    calloutTitle: "Compromiso de Datos Reales & Apoyo al Comercio:",
+    calloutDesc:
+      " Los negocios publicados son contrastados contra fuentes públicas oficiales y perfiles de Google Maps. Los titulares pueden verificar su titularidad de forma ágil y gratuita para gestionar horarios y canales de contacto directo.",
+    obGoodFaithTitle: "Veracidad y Buena Fe:",
+    obGoodFaithDesc:
+      " Las valoraciones deben responder a vivencias reales de consumo formuladas con tono constructivo y respetuoso.",
+    obSpamTitle: "Prohibición de Spam y Cuentas Falsas:",
+    obSpamDesc: " Queda prohibida la publicación automatizada de comentarios o la suplantación de identidad.",
+    obRespectTitle: "Respeto en la Comunidad:",
+    obRespectDesc: " No se tolerarán insultos, lenguaje de odio o difamación en las interacciones comunitarias.",
+    backHome: "Volver al Inicio",
+  },
+  en: {
+    pageTitle: "Terms of Service & Platform Guidelines",
+    pageSubtitle: "Terms of use, community standards, and guidelines for consumers and business owners in Mallorca.",
+    badgeRegulation: "LSSI-CE & GDPR Compliance",
+    badgeUpdated: "Updated: August 2026",
+    positiveCharterTitle: "Positive Coexistence & Local Support Charter",
+    positiveCharterDesc:
+      "Servicios Mallorca is a constructive bridge between residents, visitors, and local businesses. We champion constructive dialogue, mutual respect, and genuine appreciation for honest craftsmanship.",
+    toleranceTitle: "Tolerance & Constructive Feedback:",
+    toleranceDesc:
+      " Feedback should be grounded, respectful, and geared towards improvement. Destructive attacks or smear campaigns are strictly avoided.",
+    digitalTitle: "Supporting Digital Evolution:",
+    digitalDesc:
+      " Many heritage workshops are gradually modernizing. We offer fair, free visibility and frictionless direct channels (WhatsApp, phone).",
+    habitsTitle: "Healthy Habits & Well-being:",
+    habitsDesc:
+      " We encourage sustainable Km0 choices, outdoor sports, and mindful preservation of Mallorca's natural environment.",
+    calloutTitle: "Genuine Public Data & Business Empowerment:",
+    calloutDesc:
+      " Listed businesses are corroborated against official public registers and Google Maps. Business owners can verify their listings seamlessly and free of charge.",
+    obGoodFaithTitle: "Authenticity & Good Faith:",
+    obGoodFaithDesc:
+      " User reviews must reflect genuine consumption experiences conveyed constructively and respectfully.",
+    obSpamTitle: "No Spam or Fake Accounts:",
+    obSpamDesc: " Automated bot postings, scraping abuse, and identity impersonation are strictly forbidden.",
+    obRespectTitle: "Community Respect:",
+    obRespectDesc: " Insults, hate speech, or defamatory attacks are strictly prohibited across all community spaces.",
+    backHome: "Back to Home",
+  },
+  ca: {
+    pageTitle: "Termes de Servei i Normes d'Ús",
+    pageSubtitle:
+      "Condicions d'ús, normes de la comunitat i directrius per a usuaris i titulars de negocis a Mallorca.",
+    badgeRegulation: "Marc Legal LSSI-CE & RGPD",
+    badgeUpdated: "Actualitzat: Agost 2026",
+    positiveCharterTitle: "Carta de Convivència i Mitjana Positiva",
+    positiveCharterDesc:
+      "Servicios Mallorca neix com un pont positiu entre residents, visitants i el comerç local. Promovem un diàleg constructiu, el respecte mutu i la valoració de la feina ben feta a l'illa.",
+    toleranceTitle: "Tolerància i Crítica Constructiva:",
+    toleranceDesc:
+      " Les opinions han d'expressar-se amb respecte i cordialitat per ajudar els comerços a millorar, evitant el desprestigi.",
+    digitalTitle: "Acompanyament Digital:",
+    digitalDesc:
+      " Molts tallers artesans i autònoms estan en procés d'adaptació digital. Els donam visibilitat sense barreres tècniques ni comissions.",
+    habitsTitle: "Hàbits Saludables i Benestar:",
+    habitsDesc: " Fomentam el consum de proximitat (Km0), l'esport a l'aire lliure i la preservació del nostre entorn.",
+    calloutTitle: "Compromís amb les Dades Reals:",
+    calloutDesc:
+      " Els comerços publicats són contrastats amb fonts públiques oficials i Google Maps. Els titulars poden verificar la seva fitxa gratuïtament.",
+    obGoodFaithTitle: "Veracitat i Bona Fe:",
+    obGoodFaithDesc: " Les valoracions han de respondre a experiències reals de consum expressades amb respecte.",
+    obSpamTitle: "Prohibició de Spam i Comptes Falsos:",
+    obSpamDesc: " Queda prohibida la publicació automatitzada de comentaris o la suplantació d'identitat.",
+    obRespectTitle: "Respecte a la Comunitat:",
+    obRespectDesc: " No es toleraran insults, odi ni difamacions a les interaccions comunitàries.",
+    backHome: "Tornar a l'Inici",
+  },
+  de: {
+    pageTitle: "Nutzungsbedingungen & Richtlinien",
+    pageSubtitle:
+      "Nutzungsbedingungen, Community-Richtlinien und Hinweise für Nutzer und Inhaber von Betrieben auf Mallorca.",
+    badgeRegulation: "LSSI-CE & DSGVO Konformität",
+    badgeUpdated: "Aktualisiert: August 2026",
+    positiveCharterTitle: "Charta für positives Zusammenleben & Förderung",
+    positiveCharterDesc:
+      "Servicios Mallorca versteht sich als Brücke zwischen Einwohnern, Besuchern und dem lokalen Handel. Wir fördern einen konstruktiven Dialog, gegenseitigen Respekt und die Wertschätzung für das ehrliche Handwerk auf der Insel.",
+    toleranceTitle: "Toleranz & Konstruktive Kritik:",
+    toleranceDesc:
+      " Meinungsverschiedenheiten sollten mit Sachlichkeit und Wohlwollen formuliert werden. Destruktive Angriffe haben keinen Platz.",
+    digitalTitle: "Begleitung beim digitalen Wandel:",
+    digitalDesc:
+      " Viele traditionelle Betriebe digitalisieren sich schrittweise. Wir bieten ihnen kostenfreie Sichtbarkeit und direkte Kanäle.",
+    habitsTitle: "Gesunde Gewohnheiten & Lebensqualität:",
+    habitsDesc:
+      " Wir fördern nachhaltigen Konsum (Km0), Sport an der frischen Luft und den Schutz der Natur auf Mallorca.",
+    calloutTitle: "Verlässliche Recherchen & Gewerbeunterstützung:",
+    calloutDesc:
+      " Veröffentlichte Betriebe werden mit offiziellen Quellen und Google Maps abgeglichen. Inhaber können ihren Eintrag unkompliziert und kostenfrei beanspruchen.",
+    obGoodFaithTitle: "Wahrhaftigkeit & Fairness:",
+    obGoodFaithDesc:
+      " Bewertungen müssen auf echten Erfahrungen basieren und in einem respektvollen Ton verfasst sein.",
+    obSpamTitle: "Verbot von Spam & Fake-Profilen:",
+    obSpamDesc: " Automatisierte Beiträge, Identitätsdiebstahl und missbräuchliches Verhalten sind streng untersagt.",
+    obRespectTitle: "Respekt in der Community:",
+    obRespectDesc: " Beleidigungen, Hassrede oder Verleumdungen werden nicht geduldet.",
+    backHome: "Zur Startseite",
+  },
+};
+
+const t = i18nTerms[locale] || i18nTerms.es;
 ---
 
 <BaseLayout
-  title={`${translations["legal.terms.title"] || "Términos de Servicio"} - ${translations["site.title"]}`}
+  title={`${t.pageTitle} - ${translations["site.title"] || "Servicios Mallorca"}`}
   lang={locale}
-  description={translations["legal.terms.subtitle"] ||
-    "Condiciones Generales de Uso del Directorio y Comunidad de Servicios Mallorca"}
+  description={t.pageSubtitle}
 >
   <Navbar currentLocale={locale} translations={translations} getLangPrefix={getLangPrefix} />
 
@@ -24,20 +145,11 @@ const prefix = getLangPrefix(locale);
       <!-- Terms Header Hero -->
       <header class="legal-hero card-glass fade-in">
         <div class="legal-badge-row">
-          <span class="badge badge-primary"
-            >📜 {translations["legal.badgeRegulation"] || "Marco Legal LSSI-CE & RGPD"}</span
-          >
-          <span class="badge badge-secondary"
-            >📅 {translations["legal.badgeUpdated"] || "Actualizado: Agosto 2026"}</span
-          >
+          <span class="badge badge-primary">📜 {t.badgeRegulation}</span>
+          <span class="badge badge-secondary">📅 {t.badgeUpdated}</span>
         </div>
-        <h1 class="legal-title">{translations["legal.terms.title"] || "Términos de Servicio"}</h1>
-        <p class="legal-subtitle">
-          {
-            translations["legal.terms.subtitle"] ||
-              "Condiciones de uso, normas de la comunidad y directrices para usuarios y titulares de negocios en Mallorca."
-          }
-        </p>
+        <h1 class="legal-title">{t.pageTitle}</h1>
+        <p class="legal-subtitle">{t.pageSubtitle}</p>
       </header>
 
       <!-- Terms Content Sections -->
@@ -45,7 +157,7 @@ const prefix = getLangPrefix(locale);
         <section class="card card-glass legal-card">
           <div class="section-icon-header">
             <span class="sec-icon">✅</span>
-            <h2>{translations["legal.sections.acceptance"]}</h2>
+            <h2>{translations["legal.sections.acceptance"] || "Aceptación de los Términos"}</h2>
           </div>
           <p>{translations["legal.terms.acceptanceContent"]}</p>
         </section>
@@ -54,79 +166,18 @@ const prefix = getLangPrefix(locale);
         <section class="card card-glass legal-card positive-charter-card">
           <div class="section-icon-header">
             <span class="sec-icon">🌿</span>
-            <h2>
-              {
-                locale === "de"
-                  ? "Charta für positives Zusammenleben & Förderung"
-                  : locale === "en"
-                    ? "Positive Coexistence & Local Support Charter"
-                    : "Carta de Convivencia y Promedio Positivo"
-              }
-            </h2>
+            <h2>{t.positiveCharterTitle}</h2>
           </div>
-          <p>
-            {
-              locale === "de"
-                ? "Servicios Mallorca versteht sich als Brücke zwischen Einwohnern, Besuchern und dem lokalen Handel. Wir fördern einen konstruktiven Dialog, gegenseitigen Respekt und die Wertschätzung für das ehrliche Handwerk auf der Insel."
-                : locale === "en"
-                  ? "Servicios Mallorca is a constructive bridge between residents, visitors, and local businesses. We champion constructive dialogue, mutual respect, and genuine appreciation for honest craftsmanship."
-                  : "Servicios Mallorca nace como un puente positivo entre residentes, visitantes y el comercio local. Promovemos un diálogo constructivo, el respeto mutuo y la valoración del esfuerzo diario de quienes trabajan en la isla."
-            }
-          </p>
+          <p>{t.positiveCharterDesc}</p>
           <ul class="legal-bullet-list">
             <li>
-              <strong
-                >{
-                  locale === "de"
-                    ? "Toleranz & Konstruktive Kritik:"
-                    : locale === "en"
-                      ? "Tolerance & Constructive Feedback:"
-                      : "Tolerancia y Crítica Constructiva:"
-                }</strong
-              >
-              {
-                locale === "de"
-                  ? " Meinungsverschiedenheiten sollten mit Sachlichkeit und Wohlwollen formuliert werden. Destruktive Angriffe oder Diffamierungen haben auf unserer Plattform keinen Platz."
-                  : locale === "en"
-                    ? " Feedback should be grounded, respectful, and geared towards improvement. Destructive attacks or smear campaigns are strictly avoided."
-                    : " Las opiniones deben expresarse con respeto y cordialidad. Creemos en el valor de ayudar a los comercios a mejorar y crecer, evitando el desprestigio injustificado."
-              }
+              <strong>{t.toleranceTitle}</strong>{t.toleranceDesc}
             </li>
             <li>
-              <strong
-                >{
-                  locale === "de"
-                    ? "Begleitung beim digitalen Wandel:"
-                    : locale === "en"
-                      ? "Supporting Digital Evolution:"
-                      : "Acompañamiento en la Evolución Digital:"
-                }</strong
-              >
-              {
-                locale === "de"
-                  ? " Viele traditionelle Betriebe digitalisieren sich schrittweise. Wir bieten ihnen kostenfreie Sichtbarkeit und direkte Kommunikationskanäle (WhatsApp, Telefon)."
-                  : locale === "en"
-                    ? " Many heritage workshops are gradually modernizing. We offer fair, free visibility and frictionless direct channels (WhatsApp, phone)."
-                    : " Muchos talleres tradicionales y autónomos están en proceso de adaptación digital. Facilitamos su visibilidad sin barreras técnicas ni comisiones ocultas."
-              }
+              <strong>{t.digitalTitle}</strong>{t.digitalDesc}
             </li>
             <li>
-              <strong
-                >{
-                  locale === "de"
-                    ? "Gesunde Gewohnheiten & Lebensqualität:"
-                    : locale === "en"
-                      ? "Healthy Habits & Well-being:"
-                      : "Hábitos Saludables y Bienestar:"
-                }</strong
-              >
-              {
-                locale === "de"
-                  ? " Wir fördern nachhaltigen Konsum (Km0), Sport an der frischen Luft und den Schutz der Natur auf Mallorca."
-                  : locale === "en"
-                    ? " We encourage sustainable Km0 choices, outdoor sports, and mindful preservation of Mallorca's natural environment."
-                    : " Fomentamos el consumo de proximidad (Km0), el deporte al aire libre y la toma de decisiones informadas y responsables."
-              }
+              <strong>{t.habitsTitle}</strong>{t.habitsDesc}
             </li>
           </ul>
         </section>
@@ -134,34 +185,29 @@ const prefix = getLangPrefix(locale);
         <section class="card card-glass legal-card">
           <div class="section-icon-header">
             <span class="sec-icon">🏢</span>
-            <h2>{translations["legal.sections.services"]}</h2>
+            <h2>{translations["legal.sections.services"] || "Naturaleza del Catálogo y Fichas"}</h2>
           </div>
           <p>{translations["legal.terms.servicesContent"]}</p>
           <div class="terms-callout-note">
-            <strong>🥇 Compromiso Zero Fake Data & Apoyo al Comercio:</strong> El 100% de los negocios publicados son contrastados
-            contra registros oficiales y perfiles de Google Maps. Los titulares pueden verificar su titularidad de forma ágil
-            y gratuita para gestionar horarios, canales de contacto directo (WhatsApp, llamada) y datos de atención.
+            <strong>🥇 {t.calloutTitle}</strong>{t.calloutDesc}
           </div>
         </section>
 
         <section class="card card-glass legal-card">
           <div class="section-icon-header">
             <span class="sec-icon">👤</span>
-            <h2>{translations["legal.sections.obligations"]}</h2>
+            <h2>{translations["legal.sections.obligations"] || "Obligaciones del Usuario"}</h2>
           </div>
           <p>{translations["legal.terms.obligationsContent"]}</p>
           <ul class="legal-bullet-list">
             <li>
-              <strong>Veracidad y Buena Fe:</strong> Las valoraciones deben responder a vivencias reales de consumo o contratación
-              formuladas con tono positivo y respetuoso.
+              <strong>{t.obGoodFaithTitle}</strong>{t.obGoodFaithDesc}
             </li>
             <li>
-              <strong>Prohibición de Spam y Cuentas Falsas:</strong> Queda prohibida la publicación automatizada de comentarios
-              o la suplantación de identidad.
+              <strong>{t.obSpamTitle}</strong>{t.obSpamDesc}
             </li>
             <li>
-              <strong>Respeto en la Comunidad:</strong> No se tolerarán insultos, lenguaje de odio o difamación en los debates
-              del foro de residentes.
+              <strong>{t.obRespectTitle}</strong>{t.obRespectDesc}
             </li>
           </ul>
         </section>
@@ -169,7 +215,7 @@ const prefix = getLangPrefix(locale);
         <section class="card card-glass legal-card">
           <div class="section-icon-header">
             <span class="sec-icon">🔒</span>
-            <h2>{translations["legal.sections.privacy"]}</h2>
+            <h2>{translations["legal.sections.privacy"] || "Privacidad y Confidencialidad"}</h2>
           </div>
           <p>{translations["legal.terms.privacyContent"]}</p>
         </section>
@@ -177,7 +223,7 @@ const prefix = getLangPrefix(locale);
         <section class="card card-glass legal-card">
           <div class="section-icon-header">
             <span class="sec-icon">💡</span>
-            <h2>{translations["legal.sections.intellectual"]}</h2>
+            <h2>{translations["legal.sections.intellectual"] || "Propiedad Intelectual"}</h2>
           </div>
           <p>{translations["legal.terms.intellectualContent"]}</p>
         </section>
@@ -185,7 +231,7 @@ const prefix = getLangPrefix(locale);
         <section class="card card-glass legal-card">
           <div class="section-icon-header">
             <span class="sec-icon">⚠️</span>
-            <h2>{translations["legal.sections.liability"]}</h2>
+            <h2>{translations["legal.sections.liability"] || "Exención de Responsabilidad"}</h2>
           </div>
           <p>{translations["legal.terms.liabilityContent"]}</p>
         </section>
@@ -193,7 +239,7 @@ const prefix = getLangPrefix(locale);
         <section class="card card-glass legal-card">
           <div class="section-icon-header">
             <span class="sec-icon">🔄</span>
-            <h2>{translations["legal.sections.modifications"]}</h2>
+            <h2>{translations["legal.sections.modifications"] || "Modificaciones del Servicio"}</h2>
           </div>
           <p>{translations["legal.terms.modificationsContent"]}</p>
         </section>
@@ -201,7 +247,7 @@ const prefix = getLangPrefix(locale);
         <section class="card card-glass legal-card">
           <div class="section-icon-header">
             <span class="sec-icon">⚖️</span>
-            <h2>{translations["legal.sections.contact"]}</h2>
+            <h2>{translations["legal.sections.contact"] || "Legislación Aplicable y Contacto"}</h2>
           </div>
           <p>{translations["legal.terms.contactContent"]}</p>
         </section>
@@ -210,7 +256,7 @@ const prefix = getLangPrefix(locale);
       <!-- Legal Footer Back Link -->
       <footer class="legal-footer-nav">
         <a href={prefix} class="btn btn-secondary">
-          ← {translations["legal.backToHome"] || "Volver al Inicio"}
+          ← {t.backHome}
         </a>
       </footer>
     </div>
@@ -221,71 +267,60 @@ const prefix = getLangPrefix(locale);
 
 <style>
   .legal-wrapper {
-    max-width: 920px;
+    max-width: 900px;
     margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-xl);
   }
 
   .legal-hero {
-    padding: var(--space-2xl) var(--space-xl);
-    border-radius: var(--border-radius-xl, 1.5rem);
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--space-md);
-    background: linear-gradient(
-      135deg,
-      color-mix(in srgb, var(--color-primary) 12%, var(--color-surface)),
-      color-mix(in srgb, var(--color-accent) 8%, var(--color-surface))
-    );
+    padding: clamp(var(--space-lg), 4vw, var(--space-2xl));
+    margin-bottom: var(--space-2xl);
+    border-radius: var(--border-radius-lg);
+    background: var(--color-surface);
+    border: 1px solid var(--color-surface-border);
   }
 
   .legal-badge-row {
     display: flex;
-    gap: var(--space-sm);
-    flex-wrap: wrap;
     justify-content: center;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-md);
+    flex-wrap: wrap;
   }
 
   .legal-title {
-    font-size: clamp(2rem, 4vw, var(--font-size-4xl));
+    font-size: clamp(1.8rem, 4vw, var(--font-size-3xl));
     font-weight: 800;
     color: var(--color-text);
-    margin: 0;
-    line-height: 1.15;
+    margin-bottom: var(--space-sm);
   }
 
   .legal-subtitle {
     font-size: var(--font-size-base);
     color: var(--color-text-light);
     max-width: 680px;
+    margin: 0 auto;
     line-height: 1.6;
-    margin: 0;
   }
 
   .legal-sections-grid {
     display: flex;
     flex-direction: column;
-    gap: var(--space-lg);
+    gap: var(--space-xl);
   }
 
   .legal-card {
     padding: var(--space-xl);
-    border-radius: var(--border-radius-lg);
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-md);
+    border-radius: var(--border-radius-md);
+    background: var(--color-surface);
+    border: 1px solid var(--color-surface-border);
   }
 
   .section-icon-header {
     display: flex;
     align-items: center;
     gap: var(--space-sm);
-    padding-bottom: var(--space-sm);
-    border-bottom: 1px solid var(--color-surface-border);
+    margin-bottom: var(--space-md);
   }
 
   .sec-icon {
@@ -293,7 +328,7 @@ const prefix = getLangPrefix(locale);
   }
 
   .section-icon-header h2 {
-    font-size: var(--font-size-xl);
+    font-size: var(--font-size-lg);
     font-weight: 700;
     color: var(--color-text);
     margin: 0;
@@ -302,43 +337,45 @@ const prefix = getLangPrefix(locale);
   .legal-card p {
     font-size: var(--font-size-base);
     color: var(--color-text);
-    line-height: 1.75;
-    margin: 0;
+    line-height: 1.65;
+    margin: 0 0 var(--space-md);
   }
 
-  .legal-bullet-list {
-    padding-left: var(--space-lg);
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-xs);
-    color: var(--color-text-light);
-    font-size: var(--font-size-sm);
-    line-height: 1.6;
+  .legal-card p:last-child {
+    margin-bottom: 0;
+  }
+
+  .positive-charter-card {
+    border-left: 4px solid #10b981;
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, rgba(16, 185, 129, 0.01) 100%);
   }
 
   .terms-callout-note {
-    background: var(--color-bg);
-    padding: var(--space-md);
+    background: rgba(234, 88, 12, 0.06);
+    border: 1px solid rgba(234, 88, 12, 0.2);
     border-radius: var(--border-radius-sm);
-    border-left: 3px solid var(--color-primary);
+    padding: var(--space-md);
+    margin-top: var(--space-md);
     font-size: var(--font-size-sm);
-    color: var(--color-text-muted);
-    line-height: 1.6;
+    line-height: 1.5;
+  }
+
+  .legal-bullet-list {
+    margin: var(--space-md) 0 0;
+    padding-left: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .legal-bullet-list li {
+    font-size: var(--font-size-sm);
+    color: var(--color-text);
+    line-height: 1.55;
   }
 
   .legal-footer-nav {
+    margin-top: var(--space-2xl);
     text-align: center;
-    padding: var(--space-md) 0 var(--space-xl);
-  }
-
-  @media (max-width: 640px) {
-    .legal-hero {
-      padding: var(--space-xl) var(--space-md);
-    }
-
-    .legal-card {
-      padding: var(--space-lg);
-    }
   }
 </style>

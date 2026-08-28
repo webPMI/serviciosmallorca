@@ -2,6 +2,7 @@
 import "../styles/global.css";
 import ToastContainer from "../components/ToastContainer.astro";
 import BetaBanner from "../components/BetaBanner.astro";
+import CommunityVoiceModal from "../components/CommunityVoiceModal.astro";
 
 export interface Props {
   title: string;
@@ -344,6 +345,9 @@ const shouldLoadAdSense =
     <BetaBanner currentLocale={lang as any} />
 
     <slot />
+
+    <!-- Universal Community Voice & Quality Feedback Modal -->
+    <CommunityVoiceModal currentLocale={lang as any} translations={{}} />
 
     <!-- Loading screen controller (inline, fires before any module JS) -->
     <script is:inline>

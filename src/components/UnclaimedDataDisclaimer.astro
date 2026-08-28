@@ -24,6 +24,7 @@ const texts = {
     reportBtn: "🚩 Reportar dato erróneo",
     verifiedTitle: "👑 Ficha Oficial Gestionada por el Titular",
     verifiedDesc: "Este comercio ha sido formalmente reclamado y verificado por su titular registrado.",
+    unverifiedTag: "⚠️ Sin verificar por titular humano",
   },
   en: {
     badge: "🤖 Public Information Listing (AI-Curated)",
@@ -36,6 +37,7 @@ const texts = {
     reportBtn: "🚩 Report Incorrect Data",
     verifiedTitle: "👑 Official Profile Managed by Verified Owner",
     verifiedDesc: "This business has been formally claimed and verified by its registered owner.",
+    unverifiedTag: "⚠️ Not verified by human owner",
   },
   ca: {
     badge: "🤖 Fitxa d'Informació Pública (Curació IA)",
@@ -48,6 +50,7 @@ const texts = {
     reportBtn: "🚩 Reportar dada errònia",
     verifiedTitle: "👑 Fitxa Oficial Gestionada pel Titular",
     verifiedDesc: "Aquest comerç ha estat formalment reclamat i verificat pel seu titular registrat.",
+    unverifiedTag: "⚠️ Sense verificar per titular humà",
   },
   de: {
     badge: "🤖 Öffentliches Unternehmensprofil (KI-Zusammenstellung)",
@@ -60,6 +63,7 @@ const texts = {
     reportBtn: "🚩 Fehlerhafte Daten melden",
     verifiedTitle: "👑 Offizielles Profil vom verifizierten Inhaber verwaltet",
     verifiedDesc: "Dieses Unternehmen wurde offiziell beansprucht und durch den registrierten Inhaber verifiziert.",
+    unverifiedTag: "⚠️ Nicht vom Inhaber verifiziert",
   },
 };
 
@@ -78,7 +82,7 @@ const t = texts[locale] || texts.es;
     <div class="transparency-notice-box unverified-notice-box" role="region" aria-label={t.title}>
       <div class="notice-header">
         <span class="notice-badge public-badge">{t.badge}</span>
-        <span class="notice-disclaimer-tag">⚠️ No verificado por el titular</span>
+        <span class="notice-disclaimer-tag">{t.unverifiedTag}</span>
       </div>
 
       <h4 class="notice-title">{t.title}</h4>

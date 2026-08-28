@@ -28,12 +28,16 @@ const { service, translations } = Astro.props;
       <input type="hidden" id="claim-service-name" value={service.name} />
 
       <div class="form-group">
-        <label class="form-label" for="claim-name">Nombre y Apellidos del Solicitante</label>
+        <label class="form-label" for="claim-name"
+          >{translations["services.claimApplicantName"] || "Nombre y Apellidos del Solicitante"}</label
+        >
         <input type="text" id="claim-name" class="form-input" required placeholder="Tu nombre" />
       </div>
 
       <div class="form-group">
-        <label class="form-label" for="claim-email">Correo Electrónico de Contacto</label>
+        <label class="form-label" for="claim-email"
+          >{translations["services.claimApplicantEmail"] || "Correo Electrónico de Contacto"}</label
+        >
         <input type="email" id="claim-email" class="form-input" required placeholder="nombre@empresa.com" />
       </div>
 
@@ -64,8 +68,10 @@ const { service, translations } = Astro.props;
       <button type="button" class="modal-close-btn" data-close-modal="delete-modal">&times;</button>
     </div>
     <p class="modal-desc">
-      Conforme a la normativa RGPD/LOPD, el titular legítimo puede solicitar la retirada de su ficha en cualquier
-      momento.
+      {
+        translations["services.deleteDesc"] ||
+          "Conforme a la normativa RGPD/LOPD, el titular legítimo puede solicitar la retirada de su ficha en cualquier momento."
+      }
     </p>
 
     <div id="delete-alert-success" class="alert-success" style="display: none;">
@@ -78,7 +84,9 @@ const { service, translations } = Astro.props;
       <input type="hidden" id="delete-service-name" value={service.name} />
 
       <div class="form-group">
-        <label class="form-label" for="delete-email">Correo Electrónico del Solicitante</label>
+        <label class="form-label" for="delete-email"
+          >{translations["services.deleteApplicantEmail"] || "Correo Electrónico del Solicitante"}</label
+        >
         <input type="email" id="delete-email" class="form-input" required placeholder="titular@empresa.com" />
       </div>
 

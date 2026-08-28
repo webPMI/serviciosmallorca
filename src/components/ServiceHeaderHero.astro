@@ -105,7 +105,9 @@ const smartCta = getSmartActionCta(
               data-service-id={service.id}
             >
               <span>📞</span>
-              <span>{locale === "ca" ? "Telefonar" : locale === "en" ? "Call" : "Llamar"}</span>
+              <span>
+                {locale === "ca" ? "Telefonar" : locale === "en" ? "Call" : locale === "de" ? "Anrufen" : "Llamar"}
+              </span>
             </a>
           )
         }
@@ -116,7 +118,17 @@ const smartCta = getSmartActionCta(
           data-service-id={service.id}
         >
           <span>📍</span>
-          <span>{locale === "ca" ? "Com arribar" : locale === "en" ? "Directions" : "Cómo llegar"}</span>
+          <span
+            >{
+              locale === "ca"
+                ? "Com arribar"
+                : locale === "en"
+                  ? "Directions"
+                  : locale === "de"
+                    ? "Anfahrt"
+                    : "Cómo llegar"
+            }</span
+          >
         </a>
         <button
           type="button"

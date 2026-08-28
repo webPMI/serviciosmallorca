@@ -91,7 +91,7 @@ const honorJsonLd = {
           <span>{translations["honor.exploreLists"] || "🏆 Explorar Todos los Gremios"}</span>
         </a>
         <a href="#guia-ecosistema" class="btn btn-secondary">
-          <span>🌐 ¿Cómo Funciona la Plataforma?</span>
+          <span>{translations["honor.howItWorks"] || "🌐 ¿Cómo Funciona la Plataforma?"}</span>
         </a>
       </div>
     </header>
@@ -125,7 +125,16 @@ const honorJsonLd = {
       </div>
 
       <!-- Quick Jump Navigation Bar -->
-      <nav class="quick-jump-wrapper" aria-label="Acceso rápido por gremio">
+      <nav
+        class="quick-jump-wrapper"
+        aria-label={locale === "de"
+          ? "Schnellnavigation nach Gilde"
+          : locale === "ca"
+            ? "Accés ràpid per gremi"
+            : locale === "en"
+              ? "Quick jump by guild"
+              : "Acceso rápido por gremio"}
+      >
         <div class="quick-jump-bar" id="honor-quick-jump">
           {
             HONOR_LISTS.map((cat) => (

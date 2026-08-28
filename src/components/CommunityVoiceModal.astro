@@ -1,0 +1,617 @@
+---
+import { getLangPrefix, type Locale } from "../i18n";
+
+export interface Props {
+  currentLocale: Locale;
+  translations: Record<string, string>;
+}
+
+const { currentLocale, translations } = Astro.props;
+const prefix = getLangPrefix(currentLocale);
+
+const modalTexts = {
+  es: {
+    modalTitle: "Buzón Ciudadano & Feedback de Calidad",
+    modalSubtitle: "¿Qué nos falta, qué podemos mejorar o qué buena experiencia quieres destacar en Mallorca?",
+    tabGoodNews: "🌟 Buena Noticia",
+    tabCorrection: "✏️ Corrección",
+    tabSuggestion: "💡 Sugerencia",
+    tabBug: "🐛 Fallo Técnico",
+    labelTitle: "Título del mensaje",
+    placeholderTitle: "Ej. Excelente trato en la cafetería, o Teléfono desactualizado...",
+    labelDesc: "Detalle o propuesta",
+    placeholderDesc: "Cuéntanos con detalle qué ocurre o qué sugerencia tienes para mejorar el directorio...",
+    labelName: "Tu nombre (opcional)",
+    placeholderName: "Ej. Joan de Palma",
+    labelEmail: "Correo de contacto (opcional)",
+    placeholderEmail: "nombre@ejemplo.com",
+    btnSubmit: "Enviar Aportación",
+    btnSubmitting: "Enviando...",
+    successTitle: "¡Muchísimas gracias por tu aportación!",
+    successDesc: "Tu mensaje ha sido registrado. Nuestro equipo y agentes lo revisarán con total dedicación.",
+    btnClose: "Cerrar",
+    errorGeneric: "Ocurrió un error al enviar tu propuesta. Por favor, inténtalo de nuevo.",
+  },
+  en: {
+    modalTitle: "Community Voice & Quality Feedback",
+    modalSubtitle:
+      "What are we missing, what can we improve, or what great local experience would you like to highlight?",
+    tabGoodNews: "🌟 Good News",
+    tabCorrection: "✏️ Correction",
+    tabSuggestion: "💡 Suggestion",
+    tabBug: "🐛 Bug Report",
+    labelTitle: "Subject / Title",
+    placeholderTitle: "E.g. Great craftsmanship, or outdated contact phone...",
+    labelDesc: "Details or suggestion",
+    placeholderDesc: "Describe what happened or how we can make the Mallorca directory better...",
+    labelName: "Your name (optional)",
+    placeholderName: "E.g. Alex from Sóller",
+    labelEmail: "Contact email (optional)",
+    placeholderEmail: "name@example.com",
+    btnSubmit: "Submit Feedback",
+    btnSubmitting: "Sending...",
+    successTitle: "Thank you for your valuable feedback!",
+    successDesc: "Your submission has been recorded. Our team and intelligence agents will review it carefully.",
+    btnClose: "Close",
+    errorGeneric: "An error occurred while submitting. Please try again.",
+  },
+  ca: {
+    modalTitle: "Bústia Ciutadana & Veu de la Comunitat",
+    modalSubtitle: "Què ens falta, què podem millorar o quina bona experiència vols destacar a Mallorca?",
+    tabGoodNews: "🌟 Bona Notícia",
+    tabCorrection: "✏️ Correcció",
+    tabSuggestion: "💡 Suggeriment",
+    tabBug: "🐛 Fallada Tècnica",
+    labelTitle: "Títol del missatge",
+    placeholderTitle: "Ex. Servei excel·lent al taller, o telèfon desactualitzat...",
+    labelDesc: "Detall o proposta",
+    placeholderDesc: "Explica'ns amb detall què passa o quina proposta tens per millorar el directori...",
+    labelName: "El teu nom (opcional)",
+    placeholderName: "Ex. Maria de Manacor",
+    labelEmail: "Correu de contacte (opcional)",
+    placeholderEmail: "nom@exemple.cat",
+    btnSubmit: "Enviar Aportació",
+    btnSubmitting: "Enviant...",
+    successTitle: "Moltes gràcies per la teva col·laboració!",
+    successDesc: "El teu missatge s'ha registrat. El nostre equip el revisarà amb dedicació.",
+    btnClose: "Tancar",
+    errorGeneric: "Hi ha hagut un error en enviar la teva proposta. Torna-ho a provar.",
+  },
+  de: {
+    modalTitle: "Bürger-Feedback & Community-Stimme",
+    modalSubtitle: "Was fehlt Ihnen, was können wir verbessern oder welche positive Erfahrung möchten Sie teilen?",
+    tabGoodNews: "🌟 Gute Nachricht",
+    tabCorrection: "✏️ Korrektur",
+    tabSuggestion: "💡 Vorschlag",
+    tabBug: "🐛 Technischer Fehler",
+    labelTitle: "Titel / Betreff",
+    placeholderTitle: "Z.B. Hervorragender Service, oder veraltete Telefonnummer...",
+    labelDesc: "Beschreibung oder Vorschlag",
+    placeholderDesc: "Beschreiben Sie Ihr Anliegen oder Ihren Hinweis zur Plattform...",
+    labelName: "Ihr Name (optional)",
+    placeholderName: "Z.B. Thomas aus Palma",
+    labelEmail: "E-Mail-Adresse (optional)",
+    placeholderEmail: "name@beispiel.de",
+    btnSubmit: "Hinweis absenden",
+    btnSubmitting: "Wird gesendet...",
+    successTitle: "Vielen Dank für Ihren wertvollen Hinweis!",
+    successDesc: "Ihre Nachricht wurde gespeichert und wird sorgfältig von unserem Team geprüft.",
+    btnClose: "Schließen",
+    errorGeneric: "Beim Absenden ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
+  },
+};
+
+const t = modalTexts[currentLocale] || modalTexts.es;
+---
+
+<div
+  id="community-voice-modal"
+  class="cv-modal-backdrop"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="cv-modal-title"
+  aria-hidden="true"
+>
+  <div class="cv-modal-card card card-glass" role="document">
+    <!-- Header -->
+    <div class="cv-modal-header">
+      <div class="cv-header-text">
+        <h2 id="cv-modal-title" class="cv-title">💬 {t.modalTitle}</h2>
+        <p class="cv-subtitle">{t.modalSubtitle}</p>
+      </div>
+      <button type="button" class="cv-close-btn" id="cv-close-button" aria-label={t.btnClose}> ✕ </button>
+    </div>
+
+    <!-- Feedback Type Tabs -->
+    <div class="cv-type-selector" role="tablist" aria-label="Tipos de mensaje">
+      <button type="button" class="cv-type-tab active" data-type="GOOD_NEWS" role="tab" aria-selected="true">
+        {t.tabGoodNews}
+      </button>
+      <button type="button" class="cv-type-tab" data-type="CORRECTION" role="tab" aria-selected="false">
+        {t.tabCorrection}
+      </button>
+      <button type="button" class="cv-type-tab" data-type="SUGGESTION" role="tab" aria-selected="false">
+        {t.tabSuggestion}
+      </button>
+      <button type="button" class="cv-type-tab" data-type="BUG_REPORT" role="tab" aria-selected="false">
+        {t.tabBug}
+      </button>
+    </div>
+
+    <!-- Target Context Indicator (when prefilled) -->
+    <div id="cv-target-context" class="cv-target-badge" style="display: none;">
+      <span>📍 Comercio relacionado: <strong id="cv-target-name"></strong></span>
+    </div>
+
+    <!-- Form -->
+    <form id="cv-feedback-form" class="cv-form">
+      <input type="hidden" id="cv-type-input" name="type" value="GOOD_NEWS" />
+      <input type="hidden" id="cv-service-slug" name="targetServiceSlug" value="" />
+      <input type="hidden" id="cv-service-name" name="targetServiceName" value="" />
+      <input type="hidden" id="cv-zone" name="zone" value="" />
+
+      <!-- Anti-Bot Honeypot -->
+      <div class="cv-hp-field" aria-hidden="true">
+        <label for="cv-hp-input">Leave this field empty</label>
+        <input type="text" id="cv-hp-input" name="honeypot" tabindex="-1" autocomplete="off" />
+      </div>
+
+      <div class="form-group">
+        <label for="cv-title-input" class="form-label">{t.labelTitle} <span class="required">*</span></label>
+        <input
+          type="text"
+          id="cv-title-input"
+          name="title"
+          class="form-control"
+          placeholder={t.placeholderTitle}
+          minlength="5"
+          maxlength="120"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="cv-desc-input" class="form-label">{t.labelDesc} <span class="required">*</span></label>
+        <textarea
+          id="cv-desc-input"
+          name="description"
+          class="form-control cv-textarea"
+          rows="4"
+          placeholder={t.placeholderDesc}
+          minlength="15"
+          maxlength="2000"
+          required></textarea>
+        <div class="cv-char-counter"><span id="cv-char-count">0</span> / 2000</div>
+      </div>
+
+      <div class="form-row-2">
+        <div class="form-group">
+          <label for="cv-author-name" class="form-label">{t.labelName}</label>
+          <input
+            type="text"
+            id="cv-author-name"
+            name="authorName"
+            class="form-control"
+            placeholder={t.placeholderName}
+            maxlength="80"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="cv-author-email" class="form-label">{t.labelEmail}</label>
+          <input
+            type="email"
+            id="cv-author-email"
+            name="authorEmail"
+            class="form-control"
+            placeholder={t.placeholderEmail}
+            maxlength="150"
+          />
+        </div>
+      </div>
+
+      <div id="cv-error-message" class="cv-error-banner" style="display: none;"></div>
+
+      <div class="cv-modal-footer">
+        <button type="button" class="btn btn-secondary" id="cv-cancel-button">
+          {t.btnClose}
+        </button>
+        <button type="submit" class="btn btn-primary" id="cv-submit-button">
+          <span id="cv-btn-text">{t.btnSubmit}</span>
+          <span id="cv-spinner" class="cv-spinner" style="display: none;">⏳</span>
+        </button>
+      </div>
+    </form>
+
+    <!-- Success View -->
+    <div id="cv-success-view" class="cv-success-box" style="display: none;">
+      <div class="success-icon">🎉</div>
+      <h3>{t.successTitle}</h3>
+      <p>{t.successDesc}</p>
+      <button type="button" class="btn btn-primary" id="cv-success-done-btn">
+        {t.btnClose}
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  function initCommunityVoiceModal() {
+    const modal = document.getElementById("community-voice-modal");
+    if (!modal) return;
+
+    const closeBtn = document.getElementById("cv-close-button");
+    const cancelBtn = document.getElementById("cv-cancel-button");
+    const successDoneBtn = document.getElementById("cv-success-done-btn");
+    const form = document.getElementById("cv-feedback-form") as HTMLFormElement;
+    const typeInput = document.getElementById("cv-type-input") as HTMLInputElement;
+    const descInput = document.getElementById("cv-desc-input") as HTMLTextAreaElement;
+    const charCount = document.getElementById("cv-char-count");
+    const errorBanner = document.getElementById("cv-error-message");
+    const successView = document.getElementById("cv-success-view");
+    const typeTabs = document.querySelectorAll(".cv-type-tab");
+    const submitBtn = document.getElementById("cv-submit-button") as HTMLButtonElement;
+    const btnText = document.getElementById("cv-btn-text");
+    const spinner = document.getElementById("cv-spinner");
+    const targetBadge = document.getElementById("cv-target-context");
+    const targetNameSpan = document.getElementById("cv-target-name");
+    const slugInput = document.getElementById("cv-service-slug") as HTMLInputElement;
+    const nameInput = document.getElementById("cv-service-name") as HTMLInputElement;
+    const zoneInput = document.getElementById("cv-zone") as HTMLInputElement;
+
+    function openModal(options: { type?: string; slug?: string; name?: string; zone?: string } = {}) {
+      if (options.type) {
+        typeInput.value = options.type;
+        typeTabs.forEach((tab) => {
+          const isActive = tab.getAttribute("data-type") === options.type;
+          tab.classList.toggle("active", isActive);
+          tab.setAttribute("aria-selected", isActive ? "true" : "false");
+        });
+      }
+
+      if (options.slug && options.name) {
+        slugInput.value = options.slug;
+        nameInput.value = options.name;
+        zoneInput.value = options.zone || "";
+        if (targetNameSpan) targetNameSpan.textContent = options.name;
+        if (targetBadge) targetBadge.style.display = "block";
+      } else {
+        slugInput.value = "";
+        nameInput.value = "";
+        zoneInput.value = "";
+        if (targetBadge) targetBadge.style.display = "none";
+      }
+
+      form.style.display = "block";
+      if (successView) successView.style.display = "none";
+      if (errorBanner) errorBanner.style.display = "none";
+
+      modal.classList.add("open");
+      modal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+      const titleInput = document.getElementById("cv-title-input");
+      if (titleInput) titleInput.focus();
+    }
+
+    function closeModal() {
+      modal.classList.remove("open");
+      modal.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+      form.reset();
+      if (charCount) charCount.textContent = "0";
+    }
+
+    // Tab switcher
+    typeTabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        const type = tab.getAttribute("data-type") || "GOOD_NEWS";
+        typeInput.value = type;
+        typeTabs.forEach((t) => {
+          t.classList.remove("active");
+          t.setAttribute("aria-selected", "false");
+        });
+        tab.classList.add("active");
+        tab.setAttribute("aria-selected", "true");
+      });
+    });
+
+    // Character counter
+    if (descInput && charCount) {
+      descInput.addEventListener("input", () => {
+        charCount.textContent = String(descInput.value.length);
+      });
+    }
+
+    // Submit handler
+    if (form) {
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        if (errorBanner) errorBanner.style.display = "none";
+
+        const formData = new FormData(form);
+        const payload = {
+          type: formData.get("type"),
+          title: formData.get("title"),
+          description: formData.get("description"),
+          authorName: formData.get("authorName"),
+          authorEmail: formData.get("authorEmail"),
+          targetServiceSlug: formData.get("targetServiceSlug") || undefined,
+          targetServiceName: formData.get("targetServiceName") || undefined,
+          zone: formData.get("zone") || undefined,
+          honeypot: formData.get("honeypot") || undefined,
+        };
+
+        submitBtn.disabled = true;
+        if (btnText) btnText.style.display = "none";
+        if (spinner) spinner.style.display = "inline";
+
+        try {
+          const res = await fetch("/api/feedback/submit", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload),
+          });
+
+          const data = await res.json();
+          if (res.ok && data.ok) {
+            form.style.display = "none";
+            if (successView) successView.style.display = "block";
+          } else {
+            if (errorBanner) {
+              errorBanner.textContent = data.message || "Error al enviar la aportación.";
+              errorBanner.style.display = "block";
+            }
+          }
+        } catch {
+          if (errorBanner) {
+            errorBanner.textContent = "Error de conexión. Inténtalo de nuevo.";
+            errorBanner.style.display = "block";
+          }
+        } finally {
+          submitBtn.disabled = false;
+          if (btnText) btnText.style.display = "inline";
+          if (spinner) spinner.style.display = "none";
+        }
+      });
+    }
+
+    if (closeBtn) closeBtn.addEventListener("click", closeModal);
+    if (cancelBtn) cancelBtn.addEventListener("click", closeModal);
+    if (successDoneBtn) successDoneBtn.addEventListener("click", closeModal);
+
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) closeModal();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && modal.classList.contains("open")) {
+        closeModal();
+      }
+    });
+
+    // Expose global opener
+    (window as any).openCommunityVoiceModal = openModal;
+  }
+
+  document.addEventListener("DOMContentLoaded", initCommunityVoiceModal);
+  document.addEventListener("astro:page-load", initCommunityVoiceModal);
+</script>
+
+<style>
+  .cv-modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(8px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    padding: var(--space-md);
+    box-sizing: border-box;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+  }
+
+  .cv-modal-backdrop.open {
+    display: flex;
+    opacity: 1;
+  }
+
+  .cv-modal-card {
+    width: 100%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    background: var(--color-surface);
+    border: 1px solid var(--color-surface-border);
+    border-radius: var(--border-radius-lg);
+    padding: clamp(var(--space-md), 4vw, var(--space-xl));
+    box-shadow: var(--shadow-xl);
+    position: relative;
+    box-sizing: border-box;
+  }
+
+  .cv-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--space-md);
+  }
+
+  .cv-title {
+    font-size: var(--font-size-xl);
+    font-weight: 800;
+    color: var(--color-text);
+    margin: 0 0 4px;
+  }
+
+  .cv-subtitle {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-light);
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  .cv-close-btn {
+    background: none;
+    border: none;
+    color: var(--color-text-light);
+    font-size: 1.4rem;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: var(--border-radius-sm);
+  }
+
+  .cv-close-btn:hover {
+    color: var(--color-text);
+    background: var(--color-surface-border);
+  }
+
+  /* Type Selector Tabs */
+  .cv-type-selector {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: var(--space-xs);
+    margin-bottom: var(--space-md);
+  }
+
+  .cv-type-tab {
+    background: var(--color-bg);
+    border: 1px solid var(--color-surface-border);
+    padding: 8px 10px;
+    border-radius: var(--border-radius-md);
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--color-text-light);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: center;
+  }
+
+  .cv-type-tab:hover {
+    border-color: var(--color-primary);
+    color: var(--color-text);
+  }
+
+  .cv-type-tab.active {
+    background: var(--color-primary);
+    color: #fff;
+    border-color: var(--color-primary);
+    box-shadow: 0 2px 8px rgba(234, 88, 12, 0.3);
+  }
+
+  .cv-target-badge {
+    background: rgba(52, 152, 219, 0.1);
+    border: 1px solid rgba(52, 152, 219, 0.3);
+    border-radius: var(--border-radius-sm);
+    padding: 6px 12px;
+    font-size: 0.82rem;
+    margin-bottom: var(--space-md);
+    color: var(--color-text);
+  }
+
+  .cv-hp-field {
+    display: none;
+  }
+
+  .form-group {
+    margin-bottom: var(--space-md);
+  }
+
+  .form-label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: var(--color-text);
+  }
+
+  .required {
+    color: #e74c3c;
+  }
+
+  .form-control {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid var(--color-surface-border);
+    border-radius: var(--border-radius-md);
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-size: var(--font-size-base);
+    box-sizing: border-box;
+    font-family: inherit;
+  }
+
+  .form-control:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.15);
+  }
+
+  .cv-textarea {
+    resize: vertical;
+  }
+
+  .cv-char-counter {
+    font-size: 0.72rem;
+    color: var(--color-text-light);
+    text-align: right;
+    margin-top: 4px;
+  }
+
+  .form-row-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-md);
+  }
+
+  .cv-error-banner {
+    background: rgba(231, 76, 60, 0.1);
+    border: 1px solid #e74c3c;
+    color: #e74c3c;
+    padding: 8px 12px;
+    border-radius: var(--border-radius-sm);
+    font-size: 0.85rem;
+    margin-bottom: var(--space-md);
+  }
+
+  .cv-modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--space-sm);
+    margin-top: var(--space-lg);
+  }
+
+  .cv-success-box {
+    text-align: center;
+    padding: var(--space-xl) var(--space-md);
+  }
+
+  .success-icon {
+    font-size: 3.5rem;
+    margin-bottom: var(--space-sm);
+  }
+
+  .cv-success-box h3 {
+    font-size: var(--font-size-xl);
+    font-weight: 800;
+    margin-bottom: var(--space-xs);
+  }
+
+  .cv-success-box p {
+    font-size: var(--font-size-base);
+    color: var(--color-text-light);
+    margin-bottom: var(--space-lg);
+    line-height: 1.5;
+  }
+
+  @media (max-width: 640px) {
+    .form-row-2 {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
