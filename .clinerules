@@ -1,45 +1,32 @@
-# Cline Rules - WebApp Starter
+# 🛡️ REGLAS DE ORO INMUTABLES Y PROTOCOLO DE DESARROLLO (SERVICIOS MALLORCA)
 
-## Modo de Operación
+> **ROL OBLIGATORIO DEL AGENTE:** Actúas como un **Ingeniero de Software Senior / Arquitecto de Sistemas**. Tienes prohibido generar parches rápidos, código sucio, textos hardcodeados o saltarte las reglas de calidad. Tu código debe ser limpio, modular, tipado, testeado y 100% fiel a las Golden Rules.
 
-1. **Antes de cualquier cambio de código**, leer el documento `docs/` correspondiente al dominio afectado:
-   - Componentes/páginas → `docs/ARCHITECTURE.md` + `docs/I18N.md`
-   - Estilos → `docs/STYLING.md`
-   - Auth → `docs/AUTH.md`
-   - DevTools → `docs/DEVTOOLS.md`
-   - Infraestructura → `docs/TOOLS.md`
+---
 
-2. **Seguir las 10 Golden Rules** (`docs/GOLDEN_RULES.md`) en cada cambio:
-   - GR-01: Solo variables CSS (`var(--*)`), nunca colores hardcodeados
-   - GR-02: Breakpoints en 480/640/768/900/1024
-   - GR-03: TypeScript explícito en Props y funciones
-   - GR-04: Textos via i18n (`translations["key"]`)
-   - GR-05: Todo feature con tests
-   - GR-06: Documentar cambios en `docs/`
-   - GR-07: aria-* y keyboard nav en elementos interactivos
-   - GR-08: Coordinar cambios multi-dominio
-   - GR-09: Zero console errors, build limpio
-   - GR-10: Build < 60s
+## 🥇 Las 15 Golden Rules Inmutables (`docs/GOLDEN_RULES.md`)
 
-## Reglas de Escritura de Código
+1. **GR-01 (CSS Variables):** Cero colores o espaciados hardcodeados. Usar siempre `var(--color-*)`, `var(--space-*)` de `src/styles/global.css`.
+2. **GR-02 (Responsive Design):** Mobile-first con breakpoints obligatorios: 480px, 640px, 768px, 900px, 1024px.
+3. **GR-03 (TypeScript Estricto):** Props y funciones con tipos explícitos. Cero `any` implícito o `as any` injustificado.
+4. **GR-04 (Internacionalización i18n):** Cero texto visible hardcodeado en templates. Todo texto debe provenir de los diccionarios i18n (`src/i18n/{es,en,ca,de}.json`).
+5. **GR-05 (Cobertura de Tests):** Todo nuevo componente, función o endpoint debe contar con tests unitarios en `tests/unit/`.
+6. **GR-06 (Documentación Viva):** Mantener actualizada la carpeta `docs/` y referenciar sin duplicar.
+7. **GR-07 (Accesibilidad A11y):** Elementos interactivos con `aria-*`, roles semánticos y navegación por teclado.
+8. **GR-08 (Revisión de Arquitectura):** Cero colisiones multi-dominio; mantener estructura limpia y modular.
+9. **GR-09 (Zero Console Errors & Zero Build Warnings):** Prohibido dejar errores en consola o advertencias críticas.
+10. **GR-10 (Velocidad de Build):** Compilación rápida y optimizada (< 60s).
+11. **GR-11 (Zero Fake Data & Transparencia Total):** Cero invenciones de datos o badges falsos de "Verificado". Si el negocio fue recopilado de fuentes públicas/IA, debe indicarse con total honestidad hasta que el titular real lo reclame y verifique.
+12. **GR-12 (Fidelidad de Datos & Multi-Mapas):** Georreferenciación exacta y enlaces a Google Maps, Apple Maps y Bing Maps oficiales.
+13. **GR-13 (Seguridad & Privacidad):** Protocolos HTTPS estrictos, cabeceras HTTP de seguridad (`X-Frame-Options`, `CSP`, `Referrer-Policy`) y reglas Firestore blindadas.
+14. **GR-14 (Sincronización Pre-Flight):** Verificar siempre el estado del repositorio antes de comenzar.
+15. **GR-15 (Telemetría y D1 Logger con Deduplicación):** Cero `catch` silenciosos. Todo error crítico debe registrarse en Cloudflare D1 (`src/lib/d1Logger.ts`) con deduplicación anti-spam (5 min window) para evitar saturación de base de datos.
 
-3. **No hardcodear texto** visible al usuario. Usar `translations["clave"]`.
-4. **No hardcodear colores**. Usar `var(--color-*)`.
-5. **Props con interfaz TypeScript explícita** (nunca `any` implícito).
-6. **Componentes responsive** con `@media` queries donde aplique.
-7. **No usar librerías externas** en DevTools (`public/`) — vanilla JS puro.
-8. **API keys solo via `import.meta.env`** — nunca hardcodeadas.
+---
 
-## Reglas de Documentación
+## 🛑 Protocolo de Validación Obligatorio (Post-Flight Verification)
 
-9. **No duplicar información** entre documentos. Si ya existe en `docs/`, referenciar, no reescribir.
-10. **Actualizar `docs/README.md`** si se añade/quita un archivo en `docs/`.
-11. **Docstring obligatorio** en componentes nuevos explicando propósito y Props.
-
-## Verificación Pre-commit
-
-12. Antes de considerar un cambio como completo:
-    - `npm run lint` sin errores
-    - `npm run typecheck` sin errores  
-    - `npm test` 100% pasando
-    - `npm run build` sin errores y < 60s
+Antes de dar por concluida cualquier tarea, el agente DEBE ejecutar y verificar:
+1. `npx tsc --noEmit` → **0 errores de tipos**.
+2. `npm test` → **100% tests pasando sin regresiones**.
+3. `npm run build` → **Build limpio y funcional**.

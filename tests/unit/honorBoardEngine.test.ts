@@ -132,18 +132,43 @@ describe("honorBoardEngine · Cuadro de Honor y Subastas de Reconocimiento", () 
       });
     });
 
-    it("provee datos de ejemplo verificados en getDefaultHonorSpots", () => {
+    it("inicia con listas limpias (Zero Fake Data) listas para pujas reales desde 1.00€", () => {
       const spots = getDefaultHonorSpots();
-      expect(spots["elite-general"].length).toBeGreaterThan(0);
-      expect(spots["artesanos-sabor"].length).toBeGreaterThan(0);
+      expect(spots["elite-general"]).toEqual([]);
+      expect(spots["artesanos-sabor"]).toEqual([]);
     });
   });
 
   describe("isBusinessHonorRecognized (Detección para Badges Frontend)", () => {
-    it("detecta comercios honoríficos configurados por defecto", () => {
-      const res = isBusinessHonorRecognized("forn-sant-francesc-inca");
+    it("detecta comercios honoríficos cuando existen candidaturas reales", () => {
+      const customCatalog = {
+        ...getDefaultHonorSpots(),
+        "artesanos-sabor": [
+          {
+            id: "h-sabor-real",
+            position: 1,
+            serviceId: "forn-sant-francesc-inca",
+            serviceName: "Forn Sant Francesc Inca",
+            serviceSlug: "forn-sant-francesc-inca",
+            category: "gastronomia-restaurantes",
+            zone: "inca",
+            honorTitle: {
+              es: "Maestro Pastelero",
+              en: "Master Pastry",
+              ca: "Mestre Pastisser",
+              de: "Meister-Konditorei",
+            },
+            currentBidEuros: 1.0,
+            sponsorName: "Comunidad Inca",
+            nominatedAt: "2026-08-28T00:00:00Z",
+            confidenceScore: 100,
+            isVerified: true,
+          },
+        ],
+      };
+      const res = isBusinessHonorRecognized("forn-sant-francesc-inca", customCatalog);
       expect(res.recognized).toBe(true);
-      expect(res.sponsorName).toBe("Vecinos del Raiguer");
+      expect(res.sponsorName).toBe("Comunidad Inca");
       expect(res.position).toBe(1);
     });
 

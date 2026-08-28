@@ -229,129 +229,16 @@ export function rankHonorList(entries: HonorSpotEntry[]): HonorSpotEntry[] {
 }
 
 /**
- * Devuelve el catálogo inicial de puestos de honor comunitarios con negocios verificados de Mallorca.
+ * Devuelve el catálogo inicial de puestos de honor comunitarios (Base limpia: Zero Fake Data).
+ * Las posiciones se asignan exclusivamente mediante pujas e impulsos comunitarios reales desde 1.00€.
  */
 export function getDefaultHonorSpots(): Record<HonorCategory, HonorSpotEntry[]> {
   return {
-    "elite-general": [
-      {
-        id: "h-elite-1",
-        position: 1,
-        serviceId: "puerto-portals-marina",
-        serviceName: "Puerto Portals Marina",
-        serviceSlug: "puerto-portals-marina",
-        category: "nautica-charter",
-        zone: "calvia",
-        honorTitle: {
-          es: "Referente Internacional de Excelencia Balear",
-          en: "International Benchmark of Balearic Excellence",
-          ca: "Referent Internacional d'Excel·lència Balear",
-          de: "Internationaler Maßstab für Balearen-Exzellenz",
-        },
-        currentBidEuros: 12.0,
-        sponsorName: "Comunidad Náutica Balear",
-        sponsorMessage: "Más de 35 años proyectando el prestigio y la sostenibilidad del litoral mallorquín.",
-        nominatedAt: "2026-08-01T10:00:00Z",
-        confidenceScore: 100,
-        isVerified: true,
-        avatarImage: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=600&q=80",
-      },
-      {
-        id: "h-elite-2",
-        position: 2,
-        serviceId: "bodegas-macia-batle",
-        serviceName: "Bodegas Macià Batle",
-        serviceSlug: "bodegas-macia-batle",
-        category: "gastronomia-restaurantes",
-        zone: "santa-maria-del-cami",
-        honorTitle: {
-          es: "Guardián de la Tradición Vinícola Mallorquina",
-          en: "Guardian of Mallorcan Winemaking Heritage",
-          ca: "Guardià de la Tradició Vinícola Mallorquina",
-          de: "Hüter der mallorquinischen Weinbautradition",
-        },
-        currentBidEuros: 9.0,
-        sponsorName: "Amigos del Vino de Binissalem",
-        sponsorMessage: "Pasión artesanal y arraigo a la tierra desde 1851.",
-        nominatedAt: "2026-08-05T12:00:00Z",
-        confidenceScore: 98,
-        isVerified: true,
-        avatarImage: "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=600&q=80",
-      },
-    ],
+    "elite-general": [],
     "maestros-instalaciones": [],
-    "artesanos-sabor": [
-      {
-        id: "h-sabor-1",
-        position: 1,
-        serviceId: "forn-sant-francesc-inca",
-        serviceName: "Forn Sant Francesc Inca",
-        serviceSlug: "forn-sant-francesc-inca",
-        category: "gastronomia-restaurantes",
-        zone: "inca",
-        honorTitle: {
-          es: "Maestro Pastelero y Ensaimada de Autor",
-          en: "Master Pastry & Signature Ensaimada",
-          ca: "Mestre Pastisser i Ensaïmada d'Autor",
-          de: "Meister-Konditorei & Ensaimada-Kunst",
-        },
-        currentBidEuros: 8.0,
-        sponsorName: "Vecinos del Raiguer",
-        sponsorMessage: "Premio a la mejor ensaimada del mundo y amor por el producto tradicional.",
-        nominatedAt: "2026-08-10T09:30:00Z",
-        confidenceScore: 100,
-        isVerified: true,
-        avatarImage: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80",
-      },
-    ],
-    "excelencia-nautica": [
-      {
-        id: "h-nautica-1",
-        position: 1,
-        serviceId: "rib-club-mallorca",
-        serviceName: "Rib Club Mallorca",
-        serviceSlug: "rib-club-mallorca",
-        category: "nautica-charter",
-        zone: "palma",
-        honorTitle: {
-          es: "Innovación en Navegación y Club Náutico Flexible",
-          en: "Innovation in Flexible Yachting & Boat Club",
-          ca: "Innovació en Navegació i Club Nàutic Flexible",
-          de: "Innovation im flexiblen Bootssport",
-        },
-        currentBidEuros: 6.0,
-        sponsorName: "Socios Navegantes Palma",
-        sponsorMessage: "Accesibilidad al mar con flota moderna y atención premium.",
-        nominatedAt: "2026-08-12T15:00:00Z",
-        confidenceScore: 95,
-        isVerified: true,
-        avatarImage: "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=600&q=80",
-      },
-    ],
-    "bienestar-salud": [
-      {
-        id: "h-bienestar-1",
-        position: 1,
-        serviceId: "palma-sport-tennis-club",
-        serviceName: "Palma Sport & Tennis Club",
-        serviceSlug: "palma-sport-tennis-club",
-        category: "spas-bienestar",
-        zone: "palma",
-        honorTitle: {
-          es: "Emblema del Deporte y la Salud en Santa Catalina",
-          en: "Emblem of Sport & Health in Santa Catalina",
-          ca: "Emblema de l'Esport i la Salut a Santa Catalina",
-          de: "Emblem für Sport und Gesundheit in Santa Catalina",
-        },
-        currentBidEuros: 7.0,
-        sponsorName: "Comunidad de Vida Saludable",
-        sponsorMessage: "Instalaciones históricas convertidas en templo del bienestar moderno.",
-        nominatedAt: "2026-08-15T08:00:00Z",
-        confidenceScore: 98,
-        isVerified: true,
-        avatarImage: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=600&q=80",
-      },
-    ],
+    "artesanos-sabor": [],
+    "excelencia-nautica": [],
+    "bienestar-salud": [],
     "emprendimientos-emergentes": [],
   };
 }
@@ -426,7 +313,10 @@ export interface ProcessBidResult {
 /**
  * Comprueba si un negocio está actualmente reconocido en alguna de las listas del Cuadro de Honor.
  */
-export function isBusinessHonorRecognized(serviceId: string): {
+export function isBusinessHonorRecognized(
+  serviceSlugOrId: string,
+  spotsCatalog: Record<HonorCategory, HonorSpotEntry[]> = getDefaultHonorSpots(),
+): {
   recognized: boolean;
   sponsorName?: string;
   sponsorMessage?: string;
@@ -435,9 +325,8 @@ export function isBusinessHonorRecognized(serviceId: string): {
   position?: number;
   currentBidEuros?: number;
 } {
-  const defaultSpots = getDefaultHonorSpots();
-  for (const [catKey, spots] of Object.entries(defaultSpots)) {
-    const found = spots.find((s) => s.serviceId === serviceId);
+  for (const [catKey, spots] of Object.entries(spotsCatalog)) {
+    const found = spots.find((s) => s.serviceId === serviceSlugOrId || s.serviceSlug === serviceSlugOrId);
     if (found) {
       return {
         recognized: true,

@@ -28,8 +28,14 @@ describe("📱 RESPONSIVE DESIGN & MOBILE VIEWPORTS (GR-02)", () => {
     expect(globalCss).toContain(".grid-auto");
   });
 
-  it("debe garantizar grid fluido y media queries móviles en cuadro-de-honor.astro", () => {
-    expect(cuadroHonorAstro).toContain("minmax(min(100%, 280px), 1fr)");
+  const honorCategorySectionAstro = fs.readFileSync(
+    path.resolve(process.cwd(), "src/components/HonorCategorySection.astro"),
+    "utf-8",
+  );
+
+  it("debe garantizar grid fluido y media queries móviles en cuadro-de-honor y HonorCategorySection", () => {
+    expect(honorCategorySectionAstro).toContain("minmax(min(100%, 280px), 1fr)");
+    expect(honorCategorySectionAstro).toContain("@media (max-width: 640px)");
     expect(cuadroHonorAstro).toContain("@media (max-width: 640px)");
     expect(cuadroHonorAstro).toContain("@media (max-width: 480px)");
   });

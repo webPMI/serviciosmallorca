@@ -4,7 +4,7 @@ import Navbar from "../../../components/Navbar.astro";
 import Footer from "../../../components/Footer.astro";
 import ServiceCard from "../../../components/ServiceCard.astro";
 import AdSenseSlot from "../../../components/AdSenseSlot.astro";
-import { getActiveCategories } from "../../../data/categories";
+import { getActiveCategories, CATEGORIES } from "../../../data/categories";
 import { MALLORCA_ZONES } from "../../../data/zones";
 import { SERVICES } from "../../../data/services";
 import { getLocaleFromUrl, loadTranslations, getLangPrefix, type Locale } from "../../../i18n";
@@ -16,6 +16,20 @@ const translations = await loadTranslations(locale);
 const prefix = getLangPrefix(locale);
 
 const activeCategories = getActiveCategories(SERVICES);
+
+// Count active services per category
+const categoryCountMap = new Map<string, number>();
+SERVICES.filter((s) => s.status !== "permanently_closed").forEach((s) => {
+  if (s.category) categoryCountMap.set(s.category, (categoryCountMap.get(s.category) || 0) + 1);
+  if (s.secondaryCategories && Array.isArray(s.secondaryCategories)) {
+    s.secondaryCategories.forEach((sec) => categoryCountMap.set(sec, (categoryCountMap.get(sec) || 0) + 1));
+  }
+});
+
+// Sort active categories alphabetically with counts
+const sortedCategories = CATEGORIES.filter(
+  (cat) => categoryCountMap.has(cat.id) && (categoryCountMap.get(cat.id) || 0) > 0,
+).sort((a, b) => (a.name[locale] || a.name.es).localeCompare(b.name[locale] || b.name.es, locale));
 
 // Query parameters from URL for initial SSR rendering
 const selectedCategory = Astro.url.searchParams.get("categoria") || "";
@@ -83,26 +97,27 @@ const initialFilteredServices = SERVICES.filter((service) => {
           >
         </div>
 
-        <!-- Category Dropdown (Only populated with active categories) -->
-        {
-          activeCategories.length > 0 && (
-            <div class="filter-group">
-              <select
-                id="category-filter-select"
-                name="categoria"
-                class="select-field"
-                aria-label="Filtrar por categoría"
-              >
-                <option value="">{translations["services.allCategories"]}</option>
-                {activeCategories.map((cat) => (
+        <!-- Category Dropdown (Sorted alphabetically with exact real counts) -->
+        <div class="filter-group">
+          <select
+            id="category-filter-select"
+            name="categoria"
+            class="select-field"
+            aria-label={translations["services.allCategories"] || "Filtrar por categoría"}
+          >
+            <option value="">{translations["services.allCategories"] || "Todas las Categorías"}</option>
+            {
+              sortedCategories.map((cat) => {
+                const count = categoryCountMap.get(cat.id) || 0;
+                return (
                   <option value={cat.id} selected={selectedCategory === cat.id}>
-                    {cat.icon} {cat.name[locale]}
+                    {cat.icon} {cat.name[locale] || cat.name.es} ({count})
                   </option>
-                ))}
-              </select>
-            </div>
-          )
-        }
+                );
+              })
+            }
+          </select>
+        </div>
 
         <!-- Zone Dropdown -->
         <div class="filter-group">

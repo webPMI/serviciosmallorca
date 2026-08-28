@@ -1,14 +1,16 @@
 ---
 import { SPORTS_FACILITIES } from "../data/sports/facilities";
-import type { Locale } from "../i18n";
+import { loadTranslations, type Locale } from "../i18n";
 
 interface Props {
   currentLocale: Locale;
+  translations?: Record<string, string>;
   initialActivity?: string;
   initialZone?: string;
 }
 
 const { currentLocale, initialActivity = "all", initialZone = "all" } = Astro.props;
+const t = Astro.props.translations || (await loadTranslations(currentLocale));
 
 const ACTIVITIES: Array<{ id: string; icon: string; name: Record<Locale, string> }> = [
   { id: "all", icon: "🏆", name: { es: "Todas", en: "All", ca: "Totes", de: "Alle" } },
@@ -51,27 +53,14 @@ const ZONES: Array<{ id: string; name: Record<Locale, string> }> = [
   <!-- Interactive View Switcher Header -->
   <div class="sports-header-bar">
     <div class="sports-title-wrap">
-      <div class="badge badge-sports">⚡ Deporte & Bienestar Mallorca</div>
+      <div class="badge badge-sports">{t["sports.badge"] || "⚡ Deporte & Bienestar Mallorca"}</div>
       <h2 class="sports-main-heading">
-        {
-          currentLocale === "de"
-            ? "Sportstätten & Outdoor-Zonen"
-            : currentLocale === "en"
-              ? "Sports Facilities & Outdoor Zones"
-              : currentLocale === "ca"
-                ? "Zones Esportives & Aire Lliure"
-                : "Instalaciones Deportivas & Zonas al Aire Libre"
-        }
+        {t["sports.heading"] || "Instalaciones Deportivas & Zonas al Aire Libre"}
       </h2>
       <p class="sports-subtitle">
         {
-          currentLocale === "de"
-            ? "Finden Sie verifizierte Padel-Plätze, Laufstrecken, Calisthenics-Parks und Yoga-Studios auf Mallorca."
-            : currentLocale === "en"
-              ? "Explore verified padel courts, running tracks, calisthenics parks, and yoga studios across Mallorca."
-              : currentLocale === "ca"
-                ? "Descobreix pistes de pàdel, rutes de running, parcs de cal·listènia i centres de ioga verificats."
-                : "Encuentra pistas de pádel, circuitos de running, parques de calistenia y estudios de yoga verificados en Mallorca."
+          t["sports.subtitle"] ||
+            "Encuentra pistas de pádel, circuitos de running, parques de calistenia y estudios de fitness en Mallorca."
         }
       </p>
     </div>
@@ -87,17 +76,7 @@ const ZONES: Array<{ id: string; name: Record<Locale, string> }> = [
         aria-controls="panel-buscar"
       >
         <span>🔍</span>
-        <span
-          >{
-            currentLocale === "de"
-              ? "Filter & Suchen"
-              : currentLocale === "en"
-                ? "Search & Filters"
-                : currentLocale === "ca"
-                  ? "Cercar & Filtres"
-                  : "Buscar & Filtros"
-          }</span
-        >
+        <span>{t["sports.mode.search"] || "Buscar & Filtros"}</span>
       </button>
       <button
         type="button"
@@ -108,17 +87,7 @@ const ZONES: Array<{ id: string; name: Record<Locale, string> }> = [
         aria-controls="panel-explorar"
       >
         <span>🗺️</span>
-        <span
-          >{
-            currentLocale === "de"
-              ? "Kartenansicht"
-              : currentLocale === "en"
-                ? "Map Explorer"
-                : currentLocale === "ca"
-                  ? "Mapa Interactiu"
-                  : "Explorar Mapa"
-          }</span
-        >
+        <span>{t["sports.mode.map"] || "Explorar Mapa"}</span>
       </button>
       <button
         type="button"
@@ -129,17 +98,7 @@ const ZONES: Array<{ id: string; name: Record<Locale, string> }> = [
         aria-controls="panel-recomendados"
       >
         <span>⭐</span>
-        <span
-          >{
-            currentLocale === "de"
-              ? "Top-Empfehlungen"
-              : currentLocale === "en"
-                ? "Recommended"
-                : currentLocale === "ca"
-                  ? "Recomanats"
-                  : "Recomendados"
-          }</span
-        >
+        <span>{t["sports.mode.recommended"] || "Recomendados"}</span>
       </button>
     </div>
   </div>
@@ -148,17 +107,7 @@ const ZONES: Array<{ id: string; name: Record<Locale, string> }> = [
   <div class="sports-filter-panel card card-glass" id="sports-filter-panel">
     <!-- Activity Chips -->
     <div class="filter-group">
-      <label class="filter-label"
-        >🎯 {
-          currentLocale === "de"
-            ? "Sportart wählen:"
-            : currentLocale === "en"
-              ? "Select Sport:"
-              : currentLocale === "ca"
-                ? "Selecciona esport:"
-                : "Tipo de Actividad:"
-        }</label
-      >
+      <label class="filter-label">🎯 {t["sports.filter.activity"] || "Tipo de Actividad:"}</label>
       <div class="activity-chips-scroll">
         {
           ACTIVITIES.map((act) => (
@@ -178,17 +127,7 @@ const ZONES: Array<{ id: string; name: Record<Locale, string> }> = [
     <!-- Zones Dropdown & Amenity Filters -->
     <div class="filter-secondary-row">
       <div class="zone-selector-wrap">
-        <label for="zone-select" class="filter-label"
-          >📍 {
-            currentLocale === "de"
-              ? "Zone / Region:"
-              : currentLocale === "en"
-                ? "Zone / Area:"
-                : currentLocale === "ca"
-                  ? "Zona / Àrea:"
-                  : "Zona de Mallorca:"
-          }</label
-        >
+        <label for="zone-select" class="filter-label">📍 {t["sports.filter.zone"] || "Zona de Mallorca:"}</label>
         <select id="zone-select" class="sports-select" aria-label="Seleccionar zona de Mallorca">
           {
             ZONES.map((z) => (
@@ -202,112 +141,51 @@ const ZONES: Array<{ id: string; name: Record<Locale, string> }> = [
 
       <!-- Amenity Toggle Pills -->
       <div class="amenities-toggles-wrap">
-        <span class="filter-label"
-          >✨ {
-            currentLocale === "de"
-              ? "Ausstattung:"
-              : currentLocale === "en"
-                ? "Amenities:"
-                : currentLocale === "ca"
-                  ? "Comoditats:"
-                  : "Comodidades Clave:"
-          }</span
-        >
+        <span class="filter-label">✨ {t["sports.filter.amenities"] || "Comodidades Clave:"}</span>
         <div class="toggle-pills-row">
           <button type="button" class="toggle-pill" data-amenity="tieneSombra" aria-pressed="false">
             <span>🌳</span>
-            <span
-              >{
-                currentLocale === "de"
-                  ? "Mit Schatten"
-                  : currentLocale === "en"
-                    ? "Shaded"
-                    : currentLocale === "ca"
-                      ? "Amb ombra"
-                      : "Con Sombra"
-              }</span
-            >
+            <span>{t["sports.amenity.shade"] || "Con Sombra"}</span>
           </button>
           <button type="button" class="toggle-pill" data-amenity="fuenteAgua" aria-pressed="false">
             <span>💧</span>
-            <span
-              >{
-                currentLocale === "de"
-                  ? "Trinkwasser"
-                  : currentLocale === "en"
-                    ? "Water Tap"
-                    : currentLocale === "ca"
-                      ? "Aigua potable"
-                      : "Fuente de Agua"
-              }</span
-            >
+            <span>{t["sports.amenity.water"] || "Fuente de Agua"}</span>
           </button>
           <button type="button" class="toggle-pill" data-amenity="accesiblePmr" aria-pressed="false">
             <span>♿</span>
-            <span
-              >{
-                currentLocale === "de"
-                  ? "Barrierefrei"
-                  : currentLocale === "en"
-                    ? "Accessible"
-                    : currentLocale === "ca"
-                      ? "Accessible PMR"
-                      : "Accesible PMR"
-              }</span
-            >
+            <span>{t["sports.amenity.pmr"] || "Accesible PMR"}</span>
           </button>
           <button type="button" class="toggle-pill" data-amenity="petFriendly" aria-pressed="false">
             <span>🐾</span>
-            <span
-              >{
-                currentLocale === "de"
-                  ? "Hunde erlaubt"
-                  : currentLocale === "en"
-                    ? "Pet Friendly"
-                    : currentLocale === "ca"
-                      ? "Admet mascotes"
-                      : "Pet Friendly"
-              }</span
-            >
+            <span>{t["sports.amenity.pet"] || "Pet Friendly"}</span>
           </button>
           <button type="button" class="toggle-pill" data-amenity="gratis" aria-pressed="false">
             <span>🆓</span>
-            <span
-              >{
-                currentLocale === "de"
-                  ? "Kostenlos"
-                  : currentLocale === "en"
-                    ? "Free Public"
-                    : currentLocale === "ca"
-                      ? "Gratuït"
-                      : "Acceso Gratuito"
-              }</span
-            >
+            <span>{t["sports.amenity.free"] || "Acceso Gratuito"}</span>
           </button>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Map View Container (Hidden initially until toggled or in split mode) -->
+  <!-- Map View Container -->
   <div class="sports-map-view" id="sports-map-view" style="display: none;">
     <div class="map-interactive-wrapper card">
       <div class="map-interactive-header">
         <div class="map-badge-live">🟢 Mapa en Vivo de Instalaciones</div>
-        <span class="map-instructions"
-          >{
+        <span class="map-instructions">
+          {
             currentLocale === "de"
               ? "Klicken Sie auf eine Markierung, um Details zu sehen"
               : currentLocale === "en"
                 ? "Click any pin to inspect sports details"
                 : currentLocale === "ca"
-                  ? "Clica una xarxa per veure detalls"
+                  ? "Clica un punt per veure detalls de la pista"
                   : "Haz clic en un punto para ver detalles de la pista"
-          }</span
-        >
+          }
+        </span>
       </div>
       <div class="map-embed-placeholder" id="sports-interactive-map">
-        <!-- Interactive Multi-Pin Map View -->
         <iframe
           title="Mapa de Instalaciones Deportivas en Mallorca"
           class="sports-iframe-map"
@@ -337,12 +215,14 @@ const ZONES: Array<{ id: string; name: Record<Locale, string> }> = [
             <img src={facility.image} alt={facility.name} class="poi-img" loading="lazy" decoding="async" />
             <div class="poi-overlay-badges">
               <span class={`status-pill status-${facility.status}`}>
-                {facility.status === "open" ? "🟢 Abierto" : "🟡 Mantenimiento"}
+                {facility.status === "open"
+                  ? t["sports.status.open"] || "🟢 Abierto"
+                  : t["sports.status.maintenance"] || "🟡 Mantenimiento"}
               </span>
               {facility.pricing.isFree ? (
-                <span class="price-pill free-pill">🆓 Acceso Libre</span>
+                <span class="price-pill free-pill">{t["sports.pricing.free"] || "🆓 Acceso Libre"}</span>
               ) : (
-                <span class="price-pill paid-pill">💶 Club Oficial</span>
+                <span class="price-pill paid-pill">{t["sports.pricing.club"] || "💶 Club Oficial"}</span>
               )}
             </div>
           </div>
@@ -368,40 +248,40 @@ const ZONES: Array<{ id: string; name: Record<Locale, string> }> = [
 
             <div class="poi-amenities-row">
               {facility.amenities.tieneSombra && (
-                <span class="amenity-mini-badge" title="Dispone de Sombra">
-                  🌳 Sombra
+                <span class="amenity-mini-badge" title={t["sports.amenity.shade"] || "Dispone de Sombra"}>
+                  {t["sports.tag.shade"] || "🌳 Sombra"}
                 </span>
               )}
               {facility.amenities.fuenteAgua && (
-                <span class="amenity-mini-badge" title="Agua Potable">
-                  💧 Agua
+                <span class="amenity-mini-badge" title={t["sports.amenity.water"] || "Agua Potable"}>
+                  {t["sports.tag.water"] || "💧 Agua"}
                 </span>
               )}
               {facility.amenities.accesiblePmr && (
-                <span class="amenity-mini-badge" title="Accesible PMR">
-                  ♿ PMR
+                <span class="amenity-mini-badge" title={t["sports.amenity.pmr"] || "Accesible PMR"}>
+                  {t["sports.tag.pmr"] || "♿ PMR"}
                 </span>
               )}
               {facility.amenities.iluminacionNocturna && (
                 <span class="amenity-mini-badge" title="Iluminación Nocturna">
-                  💡 Iluminada
+                  {t["sports.tag.light"] || "💡 Iluminada"}
                 </span>
               )}
               {facility.amenities.petFriendly && (
-                <span class="amenity-mini-badge" title="Admite Mascotas">
-                  🐾 Pet Friendly
+                <span class="amenity-mini-badge" title={t["sports.amenity.pet"] || "Admite Mascotas"}>
+                  {t["sports.tag.pet"] || "🐾 Mascotas"}
                 </span>
               )}
               {facility.amenities.vestuariosDuchas && (
                 <span class="amenity-mini-badge" title="Vestuarios y Duchas">
-                  🚿 Vestuarios
+                  {t["sports.tag.showers"] || "🚿 Vestuarios"}
                 </span>
               )}
             </div>
 
             {facility.crossSellRecommendations && facility.crossSellRecommendations.length > 0 && (
               <div class="poi-cross-sell">
-                <span class="cross-sell-badge">💡 Plan Deportivo Completo:</span>
+                <span class="cross-sell-badge">{t["sports.plan.title"] || "💡 Plan Deportivo Completo:"}</span>
                 <p class="cross-sell-text">
                   {facility.crossSellRecommendations[0].reason[currentLocale] ||
                     facility.crossSellRecommendations[0].reason.es}
@@ -416,19 +296,19 @@ const ZONES: Array<{ id: string; name: Record<Locale, string> }> = [
                 rel="noopener noreferrer"
                 class="btn btn-secondary btn-sm"
               >
-                <span>🧭 Como Llegar</span>
+                <span>{t["sports.actions.directions"] || "🧭 Cómo Llegar"}</span>
               </a>
 
               {facility.bookingUrl ? (
                 <a href={facility.bookingUrl} target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
-                  <span>📅 Reservar Pista ↗</span>
+                  <span>{t["sports.actions.book"] || "📅 Reservar Pista ↗"}</span>
                 </a>
               ) : facility.contactPhone ? (
                 <a href={`tel:${facility.contactPhone}`} class="btn btn-primary btn-sm">
-                  <span>📞 Llamar</span>
+                  <span>{t["sports.actions.call"] || "📞 Llamar"}</span>
                 </a>
               ) : (
-                <span class="btn btn-sm btn-disabled">✓ Entrada Libre</span>
+                <span class="btn btn-sm btn-disabled">{t["sports.pricing.freeEntry"] || "✓ Entrada Libre"}</span>
               )}
             </div>
           </div>

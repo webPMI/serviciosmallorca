@@ -4,6 +4,7 @@ import Navbar from "../../components/Navbar.astro";
 import Footer from "../../components/Footer.astro";
 import SportsExplorer from "../../components/SportsExplorer.astro";
 import { getLocaleFromUrl, loadTranslations, getLangPrefix, type Locale } from "../../i18n";
+import { SPORTS_FACILITIES } from "../../data/sports/facilities";
 
 export const prerender = false;
 
@@ -19,14 +20,45 @@ const pageTitles: Record<Locale, string> = {
 };
 
 const pageDescriptions: Record<Locale, string> = {
-  es: "Guía interactiva de pistas de pádel, parques de calistenia, circuitos de running y centros deportivos verificados en Mallorca con filtro de sombra y agua.",
-  en: "Interactive guide to padel courts, calisthenics parks, running tracks, and verified sports centers across Mallorca with shade and water filters.",
-  ca: "Guia interactiva de pistes de pàdel, parcs de cal·listènia, circuits de running i centres esportius a Mallorca.",
-  de: "Interaktiver Guide für Padel-Plätze, Calisthenics-Parks, Laufstrecken und geprüfte Sportzentren auf Mallorca.",
+  es: "Guía interactiva de pistas de pádel, parques de calistenia, circuitos de running y centros deportivos de Mallorca con filtro de sombra, agua y mapas oficiales.",
+  en: "Interactive guide to padel courts, calisthenics parks, running tracks, and sports centers across Mallorca with shade, water, and official maps.",
+  ca: "Guia interactiva de pistes de pàdel, parcs de cal·listènia, circuits de running i centres esportius a Mallorca amb filtres d'ombra i aigua.",
+  de: "Interaktiver Guide für Padel-Plätze, Calisthenics-Parks, Laufstrecken und Sportzentren auf Mallorca mit Schatten-, Wasserfiltern und Karten.",
+};
+
+const sportsJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ItemList",
+      name: pageTitles[locale],
+      description: pageDescriptions[locale],
+      numberOfItems: SPORTS_FACILITIES.length,
+      itemListElement: SPORTS_FACILITIES.map((f, idx) => ({
+        "@type": "ListItem",
+        position: idx + 1,
+        name: f.name,
+        description: f.description[locale] || f.description.es,
+        item: {
+          "@type": "SportsActivityLocation",
+          name: f.name,
+          address: f.address,
+          geo: {
+            "@type": "GeoCoordinates",
+            latitude: f.coordinates.lat,
+            longitude: f.coordinates.lng,
+          },
+        },
+      })),
+    },
+  ],
 };
 ---
 
 <BaseLayout title={`${pageTitles[locale]} | Servicios Mallorca`} lang={locale} description={pageDescriptions[locale]}>
+  <!-- Injected SEO Structured Data -->
+  <script type="application/ld+json" set:html={JSON.stringify(sportsJsonLd)} />
+
   <Navbar currentLocale={locale} translations={translations} getLangPrefix={getLangPrefix} />
 
   <main class="container section">
@@ -48,7 +80,7 @@ const pageDescriptions: Record<Locale, string> = {
     </nav>
 
     <!-- Sports Explorer Interactive Component -->
-    <SportsExplorer currentLocale={locale} />
+    <SportsExplorer currentLocale={locale} translations={translations} />
   </main>
 
   <Footer translations={translations} currentLocale={locale} getLangPrefix={getLangPrefix} />

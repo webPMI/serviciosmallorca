@@ -1,0 +1,283 @@
+---
+import type { HonorListDefinition, HonorSpotEntry } from "../lib/honorBoardEngine";
+import { calculateNextBidPrice } from "../lib/honorBoardEngine";
+import HonorSpotCard from "./HonorSpotCard.astro";
+
+interface Props {
+  category: HonorListDefinition;
+  spots: HonorSpotEntry[];
+  locale: string;
+  prefix: string;
+  translations: Record<string, string>;
+}
+
+const { category, spots, locale, prefix, translations } = Astro.props;
+const topBid = spots.length > 0 ? spots[0].currentBidEuros : 0;
+const nextPrice = calculateNextBidPrice(topBid, category.bidIncrementEuros);
+const catTitle = category.title[locale as "es" | "en" | "ca" | "de"] || category.title.es;
+const catSubtitle = category.subtitle[locale as "es" | "en" | "ca" | "de"] || category.subtitle.es;
+---
+
+<section id={`gremio-${category.id}`} class="honor-guild-section" data-cat-id={category.id}>
+  <div class="panel-header card card-glass">
+    <div class="panel-info">
+      <span class="panel-icon">{category.icon}</span>
+      <div>
+        <h3 class="panel-title">{catTitle}</h3>
+        <p class="panel-subtitle">{catSubtitle}</p>
+      </div>
+    </div>
+
+    <div class="panel-bid-info">
+      <div class="price-chip">
+        <span class="price-label">{translations["honor.topCurrent"] || "Puesto #1 Actual:"}</span>
+        <span class="price-val">
+          {topBid > 0 ? `${topBid.toFixed(2)}€` : translations["honor.free"] || "Disponible (1.00€)"}
+        </span>
+      </div>
+
+      <div class="panel-actions-group">
+        <button
+          class="btn btn-accent btn-sm open-nominate-modal"
+          data-cat-id={category.id}
+          data-cat-title={catTitle}
+          data-next-price={nextPrice}
+          data-mode="owner_bid"
+        >
+          {
+            (translations["honor.positionMyBiz"] || "👑 Posicionar mi Negocio ({price}€)").replace(
+              "{price}",
+              nextPrice.toFixed(2),
+            )
+          }
+        </button>
+        <button
+          class="btn btn-secondary btn-sm open-nominate-modal"
+          data-cat-id={category.id}
+          data-cat-title={catTitle}
+          data-next-price="1.00"
+          data-mode="community_boost"
+        >
+          {translations["honor.popularBoost"] || "❤️ Impulso Popular (desde 1€)"}
+        </button>
+      </div>
+    </div>
+  </div>
+
+  {
+    spots.length > 0 ? (
+      <div class="spots-grid">
+        {spots.map((spot) => (
+          <HonorSpotCard
+            spot={spot}
+            catId={category.id}
+            catTitle={catTitle}
+            prefix={prefix}
+            translations={translations}
+            locale={locale}
+          />
+        ))}
+      </div>
+    ) : (
+      <div class="empty-spots card">
+        <div class="empty-icon">🌟</div>
+        <h4>{translations["honor.emptyTitle"] || "¡Sé el primero en liderar este podio!"}</h4>
+        <p>
+          {translations["honor.emptyDesc"] ||
+            "Aún no hay candidaturas en esta lista. Con solo 1.00€ puedes colocar a tu negocio o profesional favorito en el puesto #1."}
+        </p>
+        <div class="empty-actions">
+          <button
+            class="btn btn-primary open-nominate-modal"
+            data-cat-id={category.id}
+            data-cat-title={catTitle}
+            data-next-price="1.00"
+            data-mode="owner_bid"
+          >
+            {translations["honor.inaugurate"] || "🏆 Inaugurar Puesto #1 por 1.00€"}
+          </button>
+        </div>
+      </div>
+    )
+  }
+</section>
+
+<style>
+  .honor-guild-section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-width: 0;
+    margin-bottom: var(--space-3xl);
+    scroll-margin-top: 90px;
+  }
+
+  .panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-lg);
+    margin-bottom: var(--space-lg);
+    border-radius: var(--border-radius-md);
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    border: 1px solid var(--color-surface-border);
+    width: 100%;
+    box-sizing: border-box;
+    min-width: 0;
+  }
+
+  .panel-info {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    flex: 1 1 240px;
+    min-width: 0;
+  }
+
+  .panel-icon {
+    font-size: 2.2rem;
+    flex-shrink: 0;
+  }
+
+  .panel-title {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    margin-bottom: var(--space-3xs);
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .panel-subtitle {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-light);
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .panel-bid-info {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+    min-width: 0;
+    flex: 1 1 auto;
+    justify-content: flex-end;
+  }
+
+  .panel-actions-group {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    flex-wrap: wrap;
+    min-width: 0;
+  }
+
+  .panel-actions-group .btn {
+    white-space: normal;
+    word-break: break-word;
+    text-align: center;
+    line-height: 1.25;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .price-chip {
+    background: rgba(0, 0, 0, 0.25);
+    padding: 6px 12px;
+    border-radius: var(--border-radius-sm);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    min-width: 0;
+  }
+
+  .price-label {
+    font-size: 0.72rem;
+    color: var(--color-text-light);
+  }
+
+  .price-val {
+    font-weight: 800;
+    color: var(--color-accent, #ffd700);
+    font-size: 1.1rem;
+  }
+
+  .spots-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+    gap: var(--space-lg);
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .empty-spots {
+    text-align: center;
+    padding: var(--space-2xl) var(--space-md);
+    background: var(--color-surface);
+    border: 1px dashed var(--color-surface-border);
+    border-radius: var(--border-radius-md);
+  }
+
+  .empty-icon {
+    font-size: 3rem;
+    margin-bottom: var(--space-sm);
+  }
+
+  .empty-actions {
+    margin-top: var(--space-md);
+    display: flex;
+    justify-content: center;
+  }
+
+  @media (max-width: 900px) {
+    .panel-header {
+      flex-direction: column;
+      align-items: stretch;
+      gap: var(--space-md);
+    }
+    .panel-bid-info {
+      width: 100%;
+      justify-content: space-between;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .spots-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-md);
+    }
+    .panel-bid-info {
+      flex-direction: column;
+      align-items: stretch;
+      gap: var(--space-sm);
+      width: 100%;
+    }
+    .panel-actions-group {
+      flex-direction: column;
+      width: 100%;
+      gap: var(--space-2xs);
+    }
+    .panel-actions-group .btn {
+      width: 100%;
+      justify-content: center;
+      white-space: normal;
+      text-align: center;
+      padding: 0.6rem 0.8rem;
+    }
+    .price-chip {
+      align-items: center;
+      text-align: center;
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .panel-info {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--space-xs);
+    }
+  }
+</style>
