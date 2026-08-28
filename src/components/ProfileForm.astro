@@ -41,6 +41,7 @@ const AVATAR_PRESETS = ["👤", "🚀", "⚡", "👑", "🦊", "🦉", "🎨", "
   <!-- Tab Navigation -->
   <div class="profile-tabs">
     <button class="profile-tab active" id="tab-info" data-tab="info"> 👤 Información de Cuenta </button>
+    <button class="profile-tab" id="tab-business" data-tab="business"> 🏢 Mi Negocio & Impulsos </button>
     <button class="profile-tab" id="tab-security" data-tab="security"> 🔐 Seguridad </button>
   </div>
 
@@ -133,6 +134,72 @@ const AVATAR_PRESETS = ["👤", "🚀", "⚡", "👑", "🦊", "🦉", "🎨", "
           <div class="preview-email" id="preview-email-display">tu@correo.com</div>
           <div class="preview-badge badge badge-primary" id="preview-role-display">Usuario</div>
           <div class="preview-joined">🌴 Comunidad Servicios Mallorca</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tab: My Business & Boosts -->
+  <section class="profile-tab-panel" id="panel-business">
+    <div class="business-panel-stack">
+      <!-- Success Boost Notification -->
+      <div id="boost-success-banner" class="boost-success-card card card-glass" style="display: none;">
+        <div class="boost-banner-header">
+          <span class="boost-icon">🎉</span>
+          <div>
+            <h3 class="boost-title">¡Aportación e Impulso Registrado con Éxito!</h3>
+            <p class="boost-subtitle">
+              Tu micro-patrocinio ha sido contabilizado en la bolsa comunitaria y el comercio ha sido añadido a tus
+              favoritos.
+            </p>
+          </div>
+        </div>
+        <div class="boost-meta-strip">
+          <span id="boost-amount-label">Importe: 0.00€</span>
+          <span>·</span>
+          <span id="boost-slug-label">Comercio: -</span>
+          <span>·</span>
+          <span>Factura emitida con 21% IVA</span>
+        </div>
+      </div>
+
+      <!-- Claimed Business Audit Status Card -->
+      <div class="card profile-form-card">
+        <div class="section-title-row">
+          <h2 class="panel-title">🏢 Mi Empresa / Ficha Reclamada</h2>
+          <span class="badge badge-accent" id="business-status-badge">Verificando...</span>
+        </div>
+
+        <div id="no-business-box" class="business-empty-state">
+          <p>Aún no tienes ninguna empresa reclamada bajo tu cuenta.</p>
+          <a href="/es/unete" class="btn btn-accent btn-sm"> 🚀 Ver Pasos para Reclamar o Registrar Negocio (0€) </a>
+        </div>
+
+        <div id="claimed-business-box" class="claimed-status-box" style="display: none;">
+          <div class="claimed-header">
+            <div class="claimed-icon">🛡️</div>
+            <div>
+              <h3 id="claimed-business-name" class="claimed-name">Nombre Empresa</h3>
+              <p id="claimed-audit-desc" class="claimed-audit-text">
+                ⏳ Solicitud de cesión en proceso de validación fiscal por nuestro equipo de auditoría.
+              </p>
+            </div>
+          </div>
+          <div class="claimed-actions">
+            <a href="/es/cuadro-de-honor" class="btn btn-secondary btn-sm"> 👑 Ver mi Puesto en Cuadro de Honor </a>
+            <a href="/es/unete" class="btn btn-outline-secondary btn-sm"> 📋 Guía de Tarifas & Mando </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Community Boosts & Backed Favorites Card -->
+      <div class="card profile-form-card">
+        <h2 class="panel-title">❤️ Mis Negocios Favoritos Aupados</h2>
+        <p class="panel-description">
+          Comercios de Mallorca que has respaldado con tu deseo e impulso popular comunitario.
+        </p>
+        <div class="favs-boosted-grid" id="favs-boosted-list">
+          <div class="empty-favs-txt">Cargando tus negocios respaldados...</div>
         </div>
       </div>
     </div>
@@ -602,6 +669,60 @@ const AVATAR_PRESETS = ["👤", "🚀", "⚡", "👑", "🦊", "🦉", "🎨", "
         if (updatePasswordBtn) updatePasswordBtn.disabled = false;
       }
     });
+  }
+
+  // --- Handle URL parameters for Post-Payment Boost / Claimed Redirect ---
+  try {
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get("boostSuccess") === "1") {
+      const tabBusiness = document.getElementById("tab-business");
+      const boostBanner = document.getElementById("boost-success-banner");
+      const boostAmountLabel = document.getElementById("boost-amount-label");
+      const boostSlugLabel = document.getElementById("boost-slug-label");
+
+      if (tabBusiness) {
+        document.querySelectorAll(".profile-tab").forEach((t) => t.classList.remove("active"));
+        document.querySelectorAll(".profile-tab-panel").forEach((p) => p.classList.remove("active"));
+        tabBusiness.classList.add("active");
+        const panel = document.getElementById("panel-business");
+        if (panel) panel.classList.add("active");
+      }
+
+      if (boostBanner) {
+        boostBanner.style.display = "block";
+        if (boostAmountLabel) boostAmountLabel.textContent = `Importe: ${urlParams.get("amount") || "1"}€`;
+        if (boostSlugLabel) {
+          boostSlugLabel.textContent = `Comercio: ${decodeURIComponent(urlParams.get("slug") || "Mallorca")}`;
+        }
+      }
+      showSuccess("¡Aportación e impulso popular completado con éxito!");
+    }
+
+    // Populate favorites and backed businesses
+    const favsBoostedList = document.getElementById("favs-boosted-list");
+    if (favsBoostedList) {
+      const favs: string[] = JSON.parse(localStorage.getItem("user_favorites") || "[]");
+      if (favs.length === 0) {
+        favsBoostedList.innerHTML = `<div class="empty-favs-txt">Aún no has impulsado ningún comercio. <a href="/es/servicios" class="link-gold">Explorar el catálogo →</a></div>`;
+      } else {
+        favsBoostedList.innerHTML = favs
+          .map(
+            (slug) => `
+          <div class="fav-boost-item card card-glass">
+            <span class="fav-icon">❤️</span>
+            <div class="fav-info">
+              <strong>${slug.replace(/-/g, " ").toUpperCase()}</strong>
+              <span>Respaldado por la comunidad · Favorito</span>
+            </div>
+            <a href="/es/servicios/${slug}" class="btn btn-secondary btn-xs">Ver Ficha →</a>
+          </div>
+        `,
+          )
+          .join("");
+      }
+    }
+  } catch (err) {
+    console.warn("Profile params handling warning:", err);
   }
 </script>
 
@@ -1197,5 +1318,116 @@ const AVATAR_PRESETS = ["👤", "🚀", "⚡", "👑", "🦊", "🦉", "🎨", "
     .profile-tab {
       flex: none;
     }
+  }
+
+  /* Business & Boosts Panel Styles */
+  .business-panel-stack {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl, 1.5rem);
+  }
+
+  .boost-success-card {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(6, 78, 59, 0.25));
+    border: 1px solid rgba(16, 185, 129, 0.4);
+    padding: var(--space-lg, 1.5rem);
+    border-radius: var(--radius-lg, 12px);
+  }
+
+  .boost-banner-header {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .boost-icon {
+    font-size: 2rem;
+  }
+
+  .boost-title {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #34d399;
+    margin: 0 0 4px 0;
+  }
+
+  .boost-subtitle {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary, #cbd5e1);
+    margin: 0;
+  }
+
+  .boost-meta-strip {
+    display: flex;
+    gap: 8px;
+    font-size: 0.78rem;
+    color: #a7f3d0;
+    margin-top: 10px;
+    padding-top: 8px;
+    border-top: 1px solid rgba(16, 185, 129, 0.2);
+  }
+
+  .section-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-md, 1rem);
+  }
+
+  .business-empty-state {
+    padding: var(--space-lg, 1.5rem);
+    text-align: center;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px dashed rgba(255, 255, 255, 0.12);
+    border-radius: 8px;
+  }
+
+  .business-empty-state p {
+    color: var(--color-text-secondary, #cbd5e1);
+    margin-bottom: var(--space-md, 1rem);
+  }
+
+  .favs-boosted-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    margin-top: var(--space-md, 1rem);
+  }
+
+  .fav-boost-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+  }
+
+  .fav-icon {
+    font-size: 1.3rem;
+  }
+
+  .fav-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .fav-info strong {
+    font-size: 0.88rem;
+    color: var(--color-text, #fff);
+  }
+
+  .fav-info span {
+    font-size: 0.75rem;
+    color: var(--color-accent, #ffd700);
+  }
+
+  .empty-favs-txt {
+    font-size: 0.85rem;
+    color: var(--color-text-muted, #94a3b8);
+    text-align: center;
+    padding: var(--space-md, 1rem);
   }
 </style>

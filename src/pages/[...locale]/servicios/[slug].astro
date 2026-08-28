@@ -26,6 +26,7 @@ import BusinessQualityFeedbackModal from "../../../components/BusinessQualityFee
 import ServiceSidebarContact from "../../../components/ServiceSidebarContact.astro";
 import ServiceClaimDeleteModals from "../../../components/ServiceClaimDeleteModals.astro";
 import ServiceShareModal from "../../../components/ServiceShareModal.astro";
+import HonorCheckoutModal from "../../../components/HonorCheckoutModal.astro";
 
 import { getServiceById } from "../../../data/services";
 import { CATEGORIES } from "../../../data/categories";
@@ -162,6 +163,16 @@ const schemaOrg = generateServiceJsonLd(service, locale, canonicalUrl);
 
     <!-- Modal Social Share Enriquecido -->
     <ServiceShareModal service={service} locale={locale} translations={translations} pageUrl={canonicalUrl} />
+
+    <!-- Modal Honor Checkout & Impulso Comunitario -->
+    <HonorCheckoutModal
+      locale={locale}
+      translations={translations}
+      preselectedServiceId={service.id}
+      preselectedServiceName={service.name}
+      preselectedServiceSlug={service.slug}
+      minBidRequired={1.0}
+    />
 
     <!-- Mobile Sticky Conversion Bar -->
     <ServiceMobileStickyBar service={service} locale={locale} translations={translations} />

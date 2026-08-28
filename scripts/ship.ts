@@ -31,7 +31,7 @@ function runCommand(command: string, stepName: string) {
   try {
     execSync(command, { stdio: "inherit" });
     console.log(`${GREEN}✔ ${stepName} aprobado con éxito.${RESET}`);
-  } catch (error) {
+  } catch {
     console.error(`\n${RED}${BOLD}❌ ERROR CRÍTICO EN: ${stepName}${RESET}`);
     console.error(`${RED}El pipeline se ha detenido inmediatamente. No se ha realizado push ni deploy.${RESET}`);
     process.exit(1);

@@ -16,6 +16,14 @@ export type HonorCategory =
   | "bienestar-salud"
   | "emprendimientos-emergentes";
 
+export interface HonorBackerInfo {
+  backerUid?: string;
+  backerName: string;
+  amountEuros: number;
+  message?: string;
+  backedAt: string;
+}
+
 export interface HonorSpotEntry {
   id: string;
   position: number; // 1, 2, 3...
@@ -30,13 +38,16 @@ export interface HonorSpotEntry {
     ca: string;
     de: string;
   };
-  currentBidEuros: number; // Precio alcanzado
-  sponsorName: string; // Nombre del usuario / cliente que patrocinó el honor
+  currentBidEuros: number; // Precio alcanzado o acumulado comunitario
+  sponsorName: string; // Nombre del usuario o colectivo ("Comunidad de Mallorca")
   sponsorMessage?: string; // Motivo o dedicatoria
   nominatedAt: string; // ISO Date
   confidenceScore: number;
   isVerified: boolean;
   avatarImage?: string;
+  isCommunityCrowdfunded?: boolean;
+  communityBackersCount?: number;
+  backersList?: HonorBackerInfo[];
 }
 
 export interface HonorListDefinition {
@@ -499,5 +510,166 @@ export function processHonorBid(
     tier: getHonorTier(newPosition),
     updatedList,
     displacedCount,
+  };
+}
+
+export interface CommunityBoostSubmission {
+  serviceId: string;
+  backerUid?: string;
+  backerName: string;
+  amountEuros: number;
+  message?: string;
+  nominatedAt?: string;
+}
+
+export interface CommunityBoostResult {
+  success: boolean;
+  error?: string;
+  newPosition?: number;
+  tier?: HonorTier;
+  updatedList: HonorSpotEntry[];
+  totalCumulativeEuros: number;
+  backersCount: number;
+  isNewLeader: boolean;
+}
+
+/**
+ * Procesa un impulso comunitario popular (Crowdfunded Boost Acumulativo).
+ * Múltiples vecinos pueden sumar micro-aportaciones (>= 1.00€) que se acumulan
+ * en una bolsa colectiva para competir por el podio de honor.
+ */
+export function processCommunityBoost(
+  currentList: HonorSpotEntry[],
+  submission: CommunityBoostSubmission,
+  listCategory: HonorCategory,
+  service: ServiceItem,
+): CommunityBoostResult {
+  // 1. Validar elegibilidad del negocio (Zero Fake Data & GR-11)
+  const eligibility = isEligibleForHonorSpot(service);
+  if (!eligibility.eligible) {
+    return {
+      success: false,
+      error: eligibility.reason || "El negocio no es apto para el Cuadro de Honor.",
+      updatedList: currentList,
+      totalCumulativeEuros: 0,
+      backersCount: 0,
+      isNewLeader: false,
+    };
+  }
+
+  // 2. Validar aislamiento de categoría gremial
+  const listDef = HONOR_LISTS.find((l) => l.id === listCategory);
+  if (!listDef) {
+    return {
+      success: false,
+      error: `La categoría de honor "${listCategory}" no existe.`,
+      updatedList: currentList,
+      totalCumulativeEuros: 0,
+      backersCount: 0,
+      isNewLeader: false,
+    };
+  }
+
+  if (listDef.categoryFilter && listDef.categoryFilter.length > 0) {
+    if (!listDef.categoryFilter.includes(service.category)) {
+      return {
+        success: false,
+        error: `El negocio pertenece a "${service.category}", incompatible con la lista gremial "${listDef.title.es}".`,
+        updatedList: currentList,
+        totalCumulativeEuros: 0,
+        backersCount: 0,
+        isNewLeader: false,
+      };
+    }
+  }
+
+  // 3. Validar importe mínimo de aportación (mínimo 1.00€)
+  const safeAmount = Number(submission.amountEuros);
+  if (isNaN(safeAmount) || !isFinite(safeAmount) || safeAmount < 1.0) {
+    return {
+      success: false,
+      error: `La aportación comunitaria mínima es de 1.00€.`,
+      updatedList: currentList,
+      totalCumulativeEuros: 0,
+      backersCount: 0,
+      isNewLeader: false,
+    };
+  }
+
+  const sortedList = rankHonorList(currentList);
+  const existingEntryIndex = sortedList.findIndex((e) => e.serviceId === service.id);
+
+  const backerRecord: HonorBackerInfo = {
+    backerUid: submission.backerUid,
+    backerName: submission.backerName.trim() || "Vecino de Mallorca",
+    amountEuros: Number(safeAmount.toFixed(2)),
+    message: submission.message?.trim(),
+    backedAt: submission.nominatedAt || new Date().toISOString(),
+  };
+
+  let updatedList: HonorSpotEntry[];
+  let totalCumulativeEuros = 0;
+  let backersCount = 0;
+
+  if (existingEntryIndex !== -1) {
+    const existing = sortedList[existingEntryIndex];
+    const previousBackers = existing.backersList || [];
+    const newBackers = [backerRecord, ...previousBackers];
+    backersCount = newBackers.length;
+    totalCumulativeEuros = Number((existing.currentBidEuros + safeAmount).toFixed(2));
+
+    const updatedEntry: HonorSpotEntry = {
+      ...existing,
+      currentBidEuros: totalCumulativeEuros,
+      isCommunityCrowdfunded: true,
+      communityBackersCount: backersCount,
+      backersList: newBackers,
+      sponsorName: `Comunidad de Mallorca (${backersCount} apoyos)`,
+      sponsorMessage: submission.message || existing.sponsorMessage,
+    };
+
+    const remaining = sortedList.filter((_, idx) => idx !== existingEntryIndex);
+    updatedList = rankHonorList([updatedEntry, ...remaining]);
+  } else {
+    totalCumulativeEuros = Number(safeAmount.toFixed(2));
+    backersCount = 1;
+    const newEntry: HonorSpotEntry = {
+      id: `spot-comm-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`,
+      position: 1,
+      serviceId: service.id,
+      serviceName: service.name,
+      serviceSlug: service.slug,
+      category: service.category,
+      zone: service.zone,
+      honorTitle: {
+        es: `Favorito Popular: ${service.name}`,
+        en: `Community Favorite: ${service.name}`,
+        ca: `Favorit Popular: ${service.name}`,
+        de: `Community-Favorit: ${service.name}`,
+      },
+      currentBidEuros: totalCumulativeEuros,
+      sponsorName: `${submission.backerName.trim() || "Vecino de Mallorca"} (Impulso Popular)`,
+      sponsorMessage: submission.message?.trim(),
+      nominatedAt: submission.nominatedAt || new Date().toISOString(),
+      confidenceScore: service.confidenceScore ?? (service.verified ? 90 : 50),
+      isVerified: Boolean(service.verified),
+      avatarImage: service.image,
+      isCommunityCrowdfunded: true,
+      communityBackersCount: 1,
+      backersList: [backerRecord],
+    };
+    updatedList = rankHonorList([newEntry, ...sortedList]);
+  }
+
+  const newPosition = updatedList.findIndex((e) => e.serviceId === service.id) + 1;
+
+  return {
+    success: true,
+    newPosition,
+    tier: getHonorTier(newPosition),
+    updatedList,
+    totalCumulativeEuros,
+    backersCount,
+    isNewLeader: newPosition === 1,
   };
 }

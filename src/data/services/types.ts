@@ -375,5 +375,7 @@ export interface ServiceItem {
   isClaimed?: boolean; // True si el negocio ha sido formalmente reclamado y cedido a su titular
   claimedByUid?: string; // UID del titular verificado que ostenta el mando
   claimedAt?: string; // Fecha ISO de cesión oficial de la ficha
+  communityBoostTotal?: number; // Total acumulado en euros (€) aportado por la comunidad
+  communityBackersCount?: number; // Cantidad de vecinos/fans que han aupado este negocio
   evolutionHistory?: ServiceEvolutionEntry[]; // Memoria histórica de la evolución del servicio
 }

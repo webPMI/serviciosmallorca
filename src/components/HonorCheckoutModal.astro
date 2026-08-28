@@ -1,0 +1,686 @@
+---
+import type { Locale } from "../i18n";
+import { getLangPrefix } from "../i18n";
+import { HONOR_LISTS, type HonorCategory } from "../lib/honorBoardEngine";
+
+interface Props {
+  locale?: Locale;
+  translations?: Record<string, string>;
+  preselectedServiceId?: string;
+  preselectedServiceName?: string;
+  preselectedServiceSlug?: string;
+  preselectedCategory?: HonorCategory;
+  minBidRequired?: number;
+}
+
+const {
+  locale = "es" as Locale,
+  translations = {},
+  preselectedServiceId = "",
+  preselectedServiceName = "",
+  preselectedServiceSlug = "",
+  preselectedCategory = "elite-general",
+  minBidRequired = 1.0,
+} = Astro.props;
+
+const prefix = getLangPrefix(locale);
+---
+
+<!-- Modal de Checkout Premium & Impulso Comunitario -->
+<div id="honor-checkout-modal" class="honor-modal-backdrop" aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="honor-modal-dialog card card-glass">
+    <div class="modal-header-row">
+      <div class="modal-title-wrap">
+        <span class="live-pill">
+          <span class="pulse-dot"></span>
+          {translations["honor.modal.live"] || "Pasarela de Autoridad Balear"}
+        </span>
+        <h3 id="modal-heading-title" class="modal-main-title">
+          {translations["honor.modal.title"] || "Impulso & Puesto en el Cuadro de Honor"}
+        </h3>
+      </div>
+      <button type="button" class="modal-close-btn" id="close-honor-modal-btn" aria-label="Cerrar modal"> ✕ </button>
+    </div>
+
+    <!-- Mode Switcher Tabs -->
+    <div class="checkout-mode-tabs" role="tablist">
+      <button type="button" class="mode-tab active" id="tab-community-boost" role="tab" aria-selected="true">
+        <span>❤️ Impulso Popular (Vecinos & Fans)</span>
+      </button>
+      <button type="button" class="mode-tab" id="tab-owner-bid" role="tab" aria-selected="false">
+        <span>👑 Puja Oficial de Titular (+1€)</span>
+      </button>
+    </div>
+
+    <form id="honor-checkout-form" class="checkout-form-stack" novalidate>
+      <input type="hidden" id="input-checkout-mode" name="checkoutMode" value="community_boost" />
+      <input type="hidden" id="input-service-id" name="serviceId" value={preselectedServiceId} />
+      <input type="hidden" id="input-service-slug" name="serviceSlug" value={preselectedServiceSlug} />
+      <input type="hidden" id="input-min-required" value={minBidRequired} />
+
+      <!-- Business Target Indicator -->
+      <div class="business-target-card">
+        <div class="target-icon">🏢</div>
+        <div class="target-details">
+          <span class="target-label">Negocio a Impulsar:</span>
+          <strong id="display-target-name" class="target-name">
+            {preselectedServiceName || "Seleccionar Comercio..."}
+          </strong>
+        </div>
+      </div>
+
+      <!-- User Information (Auto-Filled from AuthStore) -->
+      <div class="form-row-grid">
+        <div class="form-group">
+          <label for="input-backer-name" class="form-label">Tu Nombre o Alias Público *</label>
+          <input
+            type="text"
+            id="input-backer-name"
+            name="backerName"
+            class="form-input"
+            placeholder="Ej. Joan García (Vecino de Inca)"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="input-backer-email" class="form-label">Email para Factura / Notificación *</label>
+          <input
+            type="email"
+            id="input-backer-email"
+            name="backerEmail"
+            class="form-input"
+            placeholder="tu-email@gmail.com"
+            required
+          />
+        </div>
+      </div>
+
+      <!-- Dedication Message / Reason -->
+      <div class="form-group">
+        <label for="input-backer-message" class="form-label">Dedicatoria o Motivo del Apoyo (Opcional)</label>
+        <input
+          type="text"
+          id="input-backer-message"
+          name="backerMessage"
+          class="form-input"
+          placeholder="Ej. 'El mejor pan artesanal de Mallorca desde 1862'"
+          maxlength="140"
+        />
+      </div>
+
+      <!-- Amount Selector & Quick Chips -->
+      <div class="amount-selection-box">
+        <div class="amount-header">
+          <label for="input-bid-amount" class="form-label">Importe a Aportar (€) *</label>
+          <span id="label-min-hint" class="min-hint">Mínimo sugerido: {minBidRequired.toFixed(2)}€</span>
+        </div>
+
+        <div class="amount-input-row">
+          <span class="currency-symbol">€</span>
+          <input
+            type="number"
+            id="input-bid-amount"
+            name="bidAmount"
+            class="form-input amount-input"
+            step="1"
+            min="1"
+            value={minBidRequired}
+            required
+          />
+        </div>
+
+        <!-- Quick Amount Chips -->
+        <div class="quick-chips-row">
+          <button type="button" class="chip-btn" data-add="1">+1€</button>
+          <button type="button" class="chip-btn" data-add="5">+5€</button>
+          <button type="button" class="chip-btn" data-add="10">+10€</button>
+          <button type="button" class="chip-btn" data-add="25">+25€</button>
+          <button type="button" class="chip-btn" data-add="50">+50€</button>
+        </div>
+      </div>
+
+      <!-- Live Fiscal Invoice Breakdown -->
+      <div class="invoice-summary-box">
+        <div class="summary-line">
+          <span>Subtotal Base:</span>
+          <span id="calc-subtotal">0.83€</span>
+        </div>
+        <div class="summary-line">
+          <span>IVA Balear (21%):</span>
+          <span id="calc-tax">0.17€</span>
+        </div>
+        <div class="summary-line summary-total">
+          <strong>Total a Pagar:</strong>
+          <strong id="calc-total" class="total-amount">{minBidRequired.toFixed(2)}€</strong>
+        </div>
+        <div class="invoice-preview-chip">
+          <span>🧾 Factura Oficial: <code id="calc-invoice-id">INV-HONOR-...</code></span>
+        </div>
+      </div>
+
+      <!-- Payment Method Selector -->
+      <div class="payment-methods-selector">
+        <span class="form-label">Método de Pago Seguro:</span>
+        <div class="payment-tabs-grid">
+          <label class="pay-radio active">
+            <input type="radio" name="paymentMethod" value="card" checked />
+            <span class="pay-label">💳 Tarjeta</span>
+          </label>
+          <label class="pay-radio">
+            <input type="radio" name="paymentMethod" value="bizum" />
+            <span class="pay-label">📱 Bizum</span>
+          </label>
+          <label class="pay-radio">
+            <input type="radio" name="paymentMethod" value="apple_pay" />
+            <span class="pay-label">🍏 Apple / Google Pay</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Submit CTA Button -->
+      <div class="modal-actions-footer">
+        <button type="submit" id="submit-honor-btn" class="btn btn-accent btn-lg btn-full pulse-hover">
+          <span id="btn-submit-text">⚡ Completar Aportación & Aupar al Podio</span>
+        </button>
+        <p class="security-guarantee-txt">
+          🔒 Pago seguro con cifrado SSL 256 bits · Sin comisiones ocultas · Factura inmediata
+        </p>
+      </div>
+    </form>
+  </div>
+</div>
+
+<style>
+  .honor-modal-backdrop {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(10, 15, 29, 0.85);
+    backdrop-filter: blur(12px);
+    z-index: 99999;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-md, 1rem);
+    opacity: 0;
+    transition: opacity 0.25s ease;
+  }
+
+  .honor-modal-backdrop.is-active {
+    display: flex;
+    opacity: 1;
+  }
+
+  .honor-modal-dialog {
+    width: 100%;
+    max-width: 580px;
+    max-height: 90vh;
+    overflow-y: auto;
+    background: linear-gradient(145deg, rgba(26, 32, 44, 0.98), rgba(15, 23, 42, 0.99));
+    border: 1px solid rgba(255, 215, 0, 0.35);
+    border-radius: var(--radius-xl, 16px);
+    box-shadow:
+      0 25px 60px -15px rgba(0, 0, 0, 0.8),
+      0 0 35px rgba(255, 215, 0, 0.15);
+    padding: var(--space-xl, 1.75rem);
+  }
+
+  .modal-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--space-md, 1rem);
+  }
+
+  .live-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--color-accent, #ffd700);
+    background: rgba(255, 215, 0, 0.1);
+    border: 1px solid rgba(255, 215, 0, 0.25);
+    padding: 2px 10px;
+    border-radius: 999px;
+    margin-bottom: 4px;
+  }
+
+  .pulse-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--color-accent, #ffd700);
+    box-shadow: 0 0 8px var(--color-accent, #ffd700);
+  }
+
+  .modal-main-title {
+    font-size: 1.35rem;
+    font-weight: 800;
+    margin: 0;
+    color: var(--color-text, #fff);
+  }
+
+  .modal-close-btn {
+    background: rgba(255, 255, 255, 0.08);
+    border: none;
+    color: var(--color-text-secondary, #cbd5e1);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+  }
+
+  .modal-close-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+  }
+
+  /* Mode Switcher */
+  .checkout-mode-tabs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 4px;
+    border-radius: 10px;
+    margin-bottom: var(--space-md, 1rem);
+  }
+
+  .mode-tab {
+    background: transparent;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--color-text-secondary, #94a3b8);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .mode-tab.active {
+    background: var(--color-primary, #2563eb);
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  }
+
+  .business-target-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 10px 14px;
+    border-radius: 10px;
+    margin-bottom: var(--space-md, 1rem);
+  }
+
+  .target-icon {
+    font-size: 1.5rem;
+  }
+
+  .target-label {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--color-text-muted, #94a3b8);
+  }
+
+  .target-name {
+    font-size: 0.95rem;
+    color: var(--color-accent, #ffd700);
+  }
+
+  .form-row-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-md, 1rem);
+    margin-bottom: var(--space-sm, 0.75rem);
+  }
+
+  .form-group {
+    margin-bottom: var(--space-sm, 0.75rem);
+  }
+
+  .form-label {
+    display: block;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--color-text-secondary, #cbd5e1);
+    margin-bottom: 4px;
+  }
+
+  .form-input {
+    width: 100%;
+    padding: 8px 12px;
+    background: rgba(15, 23, 42, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    color: #fff;
+    font-size: 0.9rem;
+    outline: none;
+    transition: border 0.2s;
+  }
+
+  .form-input:focus {
+    border-color: var(--color-accent, #ffd700);
+  }
+
+  /* Amount Box */
+  .amount-selection-box {
+    background: rgba(255, 215, 0, 0.05);
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    border-radius: 10px;
+    padding: var(--space-md, 1rem);
+    margin-bottom: var(--space-md, 1rem);
+  }
+
+  .amount-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+  }
+
+  .min-hint {
+    font-size: 0.75rem;
+    color: var(--color-accent, #ffd700);
+    font-weight: 600;
+  }
+
+  .amount-input-row {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+
+  .currency-symbol {
+    position: absolute;
+    left: 14px;
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--color-accent, #ffd700);
+  }
+
+  .amount-input {
+    padding-left: 36px;
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: var(--color-accent, #ffd700);
+  }
+
+  .quick-chips-row {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  .chip-btn {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .chip-btn:hover {
+    background: var(--color-accent, #ffd700);
+    color: #000;
+  }
+
+  /* Invoice Summary */
+  .invoice-summary-box {
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin-bottom: var(--space-md, 1rem);
+  }
+
+  .summary-line {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.82rem;
+    color: var(--color-text-secondary, #cbd5e1);
+    margin-bottom: 4px;
+  }
+
+  .summary-total {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 6px;
+    margin-top: 6px;
+    font-size: 1rem;
+    color: #fff;
+  }
+
+  .total-amount {
+    color: var(--color-accent, #ffd700);
+    font-size: 1.2rem;
+  }
+
+  .invoice-preview-chip {
+    font-size: 0.72rem;
+    color: var(--color-text-muted, #94a3b8);
+    margin-top: 4px;
+  }
+
+  .invoice-preview-chip code {
+    color: #60a5fa;
+  }
+
+  /* Payment Radio */
+  .payment-tabs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+    margin-top: 4px;
+    margin-bottom: var(--space-lg, 1.25rem);
+  }
+
+  .pay-radio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 8px 6px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.78rem;
+    font-weight: 600;
+  }
+
+  .pay-radio input {
+    display: none;
+  }
+
+  .pay-radio.active {
+    background: rgba(59, 130, 246, 0.2);
+    border-color: var(--color-primary-light, #60a5fa);
+    color: #fff;
+  }
+
+  .security-guarantee-txt {
+    text-align: center;
+    font-size: 0.72rem;
+    color: var(--color-text-muted, #94a3b8);
+    margin-top: 8px;
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 600px) {
+    .form-row-grid,
+    .checkout-mode-tabs,
+    .payment-tabs-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<script>
+  import { authStore } from "../lib/authStore";
+
+  function initHonorCheckoutClient() {
+    const modal = document.getElementById("honor-checkout-modal");
+    const form = document.getElementById("honor-checkout-form") as HTMLFormElement | null;
+    const closeBtn = document.getElementById("close-honor-modal-btn");
+    const nameInput = document.getElementById("input-backer-name") as HTMLInputElement | null;
+    const emailInput = document.getElementById("input-backer-email") as HTMLInputElement | null;
+    const amountInput = document.getElementById("input-bid-amount") as HTMLInputElement | null;
+    const modeInput = document.getElementById("input-checkout-mode") as HTMLInputElement | null;
+    const targetNameDisplay = document.getElementById("display-target-name");
+    const serviceIdInput = document.getElementById("input-service-id") as HTMLInputElement | null;
+    const serviceSlugInput = document.getElementById("input-service-slug") as HTMLInputElement | null;
+    const minRequiredInput = document.getElementById("input-min-required") as HTMLInputElement | null;
+
+    const calcSubtotal = document.getElementById("calc-subtotal");
+    const calcTax = document.getElementById("calc-tax");
+    const calcTotal = document.getElementById("calc-total");
+    const calcInvoiceId = document.getElementById("calc-invoice-id");
+    const btnSubmitText = document.getElementById("btn-submit-text");
+
+    const tabCommunity = document.getElementById("tab-community-boost");
+    const tabOwner = document.getElementById("tab-owner-bid");
+    const chipBtns = document.querySelectorAll(".chip-btn");
+    const payRadios = document.querySelectorAll(".pay-radio");
+
+    if (!modal || !form || !amountInput) return;
+
+    // 1. Live Recalculate Fiscal Invoice
+    function recalculateInvoice() {
+      const amount = Math.max(1, Number(amountInput?.value) || 1);
+      const subtotal = Number((amount / 1.21).toFixed(2));
+      const tax = Number((amount - subtotal).toFixed(2));
+
+      if (calcSubtotal) calcSubtotal.textContent = `${subtotal.toFixed(2)}€`;
+      if (calcTax) calcTax.textContent = `${tax.toFixed(2)}€`;
+      if (calcTotal) calcTotal.textContent = `${amount.toFixed(2)}€`;
+      if (calcInvoiceId) {
+        calcInvoiceId.textContent = `INV-HONOR-${Date.now().toString(36).toUpperCase()}`;
+      }
+    }
+
+    amountInput.addEventListener("input", recalculateInvoice);
+
+    // 2. Quick Chips
+    chipBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const add = Number(btn.getAttribute("data-add") || 1);
+        const current = Number(amountInput.value) || 1;
+        amountInput.value = (current + add).toString();
+        recalculateInvoice();
+      });
+    });
+
+    // 3. Payment Radio Toggle
+    payRadios.forEach((radio) => {
+      radio.addEventListener("click", () => {
+        payRadios.forEach((r) => r.classList.remove("active"));
+        radio.classList.add("active");
+      });
+    });
+
+    // 4. Mode Tab Toggle
+    tabCommunity?.addEventListener("click", () => {
+      tabCommunity.classList.add("active");
+      tabCommunity.setAttribute("aria-selected", "true");
+      tabOwner?.classList.remove("active");
+      tabOwner?.setAttribute("aria-selected", "false");
+      if (modeInput) modeInput.value = "community_boost";
+      if (btnSubmitText) btnSubmitText.textContent = "⚡ Completar Aportación & Aupar al Podio";
+    });
+
+    tabOwner?.addEventListener("click", () => {
+      tabOwner.classList.add("active");
+      tabOwner.setAttribute("aria-selected", "true");
+      tabCommunity?.classList.remove("active");
+      tabCommunity?.setAttribute("aria-selected", "false");
+      if (modeInput) modeInput.value = "owner_bid";
+      if (btnSubmitText) btnSubmitText.textContent = "👑 Pujar Récord & Tomar el Puesto #1";
+    });
+
+    // 5. Open Modal Trigger Dispatcher
+    window.addEventListener("open-honor-checkout", (e: any) => {
+      const data = e.detail || {};
+      if (data.serviceId && serviceIdInput) serviceIdInput.value = data.serviceId;
+      if (data.serviceSlug && serviceSlugInput) serviceSlugInput.value = data.serviceSlug;
+      if (data.serviceName && targetNameDisplay) targetNameDisplay.textContent = data.serviceName;
+      if (data.minBid && amountInput) {
+        amountInput.value = data.minBid.toString();
+        if (minRequiredInput) minRequiredInput.value = data.minBid.toString();
+      }
+
+      // Auto-fill from authStore
+      const currentUser = authStore.getState().user;
+      if (currentUser) {
+        if (nameInput && !nameInput.value) {
+          nameInput.value = currentUser.displayName || currentUser.email?.split("@")[0] || "Vecino Autenticado";
+        }
+        if (emailInput && !emailInput.value) {
+          emailInput.value = currentUser.email || "";
+        }
+      }
+
+      recalculateInvoice();
+      modal.classList.add("is-active");
+      modal.setAttribute("aria-hidden", "false");
+    });
+
+    // Close Modal
+    function closeModal() {
+      modal?.classList.remove("is-active");
+      modal?.setAttribute("aria-hidden", "true");
+    }
+
+    closeBtn?.addEventListener("click", closeModal);
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) closeModal();
+    });
+
+    // 6. Form Submission Simulation & Redirect to Profile
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const amount = Number(amountInput.value) || 1;
+      const backerName = nameInput?.value.trim() || "Vecino de Mallorca";
+      const slug = serviceSlugInput?.value || "servicio";
+      const mode = modeInput?.value || "community_boost";
+
+      // Guardar en favoritos locales y registrar metadatos de aportación
+      try {
+        const favs = JSON.parse(localStorage.getItem("user_favorites") || "[]");
+        if (!favs.includes(slug)) {
+          favs.push(slug);
+          localStorage.setItem("user_favorites", JSON.stringify(favs));
+        }
+        localStorage.setItem(
+          "last_boost_meta",
+          JSON.stringify({ slug, amount, backerName, mode, at: new Date().toISOString() }),
+        );
+      } catch (err) {
+        console.warn("Storage warning:", err);
+      }
+
+      // Feedback visual
+      if (btnSubmitText) btnSubmitText.textContent = "⏳ Procesando pago seguro...";
+
+      setTimeout(() => {
+        closeModal();
+        // Redireccionar al perfil con los parámetros de éxito
+        window.location.href = `/es/perfil?boostSuccess=1&amount=${amount}&slug=${encodeURIComponent(slug)}&mode=${mode}`;
+      }, 750);
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", initHonorCheckoutClient);
+</script>

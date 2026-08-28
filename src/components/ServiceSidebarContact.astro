@@ -134,6 +134,27 @@ const { service, translations } = Astro.props;
         )
       }
 
+      <!-- Community Boost Trigger Button -->
+      <div class="community-boost-cta-box">
+        <button
+          type="button"
+          id="boost-service-btn"
+          class="btn btn-sm btn-primary btn-full boost-pulse-btn"
+          data-service-id={service.id}
+          data-service-name={service.name}
+          data-service-slug={service.slug}
+        >
+          <span>❤️ Impulsar & Aupar a Favorito (+1€)</span>
+        </button>
+        <span class="boost-helper-txt">
+          {
+            service.communityBackersCount && service.communityBackersCount > 0
+              ? `🔥 ${service.communityBackersCount} vecinos han aportado ${service.communityBoostTotal || 0}€`
+              : "Sé el primer vecino en respaldar este comercio"
+          }
+        </span>
+      </div>
+
       <div class="business-owner-box">
         <div class="owner-box-header">
           <span class="owner-icon">🏢</span>
@@ -178,8 +199,30 @@ const { service, translations } = Astro.props;
 </aside>
 
 <style>
+  .community-boost-cta-box {
+    margin-top: var(--space-md, 1rem);
+    padding: 10px;
+    background: rgba(37, 99, 235, 0.08);
+    border: 1px solid rgba(59, 130, 246, 0.25);
+    border-radius: var(--radius-md, 8px);
+    text-align: center;
+  }
+
+  .boost-pulse-btn {
+    font-weight: 700;
+    letter-spacing: 0.2px;
+  }
+
+  .boost-helper-txt {
+    display: block;
+    font-size: 0.73rem;
+    color: var(--color-primary-light, #93c5fd);
+    margin-top: 6px;
+    font-weight: 600;
+  }
+
   .business-owner-box {
-    margin-top: var(--space-lg, 1.5rem);
+    margin-top: var(--space-md, 1rem);
     padding: var(--space-md, 1rem);
     background: rgba(255, 215, 0, 0.06);
     border: 1px dashed rgba(255, 215, 0, 0.35);

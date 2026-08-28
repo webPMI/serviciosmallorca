@@ -5,6 +5,7 @@ import Footer from "../../components/Footer.astro";
 import { getLocaleFromUrl, loadTranslations, getLangPrefix, type Locale } from "../../i18n";
 import { HONOR_LISTS, getDefaultHonorSpots, calculateNextBidPrice } from "../../lib/honorBoardEngine";
 import { PUBLIC_SERVICES } from "../../data/services";
+import HonorCheckoutModal from "../../components/HonorCheckoutModal.astro";
 
 export const prerender = false;
 
@@ -282,6 +283,7 @@ const verifiedServices = PUBLIC_SERVICES.filter((s) => (s.confidenceScore ?? 0) 
     </div>
   </dialog>
 
+  <HonorCheckoutModal locale={locale} translations={translations} />
   <Footer translations={translations} currentLocale={locale} getLangPrefix={getLangPrefix} />
 </BaseLayout>
 
@@ -305,44 +307,22 @@ const verifiedServices = PUBLIC_SERVICES.filter((s) => (s.confidenceScore ?? 0) 
     });
   });
 
-  // Modal Interaction Logic
-  const modal = document.getElementById("nominate-modal") as HTMLDialogElement | null;
+  // Open Honor Checkout Modal on Click
   const openButtons = document.querySelectorAll(".open-nominate-modal");
-  const closeModalBtn = document.getElementById("close-modal-btn");
-  const cancelModalBtn = document.getElementById("cancel-modal-btn");
-  const priceDisplay = document.getElementById("modal-price-display");
-  const modalTitle = document.getElementById("modal-title");
-  const form = document.getElementById("nominate-form") as HTMLFormElement | null;
-
   openButtons.forEach((btn) => {
     btn.addEventListener("click", () => {
       const catTitle = btn.getAttribute("data-cat-title") || "Cuadro de Honor";
-      const nextPrice = btn.getAttribute("data-next-price") || "1.00";
+      const nextPrice = Number(btn.getAttribute("data-next-price") || "1.00");
 
-      if (modalTitle) modalTitle.textContent = `🏆 Postular a: ${catTitle}`;
-      if (priceDisplay) priceDisplay.textContent = `${Number(nextPrice).toFixed(2)}€`;
-
-      if (modal && typeof modal.showModal === "function") {
-        modal.showModal();
-      }
+      window.dispatchEvent(
+        new CustomEvent("open-honor-checkout", {
+          detail: {
+            serviceName: `Referente de ${catTitle}`,
+            minBid: nextPrice,
+          },
+        }),
+      );
     });
-  });
-
-  function closeModal() {
-    if (modal && typeof modal.close === "function") {
-      modal.close();
-    }
-  }
-
-  closeModalBtn?.addEventListener("click", closeModal);
-  cancelModalBtn?.addEventListener("click", closeModal);
-
-  form?.addEventListener("submit", (e) => {
-    e.preventDefault();
-    alert(
-      "✅ ¡Candidatura registrada con éxito! La plataforma procesará el reconocimiento y actualizará el ranking del Cuadro de Honor.",
-    );
-    closeModal();
   });
 </script>
 

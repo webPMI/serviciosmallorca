@@ -354,5 +354,26 @@ export function initServiceDetailClient() {
     });
   }
 
+  // Community Boost Trigger Listener
+  const boostBtn = document.getElementById("boost-service-btn");
+  if (boostBtn) {
+    boostBtn.addEventListener("click", () => {
+      const serviceId = boostBtn.getAttribute("data-service-id") || "";
+      const serviceName = boostBtn.getAttribute("data-service-name") || "";
+      const serviceSlug = boostBtn.getAttribute("data-service-slug") || "";
+
+      window.dispatchEvent(
+        new CustomEvent("open-honor-checkout", {
+          detail: {
+            serviceId,
+            serviceName,
+            serviceSlug,
+            minBid: 1.0,
+          },
+        }),
+      );
+    });
+  }
+
   hydrateDynamicOverrides();
 }

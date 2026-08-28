@@ -15,10 +15,12 @@
 import { describe, it, expect } from "vitest";
 import {
   processHonorBid,
+  processCommunityBoost,
   getHonorTier,
   calculateHonorInvoice,
   type HonorSpotEntry,
   type HonorBidSubmission,
+  type CommunityBoostSubmission,
 } from "../../src/lib/honorBoardEngine.ts";
 import type { ServiceItem } from "../../src/data/services/index.ts";
 
@@ -404,11 +406,73 @@ describe("🏆 CUADRO DE HONOR — TESTING DE PRESIÓN ADVERSARIA Y DESPLAZAMIEN
     it("debe calcular con exactitud la factura para una puja récord de 50.001€", () => {
       const invoice = calculateHonorInvoice(50001.0);
       expect(invoice.bidAmountEuros).toBe(50001.0);
-      // Subtotal = 50001 / 1.21 = 41323.14
       expect(invoice.subtotalEuros).toBe(41323.14);
-      // IVA = 50001 - 41323.14 = 8677.86
       expect(invoice.taxAmountEuros).toBe(8677.86);
       expect(invoice.subtotalEuros + invoice.taxAmountEuros).toBe(50001.0);
+    });
+  });
+
+  // ===========================================================================
+  // 7. CROWDFUNDED COMMUNITY BOOST ACUMULATIVO & DESTRONAMIENTO COLECTIVO
+  // ===========================================================================
+  describe("7. Mecanismo de Aportación Comunitaria Acumulativa (Crowdfunded Boost)", () => {
+    it("debe acumular múltiples micro-aportaciones de vecinos y registrar la lista de mecenas", () => {
+      let list: HonorSpotEntry[] = [];
+
+      // Vecino 1 aporta 2.00€
+      const sub1: CommunityBoostSubmission = {
+        serviceId: "forn-sant-francesc-inca",
+        backerName: "Maria de Inca",
+        amountEuros: 2.0,
+        message: "¡La mejor ensaimada de Mallorca!",
+      };
+      const res1 = processCommunityBoost(list, sub1, "artesanos-sabor", mockBaseService);
+      expect(res1.success).toBe(true);
+      expect(res1.totalCumulativeEuros).toBe(2.0);
+      expect(res1.backersCount).toBe(1);
+      expect(res1.isNewLeader).toBe(true);
+      expect(res1.updatedList[0].isCommunityCrowdfunded).toBe(true);
+      list = res1.updatedList;
+
+      // Vecino 2 aporta 3.00€ al mismo comercio
+      const sub2: CommunityBoostSubmission = {
+        serviceId: "forn-sant-francesc-inca",
+        backerName: "Tomeu de Palma",
+        amountEuros: 3.0,
+        message: "Tradición y producto balear único.",
+      };
+      const res2 = processCommunityBoost(list, sub2, "artesanos-sabor", mockBaseService);
+      expect(res2.success).toBe(true);
+      expect(res2.totalCumulativeEuros).toBe(5.0); // 2€ + 3€ = 5€
+      expect(res2.backersCount).toBe(2);
+      expect(res2.updatedList[0].backersList?.length).toBe(2);
+      expect(res2.updatedList[0].sponsorName).toContain("2 apoyos");
+      list = res2.updatedList;
+
+      // Vecino 3 aporta 10.00€ y destrona a cualquier líder con menos de 15€
+      const sub3: CommunityBoostSubmission = {
+        serviceId: "forn-sant-francesc-inca",
+        backerName: "Club Gourmet Binissalem",
+        amountEuros: 10.0,
+      };
+      const res3 = processCommunityBoost(list, sub3, "artesanos-sabor", mockBaseService);
+      expect(res3.success).toBe(true);
+      expect(res3.totalCumulativeEuros).toBe(15.0); // 5€ + 10€ = 15€
+      expect(res3.backersCount).toBe(3);
+    });
+
+    it("debe rechazar aportaciones inferiores a 1.00€ o no numéricas (NaN, negativas)", () => {
+      const hostileBoosts = [0.0, 0.99, -5.0, NaN, Infinity];
+      for (const badAmount of hostileBoosts) {
+        const res = processCommunityBoost(
+          [],
+          { serviceId: "forn-sant-francesc-inca", backerName: "Hacker", amountEuros: badAmount },
+          "artesanos-sabor",
+          mockBaseService,
+        );
+        expect(res.success).toBe(false);
+        expect(res.error).toContain("mínima es de 1.00€");
+      }
     });
   });
 });
