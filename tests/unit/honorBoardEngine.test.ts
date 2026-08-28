@@ -5,6 +5,8 @@ import {
   rankHonorList,
   HONOR_LISTS,
   getDefaultHonorSpots,
+  isBusinessHonorRecognized,
+  processHonorBid,
   type HonorSpotEntry,
 } from "../../src/lib/honorBoardEngine";
 import type { ServiceItem } from "../../src/data/services";

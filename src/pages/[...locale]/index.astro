@@ -9,6 +9,7 @@ import DiscoveryTours from "../../components/DiscoveryTours.astro";
 import MallorcaNewsFeed from "../../components/MallorcaNewsFeed.astro";
 import AdSenseSlot from "../../components/AdSenseSlot.astro";
 import BusinessJoinBanner from "../../components/BusinessJoinBanner.astro";
+import EcosystemGuideSection from "../../components/EcosystemGuideSection.astro";
 import { getActiveCategories } from "../../data/categories";
 import { getFeaturedServices, SERVICES } from "../../data/services";
 import { getFeaturedPosts } from "../../data/posts";
@@ -453,6 +454,11 @@ const homepageJsonLd = generateHomepageJsonLd(locale, canonicalUrl);
         </div>
       </div>
     </section>
+
+    <!-- PLATFORM ECOSYSTEM GUIDE & SEO AUTHORITY HUB -->
+    <div class="container">
+      <EcosystemGuideSection currentLocale={locale} translations={translations} />
+    </div>
 
     <!-- BUSINESS ONBOARDING & PRICING BANNER -->
     <div class="container">

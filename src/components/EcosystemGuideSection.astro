@@ -1,0 +1,308 @@
+---
+import type { Locale } from "../i18n";
+import { getLangPrefix } from "../i18n";
+
+interface Props {
+  currentLocale: Locale;
+  translations: Record<string, string>;
+}
+
+const { currentLocale, translations } = Astro.props;
+const prefix = getLangPrefix(currentLocale);
+
+const ecosystemCards = [
+  {
+    icon: "🌴",
+    badge: "Directorio Oficial",
+    title: "1. Servicios & Comercios Verificados",
+    desc: "Directorio balear con Regla de Oro GR-11 (Zero Fake Data). Cada comercio cuenta con auditoría de geolocalización, teléfono real, horarios de apertura y Confidence Score ≥ 80%.",
+    link: `${prefix}servicios`,
+    linkText: "Explorar Directorio →",
+    colorVar: "var(--color-primary)",
+    bgGradient: "linear-gradient(135deg, rgba(46, 204, 113, 0.1) 0%, rgba(39, 174, 96, 0.03) 100%)",
+  },
+  {
+    icon: "👑",
+    badge: "Meritocracia & Élite",
+    title: "2. Cuadro de Honor & Reconocimiento",
+    desc: "Mercado de autoridad transparente donde vecinos y titulares aupan a los referentes de Mallorca. Subastas éticas públicas (+1€) y micro-patrocinios comunitarios sin publicidad engañosa.",
+    link: `${prefix}cuadro-de-honor`,
+    linkText: "Ver Cuadro de Honor →",
+    colorVar: "var(--color-accent, #ffd700)",
+    bgGradient: "linear-gradient(135deg, rgba(255, 215, 0, 0.12) 0%, rgba(243, 156, 18, 0.03) 100%)",
+  },
+  {
+    icon: "🏃",
+    badge: "Salud & Bienestar",
+    title: "3. Deporte, Gimnasios & Fitness",
+    desc: "Vertical deportiva completa de la isla: centros deportivos, boxes de CrossFit, parques de calistenia al aire libre y monitores certificados para mantener activa a la comunidad balear.",
+    link: `${prefix}deporte`,
+    linkText: "Descubrir Deporte →",
+    colorVar: "var(--color-accent-sports, #ff5722)",
+    bgGradient: "linear-gradient(135deg, rgba(255, 87, 34, 0.1) 0%, rgba(230, 74, 25, 0.03) 100%)",
+  },
+  {
+    icon: "🗺️",
+    badge: "Experiencias Locales",
+    title: "4. Rutas & Tours por Mallorca",
+    desc: "Itinerarios culturales, gastronómicos y senderismo autoguiados diseñados por locales para redescubrir los rincones más auténticos de Palma, la Serra de Tramuntana y el Pla.",
+    link: `${prefix}tours`,
+    linkText: "Ver Rutas & Tours →",
+    colorVar: "var(--color-info, #00b4d8)",
+    bgGradient: "linear-gradient(135deg, rgba(0, 180, 216, 0.1) 0%, rgba(0, 119, 182, 0.03) 100%)",
+  },
+  {
+    icon: "🏛️",
+    badge: "Patrimonio Balear",
+    title: "5. Memoria Histórica & Comercios Centenarios",
+    desc: "Homenaje y puesta en valor de los comercios emblemáticos con más de 50 y 100 años de historia ininterrumpida que forman parte de la identidad cultural y social de Mallorca.",
+    link: `${prefix}memoria-historica`,
+    linkText: "Conocer la Memoria →",
+    colorVar: "var(--color-warning, #d4a373)",
+    bgGradient: "linear-gradient(135deg, rgba(212, 163, 115, 0.12) 0%, rgba(186, 137, 89, 0.03) 100%)",
+  },
+  {
+    icon: "🚀",
+    badge: "Para Empresas & Dueños",
+    title: "6. Reclamar Ficha & Posicionamiento SEO",
+    desc: "Si eres dueño de un negocio en Mallorca, reclama tu ficha verificada de forma gratuita, mejora tu posicionamiento en Google y conecta con miles de clientes locales y residentes.",
+    link: `${prefix}unete`,
+    linkText: "Publicar / Reclamar Negocio →",
+    colorVar: "var(--color-primary)",
+    bgGradient: "linear-gradient(135deg, rgba(52, 152, 219, 0.12) 0%, rgba(41, 128, 185, 0.03) 100%)",
+  },
+];
+---
+
+<section class="ecosystem-guide-section" aria-labelledby="ecosystem-guide-heading">
+  <div class="ecosystem-header">
+    <div class="ecosystem-badge badge badge-primary">🌐 Guía del Ecosistema Servicios Mallorca</div>
+    <h2 id="ecosystem-guide-heading" class="ecosystem-title">¿Cómo Funciona la Plataforma y Cómo Te Ayuda?</h2>
+    <p class="ecosystem-subtitle">
+      Un ecosistema digital balear estructurado en 6 pilares clave para garantizar transparencia absoluta, confianza
+      comunitaria y visibilidad real a los mejores negocios de Mallorca.
+    </p>
+  </div>
+
+  <div class="ecosystem-grid">
+    {
+      ecosystemCards.map((card) => (
+        <article class="ecosystem-card card" style={`background: ${card.bgGradient};`}>
+          <div class="card-top-row">
+            <span class="card-icon">{card.icon}</span>
+            <span class="card-badge" style={`color: ${card.colorVar}; border-color: ${card.colorVar};`}>
+              {card.badge}
+            </span>
+          </div>
+
+          <h3 class="card-title">{card.title}</h3>
+          <p class="card-desc">{card.desc}</p>
+
+          <a href={card.link} class="card-link" style={`color: ${card.colorVar};`}>
+            <span>{card.linkText}</span>
+          </a>
+        </article>
+      ))
+    }
+  </div>
+
+  <!-- Trust Guarantee Footer Box -->
+  <div class="ecosystem-trust-box card">
+    <div class="trust-icon">🛡️</div>
+    <div class="trust-text">
+      <h4>Compromiso de Veracidad & Anti-Spam</h4>
+      <p>
+        En Servicios Mallorca no permitimos empresas fantasma, reseñas compradas ni datos inventados. Toda la
+        información es auditada y actualizada periódicamente para proteger a consumidores y comercios locales.
+      </p>
+    </div>
+    <div class="trust-action">
+      <a href={`${prefix}unete`} class="btn btn-primary btn-sm"> Reclamar mi Negocio Gratis </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .ecosystem-guide-section {
+    padding: var(--space-2xl) 0 var(--space-xl);
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  .ecosystem-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto var(--space-2xl);
+  }
+
+  .ecosystem-badge {
+    margin-bottom: var(--space-sm);
+    display: inline-block;
+  }
+
+  .ecosystem-title {
+    font-size: clamp(1.5rem, 3.5vw, var(--font-size-3xl));
+    font-weight: 800;
+    color: var(--color-text);
+    margin-bottom: var(--space-sm);
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    word-break: break-word;
+  }
+
+  .ecosystem-subtitle {
+    font-size: var(--font-size-base);
+    color: var(--color-text-light);
+    line-height: 1.6;
+    word-break: break-word;
+  }
+
+  .ecosystem-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+    gap: var(--space-lg);
+    margin-bottom: var(--space-2xl);
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .ecosystem-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: var(--space-lg);
+    border: 1px solid var(--color-surface-border);
+    border-radius: var(--border-radius-lg);
+    transition:
+      transform var(--transition-fast),
+      box-shadow var(--transition-fast);
+    box-sizing: border-box;
+    min-width: 0;
+  }
+
+  .ecosystem-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .card-top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-md);
+    gap: var(--space-xs);
+    flex-wrap: wrap;
+  }
+
+  .card-icon {
+    font-size: 2.2rem;
+  }
+
+  .card-badge {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 3px 8px;
+    border-radius: var(--border-radius-full);
+    border: 1px solid currentColor;
+    background: var(--color-surface);
+  }
+
+  .card-title {
+    font-size: var(--font-size-lg);
+    font-weight: 800;
+    color: var(--color-text);
+    margin-bottom: var(--space-xs);
+    line-height: 1.3;
+    word-break: break-word;
+  }
+
+  .card-desc {
+    font-size: 0.88rem;
+    color: var(--color-text-light);
+    line-height: 1.55;
+    margin-bottom: var(--space-lg);
+    flex-grow: 1;
+    word-break: break-word;
+  }
+
+  .card-link {
+    font-size: 0.88rem;
+    font-weight: 800;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    transition: transform var(--transition-fast);
+    word-break: break-word;
+  }
+
+  .card-link:hover {
+    transform: translateX(4px);
+    text-decoration: underline;
+  }
+
+  /* Trust Box */
+  .ecosystem-trust-box {
+    display: flex;
+    align-items: center;
+    gap: var(--space-lg);
+    padding: var(--space-lg) var(--space-xl);
+    background: var(--color-surface);
+    border: 1px solid var(--color-surface-border);
+    border-radius: var(--border-radius-lg);
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .trust-icon {
+    font-size: 2.5rem;
+    flex-shrink: 0;
+  }
+
+  .trust-text {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .trust-text h4 {
+    font-size: var(--font-size-base);
+    font-weight: 800;
+    color: var(--color-text);
+    margin-bottom: 4px;
+    word-break: break-word;
+  }
+
+  .trust-text p {
+    font-size: 0.84rem;
+    color: var(--color-text-light);
+    line-height: 1.5;
+    margin: 0;
+    word-break: break-word;
+  }
+
+  .trust-action {
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 768px) {
+    .ecosystem-trust-box {
+      flex-direction: column;
+      text-align: center;
+      padding: var(--space-lg);
+      gap: var(--space-md);
+    }
+
+    .trust-action {
+      width: 100%;
+    }
+
+    .trust-action .btn {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+</style>

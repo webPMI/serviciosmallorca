@@ -2,6 +2,7 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Navbar from "../../components/Navbar.astro";
 import Footer from "../../components/Footer.astro";
+import EcosystemGuideSection from "../../components/EcosystemGuideSection.astro";
 import { getLocaleFromUrl, loadTranslations, getLangPrefix, type Locale } from "../../i18n";
 import { HONOR_LISTS, getDefaultHonorSpots, calculateNextBidPrice } from "../../lib/honorBoardEngine";
 import HonorCheckoutModal from "../../components/HonorCheckoutModal.astro";
@@ -13,14 +14,58 @@ const translations = await loadTranslations(locale);
 const prefix = getLangPrefix(locale);
 
 const defaultSpots = getDefaultHonorSpots();
+
+// JSON-LD Structured Data for SEO (ItemList + HowTo)
+const honorJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ItemList",
+      name: "Cuadro de Honor Balear & Comercios de Élite en Mallorca",
+      description: "Listado verificado y meritocrático de los negocios más reconocidos de Mallorca.",
+      numberOfItems: HONOR_LISTS.length,
+      itemListElement: HONOR_LISTS.map((cat, idx) => ({
+        "@type": "ListItem",
+        position: idx + 1,
+        name: cat.title[locale] || cat.title.es,
+        description: cat.subtitle[locale] || cat.subtitle.es,
+      })),
+    },
+    {
+      "@type": "HowTo",
+      name: "¿Cómo posicionar o impulsar un negocio en el Cuadro de Honor?",
+      description: "Guía paso a paso para respaldar a un comercio de Mallorca con auditoría oficial.",
+      step: [
+        {
+          "@type": "HowToStep",
+          name: "Selecciona el comercio verificado",
+          text: "Elige un negocio de Mallorca con Confidence Score ≥ 80% y auditoría oficial.",
+        },
+        {
+          "@type": "HowToStep",
+          name: "Elige la modalidad de apoyo",
+          text: "Participa con Impulso Popular (desde 1€) o Puja Oficial de Titular (+1€).",
+        },
+        {
+          "@type": "HowToStep",
+          name: "Facturación y Visibilidad Inmediata",
+          text: "Recibe tu factura con 21% de IVA y visibilidad en tiempo real en el cuadro de honor.",
+        },
+      ],
+    },
+  ],
+};
 ---
 
 <BaseLayout
   title={`${translations["honor.title"] || "Cuadro de Honor & Reconocimiento Comunitario"} - ${translations["site.title"] || "Servicios Mallorca"}`}
   lang={locale}
   description={translations["honor.subtitle"] ||
-    "Mercado de Autoridad y Cuadro de Honor: reconoce y patrocina a los mejores profesionales de Mallorca."}
+    "Mercado de Autoridad y Cuadro de Honor: descubre y patrocina a los mejores profesionales y comercios de Mallorca a simple vista."}
 >
+  <!-- Injected SEO Structured Data -->
+  <script type="application/ld+json" set:html={JSON.stringify(honorJsonLd)} />
+
   <Navbar currentLocale={locale} translations={translations} getLangPrefix={getLangPrefix} />
 
   <main class="honor-container">
@@ -36,16 +81,16 @@ const defaultSpots = getDefaultHonorSpots();
       <p class="hero-subtitle">
         {
           translations["honor.subtitle"] ||
-            "Un espacio transparente y meritocrático donde vecinos, clientes y gremios impulsan a sus referentes favoritos."
+            "Un espacio transparente y meritocrático donde vecinos, clientes y gremios impulsan a sus referentes favoritos a simple vista."
         }
       </p>
 
       <div class="hero-actions">
         <a href="#listas" class="btn btn-primary">
-          <span>{translations["honor.exploreLists"] || "🏆 Explorar Listas de Honor"}</span>
+          <span>{translations["honor.exploreLists"] || "🏆 Explorar Todos los Gremios"}</span>
         </a>
-        <a href={`${prefix}comunidad`} class="btn btn-secondary">
-          <span>{translations["honor.communityWall"] || "💬 Muro Comunitario & Rutas"}</span>
+        <a href="#guia-ecosistema" class="btn btn-secondary">
+          <span>🌐 ¿Cómo Funciona la Plataforma?</span>
         </a>
       </div>
     </header>
@@ -58,48 +103,50 @@ const defaultSpots = getDefaultHonorSpots();
         <p>
           {
             translations["honor.guaranteeDesc"] ||
-              "A diferencia de la publicidad tradicional, en Servicios Mallorca no se puede comprar visibilidad para negocios mediocres o falsos."
+              "A diferencia de la publicidad tradicional, en Servicios Mallorca no se puede comprar visibilidad para negocios mediocres o falsos. Todos los puestos exigen auditoría real (Regla GR-11)."
           }
         </p>
       </div>
     </section>
 
-    <!-- Categories Tabs & Grid -->
+    <!-- Categories Full Grid & Quick Jump -->
     <section id="listas" class="honor-section">
       <div class="section-header">
-        <h2 class="section-title">{translations["honor.activeListsTitle"] || "Listas de Reconocimiento Activas"}</h2>
+        <h2 class="section-title">
+          {translations["honor.activeListsTitle"] || "Gremios y Líderes de Mallorca a Simple Vista"}
+        </h2>
         <p class="section-desc">
           {
             translations["honor.activeListsDesc"] ||
-              "Selecciona una categoría gremial para ver los líderes actuales o nominar a tu negocio preferido."
+              "Descubre todos los líderes de cada categoría o pulsa un acceso rápido para desplazarte inmediatamente a su sección."
           }
         </p>
       </div>
 
-      <!-- Categories Navigation -->
-      <div class="category-tabs-wrapper">
-        <div class="category-tabs" id="honor-category-tabs">
+      <!-- Quick Jump Navigation Bar -->
+      <nav class="quick-jump-wrapper" aria-label="Acceso rápido por gremio">
+        <div class="quick-jump-bar" id="honor-quick-jump">
           {
-            HONOR_LISTS.map((cat, idx) => (
-              <button class={`tab-btn ${idx === 0 ? "active" : ""}`} data-cat-id={cat.id}>
-                <span class="tab-icon">{cat.icon}</span>
-                <span class="tab-label">{cat.title[locale] || cat.title.es}</span>
-              </button>
+            HONOR_LISTS.map((cat) => (
+              <a href={`#gremio-${cat.id}`} class="quick-jump-pill">
+                <span class="pill-icon">{cat.icon}</span>
+                <span class="pill-label">{cat.title[locale] || cat.title.es}</span>
+              </a>
             ))
           }
         </div>
-      </div>
+      </nav>
 
-      <!-- Lists Content Display -->
+      <!-- Full-View Lists Content Display (Todos los gremios visibles) -->
       <div class="honor-lists-content">
         {
-          HONOR_LISTS.map((cat, idx) => {
+          HONOR_LISTS.map((cat) => {
             const spots = defaultSpots[cat.id] || [];
             const topBid = spots.length > 0 ? spots[0].currentBidEuros : 0;
             const nextPrice = calculateNextBidPrice(topBid, cat.bidIncrementEuros);
 
             return (
-              <div id={`panel-${cat.id}`} class={`honor-panel ${idx === 0 ? "active" : ""}`} data-cat-id={cat.id}>
+              <section id={`gremio-${cat.id}`} class="honor-panel" data-cat-id={cat.id}>
                 <div class="panel-header card card-glass">
                   <div class="panel-info">
                     <span class="panel-icon">{cat.icon}</span>
@@ -231,12 +278,17 @@ const defaultSpots = getDefaultHonorSpots();
                     </div>
                   </div>
                 )}
-              </div>
+              </section>
             );
           })
         }
       </div>
     </section>
+
+    <!-- Ecosystem Guide & Platform Explanation (SEO Anchor) -->
+    <div id="guia-ecosistema">
+      <EcosystemGuideSection currentLocale={locale} translations={translations} />
+    </div>
   </main>
 
   <HonorCheckoutModal locale={locale} translations={translations} />
@@ -244,25 +296,6 @@ const defaultSpots = getDefaultHonorSpots();
 </BaseLayout>
 
 <script>
-  // Interactive Tabs Logic
-  const tabButtons = document.querySelectorAll(".tab-btn");
-  const panels = document.querySelectorAll(".honor-panel");
-
-  tabButtons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const catId = btn.getAttribute("data-cat-id");
-
-      tabButtons.forEach((b) => b.classList.remove("active"));
-      panels.forEach((p) => p.classList.remove("active"));
-
-      btn.classList.add("active");
-      const targetPanel = document.getElementById(`panel-${catId}`);
-      if (targetPanel) {
-        targetPanel.classList.add("active");
-      }
-    });
-  });
-
   // Open Honor Checkout Modal on Click with full metadata
   const openButtons = document.querySelectorAll(".open-nominate-modal");
   openButtons.forEach((btn) => {
@@ -451,28 +484,28 @@ const defaultSpots = getDefaultHonorSpots();
     overflow-wrap: break-word;
   }
 
-  /* Categories Navigation Tabs */
-  .category-tabs-wrapper {
+  /* Quick Jump Navigation Bar (Pills) */
+  .quick-jump-wrapper {
     width: 100%;
     max-width: 100%;
     overflow-x: auto;
-    padding: 4px 2px var(--space-sm);
-    margin-bottom: var(--space-xl);
+    padding: 4px 2px var(--space-md);
+    margin-bottom: var(--space-2xl);
     -webkit-overflow-scrolling: touch;
     scrollbar-width: thin;
     box-sizing: border-box;
   }
 
-  .category-tabs-wrapper::-webkit-scrollbar {
+  .quick-jump-wrapper::-webkit-scrollbar {
     height: 6px;
   }
 
-  .category-tabs-wrapper::-webkit-scrollbar-thumb {
+  .quick-jump-wrapper::-webkit-scrollbar-thumb {
     background: rgba(255, 215, 0, 0.3);
     border-radius: 4px;
   }
 
-  .category-tabs {
+  .quick-jump-bar {
     display: flex;
     gap: var(--space-xs);
     justify-content: flex-start;
@@ -480,52 +513,43 @@ const defaultSpots = getDefaultHonorSpots();
     padding: 2px;
   }
 
-  .tab-btn {
+  .quick-jump-pill {
     display: flex;
     align-items: center;
     gap: 6px;
-    padding: 0.55rem 1rem;
+    padding: 0.5rem 0.9rem;
     background: var(--color-surface);
     border: 1px solid var(--color-surface-border);
     border-radius: var(--border-radius-full);
     font-weight: 600;
     font-size: 0.84rem;
     color: var(--color-text);
-    cursor: pointer;
+    text-decoration: none;
     transition: all 0.2s ease;
     white-space: nowrap;
     user-select: none;
     flex-shrink: 0;
   }
 
-  .tab-btn:hover {
+  .quick-jump-pill:hover {
     border-color: var(--color-primary);
     transform: translateY(-2px);
     background: var(--color-surface-hover);
+    color: var(--color-primary);
   }
 
-  .tab-btn.active {
-    background: var(--color-primary);
-    color: var(--color-btn-primary-text, #ffffff);
-    font-weight: 800;
-    border-color: var(--color-primary);
-    box-shadow: 0 4px 12px var(--color-primary-ring);
+  .pill-icon {
+    font-size: 1.05rem;
   }
 
-  .tab-icon {
-    font-size: 1.1rem;
-  }
-
-  /* Panels */
+  /* Gremios / Panels (Continuos) */
   .honor-panel {
-    display: none;
+    display: flex;
+    flex-direction: column;
     width: 100%;
     min-width: 0;
-  }
-
-  .honor-panel.active {
-    display: block;
-    animation: fadeIn 0.3s ease;
+    margin-bottom: var(--space-3xl);
+    scroll-margin-top: 90px;
   }
 
   .panel-header {
@@ -796,17 +820,6 @@ const defaultSpots = getDefaultHonorSpots();
     margin-top: var(--space-md);
     display: flex;
     justify-content: center;
-  }
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(6px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
   }
 
   /* Responsive Media Queries */
