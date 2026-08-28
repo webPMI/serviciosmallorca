@@ -8,7 +8,9 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "deploy": "astro build && wrangler deploy",
+    "deploy": "npm run ship",
+    "ship": "node --experimental-strip-types scripts/ship.ts",
+    "prepush": "npm run typecheck && npm run validate:taxonomy && npm test && npm run audit:full",
     "preview": "astro preview",
     "astro": "astro",
     "test": "vitest run",

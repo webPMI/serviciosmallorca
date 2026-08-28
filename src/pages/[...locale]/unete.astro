@@ -15,9 +15,9 @@ const prefix = getLangPrefix(locale);
 <BaseLayout
   title="Planes, Tarifas y Registro de Empresas en Mallorca | Servicios Mallorca"
   description="Descubre cómo dar de alta o reclamar tu negocio en Servicios Mallorca. Alta gratuita, verificación de titularidad y puestos de honor desde 1€."
-  currentLocale={locale}
+  lang={locale}
 >
-  <Navbar currentLocale={locale} translations={translations} />
+  <Navbar currentLocale={locale} translations={translations} getLangPrefix={getLangPrefix} />
 
   <main class="join-page-container container" id="main-content">
     <!-- Hero Section -->

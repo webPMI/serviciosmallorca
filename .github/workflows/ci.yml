@@ -35,6 +35,9 @@ jobs:
       - name: 🧪 Execute Unit & Integration Test Suites (GR-05)
         run: npm test
 
+      - name: 🛡️ Execute Multi-Auditor Intelligence Audit (5 Specialized Auditors)
+        run: npm run audit:full
+
       - name: 🏗️ Execute Production Build Smoke Test (GR-10)
         run: npm run build
 

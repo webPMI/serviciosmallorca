@@ -151,13 +151,18 @@ const shouldLoadAdSense =
         if (isLocalhost || hasFlag) {
           document.cookie = D + "=1;path=/;max-age=" + 365 * 24 * 60 * 60 + ";SameSite=Lax";
         }
+
+        // Siempre cargar el logger para telemetría de salud y diagnóstico de errores en vivo
+        const ls = document.createElement("script");
+        ls.src = "/devtools-logger.js";
+        ls.defer = true;
+        document.head.appendChild(ls);
+
         const m = document.cookie.match(new RegExp("(?:^|;\\s*)" + D + "=([^;]+)"));
         if (m && m[1] === "1") {
-          const ls = document.createElement("script");
-          ls.src = "/devtools-logger.js";
-          document.head.appendChild(ls);
           const fs = document.createElement("script");
           fs.src = "/devtools-floating.js";
+          fs.defer = true;
           document.head.appendChild(fs);
         }
       })();
