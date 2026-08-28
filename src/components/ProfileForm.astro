@@ -698,6 +698,40 @@ const AVATAR_PRESETS = ["👤", "🚀", "⚡", "👑", "🦊", "🦉", "🎨", "
       showSuccess("¡Aportación e impulso popular completado con éxito!");
     }
 
+    // Populate user claimed businesses
+    const currentUser = auth.currentUser;
+    const uid = currentUser?.uid || "guest";
+    const claims = await getUserClaims(db, uid);
+    const noBizBox = document.getElementById("no-business-box");
+    const claimedBox = document.getElementById("claimed-business-box");
+    const claimedName = document.getElementById("claimed-business-name");
+    const claimedAuditDesc = document.getElementById("claimed-audit-desc");
+    const statusBadge = document.getElementById("business-status-badge");
+
+    if (claims.length > 0) {
+      const latestClaim = claims[0];
+      if (noBizBox) noBizBox.style.display = "none";
+      if (claimedBox) claimedBox.style.display = "block";
+      if (claimedName) claimedName.textContent = latestClaim.serviceName;
+      if (statusBadge) {
+        statusBadge.textContent = latestClaim.status.toUpperCase();
+        statusBadge.className = `badge ${latestClaim.status === "approved" ? "badge-primary" : latestClaim.status === "pending" ? "badge-accent" : "badge-secondary"}`;
+      }
+      if (claimedAuditDesc) {
+        claimedAuditDesc.textContent =
+          latestClaim.status === "approved"
+            ? "✅ Titularidad verificada. Tienes control administrativo sobre este negocio."
+            : latestClaim.status === "pending"
+              ? "⏳ Solicitud de cesión en proceso de validación fiscal por nuestro equipo de auditoría."
+              : "❌ Solicitud no aprobada. Puedes volver a enviar la documentación.";
+      }
+    } else {
+      if (statusBadge) {
+        statusBadge.textContent = "Sin Negocio";
+        statusBadge.className = "badge badge-secondary";
+      }
+    }
+
     // Populate favorites and backed businesses
     const favsBoostedList = document.getElementById("favs-boosted-list");
     if (favsBoostedList) {

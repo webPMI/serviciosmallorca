@@ -232,7 +232,7 @@ describe("🔒 BLINDAJE DE PAGOS, IDEMPOTENCIA Y PREVENCIÓN DE DUPLICADOS", () 
       expect(res.error).toContain("correo electrónico válido");
     });
 
-    it("debe garantizar que HonorCheckoutModal y perfil.astro preservan la navegación y parámetros de éxito", async () => {
+    it("debe garantizar que HonorCheckoutModal y perfil.astro preservan la navegación y pantalla de recibo fiscal", async () => {
       const fs = await import("fs");
       const path = await import("path");
       const modalContent = fs.readFileSync(
@@ -241,8 +241,9 @@ describe("🔒 BLINDAJE DE PAGOS, IDEMPOTENCIA Y PREVENCIÓN DE DUPLICADOS", () 
       );
       const perfilContent = fs.readFileSync(path.resolve(process.cwd(), "src/pages/[...locale]/perfil.astro"), "utf-8");
 
-      // Modal redirige a ${prefix}profile preservando idioma
-      expect(modalContent).toContain("${prefix}profile?boostSuccess=1");
+      // Modal contiene la pantalla de recibo fiscal y enlace a perfil
+      expect(modalContent).toContain("${prefix}profile?tab=business");
+      expect(modalContent).toContain("checkout-success-view");
       // Perfil redirige a profile manteniendo query search
       expect(perfilContent).toContain("Astro.redirect(`${prefix}profile${search}`)");
     });

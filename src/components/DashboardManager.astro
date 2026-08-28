@@ -37,6 +37,16 @@ const { translations } = Astro.props;
     </article>
   </section>
 
+  <!-- PENDING CLAIMS AUDIT SECTION -->
+  <article class="card card-glass" id="claims-audit-section">
+    <div class="card-title-row">
+      <h3>🛡️ Auditoría & Verificación de Reclamaciones de Titularidad</h3>
+    </div>
+    <div id="manager-claims-list" class="claims-audit-list">
+      <p class="text-muted empty-state">Cargando solicitudes de reclamación...</p>
+    </div>
+  </article>
+
   <!-- MANAGED SERVICES LIST -->
   <article class="card card-glass">
     <div class="card-title-row">
@@ -264,11 +274,12 @@ const { translations } = Astro.props;
 <script>
   import { db } from "../lib/firebase";
   import { authStore } from "../lib/authStore";
-  import { getUserClaims } from "../lib/serviceActions";
+  import { getUserClaims, getAllClaims, updateClaimStatus } from "../lib/serviceActions";
   import { getServiceOverride, saveServiceOverride } from "../lib/serviceOverrides";
   import { SERVICES } from "../data/services";
 
   const listContainer = document.getElementById("manager-services-list");
+  const claimsContainer = document.getElementById("manager-claims-list");
   const countBadge = document.getElementById("manager-services-count");
   const modal = document.getElementById("manager-edit-modal");
   const editForm = document.getElementById("manager-edit-form") as HTMLFormElement;
@@ -286,6 +297,70 @@ const { translations } = Astro.props;
 
   authStore.subscribe(async ({ user, role }) => {
     if (!user) return;
+
+    // Load and render all claims for audit
+    const allClaims = await (role === "admin" ? getAllClaims(db) : getUserClaims(db, user.uid));
+    if (claimsContainer) {
+      if (allClaims.length === 0) {
+        claimsContainer.innerHTML =
+          '<p class="text-muted empty-state">No hay solicitudes de reclamación pendientes de verificación.</p>';
+      } else {
+        claimsContainer.innerHTML = allClaims
+          .map(
+            (c) => `
+          <div class="managed-service-card" style="border-left: 4px solid ${c.status === "approved" ? "#10b981" : c.status === "pending" ? "#f59e0b" : "#ef4444"};">
+            <div class="service-info-col">
+              <h4>🏢 ${c.serviceName}</h4>
+              <div class="service-meta-row">
+                <span>👤 Solicitante: <strong>${c.applicantName}</strong></span>
+                <span>📧 ${c.applicantEmail}</span>
+                <span>📞 ${c.applicantPhone}</span>
+                <span>📄 CIF/NIF: <code>${c.verificationProof || "No aportado"}</code></span>
+              </div>
+            </div>
+            <div class="actions-col">
+              <span class="badge ${c.status === "approved" ? "badge-primary" : c.status === "pending" ? "badge-accent" : "badge-secondary"}">
+                ${c.status.toUpperCase()}
+              </span>
+              ${
+                c.status === "pending"
+                  ? `
+                <button type="button" class="btn btn-primary btn-sm btn-approve-claim" data-claim-id="${c.id}" data-uid="${c.applicantUid || ""}" data-service-id="${c.serviceId}">
+                  ✅ Aprobar Titularidad
+                </button>
+                <button type="button" class="btn btn-secondary btn-sm btn-reject-claim" data-claim-id="${c.id}">
+                  ❌ Rechazar
+                </button>
+              `
+                  : ""
+              }
+            </div>
+          </div>
+        `,
+          )
+          .join("");
+
+        // Attach listeners to approve/reject
+        claimsContainer.querySelectorAll(".btn-approve-claim").forEach((btn) => {
+          btn.addEventListener("click", async () => {
+            const claimId = btn.getAttribute("data-claim-id")!;
+            const uid = btn.getAttribute("data-uid")!;
+            await updateClaimStatus(db, claimId, "approved", uid);
+            alert("✅ Reclamación aprobada. La titularidad ha sido verificada.");
+            location.reload();
+          });
+        });
+
+        claimsContainer.querySelectorAll(".btn-reject-claim").forEach((btn) => {
+          btn.addEventListener("click", async () => {
+            const claimId = btn.getAttribute("data-claim-id")!;
+            await updateClaimStatus(db, claimId, "rejected");
+            alert("❌ Reclamación rechazada.");
+            location.reload();
+          });
+        });
+      }
+    }
 
     // Load claims belonging to this manager
     const claims = await getUserClaims(db, user.uid);

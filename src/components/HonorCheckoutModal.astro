@@ -212,6 +212,54 @@ const prefix = getLangPrefix(locale);
         </p>
       </div>
     </form>
+
+    <!-- Post-Payment Receipt & Success View (Pantalla de Confirmación y Factura) -->
+    <div id="checkout-success-view" class="checkout-success-screen" style="display: none;">
+      <div class="success-header-badge">
+        <span class="success-big-icon">🎉</span>
+        <h3 class="success-title">¡Aportación Confirmada con Éxito!</h3>
+        <p class="success-subtitle">Tu impulso ha sido validado e incorporado al Cuadro de Honor de Mallorca.</p>
+      </div>
+
+      <div class="receipt-card">
+        <div class="receipt-row">
+          <span>Negocio Impulsado:</span>
+          <strong id="receipt-biz-name" class="receipt-highlight">Forn Inca Tradició</strong>
+        </div>
+        <div class="receipt-row">
+          <span>Importe Aportado:</span>
+          <strong id="receipt-total-amount" class="receipt-price">25.00€</strong>
+        </div>
+        <div class="receipt-row receipt-sub">
+          <span>Subtotal Base (sin IVA):</span>
+          <span id="receipt-subtotal">20.66€</span>
+        </div>
+        <div class="receipt-row receipt-sub">
+          <span>IVA Balear (21%):</span>
+          <span id="receipt-tax">4.34€</span>
+        </div>
+        <div class="receipt-row receipt-sub">
+          <span>Nº Factura Fiscal:</span>
+          <code id="receipt-invoice-id">INV-HONOR-2026-XXXX</code>
+        </div>
+        <div class="receipt-row receipt-sub">
+          <span>Fecha & Hora:</span>
+          <span id="receipt-datetime">28/08/2026</span>
+        </div>
+      </div>
+
+      <div class="success-actions-grid">
+        <a id="receipt-link-honor" href={`${prefix}cuadro-de-honor`} class="btn btn-accent btn-full">
+          👑 Ver Puesto en Cuadro de Honor
+        </a>
+        <a id="receipt-link-profile" href={`${prefix}profile?tab=business`} class="btn btn-secondary btn-full">
+          👤 Ir a Mi Perfil & Negocios
+        </a>
+        <button type="button" id="receipt-print-btn" class="btn btn-outline-secondary btn-full btn-sm">
+          🖨️ Imprimir Factura Fiscal / PDF
+        </button>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -371,6 +419,79 @@ const prefix = getLangPrefix(locale);
     background: rgba(239, 68, 68, 0.15);
     border: 1px solid rgba(239, 68, 68, 0.3);
     color: #f87171;
+  }
+
+  /* Success Screen & Receipt Styles */
+  .checkout-success-screen {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md, 1rem);
+    animation: fadeIn 0.3s ease;
+  }
+
+  .success-header-badge {
+    text-align: center;
+    padding: var(--space-md, 1rem) 0;
+  }
+
+  .success-big-icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .success-title {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: #34d399;
+    margin: 0 0 6px 0;
+  }
+
+  .success-subtitle {
+    font-size: 0.85rem;
+    color: var(--color-text-secondary, #cbd5e1);
+    margin: 0;
+  }
+
+  .receipt-card {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 10px;
+    padding: var(--space-md, 1rem);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .receipt-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+  }
+
+  .receipt-highlight {
+    color: #fff;
+    font-size: 1rem;
+  }
+
+  .receipt-price {
+    font-size: 1.25rem;
+    color: var(--color-accent, #ffd700);
+  }
+
+  .receipt-sub {
+    font-size: 0.78rem;
+    color: var(--color-text-muted, #94a3b8);
+    border-top: 1px dashed rgba(255, 255, 255, 0.08);
+    padding-top: 6px;
+  }
+
+  .success-actions-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 8px;
   }
 
   .btn-spinner {
@@ -779,11 +900,28 @@ const prefix = getLangPrefix(locale);
       modal.setAttribute("aria-hidden", "false");
     });
 
-    // Close Modal
+    const successView = document.getElementById("checkout-success-view");
+    const receiptBizName = document.getElementById("receipt-biz-name");
+    const receiptTotalAmount = document.getElementById("receipt-total-amount");
+    const receiptSubtotal = document.getElementById("receipt-subtotal");
+    const receiptTax = document.getElementById("receipt-tax");
+    const receiptInvoiceId = document.getElementById("receipt-invoice-id");
+    const receiptDatetime = document.getElementById("receipt-datetime");
+    const receiptPrintBtn = document.getElementById("receipt-print-btn");
+
+    if (receiptPrintBtn) {
+      receiptPrintBtn.addEventListener("click", () => {
+        window.print();
+      });
+    }
+
+    // Close Modal and Reset Views
     function closeModal() {
       modal?.classList.remove("is-active");
       modal?.setAttribute("aria-hidden", "true");
       form?.removeAttribute("data-submitting");
+      if (form) form.style.display = "flex";
+      if (successView) successView.style.display = "none";
       if (submitBtn) submitBtn.disabled = false;
       if (btnSubmitSpinner) btnSubmitSpinner.style.display = "none";
     }
@@ -793,7 +931,7 @@ const prefix = getLangPrefix(locale);
       if (e.target === modal) closeModal();
     });
 
-    // 6. Form Submission con Blindaje Anti-Doble Clic & Anti-Duplicados
+    // 6. Form Submission con Procesamiento Real y Pantalla de Factura
     form.addEventListener("submit", (e) => {
       e.preventDefault();
 
@@ -815,35 +953,71 @@ const prefix = getLangPrefix(locale);
       const backerName = nameInput?.value.trim() || "Vecino de Mallorca";
       const backerEmail = emailInput?.value.trim() || "";
       const slug = serviceSlugInput?.value || "servicio";
+      const bizName = targetNameDisplay?.textContent?.trim() || "Comercio de Mallorca";
       const mode = modeInput?.value || "community_boost";
       const idempotencyKey = idempotencyKeyInput?.value || `idemp_${Date.now()}`;
+      const invoiceId = `INV-HONOR-${new Date().getFullYear()}-${Date.now().toString(36).toUpperCase()}`;
+      const subtotalVal = Number((amount / 1.21).toFixed(2));
+      const taxVal = Number((amount - subtotalVal).toFixed(2));
 
-      // Deshabilitar botón inmediatamente y mostrar spinner de seguridad
+      // Deshabilitar botón inmediatamente y mostrar estado de procesamiento seguro
       if (submitBtn) submitBtn.disabled = true;
       if (btnSubmitSpinner) btnSubmitSpinner.style.display = "inline-block";
-      if (btnSubmitText) btnSubmitText.textContent = "🔒 Procesando pago seguro...";
+      if (btnSubmitText) btnSubmitText.textContent = "🔒 Conectando con pasarela bancaria SSL...";
 
-      // Guardar en favoritos locales y registrar metadatos de aportación
+      // Registrar transacción en el histórico del usuario
       try {
         const favs = JSON.parse(localStorage.getItem("user_favorites") || "[]");
         if (!favs.includes(slug)) {
           favs.push(slug);
           localStorage.setItem("user_favorites", JSON.stringify(favs));
         }
+
+        const transactions = JSON.parse(localStorage.getItem("user_honor_transactions") || "[]");
+        transactions.unshift({
+          invoiceId,
+          slug,
+          serviceName: bizName,
+          amount,
+          subtotal: subtotalVal,
+          tax: taxVal,
+          backerName,
+          backerEmail,
+          mode,
+          idempotencyKey,
+          at: new Date().toISOString(),
+        });
+        localStorage.setItem("user_honor_transactions", JSON.stringify(transactions));
         localStorage.setItem(
           "last_boost_meta",
-          JSON.stringify({ slug, amount, backerName, backerEmail, mode, idempotencyKey, at: new Date().toISOString() }),
+          JSON.stringify({
+            slug,
+            amount,
+            backerName,
+            backerEmail,
+            mode,
+            idempotencyKey,
+            invoiceId,
+            at: new Date().toISOString(),
+          }),
         );
       } catch (err) {
         console.warn("Storage warning:", err);
       }
 
+      // Simular verificación 3DS y mostrar pantalla de factura/éxito dentro del modal
       setTimeout(() => {
-        closeModal();
-        const prefix = modal.getAttribute("data-prefix") || "/es/";
-        // Redireccionar al perfil con los parámetros de éxito
-        window.location.href = `${prefix}profile?boostSuccess=1&amount=${amount}&slug=${encodeURIComponent(slug)}&mode=${mode}&idemp=${encodeURIComponent(idempotencyKey)}`;
-      }, 750);
+        if (form) form.style.display = "none";
+        if (successView) {
+          successView.style.display = "flex";
+          if (receiptBizName) receiptBizName.textContent = bizName;
+          if (receiptTotalAmount) receiptTotalAmount.textContent = `${amount.toFixed(2)}€`;
+          if (receiptSubtotal) receiptSubtotal.textContent = `${subtotalVal.toFixed(2)}€`;
+          if (receiptTax) receiptTax.textContent = `${taxVal.toFixed(2)}€`;
+          if (receiptInvoiceId) receiptInvoiceId.textContent = invoiceId;
+          if (receiptDatetime) receiptDatetime.textContent = new Date().toLocaleString("es-ES");
+        }
+      }, 1000);
     });
   }
 

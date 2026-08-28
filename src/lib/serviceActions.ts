@@ -73,42 +73,108 @@ export interface ServiceReport {
 }
 
 // -----------------------------------------------------------------------------
-// SERVICE CLAIMS (Reclamación de negocio)
+// SERVICE CLAIMS (Reclamación de negocio con persistencia híbrida Firestore + LocalStorage)
 // -----------------------------------------------------------------------------
-export async function createServiceClaim(
-  db: Firestore,
-  claim: Omit<ServiceClaim, "status" | "createdAt">,
-): Promise<void> {
-  const claimRef = doc(db, "service_claims", claim.id);
-  await setDoc(claimRef, {
-    ...claim,
-    status: "pending",
-    createdAt: serverTimestamp(),
-  });
-}
+const CLAIMS_STORAGE_KEY = "sm_service_claims";
 
-export async function getUserClaims(db: Firestore, uid: string): Promise<ServiceClaim[]> {
+function getLocalClaims(): ServiceClaim[] {
+  if (typeof window === "undefined") return [];
   try {
-    const q = query(collection(db, "service_claims"), where("applicantUid", "==", uid));
-    const snapshot = await getDocs(q);
-    const items = snapshot.docs.map((d) => ({ id: d.id, ...d.data() }) as ServiceClaim);
-    return items.sort((a, b) => {
-      const timeA = (a.createdAt as any)?.toMillis?.() || (a.createdAt as any)?.seconds || 0;
-      const timeB = (b.createdAt as any)?.toMillis?.() || (b.createdAt as any)?.seconds || 0;
-      return timeB - timeA;
-    });
+    return JSON.parse(localStorage.getItem(CLAIMS_STORAGE_KEY) || "[]");
   } catch {
     return [];
   }
 }
 
+function saveLocalClaim(claim: ServiceClaim): void {
+  if (typeof window === "undefined") return;
+  try {
+    const existing = getLocalClaims();
+    const filtered = existing.filter((c) => c.id !== claim.id);
+    filtered.unshift(claim);
+    localStorage.setItem(CLAIMS_STORAGE_KEY, JSON.stringify(filtered));
+  } catch (err) {
+    console.warn("Could not save claim locally:", err);
+  }
+}
+
+export async function createServiceClaim(
+  db: Firestore,
+  claim: Omit<ServiceClaim, "status" | "createdAt">,
+): Promise<void> {
+  const fullClaim: ServiceClaim = {
+    ...claim,
+    status: "pending",
+    createdAt: new Date().toISOString(),
+  };
+
+  // Guardar en LocalStorage para disponibilidad inmediata sin latencia
+  saveLocalClaim(fullClaim);
+
+  try {
+    const claimRef = doc(db, "service_claims", claim.id);
+    await setDoc(claimRef, {
+      ...claim,
+      status: "pending",
+      createdAt: serverTimestamp(),
+    });
+  } catch (err) {
+    console.warn("Firestore offline or unavailable, claim stored locally:", err);
+  }
+}
+
+export async function getUserClaims(db: Firestore, uid: string): Promise<ServiceClaim[]> {
+  const localClaims = getLocalClaims().filter((c) => c.applicantUid === uid || !c.applicantUid);
+  try {
+    const q = query(collection(db, "service_claims"), where("applicantUid", "==", uid));
+    const snapshot = await getDocs(q);
+    const remoteItems = snapshot.docs.map((d) => ({ id: d.id, ...d.data() }) as ServiceClaim);
+
+    // Unir locales y remotos deduplicando por ID
+    const map = new Map<string, ServiceClaim>();
+    localClaims.forEach((c) => map.set(c.id, c));
+    remoteItems.forEach((c) => map.set(c.id, c));
+
+    return Array.from(map.values()).sort((a, b) => {
+      const timeA =
+        (a.createdAt as any)?.toMillis?.() ||
+        (a.createdAt as any)?.seconds ||
+        (typeof a.createdAt === "string" ? new Date(a.createdAt).getTime() : 0);
+      const timeB =
+        (b.createdAt as any)?.toMillis?.() ||
+        (b.createdAt as any)?.seconds ||
+        (typeof b.createdAt === "string" ? new Date(b.createdAt).getTime() : 0);
+      return timeB - timeA;
+    });
+  } catch {
+    return localClaims;
+  }
+}
+
 export async function getAllClaims(db: Firestore): Promise<ServiceClaim[]> {
+  const localClaims = getLocalClaims();
   try {
     const q = query(collection(db, "service_claims"), orderBy("createdAt", "desc"));
     const snapshot = await getDocs(q);
-    return snapshot.docs.map((d) => ({ id: d.id, ...d.data() }) as ServiceClaim);
+    const remoteItems = snapshot.docs.map((d) => ({ id: d.id, ...d.data() }) as ServiceClaim);
+
+    const map = new Map<string, ServiceClaim>();
+    localClaims.forEach((c) => map.set(c.id, c));
+    remoteItems.forEach((c) => map.set(c.id, c));
+
+    return Array.from(map.values()).sort((a, b) => {
+      const timeA =
+        (a.createdAt as any)?.toMillis?.() ||
+        (a.createdAt as any)?.seconds ||
+        (typeof a.createdAt === "string" ? new Date(a.createdAt).getTime() : 0);
+      const timeB =
+        (b.createdAt as any)?.toMillis?.() ||
+        (b.createdAt as any)?.seconds ||
+        (typeof b.createdAt === "string" ? new Date(b.createdAt).getTime() : 0);
+      return timeB - timeA;
+    });
   } catch {
-    return [];
+    return localClaims;
   }
 }
 
@@ -118,19 +184,38 @@ export async function updateClaimStatus(
   status: RequestStatus,
   targetUserUid?: string,
 ): Promise<void> {
-  const claimRef = doc(db, "service_claims", claimId);
-  await updateDoc(claimRef, {
-    status,
-    updatedAt: serverTimestamp(),
-  });
+  // Actualizar en LocalStorage
+  if (typeof window !== "undefined") {
+    try {
+      const all = getLocalClaims();
+      const match = all.find((c) => c.id === claimId);
+      if (match) {
+        match.status = status;
+        match.updatedAt = new Date().toISOString();
+        localStorage.setItem(CLAIMS_STORAGE_KEY, JSON.stringify(all));
+      }
+    } catch (err) {
+      console.warn("Could not update local claim status:", err);
+    }
+  }
 
-  // Si se aprueba, escalamos al usuario a rol 'manager'
-  if (status === "approved" && targetUserUid) {
-    const userRef = doc(db, "users", targetUserUid);
-    await updateDoc(userRef, {
-      role: "manager",
+  try {
+    const claimRef = doc(db, "service_claims", claimId);
+    await updateDoc(claimRef, {
+      status,
       updatedAt: serverTimestamp(),
     });
+
+    // Si se aprueba, escalamos al usuario a rol 'manager'
+    if (status === "approved" && targetUserUid) {
+      const userRef = doc(db, "users", targetUserUid);
+      await updateDoc(userRef, {
+        role: "manager",
+        updatedAt: serverTimestamp(),
+      });
+    }
+  } catch (err) {
+    console.warn("Firestore update error (fallback to local state applied):", err);
   }
 }
 
