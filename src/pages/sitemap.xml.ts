@@ -3,12 +3,25 @@ import { SERVICES } from "../data/services/index.ts";
 import { CATEGORIES } from "../data/categories.ts";
 import { MALLORCA_ZONES } from "../data/zones.ts";
 import { DISCOVERY_TOURS } from "../data/discoveryTours.ts";
+import { SIGNATURE_TOURS } from "../lib/experienceTours.ts";
 import { BLOG_POSTS } from "../data/posts.ts";
 
 export const prerender = false;
 
 const SITE_URL = "https://serviciosmallorca.com";
 const LOCALES = ["es", "en", "ca", "de"] as const;
+
+const TOP_HUBS = [
+  "restaurantes-palma",
+  "spas-bienestar-mallorca",
+  "nautica-charter-calvia",
+  "deporte-padel-mallorca",
+  "tatuajes-estudios-palma",
+  "hoteles-boutique-mallorca",
+  "inmobiliarias-lujo-mallorca",
+  "bodegas-catas-mallorca",
+  "artesania-tradicional-mallorca",
+];
 
 export const GET: APIRoute = async () => {
   const now = new Date().toISOString().split("T")[0];
@@ -72,7 +85,16 @@ export const GET: APIRoute = async () => {
     addMultilingualUrl(`/zonas/${zone.id}`, "0.85", "weekly", now);
   });
 
-  // 5. Rutas y Tours Experienciales
+  // 5. Hubs Comparativos "Los Mejores"
+  TOP_HUBS.forEach((slug) => {
+    addMultilingualUrl(`/mejores/${slug}`, "0.85", "weekly", now);
+  });
+
+  // 6. Rutas y Tours Experienciales
+  SIGNATURE_TOURS.forEach((tour) => {
+    addMultilingualUrl(`/tours/${tour.slug}`, "0.80", "weekly", now);
+  });
+
   if (DISCOVERY_TOURS && Array.isArray(DISCOVERY_TOURS)) {
     DISCOVERY_TOURS.forEach((tour) => {
       addMultilingualUrl(`/tours/${tour.slug}`, "0.80", "weekly", now);

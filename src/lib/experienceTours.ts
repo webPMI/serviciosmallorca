@@ -145,6 +145,92 @@ export const SIGNATURE_TOURS: ExperienceTour[] = [
       ],
     },
   },
+  {
+    id: "tour-raiguer-vinos-artesania",
+    slug: "ruta-vinos-artesania-raiguer-pla",
+    title: {
+      es: "Ruta del Vino DO Binissalem, Cerámica de Pòrtol & Celler Tradicional",
+      en: "DO Binissalem Wine Route, Pòrtol Ceramics & Traditional Celler",
+      ca: "Ruta del Vi DO Binissalem, Ceràmica de Pòrtol i Celler Tradicional",
+      de: "DO Binissalem Weinroute, Pòrtol Keramik & Traditioneller Celler",
+    },
+    subtitle: {
+      es: "Tradición vitivinícola, talleres alfareros de arcilla roja y gastronomía mallorquina en el corazón de la isla.",
+      en: "Centenary winemaking tradition, red clay pottery workshops, and authentic Mallorcan gastronomy in the island's heartland.",
+      ca: "Tradició vitivinícola, tallers terrissaires d'argila vermella i gastronomia mallorquina al cor de l'illa.",
+      de: "Traditionsreiche Weinkultur, rote Tonkeramik-Werkstätten und authentische Inselküche im Herzen Mallorcas.",
+    },
+    zone: "raiguer-pla",
+    theme: "gastronomy_wine",
+    estimatedTotalHours: 5.5,
+    totalDistanceKm: 34.0,
+    stops: [],
+    highlights: {
+      es: [
+        "Cata de vinos autóctonos (Manto Negro, Callet, Moll) en cellers centenarios",
+        "Artesanía en vidrio y barro de tradición mallorquina",
+        "Gastronomía de producto Km0 en pueblos de interior auténticos",
+      ],
+      en: [
+        "Native wine tastings (Manto Negro, Callet, Moll) in historic cellers",
+        "Authentic blown glass and clay pottery crafts",
+        "Farm-to-table cuisine in picturesque inland villages",
+      ],
+      ca: [
+        "Tast de vins autòctons (Manto Negro, Callet, Moll) a cellers històrics",
+        "Artesania en vidre i fang de tradició mallorquina",
+        "Gastronomia de producte Km0 a pobles d'interior autèntics",
+      ],
+      de: [
+        "Verkostung einheimischer Rebsorten (Manto Negro, Callet, Moll) in historischen Kellereien",
+        "Traditionelles mallorquinisches Glasbläser- und Töpferhandwerk",
+        "Regionale Km0-Küche in authentischen Inseldörfern",
+      ],
+    },
+  },
+  {
+    id: "tour-palma-cultura-gastronomia",
+    slug: "ruta-cultura-museos-alta-gastronomia-palma",
+    title: {
+      es: "Ruta de Museos, Galerías de Vanguardia & Alta Cocina de Palma",
+      en: "Palma Art Galleries, Contemporary Museums & Fine Dining Route",
+      ca: "Ruta de Museus, Galeries d'Avantguarda i Alta Cuina de Palma",
+      de: "Palma Kunstgalerien, Moderne Museen & Fine Dining Route",
+    },
+    subtitle: {
+      es: "Un recorrido cultural por los grandes baluartes artísticos de Palma con paradas gastronómicas de autor.",
+      en: "A cultural exploration of Palma's top artistic landmarks combined with author signature cuisine.",
+      ca: "Un recorregut cultural pels grans baluards artístics de Palma amb parades gastronòmiques d'autor.",
+      de: "Eine Kulturreise durch Palmas führende Kunstmuseen kombiniert mit exquisiten kulinarischen Highlights.",
+    },
+    zone: "palma",
+    theme: "art_craft",
+    estimatedTotalHours: 6.0,
+    totalDistanceKm: 8.5,
+    stops: [],
+    highlights: {
+      es: [
+        "Arte contemporáneo con vistas a la bahía en Es Baluard y Fundación Miró",
+        "Paseo por los patios señoriales del casco antiguo de Palma",
+        "Experiencia culinaria Michelin y cocina de autor balear",
+      ],
+      en: [
+        "Contemporary art overlooking the bay at Es Baluard and Fundació Miró",
+        "Stroll through the historic palace courtyards of Palma's old town",
+        "Michelin-recognized dining and Balearic author gastronomy",
+      ],
+      ca: [
+        "Art contemporani amb vistes a la badia a Es Baluard i Fundació Miró",
+        "Passejada pels patis senyorials del casc antic de Palma",
+        "Experiència culinària d'autor i cuina balear d'avantguarda",
+      ],
+      de: [
+        "Moderne Kunst mit Blick auf die Bucht im Es Baluard und der Fundació Miró",
+        "Spaziergang durch die historischen Innenhöfe der Altstadt von Palma",
+        "Prämierte Autorenküche und balearische Spitzengastronomie",
+      ],
+    },
+  },
 ];
 
 /**
@@ -164,6 +250,10 @@ export function getHydratedTourBySlug(slug: string): ExperienceTour | undefined 
       "port-adriano-boat-charter",
       "arabella-spa-mallorca",
     ];
+  } else if (baseTour.id === "tour-raiguer-vinos-artesania") {
+    serviceSlugs = ["lafiore-vidrio-artesanal", "celler-can-amer", "ca-na-toneta"];
+  } else if (baseTour.id === "tour-palma-cultura-gastronomia") {
+    serviceSlugs = ["fundacio-miro-mallorca", "es-baluard-museu", "dins-santi-taura", "vandal-palma"];
   }
 
   const stops: TourStop[] = [];

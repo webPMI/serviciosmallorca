@@ -3,16 +3,24 @@ import { SIGNATURE_TOURS, getHydratedTourBySlug, generateDynamicTourFromAnchor }
 
 describe("Experience Tours & Dynamic Route Engine", () => {
   it("contiene rutas temáticas de autor predefinidas", () => {
-    expect(SIGNATURE_TOURS.length).toBeGreaterThanOrEqual(2);
+    expect(SIGNATURE_TOURS.length).toBeGreaterThanOrEqual(4);
     const tramuntanaTour = SIGNATURE_TOURS.find((t) => t.id === "tour-tramuntana-vidrio-arte");
     expect(tramuntanaTour).toBeDefined();
     expect(tramuntanaTour?.title.es).toContain("Vidrio");
+
+    const raiguerTour = SIGNATURE_TOURS.find((t) => t.id === "tour-raiguer-vinos-artesania");
+    expect(raiguerTour).toBeDefined();
+    expect(raiguerTour?.title.es).toContain("Binissalem");
   });
 
   it("hidrata correctamente una ruta de autor con negocios reales y distancias calculadas", () => {
     const tour = getHydratedTourBySlug("ruta-arte-vidrio-tradicion-tramuntana");
     expect(tour).toBeDefined();
     expect(tour?.stops.length).toBeGreaterThan(0);
+
+    const raiguerHydrated = getHydratedTourBySlug("ruta-vinos-artesania-raiguer-pla");
+    expect(raiguerHydrated).toBeDefined();
+    expect(raiguerHydrated?.stops.length).toBe(3);
 
     const firstStop = tour?.stops[0];
     expect(firstStop?.service.id).toBe("lafiore-vidrio-artesanal");

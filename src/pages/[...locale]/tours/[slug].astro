@@ -20,9 +20,34 @@ if (!tour) {
 
 const pageTitle = `${tour.title[locale] || tour.title.es} | Servicios Mallorca`;
 const pageDescription = tour.subtitle[locale] || tour.subtitle.es;
+
+const schemaTour = {
+  "@context": "https://schema.org",
+  "@type": "TouristTrip",
+  name: tour.title[locale] || tour.title.es,
+  description: tour.subtitle[locale] || tour.subtitle.es,
+  touristType: tour.theme,
+  itinerary: {
+    "@type": "ItemList",
+    numberOfItems: tour.stops.length,
+    itemListElement: tour.stops.map((stop) => ({
+      "@type": "ListItem",
+      position: stop.stopNumber,
+      name: stop.service.name,
+      description: stop.stepDescription[locale] || stop.stepDescription.es,
+      item: {
+        "@type": "LocalBusiness",
+        name: stop.service.name,
+        address: stop.service.address,
+        url: `https://serviciosmallorca.com${prefix}servicios/${stop.service.slug}`,
+      },
+    })),
+  },
+};
 ---
 
 <BaseLayout title={pageTitle} lang={locale} description={pageDescription}>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(schemaTour)} />
   <Navbar currentLocale={locale} translations={translations} getLangPrefix={getLangPrefix} />
 
   <main class="container section">
