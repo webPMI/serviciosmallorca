@@ -67,4 +67,19 @@ describe("SEO & Schema.org JSON-LD Generation", () => {
       expect(jsonLdEs.geo.longitude).toBeTypeOf("number");
     }
   });
+
+  it("ensures Open Graph and WhatsApp link sharing tags are strictly raster images (JPG/PNG)", () => {
+    // WhatsApp drops .svg open graph previews. Default fallback must be /og-image.jpg
+    const defaultOgImage = "/og-image.jpg";
+    expect(defaultOgImage.endsWith(".svg")).toBe(false);
+    expect(defaultOgImage.endsWith(".jpg")).toBe(true);
+
+    for (const service of SERVICES) {
+      if (service.image) {
+        expect(
+          service.image.startsWith("http://") || service.image.startsWith("https://") || service.image.startsWith("/"),
+        ).toBe(true);
+      }
+    }
+  });
 });

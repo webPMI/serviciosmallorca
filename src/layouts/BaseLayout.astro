@@ -42,9 +42,11 @@ const hreflangAlternates = [
   { lang: "x-default", href: `${currentOrigin}/es${cleanSuffix}` },
 ];
 
-// Imagen absoluta para Open Graph y Twitter Cards
-let absoluteImageUrl = `${currentOrigin}/images/categories/gastronomia.svg`;
-if (image) {
+// Imagen absoluta para Open Graph, WhatsApp y Twitter Cards
+const defaultOgImage = `${currentOrigin}/og-image.jpg`;
+let absoluteImageUrl = defaultOgImage;
+
+if (image && !image.endsWith(".svg")) {
   if (image.startsWith("http://") || image.startsWith("https://")) {
     absoluteImageUrl = image;
   } else {
@@ -132,20 +134,27 @@ const shouldLoadAdSense =
     <meta name="geo.position" content="39.6953;3.0176" />
     <meta name="ICBM" content="39.6953, 3.0176" />
 
-    <!-- Open Graph / Facebook / WhatsApp / Telegram Meta Tags -->
+    <!-- Open Graph / WhatsApp / Facebook / Telegram / LinkedIn Meta Tags -->
     <meta property="og:site_name" content="Servicios Mallorca" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={pageCanonical} />
     <meta property="og:type" content={ogType} />
     <meta property="og:image" content={absoluteImageUrl} />
+    <meta property="og:image:secure_url" content={absoluteImageUrl} />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={title} />
     <meta property="og:locale" content={ogLocale} />
+    <link rel="image_src" href={absoluteImageUrl} />
 
     <!-- Twitter / X Meta Tags -->
     <meta name="twitter:card" content={twitterCard} />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={absoluteImageUrl} />
+    <meta name="twitter:image:alt" content={title} />
 
     <!-- Security meta tags -->
     <meta http-equiv="X-Content-Type-Options" content="nosniff" />
