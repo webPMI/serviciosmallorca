@@ -140,7 +140,7 @@ export const caNantunaFornalutx: ServiceItem = {
     ca: "Ca N'Antuna va ser fundat per la família Antuna per oferir la cuina casolana més autèntica de Fornalutx, preservant el sabor i la calidesa de la serra.",
     de: "Ca N'Antuna wurde von der Familie Antuna gegründet, um Wanderer und Gäste mit echter mallorquinischer Bergküche zu verwöhnen. Bis heute ein Juwel balearischer Gastlichkeit.",
   },
-  image: "/images/services/ca-nantuna-fornalutx.svg",
+  image: "/images/services/ca-nantuna-fornalutx.jpg",
   gallery: [],
   schedule: "Martes a Domingo: 13:00 - 16:00, 19:30 - 22:30 | Lunes cerrado",
   confidenceScore: 97,

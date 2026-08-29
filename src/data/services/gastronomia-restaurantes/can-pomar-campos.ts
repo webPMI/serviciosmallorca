@@ -27,7 +27,7 @@ export const canPomar: ServiceItem = {
   coordinates: { lat: 39.4312, lng: 3.0185 },
   schedule: "Lunes a Domingo: 08:00 - 14:00 | 17:00 - 20:30",
   lastVerifiedAt: "2026-08-25",
-  image: "/images/services/can-pomar-campos.svg",
+  image: "/images/services/can-pomar-campos.jpg",
   gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],

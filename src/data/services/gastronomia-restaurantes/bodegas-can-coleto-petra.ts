@@ -135,7 +135,7 @@ export const bodegasCanColetoPetra: ServiceItem = {
     ca: "El 1999, Miquel Jaume i Isabel Monroig van fundar Can Coleto a Petra per elaborar vins ecològics purs amb passió artesanal.",
     de: "1999 gründeten Miquel Jaume und Isabel Monroig Can Coleto in Petra, um durch biologische Bewirtschaftung Weine mit unverwechselbarer mallorquinischer Seele zu keltern.",
   },
-  image: "/images/services/bodegas-can-coleto-petra.svg",
+  image: "/images/services/bodegas-can-coleto-petra.jpg",
   gallery: [],
   schedule: "Lunes a Sábado: Visitas y catas bajo cita previa obligatoria por teléfono o WhatsApp | Domingo cerrado",
   confidenceScore: 99,

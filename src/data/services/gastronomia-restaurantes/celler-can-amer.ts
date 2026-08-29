@@ -173,7 +173,7 @@ export const cellerCanAmer: ServiceItem = {
     ca: ["Dinars i sopars gurmet", "Menú degustació", "Tastos de vins privats", "Cuina de temporada"],
     de: ["Gourmet-Lunch & Dinner", "Degustationsmenü", "Private Weinverkostungen", "Saisonale Küche"],
   },
-  image: "/images/services/celler-can-amer.svg",
+  image: "/images/services/celler-can-amer.jpg",
   gallery: [],
   schedule: "Mar - Sáb: 13:00 - 15:30, 20:00 - 23:00 | Dom: 13:00 - 16:00 | Lun: Cerrado",
   lastVerifiedAt: "2026-08-26",

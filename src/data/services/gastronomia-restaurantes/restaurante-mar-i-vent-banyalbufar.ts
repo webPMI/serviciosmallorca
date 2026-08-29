@@ -142,7 +142,7 @@ export const restauranteMarIVentBanyalbufar: ServiceItem = {
     ca: "El 1931, la família Vives va fundar Mar i Vent a Banyalbufar per acollir els viatgers a la Serra de Tramuntana, oferint pau, bona cuina i vistes a la mar inigualables.",
     de: "1931 gründete Familie Vives das Mar i Vent in Banyalbufar, um Reisende in der wilden Tramuntana mit herzlicher mallorquinischer Gastfreundschaft zu empfangen.",
   },
-  image: "/images/services/restaurante-mar-i-vent-banyalbufar.svg",
+  image: "/images/services/restaurante-mar-i-vent-banyalbufar.jpg",
   gallery: [],
   schedule: "Lunes a Domingo: 13:00 - 16:00, 19:30 - 22:30 (Abierto todos los días en temporada)",
   confidenceScore: 99,

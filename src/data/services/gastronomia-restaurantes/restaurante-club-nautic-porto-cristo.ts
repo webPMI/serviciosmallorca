@@ -142,7 +142,7 @@ export const restauranteClubNauticPortoCristo: ServiceItem = {
     ca: "El 1969, el Club Nàutic Porto Cristo va néixer per potenciar la navegació al Llevant de Mallorca, mantenint una cuina marinera de referència.",
     de: "1969 gegründet, verbindet das Restaurant im Club Nàutic Porto Cristo die Freude am Segeln mit erstklassiger mediterraner Gastfreundschaft an Mallorcas Ostküste.",
   },
-  image: "/images/services/restaurante-club-nautic-porto-cristo.svg",
+  image: "/images/services/restaurante-club-nautic-porto-cristo.jpg",
   gallery: [],
   schedule: "Lunes a Domingo: 09:30 - 23:30 (Abierto todos los días del año)",
   confidenceScore: 98,

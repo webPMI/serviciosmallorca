@@ -135,7 +135,7 @@ export const restauranteClubNauticCalaGamba: ServiceItem = {
     ca: "El Club Nàutic Cala Gamba va néixer el 1938 per protegir els llaüts tradicionals i gaudir del millor peix fresc de la badia de Palma.",
     de: "Der Club Nàutic Cala Gamba wurde 1938 von Fischern gegründet, um das maritime Erbe Mallorcas zu bewahren und fangfrische Meeresküche am Hafen zu servieren.",
   },
-  image: "/images/services/restaurante-club-nautic-cala-gamba.svg",
+  image: "/images/services/restaurante-club-nautic-cala-gamba.jpg",
   gallery: [],
   schedule: "Lunes a Domingo: 09:00 - 23:30 (Abierto todos los días)",
   confidenceScore: 98,

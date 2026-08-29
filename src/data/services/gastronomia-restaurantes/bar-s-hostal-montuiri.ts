@@ -141,7 +141,7 @@ export const barSHostalMontuiri: ServiceItem = {
     ca: "El 1950, el Bar s'Hostal va néixer a Montuïri per oferir el millor pa amb oli amb el pa i els embotits més autèntics del Pla de Mallorca.",
     de: "1950 in Montuïri gegründet, steht Bar s'Hostal seit jeher für das vollendete mallorquinische Pa amb Oli mit den besten Wurstspezialitäten der Inselmitte.",
   },
-  image: "/images/services/bar-s-hostal-montuiri.svg",
+  image: "/images/services/bar-s-hostal-montuiri.jpg",
   gallery: [],
   schedule: "Martes a Domingo: 08:00 - 24:00 | Lunes cerrado",
   confidenceScore: 99,

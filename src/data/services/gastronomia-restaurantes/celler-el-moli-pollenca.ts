@@ -141,7 +141,7 @@ export const cellerElMoliPollenca: ServiceItem = {
     ca: "El Celler El Molí va néixer a Pollença per recuperar l'antic molí i oferir la cuina mallorquina de tota la vida amb tracte proper.",
     de: "Das Celler El Molí entstand in Pollença, um die alte Windmühle mit traditioneller mallorquinischer Gastfreundschaft und Hausmannskost zu füllen.",
   },
-  image: "/images/services/celler-el-moli-pollenca.svg",
+  image: "/images/services/celler-el-moli-pollenca.jpg",
   gallery: [],
   schedule: "Lunes a Domingo: 12:30 - 16:00, 19:30 - 23:00 (Abierto todos los días)",
   confidenceScore: 98,

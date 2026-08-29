@@ -27,7 +27,7 @@ export const electricidadLlabres: ServiceItem = {
   coordinates: { lat: 39.6198, lng: 2.7532 },
   schedule: "Lunes a Viernes: 08:00 - 19:00 | Servicio de Averías Eléctricas Urgentes",
   lastVerifiedAt: "2026-08-25",
-  image: "/images/services/electricidad-llabres-marratxi.svg",
+  image: "/images/services/electricidad-llabres-marratxi.jpg",
   gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en"],

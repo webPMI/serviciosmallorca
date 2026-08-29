@@ -27,7 +27,7 @@ export const laBarberiaDeLaLonja: ServiceItem = {
   coordinates: { lat: 39.5682, lng: 2.6438 },
   schedule: "Lunes a Viernes: 09:30 - 19:30 | Sábados: 09:30 - 14:00 (Domingos Cerrado)",
   lastVerifiedAt: "2026-08-25",
-  image: "/images/services/la-barberia-de-la-lonja.svg",
+  image: "/images/services/la-barberia-de-la-lonja.jpg",
   gallery: [],
   targetAudience: ["residentes", "turistas", "expat"],
   languagesSpoken: ["es", "ca", "en"],

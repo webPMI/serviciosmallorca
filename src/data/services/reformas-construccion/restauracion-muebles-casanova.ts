@@ -27,7 +27,7 @@ export const restauracionCasanova: ServiceItem = {
   coordinates: { lat: 39.5722, lng: 2.636 },
   schedule: "Lunes a Viernes: 08:30 - 13:30 | 15:30 - 19:00 (Sábados con Cita Previa)",
   lastVerifiedAt: "2026-08-25",
-  image: "/images/services/restauracion-muebles-casanova.svg",
+  image: "/images/services/restauracion-muebles-casanova.jpg",
   gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],

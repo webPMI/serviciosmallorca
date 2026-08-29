@@ -133,7 +133,7 @@ export const esVergerAlaro: ServiceItem = {
     ca: "Nascut com una casa de menjars per a llenyataires a Alaró, Es Verger ha convertit el seu rostit d'anyell a foc d'alzina en un mite gastronòmic.",
     de: "Das Es Verger begann als einfache Einkehr für Holzarbeiter und Bergwanderer in Alaró. Die Passion für Steineichenholzöfen machte das Lammfleisch zu einer weltbekannten Spezialität.",
   },
-  image: "/images/services/es-verger-alaro.svg",
+  image: "/images/services/es-verger-alaro.jpg",
   gallery: [],
   schedule: "Martes a Domingo: 10:30 - 20:00 (Cocina de 12:00 a 17:30) | Lunes cerrado",
   confidenceScore: 98,

@@ -134,7 +134,7 @@ export const bodegasSonRamonLlubi: ServiceItem = {
     ca: "Documentat des de 1760 a Llubí, Son Ramon va néixer per conservar la noblesa de la finca i elaborar grans vins al centre de l'illa.",
     de: "Seit 1760 dokumentiert, verbindet Son Ramon die historische Finca-Tradition mit modernstem Weinbau im Zentrum Mallorcas.",
   },
-  image: "/images/services/bodegas-son-ramon-llubi.svg",
+  image: "/images/services/bodegas-son-ramon-llubi.jpg",
   gallery: [],
   schedule: "Lunes a Sábado: 10:00 - 18:00 (Visitas guiadas y catas bajo reserva previa obligatoria | Domingo cerrado)",
   confidenceScore: 98,

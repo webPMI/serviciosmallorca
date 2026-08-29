@@ -134,7 +134,7 @@ export const bodegasButxetMuro: ServiceItem = {
     ca: "El 2001, la família Butxet va convertir les seves terres a Muro en vinyes de referència, aprofitant la marinada del nord per elaborar vins d'autor.",
     de: "2001 pflanzte die Familie Butxet in Muro ihre ersten Reben, um den Einfluss der nördlichen Meeresbrise in ausdrucksstarken Autorenweinen einzufangen.",
   },
-  image: "/images/services/bodegas-butxet-muro.svg",
+  image: "/images/services/bodegas-butxet-muro.jpg",
   gallery: [],
   schedule: "Lunes a Sábado: 10:00 - 18:00 (Visitas guiadas y catas bajo reserva previa | Domingo cerrado)",
   confidenceScore: 98,

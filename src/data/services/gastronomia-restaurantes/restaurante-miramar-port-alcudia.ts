@@ -142,7 +142,7 @@ export const restauranteMiramarPortAlcudia: ServiceItem = {
     ca: "El 1871, Miramar va obrir al port d'Alcúdia per acollir pescadors i navegants, esdevenint el gran degà de la cuina marinera del nord de Mallorca.",
     de: "1871 eröffnete das Restaurant Miramar im Hafen von Alcúdia für Fischer und Reisende und entwickelte sich über Generationen zum ältesten Traditionsrestaurant des mallorquinischen Nordens.",
   },
-  image: "/images/services/restaurante-miramar-port-alcudia.svg",
+  image: "/images/services/restaurante-miramar-port-alcudia.jpg",
   gallery: [],
   schedule: "Lunes a Domingo: 13:00 - 23:30 (Abierto todos los días del año)",
   confidenceScore: 98,

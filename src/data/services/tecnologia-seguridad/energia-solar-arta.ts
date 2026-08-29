@@ -27,7 +27,7 @@ export const solarArta: ServiceItem = {
   coordinates: { lat: 39.694, lng: 3.351 },
   schedule: "Lunes a Viernes: 08:00 - 18:30 (Servicio de Urgencias Eléctricas 24h en Llevant)",
   lastVerifiedAt: "2026-08-25",
-  image: "/images/services/electricidad-solar-arta.svg",
+  image: "/images/services/electricidad-solar-arta.jpg",
   gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],

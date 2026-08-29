@@ -27,7 +27,7 @@ export const peluqueriaCaninaGuau: ServiceItem = {
   coordinates: { lat: 39.5802, lng: 2.6508 },
   schedule: "Lunes a Viernes: 09:30 - 19:30 | Sábados: 10:00 - 14:00 (Domingos Cerrado)",
   lastVerifiedAt: "2026-08-25",
-  image: "/images/services/peluqueria-canina-guau-palma.svg",
+  image: "/images/services/peluqueria-canina-guau-palma.jpg",
   gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en"],

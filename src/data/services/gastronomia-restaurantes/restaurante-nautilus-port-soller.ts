@@ -142,7 +142,7 @@ export const restauranteNautilusPortSoller: ServiceItem = {
     ca: "El 1962, el Nautilus va ser construït dalt del penya-segat de Llebeig per unir la cuina mediterrània amb les postes de sol més belles de Sóller.",
     de: "1962 auf den Klippen von Llebeig erbaut, verbindet das Nautilus seither unvergleichliche Meeresküche mit dem schönsten Abendlicht der Tramuntana.",
   },
-  image: "/images/services/restaurante-nautilus-port-soller.svg",
+  image: "/images/services/restaurante-nautilus-port-soller.jpg",
   gallery: [],
   schedule: "Miércoles a Domingo: 13:00 - 22:00 | Lunes y Martes cerrado (Reserva online imprescindible)",
   confidenceScore: 98,

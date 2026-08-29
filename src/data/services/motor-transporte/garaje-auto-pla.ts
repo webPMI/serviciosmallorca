@@ -27,7 +27,7 @@ export const garajeAutoPla: ServiceItem = {
   coordinates: { lat: 39.7185, lng: 2.9112 },
   schedule: "Lunes a Viernes: 08:00 - 13:00 | 15:00 - 19:00 (Sábados y Domingos Cerrado)",
   lastVerifiedAt: "2026-08-25",
-  image: "/images/services/garaje-auto-pla-inca.svg",
+  image: "/images/services/garaje-auto-pla-inca.jpg",
   gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en"],

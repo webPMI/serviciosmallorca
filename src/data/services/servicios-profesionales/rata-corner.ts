@@ -27,7 +27,7 @@ export const rataCorner: ServiceItem = {
   coordinates: { lat: 39.5714, lng: 2.6538 },
   schedule: "Lunes a Sábado: 10:00 - 14:00 | 16:30 - 20:30 (Domingos Cerrado)",
   lastVerifiedAt: "2026-08-25",
-  image: "/images/services/rata-corner-palma.svg",
+  image: "/images/services/rata-corner-palma.jpg",
   gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en"],

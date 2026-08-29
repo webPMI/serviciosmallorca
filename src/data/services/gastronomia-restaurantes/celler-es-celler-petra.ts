@@ -27,7 +27,7 @@ export const cellerEsCellerPetra: ServiceItem = {
   coordinates: { lat: 39.614, lng: 3.112 },
   schedule: "Lunes a Domingo: 13:00 - 16:00 | 20:00 - 23:30 (Abierto todos los días)",
   lastVerifiedAt: "2026-08-25",
-  image: "/images/services/celler-es-celler-petra.svg",
+  image: "/images/services/celler-es-celler-petra.jpg",
   gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],

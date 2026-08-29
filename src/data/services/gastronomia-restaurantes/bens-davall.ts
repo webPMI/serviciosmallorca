@@ -27,7 +27,7 @@ export const bensDavall: ServiceItem = {
   coordinates: { lat: 39.7712, lng: 2.6734 },
   schedule: "Miércoles a Domingo: 13:00 - 15:30 | 19:30 - 22:30",
   lastVerifiedAt: "2026-08-25",
-  image: "/images/services/bens-davall.svg",
+  image: "/images/services/bens-davall.jpg",
   gallery: [],
   targetAudience: ["residentes", "turistas", "expat"],
   languagesSpoken: ["es", "en", "ca", "de", "fr"],

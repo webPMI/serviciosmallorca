@@ -141,7 +141,7 @@ export const cellerSaVinyaBinissalem: ServiceItem = {
     ca: "Celler Sa Vinya va néixer a Binissalem per conservar la cuina tradicional dels cellers mallorquins amb els millors vins del poble.",
     de: "Das Celler Sa Vinya wurde in Binissalem gegründet, um die ehrliche Gasthaustradition Mallorcas mit den besten Weinen der Region zu pflegen.",
   },
-  image: "/images/services/celler-sa-vinya-binissalem.svg",
+  image: "/images/services/celler-sa-vinya-binissalem.jpg",
   gallery: [],
   schedule: "Lunes a Domingo: 12:30 - 16:30, 19:30 - 23:30 (Abierto todos los días)",
   confidenceScore: 98,

@@ -27,7 +27,7 @@ export const fontaneriaPomar: ServiceItem = {
   coordinates: { lat: 39.719, lng: 2.911 },
   schedule: "Lunes a Viernes: 08:00 - 18:30 (Servicio de Urgencias de Fugas y Calderas)",
   lastVerifiedAt: "2026-08-25",
-  image: "/images/services/fontaneria-instalaciones-pomar-inca.svg",
+  image: "/images/services/fontaneria-instalaciones-pomar-inca.jpg",
   gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],

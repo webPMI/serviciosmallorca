@@ -173,7 +173,7 @@ export const hammamPalmaSpa: ServiceItem = {
     ca: ["Circuit termal àrab", "Massatges relaxants", "Rituals en parella", "Exfoliació tradicional"],
     de: ["Arabischer Thermen-Rundgang", "Entspannungsmassagen", "Paar-Rituale", "Traditionelle Peelings"],
   },
-  image: "/images/services/hammam-palma-spa.svg",
+  image: "/images/services/hammam-palma-spa.jpg",
   gallery: [],
   schedule: "Lun - Dom: 10:00 - 22:00",
   lastVerifiedAt: "2026-08-26",

@@ -28,7 +28,7 @@ export const restauranteAromataPalma: ServiceItem = {
   coordinates: { lat: 39.5735, lng: 2.6457 },
   schedule: "Martes a Sábado: 13:00 - 15:30, 20:00 - 22:30",
   lastVerifiedAt: "2026-08-26",
-  image: "/images/services/restaurante-aromata-palma.svg",
+  image: "/images/services/restaurante-aromata-palma.jpg",
   gallery: [],
   targetAudience: ["residentes", "turistas", "gourmet"],
   languagesSpoken: ["es", "en", "ca", "de"],

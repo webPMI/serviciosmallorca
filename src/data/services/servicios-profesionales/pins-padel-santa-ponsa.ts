@@ -173,7 +173,7 @@ export const pinsPadelSantaPonsa: ServiceItem = {
     ca: ["Reserva de pistes", "Entrenament personalitzat", "Tornejos socials", "Pistes cobertes"],
     de: ["Platzbuchung", "Personal Training", "Turniere & Mixed-Events", "Indoor-Plätze"],
   },
-  image: "/images/services/pins-padel-santa-ponsa.svg",
+  image: "/images/services/pins-padel-santa-ponsa.jpg",
   gallery: [],
   schedule: "Lun - Dom: 08:00 - 23:00",
   lastVerifiedAt: "2026-08-26",

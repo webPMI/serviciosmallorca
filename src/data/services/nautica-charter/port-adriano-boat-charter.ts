@@ -173,7 +173,7 @@ export const portAdrianoBoatCharter: ServiceItem = {
     ca: ["Lloguer de iots de dia", "Xàrter setmanal", "Postes de sol en vaixell", "Lloguer de llanxes"],
     de: ["Tages-Yachtcharter", "Wochencharter", "Sunset-Bootstouren", "Motorbootverleih"],
   },
-  image: "/images/services/port-adriano-boat-charter.svg",
+  image: "/images/services/port-adriano-boat-charter.jpg",
   gallery: [],
   schedule: "Lun - Dom: 09:00 - 20:00",
   lastVerifiedAt: "2026-08-26",

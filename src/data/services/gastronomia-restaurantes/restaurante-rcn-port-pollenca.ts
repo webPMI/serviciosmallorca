@@ -143,7 +143,7 @@ export const restauranteRcnPortPollenca: ServiceItem = {
     ca: "Fundat el 1961 al Moll Vell, el Reial Club Nàutic és un símbol de la navegació i de la bona cuina marinera al nord de l'illa.",
     de: "1961 am Moll Vell gegründet, verbindet der Reial Club Nàutic die Leidenschaft für den Segelsport mit erstklassiger mediterraner Küche in der Bucht von Pollença.",
   },
-  image: "/images/services/restaurante-rcn-port-pollenca.svg",
+  image: "/images/services/restaurante-rcn-port-pollenca.jpg",
   gallery: [],
   schedule: "Lunes a Domingo: 09:30 - 15:00, 19:30 - 22:30 (Abierto todos los días)",
   confidenceScore: 99,

@@ -142,7 +142,7 @@ export const restauranteClubNauticSEstanyol: ServiceItem = {
     ca: "El 1970, amb el Club Nàutic S'Estanyol, el restaurant va néixer com a lloc de trobada per a pescadors i navegants del migjorn de Mallorca.",
     de: "1970 gegründet, entwickelte sich das Restaurant im Club Nàutic S'Estanyol zum Treffpunkt für Fischer, Segler und Liebhaber traditioneller balearischer Küche.",
   },
-  image: "/images/services/restaurante-club-nautic-s-estanyol.svg",
+  image: "/images/services/restaurante-club-nautic-s-estanyol.jpg",
   gallery: [],
   schedule: "Lunes a Jueves: 07:00 - 21:00 | Viernes a Domingo: 06:00 - 24:00 (Abierto todo el año)",
   confidenceScore: 98,

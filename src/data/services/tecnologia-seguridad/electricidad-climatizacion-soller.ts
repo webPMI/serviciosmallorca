@@ -27,7 +27,7 @@ export const electricidadSoller: ServiceItem = {
   coordinates: { lat: 39.766, lng: 2.715 },
   schedule: "Lunes a Viernes: 08:00 - 18:30 (Servicio de Urgencias Eléctricas 24h en Tramuntana)",
   lastVerifiedAt: "2026-08-25",
-  image: "/images/services/electricidad-climatizacion-soller.svg",
+  image: "/images/services/electricidad-climatizacion-soller.jpg",
   gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de", "fr"],

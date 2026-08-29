@@ -27,7 +27,7 @@ export const fornDesTeatre: ServiceItem = {
   coordinates: { lat: 39.5714, lng: 2.6515 },
   schedule: "Lunes a Domingo: 08:00 - 20:30 (Horario continuo)",
   lastVerifiedAt: "2026-08-25",
-  image: "/images/services/forn-des-teatre-palma.svg",
+  image: "/images/services/forn-des-teatre-palma.jpg",
   gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],

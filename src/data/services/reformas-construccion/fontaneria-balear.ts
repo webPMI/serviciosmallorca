@@ -27,7 +27,7 @@ export const fontaneriaBalear: ServiceItem = {
   coordinates: { lat: 39.5794, lng: 2.6712 },
   schedule: "Lunes a Viernes: 08:00 - 19:00 | Urgencias 24h Disponibles",
   lastVerifiedAt: "2026-08-25",
-  image: "/images/services/fontaneria-balear.svg",
+  image: "/images/services/fontaneria-balear.jpg",
   gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en"],

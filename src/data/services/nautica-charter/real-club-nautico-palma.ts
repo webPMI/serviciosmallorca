@@ -173,7 +173,7 @@ export const realClubNauticoPalma: ServiceItem = {
     ca: ["Xàrter de velers amb patró", "Cursos de vela per a totes les edats", "Regates corporatives", "Amarraments"],
     de: ["Segelyacht-Charter mit Skipper", "Segelkurse für Erwachsene und Kinder", "Firmensegel-Events", "Liegeplätze"],
   },
-  image: "/images/services/real-club-nautico-palma.svg",
+  image: "/images/services/real-club-nautico-palma.jpg",
   gallery: [],
   schedule: "Lun - Dom: 08:30 - 21:00",
   lastVerifiedAt: "2026-08-26",

@@ -142,7 +142,7 @@ export const restauranteCnCanPicafort: ServiceItem = {
     ca: "El 1970, el Club Nàutic Can Picafort va néixer per apropar la mar a Santa Margalida, oferint des de l'inici la millor cuina marinera tradicional.",
     de: "1970 gegründet, entstand das Restaurant im Club Nàutic Can Picafort, um Seglern und Gästen fangfrische balearische Meeresküche direkt am Hafen zu bieten.",
   },
-  image: "/images/services/restaurante-cn-can-picafort.svg",
+  image: "/images/services/restaurante-cn-can-picafort.jpg",
   gallery: [],
   schedule: "Martes a Jueves y Domingo: 09:00 - 23:00 | Viernes y Sábado: 09:00 - 23:30 | Lunes cerrado",
   confidenceScore: 98,

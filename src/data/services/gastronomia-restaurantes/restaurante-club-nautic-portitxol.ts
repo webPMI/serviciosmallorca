@@ -136,7 +136,7 @@ export const restauranteClubNauticPortitxol: ServiceItem = {
     ca: "Fundat el 1928 al barri del Portitxol, el Club Nàutic ha estat un pilar de la navegació i de la bona cuina marinera a Palma durant prop de cent anys.",
     de: "1928 im traditionsreichen Hafenviertel El Portitxol gegründet, pflegt der Segelclub seit fast einem Jahrhundert maritime Leidenschaft und erstklassige Meeresküche.",
   },
-  image: "/images/services/restaurante-club-nautic-portitxol.svg",
+  image: "/images/services/restaurante-club-nautic-portitxol.jpg",
   gallery: [],
   schedule: "Lunes a Domingo: 09:00 - 23:30 (Abierto todos los días del año)",
   confidenceScore: 98,

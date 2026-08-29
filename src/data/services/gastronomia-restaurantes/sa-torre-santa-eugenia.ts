@@ -142,7 +142,7 @@ export const saTorreSantaEugenia: ServiceItem = {
     ca: "En una possessió de 1546 a Santa Eugènia, Sa Torre va rehabilitar el seu imponent celler per convertir-lo en un temple de l'alta gastronomia mediterrània.",
     de: "Auf dem historischen Finca-Anwesen von 1546 in Santa Eugènia restauriert, verwandelte sich der Gewölbekeller von Sa Torre in ein exklusives Gourmet-Refugium.",
   },
-  image: "/images/services/sa-torre-santa-eugenia.svg",
+  image: "/images/services/sa-torre-santa-eugenia.jpg",
   gallery: [],
   schedule: "Martes a Sábado: 19:30 - 23:00 | Sábado: 13:00 - 15:30, 19:30 - 23:00 | Domingo y Lunes cerrado",
   confidenceScore: 99,

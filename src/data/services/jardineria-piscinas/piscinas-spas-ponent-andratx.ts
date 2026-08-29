@@ -27,7 +27,7 @@ export const piscinasPonentAndratx: ServiceItem = {
   coordinates: { lat: 39.576, lng: 2.421 },
   schedule: "Lunes a Viernes: 08:00 - 18:30 (Servicio de Mantenimiento y Guardias en Villas)",
   lastVerifiedAt: "2026-08-25",
-  image: "/images/services/piscinas-spas-ponent-andratx.svg",
+  image: "/images/services/piscinas-spas-ponent-andratx.jpg",
   gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],

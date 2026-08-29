@@ -28,7 +28,7 @@ export const restauranteBaibenPortals: ServiceItem = {
   coordinates: { lat: 39.5318, lng: 2.5505 },
   schedule: "Lunes a Domingo: 12:00 - 00:00",
   lastVerifiedAt: "2026-08-26",
-  image: "/images/services/restaurante-baiben-portals.svg",
+  image: "/images/services/restaurante-baiben-portals.jpg",
   gallery: [],
   targetAudience: ["residentes", "turistas", "expat", "gourmet"],
   languagesSpoken: ["es", "en", "de"],

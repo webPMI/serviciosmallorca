@@ -30,7 +30,7 @@ export const arabellaSpa: ServiceItem = {
   },
   schedule: "Lunes a Domingo: 10:00 - 19:00",
   lastVerifiedAt: "2026-08-25",
-  image: "/images/services/arabella-spa-mallorca.svg",
+  image: "/images/services/arabella-spa-mallorca.jpg",
   images: [
     "https://cache.marriott.com/content/dam/marriott-renditions/PMIXR/pmixr-spa-9538-hor-wide.jpg",
     "https://cache.marriott.com/content/dam/marriott-renditions/PMIXR/pmixr-spa-9539-hor-wide.jpg",

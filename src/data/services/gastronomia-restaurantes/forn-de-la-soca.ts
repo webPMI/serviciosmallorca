@@ -27,7 +27,7 @@ export const fornDeLaSoca: ServiceItem = {
   coordinates: { lat: 39.5698, lng: 2.6501 },
   schedule: "Lunes a Sábado: 08:30 - 20:00 | Domingo: 09:00 - 14:30",
   lastVerifiedAt: "2026-08-25",
-  image: "/images/services/forn-de-la-soca.svg",
+  image: "/images/services/forn-de-la-soca.jpg",
   gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],

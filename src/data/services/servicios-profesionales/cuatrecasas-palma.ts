@@ -27,7 +27,7 @@ export const cuatrecasasPalma: ServiceItem = {
   coordinates: { lat: 39.5702, lng: 2.6482 },
   schedule: "Lunes a Viernes: 09:00 - 19:30 (Sábados y Domingos Cerrado)",
   lastVerifiedAt: "2026-08-25",
-  image: "/images/services/cuatrecasas-palma.svg",
+  image: "/images/services/cuatrecasas-palma.jpg",
   gallery: [],
   targetAudience: ["residentes", "turistas", "expat"],
   languagesSpoken: ["es", "ca", "en", "de", "fr"],

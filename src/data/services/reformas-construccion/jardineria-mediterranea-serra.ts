@@ -27,7 +27,7 @@ export const jardineriaSerra: ServiceItem = {
   coordinates: { lat: 39.6125, lng: 2.645 },
   schedule: "Lunes a Viernes: 07:30 - 18:00 | Sábados: 08:00 - 13:00 (Urgencias de Poda y Riego)",
   lastVerifiedAt: "2026-08-25",
-  image: "/images/services/jardineria-paisajismo-serra.svg",
+  image: "/images/services/jardineria-paisajismo-serra.jpg",
   gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],

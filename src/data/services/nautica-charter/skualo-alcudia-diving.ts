@@ -27,7 +27,7 @@ export const skualoAlcudia: ServiceItem = {
   coordinates: { lat: 39.768, lng: 3.158 },
   schedule: "Lunes a Domingo: 08:30 - 19:00 (Salidas diarias en lancha rápida a Formentor)",
   lastVerifiedAt: "2026-08-25",
-  image: "/images/services/skualo-alcudia-can-picafort-diving.svg",
+  image: "/images/services/skualo-alcudia-can-picafort-diving.jpg",
   gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "en", "de", "ca"],

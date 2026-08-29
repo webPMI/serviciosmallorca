@@ -27,7 +27,7 @@ export const tapiceriaToldosBalear: ServiceItem = {
   coordinates: { lat: 39.6055, lng: 2.6698 },
   schedule: "Lunes a Viernes: 08:00 - 13:30 | 15:00 - 18:30 (Sábados y Domingos Cerrado)",
   lastVerifiedAt: "2026-08-25",
-  image: "/images/services/tapiceria-toldos-balear.svg",
+  image: "/images/services/tapiceria-toldos-balear.jpg",
   gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],

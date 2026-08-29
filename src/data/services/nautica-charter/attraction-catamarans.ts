@@ -27,7 +27,7 @@ export const attractionCatamarans: ServiceItem = {
   coordinates: { lat: 39.5645, lng: 2.6358 },
   schedule: "Lunes a Domingo: 09:30 - 20:30 (Salidas diarias de mañana y atardecer)",
   lastVerifiedAt: "2026-08-25",
-  image: "/images/services/attraction-catamarans.svg",
+  image: "/images/services/attraction-catamarans.jpg",
   gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "en", "ca", "de"],

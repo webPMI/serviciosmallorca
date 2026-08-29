@@ -27,7 +27,7 @@ export const aluminiosCalvia: ServiceItem = {
   coordinates: { lat: 39.5245, lng: 2.5012 },
   schedule: "Lunes a Viernes: 08:00 - 13:00 | 14:30 - 18:00 (Sábados y Domingos Cerrado)",
   lastVerifiedAt: "2026-08-25",
-  image: "/images/services/aluminios-cristaleria-calvia.svg",
+  image: "/images/services/aluminios-cristaleria-calvia.jpg",
   gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],

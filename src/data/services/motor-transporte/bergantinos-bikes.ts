@@ -27,7 +27,7 @@ export const bergantinosBikes: ServiceItem = {
   coordinates: { lat: 39.5372, lng: 2.7145 },
   schedule: "Lunes a Domingo: 09:00 - 19:30",
   lastVerifiedAt: "2026-08-25",
-  image: "/images/services/bergantinos-bikes-mallorca.svg",
+  image: "/images/services/bergantinos-bikes-mallorca.jpg",
   gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],

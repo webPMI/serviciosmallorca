@@ -173,7 +173,7 @@ export const restauranteToquePalma: ServiceItem = {
     ca: ["Sopars a la carta", "Maridatge amb cervesa i vi", "Reserva de taules", "Plats de temporada"],
     de: ["À-la-carte-Dinner", "Bier- & Weinbegleitung", "Tischreservierung", "Saisonale Spezialitäten"],
   },
-  image: "/images/services/restaurante-toque-palma.svg",
+  image: "/images/services/restaurante-toque-palma.jpg",
   gallery: [],
   schedule: "Mar - Sáb: 13:30 - 15:30, 20:00 - 23:00 | Dom - Lun: Cerrado",
   lastVerifiedAt: "2026-08-26",

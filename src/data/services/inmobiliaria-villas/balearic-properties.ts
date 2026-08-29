@@ -27,7 +27,7 @@ export const balearicProperties: ServiceItem = {
   coordinates: { lat: 39.8765, lng: 3.0162 },
   schedule: "Lunes a Viernes: 09:00 - 19:00 | Sábados: 10:00 - 14:00",
   lastVerifiedAt: "2026-08-25",
-  image: "/images/services/balearic-properties.svg",
+  image: "/images/services/balearic-properties.jpg",
   gallery: [],
   targetAudience: ["residentes", "turistas", "expat"],
   languagesSpoken: ["es", "en", "de", "ca", "fr"],

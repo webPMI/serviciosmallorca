@@ -27,7 +27,7 @@ export const bodegaRibas: ServiceItem = {
   coordinates: { lat: 39.6685, lng: 2.8124 },
   schedule: "Lunes a Viernes: 10:00 - 18:00 | Sábados: 10:00 - 15:00 (Visitas con Cita Previa)",
   lastVerifiedAt: "2026-08-25",
-  image: "/images/services/bodega-ribas-consell.svg",
+  image: "/images/services/bodega-ribas-consell.jpg",
   gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],

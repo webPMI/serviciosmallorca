@@ -141,7 +141,7 @@ export const restauranteSaBarcaPortSoller: ServiceItem = {
     ca: "El 2014, Sa Barca va obrir al passeig del Port de Sóller per oferir una cuina mediterrània fresca i cuidada davant la mar.",
     de: "2014 an der Promenade von Port de Sóller eröffnet, steht das Sa Barca für frische, weltoffene und anspruchsvolle mediterrane Küche direkt an der Bucht.",
   },
-  image: "/images/services/restaurante-sa-barca-port-soller.svg",
+  image: "/images/services/restaurante-sa-barca-port-soller.jpg",
   gallery: [],
   schedule: "Jueves a Lunes: 12:30 - 15:30, 18:30 - 22:00 | Martes y Miércoles cerrado (Temporada)",
   confidenceScore: 98,

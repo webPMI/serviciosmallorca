@@ -27,7 +27,7 @@ export const cerrajeriaRapidaBalear: ServiceItem = {
   coordinates: { lat: 39.578, lng: 2.662 },
   schedule: "Lunes a Domingo: 24 Horas (Servicio Urgente 24/7 de Apertura de Puertas)",
   lastVerifiedAt: "2026-08-25",
-  image: "/images/services/cerrajeria-rapida-balear.svg",
+  image: "/images/services/cerrajeria-rapida-balear.jpg",
   gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],

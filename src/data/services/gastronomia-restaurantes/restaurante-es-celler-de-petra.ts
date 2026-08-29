@@ -134,7 +134,7 @@ export const restauranteEsCellerDePetra: ServiceItem = {
     ca: "El 1965, Es Celler de Petra va néixer en una bodega del segle XIX per mantenir viva la cuina tradicional més autèntica de Mallorca.",
     de: "1965 in einem Gewölbekeller des 19. Jahrhunderts eröffnet, bewahrt Es Celler de Petra seither die unverfälschte Tradition der balearischen Landküche.",
   },
-  image: "/images/services/restaurante-es-celler-de-petra.svg",
+  image: "/images/services/restaurante-es-celler-de-petra.jpg",
   gallery: [],
   schedule:
     "Martes a Viernes: 12:30 - 16:00, 18:00 - 22:00 | Sábado y Domingo: 12:30 - 22:00 (Ininterrumpido) | Lunes cerrado",

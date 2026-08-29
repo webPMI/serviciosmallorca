@@ -27,7 +27,7 @@ export const herboristeriaLaRemei: ServiceItem = {
   coordinates: { lat: 39.5812, lng: 2.6515 },
   schedule: "Lunes a Viernes: 09:30 - 13:30 | 16:30 - 20:00 | Sábados: 10:00 - 13:30 (Domingos Cerrado)",
   lastVerifiedAt: "2026-08-25",
-  image: "/images/services/herboristeria-la-remei-palma.svg",
+  image: "/images/services/herboristeria-la-remei-palma.jpg",
   gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en"],

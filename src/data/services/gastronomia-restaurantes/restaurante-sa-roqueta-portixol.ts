@@ -133,7 +133,7 @@ export const restauranteSaRoquetaPortixol: ServiceItem = {
     ca: "El 1987, Sa Roqueta va obrir al Portitxol per oferir la cuina marinera autèntica de Palma, esdevenint un temple del peix fresc a l'illa.",
     de: "1987 eröffnete das Sa Roqueta in El Portitxol, um die echte Hausmannskost der Fischer von Palma zu servieren, und wurde zu einer Legende für frischen Fisch auf Mallorca.",
   },
-  image: "/images/services/restaurante-sa-roqueta-portixol.svg",
+  image: "/images/services/restaurante-sa-roqueta-portixol.jpg",
   gallery: [],
   schedule: "Martes a Sábado: 13:00 - 15:15, 19:30 - 22:30 | Domingo y Lunes cerrado",
   confidenceScore: 99,

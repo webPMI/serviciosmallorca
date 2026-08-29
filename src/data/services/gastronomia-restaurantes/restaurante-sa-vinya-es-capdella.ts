@@ -141,7 +141,7 @@ export const restauranteSaVinyaEsCapdella: ServiceItem = {
     ca: "Sa Vinya va néixer a Es Capdellà per oferir bona cuina casolana mallorquina i descans vora la natura.",
     de: "Sa Vinya entstand in Es Capdellà als gastfreundliches Finca-Lokal, um ehrliche Inselküche vom Grill in der Ruhe der mallorquinischen Bergwelt zu servieren.",
   },
-  image: "/images/services/restaurante-sa-vinya-es-capdella.svg",
+  image: "/images/services/restaurante-sa-vinya-es-capdella.jpg",
   gallery: [],
   schedule: "Miércoles a Lunes: 12:30 - 23:00 (Cocina: 13:00 - 16:00, 19:30 - 22:30 | Martes cerrado)",
   confidenceScore: 98,

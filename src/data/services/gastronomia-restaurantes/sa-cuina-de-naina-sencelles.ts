@@ -135,7 +135,7 @@ export const saCuinaDeNainaSencelles: ServiceItem = {
     ca: "El 1995, Aina va obrir la seva casa a Sencelles per compartir la cuina de la família, creant un espai emblemàtic al Pla de Mallorca.",
     de: "1995 öffnete Aina ihr Haus in Sencelles, um Gästen traditionelle Familienrezepte in herzlicher dörflicher Atmosphäre zu servieren.",
   },
-  image: "/images/services/sa-cuina-de-naina-sencelles.svg",
+  image: "/images/services/sa-cuina-de-naina-sencelles.jpg",
   gallery: [],
   schedule: "Miércoles a Domingo: 13:00 - 15:30, 20:00 - 22:30 | Lunes y Martes cerrado",
   confidenceScore: 98,

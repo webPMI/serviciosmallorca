@@ -27,7 +27,7 @@ export const carpinteriaAlaro: ServiceItem = {
   coordinates: { lat: 39.705, lng: 2.795 },
   schedule: "Lunes a Viernes: 07:30 - 18:00 (Medición Técnica en Obra con Cita Previa)",
   lastVerifiedAt: "2026-08-25",
-  image: "/images/services/carpinteria-ebanisteria-alaro.svg",
+  image: "/images/services/carpinteria-ebanisteria-alaro.jpg",
   gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],

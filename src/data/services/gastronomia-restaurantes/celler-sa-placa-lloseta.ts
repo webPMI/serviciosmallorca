@@ -141,7 +141,7 @@ export const cellerSaPlacaLloseta: ServiceItem = {
     ca: "El 1970, el Celler Sa Plaça va obrir a Lloseta per compartir les millors receptes de la cuina tradicional de poble en un ambient familiar.",
     de: "1970 eröffnete das Celler Sa Plaça in Lloseta als herzlicher Dorftreffpunkt für die traditionelle Landhausküche der Region Raiguer.",
   },
-  image: "/images/services/celler-sa-placa-lloseta.svg",
+  image: "/images/services/celler-sa-placa-lloseta.jpg",
   gallery: [],
   schedule: "Lunes a Sábado: 13:00 - 16:00, 20:00 - 23:30 | Domingo cerrado (Reserva previa recomendada)",
   confidenceScore: 98,

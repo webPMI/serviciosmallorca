@@ -27,7 +27,7 @@ export const fornGelabertLlubi: ServiceItem = {
   coordinates: { lat: 39.6995, lng: 3.005 },
   schedule: "Lunes a Domingo: 07:00 - 14:00 | 17:00 - 20:30 (Abierto todos los días)",
   lastVerifiedAt: "2026-08-25",
-  image: "/images/services/forn-gelabert-llubi.svg",
+  image: "/images/services/forn-gelabert-llubi.jpg",
   gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],

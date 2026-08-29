@@ -134,7 +134,7 @@ export const cellerSonToreoSineu: ServiceItem = {
     ca: "El 1933, la família va fundar el Celler Son Toreó a Sineu per acollir la gent del mercat amb la millor cuina mallorquina de la terra.",
     de: "1933 gegründet, entstand das Celler Son Toreó in Sineu, um Bauern und Markthändler mit herzhafter und ehrlicher mallorquinischer Hausmannskost zu bewirten.",
   },
-  image: "/images/services/celler-son-toreo-sineu.svg",
+  image: "/images/services/celler-son-toreo-sineu.jpg",
   gallery: [],
   schedule:
     "Lunes a Domingo: 12:30 - 16:30, 19:30 - 23:30 (Abierto todos los días | Servicio especial miércoles de mercado)",

@@ -27,7 +27,7 @@ export const artesaniaCerasPalma: ServiceItem = {
   coordinates: { lat: 39.5695, lng: 2.6512 },
   schedule: "Lunes a Sábado: 10:00 - 14:00 | 16:30 - 20:00 (Domingos Cerrado)",
   lastVerifiedAt: "2026-08-25",
-  image: "/images/services/artesania-ceras-palma.svg",
+  image: "/images/services/artesania-ceras-palma.jpg",
   gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],

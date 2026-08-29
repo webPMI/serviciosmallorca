@@ -27,7 +27,7 @@ export const cereriaArtesanaInca: ServiceItem = {
   coordinates: { lat: 39.7205, lng: 2.9085 },
   schedule: "Lunes a Viernes: 09:30 - 13:30 | 16:30 - 20:00 | Sábados: 10:00 - 13:30",
   lastVerifiedAt: "2026-08-25",
-  image: "/images/services/cereria-artesana-inca.svg",
+  image: "/images/services/cereria-artesana-inca.jpg",
   gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],

@@ -28,7 +28,7 @@ export const restauranteEmilioInnobar: ServiceItem = {
   coordinates: { lat: 39.5732, lng: 2.6454 },
   schedule: "Martes a Sábado: 13:00 - 15:30, 19:30 - 23:00",
   lastVerifiedAt: "2026-08-26",
-  image: "/images/services/restaurante-emilio-innobar.svg",
+  image: "/images/services/restaurante-emilio-innobar.jpg",
   gallery: [],
   targetAudience: ["residentes", "turistas", "expat", "gourmet"],
   languagesSpoken: ["es", "en", "de"],

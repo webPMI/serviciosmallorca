@@ -141,7 +141,7 @@ export const bodegaBarahonaCasaManolo: ServiceItem = {
     ca: "Fundat el 1945 per Manolo Barahona, Casa Manolo ha esdevingut el gran temple del marisc i peix fresc del sud de Mallorca.",
     de: "1945 von Manolo Barahona als dörfliche Bodega gegründet, entwickelte sich die Casa Manolo zu einer der berühmtesten Meeresfrüchte-Institutionen Mallorcas.",
   },
-  image: "/images/services/bodega-barahona-casa-manolo.svg",
+  image: "/images/services/bodega-barahona-casa-manolo.jpg",
   gallery: [],
   schedule: "Miércoles a Domingo: 13:00 - 15:30, 19:00 - 22:30 | Martes: 19:00 - 22:30 | Lunes cerrado",
   confidenceScore: 99,

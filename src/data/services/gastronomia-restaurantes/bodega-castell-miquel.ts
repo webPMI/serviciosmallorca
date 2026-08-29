@@ -27,7 +27,7 @@ export const bodegaCastellMiquel: ServiceItem = {
   coordinates: { lat: 39.712, lng: 2.8055 },
   schedule: "Lunes a Viernes: 10:00 - 17:00 | Sábados: 10:00 - 14:00 (Visitas y Catas Guiadas)",
   lastVerifiedAt: "2026-08-25",
-  image: "/images/services/bodega-castell-miquel-alaro.svg",
+  image: "/images/services/bodega-castell-miquel-alaro.jpg",
   gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],

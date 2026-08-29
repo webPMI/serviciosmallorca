@@ -142,7 +142,7 @@ export const bodegasVinaTaujanaSantaEugenia: ServiceItem = {
     ca: "El 1994, la família Crespí va fundar Vinya Taujana a Santa Eugènia per recuperar la tradició del vi del poble amb el millor raïm autòcton.",
     de: "1994 von der Familie Crespí in Santa Eugènia gegründet, steht Vinya Taujana für unverfälschten Weinbau mit den besten Manto Negro-Reben der Region.",
   },
-  image: "/images/services/bodegas-vina-taujana-santa-eugenia.svg",
+  image: "/images/services/bodegas-vina-taujana-santa-eugenia.jpg",
   gallery: [],
   schedule: "Lunes a Sábado: 09:00 - 13:00, 16:00 - 19:30 (Visitas concertadas previa cita) | Domingo cerrado",
   confidenceScore: 99,

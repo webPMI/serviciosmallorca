@@ -27,7 +27,7 @@ export const fornSaPelleteria: ServiceItem = {
   coordinates: { lat: 39.5678, lng: 2.6535 },
   schedule: "Lunes a Sábado: 07:30 - 14:30 | 17:00 - 20:30 (Domingos Cerrado)",
   lastVerifiedAt: "2026-08-25",
-  image: "/images/services/forn-sa-pelleteria-palma.svg",
+  image: "/images/services/forn-sa-pelleteria-palma.jpg",
   gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],

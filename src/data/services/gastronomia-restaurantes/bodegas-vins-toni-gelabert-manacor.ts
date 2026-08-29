@@ -135,7 +135,7 @@ export const bodegasVinsToniGelabertManacor: ServiceItem = {
     ca: "El 1993, Toni Gelabert va fundar el seu celler a Manacor amb la ferma convicció que l'ànima del vi mallorquí s'expressa a través de la viticultura biodinàmica.",
     de: "1993 von Toni Gelabert in Manacor gegründet, steht das Weingut für die Überzeugung, dass der wahre Charakter Mallorcas nur im Einklang mit der Natur vollendet werden kann.",
   },
-  image: "/images/services/bodegas-vins-toni-gelabert-manacor.svg",
+  image: "/images/services/bodegas-vins-toni-gelabert-manacor.jpg",
   gallery: [],
   schedule:
     "Lunes a Viernes: 09:00 - 13:30, 15:30 - 18:30 (Visitas concertadas previa cita) | Sábado y Domingo cerrado",

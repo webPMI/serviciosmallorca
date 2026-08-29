@@ -134,7 +134,7 @@ export const casXorcSoller: ServiceItem = {
     ca: "Ca's Xorc va néixer del somni de recuperar una tafona històrica del segle XVIII per transformar-la en un espai de pau i alta cuina fidel a l'essència de Mallorca.",
     de: "Ca's Xorc entstand aus der Vision, eine historische Finca aus dem 18. Jahrhundert liebevoll zu restaurieren und in eine Oase der Ruhe und Kochkunst zu verwandeln.",
   },
-  image: "/images/services/cas-xorc-soller.svg",
+  image: "/images/services/cas-xorc-soller.jpg",
   gallery: [],
   schedule: "Miércoles a Domingo: 13:00 - 15:30, 19:00 - 22:00 | Martes solo cenas | Lunes cerrado",
   confidenceScore: 97,

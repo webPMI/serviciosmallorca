@@ -151,7 +151,7 @@ export const caPatroMarch: ServiceItem = {
     ca: ["Dinars vora mar", "Peix a la planxa", "Marisc fresc"],
     de: ["Mittagessen am Meer", "Gegrillter Fisch", "Frische Meeresfrüchte"],
   },
-  image: "/images/services/ca-s-patro-march.svg",
+  image: "/images/services/ca-s-patro-march.jpg",
   gallery: [],
   schedule: "Lun - Dom: 12:30 - 21:00",
   lastVerifiedAt: "2026-08-26",

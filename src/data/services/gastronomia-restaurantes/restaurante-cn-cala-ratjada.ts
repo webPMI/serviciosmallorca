@@ -142,7 +142,7 @@ export const restauranteCnCalaRatjada: ServiceItem = {
     ca: "El 1967, el Club Nàutic de Cala Ratjada va obrir les portes a Capdepera per donar suport als pescadors i navegants, oferint una cuina de mar autèntica i de qualitat.",
     de: "1967 gegründet, entstand das Clubrestaurant im Hafen von Cala Ratjada als beliebter Treffpunkt für Fischer und Segler an Mallorcas östlichster Spitze.",
   },
-  image: "/images/services/restaurante-cn-cala-ratjada.svg",
+  image: "/images/services/restaurante-cn-cala-ratjada.jpg",
   gallery: [],
   schedule: "Lunes, Miércoles a Viernes: 18:00 - 23:30 | Sábado y Domingo: 13:00 - 23:30 | Martes cerrado",
   confidenceScore: 98,

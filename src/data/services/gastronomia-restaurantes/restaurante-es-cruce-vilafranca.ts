@@ -141,7 +141,7 @@ export const restauranteEsCruceVilafranca: ServiceItem = {
     ca: "El 1970, Es Cruce va obrir a Vilafranca de Bonany per oferir als mallorquins el millor menjar tradicional amb racions generoses i preus populars.",
     de: "1970 in Vilafranca de Bonany gegründet, verwöhnt Es Cruce seither Einheimische und Besucher mit herzhafter Inselküche zu unschlagbaren Preisen.",
   },
-  image: "/images/services/restaurante-es-cruce-vilafranca.svg",
+  image: "/images/services/restaurante-es-cruce-vilafranca.jpg",
   gallery: [],
   schedule: "Lunes, Miércoles a Viernes: 06:30 - 23:00 | Sábado y Domingo: 06:30 - 23:30 | Martes cerrado",
   confidenceScore: 99,

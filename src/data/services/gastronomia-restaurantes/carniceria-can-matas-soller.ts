@@ -27,7 +27,7 @@ export const carniceriaCanMatas: ServiceItem = {
   coordinates: { lat: 39.7658, lng: 2.716 },
   schedule: "Lunes a Sábado: 08:30 - 14:00 | 17:00 - 20:00 (Domingos Cerrado)",
   lastVerifiedAt: "2026-08-25",
-  image: "/images/services/carniceria-can-matas-soller.svg",
+  image: "/images/services/carniceria-can-matas-soller.jpg",
   gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],

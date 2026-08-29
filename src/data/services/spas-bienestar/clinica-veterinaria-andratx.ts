@@ -27,7 +27,7 @@ export const veterinariaAndratx: ServiceItem = {
   coordinates: { lat: 39.5765, lng: 2.422 },
   schedule: "Lunes a Viernes: 09:00 - 19:30 | Sábados: 09:30 - 13:30 (Urgencias 24h Disponibles)",
   lastVerifiedAt: "2026-08-25",
-  image: "/images/services/clinica-veterinaria-andratx.svg",
+  image: "/images/services/clinica-veterinaria-andratx.jpg",
   gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],

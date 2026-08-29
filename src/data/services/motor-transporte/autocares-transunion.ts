@@ -27,7 +27,7 @@ export const autocaresTransunion: ServiceItem = {
   coordinates: { lat: 39.6012, lng: 2.6714 },
   schedule: "Lunes a Domingo: 24 Horas (Operaciones y Transfers Ininterrumpidos)",
   lastVerifiedAt: "2026-08-25",
-  image: "/images/services/autocares-transunion.svg",
+  image: "/images/services/autocares-transunion.jpg",
   gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],

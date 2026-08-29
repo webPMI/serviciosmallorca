@@ -27,7 +27,7 @@ export const cellerCanRipoll: ServiceItem = {
   coordinates: { lat: 39.721, lng: 2.909 },
   schedule: "Lunes a Domingo: 13:00 - 16:00 | 20:00 - 23:00 (Miércoles Noche Cerrado)",
   lastVerifiedAt: "2026-08-25",
-  image: "/images/services/celler-can-ripoll-inca.svg",
+  image: "/images/services/celler-can-ripoll-inca.jpg",
   gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],

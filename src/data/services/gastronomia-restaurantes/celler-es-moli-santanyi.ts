@@ -141,7 +141,7 @@ export const cellerEsMoliSantanyi: ServiceItem = {
     ca: "Es Molí va néixer el 1974 per donar nova vida a l'antic molí de Santanyí i crear un espai acollidor per compartir tapes i bon vi.",
     de: "1974 gegründet, erweckte das Es Molí die alte Windmühle von Santanyí zu neuem Leben und schuf einen Treffpunkt für Tapas-Liebhaber im Inselsüden.",
   },
-  image: "/images/services/celler-es-moli-santanyi.svg",
+  image: "/images/services/celler-es-moli-santanyi.jpg",
   gallery: [],
   schedule: "Lunes a Domingo: 13:00 - 22:30 (Abierto todos los días ininterrumpidamente)",
   confidenceScore: 98,

@@ -28,7 +28,7 @@ export const restauranteStagierBar: ServiceItem = {
   coordinates: { lat: 39.5721, lng: 2.6391 },
   schedule: "Martes a Sábado: 13:30 - 15:30, 20:00 - 23:00",
   lastVerifiedAt: "2026-08-26",
-  image: "/images/services/restaurante-stagier-bar.svg",
+  image: "/images/services/restaurante-stagier-bar.jpg",
   gallery: [],
   targetAudience: ["residentes", "turistas", "gourmet", "jovenes"],
   languagesSpoken: ["es", "en", "ca"],

@@ -27,7 +27,7 @@ export const mallorcaCyclingCenter: ServiceItem = {
   coordinates: { lat: 39.8125, lng: 3.118 },
   schedule: "Lunes a Domingo: 08:30 - 19:30 (Abierto todo el año para cicloturistas)",
   lastVerifiedAt: "2026-08-25",
-  image: "/images/services/mallorca-cycling-center-muro.svg",
+  image: "/images/services/mallorca-cycling-center-muro.jpg",
   gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "en", "de", "ca"],

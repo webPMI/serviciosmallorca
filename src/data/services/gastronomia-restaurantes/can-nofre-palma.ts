@@ -133,7 +133,7 @@ export const canNofrePalma: ServiceItem = {
     ca: "Ca'n Nofre va néixer per mantenir viva la cuina de les cases mallorquines, cuinant a foc lent com s'ha fet sempre.",
     de: "Ca'n Nofre entstand aus der Hingabe einer Familie zur unverfälschten Küche der Insel, die Tag für Tag auf traditionelle Weise zubereitet wird.",
   },
-  image: "/images/services/can-nofre-palma.svg",
+  image: "/images/services/can-nofre-palma.jpg",
   gallery: [],
   schedule: "Lunes a Sábado: 13:00 - 16:00 | Domingo cerrado",
   confidenceScore: 98,

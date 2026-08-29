@@ -27,7 +27,7 @@ export const cellerCanMarron: ServiceItem = {
   coordinates: { lat: 39.722, lng: 2.907 },
   schedule: "Lunes a Domingo: 13:00 - 16:00 | 20:00 - 23:00 (Martes Noche Cerrado)",
   lastVerifiedAt: "2026-08-25",
-  image: "/images/services/celler-can-marron-inca.svg",
+  image: "/images/services/celler-can-marron-inca.jpg",
   gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],

@@ -27,7 +27,7 @@ export const viverosLlabres: ServiceItem = {
   coordinates: { lat: 39.632, lng: 2.735 },
   schedule: "Lunes a Sábado: 08:30 - 19:30 | Domingos: 09:00 - 14:00 (Centro de Jardinería Abierto)",
   lastVerifiedAt: "2026-08-25",
-  image: "/images/services/viveros-jardineria-llabres-marratxi.svg",
+  image: "/images/services/viveros-jardineria-llabres-marratxi.jpg",
   gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],

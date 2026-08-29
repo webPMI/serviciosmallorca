@@ -27,7 +27,7 @@ export const veterinariaPollensa: ServiceItem = {
   coordinates: { lat: 39.878, lng: 3.018 },
   schedule: "Lunes a Viernes: 09:30 - 19:30 | Sábados: 10:00 - 13:30 (Servicio de Urgencias Telefónicas)",
   lastVerifiedAt: "2026-08-25",
-  image: "/images/services/clinica-veterinaria-pollensa.svg",
+  image: "/images/services/clinica-veterinaria-pollensa.jpg",
   gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],

@@ -141,7 +141,7 @@ export const cellerCanCarrossaLloseta: ServiceItem = {
     ca: "El 1928, la família Ramón va obrir Can Carrossa a Lloseta per compartir la millor cuina de mercat, mantenint viu fins avui l'esperit dels cellers d'abans.",
     de: "1928 gründete Familie Ramón das Can Carrossa in Lloseta, um Gäste mit dem Besten der Inselküche zu bewirten – bis heute eine lebendige Legende mallorquinischer Gastlichkeit.",
   },
-  image: "/images/services/celler-can-carrossa-lloseta.svg",
+  image: "/images/services/celler-can-carrossa-lloseta.jpg",
   gallery: [],
   schedule: "Martes a Domingo: 13:00 - 15:30, 18:30 - 23:30 | Lunes cerrado (Reserva previa recomendada)",
   confidenceScore: 99,

@@ -188,8 +188,8 @@ export const boxTattooPiercing: ServiceItem = {
       "Wechsel & Verkauf von medizinischem Schmuck",
     ],
   },
-  image: "/images/services/box-tattoo-piercing.svg",
-  gallery: ["/images/categories/box-tattoo-palma.svg"],
+  image: "/images/services/box-tattoo-piercing.jpg",
+  gallery: ["/images/services/box-tattoo-piercing.jpg"],
   reputationBreakdown: {
     googleMaps: {
       rating: 4.8,

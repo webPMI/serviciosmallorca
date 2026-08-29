@@ -135,7 +135,7 @@ export const bodegasSantaCatarinaSencelles: ServiceItem = {
     ca: "El 1985, Stellan Lundqvist va fundar Santa Catarina per portar el vi mallorquí d'excel·lència al món amb una aposta pionera pel terrer.",
     de: "1985 von Stellan Lundqvist gegründet, trug Santa Catarina maßgeblich dazu bei, Spitzenweine aus Mallorca international bekannt zu machen.",
   },
-  image: "/images/services/bodegas-santa-catarina-sencelles.svg",
+  image: "/images/services/bodegas-santa-catarina-sencelles.jpg",
   gallery: [],
   schedule: "Lunes a Viernes: 10:00 - 18:00 | Sábado: 10:00 - 14:00 | Domingo cerrado (Visitas previa reserva)",
   confidenceScore: 99,

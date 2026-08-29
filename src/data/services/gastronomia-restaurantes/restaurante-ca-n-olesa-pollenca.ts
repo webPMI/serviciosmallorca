@@ -140,7 +140,7 @@ export const restauranteCaNOlesaPollenca: ServiceItem = {
     ca: "El 1968, Ca n'Olesa va obrir a la Plaça Major de Pollença com a punt de trobada per gaudir de la bona taula al cor del poble.",
     de: "1968 eröffnet, entwickelte sich das Ca n'Olesa an der Plaça Major zum Herzstück des gesellschaftlichen Lebens in Pollença.",
   },
-  image: "/images/services/restaurante-ca-n-olesa-pollenca.svg",
+  image: "/images/services/restaurante-ca-n-olesa-pollenca.jpg",
   gallery: [],
   schedule: "Lunes a Domingo: 09:00 - 23:30 (Abierto todos los días del año)",
   confidenceScore: 98,

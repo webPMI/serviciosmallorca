@@ -27,7 +27,7 @@ export const ceramicaTerraCuita: ServiceItem = {
   coordinates: { lat: 39.625, lng: 2.748 },
   schedule: "Lunes a Viernes: 09:00 - 19:30 | Sábados: 09:30 - 14:00 (Visitas a la Ollería Tradicional)",
   lastVerifiedAt: "2026-08-25",
-  image: "/images/services/ceramica-terra-cuita-portol.svg",
+  image: "/images/services/ceramica-terra-cuita-portol.jpg",
   gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],

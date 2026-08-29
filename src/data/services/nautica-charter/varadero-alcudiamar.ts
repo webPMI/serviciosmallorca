@@ -27,7 +27,7 @@ export const varaderoAlcudiamar: ServiceItem = {
   coordinates: { lat: 39.835, lng: 3.132 },
   schedule: "Lunes a Viernes: 08:00 - 18:00 | Sábados: 08:30 - 13:30 (Servicio de Varada de Guardia)",
   lastVerifiedAt: "2026-08-25",
-  image: "/images/services/varadero-alcudiamar-services.svg",
+  image: "/images/services/varadero-alcudiamar-services.jpg",
   gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],

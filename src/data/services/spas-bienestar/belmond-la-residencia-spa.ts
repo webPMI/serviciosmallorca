@@ -27,7 +27,7 @@ export const belmondLaResidenciaSpa: ServiceItem = {
   coordinates: { lat: 39.7483, lng: 2.6489 },
   schedule: "Lunes a Domingo: 10:00 - 20:00 (Temporada de primavera a otoño)",
   lastVerifiedAt: "2026-08-25",
-  image: "/images/services/belmond-la-residencia-spa.svg",
+  image: "/images/services/belmond-la-residencia-spa.jpg",
   gallery: [],
   targetAudience: ["residentes", "turistas", "expat"],
   languagesSpoken: ["es", "en", "ca", "de", "fr"],

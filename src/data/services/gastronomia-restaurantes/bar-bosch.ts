@@ -27,7 +27,7 @@ export const barBosch: ServiceItem = {
   coordinates: { lat: 39.5714, lng: 2.6469 },
   schedule: "Lunes a Domingo: 07:30 - 23:30 (Abierto 365 días al año)",
   lastVerifiedAt: "2026-08-25",
-  image: "/images/services/bar-bosch.svg",
+  image: "/images/services/bar-bosch.jpg",
   gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],

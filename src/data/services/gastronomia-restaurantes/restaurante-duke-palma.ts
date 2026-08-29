@@ -28,7 +28,7 @@ export const restauranteDukePalma: ServiceItem = {
   coordinates: { lat: 39.5714, lng: 2.6385 },
   schedule: "Lunes a Domingo: 13:00 - 16:00, 19:30 - 23:30",
   lastVerifiedAt: "2026-08-26",
-  image: "/images/services/restaurante-duke-palma.svg",
+  image: "/images/services/restaurante-duke-palma.jpg",
   gallery: [],
   targetAudience: ["residentes", "turistas", "expat", "jovenes"],
   languagesSpoken: ["es", "en", "sv", "de"],

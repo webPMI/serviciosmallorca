@@ -28,7 +28,7 @@ export const restauranteRitziPortals: ServiceItem = {
   coordinates: { lat: 39.5329, lng: 2.5518 },
   schedule: "Lunes a Domingo: 12:30 - 01:00",
   lastVerifiedAt: "2026-08-26",
-  image: "/images/services/restaurante-ritzi-portals.svg",
+  image: "/images/services/restaurante-ritzi-portals.jpg",
   gallery: [],
   targetAudience: ["residentes", "turistas", "expat", "nautica"],
   languagesSpoken: ["es", "en", "de", "it"],

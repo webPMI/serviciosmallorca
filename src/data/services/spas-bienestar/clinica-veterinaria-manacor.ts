@@ -27,7 +27,7 @@ export const clinicaVeterinariaManacor: ServiceItem = {
   coordinates: { lat: 39.5695, lng: 3.2085 },
   schedule: "Lunes a Viernes: 09:00 - 20:00 | Sábados: 09:30 - 13:30 (Urgencias 24h Disponibles)",
   lastVerifiedAt: "2026-08-25",
-  image: "/images/services/clinica-veterinaria-manacor.svg",
+  image: "/images/services/clinica-veterinaria-manacor.jpg",
   gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],

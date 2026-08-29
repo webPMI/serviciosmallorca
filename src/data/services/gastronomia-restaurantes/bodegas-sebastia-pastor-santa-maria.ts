@@ -141,7 +141,7 @@ export const bodegasSebastiaPastorSantaMaria: ServiceItem = {
     ca: "El 1937, Sebastià Pastor va fundar el celler a Santa Maria del Camí per elaborar vins de gran caràcter amb la varietat autòctona Manto Negro.",
     de: "1937 gründete Sebastià Pastor das Weingut in Santa Maria del Camí aus Liebe zur Heimat und zur Manto Negro-Rebe – eine Tradition, die die Familie bis heute mit Stolz weiterführt.",
   },
-  image: "/images/services/bodegas-sebastia-pastor-santa-maria.svg",
+  image: "/images/services/bodegas-sebastia-pastor-santa-maria.jpg",
   gallery: [],
   schedule:
     "Lunes a Domingo: 09:00 - 14:00 | Martes a Viernes (tarde): 16:00 - 19:30 (Visitas guiadas bajo reserva previa)",

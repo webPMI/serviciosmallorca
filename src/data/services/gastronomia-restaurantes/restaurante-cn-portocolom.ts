@@ -142,7 +142,7 @@ export const restauranteCnPortocolom: ServiceItem = {
     ca: "El 1964, navegants i pescadors de Portocolom van fundar el Club Nàutic per apropar la mar a tothom, creant un restaurant que és símbol de bona cuina marinera.",
     de: "1964 schlossen sich Segler und Fischer im Club Nàutic Portocolom zusammen. Ihr Clubrestaurant serviert seitdem unverfälschte balearische Meeresküche direkt am Hafenbecken.",
   },
-  image: "/images/services/restaurante-cn-portocolom.svg",
+  image: "/images/services/restaurante-cn-portocolom.jpg",
   gallery: [],
   schedule: "Lunes a Domingo: 09:00 - 15:30 (Invierno) / 09:00 - 23:30 (Verano) | Martes cerrado",
   confidenceScore: 98,

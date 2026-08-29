@@ -27,7 +27,7 @@ export const fornCanPacoCampos: ServiceItem = {
   coordinates: { lat: 39.431, lng: 3.018 },
   schedule: "Lunes a Domingo: 06:30 - 14:00 | 17:00 - 20:30 (Abierto todos los días)",
   lastVerifiedAt: "2026-08-25",
-  image: "/images/services/forn-can-paco-campos.svg",
+  image: "/images/services/forn-can-paco-campos.jpg",
   gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],

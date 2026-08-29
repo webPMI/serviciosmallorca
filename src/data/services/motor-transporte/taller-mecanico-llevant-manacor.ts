@@ -27,7 +27,7 @@ export const tallerLlevantManacor: ServiceItem = {
   coordinates: { lat: 39.574, lng: 3.212 },
   schedule: "Lunes a Viernes: 08:00 - 13:30 | 15:00 - 19:00 (Sábados y Domingos Cerrado)",
   lastVerifiedAt: "2026-08-25",
-  image: "/images/services/taller-mecanico-llevant-manacor.svg",
+  image: "/images/services/taller-mecanico-llevant-manacor.jpg",
   gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],

@@ -141,7 +141,7 @@ export const cellerSaFondaMuro: ServiceItem = {
     ca: "El 1930, Sa Fonda va néixer a Muro per donar acollida i bon menjar a la gent del camp, mantenint viu l'esperit de la cuina de tota la vida.",
     de: "1930 in Muro als Gasthaus für Bauern und Händler gegründet, bewahrt Sa Fonda seit fast einem Jahrhundert die herzliche Gastlichkeit und die deftigen Rezepte vergangener Zeiten.",
   },
-  image: "/images/services/celler-sa-fonda-muro.svg",
+  image: "/images/services/celler-sa-fonda-muro.jpg",
   gallery: [],
   schedule: "Lunes y Miércoles a Domingo: 06:30 - 16:30 | Martes cerrado",
   confidenceScore: 98,

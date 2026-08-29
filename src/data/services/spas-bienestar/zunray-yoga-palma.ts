@@ -27,7 +27,7 @@ export const zunrayYoga: ServiceItem = {
   coordinates: { lat: 39.5702, lng: 2.6455 },
   schedule: "Lunes a Viernes: 08:30 - 21:00 | Sábados: 09:30 - 13:30 (Domingos Talleres)",
   lastVerifiedAt: "2026-08-25",
-  image: "/images/services/zunray-yoga-studio-palma.svg",
+  image: "/images/services/zunray-yoga-studio-palma.jpg",
   gallery: [],
   targetAudience: ["residentes", "turistas", "expat"],
   languagesSpoken: ["es", "en", "de", "ca"],

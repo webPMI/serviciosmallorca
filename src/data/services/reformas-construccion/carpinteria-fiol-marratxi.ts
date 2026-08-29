@@ -27,7 +27,7 @@ export const carpinteriaFiol: ServiceItem = {
   coordinates: { lat: 39.5982, lng: 2.7012 },
   schedule: "Lunes a Viernes: 08:00 - 13:00 | 15:00 - 18:30 (Sábados y Domingos Cerrado)",
   lastVerifiedAt: "2026-08-25",
-  image: "/images/services/carpinteria-fiol-marratxi.svg",
+  image: "/images/services/carpinteria-fiol-marratxi.jpg",
   gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],

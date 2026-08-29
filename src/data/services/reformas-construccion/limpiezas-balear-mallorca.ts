@@ -27,7 +27,7 @@ export const limpiezasBalear: ServiceItem = {
   coordinates: { lat: 39.5935, lng: 2.6742 },
   schedule: "Lunes a Viernes: 07:30 - 19:30 | Sábados: 08:00 - 14:00 (Urgencias y Fines de Obra)",
   lastVerifiedAt: "2026-08-25",
-  image: "/images/services/limpiezas-balear-mallorca.svg",
+  image: "/images/services/limpiezas-balear-mallorca.jpg",
   gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],

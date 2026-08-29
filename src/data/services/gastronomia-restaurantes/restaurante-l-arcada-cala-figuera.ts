@@ -142,7 +142,7 @@ export const restauranteLArcadaCalaFiguera: ServiceItem = {
     ca: "El 1980, L'Arcada va obrir a Cala Figuera per compartir la millor cuina marinera balear davant el port pesquer.",
     de: "1980 in Cala Figuera eröffnet, serviert das L'Arcada seither erstklassige mediterrane Küche mit traumhaftem Blick auf die Fischerboote.",
   },
-  image: "/images/services/restaurante-l-arcada-cala-figuera.svg",
+  image: "/images/services/restaurante-l-arcada-cala-figuera.jpg",
   gallery: [],
   schedule: "Lunes a Domingo: 12:00 - 24:00 (Abierto todos los días)",
   confidenceScore: 98,

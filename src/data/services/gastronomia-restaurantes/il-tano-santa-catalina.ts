@@ -27,7 +27,7 @@ export const ilTanoSantaCatalina: ServiceItem = {
   coordinates: { lat: 39.5718, lng: 2.6375 },
   schedule: "Lunes a Domingo: 13:00 - 16:00 | 19:30 - 23:30",
   lastVerifiedAt: "2026-08-25",
-  image: "/images/services/il-tano-santa-catalina.svg",
+  image: "/images/services/il-tano-santa-catalina.jpg",
   gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "it", "en", "ca"],

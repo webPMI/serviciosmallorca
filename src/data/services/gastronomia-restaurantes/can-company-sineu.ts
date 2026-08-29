@@ -27,7 +27,7 @@ export const canCompany: ServiceItem = {
   coordinates: { lat: 39.6582, lng: 3.0112 },
   schedule: "Lunes a Viernes: 08:30 - 18:00 | Sábados: 09:00 - 13:30 (Visitas a la Finca con Reserva)",
   lastVerifiedAt: "2026-08-25",
-  image: "/images/services/can-company-sineu.svg",
+  image: "/images/services/can-company-sineu.jpg",
   gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],

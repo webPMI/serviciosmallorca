@@ -27,7 +27,7 @@ export const arquitectura81Palma: ServiceItem = {
   coordinates: { lat: 39.5824, lng: 2.6542 },
   schedule: "Lunes a Viernes: 08:30 - 18:30 (Sábados y Domingos Cerrado)",
   lastVerifiedAt: "2026-08-25",
-  image: "/images/services/arquitectura-81-palma.svg",
+  image: "/images/services/arquitectura-81-palma.jpg",
   gallery: [],
   targetAudience: ["residentes", "turistas", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],

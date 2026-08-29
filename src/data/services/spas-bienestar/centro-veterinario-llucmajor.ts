@@ -27,7 +27,7 @@ export const veterinarioLlucmajor: ServiceItem = {
   coordinates: { lat: 39.489, lng: 2.891 },
   schedule: "Lunes a Viernes: 09:00 - 19:30 | Sábados: 09:30 - 13:30 (Servicio de Urgencias Telefónicas)",
   lastVerifiedAt: "2026-08-25",
-  image: "/images/services/centro-veterinario-llucmajor.svg",
+  image: "/images/services/centro-veterinario-llucmajor.jpg",
   gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],

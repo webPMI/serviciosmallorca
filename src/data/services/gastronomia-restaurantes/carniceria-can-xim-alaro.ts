@@ -27,7 +27,7 @@ export const carniceriaCanXim: ServiceItem = {
   coordinates: { lat: 39.706, lng: 2.791 },
   schedule: "Lunes a Sábado: 08:30 - 14:00 | 17:00 - 20:00 (Domingos Cerrado)",
   lastVerifiedAt: "2026-08-25",
-  image: "/images/services/carniceria-can-xim-alaro.svg",
+  image: "/images/services/carniceria-can-xim-alaro.jpg",
   gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],

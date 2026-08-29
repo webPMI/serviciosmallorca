@@ -135,7 +135,7 @@ export const bodegasSonVivesBanyalbufar: ServiceItem = {
     ca: "El 1986, Toni Darder va fundar Son Vives a Banyalbufar per salvar la Malvasia autòctona i retornar la vinya a les marjades de la Serra de Tramuntana.",
     de: "1986 gründete Toni Darder das Weingut Son Vives in Banyalbufar mit der Vision, die traditionsreiche Malvasía-Traube zu retten und den Terrassen der Tramuntana neues Leben einzuhauchen.",
   },
-  image: "/images/services/bodegas-son-vives-banyalbufar.svg",
+  image: "/images/services/bodegas-son-vives-banyalbufar.jpg",
   gallery: [],
   schedule: "Lunes a Domingo: 11:00 - 20:30 (Visitas guiadas y catas bajo cita previa obligatoria)",
   confidenceScore: 99,

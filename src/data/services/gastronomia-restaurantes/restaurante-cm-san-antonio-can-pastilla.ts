@@ -136,7 +136,7 @@ export const restauranteCmSanAntonioCanPastilla: ServiceItem = {
     ca: "Fundat el 1934 a Can Pastilla, el Club Marítim San Antonio de la Playa ha estat un punt de trobada clau per gaudir de la mar i la bona cuina marinera a Palma.",
     de: "1934 gegründet, verbindet das Clubrestaurant im CMSAP Can Pastilla seit Generationen die Liebe zum Meer mit traditioneller mallorquinischer Gastfreundschaft.",
   },
-  image: "/images/services/restaurante-cm-san-antonio-can-pastilla.svg",
+  image: "/images/services/restaurante-cm-san-antonio-can-pastilla.jpg",
   gallery: [],
   schedule: "Lunes a Domingo: 08:00 - 23:00 (Abierto todos los días del año)",
   confidenceScore: 98,

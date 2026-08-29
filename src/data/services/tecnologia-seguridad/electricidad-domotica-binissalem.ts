@@ -27,7 +27,7 @@ export const electricidadBinissalem: ServiceItem = {
   coordinates: { lat: 39.688, lng: 2.842 },
   schedule: "Lunes a Viernes: 08:00 - 18:30 (Servicio de Urgencias Eléctricas 24h)",
   lastVerifiedAt: "2026-08-25",
-  image: "/images/services/electricidad-domotica-binissalem.svg",
+  image: "/images/services/electricidad-domotica-binissalem.jpg",
   gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],

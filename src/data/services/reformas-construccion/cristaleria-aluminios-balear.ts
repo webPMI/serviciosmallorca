@@ -27,7 +27,7 @@ export const cristaleriaBalear: ServiceItem = {
   coordinates: { lat: 39.605, lng: 2.671 },
   schedule: "Lunes a Viernes: 08:00 - 18:00 (Servicio de Medición y Urgencias de Rotura)",
   lastVerifiedAt: "2026-08-25",
-  image: "/images/services/cristaleria-aluminios-balear.svg",
+  image: "/images/services/cristaleria-aluminios-balear.jpg",
   gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],

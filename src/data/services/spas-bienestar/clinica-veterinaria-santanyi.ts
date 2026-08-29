@@ -27,7 +27,7 @@ export const veterinariaSantanyi: ServiceItem = {
   coordinates: { lat: 39.356, lng: 3.131 },
   schedule: "Lunes a Viernes: 09:30 - 19:30 | Sábados: 10:00 - 13:30 (Urgencias Telefónicas Disponibles)",
   lastVerifiedAt: "2026-08-25",
-  image: "/images/services/clinica-veterinaria-santanyi.svg",
+  image: "/images/services/clinica-veterinaria-santanyi.jpg",
   gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],

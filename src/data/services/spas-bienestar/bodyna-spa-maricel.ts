@@ -163,7 +163,7 @@ export const bodynaSpaMaricel: ServiceItem = {
     ca: ["Massatges vora mar", "Circuit d'hidroteràpia", "Tractaments facials", "Day Pass de Spa"],
     de: ["Massagen am Meer", "Hydrotherapie-Zirkel", "Cinq Mondes Gesichtsbehandlungen", "Spa-Tageskarten"],
   },
-  image: "/images/services/bodyna-spa-maricel.svg",
+  image: "/images/services/bodyna-spa-maricel.jpg",
   gallery: [],
   schedule: "Lun - Dom: 10:00 - 20:00",
   lastVerifiedAt: "2026-08-26",

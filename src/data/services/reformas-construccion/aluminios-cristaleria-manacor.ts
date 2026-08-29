@@ -27,7 +27,7 @@ export const aluminiosManacor: ServiceItem = {
   coordinates: { lat: 39.575, lng: 3.21 },
   schedule: "Lunes a Viernes: 08:00 - 18:00 (Medición y Presupuestos Técnicos en Obra)",
   lastVerifiedAt: "2026-08-25",
-  image: "/images/services/aluminios-cristaleria-manacor.svg",
+  image: "/images/services/aluminios-cristaleria-manacor.jpg",
   gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],

@@ -28,7 +28,7 @@ export const restauranteMarDeNudos: ServiceItem = {
   coordinates: { lat: 39.5678, lng: 2.6451 },
   schedule: "Lunes a Domingo: 13:00 - 00:30",
   lastVerifiedAt: "2026-08-26",
-  image: "/images/services/restaurante-mar-de-nudos.svg",
+  image: "/images/services/restaurante-mar-de-nudos.jpg",
   gallery: [],
   targetAudience: ["residentes", "turistas", "expat", "nautica"],
   languagesSpoken: ["es", "en", "de", "it"],

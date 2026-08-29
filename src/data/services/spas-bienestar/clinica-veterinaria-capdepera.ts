@@ -27,7 +27,7 @@ export const veterinariaCapdepera: ServiceItem = {
   coordinates: { lat: 39.704, lng: 3.433 },
   schedule: "Lunes a Viernes: 09:30 - 19:30 | Sábados: 10:00 - 13:30 (Urgencias Telefónicas Disponibles)",
   lastVerifiedAt: "2026-08-25",
-  image: "/images/services/clinica-veterinaria-capdepera.svg",
+  image: "/images/services/clinica-veterinaria-capdepera.jpg",
   gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],

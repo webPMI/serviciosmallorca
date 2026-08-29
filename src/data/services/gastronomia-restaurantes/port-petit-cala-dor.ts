@@ -133,7 +133,7 @@ export const portPetitCalaDor: ServiceItem = {
     ca: "Gérard Deymier va fundar Port Petit el 1988 per unir la tradició gastronòmica francesa amb el marisc balear, creant un dels restaurants més emblemàtics de Cala d'Or.",
     de: "Gérard Deymier gründete das Port Petit 1988, um französische Kochkunst mit den Schätzen des Mittelmeers zu verbinden. Seitdem ist das Restaurant ein fester Treffpunkt für Yachturlauber und Feinschmecker.",
   },
-  image: "/images/services/port-petit-cala-dor.svg",
+  image: "/images/services/port-petit-cala-dor.jpg",
   gallery: [],
   schedule: "Lunes a Domingo: 13:00 - 15:30, 19:00 - 23:00 (Temporada: Abril a Octubre)",
   confidenceScore: 97,

@@ -27,7 +27,7 @@ export const cerrajeriaSanMiguel: ServiceItem = {
   coordinates: { lat: 39.5745, lng: 2.6521 },
   schedule: "Lunes a Viernes: 08:30 - 19:30 | Servicio de Urgencias 24h",
   lastVerifiedAt: "2026-08-25",
-  image: "/images/services/cerrajeria-san-miguel-palma.svg",
+  image: "/images/services/cerrajeria-san-miguel-palma.jpg",
   gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en"],

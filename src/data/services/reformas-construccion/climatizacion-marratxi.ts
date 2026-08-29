@@ -27,7 +27,7 @@ export const climaMarratxi: ServiceItem = {
   coordinates: { lat: 39.619, lng: 2.738 },
   schedule: "Lunes a Viernes: 08:00 - 18:30 (Servicio Técnico y Urgencias de Clima)",
   lastVerifiedAt: "2026-08-25",
-  image: "/images/services/climatizacion-marratxi-servicios.svg",
+  image: "/images/services/climatizacion-marratxi-servicios.jpg",
   gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],

@@ -28,7 +28,7 @@ export const restauranteCoastByEast: ServiceItem = {
   coordinates: { lat: 39.4952, lng: 2.4789 },
   schedule: "Lunes a Domingo: 12:00 - 01:00",
   lastVerifiedAt: "2026-08-26",
-  image: "/images/services/restaurante-coast-by-east.svg",
+  image: "/images/services/restaurante-coast-by-east.jpg",
   gallery: [],
   targetAudience: ["residentes", "turistas", "expat", "nautica"],
   languagesSpoken: ["es", "en", "de"],

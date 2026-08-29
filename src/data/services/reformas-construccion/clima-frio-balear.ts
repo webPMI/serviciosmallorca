@@ -27,7 +27,7 @@ export const climaFrioBalear: ServiceItem = {
   coordinates: { lat: 39.6012, lng: 2.6685 },
   schedule: "Lunes a Viernes: 08:00 - 18:30 | Servicio de Averías Urgentes de Climatización",
   lastVerifiedAt: "2026-08-25",
-  image: "/images/services/clima-frio-balear.svg",
+  image: "/images/services/clima-frio-balear.jpg",
   gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],

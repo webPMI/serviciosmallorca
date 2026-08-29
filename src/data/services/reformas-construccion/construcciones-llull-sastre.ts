@@ -27,7 +27,7 @@ export const construccionesLlullSastre: ServiceItem = {
   coordinates: { lat: 39.6042, lng: 2.6735 },
   schedule: "Lunes a Viernes: 08:00 - 18:00 (Sábados y Domingos Cerrado)",
   lastVerifiedAt: "2026-08-25",
-  image: "/images/services/construcciones-llull-sastre.svg",
+  image: "/images/services/construcciones-llull-sastre.jpg",
   gallery: [],
   targetAudience: ["residentes", "turistas", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],

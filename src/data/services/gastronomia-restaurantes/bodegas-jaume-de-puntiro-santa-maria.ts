@@ -141,7 +141,7 @@ export const bodegasJaumeDePuntiroSantaMaria: ServiceItem = {
     ca: "El 1980, Pere Calafat va fundar Jaume de Puntiró a Santa Maria del Camí per elaborar vins ecològics que expressassin la puresa de la terra mallorquina.",
     de: "1980 gründete Pere Calafat das Weingut Jaume de Puntiró in Santa Maria del Camí aus der tiefen Überzeugung heraus, dass die Zukunft des mallorquinischen Weins im biologischen Anbau liegt.",
   },
-  image: "/images/services/bodegas-jaume-de-puntiro-santa-maria.svg",
+  image: "/images/services/bodegas-jaume-de-puntiro-santa-maria.jpg",
   gallery: [],
   schedule: "Lunes a Viernes: 09:00 - 18:00 | Sábados y Domingos: 09:00 - 13:00 (Visitas y catas bajo reserva previa)",
   confidenceScore: 98,

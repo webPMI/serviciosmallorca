@@ -27,7 +27,7 @@ export const digitalCinemaMallorca: ServiceItem = {
   coordinates: { lat: 39.6025, lng: 2.6728 },
   schedule: "Lunes a Viernes: 09:00 - 18:30 (Sábados con Cita Previa)",
   lastVerifiedAt: "2026-08-25",
-  image: "/images/services/digital-cinema-mallorca.svg",
+  image: "/images/services/digital-cinema-mallorca.jpg",
   gallery: [],
   targetAudience: ["residentes", "turistas", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],

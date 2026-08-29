@@ -135,7 +135,7 @@ export const bodegasAvaViSencelles: ServiceItem = {
     ca: "El 2014, AVA Vi va néixer a Sencelles per elaborar vins sincers que reflectissin la puresa de la terra vermella i la riquesa dels raïms de Mallorca.",
     de: "2014 entstand das Weingut AVA Vi in Sencelles mit der Leidenschaft, Terroirweine zu schaffen, die den Charakter der roten Tonböden und die Eleganz autochthoner Trauben widerspiegeln.",
   },
-  image: "/images/services/bodegas-ava-vi-sencelles.svg",
+  image: "/images/services/bodegas-ava-vi-sencelles.jpg",
   gallery: [],
   schedule: "Lunes a Viernes: 09:00 - 17:00 | Sábado: Visitas concertadas (Cita previa recomendada)",
   confidenceScore: 98,

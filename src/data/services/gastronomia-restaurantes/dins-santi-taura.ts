@@ -217,7 +217,7 @@ export const dinsSantiTaura: ServiceItem = {
       "Privates Gourmet-Dining für kleine Gruppen",
     ],
   },
-  image: "/images/services/dins-santi-taura.svg",
+  image: "/images/services/dins-santi-taura.jpg",
   gallery: [],
   reputationBreakdown: {
     googleMaps: {

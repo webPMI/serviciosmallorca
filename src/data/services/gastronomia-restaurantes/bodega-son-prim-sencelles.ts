@@ -27,7 +27,7 @@ export const bodegaSonPrim: ServiceItem = {
   coordinates: { lat: 39.658, lng: 2.902 },
   schedule: "Lunes a Sábado: 10:00 - 18:00 (Visitas Guiadas a la Bodega con Cata de Vinos)",
   lastVerifiedAt: "2026-08-25",
-  image: "/images/services/bodega-son-prim-sencelles.svg",
+  image: "/images/services/bodega-son-prim-sencelles.jpg",
   gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],

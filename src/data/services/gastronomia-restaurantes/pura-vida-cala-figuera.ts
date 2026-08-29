@@ -140,7 +140,7 @@ export const puraVidaCalaFiguera: ServiceItem = {
     ca: "Pura Vida va néixer per oferir un refugi sobre les roques de Cala Figuera, unint la bellesa del mar de Santanyí amb una cuina honesta.",
     de: "Pura Vida wurde als Oase der Ruhe über den Klippen von Cala Figuera geschaffen, um die wilde Natur des Südostens mit feiner Kulinarik zu verbinden.",
   },
-  image: "/images/services/pura-vida-cala-figuera.svg",
+  image: "/images/services/pura-vida-cala-figuera.jpg",
   gallery: [],
   schedule: "Martes a Domingo: 13:00 - 23:00 | Lunes cerrado",
   confidenceScore: 98,

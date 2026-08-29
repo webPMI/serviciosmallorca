@@ -27,7 +27,7 @@ export const clinicaJuanedaPalma: ServiceItem = {
   coordinates: { lat: 39.5768, lng: 2.6312 },
   schedule: "Lunes a Domingo: 24 Horas (Servicio de Urgencias y Hospitalización Permanente)",
   lastVerifiedAt: "2026-08-25",
-  image: "/images/services/clinica-juaneda-palma.svg",
+  image: "/images/services/clinica-juaneda-palma.jpg",
   gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de", "fr", "sv"],

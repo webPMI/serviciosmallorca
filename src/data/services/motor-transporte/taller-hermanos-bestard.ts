@@ -27,7 +27,7 @@ export const tallerHermanosBestard: ServiceItem = {
   coordinates: { lat: 39.5785, lng: 2.6342 },
   schedule: "Lunes a Viernes: 08:00 - 13:30 | 15:00 - 19:00 (Sábados y Domingos Cerrado)",
   lastVerifiedAt: "2026-08-25",
-  image: "/images/services/taller-hermanos-bestard-palma.svg",
+  image: "/images/services/taller-hermanos-bestard-palma.jpg",
   gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],

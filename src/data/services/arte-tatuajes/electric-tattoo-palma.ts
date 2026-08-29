@@ -178,7 +178,7 @@ export const electricTattooPalma: ServiceItem = {
     ca: ["Tatuatges a mida", "Dissenys flash tradicionals", "Cover-up i restauració", "Assessorament"],
     de: ["Individuelle Tattoos", "Traditionelle Flash-Motive", "Cover-up & Nachstechen", "Beratung"],
   },
-  image: "/images/services/electric-tattoo-palma.svg",
+  image: "/images/services/electric-tattoo-palma.jpg",
   gallery: [],
   schedule: "Lun - Sáb: 11:00 - 20:00 | Dom: Cerrado",
   lastVerifiedAt: "2026-08-26",

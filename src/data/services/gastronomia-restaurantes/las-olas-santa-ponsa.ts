@@ -141,7 +141,7 @@ export const lasOlasSantaPonsa: ServiceItem = {
     ca: "Amb dècades d'història a la costa de Santa Ponça, Las Olas manté el compromís de servir plats mediterranis generosos i autèntics vora la mar.",
     de: "Seit Jahrzehnten an der Küste von Santa Ponsa etabliert, steht das Las Olas für ehrliche, herzhafte spanische Küche mit unschlagbarem Meerblick.",
   },
-  image: "/images/services/las-olas-santa-ponsa.svg",
+  image: "/images/services/las-olas-santa-ponsa.jpg",
   gallery: [],
   schedule: "Lunes a Domingo: 12:00 - 23:30 (Temporada de Verano)",
   confidenceScore: 94,

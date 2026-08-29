@@ -141,7 +141,7 @@ export const restauranteEsRacoDesPortSoller: ServiceItem = {
     ca: "El 1984, Es Racó d'es Port va néixer al passeig del Port de Sóller per compartir el millor peix i marisc fresc dels pescadors sollerics davant la mar.",
     de: "1984 an der Uferpromenade von Port de Sóller eröffnet, steht das Es Racó d'es Port seit über vier Jahrzehnten für fangfrische Meeresküche direkt an der Bucht.",
   },
-  image: "/images/services/restaurante-es-raco-des-port-soller.svg",
+  image: "/images/services/restaurante-es-raco-des-port-soller.jpg",
   gallery: [],
   schedule: "Lunes a Domingo: 12:30 - 16:00, 19:00 - 23:00 (Abierto todos los días en temporada)",
   confidenceScore: 98,

@@ -133,7 +133,7 @@ export const cellerSaTravessa: ServiceItem = {
     ca: "El 1974, Sa Travessa va obrir a Inca per mantenir viva la cuina dels cellers tradicionals amb les millors receptes de la terra.",
     de: "1974 eröffnete das Sa Travessa in Inca, um das Erbe der traditionellen Weinkeller des Raiguer mit authentischer mallorquinischer Küche fortzuführen.",
   },
-  image: "/images/services/celler-sa-travessa-inca.svg",
+  image: "/images/services/celler-sa-travessa-inca.jpg",
   gallery: [],
   schedule: "Lunes a Domingo: 13:00 - 16:00, 19:30 - 23:30 (Reserva previa recomendada)",
   confidenceScore: 98,

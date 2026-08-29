@@ -27,7 +27,7 @@ export const varaderoPortitxol: ServiceItem = {
   coordinates: { lat: 39.562, lng: 2.671 },
   schedule: "Lunes a Viernes: 08:00 - 18:00 | Sábados: 08:30 - 13:30 (Emergencias Náuticas)",
   lastVerifiedAt: "2026-08-25",
-  image: "/images/services/varadero-portitxol-services.svg",
+  image: "/images/services/varadero-portitxol-services.jpg",
   gallery: [],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],
