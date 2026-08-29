@@ -70,6 +70,38 @@ describe("Sports & Wellbeing POI Module (Deporte & Bienestar Mallorca)", () => {
     // CrossFit Mallorca está en Santa Ponça → zona calvia-andratx
     const calviaFacilities = getSportsFacilitiesByZone("calvia-andratx");
     expect(calviaFacilities.some((f) => f.id === "crossfit-mallorca-santa-ponca")).toBe(true);
+    expect(calviaFacilities.some((f) => f.id === "pista-atletisme-magaluf-calvia")).toBe(true);
+
+    const raiguerFacilities = getSportsFacilitiesByZone("raiguer");
+    expect(raiguerFacilities.some((f) => f.id === "poliesportiu-mateu-canellas-inca")).toBe(true);
+
+    const nordFacilities = getSportsFacilitiesByZone("nord");
+    expect(nordFacilities.some((f) => f.id === "calistenia-passeig-port-pollenca")).toBe(true);
+  });
+
+  it("verifies public sports facilities and calisthenics parks compliance", () => {
+    const publicFacilities = SPORTS_FACILITIES.filter(
+      (f) => f.management === "parque_publico" || f.management === "publica_ayuntamiento",
+    );
+    expect(publicFacilities.length).toBeGreaterThanOrEqual(10);
+
+    const calisthenics = SPORTS_FACILITIES.filter((f) => f.activityTypes.includes("calistenia"));
+    expect(calisthenics.length).toBeGreaterThanOrEqual(5);
+
+    // Son Moix and Son Hugo municipal aquatic centres
+    const sonMoix = getSportsFacilityById("palau-municipal-esports-son-moix-palma");
+    expect(sonMoix).toBeDefined();
+    expect(sonMoix?.management).toBe("publica_ayuntamiento");
+    expect(sonMoix?.verifiedOfficialSource).toContain("IME");
+
+    const sonHugo = getSportsFacilityById("piscines-municipals-son-hugo-palma");
+    expect(sonHugo).toBeDefined();
+    expect(sonHugo?.activityTypes).toContain("natacion");
+
+    // Free access public workout areas
+    const bellver = getSportsFacilityById("circuito-running-bosque-bellver-palma");
+    expect(bellver?.pricing.isFree).toBe(true);
+    expect(bellver?.amenities.fuenteAgua).toBe(true);
   });
 
   it("provides contextual cross-selling links to nearby verified services", () => {
