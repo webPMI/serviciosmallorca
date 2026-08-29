@@ -1,74 +1,79 @@
 import type { ServiceItem } from "../types.ts";
-import { oasisCatamaran } from "./oasis-catamaran.ts";
-import { mallorcaGlobalCharter } from "./mallorca-global-charter.ts";
+import { alcudiamarMarinaResort } from "./alcudiamar-marina-resort.ts";
 import { attractionCatamarans } from "./attraction-catamarans.ts";
-import { clubNauticPortitxol } from "./club-nautic-portitxol.ts";
-import { varaderoPortitxol } from "./varadero-portitxol-services.ts";
-import { zoeaBuceoMallorca } from "./zoea-mallorca-buceo.ts";
-import { varaderoAlcudiamar } from "./varadero-alcudiamar.ts";
-import { skualoAlcudia } from "./skualo-alcudia-diving.ts";
 import { carpinteriaNavalMestres } from "./carpinteria-naval-mestres-daixa.ts";
-import { portAdrianoBoatCharter } from "./port-adriano-boat-charter.ts";
-import { realClubNauticoPalma } from "./real-club-nautico-palma.ts";
+import { clubDeMarMallorcaService } from "./club-de-mar-mallorca.ts";
+import { clubNauticPortitxol } from "./club-nautic-portitxol.ts";
 import { easyBoatsMallorca } from "./easy-boats-mallorca.ts";
+import { mallorcaGlobalCharter } from "./mallorca-global-charter.ts";
+import { marinaDeCalaDorService } from "./marina-de-cala-dor.ts";
 import { marinaPortDeMallorca } from "./marina-port-de-mallorca.ts";
 import { nautinortChartersPollensa } from "./nautinort-charters-pollensa.ts";
-import { skualoPortoCristo } from "./skualo-porto-cristo.ts";
-import { puertoPortalsMarina } from "./puerto-portals-marina.ts";
-import { marinaDeCalaDorService } from "./marina-de-cala-dor.ts";
-import { clubDeMarMallorcaService } from "./club-de-mar-mallorca.ts";
+import { oasisCatamaran } from "./oasis-catamaran.ts";
+import { portAdrianoBoatCharter } from "./port-adriano-boat-charter.ts";
 import { portDeSollerMarinaService } from "./port-de-soller-marina.ts";
-import { ribClubMallorcaService } from "./rib-club-mallorca.ts";
 import { clubNauticPortocolomService } from "./portocolom-yacht-club.ts";
+import { puertoPortalsMarina } from "./puerto-portals-marina.ts";
+import { realClubNauticoPalma } from "./real-club-nautico-palma.ts";
+import { reialClubNauticPortPollenca } from "./reial-club-nautic-port-pollenca.ts";
+import { ribClubMallorcaService } from "./rib-club-mallorca.ts";
+import { scubaMallorcaPortPollenca } from "./scuba-mallorca-port-pollenca.ts";
+import { skualoAlcudia } from "./skualo-alcudia-diving.ts";
+import { skualoPortoCristo } from "./skualo-porto-cristo.ts";
+import { varaderoAlcudiamar } from "./varadero-alcudiamar.ts";
+import { varaderoPortitxol } from "./varadero-portitxol-services.ts";
+import { zoeaBuceoMallorca } from "./zoea-mallorca-buceo.ts";
 
 export {
-  skualoPortoCristo,
+  alcudiamarMarinaResort,
+  attractionCatamarans,
+  carpinteriaNavalMestres,
+  clubDeMarMallorcaService,
+  clubNauticPortitxol,
+  easyBoatsMallorca,
+  mallorcaGlobalCharter,
+  marinaDeCalaDorService,
+  marinaPortDeMallorca,
   nautinortChartersPollensa,
   oasisCatamaran,
-  mallorcaGlobalCharter,
-  attractionCatamarans,
-  clubNauticPortitxol,
+  portAdrianoBoatCharter,
+  portDeSollerMarinaService,
+  clubNauticPortocolomService,
+  puertoPortalsMarina,
+  realClubNauticoPalma,
+  reialClubNauticPortPollenca,
+  ribClubMallorcaService,
+  scubaMallorcaPortPollenca,
+  skualoAlcudia,
+  skualoPortoCristo,
+  varaderoAlcudiamar,
   varaderoPortitxol,
   zoeaBuceoMallorca,
-  varaderoAlcudiamar,
-  skualoAlcudia,
-  carpinteriaNavalMestres,
-  portAdrianoBoatCharter,
-  realClubNauticoPalma,
-  easyBoatsMallorca,
-  marinaPortDeMallorca,
-  puertoPortalsMarina,
-  marinaDeCalaDorService,
-  clubDeMarMallorcaService,
-  portDeSollerMarinaService,
-  ribClubMallorcaService,
-  clubNauticPortocolomService,
 };
 
-/**
- * Catálogo Sectorial: Náutica, Chárter & Actividades Marítimas en Mallorca.
- * Negocios 100% reales y verificados bajo la regla estricta Zero Fake Data (GR-11).
- */
 export const NAUTICA_SERVICES: ServiceItem[] = [
-  oasisCatamaran,
-  mallorcaGlobalCharter,
+  alcudiamarMarinaResort,
   attractionCatamarans,
-  clubNauticPortitxol,
-  varaderoPortitxol,
-  zoeaBuceoMallorca,
-  varaderoAlcudiamar,
-  skualoAlcudia,
   carpinteriaNavalMestres,
-  portAdrianoBoatCharter,
-  realClubNauticoPalma,
+  clubDeMarMallorcaService,
+  clubNauticPortitxol,
   easyBoatsMallorca,
+  mallorcaGlobalCharter,
+  marinaDeCalaDorService,
   marinaPortDeMallorca,
   nautinortChartersPollensa,
-  skualoPortoCristo,
-  puertoPortalsMarina,
-  marinaDeCalaDorService,
-  clubDeMarMallorcaService,
+  oasisCatamaran,
+  portAdrianoBoatCharter,
   portDeSollerMarinaService,
-  ribClubMallorcaService,
   clubNauticPortocolomService,
+  puertoPortalsMarina,
+  realClubNauticoPalma,
+  reialClubNauticPortPollenca,
+  ribClubMallorcaService,
+  scubaMallorcaPortPollenca,
+  skualoAlcudia,
+  skualoPortoCristo,
+  varaderoAlcudiamar,
+  varaderoPortitxol,
+  zoeaBuceoMallorca,
 ];

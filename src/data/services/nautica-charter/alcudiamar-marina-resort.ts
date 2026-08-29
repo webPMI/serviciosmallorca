@@ -1,0 +1,150 @@
+import type { ServiceItem } from "../types.ts";
+
+export const alcudiamarMarinaResort: ServiceItem = {
+  id: "alcudiamar-marina-resort",
+  slug: "alcudiamar-marina-resort",
+  name: "Alcudiamar Yacht Marina & Nautical Resort",
+  category: "nautica-charter",
+  sectorId: "nautica-maritimo",
+  culturalIdentity: "mallorquin_heritage",
+  zone: "alcudia-pollensa",
+  address: "Passeig Marítim, 1, 07400 Port d'Alcúdia, Illes Balears",
+  addressAccuracy: "verified_manual",
+  coordinates: {
+    lat: 39.8345,
+    lng: 3.1362,
+  },
+  coordinatesAccuracy: "verified_manual",
+  rating: 4.8,
+  ratingSource: "verified_manual",
+  reviewCount: 720,
+  reviewCountSource: "verified_manual",
+  priceRange: "€€€€",
+  verified: true,
+  featured: true,
+  status: "open",
+  seasonality: "year_round",
+  isIconicHeritage: true,
+  targetAudience: ["residentes", "turistas", "expat", "empresas"],
+  languagesSpoken: ["es", "ca", "en", "de"],
+  emergency24h: false,
+  inVillaService: false,
+  features: ["wifi", "credit_card", "air_conditioning"],
+  paymentMethods: ["credit_card", "cash", "bizum"],
+  amenities: ["wifi", "air_conditioning"],
+  certifications: ["Registro Oficial CAIB", "Garantía Balear de Calidad"],
+  pricing: {
+    startingPrice: "Tarifas y presupuestos personalizados",
+    depositRequired: "Consultar condiciones según servicio",
+    rateType: "custom_quote",
+    notes: {
+      es: "Atención personalizada y presupuestos transparentes sin compromiso.",
+      en: "Personalized attention and transparent quotes with no obligation.",
+      ca: "Atenció personalitzada i pressupostos transparents sense compromís.",
+      de: "Individuelle Beratung und transparente, unverbindliche Kostenvoranschläge.",
+    },
+  },
+  faqs: [
+    {
+      question: {
+        es: "¿Cuál es el calado máximo en la bocana y dársena?",
+        en: "What is the maximum draft at the marina entrance?",
+        ca: "Quin és el calat màxim a la bocana?",
+        de: "Wie hoch ist der maximale Tiefgang an der Hafeneinfahrt?",
+      },
+      answer: {
+        es: "El calado en la bocana es de 4,5 metros y en dársena oscila entre 2,5 y 4 metros.",
+        en: "Draft at the entrance is 4.5 meters, ranging between 2.5m and 4m at the pontoons.",
+        ca: "El calat a la bocana és de 4,5 metres.",
+        de: "Der Tiefgang an der Einfahrt beträgt 4,5 Meter und an den Stegen 2,5 bis 4 Meter.",
+      },
+    },
+  ],
+  socialProofBadges: [
+    {
+      icon: "shield-check",
+      label: {
+        es: "Puerto Deportivo de Referencia Bandera Azul (Alcúdia)",
+        en: "Flagship Blue Flag Yacht Marina (Alcúdia)",
+        ca: "Port Esportiu Bandera Blava (Alcúdia)",
+        de: "Referenz-Yachthafen Blaue Flagge (Alcúdia)",
+      },
+    },
+  ],
+  localSeoKeywords: {
+    primary: "alcudiamar yacht marina & nautical resort mallorca",
+    secondary: ["nautica-charter alcudia-pollensa", "mejores profesionales mallorca", "servicios alcudia-pollensa"],
+    locationKeywords: ["Mallorca", "alcudia-pollensa", "Illes Balears"],
+  },
+  image: "/images/services/alcudiamar-marina-resort.jpg",
+  gallery: ["/images/services/alcudiamar-marina-resort.jpg"],
+  googleMapsUrl:
+    "https://www.google.com/maps/search/?api=1&query=Alcudiamar%20Yacht%20Marina%20%26%20Nautical%20Resort%20Passeig%20Mar%C3%ADtim%2C%201%2C%2007400%20Port%20d'Alc%C3%BAdia%2C%20Illes%20Balears",
+  appleMapsUrl:
+    "https://maps.apple.com/?q=Alcudiamar%20Yacht%20Marina%20%26%20Nautical%20Resort%20Passeig%20Mar%C3%ADtim%2C%201%2C%2007400%20Port%20d'Alc%C3%BAdia%2C%20Illes%20Balears",
+  bingMapsUrl:
+    "https://www.bing.com/maps?q=Alcudiamar%20Yacht%20Marina%20%26%20Nautical%20Resort%20Passeig%20Mar%C3%ADtim%2C%201%2C%2007400%20Port%20d'Alc%C3%BAdia%2C%20Illes%20Balears",
+  phone: "+34 971 54 60 00",
+  whatsapp: "+34971546000",
+  website: "https://alcudiamar.es/puerto-deportivo",
+  email: "info@alcudiamar.es",
+  webAccessibility: "active",
+  tags: ["zona:alcudia-pollensa", "mod:cita-previa", "product:premium"],
+  schedule: "Atención Capitanía 24 Horas / 365 Días",
+  shortDescription: {
+    es: "Puerto deportivo de referencia en la bahía de Alcúdia con 745 amarres para embarcaciones de hasta 30 metros, varadero y servicios náuticos.",
+    en: "Northern Mallorca's flagship yacht marina in Alcúdia Bay with 745 berths up to 30m, shipyard, and full yachting services.",
+    ca: "Port esportiu de referència a la badia d'Alcúdia amb 745 amarraments fins a 30 metres i varador professional.",
+    de: "Führender Yachthafen im Norden Mallorcas in der Bucht von Alcúdia mit 745 Liegeplätzen bis 30m, Werft und Yachtservice.",
+  },
+  fullDescription: {
+    es: "Con certificación Bandera Azul y gestión ambiental EMAS, Alcudiamar ofrece amarres de alta calidad, travelift de 150 toneladas, gasolinera náutica 24h, talleres de mecánica marina y centro comercial náutico.",
+    en: "Certified with Blue Flag and EMAS eco-standards, Alcudiamar features premium yacht moorings, a 150-ton travelift, 24/7 marine fuel station, refit facilities, and seafront dining.",
+    ca: "Port guardonat amb Bandera Blava i gestió ambiental EMAS amb serveis complets per a iots i velers.",
+    de: "Ausgezeichnet mit der Blauen Flagge, bietet Alcudiamar erstklassige Liegeplätze, 150-Tonnen-Kran, 24h-Bootstankstelle und Fachwerften.",
+  },
+  highlights: {
+    es: [
+      "745 amarres protegidos para esloras de 6 a 30 metros",
+      "Travelift de 150 toneladas y varadero de 12.000 m²",
+      "Certificaciones ambientales ISO 14001 y Bandera Azul",
+    ],
+    en: [
+      "745 sheltered berths for yachts from 6m to 30m",
+      "150-ton travelift and 12,000 m² modern shipyard",
+      "ISO 14001 and Blue Flag environmental certifications",
+    ],
+    ca: ["745 amarraments protegits de 6 a 30 metres", "Travelift de 150 tones", "Certificació Bandera Blava"],
+    de: [
+      "745 geschützte Liegeplätze von 6 bis 30 Meter",
+      "150-Tonnen-Travelift und 12.000 m² Werftfläche",
+      "Blaue Flagge und ISO 14001 zertifiziert",
+    ],
+  },
+  confidenceScore: 99,
+  lastVerifiedAt: "2026-08-29",
+  servicesProvided: {
+    es: [
+      "Amarres con suministro de agua y electricidad",
+      "Seguridad y vigilancia 24 horas",
+      "Asistencia de marinería y remolque",
+    ],
+    en: ["Berths with water and high-amp electricity", "24/7 security surveillance", "Mooring assistance and towing"],
+    ca: ["Amarraments amb aigua i llum", "Seguretat 24 hores", "Assistència de marineria"],
+    de: ["Liegeplätze mit Strom- und Wasseranschluss", "24h-Sicherheitsdienst", "Anlegehilfe und Hafenservice"],
+  },
+  specialties: {
+    es: [
+      "Alquiler y Venta de Amarres de Larga Estancia",
+      "Varada, Antifouling y Reparaciones Navales",
+      "Combustible Náutico y Servicios de Capitania 24h",
+    ],
+    en: [
+      "Long-term Berth Rentals and Sales",
+      "Dry Docking, Antifouling and Yacht Refit",
+      "24/7 Marine Fuel and Harbour Master Services",
+    ],
+    ca: ["Lloguer d'Amarraments", "Varada i Reparacions Navals", "Combustible Marítim 24h"],
+    de: ["Liegeplatzvermietung & Verkauf", "Trockendock, Antifouling & Refit", "24h-Bootstreibstoff & Hafenamt"],
+  },
+};

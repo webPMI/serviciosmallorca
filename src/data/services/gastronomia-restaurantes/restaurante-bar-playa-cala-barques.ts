@@ -1,0 +1,150 @@
+import type { ServiceItem } from "../types.ts";
+
+export const restauranteBarPlayaCalaBarques: ServiceItem = {
+  id: "restaurante-bar-playa-cala-barques",
+  slug: "restaurante-bar-playa-cala-barques",
+  name: "Restaurante Bar Playa (Cala Barques - Cala Sant Vicenç)",
+  category: "gastronomia-catering",
+  sectorId: "gastronomia-hosteleria",
+  culturalIdentity: "mallorquin_heritage",
+  zone: "alcudia-pollensa",
+  address: "Carrer Cala Barques, 9, 07469 Cala Sant Vicenç, Pollença, Illes Balears",
+  addressAccuracy: "verified_manual",
+  coordinates: {
+    lat: 39.9218,
+    lng: 3.0534,
+  },
+  coordinatesAccuracy: "verified_manual",
+  rating: 4.7,
+  ratingSource: "verified_manual",
+  reviewCount: 540,
+  reviewCountSource: "verified_manual",
+  priceRange: "€€€",
+  verified: true,
+  featured: true,
+  status: "open",
+  seasonality: "year_round",
+  isIconicHeritage: true,
+  targetAudience: ["residentes", "turistas", "expat", "empresas"],
+  languagesSpoken: ["es", "ca", "en", "de"],
+  emergency24h: false,
+  inVillaService: false,
+  features: ["wifi", "credit_card", "air_conditioning"],
+  paymentMethods: ["credit_card", "cash", "bizum"],
+  amenities: ["wifi", "air_conditioning"],
+  certifications: ["Registro Oficial CAIB", "Garantía Balear de Calidad"],
+  pricing: {
+    startingPrice: "Tarifas y presupuestos personalizados",
+    depositRequired: "Consultar condiciones según servicio",
+    rateType: "custom_quote",
+    notes: {
+      es: "Atención personalizada y presupuestos transparentes sin compromiso.",
+      en: "Personalized attention and transparent quotes with no obligation.",
+      ca: "Atenció personalitzada i pressupostos transparents sense compromís.",
+      de: "Individuelle Beratung und transparente, unverbindliche Kostenvoranschläge.",
+    },
+  },
+  faqs: [
+    {
+      question: {
+        es: "¿Es imprescindible reservar mesa en verano?",
+        en: "Is booking recommended during summer?",
+        ca: "Cal reservar taula a l'estiu?",
+        de: "Ist eine Reservierung im Sommer ratsam?",
+      },
+      answer: {
+        es: "Sí, debido a su ubicación frente a la playa recomendamos reservar con varios días de antelación.",
+        en: "Yes, due to high demand and beachfront setting, reserving several days ahead is strongly advised.",
+        ca: "Sí, recomanem reservar amb uns dies d'antelació.",
+        de: "Ja, wegen der hohen Nachfrage direkt am Strand wird eine frühzeitige Reservierung empfohlen.",
+      },
+    },
+  ],
+  socialProofBadges: [
+    {
+      icon: "shield-check",
+      label: {
+        es: "Restaurante Marinero Recomendado (Pollença)",
+        en: "Recommended Seafront Dining (Pollença)",
+        ca: "Restaurant Mariner Recomanat (Pollença)",
+        de: "Empfohlenes Fischrestaurant (Pollença)",
+      },
+    },
+  ],
+  localSeoKeywords: {
+    primary: "restaurante bar playa (cala barques - cala sant vicenç) mallorca",
+    secondary: [
+      "gastronomia-catering alcudia-pollensa",
+      "mejores profesionales mallorca",
+      "servicios alcudia-pollensa",
+    ],
+    locationKeywords: ["Mallorca", "alcudia-pollensa", "Illes Balears"],
+  },
+  image: "/images/services/restaurante-bar-playa-cala-barques.jpg",
+  gallery: ["/images/services/restaurante-bar-playa-cala-barques.jpg"],
+  googleMapsUrl:
+    "https://www.google.com/maps/search/?api=1&query=Restaurante%20Bar%20Playa%20(Cala%20Barques%20-%20Cala%20Sant%20Vicen%C3%A7)%20Carrer%20Cala%20Barques%2C%209%2C%2007469%20Cala%20Sant%20Vicen%C3%A7%2C%20Pollen%C3%A7a%2C%20Illes%20Balears",
+  appleMapsUrl:
+    "https://maps.apple.com/?q=Restaurante%20Bar%20Playa%20(Cala%20Barques%20-%20Cala%20Sant%20Vicen%C3%A7)%20Carrer%20Cala%20Barques%2C%209%2C%2007469%20Cala%20Sant%20Vicen%C3%A7%2C%20Pollen%C3%A7a%2C%20Illes%20Balears",
+  bingMapsUrl:
+    "https://www.bing.com/maps?q=Restaurante%20Bar%20Playa%20(Cala%20Barques%20-%20Cala%20Sant%20Vicen%C3%A7)%20Carrer%20Cala%20Barques%2C%209%2C%2007469%20Cala%20Sant%20Vicen%C3%A7%2C%20Pollen%C3%A7a%2C%20Illes%20Balears",
+  phone: "+34 971 53 04 22",
+  whatsapp: "+34971530422",
+  website: "https://barplaya.com",
+  email: "info@barplaya.com",
+  webAccessibility: "active",
+  tags: ["zona:alcudia-pollensa", "mod:cita-previa", "product:premium"],
+  schedule: "Lunes a Domingo: 12:30 - 23:00",
+  shortDescription: {
+    es: "Emblemático restaurante marinero sobre la arena de Cala Barques especializado en pescado fresco de lonja y arroces.",
+    en: "Iconic beachfront seafood restaurant directly on the sand of Cala Barques serving fresh local catch and paellas.",
+    ca: "Emblemàtic restaurant mariner sobre l'arena de Cala Barques especialitzat en peix fresc de llotja i arrossos.",
+    de: "Kult-Fischrestaurant direkt am Strand von Cala Barques mit tagesfrischem Fang und Paella-Spezialitäten.",
+  },
+  fullDescription: {
+    es: "Situado en primera línea de mar con vistas a los acantilados del Cavall Bernat, Bar Playa ofrece más de 40 años de cocina marinera mediterránea, caldereta de langosta balear y pescados salvajes a la sal.",
+    en: "Perched on the waterline overlooking the dramatic Cavall Bernat cliffs, Bar Playa has served fresh Mediterranean seafood, local lobster stew, and salt-baked wild fish for over four decades.",
+    ca: "Situat a primera línia de mar amb vistes als penya-segats del Cavall Bernat amb més de 40 anys de cuina marinera.",
+    de: "In allerbester Strandlage mit Blick auf die Felsen von Cavall Bernat bietet das Lokal seit über 40 Jahren fangfrischen Edelfisch und Meeresfrüchte.",
+  },
+  highlights: {
+    es: [
+      "Pescados salvajes frescos del día de la lonja de Pollença",
+      "Terrazas sobre la arena con vistas al mar turquesa",
+      "Caldereta de langosta y arroces marineros",
+    ],
+    en: [
+      "Fresh wild catch of the day from Pollença fish market",
+      "Terrace directly on the beach with turquoise sea views",
+      "Balearic lobster stew and authentic paellas",
+    ],
+    ca: [
+      "Peix salvatge fresc del dia de la llotja de Pollença",
+      "Terrassa sobre l'arena",
+      "Caldereta de llagosta i arrossos",
+    ],
+    de: [
+      "Tagesfrischer Wildfisch aus der Bucht von Pollença",
+      "Strandterrasse mit türkisfarbenem Meerblick",
+      "Traditioneller Hummereintopf und Paella",
+    ],
+  },
+  confidenceScore: 98,
+  lastVerifiedAt: "2026-08-29",
+  servicesProvided: {
+    es: [
+      "Almuerzos y cenas frente al mar",
+      "Reservas para grupos y eventos privados",
+      "Carta de vinos de la DO Mallorca",
+    ],
+    en: ["Seafront lunches and dinners", "Group bookings and private events", "DO Mallorca wine selection"],
+    ca: ["Dinars i sopars davant la mar", "Reserves per a grups", "Selecció de vins DO Mallorca"],
+    de: ["Mittag- und Abendessen am Meer", "Gruppenreservierungen", "DO Mallorca Weinkarte"],
+  },
+  specialties: {
+    es: ["Gallo de San Pedro frito con cebolla", "Caldereta de Langosta Mallorquina", "Arroz a Banda con Marisco"],
+    en: ["Fried John Dory with sweet onions", "Mallorcan Spiny Lobster Stew", "Seafood Arroz a Banda"],
+    ca: ["Gall de Sant Pere fregit amb ceba", "Caldereta de Llagosta", "Arròs a Banda"],
+    de: ["Petersfisch mit Zwiebeln", "Mallorquinischer Hummereintopf", "Seafood Arroz a Banda"],
+  },
+};

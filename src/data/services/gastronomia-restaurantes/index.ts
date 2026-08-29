@@ -1,605 +1,621 @@
 import type { ServiceItem } from "../types.ts";
-import { dinsSantiTaura } from "./dins-santi-taura.ts";
-import { caNEduardo } from "./ca-n-eduardo.ts";
 import { adrianQuetglas } from "./adrian-quetglas.ts";
-import { caNaToneta } from "./ca-na-toneta.ts";
-import { vandalPalma } from "./vandal-palma.ts";
-import { elCaminoPalma } from "./el-camino.ts";
-import { fornDeSantJoan } from "./forn-de-sant-joan.ts";
-import { restauranteFlanigan } from "./restaurante-flanigan.ts";
-import { restauranteMarcFosh } from "./restaurante-marc-fosh.ts";
-import { bensDavall } from "./bens-davall.ts";
 import { barBosch } from "./bar-bosch.ts";
-import { cellerSaPremsa } from "./celler-sa-premsa.ts";
-import { cellerCanAmer } from "./celler-can-amer.ts";
-import { fornDeLaSoca } from "./forn-de-la-soca.ts";
-import { bodegaRibas } from "./bodega-ribas.ts";
-import { ilTanoSantaCatalina } from "./il-tano-santa-catalina.ts";
-import { canMiquelPalma } from "./can-miquel-palma.ts";
-import { fornFondoPalma } from "./forn-fondo-palma.ts";
-import { carniceriaCaNaFina } from "./carniceria-ca-na-fina-soller.ts";
-import { fornSantFrancesc } from "./forn-sant-francesc-inca.ts";
-import { bodegasJoseLFerrer } from "./bodegas-jose-l-ferrer.ts";
-import { canPomar } from "./can-pomar-campos.ts";
+import { barEspanyaPalma } from "./bar-espanya-palma.ts";
+import { barSHostalMontuiri } from "./bar-s-hostal-montuiri.ts";
+import { bensDavall } from "./bens-davall.ts";
+import { bodegaBarahonaCasaManolo } from "./bodega-barahona-casa-manolo.ts";
 import { bodegaBiniagual } from "./bodega-biniagual.ts";
-import { canCompany } from "./can-company-sineu.ts";
-import { formatgesSaCanova } from "./formatges-sa-canova-campos.ts";
-import { oliDeJornets } from "./oli-de-jornets-sencelles.ts";
+import { bodegaCanVidalet } from "./bodega-can-vidalet-pollensa.ts";
 import { bodegaCastellMiquel } from "./bodega-castell-miquel.ts";
-import { fornDesTeatre } from "./forn-des-teatre-palma.ts";
-import { carniceriaCanMatas } from "./carniceria-can-matas-soller.ts";
-import { cellerCanRipoll } from "./celler-can-ripoll-inca.ts";
-import { fornGelabertLlubi } from "./forn-gelabert-llubi.ts";
-import { carniceriaCanToni } from "./carniceria-can-toni-porreres.ts";
-import { fornSaPelleteria } from "./forn-sa-pelleteria-palma.ts";
+import { bodegaRibas } from "./bodega-ribas.ts";
 import { bodegaSonPrim } from "./bodega-son-prim-sencelles.ts";
-import { cellerCanMarron } from "./celler-can-marron-inca.ts";
-import { fornCanGelabertBinissalem } from "./forn-can-gelabert-binissalem.ts";
+import { bodegas7103PetitCellerSantaMaria } from "./bodegas-7103-petit-celler-santa-maria.ts";
+import { bodegasAngelSantaMaria } from "./bodegas-angel-santa-maria.ts";
+import { bodegasAvaViSencelles } from "./bodegas-ava-vi-sencelles.ts";
+import { bodegasBordoyLlucmajor } from "./bodegas-bordoy-llucmajor.ts";
+import { bodegasButxetMuro } from "./bodegas-butxet-muro.ts";
+import { bodegasCanAxartellPollenca } from "./bodegas-can-axartell-pollenca.ts";
+import { bodegasCanColetoPetra } from "./bodegas-can-coleto-petra.ts";
+import { bodegasCanFeliuPorreres } from "./bodegas-can-feliu-porreres.ts";
+import { bodegasCanMajoralAlgaida } from "./bodegas-can-majoral-algaida.ts";
+import { bodegasCanRamisSencelles } from "./bodegas-can-ramis-sencelles.ts";
+import { bodegasCanVerduraBinissalem } from "./bodegas-can-verdura-binissalem.ts";
+import { bodegasCanXanetPollensa } from "./bodegas-can-xanet-pollensa.ts";
+import { bodegasCondeDeSuyrotColoniaSantPere } from "./bodegas-conde-de-suyrot-colonia-sant-pere.ts";
+import { bodegasEsVergerEsporles } from "./bodegas-es-verger-esporles.ts";
+import { bodegasGalmesIRibotSantaMargalida } from "./bodegas-galmes-i-ribot-santa-margalida.ts";
+import { bodegasJaumeDePuntiroSantaMaria } from "./bodegas-jaume-de-puntiro-santa-maria.ts";
+import { bodegasJoseLFerrer } from "./bodegas-jose-l-ferrer.ts";
+import { bodegasMaciaBatle } from "./bodegas-macia-batle.ts";
+import { bodegasMesquidaMoraPorreres } from "./bodegas-mesquida-mora-porreres.ts";
+import { bodegasOliverMoraguesAlgaida } from "./bodegas-oliver-moragues-algaida.ts";
+import { bodegasRamanyaSantaMaria } from "./bodegas-ramanya-santa-maria.ts";
+import { bodegasSantaCatarinaSencelles } from "./bodegas-santa-catarina-sencelles.ts";
+import { bodegasSebastiaPastorSantaMaria } from "./bodegas-sebastia-pastor-santa-maria.ts";
+import { bodegasSonArtiguesPorreres } from "./bodegas-son-artigues-porreres.ts";
+import { bodegasSonBordilsInca } from "./bodegas-son-bordils-inca.ts";
+import { bodegasSonCampanerSencelles } from "./bodegas-son-campaner-sencelles.ts";
+import { bodegasSonJulianaSantaEugenia } from "./bodegas-son-juliana-santa-eugenia.ts";
+import { bodegasSonPuigPuigpunyent } from "./bodegas-son-puig-puigpunyent.ts";
+import { bodegasSonRamonLlubi } from "./bodegas-son-ramon-llubi.ts";
+import { bodegasSonVivesBanyalbufar } from "./bodegas-son-vives-banyalbufar.ts";
+import { bodegasTiannaNegreBinissalem } from "./bodegas-tianna-negre-binissalem.ts";
+import { bodegasViReiLlucmajor } from "./bodegas-vi-rei-llucmajor.ts";
+import { bodegasVinaTaujanaSantaEugenia } from "./bodegas-vina-taujana-santa-eugenia.ts";
+import { bodegasVinsMiquelGelabert } from "./bodegas-vins-miquel-gelabert.ts";
+import { bodegasVinsNadalBinissalem } from "./bodegas-vins-nadal-binissalem.ts";
+import { bodegasVinsToniGelabertManacor } from "./bodegas-vins-toni-gelabert-manacor.ts";
+import { bodegasVinyesMortitx } from "./bodegas-vinyes-mortitx.ts";
+import { caNEduardo } from "./ca-n-eduardo.ts";
+import { caNaToneta } from "./ca-na-toneta.ts";
+import { caNantunaFornalutx } from "./ca-nantuna-fornalutx.ts";
+import { caNignasiInca } from "./ca-nignasi-inca.ts";
+import { canBoquetaSoller } from "./can-boqueta-soller.ts";
+import { canCompany } from "./can-company-sineu.ts";
+import { canCostaValldemossa } from "./can-costa-valldemossa.ts";
+import { canJoanDeSAigoPalma } from "./can-joan-de-saigo-palma.ts";
+import { canMarchManacor } from "./can-march-manacor.ts";
+import { canMiquelPalma } from "./can-miquel-palma.ts";
+import { canNofrePalma } from "./can-nofre-palma.ts";
+import { canPintxoSoller } from "./can-pintxo-soller.ts";
+import { canPomar } from "./can-pomar-campos.ts";
+import { canTorratPlayaPalma } from "./can-torrat-playa-palma.ts";
+import { carniceriaCaNaFina } from "./carniceria-ca-na-fina-soller.ts";
+import { carniceriaCanMatas } from "./carniceria-can-matas-soller.ts";
+import { carniceriaCanToni } from "./carniceria-can-toni-porreres.ts";
 import { carniceriaCanXarrier } from "./carniceria-can-xarrier-algaida.ts";
 import { carniceriaCanXim } from "./carniceria-can-xim-alaro.ts";
-import { cellerEsCellerPetra } from "./celler-es-celler-petra.ts";
-import { fornCanPacoCampos } from "./forn-can-paco-campos.ts";
-import { restauranteCanPedro } from "./restaurante-can-pedro-genova.ts";
-import { fornNouMuro } from "./forn-nou-muro.ts";
-import { restauranteZaranda } from "./restaurante-zaranda.ts";
-import { restauranteMacaDeCastro } from "./restaurante-maca-de-castro.ts";
-import { restauranteAndreuGenestra } from "./restaurante-andreu-genestra.ts";
-import { restauranteToquePalma } from "./restaurante-toque-palma.ts";
-import { restauranteOlaDelMar } from "./restaurante-ola-del-mar.ts";
-import { restauranteEmilioInnobar } from "./restaurante-emilio-innobar.ts";
-import { restauranteDukePalma } from "./restaurante-duke-palma.ts";
-import { restauranteRitziPortals } from "./restaurante-ritzi-portals.ts";
-import { restauranteBaibenPortals } from "./restaurante-baiben-portals.ts";
-import { restauranteCoastByEast } from "./restaurante-coast-by-east.ts";
-import { restauranteMarDeNudos } from "./restaurante-mar-de-nudos.ts";
-import { restauranteAromataPalma } from "./restaurante-aromata-palma.ts";
-import { restauranteStagierBar } from "./restaurante-stagier-bar.ts";
-import { restauranteLasTerrazasBendinat } from "./restaurante-las-terrazas-bendinat.ts";
-import { marYMarPeguera } from "./mar-y-mar-peguera.ts";
-import { laHaciendaPeguera } from "./la-hacienda-peguera.ts";
-import { stayPortDePollenca } from "./stay-port-de-pollenca.ts";
-import { canBoquetaSoller } from "./can-boqueta-soller.ts";
-import { trespaisPortAndratx } from "./trespais-port-andratx.ts";
-import { laTerrazaAlcanada } from "./la-terraza-alcanada.ts";
-import { vinoDelMarPortAdriano } from "./vino-del-mar-port-adriano.ts";
-import { lasOlasSantaPonsa } from "./las-olas-santa-ponsa.ts";
 import { casXorcSoller } from "./cas-xorc-soller.ts";
-import { namaDeia } from "./nama-deia.ts";
-import { pastisseriaCanMolinasValldemossa } from "./pastisseria-can-molinas-valldemossa.ts";
-import { terraePortDePollenca } from "./terrae-port-de-pollenca.ts";
-import { laudatSantanyi } from "./laudat-santanyi.ts";
-import { portPetitCalaDor } from "./port-petit-cala-dor.ts";
-import { feraPalma } from "./fera-palma.ts";
-import { miceliSelva } from "./miceli-selva.ts";
-import { bodegasMaciaBatle } from "./bodegas-macia-batle.ts";
-import { porxadaDeSaTorreCanyamel } from "./porxada-de-sa-torre-canyamel.ts";
-import { bodegasVinsMiquelGelabert } from "./bodegas-vins-miquel-gelabert.ts";
-import { caNantunaFornalutx } from "./ca-nantuna-fornalutx.ts";
-import { fetASollerFabricaGelats } from "./fet-a-soller-fabrica-gelats.ts";
-import { esVergerAlaro } from "./es-verger-alaro.ts";
 import { cassaiBeachHouse } from "./cassai-beach-house-colonia-sant-jordi.ts";
-import { puraVidaCalaFiguera } from "./pura-vida-cala-figuera.ts";
-import { esGuixEscorca } from "./es-guix-escorca.ts";
-import { saLlotjaPortocolom } from "./sa-llotja-portocolom.ts";
-import { bodegaCanVidalet } from "./bodega-can-vidalet-pollensa.ts";
-import { losPatosPlayaMuro } from "./los-patos-playa-muro.ts";
-import { caNignasiInca } from "./ca-nignasi-inca.ts";
-import { restauranteGolfAlcanada } from "./restaurante-golf-alcanada.ts";
-import { laCantinaClubNauticCalaRatjada } from "./la-cantina-club-nautic-cala-ratjada.ts";
-import { canNofrePalma } from "./can-nofre-palma.ts";
-import { cellerSaTravessa } from "./celler-sa-travessa-inca.ts";
-import { bodegasAngelSantaMaria } from "./bodegas-angel-santa-maria.ts";
-import { sieteFuegosSantaPonsa } from "./siete-fuegos-santa-ponsa.ts";
-import { canCostaValldemossa } from "./can-costa-valldemossa.ts";
-import { bodegasVinyesMortitx } from "./bodegas-vinyes-mortitx.ts";
-import { bodegaBarahonaCasaManolo } from "./bodega-barahona-casa-manolo.ts";
-import { restauranteClubNauticArenal } from "./restaurante-club-nautic-arenal.ts";
-import { elBungalowCiudadJardin } from "./el-bungalow-ciudad-jardin.ts";
-import { elCastilloDelBosque } from "./el-castillo-del-bosque-felanitx.ts";
-import { saCuinaDeNainaSencelles } from "./sa-cuina-de-naina-sencelles.ts";
-import { canPintxoSoller } from "./can-pintxo-soller.ts";
-import { canMarchManacor } from "./can-march-manacor.ts";
-import { bodegasBordoyLlucmajor } from "./bodegas-bordoy-llucmajor.ts";
-import { canTorratPlayaPalma } from "./can-torrat-playa-palma.ts";
-import { canJoanDeSAigoPalma } from "./can-joan-de-saigo-palma.ts";
-import { saTorreSantaEugenia } from "./sa-torre-santa-eugenia.ts";
-import { quinceCantinaPortoCristo } from "./quince-cantina-porto-cristo.ts";
-import { bodegasButxetMuro } from "./bodegas-butxet-muro.ts";
-import { bodegasCanMajoralAlgaida } from "./bodegas-can-majoral-algaida.ts";
-import { barEspanyaPalma } from "./bar-espanya-palma.ts";
-import { bodegasCanColetoPetra } from "./bodegas-can-coleto-petra.ts";
-import { restauranteClubNauticSaRapita } from "./restaurante-club-nautic-sa-rapita.ts";
-import { restauranteSonFlorianaCalaBona } from "./restaurante-son-floriana-cala-bona.ts";
-import { restauranteClubNauticPortocolom } from "./restaurante-club-nautic-portocolom.ts";
-import { bodegasSonRamonLlubi } from "./bodegas-son-ramon-llubi.ts";
-import { restauranteClubNauticCanPicafort } from "./restaurante-club-nautic-can-picafort.ts";
-import { cellerEsMoliSantanyi } from "./celler-es-moli-santanyi.ts";
-import { bodegasSebastiaPastorSantaMaria } from "./bodegas-sebastia-pastor-santa-maria.ts";
-import { restauranteClubNauticCalaGamba } from "./restaurante-club-nautic-cala-gamba.ts";
-import { restauranteSaVinyaEsCapdella } from "./restaurante-sa-vinya-es-capdella.ts";
-import { bodegasViReiLlucmajor } from "./bodegas-vi-rei-llucmajor.ts";
-import { restauranteRcnPortPollenca } from "./restaurante-rcn-port-pollenca.ts";
-import { cellerSaVinyaBinissalem } from "./celler-sa-vinya-binissalem.ts";
-import { bodegasRamanyaSantaMaria } from "./bodegas-ramanya-santa-maria.ts";
-import { restauranteSaRoquetaPortixol } from "./restaurante-sa-roqueta-portixol.ts";
-import { cellerElMoliPollenca } from "./celler-el-moli-pollenca.ts";
-import { bodegasJaumeDePuntiroSantaMaria } from "./bodegas-jaume-de-puntiro-santa-maria.ts";
-import { restauranteEsCanyisPortSoller } from "./restaurante-es-canyis-port-soller.ts";
-import { bodegasTiannaNegreBinissalem } from "./bodegas-tianna-negre-binissalem.ts";
-import { restauranteElPenon1957Palma } from "./restaurante-el-penon-1957-palma.ts";
-import { restauranteClubNauticSEstanyol } from "./restaurante-club-nautic-s-estanyol.ts";
-import { restauranteCanTroncaSantJoan } from "./restaurante-can-tronca-sant-joan.ts";
-import { bodegasSonBordilsInca } from "./bodegas-son-bordils-inca.ts";
-import { restauranteCmSanAntonioCanPastilla } from "./restaurante-cm-san-antonio-can-pastilla.ts";
-import { cellerPagesPalma } from "./celler-pages-palma.ts";
-import { bodegasSonVivesBanyalbufar } from "./bodegas-son-vives-banyalbufar.ts";
-import { restauranteClubNauticPortoCristo } from "./restaurante-club-nautic-porto-cristo.ts";
-import { restauranteCaNOlesaPollenca } from "./restaurante-ca-n-olesa-pollenca.ts";
-import { bodegasCanFeliuPorreres } from "./bodegas-can-feliu-porreres.ts";
-import { restauranteCnColoniaSantPere } from "./restaurante-cn-colonia-sant-pere.ts";
-import { cellerSonToreoSineu } from "./celler-son-toreo-sineu.ts";
-import { bodegasSonPuigPuigpunyent } from "./bodegas-son-puig-puigpunyent.ts";
-import { restauranteClubNauticPortitxol } from "./restaurante-club-nautic-portitxol.ts";
-import { cellerSaSiniSantaMaria } from "./celler-sa-sini-santa-maria.ts";
-import { bodegasOliverMoraguesAlgaida } from "./bodegas-oliver-moragues-algaida.ts";
-import { restauranteClubDeVelaPortAndratx } from "./restaurante-club-de-vela-port-andratx.ts";
-import { restauranteMiramarPortAlcudia } from "./restaurante-miramar-port-alcudia.ts";
-import { bodegasVinsNadalBinissalem } from "./bodegas-vins-nadal-binissalem.ts";
-import { restauranteCnCalaRatjada } from "./restaurante-cn-cala-ratjada.ts";
-import { restauranteMarIVentBanyalbufar } from "./restaurante-mar-i-vent-banyalbufar.ts";
-import { bodegasCondeDeSuyrotColoniaSantPere } from "./bodegas-conde-de-suyrot-colonia-sant-pere.ts";
-import { restauranteCnCanPicafort } from "./restaurante-cn-can-picafort.ts";
-import { cellerSaFondaMuro } from "./celler-sa-fonda-muro.ts";
-import { bodegasEsVergerEsporles } from "./bodegas-es-verger-esporles.ts";
-import { restauranteYachtClubCalaDor } from "./restaurante-yacht-club-cala-dor.ts";
-import { cellerCanFontSineu } from "./celler-can-font-sineu.ts";
-import { bodegasSonCampanerSencelles } from "./bodegas-son-campaner-sencelles.ts";
-import { restauranteClubDeMarPalma } from "./restaurante-club-de-mar-palma.ts";
-import { restauranteCaNAmerLloseta } from "./restaurante-ca-n-amer-lloseta.ts";
-import { bodegasSonJulianaSantaEugenia } from "./bodegas-son-juliana-santa-eugenia.ts";
-import { restauranteCnArenal } from "./restaurante-cn-arenal.ts";
-import { restauranteCnPortocolom } from "./restaurante-cn-portocolom.ts";
-import { bodegasCanAxartellPollenca } from "./bodegas-can-axartell-pollenca.ts";
-import { restauranteCnSEstanyol } from "./restaurante-cn-s-estanyol.ts";
-import { cellerSaPlacaLloseta } from "./celler-sa-placa-lloseta.ts";
-import { bodegasMesquidaMoraPorreres } from "./bodegas-mesquida-mora-porreres.ts";
-import { restauranteAgapantoPortSoller } from "./restaurante-agapanto-port-soller.ts";
-import { cellerCanCarrossaLloseta } from "./celler-can-carrossa-lloseta.ts";
-import { bodegasAvaViSencelles } from "./bodegas-ava-vi-sencelles.ts";
-import { restauranteRocamarPortAndratx } from "./restaurante-rocamar-port-andratx.ts";
-import { restauranteLuna36Soller } from "./restaurante-luna-36-soller.ts";
-import { bodegasGalmesIRibotSantaMargalida } from "./bodegas-galmes-i-ribot-santa-margalida.ts";
-import { restauranteEsRacoDesPortSoller } from "./restaurante-es-raco-des-port-soller.ts";
 import { cellerBarRandaAlgaida } from "./celler-bar-randa-algaida.ts";
-import { bodegasCanVerduraBinissalem } from "./bodegas-can-verdura-binissalem.ts";
-import { restauranteSesOliveresPortSoller } from "./restaurante-ses-oliveres-port-soller.ts";
-import { restauranteCafeNouSoller } from "./restaurante-cafe-nou-soller.ts";
-import { bodegas7103PetitCellerSantaMaria } from "./bodegas-7103-petit-celler-santa-maria.ts";
-import { restauranteNautilusPortSoller } from "./restaurante-nautilus-port-soller.ts";
-import { restauranteSaBarcaPortSoller } from "./restaurante-sa-barca-port-soller.ts";
-import { bodegasCanRamisSencelles } from "./bodegas-can-ramis-sencelles.ts";
-import { restauranteCanGavellaCanPicafort } from "./restaurante-can-gavella-can-picafort.ts";
-import { restauranteCanPescadorPlayaDeMuro } from "./restaurante-can-pescador-playa-de-muro.ts";
-import { bodegasVinaTaujanaSantaEugenia } from "./bodegas-vina-taujana-santa-eugenia.ts";
-import { restauranteLaCaracolaPortoPetro } from "./restaurante-la-caracola-porto-petro.ts";
-import { restauranteLArcadaCalaFiguera } from "./restaurante-l-arcada-cala-figuera.ts";
-import { bodegasSantaCatarinaSencelles } from "./bodegas-santa-catarina-sencelles.ts";
-import { restauranteEsBergantPortoPetro } from "./restaurante-es-bergant-porto-petro.ts";
-import { restauranteEsCellerDePetra } from "./restaurante-es-celler-de-petra.ts";
-import { bodegasSonArtiguesPorreres } from "./bodegas-son-artigues-porreres.ts";
-import { restauranteEsCruceVilafranca } from "./restaurante-es-cruce-vilafranca.ts";
-import { barSHostalMontuiri } from "./bar-s-hostal-montuiri.ts";
-import { bodegasVinsToniGelabertManacor } from "./bodegas-vins-toni-gelabert-manacor.ts";
-import { restauranteCalDimoniAlgaida } from "./restaurante-cal-dimoni-algaida.ts";
-import { restauranteMiradorDeCabrera } from "./restaurante-mirador-de-cabrera.ts";
-import { bodegasCanXanetPollensa } from "./bodegas-can-xanet-pollensa.ts";
-import { mercatOlivarPalma } from "./mercat-olivar-palma.ts";
-import { mercatSantaCatalinaPalma } from "./mercat-santa-catalina-palma.ts";
+import { cellerCanAmer } from "./celler-can-amer.ts";
+import { cellerCanCarrossaLloseta } from "./celler-can-carrossa-lloseta.ts";
+import { cellerCanFontSineu } from "./celler-can-font-sineu.ts";
+import { cellerCanMarron } from "./celler-can-marron-inca.ts";
+import { cellerCanRipoll } from "./celler-can-ripoll-inca.ts";
+import { cellerElMoliPollenca } from "./celler-el-moli-pollenca.ts";
+import { cellerEsCellerPetra } from "./celler-es-celler-petra.ts";
+import { cellerEsMoliSantanyi } from "./celler-es-moli-santanyi.ts";
+import { cellerPagesPalma } from "./celler-pages-palma.ts";
+import { cellerSaFondaMuro } from "./celler-sa-fonda-muro.ts";
+import { cellerSaPlacaLloseta } from "./celler-sa-placa-lloseta.ts";
+import { cellerSaPremsa } from "./celler-sa-premsa.ts";
+import { cellerSaSiniSantaMaria } from "./celler-sa-sini-santa-maria.ts";
+import { cellerSaTravessaInca } from "./celler-sa-travessa-inca.ts";
+import { cellerSaVinyaBinissalem } from "./celler-sa-vinya-binissalem.ts";
+import { cellerSonToreoSineu } from "./celler-son-toreo-sineu.ts";
+import { dinsSantiTaura } from "./dins-santi-taura.ts";
+import { elBungalowCiudadJardin } from "./el-bungalow-ciudad-jardin.ts";
+import { elCaminoPalma } from "./el-camino.ts";
+import { elCastilloDelBosque } from "./el-castillo-del-bosque-felanitx.ts";
+import { esGuixEscorca } from "./es-guix-escorca.ts";
+import { esVergerAlaro } from "./es-verger-alaro.ts";
+import { feraPalma } from "./fera-palma.ts";
+import { fetASollerFabricaGelats } from "./fet-a-soller-fabrica-gelats.ts";
+import { formatgesSaCanova } from "./formatges-sa-canova-campos.ts";
+import { fornCanGelabertBinissalem } from "./forn-can-gelabert-binissalem.ts";
+import { fornCanPacoCampos } from "./forn-can-paco-campos.ts";
+import { fornDeLaSoca } from "./forn-de-la-soca.ts";
+import { fornDeSantJoan } from "./forn-de-sant-joan.ts";
+import { fornDesTeatre } from "./forn-des-teatre-palma.ts";
+import { fornFondoPalma } from "./forn-fondo-palma.ts";
+import { fornGelabertLlubi } from "./forn-gelabert-llubi.ts";
+import { fornNouMuro } from "./forn-nou-muro.ts";
+import { fornSaPelleteria } from "./forn-sa-pelleteria-palma.ts";
+import { fornSantFrancesc } from "./forn-sant-francesc-inca.ts";
+import { heladeriaSaFabricaDeGelatsSoller } from "./heladeria-sa-fabrica-de-gelats-soller.ts";
+import { ilTanoSantaCatalina } from "./il-tano-santa-catalina.ts";
+import { laCantinaClubNauticCalaRatjada } from "./la-cantina-club-nautic-cala-ratjada.ts";
+import { laHaciendaPeguera } from "./la-hacienda-peguera.ts";
+import { laTerrazaAlcanada } from "./la-terraza-alcanada.ts";
+import { lasOlasSantaPonsa } from "./las-olas-santa-ponsa.ts";
+import { laudatSantanyi } from "./laudat-santanyi.ts";
+import { losPatosPlayaMuro } from "./los-patos-playa-muro.ts";
+import { marYMarPeguera } from "./mar-y-mar-peguera.ts";
 import { mercatCobertInca } from "./mercat-cobert-inca.ts";
+import { mercatOlivarPalma } from "./mercat-olivar-palma.ts";
 import { mercatPereGarauPalma } from "./mercat-pere-garau-palma.ts";
+import { mercatSantaCatalinaPalma } from "./mercat-santa-catalina-palma.ts";
+import { miceliSelva } from "./miceli-selva.ts";
+import { namaDeia } from "./nama-deia.ts";
+import { oliDeJornets } from "./oli-de-jornets-sencelles.ts";
+import { pastisseriaCanMolinasValldemossa } from "./pastisseria-can-molinas-valldemossa.ts";
+import { portPetitCalaDor } from "./port-petit-cala-dor.ts";
+import { porxadaDeSaTorreCanyamel } from "./porxada-de-sa-torre-canyamel.ts";
+import { puraVidaCalaFiguera } from "./pura-vida-cala-figuera.ts";
+import { quinceCantinaPortoCristo } from "./quince-cantina-porto-cristo.ts";
+import { restauranteAgapantoPortSoller } from "./restaurante-agapanto-port-soller.ts";
+import { restauranteAndreuGenestra } from "./restaurante-andreu-genestra.ts";
+import { restauranteAromataPalma } from "./restaurante-aromata-palma.ts";
+import { restauranteBaibenPortals } from "./restaurante-baiben-portals.ts";
+import { restauranteBarPlayaCalaBarques } from "./restaurante-bar-playa-cala-barques.ts";
+import { restauranteCaNAmerLloseta } from "./restaurante-ca-n-amer-lloseta.ts";
+import { restauranteCaNOlesaPollenca } from "./restaurante-ca-n-olesa-pollenca.ts";
+import { restauranteCafeNouSoller } from "./restaurante-cafe-nou-soller.ts";
+import { restauranteCalDimoniAlgaida } from "./restaurante-cal-dimoni-algaida.ts";
+import { restauranteCanGavellaCanPicafort } from "./restaurante-can-gavella-can-picafort.ts";
+import { restauranteCanPedro } from "./restaurante-can-pedro-genova.ts";
+import { restauranteCanPescadorPlayaDeMuro } from "./restaurante-can-pescador-playa-de-muro.ts";
+import { restauranteCanTroncaSantJoan } from "./restaurante-can-tronca-sant-joan.ts";
+import { restauranteClubDeMarPalma } from "./restaurante-club-de-mar-palma.ts";
+import { restauranteClubDeVelaPortAndratx } from "./restaurante-club-de-vela-port-andratx.ts";
+import { restauranteClubNauticArenal } from "./restaurante-club-nautic-arenal.ts";
+import { restauranteClubNauticCalaGamba } from "./restaurante-club-nautic-cala-gamba.ts";
+import { restauranteClubNauticCanPicafort } from "./restaurante-club-nautic-can-picafort.ts";
+import { restauranteClubNauticPortitxol } from "./restaurante-club-nautic-portitxol.ts";
+import { restauranteClubNauticPortoCristo } from "./restaurante-club-nautic-porto-cristo.ts";
+import { restauranteClubNauticPortocolom } from "./restaurante-club-nautic-portocolom.ts";
+import { restauranteClubNauticSEstanyol } from "./restaurante-club-nautic-s-estanyol.ts";
+import { restauranteClubNauticSaRapita } from "./restaurante-club-nautic-sa-rapita.ts";
+import { restauranteCmSanAntonioCanPastilla } from "./restaurante-cm-san-antonio-can-pastilla.ts";
+import { restauranteCnArenal } from "./restaurante-cn-arenal.ts";
+import { restauranteCnCalaRatjada } from "./restaurante-cn-cala-ratjada.ts";
+import { restauranteCnCanPicafort } from "./restaurante-cn-can-picafort.ts";
+import { restauranteCnColoniaSantPere } from "./restaurante-cn-colonia-sant-pere.ts";
+import { restauranteCnPortocolom } from "./restaurante-cn-portocolom.ts";
+import { restauranteCnSEstanyol } from "./restaurante-cn-s-estanyol.ts";
+import { restauranteCoastByEast } from "./restaurante-coast-by-east.ts";
+import { restauranteDukePalma } from "./restaurante-duke-palma.ts";
+import { restauranteElOlivoDeia } from "./restaurante-el-olivo-deia.ts";
+import { restauranteElPenon1957Palma } from "./restaurante-el-penon-1957-palma.ts";
+import { restauranteEmilioInnobar } from "./restaurante-emilio-innobar.ts";
+import { restauranteEsBergantPortoPetro } from "./restaurante-es-bergant-porto-petro.ts";
+import { restauranteEsCanyisPortSoller } from "./restaurante-es-canyis-port-soller.ts";
+import { restauranteEsCellerDePetra } from "./restaurante-es-celler-de-petra.ts";
+import { restauranteEsCruceVilafranca } from "./restaurante-es-cruce-vilafranca.ts";
+import { restauranteEsRacoDesPortSoller } from "./restaurante-es-raco-des-port-soller.ts";
+import { restauranteFlanigan } from "./restaurante-flanigan.ts";
+import { restauranteGolfAlcanada } from "./restaurante-golf-alcanada.ts";
+import { restauranteIlletaCampDeMar } from "./restaurante-illeta-camp-de-mar.ts";
+import { restauranteLArcadaCalaFiguera } from "./restaurante-l-arcada-cala-figuera.ts";
+import { restauranteLaCaracolaPortoPetro } from "./restaurante-la-caracola-porto-petro.ts";
+import { restauranteLaCuevaPortoCristo } from "./restaurante-la-cueva-porto-cristo.ts";
+import { restauranteLasTerrazasBendinat } from "./restaurante-las-terrazas-bendinat.ts";
+import { restauranteLuna36Soller } from "./restaurante-luna-36-soller.ts";
+import { restauranteMacaDeCastro } from "./restaurante-maca-de-castro.ts";
+import { restauranteMarDeNudos } from "./restaurante-mar-de-nudos.ts";
+import { restauranteMarIVentBanyalbufar } from "./restaurante-mar-i-vent-banyalbufar.ts";
+import { restauranteMarcFosh } from "./restaurante-marc-fosh.ts";
+import { restauranteMiradorDeCabrera } from "./restaurante-mirador-de-cabrera.ts";
+import { restauranteMiradorSesBarquesFornalutx } from "./restaurante-mirador-ses-barques-fornalutx.ts";
+import { restauranteMiramarPortAlcudia } from "./restaurante-miramar-port-alcudia.ts";
+import { restauranteNautilusPortSoller } from "./restaurante-nautilus-port-soller.ts";
+import { restauranteOlaDelMar } from "./restaurante-ola-del-mar.ts";
+import { restauranteRcnPortPollenca } from "./restaurante-rcn-port-pollenca.ts";
+import { restauranteRitziPortals } from "./restaurante-ritzi-portals.ts";
+import { restauranteRocamarPortAndratx } from "./restaurante-rocamar-port-andratx.ts";
+import { restauranteSaBarcaPortSoller } from "./restaurante-sa-barca-port-soller.ts";
+import { restauranteSaRoquetaPortixol } from "./restaurante-sa-roqueta-portixol.ts";
+import { restauranteSaVinyaEsCapdella } from "./restaurante-sa-vinya-es-capdella.ts";
+import { restauranteSesOliveresPortSoller } from "./restaurante-ses-oliveres-port-soller.ts";
+import { restauranteSonFlorianaCalaBona } from "./restaurante-son-floriana-cala-bona.ts";
+import { restauranteStagierBar } from "./restaurante-stagier-bar.ts";
+import { restauranteToquePalma } from "./restaurante-toque-palma.ts";
+import { restauranteYachtClubCalaDor } from "./restaurante-yacht-club-cala-dor.ts";
+import { restauranteZaranda } from "./restaurante-zaranda.ts";
+import { saCuinaDeNainaSencelles } from "./sa-cuina-de-naina-sencelles.ts";
+import { saLlotjaPortocolom } from "./sa-llotja-portocolom.ts";
+import { saTorreSantaEugenia } from "./sa-torre-santa-eugenia.ts";
+import { sieteFuegosSantaPonsa } from "./siete-fuegos-santa-ponsa.ts";
+import { stayPortDePollenca } from "./stay-port-de-pollenca.ts";
+import { terraePortDePollenca } from "./terrae-port-de-pollenca.ts";
+import { trespaisPortAndratx } from "./trespais-port-andratx.ts";
+import { vandalPalma } from "./vandal-palma.ts";
+import { vinoDelMarPortAdriano } from "./vino-del-mar-port-adriano.ts";
 
 export {
-  mercatOlivarPalma,
-  mercatSantaCatalinaPalma,
-  mercatCobertInca,
-  mercatPereGarauPalma,
-  restauranteCalDimoniAlgaida,
-  restauranteMiradorDeCabrera,
-  bodegasCanXanetPollensa,
-  restauranteEsCruceVilafranca,
-  barSHostalMontuiri,
-  bodegasVinsToniGelabertManacor,
-  restauranteEsBergantPortoPetro,
-  restauranteEsCellerDePetra,
-  bodegasSonArtiguesPorreres,
-  restauranteLaCaracolaPortoPetro,
-  restauranteLArcadaCalaFiguera,
-  bodegasSantaCatarinaSencelles,
-  restauranteCanGavellaCanPicafort,
-  restauranteCanPescadorPlayaDeMuro,
-  bodegasVinaTaujanaSantaEugenia,
-  restauranteNautilusPortSoller,
-  restauranteSaBarcaPortSoller,
-  bodegasCanRamisSencelles,
-  restauranteSesOliveresPortSoller,
-  restauranteCafeNouSoller,
-  bodegas7103PetitCellerSantaMaria,
-  restauranteEsRacoDesPortSoller,
-  cellerBarRandaAlgaida,
-  bodegasCanVerduraBinissalem,
-  restauranteRocamarPortAndratx,
-  restauranteLuna36Soller,
-  bodegasGalmesIRibotSantaMargalida,
-  restauranteAgapantoPortSoller,
-  cellerCanCarrossaLloseta,
-  bodegasAvaViSencelles,
-  restauranteCnSEstanyol,
-  cellerSaPlacaLloseta,
-  bodegasMesquidaMoraPorreres,
-  restauranteCnArenal,
-  restauranteCnPortocolom,
-  bodegasCanAxartellPollenca,
-  restauranteClubDeMarPalma,
-  restauranteCaNAmerLloseta,
-  bodegasSonJulianaSantaEugenia,
-  restauranteYachtClubCalaDor,
-  cellerCanFontSineu,
-  bodegasSonCampanerSencelles,
-  restauranteCnCanPicafort,
-  cellerSaFondaMuro,
-  bodegasEsVergerEsporles,
-  restauranteCnCalaRatjada,
-  restauranteMarIVentBanyalbufar,
-  bodegasCondeDeSuyrotColoniaSantPere,
-  restauranteClubDeVelaPortAndratx,
-  restauranteMiramarPortAlcudia,
-  bodegasVinsNadalBinissalem,
-  restauranteClubNauticPortitxol,
-  cellerSaSiniSantaMaria,
-  bodegasOliverMoraguesAlgaida,
-  restauranteCnColoniaSantPere,
-  cellerSonToreoSineu,
-  bodegasSonPuigPuigpunyent,
-  restauranteClubNauticPortoCristo,
-  restauranteCaNOlesaPollenca,
-  bodegasCanFeliuPorreres,
-  restauranteCmSanAntonioCanPastilla,
-  cellerPagesPalma,
-  bodegasSonVivesBanyalbufar,
-  restauranteClubNauticSEstanyol,
-  restauranteCanTroncaSantJoan,
-  bodegasSonBordilsInca,
-  restauranteEsCanyisPortSoller,
-  bodegasTiannaNegreBinissalem,
-  restauranteElPenon1957Palma,
-  restauranteSaRoquetaPortixol,
-  cellerElMoliPollenca,
-  bodegasJaumeDePuntiroSantaMaria,
-  restauranteRcnPortPollenca,
-  cellerSaVinyaBinissalem,
-  bodegasRamanyaSantaMaria,
-  restauranteClubNauticCalaGamba,
-  restauranteSaVinyaEsCapdella,
-  bodegasViReiLlucmajor,
-  restauranteClubNauticCanPicafort,
-  cellerEsMoliSantanyi,
-  bodegasSebastiaPastorSantaMaria,
-  restauranteSonFlorianaCalaBona,
-  restauranteClubNauticPortocolom,
-  bodegasSonRamonLlubi,
-  barEspanyaPalma,
-  bodegasCanColetoPetra,
-  restauranteClubNauticSaRapita,
-  quinceCantinaPortoCristo,
-  bodegasButxetMuro,
-  bodegasCanMajoralAlgaida,
-  canTorratPlayaPalma,
-  canJoanDeSAigoPalma,
-  saTorreSantaEugenia,
-  canPintxoSoller,
-  canMarchManacor,
-  bodegasBordoyLlucmajor,
-  elBungalowCiudadJardin,
-  elCastilloDelBosque,
-  saCuinaDeNainaSencelles,
-  bodegasVinyesMortitx,
-  bodegaBarahonaCasaManolo,
-  restauranteClubNauticArenal,
-  bodegasAngelSantaMaria,
-  sieteFuegosSantaPonsa,
-  canCostaValldemossa,
-  laCantinaClubNauticCalaRatjada,
-  canNofrePalma,
-  cellerSaTravessa,
-  losPatosPlayaMuro,
-  caNignasiInca,
-  restauranteGolfAlcanada,
-  esGuixEscorca,
-  saLlotjaPortocolom,
-  bodegaCanVidalet,
-  cassaiBeachHouse,
-  puraVidaCalaFiguera,
-  esVergerAlaro,
-  caNantunaFornalutx,
-  fetASollerFabricaGelats,
-  porxadaDeSaTorreCanyamel,
-  bodegasVinsMiquelGelabert,
-  feraPalma,
-  miceliSelva,
-  bodegasMaciaBatle,
-  terraePortDePollenca,
-  laudatSantanyi,
-  portPetitCalaDor,
-  casXorcSoller,
-  namaDeia,
-  pastisseriaCanMolinasValldemossa,
-  vinoDelMarPortAdriano,
-  lasOlasSantaPonsa,
-  trespaisPortAndratx,
-  laTerrazaAlcanada,
-  stayPortDePollenca,
-  canBoquetaSoller,
-  marYMarPeguera,
-  laHaciendaPeguera,
-  restauranteToquePalma,
-  dinsSantiTaura,
-  caNEduardo,
   adrianQuetglas,
-  caNaToneta,
-  vandalPalma,
-  elCaminoPalma,
-  fornDeSantJoan,
-  restauranteFlanigan,
-  restauranteMarcFosh,
-  bensDavall,
   barBosch,
-  cellerSaPremsa,
-  cellerCanAmer,
-  fornDeLaSoca,
-  bodegaRibas,
-  ilTanoSantaCatalina,
-  canMiquelPalma,
-  fornFondoPalma,
-  carniceriaCaNaFina,
-  fornSantFrancesc,
-  bodegasJoseLFerrer,
-  canPomar,
+  barEspanyaPalma,
+  barSHostalMontuiri,
+  bensDavall,
+  bodegaBarahonaCasaManolo,
   bodegaBiniagual,
-  canCompany,
-  formatgesSaCanova,
-  oliDeJornets,
+  bodegaCanVidalet,
   bodegaCastellMiquel,
-  fornDesTeatre,
-  carniceriaCanMatas,
-  cellerCanRipoll,
-  fornGelabertLlubi,
-  carniceriaCanToni,
-  fornSaPelleteria,
+  bodegaRibas,
   bodegaSonPrim,
-  cellerCanMarron,
-  fornCanGelabertBinissalem,
+  bodegas7103PetitCellerSantaMaria,
+  bodegasAngelSantaMaria,
+  bodegasAvaViSencelles,
+  bodegasBordoyLlucmajor,
+  bodegasButxetMuro,
+  bodegasCanAxartellPollenca,
+  bodegasCanColetoPetra,
+  bodegasCanFeliuPorreres,
+  bodegasCanMajoralAlgaida,
+  bodegasCanRamisSencelles,
+  bodegasCanVerduraBinissalem,
+  bodegasCanXanetPollensa,
+  bodegasCondeDeSuyrotColoniaSantPere,
+  bodegasEsVergerEsporles,
+  bodegasGalmesIRibotSantaMargalida,
+  bodegasJaumeDePuntiroSantaMaria,
+  bodegasJoseLFerrer,
+  bodegasMaciaBatle,
+  bodegasMesquidaMoraPorreres,
+  bodegasOliverMoraguesAlgaida,
+  bodegasRamanyaSantaMaria,
+  bodegasSantaCatarinaSencelles,
+  bodegasSebastiaPastorSantaMaria,
+  bodegasSonArtiguesPorreres,
+  bodegasSonBordilsInca,
+  bodegasSonCampanerSencelles,
+  bodegasSonJulianaSantaEugenia,
+  bodegasSonPuigPuigpunyent,
+  bodegasSonRamonLlubi,
+  bodegasSonVivesBanyalbufar,
+  bodegasTiannaNegreBinissalem,
+  bodegasViReiLlucmajor,
+  bodegasVinaTaujanaSantaEugenia,
+  bodegasVinsMiquelGelabert,
+  bodegasVinsNadalBinissalem,
+  bodegasVinsToniGelabertManacor,
+  bodegasVinyesMortitx,
+  caNEduardo,
+  caNaToneta,
+  caNantunaFornalutx,
+  caNignasiInca,
+  canBoquetaSoller,
+  canCompany,
+  canCostaValldemossa,
+  canJoanDeSAigoPalma,
+  canMarchManacor,
+  canMiquelPalma,
+  canNofrePalma,
+  canPintxoSoller,
+  canPomar,
+  canTorratPlayaPalma,
+  carniceriaCaNaFina,
+  carniceriaCanMatas,
+  carniceriaCanToni,
   carniceriaCanXarrier,
   carniceriaCanXim,
+  casXorcSoller,
+  cassaiBeachHouse,
+  cellerBarRandaAlgaida,
+  cellerCanAmer,
+  cellerCanCarrossaLloseta,
+  cellerCanFontSineu,
+  cellerCanMarron,
+  cellerCanRipoll,
+  cellerElMoliPollenca,
   cellerEsCellerPetra,
+  cellerEsMoliSantanyi,
+  cellerPagesPalma,
+  cellerSaFondaMuro,
+  cellerSaPlacaLloseta,
+  cellerSaPremsa,
+  cellerSaSiniSantaMaria,
+  cellerSaTravessaInca,
+  cellerSaVinyaBinissalem,
+  cellerSonToreoSineu,
+  dinsSantiTaura,
+  elBungalowCiudadJardin,
+  elCaminoPalma,
+  elCastilloDelBosque,
+  esGuixEscorca,
+  esVergerAlaro,
+  feraPalma,
+  fetASollerFabricaGelats,
+  formatgesSaCanova,
+  fornCanGelabertBinissalem,
   fornCanPacoCampos,
-  restauranteCanPedro,
+  fornDeLaSoca,
+  fornDeSantJoan,
+  fornDesTeatre,
+  fornFondoPalma,
+  fornGelabertLlubi,
   fornNouMuro,
-  restauranteZaranda,
-  restauranteMacaDeCastro,
+  fornSaPelleteria,
+  fornSantFrancesc,
+  heladeriaSaFabricaDeGelatsSoller,
+  ilTanoSantaCatalina,
+  laCantinaClubNauticCalaRatjada,
+  laHaciendaPeguera,
+  laTerrazaAlcanada,
+  lasOlasSantaPonsa,
+  laudatSantanyi,
+  losPatosPlayaMuro,
+  marYMarPeguera,
+  mercatCobertInca,
+  mercatOlivarPalma,
+  mercatPereGarauPalma,
+  mercatSantaCatalinaPalma,
+  miceliSelva,
+  namaDeia,
+  oliDeJornets,
+  pastisseriaCanMolinasValldemossa,
+  portPetitCalaDor,
+  porxadaDeSaTorreCanyamel,
+  puraVidaCalaFiguera,
+  quinceCantinaPortoCristo,
+  restauranteAgapantoPortSoller,
   restauranteAndreuGenestra,
-  restauranteOlaDelMar,
-  restauranteEmilioInnobar,
-  restauranteDukePalma,
-  restauranteRitziPortals,
-  restauranteBaibenPortals,
-  restauranteCoastByEast,
-  restauranteMarDeNudos,
   restauranteAromataPalma,
-  restauranteStagierBar,
+  restauranteBaibenPortals,
+  restauranteBarPlayaCalaBarques,
+  restauranteCaNAmerLloseta,
+  restauranteCaNOlesaPollenca,
+  restauranteCafeNouSoller,
+  restauranteCalDimoniAlgaida,
+  restauranteCanGavellaCanPicafort,
+  restauranteCanPedro,
+  restauranteCanPescadorPlayaDeMuro,
+  restauranteCanTroncaSantJoan,
+  restauranteClubDeMarPalma,
+  restauranteClubDeVelaPortAndratx,
+  restauranteClubNauticArenal,
+  restauranteClubNauticCalaGamba,
+  restauranteClubNauticCanPicafort,
+  restauranteClubNauticPortitxol,
+  restauranteClubNauticPortoCristo,
+  restauranteClubNauticPortocolom,
+  restauranteClubNauticSEstanyol,
+  restauranteClubNauticSaRapita,
+  restauranteCmSanAntonioCanPastilla,
+  restauranteCnArenal,
+  restauranteCnCalaRatjada,
+  restauranteCnCanPicafort,
+  restauranteCnColoniaSantPere,
+  restauranteCnPortocolom,
+  restauranteCnSEstanyol,
+  restauranteCoastByEast,
+  restauranteDukePalma,
+  restauranteElOlivoDeia,
+  restauranteElPenon1957Palma,
+  restauranteEmilioInnobar,
+  restauranteEsBergantPortoPetro,
+  restauranteEsCanyisPortSoller,
+  restauranteEsCellerDePetra,
+  restauranteEsCruceVilafranca,
+  restauranteEsRacoDesPortSoller,
+  restauranteFlanigan,
+  restauranteGolfAlcanada,
+  restauranteIlletaCampDeMar,
+  restauranteLArcadaCalaFiguera,
+  restauranteLaCaracolaPortoPetro,
+  restauranteLaCuevaPortoCristo,
   restauranteLasTerrazasBendinat,
+  restauranteLuna36Soller,
+  restauranteMacaDeCastro,
+  restauranteMarDeNudos,
+  restauranteMarIVentBanyalbufar,
+  restauranteMarcFosh,
+  restauranteMiradorDeCabrera,
+  restauranteMiradorSesBarquesFornalutx,
+  restauranteMiramarPortAlcudia,
+  restauranteNautilusPortSoller,
+  restauranteOlaDelMar,
+  restauranteRcnPortPollenca,
+  restauranteRitziPortals,
+  restauranteRocamarPortAndratx,
+  restauranteSaBarcaPortSoller,
+  restauranteSaRoquetaPortixol,
+  restauranteSaVinyaEsCapdella,
+  restauranteSesOliveresPortSoller,
+  restauranteSonFlorianaCalaBona,
+  restauranteStagierBar,
+  restauranteToquePalma,
+  restauranteYachtClubCalaDor,
+  restauranteZaranda,
+  saCuinaDeNainaSencelles,
+  saLlotjaPortocolom,
+  saTorreSantaEugenia,
+  sieteFuegosSantaPonsa,
+  stayPortDePollenca,
+  terraePortDePollenca,
+  trespaisPortAndratx,
+  vandalPalma,
+  vinoDelMarPortAdriano,
 };
 
-/**
- * Catálogo Sectorial: Hostelería, Gastronomía & Restaurantes de Alta Cocina.
- * Negocios 100% reales y verificados bajo la regla estricta Zero Fake Data (GR-11).
- */
-export const RESTAURANT_SERVICES: ServiceItem[] = [
-  dinsSantiTaura,
-  caNEduardo,
+export const GASTRONOMIA_SERVICES: ServiceItem[] = [
   adrianQuetglas,
-  caNaToneta,
-  vandalPalma,
-  elCaminoPalma,
-  fornDeSantJoan,
-  restauranteFlanigan,
-  restauranteMarcFosh,
-  bensDavall,
   barBosch,
-  cellerSaPremsa,
-  cellerCanAmer,
-  fornDeLaSoca,
-  bodegaRibas,
-  ilTanoSantaCatalina,
-  canMiquelPalma,
-  fornFondoPalma,
-  carniceriaCaNaFina,
-  fornSantFrancesc,
-  bodegasJoseLFerrer,
-  canPomar,
+  barEspanyaPalma,
+  barSHostalMontuiri,
+  bensDavall,
+  bodegaBarahonaCasaManolo,
   bodegaBiniagual,
-  canCompany,
-  formatgesSaCanova,
-  oliDeJornets,
+  bodegaCanVidalet,
   bodegaCastellMiquel,
-  fornDesTeatre,
-  carniceriaCanMatas,
-  cellerCanRipoll,
-  fornGelabertLlubi,
-  carniceriaCanToni,
-  fornSaPelleteria,
+  bodegaRibas,
   bodegaSonPrim,
-  cellerCanMarron,
-  fornCanGelabertBinissalem,
+  bodegas7103PetitCellerSantaMaria,
+  bodegasAngelSantaMaria,
+  bodegasAvaViSencelles,
+  bodegasBordoyLlucmajor,
+  bodegasButxetMuro,
+  bodegasCanAxartellPollenca,
+  bodegasCanColetoPetra,
+  bodegasCanFeliuPorreres,
+  bodegasCanMajoralAlgaida,
+  bodegasCanRamisSencelles,
+  bodegasCanVerduraBinissalem,
+  bodegasCanXanetPollensa,
+  bodegasCondeDeSuyrotColoniaSantPere,
+  bodegasEsVergerEsporles,
+  bodegasGalmesIRibotSantaMargalida,
+  bodegasJaumeDePuntiroSantaMaria,
+  bodegasJoseLFerrer,
+  bodegasMaciaBatle,
+  bodegasMesquidaMoraPorreres,
+  bodegasOliverMoraguesAlgaida,
+  bodegasRamanyaSantaMaria,
+  bodegasSantaCatarinaSencelles,
+  bodegasSebastiaPastorSantaMaria,
+  bodegasSonArtiguesPorreres,
+  bodegasSonBordilsInca,
+  bodegasSonCampanerSencelles,
+  bodegasSonJulianaSantaEugenia,
+  bodegasSonPuigPuigpunyent,
+  bodegasSonRamonLlubi,
+  bodegasSonVivesBanyalbufar,
+  bodegasTiannaNegreBinissalem,
+  bodegasViReiLlucmajor,
+  bodegasVinaTaujanaSantaEugenia,
+  bodegasVinsMiquelGelabert,
+  bodegasVinsNadalBinissalem,
+  bodegasVinsToniGelabertManacor,
+  bodegasVinyesMortitx,
+  caNEduardo,
+  caNaToneta,
+  caNantunaFornalutx,
+  caNignasiInca,
+  canBoquetaSoller,
+  canCompany,
+  canCostaValldemossa,
+  canJoanDeSAigoPalma,
+  canMarchManacor,
+  canMiquelPalma,
+  canNofrePalma,
+  canPintxoSoller,
+  canPomar,
+  canTorratPlayaPalma,
+  carniceriaCaNaFina,
+  carniceriaCanMatas,
+  carniceriaCanToni,
   carniceriaCanXarrier,
   carniceriaCanXim,
-  cellerEsCellerPetra,
-  fornCanPacoCampos,
-  restauranteCanPedro,
-  fornNouMuro,
-  restauranteZaranda,
-  restauranteMacaDeCastro,
-  restauranteAndreuGenestra,
-  restauranteToquePalma,
-  restauranteOlaDelMar,
-  restauranteEmilioInnobar,
-  restauranteDukePalma,
-  restauranteRitziPortals,
-  restauranteBaibenPortals,
-  restauranteCoastByEast,
-  restauranteMarDeNudos,
-  restauranteAromataPalma,
-  restauranteStagierBar,
-  restauranteLasTerrazasBendinat,
-  marYMarPeguera,
-  laHaciendaPeguera,
-  stayPortDePollenca,
-  canBoquetaSoller,
-  trespaisPortAndratx,
-  laTerrazaAlcanada,
-  vinoDelMarPortAdriano,
-  lasOlasSantaPonsa,
   casXorcSoller,
-  namaDeia,
-  pastisseriaCanMolinasValldemossa,
-  terraePortDePollenca,
-  laudatSantanyi,
-  portPetitCalaDor,
-  feraPalma,
-  miceliSelva,
-  bodegasMaciaBatle,
-  porxadaDeSaTorreCanyamel,
-  bodegasVinsMiquelGelabert,
-  caNantunaFornalutx,
-  fetASollerFabricaGelats,
-  esVergerAlaro,
   cassaiBeachHouse,
-  puraVidaCalaFiguera,
-  esGuixEscorca,
-  saLlotjaPortocolom,
-  bodegaCanVidalet,
-  losPatosPlayaMuro,
-  caNignasiInca,
-  restauranteGolfAlcanada,
-  laCantinaClubNauticCalaRatjada,
-  canNofrePalma,
-  cellerSaTravessa,
-  bodegasAngelSantaMaria,
-  sieteFuegosSantaPonsa,
-  canCostaValldemossa,
-  bodegasVinyesMortitx,
-  bodegaBarahonaCasaManolo,
-  restauranteClubNauticArenal,
-  elBungalowCiudadJardin,
-  elCastilloDelBosque,
-  saCuinaDeNainaSencelles,
-  canPintxoSoller,
-  canMarchManacor,
-  bodegasBordoyLlucmajor,
-  canTorratPlayaPalma,
-  canJoanDeSAigoPalma,
-  saTorreSantaEugenia,
-  quinceCantinaPortoCristo,
-  bodegasButxetMuro,
-  bodegasCanMajoralAlgaida,
-  barEspanyaPalma,
-  bodegasCanColetoPetra,
-  restauranteClubNauticSaRapita,
-  restauranteSonFlorianaCalaBona,
-  restauranteClubNauticPortocolom,
-  bodegasSonRamonLlubi,
-  restauranteClubNauticCanPicafort,
-  cellerEsMoliSantanyi,
-  bodegasSebastiaPastorSantaMaria,
-  restauranteClubNauticCalaGamba,
-  restauranteSaVinyaEsCapdella,
-  bodegasViReiLlucmajor,
-  restauranteRcnPortPollenca,
-  cellerSaVinyaBinissalem,
-  bodegasRamanyaSantaMaria,
-  restauranteSaRoquetaPortixol,
-  cellerElMoliPollenca,
-  bodegasJaumeDePuntiroSantaMaria,
-  restauranteEsCanyisPortSoller,
-  bodegasTiannaNegreBinissalem,
-  restauranteElPenon1957Palma,
-  restauranteClubNauticSEstanyol,
-  restauranteCanTroncaSantJoan,
-  bodegasSonBordilsInca,
-  restauranteCmSanAntonioCanPastilla,
-  cellerPagesPalma,
-  bodegasSonVivesBanyalbufar,
-  restauranteClubNauticPortoCristo,
-  restauranteCaNOlesaPollenca,
-  bodegasCanFeliuPorreres,
-  restauranteCnColoniaSantPere,
-  cellerSonToreoSineu,
-  bodegasSonPuigPuigpunyent,
-  restauranteClubNauticPortitxol,
-  cellerSaSiniSantaMaria,
-  bodegasOliverMoraguesAlgaida,
-  restauranteClubDeVelaPortAndratx,
-  restauranteMiramarPortAlcudia,
-  bodegasVinsNadalBinissalem,
-  restauranteCnCalaRatjada,
-  restauranteMarIVentBanyalbufar,
-  bodegasCondeDeSuyrotColoniaSantPere,
-  restauranteCnCanPicafort,
-  cellerSaFondaMuro,
-  bodegasEsVergerEsporles,
-  restauranteYachtClubCalaDor,
-  cellerCanFontSineu,
-  bodegasSonCampanerSencelles,
-  restauranteClubDeMarPalma,
-  restauranteCaNAmerLloseta,
-  bodegasSonJulianaSantaEugenia,
-  restauranteCnArenal,
-  restauranteCnPortocolom,
-  bodegasCanAxartellPollenca,
-  restauranteCnSEstanyol,
-  cellerSaPlacaLloseta,
-  bodegasMesquidaMoraPorreres,
-  restauranteAgapantoPortSoller,
-  cellerCanCarrossaLloseta,
-  bodegasAvaViSencelles,
-  restauranteRocamarPortAndratx,
-  restauranteLuna36Soller,
-  bodegasGalmesIRibotSantaMargalida,
-  restauranteEsRacoDesPortSoller,
   cellerBarRandaAlgaida,
-  bodegasCanVerduraBinissalem,
-  restauranteSesOliveresPortSoller,
-  restauranteCafeNouSoller,
-  bodegas7103PetitCellerSantaMaria,
-  restauranteNautilusPortSoller,
-  restauranteSaBarcaPortSoller,
-  bodegasCanRamisSencelles,
-  restauranteCanGavellaCanPicafort,
-  restauranteCanPescadorPlayaDeMuro,
-  bodegasVinaTaujanaSantaEugenia,
-  restauranteLaCaracolaPortoPetro,
-  restauranteLArcadaCalaFiguera,
-  bodegasSantaCatarinaSencelles,
-  restauranteEsBergantPortoPetro,
-  restauranteEsCellerDePetra,
-  bodegasSonArtiguesPorreres,
-  restauranteEsCruceVilafranca,
-  barSHostalMontuiri,
-  bodegasVinsToniGelabertManacor,
-  restauranteCalDimoniAlgaida,
-  restauranteMiradorDeCabrera,
-  bodegasCanXanetPollensa,
-  mercatOlivarPalma,
-  mercatSantaCatalinaPalma,
+  cellerCanAmer,
+  cellerCanCarrossaLloseta,
+  cellerCanFontSineu,
+  cellerCanMarron,
+  cellerCanRipoll,
+  cellerElMoliPollenca,
+  cellerEsCellerPetra,
+  cellerEsMoliSantanyi,
+  cellerPagesPalma,
+  cellerSaFondaMuro,
+  cellerSaPlacaLloseta,
+  cellerSaPremsa,
+  cellerSaSiniSantaMaria,
+  cellerSaTravessaInca,
+  cellerSaVinyaBinissalem,
+  cellerSonToreoSineu,
+  dinsSantiTaura,
+  elBungalowCiudadJardin,
+  elCaminoPalma,
+  elCastilloDelBosque,
+  esGuixEscorca,
+  esVergerAlaro,
+  feraPalma,
+  fetASollerFabricaGelats,
+  formatgesSaCanova,
+  fornCanGelabertBinissalem,
+  fornCanPacoCampos,
+  fornDeLaSoca,
+  fornDeSantJoan,
+  fornDesTeatre,
+  fornFondoPalma,
+  fornGelabertLlubi,
+  fornNouMuro,
+  fornSaPelleteria,
+  fornSantFrancesc,
+  heladeriaSaFabricaDeGelatsSoller,
+  ilTanoSantaCatalina,
+  laCantinaClubNauticCalaRatjada,
+  laHaciendaPeguera,
+  laTerrazaAlcanada,
+  lasOlasSantaPonsa,
+  laudatSantanyi,
+  losPatosPlayaMuro,
+  marYMarPeguera,
   mercatCobertInca,
+  mercatOlivarPalma,
   mercatPereGarauPalma,
+  mercatSantaCatalinaPalma,
+  miceliSelva,
+  namaDeia,
+  oliDeJornets,
+  pastisseriaCanMolinasValldemossa,
+  portPetitCalaDor,
+  porxadaDeSaTorreCanyamel,
+  puraVidaCalaFiguera,
+  quinceCantinaPortoCristo,
+  restauranteAgapantoPortSoller,
+  restauranteAndreuGenestra,
+  restauranteAromataPalma,
+  restauranteBaibenPortals,
+  restauranteBarPlayaCalaBarques,
+  restauranteCaNAmerLloseta,
+  restauranteCaNOlesaPollenca,
+  restauranteCafeNouSoller,
+  restauranteCalDimoniAlgaida,
+  restauranteCanGavellaCanPicafort,
+  restauranteCanPedro,
+  restauranteCanPescadorPlayaDeMuro,
+  restauranteCanTroncaSantJoan,
+  restauranteClubDeMarPalma,
+  restauranteClubDeVelaPortAndratx,
+  restauranteClubNauticArenal,
+  restauranteClubNauticCalaGamba,
+  restauranteClubNauticCanPicafort,
+  restauranteClubNauticPortitxol,
+  restauranteClubNauticPortoCristo,
+  restauranteClubNauticPortocolom,
+  restauranteClubNauticSEstanyol,
+  restauranteClubNauticSaRapita,
+  restauranteCmSanAntonioCanPastilla,
+  restauranteCnArenal,
+  restauranteCnCalaRatjada,
+  restauranteCnCanPicafort,
+  restauranteCnColoniaSantPere,
+  restauranteCnPortocolom,
+  restauranteCnSEstanyol,
+  restauranteCoastByEast,
+  restauranteDukePalma,
+  restauranteElOlivoDeia,
+  restauranteElPenon1957Palma,
+  restauranteEmilioInnobar,
+  restauranteEsBergantPortoPetro,
+  restauranteEsCanyisPortSoller,
+  restauranteEsCellerDePetra,
+  restauranteEsCruceVilafranca,
+  restauranteEsRacoDesPortSoller,
+  restauranteFlanigan,
+  restauranteGolfAlcanada,
+  restauranteIlletaCampDeMar,
+  restauranteLArcadaCalaFiguera,
+  restauranteLaCaracolaPortoPetro,
+  restauranteLaCuevaPortoCristo,
+  restauranteLasTerrazasBendinat,
+  restauranteLuna36Soller,
+  restauranteMacaDeCastro,
+  restauranteMarDeNudos,
+  restauranteMarIVentBanyalbufar,
+  restauranteMarcFosh,
+  restauranteMiradorDeCabrera,
+  restauranteMiradorSesBarquesFornalutx,
+  restauranteMiramarPortAlcudia,
+  restauranteNautilusPortSoller,
+  restauranteOlaDelMar,
+  restauranteRcnPortPollenca,
+  restauranteRitziPortals,
+  restauranteRocamarPortAndratx,
+  restauranteSaBarcaPortSoller,
+  restauranteSaRoquetaPortixol,
+  restauranteSaVinyaEsCapdella,
+  restauranteSesOliveresPortSoller,
+  restauranteSonFlorianaCalaBona,
+  restauranteStagierBar,
+  restauranteToquePalma,
+  restauranteYachtClubCalaDor,
+  restauranteZaranda,
+  saCuinaDeNainaSencelles,
+  saLlotjaPortocolom,
+  saTorreSantaEugenia,
+  sieteFuegosSantaPonsa,
+  stayPortDePollenca,
+  terraePortDePollenca,
+  trespaisPortAndratx,
+  vandalPalma,
+  vinoDelMarPortAdriano,
 ];
+
+export { GASTRONOMIA_SERVICES as RESTAURANT_SERVICES };

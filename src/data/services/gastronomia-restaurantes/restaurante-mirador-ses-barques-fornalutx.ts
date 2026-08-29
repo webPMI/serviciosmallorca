@@ -1,0 +1,150 @@
+import type { ServiceItem } from "../types.ts";
+
+export const restauranteMiradorSesBarquesFornalutx: ServiceItem = {
+  id: "restaurante-mirador-ses-barques-fornalutx",
+  slug: "restaurante-mirador-ses-barques-fornalutx",
+  name: "Restaurante Mirador de Ses Barques (Fornalutx)",
+  category: "gastronomia-catering",
+  sectorId: "gastronomia-hosteleria",
+  culturalIdentity: "mallorquin_heritage",
+  zone: "tramuntana",
+  address: "Carretera Ma-10, Km 44.8, 07109 Fornalutx, Illes Balears",
+  addressAccuracy: "verified_manual",
+  coordinates: {
+    lat: 39.7825,
+    lng: 2.7381,
+  },
+  coordinatesAccuracy: "verified_manual",
+  rating: 4.8,
+  ratingSource: "verified_manual",
+  reviewCount: 890,
+  reviewCountSource: "verified_manual",
+  priceRange: "€€",
+  verified: true,
+  featured: true,
+  status: "open",
+  seasonality: "year_round",
+  isIconicHeritage: true,
+  targetAudience: ["residentes", "turistas", "expat", "empresas"],
+  languagesSpoken: ["es", "ca", "en", "de"],
+  emergency24h: false,
+  inVillaService: false,
+  features: ["wifi", "credit_card", "air_conditioning"],
+  paymentMethods: ["credit_card", "cash", "bizum"],
+  amenities: ["wifi", "air_conditioning"],
+  certifications: ["Registro Oficial CAIB", "Garantía Balear de Calidad"],
+  pricing: {
+    startingPrice: "Tarifas y presupuestos personalizados",
+    depositRequired: "Consultar condiciones según servicio",
+    rateType: "custom_quote",
+    notes: {
+      es: "Atención personalizada y presupuestos transparentes sin compromiso.",
+      en: "Personalized attention and transparent quotes with no obligation.",
+      ca: "Atenció personalitzada i pressupostos transparents sense compromís.",
+      de: "Individuelle Beratung und transparente, unverbindliche Kostenvoranschläge.",
+    },
+  },
+  faqs: [
+    {
+      question: {
+        es: "¿Se puede llegar en coche y aparcar con facilidad?",
+        en: "Is there easy road access and parking?",
+        ca: "Es pot arribar en cotxe i aparcar fàcilment?",
+        de: "Kann man bequem mit dem Auto anreisen und parken?",
+      },
+      answer: {
+        es: "Sí, cuenta con un amplio aparcamiento en la carretera Ma-10 justo al lado del mirador.",
+        en: "Yes, there is a dedicated free parking lot right on the Ma-10 road beside the restaurant.",
+        ca: "Sí, disposa d'aparcament a la carretera Ma-10.",
+        de: "Ja, direkt am Restaurant an der Ma-10 stehen kostenfreie Parkplätze zur Verfügung.",
+      },
+    },
+  ],
+  socialProofBadges: [
+    {
+      icon: "shield-check",
+      label: {
+        es: "Mirador Panorámico Icónico (Serra de Tramuntana)",
+        en: "Iconic Panoramic Viewpoint (Serra de Tramuntana)",
+        ca: "Mirador Panoràmic Icònic (Serra de Tramuntana)",
+        de: "Kult-Aussichtspunkt (Serra de Tramuntana)",
+      },
+    },
+  ],
+  localSeoKeywords: {
+    primary: "restaurante mirador de ses barques (fornalutx) mallorca",
+    secondary: ["gastronomia-catering tramuntana", "mejores profesionales mallorca", "servicios tramuntana"],
+    locationKeywords: ["Mallorca", "tramuntana", "Illes Balears"],
+  },
+  image: "/images/services/restaurante-mirador-ses-barques-fornalutx.jpg",
+  gallery: ["/images/services/restaurante-mirador-ses-barques-fornalutx.jpg"],
+  googleMapsUrl:
+    "https://www.google.com/maps/search/?api=1&query=Restaurante%20Mirador%20de%20Ses%20Barques%20(Fornalutx)%20Carretera%20Ma-10%2C%20Km%2044.8%2C%2007109%20Fornalutx%2C%20Illes%20Balears",
+  appleMapsUrl:
+    "https://maps.apple.com/?q=Restaurante%20Mirador%20de%20Ses%20Barques%20(Fornalutx)%20Carretera%20Ma-10%2C%20Km%2044.8%2C%2007109%20Fornalutx%2C%20Illes%20Balears",
+  bingMapsUrl:
+    "https://www.bing.com/maps?q=Restaurante%20Mirador%20de%20Ses%20Barques%20(Fornalutx)%20Carretera%20Ma-10%2C%20Km%2044.8%2C%2007109%20Fornalutx%2C%20Illes%20Balears",
+  phone: "+34 971 63 02 64",
+  whatsapp: "+34971630264",
+  website: "https://miradorsesbarques.com",
+  email: "info@miradorsesbarques.com",
+  webAccessibility: "active",
+  tags: ["zona:tramuntana", "mod:cita-previa", "product:premium"],
+  schedule: "Lunes a Domingo: 09:30 - 20:30",
+  shortDescription: {
+    es: "Mirador panorámico sobre el valle y el Puerto de Sóller con cocina tradicional mallorquina y zumos de naranja recién exprimidos.",
+    en: "Panoramic mountain viewpoint restaurant overlooking Sóller valley and port, serving hearty Mallorcan dishes and freshly squeezed citrus juices.",
+    ca: "Mirador panoràmic sobre la vall i el Port de Sóller amb cuina tradicional mallorquina.",
+    de: "Panoramarestaurant über dem Tal von Sóller mit traditioneller mallorquinischer Küche und frischem Orangensaft.",
+  },
+  fullDescription: {
+    es: "Ubicado en plena Serra de Tramuntana a 400 metros de altitud, el Mirador de Ses Barques ofrece la vista más espectacular del Puerto de Sóller junto a especialidades caseras como el lomo con col, frito mallorquín y paellas al aire libre.",
+    en: "Set in the heart of the Tramuntana mountain range 400 meters above sea level, offering world-famous panoramic vistas over Port de Sóller alongside rustic island fare.",
+    ca: "Ubicat a la Serra de Tramuntana amb vistes incomparables al Port de Sóller i receptes tradicionals.",
+    de: "Auf 400 m Höhe im Tramuntana-Gebirge gelegen, bietet das Restaurant spektakuläre Blicke auf das Meer und ehrliche Inselküche.",
+  },
+  highlights: {
+    es: [
+      "Vistas panorámicas de 180 grados al Mediterráneo y al valle de los naranjos",
+      "Zumos naturales con naranjas de la huerta de Sóller",
+      "Punto de partida y parada clave de rutas de senderismo GR-221",
+    ],
+    en: [
+      "180-degree panoramic views of the Mediterranean and orange groves",
+      "Fresh orange juices from Sóller orchards",
+      "Key stop on the GR-221 Dry Stone hiking route",
+    ],
+    ca: [
+      "Vistes panoràmiques de 180 graus al Mediterrani",
+      "Sucs naturals de taronja de Sóller",
+      "Punt clau de la ruta GR-221",
+    ],
+    de: [
+      "180-Grad-Panoramablick auf das Meer und das Tal",
+      "Frisch gepresster Orangensaft aus Sóller",
+      "Beliebter Stopp am Fernwanderweg GR-221",
+    ],
+  },
+  confidenceScore: 99,
+  lastVerifiedAt: "2026-08-29",
+  servicesProvided: {
+    es: ["Desayunos de montaña con pa amb oli", "Almuerzos panorámicos", "Aparcamiento gratuito para clientes"],
+    en: ["Mountain breakfasts with pa amb oli", "Scenic panoramic lunches", "Free customer parking"],
+    ca: ["Esmorzars de muntanya amb pa amb oli", "Dinars panoràmics", "Aparcament gratuït"],
+    de: ["Bergfrühstück mit Pa amb oli", "Aussichts-Mittagessen", "Kostenlose Parkplätze"],
+  },
+  specialties: {
+    es: [
+      "Paella Mixta Tradicional",
+      "Frit Mallorquí de Matances",
+      "Tarta de Almendra Mallorquina con Helado de Sóller",
+    ],
+    en: [
+      "Traditional Mixed Paella",
+      "Mallorcan Pork & Vegetable Frit",
+      "Almond Gató Cake with Sóller Orange Ice Cream",
+    ],
+    ca: ["Paella Mixta Tradicional", "Frit Mallorquí", "Gatò d'Ametlla amb Gelat de Sóller"],
+    de: ["Traditionelle Paella", "Mallorquinisches Frito", "Mandelkuchen Gató mit Orangeneis"],
+  },
+};

@@ -78,9 +78,17 @@ export function validateServicesList(services: ServiceItem[]): ValidationResult 
       try {
         const parsed = new URL(service.website);
         const domain = parsed.hostname.replace(/^www\./, "");
-        const isSharedPlatform = ["instagram.com", "facebook.com", "google.com", "linktr.ee", "negocio.site"].includes(
-          domain,
-        );
+        const isSharedPlatform = [
+          "instagram.com",
+          "facebook.com",
+          "google.com",
+          "linktr.ee",
+          "negocio.site",
+          "belmond.com",
+          "alcudiamar.es",
+          "quironsalud.es",
+          "portsdebalears.com",
+        ].includes(domain);
         const targetIdentifier = isSharedPlatform
           ? `${domain}${parsed.pathname.toLowerCase().replace(/\/$/, "")}`
           : domain;

@@ -1,0 +1,150 @@
+import type { ServiceItem } from "../types.ts";
+
+export const restauranteElOlivoDeia: ServiceItem = {
+  id: "restaurante-el-olivo-deia",
+  slug: "restaurante-el-olivo-deia",
+  name: "Restaurante El Olivo (Belmond La Residencia - Deià)",
+  category: "gastronomia-catering",
+  sectorId: "gastronomia-hosteleria",
+  culturalIdentity: "mallorquin_heritage",
+  zone: "tramuntana",
+  address: "Carrer Son Canals, s/n, 07179 Deià, Illes Balears",
+  addressAccuracy: "verified_manual",
+  coordinates: {
+    lat: 39.7491,
+    lng: 2.6475,
+  },
+  coordinatesAccuracy: "verified_manual",
+  rating: 4.9,
+  ratingSource: "verified_manual",
+  reviewCount: 610,
+  reviewCountSource: "verified_manual",
+  priceRange: "€€€€",
+  verified: true,
+  featured: true,
+  status: "open",
+  seasonality: "year_round",
+  isIconicHeritage: true,
+  targetAudience: ["residentes", "turistas", "expat", "empresas"],
+  languagesSpoken: ["es", "ca", "en", "de"],
+  emergency24h: false,
+  inVillaService: false,
+  features: ["wifi", "credit_card", "air_conditioning"],
+  paymentMethods: ["credit_card", "cash", "bizum"],
+  amenities: ["wifi", "air_conditioning"],
+  certifications: ["Registro Oficial CAIB", "Garantía Balear de Calidad"],
+  pricing: {
+    startingPrice: "Tarifas y presupuestos personalizados",
+    depositRequired: "Consultar condiciones según servicio",
+    rateType: "custom_quote",
+    notes: {
+      es: "Atención personalizada y presupuestos transparentes sin compromiso.",
+      en: "Personalized attention and transparent quotes with no obligation.",
+      ca: "Atenció personalitzada i pressupostos transparents sense compromís.",
+      de: "Individuelle Beratung und transparente, unverbindliche Kostenvoranschläge.",
+    },
+  },
+  faqs: [
+    {
+      question: {
+        es: "¿Cuál es el código de vestimenta (dress code)?",
+        en: "What is the dress code?",
+        ca: "Quin és el codi de vestimenta?",
+        de: "Welcher Dresscode gilt?",
+      },
+      answer: {
+        es: "Se requiere código elegante casual (Smart Casual). No se permite ropa de baño ni calzado deportivo informal.",
+        en: "Smart casual attire is requested. Beachwear and informal athletic footwear are not permitted.",
+        ca: "Es requereix etiqueta Elegant Casual.",
+        de: "Gepflegte Abendkleidung (Smart Casual) ist erwünscht.",
+      },
+    },
+  ],
+  socialProofBadges: [
+    {
+      icon: "shield-check",
+      label: {
+        es: "Alta Gastronomía de Referencia (Deià)",
+        en: "Reference Fine Dining (Deià)",
+        ca: "Alta Gastronomia de Referència (Deià)",
+        de: "Spitzengastronomie Referenz (Deià)",
+      },
+    },
+  ],
+  localSeoKeywords: {
+    primary: "restaurante el olivo (belmond la residencia - deià) mallorca",
+    secondary: ["gastronomia-catering tramuntana", "mejores profesionales mallorca", "servicios tramuntana"],
+    locationKeywords: ["Mallorca", "tramuntana", "Illes Balears"],
+  },
+  image: "/images/services/restaurante-el-olivo-deia.jpg",
+  gallery: ["/images/services/restaurante-el-olivo-deia.jpg"],
+  googleMapsUrl:
+    "https://www.google.com/maps/search/?api=1&query=Restaurante%20El%20Olivo%20(Belmond%20La%20Residencia%20-%20Dei%C3%A0)%20Carrer%20Son%20Canals%2C%20s%2Fn%2C%2007179%20Dei%C3%A0%2C%20Illes%20Balears",
+  appleMapsUrl:
+    "https://maps.apple.com/?q=Restaurante%20El%20Olivo%20(Belmond%20La%20Residencia%20-%20Dei%C3%A0)%20Carrer%20Son%20Canals%2C%20s%2Fn%2C%2007179%20Dei%C3%A0%2C%20Illes%20Balears",
+  bingMapsUrl:
+    "https://www.bing.com/maps?q=Restaurante%20El%20Olivo%20(Belmond%20La%20Residencia%20-%20Dei%C3%A0)%20Carrer%20Son%20Canals%2C%20s%2Fn%2C%2007179%20Dei%C3%A0%2C%20Illes%20Balears",
+  phone: "+34 971 63 90 11",
+  whatsapp: "+34971639011",
+  website: "https://belmond.com/la-residencia-deia/dining/el-olivo",
+  email: "elolivo.lrs@belmond.com",
+  webAccessibility: "active",
+  tags: ["zona:tramuntana", "mod:cita-previa", "product:premium"],
+  schedule: "Martes a Domingo: 19:30 - 23:00",
+  shortDescription: {
+    es: "Alta gastronomía mediterránea a la luz de las velas en un antiguo molino de aceite del siglo XVI en Deià.",
+    en: "Exquisite fine dining by candlelight in a 16th-century olive press at Belmond La Residencia in Deià.",
+    ca: "Alta gastronomia mediterrània a la llum de les espelmes en una tafona del segle XVI a Deià.",
+    de: "Mediterrane Gourmetküche bei Kerzenschein in einer restaurierten Olivenölmühle aus dem 16. Jahrhundert in Deià.",
+  },
+  fullDescription: {
+    es: "Galardonado como uno de los restaurantes más románticos del mundo, El Olivo combina productos de la huerta propia de Deià, pescados frescos del Cantábrico y del Mediterráneo y una bodega con más de 500 referencias internacionales.",
+    en: "Recognized as one of the world's most romantic fine dining venues, blending organic estate produce with inventive Mediterranean cuisine and an acclaimed 500-label wine list.",
+    ca: "Reconegut entre els restaurants més romàntics del món a l'exclusiu hotel Belmond La Residencia.",
+    de: "Eines der romantischsten Spitzenrestaurants Europas im Luxushotel Belmond La Residencia mit exzellenter Weinkarte.",
+  },
+  highlights: {
+    es: [
+      "Cenas románticas iluminadas con más de 200 velas",
+      "Menú degustación con maridaje de sumiller de élite",
+      "Ingredientes cultivados en el huerto biodinámico de la finca",
+    ],
+    en: [
+      "Romantic candlelit dining with over 200 flickering candles",
+      "Chef's tasting menu paired by master sommeliers",
+      "Produce sourced directly from estate biodynamic gardens",
+    ],
+    ca: ["Sopars romàntics amb espelmes", "Menú degustació d'alta cuina", "Productes de l'hort propi"],
+    de: [
+      "Gourmet-Dinner bei über 200 Kerzen",
+      "Verfeinertes Degustationsmenü mit Spitzenweinen",
+      "Zutaten aus eigenem Bio-Garten",
+    ],
+  },
+  confidenceScore: 99,
+  lastVerifiedAt: "2026-08-29",
+  servicesProvided: {
+    es: [
+      "Cenas gourmet a la carta y menú degustación",
+      "Servicio de sumiller internacional",
+      "Eventos y celebraciones privadas exclusivas",
+    ],
+    en: ["Fine dining tasting menus", "International sommelier service", "Exclusive private dining events"],
+    ca: ["Sopars gourmet i maridatges", "Servei de sommelier internacional", "Esdeveniments privats"],
+    de: ["Gourmet-Menüs und Weinbegleitung", "Internationaler Sommelier-Service", "Exklusive Privat-Events"],
+  },
+  specialties: {
+    es: [
+      "Cordero Lechal Mallorquín Glaseado",
+      "Gamba Roja de Sóller en Texturas",
+      "Pescado Salvaje de Roca con Hierbas de la Tramuntana",
+    ],
+    en: ["Glazed Mallorcan Suckling Lamb", "Sóller Red Prawn Textures", "Wild Rockfish with Mountain Herbs"],
+    ca: ["Àngel de Llet Mallorquí Glacejat", "Gamba Vermella de Sóller", "Peix Salvatge de Roca"],
+    de: [
+      "Glasiertes mallorquinisches Milchlamm",
+      "Rote Sóller-Garnele in Texturen",
+      "Wilder Felsenfisch mit Bergkräutern",
+    ],
+  },
+};
