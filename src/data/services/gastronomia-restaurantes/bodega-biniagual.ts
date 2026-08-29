@@ -73,14 +73,6 @@ export const bodegaBiniagual: ServiceItem = {
       },
     },
   ],
-  mediaArticles: [
-    {
-      title: "Biniagual: El Renacer de una Aldea Histórica a través del Vino",
-      publisher: "Última Hora - Suplemento Enoturismo",
-      url: "https://www.ultimahora.es/noticias/cultura/",
-      date: "2025-09-12",
-    },
-  ],
   socialProofBadges: [
     {
       icon: "shield-check",

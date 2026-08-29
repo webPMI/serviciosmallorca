@@ -36,7 +36,7 @@ export const bodegasMaciaBatle: ServiceItem = {
   pricing: {
     startingPrice: "Visita guiada con cata desde 15€",
     depositRequired: "Reserva recomendada para catas",
-    rateType: "fixed_price",
+    rateType: "fixed",
     notes: {
       es: "Catas comentadas de vinos tintos, blancos y rosados autóctonos con maridaje de productos típicos mallorquines.",
       en: "Guided wine tastings featuring native reds, whites, and rosés paired with artisanal Balearic delicacies.",
@@ -71,14 +71,6 @@ export const bodegasMaciaBatle: ServiceItem = {
         ca: "Sí, oferim recorreguts guiats diaris per les vinyes i sales de botes en espanyol, alemany i anglès amb tast maridat.",
         de: "Ja, wir bieten tägliche Führungen durch Weinberge und Barriquekeller auf Spanisch, Deutsch und Englisch mit Verkostung an.",
       },
-    },
-  ],
-  mediaArticles: [
-    {
-      title: "Macià Batle: Arte, Cultura y Tradición Vitivinícola en Santa Maria",
-      publisher: "Diario de Mallorca - Suplemento Enogastronómico",
-      url: "https://www.diariodemallorca.es/gastronomia/",
-      date: "2025-10-18",
     },
   ],
   socialProofBadges: [
