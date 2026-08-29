@@ -72,11 +72,11 @@ describe("Sports & Wellbeing POI Module (Deporte & Bienestar Mallorca)", () => {
     expect(calviaFacilities.some((f) => f.id === "crossfit-mallorca-santa-ponca")).toBe(true);
     expect(calviaFacilities.some((f) => f.id === "pista-atletisme-magaluf-calvia")).toBe(true);
 
-    const raiguerFacilities = getSportsFacilitiesByZone("raiguer");
+    const raiguerFacilities = getSportsFacilitiesByZone("raiguer-pla");
     expect(raiguerFacilities.some((f) => f.id === "poliesportiu-mateu-canellas-inca")).toBe(true);
 
-    const nordFacilities = getSportsFacilitiesByZone("nord");
-    expect(nordFacilities.some((f) => f.id === "calistenia-passeig-port-pollenca")).toBe(true);
+    const llevantZone = getSportsFacilitiesByZone("llevant");
+    expect(llevantZone.some((f) => f.id === "poliesportiu-torre-dels-enagistes-manacor")).toBe(true);
   });
 
   it("verifies public sports facilities and calisthenics parks compliance", () => {
