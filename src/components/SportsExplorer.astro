@@ -806,6 +806,35 @@ const ZONES: Array<{ id: string; name: Record<Locale, string> }> = [
       width: 100%;
     }
   }
+
+  @media (max-width: 480px) {
+    .sports-main-heading {
+      font-size: 1.6rem;
+    }
+
+    .sports-facilities-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-md);
+    }
+
+    .poi-actions-row {
+      flex-direction: column;
+      gap: var(--space-xs);
+    }
+
+    .poi-actions-row .btn {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .map-instructions {
+      display: none;
+    }
+
+    .sports-iframe-map {
+      height: 280px;
+    }
+  }
 </style>
 
 <script>

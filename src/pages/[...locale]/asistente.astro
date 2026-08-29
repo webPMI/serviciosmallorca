@@ -783,4 +783,115 @@ const topCategories = CATEGORIES.slice(0, 12);
     background: #1ebc59;
     color: #fff;
   }
+
+  /* Responsive Breakpoints (GR-02) */
+  @media (max-width: 768px) {
+    .concierge-wizard {
+      padding: var(--space-lg);
+    }
+
+    .category-options-grid,
+    .zone-options-grid {
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: var(--space-xs);
+    }
+
+    .results-cards-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .concierge-wizard {
+      padding: var(--space-md);
+      margin-bottom: var(--space-xl);
+    }
+
+    .wizard-steps-bar {
+      margin-bottom: var(--space-lg);
+      padding-bottom: var(--space-sm);
+    }
+
+    .step-indicator {
+      font-size: var(--font-size-xs);
+    }
+
+    .wizard-opt-btn {
+      padding: var(--space-sm);
+    }
+
+    .opt-icon {
+      font-size: 1.5rem;
+    }
+
+    .match-actions .btn {
+      flex: 1;
+      text-align: center;
+      justify-content: center;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-title {
+      font-size: 1.75rem;
+    }
+
+    .concierge-wizard {
+      padding: var(--space-sm);
+      border-radius: var(--border-radius-md);
+    }
+
+    .wizard-steps-bar {
+      justify-content: space-around;
+      gap: var(--space-2xs);
+    }
+
+    .step-indicator span {
+      display: none;
+    }
+
+    .step-circle {
+      width: 32px;
+      height: 32px;
+      font-size: var(--font-size-sm);
+    }
+
+    .category-options-grid,
+    .zone-options-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-xs);
+    }
+
+    .wizard-opt-btn {
+      flex-direction: row;
+      justify-content: flex-start;
+      gap: var(--space-sm);
+      padding: var(--space-sm) var(--space-md);
+      text-align: left;
+    }
+
+    .opt-icon {
+      font-size: 1.4rem;
+    }
+
+    .step-nav-buttons {
+      flex-direction: column-reverse;
+      gap: var(--space-sm);
+    }
+
+    .step-nav-buttons .btn {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .results-header-flex {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .results-header-flex .btn {
+      width: 100%;
+      justify-content: center;
+    }
+  }
 </style>

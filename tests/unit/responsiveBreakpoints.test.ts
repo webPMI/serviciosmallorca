@@ -73,4 +73,25 @@ describe("📱 RESPONSIVE DESIGN & MOBILE VIEWPORTS (GR-02)", () => {
     expect(globalCss).toContain(".mobile-toggle-btn");
     expect(globalCss).toContain(".navbar-menu.is-active");
   });
+
+  it("debe garantizar adaptabilidad móvil estricta en Asistente Concierge (asistente.astro)", () => {
+    const asistenteAstro = fs.readFileSync(
+      path.resolve(process.cwd(), "src/pages/[...locale]/asistente.astro"),
+      "utf-8",
+    );
+    expect(asistenteAstro).toContain("@media (max-width: 768px)");
+    expect(asistenteAstro).toContain("@media (max-width: 640px)");
+    expect(asistenteAstro).toContain("@media (max-width: 480px)");
+    expect(asistenteAstro).toContain(".results-cards-grid");
+  });
+
+  it("debe garantizar adaptabilidad móvil estricta en SportsExplorer.astro", () => {
+    const sportsExplorerAstro = fs.readFileSync(
+      path.resolve(process.cwd(), "src/components/SportsExplorer.astro"),
+      "utf-8",
+    );
+    expect(sportsExplorerAstro).toContain("@media (max-width: 640px)");
+    expect(sportsExplorerAstro).toContain("@media (max-width: 480px)");
+    expect(sportsExplorerAstro).toContain(".sports-facilities-grid");
+  });
 });
