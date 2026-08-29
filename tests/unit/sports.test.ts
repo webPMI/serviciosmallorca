@@ -99,7 +99,7 @@ describe("Sports & Wellbeing POI Module (Deporte & Bienestar Mallorca)", () => {
     expect(sonHugo?.activityTypes).toContain("natacion");
 
     // Free access public workout areas
-    const bellver = getSportsFacilityById("circuito-running-bosque-bellver-palma");
+    const bellver = getSportsFacilityById("circuito-running-bosc-bellver");
     expect(bellver?.pricing.isFree).toBe(true);
     expect(bellver?.amenities.fuenteAgua).toBe(true);
   });
