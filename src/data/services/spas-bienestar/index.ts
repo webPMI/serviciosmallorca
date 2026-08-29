@@ -27,9 +27,13 @@ import { veterinariaSineu } from "./clinica-veterinaria-sineu.ts";
 import { veterinariaPorreres } from "./clinica-veterinaria-porreres.ts";
 import { veterinariaMontuiri } from "./clinica-veterinaria-montuiri.ts";
 import { palmaSportTennisClub } from "./palma-sport-tennis-club.ts";
+import { hospitalSonEspasesPalma } from "./hospital-son-espases-palma.ts";
+import { hospitalDeManacor } from "./hospital-de-manacor.ts";
 
 export {
   palmaSportTennisClub,
+  hospitalSonEspasesPalma,
+  hospitalDeManacor,
   arabellaSpa,
   sonBrullSpa,
   bodynaSpaMaricel,
@@ -73,6 +77,8 @@ export const SPAS_SERVICES: ServiceItem[] = [
   capRocatSpa,
   rafaNadalSportsCentre,
   clinicaJuanedaPalma,
+  hospitalSonEspasesPalma,
+  hospitalDeManacor,
   laBarberiaDeLaLonja,
   clinicaVeterinariaSonDureta,
   earthYogaPalma,
