@@ -254,11 +254,8 @@ export const macatelaTattoo: ServiceItem = {
       "Individuelle Motivberatung",
     ],
   },
-  image: "https://macatelatattoo.com/images/macatela-tattoo-studio-carrer-oms-palma.jpg",
-  gallery: [
-    "https://macatelatattoo.com/images/macatela-traditional-tattoo.jpg",
-    "https://macatelatattoo.com/images/macatela-blackwork-lettering.jpg",
-  ],
+  image: "/images/services/macatela-tattoo.jpg",
+  gallery: ["/images/services/macatela-tattoo.jpg"],
   schedule: "Lun - Sáb: 10:30 - 14:00, 16:30 - 20:30 (Domingo Cerrado)",
   lastVerifiedAt: "2026-08-25",
   confidenceScore: 97,

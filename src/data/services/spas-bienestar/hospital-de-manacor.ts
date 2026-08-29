@@ -27,11 +27,8 @@ export const hospitalDeManacor: ServiceItem = {
   coordinates: { lat: 39.5765, lng: 3.2085 },
   schedule: "Lunes a Domingo: 24 Horas (Servicio de Urgencias y Atención Hospitalaria Permanente)",
   lastVerifiedAt: "2026-08-29",
-  image:
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Manacor_Mallorca_Placa.jpg/1280px-Manacor_Mallorca_Placa.jpg",
-  gallery: [
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Manacor_Mallorca_Placa.jpg/1280px-Manacor_Mallorca_Placa.jpg",
-  ],
+  image: "/images/services/hospital-de-manacor.jpg",
+  gallery: ["/images/services/hospital-de-manacor.jpg"],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],
   emergency24h: true,

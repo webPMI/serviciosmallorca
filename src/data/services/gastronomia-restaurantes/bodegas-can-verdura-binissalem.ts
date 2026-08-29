@@ -135,13 +135,8 @@ export const bodegasCanVerduraBinissalem: ServiceItem = {
     ca: "El 2012, Tomeu Llabrés va començar a elaborar vi a un antic garatge a Binissalem per demostrar que el Mantonegro de vinya vella és un dels grans tresors del vi mediterrani.",
     de: "2012 begann Tomeu Llabrés in einer kleinen Garage in Binissalem Weine zu keltern – aus der Überzeugung, dass alte Mantonegro-Reben Weine von Weltklasse hervorbringen können.",
   },
-  image:
-    "https://vinscanverdura.com/wp-content/uploads/2022/10/WEB_CAN_VERDURA_VINS_2022_CAN_VERDURA_LANDING_PAGEWEB.jpg",
-  gallery: [
-    "https://vinscanverdura.com/wp-content/uploads/2022/10/WEB_CAN_VERDURA_VINS_2022_SUPERNOVA_LANDING_WEBPAGE.jpg",
-    "https://vinscanverdura.com/wp-content/uploads/2022/10/WEB_CAN_VERDURA_VINS_2022_CASES_ROSETESweb_LANDING_PAGE.jpg",
-    "https://vinscanverdura.com/wp-content/uploads/2022/10/WEB_CAN_VERDURA_VINS_2022_VINS_OBLIDATSweb_LANDING_PAGE.jpg",
-  ],
+  image: "/images/services/bodegas-can-verdura-binissalem.jpg",
+  gallery: ["/images/services/bodegas-can-verdura-binissalem.jpg"],
   schedule: "Lunes a Sábado: Visitas y catas bajo cita previa obligatoria por teléfono o web | Domingo cerrado",
   confidenceScore: 99,
   verificationStatus: "verified",

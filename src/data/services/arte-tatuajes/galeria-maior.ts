@@ -21,11 +21,8 @@ export const galeriaMaiorService: ServiceItem = {
   featured: true,
   status: "open",
   priceRange: "€€€",
-  image: "https://www.galeriamaior.es/images/galeria-maior-pollenca-sala.jpg",
-  gallery: [
-    "https://www.galeriamaior.es/images/galeria-maior-exposicion-escultura.jpg",
-    "https://www.galeriamaior.es/images/galeria-maior-artistas-baleares.jpg",
-  ],
+  image: "/images/services/galeria-maior-pollensa.jpg",
+  gallery: ["/images/services/galeria-maior-pollensa.jpg"],
   schedule: "Martes a Sábado 10:00 - 14:00 y 17:00 - 20:30, Domingos 10:00 - 13:30. Lunes cerrado.",
   tags: ["zona:alcudia-pollensa", "product:premium", "mod:en-local", "aud:expat", "temps:todo-el-ano"],
   foundedYear: 1990,

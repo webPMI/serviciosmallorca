@@ -21,11 +21,8 @@ export const marinaDeCalaDorService: ServiceItem = {
   featured: true,
   status: "open",
   priceRange: "€€€",
-  image: "https://marinacalador.com/images/marina-cala-dor-puerto-aereo.jpg",
-  gallery: [
-    "https://marinacalador.com/images/marina-cala-dor-amarres-yates.jpg",
-    "https://marinacalador.com/images/marina-cala-dor-paseo-maritimo.jpg",
-  ],
+  image: "/images/services/marina-de-cala-dor.jpg",
+  gallery: ["/images/services/marina-de-cala-dor.jpg"],
   schedule: "Oficina de Capitanía: 24 horas todos los días del año.",
   tags: ["zona:santanyi-migjorn", "product:lujo", "mod:en-local", "amb:patron", "aud:expat", "temps:todo-el-ano"],
   foundedYear: 1969,

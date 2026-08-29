@@ -253,11 +253,8 @@ export const viverosSantaMaria: ServiceItem = {
       "Groß- und Einzelhandel mit Pflanzkübeln, Terracotta, organischen Düngern und Pflanzenschutz",
     ],
   },
-  image: "https://viverossantamaria.com/images/viveros-santa-maria-garden-center.jpg",
-  gallery: [
-    "https://viverossantamaria.com/images/olivos-centenarios-mallorca.jpg",
-    "https://viverossantamaria.com/images/plantas-mediterraneas-vivero.jpg",
-  ],
+  image: "/images/services/viveros-santa-maria.jpg",
+  gallery: ["/images/services/viveros-santa-maria.jpg"],
   schedule: "Lun - Sáb: 08:00 - 19:00 | Dom: 09:00 - 14:00",
   lastVerifiedAt: "2026-08-27",
   confidenceScore: 97,

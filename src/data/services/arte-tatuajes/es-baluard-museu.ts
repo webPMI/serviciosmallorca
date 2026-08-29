@@ -21,11 +21,8 @@ export const esBaluardMuseuService: ServiceItem = {
   featured: true,
   status: "open",
   priceRange: "€€",
-  image: "https://www.esbaluard.org/images/es-baluard-museu-palma-fachada.jpg",
-  gallery: [
-    "https://www.esbaluard.org/images/es-baluard-terrazas-bahia.jpg",
-    "https://www.esbaluard.org/images/es-baluard-salas-exposicion.jpg",
-  ],
+  image: "/images/services/es-baluard-museu-palma.jpg",
+  gallery: ["/images/services/es-baluard-museu-palma.jpg"],
   schedule: "Martes a Sábado 10:00 - 20:00, Domingos 10:00 - 15:00. Lunes cerrado.",
   tags: ["zona:palma", "product:premium", "mod:en-local", "aud:familias", "temps:todo-el-ano"],
   foundedYear: 2004,

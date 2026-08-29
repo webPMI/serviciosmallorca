@@ -23,21 +23,23 @@ const {
   id,
 } = Astro.props;
 
-// Determine category banner fallback
+// Determine category banner fallback with authentic real JPEG photographs
 const categoryBanners: Record<string, string> = {
-  "gastronomia-catering": "/images/categories/gastronomia-catering.svg",
-  "salud-bienestar": "/images/categories/salud-bienestar.svg",
-  "nautica-charter": "/images/categories/nautica-charter.svg",
-  "deportes-aire-libre": "/images/categories/deportes.svg",
-  deporte: "/images/categories/deportes.svg",
-  "reformas-hogar": "/images/categories/reformas-hogar.svg",
-  "inmobiliaria-villas": "/images/categories/inmobiliaria-villas.svg",
-  "arte-tatuajes": "/images/categories/arte-tatuajes.svg",
-  "servicios-profesionales": "/images/categories/servicios-profesionales.svg",
-  "motor-transporte": "/images/categories/motor-transporte.svg",
+  "gastronomia-catering": "/images/categories/gastronomia.jpg",
+  "salud-bienestar": "/images/categories/salud.jpg",
+  "nautica-charter": "/images/categories/nautica.jpg",
+  "deportes-aire-libre": "/images/categories/deportes.jpg",
+  deporte: "/images/categories/deportes.jpg",
+  "reformas-hogar": "/images/categories/reformas.jpg",
+  "inmobiliaria-villas": "/images/categories/inmobiliaria.jpg",
+  "arte-tatuajes": "/images/categories/arte.jpg",
+  "servicios-profesionales": "/images/categories/profesionales.jpg",
+  "motor-transporte": "/images/categories/motor.jpg",
+  "jardineria-piscinas": "/images/categories/reformas.jpg",
+  "tecnologia-seguridad": "/images/categories/profesionales.jpg",
 };
 
-const fallbackBanner = categoryBanners[categorySlug] || "/images/categories/default.svg";
+const fallbackBanner = categoryBanners[categorySlug] || "/images/categories/profesionales.jpg";
 
 // Block known broken hosts like expired Imgur URLs
 const isKnownBrokenUrl = Boolean(

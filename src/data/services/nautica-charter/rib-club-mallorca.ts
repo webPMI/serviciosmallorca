@@ -21,11 +21,8 @@ export const ribClubMallorcaService: ServiceItem = {
   featured: true,
   status: "open",
   priceRange: "€€€",
-  image: "https://www.ribclub.com/images/rib-club-mallorca-flota-embarcaciones.jpg",
-  gallery: [
-    "https://www.ribclub.com/images/rib-club-puerto-portals.jpg",
-    "https://www.ribclub.com/images/rib-club-navegacion-calas.jpg",
-  ],
+  image: "/images/services/rib-club-mallorca.jpg",
+  gallery: ["/images/services/rib-club-mallorca.jpg"],
   schedule: "Lunes a Domingo 08:30 - 20:00 (Temporada alta) | 09:00 - 18:00 (Invierno)",
   tags: ["zona:calvia-andratx", "product:premium", "mod:cita-previa", "amb:patron", "aud:expat", "temps:todo-el-ano"],
   foundedYear: 2010,

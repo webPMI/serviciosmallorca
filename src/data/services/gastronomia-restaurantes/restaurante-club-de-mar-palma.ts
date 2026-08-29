@@ -136,11 +136,8 @@ export const restauranteClubDeMarPalma: ServiceItem = {
     ca: "El 1972, el Club de Mar va néixer a Palma per convertir la ciutat en port esportiu internacional de primer nivell, mantenint una cuina marinera d'alta qualitat.",
     de: "1972 gegründet, entwickelte sich der Club de Mar in Palma zum internationalen Treffpunkt für Segler und Yachtbesitzer mit herausragender mediterraner Gastronomie.",
   },
-  image: "https://www.clubdemar-mallorca.com/wp-content/webp-express/webp-images/uploads/2024/06/club-de-mar2.jpg.webp",
-  gallery: [
-    "https://www.clubdemar-mallorca.com/wp-content/webp-express/webp-images/uploads/2024/06/club-de-mar1-2.jpg.webp",
-    "https://www.clubdemar-mallorca.com/wp-content/webp-express/webp-images/uploads/2024/06/club-de-mar5-1.jpg.webp",
-  ],
+  image: "/images/services/restaurante-club-de-mar-palma.jpg",
+  gallery: ["/images/services/restaurante-club-de-mar-palma.jpg"],
   schedule: "Lunes a Domingo: 09:00 - 23:30 (Abierto todos los días del año)",
   confidenceScore: 99,
   verificationStatus: "verified",

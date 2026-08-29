@@ -130,11 +130,8 @@ export const mercatCobertInca: ServiceItem = {
   webAccessibility: "active",
   tags: ["zona:inca", "mod:cita-previa", "product:premium"],
   schedule: "Lun - Sáb: 07:30 - 14:00 | Jue: 07:00 - 15:00 | Dom: Cerrado",
-  image:
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Mercat_Cobert_Inca.jpg/1280px-Mercat_Cobert_Inca.jpg",
-  gallery: [
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Mercat_Cobert_Inca.jpg/1280px-Mercat_Cobert_Inca.jpg",
-  ],
+  image: "/images/services/mercat-cobert-inca.jpg",
+  gallery: ["/images/services/mercat-cobert-inca.jpg"],
   shortDescription: {
     es: "Mercado cubierto municipal de Inca (1930), despensa gastronómica del Raiguer con carnes locales, verduras del Pla y bares de auténtico berenar mallorquín.",
     en: "Inca's historic indoor market (1930), the culinary pantry of Raiguer featuring local meats, seasonal farm harvest, and authentic brunch bars.",

@@ -247,11 +247,8 @@ export const puertoPortalsMarina: ServiceItem = {
       "Yacht-Concierge-Service, Liegeplatz-Reservierungen und 24/7-Hafenbüro",
     ],
   },
-  image: "https://puertoportals.com/images/puerto-portals-yacht-harbour-mallorca.jpg",
-  gallery: [
-    "https://puertoportals.com/images/capitania-puerto-portals.jpg",
-    "https://puertoportals.com/images/marina-boats-portals-nous.jpg",
-  ],
+  image: "/images/services/puerto-portals-marina.jpg",
+  gallery: ["/images/services/puerto-portals-marina.jpg"],
   schedule: "Capitanía y Marinería: Abierto 24 horas, 365 días al año",
   lastVerifiedAt: "2026-08-27",
   confidenceScore: 98,

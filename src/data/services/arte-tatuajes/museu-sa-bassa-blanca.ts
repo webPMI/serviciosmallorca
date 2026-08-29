@@ -21,11 +21,8 @@ export const museuSaBassaBlancaService: ServiceItem = {
   featured: true,
   status: "open",
   priceRange: "€€",
-  image: "https://www.msbb.org/images/museu-sa-bassa-blanca-hassan-fathy.jpg",
-  gallery: [
-    "https://www.msbb.org/images/museu-sa-bassa-blanca-nins-gallery.jpg",
-    "https://www.msbb.org/images/museu-sa-bassa-blanca-sculptures.jpg",
-  ],
+  image: "/images/services/museu-sa-bassa-blanca-alcudia.jpg",
+  gallery: ["/images/services/museu-sa-bassa-blanca-alcudia.jpg"],
   schedule: "Miércoles a Domingo 10:00 - 18:00. Lunes y Martes cerrado.",
   tags: ["zona:alcudia-pollensa", "product:premium", "mod:cita-previa", "aud:familias", "temps:todo-el-ano"],
   foundedYear: 1993,

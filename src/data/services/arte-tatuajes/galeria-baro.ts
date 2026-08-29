@@ -21,11 +21,8 @@ export const galeriaBaroService: ServiceItem = {
   featured: true,
   status: "open",
   priceRange: "€€€",
-  image: "https://barogaleria.com/images/galeria-baro-palma-patio.jpg",
-  gallery: [
-    "https://barogaleria.com/images/galeria-baro-exposicion-principal.jpg",
-    "https://barogaleria.com/images/galeria-baro-escultura-instalacion.jpg",
-  ],
+  image: "/images/services/galeria-baro-palma.jpg",
+  gallery: ["/images/services/galeria-baro-palma.jpg"],
   schedule: "Martes a Viernes 11:00 - 14:00 y 16:00 - 20:00, Sábados 11:00 - 14:00. Lunes y Domingos cerrado.",
   tags: ["zona:palma", "product:lujo", "mod:en-local", "aud:expat", "temps:todo-el-ano"],
   foundedYear: 1999,

@@ -21,11 +21,8 @@ export const galeriaKewenigService: ServiceItem = {
   featured: true,
   status: "open",
   priceRange: "€€€",
-  image: "https://kewenig.com/images/galeria-kewenig-oratorio-palma.jpg",
-  gallery: [
-    "https://kewenig.com/images/kewenig-exposicion-contemporanea.jpg",
-    "https://kewenig.com/images/kewenig-palacete-sant-feliu.jpg",
-  ],
+  image: "/images/services/galeria-kewenig-palma.jpg",
+  gallery: ["/images/services/galeria-kewenig-palma.jpg"],
   schedule: "Lunes a Viernes 11:00 - 19:00, Sábados 11:00 - 14:00. Domingos cerrado.",
   tags: ["zona:palma", "product:lujo", "mod:en-local", "aud:expat", "temps:todo-el-ano"],
   foundedYear: 1986,

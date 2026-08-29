@@ -21,11 +21,8 @@ export const clubDeMarMallorcaService: ServiceItem = {
   featured: true,
   status: "open",
   priceRange: "€€€",
-  image: "https://www.clubdemar-mallorca.com/images/club-de-mar-superyates-palma.jpg",
-  gallery: [
-    "https://www.clubdemar-mallorca.com/images/club-de-mar-nueva-marina-vanguardia.jpg",
-    "https://www.clubdemar-mallorca.com/images/club-de-mar-muelle-pantalan.jpg",
-  ],
+  image: "/images/services/club-de-mar-mallorca.jpg",
+  gallery: ["/images/services/club-de-mar-mallorca.jpg"],
   schedule: "Capitanía y Muelle: 24/7 los 365 días del año.",
   tags: ["zona:palma", "product:lujo", "mod:en-local", "amb:patron", "aud:expat", "temps:todo-el-ano"],
   foundedYear: 1972,

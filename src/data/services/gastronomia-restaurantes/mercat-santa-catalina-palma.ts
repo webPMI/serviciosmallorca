@@ -130,11 +130,8 @@ export const mercatSantaCatalinaPalma: ServiceItem = {
   webAccessibility: "active",
   tags: ["zona:palma", "mod:cita-previa", "product:premium"],
   schedule: "Lun - Sáb: 07:00 - 17:00 | Dom: Cerrado",
-  image:
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Mercat_de_Santa_Catalina_Palma.jpg/1280px-Mercat_de_Santa_Catalina_Palma.jpg",
-  gallery: [
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Mercat_de_Santa_Catalina_Palma.jpg/1280px-Mercat_de_Santa_Catalina_Palma.jpg",
-  ],
+  image: "/images/services/mercat-santa-catalina-palma.jpg",
+  gallery: ["/images/services/mercat-santa-catalina-palma.jpg"],
   shortDescription: {
     es: "El mercado más antiguo de Palma (1905) en el bohemio barrio de Santa Catalina, famoso por sus barras de aperitivo, variats mallorquines y pescado fresco.",
     en: "Palma's oldest operating market (1905) in trendy Santa Catalina, famous for bustling tapas bars, Majorcan 'variats', and day-boat seafood.",

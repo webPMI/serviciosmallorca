@@ -253,11 +253,8 @@ export const fibwiTelecomunicaciones: ServiceItem = {
       "Business-Cloud-Telefonanlagen, feste IP-Adressen und maßgeschneiderte IT-Sicherheit",
     ],
   },
-  image: "https://fibwi.com/assets/images/fibwi-sede-inca-mallorca.jpg",
-  gallery: [
-    "https://fibwi.com/assets/images/instalacion-fibra-optica-mallorca.jpg",
-    "https://fibwi.com/assets/images/antenas-wimax-fincas-fibwi.jpg",
-  ],
+  image: "/images/services/fibwi-telecomunicaciones.jpg",
+  gallery: ["/images/services/fibwi-telecomunicaciones.jpg"],
   schedule: "Lun - Vie: 08:30 - 20:00 | Sáb: 09:00 - 14:00 (Dom cerrado)",
   lastVerifiedAt: "2026-08-27",
   confidenceScore: 95,

@@ -21,11 +21,8 @@ export const clubNauticPortocolomService: ServiceItem = {
   featured: true,
   status: "open",
   priceRange: "€€",
-  image: "https://www.cnportocolom.com/images/club-nautic-portocolom-bahia.jpg",
-  gallery: [
-    "https://www.cnportocolom.com/images/cn-portocolom-amarres-embarcaciones.jpg",
-    "https://www.cnportocolom.com/images/cn-portocolom-escuela-vela.jpg",
-  ],
+  image: "/images/services/club-nautic-portocolom.jpg",
+  gallery: ["/images/services/club-nautic-portocolom.jpg"],
   schedule: "Oficina y Marinería: Lunes a Domingo 08:00 - 20:00.",
   tags: ["zona:manacor-llevant", "product:premium", "mod:en-local", "amb:patron", "aud:familias", "temps:todo-el-ano"],
   foundedYear: 1968,

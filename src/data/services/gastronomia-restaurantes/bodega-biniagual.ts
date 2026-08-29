@@ -89,11 +89,8 @@ export const bodegaBiniagual: ServiceItem = {
     secondary: ["finca historica biniagual", "enoturismo binissalem", "catas vino exclusivas mallorca"],
     locationKeywords: ["Biniagual", "Binissalem", "Raiguer", "Mallorca"],
   },
-  image:
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Binissalem_Mallorca_Placa.jpg/1280px-Binissalem_Mallorca_Placa.jpg",
-  gallery: [
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Binissalem_Mallorca_Placa.jpg/1280px-Binissalem_Mallorca_Placa.jpg",
-  ],
+  image: "/images/services/bodega-biniagual.jpg",
+  gallery: ["/images/services/bodega-biniagual.jpg"],
   googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Bodega+Biniagual+Binissalem+Mallorca",
   appleMapsUrl: "https://maps.apple.com/?q=Bodega+Biniagual+Binissalem",
   bingMapsUrl: "https://www.bing.com/maps?q=Bodega+Biniagual+Binissalem",

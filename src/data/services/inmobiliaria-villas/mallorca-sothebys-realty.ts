@@ -252,11 +252,8 @@ export const mallorcaSothebysRealty: ServiceItem = {
       "Individueller Suchauftrag (Property Finding) für anspruchsvolle Privat- und institutionelle Investoren",
     ],
   },
-  image: "https://www.mallorcasir.com/images/mallorca-sothebys-office-palma.jpg",
-  gallery: [
-    "https://www.mallorcasir.com/images/luxury-villa-son-vida-sothebys.jpg",
-    "https://www.mallorcasir.com/images/finca-tramuntana-sothebys.jpg",
-  ],
+  image: "/images/services/mallorca-sothebys-realty.jpg",
+  gallery: ["/images/services/mallorca-sothebys-realty.jpg"],
   schedule: "Lun - Vie: 09:30 - 18:30 | Sáb: Con cita previa (Dom cerrado)",
   lastVerifiedAt: "2026-08-27",
   confidenceScore: 98,

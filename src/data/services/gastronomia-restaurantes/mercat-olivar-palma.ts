@@ -130,11 +130,8 @@ export const mercatOlivarPalma: ServiceItem = {
   webAccessibility: "active",
   tags: ["zona:palma", "mod:cita-previa", "product:premium"],
   schedule: "Lun - Jue: 07:00 - 14:30 | Vie: 07:00 - 20:00 | Sáb: 07:00 - 15:00 | Dom: Cerrado",
-  image:
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Mercat_de_l%27Olivar%2C_Palma.jpg/1280px-Mercat_de_l%27Olivar%2C_Palma.jpg",
-  gallery: [
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Mercat_de_l%27Olivar%2C_Palma.jpg/1280px-Mercat_de_l%27Olivar%2C_Palma.jpg",
-  ],
+  image: "/images/services/mercat-olivar-palma.jpg",
+  gallery: ["/images/services/mercat-olivar-palma.jpg"],
   shortDescription: {
     es: "El gran mercado gastronómico central de Palma con más de 100 paradas tradicionales, lonja de pescado fresco del Mediterráneo y animadas barras de tapas y ostras.",
     en: "Palma's central food market featuring over 100 stalls, fresh Mediterranean seafood, artisan cured meats, and bustling tapas bars.",

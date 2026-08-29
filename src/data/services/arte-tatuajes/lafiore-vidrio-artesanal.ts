@@ -261,11 +261,8 @@ export const lafioreVidrioArtesanal: ServiceItem = {
       "Online-Shop mit versichertem Versand nach ganz Europa",
     ],
   },
-  image: "https://lafiore.com/wp-content/uploads/2022/03/lafiore-fabrica-vidrio-mallorca.jpg",
-  gallery: [
-    "https://lafiore.com/wp-content/uploads/2022/03/artesania-vidrio-soplado.jpg",
-    "https://lafiore.com/wp-content/uploads/2022/03/galeria-tienda-lafiore.jpg",
-  ],
+  image: "/images/services/lafiore-vidrio-artesanal.jpg",
+  gallery: ["/images/services/lafiore-vidrio-artesanal.jpg"],
   schedule: "Lun - Vie: 10:00 - 18:00 | Sáb: 10:00 - 14:00 (Dom cerrado)",
   lastVerifiedAt: "2026-08-27",
   confidenceScore: 96,

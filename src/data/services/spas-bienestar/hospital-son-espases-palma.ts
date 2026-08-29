@@ -27,11 +27,8 @@ export const hospitalSonEspasesPalma: ServiceItem = {
   coordinates: { lat: 39.6052, lng: 2.6465 },
   schedule: "Lunes a Domingo: 24 Horas (Servicio de Urgencias y Atención Hospitalaria Permanente)",
   lastVerifiedAt: "2026-08-29",
-  image:
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Hospital_Son_Espases_Palma.jpg/1280px-Hospital_Son_Espases_Palma.jpg",
-  gallery: [
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Hospital_Son_Espases_Palma.jpg/1280px-Hospital_Son_Espases_Palma.jpg",
-  ],
+  image: "/images/services/hospital-son-espases-palma.jpg",
+  gallery: ["/images/services/hospital-son-espases-palma.jpg"],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],
   emergency24h: true,

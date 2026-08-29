@@ -21,11 +21,8 @@ export const galeriaPelairesService: ServiceItem = {
   featured: true,
   status: "open",
   priceRange: "€€€",
-  image: "https://www.pelaires.com/images/galeria-pelaires-fachada-palma.jpg",
-  gallery: [
-    "https://www.pelaires.com/images/galeria-pelaires-sala-principal.jpg",
-    "https://www.pelaires.com/images/galeria-pelaires-patio-esculturas.jpg",
-  ],
+  image: "/images/services/galeria-pelaires-palma.jpg",
+  gallery: ["/images/services/galeria-pelaires-palma.jpg"],
   schedule: "Martes a Viernes 10:30 - 18:30, Sábados 10:30 - 13:30. Domingo y Lunes cerrado.",
   tags: ["zona:palma", "product:lujo", "mod:en-local", "aud:expat", "temps:todo-el-ano"],
   foundedYear: 1969,

@@ -21,11 +21,8 @@ export const ccaAndratxService: ServiceItem = {
   featured: true,
   status: "open",
   priceRange: "€€",
-  image: "https://www.ccandratx.com/images/cca-andratx-exhibition-main.jpg",
-  gallery: [
-    "https://www.ccandratx.com/images/cca-andratx-sculpture-park.jpg",
-    "https://www.ccandratx.com/images/cca-andratx-artists-studios.jpg",
-  ],
+  image: "/images/services/cca-andratx-arte-contemporaneo.jpg",
+  gallery: ["/images/services/cca-andratx-arte-contemporaneo.jpg"],
   schedule: "Miércoles a Domingo 10:30 - 16:00. Lunes y Martes cerrado.",
   tags: ["zona:calvia-andratx", "product:premium", "mod:cita-previa", "aud:familias", "temps:todo-el-ano"],
   foundedYear: 2001,

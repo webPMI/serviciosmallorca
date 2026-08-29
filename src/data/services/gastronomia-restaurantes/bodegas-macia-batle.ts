@@ -89,11 +89,8 @@ export const bodegasMaciaBatle: ServiceItem = {
     secondary: ["enoturismo binissalem", "cata vinos mallorca", "bodega tradicional santa maria"],
     locationKeywords: ["Santa Maria del Camí", "Raiguer", "Mallorca", "DO Binissalem"],
   },
-  image:
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Bodega_Macia_Batle_Mallorca.jpg/1280px-Bodega_Macia_Batle_Mallorca.jpg",
-  gallery: [
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Bodega_Macia_Batle_Mallorca.jpg/1280px-Bodega_Macia_Batle_Mallorca.jpg",
-  ],
+  image: "/images/services/bodegas-macia-batle.jpg",
+  gallery: ["/images/services/bodegas-macia-batle.jpg"],
   googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Bodegas+Macia+Batle+Santa+Maria+Mallorca",
   appleMapsUrl: "https://maps.apple.com/?q=Bodegas+Macia+Batle+Santa+Maria",
   bingMapsUrl: "https://www.bing.com/maps?q=Bodegas+Macia+Batle+Santa+Maria",

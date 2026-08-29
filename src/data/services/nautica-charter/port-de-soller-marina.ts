@@ -21,11 +21,8 @@ export const portDeSollerMarinaService: ServiceItem = {
   featured: true,
   status: "open",
   priceRange: "€€€",
-  image: "https://www.portsdebalears.com/images/port-de-soller-bahia-tramuntana.jpg",
-  gallery: [
-    "https://www.portsdebalears.com/images/port-soller-amarres-embarcaciones.jpg",
-    "https://www.portsdebalears.com/images/port-soller-llaut-tradicional.jpg",
-  ],
+  image: "/images/services/port-de-soller-marina.jpg",
+  gallery: ["/images/services/port-de-soller-marina.jpg"],
   schedule: "Servicios portuarios y marinería: 08:00 - 21:00 todos los días.",
   tags: ["zona:tramuntana", "product:premium", "mod:en-local", "amb:patron", "aud:familias", "temps:todo-el-ano"],
   foundedYear: 1955,

@@ -130,11 +130,8 @@ export const mercatPereGarauPalma: ServiceItem = {
   webAccessibility: "active",
   tags: ["zona:palma", "mod:cita-previa", "product:premium"],
   schedule: "Lun - Sáb: 06:00 - 15:00 | Dom: Cerrado",
-  image:
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Mercat_Pere_Garau_Palma.jpg/1280px-Mercat_Pere_Garau_Palma.jpg",
-  gallery: [
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Mercat_Pere_Garau_Palma.jpg/1280px-Mercat_Pere_Garau_Palma.jpg",
-  ],
+  image: "/images/services/mercat-pere-garau-palma.jpg",
+  gallery: ["/images/services/mercat-pere-garau-palma.jpg"],
   shortDescription: {
     es: "El mercado más popular y diverso de Palma (1943), con venta directa de agricultores de la isla los martes, jueves y sábados a precios justos.",
     en: "Palma's most vibrant working-class food market (1943), hosting direct local farmer stalls on Tue, Thu, and Sat with fresh produce.",

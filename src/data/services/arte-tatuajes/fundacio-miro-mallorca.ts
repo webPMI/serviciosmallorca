@@ -21,11 +21,8 @@ export const fundacioMiroMallorcaService: ServiceItem = {
   featured: true,
   status: "open",
   priceRange: "€€",
-  image: "https://miromallorca.com/images/fundacio-miro-taller-sert-palma.jpg",
-  gallery: [
-    "https://miromallorca.com/images/fundacio-miro-son-boter.jpg",
-    "https://miromallorca.com/images/fundacio-miro-edificio-moneo.jpg",
-  ],
+  image: "/images/services/fundacio-miro-mallorca.jpg",
+  gallery: ["/images/services/fundacio-miro-mallorca.jpg"],
   schedule: "Martes a Sábado 10:00 - 18:00, Domingos y Festivos 10:00 - 15:00. Lunes cerrado.",
   tags: ["zona:palma", "product:premium", "mod:en-local", "aud:familias", "temps:todo-el-ano"],
   foundedYear: 1981,
