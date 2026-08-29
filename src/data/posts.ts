@@ -31,6 +31,7 @@ export interface BlogPost {
     avatar: string;
   };
   publishDate: string;
+  updatedDate?: string;
   readTime: string;
   coverImage: string;
   tags: string[];
@@ -636,6 +637,189 @@ Wir verzichten auf oberflächliche Marketingfloskeln. Wir bewerten und fördern 
     coverImage: "https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=1200&q=80",
     tags: ["Comercio Local", "Economia Mallorca", "Profesionales", "Sostenibilidad", "Guia Balear"],
     relatedServiceIds: ["fibwi-telecomunicaciones", "viveros-santa-maria"],
+    featured: true,
+  },
+  {
+    id: "guia-gastronomia-km0-mallorca",
+    slug: "guia-gastronomia-km0-mallorca",
+    postType: "guia",
+    topicCluster: "gastronomia",
+    title: {
+      es: "Gastronomía Km0 en Mallorca: De los Mercados Tradicionales a las Bodegas del Pla",
+      en: "Km0 Gastronomy in Mallorca: From Traditional Markets to Inland Wineries",
+      ca: "Gastronomia Km0 a Mallorca: Dels Mercats Tradicionals als Cellers del Pla",
+      de: "Km0-Gastronomie auf Mallorca: Von traditionellen Märkten zu den Weingütern des Pla",
+    },
+    excerpt: {
+      es: "Descubre el auténtico sabor balear a través de los productos de cercanía: aceite con D.O. Oli de Mallorca, flor de sal, sobrasada artesanal y las mejores bodegas.",
+      en: "Explore authentic Balearic flavors through local Km0 produce: D.O. Oli de Mallorca olive oil, flor de sal, artisan sobrasada, and premier wineries.",
+      ca: "Descobreix l'autèntic sabor balear a través dels productes de proximitat: oli D.O. Oli de Mallorca, flor de sal, sobrassada artesana i cellers.",
+      de: "Entdecken Sie den echten balearischen Geschmack durch lokale Km0-Erzeugnisse: D.O. Olivenöl, Flor de Sal, handwerkliche Sobrasada und Weingüter.",
+    },
+    content: {
+      es: `
+Mallorca ofrece un patrimonio gastronómico extraordinario que va mucho más allá de los restaurantes turísticos. La cocina balear se fundamenta en ingredientes frescos, respeto a la temporada y un vínculo estrecho entre agricultores, pescadores y chefs locales.
+
+### 1. Los Tres Pilares del Producto Balear
+- **Oli de Mallorca (D.O.P.):** Elaborado principalmente con aceituna mallorquina, arbequina y picual. Imprescindible para el tradicional *pa amb oli*.
+- **Flor de Sal d'Es Trenc:** Cosechada artesanalmente en las salinas naturales del sur de la isla.
+- **Sobrassada de Mallorca con Indicación Geográfica Protegida (IGP):** Curada pacientemente con pimentón dulce y especias autóctonas.
+
+### 2. Mercados Tradicionales para Comprar Km0
+Visitar los mercados semanales es la mejor forma de conectar con el productor local:
+1. **Mercat de l'Olivar & Santa Catalina (Palma):** Pescado fresco de la lonja, quesos de Mahón y embutidos de matanza.
+2. **Mercado de Sineu (Miércoles):** El mercado más antiguo de Mallorca (desde 1306), ideal para frutas, hortalizas y aperos artesanos.
+3. **Mercado de Santa María del Camí (Domingos):** Epicentro ecológico y vinícola con productores certificados de la comarca del Raiguer.
+
+### 3. Enología y Bodegas del Pla y Raiguer
+La tradición vitivinícola de Mallorca cuenta con dos denominaciones de origen protegidas: **D.O. Binissalem** y **D.O. Pla i Llevant**. Variedades autóctonas como *Manto Negro*, *Callet* y *Premsal Blanc* ofrecen perfiles aromáticos únicos que reflejan la calidez del suelo mediterráneo.
+
+### 4. Consejos para Residentes y Visitantes
+Para apoyar la economía circular y disfrutar del mejor producto:
+- Busca el distintivo **Venta Directa** o **Km0** en cooperativas agrarias y restaurantes colaboradores.
+- Pregunta siempre por el pescado de lonja del día (*cap-roig*, *gallo de San Pedro* o *dentón*).
+- Apoya a los pequeños hornos centenarios que siguen elaborando ensaimadas con manteca de cerdo negro autóctono.
+      `,
+      en: `
+Mallorca boasts an extraordinary culinary heritage centered around seasonal freshness, island-grown ingredients, and direct relationships between farmers, fishermen, and visionary chefs.
+
+### 1. The Core Pillars of Balearic Km0 Produce
+- **D.O.P. Oli de Mallorca:** Cold-pressed extra virgin olive oil made from native Mallorcan and Arbequina olives. Essential for authentic *pa amb oli*.
+- **Flor de Sal d'Es Trenc:** Harvested naturally from the pristine salt flats in the south of the island.
+- **Sobrassada de Mallorca (PGI):** Slow-cured with paprika, garlic, and sea salt, representing centuries of artisanal butcher traditions.
+
+### 2. Traditional Markets for Local Produce
+1. **Mercat de l'Olivar & Santa Catalina (Palma):** Daily fresh fish market, artisanal cheeses, and local cured meats.
+2. **Sineu Market (Wednesdays):** Mallorca's oldest market (operating since 1306) in the geographical heart of the island.
+3. **Santa María del Camí (Sundays):** The island's prime organic and wine market surrounded by historic vineyards.
+
+### 3. Wine Routes & Indigenous Varietals
+Protected under **D.O. Binissalem** and **D.O. Pla i Llevant**, indigenous grapes like *Manto Negro*, *Callet*, and *Premsal Blanc* yield distinctive Mediterranean wines with mineral depth.
+      `,
+      ca: `
+La gastronomia de Mallorca és el reflex de la nostra terra i la nostra història. Apostar pel producte Km0 és garantir la continuïtat del nostre paisatge agrari.
+
+### 1. Productes amb Segell de Qualitat
+- **Oli de Mallorca (D.O.P.)**
+- **Flor de Sal d'Es Trenc**
+- **Sobrassada de Mallorca (IGP)**
+
+### 2. Mercats Recomanats
+- **Mercat de l'Olivar (Palma)**
+- **Mercat de Sineu (Dimecres)**
+- **Mercat de Santa Maria del Camí (Diumenge)**
+      `,
+      de: `
+Mallorcas kulinarische Seele gründet auf frischen saisonalen Zutaten, traditionellem Handwerk und kurzen Wegen vom Feld auf den Tisch.
+
+### 1. Die Spitzenprodukte der Insel
+- **D.O.P. Oli de Mallorca:** Natives Olivenöl extra aus traditioneller Kaltpressung.
+- **Flor de Sal d'Es Trenc:** Reines Natursalz aus den geschützten Salinen des Südens.
+- **Sobrassada de Mallorca:** Handwerklich gereifte Wurstspezialität mit geschützter Herkunftsangabe.
+
+### 2. Wochenmärkte für frische Inselerzeugnisse
+- **Mercat de l'Olivar & Santa Catalina (Palma)**
+- **Mittwochsmarkt in Sineu (seit 1306)**
+- **Sonntagsmarkt in Santa María del Camí (Bio & Weinbau)**
+      `,
+    },
+    category: "gastronomia-restaurantes",
+    author: {
+      name: "Cati Rosselló",
+      role: "Especialista en Gastronomía & Enología Balear",
+      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80",
+    },
+    publishDate: "2026-08-29",
+    updatedDate: "2026-08-29",
+    readTime: "6 min",
+    coverImage: "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1200&q=80",
+    tags: ["Gastronomia", "Vino", "Km0", "Mercados", "Mallorca", "Aceite de Oliva"],
+    relatedServiceIds: ["forn-de-sant-joan", "restaurante-flanigan"],
+    featured: true,
+  },
+  {
+    id: "mejores-rutas-senderismo-tramuntana",
+    slug: "mejores-rutas-senderismo-tramuntana",
+    postType: "guia",
+    topicCluster: "aventura_lifestyle",
+    title: {
+      es: "Senderismo y Deporte al Aire Libre en la Serra de Tramuntana: Guía Completa",
+      en: "Hiking and Outdoor Sports in the Serra de Tramuntana: Complete Guide",
+      ca: "Senderisme i Esport a l'Aire Lliure a la Serra de Tramuntana: Guia Completa",
+      de: "Wandern & Outdoor-Sport in der Serra de Tramuntana: Kompletter Leitfaden",
+    },
+    excerpt: {
+      es: "Descubre los mejores tramos de la ruta GR-221 (Ruta de Pedra en Sec), zonas de entrenamiento funcional, fuentes de agua potable y consejos de seguridad en la montaña.",
+      en: "Discover key stages of the GR-221 Dry Stone Route, functional fitness parks, mountain spring fountains, and safety tips in the UNESCO Tramuntana.",
+      ca: "Descobreix els millors trams de la ruta GR-221 (Ruta de Pedra en Sec), zones d'entrenament, fonts d'aigua i consells de seguretat.",
+      de: "Erkunden Sie Abschnitte des Fernwanderwegs GR-221, Outdoor-Fitnessparks, Trinkwasserquellen und Sicherheitshinweise für die Tramuntana.",
+    },
+    content: {
+      es: `
+La **Serra de Tramuntana**, declarada Patrimonio de la Humanidad por la UNESCO en la categoría de Paisaje Cultural, es el mayor paraíso para los amantes del senderismo, el trail running y el deporte al aire libre en el Mediterráneo.
+
+### 1. Tramos Emblemáticos de la Ruta GR-221
+La famosa *Ruta de Pedra en Sec* recorre la espina dorsal de la cordillera a lo largo de más de 160 kilómetros:
+1. **De Valldemossa a Deià (Camí de s'Arxiduc):** Vistas vertiginosas sobre el mar, encinares centenarios y restos históricos de la época del Archiduque Luis Salvador.
+2. **Barranc de Biniaraix (Sóller - Cúber):** Monumento de ingeniería popular con miles de escalones de piedra seca que ascienden hacia los embalses de la montaña.
+3. **De Deià a Sóller por el Camí de Castelló:** Ruta suave y accesible entre olivares milenarios y fincas tradicionales con paradas en miradores panorámicos.
+
+### 2. Puntos de Agua y Sombra para Deportistas
+En verano y entretiempo, la hidratación es fundamental:
+- **Fuentes Naturales:** Las fuentes de montaña (*font des Verger*, *font de s'Obi*) pueden presentar caudal variable según la estación. Lleva siempre al menos 2 litros de agua por persona.
+- **Instalaciones Deportivas Públicas:** Consulta nuestra sección de **Deporte & Parques** para localizar circuitos con fuentes públicas verificadas y áreas de calistenia con sombra arbolada en Sóller, Esporles y Bunyola.
+
+### 3. Normas de Respeto y Seguridad en el Medio Natural
+- Mantente en los senderos señalizados y respeta los pasos privados (*botadors*).
+- No dejes ningún residuo y respeta el ganado autóctono (ovejas, cabras salvajes).
+- Consulta la previsión meteorológica de AEMET antes de salir: la niebla y los cambios bruscos de viento en altura pueden dificultar la orientación.
+      `,
+      en: `
+The **Serra de Tramuntana**, recognized as a UNESCO World Heritage cultural landscape, is the premier Mediterranean destination for hiking, trail running, and outdoor wellness.
+
+### 1. Iconic Stages of the GR-221 Dry Stone Route
+1. **Valldemossa to Deià (Camí de s'Arxiduc):** Panoramic cliffside paths and centenary holm oak forests.
+2. **Barranc de Biniaraix (Sóller valley):** A masterpiece of dry-stone stairways climbing toward mountain reservoirs.
+3. **Deià to Sóller via Camí de Castelló:** Gentle family-friendly route meandering through ancient olive groves.
+
+### 2. Hydration & Shaded Rest Points
+Always carry ample water (minimum 2 liters) and check our **Sports & Fitness Hub** for verified public water stations, shaded workout parks, and padel studios across Tramuntana villages.
+      `,
+      ca: `
+La Serra de Tramuntana és el tresor natural més valuós de Mallorca.
+
+### 1. Trams Clau de la GR-221
+- **Valldemossa a Deià pel Camí de s'Arxiduc**
+- **Barranc de Biniaraix (Sóller)**
+- **Camí de Castelló (Deià - Sóller)**
+
+### 2. Consells de Seguretat
+Portau sempre aigua suficient, calçat de muntanya i respectau els marges de pedra en sec.
+      `,
+      de: `
+Das UNESCO-Welterbe der **Serra de Tramuntana** bietet weltklasse Routen für Wanderer, Trailrunner und Naturliebhaber.
+
+### 1. Beliebte Etappen des Trockensteinwegs GR-221
+- **Valldemossa nach Deià über den Reitweg des Erzherzogs**
+- **Die Biniaraix-Schlucht bei Sóller**
+- **Camí de Castelló zwischen Deià und Sóller**
+
+### 2. Wasserstellen & Fitness
+Nutzen Sie unseren **Sport & Fitness Guide**, um schattige Calisthenics-Parks und Trinkwasserbrunnen in Sóller, Esporles und Bunyola zu finden.
+      `,
+    },
+    category: "espacios-deportivos-publicos",
+    author: {
+      name: "Mateu Bauzà",
+      role: "Guía de Montaña & Entrenador de Trail Running",
+      avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80",
+    },
+    publishDate: "2026-08-29",
+    updatedDate: "2026-08-29",
+    readTime: "7 min",
+    coverImage: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80",
+    tags: ["Senderismo", "Tramuntana", "Deporte", "GR-221", "Naturaleza", "Mallorca"],
+    relatedServiceIds: ["palma-sport-tennis-club", "rafa-nadal-sports-centre"],
     featured: true,
   },
 ];

@@ -97,44 +97,60 @@ const nextPrice = calculateNextBidPrice(spot.currentBidEuros);
 <style>
   .spot-card {
     padding: var(--space-lg);
-    border-radius: var(--border-radius-md);
+    border-radius: var(--border-radius-lg);
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     transition:
-      transform var(--transition-fast),
-      box-shadow var(--transition-fast);
+      transform var(--transition-smooth),
+      box-shadow var(--transition-smooth),
+      border-color var(--transition-smooth);
     border: 1px solid var(--color-surface-border);
     width: 100%;
     box-sizing: border-box;
     min-width: 0;
     overflow: hidden;
+    background: var(--color-surface);
+    backdrop-filter: blur(8px);
   }
 
   .spot-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-md);
+    transform: translateY(-6px);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
   }
 
   .spot-diamond {
-    border: 2px solid #00d2ff;
-    background: linear-gradient(180deg, rgba(0, 210, 255, 0.08) 0%, var(--color-surface) 100%);
+    border: 2px solid rgba(0, 210, 255, 0.6);
+    background: radial-gradient(circle at top right, rgba(0, 210, 255, 0.15) 0%, var(--color-surface) 75%);
+    box-shadow: 0 4px 20px rgba(0, 210, 255, 0.15);
+  }
+
+  .spot-diamond:hover {
+    box-shadow: 0 8px 30px rgba(0, 210, 255, 0.3);
+    border-color: #00d2ff;
   }
 
   .spot-gold {
-    border: 2px solid #ffd700;
-    background: linear-gradient(180deg, rgba(255, 215, 0, 0.08) 0%, var(--color-surface) 100%);
+    border: 2px solid rgba(255, 215, 0, 0.6);
+    background: radial-gradient(circle at top right, rgba(255, 215, 0, 0.15) 0%, var(--color-surface) 75%);
+    box-shadow: 0 4px 20px rgba(255, 215, 0, 0.15);
+  }
+
+  .spot-gold:hover {
+    box-shadow: 0 8px 30px rgba(255, 215, 0, 0.3);
+    border-color: #ffd700;
   }
 
   .spot-silver {
-    border: 2px solid #c0c0c0;
-    background: linear-gradient(180deg, rgba(192, 192, 192, 0.08) 0%, var(--color-surface) 100%);
+    border: 2px solid rgba(192, 192, 192, 0.6);
+    background: radial-gradient(circle at top right, rgba(192, 192, 192, 0.12) 0%, var(--color-surface) 75%);
+    box-shadow: 0 4px 15px rgba(192, 192, 192, 0.1);
   }
 
   .spot-bronze {
-    border: 2px solid #cd7f32;
-    background: linear-gradient(180deg, rgba(205, 127, 50, 0.08) 0%, var(--color-surface) 100%);
+    border: 2px solid rgba(205, 127, 50, 0.5);
+    background: radial-gradient(circle at top right, rgba(205, 127, 50, 0.1) 0%, var(--color-surface) 75%);
   }
 
   .spot-rank-badge {
@@ -142,13 +158,15 @@ const nextPrice = calculateNextBidPrice(spot.currentBidEuros);
     top: var(--space-sm);
     right: var(--space-sm);
     font-weight: 800;
-    font-size: 0.72rem;
-    padding: 3px 8px;
+    font-size: 0.75rem;
+    padding: 4px 10px;
     border-radius: var(--border-radius-full);
-    background: rgba(0, 0, 0, 0.75);
+    background: rgba(15, 23, 42, 0.85);
     color: #fff;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(6px);
     z-index: 1;
+    letter-spacing: 0.02em;
   }
 
   .spot-avatar img {

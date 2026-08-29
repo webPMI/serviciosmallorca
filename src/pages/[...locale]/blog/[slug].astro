@@ -52,6 +52,13 @@ const formattedDate = new Date(post.publishDate).toLocaleDateString(
   { day: "numeric", month: "long", year: "numeric" },
 );
 
+const formattedUpdatedDate = post.updatedDate
+  ? new Date(post.updatedDate).toLocaleDateString(
+      locale === "en" ? "en-GB" : locale === "de" ? "de-DE" : locale === "ca" ? "ca-ES" : "es-ES",
+      { day: "numeric", month: "long", year: "numeric" },
+    )
+  : undefined;
+
 // Extract TOC headings from content (### headings)
 const tocHeadings = content
   .split("\n")
@@ -77,6 +84,7 @@ const schemaOrg = {
   description: excerpt,
   image: post.coverImage,
   datePublished: post.publishDate,
+  dateModified: post.updatedDate || post.publishDate,
   url: articleUrl,
   author: {
     "@type": "Person",
@@ -216,8 +224,10 @@ const itemListSchema =
               <span class="author-role">{post.author.role}</span>
             </div>
             <span class="bar-separator" aria-hidden="true">·</span>
-            <time datetime={post.publishDate} class="publish-time">
-              {formattedDate}
+            <time datetime={post.updatedDate || post.publishDate} class="publish-time">
+              {formattedDate}{
+                formattedUpdatedDate && formattedUpdatedDate !== formattedDate ? ` · Act. ${formattedUpdatedDate}` : ""
+              }
             </time>
             <span class="bar-separator" aria-hidden="true">·</span>
             <span class="read-time">⏱️ {readTimeDisplay} {translations["blog.readTime"]}</span>
