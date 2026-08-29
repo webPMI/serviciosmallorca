@@ -122,4 +122,45 @@ describe("userProfile utility module", () => {
       );
     });
   });
+
+  describe("assignBusinessToUser & removeBusinessFromUser", () => {
+    it("assigns a business, elevates user role to manager and updates managedServices", async () => {
+      const { assignBusinessToUser } = await import("../../src/lib/userProfile");
+
+      vi.mocked(firestore.getDoc).mockResolvedValueOnce({
+        exists: () => true,
+        data: () => ({ role: "user", displayName: "Owner", managedServices: [] }),
+      } as any);
+
+      await assignBusinessToUser(mockDb, "user-owner-1", "restaurante-el-camino");
+
+      expect(firestore.updateDoc).toHaveBeenCalledWith(
+        { path: "users/user-owner-1" },
+        {
+          role: "manager",
+          managedServices: ["restaurante-el-camino"],
+          updatedAt: "MOCK_TIMESTAMP",
+        },
+      );
+    });
+
+    it("removes a business from managedServices", async () => {
+      const { removeBusinessFromUser } = await import("../../src/lib/userProfile");
+
+      vi.mocked(firestore.getDoc).mockResolvedValueOnce({
+        exists: () => true,
+        data: () => ({ role: "manager", managedServices: ["biz-1", "biz-2"] }),
+      } as any);
+
+      await removeBusinessFromUser(mockDb, "user-owner-1", "biz-1");
+
+      expect(firestore.updateDoc).toHaveBeenCalledWith(
+        { path: "users/user-owner-1" },
+        {
+          managedServices: ["biz-2"],
+          updatedAt: "MOCK_TIMESTAMP",
+        },
+      );
+    });
+  });
 });

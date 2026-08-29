@@ -21,6 +21,7 @@ export interface UserProfile {
   displayName: string;
   email: string;
   photoURL: string | null;
+  managedServices?: string[];
   createdAt: ReturnType<typeof serverTimestamp>;
   updatedAt: ReturnType<typeof serverTimestamp>;
 }
@@ -108,6 +109,38 @@ export async function getAllUsers(db: Firestore): Promise<Array<UserProfile & { 
 export async function updateUserRole(db: Firestore, uid: string, role: UserRole): Promise<void> {
   await updateDoc(doc(db, "users", uid), {
     role,
+    updatedAt: serverTimestamp(),
+  });
+}
+
+/**
+ * Assign a business to a user, upgrading role to manager if needed.
+ */
+export async function assignBusinessToUser(db: Firestore, uid: string, serviceId: string): Promise<void> {
+  const profile = await getUserProfile(db, uid);
+  const currentServices = profile?.managedServices || [];
+  const updatedServices = Array.from(new Set([...currentServices, serviceId]));
+
+  const newRole = profile?.role === "admin" ? "admin" : "manager";
+
+  await updateDoc(doc(db, "users", uid), {
+    role: newRole,
+    managedServices: updatedServices,
+    updatedAt: serverTimestamp(),
+  });
+}
+
+/**
+ * Remove a business from a user's managed services.
+ */
+export async function removeBusinessFromUser(db: Firestore, uid: string, serviceId: string): Promise<void> {
+  const profile = await getUserProfile(db, uid);
+  if (!profile) return;
+  const currentServices = profile.managedServices || [];
+  const updatedServices = currentServices.filter((s) => s !== serviceId);
+
+  await updateDoc(doc(db, "users", uid), {
+    managedServices: updatedServices,
     updatedAt: serverTimestamp(),
   });
 }

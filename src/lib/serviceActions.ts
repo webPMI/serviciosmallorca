@@ -183,6 +183,7 @@ export async function updateClaimStatus(
   claimId: string,
   status: RequestStatus,
   targetUserUid?: string,
+  serviceId?: string,
 ): Promise<void> {
   // Actualizar en LocalStorage
   if (typeof window !== "undefined") {
@@ -206,13 +207,18 @@ export async function updateClaimStatus(
       updatedAt: serverTimestamp(),
     });
 
-    // Si se aprueba, escalamos al usuario a rol 'manager'
+    // Si se aprueba, asignamos el negocio al usuario y actualizamos su perfil
     if (status === "approved" && targetUserUid) {
-      const userRef = doc(db, "users", targetUserUid);
-      await updateDoc(userRef, {
-        role: "manager",
-        updatedAt: serverTimestamp(),
-      });
+      const { assignBusinessToUser } = await import("./userProfile.ts");
+      if (serviceId) {
+        await assignBusinessToUser(db, targetUserUid, serviceId);
+      } else {
+        const userRef = doc(db, "users", targetUserUid);
+        await updateDoc(userRef, {
+          role: "manager",
+          updatedAt: serverTimestamp(),
+        });
+      }
     }
   } catch (err) {
     console.warn("Firestore update error (fallback to local state applied):", err);

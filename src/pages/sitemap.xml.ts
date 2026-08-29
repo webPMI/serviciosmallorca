@@ -66,6 +66,7 @@ export const GET: APIRoute = async () => {
   addMultilingualUrl("/servicios", "0.95", "daily", now);
   addMultilingualUrl("/cuadro-de-honor", "0.95", "daily", now);
   addMultilingualUrl("/blog", "0.90", "daily", now);
+  addMultilingualUrl("/asistente", "0.90", "daily", now);
   addMultilingualUrl("/tours", "0.90", "weekly", now);
   addMultilingualUrl("/unete", "0.90", "weekly", now);
   addMultilingualUrl("/deporte", "0.90", "weekly", now);

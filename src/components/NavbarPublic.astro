@@ -24,6 +24,7 @@ const isActive = (path: string): boolean => {
 const isHomeActive = isActive(homeUrl);
 const isServicesActive = isActive(`${homeUrl}servicios`) || currentPath.includes("/servicios");
 const isSportsActive = isActive(`${homeUrl}deporte`) || currentPath.includes("/deporte");
+const isAssistantActive = isActive(`${homeUrl}asistente`) || currentPath.includes("/asistente");
 const isToursActive = isActive(`${homeUrl}tours`) || currentPath.includes("/tours");
 const isHistoryActive = isActive(`${homeUrl}memoria-historica`) || currentPath.includes("/memoria-historica");
 const isCommunityActive = isActive(`${homeUrl}comunidad`) || currentPath.includes("/comunidad");
@@ -81,6 +82,13 @@ const isRegisterActive = isActive(`${homeUrl}register`);
           aria-current={isSportsActive ? "page" : undefined}
         >
           🏃 {translations["nav.sports"] || "Deporte"}
+        </a>
+        <a
+          href={`${homeUrl}asistente`}
+          class:list={["nav-link", "nav-desktop-link", { active: isAssistantActive }]}
+          aria-current={isAssistantActive ? "page" : undefined}
+        >
+          🤖 {translations["nav.assistant"] || "Asistente"}
         </a>
         <a
           href={`${homeUrl}tours`}

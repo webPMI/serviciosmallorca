@@ -345,8 +345,10 @@ const { translations } = Astro.props;
           btn.addEventListener("click", async () => {
             const claimId = btn.getAttribute("data-claim-id")!;
             const uid = btn.getAttribute("data-uid")!;
-            await updateClaimStatus(db, claimId, "approved", uid);
-            alert("✅ Reclamación aprobada. La titularidad ha sido verificada.");
+            const serviceId = btn.getAttribute("data-service-id") || "";
+            btn.setAttribute("disabled", "true");
+            await updateClaimStatus(db, claimId, "approved", uid, serviceId);
+            alert("✅ Reclamación aprobada. La titularidad y el rol Manager han sido verificados.");
             location.reload();
           });
         });
@@ -354,6 +356,7 @@ const { translations } = Astro.props;
         claimsContainer.querySelectorAll(".btn-reject-claim").forEach((btn) => {
           btn.addEventListener("click", async () => {
             const claimId = btn.getAttribute("data-claim-id")!;
+            btn.setAttribute("disabled", "true");
             await updateClaimStatus(db, claimId, "rejected");
             alert("❌ Reclamación rechazada.");
             location.reload();
@@ -362,15 +365,31 @@ const { translations } = Astro.props;
       }
     }
 
-    // Load claims belonging to this manager
-    const claims = await getUserClaims(db, user.uid);
-    const approvedClaims = claims.filter((c) => c.status === "approved");
+    // Load claims and profile belonging to this manager
+    const { getUserProfile } = await import("../lib/userProfile");
+    const [claims, profile] = await Promise.all([getUserClaims(db, user.uid), getUserProfile(db, user.uid)]);
 
-    // If role is manager or admin, match approved services (or default to sample services for demo)
-    const approvedServiceIds = approvedClaims.map((c) => c.serviceId);
-    currentManagedServices = SERVICES.filter(
-      (s) => approvedServiceIds.includes(s.id) || approvedServiceIds.includes(s.slug) || role === "admin",
+    const approvedClaims = claims.filter((c) => c.status === "approved");
+    const profileManagedServices = profile?.managedServices || [];
+
+    // If role is manager or admin, match approved services
+    const approvedServiceIds = Array.from(
+      new Set([...approvedClaims.map((c) => c.serviceId), ...profileManagedServices]),
     );
+
+    currentManagedServices = SERVICES.filter(
+      (s) =>
+        approvedServiceIds.includes(s.id) ||
+        approvedServiceIds.includes(s.slug) ||
+        (role === "admin" && approvedServiceIds.length === 0
+          ? false
+          : approvedServiceIds.includes(s.id) || approvedServiceIds.includes(s.slug)),
+    );
+
+    // If admin has no specifically assigned services, show the first 6 active services
+    if (role === "admin" && currentManagedServices.length === 0) {
+      currentManagedServices = SERVICES.slice(0, 6);
+    }
 
     if (countBadge) countBadge.textContent = currentManagedServices.length.toString();
 

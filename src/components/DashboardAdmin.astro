@@ -1150,7 +1150,7 @@ const withNewsCount = SERVICES.filter(
               c.status === "pending"
                 ? `
               <div class="actions-flex">
-                <button type="button" class="btn btn-primary btn-sm approve-claim-btn" data-id="${c.id}" data-uid="${c.applicantUid}">✓ Aprobar y asignar rol Manager</button>
+                <button type="button" class="btn btn-primary btn-sm approve-claim-btn" data-id="${c.id}" data-uid="${c.applicantUid}" data-service-id="${c.serviceId}">✓ Aprobar y asignar rol Manager</button>
                 <button type="button" class="btn btn-secondary btn-sm reject-claim-btn" data-id="${c.id}">✕ Rechazar</button>
               </div>
             `
@@ -1165,7 +1165,9 @@ const withNewsCount = SERVICES.filter(
           btn.addEventListener("click", async () => {
             const id = btn.getAttribute("data-id")!;
             const uid = btn.getAttribute("data-uid")!;
-            await updateClaimStatus(db, id, "approved", uid);
+            const serviceId = btn.getAttribute("data-service-id") || "";
+            btn.setAttribute("disabled", "true");
+            await updateClaimStatus(db, id, "approved", uid, serviceId);
             loadAdminData();
           });
         });
@@ -1173,6 +1175,7 @@ const withNewsCount = SERVICES.filter(
         claimsContainer.querySelectorAll(".reject-claim-btn").forEach((btn) => {
           btn.addEventListener("click", async () => {
             const id = btn.getAttribute("data-id")!;
+            btn.setAttribute("disabled", "true");
             await updateClaimStatus(db, id, "rejected");
             loadAdminData();
           });
