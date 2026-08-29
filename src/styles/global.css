@@ -411,12 +411,12 @@ object {
   width: 100%;
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 var(--space-md);
+  padding: 0 clamp(1.25rem, 3.5vw, var(--space-xl));
   box-sizing: border-box;
 }
 
 .section {
-  padding: var(--space-2xl) 0;
+  padding: clamp(2.25rem, 5vw, var(--space-2xl)) 0;
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
@@ -1180,10 +1180,54 @@ object {
     grid-column: 1 / -1;
     max-width: 100%;
   }
+
+  .container {
+    padding: 0 1.25rem;
+  }
 }
 
-/* Responsive - Mobile & Small Screens */
+/* Responsive - Tablets & Phablets (GR-02) */
+@media (max-width: 768px) {
+  .section {
+    padding: 2.5rem 0;
+  }
+
+  .card,
+  .glass-card {
+    padding: 1.35rem;
+  }
+
+  .services-grid,
+  .grid-auto {
+    gap: 1.25rem;
+  }
+
+  .section-header,
+  .hero-content {
+    margin-bottom: 1.75rem;
+  }
+}
+
+/* Responsive - Mobile & Small Screens (GR-02) */
 @media (max-width: 640px) {
+  .container {
+    padding: 0 1.15rem;
+  }
+
+  .section {
+    padding: 2.25rem 0;
+  }
+
+  .card,
+  .glass-card {
+    padding: 1.15rem;
+  }
+
+  .services-grid,
+  .grid-auto {
+    gap: 1.15rem;
+  }
+
   .footer-grid {
     grid-template-columns: 1fr;
     gap: var(--space-lg);
@@ -1201,11 +1245,56 @@ object {
   .footer-bottom {
     flex-direction: column;
     text-align: center;
+    gap: var(--space-sm);
   }
 }
 
-/* Responsive - Small Mobile */
+/* Responsive - Small Mobile (GR-02) */
 @media (max-width: 480px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .section {
+    padding: 1.75rem 0;
+  }
+
+  .card,
+  .glass-card {
+    padding: 1rem;
+    border-radius: var(--border-radius-sm);
+  }
+
+  .services-grid,
+  .grid-auto {
+    gap: 1rem;
+  }
+
+  .hero-wrapper,
+  .hero-banner,
+  .hero {
+    padding: 1.75rem 0 1.25rem;
+  }
+
+  .btn {
+    padding: 0.7rem 1rem;
+    font-size: 0.88rem;
+    min-height: 42px;
+  }
+
+  .btn-sm {
+    padding: 0.4rem 0.7rem;
+    font-size: 0.78rem;
+    min-height: 36px;
+  }
+
+  .form-input,
+  .form-select,
+  .form-textarea {
+    padding: 0.75rem 0.85rem;
+    font-size: 0.92rem;
+  }
+
   .app-footer {
     padding: var(--space-xl) 0 var(--space-md);
   }
@@ -1216,13 +1305,31 @@ object {
 
   .footer-heading {
     font-size: var(--font-size-sm);
+    margin-bottom: var(--space-xs);
   }
 
   .footer-link {
     font-size: var(--font-size-xs);
+    padding: 0.2rem 0;
   }
 
   .copyright-text {
     font-size: 0.7rem;
+  }
+}
+
+/* Responsive - Extra Small Mobile (360px & below) */
+@media (max-width: 360px) {
+  .container {
+    padding: 0 0.75rem;
+  }
+
+  .section {
+    padding: 1.5rem 0;
+  }
+
+  .card,
+  .glass-card {
+    padding: 0.85rem;
   }
 }
