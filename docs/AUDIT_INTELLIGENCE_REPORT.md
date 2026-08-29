@@ -1,6 +1,6 @@
 # 🛡️ Informe de Inteligencia y Auditoría Multi-Agente
 
-**Fecha de Auditoría:** 2026-08-29T12:48:50.756Z
+**Fecha de Auditoría:** 2026-08-29T14:03:52.104Z
 **Puntaje Global de Cumplimiento:** `100%`
 **Estado del Sistema:** `BLINDADO_OPTIMO`
 
@@ -272,7 +272,7 @@
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 50%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 43. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Finca & Bodega Biniagual (Sencelles - S. XIII)
+### 43. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Finca & Bodega Biniagual (Binissalem)
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 50%.
@@ -572,7 +572,7 @@
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 49%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 93. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Bodegas Macià Batle (Santa Maria del Camí - 1851)
+### 93. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Bodegas Macià Batle (1856)
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 50%.
