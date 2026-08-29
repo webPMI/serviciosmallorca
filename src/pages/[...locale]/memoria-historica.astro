@@ -21,6 +21,14 @@ const stats = getLongevityStatistics();
 const allHistorical = getHistoricalBusinesses({ minYears: 15 });
 const centenaryList = getCentenaryBusinesses();
 
+// Chronological sort for the timeline
+const timelinePioneers = [
+  ...centenaryList,
+  ...allHistorical.filter((h) => (h.foundedYear || 0) < 1950 && !centenaryList.some((c) => c.id === h.id)),
+]
+  .filter((item) => item.foundedYear && item.foundedYear > 0)
+  .sort((a, b) => (a.foundedYear || 0) - (b.foundedYear || 0));
+
 const titles: Record<Locale, string> = {
   es: "Muro de la Memoria Histórica & Negocios Emblemáticos de Mallorca",
   en: "Mallorca Heritage Wall & Centenary Landmark Businesses",
@@ -34,9 +42,39 @@ const descriptions: Record<Locale, string> = {
   ca: "Observatori de longevitat empresarial, comerços centenaris, artesania viva i registre històric del teixit comercial de Mallorca.",
   de: "Wirtschafts- und Traditions-Observatorium, hundertjährige Handwerksbetriebe und historisches Wirtschaftsarchiv Mallorcas.",
 };
+
+const schemaOrg = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      name: titles[locale],
+      description: descriptions[locale],
+      url: `https://serviciosmallorca.com${prefix}memoria-historica`,
+    },
+    {
+      "@type": "ItemList",
+      name: titles[locale],
+      numberOfItems: allHistorical.length,
+      itemListElement: allHistorical.map((item, idx) => ({
+        "@type": "ListItem",
+        position: idx + 1,
+        name: item.name,
+        description: item.shortDescription[locale] || item.shortDescription.es,
+        item: {
+          "@type": "LocalBusiness",
+          name: item.name,
+          address: item.address,
+          foundingDate: item.foundedYear ? `${item.foundedYear}` : undefined,
+        },
+      })),
+    },
+  ],
+};
 ---
 
 <BaseLayout title={`${titles[locale]} | Servicios Mallorca`} lang={locale} description={descriptions[locale]}>
+  <script type="application/ld+json" set:html={JSON.stringify(schemaOrg)} />
   <Navbar currentLocale={locale} translations={translations} getLangPrefix={getLangPrefix} />
 
   <main class="container section">
@@ -49,27 +87,31 @@ const descriptions: Record<Locale, string> = {
 
     <!-- Header Hero -->
     <header class="heritage-hero">
-      <span class="badge-heritage"
-        >🏛️ {
-          locale === "de"
-            ? "Historisches Erbe"
-            : locale === "en"
-              ? "Living Heritage"
-              : locale === "ca"
-                ? "Patrimoni Viu"
-                : "Patrimonio & Memoria"
-        }</span
-      >
+      <div class="badge-heritage">
+        <span>🏛️</span>
+        <span>
+          {
+            locale === "de"
+              ? "Historisches Erbe & Kunsthandwerk"
+              : locale === "en"
+                ? "Living Heritage & Master Craft"
+                : locale === "ca"
+                  ? "Patrimoni Viu & Mestre Artesà"
+                  : "Patrimonio Vivo & Memoria Comercial"
+          }
+        </span>
+      </div>
       <h1 class="hero-title">{titles[locale]}</h1>
       <p class="hero-subtitle">{descriptions[locale]}</p>
     </header>
 
     <!-- Statistics Overview -->
-    <section class="stats-grid">
-      <div class="stat-card">
+    <section class="stats-grid" aria-label="Estadísticas de longevidad">
+      <div class="stat-card stat-card-gold">
+        <span class="stat-icon">👑</span>
         <span class="stat-number">{stats.centenaryCount}+</span>
-        <span class="stat-label"
-          >{
+        <span class="stat-label">
+          {
             locale === "de"
               ? "Hundertjährige Betriebe (+100 J.)"
               : locale === "en"
@@ -77,13 +119,14 @@ const descriptions: Record<Locale, string> = {
                 : locale === "ca"
                   ? "Comerços Centenaris (+100 anys)"
                   : "Comercios Centenarios (+100 años)"
-          }</span
-        >
+          }
+        </span>
       </div>
       <div class="stat-card">
+        <span class="stat-icon">🏛️</span>
         <span class="stat-number">{stats.heritage50Count}+</span>
-        <span class="stat-label"
-          >{
+        <span class="stat-label">
+          {
             locale === "de"
               ? "Traditionshäuser (+50 J.)"
               : locale === "en"
@@ -91,13 +134,14 @@ const descriptions: Record<Locale, string> = {
                 : locale === "ca"
                   ? "Negocis de Llegat (+50 anys)"
                   : "Negocios de Legado (+50 años)"
-          }</span
-        >
+          }
+        </span>
       </div>
       <div class="stat-card">
+        <span class="stat-icon">⏳</span>
         <span class="stat-number">{stats.landmark30Count}+</span>
-        <span class="stat-label"
-          >{
+        <span class="stat-label">
+          {
             locale === "de"
               ? "Etablierte Pioniere (+30 J.)"
               : locale === "en"
@@ -105,13 +149,14 @@ const descriptions: Record<Locale, string> = {
                 : locale === "ca"
                   ? "Icones Consolidats (+30 anys)"
                   : "Iconos Consolidados (+30 años)"
-          }</span
-        >
+          }
+        </span>
       </div>
       <div class="stat-card">
+        <span class="stat-icon">📜</span>
         <span class="stat-number">{stats.totalHistoricalTracked}</span>
-        <span class="stat-label"
-          >{
+        <span class="stat-label">
+          {
             locale === "de"
               ? "Gesamtes Historisches Archiv"
               : locale === "en"
@@ -119,22 +164,113 @@ const descriptions: Record<Locale, string> = {
                 : locale === "ca"
                   ? "Total Arxiu Històric"
                   : "Total Registro Histórico"
-          }</span
+          }
+        </span>
+      </div>
+    </section>
+
+    <!-- Visual Interactive Chronological Timeline -->
+    <section class="timeline-section card-premium">
+      <div class="timeline-header">
+        <span class="badge badge-accent"
+          >⏳ {translations["heritage.timeline.title"] || "Línea Temporal de Pioneros"}</span
         >
+        <h2 class="timeline-title">{translations["heritage.timeline.title"]}</h2>
+        <p class="timeline-subtitle">{translations["heritage.timeline.subtitle"]}</p>
+      </div>
+
+      <div class="timeline-track">
+        {
+          timelinePioneers.map((pioneer) => {
+            const years = getYearsOfOperation(pioneer);
+            return (
+              <div class="timeline-node" data-year={pioneer.foundedYear}>
+                <div class="node-milestone">
+                  <span class="node-year-badge">{pioneer.foundedYear}</span>
+                  <div class="node-pin" />
+                </div>
+                <div class="node-content card">
+                  <div class="node-meta">
+                    <span class="node-years-tag">
+                      👑 +{years}{" "}
+                      {locale === "de" ? "Jahre" : locale === "en" ? "Years" : locale === "ca" ? "Anys" : "Años"}
+                    </span>
+                    <span class="node-town">📍 {pioneer.zone}</span>
+                  </div>
+                  <h3 class="node-title">
+                    <a href={`${prefix}servicios/${pioneer.slug}`}>{pioneer.name}</a>
+                  </h3>
+                  <p class="node-excerpt">{pioneer.shortDescription[locale] || pioneer.shortDescription.es}</p>
+                  <a href={`${prefix}servicios/${pioneer.slug}`} class="node-link">
+                    {locale === "de"
+                      ? "Geschichte ansehen →"
+                      : locale === "en"
+                        ? "View history →"
+                        : locale === "ca"
+                          ? "Veure història →"
+                          : "Ver historia →"}
+                  </a>
+                </div>
+              </div>
+            );
+          })
+        }
+      </div>
+    </section>
+
+    <!-- Interactive Filter Toolbar & Search Bar -->
+    <section class="heritage-explorer-toolbar">
+      <div class="toolbar-search-wrap">
+        <span class="search-icon">🔍</span>
+        <input
+          type="search"
+          id="heritage-search-input"
+          class="heritage-search-input"
+          placeholder={translations["heritage.search.placeholder"] || "Buscar por nombre, oficio, pueblo o año..."}
+          aria-label="Buscar comercios históricos"
+        />
+      </div>
+
+      <div class="heritage-filter-pills" id="heritage-filter-pills">
+        <button type="button" class="filter-pill active" data-era="all">
+          🌴 {translations["heritage.filter.all"] || "Todos los comercios"}
+        </button>
+        <button type="button" class="filter-pill" data-era="centenary">
+          {translations["heritage.filter.centenary"] || "👑 Centenarios (+100)"}
+        </button>
+        <button type="button" class="filter-pill" data-era="s18-19">
+          {translations["heritage.filter.s1819"] || "🏛️ Siglos XVIII-XIX"}
+        </button>
+        <button type="button" class="filter-pill" data-era="s20">
+          {translations["heritage.filter.s20"] || "🏭 Siglo XX"}
+        </button>
+        <button type="button" class="filter-pill" data-era="memorial">
+          {translations["heritage.filter.memorial"] || "🕊️ Memorial"}
+        </button>
+      </div>
+
+      <div class="heritage-counter-bar">
+        <span id="heritage-counter-text">
+          {translations["heritage.results.showing"] || "Mostrando"}
+          <strong id="heritage-count-visible">{allHistorical.length}</strong>
+          {translations["heritage.results.of"] || "de"}
+          {allHistorical.length}
+          {translations["heritage.results.label"] || "comercios históricos"}
+        </span>
       </div>
     </section>
 
     <!-- Centenary Showcase -->
-    <section class="heritage-section">
+    <section class="heritage-section" id="centenary-section">
       <div class="section-heading">
         <h2>
           👑 {
             locale === "de"
               ? "Comercios Centenarios Vivos de Mallorca"
               : locale === "en"
-                ? "Living Centenary Heritage"
+                ? "Living Centenary Heritage (+100 Years)"
                 : locale === "ca"
-                  ? "Comerços Centenaris Vius"
+                  ? "Comerços Centenaris Vius (+100 Anys)"
                   : "Comercios Centenarios Vivos (+100 Años)"
           }
         </h2>
@@ -147,15 +283,27 @@ const descriptions: Record<Locale, string> = {
         </p>
       </div>
 
-      <div class="cards-grid">
+      <div class="cards-grid" id="centenary-cards-grid">
         {
           centenaryList.map((item) => {
             const years = getYearsOfOperation(item);
+            const foundedYear = item.foundedYear || 0;
+            let eraClass = "s20";
+            if (foundedYear > 0 && foundedYear < 1900) eraClass = "s18-19";
             return (
-              <article class="heritage-card centenary">
+              <article
+                class="heritage-card centenary"
+                data-era="centenary"
+                data-subera={eraClass}
+                data-name={item.name.toLowerCase()}
+                data-zone={item.zone?.toLowerCase()}
+                data-desc={(item.shortDescription[locale] || item.shortDescription.es).toLowerCase()}
+                data-year={foundedYear}
+              >
                 <div class="card-header">
                   <span class="badge-gold">
-                    👑 +{years} {locale === "de" ? "Jahre" : locale === "en" ? "Years" : "Años"}
+                    👑 +{years}{" "}
+                    {locale === "de" ? "Jahre" : locale === "en" ? "Years" : locale === "ca" ? "Anys" : "Años"}
                   </span>
                   <span class="founded-year">{item.foundedYear ? `Fund. ${item.foundedYear}` : ""}</span>
                 </div>
@@ -191,7 +339,7 @@ const descriptions: Record<Locale, string> = {
     </section>
 
     <!-- General Historical Archive -->
-    <section class="heritage-section">
+    <section class="heritage-section" id="full-archive-section">
       <div class="section-heading">
         <h2>
           📜 {
@@ -217,16 +365,30 @@ const descriptions: Record<Locale, string> = {
         </p>
       </div>
 
-      <div class="cards-grid">
+      <div class="cards-grid" id="heritage-cards-grid">
         {
           allHistorical.map((item) => {
             const years = getYearsOfOperation(item);
             const significance = resolveHistoricalSignificance(item);
             const isClosed = item.status === "permanently_closed";
+            const foundedYear = item.foundedYear || 0;
+            let eraClass = "s20";
+            if (years >= 100) eraClass = "centenary";
+            else if (foundedYear > 0 && foundedYear < 1900) eraClass = "s18-19";
+            if (isClosed) eraClass = "memorial";
+
             return (
-              <article class={`heritage-card ${isClosed ? "closed-memorial" : ""}`}>
+              <article
+                class={`heritage-card ${years >= 100 ? "centenary" : ""} ${isClosed ? "closed-memorial" : ""}`}
+                data-era={isClosed ? "memorial" : years >= 100 ? "centenary" : eraClass}
+                data-subera={eraClass}
+                data-name={item.name.toLowerCase()}
+                data-zone={item.zone?.toLowerCase()}
+                data-desc={(item.shortDescription[locale] || item.shortDescription.es).toLowerCase()}
+                data-year={foundedYear}
+              >
                 <div class="card-header">
-                  <span class="badge-legacy">
+                  <span class={years >= 100 ? "badge-gold" : "badge-legacy"}>
                     {isClosed
                       ? locale === "de"
                         ? "🕊️ Historisches Archiv"
@@ -237,7 +399,9 @@ const descriptions: Record<Locale, string> = {
                             : "🕊️ Memoria Histórica"
                       : `⏳ ${years} ${locale === "de" ? "Jahre" : locale === "en" ? "Years" : locale === "ca" ? "Anys" : "Años"}`}
                   </span>
-                  <span class="significance-tag">{significance.replace("_", " ")}</span>
+                  <span class="significance-tag">
+                    {item.foundedYear ? `Fund. ${item.foundedYear}` : significance.replace("_", " ")}
+                  </span>
                 </div>
                 <h3 class="business-name">{item.name}</h3>
                 <p class="business-zone">📍 {item.address || item.zone}</p>
@@ -257,7 +421,10 @@ const descriptions: Record<Locale, string> = {
                   </div>
                 )}
                 <div class="card-footer">
-                  <a href={`${prefix}servicios/${item.slug}`} class="btn-history-outline">
+                  <a
+                    href={`${prefix}servicios/${item.slug}`}
+                    class={years >= 100 ? "btn-history" : "btn-history-outline"}
+                  >
                     {locale === "de"
                       ? "Historischer Eintrag"
                       : locale === "en"
@@ -279,6 +446,87 @@ const descriptions: Record<Locale, string> = {
   <Footer translations={translations} currentLocale={locale} getLangPrefix={getLangPrefix} />
 </BaseLayout>
 
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const searchInput = document.getElementById("heritage-search-input") as HTMLInputElement | null;
+    const filterPills = document.querySelectorAll(".filter-pill");
+    const cards = document.querySelectorAll<HTMLElement>(".heritage-card");
+    const countVisibleEl = document.getElementById("heritage-count-visible");
+
+    let currentEra = "all";
+    let searchQuery = "";
+
+    function applyFilters() {
+      let visibleCount = 0;
+      const normalizedQuery = searchQuery.trim().toLowerCase();
+
+      cards.forEach((card) => {
+        const era = card.getAttribute("data-era") || "";
+        const subera = card.getAttribute("data-subera") || "";
+        const name = card.getAttribute("data-name") || "";
+        const zone = card.getAttribute("data-zone") || "";
+        const desc = card.getAttribute("data-desc") || "";
+        const year = card.getAttribute("data-year") || "";
+
+        // Era filter matching
+        let matchesEra = true;
+        if (currentEra === "all") {
+          matchesEra = true;
+        } else if (currentEra === "centenary") {
+          matchesEra = era === "centenary" || subera === "centenary";
+        } else if (currentEra === "s18-19") {
+          matchesEra = era === "s18-19" || subera === "s18-19";
+        } else if (currentEra === "s20") {
+          matchesEra = era === "s20" || subera === "s20";
+        } else if (currentEra === "memorial") {
+          matchesEra = era === "memorial";
+        }
+
+        // Search query matching
+        let matchesSearch = true;
+        if (normalizedQuery) {
+          matchesSearch =
+            name.includes(normalizedQuery) ||
+            zone.includes(normalizedQuery) ||
+            desc.includes(normalizedQuery) ||
+            year.includes(normalizedQuery);
+        }
+
+        if (matchesEra && matchesSearch) {
+          card.style.display = "flex";
+          visibleCount++;
+        } else {
+          card.style.display = "none";
+        }
+      });
+
+      if (countVisibleEl) {
+        countVisibleEl.textContent = String(visibleCount);
+      }
+    }
+
+    // Pill click listener
+    filterPills.forEach((pill) => {
+      pill.addEventListener("click", () => {
+        filterPills.forEach((p) => p.classList.remove("active"));
+        pill.classList.add("active");
+        currentEra = pill.getAttribute("data-era") || "all";
+        applyFilters();
+      });
+    });
+
+    // Search input with debounce
+    let debounceTimer: ReturnType<typeof setTimeout>;
+    searchInput?.addEventListener("input", () => {
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(() => {
+        searchQuery = searchInput.value;
+        applyFilters();
+      }, 150);
+    });
+  });
+</script>
+
 <style>
   .breadcrumb-nav {
     display: flex;
@@ -298,12 +546,14 @@ const descriptions: Record<Locale, string> = {
   }
   .heritage-hero {
     text-align: center;
-    max-width: 800px;
+    max-width: 840px;
     margin: 0 auto 3rem;
   }
   .badge-heritage {
-    display: inline-block;
-    padding: 0.35rem 0.85rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.35rem 0.95rem;
     background: rgba(212, 175, 55, 0.15);
     border: 1px solid var(--color-accent);
     border-radius: 9999px;
@@ -313,17 +563,20 @@ const descriptions: Record<Locale, string> = {
     margin-bottom: 1rem;
   }
   .hero-title {
-    font-size: 2.25rem;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
     font-weight: 800;
     color: var(--color-text-main);
     line-height: 1.2;
     margin-bottom: 0.75rem;
+    letter-spacing: -0.02em;
   }
   .hero-subtitle {
     font-size: 1.125rem;
     color: var(--color-text-muted);
     line-height: 1.6;
   }
+
+  /* Stats Grid */
   .stats-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr));
@@ -334,22 +587,220 @@ const descriptions: Record<Locale, string> = {
     background: var(--color-surface);
     border: 1px solid var(--color-border);
     border-radius: 1rem;
-    padding: 1.25rem 1rem;
+    padding: 1.5rem 1rem;
     text-align: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+    position: relative;
+    transition: transform 0.2s ease;
+  }
+  .stat-card:hover {
+    transform: translateY(-2px);
+  }
+  .stat-card-gold {
+    border-color: var(--color-accent);
+    background: linear-gradient(180deg, var(--color-surface) 0%, rgba(212, 175, 55, 0.08) 100%);
+  }
+  .stat-icon {
+    font-size: 1.4rem;
+    display: block;
+    margin-bottom: 0.25rem;
   }
   .stat-number {
     display: block;
-    font-size: 2rem;
+    font-size: 2.2rem;
     font-weight: 800;
     color: var(--color-accent);
     margin-bottom: 0.25rem;
+    letter-spacing: -0.02em;
   }
   .stat-label {
-    font-size: 0.82rem;
+    font-size: 0.825rem;
     color: var(--color-text-muted);
-    font-weight: 500;
+    font-weight: 600;
   }
+
+  /* Timeline Section */
+  .timeline-section {
+    padding: 2.5rem 2rem;
+    border-radius: 1.25rem;
+    margin-bottom: 4rem;
+    background: linear-gradient(180deg, var(--color-surface) 0%, rgba(212, 175, 55, 0.03) 100%);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+  }
+  .timeline-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 2.5rem;
+  }
+  .timeline-title {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--color-text-main);
+    margin: 0.75rem 0 0.5rem;
+  }
+  .timeline-subtitle {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+  }
+  .timeline-track {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+    gap: 1.5rem;
+    position: relative;
+  }
+  .timeline-node {
+    display: flex;
+    flex-direction: column;
+  }
+  .node-milestone {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+  }
+  .node-year-badge {
+    background: var(--color-accent);
+    color: #000;
+    font-weight: 800;
+    font-size: 0.9rem;
+    padding: 0.25rem 0.65rem;
+    border-radius: 9999px;
+    box-shadow: 0 2px 8px rgba(212, 175, 55, 0.3);
+  }
+  .node-pin {
+    flex-grow: 1;
+    height: 2px;
+    background: linear-gradient(90deg, var(--color-accent) 0%, transparent 100%);
+  }
+  .node-content {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 0.85rem;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    transition:
+      transform 0.2s ease,
+      border-color 0.2s ease;
+  }
+  .node-content:hover {
+    transform: translateY(-3px);
+    border-color: var(--color-accent);
+  }
+  .node-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+  .node-years-tag {
+    color: var(--color-accent);
+    font-weight: 700;
+  }
+  .node-town {
+    color: var(--color-text-muted);
+  }
+  .node-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+  }
+  .node-title a {
+    color: var(--color-text-main);
+    text-decoration: none;
+  }
+  .node-title a:hover {
+    color: var(--color-accent);
+  }
+  .node-excerpt {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    line-height: 1.4;
+    margin-bottom: 0.75rem;
+    flex-grow: 1;
+  }
+  .node-link {
+    font-size: 0.825rem;
+    font-weight: 600;
+    color: var(--color-accent);
+    text-decoration: none;
+  }
+
+  /* Explorer Toolbar */
+  .heritage-explorer-toolbar {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 1rem;
+    padding: 1.25rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  }
+  .toolbar-search-wrap {
+    position: relative;
+    margin-bottom: 1rem;
+  }
+  .search-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    pointer-events: none;
+  }
+  .heritage-search-input {
+    width: 100%;
+    padding: 0.75rem 1rem 0.75rem 2.75rem;
+    border-radius: 0.75rem;
+    border: 1px solid var(--color-border);
+    background: var(--color-background);
+    color: var(--color-text-main);
+    font-size: 0.95rem;
+    outline: none;
+    transition:
+      border-color 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+  .heritage-search-input:focus {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+  }
+  .heritage-filter-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  .filter-pill {
+    padding: 0.45rem 0.9rem;
+    border-radius: 9999px;
+    border: 1px solid var(--color-border);
+    background: var(--color-background);
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .filter-pill:hover {
+    border-color: var(--color-accent);
+    color: var(--color-text-main);
+  }
+  .filter-pill.active {
+    background: var(--color-accent);
+    color: #000;
+    border-color: var(--color-accent);
+    font-weight: 700;
+  }
+  .heritage-counter-bar {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    padding-top: 0.5rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  /* Heritage Sections & Cards */
   .heritage-section {
     margin-bottom: 4rem;
   }
@@ -405,11 +856,11 @@ const descriptions: Record<Locale, string> = {
     color: #000;
     font-size: 0.75rem;
     font-weight: 700;
-    padding: 0.2rem 0.5rem;
+    padding: 0.2rem 0.55rem;
     border-radius: 0.375rem;
   }
   .badge-legacy {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.06);
     color: var(--color-text-main);
     font-size: 0.75rem;
     font-weight: 600;
@@ -421,7 +872,7 @@ const descriptions: Record<Locale, string> = {
   .significance-tag {
     font-size: 0.75rem;
     color: var(--color-text-muted);
-    text-transform: capitalize;
+    font-weight: 600;
   }
   .business-name {
     font-size: 1.25rem;
@@ -448,6 +899,7 @@ const descriptions: Record<Locale, string> = {
     border-left: 2px solid var(--color-accent);
     padding-left: 0.75rem;
     margin: 0 0 1rem 0;
+    line-height: 1.4;
   }
   .closure-notice {
     font-size: 0.8rem;
@@ -468,7 +920,7 @@ const descriptions: Record<Locale, string> = {
     color: #000;
     font-size: 0.875rem;
     font-weight: 700;
-    padding: 0.6rem 1rem;
+    padding: 0.65rem 1rem;
     border-radius: 0.5rem;
     text-decoration: none;
     transition: opacity 0.2s ease;
@@ -485,7 +937,7 @@ const descriptions: Record<Locale, string> = {
     border: 1px solid var(--color-border);
     font-size: 0.875rem;
     font-weight: 600;
-    padding: 0.55rem 1rem;
+    padding: 0.6rem 1rem;
     border-radius: 0.5rem;
     text-decoration: none;
     transition:
@@ -495,5 +947,11 @@ const descriptions: Record<Locale, string> = {
   .btn-history-outline:hover {
     background: var(--color-border);
     border-color: var(--color-accent);
+  }
+
+  @media (max-width: 768px) {
+    .timeline-section {
+      padding: 1.5rem 1rem;
+    }
   }
 </style>

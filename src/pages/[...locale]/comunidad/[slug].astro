@@ -19,7 +19,7 @@ const prefix = getLangPrefix(locale);
 >
   <Navbar currentLocale={locale} translations={translations} getLangPrefix={getLangPrefix} />
 
-  <div class="container topic-detail-container" data-slug={slug} id="topic-detail-wrapper">
+  <div class="container topic-detail-container" data-slug={slug} data-locale={locale} id="topic-detail-wrapper">
     <div class="breadcrumb">
       <a href={`${prefix}comunidad`}>← {translations["forum.allTopics"]}</a>
     </div>
@@ -353,13 +353,38 @@ const prefix = getLangPrefix(locale);
   const submitReplyBtn = document.getElementById("submit-reply-btn") as HTMLButtonElement;
   const replyAlertError = document.getElementById("reply-alert-error");
 
+  const locale = wrapper?.getAttribute("data-locale") || "es";
+  const dateLocale = locale === "en" ? "en-GB" : locale === "de" ? "de-DE" : locale === "ca" ? "ca-ES" : "es-ES";
+
   let currentTopic: ForumTopic | null = null;
 
-  const categoryLabels: Record<string, string> = {
-    recomendaciones: "⭐ Recomendaciones",
-    preguntas: "❓ Preguntas & Dudas",
-    experiencias: "✨ Experiencias",
-    guias: "🗺️ Guías Locales",
+  const categoryLabels: Record<string, Record<string, string>> = {
+    recomendaciones: {
+      es: "⭐ Recomendaciones",
+      en: "⭐ Recommendations",
+      ca: "⭐ Recomanacions",
+      de: "⭐ Empfehlungen",
+    },
+    preguntas: {
+      es: "❓ Preguntas & Dudas",
+      en: "❓ Questions & Q&A",
+      ca: "❓ Preguntes & Dubtes",
+      de: "❓ Fragen & Antworten",
+    },
+    experiencias: { es: "✨ Experiencias", en: "✨ Experiences", ca: "✨ Experiències", de: "✨ Erfahrungen" },
+    guias: { es: "🗺️ Guías Locales", en: "🗺️ Local Guides", ca: "🗺️ Guies Locals", de: "🗺️ Lokale Guides" },
+    emprendimientos: {
+      es: "🚀 Emprendimiento",
+      en: "🚀 Startups & Business",
+      ca: "🚀 Emprenedoria",
+      de: "🚀 Unternehmen & Startups",
+    },
+    rutas: {
+      es: "🧭 Rutas & Rincones",
+      en: "🧭 Routes & Spots",
+      ca: "🧭 Rutes & Racons",
+      de: "🧭 Routen & Geheimtipps",
+    },
   };
 
   // Auth gate listener for reply box
@@ -381,9 +406,9 @@ const prefix = getLangPrefix(locale);
       if (!topic) {
         topicMainCard.innerHTML = `
           <div class="topic-loading">
-            <h2>Debate no encontrado</h2>
-            <p>El tema de conversación no existe o ha sido retirado.</p>
-            <a href="/comunidad" class="btn btn-secondary btn-sm" style="margin-top: 1rem;">← Volver al Foro</a>
+            <h2>${locale === "de" ? "Debatte nicht gefunden" : locale === "en" ? "Topic not found" : locale === "ca" ? "Debat no trobat" : "Debate no encontrado"}</h2>
+            <p>${locale === "de" ? "Das Thema existiert nicht oder wurde entfernt." : locale === "en" ? "This topic does not exist or has been removed." : locale === "ca" ? "El tema no existeix o ha estat retirat." : "El tema de conversación no existe o ha sido retirado."}</p>
+            <a href="${prefix}comunidad" class="btn btn-secondary btn-sm" style="margin-top: 1rem;">← ${locale === "de" ? "Zurück zum Forum" : locale === "en" ? "Back to Forum" : locale === "ca" ? "Tornar al Fòrum" : "Volver al Foro"}</a>
           </div>
         `;
         return;
@@ -392,15 +417,17 @@ const prefix = getLangPrefix(locale);
       currentTopic = topic;
       const user = auth.currentUser;
       const hasLiked = user ? topic.likedUsers.includes(user.uid) : false;
-      const dateStr = new Date(topic.createdAt).toLocaleDateString("es-ES", {
+      const dateStr = new Date(topic.createdAt).toLocaleDateString(dateLocale, {
         day: "numeric",
         month: "long",
         year: "numeric",
       });
 
+      const catLabel = categoryLabels[topic.category]?.[locale] || categoryLabels[topic.category]?.es || topic.category;
+
       topicMainCard.innerHTML = `
         <div class="topic-header-row">
-          <span class="topic-badge">${categoryLabels[topic.category] || topic.category}</span>
+          <span class="topic-badge">${catLabel}</span>
         </div>
         <h1 class="topic-title">${topic.title}</h1>
         <div class="topic-meta-row">
@@ -417,7 +444,7 @@ const prefix = getLangPrefix(locale);
             id="topic-like-action-btn"
             class="topic-like-btn ${hasLiked ? "liked" : ""}"
           >
-            <span>👍 Me gusta (${topic.likesCount || 0})</span>
+            <span>👍 ${locale === "de" ? "Gefällt mir" : locale === "en" ? "Like" : locale === "ca" ? "M'agrada" : "Me gusta"} (${topic.likesCount || 0})</span>
           </button>
         </div>
       `;
@@ -428,7 +455,15 @@ const prefix = getLangPrefix(locale);
         likeBtn.addEventListener("click", async () => {
           const currentUser = auth.currentUser;
           if (!currentUser) {
-            alert("Inicia sesión para votar en este debate.");
+            alert(
+              locale === "de"
+                ? "Bitte einloggen, um abzustimmen."
+                : locale === "en"
+                  ? "Please log in to vote."
+                  : locale === "ca"
+                    ? "Inicia sessió per votar."
+                    : "Inicia sesión para votar en este debate.",
+            );
             return;
           }
           await toggleTopicLike(topic.id, currentUser.uid);
@@ -442,7 +477,7 @@ const prefix = getLangPrefix(locale);
       console.error("Error loading topic:", err);
       topicMainCard.innerHTML = `
         <div class="topic-loading">
-          <p>No fue posible cargar el debate.</p>
+          <p>${locale === "de" ? "Debatte konnte nicht geladen werden." : locale === "en" ? "Could not load discussion." : locale === "ca" ? "No s'ha pogut carregar el debat." : "No fue posible cargar el debate."}</p>
         </div>
       `;
     }
@@ -457,7 +492,7 @@ const prefix = getLangPrefix(locale);
       if (replies.length === 0) {
         repliesContainer.innerHTML = `
           <div class="replies-empty card">
-            <p>💬 No hay respuestas todavía. ¡Sé el primero en aportar a esta conversación!</p>
+            <p>💬 ${locale === "de" ? "Noch keine Antworten. Seien Sie der Erste!" : locale === "en" ? "No replies yet. Be the first to join the conversation!" : locale === "ca" ? "Encara no hi ha respostes. Sigues el primer a participar!" : "No hay respuestas todavía. ¡Sé el primero en aportar a esta conversación!"}</p>
           </div>
         `;
         return;
@@ -465,7 +500,7 @@ const prefix = getLangPrefix(locale);
 
       repliesContainer.innerHTML = replies
         .map((r) => {
-          const dateStr = new Date(r.createdAt).toLocaleDateString("es-ES", {
+          const dateStr = new Date(r.createdAt).toLocaleDateString(dateLocale, {
             day: "numeric",
             month: "short",
             hour: "2-digit",

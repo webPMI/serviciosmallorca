@@ -74,7 +74,7 @@ const prefix = getLangPrefix(locale);
 
     <!-- Forum Discussions Feed -->
     <main class="forum-feed-layout">
-      <div id="topics-list-container" class="topics-list-container" data-locale-prefix={prefix}>
+      <div id="topics-list-container" class="topics-list-container" data-locale-prefix={prefix} data-locale={locale}>
         <div class="topics-loading card">
           <p>⏳ Cargando conversaciones de la comunidad...</p>
         </div>
@@ -388,13 +388,36 @@ const prefix = getLangPrefix(locale);
 
   const topicsContainer = document.getElementById("topics-list-container");
   const prefix = topicsContainer?.getAttribute("data-locale-prefix") || "/";
+  const locale = topicsContainer?.getAttribute("data-locale") || "es";
   const catButtons = document.querySelectorAll(".cat-pill");
 
-  const categoryLabels: Record<string, string> = {
-    recomendaciones: "⭐ Recomendaciones",
-    preguntas: "❓ Preguntas & Dudas",
-    experiencias: "✨ Experiencias",
-    guias: "🗺️ Guías Locales",
+  const categoryLabels: Record<string, Record<string, string>> = {
+    recomendaciones: {
+      es: "⭐ Recomendaciones",
+      en: "⭐ Recommendations",
+      ca: "⭐ Recomanacions",
+      de: "⭐ Empfehlungen",
+    },
+    preguntas: {
+      es: "❓ Preguntas & Dudas",
+      en: "❓ Questions & Q&A",
+      ca: "❓ Preguntes & Dubtes",
+      de: "❓ Fragen & Antworten",
+    },
+    experiencias: { es: "✨ Experiencias", en: "✨ Experiences", ca: "✨ Experiències", de: "✨ Erfahrungen" },
+    guias: { es: "🗺️ Guías Locales", en: "🗺️ Local Guides", ca: "🗺️ Guies Locals", de: "🗺️ Lokale Guides" },
+    emprendimientos: {
+      es: "🚀 Emprendimiento",
+      en: "🚀 Startups & Business",
+      ca: "🚀 Emprenedoria",
+      de: "🚀 Unternehmen & Startups",
+    },
+    rutas: {
+      es: "🧭 Rutas & Rincones",
+      en: "🧭 Routes & Spots",
+      ca: "🧭 Rutes & Racons",
+      de: "🧭 Routen & Geheimtipps",
+    },
   };
 
   async function loadTopics(category: ForumCategory = "todas") {
@@ -421,12 +444,15 @@ const prefix = getLangPrefix(locale);
         return;
       }
 
+      const dateLocale = locale === "en" ? "en-GB" : locale === "de" ? "de-DE" : locale === "ca" ? "ca-ES" : "es-ES";
+
       topicsContainer.innerHTML = topics
         .map((t) => {
-          const catName = categoryLabels[t.category] || t.category;
-          const dateStr = new Date(t.createdAt).toLocaleDateString("es-ES", {
+          const catName = categoryLabels[t.category]?.[locale] || categoryLabels[t.category]?.es || t.category;
+          const dateStr = new Date(t.createdAt).toLocaleDateString(dateLocale, {
             day: "numeric",
             month: "short",
+            year: "numeric",
           });
 
           return `
@@ -444,7 +470,7 @@ const prefix = getLangPrefix(locale);
                 </div>
                 <div class="topic-stats">
                   <span>👍 ${t.likesCount || 0}</span>
-                  <span>💬 ${t.repliesCount || 0} respuestas</span>
+                  <span>💬 ${t.repliesCount || 0} ${locale === "de" ? "Antworten" : locale === "en" ? "replies" : locale === "ca" ? "respostes" : "respuestas"}</span>
                 </div>
               </div>
             </a>
