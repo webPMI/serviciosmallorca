@@ -1,5 +1,12 @@
 import { describe, it, expect } from "vitest";
-import { getLocaleFromUrl, getLangPrefix, loadTranslations, detectUserLocale, LOCALES } from "../../src/i18n";
+import {
+  getLocaleFromUrl,
+  getLangPrefix,
+  loadTranslations,
+  loadNamespace,
+  detectUserLocale,
+  LOCALES,
+} from "../../src/i18n";
 
 describe("i18n utility module", () => {
   describe("getLocaleFromUrl", () => {
@@ -80,12 +87,12 @@ describe("i18n utility module", () => {
     });
   });
 
-  describe("loadTranslations and locale parity", () => {
+  describe("loadTranslations, loadNamespace and modular parity", () => {
     it("loads non-empty translations for all supported locales", async () => {
       for (const locale of LOCALES) {
         const trans = await loadTranslations(locale);
         expect(trans).toBeDefined();
-        expect(Object.keys(trans).length).toBeGreaterThan(0);
+        expect(Object.keys(trans).length).toBe(530);
         expect(trans["site.title"]).toBe("Servicios Mallorca");
       }
     });
@@ -104,6 +111,40 @@ describe("i18n utility module", () => {
       expect(enKeys).toEqual(esKeys);
       expect(caKeys).toEqual(esKeys);
       expect(deKeys).toEqual(esKeys);
+    });
+
+    it("loads individual namespaces independently and verifies exact parity", async () => {
+      const namespaces = [
+        "common",
+        "home",
+        "services",
+        "sports",
+        "heritage",
+        "community",
+        "blog",
+        "honor",
+        "auth",
+        "legal",
+      ] as const;
+
+      for (const ns of namespaces) {
+        const esNs = await loadNamespace("es", ns);
+        const enNs = await loadNamespace("en", ns);
+        const caNs = await loadNamespace("ca", ns);
+        const deNs = await loadNamespace("de", ns);
+
+        expect(Object.keys(esNs).length).toBeGreaterThan(0);
+        expect(Object.keys(enNs).sort()).toEqual(Object.keys(esNs).sort());
+        expect(Object.keys(caNs).sort()).toEqual(Object.keys(esNs).sort());
+        expect(Object.keys(deNs).sort()).toEqual(Object.keys(esNs).sort());
+      }
+    });
+
+    it("allows loading a subset of namespaces on demand", async () => {
+      const subset = await loadTranslations("es", ["sports", "heritage"]);
+      expect(subset["sports.badge"]).toBeDefined();
+      expect(subset["heritage.timeline.title"]).toBeDefined();
+      expect(subset["legal.privacy.title"]).toBeUndefined();
     });
   });
 });

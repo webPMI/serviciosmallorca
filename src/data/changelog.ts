@@ -147,18 +147,18 @@ export const CHANGELOG_RELEASES: ReleaseLog[] = [
         },
       },
       {
-        category: "FEATURE",
+        category: "TAXONOMY",
         title: {
-          es: "Línea Temporal de la Memoria Histórica & Filtros de Época",
-          en: "Heritage Chronological Timeline & Era Filter Toolbar",
-          ca: "Línia Temporal de la Memòria Històrica i Filtres d'Època",
-          de: "Historische Zeitleiste & Epochen-Filterleiste",
+          es: "Arquitectura Modular de Internacionalización (i18n por Namespaces)",
+          en: "Modular Internationalization Architecture (Namespace-based i18n)",
+          ca: "Arquitectura Modular d'Internacionalització (i18n per Namespaces)",
+          de: "Modulare Internationalisierungsarchitektur (Namespace-basiertes i18n)",
         },
         description: {
-          es: "Cronología visual e interactiva de los pioneros comerciales de Mallorca desde el siglo XVIII con filtrado por centenarios, épocas y buscador en tiempo real.",
-          en: "Visual and interactive chronology of Mallorca's commercial pioneers since the 18th century with centenary, era filtering and live search.",
-          ca: "Cronologia visual i interactiva dels pioners comercials de Mallorca des del segle XVIII amb filtratge d'èpoques i cercador en temps real.",
-          de: "Visuelle interaktive Chronologie der mallorquinischen Wirtschaftspioniere seit dem 18. Jahrhundert mit Epochenfilter und Live-Suche.",
+          es: "Partición escalable del sistema de traducciones en 10 submódulos temáticos independientes por idioma (common, home, services, sports, heritage, community, blog, honor, auth, legal) con auto-merge, caché en memoria y carga bajo demanda.",
+          en: "Scalable partitioning of the translation system into 10 independent domain submodules per language with auto-merge, in-memory caching, and on-demand namespace loading.",
+          ca: "Partició escalable del sistema de traduccions en 10 submòduls temàtics per idioma amb fusió automàtica, memòria cau i càrrega sota demanda.",
+          de: "Skalierbare Aufteilung des Übersetzungssystems in 10 unabhängige Fachbereichsmodule pro Sprache mit Auto-Merge, In-Memory-Caching und On-Demand-Namespace-Laden.",
         },
       },
       {

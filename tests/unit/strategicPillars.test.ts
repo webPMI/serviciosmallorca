@@ -6,6 +6,7 @@ import {
 } from "../../src/lib/displacementNotificationEngine";
 import { processHonorBid } from "../../src/lib/honorBoardEngine";
 import type { ServiceItem } from "../../src/data/services";
+import { loadTranslations, type Locale } from "../../src/i18n";
 import fs from "fs";
 import path from "path";
 
@@ -162,7 +163,7 @@ describe("⚡ Strategic Pillars (Rivalry Notifications, Boost Wall, B2B Invoicin
   });
 
   describe("Pilar 5: 🇩🇪 🇬🇧 🇪🇸 🏴 Catalana Internacionalización Completa", () => {
-    it("los 4 idiomas deben contener todas las claves nuevas de honor.modal, profile y boostWall", () => {
+    it("los 4 idiomas deben contener todas las claves nuevas de honor.modal, profile y boostWall", async () => {
       const locales = ["es", "en", "de", "ca"];
       const requiredKeys = [
         "honor.modal.b2bCheckbox",
@@ -181,12 +182,11 @@ describe("⚡ Strategic Pillars (Rivalry Notifications, Boost Wall, B2B Invoicin
       ];
 
       for (const loc of locales) {
-        const filePath = path.resolve(process.cwd(), `src/i18n/${loc}.json`);
-        const json = JSON.parse(fs.readFileSync(filePath, "utf-8"));
+        const json = await loadTranslations(loc as Locale);
 
         for (const key of requiredKeys) {
-          expect(json[key], `Falta la clave "${key}" en ${loc}.json`).toBeDefined();
-          expect(json[key].length, `La clave "${key}" en ${loc}.json está vacía`).toBeGreaterThan(0);
+          expect(json[key], `Falta la clave "${key}" en ${loc}`).toBeDefined();
+          expect(json[key].length, `La clave "${key}" en ${loc} está vacía`).toBeGreaterThan(0);
         }
       }
     });
