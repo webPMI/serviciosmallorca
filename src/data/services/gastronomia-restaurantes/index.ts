@@ -193,8 +193,16 @@ import { bodegasVinsToniGelabertManacor } from "./bodegas-vins-toni-gelabert-man
 import { restauranteCalDimoniAlgaida } from "./restaurante-cal-dimoni-algaida.ts";
 import { restauranteMiradorDeCabrera } from "./restaurante-mirador-de-cabrera.ts";
 import { bodegasCanXanetPollensa } from "./bodegas-can-xanet-pollensa.ts";
+import { mercatOlivarPalma } from "./mercat-olivar-palma.ts";
+import { mercatSantaCatalinaPalma } from "./mercat-santa-catalina-palma.ts";
+import { mercatCobertInca } from "./mercat-cobert-inca.ts";
+import { mercatPereGarauPalma } from "./mercat-pere-garau-palma.ts";
 
 export {
+  mercatOlivarPalma,
+  mercatSantaCatalinaPalma,
+  mercatCobertInca,
+  mercatPereGarauPalma,
   restauranteCalDimoniAlgaida,
   restauranteMiradorDeCabrera,
   bodegasCanXanetPollensa,
@@ -590,4 +598,8 @@ export const RESTAURANT_SERVICES: ServiceItem[] = [
   restauranteCalDimoniAlgaida,
   restauranteMiradorDeCabrera,
   bodegasCanXanetPollensa,
+  mercatOlivarPalma,
+  mercatSantaCatalinaPalma,
+  mercatCobertInca,
+  mercatPereGarauPalma,
 ];

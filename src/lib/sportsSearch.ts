@@ -69,8 +69,16 @@ export function searchUnifiedSports(
   const matchedServices = SERVICES.filter((s) => {
     if (s.category === "deportes-fitness") return true;
     const nameMatch = s.name.toLowerCase().includes(cleanQuery);
-    const descMatch = (s.shortDescription[locale] || s.shortDescription.es || "").toLowerCase().includes(cleanQuery);
-    const tagMatch = s.tags.some((t) => t.toLowerCase().includes(cleanQuery));
+    const descMatch = (
+      s.shortDescription?.[locale] ||
+      s.shortDescription?.es ||
+      s.description?.[locale] ||
+      s.description?.es ||
+      ""
+    )
+      .toLowerCase()
+      .includes(cleanQuery);
+    const tagMatch = (s.tags || []).some((t) => t.toLowerCase().includes(cleanQuery));
     return nameMatch || descMatch || tagMatch;
   });
 
