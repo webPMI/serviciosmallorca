@@ -126,6 +126,7 @@ export const mercatCobertInca: ServiceItem = {
   phone: "+34 971 880 140",
   whatsapp: "+34 971 880 140",
   website: "https://incaciutat.com/mercats",
+  email: "esportsimercats@incaciutat.com",
   webAccessibility: "active",
   tags: ["zona:inca", "mod:cita-previa", "product:premium"],
   schedule: "Lun - Sáb: 07:30 - 14:00 | Jue: 07:00 - 15:00 | Dom: Cerrado",

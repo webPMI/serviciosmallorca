@@ -125,6 +125,8 @@ export const mercatPereGarauPalma: ServiceItem = {
   bingMapsUrl: "https://www.bing.com/maps?q=Mercat+de+Pere+Garau+Palma",
   phone: "+34 971 275 041",
   whatsapp: "+34 971 275 041",
+  website: "https://palma.cat/mercats",
+  email: "mercatspalma@palma.cat",
   webAccessibility: "active",
   tags: ["zona:palma", "mod:cita-previa", "product:premium"],
   schedule: "Lun - Sáb: 06:00 - 15:00 | Dom: Cerrado",
