@@ -174,7 +174,6 @@ export const mercatOlivarPalma: ServiceItem = {
     ],
   },
   confidenceScore: 99,
-  verifiedBy: "Analista de Inteligencia Gastronómica",
   lastVerifiedAt: "2026-08-29",
   servicesProvided: {
     es: ["Venta de pescado fresco", "Embutidos y sobrasada", "Barras de tapas y marisco", "Frutas y verduras Km0"],

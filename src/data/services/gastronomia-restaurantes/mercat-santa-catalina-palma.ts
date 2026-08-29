@@ -174,7 +174,6 @@ export const mercatSantaCatalinaPalma: ServiceItem = {
     ],
   },
   confidenceScore: 99,
-  verifiedBy: "Analista de Inteligencia Gastronómica",
   lastVerifiedAt: "2026-08-29",
   servicesProvided: {
     es: ["Pescadería fresca", "Tapas y variats", "Charcutería y quesos artesanos", "Vermut y vinos locales"],

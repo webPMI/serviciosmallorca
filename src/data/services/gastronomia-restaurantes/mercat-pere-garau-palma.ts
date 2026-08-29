@@ -172,7 +172,6 @@ export const mercatPereGarauPalma: ServiceItem = {
     ],
   },
   confidenceScore: 98,
-  verifiedBy: "Analista de Inteligencia Gastronómica",
   lastVerifiedAt: "2026-08-29",
   servicesProvided: {
     es: ["Venta directa de agricultores", "Pescadería fresca", "Aves y carnicería", "Frutas y verduras"],

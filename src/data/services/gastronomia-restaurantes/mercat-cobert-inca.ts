@@ -173,7 +173,6 @@ export const mercatCobertInca: ServiceItem = {
     ],
   },
   confidenceScore: 98,
-  verifiedBy: "Analista de Inteligencia Gastronómica",
   lastVerifiedAt: "2026-08-29",
   servicesProvided: {
     es: ["Carnes del Raiguer", "Verduras del Pla", "Berenars mallorquines", "Embutidos artesanos"],
