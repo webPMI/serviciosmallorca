@@ -55,9 +55,9 @@ export interface ReleaseLog {
   entries: ChangelogEntry[];
 }
 
-export const CURRENT_PLATFORM_VERSION = "0.01-beta";
-export const PLATFORM_RELEASE_DATE = "2026-08-28";
-export const PLATFORM_LAST_BUILD_TIMESTAMP = "2026-08-28T13:31:00+02:00";
+export const CURRENT_PLATFORM_VERSION = "0.02-beta";
+export const PLATFORM_RELEASE_DATE = "2026-08-29";
+export const PLATFORM_LAST_BUILD_TIMESTAMP = "2026-08-29T10:50:00+02:00";
 
 /**
  * Devuelve la fecha y hora formateada de la última actualización según el idioma.
@@ -84,6 +84,85 @@ export function getFormattedBuildTimestamp(locale: "es" | "en" | "ca" | "de" = "
 }
 
 export const CHANGELOG_RELEASES: ReleaseLog[] = [
+  {
+    version: "0.02",
+    versionLabel: {
+      es: "v0.02-beta · Rediseño Editorial del Blog, Directorio Reactivo y Optimizaciones SEO",
+      en: "v0.02-beta · Editorial Blog Redesign, Reactive Directory & SEO Optimizations",
+      ca: "v0.02-beta · Redisseny Editorial del Blog, Directori Reactiu i Optimitzacions SEO",
+      de: "v0.02-beta · Redaktionelles Blog-Redesign, Reaktives Verzeichnis & SEO-Optimierung",
+    },
+    type: "BETA",
+    date: "2026-08-29",
+    summary: {
+      es: "Gran actualización editorial y visual: nuevo diseño magazine para el blog con TOC sticky y barra de progreso, directorio de servicios con ordenación dinámica y vista de lista/tarjetas, y optimizaciones de SEO/Sitemap globales.",
+      en: "Major visual and editorial update: magazine-style layout for the blog with sticky TOC and reading progress bar, reactive directory with live sorting and grid/list toggle, and global SEO/Sitemap enhancements.",
+      ca: "Gran actualització editorial i visual: nou disseny magazine per al blog amb TOC sticky i barra de progrés, directori de serveis amb ordenació dinàmica i commutador targeta/llista, i optimitzacions SEO/Sitemap.",
+      de: "Großes visuelles und redaktionelles Update: Magazin-Layout für den Blog mit Sticky-Inhaltsverzeichnis und Lesefortschrittsbalken, reaktives Verzeichnis mit Live-Sortierung und Listenansicht sowie umfassende SEO/Sitemap-Optimierungen.",
+    },
+    highlights: {
+      es: [
+        "Rediseño completo del Blog: BlogCard con badge de tipo de post, índice con live search y detalle con TOC sticky.",
+        "Directorio interactivo con vista Grid/List y ordenación dinámica por Mejor Valorado, A-Z y Más Reciente.",
+        "Hero de la página de inicio con estadísticas en vivo animadas mediante IntersectionObserver.",
+        "Ficha de servicio con barra de progreso, metadatos enriquecidos de Open Graph y Schema.org BreadcrumbList.",
+        "Sitemap dinámico multilingüe actualizado con indexación de secciones editoriales e itinerarios.",
+      ],
+      en: [
+        "Complete Blog redesign: enhanced BlogCard, live search index, and sticky TOC article layout with reading progress.",
+        "Interactive directory featuring Grid/List toggle and dynamic sorting by Best Rated, A-Z, and Newest.",
+        "Homepage hero with real-time statistics animated via IntersectionObserver.",
+        "Service detail pages with reading progress bar, rich Open Graph metadata, and Schema.org BreadcrumbList.",
+        "Multilingual dynamic sitemap indexing all editorial and tour routes.",
+      ],
+      ca: [
+        "Redisseny complet del Blog: BlogCard amb tipus de post, cerca en viu i detall amb TOC sticky i progrés.",
+        "Directori interactiu amb commutador Grid/List i ordenació dinàmica per Millor Valorat, A-Z i Més Recent.",
+        "Hero de la pàgina d'inici amb estadístiques en viu animades mitjançant IntersectionObserver.",
+        "Ficha de servei amb barra de progrés, metadades Open Graph enriquides i BreadcrumbList Schema.org.",
+        "Sitemap dinàmic multilingüe actualitzat amb totes les rutes del blog i tours.",
+      ],
+      de: [
+        "Komplettes Blog-Redesign: BlogCard mit Beitragsart-Badges, Live-Suche und Sticky-TOC mit Lesefortschrittsbalken.",
+        "Interaktives Verzeichnis mit Grid/Listenansicht und dynamischer Sortierung (Beste Bewertung, A-Z, Neueste).",
+        "Startseiten-Hero mit animierten Live-Statistiken über IntersectionObserver.",
+        "Detaillierte Dienstleistungsseiten mit Lesebalken, Open-Graph-Metadaten und Schema.org BreadcrumbList.",
+        "Dynamische mehrsprachige Sitemap mit vollständiger Indexierung redaktioneller Inhalte und Routen.",
+      ],
+    },
+    entries: [
+      {
+        category: "FEATURE",
+        title: {
+          es: "Rediseño Magazine del Blog & TOC Sticky",
+          en: "Magazine Blog Redesign & Sticky TOC",
+          ca: "Redisseny Magazine del Blog i TOC Sticky",
+          de: "Magazin-Design für das Blog & Sticky Inhaltsverzeichnis",
+        },
+        description: {
+          es: "Nueva experiencia de lectura con cálculo de tiempo de lectura, barra de progreso fija, índice de contenidos interactivo y botones para compartir.",
+          en: "New reading experience with estimated read time, fixed progress bar, interactive table of contents, and native share tools.",
+          ca: "Nova experiència de lectura amb temps estimat, barra de progrés fixa, índex interactiu i eines per compartir.",
+          de: "Neues Leseerlebnis mit geschätzter Lesezeit, fixiertem Fortschrittsbalken, interaktivem Inhaltsverzeichnis und Share-Tools.",
+        },
+      },
+      {
+        category: "FEATURE",
+        title: {
+          es: "Directorio de Servicios con Toggle de Vistas y Ordenación",
+          en: "Service Directory with View Toggle & Live Sorting",
+          ca: "Directori de Serveis amb Commutador de Vistes i Ordenació",
+          de: "Dienstleistungsverzeichnis mit Ansichtsumschaltung & Live-Sortierung",
+        },
+        description: {
+          es: "Permite cambiar entre tarjetas y lista compacta, además de ordenar los resultados en tiempo real sin recargar la página.",
+          en: "Allows toggling between card and compact list views, plus instant client-side sorting without page reload.",
+          ca: "Permet alternar entre targetes i llista compacta, a més d'ordenar resultats en temps real.",
+          de: "Ermöglicht das Umschalten zwischen Karten- und Listenansicht sowie Sortierung in Echtzeit ohne Neuladen.",
+        },
+      },
+    ],
+  },
   {
     version: "0.01",
     versionLabel: {

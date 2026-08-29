@@ -29,7 +29,7 @@ const rankLabel =
       ? translations["honor.gold"] || "🥇 #2 Oro"
       : spot.position === 3
         ? translations["honor.silver"] || "🥈 #3 Plata"
-        : `🥉 #${spot.position} Cuadro de Honor`;
+        : (translations["honor.bronze"] || "🥉 #{pos} Cuadro de Honor").replace("{pos}", String(spot.position));
 
 const nextPrice = calculateNextBidPrice(spot.currentBidEuros);
 ---

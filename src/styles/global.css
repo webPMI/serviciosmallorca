@@ -587,6 +587,37 @@ object {
   -webkit-text-fill-color: transparent;
 }
 
+/* Reading Progress Bar Global */
+#reading-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+  z-index: 9999;
+  transition: width 0.1s linear;
+  border-radius: 0 2px 2px 0;
+}
+
+/* Tarjeta Premium */
+.card-premium {
+  background: var(--color-surface);
+  border: 1px solid var(--color-surface-border);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+  transition:
+    transform var(--transition-smooth),
+    box-shadow var(--transition-smooth),
+    border-color var(--transition-smooth);
+}
+
+.card-premium:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-primary-border);
+}
+
 /* Animaciones y Efectos */
 .hover-lift {
   transition: transform var(--transition-smooth);
@@ -610,6 +641,22 @@ object {
 
 .fade-in {
   animation: fadeIn 0.4s var(--ease-bounce) forwards;
+}
+
+@keyframes pulseGlow {
+  0%,
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 0 0 rgba(64, 145, 108, 0.4);
+  }
+  50% {
+    opacity: 0.85;
+    box-shadow: 0 0 0 8px rgba(64, 145, 108, 0);
+  }
+}
+
+.animate-pulse {
+  animation: pulseGlow 2.5s infinite;
 }
 
 /* Custom Scrollbar */

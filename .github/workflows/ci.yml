@@ -1,4 +1,18 @@
-name: CI / Pre-Deployment Smoke & Quality Gates
+name: CI / CD — Quality Gates, Security, Tests, Build & Deploy
+
+# =============================================================================
+# PIPELINE DE CI/CD BLINDADO — Servicios Mallorca
+# -----------------------------------------------------------------------------
+# Secure en la fusión: verificación continua de límites de calidad, escaneo de
+# secretos, puerta de cobertura y auto-despliegue a Cloudflare Workers sólo en
+# main. Diseñado para fallar temprano (fail-fast) y bloquear merges rotos.
+#
+# ⟶ Configuración de secretos requerida (repo → Settings → Secrets & variables):
+#   * CLOUDFLARE_API_TOKEN     (deploy; con scope Workers/Pagination)
+#   * CLOUDFLARE_ACCOUNT_ID    (deploy)
+#   * PUBLIC_FIREBASE_*        (7 vars, OBLIGATORIAS en producción tras la
+#     migración GR-13 a import.meta.env; viven también en Cloudflare Dashboard).
+# =============================================================================
 
 on:
   push:
@@ -8,14 +22,25 @@ on:
 
 jobs:
   quality-and-smoke-test:
-    name: 🛡️ Audit, Taxonomy, Tests & Build
+    name: 🛡️ Audit + Lint + Coverage + Build + Smoke
     runs-on: ubuntu-latest
+
+    env:
+      # Env davis público del front (Astro las inline en build). Sin ellas el
+      # smoke-test no puede comprobar el login real. Se inyectan desde secrets.
+      PUBLIC_FIREBASE_API_KEY: ${{ secrets.PUBLIC_FIREBASE_API_KEY }}
+      PUBLIC_FIREBASE_AUTH_DOMAIN: ${{ secrets.PUBLIC_FIREBASE_AUTH_DOMAIN }}
+      PUBLIC_FIREBASE_PROJECT_ID: ${{ secrets.PUBLIC_FIREBASE_PROJECT_ID }}
+      PUBLIC_FIREBASE_STORAGE_BUCKET: ${{ secrets.PUBLIC_FIREBASE_STORAGE_BUCKET }}
+      PUBLIC_FIREBASE_MESSAGING_SENDER_ID: ${{ secrets.PUBLIC_FIREBASE_MESSAGING_SENDER_ID }}
+      PUBLIC_FIREBASE_APP_ID: ${{ secrets.PUBLIC_FIREBASE_APP_ID }}
+      PUBLIC_FIREBASE_MEASUREMENT_ID: ${{ secrets.PUBLIC_FIREBASE_MEASUREMENT_ID }}
 
     steps:
       - name: 📥 Checkout Repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 1
 
       - name: ⚡ Setup Node.js Environment
         uses: actions/setup-node@v4
@@ -29,24 +54,80 @@ jobs:
       - name: 🔍 TypeScript Strict Typecheck (GR-03)
         run: npm run typecheck
 
-      - name: 🗂️ Validate Mallorca Services Taxonomy Integrity
+      - name: 🗂️ Validate Mallorca Services Taxonomy (GR-12)
         run: npm run validate:taxonomy
 
       - name: 🧪 Execute Unit & Integration Test Suites (GR-05)
         run: npm test
 
-      - name: 🛡️ Execute Multi-Auditor Intelligence Audit (5 Specialized Auditors)
+      - name: 📏 Lint (GR-09)
+        run: npm run lint
+
+      - name: 🎨 Format Check
+        run: npm run format:check
+
+      - name: 🔐 Secrets Scanner & Git Hygiene (GR-13)
+        run: npm run audit:security
+
+      - name: 🧪 Coverage Gate (umbrales 90/75/90/90)
+        run: npm run test:coverage
+
+      - name: 🛡️ Multi-Auditor Intelligence Audit
         run: npm run audit:full
 
-      - name: 🏗️ Execute Production Build Smoke Test (GR-10)
+      - name: 🏗️ Production Build Smoke Test (GR-10)
         run: npm run build
 
-      - name: 🚀 Deploy to Cloudflare Workers (Auto-Deploy on Main Push)
-        if: github.ref == 'refs/heads/main' && github.event_name == 'push' && env.CLOUDFLARE_API_TOKEN != ''
+      - name: 🔒 Verificar que ningún secreto quedó hardcodeado en el bundle
+        run: |
+          if grep -riE "AIza[0-9A-Za-z_\\-]{30,}|sk-[A-Za-z0-9]{20,}" dist/ 2>/dev/null; then
+            echo "❌ Secreto filtrado al bundle de producción (dist/)"
+            exit 1
+          else
+            echo "✅ Bundle de producción sin secretos hardcodeados"
+          fi
+
+  deploy:
+    name: 🚀 Deploy a Cloudflare Workers (main)
+    runs-on: ubuntu-latest
+    needs: quality-and-smoke-test
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push' && env.CLOUDFLARE_API_TOKEN != '' && env.CLOUDFLARE_ACCOUNT_ID != ''
+
+    env:
+      PUBLIC_FIREBASE_API_KEY: ${{ secrets.PUBLIC_FIREBASE_API_KEY }}
+      PUBLIC_FIREBASE_AUTH_DOMAIN: ${{ secrets.PUBLIC_FIREBASE_AUTH_DOMAIN }}
+      PUBLIC_FIREBASE_PROJECT_ID: ${{ secrets.PUBLIC_FIREBASE_PROJECT_ID }}
+      PUBLIC_FIREBASE_STORAGE_BUCKET: ${{ secrets.PUBLIC_FIREBASE_STORAGE_BUCKET }}
+      PUBLIC_FIREBASE_MESSAGING_SENDER_ID: ${{ secrets.PUBLIC_FIREBASE_MESSAGING_SENDER_ID }}
+      PUBLIC_FIREBASE_APP_ID: ${{ secrets.PUBLIC_FIREBASE_APP_ID }}
+      PUBLIC_FIREBASE_MEASUREMENT_ID: ${{ secrets.PUBLIC_FIREBASE_MEASUREMENT_ID }}
+
+    steps:
+      - name: 📥 Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: ⚡ Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "npm"
+
+      - name: 📦 Install Dependencies
+        run: npm ci
+
+      - name: 🏗️ Build con variables de producción
+        run: npm run build
+
+      - name: 🚀 Deploy to Cloudflare Workers
         uses: cloudflare/wrangler-action@v3
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID || 'dbd535725cc4f3bc69288909ae46b920' }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           command: deploy
+
+      - name: 📡 Live Healthcheck
+        run: |
+          sleep 5
+          curl -sf https://serviciosmallorca.com/ | grep -qi "serviciosmallorca" && echo "✅ Healthcheck OK" || (echo "❌ Healthcheck fallido" && exit 1)

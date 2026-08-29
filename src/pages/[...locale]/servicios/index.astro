@@ -144,7 +144,7 @@ const initialFilteredServices = SERVICES.filter((service) => {
             class="btn btn-secondary btn-sm"
             style={selectedCategory || selectedZone || searchQuery ? "display:inline-flex;" : "display:none;"}
           >
-            Limpiar
+            {translations["services.clearFilters"] || "Limpiar"}
           </a>
         </div>
       </form>
@@ -176,14 +176,57 @@ const initialFilteredServices = SERVICES.filter((service) => {
     <div class="results-stats-toolbar">
       <div class="results-count-text">
         <span class="count-badge" id="results-count-num">{initialFilteredServices.length}</span>
-        <span
-          >{translations["services.catalogCount"] || "servicios y comercios en Mallorca (Curación pública & IA)"}</span
-        >
+        <span>
+          {translations["services.results.showing"] || "Mostrando"}
+          <strong id="results-count-display">{initialFilteredServices.length}</strong>
+          {translations["services.results.of"] || "de"}
+          {SERVICES.filter((s) => s.status !== "permanently_closed").length}
+          {translations["services.results.label"] || "servicios"}
+        </span>
       </div>
-      <div class="quick-add-service-cta">
-        <a href={`${prefix}dashboard`} class="btn btn-outline-primary btn-xs">
-          <span>+ Publicar Negocio</span>
-        </a>
+      <div class="results-toolbar-right">
+        <!-- Sort selector -->
+        <div class="sort-wrap">
+          <label for="sort-select" class="sort-label">{translations["services.sort.label"] || "Ordenar"}:</label>
+          <select id="sort-select" class="select-field select-sm" aria-label={translations["services.sort.label"]}>
+            <option value="default">{translations["services.sort.rating"] || "Mejor valorado"}</option>
+            <option value="az">{translations["services.sort.az"] || "A - Z"}</option>
+            <option value="newest">{translations["services.sort.newest"] || "Más reciente"}</option>
+          </select>
+        </div>
+        <!-- View toggle -->
+        <div class="view-toggle" role="group" aria-label="Vista">
+          <button
+            id="view-grid-btn"
+            class="view-toggle-btn active"
+            aria-pressed="true"
+            title={translations["services.viewToggle.grid"] || "Grid"}
+          >
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+              <rect x="0" y="0" width="7" height="7" rx="1"></rect>
+              <rect x="9" y="0" width="7" height="7" rx="1"></rect>
+              <rect x="0" y="9" width="7" height="7" rx="1"></rect>
+              <rect x="9" y="9" width="7" height="7" rx="1"></rect>
+            </svg>
+          </button>
+          <button
+            id="view-list-btn"
+            class="view-toggle-btn"
+            aria-pressed="false"
+            title={translations["services.viewToggle.list"] || "Lista"}
+          >
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+              <rect x="0" y="1" width="16" height="3" rx="1"></rect>
+              <rect x="0" y="6" width="16" height="3" rx="1"></rect>
+              <rect x="0" y="11" width="16" height="3" rx="1"></rect>
+            </svg>
+          </button>
+        </div>
+        <div class="quick-add-service-cta">
+          <a href={`${prefix}dashboard`} class="btn btn-outline-primary btn-xs">
+            <span>+ Publicar Negocio</span>
+          </a>
+        </div>
       </div>
     </div>
 
@@ -200,7 +243,7 @@ const initialFilteredServices = SERVICES.filter((service) => {
     </div>
 
     <!-- Results Directory Grid -->
-    <div id="services-grid" class="services-directory-grid">
+    <div id="services-grid" class="services-directory-grid" data-view="grid">
       {
         SERVICES.map((service) => {
           const isMatch = initialFilteredServices.some((s) => s.id === service.id);
@@ -213,6 +256,8 @@ const initialFilteredServices = SERVICES.filter((service) => {
               data-tags={service.tags.join(" ").toLowerCase()}
               data-category={service.category}
               data-zone={service.zone}
+              data-rating={service.rating || 0}
+              data-slug={service.slug}
               style={isMatch ? "display:block;" : "display:none;"}
             >
               <ServiceCard
@@ -343,6 +388,60 @@ const initialFilteredServices = SERVICES.filter((service) => {
     });
 
     noResultsResetBtn?.addEventListener("click", resetAll);
+
+    // ─── SORT ───
+    const sortSelect = document.getElementById("sort-select");
+    const grid = document.getElementById("services-grid");
+
+    sortSelect?.addEventListener("change", () => {
+      const sortVal = sortSelect.value;
+      const visibleItems = items.filter((el) => el.style.display !== "none");
+      visibleItems.sort((a, b) => {
+        if (sortVal === "az") {
+          return (a.getAttribute("data-name") || "").localeCompare(b.getAttribute("data-name") || "");
+        }
+        if (sortVal === "newest") {
+          return (b.getAttribute("data-slug") || "").localeCompare(a.getAttribute("data-slug") || "");
+        }
+        // default: rating desc
+        return parseFloat(b.getAttribute("data-rating") || "0") - parseFloat(a.getAttribute("data-rating") || "0");
+      });
+      visibleItems.forEach((el) => grid?.appendChild(el));
+    });
+
+    // ─── VIEW TOGGLE ───
+    const gridBtn = document.getElementById("view-grid-btn");
+    const listBtn = document.getElementById("view-list-btn");
+
+    gridBtn?.addEventListener("click", () => {
+      grid?.setAttribute("data-view", "grid");
+      gridBtn.classList.add("active");
+      gridBtn.setAttribute("aria-pressed", "true");
+      listBtn?.classList.remove("active");
+      listBtn?.setAttribute("aria-pressed", "false");
+    });
+
+    listBtn?.addEventListener("click", () => {
+      grid?.setAttribute("data-view", "list");
+      listBtn.classList.add("active");
+      listBtn.setAttribute("aria-pressed", "true");
+      gridBtn?.classList.remove("active");
+      gridBtn?.setAttribute("aria-pressed", "false");
+    });
+
+    // also update results-count-display
+    const countDisplay = document.getElementById("results-count-display");
+    const origApply = applyFilters;
+    // wrap to also update display
+    searchInput?.addEventListener("input", () => {
+      if (countDisplay && countNum) countDisplay.textContent = countNum.textContent;
+    });
+    categorySelect?.addEventListener("change", () => {
+      if (countDisplay && countNum) countDisplay.textContent = countNum.textContent;
+    });
+    zoneSelect?.addEventListener("change", () => {
+      if (countDisplay && countNum) countDisplay.textContent = countNum.textContent;
+    });
   });
 </script>
 
@@ -369,10 +468,82 @@ const initialFilteredServices = SERVICES.filter((service) => {
     margin: 0;
   }
 
-  .filters-card {
-    padding: var(--space-md);
-    margin-bottom: var(--space-md);
-    border-radius: var(--border-radius-lg);
+  .results-stats-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-sm);
+    padding: var(--space-sm) 0;
+  }
+
+  .results-toolbar-right {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+  }
+
+  .sort-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .sort-label {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .select-sm {
+    padding: 0.3rem 0.6rem;
+    font-size: var(--font-size-xs);
+  }
+
+  .view-toggle {
+    display: flex;
+    gap: 2px;
+    background: var(--color-surface-hover);
+    border-radius: var(--border-radius-sm);
+    padding: 2px;
+    border: 1px solid var(--color-surface-border);
+  }
+
+  .view-toggle-btn {
+    width: 32px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: transparent;
+    border-radius: calc(var(--border-radius-sm) - 2px);
+    color: var(--color-text-muted);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+  }
+
+  .view-toggle-btn.active {
+    background: var(--color-surface);
+    color: var(--color-primary);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .view-toggle-btn:hover:not(.active) {
+    color: var(--color-text);
+    background: rgba(0, 0, 0, 0.04);
+  }
+
+  /* List view mode */
+  #services-grid[data-view="list"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  #services-grid[data-view="list"] .service-item-wrapper {
+    max-width: 100%;
   }
 
   .filters-form {

@@ -27,10 +27,47 @@ const title = post.title[locale];
 const excerpt = post.excerpt[locale];
 const content = post.content[locale];
 
+// postType badge
+const postTypeLabels: Record<string, string> = {
+  guia: translations["blog.postType.guia"] || "Guía",
+  top_list: translations["blog.postType.top_list"] || "Top Lista",
+  noticia: translations["blog.postType.noticia"] || "Noticia",
+  tutorial: translations["blog.postType.tutorial"] || "Tutorial",
+};
+const postTypeIcons: Record<string, string> = {
+  guia: "📖",
+  top_list: "🏆",
+  noticia: "📰",
+  tutorial: "🎓",
+};
+
+// Computed read time from content word count
+const wordCount = content.split(/\s+/).filter(Boolean).length;
+const computedReadMin = Math.max(1, Math.ceil(wordCount / 200));
+const readTimeDisplay = post.readTime || `${computedReadMin} min`;
+
+// Format date
+const formattedDate = new Date(post.publishDate).toLocaleDateString(
+  locale === "en" ? "en-GB" : locale === "de" ? "de-DE" : locale === "ca" ? "ca-ES" : "es-ES",
+  { day: "numeric", month: "long", year: "numeric" },
+);
+
+// Extract TOC headings from content (### headings)
+const tocHeadings = content
+  .split("\n")
+  .filter((line) => line.trim().startsWith("### "))
+  .map((line, idx) => ({
+    text: line.trim().replace(/^### /, ""),
+    id: `section-${idx}`,
+  }));
+
 // Fetch related services
 const relatedServices = post.relatedServiceIds
   .map((id) => getServiceById(id))
   .filter((s): s is NonNullable<typeof s> => s !== undefined);
+
+// Article URL for sharing
+const articleUrl = `https://serviciosmallorca.com${prefix}blog/${post.slug}`;
 
 // Schema.org structured data for BlogPosting
 const schemaOrg = {
@@ -40,6 +77,7 @@ const schemaOrg = {
   description: excerpt,
   image: post.coverImage,
   datePublished: post.publishDate,
+  url: articleUrl,
   author: {
     "@type": "Person",
     name: post.author.name,
@@ -52,8 +90,33 @@ const schemaOrg = {
   },
 };
 
-// 🏆 ItemList para rankings editoriales (postType: "top_list") — Rich Results de listas.
-// El orden de relatedServiceIds ES la posición del ranking (docs/TOPS_SEO_PLAYBOOK.md §2).
+// BreadcrumbList schema
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: translations["nav.home"] || "Inicio",
+      item: `https://serviciosmallorca.com${prefix}`,
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: translations["nav.blog"] || "Blog",
+      item: `https://serviciosmallorca.com${prefix}blog`,
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: title,
+      item: articleUrl,
+    },
+  ],
+};
+
+// 🏆 ItemList para rankings editoriales (postType: "top_list")
 const itemListSchema =
   post.postType === "top_list" && relatedServices.length > 0
     ? {
@@ -73,127 +136,324 @@ const itemListSchema =
 ---
 
 <BaseLayout title={`${title} - ${translations["site.title"]}`} lang={locale} description={excerpt}>
+  <!-- ═══ Schema.org ═══ -->
   <script is:inline type="application/ld+json" set:html={JSON.stringify(schemaOrg)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   {itemListSchema && <script is:inline type="application/ld+json" set:html={JSON.stringify(itemListSchema)} />}
+
+  <!-- ═══ Open Graph mejorado ═══ -->
+  <meta slot="head" property="og:type" content="article" />
+  <meta slot="head" property="og:title" content={`${title} - ${translations["site.title"]}`} />
+  <meta slot="head" property="og:description" content={excerpt} />
+  <meta slot="head" property="og:image" content={post.coverImage} />
+  <meta slot="head" property="og:url" content={articleUrl} />
+  <meta slot="head" property="article:published_time" content={post.publishDate} />
+  <meta slot="head" property="article:author" content={post.author.name} />
+  {post.tags.map((tag) => <meta slot="head" property="article:tag" content={tag} />)}
+  <meta slot="head" name="twitter:card" content="summary_large_image" />
+  <meta slot="head" name="twitter:title" content={`${title} - ${translations["site.title"]}`} />
+  <meta slot="head" name="twitter:description" content={excerpt} />
+  <meta slot="head" name="twitter:image" content={post.coverImage} />
+
+  <!-- ═══ Reading Progress Bar ═══ -->
+  <div
+    id="reading-progress-bar"
+    role="progressbar"
+    aria-label={translations["blog.readProgress"] || "Progreso de lectura"}
+    aria-valuenow={0}
+    aria-valuemin={0}
+    aria-valuemax={100}
+  >
+  </div>
 
   <Navbar currentLocale={locale} translations={translations} getLangPrefix={getLangPrefix} />
 
-  <main class="container section">
-    <!-- Breadcrumbs -->
+  <main class="container section" id="post-main">
+    <!-- ═══ Breadcrumbs ═══ -->
     <nav class="breadcrumb-nav" aria-label="Breadcrumb">
       <a href={prefix}>{translations["nav.home"]}</a>
-      <span>/</span>
+      <span aria-hidden="true">/</span>
       <a href={`${prefix}blog`}>{translations["nav.blog"]}</a>
-      <span>/</span>
-      <span class="active-crumb">{title}</span>
+      <span aria-hidden="true">/</span>
+      <span class="active-crumb" aria-current="page">{title}</span>
     </nav>
 
-    <!-- Post Article -->
-    <article class="post-layout">
-      <header class="post-header text-center">
-        {
-          category && (
-            <span class="badge badge-accent">
-              {category.icon} {category.name[locale]}
+    <!-- ═══ Post Layout: article + sidebar ═══ -->
+    <div class="post-layout-wrapper">
+      <!-- MAIN ARTICLE -->
+      <article class="post-layout" id="post-article">
+        <!-- Post Header -->
+        <header class="post-header text-center">
+          <div class="post-badges-row">
+            {
+              category && (
+                <span class="badge badge-accent">
+                  {category.icon} {category.name[locale]}
+                </span>
+              )
+            }
+            {
+              post.postType && (
+                <span class="post-type-badge">
+                  {postTypeIcons[post.postType]} {postTypeLabels[post.postType]}
+                </span>
+              )
+            }
+          </div>
+
+          <h1 class="post-main-title">{title}</h1>
+
+          <div class="post-author-bar">
+            <img
+              src={post.author.avatar}
+              alt={post.author.name}
+              class="post-avatar"
+              loading="lazy"
+              onerror="this.style.display='none'"
+            />
+            <div class="post-author-text">
+              <span class="author-name">{translations["blog.author"] || "Por"} {post.author.name}</span>
+              <span class="author-role">{post.author.role}</span>
+            </div>
+            <span class="bar-separator" aria-hidden="true">·</span>
+            <time datetime={post.publishDate} class="publish-time">
+              {formattedDate}
+            </time>
+            <span class="bar-separator" aria-hidden="true">·</span>
+            <span class="read-time">⏱️ {readTimeDisplay} {translations["blog.readTime"]}</span>
+          </div>
+        </header>
+
+        <!-- Featured Image -->
+        <div class="post-cover-wrap">
+          <img src={post.coverImage} alt={title} class="post-cover-img" loading="eager" />
+          <div class="post-cover-overlay"></div>
+        </div>
+
+        <!-- Post Body -->
+        <div class="post-body card" id="post-body">
+          <div class="lead-paragraph">
+            {excerpt}
+          </div>
+
+          <!-- AdSense In-Article -->
+          <AdSenseSlot format="in-feed" slotId="blog-in-article-1" />
+
+          <div class="content-paragraphs">
+            {
+              content.split("\n\n").map((paragraph, pIdx) => {
+                const trimmed = paragraph.trim();
+                if (!trimmed) return null;
+                if (trimmed.startsWith("### ")) {
+                  const headingText = trimmed.replace("### ", "");
+                  const headingId = `section-${tocHeadings.findIndex((h) => h.text === headingText)}`;
+                  return (
+                    <h3 class="content-h3" id={headingId}>
+                      {headingText}
+                    </h3>
+                  );
+                }
+                if (trimmed.startsWith("- ")) {
+                  const items = trimmed.split("\n").map((i) => i.replace(/^- /, ""));
+                  return (
+                    <ul class="content-list">
+                      {items.map((item) => (
+                        <li set:html={item.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")} />
+                      ))}
+                    </ul>
+                  );
+                }
+                return <p class="content-p" set:html={trimmed.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")} />;
+              })
+            }
+          </div>
+
+          <!-- Tags -->
+          <div class="post-tags-row">
+            <span class="tags-label">🏷️</span>
+            {
+              post.tags.map((tag) => (
+                <a href={`${prefix}blog?q=${encodeURIComponent(tag)}`} class="tag-pill">
+                  #{tag}
+                </a>
+              ))
+            }
+          </div>
+
+          <!-- Share buttons -->
+          <div class="post-share-row">
+            <span class="share-label">{translations["blog.share.title"] || "Compartir"}</span>
+            <div class="share-buttons">
+              <button
+                id="share-copy-btn"
+                class="share-btn share-btn--copy"
+                aria-label={translations["blog.share.copy"] || "Copiar enlace"}
+                data-url={articleUrl}
+              >
+                🔗 {translations["blog.share.copy"] || "Copiar enlace"}
+              </button>
+              <a
+                href={`https://api.whatsapp.com/send?text=${encodeURIComponent(`${title} — ${articleUrl}`)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="share-btn share-btn--whatsapp"
+                aria-label="Compartir en WhatsApp"
+              >
+                💬 WhatsApp
+              </a>
+              <a
+                href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(articleUrl)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="share-btn share-btn--x"
+                aria-label="Compartir en X (Twitter)"
+              >
+                𝕏 Twitter
+              </a>
+            </div>
+            <span id="share-copied-toast" class="share-copied-toast" role="status" aria-live="polite">
+              {translations["blog.share.copied"] || "¡Enlace copiado!"}
             </span>
+          </div>
+        </div>
+
+        <!-- Related Services -->
+        {
+          relatedServices.length > 0 && (
+            <section class="related-services-section">
+              <div class="section-header">
+                <h2 class="section-title">{translations["blog.relatedServices"]}</h2>
+              </div>
+              <div class="related-services-grid">
+                {relatedServices.map((service) => (
+                  <ServiceCard
+                    service={service}
+                    currentLocale={locale}
+                    getLangPrefix={getLangPrefix}
+                    translations={translations}
+                  />
+                ))}
+              </div>
+            </section>
           )
         }
 
-        <h1 class="post-main-title">{title}</h1>
-
-        <div class="post-author-bar">
-          <img src={post.author.avatar} alt={post.author.name} class="post-avatar" />
-          <div class="post-author-text">
-            <span class="author-name">{post.author.name}</span>
-            <span class="author-role">{post.author.role}</span>
-          </div>
-          <span class="bar-separator">·</span>
-          <time datetime={post.publishDate} class="publish-time">
-            {translations["blog.published"]}: {post.publishDate}
-          </time>
-          <span class="bar-separator">·</span>
-          <span class="read-time">⏱️ {post.readTime} {translations["blog.readTime"]}</span>
+        <!-- Back to Blog -->
+        <div class="back-blog-wrap text-center">
+          <a href={`${prefix}blog`} class="btn btn-secondary"> ← {translations["blog.backToBlog"]} </a>
         </div>
-      </header>
+      </article>
 
-      <!-- Featured Image -->
-      <div class="post-cover-wrap card">
-        <img src={post.coverImage} alt={title} class="post-cover-img" />
-      </div>
-
-      <!-- Post Body -->
-      <div class="post-body card">
-        <div class="lead-paragraph">
-          {excerpt}
-        </div>
-
-        <!-- AdSense In-Article Slot -->
-        <AdSenseSlot format="in-feed" slotId="blog-in-article-1" />
-
-        <div class="content-paragraphs">
-          {
-            content.split("\n\n").map((paragraph) => {
-              const trimmed = paragraph.trim();
-              if (!trimmed) return null;
-              if (trimmed.startsWith("### ")) {
-                return <h3 class="content-h3">{trimmed.replace("### ", "")}</h3>;
-              }
-              if (trimmed.startsWith("- ")) {
-                const items = trimmed.split("\n").map((i) => i.replace(/^- /, ""));
-                return (
-                  <ul class="content-list">
-                    {items.map((item) => (
-                      <li set:html={item.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")} />
-                    ))}
-                  </ul>
-                );
-              }
-              return <p class="content-p" set:html={trimmed.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")} />;
-            })
-          }
-        </div>
-
-        <div class="post-tags-row">
-          <span class="tags-label">Etiquetas:</span>
-          {post.tags.map((tag) => <span class="tag-pill">#{tag}</span>)}
-        </div>
-      </div>
-
-      <!-- Related Services Section -->
+      <!-- SIDEBAR: TOC -->
       {
-        relatedServices.length > 0 && (
-          <section class="related-services-section">
-            <div class="section-header">
-              <h2 class="section-title">{translations["blog.relatedServices"]}</h2>
+        tocHeadings.length > 1 && (
+          <aside class="post-sidebar" aria-label={translations["blog.toc"] || "Contenido"}>
+            <div class="toc-card card" id="toc-card">
+              <h3 class="toc-title">📋 {translations["blog.toc"] || "Contenido del artículo"}</h3>
+              <nav>
+                <ol class="toc-list">
+                  {tocHeadings.map((h, idx) => (
+                    <li>
+                      <a href={`#${h.id}`} class="toc-link" data-idx={idx}>
+                        <span class="toc-num">{idx + 1}</span>
+                        {h.text}
+                      </a>
+                    </li>
+                  ))}
+                </ol>
+              </nav>
             </div>
-
-            <div class="related-services-grid">
-              {relatedServices.map((service) => (
-                <ServiceCard
-                  service={service}
-                  currentLocale={locale}
-                  getLangPrefix={getLangPrefix}
-                  translations={translations}
-                />
-              ))}
-            </div>
-          </section>
+          </aside>
         )
       }
-
-      <!-- Back to Blog Button -->
-      <div class="back-blog-wrap text-center">
-        <a href={`${prefix}blog`} class="btn btn-secondary">
-          ← {translations["blog.backToBlog"]}
-        </a>
-      </div>
-    </article>
+    </div>
   </main>
 
   <Footer translations={translations} currentLocale={locale} getLangPrefix={getLangPrefix} />
 </BaseLayout>
 
+<!-- ═══ Client Scripts ═══ -->
+<script>
+  // ─── Reading Progress Bar ───
+  const progressBar = document.getElementById("reading-progress-bar") as HTMLElement | null;
+  const article = document.getElementById("post-article") as HTMLElement | null;
+
+  function updateProgress() {
+    if (!progressBar || !article) return;
+    const articleTop = article.getBoundingClientRect().top + window.scrollY;
+    const articleHeight = article.scrollHeight;
+    const scrolled = window.scrollY - articleTop;
+    const progress = Math.min(100, Math.max(0, (scrolled / articleHeight) * 100));
+    progressBar.style.width = `${progress}%`;
+    progressBar.setAttribute("aria-valuenow", String(Math.round(progress)));
+  }
+
+  window.addEventListener("scroll", updateProgress, { passive: true });
+  updateProgress();
+
+  // ─── TOC active link ───
+  const tocLinks = document.querySelectorAll<HTMLAnchorElement>(".toc-link");
+  const headings = document.querySelectorAll<HTMLElement>(".content-h3[id]");
+
+  function updateTOC() {
+    let activeIdx = 0;
+    headings.forEach((h, i) => {
+      if (h.getBoundingClientRect().top <= 120) activeIdx = i;
+    });
+    tocLinks.forEach((link, i) => {
+      link.classList.toggle("toc-link--active", i === activeIdx);
+    });
+  }
+
+  if (tocLinks.length > 0) {
+    window.addEventListener("scroll", updateTOC, { passive: true });
+    updateTOC();
+  }
+
+  // ─── Share copy button ───
+  const copyBtn = document.getElementById("share-copy-btn") as HTMLButtonElement | null;
+  const toast = document.getElementById("share-copied-toast") as HTMLElement | null;
+
+  if (copyBtn) {
+    copyBtn.addEventListener("click", async () => {
+      const url = copyBtn.dataset.url || window.location.href;
+      try {
+        if (navigator.share) {
+          await navigator.share({ title: document.title, url });
+        } else {
+          await navigator.clipboard.writeText(url);
+          if (toast) {
+            toast.classList.add("visible");
+            setTimeout(() => toast.classList.remove("visible"), 2500);
+          }
+        }
+      } catch {
+        // fallback: select text
+        await navigator.clipboard.writeText(url).catch(() => {});
+        if (toast) {
+          toast.classList.add("visible");
+          setTimeout(() => toast.classList.remove("visible"), 2500);
+        }
+      }
+    });
+  }
+</script>
+
 <style>
+  /* ─── Progress Bar ─── */
+  #reading-progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 0%;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+    z-index: 9999;
+    transition: width 0.1s linear;
+    border-radius: 0 2px 2px 0;
+  }
+
+  /* ─── Breadcrumb ─── */
   .breadcrumb-nav {
     display: flex;
     align-items: center;
@@ -201,23 +461,43 @@ const itemListSchema =
     font-size: var(--font-size-xs);
     color: var(--color-text-muted);
     margin-bottom: var(--space-md);
+    flex-wrap: wrap;
   }
 
   .breadcrumb-nav a {
     color: var(--color-text-light);
     text-decoration: none;
+    transition: color var(--transition-fast);
+  }
+
+  .breadcrumb-nav a:hover {
+    color: var(--color-primary);
   }
 
   .active-crumb {
     color: var(--color-primary);
     font-weight: 600;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 300px;
   }
 
-  .post-layout {
-    max-width: 900px;
+  /* ─── Layout ─── */
+  .post-layout-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: var(--space-xl);
+    align-items: start;
+    max-width: 1100px;
     margin: 0 auto;
   }
 
+  .post-layout {
+    min-width: 0;
+  }
+
+  /* ─── Post header ─── */
   .post-header {
     display: flex;
     flex-direction: column;
@@ -226,9 +506,28 @@ const itemListSchema =
     margin-bottom: var(--space-xl);
   }
 
+  .post-badges-row {
+    display: flex;
+    gap: var(--space-xs);
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .post-type-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.25rem 0.65rem;
+    border-radius: var(--border-radius-full);
+    background: var(--color-primary-bg);
+    color: var(--color-primary-dark);
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+  }
+
   .post-main-title {
-    font-size: clamp(2rem, 4.5vw, var(--font-size-4xl));
-    font-weight: 800;
+    font-size: clamp(1.8rem, 4vw, var(--font-size-4xl));
+    font-weight: 900;
     line-height: 1.2;
     color: var(--color-text);
   }
@@ -249,6 +548,7 @@ const itemListSchema =
     height: 44px;
     border-radius: var(--border-radius-full);
     object-fit: cover;
+    border: 2px solid var(--color-surface-border);
   }
 
   .post-author-text {
@@ -260,13 +560,31 @@ const itemListSchema =
   .author-name {
     font-weight: 700;
     color: var(--color-text);
+    font-size: var(--font-size-xs);
   }
 
+  .author-role {
+    font-size: 0.7rem;
+    color: var(--color-text-muted);
+  }
+
+  .bar-separator {
+    opacity: 0.4;
+  }
+
+  .publish-time,
+  .read-time {
+    font-size: var(--font-size-xs);
+  }
+
+  /* ─── Cover Image ─── */
   .post-cover-wrap {
-    padding: 0;
+    position: relative;
     overflow: hidden;
     height: 420px;
+    border-radius: var(--border-radius-lg);
     margin-bottom: var(--space-xl);
+    box-shadow: var(--shadow-md);
   }
 
   .post-cover-img {
@@ -275,6 +593,14 @@ const itemListSchema =
     object-fit: cover;
   }
 
+  .post-cover-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 60%, rgba(0, 0, 0, 0.25) 100%);
+    pointer-events: none;
+  }
+
+  /* ─── Post body ─── */
   .post-body {
     padding: var(--space-2xl);
     margin-bottom: var(--space-2xl);
@@ -292,7 +618,7 @@ const itemListSchema =
 
   .content-paragraphs {
     font-size: var(--font-size-base);
-    line-height: 1.8;
+    line-height: 1.85;
     color: var(--color-text);
     display: flex;
     flex-direction: column;
@@ -302,8 +628,10 @@ const itemListSchema =
   .content-h3 {
     font-size: var(--font-size-xl);
     font-weight: 800;
-    margin-top: var(--space-md);
+    margin-top: var(--space-lg);
     color: var(--color-text);
+    padding-left: var(--space-sm);
+    border-left: 3px solid var(--color-primary);
   }
 
   .content-list {
@@ -313,6 +641,11 @@ const itemListSchema =
     gap: var(--space-xs);
   }
 
+  .content-p {
+    color: var(--color-text-light);
+  }
+
+  /* ─── Tags ─── */
   .post-tags-row {
     display: flex;
     align-items: center;
@@ -336,8 +669,121 @@ const itemListSchema =
     background: var(--color-primary-bg);
     color: var(--color-primary-dark);
     font-weight: 600;
+    text-decoration: none;
+    transition:
+      background var(--transition-fast),
+      color var(--transition-fast);
   }
 
+  .tag-pill:hover {
+    background: var(--color-primary);
+    color: #fff;
+  }
+
+  /* ─── Share ─── */
+  .post-share-row {
+    margin-top: var(--space-xl);
+    padding-top: var(--space-lg);
+    border-top: 1px solid var(--color-surface-border);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    position: relative;
+  }
+
+  .share-label {
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .share-buttons {
+    display: flex;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+  }
+
+  .share-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.45rem 1rem;
+    border-radius: var(--border-radius-full);
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    font-family: var(--font-family);
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+    transition:
+      transform var(--transition-fast),
+      box-shadow var(--transition-fast),
+      background var(--transition-fast);
+  }
+
+  .share-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .share-btn--copy {
+    background: var(--color-primary-bg);
+    color: var(--color-primary-dark);
+  }
+
+  .share-btn--copy:hover {
+    background: var(--color-primary);
+    color: #fff;
+  }
+
+  .share-btn--whatsapp {
+    background: #e8f9ef;
+    color: #128c44;
+  }
+
+  .share-btn--whatsapp:hover {
+    background: #128c44;
+    color: #fff;
+  }
+
+  .share-btn--x {
+    background: #f0f0f0;
+    color: #000;
+  }
+
+  .share-btn--x:hover {
+    background: #000;
+    color: #fff;
+  }
+
+  .share-copied-toast {
+    position: absolute;
+    bottom: -2.5rem;
+    left: 0;
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    color: var(--color-success);
+    background: var(--color-success-bg);
+    border: 1px solid var(--color-success-border);
+    padding: 0.3rem 0.8rem;
+    border-radius: var(--border-radius-full);
+    opacity: 0;
+    transform: translateY(4px);
+    transition:
+      opacity 0.25s ease,
+      transform 0.25s ease;
+    pointer-events: none;
+    white-space: nowrap;
+  }
+
+  .share-copied-toast.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ─── Related services ─── */
   .related-services-section {
     margin-bottom: var(--space-2xl);
   }
@@ -348,17 +794,105 @@ const itemListSchema =
     gap: var(--space-lg);
   }
 
+  /* ─── Back button ─── */
   .back-blog-wrap {
     margin-top: var(--space-xl);
+  }
+
+  /* ─── SIDEBAR / TOC ─── */
+  .post-sidebar {
+    position: sticky;
+    top: 80px;
+  }
+
+  .toc-card {
+    padding: var(--space-lg);
+    border-radius: var(--border-radius-lg);
+    border: 1px solid var(--color-surface-border);
+  }
+
+  .toc-title {
+    font-size: var(--font-size-sm);
+    font-weight: 800;
+    color: var(--color-text);
+    margin-bottom: var(--space-md);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .toc-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .toc-link {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 0.35rem 0.5rem;
+    border-radius: var(--border-radius-sm);
+    font-size: var(--font-size-xs);
+    color: var(--color-text-light);
+    text-decoration: none;
+    transition:
+      background var(--transition-fast),
+      color var(--transition-fast);
+    line-height: 1.4;
+  }
+
+  .toc-link:hover {
+    background: var(--color-surface-hover);
+    color: var(--color-primary);
+  }
+
+  .toc-link--active {
+    background: var(--color-primary-bg);
+    color: var(--color-primary-dark);
+    font-weight: 700;
+  }
+
+  .toc-num {
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    border-radius: var(--border-radius-full);
+    background: var(--color-primary);
+    color: #fff;
+    font-size: 0.6rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1px;
+  }
+
+  /* ─── Responsive ─── */
+  @media (max-width: 900px) {
+    .post-layout-wrapper {
+      grid-template-columns: 1fr;
+    }
+    .post-sidebar {
+      display: none; /* hide TOC on mobile — shown in body via floating TOC would need extra work */
+    }
   }
 
   @media (max-width: 640px) {
     .post-cover-wrap {
       height: 240px;
     }
-
     .post-body {
       padding: var(--space-lg);
+    }
+    .share-buttons {
+      gap: var(--space-xs);
+    }
+    .share-btn {
+      padding: 0.4rem 0.75rem;
+      font-size: 0.7rem;
     }
   }
 </style>

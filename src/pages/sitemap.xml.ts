@@ -52,6 +52,8 @@ export const GET: APIRoute = async () => {
   // 2. Secciones Principales y Mercados de Autoridad
   addMultilingualUrl("/servicios", "0.95", "daily", now);
   addMultilingualUrl("/cuadro-de-honor", "0.95", "daily", now);
+  addMultilingualUrl("/blog", "0.90", "daily", now);
+  addMultilingualUrl("/tours", "0.90", "weekly", now);
   addMultilingualUrl("/unete", "0.90", "weekly", now);
   addMultilingualUrl("/deporte", "0.90", "weekly", now);
   addMultilingualUrl("/memoria-historica", "0.85", "monthly", now);

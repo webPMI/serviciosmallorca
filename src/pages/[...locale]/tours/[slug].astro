@@ -15,7 +15,7 @@ const prefix = getLangPrefix(locale);
 const tour = getHydratedTourBySlug(slug || "");
 
 if (!tour) {
-  return Astro.redirect(`${prefix}/tours`);
+  return Astro.redirect(`${prefix}tours`);
 }
 
 const pageTitle = `${tour.title[locale] || tour.title.es} | Servicios Mallorca`;
@@ -30,7 +30,7 @@ const pageDescription = tour.subtitle[locale] || tour.subtitle.es;
     <nav class="breadcrumb-nav" aria-label="Breadcrumb">
       <a href={prefix}>{translations["nav.home"] || "Inicio"}</a>
       <span>/</span>
-      <a href={`${prefix}/tours`}>{locale === "de" ? "Touren" : locale === "en" ? "Tours" : "Rutas"}</a>
+      <a href={`${prefix}tours`}>{locale === "de" ? "Touren" : locale === "en" ? "Tours" : "Rutas"}</a>
       <span>/</span>
       <span class="active-crumb">{tour.title[locale] || tour.title.es}</span>
     </nav>
@@ -125,7 +125,7 @@ const pageDescription = tour.subtitle[locale] || tour.subtitle.es;
                 <p class="step-desc">{stop.stepDescription[locale] || stop.stepDescription.es}</p>
 
                 <div class="step-actions">
-                  <a href={`${prefix}/servicios/${stop.service.slug}`} class="btn-step-primary">
+                  <a href={`${prefix}servicios/${stop.service.slug}`} class="btn-step-primary">
                     {locale === "de" ? "Ficha del Negocio" : locale === "en" ? "View Business" : "Ver Negocio"} &rarr;
                   </a>
                   {stop.service.googleMapsUrl && (

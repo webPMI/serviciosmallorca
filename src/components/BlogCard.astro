@@ -7,19 +7,47 @@ interface Props {
   currentLocale: "es" | "en" | "ca" | "de";
   getLangPrefix: (locale: "es" | "en" | "ca" | "de") => string;
   translations: Record<string, string>;
+  featured?: boolean;
 }
 
-const { post, currentLocale, getLangPrefix, translations } = Astro.props;
+const { post, currentLocale, getLangPrefix, translations, featured = false } = Astro.props;
 const prefix = getLangPrefix(currentLocale);
 const category = CATEGORIES.find((c) => c.id === post.category);
 
 const title = post.title[currentLocale];
 const excerpt = post.excerpt[currentLocale];
 const detailUrl = `${prefix}blog/${post.slug}`;
+
+// postType label map
+const postTypeLabels: Record<string, string> = {
+  guia: translations["blog.postType.guia"] || "Guía",
+  top_list: translations["blog.postType.top_list"] || "Top Lista",
+  noticia: translations["blog.postType.noticia"] || "Noticia",
+  tutorial: translations["blog.postType.tutorial"] || "Tutorial",
+};
+const postTypeIcons: Record<string, string> = {
+  guia: "📖",
+  top_list: "🏆",
+  noticia: "📰",
+  tutorial: "🎓",
+};
+
+const postTypeLabel = post.postType ? postTypeLabels[post.postType] : null;
+const postTypeIcon = post.postType ? postTypeIcons[post.postType] : null;
+
+// Format date nicely
+const formattedDate = new Date(post.publishDate).toLocaleDateString(
+  currentLocale === "en" ? "en-GB" : currentLocale === "de" ? "de-DE" : currentLocale === "ca" ? "ca-ES" : "es-ES",
+  {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+  },
+);
 ---
 
-<article class="blog-card card hover-lift">
-  <div class="blog-media">
+<article class:list={["blog-card", { "blog-card--featured": post.featured || featured }]}>
+  <a href={detailUrl} class="blog-media" aria-label={title} tabindex="-1">
     <img
       src={post.coverImage}
       alt={title}
@@ -27,20 +55,32 @@ const detailUrl = `${prefix}blog/${post.slug}`;
       class="blog-img"
       onerror="this.src='https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80'"
     />
-    {
-      category && (
-        <span class="badge badge-accent blog-category-badge">
-          {category.icon} {category.name[currentLocale]}
-        </span>
-      )
-    }
-  </div>
+    <div class="blog-img-overlay"></div>
+
+    <!-- Badges row over image -->
+    <div class="blog-badges">
+      {
+        category && (
+          <span class="blog-category-badge" style={`--cat-color: ${category.color || "var(--color-primary)"}`}>
+            {category.icon} {category.name[currentLocale]}
+          </span>
+        )
+      }
+      {
+        postTypeLabel && (
+          <span class="blog-type-badge">
+            {postTypeIcon} {postTypeLabel}
+          </span>
+        )
+      }
+    </div>
+  </a>
 
   <div class="blog-body">
     <div class="blog-meta">
-      <time datetime={post.publishDate}>{post.publishDate}</time>
-      <span class="meta-dot">·</span>
-      <span>{post.readTime} {translations["blog.readTime"] || "de lectura"}</span>
+      <time datetime={post.publishDate}>{formattedDate}</time>
+      <span class="meta-dot" aria-hidden="true">·</span>
+      <span class="read-time">⏱️ {post.readTime} {translations["blog.readTime"] || "de lectura"}</span>
     </div>
 
     <h3 class="blog-title">
@@ -49,18 +89,22 @@ const detailUrl = `${prefix}blog/${post.slug}`;
 
     <p class="blog-excerpt">{excerpt}</p>
 
-    <div class="blog-author-row">
-      <img
-        src={post.author.avatar}
-        alt={post.author.name}
-        class="author-avatar"
-        loading="lazy"
-        onerror="this.style.display='none'"
-      />
-      <div class="author-info">
-        <span class="author-name">{post.author.name}</span>
-        <span class="author-role">{post.author.role}</span>
+    <div class="blog-footer">
+      <div class="blog-author-row">
+        <img
+          src={post.author.avatar}
+          alt={post.author.name}
+          class="author-avatar"
+          loading="lazy"
+          onerror="this.style.display='none'"
+        />
+        <div class="author-info">
+          <span class="author-name">{post.author.name}</span>
+          <span class="author-role">{post.author.role}</span>
+        </div>
       </div>
+
+      <a href={detailUrl} class="blog-read-link" aria-label={`Leer: ${title}`}> → </a>
     </div>
   </div>
 </article>
@@ -73,44 +117,108 @@ const detailUrl = `${prefix}blog/${post.slug}`;
     flex-direction: column;
     height: 100%;
     border: 1px solid var(--color-surface-border);
-    border-radius: var(--border-radius);
+    border-radius: var(--border-radius-lg);
     background: var(--color-surface);
     transition:
-      transform var(--transition-smooth),
-      box-shadow var(--transition-smooth);
+      transform 0.28s var(--ease-bounce),
+      box-shadow 0.28s ease;
+    position: relative;
+    animation: fadeSlideUp 0.5s ease both;
   }
 
+  .blog-card:hover {
+    transform: translateY(-6px);
+    box-shadow:
+      var(--shadow-lg),
+      0 0 0 1px var(--color-primary-border);
+  }
+
+  /* Featured accent: left border glow */
+  .blog-card--featured {
+    border-left: 3px solid var(--color-primary);
+  }
+
+  /* ── Media ── */
   .blog-media {
     position: relative;
     width: 100%;
-    height: 200px;
+    height: 240px;
     overflow: hidden;
+    display: block;
     background: var(--color-bg);
+    text-decoration: none;
   }
 
   .blog-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.4s ease;
+    transition: transform 0.5s ease;
+    will-change: transform;
   }
 
   .blog-card:hover .blog-img {
-    transform: scale(1.05);
+    transform: scale(1.08);
   }
 
-  .blog-category-badge {
+  .blog-img-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 30%, rgba(0, 0, 0, 0.45) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .blog-card:hover .blog-img-overlay {
+    opacity: 1;
+  }
+
+  /* ── Badges ── */
+  .blog-badges {
     position: absolute;
     top: var(--space-sm);
     left: var(--space-sm);
+    display: flex;
+    gap: 0.35rem;
+    flex-wrap: wrap;
   }
 
+  .blog-category-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.25rem 0.6rem;
+    border-radius: var(--border-radius-full);
+    background: var(--cat-color, var(--color-primary));
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .blog-type-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.25rem 0.6rem;
+    border-radius: var(--border-radius-full);
+    background: rgba(255, 255, 255, 0.92);
+    color: var(--color-text);
+    font-size: 0.7rem;
+    font-weight: 700;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  /* ── Body ── */
   .blog-body {
-    padding: var(--space-md);
+    padding: var(--space-lg);
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    gap: var(--space-xs);
+    gap: var(--space-sm);
   }
 
   .blog-meta {
@@ -123,13 +231,17 @@ const detailUrl = `${prefix}blog/${post.slug}`;
 
   .meta-dot {
     font-weight: bold;
+    opacity: 0.5;
+  }
+
+  .read-time {
+    font-size: 0.7rem;
   }
 
   .blog-title {
     font-size: var(--font-size-lg);
-    font-weight: 700;
-    line-height: 1.35;
-    margin-top: var(--space-xs);
+    font-weight: 800;
+    line-height: 1.3;
   }
 
   .blog-title a {
@@ -145,25 +257,36 @@ const detailUrl = `${prefix}blog/${post.slug}`;
   .blog-excerpt {
     font-size: var(--font-size-sm);
     color: var(--color-text-light);
-    line-height: 1.5;
+    line-height: 1.6;
     flex-grow: 1;
-    margin: var(--space-xs) 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* ── Footer ── */
+  .blog-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: var(--space-sm);
+    border-top: 1px solid var(--color-surface-border);
+    margin-top: auto;
   }
 
   .blog-author-row {
     display: flex;
     align-items: center;
     gap: var(--space-sm);
-    padding-top: var(--space-sm);
-    border-top: 1px solid var(--color-surface-border);
-    margin-top: auto;
   }
 
   .author-avatar {
-    width: 36px;
-    height: 36px;
+    width: 34px;
+    height: 34px;
     border-radius: var(--border-radius-full);
     object-fit: cover;
+    border: 2px solid var(--color-surface-border);
   }
 
   .author-info {
@@ -172,13 +295,62 @@ const detailUrl = `${prefix}blog/${post.slug}`;
   }
 
   .author-name {
-    font-size: var(--font-size-xs);
+    font-size: 0.72rem;
     font-weight: 700;
     color: var(--color-text);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 140px;
   }
 
   .author-role {
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     color: var(--color-text-muted);
+  }
+
+  .blog-read-link {
+    width: 34px;
+    height: 34px;
+    border-radius: var(--border-radius-full);
+    background: var(--color-primary-bg);
+    color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none;
+    flex-shrink: 0;
+    transition:
+      background var(--transition-fast),
+      color var(--transition-fast),
+      transform var(--transition-fast);
+  }
+
+  .blog-card:hover .blog-read-link {
+    background: var(--color-primary);
+    color: #fff;
+    transform: translateX(3px);
+  }
+
+  @keyframes fadeSlideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .blog-media {
+      height: 200px;
+    }
+    .blog-body {
+      padding: var(--space-md);
+    }
   }
 </style>

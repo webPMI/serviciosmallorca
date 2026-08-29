@@ -15,7 +15,16 @@ const { relatedPosts, translations, locale, prefix } = Astro.props;
 {
   relatedPosts && relatedPosts.length > 0 && (
     <section class="card section-box">
-      <h2 class="box-title">{translations["blog.relatedServices"]}</h2>
+      <h2 class="box-title">
+        {translations["blog.relatedGuides"] ||
+          (locale === "de"
+            ? "📖 Passende Ratgeber & Empfehlungen"
+            : locale === "en"
+              ? "📖 Related Guides & Recommendations"
+              : locale === "ca"
+                ? "📖 Guies i Recomanacions Relacionades"
+                : "📖 Guías y Artículos Recomendados")}
+      </h2>
       <div class="related-posts-list">
         {relatedPosts.map((post) => (
           <a href={`${prefix}blog/${post.slug}`} class="related-post-card">

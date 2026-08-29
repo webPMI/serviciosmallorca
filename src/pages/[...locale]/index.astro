@@ -26,6 +26,12 @@ const activeCategories = getActiveCategories(SERVICES);
 const featuredServices = getFeaturedServices();
 const featuredPosts = getFeaturedPosts();
 
+// Stats for hero bar
+const totalServices = SERVICES.filter((s) => s.status !== "permanently_closed").length;
+const totalCategories = activeCategories.length;
+const totalReviews = SERVICES.reduce((acc, s) => acc + (s.reviewCount || 0), 0);
+const LANGUAGES = 4;
+
 const canonicalUrl = `https://serviciosmallorca.com${prefix}`;
 const homepageJsonLd = generateHomepageJsonLd(locale, canonicalUrl);
 ---
@@ -84,6 +90,29 @@ const homepageJsonLd = generateHomepageJsonLd(locale, canonicalUrl);
             </div>
           )
         }
+
+        <!-- Animated Stats Bar -->
+        <div class="hero-stats-bar">
+          <div class="hero-stat" id="stat-businesses">
+            <span class="hero-stat-num" data-target={totalServices}>0</span>
+            <span class="hero-stat-label">{translations["home.stats.businesses"] || "negocios curados"}</span>
+          </div>
+          <div class="hero-stat-divider" aria-hidden="true"></div>
+          <div class="hero-stat" id="stat-categories">
+            <span class="hero-stat-num" data-target={totalCategories}>0</span>
+            <span class="hero-stat-label">{translations["home.stats.categories"] || "categorías activas"}</span>
+          </div>
+          <div class="hero-stat-divider" aria-hidden="true"></div>
+          <div class="hero-stat" id="stat-reviews">
+            <span class="hero-stat-num" data-target={totalReviews > 0 ? totalReviews : 1200}>0</span>
+            <span class="hero-stat-label">{translations["home.stats.reviews"] || "reseñas verificadas"}</span>
+          </div>
+          <div class="hero-stat-divider" aria-hidden="true"></div>
+          <div class="hero-stat">
+            <span class="hero-stat-num">{LANGUAGES}</span>
+            <span class="hero-stat-label">{translations["home.stats.languages"] || "idiomas"}</span>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -113,148 +142,50 @@ const homepageJsonLd = generateHomepageJsonLd(locale, canonicalUrl);
     <!-- SPECIALIZED EXPLORATION HUBS & VERTICALS -->
     <section class="container section">
       <div class="section-header">
-        <span class="badge-hub"
-          >⚡ {
-            locale === "de"
-              ? "Entdecken & Erleben"
-              : locale === "en"
-                ? "Explore & Discover"
-                : "Ecosistema & Experiencias"
-          }</span
-        >
-        <h2 class="section-title">
-          {
-            locale === "de"
-              ? "Spezialisierte Hubs auf Mallorca"
-              : locale === "en"
-                ? "Specialized Hubs in Mallorca"
-                : "Hubs Especializados de Mallorca"
-          }
-        </h2>
-        <p class="section-subtitle">
-          {
-            locale === "de"
-              ? "Direkter Zugang zu Sportstätten, thematischen Routen und historischem Kulturerbe"
-              : locale === "en"
-                ? "Direct access to sports facilities, curated itineraries, and living heritage"
-                : "Acceso directo a espacios deportivos, rutas temáticas y memoria comercial"
-          }
-        </p>
+        <span class="badge-hub">{translations["home.hubs.badge"]}</span>
+        <h2 class="section-title">{translations["home.hubs.title"]}</h2>
+        <p class="section-subtitle">{translations["home.hubs.subtitle"]}</p>
       </div>
 
       <div class="hubs-grid">
         <a href={`${prefix}deporte`} class="hub-card card-glass hover-lift">
           <div class="hub-icon-wrap sports-accent">🏃‍♂️</div>
           <div class="hub-info">
-            <span class="hub-tag"
-              >{locale === "de" ? "Sport & Fitness" : locale === "en" ? "Sports & Fitness" : "Deporte & Parques"}</span
-            >
-            <h3 class="hub-title">
-              {
-                locale === "de"
-                  ? "Sport & Wellness Guide"
-                  : locale === "en"
-                    ? "Sports & Fitness Explorer"
-                    : "Guía Deportiva & Zonas Públicas"
-              }
-            </h3>
-            <p class="hub-desc">
-              {
-                locale === "de"
-                  ? "Padel, Calisthenics, Outdoor-Fitness & Laufstrecken mit Schatten- und Wasserfilter."
-                  : locale === "en"
-                    ? "Padel courts, calisthenics parks, gym studios & running tracks with shade/water filters."
-                    : "Pistas de pádel, parques de calistenia, gimnasios y rutas de running con sombra y fuentes."
-              }
-            </p>
+            <span class="hub-tag">{translations["home.hubs.sports.tag"]}</span>
+            <h3 class="hub-title">{translations["home.hubs.sports.title"]}</h3>
+            <p class="hub-desc">{translations["home.hubs.sports.desc"]}</p>
           </div>
-          <span class="hub-arrow">→</span>
+          <span class="hub-arrow" aria-hidden="true">→</span>
         </a>
 
         <a href={`${prefix}tours`} class="hub-card card-glass hover-lift">
           <div class="hub-icon-wrap tours-accent">🗺️</div>
           <div class="hub-info">
-            <span class="hub-tag"
-              >{
-                locale === "de" ? "SmartMatch Touren" : locale === "en" ? "Signature Routes" : "Rutas Inteligentes"
-              }</span
-            >
-            <h3 class="hub-title">
-              {
-                locale === "de"
-                  ? "Erlebnis-Routen & Touren"
-                  : locale === "en"
-                    ? "Curated Experience Tours"
-                    : "Rutas de Experiencia & Tours"
-              }
-            </h3>
-            <p class="hub-desc">
-              {
-                locale === "de"
-                  ? "Thematische Tagesrouten: Kunsthandwerk, Yachting, Kulinarik und Inseltradition."
-                  : locale === "en"
-                    ? "Step-by-step curated journeys: craft ateliers, superyacht marinas & gastronomy."
-                    : "Itinerarios temáticos paso a paso: artesanía balear, náutica, enoturismo y gastronomía."
-              }
-            </p>
+            <span class="hub-tag">{translations["home.hubs.tours.tag"]}</span>
+            <h3 class="hub-title">{translations["home.hubs.tours.title"]}</h3>
+            <p class="hub-desc">{translations["home.hubs.tours.desc"]}</p>
           </div>
-          <span class="hub-arrow">→</span>
+          <span class="hub-arrow" aria-hidden="true">→</span>
         </a>
 
         <a href={`${prefix}memoria-historica`} class="hub-card card-glass hover-lift">
           <div class="hub-icon-wrap history-accent">🏛️</div>
           <div class="hub-info">
-            <span class="hub-tag"
-              >{locale === "de" ? "Tradition & Erbe" : locale === "en" ? "Living Heritage" : "Memoria & Legado"}</span
-            >
-            <h3 class="hub-title">
-              {
-                locale === "de"
-                  ? "Historischer Hub der Insel"
-                  : locale === "en"
-                    ? "Island Historical Hub"
-                    : "Hub de Memoria Histórica"
-              }
-            </h3>
-            <p class="hub-desc">
-              {
-                locale === "de"
-                  ? "Emblematische Betriebe mit jahrzehntelanger Tradition und Ursprungsgeschichten."
-                  : locale === "en"
-                    ? "Centenary shops, traditional craft workshops, and iconic establishments."
-                    : "Comercios emblemáticos centenarios, talleres artesanos y memoria viva de Mallorca."
-              }
-            </p>
+            <span class="hub-tag">{translations["home.hubs.history.tag"]}</span>
+            <h3 class="hub-title">{translations["home.hubs.history.title"]}</h3>
+            <p class="hub-desc">{translations["home.hubs.history.desc"]}</p>
           </div>
-          <span class="hub-arrow">→</span>
+          <span class="hub-arrow" aria-hidden="true">→</span>
         </a>
 
         <a href={`${prefix}comunidad`} class="hub-card card-glass hover-lift">
           <div class="hub-icon-wrap community-accent">💬</div>
           <div class="hub-info">
-            <span class="hub-tag"
-              >{locale === "de" ? "Community & Forum" : locale === "en" ? "Local Community" : "Comunidad & Foro"}</span
-            >
-            <h3 class="hub-title">
-              {
-                locale === "de"
-                  ? "Forum für Residenten"
-                  : locale === "en"
-                    ? "Residents & Expats Hub"
-                    : "Comunidad de Residentes"
-              }
-            </h3>
-            <p class="hub-desc">
-              {
-                locale === "de"
-                  ? "Tausche dich mit Residenten aus, stelle Fragen und entdecke geprüfte Empfehlungen."
-                  : locale === "en"
-                    ? "Connect with island residents, ask questions, and share genuine recommendations."
-                    : "Conecta con residentes, formula preguntas y consulta recomendaciones reales y verificadas."
-              }
-            </p>
+            <span class="hub-tag">{translations["home.hubs.community.tag"]}</span>
+            <h3 class="hub-title">{translations["home.hubs.community.title"]}</h3>
+            <p class="hub-desc">{translations["home.hubs.community.desc"]}</p>
           </div>
-          <span class="hub-arrow">→</span>
+          <span class="hub-arrow" aria-hidden="true">→</span>
         </a>
       </div>
     </section>
@@ -323,104 +254,32 @@ const homepageJsonLd = generateHomepageJsonLd(locale, canonicalUrl);
     <section class="container section">
       <div class="mission-callout card-glass">
         <div class="mission-callout-header">
-          <span class="badge-mission"
-            >🌿 {locale === "de" ? "Unser Engagement" : locale === "en" ? "Our Mission" : "Nuestra Filosofía"}</span
-          >
-          <h2 class="section-title">
-            {
-              locale === "de"
-                ? "Ein positiver Durchschnitt & Unterstützung des lokalen Gewerbes"
-                : locale === "en"
-                  ? "A Positive Benchmark & Genuine Local Support"
-                  : "Un Promedio Positivo y Apoyo Real al Comercio Local"
-            }
-          </h2>
-          <p class="section-subtitle">
-            {
-              locale === "de"
-                ? "Wir möchten Menschen dabei helfen, gesunde Gewohnheiten zu entwickeln (Sport, ausgewogene Ernährung Km0, Erholung) und die Vielfalt ehrlicher Handwerksbetriebe und Dienstleister auf Mallorca zu entdecken."
-                : locale === "en"
-                  ? "We help residents and visitors adopt healthy habits (outdoor sports, clean Km0 dining, mindful restoration) while connecting with honest, hardworking tradespeople and local businesses."
-                  : "Ayudamos a las personas a construir hábitos saludables (deporte al aire libre, alimentación Km0, bienestar) y a descubrir la diversidad de talleres, autónomos y comercios honestos de Mallorca."
-            }
-          </p>
+          <span class="badge-mission">{translations["home.mission.badge"]}</span>
+          <h2 class="section-title">{translations["home.mission.title"]}</h2>
+          <p class="section-subtitle">{translations["home.mission.subtitle"]}</p>
         </div>
 
         <div class="mission-callout-grid">
           <div class="mission-item">
             <span class="mission-icon">🏃‍♂️</span>
-            <h4>
-              {
-                locale === "de"
-                  ? "Gesundes Leben & Sport"
-                  : locale === "en"
-                    ? "Healthy Living & Sports"
-                    : "Vida Saludable & Deporte"
-              }
-            </h4>
-            <p>
-              {
-                locale === "de"
-                  ? "Finden Sie Sportstätten mit Schatten- und Wasserfiltern sowie ausgewogene Gastronomie."
-                  : locale === "en"
-                    ? "Locate outdoor facilities with shade/water filters and nourishing dining options."
-                    : "Encuentra instalaciones con sombra y fuentes, así como gastronomía saludable y de cercanía."
-              }
-            </p>
+            <h4>{translations["home.mission.item1.title"]}</h4>
+            <p>{translations["home.mission.item1.desc"]}</p>
           </div>
           <div class="mission-item">
             <span class="mission-icon">⚖️</span>
-            <h4>
-              {
-                locale === "de"
-                  ? "Faire Sichtbarkeit für alle"
-                  : locale === "en"
-                    ? "Fair Visibility for All"
-                    : "Visibilidad Equilibrada"
-              }
-            </h4>
-            <p>
-              {
-                locale === "de"
-                  ? "Vom kleinen Handwerksbetrieb bis zur etablierten Marina – jedes ehrliche Geschäft zählt."
-                  : locale === "en"
-                    ? "From humble artisan ateliers to premier marinas, every genuine business has a voice."
-                    : "Desde pequeños talleres artesanales hasta grandes empresas: visibilidad para el trabajo bien hecho."
-              }
-            </p>
+            <h4>{translations["home.mission.item2.title"]}</h4>
+            <p>{translations["home.mission.item2.desc"]}</p>
           </div>
           <div class="mission-item">
             <span class="mission-icon">🛡️</span>
-            <h4>
-              {
-                locale === "de"
-                  ? "Transparenz & Verlässlichkeit"
-                  : locale === "en"
-                    ? "Transparency & Trust"
-                    : "Cero Fantasía & Datos Reales"
-              }
-            </h4>
-            <p>
-              {
-                locale === "de"
-                  ? "Echte Kontaktdaten, direkte Kommunikation ohne versteckte Gebühren und geprüfte Standorte."
-                  : locale === "en"
-                    ? "Verified contact info, direct WhatsApp/phone communication, and no hidden markups."
-                    : "Teléfonos directos (+34), WhatsApp sin intermediarios y datos comprobados uno a uno."
-              }
-            </p>
+            <h4>{translations["home.mission.item3.title"]}</h4>
+            <p>{translations["home.mission.item3.desc"]}</p>
           </div>
         </div>
 
         <div class="mission-callout-footer">
           <a href={`${prefix}sobre-nosotros`} class="btn btn-outline">
-            {
-              locale === "de"
-                ? "Mehr über unsere Mission erfahren"
-                : locale === "en"
-                  ? "Learn More About Our Mission"
-                  : "Conocer Más Sobre Nuestra Misión"
-            } →
+            {translations["home.mission.cta"]} →
           </a>
         </div>
       </div>
@@ -468,6 +327,43 @@ const homepageJsonLd = generateHomepageJsonLd(locale, canonicalUrl);
 
   <Footer translations={translations} currentLocale={locale} getLangPrefix={getLangPrefix} />
 </BaseLayout>
+
+<script>
+  // Animated counter for stats bar
+  function animateCounter(el: HTMLElement, target: number, duration = 1200) {
+    const start = performance.now();
+    const startVal = 0;
+    const easeOut = (t: number) => 1 - Math.pow(1 - t, 3);
+
+    function tick(now: number) {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      const value = Math.round(startVal + (target - startVal) * easeOut(progress));
+      el.textContent = value.toLocaleString();
+      if (progress < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+
+  const statsBar = document.querySelector(".hero-stats-bar");
+  if (statsBar) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            document.querySelectorAll<HTMLElement>(".hero-stat-num[data-target]").forEach((el) => {
+              const target = parseInt(el.dataset.target || "0", 10);
+              animateCounter(el, target);
+            });
+            observer.disconnect();
+          }
+        });
+      },
+      { threshold: 0.3 },
+    );
+    observer.observe(statsBar);
+  }
+</script>
 
 <style>
   /* HERO STYLES */
@@ -580,6 +476,66 @@ const homepageJsonLd = generateHomepageJsonLd(locale, canonicalUrl);
     background: var(--color-primary-bg);
     color: var(--color-primary);
     border-color: var(--color-primary-border);
+  }
+
+  /* STATS BAR */
+  .hero-stats-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-lg);
+    flex-wrap: wrap;
+    margin-top: var(--space-lg);
+    padding: var(--space-md) var(--space-xl);
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--border-radius-lg);
+    backdrop-filter: var(--glass-backdrop);
+    box-shadow: var(--glass-shadow);
+    animation: fadeSlideUp 0.6s ease 0.3s both;
+  }
+
+  .hero-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.15rem;
+  }
+
+  .hero-stat-num {
+    font-size: var(--font-size-2xl);
+    font-weight: 900;
+    color: var(--color-primary);
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.02em;
+  }
+
+  .hero-stat-label {
+    font-size: 0.65rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-align: center;
+  }
+
+  .hero-stat-divider {
+    width: 1px;
+    height: 36px;
+    background: var(--color-surface-border);
+    border-radius: 1px;
+  }
+
+  @keyframes fadeSlideUp {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   /* SECTION HEADERS */
