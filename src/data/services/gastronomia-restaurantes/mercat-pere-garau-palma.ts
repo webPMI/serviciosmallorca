@@ -145,12 +145,6 @@ export const mercatPereGarauPalma: ServiceItem = {
     ca: "El mercat més multicultural i autèntic de Palma. L'únic que disposa de venda directa de pagesos a la plaça exterior (dimarts, dijous i dissabtes), a més de peix fresc i queviures tradicionals.",
     de: "Palmas authentischster und multikulturellster Markt. Einziger Markt mit direktem Bauernverkauf auf dem Vorplatz (Di, Do, Sa) sowie fangfrischem Fisch zu volkstümlichen Preisen.",
   },
-  description: {
-    es: "El mercado más multicultural y genuino de Palma. Es el único que cuenta con venta directa de agricultores locales en su plaza exterior los martes, jueves y sábados, además de venta de aves vivas, pescado fresco y productos étnicos de todo el mundo a precios muy populares.",
-    en: "Palma's most multicultural and authentic neighbourhood market. It is the only city market hosting direct outdoor farm sales on Tuesdays, Thursdays, and Saturdays, alongside fresh fish and international speciality foods at genuine local prices.",
-    ca: "El mercat més multicultural i autèntic de Palma. L'únic que disposa de venda directa de pagesos a la plaça exterior (dimarts, dijous i dissabtes), a més de peix fresc i queviures tradicionals.",
-    de: "Palmas authentischster und multikulturellster Markt. Einziger Markt mit direktem Bauernverkauf auf dem Vorplatz (Di, Do, Sa) sowie fangfrischem Fisch zu volkstümlichen Preisen.",
-  },
   highlights: {
     es: [
       "Venta directa de pageses y agricultores en la plaza exterior (M, J, S)",

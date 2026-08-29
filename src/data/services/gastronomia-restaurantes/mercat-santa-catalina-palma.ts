@@ -147,12 +147,6 @@ export const mercatSantaCatalinaPalma: ServiceItem = {
     ca: "El mercat en actiu més antic de Palma, a l'emblemàtic barri mariner de Santa Catalina. Destaca pel seu ambient, parades de producte fresc i barres típiques de variats i marisc.",
     de: "Palmas traditionsreichste Markthalle im Fischerviertel Santa Catalina. Berühmt für lebhafte Atmosphäre, Gourmet-Stände und urige Markt-Bars für 'Variats', Meeresfrüchte und Inselweine.",
   },
-  description: {
-    es: "El mercado en activo más antiguo de Palma, en el emblemático barrio marinero de Santa Catalina. Destaca por su animado ambiente, sus puestos de producto gourmet y marinero, y sus míticos bares de mercado donde saborear variats mallorquines, marisco fresco y vinos locales.",
-    en: "Palma's oldest operating municipal market in the historic fisherman's quarter. Famous for lively morning vibes, gourmet fresh stalls, and iconic bars serving Majorcan 'variats', seafood platters, and island wines.",
-    ca: "El mercat en actiu més antic de Palma, a l'emblemàtic barri mariner de Santa Catalina. Destaca pel seu ambient, parades de producte fresc i barres típiques de variats i marisc.",
-    de: "Palmas traditionsreichste Markthalle im Fischerviertel Santa Catalina. Berühmt für lebhafte Atmosphäre, Gourmet-Stände und urige Markt-Bars für 'Variats', Meeresfrüchte und Inselweine.",
-  },
   highlights: {
     es: [
       "El mercado más antiguo de la ciudad (fundado en 1905)",

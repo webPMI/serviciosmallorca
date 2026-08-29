@@ -72,8 +72,8 @@ export function searchUnifiedSports(
     const descMatch = (
       s.shortDescription?.[locale] ||
       s.shortDescription?.es ||
-      s.description?.[locale] ||
-      s.description?.es ||
+      s.fullDescription?.[locale] ||
+      s.fullDescription?.es ||
       ""
     )
       .toLowerCase()

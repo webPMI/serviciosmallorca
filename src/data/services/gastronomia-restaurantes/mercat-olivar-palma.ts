@@ -147,12 +147,6 @@ export const mercatOlivarPalma: ServiceItem = {
     ca: "El gran mercat gastronòmic central de Palma amb més de 100 parades tradicionals: peix fresc de la llotja, carns selectes, formatges artesans, fruita de temporada i barres de tapes i marisc.",
     de: "Palmas zentrale Feinschmecker-Markthalle mit über 100 Ständen: fangfrischer Mittelmeerfisch, erlesenes Fleisch, balearischer Käse, frisches Obst und lebhafte Tapas- und Austernbars.",
   },
-  description: {
-    es: "El gran mercado gastronómico central de Palma con más de 100 paradas tradicionales: lonja de pescado fresco del Mediterráneo, carnicerías selectas, quesos mahoneses y mallorquines, fruta de temporada y barras de degustación de marisco, sushi y tapas.",
-    en: "Palma's central food market featuring over 100 stalls: freshly caught Mediterranean fish, premium butchers, local cheeses, organic seasonal fruit, and bustling oyster, tapas, and sushi bars.",
-    ca: "El gran mercat gastronòmic central de Palma amb més de 100 parades tradicionals: peix fresc de la llotja, carns selectes, formatges artesans, fruita de temporada i barres de tapes i marisc.",
-    de: "Palmas zentrale Feinschmecker-Markthalle mit über 100 Ständen: fangfrischer Mittelmeerfisch, erlesenes Fleisch, balearischer Käse, frisches Obst und lebhafte Tapas- und Austernbars.",
-  },
   highlights: {
     es: [
       "Planta de pescadería considerada una de las mejores y más completas del Mediterráneo",

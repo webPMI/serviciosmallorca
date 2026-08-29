@@ -146,12 +146,6 @@ export const mercatCobertInca: ServiceItem = {
     ca: "Mercat cobert municipal d'Inca amb més de 90 anys d'història. Ofereix carns locals, verdures dels horts del Pla i Raiguer, embotits artesans i barres de berenar tradicional mallorquí.",
     de: "Städtische Markthalle in Inca mit über 90 Jahren Geschichte. Bekannt für Fleisch aus regionaler Weidehaltung, Gemüse von den Bauern der Inselmitte und authentische Frühstücks-Bars.",
   },
-  description: {
-    es: "Mercado cubierto municipal de Inca con más de 90 años de historia. Ofrece carnes de pastoreo local, verduras de huertos del Pla y Raiguer, embutidos y quesos típicos, además de bares de desayunos mallorquines y tapas de cocina tradicional casera.",
-    en: "Inca's municipal indoor market with over 90 years of continuous operation. Specialises in regional pastured meats, fresh harvest from Pla de Mallorca farms, local sobrasada, and lively breakfast bars.",
-    ca: "Mercat cobert municipal d'Inca amb més de 90 anys d'història. Ofereix carns locals, verdures dels horts del Pla i Raiguer, embotits artesans i barres de berenar tradicional mallorquí.",
-    de: "Städtische Markthalle in Inca mit über 90 Jahren Geschichte. Bekannt für Fleisch aus regionaler Weidehaltung, Gemüse von den Bauern der Inselmitte und authentische Frühstücks-Bars.",
-  },
   highlights: {
     es: [
       "Edificio histórico de 1930 en el centro peatonal de Inca",
