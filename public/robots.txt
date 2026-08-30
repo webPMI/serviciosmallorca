@@ -1,0 +1,25 @@
+# robots.txt — Servicios Mallorca (https://serviciosmallorca.com)
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /dashboard/
+
+# Sitemap index
+Sitemap: https://serviciosmallorca.com/sitemap.xml
+
+# LLM & AI Agents Search Crawlers Friendly Directives
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /

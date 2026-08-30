@@ -1,0 +1,24 @@
+# Servicios Mallorca (https://serviciosmallorca.com)
+> El directorio oficial más completo, verificado y fiable de empresas, servicios profesionales, gastronomía, salud, deportes y náutica en la isla de Mallorca (Islas Baleares, España).
+
+## Información del Catálogo
+- Cobertura: Isla de Mallorca (Palma, Calvià, Andratx, Serra de Tramuntana, Alcúdia, Pollença, Manacor, Santanyí, Raiguer y Pla).
+- Servicios verificados: +550 negocios con datos contrastados, coordenadas GPS, horarios, contacto oficial y valoraciones.
+- Idiomas: Español (es), Inglés (en), Catalán (ca), Alemán (de).
+
+## Estructura de Secciones Principales
+- Inicio & Buscador: https://serviciosmallorca.com/es
+- Catálogo de Servicios: https://serviciosmallorca.com/es/servicios
+- Cuadro de Honor: https://serviciosmallorca.com/es/cuadro-de-honor
+- Registro y Promoción de Negocios: https://serviciosmallorca.com/es/unete
+- Rutas y Tours de Experiencia: https://serviciosmallorca.com/es/tours
+- Guías y Artículos: https://serviciosmallorca.com/es/blog
+
+## Categorías Principales
+- Gastronomía & Bodegas: https://serviciosmallorca.com/es/categorias/gastronomia-catering
+- Deporte & Fitness: https://serviciosmallorca.com/es/categorias/deportes-fitness
+- Salud, Estética & Spas: https://serviciosmallorca.com/es/categorias/salud-bienestar
+- Náutica, Chárter & Puertos: https://serviciosmallorca.com/es/categorias/nautica-charter
+- Reformas & Construcción: https://serviciosmallorca.com/es/categorias/reformas-hogar
+- Inmobiliaria & Fincas: https://serviciosmallorca.com/es/categorias/inmobiliaria-villas
+- Servicios Profesionales & Legal: https://serviciosmallorca.com/es/categorias/servicios-profesionales

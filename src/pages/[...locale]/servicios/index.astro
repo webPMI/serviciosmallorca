@@ -4,6 +4,7 @@ import Navbar from "../../../components/Navbar.astro";
 import Footer from "../../../components/Footer.astro";
 import ServiceCard from "../../../components/ServiceCard.astro";
 import AdSenseSlot from "../../../components/AdSenseSlot.astro";
+import BusinessJoinBanner from "../../../components/BusinessJoinBanner.astro";
 import { getActiveCategories, CATEGORIES } from "../../../data/categories";
 import { MALLORCA_ZONES } from "../../../data/zones";
 import { SERVICES } from "../../../data/services";
@@ -285,6 +286,9 @@ const initialFilteredServices = SERVICES.filter((service) => {
         Ver todos los servicios
       </button>
     </div>
+
+    <!-- Banner de Captación para Dueños de Negocios en Mallorca -->
+    <BusinessJoinBanner locale={locale} translations={translations} />
 
     <!-- AdSense Bottom Slot -->
     <AdSenseSlot format="horizontal" slotId="services-directory-bottom" />

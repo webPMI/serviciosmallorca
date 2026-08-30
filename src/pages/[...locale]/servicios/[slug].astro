@@ -29,6 +29,7 @@ import ServiceShareModal from "../../../components/ServiceShareModal.astro";
 import HonorCheckoutModal from "../../../components/HonorCheckoutModal.astro";
 import CommunityBoostWall from "../../../components/CommunityBoostWall.astro";
 import UnclaimedDataDisclaimer from "../../../components/UnclaimedDataDisclaimer.astro";
+import BusinessJoinBanner from "../../../components/BusinessJoinBanner.astro";
 
 import { getServiceById } from "../../../data/services";
 import { CATEGORIES } from "../../../data/categories";
@@ -228,6 +229,7 @@ const breadcrumbSchema = {
         />
 
         <ServiceReviewsSection service={service} translations={translations} prefix={prefix} />
+        <BusinessJoinBanner locale={locale} translations={translations} />
         <ServiceRelatedList relatedPosts={relatedPosts} translations={translations} locale={locale} prefix={prefix} />
         <SmartMatchRecommendations currentService={service} currentLocale={locale} getLangPrefix={getLangPrefix} />
         <BusinessQualityFeedbackModal businessSlug={service.slug} businessName={service.name} currentLocale={locale} />
