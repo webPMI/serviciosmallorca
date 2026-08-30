@@ -1,6 +1,6 @@
 # 🛡️ Informe de Inteligencia y Auditoría Multi-Agente
 
-**Fecha de Auditoría:** 2026-08-30T09:14:01.927Z
+**Fecha de Auditoría:** 2026-08-30T09:15:43.296Z
 **Puntaje Global de Cumplimiento:** `100%`
 **Estado del Sistema:** `BLINDADO_OPTIMO`
 
@@ -134,10 +134,10 @@
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 50%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 20. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Urban Soul Tattoo Studio Palma
+### 20. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Urban Soul Tattoo Studio Mallorca (Palma)
 
 - **Auditor Responsable:** HistoricalEvolution
-- **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 49%.
+- **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 50%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
 ### 21. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Vidrios Gordiola (Algaida - 1719)
