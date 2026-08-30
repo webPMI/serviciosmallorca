@@ -75,66 +75,158 @@ const ecosystemCards = [
 ---
 
 <section class="ecosystem-guide-section" aria-labelledby="ecosystem-guide-heading">
-  <div class="ecosystem-header">
-    <div class="ecosystem-badge badge badge-primary">🌐 Guía del Ecosistema Servicios Mallorca</div>
-    <h2 id="ecosystem-guide-heading" class="ecosystem-title">¿Cómo Funciona la Plataforma y Cómo Te Ayuda?</h2>
-    <p class="ecosystem-subtitle">
-      Un ecosistema digital balear estructurado en 6 pilares clave para garantizar transparencia absoluta, confianza
-      comunitaria y visibilidad real a los mejores negocios de Mallorca.
-    </p>
-  </div>
+  <details class="ecosystem-accordion">
+    <summary class="ecosystem-summary">
+      <div class="summary-content">
+        <span class="summary-icon">🌐</span>
+        <div class="summary-text-wrap">
+          <span class="summary-badge">Transparencia & SEO</span>
+          <span class="summary-title">Guía del Ecosistema: Los 6 Pilares de Servicios Mallorca</span>
+        </div>
+      </div>
+      <span class="summary-toggle-arrow">▾</span>
+    </summary>
 
-  <div class="ecosystem-grid">
-    {
-      ecosystemCards.map((card) => (
-        <article class="ecosystem-card card" style={`background: ${card.bgGradient};`}>
-          <div class="card-top-row">
-            <span class="card-icon">{card.icon}</span>
-            <span class="card-badge" style={`color: ${card.colorVar}; border-color: ${card.colorVar};`}>
-              {card.badge}
-            </span>
-          </div>
+    <div class="ecosystem-body">
+      <div class="ecosystem-header">
+        <h2 id="ecosystem-guide-heading" class="ecosystem-title">¿Cómo Funciona la Plataforma y Cómo Te Ayuda?</h2>
+        <p class="ecosystem-subtitle">
+          Un ecosistema digital balear estructurado en 6 pilares clave para garantizar transparencia absoluta, confianza
+          comunitaria y visibilidad real a los mejores negocios de Mallorca.
+        </p>
+      </div>
 
-          <h3 class="card-title">{card.title}</h3>
-          <p class="card-desc">{card.desc}</p>
+      <div class="ecosystem-grid">
+        {
+          ecosystemCards.map((card) => (
+            <article class="ecosystem-card card" style={`background: ${card.bgGradient};`}>
+              <div class="card-top-row">
+                <span class="card-icon">{card.icon}</span>
+                <span class="card-badge" style={`color: ${card.colorVar}; border-color: ${card.colorVar};`}>
+                  {card.badge}
+                </span>
+              </div>
 
-          <a href={card.link} class="card-link" style={`color: ${card.colorVar};`}>
-            <span>{card.linkText}</span>
-          </a>
-        </article>
-      ))
-    }
-  </div>
+              <h3 class="card-title">{card.title}</h3>
+              <p class="card-desc">{card.desc}</p>
 
-  <!-- Trust Guarantee Footer Box -->
-  <div class="ecosystem-trust-box card">
-    <div class="trust-icon">🛡️</div>
-    <div class="trust-text">
-      <h4>Compromiso de Veracidad & Anti-Spam</h4>
-      <p>
-        En Servicios Mallorca no permitimos empresas fantasma, reseñas compradas ni datos inventados. Toda la
-        información es auditada y actualizada periódicamente para proteger a consumidores y comercios locales.
-      </p>
+              <a href={card.link} class="card-link" style={`color: ${card.colorVar};`}>
+                <span>{card.linkText}</span>
+              </a>
+            </article>
+          ))
+        }
+      </div>
+
+      <!-- Trust Guarantee Footer Box -->
+      <div class="ecosystem-trust-box card">
+        <div class="trust-icon">🛡️</div>
+        <div class="trust-text">
+          <h4>Compromiso de Veracidad & Anti-Spam</h4>
+          <p>
+            En Servicios Mallorca no permitimos empresas fantasma, reseñas compradas ni datos inventados. Toda la
+            información es auditada y actualizada periódicamente para proteger a consumidores y comercios locales.
+          </p>
+        </div>
+        <div class="trust-action">
+          <a href={`${prefix}unete`} class="btn btn-primary btn-sm"> Reclamar mi Negocio Gratis </a>
+        </div>
+      </div>
     </div>
-    <div class="trust-action">
-      <a href={`${prefix}unete`} class="btn btn-primary btn-sm"> Reclamar mi Negocio Gratis </a>
-    </div>
-  </div>
+  </details>
 </section>
 
 <style>
   .ecosystem-guide-section {
-    padding: var(--space-2xl) 0 var(--space-xl);
+    padding: var(--space-xl) 0 var(--space-lg);
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     box-sizing: border-box;
   }
 
+  .ecosystem-accordion {
+    background: var(--color-surface);
+    border: 1px solid var(--color-surface-border);
+    border-radius: var(--border-radius-xl);
+    overflow: hidden;
+    transition: all var(--transition-base);
+  }
+
+  .ecosystem-accordion[open] {
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-primary-border);
+  }
+
+  .ecosystem-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-md) var(--space-lg);
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+    background: var(--color-surface-hover);
+    transition: background var(--transition-fast);
+  }
+
+  .ecosystem-summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .ecosystem-summary:hover {
+    background: var(--color-primary-bg);
+  }
+
+  .summary-content {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+  }
+
+  .summary-icon {
+    font-size: 1.8rem;
+  }
+
+  .summary-text-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .summary-badge {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-primary);
+  }
+
+  .summary-title {
+    font-size: var(--font-size-base);
+    font-weight: 700;
+    color: var(--color-text);
+  }
+
+  .summary-toggle-arrow {
+    font-size: 1.4rem;
+    color: var(--color-text-muted);
+    transition: transform var(--transition-base);
+  }
+
+  .ecosystem-accordion[open] .summary-toggle-arrow {
+    transform: rotate(180deg);
+  }
+
+  .ecosystem-body {
+    padding: var(--space-xl) var(--space-lg);
+    animation: fadeIn 0.3s ease;
+  }
+
   .ecosystem-header {
     text-align: center;
     max-width: 800px;
-    margin: 0 auto var(--space-2xl);
+    margin: 0 auto var(--space-xl);
   }
 
   .ecosystem-badge {

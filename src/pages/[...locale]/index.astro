@@ -32,6 +32,12 @@ const totalCategories = activeCategories.length;
 const totalReviews = SERVICES.reduce((acc, s) => acc + (s.reviewCount || 0), 0);
 const LANGUAGES = 4;
 
+// Category count map
+const categoryCountMap = activeCategories.reduce<Record<string, number>>((acc, cat) => {
+  acc[cat.id] = SERVICES.filter((s) => s.category === cat.id && s.status !== "permanently_closed").length;
+  return acc;
+}, {});
+
 const canonicalUrl = `https://serviciosmallorca.com${prefix}`;
 const homepageJsonLd = generateHomepageJsonLd(locale, canonicalUrl);
 ---
@@ -44,12 +50,12 @@ const homepageJsonLd = generateHomepageJsonLd(locale, canonicalUrl);
 >
   <Navbar currentLocale={locale} translations={translations} getLangPrefix={getLangPrefix} />
 
-  <main>
+  <main class="home-main">
     <!-- HERO SECTION -->
     <section class="hero-wrapper">
       <div class="container hero-content">
         <div class="hero-badge badge badge-primary fade-in">
-          {translations["home.badge"]}
+          🌴 {translations["home.badge"] || "Guía Oficial de Mallorca"}
         </div>
 
         <h1 class="hero-title fade-in">
@@ -63,49 +69,55 @@ const homepageJsonLd = generateHomepageJsonLd(locale, canonicalUrl);
         <!-- Search Bar -->
         <form action={`${prefix}servicios`} method="GET" class="hero-search-box fade-in">
           <div class="search-input-wrap">
-            <span class="search-icon">🔍</span>
+            <span class="search-icon" aria-hidden="true">🔍</span>
             <input
               type="text"
               name="q"
-              placeholder={translations["home.search.placeholder"]}
+              placeholder={translations["home.search.placeholder"] || "Buscar fontanero, restaurante, gimnasio, spa..."}
               class="hero-search-input"
-              aria-label="Buscar servicios"
+              aria-label="Buscar servicios en Mallorca"
             />
           </div>
           <button type="submit" class="btn btn-primary hero-search-btn">
-            {translations["home.search.button"]}
+            {translations["home.search.button"] || "Buscar"}
           </button>
         </form>
 
-        <!-- Quick Category Pills (Only active categories with content) -->
+        <!-- Quick Category Scrollable Chips -->
         {
           activeCategories.length > 0 && (
-            <div class="quick-categories">
-              {activeCategories.slice(0, 4).map((cat) => (
-                <a href={`${prefix}servicios?categoria=${cat.id}`} class="quick-pill">
-                  <span>{cat.icon}</span>
-                  <span>{cat.name[locale]}</span>
+            <div class="quick-chips-wrapper" aria-label="Categorías rápidas">
+              <div class="quick-chips-scroll">
+                {activeCategories.slice(0, 8).map((cat) => (
+                  <a href={`${prefix}servicios?categoria=${cat.id}`} class="quick-chip">
+                    <span class="chip-icon">{cat.icon}</span>
+                    <span class="chip-label">{cat.name[locale]}</span>
+                  </a>
+                ))}
+                <a href={`${prefix}servicios`} class="quick-chip chip-all">
+                  <span>✨</span>
+                  <span>Ver todas</span>
                 </a>
-              ))}
+              </div>
             </div>
           )
         }
 
-        <!-- Animated Stats Bar -->
+        <!-- Compact Glass Stats Bar -->
         <div class="hero-stats-bar">
           <div class="hero-stat" id="stat-businesses">
             <span class="hero-stat-num" data-target={totalServices}>0</span>
-            <span class="hero-stat-label">{translations["home.stats.businesses"] || "negocios curados"}</span>
+            <span class="hero-stat-label">{translations["home.stats.businesses"] || "negocios"}</span>
           </div>
           <div class="hero-stat-divider" aria-hidden="true"></div>
           <div class="hero-stat" id="stat-categories">
             <span class="hero-stat-num" data-target={totalCategories}>0</span>
-            <span class="hero-stat-label">{translations["home.stats.categories"] || "categorías activas"}</span>
+            <span class="hero-stat-label">{translations["home.stats.categories"] || "categorías"}</span>
           </div>
           <div class="hero-stat-divider" aria-hidden="true"></div>
           <div class="hero-stat" id="stat-reviews">
             <span class="hero-stat-num" data-target={totalReviews > 0 ? totalReviews : 1200}>0</span>
-            <span class="hero-stat-label">{translations["home.stats.reviews"] || "reseñas verificadas"}</span>
+            <span class="hero-stat-label">{translations["home.stats.reviews"] || "reseñas"}</span>
           </div>
           <div class="hero-stat-divider" aria-hidden="true"></div>
           <div class="hero-stat">
@@ -116,205 +128,236 @@ const homepageJsonLd = generateHomepageJsonLd(locale, canonicalUrl);
       </div>
     </section>
 
-    <!-- CATEGORIES SECTION -->
+    <!-- EXPLORE BY CATEGORIES (VISUAL DASHBOARD) -->
     {
       activeCategories.length > 0 && (
-        <section class="container section">
-          <div class="section-header">
-            <h2 class="section-title">{translations["home.categories.title"]}</h2>
-            <p class="section-subtitle">{translations["home.categories.subtitle"]}</p>
+        <section class="container section categories-section">
+          <div class="section-header-compact">
+            <div>
+              <h2 class="section-title">{translations["home.categories.title"] || "Explora por Categorías"}</h2>
+              <p class="section-subtitle">
+                {translations["home.categories.subtitle"] ||
+                  "Accede directamente a los mejores profesionales y comercios"}
+              </p>
+            </div>
+            <a href={`${prefix}servicios`} class="section-link-more">
+              Ver catálogo completo ({totalServices}) →
+            </a>
           </div>
 
-          <div class="categories-grid">
-            {activeCategories.map((cat) => (
-              <a href={`${prefix}servicios?categoria=${cat.id}`} class="category-card card-glass hover-lift">
-                <div class="category-icon">{cat.icon}</div>
-                <h3 class="category-name">{cat.name[locale]}</h3>
-                <p class="category-desc">{cat.description[locale]}</p>
-              </a>
-            ))}
+          <div class="categories-compact-grid">
+            {activeCategories.map((cat) => {
+              const count = categoryCountMap[cat.id] || 0;
+              return (
+                <a href={`${prefix}servicios?categoria=${cat.id}`} class="cat-pill-card hover-lift">
+                  <div class="cat-pill-icon">{cat.icon}</div>
+                  <div class="cat-pill-text">
+                    <span class="cat-pill-name">{cat.name[locale]}</span>
+                    <span class="cat-pill-count">
+                      {count} {count === 1 ? "sitio" : "sitios"}
+                    </span>
+                  </div>
+                </a>
+              );
+            })}
           </div>
           <AdSenseSlot format="horizontal" slotId="home-mid-banner" />
         </section>
       )
     }
 
-    <!-- SPECIALIZED EXPLORATION HUBS & VERTICALS -->
-    <section class="container section">
-      <div class="section-header">
-        <span class="badge-hub">{translations["home.hubs.badge"]}</span>
-        <h2 class="section-title">{translations["home.hubs.title"]}</h2>
-        <p class="section-subtitle">{translations["home.hubs.subtitle"]}</p>
-      </div>
-
-      <div class="hubs-grid">
-        <a href={`${prefix}deporte`} class="hub-card card-glass hover-lift">
-          <div class="hub-icon-wrap sports-accent">🏃‍♂️</div>
-          <div class="hub-info">
-            <span class="hub-tag">{translations["home.hubs.sports.tag"]}</span>
-            <h3 class="hub-title">{translations["home.hubs.sports.title"]}</h3>
-            <p class="hub-desc">{translations["home.hubs.sports.desc"]}</p>
-          </div>
-          <span class="hub-arrow" aria-hidden="true">→</span>
-        </a>
-
-        <a href={`${prefix}tours`} class="hub-card card-glass hover-lift">
-          <div class="hub-icon-wrap tours-accent">🗺️</div>
-          <div class="hub-info">
-            <span class="hub-tag">{translations["home.hubs.tours.tag"]}</span>
-            <h3 class="hub-title">{translations["home.hubs.tours.title"]}</h3>
-            <p class="hub-desc">{translations["home.hubs.tours.desc"]}</p>
-          </div>
-          <span class="hub-arrow" aria-hidden="true">→</span>
-        </a>
-
-        <a href={`${prefix}memoria-historica`} class="hub-card card-glass hover-lift">
-          <div class="hub-icon-wrap history-accent">🏛️</div>
-          <div class="hub-info">
-            <span class="hub-tag">{translations["home.hubs.history.tag"]}</span>
-            <h3 class="hub-title">{translations["home.hubs.history.title"]}</h3>
-            <p class="hub-desc">{translations["home.hubs.history.desc"]}</p>
-          </div>
-          <span class="hub-arrow" aria-hidden="true">→</span>
-        </a>
-
-        <a href={`${prefix}comunidad`} class="hub-card card-glass hover-lift">
-          <div class="hub-icon-wrap community-accent">💬</div>
-          <div class="hub-info">
-            <span class="hub-tag">{translations["home.hubs.community.tag"]}</span>
-            <h3 class="hub-title">{translations["home.hubs.community.title"]}</h3>
-            <p class="hub-desc">{translations["home.hubs.community.desc"]}</p>
-          </div>
-          <span class="hub-arrow" aria-hidden="true">→</span>
-        </a>
-      </div>
-    </section>
-
-    <!-- FEATURED SERVICES SECTION -->
-    <section id="features" class="section bg-surface">
+    <!-- FEATURED & TOP SERVICES (HORIZONTAL SWIPEABLE SHOWCASE) -->
+    <section id="features" class="section bg-surface featured-showcase-section">
       <div class="container">
         <div class="section-header-flex">
           <div>
-            <h2 class="section-title">{translations["home.featured.title"]}</h2>
-            <p class="section-subtitle">{translations["home.featured.subtitle"]}</p>
+            <div class="section-badge badge badge-secondary">⭐ Selección Exclusiva</div>
+            <h2 class="section-title">{translations["home.featured.title"] || "Servicios Destacados"}</h2>
+            <p class="section-subtitle">
+              {
+                translations["home.featured.subtitle"] ||
+                  "Empresas y referentes con las mejores valoraciones en Mallorca"
+              }
+            </p>
           </div>
           <a href={`${prefix}servicios`} class="btn btn-secondary btn-sm">
-            {translations["home.explore"]} →
+            {translations["home.explore"] || "Explorar todos"} →
           </a>
         </div>
 
-        <div class="services-grid">
+        <!-- Horizontal Swipeable Track on Mobile / Grid on Desktop -->
+        <div class="services-swipe-track">
           {
-            featuredServices.map((service) => (
-              <ServiceCard
-                service={service}
-                currentLocale={locale}
-                getLangPrefix={getLangPrefix}
-                translations={translations}
-              />
+            featuredServices.slice(0, 8).map((service) => (
+              <div class="swipe-card-item">
+                <ServiceCard
+                  service={service}
+                  currentLocale={locale}
+                  getLangPrefix={getLangPrefix}
+                  translations={translations}
+                />
+              </div>
             ))
           }
         </div>
 
         <!-- Dynamic Weekly Top Curated Section -->
-        <TopRankedSection locale={locale} prefix={prefix} translations={translations} mode="weekly" />
+        <div class="weekly-top-wrapper">
+          <TopRankedSection locale={locale} prefix={prefix} translations={translations} mode="weekly" />
+        </div>
+      </div>
+    </section>
+
+    <!-- SPECIALIZED HUBS & EXPERIENCES (BENTO 2x2) -->
+    <section class="container section hubs-bento-section">
+      <div class="section-header-compact">
+        <div>
+          <span class="badge-hub">{translations["home.hubs.badge"] || "⚡ Experiencias & Ecosistema"}</span>
+          <h2 class="section-title">{translations["home.hubs.title"] || "Hubs Especializados de Mallorca"}</h2>
+          <p class="section-subtitle">
+            {translations["home.hubs.subtitle"] || "Descubre guías interactivas, rutas y memoria histórica"}
+          </p>
+        </div>
+      </div>
+
+      <div class="hubs-bento-grid">
+        <a href={`${prefix}deporte`} class="hub-bento-card sports-card hover-lift">
+          <div class="hub-bento-header">
+            <span class="hub-bento-icon">🏃‍♂️</span>
+            <span class="hub-bento-badge">{translations["home.hubs.sports.tag"] || "Deporte & Fitness"}</span>
+          </div>
+          <div class="hub-bento-content">
+            <h3 class="hub-bento-title">{translations["home.hubs.sports.title"] || "Guía Deportiva & Fitness"}</h3>
+            <p class="hub-bento-desc">
+              {
+                translations["home.hubs.sports.desc"] ||
+                  "Gimnasios, pádel, tenis, boxes y espacios públicos al aire libre."
+              }
+            </p>
+          </div>
+          <span class="hub-bento-action">Explorar deporte →</span>
+        </a>
+
+        <a href={`${prefix}tours`} class="hub-bento-card tours-card hover-lift">
+          <div class="hub-bento-header">
+            <span class="hub-bento-icon">🗺️</span>
+            <span class="hub-bento-badge">{translations["home.hubs.tours.tag"] || "Rutas Autoguiadas"}</span>
+          </div>
+          <div class="hub-bento-content">
+            <h3 class="hub-bento-title">{translations["home.hubs.tours.title"] || "Rutas de Experiencia"}</h3>
+            <p class="hub-bento-desc">
+              {
+                translations["home.hubs.tours.desc"] ||
+                  "Itinerarios temáticos: bodegas, gastronomía, calas y patrimonio."
+              }
+            </p>
+          </div>
+          <span class="hub-bento-action">Ver rutas →</span>
+        </a>
+
+        <a href={`${prefix}memoria-historica`} class="hub-bento-card history-card hover-lift">
+          <div class="hub-bento-header">
+            <span class="hub-bento-icon">🏛️</span>
+            <span class="hub-bento-badge">{translations["home.hubs.history.tag"] || "Patrimonio"}</span>
+          </div>
+          <div class="hub-bento-content">
+            <h3 class="hub-bento-title">{translations["home.hubs.history.title"] || "Memoria Histórica"}</h3>
+            <p class="hub-bento-desc">
+              {
+                translations["home.hubs.history.desc"] ||
+                  "Comercios centenarios, talleres artesanos y memoria viva de la isla."
+              }
+            </p>
+          </div>
+          <span class="hub-bento-action">Descubrir historia →</span>
+        </a>
+
+        <a href={`${prefix}comunidad`} class="hub-bento-card community-card hover-lift">
+          <div class="hub-bento-header">
+            <span class="hub-bento-icon">💬</span>
+            <span class="hub-bento-badge">{translations["home.hubs.community.tag"] || "Comunidad"}</span>
+          </div>
+          <div class="hub-bento-content">
+            <h3 class="hub-bento-title">{translations["home.hubs.community.title"] || "Comunidad Balear"}</h3>
+            <p class="hub-bento-desc">
+              {
+                translations["home.hubs.community.desc"] ||
+                  "Recomendaciones reales de residentes, preguntas y apoyo local."
+              }
+            </p>
+          </div>
+          <span class="hub-bento-action">Entrar a la comunidad →</span>
+        </a>
       </div>
     </section>
 
     <!-- THEMATIC DISCOVERY TOURS (Inspiration Itineraries) -->
-    <div class="container">
-      <DiscoveryTours currentLocale={locale} getLangPrefix={getLangPrefix} />
-    </div>
+    <section class="section bg-surface discovery-section">
+      <div class="container">
+        <DiscoveryTours currentLocale={locale} getLangPrefix={getLangPrefix} />
+      </div>
+    </section>
 
-    <!-- LATEST BLOG POSTS SECTION -->
-    <section class="container section">
+    <!-- LATEST BLOG POSTS & LOCAL NEWS -->
+    <section class="container section blog-news-section">
       <div class="section-header-flex">
         <div>
-          <h2 class="section-title">{translations["home.blog.title"]}</h2>
-          <p class="section-subtitle">{translations["home.blog.subtitle"]}</p>
+          <h2 class="section-title">{translations["home.blog.title"] || "Guías y Consejos de Mallorca"}</h2>
+          <p class="section-subtitle">
+            {translations["home.blog.subtitle"] || "Artículos exclusivos, precios de referencia y recomendaciones"}
+          </p>
         </div>
         <a href={`${prefix}blog`} class="btn btn-secondary btn-sm">
-          {translations["nav.blog"]} →
+          {translations["nav.blog"] || "Ver blog"} →
         </a>
       </div>
 
-      <div class="blog-grid">
+      <div class="blog-swipe-track">
         {
-          featuredPosts.map((post) => (
-            <BlogCard post={post} currentLocale={locale} getLangPrefix={getLangPrefix} translations={translations} />
+          featuredPosts.slice(0, 3).map((post) => (
+            <div class="blog-swipe-item">
+              <BlogCard post={post} currentLocale={locale} getLangPrefix={getLangPrefix} translations={translations} />
+            </div>
           ))
         }
       </div>
 
       <!-- Mallorca Verified Media & Press Mentions Feed -->
-      <MallorcaNewsFeed locale={locale} limit={4} />
+      <div class="news-feed-wrapper">
+        <MallorcaNewsFeed locale={locale} limit={4} />
+      </div>
     </section>
 
-    <!-- PHILOSOPHY & LOCAL COMMITMENT SECTION -->
-    <section class="container section">
-      <div class="mission-callout card-glass">
-        <div class="mission-callout-header">
-          <span class="badge-mission">{translations["home.mission.badge"]}</span>
-          <h2 class="section-title">{translations["home.mission.title"]}</h2>
-          <p class="section-subtitle">{translations["home.mission.subtitle"]}</p>
-        </div>
-
-        <div class="mission-callout-grid">
-          <div class="mission-item">
-            <span class="mission-icon">🏃‍♂️</span>
-            <h4>{translations["home.mission.item1.title"]}</h4>
-            <p>{translations["home.mission.item1.desc"]}</p>
-          </div>
-          <div class="mission-item">
-            <span class="mission-icon">⚖️</span>
-            <h4>{translations["home.mission.item2.title"]}</h4>
-            <p>{translations["home.mission.item2.desc"]}</p>
-          </div>
-          <div class="mission-item">
-            <span class="mission-icon">🛡️</span>
-            <h4>{translations["home.mission.item3.title"]}</h4>
-            <p>{translations["home.mission.item3.desc"]}</p>
+    <!-- TRUST SEALS BAR (Clean, non-intrusive guarantee) -->
+    <section class="container section trust-seals-section">
+      <div class="trust-seals-bar card-glass">
+        <div class="trust-seal-item">
+          <div class="trust-seal-icon">🛡️</div>
+          <div class="trust-seal-info">
+            <h4>Auditoría 100% Humana</h4>
+            <p>Teléfonos (+34), CIF y presencia física comprobada.</p>
           </div>
         </div>
-
-        <div class="mission-callout-footer">
-          <a href={`${prefix}sobre-nosotros`} class="btn btn-outline">
-            {translations["home.mission.cta"]} →
-          </a>
+        <div class="trust-seal-divider" aria-hidden="true"></div>
+        <div class="trust-seal-item">
+          <div class="trust-seal-icon">📍</div>
+          <div class="trust-seal-info">
+            <h4>Fidelidad Cartográfica</h4>
+            <p>Geolocalización precisa con Google, Apple y Bing Maps.</p>
+          </div>
+        </div>
+        <div class="trust-seal-divider" aria-hidden="true"></div>
+        <div class="trust-seal-item">
+          <div class="trust-seal-icon">🤝</div>
+          <div class="trust-seal-info">
+            <h4>Contacto Directo</h4>
+            <p>WhatsApp y llamadas sin comisiones ni intermediarios.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- TRUST & FEATURES SECTION -->
-    <section class="section bg-surface">
-      <div class="container">
-        <div class="section-header text-center">
-          <h2 class="section-title">{translations["home.features.title"]}</h2>
-        </div>
-
-        <div class="features-grid">
-          <article class="card hover-lift">
-            <div class="card-icon">🛡️</div>
-            <h3>{translations["home.features.training"]}</h3>
-            <p>{translations["home.features.training.description"]}</p>
-          </article>
-
-          <article class="card hover-lift">
-            <div class="card-icon">📍</div>
-            <h3>{translations["home.features.nutrition"]}</h3>
-            <p>{translations["home.features.nutrition.description"]}</p>
-          </article>
-
-          <article class="card hover-lift">
-            <div class="card-icon">🌍</div>
-            <h3>{translations["home.features.tracking"]}</h3>
-            <p>{translations["home.features.tracking.description"]}</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- PLATFORM ECOSYSTEM GUIDE & SEO AUTHORITY HUB -->
+    <!-- PLATFORM ECOSYSTEM GUIDE (SMART COLLAPSIBLE ACCORDION FOR SEO) -->
     <div class="container">
       <EcosystemGuideSection currentLocale={locale} translations={translations} />
     </div>
@@ -366,10 +409,16 @@ const homepageJsonLd = generateHomepageJsonLd(locale, canonicalUrl);
 </script>
 
 <style>
+  .home-main {
+    overflow-x: hidden;
+  }
+
   /* HERO STYLES */
   .hero-wrapper {
-    padding: var(--space-2xl) 0 var(--space-xl);
-    background: radial-gradient(ellipse at top, var(--color-primary-bg) 0%, transparent 70%);
+    padding: var(--space-xl) 0 var(--space-lg);
+    background:
+      radial-gradient(ellipse at 50% -20%, rgba(30, 144, 255, 0.15) 0%, transparent 70%),
+      radial-gradient(ellipse at 80% 30%, rgba(16, 185, 129, 0.08) 0%, transparent 60%);
     border-bottom: 1px solid var(--color-surface-border);
   }
 
@@ -379,11 +428,19 @@ const homepageJsonLd = generateHomepageJsonLd(locale, canonicalUrl);
     align-items: center;
     text-align: center;
     max-width: 860px;
-    gap: var(--space-sm);
+    gap: var(--space-xs);
+  }
+
+  .hero-badge {
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    padding: 0.35rem 0.9rem;
+    border-radius: var(--border-radius-full);
+    margin-bottom: var(--space-xs);
   }
 
   .hero-title {
-    font-size: clamp(2.2rem, 5.5vw, var(--font-size-4xl));
+    font-size: clamp(2rem, 5vw, var(--font-size-4xl));
     font-weight: 800;
     line-height: 1.15;
     letter-spacing: -0.02em;
@@ -391,10 +448,10 @@ const homepageJsonLd = generateHomepageJsonLd(locale, canonicalUrl);
   }
 
   .hero-subtitle {
-    font-size: var(--font-size-lg);
+    font-size: clamp(0.95rem, 2.2vw, var(--font-size-lg));
     color: var(--color-text-light);
-    max-width: 680px;
-    line-height: 1.6;
+    max-width: 660px;
+    line-height: 1.55;
     margin-bottom: var(--space-sm);
   }
 
@@ -403,15 +460,13 @@ const homepageJsonLd = generateHomepageJsonLd(locale, canonicalUrl);
     align-items: center;
     gap: var(--space-xs);
     width: 100%;
-    max-width: 650px;
+    max-width: 620px;
     background: var(--color-surface);
     border: 2px solid var(--color-primary-border);
     border-radius: var(--border-radius-full);
     padding: 0.35rem 0.5rem;
     box-shadow: var(--shadow-md);
-    transition:
-      border-color var(--transition-fast),
-      box-shadow var(--transition-fast);
+    transition: all var(--transition-fast);
   }
 
   .hero-search-box:focus-within {
@@ -445,23 +500,37 @@ const homepageJsonLd = generateHomepageJsonLd(locale, canonicalUrl);
 
   .hero-search-btn {
     border-radius: var(--border-radius-full);
-    padding: 0.6rem 1.5rem;
+    padding: 0.6rem 1.4rem;
     white-space: nowrap;
+    font-weight: 700;
   }
 
-  .quick-categories {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: var(--space-xs);
+  /* QUICK CHIPS (TOUCH HORIZONTAL SCROLL) */
+  .quick-chips-wrapper {
+    width: 100%;
+    max-width: 700px;
     margin-top: var(--space-sm);
+    overflow: hidden;
   }
 
-  .quick-pill {
+  .quick-chips-scroll {
+    display: flex;
+    gap: 0.5rem;
+    overflow-x: auto;
+    padding: 4px 2px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .quick-chips-scroll::-webkit-scrollbar {
+    display: none;
+  }
+
+  .quick-chip {
     display: inline-flex;
     align-items: center;
     gap: 0.35rem;
-    padding: 0.35rem 0.85rem;
+    padding: 0.35rem 0.8rem;
     border-radius: var(--border-radius-full);
     background: var(--color-surface);
     border: 1px solid var(--color-surface-border);
@@ -469,13 +538,22 @@ const homepageJsonLd = generateHomepageJsonLd(locale, canonicalUrl);
     font-weight: 600;
     color: var(--color-text);
     text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
     transition: all var(--transition-fast);
   }
 
-  .quick-pill:hover {
+  .quick-chip:hover {
     background: var(--color-primary-bg);
     color: var(--color-primary);
     border-color: var(--color-primary-border);
+    transform: translateY(-1px);
+  }
+
+  .chip-all {
+    background: var(--color-primary-bg);
+    border-color: var(--color-primary-border);
+    color: var(--color-primary);
   }
 
   /* STATS BAR */
@@ -483,203 +561,162 @@ const homepageJsonLd = generateHomepageJsonLd(locale, canonicalUrl);
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: var(--space-lg);
+    gap: var(--space-md);
     flex-wrap: wrap;
-    margin-top: var(--space-lg);
-    padding: var(--space-md) var(--space-xl);
+    margin-top: var(--space-md);
+    padding: 0.6rem var(--space-lg);
     background: var(--glass-bg);
     border: 1px solid var(--glass-border);
-    border-radius: var(--border-radius-lg);
+    border-radius: var(--border-radius-full);
     backdrop-filter: var(--glass-backdrop);
-    box-shadow: var(--glass-shadow);
-    animation: fadeSlideUp 0.6s ease 0.3s both;
+    box-shadow: var(--shadow-sm);
   }
 
   .hero-stat {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.15rem;
+    align-items: baseline;
+    gap: 0.3rem;
   }
 
   .hero-stat-num {
-    font-size: var(--font-size-2xl);
+    font-size: var(--font-size-lg);
     font-weight: 900;
     color: var(--color-primary);
     line-height: 1;
     font-variant-numeric: tabular-nums;
-    letter-spacing: -0.02em;
   }
 
   .hero-stat-label {
-    font-size: 0.65rem;
+    font-size: 0.72rem;
     font-weight: 600;
     color: var(--color-text-muted);
     text-transform: uppercase;
-    letter-spacing: 0.05em;
-    text-align: center;
+    letter-spacing: 0.04em;
   }
 
   .hero-stat-divider {
     width: 1px;
-    height: 36px;
+    height: 16px;
     background: var(--color-surface-border);
-    border-radius: 1px;
-  }
-
-  @keyframes fadeSlideUp {
-    from {
-      opacity: 0;
-      transform: translateY(16px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
   }
 
   /* SECTION HEADERS */
-  .section-header {
-    margin-bottom: var(--space-xl);
-  }
-
-  .section-header.text-center {
-    text-align: center;
+  .section-header-compact {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: var(--space-lg);
+    flex-wrap: wrap;
+    gap: var(--space-sm);
   }
 
   .section-header-flex {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    margin-bottom: var(--space-xl);
+    margin-bottom: var(--space-lg);
     flex-wrap: wrap;
-    gap: var(--space-md);
+    gap: var(--space-sm);
   }
 
   .section-title {
-    font-size: var(--font-size-2xl);
+    font-size: clamp(1.4rem, 3vw, var(--font-size-2xl));
     font-weight: 800;
     color: var(--color-text);
     letter-spacing: -0.01em;
   }
 
   .section-subtitle {
-    font-size: var(--font-size-base);
+    font-size: var(--font-size-sm);
     color: var(--color-text-muted);
-    margin-top: 0.25rem;
+    margin-top: 0.2rem;
+  }
+
+  .section-link-more {
+    font-size: var(--font-size-sm);
+    font-weight: 700;
+    color: var(--color-primary);
+    text-decoration: none;
+  }
+
+  .section-link-more:hover {
+    text-decoration: underline;
   }
 
   .bg-surface {
     background-color: var(--color-surface-hover);
   }
 
-  /* GRIDS */
-  .categories-grid {
+  /* COMPACT CATEGORIES DASHBOARD */
+  .categories-compact-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 0.75rem;
+  }
+
+  .cat-pill-card {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-surface-border);
+    border-radius: var(--border-radius-md);
+    text-decoration: none;
+    transition: all var(--transition-fast);
+  }
+
+  .cat-pill-card:hover {
+    border-color: var(--color-primary);
+    background: var(--color-primary-bg);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .cat-pill-icon {
+    font-size: 1.8rem;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .cat-pill-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+  }
+
+  .cat-pill-name {
+    font-size: var(--font-size-sm);
+    font-weight: 700;
+    color: var(--color-text);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .cat-pill-count {
+    font-size: 0.72rem;
+    color: var(--color-text-muted);
+    font-weight: 500;
+  }
+
+  /* SWIPEABLE SERVICES TRACK ON MOBILE */
+  .services-swipe-track,
+  .blog-swipe-track {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: var(--space-md);
   }
 
-  .category-card {
-    padding: var(--space-lg);
-    border-radius: var(--border-radius);
-    text-decoration: none;
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-xs);
-    border: 1px solid var(--color-surface-border);
+  .weekly-top-wrapper {
+    margin-top: var(--space-xl);
   }
 
-  .category-icon {
-    font-size: 2.2rem;
-    margin-bottom: var(--space-xs);
-  }
-
-  .category-name {
-    font-size: var(--font-size-lg);
-    font-weight: 700;
-    color: var(--color-text);
-  }
-
-  .category-desc {
-    font-size: var(--font-size-sm);
-    color: var(--color-text-light);
-    line-height: 1.45;
-  }
-
-  .services-grid,
-  .blog-grid,
-  .features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: var(--space-lg);
-  }
-
-  .card-icon {
-    font-size: 2.2rem;
-    margin-bottom: var(--space-sm);
-  }
-
-  .features-grid .card h3 {
-    margin-bottom: var(--space-xs);
-    font-size: var(--font-size-lg);
-    font-weight: 700;
-  }
-
-  .features-grid .card p {
-    color: var(--color-text-light);
-    font-size: var(--font-size-sm);
-    line-height: 1.5;
-  }
-
-  /* CTA BANNER */
-  .cta-banner {
-    padding: var(--space-2xl);
-    border-radius: var(--border-radius-lg);
-    text-align: center;
-    border: 2px solid var(--color-primary-border);
-    background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-primary-bg) 100%);
-  }
-
-  .cta-content {
-    max-width: 600px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--space-sm);
-  }
-
-  .cta-badge {
-    font-size: var(--font-size-xs);
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--color-primary);
-  }
-
-  .cta-title {
-    font-size: var(--font-size-2xl);
-    font-weight: 800;
-    color: var(--color-text);
-  }
-
-  .cta-subtitle {
-    font-size: var(--font-size-base);
-    color: var(--color-text-light);
-    line-height: 1.5;
-    margin-bottom: var(--space-xs);
-  }
-
-  .btn-lg {
-    padding: 0.85rem 2rem;
-    font-size: var(--font-size-base);
-  }
-
-  /* SPECIALIZED HUBS STYLES */
+  /* BENTO HUBS 2x2 */
   .badge-hub {
     display: inline-block;
-    padding: 0.3rem 0.8rem;
+    padding: 0.25rem 0.75rem;
     background: rgba(30, 144, 255, 0.12);
     border: 1px solid rgba(30, 144, 255, 0.3);
     border-radius: var(--border-radius-full);
@@ -691,204 +728,257 @@ const homepageJsonLd = generateHomepageJsonLd(locale, canonicalUrl);
     margin-bottom: var(--space-xs);
   }
 
-  .hubs-grid {
+  .hubs-bento-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: var(--space-md);
-    margin-top: var(--space-md);
   }
 
-  .hub-card {
+  .hub-bento-card {
     display: flex;
-    align-items: center;
-    gap: var(--space-md);
+    flex-direction: column;
+    justify-content: space-between;
     padding: var(--space-lg);
-    background: var(--color-surface);
+    border-radius: var(--border-radius-xl);
     border: 1px solid var(--color-surface-border);
-    border-radius: var(--border-radius-lg);
     text-decoration: none;
     transition: all var(--transition-base);
+    min-height: 180px;
   }
 
-  .hub-card:hover {
-    border-color: var(--color-primary);
-    transform: translateY(-3px);
+  .sports-card {
+    background: radial-gradient(circle at top right, rgba(16, 185, 129, 0.15) 0%, var(--color-surface) 80%);
+    border-color: rgba(16, 185, 129, 0.25);
+  }
+  .tours-card {
+    background: radial-gradient(circle at top right, rgba(212, 175, 55, 0.15) 0%, var(--color-surface) 80%);
+    border-color: rgba(212, 175, 55, 0.25);
+  }
+  .history-card {
+    background: radial-gradient(circle at top right, rgba(139, 92, 246, 0.15) 0%, var(--color-surface) 80%);
+    border-color: rgba(139, 92, 246, 0.25);
+  }
+  .community-card {
+    background: radial-gradient(circle at top right, rgba(59, 130, 246, 0.15) 0%, var(--color-surface) 80%);
+    border-color: rgba(59, 130, 246, 0.25);
   }
 
-  .hub-icon-wrap {
+  .hub-bento-header {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    width: 3.5rem;
-    height: 3.5rem;
-    border-radius: var(--border-radius-md);
-    font-size: 1.8rem;
-    flex-shrink: 0;
+    margin-bottom: var(--space-sm);
   }
 
-  .sports-accent {
-    background: rgba(16, 185, 129, 0.15);
-    border: 1px solid rgba(16, 185, 129, 0.3);
-  }
-  .tours-accent {
-    background: rgba(212, 175, 55, 0.15);
-    border: 1px solid rgba(212, 175, 55, 0.3);
-  }
-  .history-accent {
-    background: rgba(139, 92, 246, 0.15);
-    border: 1px solid rgba(139, 92, 246, 0.3);
-  }
-  .community-accent {
-    background: rgba(59, 130, 246, 0.15);
-    border: 1px solid rgba(59, 130, 246, 0.3);
+  .hub-bento-icon {
+    font-size: 2rem;
   }
 
-  .hub-info {
-    flex: 1;
-  }
-
-  .hub-tag {
-    display: block;
-    font-size: var(--font-size-xs);
+  .hub-bento-badge {
+    font-size: 0.7rem;
     font-weight: 700;
-    color: var(--color-primary);
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    margin-bottom: 0.2rem;
-  }
-
-  .hub-title {
-    font-size: var(--font-size-lg);
-    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: var(--border-radius-full);
+    background: var(--color-surface);
+    border: 1px solid var(--color-surface-border);
     color: var(--color-text);
-    margin-bottom: 0.3rem;
   }
 
-  .hub-desc {
-    font-size: var(--font-size-sm);
+  .hub-bento-title {
+    font-size: var(--font-size-base);
+    font-weight: 800;
+    color: var(--color-text);
+    margin-bottom: 0.25rem;
+  }
+
+  .hub-bento-desc {
+    font-size: 0.82rem;
     color: var(--color-text-muted);
-    line-height: 1.45;
+    line-height: 1.4;
+    margin-bottom: var(--space-md);
   }
 
-  .hub-arrow {
-    font-size: 1.4rem;
-    color: var(--color-text-muted);
-    transition: transform var(--transition-base);
-  }
-
-  .hub-card:hover .hub-arrow {
+  .hub-bento-action {
+    font-size: 0.82rem;
+    font-weight: 700;
     color: var(--color-primary);
+    display: inline-flex;
+    align-items: center;
+    transition: transform var(--transition-fast);
+  }
+
+  .hub-bento-card:hover .hub-bento-action {
     transform: translateX(4px);
   }
 
-  /* MISSION CALLOUT STYLES */
-  .mission-callout {
-    padding: var(--space-2xl);
-    border-radius: var(--border-radius-xl);
-    border: 1px solid rgba(16, 185, 129, 0.25);
-    background: radial-gradient(ellipse at top right, rgba(16, 185, 129, 0.06) 0%, var(--color-surface) 100%);
-    margin: var(--space-xl) 0;
-  }
-
-  .badge-mission {
-    display: inline-block;
-    padding: 0.3rem 0.8rem;
-    background: rgba(16, 185, 129, 0.12);
-    border: 1px solid rgba(16, 185, 129, 0.3);
-    border-radius: var(--border-radius-full);
-    color: #10b981;
-    font-size: var(--font-size-xs);
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: var(--space-xs);
-  }
-
-  .mission-callout-header {
-    text-align: center;
-    max-width: 820px;
-    margin: 0 auto var(--space-xl);
-  }
-
-  .mission-callout-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: var(--space-lg);
-    margin-bottom: var(--space-xl);
-  }
-
-  .mission-item {
-    background: var(--color-surface);
-    padding: var(--space-lg);
-    border-radius: var(--border-radius-lg);
-    border: 1px solid var(--color-surface-border);
-  }
-
-  .mission-icon {
-    font-size: 2rem;
-    display: block;
-    margin-bottom: var(--space-xs);
-  }
-
-  .mission-item h4 {
-    font-size: var(--font-size-base);
-    font-weight: 700;
-    color: var(--color-text);
-    margin-bottom: 0.35rem;
-  }
-
-  .mission-item p {
-    font-size: var(--font-size-sm);
-    color: var(--color-text-light);
-    line-height: 1.5;
-  }
-
-  .mission-callout-footer {
-    text-align: center;
-  }
-
-  .btn-outline {
-    display: inline-flex;
+  /* TRUST SEALS BAR */
+  .trust-seals-bar {
+    display: flex;
+    justify-content: space-around;
     align-items: center;
-    justify-content: center;
-    padding: 0.65rem 1.4rem;
-    border-radius: var(--border-radius);
+    padding: var(--space-lg);
+    border-radius: var(--border-radius-xl);
     border: 1px solid var(--color-surface-border);
+    gap: var(--space-md);
+    flex-wrap: wrap;
     background: var(--color-surface);
-    color: var(--color-text);
-    text-decoration: none;
-    font-weight: 600;
+  }
+
+  .trust-seal-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    flex: 1;
+    min-width: 220px;
+  }
+
+  .trust-seal-icon {
+    font-size: 2.2rem;
+    flex-shrink: 0;
+  }
+
+  .trust-seal-info h4 {
     font-size: var(--font-size-sm);
-    transition: all var(--transition-base);
+    font-weight: 800;
+    color: var(--color-text);
+    margin-bottom: 2px;
   }
 
-  .btn-outline:hover {
-    border-color: var(--color-primary);
-    color: var(--color-primary);
+  .trust-seal-info p {
+    font-size: 0.78rem;
+    color: var(--color-text-muted);
+    line-height: 1.35;
+    margin: 0;
   }
 
-  @media (max-width: 640px) {
+  .trust-seal-divider {
+    width: 1px;
+    height: 42px;
+    background: var(--color-surface-border);
+  }
+
+  .news-feed-wrapper {
+    margin-top: var(--space-lg);
+  }
+
+  /* RESPONSIVE OPTIMIZATIONS (MOBILE FIRST / APP EXPERIENCE) */
+  @media (max-width: 768px) {
+    .hero-wrapper {
+      padding: var(--space-md) 0;
+    }
+
     .hero-search-box {
+      border-radius: var(--border-radius-lg);
+      padding: 0.3rem 0.4rem;
+    }
+
+    .hero-stats-bar {
+      gap: var(--space-sm);
+      padding: 0.4rem 0.8rem;
+      width: 100%;
+    }
+
+    .hero-stat-label {
+      font-size: 0.65rem;
+    }
+
+    .hero-stat-num {
+      font-size: var(--font-size-base);
+    }
+
+    /* Horizontal swipe on mobile for services and blog cards */
+    .services-swipe-track,
+    .blog-swipe-track {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      padding: var(--space-xs) 2px var(--space-md);
+      gap: 0.85rem;
+      scrollbar-width: none;
+    }
+
+    .services-swipe-track::-webkit-scrollbar,
+    .blog-swipe-track::-webkit-scrollbar {
+      display: none;
+    }
+
+    .swipe-card-item,
+    .blog-swipe-item {
+      flex: 0 0 82vw;
+      max-width: 320px;
+      scroll-snap-align: start;
+    }
+
+    /* Grid 2x2 for categories and hubs on mobile */
+    .categories-compact-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.5rem;
+    }
+
+    .cat-pill-card {
+      padding: 0.6rem 0.75rem;
+      gap: 0.5rem;
+    }
+
+    .cat-pill-icon {
+      font-size: 1.4rem;
+    }
+
+    .cat-pill-name {
+      font-size: 0.8rem;
+    }
+
+    .cat-pill-count {
+      font-size: 0.68rem;
+    }
+
+    .hubs-bento-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.6rem;
+    }
+
+    .hub-bento-card {
+      padding: var(--space-md);
+      min-height: 140px;
+    }
+
+    .hub-bento-icon {
+      font-size: 1.5rem;
+    }
+
+    .hub-bento-badge {
+      display: none;
+    }
+
+    .hub-bento-desc {
+      display: none;
+    }
+
+    .hub-bento-title {
+      font-size: 0.85rem;
+      margin-bottom: var(--space-xs);
+    }
+
+    .hub-bento-action {
+      font-size: 0.75rem;
+    }
+
+    .trust-seals-bar {
       flex-direction: column;
-      border-radius: var(--border-radius);
-      padding: var(--space-sm);
+      align-items: flex-start;
+      gap: var(--space-md);
+      padding: var(--space-md);
     }
 
-    .hero-search-btn {
+    .trust-seal-divider {
+      display: none;
+    }
+
+    .trust-seal-item {
       width: 100%;
-    }
-
-    .search-input-wrap {
-      padding-left: 0;
-      width: 100%;
-    }
-
-    .hubs-grid,
-    .mission-callout-grid,
-    .services-grid,
-    .blog-grid,
-    .features-grid {
-      grid-template-columns: 1fr;
     }
   }
 </style>
