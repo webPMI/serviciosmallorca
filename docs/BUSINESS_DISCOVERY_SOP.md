@@ -16,7 +16,7 @@ organizado de forma **inmutable**:
 3. **Nombre** (alfabético, A–Z).
 
 Este documento es la base operativa para el pipeline de curación diaria
-([`docs/WORKFLOW_CURATION.md`](WORKFLOW_CURATION.md)).
+([`docs/AGENT_CURATION_SOP.md`](AGENT_CURATION_SOP.md)).
 
 ---
 

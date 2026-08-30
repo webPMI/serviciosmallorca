@@ -41,10 +41,9 @@ pistas, circuitos, piscinas municipales) que **ningún competidor cubre**.
 
 Todas las categorías cuelgan del super-sector existente **`deportes-aire-libre` (SS-15)** de
 `src/data/categories.ts`. Hasta que haya negocios verificados quedan en **modo "mapa"**
-(documentado en `TAXONOMY_SCALE.md`); se activan en `CATEGORIES` categoría a categoría (P-04).
+(documentado en `TAXONOMY.md`); se activan en `CATEGORIES` categoría a categoría (P-04).
 
-> ℹ️ **Nota de numeración:** el mapa de proyección `TAXONOMY_SCALE.md` numera esta vertical como
-> **SS-11** (orden de proyección); el **código oficial vigente** en la taxonomía viva es **SS-15**
+> ℹ️ **Nota de numeración:** el mapa de taxonomía `TAXONOMY.md` documenta esta vertical bajo el código oficial **SS-15**
 > (`deportes-aire-libre`). Ante cualquier conflicto, manda siempre el código de `src/data/categories.ts`.
 
 ### 2.1 Gimnasios & Fitness
