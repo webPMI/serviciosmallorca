@@ -12,6 +12,7 @@ import { carpinteria_fusteria_artesanal_mallorca_inca } from "./carpinteria-fust
 import { cerrajeriaRapidaBalear } from "./cerrajeria-rapida-balear.ts";
 import { cerrajeriaSanMiguel } from "./cerrajeria-san-miguel.ts";
 import { climaFrioBalear } from "./clima-frio-balear.ts";
+import { climatizacion_aerotermia_balear_inca_calefaccion } from "./climatizacion-aerotermia-balear-inca-calefaccion.ts";
 import { climaMarratxi } from "./climatizacion-marratxi.ts";
 import { construccionesLlullSastre } from "./construcciones-llull-sastre.ts";
 import { cristaleriaBalear } from "./cristaleria-aluminios-balear.ts";
@@ -49,6 +50,7 @@ export { carpinteria_fusteria_artesanal_mallorca_inca } from "./carpinteria-fust
 export { cerrajeriaRapidaBalear } from "./cerrajeria-rapida-balear.ts";
 export { cerrajeriaSanMiguel } from "./cerrajeria-san-miguel.ts";
 export { climaFrioBalear } from "./clima-frio-balear.ts";
+export { climatizacion_aerotermia_balear_inca_calefaccion } from "./climatizacion-aerotermia-balear-inca-calefaccion.ts";
 export { climaMarratxi } from "./climatizacion-marratxi.ts";
 export { construccionesLlullSastre } from "./construcciones-llull-sastre.ts";
 export { cristaleriaBalear } from "./cristaleria-aluminios-balear.ts";
@@ -87,6 +89,7 @@ export const REFORMAS_SERVICES: ServiceItem[] = [
   cerrajeriaRapidaBalear,
   cerrajeriaSanMiguel,
   climaFrioBalear,
+  climatizacion_aerotermia_balear_inca_calefaccion,
   climaMarratxi,
   construccionesLlullSastre,
   cristaleriaBalear,

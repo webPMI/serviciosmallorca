@@ -1,5 +1,6 @@
 import type { ServiceItem } from "../types.ts";
 import { agroturismoFincaCanQuatreSoller } from "./agroturismo-finca-can-quatre-soller.ts";
+import { agroturismo_sa_talaia_blanca_muro_playa } from "./agroturismo-sa-talaia-blanca-muro-playa.ts";
 import { belmondLaResidenciaDeia } from "./belmond-la-residencia-deia.ts";
 import { canBordoyGrandHousePalma } from "./can-bordoy-grand-house-palma.ts";
 import { canTemHistoricHotelAlcudia } from "./can-tem-historic-hotel-alcudia.ts";
@@ -25,6 +26,7 @@ import { sonBrullHotelSpaPollensa } from "./son-brull-hotel-spa-pollensa.ts";
 import { turismo_activo_mallorca_hiking_guides_soller } from "./turismo-activo-mallorca-hiking-guides-soller.ts";
 
 export { agroturismoFincaCanQuatreSoller } from "./agroturismo-finca-can-quatre-soller.ts";
+export { agroturismo_sa_talaia_blanca_muro_playa } from "./agroturismo-sa-talaia-blanca-muro-playa.ts";
 export { belmondLaResidenciaDeia } from "./belmond-la-residencia-deia.ts";
 export { canBordoyGrandHousePalma } from "./can-bordoy-grand-house-palma.ts";
 export { canTemHistoricHotelAlcudia } from "./can-tem-historic-hotel-alcudia.ts";
@@ -51,6 +53,7 @@ export { turismo_activo_mallorca_hiking_guides_soller } from "./turismo-activo-m
 
 export const ALOJAMIENTO_SERVICES: ServiceItem[] = [
   agroturismoFincaCanQuatreSoller,
+  agroturismo_sa_talaia_blanca_muro_playa,
   belmondLaResidenciaDeia,
   canBordoyGrandHousePalma,
   canTemHistoricHotelAlcudia,

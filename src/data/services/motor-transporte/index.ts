@@ -8,6 +8,7 @@ import { classicCarRentalMallorcaTramuntana } from "./classic-car-rental-mallorc
 import { garajeAutoPla } from "./garaje-auto-pla.ts";
 import { mallorcaCyclingCenter } from "./mallorca-cycling-center-muro.ts";
 import { mallorcaPrivateChauffeurLimousine } from "./mallorca-private-chauffeur-limousine.ts";
+import { mallorca_taxi_transfer_aeropuerto_palma_service } from "./mallorca-taxi-transfer-aeropuerto-palma-service.ts";
 import { roigPremium } from "./roig-premium.ts";
 import { tallerHermanosBestard } from "./taller-hermanos-bestard.ts";
 import { taller_mecanico_bosom_bosch_car_service_palma } from "./taller-mecanico-bosom-bosch-car-service-palma.ts";
@@ -25,6 +26,7 @@ export { classicCarRentalMallorcaTramuntana } from "./classic-car-rental-mallorc
 export { garajeAutoPla } from "./garaje-auto-pla.ts";
 export { mallorcaCyclingCenter } from "./mallorca-cycling-center-muro.ts";
 export { mallorcaPrivateChauffeurLimousine } from "./mallorca-private-chauffeur-limousine.ts";
+export { mallorca_taxi_transfer_aeropuerto_palma_service } from "./mallorca-taxi-transfer-aeropuerto-palma-service.ts";
 export { roigPremium } from "./roig-premium.ts";
 export { tallerHermanosBestard } from "./taller-hermanos-bestard.ts";
 export { taller_mecanico_bosom_bosch_car_service_palma } from "./taller-mecanico-bosom-bosch-car-service-palma.ts";
@@ -33,7 +35,7 @@ export { talleresAutoInca } from "./talleres-auto-inca.ts";
 export { vespamallorcaScooterRentalPalma } from "./vespamallorca-scooter-rental-palma.ts";
 export { vintage_motors_mallorca_scooter_vespa_palma } from "./vintage-motors-mallorca-scooter-vespa-palma.ts";
 
-export const MOTOR_SERVICES: ServiceItem[] = [
+export const TRANSPORTE_SERVICES: ServiceItem[] = [
   alquiler_coches_lujo_mallorca_elite_car_rental_palma,
   autocaresTransunion,
   bergantinosBikes,
@@ -43,6 +45,7 @@ export const MOTOR_SERVICES: ServiceItem[] = [
   garajeAutoPla,
   mallorcaCyclingCenter,
   mallorcaPrivateChauffeurLimousine,
+  mallorca_taxi_transfer_aeropuerto_palma_service,
   roigPremium,
   tallerHermanosBestard,
   taller_mecanico_bosom_bosch_car_service_palma,

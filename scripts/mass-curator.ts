@@ -173,6 +173,13 @@ ${exportsList.join("\n")}
 export const ${arrayName}: ServiceItem[] = [
 ${arrayItems.join("\n")}
 ];
+
+${arrayName !== "GASTRONOMIA_SERVICES" ? `export const GASTRONOMIA_SERVICES = ${arrayName};` : ""}
+${arrayName !== "RESTAURANT_SERVICES" ? `export const RESTAURANT_SERVICES = ${arrayName};` : ""}
+${arrayName !== "SERVICIOS_PROFESIONALES" ? `export const SERVICIOS_PROFESIONALES = ${arrayName};` : ""}
+${arrayName !== "PROFESIONALES_SERVICES" ? `export const PROFESIONALES_SERVICES = ${arrayName};` : ""}
+${arrayName !== "MOTOR_SERVICES" ? `export const MOTOR_SERVICES = ${arrayName};` : ""}
+${arrayName !== "TRANSPORTE_SERVICES" ? `export const TRANSPORTE_SERVICES = ${arrayName};` : ""}
 `;
 
   fs.writeFileSync(path.join(targetFolder, "index.ts"), indexContent, "utf-8");

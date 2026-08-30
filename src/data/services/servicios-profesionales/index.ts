@@ -39,7 +39,7 @@ export { rataCorner } from "./rata-corner.ts";
 export { traduccionesJuradasMallorcaSworn } from "./traducciones-juradas-mallorca-sworn.ts";
 export { vilasTennisAcademyPalmanova } from "./vilas-tennis-academy-palmanova.ts";
 
-export const SERVICIOS_PROFESIONALES: ServiceItem[] = [
+export const PROFESIONALES_SERVICES: ServiceItem[] = [
   balearic_lawyers_property_tax_palma,
   bufeteBuadesAbogadosPalma1979,
   bufeteBuadesAbogadosPalma,
