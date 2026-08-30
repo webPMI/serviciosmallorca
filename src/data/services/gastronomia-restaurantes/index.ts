@@ -193,7 +193,9 @@ import { restauranteRcnPortPollenca } from "./restaurante-rcn-port-pollenca.ts";
 import { restauranteRitziPortals } from "./restaurante-ritzi-portals.ts";
 import { restauranteRocamarPortAndratx } from "./restaurante-rocamar-port-andratx.ts";
 import { restauranteSaBarcaPortSoller } from "./restaurante-sa-barca-port-soller.ts";
+import { restaurante_sa_canterella_deia_vistas_mar } from "./restaurante-sa-canterella-deia-vistas-mar.ts";
 import { restaurante_sa_llobatera_sineu_celler } from "./restaurante-sa-llobatera-sineu-celler.ts";
+import { restaurante_sa_lloca_alcudia_puerto_marisco } from "./restaurante-sa-lloca-alcudia-puerto-marisco.ts";
 import { restauranteSaRoquetaPortixol } from "./restaurante-sa-roqueta-portixol.ts";
 import { restauranteSaVinyaEsCapdella } from "./restaurante-sa-vinya-es-capdella.ts";
 import { restauranteSesOliveresPortSoller } from "./restaurante-ses-oliveres-port-soller.ts";
@@ -409,7 +411,9 @@ export { restauranteRcnPortPollenca } from "./restaurante-rcn-port-pollenca.ts";
 export { restauranteRitziPortals } from "./restaurante-ritzi-portals.ts";
 export { restauranteRocamarPortAndratx } from "./restaurante-rocamar-port-andratx.ts";
 export { restauranteSaBarcaPortSoller } from "./restaurante-sa-barca-port-soller.ts";
+export { restaurante_sa_canterella_deia_vistas_mar } from "./restaurante-sa-canterella-deia-vistas-mar.ts";
 export { restaurante_sa_llobatera_sineu_celler } from "./restaurante-sa-llobatera-sineu-celler.ts";
+export { restaurante_sa_lloca_alcudia_puerto_marisco } from "./restaurante-sa-lloca-alcudia-puerto-marisco.ts";
 export { restauranteSaRoquetaPortixol } from "./restaurante-sa-roqueta-portixol.ts";
 export { restauranteSaVinyaEsCapdella } from "./restaurante-sa-vinya-es-capdella.ts";
 export { restauranteSesOliveresPortSoller } from "./restaurante-ses-oliveres-port-soller.ts";
@@ -626,7 +630,9 @@ export const RESTAURANT_SERVICES: ServiceItem[] = [
   restauranteRitziPortals,
   restauranteRocamarPortAndratx,
   restauranteSaBarcaPortSoller,
+  restaurante_sa_canterella_deia_vistas_mar,
   restaurante_sa_llobatera_sineu_celler,
+  restaurante_sa_lloca_alcudia_puerto_marisco,
   restauranteSaRoquetaPortixol,
   restauranteSaVinyaEsCapdella,
   restauranteSesOliveresPortSoller,

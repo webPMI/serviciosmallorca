@@ -5,6 +5,7 @@ import { ccaAndratxService } from "./cca-andratx.ts";
 import { cereriaArtesanaInca } from "./cereria-artesana-inca.ts";
 import { electricTattooPalma } from "./electric-tattoo-palma.ts";
 import { esBaluardMuseuService } from "./es-baluard-museu.ts";
+import { estudio_tattoo_inkspiration_alcudia_art } from "./estudio-tattoo-inkspiration-alcudia-art.ts";
 import { estudio_tatuaje_balear_ink_palma_plaza_patines } from "./estudio-tatuaje-balear-ink-palma-plaza-patines.ts";
 import { fundacioMiroMallorcaService } from "./fundacio-miro-mallorca.ts";
 import { galeriaBaroService } from "./galeria-baro.ts";
@@ -23,6 +24,7 @@ export { ccaAndratxService } from "./cca-andratx.ts";
 export { cereriaArtesanaInca } from "./cereria-artesana-inca.ts";
 export { electricTattooPalma } from "./electric-tattoo-palma.ts";
 export { esBaluardMuseuService } from "./es-baluard-museu.ts";
+export { estudio_tattoo_inkspiration_alcudia_art } from "./estudio-tattoo-inkspiration-alcudia-art.ts";
 export { estudio_tatuaje_balear_ink_palma_plaza_patines } from "./estudio-tatuaje-balear-ink-palma-plaza-patines.ts";
 export { fundacioMiroMallorcaService } from "./fundacio-miro-mallorca.ts";
 export { galeriaBaroService } from "./galeria-baro.ts";
@@ -42,6 +44,7 @@ export const TATTOO_SERVICES: ServiceItem[] = [
   cereriaArtesanaInca,
   electricTattooPalma,
   esBaluardMuseuService,
+  estudio_tattoo_inkspiration_alcudia_art,
   estudio_tatuaje_balear_ink_palma_plaza_patines,
   fundacioMiroMallorcaService,
   galeriaBaroService,

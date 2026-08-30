@@ -6,6 +6,7 @@ import { blevinsFranksWealthManagementPalma } from "./blevins-franks-wealth-mana
 import { correduriaSegurosBalearesInbrok } from "./correduria-seguros-baleares-inbrok.ts";
 import { correduria_seguros_baleares_nautica_villas_palma } from "./correduria-seguros-baleares-nautica-villas-palma.ts";
 import { fusterSegurosCorreduriaPalma } from "./fuster-seguros-correduria-palma.ts";
+import { gestoria_asesoria_marroig_palma_fiscal_laboral } from "./gestoria-asesoria-marroig-palma-fiscal-laboral.ts";
 import { lionsgateCapitalMortgageBrokers } from "./lionsgate-capital-mortgage-brokers.ts";
 import { mallorcaMortgagesInternationalBuyers } from "./mallorca-mortgages-international-buyers.ts";
 import { mortgageDirectSpainMallorca } from "./mortgage-direct-spain-mallorca.ts";
@@ -20,6 +21,7 @@ export { blevinsFranksWealthManagementPalma } from "./blevins-franks-wealth-mana
 export { correduriaSegurosBalearesInbrok } from "./correduria-seguros-baleares-inbrok.ts";
 export { correduria_seguros_baleares_nautica_villas_palma } from "./correduria-seguros-baleares-nautica-villas-palma.ts";
 export { fusterSegurosCorreduriaPalma } from "./fuster-seguros-correduria-palma.ts";
+export { gestoria_asesoria_marroig_palma_fiscal_laboral } from "./gestoria-asesoria-marroig-palma-fiscal-laboral.ts";
 export { lionsgateCapitalMortgageBrokers } from "./lionsgate-capital-mortgage-brokers.ts";
 export { mallorcaMortgagesInternationalBuyers } from "./mallorca-mortgages-international-buyers.ts";
 export { mortgageDirectSpainMallorca } from "./mortgage-direct-spain-mallorca.ts";
@@ -35,6 +37,7 @@ export const FINANZAS_SERVICES: ServiceItem[] = [
   correduriaSegurosBalearesInbrok,
   correduria_seguros_baleares_nautica_villas_palma,
   fusterSegurosCorreduriaPalma,
+  gestoria_asesoria_marroig_palma_fiscal_laboral,
   lionsgateCapitalMortgageBrokers,
   mallorcaMortgagesInternationalBuyers,
   mortgageDirectSpainMallorca,

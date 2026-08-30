@@ -5,6 +5,7 @@ import { clinica_veterinaria_mediterranea_santa_catalina } from "./clinica-veter
 import { clinicaVeterinariaPortAndratx } from "./clinica-veterinaria-port-andratx.ts";
 import { clinicaVeterinariaSollerTramuntana } from "./clinica-veterinaria-soller-tramuntana.ts";
 import { fincaCanPaulinoDogResortLlucmajor } from "./finca-can-paulino-dog-resort-llucmajor.ts";
+import { hospital_veterinari_llevant_manacor_24h } from "./hospital-veterinari-llevant-manacor-24h.ts";
 import { hospitalVeterinarioAragoPalma } from "./hospital-veterinario-arago-palma.ts";
 import { hospitalVeterinarioCanisMallorca } from "./hospital-veterinario-canis-mallorca.ts";
 import { mallorcaDogTrainerBehaviour } from "./mallorca-dog-trainer-behaviour.ts";
@@ -18,6 +19,7 @@ export { clinica_veterinaria_mediterranea_santa_catalina } from "./clinica-veter
 export { clinicaVeterinariaPortAndratx } from "./clinica-veterinaria-port-andratx.ts";
 export { clinicaVeterinariaSollerTramuntana } from "./clinica-veterinaria-soller-tramuntana.ts";
 export { fincaCanPaulinoDogResortLlucmajor } from "./finca-can-paulino-dog-resort-llucmajor.ts";
+export { hospital_veterinari_llevant_manacor_24h } from "./hospital-veterinari-llevant-manacor-24h.ts";
 export { hospitalVeterinarioAragoPalma } from "./hospital-veterinario-arago-palma.ts";
 export { hospitalVeterinarioCanisMallorca } from "./hospital-veterinario-canis-mallorca.ts";
 export { mallorcaDogTrainerBehaviour } from "./mallorca-dog-trainer-behaviour.ts";
@@ -32,6 +34,7 @@ export const MASCOTAS_SERVICES: ServiceItem[] = [
   clinicaVeterinariaPortAndratx,
   clinicaVeterinariaSollerTramuntana,
   fincaCanPaulinoDogResortLlucmajor,
+  hospital_veterinari_llevant_manacor_24h,
   hospitalVeterinarioAragoPalma,
   hospitalVeterinarioCanisMallorca,
   mallorcaDogTrainerBehaviour,

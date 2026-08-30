@@ -8,6 +8,7 @@ import { lafioreVidrioArtesanal } from "./lafiore-vidrio-artesanal.ts";
 import { menestralia_vidre_bufat_artesanal_campanet } from "./menestralia-vidre-bufat-artesanal-campanet.ts";
 import { mongeHandmadeShoesPalma } from "./monge-handmade-shoes-palma.ts";
 import { pedraDeSantanyiCanteresArtesanes } from "./pedra-de-santanyi-canteres-artesanes.ts";
+import { siurells_ca_mado_bet_portol_marratxi_alfareria } from "./siurells-ca-mado-bet-portol-marratxi-alfareria.ts";
 import { teixitsVicensArtesaniaPollensa } from "./teixits-vicens-artesania-pollensa.ts";
 import { vidriosGordiola } from "./vidrios-gordiola-algaida.ts";
 
@@ -20,6 +21,7 @@ export { lafioreVidrioArtesanal } from "./lafiore-vidrio-artesanal.ts";
 export { menestralia_vidre_bufat_artesanal_campanet } from "./menestralia-vidre-bufat-artesanal-campanet.ts";
 export { mongeHandmadeShoesPalma } from "./monge-handmade-shoes-palma.ts";
 export { pedraDeSantanyiCanteresArtesanes } from "./pedra-de-santanyi-canteres-artesanes.ts";
+export { siurells_ca_mado_bet_portol_marratxi_alfareria } from "./siurells-ca-mado-bet-portol-marratxi-alfareria.ts";
 export { teixitsVicensArtesaniaPollensa } from "./teixits-vicens-artesania-pollensa.ts";
 export { vidriosGordiola } from "./vidrios-gordiola-algaida.ts";
 
@@ -33,6 +35,7 @@ export const ARTESANIA_SERVICES: ServiceItem[] = [
   menestralia_vidre_bufat_artesanal_campanet,
   mongeHandmadeShoesPalma,
   pedraDeSantanyiCanteresArtesanes,
+  siurells_ca_mado_bet_portol_marratxi_alfareria,
   teixitsVicensArtesaniaPollensa,
   vidriosGordiola,
 ];

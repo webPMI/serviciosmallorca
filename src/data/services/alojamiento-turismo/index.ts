@@ -1,6 +1,9 @@
 import type { ServiceItem } from "../types.ts";
+import { agroturismo_can_maica_manacor_finca_rural } from "./agroturismo-can-maica-manacor-finca-rural.ts";
 import { agroturismoFincaCanQuatreSoller } from "./agroturismo-finca-can-quatre-soller.ts";
 import { agroturismo_sa_talaia_blanca_muro_playa } from "./agroturismo-sa-talaia-blanca-muro-playa.ts";
+import { agroturismo_son_boronat_calvia_finca_rural } from "./agroturismo-son-boronat-calvia-finca-rural.ts";
+import { agroturismo_son_foguero_holistic_retreat_maria } from "./agroturismo-son-foguero-holistic-retreat-maria.ts";
 import { belmondLaResidenciaDeia } from "./belmond-la-residencia-deia.ts";
 import { canBordoyGrandHousePalma } from "./can-bordoy-grand-house-palma.ts";
 import { canTemHistoricHotelAlcudia } from "./can-tem-historic-hotel-alcudia.ts";
@@ -14,6 +17,7 @@ import { fincaSonLladoAgroturismoCampos } from "./finca-son-llado-agroturismo-ca
 import { gran_hotel_son_net_puigpunyent_palacio } from "./gran-hotel-son-net-puigpunyent-palacio.ts";
 import { hotel_agroturismo_sa_bassa_crua_porreres } from "./hotel-agroturismo-sa-bassa-crua-porreres.ts";
 import { hotel_boutique_sa_pedrissa_deia } from "./hotel-boutique-sa-pedrissa-deia.ts";
+import { hotel_convent_de_la_missio_palma_boutique } from "./hotel-convent-de-la-missio-palma-boutique.ts";
 import { hotelEsMoliDeiaCove } from "./hotel-es-moli-deia-cove.ts";
 import { hotelMiraboDeValldemossa } from "./hotel-mirabo-de-valldemossa.ts";
 import { hotelRuralFincaAmapolaCampos } from "./hotel-rural-finca-amapola-campos.ts";
@@ -25,8 +29,11 @@ import { saCarrotjaAgroturismoSesSalines } from "./sa-carrotja-agroturismo-ses-s
 import { sonBrullHotelSpaPollensa } from "./son-brull-hotel-spa-pollensa.ts";
 import { turismo_activo_mallorca_hiking_guides_soller } from "./turismo-activo-mallorca-hiking-guides-soller.ts";
 
+export { agroturismo_can_maica_manacor_finca_rural } from "./agroturismo-can-maica-manacor-finca-rural.ts";
 export { agroturismoFincaCanQuatreSoller } from "./agroturismo-finca-can-quatre-soller.ts";
 export { agroturismo_sa_talaia_blanca_muro_playa } from "./agroturismo-sa-talaia-blanca-muro-playa.ts";
+export { agroturismo_son_boronat_calvia_finca_rural } from "./agroturismo-son-boronat-calvia-finca-rural.ts";
+export { agroturismo_son_foguero_holistic_retreat_maria } from "./agroturismo-son-foguero-holistic-retreat-maria.ts";
 export { belmondLaResidenciaDeia } from "./belmond-la-residencia-deia.ts";
 export { canBordoyGrandHousePalma } from "./can-bordoy-grand-house-palma.ts";
 export { canTemHistoricHotelAlcudia } from "./can-tem-historic-hotel-alcudia.ts";
@@ -40,6 +47,7 @@ export { fincaSonLladoAgroturismoCampos } from "./finca-son-llado-agroturismo-ca
 export { gran_hotel_son_net_puigpunyent_palacio } from "./gran-hotel-son-net-puigpunyent-palacio.ts";
 export { hotel_agroturismo_sa_bassa_crua_porreres } from "./hotel-agroturismo-sa-bassa-crua-porreres.ts";
 export { hotel_boutique_sa_pedrissa_deia } from "./hotel-boutique-sa-pedrissa-deia.ts";
+export { hotel_convent_de_la_missio_palma_boutique } from "./hotel-convent-de-la-missio-palma-boutique.ts";
 export { hotelEsMoliDeiaCove } from "./hotel-es-moli-deia-cove.ts";
 export { hotelMiraboDeValldemossa } from "./hotel-mirabo-de-valldemossa.ts";
 export { hotelRuralFincaAmapolaCampos } from "./hotel-rural-finca-amapola-campos.ts";
@@ -52,8 +60,11 @@ export { sonBrullHotelSpaPollensa } from "./son-brull-hotel-spa-pollensa.ts";
 export { turismo_activo_mallorca_hiking_guides_soller } from "./turismo-activo-mallorca-hiking-guides-soller.ts";
 
 export const ALOJAMIENTO_SERVICES: ServiceItem[] = [
+  agroturismo_can_maica_manacor_finca_rural,
   agroturismoFincaCanQuatreSoller,
   agroturismo_sa_talaia_blanca_muro_playa,
+  agroturismo_son_boronat_calvia_finca_rural,
+  agroturismo_son_foguero_holistic_retreat_maria,
   belmondLaResidenciaDeia,
   canBordoyGrandHousePalma,
   canTemHistoricHotelAlcudia,
@@ -67,6 +78,7 @@ export const ALOJAMIENTO_SERVICES: ServiceItem[] = [
   gran_hotel_son_net_puigpunyent_palacio,
   hotel_agroturismo_sa_bassa_crua_porreres,
   hotel_boutique_sa_pedrissa_deia,
+  hotel_convent_de_la_missio_palma_boutique,
   hotelEsMoliDeiaCove,
   hotelMiraboDeValldemossa,
   hotelRuralFincaAmapolaCampos,

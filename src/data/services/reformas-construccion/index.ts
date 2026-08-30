@@ -14,6 +14,7 @@ import { cerrajeriaSanMiguel } from "./cerrajeria-san-miguel.ts";
 import { climaFrioBalear } from "./clima-frio-balear.ts";
 import { climatizacion_aerotermia_balear_inca_calefaccion } from "./climatizacion-aerotermia-balear-inca-calefaccion.ts";
 import { climaMarratxi } from "./climatizacion-marratxi.ts";
+import { construcciones_canteria_pedres_de_mallorca_felanitx } from "./construcciones-canteria-pedres-de-mallorca-felanitx.ts";
 import { construccionesLlullSastre } from "./construcciones-llull-sastre.ts";
 import { cristaleriaBalear } from "./cristaleria-aluminios-balear.ts";
 import { domoReformasIntegralesPalma } from "./domo-reformas-integrales-palma.ts";
@@ -26,6 +27,7 @@ import { ferraturConstruccionesCalvia } from "./ferratur-construcciones-calvia.t
 import { fontaneriaBalear } from "./fontaneria-balear.ts";
 import { fontaneria_climatizacion_calvia_express } from "./fontaneria-climatizacion-calvia-express.ts";
 import { fontaneriaPomar } from "./fontaneria-pomar-inca.ts";
+import { fusteria_tradicional_inca_madera_noble } from "./fusteria-tradicional-inca-madera-noble.ts";
 import { jardineriaSerra } from "./jardineria-mediterranea-serra.ts";
 import { limpiezasBalear } from "./limpiezas-balear-mallorca.ts";
 import { melchorMascaroConstrucciones } from "./melchor-mascaro-construcciones.ts";
@@ -52,6 +54,7 @@ export { cerrajeriaSanMiguel } from "./cerrajeria-san-miguel.ts";
 export { climaFrioBalear } from "./clima-frio-balear.ts";
 export { climatizacion_aerotermia_balear_inca_calefaccion } from "./climatizacion-aerotermia-balear-inca-calefaccion.ts";
 export { climaMarratxi } from "./climatizacion-marratxi.ts";
+export { construcciones_canteria_pedres_de_mallorca_felanitx } from "./construcciones-canteria-pedres-de-mallorca-felanitx.ts";
 export { construccionesLlullSastre } from "./construcciones-llull-sastre.ts";
 export { cristaleriaBalear } from "./cristaleria-aluminios-balear.ts";
 export { domoReformasIntegralesPalma } from "./domo-reformas-integrales-palma.ts";
@@ -64,6 +67,7 @@ export { ferraturConstruccionesCalvia } from "./ferratur-construcciones-calvia.t
 export { fontaneriaBalear } from "./fontaneria-balear.ts";
 export { fontaneria_climatizacion_calvia_express } from "./fontaneria-climatizacion-calvia-express.ts";
 export { fontaneriaPomar } from "./fontaneria-pomar-inca.ts";
+export { fusteria_tradicional_inca_madera_noble } from "./fusteria-tradicional-inca-madera-noble.ts";
 export { jardineriaSerra } from "./jardineria-mediterranea-serra.ts";
 export { limpiezasBalear } from "./limpiezas-balear-mallorca.ts";
 export { melchorMascaroConstrucciones } from "./melchor-mascaro-construcciones.ts";
@@ -91,6 +95,7 @@ export const REFORMAS_SERVICES: ServiceItem[] = [
   climaFrioBalear,
   climatizacion_aerotermia_balear_inca_calefaccion,
   climaMarratxi,
+  construcciones_canteria_pedres_de_mallorca_felanitx,
   construccionesLlullSastre,
   cristaleriaBalear,
   domoReformasIntegralesPalma,
@@ -103,6 +108,7 @@ export const REFORMAS_SERVICES: ServiceItem[] = [
   fontaneriaBalear,
   fontaneria_climatizacion_calvia_express,
   fontaneriaPomar,
+  fusteria_tradicional_inca_madera_noble,
   jardineriaSerra,
   limpiezasBalear,
   melchorMascaroConstrucciones,

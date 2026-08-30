@@ -9,6 +9,7 @@ import { BROOKLYN_FITBOXING_SON_HUGO_PALMA } from "./brooklyn-fitboxing-son-hugo
 import { CAPDEPERA_GOLF_ARTA } from "./capdepera-golf-arta.ts";
 import { centro_buceo_padi_dive_mallorca_port_andratx } from "./centro-buceo-padi-dive-mallorca-port-andratx.ts";
 import { CLUB_DE_GOLF_ALCANADA_ALCUDIA } from "./club-de-golf-alcanada-alcudia.ts";
+import { club_nautico_puerto_pollensa_escuela_remo } from "./club-nautico-puerto-pollensa-escuela-remo.ts";
 import { CLUB_TENIS_ALARO } from "./club-tenis-alaro.ts";
 import { CLUB_TENIS_ANDRATX } from "./club-tenis-andratx.ts";
 import { CLUB_TENIS_CALVIA_COSTA_DEN_BLANES } from "./club-tenis-calvia-costa-den-blanes.ts";
@@ -40,6 +41,7 @@ import { F45_TRAINING_PALMA_CENTRO } from "./f45-training-palma-centro.ts";
 import { FIT_CLUB_MALLORCA_SON_BUGADELLES } from "./fit-club-mallorca-son-bugadelles.ts";
 import { FIT_POINT_PADEL_FITNESS_PALMA } from "./fit-point-padel-fitness-palma.ts";
 import { FREEFORM_BOULDER_GYM_PALMA_CENTRO } from "./freeform-boulder-gym-palma-centro.ts";
+import { gimnasio_fitness_illes_marratxi_centro_deportivo } from "./gimnasio-fitness-illes-marratxi-centro-deportivo.ts";
 import { GOLF_DE_ANDRATX_CAMP_DE_MAR } from "./golf-de-andratx-camp-de-mar.ts";
 import { GOLF_MAIORIS_LLUCMAJOR } from "./golf-maioris-llucmajor.ts";
 import { GOLF_SANTA_PONSA_CALVIA } from "./golf-santa-ponsa-calvia.ts";
@@ -115,6 +117,7 @@ export { BROOKLYN_FITBOXING_SON_HUGO_PALMA } from "./brooklyn-fitboxing-son-hugo
 export { CAPDEPERA_GOLF_ARTA } from "./capdepera-golf-arta.ts";
 export { centro_buceo_padi_dive_mallorca_port_andratx } from "./centro-buceo-padi-dive-mallorca-port-andratx.ts";
 export { CLUB_DE_GOLF_ALCANADA_ALCUDIA } from "./club-de-golf-alcanada-alcudia.ts";
+export { club_nautico_puerto_pollensa_escuela_remo } from "./club-nautico-puerto-pollensa-escuela-remo.ts";
 export { CLUB_TENIS_ALARO } from "./club-tenis-alaro.ts";
 export { CLUB_TENIS_ANDRATX } from "./club-tenis-andratx.ts";
 export { CLUB_TENIS_CALVIA_COSTA_DEN_BLANES } from "./club-tenis-calvia-costa-den-blanes.ts";
@@ -146,6 +149,7 @@ export { F45_TRAINING_PALMA_CENTRO } from "./f45-training-palma-centro.ts";
 export { FIT_CLUB_MALLORCA_SON_BUGADELLES } from "./fit-club-mallorca-son-bugadelles.ts";
 export { FIT_POINT_PADEL_FITNESS_PALMA } from "./fit-point-padel-fitness-palma.ts";
 export { FREEFORM_BOULDER_GYM_PALMA_CENTRO } from "./freeform-boulder-gym-palma-centro.ts";
+export { gimnasio_fitness_illes_marratxi_centro_deportivo } from "./gimnasio-fitness-illes-marratxi-centro-deportivo.ts";
 export { GOLF_DE_ANDRATX_CAMP_DE_MAR } from "./golf-de-andratx-camp-de-mar.ts";
 export { GOLF_MAIORIS_LLUCMAJOR } from "./golf-maioris-llucmajor.ts";
 export { GOLF_SANTA_PONSA_CALVIA } from "./golf-santa-ponsa-calvia.ts";
@@ -222,6 +226,7 @@ export const DEPORTES_SERVICES: ServiceItem[] = [
   CAPDEPERA_GOLF_ARTA,
   centro_buceo_padi_dive_mallorca_port_andratx,
   CLUB_DE_GOLF_ALCANADA_ALCUDIA,
+  club_nautico_puerto_pollensa_escuela_remo,
   CLUB_TENIS_ALARO,
   CLUB_TENIS_ANDRATX,
   CLUB_TENIS_CALVIA_COSTA_DEN_BLANES,
@@ -253,6 +258,7 @@ export const DEPORTES_SERVICES: ServiceItem[] = [
   FIT_CLUB_MALLORCA_SON_BUGADELLES,
   FIT_POINT_PADEL_FITNESS_PALMA,
   FREEFORM_BOULDER_GYM_PALMA_CENTRO,
+  gimnasio_fitness_illes_marratxi_centro_deportivo,
   GOLF_DE_ANDRATX_CAMP_DE_MAR,
   GOLF_MAIORIS_LLUCMAJOR,
   GOLF_SANTA_PONSA_CALVIA,

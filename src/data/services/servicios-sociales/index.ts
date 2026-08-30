@@ -4,6 +4,7 @@ import { cuidado_mayores_asistencia_baleares_mallorca_aid } from "./cuidado-mayo
 import { cuidadoYSaludMallorcaCare } from "./cuidado-y-salud-mallorca-care.ts";
 import { cuideoCuidadoMayoresMallorca } from "./cuideo-cuidado-mayores-mallorca.ts";
 import { guarderiaBilingueSantaCatalina } from "./guarderia-bilingue-santa-catalina.ts";
+import { guarderia_centro_infantil_na_camella_manacor } from "./guarderia-centro-infantil-na-camella-manacor.ts";
 import { mallorcaHomeNursingCare } from "./mallorca-home-nursing-care.ts";
 import { mallorcaNanniesCangurosVip } from "./mallorca-nannies-canguros-vip.ts";
 import { residencia_mayores_can_bibiloni_palma_ancians } from "./residencia-mayores-can-bibiloni-palma-ancians.ts";
@@ -15,6 +16,7 @@ export { cuidado_mayores_asistencia_baleares_mallorca_aid } from "./cuidado-mayo
 export { cuidadoYSaludMallorcaCare } from "./cuidado-y-salud-mallorca-care.ts";
 export { cuideoCuidadoMayoresMallorca } from "./cuideo-cuidado-mayores-mallorca.ts";
 export { guarderiaBilingueSantaCatalina } from "./guarderia-bilingue-santa-catalina.ts";
+export { guarderia_centro_infantil_na_camella_manacor } from "./guarderia-centro-infantil-na-camella-manacor.ts";
 export { mallorcaHomeNursingCare } from "./mallorca-home-nursing-care.ts";
 export { mallorcaNanniesCangurosVip } from "./mallorca-nannies-canguros-vip.ts";
 export { residencia_mayores_can_bibiloni_palma_ancians } from "./residencia-mayores-can-bibiloni-palma-ancians.ts";
@@ -27,6 +29,7 @@ export const SOCIALES_SERVICES: ServiceItem[] = [
   cuidadoYSaludMallorcaCare,
   cuideoCuidadoMayoresMallorca,
   guarderiaBilingueSantaCatalina,
+  guarderia_centro_infantil_na_camella_manacor,
   mallorcaHomeNursingCare,
   mallorcaNanniesCangurosVip,
   residencia_mayores_can_bibiloni_palma_ancians,

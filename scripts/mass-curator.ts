@@ -180,6 +180,8 @@ ${arrayName !== "SERVICIOS_PROFESIONALES" ? `export const SERVICIOS_PROFESIONALE
 ${arrayName !== "PROFESIONALES_SERVICES" ? `export const PROFESIONALES_SERVICES = ${arrayName};` : ""}
 ${arrayName !== "MOTOR_SERVICES" ? `export const MOTOR_SERVICES = ${arrayName};` : ""}
 ${arrayName !== "TRANSPORTE_SERVICES" ? `export const TRANSPORTE_SERVICES = ${arrayName};` : ""}
+${arrayName !== "SERVICIOS_SOCIALES" ? `export const SERVICIOS_SOCIALES = ${arrayName};` : ""}
+${arrayName !== "SOCIALES_SERVICES" ? `export const SOCIALES_SERVICES = ${arrayName};` : ""}
 `;
 
   fs.writeFileSync(path.join(targetFolder, "index.ts"), indexContent, "utf-8");
