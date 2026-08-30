@@ -20,7 +20,7 @@ export const canCompany: ServiceItem = {
   phone: "+34 971 85 52 14",
   whatsapp: "+34 971 85 52 14",
   email: "info@cancompany.es",
-  website: "https://cancompany.es",
+  website: "https://cancompany.es/restauracion",
   googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Can%20Company%20Sineu%20Mallorca",
   appleMapsUrl: "https://maps.apple.com/?q=Can%20Company%20Sineu%20Mallorca&ll=39.6582,3.0112",
   bingMapsUrl: "https://www.bing.com/maps?where1=Can%20Company%20Sineu%20Mallorca",

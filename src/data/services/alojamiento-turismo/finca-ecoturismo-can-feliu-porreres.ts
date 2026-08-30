@@ -32,7 +32,7 @@ export const fincaEcoturismoCanFeliuPorreres: ServiceItem = {
   features: ["wifi", "parking", "pool", "restaurant"],
   paymentMethods: ["credit_card", "bank_transfer", "cash"],
   phone: "+34 971 16 82 85",
-  website: "https://canfeliu.es/",
+  website: "https://canfeliu.es/agroturismo/",
   image: "/images/services/finca-ecoturismo-can-feliu-porreres.webp",
   shortDescription: {
     es: "Agroturismo ecológico con bodega biodinámica certificada Demeter en Porreres.",

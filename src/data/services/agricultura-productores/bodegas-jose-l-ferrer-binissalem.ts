@@ -32,7 +32,7 @@ export const bodegasJoseLFerrerBinissalem: ServiceItem = {
   features: ["wifi", "parking", "credit_card"],
   paymentMethods: ["credit_card", "bank_transfer", "cash"],
   phone: "+34 971 51 10 50",
-  website: "https://vinosferrer.com/",
+  website: "https://www.vinosferrer.com/enoturismo/",
   image: "/images/services/bodegas-jose-l-ferrer-binissalem.webp",
   shortDescription: {
     es: "Pioneros de la DO Binissalem desde 1931 elaborando vinos con uvas autóctonas Manto Negro y Moll.",

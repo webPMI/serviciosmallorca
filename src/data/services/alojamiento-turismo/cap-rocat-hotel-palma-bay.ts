@@ -32,7 +32,7 @@ export const capRocatHotelPalmaBay: ServiceItem = {
   features: ["wifi", "parking", "pool", "spa", "restaurant"],
   paymentMethods: ["credit_card", "bank_transfer", "cash"],
   phone: "+34 971 74 78 78",
-  website: "https://caprocat.com/",
+  website: "https://caprocat.com/hotel/",
   image: "/images/services/cap-rocat-hotel-palma-bay.webp",
   shortDescription: {
     es: "Antigua fortaleza militar del s.XIX rehabilitada magistralmente en la bahía de Palma.",

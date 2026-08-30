@@ -8,7 +8,6 @@ import { bodegaBarahonaCasaManolo } from "./bodega-barahona-casa-manolo.ts";
 import { bodegaBiniagual } from "./bodega-biniagual.ts";
 import { bodegaCanVidalet } from "./bodega-can-vidalet-pollensa.ts";
 import { bodegaCastellMiquel } from "./bodega-castell-miquel.ts";
-import { bodegaRibas } from "./bodega-ribas.ts";
 import { bodegaSonPrim } from "./bodega-son-prim-sencelles.ts";
 import { bodegas7103PetitCellerSantaMaria } from "./bodegas-7103-petit-celler-santa-maria.ts";
 import { bodegasAngelSantaMaria } from "./bodegas-angel-santa-maria.ts";
@@ -214,7 +213,6 @@ export {
   bodegaBiniagual,
   bodegaCanVidalet,
   bodegaCastellMiquel,
-  bodegaRibas,
   bodegaSonPrim,
   bodegas7103PetitCellerSantaMaria,
   bodegasAngelSantaMaria,
@@ -421,7 +419,6 @@ export const GASTRONOMIA_SERVICES: ServiceItem[] = [
   bodegaBiniagual,
   bodegaCanVidalet,
   bodegaCastellMiquel,
-  bodegaRibas,
   bodegaSonPrim,
   bodegas7103PetitCellerSantaMaria,
   bodegasAngelSantaMaria,

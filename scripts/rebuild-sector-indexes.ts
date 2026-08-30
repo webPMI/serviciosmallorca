@@ -12,6 +12,17 @@ const SECTORS: { dir: string; arrayName: string; alias: string }[] = [
   { dir: "motor-transporte", arrayName: "TRANSPORTE_SERVICES", alias: "TRANSPORTE_SERVICES" },
   { dir: "jardineria-piscinas", arrayName: "JARDINERIA_SERVICES", alias: "JARDINERIA_SERVICES" },
   { dir: "tecnologia-seguridad", arrayName: "SEGURIDAD_SERVICES", alias: "SEGURIDAD_SERVICES" },
+  { dir: "alojamiento-turismo", arrayName: "ALOJAMIENTO_SERVICES", alias: "ALOJAMIENTO_SERVICES" },
+  { dir: "retail-comercio", arrayName: "RETAIL_SERVICES", alias: "RETAIL_SERVICES" },
+  { dir: "educacion-formacion", arrayName: "EDUCACION_SERVICES", alias: "EDUCACION_SERVICES" },
+  { dir: "entretenimiento-ocio", arrayName: "ENTRETENIMIENTO_SERVICES", alias: "ENTRETENIMIENTO_SERVICES" },
+  { dir: "deportes-fitness", arrayName: "DEPORTES_SERVICES", alias: "DEPORTES_SERVICES" },
+  { dir: "hogar-limpieza", arrayName: "HOGAR_SERVICES", alias: "HOGAR_SERVICES" },
+  { dir: "mascotas-veterinaria", arrayName: "MASCOTAS_SERVICES", alias: "MASCOTAS_SERVICES" },
+  { dir: "agricultura-productores", arrayName: "AGRICULTURA_SERVICES", alias: "AGRICULTURA_SERVICES" },
+  { dir: "artesania-manufactura", arrayName: "ARTESANIA_SERVICES", alias: "ARTESANIA_SERVICES" },
+  { dir: "servicios-sociales", arrayName: "SOCIALES_SERVICES", alias: "SOCIALES_SERVICES" },
+  { dir: "finanzas-seguros", arrayName: "FINANZAS_SERVICES", alias: "FINANZAS_SERVICES" },
 ];
 
 async function main() {

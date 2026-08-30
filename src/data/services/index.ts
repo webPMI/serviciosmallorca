@@ -16,7 +16,17 @@ import { INMOBILIARIA_SERVICES } from "./inmobiliaria-villas/index.ts";
 import { TRANSPORTE_SERVICES } from "./motor-transporte/index.ts";
 import { JARDINERIA_SERVICES } from "./jardineria-piscinas/index.ts";
 import { SEGURIDAD_SERVICES } from "./tecnologia-seguridad/index.ts";
+import { ALOJAMIENTO_SERVICES } from "./alojamiento-turismo/index.ts";
+import { RETAIL_SERVICES } from "./retail-comercio/index.ts";
+import { EDUCACION_SERVICES } from "./educacion-formacion/index.ts";
+import { ENTRETENIMIENTO_SERVICES } from "./entretenimiento-ocio/index.ts";
 import { DEPORTES_SERVICES } from "./deportes-fitness/index.ts";
+import { HOGAR_SERVICES } from "./hogar-limpieza/index.ts";
+import { MASCOTAS_SERVICES } from "./mascotas-veterinaria/index.ts";
+import { AGRICULTURA_SERVICES } from "./agricultura-productores/index.ts";
+import { ARTESANIA_SERVICES } from "./artesania-manufactura/index.ts";
+import { SOCIALES_SERVICES } from "./servicios-sociales/index.ts";
+import { FINANZAS_SERVICES } from "./finanzas-seguros/index.ts";
 
 export * from "./types.ts";
 export { TATTOO_SERVICES } from "./arte-tatuajes/index.ts";
@@ -29,7 +39,17 @@ export { INMOBILIARIA_SERVICES } from "./inmobiliaria-villas/index.ts";
 export { TRANSPORTE_SERVICES } from "./motor-transporte/index.ts";
 export { JARDINERIA_SERVICES } from "./jardineria-piscinas/index.ts";
 export { SEGURIDAD_SERVICES } from "./tecnologia-seguridad/index.ts";
+export { ALOJAMIENTO_SERVICES } from "./alojamiento-turismo/index.ts";
+export { RETAIL_SERVICES } from "./retail-comercio/index.ts";
+export { EDUCACION_SERVICES } from "./educacion-formacion/index.ts";
+export { ENTRETENIMIENTO_SERVICES } from "./entretenimiento-ocio/index.ts";
 export { DEPORTES_SERVICES } from "./deportes-fitness/index.ts";
+export { HOGAR_SERVICES } from "./hogar-limpieza/index.ts";
+export { MASCOTAS_SERVICES } from "./mascotas-veterinaria/index.ts";
+export { AGRICULTURA_SERVICES } from "./agricultura-productores/index.ts";
+export { ARTESANIA_SERVICES } from "./artesania-manufactura/index.ts";
+export { SOCIALES_SERVICES } from "./servicios-sociales/index.ts";
+export { FINANZAS_SERVICES } from "./finanzas-seguros/index.ts";
 
 /**
  * Catálogo Unificado Global (Agregación de todos los módulos sectoriales).
@@ -46,7 +66,17 @@ export const SERVICES: ServiceItem[] = [
   ...TRANSPORTE_SERVICES,
   ...JARDINERIA_SERVICES,
   ...SEGURIDAD_SERVICES,
+  ...ALOJAMIENTO_SERVICES,
+  ...RETAIL_SERVICES,
+  ...EDUCACION_SERVICES,
+  ...ENTRETENIMIENTO_SERVICES,
   ...DEPORTES_SERVICES,
+  ...HOGAR_SERVICES,
+  ...MASCOTAS_SERVICES,
+  ...AGRICULTURA_SERVICES,
+  ...ARTESANIA_SERVICES,
+  ...SOCIALES_SERVICES,
+  ...FINANZAS_SERVICES,
 ].filter((s): s is ServiceItem => Boolean(s && s.id && s.slug));
 
 /**

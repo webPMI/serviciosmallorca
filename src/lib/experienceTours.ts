@@ -242,16 +242,16 @@ export function getHydratedTourBySlug(slug: string): ExperienceTour | undefined 
 
   let serviceSlugs: string[] = [];
   if (baseTour.id === "tour-tramuntana-vidrio-arte") {
-    serviceSlugs = ["lafiore-vidrio-artesanal", "belmond-la-residencia-spa", "talise-spa-jumeirah-port-soller"];
+    serviceSlugs = ["lafiore-vidrio-artesanal", "belmond-la-residencia-spa-deia", "talise-spa-jumeirah-port-soller"];
   } else if (baseTour.id === "tour-calvia-nautica-lifestyle") {
     serviceSlugs = [
       "puerto-portals-marina",
       "easy-boats-mallorca-puerto-portals",
       "port-adriano-boat-charter",
-      "arabella-spa-mallorca",
+      "arabella-spa-st-regis-mardavall-calvia",
     ];
   } else if (baseTour.id === "tour-raiguer-vinos-artesania") {
-    serviceSlugs = ["lafiore-vidrio-artesanal", "celler-can-amer", "ca-na-toneta"];
+    serviceSlugs = ["ceramica-terra-cuita-portol", "bodega-ribas-consell-vinos", "cereria-artesana-inca"];
   } else if (baseTour.id === "tour-palma-cultura-gastronomia") {
     serviceSlugs = ["fundacio-miro-mallorca", "es-baluard-museu", "dins-santi-taura", "vandal-palma"];
   }

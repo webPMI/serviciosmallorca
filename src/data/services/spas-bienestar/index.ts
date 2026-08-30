@@ -1,112 +1,79 @@
 import type { ServiceItem } from "../types.ts";
-import { arabellaSpa } from "./arabella-spa.ts";
-import { belmondLaResidenciaSpa } from "./belmond-la-residencia-spa.ts";
-import { bodynaSpaMaricel } from "./bodyna-spa-maricel.ts";
-import { canAlomarUrbanSpaPalma } from "./can-alomar-urban-spa-palma.ts";
-import { capRocatSpa } from "./cap-rocat-spa.ts";
-import { veterinarioLlucmajor } from "./centro-veterinario-llucmajor.ts";
-import { clinicaJuanedaPalma } from "./clinica-juaneda-palma.ts";
-import { clinicaRotgerPalma } from "./clinica-rotger-palma.ts";
-import { veterinariaAndratx } from "./clinica-veterinaria-andratx.ts";
-import { veterinariaCapdepera } from "./clinica-veterinaria-capdepera.ts";
-import { veterinariaFelanitx } from "./clinica-veterinaria-felanitx.ts";
-import { clinicaVeterinariaManacor } from "./clinica-veterinaria-manacor.ts";
-import { veterinariaMontuiri } from "./clinica-veterinaria-montuiri.ts";
-import { veterinariaPollensa } from "./clinica-veterinaria-pollensa.ts";
-import { veterinariaPorreres } from "./clinica-veterinaria-porreres.ts";
-import { veterinariaSantaCatalina } from "./clinica-veterinaria-santa-catalina.ts";
-import { veterinariaSantaMaria } from "./clinica-veterinaria-santa-maria.ts";
-import { veterinariaSantanyi } from "./clinica-veterinaria-santanyi.ts";
-import { veterinariaSineu } from "./clinica-veterinaria-sineu.ts";
-import { clinicaVeterinariaSonDureta } from "./clinica-veterinaria-son-dureta.ts";
-import { earthYogaPalma } from "./earth-yoga-palma.ts";
-import { fisioterapiaOsteopatiaPalmaCentro } from "./fisioterapia-osteopatia-palma-centro.ts";
-import { hammamPalmaSpa } from "./hammam-palma-spa.ts";
-import { herboristeriaLaRemei } from "./herboristeria-la-remei-palma.ts";
-import { hospitalDeManacor } from "./hospital-de-manacor.ts";
-import { hospitalQuironsaludPalmaplanas } from "./hospital-quironsalud-palmaplanas.ts";
-import { hospitalSonEspasesPalma } from "./hospital-son-espases-palma.ts";
-import { laBarberiaDeLaLonja } from "./la-barberia-de-la-lonja.ts";
-import { palmaSportTennisClub } from "./palma-sport-tennis-club.ts";
-import { peluqueriaCaninaGuau } from "./peluqueria-canina-guau-palma.ts";
-import { rafaNadalSportsCentre } from "./rafa-nadal-sports-centre.ts";
-import { sonBrullSpa } from "./son-brull-spa.ts";
-import { sonNetSpaWellnessPuigpunyent } from "./son-net-spa-wellness-puigpunyent.ts";
-import { taliseSpaJumeirah } from "./talise-spa-jumeirah.ts";
-import { zunrayYoga } from "./zunray-yoga-palma.ts";
+import { arabella_spa_st_regis_mardavall_calvia } from "./arabella-spa-st-regis-mardavall-calvia.ts";
+import { belmond_la_residencia_spa_deia } from "./belmond-la-residencia-spa-deia.ts";
+import { bodyna_spa_hospes_maricel_calvia } from "./bodyna-spa-hospes-maricel-calvia.ts";
+import { can_alomar_urban_spa_palma } from "./can-alomar-urban-spa-palma.ts";
+import { centro_medico_quironsalud_porto_pi } from "./centro-medico-quironsalud-porto-pi.ts";
+import { clinica_aureo_medicina_estetica_palma } from "./clinica-aureo-medicina-estetica-palma.ts";
+import { clinica_baviera_oftalmologia_palma } from "./clinica-baviera-oftalmologia-palma.ts";
+import { clinica_dental_moralejo_ruiz_palma } from "./clinica-dental-moralejo-ruiz-palma.ts";
+import { clinica_dental_palma_son_vida } from "./clinica-dental-palma-son-vida.ts";
+import { clinica_dental_portals_nous_calvia } from "./clinica-dental-portals-nous-calvia.ts";
+import { clinica_dr_morano_medicina_estetica_palma } from "./clinica-dr-morano-medicina-estetica-palma.ts";
+import { clinica_juaneda_miramar_palma } from "./clinica-juaneda-miramar-palma.ts";
+import { clinica_rotger_quironsalud_palma } from "./clinica-rotger-quironsalud-palma.ts";
+import { clinica_salva_fisioterapia_osteopatia_palma } from "./clinica-salva-fisioterapia-osteopatia-palma.ts";
+import { hammam_al_andalus_palma_centro } from "./hammam-al-andalus-palma-centro.ts";
+import { hospital_quironsalud_palmaplanas } from "./hospital-quironsalud-palmaplanas.ts";
+import { institut_balear_oftalmologia_ibo_palma } from "./institut-balear-oftalmologia-ibo-palma.ts";
+import { institut_dermatologic_balears_palma } from "./institut-dermatologic-balears-palma.ts";
+import { juaneda_international_medical_santa_ponsa } from "./juaneda-international-medical-santa-ponsa.ts";
+import { palma_clinic_international_center } from "./palma-clinic-international-center.ts";
+import { policlinica_quironsalud_manacor } from "./policlinica-quironsalud-manacor.ts";
+import { son_brull_spa_wellness_pollensa } from "./son-brull-spa-wellness-pollensa.ts";
+import { son_net_spa_wellness_puigpunyent } from "./son-net-spa-wellness-puigpunyent.ts";
+import { talise_spa_jumeirah_port_soller } from "./talise-spa-jumeirah-port-soller.ts";
 
 export {
-  arabellaSpa,
-  belmondLaResidenciaSpa,
-  bodynaSpaMaricel,
-  canAlomarUrbanSpaPalma,
-  capRocatSpa,
-  veterinarioLlucmajor,
-  clinicaJuanedaPalma,
-  clinicaRotgerPalma,
-  veterinariaAndratx,
-  veterinariaCapdepera,
-  veterinariaFelanitx,
-  clinicaVeterinariaManacor,
-  veterinariaMontuiri,
-  veterinariaPollensa,
-  veterinariaPorreres,
-  veterinariaSantaCatalina,
-  veterinariaSantaMaria,
-  veterinariaSantanyi,
-  veterinariaSineu,
-  clinicaVeterinariaSonDureta,
-  earthYogaPalma,
-  fisioterapiaOsteopatiaPalmaCentro,
-  hammamPalmaSpa,
-  herboristeriaLaRemei,
-  hospitalDeManacor,
-  hospitalQuironsaludPalmaplanas,
-  hospitalSonEspasesPalma,
-  laBarberiaDeLaLonja,
-  palmaSportTennisClub,
-  peluqueriaCaninaGuau,
-  rafaNadalSportsCentre,
-  sonBrullSpa,
-  sonNetSpaWellnessPuigpunyent,
-  taliseSpaJumeirah,
-  zunrayYoga,
+  arabella_spa_st_regis_mardavall_calvia,
+  belmond_la_residencia_spa_deia,
+  bodyna_spa_hospes_maricel_calvia,
+  can_alomar_urban_spa_palma,
+  centro_medico_quironsalud_porto_pi,
+  clinica_aureo_medicina_estetica_palma,
+  clinica_baviera_oftalmologia_palma,
+  clinica_dental_moralejo_ruiz_palma,
+  clinica_dental_palma_son_vida,
+  clinica_dental_portals_nous_calvia,
+  clinica_dr_morano_medicina_estetica_palma,
+  clinica_juaneda_miramar_palma,
+  clinica_rotger_quironsalud_palma,
+  clinica_salva_fisioterapia_osteopatia_palma,
+  hammam_al_andalus_palma_centro,
+  hospital_quironsalud_palmaplanas,
+  institut_balear_oftalmologia_ibo_palma,
+  institut_dermatologic_balears_palma,
+  juaneda_international_medical_santa_ponsa,
+  palma_clinic_international_center,
+  policlinica_quironsalud_manacor,
+  son_brull_spa_wellness_pollensa,
+  son_net_spa_wellness_puigpunyent,
+  talise_spa_jumeirah_port_soller,
 };
 
 export const SPAS_SERVICES: ServiceItem[] = [
-  arabellaSpa,
-  belmondLaResidenciaSpa,
-  bodynaSpaMaricel,
-  canAlomarUrbanSpaPalma,
-  capRocatSpa,
-  veterinarioLlucmajor,
-  clinicaJuanedaPalma,
-  clinicaRotgerPalma,
-  veterinariaAndratx,
-  veterinariaCapdepera,
-  veterinariaFelanitx,
-  clinicaVeterinariaManacor,
-  veterinariaMontuiri,
-  veterinariaPollensa,
-  veterinariaPorreres,
-  veterinariaSantaCatalina,
-  veterinariaSantaMaria,
-  veterinariaSantanyi,
-  veterinariaSineu,
-  clinicaVeterinariaSonDureta,
-  earthYogaPalma,
-  fisioterapiaOsteopatiaPalmaCentro,
-  hammamPalmaSpa,
-  herboristeriaLaRemei,
-  hospitalDeManacor,
-  hospitalQuironsaludPalmaplanas,
-  hospitalSonEspasesPalma,
-  laBarberiaDeLaLonja,
-  palmaSportTennisClub,
-  peluqueriaCaninaGuau,
-  rafaNadalSportsCentre,
-  sonBrullSpa,
-  sonNetSpaWellnessPuigpunyent,
-  taliseSpaJumeirah,
-  zunrayYoga,
+  arabella_spa_st_regis_mardavall_calvia,
+  belmond_la_residencia_spa_deia,
+  bodyna_spa_hospes_maricel_calvia,
+  can_alomar_urban_spa_palma,
+  centro_medico_quironsalud_porto_pi,
+  clinica_aureo_medicina_estetica_palma,
+  clinica_baviera_oftalmologia_palma,
+  clinica_dental_moralejo_ruiz_palma,
+  clinica_dental_palma_son_vida,
+  clinica_dental_portals_nous_calvia,
+  clinica_dr_morano_medicina_estetica_palma,
+  clinica_juaneda_miramar_palma,
+  clinica_rotger_quironsalud_palma,
+  clinica_salva_fisioterapia_osteopatia_palma,
+  hammam_al_andalus_palma_centro,
+  hospital_quironsalud_palmaplanas,
+  institut_balear_oftalmologia_ibo_palma,
+  institut_dermatologic_balears_palma,
+  juaneda_international_medical_santa_ponsa,
+  palma_clinic_international_center,
+  policlinica_quironsalud_manacor,
+  son_brull_spa_wellness_pollensa,
+  son_net_spa_wellness_puigpunyent,
+  talise_spa_jumeirah_port_soller,
 ];

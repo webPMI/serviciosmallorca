@@ -95,6 +95,19 @@ export function validateServicesList(services: ServiceItem[]): ValidationResult 
           "synergym.es",
           "brooklynfitboxing.com",
           "ime.palma.cat",
+          "juaneda.es",
+          "marriott.com",
+          "hospes.com",
+          "jumeirah.com",
+          "sonbrull.com",
+          "boutiquehotelcanalomar.com",
+          "caprocat.com",
+          "canfeliu.es",
+          "bodegaribas.com",
+          "vinosferrer.com",
+          "cancompany.es",
+          "flordesaldestrenc.com",
+          "sonnetluxury.com",
         ].includes(domain);
         const targetIdentifier = isSharedPlatform
           ? `${domain}${parsed.pathname.toLowerCase().replace(/\/$/, "")}`

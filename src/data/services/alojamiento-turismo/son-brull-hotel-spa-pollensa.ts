@@ -32,7 +32,7 @@ export const sonBrullHotelSpaPollensa: ServiceItem = {
   features: ["wifi", "parking", "pool", "spa", "restaurant"],
   paymentMethods: ["credit_card", "bank_transfer", "cash"],
   phone: "+34 971 53 53 53",
-  website: "https://sonbrull.com/",
+  website: "https://sonbrull.com/hotel/",
   image: "/images/services/son-brull-hotel-spa-pollensa.webp",
   shortDescription: {
     es: "Antiguo monasterio jesuita del siglo XVIII convertido en un hotel santuario Relais & Châteaux en Pollença.",

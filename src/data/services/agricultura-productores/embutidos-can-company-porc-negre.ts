@@ -32,7 +32,7 @@ export const embutidosCanCompanyPorcNegre: ServiceItem = {
   features: ["parking", "credit_card"],
   paymentMethods: ["credit_card", "bank_transfer", "cash"],
   phone: "+34 971 52 02 11",
-  website: "https://cancompany.es/",
+  website: "https://cancompany.es/tienda/",
   image: "/images/services/embutidos-can-company-porc-negre.webp",
   shortDescription: {
     es: "Productores de cerdo negro mallorquín criado en libertad con bellota e higos. Sobrasadas de autor maduradas en secaderos naturales.",
