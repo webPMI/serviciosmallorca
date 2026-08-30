@@ -7,6 +7,7 @@ import { BODY_VIP_FITNESS_INCA } from "./body-vip-fitness-inca.ts";
 import { BROOKLYN_FITBOXING_PALMA_CENTRO } from "./brooklyn-fitboxing-palma-centro.ts";
 import { BROOKLYN_FITBOXING_SON_HUGO_PALMA } from "./brooklyn-fitboxing-son-hugo-palma.ts";
 import { CAPDEPERA_GOLF_ARTA } from "./capdepera-golf-arta.ts";
+import { centro_buceo_padi_dive_mallorca_port_andratx } from "./centro-buceo-padi-dive-mallorca-port-andratx.ts";
 import { CLUB_DE_GOLF_ALCANADA_ALCUDIA } from "./club-de-golf-alcanada-alcudia.ts";
 import { CLUB_TENIS_ALARO } from "./club-tenis-alaro.ts";
 import { CLUB_TENIS_ANDRATX } from "./club-tenis-andratx.ts";
@@ -43,6 +44,7 @@ import { GOLF_DE_ANDRATX_CAMP_DE_MAR } from "./golf-de-andratx-camp-de-mar.ts";
 import { GOLF_MAIORIS_LLUCMAJOR } from "./golf-maioris-llucmajor.ts";
 import { GOLF_SANTA_PONSA_CALVIA } from "./golf-santa-ponsa-calvia.ts";
 import { GOLF_SON_GUAL_PALMA } from "./golf-son-gual-palma.ts";
+import { golf_son_muntaner_palma_arabella_hotel } from "./golf-son-muntaner-palma-arabella-hotel.ts";
 import { GOLF_SON_MUNTANER_PALMA } from "./golf-son-muntaner-palma.ts";
 import { GOLF_SON_QUINT_PALMA } from "./golf-son-quint-palma.ts";
 import { GOLF_SON_VIDA_PALMA } from "./golf-son-vida-palma.ts";
@@ -66,6 +68,7 @@ import { open_marratxi_padel_indoor_club } from "./open-marratxi-padel-indoor-cl
 import { PADEL_FACTORY_MALLORCA_MARRATXI } from "./padel-factory-mallorca-marratxi.ts";
 import { PADEL_INDOOR_MANACOR } from "./padel-indoor-manacor.ts";
 import { PADEL_LLUCMAJOR_CLUB } from "./padel-llucmajor-club.ts";
+import { padelindoor_mallorca_club_son_hugo_palma } from "./padelindoor-mallorca-club-son-hugo-palma.ts";
 import { PALACIO_MUNICIPAL_DEPORTES_SON_MOIX } from "./palacio-municipal-deportes-son-moix.ts";
 import { PALMA_BOXING_CLUB_SON_ARMADAMS } from "./palma-boxing-club-son-armadams.ts";
 import { PALMA_RACKET_CLUB_SON_RAPINYA } from "./palma-racket-club-son-rapinya.ts";
@@ -110,6 +113,7 @@ export { BODY_VIP_FITNESS_INCA } from "./body-vip-fitness-inca.ts";
 export { BROOKLYN_FITBOXING_PALMA_CENTRO } from "./brooklyn-fitboxing-palma-centro.ts";
 export { BROOKLYN_FITBOXING_SON_HUGO_PALMA } from "./brooklyn-fitboxing-son-hugo-palma.ts";
 export { CAPDEPERA_GOLF_ARTA } from "./capdepera-golf-arta.ts";
+export { centro_buceo_padi_dive_mallorca_port_andratx } from "./centro-buceo-padi-dive-mallorca-port-andratx.ts";
 export { CLUB_DE_GOLF_ALCANADA_ALCUDIA } from "./club-de-golf-alcanada-alcudia.ts";
 export { CLUB_TENIS_ALARO } from "./club-tenis-alaro.ts";
 export { CLUB_TENIS_ANDRATX } from "./club-tenis-andratx.ts";
@@ -146,6 +150,7 @@ export { GOLF_DE_ANDRATX_CAMP_DE_MAR } from "./golf-de-andratx-camp-de-mar.ts";
 export { GOLF_MAIORIS_LLUCMAJOR } from "./golf-maioris-llucmajor.ts";
 export { GOLF_SANTA_PONSA_CALVIA } from "./golf-santa-ponsa-calvia.ts";
 export { GOLF_SON_GUAL_PALMA } from "./golf-son-gual-palma.ts";
+export { golf_son_muntaner_palma_arabella_hotel } from "./golf-son-muntaner-palma-arabella-hotel.ts";
 export { GOLF_SON_MUNTANER_PALMA } from "./golf-son-muntaner-palma.ts";
 export { GOLF_SON_QUINT_PALMA } from "./golf-son-quint-palma.ts";
 export { GOLF_SON_VIDA_PALMA } from "./golf-son-vida-palma.ts";
@@ -169,6 +174,7 @@ export { open_marratxi_padel_indoor_club } from "./open-marratxi-padel-indoor-cl
 export { PADEL_FACTORY_MALLORCA_MARRATXI } from "./padel-factory-mallorca-marratxi.ts";
 export { PADEL_INDOOR_MANACOR } from "./padel-indoor-manacor.ts";
 export { PADEL_LLUCMAJOR_CLUB } from "./padel-llucmajor-club.ts";
+export { padelindoor_mallorca_club_son_hugo_palma } from "./padelindoor-mallorca-club-son-hugo-palma.ts";
 export { PALACIO_MUNICIPAL_DEPORTES_SON_MOIX } from "./palacio-municipal-deportes-son-moix.ts";
 export { PALMA_BOXING_CLUB_SON_ARMADAMS } from "./palma-boxing-club-son-armadams.ts";
 export { PALMA_RACKET_CLUB_SON_RAPINYA } from "./palma-racket-club-son-rapinya.ts";
@@ -214,6 +220,7 @@ export const DEPORTES_SERVICES: ServiceItem[] = [
   BROOKLYN_FITBOXING_PALMA_CENTRO,
   BROOKLYN_FITBOXING_SON_HUGO_PALMA,
   CAPDEPERA_GOLF_ARTA,
+  centro_buceo_padi_dive_mallorca_port_andratx,
   CLUB_DE_GOLF_ALCANADA_ALCUDIA,
   CLUB_TENIS_ALARO,
   CLUB_TENIS_ANDRATX,
@@ -250,6 +257,7 @@ export const DEPORTES_SERVICES: ServiceItem[] = [
   GOLF_MAIORIS_LLUCMAJOR,
   GOLF_SANTA_PONSA_CALVIA,
   GOLF_SON_GUAL_PALMA,
+  golf_son_muntaner_palma_arabella_hotel,
   GOLF_SON_MUNTANER_PALMA,
   GOLF_SON_QUINT_PALMA,
   GOLF_SON_VIDA_PALMA,
@@ -273,6 +281,7 @@ export const DEPORTES_SERVICES: ServiceItem[] = [
   PADEL_FACTORY_MALLORCA_MARRATXI,
   PADEL_INDOOR_MANACOR,
   PADEL_LLUCMAJOR_CLUB,
+  padelindoor_mallorca_club_son_hugo_palma,
   PALACIO_MUNICIPAL_DEPORTES_SON_MOIX,
   PALMA_BOXING_CLUB_SON_ARMADAMS,
   PALMA_RACKET_CLUB_SON_RAPINYA,

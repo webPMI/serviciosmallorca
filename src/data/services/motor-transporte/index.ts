@@ -1,4 +1,5 @@
 import type { ServiceItem } from "../types.ts";
+import { alquiler_coches_lujo_mallorca_elite_car_rental_palma } from "./alquiler-coches-lujo-mallorca-elite-car-rental-palma.ts";
 import { autocaresTransunion } from "./autocares-transunion.ts";
 import { bergantinosBikes } from "./bergantinos-bikes.ts";
 import { boschCarServicePalmaCentro } from "./bosch-car-service-palma-centro.ts";
@@ -15,6 +16,7 @@ import { talleresAutoInca } from "./talleres-auto-inca.ts";
 import { vespamallorcaScooterRentalPalma } from "./vespamallorca-scooter-rental-palma.ts";
 import { vintage_motors_mallorca_scooter_vespa_palma } from "./vintage-motors-mallorca-scooter-vespa-palma.ts";
 
+export { alquiler_coches_lujo_mallorca_elite_car_rental_palma } from "./alquiler-coches-lujo-mallorca-elite-car-rental-palma.ts";
 export { autocaresTransunion } from "./autocares-transunion.ts";
 export { bergantinosBikes } from "./bergantinos-bikes.ts";
 export { boschCarServicePalmaCentro } from "./bosch-car-service-palma-centro.ts";
@@ -31,7 +33,8 @@ export { talleresAutoInca } from "./talleres-auto-inca.ts";
 export { vespamallorcaScooterRentalPalma } from "./vespamallorca-scooter-rental-palma.ts";
 export { vintage_motors_mallorca_scooter_vespa_palma } from "./vintage-motors-mallorca-scooter-vespa-palma.ts";
 
-export const TRANSPORTE_SERVICES: ServiceItem[] = [
+export const MOTOR_SERVICES: ServiceItem[] = [
+  alquiler_coches_lujo_mallorca_elite_car_rental_palma,
   autocaresTransunion,
   bergantinosBikes,
   boschCarServicePalmaCentro,

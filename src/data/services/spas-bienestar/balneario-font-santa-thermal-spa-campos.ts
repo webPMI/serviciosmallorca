@@ -3,7 +3,7 @@ import type { ServiceItem } from "../types.ts";
 export const balneario_font_santa_thermal_spa_campos: ServiceItem = {
   id: "balneario-font-santa-thermal-spa-campos",
   slug: "balneario-font-santa-thermal-spa-campos",
-  name: "Fontsanta Hotel Thermal Spa & Wellness Campos",
+  name: "Balneario & Hotel Thermal Spa Fontsanta Campos",
   category: "salud-bienestar",
   sectorId: "spas-bienestar",
   subcategories: ["aguas-termales-naturales", "spa-lujo-wellness", "hidroterapia-medica"],

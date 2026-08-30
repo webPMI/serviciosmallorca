@@ -5,6 +5,7 @@ import { ceramica_marratxi_oleries_portol_fang } from "./ceramica-marratxi-oleri
 import { ceramicaTerraCuitaPortol } from "./ceramica-terra-cuita-portol.ts";
 import { cesteria_artesana_arta_ses_madones_de_sa_llata } from "./cesteria-artesana-arta-ses-madones-de-sa-llata.ts";
 import { lafioreVidrioArtesanal } from "./lafiore-vidrio-artesanal.ts";
+import { menestralia_vidre_bufat_artesanal_campanet } from "./menestralia-vidre-bufat-artesanal-campanet.ts";
 import { mongeHandmadeShoesPalma } from "./monge-handmade-shoes-palma.ts";
 import { pedraDeSantanyiCanteresArtesanes } from "./pedra-de-santanyi-canteres-artesanes.ts";
 import { teixitsVicensArtesaniaPollensa } from "./teixits-vicens-artesania-pollensa.ts";
@@ -16,6 +17,7 @@ export { ceramica_marratxi_oleries_portol_fang } from "./ceramica-marratxi-oleri
 export { ceramicaTerraCuitaPortol } from "./ceramica-terra-cuita-portol.ts";
 export { cesteria_artesana_arta_ses_madones_de_sa_llata } from "./cesteria-artesana-arta-ses-madones-de-sa-llata.ts";
 export { lafioreVidrioArtesanal } from "./lafiore-vidrio-artesanal.ts";
+export { menestralia_vidre_bufat_artesanal_campanet } from "./menestralia-vidre-bufat-artesanal-campanet.ts";
 export { mongeHandmadeShoesPalma } from "./monge-handmade-shoes-palma.ts";
 export { pedraDeSantanyiCanteresArtesanes } from "./pedra-de-santanyi-canteres-artesanes.ts";
 export { teixitsVicensArtesaniaPollensa } from "./teixits-vicens-artesania-pollensa.ts";
@@ -28,6 +30,7 @@ export const ARTESANIA_SERVICES: ServiceItem[] = [
   ceramicaTerraCuitaPortol,
   cesteria_artesana_arta_ses_madones_de_sa_llata,
   lafioreVidrioArtesanal,
+  menestralia_vidre_bufat_artesanal_campanet,
   mongeHandmadeShoesPalma,
   pedraDeSantanyiCanteresArtesanes,
   teixitsVicensArtesaniaPollensa,

@@ -8,6 +8,7 @@ import { fincaCanPaulinoDogResortLlucmajor } from "./finca-can-paulino-dog-resor
 import { hospitalVeterinarioAragoPalma } from "./hospital-veterinario-arago-palma.ts";
 import { hospitalVeterinarioCanisMallorca } from "./hospital-veterinario-canis-mallorca.ts";
 import { mallorcaDogTrainerBehaviour } from "./mallorca-dog-trainer-behaviour.ts";
+import { peluqueria_canina_mallorca_the_dog_spa_palma } from "./peluqueria-canina-mallorca-the-dog-spa-palma.ts";
 import { petSpaGroomingSantaCatalina } from "./pet-spa-grooming-santa-catalina.ts";
 import { residencia_canina_son_fangos_campos } from "./residencia-canina-son-fangos-campos.ts";
 
@@ -20,6 +21,7 @@ export { fincaCanPaulinoDogResortLlucmajor } from "./finca-can-paulino-dog-resor
 export { hospitalVeterinarioAragoPalma } from "./hospital-veterinario-arago-palma.ts";
 export { hospitalVeterinarioCanisMallorca } from "./hospital-veterinario-canis-mallorca.ts";
 export { mallorcaDogTrainerBehaviour } from "./mallorca-dog-trainer-behaviour.ts";
+export { peluqueria_canina_mallorca_the_dog_spa_palma } from "./peluqueria-canina-mallorca-the-dog-spa-palma.ts";
 export { petSpaGroomingSantaCatalina } from "./pet-spa-grooming-santa-catalina.ts";
 export { residencia_canina_son_fangos_campos } from "./residencia-canina-son-fangos-campos.ts";
 
@@ -33,6 +35,7 @@ export const MASCOTAS_SERVICES: ServiceItem[] = [
   hospitalVeterinarioAragoPalma,
   hospitalVeterinarioCanisMallorca,
   mallorcaDogTrainerBehaviour,
+  peluqueria_canina_mallorca_the_dog_spa_palma,
   petSpaGroomingSantaCatalina,
   residencia_canina_son_fangos_campos,
 ];

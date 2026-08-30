@@ -3,6 +3,7 @@ import { bioPestControlMallorcaPalmeras } from "./bio-pest-control-mallorca-palm
 import { cleanCareLuxuryVillasSantaPonsa } from "./clean-care-luxury-villas-santa-ponsa.ts";
 import { control_plagas_desinfeccion_mallorca_llucmajor } from "./control-plagas-desinfeccion-mallorca-llucmajor.ts";
 import { cristalLimpMallorcaAlturas } from "./cristal-limp-mallorca-alturas.ts";
+import { limpieza_villas_fincas_mallorca_clean_palma } from "./limpieza-villas-fincas-mallorca-clean-palma.ts";
 import { limpiezasMallorcaBrillPalma } from "./limpiezas-mallorca-brill-palma.ts";
 import { limpiezas_villas_mallorca_lux_calvia } from "./limpiezas-villas-mallorca-lux-calvia.ts";
 import { mallorcaCleanAndCareVillas } from "./mallorca-clean-and-care-villas.ts";
@@ -14,6 +15,7 @@ export { bioPestControlMallorcaPalmeras } from "./bio-pest-control-mallorca-palm
 export { cleanCareLuxuryVillasSantaPonsa } from "./clean-care-luxury-villas-santa-ponsa.ts";
 export { control_plagas_desinfeccion_mallorca_llucmajor } from "./control-plagas-desinfeccion-mallorca-llucmajor.ts";
 export { cristalLimpMallorcaAlturas } from "./cristal-limp-mallorca-alturas.ts";
+export { limpieza_villas_fincas_mallorca_clean_palma } from "./limpieza-villas-fincas-mallorca-clean-palma.ts";
 export { limpiezasMallorcaBrillPalma } from "./limpiezas-mallorca-brill-palma.ts";
 export { limpiezas_villas_mallorca_lux_calvia } from "./limpiezas-villas-mallorca-lux-calvia.ts";
 export { mallorcaCleanAndCareVillas } from "./mallorca-clean-and-care-villas.ts";
@@ -26,6 +28,7 @@ export const HOGAR_SERVICES: ServiceItem[] = [
   cleanCareLuxuryVillasSantaPonsa,
   control_plagas_desinfeccion_mallorca_llucmajor,
   cristalLimpMallorcaAlturas,
+  limpieza_villas_fincas_mallorca_clean_palma,
   limpiezasMallorcaBrillPalma,
   limpiezas_villas_mallorca_lux_calvia,
   mallorcaCleanAndCareVillas,

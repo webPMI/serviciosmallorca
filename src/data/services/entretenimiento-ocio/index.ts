@@ -1,5 +1,6 @@
 import type { ServiceItem } from "../types.ts";
 import { granFoliesBeachClubAndratx } from "./gran-folies-beach-club-andratx.ts";
+import { guia_senderismo_tramuntana_mallorca_expert } from "./guia-senderismo-tramuntana-mallorca-expert.ts";
 import { katmanduParkMagalufCalvia } from "./katmandu-park-magaluf-calvia.ts";
 import { mallorcaWeddingPlannersFincas } from "./mallorca-wedding-planners-fincas.ts";
 import { marinelandMallorcaCostaDEnBlanes } from "./marineland-mallorca-costa-d-en-blanes.ts";
@@ -7,8 +8,10 @@ import { niviaBornRooftopLoungePalma } from "./nivia-born-rooftop-lounge-palma.t
 import { palmaAquariumPlayaDePalma } from "./palma-aquarium-playa-de-palma.ts";
 import { purobeach_palma_oasis_del_mar } from "./purobeach-palma-oasis-del-mar.ts";
 import { soundLightingMallorcaDjs } from "./sound-lighting-mallorca-djs.ts";
+import { wedding_planner_lujo_mallorca_bella_rosa_events } from "./wedding-planner-lujo-mallorca-bella-rosa-events.ts";
 
 export { granFoliesBeachClubAndratx } from "./gran-folies-beach-club-andratx.ts";
+export { guia_senderismo_tramuntana_mallorca_expert } from "./guia-senderismo-tramuntana-mallorca-expert.ts";
 export { katmanduParkMagalufCalvia } from "./katmandu-park-magaluf-calvia.ts";
 export { mallorcaWeddingPlannersFincas } from "./mallorca-wedding-planners-fincas.ts";
 export { marinelandMallorcaCostaDEnBlanes } from "./marineland-mallorca-costa-d-en-blanes.ts";
@@ -16,9 +19,11 @@ export { niviaBornRooftopLoungePalma } from "./nivia-born-rooftop-lounge-palma.t
 export { palmaAquariumPlayaDePalma } from "./palma-aquarium-playa-de-palma.ts";
 export { purobeach_palma_oasis_del_mar } from "./purobeach-palma-oasis-del-mar.ts";
 export { soundLightingMallorcaDjs } from "./sound-lighting-mallorca-djs.ts";
+export { wedding_planner_lujo_mallorca_bella_rosa_events } from "./wedding-planner-lujo-mallorca-bella-rosa-events.ts";
 
 export const ENTRETENIMIENTO_SERVICES: ServiceItem[] = [
   granFoliesBeachClubAndratx,
+  guia_senderismo_tramuntana_mallorca_expert,
   katmanduParkMagalufCalvia,
   mallorcaWeddingPlannersFincas,
   marinelandMallorcaCostaDEnBlanes,
@@ -26,4 +31,5 @@ export const ENTRETENIMIENTO_SERVICES: ServiceItem[] = [
   palmaAquariumPlayaDePalma,
   purobeach_palma_oasis_del_mar,
   soundLightingMallorcaDjs,
+  wedding_planner_lujo_mallorca_bella_rosa_events,
 ];

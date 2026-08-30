@@ -1,4 +1,5 @@
 import type { ServiceItem } from "../types.ts";
+import { almazara_ecologica_oli_de_santanyi } from "./almazara-ecologica-oli-de-santanyi.ts";
 import { bodega4KilosVinicolaFelanitx } from "./bodega-4-kilos-vinicola-felanitx.ts";
 import { bodegaRibasConsellVinos } from "./bodega-ribas-consell-vinos.ts";
 import { bodega_son_crespi_santa_maria_vi_de_la_terra } from "./bodega-son-crespi-santa-maria-vi-de-la-terra.ts";
@@ -12,6 +13,7 @@ import { oli_soller_cooperativa_agricola_sant_bartomeu } from "./oli-soller-coop
 import { queseria_artesana_son_jover_formatges_inca } from "./queseria-artesana-son-jover-formatges-inca.ts";
 import { sonMoraguesValldemossaAceite } from "./son-moragues-valldemossa-aceite.ts";
 
+export { almazara_ecologica_oli_de_santanyi } from "./almazara-ecologica-oli-de-santanyi.ts";
 export { bodega4KilosVinicolaFelanitx } from "./bodega-4-kilos-vinicola-felanitx.ts";
 export { bodegaRibasConsellVinos } from "./bodega-ribas-consell-vinos.ts";
 export { bodega_son_crespi_santa_maria_vi_de_la_terra } from "./bodega-son-crespi-santa-maria-vi-de-la-terra.ts";
@@ -26,6 +28,7 @@ export { queseria_artesana_son_jover_formatges_inca } from "./queseria-artesana-
 export { sonMoraguesValldemossaAceite } from "./son-moragues-valldemossa-aceite.ts";
 
 export const AGRICULTURA_SERVICES: ServiceItem[] = [
+  almazara_ecologica_oli_de_santanyi,
   bodega4KilosVinicolaFelanitx,
   bodegaRibasConsellVinos,
   bodega_son_crespi_santa_maria_vi_de_la_terra,

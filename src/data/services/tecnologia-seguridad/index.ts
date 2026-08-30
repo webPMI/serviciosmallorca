@@ -9,6 +9,7 @@ import { fibwiTelecomunicaciones } from "./fibwi-telecomunicaciones.ts";
 import { knxSmartHomeDomoticaMallorca } from "./knx-smart-home-domotica-mallorca.ts";
 import { prosegurSeguridadVillasBaleares } from "./prosegur-seguridad-villas-baleares.ts";
 import { seguridad_alarmas_baleares_mallorca_secure } from "./seguridad-alarmas-baleares-mallorca-secure.ts";
+import { seguridad_alarmas_mallorca_prosegur_inca } from "./seguridad-alarmas-mallorca-prosegur-inca.ts";
 import { smartHomeDomoticaMallorcaKnx } from "./smart-home-domotica-mallorca-knx.ts";
 import { trablisaSeguridad } from "./trablisa.ts";
 
@@ -22,6 +23,7 @@ export { fibwiTelecomunicaciones } from "./fibwi-telecomunicaciones.ts";
 export { knxSmartHomeDomoticaMallorca } from "./knx-smart-home-domotica-mallorca.ts";
 export { prosegurSeguridadVillasBaleares } from "./prosegur-seguridad-villas-baleares.ts";
 export { seguridad_alarmas_baleares_mallorca_secure } from "./seguridad-alarmas-baleares-mallorca-secure.ts";
+export { seguridad_alarmas_mallorca_prosegur_inca } from "./seguridad-alarmas-mallorca-prosegur-inca.ts";
 export { smartHomeDomoticaMallorcaKnx } from "./smart-home-domotica-mallorca-knx.ts";
 export { trablisaSeguridad } from "./trablisa.ts";
 
@@ -36,6 +38,7 @@ export const SEGURIDAD_SERVICES: ServiceItem[] = [
   knxSmartHomeDomoticaMallorca,
   prosegurSeguridadVillasBaleares,
   seguridad_alarmas_baleares_mallorca_secure,
+  seguridad_alarmas_mallorca_prosegur_inca,
   smartHomeDomoticaMallorcaKnx,
   trablisaSeguridad,
 ];

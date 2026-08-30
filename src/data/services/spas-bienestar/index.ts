@@ -25,6 +25,7 @@ import { palma_clinic_international_center } from "./palma-clinic-international-
 import { policlinica_quironsalud_manacor } from "./policlinica-quironsalud-manacor.ts";
 import { son_brull_spa_wellness_pollensa } from "./son-brull-spa-wellness-pollensa.ts";
 import { son_net_spa_wellness_puigpunyent } from "./son-net-spa-wellness-puigpunyent.ts";
+import { spa_son_brull_hotel_wellness_pollensa } from "./spa-son-brull-hotel-wellness-pollensa.ts";
 import { talise_spa_jumeirah_port_soller } from "./talise-spa-jumeirah-port-soller.ts";
 
 export { arabella_spa_st_regis_mardavall_calvia } from "./arabella-spa-st-regis-mardavall-calvia.ts";
@@ -53,6 +54,7 @@ export { palma_clinic_international_center } from "./palma-clinic-international-
 export { policlinica_quironsalud_manacor } from "./policlinica-quironsalud-manacor.ts";
 export { son_brull_spa_wellness_pollensa } from "./son-brull-spa-wellness-pollensa.ts";
 export { son_net_spa_wellness_puigpunyent } from "./son-net-spa-wellness-puigpunyent.ts";
+export { spa_son_brull_hotel_wellness_pollensa } from "./spa-son-brull-hotel-wellness-pollensa.ts";
 export { talise_spa_jumeirah_port_soller } from "./talise-spa-jumeirah-port-soller.ts";
 
 export const SPAS_SERVICES: ServiceItem[] = [
@@ -82,5 +84,6 @@ export const SPAS_SERVICES: ServiceItem[] = [
   policlinica_quironsalud_manacor,
   son_brull_spa_wellness_pollensa,
   son_net_spa_wellness_puigpunyent,
+  spa_son_brull_hotel_wellness_pollensa,
   talise_spa_jumeirah_port_soller,
 ];

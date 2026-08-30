@@ -3,6 +3,7 @@ import { balearicProperties } from "./balearic-properties.ts";
 import { engelVolkersMallorca } from "./engel-volkers-mallorca.ts";
 import { firstMallorca } from "./first-mallorca.ts";
 import { kensingtonFinestPropertiesPalma } from "./kensington-finest-properties-palma.ts";
+import { kensington_international_real_estate_palma_lujo } from "./kensington-international-real-estate-palma-lujo.ts";
 import { kuhnAndPartnerLuxuryPalma } from "./kuhn-and-partner-luxury-palma.ts";
 import { livingBlueMallorcaSantaMaria } from "./living-blue-mallorca-santa-maria.ts";
 import { lucasFoxMallorcaInmobiliaria } from "./lucas-fox-mallorca-inmobiliaria.ts";
@@ -18,6 +19,7 @@ export { balearicProperties } from "./balearic-properties.ts";
 export { engelVolkersMallorca } from "./engel-volkers-mallorca.ts";
 export { firstMallorca } from "./first-mallorca.ts";
 export { kensingtonFinestPropertiesPalma } from "./kensington-finest-properties-palma.ts";
+export { kensington_international_real_estate_palma_lujo } from "./kensington-international-real-estate-palma-lujo.ts";
 export { kuhnAndPartnerLuxuryPalma } from "./kuhn-and-partner-luxury-palma.ts";
 export { livingBlueMallorcaSantaMaria } from "./living-blue-mallorca-santa-maria.ts";
 export { lucasFoxMallorcaInmobiliaria } from "./lucas-fox-mallorca-inmobiliaria.ts";
@@ -34,6 +36,7 @@ export const INMOBILIARIA_SERVICES: ServiceItem[] = [
   engelVolkersMallorca,
   firstMallorca,
   kensingtonFinestPropertiesPalma,
+  kensington_international_real_estate_palma_lujo,
   kuhnAndPartnerLuxuryPalma,
   livingBlueMallorcaSantaMaria,
   lucasFoxMallorcaInmobiliaria,

@@ -6,6 +6,7 @@ import { cuideoCuidadoMayoresMallorca } from "./cuideo-cuidado-mayores-mallorca.
 import { guarderiaBilingueSantaCatalina } from "./guarderia-bilingue-santa-catalina.ts";
 import { mallorcaHomeNursingCare } from "./mallorca-home-nursing-care.ts";
 import { mallorcaNanniesCangurosVip } from "./mallorca-nannies-canguros-vip.ts";
+import { residencia_mayores_can_bibiloni_palma_ancians } from "./residencia-mayores-can-bibiloni-palma-ancians.ts";
 import { residenciaSeniorValldemossaLuxury } from "./residencia-senior-valldemossa-luxury.ts";
 import { seniorsResidenciasMallorcaPalma } from "./seniors-residencias-mallorca-palma.ts";
 
@@ -16,6 +17,7 @@ export { cuideoCuidadoMayoresMallorca } from "./cuideo-cuidado-mayores-mallorca.
 export { guarderiaBilingueSantaCatalina } from "./guarderia-bilingue-santa-catalina.ts";
 export { mallorcaHomeNursingCare } from "./mallorca-home-nursing-care.ts";
 export { mallorcaNanniesCangurosVip } from "./mallorca-nannies-canguros-vip.ts";
+export { residencia_mayores_can_bibiloni_palma_ancians } from "./residencia-mayores-can-bibiloni-palma-ancians.ts";
 export { residenciaSeniorValldemossaLuxury } from "./residencia-senior-valldemossa-luxury.ts";
 export { seniorsResidenciasMallorcaPalma } from "./seniors-residencias-mallorca-palma.ts";
 
@@ -27,6 +29,7 @@ export const SOCIALES_SERVICES: ServiceItem[] = [
   guarderiaBilingueSantaCatalina,
   mallorcaHomeNursingCare,
   mallorcaNanniesCangurosVip,
+  residencia_mayores_can_bibiloni_palma_ancians,
   residenciaSeniorValldemossaLuxury,
   seniorsResidenciasMallorcaPalma,
 ];

@@ -6,6 +6,7 @@ import { charter_nautico_alcudia_baleares } from "./charter-nautico-alcudia-bale
 import { clubDeMarMallorcaService } from "./club-de-mar-mallorca.ts";
 import { clubNauticPortitxol } from "./club-nautic-portitxol.ts";
 import { easyBoatsMallorca } from "./easy-boats-mallorca.ts";
+import { escola_de_vela_balear_escola_nàutica_palma } from "./escola-de-vela-balear-escola-nàutica-palma.ts";
 import { kitesurfMallorcaPollensaBay } from "./kitesurf-mallorca-pollensa-bay.ts";
 import { mallorcaGlobalCharter } from "./mallorca-global-charter.ts";
 import { marinaDeCalaDorService } from "./marina-de-cala-dor.ts";
@@ -39,6 +40,7 @@ export { charter_nautico_alcudia_baleares } from "./charter-nautico-alcudia-bale
 export { clubDeMarMallorcaService } from "./club-de-mar-mallorca.ts";
 export { clubNauticPortitxol } from "./club-nautic-portitxol.ts";
 export { easyBoatsMallorca } from "./easy-boats-mallorca.ts";
+export { escola_de_vela_balear_escola_nàutica_palma } from "./escola-de-vela-balear-escola-nàutica-palma.ts";
 export { kitesurfMallorcaPollensaBay } from "./kitesurf-mallorca-pollensa-bay.ts";
 export { mallorcaGlobalCharter } from "./mallorca-global-charter.ts";
 export { marinaDeCalaDorService } from "./marina-de-cala-dor.ts";
@@ -73,6 +75,7 @@ export const NAUTICA_SERVICES: ServiceItem[] = [
   clubDeMarMallorcaService,
   clubNauticPortitxol,
   easyBoatsMallorca,
+  escola_de_vela_balear_escola_nàutica_palma,
   kitesurfMallorcaPollensaBay,
   mallorcaGlobalCharter,
   marinaDeCalaDorService,

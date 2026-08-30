@@ -3,6 +3,7 @@ import { adrianQuetglas } from "./adrian-quetglas.ts";
 import { barBosch } from "./bar-bosch.ts";
 import { barEspanyaPalma } from "./bar-espanya-palma.ts";
 import { barSHostalMontuiri } from "./bar-s-hostal-montuiri.ts";
+import { beach_club_illetes_mhares_sea_club_calvia } from "./beach-club-illetes-mhares-sea-club-calvia.ts";
 import { bensDavall } from "./bens-davall.ts";
 import { bodegaBarahonaCasaManolo } from "./bodega-barahona-casa-manolo.ts";
 import { bodegaBiniagual } from "./bodega-biniagual.ts";
@@ -75,6 +76,7 @@ import { cellerCanCarrossaLloseta } from "./celler-can-carrossa-lloseta.ts";
 import { cellerCanFontSineu } from "./celler-can-font-sineu.ts";
 import { cellerCanMarron } from "./celler-can-marron-inca.ts";
 import { cellerCanRipoll } from "./celler-can-ripoll-inca.ts";
+import { celler_can_verdura_binissalem_vins_autoctons } from "./celler-can-verdura-binissalem-vins-autoctons.ts";
 import { cellerElMoliPollenca } from "./celler-el-moli-pollenca.ts";
 import { cellerEsCellerPetra } from "./celler-es-celler-petra.ts";
 import { cellerEsMoliSantanyi } from "./celler-es-moli-santanyi.ts";
@@ -196,6 +198,7 @@ import { restauranteSaVinyaEsCapdella } from "./restaurante-sa-vinya-es-capdella
 import { restauranteSesOliveresPortSoller } from "./restaurante-ses-oliveres-port-soller.ts";
 import { restauranteSonFlorianaCalaBona } from "./restaurante-son-floriana-cala-bona.ts";
 import { restauranteStagierBar } from "./restaurante-stagier-bar.ts";
+import { restaurante_tierra_palma_cocina_mallorquina_contemporanea } from "./restaurante-tierra-palma-cocina-mallorquina-contemporanea.ts";
 import { restauranteToquePalma } from "./restaurante-toque-palma.ts";
 import { restauranteYachtClubCalaDor } from "./restaurante-yacht-club-cala-dor.ts";
 import { restauranteZaranda } from "./restaurante-zaranda.ts";
@@ -215,6 +218,7 @@ export { adrianQuetglas } from "./adrian-quetglas.ts";
 export { barBosch } from "./bar-bosch.ts";
 export { barEspanyaPalma } from "./bar-espanya-palma.ts";
 export { barSHostalMontuiri } from "./bar-s-hostal-montuiri.ts";
+export { beach_club_illetes_mhares_sea_club_calvia } from "./beach-club-illetes-mhares-sea-club-calvia.ts";
 export { bensDavall } from "./bens-davall.ts";
 export { bodegaBarahonaCasaManolo } from "./bodega-barahona-casa-manolo.ts";
 export { bodegaBiniagual } from "./bodega-biniagual.ts";
@@ -287,6 +291,7 @@ export { cellerCanCarrossaLloseta } from "./celler-can-carrossa-lloseta.ts";
 export { cellerCanFontSineu } from "./celler-can-font-sineu.ts";
 export { cellerCanMarron } from "./celler-can-marron-inca.ts";
 export { cellerCanRipoll } from "./celler-can-ripoll-inca.ts";
+export { celler_can_verdura_binissalem_vins_autoctons } from "./celler-can-verdura-binissalem-vins-autoctons.ts";
 export { cellerElMoliPollenca } from "./celler-el-moli-pollenca.ts";
 export { cellerEsCellerPetra } from "./celler-es-celler-petra.ts";
 export { cellerEsMoliSantanyi } from "./celler-es-moli-santanyi.ts";
@@ -408,6 +413,7 @@ export { restauranteSaVinyaEsCapdella } from "./restaurante-sa-vinya-es-capdella
 export { restauranteSesOliveresPortSoller } from "./restaurante-ses-oliveres-port-soller.ts";
 export { restauranteSonFlorianaCalaBona } from "./restaurante-son-floriana-cala-bona.ts";
 export { restauranteStagierBar } from "./restaurante-stagier-bar.ts";
+export { restaurante_tierra_palma_cocina_mallorquina_contemporanea } from "./restaurante-tierra-palma-cocina-mallorquina-contemporanea.ts";
 export { restauranteToquePalma } from "./restaurante-toque-palma.ts";
 export { restauranteYachtClubCalaDor } from "./restaurante-yacht-club-cala-dor.ts";
 export { restauranteZaranda } from "./restaurante-zaranda.ts";
@@ -423,11 +429,12 @@ export { trespaisPortAndratx } from "./trespais-port-andratx.ts";
 export { vandalPalma } from "./vandal-palma.ts";
 export { vinoDelMarPortAdriano } from "./vino-del-mar-port-adriano.ts";
 
-export const RESTAURANT_SERVICES: ServiceItem[] = [
+export const GASTRONOMIA_SERVICES: ServiceItem[] = [
   adrianQuetglas,
   barBosch,
   barEspanyaPalma,
   barSHostalMontuiri,
+  beach_club_illetes_mhares_sea_club_calvia,
   bensDavall,
   bodegaBarahonaCasaManolo,
   bodegaBiniagual,
@@ -500,6 +507,7 @@ export const RESTAURANT_SERVICES: ServiceItem[] = [
   cellerCanFontSineu,
   cellerCanMarron,
   cellerCanRipoll,
+  celler_can_verdura_binissalem_vins_autoctons,
   cellerElMoliPollenca,
   cellerEsCellerPetra,
   cellerEsMoliSantanyi,
@@ -621,6 +629,7 @@ export const RESTAURANT_SERVICES: ServiceItem[] = [
   restauranteSesOliveresPortSoller,
   restauranteSonFlorianaCalaBona,
   restauranteStagierBar,
+  restaurante_tierra_palma_cocina_mallorquina_contemporanea,
   restauranteToquePalma,
   restauranteYachtClubCalaDor,
   restauranteZaranda,

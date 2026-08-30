@@ -4,6 +4,7 @@ import { bufeteBuadesAbogadosPalma1979 } from "./bufete-buades-abogados-palma-19
 import { bufeteBuadesAbogadosPalma } from "./bufete-buades-abogados-palma.ts";
 import { bufeteFrau } from "./bufete-frau.ts";
 import { caPatroMarch } from "./ca-s-patro-march.ts";
+import { clinica_fisioterapia_pilates_clinico_palma_badia } from "./clinica-fisioterapia-pilates-clinico-palma-badia.ts";
 import { cuatrecasasPalma } from "./cuatrecasas-palma.ts";
 import { gestoria_administrativa_asesoria_marroig_palma } from "./gestoria-administrativa-asesoria-marroig-palma.ts";
 import { illeslexAbogados } from "./illeslex-abogados.ts";
@@ -23,6 +24,7 @@ export { bufeteBuadesAbogadosPalma1979 } from "./bufete-buades-abogados-palma-19
 export { bufeteBuadesAbogadosPalma } from "./bufete-buades-abogados-palma.ts";
 export { bufeteFrau } from "./bufete-frau.ts";
 export { caPatroMarch } from "./ca-s-patro-march.ts";
+export { clinica_fisioterapia_pilates_clinico_palma_badia } from "./clinica-fisioterapia-pilates-clinico-palma-badia.ts";
 export { cuatrecasasPalma } from "./cuatrecasas-palma.ts";
 export { gestoria_administrativa_asesoria_marroig_palma } from "./gestoria-administrativa-asesoria-marroig-palma.ts";
 export { illeslexAbogados } from "./illeslex-abogados.ts";
@@ -37,12 +39,13 @@ export { rataCorner } from "./rata-corner.ts";
 export { traduccionesJuradasMallorcaSworn } from "./traducciones-juradas-mallorca-sworn.ts";
 export { vilasTennisAcademyPalmanova } from "./vilas-tennis-academy-palmanova.ts";
 
-export const PROFESIONALES_SERVICES: ServiceItem[] = [
+export const SERVICIOS_PROFESIONALES: ServiceItem[] = [
   balearic_lawyers_property_tax_palma,
   bufeteBuadesAbogadosPalma1979,
   bufeteBuadesAbogadosPalma,
   bufeteFrau,
   caPatroMarch,
+  clinica_fisioterapia_pilates_clinico_palma_badia,
   cuatrecasasPalma,
   gestoria_administrativa_asesoria_marroig_palma,
   illeslexAbogados,

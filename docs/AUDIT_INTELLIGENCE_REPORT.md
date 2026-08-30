@@ -1,6 +1,6 @@
 # 🛡️ Informe de Inteligencia y Auditoría Multi-Agente
 
-**Fecha de Auditoría:** 2026-08-30T12:45:09.072Z
+**Fecha de Auditoría:** 2026-08-30T12:45:31.137Z
 **Puntaje Global de Cumplimiento:** `100%`
 **Estado del Sistema:** `BLINDADO_OPTIMO`
 
@@ -10,11 +10,11 @@
 
 | Auditor                              | Evaluados | Críticos | Advertencias | Informativos | Cumplimiento |
 | :----------------------------------- | :-------- | :------- | :----------- | :----------- | :----------- |
-| 🛡️ **Seguridad & Acceso**            | 603       | 0        | 0            | 0            | **100%**     |
-| 📊 **Integridad Zero Fake Data**     | 603       | 0        | 0            | 0            | **100%**     |
-| 🏛️ **Evolución & Memoria Histórica** | 603       | 0        | 0            | 603          | **100%**     |
+| 🛡️ **Seguridad & Acceso**            | 608       | 0        | 0            | 0            | **100%**     |
+| 📊 **Integridad Zero Fake Data**     | 608       | 0        | 0            | 0            | **100%**     |
+| 🏛️ **Evolución & Memoria Histórica** | 608       | 0        | 0            | 608          | **100%**     |
 | 👑 **Cuadro de Honor & Subastas**    | 6         | 0        | 0            | 0            | **100%**     |
-| ⚡ **Rendimiento & Assets**          | 603       | 0        | 0            | 0            | **100%**     |
+| ⚡ **Rendimiento & Assets**          | 608       | 0        | 0            | 0            | **100%**     |
 
 ---
 
@@ -1856,1783 +1856,1813 @@
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 49%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 307. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Balearic Solar Tech - Autoconsumo & Baterías Tesla
+### 307. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Balear Sun Fotovoltaica & Energía Solar Palma
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 308. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Espacio Solar Mallorca - Energía Fotovoltaica
+### 308. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Balearic Solar Tech - Autoconsumo & Baterías Tesla
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 309. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Ferratur Construcciones & Villas Calvià (1978)
+### 309. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Espacio Solar Mallorca - Energía Fotovoltaica
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 310. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Fontanería Balear Instalaciones
-
-- **Auditor Responsable:** HistoricalEvolution
-- **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 49%.
-- **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
-
-### 311. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Calvià Express Fontanería & Aerotermia
+### 310. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Ferratur Construcciones & Villas Calvià (1978)
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 312. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Fontanería & Climatización Pomar (Inca - 1985)
+### 311. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Fontanería Balear Instalaciones
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 49%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 313. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Jardinería & Paisajismo Serra Mallorca
+### 312. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Calvià Express Fontanería & Aerotermia
+
+- **Auditor Responsable:** HistoricalEvolution
+- **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
+- **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
+
+### 313. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Fontanería & Climatización Pomar (Inca - 1985)
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 49%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 314. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Limpiezas y Mantenimiento Balear
+### 314. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Jardinería & Paisajismo Serra Mallorca
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 49%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 315. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Melchor Mascaró Construcciones & Obra Civil (Palma / Manacor)
+### 315. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Limpiezas y Mantenimiento Balear
+
+- **Auditor Responsable:** HistoricalEvolution
+- **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 49%.
+- **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
+
+### 316. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Melchor Mascaró Construcciones & Obra Civil (Palma / Manacor)
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 50%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 316. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Oliver & Associates Mediterranean Architecture
+### 317. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Oliver & Associates Mediterranean Architecture
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 317. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Sand Pools Mallorca - Piscinas de Arena y Oasis
+### 318. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Sand Pools Mallorca - Piscinas de Arena y Oasis
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 318. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Mallorca Nord Reformes & Construcció Alcúdia
+### 319. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Mallorca Nord Reformes & Construcció Alcúdia
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 319. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Restauración de Muebles Antiguos Casanova (1980)
+### 320. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Restauración de Muebles Antiguos Casanova (1980)
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 49%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 320. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Tapicería & Decoración Inca (1985)
+### 321. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Tapicería & Decoración Inca (1985)
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 49%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 321. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Tapicería & Toldos Balear (1982)
+### 322. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Tapicería & Toldos Balear (1982)
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 49%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 322. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Viveros & Jardinería Llabrés (Marratxí - 1970)
+### 323. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Viveros & Jardinería Llabrés (Marratxí - 1970)
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 49%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 323. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Balearic Property & Tax Lawyers Palma
+### 324. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Balearic Property & Tax Lawyers Palma
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 324. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Bufete Buades Abogados Palma (1979)
+### 325. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Bufete Buades Abogados Palma (1979)
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 325. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Bufete Buades - Abogados & Asesores Tributarios
+### 326. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Bufete Buades - Abogados & Asesores Tributarios
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 326. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Bufete Frau Abogados & Asesores
+### 327. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Bufete Frau Abogados & Asesores
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 49%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 327. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Ca's Patro March
+### 328. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Ca's Patro March
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 46%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 328. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Cuatrecasas Abogados Palma
+### 329. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Cuatrecasas Abogados Palma
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 50%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 329. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Gestoría Administrativa & Asesoría Marroig Palma
+### 330. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Gestoría Administrativa & Asesoría Marroig Palma
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 330. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Illeslex Abogados & Asesores Tributarios
+### 331. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Illeslex Abogados & Asesores Tributarios
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 46%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 331. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Megasport Centre (Palma)
+### 332. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Megasport Centre (Palma)
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 50%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 332. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Monereo Meyer Abogados Palma
+### 333. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Monereo Meyer Abogados Palma
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 333. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Monlex Abogados & Hospitality Law Palma
+### 334. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Monlex Abogados & Hospitality Law Palma
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 334. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Notaría Álvaro Delgado Palma
+### 335. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Notaría Álvaro Delgado Palma
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 335. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Notaría Jaime Rodríguez & Asociados Palma
+### 336. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Notaría Jaime Rodríguez & Asociados Palma
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 336. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Palma Padel Club
+### 337. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Palma Padel Club
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 48%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 337. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Pins Padel Club Santa Ponsa
+### 338. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Pins Padel Club Santa Ponsa
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 49%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 338. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Rata Corner Llibreria & Cultura
+### 339. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Rata Corner Llibreria & Cultura
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 49%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 339. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Mallorca Sworn Translations & Official Interpreters
+### 340. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Mallorca Sworn Translations & Official Interpreters
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 340. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Vilas Tennis Academy (Palmanova - Calvià)
+### 341. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Vilas Tennis Academy (Palmanova - Calvià)
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 50%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 341. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Balearic Properties Pollensa
+### 342. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Balearic Properties Pollensa
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 49%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 342. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Engel & Völkers Mallorca
+### 343. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Engel & Völkers Mallorca
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 48%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 343. ℹ️ [INFO] `HIST_STALE_VALIDATION` — First Mallorca (Luxury Real Estate)
+### 344. ℹ️ [INFO] `HIST_STALE_VALIDATION` — First Mallorca (Luxury Real Estate)
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 50%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 344. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Kensington Finest Properties International Palma
+### 345. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Kensington Finest Properties International Palma
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 345. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Kühn & Partner Real Estate Palma (1987)
+### 346. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Kühn & Partner Real Estate Palma (1987)
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 346. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Living Blue Mallorca Santa María del Camí
+### 347. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Living Blue Mallorca Santa María del Camí
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 347. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Lucas Fox Prime Real Estate Mallorca
+### 348. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Lucas Fox Prime Real Estate Mallorca
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 348. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Mallorca Fincas & Historic Country Estates Santa Maria
+### 349. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Mallorca Fincas & Historic Country Estates Santa Maria
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 349. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Mallorca Sotheby's International Realty
+### 350. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Mallorca Sotheby's International Realty
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 49%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 350. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Minkner & Partner Luxury Real Estate
+### 351. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Minkner & Partner Luxury Real Estate
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 351. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Port d'Andratx Luxury Waterfront Real Estate
+### 352. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Port d'Andratx Luxury Waterfront Real Estate
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 352. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Port d'Andratx Living Luxury Villas
+### 353. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Port d'Andratx Living Luxury Villas
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 353. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Porta Mallorquina Real Estate
+### 354. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Porta Mallorquina Real Estate
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 354. ℹ️ [INFO] `HIST_STALE_VALIDATION` — VON POLL REAL ESTATE Mallorca Southwest
+### 355. ℹ️ [INFO] `HIST_STALE_VALIDATION` — VON POLL REAL ESTATE Mallorca Southwest
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 355. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Autocares Mallorca Transunion
+### 356. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Autocares Mallorca Transunion
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 50%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 356. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Bergantiños Bikes Can Pastilla (Taller & Alquiler)
+### 357. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Bergantiños Bikes Can Pastilla (Taller & Alquiler)
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 50%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 357. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Taller Mecánico Bosch Car Service Palma
+### 358. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Taller Mecánico Bosch Car Service Palma
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 358. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Mallorca Driving Classic Cars & Roadsters Sóller
+### 359. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Mallorca Driving Classic Cars & Roadsters Sóller
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 359. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Mallorca Classic Cars & Vintage Roadsters
+### 360. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Mallorca Classic Cars & Vintage Roadsters
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 360. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Garaje Auto-Pla Inca (Taller Mecánico)
+### 361. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Garaje Auto-Pla Inca (Taller Mecánico)
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 49%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 361. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Mallorca Cycling Center & Taller (Playa de Muro)
+### 362. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Mallorca Cycling Center & Taller (Playa de Muro)
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 50%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 362. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Palma VIP Chauffeur & Executive Limousine Service
+### 363. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Palma VIP Chauffeur & Executive Limousine Service
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 363. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Roig Premium (VIP Chauffeur & Transfers)
+### 364. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Roig Premium (VIP Chauffeur & Transfers)
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 50%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 364. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Taller Mecánico Hermanos Bestard (1978)
+### 365. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Taller Mecánico Hermanos Bestard (1978)
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 49%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 365. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Taller Mecánico Bosom Bosch Car Service Palma (1968)
+### 366. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Taller Mecánico Bosom Bosch Car Service Palma (1968)
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 366. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Taller Mecánico & Diagnosis Llevant (Manacor - 1996)
+### 367. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Taller Mecánico & Diagnosis Llevant (Manacor - 1996)
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 49%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 367. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Talleres Auto-Inca (Inca - 1982)
+### 368. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Talleres Auto-Inca (Inca - 1982)
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 49%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 368. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Vespa Mallorca Iconic Scooter Rental Palma
+### 369. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Vespa Mallorca Iconic Scooter Rental Palma
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 369. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Vintage Motors Scooter & Vespa Rental Palma (2012)
+### 370. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Vintage Motors Scooter & Vespa Rental Palma (2012)
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 370. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Viveros Can Juanito (Jardinería & Paisajismo)
+### 371. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Viveros Can Juanito (Jardinería & Paisajismo)
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 50%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 371. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Jardinería Balear Sostenible Inca
+### 372. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Jardinería Balear Sostenible Inca
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 372. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Jardins de Tramuntana Paisajismo & Xerojardinería
+### 373. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Jardins de Tramuntana Paisajismo & Xerojardinería
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 373. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Mallorca Pool Care & Renovation Santa Ponsa
+### 374. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Mallorca Pool Care & Renovation Santa Ponsa
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 374. ℹ️ [INFO] `HIST_STALE_VALIDATION` — AquaPure Pools - Mantenimiento & Cloración Salina Calvià
+### 375. ℹ️ [INFO] `HIST_STALE_VALIDATION` — AquaPure Pools - Mantenimiento & Cloración Salina Calvià
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 375. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Tramuntana Landscapes & Mediterranean Gardens Sóller
+### 376. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Tramuntana Landscapes & Mediterranean Gardens Sóller
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 376. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Piscinas Cristal Infinity Santanyí
+### 377. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Piscinas Cristal Infinity Santanyí
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 377. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Mantenimiento Piscinas & Spas Ponent (Andratx - 2002)
+### 378. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Mantenimiento Piscinas & Spas Ponent (Andratx - 2002)
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 49%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 378. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Viveros Llevant Mediterrani Manacor
+### 379. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Viveros Llevant Mediterrani Manacor
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 379. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Viveros Santa Maria Garden Center & Paisajismo
+### 380. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Viveros Santa Maria Garden Center & Paisajismo
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 49%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 380. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Balear WiFi & High-Speed Networks Mallorca
+### 381. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Balear WiFi & High-Speed Networks Mallorca
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 381. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Digital Cinema Domótica & Audio Mallorca
+### 382. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Digital Cinema Domótica & Audio Mallorca
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 49%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 382. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Smart Villas Domótica & Redes Baleares Palma
+### 383. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Smart Villas Domótica & Redes Baleares Palma
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 383. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Electricidad & Climatización Sóller (1994)
+### 384. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Electricidad & Climatización Sóller (1994)
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 49%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 384. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Electricidad & Domótica Binissalem (1990)
+### 385. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Electricidad & Domótica Binissalem (1990)
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 49%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 385. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Electricidad & Energía Solar Artà (1998)
+### 386. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Electricidad & Energía Solar Artà (1998)
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 49%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 386. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Fibwi Telecomunicaciones Baleares
+### 387. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Fibwi Telecomunicaciones Baleares
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 48%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 387. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Balearic Smart Living - Domótica KNX & Control4
+### 388. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Balearic Smart Living - Domótica KNX & Control4
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 388. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Alarmas & Videovigilancia CCTV Mallorca
+### 389. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Alarmas & Videovigilancia CCTV Mallorca
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 389. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Mallorca Secure Alarmas & CCTV Fincas Palma
+### 390. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Mallorca Secure Alarmas & CCTV Fincas Palma
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 390. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Smart Home Mallorca - Domótica KNX & Crestron
+### 391. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Smart Home Mallorca - Domótica KNX & Crestron
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 391. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Grupo Trablisa (Seguridad & Alarmas)
+### 392. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Grupo Trablisa (Seguridad & Alarmas)
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 50%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 392. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Finca Ca'n Quatre Soller
+### 393. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Finca Ca'n Quatre Soller
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 393. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Belmond La Residencia
+### 394. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Belmond La Residencia
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 394. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Can Bordoy Grand House & Garden
+### 395. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Can Bordoy Grand House & Garden
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 395. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Petit Hotel Can Tem Alcudia
+### 396. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Petit Hotel Can Tem Alcudia
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 396. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Cap Rocat Hotel & Fortress
+### 397. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Cap Rocat Hotel & Fortress
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 397. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Cas Xorc Luxury Retreat & Restaurant Soller
+### 398. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Cas Xorc Luxury Retreat & Restaurant Soller
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 398. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Castell Son Claret Luxury Retreat
+### 399. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Castell Son Claret Luxury Retreat
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 399. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Finca Can Feliu Eco-Agroturismo
+### 400. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Finca Can Feliu Eco-Agroturismo
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 400. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Es Raco d'Arta Sustainable Retreat
+### 401. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Es Raco d'Arta Sustainable Retreat
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 401. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Finca Serena Mallorca Luxury Hotel
+### 402. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Finca Serena Mallorca Luxury Hotel
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 402. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Finca Son Llado Ecoturismo Mallorca
+### 403. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Finca Son Llado Ecoturismo Mallorca
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 403. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Agroturismo Sa Bassa Crúa Porreres
+### 404. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Gran Hotel Son Net Palacio Histórico Puigpunyent (1672)
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 404. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Hotel Boutique & Restaurant Sa Pedrissa Deià
+### 405. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Agroturismo Sa Bassa Crúa Porreres
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 405. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Hotel Es Moli Deia
+### 406. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Hotel Boutique & Restaurant Sa Pedrissa Deià
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 406. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Hotel Rural Mirabo de Valldemossa
+### 407. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Hotel Es Moli Deia
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 407. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Finca Amapola Hotel & Spa Campos
+### 408. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Hotel Rural Mirabo de Valldemossa
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 408. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Mallorca Balloons
+### 409. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Finca Amapola Hotel & Spa Campos
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 409. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Mallorca Hiking & Tramuntana Guides
+### 410. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Mallorca Balloons
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 410. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Petit Hotel Ses Rotges Cala Ratjada (1954)
+### 411. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Mallorca Hiking & Tramuntana Guides
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 411. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Predi Son Jaumell Hotel Rural
+### 412. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Petit Hotel Ses Rotges Cala Ratjada (1954)
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 412. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Agroturismo Sa Carrotja Ses Salines
+### 413. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Predi Son Jaumell Hotel Rural
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 413. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Son Brull Hotel & Spa
+### 414. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Agroturismo Sa Carrotja Ses Salines
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 414. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Tramuntana Hiking & Guided Mountain Tours Sóller
+### 415. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Son Brull Hotel & Spa
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 415. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Bany Banyuls Luxury Bathrooms & Stone
+### 416. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Tramuntana Hiking & Guided Mountain Tours Sóller
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 416. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Bestard Mountain Boots Calçat de Muntanya Lloseta (1940)
+### 417. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Bany Banyuls Luxury Bathrooms & Stone
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 417. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Estilo Sant Feliu Interior & Lifestyle Palma
+### 418. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Bestard Mountain Boots Calçat de Muntanya Lloseta (1940)
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 418. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Fornet de la Soca - Arqueología Gastronómica
+### 419. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Estilo Sant Feliu Interior & Lifestyle Palma
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 419. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Joyería Relojería Nicolás Joyeros 1925
+### 420. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Fornet de la Soca - Arqueología Gastronómica
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 420. ℹ️ [INFO] `HIST_STALE_VALIDATION` — La Pajarita Bombonería & Colmado (1872)
+### 421. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Isabel Guarch Alta Joyería & Diseño Mediterráneo Palma
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 421. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Rialto Living
+### 422. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Joyería Relojería Nicolás Joyeros 1925
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 422. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Suite 13 Sustainable Mediterranean Fashion
+### 423. ℹ️ [INFO] `HIST_STALE_VALIDATION` — La Pajarita Bombonería & Colmado (1872)
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 423. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Agora Portals International School
+### 424. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Rialto Living
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 424. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Palma Cooking School & Mediterranean Culinary Workshops
+### 425. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Suite 13 Sustainable Mediterranean Fashion
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 425. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Mallorca Spanish & German Language Academy
+### 426. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Agora Portals International School
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 426. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Eurocampus Deutsche Schule Mallorca
+### 427. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Palma Cooking School & Mediterranean Culinary Workshops
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 427. ℹ️ [INFO] `HIST_STALE_VALIDATION` — King Richard III College Portals Nous
+### 428. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Mallorca Spanish & German Language Academy
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 428. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Mallorca International Language Academy Palma
+### 429. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Eurocampus Deutsche Schule Mallorca
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 429. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Palma International Executive Education
+### 430. ℹ️ [INFO] `HIST_STALE_VALIDATION` — King Richard III College Portals Nous
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 430. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Queen's College International School Palma
+### 431. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Mallorca International Language Academy Palma
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 431. ℹ️ [INFO] `HIST_STALE_VALIDATION` — The Academy International School Marratxí
+### 432. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Palma International Executive Education
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 432. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Beach Club Gran Folies Cala Llamp
+### 433. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Queen's College International School Palma
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 433. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Katmandu Park Theme Park Calvià
+### 434. ℹ️ [INFO] `HIST_STALE_VALIDATION` — The Academy International School Marratxí
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 434. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Mallorca Finca Weddings & Event Management
+### 435. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Beach Club Gran Folies Cala Llamp
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 435. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Marineland Mallorca Costa d'en Blanes
+### 436. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Katmandu Park Theme Park Calvià
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 436. ℹ️ [INFO] `HIST_STALE_VALIDATION` — The Fly Chic Rooftop Bar - Nivia Born
+### 437. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Mallorca Finca Weddings & Event Management
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 437. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Palma Aquarium & Parque Marino
+### 438. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Marineland Mallorca Costa d'en Blanes
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 438. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Purobeach Palma Urban Oasis del Mar
+### 439. ℹ️ [INFO] `HIST_STALE_VALIDATION` — The Fly Chic Rooftop Bar - Nivia Born
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 439. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Balearic Sound & Pro Lighting Events
+### 440. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Palma Aquarium & Parque Marino
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 440. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Anytime Fitness Santa Catalina
+### 441. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Purobeach Palma Urban Oasis del Mar
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 441. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Ashtanga Yoga Shala Mallorca
+### 442. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Balearic Sound & Pro Lighting Events
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 442. ℹ️ [INFO] `HIST_STALE_VALIDATION` — B-Fit Mallorca Gym
+### 443. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Anytime Fitness Santa Catalina
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 443. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Bodhana Wellness & Yoga
+### 444. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Ashtanga Yoga Shala Mallorca
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 444. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Body VIP Fitness Inca
+### 445. ℹ️ [INFO] `HIST_STALE_VALIDATION` — B-Fit Mallorca Gym
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 445. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Brooklyn Fitboxing Palma Centro
+### 446. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Bodhana Wellness & Yoga
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 446. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Brooklyn Fitboxing Son Hugo
+### 447. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Body VIP Fitness Inca
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 447. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Capdepera Golf
+### 448. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Brooklyn Fitboxing Palma Centro
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 448. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Club de Golf Alcanada
+### 449. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Brooklyn Fitboxing Son Hugo
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 449. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Club Tenis Alaró
+### 450. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Capdepera Golf
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 450. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Club Tenis Andratx
+### 451. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Club de Golf Alcanada
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 451. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Club Tenis Calvià
+### 452. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Club Tenis Alaró
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 452. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Club Tenis Felanitx
+### 453. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Club Tenis Andratx
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 453. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Club de Tenis & Pádel Pòrtol
+### 454. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Club Tenis Calvià
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 454. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Club Tenis Pollença
+### 455. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Club Tenis Felanitx
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 455. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Club Tenis Porreres
+### 456. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Club de Tenis & Pádel Pòrtol
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 456. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Club Tenis Porto Cristo
+### 457. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Club Tenis Pollença
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 457. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Club Tennis Santa Eugènia
+### 458. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Club Tenis Porreres
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 458. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Club de Tenis & Pádel Sóller
+### 459. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Club Tenis Porto Cristo
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 459. ℹ️ [INFO] `HIST_STALE_VALIDATION` — CrossFit 070
+### 460. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Club Tennis Santa Eugènia
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 460. ℹ️ [INFO] `HIST_STALE_VALIDATION` — CrossFit Blau
+### 461. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Club de Tenis & Pádel Sóller
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 461. ℹ️ [INFO] `HIST_STALE_VALIDATION` — CrossFit Calvià (El Toro)
+### 462. ℹ️ [INFO] `HIST_STALE_VALIDATION` — CrossFit 070
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 462. ℹ️ [INFO] `HIST_STALE_VALIDATION` — CrossFit Can Pastilla
+### 463. ℹ️ [INFO] `HIST_STALE_VALIDATION` — CrossFit Blau
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 463. ℹ️ [INFO] `HIST_STALE_VALIDATION` — CrossFit Dragon Palma
+### 464. ℹ️ [INFO] `HIST_STALE_VALIDATION` — CrossFit Calvià (El Toro)
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 464. ℹ️ [INFO] `HIST_STALE_VALIDATION` — CrossFit Inca
+### 465. ℹ️ [INFO] `HIST_STALE_VALIDATION` — CrossFit Can Pastilla
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 465. ℹ️ [INFO] `HIST_STALE_VALIDATION` — CrossFit Llucmajor
+### 466. ℹ️ [INFO] `HIST_STALE_VALIDATION` — CrossFit Dragon Palma
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 466. ℹ️ [INFO] `HIST_STALE_VALIDATION` — CrossFit Mallorca
+### 467. ℹ️ [INFO] `HIST_STALE_VALIDATION` — CrossFit Inca
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 467. ℹ️ [INFO] `HIST_STALE_VALIDATION` — CrossFit Manacor
+### 468. ℹ️ [INFO] `HIST_STALE_VALIDATION` — CrossFit Llucmajor
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 468. ℹ️ [INFO] `HIST_STALE_VALIDATION` — CrossFit Morro d'en Feliu
+### 469. ℹ️ [INFO] `HIST_STALE_VALIDATION` — CrossFit Mallorca
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 469. ℹ️ [INFO] `HIST_STALE_VALIDATION` — CrossFit Pollença
+### 470. ℹ️ [INFO] `HIST_STALE_VALIDATION` — CrossFit Manacor
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 470. ℹ️ [INFO] `HIST_STALE_VALIDATION` — CrossFit Portixol
+### 471. ℹ️ [INFO] `HIST_STALE_VALIDATION` — CrossFit Morro d'en Feliu
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 471. ℹ️ [INFO] `HIST_STALE_VALIDATION` — CrossFit Santanyí
+### 472. ℹ️ [INFO] `HIST_STALE_VALIDATION` — CrossFit Pollença
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 472. ℹ️ [INFO] `HIST_STALE_VALIDATION` — CrossFit Tramuntana
+### 473. ℹ️ [INFO] `HIST_STALE_VALIDATION` — CrossFit Portixol
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 473. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Scuba Mallorca PADI 5 Star Dive Resort Port de Pollença
+### 474. ℹ️ [INFO] `HIST_STALE_VALIDATION` — CrossFit Santanyí
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 474. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Elite Fitness Port d'Andratx
+### 475. ℹ️ [INFO] `HIST_STALE_VALIDATION` — CrossFit Tramuntana
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 475. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Es Cau Boulder Felanitx
+### 476. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Scuba Mallorca PADI 5 Star Dive Resort Port de Pollença
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 476. ℹ️ [INFO] `HIST_STALE_VALIDATION` — F45 Training Palma Centro
+### 477. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Elite Fitness Port d'Andratx
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 477. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Fit Club Mallorca
+### 478. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Es Cau Boulder Felanitx
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 478. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Fit Point Pádel & Fitness
+### 479. ℹ️ [INFO] `HIST_STALE_VALIDATION` — F45 Training Palma Centro
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 479. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Freeform Boulder Gym
+### 480. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Fit Club Mallorca
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 480. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Golf de Andratx
+### 481. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Fit Point Pádel & Fitness
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 481. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Golf Maioris
+### 482. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Freeform Boulder Gym
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 482. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Golf Santa Ponsa
+### 483. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Golf de Andratx
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 483. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Golf Son Gual Mallorca
+### 484. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Golf Maioris
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 484. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Golf Son Muntaner
+### 485. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Golf Santa Ponsa
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 485. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Golf Son Quint
+### 486. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Golf Son Gual Mallorca
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 486. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Golf Son Vida
+### 487. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Golf Son Muntaner
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 487. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Hot Yoga Palma
+### 488. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Golf Son Quint
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 488. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Hürzeler Bicycle Holidays
+### 489. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Golf Son Vida
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 489. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Illes Centres de Benestar (Aragó)
+### 490. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Hot Yoga Palma
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 490. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Illes Centres de Benestar (Calvià)
+### 491. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Hürzeler Bicycle Holidays
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 491. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Illes Centres de Benestar (Inca)
+### 492. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Illes Centres de Benestar (Aragó)
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 492. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Illes Centres de Benestar (Marratxí)
+### 493. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Illes Centres de Benestar (Calvià)
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 493. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Illes Centres de Benestar (Son Rapinya)
+### 494. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Illes Centres de Benestar (Inca)
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 494. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Iron Box Mallorca
+### 495. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Illes Centres de Benestar (Marratxí)
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 495. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Mallorca Bike Hire
+### 496. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Illes Centres de Benestar (Son Rapinya)
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 496. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Mallorca Climbing School
+### 497. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Iron Box Mallorca
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 497. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Mallorca Diving Center Port Pollença
+### 498. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Mallorca Bike Hire
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 498. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Mallorca Kite School Sa Marina
+### 499. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Mallorca Climbing School
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 499. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Match Point Pádel Indoor
+### 500. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Mallorca Diving Center Port Pollença
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 500. ℹ️ [INFO] `HIST_STALE_VALIDATION` — McFit Palma Son Malferit
+### 501. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Mallorca Kite School Sa Marina
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 501. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Nano Bicycles Palma
+### 502. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Match Point Pádel Indoor
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 502. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Nordic Walking Tramuntana Sóller
+### 503. ℹ️ [INFO] `HIST_STALE_VALIDATION` — McFit Palma Son Malferit
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 503. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Open Marratxí Pádel Indoor Club
+### 504. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Nano Bicycles Palma
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 504. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Padel Factory Mallorca
+### 505. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Nordic Walking Tramuntana Sóller
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 505. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Pàdel Indoor Manacor
+### 506. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Open Marratxí Pádel Indoor Club
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 506. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Pàdel Llucmajor Club
+### 507. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Padel Factory Mallorca
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 507. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Palau Municipal d'Esports Son Moix
+### 508. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Pàdel Indoor Manacor
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 508. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Palma Boxing Club
+### 509. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Pàdel Llucmajor Club
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 509. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Palma Racket Club
+### 510. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Palau Municipal d'Esports Son Moix
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 510. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Pilates Studio Paseo Mallorca
+### 511. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Palma Boxing Club
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 511. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Pins Pádel Club
+### 512. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Palma Racket Club
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 512. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Piscines Municipals Son Hugo
+### 513. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Pilates Studio Paseo Mallorca
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 513. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Prana Yoga Studio Palma
+### 514. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Pins Pádel Club
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 514. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Pro Cycle Hire Mallorca
+### 515. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Piscines Municipals Son Hugo
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 515. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Pula Golf Resort
+### 516. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Prana Yoga Studio Palma
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 516. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Pure Salt Yoga & Spa Port Adriano
+### 517. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Pro Cycle Hire Mallorca
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 517. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Real Golf de Bendinat
+### 518. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Pula Golf Resort
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 518. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Rock'n'Palma Rocódromo
+### 519. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Pure Salt Yoga & Spa Port Adriano
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 519. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Rock Sport Climbing Alaró
+### 520. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Real Golf de Bendinat
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 520. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Samadhi Yoga Pollença
+### 521. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Rock'n'Palma Rocódromo
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 521. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Santa Maria Tennis & Pàdel Club
+### 522. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Rock Sport Climbing Alaró
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 522. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Santanyí Yoga Shala
+### 523. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Samadhi Yoga Pollença
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 523. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Studio 1 Personal Training
+### 524. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Santa Maria Tennis & Pàdel Club
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 524. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Synergym Palma s'Escorxador
+### 525. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Santanyí Yoga Shala
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 525. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Synergym Palma San Fernando
+### 526. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Studio 1 Personal Training
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 526. ℹ️ [INFO] `HIST_STALE_VALIDATION` — T Golf Calvià
+### 527. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Synergym Palma s'Escorxador
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 527. ℹ️ [INFO] `HIST_STALE_VALIDATION` — T Golf Palma Puntiró
+### 528. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Synergym Palma San Fernando
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 528. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Tennis Academy Mallorca (Peguera)
+### 529. ℹ️ [INFO] `HIST_STALE_VALIDATION` — T Golf Calvià
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 529. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Tennis Club Inca
+### 530. ℹ️ [INFO] `HIST_STALE_VALIDATION` — T Golf Palma Puntiró
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 530. ℹ️ [INFO] `HIST_STALE_VALIDATION` — The Yoga Hub Sóller
+### 531. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Tennis Academy Mallorca (Peguera)
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 531. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Top Gym Palma
+### 532. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Tennis Club Inca
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 532. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Tramuntana Climbing Guides
+### 533. ℹ️ [INFO] `HIST_STALE_VALIDATION` — The Yoga Hub Sóller
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 533. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Tramuntana Flow Yoga Retreats
+### 534. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Top Gym Palma
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 534. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Udyr Sport Pádel Club
+### 535. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Tramuntana Climbing Guides
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 535. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Urban CrossFit Palma
+### 536. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Tramuntana Flow Yoga Retreats
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 536. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Vall d'Or Golf
+### 537. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Udyr Sport Pádel Club
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 537. ℹ️ [INFO] `HIST_STALE_VALIDATION` — VivaGym Cardenal Rossell
+### 538. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Urban CrossFit Palma
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 538. ℹ️ [INFO] `HIST_STALE_VALIDATION` — VivaGym Son Fuster
+### 539. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Vall d'Or Golf
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 539. ℹ️ [INFO] `HIST_STALE_VALIDATION` — VivaGym Son Moix
+### 540. ℹ️ [INFO] `HIST_STALE_VALIDATION` — VivaGym Cardenal Rossell
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 540. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Windsurf Station Pollença Bay
+### 541. ℹ️ [INFO] `HIST_STALE_VALIDATION` — VivaGym Son Fuster
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 541. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Yoga Mallorca Portixol
+### 542. ℹ️ [INFO] `HIST_STALE_VALIDATION` — VivaGym Son Moix
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 542. ℹ️ [INFO] `HIST_STALE_VALIDATION` — BioPest Control Mallorca - Picudo & Fincas
+### 543. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Windsurf Station Pollença Bay
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 543. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Clean & Care Luxury Villa Management
+### 544. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Yoga Mallorca Portixol
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 544. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Cristal Limp Mallorca - Limpieza de Cristales en Altura
+### 545. ℹ️ [INFO] `HIST_STALE_VALIDATION` — BioPest Control Mallorca - Picudo & Fincas
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 545. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Limpiezas Mallorca Brill (Servicios Integrales)
+### 546. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Clean & Care Luxury Villa Management
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 546. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Mallorca Lux Villa Cleaning & Services Calvià
+### 547. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Mallorca EcoPlagas & Control Ambiental Llucmajor
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 547. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Mallorca Clean & Care Villas
+### 548. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Cristal Limp Mallorca - Limpieza de Cristales en Altura
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 548. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Mudanzas & Guardamuebles Islas Baleares Palma
+### 549. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Limpiezas Mallorca Brill (Servicios Integrales)
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 549. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Mudanzas Mallorca Express & Guardamuebles
+### 550. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Mallorca Lux Villa Cleaning & Services Calvià
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 550. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Tramuntana Care Fincas & Home Maintenance
+### 551. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Mallorca Clean & Care Villas
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 551. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Portals Nous International Veterinary Clinic
+### 552. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Mudanzas & Guardamuebles Islas Baleares Palma
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 552. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Hospital Veterinari & Urgències 24h Llevant Manacor
+### 553. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Mudanzas Mallorca Express & Guardamuebles
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 553. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Clínica Veterinaria Mediterrània Santa Catalina
+### 554. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Tramuntana Care Fincas & Home Maintenance
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 554. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Clínica Veterinaria Port d'Andratx Multilingüe
+### 555. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Portals Nous International Veterinary Clinic
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 555. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Clínica Veterinària Sóller & Vall de Tramuntana
+### 556. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Hospital Veterinari & Urgències 24h Llevant Manacor
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 556. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Finca Can Paulino Dog & Horse Resort
+### 557. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Clínica Veterinaria Mediterrània Santa Catalina
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 557. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Hospital Veterinario Aragó 24h
+### 558. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Clínica Veterinaria Port d'Andratx Multilingüe
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 558. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Hospital Veterinario Canis Palma 24h
+### 559. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Clínica Veterinària Sóller & Vall de Tramuntana
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 559. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Mallorca Dog Behaviour & Training Academy
+### 560. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Finca Can Paulino Dog & Horse Resort
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 560. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Santa Catalina Pet Spa & Organic Grooming
+### 561. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Hospital Veterinario Aragó 24h
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 561. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Residencia Canina & Adiestramiento Son Fangos Campos
+### 562. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Hospital Veterinario Canis Palma 24h
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 562. ℹ️ [INFO] `HIST_STALE_VALIDATION` — 4 Kilos Vinícola Felanitx
+### 563. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Mallorca Dog Behaviour & Training Academy
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 563. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Bodega Ribas Consell
+### 564. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Santa Catalina Pet Spa & Organic Grooming
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 564. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Celler Son Crespí Santa Maria del Camí
+### 565. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Residencia Canina & Adiestramiento Son Fangos Campos
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 565. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Bodegas José L. Ferrer (Fundada 1931)
+### 566. ℹ️ [INFO] `HIST_STALE_VALIDATION` — 4 Kilos Vinícola Felanitx
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 566. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Can Company - Sobrassada de Porc Negre de Mallorca
+### 567. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Bodega Ribas Consell
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 567. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Flor de Sal d'Es Trenc
+### 568. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Celler Son Crespí Santa Maria del Camí
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 568. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Formatges Son Jover & Quesería Km0 Artà
+### 569. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Bodegas José L. Ferrer (Fundada 1931)
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 569. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Gin Eva Mallorca Artisan Botanical Distillery
+### 570. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Can Company - Sobrassada de Porc Negre de Mallorca
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 570. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Oli Solivellas - Es Guinyent
+### 571. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Flor de Sal d'Es Trenc
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 571. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Cooperativa Agrícola Sant Bartomeu de Sóller (1899)
+### 572. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Formatges Son Jover & Quesería Km0 Artà
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 572. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Son Moragues Organic Olive Oil & Farm Valldemossa
+### 573. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Gin Eva Mallorca Artisan Botanical Distillery
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 573. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Bodegas Suau - Brandy & Ron de Mallorca (1851)
+### 574. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Oli Solivellas - Es Guinyent
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 574. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Carmina Shoemaker Inca (Fundada 1866)
+### 575. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Cooperativa Agrícola Sant Bartomeu de Sóller (1899)
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 575. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Ceràmica Tradicional & Siurells de Pòrtol (Marratxí)
+### 576. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Formatges Son Jover Formatgeria Artesana Inca (1998)
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 576. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Ceràmica Terra Cuita Pòrtol (Fundada 1861)
+### 577. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Son Moragues Organic Olive Oil & Farm Valldemossa
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 577. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Artesania de Sa Llata & Cistelleria Artà
+### 578. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Bodegas Suau - Brandy & Ron de Mallorca (1851)
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 578. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Lafiore Vidrio Soplado & Espacio Creativo
+### 579. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Carmina Shoemaker Inca (Fundada 1866)
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 579. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Monge Handmade Shoes Palma
+### 580. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Ceràmica Tradicional & Siurells de Pòrtol (Marratxí)
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 580. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Pedra de Santanyí Canteras & Picapedrers
+### 581. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Ceràmica Terra Cuita Pòrtol (Fundada 1861)
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 581. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Teixits Vicens (Robes de Llengües 1854)
+### 582. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Artesania de Sa Llata & Cistelleria Artà
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 582. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Vidrios Gordiola (Algaida - 1719)
+### 583. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Lafiore Vidrio Soplado & Espacio Creativo
+
+- **Auditor Responsable:** HistoricalEvolution
+- **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
+- **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
+
+### 584. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Monge Handmade Shoes Palma
+
+- **Auditor Responsable:** HistoricalEvolution
+- **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
+- **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
+
+### 585. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Pedra de Santanyí Canteras & Picapedrers
+
+- **Auditor Responsable:** HistoricalEvolution
+- **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
+- **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
+
+### 586. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Teixits Vicens (Robes de Llengües 1854)
+
+- **Auditor Responsable:** HistoricalEvolution
+- **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
+- **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
+
+### 587. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Vidrios Gordiola (Algaida - 1719)
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 50%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 583. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Balearic Nannies & Childcare for Villas
+### 588. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Balearic Nannies & Childcare for Villas
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 584. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Mallorca Aid Asistencia & Cuidado Domiciliario de Mayores
+### 589. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Mallorca Aid Asistencia & Cuidado Domiciliario de Mayores
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 585. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Mallorca Senior Care & Asistencia
+### 590. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Mallorca Senior Care & Asistencia
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 586. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Cuideo - Cuidado de Mayores a Domicilio Palma
+### 591. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Cuideo - Cuidado de Mayores a Domicilio Palma
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 587. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Happy Faces Bilingual Nursery Santa Catalina
+### 592. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Happy Faces Bilingual Nursery Santa Catalina
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 588. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Mallorca Private Nursing & Medical Home Care
+### 593. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Mallorca Private Nursing & Medical Home Care
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 589. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Mallorca Nannies & Babysitting VIP Agency
+### 594. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Mallorca Nannies & Babysitting VIP Agency
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 590. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Residencia Senior Valldemossa & Centro de Día
+### 595. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Residencia Senior Valldemossa & Centro de Día
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 591. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Seniors Residencias Palma & Can Picafort
+### 596. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Seniors Residencias Palma & Can Picafort
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 592. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Balearic Marine & Villa Insurance Brokers
+### 597. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Balearic Marine & Villa Insurance Brokers
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 593. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Balearic Mortgage & Financial Consulting Palma
+### 598. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Balearic Mortgage & Financial Consulting Palma
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 594. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Blevins Franks Wealth Management Mallorca
+### 599. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Blevins Franks Wealth Management Mallorca
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 595. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Inbrok Correduría de Seguros Calvià
+### 600. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Inbrok Correduría de Seguros Calvià
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 596. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Balear Insurance Correduría de Seguros Palma (1985)
+### 601. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Balear Insurance Correduría de Seguros Palma (1985)
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 597. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Fuster Correduría de Seguros Palma (1940)
+### 602. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Fuster Correduría de Seguros Palma (1940)
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 598. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Lionsgate Capital Mortgages
+### 603. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Lionsgate Capital Mortgages
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 599. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Balearic Private Mortgages & Wealth
+### 604. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Balearic Private Mortgages & Wealth
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 600. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Mortgage Direct Brokers Mallorca
+### 605. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Mortgage Direct Brokers Mallorca
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 601. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Sanitas Expat Health & International Coverage
+### 606. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Sanitas Expat Health & International Coverage
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 602. ℹ️ [INFO] `HIST_STALE_VALIDATION` — The Spectrum IFA Group Mallorca
+### 607. ℹ️ [INFO] `HIST_STALE_VALIDATION` — The Spectrum IFA Group Mallorca
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
-### 603. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Mallorca Wealth & Family Office Advisory
+### 608. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Mallorca Wealth & Family Office Advisory
 
 - **Auditor Responsable:** HistoricalEvolution
 - **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 45%.
