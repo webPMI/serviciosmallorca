@@ -5,6 +5,7 @@ import { bodegasJoseLFerrerBinissalem } from "./bodegas-jose-l-ferrer-binissalem
 import { embutidosCanCompanyPorcNegre } from "./embutidos-can-company-porc-negre.ts";
 import { florDeSalEsTrenc } from "./flor-de-sal-es-trenc.ts";
 import { formatgesDeMallorcaQueseriaArta } from "./formatges-de-mallorca-queseria-arta.ts";
+import { ginEvaMallorcaArtisanDistillery } from "./gin-eva-mallorca-artisan-distillery.ts";
 import { oliSolivellasAlcudia } from "./oli-solivellas-alcudia.ts";
 import { sonMoraguesValldemossaAceite } from "./son-moragues-valldemossa-aceite.ts";
 
@@ -15,6 +16,7 @@ export {
   embutidosCanCompanyPorcNegre,
   florDeSalEsTrenc,
   formatgesDeMallorcaQueseriaArta,
+  ginEvaMallorcaArtisanDistillery,
   oliSolivellasAlcudia,
   sonMoraguesValldemossaAceite,
 };
@@ -26,6 +28,7 @@ export const AGRICULTURA_SERVICES: ServiceItem[] = [
   embutidosCanCompanyPorcNegre,
   florDeSalEsTrenc,
   formatgesDeMallorcaQueseriaArta,
+  ginEvaMallorcaArtisanDistillery,
   oliSolivellasAlcudia,
   sonMoraguesValldemossaAceite,
 ];

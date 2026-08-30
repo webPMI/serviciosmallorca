@@ -108,6 +108,7 @@ export function validateServicesList(services: ServiceItem[]): ValidationResult 
           "cancompany.es",
           "flordesaldestrenc.com",
           "sonnetluxury.com",
+          "casxorc.com",
         ].includes(domain);
         const targetIdentifier = isSharedPlatform
           ? `${domain}${parsed.pathname.toLowerCase().replace(/\/$/, "")}`

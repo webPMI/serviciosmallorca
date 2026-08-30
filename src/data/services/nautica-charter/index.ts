@@ -5,12 +5,14 @@ import { carpinteriaNavalMestres } from "./carpinteria-naval-mestres-daixa.ts";
 import { clubDeMarMallorcaService } from "./club-de-mar-mallorca.ts";
 import { clubNauticPortitxol } from "./club-nautic-portitxol.ts";
 import { easyBoatsMallorca } from "./easy-boats-mallorca.ts";
+import { kitesurfMallorcaPollensaBay } from "./kitesurf-mallorca-pollensa-bay.ts";
 import { mallorcaGlobalCharter } from "./mallorca-global-charter.ts";
 import { marinaDeCalaDorService } from "./marina-de-cala-dor.ts";
 import { marinaPortDeMallorca } from "./marina-port-de-mallorca.ts";
 import { nautinortChartersPollensa } from "./nautinort-charters-pollensa.ts";
 import { oasisCatamaran } from "./oasis-catamaran.ts";
 import { palmaSeaSchoolRyaTraining } from "./palma-sea-school-rya-training.ts";
+import { palmaSupSurfCenterCanPastilla } from "./palma-sup-surf-center-can-pastilla.ts";
 import { pollensaClassicWoodenYachts } from "./pollensa-classic-wooden-yachts.ts";
 import { portAdrianoBoatCharter } from "./port-adriano-boat-charter.ts";
 import { portAndratxRibBoatRental } from "./port-andratx-rib-boat-rental.ts";
@@ -35,12 +37,14 @@ export {
   clubDeMarMallorcaService,
   clubNauticPortitxol,
   easyBoatsMallorca,
+  kitesurfMallorcaPollensaBay,
   mallorcaGlobalCharter,
   marinaDeCalaDorService,
   marinaPortDeMallorca,
   nautinortChartersPollensa,
   oasisCatamaran,
   palmaSeaSchoolRyaTraining,
+  palmaSupSurfCenterCanPastilla,
   pollensaClassicWoodenYachts,
   portAdrianoBoatCharter,
   portAndratxRibBoatRental,
@@ -66,12 +70,14 @@ export const NAUTICA_SERVICES: ServiceItem[] = [
   clubDeMarMallorcaService,
   clubNauticPortitxol,
   easyBoatsMallorca,
+  kitesurfMallorcaPollensaBay,
   mallorcaGlobalCharter,
   marinaDeCalaDorService,
   marinaPortDeMallorca,
   nautinortChartersPollensa,
   oasisCatamaran,
   palmaSeaSchoolRyaTraining,
+  palmaSupSurfCenterCanPastilla,
   pollensaClassicWoodenYachts,
   portAdrianoBoatCharter,
   portAndratxRibBoatRental,

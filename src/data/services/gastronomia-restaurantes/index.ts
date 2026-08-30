@@ -66,8 +66,10 @@ import { carniceriaCanToni } from "./carniceria-can-toni-porreres.ts";
 import { carniceriaCanXarrier } from "./carniceria-can-xarrier-algaida.ts";
 import { carniceriaCanXim } from "./carniceria-can-xim-alaro.ts";
 import { casXorcSoller } from "./cas-xorc-soller.ts";
+import { casaJacintoGenovaBrasas } from "./casa-jacinto-genova-brasas.ts";
 import { cassaiBeachHouse } from "./cassai-beach-house-colonia-sant-jordi.ts";
 import { cellerBarRandaAlgaida } from "./celler-bar-randa-algaida.ts";
+import { cellerCaNIgnasiInca } from "./celler-ca-n-ignasi-inca.ts";
 import { cellerCanAmer } from "./celler-can-amer.ts";
 import { cellerCanCarrossaLloseta } from "./celler-can-carrossa-lloseta.ts";
 import { cellerCanFontSineu } from "./celler-can-font-sineu.ts";
@@ -86,6 +88,7 @@ import { cellerSaVinyaBinissalem } from "./celler-sa-vinya-binissalem.ts";
 import { cellerSonToreoSineu } from "./celler-son-toreo-sineu.ts";
 import { dinsSantiTaura } from "./dins-santi-taura.ts";
 import { elBungalowCiudadJardin } from "./el-bungalow-ciudad-jardin.ts";
+import { elCaminoTapasBarPalma } from "./el-camino-tapas-bar-palma.ts";
 import { elCaminoPalma } from "./el-camino.ts";
 import { elCastilloDelBosque } from "./el-castillo-del-bosque-felanitx.ts";
 import { esGuixEscorca } from "./es-guix-escorca.ts";
@@ -195,10 +198,12 @@ import { restauranteYachtClubCalaDor } from "./restaurante-yacht-club-cala-dor.t
 import { restauranteZaranda } from "./restaurante-zaranda.ts";
 import { saCuinaDeNainaSencelles } from "./sa-cuina-de-naina-sencelles.ts";
 import { saLlotjaPortocolom } from "./sa-llotja-portocolom.ts";
+import { saLlumRestaurantPollensa } from "./sa-llum-restaurant-pollensa.ts";
 import { saTorreSantaEugenia } from "./sa-torre-santa-eugenia.ts";
 import { sieteFuegosSantaPonsa } from "./siete-fuegos-santa-ponsa.ts";
 import { stayPortDePollenca } from "./stay-port-de-pollenca.ts";
 import { terraePortDePollenca } from "./terrae-port-de-pollenca.ts";
+import { terraeRestaurantPortPollensa } from "./terrae-restaurant-port-pollensa.ts";
 import { trespaisPortAndratx } from "./trespais-port-andratx.ts";
 import { vandalPalma } from "./vandal-palma.ts";
 import { vinoDelMarPortAdriano } from "./vino-del-mar-port-adriano.ts";
@@ -271,8 +276,10 @@ export {
   carniceriaCanXarrier,
   carniceriaCanXim,
   casXorcSoller,
+  casaJacintoGenovaBrasas,
   cassaiBeachHouse,
   cellerBarRandaAlgaida,
+  cellerCaNIgnasiInca,
   cellerCanAmer,
   cellerCanCarrossaLloseta,
   cellerCanFontSineu,
@@ -291,6 +298,7 @@ export {
   cellerSonToreoSineu,
   dinsSantiTaura,
   elBungalowCiudadJardin,
+  elCaminoTapasBarPalma,
   elCaminoPalma,
   elCastilloDelBosque,
   esGuixEscorca,
@@ -400,10 +408,12 @@ export {
   restauranteZaranda,
   saCuinaDeNainaSencelles,
   saLlotjaPortocolom,
+  saLlumRestaurantPollensa,
   saTorreSantaEugenia,
   sieteFuegosSantaPonsa,
   stayPortDePollenca,
   terraePortDePollenca,
+  terraeRestaurantPortPollensa,
   trespaisPortAndratx,
   vandalPalma,
   vinoDelMarPortAdriano,
@@ -477,8 +487,10 @@ export const GASTRONOMIA_SERVICES: ServiceItem[] = [
   carniceriaCanXarrier,
   carniceriaCanXim,
   casXorcSoller,
+  casaJacintoGenovaBrasas,
   cassaiBeachHouse,
   cellerBarRandaAlgaida,
+  cellerCaNIgnasiInca,
   cellerCanAmer,
   cellerCanCarrossaLloseta,
   cellerCanFontSineu,
@@ -497,6 +509,7 @@ export const GASTRONOMIA_SERVICES: ServiceItem[] = [
   cellerSonToreoSineu,
   dinsSantiTaura,
   elBungalowCiudadJardin,
+  elCaminoTapasBarPalma,
   elCaminoPalma,
   elCastilloDelBosque,
   esGuixEscorca,
@@ -606,10 +619,12 @@ export const GASTRONOMIA_SERVICES: ServiceItem[] = [
   restauranteZaranda,
   saCuinaDeNainaSencelles,
   saLlotjaPortocolom,
+  saLlumRestaurantPollensa,
   saTorreSantaEugenia,
   sieteFuegosSantaPonsa,
   stayPortDePollenca,
   terraePortDePollenca,
+  terraeRestaurantPortPollensa,
   trespaisPortAndratx,
   vandalPalma,
   vinoDelMarPortAdriano,

@@ -6,6 +6,7 @@ import { can_alomar_urban_spa_palma } from "./can-alomar-urban-spa-palma.ts";
 import { centro_medico_quironsalud_porto_pi } from "./centro-medico-quironsalud-porto-pi.ts";
 import { clinica_aureo_medicina_estetica_palma } from "./clinica-aureo-medicina-estetica-palma.ts";
 import { clinica_baviera_oftalmologia_palma } from "./clinica-baviera-oftalmologia-palma.ts";
+import { clinicaDentalCrookePalma } from "./clinica-dental-crooke-palma.ts";
 import { clinica_dental_moralejo_ruiz_palma } from "./clinica-dental-moralejo-ruiz-palma.ts";
 import { clinica_dental_palma_son_vida } from "./clinica-dental-palma-son-vida.ts";
 import { clinica_dental_portals_nous_calvia } from "./clinica-dental-portals-nous-calvia.ts";
@@ -32,6 +33,7 @@ export {
   centro_medico_quironsalud_porto_pi,
   clinica_aureo_medicina_estetica_palma,
   clinica_baviera_oftalmologia_palma,
+  clinicaDentalCrookePalma,
   clinica_dental_moralejo_ruiz_palma,
   clinica_dental_palma_son_vida,
   clinica_dental_portals_nous_calvia,
@@ -59,6 +61,7 @@ export const SPAS_SERVICES: ServiceItem[] = [
   centro_medico_quironsalud_porto_pi,
   clinica_aureo_medicina_estetica_palma,
   clinica_baviera_oftalmologia_palma,
+  clinicaDentalCrookePalma,
   clinica_dental_moralejo_ruiz_palma,
   clinica_dental_palma_son_vida,
   clinica_dental_portals_nous_calvia,
