@@ -2,6 +2,7 @@ import type { ServiceItem } from "../types.ts";
 import { arabellaSpa } from "./arabella-spa.ts";
 import { belmondLaResidenciaSpa } from "./belmond-la-residencia-spa.ts";
 import { bodynaSpaMaricel } from "./bodyna-spa-maricel.ts";
+import { canAlomarUrbanSpaPalma } from "./can-alomar-urban-spa-palma.ts";
 import { capRocatSpa } from "./cap-rocat-spa.ts";
 import { veterinarioLlucmajor } from "./centro-veterinario-llucmajor.ts";
 import { clinicaJuanedaPalma } from "./clinica-juaneda-palma.ts";
@@ -19,6 +20,7 @@ import { veterinariaSantanyi } from "./clinica-veterinaria-santanyi.ts";
 import { veterinariaSineu } from "./clinica-veterinaria-sineu.ts";
 import { clinicaVeterinariaSonDureta } from "./clinica-veterinaria-son-dureta.ts";
 import { earthYogaPalma } from "./earth-yoga-palma.ts";
+import { fisioterapiaOsteopatiaPalmaCentro } from "./fisioterapia-osteopatia-palma-centro.ts";
 import { hammamPalmaSpa } from "./hammam-palma-spa.ts";
 import { herboristeriaLaRemei } from "./herboristeria-la-remei-palma.ts";
 import { hospitalDeManacor } from "./hospital-de-manacor.ts";
@@ -29,6 +31,7 @@ import { palmaSportTennisClub } from "./palma-sport-tennis-club.ts";
 import { peluqueriaCaninaGuau } from "./peluqueria-canina-guau-palma.ts";
 import { rafaNadalSportsCentre } from "./rafa-nadal-sports-centre.ts";
 import { sonBrullSpa } from "./son-brull-spa.ts";
+import { sonNetSpaWellnessPuigpunyent } from "./son-net-spa-wellness-puigpunyent.ts";
 import { taliseSpaJumeirah } from "./talise-spa-jumeirah.ts";
 import { zunrayYoga } from "./zunray-yoga-palma.ts";
 
@@ -36,6 +39,7 @@ export {
   arabellaSpa,
   belmondLaResidenciaSpa,
   bodynaSpaMaricel,
+  canAlomarUrbanSpaPalma,
   capRocatSpa,
   veterinarioLlucmajor,
   clinicaJuanedaPalma,
@@ -53,6 +57,7 @@ export {
   veterinariaSineu,
   clinicaVeterinariaSonDureta,
   earthYogaPalma,
+  fisioterapiaOsteopatiaPalmaCentro,
   hammamPalmaSpa,
   herboristeriaLaRemei,
   hospitalDeManacor,
@@ -63,6 +68,7 @@ export {
   peluqueriaCaninaGuau,
   rafaNadalSportsCentre,
   sonBrullSpa,
+  sonNetSpaWellnessPuigpunyent,
   taliseSpaJumeirah,
   zunrayYoga,
 };
@@ -71,6 +77,7 @@ export const SPAS_SERVICES: ServiceItem[] = [
   arabellaSpa,
   belmondLaResidenciaSpa,
   bodynaSpaMaricel,
+  canAlomarUrbanSpaPalma,
   capRocatSpa,
   veterinarioLlucmajor,
   clinicaJuanedaPalma,
@@ -88,6 +95,7 @@ export const SPAS_SERVICES: ServiceItem[] = [
   veterinariaSineu,
   clinicaVeterinariaSonDureta,
   earthYogaPalma,
+  fisioterapiaOsteopatiaPalmaCentro,
   hammamPalmaSpa,
   herboristeriaLaRemei,
   hospitalDeManacor,
@@ -98,6 +106,7 @@ export const SPAS_SERVICES: ServiceItem[] = [
   peluqueriaCaninaGuau,
   rafaNadalSportsCentre,
   sonBrullSpa,
+  sonNetSpaWellnessPuigpunyent,
   taliseSpaJumeirah,
   zunrayYoga,
 ];

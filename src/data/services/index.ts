@@ -16,6 +16,7 @@ import { INMOBILIARIA_SERVICES } from "./inmobiliaria-villas/index.ts";
 import { TRANSPORTE_SERVICES } from "./motor-transporte/index.ts";
 import { JARDINERIA_SERVICES } from "./jardineria-piscinas/index.ts";
 import { SEGURIDAD_SERVICES } from "./tecnologia-seguridad/index.ts";
+import { DEPORTES_SERVICES } from "./deportes-fitness/index.ts";
 
 export * from "./types.ts";
 export { TATTOO_SERVICES } from "./arte-tatuajes/index.ts";
@@ -28,6 +29,7 @@ export { INMOBILIARIA_SERVICES } from "./inmobiliaria-villas/index.ts";
 export { TRANSPORTE_SERVICES } from "./motor-transporte/index.ts";
 export { JARDINERIA_SERVICES } from "./jardineria-piscinas/index.ts";
 export { SEGURIDAD_SERVICES } from "./tecnologia-seguridad/index.ts";
+export { DEPORTES_SERVICES } from "./deportes-fitness/index.ts";
 
 /**
  * Catálogo Unificado Global (Agregación de todos los módulos sectoriales).
@@ -44,6 +46,7 @@ export const SERVICES: ServiceItem[] = [
   ...TRANSPORTE_SERVICES,
   ...JARDINERIA_SERVICES,
   ...SEGURIDAD_SERVICES,
+  ...DEPORTES_SERVICES,
 ].filter((s): s is ServiceItem => Boolean(s && s.id && s.slug));
 
 /**

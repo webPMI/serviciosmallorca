@@ -88,6 +88,13 @@ export function validateServicesList(services: ServiceItem[]): ValidationResult 
           "alcudiamar.es",
           "quironsalud.es",
           "portsdebalears.com",
+          "arabellagolfmallorca.com",
+          "t-golf.club",
+          "illesbaleares.com",
+          "vivagym.es",
+          "synergym.es",
+          "brooklynfitboxing.com",
+          "ime.palma.cat",
         ].includes(domain);
         const targetIdentifier = isSharedPlatform
           ? `${domain}${parsed.pathname.toLowerCase().replace(/\/$/, "")}`

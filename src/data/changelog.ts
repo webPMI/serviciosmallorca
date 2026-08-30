@@ -57,7 +57,7 @@ export interface ReleaseLog {
 
 export const CURRENT_PLATFORM_VERSION = "0.03-beta";
 export const PLATFORM_RELEASE_DATE = "2026-08-30";
-export const PLATFORM_LAST_BUILD_TIMESTAMP = "2026-08-30T10:30:00+02:00";
+export const PLATFORM_LAST_BUILD_TIMESTAMP = "2026-08-30T12:38:00+02:00";
 
 /**
  * Devuelve la fecha y hora formateada de la última actualización según el idioma.

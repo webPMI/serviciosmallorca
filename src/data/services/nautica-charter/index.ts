@@ -10,7 +10,10 @@ import { marinaDeCalaDorService } from "./marina-de-cala-dor.ts";
 import { marinaPortDeMallorca } from "./marina-port-de-mallorca.ts";
 import { nautinortChartersPollensa } from "./nautinort-charters-pollensa.ts";
 import { oasisCatamaran } from "./oasis-catamaran.ts";
+import { palmaSeaSchoolRyaTraining } from "./palma-sea-school-rya-training.ts";
+import { pollensaClassicWoodenYachts } from "./pollensa-classic-wooden-yachts.ts";
 import { portAdrianoBoatCharter } from "./port-adriano-boat-charter.ts";
+import { portAndratxRibBoatRental } from "./port-andratx-rib-boat-rental.ts";
 import { portDeSollerMarinaService } from "./port-de-soller-marina.ts";
 import { clubNauticPortocolomService } from "./portocolom-yacht-club.ts";
 import { puertoPortalsMarina } from "./puerto-portals-marina.ts";
@@ -20,6 +23,7 @@ import { ribClubMallorcaService } from "./rib-club-mallorca.ts";
 import { scubaMallorcaPortPollenca } from "./scuba-mallorca-port-pollenca.ts";
 import { skualoAlcudia } from "./skualo-alcudia-diving.ts";
 import { skualoPortoCristo } from "./skualo-porto-cristo.ts";
+import { sunseekerCharterMallorcaPortals } from "./sunseeker-charter-mallorca-portals.ts";
 import { varaderoAlcudiamar } from "./varadero-alcudiamar.ts";
 import { varaderoPortitxol } from "./varadero-portitxol-services.ts";
 import { zoeaBuceoMallorca } from "./zoea-mallorca-buceo.ts";
@@ -36,7 +40,10 @@ export {
   marinaPortDeMallorca,
   nautinortChartersPollensa,
   oasisCatamaran,
+  palmaSeaSchoolRyaTraining,
+  pollensaClassicWoodenYachts,
   portAdrianoBoatCharter,
+  portAndratxRibBoatRental,
   portDeSollerMarinaService,
   clubNauticPortocolomService,
   puertoPortalsMarina,
@@ -46,6 +53,7 @@ export {
   scubaMallorcaPortPollenca,
   skualoAlcudia,
   skualoPortoCristo,
+  sunseekerCharterMallorcaPortals,
   varaderoAlcudiamar,
   varaderoPortitxol,
   zoeaBuceoMallorca,
@@ -63,7 +71,10 @@ export const NAUTICA_SERVICES: ServiceItem[] = [
   marinaPortDeMallorca,
   nautinortChartersPollensa,
   oasisCatamaran,
+  palmaSeaSchoolRyaTraining,
+  pollensaClassicWoodenYachts,
   portAdrianoBoatCharter,
+  portAndratxRibBoatRental,
   portDeSollerMarinaService,
   clubNauticPortocolomService,
   puertoPortalsMarina,
@@ -73,6 +84,7 @@ export const NAUTICA_SERVICES: ServiceItem[] = [
   scubaMallorcaPortPollenca,
   skualoAlcudia,
   skualoPortoCristo,
+  sunseekerCharterMallorcaPortals,
   varaderoAlcudiamar,
   varaderoPortitxol,
   zoeaBuceoMallorca,

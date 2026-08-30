@@ -4,6 +4,8 @@ import { electricidadSoller } from "./electricidad-climatizacion-soller.ts";
 import { electricidadBinissalem } from "./electricidad-domotica-binissalem.ts";
 import { solarArta } from "./energia-solar-arta.ts";
 import { fibwiTelecomunicaciones } from "./fibwi-telecomunicaciones.ts";
+import { knxSmartHomeDomoticaMallorca } from "./knx-smart-home-domotica-mallorca.ts";
+import { prosegurSeguridadVillasBaleares } from "./prosegur-seguridad-villas-baleares.ts";
 import { trablisaSeguridad } from "./trablisa.ts";
 
 export {
@@ -12,6 +14,8 @@ export {
   electricidadBinissalem,
   solarArta,
   fibwiTelecomunicaciones,
+  knxSmartHomeDomoticaMallorca,
+  prosegurSeguridadVillasBaleares,
   trablisaSeguridad,
 };
 
@@ -21,5 +25,7 @@ export const SEGURIDAD_SERVICES: ServiceItem[] = [
   electricidadBinissalem,
   solarArta,
   fibwiTelecomunicaciones,
+  knxSmartHomeDomoticaMallorca,
+  prosegurSeguridadVillasBaleares,
   trablisaSeguridad,
 ];

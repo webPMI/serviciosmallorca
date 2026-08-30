@@ -107,12 +107,21 @@ export function mergeServiceWithOverride(staticService: ServiceItem, override: S
     image: override.image || staticService.image,
     gallery: override.gallery && override.gallery.length > 0 ? override.gallery : staticService.gallery,
     evolutionHistory: mergedHistory.length > 0 ? mergedHistory : undefined,
-    fullDescription: {
-      es: override.fullDescription?.es || staticService.fullDescription.es,
-      en: override.fullDescription?.en || staticService.fullDescription.en,
-      ca: override.fullDescription?.ca || staticService.fullDescription.ca,
-      de: override.fullDescription?.de || staticService.fullDescription.de,
-    },
+    fullDescription: staticService.fullDescription
+      ? {
+          es: override.fullDescription?.es || staticService.fullDescription.es || "",
+          en: override.fullDescription?.en || staticService.fullDescription.en || "",
+          ca: override.fullDescription?.ca || staticService.fullDescription.ca || "",
+          de: override.fullDescription?.de || staticService.fullDescription.de || "",
+        }
+      : override.fullDescription
+        ? {
+            es: override.fullDescription.es || "",
+            en: override.fullDescription.en || "",
+            ca: override.fullDescription.ca || "",
+            de: override.fullDescription.de || "",
+          }
+        : undefined,
     highlights: {
       es: override.highlights?.es || staticService.highlights?.es || [],
       en: override.highlights?.en || staticService.highlights?.en || [],

@@ -77,7 +77,7 @@ export const POST: APIRoute = async ({ request, locals }) => {
         },
       },
     );
-  } catch (err: any) {
+  } catch {
     return new Response(
       JSON.stringify({
         ok: false,

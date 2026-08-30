@@ -109,7 +109,7 @@ describe("Catalog Re-Harvesting and Smart Merge Engine", () => {
 
     const { merged } = smartMergeService(mockExistingService, harvestedTemplate);
 
-    expect(merged.fullDescription.es).toBe("Descripción extensa y curada manualmente.");
+    expect(merged.fullDescription?.es).toBe("Descripción extensa y curada manualmente.");
     expect(merged.founderStory?.es).toBe("Historia auténtica");
   });
 });

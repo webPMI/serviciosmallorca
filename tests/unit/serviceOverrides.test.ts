@@ -142,8 +142,8 @@ describe("mergeServiceWithOverride · Merge parcial overlay", () => {
       highlights: { es: ["Highlight nuevo"] },
     });
     expect(merged.phone).toBe("+34622333444");
-    expect(merged.fullDescription.es).toBe("nuevo-es");
-    expect(merged.fullDescription.de).toBe("desc-de"); // caída al estático
+    expect(merged.fullDescription?.es).toBe("nuevo-es");
+    expect(merged.fullDescription?.de).toBe("desc-de"); // caída al estático
     expect(merged.highlights?.es).toEqual(["Highlight nuevo"]);
     expect(merged.highlights?.en).toEqual([]); // fallback a default []
     expect(merged.servicesProvided?.es).toEqual([]);

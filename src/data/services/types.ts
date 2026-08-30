@@ -82,7 +82,8 @@ export interface TeamMember {
 export interface PricingDetail {
   startingPrice?: string; // "Desde 60€" / "From 60€"
   depositRequired?: string; // "Señal de reserva: 30€"
-  rateType?: "fixed" | "hourly" | "custom_quote" | "tiered";
+  rateType?: "fixed" | "hourly" | "custom_quote" | "tiered" | "daily";
+  pricingType?: "fixed" | "hourly" | "custom_quote" | "tiered" | "daily";
   notes?: { es?: string; en?: string; ca?: string; de?: string };
 }
 
@@ -138,8 +139,8 @@ export interface ReputationBreakdown {
   trustpilot?: PlatformScore;
   thefork?: PlatformScore;
   treatwell?: PlatformScore;
-  totalReviewsAggregated: number | null; // Permite null cuando no hay datos
-  overallWeightedRating: number | null; // Permite null cuando no hay datos
+  totalReviewsAggregated?: number | null;
+  overallWeightedRating?: number | null;
 }
 
 export interface SocialMediaLinks {
@@ -302,17 +303,25 @@ export interface ServiceItem {
   appleMapsUrl: string;
   bingMapsUrl: string;
   phone: string;
-  whatsapp: string;
-  email: string;
+  whatsapp?: string;
+  email?: string;
   website: string;
-  tags: string[];
+  tags?: string[];
+  description?:
+    | string
+    | {
+        es: string;
+        en: string;
+        ca: string;
+        de?: string;
+      };
   shortDescription: {
     es: string;
     en: string;
     ca: string;
     de?: string;
   };
-  fullDescription: {
+  fullDescription?: {
     es: string;
     en: string;
     ca: string;
@@ -333,7 +342,7 @@ export interface ServiceItem {
   image: string;
   images?: string[];
   gallery?: string[];
-  schedule: string;
+  schedule: string | Record<string, unknown>;
   onlineStore?: OnlineStoreInfo;
   products?: StoreProduct[];
   menuUrl?: string; // Enlace directo a la carta digital o PDF del menú
