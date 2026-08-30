@@ -378,4 +378,13 @@ export interface ServiceItem {
   communityBoostTotal?: number; // Total acumulado en euros (€) aportado por la comunidad
   communityBackersCount?: number; // Cantidad de vecinos/fans que han aupado este negocio
   evolutionHistory?: ServiceEvolutionEntry[]; // Memoria histórica de la evolución del servicio
+  socialProofBadges?: Array<{
+    icon?: string;
+    label: { es: string; en: string; ca: string; de?: string } | string;
+  }>;
+  localSeoKeywords?: {
+    primary: string;
+    secondary?: string[];
+    locationKeywords?: string[];
+  };
 }

@@ -27,11 +27,8 @@ export const rafaNadalSportsCentre: ServiceItem = {
   coordinates: { lat: 39.5694, lng: 3.2201 },
   schedule: "Lunes a Domingo: 07:00 - 22:30 (Instalaciones abiertas todo el año)",
   lastVerifiedAt: "2026-08-25",
-  image: "https://www.rafanadalacademy.com/wp-content/uploads/2026/04/DSC01788-scaled.jpg",
-  gallery: [
-    "https://www.rafanadalacademy.com/wp-content/uploads/2026/08/Concept-12-e1787562762629.jpg",
-    "https://www.rafanadalacademy.com/wp-content/uploads/2025/04/ISM02821-scaled-e1744632366882.jpg",
-  ],
+  image: "/images/services/rafa-nadal-academy-manacor.jpg",
+  gallery: ["/images/services/rafa-nadal-academy-manacor.jpg"],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "en", "ca", "de", "fr"],
   emergency24h: false,

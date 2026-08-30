@@ -1,6 +1,5 @@
 import fs from "node:fs";
 import path from "node:path";
-import type { ServiceItem } from "../src/data/services/types.ts";
 
 export interface NewBusinessSeed {
   id: string;

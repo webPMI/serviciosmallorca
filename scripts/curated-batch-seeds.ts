@@ -1,6 +1,4 @@
 import { writeServiceModule, type NewBusinessSeed } from "./mass-curation-ingest.ts";
-import fs from "node:fs";
-import path from "node:path";
 
 export const BATCH_1_SEEDS: NewBusinessSeed[] = [
   // ─── 1. GASTRONOMÍA & BODEGAS ───────────────────────────────────────────────

@@ -1,12 +1,3 @@
-import fs from "node:fs";
-import path from "node:path";
-
-interface WikiImageInfo {
-  url: string;
-  descriptionurl: string;
-  descriptionshorturl: string;
-}
-
 async function fetchWikiImageUrl(fileName: string): Promise<string> {
   const endpoint = `https://commons.wikimedia.org/w/api.php?action=query&titles=File:${encodeURIComponent(fileName)}&prop=imageinfo&iiprop=url&format=json`;
   const res = await fetch(endpoint, {

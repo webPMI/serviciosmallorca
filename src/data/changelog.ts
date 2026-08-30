@@ -55,9 +55,9 @@ export interface ReleaseLog {
   entries: ChangelogEntry[];
 }
 
-export const CURRENT_PLATFORM_VERSION = "0.02-beta";
-export const PLATFORM_RELEASE_DATE = "2026-08-29";
-export const PLATFORM_LAST_BUILD_TIMESTAMP = "2026-08-29T10:50:00+02:00";
+export const CURRENT_PLATFORM_VERSION = "0.03-beta";
+export const PLATFORM_RELEASE_DATE = "2026-08-30";
+export const PLATFORM_LAST_BUILD_TIMESTAMP = "2026-08-30T10:30:00+02:00";
 
 /**
  * Devuelve la fecha y hora formateada de la última actualización según el idioma.
@@ -84,6 +84,94 @@ export function getFormattedBuildTimestamp(locale: "es" | "en" | "ca" | "de" = "
 }
 
 export const CHANGELOG_RELEASES: ReleaseLog[] = [
+  {
+    version: "0.03",
+    versionLabel: {
+      es: "v0.03-beta · Expansión Deportiva de Élite, 100% Fotos Reales Locales & Blindaje TypeScript",
+      en: "v0.03-beta · Elite Sports Vertical Expansion, 100% Real Local Photos & TypeScript Shielding",
+      ca: "v0.03-beta · Expansió Esportiva d'Elit, 100% Fotos Reals Locals i Blindatge TypeScript",
+      de: "v0.03-beta · Elite-Sportbereich-Erweiterung, 100% Echte Lokale Fotos & TypeScript-Härtung",
+    },
+    type: "BETA",
+    date: "2026-08-30",
+    summary: {
+      es: "Incorporación de la vertical deportiva de élite (Rafa Nadal Academy, Palma Tennis Club 1964, Megasport, Vilas Tennis), migración total a fotografías reales locales verificadas en alta resolución y optimizaciones de metadatos sociales para WhatsApp.",
+      en: "Integration of elite sports institutions (Rafa Nadal Academy, Palma Tennis Club 1964, Megasport, Vilas Tennis), full migration to 100% verified local real photography, and rich social media Open Graph assets for WhatsApp.",
+      ca: "Incorporació d'institucions esportives d'elit (Rafa Nadal Academy, Palma Tennis Club 1964, Megasport, Vilas Tennis), migració al 100% de fotografies reals locals i metadades socials per a WhatsApp.",
+      de: "Integration erstklassiger Sporteinrichtungen (Rafa Nadal Academy, Palma Tennis Club 1964, Megasport, Vilas Tennis), vollständige Migration auf 100% verifizierte lokale Echtfotos und optimierte Open-Graph-Tags für WhatsApp.",
+    },
+    highlights: {
+      es: [
+        "Vertical Deportiva y Bienestar: Inclusión de Rafa Nadal Academy (Manacor), Mallorca Tennis Club 1964 (Palma) y Vilas Tennis Academy (Calvià).",
+        "100% Media Auténtica: Todos los servicios del catálogo cuentan con fotografías reales de Mallorca de alta resolución.",
+        "Metadatos Open Graph 1200x630: Visualización nítida y enriquecida en compartición por WhatsApp, Telegram y redes sociales.",
+        "Blindaje TypeScript & 5 Pilares: Tipado estricto con soporte para socialProofBadges y localSeoKeywords sin errores de compilación.",
+      ],
+      en: [
+        "Elite Sports & Wellness Vertical: Inclusion of Rafa Nadal Academy (Manacor), Mallorca Tennis Club 1964 (Palma), and Vilas Tennis Academy (Calvià).",
+        "100% Authentic Media: Every catalog service features high-resolution verified real photography of Mallorca.",
+        "Social Open Graph 1200x630: Rich preview cards for seamless sharing on WhatsApp, Telegram, and social networks.",
+        "TypeScript & 5-Pillar Architecture: Strict typing for socialProofBadges and localSeoKeywords with zero compiler errors.",
+      ],
+      ca: [
+        "Vertical Esportiva i Benestar: Rafa Nadal Academy (Manacor), Mallorca Tennis Club 1964 (Palma) i Vilas Tennis Academy (Calvià).",
+        "100% Media Autèntica: Fotografies reals d'alta resolució per a tot el catàleg de serveis.",
+        "Metadades Open Graph 1200x630: Targetes enriquides per a compartir a WhatsApp i xarxes socials.",
+        "Blindatge TypeScript i 5 Pilars: Tipatge estricte sense cap error de compilació.",
+      ],
+      de: [
+        "Elite-Sport & Wellness-Bereich: Rafa Nadal Academy (Manacor), Mallorca Tennis Club 1964 (Palma) und Vilas Tennis Academy (Calvià).",
+        "100% Authentische Medien: Hochauflösende, verifizierte Echtfotos für alle Dienstleistungen im gesamten Katalog.",
+        "Open-Graph-Karten 1200x630: Gestochen scharfe Vorschauen beim Teilen über WhatsApp, Telegram und soziale Medien.",
+        "TypeScript-Härtung: Vollständige Typensicherheit für socialProofBadges und localSeoKeywords ohne Compiler-Fehler.",
+      ],
+    },
+    entries: [
+      {
+        category: "FEATURE",
+        title: {
+          es: "Expansión de la Vertical Deportiva & Tenis de Élite",
+          en: "Elite Tennis & Sports Vertical Expansion",
+          ca: "Expansió de la Vertical Esportiva i Tennis d'Elit",
+          de: "Erweiterung des Elite-Tennis- und Sportangebots",
+        },
+        description: {
+          es: "Incorporación de fichas completas para Rafa Nadal Academy by Movistar y Mallorca Tennis Club 1964 con detalles de pistas, horarios, museo y programas.",
+          en: "Added detailed profiles for Rafa Nadal Academy by Movistar and Mallorca Tennis Club 1964 with court details, schedules, museum, and training camps.",
+          ca: "Noves fitxes completes per a Rafa Nadal Academy i Mallorca Tennis Club 1964.",
+          de: "Vollständige Profile für die Rafa Nadal Academy by Movistar und den Mallorca Tennis Club 1964 mit Platzbuchungen und Trainingsprogrammen.",
+        },
+        badgeText: {
+          es: "Deportes & Élite",
+          en: "Sports & Elite",
+          ca: "Esports i Èlit",
+          de: "Sport & Elite",
+        },
+      },
+      {
+        category: "PERFORMANCE",
+        title: {
+          es: "100% Fotografías Reales Locales & Open Graph WhatsApp",
+          en: "100% Real Local Photos & WhatsApp Open Graph",
+          ca: "100% Fotografies Reals Locals i Open Graph WhatsApp",
+          de: "100% Lokale Echtfotos & WhatsApp Open Graph",
+        },
+        description: {
+          es: "Sustitución de marcadores de posición SVG por imágenes JPEG reales y optimización de metadatos de compartición social.",
+          en: "Replaced all SVG placeholders with authentic high-res JPEG photos and optimized social share cards.",
+          ca: "Substitució de marcadors SVG per fotografies reals JPEG.",
+          de: "Ersetzung aller SVG-Platzhalter durch echte JPEG-Fotos und Optimierung der Social-Media-Vorschauen.",
+        },
+        badgeText: {
+          es: "Media & SEO",
+          en: "Media & SEO",
+          ca: "Media i SEO",
+          de: "Medien & SEO",
+        },
+      },
+    ],
+  },
+
   {
     version: "0.02",
     versionLabel: {

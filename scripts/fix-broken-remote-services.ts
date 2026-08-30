@@ -1,6 +1,5 @@
 import fs from "node:fs";
 import path from "node:path";
-import { SERVICES } from "../src/data/services/index.ts";
 
 const BROKEN_SLUGS = [
   "museu-sa-bassa-blanca-alcudia",

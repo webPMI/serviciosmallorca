@@ -1,6 +1,5 @@
 import fs from "node:fs";
 import path from "node:path";
-import { SERVICES } from "../src/data/services/index.ts";
 
 const CATEGORY_MAP: Record<string, string> = {
   "gastronomia-catering": "gastronomia.jpg",

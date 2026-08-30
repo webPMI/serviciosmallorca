@@ -1,6 +1,3 @@
-import fs from "node:fs";
-import path from "node:path";
-
 async function searchWikiCommons(query: string, limit = 5): Promise<string[]> {
   const endpoint = `https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrnamespace=6&gsrsearch=${encodeURIComponent(query)}&gsrlimit=${limit}&prop=imageinfo&iiprop=url|mime&format=json`;
   const res = await fetch(endpoint, {
