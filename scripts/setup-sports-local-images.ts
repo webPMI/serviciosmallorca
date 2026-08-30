@@ -59,7 +59,7 @@ const facilitiesFilePath = path.join(process.cwd(), "src", "data", "sports", "fa
 let facilitiesCode = fs.readFileSync(facilitiesFilePath, "utf8");
 
 // Reemplazar URLs remotas o viejas por la ruta local limpia
-facilitiesCode = facilitiesCode.replace(/image:\s*"https?:\/\/[^"]+"/g, (match, offset) => {
+facilitiesCode = facilitiesCode.replace(/image:\s*"https?:\/\/[^"]+"/g, (_match, offset) => {
   // Buscar el slug más cercano antes de esta línea
   const codeBefore = facilitiesCode.slice(Math.max(0, offset - 1000), offset);
   const slugMatch = codeBefore.match(/slug:\s*"([^"]+)"/g);
@@ -71,7 +71,7 @@ facilitiesCode = facilitiesCode.replace(/image:\s*"https?:\/\/[^"]+"/g, (match, 
 });
 
 // Reemplazar arrays de gallery que contengan https://
-facilitiesCode = facilitiesCode.replace(/gallery:\s*\[[\s\S]*?\],/g, (match, offset) => {
+facilitiesCode = facilitiesCode.replace(/gallery:\s*\[[\s\S]*?\],/g, (_match, offset) => {
   const codeBefore = facilitiesCode.slice(Math.max(0, offset - 1000), offset);
   const slugMatch = codeBefore.match(/slug:\s*"([^"]+)"/g);
   if (slugMatch && slugMatch.length > 0) {
