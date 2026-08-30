@@ -107,7 +107,7 @@ export function validateFeedbackSubmission(payload: Partial<FeedbackSubmissionPa
   }
 
   // 6. Validación de Email (Opcional pero con formato si se proporciona)
-  let rawEmail = payload.authorEmail?.trim() || "";
+  const rawEmail = payload.authorEmail?.trim() || "";
   if (rawEmail) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(rawEmail) || rawEmail.length > 150) {

@@ -431,7 +431,6 @@ const initialFilteredServices = SERVICES.filter((service) => {
 
     // also update results-count-display
     const countDisplay = document.getElementById("results-count-display");
-    const origApply = applyFilters;
     // wrap to also update display
     searchInput?.addEventListener("input", () => {
       if (countDisplay && countNum) countDisplay.textContent = countNum.textContent;

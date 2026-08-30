@@ -51,12 +51,15 @@ describe("Sports & Wellbeing POI Module (Deporte & Bienestar Mallorca)", () => {
     expect(yogaFacilities.length).toBeGreaterThanOrEqual(1);
     expect(yogaFacilities.some((f) => f.id === "sadhana-works-yoga-palma")).toBe(true);
 
-    // Los nuevos gimnasios deben existir y estar correctamente tipados
+    // Los gimnasios, box de CrossFit y rocódromo deben existir y estar correctamente tipados
     const gymFacilities = getSportsFacilitiesByActivity("fitness_gym");
-    expect(gymFacilities.length).toBeGreaterThanOrEqual(4);
+    expect(gymFacilities.length).toBeGreaterThanOrEqual(6);
     expect(gymFacilities.some((f) => f.id === "basic-fit-palma-avda-portugal")).toBe(true);
     expect(gymFacilities.some((f) => f.id === "vivagym-porto-pi-palma")).toBe(true);
     expect(gymFacilities.some((f) => f.id === "crossfit-mallorca-santa-ponca")).toBe(true);
+    expect(gymFacilities.some((f) => f.id === "crossfit-tramuntana-palma")).toBe(true);
+    expect(gymFacilities.some((f) => f.id === "rock-n-palma-rocodromo")).toBe(true);
+    expect(gymFacilities.some((f) => f.id === "mallorca-country-club-santa-ponca")).toBe(true);
   });
 
   it("filters facilities accurately by geographical zone", () => {
