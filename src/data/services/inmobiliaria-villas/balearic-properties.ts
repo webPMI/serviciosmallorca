@@ -28,7 +28,7 @@ export const balearicProperties: ServiceItem = {
   schedule: "Lunes a Viernes: 09:00 - 19:00 | Sábados: 10:00 - 14:00",
   lastVerifiedAt: "2026-08-25",
   image: "/images/services/balearic-properties.jpg",
-  gallery: [],
+  gallery: ["/images/services/balearic-properties.jpg"],
   targetAudience: ["residentes", "turistas", "expat"],
   languagesSpoken: ["es", "en", "de", "ca", "fr"],
   emergency24h: false,

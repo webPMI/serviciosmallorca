@@ -33,7 +33,7 @@ export const spectrumIfaGroupMallorcaWealth: ServiceItem = {
   paymentMethods: ["credit_card", "bank_transfer", "cash"],
   phone: "+34 971 42 51 04",
   website: "https://www.spectrum-ifa.com/mallorca/",
-  image: "/images/services/spectrum-ifa-group-mallorca-wealth.webp",
+  image: "/images/services/spectrum-ifa-group-mallorca-wealth.jpg",
   shortDescription: {
     es: "Asesores financieros independientes regulados en España para expatriados británicos e internacionales en Mallorca.",
     en: "Regulated independent financial advisers specializing in tax planning, pensions, and wealth management for expats.",

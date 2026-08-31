@@ -139,11 +139,8 @@ export const canJoanDeSAigoPalma: ServiceItem = {
     ca: "El 1700, Joan de s'Aigo va començar portant neu de la Tramuntana per fer els primers gelats d'aigua i ametla a Palma, creant una icona centenària.",
     de: "1700 begann Joan de s'Aigo mit Schnee aus den Steinkammern der Tramuntana die ersten Mandelsorbets Palmas herzustellen und schuf damit eine über dreihundertjährige Legende.",
   },
-  image:
-    "https://canjoandesaigo.com/wp-content/uploads/2025/09/Helados-Palma-Mallorca-Can-Joan-de-sAigo-16-300x200.jpg",
-  gallery: [
-    "https://canjoandesaigo.com/wp-content/uploads/2025/09/Helados-Palma-Mallorca-Can-Joan-de-sAigo-18-300x200.jpg",
-  ],
+  image: "/images/services/can-joan-de-saigo-palma.jpg",
+  gallery: ["/images/services/can-joan-de-saigo-palma.jpg"],
   schedule: "Lunes a Domingo: 08:00 - 21:00 (Abierto todos los días)",
   confidenceScore: 99,
   verificationStatus: "verified",

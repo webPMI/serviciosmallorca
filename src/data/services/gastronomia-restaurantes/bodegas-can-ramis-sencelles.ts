@@ -135,12 +135,8 @@ export const bodegasCanRamisSencelles: ServiceItem = {
     ca: "El 1870, Pedro Molina i Francisca Amengual van fundar Can Ramis a Sencelles per fer vi autèntic de la terra, que avui continua viu amb la quarta generació.",
     de: "1870 von Pedro Molina und Francisca Amengual in Sencelles gegründet, führt die Familie das historische Weingut heute mit Stolz in der vierten Generation.",
   },
-  image:
-    "https://canramis.com/Media/bodegacanramis/_Profiles/87559876/48bd0739/DO-BINISSALEM-CAN-RAMIS-01%20-%20copia.jpg",
-  gallery: [
-    "https://canramis.com/Media/bodegacanramis/_Profiles/87559876/48bd0739/DO-BINISSALEM-CAN-RAMIS-06%20-%20copia.jpg",
-    "https://canramis.com/Media/bodegacanramis/_Profiles/87559876/48bd0739/DO-BINISSALEM-CAN-RAMIS-04%20-%20copia.jpg",
-  ],
+  image: "/images/services/bodegas-can-ramis-sencelles.jpg",
+  gallery: ["/images/services/bodegas-can-ramis-sencelles.jpg"],
   schedule: "Lunes a Sábado: Visitas y catas bajo cita previa por teléfono o WhatsApp | Domingo cerrado",
   confidenceScore: 99,
   verificationStatus: "verified",

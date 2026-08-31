@@ -136,7 +136,7 @@ export const saCuinaDeNainaSencelles: ServiceItem = {
     de: "1995 öffnete Aina ihr Haus in Sencelles, um Gästen traditionelle Familienrezepte in herzlicher dörflicher Atmosphäre zu servieren.",
   },
   image: "/images/services/sa-cuina-de-naina-sencelles.jpg",
-  gallery: [],
+  gallery: ["/images/services/sa-cuina-de-naina-sencelles.jpg"],
   schedule: "Miércoles a Domingo: 13:00 - 15:30, 20:00 - 22:30 | Lunes y Martes cerrado",
   confidenceScore: 98,
   verificationStatus: "verified",

@@ -142,13 +142,8 @@ export const restauranteCanGavellaCanPicafort: ServiceItem = {
     ca: "El 2011, Can Gavella va néixer a Casetes des Capellans per gaudir de la millor paella marinera amb els peus descalços a l'arena davant la mar.",
     de: "2011 an den Casetes des Capellans eröffnet, bietet das Can Gavella ein unvergleichliches Stranderlebnis: beste Paella barfuß im Sand direkt am Meer.",
   },
-  image:
-    "https://cangavella.com/wp-content/uploads/2026/03/restaurante-capellans-playa-de-muro-can-gavella-beach-club.jpg",
-  gallery: [
-    "https://cangavella.com/wp-content/uploads/2025/12/CAN-GAVELLA_PLAYA-DE-MURO_PAELLAS.jpg",
-    "https://cangavella.com/wp-content/uploads/2025/12/CAN-GAVELLA_PLAYA-DE-MURO-1.jpg",
-    "https://cangavella.com/wp-content/uploads/2025/12/CAN-GAVELLA_PLAYA-DE-MURO_COCKTAIL.jpg",
-  ],
+  image: "/images/services/restaurante-can-gavella-can-picafort.jpg",
+  gallery: ["/images/services/restaurante-can-gavella-can-picafort.jpg"],
   schedule:
     "Lunes a Domingo: 11:00 - 22:00 (Cocina: 12:00 - 21:00 en temporada verano) | Reserva online imprescindible",
   confidenceScore: 99,

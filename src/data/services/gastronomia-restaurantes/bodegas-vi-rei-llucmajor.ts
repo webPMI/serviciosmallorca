@@ -141,12 +141,8 @@ export const bodegasViReiLlucmajor: ServiceItem = {
     ca: "Fundat el 2014 a Llucmajor, Vi Rei va néixer amb la visió de crear un celler d'avantguarda de referència internacional vora la mar.",
     de: "2014 nahe den Klippen von Llucmajor gegründet, verbindet Vi Rei modernste Kellertechnik mit erstklassigem Enotourismus inmitten mediterraner Natur.",
   },
-  image: "https://bodegasvirei.com/wp-content/uploads/2019/10/SLIDER.jpg",
-  gallery: [
-    "https://bodegasvirei.com/wp-content/uploads/2019/10/visitasguiadas.jpg",
-    "https://bodegasvirei.com/wp-content/uploads/2022/01/Trenecito_visita_guiada_y_cata_de_vinos-300x300.jpg",
-    "https://bodegasvirei.com/wp-content/uploads/2020/07/ViRei_Catas-300x300.jpg",
-  ],
+  image: "/images/services/bodegas-vi-rei-llucmajor.jpg",
+  gallery: ["/images/services/bodegas-vi-rei-llucmajor.jpg"],
   schedule:
     "Lunes a Domingo: 10:00 - 18:00 (Visitas con tren y catas guiadas con horario programado | Abierto todos los días)",
   confidenceScore: 99,

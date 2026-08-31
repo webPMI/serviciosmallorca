@@ -33,7 +33,7 @@ export const mallorcaWeddingPlannersFincas: ServiceItem = {
   paymentMethods: ["credit_card", "bank_transfer", "cash"],
   phone: "+34 971 72 88 33",
   website: "https://www.mallorcafincaweddings.com/",
-  image: "/images/services/mallorca-wedding-planners-fincas.webp",
+  image: "/images/services/mallorca-wedding-planners-fincas.jpg",
   shortDescription: {
     es: "Planificación y diseño de bodas exclusivas en fincas privadas y posesiones históricas de Mallorca.",
     en: "Luxury wedding planning and bespoke styling in private historic fincas and coastal estates in Mallorca.",

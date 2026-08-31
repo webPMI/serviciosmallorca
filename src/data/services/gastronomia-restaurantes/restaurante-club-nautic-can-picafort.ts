@@ -142,11 +142,8 @@ export const restauranteClubNauticCanPicafort: ServiceItem = {
     ca: "El restaurant del Club Nàutic va néixer el 1971 com a punt de trobada per a navegants i amants de la mar a Can Picafort.",
     de: "1971 als gastronomischer Mittelpunkt für Segler und Fischer gegründet, bietet das Restaurant im Club Nàutic Can Picafort unverfälschte maritime Küche im Norden der Insel.",
   },
-  image: "https://cncanpicafort.com/database/home/restaurante-home.jpg",
-  gallery: [
-    "https://cncanpicafort.com/database/home/amarres-home.jpg",
-    "https://cncanpicafort.com/database/fotogaleria/dsc01493.jpg",
-  ],
+  image: "/images/services/restaurante-club-nautic-can-picafort.jpg",
+  gallery: ["/images/services/restaurante-club-nautic-can-picafort.jpg"],
   schedule: "Martes a Domingo: 09:00 - 23:30 | Lunes cerrado",
   confidenceScore: 99,
   verificationStatus: "verified",

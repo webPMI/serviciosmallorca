@@ -33,7 +33,7 @@ export const mallorcaBalloonsManacor: ServiceItem = {
   paymentMethods: ["credit_card", "bank_transfer", "cash"],
   phone: "+34 971 59 69 69",
   website: "https://www.mallorcaballoons.com/",
-  image: "/images/services/mallorca-balloons-manacor.webp",
+  image: "/images/services/mallorca-balloons-manacor.jpg",
   shortDescription: {
     es: "Vuelos en globo aerostático al amanecer y atardecer sobre Mallorca.",
     en: "Hot air balloon flights at sunrise and sunset over Mallorca.",

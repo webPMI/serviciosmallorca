@@ -33,7 +33,7 @@ export const kitesurfMallorcaPollensaBay: ServiceItem = {
   paymentMethods: ["credit_card", "bank_transfer", "cash"],
   phone: "+34 971 86 78 20",
   website: "https://www.kitesurfmallorca.com/",
-  image: "/images/services/kitesurf-mallorca-pollensa-bay.webp",
+  image: "/images/services/kitesurf-mallorca-pollensa-bay.jpg",
   shortDescription: {
     es: "Escuela oficial IKO de Kitesurf y Wing Foil en la bahía de Pollença con viento térmico constante Embat.",
     en: "Official IKO Kitesurf & Wing Foil academy in Pollença Bay blessed with steady thermal Embat winds.",

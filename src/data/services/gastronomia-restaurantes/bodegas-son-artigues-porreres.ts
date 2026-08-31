@@ -142,11 +142,8 @@ export const bodegasSonArtiguesPorreres: ServiceItem = {
     ca: "El 2004, la família de Son Artigues va plantar les seves vinyes a Porreres per fer vins artesans que transmetessin la noblesa del camp mallorquí.",
     de: "2004 pflanzte die Familie Son Artigues ihre ersten Reben in Porreres, um handwerklich vollendete Weine mit dem Charakter der Region zu keltern.",
   },
-  image: "https://www.sonartigues.com/s/img/emotionheader.jpg?1600436939.920px.584px",
-  gallery: [
-    "https://www.sonartigues.com/s/cc_images/cache_39703605.jpg?t=1462984352",
-    "https://www.sonartigues.com/s/cc_images/cache_39703156.jpg?t=1462984684",
-  ],
+  image: "/images/services/bodegas-son-artigues-porreres.jpg",
+  gallery: ["/images/services/bodegas-son-artigues-porreres.jpg"],
   schedule: "Lunes a Viernes: 10:00 - 14:00, 16:00 - 18:30 (Visitas previa cita) | Sábado y Domingo cerrado",
   confidenceScore: 99,
   verificationStatus: "verified",

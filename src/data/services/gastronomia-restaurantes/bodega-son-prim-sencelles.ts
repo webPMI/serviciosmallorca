@@ -28,7 +28,7 @@ export const bodegaSonPrim: ServiceItem = {
   schedule: "Lunes a Sábado: 10:00 - 18:00 (Visitas Guiadas a la Bodega con Cata de Vinos)",
   lastVerifiedAt: "2026-08-25",
   image: "/images/services/bodega-son-prim-sencelles.jpg",
-  gallery: [],
+  gallery: ["/images/services/bodega-son-prim-sencelles.jpg"],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],
   emergency24h: false,

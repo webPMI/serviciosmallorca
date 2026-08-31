@@ -33,7 +33,7 @@ export const casaJacintoGenovaBrasas: ServiceItem = {
   paymentMethods: ["credit_card", "bank_transfer", "cash"],
   phone: "+34 971 40 18 58",
   website: "https://www.casajacinto.com/",
-  image: "/images/services/casa-jacinto-genova-brasas.webp",
+  image: "/images/services/casa-jacinto-genova-brasas.jpg",
   shortDescription: {
     es: "Templo legendario de carnes maduradas a la brasa de leña de encina y cocina tradicional en el pueblo de Gènova.",
     en: "Legendary temple for oak charcoal grilled dry-aged meats and traditional cuisine in the village of Genova.",

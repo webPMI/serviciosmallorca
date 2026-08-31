@@ -33,7 +33,7 @@ export const cleanCareLuxuryVillasSantaPonsa: ServiceItem = {
   paymentMethods: ["credit_card", "bank_transfer", "cash"],
   phone: "+34 971 69 88 10",
   website: "https://www.cleancaremallorca.com/",
-  image: "/images/services/clean-care-luxury-villas-santa-ponsa.webp",
+  image: "/images/services/clean-care-luxury-villas-santa-ponsa.jpg",
   shortDescription: {
     es: "Servicio premium de mantenimiento integral, custodia de llaves, limpieza de lujo y preparación para propietarios de villas en el suroeste.",
     en: "Premium villa management, key holding, luxury housekeeping, and turnover service for property owners in Southwest Mallorca.",

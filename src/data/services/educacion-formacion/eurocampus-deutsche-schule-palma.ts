@@ -33,7 +33,7 @@ export const eurocampusDeutscheSchulePalma: ServiceItem = {
   paymentMethods: ["credit_card", "bank_transfer", "cash"],
   phone: "+34 971 74 40 01",
   website: "https://dsmallorca.de/",
-  image: "/images/services/eurocampus-deutsche-schule-palma.webp",
+  image: "/images/services/eurocampus-deutsche-schule-palma.jpg",
   shortDescription: {
     es: "El único colegio alemán homologado en las Islas Baleares, impartiendo el currículo oficial alemán desde infantil hasta el Abitur.",
     en: "The only officially recognized German school in the Balearic Islands, offering education from kindergarten to the Abitur.",

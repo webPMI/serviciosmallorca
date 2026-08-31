@@ -30,15 +30,12 @@ export const duranPalma: ServiceItem = {
   },
   schedule: "Lunes a Viernes: 07:30 - 19:30 | Sábados: 08:00 - 13:30",
   lastVerifiedAt: "2026-08-25",
-  image: "https://gduran.com/wp-content/uploads/2022/02/1-servicios-inbani-serie-prime.jpg.webp",
+  image: "/images/services/duran-palma.jpg",
   images: [
     "https://gduran.com/wp-content/uploads/2022/02/1-servicios-inbani-serie-prime.jpg.webp",
     "https://gduran.com/wp-content/uploads/2021/06/2-servicios-santagostino-pavimentos-revestimientos.jpg",
   ],
-  gallery: [
-    "https://gduran.com/wp-content/uploads/2022/02/1-servicios-inbani-serie-prime.jpg.webp",
-    "https://gduran.com/wp-content/uploads/2021/06/2-servicios-santagostino-pavimentos-revestimientos.jpg",
-  ],
+  gallery: ["/images/services/duran-palma.jpg"],
   targetAudience: ["residentes", "b2b", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],
   emergency24h: false,

@@ -33,7 +33,7 @@ export const canBordoyGrandHousePalma: ServiceItem = {
   paymentMethods: ["credit_card", "bank_transfer", "cash"],
   phone: "+34 871 87 12 02",
   website: "https://canbordoy.com/",
-  image: "/images/services/can-bordoy-grand-house-palma.webp",
+  image: "/images/services/can-bordoy-grand-house-palma.jpg",
   shortDescription: {
     es: "Hotel boutique 5 estrellas gran lujo en La Lonja con el jardín privado más grande de Palma.",
     en: "5-star grand luxury boutique hotel in La Lonja featuring the largest private garden in Palma.",

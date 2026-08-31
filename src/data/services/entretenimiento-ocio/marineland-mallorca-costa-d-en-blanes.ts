@@ -33,7 +33,7 @@ export const marinelandMallorcaCostaDEnBlanes: ServiceItem = {
   paymentMethods: ["credit_card", "bank_transfer", "cash"],
   phone: "+34 971 67 51 25",
   website: "https://www.marineland.es/mallorca/",
-  image: "/images/services/marineland-mallorca-costa-d-en-blanes.webp",
+  image: "/images/services/marineland-mallorca-costa-d-en-blanes.jpg",
   shortDescription: {
     es: "Delfinario y zoológico marino pionero en la bahía de Palma con leones marinos, pingüinos y aves exóticas.",
     en: "Pioneering dolphinarium and marine zoo in Palma Bay featuring sea lion exhibits, penguins, and exotic birds.",

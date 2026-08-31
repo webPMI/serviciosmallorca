@@ -33,7 +33,7 @@ export const hotelEsMoliDeiaCove: ServiceItem = {
   paymentMethods: ["credit_card", "bank_transfer", "cash"],
   phone: "+34 971 63 90 00",
   website: "https://esmoli.com/deia/",
-  image: "/images/services/hotel-es-moli-deia-cove.webp",
+  image: "/images/services/hotel-es-moli-deia-cove.jpg",
   shortDescription: {
     es: "Emblemático hotel histórico 4 estrellas superior con cala privada exclusiva en Sa Muleta (Cala Deià).",
     en: "Iconic 4-star superior hotel featuring exclusive private beach club access in Sa Muleta cove.",

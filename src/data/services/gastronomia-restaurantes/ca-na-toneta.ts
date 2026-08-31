@@ -289,11 +289,8 @@ export const caNaToneta: ServiceItem = {
       "Kulinarische Workshops und saisonale Events",
     ],
   },
-  image: "https://www.canatoneta.com/wp-content/uploads/2012/06/canatoneta-home-01.jpg",
-  gallery: [
-    "https://www.canatoneta.com/wp-content/uploads/2012/06/canatoneta-home-01.jpg",
-    "https://www.canatoneta.com/wp-content/uploads/2012/06/canatoneta-home-02.jpg",
-  ],
+  image: "/images/services/ca-na-toneta.jpg",
+  gallery: ["/images/services/ca-na-toneta.jpg"],
   schedule: "Mié - Dom: 13:30 - 16:00, 20:00 - 23:00 (Lun y Mar Cerrado)",
   lastVerifiedAt: "2026-08-25",
   confidenceScore: 97,

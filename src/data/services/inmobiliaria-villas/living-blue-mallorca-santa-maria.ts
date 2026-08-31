@@ -33,7 +33,7 @@ export const livingBlueMallorcaSantaMaria: ServiceItem = {
   paymentMethods: ["credit_card", "bank_transfer", "cash"],
   phone: "+34 971 51 06 07",
   website: "https://www.livingblue-mallorca.com/",
-  image: "/images/services/living-blue-mallorca-santa-maria.webp",
+  image: "/images/services/living-blue-mallorca-santa-maria.jpg",
   shortDescription: {
     es: "Agencia boutique líder en fincas rústicas singulares, casas de pueblo históricas y posesiones en el corazón de Mallorca.",
     en: "Leading boutique agency for unique country estates, historic townhouses, and grand fincas in Central Mallorca.",

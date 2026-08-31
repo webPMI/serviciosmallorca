@@ -174,7 +174,7 @@ export const portAdrianoBoatCharter: ServiceItem = {
     de: ["Tages-Yachtcharter", "Wochencharter", "Sunset-Bootstouren", "Motorbootverleih"],
   },
   image: "/images/services/port-adriano-boat-charter.jpg",
-  gallery: [],
+  gallery: ["/images/services/port-adriano-boat-charter.jpg"],
   schedule: "Lun - Dom: 09:00 - 20:00",
   lastVerifiedAt: "2026-08-26",
   createdAt: "2026-08-26",

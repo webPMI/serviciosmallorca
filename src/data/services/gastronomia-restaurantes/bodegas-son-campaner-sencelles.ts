@@ -135,11 +135,8 @@ export const bodegasSonCampanerSencelles: ServiceItem = {
     ca: "El 2004, la família Hämmerling va crear Son Campaner a Sencelles per elaborar vins que reflectissin la calma del Pla i la noblesa de la terra mallorquina.",
     de: "2004 gründete Familie Hämmerling das Weingut Son Campaner in Sencelles aus der Leidenschaft, Weine zu keltern, die die Ruhe des mallorquinischen Landes und die Sonne des Südens widerspiegeln.",
   },
-  image: "https://www.soncampaner.es/assets/templates/haemmerling/images/Bodega_Emotionbild_Innenbereich.jpg",
-  gallery: [
-    "https://www.soncampaner.es/assets/templates/haemmerling/images/content/bodega.png",
-    "https://www.soncampaner.es/assets/templates/haemmerling/images/Bodega_Best_of_wine_2017.jpg",
-  ],
+  image: "/images/services/bodegas-son-campaner-sencelles.jpg",
+  gallery: ["/images/services/bodegas-son-campaner-sencelles.jpg"],
   schedule: "Lunes a Viernes: 10:00 - 17:00 (Visitas guiadas y catas bajo reserva previa obligatoria)",
   confidenceScore: 99,
   verificationStatus: "verified",

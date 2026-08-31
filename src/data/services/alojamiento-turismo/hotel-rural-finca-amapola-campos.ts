@@ -33,7 +33,7 @@ export const hotelRuralFincaAmapolaCampos: ServiceItem = {
   paymentMethods: ["credit_card", "bank_transfer", "cash"],
   phone: "+34 971 16 02 85",
   website: "https://www.finca-amapola.com/",
-  image: "/images/services/hotel-rural-finca-amapola-campos.webp",
+  image: "/images/services/hotel-rural-finca-amapola-campos.jpg",
   shortDescription: {
     es: "Oasis boutique de bienestar y tranquilidad con pabellón de yoga, masajes ayurvédicos y piscina laguna.",
     en: "Boutique wellness oasis with yoga shala, ayurvedic spa treatments, and lagoon pool in Campos.",

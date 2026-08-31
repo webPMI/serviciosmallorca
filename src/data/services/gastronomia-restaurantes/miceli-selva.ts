@@ -132,12 +132,8 @@ export const miceliSelva: ServiceItem = {
     ca: "Marga Coll va obrir Miceli a la casa pairal on va créixer a Selva, convertint la cuina de mercat i el respecte pel producte balear en la seva senya d'identitat.",
     de: "Marga Coll eröffnete das Miceli im Haus ihrer Familie in Selva. Ihre Hingabe zu frischen Inselzutaten macht jeden Besuch zu einem einmaligen kulinarischen Erlebnis.",
   },
-  image: "https://www.miceli.es/assets/images/restaurante-1-1224x816.jpg",
-  gallery: [
-    "https://www.miceli.es/assets/images/margacoll-300x451.jpg",
-    "https://www.miceli.es/assets/images/carta-1-1253x835.jpg",
-    "https://www.miceli.es/assets/images/restaurante-3-1313x876.jpg",
-  ],
+  image: "/images/services/miceli-selva.jpg",
+  gallery: ["/images/services/miceli-selva.jpg"],
   schedule:
     "Lunes, Jueves a Sábado: 13:30 - 15:00, 20:00 - 22:00 | Domingo: 13:30 - 15:00 | Martes y Miércoles cerrado",
   confidenceScore: 98,

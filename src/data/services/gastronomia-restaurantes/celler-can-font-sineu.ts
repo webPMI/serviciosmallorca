@@ -134,13 +134,8 @@ export const cellerCanFontSineu: ServiceItem = {
     ca: "El 1964, la família Font va obrir Can Font a Sineu per oferir la cuina mallorquina més autèntica a la gent del poble i als visitants del mercat.",
     de: "1964 gründete Familie Font das Celler Can Font in Sineu, um Einheimische und Marktgäste mit den feinsten Traditionsgerichten der mallorquinischen Landküche zu verwöhnen.",
   },
-  image:
-    "https://static.wixstatic.com/media/d0a7fe_ab085a684e7a4bbeb19a6f8f2b0fd6e1~mv2.jpg/v1/fill/w_574,h_426,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Celler1_edited.jpg",
-  gallery: [
-    "https://static.wixstatic.com/media/d0a7fe_c01c5126ed864ef68aac985d1bf0025c~mv2.jpg/v1/fill/w_673,h_564,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Terraza4_edited.jpg",
-    "https://static.wixstatic.com/media/d0a7fe_98b68f0e800142d4b007f6254c18351e~mv2.jpg/v1/fill/w_269,h_198,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/_5092121_edited.jpg",
-    "https://static.wixstatic.com/media/d0a7fe_5c41dc92a0ae4bf9abe87b9bd9dbdf43~mv2.jpg/v1/fill/w_270,h_198,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/_MGL0844.jpg",
-  ],
+  image: "/images/services/celler-can-font-sineu.jpg",
+  gallery: ["/images/services/celler-can-font-sineu.jpg"],
   schedule:
     "Lunes a Domingo: 13:00 - 16:00, 20:00 - 23:00 (Abierto todos los días | Servicio especial miércoles de mercado)",
   confidenceScore: 99,

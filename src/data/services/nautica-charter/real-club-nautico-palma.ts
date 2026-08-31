@@ -174,7 +174,7 @@ export const realClubNauticoPalma: ServiceItem = {
     de: ["Segelyacht-Charter mit Skipper", "Segelkurse für Erwachsene und Kinder", "Firmensegel-Events", "Liegeplätze"],
   },
   image: "/images/services/real-club-nautico-palma.jpg",
-  gallery: [],
+  gallery: ["/images/services/real-club-nautico-palma.jpg"],
   schedule: "Lun - Dom: 08:30 - 21:00",
   lastVerifiedAt: "2026-08-26",
   createdAt: "2026-08-26",

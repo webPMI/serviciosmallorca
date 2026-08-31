@@ -134,12 +134,8 @@ export const bodegasCanMajoralAlgaida: ServiceItem = {
     ca: "El 1979, Andreu Oliver va plantar les primeres vinyes ecològiques a Algaida, iniciant la revolució del vi orgànic i autòcton a Mallorca.",
     de: "1979 pflanzte Andreu Oliver in Algaida die ersten ökologischen Reben Mallorcas und begründete damit die Bio-Weinbau-Bewegung auf der Insel.",
   },
-  image: "https://canmajoral.com/wp-content/uploads/2024/06/PORTADA_00-3.jpg",
-  gallery: [
-    "https://canmajoral.com/wp-content/uploads/2024/06/Celler_00.jpg",
-    "https://canmajoral.com/wp-content/uploads/2024/06/DSC_0544-2048x1365.jpg",
-    "https://canmajoral.com/wp-content/uploads/2024/06/DSC_0022-2048x1360.jpg",
-  ],
+  image: "/images/services/bodegas-can-majoral-algaida.jpg",
+  gallery: ["/images/services/bodegas-can-majoral-algaida.jpg"],
   schedule:
     "Lunes a Viernes: 09:00 - 17:00 | Sábados: 10:00 - 13:00 (Visitas guiadas bajo reserva previa | Domingo cerrado)",
   confidenceScore: 99,

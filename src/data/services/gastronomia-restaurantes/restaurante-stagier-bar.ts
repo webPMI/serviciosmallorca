@@ -29,7 +29,7 @@ export const restauranteStagierBar: ServiceItem = {
   schedule: "Martes a Sábado: 13:30 - 15:30, 20:00 - 23:00",
   lastVerifiedAt: "2026-08-26",
   image: "/images/services/restaurante-stagier-bar.jpg",
-  gallery: [],
+  gallery: ["/images/services/restaurante-stagier-bar.jpg"],
   targetAudience: ["residentes", "turistas", "gourmet", "jovenes"],
   languagesSpoken: ["es", "en", "ca"],
   emergency24h: false,

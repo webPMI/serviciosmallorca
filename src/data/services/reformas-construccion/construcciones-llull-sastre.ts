@@ -28,7 +28,7 @@ export const construccionesLlullSastre: ServiceItem = {
   schedule: "Lunes a Viernes: 08:00 - 18:00 (Sábados y Domingos Cerrado)",
   lastVerifiedAt: "2026-08-25",
   image: "/images/services/construcciones-llull-sastre.jpg",
-  gallery: [],
+  gallery: ["/images/services/construcciones-llull-sastre.jpg"],
   targetAudience: ["residentes", "turistas", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],
   emergency24h: false,

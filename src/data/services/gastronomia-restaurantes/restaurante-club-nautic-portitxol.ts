@@ -137,7 +137,7 @@ export const restauranteClubNauticPortitxol: ServiceItem = {
     de: "1928 im traditionsreichen Hafenviertel El Portitxol gegründet, pflegt der Segelclub seit fast einem Jahrhundert maritime Leidenschaft und erstklassige Meeresküche.",
   },
   image: "/images/services/restaurante-club-nautic-portitxol.jpg",
-  gallery: [],
+  gallery: ["/images/services/restaurante-club-nautic-portitxol.jpg"],
   schedule: "Lunes a Domingo: 09:00 - 23:30 (Abierto todos los días del año)",
   confidenceScore: 98,
   verificationStatus: "verified",

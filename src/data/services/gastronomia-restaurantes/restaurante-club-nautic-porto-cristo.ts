@@ -143,7 +143,7 @@ export const restauranteClubNauticPortoCristo: ServiceItem = {
     de: "1969 gegründet, verbindet das Restaurant im Club Nàutic Porto Cristo die Freude am Segeln mit erstklassiger mediterraner Gastfreundschaft an Mallorcas Ostküste.",
   },
   image: "/images/services/restaurante-club-nautic-porto-cristo.jpg",
-  gallery: [],
+  gallery: ["/images/services/restaurante-club-nautic-porto-cristo.jpg"],
   schedule: "Lunes a Domingo: 09:30 - 23:30 (Abierto todos los días del año)",
   confidenceScore: 98,
   verificationStatus: "verified",

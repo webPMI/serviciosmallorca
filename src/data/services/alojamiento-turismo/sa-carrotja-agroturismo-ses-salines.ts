@@ -33,7 +33,7 @@ export const saCarrotjaAgroturismoSesSalines: ServiceItem = {
   paymentMethods: ["credit_card", "bank_transfer", "cash"],
   phone: "+34 971 64 92 84",
   website: "https://sacarrotja.com/",
-  image: "/images/services/sa-carrotja-agroturismo-ses-salines.webp",
+  image: "/images/services/sa-carrotja-agroturismo-ses-salines.jpg",
   shortDescription: {
     es: "Agroturismo 'Adults Only' de piedra viva tradicional a 5 minutos de las playas vírgenes de Es Trenc.",
     en: "Adults-only stone agroturismo set in tranquil Mediterranean countryside near Es Trenc virgin beaches.",

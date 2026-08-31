@@ -28,7 +28,7 @@ export const cuatrecasasPalma: ServiceItem = {
   schedule: "Lunes a Viernes: 09:00 - 19:30 (Sábados y Domingos Cerrado)",
   lastVerifiedAt: "2026-08-25",
   image: "/images/services/cuatrecasas-palma.jpg",
-  gallery: [],
+  gallery: ["/images/services/cuatrecasas-palma.jpg"],
   targetAudience: ["residentes", "turistas", "expat"],
   languagesSpoken: ["es", "ca", "en", "de", "fr"],
   emergency24h: false,

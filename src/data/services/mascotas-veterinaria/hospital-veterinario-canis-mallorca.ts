@@ -33,7 +33,7 @@ export const hospitalVeterinarioCanisMallorca: ServiceItem = {
   paymentMethods: ["credit_card", "bank_transfer", "cash"],
   phone: "+34 971 73 24 94",
   website: "https://www.canismallorca.es/",
-  image: "/images/services/hospital-veterinario-canis-mallorca.webp",
+  image: "/images/services/hospital-veterinario-canis-mallorca.jpg",
   shortDescription: {
     es: "Hospital veterinario integral con urgencias 24h, diagnóstico por imagen avanzado (TAC y resonancia) y cirugía mínimamente invasiva.",
     en: "Comprehensive veterinary hospital with 24/7 emergency care, advanced CT/MRI imaging, and minimally invasive surgery.",

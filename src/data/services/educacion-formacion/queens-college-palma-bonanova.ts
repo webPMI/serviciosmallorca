@@ -33,7 +33,7 @@ export const queensCollegePalmaBonanova: ServiceItem = {
   paymentMethods: ["credit_card", "bank_transfer", "cash"],
   phone: "+34 971 40 10 11",
   website: "https://www.queenscollege.es/",
-  image: "/images/services/queens-college-palma-bonanova.webp",
+  image: "/images/services/queens-college-palma-bonanova.jpg",
   shortDescription: {
     es: "Prestigioso colegio británico en La Bonanova con vistas al castillo de Bellver, siguiendo el currículo nacional de Inglaterra y Gales.",
     en: "Prestigious British curriculum school in La Bonanova overlooking Bellver Castle with exceptional academic track record.",

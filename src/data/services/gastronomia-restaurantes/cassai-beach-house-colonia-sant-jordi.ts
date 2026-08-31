@@ -142,7 +142,7 @@ export const cassaiBeachHouse: ServiceItem = {
     de: "Vom familiengeführten Cassai-Team in Ses Salines ins Leben gerufen, vereint das Beach House die Seele alter Fischerhütten mit modernem balearischem Lebensgefühl.",
   },
   image: "/images/services/cassai-beach-house-colonia-sant-jordi.jpg",
-  gallery: [],
+  gallery: ["/images/services/cassai-beach-house-colonia-sant-jordi.jpg"],
   schedule: "Lunes a Domingo: 11:00 - 00:00 (Cocina ininterrumpida)",
   confidenceScore: 98,
   verificationStatus: "verified",

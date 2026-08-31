@@ -143,13 +143,8 @@ export const restauranteClubDeVelaPortAndratx: ServiceItem = {
     ca: "El 1968, el Club de Vela va néixer al Port d'Andratx per als amants de la mar, convertint el seu restaurant en un gran referent gastronòmic de Ponent.",
     de: "1968 gegründet, verbindet das Restaurant im Club de Vela Puerto de Andratx sportliche Segeltradition mit erlesener mediterraner Spitzenküche an Mallorcas Südwestküste.",
   },
-  image:
-    "https://images.squarespace-cdn.com/content/v1/6a477788b2da63521a6c5d39/1787645583020-VVCWF28OLOXPRNJ741BO/JRENEDO+2013-08-09+16770.jpg",
-  gallery: [
-    "https://images.squarespace-cdn.com/content/v1/6a477788b2da63521a6c5d39/1787729836170-MB189IDVGKYR99F9VP5H/IMG_2182+-+copia.JPG",
-    "https://images.squarespace-cdn.com/content/v1/6a477788b2da63521a6c5d39/1785930718891-1L5JL0E7GTTHG94PO3QZ/DSC02123.jpg",
-    "https://images.squarespace-cdn.com/content/v1/6a477788b2da63521a6c5d39/1785917712712-CTJKSXVPE9FB2WNK2AK4/IMG_0601.JPG",
-  ],
+  image: "/images/services/restaurante-club-de-vela-port-andratx.jpg",
+  gallery: ["/images/services/restaurante-club-de-vela-port-andratx.jpg"],
   schedule: "Martes a Domingo: 12:30 - 22:30 (Temporada alta lunes a domingo 12:30 - 23:00)",
   confidenceScore: 99,
   verificationStatus: "verified",

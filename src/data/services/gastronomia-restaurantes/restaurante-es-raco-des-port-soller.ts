@@ -142,7 +142,7 @@ export const restauranteEsRacoDesPortSoller: ServiceItem = {
     de: "1984 an der Uferpromenade von Port de Sóller eröffnet, steht das Es Racó d'es Port seit über vier Jahrzehnten für fangfrische Meeresküche direkt an der Bucht.",
   },
   image: "/images/services/restaurante-es-raco-des-port-soller.jpg",
-  gallery: [],
+  gallery: ["/images/services/restaurante-es-raco-des-port-soller.jpg"],
   schedule: "Lunes a Domingo: 12:30 - 16:00, 19:00 - 23:00 (Abierto todos los días en temporada)",
   confidenceScore: 98,
   verificationStatus: "verified",

@@ -135,7 +135,7 @@ export const bodegasButxetMuro: ServiceItem = {
     de: "2001 pflanzte die Familie Butxet in Muro ihre ersten Reben, um den Einfluss der nördlichen Meeresbrise in ausdrucksstarken Autorenweinen einzufangen.",
   },
   image: "/images/services/bodegas-butxet-muro.jpg",
-  gallery: [],
+  gallery: ["/images/services/bodegas-butxet-muro.jpg"],
   schedule: "Lunes a Sábado: 10:00 - 18:00 (Visitas guiadas y catas bajo reserva previa | Domingo cerrado)",
   confidenceScore: 98,
   verificationStatus: "verified",

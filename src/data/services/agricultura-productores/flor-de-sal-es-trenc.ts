@@ -33,7 +33,7 @@ export const florDeSalEsTrenc: ServiceItem = {
   paymentMethods: ["credit_card", "bank_transfer", "cash"],
   phone: "+34 971 65 53 06",
   website: "https://flordesaldestrenc.com/",
-  image: "/images/services/flor-de-sal-es-trenc.webp",
+  image: "/images/services/flor-de-sal-es-trenc.jpg",
   shortDescription: {
     es: "Salinas naturales protegidas y cosecha artesanal de Flor de Sal marina.",
     en: "Protected natural salt flats harvesting pure Flor de Sal sea salt flakes.",

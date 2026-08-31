@@ -33,7 +33,7 @@ export const prediSonJaumellCapdepera: ServiceItem = {
   paymentMethods: ["credit_card", "bank_transfer", "cash"],
   phone: "+34 971 81 87 96",
   website: "https://hotelsonjaumell.com/",
-  image: "/images/services/predi-son-jaumell-capdepera.webp",
+  image: "/images/services/predi-son-jaumell-capdepera.jpg",
   shortDescription: {
     es: "Finca señorial del siglo XVII en Capdepera con gastronomía del chef Andreu Genestra.",
     en: "17th-century country estate in Capdepera featuring dining by Michelin-starred chef Andreu Genestra.",

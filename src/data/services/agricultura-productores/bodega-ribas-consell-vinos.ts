@@ -33,7 +33,7 @@ export const bodegaRibasConsellVinos: ServiceItem = {
   paymentMethods: ["credit_card", "bank_transfer", "cash"],
   phone: "+34 971 62 26 73",
   website: "https://bodegaribas.com/vinos",
-  image: "/images/services/bodega-ribas-consell-vinos.webp",
+  image: "/images/services/bodega-ribas-consell-vinos.jpg",
   shortDescription: {
     es: "La bodega más antigua de Mallorca (fundada en 1711) con uvas autóctonas.",
     en: "The oldest winery in Mallorca (founded 1711) crafting native grape wines.",

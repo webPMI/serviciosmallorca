@@ -166,10 +166,7 @@ export const stpShipyardPalma: ServiceItem = {
     linkedin: "https://www.linkedin.com/company/stp-shipyard-palma",
   },
   image: "/images/services/stp-shipyard-palma.jpg",
-  gallery: [
-    "/images/services/stp-shipyard-travelift.jpg",
-    "/images/services/stp-shipyard-muelle-viejo.jpg",
-  ],
+  gallery: ["/images/services/stp-shipyard-palma.jpg"],
   schedule: "Lunes a Viernes: 08:00 - 18:00 | Varadero y seguridad: 24h",
   confidenceScore: 99,
   verificationStatus: "verified",

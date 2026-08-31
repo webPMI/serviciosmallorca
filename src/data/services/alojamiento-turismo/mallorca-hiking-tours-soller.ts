@@ -33,7 +33,7 @@ export const mallorcaHikingToursSoller: ServiceItem = {
   paymentMethods: ["credit_card", "bank_transfer", "cash"],
   phone: "+34 971 63 80 90",
   website: "https://www.mallorcahiking.com/",
-  image: "/images/services/mallorca-hiking-tours-soller.webp",
+  image: "/images/services/mallorca-hiking-tours-soller.jpg",
   shortDescription: {
     es: "Guías oficiales titulados para la Ruta de Pedra en Sec (GR-221), Torrent de Pareis y cimas de la Tramuntana.",
     en: "Official certified mountain guides for the Dry Stone Route (GR-221), Torrent de Pareis canyon, and Tramuntana peaks.",

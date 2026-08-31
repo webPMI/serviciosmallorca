@@ -33,7 +33,7 @@ export const petitHotelSesRotgesCalaRatjada: ServiceItem = {
   paymentMethods: ["credit_card", "bank_transfer", "cash"],
   phone: "+34 971 56 31 08",
   website: "https://www.sesrotges.com/",
-  image: "/images/services/petit-hotel-ses-rotges-cala-ratjada.webp",
+  image: "/images/services/petit-hotel-ses-rotges-cala-ratjada.jpg",
   shortDescription: {
     es: "Pionero del turismo gastronómico y primer hotel con estrella Michelin de Mallorca en una casona del s.XVIII.",
     en: "Gastronomic tourism pioneer and historic manor house in Cala Ratjada since 1954.",

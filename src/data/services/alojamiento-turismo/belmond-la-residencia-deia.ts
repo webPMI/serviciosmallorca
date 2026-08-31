@@ -33,7 +33,7 @@ export const belmondLaResidenciaDeia: ServiceItem = {
   paymentMethods: ["credit_card", "bank_transfer", "cash"],
   phone: "+34 971 63 90 11",
   website: "https://www.belmond.com/hotels/europe/mallorca/deia/belmond-la-residencia/",
-  image: "/images/services/belmond-la-residencia-deia.webp",
+  image: "/images/services/belmond-la-residencia-deia.jpg",
   shortDescription: {
     es: "Hotel 5 estrellas gran lujo en dos casas señoriales del s.XVI en Deià.",
     en: "5-star luxury retreat set in twin 16th-century manor houses in Deià.",

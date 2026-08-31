@@ -142,12 +142,8 @@ export const bodegas7103PetitCellerSantaMaria: ServiceItem = {
     ca: "El 2011, Pep Cànaves i Sebastià Ordinas van crear el 7103 Petit Celler a Santa Maria del Camí per elaborar vins sincers exclusivament amb varietats autòctones de Mallorca.",
     de: "2011 gründeten Pep Cànaves und Sebastià Ordinas das 7103 Petit Celler in Santa Maria del Camí, um die Seele des mallorquinischen Weinbaus mit 100% autochthonen Reben neu zu beleben.",
   },
-  image:
-    "https://static.wixstatic.com/media/538374_87452f65070c4a9e81dd1060e19895b2~mv2.jpg/v1/crop/x_594,y_0,w_3555,h_3824/fill/w_479,h_530,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/7103%20Cata%20de%20Vinos-42.jpg",
-  gallery: [
-    "https://static.wixstatic.com/media/039599_2432ce953f694caa92e875ad2806a4c6~mv2.jpg/v1/fill/w_495,h_764,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Untitled%2520design%2520(13)_edited.jpg",
-    "https://static.wixstatic.com/media/538374_ee8889a285a643b1b07f3b498455b2cd%7Emv2.jpg/v1/fit/w_2500,h_1330,al_c/538374_ee8889a285a643b1b07f3b498455b2cd%7Emv2.jpg",
-  ],
+  image: "/images/services/bodegas-7103-petit-celler-santa-maria.jpg",
+  gallery: ["/images/services/bodegas-7103-petit-celler-santa-maria.jpg"],
   schedule: "Lunes a Sábado: Visitas guiadas y catas bajo reserva previa online o telefónica | Domingo cerrado",
   confidenceScore: 99,
   verificationStatus: "verified",

@@ -33,7 +33,7 @@ export const bufeteBuadesAbogadosPalma1979: ServiceItem = {
   paymentMethods: ["credit_card", "bank_transfer", "cash"],
   phone: "+34 971 22 84 00",
   website: "https://www.bufetebuades.com/",
-  image: "/images/services/bufete-buades-abogados-palma-1979.webp",
+  image: "/images/services/bufete-buades-abogados-palma-1979.jpg",
   shortDescription: {
     es: "Firma jurídica multidisciplinar de máxima reputación en Baleares desde 1979 en derecho inmobiliario, mercantil y tributario.",
     en: "Leading premier law firm in the Balearics since 1979 specializing in real estate, corporate, and tax law.",

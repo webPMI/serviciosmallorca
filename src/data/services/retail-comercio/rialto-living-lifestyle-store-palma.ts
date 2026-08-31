@@ -33,7 +33,7 @@ export const rialtoLivingLifestyleStorePalma: ServiceItem = {
   paymentMethods: ["credit_card", "bank_transfer", "cash"],
   phone: "+34 971 71 33 31",
   website: "https://rialtoliving.com/",
-  image: "/images/services/rialto-living-lifestyle-store-palma.webp",
+  image: "/images/services/rialto-living-lifestyle-store-palma.jpg",
   shortDescription: {
     es: "Lifestyle concept store de 800 m² en un palacio barroco del s.XVIII en Palma.",
     en: "800 m² luxury lifestyle concept store in an 18th-century palace in Palma.",

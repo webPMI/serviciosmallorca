@@ -132,10 +132,8 @@ export const caNignasiInca: ServiceItem = {
     ca: "Ignasi Colí va crear Ca n'Ignasi per tornar a l'essència: cuina honesta per a pocs comensals, producte viu i respecte pel patrimoni del Raiguer.",
     de: "Ignasi Colí gründete das Ca n'Ignasi mit dem Wunsch nach purer Authentizität: Wenige Tische, beste Bio-Zutaten und ehrliche Handwerkskunst zu Ehren des mallorquinischen Geschmacks.",
   },
-  image: "https://www-static.canignasi.es/wp-content/uploads/2023/01/ca-nignasi-42.jpg?media=1784560401",
-  gallery: [
-    "https://www-static.canignasi.es/wp-content/uploads/2023/03/Miquel-calent-1-1024x1024.jpg?media=1784560401",
-  ],
+  image: "/images/services/ca-nignasi-inca.jpg",
+  gallery: ["/images/services/ca-nignasi-inca.jpg"],
   schedule: "Miércoles a Domingo: 13:30 - 15:30, 20:00 - 22:30 | Lunes y Martes cerrado (Reserva previa)",
   confidenceScore: 98,
   verificationStatus: "verified",

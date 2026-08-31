@@ -33,7 +33,7 @@ export const fincaCanPaulinoDogResortLlucmajor: ServiceItem = {
   paymentMethods: ["credit_card", "bank_transfer", "cash"],
   phone: "+34 689 74 12 30",
   website: "https://canpaulino.com/",
-  image: "/images/services/finca-can-paulino-dog-resort-llucmajor.webp",
+  image: "/images/services/finca-can-paulino-dog-resort-llucmajor.jpg",
   shortDescription: {
     es: "Residencia canina de alta gama en una finca de 45.000 m² con suites climatizadas, parques de recreo y adiestramiento.",
     en: "Luxury dog boarding resort on a 45,000 m² countryside estate with heated suites, large play paddocks, and training.",

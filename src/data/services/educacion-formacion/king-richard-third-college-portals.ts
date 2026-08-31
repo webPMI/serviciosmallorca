@@ -33,7 +33,7 @@ export const kingRichardThirdCollegePortals: ServiceItem = {
   paymentMethods: ["credit_card", "bank_transfer", "cash"],
   phone: "+34 971 67 58 50",
   website: "https://kingrichardcollege.com/",
-  image: "/images/services/king-richard-third-college-portals.webp",
+  image: "/images/services/king-richard-third-college-portals.jpg",
   shortDescription: {
     es: "Colegio británico bilingüe fundado en 1969 que imparte el British National Curriculum (IGCSE y A-Levels) en Portals Nous.",
     en: "Pioneering British school established in 1969 offering the British National Curriculum (IGCSE and A-Levels) in Portals Nous.",

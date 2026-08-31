@@ -134,12 +134,8 @@ export const bodegasVinyesMortitx: ServiceItem = {
     ca: "El 2001, un grup d'apassionats del vi va recuperar les vinyes a les altures d'Escorca, creant un dels projectes enològics més admirats de les Balears.",
     de: "2001 verwirklichte eine Gruppe passionierter Weinliebhaber die Vision, an den Hängen von Escorca Spitzenweinbau auf 400 Metern Höhe zu etablieren.",
   },
-  image: "https://www.vinyesmortitx.com/attachments/public/upload/websites/30/ZjlGRGFLR010NFhlZE9TWllRZFB6UT09.jpg",
-  gallery: [
-    "https://www.vinyesmortitx.com/attachments/public/upload/websites/30/dkw1R1NqZVZlTDFXNnlBVFVFREhQZz09.jpg",
-    "https://www.vinyesmortitx.com/attachments/public/upload/websites/30/ZG5IdlZPdWJEODJmc1ZjVG1iMlJkUT09.jpg",
-    "https://www.vinyesmortitx.com/attachments/public/upload/websites/30/WTB1Q01BZjFuUnhHYzNHMDJqb1Vsdz09.jpg",
-  ],
+  image: "/images/services/bodegas-vinyes-mortitx.jpg",
+  gallery: ["/images/services/bodegas-vinyes-mortitx.jpg"],
   schedule:
     "Lunes a Viernes: 10:00 - 17:00 | Sábados: 10:00 - 14:00 (Visitas guiadas bajo reserva previa | Domingo cerrado)",
   confidenceScore: 99,

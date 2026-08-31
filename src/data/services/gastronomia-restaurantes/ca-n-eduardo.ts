@@ -301,11 +301,8 @@ export const caNEduardo: ServiceItem = {
       "Veranstaltungen und private Feierlichkeiten",
     ],
   },
-  image: "https://www.caneduardo.com/wp-content/uploads/2018/08/wines-can-eduardo-restaurant.jpg",
-  gallery: [
-    "https://www.caneduardo.com/wp-content/uploads/2018/08/wines-can-eduardo-restaurant.jpg",
-    "https://www.caneduardo.com/wp-content/uploads/2024/05/Restaurante_Palma_Ca_nEduardo-682x1024.jpg",
-  ],
+  image: "/images/services/ca-n-eduardo.jpg",
+  gallery: ["/images/services/ca-n-eduardo.jpg"],
   schedule: "Mar - Dom: 13:00 - 16:00, 19:30 - 23:00 (Lunes Cerrado)",
   lastVerifiedAt: "2026-08-25",
   confidenceScore: 98,

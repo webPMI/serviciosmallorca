@@ -33,7 +33,7 @@ export const bodegasSuauBrandyMallorca1851: ServiceItem = {
   paymentMethods: ["credit_card", "bank_transfer", "cash"],
   phone: "+34 971 60 15 10",
   website: "https://www.bodegassuau.com/",
-  image: "/images/services/bodegas-suau-brandy-mallorca-1851.webp",
+  image: "/images/services/bodegas-suau-brandy-mallorca-1851.jpg",
   shortDescription: {
     es: "Bodega subterránea fundada en 1851 con túneles de envejecimiento de barricas de roble americano centenarias de brandy Suau 15, 25 y 50 años.",
     en: "Historic underground distillery founded in 1851 aging world-renowned handcrafted brandy in century-old oak soleras.",

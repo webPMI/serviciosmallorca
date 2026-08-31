@@ -142,13 +142,8 @@ export const losPatosPlayaMuro: ServiceItem = {
     ca: "Fundat el 1976 a Platja de Muro, Los Patos preserva amb passió les receptes tradicionals de s'Albufera i l'horta mallorquina.",
     de: "1976 in Playa de Muro gegründet, bewahrt die Familie hinter Los Patos die kulinarischen Wurzeln Mallorcas und gilt als Hüter der traditionsreichen Albufera-Küche.",
   },
-  image:
-    "https://www.lospatosrestaurant.com/wp-content/uploads/2022/10/los_patos_restaurant_alcudia_platja_muro_-048.jpg",
-  gallery: [
-    "https://www.lospatosrestaurant.com/wp-content/uploads/2022/10/los-patos-restaurant-alcudia-cocina-paellas.jpg",
-    "https://www.lospatosrestaurant.com/wp-content/uploads/2021/09/los-patos-restaurant-terraza-1-1.jpg",
-    "https://www.lospatosrestaurant.com/wp-content/uploads/2022/10/los_patos_restaurant_alcudia_platja_muro_-100.jpg",
-  ],
+  image: "/images/services/los-patos-playa-muro.jpg",
+  gallery: ["/images/services/los-patos-playa-muro.jpg"],
   schedule: "Miércoles a Domingo: 13:00 - 16:00, 19:30 - 23:00 | Lunes y Martes cerrado",
   confidenceScore: 99,
   verificationStatus: "verified",

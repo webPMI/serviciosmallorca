@@ -218,7 +218,7 @@ export const dinsSantiTaura: ServiceItem = {
     ],
   },
   image: "/images/services/dins-santi-taura.jpg",
-  gallery: [],
+  gallery: ["/images/services/dins-santi-taura.jpg"],
   reputationBreakdown: {
     googleMaps: {
       rating: 4.8,

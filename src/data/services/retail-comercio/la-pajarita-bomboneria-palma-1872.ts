@@ -33,7 +33,7 @@ export const laPajaritaBomboneriaPalma1872: ServiceItem = {
   paymentMethods: ["credit_card", "bank_transfer", "cash"],
   phone: "+34 971 71 69 18",
   website: "https://www.lapajarita.es/",
-  image: "/images/services/la-pajarita-bomboneria-palma-1872.webp",
+  image: "/images/services/la-pajarita-bomboneria-palma-1872.jpg",
   shortDescription: {
     es: "El comercio más antiguo de Palma en activo (fundado en 1872), famoso por sus bombones artesanos y charcutería selecta.",
     en: "Palma's oldest active shop (founded 1872), world-famous for handcrafted chocolates and gourmet deli specialties.",

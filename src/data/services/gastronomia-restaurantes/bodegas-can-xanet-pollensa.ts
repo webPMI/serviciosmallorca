@@ -142,11 +142,8 @@ export const bodegasCanXanetPollensa: ServiceItem = {
     ca: "El 2008, Can Xanet va néixer a la vall de Pollença per recuperar el prestigi dels raïms ancestrals de l'illa i crear vins d'autor únics als peus de la Tramuntana.",
     de: "2008 im Tal von Pollença gegründet, widmet sich Can Xanet der Vollendung historischer Inselreben und kreiert rare Sammlerweine von höchster Güte.",
   },
-  image: "https://www.canxanet.com/wp-content/uploads/sites/922/2024/05/sibila-horizontal.png",
-  gallery: [
-    "https://www.canxanet.com/wp-content/uploads/sites/922/2024/05/cumas-horizontal.png",
-    "https://www.canxanet.com/wp-content/uploads/sites/922/2024/05/cadmo-horizontal.png",
-  ],
+  image: "/images/services/bodegas-can-xanet-pollensa.jpg",
+  gallery: ["/images/services/bodegas-can-xanet-pollensa.jpg"],
   schedule:
     "Lunes a Viernes: 09:30 - 14:00, 15:30 - 18:30 (Visitas concertadas previa cita) | Sábado y Domingo cerrado",
   confidenceScore: 99,

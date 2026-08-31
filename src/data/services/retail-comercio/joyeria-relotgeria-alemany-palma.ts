@@ -33,7 +33,7 @@ export const joyeriaRelotgeriaAlemanyPalma: ServiceItem = {
   paymentMethods: ["credit_card", "bank_transfer", "cash"],
   phone: "+34 971 72 40 40",
   website: "https://www.nicolasjoyeros.com/",
-  image: "/images/services/joyeria-relotgeria-alemany-palma.webp",
+  image: "/images/services/joyeria-relotgeria-alemany-palma.jpg",
   shortDescription: {
     es: "Joyería histórica de alta gama en el Paseo del Borne con taller propio de gemología, diamantes certificados y relojería suiza.",
     en: "Historic luxury jewelry house on Paseo del Borne with in-house gemology workshop, certified diamonds, and Swiss watches.",

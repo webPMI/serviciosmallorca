@@ -142,7 +142,7 @@ export const cellerSaSiniSantaMaria: ServiceItem = {
     de: "1962 gründete die Familie das Celler Sa Sini in Santa Maria del Camí, um Gäste mit ehrlicher mallorquinischer Küche, Spanferkel und herzhafter Konditortradition zu verwöhnen.",
   },
   image: "/images/services/celler-sa-sini-santa-maria.jpg",
-  gallery: [],
+  gallery: ["/images/services/celler-sa-sini-santa-maria.jpg"],
   schedule: "Miércoles a Domingo: 13:00 - 16:00, 20:00 - 23:30 | Lunes y Martes cerrado",
   confidenceScore: 99,
   verificationStatus: "verified",

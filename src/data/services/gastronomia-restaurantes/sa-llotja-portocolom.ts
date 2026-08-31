@@ -141,7 +141,7 @@ export const saLlotjaPortocolom: ServiceItem = {
     de: "Sa Llotja entstand aus Liebe zur Fischertradition von Portocolom und verwandelte das historische Auktionshaus in eine erstklassige kulinarische Institution.",
   },
   image: "/images/services/sa-llotja-portocolom.jpg",
-  gallery: [],
+  gallery: ["/images/services/sa-llotja-portocolom.jpg"],
   schedule: "Miércoles a Domingo: 13:00 - 15:30, 19:30 - 22:30 | Lunes y Martes cerrado",
   confidenceScore: 98,
   verificationStatus: "verified",

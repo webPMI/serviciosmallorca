@@ -135,12 +135,8 @@ export const bodegasSonPuigPuigpunyent: ServiceItem = {
     ca: "El 1999, la família Alabern va recuperar la tradició vitivinícola a la possessió de Son Puig a Puigpunyent per elaborar vins de muntanya d'excel·lència.",
     de: "1999 gründete Familie Alabern das Weingut Son Puig in Puigpunyent, um die jahrhundertealte Weinbautradition der Possessió wiederzubeleben und charaktervolle Bergweine zu keltern.",
   },
-  image: "https://vinsdesonpuig.com/images/home/slide-1.jpg",
-  gallery: [
-    "https://vinsdesonpuig.com/images/clastra_son_puig.jpg",
-    "https://vinsdesonpuig.com/images/barricas_son_puig.jpg",
-    "https://vinsdesonpuig.com/images/jardines_son_puig.jpg",
-  ],
+  image: "/images/services/bodegas-son-puig-puigpunyent.jpg",
+  gallery: ["/images/services/bodegas-son-puig-puigpunyent.jpg"],
   schedule:
     "Lunes a Viernes: 10:00 - 15:00 | Sábados: 10:00 - 12:00 (Visitas y venta directa bajo cita previa obligatoria)",
   confidenceScore: 99,

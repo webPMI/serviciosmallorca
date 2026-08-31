@@ -28,7 +28,7 @@ export const attractionCatamarans: ServiceItem = {
   schedule: "Lunes a Domingo: 09:30 - 20:30 (Salidas diarias de mañana y atardecer)",
   lastVerifiedAt: "2026-08-25",
   image: "/images/services/attraction-catamarans.jpg",
-  gallery: [],
+  gallery: ["/images/services/attraction-catamarans.jpg"],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "en", "ca", "de"],
   emergency24h: false,

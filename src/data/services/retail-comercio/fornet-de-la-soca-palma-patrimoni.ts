@@ -33,7 +33,7 @@ export const fornetDeLaSocaPalmaPatrimoni: ServiceItem = {
   paymentMethods: ["credit_card", "bank_transfer", "cash"],
   phone: "+34 971 72 38 60",
   website: "https://www.fornetdelasoca.com/",
-  image: "/images/services/fornet-de-la-soca-palma-patrimoni.webp",
+  image: "/images/services/fornet-de-la-soca-palma-patrimoni.jpg",
   shortDescription: {
     es: "Horno artesano modernista en la Plaça de Cort recuperando la repostería y panadería histórica de los conventos y casas nobles de Mallorca.",
     en: "Artisan bakery in Plaça de Cort reviving historic pastry recipes from ancient Mallorcan convents and noble manors.",

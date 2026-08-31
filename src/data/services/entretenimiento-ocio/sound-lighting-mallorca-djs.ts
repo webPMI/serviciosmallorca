@@ -33,7 +33,7 @@ export const soundLightingMallorcaDjs: ServiceItem = {
   paymentMethods: ["credit_card", "bank_transfer", "cash"],
   phone: "+34 971 43 12 90",
   website: "https://www.balearicsound.com/",
-  image: "/images/services/sound-lighting-mallorca-djs.webp",
+  image: "/images/services/sound-lighting-mallorca-djs.jpg",
   shortDescription: {
     es: "Alquiler e instalación de sistemas de sonido L-Acoustics, microfonía inalámbrica, iluminación arquitectónica para fincas y DJs.",
     en: "Rental and staging of L-Acoustics pro audio, wireless mics, architectural villa illumination, and live DJs.",

@@ -33,7 +33,7 @@ export const estiloSantFeliuDecorPalma: ServiceItem = {
   paymentMethods: ["credit_card", "bank_transfer", "cash"],
   phone: "+34 971 72 35 12",
   website: "https://estilosantfeliu.com/",
-  image: "/images/services/estilo-sant-feliu-decor-palma.webp",
+  image: "/images/services/estilo-sant-feliu-decor-palma.jpg",
   shortDescription: {
     es: "Showroom de interiorismo mediterráneo con cerámicas exclusivas, cojines de lino, lámparas de fibras naturales y arte.",
     en: "Mediterranean interior design showroom with bespoke ceramics, linen cushions, natural fiber lighting, and local art.",

@@ -28,7 +28,7 @@ export const mallorcaCyclingCenter: ServiceItem = {
   schedule: "Lunes a Domingo: 08:30 - 19:30 (Abierto todo el año para cicloturistas)",
   lastVerifiedAt: "2026-08-25",
   image: "/images/services/mallorca-cycling-center-muro.jpg",
-  gallery: [],
+  gallery: ["/images/services/mallorca-cycling-center-muro.jpg"],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "en", "de", "ca"],
   emergency24h: false,

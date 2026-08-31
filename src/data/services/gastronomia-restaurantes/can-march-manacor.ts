@@ -133,12 +133,8 @@ export const canMarchManacor: ServiceItem = {
     ca: "Fundat el 1925 a Manacor, Can March va ser transformat pels germans Gelabert en un temple de la gastronomia balear contemporània.",
     de: "1925 als bodenständiges Gasthaus gegründet, verwandelten die Brüder Gelabert das Can March in eines der renommiertesten Feinschmeckerrestaurants der Insel.",
   },
-  image: "https://canmarch.com/img/can-march-exterior_opt.jpg",
-  gallery: [
-    "https://canmarch.com/img/miquel-gelabert-1_opt.jpg",
-    "https://canmarch.com/img/interior-can-march_opt.jpg",
-    "https://canmarch.com/img/combinat-can-march.jpg",
-  ],
+  image: "/images/services/can-march-manacor.jpg",
+  gallery: ["/images/services/can-march-manacor.jpg"],
   schedule:
     "Martes a Jueves: 13:00 - 15:30 | Viernes y Sábado: 13:00 - 15:30, 20:00 - 22:30 | Domingo: 13:00 - 15:30 | Lunes cerrado",
   confidenceScore: 99,

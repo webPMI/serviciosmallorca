@@ -138,11 +138,8 @@ export const elBungalowCiudadJardin: ServiceItem = {
     instagram: "https://www.instagram.com/rest.elbungalow/",
     facebook: "https://www.facebook.com/restauranteelbungalow/",
   },
-  image: "/images/services/restaurante-el-bungalow-ciudad-jardin.jpg",
-  gallery: [
-    "/images/services/restaurante-el-bungalow-paella-ciega.jpg",
-    "/images/services/restaurante-el-bungalow-terraza-atardecer.jpg",
-  ],
+  image: "/images/services/el-bungalow-ciudad-jardin.jpg",
+  gallery: ["/images/services/el-bungalow-ciudad-jardin.jpg"],
   schedule: "Martes a Sábado: 13:00 - 16:00, 19:30 - 23:00 | Domingo y Lunes: 13:00 - 16:00",
   confidenceScore: 99,
   verificationStatus: "verified",

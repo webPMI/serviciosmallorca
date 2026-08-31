@@ -33,7 +33,7 @@ export const castellSonClaretCalvia: ServiceItem = {
   paymentMethods: ["credit_card", "bank_transfer", "cash"],
   phone: "+34 971 13 86 29",
   website: "https://castellsonclaret.com/",
-  image: "/images/services/castell-son-claret-calvia.webp",
+  image: "/images/services/castell-son-claret-calvia.jpg",
   shortDescription: {
     es: "Castillo del siglo XIX restaurado como hotel de lujo Relais & Châteaux en Es Capdellà.",
     en: "Restored 19th-century castle operating as a Relais & Châteaux luxury hotel in Es Capdellà.",

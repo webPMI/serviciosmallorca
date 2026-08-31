@@ -33,7 +33,7 @@ export const smartHomeDomoticaMallorcaKnx: ServiceItem = {
   paymentMethods: ["credit_card", "bank_transfer", "cash"],
   phone: "+34 971 69 95 00",
   website: "https://www.smarthomemallorca.com/",
-  image: "/images/services/smart-home-domotica-mallorca-knx.webp",
+  image: "/images/services/smart-home-domotica-mallorca-knx.jpg",
   shortDescription: {
     es: "Integradores certificados de domótica KNX, Crestron, Lutron para iluminación inteligente, control de clima y audio multiroom en villas.",
     en: "Certified KNX, Crestron, and Lutron integrators for smart lighting, climate control, and multi-room audio in luxury villas.",

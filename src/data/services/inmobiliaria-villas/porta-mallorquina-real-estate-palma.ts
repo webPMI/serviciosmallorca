@@ -33,7 +33,7 @@ export const portaMallorquinaRealEstatePalma: ServiceItem = {
   paymentMethods: ["credit_card", "bank_transfer", "cash"],
   phone: "+34 971 69 82 49",
   website: "https://www.porta-mallorquina.com/",
-  image: "/images/services/porta-mallorquina-real-estate-palma.webp",
+  image: "/images/services/porta-mallorquina-real-estate-palma.jpg",
   shortDescription: {
     es: "Red insular de agencias inmobiliarias con más de 2.000 propiedades seleccionadas en toda la geografía de Mallorca.",
     en: "Island-wide real estate network with over 2,000 hand-picked properties across Mallorca.",

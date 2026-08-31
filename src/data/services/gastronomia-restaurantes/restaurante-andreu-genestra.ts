@@ -32,11 +32,8 @@ export const restauranteAndreuGenestra: ServiceItem = {
   schedule:
     "Abierto de miércoles a domingo, solo servicio de cena (cocina de 19:00 a 21:30). Cierre invernal de enero a marzo. Cerrado lunes y martes.",
   lastVerifiedAt: "2026-08-26",
-  image: "https://andreugenestra.com/wp-content/uploads/2025/11/andreu-genestra-carrusel-54.jpg",
-  gallery: [
-    "https://andreugenestra.com/wp-content/uploads/2025/12/andreu-genestra-foto-carrusel-03.webp",
-    "https://andreugenestra.com/wp-content/uploads/2025/11/andreu-genestra-carrusel-112.jpg",
-  ],
+  image: "/images/services/restaurante-andreu-genestra.jpg",
+  gallery: ["/images/services/restaurante-andreu-genestra.jpg"],
   targetAudience: ["residentes", "turistas", "parejas", "expat", "gourmets"],
   languagesSpoken: ["es", "en", "ca", "de"],
   emergency24h: false,

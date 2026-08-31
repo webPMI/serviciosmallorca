@@ -29,7 +29,7 @@ export const restauranteDukePalma: ServiceItem = {
   schedule: "Lunes a Domingo: 13:00 - 16:00, 19:30 - 23:30",
   lastVerifiedAt: "2026-08-26",
   image: "/images/services/restaurante-duke-palma.jpg",
-  gallery: [],
+  gallery: ["/images/services/restaurante-duke-palma.jpg"],
   targetAudience: ["residentes", "turistas", "expat", "jovenes"],
   languagesSpoken: ["es", "en", "sv", "de"],
   emergency24h: false,

@@ -27,11 +27,8 @@ export const vidriosGordiola: ServiceItem = {
   coordinates: { lat: 39.5605, lng: 2.8885 },
   schedule: "Lunes a Sábado: 09:00 - 19:00 | Domingos: 09:30 - 13:30 (Demostración de Soplado en Vivo)",
   lastVerifiedAt: "2026-08-25",
-  image: "https://www.gordiola.com/wp-content/uploads/2021/01/vidrios-gordiola.jpg",
-  gallery: [
-    "https://www.gordiola.com/wp-content/uploads/2021/03/daniel-aldeguer-gordiola-vidrio-soplado.jpg",
-    "https://www.gordiola.com/wp-content/uploads/2021/05/guillermo-rossello-bordoy-vidrio-soplado-gordiola.jpg",
-  ],
+  image: "/images/services/vidrios-gordiola-algaida.jpg",
+  gallery: ["/images/services/vidrios-gordiola-algaida.jpg"],
   targetAudience: ["residentes", "turistas", "familias", "expat"],
   languagesSpoken: ["es", "ca", "en", "de", "fr"],
   emergency24h: false,

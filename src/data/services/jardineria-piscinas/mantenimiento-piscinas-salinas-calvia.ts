@@ -33,7 +33,7 @@ export const mantenimientoPiscinasSalinasCalvia: ServiceItem = {
   paymentMethods: ["credit_card", "bank_transfer", "cash"],
   phone: "+34 971 69 11 88",
   website: "https://www.aquapurepools.com/",
-  image: "/images/services/mantenimiento-piscinas-salinas-calvia.webp",
+  image: "/images/services/mantenimiento-piscinas-salinas-calvia.jpg",
   shortDescription: {
     es: "Mantenimiento profesional de piscinas de villas, conversión a electrólisis salina, bombas de calor inverter y control domótico del agua.",
     en: "Professional villa pool maintenance, saltwater chlorination conversions, inverter heat pumps, and smart app water monitoring.",

@@ -137,7 +137,7 @@ export const restauranteCmSanAntonioCanPastilla: ServiceItem = {
     de: "1934 gegründet, verbindet das Clubrestaurant im CMSAP Can Pastilla seit Generationen die Liebe zum Meer mit traditioneller mallorquinischer Gastfreundschaft.",
   },
   image: "/images/services/restaurante-cm-san-antonio-can-pastilla.jpg",
-  gallery: [],
+  gallery: ["/images/services/restaurante-cm-san-antonio-can-pastilla.jpg"],
   schedule: "Lunes a Domingo: 08:00 - 23:00 (Abierto todos los días del año)",
   confidenceScore: 98,
   verificationStatus: "verified",

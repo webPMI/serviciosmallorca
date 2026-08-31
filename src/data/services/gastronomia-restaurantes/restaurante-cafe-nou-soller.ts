@@ -134,11 +134,8 @@ export const restauranteCafeNouSoller: ServiceItem = {
     ca: "El 1960, el Cafè Nou va obrir a Sóller per compartir la bona cuina a la brasa de llenya en un ambient familiar de poble.",
     de: "1960 am Bahnhof von Sóller eröffnet, ist das Cafè Nou seit jeher eine feste Institution für herzhafte Grillgerichte und geselliges Beisammensein.",
   },
-  image: "https://cafenou.com/wp-content/uploads/2023/02/Cafe-Nou-scaled-e1677591160586.jpg",
-  gallery: [
-    "https://cafenou.com/wp-content/uploads/2024/04/DSC09776-1-1024x769.jpg",
-    "https://cafenou.com/wp-content/uploads/2025/03/DSC03355-600x600.jpg",
-  ],
+  image: "/images/services/restaurante-cafe-nou-soller.jpg",
+  gallery: ["/images/services/restaurante-cafe-nou-soller.jpg"],
   schedule: "Lunes a Domingo: 08:00 - 24:00 (Abierto todos los días)",
   confidenceScore: 99,
   verificationStatus: "verified",

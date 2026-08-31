@@ -142,11 +142,8 @@ export const restauranteSesOliveresPortSoller: ServiceItem = {
     ca: "El 1956, Ses Oliveres va obrir al passeig del Port de Sóller per oferir el millor peix fresc dels pescadors locals amb una atenció càlida davant la mar.",
     de: "1956 an der Promenade von Port de Sóller eröffnet, verwöhnt das Ses Oliveres Gäste seit Generationen mit tagesfrischem Fisch der lokalen Fischerflotte.",
   },
-  image: "https://sesoliveresportdesoller.com/wp-content/uploads/2024/06/gambas.webp",
-  gallery: [
-    "https://ses-oliveres-port-de-soller.fra1.digitaloceanspaces.com/wp-content/uploads/2024/06/27130925/IMG-20240224-WA0009-01_11_11zon.webp",
-    "https://ses-oliveres-port-de-soller.fra1.digitaloceanspaces.com/wp-content/uploads/2024/06/27130923/IMG-20231109-WA0047-01_10_11zon.webp",
-  ],
+  image: "/images/services/restaurante-ses-oliveres-port-soller.jpg",
+  gallery: ["/images/services/restaurante-ses-oliveres-port-soller.jpg"],
   schedule: "Lunes a Domingo: 13:00 - 22:30 (Abierto todos los días)",
   confidenceScore: 99,
   verificationStatus: "verified",

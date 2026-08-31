@@ -32,11 +32,8 @@ export const restauranteMacaDeCastro: ServiceItem = {
   schedule:
     "Servicio bajo reserva previa. Cocina de temporada con menús degustación. Consultar horarios semanales en la web oficial.",
   lastVerifiedAt: "2026-08-26",
-  image: "https://macadecastro.com/wp-content/uploads/2024/07/deCastro197_home.jpeg",
-  gallery: [
-    "https://macadecastro.com/wp-content/uploads/2024/04/31082023-_DSC2913-7.png",
-    "https://macadecastro.com/wp-content/uploads/2024/04/Tartaleta-2-1.png",
-  ],
+  image: "/images/services/restaurante-maca-de-castro.jpg",
+  gallery: ["/images/services/restaurante-maca-de-castro.jpg"],
   targetAudience: ["residentes", "turistas", "parejas", "expat", "gourmets"],
   languagesSpoken: ["es", "en", "ca", "de"],
   emergency24h: false,

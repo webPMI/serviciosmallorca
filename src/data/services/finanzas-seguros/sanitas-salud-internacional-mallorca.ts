@@ -33,7 +33,7 @@ export const sanitasSaludInternacionalMallorca: ServiceItem = {
   paymentMethods: ["credit_card", "bank_transfer", "cash"],
   phone: "+34 971 75 80 00",
   website: "https://www.sanitas.es/mallorca-expat",
-  image: "/images/services/sanitas-salud-internacional-mallorca.webp",
+  image: "/images/services/sanitas-salud-internacional-mallorca.jpg",
   shortDescription: {
     es: "Seguros médicos privados sin copago válidos para obtención del NIE y residencia en España con cuadro médico internacional.",
     en: "Private health insurance with zero copayments meeting all Spanish residency (NIE/TIE/Golden Visa) visa requirements.",

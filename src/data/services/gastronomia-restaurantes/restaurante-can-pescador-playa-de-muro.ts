@@ -142,11 +142,8 @@ export const restauranteCanPescadorPlayaDeMuro: ServiceItem = {
     ca: "El 2012, Ca'n Pescador va néixer a Platja de Muro per compartir l'esperit de les casetes de pescadors i oferir els millors arrossos de la badia d'Alcúdia.",
     de: "2012 an der Playa de Muro eröffnet, fängt das Ca'n Pescador den Geist traditioneller Fischerhütten ein und serviert herausragende balearische Reisgerichte.",
   },
-  image: "https://canpescador.es/wp-content/uploads/2025/07/banner_canamina-scaled.jpg",
-  gallery: [
-    "https://canpescador.es/wp-content/uploads/2025/06/can_pescador-6-1.png",
-    "https://canpescador.es/wp-content/uploads/2025/06/can_pescador-7.png",
-  ],
+  image: "/images/services/restaurante-can-pescador-playa-de-muro.jpg",
+  gallery: ["/images/services/restaurante-can-pescador-playa-de-muro.jpg"],
   schedule: "Martes a Domingo: 12:30 - 15:30, 18:00 - 22:00 | Lunes cerrado (Temporada)",
   confidenceScore: 99,
   verificationStatus: "verified",

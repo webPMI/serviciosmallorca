@@ -133,12 +133,8 @@ export const canBoquetaSoller: ServiceItem = {
     ca: "El xef solleric Kiko Martorell va crear Ca'n Boqueta a la casa de la família per oferir una alta cuina contemporània arrelada a Mallorca.",
     de: "Der einheimische Chefkoch Kiko Martorell eröffnete das Ca'n Boqueta im historischen Familienhaus, um die traditionelle Inselküche modern und raffiniert zu interpretieren.",
   },
-  image: "https://www.canboqueta.com/images/pic01.jpg",
-  gallery: [
-    "https://www.canboqueta.com/images/pic02.jpg",
-    "https://www.canboqueta.com/images/pic03.jpg",
-    "https://www.canboqueta.com/images/pic04.jpg",
-  ],
+  image: "/images/services/can-boqueta-soller.jpg",
+  gallery: ["/images/services/can-boqueta-soller.jpg"],
   schedule:
     "Jueves a Sábado: 13:00 - 16:30, 19:45 - 23:30 | Martes, Miércoles y Domingo: 13:00 - 16:30 | Lunes cerrado",
   confidenceScore: 99,

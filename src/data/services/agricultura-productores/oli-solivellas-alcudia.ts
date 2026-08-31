@@ -33,7 +33,7 @@ export const oliSolivellasAlcudia: ServiceItem = {
   paymentMethods: ["credit_card", "bank_transfer", "cash"],
   phone: "+34 971 54 86 53",
   website: "https://www.olisolivellas.com/",
-  image: "/images/services/oli-solivellas-alcudia.webp",
+  image: "/images/services/oli-solivellas-alcudia.jpg",
   shortDescription: {
     es: "Aceite de oliva virgen extra de cosecha temprana junto a la bahía de Alcúdia, galardonado entre los mejores del mundo.",
     en: "Early harvest extra virgin olive oil produced by the Bay of Alcúdia, ranked among the finest worldwide.",

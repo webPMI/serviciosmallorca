@@ -33,7 +33,7 @@ export const granFoliesBeachClubAndratx: ServiceItem = {
   paymentMethods: ["credit_card", "bank_transfer", "cash"],
   phone: "+34 971 67 10 61",
   website: "https://beachclubgranfolies.com/",
-  image: "/images/services/gran-folies-beach-club-andratx.webp",
+  image: "/images/services/gran-folies-beach-club-andratx.jpg",
   shortDescription: {
     es: "Club de playa icónico fundado hace más de 40 años en los acantilados de Cala Llamp con piscina de agua de mar y restaurante.",
     en: "Iconic beach club established over 40 years ago on the cliffs of Cala Llamp featuring a saltwater pool and dining.",

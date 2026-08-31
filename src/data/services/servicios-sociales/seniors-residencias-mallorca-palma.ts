@@ -33,7 +33,7 @@ export const seniorsResidenciasMallorcaPalma: ServiceItem = {
   paymentMethods: ["credit_card", "bank_transfer", "cash"],
   phone: "+34 971 28 40 10",
   website: "https://www.seniorsresidencias.es/palma/",
-  image: "/images/services/seniors-residencias-mallorca-palma.webp",
+  image: "/images/services/seniors-residencias-mallorca-palma.jpg",
   shortDescription: {
     es: "Centro residencial y estancia de día para personas mayores con atención médica 24h, fisioterapia y jardín sensorial.",
     en: "Senior residential living and day care center providing 24/7 nursing, rehabilitation physiotherapy, and therapy gardens.",

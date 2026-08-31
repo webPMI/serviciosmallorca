@@ -142,11 +142,8 @@ export const restauranteClubNauticPortocolom: ServiceItem = {
     ca: "El restaurant del Club Nàutic va néixer als anys 60 com a punt de trobada per gaudir del peix fresc de la badia de Portocolom.",
     de: "Das Restaurant im Club Nàutic Portocolom wurde in den 1960er Jahren gegründet, um Clubmitgliedern und Gästen fangfrische Meeresküche direkt am Wasser zu servieren.",
   },
-  image: "https://clubnautic.es/wp-content/uploads/2021/06/plato1.jpg",
-  gallery: [
-    "https://clubnautic.es/wp-content/uploads/2021/06/plato2.jpg",
-    "https://clubnautic.es/wp-content/uploads/2021/06/Plato3.jpg",
-  ],
+  image: "/images/services/restaurante-club-nautic-portocolom.jpg",
+  gallery: ["/images/services/restaurante-club-nautic-portocolom.jpg"],
   schedule: "Miércoles a Lunes: 09:00 - 16:00, 19:30 - 23:00 | Martes cerrado",
   confidenceScore: 99,
   verificationStatus: "verified",

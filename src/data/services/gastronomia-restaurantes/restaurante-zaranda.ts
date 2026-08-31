@@ -32,11 +32,8 @@ export const restauranteZaranda: ServiceItem = {
   schedule:
     "Atención bajo reserva previa. Menús degustación a mediodía y noche. Consultar disponibilidad y horarios semanales en la web oficial.",
   lastVerifiedAt: "2026-08-26",
-  image: "https://zaranda.es/wp-content/uploads/2026/04/restaurante-zaranda-calamar-encebollado-mallorca.jpg",
-  gallery: [
-    "https://zaranda.es/wp-content/uploads/2026/04/restaurante-zaranda-muda-gamba-mallorca.jpg",
-    "https://zaranda.es/wp-content/uploads/2026/04/restaurante-zaranda-rape-chermoulah-mallorca.jpg",
-  ],
+  image: "/images/services/restaurante-zaranda.jpg",
+  gallery: ["/images/services/restaurante-zaranda.jpg"],
   targetAudience: ["residentes", "turistas", "parejas", "expat", "gourmets"],
   languagesSpoken: ["es", "en", "ca", "de"],
   emergency24h: false,

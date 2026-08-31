@@ -33,7 +33,7 @@ export const palmaAquariumPlayaDePalma: ServiceItem = {
   paymentMethods: ["credit_card", "bank_transfer", "cash"],
   phone: "+34 971 74 61 04",
   website: "https://palmaaquarium.com/",
-  image: "/images/services/palma-aquarium-playa-de-palma.webp",
+  image: "/images/services/palma-aquarium-playa-de-palma.jpg",
   shortDescription: {
     es: "Parque marino con más de 8.000 ejemplares y el tanque de tiburones 'The Big Blue', el más profundo de Europa (8,5 metros).",
     en: "Marine park with over 8,000 specimens and Europe's deepest shark tank 'The Big Blue' (8.5 meters deep).",

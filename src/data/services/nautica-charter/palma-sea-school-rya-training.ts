@@ -33,7 +33,7 @@ export const palmaSeaSchoolRyaTraining: ServiceItem = {
   paymentMethods: ["credit_card", "bank_transfer", "cash"],
   phone: "+34 971 72 00 11",
   website: "https://www.palmaseaschool.com/",
-  image: "/images/services/palma-sea-school-rya-training.webp",
+  image: "/images/services/palma-sea-school-rya-training.jpg",
   shortDescription: {
     es: "Centro homologado RYA en el Real Club Náutico de Palma impartiendo Day Skipper, Yachtmaster y cursos STCW.",
     en: "Certified RYA training school at Real Club Náutico de Palma offering Day Skipper, Yachtmaster, and STCW courses.",

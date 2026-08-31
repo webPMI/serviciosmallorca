@@ -165,7 +165,7 @@ export const colmadoSantoDomingoPalma: ServiceItem = {
     instagram: "https://www.instagram.com/colmadosantodomingo/",
   },
   image: "/images/services/colmado-santo-domingo-palma.jpg",
-  gallery: ["/images/services/colmado-santo-domingo-palma-1.jpg"],
+  gallery: ["/images/services/colmado-santo-domingo-palma.jpg"],
   schedule: "Lunes a Viernes: 10:15 - 20:00 | Sábados: 10:30 - 19:45 | Domingos cerrado",
   confidenceScore: 99,
   verificationStatus: "verified",

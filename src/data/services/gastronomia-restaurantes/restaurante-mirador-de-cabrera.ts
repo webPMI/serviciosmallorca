@@ -142,11 +142,8 @@ export const restauranteMiradorDeCabrera: ServiceItem = {
     ca: "El 1990, el Mirador de Cabrera va néixer a Vallgornera per unir la màgia del paisatge marí de Cabrera amb una gastronomia mediterrània d'excel·lència.",
     de: "1990 auf den Klippen von Vallgornera erbaut, verbindet das Mirador de Cabrera seither die Schönheit der Südküste mit erstklassiger Gastronomie.",
   },
-  image: "https://mirador-de-cabrera.com/wp-content/uploads/2023/03/Mirador_de_Cabrera_DineWine.webp",
-  gallery: [
-    "https://mirador-de-cabrera.com/wp-content/uploads/2023/03/Mirador_de_Cabrera_Klausmann_Kochkurs1.webp",
-    "https://mirador-de-cabrera.com/wp-content/uploads/2023/03/Mirador_de_cabrera_Klausmann_ergebnis.webp",
-  ],
+  image: "/images/services/restaurante-mirador-de-cabrera.jpg",
+  gallery: ["/images/services/restaurante-mirador-de-cabrera.jpg"],
   schedule:
     "Miércoles a Viernes: 17:00 - 21:00 | Sábado y Domingo: 12:00 - 15:00, 18:00 - 21:00 | Lunes y Martes cerrado",
   confidenceScore: 99,

@@ -141,13 +141,8 @@ export const bodegaCanVidalet: ServiceItem = {
     ca: "Fundat el 1996 a Pollença, Can Vidalet elabora vins i destil·lats artesanals que reflecteixen la identitat del nord de Mallorca.",
     de: "1996 in Pollença gegründet, verbindet Can Vidalet das mediterrane Terroir des Nordens mit der Leidenschaft für erlesene Weine und feinste Spirituosen.",
   },
-  image:
-    "https://www.canvidalet.com/cdn/shop/files/premium-wine-tasting-mallorca-can-vidalet.png?v=1778151579&width=3840",
-  gallery: [
-    "https://www.canvidalet.com/cdn/shop/files/Vinos_con_alma_barricas_Bodegas_Can_Vidalet_Mallorca.png?v=1761310813&width=3840",
-    "https://www.canvidalet.com/cdn/shop/files/Gin_Onze_Bodegas_CanVidalet.jpg?v=1773052545&width=533",
-    "https://www.canvidalet.com/cdn/shop/files/Brindando_con_vino_blanco_de_Can_Vidalet.png?v=1761308363&width=1500",
-  ],
+  image: "/images/services/bodega-can-vidalet-pollensa.jpg",
+  gallery: ["/images/services/bodega-can-vidalet-pollensa.jpg"],
   schedule: "Lunes a Viernes: 10:00 - 18:00 (Tours y catas: 12:00, 13:00, 15:00, 16:00 | Sábado y Domingo cerrado)",
   confidenceScore: 98,
   verificationStatus: "verified",

@@ -135,7 +135,7 @@ export const casXorcSoller: ServiceItem = {
     de: "Ca's Xorc entstand aus der Vision, eine historische Finca aus dem 18. Jahrhundert liebevoll zu restaurieren und in eine Oase der Ruhe und Kochkunst zu verwandeln.",
   },
   image: "/images/services/cas-xorc-soller.jpg",
-  gallery: [],
+  gallery: ["/images/services/cas-xorc-soller.jpg"],
   schedule: "Miércoles a Domingo: 13:00 - 15:30, 19:00 - 22:00 | Martes solo cenas | Lunes cerrado",
   confidenceScore: 97,
   verificationStatus: "verified",

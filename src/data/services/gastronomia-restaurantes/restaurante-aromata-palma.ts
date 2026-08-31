@@ -29,7 +29,7 @@ export const restauranteAromataPalma: ServiceItem = {
   schedule: "Martes a Sábado: 13:00 - 15:30, 20:00 - 22:30",
   lastVerifiedAt: "2026-08-26",
   image: "/images/services/restaurante-aromata-palma.jpg",
-  gallery: [],
+  gallery: ["/images/services/restaurante-aromata-palma.jpg"],
   targetAudience: ["residentes", "turistas", "gourmet"],
   languagesSpoken: ["es", "en", "ca", "de"],
   emergency24h: false,

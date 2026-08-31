@@ -28,7 +28,7 @@ export const bensDavall: ServiceItem = {
   schedule: "Miércoles a Domingo: 13:00 - 15:30 | 19:30 - 22:30",
   lastVerifiedAt: "2026-08-25",
   image: "/images/services/bens-davall.jpg",
-  gallery: [],
+  gallery: ["/images/services/bens-davall.jpg"],
   targetAudience: ["residentes", "turistas", "expat"],
   languagesSpoken: ["es", "en", "ca", "de", "fr"],
   emergency24h: false,
