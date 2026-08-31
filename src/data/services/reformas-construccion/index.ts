@@ -35,6 +35,7 @@ import { oamArquitecturaMediterraneaPalma } from "./oam-arquitectura-mediterrane
 import { piscinasDeArenaNaturalMallorca } from "./piscinas-de-arena-natural-mallorca.ts";
 import { reformas_integrales_mallorca_nord_alcudia } from "./reformas-integrales-mallorca-nord-alcudia.ts";
 import { restauracionCasanova } from "./restauracion-muebles-casanova.ts";
+import { sociasYRosselloPalma } from "./socias-y-rossello-palma.ts";
 import { tapiceriaDecoracionInca } from "./tapiceria-decoracion-inca.ts";
 import { tapiceriaToldosBalear } from "./tapiceria-toldos-balear.ts";
 import { viverosLlabres } from "./viveros-jardineria-llabres.ts";
@@ -75,6 +76,7 @@ export { oamArquitecturaMediterraneaPalma } from "./oam-arquitectura-mediterrane
 export { piscinasDeArenaNaturalMallorca } from "./piscinas-de-arena-natural-mallorca.ts";
 export { reformas_integrales_mallorca_nord_alcudia } from "./reformas-integrales-mallorca-nord-alcudia.ts";
 export { restauracionCasanova } from "./restauracion-muebles-casanova.ts";
+export { sociasYRosselloPalma } from "./socias-y-rossello-palma.ts";
 export { tapiceriaDecoracionInca } from "./tapiceria-decoracion-inca.ts";
 export { tapiceriaToldosBalear } from "./tapiceria-toldos-balear.ts";
 export { viverosLlabres } from "./viveros-jardineria-llabres.ts";
@@ -116,6 +118,7 @@ export const REFORMAS_SERVICES: ServiceItem[] = [
   piscinasDeArenaNaturalMallorca,
   reformas_integrales_mallorca_nord_alcudia,
   restauracionCasanova,
+  sociasYRosselloPalma,
   tapiceriaDecoracionInca,
   tapiceriaToldosBalear,
   viverosLlabres,

@@ -4,6 +4,7 @@ import { balneario_font_santa_thermal_spa_campos } from "./balneario-font-santa-
 import { belmond_la_residencia_spa_deia } from "./belmond-la-residencia-spa-deia.ts";
 import { bodyna_spa_hospes_maricel_calvia } from "./bodyna-spa-hospes-maricel-calvia.ts";
 import { can_alomar_urban_spa_palma } from "./can-alomar-urban-spa-palma.ts";
+import { castilloHotelSonVidaSpa } from "./castillo-hotel-son-vida-spa.ts";
 import { centro_medico_quironsalud_porto_pi } from "./centro-medico-quironsalud-porto-pi.ts";
 import { clinica_aureo_medicina_estetica_palma } from "./clinica-aureo-medicina-estetica-palma.ts";
 import { clinica_baviera_oftalmologia_palma } from "./clinica-baviera-oftalmologia-palma.ts";
@@ -33,6 +34,7 @@ export { balneario_font_santa_thermal_spa_campos } from "./balneario-font-santa-
 export { belmond_la_residencia_spa_deia } from "./belmond-la-residencia-spa-deia.ts";
 export { bodyna_spa_hospes_maricel_calvia } from "./bodyna-spa-hospes-maricel-calvia.ts";
 export { can_alomar_urban_spa_palma } from "./can-alomar-urban-spa-palma.ts";
+export { castilloHotelSonVidaSpa } from "./castillo-hotel-son-vida-spa.ts";
 export { centro_medico_quironsalud_porto_pi } from "./centro-medico-quironsalud-porto-pi.ts";
 export { clinica_aureo_medicina_estetica_palma } from "./clinica-aureo-medicina-estetica-palma.ts";
 export { clinica_baviera_oftalmologia_palma } from "./clinica-baviera-oftalmologia-palma.ts";
@@ -63,6 +65,7 @@ export const SPAS_SERVICES: ServiceItem[] = [
   belmond_la_residencia_spa_deia,
   bodyna_spa_hospes_maricel_calvia,
   can_alomar_urban_spa_palma,
+  castilloHotelSonVidaSpa,
   centro_medico_quironsalud_porto_pi,
   clinica_aureo_medicina_estetica_palma,
   clinica_baviera_oftalmologia_palma,

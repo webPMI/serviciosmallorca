@@ -43,7 +43,7 @@ export const SPORTS_FACILITIES: SportsFacilityPOI[] = [
     reviewCount: 410,
     confidenceScore: 96,
     verifiedOfficialSource: "pinspadelclub.com / Federación Balear de Pádel",
-    image: "/images/categories/deportes.jpg",
+    image: "/images/sports/category-padel.jpg",
     gallery: ["/images/categories/deportes.jpg"],
     description: {
       es: "Uno de los clubs de pádel más modernos y completos de Palma con 16 pistas de última generación — 9 cubiertas para sombra y lluvia, piscina, restaurante-cafetería con terraza, tienda especializada y parking propio en el barrio de Sa Teulera.",
@@ -129,7 +129,7 @@ export const SPORTS_FACILITIES: SportsFacilityPOI[] = [
     reviewCount: 890,
     confidenceScore: 98,
     verifiedOfficialSource: "Ajuntament de Palma / IME Institut Municipal d'Esports",
-    image: "/images/categories/deportes.jpg",
+    image: "/images/sports/category-padel.jpg",
     description: {
       es: "La ruta de running y ciclismo más emblemática de Palma: 6,5 km totalmente llanos de carril bici y paseo costero continuo, desde el Club Náutico Portitxol hasta el Dique del Oeste, con vistas panorámicas a la Bahía de Palma y a La Seu.",
       en: "Palma's most iconic running and cycling route: 6.5 flat kilometres of continuous seafront cycle lane and promenade, from Portitxol yacht club to the western breakwater, with panoramic views of Palma Bay and the Cathedral.",
@@ -211,7 +211,7 @@ export const SPORTS_FACILITIES: SportsFacilityPOI[] = [
     reviewCount: 185,
     confidenceScore: 94,
     verifiedOfficialSource: "Ajuntament de Palma / IME",
-    image: "/images/categories/deportes.jpg",
+    image: "/images/sports/category-padel.jpg",
     description: {
       es: "Instalación pública de Street Workout y calistenia al pie de la Catedral de Palma. Dispone de barras paralelas, dominaderas, anillas, banco de abdominales y zona de sombra arbolada con vistas icónicas a La Seu.",
       en: "Free public Street Workout and calisthenics park at the foot of Palma's Cathedral, featuring parallel bars, pull-up rigs, gymnastic rings, and natural tree shade with iconic views of La Seu.",
@@ -288,7 +288,7 @@ export const SPORTS_FACILITIES: SportsFacilityPOI[] = [
     reviewCount: 1540,
     confidenceScore: 99,
     verifiedOfficialSource: "rafanadalacademy.com / ATP Official",
-    image: "/images/categories/deportes.jpg",
+    image: "/images/sports/category-padel.jpg",
     gallery: ["/images/categories/deportes.jpg"],
     description: {
       es: "El complejo deportivo de referencia mundial ubicado en Mallorca. Cuenta con 45 pistas de tenis (tierra batida y pista rápida), 13 pistas de pádel indoor y outdoor, piscina semiolímpica de 25 m climatizada, gimnasio de alto rendimiento, clínica de fisioterapia deportiva, hotel, restaurante y el exclusivo Museo Rafa Nadal.",
@@ -381,7 +381,7 @@ export const SPORTS_FACILITIES: SportsFacilityPOI[] = [
     reviewCount: 210,
     confidenceScore: 95,
     verifiedOfficialSource: "sadhana.works (sucesor oficial de Zunray Yoga, desde 2021)",
-    image: "/images/categories/deportes.jpg",
+    image: "/images/sports/category-padel.jpg",
     gallery: ["/images/categories/deportes.jpg"],
     description: {
       es: "Escuela de yoga, meditación y consciencia ubicada en un palacete histórico del casco antiguo de Palma. Heredera del legado de Zunray Yoga (2021), Sadhana Works ofrece Kundalini, Vinyasa, Yin Yoga, Healing Arts y talleres de transformación personal en 4 idiomas.",
@@ -462,7 +462,7 @@ export const SPORTS_FACILITIES: SportsFacilityPOI[] = [
     reviewCount: 320,
     confidenceScore: 97,
     verifiedOfficialSource: "mallorcacyclingcenter.com / UCI World Tour Partner",
-    image: "/images/categories/deportes.jpg",
+    image: "/images/sports/category-padel.jpg",
     gallery: ["/images/categories/deportes.jpg"],
     description: {
       es: "Centro ciclista de referencia en Ca'n Pastilla (Palma), especializado en alquiler de bicicletas de carretera de alta gama (BMC, Colnago, Cervélo Dura-Ace Di2), taller mecánico oficial, biomecánica y servicio de entrega en hoteles de toda la isla. Punto de partida estratégico para las grandes rutas de Mallorca.",
@@ -543,7 +543,7 @@ export const SPORTS_FACILITIES: SportsFacilityPOI[] = [
     reviewCount: 620,
     confidenceScore: 93,
     verifiedOfficialSource: "basic-fit.com — Club Palma de Mallorca Avd. Portugal",
-    image: "/images/categories/deportes.jpg",
+    image: "/images/sports/category-padel.jpg",
     description: {
       es: "Gimnasio de acceso abierto y alta capacidad en pleno centro de Palma (Avda. Portugal, 7). Instalaciones modernas con amplia zona de cardio, máquinas de fuerza, pesos libres, sala funcional y clases grupales incluidas. Horario casi 24h de lunes a viernes, ideal para turistas con day pass y para residentes.",
       en: "High-capacity open-access gym in central Palma (Avda. Portugal, 7). Modern facilities including extensive cardio zone, strength machines, free weights, functional area and group classes. Near 24h schedule Mon-Fri — ideal for tourists with a day pass and residents alike.",
@@ -622,7 +622,7 @@ export const SPORTS_FACILITIES: SportsFacilityPOI[] = [
     reviewCount: 190,
     confidenceScore: 92,
     verifiedOfficialSource: "crossfitmallorca.com / CrossFit HQ Affiliate",
-    image: "/images/categories/deportes.jpg",
+    image: "/images/sports/category-padel.jpg",
     description: {
       es: "Box CrossFit afiliado oficial con 550 m² en el polígono Son Bugadelles (Santa Ponça). Uno de los boxes más veteranos de Mallorca, con comunidad activa, rig a lo largo de toda la nave, anillas, cuerdas de trepa, barras olímpicas, kettlebells y pizarra WOD diaria. Drop-in siempre bienvenido.",
       en: "Official CrossFit affiliate box with 550 m² in Son Bugadelles industrial estate (Santa Ponça). One of Mallorca's most established boxes — active community, full-length metal rig, gymnastic rings, climbing ropes, olympic bars, kettlebells and daily WOD whiteboard. Drop-ins always welcome.",
@@ -702,7 +702,7 @@ export const SPORTS_FACILITIES: SportsFacilityPOI[] = [
     reviewCount: 380,
     confidenceScore: 91,
     verifiedOfficialSource: "vivagym.es — Club Porto Pi Palma de Mallorca",
-    image: "/images/categories/deportes.jpg",
+    image: "/images/sports/category-padel.jpg",
     gallery: ["/images/categories/deportes.jpg"],
     description: {
       es: "Gimnasio VivaGym situado en el Centro Comercial Porto Pi (Palma), con amplia sala de fitness de última generación, zona de entrenamiento funcional con rack y kettlebells, ciclo-indoor, clases colectivas variadas (Cycling, GAP, Pilates, Cross) y aparcamiento gratuito del centro comercial incluido.",
@@ -775,7 +775,7 @@ export const SPORTS_FACILITIES: SportsFacilityPOI[] = [
     reviewCount: 230,
     confidenceScore: 98,
     verifiedOfficialSource: "Ajuntament de Palma / IME Institut Municipal d'Esports",
-    image: "/images/categories/deportes.jpg",
+    image: "/images/sports/category-padel.jpg",
     description: {
       es: "Parque de calistenia y entrenamiento funcional de acceso libre situado en el corazón de Palma (Parc de ses Estacions, junto a Plaza de España). Equipado con barras de dominadas a varias alturas, paralelas dobles, escalera horizontal (monkey bars), espalderas y zona de sombra arbolada ideal para entrenar a cualquier hora del día.",
       en: "Free-access calisthenics and functional fitness park in the center of Palma (Parc de ses Estacions, next to Plaza de España). Features multi-height pull-up bars, parallel dip stations, monkey bars, Swedish ladders, and natural tree shade.",
@@ -852,7 +852,7 @@ export const SPORTS_FACILITIES: SportsFacilityPOI[] = [
     reviewCount: 980,
     confidenceScore: 99,
     verifiedOfficialSource: "Institut Municipal d'Esports (IME Palma) — ime.palma.cat",
-    image: "/images/categories/deportes.jpg",
+    image: "/images/sports/category-padel.jpg",
     description: {
       es: "El buque insignia del deporte público municipal en Palma. Complejo de gran envergadura gestionado por el IME con piscina climatizada de 50 metros convertible, piscina de aprendizaje, sala de musculación y cardio de 600 m², pistas de pádel exteriores, pabellón de parqué para baloncesto y fútbol sala, y amplio aparcamiento gratuito.",
       en: "Palma's flagship public municipal sports complex managed by the IME. Features a 50m heated competition pool with moveable bulkhead, 600m² fitness gym, outdoor padel courts, hardwood sports arena for basketball and futsal, and free parking.",
@@ -931,7 +931,7 @@ export const SPORTS_FACILITIES: SportsFacilityPOI[] = [
     reviewCount: 740,
     confidenceScore: 99,
     verifiedOfficialSource: "Institut Municipal d'Esports (IME Palma) / Federació Balear de Natació",
-    image: "/images/categories/deportes.jpg",
+    image: "/images/sports/category-padel.jpg",
     description: {
       es: "Centro acuático de nivel olímpico en Palma de Mallorca. Cuenta con piscina olímpica exterior de 50 m climatizada todo el año mediante geotermia y biomasa sostenible, piscina olímpica interior de 50 m, foso de saltos con plataformas de hasta 10 m, salas de fitness y solárium exterior con césped.",
       en: "Olympic-standard aquatic complex in Palma. Features a year-round heated 50m outdoor Olympic pool powered by green geothermal and biomass energy, a 50m indoor competition pool, 10m diving well, fitness gym and outdoor sunbathing lawn.",
@@ -1002,7 +1002,7 @@ export const SPORTS_FACILITIES: SportsFacilityPOI[] = [
     reviewCount: 1420,
     confidenceScore: 99,
     verifiedOfficialSource: "Ajuntament de Palma / Parcs i Jardins de Palma",
-    image: "/images/categories/deportes.jpg",
+    image: "/images/sports/category-padel.jpg",
     description: {
       es: "El gran pulmón verde de Palma: 120 hectáreas de bosque mediterráneo protegido que rodean el castillo circular de Bellver. Red de senderos señalizados de trail running (circuitos de 3 km, 5 km y 8 km), rampas de pendiente para series de potencia, escaleras de piedra natural y aparatos de gimnasia al aire libre bajo frondosos pinos.",
       en: "Palma's central green haven: 120 hectares of protected Mediterranean forest encircling the iconic circular Bellver Castle. Features marked trail running loops (3km, 5km, 8km), uphill workout gradients, natural stone stairs, and outdoor fitness stations nestled under pine canopies.",
@@ -1071,7 +1071,7 @@ export const SPORTS_FACILITIES: SportsFacilityPOI[] = [
     reviewCount: 810,
     confidenceScore: 98,
     verifiedOfficialSource: "Ajuntament de Palma / IME",
-    image: "/images/categories/deportes.jpg",
+    image: "/images/sports/category-padel.jpg",
     description: {
       es: "El parque urbano más extenso de Palma (más de 100.000 m²). Dispone de un circuito perimetral de running de 1,3 km de tierra compactada y caucho, zona de Street Workout y calistenia de gran formato, skatepark de hormigón con bowl y zona street, pistas de baloncesto públicas y amplias praderas verdes.",
       en: "Palma's largest urban park (over 100,000 m²). Offers a 1.3km perimeter cushioned running loop, large calisthenics workout park, concrete skatepark with bowl and street elements, public basketball courts, and expansive lawns.",
@@ -1148,7 +1148,7 @@ export const SPORTS_FACILITIES: SportsFacilityPOI[] = [
     reviewCount: 390,
     confidenceScore: 98,
     verifiedOfficialSource: "Ajuntament de Calvià / Calvià Esports — calviaesports.com",
-    image: "/images/categories/deportes.jpg",
+    image: "/images/sports/category-padel.jpg",
     description: {
       es: "Instalación atlética de referencia en el suroeste de Mallorca, sede habitual de concentraciones de entrenamiento internacionales de atletismo y triatlón. Cuenta con pista de tartán de 400 m y 8 calles homologada, foso de saltos, zona de lanzamientos, parque de calistenia exterior, vestuarios completos y gradas cubiertas.",
       en: "Top-tier athletics complex in southwest Mallorca, international training base for track & field athletes and triathletes. Features an 8-lane 400m synthetic running track, jumping pits, throwing sector, outdoor calisthenics area, full locker rooms, and covered grandstands.",
@@ -1219,7 +1219,7 @@ export const SPORTS_FACILITIES: SportsFacilityPOI[] = [
     reviewCount: 310,
     confidenceScore: 97,
     verifiedOfficialSource: "Ajuntament de Palma / IME Palma",
-    image: "/images/categories/deportes.jpg",
+    image: "/images/sports/category-padel.jpg",
     description: {
       es: "Instalación pública de Street Workout sobre la arena de la Playa de Palma (altura Balneario 15 / Can Pastilla). Cuenta con barras de dominadas, barras paralelas, espaldera, anillas y banco inclinado, con la ventaja de entrenar descalzo sobre la arena frente al mar Mediterráneo y refrescarse con un baño al terminar.",
       en: "Free beachfront Street Workout park set directly on the sand of Playa de Palma (near Balneario 15 in Can Pastilla). Features pull-up bars, parallel dip bars, Swedish wall and ab benches — perfect for barefoot training and a post-workout swim.",
@@ -1296,7 +1296,7 @@ export const SPORTS_FACILITIES: SportsFacilityPOI[] = [
     reviewCount: 450,
     confidenceScore: 98,
     verifiedOfficialSource: "Ajuntament d'Inca / Esports Inca — inca.es",
-    image: "/images/categories/deportes.jpg",
+    image: "/images/sports/category-padel.jpg",
     description: {
       es: "El principal complejo deportivo público del centro de Mallorca (comarca del Raiguer). Cuenta con pista de atletismo homologada de 400 metros de tartán, piscina climatizada municipal de 25 m, pistas de tenis y pádel, rocódromo, módulo de calistenia y aparcamiento gratuito para más de 200 vehículos.",
       en: "The primary municipal sports complex in central Mallorca (Raiguer region). Features a certified 400m synthetic running track, 25m heated indoor pool, tennis and padel courts, climbing wall, calisthenics area, and free parking for over 200 cars.",
@@ -1367,7 +1367,7 @@ export const SPORTS_FACILITIES: SportsFacilityPOI[] = [
     reviewCount: 220,
     confidenceScore: 97,
     verifiedOfficialSource: "Ajuntament de Pollença / Ports de les Illes Balears",
-    image: "/images/categories/deportes.jpg",
+    image: "/images/sports/category-padel.jpg",
     description: {
       es: "Área deportiva pública y parque de calistenia situado en primera línea del Paseo de Port de Pollença, con vistas inigualables a la bahía y al cabo de Formentor. Equipado con barras de dominadas, barras paralelas, bancos de lumbares y zona de estiramientos bajo los emblemáticos pinos centenarios del paseo marítimo.",
       en: "Public beachfront fitness and calisthenics area located directly on the Port de Pollença promenade, with panoramic views of the bay and Formentor peninsula. Features pull-up bars, parallel dip bars, back extension benches and shaded stretching spots under centenary pine trees.",
@@ -1444,7 +1444,7 @@ export const SPORTS_FACILITIES: SportsFacilityPOI[] = [
     reviewCount: 650,
     confidenceScore: 98,
     verifiedOfficialSource: "Institut Municipal d'Esports (IME Palma) — ime.palma.cat",
-    image: "/images/categories/deportes.jpg",
+    image: "/images/sports/category-padel.jpg",
     description: {
       es: "Polideportivo municipal de referencia en la zona este de Palma (barrio de Son Gotleu / Es Rafal). Cuenta con piscina climatizada de 25 m y 6 calles, sala de musculación y cardio, frontón cubierto, pista de atletismo perimetral, sauna, vestuarios adaptados y aparcamiento gratuito.",
       en: "Major municipal sports centre in eastern Palma (Son Gotleu / Es Rafal). Features a 25m 6-lane heated indoor pool, fitness gym, covered fronton court, outdoor running loop, sauna, accessible locker rooms, and free parking.",
@@ -1521,7 +1521,7 @@ export const SPORTS_FACILITIES: SportsFacilityPOI[] = [
     reviewCount: 380,
     confidenceScore: 98,
     verifiedOfficialSource: "Àrea d'Esports Ajuntament d'Inca — inca.es",
-    image: "/images/categories/deportes.jpg",
+    image: "/images/sports/category-padel.jpg",
     description: {
       es: "El complejo deportivo municipal por excelencia del centro de Mallorca. Dispone de pista de atletismo homologada de 8 calles, piscina cubierta climatizada de 25 m, pistas de tenis de tierra batida, pistas de pádel de cristal y pabellón polideportivo para deportes de equipo.",
       en: "The premier municipal sports facility in inland Mallorca. Features a certified 8-lane tartan athletics track, 25m heated indoor swimming pool, clay tennis courts, glass padel courts, and an indoor multi-sports hall.",
@@ -1598,7 +1598,7 @@ export const SPORTS_FACILITIES: SportsFacilityPOI[] = [
     reviewCount: 310,
     confidenceScore: 97,
     verifiedOfficialSource: "Patronat Municipal d'Esports de Manacor — manacor.es",
-    image: "/images/categories/deportes.jpg",
+    image: "/images/sports/category-padel.jpg",
     description: {
       es: "Gran polideportivo comarcal de Manacor situado en el área deportiva de Torre dels Enagistes. Cuenta con pista de tartán sintético para running y velocidad, campos de fútbol de césped artificial, pistas exteriores de pádel y tenis, rocódromo y vestuarios completos.",
       en: "Major regional sports complex in Manacor. Offers a synthetic tartan track for sprints and distance running, synthetic turf football pitches, outdoor padel and tennis courts, and full changing rooms.",
@@ -1675,7 +1675,7 @@ export const SPORTS_FACILITIES: SportsFacilityPOI[] = [
     reviewCount: 440,
     confidenceScore: 98,
     verifiedOfficialSource: "Institut Calvianer d'Esports (ICE Calvià) — calviadeportes.com",
-    image: "/images/categories/deportes.jpg",
+    image: "/images/sports/category-padel.jpg",
     description: {
       es: "Complejo acuático y deportivo insignia del municipio de Calvià, nombrado en honor a la nadadora olímpica mallorquina Melani Costa. Dispone de piscina cubierta climatizada de 25 m y 8 calles, vaso de enseñanza y rehabilitación, sala fitness con maquinaria Technogym, sauna, hidromasaje y pistas exteriores.",
       en: "Premier municipal aquatic and sports facility in Calvià, named after Olympic swimmer Melani Costa. Features an 8-lane 25m heated indoor pool, learner/hydrotherapy pool, Technogym fitness suite, sauna, and outdoor courts.",
@@ -1752,7 +1752,7 @@ export const SPORTS_FACILITIES: SportsFacilityPOI[] = [
     reviewCount: 290,
     confidenceScore: 98,
     verifiedOfficialSource: "Àrea d'Esports Ajuntament de Sóller — ajsoller.net",
-    image: "/images/categories/deportes.jpg",
+    image: "/images/sports/category-padel.jpg",
     description: {
       es: "Centro polideportivo municipal de Sóller en un entorno natural privilegiado al pie de la Serra de Tramuntana. Cuenta con piscina climatizada de 25 m con grandes ventanales hacia las montañas, pabellón cubierto con parqué flotante, pistas de pádel y sala de acondicionamiento físico.",
       en: "Sóller's municipal sports centre set against the breathtaking backdrop of the Serra de Tramuntana mountains. Offers a 25m heated indoor pool with panoramic mountain views, indoor parquet sports pavilion, padel courts, and fitness gym.",
@@ -1829,7 +1829,7 @@ export const SPORTS_FACILITIES: SportsFacilityPOI[] = [
     reviewCount: 260,
     confidenceScore: 97,
     verifiedOfficialSource: "Departament d'Esports Ajuntament de Llucmajor — llucmajor.org",
-    image: "/images/categories/deportes.jpg",
+    image: "/images/sports/category-padel.jpg",
     description: {
       es: "Complejo polideportivo municipal de Llucmajor que da servicio a la comarca del Migjorn. Cuenta con piscina municipal descubierta para temporada de verano, pistas de tenis de pavimento poroso, pistas de pádel de cristal, circuito perimetral de carrera y campo de fútbol.",
       en: "Llucmajor's municipal sports hub serving the Migjorn region. Features an outdoor summer pool, porous concrete tennis courts, glass padel courts, perimeter running track, and football pitch.",
@@ -1906,7 +1906,7 @@ export const SPORTS_FACILITIES: SportsFacilityPOI[] = [
     reviewCount: 340,
     confidenceScore: 98,
     verifiedOfficialSource: "Patronat Municipal d'Esports d'Alcúdia — alcudia.net",
-    image: "/images/categories/deportes.jpg",
+    image: "/images/sports/category-padel.jpg",
     gallery: ["/images/categories/deportes.jpg"],
     description: {
       es: "Principal centro polideportivo del norte de Mallorca, ubicado en Alcúdia. Dispone de piscina cubierta climatizada de 25 m y 6 calles, salas de actividades dirigidas, pistas de pádel de cristal con iluminación LED, pistas de tenis y pabellón cubierto para baloncesto y fútbol sala.",
@@ -1984,7 +1984,7 @@ export const SPORTS_FACILITIES: SportsFacilityPOI[] = [
     reviewCount: 280,
     confidenceScore: 98,
     verifiedOfficialSource: "Àrea d'Esports Ajuntament de Felanitx — felanitx.cat",
-    image: "/images/categories/deportes.jpg",
+    image: "/images/sports/category-padel.jpg",
     gallery: ["/images/categories/deportes.jpg"],
     description: {
       es: "Complejo deportivo municipal de Felanitx nombrado en honor al legendario seis veces campeón mundial de ciclismo en pista Guillem Timoner. Cuenta con velódromo histórico, circuito perimetral de carrera, piscina municipal de verano, pistas de tenis y pistas de pádel de cristal.",
@@ -2062,7 +2062,7 @@ export const SPORTS_FACILITIES: SportsFacilityPOI[] = [
     reviewCount: 410,
     confidenceScore: 98,
     verifiedOfficialSource: "Institut Municipal de l'Esport (IME Palma) — ime.palma.cat",
-    image: "/images/categories/deportes.jpg",
+    image: "/images/sports/category-padel.jpg",
     gallery: ["/images/categories/deportes.jpg"],
     description: {
       es: "Parque público de calistenia y street workout de referencia en Palma, ubicado en el Paseo Marítimo con vistas a la bahía. Cuenta con barras de dominadas a varias alturas, barras paralelas dobles, monkey bars inclinadas, espalderas y anillas para entrenamiento con peso corporal.",
@@ -2140,7 +2140,7 @@ export const SPORTS_FACILITIES: SportsFacilityPOI[] = [
     reviewCount: 320,
     confidenceScore: 98,
     verifiedOfficialSource: "Calvià Deportes (ICE Calvià) — calviadeportes.com",
-    image: "/images/categories/deportes.jpg",
+    image: "/images/sports/category-padel.jpg",
     gallery: ["/images/categories/deportes.jpg"],
     description: {
       es: "Estación de calistenia y entrenamiento funcional sobre la arena de la playa de Palmanova en el municipio de Calvià. Ideal para combinar sesiones de street workout, series de running por el paseo marítimo y baños en el mar Mediterráneo.",
@@ -2218,7 +2218,7 @@ export const SPORTS_FACILITIES: SportsFacilityPOI[] = [
     reviewCount: 1250,
     confidenceScore: 99,
     verifiedOfficialSource: "Parcs i Jardins Ajuntament de Palma — palma.cat",
-    image: "/images/categories/deportes.jpg",
+    image: "/images/sports/category-padel.jpg",
     gallery: ["/images/categories/deportes.jpg"],
     description: {
       es: "El gran pulmón verde de Palma con más de 125 hectáreas de pinar mediterráneo y una red de circuitos de running, cuestas y escaleras para entrenamiento cardiovascular. Coronando la colina se encuentra el célebre Castillo de Bellver con vistas de 360 grados a la bahía y a la Serra de Tramuntana.",
@@ -2703,7 +2703,7 @@ export const SPORTS_FACILITIES: SportsFacilityPOI[] = [
     reviewCount: 290,
     confidenceScore: 98,
     verifiedOfficialSource: "watersportsmallorca.com / IKO International Kiteboarding Org",
-    image: "/images/sports/alcudiamar-marina-resort.jpg",
+    image: "/images/sports/category-padel.jpg",
     gallery: ["/images/categories/deportes.jpg"],
     description: {
       es: "Centro náutico y deportivo de referencia en la bahía de Alcúdia y Playa de Muro. Especializado en Stand Up Paddle (SUP) fitness, travesías costeras en paddle surf, Wingfoil, Kitesurf y natación en aguas abiertas bajo el régimen de brisas térmicas ideales del norte de Mallorca.",

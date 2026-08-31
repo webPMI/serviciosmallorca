@@ -296,11 +296,8 @@ export async function addServices(itemsToAdd: Partial<ServiceItem>[]): Promise<v
       highlights,
       servicesProvided,
       founderStory,
-      image:
-        item.image || "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1200&q=80",
-      gallery: item.gallery || [
-        "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=800&q=80",
-      ],
+      image: item.image || `/images/services/${slug}.jpg`,
+      gallery: item.gallery || [`/images/services/${slug}-1.jpg`],
       schedule: item.schedule || "Lun - Vie: 08:30 - 19:00",
       pricing: item.pricing || {
         startingPrice: "Desde 50€",

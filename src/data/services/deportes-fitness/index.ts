@@ -79,6 +79,7 @@ import { PINS_PADEL_CLUB_PALMA } from "./pins-padel-club-palma.ts";
 import { PISCINAS_OLIMPICAS_SON_HUGO_PALMA } from "./piscinas-olimpicas-son-hugo-palma.ts";
 import { PRANA_YOGA_STUDIO_PALMA } from "./prana-yoga-studio-palma.ts";
 import { PRO_CYCLE_HIRE_ALCUDIA_POLLENSA } from "./pro-cycle-hire-alcudia-pollensa.ts";
+import { rafaNadalAcademyManacor } from "./rafa-nadal-academy-manacor.ts";
 import { PULA_GOLF_RESORT_SON_SERVERA } from "./pula-golf-resort-son-servera.ts";
 import { PURE_SALT_YOGA_PORT_ADRIANO } from "./pure-salt-yoga-port-adriano.ts";
 import { REAL_GOLF_DE_BENDINAT } from "./real-golf-de-bendinat.ts";
@@ -187,6 +188,7 @@ export { PINS_PADEL_CLUB_PALMA } from "./pins-padel-club-palma.ts";
 export { PISCINAS_OLIMPICAS_SON_HUGO_PALMA } from "./piscinas-olimpicas-son-hugo-palma.ts";
 export { PRANA_YOGA_STUDIO_PALMA } from "./prana-yoga-studio-palma.ts";
 export { PRO_CYCLE_HIRE_ALCUDIA_POLLENSA } from "./pro-cycle-hire-alcudia-pollensa.ts";
+export { rafaNadalAcademyManacor } from "./rafa-nadal-academy-manacor.ts";
 export { PULA_GOLF_RESORT_SON_SERVERA } from "./pula-golf-resort-son-servera.ts";
 export { PURE_SALT_YOGA_PORT_ADRIANO } from "./pure-salt-yoga-port-adriano.ts";
 export { REAL_GOLF_DE_BENDINAT } from "./real-golf-de-bendinat.ts";
@@ -296,6 +298,7 @@ export const DEPORTES_SERVICES: ServiceItem[] = [
   PISCINAS_OLIMPICAS_SON_HUGO_PALMA,
   PRANA_YOGA_STUDIO_PALMA,
   PRO_CYCLE_HIRE_ALCUDIA_POLLENSA,
+  rafaNadalAcademyManacor,
   PULA_GOLF_RESORT_SON_SERVERA,
   PURE_SALT_YOGA_PORT_ADRIANO,
   REAL_GOLF_DE_BENDINAT,
