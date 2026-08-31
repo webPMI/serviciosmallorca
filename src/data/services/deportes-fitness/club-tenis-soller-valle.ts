@@ -38,10 +38,10 @@ export const CLUB_TENIS_SOLLER_VALLE: ServiceItem = {
     de: "Sportclub inmitten von Orangenhainen mit Panoramablick auf das Tal von Sóller.",
   },
   fullDescription: {
-    es: "Club deportivo entre naranjos con vistas panorámicas al valle de Sóller y la Serra de Tramuntana.",
-    en: "Sports club set among orange groves with panoramic views of Sóller valley and mountains.",
-    ca: "Club esportiu entre tarongers amb vistes panoràmiques a la vall de Sóller.",
-    de: "Sportclub inmitten von Orangenhainen mit Panoramablick auf das Tal von Sóller.",
+    es: "Club de Tenis & Pádel Sóller se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Club deportivo entre naranjos con vistas panorámicas al valle de Sóller y la Serra de Tramuntana. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "Club de Tenis & Pádel Sóller stands out as one of the premier athletic and fitness destinations in Mallorca. Sports club set among orange groves with panoramic views of Sóller valley and mountains. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "Club de Tenis & Pádel Sóller destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Club esportiu entre tarongers amb vistes panoràmiques a la vall de Sóller. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "Club de Tenis & Pádel Sóller zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Sportclub inmitten von Orangenhainen mit Panoramablick auf das Tal von Sóller. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

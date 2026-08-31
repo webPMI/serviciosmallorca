@@ -38,10 +38,10 @@ export const clinica_dental_portals_nous_calvia: ServiceItem = {
     de: "Internationale Zahnarztpraxis in Portals Nous mit 3D-Scannern, Sedierung und Ästhetik.",
   },
   fullDescription: {
-    es: "Odontología integral multilingüe para pacientes internacionales con tecnología 3D y sedación consciente.",
-    en: "Comprehensive multilingual dentistry for international clientele with 3D scanning and conscious sedation.",
-    ca: "Odontologia integral multilingüe a Portals Nous amb tecnologia 3D i sedació conscient.",
-    de: "Internationale Zahnarztpraxis in Portals Nous mit 3D-Scannern, Sedierung und Ästhetik.",
+    es: "Clínica Dental Portals Nous es un centro de referencia en salud, estética y bienestar en Mallorca. Odontología integral multilingüe para pacientes internacionales con tecnología 3D y sedación consciente. Ofrece un entorno exclusivo y relajante con equipamiento de vanguardia, profesionales titulados y atención personalizada en varios idiomas para residentes y visitantes de la isla.",
+    en: "Clínica Dental Portals Nous is a premier benchmark for health, aesthetic medicine, and wellness in Mallorca. Comprehensive multilingual dentistry for international clientele with 3D scanning and conscious sedation. Providing an exclusive, tranquil sanctuary with cutting-edge medical and wellness equipment, certified specialists, and multilingual client care.",
+    ca: "Clínica Dental Portals Nous és un centre de referència en salut, estètica i benestar a Mallorca. Odontologia integral multilingüe a Portals Nous amb tecnologia 3D i sedació conscient. Ofereix un entorn exclusiu amb equipament d'avantguarda, professionals titulats i atenció personalitzada multilingüe per a residents i visitants.",
+    de: "Clínica Dental Portals Nous ist eine führende Adresse für Gesundheit, Ästhetik und Wohlbefinden auf Mallorca. Internationale Zahnarztpraxis in Portals Nous mit 3D-Scannern, Sedierung und Ästhetik. Ausgestattet mit modernster Medizintechnik, qualifizierten Therapeuten und individueller mehrsprachiger Betreuung in stilvollem Ambiente.",
   },
   highlights: {
     es: [

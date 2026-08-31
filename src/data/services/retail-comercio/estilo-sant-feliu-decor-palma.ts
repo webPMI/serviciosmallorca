@@ -40,11 +40,11 @@ export const estiloSantFeliuDecorPalma: ServiceItem = {
     ca: "Showroom d'interiorisme mediterrani amb ceràmiques exclusives i llums naturals a Palma.",
     de: "Mediterraner Einrichtungs-Showroom mit exklusiver Keramik, Leinenkissen und Designerleuchten in Palma.",
   },
-  description: {
-    es: "Showroom de interiorismo mediterráneo con cerámicas exclusivas, cojines de lino, lámparas de fibras naturales y arte.",
-    en: "Mediterranean interior design showroom with bespoke ceramics, linen cushions, natural fiber lighting, and local art.",
-    ca: "Showroom d'interiorisme mediterrani amb ceràmiques exclusives i llums naturals a Palma.",
-    de: "Mediterraner Einrichtungs-Showroom mit exklusiver Keramik, Leinenkissen und Designerleuchten in Palma.",
+  fullDescription: {
+    es: "Estilo Sant Feliu Interior & Lifestyle Palma ofrece un servicio profesional de máxima categoría en Mallorca. Showroom de interiorismo mediterráneo con cerámicas exclusivas, cojines de lino, lámparas de fibras naturales y arte. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Estilo Sant Feliu Interior & Lifestyle Palma delivers premier professional service in Mallorca. Mediterranean interior design showroom with bespoke ceramics, linen cushions, natural fiber lighting, and local art. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Estilo Sant Feliu Interior & Lifestyle Palma ofereix un servei professional de màxima categoria a Mallorca. Showroom d Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Estilo Sant Feliu Interior & Lifestyle Palma bietet erstklassigen professionellen Service auf Mallorca. Mediterraner Einrichtungs-Showroom mit exklusiver Keramik, Leinenkissen und Designerleuchten in Palma. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

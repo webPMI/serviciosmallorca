@@ -38,10 +38,10 @@ export const clinica_baviera_oftalmologia_palma: ServiceItem = {
     de: "Augenklinik für Laser-Korrektur von Fehlsichtigkeiten und Alterssichtigkeit in Palma.",
   },
   fullDescription: {
-    es: "Clínica oftalmológica especializada en corrección láser de miopía, hipermetropía, astigmatismo y presbicia.",
-    en: "Ophthalmology clinic specialized in laser vision correction for myopia, hyperopia, and presbyopia.",
-    ca: "Clínica oftalmològica especialitzada en cirurgia refractiva làser a Palma.",
-    de: "Augenklinik für Laser-Korrektur von Fehlsichtigkeiten und Alterssichtigkeit in Palma.",
+    es: "Clínica Baviera Palma es un centro de referencia en salud, estética y bienestar en Mallorca. Clínica oftalmológica especializada en corrección láser de miopía, hipermetropía, astigmatismo y presbicia. Ofrece un entorno exclusivo y relajante con equipamiento de vanguardia, profesionales titulados y atención personalizada en varios idiomas para residentes y visitantes de la isla.",
+    en: "Clínica Baviera Palma is a premier benchmark for health, aesthetic medicine, and wellness in Mallorca. Ophthalmology clinic specialized in laser vision correction for myopia, hyperopia, and presbyopia. Providing an exclusive, tranquil sanctuary with cutting-edge medical and wellness equipment, certified specialists, and multilingual client care.",
+    ca: "Clínica Baviera Palma és un centre de referència en salut, estètica i benestar a Mallorca. Clínica oftalmològica especialitzada en cirurgia refractiva làser a Palma. Ofereix un entorn exclusiu amb equipament d'avantguarda, professionals titulats i atenció personalitzada multilingüe per a residents i visitants.",
+    de: "Clínica Baviera Palma ist eine führende Adresse für Gesundheit, Ästhetik und Wohlbefinden auf Mallorca. Augenklinik für Laser-Korrektur von Fehlsichtigkeiten und Alterssichtigkeit in Palma. Ausgestattet mit modernster Medizintechnik, qualifizierten Therapeuten und individueller mehrsprachiger Betreuung in stilvollem Ambiente.",
   },
   highlights: {
     es: [

@@ -40,11 +40,11 @@ export const canTemHistoricHotelAlcudia: ServiceItem = {
     ca: "Mansió senyorial del segle XVII dins el recinte emmurallat d'Alcúdia.",
     de: "Liebevoll restauriertes Herrenhaus aus dem 17. Jahrhundert innerhalb der Stadtmauern von Alcudia.",
   },
-  description: {
-    es: "Mansión solariega del siglo XVII restaurada dentro del recinto medieval amurallado de Alcúdia.",
-    en: "17th-century manor house lovingly preserved within the medieval walled town of Alcudia.",
-    ca: "Mansió senyorial del segle XVII dins el recinte emmurallat d'Alcúdia.",
-    de: "Liebevoll restauriertes Herrenhaus aus dem 17. Jahrhundert innerhalb der Stadtmauern von Alcudia.",
+  fullDescription: {
+    es: "Petit Hotel Can Tem Alcudia ofrece un servicio profesional de máxima categoría en Mallorca. Mansión solariega del siglo XVII restaurada dentro del recinto medieval amurallado de Alcúdia. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Petit Hotel Can Tem Alcudia delivers premier professional service in Mallorca. 17th-century manor house lovingly preserved within the medieval walled town of Alcudia. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Petit Hotel Can Tem Alcudia ofereix un servei professional de màxima categoria a Mallorca. Mansió senyorial del segle XVII dins el recinte emmurallat d Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Petit Hotel Can Tem Alcudia bietet erstklassigen professionellen Service auf Mallorca. Liebevoll restauriertes Herrenhaus aus dem 17. Jahrhundert innerhalb der Stadtmauern von Alcudia. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

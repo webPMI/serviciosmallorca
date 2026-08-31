@@ -38,10 +38,10 @@ export const PURE_SALT_YOGA_PORT_ADRIANO: ServiceItem = {
     de: "Klippen-Terrassen-Yoga mit Panoramablick auf den Luxushafen von Philippe Starck.",
   },
   fullDescription: {
-    es: "Sesiones de yoga en terraza sobre el acantilado con vistas al puerto deportivo diseñado por Philippe Starck.",
-    en: "Cliff-edge terrace yoga sessions overlooking the Philippe Starck designed luxury marina.",
-    ca: "Sessions de ioga a la terrassa sobre el penya-segat amb vistes a Port Adriano.",
-    de: "Klippen-Terrassen-Yoga mit Panoramablick auf den Luxushafen von Philippe Starck.",
+    es: "Pure Salt Yoga & Spa Port Adriano se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Sesiones de yoga en terraza sobre el acantilado con vistas al puerto deportivo diseñado por Philippe Starck. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "Pure Salt Yoga & Spa Port Adriano stands out as one of the premier athletic and fitness destinations in Mallorca. Cliff-edge terrace yoga sessions overlooking the Philippe Starck designed luxury marina. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "Pure Salt Yoga & Spa Port Adriano destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Sessions de ioga a la terrassa sobre el penya-segat amb vistes a Port Adriano. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "Pure Salt Yoga & Spa Port Adriano zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Klippen-Terrassen-Yoga mit Panoramablick auf den Luxushafen von Philippe Starck. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

@@ -40,11 +40,11 @@ export const kitesurfMallorcaPollensaBay: ServiceItem = {
     ca: "Escola oficial de Kitesurf i Wing Foil a la badia de Pollença.",
     de: "Offizielle IKO Kitesurf- und Wingfoil-Schule an der Bucht von Pollença mit verlässlichem Embat-Thermowind.",
   },
-  description: {
-    es: "Cursos con radiocascos walkie-talkie en agua, barco de apoyo y material Duotone y F-One de última temporada.",
-    en: "Radio-helmet coaching in shallow water, rescue boat support, and latest Duotone & F-One gear.",
-    ca: "Classes amb ràdio-casc a l'aigua i llanxa de seguretat.",
-    de: "Funkhelm-Schulung im Stehrevier, Begleitboot-Sicherheit und neuestes Duotone-Material.",
+  fullDescription: {
+    es: "Kite & Wing Foil Center Mallorca Bay ofrece un servicio profesional de máxima categoría en Mallorca. Cursos con radiocascos walkie-talkie en agua, barco de apoyo y material Duotone y F-One de última temporada. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Kite & Wing Foil Center Mallorca Bay delivers premier professional service in Mallorca. Radio-helmet coaching in shallow water, rescue boat support, and latest Duotone & F-One gear. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Kite & Wing Foil Center Mallorca Bay ofereix un servei professional de màxima categoria a Mallorca. Classes amb ràdio-casc a l Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Kite & Wing Foil Center Mallorca Bay bietet erstklassigen professionellen Service auf Mallorca. Funkhelm-Schulung im Stehrevier, Begleitboot-Sicherheit und neuestes Duotone-Material. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

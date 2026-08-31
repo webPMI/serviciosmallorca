@@ -40,11 +40,11 @@ export const serviciosIntegralesFincasTramuntana: ServiceItem = {
     ca: "Custòdia de claus, inspecció de finques i manteniment integral a la Tramuntana.",
     de: "Schlüsselverwaltung, Sturm-Checks, Heizungskontrollen und ganzjährige Finca-Betreuung in der Tramuntana.",
   },
-  description: {
-    es: "Custodia de llaves, inspección tras tormentas, control de calderas, limpieza regular y puesta a punto de fincas en la Tramuntana.",
-    en: "Key holding, storm damage inspection, boiler heating checks, regular housekeeping, and turnaround in Tramuntana fincas.",
-    ca: "Custòdia de claus, inspecció de finques i manteniment integral a la Tramuntana.",
-    de: "Schlüsselverwaltung, Sturm-Checks, Heizungskontrollen und ganzjährige Finca-Betreuung in der Tramuntana.",
+  fullDescription: {
+    es: "Tramuntana Care Fincas & Home Maintenance ofrece un servicio profesional de máxima categoría en Mallorca. Custodia de llaves, inspección tras tormentas, control de calderas, limpieza regular y puesta a punto de fincas en la Tramuntana. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Tramuntana Care Fincas & Home Maintenance delivers premier professional service in Mallorca. Key holding, storm damage inspection, boiler heating checks, regular housekeeping, and turnaround in Tramuntana fincas. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Tramuntana Care Fincas & Home Maintenance ofereix un servei professional de màxima categoria a Mallorca. Custòdia de claus, inspecció de finques i manteniment integral a la Tramuntana. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Tramuntana Care Fincas & Home Maintenance bietet erstklassigen professionellen Service auf Mallorca. Schlüsselverwaltung, Sturm-Checks, Heizungskontrollen und ganzjährige Finca-Betreuung in der Tramuntana. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

@@ -44,10 +44,10 @@ export const centro_buceo_padi_dive_mallorca_port_andratx: ServiceItem = {
     de: "PADI 5-Star Tauchzentrum in Port d'Andratx: Open Water Kurse, Divemaster-Ausbildung, Rescue Diver und Technisch-Tauchen in der Meeresschutzzone Cabrera.",
   },
   fullDescription: {
-    es: "Dive Mallorca es el único PADI IDC en el suroeste de Mallorca. Sus instructores multilingües guían inmersiones en los puntos más espectaculares: la gruta del Delfín (Andratx), el pecio del Sever (naufragio Siglo XIX), los arrecifes de posidonia de s'Estanyol y la Reserva Marina del Archipiélago de Cabrera.",
-    en: "The only PADI IDC in southwest Mallorca, its multilingual instructors lead dives to top sites: Dolphin Cave (Andratx), wreck of the Sever (19th-century shipwreck), s'Estanyol posidonia reefs, and the Cabrera Archipelago Marine Reserve.",
-    ca: "L'únic PADI IDC al sud-oest de Mallorca. Instructors multilingües en els millors punts de busseig: Cova del Dofí, el vaixell Sever i la Reserva Marina de Cabrera.",
-    de: "Einziges PADI IDC im Südwesten Mallorcas mit mehrsprachigen Instructoren für Top-Tauchplätze: Delfin-Grotte, 19.-Jh.-Wrack 'Sever', Posidonia-Riffe und Cabrera-Meeresschutzgebiet.",
+    es: "Dive Mallorca PADI 5* Centre Port d se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Centro de buceo PADI 5 Star Instructor Development Centre en Port d Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "Dive Mallorca PADI 5* Centre Port d stands out as one of the premier athletic and fitness destinations in Mallorca. PADI 5-Star Instructor Development Centre in Port d Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "Dive Mallorca PADI 5* Centre Port d destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Centre de busseig PADI 5 Star a Port d Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "Dive Mallorca PADI 5* Centre Port d zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. PADI 5-Star Tauchzentrum in Port d Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

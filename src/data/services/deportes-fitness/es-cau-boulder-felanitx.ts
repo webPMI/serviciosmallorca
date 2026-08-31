@@ -38,10 +38,10 @@ export const ES_CAU_BOULDER_FELANITX: ServiceItem = {
     de: "Boulderhalle in Felanitx mit technischen Bouldern und Krafttraining für Kletterer.",
   },
   fullDescription: {
-    es: "Sala de boulder cooperativa en Felanitx con bloques técnicos y entrenamiento de fuerza para escaladores.",
-    en: "Cooperative bouldering gym in Felanitx with technical problems and strength boards.",
-    ca: "Sala de bloc cooperativa a Felanitx amb problemes tècnics i taulers de força.",
-    de: "Boulderhalle in Felanitx mit technischen Bouldern und Krafttraining für Kletterer.",
+    es: "Es Cau Boulder Felanitx se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Sala de boulder cooperativa en Felanitx con bloques técnicos y entrenamiento de fuerza para escaladores. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "Es Cau Boulder Felanitx stands out as one of the premier athletic and fitness destinations in Mallorca. Cooperative bouldering gym in Felanitx with technical problems and strength boards. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "Es Cau Boulder Felanitx destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Sala de bloc cooperativa a Felanitx amb problemes tècnics i taulers de força. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "Es Cau Boulder Felanitx zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Boulderhalle in Felanitx mit technischen Bouldern und Krafttraining für Kletterer. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

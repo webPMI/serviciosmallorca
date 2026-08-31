@@ -38,10 +38,10 @@ export const THE_YOGA_HUB_SOLLER: ServiceItem = {
     de: "Yoga-Refugium im historischen Zentrum von Sóller mit täglichen Kursen und Meditation.",
   },
   fullDescription: {
-    es: "Santuario de yoga en el centro histórico de Sóller con clases diarias, meditación y retiros.",
-    en: "Yoga sanctuary in historic Sóller center offering daily classes, meditation, and retreats.",
-    ca: "Santuari de ioga al centre de Sóller amb classes diàries, meditació i retirs.",
-    de: "Yoga-Refugium im historischen Zentrum von Sóller mit täglichen Kursen und Meditation.",
+    es: "The Yoga Hub Sóller se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Santuario de yoga en el centro histórico de Sóller con clases diarias, meditación y retiros. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "The Yoga Hub Sóller stands out as one of the premier athletic and fitness destinations in Mallorca. Yoga sanctuary in historic Sóller center offering daily classes, meditation, and retreats. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "The Yoga Hub Sóller destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Santuari de ioga al centre de Sóller amb classes diàries, meditació i retirs. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "The Yoga Hub Sóller zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Yoga-Refugium im historischen Zentrum von Sóller mit täglichen Kursen und Meditation. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

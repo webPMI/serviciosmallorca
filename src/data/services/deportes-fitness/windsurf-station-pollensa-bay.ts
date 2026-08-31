@@ -38,10 +38,10 @@ export const WINDSURF_STATION_POLLENSA_BAY: ServiceItem = {
     de: "Wassersportstation in der Bucht von Pollença mit Windsurf- und Wingfoilkursen.",
   },
   fullDescription: {
-    es: "Estación náutica en la bahía de Pollença con cursos de Windsurf, Wingfoil y alquiler de material Fanatic.",
-    en: "Water sports station in Pollença Bay offering Windsurfing, Wingfoil courses, and Fanatic gear hire.",
-    ca: "Estació nàutica a la badia de Pollença amb Windsurf, Wingfoil i material Fanatic.",
-    de: "Wassersportstation in der Bucht von Pollença mit Windsurf- und Wingfoilkursen.",
+    es: "Windsurf Station Pollença Bay se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Estación náutica en la bahía de Pollença con cursos de Windsurf, Wingfoil y alquiler de material Fanatic. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "Windsurf Station Pollença Bay stands out as one of the premier athletic and fitness destinations in Mallorca. Water sports station in Pollença Bay offering Windsurfing, Wingfoil courses, and Fanatic gear hire. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "Windsurf Station Pollença Bay destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Estació nàutica a la badia de Pollença amb Windsurf, Wingfoil i material Fanatic. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "Windsurf Station Pollença Bay zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Wassersportstation in der Bucht von Pollença mit Windsurf- und Wingfoilkursen. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

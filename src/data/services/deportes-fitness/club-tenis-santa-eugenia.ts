@@ -38,10 +38,10 @@ export const CLUB_TENIS_SANTA_EUGENIA: ServiceItem = {
     de: "Racketsportclub in der Inselmitte mit Rotsand-Tennisplätzen, Padel und familiärer Atmosphäre.",
   },
   fullDescription: {
-    es: "Club de raqueta en el Pla de Mallorca con pistas de tierra batida, pádel panorámico y ambiente familiar.",
-    en: "Racquet club in central Mallorca with red clay tennis courts, panoramic padel, and family vibe.",
-    ca: "Club de raqueta al Pla de Mallorca amb pistes de terra batuda, pàdel i ambient familiar.",
-    de: "Racketsportclub in der Inselmitte mit Rotsand-Tennisplätzen, Padel und familiärer Atmosphäre.",
+    es: "Club Tennis Santa Eugènia se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Club de raqueta en el Pla de Mallorca con pistas de tierra batida, pádel panorámico y ambiente familiar. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "Club Tennis Santa Eugènia stands out as one of the premier athletic and fitness destinations in Mallorca. Racquet club in central Mallorca with red clay tennis courts, panoramic padel, and family vibe. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "Club Tennis Santa Eugènia destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Club de raqueta al Pla de Mallorca amb pistes de terra batuda, pàdel i ambient familiar. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "Club Tennis Santa Eugènia zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Racketsportclub in der Inselmitte mit Rotsand-Tennisplätzen, Padel und familiärer Atmosphäre. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

@@ -44,10 +44,10 @@ export const padelindoor_mallorca_club_son_hugo_palma: ServiceItem = {
     de: "Mallorcas größter Indoor-Padelclub in Son Hugo, Palma: 24 überdachte Padelfelder mit Kunstrasen neuester Generation, FBP-lizenzierte Trainer-Akademie und Ausrüstungs-Shop.",
   },
   fullDescription: {
-    es: "Pàdel Indoor Son Hugo es el club de referencia del pádel mallorquín con 24 pistas de césped artificial Mondo Sport y Deco Turf. Dispone de vestuarios con taquillas individuales, sauna, zona de fisioterapia y restaurante. Sede oficial de la Federació Balear de Pàdel y punto de clasificación para el circuito FIP.",
-    en: "Mallorca's reference padel club with 24 Mondo Sport / Deco Turf artificial turf courts. Full facilities: individual lockers, sauna, physiotherapy room, and restaurant. Official venue of the Balearic Padel Federation and FIP ranking circuit point.",
-    ca: "El club de pàdel de referència a Mallorca amb 24 pistes de gespa artificial Mondo Sport. Vestuaris amb taquilles, sauna, fisioterapia i restaurant. Seu oficial de la Federació Balear de Pàdel.",
-    de: "Mallorcas Referenz-Padelclub mit 24 Mondo-Sport / Deco-Turf-Kunstrasenfeldern. Vollständige Anlage: Individualschränke, Sauna, Physiotherapieraum und Restaurant. Offizieller Veranstaltungsort des Balearischen Padelverbands und FIP-Rankingturnier.",
+    es: "Pàdel Indoor Son Hugo Club & Academia Palma se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Mayor club de pádel indoor de Mallorca en Son Hugo, Palma: 24 pistas de pádel cubiertas con césped artificial de última generación, academia con entrenadores federados FBP y tienda de material. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "Pàdel Indoor Son Hugo Club & Academia Palma stands out as one of the premier athletic and fitness destinations in Mallorca. Mallorca Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "Pàdel Indoor Son Hugo Club & Academia Palma destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. El club de pàdel indoor més gran de Mallorca a Son Hugo, Palma: 24 pistes cobertes amb gespa artificial d Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "Pàdel Indoor Son Hugo Club & Academia Palma zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Mallorcas größter Indoor-Padelclub in Son Hugo, Palma: 24 überdachte Padelfelder mit Kunstrasen neuester Generation, FBP-lizenzierte Trainer-Akademie und Ausrüstungs-Shop. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

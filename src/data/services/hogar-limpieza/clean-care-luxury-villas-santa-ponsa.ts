@@ -40,11 +40,11 @@ export const cleanCareLuxuryVillasSantaPonsa: ServiceItem = {
     ca: "Servei de luxe de gestió de viles, custòdia de claus i neteja a Calvià i Andratx.",
     de: "Exklusives Finca- und Villa-Management, Schlüsselverwaltung und Luxus-Reinigungsservice im Südwesten Mallorcas.",
   },
-  description: {
-    es: "Servicio premium de mantenimiento integral, custodia de llaves, limpieza de lujo y preparación para propietarios de villas en el suroeste.",
-    en: "Premium villa management, key holding, luxury housekeeping, and turnover service for property owners in Southwest Mallorca.",
-    ca: "Servei de luxe de gestió de viles, custòdia de claus i neteja a Calvià i Andratx.",
-    de: "Exklusives Finca- und Villa-Management, Schlüsselverwaltung und Luxus-Reinigungsservice im Südwesten Mallorcas.",
+  fullDescription: {
+    es: "Clean & Care Luxury Villa Management ofrece un servicio profesional de máxima categoría en Mallorca. Servicio premium de mantenimiento integral, custodia de llaves, limpieza de lujo y preparación para propietarios de villas en el suroeste. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Clean & Care Luxury Villa Management delivers premier professional service in Mallorca. Premium villa management, key holding, luxury housekeeping, and turnover service for property owners in Southwest Mallorca. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Clean & Care Luxury Villa Management ofereix un servei professional de màxima categoria a Mallorca. Servei de luxe de gestió de viles, custòdia de claus i neteja a Calvià i Andratx. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Clean & Care Luxury Villa Management bietet erstklassigen professionellen Service auf Mallorca. Exklusives Finca- und Villa-Management, Schlüsselverwaltung und Luxus-Reinigungsservice im Südwesten Mallorcas. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

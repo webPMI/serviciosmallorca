@@ -38,10 +38,10 @@ export const NANO_BICYCLES_PALMA_CENTRO: ServiceItem = {
     de: "Specialized Rennrad-, City- und E-Bike-Verleih im historischen Herzen von Palma.",
   },
   fullDescription: {
-    es: "Alquiler de bicicletas de carretera Specialized, urbanas y eléctricas en el corazón histórico de Palma.",
-    en: "Specialized road, urban, and e-bike rental in the historic heart of Palma.",
-    ca: "Lloguer de bicicletes de carretera Specialized, urbanes i elèctriques al centre de Palma.",
-    de: "Specialized Rennrad-, City- und E-Bike-Verleih im historischen Herzen von Palma.",
+    es: "Nano Bicycles Palma se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Alquiler de bicicletas de carretera Specialized, urbanas y eléctricas en el corazón histórico de Palma. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "Nano Bicycles Palma stands out as one of the premier athletic and fitness destinations in Mallorca. Specialized road, urban, and e-bike rental in the historic heart of Palma. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "Nano Bicycles Palma destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Lloguer de bicicletes de carretera Specialized, urbanes i elèctriques al centre de Palma. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "Nano Bicycles Palma zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Specialized Rennrad-, City- und E-Bike-Verleih im historischen Herzen von Palma. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

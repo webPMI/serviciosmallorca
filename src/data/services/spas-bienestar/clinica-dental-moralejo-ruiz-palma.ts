@@ -38,10 +38,10 @@ export const clinica_dental_moralejo_ruiz_palma: ServiceItem = {
     de: "Exklusive Zahnklinik für digitales Smile-Design, navigierte Implantologie und Invisalign.",
   },
   fullDescription: {
-    es: "Clínica odontológica de alta gama especializada en diseño de sonrisa digital, implantes guiados e Invisalign.",
-    en: "High-end dental clinic specialized in digital smile design, computer-guided implants, and Invisalign.",
-    ca: "Clínica odontològica d'alta gamma especialitzada en disseny de somriure digital i implants.",
-    de: "Exklusive Zahnklinik für digitales Smile-Design, navigierte Implantologie und Invisalign.",
+    es: "Clínica Dental Moralejo & Ruiz es un centro de referencia en salud, estética y bienestar en Mallorca. Clínica odontológica de alta gama especializada en diseño de sonrisa digital, implantes guiados e Invisalign. Ofrece un entorno exclusivo y relajante con equipamiento de vanguardia, profesionales titulados y atención personalizada en varios idiomas para residentes y visitantes de la isla.",
+    en: "Clínica Dental Moralejo & Ruiz is a premier benchmark for health, aesthetic medicine, and wellness in Mallorca. High-end dental clinic specialized in digital smile design, computer-guided implants, and Invisalign. Providing an exclusive, tranquil sanctuary with cutting-edge medical and wellness equipment, certified specialists, and multilingual client care.",
+    ca: "Clínica Dental Moralejo & Ruiz és un centre de referència en salut, estètica i benestar a Mallorca. Clínica odontològica d Ofereix un entorn exclusiu amb equipament d'avantguarda, professionals titulats i atenció personalitzada multilingüe per a residents i visitants.",
+    de: "Clínica Dental Moralejo & Ruiz ist eine führende Adresse für Gesundheit, Ästhetik und Wohlbefinden auf Mallorca. Exklusive Zahnklinik für digitales Smile-Design, navigierte Implantologie und Invisalign. Ausgestattet mit modernster Medizintechnik, qualifizierten Therapeuten und individueller mehrsprachiger Betreuung in stilvollem Ambiente.",
   },
   highlights: {
     es: [

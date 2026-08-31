@@ -38,10 +38,10 @@ export const STUDIO_1_PERSONAL_TRAINING_PALMA: ServiceItem = {
     de: "Exklusives Personal-Training-Studio und Physiotherapie am Paseo Mallorca.",
   },
   fullDescription: {
-    es: "Estudio privado de entrenamiento personal de élite, readaptación y fisioterapia en Paseo Mallorca.",
-    en: "Elite private personal training studio, rehabilitation, and physiotherapy on Paseo Mallorca.",
-    ca: "Estudi privat d'entrenament personal d'elit i readaptació al Passeig Mallorca.",
-    de: "Exklusives Personal-Training-Studio und Physiotherapie am Paseo Mallorca.",
+    es: "Studio 1 Personal Training se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Estudio privado de entrenamiento personal de élite, readaptación y fisioterapia en Paseo Mallorca. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "Studio 1 Personal Training stands out as one of the premier athletic and fitness destinations in Mallorca. Elite private personal training studio, rehabilitation, and physiotherapy on Paseo Mallorca. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "Studio 1 Personal Training destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Estudi privat d Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "Studio 1 Personal Training zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Exklusives Personal-Training-Studio und Physiotherapie am Paseo Mallorca. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

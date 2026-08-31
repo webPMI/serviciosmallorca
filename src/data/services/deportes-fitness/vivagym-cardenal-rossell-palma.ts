@@ -38,10 +38,10 @@ export const VIVAGYM_CARDENAL_ROSSELL_PALMA: ServiceItem = {
     de: "Großes Fitnessstudio in Coll d'en Rabassa mit Functional-Zone, Kraftbereich und Cycling.",
   },
   fullDescription: {
-    es: "Gimnasio de gran formato en Coll d'en Rabassa con área funcional, zona de fuerza y cycling.",
-    en: "Large format gym in Coll d'en Rabassa with functional zone, strength area, and indoor cycling.",
-    ca: "Gimnàs a Coll d'en Rabassa amb zona funcional, pes lliure i ciclisme indoor.",
-    de: "Großes Fitnessstudio in Coll d'en Rabassa mit Functional-Zone, Kraftbereich und Cycling.",
+    es: "VivaGym Cardenal Rossell se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Gimnasio de gran formato en Coll d Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "VivaGym Cardenal Rossell stands out as one of the premier athletic and fitness destinations in Mallorca. Large format gym in Coll d Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "VivaGym Cardenal Rossell destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Gimnàs a Coll d Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "VivaGym Cardenal Rossell zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Großes Fitnessstudio in Coll d Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

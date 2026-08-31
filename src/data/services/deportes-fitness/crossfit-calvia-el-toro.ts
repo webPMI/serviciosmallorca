@@ -38,10 +38,10 @@ export const CROSSFIT_CALVIA_EL_TORO: ServiceItem = {
     de: "Box nahe Port Adriano mit internationaler Community und zweisprachigen Trainern.",
   },
   fullDescription: {
-    es: "Box junto a Port Adriano con comunidad multicultural, entrenadores bilingües y WODs diarios.",
-    en: "Box next to Port Adriano featuring multicultural community, bilingual coaches, and daily WODs.",
-    ca: "Box al costat de Port Adriano amb comunitat multicultural i entrenadors bilingües.",
-    de: "Box nahe Port Adriano mit internationaler Community und zweisprachigen Trainern.",
+    es: "CrossFit Calvià (El Toro) se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Box junto a Port Adriano con comunidad multicultural, entrenadores bilingües y WODs diarios. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "CrossFit Calvià (El Toro) stands out as one of the premier athletic and fitness destinations in Mallorca. Box next to Port Adriano featuring multicultural community, bilingual coaches, and daily WODs. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "CrossFit Calvià (El Toro) destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Box al costat de Port Adriano amb comunitat multicultural i entrenadors bilingües. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "CrossFit Calvià (El Toro) zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Box nahe Port Adriano mit internationaler Community und zweisprachigen Trainern. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

@@ -40,11 +40,11 @@ export const cuideoCuidadoMayoresMallorca: ServiceItem = {
     ca: "Servei professional de cura de gent gran a domicili per hores o interns a Palma i pobles de Mallorca.",
     de: "Professionelle häusliche Seniorenbetreuung und Pflegedienste mit qualifizierten Betreuungskräften auf Mallorca.",
   },
-  description: {
-    es: "Servicio profesional de cuidadores cualificados a domicilio por horas o internos con supervisión continua y contratación legal.",
-    en: "Professional in-home elderly care with qualified caregivers, hourly or live-in assistance, and full legal compliance.",
-    ca: "Servei professional de cura de gent gran a domicili per hores o interns a Palma i pobles de Mallorca.",
-    de: "Professionelle häusliche Seniorenbetreuung und Pflegedienste mit qualifizierten Betreuungskräften auf Mallorca.",
+  fullDescription: {
+    es: "Cuideo - Cuidado de Mayores a Domicilio Palma ofrece un servicio profesional de máxima categoría en Mallorca. Servicio profesional de cuidadores cualificados a domicilio por horas o internos con supervisión continua y contratación legal. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Cuideo - Cuidado de Mayores a Domicilio Palma delivers premier professional service in Mallorca. Professional in-home elderly care with qualified caregivers, hourly or live-in assistance, and full legal compliance. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Cuideo - Cuidado de Mayores a Domicilio Palma ofereix un servei professional de màxima categoria a Mallorca. Servei professional de cura de gent gran a domicili per hores o interns a Palma i pobles de Mallorca. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Cuideo - Cuidado de Mayores a Domicilio Palma bietet erstklassigen professionellen Service auf Mallorca. Professionelle häusliche Seniorenbetreuung und Pflegedienste mit qualifizierten Betreuungskräften auf Mallorca. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

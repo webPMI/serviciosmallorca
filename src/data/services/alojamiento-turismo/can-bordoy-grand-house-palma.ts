@@ -40,11 +40,11 @@ export const canBordoyGrandHousePalma: ServiceItem = {
     ca: "Hotel boutique 5 estrelles gran luxe a La Llotja amb el jardí privat més gran de Palma.",
     de: "5-Sterne-Grand-Luxury-Boutiquehotel in La Lonja mit dem größten Privatgarten der Altstadt von Palma.",
   },
-  description: {
-    es: "Hotel boutique 5 estrellas gran lujo en La Lonja con el jardín privado más grande de Palma.",
-    en: "5-star grand luxury boutique hotel in La Lonja featuring the largest private garden in Palma.",
-    ca: "Hotel boutique 5 estrelles gran luxe a La Llotja amb el jardí privat més gran de Palma.",
-    de: "5-Sterne-Grand-Luxury-Boutiquehotel in La Lonja mit dem größten Privatgarten der Altstadt von Palma.",
+  fullDescription: {
+    es: "Can Bordoy Grand House & Garden ofrece un servicio profesional de máxima categoría en Mallorca. Hotel boutique 5 estrellas gran lujo en La Lonja con el jardín privado más grande de Palma. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Can Bordoy Grand House & Garden delivers premier professional service in Mallorca. 5-star grand luxury boutique hotel in La Lonja featuring the largest private garden in Palma. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Can Bordoy Grand House & Garden ofereix un servei professional de màxima categoria a Mallorca. Hotel boutique 5 estrelles gran luxe a La Llotja amb el jardí privat més gran de Palma. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Can Bordoy Grand House & Garden bietet erstklassigen professionellen Service auf Mallorca. 5-Sterne-Grand-Luxury-Boutiquehotel in La Lonja mit dem größten Privatgarten der Altstadt von Palma. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

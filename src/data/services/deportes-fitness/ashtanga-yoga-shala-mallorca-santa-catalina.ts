@@ -38,10 +38,10 @@ export const ASHTANGA_YOGA_SHALA_MALLORCA_SANTA_CATALINA: ServiceItem = {
     de: "Traditionelle Ashtanga-Yoga-Shala in Santa Catalina mit morgendlicher Mysore-Praxis.",
   },
   fullDescription: {
-    es: "Shala tradicional de Ashtanga Yoga en Santa Catalina con práctica Mysore matinal y profesores autorizados.",
-    en: "Traditional Ashtanga Yoga Shala in Santa Catalina offering morning Mysore practice and authorized teachers.",
-    ca: "Shala tradicional d'Ashtanga Ioga a Santa Catalina amb estil Mysore matinal.",
-    de: "Traditionelle Ashtanga-Yoga-Shala in Santa Catalina mit morgendlicher Mysore-Praxis.",
+    es: "Ashtanga Yoga Shala Mallorca se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Shala tradicional de Ashtanga Yoga en Santa Catalina con práctica Mysore matinal y profesores autorizados. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "Ashtanga Yoga Shala Mallorca stands out as one of the premier athletic and fitness destinations in Mallorca. Traditional Ashtanga Yoga Shala in Santa Catalina offering morning Mysore practice and authorized teachers. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "Ashtanga Yoga Shala Mallorca destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Shala tradicional d Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "Ashtanga Yoga Shala Mallorca zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Traditionelle Ashtanga-Yoga-Shala in Santa Catalina mit morgendlicher Mysore-Praxis. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

@@ -40,11 +40,11 @@ export const jardineriaMediterraneaPaisajismoPalma: ServiceItem = {
     ca: "Disseny de jardins mediterranis de baix consum d'aigua i xerojardineria a Palma.",
     de: "Mediterrane Landschaftsarchitektur und trockenheitsresistente Gärten (Xeriscape) mit uralten Olivenbäumen und smarter Bewässerung.",
   },
-  description: {
-    es: "Diseño de jardines mediterráneos de bajo consumo de agua con olivos centenarios, lavanda, cipreses y sistemas de riego por goteo inteligente.",
-    en: "Drought-tolerant Mediterranean xeriscape garden design with centenary olive trees, lavender, and smart automated irrigation.",
-    ca: "Disseny de jardins mediterranis de baix consum d'aigua i xerojardineria a Palma.",
-    de: "Mediterrane Landschaftsarchitektur und trockenheitsresistente Gärten (Xeriscape) mit uralten Olivenbäumen und smarter Bewässerung.",
+  fullDescription: {
+    es: "Jardins de Tramuntana Paisajismo & Xerojardinería ofrece un servicio profesional de máxima categoría en Mallorca. Diseño de jardines mediterráneos de bajo consumo de agua con olivos centenarios, lavanda, cipreses y sistemas de riego por goteo inteligente. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Jardins de Tramuntana Paisajismo & Xerojardinería delivers premier professional service in Mallorca. Drought-tolerant Mediterranean xeriscape garden design with centenary olive trees, lavender, and smart automated irrigation. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Jardins de Tramuntana Paisajismo & Xerojardinería ofereix un servei professional de màxima categoria a Mallorca. Disseny de jardins mediterranis de baix consum d Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Jardins de Tramuntana Paisajismo & Xerojardinería bietet erstklassigen professionellen Service auf Mallorca. Mediterrane Landschaftsarchitektur und trockenheitsresistente Gärten (Xeriscape) mit uralten Olivenbäumen und smarter Bewässerung. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

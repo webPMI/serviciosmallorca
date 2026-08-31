@@ -40,11 +40,11 @@ export const prosegurSeguridadVillasBaleares: ServiceItem = {
     ca: "Instal·lació d'alarmes perimetrals i videovigilància CCTV a Mallorca.",
     de: "Perimeter-Infrarotschranken, thermische KI-Überwachungskameras und 24h-Aufschaltung zur Notrufzentrale mit Polizeiverbindung.",
   },
-  description: {
-    es: "Instalación de barreras perimetrales por infrarrojos, cámaras térmicas con IA y conexión 24/7 a Central Receptora de Alarmas y Policía.",
-    en: "Perimeter infrared barriers, AI thermal surveillance cameras, and 24/7 central alarm station monitoring with police response.",
-    ca: "Instal·lació d'alarmes perimetrals i videovigilància CCTV a Mallorca.",
-    de: "Perimeter-Infrarotschranken, thermische KI-Überwachungskameras und 24h-Aufschaltung zur Notrufzentrale mit Polizeiverbindung.",
+  fullDescription: {
+    es: "Alarmas & Videovigilancia CCTV Mallorca ofrece un servicio profesional de máxima categoría en Mallorca. Instalación de barreras perimetrales por infrarrojos, cámaras térmicas con IA y conexión 24/7 a Central Receptora de Alarmas y Policía. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Alarmas & Videovigilancia CCTV Mallorca delivers premier professional service in Mallorca. Perimeter infrared barriers, AI thermal surveillance cameras, and 24/7 central alarm station monitoring with police response. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Alarmas & Videovigilancia CCTV Mallorca ofereix un servei professional de màxima categoria a Mallorca. Instal·lació d Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Alarmas & Videovigilancia CCTV Mallorca bietet erstklassigen professionellen Service auf Mallorca. Perimeter-Infrarotschranken, thermische KI-Überwachungskameras und 24h-Aufschaltung zur Notrufzentrale mit Polizeiverbindung. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

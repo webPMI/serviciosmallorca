@@ -40,11 +40,11 @@ export const mallorcaPrivateChauffeurLimousine: ServiceItem = {
     ca: "Servei de xofer privat VIP a l'aeroport i vil·les de Mallorca.",
     de: "Privatchauffeur-Service mit Mercedes-Benz S- und V-Klasse, Abholung am General Aviation Terminal und Inseltransfers.",
   },
-  description: {
-    es: "Servicio de chófer privado en flota Mercedes-Benz Clase S y Clase V con acceso a pista de aviación general y traslados a villas.",
-    en: "Private chauffeur service with Mercedes-Benz S-Class and V-Class fleet, VIP private jet tarmac pick-up, and villa transfers.",
-    ca: "Servei de xofer privat VIP a l'aeroport i vil·les de Mallorca.",
-    de: "Privatchauffeur-Service mit Mercedes-Benz S- und V-Klasse, Abholung am General Aviation Terminal und Inseltransfers.",
+  fullDescription: {
+    es: "Palma VIP Chauffeur & Executive Limousine Service ofrece un servicio profesional de máxima categoría en Mallorca. Servicio de chófer privado en flota Mercedes-Benz Clase S y Clase V con acceso a pista de aviación general y traslados a villas. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Palma VIP Chauffeur & Executive Limousine Service delivers premier professional service in Mallorca. Private chauffeur service with Mercedes-Benz S-Class and V-Class fleet, VIP private jet tarmac pick-up, and villa transfers. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Palma VIP Chauffeur & Executive Limousine Service ofereix un servei professional de màxima categoria a Mallorca. Servei de xofer privat VIP a l Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Palma VIP Chauffeur & Executive Limousine Service bietet erstklassigen professionellen Service auf Mallorca. Privatchauffeur-Service mit Mercedes-Benz S- und V-Klasse, Abholung am General Aviation Terminal und Inseltransfers. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

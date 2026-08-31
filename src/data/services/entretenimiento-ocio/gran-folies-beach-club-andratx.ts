@@ -40,11 +40,11 @@ export const granFoliesBeachClubAndratx: ServiceItem = {
     ca: "Emblemàtic beach club a Cala Llamp amb piscina d'aigua salada i restaurant.",
     de: "Traditionsreicher Beach Club an den Klippen der Cala Llamp mit Meerwasser-Pool und Spitzenrestaurant in Port d'Andratx.",
   },
-  description: {
-    es: "Club de playa icónico fundado hace más de 40 años en los acantilados de Cala Llamp con piscina de agua de mar y restaurante.",
-    en: "Iconic beach club established over 40 years ago on the cliffs of Cala Llamp featuring a saltwater pool and dining.",
-    ca: "Emblemàtic beach club a Cala Llamp amb piscina d'aigua salada i restaurant.",
-    de: "Traditionsreicher Beach Club an den Klippen der Cala Llamp mit Meerwasser-Pool und Spitzenrestaurant in Port d'Andratx.",
+  fullDescription: {
+    es: "Beach Club Gran Folies Cala Llamp ofrece un servicio profesional de máxima categoría en Mallorca. Club de playa icónico fundado hace más de 40 años en los acantilados de Cala Llamp con piscina de agua de mar y restaurante. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Beach Club Gran Folies Cala Llamp delivers premier professional service in Mallorca. Iconic beach club established over 40 years ago on the cliffs of Cala Llamp featuring a saltwater pool and dining. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Beach Club Gran Folies Cala Llamp ofereix un servei professional de màxima categoria a Mallorca. Emblemàtic beach club a Cala Llamp amb piscina d Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Beach Club Gran Folies Cala Llamp bietet erstklassigen professionellen Service auf Mallorca. Traditionsreicher Beach Club an den Klippen der Cala Llamp mit Meerwasser-Pool und Spitzenrestaurant in Port d Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

@@ -40,11 +40,11 @@ export const portAndratxRibBoatRental: ServiceItem = {
     ca: "Lloguer de semirrígides d'alta gamma a Port d'Andratx i Sa Dragonera.",
     de: "Premium-Schlauchbootverleih (RIB) in Port d'Andratx für Touren nach Sa Dragonera und Cala en Basset.",
   },
-  description: {
-    es: "Alquiler de semirrígidas de alta gama (Capelli, Sacs) para fondear en Cala en Basset y el Parque Natural de Sa Dragonera.",
-    en: "High-performance RIB rentals (Capelli, Sacs) for cruising to Cala en Basset and Sa Dragonera Natural Park.",
-    ca: "Lloguer de semirrígides d'alta gamma a Port d'Andratx i Sa Dragonera.",
-    de: "Premium-Schlauchbootverleih (RIB) in Port d'Andratx für Touren nach Sa Dragonera und Cala en Basset.",
+  fullDescription: {
+    es: "Port d ofrece un servicio profesional de máxima categoría en Mallorca. Alquiler de semirrígidas de alta gama (Capelli, Sacs) para fondear en Cala en Basset y el Parque Natural de Sa Dragonera. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Port d delivers premier professional service in Mallorca. High-performance RIB rentals (Capelli, Sacs) for cruising to Cala en Basset and Sa Dragonera Natural Park. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Port d ofereix un servei professional de màxima categoria a Mallorca. Lloguer de semirrígides d Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Port d bietet erstklassigen professionellen Service auf Mallorca. Premium-Schlauchbootverleih (RIB) in Port d Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

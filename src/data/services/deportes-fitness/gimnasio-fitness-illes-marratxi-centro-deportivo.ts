@@ -44,10 +44,10 @@ export const gimnasio_fitness_illes_marratxi_centro_deportivo: ServiceItem = {
     de: "Umfassender Sport- und Fitnessclub in Marratxí: 1.500 m² Trainingsfläche, 25m Hallenbad, Spa, Padel-Plätze und 100+ Kurse pro Woche.",
   },
   fullDescription: {
-    es: "Illes Marratxí es uno de los mayores complejos deportivos de la red Illes Centers en Mallorca. Dispone de maquinaria Technogym de última generación, zona de entrenamiento funcional y halterofilia, piscina semi-olímpica de 6 calles, zona de aguas con jacuzzi y sauna, y 6 pistas de pádel de cristal.",
-    en: "One of the largest sports complexes in the Illes Centers network in Mallorca. Features Technogym machinery, functional and Olympic lifting zones, 6-lane 25m indoor pool, spa area with jacuzzi, and 6 glass padel courts.",
-    ca: "Un dels complexos esportius més grans de la xarxa Illes a Mallorca. Màquines Technogym, piscina semiolímpica de 6 carrers i 6 pistes de pàdel.",
-    de: "Großer Sportkomplex der Illes-Kette auf Mallorca: Technogym-Geräte, 25m-Hallenbad (6 Bahnen), Spa-Bereich mit Jacuzzi und 6 Glas-Padel-Plätze.",
+    es: "Illes Marratxí Centro Deportivo & Fitness Club (Marratxí) se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Centro deportivo y club de fitness integral en Marratxí: sala musculación de 1.500 m², piscina climatizada de 25m, spa, padel y más de 100 clases dirigidas semanales. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "Illes Marratxí Centro Deportivo & Fitness Club (Marratxí) stands out as one of the premier athletic and fitness destinations in Mallorca. Comprehensive sports and fitness club in Marratxí: 1,500 m² gym floor, 25m heated pool, spa, padel courts, and 100+ weekly group fitness classes. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "Illes Marratxí Centro Deportivo & Fitness Club (Marratxí) destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Centre esportiu i club de fitness a Marratxí: sala de musculació de 1.500 m², piscina climatitzada de 25m, spa i més de 100 classes dirigides. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "Illes Marratxí Centro Deportivo & Fitness Club (Marratxí) zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Umfassender Sport- und Fitnessclub in Marratxí: 1.500 m² Trainingsfläche, 25m Hallenbad, Spa, Padel-Plätze und 100+ Kurse pro Woche. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

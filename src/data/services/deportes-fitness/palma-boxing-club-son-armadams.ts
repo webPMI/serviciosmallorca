@@ -38,10 +38,10 @@ export const PALMA_BOXING_CLUB_SON_ARMADAMS: ServiceItem = {
     de: "Traditioneller Boxclub für englisches Boxen, Kickboxen und Selbstverteidigung mit Ring.",
   },
   fullDescription: {
-    es: "Club tradicional de boxeo inglés, kickboxing y defensa personal con ring de competición.",
-    en: "Traditional English boxing, kickboxing, and self-defense club with competition ring.",
-    ca: "Club de boxa tradicional, kickboxing i defensa personal amb ring de competició a Palma.",
-    de: "Traditioneller Boxclub für englisches Boxen, Kickboxen und Selbstverteidigung mit Ring.",
+    es: "Palma Boxing Club se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Club tradicional de boxeo inglés, kickboxing y defensa personal con ring de competición. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "Palma Boxing Club stands out as one of the premier athletic and fitness destinations in Mallorca. Traditional English boxing, kickboxing, and self-defense club with competition ring. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "Palma Boxing Club destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Club de boxa tradicional, kickboxing i defensa personal amb ring de competició a Palma. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "Palma Boxing Club zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Traditioneller Boxclub für englisches Boxen, Kickboxen und Selbstverteidigung mit Ring. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

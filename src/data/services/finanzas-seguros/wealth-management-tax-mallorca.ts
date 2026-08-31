@@ -40,11 +40,11 @@ export const wealthManagementTaxMallorca: ServiceItem = {
     ca: "Planificació fiscal i gestió de patrimonis per a grans fortunes a Mallorca.",
     de: "Grenzüberschreitende Nachfolgeplanung, Vermögensstrukturierung und Family-Office-Dienste auf Mallorca.",
   },
-  description: {
-    es: "Planificación fiscal, estructuración de herencias transfronterizas y gestión de activos para grandes patrimonios y family offices.",
-    en: "Cross-border estate planning, tax-efficient wealth structuring, and asset management for high-net-worth families.",
-    ca: "Planificació fiscal i gestió de patrimonis per a grans fortunes a Mallorca.",
-    de: "Grenzüberschreitende Nachfolgeplanung, Vermögensstrukturierung und Family-Office-Dienste auf Mallorca.",
+  fullDescription: {
+    es: "Mallorca Wealth & Family Office Advisory ofrece un servicio profesional de máxima categoría en Mallorca. Planificación fiscal, estructuración de herencias transfronterizas y gestión de activos para grandes patrimonios y family offices. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Mallorca Wealth & Family Office Advisory delivers premier professional service in Mallorca. Cross-border estate planning, tax-efficient wealth structuring, and asset management for high-net-worth families. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Mallorca Wealth & Family Office Advisory ofereix un servei professional de màxima categoria a Mallorca. Planificació fiscal i gestió de patrimonis per a grans fortunes a Mallorca. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Mallorca Wealth & Family Office Advisory bietet erstklassigen professionellen Service auf Mallorca. Grenzüberschreitende Nachfolgeplanung, Vermögensstrukturierung und Family-Office-Dienste auf Mallorca. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

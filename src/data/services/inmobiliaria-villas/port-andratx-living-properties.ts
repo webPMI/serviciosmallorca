@@ -40,11 +40,11 @@ export const portAndratxLivingProperties: ServiceItem = {
     ca: "Agència boutique especialitzada en vil·les d'alt standing a Port d'Andratx.",
     de: "Boutique-Agentur exklusiv für Luxusvillen mit Meerblick in Port d'Andratx, Montport und Cala Llamp.",
   },
-  description: {
-    es: "Agencia boutique especializada exclusivamente en villas de super lujo en Port d'Andratx, Monport y Cala Llamp.",
-    en: "Boutique agency specializing exclusively in ultra-luxury sea view villas in Port d'Andratx, Monport, and Cala Llamp.",
-    ca: "Agència boutique especialitzada en vil·les d'alt standing a Port d'Andratx.",
-    de: "Boutique-Agentur exklusiv für Luxusvillen mit Meerblick in Port d'Andratx, Montport und Cala Llamp.",
+  fullDescription: {
+    es: "Port d ofrece un servicio profesional de máxima categoría en Mallorca. Agencia boutique especializada exclusivamente en villas de super lujo en Port d Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Port d delivers premier professional service in Mallorca. Boutique agency specializing exclusively in ultra-luxury sea view villas in Port d Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Port d ofereix un servei professional de màxima categoria a Mallorca. Agència boutique especialitzada en vil·les d Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Port d bietet erstklassigen professionellen Service auf Mallorca. Boutique-Agentur exklusiv für Luxusvillen mit Meerblick in Port d Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

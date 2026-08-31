@@ -38,10 +38,10 @@ export const clinica_aureo_medicina_estetica_palma: ServiceItem = {
     de: "Exklusive Schönheitsklinik für ästhetische Medizin, Gesichtsverjüngung, Dermatologie und Lasertherapie.",
   },
   fullDescription: {
-    es: "Clínica boutique de medicina estética, armonización facial, dermatología clínica y tecnología láser de vanguardia.",
-    en: "Boutique clinic for aesthetic medicine, facial harmonization, clinical dermatology, and cutting-edge lasers.",
-    ca: "Clínica boutique de medicina estètica, harmonització facial, dermatologia i làser a Palma.",
-    de: "Exklusive Schönheitsklinik für ästhetische Medizin, Gesichtsverjüngung, Dermatologie und Lasertherapie.",
+    es: "Clínica Áureo Medicina Estética es un centro de referencia en salud, estética y bienestar en Mallorca. Clínica boutique de medicina estética, armonización facial, dermatología clínica y tecnología láser de vanguardia. Ofrece un entorno exclusivo y relajante con equipamiento de vanguardia, profesionales titulados y atención personalizada en varios idiomas para residentes y visitantes de la isla.",
+    en: "Clínica Áureo Medicina Estética is a premier benchmark for health, aesthetic medicine, and wellness in Mallorca. Boutique clinic for aesthetic medicine, facial harmonization, clinical dermatology, and cutting-edge lasers. Providing an exclusive, tranquil sanctuary with cutting-edge medical and wellness equipment, certified specialists, and multilingual client care.",
+    ca: "Clínica Áureo Medicina Estética és un centre de referència en salut, estètica i benestar a Mallorca. Clínica boutique de medicina estètica, harmonització facial, dermatologia i làser a Palma. Ofereix un entorn exclusiu amb equipament d'avantguarda, professionals titulats i atenció personalitzada multilingüe per a residents i visitants.",
+    de: "Clínica Áureo Medicina Estética ist eine führende Adresse für Gesundheit, Ästhetik und Wohlbefinden auf Mallorca. Exklusive Schönheitsklinik für ästhetische Medizin, Gesichtsverjüngung, Dermatologie und Lasertherapie. Ausgestattet mit modernster Medizintechnik, qualifizierten Therapeuten und individueller mehrsprachiger Betreuung in stilvollem Ambiente.",
   },
   highlights: {
     es: [

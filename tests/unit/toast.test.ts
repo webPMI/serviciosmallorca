@@ -70,4 +70,15 @@ describe("Global Toast Notification System", () => {
     expect(detail.type).toBe("info");
     expect(detail.icon).toBe("🚀");
   });
+
+  it("showToast soporta objeto con duration: 0 (persistente) y type heredado", () => {
+    showToast({ message: "Mensaje persistente", duration: 0, type: "warning" });
+
+    expect(dispatchedEvents.length).toBe(1);
+    const detail = dispatchedEvents[0].detail;
+    expect(detail.message).toBe("Mensaje persistente");
+    expect(detail.duration).toBe(0);
+    expect(detail.type).toBe("warning");
+    expect(detail.icon).toBe("⚠️");
+  });
 });

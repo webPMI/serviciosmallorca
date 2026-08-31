@@ -38,10 +38,10 @@ export const belmond_la_residencia_spa_deia: ServiceItem = {
     de: "Preisgekröntes Spa in Deià mit Signature-Behandlungen aus Olivenöl und Zitrusfrüchten.",
   },
   fullDescription: {
-    es: "Spa galardonado en Deià con tratamientos basados en aceite de oliva local, cítricos de Sóller y vistas a la montaña.",
-    en: "Award-winning spa in Deià offering treatments infused with local olive oil and mountain terrace relaxation.",
-    ca: "Spa guardonat a Deià amb tractaments basats en oli d'oliva verge de la Tramuntana.",
-    de: "Preisgekröntes Spa in Deià mit Signature-Behandlungen aus Olivenöl und Zitrusfrüchten.",
+    es: "Belmond La Residencia Spa es un centro de referencia en salud, estética y bienestar en Mallorca. Spa galardonado en Deià con tratamientos basados en aceite de oliva local, cítricos de Sóller y vistas a la montaña. Ofrece un entorno exclusivo y relajante con equipamiento de vanguardia, profesionales titulados y atención personalizada en varios idiomas para residentes y visitantes de la isla.",
+    en: "Belmond La Residencia Spa is a premier benchmark for health, aesthetic medicine, and wellness in Mallorca. Award-winning spa in Deià offering treatments infused with local olive oil and mountain terrace relaxation. Providing an exclusive, tranquil sanctuary with cutting-edge medical and wellness equipment, certified specialists, and multilingual client care.",
+    ca: "Belmond La Residencia Spa és un centre de referència en salut, estètica i benestar a Mallorca. Spa guardonat a Deià amb tractaments basats en oli d Ofereix un entorn exclusiu amb equipament d'avantguarda, professionals titulats i atenció personalitzada multilingüe per a residents i visitants.",
+    de: "Belmond La Residencia Spa ist eine führende Adresse für Gesundheit, Ästhetik und Wohlbefinden auf Mallorca. Preisgekröntes Spa in Deià mit Signature-Behandlungen aus Olivenöl und Zitrusfrüchten. Ausgestattet mit modernster Medizintechnik, qualifizierten Therapeuten und individueller mehrsprachiger Betreuung in stilvollem Ambiente.",
   },
   highlights: {
     es: [

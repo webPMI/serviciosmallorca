@@ -40,11 +40,11 @@ export const prediSonJaumellCapdepera: ServiceItem = {
     ca: "Finca senyorial del segle XVII a Capdepera amb gastronomia d'Andreu Genestra.",
     de: "Landgut aus dem 17. Jahrhundert in Capdepera mit Gastronomie von Andreu Genestra.",
   },
-  description: {
-    es: "Finca señorial del siglo XVII en Capdepera con gastronomía del chef Andreu Genestra.",
-    en: "17th-century country estate in Capdepera featuring dining by Michelin-starred chef Andreu Genestra.",
-    ca: "Finca senyorial del segle XVII a Capdepera amb gastronomia d'Andreu Genestra.",
-    de: "Landgut aus dem 17. Jahrhundert in Capdepera mit Gastronomie von Andreu Genestra.",
+  fullDescription: {
+    es: "Predi Son Jaumell Hotel Rural ofrece un servicio profesional de máxima categoría en Mallorca. Finca señorial del siglo XVII en Capdepera con gastronomía del chef Andreu Genestra. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Predi Son Jaumell Hotel Rural delivers premier professional service in Mallorca. 17th-century country estate in Capdepera featuring dining by Michelin-starred chef Andreu Genestra. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Predi Son Jaumell Hotel Rural ofereix un servei professional de màxima categoria a Mallorca. Finca senyorial del segle XVII a Capdepera amb gastronomia d Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Predi Son Jaumell Hotel Rural bietet erstklassigen professionellen Service auf Mallorca. Landgut aus dem 17. Jahrhundert in Capdepera mit Gastronomie von Andreu Genestra. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

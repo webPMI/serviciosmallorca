@@ -205,6 +205,7 @@ import { restaurante_tierra_palma_cocina_mallorquina_contemporanea } from "./res
 import { restauranteToquePalma } from "./restaurante-toque-palma.ts";
 import { restauranteYachtClubCalaDor } from "./restaurante-yacht-club-cala-dor.ts";
 import { restauranteZaranda } from "./restaurante-zaranda.ts";
+import { rusticoPizzeriaPeguera } from "./rustico-pizzeria-peguera.ts";
 import { saCuinaDeNainaSencelles } from "./sa-cuina-de-naina-sencelles.ts";
 import { saLlotjaPortocolom } from "./sa-llotja-portocolom.ts";
 import { saLlumRestaurantPollensa } from "./sa-llum-restaurant-pollensa.ts";
@@ -423,6 +424,7 @@ export { restaurante_tierra_palma_cocina_mallorquina_contemporanea } from "./res
 export { restauranteToquePalma } from "./restaurante-toque-palma.ts";
 export { restauranteYachtClubCalaDor } from "./restaurante-yacht-club-cala-dor.ts";
 export { restauranteZaranda } from "./restaurante-zaranda.ts";
+export { rusticoPizzeriaPeguera } from "./rustico-pizzeria-peguera.ts";
 export { saCuinaDeNainaSencelles } from "./sa-cuina-de-naina-sencelles.ts";
 export { saLlotjaPortocolom } from "./sa-llotja-portocolom.ts";
 export { saLlumRestaurantPollensa } from "./sa-llum-restaurant-pollensa.ts";
@@ -642,6 +644,7 @@ export const RESTAURANT_SERVICES: ServiceItem[] = [
   restauranteToquePalma,
   restauranteYachtClubCalaDor,
   restauranteZaranda,
+  rusticoPizzeriaPeguera,
   saCuinaDeNainaSencelles,
   saLlotjaPortocolom,
   saLlumRestaurantPollensa,

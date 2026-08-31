@@ -38,10 +38,10 @@ export const PADEL_FACTORY_MALLORCA_MARRATXI: ServiceItem = {
     de: "Moderne Padel-Indoor-Halle mit 8 überdachten Panorama-Courts, WPT-Kunstrasen und Sportsbar.",
   },
   fullDescription: {
-    es: "Club de pádel indoor con 8 pistas panorámicas cubiertas, césped WPT y 10 metros de altura libre.",
-    en: "Modern indoor padel club featuring 8 covered panoramic courts, WPT turf, and 10m clearance.",
-    ca: "Club de pàdel indoor amb 8 pistes panoràmiques cobertes, gespa WPT i cafeteria.",
-    de: "Moderne Padel-Indoor-Halle mit 8 überdachten Panorama-Courts, WPT-Kunstrasen und Sportsbar.",
+    es: "Padel Factory Mallorca se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Club de pádel indoor con 8 pistas panorámicas cubiertas, césped WPT y 10 metros de altura libre. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "Padel Factory Mallorca stands out as one of the premier athletic and fitness destinations in Mallorca. Modern indoor padel club featuring 8 covered panoramic courts, WPT turf, and 10m clearance. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "Padel Factory Mallorca destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Club de pàdel indoor amb 8 pistes panoràmiques cobertes, gespa WPT i cafeteria. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "Padel Factory Mallorca zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Moderne Padel-Indoor-Halle mit 8 überdachten Panorama-Courts, WPT-Kunstrasen und Sportsbar. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

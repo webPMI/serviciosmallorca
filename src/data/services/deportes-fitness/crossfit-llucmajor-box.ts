@@ -38,10 +38,10 @@ export const CROSSFIT_LLUCMAJOR_BOX: ServiceItem = {
     de: "Box im Gewerbegebiet Son Noguera in Llucmajor mit 500 m² Fläche und Xenios-Equipment.",
   },
   fullDescription: {
-    es: "Box en el polígono Son Noguera de Llucmajor con más de 500 m² de superficie de entreno y material Xenios.",
-    en: "Box in Son Noguera industrial park in Llucmajor with 500 m² floor and Xenios gear.",
-    ca: "Box al polígon Son Noguera de Llucmajor amb 500 m² de superfície i material Xenios.",
-    de: "Box im Gewerbegebiet Son Noguera in Llucmajor mit 500 m² Fläche und Xenios-Equipment.",
+    es: "CrossFit Llucmajor se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Box en el polígono Son Noguera de Llucmajor con más de 500 m² de superficie de entreno y material Xenios. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "CrossFit Llucmajor stands out as one of the premier athletic and fitness destinations in Mallorca. Box in Son Noguera industrial park in Llucmajor with 500 m² floor and Xenios gear. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "CrossFit Llucmajor destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Box al polígon Son Noguera de Llucmajor amb 500 m² de superfície i material Xenios. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "CrossFit Llucmajor zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Box im Gewerbegebiet Son Noguera in Llucmajor mit 500 m² Fläche und Xenios-Equipment. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

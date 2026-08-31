@@ -40,11 +40,11 @@ export const classicCarRentalMallorcaTramuntana: ServiceItem = {
     ca: "Lloguer de cotxes clàssics descapotables per recórrer la Serra de Tramuntana.",
     de: "Oldtimer- und Cabrio-Verleih (Porsche 356 Speedster, Mercedes Pagode, Jaguar E-Type) für Panoramatouren durch die Tramuntana.",
   },
-  description: {
-    es: "Alquiler de coches clásicos y roadsters descapotables vintage (Porsche 356 Speedster, Mercedes Pagoda, Jaguar E-Type) para la Tramuntana.",
-    en: "Vintage classic car and roadster rentals (Porsche 356 Speedster, Mercedes Pagoda, Jaguar E-Type) for scenic Tramuntana driving.",
-    ca: "Lloguer de cotxes clàssics descapotables per recórrer la Serra de Tramuntana.",
-    de: "Oldtimer- und Cabrio-Verleih (Porsche 356 Speedster, Mercedes Pagode, Jaguar E-Type) für Panoramatouren durch die Tramuntana.",
+  fullDescription: {
+    es: "Mallorca Classic Cars & Vintage Roadsters ofrece un servicio profesional de máxima categoría en Mallorca. Alquiler de coches clásicos y roadsters descapotables vintage (Porsche 356 Speedster, Mercedes Pagoda, Jaguar E-Type) para la Tramuntana. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Mallorca Classic Cars & Vintage Roadsters delivers premier professional service in Mallorca. Vintage classic car and roadster rentals (Porsche 356 Speedster, Mercedes Pagoda, Jaguar E-Type) for scenic Tramuntana driving. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Mallorca Classic Cars & Vintage Roadsters ofereix un servei professional de màxima categoria a Mallorca. Lloguer de cotxes clàssics descapotables per recórrer la Serra de Tramuntana. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Mallorca Classic Cars & Vintage Roadsters bietet erstklassigen professionellen Service auf Mallorca. Oldtimer- und Cabrio-Verleih (Porsche 356 Speedster, Mercedes Pagode, Jaguar E-Type) für Panoramatouren durch die Tramuntana. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

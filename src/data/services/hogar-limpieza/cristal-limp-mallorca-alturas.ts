@@ -40,11 +40,11 @@ export const cristalLimpMallorcaAlturas: ServiceItem = {
     ca: "Especialistes en neteja de grans finestrals a vil·les amb aigua osmotitzada.",
     de: "Glas- und Fensterreinigung für Luxusvillen mit Reinstwasser-Osmose-Teleskopstangen bis 20 Meter Höhe.",
   },
-  description: {
-    es: "Especialistas en limpieza de grandes cristaleras de villas y muros cortina con pértigas telescópicas de agua pura osmotizada.",
-    en: "Specialists in luxury villa glass cleaning and curtain walls using purified reverse-osmosis water poles.",
-    ca: "Especialistes en neteja de grans finestrals a vil·les amb aigua osmotitzada.",
-    de: "Glas- und Fensterreinigung für Luxusvillen mit Reinstwasser-Osmose-Teleskopstangen bis 20 Meter Höhe.",
+  fullDescription: {
+    es: "Cristal Limp Mallorca - Limpieza de Cristales en Altura ofrece un servicio profesional de máxima categoría en Mallorca. Especialistas en limpieza de grandes cristaleras de villas y muros cortina con pértigas telescópicas de agua pura osmotizada. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Cristal Limp Mallorca - Limpieza de Cristales en Altura delivers premier professional service in Mallorca. Specialists in luxury villa glass cleaning and curtain walls using purified reverse-osmosis water poles. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Cristal Limp Mallorca - Limpieza de Cristales en Altura ofereix un servei professional de màxima categoria a Mallorca. Especialistes en neteja de grans finestrals a vil·les amb aigua osmotitzada. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Cristal Limp Mallorca - Limpieza de Cristales en Altura bietet erstklassigen professionellen Service auf Mallorca. Glas- und Fensterreinigung für Luxusvillen mit Reinstwasser-Osmose-Teleskopstangen bis 20 Meter Höhe. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

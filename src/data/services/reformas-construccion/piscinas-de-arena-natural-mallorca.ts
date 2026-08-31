@@ -40,11 +40,11 @@ export const piscinasDeArenaNaturalMallorca: ServiceItem = {
     ca: "Construcció de piscines de tipus platja amb sorra de quars a Mallorca.",
     de: "Bau von Sandstrand-Pools mit verdichtetem Quarzsand, sanftem Strandeinstieg und Salzwasser-Elektrolyse.",
   },
-  description: {
-    es: "Construcción de piscinas efecto playa con arena de cuarzo compactada, entrada en rampa suave y cloración salina.",
-    en: "Beach-style swimming pools with compacted quartz sand finish, gentle ramp entry, and eco-saline purification.",
-    ca: "Construcció de piscines de tipus platja amb sorra de quars a Mallorca.",
-    de: "Bau von Sandstrand-Pools mit verdichtetem Quarzsand, sanftem Strandeinstieg und Salzwasser-Elektrolyse.",
+  fullDescription: {
+    es: "Sand Pools Mallorca - Piscinas de Arena y Oasis ofrece un servicio profesional de máxima categoría en Mallorca. Construcción de piscinas efecto playa con arena de cuarzo compactada, entrada en rampa suave y cloración salina. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Sand Pools Mallorca - Piscinas de Arena y Oasis delivers premier professional service in Mallorca. Beach-style swimming pools with compacted quartz sand finish, gentle ramp entry, and eco-saline purification. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Sand Pools Mallorca - Piscinas de Arena y Oasis ofereix un servei professional de màxima categoria a Mallorca. Construcció de piscines de tipus platja amb sorra de quars a Mallorca. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Sand Pools Mallorca - Piscinas de Arena y Oasis bietet erstklassigen professionellen Service auf Mallorca. Bau von Sandstrand-Pools mit verdichtetem Quarzsand, sanftem Strandeinstieg und Salzwasser-Elektrolyse. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

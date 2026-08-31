@@ -40,11 +40,11 @@ export const centroVeterinarioPortalsNous: ServiceItem = {
     ca: "Clínica veterinària internacional a Portals Nous amb atenció multilingüe.",
     de: "Internationale Tierarztpraxis in Portals Nous mit mehrsprachigem Team (DE/EN/ES), Reisegesundheitszeugnissen und Kardiologie.",
   },
-  description: {
-    es: "Clínica veterinaria internacional con atención multilingüe nativa (EN/DE/ES), pasaportes de viaje y cardiología.",
-    en: "International veterinary clinic with native multilingual staff (EN/DE/ES), travel health certificates, and cardiology.",
-    ca: "Clínica veterinària internacional a Portals Nous amb atenció multilingüe.",
-    de: "Internationale Tierarztpraxis in Portals Nous mit mehrsprachigem Team (DE/EN/ES), Reisegesundheitszeugnissen und Kardiologie.",
+  fullDescription: {
+    es: "Portals Nous International Veterinary Clinic ofrece un servicio profesional de máxima categoría en Mallorca. Clínica veterinaria internacional con atención multilingüe nativa (EN/DE/ES), pasaportes de viaje y cardiología. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Portals Nous International Veterinary Clinic delivers premier professional service in Mallorca. International veterinary clinic with native multilingual staff (EN/DE/ES), travel health certificates, and cardiology. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Portals Nous International Veterinary Clinic ofereix un servei professional de màxima categoria a Mallorca. Clínica veterinària internacional a Portals Nous amb atenció multilingüe. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Portals Nous International Veterinary Clinic bietet erstklassigen professionellen Service auf Mallorca. Internationale Tierarztpraxis in Portals Nous mit mehrsprachigem Team (DE/EN/ES), Reisegesundheitszeugnissen und Kardiologie. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

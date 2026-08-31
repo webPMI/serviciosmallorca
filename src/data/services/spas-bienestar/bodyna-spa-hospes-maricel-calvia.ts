@@ -38,10 +38,10 @@ export const bodyna_spa_hospes_maricel_calvia: ServiceItem = {
     de: "Massageliegen in Natursteinbögen direkt über dem Meer mit beruhigendem Wellenrauschen.",
   },
   fullDescription: {
-    es: "Cabinas de masaje esculpidas en arcos de piedra frente al mar Mediterráneo con sonido de las olas.",
-    en: "Seafront massage arches carved into natural stone with the relaxing sound of the Mediterranean waves.",
-    ca: "Cabines de massatge en arcs de pedra davant la mar Mediterrània a Cas Català.",
-    de: "Massageliegen in Natursteinbögen direkt über dem Meer mit beruhigendem Wellenrauschen.",
+    es: "Bodyna Spa (Hospes Maricel) es un centro de referencia en salud, estética y bienestar en Mallorca. Cabinas de masaje esculpidas en arcos de piedra frente al mar Mediterráneo con sonido de las olas. Ofrece un entorno exclusivo y relajante con equipamiento de vanguardia, profesionales titulados y atención personalizada en varios idiomas para residentes y visitantes de la isla.",
+    en: "Bodyna Spa (Hospes Maricel) is a premier benchmark for health, aesthetic medicine, and wellness in Mallorca. Seafront massage arches carved into natural stone with the relaxing sound of the Mediterranean waves. Providing an exclusive, tranquil sanctuary with cutting-edge medical and wellness equipment, certified specialists, and multilingual client care.",
+    ca: "Bodyna Spa (Hospes Maricel) és un centre de referència en salut, estètica i benestar a Mallorca. Cabines de massatge en arcs de pedra davant la mar Mediterrània a Cas Català. Ofereix un entorn exclusiu amb equipament d'avantguarda, professionals titulats i atenció personalitzada multilingüe per a residents i visitants.",
+    de: "Bodyna Spa (Hospes Maricel) ist eine führende Adresse für Gesundheit, Ästhetik und Wohlbefinden auf Mallorca. Massageliegen in Natursteinbögen direkt über dem Meer mit beruhigendem Wellenrauschen. Ausgestattet mit modernster Medizintechnik, qualifizierten Therapeuten und individueller mehrsprachiger Betreuung in stilvollem Ambiente.",
   },
   highlights: {
     es: [

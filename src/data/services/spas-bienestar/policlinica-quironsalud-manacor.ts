@@ -38,10 +38,10 @@ export const policlinica_quironsalud_manacor: ServiceItem = {
     de: "Fachärztezentrum mit Traumatologie, Gynäkologie und Radiologie im Osten Mallorcas.",
   },
   fullDescription: {
-    es: "Centro de consultas médicas, traumatología, ginecología y radiología en la comarca de Llevant.",
-    en: "Medical specialties clinic offering traumatology, gynecology, and radiology in the Llevant region.",
-    ca: "Centre de consultes mèdiques, traumatologia i radiologia a la comarca de Llevant.",
-    de: "Fachärztezentrum mit Traumatologie, Gynäkologie und Radiologie im Osten Mallorcas.",
+    es: "Policlínica Quirónsalud Manacor es un centro de referencia en salud, estética y bienestar en Mallorca. Centro de consultas médicas, traumatología, ginecología y radiología en la comarca de Llevant. Ofrece un entorno exclusivo y relajante con equipamiento de vanguardia, profesionales titulados y atención personalizada en varios idiomas para residentes y visitantes de la isla.",
+    en: "Policlínica Quirónsalud Manacor is a premier benchmark for health, aesthetic medicine, and wellness in Mallorca. Medical specialties clinic offering traumatology, gynecology, and radiology in the Llevant region. Providing an exclusive, tranquil sanctuary with cutting-edge medical and wellness equipment, certified specialists, and multilingual client care.",
+    ca: "Policlínica Quirónsalud Manacor és un centre de referència en salut, estètica i benestar a Mallorca. Centre de consultes mèdiques, traumatologia i radiologia a la comarca de Llevant. Ofereix un entorn exclusiu amb equipament d'avantguarda, professionals titulats i atenció personalitzada multilingüe per a residents i visitants.",
+    de: "Policlínica Quirónsalud Manacor ist eine führende Adresse für Gesundheit, Ästhetik und Wohlbefinden auf Mallorca. Fachärztezentrum mit Traumatologie, Gynäkologie und Radiologie im Osten Mallorcas. Ausgestattet mit modernster Medizintechnik, qualifizierten Therapeuten und individueller mehrsprachiger Betreuung in stilvollem Ambiente.",
   },
   highlights: {
     es: [

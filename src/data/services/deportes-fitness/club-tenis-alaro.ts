@@ -38,10 +38,10 @@ export const CLUB_TENIS_ALARO: ServiceItem = {
     de: "Tennisclub mit Blick auf die Burg von Alaró, Allwetterplätzen, Padel und Pool.",
   },
   fullDescription: {
-    es: "Club de tenis con vistas al Castillo de Alaró, pistas de resina sintética, pádel y piscina.",
-    en: "Tennis club with views of Alaró Castle, synthetic hard courts, padel, and pool.",
-    ca: "Club de tennis amb vistes al Castell d'Alaró, pistes de resina, pàdel i piscina.",
-    de: "Tennisclub mit Blick auf die Burg von Alaró, Allwetterplätzen, Padel und Pool.",
+    es: "Club Tenis Alaró se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Club de tenis con vistas al Castillo de Alaró, pistas de resina sintética, pádel y piscina. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "Club Tenis Alaró stands out as one of the premier athletic and fitness destinations in Mallorca. Tennis club with views of Alaró Castle, synthetic hard courts, padel, and pool. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "Club Tenis Alaró destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Club de tennis amb vistes al Castell d Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "Club Tenis Alaró zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Tennisclub mit Blick auf die Burg von Alaró, Allwetterplätzen, Padel und Pool. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

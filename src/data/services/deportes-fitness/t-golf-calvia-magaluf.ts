@@ -38,10 +38,10 @@ export const T_GOLF_CALVIA_MAGALUF: ServiceItem = {
     de: "Meisterwerk von John Harris mit 18 Löchern, 15 Seen und Gourmet-Restaurant T-elicious.",
   },
   fullDescription: {
-    es: "Obra maestra de John Harris completamente renovada con 18 hoyos, 15 lagos y restaurante T-elicious.",
-    en: "Masterpiece by John Harris fully restored with 18 holes, 15 lakes, and T-elicious restaurant.",
-    ca: "Camp de 18 forats dissenyat per John Harris amb 15 llacs i restaurant T-elicious.",
-    de: "Meisterwerk von John Harris mit 18 Löchern, 15 Seen und Gourmet-Restaurant T-elicious.",
+    es: "T Golf Calvià se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Obra maestra de John Harris completamente renovada con 18 hoyos, 15 lagos y restaurante T-elicious. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "T Golf Calvià stands out as one of the premier athletic and fitness destinations in Mallorca. Masterpiece by John Harris fully restored with 18 holes, 15 lakes, and T-elicious restaurant. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "T Golf Calvià destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Camp de 18 forats dissenyat per John Harris amb 15 llacs i restaurant T-elicious. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "T Golf Calvià zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Meisterwerk von John Harris mit 18 Löchern, 15 Seen und Gourmet-Restaurant T-elicious. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

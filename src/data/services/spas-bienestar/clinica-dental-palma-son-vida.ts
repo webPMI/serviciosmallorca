@@ -38,10 +38,10 @@ export const clinica_dental_palma_son_vida: ServiceItem = {
     de: "Exklusive Zahnmedizin in Son Vida mit ultrafeinen Veneers, Implantaten und Parodontologie.",
   },
   fullDescription: {
-    es: "Atención dental exclusiva y personalizada en Son Vida, carillas de porcelana ultra-finas y periodoncia.",
-    en: "Exclusive dental care in Son Vida featuring ultra-thin porcelain veneers, implants, and periodontics.",
-    ca: "Atenció dental exclusiva a Son Vida amb carilles de porcellana d'alta precisió.",
-    de: "Exklusive Zahnmedizin in Son Vida mit ultrafeinen Veneers, Implantaten und Parodontologie.",
+    es: "Son Vida Dental Care es un centro de referencia en salud, estética y bienestar en Mallorca. Atención dental exclusiva y personalizada en Son Vida, carillas de porcelana ultra-finas y periodoncia. Ofrece un entorno exclusivo y relajante con equipamiento de vanguardia, profesionales titulados y atención personalizada en varios idiomas para residentes y visitantes de la isla.",
+    en: "Son Vida Dental Care is a premier benchmark for health, aesthetic medicine, and wellness in Mallorca. Exclusive dental care in Son Vida featuring ultra-thin porcelain veneers, implants, and periodontics. Providing an exclusive, tranquil sanctuary with cutting-edge medical and wellness equipment, certified specialists, and multilingual client care.",
+    ca: "Son Vida Dental Care és un centre de referència en salut, estètica i benestar a Mallorca. Atenció dental exclusiva a Son Vida amb carilles de porcellana d Ofereix un entorn exclusiu amb equipament d'avantguarda, professionals titulats i atenció personalitzada multilingüe per a residents i visitants.",
+    de: "Son Vida Dental Care ist eine führende Adresse für Gesundheit, Ästhetik und Wohlbefinden auf Mallorca. Exklusive Zahnmedizin in Son Vida mit ultrafeinen Veneers, Implantaten und Parodontologie. Ausgestattet mit modernster Medizintechnik, qualifizierten Therapeuten und individueller mehrsprachiger Betreuung in stilvollem Ambiente.",
   },
   highlights: {
     es: [

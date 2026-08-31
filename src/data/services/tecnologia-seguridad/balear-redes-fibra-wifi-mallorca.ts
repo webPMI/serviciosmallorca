@@ -40,11 +40,11 @@ export const balearRedesFibraWifiMallorca: ServiceItem = {
     ca: "Instal·lació de xarxes WiFi d'alta cobertura per a finques rústiques i enllaços per satèl·lit Starlink.",
     de: "Installation flächendeckender WiFi-6-Mesh-Netzwerke für weitläufige Fincas und Starlink-Satellitenanbindungen.",
   },
-  description: {
-    es: "Instalación de redes WiFi 6 de alta cobertura en fincas rústicas de gran extensión, fibra óptica dedicada y enlaces satelitales Starlink.",
-    en: "High-power WiFi 6 mesh networks for large rural fincas, dedicated enterprise fiber, and Starlink satellite integrations.",
-    ca: "Instal·lació de xarxes WiFi d'alta cobertura per a finques rústiques i enllaços per satèl·lit Starlink.",
-    de: "Installation flächendeckender WiFi-6-Mesh-Netzwerke für weitläufige Fincas und Starlink-Satellitenanbindungen.",
+  fullDescription: {
+    es: "Balear WiFi & High-Speed Networks Mallorca ofrece un servicio profesional de máxima categoría en Mallorca. Instalación de redes WiFi 6 de alta cobertura en fincas rústicas de gran extensión, fibra óptica dedicada y enlaces satelitales Starlink. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Balear WiFi & High-Speed Networks Mallorca delivers premier professional service in Mallorca. High-power WiFi 6 mesh networks for large rural fincas, dedicated enterprise fiber, and Starlink satellite integrations. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Balear WiFi & High-Speed Networks Mallorca ofereix un servei professional de màxima categoria a Mallorca. Instal·lació de xarxes WiFi d Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Balear WiFi & High-Speed Networks Mallorca bietet erstklassigen professionellen Service auf Mallorca. Installation flächendeckender WiFi-6-Mesh-Netzwerke für weitläufige Fincas und Starlink-Satellitenanbindungen. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

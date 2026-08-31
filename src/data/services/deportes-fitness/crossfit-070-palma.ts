@@ -38,10 +38,10 @@ export const CROSSFIT_070_PALMA: ServiceItem = {
     de: "Offizielle CrossFit-Box mit Wettkampfvorbereitung, Gymnastics und Gewichtheben.",
   },
   fullDescription: {
-    es: "Box oficial con programación de alto rendimiento, gimnasia deportiva y preparación para competiciones.",
-    en: "Official box with high-performance programming, gymnastics, and competition prep.",
-    ca: "Box oficial amb programació d'alt rendiment, gimnàstics i preparació per a competicions.",
-    de: "Offizielle CrossFit-Box mit Wettkampfvorbereitung, Gymnastics und Gewichtheben.",
+    es: "CrossFit 070 se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Box oficial con programación de alto rendimiento, gimnasia deportiva y preparación para competiciones. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "CrossFit 070 stands out as one of the premier athletic and fitness destinations in Mallorca. Official box with high-performance programming, gymnastics, and competition prep. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "CrossFit 070 destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Box oficial amb programació d Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "CrossFit 070 zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Offizielle CrossFit-Box mit Wettkampfvorbereitung, Gymnastics und Gewichtheben. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

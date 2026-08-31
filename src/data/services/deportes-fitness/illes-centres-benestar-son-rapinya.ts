@@ -38,10 +38,10 @@ export const ILLES_CENTRES_BENESTAR_SON_RAPINYA: ServiceItem = {
     de: "Umfassendes Fitness- und Wellnesscenter mit 25m-Hallenbad, Thermal-Spa, Functional-Box und Les Mills.",
   },
   fullDescription: {
-    es: "Centro integral con piscina semiolímpica climatizada, spa hidrotermal, box funcional y Les Mills.",
-    en: "Comprehensive health center with heated semi-Olympic pool, thermal spa, functional box, and Les Mills.",
-    ca: "Centre integral amb piscina semiolímpica coberta, spa hidrotermal, box funcional i Les Mills.",
-    de: "Umfassendes Fitness- und Wellnesscenter mit 25m-Hallenbad, Thermal-Spa, Functional-Box und Les Mills.",
+    es: "Illes Centres de Benestar (Son Rapinya) se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Centro integral con piscina semiolímpica climatizada, spa hidrotermal, box funcional y Les Mills. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "Illes Centres de Benestar (Son Rapinya) stands out as one of the premier athletic and fitness destinations in Mallorca. Comprehensive health center with heated semi-Olympic pool, thermal spa, functional box, and Les Mills. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "Illes Centres de Benestar (Son Rapinya) destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Centre integral amb piscina semiolímpica coberta, spa hidrotermal, box funcional i Les Mills. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "Illes Centres de Benestar (Son Rapinya) zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Umfassendes Fitness- und Wellnesscenter mit 25m-Hallenbad, Thermal-Spa, Functional-Box und Les Mills. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

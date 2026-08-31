@@ -40,11 +40,11 @@ export const joyeriaRelotgeriaAlemanyPalma: ServiceItem = {
     ca: "Joieria històrica de luxe al Passeig del Born amb taller propi de gemmologia a Palma.",
     de: "Traditionsreiches Luxus-Juweliergeschäft am Paseo del Borne mit eigener Meisterwerkstatt und Schweizer Uhren.",
   },
-  description: {
-    es: "Joyería histórica de alta gama en el Paseo del Borne con taller propio de gemología, diamantes certificados y relojería suiza.",
-    en: "Historic luxury jewelry house on Paseo del Borne with in-house gemology workshop, certified diamonds, and Swiss watches.",
-    ca: "Joieria històrica de luxe al Passeig del Born amb taller propi de gemmologia a Palma.",
-    de: "Traditionsreiches Luxus-Juweliergeschäft am Paseo del Borne mit eigener Meisterwerkstatt und Schweizer Uhren.",
+  fullDescription: {
+    es: "Joyería Relojería Nicolás Joyeros 1925 ofrece un servicio profesional de máxima categoría en Mallorca. Joyería histórica de alta gama en el Paseo del Borne con taller propio de gemología, diamantes certificados y relojería suiza. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Joyería Relojería Nicolás Joyeros 1925 delivers premier professional service in Mallorca. Historic luxury jewelry house on Paseo del Borne with in-house gemology workshop, certified diamonds, and Swiss watches. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Joyería Relojería Nicolás Joyeros 1925 ofereix un servei professional de màxima categoria a Mallorca. Joieria històrica de luxe al Passeig del Born amb taller propi de gemmologia a Palma. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Joyería Relojería Nicolás Joyeros 1925 bietet erstklassigen professionellen Service auf Mallorca. Traditionsreiches Luxus-Juweliergeschäft am Paseo del Borne mit eigener Meisterwerkstatt und Schweizer Uhren. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

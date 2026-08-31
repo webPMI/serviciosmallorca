@@ -40,11 +40,11 @@ export const mallorcaNanniesCangurosVip: ServiceItem = {
     ca: "Agència de cangurs i mainaderes professionals multilingües titulades per a vil·les i hotels.",
     de: "Agentur für professionelle mehrsprachige Kinderbetreuung und Nannies für Ferienvillen, Hotels und Events.",
   },
-  description: {
-    es: "Agencia de niñeras y canguros profesionales multilingües con titulación y primeros auxilios para villas, hoteles y eventos privados.",
-    en: "Professional multilingual babysitting and nanny agency providing certified, first-aid trained childcarers for villas and resorts.",
-    ca: "Agència de cangurs i mainaderes professionals multilingües titulades per a vil·les i hotels.",
-    de: "Agentur für professionelle mehrsprachige Kinderbetreuung und Nannies für Ferienvillen, Hotels und Events.",
+  fullDescription: {
+    es: "Mallorca Nannies & Babysitting VIP Agency ofrece un servicio profesional de máxima categoría en Mallorca. Agencia de niñeras y canguros profesionales multilingües con titulación y primeros auxilios para villas, hoteles y eventos privados. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Mallorca Nannies & Babysitting VIP Agency delivers premier professional service in Mallorca. Professional multilingual babysitting and nanny agency providing certified, first-aid trained childcarers for villas and resorts. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Mallorca Nannies & Babysitting VIP Agency ofereix un servei professional de màxima categoria a Mallorca. Agència de cangurs i mainaderes professionals multilingües titulades per a vil·les i hotels. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Mallorca Nannies & Babysitting VIP Agency bietet erstklassigen professionellen Service auf Mallorca. Agentur für professionelle mehrsprachige Kinderbetreuung und Nannies für Ferienvillen, Hotels und Events. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

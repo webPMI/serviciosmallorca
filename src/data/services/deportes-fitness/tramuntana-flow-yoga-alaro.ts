@@ -38,10 +38,10 @@ export const TRAMUNTANA_FLOW_YOGA_ALARO: ServiceItem = {
     de: "Yoga- und Wellness-Finca in Alaró mit Holz-Shala, Pool und Bergblick auf die Tramuntana.",
   },
   fullDescription: {
-    es: "Finca de retiros de yoga y bienestar en Alaró con shala de madera, piscina y vistas a las montañas.",
-    en: "Yoga and wellness retreat finca in Alaró featuring wooden shala, pool, and mountain vistas.",
-    ca: "Finca de retirs de ioga a Alaró amb shala de fusta, piscina i vistes a la Serra.",
-    de: "Yoga- und Wellness-Finca in Alaró mit Holz-Shala, Pool und Bergblick auf die Tramuntana.",
+    es: "Tramuntana Flow Yoga Retreats se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Finca de retiros de yoga y bienestar en Alaró con shala de madera, piscina y vistas a las montañas. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "Tramuntana Flow Yoga Retreats stands out as one of the premier athletic and fitness destinations in Mallorca. Yoga and wellness retreat finca in Alaró featuring wooden shala, pool, and mountain vistas. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "Tramuntana Flow Yoga Retreats destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Finca de retirs de ioga a Alaró amb shala de fusta, piscina i vistes a la Serra. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "Tramuntana Flow Yoga Retreats zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Yoga- und Wellness-Finca in Alaró mit Holz-Shala, Pool und Bergblick auf die Tramuntana. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

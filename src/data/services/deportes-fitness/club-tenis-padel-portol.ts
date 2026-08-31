@@ -38,10 +38,10 @@ export const CLUB_TENIS_PADEL_PORTOL: ServiceItem = {
     de: "Traditionsreicher Tennis- und Padelclub in Pòrtol mit Sandplätzen, Glas-Padel, Pool und Restaurant.",
   },
   fullDescription: {
-    es: "Club deportivo tradicional en Pòrtol con pistas de tierra batida, pádel, piscina y restaurante.",
-    en: "Charming traditional sports club in Pòrtol with red clay tennis, glass padel, pool, and restaurant.",
-    ca: "Club esportiu tradicional a Pòrtol amb pistes de terra batuda, pàdel, piscina i restaurant.",
-    de: "Traditionsreicher Tennis- und Padelclub in Pòrtol mit Sandplätzen, Glas-Padel, Pool und Restaurant.",
+    es: "Club de Tenis & Pádel Pòrtol se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Club deportivo tradicional en Pòrtol con pistas de tierra batida, pádel, piscina y restaurante. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "Club de Tenis & Pádel Pòrtol stands out as one of the premier athletic and fitness destinations in Mallorca. Charming traditional sports club in Pòrtol with red clay tennis, glass padel, pool, and restaurant. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "Club de Tenis & Pádel Pòrtol destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Club esportiu tradicional a Pòrtol amb pistes de terra batuda, pàdel, piscina i restaurant. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "Club de Tenis & Pádel Pòrtol zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Traditionsreicher Tennis- und Padelclub in Pòrtol mit Sandplätzen, Glas-Padel, Pool und Restaurant. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

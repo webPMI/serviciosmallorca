@@ -40,11 +40,11 @@ export const eurocampusDeutscheSchulePalma: ServiceItem = {
     ca: "L'únic col·legi alemany homologat a les Illes Balears amb formació des d'infantil fins a l'Abitur.",
     de: "Die einzige anerkannte deutsche Auslandsschule auf den Balearen vom Kindergarten bis zum Abitur.",
   },
-  description: {
-    es: "El único colegio alemán homologado en las Islas Baleares, impartiendo el currículo oficial alemán desde infantil hasta el Abitur.",
-    en: "The only officially recognized German school in the Balearic Islands, offering education from kindergarten to the Abitur.",
-    ca: "L'únic col·legi alemany homologat a les Illes Balears amb formació des d'infantil fins a l'Abitur.",
-    de: "Die einzige anerkannte deutsche Auslandsschule auf den Balearen vom Kindergarten bis zum Abitur.",
+  fullDescription: {
+    es: "Eurocampus Deutsche Schule Mallorca ofrece un servicio profesional de máxima categoría en Mallorca. El único colegio alemán homologado en las Islas Baleares, impartiendo el currículo oficial alemán desde infantil hasta el Abitur. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Eurocampus Deutsche Schule Mallorca delivers premier professional service in Mallorca. The only officially recognized German school in the Balearic Islands, offering education from kindergarten to the Abitur. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Eurocampus Deutsche Schule Mallorca ofereix un servei professional de màxima categoria a Mallorca. L Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Eurocampus Deutsche Schule Mallorca bietet erstklassigen professionellen Service auf Mallorca. Die einzige anerkannte deutsche Auslandsschule auf den Balearen vom Kindergarten bis zum Abitur. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

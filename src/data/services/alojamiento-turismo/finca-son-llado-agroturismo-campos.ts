@@ -40,11 +40,11 @@ export const fincaSonLladoAgroturismoCampos: ServiceItem = {
     ca: "Agroturisme familiar amb hort ecològic i cases independents a Campos.",
     de: "Familienfreundliches Bio-Fincahotel mit Tieren, Gemüsegarten und Ferienhäuschen.",
   },
-  description: {
-    es: "Agroturismo familiar con huerto ecológico, animales de granja y casas independientes para familias.",
-    en: "Family farm agroturismo with organic gardens, farm animals, and self-catering cottages.",
-    ca: "Agroturisme familiar amb hort ecològic i cases independents a Campos.",
-    de: "Familienfreundliches Bio-Fincahotel mit Tieren, Gemüsegarten und Ferienhäuschen.",
+  fullDescription: {
+    es: "Finca Son Llado Ecoturismo Mallorca ofrece un servicio profesional de máxima categoría en Mallorca. Agroturismo familiar con huerto ecológico, animales de granja y casas independientes para familias. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Finca Son Llado Ecoturismo Mallorca delivers premier professional service in Mallorca. Family farm agroturismo with organic gardens, farm animals, and self-catering cottages. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Finca Son Llado Ecoturismo Mallorca ofereix un servei professional de màxima categoria a Mallorca. Agroturisme familiar amb hort ecològic i cases independents a Campos. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Finca Son Llado Ecoturismo Mallorca bietet erstklassigen professionellen Service auf Mallorca. Familienfreundliches Bio-Fincahotel mit Tieren, Gemüsegarten und Ferienhäuschen. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

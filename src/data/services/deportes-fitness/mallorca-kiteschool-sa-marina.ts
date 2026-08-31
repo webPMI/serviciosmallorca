@@ -38,10 +38,10 @@ export const MALLORCA_KITESCHOOL_SA_MARINA: ServiceItem = {
     de: "Offizielle IKO Kitesurf- und Wingfoil-Schule am windsichersten Thermal-Spot Mallorcas.",
   },
   fullDescription: {
-    es: "Escuela oficial IKO de Kitesurf y Wingfoil en el spot con viento térmico más constante de la isla.",
-    en: "Official IKO Kitesurfing and Wingfoil academy at the island's most reliable thermal wind spot.",
-    ca: "Escola oficial IKO de Kitesurf i Wingfoil a la badia d'Alcúdia amb vent tèrmic.",
-    de: "Offizielle IKO Kitesurf- und Wingfoil-Schule am windsichersten Thermal-Spot Mallorcas.",
+    es: "Mallorca Kite School Sa Marina se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Escuela oficial IKO de Kitesurf y Wingfoil en el spot con viento térmico más constante de la isla. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "Mallorca Kite School Sa Marina stands out as one of the premier athletic and fitness destinations in Mallorca. Official IKO Kitesurfing and Wingfoil academy at the island Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "Mallorca Kite School Sa Marina destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Escola oficial IKO de Kitesurf i Wingfoil a la badia d Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "Mallorca Kite School Sa Marina zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Offizielle IKO Kitesurf- und Wingfoil-Schule am windsichersten Thermal-Spot Mallorcas. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

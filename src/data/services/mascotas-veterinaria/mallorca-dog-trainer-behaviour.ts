@@ -40,11 +40,11 @@ export const mallorcaDogTrainerBehaviour: ServiceItem = {
     ca: "Educadors canins titulats especialitzats en ensinistrament en positiu a domicili a Mallorca.",
     de: "Zertifizierte Hundetrainer für gewaltfreie Verhaltenstherapie und Einzeltraining direkt in Ihrer Finca/Villa.",
   },
-  description: {
-    es: "Educadores caninos titulados especializados en adiestramiento en positivo a domicilio en fincas y villas de Mallorca.",
-    en: "Certified canine behaviorists specializing in positive reinforcement training at home in villas across Mallorca.",
-    ca: "Educadors canins titulats especialitzats en ensinistrament en positiu a domicili a Mallorca.",
-    de: "Zertifizierte Hundetrainer für gewaltfreie Verhaltenstherapie und Einzeltraining direkt in Ihrer Finca/Villa.",
+  fullDescription: {
+    es: "Mallorca Dog Behaviour & Training Academy ofrece un servicio profesional de máxima categoría en Mallorca. Educadores caninos titulados especializados en adiestramiento en positivo a domicilio en fincas y villas de Mallorca. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Mallorca Dog Behaviour & Training Academy delivers premier professional service in Mallorca. Certified canine behaviorists specializing in positive reinforcement training at home in villas across Mallorca. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Mallorca Dog Behaviour & Training Academy ofereix un servei professional de màxima categoria a Mallorca. Educadors canins titulats especialitzats en ensinistrament en positiu a domicili a Mallorca. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Mallorca Dog Behaviour & Training Academy bietet erstklassigen professionellen Service auf Mallorca. Zertifizierte Hundetrainer für gewaltfreie Verhaltenstherapie und Einzeltraining direkt in Ihrer Finca/Villa. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

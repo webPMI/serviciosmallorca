@@ -40,11 +40,11 @@ export const mallorcaPoolCareSantaPonsa: ServiceItem = {
     ca: "Especialistes en climatització de piscines, cloració salina i reformes a viles de Calvià.",
     de: "Spezialisten für Poolheizung, Salzwasserelektrolyse und Luxus-Poolsanierungen im Südwesten Mallorcas.",
   },
-  description: {
-    es: "Especialistas en climatización de piscinas con bombas de calor inverter, electrólisis salina y revestimientos de gresite porcelánico en villas.",
-    en: "Specialists in villa pool heating, saltwater chlorination systems, and premium porcelain tile renovations.",
-    ca: "Especialistes en climatització de piscines, cloració salina i reformes a viles de Calvià.",
-    de: "Spezialisten für Poolheizung, Salzwasserelektrolyse und Luxus-Poolsanierungen im Südwesten Mallorcas.",
+  fullDescription: {
+    es: "Mallorca Pool Care & Renovation Santa Ponsa ofrece un servicio profesional de máxima categoría en Mallorca. Especialistas en climatización de piscinas con bombas de calor inverter, electrólisis salina y revestimientos de gresite porcelánico en villas. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Mallorca Pool Care & Renovation Santa Ponsa delivers premier professional service in Mallorca. Specialists in villa pool heating, saltwater chlorination systems, and premium porcelain tile renovations. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Mallorca Pool Care & Renovation Santa Ponsa ofereix un servei professional de màxima categoria a Mallorca. Especialistes en climatització de piscines, cloració salina i reformes a viles de Calvià. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Mallorca Pool Care & Renovation Santa Ponsa bietet erstklassigen professionellen Service auf Mallorca. Spezialisten für Poolheizung, Salzwasserelektrolyse und Luxus-Poolsanierungen im Südwesten Mallorcas. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

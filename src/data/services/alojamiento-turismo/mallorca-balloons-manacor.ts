@@ -40,11 +40,11 @@ export const mallorcaBalloonsManacor: ServiceItem = {
     ca: "Vols amb globus aerostàtic a l'alba i capvespre sobre Mallorca.",
     de: "Heißluftballonfahrten bei Sonnenauf- und -untergang über Mallorca.",
   },
-  description: {
-    es: "Vuelos panorámicos sobre el Pla de Mallorca y la costa de Llevant con bautismo aéreo y copa de cava.",
-    en: "Scenic balloon flights over Mallorca's central plains and coast with champagne celebration.",
-    ca: "Vols panoràmics sobre el Pla de Mallorca amb copa de cava.",
-    de: "Panorama-Ballonfahrten über die Inselmitte und Küste inklusive Cava-Taufe.",
+  fullDescription: {
+    es: "Mallorca Balloons ofrece un servicio profesional de máxima categoría en Mallorca. Vuelos panorámicos sobre el Pla de Mallorca y la costa de Llevant con bautismo aéreo y copa de cava. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Mallorca Balloons delivers premier professional service in Mallorca. Scenic balloon flights over Mallorca Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Mallorca Balloons ofereix un servei professional de màxima categoria a Mallorca. Vols panoràmics sobre el Pla de Mallorca amb copa de cava. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Mallorca Balloons bietet erstklassigen professionellen Service auf Mallorca. Panorama-Ballonfahrten über die Inselmitte und Küste inklusive Cava-Taufe. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

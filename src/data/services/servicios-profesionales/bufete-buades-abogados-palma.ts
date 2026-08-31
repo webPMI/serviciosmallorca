@@ -40,11 +40,11 @@ export const bufeteBuadesAbogadosPalma: ServiceItem = {
     ca: "Un dels despatxos jurídics i tributaris més prestigiosos de Balears a Palma.",
     de: "Eine der renommiertesten Rechts- und Steuerkanzleien auf den Balearen (gegründet 1979) in Palma.",
   },
-  description: {
-    es: "Uno de los despachos jurídicos y tributarios más prestigiosos de Baleares fundado en 1979 en Palma.",
-    en: "One of the most prestigious law and tax firms in the Balearic Islands, founded in 1979 in Palma.",
-    ca: "Un dels despatxos jurídics i tributaris més prestigiosos de Balears a Palma.",
-    de: "Eine der renommiertesten Rechts- und Steuerkanzleien auf den Balearen (gegründet 1979) in Palma.",
+  fullDescription: {
+    es: "Bufete Buades - Abogados & Asesores Tributarios ofrece un servicio profesional de máxima categoría en Mallorca. Uno de los despachos jurídicos y tributarios más prestigiosos de Baleares fundado en 1979 en Palma. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Bufete Buades - Abogados & Asesores Tributarios delivers premier professional service in Mallorca. One of the most prestigious law and tax firms in the Balearic Islands, founded in 1979 in Palma. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Bufete Buades - Abogados & Asesores Tributarios ofereix un servei professional de màxima categoria a Mallorca. Un dels despatxos jurídics i tributaris més prestigiosos de Balears a Palma. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Bufete Buades - Abogados & Asesores Tributarios bietet erstklassigen professionellen Service auf Mallorca. Eine der renommiertesten Rechts- und Steuerkanzleien auf den Balearen (gegründet 1979) in Palma. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

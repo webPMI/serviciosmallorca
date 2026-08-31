@@ -38,10 +38,10 @@ export const CROSSFIT_DRAGON_PALMA: ServiceItem = {
     de: "Zentrale Box in Palma mit Spezialisierung auf Gewichtheben, Gymnastics und Metcon.",
   },
   fullDescription: {
-    es: "Box céntrico en Palma especializado en halterofilia técnica, gimnasia y acondicionamiento metabólico.",
-    en: "Central Palma box specializing in Olympic lifting technique, gymnastics, and metcon.",
-    ca: "Box cèntric a Palma especialitzat en halterofília tècnica, gimnàstics i condicionament.",
-    de: "Zentrale Box in Palma mit Spezialisierung auf Gewichtheben, Gymnastics und Metcon.",
+    es: "CrossFit Dragon Palma se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Box céntrico en Palma especializado en halterofilia técnica, gimnasia y acondicionamiento metabólico. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "CrossFit Dragon Palma stands out as one of the premier athletic and fitness destinations in Mallorca. Central Palma box specializing in Olympic lifting technique, gymnastics, and metcon. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "CrossFit Dragon Palma destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Box cèntric a Palma especialitzat en halterofília tècnica, gimnàstics i condicionament. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "CrossFit Dragon Palma zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Zentrale Box in Palma mit Spezialisierung auf Gewichtheben, Gymnastics und Metcon. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

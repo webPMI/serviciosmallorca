@@ -40,11 +40,11 @@ export const petSpaGroomingSantaCatalina: ServiceItem = {
     ca: "Spa caní a Santa Catalina amb xampús orgànics i banys d'ozonoteràpia.",
     de: "Boutique-Hundesalon in Santa Catalina mit 100% Bio-Shampoos, Ozonbädern und rassetypischem Scherenschnitt.",
   },
-  description: {
-    es: "Spa canino y salón de estética con champús 100% orgánicos, baños relajantes de ozonoterapia y corte a tijera de raza.",
-    en: "Boutique pet spa featuring 100% organic shampoos, ozone therapy baths, and breed-standard scissor styling.",
-    ca: "Spa caní a Santa Catalina amb xampús orgànics i banys d'ozonoteràpia.",
-    de: "Boutique-Hundesalon in Santa Catalina mit 100% Bio-Shampoos, Ozonbädern und rassetypischem Scherenschnitt.",
+  fullDescription: {
+    es: "Santa Catalina Pet Spa & Organic Grooming ofrece un servicio profesional de máxima categoría en Mallorca. Spa canino y salón de estética con champús 100% orgánicos, baños relajantes de ozonoterapia y corte a tijera de raza. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Santa Catalina Pet Spa & Organic Grooming delivers premier professional service in Mallorca. Boutique pet spa featuring 100% organic shampoos, ozone therapy baths, and breed-standard scissor styling. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Santa Catalina Pet Spa & Organic Grooming ofereix un servei professional de màxima categoria a Mallorca. Spa caní a Santa Catalina amb xampús orgànics i banys d Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Santa Catalina Pet Spa & Organic Grooming bietet erstklassigen professionellen Service auf Mallorca. Boutique-Hundesalon in Santa Catalina mit 100% Bio-Shampoos, Ozonbädern und rassetypischem Scherenschnitt. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

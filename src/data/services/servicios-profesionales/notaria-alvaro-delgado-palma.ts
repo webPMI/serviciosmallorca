@@ -40,11 +40,11 @@ export const notariaAlvaroDelgadoPalma: ServiceItem = {
     ca: "Despatx notarial cèntric amb àmplia experiència en compravendes internacionals i testaments a Palma.",
     de: "Zentrales Notariat in Palma mit langjähriger Erfahrung bei internationalen Immobilienkaufverträgen und Erbschaften.",
   },
-  description: {
-    es: "Despacho notarial céntrico con amplia trayectoria en escrituras de compraventa internacional, hipotecas y testamentos.",
-    en: "Centrally located notary office with extensive expertise in international real estate conveyancing, mortgages, and wills.",
-    ca: "Despatx notarial cèntric amb àmplia experiència en compravendes internacionals i testaments a Palma.",
-    de: "Zentrales Notariat in Palma mit langjähriger Erfahrung bei internationalen Immobilienkaufverträgen und Erbschaften.",
+  fullDescription: {
+    es: "Notaría Álvaro Delgado Palma ofrece un servicio profesional de máxima categoría en Mallorca. Despacho notarial céntrico con amplia trayectoria en escrituras de compraventa internacional, hipotecas y testamentos. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Notaría Álvaro Delgado Palma delivers premier professional service in Mallorca. Centrally located notary office with extensive expertise in international real estate conveyancing, mortgages, and wills. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Notaría Álvaro Delgado Palma ofereix un servei professional de màxima categoria a Mallorca. Despatx notarial cèntric amb àmplia experiència en compravendes internacionals i testaments a Palma. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Notaría Álvaro Delgado Palma bietet erstklassigen professionellen Service auf Mallorca. Zentrales Notariat in Palma mit langjähriger Erfahrung bei internationalen Immobilienkaufverträgen und Erbschaften. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

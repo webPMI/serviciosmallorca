@@ -38,10 +38,10 @@ export const TOP_GYM_PALMA_GENERAL_RIERA: ServiceItem = {
     de: "Klassisches Bodybuilding- und Fitnessstudio mit umfangreichem Maschinenpark in Palma.",
   },
   fullDescription: {
-    es: "Gimnasio clásico de culturismo y fitness en General Riera con gran variedad de máquinas de palanca.",
-    en: "Classic bodybuilding and fitness gym on General Riera with a wide range of lever machines.",
-    ca: "Gimnàs clàssic de culturisme i fitness a General Riera amb gran varietat de màquines.",
-    de: "Klassisches Bodybuilding- und Fitnessstudio mit umfangreichem Maschinenpark in Palma.",
+    es: "Top Gym Palma se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Gimnasio clásico de culturismo y fitness en General Riera con gran variedad de máquinas de palanca. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "Top Gym Palma stands out as one of the premier athletic and fitness destinations in Mallorca. Classic bodybuilding and fitness gym on General Riera with a wide range of lever machines. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "Top Gym Palma destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Gimnàs clàssic de culturisme i fitness a General Riera amb gran varietat de màquines. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "Top Gym Palma zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Klassisches Bodybuilding- und Fitnessstudio mit umfangreichem Maschinenpark in Palma. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

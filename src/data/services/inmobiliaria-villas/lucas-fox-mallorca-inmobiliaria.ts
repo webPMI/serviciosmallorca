@@ -40,11 +40,11 @@ export const lucasFoxMallorcaInmobiliaria: ServiceItem = {
     ca: "Agència immobiliària per a compradors internacionals a Palma.",
     de: "Führende Immobilienagentur für internationale Käufer in Palmas Altstadt.",
   },
-  description: {
-    es: "Agencia inmobiliaria líder para compradores internacionales con oficinas en el casco histórico de Palma y Son Vida.",
-    en: "Premier real estate brokerage for international buyers with offices in Palma Old Town and Son Vida.",
-    ca: "Agència immobiliària per a compradors internacionals a Palma.",
-    de: "Führende Immobilienagentur für internationale Käufer in Palmas Altstadt.",
+  fullDescription: {
+    es: "Lucas Fox Prime Real Estate Mallorca ofrece un servicio profesional de máxima categoría en Mallorca. Agencia inmobiliaria líder para compradores internacionales con oficinas en el casco histórico de Palma y Son Vida. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Lucas Fox Prime Real Estate Mallorca delivers premier professional service in Mallorca. Premier real estate brokerage for international buyers with offices in Palma Old Town and Son Vida. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Lucas Fox Prime Real Estate Mallorca ofereix un servei professional de màxima categoria a Mallorca. Agència immobiliària per a compradors internacionals a Palma. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Lucas Fox Prime Real Estate Mallorca bietet erstklassigen professionellen Service auf Mallorca. Führende Immobilienagentur für internationale Käufer in Palmas Altstadt. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

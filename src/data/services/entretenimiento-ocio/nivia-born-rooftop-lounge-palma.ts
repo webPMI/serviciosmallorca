@@ -40,11 +40,11 @@ export const niviaBornRooftopLoungePalma: ServiceItem = {
     ca: "Terrassa panoràmica al Passeig del Born amb vistes a la Seu de Palma.",
     de: "Elegante Dachterrassen-Bar über den Platanen des Paseo del Borne mit Blick auf die Kathedrale.",
   },
-  description: {
-    es: "Azotea panorámica sobre las copas de los plataneros del Paseo del Borne con vistas a la Catedral de Palma.",
-    en: "Panoramic rooftop lounge overlooking the plane trees of Paseo del Borne and the Cathedral of Palma.",
-    ca: "Terrassa panoràmica al Passeig del Born amb vistes a la Seu de Palma.",
-    de: "Elegante Dachterrassen-Bar über den Platanen des Paseo del Borne mit Blick auf die Kathedrale.",
+  fullDescription: {
+    es: "The Fly Chic Rooftop Bar - Nivia Born ofrece un servicio profesional de máxima categoría en Mallorca. Azotea panorámica sobre las copas de los plataneros del Paseo del Borne con vistas a la Catedral de Palma. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "The Fly Chic Rooftop Bar - Nivia Born delivers premier professional service in Mallorca. Panoramic rooftop lounge overlooking the plane trees of Paseo del Borne and the Cathedral of Palma. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "The Fly Chic Rooftop Bar - Nivia Born ofereix un servei professional de màxima categoria a Mallorca. Terrassa panoràmica al Passeig del Born amb vistes a la Seu de Palma. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "The Fly Chic Rooftop Bar - Nivia Born bietet erstklassigen professionellen Service auf Mallorca. Elegante Dachterrassen-Bar über den Platanen des Paseo del Borne mit Blick auf die Kathedrale. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

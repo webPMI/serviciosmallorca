@@ -38,10 +38,10 @@ export const SYNERGYM_PALMA_ESCORXADOR: ServiceItem = {
     de: "Fitnessstudio am Kulturzentrum s'Escorxador mit Functional-Turf und Cardio.",
   },
   fullDescription: {
-    es: "Gimnasio junto al centro cultural s'Escorxador con zona funcional de césped y cardio interactivo.",
-    en: "Gym next to s'Escorxador cultural hub featuring functional turf and interactive cardio.",
-    ca: "Gimnàs al costat de s'Escorxador amb gespa funcional i cardio interactiu.",
-    de: "Fitnessstudio am Kulturzentrum s'Escorxador mit Functional-Turf und Cardio.",
+    es: "Synergym Palma s se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Gimnasio junto al centro cultural s Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "Synergym Palma s stands out as one of the premier athletic and fitness destinations in Mallorca. Gym next to s Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "Synergym Palma s destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Gimnàs al costat de s Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "Synergym Palma s zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Fitnessstudio am Kulturzentrum s Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

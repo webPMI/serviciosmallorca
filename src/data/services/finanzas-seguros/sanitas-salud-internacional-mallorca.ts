@@ -40,11 +40,11 @@ export const sanitasSaludInternacionalMallorca: ServiceItem = {
     ca: "Assegurances mèdiques privades sense copagament vàlides per a la residència a Mallorca.",
     de: "Private Krankenversicherung ohne Selbstbeteiligung, anerkannt für NIE, spanische Residencia und Golden Visa.",
   },
-  description: {
-    es: "Seguros médicos privados sin copago válidos para obtención del NIE y residencia en España con cuadro médico internacional.",
-    en: "Private health insurance with zero copayments meeting all Spanish residency (NIE/TIE/Golden Visa) visa requirements.",
-    ca: "Assegurances mèdiques privades sense copagament vàlides per a la residència a Mallorca.",
-    de: "Private Krankenversicherung ohne Selbstbeteiligung, anerkannt für NIE, spanische Residencia und Golden Visa.",
+  fullDescription: {
+    es: "Sanitas Expat Health & International Coverage ofrece un servicio profesional de máxima categoría en Mallorca. Seguros médicos privados sin copago válidos para obtención del NIE y residencia en España con cuadro médico internacional. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Sanitas Expat Health & International Coverage delivers premier professional service in Mallorca. Private health insurance with zero copayments meeting all Spanish residency (NIE/TIE/Golden Visa) visa requirements. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Sanitas Expat Health & International Coverage ofereix un servei professional de màxima categoria a Mallorca. Assegurances mèdiques privades sense copagament vàlides per a la residència a Mallorca. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Sanitas Expat Health & International Coverage bietet erstklassigen professionellen Service auf Mallorca. Private Krankenversicherung ohne Selbstbeteiligung, anerkannt für NIE, spanische Residencia und Golden Visa. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

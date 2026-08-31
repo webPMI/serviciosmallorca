@@ -38,10 +38,10 @@ export const juaneda_international_medical_santa_ponsa: ServiceItem = {
     de: "Ärztezentrum in Santa Ponsa für internationale Residenten mit Haus- und Hotelbesuchsservice.",
   },
   fullDescription: {
-    es: "Centro médico ambulatorio para residentes y náutica en el suroeste con servicio a domicilio y hoteles.",
-    en: "Outpatient medical center for southwest residents and yachting community with house & hotel call service.",
-    ca: "Centre mèdic ambulatori per a residents i nàutica a Calvià amb visites a domicili.",
-    de: "Ärztezentrum in Santa Ponsa für internationale Residenten mit Haus- und Hotelbesuchsservice.",
+    es: "Juaneda Medical Center Santa Ponsa es un centro de referencia en salud, estética y bienestar en Mallorca. Centro médico ambulatorio para residentes y náutica en el suroeste con servicio a domicilio y hoteles. Ofrece un entorno exclusivo y relajante con equipamiento de vanguardia, profesionales titulados y atención personalizada en varios idiomas para residentes y visitantes de la isla.",
+    en: "Juaneda Medical Center Santa Ponsa is a premier benchmark for health, aesthetic medicine, and wellness in Mallorca. Outpatient medical center for southwest residents and yachting community with house & hotel call service. Providing an exclusive, tranquil sanctuary with cutting-edge medical and wellness equipment, certified specialists, and multilingual client care.",
+    ca: "Juaneda Medical Center Santa Ponsa és un centre de referència en salut, estètica i benestar a Mallorca. Centre mèdic ambulatori per a residents i nàutica a Calvià amb visites a domicili. Ofereix un entorn exclusiu amb equipament d'avantguarda, professionals titulats i atenció personalitzada multilingüe per a residents i visitants.",
+    de: "Juaneda Medical Center Santa Ponsa ist eine führende Adresse für Gesundheit, Ästhetik und Wohlbefinden auf Mallorca. Ärztezentrum in Santa Ponsa für internationale Residenten mit Haus- und Hotelbesuchsservice. Ausgestattet mit modernster Medizintechnik, qualifizierten Therapeuten und individueller mehrsprachiger Betreuung in stilvollem Ambiente.",
   },
   highlights: {
     es: [

@@ -38,10 +38,10 @@ export const can_alomar_urban_spa_palma: ServiceItem = {
     de: "Boutique-Spa am Passeig del Born in Palma mit Dachterrassen-Pool und Luxuskosmetik.",
   },
   fullDescription: {
-    es: "Spa boutique en el Passeig del Born de Palma con piscina mirador en la azotea y tratamientos cosméticos de alta gama.",
-    en: "Boutique rooftop urban spa on Palma's Passeig del Born with plunge pool and luxury cosmetic treatments.",
-    ca: "Spa boutique al Passeig del Born de Palma amb piscina mirador al terrat.",
-    de: "Boutique-Spa am Passeig del Born in Palma mit Dachterrassen-Pool und Luxuskosmetik.",
+    es: "Can Alomar Urban Spa es un centro de referencia en salud, estética y bienestar en Mallorca. Spa boutique en el Passeig del Born de Palma con piscina mirador en la azotea y tratamientos cosméticos de alta gama. Ofrece un entorno exclusivo y relajante con equipamiento de vanguardia, profesionales titulados y atención personalizada en varios idiomas para residentes y visitantes de la isla.",
+    en: "Can Alomar Urban Spa is a premier benchmark for health, aesthetic medicine, and wellness in Mallorca. Boutique rooftop urban spa on Palma Providing an exclusive, tranquil sanctuary with cutting-edge medical and wellness equipment, certified specialists, and multilingual client care.",
+    ca: "Can Alomar Urban Spa és un centre de referència en salut, estètica i benestar a Mallorca. Spa boutique al Passeig del Born de Palma amb piscina mirador al terrat. Ofereix un entorn exclusiu amb equipament d'avantguarda, professionals titulats i atenció personalitzada multilingüe per a residents i visitants.",
+    de: "Can Alomar Urban Spa ist eine führende Adresse für Gesundheit, Ästhetik und Wohlbefinden auf Mallorca. Boutique-Spa am Passeig del Born in Palma mit Dachterrassen-Pool und Luxuskosmetik. Ausgestattet mit modernster Medizintechnik, qualifizierten Therapeuten und individueller mehrsprachiger Betreuung in stilvollem Ambiente.",
   },
   highlights: {
     es: [

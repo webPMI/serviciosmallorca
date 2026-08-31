@@ -38,10 +38,10 @@ export const clinica_juaneda_miramar_palma: ServiceItem = {
     de: "Privatklinikkomplex mit modernem OP-Zentrum, Kinderwunschzentrum und umfassender Facharztversorgung.",
   },
   fullDescription: {
-    es: "Complejo hospitalario privado con amplias instalaciones, área quirúrgica puntera y centro de reproducción asistida.",
-    en: "Private hospital complex with state-of-the-art surgical suites and fertility reproduction center.",
-    ca: "Complex hospitalari privat amb àmplies instal·lacions, bloc quirúrgic d'avantguarda i reproducció assistida.",
-    de: "Privatklinikkomplex mit modernem OP-Zentrum, Kinderwunschzentrum und umfassender Facharztversorgung.",
+    es: "Clínica Juaneda Miramar es un centro de referencia en salud, estética y bienestar en Mallorca. Complejo hospitalario privado con amplias instalaciones, área quirúrgica puntera y centro de reproducción asistida. Ofrece un entorno exclusivo y relajante con equipamiento de vanguardia, profesionales titulados y atención personalizada en varios idiomas para residentes y visitantes de la isla.",
+    en: "Clínica Juaneda Miramar is a premier benchmark for health, aesthetic medicine, and wellness in Mallorca. Private hospital complex with state-of-the-art surgical suites and fertility reproduction center. Providing an exclusive, tranquil sanctuary with cutting-edge medical and wellness equipment, certified specialists, and multilingual client care.",
+    ca: "Clínica Juaneda Miramar és un centre de referència en salut, estètica i benestar a Mallorca. Complex hospitalari privat amb àmplies instal·lacions, bloc quirúrgic d Ofereix un entorn exclusiu amb equipament d'avantguarda, professionals titulats i atenció personalitzada multilingüe per a residents i visitants.",
+    de: "Clínica Juaneda Miramar ist eine führende Adresse für Gesundheit, Ästhetik und Wohlbefinden auf Mallorca. Privatklinikkomplex mit modernem OP-Zentrum, Kinderwunschzentrum und umfassender Facharztversorgung. Ausgestattet mit modernster Medizintechnik, qualifizierten Therapeuten und individueller mehrsprachiger Betreuung in stilvollem Ambiente.",
   },
   highlights: {
     es: [

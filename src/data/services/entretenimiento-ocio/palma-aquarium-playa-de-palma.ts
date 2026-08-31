@@ -40,11 +40,11 @@ export const palmaAquariumPlayaDePalma: ServiceItem = {
     ca: "Parc marí amb més de 8.000 animals i el tanc de taurons 'The Big Blue', el més profund d'Europa.",
     de: "Meerespark mit über 8.000 Tieren und Europas tiefstem Haifischbecken 'The Big Blue' (8,5 Meter tief).",
   },
-  description: {
-    es: "Parque marino con más de 8.000 ejemplares y el tanque de tiburones 'The Big Blue', el más profundo de Europa (8,5 metros).",
-    en: "Marine park with over 8,000 specimens and Europe's deepest shark tank 'The Big Blue' (8.5 meters deep).",
-    ca: "Parc marí amb més de 8.000 animals i el tanc de taurons 'The Big Blue', el més profund d'Europa.",
-    de: "Meerespark mit über 8.000 Tieren und Europas tiefstem Haifischbecken 'The Big Blue' (8,5 Meter tief).",
+  fullDescription: {
+    es: "Palma Aquarium & Parque Marino ofrece un servicio profesional de máxima categoría en Mallorca. Parque marino con más de 8.000 ejemplares y el tanque de tiburones  Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Palma Aquarium & Parque Marino delivers premier professional service in Mallorca. Marine park with over 8,000 specimens and Europe Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Palma Aquarium & Parque Marino ofereix un servei professional de màxima categoria a Mallorca. Parc marí amb més de 8.000 animals i el tanc de taurons  Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Palma Aquarium & Parque Marino bietet erstklassigen professionellen Service auf Mallorca. Meerespark mit über 8.000 Tieren und Europas tiefstem Haifischbecken  Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

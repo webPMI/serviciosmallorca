@@ -40,11 +40,11 @@ export const blevinsFranksWealthManagementPalma: ServiceItem = {
     ca: "Líders en fiscalitat internacional i gestió de patrimonis per a residents estrangers a Palma.",
     de: "Führende Experten für grenzüberschreitende Steuerplanung, Erbrecht und Vermögensverwaltung auf Mallorca.",
   },
-  description: {
-    es: "Líderes paneuropeos en fiscalidad internacional, planificación sucesoria y gestión de patrimonios para residentes no habituales.",
-    en: "Leading cross-border tax, estate planning, and wealth management specialists for UK and international residents.",
-    ca: "Líders en fiscalitat internacional i gestió de patrimonis per a residents estrangers a Palma.",
-    de: "Führende Experten für grenzüberschreitende Steuerplanung, Erbrecht und Vermögensverwaltung auf Mallorca.",
+  fullDescription: {
+    es: "Blevins Franks Wealth Management Mallorca ofrece un servicio profesional de máxima categoría en Mallorca. Líderes paneuropeos en fiscalidad internacional, planificación sucesoria y gestión de patrimonios para residentes no habituales. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Blevins Franks Wealth Management Mallorca delivers premier professional service in Mallorca. Leading cross-border tax, estate planning, and wealth management specialists for UK and international residents. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Blevins Franks Wealth Management Mallorca ofereix un servei professional de màxima categoria a Mallorca. Líders en fiscalitat internacional i gestió de patrimonis per a residents estrangers a Palma. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Blevins Franks Wealth Management Mallorca bietet erstklassigen professionellen Service auf Mallorca. Führende Experten für grenzüberschreitende Steuerplanung, Erbrecht und Vermögensverwaltung auf Mallorca. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

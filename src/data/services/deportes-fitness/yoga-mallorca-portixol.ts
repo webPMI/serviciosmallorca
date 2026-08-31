@@ -38,10 +38,10 @@ export const YOGA_MALLORCA_PORTIXOL: ServiceItem = {
     de: "Yogastudio direkt am Meer in Portixol mit Vinyasa bei Sonnenaufgang und Yin Yoga.",
   },
   fullDescription: {
-    es: "Estudio de yoga frente al mar en Portixol con sesiones de Vinyasa al amanecer y Yin Yoga.",
-    en: "Seafront yoga studio in Portixol offering sunrise Vinyasa sessions and evening Yin Yoga.",
-    ca: "Estudi de ioga davant la mar al Portitxol amb sessions de Vinyasa a la sortida del sol.",
-    de: "Yogastudio direkt am Meer in Portixol mit Vinyasa bei Sonnenaufgang und Yin Yoga.",
+    es: "Yoga Mallorca Portixol se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Estudio de yoga frente al mar en Portixol con sesiones de Vinyasa al amanecer y Yin Yoga. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "Yoga Mallorca Portixol stands out as one of the premier athletic and fitness destinations in Mallorca. Seafront yoga studio in Portixol offering sunrise Vinyasa sessions and evening Yin Yoga. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "Yoga Mallorca Portixol destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Estudi de ioga davant la mar al Portitxol amb sessions de Vinyasa a la sortida del sol. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "Yoga Mallorca Portixol zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Yogastudio direkt am Meer in Portixol mit Vinyasa bei Sonnenaufgang und Yin Yoga. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

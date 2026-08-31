@@ -38,10 +38,10 @@ export const hospital_quironsalud_palmaplanas: ServiceItem = {
     de: "Privates Schwerpunktkrankenhaus mit 24h-Notaufnahme, Intensivstation und mehrsprachiger internationaler Patientenbetreuung.",
   },
   fullDescription: {
-    es: "Hospital privado de alta resolución con urgencias 24h, UCI médica, cirugía avanzada y atención internacional multilingüe.",
-    en: "High-resolution private hospital featuring 24/7 ER, ICU, advanced surgical suites, and multilingual patient care.",
-    ca: "Hospital privat d'alta resolució amb urgències 24h, UCI, cirurgia avançada i atenció mèdica internacional.",
-    de: "Privates Schwerpunktkrankenhaus mit 24h-Notaufnahme, Intensivstation und mehrsprachiger internationaler Patientenbetreuung.",
+    es: "Hospital Quirónsalud Palmaplanas es un centro de referencia en salud, estética y bienestar en Mallorca. Hospital privado de alta resolución con urgencias 24h, UCI médica, cirugía avanzada y atención internacional multilingüe. Ofrece un entorno exclusivo y relajante con equipamiento de vanguardia, profesionales titulados y atención personalizada en varios idiomas para residentes y visitantes de la isla.",
+    en: "Hospital Quirónsalud Palmaplanas is a premier benchmark for health, aesthetic medicine, and wellness in Mallorca. High-resolution private hospital featuring 24/7 ER, ICU, advanced surgical suites, and multilingual patient care. Providing an exclusive, tranquil sanctuary with cutting-edge medical and wellness equipment, certified specialists, and multilingual client care.",
+    ca: "Hospital Quirónsalud Palmaplanas és un centre de referència en salut, estètica i benestar a Mallorca. Hospital privat d Ofereix un entorn exclusiu amb equipament d'avantguarda, professionals titulats i atenció personalitzada multilingüe per a residents i visitants.",
+    de: "Hospital Quirónsalud Palmaplanas ist eine führende Adresse für Gesundheit, Ästhetik und Wohlbefinden auf Mallorca. Privates Schwerpunktkrankenhaus mit 24h-Notaufnahme, Intensivstation und mehrsprachiger internationaler Patientenbetreuung. Ausgestattet mit modernster Medizintechnik, qualifizierten Therapeuten und individueller mehrsprachiger Betreuung in stilvollem Ambiente.",
   },
   highlights: {
     es: [

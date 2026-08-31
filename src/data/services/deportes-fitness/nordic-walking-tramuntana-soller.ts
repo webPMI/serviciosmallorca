@@ -38,10 +38,10 @@ export const NORDIC_WALKING_TRAMUNTANA_SOLLER: ServiceItem = {
     de: "Nordic-Walking-Schule und geführte Touren durch Olivenhaine und Trockensteinpfade.",
   },
   fullDescription: {
-    es: "Escuela y rutas guiadas de Nordic Walking y senderismo activo por los olivares y senderos de piedra en seco.",
-    en: "Nordic Walking academy and guided active trekking through ancient olive groves and stone trails.",
-    ca: "Escola i rutes guiades de Marxa Nòrdica pels camins de pedra en sec de la Tramuntana.",
-    de: "Nordic-Walking-Schule und geführte Touren durch Olivenhaine und Trockensteinpfade.",
+    es: "Nordic Walking Tramuntana Sóller se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Escuela y rutas guiadas de Nordic Walking y senderismo activo por los olivares y senderos de piedra en seco. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "Nordic Walking Tramuntana Sóller stands out as one of the premier athletic and fitness destinations in Mallorca. Nordic Walking academy and guided active trekking through ancient olive groves and stone trails. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "Nordic Walking Tramuntana Sóller destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Escola i rutes guiades de Marxa Nòrdica pels camins de pedra en sec de la Tramuntana. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "Nordic Walking Tramuntana Sóller zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Nordic-Walking-Schule und geführte Touren durch Olivenhaine und Trockensteinpfade. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

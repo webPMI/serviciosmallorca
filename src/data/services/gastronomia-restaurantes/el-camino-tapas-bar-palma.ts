@@ -40,11 +40,11 @@ export const elCaminoTapasBarPalma: ServiceItem = {
     ca: "La barra de tapes més vibrant i reconeguda del centre històric de Palma.",
     de: "Palmas lebhafteste und begehrteste Tapas-Theke im historischen Zentrum mit marktfrischer Produktküche.",
   },
-  description: {
-    es: "La barra de tapas más vibrante y codiciada del casco histórico de Palma, inspirada en el mítico Cal Pep de Barcelona.",
-    en: "Palma's most sought-after open kitchen tapas bar serving pristine market produce straight from the plancha.",
-    ca: "La barra de tapes més vibrant i reconeguda del centre històric de Palma.",
-    de: "Palmas lebhafteste und begehrteste Tapas-Theke im historischen Zentrum mit marktfrischer Produktküche.",
+  fullDescription: {
+    es: "El Camino Tapas Bar Palma ofrece un servicio profesional de máxima categoría en Mallorca. La barra de tapas más vibrante y codiciada del casco histórico de Palma, inspirada en el mítico Cal Pep de Barcelona. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "El Camino Tapas Bar Palma delivers premier professional service in Mallorca. Palma Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "El Camino Tapas Bar Palma ofereix un servei professional de màxima categoria a Mallorca. La barra de tapes més vibrant i reconeguda del centre històric de Palma. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "El Camino Tapas Bar Palma bietet erstklassigen professionellen Service auf Mallorca. Palmas lebhafteste und begehrteste Tapas-Theke im historischen Zentrum mit marktfrischer Produktküche. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

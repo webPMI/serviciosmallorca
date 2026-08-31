@@ -38,10 +38,10 @@ export const CROSSFIT_TRAMUNTANA_PALMA: ServiceItem = {
     de: "Offizielle CrossFit-Affiliate-Box in Son Castelló mit 700 m², Rogue-Fitness und Open Box.",
   },
   fullDescription: {
-    es: "Box oficial afiliado de CrossFit en Son Castelló con más de 700 m², Rogue Fitness y Open Box continuo.",
-    en: "Official CrossFit affiliate box in Son Castelló offering 700 m², Rogue Fitness gear, and continuous Open Box.",
-    ca: "Box oficial de CrossFit a Son Castelló amb més de 700 m², material Rogue Fitness i Open Box continu.",
-    de: "Offizielle CrossFit-Affiliate-Box in Son Castelló mit 700 m², Rogue-Fitness und Open Box.",
+    es: "CrossFit Tramuntana se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Box oficial afiliado de CrossFit en Son Castelló con más de 700 m², Rogue Fitness y Open Box continuo. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "CrossFit Tramuntana stands out as one of the premier athletic and fitness destinations in Mallorca. Official CrossFit affiliate box in Son Castelló offering 700 m², Rogue Fitness gear, and continuous Open Box. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "CrossFit Tramuntana destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Box oficial de CrossFit a Son Castelló amb més de 700 m², material Rogue Fitness i Open Box continu. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "CrossFit Tramuntana zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Offizielle CrossFit-Affiliate-Box in Son Castelló mit 700 m², Rogue-Fitness und Open Box. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

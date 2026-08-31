@@ -40,11 +40,11 @@ export const florDeSalEsTrenc: ServiceItem = {
     ca: "Salines naturals protegides i collita artesanal de Flor de Sal.",
     de: "Natürliche Salinen mit handgeschöpftem Flor de Sal Meersalz.",
   },
-  description: {
-    es: "Cosecha manual de cristales de sal marina en el Parque Natural de Es Trenc con visitas guiadas.",
-    en: "Hand-harvested sea salt in Es Trenc Natural Park with educational guided walks.",
-    ca: "Collita manual de sal al Parc Natural des Trenc amb visites guiades.",
-    de: "Traditionelle Salzgewinnung von Hand im Naturschutzgebiet Es Trenc mit Führungen.",
+  fullDescription: {
+    es: "Flor de Sal d ofrece un servicio profesional de máxima categoría en Mallorca. Cosecha manual de cristales de sal marina en el Parque Natural de Es Trenc con visitas guiadas. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Flor de Sal d delivers premier professional service in Mallorca. Hand-harvested sea salt in Es Trenc Natural Park with educational guided walks. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Flor de Sal d ofereix un servei professional de màxima categoria a Mallorca. Collita manual de sal al Parc Natural des Trenc amb visites guiades. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Flor de Sal d bietet erstklassigen professionellen Service auf Mallorca. Traditionelle Salzgewinnung von Hand im Naturschutzgebiet Es Trenc mit Führungen. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

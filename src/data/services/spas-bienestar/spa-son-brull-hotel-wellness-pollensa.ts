@@ -44,10 +44,10 @@ export const spa_son_brull_hotel_wellness_pollensa: ServiceItem = {
     de: "Öko-Spa in einem restaurierten Kloster aus dem 18. Jahrhundert in Pollença: ganzheitliche Behandlungen mit eigenem Olivenöl, Mandel und Meersalz.",
   },
   fullDescription: {
-    es: "Son Brull Spa forma parte del exclusivo complejo Relais & Châteaux en el norte de Mallorca. Es el primer spa de la isla en utilizar exclusivamente cosmética 100% natural elaborada con ingredientes procedentes de su propia finca orgánica.",
-    en: "Part of the Relais & Châteaux estate in northern Mallorca, Son Brull is the island's pioneer eco-spa utilizing 100% natural organic skincare harvested directly from their farmland.",
-    ca: "Part del complex Relais & Châteaux al nord de Mallorca, és el primer spa ecològic en utilitzar cosmètica 100% natural de la seva pròpia finca.",
-    de: "Teil des Relais & Châteaux Anwesens im Norden Mallorcas: Pionier-Öko-Spa mit 100% natürlicher Kosmetik aus eigener Bio-Landwirtschaft.",
+    es: "Son Brull Hotel & Spa Boutique Pollença es un centro de referencia en salud, estética y bienestar en Mallorca. Spa ecológico en un antiguo monasterio del siglo XVIII en Pollença: tratamientos holísticos con aceite de oliva de cosecha propia, almendra y sal marina de Mallorca. Ofrece un entorno exclusivo y relajante con equipamiento de vanguardia, profesionales titulados y atención personalizada en varios idiomas para residentes y visitantes de la isla.",
+    en: "Son Brull Hotel & Spa Boutique Pollença is a premier benchmark for health, aesthetic medicine, and wellness in Mallorca. Eco-spa in a restored 18th-century monastery in Pollença: holistic treatments featuring estate-harvested olive oil, almond, and Mallorcan sea salt. Providing an exclusive, tranquil sanctuary with cutting-edge medical and wellness equipment, certified specialists, and multilingual client care.",
+    ca: "Son Brull Hotel & Spa Boutique Pollença és un centre de referència en salut, estètica i benestar a Mallorca. Spa ecològic en un antic monestir del segle XVIII a Pollença: tractaments holístics amb oli d Ofereix un entorn exclusiu amb equipament d'avantguarda, professionals titulats i atenció personalitzada multilingüe per a residents i visitants.",
+    de: "Son Brull Hotel & Spa Boutique Pollença ist eine führende Adresse für Gesundheit, Ästhetik und Wohlbefinden auf Mallorca. Öko-Spa in einem restaurierten Kloster aus dem 18. Jahrhundert in Pollença: ganzheitliche Behandlungen mit eigenem Olivenöl, Mandel und Meersalz. Ausgestattet mit modernster Medizintechnik, qualifizierten Therapeuten und individueller mehrsprachiger Betreuung in stilvollem Ambiente.",
   },
   highlights: {
     es: [

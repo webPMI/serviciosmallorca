@@ -40,11 +40,11 @@ export const domoReformasIntegralesPalma: ServiceItem = {
     ca: "Reformes integrals d'habitatges, cuines de disseny i microciment amb terminis garantits a Palma.",
     de: "Komplettrenovierungen, deutsche Designerküchen, Mikrozementbäder und Schreinerarbeiten mit Termingarantie.",
   },
-  description: {
-    es: "Reformas integrales de viviendas, cocinas alemanas de diseño, baños de microcemento y carpintería a medida con plazos garantizados.",
-    en: "Turnkey home renovations, designer kitchens, microcement bathrooms, and bespoke carpentry with guaranteed deadlines.",
-    ca: "Reformes integrals d'habitatges, cuines de disseny i microciment amb terminis garantits a Palma.",
-    de: "Komplettrenovierungen, deutsche Designerküchen, Mikrozementbäder und Schreinerarbeiten mit Termingarantie.",
+  fullDescription: {
+    es: "Domo Reformas Integrales & Interiorismo ofrece un servicio profesional de máxima categoría en Mallorca. Reformas integrales de viviendas, cocinas alemanas de diseño, baños de microcemento y carpintería a medida con plazos garantizados. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Domo Reformas Integrales & Interiorismo delivers premier professional service in Mallorca. Turnkey home renovations, designer kitchens, microcement bathrooms, and bespoke carpentry with guaranteed deadlines. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Domo Reformas Integrales & Interiorismo ofereix un servei professional de màxima categoria a Mallorca. Reformes integrals d Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Domo Reformas Integrales & Interiorismo bietet erstklassigen professionellen Service auf Mallorca. Komplettrenovierungen, deutsche Designerküchen, Mikrozementbäder und Schreinerarbeiten mit Termingarantie. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

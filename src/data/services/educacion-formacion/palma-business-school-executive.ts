@@ -40,11 +40,11 @@ export const palmaBusinessSchoolExecutive: ServiceItem = {
     ca: "Centre de formació executiva en gestió immobiliària, nàutica i hoteleria de luxe a Palma.",
     de: "Weiterbildungsakademie für Immobilienwirtschaft, Yachtmanagement und Luxus-Hospitality in Palma.",
   },
-  description: {
-    es: "Centro de posgrado y formación ejecutiva en gestión inmobiliaria, náutica y hospitality internacional.",
-    en: "Executive education center specializing in international real estate, yacht management, and luxury hospitality.",
-    ca: "Centre de formació executiva en gestió immobiliària, nàutica i hoteleria de luxe a Palma.",
-    de: "Weiterbildungsakademie für Immobilienwirtschaft, Yachtmanagement und Luxus-Hospitality in Palma.",
+  fullDescription: {
+    es: "Palma International Executive Education ofrece un servicio profesional de máxima categoría en Mallorca. Centro de posgrado y formación ejecutiva en gestión inmobiliaria, náutica y hospitality internacional. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Palma International Executive Education delivers premier professional service in Mallorca. Executive education center specializing in international real estate, yacht management, and luxury hospitality. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Palma International Executive Education ofereix un servei professional de màxima categoria a Mallorca. Centre de formació executiva en gestió immobiliària, nàutica i hoteleria de luxe a Palma. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Palma International Executive Education bietet erstklassigen professionellen Service auf Mallorca. Weiterbildungsakademie für Immobilienwirtschaft, Yachtmanagement und Luxus-Hospitality in Palma. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

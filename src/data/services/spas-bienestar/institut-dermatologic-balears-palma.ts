@@ -38,10 +38,10 @@ export const institut_dermatologic_balears_palma: ServiceItem = {
     de: "Führendes dermatologisches Institut für Hautkrebsvorsorge, Lasermedizin und medizinische Kosmetik.",
   },
   fullDescription: {
-    es: "Instituto médico dermatológico líder en cáncer de piel, microscopía confocal, dermatología pediátrica y estética.",
-    en: "Leading dermatology institute specialized in skin cancer screening, confocal microscopy, and aesthetic laser.",
-    ca: "Institut mèdic dermatològic capdavanter en càncer de pell, microscòpia confocal i làser a Palma.",
-    de: "Führendes dermatologisches Institut für Hautkrebsvorsorge, Lasermedizin und medizinische Kosmetik.",
+    es: "Institut Dermatològic de Balears es un centro de referencia en salud, estética y bienestar en Mallorca. Instituto médico dermatológico líder en cáncer de piel, microscopía confocal, dermatología pediátrica y estética. Ofrece un entorno exclusivo y relajante con equipamiento de vanguardia, profesionales titulados y atención personalizada en varios idiomas para residentes y visitantes de la isla.",
+    en: "Institut Dermatològic de Balears is a premier benchmark for health, aesthetic medicine, and wellness in Mallorca. Leading dermatology institute specialized in skin cancer screening, confocal microscopy, and aesthetic laser. Providing an exclusive, tranquil sanctuary with cutting-edge medical and wellness equipment, certified specialists, and multilingual client care.",
+    ca: "Institut Dermatològic de Balears és un centre de referència en salut, estètica i benestar a Mallorca. Institut mèdic dermatològic capdavanter en càncer de pell, microscòpia confocal i làser a Palma. Ofereix un entorn exclusiu amb equipament d'avantguarda, professionals titulats i atenció personalitzada multilingüe per a residents i visitants.",
+    de: "Institut Dermatològic de Balears ist eine führende Adresse für Gesundheit, Ästhetik und Wohlbefinden auf Mallorca. Führendes dermatologisches Institut für Hautkrebsvorsorge, Lasermedizin und medizinische Kosmetik. Ausgestattet mit modernster Medizintechnik, qualifizierten Therapeuten und individueller mehrsprachiger Betreuung in stilvollem Ambiente.",
   },
   highlights: {
     es: [

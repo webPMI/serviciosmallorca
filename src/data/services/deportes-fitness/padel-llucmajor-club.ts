@@ -38,10 +38,10 @@ export const PADEL_LLUCMAJOR_CLUB: ServiceItem = {
     de: "Padelclub in Llucmajor mit Panorama-Glasplätzen, Wochenendturnieren und Bar.",
   },
   fullDescription: {
-    es: "Club de pádel en Llucmajor con pistas panorámicas de cristal, torneos de fin de semana y bar.",
-    en: "Padel club in Llucmajor with panoramic glass courts, weekend tournaments, and bar.",
-    ca: "Club de pàdel a Llucmajor amb pistes panoràmiques de vidre i tornejos.",
-    de: "Padelclub in Llucmajor mit Panorama-Glasplätzen, Wochenendturnieren und Bar.",
+    es: "Pàdel Llucmajor Club se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Club de pádel en Llucmajor con pistas panorámicas de cristal, torneos de fin de semana y bar. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "Pàdel Llucmajor Club stands out as one of the premier athletic and fitness destinations in Mallorca. Padel club in Llucmajor with panoramic glass courts, weekend tournaments, and bar. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "Pàdel Llucmajor Club destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Club de pàdel a Llucmajor amb pistes panoràmiques de vidre i tornejos. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "Pàdel Llucmajor Club zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Padelclub in Llucmajor mit Panorama-Glasplätzen, Wochenendturnieren und Bar. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

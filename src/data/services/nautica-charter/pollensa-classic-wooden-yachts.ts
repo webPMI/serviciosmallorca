@@ -40,11 +40,11 @@ export const pollensaClassicWoodenYachts: ServiceItem = {
     ca: "Xàrter privat en tradicionals llaüts mallorquins de fusta a Formentor.",
     de: "Private Ausflüge auf restaurierten mallorquinischen Holz-Llauts nach Formentor und Cala Murta.",
   },
-  description: {
-    es: "Chárter privado en tradicionales llauts mallorquines de madera restaurados navegando hacia Formentor y Cala Murta.",
-    en: "Private charters on restored classic wooden Mallorcan llauts sailing to Cap de Formentor and Cala Murta.",
-    ca: "Xàrter privat en tradicionals llaüts mallorquins de fusta a Formentor.",
-    de: "Private Ausflüge auf restaurierten mallorquinischen Holz-Llauts nach Formentor und Cala Murta.",
+  fullDescription: {
+    es: "Classic Wooden Yachts & Llauts Pollença ofrece un servicio profesional de máxima categoría en Mallorca. Chárter privado en tradicionales llauts mallorquines de madera restaurados navegando hacia Formentor y Cala Murta. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Classic Wooden Yachts & Llauts Pollença delivers premier professional service in Mallorca. Private charters on restored classic wooden Mallorcan llauts sailing to Cap de Formentor and Cala Murta. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Classic Wooden Yachts & Llauts Pollença ofereix un servei professional de màxima categoria a Mallorca. Xàrter privat en tradicionals llaüts mallorquins de fusta a Formentor. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Classic Wooden Yachts & Llauts Pollença bietet erstklassigen professionellen Service auf Mallorca. Private Ausflüge auf restaurierten mallorquinischen Holz-Llauts nach Formentor und Cala Murta. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

@@ -40,11 +40,11 @@ export const fusterSegurosCorreduriaPalma: ServiceItem = {
     ca: "Més de 80 anys assegurant iots, finques rústiques i patrimonis familiars a les Balears.",
     de: "Über 80 Jahre Erfahrung bei Yachtversicherungen, Fincapolicen und maßgeschneidertem Vermögensschutz auf den Balearen.",
   },
-  description: {
-    es: "Más de 80 años asegurando embarcaciones de recreo, superyates, fincas rústicas y patrimonios familiares en Baleares.",
-    en: "Over 80 years providing bespoke marine yacht insurance, luxury villa cover, and commercial risk policies in Mallorca.",
-    ca: "Més de 80 anys assegurant iots, finques rústiques i patrimonis familiars a les Balears.",
-    de: "Über 80 Jahre Erfahrung bei Yachtversicherungen, Fincapolicen und maßgeschneidertem Vermögensschutz auf den Balearen.",
+  fullDescription: {
+    es: "Fuster Correduría de Seguros Palma (1940) ofrece un servicio profesional de máxima categoría en Mallorca. Más de 80 años asegurando embarcaciones de recreo, superyates, fincas rústicas y patrimonios familiares en Baleares. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Fuster Correduría de Seguros Palma (1940) delivers premier professional service in Mallorca. Over 80 years providing bespoke marine yacht insurance, luxury villa cover, and commercial risk policies in Mallorca. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Fuster Correduría de Seguros Palma (1940) ofereix un servei professional de màxima categoria a Mallorca. Més de 80 anys assegurant iots, finques rústiques i patrimonis familiars a les Balears. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Fuster Correduría de Seguros Palma (1940) bietet erstklassigen professionellen Service auf Mallorca. Über 80 Jahre Erfahrung bei Yachtversicherungen, Fincapolicen und maßgeschneidertem Vermögensschutz auf den Balearen. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

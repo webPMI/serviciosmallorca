@@ -38,10 +38,10 @@ export const MCFIT_PALMA_SON_MALFERIT: ServiceItem = {
     de: "Großes Fitnessstudio in Son Malferit mit weitläufigem Freihantelbereich, Functional-Cage und Parkplatz.",
   },
   fullDescription: {
-    es: "Gimnasio de gran formato en Son Malferit con amplia zona de peso libre, jaula cross-training y aparcamiento.",
-    en: "Large-scale fitness studio in Son Malferit with vast free-weights area, cross-training cage, and parking.",
-    ca: "Gimnàs de gran format a Son Malferit amb zona de pes lliure, gàbia de cross-training i aparcament.",
-    de: "Großes Fitnessstudio in Son Malferit mit weitläufigem Freihantelbereich, Functional-Cage und Parkplatz.",
+    es: "McFit Palma Son Malferit se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Gimnasio de gran formato en Son Malferit con amplia zona de peso libre, jaula cross-training y aparcamiento. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "McFit Palma Son Malferit stands out as one of the premier athletic and fitness destinations in Mallorca. Large-scale fitness studio in Son Malferit with vast free-weights area, cross-training cage, and parking. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "McFit Palma Son Malferit destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Gimnàs de gran format a Son Malferit amb zona de pes lliure, gàbia de cross-training i aparcament. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "McFit Palma Son Malferit zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Großes Fitnessstudio in Son Malferit mit weitläufigem Freihantelbereich, Functional-Cage und Parkplatz. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

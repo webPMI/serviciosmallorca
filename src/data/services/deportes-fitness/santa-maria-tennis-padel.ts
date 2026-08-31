@@ -38,10 +38,10 @@ export const SANTA_MARIA_TENNIS_PADEL: ServiceItem = {
     de: "Sportclub in Santa Maria del Camí mit Tennisplätzen, Glas-Padel und Terrasse.",
   },
   fullDescription: {
-    es: "Club deportivo en Santa Maria del Camí con pistas de tenis rápidas, pádel de cristal y terraza.",
-    en: "Sports club in Santa Maria del Camí featuring hard tennis courts, glass padel, and terrace.",
-    ca: "Club esportiu a Santa Maria del Camí amb tennis, pàdel de vidre i cafeteria.",
-    de: "Sportclub in Santa Maria del Camí mit Tennisplätzen, Glas-Padel und Terrasse.",
+    es: "Santa Maria Tennis & Pàdel Club se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Club deportivo en Santa Maria del Camí con pistas de tenis rápidas, pádel de cristal y terraza. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "Santa Maria Tennis & Pàdel Club stands out as one of the premier athletic and fitness destinations in Mallorca. Sports club in Santa Maria del Camí featuring hard tennis courts, glass padel, and terrace. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "Santa Maria Tennis & Pàdel Club destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Club esportiu a Santa Maria del Camí amb tennis, pàdel de vidre i cafeteria. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "Santa Maria Tennis & Pàdel Club zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Sportclub in Santa Maria del Camí mit Tennisplätzen, Glas-Padel und Terrasse. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

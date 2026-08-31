@@ -40,11 +40,11 @@ export const guarderiaBilingueSantaCatalina: ServiceItem = {
     ca: "Escola infantil bilingüe de 0 a 3 anys amb pedagogia Montessori a Santa Catalina.",
     de: "Bilinguale Kindertagesstätte (0-3 Jahre) mit Montessori-Pädagogik, eigenem Garten und Bio-Küche in Santa Catalina.",
   },
-  description: {
-    es: "Escuela infantil bilingüe de 0 a 3 años con pedagogía activa Montessori, patio exterior soleado y cocina propia con menús orgánicos.",
-    en: "Bilingual nursery school (0-3 years) with Montessori-inspired learning, sunny garden, and organic in-house kitchen.",
-    ca: "Escola infantil bilingüe de 0 a 3 anys amb pedagogia Montessori a Santa Catalina.",
-    de: "Bilinguale Kindertagesstätte (0-3 Jahre) mit Montessori-Pädagogik, eigenem Garten und Bio-Küche in Santa Catalina.",
+  fullDescription: {
+    es: "Happy Faces Bilingual Nursery Santa Catalina ofrece un servicio profesional de máxima categoría en Mallorca. Escuela infantil bilingüe de 0 a 3 años con pedagogía activa Montessori, patio exterior soleado y cocina propia con menús orgánicos. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Happy Faces Bilingual Nursery Santa Catalina delivers premier professional service in Mallorca. Bilingual nursery school (0-3 years) with Montessori-inspired learning, sunny garden, and organic in-house kitchen. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Happy Faces Bilingual Nursery Santa Catalina ofereix un servei professional de màxima categoria a Mallorca. Escola infantil bilingüe de 0 a 3 anys amb pedagogia Montessori a Santa Catalina. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Happy Faces Bilingual Nursery Santa Catalina bietet erstklassigen professionellen Service auf Mallorca. Bilinguale Kindertagesstätte (0-3 Jahre) mit Montessori-Pädagogik, eigenem Garten und Bio-Küche in Santa Catalina. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

@@ -38,10 +38,10 @@ export const GOLF_SANTA_PONSA_CALVIA: ServiceItem = {
     de: "Traditioneller Golfkomplex in Santa Ponsa, sechsfacher Austragungsort der PGA European Tour.",
   },
   fullDescription: {
-    es: "Complejo de golf histórico de Calvià, sede en seis ocasiones del Open de Baleares (PGA European Tour).",
-    en: "Historic golf resort in Calvià, 6-time host of the PGA European Tour Balearic Open.",
-    ca: "Complex de golf històric a Santa Ponça, seu en sis ocasions de l'Open de Balears.",
-    de: "Traditioneller Golfkomplex in Santa Ponsa, sechsfacher Austragungsort der PGA European Tour.",
+    es: "Golf Santa Ponsa se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Complejo de golf histórico de Calvià, sede en seis ocasiones del Open de Baleares (PGA European Tour). Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "Golf Santa Ponsa stands out as one of the premier athletic and fitness destinations in Mallorca. Historic golf resort in Calvià, 6-time host of the PGA European Tour Balearic Open. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "Golf Santa Ponsa destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Complex de golf històric a Santa Ponça, seu en sis ocasions de l Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "Golf Santa Ponsa zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Traditioneller Golfkomplex in Santa Ponsa, sechsfacher Austragungsort der PGA European Tour. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

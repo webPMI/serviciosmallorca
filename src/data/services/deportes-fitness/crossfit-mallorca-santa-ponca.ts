@@ -38,10 +38,10 @@ export const CROSSFIT_MALLORCA_SANTA_PONCA: ServiceItem = {
     de: "Mallorcas erste offizielle CrossFit-Box mit internationaler Community in Santa Ponsa.",
   },
   fullDescription: {
-    es: "El primer box oficial afiliado de CrossFit de Mallorca, con ambiente internacional en Calvià.",
-    en: "Mallorca's original official CrossFit affiliate box with a vibrant international community in Calvià.",
-    ca: "El primer box oficial afiliat de CrossFit a Mallorca, ubicat a Son Bugadelles (Calvià).",
-    de: "Mallorcas erste offizielle CrossFit-Box mit internationaler Community in Santa Ponsa.",
+    es: "CrossFit Mallorca se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. El primer box oficial afiliado de CrossFit de Mallorca, con ambiente internacional en Calvià. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "CrossFit Mallorca stands out as one of the premier athletic and fitness destinations in Mallorca. Mallorca Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "CrossFit Mallorca destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. El primer box oficial afiliat de CrossFit a Mallorca, ubicat a Son Bugadelles (Calvià). Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "CrossFit Mallorca zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Mallorcas erste offizielle CrossFit-Box mit internationaler Community in Santa Ponsa. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

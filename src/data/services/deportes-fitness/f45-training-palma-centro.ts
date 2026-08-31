@@ -38,10 +38,10 @@ export const F45_TRAINING_PALMA_CENTRO: ServiceItem = {
     de: "45-minütige funktionelle Gruppen-Workouts im Zirkeltraining im Zentrum von Palma.",
   },
   fullDescription: {
-    es: "Entrenamientos funcionales en circuito de 45 minutos de alta intensidad en el centro de Palma.",
-    en: "High-intensity 45-minute circuit functional group workouts in central Palma.",
-    ca: "Entrenaments funcionals en circuit de 45 minuts al centre de Palma.",
-    de: "45-minütige funktionelle Gruppen-Workouts im Zirkeltraining im Zentrum von Palma.",
+    es: "F45 Training Palma Centro se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Entrenamientos funcionales en circuito de 45 minutos de alta intensidad en el centro de Palma. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "F45 Training Palma Centro stands out as one of the premier athletic and fitness destinations in Mallorca. High-intensity 45-minute circuit functional group workouts in central Palma. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "F45 Training Palma Centro destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Entrenaments funcionals en circuit de 45 minuts al centre de Palma. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "F45 Training Palma Centro zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. 45-minütige funktionelle Gruppen-Workouts im Zirkeltraining im Zentrum von Palma. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

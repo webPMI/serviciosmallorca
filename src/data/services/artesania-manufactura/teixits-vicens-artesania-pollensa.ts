@@ -40,11 +40,11 @@ export const teixitsVicensArtesaniaPollensa: ServiceItem = {
     ca: "Taller tèxtil familiar fundat el 1854 a Pollença que manté la tècnica de l'Ikat per a les robes de llengües.",
     de: "Traditionelle Weberei seit 1854 in Pollença, die den echten Ikat-Webprozess für mallorquinische Zungenstoffe (Llengües) pflegt.",
   },
-  description: {
-    es: "Taller textil familiar fundado en 1854 en Pollença que conserva la técnica tradicional del Ikat para confeccionar telas de lenguas.",
-    en: "Family textile workshop in Pollença since 1854 preserving authentic Ikat weaving techniques for traditional tongues fabrics.",
-    ca: "Taller tèxtil familiar fundat el 1854 a Pollença que manté la tècnica de l'Ikat per a les robes de llengües.",
-    de: "Traditionelle Weberei seit 1854 in Pollença, die den echten Ikat-Webprozess für mallorquinische Zungenstoffe (Llengües) pflegt.",
+  fullDescription: {
+    es: "Teixits Vicens (Robes de Llengües 1854) ofrece un servicio profesional de máxima categoría en Mallorca. Taller textil familiar fundado en 1854 en Pollença que conserva la técnica tradicional del Ikat para confeccionar telas de lenguas. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Teixits Vicens (Robes de Llengües 1854) delivers premier professional service in Mallorca. Family textile workshop in Pollença since 1854 preserving authentic Ikat weaving techniques for traditional tongues fabrics. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Teixits Vicens (Robes de Llengües 1854) ofereix un servei professional de màxima categoria a Mallorca. Taller tèxtil familiar fundat el 1854 a Pollença que manté la tècnica de l Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Teixits Vicens (Robes de Llengües 1854) bietet erstklassigen professionellen Service auf Mallorca. Traditionelle Weberei seit 1854 in Pollença, die den echten Ikat-Webprozess für mallorquinische Zungenstoffe (Llengües) pflegt. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

@@ -40,11 +40,11 @@ export const bufeteBuadesAbogadosPalma1979: ServiceItem = {
     ca: "Despatx jurídic de referència a Balears des de 1979 en dret immobiliari, mercantil i tributari.",
     de: "Führende renommierte Großkanzlei auf den Balearen seit 1979 für Immobilien-, Gesellschafts- und Steuerrecht.",
   },
-  description: {
-    es: "Firma jurídica multidisciplinar de máxima reputación en Baleares desde 1979 en derecho inmobiliario, mercantil y tributario.",
-    en: "Leading premier law firm in the Balearics since 1979 specializing in real estate, corporate, and tax law.",
-    ca: "Despatx jurídic de referència a Balears des de 1979 en dret immobiliari, mercantil i tributari.",
-    de: "Führende renommierte Großkanzlei auf den Balearen seit 1979 für Immobilien-, Gesellschafts- und Steuerrecht.",
+  fullDescription: {
+    es: "Bufete Buades Abogados Palma (1979) ofrece un servicio profesional de máxima categoría en Mallorca. Firma jurídica multidisciplinar de máxima reputación en Baleares desde 1979 en derecho inmobiliario, mercantil y tributario. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Bufete Buades Abogados Palma (1979) delivers premier professional service in Mallorca. Leading premier law firm in the Balearics since 1979 specializing in real estate, corporate, and tax law. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Bufete Buades Abogados Palma (1979) ofereix un servei professional de màxima categoria a Mallorca. Despatx jurídic de referència a Balears des de 1979 en dret immobiliari, mercantil i tributari. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Bufete Buades Abogados Palma (1979) bietet erstklassigen professionellen Service auf Mallorca. Führende renommierte Großkanzlei auf den Balearen seit 1979 für Immobilien-, Gesellschafts- und Steuerrecht. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

@@ -38,10 +38,10 @@ export const URBAN_CROSSFIT_PALMA: ServiceItem = {
     de: "Urbane CrossFit-Box in Palma mit großem Open-Box-Bereich und Leistungssport-Programmierung.",
   },
   fullDescription: {
-    es: "Box urbano de CrossFit en Palma con amplia zona de Open Box y programación para atletas de élite.",
-    en: "Urban CrossFit box in Palma with spacious Open Box zone and competitive athletic programming.",
-    ca: "Box urbà de CrossFit a Palma amb àmplia zona d'Open Box i halterofília.",
-    de: "Urbane CrossFit-Box in Palma mit großem Open-Box-Bereich und Leistungssport-Programmierung.",
+    es: "Urban CrossFit Palma se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Box urbano de CrossFit en Palma con amplia zona de Open Box y programación para atletas de élite. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "Urban CrossFit Palma stands out as one of the premier athletic and fitness destinations in Mallorca. Urban CrossFit box in Palma with spacious Open Box zone and competitive athletic programming. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "Urban CrossFit Palma destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Box urbà de CrossFit a Palma amb àmplia zona d Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "Urban CrossFit Palma zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Urbane CrossFit-Box in Palma mit großem Open-Box-Bereich und Leistungssport-Programmierung. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

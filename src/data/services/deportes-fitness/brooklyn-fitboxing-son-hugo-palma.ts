@@ -38,10 +38,10 @@ export const BROOKLYN_FITBOXING_SON_HUGO_PALMA: ServiceItem = {
     de: "Fitboxing-Studio in Son Hugo mit intelligenten Boxsäcken und 47-Minuten-Workouts.",
   },
   fullDescription: {
-    es: "Centro oficial de Fitboxing en Son Hugo con sacos inteligentes y entrenamientos de 47 minutos.",
-    en: "Official Fitboxing center in Son Hugo featuring smart bags and 47-minute workouts.",
-    ca: "Centre de Fitboxing a Son Hugo amb sacs intel·ligents i sessions de 47 minuts.",
-    de: "Fitboxing-Studio in Son Hugo mit intelligenten Boxsäcken und 47-Minuten-Workouts.",
+    es: "Brooklyn Fitboxing Son Hugo se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Centro oficial de Fitboxing en Son Hugo con sacos inteligentes y entrenamientos de 47 minutos. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "Brooklyn Fitboxing Son Hugo stands out as one of the premier athletic and fitness destinations in Mallorca. Official Fitboxing center in Son Hugo featuring smart bags and 47-minute workouts. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "Brooklyn Fitboxing Son Hugo destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Centre de Fitboxing a Son Hugo amb sacs intel·ligents i sessions de 47 minuts. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "Brooklyn Fitboxing Son Hugo zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Fitboxing-Studio in Son Hugo mit intelligenten Boxsäcken und 47-Minuten-Workouts. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

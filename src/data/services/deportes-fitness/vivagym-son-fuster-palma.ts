@@ -38,10 +38,10 @@ export const VIVAGYM_SON_FUSTER_PALMA: ServiceItem = {
     de: "Modernes, geräumiges Fitnessstudio in Son Fuster mit Matrix-Geräten, Freihantelbereich und Kursen.",
   },
   fullDescription: {
-    es: "Gimnasio moderno y espacioso en Son Fuster con maquinaria Matrix, peso libre y más de 100 clases semanales.",
-    en: "Spacious modern gym in Son Fuster featuring Matrix equipment, free-weights area, and 100+ weekly classes.",
-    ca: "Gimnàs modern i espaiós a Son Fuster amb maquinària Matrix, pes lliure i classes dirigides.",
-    de: "Modernes, geräumiges Fitnessstudio in Son Fuster mit Matrix-Geräten, Freihantelbereich und Kursen.",
+    es: "VivaGym Son Fuster se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Gimnasio moderno y espacioso en Son Fuster con maquinaria Matrix, peso libre y más de 100 clases semanales. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "VivaGym Son Fuster stands out as one of the premier athletic and fitness destinations in Mallorca. Spacious modern gym in Son Fuster featuring Matrix equipment, free-weights area, and 100+ weekly classes. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "VivaGym Son Fuster destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Gimnàs modern i espaiós a Son Fuster amb maquinària Matrix, pes lliure i classes dirigides. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "VivaGym Son Fuster zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Modernes, geräumiges Fitnessstudio in Son Fuster mit Matrix-Geräten, Freihantelbereich und Kursen. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

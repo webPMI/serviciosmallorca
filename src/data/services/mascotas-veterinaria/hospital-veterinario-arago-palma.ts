@@ -40,11 +40,11 @@ export const hospitalVeterinarioAragoPalma: ServiceItem = {
     ca: "Hospital veterinari 24h de referència a Palma amb TAC i UCI.",
     de: "Tierklinik mit 24h-Notdienst, CT, Intensivstation und OP-Zentrum.",
   },
-  description: {
-    es: "Atención médica integral las 24 horas del día los 365 días del año con equipo médico presencial permanente.",
-    en: "Comprehensive veterinary medicine 24/7/365 with on-site surgeons and intensive care specialists.",
-    ca: "Atenció veterinària les 24 hores amb equip mèdic permanent a Palma.",
-    de: "Rund um die Uhr besetzte Tierklinik mit Notfallmedizinern und Spezialisten.",
+  fullDescription: {
+    es: "Hospital Veterinario Aragó 24h ofrece un servicio profesional de máxima categoría en Mallorca. Atención médica integral las 24 horas del día los 365 días del año con equipo médico presencial permanente. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Hospital Veterinario Aragó 24h delivers premier professional service in Mallorca. Comprehensive veterinary medicine 24/7/365 with on-site surgeons and intensive care specialists. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Hospital Veterinario Aragó 24h ofereix un servei professional de màxima categoria a Mallorca. Atenció veterinària les 24 hores amb equip mèdic permanent a Palma. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Hospital Veterinario Aragó 24h bietet erstklassigen professionellen Service auf Mallorca. Rund um die Uhr besetzte Tierklinik mit Notfallmedizinern und Spezialisten. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

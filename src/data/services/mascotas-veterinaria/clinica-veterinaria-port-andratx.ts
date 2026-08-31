@@ -40,11 +40,11 @@ export const clinicaVeterinariaPortAndratx: ServiceItem = {
     ca: "Clínica veterinària multilingüe a Port d'Andratx per a mascotes i animals de companyia.",
     de: "Mehrsprachige Tierarztpraxis (Deutsch, Englisch, Spanisch) für Kleintiere im Hafen von Andratx.",
   },
-  description: {
-    es: "Atención veterinaria integral multilingüe (alemán, inglés, español) para perros, gatos y animales exóticos en el puerto de Andratx.",
-    en: "Multilingual veterinary clinic (German, English, Spanish) for domestic and exotic pets in Port d'Andratx.",
-    ca: "Clínica veterinària multilingüe a Port d'Andratx per a mascotes i animals de companyia.",
-    de: "Mehrsprachige Tierarztpraxis (Deutsch, Englisch, Spanisch) für Kleintiere im Hafen von Andratx.",
+  fullDescription: {
+    es: "Clínica Veterinaria Port d ofrece un servicio profesional de máxima categoría en Mallorca. Atención veterinaria integral multilingüe (alemán, inglés, español) para perros, gatos y animales exóticos en el puerto de Andratx. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Clínica Veterinaria Port d delivers premier professional service in Mallorca. Multilingual veterinary clinic (German, English, Spanish) for domestic and exotic pets in Port d Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Clínica Veterinaria Port d ofereix un servei professional de màxima categoria a Mallorca. Clínica veterinària multilingüe a Port d Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Clínica Veterinaria Port d bietet erstklassigen professionellen Service auf Mallorca. Mehrsprachige Tierarztpraxis (Deutsch, Englisch, Spanisch) für Kleintiere im Hafen von Andratx. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

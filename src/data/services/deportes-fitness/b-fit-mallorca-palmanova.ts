@@ -38,10 +38,10 @@ export const B_FIT_MALLORCA_PALMANOVA: ServiceItem = {
     de: "Fitnessstudio direkt am Meer in Palmanova mit Kraftgeräten und Meerblick-Cardio.",
   },
   fullDescription: {
-    es: "Gimnasio frente al mar en Palmanova con maquinaria de fuerza, cardio panorámico y terraza outdoor.",
-    en: "Beachfront gym in Palmanova with strength machines, panoramic cardio, and outdoor terrace.",
-    ca: "Gimnàs davant la mar a Palmanova amb musculació, cardio panoràmic i terrassa exterior.",
-    de: "Fitnessstudio direkt am Meer in Palmanova mit Kraftgeräten und Meerblick-Cardio.",
+    es: "B-Fit Mallorca Gym se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Gimnasio frente al mar en Palmanova con maquinaria de fuerza, cardio panorámico y terraza outdoor. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "B-Fit Mallorca Gym stands out as one of the premier athletic and fitness destinations in Mallorca. Beachfront gym in Palmanova with strength machines, panoramic cardio, and outdoor terrace. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "B-Fit Mallorca Gym destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Gimnàs davant la mar a Palmanova amb musculació, cardio panoràmic i terrassa exterior. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "B-Fit Mallorca Gym zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Fitnessstudio direkt am Meer in Palmanova mit Kraftgeräten und Meerblick-Cardio. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

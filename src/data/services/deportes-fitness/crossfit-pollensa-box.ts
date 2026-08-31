@@ -38,10 +38,10 @@ export const CROSSFIT_POLLENSA_BOX: ServiceItem = {
     de: "Box in Pollença für funktionelles Training mit kleinen Gruppen und Radler-Drop-Ins.",
   },
   fullDescription: {
-    es: "Box en Pollença para amantes del entreno funcional, con clases reducidas y drop-ins para ciclistas.",
-    en: "Box in Pollença for functional training lovers, offering small groups and cyclist drop-ins.",
-    ca: "Box a Pollença per a amants de l'entrenament funcional amb grups reduïts.",
-    de: "Box in Pollença für funktionelles Training mit kleinen Gruppen und Radler-Drop-Ins.",
+    es: "CrossFit Pollença se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Box en Pollença para amantes del entreno funcional, con clases reducidas y drop-ins para ciclistas. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "CrossFit Pollença stands out as one of the premier athletic and fitness destinations in Mallorca. Box in Pollença for functional training lovers, offering small groups and cyclist drop-ins. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "CrossFit Pollença destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Box a Pollença per a amants de l Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "CrossFit Pollença zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Box in Pollença für funktionelles Training mit kleinen Gruppen und Radler-Drop-Ins. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

@@ -38,10 +38,10 @@ export const PRANA_YOGA_STUDIO_PALMA: ServiceItem = {
     de: "Achtsames Yogastudio im Zentrum von Palma mit Vinyasa Flow, Hatha und Atemübungen.",
   },
   fullDescription: {
-    es: "Estudio de Yoga consciente en el centro de Palma con clases de Vinyasa Flow, Hatha y Pranayama.",
-    en: "Mindful Yoga studio in central Palma offering Vinyasa Flow, Hatha, and Pranayama sessions.",
-    ca: "Estudi de ioga conscient al centre de Palma amb Vinyasa Flow, Hatha i Pranayama.",
-    de: "Achtsames Yogastudio im Zentrum von Palma mit Vinyasa Flow, Hatha und Atemübungen.",
+    es: "Prana Yoga Studio Palma se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Estudio de Yoga consciente en el centro de Palma con clases de Vinyasa Flow, Hatha y Pranayama. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "Prana Yoga Studio Palma stands out as one of the premier athletic and fitness destinations in Mallorca. Mindful Yoga studio in central Palma offering Vinyasa Flow, Hatha, and Pranayama sessions. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "Prana Yoga Studio Palma destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Estudi de ioga conscient al centre de Palma amb Vinyasa Flow, Hatha i Pranayama. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "Prana Yoga Studio Palma zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Achtsames Yogastudio im Zentrum von Palma mit Vinyasa Flow, Hatha und Atemübungen. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

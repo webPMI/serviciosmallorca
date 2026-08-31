@@ -40,11 +40,11 @@ export const mudanzasMallorcaExpressTransporte: ServiceItem = {
     ca: "Especialistes en mudances residencials i guardamobles vigilats a Palma.",
     de: "Fachbetrieb für Inselumzüge, Festland-Mallorca-Spedition und videoüberwachte Möbellagerung in Palma.",
   },
-  description: {
-    es: "Especialistas en mudanzas residenciales, transporte marítimo Península-Baleares y guardamuebles vigilados 24h.",
-    en: "Specialists in residential villa moves, mainland Spain to Balearics sea freight, and 24h secured storage units.",
-    ca: "Especialistes en mudances residencials i guardamobles vigilats a Palma.",
-    de: "Fachbetrieb für Inselumzüge, Festland-Mallorca-Spedition und videoüberwachte Möbellagerung in Palma.",
+  fullDescription: {
+    es: "Mudanzas Mallorca Express & Guardamuebles ofrece un servicio profesional de máxima categoría en Mallorca. Especialistas en mudanzas residenciales, transporte marítimo Península-Baleares y guardamuebles vigilados 24h. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Mudanzas Mallorca Express & Guardamuebles delivers premier professional service in Mallorca. Specialists in residential villa moves, mainland Spain to Balearics sea freight, and 24h secured storage units. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Mudanzas Mallorca Express & Guardamuebles ofereix un servei professional de màxima categoria a Mallorca. Especialistes en mudances residencials i guardamobles vigilats a Palma. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Mudanzas Mallorca Express & Guardamuebles bietet erstklassigen professionellen Service auf Mallorca. Fachbetrieb für Inselumzüge, Festland-Mallorca-Spedition und videoüberwachte Möbellagerung in Palma. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

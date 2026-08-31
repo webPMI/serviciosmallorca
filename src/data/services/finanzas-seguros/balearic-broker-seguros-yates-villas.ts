@@ -40,11 +40,11 @@ export const balearicBrokerSegurosYatesVillas: ServiceItem = {
     ca: "Corredoria especialitzada en assegurances de iots i vil·les de luxe a Balears.",
     de: "Unabhängiger Versicherungsmakler für Kaskoversicherungen von Luxusyachten und hochwertige Fincas auf den Balearen.",
   },
-  description: {
-    es: "Correduría especializada en pólizas 'all-risk' para yates de lujo, embarcaciones de chárter y villas exclusivas en Baleares.",
-    en: "Independent insurance brokers specializing in all-risk coverage for luxury yachts, charter vessels, and high-value villas.",
-    ca: "Corredoria especialitzada en assegurances de iots i vil·les de luxe a Balears.",
-    de: "Unabhängiger Versicherungsmakler für Kaskoversicherungen von Luxusyachten und hochwertige Fincas auf den Balearen.",
+  fullDescription: {
+    es: "Balearic Marine & Villa Insurance Brokers ofrece un servicio profesional de máxima categoría en Mallorca. Correduría especializada en pólizas  Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Balearic Marine & Villa Insurance Brokers delivers premier professional service in Mallorca. Independent insurance brokers specializing in all-risk coverage for luxury yachts, charter vessels, and high-value villas. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Balearic Marine & Villa Insurance Brokers ofereix un servei professional de màxima categoria a Mallorca. Corredoria especialitzada en assegurances de iots i vil·les de luxe a Balears. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Balearic Marine & Villa Insurance Brokers bietet erstklassigen professionellen Service auf Mallorca. Unabhängiger Versicherungsmakler für Kaskoversicherungen von Luxusyachten und hochwertige Fincas auf den Balearen. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

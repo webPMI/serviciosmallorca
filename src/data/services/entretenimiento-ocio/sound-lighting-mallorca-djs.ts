@@ -40,11 +40,11 @@ export const soundLightingMallorcaDjs: ServiceItem = {
     ca: "Lloguer i instal·lació de so L-Acoustics, il·luminació arquitectònica i DJs.",
     de: "Verleih von L-Acoustics Soundsystemen, Ambientebeleuchtung für Fincas und Event-DJs auf Mallorca.",
   },
-  description: {
-    es: "Alquiler e instalación de sistemas de sonido L-Acoustics, microfonía inalámbrica, iluminación arquitectónica para fincas y DJs.",
-    en: "Rental and staging of L-Acoustics pro audio, wireless mics, architectural villa illumination, and live DJs.",
-    ca: "Lloguer i instal·lació de so L-Acoustics, il·luminació arquitectònica i DJs.",
-    de: "Verleih von L-Acoustics Soundsystemen, Ambientebeleuchtung für Fincas und Event-DJs auf Mallorca.",
+  fullDescription: {
+    es: "Balearic Sound & Pro Lighting Events ofrece un servicio profesional de máxima categoría en Mallorca. Alquiler e instalación de sistemas de sonido L-Acoustics, microfonía inalámbrica, iluminación arquitectónica para fincas y DJs. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Balearic Sound & Pro Lighting Events delivers premier professional service in Mallorca. Rental and staging of L-Acoustics pro audio, wireless mics, architectural villa illumination, and live DJs. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Balearic Sound & Pro Lighting Events ofereix un servei professional de màxima categoria a Mallorca. Lloguer i instal·lació de so L-Acoustics, il·luminació arquitectònica i DJs. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Balearic Sound & Pro Lighting Events bietet erstklassigen professionellen Service auf Mallorca. Verleih von L-Acoustics Soundsystemen, Ambientebeleuchtung für Fincas und Event-DJs auf Mallorca. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

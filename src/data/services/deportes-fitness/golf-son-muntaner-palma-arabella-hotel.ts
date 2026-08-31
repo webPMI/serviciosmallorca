@@ -44,10 +44,10 @@ export const golf_son_muntaner_palma_arabella_hotel: ServiceItem = {
     de: "Par-72, 18-Loch-Golfplatz in Palmas exklusiver Son-Vida-Urbanisation: Folco-Nardi-Design mit Blick auf die Bucht, PGA-zertifizierte Akademie und Profi-Puttinggrün.",
   },
   fullDescription: {
-    es: "Son Muntaner es uno de los tres campos de golf del grupo Arabella Hotels en Mallorca, junto con Son Vida y Son Quint. Ofrece 18 hoyos con bunkers de arena blanca, obstáculos de agua y un recorrido que se integra en el paisaje de Son Vida, con magníficas vistas a la bahía de Palma y la Serra de Tramuntana.",
-    en: "Son Muntaner is one of three Arabella Hotels golf courses in Mallorca, alongside Son Vida and Son Quint. 18 holes with white sand bunkers, water hazards, and a course woven into the Son Vida landscape with stunning views of Palma Bay and the Tramuntana.",
-    ca: "Son Muntaner és un dels tres camps del grup Arabella Hotels a Mallorca. 18 forats amb búnquers de sorra blanca, obstacles d'aigua i vistes a la badia de Palma.",
-    de: "Son Muntaner ist einer von drei Arabella-Hotels-Golfplätzen auf Mallorca. 18 Löcher mit Weißsandbunkern, Wasserhindernissen und Blick auf die Bucht von Palma und das Tramuntana-Gebirge.",
+    es: "Golf Son Muntaner Club & Academy Palma (Arabella Hotels) se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Campo de golf par 72 de 18 hoyos en la exclusiva urbanización Son Vida de Palma: diseño de Folco Nardi con vistas a la bahía, academia de golf con pros certificados PGA y putting green. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "Golf Son Muntaner Club & Academy Palma (Arabella Hotels) stands out as one of the premier athletic and fitness destinations in Mallorca. Par-72 18-hole golf course in Palma Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "Golf Son Muntaner Club & Academy Palma (Arabella Hotels) destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Camp de golf par 72 de 18 forats a la urbanització exclusiva de Son Vida: disseny de Folco Nardi amb vistes a la badia i acadèmia de golf amb pros PGA. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "Golf Son Muntaner Club & Academy Palma (Arabella Hotels) zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Par-72, 18-Loch-Golfplatz in Palmas exklusiver Son-Vida-Urbanisation: Folco-Nardi-Design mit Blick auf die Bucht, PGA-zertifizierte Akademie und Profi-Puttinggrün. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

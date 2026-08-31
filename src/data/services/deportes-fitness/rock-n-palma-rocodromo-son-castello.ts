@@ -38,10 +38,10 @@ export const ROCK_N_PALMA_ROCODROMO_SON_CASTELLO: ServiceItem = {
     de: "Die größte Kletter- und Boulderhalle der Balearen mit 1.200 m² Kletterfläche.",
   },
   fullDescription: {
-    es: "El mayor rocódromo y centro de escalada indoor de Baleares con más de 1.200 m² escalables.",
-    en: "The largest indoor climbing and bouldering center in the Balearics with 1,200 m² climbing surface.",
-    ca: "El rocòdrom d'escalada indoor més gran de Balears amb 1.200 m² escalables a Son Castelló.",
-    de: "Die größte Kletter- und Boulderhalle der Balearen mit 1.200 m² Kletterfläche.",
+    es: "Rock se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. El mayor rocódromo y centro de escalada indoor de Baleares con más de 1.200 m² escalables. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "Rock stands out as one of the premier athletic and fitness destinations in Mallorca. The largest indoor climbing and bouldering center in the Balearics with 1,200 m² climbing surface. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "Rock destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. El rocòdrom d Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "Rock zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Die größte Kletter- und Boulderhalle der Balearen mit 1.200 m² Kletterfläche. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

@@ -40,11 +40,11 @@ export const palmaSupSurfCenterCanPastilla: ServiceItem = {
     ca: "Lloguer de Paddle Surf (SUP), eFoil elèctric i excursions al capvespre a Can Pastilla.",
     de: "Stand-Up-Paddle-Verleih (SUP), eFoil-Elektro-Hydrofoil-Kurse und Sunset-Paddeltouren in Palma.",
   },
-  description: {
-    es: "Excursiones guiadas a cuevas marinas, yoga sobre tabla SUP en aguas transparentes y cursos de vuelo sobre agua con eFoil.",
-    en: "Guided sea cave tours, SUP yoga on crystal water, and eFoil hydrofoil flight lessons.",
-    ca: "Excursions a coves marines i classes de ioga damunt taules de SUP.",
-    de: "Geführte Höhlentouren, SUP-Yoga auf dem Meer und eFoil-Flugstunden.",
+  fullDescription: {
+    es: "Palma Paddle Surf & Foil Academy ofrece un servicio profesional de máxima categoría en Mallorca. Excursiones guiadas a cuevas marinas, yoga sobre tabla SUP en aguas transparentes y cursos de vuelo sobre agua con eFoil. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Palma Paddle Surf & Foil Academy delivers premier professional service in Mallorca. Guided sea cave tours, SUP yoga on crystal water, and eFoil hydrofoil flight lessons. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Palma Paddle Surf & Foil Academy ofereix un servei professional de màxima categoria a Mallorca. Excursions a coves marines i classes de ioga damunt taules de SUP. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Palma Paddle Surf & Foil Academy bietet erstklassigen professionellen Service auf Mallorca. Geführte Höhlentouren, SUP-Yoga auf dem Meer und eFoil-Flugstunden. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

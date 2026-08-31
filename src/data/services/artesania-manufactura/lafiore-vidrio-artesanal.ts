@@ -40,11 +40,11 @@ export const lafioreVidrioArtesanal: ServiceItem = {
     ca: "Taller artesà de vidre bufat 100% reciclat a la carretera de Valldemossa.",
     de: "Traditionelle Glasbläserei mit 100% recyceltem Glas und mediterranem Design-Showroom an der Valldemossa-Straße.",
   },
-  description: {
-    es: "Taller artesano de vidrio soplado 100% reciclado y galería de diseño mediterráneo en la carretera de Valldemossa.",
-    en: "Artisan glassblowing workshop using 100% recycled glass and Mediterranean design concept gallery.",
-    ca: "Taller artesà de vidre bufat 100% reciclat a la carretera de Valldemossa.",
-    de: "Traditionelle Glasbläserei mit 100% recyceltem Glas und mediterranem Design-Showroom an der Valldemossa-Straße.",
+  fullDescription: {
+    es: "Lafiore Vidrio Soplado & Espacio Creativo ofrece un servicio profesional de máxima categoría en Mallorca. Taller artesano de vidrio soplado 100% reciclado y galería de diseño mediterráneo en la carretera de Valldemossa. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Lafiore Vidrio Soplado & Espacio Creativo delivers premier professional service in Mallorca. Artisan glassblowing workshop using 100% recycled glass and Mediterranean design concept gallery. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Lafiore Vidrio Soplado & Espacio Creativo ofereix un servei professional de màxima categoria a Mallorca. Taller artesà de vidre bufat 100% reciclat a la carretera de Valldemossa. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Lafiore Vidrio Soplado & Espacio Creativo bietet erstklassigen professionellen Service auf Mallorca. Traditionelle Glasbläserei mit 100% recyceltem Glas und mediterranem Design-Showroom an der Valldemossa-Straße. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

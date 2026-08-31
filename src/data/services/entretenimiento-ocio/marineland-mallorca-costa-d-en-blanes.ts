@@ -40,11 +40,11 @@ export const marinelandMallorcaCostaDEnBlanes: ServiceItem = {
     ca: "Delfinari i zoo marí a la Costa d'en Blanes amb lleons marins, pingüins i aus exòtiques.",
     de: "Delfinarium und Meereszoo an der Bucht von Palma mit Seelöwen, Pinguinen und Tropenhaus.",
   },
-  description: {
-    es: "Delfinario y zoológico marino pionero en la bahía de Palma con leones marinos, pingüinos y aves exóticas.",
-    en: "Pioneering dolphinarium and marine zoo in Palma Bay featuring sea lion exhibits, penguins, and exotic birds.",
-    ca: "Delfinari i zoo marí a la Costa d'en Blanes amb lleons marins, pingüins i aus exòtiques.",
-    de: "Delfinarium und Meereszoo an der Bucht von Palma mit Seelöwen, Pinguinen und Tropenhaus.",
+  fullDescription: {
+    es: "Marineland Mallorca Costa d ofrece un servicio profesional de máxima categoría en Mallorca. Delfinario y zoológico marino pionero en la bahía de Palma con leones marinos, pingüinos y aves exóticas. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Marineland Mallorca Costa d delivers premier professional service in Mallorca. Pioneering dolphinarium and marine zoo in Palma Bay featuring sea lion exhibits, penguins, and exotic birds. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Marineland Mallorca Costa d ofereix un servei professional de màxima categoria a Mallorca. Delfinari i zoo marí a la Costa d Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Marineland Mallorca Costa d bietet erstklassigen professionellen Service auf Mallorca. Delfinarium und Meereszoo an der Bucht von Palma mit Seelöwen, Pinguinen und Tropenhaus. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

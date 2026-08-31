@@ -38,10 +38,10 @@ export const CROSSFIT_MANACOR_BOX: ServiceItem = {
     de: "Offizielle Box in Manacor mit Krafttraining, Gymnastics und aktiver Community.",
   },
   fullDescription: {
-    es: "Box oficial afiliado en Manacor con entrenamientos de fuerza, gimnásticos y ambiente de piña.",
-    en: "Official affiliate box in Manacor with strength conditioning, gymnastics, and tight community.",
-    ca: "Box oficial afiliat a Manacor amb entrenaments de força, gimnàstics i comunitat activa.",
-    de: "Offizielle Box in Manacor mit Krafttraining, Gymnastics und aktiver Community.",
+    es: "CrossFit Manacor se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Box oficial afiliado en Manacor con entrenamientos de fuerza, gimnásticos y ambiente de piña. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "CrossFit Manacor stands out as one of the premier athletic and fitness destinations in Mallorca. Official affiliate box in Manacor with strength conditioning, gymnastics, and tight community. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "CrossFit Manacor destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Box oficial afiliat a Manacor amb entrenaments de força, gimnàstics i comunitat activa. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "CrossFit Manacor zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Offizielle Box in Manacor mit Krafttraining, Gymnastics und aktiver Community. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

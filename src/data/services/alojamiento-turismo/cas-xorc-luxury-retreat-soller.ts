@@ -40,11 +40,11 @@ export const casXorcLuxuryRetreatSoller: ServiceItem = {
     ca: "Finca bicentenària del s.XVIII amb jardins i oliveres mil·lenàries a Sóller.",
     de: "200 Jahre altes Fincahotel mit terrassierten Gärten, Olivenbäumen und Spitzenküche.",
   },
-  description: {
-    es: "Finca bicentenaria del s.XVIII con jardines escalonados, olivos milenarios y cocina mediterránea de autor.",
-    en: "200-year-old estate with tiered gardens, ancient olive groves, and signature Mediterranean dining.",
-    ca: "Finca bicentenària del s.XVIII amb jardins i oliveres mil·lenàries a Sóller.",
-    de: "200 Jahre altes Fincahotel mit terrassierten Gärten, Olivenbäumen und Spitzenküche.",
+  fullDescription: {
+    es: "Cas Xorc Luxury Retreat & Restaurant Soller ofrece un servicio profesional de máxima categoría en Mallorca. Finca bicentenaria del s.XVIII con jardines escalonados, olivos milenarios y cocina mediterránea de autor. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Cas Xorc Luxury Retreat & Restaurant Soller delivers premier professional service in Mallorca. 200-year-old estate with tiered gardens, ancient olive groves, and signature Mediterranean dining. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Cas Xorc Luxury Retreat & Restaurant Soller ofereix un servei professional de màxima categoria a Mallorca. Finca bicentenària del s.XVIII amb jardins i oliveres mil·lenàries a Sóller. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Cas Xorc Luxury Retreat & Restaurant Soller bietet erstklassigen professionellen Service auf Mallorca. 200 Jahre altes Fincahotel mit terrassierten Gärten, Olivenbäumen und Spitzenküche. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

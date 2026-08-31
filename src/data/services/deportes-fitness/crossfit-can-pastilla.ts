@@ -38,10 +38,10 @@ export const CROSSFIT_CAN_PASTILLA: ServiceItem = {
     de: "Box 200m vom Strand in Can Pastilla mit Functional Training und Strandläufen.",
   },
   fullDescription: {
-    es: "Box a 200m de la playa de Can Pastilla con entrenamientos funcionales, carreras en arena y WODs.",
-    en: "Box 200m from Can Pastilla beach with functional fitness, beach sprint sessions, and WODs.",
-    ca: "Box a 200m de la platja de Can Pastilla amb entrenaments funcionals i WODs a la mar.",
-    de: "Box 200m vom Strand in Can Pastilla mit Functional Training und Strandläufen.",
+    es: "CrossFit Can Pastilla se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Box a 200m de la playa de Can Pastilla con entrenamientos funcionales, carreras en arena y WODs. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "CrossFit Can Pastilla stands out as one of the premier athletic and fitness destinations in Mallorca. Box 200m from Can Pastilla beach with functional fitness, beach sprint sessions, and WODs. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "CrossFit Can Pastilla destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Box a 200m de la platja de Can Pastilla amb entrenaments funcionals i WODs a la mar. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "CrossFit Can Pastilla zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Box 200m vom Strand in Can Pastilla mit Functional Training und Strandläufen. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

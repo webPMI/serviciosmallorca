@@ -38,10 +38,10 @@ export const clinica_dr_morano_medicina_estetica_palma: ServiceItem = {
     de: "Über 30 Jahre Spitzenmedizin für nicht-operative Gesichtsverjüngung, Ästhetik und Ernährungsberatung.",
   },
   fullDescription: {
-    es: "Más de 30 años de excelencia en medicina estética, rejuvenecimiento facial no quirúrgico y nutrición médica.",
-    en: "Over 30 years of excellence in aesthetic medicine, non-surgical facial rejuvenation, and medical nutrition.",
-    ca: "Més de 30 anys d'excel·lència en medicina estètica i rejoveniment facial a Palma.",
-    de: "Über 30 Jahre Spitzenmedizin für nicht-operative Gesichtsverjüngung, Ästhetik und Ernährungsberatung.",
+    es: "Clínica Dr. Morano es un centro de referencia en salud, estética y bienestar en Mallorca. Más de 30 años de excelencia en medicina estética, rejuvenecimiento facial no quirúrgico y nutrición médica. Ofrece un entorno exclusivo y relajante con equipamiento de vanguardia, profesionales titulados y atención personalizada en varios idiomas para residentes y visitantes de la isla.",
+    en: "Clínica Dr. Morano is a premier benchmark for health, aesthetic medicine, and wellness in Mallorca. Over 30 years of excellence in aesthetic medicine, non-surgical facial rejuvenation, and medical nutrition. Providing an exclusive, tranquil sanctuary with cutting-edge medical and wellness equipment, certified specialists, and multilingual client care.",
+    ca: "Clínica Dr. Morano és un centre de referència en salut, estètica i benestar a Mallorca. Més de 30 anys d Ofereix un entorn exclusiu amb equipament d'avantguarda, professionals titulats i atenció personalitzada multilingüe per a residents i visitants.",
+    de: "Clínica Dr. Morano ist eine führende Adresse für Gesundheit, Ästhetik und Wohlbefinden auf Mallorca. Über 30 Jahre Spitzenmedizin für nicht-operative Gesichtsverjüngung, Ästhetik und Ernährungsberatung. Ausgestattet mit modernster Medizintechnik, qualifizierten Therapeuten und individueller mehrsprachiger Betreuung in stilvollem Ambiente.",
   },
   highlights: {
     es: [

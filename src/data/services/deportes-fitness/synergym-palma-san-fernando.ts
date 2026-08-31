@@ -38,10 +38,10 @@ export const SYNERGYM_PALMA_SAN_FERNANDO: ServiceItem = {
     de: "Zentrales Fitnessstudio in Palma mit Life Fitness Geräten, Functional-Zone und Cycling.",
   },
   fullDescription: {
-    es: "Gimnasio céntrico en Avenida San Fernando con maquinaria Life Fitness, zona funcional y cycling.",
-    en: "Central Palma gym on Avenida San Fernando with Life Fitness equipment, functional turf, and cycling.",
-    ca: "Gimnàs cèntric a l'Avinguda de Sant Ferran amb maquinària Life Fitness i zona funcional.",
-    de: "Zentrales Fitnessstudio in Palma mit Life Fitness Geräten, Functional-Zone und Cycling.",
+    es: "Synergym Palma San Fernando se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Gimnasio céntrico en Avenida San Fernando con maquinaria Life Fitness, zona funcional y cycling. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "Synergym Palma San Fernando stands out as one of the premier athletic and fitness destinations in Mallorca. Central Palma gym on Avenida San Fernando with Life Fitness equipment, functional turf, and cycling. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "Synergym Palma San Fernando destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Gimnàs cèntric a l Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "Synergym Palma San Fernando zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Zentrales Fitnessstudio in Palma mit Life Fitness Geräten, Functional-Zone und Cycling. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

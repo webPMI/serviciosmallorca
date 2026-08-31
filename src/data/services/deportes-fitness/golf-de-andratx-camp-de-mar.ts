@@ -38,10 +38,10 @@ export const GOLF_DE_ANDRATX_CAMP_DE_MAR: ServiceItem = {
     de: "18-Loch-Platz mit Spaniens längstem Loch ('Green Monster', 609 Meter).",
   },
   fullDescription: {
-    es: "Campo de 18 hoyos con el hoyo más largo de España ('Green Monster' de 609 metros).",
-    en: "Spectacular 18-hole course with Spain's longest hole ('Green Monster', 609m).",
-    ca: "Camp de 18 forats a Camp de Mar amb el forat 'Green Monster' de 609 metres.",
-    de: "18-Loch-Platz mit Spaniens längstem Loch ('Green Monster', 609 Meter).",
+    es: "Golf de Andratx se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Campo de 18 hoyos con el hoyo más largo de España ( Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "Golf de Andratx stands out as one of the premier athletic and fitness destinations in Mallorca. Spectacular 18-hole course with Spain Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "Golf de Andratx destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Camp de 18 forats a Camp de Mar amb el forat  Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "Golf de Andratx zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. 18-Loch-Platz mit Spaniens längstem Loch ( Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

@@ -40,11 +40,11 @@ export const mantenimientoPiscinasSalinasCalvia: ServiceItem = {
     ca: "Manteniment de piscines i cloració salina a Calvià i Andratx.",
     de: "Poolpflege für Luxusvillen, Umrüstung auf Salzelektrolyse, Inverter-Wärmepumpen und automatisierte Wasseranalytik.",
   },
-  description: {
-    es: "Mantenimiento profesional de piscinas de villas, conversión a electrólisis salina, bombas de calor inverter y control domótico del agua.",
-    en: "Professional villa pool maintenance, saltwater chlorination conversions, inverter heat pumps, and smart app water monitoring.",
-    ca: "Manteniment de piscines i cloració salina a Calvià i Andratx.",
-    de: "Poolpflege für Luxusvillen, Umrüstung auf Salzelektrolyse, Inverter-Wärmepumpen und automatisierte Wasseranalytik.",
+  fullDescription: {
+    es: "AquaPure Pools - Mantenimiento & Cloración Salina Calvià ofrece un servicio profesional de máxima categoría en Mallorca. Mantenimiento profesional de piscinas de villas, conversión a electrólisis salina, bombas de calor inverter y control domótico del agua. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "AquaPure Pools - Mantenimiento & Cloración Salina Calvià delivers premier professional service in Mallorca. Professional villa pool maintenance, saltwater chlorination conversions, inverter heat pumps, and smart app water monitoring. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "AquaPure Pools - Mantenimiento & Cloración Salina Calvià ofereix un servei professional de màxima categoria a Mallorca. Manteniment de piscines i cloració salina a Calvià i Andratx. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "AquaPure Pools - Mantenimiento & Cloración Salina Calvià bietet erstklassigen professionellen Service auf Mallorca. Poolpflege für Luxusvillen, Umrüstung auf Salzelektrolyse, Inverter-Wärmepumpen und automatisierte Wasseranalytik. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

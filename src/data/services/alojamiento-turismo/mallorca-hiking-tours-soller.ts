@@ -40,11 +40,11 @@ export const mallorcaHikingToursSoller: ServiceItem = {
     ca: "Guies oficials de muntanya per a la Ruta de Pedra en Sec (GR-221) i el Torrent de Pareis.",
     de: "Staatlich geprüfte Bergführer für den Fernwanderweg GR-221, die Torrent de Pareis Schlucht und Tramuntana-Gipfel.",
   },
-  description: {
-    es: "Guías oficiales titulados para la Ruta de Pedra en Sec (GR-221), Torrent de Pareis y cimas de la Tramuntana.",
-    en: "Official certified mountain guides for the Dry Stone Route (GR-221), Torrent de Pareis canyon, and Tramuntana peaks.",
-    ca: "Guies oficials de muntanya per a la Ruta de Pedra en Sec (GR-221) i el Torrent de Pareis.",
-    de: "Staatlich geprüfte Bergführer für den Fernwanderweg GR-221, die Torrent de Pareis Schlucht und Tramuntana-Gipfel.",
+  fullDescription: {
+    es: "Mallorca Hiking & Tramuntana Guides ofrece un servicio profesional de máxima categoría en Mallorca. Guías oficiales titulados para la Ruta de Pedra en Sec (GR-221), Torrent de Pareis y cimas de la Tramuntana. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Mallorca Hiking & Tramuntana Guides delivers premier professional service in Mallorca. Official certified mountain guides for the Dry Stone Route (GR-221), Torrent de Pareis canyon, and Tramuntana peaks. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Mallorca Hiking & Tramuntana Guides ofereix un servei professional de màxima categoria a Mallorca. Guies oficials de muntanya per a la Ruta de Pedra en Sec (GR-221) i el Torrent de Pareis. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Mallorca Hiking & Tramuntana Guides bietet erstklassigen professionellen Service auf Mallorca. Staatlich geprüfte Bergführer für den Fernwanderweg GR-221, die Torrent de Pareis Schlucht und Tramuntana-Gipfel. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

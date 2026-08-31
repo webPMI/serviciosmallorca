@@ -40,11 +40,11 @@ export const canterasSantanyiPedraVivaConstruccion: ServiceItem = {
     ca: "Extracció artesana i picapedrers de pedra de Santanyí per a façanes, arcs i columnes tradicionals.",
     de: "Traditioneller Abbau und handwerkliche Steinmetzarbeiten aus echtem goldenem Santanyí-Kalkstein.",
   },
-  description: {
-    es: "Extracción artesana y labra de auténtica piedra caliza dorada de Santanyí para fachadas, arcos, columnas y solados rústicos.",
-    en: "Quarrying and traditional craftsmanship of authentic golden Santanyí stone for facade claddings, arches, and paving.",
-    ca: "Extracció artesana i picapedrers de pedra de Santanyí per a façanes, arcs i columnes tradicionals.",
-    de: "Traditioneller Abbau und handwerkliche Steinmetzarbeiten aus echtem goldenem Santanyí-Kalkstein.",
+  fullDescription: {
+    es: "Pedra de Santanyí Canteras & Construcción ofrece un servicio profesional de máxima categoría en Mallorca. Extracción artesana y labra de auténtica piedra caliza dorada de Santanyí para fachadas, arcos, columnas y solados rústicos. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Pedra de Santanyí Canteras & Construcción delivers premier professional service in Mallorca. Quarrying and traditional craftsmanship of authentic golden Santanyí stone for facade claddings, arches, and paving. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Pedra de Santanyí Canteras & Construcción ofereix un servei professional de màxima categoria a Mallorca. Extracció artesana i picapedrers de pedra de Santanyí per a façanes, arcs i columnes tradicionals. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Pedra de Santanyí Canteras & Construcción bietet erstklassigen professionellen Service auf Mallorca. Traditioneller Abbau und handwerkliche Steinmetzarbeiten aus echtem goldenem Santanyí-Kalkstein. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

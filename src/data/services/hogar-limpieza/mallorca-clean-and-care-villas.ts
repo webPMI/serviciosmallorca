@@ -40,11 +40,11 @@ export const mallorcaCleanAndCareVillas: ServiceItem = {
     ca: "Neteja integral de vil·les d'alt standing a Calvià.",
     de: "Luxusvillen-Reinigung und Gästewechsel-Service in Calvià.",
   },
-  description: {
-    es: "Limpieza de fin de obra, cambio de huéspedes vacacionales y cuidado de textiles nobles con productos ecológicos.",
-    en: "Post-renovation deep cleaning, holiday turnaround, and eco-friendly fine fabric care.",
-    ca: "Neteja de final d'obra i canvis de convidats amb productes ecològics.",
-    de: "Bauendreinigung, Gästewechsel und Pflege edler Oberflächen mit Bio-Reinigern.",
+  fullDescription: {
+    es: "Mallorca Clean & Care Villas ofrece un servicio profesional de máxima categoría en Mallorca. Limpieza de fin de obra, cambio de huéspedes vacacionales y cuidado de textiles nobles con productos ecológicos. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Mallorca Clean & Care Villas delivers premier professional service in Mallorca. Post-renovation deep cleaning, holiday turnaround, and eco-friendly fine fabric care. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Mallorca Clean & Care Villas ofereix un servei professional de màxima categoria a Mallorca. Neteja de final d Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Mallorca Clean & Care Villas bietet erstklassigen professionellen Service auf Mallorca. Bauendreinigung, Gästewechsel und Pflege edler Oberflächen mit Bio-Reinigern. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

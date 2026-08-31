@@ -38,10 +38,10 @@ export const T_GOLF_PALMA_PUNTIRO: ServiceItem = {
     de: "Der einzige Platz auf Mallorca von Nicklaus Design (18 Loch Par 71).",
   },
   fullDescription: {
-    es: "Único campo en Mallorca diseñado por la prestigiosa firma Nicklaus Design (18 hoyos par 71).",
-    en: "The only course in Mallorca designed by Nicklaus Design (18 holes par 71).",
-    ca: "L'únic camp de Mallorca dissenyat per Nicklaus Design (18 forats par 71).",
-    de: "Der einzige Platz auf Mallorca von Nicklaus Design (18 Loch Par 71).",
+    es: "T Golf Palma Puntiró se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Único campo en Mallorca diseñado por la prestigiosa firma Nicklaus Design (18 hoyos par 71). Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "T Golf Palma Puntiró stands out as one of the premier athletic and fitness destinations in Mallorca. The only course in Mallorca designed by Nicklaus Design (18 holes par 71). Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "T Golf Palma Puntiró destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. L Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "T Golf Palma Puntiró zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Der einzige Platz auf Mallorca von Nicklaus Design (18 Loch Par 71). Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

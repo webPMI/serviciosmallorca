@@ -40,11 +40,11 @@ export const espacioSolarMallorcaFotovoltaica: ServiceItem = {
     ca: "Enginyeria i instal·lació de plaques solars fotovoltaiques i bateries per a finques i habitatges.",
     de: "Fachbetrieb für Photovoltaikanlagen, Batteriespeicher und E-Auto-Ladestationen für Fincas und Villen.",
   },
-  description: {
-    es: "Ingeniería e instalación de placas solares fotovoltaicas, baterías de litio y cargadores de vehículos eléctricos para fincas y residencias.",
-    en: "Solar PV engineering, battery storage, and EV charging point installations for villas and rural estates across Mallorca.",
-    ca: "Enginyeria i instal·lació de plaques solars fotovoltaiques i bateries per a finques i habitatges.",
-    de: "Fachbetrieb für Photovoltaikanlagen, Batteriespeicher und E-Auto-Ladestationen für Fincas und Villen.",
+  fullDescription: {
+    es: "Espacio Solar Mallorca - Energía Fotovoltaica ofrece un servicio profesional de máxima categoría en Mallorca. Ingeniería e instalación de placas solares fotovoltaicas, baterías de litio y cargadores de vehículos eléctricos para fincas y residencias. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Espacio Solar Mallorca - Energía Fotovoltaica delivers premier professional service in Mallorca. Solar PV engineering, battery storage, and EV charging point installations for villas and rural estates across Mallorca. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Espacio Solar Mallorca - Energía Fotovoltaica ofereix un servei professional de màxima categoria a Mallorca. Enginyeria i instal·lació de plaques solars fotovoltaiques i bateries per a finques i habitatges. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Espacio Solar Mallorca - Energía Fotovoltaica bietet erstklassigen professionellen Service auf Mallorca. Fachbetrieb für Photovoltaikanlagen, Batteriespeicher und E-Auto-Ladestationen für Fincas und Villen. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

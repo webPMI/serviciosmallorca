@@ -38,10 +38,10 @@ export const PULA_GOLF_RESORT_SON_SERVERA: ServiceItem = {
     de: "Austragungsort von 8 PGA European Tour Turnieren, von José María Olazábal neu gestaltet mit Hotel & Spa.",
   },
   fullDescription: {
-    es: "Sede de 8 torneos del PGA European Tour, rediseñado por José María Olazábal con hotel y spa.",
-    en: "Host of 8 PGA European Tour events, redesigned by José María Olazábal with hotel & spa.",
-    ca: "Seu de 8 tornejos del PGA European Tour, redissenyat per José María Olazábal a Son Servera.",
-    de: "Austragungsort von 8 PGA European Tour Turnieren, von José María Olazábal neu gestaltet mit Hotel & Spa.",
+    es: "Pula Golf Resort se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Sede de 8 torneos del PGA European Tour, rediseñado por José María Olazábal con hotel y spa. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "Pula Golf Resort stands out as one of the premier athletic and fitness destinations in Mallorca. Host of 8 PGA European Tour events, redesigned by José María Olazábal with hotel & spa. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "Pula Golf Resort destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Seu de 8 tornejos del PGA European Tour, redissenyat per José María Olazábal a Son Servera. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "Pula Golf Resort zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Austragungsort von 8 PGA European Tour Turnieren, von José María Olazábal neu gestaltet mit Hotel & Spa. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

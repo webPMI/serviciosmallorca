@@ -40,11 +40,11 @@ export const ginEvaMallorcaArtisanDistillery: ServiceItem = {
     ca: "Destil·leria artesana guardonada com la millor ginebra del món amb ginebró de Formentor.",
     de: "Handwerkliche Destillerie, ausgezeichnet als bester Gin der Welt mit Formentor-Wacholder und Sóller-Zitrusfrüchten.",
   },
-  description: {
-    es: "Destilería artesana creadora de la mejor ginebra del mundo (World Gin Awards) destilada con enebro de Formentor y cítricos locales.",
-    en: "Artisan distillery awarded World's Best Gin, distilled with wild Formentor juniper and fresh Sóller citrus.",
-    ca: "Destil·leria artesana guardonada com la millor ginebra del món amb ginebró de Formentor.",
-    de: "Handwerkliche Destillerie, ausgezeichnet als bester Gin der Welt mit Formentor-Wacholder und Sóller-Zitrusfrüchten.",
+  fullDescription: {
+    es: "Gin Eva Mallorca Artisan Botanical Distillery ofrece un servicio profesional de máxima categoría en Mallorca. Destilería artesana creadora de la mejor ginebra del mundo (World Gin Awards) destilada con enebro de Formentor y cítricos locales. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Gin Eva Mallorca Artisan Botanical Distillery delivers premier professional service in Mallorca. Artisan distillery awarded World Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Gin Eva Mallorca Artisan Botanical Distillery ofereix un servei professional de màxima categoria a Mallorca. Destil·leria artesana guardonada com la millor ginebra del món amb ginebró de Formentor. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Gin Eva Mallorca Artisan Botanical Distillery bietet erstklassigen professionellen Service auf Mallorca. Handwerkliche Destillerie, ausgezeichnet als bester Gin der Welt mit Formentor-Wacholder und Sóller-Zitrusfrüchten. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

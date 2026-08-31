@@ -38,10 +38,10 @@ export const MALLORCA_DIVING_CENTER_PORT_POLLENSA: ServiceItem = {
     de: "PADI 5-Sterne-Tauchbasis mit täglichen Ausfahrten zum Cap de Formentor und Meereshöhlen.",
   },
   fullDescription: {
-    es: "Centro de buceo 5 Estrellas PADI con inmersiones diarias en Cap de Formentor e Isla de Manresa.",
-    en: "PADI 5 Star dive center with daily boat excursions to Cap de Formentor and marine caves.",
-    ca: "Centre de submarinisme 5 estrelles PADI amb immersions al Cap de Formentor.",
-    de: "PADI 5-Sterne-Tauchbasis mit täglichen Ausfahrten zum Cap de Formentor und Meereshöhlen.",
+    es: "Mallorca Diving Center Port Pollença se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Centro de buceo 5 Estrellas PADI con inmersiones diarias en Cap de Formentor e Isla de Manresa. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "Mallorca Diving Center Port Pollença stands out as one of the premier athletic and fitness destinations in Mallorca. PADI 5 Star dive center with daily boat excursions to Cap de Formentor and marine caves. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "Mallorca Diving Center Port Pollença destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Centre de submarinisme 5 estrelles PADI amb immersions al Cap de Formentor. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "Mallorca Diving Center Port Pollença zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. PADI 5-Sterne-Tauchbasis mit täglichen Ausfahrten zum Cap de Formentor und Meereshöhlen. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

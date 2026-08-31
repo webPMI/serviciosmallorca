@@ -40,11 +40,11 @@ export const belmondLaResidenciaDeia: ServiceItem = {
     ca: "Hotel 5 estrelles gran luxe a dues cases senyorials del segle XVI a Deià.",
     de: "Fünf-Sterne-Luxushotel in zwei Herrenhäusern aus dem 16. Jahrhundert in Deià.",
   },
-  description: {
-    es: "Enclave exclusivo de arte y sosiego en la Serra de Tramuntana con colección de arte de más de 750 obras originales.",
-    en: "Exclusive art sanctuary in the Tramuntana mountains showcasing over 750 original works of art.",
-    ca: "Enclavament exclusiu d'art i calma a la Serra de Tramuntana amb col·lecció d'art.",
-    de: "Exklusives Kunst- und Ruheresort im Tramuntana-Gebirge mit über 750 Originalkunstwerken.",
+  fullDescription: {
+    es: "Belmond La Residencia ofrece un servicio profesional de máxima categoría en Mallorca. Enclave exclusivo de arte y sosiego en la Serra de Tramuntana con colección de arte de más de 750 obras originales. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Belmond La Residencia delivers premier professional service in Mallorca. Exclusive art sanctuary in the Tramuntana mountains showcasing over 750 original works of art. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Belmond La Residencia ofereix un servei professional de màxima categoria a Mallorca. Enclavament exclusiu d Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Belmond La Residencia bietet erstklassigen professionellen Service auf Mallorca. Exklusives Kunst- und Ruheresort im Tramuntana-Gebirge mit über 750 Originalkunstwerken. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

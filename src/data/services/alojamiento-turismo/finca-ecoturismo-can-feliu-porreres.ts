@@ -40,11 +40,11 @@ export const fincaEcoturismoCanFeliuPorreres: ServiceItem = {
     ca: "Agroturisme ecològic amb celler biodinàmic Demeter a Porreres.",
     de: "Bio-Agroturismo mit Demeter-zertifiziertem biodynamischem Weingut in Porreres.",
   },
-  description: {
-    es: "Agroturismo ecológico con bodega biodinámica certificada Demeter en Porreres.",
-    en: "Organic agrotourism with Demeter-certified biodynamic winery in Porreres.",
-    ca: "Agroturisme ecològic amb celler biodinàmic Demeter a Porreres.",
-    de: "Bio-Agroturismo mit Demeter-zertifiziertem biodynamischem Weingut in Porreres.",
+  fullDescription: {
+    es: "Finca Can Feliu Eco-Agroturismo ofrece un servicio profesional de máxima categoría en Mallorca. Agroturismo ecológico con bodega biodinámica certificada Demeter en Porreres. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Finca Can Feliu Eco-Agroturismo delivers premier professional service in Mallorca. Organic agrotourism with Demeter-certified biodynamic winery in Porreres. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Finca Can Feliu Eco-Agroturismo ofereix un servei professional de màxima categoria a Mallorca. Agroturisme ecològic amb celler biodinàmic Demeter a Porreres. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Finca Can Feliu Eco-Agroturismo bietet erstklassigen professionellen Service auf Mallorca. Bio-Agroturismo mit Demeter-zertifiziertem biodynamischem Weingut in Porreres. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

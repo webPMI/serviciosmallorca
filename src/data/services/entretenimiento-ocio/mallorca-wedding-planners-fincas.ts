@@ -40,11 +40,11 @@ export const mallorcaWeddingPlannersFincas: ServiceItem = {
     ca: "Planificació i disseny de casaments exclusius a finques privades de Mallorca.",
     de: "Exklusive Hochzeitsplanung und Eventdesign auf historischen Fincas und privaten Luxusanwesen auf Mallorca.",
   },
-  description: {
-    es: "Planificación y diseño de bodas exclusivas en fincas privadas y posesiones históricas de Mallorca.",
-    en: "Luxury wedding planning and bespoke styling in private historic fincas and coastal estates in Mallorca.",
-    ca: "Planificació i disseny de casaments exclusius a finques privades de Mallorca.",
-    de: "Exklusive Hochzeitsplanung und Eventdesign auf historischen Fincas und privaten Luxusanwesen auf Mallorca.",
+  fullDescription: {
+    es: "Mallorca Finca Weddings & Event Management ofrece un servicio profesional de máxima categoría en Mallorca. Planificación y diseño de bodas exclusivas en fincas privadas y posesiones históricas de Mallorca. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Mallorca Finca Weddings & Event Management delivers premier professional service in Mallorca. Luxury wedding planning and bespoke styling in private historic fincas and coastal estates in Mallorca. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Mallorca Finca Weddings & Event Management ofereix un servei professional de màxima categoria a Mallorca. Planificació i disseny de casaments exclusius a finques privades de Mallorca. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Mallorca Finca Weddings & Event Management bietet erstklassigen professionellen Service auf Mallorca. Exklusive Hochzeitsplanung und Eventdesign auf historischen Fincas und privaten Luxusanwesen auf Mallorca. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

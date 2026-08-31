@@ -40,11 +40,11 @@ export const portaMallorquinaRealEstatePalma: ServiceItem = {
     ca: "Xarxa immobiliària a tota l'illa amb més de 2.000 propietats seleccionades a Mallorca.",
     de: "Inselweites Immobiliennetzwerk mit über 2.000 ausgewählten Objekten auf ganz Mallorca.",
   },
-  description: {
-    es: "Red insular de agencias inmobiliarias con más de 2.000 propiedades seleccionadas en toda la geografía de Mallorca.",
-    en: "Island-wide real estate network with over 2,000 hand-picked properties across Mallorca.",
-    ca: "Xarxa immobiliària a tota l'illa amb més de 2.000 propietats seleccionades a Mallorca.",
-    de: "Inselweites Immobiliennetzwerk mit über 2.000 ausgewählten Objekten auf ganz Mallorca.",
+  fullDescription: {
+    es: "Porta Mallorquina Real Estate ofrece un servicio profesional de máxima categoría en Mallorca. Red insular de agencias inmobiliarias con más de 2.000 propiedades seleccionadas en toda la geografía de Mallorca. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Porta Mallorquina Real Estate delivers premier professional service in Mallorca. Island-wide real estate network with over 2,000 hand-picked properties across Mallorca. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Porta Mallorquina Real Estate ofereix un servei professional de màxima categoria a Mallorca. Xarxa immobiliària a tota l Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Porta Mallorquina Real Estate bietet erstklassigen professionellen Service auf Mallorca. Inselweites Immobiliennetzwerk mit über 2.000 ausgewählten Objekten auf ganz Mallorca. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

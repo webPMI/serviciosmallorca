@@ -40,11 +40,11 @@ export const theBritishSchoolOfMallorca: ServiceItem = {
     ca: "Col·legi britànic internacional fundat el 1985 a Marratxí amb campus de 30.000 m².",
     de: "Britisches Gymnasium von 1985 auf einem 30.000 m² großen Naturcampus in Marratxí (IGCSE / IB).",
   },
-  description: {
-    es: "Colegio británico internacional fundado en 1985 ubicado en una finca rústica de 30.000 m² en Marratxí.",
-    en: "British international school established in 1985 set in a 30,000 m² rural campus in Marratxí.",
-    ca: "Col·legi britànic internacional fundat el 1985 a Marratxí amb campus de 30.000 m².",
-    de: "Britisches Gymnasium von 1985 auf einem 30.000 m² großen Naturcampus in Marratxí (IGCSE / IB).",
+  fullDescription: {
+    es: "The Academy International School Marratxí ofrece un servicio profesional de máxima categoría en Mallorca. Colegio británico internacional fundado en 1985 ubicado en una finca rústica de 30.000 m² en Marratxí. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "The Academy International School Marratxí delivers premier professional service in Mallorca. British international school established in 1985 set in a 30,000 m² rural campus in Marratxí. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "The Academy International School Marratxí ofereix un servei professional de màxima categoria a Mallorca. Col·legi britànic internacional fundat el 1985 a Marratxí amb campus de 30.000 m². Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "The Academy International School Marratxí bietet erstklassigen professionellen Service auf Mallorca. Britisches Gymnasium von 1985 auf einem 30.000 m² großen Naturcampus in Marratxí (IGCSE / IB). Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

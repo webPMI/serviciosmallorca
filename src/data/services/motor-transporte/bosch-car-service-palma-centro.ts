@@ -40,11 +40,11 @@ export const boschCarServicePalmaCentro: ServiceItem = {
     ca: "Taller mecànic multimarca amb diagnosi per ordinador, manteniment oficial i preparació ITV a Palma.",
     de: "Meisterwerkstatt mit computergestützter Fehlerdiagnose, Inspektionen nach Herstellervorgaben und HU/ITV-Service.",
   },
-  description: {
-    es: "Taller mecánico integral multimarca con diagnosis computarizada, mantenimiento oficial, neumáticos y preparación ITV.",
-    en: "Full multi-brand automotive repair workshop with computerized diagnostics, official servicing, tires, and ITV pre-inspection.",
-    ca: "Taller mecànic multimarca amb diagnosi per ordinador, manteniment oficial i preparació ITV a Palma.",
-    de: "Meisterwerkstatt mit computergestützter Fehlerdiagnose, Inspektionen nach Herstellervorgaben und HU/ITV-Service.",
+  fullDescription: {
+    es: "Taller Mecánico Bosch Car Service Palma ofrece un servicio profesional de máxima categoría en Mallorca. Taller mecánico integral multimarca con diagnosis computarizada, mantenimiento oficial, neumáticos y preparación ITV. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Taller Mecánico Bosch Car Service Palma delivers premier professional service in Mallorca. Full multi-brand automotive repair workshop with computerized diagnostics, official servicing, tires, and ITV pre-inspection. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Taller Mecánico Bosch Car Service Palma ofereix un servei professional de màxima categoria a Mallorca. Taller mecànic multimarca amb diagnosi per ordinador, manteniment oficial i preparació ITV a Palma. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Taller Mecánico Bosch Car Service Palma bietet erstklassigen professionellen Service auf Mallorca. Meisterwerkstatt mit computergestützter Fehlerdiagnose, Inspektionen nach Herstellervorgaben und HU/ITV-Service. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

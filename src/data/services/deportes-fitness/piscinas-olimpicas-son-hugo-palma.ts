@@ -38,10 +38,10 @@ export const PISCINAS_OLIMPICAS_SON_HUGO_PALMA: ServiceItem = {
     de: "Schwimmzentrum mit 50m-Olympia-Außen- und Hallenbecken sowie Sprungturmanlage.",
   },
   fullDescription: {
-    es: "Complejo de natación con piscina olímpica de 50 metros exterior e interior, foso de saltos y spa.",
-    en: "Aquatic center with indoor and outdoor 50m Olympic pools, diving tower, and wellness area.",
-    ca: "Complex de natació amb piscina olímpica de 50m exterior i coberta i fossa de salts.",
-    de: "Schwimmzentrum mit 50m-Olympia-Außen- und Hallenbecken sowie Sprungturmanlage.",
+    es: "Piscines Municipals Son Hugo se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Complejo de natación con piscina olímpica de 50 metros exterior e interior, foso de saltos y spa. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "Piscines Municipals Son Hugo stands out as one of the premier athletic and fitness destinations in Mallorca. Aquatic center with indoor and outdoor 50m Olympic pools, diving tower, and wellness area. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "Piscines Municipals Son Hugo destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Complex de natació amb piscina olímpica de 50m exterior i coberta i fossa de salts. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "Piscines Municipals Son Hugo zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Schwimmzentrum mit 50m-Olympia-Außen- und Hallenbecken sowie Sprungturmanlage. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

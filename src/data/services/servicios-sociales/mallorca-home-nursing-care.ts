@@ -40,11 +40,11 @@ export const mallorcaHomeNursingCare: ServiceItem = {
     ca: "Infermers col·legiats a domicili per a cures postoperatòries i rehabilitació a Palma.",
     de: "Examinierte deutschsprachige Pflegefachkräfte und Physiotherapeuten für Wundversorgung, Infusionen und postoperatives Homecare.",
   },
-  description: {
-    es: "Enfermeros colegiados y fisioterapeutas a domicilio para cuidados postoperatorios, curas, administración de medicación y rehabilitación.",
-    en: "Registered nurses and physiotherapists providing post-op care, wound dressing, and rehabilitation at your residence.",
-    ca: "Infermers col·legiats a domicili per a cures postoperatòries i rehabilitació a Palma.",
-    de: "Examinierte deutschsprachige Pflegefachkräfte und Physiotherapeuten für Wundversorgung, Infusionen und postoperatives Homecare.",
+  fullDescription: {
+    es: "Mallorca Private Nursing & Medical Home Care ofrece un servicio profesional de máxima categoría en Mallorca. Enfermeros colegiados y fisioterapeutas a domicilio para cuidados postoperatorios, curas, administración de medicación y rehabilitación. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Mallorca Private Nursing & Medical Home Care delivers premier professional service in Mallorca. Registered nurses and physiotherapists providing post-op care, wound dressing, and rehabilitation at your residence. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Mallorca Private Nursing & Medical Home Care ofereix un servei professional de màxima categoria a Mallorca. Infermers col·legiats a domicili per a cures postoperatòries i rehabilitació a Palma. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Mallorca Private Nursing & Medical Home Care bietet erstklassigen professionellen Service auf Mallorca. Examinierte deutschsprachige Pflegefachkräfte und Physiotherapeuten für Wundversorgung, Infusionen und postoperatives Homecare. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

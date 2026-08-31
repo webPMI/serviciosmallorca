@@ -40,11 +40,11 @@ export const correduriaSegurosBalearesInbrok: ServiceItem = {
     ca: "Corredoria multilingüe a Calvià per a comunitats de propietaris, iots i vil·les.",
     de: "Mehrsprachiges Maklerbüro für Eigentümergemeinschaften, Yacht-Haftpflicht und hochwertige Villenversicherungen.",
   },
-  description: {
-    es: "Correduría multilingüe especializada en seguros de comunidades de propietarios, responsabilidad civil de yates y villas de lujo.",
-    en: "Multilingual insurance brokerage specialized in community buildings, yacht liability, and luxury villa policies.",
-    ca: "Corredoria multilingüe a Calvià per a comunitats de propietaris, iots i vil·les.",
-    de: "Mehrsprachiges Maklerbüro für Eigentümergemeinschaften, Yacht-Haftpflicht und hochwertige Villenversicherungen.",
+  fullDescription: {
+    es: "Inbrok Correduría de Seguros Calvià ofrece un servicio profesional de máxima categoría en Mallorca. Correduría multilingüe especializada en seguros de comunidades de propietarios, responsabilidad civil de yates y villas de lujo. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Inbrok Correduría de Seguros Calvià delivers premier professional service in Mallorca. Multilingual insurance brokerage specialized in community buildings, yacht liability, and luxury villa policies. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Inbrok Correduría de Seguros Calvià ofereix un servei professional de màxima categoria a Mallorca. Corredoria multilingüe a Calvià per a comunitats de propietaris, iots i vil·les. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Inbrok Correduría de Seguros Calvià bietet erstklassigen professionellen Service auf Mallorca. Mehrsprachiges Maklerbüro für Eigentümergemeinschaften, Yacht-Haftpflicht und hochwertige Villenversicherungen. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

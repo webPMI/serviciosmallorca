@@ -40,11 +40,11 @@ export const notariaRodriguezPalmaCentro: ServiceItem = {
     ca: "Notaria al centre de Palma per a escriptures de compravenda i poders.",
     de: "Notariat im Zentrum von Palma für notarielle Kaufverträge, Hypotheken, Testamente und Vollmachten.",
   },
-  description: {
-    es: "Notaría céntrica en Palma para el otorgamiento de escrituras públicas de compraventa, hipotecas, testamentos y poderes.",
-    en: "Central Palma notary public for property deeds, mortgages, wills, and powers of attorney.",
-    ca: "Notaria al centre de Palma per a escriptures de compravenda i poders.",
-    de: "Notariat im Zentrum von Palma für notarielle Kaufverträge, Hypotheken, Testamente und Vollmachten.",
+  fullDescription: {
+    es: "Notaría Jaime Rodríguez & Asociados Palma ofrece un servicio profesional de máxima categoría en Mallorca. Notaría céntrica en Palma para el otorgamiento de escrituras públicas de compraventa, hipotecas, testamentos y poderes. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Notaría Jaime Rodríguez & Asociados Palma delivers premier professional service in Mallorca. Central Palma notary public for property deeds, mortgages, wills, and powers of attorney. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Notaría Jaime Rodríguez & Asociados Palma ofereix un servei professional de màxima categoria a Mallorca. Notaria al centre de Palma per a escriptures de compravenda i poders. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Notaría Jaime Rodríguez & Asociados Palma bietet erstklassigen professionellen Service auf Mallorca. Notariat im Zentrum von Palma für notarielle Kaufverträge, Hypotheken, Testamente und Vollmachten. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

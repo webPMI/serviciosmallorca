@@ -44,10 +44,10 @@ export const clinica_rotger_palma_hospital_urgencias_24h: ServiceItem = {
     de: "Referenz-Privatklinik im Zentrum von Palma (Quirónsalud): 24-Stunden-Notaufnahme, alle medizinischen und chirurgischen Fachbereiche und Intensivstation.",
   },
   fullDescription: {
-    es: "Clínica Rotger es un hospital privado líder en las Islas Baleares con más de 75 años de historia. Integrado en el grupo Quirónsalud, cuenta con 110 habitaciones individuales, quirófanos inteligentes de alta precisión, área obstétrica de partos y servicio de urgencias 24/7 en español, inglés y alemán.",
-    en: "A leading private hospital in the Balearics with 75+ years of history, part of Quirónsalud. Features 110 private rooms, smart operating rooms, maternity unit, and 24/7 multilingual ER.",
-    ca: "Hospital privat líder a les Illes Balears amb més de 75 anys d'història. 110 habitacions individuals, quiròfans intel·ligents i urgències 24/7.",
-    de: "Führende Privatklinik auf den Balearen mit über 75 Jahren Tradition (Quirónsalud). 110 Einzelzimmer, intelligente OP-Säle, Entbindungsstation und 24/7 Notaufnahme.",
+    es: "Clínica Rotger Centro Médico & Hospital Urgencias 24h Palma (Quirónsalud) es un centro de referencia en salud, estética y bienestar en Mallorca. Hospital privado de referencia en el centro de Palma del grupo Quirónsalud: servicio de urgencias 24 horas, todas las especialidades médico-quirúrgicas y UCI de alta tecnología. Ofrece un entorno exclusivo y relajante con equipamiento de vanguardia, profesionales titulados y atención personalizada en varios idiomas para residentes y visitantes de la isla.",
+    en: "Clínica Rotger Centro Médico & Hospital Urgencias 24h Palma (Quirónsalud) is a premier benchmark for health, aesthetic medicine, and wellness in Mallorca. Reference private hospital in central Palma by Quirónsalud: 24-hour emergency room, all medical and surgical specialties, and high-tech ICU. Providing an exclusive, tranquil sanctuary with cutting-edge medical and wellness equipment, certified specialists, and multilingual client care.",
+    ca: "Clínica Rotger Centro Médico & Hospital Urgencias 24h Palma (Quirónsalud) és un centre de referència en salut, estètica i benestar a Mallorca. Hospital privat de referència al centre de Palma del grup Quirónsalud: servei d Ofereix un entorn exclusiu amb equipament d'avantguarda, professionals titulats i atenció personalitzada multilingüe per a residents i visitants.",
+    de: "Clínica Rotger Centro Médico & Hospital Urgencias 24h Palma (Quirónsalud) ist eine führende Adresse für Gesundheit, Ästhetik und Wohlbefinden auf Mallorca. Referenz-Privatklinik im Zentrum von Palma (Quirónsalud): 24-Stunden-Notaufnahme, alle medizinischen und chirurgischen Fachbereiche und Intensivstation. Ausgestattet mit modernster Medizintechnik, qualifizierten Therapeuten und individueller mehrsprachiger Betreuung in stilvollem Ambiente.",
   },
   highlights: {
     es: [

@@ -40,11 +40,11 @@ export const fincaSerenaMallorcaMontuiri: ServiceItem = {
     ca: "Exclusiu hotel 5 estrelles en una finca de 40 hectàrees a Montuïri.",
     de: "Exklusives 5-Sterne-Fincahotel auf einem 40 Hektar großen Landgut in Montuïri.",
   },
-  description: {
-    es: "Exclusivo hotel 5 estrellas en una finca de 40 hectáreas de olivos y viñedos en Montuïri.",
-    en: "Exclusive 5-star hotel set in a 40-hectare estate of olive groves and vineyards in Montuïri.",
-    ca: "Exclusiu hotel 5 estrelles en una finca de 40 hectàrees a Montuïri.",
-    de: "Exklusives 5-Sterne-Fincahotel auf einem 40 Hektar großen Landgut in Montuïri.",
+  fullDescription: {
+    es: "Finca Serena Mallorca Luxury Hotel ofrece un servicio profesional de máxima categoría en Mallorca. Exclusivo hotel 5 estrellas en una finca de 40 hectáreas de olivos y viñedos en Montuïri. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Finca Serena Mallorca Luxury Hotel delivers premier professional service in Mallorca. Exclusive 5-star hotel set in a 40-hectare estate of olive groves and vineyards in Montuïri. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Finca Serena Mallorca Luxury Hotel ofereix un servei professional de màxima categoria a Mallorca. Exclusiu hotel 5 estrelles en una finca de 40 hectàrees a Montuïri. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Finca Serena Mallorca Luxury Hotel bietet erstklassigen professionellen Service auf Mallorca. Exklusives 5-Sterne-Fincahotel auf einem 40 Hektar großen Landgut in Montuïri. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

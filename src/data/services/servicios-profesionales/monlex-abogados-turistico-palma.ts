@@ -40,11 +40,11 @@ export const monlexAbogadosTuristicoPalma: ServiceItem = {
     ca: "Despatx especialitzat en dret turístic i mercantil a Palma.",
     de: "Führende Kanzlei für Tourismusrecht, Hotelkonzessionen und Gesellschaftsrecht auf den Balearen.",
   },
-  description: {
-    es: "Despacho especializado en derecho turístico internacional, licencias hoteleras, M&A y contratos mercantiles en Baleares.",
-    en: "Leading law firm specializing in international tourism law, hospitality licenses, and corporate M&A in the Balearics.",
-    ca: "Despatx especialitzat en dret turístic i mercantil a Palma.",
-    de: "Führende Kanzlei für Tourismusrecht, Hotelkonzessionen und Gesellschaftsrecht auf den Balearen.",
+  fullDescription: {
+    es: "Monlex Abogados & Hospitality Law Palma ofrece un servicio profesional de máxima categoría en Mallorca. Despacho especializado en derecho turístico internacional, licencias hoteleras, M&A y contratos mercantiles en Baleares. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Monlex Abogados & Hospitality Law Palma delivers premier professional service in Mallorca. Leading law firm specializing in international tourism law, hospitality licenses, and corporate M&A in the Balearics. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Monlex Abogados & Hospitality Law Palma ofereix un servei professional de màxima categoria a Mallorca. Despatx especialitzat en dret turístic i mercantil a Palma. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Monlex Abogados & Hospitality Law Palma bietet erstklassigen professionellen Service auf Mallorca. Führende Kanzlei für Tourismusrecht, Hotelkonzessionen und Gesellschaftsrecht auf den Balearen. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

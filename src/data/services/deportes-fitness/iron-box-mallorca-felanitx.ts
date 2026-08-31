@@ -38,10 +38,10 @@ export const IRON_BOX_MALLORCA_FELANITX: ServiceItem = {
     de: "Functional- und Kraftbox in Felanitx mit Power-Racks und lizenzierten Trainern.",
   },
   fullDescription: {
-    es: "Box de entrenamiento funcional y fuerza en Felanitx con jaulas de potencia y entrenadores titulados.",
-    en: "Functional and strength box in Felanitx featuring power racks and certified coaches.",
-    ca: "Box d'entrenament funcional i força a Felanitx amb gàbies de potència.",
-    de: "Functional- und Kraftbox in Felanitx mit Power-Racks und lizenzierten Trainern.",
+    es: "Iron Box Mallorca se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Box de entrenamiento funcional y fuerza en Felanitx con jaulas de potencia y entrenadores titulados. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "Iron Box Mallorca stands out as one of the premier athletic and fitness destinations in Mallorca. Functional and strength box in Felanitx featuring power racks and certified coaches. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "Iron Box Mallorca destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Box d Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "Iron Box Mallorca zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Functional- und Kraftbox in Felanitx mit Power-Racks und lizenzierten Trainern. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

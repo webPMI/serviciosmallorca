@@ -40,11 +40,11 @@ export const bodega4KilosVinicolaFelanitx: ServiceItem = {
     ca: "Celler de culte a Felanitx fundat per Francesc Grimalt i Sergio Caballero, referent del Callet.",
     de: "Kult-Weingut in Felanitx von Francesc Grimalt und Sergio Caballero, berühmt für elegante Weine aus der Callet-Traube.",
   },
-  description: {
-    es: "Bodega de culto fundada por Francesc Grimalt y Sergio Caballero, referente de la variedad autóctona Callet y vinos de autor.",
-    en: "Cult winery founded by Francesc Grimalt and Sergio Caballero, celebrating the native Callet grape and artisanal winemaking.",
-    ca: "Celler de culte a Felanitx fundat per Francesc Grimalt i Sergio Caballero, referent del Callet.",
-    de: "Kult-Weingut in Felanitx von Francesc Grimalt und Sergio Caballero, berühmt für elegante Weine aus der Callet-Traube.",
+  fullDescription: {
+    es: "4 Kilos Vinícola Felanitx ofrece un servicio profesional de máxima categoría en Mallorca. Bodega de culto fundada por Francesc Grimalt y Sergio Caballero, referente de la variedad autóctona Callet y vinos de autor. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "4 Kilos Vinícola Felanitx delivers premier professional service in Mallorca. Cult winery founded by Francesc Grimalt and Sergio Caballero, celebrating the native Callet grape and artisanal winemaking. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "4 Kilos Vinícola Felanitx ofereix un servei professional de màxima categoria a Mallorca. Celler de culte a Felanitx fundat per Francesc Grimalt i Sergio Caballero, referent del Callet. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "4 Kilos Vinícola Felanitx bietet erstklassigen professionellen Service auf Mallorca. Kult-Weingut in Felanitx von Francesc Grimalt und Sergio Caballero, berühmt für elegante Weine aus der Callet-Traube. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

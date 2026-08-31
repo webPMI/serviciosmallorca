@@ -38,10 +38,10 @@ export const FIT_CLUB_MALLORCA_SON_BUGADELLES: ServiceItem = {
     de: "Exklusives Boutique-Gym in Calvià mit Functional Training, Kraftbereich, Boxen und Recovery.",
   },
   fullDescription: {
-    es: "Gimnasio boutique de alto nivel en Calvià con entrenamiento funcional, fuerza, boxeo y recuperación.",
-    en: "High-end boutique gym in Calvià with functional training, strength, boxing, and recovery.",
-    ca: "Gimnàs boutique d'alt nivell a Calvià amb entrenament funcional, boxa i recuperació.",
-    de: "Exklusives Boutique-Gym in Calvià mit Functional Training, Kraftbereich, Boxen und Recovery.",
+    es: "Fit Club Mallorca se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Gimnasio boutique de alto nivel en Calvià con entrenamiento funcional, fuerza, boxeo y recuperación. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "Fit Club Mallorca stands out as one of the premier athletic and fitness destinations in Mallorca. High-end boutique gym in Calvià with functional training, strength, boxing, and recovery. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "Fit Club Mallorca destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Gimnàs boutique d Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "Fit Club Mallorca zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Exklusives Boutique-Gym in Calvià mit Functional Training, Kraftbereich, Boxen und Recovery. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

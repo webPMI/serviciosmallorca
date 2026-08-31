@@ -40,11 +40,11 @@ export const cellerCaNIgnasiInca: ServiceItem = {
     ca: "Cuina mallorquina d'arrels i autor amb reinterpretació moderna a Inca.",
     de: "Feine mallorquinische Autorenküche mit moderner Interpretation traditioneller Inselrezepte in Inca.",
   },
-  description: {
-    es: "Cocina mallorquina de raíces y autor donde el chef Ignasi reinterpreta el legado culinario insular con técnica moderna.",
-    en: "Root-to-table Mallorcan gastronomy where Chef Ignasi masterfully reinterprets classic island recipes.",
-    ca: "Cuina mallorquina d'arrels i autor amb reinterpretació moderna a Inca.",
-    de: "Feine mallorquinische Autorenküche mit moderner Interpretation traditioneller Inselrezepte in Inca.",
+  fullDescription: {
+    es: "Celler Ca n ofrece un servicio profesional de máxima categoría en Mallorca. Cocina mallorquina de raíces y autor donde el chef Ignasi reinterpreta el legado culinario insular con técnica moderna. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Celler Ca n delivers premier professional service in Mallorca. Root-to-table Mallorcan gastronomy where Chef Ignasi masterfully reinterprets classic island recipes. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Celler Ca n ofereix un servei professional de màxima categoria a Mallorca. Cuina mallorquina d Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Celler Ca n bietet erstklassigen professionellen Service auf Mallorca. Feine mallorquinische Autorenküche mit moderner Interpretation traditioneller Inselrezepte in Inca. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

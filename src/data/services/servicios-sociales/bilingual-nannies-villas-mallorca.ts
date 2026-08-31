@@ -40,11 +40,11 @@ export const bilingualNanniesVillasMallorca: ServiceItem = {
     ca: "Mainaderes titulades multilingües per a vil·les de luxe i hotels a Mallorca.",
     de: "Qualifizierte mehrsprachige Nannies (DE/EN/ES) mit Erste-Hilfe-Zertifikat für Villen, Yachten und Hotels auf Mallorca.",
   },
-  description: {
-    es: "Niñeras tituladas multilingües (EN/DE/ES) con certificados de primeros auxilios pediátricos para hoteles, yates y villas de lujo.",
-    en: "Certified multilingual nannies (EN/DE/ES) with pediatric first aid for luxury villas, yachts, and boutique hotels.",
-    ca: "Mainaderes titulades multilingües per a vil·les de luxe i hotels a Mallorca.",
-    de: "Qualifizierte mehrsprachige Nannies (DE/EN/ES) mit Erste-Hilfe-Zertifikat für Villen, Yachten und Hotels auf Mallorca.",
+  fullDescription: {
+    es: "Balearic Nannies & Childcare for Villas ofrece un servicio profesional de máxima categoría en Mallorca. Niñeras tituladas multilingües (EN/DE/ES) con certificados de primeros auxilios pediátricos para hoteles, yates y villas de lujo. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Balearic Nannies & Childcare for Villas delivers premier professional service in Mallorca. Certified multilingual nannies (EN/DE/ES) with pediatric first aid for luxury villas, yachts, and boutique hotels. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Balearic Nannies & Childcare for Villas ofereix un servei professional de màxima categoria a Mallorca. Mainaderes titulades multilingües per a vil·les de luxe i hotels a Mallorca. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Balearic Nannies & Childcare for Villas bietet erstklassigen professionellen Service auf Mallorca. Qualifizierte mehrsprachige Nannies (DE/EN/ES) mit Erste-Hilfe-Zertifikat für Villen, Yachten und Hotels auf Mallorca. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

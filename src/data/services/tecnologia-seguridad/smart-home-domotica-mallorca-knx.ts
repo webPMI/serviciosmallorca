@@ -40,11 +40,11 @@ export const smartHomeDomoticaMallorcaKnx: ServiceItem = {
     ca: "Integració de domòtica KNX, Lutron i sistemes de cinema a casa per a vil·les d'alt nivell a Mallorca.",
     de: "Zertifizierte KNX-, Crestron- und Lutron-Systemintegratoren für Smart-Lighting, Raumklima und High-End-Audio.",
   },
-  description: {
-    es: "Integradores certificados de domótica KNX, Crestron, Lutron para iluminación inteligente, control de clima y audio multiroom en villas.",
-    en: "Certified KNX, Crestron, and Lutron integrators for smart lighting, climate control, and multi-room audio in luxury villas.",
-    ca: "Integració de domòtica KNX, Lutron i sistemes de cinema a casa per a vil·les d'alt nivell a Mallorca.",
-    de: "Zertifizierte KNX-, Crestron- und Lutron-Systemintegratoren für Smart-Lighting, Raumklima und High-End-Audio.",
+  fullDescription: {
+    es: "Smart Home Mallorca - Domótica KNX & Crestron ofrece un servicio profesional de máxima categoría en Mallorca. Integradores certificados de domótica KNX, Crestron, Lutron para iluminación inteligente, control de clima y audio multiroom en villas. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Smart Home Mallorca - Domótica KNX & Crestron delivers premier professional service in Mallorca. Certified KNX, Crestron, and Lutron integrators for smart lighting, climate control, and multi-room audio in luxury villas. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Smart Home Mallorca - Domótica KNX & Crestron ofereix un servei professional de màxima categoria a Mallorca. Integració de domòtica KNX, Lutron i sistemes de cinema a casa per a vil·les d Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Smart Home Mallorca - Domótica KNX & Crestron bietet erstklassigen professionellen Service auf Mallorca. Zertifizierte KNX-, Crestron- und Lutron-Systemintegratoren für Smart-Lighting, Raumklima und High-End-Audio. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

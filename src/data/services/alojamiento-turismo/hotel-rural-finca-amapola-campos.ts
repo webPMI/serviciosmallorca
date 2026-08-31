@@ -40,11 +40,11 @@ export const hotelRuralFincaAmapolaCampos: ServiceItem = {
     ca: "Oasi boutique de benestar amb ioga, massatges ayurvèdics i piscina a Campos.",
     de: "Boutique-Wellnessoase mit Yoga-Pavillon, ayurvedischen Behandlungen und Lagunenpool.",
   },
-  description: {
-    es: "Oasis boutique de bienestar y tranquilidad con pabellón de yoga, masajes ayurvédicos y piscina laguna.",
-    en: "Boutique wellness oasis with yoga shala, ayurvedic spa treatments, and lagoon pool in Campos.",
-    ca: "Oasi boutique de benestar amb ioga, massatges ayurvèdics i piscina a Campos.",
-    de: "Boutique-Wellnessoase mit Yoga-Pavillon, ayurvedischen Behandlungen und Lagunenpool.",
+  fullDescription: {
+    es: "Finca Amapola Hotel & Spa Campos ofrece un servicio profesional de máxima categoría en Mallorca. Oasis boutique de bienestar y tranquilidad con pabellón de yoga, masajes ayurvédicos y piscina laguna. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Finca Amapola Hotel & Spa Campos delivers premier professional service in Mallorca. Boutique wellness oasis with yoga shala, ayurvedic spa treatments, and lagoon pool in Campos. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Finca Amapola Hotel & Spa Campos ofereix un servei professional de màxima categoria a Mallorca. Oasi boutique de benestar amb ioga, massatges ayurvèdics i piscina a Campos. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Finca Amapola Hotel & Spa Campos bietet erstklassigen professionellen Service auf Mallorca. Boutique-Wellnessoase mit Yoga-Pavillon, ayurvedischen Behandlungen und Lagunenpool. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

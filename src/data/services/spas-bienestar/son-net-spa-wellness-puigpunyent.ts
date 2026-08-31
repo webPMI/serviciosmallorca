@@ -38,10 +38,10 @@ export const son_net_spa_wellness_puigpunyent: ServiceItem = {
     de: "Wellness-Refugium in einem Adelssitz aus dem 17. Jahrhundert in Puigpunyent mit Signature-Treatments.",
   },
   fullDescription: {
-    es: "Santuario de bienestar en un palacio señorial del siglo XVII en Puigpunyent con tratamientos holísticos de autor.",
-    en: "Wellness sanctuary in a 17th-century aristocratic estate in Puigpunyent featuring bespoke holistic rituals.",
-    ca: "Santuari de benestar en un palau del segle XVII a Puigpunyent amb rituals holístics.",
-    de: "Wellness-Refugium in einem Adelssitz aus dem 17. Jahrhundert in Puigpunyent mit Signature-Treatments.",
+    es: "Son Net Spa & Wellness es un centro de referencia en salud, estética y bienestar en Mallorca. Santuario de bienestar en un palacio señorial del siglo XVII en Puigpunyent con tratamientos holísticos de autor. Ofrece un entorno exclusivo y relajante con equipamiento de vanguardia, profesionales titulados y atención personalizada en varios idiomas para residentes y visitantes de la isla.",
+    en: "Son Net Spa & Wellness is a premier benchmark for health, aesthetic medicine, and wellness in Mallorca. Wellness sanctuary in a 17th-century aristocratic estate in Puigpunyent featuring bespoke holistic rituals. Providing an exclusive, tranquil sanctuary with cutting-edge medical and wellness equipment, certified specialists, and multilingual client care.",
+    ca: "Son Net Spa & Wellness és un centre de referència en salut, estètica i benestar a Mallorca. Santuari de benestar en un palau del segle XVII a Puigpunyent amb rituals holístics. Ofereix un entorn exclusiu amb equipament d'avantguarda, professionals titulats i atenció personalitzada multilingüe per a residents i visitants.",
+    de: "Son Net Spa & Wellness ist eine führende Adresse für Gesundheit, Ästhetik und Wohlbefinden auf Mallorca. Wellness-Refugium in einem Adelssitz aus dem 17. Jahrhundert in Puigpunyent mit Signature-Treatments. Ausgestattet mit modernster Medizintechnik, qualifizierten Therapeuten und individueller mehrsprachiger Betreuung in stilvollem Ambiente.",
   },
   highlights: {
     es: [

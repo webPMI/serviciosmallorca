@@ -40,11 +40,11 @@ export const laPajaritaBomboneriaPalma1872: ServiceItem = {
     ca: "El comerç més antic de Palma en actiu (1872), famós pels bombons artesans i xarcuteria selecta.",
     de: "Palmas ältestes Traditionsgeschäft (gegründet 1872), berühmt für handgefertigte Pralinen und Delikatessen.",
   },
-  description: {
-    es: "El comercio más antiguo de Palma en activo (fundado en 1872), famoso por sus bombones artesanos y charcutería selecta.",
-    en: "Palma's oldest active shop (founded 1872), world-famous for handcrafted chocolates and gourmet deli specialties.",
-    ca: "El comerç més antic de Palma en actiu (1872), famós pels bombons artesans i xarcuteria selecta.",
-    de: "Palmas ältestes Traditionsgeschäft (gegründet 1872), berühmt für handgefertigte Pralinen und Delikatessen.",
+  fullDescription: {
+    es: "La Pajarita Bombonería & Colmado (1872) ofrece un servicio profesional de máxima categoría en Mallorca. El comercio más antiguo de Palma en activo (fundado en 1872), famoso por sus bombones artesanos y charcutería selecta. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "La Pajarita Bombonería & Colmado (1872) delivers premier professional service in Mallorca. Palma Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "La Pajarita Bombonería & Colmado (1872) ofereix un servei professional de màxima categoria a Mallorca. El comerç més antic de Palma en actiu (1872), famós pels bombons artesans i xarcuteria selecta. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "La Pajarita Bombonería & Colmado (1872) bietet erstklassigen professionellen Service auf Mallorca. Palmas ältestes Traditionsgeschäft (gegründet 1872), berühmt für handgefertigte Pralinen und Delikatessen. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

@@ -40,11 +40,11 @@ export const minknerAndPartnerSantaPonsa: ServiceItem = {
     ca: "Especialistes en vil·les de luxe i propietats en primera línia al sud-oest de Mallorca.",
     de: "Spezialisten für Luxusvillen, Fincas und exklusive Meerblick-Immobilien im Südwesten Mallorcas.",
   },
-  description: {
-    es: "Especialistas en villas de lujo, fincas y apartamentos en primera línea de mar en el exclusivo suroeste de Mallorca.",
-    en: "Specialists in luxury villas, country estates, and prime seafront properties in Southwest Mallorca.",
-    ca: "Especialistes en vil·les de luxe i propietats en primera línia al sud-oest de Mallorca.",
-    de: "Spezialisten für Luxusvillen, Fincas und exklusive Meerblick-Immobilien im Südwesten Mallorcas.",
+  fullDescription: {
+    es: "Minkner & Partner Luxury Real Estate ofrece un servicio profesional de máxima categoría en Mallorca. Especialistas en villas de lujo, fincas y apartamentos en primera línea de mar en el exclusivo suroeste de Mallorca. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Minkner & Partner Luxury Real Estate delivers premier professional service in Mallorca. Specialists in luxury villas, country estates, and prime seafront properties in Southwest Mallorca. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Minkner & Partner Luxury Real Estate ofereix un servei professional de màxima categoria a Mallorca. Especialistes en vil·les de luxe i propietats en primera línia al sud-oest de Mallorca. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Minkner & Partner Luxury Real Estate bietet erstklassigen professionellen Service auf Mallorca. Spezialisten für Luxusvillen, Fincas und exklusive Meerblick-Immobilien im Südwesten Mallorcas. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

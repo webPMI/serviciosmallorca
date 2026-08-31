@@ -38,10 +38,10 @@ export const talise_spa_jumeirah_port_soller: ServiceItem = {
     de: "Klippen-Luxus-Spa in Port de Sóller mit beheiztem Außen-Hydropool und Meerblick.",
   },
   fullDescription: {
-    es: "Spa de lujo sobre el acantilado del Port de Sóller con piscina de hidromasaje exterior y vistas al mar y la montaña.",
-    en: "Cliff-edge luxury spa in Port de Sóller with outdoor hydrotherapy pool and Tramuntana mountain vistas.",
-    ca: "Spa de luxe sobre el penya-segat del Port de Sóller amb hidromassatge exterior i vistes.",
-    de: "Klippen-Luxus-Spa in Port de Sóller mit beheiztem Außen-Hydropool und Meerblick.",
+    es: "Talise Spa (Jumeirah Port Soller) es un centro de referencia en salud, estética y bienestar en Mallorca. Spa de lujo sobre el acantilado del Port de Sóller con piscina de hidromasaje exterior y vistas al mar y la montaña. Ofrece un entorno exclusivo y relajante con equipamiento de vanguardia, profesionales titulados y atención personalizada en varios idiomas para residentes y visitantes de la isla.",
+    en: "Talise Spa (Jumeirah Port Soller) is a premier benchmark for health, aesthetic medicine, and wellness in Mallorca. Cliff-edge luxury spa in Port de Sóller with outdoor hydrotherapy pool and Tramuntana mountain vistas. Providing an exclusive, tranquil sanctuary with cutting-edge medical and wellness equipment, certified specialists, and multilingual client care.",
+    ca: "Talise Spa (Jumeirah Port Soller) és un centre de referència en salut, estètica i benestar a Mallorca. Spa de luxe sobre el penya-segat del Port de Sóller amb hidromassatge exterior i vistes. Ofereix un entorn exclusiu amb equipament d'avantguarda, professionals titulats i atenció personalitzada multilingüe per a residents i visitants.",
+    de: "Talise Spa (Jumeirah Port Soller) ist eine führende Adresse für Gesundheit, Ästhetik und Wohlbefinden auf Mallorca. Klippen-Luxus-Spa in Port de Sóller mit beheiztem Außen-Hydropool und Meerblick. Ausgestattet mit modernster Medizintechnik, qualifizierten Therapeuten und individueller mehrsprachiger Betreuung in stilvollem Ambiente.",
   },
   highlights: {
     es: [

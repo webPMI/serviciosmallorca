@@ -38,10 +38,10 @@ export const BROOKLYN_FITBOXING_PALMA_CENTRO: ServiceItem = {
     de: "High-Intensity Fitboxing ohne Körperkontakt mit sensorischen Boxsäcken und Musik.",
   },
   fullDescription: {
-    es: "Entrenamiento de fitboxing de alta intensidad sin contacto con sacos sensorizados y música sincronizada.",
-    en: "High-intensity non-contact fitboxing with sensor-equipped bags, gamification, and music.",
-    ca: "Entrenament de fitboxing d'alta intensitat sense contacte amb sacs sensoritzats a Palma.",
-    de: "High-Intensity Fitboxing ohne Körperkontakt mit sensorischen Boxsäcken und Musik.",
+    es: "Brooklyn Fitboxing Palma Centro se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Entrenamiento de fitboxing de alta intensidad sin contacto con sacos sensorizados y música sincronizada. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "Brooklyn Fitboxing Palma Centro stands out as one of the premier athletic and fitness destinations in Mallorca. High-intensity non-contact fitboxing with sensor-equipped bags, gamification, and music. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "Brooklyn Fitboxing Palma Centro destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Entrenament de fitboxing d Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "Brooklyn Fitboxing Palma Centro zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. High-Intensity Fitboxing ohne Körperkontakt mit sensorischen Boxsäcken und Musik. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

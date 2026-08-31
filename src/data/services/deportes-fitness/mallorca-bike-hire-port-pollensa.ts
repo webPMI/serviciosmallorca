@@ -38,10 +38,10 @@ export const MALLORCA_BIKE_HIRE_PORT_POLLENSA: ServiceItem = {
     de: "Premium-Carbon-Rennradverleih am Startpunkt der Traumstrecke zum Cap de Formentor.",
   },
   fullDescription: {
-    es: "Centro de alquiler de bicicletas de carretera de carbono de alta gama en el inicio de la ruta a Formentor.",
-    en: "High-end carbon road bike rental and cycling hub located at the gateway to Cap de Formentor.",
-    ca: "Centre de lloguer de bicicletes de carretera de carboni d'alta gamma al Port de Pollença.",
-    de: "Premium-Carbon-Rennradverleih am Startpunkt der Traumstrecke zum Cap de Formentor.",
+    es: "Mallorca Bike Hire se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Centro de alquiler de bicicletas de carretera de carbono de alta gama en el inicio de la ruta a Formentor. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "Mallorca Bike Hire stands out as one of the premier athletic and fitness destinations in Mallorca. High-end carbon road bike rental and cycling hub located at the gateway to Cap de Formentor. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "Mallorca Bike Hire destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Centre de lloguer de bicicletes de carretera de carboni d Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "Mallorca Bike Hire zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Premium-Carbon-Rennradverleih am Startpunkt der Traumstrecke zum Cap de Formentor. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

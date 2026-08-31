@@ -38,10 +38,10 @@ export const VIVAGYM_SON_MOIX_PALMA: ServiceItem = {
     de: "Modernes Studio am Son Moix Stadion mit Matrix-Geräten, HIIT-Zone und Cycling.",
   },
   fullDescription: {
-    es: "Gimnasio moderno junto al estadio de Son Moix con sala Matrix, zona HIIT y cycling.",
-    en: "Modern gym next to Son Moix stadium with Matrix floor, HIIT zone, and indoor cycling.",
-    ca: "Gimnàs modern al costat de l'estadi de Son Moix amb sala Matrix i zona HIIT.",
-    de: "Modernes Studio am Son Moix Stadion mit Matrix-Geräten, HIIT-Zone und Cycling.",
+    es: "VivaGym Son Moix se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Gimnasio moderno junto al estadio de Son Moix con sala Matrix, zona HIIT y cycling. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "VivaGym Son Moix stands out as one of the premier athletic and fitness destinations in Mallorca. Modern gym next to Son Moix stadium with Matrix floor, HIIT zone, and indoor cycling. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "VivaGym Son Moix destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Gimnàs modern al costat de l Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "VivaGym Son Moix zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Modernes Studio am Son Moix Stadion mit Matrix-Geräten, HIIT-Zone und Cycling. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

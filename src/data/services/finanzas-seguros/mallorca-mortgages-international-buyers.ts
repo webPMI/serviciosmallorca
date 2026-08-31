@@ -40,11 +40,11 @@ export const mallorcaMortgagesInternationalBuyers: ServiceItem = {
     ca: "Especialistes en hipoteques per a no residents en la compra de propietats de luxe.",
     de: "Baufinanzierungsspezialisten für internationale Immobilienkäufer im Luxussegment ab 1 Mio. Euro auf Mallorca.",
   },
-  description: {
-    es: "Especialistas en conseguir las mejores condiciones hipotecarias para no residentes en la compra de propiedades de más de 1M€.",
-    en: "Specialists in securing prime mortgage terms for international buyers acquiring properties above €1M in Mallorca.",
-    ca: "Especialistes en hipoteques per a no residents en la compra de propietats de luxe.",
-    de: "Baufinanzierungsspezialisten für internationale Immobilienkäufer im Luxussegment ab 1 Mio. Euro auf Mallorca.",
+  fullDescription: {
+    es: "Balearic Private Mortgages & Wealth ofrece un servicio profesional de máxima categoría en Mallorca. Especialistas en conseguir las mejores condiciones hipotecarias para no residentes en la compra de propiedades de más de 1M€. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Balearic Private Mortgages & Wealth delivers premier professional service in Mallorca. Specialists in securing prime mortgage terms for international buyers acquiring properties above €1M in Mallorca. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Balearic Private Mortgages & Wealth ofereix un servei professional de màxima categoria a Mallorca. Especialistes en hipoteques per a no residents en la compra de propietats de luxe. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Balearic Private Mortgages & Wealth bietet erstklassigen professionellen Service auf Mallorca. Baufinanzierungsspezialisten für internationale Immobilienkäufer im Luxussegment ab 1 Mio. Euro auf Mallorca. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

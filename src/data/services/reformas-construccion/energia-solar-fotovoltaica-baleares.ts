@@ -40,11 +40,11 @@ export const energiaSolarFotovoltaicaBaleares: ServiceItem = {
     ca: "Instal·lació de plaques solars fotovoltaiques i bateries Tesla Powerwall a Mallorca.",
     de: "Photovoltaik-Solaranlagen, Tesla Powerwall Batteriespeicher und autarke Insellösungen für Fincas auf Mallorca.",
   },
-  description: {
-    es: "Instalación de paneles solares fotovoltaicos de alta eficiencia, baterías Tesla Powerwall y sistemas aislados para fincas.",
-    en: "High-efficiency photovoltaic solar panels, Tesla Powerwall storage systems, and off-grid solutions for rustic fincas.",
-    ca: "Instal·lació de plaques solars fotovoltaiques i bateries Tesla Powerwall a Mallorca.",
-    de: "Photovoltaik-Solaranlagen, Tesla Powerwall Batteriespeicher und autarke Insellösungen für Fincas auf Mallorca.",
+  fullDescription: {
+    es: "Balearic Solar Tech - Autoconsumo & Baterías Tesla ofrece un servicio profesional de máxima categoría en Mallorca. Instalación de paneles solares fotovoltaicos de alta eficiencia, baterías Tesla Powerwall y sistemas aislados para fincas. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Balearic Solar Tech - Autoconsumo & Baterías Tesla delivers premier professional service in Mallorca. High-efficiency photovoltaic solar panels, Tesla Powerwall storage systems, and off-grid solutions for rustic fincas. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Balearic Solar Tech - Autoconsumo & Baterías Tesla ofereix un servei professional de màxima categoria a Mallorca. Instal·lació de plaques solars fotovoltaiques i bateries Tesla Powerwall a Mallorca. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Balearic Solar Tech - Autoconsumo & Baterías Tesla bietet erstklassigen professionellen Service auf Mallorca. Photovoltaik-Solaranlagen, Tesla Powerwall Batteriespeicher und autarke Insellösungen für Fincas auf Mallorca. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

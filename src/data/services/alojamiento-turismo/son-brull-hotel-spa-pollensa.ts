@@ -40,11 +40,11 @@ export const sonBrullHotelSpaPollensa: ServiceItem = {
     ca: "Antic monestir jesuïta del segle XVIII transformat en hotel Relais & Châteaux a Pollença.",
     de: "Ehemaliges Jesuitenkloster aus dem 18. Jahrhundert als Relais & Châteaux Luxushotel in Pollença.",
   },
-  description: {
-    es: "Antiguo monasterio jesuita del siglo XVIII convertido en un hotel santuario Relais & Châteaux en Pollença.",
-    en: "18th-century Jesuit monastery converted into a luxury Relais & Châteaux sanctuary in Pollença.",
-    ca: "Antic monestir jesuïta del segle XVIII transformat en hotel Relais & Châteaux a Pollença.",
-    de: "Ehemaliges Jesuitenkloster aus dem 18. Jahrhundert als Relais & Châteaux Luxushotel in Pollença.",
+  fullDescription: {
+    es: "Son Brull Hotel & Spa ofrece un servicio profesional de máxima categoría en Mallorca. Antiguo monasterio jesuita del siglo XVIII convertido en un hotel santuario Relais & Châteaux en Pollença. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Son Brull Hotel & Spa delivers premier professional service in Mallorca. 18th-century Jesuit monastery converted into a luxury Relais & Châteaux sanctuary in Pollença. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Son Brull Hotel & Spa ofereix un servei professional de màxima categoria a Mallorca. Antic monestir jesuïta del segle XVIII transformat en hotel Relais & Châteaux a Pollença. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Son Brull Hotel & Spa bietet erstklassigen professionellen Service auf Mallorca. Ehemaliges Jesuitenkloster aus dem 18. Jahrhundert als Relais & Châteaux Luxushotel in Pollença. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

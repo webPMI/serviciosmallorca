@@ -40,11 +40,11 @@ export const carminaShoemakerIncaPalma: ServiceItem = {
     ca: "Mundialment reconeguts per les seves sabates artesanes Goodyear Welted a Inca des de 1866.",
     de: "Weltberühmte Schuhmanufaktur seit 1866 in Inca mit rahmengenähten Goodyear-Schuhen und feinstem Shell Cordovan Leder.",
   },
-  description: {
-    es: "Mundialmente reconocidos por sus zapatos artesanos de cosido Goodyear Welted y pieles Cordovan en Inca.",
-    en: "World-renowned for handcrafted Goodyear Welted footwear and Shell Cordovan leathers made in Inca.",
-    ca: "Mundialment reconeguts per les seves sabates artesanes Goodyear Welted a Inca des de 1866.",
-    de: "Weltberühmte Schuhmanufaktur seit 1866 in Inca mit rahmengenähten Goodyear-Schuhen und feinstem Shell Cordovan Leder.",
+  fullDescription: {
+    es: "Carmina Shoemaker Inca (Fundada 1866) ofrece un servicio profesional de máxima categoría en Mallorca. Mundialmente reconocidos por sus zapatos artesanos de cosido Goodyear Welted y pieles Cordovan en Inca. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Carmina Shoemaker Inca (Fundada 1866) delivers premier professional service in Mallorca. World-renowned for handcrafted Goodyear Welted footwear and Shell Cordovan leathers made in Inca. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Carmina Shoemaker Inca (Fundada 1866) ofereix un servei professional de màxima categoria a Mallorca. Mundialment reconeguts per les seves sabates artesanes Goodyear Welted a Inca des de 1866. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Carmina Shoemaker Inca (Fundada 1866) bietet erstklassigen professionellen Service auf Mallorca. Weltberühmte Schuhmanufaktur seit 1866 in Inca mit rahmengenähten Goodyear-Schuhen und feinstem Shell Cordovan Leder. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

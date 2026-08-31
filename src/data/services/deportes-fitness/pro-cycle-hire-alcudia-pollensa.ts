@@ -38,10 +38,10 @@ export const PRO_CYCLE_HIRE_ALCUDIA_POLLENSA: ServiceItem = {
     de: "Traditionsreicher Radverleih von Bruce Berkeley mit Massi- und Colnago-Carbonrädern.",
   },
   fullDescription: {
-    es: "Centro ciclista histórico fundado por Bruce Berkeley con flota Massi y Colnago de carbono.",
-    en: "Historic cycling center founded by Bruce Berkeley featuring premium Massi and Colnago carbon bikes.",
-    ca: "Centre ciclista històric al Port de Pollença amb bicicletes de carboni Massi i Colnago.",
-    de: "Traditionsreicher Radverleih von Bruce Berkeley mit Massi- und Colnago-Carbonrädern.",
+    es: "Pro Cycle Hire Mallorca se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Centro ciclista histórico fundado por Bruce Berkeley con flota Massi y Colnago de carbono. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "Pro Cycle Hire Mallorca stands out as one of the premier athletic and fitness destinations in Mallorca. Historic cycling center founded by Bruce Berkeley featuring premium Massi and Colnago carbon bikes. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "Pro Cycle Hire Mallorca destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Centre ciclista històric al Port de Pollença amb bicicletes de carboni Massi i Colnago. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "Pro Cycle Hire Mallorca zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Traditionsreicher Radverleih von Bruce Berkeley mit Massi- und Colnago-Carbonrädern. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

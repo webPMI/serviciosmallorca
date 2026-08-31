@@ -38,10 +38,10 @@ export const FIT_POINT_PADEL_FITNESS_PALMA: ServiceItem = {
     de: "Sportzentrum in Son Castelló mit 10 Glas-Padelplätzen, Fitnessstudio und Turnieren.",
   },
   fullDescription: {
-    es: "Centro deportivo en Son Castelló con 10 pistas de pádel de cristal, gimnasio y torneos semanales.",
-    en: "Sports center in Son Castelló with 10 glass padel courts, fitness gym, and weekly events.",
-    ca: "Centre esportiu a Son Castelló amb 10 pistes de pàdel de vidre, gimnàs i tornejos.",
-    de: "Sportzentrum in Son Castelló mit 10 Glas-Padelplätzen, Fitnessstudio und Turnieren.",
+    es: "Fit Point Pádel & Fitness se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Centro deportivo en Son Castelló con 10 pistas de pádel de cristal, gimnasio y torneos semanales. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "Fit Point Pádel & Fitness stands out as one of the premier athletic and fitness destinations in Mallorca. Sports center in Son Castelló with 10 glass padel courts, fitness gym, and weekly events. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "Fit Point Pádel & Fitness destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Centre esportiu a Son Castelló amb 10 pistes de pàdel de vidre, gimnàs i tornejos. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "Fit Point Pádel & Fitness zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Sportzentrum in Son Castelló mit 10 Glas-Padelplätzen, Fitnessstudio und Turnieren. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

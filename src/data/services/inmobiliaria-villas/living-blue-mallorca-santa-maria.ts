@@ -40,11 +40,11 @@ export const livingBlueMallorcaSantaMaria: ServiceItem = {
     ca: "Agència boutique líder en finques rústiques i cases de poble històriques al centre de Mallorca.",
     de: "Führende Boutique-Agentur für authentische Fincas, historische Dorfhäuser und Landgüter im Inselinneren.",
   },
-  description: {
-    es: "Agencia boutique líder en fincas rústicas singulares, casas de pueblo históricas y posesiones en el corazón de Mallorca.",
-    en: "Leading boutique agency for unique country estates, historic townhouses, and grand fincas in Central Mallorca.",
-    ca: "Agència boutique líder en finques rústiques i cases de poble històriques al centre de Mallorca.",
-    de: "Führende Boutique-Agentur für authentische Fincas, historische Dorfhäuser und Landgüter im Inselinneren.",
+  fullDescription: {
+    es: "Living Blue Mallorca Santa María del Camí ofrece un servicio profesional de máxima categoría en Mallorca. Agencia boutique líder en fincas rústicas singulares, casas de pueblo históricas y posesiones en el corazón de Mallorca. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Living Blue Mallorca Santa María del Camí delivers premier professional service in Mallorca. Leading boutique agency for unique country estates, historic townhouses, and grand fincas in Central Mallorca. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Living Blue Mallorca Santa María del Camí ofereix un servei professional de màxima categoria a Mallorca. Agència boutique líder en finques rústiques i cases de poble històriques al centre de Mallorca. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Living Blue Mallorca Santa María del Camí bietet erstklassigen professionellen Service auf Mallorca. Führende Boutique-Agentur für authentische Fincas, historische Dorfhäuser und Landgüter im Inselinneren. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

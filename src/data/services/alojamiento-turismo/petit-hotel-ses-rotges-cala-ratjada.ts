@@ -40,11 +40,11 @@ export const petitHotelSesRotgesCalaRatjada: ServiceItem = {
     ca: "Pioner del turisme gastronòmic a Mallorca en una casa senyorial a Cala Ratjada.",
     de: "Pionier des Gourmet-Tourismus auf Mallorca in einem Herrenhaus aus dem 18. Jahrhundert.",
   },
-  description: {
-    es: "Pionero del turismo gastronómico y primer hotel con estrella Michelin de Mallorca en una casona del s.XVIII.",
-    en: "Gastronomic tourism pioneer and historic manor house in Cala Ratjada since 1954.",
-    ca: "Pioner del turisme gastronòmic a Mallorca en una casa senyorial a Cala Ratjada.",
-    de: "Pionier des Gourmet-Tourismus auf Mallorca in einem Herrenhaus aus dem 18. Jahrhundert.",
+  fullDescription: {
+    es: "Petit Hotel Ses Rotges Cala Ratjada (1954) ofrece un servicio profesional de máxima categoría en Mallorca. Pionero del turismo gastronómico y primer hotel con estrella Michelin de Mallorca en una casona del s.XVIII. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Petit Hotel Ses Rotges Cala Ratjada (1954) delivers premier professional service in Mallorca. Gastronomic tourism pioneer and historic manor house in Cala Ratjada since 1954. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Petit Hotel Ses Rotges Cala Ratjada (1954) ofereix un servei professional de màxima categoria a Mallorca. Pioner del turisme gastronòmic a Mallorca en una casa senyorial a Cala Ratjada. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Petit Hotel Ses Rotges Cala Ratjada (1954) bietet erstklassigen professionellen Service auf Mallorca. Pionier des Gourmet-Tourismus auf Mallorca in einem Herrenhaus aus dem 18. Jahrhundert. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

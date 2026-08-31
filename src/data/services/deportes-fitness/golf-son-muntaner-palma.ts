@@ -38,10 +38,10 @@ export const GOLF_SON_MUNTANER_PALMA: ServiceItem = {
     de: "Meisterschaftsplatz der DP World Tour mit dem 1000-jährigen Olivenbaum 'Na Capitana'.",
   },
   fullDescription: {
-    es: "Campo de golf de nivel DP World Tour con el olivo milenario protegido 'Na Capitana'.",
-    en: "DP World Tour host golf course home to the thousand-year-old olive tree 'Na Capitana'.",
-    ca: "Camp de golf de nivell DP World Tour amb l'olivera mil·lenària 'Na Capitana'.",
-    de: "Meisterschaftsplatz der DP World Tour mit dem 1000-jährigen Olivenbaum 'Na Capitana'.",
+    es: "Golf Son Muntaner se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Campo de golf de nivel DP World Tour con el olivo milenario protegido  Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "Golf Son Muntaner stands out as one of the premier athletic and fitness destinations in Mallorca. DP World Tour host golf course home to the thousand-year-old olive tree  Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "Golf Son Muntaner destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Camp de golf de nivell DP World Tour amb l Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "Golf Son Muntaner zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Meisterschaftsplatz der DP World Tour mit dem 1000-jährigen Olivenbaum  Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

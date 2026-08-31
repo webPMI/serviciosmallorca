@@ -40,11 +40,11 @@ export const bioPestControlMallorcaPalmeras: ServiceItem = {
     ca: "Tractaments contra el morrut roig a palmeres i tèrmits a finques.",
     de: "Bauminjektionen (Endotherapie) gegen den Palmenrüssler und Beseitigung von Termiten/Holzwurm in Fincabalken.",
   },
-  description: {
-    es: "Tratamientos preventivos y curativos con endoterapia vegetal contra el picudo rojo en palmeras y termitas en vigas de fincas.",
-    en: "Preventive and curative micro-injection endotherapy against red palm weevil and woodworm in historic timber beams.",
-    ca: "Tractaments contra el morrut roig a palmeres i tèrmits a finques.",
-    de: "Bauminjektionen (Endotherapie) gegen den Palmenrüssler und Beseitigung von Termiten/Holzwurm in Fincabalken.",
+  fullDescription: {
+    es: "BioPest Control Mallorca - Picudo & Fincas ofrece un servicio profesional de máxima categoría en Mallorca. Tratamientos preventivos y curativos con endoterapia vegetal contra el picudo rojo en palmeras y termitas en vigas de fincas. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "BioPest Control Mallorca - Picudo & Fincas delivers premier professional service in Mallorca. Preventive and curative micro-injection endotherapy against red palm weevil and woodworm in historic timber beams. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "BioPest Control Mallorca - Picudo & Fincas ofereix un servei professional de màxima categoria a Mallorca. Tractaments contra el morrut roig a palmeres i tèrmits a finques. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "BioPest Control Mallorca - Picudo & Fincas bietet erstklassigen professionellen Service auf Mallorca. Bauminjektionen (Endotherapie) gegen den Palmenrüssler und Beseitigung von Termiten/Holzwurm in Fincabalken. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

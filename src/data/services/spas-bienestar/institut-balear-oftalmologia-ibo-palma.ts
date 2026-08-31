@@ -38,10 +38,10 @@ export const institut_balear_oftalmologia_ibo_palma: ServiceItem = {
     de: "Führendes Augenzentrum der Balearen für Femto-LASIK Augenlasern, Katarakt und Netzhautchirurgie.",
   },
   fullDescription: {
-    es: "Centro de referencia en cirugía refractiva láser Femto-LASIK, cataratas, retina y glaucoma en Baleares.",
-    en: "Balearic leading ophthalmic center for Femto-LASIK laser surgery, cataract, retina, and glaucoma care.",
-    ca: "Centre de referència en cirurgia làser Femto-LASIK, cataractes i retina a Balears.",
-    de: "Führendes Augenzentrum der Balearen für Femto-LASIK Augenlasern, Katarakt und Netzhautchirurgie.",
+    es: "Institut Balear d es un centro de referencia en salud, estética y bienestar en Mallorca. Centro de referencia en cirugía refractiva láser Femto-LASIK, cataratas, retina y glaucoma en Baleares. Ofrece un entorno exclusivo y relajante con equipamiento de vanguardia, profesionales titulados y atención personalizada en varios idiomas para residentes y visitantes de la isla.",
+    en: "Institut Balear d is a premier benchmark for health, aesthetic medicine, and wellness in Mallorca. Balearic leading ophthalmic center for Femto-LASIK laser surgery, cataract, retina, and glaucoma care. Providing an exclusive, tranquil sanctuary with cutting-edge medical and wellness equipment, certified specialists, and multilingual client care.",
+    ca: "Institut Balear d és un centre de referència en salut, estètica i benestar a Mallorca. Centre de referència en cirurgia làser Femto-LASIK, cataractes i retina a Balears. Ofereix un entorn exclusiu amb equipament d'avantguarda, professionals titulats i atenció personalitzada multilingüe per a residents i visitants.",
+    de: "Institut Balear d ist eine führende Adresse für Gesundheit, Ästhetik und Wohlbefinden auf Mallorca. Führendes Augenzentrum der Balearen für Femto-LASIK Augenlasern, Katarakt und Netzhautchirurgie. Ausgestattet mit modernster Medizintechnik, qualifizierten Therapeuten und individueller mehrsprachiger Betreuung in stilvollem Ambiente.",
   },
   highlights: {
     es: [

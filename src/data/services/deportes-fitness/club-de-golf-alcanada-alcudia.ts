@@ -38,10 +38,10 @@ export const CLUB_DE_GOLF_ALCANADA_ALCUDIA: ServiceItem = {
     de: "Spektakulärer 18-Loch-Platz von Robert Trent Jones Jr. mit Blick auf den Leuchtturm von Alcanada.",
   },
   fullDescription: {
-    es: "Espectacular campo de golf de 18 hoyos diseñado por Robert Trent Jones Jr. frente al faro de Alcanada.",
-    en: "World-class 18-hole course designed by Robert Trent Jones Jr. overlooking Alcanada lighthouse.",
-    ca: "Camp de golf de 18 forats dissenyat per Robert Trent Jones Jr. davant el far d'Alcanada.",
-    de: "Spektakulärer 18-Loch-Platz von Robert Trent Jones Jr. mit Blick auf den Leuchtturm von Alcanada.",
+    es: "Club de Golf Alcanada se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Espectacular campo de golf de 18 hoyos diseñado por Robert Trent Jones Jr. frente al faro de Alcanada. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "Club de Golf Alcanada stands out as one of the premier athletic and fitness destinations in Mallorca. World-class 18-hole course designed by Robert Trent Jones Jr. overlooking Alcanada lighthouse. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "Club de Golf Alcanada destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Camp de golf de 18 forats dissenyat per Robert Trent Jones Jr. davant el far d Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "Club de Golf Alcanada zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Spektakulärer 18-Loch-Platz von Robert Trent Jones Jr. mit Blick auf den Leuchtturm von Alcanada. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

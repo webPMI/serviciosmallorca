@@ -44,10 +44,10 @@ export const club_nautico_puerto_pollensa_escuela_remo: ServiceItem = {
     de: "Historischer Segelclub von 1961 in der Bucht von Pollença: Küsten- und Olympische Ruderschule, Segelakademie, 400 Liegeplätze und Panoramarestaurant.",
   },
   fullDescription: {
-    es: "El RCN Port de Pollença es un referente de los deportes náuticos en el norte de Mallorca. Ubicado en las aguas protegidas de la bahía, ofrece instalaciones de primer nivel para la práctica del remo, la vela, el kayak y el paddle surf, además de organizar regatas internacionales.",
-    en: "RCN Port de Pollença is north Mallorca's premier water sports hub. Set in sheltered Pollença Bay, it offers world-class facilities for rowing, sailing, kayaking, and SUP, hosting international regattas.",
-    ca: "Referent dels esports nàutics al nord de Mallorca. A les aigües protegides de la badia, ofereix rem, vela, caiac i paddle surf.",
-    de: "Nautisches Sportzentrum im Norden Mallorcas in der geschützten Bucht von Pollença: Rudern, Segeln, Kajak und Stand-up-Paddling sowie internationale Regatten.",
+    es: "Real Club Náutico Puerto Pollensa & Escuela de Remo se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Club náutico histórico fundado en 1961 en la bahía de Pollença: escuela de remo olímpico y de mar, cursos de vela ligera, 400 amarres y restaurante panorámico. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "Real Club Náutico Puerto Pollensa & Escuela de Remo stands out as one of the premier athletic and fitness destinations in Mallorca. Historic nautical club founded in 1961 in Pollença Bay: coastal and Olympic rowing school, dinghy sailing academy, 400 berths, and oceanview restaurant. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "Real Club Náutico Puerto Pollensa & Escuela de Remo destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Club nàutic històric fundat el 1961 a la badia de Pollença: escola de rem olímpic i de mar, cursos de vela i 400 amarraments. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "Real Club Náutico Puerto Pollensa & Escuela de Remo zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Historischer Segelclub von 1961 in der Bucht von Pollença: Küsten- und Olympische Ruderschule, Segelakademie, 400 Liegeplätze und Panoramarestaurant. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

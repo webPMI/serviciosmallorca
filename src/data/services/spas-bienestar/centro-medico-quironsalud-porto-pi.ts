@@ -38,10 +38,10 @@ export const centro_medico_quironsalud_porto_pi: ServiceItem = {
     de: "Facharztzentrum am Hafen von Palma mit schneller Diagnostik und Laboranalysen.",
   },
   fullDescription: {
-    es: "Consultas externas especializadas frente al puerto de Palma con servicio rápido de diagnóstico y análisis clínicos.",
-    en: "Specialist outpatient clinic overlooking Palma harbor with rapid diagnostic testing and clinical lab.",
-    ca: "Consultes mèdiques especialitzades davant el port de Palma amb diagnòstic ràpid.",
-    de: "Facharztzentrum am Hafen von Palma mit schneller Diagnostik und Laboranalysen.",
+    es: "Centro Médico Quirónsalud Porto Pi es un centro de referencia en salud, estética y bienestar en Mallorca. Consultas externas especializadas frente al puerto de Palma con servicio rápido de diagnóstico y análisis clínicos. Ofrece un entorno exclusivo y relajante con equipamiento de vanguardia, profesionales titulados y atención personalizada en varios idiomas para residentes y visitantes de la isla.",
+    en: "Centro Médico Quirónsalud Porto Pi is a premier benchmark for health, aesthetic medicine, and wellness in Mallorca. Specialist outpatient clinic overlooking Palma harbor with rapid diagnostic testing and clinical lab. Providing an exclusive, tranquil sanctuary with cutting-edge medical and wellness equipment, certified specialists, and multilingual client care.",
+    ca: "Centro Médico Quirónsalud Porto Pi és un centre de referència en salut, estètica i benestar a Mallorca. Consultes mèdiques especialitzades davant el port de Palma amb diagnòstic ràpid. Ofereix un entorn exclusiu amb equipament d'avantguarda, professionals titulats i atenció personalitzada multilingüe per a residents i visitants.",
+    de: "Centro Médico Quirónsalud Porto Pi ist eine führende Adresse für Gesundheit, Ästhetik und Wohlbefinden auf Mallorca. Facharztzentrum am Hafen von Palma mit schneller Diagnostik und Laboranalysen. Ausgestattet mit modernster Medizintechnik, qualifizierten Therapeuten und individueller mehrsprachiger Betreuung in stilvollem Ambiente.",
   },
   highlights: {
     es: [

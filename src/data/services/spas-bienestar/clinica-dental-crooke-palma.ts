@@ -40,11 +40,11 @@ export const clinicaDentalCrookePalma: ServiceItem = {
     ca: "Clínica odontològica d'alta tecnologia multilingüe a Palma.",
     de: "Mehrsprachige High-Tech-Zahnklinik für Sofortimplantate (Same-Day) und digitales Smile Design in Palma.",
   },
-  description: {
-    es: "Escáner intraoral 3D, sedación consciente para pacientes con ansiedad, carillas de porcelana y atención en alemán e inglés.",
-    en: "3D intraoral scanning, conscious sedation for anxious patients, porcelain veneers, and fluent German & English care.",
-    ca: "Escàner 3D intraoral, sedació conscient i facetes de porcellana a Palma.",
-    de: "3D-Intraoralscanner, Dämmerschlaf-Sedierung für Angstpatienten und Keramik-Veneers.",
+  fullDescription: {
+    es: "Clínica Dental Crooke & Laguna Palma es un centro de referencia en salud, estética y bienestar en Mallorca. Clínica odontológica de alta tecnología multilingüe especializada en implantes en el mismo día y estética digital. Ofrece un entorno exclusivo y relajante con equipamiento de vanguardia, profesionales titulados y atención personalizada en varios idiomas para residentes y visitantes de la isla.",
+    en: "Clínica Dental Crooke & Laguna Palma is a premier benchmark for health, aesthetic medicine, and wellness in Mallorca. High-tech multilingual dental clinic specializing in same-day dental implants and digital smile design. Providing an exclusive, tranquil sanctuary with cutting-edge medical and wellness equipment, certified specialists, and multilingual client care.",
+    ca: "Clínica Dental Crooke & Laguna Palma és un centre de referència en salut, estètica i benestar a Mallorca. Clínica odontològica d Ofereix un entorn exclusiu amb equipament d'avantguarda, professionals titulats i atenció personalitzada multilingüe per a residents i visitants.",
+    de: "Clínica Dental Crooke & Laguna Palma ist eine führende Adresse für Gesundheit, Ästhetik und Wohlbefinden auf Mallorca. Mehrsprachige High-Tech-Zahnklinik für Sofortimplantate (Same-Day) und digitales Smile Design in Palma. Ausgestattet mit modernster Medizintechnik, qualifizierten Therapeuten und individueller mehrsprachiger Betreuung in stilvollem Ambiente.",
   },
   schedule: {
     monday: {

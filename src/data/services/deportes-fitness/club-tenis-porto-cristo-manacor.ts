@@ -38,10 +38,10 @@ export const CLUB_TENIS_PORTO_CRISTO_MANACOR: ServiceItem = {
     de: "Tennis- und Padelclub am Hafen von Porto Cristo mit Allwetterplätzen und Café.",
   },
   fullDescription: {
-    es: "Club de tenis y pádel costero junto al puerto de Porto Cristo con pistas rápidas y bar terraza.",
-    en: "Coastal tennis and padel club near Porto Cristo harbor with hard courts and terrace bar.",
-    ca: "Club de tennis i pàdel vora el port de Porto Cristo amb pistes ràpides i terrassa.",
-    de: "Tennis- und Padelclub am Hafen von Porto Cristo mit Allwetterplätzen und Café.",
+    es: "Club Tenis Porto Cristo se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Club de tenis y pádel costero junto al puerto de Porto Cristo con pistas rápidas y bar terraza. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "Club Tenis Porto Cristo stands out as one of the premier athletic and fitness destinations in Mallorca. Coastal tennis and padel club near Porto Cristo harbor with hard courts and terrace bar. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "Club Tenis Porto Cristo destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Club de tennis i pàdel vora el port de Porto Cristo amb pistes ràpides i terrassa. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "Club Tenis Porto Cristo zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Tennis- und Padelclub am Hafen von Porto Cristo mit Allwetterplätzen und Café. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

@@ -40,11 +40,11 @@ export const kingRichardThirdCollegePortals: ServiceItem = {
     ca: "Col·legi britànic bilingüe fundat el 1969 a Portals Nous (IGCSE i A-Levels).",
     de: "Britisches Traditionscollege von 1969 in Portals Nous mit IGCSE- und A-Level-Abschlüssen.",
   },
-  description: {
-    es: "Colegio británico bilingüe fundado en 1969 que imparte el British National Curriculum (IGCSE y A-Levels) en Portals Nous.",
-    en: "Pioneering British school established in 1969 offering the British National Curriculum (IGCSE and A-Levels) in Portals Nous.",
-    ca: "Col·legi britànic bilingüe fundat el 1969 a Portals Nous (IGCSE i A-Levels).",
-    de: "Britisches Traditionscollege von 1969 in Portals Nous mit IGCSE- und A-Level-Abschlüssen.",
+  fullDescription: {
+    es: "King Richard III College Portals Nous ofrece un servicio profesional de máxima categoría en Mallorca. Colegio británico bilingüe fundado en 1969 que imparte el British National Curriculum (IGCSE y A-Levels) en Portals Nous. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "King Richard III College Portals Nous delivers premier professional service in Mallorca. Pioneering British school established in 1969 offering the British National Curriculum (IGCSE and A-Levels) in Portals Nous. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "King Richard III College Portals Nous ofereix un servei professional de màxima categoria a Mallorca. Col·legi britànic bilingüe fundat el 1969 a Portals Nous (IGCSE i A-Levels). Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "King Richard III College Portals Nous bietet erstklassigen professionellen Service auf Mallorca. Britisches Traditionscollege von 1969 in Portals Nous mit IGCSE- und A-Level-Abschlüssen. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

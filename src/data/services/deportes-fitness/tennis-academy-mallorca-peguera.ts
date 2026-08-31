@@ -38,10 +38,10 @@ export const TENNIS_ACADEMY_MALLORCA_PEGUERA: ServiceItem = {
     de: "Internationale Tennisakademie in Peguera mit 15 Sandplätzen und ATP-Trainern.",
   },
   fullDescription: {
-    es: "Academia internacional de tenis en Peguera con 15 pistas de tierra batida y entrenadores ATP/WTA.",
-    en: "International tennis academy in Peguera featuring 15 red clay courts and ATP/WTA coaches.",
-    ca: "Acadèmia internacional de tennis a Peguera amb 15 pistes de terra batuda.",
-    de: "Internationale Tennisakademie in Peguera mit 15 Sandplätzen und ATP-Trainern.",
+    es: "Tennis Academy Mallorca (Peguera) se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Academia internacional de tenis en Peguera con 15 pistas de tierra batida y entrenadores ATP/WTA. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "Tennis Academy Mallorca (Peguera) stands out as one of the premier athletic and fitness destinations in Mallorca. International tennis academy in Peguera featuring 15 red clay courts and ATP/WTA coaches. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "Tennis Academy Mallorca (Peguera) destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Acadèmia internacional de tennis a Peguera amb 15 pistes de terra batuda. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "Tennis Academy Mallorca (Peguera) zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Internationale Tennisakademie in Peguera mit 15 Sandplätzen und ATP-Trainern. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

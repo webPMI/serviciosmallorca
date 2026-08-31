@@ -38,10 +38,10 @@ export const son_brull_spa_wellness_pollensa: ServiceItem = {
     de: "Öko-Luxus-Spa in einem Kloster aus dem 18. Jahrhundert in Pollença mit Mandelblüten-Essenzen.",
   },
   fullDescription: {
-    es: "Spa ecológico en un monasterio del siglo XVIII en Pollença con esencias botánicas de chumbera y almendra mallorquina.",
-    en: "Eco-luxury spa in an 18th-century monastery in Pollença using native prickly pear and almond essences.",
-    ca: "Spa ecològic en un monestir del segle XVIII a Pollença amb essències autòctones mallorquines.",
-    de: "Öko-Luxus-Spa in einem Kloster aus dem 18. Jahrhundert in Pollença mit Mandelblüten-Essenzen.",
+    es: "Son Brull Spa & Wellness es un centro de referencia en salud, estética y bienestar en Mallorca. Spa ecológico en un monasterio del siglo XVIII en Pollença con esencias botánicas de chumbera y almendra mallorquina. Ofrece un entorno exclusivo y relajante con equipamiento de vanguardia, profesionales titulados y atención personalizada en varios idiomas para residentes y visitantes de la isla.",
+    en: "Son Brull Spa & Wellness is a premier benchmark for health, aesthetic medicine, and wellness in Mallorca. Eco-luxury spa in an 18th-century monastery in Pollença using native prickly pear and almond essences. Providing an exclusive, tranquil sanctuary with cutting-edge medical and wellness equipment, certified specialists, and multilingual client care.",
+    ca: "Son Brull Spa & Wellness és un centre de referència en salut, estètica i benestar a Mallorca. Spa ecològic en un monestir del segle XVIII a Pollença amb essències autòctones mallorquines. Ofereix un entorn exclusiu amb equipament d'avantguarda, professionals titulats i atenció personalitzada multilingüe per a residents i visitants.",
+    de: "Son Brull Spa & Wellness ist eine führende Adresse für Gesundheit, Ästhetik und Wohlbefinden auf Mallorca. Öko-Luxus-Spa in einem Kloster aus dem 18. Jahrhundert in Pollença mit Mandelblüten-Essenzen. Ausgestattet mit modernster Medizintechnik, qualifizierten Therapeuten und individueller mehrsprachiger Betreuung in stilvollem Ambiente.",
   },
   highlights: {
     es: [

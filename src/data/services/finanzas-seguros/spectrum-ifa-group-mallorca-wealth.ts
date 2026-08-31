@@ -40,11 +40,11 @@ export const spectrumIfaGroupMallorcaWealth: ServiceItem = {
     ca: "Assessors financers independents regulats a Espanya per a residents internacionals a Mallorca.",
     de: "Unabhängige Finanzberatung und Vermögensverwaltung für internationale Residenten auf Mallorca.",
   },
-  description: {
-    es: "Asesores financieros independientes regulados en España para expatriados británicos e internacionales en Mallorca.",
-    en: "Regulated independent financial advisers specializing in tax planning, pensions, and wealth management for expats.",
-    ca: "Assessors financers independents regulats a Espanya per a residents internacionals a Mallorca.",
-    de: "Unabhängige Finanzberatung und Vermögensverwaltung für internationale Residenten auf Mallorca.",
+  fullDescription: {
+    es: "The Spectrum IFA Group Mallorca ofrece un servicio profesional de máxima categoría en Mallorca. Asesores financieros independientes regulados en España para expatriados británicos e internacionales en Mallorca. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "The Spectrum IFA Group Mallorca delivers premier professional service in Mallorca. Regulated independent financial advisers specializing in tax planning, pensions, and wealth management for expats. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "The Spectrum IFA Group Mallorca ofereix un servei professional de màxima categoria a Mallorca. Assessors financers independents regulats a Espanya per a residents internacionals a Mallorca. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "The Spectrum IFA Group Mallorca bietet erstklassigen professionellen Service auf Mallorca. Unabhängige Finanzberatung und Vermögensverwaltung für internationale Residenten auf Mallorca. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

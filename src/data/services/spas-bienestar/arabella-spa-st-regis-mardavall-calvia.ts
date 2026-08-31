@@ -38,10 +38,10 @@ export const arabella_spa_st_regis_mardavall_calvia: ServiceItem = {
     de: "Eines der größten Luxus-Spas Europas (4.700 m²) mit Traditioneller Chinesischer Medizin und Thalasso.",
   },
   fullDescription: {
-    es: "Uno de los spas más grandes de Europa (4.700 m²) con medicina tradicional china, talasoterapia y circuito termal.",
-    en: "One of Europe's largest luxury spas (4,700 m²) featuring Traditional Chinese Medicine and thalassotherapy.",
-    ca: "Un dels spas més grans d'Europa amb medicina tradicional xinesa, talassoteràpia i circuit termal.",
-    de: "Eines der größten Luxus-Spas Europas (4.700 m²) mit Traditioneller Chinesischer Medizin und Thalasso.",
+    es: "Arabella Spa (The St. Regis Mardavall) es un centro de referencia en salud, estética y bienestar en Mallorca. Uno de los spas más grandes de Europa (4.700 m²) con medicina tradicional china, talasoterapia y circuito termal. Ofrece un entorno exclusivo y relajante con equipamiento de vanguardia, profesionales titulados y atención personalizada en varios idiomas para residentes y visitantes de la isla.",
+    en: "Arabella Spa (The St. Regis Mardavall) is a premier benchmark for health, aesthetic medicine, and wellness in Mallorca. One of Europe Providing an exclusive, tranquil sanctuary with cutting-edge medical and wellness equipment, certified specialists, and multilingual client care.",
+    ca: "Arabella Spa (The St. Regis Mardavall) és un centre de referència en salut, estètica i benestar a Mallorca. Un dels spas més grans d Ofereix un entorn exclusiu amb equipament d'avantguarda, professionals titulats i atenció personalitzada multilingüe per a residents i visitants.",
+    de: "Arabella Spa (The St. Regis Mardavall) ist eine führende Adresse für Gesundheit, Ästhetik und Wohlbefinden auf Mallorca. Eines der größten Luxus-Spas Europas (4.700 m²) mit Traditioneller Chinesischer Medizin und Thalasso. Ausgestattet mit modernster Medizintechnik, qualifizierten Therapeuten und individueller mehrsprachiger Betreuung in stilvollem Ambiente.",
   },
   highlights: {
     es: [

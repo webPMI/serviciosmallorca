@@ -40,11 +40,11 @@ export const embutidosCanCompanyPorcNegre: ServiceItem = {
     ca: "Productors de porc negre mallorquí criat en llibertat a Sineu. Sobrassades d'autor.",
     de: "Erzeuger von freilaufenden schwarzen Mallorquiner Schweinen (Porc Negre), gefüttert mit Eicheln und Feigen für Gourmet-Sobrassada.",
   },
-  description: {
-    es: "Productores de cerdo negro mallorquín criado en libertad con bellota e higos. Sobrasadas de autor maduradas en secaderos naturales.",
-    en: "Breeders of free-range native black pigs fed on acorns and figs, creating artisan cured sobrassadas.",
-    ca: "Productors de porc negre mallorquí criat en llibertat a Sineu. Sobrassades d'autor.",
-    de: "Erzeuger von freilaufenden schwarzen Mallorquiner Schweinen (Porc Negre), gefüttert mit Eicheln und Feigen für Gourmet-Sobrassada.",
+  fullDescription: {
+    es: "Can Company - Sobrassada de Porc Negre de Mallorca ofrece un servicio profesional de máxima categoría en Mallorca. Productores de cerdo negro mallorquín criado en libertad con bellota e higos. Sobrasadas de autor maduradas en secaderos naturales. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Can Company - Sobrassada de Porc Negre de Mallorca delivers premier professional service in Mallorca. Breeders of free-range native black pigs fed on acorns and figs, creating artisan cured sobrassadas. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Can Company - Sobrassada de Porc Negre de Mallorca ofereix un servei professional de màxima categoria a Mallorca. Productors de porc negre mallorquí criat en llibertat a Sineu. Sobrassades d Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Can Company - Sobrassada de Porc Negre de Mallorca bietet erstklassigen professionellen Service auf Mallorca. Erzeuger von freilaufenden schwarzen Mallorquiner Schweinen (Porc Negre), gefüttert mit Eicheln und Feigen für Gourmet-Sobrassada. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

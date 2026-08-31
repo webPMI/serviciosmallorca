@@ -40,11 +40,11 @@ export const knxSmartHomeDomoticaMallorca: ServiceItem = {
     ca: "Integració de domòtica KNX, Control4 i sales de cinema privat a Palma.",
     de: "Zertifizierte KNX- und Control4-Hausautomation, Multiroom-Audio (Sonos/B&W) und High-End-Heimkinos für Villen auf Mallorca.",
   },
-  description: {
-    es: "Integradores certificados de domótica KNX, Control4, audio multiroom Sonos/Bowers & Wilkins y cines privados en villas.",
-    en: "Certified KNX and Control4 smart home integrators, Sonos/B&W multiroom audio, and bespoke private home cinema.",
-    ca: "Integració de domòtica KNX, Control4 i sales de cinema privat a Palma.",
-    de: "Zertifizierte KNX- und Control4-Hausautomation, Multiroom-Audio (Sonos/B&W) und High-End-Heimkinos für Villen auf Mallorca.",
+  fullDescription: {
+    es: "Balearic Smart Living - Domótica KNX & Control4 ofrece un servicio profesional de máxima categoría en Mallorca. Integradores certificados de domótica KNX, Control4, audio multiroom Sonos/Bowers & Wilkins y cines privados en villas. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Balearic Smart Living - Domótica KNX & Control4 delivers premier professional service in Mallorca. Certified KNX and Control4 smart home integrators, Sonos/B&W multiroom audio, and bespoke private home cinema. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Balearic Smart Living - Domótica KNX & Control4 ofereix un servei professional de màxima categoria a Mallorca. Integració de domòtica KNX, Control4 i sales de cinema privat a Palma. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Balearic Smart Living - Domótica KNX & Control4 bietet erstklassigen professionellen Service auf Mallorca. Zertifizierte KNX- und Control4-Hausautomation, Multiroom-Audio (Sonos/B&W) und High-End-Heimkinos für Villen auf Mallorca. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

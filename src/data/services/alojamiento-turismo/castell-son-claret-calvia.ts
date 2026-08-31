@@ -40,11 +40,11 @@ export const castellSonClaretCalvia: ServiceItem = {
     ca: "Castell del segle XIX restaurat com a hotel de luxe Relais & Châteaux a Es Capdellà.",
     de: "Restauriertes Schloss aus dem 19. Jahrhundert als Relais & Châteaux Luxushotel in Es Capdellà.",
   },
-  description: {
-    es: "Castillo del siglo XIX restaurado como hotel de lujo Relais & Châteaux en Es Capdellà.",
-    en: "Restored 19th-century castle operating as a Relais & Châteaux luxury hotel in Es Capdellà.",
-    ca: "Castell del segle XIX restaurat com a hotel de luxe Relais & Châteaux a Es Capdellà.",
-    de: "Restauriertes Schloss aus dem 19. Jahrhundert als Relais & Châteaux Luxushotel in Es Capdellà.",
+  fullDescription: {
+    es: "Castell Son Claret Luxury Retreat ofrece un servicio profesional de máxima categoría en Mallorca. Castillo del siglo XIX restaurado como hotel de lujo Relais & Châteaux en Es Capdellà. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Castell Son Claret Luxury Retreat delivers premier professional service in Mallorca. Restored 19th-century castle operating as a Relais & Châteaux luxury hotel in Es Capdellà. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Castell Son Claret Luxury Retreat ofereix un servei professional de màxima categoria a Mallorca. Castell del segle XIX restaurat com a hotel de luxe Relais & Châteaux a Es Capdellà. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Castell Son Claret Luxury Retreat bietet erstklassigen professionellen Service auf Mallorca. Restauriertes Schloss aus dem 19. Jahrhundert als Relais & Châteaux Luxushotel in Es Capdellà. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

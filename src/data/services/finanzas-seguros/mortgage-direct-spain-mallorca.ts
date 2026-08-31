@@ -40,11 +40,11 @@ export const mortgageDirectSpainMallorca: ServiceItem = {
     ca: "Intermedis hipotecaris independents líders per a compradors internacionals d'habitatges a Mallorca.",
     de: "Führender unabhängiger Hypothekenmakler für deutsche und internationale Immobilienkäufer auf Mallorca.",
   },
-  description: {
-    es: "Intermediarios hipotecarios independientes líderes para compradores no residentes que adquieren viviendas en Mallorca.",
-    en: "Leading independent mortgage brokers securing optimal financing for non-resident property buyers in Mallorca.",
-    ca: "Intermedis hipotecaris independents líders per a compradors internacionals d'habitatges a Mallorca.",
-    de: "Führender unabhängiger Hypothekenmakler für deutsche und internationale Immobilienkäufer auf Mallorca.",
+  fullDescription: {
+    es: "Mortgage Direct Brokers Mallorca ofrece un servicio profesional de máxima categoría en Mallorca. Intermediarios hipotecarios independientes líderes para compradores no residentes que adquieren viviendas en Mallorca. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Mortgage Direct Brokers Mallorca delivers premier professional service in Mallorca. Leading independent mortgage brokers securing optimal financing for non-resident property buyers in Mallorca. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Mortgage Direct Brokers Mallorca ofereix un servei professional de màxima categoria a Mallorca. Intermedis hipotecaris independents líders per a compradors internacionals d Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Mortgage Direct Brokers Mallorca bietet erstklassigen professionellen Service auf Mallorca. Führender unabhängiger Hypothekenmakler für deutsche und internationale Immobilienkäufer auf Mallorca. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

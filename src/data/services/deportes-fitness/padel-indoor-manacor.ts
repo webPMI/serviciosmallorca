@@ -38,10 +38,10 @@ export const PADEL_INDOOR_MANACOR: ServiceItem = {
     de: "Führende Padelhalle in Manacor mit 6 überdachten Plätzen, LED-Licht und Padel-Schule.",
   },
   fullDescription: {
-    es: "Centro de pádel indoor de referencia en Manacor con 6 pistas cubiertas, iluminación LED y escuela.",
-    en: "Premier indoor padel center in Manacor with 6 covered courts, LED lighting, and academy.",
-    ca: "Centre de pàdel indoor de referència a Manacor amb 6 pistes cobertes i escola.",
-    de: "Führende Padelhalle in Manacor mit 6 überdachten Plätzen, LED-Licht und Padel-Schule.",
+    es: "Pàdel Indoor Manacor se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Centro de pádel indoor de referencia en Manacor con 6 pistas cubiertas, iluminación LED y escuela. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "Pàdel Indoor Manacor stands out as one of the premier athletic and fitness destinations in Mallorca. Premier indoor padel center in Manacor with 6 covered courts, LED lighting, and academy. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "Pàdel Indoor Manacor destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Centre de pàdel indoor de referència a Manacor amb 6 pistes cobertes i escola. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "Pàdel Indoor Manacor zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Führende Padelhalle in Manacor mit 6 überdachten Plätzen, LED-Licht und Padel-Schule. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

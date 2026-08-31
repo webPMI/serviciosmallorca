@@ -40,11 +40,11 @@ export const hotelEsMoliDeiaCove: ServiceItem = {
     ca: "Emblemàtic hotel 4 estrelles amb cala privada exclusiva a Sa Muleta a Deià.",
     de: "Traditionsreiches 4-Sterne-Superior-Hotel mit exklusivem Privatbucht-Zugang in Sa Muleta.",
   },
-  description: {
-    es: "Emblemático hotel histórico 4 estrellas superior con cala privada exclusiva en Sa Muleta (Cala Deià).",
-    en: "Iconic 4-star superior hotel featuring exclusive private beach club access in Sa Muleta cove.",
-    ca: "Emblemàtic hotel 4 estrelles amb cala privada exclusiva a Sa Muleta a Deià.",
-    de: "Traditionsreiches 4-Sterne-Superior-Hotel mit exklusivem Privatbucht-Zugang in Sa Muleta.",
+  fullDescription: {
+    es: "Hotel Es Moli Deia ofrece un servicio profesional de máxima categoría en Mallorca. Emblemático hotel histórico 4 estrellas superior con cala privada exclusiva en Sa Muleta (Cala Deià). Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Hotel Es Moli Deia delivers premier professional service in Mallorca. Iconic 4-star superior hotel featuring exclusive private beach club access in Sa Muleta cove. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Hotel Es Moli Deia ofereix un servei professional de màxima categoria a Mallorca. Emblemàtic hotel 4 estrelles amb cala privada exclusiva a Sa Muleta a Deià. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Hotel Es Moli Deia bietet erstklassigen professionellen Service auf Mallorca. Traditionsreiches 4-Sterne-Superior-Hotel mit exklusivem Privatbucht-Zugang in Sa Muleta. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

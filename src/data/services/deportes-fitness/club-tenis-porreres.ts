@@ -38,10 +38,10 @@ export const CLUB_TENIS_PORRERES: ServiceItem = {
     de: "Sportverein in Porreres mit Sandplätzen, Padel und lokaler Jugendschule.",
   },
   fullDescription: {
-    es: "Club deportivo en el Pla de Mallorca con pistas de tierra batida, pádel y escuela municipal.",
-    en: "Sports club in central Mallorca offering red clay courts, padel, and municipal school.",
-    ca: "Club esportiu a Porreres amb pistes de terra batuda, pàdel i escola municipal.",
-    de: "Sportverein in Porreres mit Sandplätzen, Padel und lokaler Jugendschule.",
+    es: "Club Tenis Porreres se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Club deportivo en el Pla de Mallorca con pistas de tierra batida, pádel y escuela municipal. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "Club Tenis Porreres stands out as one of the premier athletic and fitness destinations in Mallorca. Sports club in central Mallorca offering red clay courts, padel, and municipal school. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "Club Tenis Porreres destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Club esportiu a Porreres amb pistes de terra batuda, pàdel i escola municipal. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "Club Tenis Porreres zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Sportverein in Porreres mit Sandplätzen, Padel und lokaler Jugendschule. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

@@ -40,11 +40,11 @@ export const palmaSeaSchoolRyaTraining: ServiceItem = {
     ca: "Escola nàutica RYA al Real Club Nàutic de Palma.",
     de: "Zertifizierte RYA-Segelschule im Real Club Náutico de Palma für Day Skipper und Yachtmaster.",
   },
-  description: {
-    es: "Centro homologado RYA en el Real Club Náutico de Palma impartiendo Day Skipper, Yachtmaster y cursos STCW.",
-    en: "Certified RYA training school at Real Club Náutico de Palma offering Day Skipper, Yachtmaster, and STCW courses.",
-    ca: "Escola nàutica RYA al Real Club Nàutic de Palma.",
-    de: "Zertifizierte RYA-Segelschule im Real Club Náutico de Palma für Day Skipper und Yachtmaster.",
+  fullDescription: {
+    es: "Palma Sea School - Official RYA Training Centre ofrece un servicio profesional de máxima categoría en Mallorca. Centro homologado RYA en el Real Club Náutico de Palma impartiendo Day Skipper, Yachtmaster y cursos STCW. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Palma Sea School - Official RYA Training Centre delivers premier professional service in Mallorca. Certified RYA training school at Real Club Náutico de Palma offering Day Skipper, Yachtmaster, and STCW courses. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Palma Sea School - Official RYA Training Centre ofereix un servei professional de màxima categoria a Mallorca. Escola nàutica RYA al Real Club Nàutic de Palma. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Palma Sea School - Official RYA Training Centre bietet erstklassigen professionellen Service auf Mallorca. Zertifizierte RYA-Segelschule im Real Club Náutico de Palma für Day Skipper und Yachtmaster. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

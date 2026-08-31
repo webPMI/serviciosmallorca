@@ -38,10 +38,10 @@ export const GOLF_SON_GUAL_PALMA: ServiceItem = {
     de: "18-Loch Par 72 Meisterschaftsgolfplatz von Thomas Himmel.",
   },
   fullDescription: {
-    es: "Campo de golf de 18 hoyos par 72 de campeonato internacional diseñado por Thomas Himmel.",
-    en: "Championship 18-hole par 72 golf course designed by Thomas Himmel.",
-    ca: "Camp de golf de 18 forats par 72 de campionat internacional dissenyat per Thomas Himmel.",
-    de: "18-Loch Par 72 Meisterschaftsgolfplatz von Thomas Himmel.",
+    es: "Golf Son Gual Mallorca se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Campo de golf de 18 hoyos par 72 de campeonato internacional diseñado por Thomas Himmel. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "Golf Son Gual Mallorca stands out as one of the premier athletic and fitness destinations in Mallorca. Championship 18-hole par 72 golf course designed by Thomas Himmel. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "Golf Son Gual Mallorca destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Camp de golf de 18 forats par 72 de campionat internacional dissenyat per Thomas Himmel. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "Golf Son Gual Mallorca zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. 18-Loch Par 72 Meisterschaftsgolfplatz von Thomas Himmel. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

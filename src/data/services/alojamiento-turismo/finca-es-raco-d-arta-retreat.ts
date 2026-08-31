@@ -40,11 +40,11 @@ export const fincaEsRacoDArtaRetreat: ServiceItem = {
     ca: "Santuari de calma i arquitectura sostenible a una possessió de 185 hectàrees a Artà.",
     de: "Nachhaltiges Luxus-Wellness-Resort auf einem 185 Hektar großen Naturanwesen am Llevant-Naturpark.",
   },
-  description: {
-    es: "Santuario de calma y arquitectura sostenible en una possessió de 185 hectáreas junto al Parque Natural de Llevant.",
-    en: "Sustainable luxury wellness sanctuary set on 185 hectares adjacent to the Llevant Natural Park in Arta.",
-    ca: "Santuari de calma i arquitectura sostenible a una possessió de 185 hectàrees a Artà.",
-    de: "Nachhaltiges Luxus-Wellness-Resort auf einem 185 Hektar großen Naturanwesen am Llevant-Naturpark.",
+  fullDescription: {
+    es: "Es Raco d ofrece un servicio profesional de máxima categoría en Mallorca. Santuario de calma y arquitectura sostenible en una possessió de 185 hectáreas junto al Parque Natural de Llevant. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Es Raco d delivers premier professional service in Mallorca. Sustainable luxury wellness sanctuary set on 185 hectares adjacent to the Llevant Natural Park in Arta. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Es Raco d ofereix un servei professional de màxima categoria a Mallorca. Santuari de calma i arquitectura sostenible a una possessió de 185 hectàrees a Artà. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Es Raco d bietet erstklassigen professionellen Service auf Mallorca. Nachhaltiges Luxus-Wellness-Resort auf einem 185 Hektar großen Naturanwesen am Llevant-Naturpark. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

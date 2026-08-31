@@ -40,11 +40,11 @@ export const kuhnAndPartnerLuxuryPalma: ServiceItem = {
     ca: "Pioners del mercat immobiliari residencial de luxe a Mallorca des de 1987 al centre de Palma.",
     de: "Pioniere des Luxusimmobilienmarktes auf Mallorca seit 1987 mit Hauptsitz in der Altstadt von Palma.",
   },
-  description: {
-    es: "Pioneros del mercado inmobiliario residencial de lujo en Mallorca desde 1987, con sede en el casco antiguo de Palma.",
-    en: "Pioneers of the luxury residential real estate market in Mallorca since 1987, headquartered in Palma's historic old town.",
-    ca: "Pioners del mercat immobiliari residencial de luxe a Mallorca des de 1987 al centre de Palma.",
-    de: "Pioniere des Luxusimmobilienmarktes auf Mallorca seit 1987 mit Hauptsitz in der Altstadt von Palma.",
+  fullDescription: {
+    es: "Kühn & Partner Real Estate Palma (1987) ofrece un servicio profesional de máxima categoría en Mallorca. Pioneros del mercado inmobiliario residencial de lujo en Mallorca desde 1987, con sede en el casco antiguo de Palma. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Kühn & Partner Real Estate Palma (1987) delivers premier professional service in Mallorca. Pioneers of the luxury residential real estate market in Mallorca since 1987, headquartered in Palma Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Kühn & Partner Real Estate Palma (1987) ofereix un servei professional de màxima categoria a Mallorca. Pioners del mercat immobiliari residencial de luxe a Mallorca des de 1987 al centre de Palma. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Kühn & Partner Real Estate Palma (1987) bietet erstklassigen professionellen Service auf Mallorca. Pioniere des Luxusimmobilienmarktes auf Mallorca seit 1987 mit Hauptsitz in der Altstadt von Palma. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

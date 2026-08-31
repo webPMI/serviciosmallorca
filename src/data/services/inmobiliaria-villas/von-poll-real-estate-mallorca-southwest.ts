@@ -40,11 +40,11 @@ export const vonPollRealEstateMallorcaSouthwest: ServiceItem = {
     ca: "Consultoria immobiliària internacional especialitzada en propietats residencials d'alt nivell a Calvià.",
     de: "Internationales Traditionshaus für Immobilienvermittlung in besten Lagen von Portals Nous und Calvià.",
   },
-  description: {
-    es: "Consultoría inmobiliaria internacional de origen alemán especializada en propiedades residenciales de alto standing.",
-    en: "International German real estate advisory specializing in prime residential properties and luxury villas.",
-    ca: "Consultoria immobiliària internacional especialitzada en propietats residencials d'alt nivell a Calvià.",
-    de: "Internationales Traditionshaus für Immobilienvermittlung in besten Lagen von Portals Nous und Calvià.",
+  fullDescription: {
+    es: "VON POLL REAL ESTATE Mallorca Southwest ofrece un servicio profesional de máxima categoría en Mallorca. Consultoría inmobiliaria internacional de origen alemán especializada en propiedades residenciales de alto standing. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "VON POLL REAL ESTATE Mallorca Southwest delivers premier professional service in Mallorca. International German real estate advisory specializing in prime residential properties and luxury villas. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "VON POLL REAL ESTATE Mallorca Southwest ofereix un servei professional de màxima categoria a Mallorca. Consultoria immobiliària internacional especialitzada en propietats residencials d Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "VON POLL REAL ESTATE Mallorca Southwest bietet erstklassigen professionellen Service auf Mallorca. Internationales Traditionshaus für Immobilienvermittlung in besten Lagen von Portals Nous und Calvià. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

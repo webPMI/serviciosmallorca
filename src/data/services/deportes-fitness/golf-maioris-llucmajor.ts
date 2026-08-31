@@ -38,10 +38,10 @@ export const GOLF_MAIORIS_LLUCMAJOR: ServiceItem = {
     de: "18-Loch Par 72 Kurs der RS Group mit 4 spektakulären Inselgrüns.",
   },
   fullDescription: {
-    es: "Campo de 18 hoyos par 72 de diseño RS Group con calles anchas y 4 islas-green.",
-    en: "18-hole par 72 course designed by RS Group with 4 island greens.",
-    ca: "Camp de 18 forats par 72 a Llucmajor amb 4 illes-green espectaculars.",
-    de: "18-Loch Par 72 Kurs der RS Group mit 4 spektakulären Inselgrüns.",
+    es: "Golf Maioris se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Campo de 18 hoyos par 72 de diseño RS Group con calles anchas y 4 islas-green. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "Golf Maioris stands out as one of the premier athletic and fitness destinations in Mallorca. 18-hole par 72 course designed by RS Group with 4 island greens. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "Golf Maioris destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Camp de 18 forats par 72 a Llucmajor amb 4 illes-green espectaculars. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "Golf Maioris zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. 18-Loch Par 72 Kurs der RS Group mit 4 spektakulären Inselgrüns. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

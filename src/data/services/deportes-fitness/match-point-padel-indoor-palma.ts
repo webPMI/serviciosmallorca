@@ -38,10 +38,10 @@ export const MATCH_POINT_PADEL_INDOOR_PALMA: ServiceItem = {
     de: "Moderne Hallen-Padelplätze mit Klimaanlage und täglichen Express-Turnieren.",
   },
   fullDescription: {
-    es: "Pistas de pádel cubiertas de alta competición con climatización y torneos express diarios.",
-    en: "High-spec indoor padel courts with climate control and daily express tournaments.",
-    ca: "Pistes de pàdel cobertes d'alta competició amb climatització i tornejos diaris a Palma.",
-    de: "Moderne Hallen-Padelplätze mit Klimaanlage und täglichen Express-Turnieren.",
+    es: "Match Point Pádel Indoor se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Pistas de pádel cubiertas de alta competición con climatización y torneos express diarios. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "Match Point Pádel Indoor stands out as one of the premier athletic and fitness destinations in Mallorca. High-spec indoor padel courts with climate control and daily express tournaments. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "Match Point Pádel Indoor destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Pistes de pàdel cobertes d Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "Match Point Pádel Indoor zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Moderne Hallen-Padelplätze mit Klimaanlage und täglichen Express-Turnieren. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

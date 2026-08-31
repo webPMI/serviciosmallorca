@@ -40,11 +40,11 @@ export const queensCollegePalmaBonanova: ServiceItem = {
     ca: "Prestigiós col·legi britànic a La Bonanova amb excel·lència acadèmica i vistes al castell de Bellver.",
     de: "Renommierte britische Schule in La Bonanova mit Blick auf Schloss Bellver und erstklassigen Examensergebnissen.",
   },
-  description: {
-    es: "Prestigioso colegio británico en La Bonanova con vistas al castillo de Bellver, siguiendo el currículo nacional de Inglaterra y Gales.",
-    en: "Prestigious British curriculum school in La Bonanova overlooking Bellver Castle with exceptional academic track record.",
-    ca: "Prestigiós col·legi britànic a La Bonanova amb excel·lència acadèmica i vistes al castell de Bellver.",
-    de: "Renommierte britische Schule in La Bonanova mit Blick auf Schloss Bellver und erstklassigen Examensergebnissen.",
+  fullDescription: {
+    es: "Queen ofrece un servicio profesional de máxima categoría en Mallorca. Prestigioso colegio británico en La Bonanova con vistas al castillo de Bellver, siguiendo el currículo nacional de Inglaterra y Gales. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Queen delivers premier professional service in Mallorca. Prestigious British curriculum school in La Bonanova overlooking Bellver Castle with exceptional academic track record. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Queen ofereix un servei professional de màxima categoria a Mallorca. Prestigiós col·legi britànic a La Bonanova amb excel·lència acadèmica i vistes al castell de Bellver. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Queen bietet erstklassigen professionellen Service auf Mallorca. Renommierte britische Schule in La Bonanova mit Blick auf Schloss Bellver und erstklassigen Examensergebnissen. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

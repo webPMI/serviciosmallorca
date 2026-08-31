@@ -38,10 +38,10 @@ export const ILLES_CENTRES_BENESTAR_CALVIA: ServiceItem = {
     de: "Fitness- und Wellnessclub in Calvià mit Hallenbad, Spa, großem Gerätebereich und Gruppenkursen.",
   },
   fullDescription: {
-    es: "Centro de fitness y bienestar en Calvià con piscina cubierta, spa, sala de fuerza y actividades dirigidas.",
-    en: "Calvià health and fitness club featuring indoor pool, wellness spa, gym floor, and group studios.",
-    ca: "Centre esportiu i de salut a Calvià amb piscina coberta, spa, sala de musculació i activitats.",
-    de: "Fitness- und Wellnessclub in Calvià mit Hallenbad, Spa, großem Gerätebereich und Gruppenkursen.",
+    es: "Illes Centres de Benestar (Calvià) se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Centro de fitness y bienestar en Calvià con piscina cubierta, spa, sala de fuerza y actividades dirigidas. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "Illes Centres de Benestar (Calvià) stands out as one of the premier athletic and fitness destinations in Mallorca. Calvià health and fitness club featuring indoor pool, wellness spa, gym floor, and group studios. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "Illes Centres de Benestar (Calvià) destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Centre esportiu i de salut a Calvià amb piscina coberta, spa, sala de musculació i activitats. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "Illes Centres de Benestar (Calvià) zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Fitness- und Wellnessclub in Calvià mit Hallenbad, Spa, großem Gerätebereich und Gruppenkursen. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

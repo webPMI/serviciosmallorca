@@ -38,10 +38,10 @@ export const PINS_PADEL_CLUB_PALMA: ServiceItem = {
     de: "Traditionsreicher Padel-Club in Palma mit 16 Außen- und Hallenplätzen unter Pinien, Pool und Restaurant.",
   },
   fullDescription: {
-    es: "Club de pádel de referencia en Palma con 16 pistas al aire libre y cubiertas, piscina de verano y restaurante.",
-    en: "Iconic padel club in Palma featuring 16 outdoor and covered courts set amidst pines, pool, and restaurant.",
-    ca: "Club de pàdel de referència a Palma amb 16 pistes a l'aire lliure i cobertes, piscina i restaurant.",
-    de: "Traditionsreicher Padel-Club in Palma mit 16 Außen- und Hallenplätzen unter Pinien, Pool und Restaurant.",
+    es: "Pins Pádel Club se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Club de pádel de referencia en Palma con 16 pistas al aire libre y cubiertas, piscina de verano y restaurante. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "Pins Pádel Club stands out as one of the premier athletic and fitness destinations in Mallorca. Iconic padel club in Palma featuring 16 outdoor and covered courts set amidst pines, pool, and restaurant. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "Pins Pádel Club destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Club de pàdel de referència a Palma amb 16 pistes a l Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "Pins Pádel Club zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Traditionsreicher Padel-Club in Palma mit 16 Außen- und Hallenplätzen unter Pinien, Pool und Restaurant. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

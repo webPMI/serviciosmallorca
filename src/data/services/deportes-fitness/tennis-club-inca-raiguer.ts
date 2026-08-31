@@ -38,10 +38,10 @@ export const TENNIS_CLUB_INCA_RAIGUER: ServiceItem = {
     de: "Traditionsreicher Tennisclub in Inca mit 8 Rotsandplätzen, Padel und Jugendakademie.",
   },
   fullDescription: {
-    es: "Club histórico del corazón de Mallorca con 8 pistas de tierra batida, pádel y escuela de cantera.",
-    en: "Historic tennis club in central Mallorca with 8 red clay courts, padel, and youth academy.",
-    ca: "Club històric d'Inca amb 8 pistes de terra batuda, pàdel i escola de tennis.",
-    de: "Traditionsreicher Tennisclub in Inca mit 8 Rotsandplätzen, Padel und Jugendakademie.",
+    es: "Tennis Club Inca se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Club histórico del corazón de Mallorca con 8 pistas de tierra batida, pádel y escuela de cantera. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "Tennis Club Inca stands out as one of the premier athletic and fitness destinations in Mallorca. Historic tennis club in central Mallorca with 8 red clay courts, padel, and youth academy. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "Tennis Club Inca destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Club històric d Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "Tennis Club Inca zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Traditionsreicher Tennisclub in Inca mit 8 Rotsandplätzen, Padel und Jugendakademie. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

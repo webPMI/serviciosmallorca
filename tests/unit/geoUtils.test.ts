@@ -43,4 +43,17 @@ describe("geoUtils - Haversine Proximity Engine", () => {
     const veryClose = getServicesNearLocation(SERVICES, userLocation, 0.5);
     expect(veryClose.every((s) => s.distanceKm <= 0.5)).toBe(true);
   });
+
+  it("ignora servicios sin coordenadas geográficas válidas", () => {
+    const userLocation = { lat: 39.5701, lng: 2.6515 };
+    const invalidService = {
+      id: "no-coords",
+      name: "No Coords",
+      category: "servicios-profesionales",
+      coordinates: null as any,
+    } as any;
+
+    const res = getServicesNearLocation([invalidService], userLocation);
+    expect(res).toEqual([]);
+  });
 });

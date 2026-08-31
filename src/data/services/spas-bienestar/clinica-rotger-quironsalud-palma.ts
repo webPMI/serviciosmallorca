@@ -38,10 +38,10 @@ export const clinica_rotger_quironsalud_palma: ServiceItem = {
     de: "Traditionsreiches Privatkrankenhaus im Zentrum von Palma mit modernster Diagnostik und 24h-Notfallambulanz.",
   },
   fullDescription: {
-    es: "Hospital privado de referencia histórica en el centro neurálgico de Palma con tecnología diagnóstica punta.",
-    en: "Historic landmark private hospital in Palma's city center equipped with state-of-the-art diagnostic technology.",
-    ca: "Hospital privat històric al centre de Palma amb tecnologia diagnòstica d'avantguarda i urgències.",
-    de: "Traditionsreiches Privatkrankenhaus im Zentrum von Palma mit modernster Diagnostik und 24h-Notfallambulanz.",
+    es: "Clínica Rotger Quirónsalud es un centro de referencia en salud, estética y bienestar en Mallorca. Hospital privado de referencia histórica en el centro neurálgico de Palma con tecnología diagnóstica punta. Ofrece un entorno exclusivo y relajante con equipamiento de vanguardia, profesionales titulados y atención personalizada en varios idiomas para residentes y visitantes de la isla.",
+    en: "Clínica Rotger Quirónsalud is a premier benchmark for health, aesthetic medicine, and wellness in Mallorca. Historic landmark private hospital in Palma Providing an exclusive, tranquil sanctuary with cutting-edge medical and wellness equipment, certified specialists, and multilingual client care.",
+    ca: "Clínica Rotger Quirónsalud és un centre de referència en salut, estètica i benestar a Mallorca. Hospital privat històric al centre de Palma amb tecnologia diagnòstica d Ofereix un entorn exclusiu amb equipament d'avantguarda, professionals titulats i atenció personalitzada multilingüe per a residents i visitants.",
+    de: "Clínica Rotger Quirónsalud ist eine führende Adresse für Gesundheit, Ästhetik und Wohlbefinden auf Mallorca. Traditionsreiches Privatkrankenhaus im Zentrum von Palma mit modernster Diagnostik und 24h-Notfallambulanz. Ausgestattet mit modernster Medizintechnik, qualifizierten Therapeuten und individueller mehrsprachiger Betreuung in stilvollem Ambiente.",
   },
   highlights: {
     es: [

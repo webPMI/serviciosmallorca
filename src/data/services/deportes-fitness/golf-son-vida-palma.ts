@@ -38,10 +38,10 @@ export const GOLF_SON_VIDA_PALMA: ServiceItem = {
     de: "Mallorcas traditionsreichster Golfplatz, 1964 eröffnet und ehemaliger European-Tour-Austragungsort.",
   },
   fullDescription: {
-    es: "El campo de golf más legendario y veterano de Mallorca, inaugurado en 1964 y sede de European Tour.",
-    en: "Mallorca's most historic golf course, opened in 1964 and former European Tour host.",
-    ca: "El camp de golf més veterà i emblemàtic de Mallorca, inaugurat el 1964 a Son Vida.",
-    de: "Mallorcas traditionsreichster Golfplatz, 1964 eröffnet und ehemaliger European-Tour-Austragungsort.",
+    es: "Golf Son Vida se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. El campo de golf más legendario y veterano de Mallorca, inaugurado en 1964 y sede de European Tour. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "Golf Son Vida stands out as one of the premier athletic and fitness destinations in Mallorca. Mallorca Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "Golf Son Vida destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. El camp de golf més veterà i emblemàtic de Mallorca, inaugurat el 1964 a Son Vida. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "Golf Son Vida zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Mallorcas traditionsreichster Golfplatz, 1964 eröffnet und ehemaliger European-Tour-Austragungsort. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

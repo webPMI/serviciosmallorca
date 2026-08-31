@@ -38,10 +38,10 @@ export const PALMA_RACKET_CLUB_SON_RAPINYA: ServiceItem = {
     de: "Traditionsreicher Racketsport-Club in Son Rapinya mit Rotsand-Tennis, Glas-Padel und Pool.",
   },
   fullDescription: {
-    es: "Club deportivo y social con solera en Son Rapinya: tenis en tierra batida, pádel de cristal y piscina.",
-    en: "Charming traditional racquet club in Son Rapinya: red clay tennis, glass padel, and summer pool.",
-    ca: "Club esportiu i social a Son Rapinya amb tennis de terra batuda, pàdel de vidre i piscina.",
-    de: "Traditionsreicher Racketsport-Club in Son Rapinya mit Rotsand-Tennis, Glas-Padel und Pool.",
+    es: "Palma Racket Club se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Club deportivo y social con solera en Son Rapinya: tenis en tierra batida, pádel de cristal y piscina. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "Palma Racket Club stands out as one of the premier athletic and fitness destinations in Mallorca. Charming traditional racquet club in Son Rapinya: red clay tennis, glass padel, and summer pool. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "Palma Racket Club destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Club esportiu i social a Son Rapinya amb tennis de terra batuda, pàdel de vidre i piscina. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "Palma Racket Club zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Traditionsreicher Racketsport-Club in Son Rapinya mit Rotsand-Tennis, Glas-Padel und Pool. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

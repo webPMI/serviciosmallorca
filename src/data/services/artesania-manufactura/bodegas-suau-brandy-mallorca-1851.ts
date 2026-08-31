@@ -40,11 +40,11 @@ export const bodegasSuauBrandyMallorca1851: ServiceItem = {
     ca: "Celler subterrani fundat el 1851 amb túnels de criança de brandi artesà al Pont d'Inca.",
     de: "Historische unterirdische Brennerei von 1851 mit Eichenfass-Reifekellern für erstklassigen mallorquinischen Brandy.",
   },
-  description: {
-    es: "Bodega subterránea fundada en 1851 con túneles de envejecimiento de barricas de roble americano centenarias de brandy Suau 15, 25 y 50 años.",
-    en: "Historic underground distillery founded in 1851 aging world-renowned handcrafted brandy in century-old oak soleras.",
-    ca: "Celler subterrani fundat el 1851 amb túnels de criança de brandi artesà al Pont d'Inca.",
-    de: "Historische unterirdische Brennerei von 1851 mit Eichenfass-Reifekellern für erstklassigen mallorquinischen Brandy.",
+  fullDescription: {
+    es: "Bodegas Suau - Brandy & Ron de Mallorca (1851) ofrece un servicio profesional de máxima categoría en Mallorca. Bodega subterránea fundada en 1851 con túneles de envejecimiento de barricas de roble americano centenarias de brandy Suau 15, 25 y 50 años. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Bodegas Suau - Brandy & Ron de Mallorca (1851) delivers premier professional service in Mallorca. Historic underground distillery founded in 1851 aging world-renowned handcrafted brandy in century-old oak soleras. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Bodegas Suau - Brandy & Ron de Mallorca (1851) ofereix un servei professional de màxima categoria a Mallorca. Celler subterrani fundat el 1851 amb túnels de criança de brandi artesà al Pont d Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Bodegas Suau - Brandy & Ron de Mallorca (1851) bietet erstklassigen professionellen Service auf Mallorca. Historische unterirdische Brennerei von 1851 mit Eichenfass-Reifekellern für erstklassigen mallorquinischen Brandy. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

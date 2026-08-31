@@ -38,10 +38,10 @@ export const CROSSFIT_PORTIXOL_PALMA: ServiceItem = {
     de: "Offizielle CrossFit-Box an der Promenade von Portixol mit Outdoor-Workouts und WODs.",
   },
   fullDescription: {
-    es: "Box oficial de CrossFit junto al paseo marítimo del Portitxol con entrenamientos al aire libre y WODs diarios.",
-    en: "Official CrossFit box by the Portixol promenade offering outdoor workouts and daily WODs.",
-    ca: "Box oficial de CrossFit al costat del passeig del Portitxol amb entrenaments exteriors.",
-    de: "Offizielle CrossFit-Box an der Promenade von Portixol mit Outdoor-Workouts und WODs.",
+    es: "CrossFit Portixol se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Box oficial de CrossFit junto al paseo marítimo del Portitxol con entrenamientos al aire libre y WODs diarios. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "CrossFit Portixol stands out as one of the premier athletic and fitness destinations in Mallorca. Official CrossFit box by the Portixol promenade offering outdoor workouts and daily WODs. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "CrossFit Portixol destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Box oficial de CrossFit al costat del passeig del Portitxol amb entrenaments exteriors. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "CrossFit Portixol zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Offizielle CrossFit-Box an der Promenade von Portixol mit Outdoor-Workouts und WODs. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

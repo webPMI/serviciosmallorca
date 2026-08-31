@@ -40,11 +40,11 @@ export const casaJacintoGenovaBrasas: ServiceItem = {
     ca: "Temple de carns a la brasa de llenya d'alzina i cuina tradicional al poble de Gènova.",
     de: "Legendäres Fleischrestaurant in Gènova für über Eichenholz gegrillte gereifte Steaks.",
   },
-  description: {
-    es: "Templo legendario de carnes maduradas a la brasa de leña de encina y cocina tradicional en el pueblo de Gènova.",
-    en: "Legendary temple for oak charcoal grilled dry-aged meats and traditional cuisine in the village of Genova.",
-    ca: "Temple de carns a la brasa de llenya d'alzina i cuina tradicional al poble de Gènova.",
-    de: "Legendäres Fleischrestaurant in Gènova für über Eichenholz gegrillte gereifte Steaks.",
+  fullDescription: {
+    es: "Restaurante Casa Jacinto Gènova ofrece un servicio profesional de máxima categoría en Mallorca. Templo legendario de carnes maduradas a la brasa de leña de encina y cocina tradicional en el pueblo de Gènova. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Restaurante Casa Jacinto Gènova delivers premier professional service in Mallorca. Legendary temple for oak charcoal grilled dry-aged meats and traditional cuisine in the village of Genova. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Restaurante Casa Jacinto Gènova ofereix un servei professional de màxima categoria a Mallorca. Temple de carns a la brasa de llenya d Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Restaurante Casa Jacinto Gènova bietet erstklassigen professionellen Service auf Mallorca. Legendäres Fleischrestaurant in Gènova für über Eichenholz gegrillte gereifte Steaks. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

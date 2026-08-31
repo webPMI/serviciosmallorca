@@ -44,10 +44,10 @@ export const fisioterapia_osteopatia_palma_salut_clinica: ServiceItem = {
     de: "Praxis für Physiotherapie und Osteopathie in Palma: Ultraschalldiagnostik, Dry Needling, Indiba-Diathermie und Sportreha.",
   },
   fullDescription: {
-    es: "Equipo de fisioterapeutas y osteópatas colegiados en las Islas Baleares (COFIB). Tratamiento integral de dolores de espalda, hernias discales, sobrecargas deportivas en ciclistas y corredores, y rehabilitación postquirúrgica con tecnología médica Indiba Activ.",
-    en: "Team of licensed Balearic physiotherapists and osteopaths (COFIB) treating back pain, sports injuries in cyclists/runners, and post-surgery rehab using Indiba.",
-    ca: "Equip de fisioterapeutes col·legiats al COFIB especialitzats en dolor d'esquena, lesions de ciclistes i recuperació esportiva amb Indiba.",
-    de: "Staatlich anerkannte Physiotherapeuten und Osteopathen (COFIB) für Rückenschmerzen, Sportverletzungen bei Radfahrern und Indiba-Therapie.",
+    es: "Clínica de Fisioterápia & Osteopatía Palma Salut es un centro de referencia en salud, estética y bienestar en Mallorca. Centro de fisioterapia avanzada y osteopatía en Palma: ecografía musculoesquelética, punción seca, diatermia Indiba y readaptación de lesiones. Ofrece un entorno exclusivo y relajante con equipamiento de vanguardia, profesionales titulados y atención personalizada en varios idiomas para residentes y visitantes de la isla.",
+    en: "Clínica de Fisioterápia & Osteopatía Palma Salut is a premier benchmark for health, aesthetic medicine, and wellness in Mallorca. Advanced physiotherapy and osteopathy clinic in Palma: musculoskeletal ultrasound, dry needling, Indiba radiofrequency, and sports rehabilitation. Providing an exclusive, tranquil sanctuary with cutting-edge medical and wellness equipment, certified specialists, and multilingual client care.",
+    ca: "Clínica de Fisioterápia & Osteopatía Palma Salut és un centre de referència en salut, estètica i benestar a Mallorca. Clínica de fisioteràpia avançada i osteopatia a Palma amb ecografia musculoesquelètica, Indiba i punció seca. Ofereix un entorn exclusiu amb equipament d'avantguarda, professionals titulats i atenció personalitzada multilingüe per a residents i visitants.",
+    de: "Clínica de Fisioterápia & Osteopatía Palma Salut ist eine führende Adresse für Gesundheit, Ästhetik und Wohlbefinden auf Mallorca. Praxis für Physiotherapie und Osteopathie in Palma: Ultraschalldiagnostik, Dry Needling, Indiba-Diathermie und Sportreha. Ausgestattet mit modernster Medizintechnik, qualifizierten Therapeuten und individueller mehrsprachiger Betreuung in stilvollem Ambiente.",
   },
   highlights: {
     es: [

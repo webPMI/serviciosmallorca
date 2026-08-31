@@ -38,10 +38,10 @@ export const ILLES_CENTRES_BENESTAR_INCA: ServiceItem = {
     de: "Umfassender Sportclub in Inca mit Hallenbad, Thermal-Spa und Technogym-Geräten.",
   },
   fullDescription: {
-    es: "El club deportivo integral del Raiguer con piscina cubierta, spa termal y zona de fuerza Technogym.",
-    en: "Central Mallorca's premier sports club featuring indoor pool, thermal spa, and Technogym floor.",
-    ca: "Club esportiu integral a Inca amb piscina coberta, spa termal i sala Technogym.",
-    de: "Umfassender Sportclub in Inca mit Hallenbad, Thermal-Spa und Technogym-Geräten.",
+    es: "Illes Centres de Benestar (Inca) se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. El club deportivo integral del Raiguer con piscina cubierta, spa termal y zona de fuerza Technogym. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "Illes Centres de Benestar (Inca) stands out as one of the premier athletic and fitness destinations in Mallorca. Central Mallorca Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "Illes Centres de Benestar (Inca) destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Club esportiu integral a Inca amb piscina coberta, spa termal i sala Technogym. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "Illes Centres de Benestar (Inca) zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Umfassender Sportclub in Inca mit Hallenbad, Thermal-Spa und Technogym-Geräten. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

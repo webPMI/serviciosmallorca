@@ -40,11 +40,11 @@ export const ceramicaTerraCuitaPortol: ServiceItem = {
     ca: "Cinquena generació de mestres ollers a Pòrtol (Marratxí) creant vaixelles i greixoneres.",
     de: "Töpfermeister in 5. Generation in Pòrtol (Marratxí) mit handglasierter mediterraner Tischkultur und Finca-Greixoneres.",
   },
-  description: {
-    es: "Quinta generación de maestros alfareros en Pòrtol (Marratxí), creando vajillas mediterráneas esmaltadas a mano y greixoneres.",
-    en: "Fifth generation master potters in Pòrtol crafting hand-glazed Mediterranean tableware and traditional clay cooking pots.",
-    ca: "Cinquena generació de mestres ollers a Pòrtol (Marratxí) creant vaixelles i greixoneres.",
-    de: "Töpfermeister in 5. Generation in Pòrtol (Marratxí) mit handglasierter mediterraner Tischkultur und Finca-Greixoneres.",
+  fullDescription: {
+    es: "Ceràmica Terra Cuita Pòrtol (Fundada 1861) ofrece un servicio profesional de máxima categoría en Mallorca. Quinta generación de maestros alfareros en Pòrtol (Marratxí), creando vajillas mediterráneas esmaltadas a mano y greixoneres. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Ceràmica Terra Cuita Pòrtol (Fundada 1861) delivers premier professional service in Mallorca. Fifth generation master potters in Pòrtol crafting hand-glazed Mediterranean tableware and traditional clay cooking pots. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Ceràmica Terra Cuita Pòrtol (Fundada 1861) ofereix un servei professional de màxima categoria a Mallorca. Cinquena generació de mestres ollers a Pòrtol (Marratxí) creant vaixelles i greixoneres. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Ceràmica Terra Cuita Pòrtol (Fundada 1861) bietet erstklassigen professionellen Service auf Mallorca. Töpfermeister in 5. Generation in Pòrtol (Marratxí) mit handglasierter mediterraner Tischkultur und Finca-Greixoneres. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

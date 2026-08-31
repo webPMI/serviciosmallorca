@@ -40,11 +40,11 @@ export const seniorsResidenciasMallorcaPalma: ServiceItem = {
     ca: "Residència de gent gran i centre de dia amb atenció mèdica 24 hores i fisioteràpia a Palma.",
     de: "Seniorenresidenz und Tagespflegeeinrichtung mit 24-Stunden-Pflege, Physiotherapie und barrierefreien Gartenanlagen.",
   },
-  description: {
-    es: "Centro residencial y estancia de día para personas mayores con atención médica 24h, fisioterapia y jardín sensorial.",
-    en: "Senior residential living and day care center providing 24/7 nursing, rehabilitation physiotherapy, and therapy gardens.",
-    ca: "Residència de gent gran i centre de dia amb atenció mèdica 24 hores i fisioteràpia a Palma.",
-    de: "Seniorenresidenz und Tagespflegeeinrichtung mit 24-Stunden-Pflege, Physiotherapie und barrierefreien Gartenanlagen.",
+  fullDescription: {
+    es: "Seniors Residencias Palma & Can Picafort ofrece un servicio profesional de máxima categoría en Mallorca. Centro residencial y estancia de día para personas mayores con atención médica 24h, fisioterapia y jardín sensorial. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Seniors Residencias Palma & Can Picafort delivers premier professional service in Mallorca. Senior residential living and day care center providing 24/7 nursing, rehabilitation physiotherapy, and therapy gardens. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Seniors Residencias Palma & Can Picafort ofereix un servei professional de màxima categoria a Mallorca. Residència de gent gran i centre de dia amb atenció mèdica 24 hores i fisioteràpia a Palma. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Seniors Residencias Palma & Can Picafort bietet erstklassigen professionellen Service auf Mallorca. Seniorenresidenz und Tagespflegeeinrichtung mit 24-Stunden-Pflege, Physiotherapie und barrierefreien Gartenanlagen. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

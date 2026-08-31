@@ -40,11 +40,11 @@ export const carpinteriaEbonisteriaFusteriaPalma: ServiceItem = {
     ca: "Mestres fusters artesans especialitzats en persianes mallorquines i bigues de fusta.",
     de: "Schreinermeisterwerkstatt für original mallorquinische Fensterläden (Persianas), Deckenbalken und Holztüren nach Maß.",
   },
-  description: {
-    es: "Maestros carpinteros especializados en vigas vistas de madera de norte viejo, persianas mallorquinas y puertas señoriales.",
-    en: "Master woodworkers crafting traditional Mallorcan shutters, exposed pine beams, and custom hardwood entrance doors.",
-    ca: "Mestres fusters artesans especialitzats en persianes mallorquines i bigues de fusta.",
-    de: "Schreinermeisterwerkstatt für original mallorquinische Fensterläden (Persianas), Deckenbalken und Holztüren nach Maß.",
+  fullDescription: {
+    es: "Fusteria & Ebanistería Tradicional de Mallorca ofrece un servicio profesional de máxima categoría en Mallorca. Maestros carpinteros especializados en vigas vistas de madera de norte viejo, persianas mallorquinas y puertas señoriales. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Fusteria & Ebanistería Tradicional de Mallorca delivers premier professional service in Mallorca. Master woodworkers crafting traditional Mallorcan shutters, exposed pine beams, and custom hardwood entrance doors. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Fusteria & Ebanistería Tradicional de Mallorca ofereix un servei professional de màxima categoria a Mallorca. Mestres fusters artesans especialitzats en persianes mallorquines i bigues de fusta. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Fusteria & Ebanistería Tradicional de Mallorca bietet erstklassigen professionellen Service auf Mallorca. Schreinermeisterwerkstatt für original mallorquinische Fensterläden (Persianas), Deckenbalken und Holztüren nach Maß. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

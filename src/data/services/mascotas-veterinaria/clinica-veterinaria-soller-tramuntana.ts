@@ -40,11 +40,11 @@ export const clinicaVeterinariaSollerTramuntana: ServiceItem = {
     ca: "Atenció veterinària integral per a mascotes i cavalls a la Vall de Sóller.",
     de: "Tierärztliche Versorgung für Kleintiere und Pferde im Tal von Sóller und der Tramuntana.",
   },
-  description: {
-    es: "Atención veterinaria integral para animales de compañía y equinos en el valle de Sóller y la Serra de Tramuntana.",
-    en: "Comprehensive veterinary care for pets and horses in Sóller Valley and the Tramuntana region.",
-    ca: "Atenció veterinària integral per a mascotes i cavalls a la Vall de Sóller.",
-    de: "Tierärztliche Versorgung für Kleintiere und Pferde im Tal von Sóller und der Tramuntana.",
+  fullDescription: {
+    es: "Clínica Veterinària Sóller & Vall de Tramuntana ofrece un servicio profesional de máxima categoría en Mallorca. Atención veterinaria integral para animales de compañía y equinos en el valle de Sóller y la Serra de Tramuntana. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Clínica Veterinària Sóller & Vall de Tramuntana delivers premier professional service in Mallorca. Comprehensive veterinary care for pets and horses in Sóller Valley and the Tramuntana region. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Clínica Veterinària Sóller & Vall de Tramuntana ofereix un servei professional de màxima categoria a Mallorca. Atenció veterinària integral per a mascotes i cavalls a la Vall de Sóller. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Clínica Veterinària Sóller & Vall de Tramuntana bietet erstklassigen professionellen Service auf Mallorca. Tierärztliche Versorgung für Kleintiere und Pferde im Tal von Sóller und der Tramuntana. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

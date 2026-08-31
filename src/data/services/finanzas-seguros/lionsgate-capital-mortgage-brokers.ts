@@ -40,11 +40,11 @@ export const lionsgateCapitalMortgageBrokers: ServiceItem = {
     ca: "Brokers hipotecaris líders per a compradors internacionals a Palma.",
     de: "Führender Hypothekenmakler auf Mallorca für internationale Käufer.",
   },
-  description: {
-    es: "Financiación hipotecaria para villas de lujo y acuerdos preferenciales con la banca española e internacional.",
-    en: "Mortgage financing for luxury properties working with premier global and Spanish banks.",
-    ca: "Finançament hipotecari per a vil·les de luxe a Balears.",
-    de: "Baufinanzierung für Luxusimmobilien mit spanischen und europäischen Bankpartnern.",
+  fullDescription: {
+    es: "Lionsgate Capital Mortgages ofrece un servicio profesional de máxima categoría en Mallorca. Financiación hipotecaria para villas de lujo y acuerdos preferenciales con la banca española e internacional. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Lionsgate Capital Mortgages delivers premier professional service in Mallorca. Mortgage financing for luxury properties working with premier global and Spanish banks. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Lionsgate Capital Mortgages ofereix un servei professional de màxima categoria a Mallorca. Finançament hipotecari per a vil·les de luxe a Balears. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Lionsgate Capital Mortgages bietet erstklassigen professionellen Service auf Mallorca. Baufinanzierung für Luxusimmobilien mit spanischen und europäischen Bankpartnern. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

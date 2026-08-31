@@ -40,11 +40,11 @@ export const sonMoraguesValldemossaAceite: ServiceItem = {
     ca: "Possessió històrica del segle XIV a Valldemossa que produeix oli d'oliva verge extra ecològic DOP.",
     de: "Historisches Landgut aus dem 14. Jahrhundert in Valldemossa mit bio-zertifiziertem Olivenöl aus uralten Hainen.",
   },
-  description: {
-    es: "Finca histórica del siglo XIV en Valldemossa que produce aceite de oliva virgen extra ecológico de olivos milenarios.",
-    en: "Historic 14th-century Valldemossa estate producing organic extra virgin olive oil from ancient olive trees.",
-    ca: "Possessió històrica del segle XIV a Valldemossa que produeix oli d'oliva verge extra ecològic DOP.",
-    de: "Historisches Landgut aus dem 14. Jahrhundert in Valldemossa mit bio-zertifiziertem Olivenöl aus uralten Hainen.",
+  fullDescription: {
+    es: "Son Moragues Organic Olive Oil & Farm Valldemossa ofrece un servicio profesional de máxima categoría en Mallorca. Finca histórica del siglo XIV en Valldemossa que produce aceite de oliva virgen extra ecológico de olivos milenarios. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Son Moragues Organic Olive Oil & Farm Valldemossa delivers premier professional service in Mallorca. Historic 14th-century Valldemossa estate producing organic extra virgin olive oil from ancient olive trees. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Son Moragues Organic Olive Oil & Farm Valldemossa ofereix un servei professional de màxima categoria a Mallorca. Possessió històrica del segle XIV a Valldemossa que produeix oli d Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Son Moragues Organic Olive Oil & Farm Valldemossa bietet erstklassigen professionellen Service auf Mallorca. Historisches Landgut aus dem 14. Jahrhundert in Valldemossa mit bio-zertifiziertem Olivenöl aus uralten Hainen. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

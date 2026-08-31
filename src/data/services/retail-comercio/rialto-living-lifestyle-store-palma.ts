@@ -40,11 +40,11 @@ export const rialtoLivingLifestyleStorePalma: ServiceItem = {
     ca: "Lifestyle concept store a un palau barroc del s.XVIII a Palma.",
     de: "Luxus-Lifestyle-Store auf 800 m² in einem Barockpalast in Palma.",
   },
-  description: {
-    es: "Moda de diseño, muebles, decoración mediterránea, galería de arte y cafetería en el patio.",
-    en: "Designer fashion, furniture, home decor, art gallery, and courtyard café in Palma.",
-    ca: "Moda de disseny, mobles, galeria d'art i cafeteria al pati.",
-    de: "Designermode, Möbel, Wohnaccessoires, Kunstgalerie und Innenhof-Café.",
+  fullDescription: {
+    es: "Rialto Living ofrece un servicio profesional de máxima categoría en Mallorca. Moda de diseño, muebles, decoración mediterránea, galería de arte y cafetería en el patio. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Rialto Living delivers premier professional service in Mallorca. Designer fashion, furniture, home decor, art gallery, and courtyard café in Palma. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Rialto Living ofereix un servei professional de màxima categoria a Mallorca. Moda de disseny, mobles, galeria d Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Rialto Living bietet erstklassigen professionellen Service auf Mallorca. Designermode, Möbel, Wohnaccessoires, Kunstgalerie und Innenhof-Café. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

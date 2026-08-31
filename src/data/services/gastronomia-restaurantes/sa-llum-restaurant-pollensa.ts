@@ -40,11 +40,11 @@ export const saLlumRestaurantPollensa: ServiceItem = {
     ca: "Restaurant íntim al centre de Pollença amb carns a la brasa i producte local.",
     de: "Romantisches Restaurant im Zentrum von Pollença mit Grillspezialitäten und marktfrischen Zutaten.",
   },
-  description: {
-    es: "Restaurante íntimo en el casco histórico de Pollença especializado en carnes a la brasa y productos del huerto local.",
-    en: "Intimate stone restaurant in Pollença's historic center specializing in grilled meats and local garden produce.",
-    ca: "Restaurant íntim al centre de Pollença amb carns a la brasa i producte local.",
-    de: "Romantisches Restaurant im Zentrum von Pollença mit Grillspezialitäten und marktfrischen Zutaten.",
+  fullDescription: {
+    es: "Restaurante Sa Llum Pollença ofrece un servicio profesional de máxima categoría en Mallorca. Restaurante íntimo en el casco histórico de Pollença especializado en carnes a la brasa y productos del huerto local. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Restaurante Sa Llum Pollença delivers premier professional service in Mallorca. Intimate stone restaurant in Pollença Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Restaurante Sa Llum Pollença ofereix un servei professional de màxima categoria a Mallorca. Restaurant íntim al centre de Pollença amb carns a la brasa i producte local. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Restaurante Sa Llum Pollença bietet erstklassigen professionellen Service auf Mallorca. Romantisches Restaurant im Zentrum von Pollença mit Grillspezialitäten und marktfrischen Zutaten. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

@@ -40,11 +40,11 @@ export const residenciaSeniorValldemossaLuxury: ServiceItem = {
     ca: "Residència de luxe per a gent gran a Valldemossa amb atenció mèdica 24h.",
     de: "Exklusive Seniorenresidenz und Tagespflege in Valldemossa mit 24h-Pflegefachkräften und weitläufigen Gartenanlagen.",
   },
-  description: {
-    es: "Residencia de lujo para personas mayores en un entorno natural privilegiado con médico propio, enfermería 24h y jardines mediterráneos.",
-    en: "Luxury senior living residence and day center in a tranquil Tramuntana setting with 24/7 medical and nursing staff.",
-    ca: "Residència de luxe per a gent gran a Valldemossa amb atenció mèdica 24h.",
-    de: "Exklusive Seniorenresidenz und Tagespflege in Valldemossa mit 24h-Pflegefachkräften und weitläufigen Gartenanlagen.",
+  fullDescription: {
+    es: "Residencia Senior Valldemossa & Centro de Día ofrece un servicio profesional de máxima categoría en Mallorca. Residencia de lujo para personas mayores en un entorno natural privilegiado con médico propio, enfermería 24h y jardines mediterráneos. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Residencia Senior Valldemossa & Centro de Día delivers premier professional service in Mallorca. Luxury senior living residence and day center in a tranquil Tramuntana setting with 24/7 medical and nursing staff. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Residencia Senior Valldemossa & Centro de Día ofereix un servei professional de màxima categoria a Mallorca. Residència de luxe per a gent gran a Valldemossa amb atenció mèdica 24h. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Residencia Senior Valldemossa & Centro de Día bietet erstklassigen professionellen Service auf Mallorca. Exklusive Seniorenresidenz und Tagespflege in Valldemossa mit 24h-Pflegefachkräften und weitläufigen Gartenanlagen. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

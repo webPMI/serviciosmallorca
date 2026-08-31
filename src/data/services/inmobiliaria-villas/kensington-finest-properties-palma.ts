@@ -40,11 +40,11 @@ export const kensingtonFinestPropertiesPalma: ServiceItem = {
     ca: "Boutique immobiliària internacional al Passeig del Born de Palma.",
     de: "Internationale Immobilien-Boutique am Paseo del Borne für Altstadt-Penthouses und Villen in Son Vida.",
   },
-  description: {
-    es: "Boutique inmobiliaria internacional en el Paseo del Borne especializada en áticos en el Casco Antiguo y villas en Son Vida.",
-    en: "International boutique agency on Paseo del Borne specializing in Old Town penthouses and Son Vida luxury villas.",
-    ca: "Boutique immobiliària internacional al Passeig del Born de Palma.",
-    de: "Internationale Immobilien-Boutique am Paseo del Borne für Altstadt-Penthouses und Villen in Son Vida.",
+  fullDescription: {
+    es: "Kensington Finest Properties International Palma ofrece un servicio profesional de máxima categoría en Mallorca. Boutique inmobiliaria internacional en el Paseo del Borne especializada en áticos en el Casco Antiguo y villas en Son Vida. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Kensington Finest Properties International Palma delivers premier professional service in Mallorca. International boutique agency on Paseo del Borne specializing in Old Town penthouses and Son Vida luxury villas. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Kensington Finest Properties International Palma ofereix un servei professional de màxima categoria a Mallorca. Boutique immobiliària internacional al Passeig del Born de Palma. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Kensington Finest Properties International Palma bietet erstklassigen professionellen Service auf Mallorca. Internationale Immobilien-Boutique am Paseo del Borne für Altstadt-Penthouses und Villen in Son Vida. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

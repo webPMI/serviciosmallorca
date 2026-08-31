@@ -38,10 +38,10 @@ export const palma_clinic_international_center: ServiceItem = {
     de: "Privates internationales Ärztezentrum mit deutschen und englischen Fachärzten und Check-up-Programmen.",
   },
   fullDescription: {
-    es: "Centro médico internacional privado con especialistas de habla alemana e inglesa y chequeos preventivos integrales.",
-    en: "Private international medical center with German and English-speaking doctors and executive health checkups.",
-    ca: "Centre mèdic internacional privat amb especialistes multilingües i revisions mèdiques completes.",
-    de: "Privates internationales Ärztezentrum mit deutschen und englischen Fachärzten und Check-up-Programmen.",
+    es: "Palma Clinic International Medical Center es un centro de referencia en salud, estética y bienestar en Mallorca. Centro médico internacional privado con especialistas de habla alemana e inglesa y chequeos preventivos integrales. Ofrece un entorno exclusivo y relajante con equipamiento de vanguardia, profesionales titulados y atención personalizada en varios idiomas para residentes y visitantes de la isla.",
+    en: "Palma Clinic International Medical Center is a premier benchmark for health, aesthetic medicine, and wellness in Mallorca. Private international medical center with German and English-speaking doctors and executive health checkups. Providing an exclusive, tranquil sanctuary with cutting-edge medical and wellness equipment, certified specialists, and multilingual client care.",
+    ca: "Palma Clinic International Medical Center és un centre de referència en salut, estètica i benestar a Mallorca. Centre mèdic internacional privat amb especialistes multilingües i revisions mèdiques completes. Ofereix un entorn exclusiu amb equipament d'avantguarda, professionals titulats i atenció personalitzada multilingüe per a residents i visitants.",
+    de: "Palma Clinic International Medical Center ist eine führende Adresse für Gesundheit, Ästhetik und Wohlbefinden auf Mallorca. Privates internationales Ärztezentrum mit deutschen und englischen Fachärzten und Check-up-Programmen. Ausgestattet mit modernster Medizintechnik, qualifizierten Therapeuten und individueller mehrsprachiger Betreuung in stilvollem Ambiente.",
   },
   highlights: {
     es: [

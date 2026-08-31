@@ -40,11 +40,11 @@ export const bodegaRibasConsellVinos: ServiceItem = {
     ca: "El celler més antic de Mallorca (fundat el 1711) a Consell.",
     de: "Das älteste Weingut Mallorcas (gegründet 1711) in Consell.",
   },
-  description: {
-    es: "Elaboración de vinos de autor con Mantonegro, Gargollassa y Prensal en una casa señorial del s.XVIII.",
-    en: "Artisanal wines from Mantonegro, Gargollassa, and Prensal in an 18th-century manor house.",
-    ca: "Vins d'autor amb varietats autòctones a una possessió històrica.",
-    de: "Spitzenweine aus autochthonen Rebsorten in einem historischen Herrenhaus aus dem 18. Jahrhundert.",
+  fullDescription: {
+    es: "Bodega Ribas Consell ofrece un servicio profesional de máxima categoría en Mallorca. Elaboración de vinos de autor con Mantonegro, Gargollassa y Prensal en una casa señorial del s.XVIII. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Bodega Ribas Consell delivers premier professional service in Mallorca. Artisanal wines from Mantonegro, Gargollassa, and Prensal in an 18th-century manor house. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Bodega Ribas Consell ofereix un servei professional de màxima categoria a Mallorca. Vins d Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Bodega Ribas Consell bietet erstklassigen professionellen Service auf Mallorca. Spitzenweine aus autochthonen Rebsorten in einem historischen Herrenhaus aus dem 18. Jahrhundert. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

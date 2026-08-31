@@ -38,10 +38,10 @@ export const SAMADHI_YOGA_POLLENSA: ServiceItem = {
     de: "Ruhiges Yogastudio in Pollença mit Hatha, Ashtanga, Atemübungen und Klangmeditation.",
   },
   fullDescription: {
-    es: "Estudio de yoga sereno en Pollença con clases de Hatha, Ashtanga, pranayama y meditación sonora.",
-    en: "Serene yoga studio in Pollença offering Hatha, Ashtanga, pranayama, and sound meditation.",
-    ca: "Estudi de ioga serè a Pollença amb Hatha, Ashtanga, respiració i meditació sonora.",
-    de: "Ruhiges Yogastudio in Pollença mit Hatha, Ashtanga, Atemübungen und Klangmeditation.",
+    es: "Samadhi Yoga Pollença se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Estudio de yoga sereno en Pollença con clases de Hatha, Ashtanga, pranayama y meditación sonora. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "Samadhi Yoga Pollença stands out as one of the premier athletic and fitness destinations in Mallorca. Serene yoga studio in Pollença offering Hatha, Ashtanga, pranayama, and sound meditation. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "Samadhi Yoga Pollença destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Estudi de ioga serè a Pollença amb Hatha, Ashtanga, respiració i meditació sonora. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "Samadhi Yoga Pollença zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Ruhiges Yogastudio in Pollença mit Hatha, Ashtanga, Atemübungen und Klangmeditation. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

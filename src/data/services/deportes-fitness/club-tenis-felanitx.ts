@@ -38,10 +38,10 @@ export const CLUB_TENIS_FELANITX: ServiceItem = {
     de: "Sportverein in Felanitx mit Rotsand-Tennisplätzen, Padel, Außenpool und Gastronomie.",
   },
   fullDescription: {
-    es: "Club deportivo en Felanitx con pistas de tenis en tierra batida, pádel, piscina y bar social.",
-    en: "Sports club in Felanitx offering clay tennis courts, padel, pool, and clubhouse bar.",
-    ca: "Club esportiu a Felanitx amb pistes de terra batuda, pàdel, piscina i bar.",
-    de: "Sportverein in Felanitx mit Rotsand-Tennisplätzen, Padel, Außenpool und Gastronomie.",
+    es: "Club Tenis Felanitx se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Club deportivo en Felanitx con pistas de tenis en tierra batida, pádel, piscina y bar social. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "Club Tenis Felanitx stands out as one of the premier athletic and fitness destinations in Mallorca. Sports club in Felanitx offering clay tennis courts, padel, pool, and clubhouse bar. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "Club Tenis Felanitx destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Club esportiu a Felanitx amb pistes de terra batuda, pàdel, piscina i bar. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "Club Tenis Felanitx zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Sportverein in Felanitx mit Rotsand-Tennisplätzen, Padel, Außenpool und Gastronomie. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

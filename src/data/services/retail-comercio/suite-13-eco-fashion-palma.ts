@@ -40,11 +40,11 @@ export const suite13EcoFashionPalma: ServiceItem = {
     ca: "Moda sostenible dissenyada a Mallorca amb lli i cotó orgànic.",
     de: "Nachhaltige Modemarke, entworfen auf Mallorca, aus Naturleinen, Bio-Baumwolle und Tencel.",
   },
-  description: {
-    es: "Moda sostenible diseñada en Mallorca con tejidos naturales (lino, algodón orgánico, Tencel) de producción ética.",
-    en: "Sustainable fashion brand designed in Mallorca using organic cotton, pure linen, and eco-friendly Tencel.",
-    ca: "Moda sostenible dissenyada a Mallorca amb lli i cotó orgànic.",
-    de: "Nachhaltige Modemarke, entworfen auf Mallorca, aus Naturleinen, Bio-Baumwolle und Tencel.",
+  fullDescription: {
+    es: "Suite 13 Sustainable Mediterranean Fashion ofrece un servicio profesional de máxima categoría en Mallorca. Moda sostenible diseñada en Mallorca con tejidos naturales (lino, algodón orgánico, Tencel) de producción ética. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Suite 13 Sustainable Mediterranean Fashion delivers premier professional service in Mallorca. Sustainable fashion brand designed in Mallorca using organic cotton, pure linen, and eco-friendly Tencel. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Suite 13 Sustainable Mediterranean Fashion ofereix un servei professional de màxima categoria a Mallorca. Moda sostenible dissenyada a Mallorca amb lli i cotó orgànic. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Suite 13 Sustainable Mediterranean Fashion bietet erstklassigen professionellen Service auf Mallorca. Nachhaltige Modemarke, entworfen auf Mallorca, aus Naturleinen, Bio-Baumwolle und Tencel. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

@@ -40,11 +40,11 @@ export const katmanduParkMagalufCalvia: ServiceItem = {
     ca: "Parc temàtic d'aventures a Calvià amb la famosa casa cap per avall, cinema 4D i parc aquàtic.",
     de: "Erlebnispark in Calvià mit dem berühmten auf dem Kopf stehenden Haus, 4D-Kino und Splash-Wasserpark.",
   },
-  description: {
-    es: "Parque temático de aventuras en Calvià con la mítica casa al revés 'The House', cine 4D, laser tag y parque acuático.",
-    en: "Adventure theme park in Calvià featuring the iconic upside-down house, 4D cinema, laser challenges, and splash park.",
-    ca: "Parc temàtic d'aventures a Calvià amb la famosa casa cap per avall, cinema 4D i parc aquàtic.",
-    de: "Erlebnispark in Calvià mit dem berühmten auf dem Kopf stehenden Haus, 4D-Kino und Splash-Wasserpark.",
+  fullDescription: {
+    es: "Katmandu Park Theme Park Calvià ofrece un servicio profesional de máxima categoría en Mallorca. Parque temático de aventuras en Calvià con la mítica casa al revés  Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Katmandu Park Theme Park Calvià delivers premier professional service in Mallorca. Adventure theme park in Calvià featuring the iconic upside-down house, 4D cinema, laser challenges, and splash park. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Katmandu Park Theme Park Calvià ofereix un servei professional de màxima categoria a Mallorca. Parc temàtic d Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Katmandu Park Theme Park Calvià bietet erstklassigen professionellen Service auf Mallorca. Erlebnispark in Calvià mit dem berühmten auf dem Kopf stehenden Haus, 4D-Kino und Splash-Wasserpark. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

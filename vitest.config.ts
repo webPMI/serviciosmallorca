@@ -14,11 +14,11 @@ export default defineConfig({
       // Infraestructura externa no cubrible sin entorno Firebase real
       exclude: ["src/lib/firebase.ts", "src/lib/initAuthNavbar.ts"],
       thresholds: {
-        // Puerta de calidad v1.6 (31/08/2026): Cobertura de estrés 80 suites, 702 tests, cero datos falsos
-        statements: 96,
-        branches: 85,
+        // Puerta de calidad v1.7 (31/08/2026): Cobertura masiva 81 suites, 709 tests, cero datos falsos
+        statements: 97,
+        branches: 86,
         functions: 98,
-        lines: 96,
+        lines: 97,
       },
     },
   },

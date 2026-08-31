@@ -44,10 +44,10 @@ export const balneario_font_santa_thermal_spa_campos: ServiceItem = {
     de: "Das einzige Thermalbad mit natürlichen heilenden Mineralquellen auf den Balearen (38°C) mit Thermalparcours.",
   },
   fullDescription: {
-    es: "Fontsanta aprovecha las únicas aguas termales subterráneas que emergen a 38,3°C ricas en minerales y salinidad en el sur de Mallorca. Sus baños termales individuales, gruta de vapor natural, jacuzzis termales y masajes ayurvédicos proporcionan bienestar celular profundo.",
-    en: "Fontsanta harnesses the Balearics' sole natural subterranean thermal spring waters (38.3°C), rich in minerals, for restorative thermal bathing and ayurvedic care.",
-    ca: "Aigües termals subterrànies a 38,3°C riques en minerals amb banys individuals, gruta de vapor i tractaments de bellesa.",
-    de: "Naturheilquellen mit 38,3°C warmem Thermalwasser, Thermal-Whirlpools, Dampfgrotte und ayurvedischen Wellness-Behandlungen.",
+    es: "Balneario & Hotel Thermal Spa Fontsanta Campos es un centro de referencia en salud, estética y bienestar en Mallorca. El único balneario de aguas termales mineromedicinales naturales de las Islas Baleares (38°C), circuito hidrotermal y tratamientos dérmicos. Ofrece un entorno exclusivo y relajante con equipamiento de vanguardia, profesionales titulados y atención personalizada en varios idiomas para residentes y visitantes de la isla.",
+    en: "Balneario & Hotel Thermal Spa Fontsanta Campos is a premier benchmark for health, aesthetic medicine, and wellness in Mallorca. The only natural mineral-medicinal thermal spring spa in the Balearic Islands (38°C), featuring hydrothermal baths and wellness therapies. Providing an exclusive, tranquil sanctuary with cutting-edge medical and wellness equipment, certified specialists, and multilingual client care.",
+    ca: "Balneario & Hotel Thermal Spa Fontsanta Campos és un centre de referència en salut, estètica i benestar a Mallorca. L Ofereix un entorn exclusiu amb equipament d'avantguarda, professionals titulats i atenció personalitzada multilingüe per a residents i visitants.",
+    de: "Balneario & Hotel Thermal Spa Fontsanta Campos ist eine führende Adresse für Gesundheit, Ästhetik und Wohlbefinden auf Mallorca. Das einzige Thermalbad mit natürlichen heilenden Mineralquellen auf den Balearen (38°C) mit Thermalparcours. Ausgestattet mit modernster Medizintechnik, qualifizierten Therapeuten und individueller mehrsprachiger Betreuung in stilvollem Ambiente.",
   },
   highlights: {
     es: [

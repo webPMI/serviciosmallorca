@@ -40,11 +40,11 @@ export const euroaulaDeutscheSprachschulePalma: ServiceItem = {
     ca: "Acadèmia especialitzada en espanyol per a residents estrangers i alemany a Palma.",
     de: "Sprachakademie für Intensiv-Spanischkurse für Residenten sowie DELE-Prüfungsvorbereitung im Zentrum von Palma.",
   },
-  description: {
-    es: "Academia especializada en cursos intensivos de español para residentes extranjeros (DE/EN) y preparación DELE/SIELE.",
-    en: "Specialized language academy for intensive Spanish for expats and official DELE/SIELE certificate training.",
-    ca: "Acadèmia especialitzada en espanyol per a residents estrangers i alemany a Palma.",
-    de: "Sprachakademie für Intensiv-Spanischkurse für Residenten sowie DELE-Prüfungsvorbereitung im Zentrum von Palma.",
+  fullDescription: {
+    es: "Mallorca Spanish & German Language Academy ofrece un servicio profesional de máxima categoría en Mallorca. Academia especializada en cursos intensivos de español para residentes extranjeros (DE/EN) y preparación DELE/SIELE. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Mallorca Spanish & German Language Academy delivers premier professional service in Mallorca. Specialized language academy for intensive Spanish for expats and official DELE/SIELE certificate training. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Mallorca Spanish & German Language Academy ofereix un servei professional de màxima categoria a Mallorca. Acadèmia especialitzada en espanyol per a residents estrangers i alemany a Palma. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Mallorca Spanish & German Language Academy bietet erstklassigen professionellen Service auf Mallorca. Sprachakademie für Intensiv-Spanischkurse für Residenten sowie DELE-Prüfungsvorbereitung im Zentrum von Palma. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

@@ -40,11 +40,11 @@ export const agoraPortalsInternationalSchool: ServiceItem = {
     ca: "Col·legi privat internacional d'elit a Portals Nous amb Batxillerat IB.",
     de: "Internationale Privatschule in Portals Nous mit IB-Diplomprogramm.",
   },
-  description: {
-    es: "Currículo trilingüe (inglés, español, catalán), conservatorio integrado de música y complejo deportivo olímpico.",
-    en: "Trilingual curriculum (English, Spanish, Catalan), on-site music conservatory, and Olympic sports center.",
-    ca: "Currículum trilingüe, conservatori de música integrat i piscina olímpica.",
-    de: "Dreisprachiger Unterricht, eigenes Musikkonservatorium und Olympia-Sportzentrum.",
+  fullDescription: {
+    es: "Agora Portals International School ofrece un servicio profesional de máxima categoría en Mallorca. Currículo trilingüe (inglés, español, catalán), conservatorio integrado de música y complejo deportivo olímpico. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Agora Portals International School delivers premier professional service in Mallorca. Trilingual curriculum (English, Spanish, Catalan), on-site music conservatory, and Olympic sports center. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Agora Portals International School ofereix un servei professional de màxima categoria a Mallorca. Currículum trilingüe, conservatori de música integrat i piscina olímpica. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Agora Portals International School bietet erstklassigen professionellen Service auf Mallorca. Dreisprachiger Unterricht, eigenes Musikkonservatorium und Olympia-Sportzentrum. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

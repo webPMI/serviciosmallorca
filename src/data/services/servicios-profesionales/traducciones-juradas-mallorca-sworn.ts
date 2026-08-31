@@ -40,11 +40,11 @@ export const traduccionesJuradasMallorcaSworn: ServiceItem = {
     ca: "Traductors jurats oficials acreditats pel Ministeri a Palma.",
     de: "Vom spanischen Außenministerium (MAEC) beeidigte Übersetzer und Dolmetscher für Notartermine und Behördengänge.",
   },
-  description: {
-    es: "Traductores jurados oficiales acreditados por el Ministerio de Asuntos Exteriores de España (alemán, inglés, francés, italiano).",
-    en: "Official sworn translators certified by the Spanish Ministry of Foreign Affairs (German, English, French, Italian).",
-    ca: "Traductors jurats oficials acreditats pel Ministeri a Palma.",
-    de: "Vom spanischen Außenministerium (MAEC) beeidigte Übersetzer und Dolmetscher für Notartermine und Behördengänge.",
+  fullDescription: {
+    es: "Mallorca Sworn Translations & Official Interpreters ofrece un servicio profesional de máxima categoría en Mallorca. Traductores jurados oficiales acreditados por el Ministerio de Asuntos Exteriores de España (alemán, inglés, francés, italiano). Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Mallorca Sworn Translations & Official Interpreters delivers premier professional service in Mallorca. Official sworn translators certified by the Spanish Ministry of Foreign Affairs (German, English, French, Italian). Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Mallorca Sworn Translations & Official Interpreters ofereix un servei professional de màxima categoria a Mallorca. Traductors jurats oficials acreditats pel Ministeri a Palma. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Mallorca Sworn Translations & Official Interpreters bietet erstklassigen professionellen Service auf Mallorca. Vom spanischen Außenministerium (MAEC) beeidigte Übersetzer und Dolmetscher für Notartermine und Behördengänge. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

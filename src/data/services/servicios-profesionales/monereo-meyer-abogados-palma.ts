@@ -40,11 +40,11 @@ export const monereoMeyerAbogadosPalma: ServiceItem = {
     ca: "Firma jurídica hispano-alemanya líder en assessorament a inversors internacionals a Mallorca.",
     de: "Führende deutsch-spanische Wirtschaftskanzlei für internationale Investoren und Unternehmen auf Mallorca.",
   },
-  description: {
-    es: "Despacho hispano-alemán de referencia asesorando a empresas e inversores internacionales de habla alemana en Baleares.",
-    en: "Premier German-Spanish law firm advising German-speaking companies and international high-net-worth investors.",
-    ca: "Firma jurídica hispano-alemanya líder en assessorament a inversors internacionals a Mallorca.",
-    de: "Führende deutsch-spanische Wirtschaftskanzlei für internationale Investoren und Unternehmen auf Mallorca.",
+  fullDescription: {
+    es: "Monereo Meyer Abogados Palma ofrece un servicio profesional de máxima categoría en Mallorca. Despacho hispano-alemán de referencia asesorando a empresas e inversores internacionales de habla alemana en Baleares. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Monereo Meyer Abogados Palma delivers premier professional service in Mallorca. Premier German-Spanish law firm advising German-speaking companies and international high-net-worth investors. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Monereo Meyer Abogados Palma ofereix un servei professional de màxima categoria a Mallorca. Firma jurídica hispano-alemanya líder en assessorament a inversors internacionals a Mallorca. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Monereo Meyer Abogados Palma bietet erstklassigen professionellen Service auf Mallorca. Führende deutsch-spanische Wirtschaftskanzlei für internationale Investoren und Unternehmen auf Mallorca. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

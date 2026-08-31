@@ -38,10 +38,10 @@ export const TRAMUNTANA_CLIMBING_GUIDES_SOLLER: ServiceItem = {
     de: "Bergführer für Klettersteige, Mehrseillängen an der Sa Gubia und Canyoning auf Mallorca.",
   },
   fullDescription: {
-    es: "Servicio de guías para vías ferratas, escalada clásica en Sa Gubia y barranquismo en Mallorca.",
-    en: "Mountain guide services for via ferratas, multi-pitch climbing at Sa Gubia, and canyoning.",
-    ca: "Servei de guies per a vies ferrades, escalada a Sa Gúbia i barranquisme a Mallorca.",
-    de: "Bergführer für Klettersteige, Mehrseillängen an der Sa Gubia und Canyoning auf Mallorca.",
+    es: "Tramuntana Climbing Guides se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Servicio de guías para vías ferratas, escalada clásica en Sa Gubia y barranquismo en Mallorca. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "Tramuntana Climbing Guides stands out as one of the premier athletic and fitness destinations in Mallorca. Mountain guide services for via ferratas, multi-pitch climbing at Sa Gubia, and canyoning. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "Tramuntana Climbing Guides destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Servei de guies per a vies ferrades, escalada a Sa Gúbia i barranquisme a Mallorca. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "Tramuntana Climbing Guides zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Bergführer für Klettersteige, Mehrseillängen an der Sa Gubia und Canyoning auf Mallorca. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

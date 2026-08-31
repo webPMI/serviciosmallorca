@@ -40,11 +40,11 @@ export const arquitecturaMediterraneaPalma: ServiceItem = {
     ca: "Estudi d'arquitectura especialitzat en finques rústiques i disseny bioclimàtic a Palma.",
     de: "Architekturbüro für denkmalgeschützte Fincas, Passivhaus-Technologie und exklusives Villendesign auf Mallorca.",
   },
-  description: {
-    es: "Estudio de arquitectura especializado en fincas rústicas protegidas, diseño pasivo bioclimático y villas de autor.",
-    en: "Architecture studio specializing in protected rustic estates, passive solar design, and luxury signature villas.",
-    ca: "Estudi d'arquitectura especialitzat en finques rústiques i disseny bioclimàtic a Palma.",
-    de: "Architekturbüro für denkmalgeschützte Fincas, Passivhaus-Technologie und exklusives Villendesign auf Mallorca.",
+  fullDescription: {
+    es: "Estudio de Arquitectura & Interiorismo Balear ofrece un servicio profesional de máxima categoría en Mallorca. Estudio de arquitectura especializado en fincas rústicas protegidas, diseño pasivo bioclimático y villas de autor. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Estudio de Arquitectura & Interiorismo Balear delivers premier professional service in Mallorca. Architecture studio specializing in protected rustic estates, passive solar design, and luxury signature villas. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Estudio de Arquitectura & Interiorismo Balear ofereix un servei professional de màxima categoria a Mallorca. Estudi d Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Estudio de Arquitectura & Interiorismo Balear bietet erstklassigen professionellen Service auf Mallorca. Architekturbüro für denkmalgeschützte Fincas, Passivhaus-Technologie und exklusives Villendesign auf Mallorca. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

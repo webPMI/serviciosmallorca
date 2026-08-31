@@ -40,11 +40,11 @@ export const hospitalVeterinarioCanisMallorca: ServiceItem = {
     ca: "Hospital veterinari integral amb urgències 24h, TAC i cirurgia a Palma.",
     de: "Tierklinik mit 24h-Notdienst, CT/MRT-Diagnostik und minimalinvasiver Chirurgie in Palma.",
   },
-  description: {
-    es: "Hospital veterinario integral con urgencias 24h, diagnóstico por imagen avanzado (TAC y resonancia) y cirugía mínimamente invasiva.",
-    en: "Comprehensive veterinary hospital with 24/7 emergency care, advanced CT/MRI imaging, and minimally invasive surgery.",
-    ca: "Hospital veterinari integral amb urgències 24h, TAC i cirurgia a Palma.",
-    de: "Tierklinik mit 24h-Notdienst, CT/MRT-Diagnostik und minimalinvasiver Chirurgie in Palma.",
+  fullDescription: {
+    es: "Hospital Veterinario Canis Palma 24h ofrece un servicio profesional de máxima categoría en Mallorca. Hospital veterinario integral con urgencias 24h, diagnóstico por imagen avanzado (TAC y resonancia) y cirugía mínimamente invasiva. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Hospital Veterinario Canis Palma 24h delivers premier professional service in Mallorca. Comprehensive veterinary hospital with 24/7 emergency care, advanced CT/MRI imaging, and minimally invasive surgery. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Hospital Veterinario Canis Palma 24h ofereix un servei professional de màxima categoria a Mallorca. Hospital veterinari integral amb urgències 24h, TAC i cirurgia a Palma. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Hospital Veterinario Canis Palma 24h bietet erstklassigen professionellen Service auf Mallorca. Tierklinik mit 24h-Notdienst, CT/MRT-Diagnostik und minimalinvasiver Chirurgie in Palma. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

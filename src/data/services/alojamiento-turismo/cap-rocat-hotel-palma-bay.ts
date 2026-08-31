@@ -40,11 +40,11 @@ export const capRocatHotelPalmaBay: ServiceItem = {
     ca: "Antiga fortalesa militar del s.XIX rehabilitada com a hotel de gran luxe a Cala Blava.",
     de: "Militärfestung aus dem 19. Jahrhundert, meisterhaft in ein spektakuläres Luxushotel verwandelt.",
   },
-  description: {
-    es: "Antigua fortaleza militar del s.XIX rehabilitada magistralmente en la bahía de Palma.",
-    en: "19th-century military fortress masterfully restored in a protected natural bay area.",
-    ca: "Antiga fortalesa militar del s.XIX rehabilitada com a hotel de gran luxe a Cala Blava.",
-    de: "Militärfestung aus dem 19. Jahrhundert, meisterhaft in ein spektakuläres Luxushotel verwandelt.",
+  fullDescription: {
+    es: "Cap Rocat Hotel & Fortress ofrece un servicio profesional de máxima categoría en Mallorca. Antigua fortaleza militar del s.XIX rehabilitada magistralmente en la bahía de Palma. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Cap Rocat Hotel & Fortress delivers premier professional service in Mallorca. 19th-century military fortress masterfully restored in a protected natural bay area. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Cap Rocat Hotel & Fortress ofereix un servei professional de màxima categoria a Mallorca. Antiga fortalesa militar del s.XIX rehabilitada com a hotel de gran luxe a Cala Blava. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Cap Rocat Hotel & Fortress bietet erstklassigen professionellen Service auf Mallorca. Militärfestung aus dem 19. Jahrhundert, meisterhaft in ein spektakuläres Luxushotel verwandelt. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

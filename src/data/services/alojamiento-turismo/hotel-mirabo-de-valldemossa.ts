@@ -40,11 +40,11 @@ export const hotelMiraboDeValldemossa: ServiceItem = {
     ca: "Finca senyorial del s.XVI amb vistes panoràmiques a la vall de Valldemossa.",
     de: "Herrschaftliches Fincahotel aus dem 16. Jahrhundert mit Panoramablick auf Valldemossa.",
   },
-  description: {
-    es: "Finca señorial del s.XVI a 500 metros de altitud con vistas panorámicas al valle de Valldemossa.",
-    en: "16th-century estate perched 500 meters high with sweeping views over Valldemossa valley.",
-    ca: "Finca senyorial del s.XVI amb vistes panoràmiques a la vall de Valldemossa.",
-    de: "Herrschaftliches Fincahotel aus dem 16. Jahrhundert mit Panoramablick auf Valldemossa.",
+  fullDescription: {
+    es: "Hotel Rural Mirabo de Valldemossa ofrece un servicio profesional de máxima categoría en Mallorca. Finca señorial del s.XVI a 500 metros de altitud con vistas panorámicas al valle de Valldemossa. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Hotel Rural Mirabo de Valldemossa delivers premier professional service in Mallorca. 16th-century estate perched 500 meters high with sweeping views over Valldemossa valley. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Hotel Rural Mirabo de Valldemossa ofereix un servei professional de màxima categoria a Mallorca. Finca senyorial del s.XVI amb vistes panoràmiques a la vall de Valldemossa. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Hotel Rural Mirabo de Valldemossa bietet erstklassigen professionellen Service auf Mallorca. Herrschaftliches Fincahotel aus dem 16. Jahrhundert mit Panoramablick auf Valldemossa. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

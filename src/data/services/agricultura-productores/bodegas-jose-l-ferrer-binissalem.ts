@@ -40,11 +40,11 @@ export const bodegasJoseLFerrerBinissalem: ServiceItem = {
     ca: "Pioners de la DO Binissalem des de 1931 elaborant vins amb raïm autòcton Manto Negro i Moll.",
     de: "Pioniere der DO Binissalem seit 1931 mit Weinen aus den autochthonen Rebsorten Manto Negro und Moll.",
   },
-  description: {
-    es: "Pioneros de la DO Binissalem desde 1931 elaborando vinos con uvas autóctonas Manto Negro y Moll.",
-    en: "Pioneers of the DO Binissalem appellation since 1931, producing wines from native Manto Negro and Moll grapes.",
-    ca: "Pioners de la DO Binissalem des de 1931 elaborant vins amb raïm autòcton Manto Negro i Moll.",
-    de: "Pioniere der DO Binissalem seit 1931 mit Weinen aus den autochthonen Rebsorten Manto Negro und Moll.",
+  fullDescription: {
+    es: "Bodegas José L. Ferrer (Fundada 1931) ofrece un servicio profesional de máxima categoría en Mallorca. Pioneros de la DO Binissalem desde 1931 elaborando vinos con uvas autóctonas Manto Negro y Moll. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Bodegas José L. Ferrer (Fundada 1931) delivers premier professional service in Mallorca. Pioneers of the DO Binissalem appellation since 1931, producing wines from native Manto Negro and Moll grapes. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Bodegas José L. Ferrer (Fundada 1931) ofereix un servei professional de màxima categoria a Mallorca. Pioners de la DO Binissalem des de 1931 elaborant vins amb raïm autòcton Manto Negro i Moll. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Bodegas José L. Ferrer (Fundada 1931) bietet erstklassigen professionellen Service auf Mallorca. Pioniere der DO Binissalem seit 1931 mit Weinen aus den autochthonen Rebsorten Manto Negro und Moll. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

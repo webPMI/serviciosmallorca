@@ -40,11 +40,11 @@ export const pedraDeSantanyiCanteresArtesanes: ServiceItem = {
     ca: "Picapedrers artesans i extracció de pedra de Santanyí autèntica.",
     de: "Traditionelle Steinmetzkunst und Abbau von original Santanyí-Naturstein.",
   },
-  description: {
-    es: "Maestros canteros tallando arcos de medio punto, columnas clásicas y chimeneas para villas y fincas.",
-    en: "Master stonemasons carving arches, classical columns, and fireplaces for luxury estates.",
-    ca: "Mestres picapedrers tallant arcs, columnes i xemeneies per a vil·les.",
-    de: "Steinmetzmeister behauen Rundbögen, Säulen und Kaminumrandungen nach Maß.",
+  fullDescription: {
+    es: "Pedra de Santanyí Canteras & Picapedrers ofrece un servicio profesional de máxima categoría en Mallorca. Maestros canteros tallando arcos de medio punto, columnas clásicas y chimeneas para villas y fincas. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Pedra de Santanyí Canteras & Picapedrers delivers premier professional service in Mallorca. Master stonemasons carving arches, classical columns, and fireplaces for luxury estates. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Pedra de Santanyí Canteras & Picapedrers ofereix un servei professional de màxima categoria a Mallorca. Mestres picapedrers tallant arcs, columnes i xemeneies per a vil·les. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Pedra de Santanyí Canteras & Picapedrers bietet erstklassigen professionellen Service auf Mallorca. Steinmetzmeister behauen Rundbögen, Säulen und Kaminumrandungen nach Maß. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

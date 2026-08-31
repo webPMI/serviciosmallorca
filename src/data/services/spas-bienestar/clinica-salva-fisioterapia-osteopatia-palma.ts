@@ -38,10 +38,10 @@ export const clinica_salva_fisioterapia_osteopatia_palma: ServiceItem = {
     de: "Fortschrittliche Physiotherapie, Osteopathie, Ultraschalldiagnostik und Sport-Rehabilitation.",
   },
   fullDescription: {
-    es: "Fisioterapia avanzada, osteopatía estructural, ecografía musculoesquelética y readaptación deportiva.",
-    en: "Advanced physiotherapy, structural osteopathy, ultrasound diagnosis, and sports injury rehabilitation.",
-    ca: "Fisioteràpia avançada, osteopatia estructural i readaptació esportiva al centre de Palma.",
-    de: "Fortschrittliche Physiotherapie, Osteopathie, Ultraschalldiagnostik und Sport-Rehabilitation.",
+    es: "Clínica Salvà Fisioterapia & Osteopatía es un centro de referencia en salud, estética y bienestar en Mallorca. Fisioterapia avanzada, osteopatía estructural, ecografía musculoesquelética y readaptación deportiva. Ofrece un entorno exclusivo y relajante con equipamiento de vanguardia, profesionales titulados y atención personalizada en varios idiomas para residentes y visitantes de la isla.",
+    en: "Clínica Salvà Fisioterapia & Osteopatía is a premier benchmark for health, aesthetic medicine, and wellness in Mallorca. Advanced physiotherapy, structural osteopathy, ultrasound diagnosis, and sports injury rehabilitation. Providing an exclusive, tranquil sanctuary with cutting-edge medical and wellness equipment, certified specialists, and multilingual client care.",
+    ca: "Clínica Salvà Fisioterapia & Osteopatía és un centre de referència en salut, estètica i benestar a Mallorca. Fisioteràpia avançada, osteopatia estructural i readaptació esportiva al centre de Palma. Ofereix un entorn exclusiu amb equipament d'avantguarda, professionals titulats i atenció personalitzada multilingüe per a residents i visitants.",
+    de: "Clínica Salvà Fisioterapia & Osteopatía ist eine führende Adresse für Gesundheit, Ästhetik und Wohlbefinden auf Mallorca. Fortschrittliche Physiotherapie, Osteopathie, Ultraschalldiagnostik und Sport-Rehabilitation. Ausgestattet mit modernster Medizintechnik, qualifizierten Therapeuten und individueller mehrsprachiger Betreuung in stilvollem Ambiente.",
   },
   highlights: {
     es: [

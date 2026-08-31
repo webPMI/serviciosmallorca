@@ -40,11 +40,11 @@ export const ferraturConstruccionesCalvia: ServiceItem = {
     ca: "Constructora líder amb més de 45 anys edificant vil·les de luxe i projectes claus en mà a Calvià.",
     de: "Führendes Bauunternehmen mit über 45 Jahren Erfahrung im schlüsselfertigen Bau von Luxusvillen auf Mallorca.",
   },
-  description: {
-    es: "Constructora líder con más de 45 años de trayectoria en edificación de villas de lujo y proyectos 'llave en mano' en el suroeste.",
-    en: "Leading construction company with over 45 years building prime luxury villas and turnkey projects in Southwest Mallorca.",
-    ca: "Constructora líder amb més de 45 anys edificant vil·les de luxe i projectes claus en mà a Calvià.",
-    de: "Führendes Bauunternehmen mit über 45 Jahren Erfahrung im schlüsselfertigen Bau von Luxusvillen auf Mallorca.",
+  fullDescription: {
+    es: "Ferratur Construcciones & Villas Calvià (1978) ofrece un servicio profesional de máxima categoría en Mallorca. Constructora líder con más de 45 años de trayectoria en edificación de villas de lujo y proyectos  Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Ferratur Construcciones & Villas Calvià (1978) delivers premier professional service in Mallorca. Leading construction company with over 45 years building prime luxury villas and turnkey projects in Southwest Mallorca. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Ferratur Construcciones & Villas Calvià (1978) ofereix un servei professional de màxima categoria a Mallorca. Constructora líder amb més de 45 anys edificant vil·les de luxe i projectes claus en mà a Calvià. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Ferratur Construcciones & Villas Calvià (1978) bietet erstklassigen professionellen Service auf Mallorca. Führendes Bauunternehmen mit über 45 Jahren Erfahrung im schlüsselfertigen Bau von Luxusvillen auf Mallorca. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

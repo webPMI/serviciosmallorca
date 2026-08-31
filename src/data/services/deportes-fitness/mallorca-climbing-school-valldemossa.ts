@@ -38,10 +38,10 @@ export const MALLORCA_CLIMBING_SCHOOL_VALLDEMOSSA: ServiceItem = {
     de: "Staatlich geprüfte Kletterführer in der Tramuntana, Deep Water Soloing (Psicobloc) und Kurse.",
   },
   fullDescription: {
-    es: "Guías oficiales de escalada en roca en la Serra de Tramuntana, psicobloc en acantilados y cursos.",
-    en: "Certified rock climbing guides in Tramuntana mountains, deep water soloing (psicobloc), and courses.",
-    ca: "Guies oficials d'escalada en roca a la Serra de Tramuntana i psicobloc.",
-    de: "Staatlich geprüfte Kletterführer in der Tramuntana, Deep Water Soloing (Psicobloc) und Kurse.",
+    es: "Mallorca Climbing School se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Guías oficiales de escalada en roca en la Serra de Tramuntana, psicobloc en acantilados y cursos. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "Mallorca Climbing School stands out as one of the premier athletic and fitness destinations in Mallorca. Certified rock climbing guides in Tramuntana mountains, deep water soloing (psicobloc), and courses. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "Mallorca Climbing School destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Guies oficials d Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "Mallorca Climbing School zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Staatlich geprüfte Kletterführer in der Tramuntana, Deep Water Soloing (Psicobloc) und Kurse. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

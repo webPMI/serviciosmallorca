@@ -38,10 +38,10 @@ export const ILLES_CENTRES_BENESTAR_ARAGO_PALMA: ServiceItem = {
     de: "Urbanes Fitnessstudio in der Calle Aragón mit Freihantelbereich, Cycling und Les Mills Kursen.",
   },
   fullDescription: {
-    es: "Centro de fitness urbano en calle Aragón con área de peso libre, cycling y clases dirigidas Les Mills.",
-    en: "Urban fitness club on Carrer Aragó featuring free-weights zone, cycling, and Les Mills classes.",
-    ca: "Gimnàs urbà al carrer Aragó amb sala de força, ciclisme indoor i classes Les Mills.",
-    de: "Urbanes Fitnessstudio in der Calle Aragón mit Freihantelbereich, Cycling und Les Mills Kursen.",
+    es: "Illes Centres de Benestar (Aragó) se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Centro de fitness urbano en calle Aragón con área de peso libre, cycling y clases dirigidas Les Mills. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "Illes Centres de Benestar (Aragó) stands out as one of the premier athletic and fitness destinations in Mallorca. Urban fitness club on Carrer Aragó featuring free-weights zone, cycling, and Les Mills classes. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "Illes Centres de Benestar (Aragó) destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Gimnàs urbà al carrer Aragó amb sala de força, ciclisme indoor i classes Les Mills. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "Illes Centres de Benestar (Aragó) zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Urbanes Fitnessstudio in der Calle Aragón mit Freihantelbereich, Cycling und Les Mills Kursen. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

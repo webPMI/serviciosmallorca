@@ -44,10 +44,10 @@ export const diving_scuba_mallorca_port_pollensa_center: ServiceItem = {
     de: "PADI 5-Star Dive Center in Port de Pollença mit täglichen Bootsausfahrten zum Cap de Formentor und Meereshöhlen.",
   },
   fullDescription: {
-    es: "Con más de 20 años explorando las aguas cristalinas del norte de Mallorca, Scuba Mallorca opera barcos de buceo rápidos hacia más de 30 puntos de inmersión protegidos alrededor del Cap de Formentor y Cala Sant Vicenç, con instructores multilingües PADI.",
-    en: "Operating for 20+ years, offering fast dive boats to over 30 dive sites around dramatic Cap de Formentor cliffs with multilingual PADI instructors.",
-    ca: "Més de 20 anys oferint immersions a més de 30 punts protegits al voltant de Formentor amb instructors PADI multilingües.",
-    de: "Seit über 20 Jahren PADI 5-Star Tauchbasis mit Schnellbooten zu über 30 Tauchplätzen am spektakulären Cap de Formentor.",
+    es: "Scuba Mallorca PADI 5 Star Dive Resort Port de Pollença se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Centro de buceo PADI 5 Star en el Puerto de Pollensa con salidas diarias en barco al Cabo Formentor, cuevas marinas y pecios. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "Scuba Mallorca PADI 5 Star Dive Resort Port de Pollença stands out as one of the premier athletic and fitness destinations in Mallorca. PADI 5 Star Dive Resort in Port de Pollença offering daily boat diving trips to Cap de Formentor, sea caves, and marine reserves. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "Scuba Mallorca PADI 5 Star Dive Resort Port de Pollença destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Centre de submarinisme PADI 5 Star al Port de Pollença amb sortides en vaixell al Cap de Formentor i coves marines. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "Scuba Mallorca PADI 5 Star Dive Resort Port de Pollença zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. PADI 5-Star Dive Center in Port de Pollença mit täglichen Bootsausfahrten zum Cap de Formentor und Meereshöhlen. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

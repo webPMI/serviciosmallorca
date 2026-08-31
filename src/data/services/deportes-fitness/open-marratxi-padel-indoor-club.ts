@@ -44,10 +44,10 @@ export const open_marratxi_padel_indoor_club: ServiceItem = {
     de: "Führender Indoor-Padelclub auf Mallorca mit klimatisierten Panoramaplätzen, Mondo-WPT-Rasen, Akademie und Club-Café.",
   },
   fullDescription: {
-    es: "Open Marratxí ofrece la mayor comodidad para jugar al pádel los 365 días del año sin preocuparse por el viento, la lluvia o el calor del verano. Con iluminación LED de competición, tienda especializada y ligas periódicas de todos los niveles.",
-    en: "Open Marratxí offers year-round indoor padel protected from wind, rain, and summer heat, featuring tournament LED lighting and pro shop.",
-    ca: "Ofereix el màxim confort per jugar a pàdel tot l'any sense vent ni pluja amb il·luminació LED de competició i botiga especialitzada.",
-    de: "Open Marratxí bietet ganzjähriges wetterunabhängiges Padel-Spiel mit blendfreier LED-Beleuchtung, Pro-Shop und Turnieren.",
+    es: "Open Marratxí Pádel Indoor Club se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. El club indoor de pádel de referencia en Mallorca con pistas climatizadas panorámicas, césped Mondo WPT, escuela y bar-cafetería. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "Open Marratxí Pádel Indoor Club stands out as one of the premier athletic and fitness destinations in Mallorca. Premier indoor padel club in Mallorca featuring climate-controlled panoramic courts, Mondo WPT turf, academy, and clubhouse café. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "Open Marratxí Pádel Indoor Club destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. El club indoor de pàdel de referència a Mallorca amb pistes climatitzades panoràmiques, escola i cafeteria. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "Open Marratxí Pádel Indoor Club zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Führender Indoor-Padelclub auf Mallorca mit klimatisierten Panoramaplätzen, Mondo-WPT-Rasen, Akademie und Club-Café. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

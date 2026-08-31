@@ -38,10 +38,10 @@ export const FREEFORM_BOULDER_GYM_PALMA_CENTRO: ServiceItem = {
     de: "Boutique-Boulderhalle im Zentrum von Palma nahe dem Hauptbahnhof.",
   },
   fullDescription: {
-    es: "Rocódromo boutique de escalada en bloque en el centro urbano de Palma, junto a la estación de tren.",
-    en: "Boutique bouldering gym located in central Palma, steps from the central transit station.",
-    ca: "Rocòdrom boutique d'escalada en bloc al centre de Palma, a prop de l'Estació Intermodal.",
-    de: "Boutique-Boulderhalle im Zentrum von Palma nahe dem Hauptbahnhof.",
+    es: "Freeform Boulder Gym se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Rocódromo boutique de escalada en bloque en el centro urbano de Palma, junto a la estación de tren. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "Freeform Boulder Gym stands out as one of the premier athletic and fitness destinations in Mallorca. Boutique bouldering gym located in central Palma, steps from the central transit station. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "Freeform Boulder Gym destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Rocòdrom boutique d Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "Freeform Boulder Gym zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Boutique-Boulderhalle im Zentrum von Palma nahe dem Hauptbahnhof. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

@@ -40,11 +40,11 @@ export const vespamallorcaScooterRentalPalma: ServiceItem = {
     ca: "Lloguer oficial de Vespas per recórrer les carreteres panoràmiques i cales de Mallorca.",
     de: "Offizieller Vespa-Verleih in Palma für stilvolle Erkundungstouren über Mallorcas schönste Panoramastraßen.",
   },
-  description: {
-    es: "Alquiler oficial de Vespas Primavera y GTS para recorrer las carreteras escénicas y calas de la costa de Mallorca con estilo.",
-    en: "Official Vespa Primavera & GTS scooter rentals to discover the scenic coastal roads and hidden calas in style.",
-    ca: "Lloguer oficial de Vespas per recórrer les carreteres panoràmiques i cales de Mallorca.",
-    de: "Offizieller Vespa-Verleih in Palma für stilvolle Erkundungstouren über Mallorcas schönste Panoramastraßen.",
+  fullDescription: {
+    es: "Vespa Mallorca Iconic Scooter Rental Palma ofrece un servicio profesional de máxima categoría en Mallorca. Alquiler oficial de Vespas Primavera y GTS para recorrer las carreteras escénicas y calas de la costa de Mallorca con estilo. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Vespa Mallorca Iconic Scooter Rental Palma delivers premier professional service in Mallorca. Official Vespa Primavera & GTS scooter rentals to discover the scenic coastal roads and hidden calas in style. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Vespa Mallorca Iconic Scooter Rental Palma ofereix un servei professional de màxima categoria a Mallorca. Lloguer oficial de Vespas per recórrer les carreteres panoràmiques i cales de Mallorca. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Vespa Mallorca Iconic Scooter Rental Palma bietet erstklassigen professionellen Service auf Mallorca. Offizieller Vespa-Verleih in Palma für stilvolle Erkundungstouren über Mallorcas schönste Panoramastraßen. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

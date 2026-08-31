@@ -38,10 +38,10 @@ export const CLUB_TENIS_POLLENSA: ServiceItem = {
     de: "Tennisclub am Fuße der Tramuntana in Pollença mit Rotsand- und Glas-Padelplätzen.",
   },
   fullDescription: {
-    es: "Club de tenis al pie de la Serra de Tramuntana en Pollença con pistas de tierra batida y pádel de cristal.",
-    en: "Tennis club at the foot of the Tramuntana mountains in Pollença with clay courts and padel.",
-    ca: "Club de tennis al peu de la Serra de Tramuntana a Pollença amb terra batuda i pàdel.",
-    de: "Tennisclub am Fuße der Tramuntana in Pollença mit Rotsand- und Glas-Padelplätzen.",
+    es: "Club Tenis Pollença se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Club de tenis al pie de la Serra de Tramuntana en Pollença con pistas de tierra batida y pádel de cristal. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "Club Tenis Pollença stands out as one of the premier athletic and fitness destinations in Mallorca. Tennis club at the foot of the Tramuntana mountains in Pollença with clay courts and padel. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "Club Tenis Pollença destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Club de tennis al peu de la Serra de Tramuntana a Pollença amb terra batuda i pàdel. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "Club Tenis Pollença zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Tennisclub am Fuße der Tramuntana in Pollença mit Rotsand- und Glas-Padelplätzen. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

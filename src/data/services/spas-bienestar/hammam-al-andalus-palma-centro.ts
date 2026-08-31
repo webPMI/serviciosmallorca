@@ -38,10 +38,10 @@ export const hammam_al_andalus_palma_centro: ServiceItem = {
     de: "Authentisches arabisches Hammam im historischen Zentrum von Palma mit Dampfbad und Kessa-Massagen.",
   },
   fullDescription: {
-    es: "Auténticos baños árabes en el casco antiguo de Palma con salas de agua templada, caliente y fría, vapor y kessa.",
-    en: "Authentic Arab baths in Palma's historic old town with cold, warm and hot water pools, steam and kessa massage.",
-    ca: "Banys àrabs autèntics al centre històric de Palma amb banys de vapor i massatges tradicionals.",
-    de: "Authentisches arabisches Hammam im historischen Zentrum von Palma mit Dampfbad und Kessa-Massagen.",
+    es: "Hammam Al Ándalus Palma es un centro de referencia en salud, estética y bienestar en Mallorca. Auténticos baños árabes en el casco antiguo de Palma con salas de agua templada, caliente y fría, vapor y kessa. Ofrece un entorno exclusivo y relajante con equipamiento de vanguardia, profesionales titulados y atención personalizada en varios idiomas para residentes y visitantes de la isla.",
+    en: "Hammam Al Ándalus Palma is a premier benchmark for health, aesthetic medicine, and wellness in Mallorca. Authentic Arab baths in Palma Providing an exclusive, tranquil sanctuary with cutting-edge medical and wellness equipment, certified specialists, and multilingual client care.",
+    ca: "Hammam Al Ándalus Palma és un centre de referència en salut, estètica i benestar a Mallorca. Banys àrabs autèntics al centre històric de Palma amb banys de vapor i massatges tradicionals. Ofereix un entorn exclusiu amb equipament d'avantguarda, professionals titulats i atenció personalitzada multilingüe per a residents i visitants.",
+    de: "Hammam Al Ándalus Palma ist eine führende Adresse für Gesundheit, Ästhetik und Wohlbefinden auf Mallorca. Authentisches arabisches Hammam im historischen Zentrum von Palma mit Dampfbad und Kessa-Massagen. Ausgestattet mit modernster Medizintechnik, qualifizierten Therapeuten und individueller mehrsprachiger Betreuung in stilvollem Ambiente.",
   },
   highlights: {
     es: [

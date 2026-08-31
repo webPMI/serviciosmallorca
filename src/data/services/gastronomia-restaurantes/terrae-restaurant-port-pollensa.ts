@@ -40,11 +40,11 @@ export const terraeRestaurantPortPollensa: ServiceItem = {
     ca: "Restaurant sostenible Km0 amb pesca pròpia, fermentacions casolanes i hort orgànic a Port de Pollença.",
     de: "Nachhaltiges Zero-Kilometer-Restaurant mit eigenem Fischfang, Fermentationen und Bio-Garten in Port de Pollença.",
   },
-  description: {
-    es: "Restaurante sostenible de Km0 salvaje: pesca artesanal de barca propia, fermentaciones caseras y huerto orgánico.",
-    en: "Wild zero-kilometer sustainable restaurant serving line-caught fish, house ferments, and organic foraged ingredients.",
-    ca: "Restaurant sostenible Km0 amb pesca pròpia, fermentacions casolanes i hort orgànic a Port de Pollença.",
-    de: "Nachhaltiges Zero-Kilometer-Restaurant mit eigenem Fischfang, Fermentationen und Bio-Garten in Port de Pollença.",
+  fullDescription: {
+    es: "Terrae Restaurant Port de Pollença ofrece un servicio profesional de máxima categoría en Mallorca. Restaurante sostenible de Km0 salvaje: pesca artesanal de barca propia, fermentaciones caseras y huerto orgánico. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Terrae Restaurant Port de Pollença delivers premier professional service in Mallorca. Wild zero-kilometer sustainable restaurant serving line-caught fish, house ferments, and organic foraged ingredients. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Terrae Restaurant Port de Pollença ofereix un servei professional de màxima categoria a Mallorca. Restaurant sostenible Km0 amb pesca pròpia, fermentacions casolanes i hort orgànic a Port de Pollença. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Terrae Restaurant Port de Pollença bietet erstklassigen professionellen Service auf Mallorca. Nachhaltiges Zero-Kilometer-Restaurant mit eigenem Fischfang, Fermentationen und Bio-Garten in Port de Pollença. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

@@ -40,11 +40,11 @@ export const oamArquitecturaMediterraneaPalma: ServiceItem = {
     ca: "Estudi d'arquitectura especialitzat en rehabilitació de palaus històrics i vil·les bioclimàtiques a Palma.",
     de: "Architekturbüro für die Restaurierung historischer Stadtpaläste und den Neubau moderner mediterraner Luxusvillen.",
   },
-  description: {
-    es: "Estudio de arquitectura especializado en rehabilitación de palacetes históricos y diseño de villas mediterráneas bioclimáticas.",
-    en: "Architecture studio specializing in historic palace renovations and bioclimatic Mediterranean luxury villas.",
-    ca: "Estudi d'arquitectura especialitzat en rehabilitació de palaus històrics i vil·les bioclimàtiques a Palma.",
-    de: "Architekturbüro für die Restaurierung historischer Stadtpaläste und den Neubau moderner mediterraner Luxusvillen.",
+  fullDescription: {
+    es: "Oliver & Associates Mediterranean Architecture ofrece un servicio profesional de máxima categoría en Mallorca. Estudio de arquitectura especializado en rehabilitación de palacetes históricos y diseño de villas mediterráneas bioclimáticas. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Oliver & Associates Mediterranean Architecture delivers premier professional service in Mallorca. Architecture studio specializing in historic palace renovations and bioclimatic Mediterranean luxury villas. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Oliver & Associates Mediterranean Architecture ofereix un servei professional de màxima categoria a Mallorca. Estudi d Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Oliver & Associates Mediterranean Architecture bietet erstklassigen professionellen Service auf Mallorca. Architekturbüro für die Restaurierung historischer Stadtpaläste und den Neubau moderner mediterraner Luxusvillen. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

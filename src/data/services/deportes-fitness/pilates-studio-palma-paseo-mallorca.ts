@@ -38,10 +38,10 @@ export const PILATES_STUDIO_PALMA_PASEO_MALLORCA: ServiceItem = {
     de: "Pilates-Studio mit Reformer, Cadillac und Wunda Chair mit individuellem Einzeltraining.",
   },
   fullDescription: {
-    es: "Estudio de Pilates con máquinas Reformer, Cadillac y Wunda Chair con atención personalizada 1 a 1.",
-    en: "Pilates studio with Reformer, Cadillac, and Wunda Chair apparatus with 1-on-1 private sessions.",
-    ca: "Estudi de Pilates amb màquines Reformer, Cadillac i atenció personalitzada a Palma.",
-    de: "Pilates-Studio mit Reformer, Cadillac und Wunda Chair mit individuellem Einzeltraining.",
+    es: "Pilates Studio Paseo Mallorca se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Estudio de Pilates con máquinas Reformer, Cadillac y Wunda Chair con atención personalizada 1 a 1. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "Pilates Studio Paseo Mallorca stands out as one of the premier athletic and fitness destinations in Mallorca. Pilates studio with Reformer, Cadillac, and Wunda Chair apparatus with 1-on-1 private sessions. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "Pilates Studio Paseo Mallorca destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Estudi de Pilates amb màquines Reformer, Cadillac i atenció personalitzada a Palma. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "Pilates Studio Paseo Mallorca zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Pilates-Studio mit Reformer, Cadillac und Wunda Chair mit individuellem Einzeltraining. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

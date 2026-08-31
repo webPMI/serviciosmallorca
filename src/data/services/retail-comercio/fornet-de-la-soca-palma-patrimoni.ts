@@ -40,11 +40,11 @@ export const fornetDeLaSocaPalmaPatrimoni: ServiceItem = {
     ca: "Forn artesà modernista a la Plaça de Cort que recupera la rebosteria històrica de Mallorca.",
     de: "Historische Handwerksbäckerei am Rathausplatz für traditionelle mallorquinische Kloster- und Adelsbackkunst.",
   },
-  description: {
-    es: "Horno artesano modernista en la Plaça de Cort recuperando la repostería y panadería histórica de los conventos y casas nobles de Mallorca.",
-    en: "Artisan bakery in Plaça de Cort reviving historic pastry recipes from ancient Mallorcan convents and noble manors.",
-    ca: "Forn artesà modernista a la Plaça de Cort que recupera la rebosteria històrica de Mallorca.",
-    de: "Historische Handwerksbäckerei am Rathausplatz für traditionelle mallorquinische Kloster- und Adelsbackkunst.",
+  fullDescription: {
+    es: "Fornet de la Soca - Arqueología Gastronómica ofrece un servicio profesional de máxima categoría en Mallorca. Horno artesano modernista en la Plaça de Cort recuperando la repostería y panadería histórica de los conventos y casas nobles de Mallorca. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Fornet de la Soca - Arqueología Gastronómica delivers premier professional service in Mallorca. Artisan bakery in Plaça de Cort reviving historic pastry recipes from ancient Mallorcan convents and noble manors. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Fornet de la Soca - Arqueología Gastronómica ofereix un servei professional de màxima categoria a Mallorca. Forn artesà modernista a la Plaça de Cort que recupera la rebosteria històrica de Mallorca. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Fornet de la Soca - Arqueología Gastronómica bietet erstklassigen professionellen Service auf Mallorca. Historische Handwerksbäckerei am Rathausplatz für traditionelle mallorquinische Kloster- und Adelsbackkunst. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {

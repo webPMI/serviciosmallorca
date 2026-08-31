@@ -38,10 +38,10 @@ export const CROSSFIT_SANTANYI_BOX: ServiceItem = {
     de: "CrossFit-Box im Südosten Mallorcas in Santanyí mit Gruppenkursen und Open Box.",
   },
   fullDescription: {
-    es: "Box de CrossFit y acondicionamiento físico en el sureste de Mallorca con clases grupales y Open Box.",
-    en: "CrossFit and conditioning box in southeast Mallorca offering group sessions and Open Box.",
-    ca: "Box de CrossFit i condicionament al sud-est de Mallorca a Santanyí.",
-    de: "CrossFit-Box im Südosten Mallorcas in Santanyí mit Gruppenkursen und Open Box.",
+    es: "CrossFit Santanyí se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Box de CrossFit y acondicionamiento físico en el sureste de Mallorca con clases grupales y Open Box. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "CrossFit Santanyí stands out as one of the premier athletic and fitness destinations in Mallorca. CrossFit and conditioning box in southeast Mallorca offering group sessions and Open Box. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "CrossFit Santanyí destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Box de CrossFit i condicionament al sud-est de Mallorca a Santanyí. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "CrossFit Santanyí zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. CrossFit-Box im Südosten Mallorcas in Santanyí mit Gruppenkursen und Open Box. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

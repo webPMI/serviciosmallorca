@@ -38,10 +38,10 @@ export const ROCK_SPORT_CLIMBING_ALARO: ServiceItem = {
     de: "Kletterschule und Treffpunkt für die Klettergebiete rund um die Burg von Alaró.",
   },
   fullDescription: {
-    es: "Escuela y punto de encuentro de escalada deportiva para los sectores del Castell d'Alaró.",
-    en: "Sport climbing academy and hub for the world-famous Castell d'Alaró climbing sectors.",
-    ca: "Escola d'escalada esportiva per als sectors del Castell d'Alaró.",
-    de: "Kletterschule und Treffpunkt für die Klettergebiete rund um die Burg von Alaró.",
+    es: "Rock Sport Climbing Alaró se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Escuela y punto de encuentro de escalada deportiva para los sectores del Castell d Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "Rock Sport Climbing Alaró stands out as one of the premier athletic and fitness destinations in Mallorca. Sport climbing academy and hub for the world-famous Castell d Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "Rock Sport Climbing Alaró destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Escola d Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "Rock Sport Climbing Alaró zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Kletterschule und Treffpunkt für die Klettergebiete rund um die Burg von Alaró. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

@@ -38,10 +38,10 @@ export const ILLES_CENTRES_BENESTAR_MARRATXI: ServiceItem = {
     de: "Sportkomplex mit überdachten Padelplätzen, Hallenbad, Spa und Fitnessstudio.",
   },
   fullDescription: {
-    es: "Complejo deportivo con pistas de pádel cubiertas, piscina climatizada, spa y sala de fitness.",
-    en: "Sports complex with covered padel courts, heated pool, spa, and comprehensive gym floor.",
-    ca: "Complex esportiu amb pistes de pàdel cobertes, piscina climatitzada, spa i sala de fitness.",
-    de: "Sportkomplex mit überdachten Padelplätzen, Hallenbad, Spa und Fitnessstudio.",
+    es: "Illes Centres de Benestar (Marratxí) se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Complejo deportivo con pistas de pádel cubiertas, piscina climatizada, spa y sala de fitness. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "Illes Centres de Benestar (Marratxí) stands out as one of the premier athletic and fitness destinations in Mallorca. Sports complex with covered padel courts, heated pool, spa, and comprehensive gym floor. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "Illes Centres de Benestar (Marratxí) destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Complex esportiu amb pistes de pàdel cobertes, piscina climatitzada, spa i sala de fitness. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "Illes Centres de Benestar (Marratxí) zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Sportkomplex mit überdachten Padelplätzen, Hallenbad, Spa und Fitnessstudio. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

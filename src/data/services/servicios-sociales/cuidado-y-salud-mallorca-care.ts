@@ -40,11 +40,11 @@ export const cuidadoYSaludMallorcaCare: ServiceItem = {
     ca: "Atenció sociosanitària i cura a domicili a Mallorca.",
     de: "Häusliche Altenpflege und Betreuung mit deutschsprachigen Fachkräften.",
   },
-  description: {
-    es: "Cuidadores internos y por horas, enfermería a domicilio y acompañamiento médico para residentes en Mallorca.",
-    en: "Live-in and hourly caregivers, in-home nursing, and medical accompaniment across Mallorca.",
-    ca: "Cuidadors interns i per hores a domicili a Palma i pobles de l'illa.",
-    de: "24h-Pflegekräfte, mobile Krankenschwestern und Arztbegleitung auf ganz Mallorca.",
+  fullDescription: {
+    es: "Mallorca Senior Care & Asistencia ofrece un servicio profesional de máxima categoría en Mallorca. Cuidadores internos y por horas, enfermería a domicilio y acompañamiento médico para residentes en Mallorca. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
+    en: "Mallorca Senior Care & Asistencia delivers premier professional service in Mallorca. Live-in and hourly caregivers, in-home nursing, and medical accompaniment across Mallorca. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
+    ca: "Mallorca Senior Care & Asistencia ofereix un servei professional de màxima categoria a Mallorca. Cuidadors interns i per hores a domicili a Palma i pobles de l Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    de: "Mallorca Senior Care & Asistencia bietet erstklassigen professionellen Service auf Mallorca. 24h-Pflegekräfte, mobile Krankenschwestern und Arztbegleitung auf ganz Mallorca. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {
     monday: {
