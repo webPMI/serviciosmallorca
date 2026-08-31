@@ -106,6 +106,54 @@ describe("multiAuditorEngine · Sistema Multi-Auditor Blindado", () => {
       expect(result.stats.criticalCount).toBe(0);
       expect(result.stats.complianceScore).toBeGreaterThanOrEqual(90);
     });
+
+    it("detecta orden de ranking inválido e idoneidad ética de negocios", () => {
+      const lowQualityService: ServiceItem = {
+        ...pristineService,
+        id: "bad-service-1",
+        confidenceScore: 30, // Inelegible por bajo confidenceScore
+        rating: 2.0,
+      };
+
+      const customSpots = {
+        "artesanos-sabor": [
+          {
+            id: "sp-1",
+            position: 1,
+            serviceId: "bad-service-1",
+            serviceName: "Bad Service",
+            serviceSlug: "bad-service-1",
+            category: "gastronomia-restaurantes",
+            zone: "palma",
+            honorTitle: { es: "Líder", en: "Leader", ca: "Líder", de: "Leader" },
+            currentBidEuros: 5.0, // Error: puesto 1 con 5€ y puesto 2 con 10€
+            sponsorName: "Sponsor",
+            nominatedAt: new Date().toISOString(),
+            confidenceScore: 30,
+            isVerified: false,
+          },
+          {
+            id: "sp-2",
+            position: 2,
+            serviceId: pristineService.id,
+            serviceName: pristineService.name,
+            serviceSlug: pristineService.slug,
+            category: "gastronomia-restaurantes",
+            zone: "sencelles",
+            honorTitle: { es: "Plata", en: "Silver", ca: "Plata", de: "Silber" },
+            currentBidEuros: 10.0,
+            sponsorName: "Sponsor 2",
+            nominatedAt: new Date().toISOString(),
+            confidenceScore: 95,
+            isVerified: true,
+          },
+        ],
+      };
+
+      const result = auditHonorBoard([pristineService, lowQualityService], customSpots);
+      expect(result.findings.some((f) => f.code === "HONOR_INVALID_RANK_ORDER")).toBe(true);
+      expect(result.findings.some((f) => f.code === "HONOR_INELIGIBLE_BUSINESS")).toBe(true);
+    });
   });
 
   describe("⚡ PerformanceAuditor", () => {
@@ -120,7 +168,7 @@ describe("multiAuditorEngine · Sistema Multi-Auditor Blindado", () => {
   });
 
   describe("Orquestador Maestro y Generación de Reportes", () => {
-    it("ejecuta la auditoría global y genera un informe en Markdown estructurado", () => {
+    it("ejecuta la auditoría global y genera un informe en Markdown estructurado para catálogo limpio", () => {
       const report = runFullCatalogAudit([pristineService]);
       expect(report.overallComplianceScore).toBeGreaterThanOrEqual(90);
       expect(report.overallStatus).toBe("BLINDADO_OPTIMO");
@@ -129,6 +177,37 @@ describe("multiAuditorEngine · Sistema Multi-Auditor Blindado", () => {
       expect(md).toContain("# 🛡️ Informe de Inteligencia y Auditoría Multi-Agente");
       expect(md).toContain("Puntaje Global de Cumplimiento");
       expect(md).toContain("Seguridad & Acceso");
+      expect(md).toContain("Cero anomalías detectadas");
+    });
+
+    it("clasifica estado como REQUIERE_ATENCION ante advertencias y genera detalle en Markdown", () => {
+      const warningService: ServiceItem = {
+        ...pristineService,
+        image: "http://insecure.com/photo.jpg", // Genera advertencia PERF_INSECURE_IMAGE_URL
+      };
+      const report = runFullCatalogAudit([warningService]);
+      expect(report.overallStatus).toBe("REQUIERE_ATENCION");
+      expect(report.summary.warnings).toBeGreaterThan(0);
+      expect(report.summary.criticals).toBe(0);
+
+      const md = generateMarkdownAuditReport(report);
+      expect(md).toContain("🟡 [ADVERTENCIA]");
+      expect(md).toContain("PERF_INSECURE_IMAGE_URL");
+      expect(md).toContain("Acción Recomendada");
+    });
+
+    it("clasifica estado como ACCION_INMEDIATA ante anomalías críticas y genera markdown con iconos", () => {
+      const criticalService: ServiceItem = {
+        ...pristineService,
+        coordinates: { lat: 41.38, lng: 2.17 }, // Fuera de Mallorca -> CRITICAL
+      };
+      const report = runFullCatalogAudit([criticalService]);
+      expect(report.overallStatus).toBe("ACCION_INMEDIATA");
+      expect(report.summary.criticals).toBeGreaterThan(0);
+
+      const md = generateMarkdownAuditReport(report);
+      expect(md).toContain("🔴 [CRÍTICO]");
+      expect(md).toContain("DATA_GEO_OUT_OF_BOUNDS");
     });
   });
 });

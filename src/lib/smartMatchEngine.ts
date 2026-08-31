@@ -18,17 +18,35 @@ export interface SmartMatchRecommendation {
 
 // Matriz de afinidad intersectorial de alta conversión
 const CROSS_SECTOR_AFFINITY: Record<string, string[]> = {
-  "arte-tatuajes": ["gastronomia-restaurantes", "gastronomia-catering", "spas-bienestar"],
-  "gastronomia-restaurantes": ["spas-bienestar", "nautica-charter", "arte-tatuajes"],
-  "gastronomia-catering": ["spas-bienestar", "nautica-charter", "inmobiliaria-villas"],
-  "nautica-charter": ["gastronomia-restaurantes", "motor-transporte", "spas-bienestar"],
-  "spas-bienestar": ["gastronomia-restaurantes", "nautica-charter", "servicios-profesionales"],
+  "arte-tatuajes": ["gastronomia-restaurantes", "gastronomia-catering", "spas-bienestar", "salud-bienestar"],
+  "gastronomia-restaurantes": ["spas-bienestar", "salud-bienestar", "nautica-charter", "arte-tatuajes"],
+  "gastronomia-catering": ["spas-bienestar", "salud-bienestar", "nautica-charter", "inmobiliaria-villas"],
+  "nautica-charter": [
+    "gastronomia-restaurantes",
+    "gastronomia-catering",
+    "motor-transporte",
+    "spas-bienestar",
+    "salud-bienestar",
+  ],
+  "spas-bienestar": ["gastronomia-restaurantes", "gastronomia-catering", "nautica-charter", "servicios-profesionales"],
+  "salud-bienestar": ["gastronomia-restaurantes", "gastronomia-catering", "nautica-charter", "servicios-profesionales"],
   "reformas-construccion": ["jardineria-piscinas", "tecnologia-seguridad", "inmobiliaria-villas"],
   "inmobiliaria-villas": ["reformas-construccion", "jardineria-piscinas", "servicios-profesionales"],
-  "motor-transporte": ["gastronomia-restaurantes", "nautica-charter", "spas-bienestar"],
+  "motor-transporte": [
+    "gastronomia-restaurantes",
+    "gastronomia-catering",
+    "nautica-charter",
+    "spas-bienestar",
+    "salud-bienestar",
+  ],
   "jardineria-piscinas": ["reformas-construccion", "inmobiliaria-villas", "tecnologia-seguridad"],
   "tecnologia-seguridad": ["reformas-construccion", "inmobiliaria-villas", "servicios-profesionales"],
-  "servicios-profesionales": ["inmobiliaria-villas", "reformas-construccion", "gastronomia-restaurantes"],
+  "servicios-profesionales": [
+    "inmobiliaria-villas",
+    "reformas-construccion",
+    "gastronomia-restaurantes",
+    "gastronomia-catering",
+  ],
 };
 
 /**
@@ -66,7 +84,7 @@ function generateCrossSellReason(
     };
   }
 
-  if (targetCategory.includes("spas")) {
+  if (targetCategory.includes("spa") || targetCategory.includes("bienestar") || targetCategory.includes("salud")) {
     return {
       es: `Relajación y masajes terapéuticos de alta gama en ${businessName}.`,
       en: `High-end relaxation and wellness therapy at ${businessName}.`,
@@ -97,7 +115,12 @@ export function getSmartMatchCrossSell(
   limit = 3,
   locale: Locale = "es",
 ): SmartMatchRecommendation[] {
-  const targetCategories = CROSS_SECTOR_AFFINITY[source.category] || ["gastronomia-restaurantes", "spas-bienestar"];
+  const targetCategories = CROSS_SECTOR_AFFINITY[source.category] || [
+    "gastronomia-catering",
+    "gastronomia-restaurantes",
+    "salud-bienestar",
+    "spas-bienestar",
+  ];
 
   const candidates = SERVICES.filter(
     (s) =>

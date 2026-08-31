@@ -170,6 +170,23 @@ describe("trustEngine · Arquitectura de Verificación de Seguridad (Trust Layer
     it("permite al manager editar SOLO si es el titular legítimo asignado", () => {
       expect(isAuthorizedToEdit("manager-owner", "manager", baseService, "manager-owner")).toBe(true);
       expect(isAuthorizedToEdit("manager-intruder", "manager", baseService, "manager-owner")).toBe(false);
+
+      // Si claimedByUid coincide con isClaimed = true
+      const claimedService: ServiceItem = {
+        ...baseService,
+        isClaimed: true,
+        claimedByUid: "manager-claimed",
+      };
+      expect(isAuthorizedToEdit("manager-claimed", "manager", claimedService)).toBe(true);
+      expect(isAuthorizedToEdit("other-manager", "manager", claimedService)).toBe(false);
+
+      // Si managerUid estático coincide
+      const managerStaticService = {
+        ...baseService,
+        managerUid: "manager-static-1",
+      };
+      expect(isAuthorizedToEdit("manager-static-1", "manager", managerStaticService as any)).toBe(true);
+      expect(isAuthorizedToEdit("other-manager", "manager", managerStaticService as any)).toBe(false);
     });
 
     it("rechaza peticiones de edición de usuarios normales o invitados", () => {

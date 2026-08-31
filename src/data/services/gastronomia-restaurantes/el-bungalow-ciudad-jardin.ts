@@ -134,8 +134,15 @@ export const elBungalowCiudadJardin: ServiceItem = {
     ca: "El Bungalow va néixer com un xiringuito de fusta a la platja de Ciutat Jardí, esdevenint el temple de les paelles vora la mar per a generacions de mallorquins.",
     de: "El Bungalow begann als kleine Holzhütte am Strand von Ciutat Jardí und entwickelte sich zu einer unverzichtbaren Institution für Paella-Liebhaber aus aller Welt.",
   },
-  image: "https://rtebungalow.com/uxgg7fb.webp",
-  gallery: ["https://rtebungalow.com/tb98rx4k.webp", "https://rtebungalow.com/5unykhyan.webp"],
+  socialLinks: {
+    instagram: "https://www.instagram.com/rest.elbungalow/",
+    facebook: "https://www.facebook.com/restauranteelbungalow/",
+  },
+  image: "/images/services/restaurante-el-bungalow-ciudad-jardin.jpg",
+  gallery: [
+    "/images/services/restaurante-el-bungalow-paella-ciega.jpg",
+    "/images/services/restaurante-el-bungalow-terraza-atardecer.jpg",
+  ],
   schedule: "Martes a Sábado: 13:00 - 16:00, 19:30 - 23:00 | Domingo y Lunes: 13:00 - 16:00",
   confidenceScore: 99,
   verificationStatus: "verified",

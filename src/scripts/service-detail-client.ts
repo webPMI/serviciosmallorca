@@ -20,6 +20,12 @@ export function initServiceDetailClient() {
       const newSrc = btn.getAttribute("data-img-url");
       if (newSrc && mainDisplayImg) {
         mainDisplayImg.src = newSrc;
+        mainDisplayImg.style.display = "block";
+        mainDisplayImg.classList.add("is-loaded");
+        const fallbackBanner = mainDisplayImg.parentElement?.querySelector(
+          ".service-img-fallback-banner",
+        ) as HTMLElement;
+        if (fallbackBanner) fallbackBanner.style.display = "none";
         thumbBtns.forEach((b) => b.classList.remove("active"));
         btn.classList.add("active");
       }

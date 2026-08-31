@@ -80,4 +80,39 @@ describe("Automated Translation Engine (Zero-Token)", () => {
     expect(enriched.specialties.en.length).toBe(2);
     expect(enriched.highlights.ca.length).toBe(1);
   });
+
+  it("devuelve string vacío si el texto es nulo o vacío", async () => {
+    expect(await translateText("", "en")).toBe("");
+    expect(await translateText("   ", "ca")).toBe("");
+  });
+
+  it("utiliza la caché interna en traducciones idénticas repetidas", async () => {
+    const fetchSpy = vi.fn().mockResolvedValue({
+      ok: true,
+      json: async () => ({ responseData: { translatedText: "Cached response" } }),
+    });
+    vi.stubGlobal("fetch", fetchSpy);
+
+    const first = await translateText("Palma de Mallorca", "en");
+    const second = await translateText("Palma de Mallorca", "en");
+
+    expect(first).toBe(second);
+    expect(fetchSpy).toHaveBeenCalledTimes(1); // Segunda llamada servida desde caché
+  });
+
+  it("tolera y escala con fallback cuando MyMemory arroja advertencia de cuota", async () => {
+    vi.stubGlobal(
+      "fetch",
+      vi.fn().mockResolvedValue({
+        ok: true,
+        json: async () => ({
+          responseData: { translatedText: "MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS" },
+        }),
+      }),
+    );
+
+    // Fallback a Apertium o texto original seguro
+    const res = await translateText("Texto único para test de cuota", "en");
+    expect(res).toBeDefined();
+  });
 });

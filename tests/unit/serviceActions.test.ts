@@ -147,6 +147,19 @@ describe("ServiceActions · Claims (reclamación de negocio)", () => {
     });
     expect(fb.updateDoc.mock.calls[1][1].role).toBe("manager");
   });
+
+  it("aprobación con serviceId vincula el negocio al usuario mediante assignBusinessToUser", async () => {
+    await updateClaimStatus(fakeDb, "claim-1", "approved", "user-42", "svc-bar-1");
+    expect(fb.updateDoc).toHaveBeenCalled();
+  });
+
+  it("updateClaimStatus tolera errores de Firestore de forma segura", async () => {
+    fb.updateDoc.mockRejectedValueOnce(new Error("network error"));
+    const warnSpy = vi.spyOn(console, "warn").mockImplementation(() => {});
+    await expect(updateClaimStatus(fakeDb, "claim-1", "approved")).resolves.not.toThrow();
+    expect(warnSpy).toHaveBeenCalled();
+    warnSpy.mockRestore();
+  });
 });
 
 describe("ServiceActions · Submissions (alta de negocio)", () => {
@@ -223,14 +236,21 @@ describe("ServiceActions · Deletion Requests (RGPD supresión)", () => {
   });
 
   it("getUserDeletionRequests ordena y traga errores", async () => {
-    fb.getDocs.mockResolvedValueOnce(snapOf([{ id: "d2", data: { reason: "a", createdAt: { seconds: 20 } } }]));
-    expect((await getUserDeletionRequests(fakeDb, "user-3")).map((r) => r.id)).toEqual(["d2"]);
+    fb.getDocs.mockResolvedValueOnce(
+      snapOf([
+        { id: "d1", data: { reason: "a", createdAt: { seconds: 20 } } },
+        { id: "d2", data: { reason: "b", createdAt: { toMillis: () => 50000 } } },
+        { id: "d3", data: { reason: "c" } },
+      ]),
+    );
+    const sorted = await getUserDeletionRequests(fakeDb, "user-3");
+    expect(sorted.map((r) => r.id)).toEqual(["d2", "d1", "d3"]);
 
     fb.getDocs.mockRejectedValue(new Error("denied"));
     expect(await getUserDeletionRequests(fakeDb, "user-3")).toEqual([]);
   });
 
-  it("getAllDeletionRequests + updateDeletionRequestStatus operan sobre su colección", async () => {
+  it("getAllDeletionRequests + updateDeletionRequestStatus operan sobre su colección y manejan fallos", async () => {
     fb.getDocs.mockResolvedValueOnce(
       snapOf([
         { id: "dx", data: {} },
@@ -238,6 +258,9 @@ describe("ServiceActions · Deletion Requests (RGPD supresión)", () => {
       ]),
     );
     expect((await getAllDeletionRequests(fakeDb)).length).toBe(2);
+
+    fb.getDocs.mockRejectedValueOnce(new Error("network failure"));
+    expect(await getAllDeletionRequests(fakeDb)).toEqual([]);
 
     await updateDeletionRequestStatus(fakeDb, "dx", "processed");
     expect(fb.updateDoc.mock.calls[0][0]).toMatchObject({

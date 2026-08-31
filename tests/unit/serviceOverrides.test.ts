@@ -149,6 +149,22 @@ describe("mergeServiceWithOverride · Merge parcial overlay", () => {
     expect(merged.servicesProvided?.es).toEqual([]);
   });
 
+  it("soporta merge cuando el servicio estático no tiene fullDescription definida", () => {
+    const serviceWithoutDesc = {
+      ...staticService,
+      fullDescription: undefined,
+    } as unknown as ServiceItem;
+
+    const merged = mergeServiceWithOverride(serviceWithoutDesc, {
+      ownerUid: "u1",
+      fullDescription: { es: "desc-from-override", en: "desc-en" },
+    });
+
+    expect(merged.fullDescription?.es).toBe("desc-from-override");
+    expect(merged.fullDescription?.en).toBe("desc-en");
+    expect(merged.fullDescription?.ca).toBe("");
+  });
+
   it("el merge no muta el objeto estático original", () => {
     const before = JSON.stringify(staticService);
     mergeServiceWithOverride(staticService, {

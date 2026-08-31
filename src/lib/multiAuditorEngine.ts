@@ -15,7 +15,7 @@
 import type { ServiceItem } from "../data/services/index.ts";
 import { validateSpanishTaxId, validateBalearicPhone, isDisposableEmail } from "./managerSecurityEngine.ts";
 import { evaluateServiceTrust } from "./trustEngine.ts";
-import { HONOR_LISTS, getDefaultHonorSpots, isEligibleForHonorSpot } from "./honorBoardEngine.ts";
+import { HONOR_LISTS, getDefaultHonorSpots, isEligibleForHonorSpot, type HonorSpotEntry } from "./honorBoardEngine.ts";
 
 export type AuditSeverity = "CRITICAL" | "WARNING" | "INFO";
 
@@ -263,9 +263,12 @@ export function auditHistoricalEvolution(services: ServiceItem[]): { stats: Audi
 /**
  * 4. 👑 AUDITOR DEL CUADRO DE HONOR Y SUBASTAS (+1€)
  */
-export function auditHonorBoard(services: ServiceItem[]): { stats: AuditorStats; findings: AuditFinding[] } {
+export function auditHonorBoard(
+  services: ServiceItem[],
+  customSpots?: Record<string, HonorSpotEntry[]>,
+): { stats: AuditorStats; findings: AuditFinding[] } {
   const findings: AuditFinding[] = [];
-  const defaultSpots = getDefaultHonorSpots();
+  const defaultSpots = customSpots || getDefaultHonorSpots();
 
   for (const list of HONOR_LISTS) {
     const spots = defaultSpots[list.id] || [];

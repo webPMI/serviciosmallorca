@@ -1,5 +1,11 @@
 import { describe, it, expect, vi } from "vitest";
-import { logToD1, queryD1Logs, D1_SCHEMA_SQL, type ServerLogEntry } from "../../src/lib/d1Logger";
+import {
+  logToD1,
+  queryD1Logs,
+  D1_SCHEMA_SQL,
+  _resetTableInitializedForTesting,
+  type ServerLogEntry,
+} from "../../src/lib/d1Logger";
 
 describe("🛡️ Cloudflare D1 Error Logger & Telemetry Suite (2026)", () => {
   it("contiene el schema SQL válido con índices para consulta eficiente", () => {
@@ -145,5 +151,41 @@ describe("🛡️ Cloudflare D1 Error Logger & Telemetry Suite (2026)", () => {
     const secRes2 = await logToD1(mockD1, secEntry);
     expect(secRes1.throttled).toBeFalsy();
     expect(secRes2.throttled).toBeFalsy();
+  });
+
+  it("resetea la ventana de deduplicación tras expirar el TTL (5 min)", async () => {
+    _resetTableInitializedForTesting();
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date("2026-08-31T12:00:00Z"));
+
+    const mockRun = vi.fn().mockResolvedValue({ success: true });
+    const mockBind = vi.fn().mockReturnValue({ run: mockRun });
+    const mockPrepare = vi.fn().mockReturnValue({ bind: mockBind });
+    const mockExec = vi.fn().mockResolvedValue(true);
+    const mockD1 = { exec: mockExec, prepare: mockPrepare };
+
+    const entry: ServerLogEntry = {
+      level: "WARN",
+      category: "SSR",
+      message: "Unique rate-limit warning test message",
+      url: "/es/test-window",
+    };
+
+    const res1 = await logToD1(mockD1, entry);
+    expect(res1.throttled).toBeFalsy();
+
+    // Inmediato -> throttled
+    const res2 = await logToD1(mockD1, entry);
+    expect(res2.throttled).toBe(true);
+
+    // Avanzar tiempo 6 minutos (supera DEDUP_WINDOW_MS = 5 min) -> ventana expirada -> vuelve a registrar
+    vi.setSystemTime(new Date("2026-08-31T12:06:00Z"));
+
+    const res3 = await logToD1(mockD1, entry);
+    expect(res3.throttled).toBeFalsy();
+    expect(res3.success).toBe(true);
+
+    vi.useRealTimers();
+    _resetTableInitializedForTesting();
   });
 });

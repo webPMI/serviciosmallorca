@@ -215,6 +215,19 @@ describe("🔒 BLINDAJE DE PAGOS, IDEMPOTENCIA Y PREVENCIÓN DE DUPLICADOS", () 
     });
 
     it("debe rechazar peticiones con emails inválidos o importes menores a 1€", () => {
+      const badServicePayload = {
+        serviceId: "",
+        serviceSlug: "",
+        amountEuros: 5.0,
+        backerName: "Antoni",
+        backerEmail: "antoni@gmail.com",
+        paymentMethod: "bizum" as const,
+        mode: "community_boost" as const,
+        idempotencyKey: "idemp_bad_service",
+        clientTimestamp: Date.now(),
+      };
+      expect(validatePaymentRequest(badServicePayload, []).allowed).toBe(false);
+
       const badEmailPayload = {
         serviceId: "forn-inca-tradicio",
         serviceSlug: "forn-inca-tradicio",
@@ -230,6 +243,70 @@ describe("🔒 BLINDAJE DE PAGOS, IDEMPOTENCIA Y PREVENCIÓN DE DUPLICADOS", () 
       const res = validatePaymentRequest(badEmailPayload, []);
       expect(res.allowed).toBe(false);
       expect(res.error).toContain("correo electrónico válido");
+
+      const lowAmountPayload = {
+        ...badEmailPayload,
+        backerEmail: "valid@gmail.com",
+        amountEuros: 0.5,
+      };
+      expect(validatePaymentRequest(lowAmountPayload, []).allowed).toBe(false);
+    });
+
+    it("debe manejar colisión de mutex y colisión de importe liberando el lock correctamente", () => {
+      const existingSpot: HonorSpotEntry = {
+        id: "spot-1",
+        position: 1,
+        serviceId: "otro-comercio",
+        serviceName: "Otro Comercio",
+        serviceSlug: "otro-comercio",
+        category: "gastronomia-restaurantes",
+        zone: "palma",
+        honorTitle: { es: "Líder", en: "Leader", ca: "Líder", de: "Leader" },
+        currentBidEuros: 10.0,
+        sponsorName: "Titular",
+        nominatedAt: new Date().toISOString(),
+        confidenceScore: 90,
+        isVerified: true,
+      };
+
+      // 1. Colisión de Mutex Lock
+      const lockKey = "idemp_concurrent_key";
+      acquirePaymentLock(lockKey, 10000); // Lock ya tomado previamente
+
+      const concurrentPayload = {
+        serviceId: "forn-inca-tradicio",
+        serviceSlug: "forn-inca-tradicio",
+        amountEuros: 15.0,
+        backerName: "Antoni",
+        backerEmail: "antoni@gmail.com",
+        paymentMethod: "card" as const,
+        mode: "community_boost" as const,
+        idempotencyKey: lockKey,
+        clientTimestamp: Date.now(),
+      };
+      const mutexResult = validatePaymentRequest(concurrentPayload, [existingSpot]);
+      expect(mutexResult.allowed).toBe(false);
+      expect(mutexResult.error).toContain("transacción idéntica en proceso");
+
+      // 2. Colisión de importe con release del lock recién tomado
+      const collisionKey = "idemp_collision_amount_key";
+      const collisionAmountPayload = {
+        serviceId: "forn-inca-tradicio",
+        serviceSlug: "forn-inca-tradicio",
+        amountEuros: 10.0, // Colisiona con existingSpot (10.0€)
+        backerName: "Antoni",
+        backerEmail: "antoni@gmail.com",
+        paymentMethod: "card" as const,
+        mode: "community_boost" as const,
+        idempotencyKey: collisionKey,
+        clientTimestamp: Date.now(),
+      };
+      const collisionRes = validatePaymentRequest(collisionAmountPayload, [existingSpot]);
+      expect(collisionRes.allowed).toBe(false);
+      expect(collisionRes.error).toContain("Ya existe otro comercio en esta lista");
+
+      // Verificar que el lock fue liberado tras la colisión de monto
+      expect(acquirePaymentLock(collisionKey)).toBe(true);
     });
 
     it("debe garantizar que HonorCheckoutModal y perfil.astro preservan la navegación y pantalla de recibo fiscal", async () => {

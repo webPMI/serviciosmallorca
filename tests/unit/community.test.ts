@@ -271,16 +271,27 @@ describe("Forum · toggleTopicLike", () => {
 });
 
 describe("Forum · getForumReplies / addForumReply", () => {
-  it("getForumReplies ordena ASCENDENTE (hilo cronológico) con defaults", async () => {
+  it("getForumReplies ordena ASCENDENTE (hilo cronológico) con defaults y toDate", async () => {
+    const d1 = new Date("2026-05-01T00:00:00.000Z");
+    const d2 = new Date("2026-05-02T00:00:00.000Z");
     fb.getDocs.mockResolvedValue(
       snapOf([
-        { id: "rep2", data: { createdAt: "2026-05-02T00:00:00.000Z" } },
-        { id: "rep1", data: { createdAt: "2026-05-01T00:00:00.000Z" } },
+        { id: "rep2", data: { createdAt: { toDate: () => d2 } } },
+        { id: "rep1", data: { createdAt: { toDate: () => d1 } } },
       ]),
     );
     const replies = await getForumReplies("t-topic");
     expect(replies.map((r) => r.id)).toEqual(["rep1", "rep2"]);
     expect(replies[0].authorAvatar).toBe("💬");
+  });
+
+  it("getForumReplies captura errores y devuelve array vacío con advertencia segura", async () => {
+    fb.getDocs.mockRejectedValue(new Error("network failure"));
+    const warnSpy = vi.spyOn(console, "warn").mockImplementation(() => {});
+    const replies = await getForumReplies("t-error-topic");
+    expect(replies).toEqual([]);
+    expect(warnSpy).toHaveBeenCalled();
+    warnSpy.mockRestore();
   });
 
   it("addForumReply incrementa repliesCount y tolera fallo del contador (persistencia garantizada)", async () => {

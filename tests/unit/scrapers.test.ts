@@ -81,6 +81,19 @@ describe("Modular Scrapers Architecture", () => {
       expect(dorks.some((d) => d.platform.includes("YouTube"))).toBe(true);
       expect(dorks.some((d) => d.platform.includes("Facebook"))).toBe(true);
     });
+
+    it("extrae enlaces de Twitter / X y canal de WhatsApp", async () => {
+      const mockHtml = `
+        <div>
+          <a href="https://x.com/negocio_mallorca">Twitter / X</a>
+          <a href="https://chat.whatsapp.com/invite123">Canal WhatsApp</a>
+        </div>
+      `;
+
+      const socials = await extractSocialLinks(mockHtml);
+      expect(socials.twitter).toBe("https://x.com/negocio_mallorca");
+      expect(socials.whatsappChannel).toBe("https://chat.whatsapp.com/invite123");
+    });
   });
 
   describe("restaurantScraper", () => {
@@ -107,6 +120,7 @@ describe("Modular Scrapers Architecture", () => {
         <div>
           <p>Especialistas en fine line, microrealismo y joyería de titanio grado implante ASTM.</p>
           <p>Esterilización con autoclave de clase B.</p>
+          <p>Utilizamos exclusivamente tintas de origen vegano y vegetal.</p>
         </div>
       `;
 
@@ -115,6 +129,7 @@ describe("Modular Scrapers Architecture", () => {
       expect(result.specialties).toContain("Microrealismo & Retratos");
       expect(result.certifications).toContain("Titanio Grado Implante ASTM F-136");
       expect(result.certifications).toContain("Esterilización Autoclave Clase B & Material Desechable");
+      expect(result.certifications).toContain("Tintas Orgánicas y Veganas Certificadas");
     });
   });
 });

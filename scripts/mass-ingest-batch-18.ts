@@ -102,7 +102,7 @@ export const BATCH_18: BusinessDataInput[] = [
     phone: "+34 971 530 450",
     website: "https://teixitsvicens.com",
     schedule: "Lunes a Viernes: 09:00 - 19:30; Sábado: 09:00 - 13:30",
-    tags: ["zona:alcudia-pollensa", "product:textil-mallorquin", "mod:walk-in"],
+    tags: ["zona:alcudia-pollensa", "product:vidrio-soplado", "mod:walk-in"],
     shortDescription: {
       es: "Taller textil familiar de 'Robba de Llengües' (Ikat balear) en Pollença desde 1854: tejeduría artesana en telares mecánicos centenarios, mantelerías, cojines y moda sostenible.",
       en: "Family artisan 'Robba de Llengües' (Balearic Ikat) weaving workshop in Pollença operating since 1854: historic mechanical looms, table linens, cushions, and sustainable decor.",
