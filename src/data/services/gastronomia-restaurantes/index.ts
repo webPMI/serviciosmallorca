@@ -114,6 +114,7 @@ import { heladeriaSaFabricaDeGelatsSoller } from "./heladeria-sa-fabrica-de-gela
 import { ilTanoSantaCatalina } from "./il-tano-santa-catalina.ts";
 import { laCantinaClubNauticCalaRatjada } from "./la-cantina-club-nautic-cala-ratjada.ts";
 import { laHaciendaPeguera } from "./la-hacienda-peguera.ts";
+import { laRosaVermuteriaPalma } from "./la-rosa-vermuteria-palma.ts";
 import { laTerrazaAlcanada } from "./la-terraza-alcanada.ts";
 import { lasOlasSantaPonsa } from "./las-olas-santa-ponsa.ts";
 import { laudatSantanyi } from "./laudat-santanyi.ts";
@@ -333,6 +334,7 @@ export { heladeriaSaFabricaDeGelatsSoller } from "./heladeria-sa-fabrica-de-gela
 export { ilTanoSantaCatalina } from "./il-tano-santa-catalina.ts";
 export { laCantinaClubNauticCalaRatjada } from "./la-cantina-club-nautic-cala-ratjada.ts";
 export { laHaciendaPeguera } from "./la-hacienda-peguera.ts";
+export { laRosaVermuteriaPalma } from "./la-rosa-vermuteria-palma.ts";
 export { laTerrazaAlcanada } from "./la-terraza-alcanada.ts";
 export { lasOlasSantaPonsa } from "./las-olas-santa-ponsa.ts";
 export { laudatSantanyi } from "./laudat-santanyi.ts";
@@ -553,6 +555,7 @@ export const RESTAURANT_SERVICES: ServiceItem[] = [
   ilTanoSantaCatalina,
   laCantinaClubNauticCalaRatjada,
   laHaciendaPeguera,
+  laRosaVermuteriaPalma,
   laTerrazaAlcanada,
   lasOlasSantaPonsa,
   laudatSantanyi,
