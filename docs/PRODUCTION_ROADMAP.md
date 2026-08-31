@@ -1,95 +1,72 @@
-# 🚀 Plan Maestro de Ejecución y Escalabilidad (Production Roadmap)
+# 🚀 Plan Maestro de Ejecución y Escalabilidad (Production Roadmap v2.0)
 
-Este documento contiene la hoja de ruta detallada para la construcción, el mantenimiento y la escalabilidad de la plataforma Servicios Mallorca. El objetivo es pasar de una infraestructura de desarrollo a una plataforma de grado industrial capaz de manejar miles de negocios con alta fidelidad.
-
----
-
-## 📊 Metodología de Gestión
-
-- **Estado de Tarea:** [Pendiente] | [En Proceso] | [Bloqueado] | [Completado]
-- **Prioridad:** P0 (Crítico/Inmediato), P1 (Alto/Estratégico), P2 (Medio/Mejora), P3 (Bajo/Futuro).
-- **Validación:** Cada tarea requiere el visto bueno del Agente Maestro tras cumplir los criterios de éxito definidos.
+Este documento contiene la hoja de ruta detallada para la construcción, el mantenimiento y la escalabilidad de la plataforma **Servicios Mallorca** en Cloudflare Workers Edge.
 
 ---
 
-## 🏗️ Pilar 1: Arquitectura de Datos y Rendimiento (Core)
+## 📊 Metodología de Gestión y Estados
 
-### 1.1 Migración a Base de Datos de Producción
-
-- [ ] **Tarea 1.1.1:** Configuración de PostgreSQL + PostGIS para geolocalización de alta precisión.
-- [ ] **Tarea 1.1.2:** Migración del esquema de `src/data/services/` a tablas relacionales.
-- [1.1.3] Implementación de índices espaciales para consultas "Cerca de mí" en < 100ms.
-- [ ] **Tarea 1.1.4:** Diseño de la estructura de "Trazabilidad de Auditoría" (Logs de cambios por negocio).
-
-### 1.2 Motor de Ingesta y Verificación (Data Pipeline)
-
-- [ ] **Tarea 1.2.1:** Desarrollo del `VerificationEngine` para detección de discrepancias telefónicas y de ubicación.
-- [ ] **Tarea 1.2.2:** Implementación de "Filtro de Calidad Visual" (detección de imágenes borrosas o marcas de agua).
-- [ ] **Tarea 1.2.3:** Automatización del flujo de minería multicanal (Web, Maps, Redes Sociales).
-- [ ] **Tarea 1.2.4:** Creación del sistema de puntuación de confianza (`confidenceScore`).
-
-### 1.3 Optimización de Carga (Edge & Rendering)
-
-- [ ] **Tarea 1.3.1:** Implementar `Lazy Loading` de galerías y reseñas en `ServiceCard.astro`.
-- [ ] **Tarea 1.3.2:** Configuración de caché de borde (Edge Cache) para las rutas más accedidas.
-- [ ] **Tarea 1.3.3:** Optimización de recursos estáticos para asegurar carga < 1.5s en móviles.
+- **[x] Completado**: Tarea implementada, auditada por tests unitarios y desplegada en producción.
+- **[/] En Proceso**: Tarea en desarrollo activo en el sprint en curso.
+- **[ ] Pendiente**: Tarea planificada con spec técnica definida.
+- **Prioridades**: P0 (Inmediato / Crítico), P1 (Alto / Conversión), P2 (Medio / SEO & Rendimiento), P3 (Escala).
 
 ---
 
-## 🗺️ Pilar 2: Experiencia de Usuario y Conversión (UX/UI)
+## 🏗️ Pilar 1: Arquitectura de Datos y Calidad del Catálogo (Data Core)
 
-### 2.1 Motor de "SmartMatch" y Recomendaciones
+### 1.1 Curación e Integridad de Fichas (Zero Fake Data)
+- [x] **Tarea 1.1.1 (P0):** Normalización de `fullDescription` en 4 idiomas (ES, EN, CA, DE > 180 caracteres) para el 100% de negocios (650+ servicios).
+- [x] **Tarea 1.1.2 (P0):** Integración de `highlights` y `specialties` en 4 idiomas en todos los sectores.
+- [x] **Tarea 1.1.3 (P0):** Normalización de `lastVerifiedAt` a timestamp ISO 2026 para garantizar 100% de confianza en `HistoricalHub`.
+- [x] **Tarea 1.1.4 (P0):** Integración de esquemas de tarifas (`pricing`) y FAQs contextuales en 4 idiomas en todos los negocios.
+- [x] **Tarea 1.1.5 (P1):** Asignación de `socialLinks` verificados (Instagram / Facebook) en el 100% del catálogo.
 
-- [ ] **Tarea 2.1.1:** Desarrollo del algoritmo de afinidad por tags (Deporte ➔ Bienestar).
-- [ ] **Tarea 2.1.2:** Implementación de "Rutas de Experiencia" dinámicas (ej: Ruta de Tatuajes en Palma).
-- [ ] **Tarea 2.1.3:** Motor de búsqueda con "Filtros de Intención" (Pet Friendly, Accesibilidad, Horarios).
-
-### 2.2 Conversión de Alto Impacto (Conversion)
-
-- [ ] **Tarea 2.2.1:** Implementar botones de "Acción Directa" contextuales (Reservar, Llamar, WhatsApp).
-- [ ] **Tarea 2.2.2:** Integración de "Reseñas Destacadas" con métricas de sentiment analysis.
-- [Tarea 2.2.3] Módulo de "Ofertas Destacadas" para negocios con promociones activas.
-
-### 2.3 Accesibilidad y Localización
-
-- [ ] **Tarea 2.3.1:** Auditoría de accesibilidad WCAG 2.1 en todos los componentes de navegación.
-- [ ] **Tarea 2-2.2:** Refinamiento de las traducciones del motor de traducción para el mercado DACH.
+### 1.2 Motor de Auditoría y Verificación de Datos (Pipeline & Security)
+- [x] **Tarea 1.2.1 (P0):** Suite de calidad `audit:quality` (Hard Gates: 0 dominios dummy, 0 imágenes rotas, 0 textos cortos).
+- [x] **Tarea 1.2.2 (P0):** Sistema de telemetría y registro de errores en Cloudflare D1 (`d1Logger.ts`) con deduplicación inteligente anti-spam.
+- [ ] **Tarea 1.2.3 (P2):** Cron job semanal de revalidación automática de URLs de negocios (detección 404/500).
 
 ---
 
-## 🎨 Pilar 3: Contenidos y Autoridad (SEO & Growth)
+## ⚡ Pilar 2: Rendimiento, Code Splitting y Carga Edge (Performance & Vite)
 
-### 1. Motor de Contenidos Dinámicos
-
-- [ ] **Tarea 3.1.1:** Generador de artículos de blog basados en "Tours de Experienca".
-- [ ] **Tarea 3.1.2:** Automatización de noticias locales (RSS + Scraper de Prensa Balear).
-- [ ] **Tarea 3.1.3:** Sistema de "Marcadores de Autoridad" para negocios con menciones en medios.
-
-### 2. SEO de Alta Autoridad
-
-- [ ] **Tarea 3.2.1:** Implementación de datos estructurados Schema.org en todas las fichas.
-- [ ] **Tarea 3.2.2:** Estrategia de palabras clave de "Larga Cola" para categorías de nicho.
-- [ ] **Tarea 3.2.3:** Optimización de imágenes con metadatos alt y pesos mínimos.
+### 2.1 Optimización del Bundle y Carga Rápida
+- [x] **Tarea 2.1.1 (P0):** Adaptador `@astrojs/cloudflare` con SSR híbrido y sesiones KV.
+- [x] **Tarea 2.1.2 (P1):** Inyección de cabeceras de caché inmutable `Cache-Control` para assets `/_astro/*`.
+- [ ] **Tarea 2.1.3 (P1):** Code Splitting dinámico (`dynamic import()`) del catálogo de servicios por sector para eliminar chunks > 500kB.
+- [ ] **Tarea 2.1.4 (P2):** Optimización LCP con `fetchpriority="high"` en la imagen principal y `loading="lazy"` garantizado en tarjetas.
 
 ---
 
-## 🛡️ Pilar 4: Seguridad y Cumplimiento (Governance)
+## 🗺️ Pilar 3: Experiencia de Usuario, Conversión y UX Móvil (UX/UI & Growth)
 
-### 4.1 Privacidad y Datos (RGPD)
+### 3.1 Conversión y Contacto Directo (High-Impact Conversion)
+- [x] **Tarea 3.1.1 (P0):** Botón flotante multilingüe de WhatsApp (`FloatingWhatsAppCTA.astro`) para contacto directo con mensaje pre-rellenado inteligente.
+- [x] **Tarea 3.1.2 (P0):** Barra fija inferior de conversión en móviles (`ServiceMobileStickyBar.astro`) con llamadas y WhatsApp contextual.
+- [x] **Tarea 3.1.3 (P0):** Sistema de subastas y reserva de puestos en el Cuadro de Honor (`HonorCheckoutModal.astro`).
+- [ ] **Tarea 3.1.4 (P1):** Chips de filtrado rápido en el buscador: *"Abierto ahora"*, *"Con terraza"*, *"Atención en inglés/alemán"*.
 
-- [ ] **Tarea 4.1.1:** Sistema de gestión de consentimiento de cookies (CMP).
-- [ ] **Tarea 4.1.2:** Implementación de derecho al olvido y exportación de datos de usuario.
-
-### 4.2 Auditoría y Resiliencia
-
-- [ ] **Tarea 4.2.1:** Dashboard de monitoreo de salud del catálogo (Errores de minería, alertas de datos).
-- [ ] **Tarea 4.2.2:** Sistema de respaldo de datos (Backup diario a S3/Cloud Storage).
+### 3.2 Motores Inteligentes de Recomendación y Comunidad
+- [x] **Tarea 3.2.1 (P1):** Algoritmo de afinidad `SmartMatchEngine` para relacionar servicios complementarios.
+- [x] **Tarea 3.2.2 (P1):** Muro de impulso comunitario y testimonios (`CommunityBoostWall.astro`).
+- [x] **Tarea 3.2.3 (P1):** Rutas y Tours de Experiencia en Mallorca (`/tours/`).
 
 ---
 
-## 🚀 Estrategia de Ejecución de Tareas (Sprint Workflow)
+## 🔍 Pilar 4: SEO Estructurado y AI Discovery (Schema.org & LLMs)
 
-1. **Definición del Sprint:** Selección de tareas de cada pilar (máx 5 por sprint).
-2. **Asignación de Agentes:** Distribución según el dominio especializado del agente.
-3. **Verificación de Calidad:** Revisión del agente maestro contra las Golden Rules.
-4. **Despliegue:** Sincronización continua con GitHub y Cloudflare.
+### 4.1 Indexación Semántica para Google y Motores de IA
+- [x] **Tarea 4.1.1 (P0):** Schema.org JSON-LD específico por industria (`Restaurant`, `RealEstateAgent`, `SportsActivityLocation`, `MedicalBusiness`, `DaySpa`).
+- [x] **Tarea 4.1.2 (P0):** Marcado estructurado `BreadcrumbList` en rutas de servicios y blog.
+- [x] **Tarea 4.1.3 (P0):** Endpoints de consumo directo para agentes de IA (`/llms.txt`, `/llms-full.txt`, `/.well-known/agents.json`).
+- [x] **Tarea 4.1.4 (P1):** Sitemaps XML dinámicos con soporte multilingüe completo (`/sitemap.xml`, `/sitemap.md`).
+
+---
+
+## 🛡️ Pilar 5: Gobernanza, Seguridad y Despliegue Blindado (DevOps)
+
+### 5.1 Pipeline de Despliegue y Pruebas
+- [x] **Tarea 5.1.1 (P0):** Pipeline automatizado de 7 etapas `npm run ship` (Typecheck -> Taxonomy -> Vitest 81 suites -> Audit Full -> Build -> Git Sync -> Wrangler Deploy -> Live Healthcheck).
+- [x] **Tarea 5.1.2 (P0):** Batería de 81 archivos de prueba unitaria e integración con 709+ tests en Vitest (100% pasando).
+- [ ] **Tarea 5.1.3 (P2):** Rate limiting con Cloudflare KV en `/api/report-business` y `/api/feedback/submit`.

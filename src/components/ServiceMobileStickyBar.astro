@@ -9,11 +9,14 @@ interface Props {
 
 const { service, locale = "es" } = Astro.props;
 
-const cleanPhone = service.phone ? service.phone.replace(/[^0-9+]/g, "") : "";
-const cleanWhatsApp = service.whatsapp ? service.whatsapp.replace(/[^0-9]/g, "") : "";
-const waText = encodeURIComponent(
-  `Hola, he visto su servicio ${service.name} en Servicios Mallorca y me gustaría solicitar información.`,
-);
+const waTemplates: Record<Locale, string> = {
+  es: `Hola, he visto ${service.name} en Servicios Mallorca y me gustaría solicitar información.`,
+  en: `Hello, I saw ${service.name} on Servicios Mallorca and would like to request information.`,
+  ca: `Hola, he vist ${service.name} a Servicios Mallorca i voldria demanar informació.`,
+  de: `Hallo, ich habe ${service.name} auf Servicios Mallorca gesehen und möchte gerne Informationen anfragen.`,
+};
+
+const waText = encodeURIComponent(waTemplates[locale] || waTemplates.es);
 ---
 
 {

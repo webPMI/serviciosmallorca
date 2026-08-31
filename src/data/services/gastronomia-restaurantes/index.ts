@@ -144,6 +144,7 @@ import { restauranteCafeNouSoller } from "./restaurante-cafe-nou-soller.ts";
 import { restauranteCalDimoniAlgaida } from "./restaurante-cal-dimoni-algaida.ts";
 import { restauranteCanGavellaCanPicafort } from "./restaurante-can-gavella-can-picafort.ts";
 import { restauranteCanPedro } from "./restaurante-can-pedro-genova.ts";
+import { restauranteCanToniMorenoPortDesCanonge } from "./restaurante-can-toni-moreno-port-des-canonge.ts";
 import { restauranteCanPescadorPlayaDeMuro } from "./restaurante-can-pescador-playa-de-muro.ts";
 import { restauranteCanTroncaSantJoan } from "./restaurante-can-tronca-sant-joan.ts";
 import { restauranteClubDeMarPalma } from "./restaurante-club-de-mar-palma.ts";
@@ -364,6 +365,7 @@ export { restauranteCafeNouSoller } from "./restaurante-cafe-nou-soller.ts";
 export { restauranteCalDimoniAlgaida } from "./restaurante-cal-dimoni-algaida.ts";
 export { restauranteCanGavellaCanPicafort } from "./restaurante-can-gavella-can-picafort.ts";
 export { restauranteCanPedro } from "./restaurante-can-pedro-genova.ts";
+export { restauranteCanToniMorenoPortDesCanonge } from "./restaurante-can-toni-moreno-port-des-canonge.ts";
 export { restauranteCanPescadorPlayaDeMuro } from "./restaurante-can-pescador-playa-de-muro.ts";
 export { restauranteCanTroncaSantJoan } from "./restaurante-can-tronca-sant-joan.ts";
 export { restauranteClubDeMarPalma } from "./restaurante-club-de-mar-palma.ts";
@@ -585,6 +587,7 @@ export const RESTAURANT_SERVICES: ServiceItem[] = [
   restauranteCalDimoniAlgaida,
   restauranteCanGavellaCanPicafort,
   restauranteCanPedro,
+  restauranteCanToniMorenoPortDesCanonge,
   restauranteCanPescadorPlayaDeMuro,
   restauranteCanTroncaSantJoan,
   restauranteClubDeMarPalma,

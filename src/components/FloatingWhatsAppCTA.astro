@@ -1,0 +1,136 @@
+---
+import type { ServiceItem } from "../data/services/types";
+import type { Locale } from "../i18n";
+
+interface Props {
+  service: ServiceItem;
+  locale?: Locale;
+}
+
+const { service, locale = "es" } = Astro.props;
+
+const rawPhone = service.whatsapp || service.phone;
+const cleanPhone = rawPhone ? rawPhone.replace(/[^0-9]/g, "") : "";
+
+const waTemplates: Record<Locale, string> = {
+  es: `Hola, he visto ${service.name} en Servicios Mallorca y me gustaría solicitar información.`,
+  en: `Hello, I saw ${service.name} on Servicios Mallorca and would like to request information.`,
+  ca: `Hola, he vist ${service.name} a Servicios Mallorca i voldria demanar informació.`,
+  de: `Hallo, ich habe ${service.name} auf Servicios Mallorca gesehen und möchte gerne Informationen anfragen.`,
+};
+
+const waText = encodeURIComponent(waTemplates[locale] || waTemplates.es);
+
+const labels: Record<Locale, string> = {
+  es: "Contactar por WhatsApp",
+  en: "Chat on WhatsApp",
+  ca: "Contactar per WhatsApp",
+  de: "WhatsApp Kontakt",
+};
+---
+
+{
+  cleanPhone && (
+    <aside class="floating-wa-wrapper" aria-label="WhatsApp Directo">
+      <a
+        href={`https://wa.me/${cleanPhone}?text=${waText}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="floating-wa-btn"
+        aria-label={labels[locale] || labels.es}
+        data-track-event="whatsapp_floating_click"
+        data-service-id={service.id}
+      >
+        <span class="floating-wa-icon-container">
+          <svg class="wa-svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2zm5.8 14.15c-.24.67-1.39 1.28-1.92 1.36-.51.08-1.16.11-3.37-.8-2.42-1-3.95-3.48-4.07-3.64-.12-.16-.98-1.31-.98-2.5 0-1.19.62-1.77.84-2.01.22-.24.48-.3.64-.3.16 0 .32.01.46.01.15 0 .35-.06.55.42.2.49.69 1.68.75 1.8.06.12.1.26.02.42-.08.16-.12.26-.24.4-.12.14-.25.31-.36.42-.12.12-.25.25-.11.49.14.24.63 1.04 1.35 1.68.93.83 1.71 1.09 1.95 1.21.24.12.38.1.52-.06.14-.16.6-1.02.76-1.22.16-.2.32-.16.54-.08.22.08 1.4.66 1.64.78.24.12.4.18.46.28.06.1.06.58-.18 1.25z" />
+          </svg>
+          <span class="online-indicator-dot" />
+        </span>
+        <span class="floating-wa-label">{labels[locale] || labels.es}</span>
+      </a>
+    </aside>
+  )
+}
+
+<style>
+  .floating-wa-wrapper {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    z-index: 90;
+    display: none;
+  }
+
+  @media (min-width: 769px) {
+    .floating-wa-wrapper {
+      display: block;
+    }
+  }
+
+  .floating-wa-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.65rem 1.15rem 0.65rem 0.85rem;
+    background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+    color: #ffffff !important;
+    text-decoration: none;
+    border-radius: 9999px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    box-shadow: 0 8px 24px -4px rgba(18, 140, 126, 0.45), 0 2px 6px rgba(0, 0, 0, 0.08);
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+  }
+
+  .floating-wa-btn:hover {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 12px 30px -4px rgba(18, 140, 126, 0.6), 0 4px 10px rgba(0, 0, 0, 0.12);
+    color: #ffffff !important;
+  }
+
+  .floating-wa-icon-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .wa-svg {
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15));
+  }
+
+  .online-indicator-dot {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    width: 8px;
+    height: 8px;
+    background-color: #79f29a;
+    border-radius: 50%;
+    border: 2px solid #128c7e;
+    animation: pulse-green 2s infinite;
+  }
+
+  @keyframes pulse-green {
+    0% {
+      transform: scale(0.95);
+      box-shadow: 0 0 0 0 rgba(121, 242, 154, 0.7);
+    }
+    70% {
+      transform: scale(1.1);
+      box-shadow: 0 0 0 6px rgba(121, 242, 154, 0);
+    }
+    100% {
+      transform: scale(0.95);
+      box-shadow: 0 0 0 0 rgba(121, 242, 154, 0);
+    }
+  }
+
+  .floating-wa-label {
+    white-space: nowrap;
+  }
+</style>

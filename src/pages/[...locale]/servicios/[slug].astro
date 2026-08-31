@@ -5,6 +5,7 @@ import Footer from "../../../components/Footer.astro";
 import ServiceHeaderHero from "../../../components/ServiceHeaderHero.astro";
 import ServiceQuickNav from "../../../components/ServiceQuickNav.astro";
 import ServiceMobileStickyBar from "../../../components/ServiceMobileStickyBar.astro";
+import FloatingWhatsAppCTA from "../../../components/FloatingWhatsAppCTA.astro";
 import ServiceQuickFacts from "../../../components/ServiceQuickFacts.astro";
 import ServiceGallerySection from "../../../components/ServiceGallerySection.astro";
 import ServiceDescription from "../../../components/ServiceDescription.astro";
@@ -257,6 +258,9 @@ const breadcrumbSchema = {
 
     <!-- Mobile Sticky Conversion Bar -->
     <ServiceMobileStickyBar service={service} locale={locale} />
+
+    <!-- Desktop / Tablet Floating WhatsApp Conversion CTA -->
+    <FloatingWhatsAppCTA service={service} locale={locale} />
   </main>
 
   <Footer translations={translations} currentLocale={locale} getLangPrefix={getLangPrefix} />

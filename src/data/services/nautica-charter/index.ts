@@ -27,6 +27,7 @@ import { ribClubMallorcaService } from "./rib-club-mallorca.ts";
 import { scubaMallorcaPortPollenca } from "./scuba-mallorca-port-pollenca.ts";
 import { skualoAlcudia } from "./skualo-alcudia-diving.ts";
 import { skualoPortoCristo } from "./skualo-porto-cristo.ts";
+import { stpShipyardPalma } from "./stp-shipyard-palma.ts";
 import { sunseekerCharterMallorcaPortals } from "./sunseeker-charter-mallorca-portals.ts";
 import { varaderoAlcudiamar } from "./varadero-alcudiamar.ts";
 import { varaderoPortitxol } from "./varadero-portitxol-services.ts";
@@ -60,6 +61,7 @@ export { ribClubMallorcaService } from "./rib-club-mallorca.ts";
 export { scubaMallorcaPortPollenca } from "./scuba-mallorca-port-pollenca.ts";
 export { skualoAlcudia } from "./skualo-alcudia-diving.ts";
 export { skualoPortoCristo } from "./skualo-porto-cristo.ts";
+export { stpShipyardPalma } from "./stp-shipyard-palma.ts";
 export { sunseekerCharterMallorcaPortals } from "./sunseeker-charter-mallorca-portals.ts";
 export { varaderoAlcudiamar } from "./varadero-alcudiamar.ts";
 export { varaderoPortitxol } from "./varadero-portitxol-services.ts";
@@ -94,6 +96,7 @@ export const NAUTICA_SERVICES: ServiceItem[] = [
   scubaMallorcaPortPollenca,
   skualoAlcudia,
   skualoPortoCristo,
+  stpShipyardPalma,
   sunseekerCharterMallorcaPortals,
   varaderoAlcudiamar,
   varaderoPortitxol,
