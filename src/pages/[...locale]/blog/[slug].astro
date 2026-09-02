@@ -236,7 +236,7 @@ const itemListSchema =
 
         <!-- Featured Image -->
         <div class="post-cover-wrap">
-          <img src={post.coverImage} alt={title} class="post-cover-img" loading="eager" />
+          <img src={post.coverImage} alt={title} class="post-cover-img" loading="eager" fetchpriority="high" decoding="async" />
           <div class="post-cover-overlay"></div>
         </div>
 

@@ -90,5 +90,11 @@
   "join.banner.feat3Desc": "Community-Auktion ab nur 1,00€",
   "join.step1.short": "Beanspruchen oder Registrieren (0€)",
   "join.step2.short": "Steuerliche Prüfung & Übergabe",
-  "join.step3.short": "Volle Kontrolle & Podium (+1€)"
+  "join.step3.short": "Volle Kontrolle & Podium (+1€)",
+  "services.filter.intentsTitle": "Schnellfilter",
+  "services.filter.openNow": "🕒 Jetzt geöffnet",
+  "services.filter.multilingual": "🌐 Englisch / Deutsch",
+  "services.filter.terrace": "☀️ Mit Terrasse",
+  "services.filter.petFriendly": "🐾 Haustierfreundlich",
+  "services.filter.accessible": "♿ Barrierefrei"
 }

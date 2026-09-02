@@ -92,7 +92,7 @@ describe("i18n utility module", () => {
       for (const locale of LOCALES) {
         const trans = await loadTranslations(locale);
         expect(trans).toBeDefined();
-        expect(Object.keys(trans).length).toBe(531);
+        expect(Object.keys(trans).length).toBe(537);
         expect(trans["site.title"]).toBe("Servicios Mallorca");
       }
     });

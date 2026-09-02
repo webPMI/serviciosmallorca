@@ -29,7 +29,7 @@ Este documento centraliza el estado actual, diagnóstico profundo por capas y la
 
 ### 2. ⚡ Rendimiento, Code Splitting y Carga Rápida (Performance & Vite)
 - [ ] **2.1 Code Splitting del Catálogo de Servicios**: Refactorizar la carga de `src/data/services/` para usar importaciones dinámicas (`await import(...)`) según el sector solicitado en rutas dinámicas, reduciendo el bundle JS inicial en un 60%.
-- [ ] **2.2 Optimización de Assets e Imágenes**:
+- [x] **2.2 Optimización de Assets e Imágenes**:
   - Implementar `loading="lazy"` y `decoding="async"` garantizado en todas las tarjetas de servicio.
   - Asegurar `fetchpriority="high"` únicamente en la primera imagen Above-the-Fold (LCP).
 - [ ] **2.3 Edge Caching en Cloudflare Workers**: Configurar encabezados de caché `Cache-Control: public, max-age=3600, s-maxage=86400, stale-while-revalidate=604800` en rutas SSR estáticas o semi-estáticas.
@@ -46,13 +46,13 @@ Este documento centraliza el estado actual, diagnóstico profundo por capas y la
 ### 4. 🎨 Experiencia de Usuario (UI / UX) y Conversión (Conversion & Delight)
 - [x] **4.1 WhatsApp Instant Booking Flotante**: Componente `FloatingWhatsAppCTA.astro` activo en pantallas de escritorio y tablets con mensaje dinámico y punto pulsante en verde.
 - [x] **4.2 Barra Fija de Conversión Móvil**: `ServiceMobileStickyBar.astro` con botones optimizados para llamadas telefónicas y WhatsApp en 4 idiomas.
-- [ ] **4.3 Filtros de Intención Rápida en el Buscador**:
-  - Chip "Abierto ahora" (Live Business Status).
-  - Chip "Con terraza" / "Aparcamiento fácil".
-  - Chip "Idiomas hablados" (Inglés / Alemán / Catalán).
+- [x] **4.3 Filtros de Intención Rápida en el Buscador**:
+  - Chip "Abierto ahora" (Live Business Status en tiempo real).
+  - Chip "Con terraza" / "Pet Friendly" / "Accesible PMR".
+  - Chip "Idiomas hablados" (Inglés / Alemán).
 - [x] **4.4 Modal de Checkout Cuadro de Honor**: `HonorCheckoutModal.astro` para pujas y patrocinios comunitarios.
 
 ### 5. 🛡️ Gobernanza, Telemetría y D1 Analytics (Backend & Governance)
 - [x] **5.1 Error Logger & Telemetría D1**: Sistema de captura en base de datos D1 con deduplicación y niveles `INFO`, `WARN`, `ERROR`, `FATAL`.
-- [ ] **5.2 Rate Limiting en Endpoints de API**: Añadir limitador de tasa (máx 10 peticiones/minuto por IP) con Cloudflare KV en `/api/report-business` y `/api/feedback/submit`.
+- [x] **5.2 Rate Limiting en Endpoints de API**: Limitador de tasa (máx 10 peticiones/minuto por IP con hashing RGPD) y fallback de memoria en `/api/report-business` y `/api/feedback/submit`.
 - [ ] **5.3 Cron Job de Auditoría Semanal**: Tarea programada en Cloudflare Worker (`scheduled` event) que ejecuta una comprobación de estado de webs de negocios y envía alertas si una URL devuelve error 404/500.

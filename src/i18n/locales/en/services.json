@@ -90,5 +90,11 @@
   "join.banner.feat3Desc": "Community auction from just €1.00",
   "join.step1.short": "Claim or Register (€0)",
   "join.step2.short": "Tax Audit & Handover",
-  "join.step3.short": "Full Control & Podium (+€1)"
+  "join.step3.short": "Full Control & Podium (+€1)",
+  "services.filter.intentsTitle": "Quick Filters",
+  "services.filter.openNow": "🕒 Open Now",
+  "services.filter.multilingual": "🌐 English / German",
+  "services.filter.terrace": "☀️ Terrace / Outdoor",
+  "services.filter.petFriendly": "🐾 Pet Friendly",
+  "services.filter.accessible": "♿ Accessible"
 }

@@ -1,11 +1,20 @@
 import type { APIRoute } from "astro";
 import { validateFeedbackSubmission, generateFeedbackId, type FeedbackRecord } from "../../../lib/communityVoiceEngine";
 import { logToD1 } from "../../../lib/d1Logger";
+import { checkRateLimit, createRateLimitResponse } from "../../../lib/rateLimiter";
 
 export const prerender = false;
 
 export const POST: APIRoute = async ({ request, locals }) => {
   try {
+    const runtimeEnv = (locals as any)?.runtime?.env;
+    const kvBinding = runtimeEnv?.KV || runtimeEnv?.CACHE;
+
+    const rateLimit = await checkRateLimit(request, { limit: 10, windowMs: 60000, keyPrefix: "feedback-submit" }, kvBinding);
+    if (!rateLimit.allowed) {
+      return createRateLimitResponse(rateLimit, "Has enviado demasiados mensajes recientemente. Por favor, espera un minuto.");
+    }
+
     const rawBody = await request.json();
 
     const validation = validateFeedbackSubmission(rawBody);
@@ -46,7 +55,6 @@ export const POST: APIRoute = async ({ request, locals }) => {
     };
 
     // Telemetría & Registro seguro en D1 (GR-15)
-    const runtimeEnv = (locals as any)?.runtime?.env;
     const d1Binding = runtimeEnv?.DB;
 
     await logToD1(d1Binding, {

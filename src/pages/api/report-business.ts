@@ -1,9 +1,18 @@
 import type { APIRoute } from "astro";
+import { checkRateLimit, createRateLimitResponse } from "../../lib/rateLimiter";
 
 export const prerender = false;
 
-export const POST: APIRoute = async ({ request }) => {
+export const POST: APIRoute = async ({ request, locals }) => {
   try {
+    const runtimeEnv = (locals as any)?.runtime?.env;
+    const kvBinding = runtimeEnv?.KV || runtimeEnv?.CACHE;
+
+    const rateLimit = await checkRateLimit(request, { limit: 10, windowMs: 60000, keyPrefix: "report-business" }, kvBinding);
+    if (!rateLimit.allowed) {
+      return createRateLimitResponse(rateLimit, "Has superado el límite de reportes por minuto. Inténtalo más tarde.");
+    }
+
     const body = await request.json();
     const { businessSlug, businessName, issueType, details } = body;
 

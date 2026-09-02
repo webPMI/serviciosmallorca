@@ -8,6 +8,7 @@ interface Props {
   className?: string;
   aspectRatio?: "16/9" | "4/3" | "1/1" | "21/9" | "auto";
   loading?: "lazy" | "eager";
+  fetchpriority?: "high" | "low" | "auto";
   id?: string;
 }
 
@@ -20,6 +21,7 @@ const {
   className = "",
   aspectRatio = "16/9",
   loading = "lazy",
+  fetchpriority,
   id,
 } = Astro.props;
 
@@ -67,6 +69,7 @@ const validSrc = !isKnownBrokenUrl && Boolean(src && src.trim().length > 0) ? sr
         src={validSrc}
         alt={alt}
         loading={loading}
+        fetchpriority={fetchpriority}
         decoding="async"
         class="service-real-img"
         onload="this.classList.add('is-loaded'); const sk1 = this.parentElement.querySelector('.service-img-skeleton'); if(sk1) sk1.classList.add('fade-out');"

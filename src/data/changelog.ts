@@ -55,9 +55,9 @@ export interface ReleaseLog {
   entries: ChangelogEntry[];
 }
 
-export const CURRENT_PLATFORM_VERSION = "0.03-beta";
-export const PLATFORM_RELEASE_DATE = "2026-08-30";
-export const PLATFORM_LAST_BUILD_TIMESTAMP = "2026-08-30T12:38:00+02:00";
+export const CURRENT_PLATFORM_VERSION = "0.04-beta";
+export const PLATFORM_RELEASE_DATE = "2026-09-02";
+export const PLATFORM_LAST_BUILD_TIMESTAMP = "2026-09-02T14:35:00+02:00";
 
 /**
  * Devuelve la fecha y hora formateada de la última actualización según el idioma.
@@ -84,6 +84,96 @@ export function getFormattedBuildTimestamp(locale: "es" | "en" | "ca" | "de" = "
 }
 
 export const CHANGELOG_RELEASES: ReleaseLog[] = [
+  {
+    version: "0.04",
+    versionLabel: {
+      es: "v0.04-beta · Core Web Vitals, Filtros de Intención Rápida & Rate Limiting RGPD",
+      en: "v0.04-beta · Core Web Vitals, Quick Intent Filters & GDPR Rate Limiting",
+      ca: "v0.04-beta · Core Web Vitals, Filtres d'Intenció Ràpida i Rate Limiting RGPD",
+      de: "v0.04-beta · Core Web Vitals, Schnellfilter & DSGVO-Rate-Limiting",
+    },
+    type: "BETA",
+    date: "2026-09-02",
+    summary: {
+      es: "Optimización de LCP con fetchpriority en imágenes principales, barra de filtros rápidos por intención en el buscador (Abierto ahora, Multilingüe, Terraza, Pet Friendly, Accesible) y blindaje de endpoints con limitador de tasa y anonimización RGPD.",
+      en: "LCP optimization with fetchpriority on hero images, quick intent filter chips in directory (Open now, Multilingual, Terrace, Pet Friendly, Accessible) and API endpoint security hardening with GDPR-compliant sliding-window rate limiter.",
+      ca: "Optimització de LCP amb fetchpriority a imatges principals, barra de filtres ràpids per intenció al directori (Obert ara, Multilingüe, Terrassa, Pet Friendly, Accessible) i protecció d'endpoints amb limitador de taxa RGPD.",
+      de: "LCP-Optimierung mit fetchpriority bei Hauptbildern, Schnellfilter-Leiste im Verzeichnis (Jetzt geöffnet, Mehrsprachig, Mit Terrasse, Haustierfreundlich, Barrierefrei) und Endpunkt-Schutz mit DSGVO-konformem Rate-Limiter.",
+    },
+    highlights: {
+      es: [
+        "Core Web Vitals & LCP: fetchpriority='high' y decoding='async' en portadas de servicios y blog.",
+        "Filtros Rápidos en Buscador: 5 chips interactivos con cálculo horario en tiempo real en Mallorca.",
+        "Seguridad & Rate Limiter: Protección perimetral de endpoints con soporte para Cloudflare KV y memoria.",
+        "Paridad i18n 100%: 537 claves traducidas con consistencia en ES, EN, CA y DE.",
+      ],
+      en: [
+        "Core Web Vitals & LCP: fetchpriority='high' and decoding='async' on service hero & blog covers.",
+        "Quick Directory Filters: 5 interactive chips with live real-time schedule parsing in Mallorca.",
+        "Security & Rate Limiting: Edge and in-memory sliding window rate limiter with GDPR IP hashing.",
+        "100% i18n Parity: 537 translation keys consistently maintained across ES, EN, CA, and DE.",
+      ],
+      ca: [
+        "Core Web Vitals & LCP: fetchpriority='high' i decoding='async' a les imatges de portada.",
+        "Filtres Ràpids al Cercador: 5 xips interactius amb càlcul horari en temps real a Mallorca.",
+        "Seguretat i Rate Limiter: Protecció d'endpoints amb suport per a Cloudflare KV i memòria.",
+        "Paritat i18n 100%: 537 claus traduïdes amb coherència en ES, EN, CA i DE.",
+      ],
+      de: [
+        "Core Web Vitals & LCP: fetchpriority='high' und decoding='async' für Service- und Blog-Titelbilder.",
+        "Schnellfilter im Verzeichnis: 5 interaktive Chips mit Echtzeit-Öffnungszeitenberechnung auf Mallorca.",
+        "Sicherheit & Rate Limiting: Edge- und Memory-Rate-Limiter mit DSGVO-konformer IP-Anonymisierung.",
+        "100% i18n-Parität: 537 Übersetzungsschlüssel in ES, EN, CA und DE.",
+      ],
+    },
+    entries: [
+      {
+        category: "PERFORMANCE",
+        title: {
+          es: "Inyección de fetchpriority='high' en imágenes LCP",
+          en: "Injected fetchpriority='high' on LCP images",
+          ca: "Injecció de fetchpriority='high' a imatges LCP",
+          de: "fetchpriority='high' für LCP-Bilder integriert",
+        },
+        description: {
+          es: "Mejora del tiempo de renderizado de la imagen principal en fichas de servicio y artículos de blog.",
+          en: "Accelerated hero image render times in service details and blog articles.",
+          ca: "Millora del temps de renderitzat de la imatge principal a fitxes de servei i blog.",
+          de: "Beschleunigte Ladezeiten für Hauptbilder in Service-Profilen und Blogbeiträgen.",
+        },
+      },
+      {
+        category: "FEATURE",
+        title: {
+          es: "Chips de intención rápida en el buscador de servicios",
+          en: "Quick intent filter chips in services directory",
+          ca: "Xips d'intenció ràpida al cercador de serveis",
+          de: "Schnellfilter-Chips im Service-Verzeichnis",
+        },
+        description: {
+          es: "Filtrado instantáneo para 'Abierto ahora' (según hora en Mallorca), idiomas, terraza, mascotas y accesibilidad.",
+          en: "Instant filtering for 'Open now' (real-time Mallorca clock), spoken languages, terrace, pets, and accessibility.",
+          ca: "Filtrat instantani per a 'Obert ara', idiomes, terrassa, mascotes i accessibilitat.",
+          de: "Sofortiges Filtern nach 'Jetzt geöffnet' (Echtzeit Mallorca), Sprachen, Terrasse, Haustieren und Barrierefreiheit.",
+        },
+      },
+      {
+        category: "SECURITY",
+        title: {
+          es: "Rate limiting con anonimización RGPD en endpoints públicos",
+          en: "Rate limiting with GDPR anonymization on public endpoints",
+          ca: "Rate limiting amb anonimització RGPD a endpoints públics",
+          de: "Rate-Limiting mit DSGVO-Anonymisierung auf öffentlichen Endpunkten",
+        },
+        description: {
+          es: "Protección contra bots y spam en los endpoints de sugerencias y reportes de comercio con HTTP 429.",
+          en: "Anti-bot and anti-spam protection on report and feedback endpoints returning standard HTTP 429.",
+          ca: "Protecció contra bots i spam als endpoints de suggeriments i reportis amb HTTP 429.",
+          de: "Anti-Bot- und Anti-Spam-Schutz für Feedback- und Melde-Endpunkte mit HTTP 429.",
+        },
+      },
+    ],
+  },
   {
     version: "0.03",
     versionLabel: {

@@ -90,5 +90,11 @@
   "join.banner.feat3Desc": "Subhasta comunitària des de només 1,00€",
   "join.step1.short": "Reclama o Registra (0€)",
   "join.step2.short": "Auditoria Fiscal & Cessió",
-  "join.step3.short": "Mando Total & Podi (+1€)"
+  "join.step3.short": "Mando Total & Podi (+1€)",
+  "services.filter.intentsTitle": "Filtres Ràpids",
+  "services.filter.openNow": "🕒 Obert Ara",
+  "services.filter.multilingual": "🌐 Anglès / Alemany",
+  "services.filter.terrace": "☀️ Amb Terrassa",
+  "services.filter.petFriendly": "🐾 Pet Friendly",
+  "services.filter.accessible": "♿ Accessible PMR"
 }

@@ -90,5 +90,11 @@
   "join.banner.feat3Desc": "Subasta comunitaria desde solo 1.00€",
   "join.step1.short": "Reclama o Registra (0€)",
   "join.step2.short": "Auditoría Fiscal & Cesión",
-  "join.step3.short": "Mando Total & Podio (+1€)"
+  "join.step3.short": "Mando Total & Podio (+1€)",
+  "services.filter.intentsTitle": "Filtros Rápidos",
+  "services.filter.openNow": "🕒 Abierto Ahora",
+  "services.filter.multilingual": "🌐 Inglés / Alemán",
+  "services.filter.terrace": "☀️ Con Terraza",
+  "services.filter.petFriendly": "🐾 Pet Friendly",
+  "services.filter.accessible": "♿ Accesible PMR"
 }

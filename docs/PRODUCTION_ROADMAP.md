@@ -35,7 +35,7 @@ Este documento contiene la hoja de ruta detallada para la construcción, el mant
 - [x] **Tarea 2.1.1 (P0):** Adaptador `@astrojs/cloudflare` con SSR híbrido y sesiones KV.
 - [x] **Tarea 2.1.2 (P1):** Inyección de cabeceras de caché inmutable `Cache-Control` para assets `/_astro/*`.
 - [ ] **Tarea 2.1.3 (P1):** Code Splitting dinámico (`dynamic import()`) del catálogo de servicios por sector para eliminar chunks > 500kB.
-- [ ] **Tarea 2.1.4 (P2):** Optimización LCP con `fetchpriority="high"` en la imagen principal y `loading="lazy"` garantizado en tarjetas.
+- [x] **Tarea 2.1.4 (P2):** Optimización LCP con `fetchpriority="high"` en la imagen principal y `loading="lazy"` garantizado en tarjetas.
 
 ---
 
@@ -45,7 +45,7 @@ Este documento contiene la hoja de ruta detallada para la construcción, el mant
 - [x] **Tarea 3.1.1 (P0):** Botón flotante multilingüe de WhatsApp (`FloatingWhatsAppCTA.astro`) para contacto directo con mensaje pre-rellenado inteligente.
 - [x] **Tarea 3.1.2 (P0):** Barra fija inferior de conversión en móviles (`ServiceMobileStickyBar.astro`) con llamadas y WhatsApp contextual.
 - [x] **Tarea 3.1.3 (P0):** Sistema de subastas y reserva de puestos en el Cuadro de Honor (`HonorCheckoutModal.astro`).
-- [ ] **Tarea 3.1.4 (P1):** Chips de filtrado rápido en el buscador: *"Abierto ahora"*, *"Con terraza"*, *"Atención en inglés/alemán"*.
+- [x] **Tarea 3.1.4 (P1):** Chips de filtrado rápido en el buscador: *"Abierto ahora"*, *"Con terraza"*, *"Atención en inglés/alemán"*, *"Pet Friendly"*, *"Accesible PMR"*.
 
 ### 3.2 Motores Inteligentes de Recomendación y Comunidad
 - [x] **Tarea 3.2.1 (P1):** Algoritmo de afinidad `SmartMatchEngine` para relacionar servicios complementarios.
@@ -67,6 +67,6 @@ Este documento contiene la hoja de ruta detallada para la construcción, el mant
 ## 🛡️ Pilar 5: Gobernanza, Seguridad y Despliegue Blindado (DevOps)
 
 ### 5.1 Pipeline de Despliegue y Pruebas
-- [x] **Tarea 5.1.1 (P0):** Pipeline automatizado de 7 etapas `npm run ship` (Typecheck -> Taxonomy -> Vitest 81 suites -> Audit Full -> Build -> Git Sync -> Wrangler Deploy -> Live Healthcheck).
-- [x] **Tarea 5.1.2 (P0):** Batería de 81 archivos de prueba unitaria e integración con 709+ tests en Vitest (100% pasando).
-- [ ] **Tarea 5.1.3 (P2):** Rate limiting con Cloudflare KV en `/api/report-business` y `/api/feedback/submit`.
+- [x] **Tarea 5.1.1 (P0):** Pipeline automatizado de 7 etapas `npm run ship` (Typecheck -> Taxonomy -> Vitest 82 suites -> Audit Full -> Build -> Git Sync -> Wrangler Deploy -> Live Healthcheck).
+- [x] **Tarea 5.1.2 (P0):** Batería de 82 archivos de prueba unitaria e integración con 718 tests en Vitest (100% pasando).
+- [x] **Tarea 5.1.3 (P2):** Rate limiting con Cloudflare KV y fallback de memoria en `/api/report-business` y `/api/feedback/submit`.
