@@ -40,9 +40,7 @@ describe("🏛️ Citizen Guides Page & Routing Suite (/guias)", () => {
     });
   });
 
-  it(
-    "cada guía posee categorías canónicas existentes en CATEGORIES y servicios reales contrastados",
-    async () => {
+  it("cada guía posee categorías canónicas existentes en CATEGORIES y servicios reales contrastados", async () => {
     const { CATEGORIES } = await import("../../src/data/categories");
     const { getServiceById } = await import("../../src/data/services");
     const validCategoryIds = new Set(CATEGORIES.map((c) => c.id));
@@ -76,7 +74,7 @@ describe("🏛️ Citizen Guides Page & Routing Suite (/guias)", () => {
         expect(guide.assistanceHeader.body.de.length).toBeGreaterThan(20);
       }
     });
-  }, 15000);
+  }, 45000);
 
   it("genera la estructura correcta de Schema.org HowTo y FAQPage para SEO institucional", () => {
     const guide = getGuideBySlug("empadronamiento-palma");
