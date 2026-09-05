@@ -1,6 +1,7 @@
 import type { ServiceItem } from "../types";
 
 export const service: ServiceItem = {
+  id: "academia-oposiciones-mallorca-prepara",
   slug: "academia-oposiciones-mallorca-prepara",
   name: "Academia de Oposiciones Prepara Mallorca",
   category: "educacion-formacion",
@@ -43,19 +44,63 @@ export const service: ServiceItem = {
     de: "Die Prepara Mallorca Akademie bereitet seit über 12 Jahren Bewerber aus den Balearen auf die anspruchsvollsten Prüfungen des öffentlichen Dienstes vor. Das Team aus aktiven oder pensionierten Beamten bietet eine Vorbereitung an, die vollständig auf die aktuellen Lehrpläne für Zivilgarde, Nationalpolizei, Lokalpolizei und CAIB-Behörden abgestimmt ist.",
   },
   highlights: {
-    es: ["Preparadores funcionarios del cuerpo al que preparan: máxima calidad", "Temarios actualizados a la última convocatoria oficial de cada cuerpo", "Simulacros de examen semanales con corrección y resolución en clase", "Preparación online en directo para opositores fuera de Palma"],
-    en: ["Trainers who are active officers of the corps they prepare for: maximum quality", "Syllabuses updated to the latest official exam notice for each corps", "Weekly mock exams with correction and classroom resolution", "Live online preparation for candidates outside Palma"],
-    ca: ["Preparadors funcionaris del cos per al qual preparen: màxima qualitat", "Temaris actualitzats a la darrera convocatòria oficial de cada cos", "Simulacres d'examen setmanals amb correcció i resolució a classe", "Preparació en línia en directe per a opositors fora de Palma"],
-    de: ["Trainer, die aktive Beamte des vorbereiteten Korps sind: höchste Qualität", "Lehrpläne aktualisiert auf die neueste offizielle Ausschreibung jedes Korps", "Wöchentliche Probeprüfungen mit Korrektur und Auflösung im Unterricht", "Live-Online-Vorbereitung für Kandidaten außerhalb von Palma"],
+    es: [
+      "Preparadores funcionarios del cuerpo al que preparan: máxima calidad",
+      "Temarios actualizados a la última convocatoria oficial de cada cuerpo",
+      "Simulacros de examen semanales con corrección y resolución en clase",
+      "Preparación online en directo para opositores fuera de Palma",
+    ],
+    en: [
+      "Trainers who are active officers of the corps they prepare for: maximum quality",
+      "Syllabuses updated to the latest official exam notice for each corps",
+      "Weekly mock exams with correction and classroom resolution",
+      "Live online preparation for candidates outside Palma",
+    ],
+    ca: [
+      "Preparadors funcionaris del cos per al qual preparen: màxima qualitat",
+      "Temaris actualitzats a la darrera convocatòria oficial de cada cos",
+      "Simulacres d'examen setmanals amb correcció i resolució a classe",
+      "Preparació en línia en directe per a opositors fora de Palma",
+    ],
+    de: [
+      "Trainer, die aktive Beamte des vorbereiteten Korps sind: höchste Qualität",
+      "Lehrpläne aktualisiert auf die neueste offizielle Ausschreibung jedes Korps",
+      "Wöchentliche Probeprüfungen mit Korrektur und Auflösung im Unterricht",
+      "Live-Online-Vorbereitung für Kandidaten außerhalb von Palma",
+    ],
   },
   servicesProvided: {
-    es: ["Preparación a la oposición de Guardia Civil (Escala de Cabos y Guardias)", "Preparación a la oposición de Policía Nacional (Escala Básica)", "Preparación a la Policía Local de Mallorca y municipios de las Islas Baleares", "Oposición auxiliar administrativo de la AGE, CAIB y Consell de Mallorca"],
-    en: ["Civil Guard exam preparation (Non-commissioned Officers and Guards)", "National Police exam preparation (Basic Scale)", "Mallorca and Balearic Islands Local Police exam preparation", "Civil Service Administrative Assistant exams for AGE, CAIB, and Consell de Mallorca"],
-    ca: ["Preparació de l'oposició de la Guàrdia Civil (Escala de Cabos i Guàrdies)", "Preparació de l'oposició de la Policia Nacional (Escala Bàsica)", "Preparació de la Policia Local de Mallorca i municipis de les Illes Balears", "Oposició auxiliar administratiu de l'AGE, CAIB i Consell de Mallorca"],
-    de: ["Vorbereitung auf die Zivilgarde-Prüfung (Unteroffiziere und Wächter)", "Vorbereitung auf die Nationalpolizei-Prüfung (Basisskala)", "Vorbereitung auf die Lokalpolizei Mallorca und Balearen", "Verwaltungsassistent-Prüfungen für AGE, CAIB und Consell de Mallorca"],
+    es: [
+      "Preparación a la oposición de Guardia Civil (Escala de Cabos y Guardias)",
+      "Preparación a la oposición de Policía Nacional (Escala Básica)",
+      "Preparación a la Policía Local de Mallorca y municipios de las Islas Baleares",
+      "Oposición auxiliar administrativo de la AGE, CAIB y Consell de Mallorca",
+    ],
+    en: [
+      "Civil Guard exam preparation (Non-commissioned Officers and Guards)",
+      "National Police exam preparation (Basic Scale)",
+      "Mallorca and Balearic Islands Local Police exam preparation",
+      "Civil Service Administrative Assistant exams for AGE, CAIB, and Consell de Mallorca",
+    ],
+    ca: [
+      "Preparació de l'oposició de la Guàrdia Civil (Escala de Cabos i Guàrdies)",
+      "Preparació de l'oposició de la Policia Nacional (Escala Bàsica)",
+      "Preparació de la Policia Local de Mallorca i municipis de les Illes Balears",
+      "Oposició auxiliar administratiu de l'AGE, CAIB i Consell de Mallorca",
+    ],
+    de: [
+      "Vorbereitung auf die Zivilgarde-Prüfung (Unteroffiziere und Wächter)",
+      "Vorbereitung auf die Nationalpolizei-Prüfung (Basisskala)",
+      "Vorbereitung auf die Lokalpolizei Mallorca und Balearen",
+      "Verwaltungsassistent-Prüfungen für AGE, CAIB und Consell de Mallorca",
+    ],
   },
   reputationBreakdown: {
-    googleMaps: { rating: 4.8, reviewCount: 218, url: "https://www.google.com/maps/search/?api=1&query=Academia+Oposiciones+Prepara+Mallorca" },
+    googleMaps: {
+      rating: 4.8,
+      reviewCount: 218,
+      url: "https://www.google.com/maps/search/?api=1&query=Academia+Oposiciones+Prepara+Mallorca",
+    },
   },
   createdAt: "2026-09-05",
   lastUpdatedAt: "2026-09-05",

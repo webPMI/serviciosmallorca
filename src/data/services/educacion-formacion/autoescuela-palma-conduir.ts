@@ -1,6 +1,7 @@
 import type { ServiceItem } from "../types";
 
 export const service: ServiceItem = {
+  id: "autoescuela-palma-conduir",
   slug: "autoescuela-palma-conduir",
   name: "Autoescuela Conduir Palma",
   category: "educacion-formacion",
@@ -43,19 +44,63 @@ export const service: ServiceItem = {
     de: "Die Fahrschule Conduir in Palma zeichnet sich durch eine hohe Erstbestehenquote aus, dank eines Lehrmethode basierend auf zertifiziertem Fahrsimulatortraining, interaktivem Theorieunterricht und überwachten Prüfungsübungen. Sie bietet vollständige Ausbildung für B, A2, A, C und D Führerscheine sowie den Berufsfahrer-Nachweis CAP an.",
   },
   highlights: {
-    es: ["Alta tasa de aprobados en primera convocatoria del examen de la DGT", "Simulador de conducción homologado para prácticas de emergencia y lluvia", "App de test interactivos actualizada a los últimos cuestionarios de la DGT", "Formación en carnet de camión C y D, y certificado CAP para profesionales"],
-    en: ["High DGT first-attempt pass rate for both theory and practical exams", "Certified driving simulator for emergency and wet-weather practice scenarios", "Interactive test app updated to the latest DGT questionnaires", "Truck C and D license training and CAP professional certificate"],
-    ca: ["Alta taxa d'aprovats en primera convocatòria de l'examen de la DGT", "Simulador de conducció homologat per a pràctiques d'emergència i pluja", "App de tests interactius actualitzada als darrers qüestionaris de la DGT", "Formació en carnet de camió C i D i certificat CAP per a professionals"],
-    de: ["Hohe Erstbestehenquote für Theorie- und Fahrprüfung der DGT", "Zertifizierter Fahrsimulator für Notfall- und Nasswetterszenarien", "Interaktive Test-App mit den neuesten DGT-Fragen aktualisiert", "LKW-Führerschein C und D sowie Berufskraftfahrer-Nachweis CAP"],
+    es: [
+      "Alta tasa de aprobados en primera convocatoria del examen de la DGT",
+      "Simulador de conducción homologado para prácticas de emergencia y lluvia",
+      "App de test interactivos actualizada a los últimos cuestionarios de la DGT",
+      "Formación en carnet de camión C y D, y certificado CAP para profesionales",
+    ],
+    en: [
+      "High DGT first-attempt pass rate for both theory and practical exams",
+      "Certified driving simulator for emergency and wet-weather practice scenarios",
+      "Interactive test app updated to the latest DGT questionnaires",
+      "Truck C and D license training and CAP professional certificate",
+    ],
+    ca: [
+      "Alta taxa d'aprovats en primera convocatòria de l'examen de la DGT",
+      "Simulador de conducció homologat per a pràctiques d'emergència i pluja",
+      "App de tests interactius actualitzada als darrers qüestionaris de la DGT",
+      "Formació en carnet de camió C i D i certificat CAP per a professionals",
+    ],
+    de: [
+      "Hohe Erstbestehenquote für Theorie- und Fahrprüfung der DGT",
+      "Zertifizierter Fahrsimulator für Notfall- und Nasswetterszenarien",
+      "Interaktive Test-App mit den neuesten DGT-Fragen aktualisiert",
+      "LKW-Führerschein C und D sowie Berufskraftfahrer-Nachweis CAP",
+    ],
   },
   servicesProvided: {
-    es: ["Carnet de conducir B (coche) y AM (ciclomotor): teoría y prácticas completas", "Carnet de moto A1, A2 y A: prácticas en circuito homologado y vía pública", "Carnet de camión C y autobús D con prácticas en vehículo articulado", "CAP (Certificado de Aptitud Profesional) para conductores de mercancías y viajeros"],
-    en: ["B (car) and AM (moped) driving license: complete theory and practical training", "A1, A2, and A motorcycle license: circuit and public road practice", "C truck and D bus licenses with articulated vehicle practice", "CAP (Certificate of Professional Competence) for freight and passenger drivers"],
-    ca: ["Carnet B (cotxe) i AM (ciclomotor): teoria i pràctiques completes", "Carnet de moto A1, A2 i A: pràctiques en circuit homologat i via pública", "Carnet de camió C i autobús D amb pràctiques en vehicle articulat", "CAP (Certificat d'Aptitud Professional) per a conductors de mercaderies i viatgers"],
-    de: ["Führerschein B (Auto) und AM (Moped): vollständige Theorie- und Fahrausbildung", "A1, A2 und A Motorradführerschein: Rennstrecken- und Straßenübungen", "C LKW- und D Bus-Führerschein mit Übungen in Gelenkfahrzeugen", "CAP (Berufskraftfahrer-Nachweis) für Güter- und Personenbeförderung"],
+    es: [
+      "Carnet de conducir B (coche) y AM (ciclomotor): teoría y prácticas completas",
+      "Carnet de moto A1, A2 y A: prácticas en circuito homologado y vía pública",
+      "Carnet de camión C y autobús D con prácticas en vehículo articulado",
+      "CAP (Certificado de Aptitud Profesional) para conductores de mercancías y viajeros",
+    ],
+    en: [
+      "B (car) and AM (moped) driving license: complete theory and practical training",
+      "A1, A2, and A motorcycle license: circuit and public road practice",
+      "C truck and D bus licenses with articulated vehicle practice",
+      "CAP (Certificate of Professional Competence) for freight and passenger drivers",
+    ],
+    ca: [
+      "Carnet B (cotxe) i AM (ciclomotor): teoria i pràctiques completes",
+      "Carnet de moto A1, A2 i A: pràctiques en circuit homologat i via pública",
+      "Carnet de camió C i autobús D amb pràctiques en vehicle articulat",
+      "CAP (Certificat d'Aptitud Professional) per a conductors de mercaderies i viatgers",
+    ],
+    de: [
+      "Führerschein B (Auto) und AM (Moped): vollständige Theorie- und Fahrausbildung",
+      "A1, A2 und A Motorradführerschein: Rennstrecken- und Straßenübungen",
+      "C LKW- und D Bus-Führerschein mit Übungen in Gelenkfahrzeugen",
+      "CAP (Berufskraftfahrer-Nachweis) für Güter- und Personenbeförderung",
+    ],
   },
   reputationBreakdown: {
-    googleMaps: { rating: 4.7, reviewCount: 543, url: "https://www.google.com/maps/search/?api=1&query=Autoescuela+Conduir+Palma" },
+    googleMaps: {
+      rating: 4.7,
+      reviewCount: 543,
+      url: "https://www.google.com/maps/search/?api=1&query=Autoescuela+Conduir+Palma",
+    },
   },
   createdAt: "2026-09-05",
   lastUpdatedAt: "2026-09-05",
