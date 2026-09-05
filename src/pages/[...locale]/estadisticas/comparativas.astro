@@ -1,0 +1,1856 @@
+---
+/**
+ * estadisticas/comparativas.astro
+ *
+ * Página de Comparativas Históricas Semestrales (10 a 20 Años) por Sectores de Mallorca.
+ * Cumple con GR-01 (CSS tokens), GR-02 (responsive), GR-03 (TypeScript estricto),
+ * GR-04 (i18n cuatrilingüe), GR-07 (accesibilidad semántica) y GR-11 (Zero Fake Data).
+ */
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Navbar from "../../../components/Navbar.astro";
+import Footer from "../../../components/Footer.astro";
+import SectorHistoricalChart from "../../../components/SectorHistoricalChart.astro";
+import { HISTORICAL_SECTOR_SERIES } from "../../../data/historicalSectorStats";
+import { getLocaleFromUrl, loadTranslations, getLangPrefix, type Locale } from "../../../i18n";
+
+export const prerender = false;
+
+const locale = getLocaleFromUrl(Astro.url) as Locale;
+const translations = await loadTranslations(locale);
+const prefix = getLangPrefix(locale);
+
+const titles: Record<Locale, string> = {
+  es: "Observatorio Macroeconómico de Mallorca (2006–2026) · Comparativa de 16 Sectores",
+  ca: "Observatori Macroeconòmic de Mallorca (2006–2026) · Comparativa de 16 Sectors",
+  en: "Mallorca 20-Year Macroeconomic Observatory (2006–2026) · 16-Sector Trends",
+  de: "Makro-Observatorium Mallorca (2006–2026) · 16-Branchen-Vergleich",
+};
+
+const descriptions: Record<Locale, string> = {
+  es: "Observatorio macroeconómico de Mallorca (2006–2026): comparativa semestral de 16 sectores clave (vivienda, turismo, empleo, censo, ParcBit, TIB, sanidad y sostenibilidad) con curvas indexadas Base 100 y datos de IBESTAT e INE.",
+  ca: "Observatori macroeconòmic de Mallorca (2006–2026): comparativa semestral de 16 sectors clau (habitatge, turisme, ocupació, cens, ParcBit, TIB, sanitat i sostenibilitat) amb corbes indexades Base 100 i dades oficials de l'IBESTAT.",
+  en: "20-year macroeconomic observatory of Mallorca (2006–2026): semiannual comparison across 16 sectors (real estate, tourism, jobs, ParcBit tech, TIB railway, healthcare, energy) with Base 100 curves and verified IBESTAT data.",
+  de: "20-Jahre-Makro-Observatorium Mallorcas (2006–2026): Halbjährlicher Vergleich von 16 Branchen (Immobilien, Tourismus, Betriebe, ParcBit-Tech, TIB-Bahn, Gesundheit) mit Basis-100-Kurven und IBESTAT-Zahlen.",
+};
+
+const pageTexts: Record<
+  Locale,
+  {
+    badge: string;
+    headline: string;
+    lead: string;
+    quickNavTitle: string;
+    summaryTableTitle: string;
+    summaryTableSubtitle: string;
+    sectorCol: string;
+    year2006Col: string;
+    year2016Col: string;
+    year2026Col: string;
+    change10Col: string;
+    change20Col: string;
+    cagrCol: string;
+    backToStatsBtn: string;
+    readDeepDiveBtn: string;
+  }
+> = {
+  es: {
+    badge: "Observatorio Histórico a 20 Años · Series Semestrales Oficiales",
+    headline: "Evolución y Comparativa de Sectores en Mallorca (2006–2026)",
+    lead: "Visualiza y compara la transformación estructural de la isla en intervalos semestrales (cada 6 meses). Desde el ciclo inmobiliario y el flujo de visitantes hasta el parque empresarial y la náutica de recreo.",
+    quickNavTitle: "Navegación Rápida por Sectores:",
+    summaryTableTitle: "Matriz Comparativa Resumen (2006 vs 2016 vs 2026)",
+    summaryTableSubtitle: "Crecimiento estructural a 10 y 20 años en los principales indicadores económicos insulares.",
+    sectorCol: "Sector / Indicador",
+    year2006Col: "Año 2006 (S1)",
+    year2016Col: "Año 2016 (S1)",
+    year2026Col: "Año 2026 (S1)",
+    change10Col: "Var. 10 Años",
+    change20Col: "Var. 20 Años",
+    cagrCol: "CAGR (10A / 20A)",
+    backToStatsBtn: "Volver a Indicadores Actuales",
+    readDeepDiveBtn: "Leer Informe Completo en el Blog",
+  },
+  ca: {
+    badge: "Observatori Històric a 20 Anys · Sèries Semestrals Oficials",
+    headline: "Evolució i Comparativa de Sectors a Mallorca (2006–2026)",
+    lead: "Visualitza i compara la transformació estructural de l'illa en intervals semestrals (cada 6 mesos). Des del cicle immobiliari i el turisme fins al teixit d'empreses i la nàutica.",
+    quickNavTitle: "Navegació Ràpida per Sectors:",
+    summaryTableTitle: "Matriu Comparativa Resum (2006 vs 2016 vs 2026)",
+    summaryTableSubtitle: "Creixement estructural a 10 i 20 anys en els principals indicadors econòmics insulars.",
+    sectorCol: "Sector / Indicador",
+    year2006Col: "Any 2006 (S1)",
+    year2016Col: "Any 2016 (S1)",
+    year2026Col: "Any 2026 (S1)",
+    change10Col: "Var. 10 Anys",
+    change20Col: "Var. 20 Anys",
+    cagrCol: "CAGR (10A / 20A)",
+    backToStatsBtn: "Tornar a Indicadors Actuals",
+    readDeepDiveBtn: "Llegir Informe Complet al Blog",
+  },
+  en: {
+    badge: "20-Year Historical Observatory · Official Semiannual Series",
+    headline: "Mallorca Sector Evolution & Multi-Aspect Comparison (2006–2026)",
+    lead: "Explore and compare the island's economic transformation at 6-month intervals. From property values and visitor pressure to business density and yachting.",
+    quickNavTitle: "Jump to Sector:",
+    summaryTableTitle: "Executive Comparison Matrix (2006 vs 2016 vs 2026)",
+    summaryTableSubtitle: "Structural 10-year and 20-year growth across primary island macroeconomic series.",
+    sectorCol: "Sector / Indicator",
+    year2006Col: "2006 (H1)",
+    year2016Col: "2016 (H1)",
+    year2026Col: "2026 (H1)",
+    change10Col: "10-Yr Change",
+    change20Col: "20-Yr Change",
+    cagrCol: "CAGR (10Y / 20Y)",
+    backToStatsBtn: "Back to Live Indicators",
+    readDeepDiveBtn: "Read In-Depth Editorial Report",
+  },
+  de: {
+    badge: "20-Jahre-Observatorium · Offizielle Halbjahresdaten",
+    headline: "Branchenentwicklung & Historischer Vergleich auf Mallorca (2006–2026)",
+    lead: "Vergleichen Sie den Wandel der Inselwirtschaft in 6-Monats-Intervallen: Immobilienpreise, Urlauberströme, Arbeitgeberbetriebe, Bevölkerung und Charterflotte.",
+    quickNavTitle: "Direkt zur Branche springen:",
+    summaryTableTitle: "Vergleichsmatrix im Überblick (2006 vs 2016 vs 2026)",
+    summaryTableSubtitle: "Struktureller Zuwachs der wichtigsten Inselindikatoren über 10 und 20 Jahre.",
+    sectorCol: "Branche / Kennzahl",
+    year2006Col: "Jahr 2006 (H1)",
+    year2016Col: "Jahr 2016 (H1)",
+    year2026Col: "Jahr 2026 (H1)",
+    change10Col: "10-Jahres-Var.",
+    change20Col: "20-Jahres-Var.",
+    cagrCol: "CAGR (10J / 20J)",
+    backToStatsBtn: "Zurück zu den aktuellen Kennzahlen",
+    readDeepDiveBtn: "Vollständigen Blog-Bericht lesen",
+  },
+};
+
+const texts = pageTexts[locale] || pageTexts.es;
+
+const schemaOrg = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": `https://serviciosmallorca.com${prefix}estadisticas/comparativas#webpage`,
+      name: titles[locale],
+      description: descriptions[locale],
+      url: `https://serviciosmallorca.com${prefix}estadisticas/comparativas`,
+      inLanguage: locale,
+      isPartOf: {
+        "@type": "WebSite",
+        "@id": "https://serviciosmallorca.com/#website",
+        name: "Servicios Mallorca",
+      },
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: locale === "ca" ? "Inici" : locale === "en" ? "Home" : locale === "de" ? "Startseite" : "Inicio",
+          item: `https://serviciosmallorca.com${prefix}`,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: locale === "ca" ? "Estadístiques" : locale === "en" ? "Statistics" : locale === "de" ? "Statistiken" : "Estadísticas",
+          item: `https://serviciosmallorca.com${prefix}estadisticas`,
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: locale === "ca" ? "Comparatives Semestrals" : locale === "en" ? "Semiannual Comparisons" : locale === "de" ? "Halbjahres-Vergleiche" : "Comparativas Semestrales",
+          item: `https://serviciosmallorca.com${prefix}estadisticas/comparativas`,
+        },
+      ],
+    },
+    {
+      "@type": "Dataset",
+      "@id": `https://serviciosmallorca.com${prefix}estadisticas/comparativas#dataset`,
+      name: "Mallorca Semiannual Economic & Social Time Series (2006-2026)",
+      description: "Historical semiannual indicators across 16 macroeconomic and social sectors of Mallorca sourced from IBESTAT, INE, Social Security, AENA, TIRME, and SFM.",
+      temporalCoverage: "2006-01-01/2026-06-30",
+      spatialCoverage: {
+        "@type": "Place",
+        name: "Mallorca, Illes Balears, Spain",
+        geo: {
+          "@type": "GeoCoordinates",
+          latitude: 39.6953,
+          longitude: 3.0176,
+        },
+      },
+      creator: {
+        "@type": "Organization",
+        name: "Servicios Mallorca - Observatorio Insular",
+        url: "https://serviciosmallorca.com",
+      },
+      variableMeasured: [
+        "Precio medio vivienda (€/m²)",
+        "Afluencia turística semestral",
+        "Empresas inscritas en Seguridad Social",
+        "Población empadronada",
+        "Pasajeros aeropuerto Son Sant Joan",
+        "Flota y amarres deportivos",
+        "Locales de hostelería y restauración",
+        "Demanda eléctrica y recursos hídricos",
+        "Alumnos en educación internacional",
+        "Asistencias de sanidad privada",
+        "Recogida selectiva y reciclaje TIRME",
+        "Afiliados al sector TIC ParcBit",
+        "Hectáreas ecológicas certificadas CBPAE",
+        "Viajes en red TIB y ferrocarril SFM",
+        "Visitantes a museos y patrimonio UNESCO",
+        "Deportistas federados, cicloturismo y golf",
+      ],
+      distribution: [
+        {
+          "@type": "DataDownload",
+          encodingFormat: "text/csv",
+          contentUrl: `https://serviciosmallorca.com${prefix}estadisticas/comparativas`,
+        },
+      ],
+    },
+  ],
+};
+---
+
+<BaseLayout title={`${titles[locale]} | Servicios Mallorca`} lang={locale} description={descriptions[locale]}>
+  <script type="application/ld+json" set:html={JSON.stringify(schemaOrg)} />
+
+  <Navbar currentLocale={locale} translations={translations} getLangPrefix={getLangPrefix} />
+
+  <main class="comparativas-page-container">
+    <!-- Migas de Pan -->
+    <nav class="comparativas-breadcrumbs" aria-label="Breadcrumb">
+      <ol class="breadcrumbs-list">
+        <li><a href={prefix || "/"} class="breadcrumb-link">{locale === "ca" ? "Inici" : locale === "en" ? "Home" : locale === "de" ? "Startseite" : "Inicio"}</a></li>
+        <li class="breadcrumb-separator" aria-hidden="true">/</li>
+        <li><a href={`${prefix}estadisticas`} class="breadcrumb-link">{locale === "ca" ? "Estadístiques" : locale === "en" ? "Statistics" : locale === "de" ? "Statistiken" : "Estadísticas"}</a></li>
+        <li class="breadcrumb-separator" aria-hidden="true">/</li>
+        <li class="breadcrumb-current" aria-current="page">{locale === "ca" ? "Comparatives Semestrals (20 Anys)" : locale === "en" ? "Semiannual Comparisons (20 Years)" : locale === "de" ? "Halbjahres-Vergleiche (20 Jahre)" : "Comparativas Semestrales (20 Años)"}</li>
+      </ol>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="comparativas-hero">
+      <div class="hero-badge">
+        <span class="hero-badge-dot" aria-hidden="true"></span>
+        <span>{texts.badge}</span>
+      </div>
+      <h1 class="hero-title">{texts.headline}</h1>
+      <p class="hero-lead">{texts.lead}</p>
+
+      <div class="hero-actions-row">
+        <a href={`${prefix}estadisticas`} class="back-link-btn">
+          <span>← {texts.backToStatsBtn}</span>
+        </a>
+        <button id="print-report-btn" class="action-btn-print" type="button" aria-label="Imprimir Informe">
+          <span>🖨️ {locale === "ca" ? "Imprimir Informe Executiu" : locale === "en" ? "Print Executive Report" : locale === "de" ? "Bericht drucken" : "Imprimir Informe Ejecutivo"}</span>
+        </button>
+        <button id="download-csv-btn" class="download-csv-btn" type="button" aria-label="Exportar datos a CSV">
+          <span>📥 {locale === "ca" ? "Descarregar Sèries (CSV)" : locale === "en" ? "Export Series (CSV)" : locale === "de" ? "Daten exportieren (CSV)" : "Descargar Series Oficiales (CSV)"}</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Barra de Navegación Rápida por Sectores y Filtros Temáticos -->
+    <nav class="sector-quicknav-bar" aria-label={texts.quickNavTitle}>
+      <div class="theme-filters-row">
+        <span class="quicknav-title">{locale === "ca" ? "Filtrar per eix:" : locale === "en" ? "Filter by theme:" : locale === "de" ? "Nach Bereich filtern:" : "Filtrar por eje:"}</span>
+        <div class="theme-filter-chips">
+          <button type="button" class="theme-chip-btn active" data-filter="all">🌐 {locale === "ca" ? `Tots els Sectors (${HISTORICAL_SECTOR_SERIES.length})` : locale === "en" ? `All Sectors (${HISTORICAL_SECTOR_SERIES.length})` : locale === "de" ? `Alle Branchen (${HISTORICAL_SECTOR_SERIES.length})` : `Todos los Sectores (${HISTORICAL_SECTOR_SERIES.length})`}</button>
+          <button type="button" class="theme-chip-btn" data-filter="economia">💼 {locale === "ca" ? "Economia & Empreses" : locale === "en" ? "Economy & Business" : locale === "de" ? "Wirtschaft & Firmen" : "Economía & Empresas"}</button>
+          <button type="button" class="theme-chip-btn" data-filter="turismo_movilidad">🏖️ {locale === "ca" ? "Turisme & Mobilitat" : locale === "en" ? "Tourism & Transit" : locale === "de" ? "Tourismus & Verkehr" : "Turismo & Movilidad"}</button>
+          <button type="button" class="theme-chip-btn" data-filter="territorio">🌿 {locale === "ca" ? "Territori & Sostenibilitat" : locale === "en" ? "Territory & Green" : locale === "de" ? "Territorium & Energie" : "Territorio & Sostenibilidad"}</button>
+          <button type="button" class="theme-chip-btn" data-filter="sociedad_bienestar">🏥 {locale === "ca" ? "Societat, Cultura & Esport" : locale === "en" ? "Society, Culture & Sport" : locale === "de" ? "Gesellschaft, Kultur & Sport" : "Sociedad, Cultura & Deporte"}</button>
+        </div>
+      </div>
+
+      <div class="quicknav-buttons">
+        {
+          HISTORICAL_SECTOR_SERIES.map((s) => (
+            <a href={`#sector-${s.id}`} class="quicknav-chip" data-theme={s.theme}>
+              <span aria-hidden="true">{s.icon}</span>
+              <span>{s.title[locale]?.split(":")[0] || s.title.es.split(":")[0]}</span>
+            </a>
+          ))
+        }
+      </div>
+    </nav>
+
+    <!-- Matriz Comparativa Resumen -->
+    <section class="summary-matrix-section" aria-label={texts.summaryTableTitle}>
+      <header class="matrix-header">
+        <h2 class="matrix-title">📊 {texts.summaryTableTitle}</h2>
+        <p class="matrix-subtitle">{texts.summaryTableSubtitle}</p>
+      </header>
+
+      <div class="table-responsive-wrapper">
+        <table class="summary-comparison-table">
+          <thead>
+            <tr>
+              <th scope="col">{texts.sectorCol}</th>
+              <th scope="col">{texts.year2006Col}</th>
+              <th scope="col">{texts.year2016Col}</th>
+              <th scope="col">{texts.year2026Col}</th>
+              <th scope="col" class="th-highlight">{texts.change10Col}</th>
+              <th scope="col" class="th-highlight">{texts.change20Col}</th>
+              <th scope="col" class="th-highlight">{texts.cagrCol}</th>
+              <th scope="col">Informe</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              HISTORICAL_SECTOR_SERIES.map((s) => {
+                const val2006 = s.dataPoints.find((dp) => dp.period === "2006-S1")?.formattedValue || "-";
+                const val2016 = s.dataPoints.find((dp) => dp.period === "2016-S1")?.formattedValue || "-";
+                const val2026 = s.dataPoints.find((dp) => dp.period === "2026-S1")?.formattedValue || "-";
+                const sectorShortTitle = s.title[locale]?.split(":")[0] || s.title.es.split(":")[0];
+
+                return (
+                  <tr data-theme={s.theme} class="matrix-row">
+                    <td class="td-sector">
+                      <span class="table-sector-icon" aria-hidden="true">{s.icon}</span>
+                      <strong>{sectorShortTitle}</strong>
+                    </td>
+                    <td class="td-mono">{val2006}</td>
+                    <td class="td-mono">{val2016}</td>
+                    <td class="td-mono highlight-gold"><strong>{val2026}</strong></td>
+                    <td class="td-pct">
+                      <span class="pct-pill up">+{s.insights.tenYearChangePct}%</span>
+                    </td>
+                    <td class="td-pct">
+                      <span class="pct-pill up-strong">+{s.insights.twentyYearChangePct}%</span>
+                    </td>
+                    <td class="td-pct">
+                      <span class="cagr-badge">+{s.insights.cagr10Pct}% / +{s.insights.cagr20Pct}%</span>
+                    </td>
+                    <td>
+                      <a href={`${prefix}blog/${s.relatedBlogSlug}`} class="table-read-link" title={texts.readDeepDiveBtn}>
+                        <span>Análisis ↗</span>
+                      </a>
+                    </td>
+                  </tr>
+                );
+              })
+            }
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Comparador Cruzado Interactivo Side-by-Side con Curva Indexada Base 100 -->
+    <section class="cross-comparator-section" aria-label="Comparador Cruzado de Sectores">
+      <header class="comparator-header">
+        <span class="comparator-badge">⚡ {locale === "ca" ? "Eina Interactiva" : locale === "en" ? "Interactive Tool" : locale === "de" ? "Interaktives Tool" : "Herramienta Interactiva"}</span>
+        <h2 class="comparator-title">
+          {locale === "ca" ? "Comparador Creuat de Sectors i Curva Indexada (Lado a Lado)" : locale === "en" ? "Cross-Sector Side-by-Side Comparator & Indexed Curve" : locale === "de" ? "Sektoren-Direktvergleich & Indexkurve" : "Comparador Cruzado de Sectores y Curva Indexada (Lado a Lado)"}
+        </h2>
+        <p class="comparator-lead">
+          {locale === "ca" ? "Selecciona dos sectors per contrastar el seu comportament macroeconòmic a 10 i 20 anys amb corba normalitzada Base 100." : locale === "en" ? "Select two sectors to contrast their 10-year and 20-year macroeconomic performance with normalized Base 100 curves." : locale === "de" ? "Wählen Sie zwei Branchen, um deren 10- und 20-Jahres-Dynamik mit normalisierter Basis-100-Kurve direkt zu vergleichen." : "Selecciona dos sectores para contrastar simultáneamente su comportamiento macroeconómico a 10 y 20 años mediante curva indexada Base 100."}
+        </p>
+      </header>
+
+      <!-- Presets de Comparativa -->
+      <div class="comparator-presets-box">
+        <span class="presets-title">🎯 {locale === "ca" ? "Comparatives recomanades:" : locale === "en" ? "Recommended pairings:" : locale === "de" ? "Empfohlene Gegenüberstellungen:" : "Comparativas recomendadas:"}</span>
+        <div class="presets-chip-container">
+          <button type="button" class="preset-pill" data-a="inmobiliaria_construccion" data-b="empresas_laboral">🏠 Vivienda vs 💼 Empleo</button>
+          <button type="button" class="preset-pill" data-a="turismo_afluencia" data-b="energia_sostenibilidad_agua">🏖️ Turismo vs 💧 Agua y Energía</button>
+          <button type="button" class="preset-pill" data-a="transporte_publico_ferrocarril" data-b="movilidad_aena">🚆 Transporte TIB vs ✈️ Aeropuerto</button>
+          <button type="button" class="preset-pill" data-a="tecnologia_innovacion" data-b="empresas_laboral">💻 Tecnología vs 💼 Empresas</button>
+          <button type="button" class="preset-pill" data-a="agricultura_producto_local" data-b="energia_sostenibilidad_agua">🍇 Agricultura Eco vs 💧 Energía</button>
+          <button type="button" class="preset-pill" data-a="cultura_patrimonio_museos" data-b="turismo_afluencia">🏛️ Cultura vs 🏖️ Turismo</button>
+          <button type="button" class="preset-pill" data-a="deporte_golf_nautica_activo" data-b="nautica_maritimo">⛳ Deporte & Golf vs ⛵ Náutica</button>
+          <button type="button" class="preset-pill" data-a="residuos_reciclaje" data-b="demografia_presion">♻️ Reciclaje vs 👥 Demografía</button>
+          <button type="button" class="preset-pill" data-a="salud_sanidad_privada" data-b="educacion_internacional">🏥 Sanidad vs 🎓 Colegios</button>
+        </div>
+      </div>
+
+      <div class="comparator-controls-grid">
+        <div class="comparator-selector-col">
+          <label for="compare-select-a" class="selector-label">
+            🔵 {locale === "ca" ? "Primer Sector (A)" : locale === "en" ? "First Sector (A)" : locale === "de" ? "Erste Branche (A)" : "Primer Sector (A)"}
+          </label>
+          <select id="compare-select-a" class="comparator-select" aria-label="Seleccionar Sector A">
+            {HISTORICAL_SECTOR_SERIES.map((s, idx) => (
+              <option value={s.id} selected={idx === 0}>{s.icon} {s.title[locale]?.split(":")[0] || s.title.es.split(":")[0]}</option>
+            ))}
+          </select>
+        </div>
+
+        <div class="comparator-vs-indicator" aria-hidden="true">VS</div>
+
+        <div class="comparator-selector-col">
+          <label for="compare-select-b" class="selector-label">
+            🟣 {locale === "ca" ? "Segon Sector (B)" : locale === "en" ? "Second Sector (B)" : locale === "de" ? "Zweite Branche (B)" : "Segundo Sector (B)"}
+          </label>
+          <select id="compare-select-b" class="comparator-select" aria-label="Seleccionar Sector B">
+            {HISTORICAL_SECTOR_SERIES.map((s, idx) => (
+              <option value={s.id} selected={idx === 1}>{s.icon} {s.title[locale]?.split(":")[0] || s.title.es.split(":")[0]}</option>
+            ))}
+          </select>
+        </div>
+      </div>
+
+      <div class="comparator-results-grid">
+        <div id="compare-card-a" class="comparator-card card-a"></div>
+        <div id="compare-card-b" class="comparator-card card-b"></div>
+      </div>
+
+      <!-- Gráfica Comparativa Indexada Base 100 -->
+      <div class="dual-chart-panel">
+        <div class="dual-chart-header">
+          <div class="dual-chart-titles">
+            <h3 class="dual-chart-title">📈 {locale === "ca" ? "Corba Normalitzada de Creixement Relatiu (Base 100)" : locale === "en" ? "Normalized Relative Growth Trajectory (Base 100)" : locale === "de" ? "Normalisierter relativer Wachstumsverlauf (Basis 100)" : "Curva Normalizada de Crecimiento Relativo (Base 100)"}</h3>
+            <p class="dual-chart-subtitle">{locale === "ca" ? "Igualem el punt de partida a 100 per comparar el ritme percentual d'expansió entre sectors de diferent magnitud." : locale === "en" ? "Equalizes the starting period to 100 to contrast percentage expansion speed between sectors of different scale." : locale === "de" ? "Setzt den Startwert auf 100, um das prozentuale Expansionstempo direkt vergleichbar zu machen." : "Igualamos el punto de partida a 100 para comparar el ritmo porcentual de expansión entre sectores de diferente magnitud."}</p>
+          </div>
+          <div class="base-year-toggle" role="radiogroup" aria-label="Base temporal">
+            <button type="button" class="base-btn active" data-base="2006">Base 2006 = 100 (20A)</button>
+            <button type="button" class="base-btn" data-base="2016">Base 2016 = 100 (10A)</button>
+          </div>
+        </div>
+
+        <div class="dual-svg-wrapper" id="dual-chart-svg-container">
+          <!-- Renderizado dinámico vía SVG -->
+        </div>
+
+        <div class="dual-chart-legend">
+          <div class="legend-badge badge-a">
+            <span class="legend-color-dot dot-a"></span>
+            <span id="legend-label-a" class="legend-txt">Sector A</span>
+          </div>
+          <div class="legend-badge badge-b">
+            <span class="legend-color-dot dot-b"></span>
+            <span id="legend-label-b" class="legend-txt">Sector B</span>
+          </div>
+        </div>
+
+        <div id="dual-chart-insight" class="dual-chart-insight"></div>
+      </div>
+    </section>
+
+    <!-- Gráficas Interactivas Semestrales por Sector -->
+    <section class="charts-stack-section" aria-label="Gráficas Semestrales por Sector">
+      {
+        HISTORICAL_SECTOR_SERIES.map((series) => (
+          <div id={`sector-${series.id}`} class="sector-chart-anchor" data-theme={series.theme}>
+            <SectorHistoricalChart series={series} lang={locale} />
+            <div class="sector-blog-bridge">
+              <span class="bridge-tip">📖 ¿Quieres profundizar en este sector?</span>
+              <a href={`${prefix}blog/${series.relatedBlogSlug}`} class="sector-blog-btn">
+                <span>{texts.readDeepDiveBtn}</span>
+                <svg viewBox="0 0 20 20" fill="currentColor" width="16" height="16" aria-hidden="true">
+                  <path
+                    fill-rule="evenodd"
+                    d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        ))
+      }
+    </section>
+  </main>
+
+  <script is:inline define:vars={{
+    sectorsData: HISTORICAL_SECTOR_SERIES.map((s) => ({
+      id: s.id,
+      icon: s.icon,
+      name: s.title[locale]?.split(":")[0] || s.title.es.split(":")[0],
+      fullTitle: s.title[locale] || s.title.es,
+      unit: s.unit[locale] || s.unit.es,
+      tenYearChangePct: s.insights.tenYearChangePct,
+      twentyYearChangePct: s.insights.twentyYearChangePct,
+      cagr10Pct: s.insights.cagr10Pct,
+      cagr20Pct: s.insights.cagr20Pct,
+      peakSemester: s.insights.peakSemester,
+      peakValueFormatted: s.insights.peakValueFormatted,
+      troughSemester: s.insights.troughSemester,
+      troughValueFormatted: s.insights.troughValueFormatted,
+      sourceEntity: s.sourceEntity,
+      blogSlug: s.relatedBlogSlug,
+      points: s.dataPoints.map((dp) => ({
+        period: dp.period,
+        year: dp.year,
+        semester: dp.semester,
+        value: dp.value,
+        formatted: dp.formattedValue
+      }))
+    })),
+    seriesCsvExport: HISTORICAL_SECTOR_SERIES.map((s) => ({
+      name: s.title.es.split(":")[0],
+      unit: s.unit.es,
+      source: s.sourceEntity,
+      points: s.dataPoints.map((dp) => ({
+        period: dp.period,
+        year: dp.year,
+        semester: dp.semester,
+        value: dp.value,
+        formatted: dp.formattedValue
+      }))
+    })),
+    prefix,
+    lbl10Yr: texts.change10Col,
+    lbl20Yr: texts.change20Col,
+    lblPeak: locale === "ca" ? "Pic Màxim" : locale === "en" ? "All-Time Peak" : locale === "de" ? "Höchstwert" : "Pico Máximo",
+    lblTrough: locale === "ca" ? "Mínim Sòl" : locale === "en" ? "Cycle Low" : locale === "de" ? "Tiefstwert" : "Mínimo Suelo",
+    lblSource: locale === "ca" ? "Font" : locale === "en" ? "Source" : locale === "de" ? "Quelle" : "Fuente",
+    lblArticle: texts.readDeepDiveBtn
+  }}>
+    document.addEventListener("DOMContentLoaded", () => {
+      const selectA = document.getElementById("compare-select-a");
+      const selectB = document.getElementById("compare-select-b");
+      const cardA = document.getElementById("compare-card-a");
+      const cardB = document.getElementById("compare-card-b");
+      const downloadBtn = document.getElementById("download-csv-btn");
+      const printBtn = document.getElementById("print-report-btn");
+      const svgContainer = document.getElementById("dual-chart-svg-container");
+      const legendLabelA = document.getElementById("legend-label-a");
+      const legendLabelB = document.getElementById("legend-label-b");
+      const insightEl = document.getElementById("dual-chart-insight");
+      const baseBtns = document.querySelectorAll(".base-btn");
+
+      let currentBaseYear = 2006;
+
+      const sectorMap = new Map();
+      sectorsData.forEach((s) => sectorMap.set(s.id, s));
+
+      // Leer query params iniciales si existen
+      const urlParams = new URLSearchParams(window.location.search);
+      const paramA = urlParams.get("sectorA");
+      const paramB = urlParams.get("sectorB");
+      if (paramA && sectorMap.has(paramA) && selectA) selectA.value = paramA;
+      if (paramB && sectorMap.has(paramB) && selectB) selectB.value = paramB;
+
+      function renderCard(sector, containerEl, colorClass) {
+        if (!sector || !containerEl) return;
+        containerEl.innerHTML = `
+          <div class="comp-card-header ${colorClass}">
+            <span class="comp-card-icon">${sector.icon}</span>
+            <div class="comp-card-titles">
+              <h3 class="comp-card-name">${sector.name}</h3>
+              <p class="comp-card-unit">${sector.unit}</p>
+            </div>
+          </div>
+          <div class="comp-metrics-grid">
+            <div class="comp-metric-box">
+              <span class="comp-metric-lbl">${lbl10Yr}</span>
+              <span class="comp-metric-val comp-up">+${sector.tenYearChangePct}%</span>
+            </div>
+            <div class="comp-metric-box">
+              <span class="comp-metric-lbl">${lbl20Yr}</span>
+              <span class="comp-metric-val comp-up-strong">+${sector.twentyYearChangePct}%</span>
+            </div>
+            <div class="comp-metric-box">
+              <span class="comp-metric-lbl">CAGR (10A / 20A)</span>
+              <span class="comp-metric-val comp-cagr">+${sector.cagr10Pct}% / +${sector.cagr20Pct}%</span>
+            </div>
+            <div class="comp-metric-box">
+              <span class="comp-metric-lbl">${lblPeak}</span>
+              <span class="comp-metric-sub">${sector.peakValueFormatted} (${sector.peakSemester})</span>
+            </div>
+          </div>
+          <div class="comp-card-footer">
+            <span class="comp-source"><strong>${lblSource}:</strong> ${sector.sourceEntity}</span>
+            <a href="${prefix}blog/${sector.blogSlug}" class="comp-blog-link">${lblArticle} →</a>
+          </div>
+        `;
+      }
+
+      function renderDualIndexedChart(sA, sB, baseYear) {
+        if (!svgContainer || !sA || !sB) return;
+
+        if (legendLabelA) legendLabelA.textContent = `${sA.icon} ${sA.name}`;
+        if (legendLabelB) legendLabelB.textContent = `${sB.icon} ${sB.name}`;
+
+        const ptsA = sA.points.filter((p) => p.year >= baseYear);
+        const ptsB = sB.points.filter((p) => p.year >= baseYear);
+
+        const baseValA = ptsA[0] ? ptsA[0].value : 1;
+        const baseValB = ptsB[0] ? ptsB[0].value : 1;
+
+        const normA = ptsA.map((p) => ({
+          period: p.period,
+          year: p.year,
+          semester: p.semester,
+          raw: p.formatted,
+          idx: (p.value / baseValA) * 100
+        }));
+
+        const normB = ptsB.map((p) => ({
+          period: p.period,
+          year: p.year,
+          semester: p.semester,
+          raw: p.formatted,
+          idx: (p.value / baseValB) * 100
+        }));
+
+        const allIdx = [...normA.map((d) => d.idx), ...normB.map((d) => d.idx)];
+        const minVal = Math.min(80, Math.min(...allIdx));
+        const maxVal = Math.max(120, Math.max(...allIdx));
+
+        const minY = Math.floor(minVal / 25) * 25 - 10;
+        const maxY = Math.ceil(maxVal / 25) * 25 + 15;
+
+        const w = 860;
+        const h = 320;
+        const padL = 60;
+        const padR = 40;
+        const padT = 30;
+        const padB = 45;
+        const innerW = w - padL - padR;
+        const innerH = h - padT - padB;
+
+        const count = normA.length;
+        const getX = (i) => padL + (i / (count - 1)) * innerW;
+        const getY = (val) => padT + innerH - ((val - minY) / (maxY - minY)) * innerH;
+
+        // Base 100 line Y
+        const yBase100 = getY(100);
+
+        // Path definitions
+        let pathStrA = "";
+        let areaStrA = `M ${getX(0)} ${padT + innerH} `;
+        normA.forEach((d, i) => {
+          const x = getX(i);
+          const y = getY(d.idx);
+          if (i === 0) {
+            pathStrA += `M ${x} ${y}`;
+            areaStrA += `L ${x} ${y} `;
+          } else {
+            pathStrA += ` L ${x} ${y}`;
+            areaStrA += `L ${x} ${y} `;
+          }
+        });
+        areaStrA += `L ${getX(count - 1)} ${padT + innerH} Z`;
+
+        let pathStrB = "";
+        let areaStrB = `M ${getX(0)} ${padT + innerH} `;
+        normB.forEach((d, i) => {
+          const x = getX(i);
+          const y = getY(d.idx);
+          if (i === 0) {
+            pathStrB += `M ${x} ${y}`;
+            areaStrB += `L ${x} ${y} `;
+          } else {
+            pathStrB += ` L ${x} ${y}`;
+            areaStrB += `L ${x} ${y} `;
+          }
+        });
+        areaStrB += `L ${getX(count - 1)} ${padT + innerH} Z`;
+
+        // Y Grid steps
+        const gridSteps = 5;
+        let gridHtml = "";
+        for (let g = 0; g <= gridSteps; g++) {
+          const val = minY + ((maxY - minY) / gridSteps) * g;
+          const y = getY(val);
+          const isBase = Math.abs(val - 100) < 12;
+          gridHtml += `
+            <line x1="${padL}" y1="${y}" x2="${w - padR}" y2="${y}" stroke="${isBase ? '#94a3b8' : '#e2e8f0'}" stroke-width="${isBase ? '1.5' : '1'}" stroke-dasharray="${isBase ? '4,4' : 'none'}" />
+            <text x="${padL - 10}" y="${y + 4}" font-size="11" text-anchor="end" fill="${isBase ? '#475569' : '#94a3b8'}" font-weight="${isBase ? '700' : '500'}">${Math.round(val)}</text>
+          `;
+        }
+
+        // X Axis labels
+        let xLabelsHtml = "";
+        normA.forEach((d, i) => {
+          if (d.semester === 1 && (d.year % 2 === 0 || count < 25)) {
+            const x = getX(i);
+            xLabelsHtml += `
+              <line x1="${x}" y1="${padT + innerH}" x2="${x}" y2="${padT + innerH + 5}" stroke="#cbd5e1" stroke-width="1" />
+              <text x="${x}" y="${padT + innerH + 20}" font-size="11" text-anchor="middle" fill="#64748b" font-weight="600">${d.year}</text>
+            `;
+          }
+        });
+
+        // Circles
+        let dotsHtmlA = "";
+        normA.forEach((d, i) => {
+          dotsHtmlA += `<circle cx="${getX(i)}" cy="${getY(d.idx)}" r="3" fill="#0284c7" />`;
+        });
+        let dotsHtmlB = "";
+        normB.forEach((d, i) => {
+          dotsHtmlB += `<circle cx="${getX(i)}" cy="${getY(d.idx)}" r="3" fill="#9333ea" />`;
+        });
+
+        svgContainer.innerHTML = `
+          <svg viewBox="0 0 ${w} ${h}" class="dual-comparison-svg" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Curva normalizada comparativa">
+            <defs>
+              <linearGradient id="gradCurveA" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#0284c7" stop-opacity="0.28" />
+                <stop offset="100%" stop-color="#0284c7" stop-opacity="0.0" />
+              </linearGradient>
+              <linearGradient id="gradCurveB" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#9333ea" stop-opacity="0.22" />
+                <stop offset="100%" stop-color="#9333ea" stop-opacity="0.0" />
+              </linearGradient>
+            </defs>
+
+            <!-- Grid -->
+            ${gridHtml}
+            ${xLabelsHtml}
+
+            <!-- Areas -->
+            <path d="${areaStrA}" fill="url(#gradCurveA)" />
+            <path d="${areaStrB}" fill="url(#gradCurveB)" />
+
+            <!-- Lines -->
+            <path d="${pathStrA}" fill="none" stroke="#0284c7" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="${pathStrB}" fill="none" stroke="#9333ea" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
+
+            <!-- Points -->
+            ${dotsHtmlA}
+            ${dotsHtmlB}
+
+            <!-- Dynamic Crosshair Overlay -->
+            <line id="interactive-crosshair" x1="0" y1="${padT}" x2="0" y2="${padT + innerH}" stroke="#0f172a" stroke-width="1.5" stroke-dasharray="3,3" opacity="0" />
+            <circle id="interactive-dot-a" cx="0" cy="0" r="6" fill="#0284c7" stroke="#ffffff" stroke-width="2" opacity="0" />
+            <circle id="interactive-dot-b" cx="0" cy="0" r="6" fill="#9333ea" stroke="#ffffff" stroke-width="2" opacity="0" />
+
+            <!-- Catch rect -->
+            <rect id="interactive-catch-rect" x="${padL}" y="${padT}" width="${innerW}" height="${innerH}" fill="transparent" style="cursor: crosshair;" />
+          </svg>
+        `;
+
+        // Insight summary
+        const lastA = normA[normA.length - 1];
+        const lastB = normB[normB.length - 1];
+        const spreadFinal = (lastA.idx - lastB.idx).toFixed(1);
+        const leader = lastA.idx > lastB.idx ? sA.name : sB.name;
+
+        if (insightEl) {
+          insightEl.innerHTML = `
+            <div class="insight-summary-card">
+              <span class="insight-icon">💡</span>
+              <div class="insight-text">
+                <strong>Análisis de Divergencia (Base ${baseYear} = 100):</strong>
+                Al cierre de 2026-S1, <strong>${sA.name}</strong> alcanzó un índice de <strong>${lastA.idx.toFixed(1)}</strong> (+${(lastA.idx - 100).toFixed(1)}%),
+                mientras que <strong>${sB.name}</strong> se situó en <strong>${lastB.idx.toFixed(1)}</strong> (+${(lastB.idx - 100).toFixed(1)}%).
+                El sector con mayor aceleración relativa es <em>${leader}</em> con una brecha acumulada de <strong>${Math.abs(spreadFinal)} puntos</strong> de índice.
+              </div>
+            </div>
+          `;
+        }
+
+        // Mousemove interaction on SVG
+        const catchRect = document.getElementById("interactive-catch-rect");
+        const crosshair = document.getElementById("interactive-crosshair");
+        const dotA = document.getElementById("interactive-dot-a");
+        const dotB = document.getElementById("interactive-dot-b");
+
+        if (catchRect && crosshair && dotA && dotB) {
+          catchRect.addEventListener("mousemove", (e) => {
+            const rect = catchRect.getBoundingClientRect();
+            const relX = e.clientX - rect.left;
+            const pct = Math.max(0, Math.min(1, relX / rect.width));
+            const idx = Math.round(pct * (count - 1));
+
+            const curA = normA[idx];
+            const curB = normB[idx];
+            if (!curA || !curB) return;
+
+            const cx = getX(idx);
+            const cyA = getY(curA.idx);
+            const cyB = getY(curB.idx);
+
+            crosshair.setAttribute("x1", cx);
+            crosshair.setAttribute("x2", cx);
+            crosshair.setAttribute("opacity", "1");
+
+            dotA.setAttribute("cx", cx);
+            dotA.setAttribute("cy", cyA);
+            dotA.setAttribute("opacity", "1");
+
+            dotB.setAttribute("cx", cx);
+            dotB.setAttribute("cy", cyB);
+            dotB.setAttribute("opacity", "1");
+
+            if (insightEl) {
+              const diff = (curA.idx - curB.idx).toFixed(1);
+              insightEl.innerHTML = `
+                <div class="insight-summary-card live-hover">
+                  <span class="insight-icon">🔍</span>
+                  <div class="insight-text">
+                    <strong>${curA.period}:</strong>
+                    <span style="color:#0284c7;font-weight:700;">${sA.name}: ${curA.raw} (Índice ${curA.idx.toFixed(1)})</span>
+                    &nbsp;|&nbsp;
+                    <span style="color:#9333ea;font-weight:700;">${sB.name}: ${curB.raw} (Índice ${curB.idx.toFixed(1)})</span>
+                    &nbsp;→&nbsp;
+                    <span>Divergencia: <strong>${diff >= 0 ? '+' : ''}${diff} pts</strong></span>
+                  </div>
+                </div>
+              `;
+            }
+          });
+
+          catchRect.addEventListener("mouseleave", () => {
+            crosshair.setAttribute("opacity", "0");
+            dotA.setAttribute("opacity", "0");
+            dotB.setAttribute("opacity", "0");
+          });
+        }
+      }
+
+      function updateComparison() {
+        const sA = sectorMap.get(selectA ? selectA.value : "");
+        const sB = sectorMap.get(selectB ? selectB.value : "");
+        renderCard(sA, cardA, "theme-blue");
+        renderCard(sB, cardB, "theme-purple");
+        renderDualIndexedChart(sA, sB, currentBaseYear);
+
+        // Sincronizar URL para enlace compartible (con validación e inmunidad XSS)
+        if (sA && sB) {
+          const safeA = encodeURIComponent(sA.id);
+          const safeB = encodeURIComponent(sB.id);
+          const newUrl = `${window.location.pathname}?sectorA=${safeA}&sectorB=${safeB}`;
+          window.history.replaceState({ sectorA: sA.id, sectorB: sB.id }, "", newUrl);
+        }
+      }
+
+      if (selectA) selectA.addEventListener("change", updateComparison);
+      if (selectB) selectB.addEventListener("change", updateComparison);
+
+      // Presets
+      const presetPills = document.querySelectorAll(".preset-pill");
+      presetPills.forEach((pill) => {
+        pill.addEventListener("click", () => {
+          const targetA = pill.getAttribute("data-a");
+          const targetB = pill.getAttribute("data-b");
+          if (selectA && targetA) selectA.value = targetA;
+          if (selectB && targetB) selectB.value = targetB;
+          updateComparison();
+        });
+      });
+
+      // Base year toggle
+      baseBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          baseBtns.forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
+          currentBaseYear = parseInt(btn.getAttribute("data-base") || "2006", 10);
+          updateComparison();
+        });
+      });
+
+      updateComparison();
+
+      // Theme Filters
+      const filterBtns = document.querySelectorAll(".theme-chip-btn");
+      const matrixRows = document.querySelectorAll(".matrix-row");
+      const chartAnchors = document.querySelectorAll(".sector-chart-anchor");
+      const quickChips = document.querySelectorAll(".quicknav-chip");
+
+      filterBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          filterBtns.forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
+          const targetTheme = btn.getAttribute("data-filter");
+
+          matrixRows.forEach((row) => {
+            const rowTheme = row.getAttribute("data-theme");
+            if (targetTheme === "all" || rowTheme === targetTheme) {
+              row.style.display = "";
+            } else {
+              row.style.display = "none";
+            }
+          });
+
+          chartAnchors.forEach((chart) => {
+            const chartTheme = chart.getAttribute("data-theme");
+            if (targetTheme === "all" || chartTheme === targetTheme) {
+              chart.style.display = "";
+            } else {
+              chart.style.display = "none";
+            }
+          });
+
+          quickChips.forEach((chip) => {
+            const chipTheme = chip.getAttribute("data-theme");
+            if (targetTheme === "all" || chipTheme === targetTheme) {
+              chip.style.display = "";
+            } else {
+              chip.style.display = "none";
+            }
+          });
+        });
+      });
+
+      // Print Button
+      if (printBtn) {
+        printBtn.addEventListener("click", () => {
+          window.print();
+        });
+      }
+
+      // CSV Export (Protegido contra inyección de fórmulas RFC 4180)
+      function sanitizeCsvCell(rawVal) {
+        const str = String(rawVal ?? "");
+        // Prevenir inyección de fórmulas (=, +, -, @, \t, \r) en Excel/Google Sheets
+        const safeStr = /^[=+\-@\t\r]/.test(str) ? `'${str}` : str;
+        return `"${safeStr.replace(/"/g, '""')}"`;
+      }
+
+      if (downloadBtn) {
+        downloadBtn.addEventListener("click", () => {
+          let csv = "Sector,Periodo,Ano,Semestre,Valor,Unidad,Fuente\r\n";
+          seriesCsvExport.forEach((s) => {
+            const safeName = sanitizeCsvCell(s.name);
+            const safeUnit = sanitizeCsvCell(s.unit);
+            const safeSource = sanitizeCsvCell(s.source);
+            s.points.forEach((p) => {
+              const safePeriod = sanitizeCsvCell(p.period);
+              const safeYear = Number.isFinite(p.year) ? p.year : 0;
+              const safeSemester = p.semester === 1 || p.semester === 2 ? p.semester : 1;
+              const safeVal = Number.isFinite(p.value) ? p.value : 0;
+              csv += `${safeName},${safePeriod},${safeYear},${safeSemester},${safeVal},${safeUnit},${safeSource}\r\n`;
+            });
+          });
+
+          const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+          const url = URL.createObjectURL(blob);
+          const link = document.createElement("a");
+          link.setAttribute("href", url);
+          link.setAttribute("download", "mallorca-series-historicas-2006-2026.csv");
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+          URL.revokeObjectURL(url);
+        });
+      }
+    });
+  </script>
+
+  <Footer currentLocale={locale} translations={translations} getLangPrefix={getLangPrefix} />
+</BaseLayout>
+
+<style>
+  .comparativas-page-container {
+    max-width: var(--max-width, 1140px);
+    margin: 0 auto;
+    padding: 2rem 1.5rem 5rem 1.5rem;
+  }
+
+  /* Breadcrumbs */
+  .comparativas-breadcrumbs {
+    margin-bottom: 2rem;
+  }
+
+  .breadcrumbs-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+  }
+
+  .breadcrumb-link {
+    color: var(--color-text-muted, #718096);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .breadcrumb-link:hover {
+    color: var(--color-gold, #c89d5c);
+  }
+
+  .breadcrumb-separator {
+    color: var(--color-border, #cbd5e1);
+  }
+
+  .breadcrumb-current {
+    color: var(--color-text-main, #1a202c);
+    font-weight: 600;
+  }
+
+  /* Hero Section */
+  .comparativas-hero {
+    text-align: center;
+    max-width: 860px;
+    margin: 0 auto 3rem auto;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    background: rgba(200, 157, 92, 0.12);
+    color: var(--color-gold-dark, #976d2e);
+    border: 1px solid rgba(200, 157, 92, 0.35);
+    border-radius: 9999px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    padding: 0.35rem 0.95rem;
+    margin-bottom: 1.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .hero-badge-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--color-gold, #c89d5c);
+    border-radius: 50%;
+  }
+
+  .hero-title {
+    font-size: clamp(1.85rem, 3.5vw, 2.75rem);
+    font-weight: 900;
+    color: var(--color-text-main, #0f172a);
+    line-height: 1.2;
+    margin: 0 0 1rem 0;
+    letter-spacing: -0.02em;
+  }
+
+  .hero-lead {
+    font-size: 1.08rem;
+    line-height: 1.65;
+    color: var(--color-text-muted, #475569);
+    margin: 0 0 1.5rem 0;
+  }
+
+  .hero-actions-row {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .back-link-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--color-text-main, #1e293b);
+    background: var(--color-bg-alt, #f1f5f9);
+    border: 1px solid var(--color-border, #cbd5e1);
+    padding: 0.55rem 1.15rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.15s ease, border-color 0.15s ease;
+  }
+
+  .back-link-btn:hover {
+    background: #e2e8f0;
+    border-color: #94a3b8;
+  }
+
+  /* Sector QuickNav Bar */
+  .sector-quicknav-bar {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    padding: 1rem 1.25rem;
+    background: var(--color-bg-card, #ffffff);
+    border: 1px solid var(--color-border, #e2e8f0);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .quicknav-title {
+    font-size: 0.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted, #64748b);
+    flex-shrink: 0;
+  }
+
+  .quicknav-buttons {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: nowrap;
+  }
+
+  .quicknav-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--color-text-main, #334155);
+    background: var(--color-bg-alt, #f8fafc);
+    border: 1px solid var(--color-border, #e2e8f0);
+    border-radius: 20px;
+    padding: 0.35rem 0.85rem;
+    text-decoration: none;
+    transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  }
+
+  .quicknav-chip:hover {
+    background: rgba(200, 157, 92, 0.12);
+    border-color: var(--color-gold, #c89d5c);
+    color: var(--color-gold-dark, #976d2e);
+  }
+
+  /* Summary Matrix Section */
+  .summary-matrix-section {
+    margin-bottom: 4rem;
+    background: var(--color-bg-card, #ffffff);
+    border: 1px solid var(--color-border, #e2e8f0);
+    border-radius: var(--radius-xl, 16px);
+    padding: 2rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+  }
+
+  .matrix-header {
+    margin-bottom: 1.5rem;
+  }
+
+  .matrix-title {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--color-text-main, #0f172a);
+    margin: 0 0 0.35rem 0;
+  }
+
+  .matrix-subtitle {
+    font-size: 0.92rem;
+    color: var(--color-text-muted, #64748b);
+    margin: 0;
+  }
+
+  .table-responsive-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .summary-comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    text-align: left;
+  }
+
+  .summary-comparison-table th {
+    background: var(--color-bg-alt, #f8fafc);
+    color: var(--color-text-muted, #475569);
+    font-weight: 700;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 0.85rem 1rem;
+    border-bottom: 2px solid var(--color-border, #e2e8f0);
+  }
+
+  .summary-comparison-table th.th-highlight {
+    background: rgba(200, 157, 92, 0.08);
+    color: var(--color-gold-dark, #976d2e);
+  }
+
+  .summary-comparison-table td {
+    padding: 0.95rem 1rem;
+    border-bottom: 1px solid var(--color-border, #f1f5f9);
+    color: var(--color-text-main, #1e293b);
+    vertical-align: middle;
+  }
+
+  .summary-comparison-table tr:hover td {
+    background: rgba(200, 157, 92, 0.03);
+  }
+
+  .td-sector {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .table-sector-icon {
+    font-size: 1.35rem;
+    line-height: 1;
+  }
+
+  .td-mono {
+    font-family: monospace;
+    font-size: 0.92rem;
+  }
+
+  .td-mono.highlight-gold {
+    color: var(--color-gold-dark, #976d2e);
+  }
+
+  .pct-pill {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.78rem;
+    font-weight: 800;
+    border-radius: 9999px;
+    padding: 0.2rem 0.6rem;
+  }
+
+  .pct-pill.up {
+    background: #dcfce7;
+    color: #15803d;
+  }
+
+  .pct-pill.up-strong {
+    background: rgba(200, 157, 92, 0.2);
+    color: var(--color-gold-dark, #976d2e);
+    border: 1px solid rgba(200, 157, 92, 0.4);
+  }
+
+  .table-read-link {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--color-gold-dark, #976d2e);
+    text-decoration: none;
+    transition: text-decoration 0.15s ease;
+  }
+
+  .table-read-link:hover {
+    text-decoration: underline;
+  }
+
+  /* Charts Stack */
+  .sector-chart-anchor {
+    scroll-margin-top: 5rem;
+    margin-bottom: 4rem;
+  }
+
+  .sector-blog-bridge {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--color-bg-card, #ffffff);
+    border: 1px solid var(--color-border, #e2e8f0);
+    border-radius: 12px;
+    padding: 1.15rem 1.5rem;
+    margin-top: -1.75rem;
+    margin-bottom: 2.5rem;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .bridge-tip {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--color-text-main, #1e293b);
+  }
+
+  .sector-blog-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-size: 0.88rem;
+    font-weight: 700;
+    background: var(--color-text-main, #0f172a);
+    color: #ffffff;
+    padding: 0.55rem 1.15rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.15s ease, transform 0.15s ease;
+  }
+
+  .sector-blog-btn:hover {
+    background: var(--color-gold, #c89d5c);
+    transform: translateY(-1px);
+  }
+
+  @media (max-width: 640px) {
+    .comparativas-page-container {
+      padding: 1.25rem 1rem 4rem 1rem;
+    }
+
+    .summary-matrix-section {
+      padding: 1.25rem 1rem;
+    }
+
+    .sector-blog-bridge {
+      flex-direction: column;
+      align-items: stretch;
+      text-align: center;
+    }
+
+    .sector-blog-btn {
+      justify-content: center;
+    }
+  }
+
+  /* ─── Hero Actions & CSV Button ─── */
+  .hero-actions-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .download-csv-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.6rem 1.15rem;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--color-text-main, #1e293b);
+    background: var(--color-bg-card, #ffffff);
+    border: 1px solid var(--color-border, #cbd5e1);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+
+  .download-csv-btn:hover {
+    background: var(--color-surface-hover, #f1f5f9);
+    border-color: var(--color-gold, #c89d5c);
+    color: var(--color-gold-dark, #976d2e);
+  }
+
+  /* ─── Cross Comparator Section ─── */
+  .cross-comparator-section {
+    background: var(--color-bg-card, #ffffff);
+    border: 1px solid var(--color-border, #e2e8f0);
+    border-radius: 16px;
+    padding: 2.25rem 2rem;
+    margin-bottom: 4rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  }
+
+  .comparator-badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-gold-dark, #976d2e);
+    background: rgba(200, 157, 92, 0.12);
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    margin-bottom: 0.5rem;
+  }
+
+  .comparator-title {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--color-text-main, #0f172a);
+    margin: 0 0 0.5rem 0;
+  }
+
+  .comparator-lead {
+    font-size: 0.95rem;
+    color: var(--color-text-muted, #64748b);
+    margin: 0 0 1.75rem 0;
+  }
+
+  .comparator-controls-grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .comparator-selector-col {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+  }
+
+  .selector-label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--color-text-main, #1e293b);
+  }
+
+  .comparator-select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-text-main, #0f172a);
+    background: var(--color-bg, #ffffff);
+    border: 1.5px solid var(--color-border, #cbd5e1);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: border-color 0.15s ease;
+  }
+
+  .comparator-select:focus {
+    outline: none;
+    border-color: var(--color-gold, #c89d5c);
+    box-shadow: 0 0 0 3px rgba(200, 157, 92, 0.2);
+  }
+
+  .comparator-vs-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--color-surface, #f8fafc);
+    border: 1.5px solid var(--color-border, #e2e8f0);
+    font-weight: 900;
+    font-size: 0.85rem;
+    color: var(--color-text-muted, #64748b);
+    margin-top: 1.5rem;
+  }
+
+  .comparator-results-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .comparator-card {
+    background: var(--color-surface, #f8fafc);
+    border: 1px solid var(--color-border, #e2e8f0);
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .comp-card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding-bottom: 0.85rem;
+    border-bottom: 1px solid var(--color-border, #e2e8f0);
+  }
+
+  .comp-card-icon {
+    font-size: 2rem;
+  }
+
+  .comp-card-titles {
+    flex: 1;
+  }
+
+  .comp-card-name {
+    font-size: 1.15rem;
+    font-weight: 800;
+    margin: 0;
+    color: var(--color-text-main, #0f172a);
+  }
+
+  .comp-card-unit {
+    font-size: 0.78rem;
+    color: var(--color-text-muted, #64748b);
+    margin: 0.2rem 0 0 0;
+  }
+
+  .comp-metrics-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.85rem;
+  }
+
+  .comp-metric-box {
+    background: var(--color-bg-card, #ffffff);
+    padding: 0.85rem 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--color-border, #e2e8f0);
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .comp-metric-lbl {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--color-text-muted, #64748b);
+  }
+
+  .comp-metric-val {
+    font-size: 1.25rem;
+    font-weight: 800;
+  }
+
+  .comp-up {
+    color: #16a34a;
+  }
+
+  .comp-up-strong {
+    color: #059669;
+  }
+
+  .comp-metric-sub {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--color-text-main, #0f172a);
+  }
+
+  .comp-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding-top: 0.85rem;
+    border-top: 1px dashed var(--color-border, #e2e8f0);
+    font-size: 0.8rem;
+    flex-wrap: wrap;
+  }
+
+  .comp-source {
+    color: var(--color-text-muted, #64748b);
+    max-width: 65%;
+  }
+
+  .comp-blog-link {
+    font-weight: 700;
+    color: var(--color-gold-dark, #976d2e);
+    text-decoration: none;
+  }
+
+  .action-btn-print {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.7rem 1.25rem;
+    background: var(--color-surface, #ffffff);
+    border: 1px solid var(--color-border, #cbd5e1);
+    border-radius: 9999px;
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--color-text-main, #0f172a);
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: all 0.2s ease;
+  }
+
+  .action-btn-print:hover {
+    background: var(--color-bg-alt, #f8fafc);
+    border-color: var(--color-gold, #c89d5c);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+
+  /* Comparator Presets */
+  .comparator-presets-box {
+    margin-bottom: 1.5rem;
+    padding: 1rem 1.25rem;
+    background: var(--color-surface, #f8fafc);
+    border: 1px solid var(--color-border, #e2e8f0);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .presets-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--color-text-muted, #475569);
+  }
+
+  .presets-chip-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .preset-pill {
+    background: #ffffff;
+    border: 1px solid var(--color-border, #cbd5e1);
+    color: var(--color-text-main, #334155);
+    padding: 0.4rem 0.85rem;
+    border-radius: 9999px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  }
+
+  .preset-pill:hover {
+    border-color: var(--color-gold, #c89d5c);
+    color: var(--color-gold-dark, #976d2e);
+    transform: translateY(-1px);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+  }
+
+  /* Dual Chart Panel (Base 100) */
+  .dual-chart-panel {
+    margin-top: 2rem;
+    background: var(--color-surface, #ffffff);
+    border: 1px solid var(--color-border, #e2e8f0);
+    border-radius: 16px;
+    padding: 1.75rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  }
+
+  .dual-chart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .dual-chart-titles {
+    max-width: 680px;
+  }
+
+  .dual-chart-title {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--color-text-main, #0f172a);
+    margin: 0 0 0.4rem 0;
+  }
+
+  .dual-chart-subtitle {
+    font-size: 0.88rem;
+    color: var(--color-text-muted, #64748b);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .base-year-toggle {
+    display: inline-flex;
+    background: var(--color-surface-subtle, #f1f5f9);
+    padding: 0.25rem;
+    border-radius: 9999px;
+    border: 1px solid var(--color-border, #e2e8f0);
+    gap: 0.25rem;
+  }
+
+  .base-btn {
+    border: none;
+    background: transparent;
+    color: var(--color-text-muted, #64748b);
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 0.4rem 0.9rem;
+    border-radius: 9999px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+
+  .base-btn.active {
+    background: #ffffff;
+    color: var(--color-text-main, #0f172a);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .dual-svg-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    background: #ffffff;
+    border-radius: 12px;
+    border: 1px solid var(--color-border, #f1f5f9);
+    padding: 0.5rem 0;
+  }
+
+  .dual-comparison-svg {
+    width: 100%;
+    min-width: 600px;
+    height: auto;
+    display: block;
+  }
+
+  .dual-chart-legend {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1.25rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-border, #f1f5f9);
+    flex-wrap: wrap;
+  }
+
+  .legend-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.88rem;
+    font-weight: 700;
+    padding: 0.35rem 0.85rem;
+    border-radius: 9999px;
+  }
+
+  .badge-a {
+    background: rgba(2, 132, 199, 0.1);
+    color: #0284c7;
+  }
+
+  .badge-b {
+    background: rgba(147, 51, 234, 0.1);
+    color: #9333ea;
+  }
+
+  .legend-color-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+
+  .dot-a {
+    background: #0284c7;
+  }
+
+  .dot-b {
+    background: #9333ea;
+  }
+
+  .dual-chart-insight {
+    margin-top: 1.25rem;
+  }
+
+  .insight-summary-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+    background: var(--color-bg-alt, #f8fafc);
+    border: 1px solid var(--color-border, #e2e8f0);
+    border-radius: 10px;
+    padding: 0.95rem 1.25rem;
+    font-size: 0.88rem;
+    line-height: 1.55;
+    color: var(--color-text-main, #1e293b);
+    transition: all 0.15s ease;
+  }
+
+  .insight-summary-card.live-hover {
+    background: rgba(200, 157, 92, 0.08);
+    border-color: var(--color-gold, #c89d5c);
+  }
+
+  .insight-icon {
+    font-size: 1.3rem;
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+
+  .comp-cagr {
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: var(--color-gold-dark, #976d2e);
+    background: rgba(200, 157, 92, 0.12);
+    padding: 0.2rem 0.5rem;
+    border-radius: 6px;
+    display: inline-block;
+  }
+
+  .cagr-badge {
+    display: inline-block;
+    padding: 0.25rem 0.6rem;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--color-gold-dark, #976d2e);
+    background: rgba(200, 157, 92, 0.12);
+    border-radius: 6px;
+    white-space: nowrap;
+  }
+
+  .theme-filters-row {
+    margin-bottom: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .theme-filter-chips {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .theme-chip-btn {
+    background: var(--color-surface, #f8fafc);
+    border: 1px solid var(--color-border, #cbd5e1);
+    color: var(--color-text-main, #334155);
+    padding: 0.45rem 0.95rem;
+    border-radius: 9999px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+
+  .theme-chip-btn:hover {
+    border-color: var(--color-gold, #c89d5c);
+    color: var(--color-gold-dark, #976d2e);
+  }
+
+  .theme-chip-btn.active {
+    background: var(--color-text-main, #0f172a);
+    color: #ffffff;
+    border-color: var(--color-text-main, #0f172a);
+  }
+
+  @media (max-width: 768px) {
+    .comparator-controls-grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .comparator-vs-indicator {
+      display: none;
+    }
+
+    .dual-chart-header {
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .base-year-toggle {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+
+  /* Print Media Stylesheet */
+  @media print {
+    :global(body) {
+      background: #ffffff !important;
+      color: #000000 !important;
+    }
+
+    :global(nav),
+    :global(footer),
+    :global(.theme-switcher),
+    :global(#devtools-floating-btn),
+    .hero-actions-row,
+    .sector-quicknav-bar,
+    .comparator-presets-box,
+    .comparator-controls-grid,
+    .base-year-toggle,
+    .sector-blog-bridge {
+      display: none !important;
+    }
+
+    .comparativas-page-container {
+      padding: 0 !important;
+      max-width: 100% !important;
+    }
+
+    .summary-matrix-section,
+    .dual-chart-panel,
+    .sector-chart-anchor {
+      page-break-inside: avoid;
+      box-shadow: none !important;
+      border: 1px solid #cccccc !important;
+      margin-bottom: 2rem !important;
+    }
+
+    .summary-comparison-table {
+      font-size: 10pt !important;
+    }
+
+    .hero-title {
+      font-size: 18pt !important;
+      color: #000000 !important;
+    }
+
+    .hero-lead {
+      font-size: 11pt !important;
+      color: #333333 !important;
+    }
+  }
+</style>

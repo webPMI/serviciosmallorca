@@ -78,6 +78,17 @@ const currentPath = Astro.url.pathname;
           <a href={`${getLangPrefix(currentLocale)}estadisticas`} class="footer-link">
             📊 {translations["nav.stats"] || "Estadísticas Oficiales"}
           </a>
+          <a href={`${getLangPrefix(currentLocale)}estadisticas/comparativas`} class="footer-link">
+            📈 {
+              currentLocale === "ca"
+                ? "Comparatives Històriques 20 Anys"
+                : currentLocale === "en"
+                  ? "20-Year Historical Comparisons"
+                  : currentLocale === "de"
+                    ? "20-Jahre-Historische Vergleiche"
+                    : "Comparativas Históricas 20 Años"
+            }
+          </a>
           <a href={`${getLangPrefix(currentLocale)}guias`} class="footer-link">
             📋 {translations["nav.guides"] || "Trámites & Guías"}
           </a>

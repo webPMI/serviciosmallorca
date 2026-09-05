@@ -1,14 +1,20 @@
 import type { ServiceItem } from "../types.ts";
+import { altafit_palma_gimnasio_centro_deportivo } from "./altafit-palma-gimnasio-centro-deportivo.ts";
 import { ANYTIME_FITNESS_SANTA_CATALINA } from "./anytime-fitness-santa-catalina.ts";
+import { arabella_golf_mallorca_son_vida_son_muntaner } from "./arabella-golf-mallorca-son-vida-son-muntaner.ts";
 import { ASHTANGA_YOGA_SHALA_MALLORCA_SANTA_CATALINA } from "./ashtanga-yoga-shala-mallorca-santa-catalina.ts";
 import { B_FIT_MALLORCA_PALMANOVA } from "./b-fit-mallorca-palmanova.ts";
+import { basic_fit_palma_avenidas_gimnasio } from "./basic-fit-palma-avenidas-gimnasio.ts";
 import { BODHANA_WELLNESS_YOGA_CAN_PASTILLA } from "./bodhana-wellness-yoga-can-pastilla.ts";
 import { BODY_VIP_FITNESS_INCA } from "./body-vip-fitness-inca.ts";
 import { BROOKLYN_FITBOXING_PALMA_CENTRO } from "./brooklyn-fitboxing-palma-centro.ts";
 import { BROOKLYN_FITBOXING_SON_HUGO_PALMA } from "./brooklyn-fitboxing-son-hugo-palma.ts";
 import { CAPDEPERA_GOLF_ARTA } from "./capdepera-golf-arta.ts";
 import { centro_buceo_padi_dive_mallorca_port_andratx } from "./centro-buceo-padi-dive-mallorca-port-andratx.ts";
-import { CLUB_DE_GOLF_ALCANADA_ALCUDIA } from "./club-de-golf-alcanada-alcudia.ts";
+import { club_de_golf_alcanada_alcudia } from "./club-de-golf-alcanada-alcudia.ts";
+import { club_hipico_la_gubia_bunyola_equitacion } from "./club-hipico-la-gubia-bunyola-equitacion.ts";
+import { club_natacio_palma_instalaciones_deportivas } from "./club-natacio-palma-instalaciones-deportivas.ts";
+import { club_nautico_can_picafort_escuela_vela_kayak } from "./club-nautico-can-picafort-escuela-vela-kayak.ts";
 import { club_nautico_puerto_pollensa_escuela_remo } from "./club-nautico-puerto-pollensa-escuela-remo.ts";
 import { CLUB_TENIS_ALARO } from "./club-tenis-alaro.ts";
 import { CLUB_TENIS_ANDRATX } from "./club-tenis-andratx.ts";
@@ -60,6 +66,7 @@ import { ILLES_CENTRES_BENESTAR_SON_RAPINYA } from "./illes-centres-benestar-son
 import { IRON_BOX_MALLORCA_FELANITX } from "./iron-box-mallorca-felanitx.ts";
 import { MALLORCA_BIKE_HIRE_PORT_POLLENSA } from "./mallorca-bike-hire-port-pollensa.ts";
 import { MALLORCA_CLIMBING_SCHOOL_VALLDEMOSSA } from "./mallorca-climbing-school-valldemossa.ts";
+import { mallorca_country_club_santa_ponsa } from "./mallorca-country-club-santa-ponsa.ts";
 import { MALLORCA_DIVING_CENTER_PORT_POLLENSA } from "./mallorca-diving-center-port-pollensa.ts";
 import { MALLORCA_KITESCHOOL_SA_MARINA } from "./mallorca-kiteschool-sa-marina.ts";
 import { MATCH_POINT_PADEL_INDOOR_PALMA } from "./match-point-padel-indoor-palma.ts";
@@ -79,10 +86,11 @@ import { PINS_PADEL_CLUB_PALMA } from "./pins-padel-club-palma.ts";
 import { PISCINAS_OLIMPICAS_SON_HUGO_PALMA } from "./piscinas-olimpicas-son-hugo-palma.ts";
 import { PRANA_YOGA_STUDIO_PALMA } from "./prana-yoga-studio-palma.ts";
 import { PRO_CYCLE_HIRE_ALCUDIA_POLLENSA } from "./pro-cycle-hire-alcudia-pollensa.ts";
-import { rafaNadalAcademyManacor } from "./rafa-nadal-academy-manacor.ts";
 import { PULA_GOLF_RESORT_SON_SERVERA } from "./pula-golf-resort-son-servera.ts";
 import { PURE_SALT_YOGA_PORT_ADRIANO } from "./pure-salt-yoga-port-adriano.ts";
+import { rafaNadalAcademyManacor } from "./rafa-nadal-academy-manacor.ts";
 import { REAL_GOLF_DE_BENDINAT } from "./real-golf-de-bendinat.ts";
+import { rent_march_bike_pollensa_cycling } from "./rent-march-bike-pollensa-cycling.ts";
 import { ROCK_N_PALMA_ROCODROMO_SON_CASTELLO } from "./rock-n-palma-rocodromo-son-castello.ts";
 import { ROCK_SPORT_CLIMBING_ALARO } from "./rock-sport-climbing-alaro.ts";
 import { SAMADHI_YOGA_POLLENSA } from "./samadhi-yoga-pollensa.ts";
@@ -102,22 +110,29 @@ import { TRAMUNTANA_FLOW_YOGA_ALARO } from "./tramuntana-flow-yoga-alaro.ts";
 import { UDYR_SPORT_PADEL_MARRATXI } from "./udyr-sport-padel-marratxi.ts";
 import { URBAN_CROSSFIT_PALMA } from "./urban-crossfit-palma.ts";
 import { VALL_D_OR_GOLF_CALADOR } from "./vall-d-or-golf-calador.ts";
+import { vilapadel_marratxi } from "./vilapadel-marratxi.ts";
 import { VIVAGYM_CARDENAL_ROSSELL_PALMA } from "./vivagym-cardenal-rossell-palma.ts";
 import { VIVAGYM_SON_FUSTER_PALMA } from "./vivagym-son-fuster-palma.ts";
 import { VIVAGYM_SON_MOIX_PALMA } from "./vivagym-son-moix-palma.ts";
 import { WINDSURF_STATION_POLLENSA_BAY } from "./windsurf-station-pollensa-bay.ts";
 import { YOGA_MALLORCA_PORTIXOL } from "./yoga-mallorca-portixol.ts";
 
+export { altafit_palma_gimnasio_centro_deportivo } from "./altafit-palma-gimnasio-centro-deportivo.ts";
 export { ANYTIME_FITNESS_SANTA_CATALINA } from "./anytime-fitness-santa-catalina.ts";
+export { arabella_golf_mallorca_son_vida_son_muntaner } from "./arabella-golf-mallorca-son-vida-son-muntaner.ts";
 export { ASHTANGA_YOGA_SHALA_MALLORCA_SANTA_CATALINA } from "./ashtanga-yoga-shala-mallorca-santa-catalina.ts";
 export { B_FIT_MALLORCA_PALMANOVA } from "./b-fit-mallorca-palmanova.ts";
+export { basic_fit_palma_avenidas_gimnasio } from "./basic-fit-palma-avenidas-gimnasio.ts";
 export { BODHANA_WELLNESS_YOGA_CAN_PASTILLA } from "./bodhana-wellness-yoga-can-pastilla.ts";
 export { BODY_VIP_FITNESS_INCA } from "./body-vip-fitness-inca.ts";
 export { BROOKLYN_FITBOXING_PALMA_CENTRO } from "./brooklyn-fitboxing-palma-centro.ts";
 export { BROOKLYN_FITBOXING_SON_HUGO_PALMA } from "./brooklyn-fitboxing-son-hugo-palma.ts";
 export { CAPDEPERA_GOLF_ARTA } from "./capdepera-golf-arta.ts";
 export { centro_buceo_padi_dive_mallorca_port_andratx } from "./centro-buceo-padi-dive-mallorca-port-andratx.ts";
-export { CLUB_DE_GOLF_ALCANADA_ALCUDIA } from "./club-de-golf-alcanada-alcudia.ts";
+export { club_de_golf_alcanada_alcudia } from "./club-de-golf-alcanada-alcudia.ts";
+export { club_hipico_la_gubia_bunyola_equitacion } from "./club-hipico-la-gubia-bunyola-equitacion.ts";
+export { club_natacio_palma_instalaciones_deportivas } from "./club-natacio-palma-instalaciones-deportivas.ts";
+export { club_nautico_can_picafort_escuela_vela_kayak } from "./club-nautico-can-picafort-escuela-vela-kayak.ts";
 export { club_nautico_puerto_pollensa_escuela_remo } from "./club-nautico-puerto-pollensa-escuela-remo.ts";
 export { CLUB_TENIS_ALARO } from "./club-tenis-alaro.ts";
 export { CLUB_TENIS_ANDRATX } from "./club-tenis-andratx.ts";
@@ -169,6 +184,7 @@ export { ILLES_CENTRES_BENESTAR_SON_RAPINYA } from "./illes-centres-benestar-son
 export { IRON_BOX_MALLORCA_FELANITX } from "./iron-box-mallorca-felanitx.ts";
 export { MALLORCA_BIKE_HIRE_PORT_POLLENSA } from "./mallorca-bike-hire-port-pollensa.ts";
 export { MALLORCA_CLIMBING_SCHOOL_VALLDEMOSSA } from "./mallorca-climbing-school-valldemossa.ts";
+export { mallorca_country_club_santa_ponsa } from "./mallorca-country-club-santa-ponsa.ts";
 export { MALLORCA_DIVING_CENTER_PORT_POLLENSA } from "./mallorca-diving-center-port-pollensa.ts";
 export { MALLORCA_KITESCHOOL_SA_MARINA } from "./mallorca-kiteschool-sa-marina.ts";
 export { MATCH_POINT_PADEL_INDOOR_PALMA } from "./match-point-padel-indoor-palma.ts";
@@ -188,10 +204,11 @@ export { PINS_PADEL_CLUB_PALMA } from "./pins-padel-club-palma.ts";
 export { PISCINAS_OLIMPICAS_SON_HUGO_PALMA } from "./piscinas-olimpicas-son-hugo-palma.ts";
 export { PRANA_YOGA_STUDIO_PALMA } from "./prana-yoga-studio-palma.ts";
 export { PRO_CYCLE_HIRE_ALCUDIA_POLLENSA } from "./pro-cycle-hire-alcudia-pollensa.ts";
-export { rafaNadalAcademyManacor } from "./rafa-nadal-academy-manacor.ts";
 export { PULA_GOLF_RESORT_SON_SERVERA } from "./pula-golf-resort-son-servera.ts";
 export { PURE_SALT_YOGA_PORT_ADRIANO } from "./pure-salt-yoga-port-adriano.ts";
+export { rafaNadalAcademyManacor } from "./rafa-nadal-academy-manacor.ts";
 export { REAL_GOLF_DE_BENDINAT } from "./real-golf-de-bendinat.ts";
+export { rent_march_bike_pollensa_cycling } from "./rent-march-bike-pollensa-cycling.ts";
 export { ROCK_N_PALMA_ROCODROMO_SON_CASTELLO } from "./rock-n-palma-rocodromo-son-castello.ts";
 export { ROCK_SPORT_CLIMBING_ALARO } from "./rock-sport-climbing-alaro.ts";
 export { SAMADHI_YOGA_POLLENSA } from "./samadhi-yoga-pollensa.ts";
@@ -211,6 +228,7 @@ export { TRAMUNTANA_FLOW_YOGA_ALARO } from "./tramuntana-flow-yoga-alaro.ts";
 export { UDYR_SPORT_PADEL_MARRATXI } from "./udyr-sport-padel-marratxi.ts";
 export { URBAN_CROSSFIT_PALMA } from "./urban-crossfit-palma.ts";
 export { VALL_D_OR_GOLF_CALADOR } from "./vall-d-or-golf-calador.ts";
+export { vilapadel_marratxi } from "./vilapadel-marratxi.ts";
 export { VIVAGYM_CARDENAL_ROSSELL_PALMA } from "./vivagym-cardenal-rossell-palma.ts";
 export { VIVAGYM_SON_FUSTER_PALMA } from "./vivagym-son-fuster-palma.ts";
 export { VIVAGYM_SON_MOIX_PALMA } from "./vivagym-son-moix-palma.ts";
@@ -218,16 +236,22 @@ export { WINDSURF_STATION_POLLENSA_BAY } from "./windsurf-station-pollensa-bay.t
 export { YOGA_MALLORCA_PORTIXOL } from "./yoga-mallorca-portixol.ts";
 
 export const DEPORTES_SERVICES: ServiceItem[] = [
+  altafit_palma_gimnasio_centro_deportivo,
   ANYTIME_FITNESS_SANTA_CATALINA,
+  arabella_golf_mallorca_son_vida_son_muntaner,
   ASHTANGA_YOGA_SHALA_MALLORCA_SANTA_CATALINA,
   B_FIT_MALLORCA_PALMANOVA,
+  basic_fit_palma_avenidas_gimnasio,
   BODHANA_WELLNESS_YOGA_CAN_PASTILLA,
   BODY_VIP_FITNESS_INCA,
   BROOKLYN_FITBOXING_PALMA_CENTRO,
   BROOKLYN_FITBOXING_SON_HUGO_PALMA,
   CAPDEPERA_GOLF_ARTA,
   centro_buceo_padi_dive_mallorca_port_andratx,
-  CLUB_DE_GOLF_ALCANADA_ALCUDIA,
+  club_de_golf_alcanada_alcudia,
+  club_hipico_la_gubia_bunyola_equitacion,
+  club_natacio_palma_instalaciones_deportivas,
+  club_nautico_can_picafort_escuela_vela_kayak,
   club_nautico_puerto_pollensa_escuela_remo,
   CLUB_TENIS_ALARO,
   CLUB_TENIS_ANDRATX,
@@ -279,6 +303,7 @@ export const DEPORTES_SERVICES: ServiceItem[] = [
   IRON_BOX_MALLORCA_FELANITX,
   MALLORCA_BIKE_HIRE_PORT_POLLENSA,
   MALLORCA_CLIMBING_SCHOOL_VALLDEMOSSA,
+  mallorca_country_club_santa_ponsa,
   MALLORCA_DIVING_CENTER_PORT_POLLENSA,
   MALLORCA_KITESCHOOL_SA_MARINA,
   MATCH_POINT_PADEL_INDOOR_PALMA,
@@ -298,10 +323,11 @@ export const DEPORTES_SERVICES: ServiceItem[] = [
   PISCINAS_OLIMPICAS_SON_HUGO_PALMA,
   PRANA_YOGA_STUDIO_PALMA,
   PRO_CYCLE_HIRE_ALCUDIA_POLLENSA,
-  rafaNadalAcademyManacor,
   PULA_GOLF_RESORT_SON_SERVERA,
   PURE_SALT_YOGA_PORT_ADRIANO,
+  rafaNadalAcademyManacor,
   REAL_GOLF_DE_BENDINAT,
+  rent_march_bike_pollensa_cycling,
   ROCK_N_PALMA_ROCODROMO_SON_CASTELLO,
   ROCK_SPORT_CLIMBING_ALARO,
   SAMADHI_YOGA_POLLENSA,
@@ -321,6 +347,7 @@ export const DEPORTES_SERVICES: ServiceItem[] = [
   UDYR_SPORT_PADEL_MARRATXI,
   URBAN_CROSSFIT_PALMA,
   VALL_D_OR_GOLF_CALADOR,
+  vilapadel_marratxi,
   VIVAGYM_CARDENAL_ROSSELL_PALMA,
   VIVAGYM_SON_FUSTER_PALMA,
   VIVAGYM_SON_MOIX_PALMA,

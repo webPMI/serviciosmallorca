@@ -27,6 +27,7 @@ import { AGRICULTURA_SERVICES } from "./agricultura-productores/index.ts";
 import { ARTESANIA_SERVICES } from "./artesania-manufactura/index.ts";
 import { SOCIALES_SERVICES } from "./servicios-sociales/index.ts";
 import { FINANZAS_SERVICES } from "./finanzas-seguros/index.ts";
+import { SALUD_SERVICES } from "./salud-bienestar/index.ts";
 
 export * from "./types.ts";
 export { TATTOO_SERVICES } from "./arte-tatuajes/index.ts";
@@ -50,6 +51,7 @@ export { AGRICULTURA_SERVICES } from "./agricultura-productores/index.ts";
 export { ARTESANIA_SERVICES } from "./artesania-manufactura/index.ts";
 export { SOCIALES_SERVICES } from "./servicios-sociales/index.ts";
 export { FINANZAS_SERVICES } from "./finanzas-seguros/index.ts";
+export { SALUD_SERVICES } from "./salud-bienestar/index.ts";
 
 /**
  * Catálogo Unificado Global (Agregación de todos los módulos sectoriales).
@@ -77,6 +79,7 @@ export const SERVICES: ServiceItem[] = [
   ...ARTESANIA_SERVICES,
   ...SOCIALES_SERVICES,
   ...FINANZAS_SERVICES,
+  ...SALUD_SERVICES,
 ].filter((s): s is ServiceItem => Boolean(s && s.id && s.slug));
 
 /**

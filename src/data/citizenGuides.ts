@@ -71,6 +71,11 @@ export interface CitizenGuide {
     answer: { es: string; ca: string; en: string; de: string };
   }>;
   relatedServiceCategories: string[];
+  recommendedServiceSlugs?: string[];
+  assistanceHeader?: {
+    title: { es: string; ca: string; en: string; de: string };
+    body: { es: string; ca: string; en: string; de: string };
+  };
 }
 
 export const CITIZEN_GUIDES: CitizenGuide[] = [
@@ -242,7 +247,26 @@ export const CITIZEN_GUIDES: CitizenGuide[] = [
         },
       },
     ],
-    relatedServiceCategories: ["abogados-gestorias", "inmobiliarias-propiedad"],
+    relatedServiceCategories: ["servicios-profesionales", "inmobiliaria-villas"],
+    recommendedServiceSlugs: [
+      "gestoria-administrativa-asesoria-marroig-palma",
+      "traducciones-juradas-mallorca-sworn",
+      "bufete-buades-abogados-palma",
+    ],
+    assistanceHeader: {
+      title: {
+        es: "¿Necesitas ayuda profesional con tu padrón o gestión de residencia?",
+        ca: "Necessites ajuda professional amb el teu padró o gestió de residència?",
+        en: "Need professional assistance with your census registration?",
+        de: "Benötigen Sie Hilfe bei der Anmeldung oder beim Einwohnermeldeamt?",
+      },
+      body: {
+        es: "Encuentra gestorías administrativas colegiadas, traductores jurados oficiales y asesorías locales que gestionan tu certificado y trámites municipales en Mallorca.",
+        ca: "Troba gestories administratives col·legiades, traductors jurats oficials i assessories locals que gestionen el teu certificat i tràmits municipals a Mallorca.",
+        en: "Connect with certified administrative agencies, sworn interpreters, and local advisors to handle your municipal residency paperwork and certificates.",
+        de: "Finden Sie zugelassene Gestorías, vereidigte Übersetzer und Berater auf Mallorca, die Ihre behördliche Anmeldung und Zertifikate abwickeln.",
+      },
+    },
   },
   {
     id: "tarjeta-ciudadana-palma",
@@ -363,7 +387,26 @@ export const CITIZEN_GUIDES: CitizenGuide[] = [
         },
       },
     ],
-    relatedServiceCategories: ["motor-transporte", "deportes-aire-libre"],
+    relatedServiceCategories: ["motor-transporte", "deportes-fitness"],
+    recommendedServiceSlugs: [
+      "bergantinos-bikes-mallorca",
+      "autocares-transunion",
+      "megasport-centre-palma",
+    ],
+    assistanceHeader: {
+      title: {
+        es: "Movilidad urbana, transportes y deporte en Palma",
+        ca: "Mobilitat urbana, transports i esport a Palma",
+        en: "Urban mobility, transport and sports in Palma",
+        de: "Urbane Mobilität, Nahverkehr und Sport in Palma",
+      },
+      body: {
+        es: "Descubre servicios de movilidad sostenible, transporte insular y centros deportivos verificados que multiplican los beneficios de tu Tarjeta Ciudadana.",
+        ca: "Descobreix serveis de mobilitat sostenible, transport insular i centres esportius verificats que multipliquen els beneficis de la teva Targeta Ciutadana.",
+        en: "Discover sustainable bike mobility, island transit, and verified sports complexes that expand the perks of your Palma Citizen Card.",
+        de: "Entdecken Sie Fahrradverleihe, Mobilitätsdienste und geprüfte Sportzentren, die die Vorteile Ihrer Bürgerkarte optimal ergänzen.",
+      },
+    },
   },
   {
     id: "itv-cita-previa-mallorca",
@@ -533,6 +576,26 @@ export const CITIZEN_GUIDES: CitizenGuide[] = [
       },
     ],
     relatedServiceCategories: ["motor-transporte"],
+    recommendedServiceSlugs: [
+      "bosch-car-service-palma-centro",
+      "garaje-auto-pla-inca",
+      "taller-hermanos-bestard-palma",
+      "taller-mecanico-llevant-manacor",
+    ],
+    assistanceHeader: {
+      title: {
+        es: "Talleres mecánicos recomendados para revisión pre-ITV",
+        ca: "Tallers mecànics recomanats per a revisió pre-ITV",
+        en: "Recommended auto repair shops for pre-ITV inspection",
+        de: "Empfohlene Kfz-Werkstätten für die Vorab-ITV-Prüfung",
+      },
+      body: {
+        es: "Pasa la inspección técnica sin sorpresas ni segundas citas. Estos talleres mecánicos homologados verifican emisiones, frenos, suspensión, luces y diagnosis antes de tu cita oficial.",
+        ca: "Passa la inspecció tècnica sense sorpreses ni segones cites. Aquests tallers mecànics homologats verifiquen emissions, frens, suspensió, llums i diagnosi abans de la teva cita oficial.",
+        en: "Pass your vehicle safety inspection with total confidence. These certified garages inspect emissions, brakes, suspension, lights, and diagnostics before your official test.",
+        de: "Bestehen Sie den spanischen TÜV (ITV) sorgenfrei ohne Nachprüfung. Diese Werkstätten prüfen Abgase, Bremsen, Fahrwerk und Beleuchtung vor Ihrem Termin.",
+      },
+    },
   },
   {
     id: "descuento-residente-balear",
@@ -653,7 +716,26 @@ export const CITIZEN_GUIDES: CitizenGuide[] = [
         },
       },
     ],
-    relatedServiceCategories: ["nautica-charter", "motor-transporte"],
+    relatedServiceCategories: ["motor-transporte", "servicios-profesionales"],
+    recommendedServiceSlugs: [
+      "mallorca-taxi-transfer-aeropuerto-palma-service",
+      "roig-premium-transfers",
+      "autocares-transunion",
+    ],
+    assistanceHeader: {
+      title: {
+        es: "Traslados al aeropuerto y conexiones de viaje para residentes",
+        ca: "Trasllats a l'aeroport i connexions de viatge per a residents",
+        en: "Airport transfers & travel connections for island residents",
+        de: "Flughafentransfers & Fahrdienste für Inselresidenten",
+      },
+      body: {
+        es: "Aprovecha al máximo tu 75% de bonificación aérea con servicios profesionales de traslados al Aeropuerto Son Sant Joan, transfers VIP y chófer privado en Mallorca.",
+        ca: "Aprofita al màxim la teva bonificació del 75% aèria amb serveis professionals de trasllats a l'Aeroport Son Sant Joan, transfers VIP i xofer privat a Mallorca.",
+        en: "Maximize your 75% airfare discount with reliable airport shuttles, VIP chauffeur transfers, and timely connections to Palma Son Sant Joan Airport.",
+        de: "Kombinieren Sie Ihren 75% Flugrabatt mit zuverlässigen Shuttles und pünktlichen VIP-Transfers zum Flughafen Palma Son Sant Joan.",
+      },
+    },
   },
   {
     id: "tarjeta-sanitaria-ibsalut",
@@ -794,7 +876,27 @@ export const CITIZEN_GUIDES: CitizenGuide[] = [
         },
       },
     ],
-    relatedServiceCategories: ["spas-bienestar", "servicios-personales"],
+    relatedServiceCategories: ["salud-bienestar"],
+    recommendedServiceSlugs: [
+      "centro-medico-quironsalud-porto-pi",
+      "clinica-baviera-oftalmologia-palma",
+      "clinica-dental-moralejo-ruiz-palma",
+      "clinica-dental-alomar-inca",
+    ],
+    assistanceHeader: {
+      title: {
+        es: "Centros médicos, odontología y especialistas de salud en Mallorca",
+        ca: "Centres mèdics, odontologia i especialistes de salut a Mallorca",
+        en: "Medical centres, dental clinics & health specialists in Mallorca",
+        de: "Kliniken, Zahnärzte & Gesundheitsspezialisten auf Mallorca",
+      },
+      body: {
+        es: "Descubre policlínicas de referencia, especialistas oftalmológicos y clínicas dentales de confianza para complementar tu cobertura sanitaria en la isla.",
+        ca: "Descobreix policlíniques de referència, especialistes oftalmològics i clíniques dentals de confiança per complementar la teva cobertura sanitària a l'illa.",
+        en: "Discover trusted polyclinics, ophthalmic specialists, and dental clinics across Mallorca to complement your public healthcare benefits.",
+        de: "Finden Sie renommierte Facharztzentren, Zahnkliniken und Augenärzte auf Mallorca zur Ergänzung Ihrer öffentlichen Krankenversorgung.",
+      },
+    },
   },
   {
     id: "nie-tie-extranjeria-palma",
@@ -946,7 +1048,27 @@ export const CITIZEN_GUIDES: CitizenGuide[] = [
         },
       },
     ],
-    relatedServiceCategories: ["abogados-gestorias", "inmobiliarias-propiedad"],
+    relatedServiceCategories: ["servicios-profesionales", "inmobiliaria-villas"],
+    recommendedServiceSlugs: [
+      "bufete-buades-abogados-palma",
+      "traducciones-juradas-mallorca-sworn",
+      "gestoria-administrativa-asesoria-marroig-palma",
+      "balearic-lawyers-property-tax-palma",
+    ],
+    assistanceHeader: {
+      title: {
+        es: "Abogados de extranjería, traductores jurados y gestorías en Palma",
+        ca: "Advocats d'estrangeria, traductors jurats i gestories a Palma",
+        en: "Immigration lawyers, sworn translators & gestorías in Palma",
+        de: "Einwanderungsanwälte, vereidigte Übersetzer & Gestorías in Palma",
+      },
+      body: {
+        es: "Agiliza la obtención de tu NIE, TIE, residencia o visados con profesionales colegiados que gestionan tus citas, tasas del modelo 790 y traducciones juradas oficiales.",
+        ca: "Agilitza l'obtenció del teu NIE, TIE, residència o visats amb professionals col·legiats que gestionen les teves cites, taxes del model 790 i traduccions jurades oficials.",
+        en: "Fast-track your NIE, TIE residency, or visa applications with licensed legal experts handling government appointments, official Form 790 fees, and certified translations.",
+        de: "Beschleunigen Sie Ihren NIE-, TIE- und Residencia-Antrag mit erfahrenen Fachanwälten und Gestorías, die Termine, Modell-790-Gebühren und amtliche Übersetzungen abwickeln.",
+      },
+    },
   },
 ];
 

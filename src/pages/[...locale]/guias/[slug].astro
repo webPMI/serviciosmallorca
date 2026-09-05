@@ -11,7 +11,10 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
 import Navbar from "../../../components/Navbar.astro";
 import Footer from "../../../components/Footer.astro";
 import CitizenChecklist from "../../../components/CitizenChecklist.astro";
+import ServiceCard from "../../../components/ServiceCard.astro";
 import { getGuideBySlug } from "../../../data/citizenGuides";
+import { getServiceById, getServicesByCategory, type ServiceItem } from "../../../data/services";
+import { CATEGORIES } from "../../../data/categories";
 import { getLocaleFromUrl, loadTranslations, getLangPrefix, type Locale } from "../../../i18n";
 
 export const prerender = false;
@@ -59,9 +62,11 @@ const labels: Record<
     appointmentBtn: string;
     mapBtn: string;
     faqsTitle: string;
+    directoryBadge: string;
     directoryAssistanceTitle: string;
     directoryAssistanceBody: string;
     exploreServicesBtn: string;
+    viewCategoryBtn: string;
   }
 > = {
   es: {
@@ -90,10 +95,12 @@ const labels: Record<
     appointmentBtn: "Cita Previa Oficial",
     mapBtn: "Cómo llegar (GPS)",
     faqsTitle: "Preguntas Frecuentes Contrastadas",
+    directoryBadge: "Servicios Locales Verificados en Mallorca",
     directoryAssistanceTitle: "¿Prefieres que un profesional te ayude con este trámite?",
     directoryAssistanceBody:
       "Encuentra en Servicios Mallorca gestorías administrativas colegiadas, talleres certificados o especialistas contrastados que gestionan este trámite por ti.",
     exploreServicesBtn: "Ver Profesionales en el Directorio",
+    viewCategoryBtn: "Ver todos los profesionales en esta categoría",
   },
   ca: {
     breadcrumbsHome: "Inici",
@@ -121,10 +128,12 @@ const labels: Record<
     appointmentBtn: "Cita Prèvia Oficial",
     mapBtn: "Com arribar (GPS)",
     faqsTitle: "Preguntes Freqüents Contrastades",
+    directoryBadge: "Serveis Locals Verificats a Mallorca",
     directoryAssistanceTitle: "Prefereixes que un professional t'ajudi amb aquest tràmit?",
     directoryAssistanceBody:
       "Troba a Servicios Mallorca gestories administratives col·legiades, tallers certificats o especialistes que gestionen aquest tràmit per tu.",
     exploreServicesBtn: "Veure Professionals al Directori",
+    viewCategoryBtn: "Veure tots els professionals en aquesta categoria",
   },
   en: {
     breadcrumbsHome: "Home",
@@ -152,10 +161,12 @@ const labels: Record<
     appointmentBtn: "Book Official Appointment",
     mapBtn: "Directions (GPS)",
     faqsTitle: "Frequently Asked Questions",
+    directoryBadge: "Verified Local Services in Mallorca",
     directoryAssistanceTitle: "Would you rather have a local professional handle this for you?",
     directoryAssistanceBody:
       "Discover licensed administrative agencies, certified auto garages, and qualified professionals on Servicios Mallorca ready to assist you.",
     exploreServicesBtn: "Browse Directory Professionals",
+    viewCategoryBtn: "Browse all verified professionals in this category",
   },
   de: {
     breadcrumbsHome: "Startseite",
@@ -183,14 +194,54 @@ const labels: Record<
     appointmentBtn: "Amtlichen Termin buchen",
     mapBtn: "Anfahrt (GPS)",
     faqsTitle: "Geprüfte Häufige Fragen (FAQ)",
+    directoryBadge: "Geprüfte lokale Betriebe auf Mallorca",
     directoryAssistanceTitle: "Möchten Sie diesen Amtsweg lieber einem Fachmann überlassen?",
     directoryAssistanceBody:
       "Finden Sie auf Servicios Mallorca geprüfte Gestorías, zertifizierte Kfz-Werkstätten und Rechtsberater, die diesen Behördengang für Sie erledigen.",
     exploreServicesBtn: "Fachleute im Verzeichnis ansehen",
+    viewCategoryBtn: "Alle zertifizierten Betriebe dieser Kategorie ansehen",
   },
 };
 
 const l = labels[locale] || labels.es;
+
+// Resolver servicios recomendados del directorio vinculados a esta guía
+const recommendedServices: ServiceItem[] = [];
+const seenServiceIds = new Set<string>();
+
+if (guide.recommendedServiceSlugs && guide.recommendedServiceSlugs.length > 0) {
+  for (const serviceSlug of guide.recommendedServiceSlugs) {
+    const s = getServiceById(serviceSlug);
+    if (s && !seenServiceIds.has(s.id)) {
+      recommendedServices.push(s);
+      seenServiceIds.add(s.id);
+    }
+  }
+}
+
+if (recommendedServices.length < 4 && guide.relatedServiceCategories) {
+  for (const catId of guide.relatedServiceCategories) {
+    const catServices = getServicesByCategory(catId);
+    for (const s of catServices) {
+      if (!seenServiceIds.has(s.id)) {
+        recommendedServices.push(s);
+        seenServiceIds.add(s.id);
+        if (recommendedServices.length >= 4) break;
+      }
+    }
+    if (recommendedServices.length >= 4) break;
+  }
+}
+
+const mainCategorySlug = guide.relatedServiceCategories?.[0];
+const categoryExploreUrl = mainCategorySlug ? `${prefix}servicios?categoria=${mainCategorySlug}` : `${prefix}servicios`;
+const mainCategory = mainCategorySlug ? CATEGORIES.find((c) => c.id === mainCategorySlug) : undefined;
+const mainCategoryName = mainCategory ? mainCategory.name[locale] || mainCategory.name.es : undefined;
+
+const assistanceTitle =
+  guide.assistanceHeader?.title[locale] || guide.assistanceHeader?.title.es || l.directoryAssistanceTitle;
+const assistanceBody =
+  guide.assistanceHeader?.body[locale] || guide.assistanceHeader?.body.es || l.directoryAssistanceBody;
 
 // Schema.org HowTo + FAQPage
 const schemaOrg = {
@@ -470,21 +521,43 @@ const schemaOrg = {
     </section>
 
     <!-- Conexión Cruzada con el Directorio Local de Servicios Mallorca -->
-    <section class="guide-directory-bridge" aria-label={l.directoryAssistanceTitle}>
-      <div class="bridge-icon" aria-hidden="true">🤝</div>
-      <div class="bridge-content">
-        <h3 class="bridge-title">{l.directoryAssistanceTitle}</h3>
-        <p class="bridge-body">{l.directoryAssistanceBody}</p>
-        <a href={`${prefix}servicios`} class="bridge-btn">
-          <span>{l.exploreServicesBtn}</span>
+    <section class="guide-directory-bridge" aria-labelledby="directory-bridge-title">
+      <header class="bridge-header">
+        <div class="bridge-badge-row">
+          <span class="bridge-badge">
+            <span class="bridge-badge-dot" aria-hidden="true"></span>
+            <span>{l.directoryBadge}</span>
+          </span>
+        </div>
+        <h2 id="directory-bridge-title" class="bridge-title">{assistanceTitle}</h2>
+        <p class="bridge-body">{assistanceBody}</p>
+      </header>
+
+      {recommendedServices.length > 0 && (
+        <div class="bridge-services-grid">
+          {recommendedServices.map((service) => (
+            <ServiceCard
+              service={service}
+              currentLocale={locale}
+              getLangPrefix={getLangPrefix}
+              translations={translations}
+            />
+          ))}
+        </div>
+      )}
+
+      <footer class="bridge-footer">
+        <a href={categoryExploreUrl} class="bridge-btn">
+          <span>{mainCategoryName ? `${l.viewCategoryBtn} (${mainCategoryName})` : l.exploreServicesBtn}</span>
           <svg viewBox="0 0 20 20" fill="currentColor" width="16" height="16" aria-hidden="true">
             <path
               fill-rule="evenodd"
               d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z"
-              clip-rule="evenodd"></path>
+              clip-rule="evenodd"
+            />
           </svg>
         </a>
-      </div>
+      </footer>
     </section>
   </main>
 
@@ -991,50 +1064,99 @@ const schemaOrg = {
 
   /* Directory Bridge */
   .guide-directory-bridge {
-    display: flex;
-    align-items: flex-start;
-    gap: 1.5rem;
-    background: linear-gradient(135deg, rgba(200, 157, 92, 0.08), rgba(200, 157, 92, 0.02));
+    margin-top: 3.5rem;
+    background: linear-gradient(135deg, rgba(200, 157, 92, 0.07), rgba(200, 157, 92, 0.02));
     border: 1px solid rgba(200, 157, 92, 0.25);
     border-radius: var(--radius-xl, 16px);
-    padding: 2rem;
+    padding: 2.25rem 2rem;
   }
 
-  .bridge-icon {
-    font-size: 2.25rem;
-    flex-shrink: 0;
+  .bridge-header {
+    margin-bottom: 1.75rem;
+  }
+
+  .bridge-badge-row {
+    margin-bottom: 0.75rem;
+  }
+
+  .bridge-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    background: rgba(200, 157, 92, 0.15);
+    color: var(--color-gold-dark, #976d2e);
+    border: 1px solid rgba(200, 157, 92, 0.35);
+    border-radius: 9999px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 0.25rem 0.75rem;
+  }
+
+  .bridge-badge-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--color-gold, #c89d5c);
+    border-radius: 50%;
   }
 
   .bridge-title {
-    margin: 0 0 0.5rem 0;
-    font-size: 1.2rem;
+    margin: 0 0 0.65rem 0;
+    font-size: 1.45rem;
     font-weight: 800;
     color: var(--color-text-main, #1a202c);
+    line-height: 1.3;
   }
 
   .bridge-body {
-    margin: 0 0 1.25rem 0;
-    font-size: 0.95rem;
-    line-height: 1.55;
+    margin: 0;
+    font-size: 0.98rem;
+    line-height: 1.6;
     color: var(--color-text-muted, #4a5568);
+    max-width: 780px;
+  }
+
+  .bridge-services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .bridge-footer {
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 0.5rem;
   }
 
   .bridge-btn {
     display: inline-flex;
     align-items: center;
-    gap: 0.45rem;
+    gap: 0.5rem;
     background: var(--color-text-main, #1a202c);
     color: #ffffff;
     font-weight: 700;
-    font-size: 0.88rem;
-    padding: 0.65rem 1.25rem;
+    font-size: 0.92rem;
+    padding: 0.75rem 1.4rem;
     border-radius: var(--radius-md, 8px);
     text-decoration: none;
-    transition: background 0.2s ease;
+    transition: background 0.2s ease, transform 0.15s ease;
   }
 
   .bridge-btn:hover {
     background: var(--color-gold, #c89d5c);
+    transform: translateY(-1px);
+  }
+
+  @media (max-width: 768px) {
+    .bridge-services-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .bridge-title {
+      font-size: 1.25rem;
+    }
   }
 
   @media (max-width: 640px) {
@@ -1045,8 +1167,12 @@ const schemaOrg = {
     }
 
     .guide-directory-bridge {
-      flex-direction: column;
-      padding: 1.5rem;
+      padding: 1.5rem 1.25rem;
+    }
+
+    .bridge-btn {
+      width: 100%;
+      justify-content: center;
     }
   }
 </style>

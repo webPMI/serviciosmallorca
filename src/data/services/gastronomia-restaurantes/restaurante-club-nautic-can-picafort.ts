@@ -26,7 +26,7 @@ export const restauranteClubNauticCanPicafort: ServiceItem = {
   phone: "+34 625 79 00 76",
   whatsapp: "+34 625 79 00 76",
   email: "info@cncanpicafort.com",
-  website: "https://cncanpicafort.com",
+  website: "https://cncanpicafort.com/restaurante",
   menuUrl: "https://cncanpicafort.com",
   googleMapsUrl: "https://www.google.com/maps/search/Restaurante+Club+Nautic+Can+Picafort+Mallorca",
   appleMapsUrl: "https://maps.apple.com/?q=Restaurante+Club+Nautic+Can+Picafort",

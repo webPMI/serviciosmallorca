@@ -10,6 +10,8 @@
     "build": "astro build",
     "deploy": "npm run ship",
     "ship": "node --experimental-strip-types scripts/ship.ts",
+    "autosave": "node --experimental-strip-types scripts/autosave.ts",
+    "autosave:deploy": "node --experimental-strip-types scripts/autosave.ts && npm run deploy",
     "prepush": "npm run typecheck && npm run validate:taxonomy && npm test && npm run audit:full",
     "preview": "astro preview",
     "astro": "astro",

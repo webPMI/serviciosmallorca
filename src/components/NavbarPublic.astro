@@ -108,10 +108,17 @@ const isRegisterActive = isActive(`${homeUrl}register`);
         </a>
         <a
           href={`${homeUrl}estadisticas`}
-          class:list={["nav-link", "nav-drawer-only", { active: isStatsActive }]}
-          aria-current={isStatsActive ? "page" : undefined}
+          class:list={["nav-link", "nav-drawer-only", { active: isStatsActive && !currentPath.includes("/comparativas") }]}
+          aria-current={isStatsActive && !currentPath.includes("/comparativas") ? "page" : undefined}
         >
           📊 {translations["nav.stats"] || "Estadísticas"}
+        </a>
+        <a
+          href={`${homeUrl}estadisticas/comparativas`}
+          class:list={["nav-link", "nav-drawer-only", { active: currentPath.includes("/estadisticas/comparativas") }]}
+          aria-current={currentPath.includes("/estadisticas/comparativas") ? "page" : undefined}
+        >
+          📈 {localeTyped === "ca" ? "Comparatives 20 Anys" : localeTyped === "en" ? "20-Yr Comparisons" : localeTyped === "de" ? "20-Jahre-Vergleich" : "Comparativas 20 Años"}
         </a>
         <a
           href={`${homeUrl}guias`}

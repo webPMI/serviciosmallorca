@@ -1,0 +1,821 @@
+---
+/**
+ * SectorHistoricalChart.astro
+ *
+ * Gráfica interactiva de barras semestrales (10 a 20 años) para sectores de Mallorca.
+ * Implementación en SVG/CSS nativo sin dependencias pesadas.
+ * Cumple con GR-01 (variables CSS), GR-02 (breakpoints), GR-03 (TypeScript estricto),
+ * GR-04 (i18n cuatrilingüe) y GR-07 (accesibilidad semántica y ARIA).
+ */
+import type { SectorHistoricalSeries } from "../data/historicalSectorStats";
+import type { Locale } from "../i18n";
+
+export interface Props {
+  series: SectorHistoricalSeries;
+  lang: Locale;
+}
+
+const { series, lang } = Astro.props;
+
+const labels: Record<
+  Locale,
+  {
+    tenYearsBtn: string;
+    twentyYearsBtn: string;
+    rangeLabel: string;
+    tenYearChange: string;
+    twentyYearChange: string;
+    peakLabel: string;
+    troughLabel: string;
+    officialSource: string;
+    milestonesTitle: string;
+    semester1: string;
+    semester2: string;
+    viewBlogAnalysis: string;
+  }
+> = {
+  es: {
+    tenYearsBtn: "Últimos 10 Años (2016–2026)",
+    twentyYearsBtn: "Últimos 20 Años (2006–2026)",
+    rangeLabel: "Horizonte Temporal:",
+    tenYearChange: "Evolución a 10 años",
+    twentyYearChange: "Evolución a 20 años",
+    peakLabel: "Pico Máximo Histórico",
+    troughLabel: "Mínimo del Período",
+    officialSource: "Fuente Oficial Contrastada",
+    milestonesTitle: "Hitos y Puntos de Inflexión del Sector",
+    semester1: "1er Semestre (S1: Ene–Jun)",
+    semester2: "2º Semestre (S2: Jul–Dic)",
+    viewBlogAnalysis: "Leer Análisis en Profundidad en el Blog",
+  },
+  ca: {
+    tenYearsBtn: "Darrers 10 Anys (2016–2026)",
+    twentyYearsBtn: "Darrers 20 Anys (2006–2026)",
+    rangeLabel: "Horitzó Temporal:",
+    tenYearChange: "Evolució a 10 anys",
+    twentyYearChange: "Evolució a 20 anys",
+    peakLabel: "Pic Màxim Històric",
+    troughLabel: "Mínim del Període",
+    officialSource: "Font Oficial Contrastada",
+    milestonesTitle: "Fites i Punts d'Inflexió del Sector",
+    semester1: "1r Semestre (S1: Gen–Jun)",
+    semester2: "2n Semestre (S2: Jul–Des)",
+    viewBlogAnalysis: "Llegir Anàlisi en Profunditat al Blog",
+  },
+  en: {
+    tenYearsBtn: "Last 10 Years (2016–2026)",
+    twentyYearsBtn: "Last 20 Years (2006–2026)",
+    rangeLabel: "Time Horizon:",
+    tenYearChange: "10-Year Trajectory",
+    twentyYearChange: "20-Year Trajectory",
+    peakLabel: "All-Time Historic Peak",
+    troughLabel: "Period Lowest Floor",
+    officialSource: "Verified Official Source",
+    milestonesTitle: "Key Milestones & Turning Points",
+    semester1: "1st Half (H1: Jan–Jun)",
+    semester2: "2nd Half (H2: Jul–Dec)",
+    viewBlogAnalysis: "Read In-Depth Editorial Analysis",
+  },
+  de: {
+    tenYearsBtn: "Letzte 10 Jahre (2016–2026)",
+    twentyYearsBtn: "Letzte 20 Jahre (2006–2026)",
+    rangeLabel: "Zeithorizont:",
+    tenYearChange: "10-Jahres-Trend",
+    twentyYearChange: "20-Jahres-Trend",
+    peakLabel: "Historischer Höchststand",
+    troughLabel: "Tiefstwert des Zeitraums",
+    officialSource: "Amtlich geprüfte Quelle",
+    milestonesTitle: "Meilensteine & Wendepunkte der Branche",
+    semester1: "1. Halbjahr (H1: Jan–Jun)",
+    semester2: "2. Halbjahr (H2: Jul–Dez)",
+    viewBlogAnalysis: "Ausführliche Branchenanalyse im Blog lesen",
+  },
+};
+
+const l = labels[lang] || labels.es;
+
+// Calculamos máximos para escala visual del gráfico
+const allValues = series.dataPoints.map((d) => d.value);
+const maxVal = Math.max(...allValues) * 1.08;
+const minVal = 0;
+
+// Hitos mapeados por periodo para destacar barras
+const milestonePeriods = new Set(series.milestones.map((m) => `${m.year}-S${m.semester}`));
+---
+
+<article class="historical-chart-card" data-series-id={series.id}>
+  <!-- Header de la Ficha Sectorial -->
+  <header class="chart-header">
+    <div class="chart-title-group">
+      <span class="chart-icon" aria-hidden="true">{series.icon}</span>
+      <div>
+        <div class="chart-badge-row">
+          <span class="source-badge">
+            <span class="source-dot" aria-hidden="true"></span>
+            <span>{l.officialSource}: {series.sourceEntity}</span>
+          </span>
+          <span class="series-code-badge">{series.officialSeriesCode}</span>
+        </div>
+        <h2 class="chart-title">{series.title[lang] || series.title.es}</h2>
+        <p class="chart-description">{series.shortDescription[lang] || series.shortDescription.es}</p>
+      </div>
+    </div>
+
+    <!-- Controles de Rango Temporal -->
+    <div class="range-controls-wrapper" role="group" aria-label={l.rangeLabel}>
+      <span class="range-label">{l.rangeLabel}</span>
+      <div class="range-btn-group">
+        <button
+          type="button"
+          class="range-btn active"
+          data-range="10"
+          aria-pressed="true"
+        >
+          {l.tenYearsBtn}
+        </button>
+        <button
+          type="button"
+          class="range-btn"
+          data-range="20"
+          aria-pressed="false"
+        >
+          {l.twentyYearsBtn}
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Métricas Rápidas (Insights Grid) -->
+  <div class="insights-banner-grid">
+    <div class="insight-stat">
+      <span class="stat-caption">{l.tenYearChange}</span>
+      <strong class="stat-figure highlight-up">+{series.insights.tenYearChangePct}%</strong>
+      <span class="stat-subtext">2016 ➔ 2026</span>
+    </div>
+
+    <div class="insight-stat">
+      <span class="stat-caption">{l.twentyYearChange}</span>
+      <strong class="stat-figure highlight-up">+{series.insights.twentyYearChangePct}%</strong>
+      <span class="stat-subtext">2006 ➔ 2026</span>
+    </div>
+
+    <div class="insight-stat">
+      <span class="stat-caption">{l.peakLabel}</span>
+      <strong class="stat-figure highlight-gold">{series.insights.peakValueFormatted}</strong>
+      <span class="stat-subtext">{series.insights.peakSemester}</span>
+    </div>
+
+    <div class="insight-stat">
+      <span class="stat-caption">{l.troughLabel}</span>
+      <strong class="stat-figure">{series.insights.troughValueFormatted}</strong>
+      <span class="stat-subtext">{series.insights.troughSemester}</span>
+    </div>
+  </div>
+
+  <!-- Contenedor del Gráfico de Barras SVG Nativo -->
+  <div class="chart-visualization-area">
+    <div class="chart-unit-indicator">
+      <span>📐 {series.unit[lang] || series.unit.es}</span>
+    </div>
+
+    <div class="svg-scroll-container">
+      <svg
+        class="semiannual-svg-chart"
+        viewBox="0 0 1000 320"
+        preserveAspectRatio="none"
+        role="img"
+        aria-label={`${series.title[lang] || series.title.es} - Gráfica Semestral`}
+      >
+        <!-- Líneas de Guía de Fondo -->
+        <line x1="40" y1="40" x2="980" y2="40" class="guide-line" />
+        <line x1="40" y1="110" x2="980" y2="110" class="guide-line" />
+        <line x1="40" y1="180" x2="980" y2="180" class="guide-line" />
+        <line x1="40" y1="250" x2="980" y2="250" class="guide-line" />
+
+        <!-- Barras Semestrales (41 Puntos de 2006 a 2026) -->
+        <g class="bars-group" data-total-bars={series.dataPoints.length}>
+          {
+            series.dataPoints.map((dp, index) => {
+              // Cálculo de posiciones relativas
+              // En vista 20 años: 41 barras. Paso horizontal = ~22px
+              const barWidth = 14;
+              const xPos = 50 + index * 22.5;
+              const barHeight = Math.max(8, ((dp.value - minVal) / (maxVal - minVal)) * 210);
+              const yPos = 250 - barHeight;
+              const isTenYears = dp.year >= 2016;
+              const hasMilestone = milestonePeriods.has(dp.period);
+              const isPeak = dp.period === series.insights.peakSemester;
+              const isTrough = dp.period === series.insights.troughSemester;
+
+              return (
+                <g
+                  class:list={[
+                    "bar-column",
+                    { "in-ten-years": isTenYears, "has-milestone": hasMilestone, "is-peak": isPeak, "is-trough": isTrough }
+                  ]}
+                  data-period={dp.period}
+                  data-year={dp.year}
+                  data-semester={dp.semester}
+                  data-value={dp.value}
+                  data-formatted={dp.formattedValue}
+                  tabindex="0"
+                  role="graphics-symbol"
+                  aria-label={`${dp.period}: ${dp.formattedValue}`}
+                >
+                  <rect
+                    x={xPos}
+                    y={yPos}
+                    width={barWidth}
+                    height={barHeight}
+                    rx="3"
+                    class="bar-rect"
+                  />
+                  {hasMilestone && (
+                    <circle
+                      cx={xPos + barWidth / 2}
+                      cy={yPos - 8}
+                      r="4"
+                      class="milestone-dot"
+                    />
+                  )}
+                  {/* Etiquetas de Año para Semestres S1 clave */}
+                  {dp.semester === 1 && (dp.year % 2 === 0 || dp.year === 2026) && (
+                    <text
+                      x={xPos + barWidth / 2}
+                      y="275"
+                      class="year-axis-label"
+                      text-anchor="middle"
+                    >
+                      {dp.year}
+                    </text>
+                  )}
+                </g>
+              );
+            })
+          }
+        </g>
+      </svg>
+    </div>
+
+    <!-- Tooltip Interactivo Flotante -->
+    <div class="chart-tooltip" id={`tooltip-${series.id}`} role="tooltip" aria-hidden="true">
+      <div class="tooltip-period" id={`tooltip-period-${series.id}`}>2026-S1</div>
+      <div class="tooltip-value" id={`tooltip-value-${series.id}`}>4.590 €/m²</div>
+      <div class="tooltip-semester-desc" id={`tooltip-desc-${series.id}`}>{l.semester1}</div>
+    </div>
+  </div>
+
+  <!-- Resumen Editorial de Síntesis -->
+  <div class="chart-summary-callout">
+    <span class="callout-icon" aria-hidden="true">💡</span>
+    <p class="callout-text">{series.insights.summaryText[lang] || series.insights.summaryText.es}</p>
+  </div>
+
+  <!-- Acordeón / Bloque de Hitos Históricos -->
+  <section class="milestones-section" aria-label={l.milestonesTitle}>
+    <h3 class="milestones-header-title">
+      <span aria-hidden="true">🚩</span>
+      <span>{l.milestonesTitle}</span>
+    </h3>
+
+    <div class="milestones-grid">
+      {
+        series.milestones.map((milestone) => (
+          <div class={`milestone-card impact-${milestone.impactTag}`}>
+            <div class="milestone-badge-row">
+              <span class="milestone-year-badge">{milestone.year} · S{milestone.semester}</span>
+              <span class="milestone-tag-pill">{milestone.impactTag.toUpperCase()}</span>
+            </div>
+            <h4 class="milestone-title">{milestone.title[lang] || milestone.title.es}</h4>
+            <p class="milestone-desc">{milestone.description[lang] || milestone.description.es}</p>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+</article>
+
+<script>
+  // Script interactivo para el conmutador de 10 vs 20 años y tooltips en hover
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".historical-chart-card").forEach((card) => {
+      const rangeButtons = card.querySelectorAll<HTMLButtonElement>(".range-btn");
+      const columns = card.querySelectorAll<SVGGElement>(".bar-column");
+      const tooltip = card.querySelector<HTMLElement>(".chart-tooltip");
+      const tooltipPeriod = card.querySelector<HTMLElement>('[id^="tooltip-period-"]');
+      const tooltipValue = card.querySelector<HTMLElement>('[id^="tooltip-value-"]');
+      const tooltipDesc = card.querySelector<HTMLElement>('[id^="tooltip-desc-"]');
+
+      // Toggle entre 10 y 20 años
+      rangeButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          rangeButtons.forEach((b) => {
+            b.classList.remove("active");
+            b.setAttribute("aria-pressed", "false");
+          });
+          btn.classList.add("active");
+          btn.setAttribute("aria-pressed", "true");
+
+          const range = btn.getAttribute("data-range");
+          if (range === "10") {
+            card.classList.add("view-ten-years");
+          } else {
+            card.classList.remove("view-ten-years");
+          }
+        });
+      });
+
+      // Hover y accesibilidad en barras
+      columns.forEach((col) => {
+        const showTooltip = (e: MouseEvent | FocusEvent) => {
+          if (!tooltip || !tooltipPeriod || !tooltipValue || !tooltipDesc) return;
+          const period = col.getAttribute("data-period") || "";
+          const formatted = col.getAttribute("data-formatted") || "";
+          const semester = col.getAttribute("data-semester");
+
+          tooltipPeriod.textContent = period;
+          tooltipValue.textContent = formatted;
+          tooltipDesc.textContent = semester === "1" ? "1er Semestre (Ene–Jun)" : "2º Semestre (Jul–Dic)";
+
+          tooltip.classList.add("is-visible");
+          tooltip.setAttribute("aria-hidden", "false");
+
+          const rect = col.getBoundingClientRect();
+          const cardRect = card.getBoundingClientRect();
+          const leftPos = rect.left - cardRect.left + rect.width / 2;
+          tooltip.style.left = `${leftPos}px`;
+          tooltip.style.top = `${rect.top - cardRect.top - 12}px`;
+        };
+
+        const hideTooltip = () => {
+          if (!tooltip) return;
+          tooltip.classList.remove("is-visible");
+          tooltip.setAttribute("aria-hidden", "true");
+        };
+
+        col.addEventListener("mouseenter", showTooltip);
+        col.addEventListener("focus", showTooltip);
+        col.addEventListener("mouseleave", hideTooltip);
+        col.addEventListener("blur", hideTooltip);
+      });
+    });
+  });
+</script>
+
+<style>
+  .historical-chart-card {
+    position: relative;
+    background: var(--color-bg-card, #ffffff);
+    border: 1px solid var(--color-border, #e2e8f0);
+    border-radius: var(--radius-xl, 16px);
+    padding: 2.25rem 2rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .historical-chart-card:hover {
+    border-color: rgba(200, 157, 92, 0.4);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.07);
+  }
+
+  /* Header */
+  .chart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .chart-title-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+    flex: 1;
+    min-width: 280px;
+  }
+
+  .chart-icon {
+    font-size: 2.5rem;
+    line-height: 1;
+    background: rgba(200, 157, 92, 0.12);
+    border: 1px solid rgba(200, 157, 92, 0.25);
+    border-radius: 14px;
+    padding: 0.65rem;
+    flex-shrink: 0;
+  }
+
+  .chart-badge-row {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.45rem;
+    flex-wrap: wrap;
+  }
+
+  .source-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--color-gold-dark, #976d2e);
+    background: rgba(200, 157, 92, 0.1);
+    border: 1px solid rgba(200, 157, 92, 0.3);
+    border-radius: 9999px;
+    padding: 0.2rem 0.6rem;
+    text-transform: uppercase;
+  }
+
+  .source-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--color-gold, #c89d5c);
+    border-radius: 50%;
+  }
+
+  .series-code-badge {
+    font-size: 0.72rem;
+    font-family: monospace;
+    color: var(--color-text-muted, #718096);
+    background: var(--color-bg-alt, #f7fafc);
+    border: 1px solid var(--color-border, #e2e8f0);
+    border-radius: 4px;
+    padding: 0.15rem 0.45rem;
+  }
+
+  .chart-title {
+    margin: 0 0 0.4rem 0;
+    font-size: 1.45rem;
+    font-weight: 800;
+    color: var(--color-text-main, #1a202c);
+    line-height: 1.25;
+  }
+
+  .chart-description {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.55;
+    color: var(--color-text-muted, #4a5568);
+  }
+
+  /* Range Controls */
+  .range-controls-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.4rem;
+  }
+
+  .range-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--color-text-muted, #718096);
+    letter-spacing: 0.05em;
+  }
+
+  .range-btn-group {
+    display: inline-flex;
+    background: var(--color-bg-alt, #f1f5f9);
+    border: 1px solid var(--color-border, #e2e8f0);
+    border-radius: 8px;
+    padding: 3px;
+  }
+
+  .range-btn {
+    background: transparent;
+    border: none;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--color-text-muted, #64748b);
+    padding: 0.45rem 0.9rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+
+  .range-btn.active {
+    background: var(--color-bg-card, #ffffff);
+    color: var(--color-text-main, #0f172a);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  }
+
+  /* Insights Grid */
+  .insights-banner-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+    background: linear-gradient(135deg, rgba(200, 157, 92, 0.06), rgba(200, 157, 92, 0.02));
+    border: 1px solid rgba(200, 157, 92, 0.2);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+  }
+
+  .insight-stat {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .stat-caption {
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--color-text-muted, #718096);
+    margin-bottom: 0.25rem;
+  }
+
+  .stat-figure {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--color-text-main, #1a202c);
+    line-height: 1.1;
+  }
+
+  .stat-figure.highlight-up {
+    color: #15803d;
+  }
+
+  .stat-figure.highlight-gold {
+    color: var(--color-gold, #c89d5c);
+  }
+
+  .stat-subtext {
+    font-size: 0.75rem;
+    color: var(--color-text-muted, #a0aec0);
+    margin-top: 0.2rem;
+  }
+
+  /* Visualization Area */
+  .chart-visualization-area {
+    position: relative;
+    margin-bottom: 2rem;
+    background: var(--color-bg-alt, #f8fafc);
+    border: 1px solid var(--color-border, #e2e8f0);
+    border-radius: 12px;
+    padding: 1.25rem 1.25rem 0.75rem 1.25rem;
+  }
+
+  .chart-unit-indicator {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--color-text-muted, #64748b);
+    margin-bottom: 0.5rem;
+  }
+
+  .svg-scroll-container {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .semiannual-svg-chart {
+    width: 100%;
+    height: 320px;
+    display: block;
+  }
+
+  .guide-line {
+    stroke: var(--color-border, #e2e8f0);
+    stroke-width: 1;
+    stroke-dasharray: 4 4;
+  }
+
+  .bar-column {
+    cursor: pointer;
+    outline: none;
+  }
+
+  .bar-rect {
+    fill: rgba(200, 157, 92, 0.4);
+    transition: fill 0.2s ease, transform 0.15s ease;
+  }
+
+  .bar-column.in-ten-years .bar-rect {
+    fill: var(--color-gold, #c89d5c);
+  }
+
+  .bar-column:hover .bar-rect,
+  .bar-column:focus .bar-rect {
+    fill: var(--color-gold-dark, #976d2e);
+    filter: drop-shadow(0 2px 6px rgba(200, 157, 92, 0.5));
+  }
+
+  .bar-column.is-peak .bar-rect {
+    fill: #0ea5e9;
+  }
+
+  .milestone-dot {
+    fill: #dc2626;
+    stroke: #ffffff;
+    stroke-width: 1.5;
+  }
+
+  .year-axis-label {
+    font-size: 11px;
+    font-weight: 700;
+    fill: var(--color-text-muted, #64748b);
+  }
+
+  /* Modo Últimos 10 Años: atenuar los primeros 10 años (2006-2015) */
+  .historical-chart-card.view-ten-years .bar-column:not(.in-ten-years) .bar-rect {
+    opacity: 0.15;
+  }
+
+  .historical-chart-card.view-ten-years .bar-column:not(.in-ten-years) .milestone-dot {
+    opacity: 0.2;
+  }
+
+  .historical-chart-card.view-ten-years .bar-column:not(.in-ten-years) .year-axis-label {
+    opacity: 0.2;
+  }
+
+  /* Tooltip Flotante */
+  .chart-tooltip {
+    position: absolute;
+    transform: translate(-50%, -100%);
+    background: #0f172a;
+    color: #ffffff;
+    border-radius: 8px;
+    padding: 0.5rem 0.85rem;
+    font-size: 0.82rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.15s ease;
+    z-index: 20;
+    white-space: nowrap;
+  }
+
+  .chart-tooltip.is-visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .tooltip-period {
+    font-weight: 800;
+    color: var(--color-gold, #c89d5c);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+  }
+
+  .tooltip-value {
+    font-size: 1.05rem;
+    font-weight: 800;
+    margin: 0.1rem 0;
+  }
+
+  .tooltip-semester-desc {
+    font-size: 0.72rem;
+    color: #94a3b8;
+  }
+
+  /* Callout Editorial */
+  .chart-summary-callout {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+    background: rgba(200, 157, 92, 0.08);
+    border-left: 4px solid var(--color-gold, #c89d5c);
+    border-radius: 0 8px 8px 0;
+    padding: 1rem 1.25rem;
+    margin-bottom: 2rem;
+  }
+
+  .callout-icon {
+    font-size: 1.35rem;
+    line-height: 1;
+  }
+
+  .callout-text {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.55;
+    color: var(--color-text-main, #1a202c);
+    font-weight: 500;
+  }
+
+  /* Milestones Section */
+  .milestones-section {
+    border-top: 1px solid var(--color-border, #e2e8f0);
+    padding-top: 1.75rem;
+  }
+
+  .milestones-header-title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--color-text-main, #1a202c);
+    margin: 0 0 1.25rem 0;
+  }
+
+  .milestones-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+  }
+
+  .milestone-card {
+    background: var(--color-bg-alt, #f8fafc);
+    border: 1px solid var(--color-border, #e2e8f0);
+    border-radius: 10px;
+    padding: 1.15rem 1.25rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .milestone-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  }
+
+  .milestone-card.impact-crisis {
+    border-left: 4px solid #ef4444;
+  }
+
+  .milestone-card.impact-auge,
+  .milestone-card.impact-recuperacion {
+    border-left: 4px solid #22c55e;
+  }
+
+  .milestone-card.impact-record {
+    border-left: 4px solid var(--color-gold, #c89d5c);
+  }
+
+  .milestone-card.impact-normativa {
+    border-left: 4px solid #3b82f6;
+  }
+
+  .milestone-badge-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .milestone-year-badge {
+    font-size: 0.78rem;
+    font-weight: 800;
+    color: var(--color-text-main, #1a202c);
+  }
+
+  .milestone-tag-pill {
+    font-size: 0.68rem;
+    font-weight: 700;
+    color: var(--color-text-muted, #64748b);
+    background: #e2e8f0;
+    padding: 0.15rem 0.45rem;
+    border-radius: 4px;
+  }
+
+  .milestone-title {
+    margin: 0 0 0.35rem 0;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--color-text-main, #1a202c);
+    line-height: 1.35;
+  }
+
+  .milestone-desc {
+    margin: 0;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: var(--color-text-muted, #64748b);
+  }
+
+  @media (max-width: 640px) {
+    .historical-chart-card {
+      padding: 1.5rem 1.25rem;
+    }
+
+    .chart-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .range-controls-wrapper {
+      width: 100%;
+      align-items: flex-start;
+    }
+
+    .range-btn-group {
+      width: 100%;
+    }
+
+    .range-btn {
+      flex: 1;
+      text-align: center;
+    }
+
+    .chart-title {
+      font-size: 1.25rem;
+    }
+  }
+</style>

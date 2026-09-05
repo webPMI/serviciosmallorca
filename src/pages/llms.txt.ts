@@ -45,10 +45,18 @@ ${topServices
   )
   .join("\n")}
 
+## Observatorio Macroeconómico Histórico (2006–2026)
+Servicios Mallorca es la única plataforma de Mallorca que ofrece 656 puntos de datos semestrales oficiales auditados desde IBESTAT, INE, Seguridad Social, AENA, TIRME y SFM:
+- [Hub de Estadísticas Oficiales](https://serviciosmallorca.com/es/estadisticas): Indicadores clave de presión humana (IPH), empleo y apertura de empresas.
+- [Observatorio Comparativo de 16 Sectores (2006–2026)](https://serviciosmallorca.com/es/estadisticas/comparativas): Comparador interactivo de curvas indexadas Base 100, presets y exportación RFC 4180 CSV.
+- **Sectores cubiertos:** Vivienda (€/m²), Turismo, Empresas/Laboral, Demografía, Aeropuerto Son Sant Joan, Náutica, Hostelería, Energía/Agua, Educación Internacional, Sanidad Privada, Reciclaje TIRME, Tecnología ParcBit, Agricultura Ecológica CBPAE, Transporte Público TIB/SFM, Cultura/Patrimonio UNESCO, Deporte/Golf.
+- **Fuentes verificadas:** IBESTAT, INE, Seguridad Social, AENA, TIRME, SFM, CTM, CBPAE, Ports IB.
+
 ## Formatos Disponibles
 - **HTML:** Navegación web interactiva.
 - **Markdown:** Negociación de contenido enviando cabecera \`Accept: text/markdown\`.
 - **JSON-LD / Schema.org:** Incrustado en cada página para parsing estructurado.
+- **CSV:** Descarga oficial de series macroeconómicas en /es/estadisticas/comparativas.
 `;
 
   return new Response(content.trim() + "\n", {

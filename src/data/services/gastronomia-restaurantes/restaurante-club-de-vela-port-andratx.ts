@@ -26,7 +26,7 @@ export const restauranteClubDeVelaPortAndratx: ServiceItem = {
   phone: "+34 971 76 50 96",
   whatsapp: "+34 971 76 50 96",
   email: "restaurante@cvpa.es",
-  website: "https://www.cvpa.es",
+  website: "https://www.cvpa.es/restaurante",
   menuUrl: "https://www.cvpa.es",
   googleMapsUrl: "https://www.google.com/maps/search/Restaurante+Club+de+Vela+Puerto+de+Andratx+Mallorca",
   appleMapsUrl: "https://maps.apple.com/?q=Restaurante+Club+de+Vela+Puerto+de+Andratx",

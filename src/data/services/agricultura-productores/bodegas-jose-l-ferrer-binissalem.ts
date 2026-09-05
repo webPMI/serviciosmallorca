@@ -1,126 +1,120 @@
 import type { ServiceItem } from "../types.ts";
 
-export const bodegasJoseLFerrerBinissalem: ServiceItem = {
-  id: "bodegas-jose-l-ferrer-binissalem",
-  slug: "bodegas-jose-l-ferrer-binissalem",
-  name: "Bodegas José L. Ferrer (Fundada 1931)",
-  category: "bodegas-enoturismo",
-  sectorId: "agricultura-productores",
-  culturalIdentity: "mallorquin_heritage",
-  zone: "raiguer-pla",
-  address: "Carrer del Conquistador, 103, 07350 Binissalem, Illes Balears",
-  addressAccuracy: "verified_manual",
-  coordinates: {
-    lat: 39.6845,
-    lng: 2.8421,
-  },
-  coordinatesAccuracy: "verified_manual",
-  rating: 4.8,
-  ratingSource: "verified_manual",
-  reviewCount: 1120,
-  reviewCountSource: "verified_manual",
-  priceRange: "€€€",
-  verified: true,
-  featured: true,
-  status: "open",
-  seasonality: "year_round",
-  isIconicHeritage: true,
-  targetAudience: ["residentes", "turistas", "enofilos"],
-  languagesSpoken: ["es", "en", "ca", "de"],
-  emergency24h: false,
-  inVillaService: false,
-  features: ["wifi", "parking", "credit_card"],
-  paymentMethods: ["credit_card", "bank_transfer", "cash"],
-  phone: "+34 971 51 10 50",
-  website: "https://www.vinosferrer.com/enoturismo/",
-  image: "/images/services/bodegas-jose-l-ferrer-binissalem.webp",
-  shortDescription: {
-    es: "Pioneros de la DO Binissalem desde 1931 elaborando vinos con uvas autóctonas Manto Negro y Moll.",
-    en: "Pioneers of the DO Binissalem appellation since 1931, producing wines from native Manto Negro and Moll grapes.",
-    ca: "Pioners de la DO Binissalem des de 1931 elaborant vins amb raïm autòcton Manto Negro i Moll.",
-    de: "Pioniere der DO Binissalem seit 1931 mit Weinen aus den autochthonen Rebsorten Manto Negro und Moll.",
-  },
-  fullDescription: {
-    es: "Bodegas José L. Ferrer (Fundada 1931) ofrece un servicio profesional de máxima categoría en Mallorca. Pioneros de la DO Binissalem desde 1931 elaborando vinos con uvas autóctonas Manto Negro y Moll. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
-    en: "Bodegas José L. Ferrer (Fundada 1931) delivers premier professional service in Mallorca. Pioneers of the DO Binissalem appellation since 1931, producing wines from native Manto Negro and Moll grapes. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
-    ca: "Bodegas José L. Ferrer (Fundada 1931) ofereix un servei professional de màxima categoria a Mallorca. Pioners de la DO Binissalem des de 1931 elaborant vins amb raïm autòcton Manto Negro i Moll. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
-    de: "Bodegas José L. Ferrer (Fundada 1931) bietet erstklassigen professionellen Service auf Mallorca. Pioniere der DO Binissalem seit 1931 mit Weinen aus den autochthonen Rebsorten Manto Negro und Moll. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
-  },
-  schedule: {
-    monday: {
-      open: "09:00",
-      close: "19:30",
-    },
-    tuesday: {
-      open: "09:00",
-      close: "19:30",
-    },
-    wednesday: {
-      open: "09:00",
-      close: "19:30",
-    },
-    thursday: {
-      open: "09:00",
-      close: "19:30",
-    },
-    friday: {
-      open: "09:00",
-      close: "19:30",
-    },
-    saturday: {
-      open: "10:00",
-      close: "14:00",
-    },
-    sunday: {
-      open: "closed",
-      close: "closed",
-    },
-  },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Bodegas%20Jos%C3%A9%20L.%20Ferrer%20(Fundada%201931)%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Bodegas%20Jos%C3%A9%20L.%20Ferrer%20(Fundada%201931)%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Bodegas%20Jos%C3%A9%20L.%20Ferrer%20(Fundada%201931)%20Mallorca",
-  pricing: {
-    startingPrice: "Visita y cata desde 20€",
-    rateType: "tiered",
-    notes: {
-      es: "Pioneros de la DO Binissalem desde 1931 elaborando vinos con uvas autóctonas Manto Negro y Moll.",
-      en: "Pioneers of the DO Binissalem appellation since 1931, producing wines from native Manto Negro and Moll grapes.",
-      ca: "Pioners de la DO Binissalem des de 1931 elaborant vins amb raïm autòcton Manto Negro i Moll.",
-      de: "Pioniere der DO Binissalem seit 1931 mit Weinen aus den autochthonen Rebsorten Manto Negro und Moll.",
-    },
-  },
-  faqs: [
-    {
-      question: {
-        es: "¿Qué vinos autóctonos destacan en la cata de Bodegas José L. Ferrer?",
-        en: "Which native wines stand out in the José L. Ferrer wine tasting?",
-        ca: "Quins vins autòctons destaquen al tast?",
-        de: "Welche autochthonen Weine stehen bei der Verkostung im Mittelpunkt?",
-      },
-      answer: {
-        es: "El Veritas Vinyes Velles (Manto Negro de viñas de más de 60 años) y el blanco Pedra de Binissalem.",
-        en: "The Veritas Vinyes Velles (Manto Negro from 60+ year old vines) and the crisp Pedra de Binissalem white.",
-        ca: "El Veritas Vinyes Velles i el blanc Pedra de Binissalem.",
-        de: "Der Veritas Vinyes Velles (Manto Negro von über 60 Jahre alten Reben) und der Weißwein Pedra de Binissalem.",
-      },
-    },
+export const bodegas_jose_l_ferrer_binissalem: ServiceItem = {
+  "id": "bodegas-jose-l-ferrer-binissalem",
+  "slug": "bodegas-jose-l-ferrer-binissalem",
+  "name": "Bodegas José L. Ferrer D.O. Binissalem (1931)",
+  "category": "bodegas-enoturismo",
+  "sectorId": "agricultura-productores",
+  "subcategories": [
+    "bodega-historica-binissalem",
+    "enoturismo-catas-mallorca",
+    "vinos-variedades-autoctonas"
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 1120,
-      url: "https://www.google.com/maps/search/?api=1&query=Bodegas%20Jos%C3%A9%20L.%20Ferrer%20(Fundada%201931)%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Bodegas%20Jos%C3%A9%20L.%20Ferrer%20(Fundada%201931)%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.7,
-      reviewCount: 112,
-      url: "https://www.bing.com/maps?q=Bodegas%20Jos%C3%A9%20L.%20Ferrer%20(Fundada%201931)%20Mallorca",
-    },
-    totalReviewsAggregated: 1232,
-    overallWeightedRating: 4.8,
+  "zone": "raiguer-pla",
+  "address": "Carrer del Conquistador, 103, 07350 Binissalem",
+  "addressAccuracy": "verified_manual",
+  "coordinates": {
+    "lat": 39.6892,
+    "lng": 2.8456
   },
+  "coordinatesAccuracy": "verified_manual",
+  "rating": 4.8,
+  "ratingSource": "verified_manual",
+  "reviewCount": 1650,
+  "reviewCountSource": "verified_manual",
+  "priceRange": "€€€",
+  "verified": true,
+  "featured": false,
+  "status": "open",
+  "tags": [
+    "zona:raiguer-pla",
+    "product:premium",
+    "mod:cita-previa"
+  ],
+  "phone": "+34 971 511 050",
+  "whatsapp": "+34 971 511 050",
+  "email": "info@www.vinosferrer.com",
+  "website": "https://www.vinosferrer.com",
+  "schedule": "Lunes a Viernes: 09:00 - 19:00; Sábado: 10:00 - 14:00",
+  "image": "/images/services/bodegas-jose-l-ferrer-binissalem.jpg",
+  "gallery": [
+    "/images/services/bodegas-jose-l-ferrer-binissalem.jpg"
+  ],
+  "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Bodegas%20Jos%C3%A9%20L.%20Ferrer%20D.O.%20Binissalem%20(1931)%20Carrer%20del%20Conquistador%2C%20103%2C%2007350%20Binissalem",
+  "appleMapsUrl": "https://maps.apple.com/?q=Bodegas%20Jos%C3%A9%20L.%20Ferrer%20D.O.%20Binissalem%20(1931)%20Carrer%20del%20Conquistador%2C%20103%2C%2007350%20Binissalem",
+  "bingMapsUrl": "https://bing.com/maps?q=Bodegas%20Jos%C3%A9%20L.%20Ferrer%20D.O.%20Binissalem%20(1931)%20Carrer%20del%20Conquistador%2C%20103%2C%2007350%20Binissalem",
+  "shortDescription": {
+    "es": "Bodega histórica de referencia de la D.O. Binissalem desde 1931: pionera en el embotellado de vinos en Mallorca, variedades autóctonas Mantonegro y Moll, catas guiadas y visitas al viñedo.",
+    "en": "Benchmark historic winery of the D.O. Binissalem since 1931: pioneers in estate-bottled Mallorcan wine, native Mantonegro and Moll grapes, vineyard tours, and cellar tastings.",
+    "ca": "Celler històric pioner de la D.O. Binissalem fundat el 1931 amb varietats autòctones Mantonegre i Moll, visites a les vinyes i tasts de vins.",
+    "de": "Traditionsweingut der D.O. Binissalem seit 1931: Pionier der Flaschenabfüllung auf Mallorca, Rebsorten Mantonegro und Moll, Führungen und Weinverkostungen."
+  },
+  "fullDescription": {
+    "es": "Fundada por José Luis Ferrer Ramonell en 1931, esta bodega familiar introdujo la modernización enológica en Mallorca y fue la principal impulsora de la Denominación de Origen Binissalem. Con más de 140 hectáreas de viñedos propios en el corazón de la isla, elabora tintos de crianza estructurados a base de Mantonegro y blancos frescos de Moll (Prensal Blanc).",
+    "en": "Established by José Luis Ferrer Ramonell in 1931, introducing modern viticulture to Mallorca and spearheading the creation of the D.O. Binissalem regulatory council. Farming over 140 hectares of family vineyards, crafting structured oak-aged reds from indigenous Mantonegro and crisp aromatic whites from Moll.",
+    "ca": "Fundat el 1931 a Binissalem. Un dels cellers més importants de Mallorca amb més de 90 anys de tradició vitivinícola i reconeixement internacional.",
+    "de": "1931 gegründet und Wegbereiter für die D.O. Binissalem. Über 140 Hektar eigene Weinberge liefern Trauben für renommierte Weine wie 'Veritas' und 'Ferrer Reserva'."
+  },
+  "highlights": {
+    "es": [
+      "Bodega pionera de la D.O. Binissalem fundada en 1931 (cuatro generaciones familiares)",
+      "Más de 140 hectáreas de viñedos ecológicos y tradicionales propios en Binissalem",
+      "Especialistas en la recuperación de variedades autóctonas: Mantonegro, Callet y Moll",
+      "Espectacular sala de barricas subterránea y enotienda con sala de catas"
+    ],
+    "en": [
+      "Pioneering winery of D.O. Binissalem founded in 1931 across four family generations",
+      "Over 140 hectares of family-owned organic and sustainable vineyards",
+      "Specialists in indigenous Balearic grape varieties: Mantonegro, Callet, and Moll",
+      "Atmospheric underground barrel cellar and contemporary wine boutique tasting rooms"
+    ],
+    "ca": [
+      "Celler pioner de la D.O. Binissalem des del 1931",
+      "Més de 140 hectàrees de vinyes pròpies",
+      "Varietats autòctones: Mantonegre, Callet i Moll",
+      "Sala de bótes subterrània i botiga de vins"
+    ],
+    "de": [
+      "Pionierweingut der D.O. Binissalem seit 1931 in vierter Generation",
+      "Über 140 Hektar eigene Rebflächen im Herzen Mallorcas",
+      "Spezialisiert auf autochthone Rebsorten (Mantonegro, Callet, Moll)",
+      "Historischer Barriquekeller und moderner Verkostungsraum mit Weinshop"
+    ]
+  },
+  "servicesProvided": {
+    "es": [
+      "Visitas guiadas al viñedo, zona de elaboración y bodega de barricas",
+      "Catas comentadas de vinos maridadas con quesos de Mallorca y embutidos locales",
+      "Venta directa en enotienda con servicio de empaquetado seguro para vuelos",
+      "Espacios para eventos privados, presentaciones corporativas y bodas en viñedo"
+    ],
+    "en": [
+      "Guided tours through vineyards, vinification facilities, and oak barrel cellars",
+      "Tutored wine tasting flights paired with local artisanal cheeses and charcuterie",
+      "Direct cellar-door retail boutique with flight-safe protective packaging",
+      "Exclusive venue hire for corporate presentations and private vineyard events"
+    ],
+    "ca": [
+      "Visites guiades a les vinyes i celler de bótes",
+      "Tasts de vins comentats amb formatges i embotits mallorquins",
+      "Venda directa a la botiga del celler",
+      "Organització d'esdeveniments corporatius i privats"
+    ],
+    "de": [
+      "Geführte Touren durch Weinberge, Kelterei und den Fasskeller",
+      "Fachmännische Weinproben mit mallorquinischem Käse und Schinken",
+      "Weinverkauf ab Hof mit flugsicherer Flaschenverpackung",
+      "Eventlocation für Firmenevents und private Feiern inmitten der Reben"
+    ]
+  },
+  "reputationBreakdown": {
+    "googleMaps": {
+      "rating": 4.8,
+      "reviewCount": 1650,
+      "url": "https://www.google.com/maps/search/?api=1&query=Bodegas%20Jos%C3%A9%20L.%20Ferrer%20D.O.%20Binissalem%20(1931)%20Carrer%20del%20Conquistador%2C%20103%2C%2007350%20Binissalem"
+    }
+  },
+  "createdAt": "2026-08-30",
+  "lastUpdatedAt": "2026-08-30"
 };

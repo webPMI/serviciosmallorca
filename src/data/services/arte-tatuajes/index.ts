@@ -9,13 +9,18 @@ import { estudio_tattoo_inkspiration_alcudia_art } from "./estudio-tattoo-inkspi
 import { estudio_tatuaje_balear_ink_palma_plaza_patines } from "./estudio-tatuaje-balear-ink-palma-plaza-patines.ts";
 import { fundacioMiroMallorcaService } from "./fundacio-miro-mallorca.ts";
 import { galeriaBaroService } from "./galeria-baro.ts";
+import { galeria_horrach_moya_palma } from "./galeria-horrach-moya-palma.ts";
 import { galeriaKewenigService } from "./galeria-kewenig.ts";
 import { galeriaMaiorService } from "./galeria-maior.ts";
 import { galeriaPelairesService } from "./galeria-pelaires.ts";
 import { goodLuckTattoo } from "./good-luck-tattoo.ts";
+import { gordian_tattoo_palma_custom_ink } from "./gordian-tattoo-palma-custom-ink.ts";
 import { kuyenArtTattoo } from "./kuyen-art-tattoo.ts";
+import { l21_gallery_palma } from "./l21-gallery-palma.ts";
+import { la_fidel_tattoo_palma_estudio } from "./la-fidel-tattoo-palma-estudio.ts";
 import { macatelaTattoo } from "./macatela-tattoo.ts";
 import { museuSaBassaBlancaService } from "./museu-sa-bassa-blanca.ts";
+import { taller_enquadernacio_art_can_alcover_palma } from "./taller-enquadernacio-art-can-alcover-palma.ts";
 import { urbanSoulTattoo } from "./urban-soul-tattoo.ts";
 
 export { artesaniaCerasPalma } from "./artesania-ceras-palma.ts";
@@ -28,13 +33,18 @@ export { estudio_tattoo_inkspiration_alcudia_art } from "./estudio-tattoo-inkspi
 export { estudio_tatuaje_balear_ink_palma_plaza_patines } from "./estudio-tatuaje-balear-ink-palma-plaza-patines.ts";
 export { fundacioMiroMallorcaService } from "./fundacio-miro-mallorca.ts";
 export { galeriaBaroService } from "./galeria-baro.ts";
+export { galeria_horrach_moya_palma } from "./galeria-horrach-moya-palma.ts";
 export { galeriaKewenigService } from "./galeria-kewenig.ts";
 export { galeriaMaiorService } from "./galeria-maior.ts";
 export { galeriaPelairesService } from "./galeria-pelaires.ts";
 export { goodLuckTattoo } from "./good-luck-tattoo.ts";
+export { gordian_tattoo_palma_custom_ink } from "./gordian-tattoo-palma-custom-ink.ts";
 export { kuyenArtTattoo } from "./kuyen-art-tattoo.ts";
+export { l21_gallery_palma } from "./l21-gallery-palma.ts";
+export { la_fidel_tattoo_palma_estudio } from "./la-fidel-tattoo-palma-estudio.ts";
 export { macatelaTattoo } from "./macatela-tattoo.ts";
 export { museuSaBassaBlancaService } from "./museu-sa-bassa-blanca.ts";
+export { taller_enquadernacio_art_can_alcover_palma } from "./taller-enquadernacio-art-can-alcover-palma.ts";
 export { urbanSoulTattoo } from "./urban-soul-tattoo.ts";
 
 export const TATTOO_SERVICES: ServiceItem[] = [
@@ -48,12 +58,17 @@ export const TATTOO_SERVICES: ServiceItem[] = [
   estudio_tatuaje_balear_ink_palma_plaza_patines,
   fundacioMiroMallorcaService,
   galeriaBaroService,
+  galeria_horrach_moya_palma,
   galeriaKewenigService,
   galeriaMaiorService,
   galeriaPelairesService,
   goodLuckTattoo,
+  gordian_tattoo_palma_custom_ink,
   kuyenArtTattoo,
+  l21_gallery_palma,
+  la_fidel_tattoo_palma_estudio,
   macatelaTattoo,
   museuSaBassaBlancaService,
+  taller_enquadernacio_art_can_alcover_palma,
   urbanSoulTattoo,
 ];

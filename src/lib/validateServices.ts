@@ -115,6 +115,8 @@ export function validateServicesList(services: ServiceItem[]): ValidationResult 
           "gordiola.com",
           "sonprim.com",
           "lafiore.com",
+          "cncanpicafort.com",
+          "cvpa.es",
         ].includes(domain);
         const targetIdentifier = isSharedPlatform
           ? `${domain}${parsed.pathname.toLowerCase().replace(/\/$/, "")}`

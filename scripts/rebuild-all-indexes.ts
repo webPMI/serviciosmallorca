@@ -29,6 +29,7 @@ const sectorExportNames: Record<string, string> = {
   "artesania-manufactura": "ARTESANIA_SERVICES",
   "servicios-sociales": "SOCIALES_SERVICES",
   "finanzas-seguros": "FINANZAS_SERVICES",
+  "salud-bienestar": "SALUD_SERVICES",
 };
 
 let totalServices = 0;

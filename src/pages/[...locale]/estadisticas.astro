@@ -160,6 +160,40 @@ const schemaOrg = {
     <!-- Componente Especial: Visualizador de Presión Humana IPH -->
     <HumanPressureGauge lang={locale} />
 
+    <!-- Banner Destacado al Observatorio Histórico Semestral (20 Años) -->
+    <aside class="historical-observatory-cta">
+      <div class="cta-content">
+        <span class="cta-tag">📈 {locale === "es" ? "OBSERVATORIO HISTÓRICO MACROECONÓMICO" : locale === "ca" ? "OBSERVATORI HISTÒRIC MACROECONÒMIC" : locale === "de" ? "HISTORISCHES MAKROÖKONOMISCHES OBSERVATORIUM" : "HISTORICAL MACROECONOMIC OBSERVATORY"}</span>
+        <h2 class="cta-title">
+          {locale === "es"
+            ? "Series Históricas Semestrales a 20 Años (2006–2026)"
+            : locale === "ca"
+            ? "Sèries Històriques Semestrals a 20 Anys (2006–2026)"
+            : locale === "de"
+            ? "Halbjährliche Zeitreihen über 20 Jahre (2006–2026)"
+            : "20-Year Semiannual Historical Sector Series (2006–2026)"}
+        </h2>
+        <p class="cta-desc">
+          {locale === "es"
+            ? "Explora 16 sectores canónicos con resolución semestral (cada 6 meses), contrastando vivienda, turismo, censo, empresas, tecnología ParcBit, tren TIB, energía y náutica mediante curvas indexadas Base 100 y descarga de datos oficiales."
+            : locale === "ca"
+            ? "Explora 16 sectors canònics amb resolució semestral (cada 6 mesos), contrastant habitatge, turisme, cens, empreses, tecnologia ParcBit, tren TIB, energia i nàutica mitjançant corbes indexades Base 100 i descàrrega oficial."
+            : locale === "de"
+            ? "Erkunden Sie 16 Branchen im 6-Monats-Takt: Immobilien, Tourismus, Betriebe, ParcBit-Technologie, TIB-Zugverkehr und Energie mit Basis-100-Indexkurven und verifiziertem CSV-Export."
+            : "Explore 16 canonical sectors with 6-month resolution: real estate, tourism, business count, ParcBit tech, TIB railway, and renewable energy with normalized Base 100 curves and verified CSV export."}
+        </p>
+        <div class="cta-pill-row">
+          <span class="cta-mini-pill">📊 {locale === "ca" ? "16 Sectors" : locale === "en" ? "16 Sectors" : locale === "de" ? "16 Branchen" : "16 Sectores"}</span>
+          <span class="cta-mini-pill">📅 {locale === "ca" ? "656 Punts Semestrals" : locale === "en" ? "656 Semiannual Points" : locale === "de" ? "656 Halbjahreswerte" : "656 Puntos Semestrales"}</span>
+          <span class="cta-mini-pill">⚡ {locale === "ca" ? "Corba Base 100" : locale === "en" ? "Base 100 Curve" : locale === "de" ? "Basis-100-Index" : "Curva Base 100"}</span>
+          <span class="cta-mini-pill">📥 CSV RFC 4180</span>
+        </div>
+      </div>
+      <a href={`${prefix}estadisticas/comparativas`} class="cta-btn">
+        <span>{locale === "es" ? "Abrir Comparativas Históricas 📊" : locale === "ca" ? "Obrir Comparatives Històriques 📊" : locale === "de" ? "Historischen Vergleich öffnen 📊" : "Open 20-Yr Comparisons 📊"}</span>
+      </a>
+    </aside>
+
     <!-- Barra de Filtros por Categoría -->
     <section class="stats-filter-bar" aria-label="Filtros de estadísticas oficiales">
       <div class="filter-buttons-wrapper" role="tablist">
@@ -308,6 +342,101 @@ const schemaOrg = {
     background: var(--color-surface-hover, #f0f4f2);
     padding: 0.35rem 0.85rem;
     border-radius: var(--border-radius-sm, 8px);
+  }
+
+  /* Banner Observatorio Histórico Semestral */
+  .historical-observatory-cta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.75rem;
+    margin: 2.5rem 0;
+    padding: 1.75rem 2rem;
+    background: linear-gradient(135deg, rgba(200, 157, 92, 0.1), rgba(200, 157, 92, 0.02));
+    border: 1px solid rgba(200, 157, 92, 0.35);
+    border-radius: var(--border-radius-lg, 16px);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.03);
+    flex-wrap: wrap;
+  }
+
+  .cta-content {
+    flex: 1;
+    min-width: 280px;
+  }
+
+  .cta-tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: var(--color-gold-dark, #976d2e);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.4rem;
+  }
+
+  .cta-title {
+    margin: 0 0 0.45rem 0;
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--color-text, #1a1a2e);
+    line-height: 1.25;
+  }
+
+  .cta-desc {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.55;
+    color: var(--color-text-light, #555568);
+    max-width: 720px;
+  }
+
+  .cta-pill-row {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-top: 0.75rem;
+  }
+
+  .cta-mini-pill {
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.2rem 0.65rem;
+    border-radius: var(--border-radius-full, 9999px);
+    background: rgba(200, 157, 92, 0.15);
+    color: var(--color-gold-dark, #8a6225);
+    border: 1px solid rgba(200, 157, 92, 0.3);
+  }
+
+  .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    background: var(--color-text, #1a1a2e);
+    color: #ffffff;
+    font-size: 0.92rem;
+    font-weight: 700;
+    padding: 0.75rem 1.4rem;
+    border-radius: var(--border-radius-md, 10px);
+    text-decoration: none;
+    transition: background 0.2s ease, transform 0.15s ease;
+    white-space: nowrap;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .cta-btn:hover {
+    background: var(--color-gold, #c89d5c);
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 640px) {
+    .historical-observatory-cta {
+      flex-direction: column;
+      align-items: stretch;
+      padding: 1.25rem 1.25rem;
+    }
+
+    .cta-btn {
+      justify-content: center;
+    }
   }
 
   /* Barra de Filtros */

@@ -4,7 +4,9 @@ import Navbar from "../../../components/Navbar.astro";
 import Footer from "../../../components/Footer.astro";
 import ServiceCard from "../../../components/ServiceCard.astro";
 import AdSenseSlot from "../../../components/AdSenseSlot.astro";
+import SectorHistoricalChart from "../../../components/SectorHistoricalChart.astro";
 import { getPostBySlug } from "../../../data/posts";
+import { getHistoricalSeriesById } from "../../../data/historicalSectorStats";
 import { CATEGORIES } from "../../../data/categories";
 import { getServiceById } from "../../../data/services";
 import { getLocaleFromUrl, loadTranslations, getLangPrefix, type Locale } from "../../../i18n";
@@ -22,6 +24,7 @@ if (!post) {
   return Astro.redirect(`${prefix}blog`);
 }
 
+const historicalSeries = post.historicalSectorId ? getHistoricalSeriesById(post.historicalSectorId) : undefined;
 const category = CATEGORIES.find((c) => c.id === post.category);
 const title = post.title[locale];
 const excerpt = post.excerpt[locale];
@@ -245,6 +248,22 @@ const itemListSchema =
           <div class="lead-paragraph">
             {excerpt}
           </div>
+
+          {
+            historicalSeries && (
+              <div class="post-historical-embed-card">
+                <div class="embed-header">
+                  <div class="embed-tag">
+                    📈 {locale === "ca" ? "Observatori Estadístic Històric de Mallorca (2006–2026)" : locale === "en" ? "Mallorca Historical Statistical Observatory (2006–2026)" : locale === "de" ? "Historisches Statistik-Observatorium Mallorca (2006–2026)" : "Observatorio Estadístico Histórico de Mallorca (2006–2026)"}
+                  </div>
+                  <a href={`${prefix}estadisticas/comparativas`} class="embed-hub-link">
+                    {locale === "ca" ? "Veure comparativa de 16 sectors →" : locale === "en" ? "View full 16-sector comparison →" : locale === "de" ? "16-Sektoren-Vergleich ansehen →" : "Ver comparativa de 16 sectores →"}
+                  </a>
+                </div>
+                <SectorHistoricalChart series={historicalSeries} lang={locale} />
+              </div>
+            )
+          }
 
           <!-- AdSense In-Article -->
           <AdSenseSlot format="in-feed" slotId="blog-in-article-1" />
@@ -878,6 +897,49 @@ const itemListSchema =
     align-items: center;
     justify-content: center;
     margin-top: 1px;
+  }
+
+  /* ─── Historical Embed in Blog ─── */
+  .post-historical-embed-card {
+    margin: var(--space-xl) 0;
+    padding: var(--space-md);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .embed-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px dashed var(--color-border);
+  }
+
+  .embed-tag {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .embed-hub-link {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color 0.15s ease;
+  }
+
+  .embed-hub-link:hover {
+    color: var(--color-primary);
   }
 
   /* ─── Responsive ─── */

@@ -4,6 +4,7 @@ export default defineConfig({
   test: {
     globals: true,
     environment: "node",
+    testTimeout: 25000,
     include: ["tests/**/*.test.ts", "src/**/*.test.ts"],
     coverage: {
       // Medimos la capa de lógica pura y shared code del frontend

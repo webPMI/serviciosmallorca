@@ -40,15 +40,43 @@ describe("🏛️ Citizen Guides Page & Routing Suite (/guias)", () => {
     });
   });
 
-  it("cada guía posee enlaces a servicios profesionales relacionados del directorio", () => {
+  it(
+    "cada guía posee categorías canónicas existentes en CATEGORIES y servicios reales contrastados",
+    async () => {
+    const { CATEGORIES } = await import("../../src/data/categories");
+    const { getServiceById } = await import("../../src/data/services");
+    const validCategoryIds = new Set(CATEGORIES.map((c) => c.id));
+
     CITIZEN_GUIDES.forEach((guide) => {
       expect(guide.relatedServiceCategories.length).toBeGreaterThanOrEqual(1);
       guide.relatedServiceCategories.forEach((cat) => {
-        expect(cat).toBeTruthy();
-        expect(typeof cat).toBe("string");
+        expect(validCategoryIds.has(cat)).toBe(true);
       });
+
+      // Validar servicios recomendados
+      expect(guide.recommendedServiceSlugs).toBeDefined();
+      expect(guide.recommendedServiceSlugs?.length).toBeGreaterThanOrEqual(3);
+
+      guide.recommendedServiceSlugs?.forEach((slug) => {
+        const service = getServiceById(slug);
+        expect(service, `Servicio recomendado no encontrado: ${slug}`).toBeDefined();
+        expect(service?.status).not.toBe("permanently_closed");
+      });
+
+      // Validar encabezado contextual trilingüe/cuatrilingüe
+      if (guide.assistanceHeader) {
+        expect(guide.assistanceHeader.title.es.length).toBeGreaterThan(10);
+        expect(guide.assistanceHeader.title.ca.length).toBeGreaterThan(10);
+        expect(guide.assistanceHeader.title.en.length).toBeGreaterThan(10);
+        expect(guide.assistanceHeader.title.de.length).toBeGreaterThan(10);
+
+        expect(guide.assistanceHeader.body.es.length).toBeGreaterThan(20);
+        expect(guide.assistanceHeader.body.ca.length).toBeGreaterThan(20);
+        expect(guide.assistanceHeader.body.en.length).toBeGreaterThan(20);
+        expect(guide.assistanceHeader.body.de.length).toBeGreaterThan(20);
+      }
     });
-  });
+  }, 15000);
 
   it("genera la estructura correcta de Schema.org HowTo y FAQPage para SEO institucional", () => {
     const guide = getGuideBySlug("empadronamiento-palma");

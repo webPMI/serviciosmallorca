@@ -55,9 +55,9 @@ export interface ReleaseLog {
   entries: ChangelogEntry[];
 }
 
-export const CURRENT_PLATFORM_VERSION = "0.04-beta";
-export const PLATFORM_RELEASE_DATE = "2026-09-02";
-export const PLATFORM_LAST_BUILD_TIMESTAMP = "2026-09-02T14:35:00+02:00";
+export const CURRENT_PLATFORM_VERSION = "0.05-beta";
+export const PLATFORM_RELEASE_DATE = "2026-09-05";
+export const PLATFORM_LAST_BUILD_TIMESTAMP = "2026-09-05T14:48:00+02:00";
 
 /**
  * Devuelve la fecha y hora formateada de la última actualización según el idioma.
@@ -84,6 +84,122 @@ export function getFormattedBuildTimestamp(locale: "es" | "en" | "ca" | "de" = "
 }
 
 export const CHANGELOG_RELEASES: ReleaseLog[] = [
+  {
+    version: "0.05",
+    versionLabel: {
+      es: "v0.05-beta · Observatorio Macroeconómico a 20 Años (16 Sectores), Curva Base 100 & Floating WhatsApp FAB",
+      en: "v0.05-beta · 20-Year Historical Observatory (16 Sectors), Base 100 Curve & Floating WhatsApp FAB",
+      ca: "v0.05-beta · Observatori Macroeconòmic a 20 Anys (16 Sectors), Corba Base 100 i Floating WhatsApp FAB",
+      de: "v0.05-beta · 20-Jahre-Makro-Observatorium (16 Branchen), Basis-100-Indexkurve & Floating WhatsApp FAB",
+    },
+    type: "BETA",
+    date: "2026-09-05",
+    summary: {
+      es: "Lanzamiento del Observatorio Histórico Insular a 20 Años (2006–2026) con 16 sectores canónicos (656 puntos semestrales contrastados), comparador cruzado con curva normalizada Base 100, exportador CSV blindado RFC 4180, 16 monografías en el blog con gráficas SVG dinámicas y optimización móvil para el botón flotante de WhatsApp con normalización automática de prefijo telefónico.",
+      en: "Launch of the 20-Year Island Macroeconomic Observatory (2006–2026) featuring 16 canonical sectors (656 audited semiannual data points), interactive cross-comparator with Base 100 normalized growth curve, sanitized RFC 4180 CSV export, 16 dedicated blog monographs with embedded SVG charts, and mobile-responsive Floating WhatsApp FAB with smart phone prefix normalization.",
+      ca: "Llançament de l'Observatori Històric Insular a 20 Anys (2006–2026) amb 16 sectors canònics (656 punts semestrals contrastats), comparador creuat amb corba normalitzada Base 100, exportador CSV segur RFC 4180, 16 monografies al blog amb gràfiques SVG dinàmiques i millora responsive del botó flotant de WhatsApp amb normalització automàtica de prefix.",
+      de: "Start des 20-Jahre-Makro-Observatoriums (2006–2026) mit 16 amtlichen Branchen (656 geprüfte Halbjahreswerte), interaktivem Sektor-Vergleichstool mit Basis-100-Wachstumskurve, sicherem RFC-4180-CSV-Export, 16 Blog-Monografien mit dynamischen SVG-Charts und mobilem Floating-WhatsApp-Button mit automatischer Vorwahlerkennung.",
+    },
+    highlights: {
+      es: [
+        "16 Sectores Macroeconómicos (2006–2026): 656 puntos semestrales contrastados con IBESTAT, INE, Seguridad Social, AENA, TIRME y SFM.",
+        "Curva Indexada Base 100: Normalización temporal interactiva con selector Base 2006 vs Base 2016 y crosshair dinámico de divergencia.",
+        "16 Monografías en el Blog: Artículos de investigación profunda con gráficas de barras SVG integradas y enlaces a empresas auditadas.",
+        "Seguridad de Datos & Anti-Injection: Sanitización RFC 4180 para descargas en Excel/Sheets y blindaje de URLs.",
+        "Floating WhatsApp CTA: Conversión a FAB móvil en <768px y anteposición automática del prefijo +34 en teléfonos locales de 9 dígitos.",
+        "Compilación Ultra-Rápida: 87 suites de test y 746 pruebas en verde con build en 1,6 s.",
+      ],
+      en: [
+        "16 Macroeconomic Sectors (2006–2026): 656 audited semiannual data points from IBESTAT, INE, Social Security, AENA, TIRME, and SFM.",
+        "Base 100 Normalized Curve: Interactive relative growth comparison with Base 2006 vs Base 2016 toggle and real-time divergence crosshair.",
+        "16 Blog Research Monographs: In-depth economic reports featuring embedded native SVG bar charts and curated directory links.",
+        "Data Security & CSV Formula Hardening: Strict RFC 4180 neutralization against formula injection for spreadsheet exports.",
+        "Floating WhatsApp CTA: Adaptive circular FAB on mobile (<768px) and automatic Spanish +34 phone prefix normalization.",
+        "Fast Build & Robust Quality: 87 test files (746 passing tests) with sub-2s Astro server production build.",
+      ],
+      ca: [
+        "16 Sectors Macroeconòmics (2006–2026): 656 punts semestrals contrastats amb l'IBESTAT, INE, Seguretat Social, AENA, TIRME i SFM.",
+        "Corba Indexada Base 100: Normalització temporal interactiva amb selector Base 2006 vs Base 2016 i càlcul de divergència.",
+        "16 Monografies al Blog: Articles d'investigació amb gràfiques SVG dinàmiques i enllaços a serveis verificats.",
+        "Seguretat de Dades i CSV: Descarregador segur contra injecció de fórmules i protecció de paràmetres d'URL.",
+        "Floating WhatsApp CTA: Disseny adaptable en mòbil i normalització automàtica del prefix +34.",
+        "Qualitat & Rendiment: 87 suites de test (746 tests) en verd i compilació en 1,6 s.",
+      ],
+      de: [
+        "16 Branchen-Zeitreihen (2006–2026): 656 geprüfte Halbjahresdaten von IBESTAT, INE, Sozialversicherung, AENA, TIRME und SFM.",
+        "Basis-100-Indexkurve: Interaktiver Wachstumsvergleich mit umschaltbarer Basis 2006/2016 und Schwebekreuz-Messung.",
+        "16 Blog-Monografien: Fundierte Analysen mit responsiven SVG-Balkencharts und Verknüpfung zu verifizierten Betrieben.",
+        "Datensicherheit & Formelschutz: Strenger RFC-4180-CSV-Export gegen Formelinjektionen in Tabellenkalkulationen.",
+        "Floating WhatsApp CTA: Kompakter runder FAB-Button auf Smartphones und automatische spanische +34-Vorwahlnormalisierung.",
+        "Spitzenleistung & Testabdeckung: 87 Testdateien (746 bestandene Tests) und Build in 1,6 Sekunden.",
+      ],
+    },
+    entries: [
+      {
+        category: "FEATURE",
+        title: {
+          es: "Observatorio Histórico de 20 Años (16 Sectores)",
+          en: "20-Year Historical Sector Observatory (16 Sectors)",
+          ca: "Observatori Històric de 20 Anys (16 Sectors)",
+          de: "20-Jahre-Sektoren-Observatorium (16 Branchen)",
+        },
+        description: {
+          es: "Incorporación de 16 sectores económicos con resolución semestral continua (2006-S1 a 2026-S1) abarcando vivienda, turismo, censo, empresas, tecnología ParcBit, TIB, sanidad y sostenibilidad.",
+          en: "Addition of 16 economic sectors with continuous 6-month resolution (2006-H1 to 2026-H1) spanning housing, tourism, demographics, tech, rail, healthcare, and recycling.",
+          ca: "Incorporació de 16 sectors econòmics amb resolució semestral contínua (2006-S1 a 2026-S1) que cobreixen habitatge, turisme, cens, empreses, ParcBit, TIB i sostenibilitat.",
+          de: "Erweiterung auf 16 Branchen mit 6-monatiger Taktung von 2006 bis 2026: Immobilien, Tourismus, Betriebe, ParcBit-Tech, TIB-Bahn, Gesundheit und Recycling.",
+        },
+        badgeText: {
+          es: "Observatorio Insular",
+          en: "Island Observatory",
+          ca: "Observatori Insular",
+          de: "Insel-Observatorium",
+        },
+      },
+      {
+        category: "FEATURE",
+        title: {
+          es: "Comparador Cruzado con Curva Indexada Base 100",
+          en: "Cross-Sector Comparator with Base 100 Curve",
+          ca: "Comparador Creuat amb Corba Indexada Base 100",
+          de: "Sektoren-Direktvergleich mit Basis-100-Indexkurve",
+        },
+        description: {
+          es: "Herramienta analítica para contrastar dos sectores simultáneamente con curva normalizada en Base 100 (opción 2006 o 2016), crosshair interactivo, insights automatizados y descarga en CSV.",
+          en: "Analytical tool comparing any two sectors side-by-side with normalized Base 100 trajectories (Base 2006 or 2016), interactive crosshairs, editorial insights, and CSV export.",
+          ca: "Eina analítica per contrastar dos sectors de costat amb corba normalitzada Base 100 (2006 o 2016), crosshair interactiu i descàrrega CSV.",
+          de: "Analysetool für direkten Sektorenvergleich mit normalisierter Basis-100-Indexkurve, Messpunktanzeige und CSV-Export.",
+        },
+        badgeText: {
+          es: "Interactividad",
+          en: "Interactivity",
+          ca: "Interactivitat",
+          de: "Interaktivität",
+        },
+      },
+      {
+        category: "FIX",
+        title: {
+          es: "Normalización de Prefijos WhatsApp y Optimización Móvil",
+          en: "WhatsApp Prefix Normalization & Mobile Layout",
+          ca: "Normalització de Prefixos WhatsApp i Optimització Mòbil",
+          de: "WhatsApp-Vorwahlnormalisierung & Mobil-Optimierung",
+        },
+        description: {
+          es: "Detección inteligente de teléfonos locales de 9 dígitos para anteponer el código 34 de España en enlaces wa.me/ y transformación a FAB circular en pantallas móviles.",
+          en: "Intelligent detection of 9-digit Spanish phone numbers prepending 34 for wa.me/ links, plus conversion to a compact circular FAB on mobile viewports.",
+          ca: "Detecció intel·ligent de telèfons de 9 dígits amb prefix 34 per a wa.me/ i transformació a botó flotant circular en mòbil.",
+          de: "Automatische spanische +34-Vorwahlkorrektur für wa.me/-Links und platzsparender runder FAB-Button auf Mobilgeräten.",
+        },
+        badgeText: {
+          es: "UX & Conversión",
+          en: "UX & Conversion",
+          ca: "UX & Conversió",
+          de: "UX & Konvertierung",
+        },
+      },
+    ],
+  },
   {
     version: "0.04",
     versionLabel: {

@@ -54,6 +54,7 @@ import { caNignasiInca } from "./ca-nignasi-inca.ts";
 import { canBoquetaSoller } from "./can-boqueta-soller.ts";
 import { canCompany } from "./can-company-sineu.ts";
 import { canCostaValldemossa } from "./can-costa-valldemossa.ts";
+import { can_joan_de_saigo_palma_chocolateria_1700 } from "./can-joan-de-saigo-palma-chocolateria-1700.ts";
 import { canJoanDeSAigoPalma } from "./can-joan-de-saigo-palma.ts";
 import { canMarchManacor } from "./can-march-manacor.ts";
 import { canMiquelPalma } from "./can-miquel-palma.ts";
@@ -70,17 +71,20 @@ import { casXorcSoller } from "./cas-xorc-soller.ts";
 import { casaJacintoGenovaBrasas } from "./casa-jacinto-genova-brasas.ts";
 import { cassaiBeachHouse } from "./cassai-beach-house-colonia-sant-jordi.ts";
 import { cellerBarRandaAlgaida } from "./celler-bar-randa-algaida.ts";
+import { celler_bar_sa_penya_felanitx } from "./celler-bar-sa-penya-felanitx.ts";
 import { cellerCaNIgnasiInca } from "./celler-ca-n-ignasi-inca.ts";
 import { cellerCanAmer } from "./celler-can-amer.ts";
 import { cellerCanCarrossaLloseta } from "./celler-can-carrossa-lloseta.ts";
 import { cellerCanFontSineu } from "./celler-can-font-sineu.ts";
 import { cellerCanMarron } from "./celler-can-marron-inca.ts";
+import { celler_can_ripoll_inca_1768 } from "./celler-can-ripoll-inca-1768.ts";
 import { cellerCanRipoll } from "./celler-can-ripoll-inca.ts";
 import { celler_can_verdura_binissalem_vins_autoctons } from "./celler-can-verdura-binissalem-vins-autoctons.ts";
 import { cellerElMoliPollenca } from "./celler-el-moli-pollenca.ts";
 import { cellerEsCellerPetra } from "./celler-es-celler-petra.ts";
 import { cellerEsMoliSantanyi } from "./celler-es-moli-santanyi.ts";
 import { cellerPagesPalma } from "./celler-pages-palma.ts";
+import { celler_sa_cova_inca } from "./celler-sa-cova-inca.ts";
 import { cellerSaFondaMuro } from "./celler-sa-fonda-muro.ts";
 import { cellerSaPlacaLloseta } from "./celler-sa-placa-lloseta.ts";
 import { cellerSaPremsa } from "./celler-sa-premsa.ts";
@@ -102,6 +106,7 @@ import { formatgesSaCanova } from "./formatges-sa-canova-campos.ts";
 import { fornCanGelabertBinissalem } from "./forn-can-gelabert-binissalem.ts";
 import { fornCanPacoCampos } from "./forn-can-paco-campos.ts";
 import { fornDeLaSoca } from "./forn-de-la-soca.ts";
+import { forn_de_sant_bartomeu_soller } from "./forn-de-sant-bartomeu-soller.ts";
 import { fornDeSantJoan } from "./forn-de-sant-joan.ts";
 import { fornDesTeatre } from "./forn-des-teatre-palma.ts";
 import { fornFondoPalma } from "./forn-fondo-palma.ts";
@@ -110,8 +115,10 @@ import { fornGelabertLlubi } from "./forn-gelabert-llubi.ts";
 import { fornNouMuro } from "./forn-nou-muro.ts";
 import { fornSaPelleteria } from "./forn-sa-pelleteria-palma.ts";
 import { fornSantFrancesc } from "./forn-sant-francesc-inca.ts";
+import { forn_santo_cristo_palma_ensaimadas } from "./forn-santo-cristo-palma-ensaimadas.ts";
 import { heladeriaSaFabricaDeGelatsSoller } from "./heladeria-sa-fabrica-de-gelats-soller.ts";
 import { ilTanoSantaCatalina } from "./il-tano-santa-catalina.ts";
+import { la_bodeguilla_palma } from "./la-bodeguilla-palma.ts";
 import { laCantinaClubNauticCalaRatjada } from "./la-cantina-club-nautic-cala-ratjada.ts";
 import { laHaciendaPeguera } from "./la-hacienda-peguera.ts";
 import { laRosaVermuteriaPalma } from "./la-rosa-vermuteria-palma.ts";
@@ -126,7 +133,9 @@ import { mercatPereGarauPalma } from "./mercat-pere-garau-palma.ts";
 import { mercatSantaCatalinaPalma } from "./mercat-santa-catalina-palma.ts";
 import { miceliSelva } from "./miceli-selva.ts";
 import { namaDeia } from "./nama-deia.ts";
+import { noma_beach_club_playa_de_palma } from "./noma-beach-club-playa-de-palma.ts";
 import { oliDeJornets } from "./oli-de-jornets-sencelles.ts";
+import { pasteleria_ca_na_cati_inca } from "./pasteleria-ca-na-cati-inca.ts";
 import { pastisseriaCanMolinasValldemossa } from "./pastisseria-can-molinas-valldemossa.ts";
 import { portPetitCalaDor } from "./port-petit-cala-dor.ts";
 import { porxadaDeSaTorreCanyamel } from "./porxada-de-sa-torre-canyamel.ts";
@@ -144,9 +153,10 @@ import { restauranteCafeNouSoller } from "./restaurante-cafe-nou-soller.ts";
 import { restauranteCalDimoniAlgaida } from "./restaurante-cal-dimoni-algaida.ts";
 import { restauranteCanGavellaCanPicafort } from "./restaurante-can-gavella-can-picafort.ts";
 import { restauranteCanPedro } from "./restaurante-can-pedro-genova.ts";
-import { restauranteCanToniMorenoPortDesCanonge } from "./restaurante-can-toni-moreno-port-des-canonge.ts";
 import { restauranteCanPescadorPlayaDeMuro } from "./restaurante-can-pescador-playa-de-muro.ts";
+import { restauranteCanToniMorenoPortDesCanonge } from "./restaurante-can-toni-moreno-port-des-canonge.ts";
 import { restauranteCanTroncaSantJoan } from "./restaurante-can-tronca-sant-joan.ts";
+import { restaurante_cas_patro_march_cala_deia } from "./restaurante-cas-patro-march-cala-deia.ts";
 import { restauranteClubDeMarPalma } from "./restaurante-club-de-mar-palma.ts";
 import { restauranteClubDeVelaPortAndratx } from "./restaurante-club-de-vela-port-andratx.ts";
 import { restauranteClubNauticArenal } from "./restaurante-club-nautic-arenal.ts";
@@ -173,9 +183,11 @@ import { restauranteEsBergantPortoPetro } from "./restaurante-es-bergant-porto-p
 import { restauranteEsCanyisPortSoller } from "./restaurante-es-canyis-port-soller.ts";
 import { restauranteEsCellerDePetra } from "./restaurante-es-celler-de-petra.ts";
 import { restauranteEsCruceVilafranca } from "./restaurante-es-cruce-vilafranca.ts";
+import { restaurante_es_fum_st_regis_mardavall_costa_den_blanes } from "./restaurante-es-fum-st-regis-mardavall-costa-den-blanes.ts";
 import { restauranteEsRacoDesPortSoller } from "./restaurante-es-raco-des-port-soller.ts";
 import { restauranteFlanigan } from "./restaurante-flanigan.ts";
 import { restauranteGolfAlcanada } from "./restaurante-golf-alcanada.ts";
+import { restauranteIlParadisoCalaMajor } from "./restaurante-il-paradiso-cala-major.ts";
 import { restauranteIlletaCampDeMar } from "./restaurante-illeta-camp-de-mar.ts";
 import { restauranteLArcadaCalaFiguera } from "./restaurante-l-arcada-cala-figuera.ts";
 import { restauranteLaCaracolaPortoPetro } from "./restaurante-la-caracola-porto-petro.ts";
@@ -196,6 +208,8 @@ import { restauranteRitziPortals } from "./restaurante-ritzi-portals.ts";
 import { restauranteRocamarPortAndratx } from "./restaurante-rocamar-port-andratx.ts";
 import { restauranteSaBarcaPortSoller } from "./restaurante-sa-barca-port-soller.ts";
 import { restaurante_sa_canterella_deia_vistas_mar } from "./restaurante-sa-canterella-deia-vistas-mar.ts";
+import { restaurante_sa_foradada_deia } from "./restaurante-sa-foradada-deia.ts";
+import { restaurante_sa_llama_porto_cristo_marisco_vistas } from "./restaurante-sa-llama-porto-cristo-marisco-vistas.ts";
 import { restaurante_sa_llobatera_sineu_celler } from "./restaurante-sa-llobatera-sineu-celler.ts";
 import { restaurante_sa_lloca_alcudia_puerto_marisco } from "./restaurante-sa-lloca-alcudia-puerto-marisco.ts";
 import { restauranteSaRoquetaPortixol } from "./restaurante-sa-roqueta-portixol.ts";
@@ -214,6 +228,7 @@ import { saLlumRestaurantPollensa } from "./sa-llum-restaurant-pollensa.ts";
 import { saTorreSantaEugenia } from "./sa-torre-santa-eugenia.ts";
 import { sieteFuegosSantaPonsa } from "./siete-fuegos-santa-ponsa.ts";
 import { stayPortDePollenca } from "./stay-port-de-pollenca.ts";
+import { tast_club_palma } from "./tast-club-palma.ts";
 import { terraePortDePollenca } from "./terrae-port-de-pollenca.ts";
 import { terraeRestaurantPortPollensa } from "./terrae-restaurant-port-pollensa.ts";
 import { trespaisPortAndratx } from "./trespais-port-andratx.ts";
@@ -275,6 +290,7 @@ export { caNignasiInca } from "./ca-nignasi-inca.ts";
 export { canBoquetaSoller } from "./can-boqueta-soller.ts";
 export { canCompany } from "./can-company-sineu.ts";
 export { canCostaValldemossa } from "./can-costa-valldemossa.ts";
+export { can_joan_de_saigo_palma_chocolateria_1700 } from "./can-joan-de-saigo-palma-chocolateria-1700.ts";
 export { canJoanDeSAigoPalma } from "./can-joan-de-saigo-palma.ts";
 export { canMarchManacor } from "./can-march-manacor.ts";
 export { canMiquelPalma } from "./can-miquel-palma.ts";
@@ -291,17 +307,20 @@ export { casXorcSoller } from "./cas-xorc-soller.ts";
 export { casaJacintoGenovaBrasas } from "./casa-jacinto-genova-brasas.ts";
 export { cassaiBeachHouse } from "./cassai-beach-house-colonia-sant-jordi.ts";
 export { cellerBarRandaAlgaida } from "./celler-bar-randa-algaida.ts";
+export { celler_bar_sa_penya_felanitx } from "./celler-bar-sa-penya-felanitx.ts";
 export { cellerCaNIgnasiInca } from "./celler-ca-n-ignasi-inca.ts";
 export { cellerCanAmer } from "./celler-can-amer.ts";
 export { cellerCanCarrossaLloseta } from "./celler-can-carrossa-lloseta.ts";
 export { cellerCanFontSineu } from "./celler-can-font-sineu.ts";
 export { cellerCanMarron } from "./celler-can-marron-inca.ts";
+export { celler_can_ripoll_inca_1768 } from "./celler-can-ripoll-inca-1768.ts";
 export { cellerCanRipoll } from "./celler-can-ripoll-inca.ts";
 export { celler_can_verdura_binissalem_vins_autoctons } from "./celler-can-verdura-binissalem-vins-autoctons.ts";
 export { cellerElMoliPollenca } from "./celler-el-moli-pollenca.ts";
 export { cellerEsCellerPetra } from "./celler-es-celler-petra.ts";
 export { cellerEsMoliSantanyi } from "./celler-es-moli-santanyi.ts";
 export { cellerPagesPalma } from "./celler-pages-palma.ts";
+export { celler_sa_cova_inca } from "./celler-sa-cova-inca.ts";
 export { cellerSaFondaMuro } from "./celler-sa-fonda-muro.ts";
 export { cellerSaPlacaLloseta } from "./celler-sa-placa-lloseta.ts";
 export { cellerSaPremsa } from "./celler-sa-premsa.ts";
@@ -323,6 +342,7 @@ export { formatgesSaCanova } from "./formatges-sa-canova-campos.ts";
 export { fornCanGelabertBinissalem } from "./forn-can-gelabert-binissalem.ts";
 export { fornCanPacoCampos } from "./forn-can-paco-campos.ts";
 export { fornDeLaSoca } from "./forn-de-la-soca.ts";
+export { forn_de_sant_bartomeu_soller } from "./forn-de-sant-bartomeu-soller.ts";
 export { fornDeSantJoan } from "./forn-de-sant-joan.ts";
 export { fornDesTeatre } from "./forn-des-teatre-palma.ts";
 export { fornFondoPalma } from "./forn-fondo-palma.ts";
@@ -331,8 +351,10 @@ export { fornGelabertLlubi } from "./forn-gelabert-llubi.ts";
 export { fornNouMuro } from "./forn-nou-muro.ts";
 export { fornSaPelleteria } from "./forn-sa-pelleteria-palma.ts";
 export { fornSantFrancesc } from "./forn-sant-francesc-inca.ts";
+export { forn_santo_cristo_palma_ensaimadas } from "./forn-santo-cristo-palma-ensaimadas.ts";
 export { heladeriaSaFabricaDeGelatsSoller } from "./heladeria-sa-fabrica-de-gelats-soller.ts";
 export { ilTanoSantaCatalina } from "./il-tano-santa-catalina.ts";
+export { la_bodeguilla_palma } from "./la-bodeguilla-palma.ts";
 export { laCantinaClubNauticCalaRatjada } from "./la-cantina-club-nautic-cala-ratjada.ts";
 export { laHaciendaPeguera } from "./la-hacienda-peguera.ts";
 export { laRosaVermuteriaPalma } from "./la-rosa-vermuteria-palma.ts";
@@ -347,7 +369,9 @@ export { mercatPereGarauPalma } from "./mercat-pere-garau-palma.ts";
 export { mercatSantaCatalinaPalma } from "./mercat-santa-catalina-palma.ts";
 export { miceliSelva } from "./miceli-selva.ts";
 export { namaDeia } from "./nama-deia.ts";
+export { noma_beach_club_playa_de_palma } from "./noma-beach-club-playa-de-palma.ts";
 export { oliDeJornets } from "./oli-de-jornets-sencelles.ts";
+export { pasteleria_ca_na_cati_inca } from "./pasteleria-ca-na-cati-inca.ts";
 export { pastisseriaCanMolinasValldemossa } from "./pastisseria-can-molinas-valldemossa.ts";
 export { portPetitCalaDor } from "./port-petit-cala-dor.ts";
 export { porxadaDeSaTorreCanyamel } from "./porxada-de-sa-torre-canyamel.ts";
@@ -365,9 +389,10 @@ export { restauranteCafeNouSoller } from "./restaurante-cafe-nou-soller.ts";
 export { restauranteCalDimoniAlgaida } from "./restaurante-cal-dimoni-algaida.ts";
 export { restauranteCanGavellaCanPicafort } from "./restaurante-can-gavella-can-picafort.ts";
 export { restauranteCanPedro } from "./restaurante-can-pedro-genova.ts";
-export { restauranteCanToniMorenoPortDesCanonge } from "./restaurante-can-toni-moreno-port-des-canonge.ts";
 export { restauranteCanPescadorPlayaDeMuro } from "./restaurante-can-pescador-playa-de-muro.ts";
+export { restauranteCanToniMorenoPortDesCanonge } from "./restaurante-can-toni-moreno-port-des-canonge.ts";
 export { restauranteCanTroncaSantJoan } from "./restaurante-can-tronca-sant-joan.ts";
+export { restaurante_cas_patro_march_cala_deia } from "./restaurante-cas-patro-march-cala-deia.ts";
 export { restauranteClubDeMarPalma } from "./restaurante-club-de-mar-palma.ts";
 export { restauranteClubDeVelaPortAndratx } from "./restaurante-club-de-vela-port-andratx.ts";
 export { restauranteClubNauticArenal } from "./restaurante-club-nautic-arenal.ts";
@@ -394,9 +419,11 @@ export { restauranteEsBergantPortoPetro } from "./restaurante-es-bergant-porto-p
 export { restauranteEsCanyisPortSoller } from "./restaurante-es-canyis-port-soller.ts";
 export { restauranteEsCellerDePetra } from "./restaurante-es-celler-de-petra.ts";
 export { restauranteEsCruceVilafranca } from "./restaurante-es-cruce-vilafranca.ts";
+export { restaurante_es_fum_st_regis_mardavall_costa_den_blanes } from "./restaurante-es-fum-st-regis-mardavall-costa-den-blanes.ts";
 export { restauranteEsRacoDesPortSoller } from "./restaurante-es-raco-des-port-soller.ts";
 export { restauranteFlanigan } from "./restaurante-flanigan.ts";
 export { restauranteGolfAlcanada } from "./restaurante-golf-alcanada.ts";
+export { restauranteIlParadisoCalaMajor } from "./restaurante-il-paradiso-cala-major.ts";
 export { restauranteIlletaCampDeMar } from "./restaurante-illeta-camp-de-mar.ts";
 export { restauranteLArcadaCalaFiguera } from "./restaurante-l-arcada-cala-figuera.ts";
 export { restauranteLaCaracolaPortoPetro } from "./restaurante-la-caracola-porto-petro.ts";
@@ -417,6 +444,8 @@ export { restauranteRitziPortals } from "./restaurante-ritzi-portals.ts";
 export { restauranteRocamarPortAndratx } from "./restaurante-rocamar-port-andratx.ts";
 export { restauranteSaBarcaPortSoller } from "./restaurante-sa-barca-port-soller.ts";
 export { restaurante_sa_canterella_deia_vistas_mar } from "./restaurante-sa-canterella-deia-vistas-mar.ts";
+export { restaurante_sa_foradada_deia } from "./restaurante-sa-foradada-deia.ts";
+export { restaurante_sa_llama_porto_cristo_marisco_vistas } from "./restaurante-sa-llama-porto-cristo-marisco-vistas.ts";
 export { restaurante_sa_llobatera_sineu_celler } from "./restaurante-sa-llobatera-sineu-celler.ts";
 export { restaurante_sa_lloca_alcudia_puerto_marisco } from "./restaurante-sa-lloca-alcudia-puerto-marisco.ts";
 export { restauranteSaRoquetaPortixol } from "./restaurante-sa-roqueta-portixol.ts";
@@ -435,6 +464,7 @@ export { saLlumRestaurantPollensa } from "./sa-llum-restaurant-pollensa.ts";
 export { saTorreSantaEugenia } from "./sa-torre-santa-eugenia.ts";
 export { sieteFuegosSantaPonsa } from "./siete-fuegos-santa-ponsa.ts";
 export { stayPortDePollenca } from "./stay-port-de-pollenca.ts";
+export { tast_club_palma } from "./tast-club-palma.ts";
 export { terraePortDePollenca } from "./terrae-port-de-pollenca.ts";
 export { terraeRestaurantPortPollensa } from "./terrae-restaurant-port-pollensa.ts";
 export { trespaisPortAndratx } from "./trespais-port-andratx.ts";
@@ -497,6 +527,7 @@ export const RESTAURANT_SERVICES: ServiceItem[] = [
   canBoquetaSoller,
   canCompany,
   canCostaValldemossa,
+  can_joan_de_saigo_palma_chocolateria_1700,
   canJoanDeSAigoPalma,
   canMarchManacor,
   canMiquelPalma,
@@ -513,17 +544,20 @@ export const RESTAURANT_SERVICES: ServiceItem[] = [
   casaJacintoGenovaBrasas,
   cassaiBeachHouse,
   cellerBarRandaAlgaida,
+  celler_bar_sa_penya_felanitx,
   cellerCaNIgnasiInca,
   cellerCanAmer,
   cellerCanCarrossaLloseta,
   cellerCanFontSineu,
   cellerCanMarron,
+  celler_can_ripoll_inca_1768,
   cellerCanRipoll,
   celler_can_verdura_binissalem_vins_autoctons,
   cellerElMoliPollenca,
   cellerEsCellerPetra,
   cellerEsMoliSantanyi,
   cellerPagesPalma,
+  celler_sa_cova_inca,
   cellerSaFondaMuro,
   cellerSaPlacaLloseta,
   cellerSaPremsa,
@@ -545,6 +579,7 @@ export const RESTAURANT_SERVICES: ServiceItem[] = [
   fornCanGelabertBinissalem,
   fornCanPacoCampos,
   fornDeLaSoca,
+  forn_de_sant_bartomeu_soller,
   fornDeSantJoan,
   fornDesTeatre,
   fornFondoPalma,
@@ -553,8 +588,10 @@ export const RESTAURANT_SERVICES: ServiceItem[] = [
   fornNouMuro,
   fornSaPelleteria,
   fornSantFrancesc,
+  forn_santo_cristo_palma_ensaimadas,
   heladeriaSaFabricaDeGelatsSoller,
   ilTanoSantaCatalina,
+  la_bodeguilla_palma,
   laCantinaClubNauticCalaRatjada,
   laHaciendaPeguera,
   laRosaVermuteriaPalma,
@@ -569,7 +606,9 @@ export const RESTAURANT_SERVICES: ServiceItem[] = [
   mercatSantaCatalinaPalma,
   miceliSelva,
   namaDeia,
+  noma_beach_club_playa_de_palma,
   oliDeJornets,
+  pasteleria_ca_na_cati_inca,
   pastisseriaCanMolinasValldemossa,
   portPetitCalaDor,
   porxadaDeSaTorreCanyamel,
@@ -587,9 +626,10 @@ export const RESTAURANT_SERVICES: ServiceItem[] = [
   restauranteCalDimoniAlgaida,
   restauranteCanGavellaCanPicafort,
   restauranteCanPedro,
-  restauranteCanToniMorenoPortDesCanonge,
   restauranteCanPescadorPlayaDeMuro,
+  restauranteCanToniMorenoPortDesCanonge,
   restauranteCanTroncaSantJoan,
+  restaurante_cas_patro_march_cala_deia,
   restauranteClubDeMarPalma,
   restauranteClubDeVelaPortAndratx,
   restauranteClubNauticArenal,
@@ -616,9 +656,11 @@ export const RESTAURANT_SERVICES: ServiceItem[] = [
   restauranteEsCanyisPortSoller,
   restauranteEsCellerDePetra,
   restauranteEsCruceVilafranca,
+  restaurante_es_fum_st_regis_mardavall_costa_den_blanes,
   restauranteEsRacoDesPortSoller,
   restauranteFlanigan,
   restauranteGolfAlcanada,
+  restauranteIlParadisoCalaMajor,
   restauranteIlletaCampDeMar,
   restauranteLArcadaCalaFiguera,
   restauranteLaCaracolaPortoPetro,
@@ -639,6 +681,8 @@ export const RESTAURANT_SERVICES: ServiceItem[] = [
   restauranteRocamarPortAndratx,
   restauranteSaBarcaPortSoller,
   restaurante_sa_canterella_deia_vistas_mar,
+  restaurante_sa_foradada_deia,
+  restaurante_sa_llama_porto_cristo_marisco_vistas,
   restaurante_sa_llobatera_sineu_celler,
   restaurante_sa_lloca_alcudia_puerto_marisco,
   restauranteSaRoquetaPortixol,
@@ -657,6 +701,7 @@ export const RESTAURANT_SERVICES: ServiceItem[] = [
   saTorreSantaEugenia,
   sieteFuegosSantaPonsa,
   stayPortDePollenca,
+  tast_club_palma,
   terraePortDePollenca,
   terraeRestaurantPortPollensa,
   trespaisPortAndratx,
