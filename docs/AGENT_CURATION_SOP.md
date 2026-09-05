@@ -55,14 +55,15 @@ El agente **no puede saltar fases**. Cada fase tiene un checkpoint que debe pasa
 
 **Fuentes obligatorias a explorar (en orden de prioridad):**
 
-| Fuente                 | Qué buscar                                                        |
-| ---------------------- | ----------------------------------------------------------------- |
-| **Web oficial**        | Nombre exacto, teléfono, email comercial, horarios, menú, galería |
-| **Google Maps**        | Rating, nº de reseñas, coordenadas, horario actualizado, fotos    |
-| **Instagram**          | Fotos de alta calidad, especialidades visuales, tono de voz       |
-| **Facebook**           | Horarios alternativos, eventos, promociones activas               |
-| **TripAdvisor / Yelp** | Puntuaciones externas, tendencias de reseñas                      |
-| **Prensa balear**      | Menciones en Diario de Mallorca, Ultima Hora, Mallorca Magazine   |
+| Fuente                  | Qué buscar                                                                                                             |
+| ----------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| **Web oficial**         | Nombre exacto, teléfono, email comercial, horarios, menú, galería                                                      |
+| **Google Maps**         | Rating, nº de reseñas, coordenadas, horario actualizado, fotos                                                         |
+| **Registros Oficiales** | Licencias DRIAT (Turismo/ETV), REGEPA (Sanidad), Colegiados ([Ver guía](OFFICIAL_SOURCES_AND_CITIZEN_INTELLIGENCE.md)) |
+| **Instagram**           | Fotos de alta calidad, especialidades visuales, tono de voz                                                            |
+| **Facebook**            | Horarios alternativos, eventos, promociones activas                                                                    |
+| **TripAdvisor / Yelp**  | Puntuaciones externas, tendencias de reseñas                                                                           |
+| **Prensa balear**       | Menciones en Diario de Mallorca, Ultima Hora, Mallorca Magazine                                                        |
 
 **Datos crudos a extraer:**
 

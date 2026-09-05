@@ -1,0 +1,347 @@
+---
+/**
+ * OfficialStatCard.astro
+ *
+ * Componente de tarjeta estadística oficial para el Data Hub de Mallorca.
+ * Cumple con GR-01 (variables CSS de global.css), GR-02 (responsive),
+ * GR-03 (TypeScript estricto), GR-04 (i18n cuatrilingüe),
+ * GR-07 (accesibilidad semántica) y GR-11 (Zero Fake Data con trazabilidad).
+ */
+import type { OfficialStatistic } from "../data/officialStats";
+import type { Locale } from "../i18n";
+
+export interface Props {
+  stat: OfficialStatistic;
+  lang: Locale;
+}
+
+const { stat, lang } = Astro.props;
+
+const title = stat.title[lang] || stat.title.es;
+const unit = stat.unit[lang] || stat.unit.es;
+const note = stat.highlightNote[lang] || stat.highlightNote.es;
+const changeText = stat.changeRate?.comparisonPeriod[lang] || stat.changeRate?.comparisonPeriod.es;
+
+const categoryLabels: Record<OfficialStatistic["category"], Record<Locale, string>> = {
+  demografia: {
+    es: "Demografía",
+    ca: "Demografia",
+    en: "Demographics",
+    de: "Demografie",
+  },
+  empleo_empresas: {
+    es: "Empresas & Empleo",
+    ca: "Empreses i Ocupació",
+    en: "Business & Jobs",
+    de: "Wirtschaft & Arbeit",
+  },
+  turismo_sostenibilidad: {
+    es: "Turismo & Carga",
+    ca: "Turisme i Càrrega",
+    en: "Tourism & Capacity",
+    de: "Tourismus & Belastung",
+  },
+  movilidad: {
+    es: "Movilidad Insular",
+    ca: "Mobilitat Insular",
+    en: "Island Mobility",
+    de: "Inselmobilität",
+  },
+};
+
+const categoryLabel = categoryLabels[stat.category]?.[lang] || stat.category;
+
+const sourceLabels: Record<Locale, string> = {
+  es: "Fuente Oficial:",
+  ca: "Font Oficial:",
+  en: "Official Source:",
+  de: "Offizielle Quelle:",
+};
+
+const verifiedLabels: Record<Locale, string> = {
+  es: "Datos Oficiales Auditados",
+  ca: "Dades Oficials Auditades",
+  en: "Audited Official Data",
+  de: "Geprüfte amtliche Daten",
+};
+---
+
+<article class="stat-card" data-category={stat.category} aria-labelledby={`stat-title-${stat.id}`}>
+  <header class="stat-card-header">
+    <div class="stat-icon-wrapper" aria-hidden="true">
+      <span class="stat-icon">{stat.icon}</span>
+    </div>
+    <div class="stat-meta">
+      <span class="stat-badge-category">{categoryLabel}</span>
+      <span class="stat-period-tag">{stat.period}</span>
+    </div>
+  </header>
+
+  <div class="stat-card-body">
+    <h3 id={`stat-title-${stat.id}`} class="stat-title">{title}</h3>
+
+    <div class="stat-value-container">
+      <span class="stat-number">{stat.value}</span>
+      <span class="stat-unit">{unit}</span>
+    </div>
+
+    {
+      stat.changeRate && (
+        <div class={`stat-change-pill stat-change-${stat.changeRate.direction}`}>
+          <span class="stat-change-arrow" aria-hidden="true">
+            {stat.changeRate.direction === "up" ? "▲" : stat.changeRate.direction === "down" ? "▼" : "•"}
+          </span>
+          <span class="stat-change-rate">
+            {stat.changeRate.direction === "up" ? "+" : ""}
+            {stat.changeRate.percentage}%
+          </span>
+          {changeText && <span class="stat-change-period">({changeText})</span>}
+        </div>
+      )
+    }
+
+    <p class="stat-highlight-note">{note}</p>
+  </div>
+
+  <footer class="stat-card-footer">
+    <div class="stat-source-info">
+      <span class="stat-source-label">{sourceLabels[lang]}</span>
+      <strong class="stat-source-entity">{stat.sourceEntity}</strong>
+      {
+        stat.officialSeriesCode && (
+          <code class="stat-series-code" title={verifiedLabels[lang]}>
+            {stat.officialSeriesCode}
+          </code>
+        )
+      }
+    </div>
+
+    <a
+      href={stat.sourceUrl}
+      target="_blank"
+      rel="noopener noreferrer nofollow"
+      class="stat-verify-btn"
+      aria-label={`${sourceLabels[lang]} ${stat.sourceEntity} (${title})`}
+    >
+      <span class="stat-verify-text">Ver fuente</span>
+      <svg class="stat-external-icon" viewBox="0 0 20 20" fill="currentColor" width="14" height="14" aria-hidden="true">
+        <path
+          fill-rule="evenodd"
+          d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h4a.75.75 0 010 1.5h-4z"
+          clip-rule="evenodd"></path>
+        <path
+          fill-rule="evenodd"
+          d="M6.194 12.753a.75.75 0 001.06 1.06l7.247-7.247v3.684a.75.75 0 001.5 0V5a.75.75 0 00-.75-.75h-5.25a.75.75 0 000 1.5h3.684l-7.491 7.491z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </a>
+  </footer>
+</article>
+
+<style>
+  .stat-card {
+    background: var(--color-surface, #ffffff);
+    border: 1px solid var(--color-surface-border, rgba(45, 106, 79, 0.12));
+    border-radius: var(--border-radius, 14px);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition:
+      transform var(--transition-smooth, 0.25s ease),
+      box-shadow var(--transition-smooth, 0.25s ease);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .stat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md, 0 8px 24px rgba(0, 0, 0, 0.08));
+    border-color: var(--color-primary-light, #40916c);
+  }
+
+  .stat-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+  }
+
+  .stat-icon-wrapper {
+    width: 44px;
+    height: 44px;
+    border-radius: var(--border-radius-sm, 8px);
+    background: var(--color-surface-hover, #f0f4f2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .stat-icon {
+    font-size: 1.5rem;
+  }
+
+  .stat-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.25rem;
+  }
+
+  .stat-badge-category {
+    font-size: var(--font-size-xs, 0.75rem);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--color-primary, #2d6a4f);
+    background: var(--color-primary-bg, rgba(45, 106, 79, 0.1));
+    padding: 0.2rem 0.5rem;
+    border-radius: var(--border-radius-full, 9999px);
+  }
+
+  .stat-period-tag {
+    font-size: 0.7rem;
+    color: var(--color-text-muted, #8c8c9e);
+    font-weight: 500;
+  }
+
+  .stat-card-body {
+    flex-grow: 1;
+  }
+
+  .stat-title {
+    font-size: var(--font-size-base, 1rem);
+    font-weight: 600;
+    color: var(--color-text, #1a1a2e);
+    margin: 0 0 0.75rem 0;
+    line-height: 1.35;
+  }
+
+  .stat-value-container {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.75rem;
+  }
+
+  .stat-number {
+    font-size: 1.85rem;
+    font-weight: 800;
+    color: var(--color-primary-dark, #1b4332);
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+
+  .stat-unit {
+    font-size: var(--font-size-sm, 0.875rem);
+    color: var(--color-text-light, #555568);
+    font-weight: 500;
+  }
+
+  .stat-change-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: var(--font-size-xs, 0.75rem);
+    font-weight: 600;
+    padding: 0.25rem 0.6rem;
+    border-radius: var(--border-radius-full, 9999px);
+    margin-bottom: 0.75rem;
+  }
+
+  .stat-change-up {
+    background: var(--color-success-bg, rgba(16, 185, 129, 0.1));
+    color: var(--color-success, #38b000);
+    border: 1px solid var(--color-success-border, rgba(16, 185, 129, 0.3));
+  }
+
+  .stat-change-down {
+    background: var(--color-warning-bg, rgba(245, 158, 11, 0.1));
+    color: var(--color-warning-light, #f59e0b);
+    border: 1px solid var(--color-warning-border, rgba(245, 158, 11, 0.3));
+  }
+
+  .stat-change-period {
+    font-weight: 400;
+    color: var(--color-text-muted, #8c8c9e);
+  }
+
+  .stat-highlight-note {
+    font-size: var(--font-size-sm, 0.875rem);
+    color: var(--color-text-light, #555568);
+    line-height: 1.5;
+    margin: 0 0 1rem 0;
+  }
+
+  .stat-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0.85rem;
+    border-top: 1px solid var(--color-surface-border, rgba(45, 106, 79, 0.12));
+    gap: 0.5rem;
+  }
+
+  .stat-source-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .stat-source-label {
+    font-size: 0.6875rem;
+    color: var(--color-text-muted, #8c8c9e);
+  }
+
+  .stat-source-entity {
+    font-size: var(--font-size-xs, 0.75rem);
+    color: var(--color-text, #1a1a2e);
+    font-weight: 600;
+  }
+
+  .stat-series-code {
+    font-size: 0.65rem;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    background: var(--color-surface-hover, #f0f4f2);
+    color: var(--color-primary-dark, #1b4332);
+    padding: 0.1rem 0.35rem;
+    border-radius: 4px;
+    width: fit-content;
+  }
+
+  .stat-verify-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: var(--font-size-xs, 0.75rem);
+    color: var(--color-primary, #2d6a4f);
+    font-weight: 600;
+    text-decoration: none;
+    padding: 0.35rem 0.65rem;
+    border-radius: var(--border-radius-sm, 8px);
+    border: 1px solid var(--color-surface-border, rgba(45, 106, 79, 0.12));
+    background: var(--color-surface, #ffffff);
+    transition:
+      background var(--transition-fast, 0.15s ease),
+      color var(--transition-fast, 0.15s ease);
+    white-space: nowrap;
+  }
+
+  .stat-verify-btn:hover {
+    background: var(--color-primary, #2d6a4f);
+    color: #ffffff;
+    border-color: var(--color-primary, #2d6a4f);
+  }
+
+  /* Responsive Breakpoints (GR-02) */
+  @media (max-width: 640px) {
+    .stat-card {
+      padding: 1.2rem;
+    }
+
+    .stat-number {
+      font-size: 1.6rem;
+    }
+  }
+</style>

@@ -151,3 +151,14 @@ graph TD
 - **Muro de Buenas Noticias:** Espacio público para visibilizar la excelencia artesanal y el servicio destacado en la isla.
 - **Canal de Reclamaciones:** Protocolo automático de auditoría cuando los usuarios alertan sobre teléfonos desactualizados, cierres no informados o discrepancias horarias.
 - **Auto-Reparación IA:** El agente `@curation` asiste al administrador preparando parches de código listos para fusionar tras comprobar los datos en fuentes oficiales (Zero Fake Data / GR-11).
+
+---
+
+## 6. Subsistema de Inteligencia Oficial, Guías al Ciudadano y Estadísticas
+
+Para posicionar a Servicios Mallorca como la fuente de referencia fidedigna insular:
+
+1. **Agente de Minería Oficial (`@official-miner`):** Rastreo estructurado de BOIB, notas de prensa de CAIB / Consell de Mallorca, y portales Open Data (Dades Obertes CAIB, Palma Open Data).
+2. **Citizen Help Center:** Guías procedimentales paso a paso (padrón, tarjeta ciudadana, ITV, NIE, TSI Ib-Salut, bono residente).
+3. **Data & Stats Hub:** Visualización de series estadísticas demográficas, turísticas y económicas oficiales de IBESTAT.
+4. 📖 Especificación completa en [docs/OFFICIAL_SOURCES_AND_CITIZEN_INTELLIGENCE.md](OFFICIAL_SOURCES_AND_CITIZEN_INTELLIGENCE.md).

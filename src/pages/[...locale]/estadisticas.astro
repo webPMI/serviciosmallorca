@@ -1,0 +1,435 @@
+---
+/**
+ * estadisticas.astro
+ *
+ * Página de Estadísticas Oficiales & Inteligencia Insular de Mallorca (Data Hub).
+ * Cumple con GR-01 (CSS tokens), GR-02 (responsive), GR-03 (TypeScript estricto),
+ * GR-04 (i18n cuatrilingüe), GR-07 (accesibilidad semántica) y GR-11 (Zero Fake Data).
+ */
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Navbar from "../../components/Navbar.astro";
+import Footer from "../../components/Footer.astro";
+import OfficialStatCard from "../../components/OfficialStatCard.astro";
+import HumanPressureGauge from "../../components/HumanPressureGauge.astro";
+import { getLocaleFromUrl, loadTranslations, getLangPrefix, type Locale } from "../../i18n";
+import { OFFICIAL_STATISTICS } from "../../data/officialStats";
+
+export const prerender = false;
+
+const locale = getLocaleFromUrl(Astro.url) as Locale;
+const translations = await loadTranslations(locale);
+const prefix = getLangPrefix(locale);
+
+const titles: Record<Locale, string> = {
+  es: "Estadísticas Oficiales de Mallorca - Empresas, Demografía, IPH y Turismo",
+  ca: "Estadístiques Oficials de Mallorca - Empreses, Demografia, IPH i Turisme",
+  en: "Mallorca Official Statistics - Businesses, Demographics, HPI & Tourism",
+  de: "Offizielle Statistiken Mallorcas - Wirtschaft, Demografie, IPH & Tourismus",
+};
+
+const descriptions: Record<Locale, string> = {
+  es: "Observatorio oficial de datos de Mallorca: apertura y cierre de empresas, presión humana estival (IPH), empleo, salarios y turismo contrastados con IBESTAT.",
+  ca: "Observatori oficial de dades de Mallorca: obertura i tancament d'empreses, pressió humana estival (IPH), ocupació, salaris i turisme contrastats amb l'IBESTAT.",
+  en: "Official data observatory of Mallorca: business openings & liquidations, summer human pressure (HPI), employment, wages, and tourism verified via IBESTAT.",
+  de: "Offizielles Daten-Observatorium Mallorcas: Unternehmensgründungen, Schließungen, IPH-Index, Beschäftigung, Löhne und Tourismusdaten des IBESTAT.",
+};
+
+const filterLabels: Record<Locale, Record<string, string>> = {
+  es: {
+    all: "Todos los Indicadores",
+    empleo_empresas: "Empresas & Empleo",
+    demografia: "Demografía",
+    turismo_sostenibilidad: "Turismo & Carga",
+    movilidad: "Movilidad",
+  },
+  ca: {
+    all: "Tots els Indicadors",
+    empleo_empresas: "Empreses i Ocupació",
+    demografia: "Demografia",
+    turismo_sostenibilidad: "Turisme i Càrrega",
+    movilidad: "Mobilitat",
+  },
+  en: {
+    all: "All Indicators",
+    empleo_empresas: "Businesses & Jobs",
+    demografia: "Demographics",
+    turismo_sostenibilidad: "Tourism & Capacity",
+    movilidad: "Mobility",
+  },
+  de: {
+    all: "Alle Indikatoren",
+    empleo_empresas: "Wirtschaft & Arbeit",
+    demografia: "Demografie",
+    turismo_sostenibilidad: "Tourismus & Belastung",
+    movilidad: "Mobilität",
+  },
+};
+
+const heroTexts: Record<
+  Locale,
+  {
+    badge: string;
+    headline: string;
+    lead: string;
+    transparencyNote: string;
+  }
+> = {
+  es: {
+    badge: "Observatorio Insular · Datos 100% Oficiales (GR-11)",
+    headline: "Pulso Empresarial y Realidad Socioeconómica de Mallorca",
+    lead: "Indicadores oficiales auditados procedentes de IBESTAT, Registro Mercantil, Seguridad Social, Consell de Mallorca, INE y AENA. Cero conjeturas, máxima transparencia.",
+    transparencyNote:
+      "Todas las métricas incluyen código oficial de operación estadística y enlace a la fuente pública primaria.",
+  },
+  ca: {
+    badge: "Observatori Insular · Dades 100% Oficials (GR-11)",
+    headline: "Pols Empresarial i Realitat Socioeconòmica de Mallorca",
+    lead: "Indicadors oficials auditats procedents de l'IBESTAT, Registre Mercantil, Seguretat Social, Consell de Mallorca, INE i AENA. Zero conjectures, màxima transparència.",
+    transparencyNote:
+      "Totes les mètriques inclouen codi oficial d'operació estadística i enllaç a la font pública primària.",
+  },
+  en: {
+    badge: "Island Observatory · 100% Official Audited Data (GR-11)",
+    headline: "Business Pulse & Socioeconomic Reality of Mallorca",
+    lead: "Audited official indicators sourced from IBESTAT, Commercial Registry, Social Security, Mallorca Council, INE, and AENA. Zero speculation, absolute transparency.",
+    transparencyNote:
+      "Every metric features an official statistical operation code and direct link to the primary government source.",
+  },
+  de: {
+    badge: "Insel-Observatorium · 100% amtlich geprüfte Daten (GR-11)",
+    headline: "Wirtschaftspuls & sozioökonomische Realität Mallorcas",
+    lead: "Geprüfte amtliche Indikatoren des IBESTAT, Handelsregisters, der Sozialversicherung, des Inselrats, des INE und der AENA. Keine Vermutungen, volle Transparenz.",
+    transparencyNote:
+      "Jede Kennzahl enthält einen amtlichen statistischen Erfassungscode und direkten Link zur Primärquelle.",
+  },
+};
+
+const hero = heroTexts[locale] || heroTexts.es;
+const filters = filterLabels[locale] || filterLabels.es;
+
+const schemaOrg = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      name: titles[locale],
+      description: descriptions[locale],
+      url: `https://serviciosmallorca.com${prefix}estadisticas`,
+    },
+    {
+      "@type": "Dataset",
+      name: "Indicadores Oficiales de Mallorca (IBESTAT & Registros Públicos)",
+      description: descriptions[locale],
+      publisher: {
+        "@type": "Organization",
+        name: "Servicios Mallorca - Data Hub",
+        url: "https://serviciosmallorca.com",
+      },
+      spatialCoverage: "Mallorca, Illes Balears, Spain",
+      temporalCoverage: "2015/2026",
+    },
+  ],
+};
+---
+
+<BaseLayout title={`${titles[locale]} | Servicios Mallorca`} lang={locale} description={descriptions[locale]}>
+  <script type="application/ld+json" set:html={JSON.stringify(schemaOrg)} />
+
+  <Navbar currentLocale={locale} translations={translations} getLangPrefix={getLangPrefix} />
+
+  <main class="stats-page-container">
+    <!-- Hero Section -->
+    <header class="stats-hero">
+      <div class="stats-hero-badge">
+        <span class="hero-dot" aria-hidden="true"></span>
+        <span>{hero.badge}</span>
+      </div>
+      <h1 class="stats-hero-title">{hero.headline}</h1>
+      <p class="stats-hero-lead">{hero.lead}</p>
+      <p class="stats-hero-transparency">
+        <svg viewBox="0 0 20 20" fill="currentColor" width="16" height="16" aria-hidden="true">
+          <path
+            fill-rule="evenodd"
+            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+            clip-rule="evenodd"></path>
+        </svg>
+        <span>{hero.transparencyNote}</span>
+      </p>
+    </header>
+
+    <!-- Componente Especial: Visualizador de Presión Humana IPH -->
+    <HumanPressureGauge lang={locale} />
+
+    <!-- Barra de Filtros por Categoría -->
+    <section class="stats-filter-bar" aria-label="Filtros de estadísticas oficiales">
+      <div class="filter-buttons-wrapper" role="tablist">
+        <button type="button" class="filter-btn active" data-filter="all" role="tab" aria-selected="true">
+          {filters.all} ({OFFICIAL_STATISTICS.length})
+        </button>
+        <button type="button" class="filter-btn" data-filter="empleo_empresas" role="tab" aria-selected="false">
+          💼 {filters.empleo_empresas}
+        </button>
+        <button type="button" class="filter-btn" data-filter="demografia" role="tab" aria-selected="false">
+          👥 {filters.demografia}
+        </button>
+        <button type="button" class="filter-btn" data-filter="turismo_sostenibilidad" role="tab" aria-selected="false">
+          🏖️ {filters.turismo_sostenibilidad}
+        </button>
+        <button type="button" class="filter-btn" data-filter="movilidad" role="tab" aria-selected="false">
+          🚌 {filters.movilidad}
+        </button>
+      </div>
+    </section>
+
+    <!-- Grid de Métricas Oficiales -->
+    <section class="stats-grid-section" aria-label="Listado de indicadores oficiales">
+      <div id="stats-cards-grid" class="stats-cards-grid">
+        {OFFICIAL_STATISTICS.map((stat) => <OfficialStatCard stat={stat} lang={locale} />)}
+      </div>
+    </section>
+
+    <!-- Banner Metodológico de Garantía Institucional -->
+    <section class="methodology-guarantee-banner" aria-label="Garantía de veracidad de datos">
+      <div class="guarantee-icon" aria-hidden="true">🛡️</div>
+      <div class="guarantee-content">
+        <h2 class="guarantee-title">Compromiso Inmutable de Veracidad: Zero Fake Data (GR-11)</h2>
+        <p class="guarantee-text">
+          En Servicios Mallorca ninguna estadística es estimada ni conjeturada. Todos los valores proceden de los
+          boletines oficiales y series del <strong>Institut d'Estadística de les Illes Balears (IBESTAT)</strong>, el <strong
+            >Registro Mercantil</strong
+          >, la <strong>Seguridad Social</strong> y el <strong>Consell Insular de Mallorca</strong>.
+        </p>
+        <p class="guarantee-docs-link">
+          Consulta nuestro protocolo de auditoría pública en la <a
+            href="https://github.com/webPMI/serviciosmallorca"
+            target="_blank"
+            rel="noopener noreferrer">documentación abierta del proyecto</a
+          >.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <Footer currentLocale={locale} translations={translations} getLangPrefix={getLangPrefix} />
+</BaseLayout>
+
+<script>
+  // Filtrado reactivo en cliente sin dependencias externas
+  document.addEventListener("DOMContentLoaded", () => {
+    const filterButtons = document.querySelectorAll<HTMLButtonElement>(".filter-btn");
+    const cards = document.querySelectorAll<HTMLElement>(".stat-card");
+
+    filterButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const filter = btn.dataset.filter || "all";
+
+        filterButtons.forEach((b) => {
+          b.classList.remove("active");
+          b.setAttribute("aria-selected", "false");
+        });
+
+        btn.classList.add("active");
+        btn.setAttribute("aria-selected", "true");
+
+        cards.forEach((card) => {
+          const category = card.dataset.category;
+          if (filter === "all" || category === filter) {
+            card.style.display = "flex";
+          } else {
+            card.style.display = "none";
+          }
+        });
+      });
+    });
+  });
+</script>
+
+<style>
+  .stats-page-container {
+    max-width: var(--max-width, 1200px);
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 5rem 1.5rem;
+  }
+
+  /* Hero Section */
+  .stats-hero {
+    text-align: center;
+    max-width: 860px;
+    margin: 0 auto 3rem auto;
+  }
+
+  .stats-hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: var(--font-size-xs, 0.75rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-primary-dark, #1b4332);
+    background: var(--color-primary-bg, rgba(45, 106, 79, 0.1));
+    border: 1px solid var(--color-primary-border, rgba(45, 106, 79, 0.2));
+    padding: 0.35rem 0.85rem;
+    border-radius: var(--border-radius-full, 9999px);
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--color-success, #38b000);
+    box-shadow: 0 0 8px var(--color-success, #38b000);
+  }
+
+  .stats-hero-title {
+    font-size: var(--font-size-4xl, 2.75rem);
+    font-weight: 800;
+    color: var(--color-text, #1a1a2e);
+    line-height: 1.15;
+    margin: 0 0 1rem 0;
+    letter-spacing: -0.02em;
+  }
+
+  .stats-hero-lead {
+    font-size: var(--font-size-lg, 1.125rem);
+    color: var(--color-text-light, #555568);
+    line-height: 1.6;
+    margin: 0 0 1rem 0;
+  }
+
+  .stats-hero-transparency {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: var(--font-size-sm, 0.875rem);
+    color: var(--color-primary, #2d6a4f);
+    font-weight: 600;
+    background: var(--color-surface-hover, #f0f4f2);
+    padding: 0.35rem 0.85rem;
+    border-radius: var(--border-radius-sm, 8px);
+  }
+
+  /* Barra de Filtros */
+  .stats-filter-bar {
+    margin-bottom: 2rem;
+  }
+
+  .filter-buttons-wrapper {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .filter-btn {
+    background: var(--color-surface, #ffffff);
+    color: var(--color-text-light, #555568);
+    border: 1px solid var(--color-surface-border, rgba(45, 106, 79, 0.12));
+    font-size: var(--font-size-sm, 0.875rem);
+    font-weight: 600;
+    padding: 0.6rem 1.1rem;
+    border-radius: var(--border-radius-full, 9999px);
+    cursor: pointer;
+    transition: all var(--transition-fast, 0.15s ease);
+  }
+
+  .filter-btn:hover {
+    background: var(--color-surface-hover, #f0f4f2);
+    color: var(--color-text, #1a1a2e);
+    border-color: var(--color-primary-light, #40916c);
+  }
+
+  .filter-btn.active {
+    background: var(--color-primary, #2d6a4f);
+    color: #ffffff;
+    border-color: var(--color-primary, #2d6a4f);
+    box-shadow: 0 2px 8px rgba(45, 106, 79, 0.25);
+  }
+
+  /* Grid de Tarjetas */
+  .stats-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 3.5rem;
+  }
+
+  /* Banner de Garantía */
+  .methodology-guarantee-banner {
+    background: var(--color-surface-hover, #f0f4f2);
+    border: 1px solid var(--color-surface-border, rgba(45, 106, 79, 0.12));
+    border-radius: var(--border-radius-lg, 20px);
+    padding: 2rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .guarantee-icon {
+    font-size: 2.5rem;
+    line-height: 1;
+  }
+
+  .guarantee-content {
+    flex-grow: 1;
+  }
+
+  .guarantee-title {
+    font-size: var(--font-size-xl, 1.25rem);
+    font-weight: 700;
+    color: var(--color-text, #1a1a2e);
+    margin: 0 0 0.5rem 0;
+  }
+
+  .guarantee-text {
+    font-size: var(--font-size-sm, 0.875rem);
+    color: var(--color-text-light, #555568);
+    line-height: 1.6;
+    margin: 0 0 0.5rem 0;
+  }
+
+  .guarantee-docs-link {
+    font-size: var(--font-size-xs, 0.75rem);
+    color: var(--color-text-muted, #8c8c9e);
+    margin: 0;
+  }
+
+  .guarantee-docs-link a {
+    color: var(--color-primary, #2d6a4f);
+    font-weight: 600;
+    text-decoration: underline;
+  }
+
+  /* Responsive Breakpoints (GR-02) */
+  @media (max-width: 1024px) {
+    .stats-cards-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .stats-hero-title {
+      font-size: 2.2rem;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .stats-cards-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .stats-page-container {
+      padding: 1.5rem 1rem 3.5rem 1rem;
+    }
+
+    .stats-hero-title {
+      font-size: 1.85rem;
+    }
+
+    .methodology-guarantee-banner {
+      flex-direction: column;
+      padding: 1.5rem;
+    }
+  }
+</style>

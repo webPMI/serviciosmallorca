@@ -1,0 +1,458 @@
+---
+/**
+ * guias/index.astro
+ *
+ * Hub de Guías Oficiales & Trámites al Ciudadano de Mallorca.
+ * Cumple con GR-01 (CSS tokens), GR-02 (responsive), GR-03 (TypeScript estricto),
+ * GR-04 (i18n cuatrilingüe), GR-07 (accesibilidad semántica) y GR-11 (Zero Fake Data).
+ */
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Navbar from "../../../components/Navbar.astro";
+import Footer from "../../../components/Footer.astro";
+import CitizenGuideCard from "../../../components/CitizenGuideCard.astro";
+import { CITIZEN_GUIDES } from "../../../data/citizenGuides";
+import { getLocaleFromUrl, loadTranslations, getLangPrefix, type Locale } from "../../../i18n";
+
+export const prerender = false;
+
+const locale = getLocaleFromUrl(Astro.url) as Locale;
+const translations = await loadTranslations(locale);
+const prefix = getLangPrefix(locale);
+
+const titles: Record<Locale, string> = {
+  es: "Guías Oficiales y Trámites al Ciudadano en Mallorca (2026)",
+  ca: "Guies Oficials i Tràmits al Ciutadà a Mallorca (2026)",
+  en: "Official Citizen Guides & Procedures in Mallorca (2026)",
+  de: "Offizielle Behörden-Leitfäden & Amtswege auf Mallorca (2026)",
+};
+
+const descriptions: Record<Locale, string> = {
+  es: "Portal de trámites administrativos de Mallorca: Padrón Palma, Tarjeta Ciudadana, cita ITV Mallorca, Descuento 75% Residente, TSI Ib-Salut y NIE/TIE paso a paso.",
+  ca: "Portal de tràmits administratius de Mallorca: Padró Palma, Targeta Ciutadana, cita ITV Mallorca, Descompte 75% Resident, TSI Ib-Salut i NIE/TIE pas a pas.",
+  en: "Mallorca public procedures directory: Palma Census, Citizen Card, ITV appointments, 75% Resident Discount, Ib-Salut health card, and NIE/TIE step by step.",
+  de: "Behörden-Portal Mallorca: Meldewesen Palma, Bürgerkarte, ITV-Termine, 75% Residentenrabatt, Ib-Salut Gesundheitskarte und NIE/TIE Schritt für Schritt.",
+};
+
+const filterLabels: Record<Locale, Record<string, string>> = {
+  es: {
+    all: "Todos los Trámites",
+    padron: "Padrón & Residencia",
+    transporte: "Transporte & Movilidad",
+    vehiculos: "Vehículos & ITV",
+    salud: "Sanidad & Tarjeta TSI",
+    extranjeria: "Extranjería & NIE",
+  },
+  ca: {
+    all: "Tots els Tràmits",
+    padron: "Padró i Residència",
+    transporte: "Transport i Mobilitat",
+    vehiculos: "Vehicles i ITV",
+    salud: "Sanitat i Targeta TSI",
+    extranjeria: "Estrangeria i NIE",
+  },
+  en: {
+    all: "All Procedures",
+    padron: "Census & Residency",
+    transporte: "Transit & Mobility",
+    vehiculos: "Vehicles & ITV",
+    salud: "Healthcare & TSI Card",
+    extranjeria: "Immigration & NIE",
+  },
+  de: {
+    all: "Alle Amtswege",
+    padron: "Einwohnermeldeamt & Wohnsitz",
+    transporte: "Nahverkehr & Mobilität",
+    vehiculos: "Fahrzeuge & ITV",
+    salud: "Gesundheit & TSI-Karte",
+    extranjeria: "Ausländerwesen & NIE",
+  },
+};
+
+const heroTexts: Record<
+  Locale,
+  {
+    badge: string;
+    headline: string;
+    lead: string;
+    searchPlaceholder: string;
+    antiFraudNotice: string;
+    noResults: string;
+  }
+> = {
+  es: {
+    badge: "Ventanilla Ciudadana · 100% Datos y Enlaces Oficiales",
+    headline: "Guías Oficiales y Trámites Administrativos de Mallorca",
+    lead: "Requisitos, documentación requerida, enlaces a sedes electrónicas oficiales y checklist interactivo para realizar tus trámites en la isla sin intermediarios ni costes ocultos.",
+    searchPlaceholder: "Buscar trámite (ej: empadronamiento, itv, nie, tarjeta sanitaria...)",
+    antiFraudNotice:
+      "Aviso Importante: Las citas previas oficiales en el Ajuntament de Palma, Consell de Mallorca, DGT y Policía Nacional son completamente GRATUITAS. No pagues por citas previas en páginas no oficiales.",
+    noResults: "No se encontraron trámites con ese criterio de búsqueda.",
+  },
+  ca: {
+    badge: "Finestreta Ciutadana · 100% Dades i Enllaços Oficials",
+    headline: "Guies Oficials i Tràmits Administratius de Mallorca",
+    lead: "Requisits, documentació requerida, enllaços a seus electròniques oficials i checklist interactiu per fer els teus tràmits a l'illa sense intermediaris ni costos ocults.",
+    searchPlaceholder: "Cercar tràmit (ex: padró, itv, nie, targeta sanitària...)",
+    antiFraudNotice:
+      "Avís Important: Les cites prèvies oficials a l'Ajuntament de Palma, Consell de Mallorca, DGT i Policia Nacional són completament GRATUÏTES. No paguis per cites prèvies a pàgines no oficials.",
+    noResults: "No s'han trobat tràmits amb aquest criteri de cerca.",
+  },
+  en: {
+    badge: "Citizen Hub · 100% Official Data & Direct Government Links",
+    headline: "Official Guides & Public Procedures in Mallorca",
+    lead: "Requirements, needed documents, direct official e-office links, and interactive checklist to complete island paperwork without unnecessary fees or speculation.",
+    searchPlaceholder: "Search procedure (e.g. census, itv, nie, health card...)",
+    antiFraudNotice:
+      "Important Warning: Official appointment booking at Palma City Hall, Mallorca Council, DGT, and National Police is strictly FREE. Do not pay third-party websites for government appointments.",
+    noResults: "No public procedures match your search criteria.",
+  },
+  de: {
+    badge: "Bürgerservice · 100% amtliche Daten und Direktlinks",
+    headline: "Offizielle Behörden-Leitfäden & Amtswege auf Mallorca",
+    lead: "Voraussetzungen, Unterlagen-Checkliste, direkte Links zu den offiziellen Behördenportalen und Tipps, um Amtswege auf der Insel eigenständig und gebührenfrei zu erledigen.",
+    searchPlaceholder: "Amtsweg suchen (z.B. Anmeldung, ITV, NIE, Krankenkasse...)",
+    antiFraudNotice:
+      "Wichtiger Hinweis: Behördentermine beim Rathaus Palma, Inselrat, Straßenverkehrsamt und der Nationalpolizei sind grundsätzlich KOSTENLOS. Zahlen Sie nicht für Termine auf inoffiziellen Webseiten.",
+    noResults: "Keine Amtswege für diese Suchkriterien gefunden.",
+  },
+};
+
+const hero = heroTexts[locale] || heroTexts.es;
+const filters = filterLabels[locale] || filterLabels.es;
+
+const schemaOrg = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      name: titles[locale],
+      description: descriptions[locale],
+      url: `https://serviciosmallorca.com${prefix}guias`,
+    },
+    {
+      "@type": "ItemList",
+      name: titles[locale],
+      itemListElement: CITIZEN_GUIDES.map((guide, idx) => ({
+        "@type": "ListItem",
+        position: idx + 1,
+        url: `https://serviciosmallorca.com${prefix}guias/${guide.slug}`,
+        name: guide.title[locale] || guide.title.es,
+      })),
+    },
+  ],
+};
+---
+
+<BaseLayout title={`${titles[locale]} | Servicios Mallorca`} lang={locale} description={descriptions[locale]}>
+  <script type="application/ld+json" set:html={JSON.stringify(schemaOrg)} />
+
+  <Navbar currentLocale={locale} translations={translations} getLangPrefix={getLangPrefix} />
+
+  <main class="guides-hub-container">
+    <!-- Hero Section -->
+    <header class="guides-hero">
+      <div class="guides-hero-badge">
+        <span class="hero-dot" aria-hidden="true"></span>
+        <span>{hero.badge}</span>
+      </div>
+      <h1 class="guides-hero-title">{hero.headline}</h1>
+      <p class="guides-hero-lead">{hero.lead}</p>
+
+      <!-- Buscador en tiempo real -->
+      <div class="search-bar-wrapper">
+        <div class="search-input-box">
+          <span class="search-icon" aria-hidden="true">🔍</span>
+          <input
+            type="search"
+            id="guides-search-input"
+            class="guides-search-input"
+            placeholder={hero.searchPlaceholder}
+            aria-label="Buscar trámites y guías oficiales"
+          />
+        </div>
+      </div>
+    </header>
+
+    <!-- Banner Antifraude Institucional -->
+    <aside class="anti-fraud-banner" role="alert">
+      <span class="alert-icon" aria-hidden="true">🛡️</span>
+      <p class="alert-text">{hero.antiFraudNotice}</p>
+    </aside>
+
+    <!-- Barra de Filtros por Categoría -->
+    <section class="guides-filter-bar" aria-label="Filtros de trámites por categoría">
+      <div class="filter-buttons-wrapper" role="tablist">
+        <button type="button" class="filter-btn active" data-filter="all" role="tab" aria-selected="true">
+          {filters.all} ({CITIZEN_GUIDES.length})
+        </button>
+        <button type="button" class="filter-btn" data-filter="padron" role="tab" aria-selected="false">
+          📋 {filters.padron}
+        </button>
+        <button type="button" class="filter-btn" data-filter="transporte" role="tab" aria-selected="false">
+          🚌 {filters.transporte}
+        </button>
+        <button type="button" class="filter-btn" data-filter="vehiculos" role="tab" aria-selected="false">
+          🚗 {filters.vehiculos}
+        </button>
+        <button type="button" class="filter-btn" data-filter="salud" role="tab" aria-selected="false">
+          🏥 {filters.salud}
+        </button>
+        <button type="button" class="filter-btn" data-filter="extranjeria" role="tab" aria-selected="false">
+          🌍 {filters.extranjeria}
+        </button>
+      </div>
+    </section>
+
+    <!-- Grid de Guías Ciudadanas -->
+    <section class="guides-grid-section" aria-label="Listado de guías y trámites oficiales">
+      <div id="guides-cards-grid" class="guides-cards-grid">
+        {CITIZEN_GUIDES.map((guide) => <CitizenGuideCard guide={guide} lang={locale} prefix={prefix} />)}
+      </div>
+
+      <div id="no-results-message" class="no-results-message" hidden>
+        <p>🔍 {hero.noResults}</p>
+      </div>
+    </section>
+  </main>
+
+  <Footer currentLocale={locale} translations={translations} getLangPrefix={getLangPrefix} />
+</BaseLayout>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const searchInput = document.getElementById("guides-search-input") as HTMLInputElement | null;
+    const filterButtons = document.querySelectorAll<HTMLButtonElement>(".filter-btn");
+    const cards = document.querySelectorAll<HTMLElement>(".citizen-guide-card");
+    const noResults = document.getElementById("no-results-message");
+
+    let currentFilter = "all";
+    let currentQuery = "";
+
+    const applyFilters = () => {
+      let visibleCount = 0;
+
+      cards.forEach((card) => {
+        const category = card.dataset.category || "";
+        const titleEl = card.querySelector(".card-title");
+        const summaryEl = card.querySelector(".card-summary");
+
+        const textContent = `${titleEl?.textContent || ""} ${summaryEl?.textContent || ""}`.toLowerCase();
+
+        const matchesCategory = currentFilter === "all" || category === currentFilter;
+        const matchesSearch = currentQuery === "" || textContent.includes(currentQuery);
+
+        if (matchesCategory && matchesSearch) {
+          card.style.display = "flex";
+          visibleCount++;
+        } else {
+          card.style.display = "none";
+        }
+      });
+
+      if (noResults) {
+        noResults.hidden = visibleCount > 0;
+      }
+    };
+
+    // Filtros por Categoría
+    filterButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        currentFilter = btn.dataset.filter || "all";
+
+        filterButtons.forEach((b) => {
+          b.classList.remove("active");
+          b.setAttribute("aria-selected", "false");
+        });
+
+        btn.classList.add("active");
+        btn.setAttribute("aria-selected", "true");
+
+        applyFilters();
+      });
+    });
+
+    // Búsqueda en Vivo
+    searchInput?.addEventListener("input", (e) => {
+      const target = e.target as HTMLInputElement;
+      currentQuery = target.value.trim().toLowerCase();
+      applyFilters();
+    });
+  });
+</script>
+
+<style>
+  .guides-hub-container {
+    max-width: var(--max-width, 1200px);
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 5rem 1.5rem;
+  }
+
+  /* Hero Section */
+  .guides-hero {
+    text-align: center;
+    max-width: 860px;
+    margin: 0 auto 2.5rem auto;
+  }
+
+  .guides-hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.35rem 0.9rem;
+    background: rgba(200, 157, 92, 0.12);
+    border: 1px solid rgba(200, 157, 92, 0.3);
+    border-radius: var(--radius-full, 9999px);
+    color: var(--color-gold-dark, #9a7332);
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--color-gold, #c89d5c);
+  }
+
+  .guides-hero-title {
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-weight: 800;
+    line-height: 1.2;
+    color: var(--color-text-main, #1a202c);
+    margin: 0 0 1rem 0;
+  }
+
+  .guides-hero-lead {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--color-text-muted, #4a5568);
+    margin: 0 0 2rem 0;
+  }
+
+  /* Buscador */
+  .search-bar-wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .search-input-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .search-icon {
+    position: absolute;
+    left: 1.25rem;
+    font-size: 1.1rem;
+    pointer-events: none;
+  }
+
+  .guides-search-input {
+    width: 100%;
+    padding: 0.9rem 1.25rem 0.9rem 3rem;
+    font-size: 1rem;
+    border: 2px solid var(--color-border, #cbd5e0);
+    border-radius: var(--radius-full, 9999px);
+    background: var(--color-bg-card, #ffffff);
+    color: var(--color-text-main, #1a202c);
+    outline: none;
+    transition:
+      border-color 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+
+  .guides-search-input:focus {
+    border-color: var(--color-gold, #c89d5c);
+    box-shadow: 0 0 0 4px rgba(200, 157, 92, 0.15);
+  }
+
+  /* Banner Antifraude */
+  .anti-fraud-banner {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    background: rgba(234, 179, 8, 0.08);
+    border: 1px solid rgba(234, 179, 8, 0.3);
+    border-radius: var(--radius-lg, 12px);
+    padding: 1rem 1.25rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .alert-icon {
+    font-size: 1.35rem;
+    flex-shrink: 0;
+  }
+
+  .alert-text {
+    margin: 0;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: #854d0e;
+    font-weight: 500;
+  }
+
+  /* Filtros */
+  .guides-filter-bar {
+    margin-bottom: 2.5rem;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+  }
+
+  .filter-buttons-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    justify-content: center;
+  }
+
+  .filter-btn {
+    background: var(--color-bg-card, #ffffff);
+    border: 1px solid var(--color-border, #e2e8f0);
+    border-radius: var(--radius-full, 9999px);
+    padding: 0.55rem 1.15rem;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--color-text-muted, #4a5568);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+  }
+
+  .filter-btn:hover {
+    border-color: var(--color-gold, #c89d5c);
+    color: var(--color-gold-dark, #9a7332);
+  }
+
+  .filter-btn.active {
+    background: var(--color-gold, #c89d5c);
+    border-color: var(--color-gold, #c89d5c);
+    color: #ffffff;
+    box-shadow: 0 2px 8px rgba(200, 157, 92, 0.25);
+  }
+
+  /* Grid */
+  .guides-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 1.75rem;
+  }
+
+  .no-results-message {
+    text-align: center;
+    padding: 3.5rem 1rem;
+    font-size: 1.1rem;
+    color: var(--color-text-muted, #718096);
+  }
+
+  @media (max-width: 768px) {
+    .filter-buttons-wrapper {
+      justify-content: flex-start;
+      flex-wrap: nowrap;
+    }
+    .guides-cards-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -27,6 +27,8 @@ const isSportsActive = isActive(`${homeUrl}deporte`) || currentPath.includes("/d
 const isAssistantActive = isActive(`${homeUrl}asistente`) || currentPath.includes("/asistente");
 const isToursActive = isActive(`${homeUrl}tours`) || currentPath.includes("/tours");
 const isHistoryActive = isActive(`${homeUrl}memoria-historica`) || currentPath.includes("/memoria-historica");
+const isStatsActive = isActive(`${homeUrl}estadisticas`) || currentPath.includes("/estadisticas");
+const isGuidesActive = isActive(`${homeUrl}guias`) || currentPath.includes("/guias");
 const isCommunityActive = isActive(`${homeUrl}comunidad`) || currentPath.includes("/comunidad");
 const isHonorActive = isActive(`${homeUrl}cuadro-de-honor`) || currentPath.includes("/cuadro-de-honor");
 const isJoinActive = isActive(`${homeUrl}unete`) || currentPath.includes("/unete");
@@ -103,6 +105,20 @@ const isRegisterActive = isActive(`${homeUrl}register`);
           aria-current={isHistoryActive ? "page" : undefined}
         >
           🏛️ {translations["nav.history"] || "Memoria Histórica"}
+        </a>
+        <a
+          href={`${homeUrl}estadisticas`}
+          class:list={["nav-link", "nav-drawer-only", { active: isStatsActive }]}
+          aria-current={isStatsActive ? "page" : undefined}
+        >
+          📊 {translations["nav.stats"] || "Estadísticas"}
+        </a>
+        <a
+          href={`${homeUrl}guias`}
+          class:list={["nav-link", "nav-drawer-only", { active: isGuidesActive }]}
+          aria-current={isGuidesActive ? "page" : undefined}
+        >
+          📋 {translations["nav.guides"] || "Trámites & Guías"}
         </a>
 
         <!-- ── SECCIÓN 2: COMUNIDAD & ÉLITE ── -->

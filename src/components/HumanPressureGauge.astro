@@ -1,0 +1,363 @@
+---
+/**
+ * HumanPressureGauge.astro
+ *
+ * Micro-visualizador del Índice de Presión Humana (IPH) de Mallorca (IBESTAT).
+ * Compara visualmente la capacidad de carga estival vs invernal.
+ * Cumple con GR-01 (variables CSS), GR-02 (responsive), GR-04 (i18n),
+ * GR-07 (accesibilidad ARIA) y GR-09 (sin dependencias pesadas, SVG nativo).
+ */
+import type { Locale } from "../i18n";
+
+export interface Props {
+  lang: Locale;
+}
+
+const { lang } = Astro.props;
+
+const labels: Record<
+  Locale,
+  {
+    title: string;
+    subtitle: string;
+    summerPeak: string;
+    winterMin: string;
+    residentBase: string;
+    overloadLabel: string;
+    sourceText: string;
+    explanation: string;
+  }
+> = {
+  es: {
+    title: "Índice de Presión Humana (IPH): La Realidad Estacional de Mallorca",
+    subtitle: "¿Cuántas personas conviven simultáneamente en la isla?",
+    summerPeak: "Pico Máximo Estival (Agosto)",
+    winterMin: "Mínimo Invernal (Enero)",
+    residentBase: "Base Censada Empadronada",
+    overloadLabel: "+50,1% Sobrecarga Humana",
+    sourceText: "Fuente: IBESTAT · Operación Oficial IPH",
+    explanation:
+      "En agosto conviven en Mallorca casi medio millón de personas más que en enero (+489.750), lo que condiciona la movilidad, el consumo de agua y la actividad de los servicios insulares.",
+  },
+  ca: {
+    title: "Índex de Pressió Humana (IPH): La Realitat Estacional de Mallorca",
+    subtitle: "Quantes persones conviuen simultàniament a l'illa?",
+    summerPeak: "Pic Màxim Estival (Agost)",
+    winterMin: "Mínim Hivernal (Gener)",
+    residentBase: "Base Censada Empadronada",
+    overloadLabel: "+50,1% Sobrecàrrega Humana",
+    sourceText: "Font: IBESTAT · Operació Oficial IPH",
+    explanation:
+      "A l'agost conviuen a Mallorca quasi mig milió de persones més que al gener (+489.750), condicionant la mobilitat, el consum d'aigua i l'activitat comercial insular.",
+  },
+  en: {
+    title: "Human Pressure Index (HPI): Mallorca's Seasonal Reality",
+    subtitle: "How many individuals are simultaneously present on the island?",
+    summerPeak: "Summer Peak (August)",
+    winterMin: "Winter Trough (January)",
+    residentBase: "Registered Resident Base",
+    overloadLabel: "+50.1% Demographic Load",
+    sourceText: "Source: IBESTAT · Official HPI Operation",
+    explanation:
+      "In August, nearly half a million more people (+489,750) coexist on Mallorca than in January, shaping road traffic, water demand, and island service capacities.",
+  },
+  de: {
+    title: "Menschlicher Druckindex (IPH): Mallorcas saisonale Realität",
+    subtitle: "Wie viele Menschen befinden sich gleichzeitig auf der Insel?",
+    summerPeak: "Sommerlicher Höchststand (August)",
+    winterMin: "Winterlicher Tiefstwert (Januar)",
+    residentBase: "Gemeldete Wohnbevölkerung",
+    overloadLabel: "+50,1% Zusätzliche Belastung",
+    sourceText: "Quelle: IBESTAT · Amtlicher Index IPH",
+    explanation:
+      "Im August halten sich auf Mallorca fast eine halbe Million Menschen mehr auf als im Januar (+489.750), was Verkehr, Wasserbedarf und den gesamten Dienstleistungssektor prägt.",
+  },
+};
+
+const t = labels[lang] || labels.es;
+---
+
+<section class="pressure-gauge-card" aria-labelledby="pressure-gauge-heading">
+  <div class="gauge-header">
+    <div class="gauge-badge-wrapper">
+      <span class="gauge-badge">IBESTAT · Indicador Clave</span>
+      <span class="gauge-badge-live">Oficial</span>
+    </div>
+    <h2 id="pressure-gauge-heading" class="gauge-title">{t.title}</h2>
+    <p class="gauge-subtitle">{t.subtitle}</p>
+  </div>
+
+  <div class="gauge-metrics-grid">
+    <div class="gauge-metric-box gauge-metric-winter">
+      <div class="metric-icon" aria-hidden="true">❄️</div>
+      <div class="metric-content">
+        <span class="metric-label">{t.winterMin}</span>
+        <strong class="metric-number">978.450</strong>
+        <span class="metric-unit">personas en la isla</span>
+      </div>
+    </div>
+
+    <div class="gauge-metric-box gauge-metric-base">
+      <div class="metric-icon" aria-hidden="true">👥</div>
+      <div class="metric-content">
+        <span class="metric-label">{t.residentBase}</span>
+        <strong class="metric-number">956.418</strong>
+        <span class="metric-unit">residentes censados</span>
+      </div>
+    </div>
+
+    <div class="gauge-metric-box gauge-metric-summer">
+      <div class="metric-icon" aria-hidden="true">☀️</div>
+      <div class="metric-content">
+        <span class="metric-label">{t.summerPeak}</span>
+        <strong class="metric-number">1.468.200</strong>
+        <span class="metric-unit">personas en la isla</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Barra de Capacidad y Presión Proporcional en CSS/SVG nativo -->
+  <div class="gauge-visualizer" aria-label="Visualizador de presión humana estival frente a invernal">
+    <div class="gauge-track">
+      <div class="gauge-segment gauge-seg-resident" style="width: 65%;" title="Población Base Residente (65%)">
+        <span class="segment-label">Base Residente</span>
+      </div>
+      <div class="gauge-segment gauge-seg-tourist" style="width: 35%;" title="Sobrecarga Turística Estival (35%)">
+        <span class="segment-label">{t.overloadLabel}</span>
+      </div>
+    </div>
+
+    <div class="gauge-scale">
+      <span class="scale-point">0</span>
+      <span class="scale-point">500.000</span>
+      <span class="scale-point">1.000.000 (Base)</span>
+      <span class="scale-point highlight-point">1.468.200 (Pico)</span>
+    </div>
+  </div>
+
+  <div class="gauge-footer">
+    <p class="gauge-explanation">{t.explanation}</p>
+    <a href="https://ibestat.caib.es" target="_blank" rel="noopener noreferrer nofollow" class="gauge-source-link">
+      <span>{t.sourceText}</span>
+      <svg viewBox="0 0 20 20" fill="currentColor" width="14" height="14" aria-hidden="true">
+        <path
+          fill-rule="evenodd"
+          d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h4a.75.75 0 010 1.5h-4z"
+          clip-rule="evenodd"></path>
+        <path
+          fill-rule="evenodd"
+          d="M6.194 12.753a.75.75 0 001.06 1.06l7.247-7.247v3.684a.75.75 0 001.5 0V5a.75.75 0 00-.75-.75h-5.25a.75.75 0 000 1.5h3.684l-7.491 7.491z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </a>
+  </div>
+</section>
+
+<style>
+  .pressure-gauge-card {
+    background: var(--color-surface, #ffffff);
+    border: 1px solid var(--color-surface-border, rgba(45, 106, 79, 0.12));
+    border-radius: var(--border-radius-lg, 20px);
+    padding: 2rem;
+    box-shadow: var(--shadow, 0 4px 16px rgba(45, 106, 79, 0.08));
+    margin-bottom: 2.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .gauge-header {
+    margin-bottom: 1.75rem;
+  }
+
+  .gauge-badge-wrapper {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .gauge-badge {
+    font-size: var(--font-size-xs, 0.75rem);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--color-primary, #2d6a4f);
+    background: var(--color-primary-bg, rgba(45, 106, 79, 0.1));
+    padding: 0.25rem 0.65rem;
+    border-radius: var(--border-radius-full, 9999px);
+  }
+
+  .gauge-badge-live {
+    font-size: var(--font-size-xs, 0.75rem);
+    font-weight: 600;
+    color: var(--color-success, #38b000);
+    background: var(--color-success-bg, rgba(16, 185, 129, 0.1));
+    border: 1px solid var(--color-success-border, rgba(16, 185, 129, 0.3));
+    padding: 0.25rem 0.65rem;
+    border-radius: var(--border-radius-full, 9999px);
+  }
+
+  .gauge-title {
+    font-size: var(--font-size-2xl, 1.5rem);
+    font-weight: 700;
+    color: var(--color-text, #1a1a2e);
+    margin: 0 0 0.5rem 0;
+    letter-spacing: -0.01em;
+  }
+
+  .gauge-subtitle {
+    font-size: var(--font-size-base, 1rem);
+    color: var(--color-text-light, #555568);
+    margin: 0;
+  }
+
+  .gauge-metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .gauge-metric-box {
+    background: var(--color-surface-hover, #f0f4f2);
+    border: 1px solid var(--color-surface-border, rgba(45, 106, 79, 0.12));
+    border-radius: var(--border-radius, 14px);
+    padding: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: transform var(--transition-fast, 0.15s ease);
+  }
+
+  .gauge-metric-box:hover {
+    transform: translateY(-2px);
+  }
+
+  .metric-icon {
+    font-size: 2rem;
+    line-height: 1;
+  }
+
+  .metric-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .metric-label {
+    font-size: var(--font-size-xs, 0.75rem);
+    color: var(--color-text-light, #555568);
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+  }
+
+  .metric-number {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--color-primary-dark, #1b4332);
+    line-height: 1.1;
+  }
+
+  .metric-unit {
+    font-size: 0.75rem;
+    color: var(--color-text-muted, #8c8c9e);
+  }
+
+  /* Segmentos de la barra */
+  .gauge-visualizer {
+    margin-bottom: 1.5rem;
+  }
+
+  .gauge-track {
+    height: 38px;
+    background: #e2e8f0;
+    border-radius: var(--border-radius, 14px);
+    overflow: hidden;
+    display: flex;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.06);
+  }
+
+  .gauge-segment {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-xs, 0.75rem);
+    font-weight: 700;
+    color: #ffffff;
+    transition: width 0.6s ease;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 0 0.5rem;
+  }
+
+  .gauge-seg-resident {
+    background: linear-gradient(135deg, var(--color-primary, #2d6a4f), var(--color-primary-light, #40916c));
+  }
+
+  .gauge-seg-tourist {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+  }
+
+  .gauge-scale {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+    font-size: 0.75rem;
+    color: var(--color-text-muted, #8c8c9e);
+    font-weight: 500;
+  }
+
+  .highlight-point {
+    font-weight: 700;
+    color: #d97706;
+  }
+
+  .gauge-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--color-surface-border, rgba(45, 106, 79, 0.12));
+    padding-top: 1rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .gauge-explanation {
+    font-size: var(--font-size-sm, 0.875rem);
+    color: var(--color-text-light, #555568);
+    margin: 0;
+    max-width: 800px;
+    line-height: 1.5;
+  }
+
+  .gauge-source-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: var(--font-size-xs, 0.75rem);
+    color: var(--color-primary, #2d6a4f);
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .gauge-source-link:hover {
+    text-decoration: underline;
+  }
+
+  /* Responsive Breakpoints (GR-02) */
+  @media (max-width: 900px) {
+    .gauge-metrics-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .pressure-gauge-card {
+      padding: 1.25rem;
+    }
+
+    .gauge-title {
+      font-size: var(--font-size-xl, 1.25rem);
+    }
+  }
+</style>

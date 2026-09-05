@@ -1,0 +1,1052 @@
+---
+/**
+ * guias/[slug].astro
+ *
+ * Ficha Detallada e Interactiva de Trámite / Guía Ciudadana Oficial de Mallorca.
+ * Cumple con GR-01 (CSS tokens), GR-02 (responsive), GR-03 (TypeScript estricto),
+ * GR-04 (i18n cuatrilingüe), GR-07 (accesibilidad semántica), GR-11 (Zero Fake Data)
+ * y GR-12 (Coordenadas geolocalizadas reales).
+ */
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Navbar from "../../../components/Navbar.astro";
+import Footer from "../../../components/Footer.astro";
+import CitizenChecklist from "../../../components/CitizenChecklist.astro";
+import { getGuideBySlug } from "../../../data/citizenGuides";
+import { getLocaleFromUrl, loadTranslations, getLangPrefix, type Locale } from "../../../i18n";
+
+export const prerender = false;
+
+const locale = getLocaleFromUrl(Astro.url) as Locale;
+const translations = await loadTranslations(locale);
+const prefix = getLangPrefix(locale);
+
+const { slug } = Astro.params;
+const guide = slug ? getGuideBySlug(slug) : undefined;
+
+if (!guide) {
+  return Astro.redirect(`${prefix}guias`);
+}
+
+const title = guide.title[locale] || guide.title.es;
+const summary = guide.summary[locale] || guide.summary.es;
+const time = guide.estimatedTime[locale] || guide.estimatedTime.es;
+const feeDesc = guide.fee.description?.[locale] || guide.fee.description?.es;
+
+const labels: Record<
+  Locale,
+  {
+    breadcrumbsHome: string;
+    breadcrumbsGuides: string;
+    auditedText: string;
+    keyFactsTitle: string;
+    entityLabel: string;
+    costLabel: string;
+    freeLabel: string;
+    timeLabel: string;
+    validityLabel: string;
+    permanentLabel: string;
+    yearsLabel: string;
+    officialPortalBtn: string;
+    antiFraudTitle: string;
+    antiFraudBody: string;
+    stepsTitle: string;
+    channelOnline: string;
+    channelPresencial: string;
+    channelBoth: string;
+    officesTitle: string;
+    officesSubtitle: string;
+    callBtn: string;
+    appointmentBtn: string;
+    mapBtn: string;
+    faqsTitle: string;
+    directoryAssistanceTitle: string;
+    directoryAssistanceBody: string;
+    exploreServicesBtn: string;
+  }
+> = {
+  es: {
+    breadcrumbsHome: "Inicio",
+    breadcrumbsGuides: "Guías & Trámites",
+    auditedText: "Última auditoría oficial de normativa",
+    keyFactsTitle: "Ficha Resumen del Trámite",
+    entityLabel: "Organismo Competente",
+    costLabel: "Coste / Tasas",
+    freeLabel: "Gratuito (0 €)",
+    timeLabel: "Tiempo Estimado",
+    validityLabel: "Período de Validez",
+    permanentLabel: "Permanente / Indefinido",
+    yearsLabel: "años",
+    officialPortalBtn: "Acceder a la Sede Electrónica Oficial",
+    antiFraudTitle: "Aviso de Seguridad Antifraude (GR-11)",
+    antiFraudBody:
+      "La solicitud de cita previa para este trámite es un servicio público GRATUITO regulado por la administración. Desconfía de intermediarios que cobren por reservar tu turno.",
+    stepsTitle: "Paso a Paso Oficial para Completar el Trámite",
+    channelOnline: "💻 En Línea (Sede Electrónica)",
+    channelPresencial: "🏢 Presencial en Oficina",
+    channelBoth: "🔄 En Línea o Presencial",
+    officesTitle: "Oficinas de Atención Presencial y Cita Previa",
+    officesSubtitle: "Consulta las sedes físicas oficiales donde puedes tramitar presencialmente en Mallorca.",
+    callBtn: "Llamar",
+    appointmentBtn: "Cita Previa Oficial",
+    mapBtn: "Cómo llegar (GPS)",
+    faqsTitle: "Preguntas Frecuentes Contrastadas",
+    directoryAssistanceTitle: "¿Prefieres que un profesional te ayude con este trámite?",
+    directoryAssistanceBody:
+      "Encuentra en Servicios Mallorca gestorías administrativas colegiadas, talleres certificados o especialistas contrastados que gestionan este trámite por ti.",
+    exploreServicesBtn: "Ver Profesionales en el Directorio",
+  },
+  ca: {
+    breadcrumbsHome: "Inici",
+    breadcrumbsGuides: "Guies i Tràmits",
+    auditedText: "Darrera auditoria oficial de normativa",
+    keyFactsTitle: "Fitxa Resum del Tràmit",
+    entityLabel: "Organisme Competent",
+    costLabel: "Cost / Taxes",
+    freeLabel: "Gratuït (0 €)",
+    timeLabel: "Temps Estimat",
+    validityLabel: "Període de Validesa",
+    permanentLabel: "Permanent / Indefinit",
+    yearsLabel: "anys",
+    officialPortalBtn: "Accedir a la Seu Electrònica Oficial",
+    antiFraudTitle: "Avís de Seguretat Antifrau (GR-11)",
+    antiFraudBody:
+      "La sol·licitud de cita prèvia per a aquest tràmit és un servei públic GRATUÏT regulat per l'administració. Desconfia d'intermediaris que cobrin per reservar el teu torn.",
+    stepsTitle: "Pas a Pas Oficial per Completar el Tràmit",
+    channelOnline: "💻 En Línia (Seu Electrònica)",
+    channelPresencial: "🏢 Presencial a l'Oficina",
+    channelBoth: "🔄 En Línia o Presencial",
+    officesTitle: "Oficines d'Atenció Presencial i Cita Prèvia",
+    officesSubtitle: "Consulta les seus físiques oficials on pots tramitar presencialment a Mallorca.",
+    callBtn: "Telefonar",
+    appointmentBtn: "Cita Prèvia Oficial",
+    mapBtn: "Com arribar (GPS)",
+    faqsTitle: "Preguntes Freqüents Contrastades",
+    directoryAssistanceTitle: "Prefereixes que un professional t'ajudi amb aquest tràmit?",
+    directoryAssistanceBody:
+      "Troba a Servicios Mallorca gestories administratives col·legiades, tallers certificats o especialistes que gestionen aquest tràmit per tu.",
+    exploreServicesBtn: "Veure Professionals al Directori",
+  },
+  en: {
+    breadcrumbsHome: "Home",
+    breadcrumbsGuides: "Guides & Procedures",
+    auditedText: "Last official regulatory audit",
+    keyFactsTitle: "Procedure Key Facts",
+    entityLabel: "Responsible Authority",
+    costLabel: "Cost / Fees",
+    freeLabel: "Free of charge (0 €)",
+    timeLabel: "Estimated Time",
+    validityLabel: "Validity Period",
+    permanentLabel: "Permanent / Indefinite",
+    yearsLabel: "years",
+    officialPortalBtn: "Access Official Government e-Office",
+    antiFraudTitle: "Anti-Fraud Security Warning (GR-11)",
+    antiFraudBody:
+      "Appointment booking for this procedure is a FREE public service regulated by government authorities. Beware of third parties charging fees to book your slot.",
+    stepsTitle: "Official Step-by-Step Procedure Instructions",
+    channelOnline: "💻 Online (e-Office)",
+    channelPresencial: "🏢 In-Person Office",
+    channelBoth: "🔄 Online or In-Person",
+    officesTitle: "Official Public Service Offices & Appointments",
+    officesSubtitle: "Check verified physical branch locations in Mallorca where you can complete this procedure.",
+    callBtn: "Call",
+    appointmentBtn: "Book Official Appointment",
+    mapBtn: "Directions (GPS)",
+    faqsTitle: "Frequently Asked Questions",
+    directoryAssistanceTitle: "Would you rather have a local professional handle this for you?",
+    directoryAssistanceBody:
+      "Discover licensed administrative agencies, certified auto garages, and qualified professionals on Servicios Mallorca ready to assist you.",
+    exploreServicesBtn: "Browse Directory Professionals",
+  },
+  de: {
+    breadcrumbsHome: "Startseite",
+    breadcrumbsGuides: "Behörden-Leitfäden",
+    auditedText: "Letzte amtliche Rechtsprüfung",
+    keyFactsTitle: "Wichtigste Eckdaten des Amtswegs",
+    entityLabel: "Zuständige Behörde",
+    costLabel: "Kosten / Gebühren",
+    freeLabel: "Kostenlos (0 €)",
+    timeLabel: "Bearbeitungsdauer",
+    validityLabel: "Gültigkeitsdauer",
+    permanentLabel: "Dauerhaft / Unbefristet",
+    yearsLabel: "Jahre",
+    officialPortalBtn: "Zum offiziellen Behördenportal",
+    antiFraudTitle: "Betrugsschutz & Sicherheitshinweis (GR-11)",
+    antiFraudBody:
+      "Die Terminvergabe für diesen Amtsweg ist ein KOSTENLOSER öffentlicher Service der spanischen Behörden. Zahlen Sie keine Vermittlungsgebühren an dubiose Drittanbieter.",
+    stepsTitle: "Offizielle Schritt-für-Schritt-Anleitung",
+    channelOnline: "💻 Online (Elektronisches Portal)",
+    channelPresencial: "🏢 Vor Ort in der Behörde",
+    channelBoth: "🔄 Online oder Vor Ort",
+    officesTitle: "Amtliche Dienststellen & Terminvereinbarung",
+    officesSubtitle: "Finden Sie die offiziellen Behördenstellen auf Mallorca für Ihren persönlichen Termin.",
+    callBtn: "Anrufen",
+    appointmentBtn: "Amtlichen Termin buchen",
+    mapBtn: "Anfahrt (GPS)",
+    faqsTitle: "Geprüfte Häufige Fragen (FAQ)",
+    directoryAssistanceTitle: "Möchten Sie diesen Amtsweg lieber einem Fachmann überlassen?",
+    directoryAssistanceBody:
+      "Finden Sie auf Servicios Mallorca geprüfte Gestorías, zertifizierte Kfz-Werkstätten und Rechtsberater, die diesen Behördengang für Sie erledigen.",
+    exploreServicesBtn: "Fachleute im Verzeichnis ansehen",
+  },
+};
+
+const l = labels[locale] || labels.es;
+
+// Schema.org HowTo + FAQPage
+const schemaOrg = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "HowTo",
+      name: title,
+      description: summary,
+      totalTime: "P1D",
+      step: guide.steps.map((step) => ({
+        "@type": "HowToStep",
+        position: step.stepNumber,
+        name: step.title[locale] || step.title.es,
+        text: step.description[locale] || step.description.es,
+        url: `https://serviciosmallorca.com${prefix}guias/${guide.slug}#paso-${step.stepNumber}`,
+      })),
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: guide.faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question[locale] || faq.question.es,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: faq.answer[locale] || faq.answer.es,
+        },
+      })),
+    },
+  ],
+};
+---
+
+<BaseLayout title={`${title} | Servicios Mallorca`} lang={locale} description={summary}>
+  <script type="application/ld+json" set:html={JSON.stringify(schemaOrg)} />
+
+  <Navbar currentLocale={locale} translations={translations} getLangPrefix={getLangPrefix} />
+
+  <main class="guide-detail-container">
+    <!-- Migas de Pan (Breadcrumbs) -->
+    <nav class="guide-breadcrumbs" aria-label="Breadcrumb">
+      <ol class="breadcrumbs-list">
+        <li><a href={prefix || "/"} class="breadcrumb-link">{l.breadcrumbsHome}</a></li>
+        <li class="breadcrumb-separator" aria-hidden="true">/</li>
+        <li><a href={`${prefix}guias`} class="breadcrumb-link">{l.breadcrumbsGuides}</a></li>
+        <li class="breadcrumb-separator" aria-hidden="true">/</li>
+        <li class="breadcrumb-current" aria-current="page">{title}</li>
+      </ol>
+    </nav>
+
+    <!-- Header de la Guía -->
+    <header class="guide-header">
+      <div class="header-badges-row">
+        <span class="guide-entity-badge">
+          🏛️ {guide.officialEntity}
+        </span>
+        <span class="guide-audited-badge">
+          ✅ {l.auditedText}: {guide.officialLastAudited}
+        </span>
+      </div>
+
+      <div class="guide-title-row">
+        <span class="guide-main-icon" aria-hidden="true">{guide.icon}</span>
+        <h1 class="guide-main-title">{title}</h1>
+      </div>
+
+      <p class="guide-lead-summary">{summary}</p>
+    </header>
+
+    <!-- Alerta de Seguridad Antifraude -->
+    <aside class="guide-antifraud-alert" role="alert">
+      <div class="antifraud-icon" aria-hidden="true">🛡️</div>
+      <div class="antifraud-content">
+        <h3 class="antifraud-title">{l.antiFraudTitle}</h3>
+        <p class="antifraud-body">{l.antiFraudBody}</p>
+      </div>
+    </aside>
+
+    <!-- Matriz de Datos Clave (Key Facts Grid) -->
+    <section class="guide-facts-section" aria-label={l.keyFactsTitle}>
+      <div class="facts-grid">
+        <div class="fact-card">
+          <span class="fact-icon" aria-hidden="true">🏛️</span>
+          <span class="fact-label">{l.entityLabel}</span>
+          <span class="fact-value">{guide.officialEntity}</span>
+        </div>
+
+        <div class="fact-card">
+          <span class="fact-icon" aria-hidden="true">💶</span>
+          <span class="fact-label">{l.costLabel}</span>
+          <span class="fact-value highlight-gold">
+            {guide.fee.isFree ? l.freeLabel : `${guide.fee.amount} € ${feeDesc ? `(${feeDesc})` : ""}`}
+          </span>
+        </div>
+
+        <div class="fact-card">
+          <span class="fact-icon" aria-hidden="true">⏱️</span>
+          <span class="fact-label">{l.timeLabel}</span>
+          <span class="fact-value">{time}</span>
+        </div>
+
+        <div class="fact-card">
+          <span class="fact-icon" aria-hidden="true">📅</span>
+          <span class="fact-label">{l.validityLabel}</span>
+          <span class="fact-value">
+            {guide.validityYears ? `${guide.validityYears} ${l.yearsLabel}` : l.permanentLabel}
+          </span>
+        </div>
+      </div>
+
+      <!-- Enlace oficial directo a la Sede -->
+      <div class="official-cta-box">
+        <a
+          href={guide.officialSourceUrl}
+          target="_blank"
+          rel="noopener noreferrer nofollow"
+          class="official-portal-btn"
+        >
+          <span>{l.officialPortalBtn}</span>
+          <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18" aria-hidden="true">
+            <path
+              fill-rule="evenodd"
+              d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h4a.75.75 0 010 1.5h-4z"
+              clip-rule="evenodd"></path>
+            <path
+              fill-rule="evenodd"
+              d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.81l-9.247 8.353a.75.75 0 00-.053 1.06z"
+              clip-rule="evenodd"></path>
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- Checklist Interactivo de Documentación Requerida -->
+    <CitizenChecklist guideId={guide.id} documents={guide.documents} lang={locale} />
+
+    <!-- Paso a Paso Secuencial -->
+    <section class="guide-steps-section" aria-label={l.stepsTitle}>
+      <h2 class="section-title">
+        <span class="section-title-icon" aria-hidden="true">🔢</span>
+        <span>{l.stepsTitle}</span>
+      </h2>
+
+      <div class="steps-timeline">
+        {
+          guide.steps.map((step) => {
+            const stepTitle = step.title[locale] || step.title.es;
+            const stepDesc = step.description[locale] || step.description.es;
+            const notice = step.importantNotice?.[locale] || step.importantNotice?.es;
+
+            let channelLabel = l.channelBoth;
+            if (step.channel === "online") channelLabel = l.channelOnline;
+            if (step.channel === "presencial") channelLabel = l.channelPresencial;
+
+            return (
+              <article class="step-card" id={`paso-${step.stepNumber}`}>
+                <div class="step-header">
+                  <div class="step-number-badge">{step.stepNumber}</div>
+                  <div class="step-title-wrapper">
+                    <h3 class="step-title">{stepTitle}</h3>
+                    <span class={`step-channel-badge channel-${step.channel}`}>{channelLabel}</span>
+                  </div>
+                </div>
+
+                <div class="step-content">
+                  <p class="step-desc">{stepDesc}</p>
+
+                  {notice && (
+                    <div class="step-notice-box">
+                      <span class="notice-icon" aria-hidden="true">
+                        ⚠️
+                      </span>
+                      <p class="notice-text">{notice}</p>
+                    </div>
+                  )}
+
+                  {step.officialUrl && (
+                    <div class="step-action-row">
+                      <a
+                        href={step.officialUrl}
+                        target="_blank"
+                        rel="noopener noreferrer nofollow"
+                        class="step-official-link"
+                      >
+                        <span>{l.officialPortalBtn}</span>
+                        <svg viewBox="0 0 20 20" fill="currentColor" width="14" height="14" aria-hidden="true">
+                          <path
+                            fill-rule="evenodd"
+                            d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+                      </a>
+                    </div>
+                  )}
+                </div>
+              </article>
+            );
+          })
+        }
+      </div>
+    </section>
+
+    <!-- Directorio de Oficinas Físicas y Sedes Oficiales -->
+    <section class="guide-offices-section" aria-label={l.officesTitle}>
+      <header class="offices-header">
+        <h2 class="section-title">
+          <span class="section-title-icon" aria-hidden="true">🏢</span>
+          <span>{l.officesTitle}</span>
+        </h2>
+        <p class="section-subtitle">{l.officesSubtitle}</p>
+      </header>
+
+      <div class="offices-grid">
+        {
+          guide.offices.map((office) => {
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${office.coordinates.lat},${office.coordinates.lng}`;
+            const cleanPhone = office.phone.replace(/\s+/g, "");
+
+            return (
+              <div class="office-card">
+                <h3 class="office-name">{office.name}</h3>
+                <p class="office-address">📍 {office.address}</p>
+
+                <div class="office-actions">
+                  <a href={`tel:${cleanPhone}`} class="office-btn btn-phone">
+                    <span>📞 {l.callBtn}</span>
+                  </a>
+                  <a
+                    href={office.appointmentUrl}
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                    class="office-btn btn-appointment"
+                  >
+                    <span>📅 {l.appointmentBtn}</span>
+                  </a>
+                  <a href={mapsUrl} target="_blank" rel="noopener noreferrer nofollow" class="office-btn btn-map">
+                    <span>🗺️ {l.mapBtn}</span>
+                  </a>
+                </div>
+              </div>
+            );
+          })
+        }
+      </div>
+    </section>
+
+    <!-- Acordeón de FAQs Oficiales -->
+    <section class="guide-faqs-section" aria-label={l.faqsTitle}>
+      <h2 class="section-title">
+        <span class="section-title-icon" aria-hidden="true">❓</span>
+        <span>{l.faqsTitle}</span>
+      </h2>
+
+      <div class="faqs-list">
+        {
+          guide.faqs.map((faq) => {
+            const q = faq.question[locale] || faq.question.es;
+            const a = faq.answer[locale] || faq.answer.es;
+
+            return (
+              <details class="faq-item">
+                <summary class="faq-question">
+                  <span>{q}</span>
+                  <span class="faq-chevron" aria-hidden="true">
+                    ▼
+                  </span>
+                </summary>
+                <div class="faq-answer">
+                  <p>{a}</p>
+                </div>
+              </details>
+            );
+          })
+        }
+      </div>
+    </section>
+
+    <!-- Conexión Cruzada con el Directorio Local de Servicios Mallorca -->
+    <section class="guide-directory-bridge" aria-label={l.directoryAssistanceTitle}>
+      <div class="bridge-icon" aria-hidden="true">🤝</div>
+      <div class="bridge-content">
+        <h3 class="bridge-title">{l.directoryAssistanceTitle}</h3>
+        <p class="bridge-body">{l.directoryAssistanceBody}</p>
+        <a href={`${prefix}servicios`} class="bridge-btn">
+          <span>{l.exploreServicesBtn}</span>
+          <svg viewBox="0 0 20 20" fill="currentColor" width="16" height="16" aria-hidden="true">
+            <path
+              fill-rule="evenodd"
+              d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z"
+              clip-rule="evenodd"></path>
+          </svg>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <Footer currentLocale={locale} translations={translations} getLangPrefix={getLangPrefix} />
+</BaseLayout>
+
+<style>
+  .guide-detail-container {
+    max-width: var(--max-width, 1080px);
+    margin: 0 auto;
+    padding: 2rem 1.5rem 5rem 1.5rem;
+  }
+
+  /* Breadcrumbs */
+  .guide-breadcrumbs {
+    margin-bottom: 2rem;
+  }
+
+  .breadcrumbs-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+  }
+
+  .breadcrumb-link {
+    color: var(--color-text-muted, #718096);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .breadcrumb-link:hover {
+    color: var(--color-gold, #c89d5c);
+  }
+
+  .breadcrumb-separator {
+    color: var(--color-border, #cbd5e0);
+  }
+
+  .breadcrumb-current {
+    color: var(--color-text-main, #1a202c);
+    font-weight: 600;
+  }
+
+  /* Header */
+  .guide-header {
+    margin-bottom: 2.25rem;
+  }
+
+  .header-badges-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .guide-entity-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.3rem 0.8rem;
+    background: rgba(200, 157, 92, 0.12);
+    border: 1px solid rgba(200, 157, 92, 0.3);
+    border-radius: var(--radius-full, 9999px);
+    color: var(--color-gold-dark, #9a7332);
+    font-size: 0.85rem;
+    font-weight: 700;
+  }
+
+  .guide-audited-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.3rem 0.8rem;
+    background: rgba(34, 197, 94, 0.08);
+    border: 1px solid rgba(34, 197, 94, 0.25);
+    border-radius: var(--radius-full, 9999px);
+    color: #166534;
+    font-size: 0.82rem;
+    font-weight: 600;
+  }
+
+  .guide-title-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .guide-main-icon {
+    font-size: 2.75rem;
+    line-height: 1;
+  }
+
+  .guide-main-title {
+    margin: 0;
+    font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+    font-weight: 800;
+    color: var(--color-text-main, #1a202c);
+    line-height: 1.25;
+  }
+
+  .guide-lead-summary {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: var(--color-text-muted, #4a5568);
+    margin: 0;
+  }
+
+  /* Alerta Antifraude */
+  .guide-antifraud-alert {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    background: rgba(234, 179, 8, 0.08);
+    border: 1px solid rgba(234, 179, 8, 0.35);
+    border-radius: var(--radius-lg, 12px);
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .antifraud-icon {
+    font-size: 1.75rem;
+    flex-shrink: 0;
+  }
+
+  .antifraud-title {
+    margin: 0 0 0.35rem 0;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #854d0e;
+  }
+
+  .antifraud-body {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #713f12;
+  }
+
+  /* Key Facts Grid */
+  .guide-facts-section {
+    background: var(--color-bg-card, #ffffff);
+    border: 1px solid var(--color-border, #e2e8f0);
+    border-radius: var(--radius-xl, 16px);
+    padding: 1.75rem;
+    margin-bottom: 2.5rem;
+    box-shadow: var(--shadow-sm, 0 1px 3px rgba(0, 0, 0, 0.05));
+  }
+
+  .facts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .fact-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    padding: 1rem;
+    background: var(--color-bg-alt, #f7fafc);
+    border: 1px solid var(--color-border, #edf2f7);
+    border-radius: var(--radius-md, 10px);
+  }
+
+  .fact-icon {
+    font-size: 1.35rem;
+  }
+
+  .fact-label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted, #718096);
+  }
+
+  .fact-value {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--color-text-main, #1a202c);
+  }
+
+  .fact-value.highlight-gold {
+    color: var(--color-gold-dark, #9a7332);
+  }
+
+  .official-cta-box {
+    text-align: center;
+  }
+
+  .official-portal-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: var(--color-gold, #c89d5c);
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 0.85rem 1.75rem;
+    border-radius: var(--radius-md, 8px);
+    text-decoration: none;
+    transition:
+      background 0.2s ease,
+      transform 0.15s ease;
+  }
+
+  .official-portal-btn:hover {
+    background: var(--color-gold-dark, #a87e3d);
+    transform: translateY(-1px);
+  }
+
+  /* Secciones comunes */
+  .section-title {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 1.45rem;
+    font-weight: 800;
+    color: var(--color-text-main, #1a202c);
+    margin: 0 0 1.25rem 0;
+  }
+
+  .section-subtitle {
+    margin: -0.75rem 0 1.5rem 0;
+    font-size: 0.95rem;
+    color: var(--color-text-muted, #718096);
+  }
+
+  /* Steps Timeline */
+  .guide-steps-section {
+    margin-bottom: 3.5rem;
+  }
+
+  .steps-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .step-card {
+    background: var(--color-bg-card, #ffffff);
+    border: 1px solid var(--color-border, #e2e8f0);
+    border-radius: var(--radius-lg, 12px);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-sm, 0 1px 3px rgba(0, 0, 0, 0.05));
+    transition: border-color 0.2s ease;
+  }
+
+  .step-card:hover {
+    border-color: var(--color-gold, #c89d5c);
+  }
+
+  .step-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .step-number-badge {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--color-gold, #c89d5c);
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .step-title-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .step-title {
+    margin: 0;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--color-text-main, #1a202c);
+  }
+
+  .step-channel-badge {
+    display: inline-flex;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.15rem 0.55rem;
+    border-radius: var(--radius-sm, 4px);
+    width: fit-content;
+  }
+
+  .step-channel-badge.channel-online {
+    background: rgba(59, 130, 246, 0.1);
+    color: #1d4ed8;
+    border: 1px solid rgba(59, 130, 246, 0.25);
+  }
+
+  .step-channel-badge.channel-presencial {
+    background: rgba(168, 85, 247, 0.1);
+    color: #7e22ce;
+    border: 1px solid rgba(168, 85, 247, 0.25);
+  }
+
+  .step-channel-badge.channel-ambos {
+    background: rgba(16, 185, 129, 0.1);
+    color: #047857;
+    border: 1px solid rgba(16, 185, 129, 0.25);
+  }
+
+  .step-desc {
+    margin: 0 0 1rem 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--color-text-main, #2d3748);
+  }
+
+  .step-notice-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    background: rgba(239, 68, 68, 0.06);
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    border-radius: var(--radius-md, 8px);
+    padding: 0.75rem 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .notice-icon {
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+
+  .notice-text {
+    margin: 0;
+    font-size: 0.85rem;
+    line-height: 1.45;
+    color: #991b1b;
+    font-weight: 500;
+  }
+
+  .step-action-row {
+    margin-top: 0.75rem;
+  }
+
+  .step-official-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    color: var(--color-gold-dark, #9a7332);
+    font-weight: 600;
+    font-size: 0.88rem;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .step-official-link:hover {
+    color: var(--color-gold, #c89d5c);
+  }
+
+  /* Offices Grid */
+  .guide-offices-section {
+    margin-bottom: 3.5rem;
+  }
+
+  .offices-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .office-card {
+    background: var(--color-bg-card, #ffffff);
+    border: 1px solid var(--color-border, #e2e8f0);
+    border-radius: var(--radius-lg, 12px);
+    padding: 1.35rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: var(--shadow-sm, 0 1px 3px rgba(0, 0, 0, 0.05));
+  }
+
+  .office-name {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--color-text-main, #1a202c);
+  }
+
+  .office-address {
+    margin: 0 0 1.25rem 0;
+    font-size: 0.88rem;
+    color: var(--color-text-muted, #718096);
+    line-height: 1.45;
+  }
+
+  .office-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .office-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.4rem 0.75rem;
+    border-radius: var(--radius-sm, 6px);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.15s ease;
+  }
+
+  .btn-phone {
+    background: var(--color-bg-alt, #f7fafc);
+    border: 1px solid var(--color-border, #cbd5e0);
+    color: var(--color-text-main, #2d3748);
+  }
+
+  .btn-appointment {
+    background: rgba(200, 157, 92, 0.12);
+    border: 1px solid rgba(200, 157, 92, 0.3);
+    color: var(--color-gold-dark, #9a7332);
+  }
+
+  .btn-appointment:hover {
+    background: var(--color-gold, #c89d5c);
+    color: #ffffff;
+  }
+
+  .btn-map {
+    background: var(--color-bg-alt, #f7fafc);
+    border: 1px solid var(--color-border, #cbd5e0);
+    color: var(--color-text-muted, #4a5568);
+  }
+
+  /* FAQs */
+  .guide-faqs-section {
+    margin-bottom: 3.5rem;
+  }
+
+  .faqs-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .faq-item {
+    background: var(--color-bg-card, #ffffff);
+    border: 1px solid var(--color-border, #e2e8f0);
+    border-radius: var(--radius-md, 10px);
+    overflow: hidden;
+  }
+
+  .faq-question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.1rem 1.25rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-text-main, #1a202c);
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+  }
+
+  .faq-question::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-chevron {
+    font-size: 0.75rem;
+    color: var(--color-gold, #c89d5c);
+    transition: transform 0.2s ease;
+  }
+
+  .faq-item[open] .faq-chevron {
+    transform: rotate(180deg);
+  }
+
+  .faq-answer {
+    padding: 0 1.25rem 1.25rem 1.25rem;
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: var(--color-text-muted, #4a5568);
+  }
+
+  .faq-answer p {
+    margin: 0;
+  }
+
+  /* Directory Bridge */
+  .guide-directory-bridge {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    background: linear-gradient(135deg, rgba(200, 157, 92, 0.08), rgba(200, 157, 92, 0.02));
+    border: 1px solid rgba(200, 157, 92, 0.25);
+    border-radius: var(--radius-xl, 16px);
+    padding: 2rem;
+  }
+
+  .bridge-icon {
+    font-size: 2.25rem;
+    flex-shrink: 0;
+  }
+
+  .bridge-title {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--color-text-main, #1a202c);
+  }
+
+  .bridge-body {
+    margin: 0 0 1.25rem 0;
+    font-size: 0.95rem;
+    line-height: 1.55;
+    color: var(--color-text-muted, #4a5568);
+  }
+
+  .bridge-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    background: var(--color-text-main, #1a202c);
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.88rem;
+    padding: 0.65rem 1.25rem;
+    border-radius: var(--radius-md, 8px);
+    text-decoration: none;
+    transition: background 0.2s ease;
+  }
+
+  .bridge-btn:hover {
+    background: var(--color-gold, #c89d5c);
+  }
+
+  @media (max-width: 640px) {
+    .guide-title-row {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+
+    .guide-directory-bridge {
+      flex-direction: column;
+      padding: 1.5rem;
+    }
+  }
+</style>

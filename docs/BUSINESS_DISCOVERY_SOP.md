@@ -75,6 +75,7 @@ reflejará como **Indexado**.
 
 - **GR-11 (Zero Fake Data):** prohibido escribir candidatos sin contrastar. El script jamás inventa:
   solo procesa el catálogo o candidatos que tú declaras.
+- **Contraste con Fuentes Oficiales e Institucionales:** Siempre que aplique, contrastar el candidato con los registros del Consell (DRIAT para turismo/alquileres), Registros Sanitarios (REGEPA/Ib-Salut), Colegios Oficiales (COMIB, ICAIB) y BORME, según se detalla en [OFFICIAL_SOURCES_AND_CITIZEN_INTELLIGENCE.md](OFFICIAL_SOURCES_AND_CITIZEN_INTELLIGENCE.md).
 - **Orden inmutable:** Categoría → Puntaje → Alfabético. No alteres el orden en el script.
 - **Sin duplicados:** el motor descarta candidatos cuyo `id`/`name` ya esté en el catálogo.
 - **Fidelidad multi-mapa (GR-12):** cada negocio debe enlazar su ficha oficial de Google/Apple/Bing Maps.

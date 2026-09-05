@@ -1,0 +1,313 @@
+---
+/**
+ * CitizenGuideCard.astro
+ *
+ * Tarjeta de Trámite / Guía Ciudadana Oficial de Mallorca.
+ * Cumple con GR-01 (CSS tokens de global.css), GR-02 (responsive),
+ * GR-03 (TypeScript estricto), GR-04 (i18n cuatrilingüe),
+ * GR-07 (accesibilidad ARIA) y GR-11 (Zero Fake Data).
+ */
+import type { CitizenGuide } from "../data/citizenGuides";
+import type { Locale } from "../i18n";
+
+export interface Props {
+  guide: CitizenGuide;
+  lang: Locale;
+  prefix: string;
+}
+
+const { guide, lang, prefix } = Astro.props;
+
+const title = guide.title[lang] || guide.title.es;
+const summary = guide.summary[lang] || guide.summary.es;
+const time = guide.estimatedTime[lang] || guide.estimatedTime.es;
+const feeDesc = guide.fee.description?.[lang] || guide.fee.description?.es;
+
+const entityShortNames: Record<string, string> = {
+  "Govern CAIB": "Govern CAIB",
+  "Consell de Mallorca": "Consell de Mallorca",
+  "Ajuntament de Palma": "Ajuntament de Palma",
+  "Ajuntament de Calvià": "Ajuntament de Calvià",
+  "Ajuntament de Manacor": "Ajuntament de Manacor",
+  "Ajuntament d'Inca": "Ajuntament d'Inca",
+  "Servei de Salut (Ib-Salut)": "Ib-Salut",
+  "Ministerio del Interior / Extranjería": "Extranjería",
+};
+
+const labels: Record<
+  Locale,
+  {
+    free: string;
+    viewGuide: string;
+    docsCount: string;
+    stepsCount: string;
+    officialAudited: string;
+  }
+> = {
+  es: {
+    free: "Gratuito",
+    viewGuide: "Ver Guía Oficial Paso a Paso",
+    docsCount: "requisitos",
+    stepsCount: "pasos",
+    officialAudited: "Auditado",
+  },
+  ca: {
+    free: "Gratuït",
+    viewGuide: "Veure Guia Oficial Pas a Pas",
+    docsCount: "requisits",
+    stepsCount: "passes",
+    officialAudited: "Auditat",
+  },
+  en: {
+    free: "Free of charge",
+    viewGuide: "View Step-by-Step Official Guide",
+    docsCount: "requirements",
+    stepsCount: "steps",
+    officialAudited: "Audited",
+  },
+  de: {
+    free: "Kostenlos",
+    viewGuide: "Offiziellen Leitfaden ansehen",
+    docsCount: "Nachweise",
+    stepsCount: "Schritte",
+    officialAudited: "Geprüft",
+  },
+};
+
+const l = labels[lang] || labels.es;
+const guideUrl = `${prefix}guias/${guide.slug}`;
+---
+
+<article class="citizen-guide-card" data-category={guide.category}>
+  <div class="card-header">
+    <div class="card-entity-badge">
+      <span class="entity-dot" aria-hidden="true"></span>
+      <span class="entity-name">{entityShortNames[guide.officialEntity] || guide.officialEntity}</span>
+    </div>
+    <span class="card-icon" aria-hidden="true">{guide.icon}</span>
+  </div>
+
+  <div class="card-body">
+    <h3 class="card-title">
+      <a href={guideUrl} class="card-title-link">{title}</a>
+    </h3>
+    <p class="card-summary">{summary}</p>
+  </div>
+
+  <div class="card-badges-row">
+    <!-- Badge de Coste -->
+    {
+      guide.fee.isFree ? (
+        <span class="guide-badge badge-free">
+          <svg viewBox="0 0 20 20" fill="currentColor" width="14" height="14" aria-hidden="true">
+            <path
+              fill-rule="evenodd"
+              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+              clip-rule="evenodd"
+            />
+          </svg>
+          {l.free}
+        </span>
+      ) : (
+        <span class="guide-badge badge-fee">
+          💶 {guide.fee.amount} € {feeDesc ? `(${feeDesc})` : ""}
+        </span>
+      )
+    }
+
+    <!-- Badge de Tiempo Estimado -->
+    <span class="guide-badge badge-time">
+      ⏱️ {time}
+    </span>
+  </div>
+
+  <div class="card-footer">
+    <div class="guide-meta-counters">
+      <span class="meta-item">📋 {guide.documents.length} {l.docsCount}</span>
+      <span class="meta-divider">·</span>
+      <span class="meta-item">🔢 {guide.steps.length} {l.stepsCount}</span>
+    </div>
+
+    <a href={guideUrl} class="guide-action-btn">
+      <span>{l.viewGuide}</span>
+      <svg viewBox="0 0 20 20" fill="currentColor" width="16" height="16" aria-hidden="true">
+        <path
+          fill-rule="evenodd"
+          d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </a>
+  </div>
+</article>
+
+<style>
+  .citizen-guide-card {
+    background: var(--color-bg-card, #ffffff);
+    border: 1px solid var(--color-border, #e2e8f0);
+    border-radius: var(--radius-lg, 12px);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease,
+      border-color 0.2s ease;
+    box-shadow: var(--shadow-sm, 0 1px 3px rgba(0, 0, 0, 0.05));
+    position: relative;
+  }
+
+  .citizen-guide-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--color-gold, #c89d5c);
+    box-shadow: var(--shadow-md, 0 4px 12px rgba(0, 0, 0, 0.08));
+  }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+
+  .card-entity-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.25rem 0.65rem;
+    background: rgba(200, 157, 92, 0.1);
+    color: var(--color-gold-dark, #9a7332);
+    border: 1px solid rgba(200, 157, 92, 0.25);
+    border-radius: var(--radius-full, 9999px);
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+
+  .entity-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-gold, #c89d5c);
+  }
+
+  .card-icon {
+    font-size: 1.75rem;
+    line-height: 1;
+  }
+
+  .card-body {
+    flex-grow: 1;
+    margin-bottom: 1.25rem;
+  }
+
+  .card-title {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.15rem;
+    font-weight: 700;
+    line-height: 1.35;
+  }
+
+  .card-title-link {
+    color: var(--color-text-main, #1a202c);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .card-title-link:hover {
+    color: var(--color-gold, #c89d5c);
+  }
+
+  .card-summary {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--color-text-muted, #718096);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .card-badges-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .guide-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 0.25rem 0.55rem;
+    border-radius: var(--radius-sm, 6px);
+  }
+
+  .badge-free {
+    background: rgba(34, 197, 94, 0.12);
+    color: #15803d;
+    border: 1px solid rgba(34, 197, 94, 0.25);
+  }
+
+  .badge-fee {
+    background: rgba(234, 179, 8, 0.12);
+    color: #a16207;
+    border: 1px solid rgba(234, 179, 8, 0.25);
+  }
+
+  .badge-time {
+    background: var(--color-bg-alt, #f7fafc);
+    color: var(--color-text-muted, #4a5568);
+    border: 1px solid var(--color-border, #e2e8f0);
+  }
+
+  .card-footer {
+    border-top: 1px solid var(--color-border, #edf2f7);
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .guide-meta-counters {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    color: var(--color-text-muted, #718096);
+  }
+
+  .meta-divider {
+    color: var(--color-border, #cbd5e0);
+  }
+
+  .guide-action-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    background: var(--color-gold, #c89d5c);
+    color: #ffffff;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0.6rem 1rem;
+    border-radius: var(--radius-md, 8px);
+    text-decoration: none;
+    transition:
+      background 0.2s ease,
+      transform 0.15s ease;
+  }
+
+  .guide-action-btn:hover {
+    background: var(--color-gold-dark, #a87e3d);
+    transform: translateY(-1px);
+  }
+
+  @media (max-width: 480px) {
+    .citizen-guide-card {
+      padding: 1.15rem;
+    }
+  }
+</style>
