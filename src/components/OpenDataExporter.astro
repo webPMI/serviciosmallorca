@@ -1,0 +1,648 @@
+---
+/**
+ * OpenDataExporter.astro
+ *
+ * Módulo de descarga de Datos Abiertos (Open Data) en formatos estándar CSV y JSON.
+ * Permite a analistas, periodistas, empresas y ciudadanos exportar directamente
+ * los datasets e indicadores oficiales de Mallorca (IBESTAT, ATIB, SOIB, Consell).
+ *
+ * Cumple con GR-01 (CSS tokens), GR-02 (responsive), GR-04 (i18n cuatrilingüe),
+ * GR-07 (accesibilidad ARIA), GR-09 (cero dependencias externas) y GR-11 (Zero Fake Data).
+ */
+import type { Locale } from "../i18n";
+import { OFFICIAL_STATISTICS } from "../data/officialStats";
+import { HISTORICAL_SECTOR_SERIES } from "../data/historicalSectorStats";
+
+export interface Props {
+  lang: Locale;
+  datasetMode?: "all" | "indicators" | "historical";
+}
+
+const { lang, datasetMode = "all" } = Astro.props;
+
+// Preparación de datasets para serialización client-side
+const indicatorsData = OFFICIAL_STATISTICS.map((s) => ({
+  id: s.id,
+  categoria: s.category,
+  titulo_es: s.title.es,
+  titulo_ca: s.title.ca,
+  titulo_en: s.title.en,
+  titulo_de: s.title.de,
+  valor: s.value,
+  unidad: s.unit[lang] || s.unit.es,
+  periodo: s.period,
+  fuente_oficial: s.sourceEntity,
+  codigo_serie: s.officialSeriesCode || "",
+  alcance: s.dataScope,
+  variacion_porcentaje: s.changeRate ? s.changeRate.percentage : "",
+  direccion_tendencia: s.changeRate ? s.changeRate.direction : "",
+  url_fuente: s.sourceUrl,
+}));
+
+const historicalData = HISTORICAL_SECTOR_SERIES.map((s) => ({
+  id: s.id,
+  sector: s.sectorKey,
+  tema: s.theme,
+  titulo: s.title[lang] || s.title.es,
+  unidad: s.unit[lang] || s.unit.es,
+  fuente: s.sourceEntity,
+  codigo_oficial: s.officialSeriesCode,
+  alcance: s.dataScope,
+  cambio_10_anos_pct: s.insights.tenYearChangePct,
+  cambio_20_anos_pct: s.insights.twentyYearChangePct,
+  pico_semestre: s.insights.peakSemester,
+  pico_valor: s.insights.peakValueFormatted,
+  suelo_semestre: s.insights.troughSemester,
+  suelo_valor: s.insights.troughValueFormatted,
+  total_semestres_registrados: s.dataPoints.length,
+  serie_temporal: s.dataPoints.map((dp) => ({
+    semestre: dp.period,
+    ano: dp.year,
+    semestre_num: dp.semester,
+    valor_numerico: dp.value,
+    valor_formateado: dp.formattedValue,
+  })),
+}));
+
+const labels: Record<
+  Locale,
+  {
+    badge: string;
+    title: string;
+    subtitle: string;
+    card1Title: string;
+    card1Desc: string;
+    card1Records: string;
+    card2Title: string;
+    card2Desc: string;
+    card2Records: string;
+    downloadCsv: string;
+    downloadJson: string;
+    licenseNote: string;
+    downloadSuccess: string;
+  }
+> = {
+  es: {
+    badge: "Open Data & Reutilización Oficial",
+    title: "Exportador de Datos Abiertos de Mallorca",
+    subtitle:
+      "Descarga directamente los conjuntos de datos en formatos abiertos (CSV con UTF-8 BOM y JSON). Sin registros ni restricciones.",
+    card1Title: "Indicadores Oficiales Insulares (2025/2026)",
+    card1Desc: "Métricas socioeconómicas, demográficas, empleo, empresas y movilidad del IBESTAT, SOIB y Consell.",
+    card1Records: "18 indicadores clave contrastados",
+    card2Title: "Series Históricas Semestrales (2006–2026)",
+    card2Desc: "20 años de evolución económica insular divididos en 41 semestres continuos a través de 16 sectores estratégicos.",
+    card2Records: "16 sectores x 41 semestres (656 registros temporales)",
+    downloadCsv: "Descargar CSV",
+    downloadJson: "Descargar JSON",
+    licenseNote:
+      "Datos abiertos bajo principios de reutilización del sector público (Ley 37/2007). Cita recomendada: IBESTAT / ServiciosMallorca Open Data.",
+    downloadSuccess: "Archivo descargado con éxito:",
+  },
+  ca: {
+    badge: "Open Data & Reutilització Oficial",
+    title: "Exportador de Dades Obertes de Mallorca",
+    subtitle:
+      "Descarrega directament els conjunts de dades en formats oberts (CSV amb UTF-8 BOM i JSON). Sense registres ni restriccions.",
+    card1Title: "Indicadors Oficials Insulars (2025/2026)",
+    card1Desc: "Mètriques socioeconòmiques, demogràfiques, ocupació, empreses i mobilitat de l'IBESTAT, SOIB i Consell.",
+    card1Records: "18 indicadors clau contrastats",
+    card2Title: "Sèries Històriques Semestrals (2006–2026)",
+    card2Desc: "20 anys d'evolució econòmica insular dividits en 41 semestres continus a través de 16 sectors estratègics.",
+    card2Records: "16 sectors x 41 semestres (656 registres temporals)",
+    downloadCsv: "Descarregar CSV",
+    downloadJson: "Descarregar JSON",
+    licenseNote:
+      "Dades obertes sota principis de reutilització del sector públic (Llei 37/2007). Citació recomanada: IBESTAT / ServiciosMallorca Open Data.",
+    downloadSuccess: "Arxiu descarregat amb èxit:",
+  },
+  en: {
+    badge: "Open Data & Official Reuse",
+    title: "Mallorca Open Data Exporter",
+    subtitle:
+      "Directly download official datasets in standard open formats (CSV with UTF-8 BOM and JSON). No registration required.",
+    card1Title: "Island Official Indicators (2025/2026)",
+    card1Desc: "Socioeconomic, demographic, employment, business, and mobility metrics from IBESTAT, SOIB, and Consell.",
+    card1Records: "18 verified key indicators",
+    card2Title: "Semiannual Historical Time Series (2006–2026)",
+    card2Desc: "20 years of island economic transformation over 41 continuous semesters across 16 strategic sectors.",
+    card2Records: "16 sectors x 41 semesters (656 time-series records)",
+    downloadCsv: "Download CSV",
+    downloadJson: "Download JSON",
+    licenseNote:
+      "Public sector open data reuse compliant (Spanish Law 37/2007). Recommended citation: IBESTAT / ServiciosMallorca Open Data.",
+    downloadSuccess: "File downloaded successfully:",
+  },
+  de: {
+    badge: "Open Data & Offizielle Weiternutzung",
+    title: "Mallorca Open-Data-Exporteur",
+    subtitle:
+      "Offizielle Datensätze direkt in offenen Standardformaten herunterladen (CSV mit UTF-8 BOM und JSON). Frei und ohne Registrierung.",
+    card1Title: "Offizielle Inselindikatoren (2025/2026)",
+    card1Desc: "Sozioökonomische, demografische, Beschäftigungs- und Mobilitätsdaten von IBESTAT, SOIB und Inselrat.",
+    card1Records: "18 geprüfte Schlüsselindikatoren",
+    card2Title: "Halbjährliche Zeitreihen (2006–2026)",
+    card2Desc: "20 Jahre wirtschaftliche Entwicklung über 41 Halbjahre hinweg in 16 strategischen Schlüsselsektoren.",
+    card2Records: "16 Sektoren x 41 Halbjahre (656 Datensätze)",
+    downloadCsv: "CSV herunterladen",
+    downloadJson: "JSON herunterladen",
+    licenseNote:
+      "Offene Daten nach Richtlinien zur Weiterverwendung von Informationen des öffentlichen Sektors. Zitat: IBESTAT / ServiciosMallorca.",
+    downloadSuccess: "Datei erfolgreich heruntergeladen:",
+  },
+};
+
+const t = labels[lang] || labels.es;
+---
+
+<section class="open-data-container" id="opendata-export" aria-label={t.title}>
+  <!-- Scripts incrustados con datos JSON estructurados -->
+  <script
+    type="application/json"
+    id="raw-data-indicators"
+    set:html={JSON.stringify(indicatorsData)}
+  ></script>
+  <script
+    type="application/json"
+    id="raw-data-historical"
+    set:html={JSON.stringify(historicalData)}
+  ></script>
+
+  <header class="open-data-header">
+    <div class="open-data-badge">
+      <svg
+        class="badge-icon"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+        <polyline points="7 10 12 15 17 10"></polyline>
+        <line x1="12" y1="15" x2="12" y2="3"></line>
+      </svg>
+      <span>{t.badge}</span>
+    </div>
+    <h2 class="open-data-title">{t.title}</h2>
+    <p class="open-data-subtitle">{t.subtitle}</p>
+  </header>
+
+  <div class="datasets-grid">
+    {
+      (datasetMode === "all" || datasetMode === "indicators") && (
+        <div class="dataset-card">
+          <div class="card-icon-title">
+            <div class="dataset-icon">📊</div>
+            <div>
+              <h3 class="dataset-name">{t.card1Title}</h3>
+              <span class="dataset-records-badge">{t.card1Records}</span>
+            </div>
+          </div>
+          <p class="dataset-desc">{t.card1Desc}</p>
+          <div class="dataset-actions">
+            <button
+              type="button"
+              class="export-btn export-csv"
+              data-dataset="indicators"
+              data-format="csv"
+              aria-label={`${t.downloadCsv} - ${t.card1Title}`}
+            >
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+              </svg>
+              <span>{t.downloadCsv}</span>
+            </button>
+            <button
+              type="button"
+              class="export-btn export-json"
+              data-dataset="indicators"
+              data-format="json"
+              aria-label={`${t.downloadJson} - ${t.card1Title}`}
+            >
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <circle cx="10" cy="13" r="1"></circle>
+                <circle cx="14" cy="13" r="1"></circle>
+              </svg>
+              <span>{t.downloadJson}</span>
+            </button>
+          </div>
+        </div>
+      )
+    }
+
+    {
+      (datasetMode === "all" || datasetMode === "historical") && (
+        <div class="dataset-card">
+          <div class="card-icon-title">
+            <div class="dataset-icon">📈</div>
+            <div>
+              <h3 class="dataset-name">{t.card2Title}</h3>
+              <span class="dataset-records-badge">{t.card2Records}</span>
+            </div>
+          </div>
+          <p class="dataset-desc">{t.card2Desc}</p>
+          <div class="dataset-actions">
+            <button
+              type="button"
+              class="export-btn export-csv"
+              data-dataset="historical"
+              data-format="csv"
+              aria-label={`${t.downloadCsv} - ${t.card2Title}`}
+            >
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+              </svg>
+              <span>{t.downloadCsv}</span>
+            </button>
+            <button
+              type="button"
+              class="export-btn export-json"
+              data-dataset="historical"
+              data-format="json"
+              aria-label={`${t.downloadJson} - ${t.card2Title}`}
+            >
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <circle cx="10" cy="13" r="1"></circle>
+                <circle cx="14" cy="13" r="1"></circle>
+              </svg>
+              <span>{t.downloadJson}</span>
+            </button>
+          </div>
+        </div>
+      )
+    }
+  </div>
+
+  <!-- Toast de notificación tras descarga -->
+  <div id="export-toast" class="export-toast" role="status" aria-live="polite" style="display: none;">
+    <svg class="toast-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <polyline points="20 6 9 17 4 12"></polyline>
+    </svg>
+    <span id="export-toast-msg">{t.downloadSuccess}</span>
+  </div>
+
+  <footer class="open-data-footer">
+    <p class="license-text">{t.licenseNote}</p>
+  </footer>
+</section>
+
+<script>
+  // Script client-side para generar Blobs y activar la descarga sin peticiones al servidor
+  document.addEventListener("DOMContentLoaded", () => {
+    const exportButtons = document.querySelectorAll(".export-btn");
+    const toast = document.getElementById("export-toast");
+    const toastMsg = document.getElementById("export-toast-msg");
+
+    function showToast(filename: string) {
+      if (!toast || !toastMsg) return;
+      toastMsg.textContent = `Descargado: ${filename}`;
+      toast.style.display = "flex";
+      setTimeout(() => {
+        toast.style.display = "none";
+      }, 4000);
+    }
+
+    function downloadBlob(content: string, filename: string, mimeType: string) {
+      const blob = new Blob([content], { type: mimeType });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      showToast(filename);
+    }
+
+    function escapeCsvCell(val: unknown): string {
+      if (val === null || val === undefined) return '""';
+      const str = String(val);
+      if (str.includes(",") || str.includes('"') || str.includes("\n")) {
+        return `"${str.replace(/"/g, '""')}"`;
+      }
+      return `"${str}"`;
+    }
+
+    function convertToCsv(data: Record<string, unknown>[]): string {
+      if (data.length === 0) return "";
+      const headers = Object.keys(data[0]);
+      const headerRow = headers.map(escapeCsvCell).join(",");
+      const rows = data.map((row) => headers.map((header) => escapeCsvCell(row[header])).join(","));
+      // UTF-8 BOM (\uFEFF) para máxima compatibilidad con Microsoft Excel
+      return "\uFEFF" + [headerRow, ...rows].join("\r\n");
+    }
+
+    exportButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const dataset = btn.getAttribute("data-dataset");
+        const format = btn.getAttribute("data-format");
+        if (!dataset || !format) return;
+
+        const scriptId = dataset === "indicators" ? "raw-data-indicators" : "raw-data-historical";
+        const scriptEl = document.getElementById(scriptId);
+        if (!scriptEl) return;
+
+        try {
+          const rawData = JSON.parse(scriptEl.textContent || "[]");
+          const dateStr = new Date().toISOString().slice(0, 10);
+
+          if (format === "json") {
+            const filename = `mallorca-${dataset}-opendata-${dateStr}.json`;
+            const content = JSON.stringify(rawData, null, 2);
+            downloadBlob(content, filename, "application/json;charset=utf-8;");
+          } else if (format === "csv") {
+            const filename = `mallorca-${dataset}-opendata-${dateStr}.csv`;
+            let flatData = rawData;
+
+            // Si es histórico, aplanar para que cada fila sea un semestre por sector
+            if (dataset === "historical") {
+              flatData = [];
+              rawData.forEach((sector: any) => {
+                sector.serie_temporal.forEach((dp: any) => {
+                  flatData.push({
+                    sector_id: sector.id,
+                    sector_nombre: sector.titulo,
+                    tema: sector.tema,
+                    fuente: sector.fuente,
+                    codigo_oficial: sector.codigo_oficial,
+                    alcance: sector.alcance,
+                    semestre: dp.semestre,
+                    ano: dp.ano,
+                    semestre_num: dp.semestre_num,
+                    valor: dp.valor_numerico,
+                    unidad: sector.unidad,
+                  });
+                });
+              });
+            }
+
+            const csvContent = convertToCsv(flatData);
+            downloadBlob(csvContent, filename, "text/csv;charset=utf-8;");
+          }
+        } catch (err) {
+          console.error("Error al generar descarga de datos abiertos:", err);
+        }
+      });
+    });
+  });
+</script>
+
+<style>
+  .open-data-container {
+    background: var(--color-surface, #ffffff);
+    border: 1px solid var(--color-border, #e2e8f0);
+    border-radius: var(--radius-xl, 1rem);
+    padding: 2rem;
+    margin: 3rem 0;
+    box-shadow: var(--shadow-sm, 0 1px 3px 0 rgba(0, 0, 0, 0.05));
+    position: relative;
+  }
+
+  :global(.dark) .open-data-container {
+    background: var(--color-surface-dark, #1a202c);
+    border-color: var(--color-border-dark, #2d3748);
+  }
+
+  .open-data-header {
+    margin-bottom: 2rem;
+  }
+
+  .open-data-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    background: color-mix(in srgb, #0284c7 12%, transparent);
+    color: #0284c7;
+    padding: 0.35rem 0.85rem;
+    border-radius: 9999px;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+  }
+
+  .badge-icon {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .open-data-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-text, #1a202c);
+    margin: 0 0 0.5rem 0;
+  }
+
+  :global(.dark) .open-data-title {
+    color: var(--color-text-dark, #f7fafc);
+  }
+
+  .open-data-subtitle {
+    font-size: 0.9375rem;
+    color: var(--color-text-muted, #64748b);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .datasets-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .datasets-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .dataset-card {
+    background: var(--color-bg-subtle, #f8fafc);
+    border: 1.5px solid var(--color-border, #e2e8f0);
+    border-radius: var(--radius-lg, 0.75rem);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: all 0.2s ease;
+  }
+
+  :global(.dark) .dataset-card {
+    background: var(--color-bg-subtle-dark, #232d3d);
+    border-color: var(--color-border-dark, #3b4759);
+  }
+
+  .dataset-card:hover {
+    border-color: var(--color-primary, #0066cc);
+    box-shadow: var(--shadow-md, 0 4px 6px -1px rgba(0, 0, 0, 0.08));
+  }
+
+  .card-icon-title {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .dataset-icon {
+    font-size: 2rem;
+    line-height: 1;
+  }
+
+  .dataset-name {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--color-text, #1e293b);
+    margin: 0 0 0.25rem 0;
+  }
+
+  :global(.dark) .dataset-name {
+    color: var(--color-text-dark, #f8fafc);
+  }
+
+  .dataset-records-badge {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #0284c7;
+    background: color-mix(in srgb, #0284c7 12%, transparent);
+    padding: 0.2rem 0.5rem;
+    border-radius: var(--radius-sm, 0.25rem);
+    display: inline-block;
+  }
+
+  .dataset-desc {
+    font-size: 0.875rem;
+    color: var(--color-text-muted, #475569);
+    margin: 0;
+    line-height: 1.45;
+    flex: 1;
+  }
+
+  :global(.dark) .dataset-desc {
+    color: var(--color-text-muted, #cbd5e1);
+  }
+
+  .dataset-actions {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    padding-top: 0.5rem;
+    border-top: 1px solid var(--color-border, #e2e8f0);
+  }
+
+  :global(.dark) .dataset-actions {
+    border-top-color: var(--color-border-dark, #3b4759);
+  }
+
+  .export-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.55rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    border-radius: var(--radius-md, 0.5rem);
+    cursor: pointer;
+    transition: all 0.15s ease;
+    border: 1px solid transparent;
+  }
+
+  .btn-icon {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .export-csv {
+    background: #059669;
+    color: #ffffff;
+  }
+
+  .export-csv:hover {
+    background: #047857;
+    transform: translateY(-1px);
+  }
+
+  .export-json {
+    background: var(--color-surface, #ffffff);
+    color: var(--color-text, #1e293b);
+    border-color: var(--color-border, #cbd5e1);
+  }
+
+  :global(.dark) .export-json {
+    background: var(--color-surface-dark, #1a202c);
+    border-color: var(--color-border-dark, #4a5568);
+    color: var(--color-text-dark, #f1f5f9);
+  }
+
+  .export-json:hover {
+    background: var(--color-bg-subtle, #f1f5f9);
+    border-color: var(--color-primary, #0066cc);
+    transform: translateY(-1px);
+  }
+
+  .export-toast {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 9999;
+    background: #064e3b;
+    color: #ecfdf5;
+    padding: 0.85rem 1.25rem;
+    border-radius: var(--radius-md, 0.5rem);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    animation: slideUp 0.25s ease-out;
+  }
+
+  .toast-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: #34d399;
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .open-data-footer {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px dashed var(--color-border, #e2e8f0);
+  }
+
+  :global(.dark) .open-data-footer {
+    border-top-color: var(--color-border-dark, #2d3748);
+  }
+
+  .license-text {
+    font-size: 0.8125rem;
+    color: var(--color-text-muted, #94a3b8);
+    margin: 0;
+    line-height: 1.4;
+  }
+</style>

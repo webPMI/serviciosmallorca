@@ -92,6 +92,17 @@ const currentPath = Astro.url.pathname;
           <a href={`${getLangPrefix(currentLocale)}guias`} class="footer-link">
             📋 {translations["nav.guides"] || "Trámites & Guías"}
           </a>
+          <a href={`${getLangPrefix(currentLocale)}normativa`} class="footer-link">
+            ⚖️ {
+              currentLocale === "ca"
+                ? "Normativa & BOIB"
+                : currentLocale === "en"
+                  ? "Regulations & BOIB"
+                  : currentLocale === "de"
+                    ? "Gesetze & Amtsblatt"
+                    : "Normativa & BOIB"
+            }
+          </a>
           <a href={`${getLangPrefix(currentLocale)}cuadro-de-honor`} class="footer-link">
             👑 {translations["nav.honor"] || "Cuadro de Honor"}
           </a>

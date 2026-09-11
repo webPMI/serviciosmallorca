@@ -9,6 +9,13 @@ interface Props {
 
 const { service, locale = "es" } = Astro.props;
 
+let cleanWhatsApp = service.whatsapp ? service.whatsapp.replace(/[^0-9]/g, "") : "";
+if (cleanWhatsApp.length === 9 && /^[6789]/.test(cleanWhatsApp)) {
+  cleanWhatsApp = "34" + cleanWhatsApp;
+}
+
+const cleanPhone = service.phone ? service.phone.replace(/[^0-9+]/g, "") : "";
+
 const waTemplates: Record<Locale, string> = {
   es: `Hola, he visto ${service.name} en Servicios Mallorca y me gustaría solicitar información.`,
   en: `Hello, I saw ${service.name} on Servicios Mallorca and would like to request information.`,

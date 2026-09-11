@@ -1,0 +1,441 @@
+---
+/**
+ * GuideStatBanner.astro
+ *
+ * Widget de contexto oficial para fichas de trámites y guías ciudadanas.
+ * Muestra métricas contrastadas (IBESTAT, SOIB, Consell) directamente vinculadas al trámite.
+ * Cumple con GR-01 (CSS tokens), GR-02 (responsive), GR-04 (i18n cuatrilingüe),
+ * GR-07 (accesibilidad ARIA) y GR-11 (Zero Fake Data).
+ */
+import type { Locale } from "../i18n";
+import { OFFICIAL_STATISTICS, type OfficialStatistic } from "../data/officialStats";
+
+export interface Props {
+  statIds?: string[];
+  lang: Locale;
+}
+
+const { statIds = [], lang } = Astro.props;
+
+// Filtrar las estadísticas asociadas
+const matchedStats: OfficialStatistic[] = statIds
+  .map((id) => OFFICIAL_STATISTICS.find((s) => s.id === id))
+  .filter((s): s is OfficialStatistic => Boolean(s));
+
+if (matchedStats.length === 0) {
+  // No renderizar si no hay estadísticas vinculadas
+}
+
+const labels: Record<
+  Locale,
+  {
+    sectionBadge: string;
+    sectionTitle: string;
+    viewAllStats: string;
+    sourceOfficial: string;
+  }
+> = {
+  es: {
+    sectionBadge: "Dato Oficial Contrastado",
+    sectionTitle: "Indicadores Oficiales Relacionados",
+    viewAllStats: "Explorar estadísticas completas de Mallorca →",
+    sourceOfficial: "Fuente Oficial:",
+  },
+  ca: {
+    sectionBadge: "Dada Oficial Contrastada",
+    sectionTitle: "Indicadors Oficials Relacionats",
+    viewAllStats: "Explorar estadístiques completes de Mallorca →",
+    sourceOfficial: "Font Oficial:",
+  },
+  en: {
+    sectionBadge: "Verified Official Data",
+    sectionTitle: "Related Official Indicators",
+    viewAllStats: "Explore complete Mallorca statistics →",
+    sourceOfficial: "Official Source:",
+  },
+  de: {
+    sectionBadge: "Offizielle Verifizierte Daten",
+    sectionTitle: "Verwandte Offizielle Kennzahlen",
+    viewAllStats: "Vollständige Mallorca-Statistiken entdecken →",
+    sourceOfficial: "Offizielle Quelle:",
+  },
+};
+
+const t = labels[lang] || labels.es;
+const statsUrl = lang === "es" ? "/estadisticas" : `/${lang}/estadisticas`;
+---
+
+{
+  matchedStats.length > 0 && (
+    <aside class="guide-stats-container" aria-label={t.sectionTitle}>
+      <div class="stats-header">
+        <div class="stats-badge">
+          <svg
+            class="badge-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M3 3v18h18"></path>
+            <path d="M18 9l-5 5-4-4-6 6"></path>
+          </svg>
+          <span>{t.sectionBadge}</span>
+        </div>
+        <h3 class="stats-heading">{t.sectionTitle}</h3>
+      </div>
+
+      <div class="stats-grid">
+        {matchedStats.map((stat) => {
+          const title = stat.title[lang] || stat.title.es;
+          const unit = stat.unit[lang] || stat.unit.es;
+          const note = stat.highlightNote[lang] || stat.highlightNote.es;
+          const comparison = stat.changeRate?.comparisonPeriod[lang] || stat.changeRate?.comparisonPeriod.es;
+
+          return (
+            <div class="stat-card">
+              <div class="stat-top-row">
+                <div class="stat-meta">
+                  <span class="stat-icon" aria-hidden="true">
+                    {stat.icon}
+                  </span>
+                  <span class="stat-source">
+                    {stat.sourceEntity} · {stat.period}
+                  </span>
+                </div>
+                <span class="stat-scope-badge">{stat.dataScope}</span>
+              </div>
+
+              <h4 class="stat-title">{title}</h4>
+
+              <div class="stat-value-row">
+                <span class="stat-value">{stat.value}</span>
+                <span class="stat-unit">{unit}</span>
+              </div>
+
+              {stat.changeRate && (
+                <div
+                  class={`stat-trend trend-${stat.changeRate.direction}`}
+                  aria-label={`Variación de ${stat.changeRate.percentage}%`}
+                >
+                  <span class="trend-indicator">
+                    {stat.changeRate.direction === "up" && "↑"}
+                    {stat.changeRate.direction === "down" && "↓"}
+                    {stat.changeRate.direction === "neutral" && "→"}
+                  </span>
+                  <span class="trend-text">
+                    {stat.changeRate.percentage > 0 ? `+${stat.changeRate.percentage}%` : `${stat.changeRate.percentage}%`} {comparison}
+                  </span>
+                </div>
+              )}
+
+              <p class="stat-note">{note}</p>
+
+              <div class="stat-footer">
+                <span class="stat-code">
+                  {stat.officialSeriesCode ? `Ref: ${stat.officialSeriesCode}` : t.sourceOfficial}
+                </span>
+                <a
+                  href={stat.sourceUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="stat-verify-link"
+                  title={`Verificar en ${stat.sourceEntity}`}
+                >
+                  {stat.sourceEntity} ↗
+                </a>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      <div class="stats-action-row">
+        <a href={statsUrl} class="stats-portal-link">
+          {t.viewAllStats}
+        </a>
+      </div>
+    </aside>
+  )
+}
+
+<style>
+  .guide-stats-container {
+    background: var(--color-surface, #ffffff);
+    border: 1px solid var(--color-border, #e2e8f0);
+    border-radius: var(--radius-xl, 1rem);
+    padding: 1.75rem;
+    margin: 2.5rem 0;
+    box-shadow: var(--shadow-sm, 0 1px 3px 0 rgba(0, 0, 0, 0.05));
+  }
+
+  :global(.dark) .guide-stats-container {
+    background: var(--color-surface-dark, #1a202c);
+    border-color: var(--color-border-dark, #2d3748);
+  }
+
+  .stats-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .stats-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    align-self: flex-start;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-primary, #0066cc);
+    background: color-mix(in srgb, var(--color-primary, #0066cc) 10%, transparent);
+    padding: 0.25rem 0.65rem;
+    border-radius: 9999px;
+  }
+
+  .badge-icon {
+    width: 0.875rem;
+    height: 0.875rem;
+  }
+
+  .stats-heading {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-text, #1a202c);
+    margin: 0;
+  }
+
+  :global(.dark) .stats-heading {
+    color: var(--color-text-dark, #f7fafc);
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  @media (min-width: 640px) {
+    .stats-grid {
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+  }
+
+  .stat-card {
+    background: var(--color-bg-subtle, #f8fafc);
+    border: 1px solid var(--color-border, #e2e8f0);
+    border-radius: var(--radius-lg, 0.75rem);
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  :global(.dark) .stat-card {
+    background: var(--color-bg-subtle-dark, #232d3d);
+    border-color: var(--color-border-dark, #3b4759);
+  }
+
+  .stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md, 0 4px 6px -1px rgba(0, 0, 0, 0.07));
+  }
+
+  .stat-top-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+
+  .stat-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .stat-icon {
+    font-size: 1.25rem;
+  }
+
+  .stat-source {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--color-text-muted, #64748b);
+  }
+
+  :global(.dark) .stat-source {
+    color: var(--color-text-muted, #94a3b8);
+  }
+
+  .stat-scope-badge {
+    font-size: 0.6875rem;
+    font-weight: 700;
+    padding: 0.15rem 0.45rem;
+    background: var(--color-surface, #ffffff);
+    border: 1px solid var(--color-border, #cbd5e0);
+    border-radius: var(--radius-sm, 0.25rem);
+    color: var(--color-text, #4a5568);
+  }
+
+  :global(.dark) .stat-scope-badge {
+    background: var(--color-surface-dark, #1a202c);
+    border-color: var(--color-border-dark, #4a5568);
+    color: var(--color-text-dark, #cbd5e0);
+  }
+
+  .stat-title {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--color-text, #1e293b);
+    margin: 0;
+    line-height: 1.35;
+  }
+
+  :global(.dark) .stat-title {
+    color: var(--color-text-dark, #f1f5f9);
+  }
+
+  .stat-value-row {
+    display: flex;
+    align-items: baseline;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+    margin-top: 0.25rem;
+  }
+
+  .stat-value {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--color-primary, #0066cc);
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+
+  :global(.dark) .stat-value {
+    color: #60a5fa;
+  }
+
+  .stat-unit {
+    font-size: 0.8125rem;
+    color: var(--color-text-muted, #64748b);
+    font-weight: 500;
+  }
+
+  .stat-trend {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.2rem 0.5rem;
+    border-radius: var(--radius-sm, 0.25rem);
+    width: fit-content;
+  }
+
+  .trend-up {
+    background: color-mix(in srgb, #10b981 12%, transparent);
+    color: #059669;
+  }
+
+  :global(.dark) .trend-up {
+    color: #34d399;
+  }
+
+  .trend-down {
+    background: color-mix(in srgb, #ef4444 12%, transparent);
+    color: #dc2626;
+  }
+
+  :global(.dark) .trend-down {
+    color: #f87171;
+  }
+
+  .trend-neutral {
+    background: color-mix(in srgb, #6b7280 12%, transparent);
+    color: #4b5563;
+  }
+
+  :global(.dark) .trend-neutral {
+    color: #9ca3af;
+  }
+
+  .stat-note {
+    font-size: 0.8125rem;
+    color: var(--color-text-muted, #475569);
+    line-height: 1.4;
+    margin: 0.25rem 0 0 0;
+  }
+
+  :global(.dark) .stat-note {
+    color: var(--color-text-muted, #cbd5e1);
+  }
+
+  .stat-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 0.5rem;
+    border-top: 1px dashed var(--color-border, #e2e8f0);
+    font-size: 0.6875rem;
+  }
+
+  :global(.dark) .stat-footer {
+    border-top-color: var(--color-border-dark, #3b4759);
+  }
+
+  .stat-code {
+    color: var(--color-text-muted, #94a3b8);
+    font-family: monospace;
+  }
+
+  .stat-verify-link {
+    color: var(--color-primary, #0066cc);
+    text-decoration: none;
+    font-weight: 600;
+    transition: opacity 0.15s;
+  }
+
+  .stat-verify-link:hover {
+    text-decoration: underline;
+    opacity: 0.85;
+  }
+
+  :global(.dark) .stat-verify-link {
+    color: #60a5fa;
+  }
+
+  .stats-action-row {
+    margin-top: 1.25rem;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .stats-portal-link {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-primary, #0066cc);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    transition: transform 0.15s ease;
+  }
+
+  .stats-portal-link:hover {
+    text-decoration: underline;
+    transform: translateX(2px);
+  }
+
+  :global(.dark) .stats-portal-link {
+    color: #60a5fa;
+  }
+</style>

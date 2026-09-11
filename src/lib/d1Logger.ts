@@ -1,10 +1,11 @@
 /**
  * d1Logger.ts
  *
- * 🛡️ SISTEMA RESILIENTE DE LOGS Y TELEMETRÍA DE ERRORES EN CLOUDFLARE D1 (2026)
+ * 🛡️ SISTEMA RESILIENTE DE LOGS, TELEMETRÍA Y AUDITORÍA EN CLOUDFLARE D1 (2026)
  *
  * Captura, cataloga y persiste cualquier error que ocurra tanto en el servidor SSR (Astro/Cloudflare Workers)
  * como en el cliente (Browser), guardándolo en Cloudflare D1 para su auditoría y revisión técnica.
+ * Incluye sanitización automática de datos sensibles (PII), control de deduplicación y API ergonómica `createLogger`.
  */
 
 export type LogLevel = "INFO" | "WARN" | "ERROR" | "FATAL" | "SECURITY";
@@ -47,6 +48,61 @@ CREATE INDEX IF NOT EXISTS idx_logs_timestamp ON server_error_logs(timestamp DES
 CREATE INDEX IF NOT EXISTS idx_logs_level ON server_error_logs(level);
 CREATE INDEX IF NOT EXISTS idx_logs_category ON server_error_logs(category);
 `;
+
+// ── SANITIZACIÓN DE DATOS SENSIBLES (PII & SECURITY MASKING) ────────────────
+const SENSITIVE_KEYS = new Set([
+  "password",
+  "pass",
+  "token",
+  "authorization",
+  "auth",
+  "secret",
+  "apikey",
+  "api_key",
+  "cardnumber",
+  "card_number",
+  "cvv",
+  "cvc",
+  "creditcard",
+  "credit_card",
+  "dni",
+  "nie",
+]);
+
+/**
+ * Ofusca recursivamente claves sensibles en objetos de metadatos para evitar fugas de PII en D1 o consola.
+ */
+export function sanitizeSensitiveData(val: any, depth = 0): any {
+  if (depth > 6 || val === null || val === undefined) return val;
+  if (typeof val === "string") {
+    let str = val;
+    // Ofuscar Bearer tokens si aparecen en strings
+    if (/bearer\s+[a-zA-Z0-9_\-\.]{15,}/i.test(str)) {
+      str = str.replace(/bearer\s+[a-zA-Z0-9_\-\.]+/gi, "Bearer [REDACTED]");
+    }
+    // Ofuscar números de tarjetas de crédito potenciales (13 a 19 dígitos)
+    if (/\b\d{4}[ -]?\d{4}[ -]?\d{4}[ -]?\d{1,4}\b/.test(str)) {
+      str = str.replace(/\b\d{4}[ -]?\d{4}[ -]?\d{4}[ -]?\d{1,4}\b/g, "[CARD_REDACTED]");
+    }
+    return str;
+  }
+  if (Array.isArray(val)) {
+    return val.map((item) => sanitizeSensitiveData(item, depth + 1));
+  }
+  if (typeof val === "object") {
+    const sanitized: Record<string, any> = {};
+    for (const [k, v] of Object.entries(val)) {
+      const lowerKey = k.toLowerCase().replace(/[^a-z0-9]/g, "");
+      if (SENSITIVE_KEYS.has(lowerKey)) {
+        sanitized[k] = "[REDACTED]";
+      } else {
+        sanitized[k] = sanitizeSensitiveData(v, depth + 1);
+      }
+    }
+    return sanitized;
+  }
+  return val;
+}
 
 // ── D1 BINDING HELPER ───────────────────────────────────────────────────────
 export function getD1Binding(context?: any): any {
@@ -135,17 +191,21 @@ export async function logToD1(
   const logId = entry.id || `log_${Date.now()}_${Math.random().toString(36).slice(2, 9)}`;
   const timestamp = entry.timestamp || new Date().toISOString();
 
-  const enrichedMetadata = {
+  const rawMetadata = {
     ...(entry.metadata || {}),
     ...(count > 1 ? { _duplicateOccurrencesInWindow: count } : {}),
   };
+  const enrichedMetadata = sanitizeSensitiveData(rawMetadata);
   const metaStr = JSON.stringify(enrichedMetadata);
 
-  // Log formateado en consola para monitorización en tiempo real
-  const icon = entry.level === "SECURITY" ? "🚨" : entry.level === "FATAL" || entry.level === "ERROR" ? "💥" : "⚠️";
-  console.error(
-    `[D1-Logger] ${icon} [${entry.level}] [${entry.category}] ${entry.message} ${count > 1 ? `(Repetido x${count})` : ""} ${entry.url ? `(URL: ${entry.url})` : ""}`,
-  );
+  // Control de ruido en consola: en entorno de test solo se imprime si DEBUG_LOGS está activo
+  const isTest = typeof process !== "undefined" && process.env?.NODE_ENV === "test" && !process.env?.DEBUG_LOGS;
+  if (!isTest) {
+    const icon = entry.level === "SECURITY" ? "🚨" : entry.level === "FATAL" || entry.level === "ERROR" ? "💥" : "⚠️";
+    console.error(
+      `[D1-Logger] ${icon} [${entry.level}] [${entry.category}] ${entry.message} ${count > 1 ? `(Repetido x${count})` : ""} ${entry.url ? `(URL: ${entry.url})` : ""}`,
+    );
+  }
 
   // Si no hay binding D1 presente, salimos con éxito en modo fallback
   if (!d1Binding || typeof d1Binding.prepare !== "function") {
@@ -156,7 +216,9 @@ export async function logToD1(
     // Inicializar tabla de forma perezosa una sola vez
     if (!isTableInitialized) {
       try {
-        await d1Binding.exec(D1_SCHEMA_SQL);
+        if (typeof d1Binding.exec === "function") {
+          await d1Binding.exec(D1_SCHEMA_SQL);
+        }
         isTableInitialized = true;
       } catch (tableErr) {
         console.warn("[D1-Logger] Table init warning:", tableErr);
@@ -198,13 +260,14 @@ export async function logToD1(
  * Consulta los logs de error más recientes almacenados en Cloudflare D1.
  */
 export async function queryD1Logs(
-  d1Binding: any,
+  d1BindingOrContext: any,
   options: {
     limit?: number;
     level?: LogLevel;
     category?: LogCategory;
   } = {},
 ): Promise<ServerLogEntry[]> {
+  const d1Binding = getD1Binding(d1BindingOrContext);
   if (!d1Binding || typeof d1Binding.prepare !== "function") {
     return [];
   }
@@ -254,4 +317,103 @@ export async function queryD1Logs(
     console.error("[D1-Logger] Query error:", err);
     return [];
   }
+}
+
+// ── FACTORÍA ERGONÓMICA DE LOGGING ESTRUCTURADO ─────────────────────────────
+export interface AppLogger {
+  info(message: string, metadata?: Record<string, any>): Promise<{ success: boolean; logId: string }>;
+  warn(message: string, metadata?: Record<string, any>): Promise<{ success: boolean; logId: string }>;
+  error(
+    message: string,
+    errorOrStack?: unknown,
+    metadata?: Record<string, any>,
+  ): Promise<{ success: boolean; logId: string }>;
+  security(message: string, metadata?: Record<string, any>): Promise<{ success: boolean; logId: string }>;
+  fatal(
+    message: string,
+    errorOrStack?: unknown,
+    metadata?: Record<string, any>,
+  ): Promise<{ success: boolean; logId: string }>;
+  time(label: string): void;
+  timeEnd(label: string, metadata?: Record<string, any>): Promise<number>;
+  child(extraMetadata: Record<string, any>): AppLogger;
+}
+
+/**
+ * Crea una instancia de Logger contextual para un módulo o petición.
+ *
+ * @example
+ * const logger = createLogger("SSR", context);
+ * await logger.info("Página renderizada con éxito", { durationMs: 45 });
+ * await logger.error("Fallo de conexión", error, { userId: "123" });
+ */
+export function createLogger(category: LogCategory, context?: any, baseMetadata: Record<string, any> = {}): AppLogger {
+  const timers = new Map<string, number>();
+
+  const logHelper = (level: LogLevel, message: string, errorOrStack?: unknown, metadata?: Record<string, any>) => {
+    let stack: string | undefined;
+    let actualMsg = message;
+
+    if (errorOrStack instanceof Error) {
+      stack = errorOrStack.stack;
+      if (!actualMsg) actualMsg = errorOrStack.message;
+    } else if (typeof errorOrStack === "string") {
+      stack = errorOrStack;
+    }
+
+    const combinedMeta = {
+      ...baseMetadata,
+      ...(metadata || {}),
+    };
+
+    const entry: ServerLogEntry = {
+      level,
+      category,
+      message: actualMsg,
+      stack,
+      url: context?.url?.pathname || (typeof context?.url === "string" ? context.url : undefined),
+      method: context?.request?.method,
+      metadata: combinedMeta,
+    };
+
+    return logToD1(context, entry);
+  };
+
+  return {
+    info(msg, meta) {
+      return logHelper("INFO", msg, undefined, meta);
+    },
+    warn(msg, meta) {
+      return logHelper("WARN", msg, undefined, meta);
+    },
+    error(msg, err, meta) {
+      return logHelper("ERROR", msg, err, meta);
+    },
+    security(msg, meta) {
+      return logHelper("SECURITY", msg, undefined, meta);
+    },
+    fatal(msg, err, meta) {
+      return logHelper("FATAL", msg, err, meta);
+    },
+    time(label: string) {
+      timers.set(label, Date.now());
+    },
+    async timeEnd(label: string, meta = {}) {
+      const start = timers.get(label);
+      const elapsed = start ? Date.now() - start : 0;
+      timers.delete(label);
+      await logHelper("INFO", `Timer [${label}]: ${elapsed}ms`, undefined, {
+        ...meta,
+        timerLabel: label,
+        elapsedMs: elapsed,
+      });
+      return elapsed;
+    },
+    child(extraMetadata: Record<string, any>) {
+      return createLogger(category, context, {
+        ...baseMetadata,
+        ...extraMetadata,
+      });
+    },
+  };
 }

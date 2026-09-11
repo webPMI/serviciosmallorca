@@ -11,6 +11,7 @@ import Navbar from "../../components/Navbar.astro";
 import Footer from "../../components/Footer.astro";
 import OfficialStatCard from "../../components/OfficialStatCard.astro";
 import HumanPressureGauge from "../../components/HumanPressureGauge.astro";
+import OpenDataExporter from "../../components/OpenDataExporter.astro";
 import { getLocaleFromUrl, loadTranslations, getLangPrefix, type Locale } from "../../i18n";
 import { OFFICIAL_STATISTICS } from "../../data/officialStats";
 
@@ -221,6 +222,9 @@ const schemaOrg = {
         {OFFICIAL_STATISTICS.map((stat) => <OfficialStatCard stat={stat} lang={locale} />)}
       </div>
     </section>
+
+    <!-- Descarga Abierta de Datasets (Open Data) -->
+    <OpenDataExporter lang={locale} datasetMode="all" />
 
     <!-- Banner Metodológico de Garantía Institucional -->
     <section class="methodology-guarantee-banner" aria-label="Garantía de veracidad de datos">

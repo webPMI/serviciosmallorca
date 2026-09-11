@@ -125,20 +125,10 @@ const milestonePeriods = new Set(series.milestones.map((m) => `${m.year}-S${m.se
     <div class="range-controls-wrapper" role="group" aria-label={l.rangeLabel}>
       <span class="range-label">{l.rangeLabel}</span>
       <div class="range-btn-group">
-        <button
-          type="button"
-          class="range-btn active"
-          data-range="10"
-          aria-pressed="true"
-        >
+        <button type="button" class="range-btn active" data-range="10" aria-pressed="true">
           {l.tenYearsBtn}
         </button>
-        <button
-          type="button"
-          class="range-btn"
-          data-range="20"
-          aria-pressed="false"
-        >
+        <button type="button" class="range-btn" data-range="20" aria-pressed="false">
           {l.twentyYearsBtn}
         </button>
       </div>
@@ -187,10 +177,10 @@ const milestonePeriods = new Set(series.milestones.map((m) => `${m.year}-S${m.se
         aria-label={`${series.title[lang] || series.title.es} - Gráfica Semestral`}
       >
         <!-- Líneas de Guía de Fondo -->
-        <line x1="40" y1="40" x2="980" y2="40" class="guide-line" />
-        <line x1="40" y1="110" x2="980" y2="110" class="guide-line" />
-        <line x1="40" y1="180" x2="980" y2="180" class="guide-line" />
-        <line x1="40" y1="250" x2="980" y2="250" class="guide-line" />
+        <line x1="40" y1="40" x2="980" y2="40" class="guide-line"></line>
+        <line x1="40" y1="110" x2="980" y2="110" class="guide-line"></line>
+        <line x1="40" y1="180" x2="980" y2="180" class="guide-line"></line>
+        <line x1="40" y1="250" x2="980" y2="250" class="guide-line"></line>
 
         <!-- Barras Semestrales (41 Puntos de 2006 a 2026) -->
         <g class="bars-group" data-total-bars={series.dataPoints.length}>
@@ -211,7 +201,12 @@ const milestonePeriods = new Set(series.milestones.map((m) => `${m.year}-S${m.se
                 <g
                   class:list={[
                     "bar-column",
-                    { "in-ten-years": isTenYears, "has-milestone": hasMilestone, "is-peak": isPeak, "is-trough": isTrough }
+                    {
+                      "in-ten-years": isTenYears,
+                      "has-milestone": hasMilestone,
+                      "is-peak": isPeak,
+                      "is-trough": isTrough,
+                    },
                   ]}
                   data-period={dp.period}
                   data-year={dp.year}
@@ -222,30 +217,11 @@ const milestonePeriods = new Set(series.milestones.map((m) => `${m.year}-S${m.se
                   role="graphics-symbol"
                   aria-label={`${dp.period}: ${dp.formattedValue}`}
                 >
-                  <rect
-                    x={xPos}
-                    y={yPos}
-                    width={barWidth}
-                    height={barHeight}
-                    rx="3"
-                    class="bar-rect"
-                  />
-                  {hasMilestone && (
-                    <circle
-                      cx={xPos + barWidth / 2}
-                      cy={yPos - 8}
-                      r="4"
-                      class="milestone-dot"
-                    />
-                  )}
+                  <rect x={xPos} y={yPos} width={barWidth} height={barHeight} rx="3" class="bar-rect" />
+                  {hasMilestone && <circle cx={xPos + barWidth / 2} cy={yPos - 8} r="4" class="milestone-dot" />}
                   {/* Etiquetas de Año para Semestres S1 clave */}
                   {dp.semester === 1 && (dp.year % 2 === 0 || dp.year === 2026) && (
-                    <text
-                      x={xPos + barWidth / 2}
-                      y="275"
-                      class="year-axis-label"
-                      text-anchor="middle"
-                    >
+                    <text x={xPos + barWidth / 2} y="275" class="year-axis-label" text-anchor="middle">
                       {dp.year}
                     </text>
                   )}
@@ -283,7 +259,9 @@ const milestonePeriods = new Set(series.milestones.map((m) => `${m.year}-S${m.se
         series.milestones.map((milestone) => (
           <div class={`milestone-card impact-${milestone.impactTag}`}>
             <div class="milestone-badge-row">
-              <span class="milestone-year-badge">{milestone.year} · S{milestone.semester}</span>
+              <span class="milestone-year-badge">
+                {milestone.year} · S{milestone.semester}
+              </span>
               <span class="milestone-tag-pill">{milestone.impactTag.toUpperCase()}</span>
             </div>
             <h4 class="milestone-title">{milestone.title[lang] || milestone.title.es}</h4>
@@ -327,7 +305,7 @@ const milestonePeriods = new Set(series.milestones.map((m) => `${m.year}-S${m.se
 
       // Hover y accesibilidad en barras
       columns.forEach((col) => {
-        const showTooltip = (e: MouseEvent | FocusEvent) => {
+        const showTooltip = (_e: MouseEvent | FocusEvent) => {
           if (!tooltip || !tooltipPeriod || !tooltipValue || !tooltipDesc) return;
           const period = col.getAttribute("data-period") || "";
           const formatted = col.getAttribute("data-formatted") || "";
@@ -371,7 +349,9 @@ const milestonePeriods = new Set(series.milestones.map((m) => `${m.year}-S${m.se
     padding: 2.25rem 2rem;
     margin-bottom: 3rem;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    transition:
+      border-color 0.2s ease,
+      box-shadow 0.2s ease;
   }
 
   .historical-chart-card:hover {
@@ -494,7 +474,9 @@ const milestonePeriods = new Set(series.milestones.map((m) => `${m.year}-S${m.se
     padding: 0.45rem 0.9rem;
     border-radius: 6px;
     cursor: pointer;
-    transition: background 0.15s ease, color 0.15s ease;
+    transition:
+      background 0.15s ease,
+      color 0.15s ease;
   }
 
   .range-btn.active {
@@ -593,7 +575,9 @@ const milestonePeriods = new Set(series.milestones.map((m) => `${m.year}-S${m.se
 
   .bar-rect {
     fill: rgba(200, 157, 92, 0.4);
-    transition: fill 0.2s ease, transform 0.15s ease;
+    transition:
+      fill 0.2s ease,
+      transform 0.15s ease;
   }
 
   .bar-column.in-ten-years .bar-rect {
@@ -728,7 +712,9 @@ const milestonePeriods = new Set(series.milestones.map((m) => `${m.year}-S${m.se
     border: 1px solid var(--color-border, #e2e8f0);
     border-radius: 10px;
     padding: 1.15rem 1.25rem;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
   }
 
   .milestone-card:hover {

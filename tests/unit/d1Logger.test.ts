@@ -16,6 +16,8 @@ import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
 import {
   logToD1,
   queryD1Logs,
+  createLogger,
+  sanitizeSensitiveData,
   D1_SCHEMA_SQL,
   _resetTableInitializedForTesting,
   type ServerLogEntry,
@@ -221,5 +223,137 @@ describe("🗄️ d1Logger: estado de módulo fresco (vi.resetModules)", () => {
     const r = await mod.logToD1(binding, { ...BASE_ENTRY });
     expect(exec).toHaveBeenCalledTimes(1);
     expect(r.success).toBe(true);
+  });
+
+  it("binding sin exec no lanza excepción y procede con INSERT", async () => {
+    vi.resetModules();
+    const mod = await import("../../src/lib/d1Logger.ts");
+    const run = vi.fn().mockResolvedValue(undefined);
+    const binding = { prepare: () => ({ bind: () => ({ run }) }) };
+    const r = await mod.logToD1(binding, { ...BASE_ENTRY });
+    expect(r.success).toBe(true);
+  });
+});
+
+describe("🛡️ d1Logger: sanitizeSensitiveData (PII masking)", () => {
+  it("ofusca contraseñas, tokens y claves secretas", () => {
+    const input = {
+      password: "secretPassword123",
+      api_key: "key-abcdef-12345",
+      token: "jwt.token.here",
+      user: {
+        cvv: "123",
+        creditCard: "4111-2222-3333-4444",
+        email: "test@example.com",
+      },
+    };
+
+    const sanitized = sanitizeSensitiveData(input);
+    expect(sanitized.password).toBe("[REDACTED]");
+    expect(sanitized.api_key).toBe("[REDACTED]");
+    expect(sanitized.token).toBe("[REDACTED]");
+    expect(sanitized.user.cvv).toBe("[REDACTED]");
+    expect(sanitized.user.creditCard).toBe("[REDACTED]");
+    expect(sanitized.user.email).toBe("test@example.com");
+  });
+
+  it("ofusca Bearer tokens y números de tarjeta en strings de texto libre", () => {
+    const text =
+      "Error with authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.xyz and card 4532 0150 9999 1234 failed";
+    const res = sanitizeSensitiveData(text);
+    expect(res).toContain("Bearer [REDACTED]");
+    expect(res).toContain("[CARD_REDACTED]");
+    expect(res).not.toContain("4532 0150 9999 1234");
+  });
+
+  it("mantiene intactos valores primitivos no sensibles, null y undefined", () => {
+    expect(sanitizeSensitiveData(null)).toBeNull();
+    expect(sanitizeSensitiveData(undefined)).toBeUndefined();
+    expect(sanitizeSensitiveData(42)).toBe(42);
+    expect(sanitizeSensitiveData("safe text string")).toBe("safe text string");
+  });
+});
+
+describe("🛡️ d1Logger: createLogger (ergonomía y métodos contextuales)", () => {
+  function makeMockContext() {
+    const entries: unknown[] = [];
+    const run = vi.fn().mockResolvedValue(undefined);
+    const prepare = vi.fn(() => ({
+      bind: (...args: unknown[]) => {
+        entries.push(args);
+        return { run };
+      },
+    }));
+    const exec = vi.fn().mockResolvedValue(undefined);
+    const context = {
+      locals: { DB: { prepare, exec } },
+      url: { pathname: "/es/test-route" },
+      request: { method: "POST" },
+    };
+    return { context, entries };
+  }
+
+  it("permite invocar .info(), .warn(), .security() con metadatos combinados", async () => {
+    const { context, entries } = makeMockContext();
+    const logger = createLogger("SSR", context, { app: "mallorca-core" });
+
+    await logger.info("Página cargada", { cacheHit: true });
+    await logger.warn("Alerta de rendimiento", { latency: 350 });
+    await logger.security("Intento de inyección detectado");
+
+    expect(entries).toHaveLength(3);
+    const firstArgs = entries[0] as unknown[];
+    expect(firstArgs[2]).toBe("INFO");
+    expect(firstArgs[3]).toBe("SSR");
+    expect(firstArgs[6]).toBe("/es/test-route");
+    expect(firstArgs[7]).toBe("POST");
+
+    const meta = JSON.parse(firstArgs[12] as string);
+    expect(meta.app).toBe("mallorca-core");
+    expect(meta.cacheHit).toBe(true);
+  });
+
+  it(".error() y .fatal() extraen stack de Error instances correctamente", async () => {
+    const { context, entries } = makeMockContext();
+    const logger = createLogger("API", context);
+
+    const error = new Error("Database timeout");
+    await logger.error("Fallo de API", error, { retry: 1 });
+    await logger.fatal("Caída crítica de servicio", error);
+
+    expect(entries).toHaveLength(2);
+    const errArgs = entries[0] as unknown[];
+    expect(errArgs[2]).toBe("ERROR");
+    expect(errArgs[4]).toBe("Fallo de API");
+    expect(errArgs[5]).toContain("Error: Database timeout");
+
+    const fatalArgs = entries[1] as unknown[];
+    expect(fatalArgs[2]).toBe("FATAL");
+  });
+
+  it(".time() y .timeEnd() calculan el tiempo transcurrido y loguean métrica", async () => {
+    const { context, entries } = makeMockContext();
+    const logger = createLogger("DATABASE", context);
+
+    logger.time("fetch-categories");
+    const elapsed = await logger.timeEnd("fetch-categories", { source: "cache" });
+
+    expect(typeof elapsed).toBe("number");
+    expect(entries).toHaveLength(1);
+    const timeArgs = entries[0] as unknown[];
+    expect(timeArgs[2]).toBe("INFO");
+    expect(timeArgs[4]).toContain("Timer [fetch-categories]");
+  });
+
+  it(".child() hereda y extiende metadatos base", async () => {
+    const { context, entries } = makeMockContext();
+    const parent = createLogger("ROUTING", context, { region: "palma" });
+    const child = parent.child({ serviceId: "rest-123" });
+
+    await child.info("Ruta visitada");
+    expect(entries).toHaveLength(1);
+    const meta = JSON.parse((entries[0] as unknown[])[12] as string);
+    expect(meta.region).toBe("palma");
+    expect(meta.serviceId).toBe("rest-123");
   });
 });

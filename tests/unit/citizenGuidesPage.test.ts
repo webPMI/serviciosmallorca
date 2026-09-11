@@ -1,5 +1,22 @@
 import { describe, expect, it } from "vitest";
 import { CITIZEN_GUIDES, getGuideBySlug, getGuidesByCategory, type GuideCategory } from "../../src/data/citizenGuides";
+import { CATEGORIES } from "../../src/data/categories";
+import { PROFESIONALES_SERVICES } from "../../src/data/services/servicios-profesionales/index.ts";
+import { TRANSPORTE_SERVICES } from "../../src/data/services/motor-transporte/index.ts";
+import { DEPORTES_SERVICES } from "../../src/data/services/deportes-fitness/index.ts";
+import { SALUD_SERVICES } from "../../src/data/services/salud-bienestar/index.ts";
+import { INMOBILIARIA_SERVICES } from "../../src/data/services/inmobiliaria-villas/index.ts";
+import { SPAS_SERVICES } from "../../src/data/services/spas-bienestar/index.ts";
+
+const GUIDE_SERVICES = [
+  ...PROFESIONALES_SERVICES,
+  ...TRANSPORTE_SERVICES,
+  ...DEPORTES_SERVICES,
+  ...SALUD_SERVICES,
+  ...INMOBILIARIA_SERVICES,
+  ...SPAS_SERVICES,
+];
+const guideServiceMap = new Map(GUIDE_SERVICES.map((s) => [s.slug, s]));
 
 describe("🏛️ Citizen Guides Page & Routing Suite (/guias)", () => {
   it("recupera correctamente las 6 guías canónicas por su slug", () => {
@@ -40,9 +57,7 @@ describe("🏛️ Citizen Guides Page & Routing Suite (/guias)", () => {
     });
   });
 
-  it("cada guía posee categorías canónicas existentes en CATEGORIES y servicios reales contrastados", async () => {
-    const { CATEGORIES } = await import("../../src/data/categories");
-    const { getServiceById } = await import("../../src/data/services");
+  it("cada guía posee categorías canónicas existentes en CATEGORIES y servicios reales contrastados", () => {
     const validCategoryIds = new Set(CATEGORIES.map((c) => c.id));
 
     CITIZEN_GUIDES.forEach((guide) => {
@@ -56,7 +71,7 @@ describe("🏛️ Citizen Guides Page & Routing Suite (/guias)", () => {
       expect(guide.recommendedServiceSlugs?.length).toBeGreaterThanOrEqual(3);
 
       guide.recommendedServiceSlugs?.forEach((slug) => {
-        const service = getServiceById(slug);
+        const service = guideServiceMap.get(slug);
         expect(service, `Servicio recomendado no encontrado: ${slug}`).toBeDefined();
         expect(service?.status).not.toBe("permanently_closed");
       });
@@ -74,7 +89,7 @@ describe("🏛️ Citizen Guides Page & Routing Suite (/guias)", () => {
         expect(guide.assistanceHeader.body.de.length).toBeGreaterThan(20);
       }
     });
-  }, 45000);
+  });
 
   it("genera la estructura correcta de Schema.org HowTo y FAQPage para SEO institucional", () => {
     const guide = getGuideBySlug("empadronamiento-palma");

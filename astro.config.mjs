@@ -17,7 +17,7 @@ export default defineConfig({
   },
   vite: {
     optimizeDeps: {
-      exclude: ["astro:middleware", "astro_middleware", "virtual:astro*"],
+      exclude: ["astro:middleware", "astro_middleware", "virtual:astro*", "astro/assets/services/noop"],
     },
     ssr: {
       external: ["node:async_hooks"],

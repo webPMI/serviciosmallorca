@@ -16,6 +16,7 @@ const fb = vi.hoisted(() => ({
   setDoc: vi.fn(),
   updateDoc: vi.fn(),
   getDocs: vi.fn(),
+  getDoc: vi.fn().mockResolvedValue({ exists: () => true, data: () => ({ role: "user", businesses: [] }) }),
 }));
 
 vi.mock("firebase/firestore", () => ({
@@ -28,6 +29,7 @@ vi.mock("firebase/firestore", () => ({
   setDoc: fb.setDoc,
   updateDoc: fb.updateDoc,
   getDocs: fb.getDocs,
+  getDoc: fb.getDoc,
 }));
 
 import {

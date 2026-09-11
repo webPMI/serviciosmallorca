@@ -12,6 +12,9 @@ import Navbar from "../../../components/Navbar.astro";
 import Footer from "../../../components/Footer.astro";
 import CitizenChecklist from "../../../components/CitizenChecklist.astro";
 import ServiceCard from "../../../components/ServiceCard.astro";
+import ResidentDiscountCalculator from "../../../components/ResidentDiscountCalculator.astro";
+import ItpTaxCalculator from "../../../components/ItpTaxCalculator.astro";
+import GuideStatBanner from "../../../components/GuideStatBanner.astro";
 import { getGuideBySlug } from "../../../data/citizenGuides";
 import { getServiceById, getServicesByCategory, type ServiceItem } from "../../../data/services";
 import { CATEGORIES } from "../../../data/categories";
@@ -378,6 +381,18 @@ const schemaOrg = {
     <!-- Checklist Interactivo de Documentación Requerida -->
     <CitizenChecklist guideId={guide.id} documents={guide.documents} lang={locale} />
 
+    <!-- Calculadoras Interactivas Oficiales Integradas si aplica -->
+    {guide.calculatorType === "residente_75" && (
+      <section class="guide-calculator-section" aria-label="Calculadora de Ahorro Residente">
+        <ResidentDiscountCalculator lang={locale} />
+      </section>
+    )}
+    {guide.calculatorType === "itp_joven" && (
+      <section class="guide-calculator-section" aria-label="Calculadora ITP Balear">
+        <ItpTaxCalculator lang={locale} />
+      </section>
+    )}
+
     <!-- Paso a Paso Secuencial -->
     <section class="guide-steps-section" aria-label={l.stepsTitle}>
       <h2 class="section-title">
@@ -519,6 +534,11 @@ const schemaOrg = {
         }
       </div>
     </section>
+
+    <!-- Indicadores Estadísticos Oficiales Vinculados -->
+    {guide.relatedStatIds && guide.relatedStatIds.length > 0 && (
+      <GuideStatBanner statIds={guide.relatedStatIds} lang={locale} />
+    )}
 
     <!-- Conexión Cruzada con el Directorio Local de Servicios Mallorca -->
     <section class="guide-directory-bridge" aria-labelledby="directory-bridge-title">

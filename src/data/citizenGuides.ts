@@ -76,6 +76,8 @@ export interface CitizenGuide {
     title: { es: string; ca: string; en: string; de: string };
     body: { es: string; ca: string; en: string; de: string };
   };
+  relatedStatIds?: string[];
+  calculatorType?: "residente_75" | "itp_joven";
 }
 
 export const CITIZEN_GUIDES: CitizenGuide[] = [
@@ -267,6 +269,7 @@ export const CITIZEN_GUIDES: CitizenGuide[] = [
         de: "Finden Sie zugelassene Gestorías, vereidigte Übersetzer und Berater auf Mallorca, die Ihre behördliche Anmeldung und Zertifikate abwickeln.",
       },
     },
+    relatedStatIds: ["poblacion-total-mallorca", "poblacion-palma", "crecimiento-demografico-decada"],
   },
   {
     id: "tarjeta-ciudadana-palma",
@@ -407,6 +410,7 @@ export const CITIZEN_GUIDES: CitizenGuide[] = [
         de: "Entdecken Sie Fahrradverleihe, Mobilitätsdienste und geprüfte Sportzentren, die die Vorteile Ihrer Bürgerkarte optimal ergänzen.",
       },
     },
+    relatedStatIds: ["viajeros-transporte-publico", "poblacion-palma"],
   },
   {
     id: "itv-cita-previa-mallorca",
@@ -596,6 +600,7 @@ export const CITIZEN_GUIDES: CitizenGuide[] = [
         de: "Bestehen Sie den spanischen TÜV (ITV) sorgenfrei ohne Nachprüfung. Diese Werkstätten prüfen Abgase, Bremsen, Fahrwerk und Beleuchtung vor Ihrem Termin.",
       },
     },
+    relatedStatIds: ["inspecciones-itv-anuales"],
   },
   {
     id: "descuento-residente-balear",
@@ -736,6 +741,8 @@ export const CITIZEN_GUIDES: CitizenGuide[] = [
         de: "Kombinieren Sie Ihren 75% Flugrabatt mit zuverlässigen Shuttles und pünktlichen VIP-Transfers zum Flughafen Palma Son Sant Joan.",
       },
     },
+    relatedStatIds: ["turistas-anuales-mallorca", "poblacion-total-mallorca"],
+    calculatorType: "residente_75",
   },
   {
     id: "tarjeta-sanitaria-ibsalut",
@@ -897,6 +904,7 @@ export const CITIZEN_GUIDES: CitizenGuide[] = [
         de: "Finden Sie renommierte Facharztzentren, Zahnkliniken und Augenärzte auf Mallorca zur Ergänzung Ihrer öffentlichen Krankenversorgung.",
       },
     },
+    relatedStatIds: ["sector-salud-bienestar-auge", "poblacion-total-mallorca"],
   },
   {
     id: "nie-tie-extranjeria-palma",
@@ -1069,6 +1077,7 @@ export const CITIZEN_GUIDES: CitizenGuide[] = [
         de: "Beschleunigen Sie Ihren NIE-, TIE- und Residencia-Antrag mit erfahrenen Fachanwälten und Gestorías, die Termine, Modell-790-Gebühren und amtliche Übersetzungen abwickeln.",
       },
     },
+    relatedStatIds: ["crecimiento-demografico-decada", "afiliacion-pico-verano"],
   },
 ];
 

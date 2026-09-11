@@ -1,0 +1,558 @@
+---
+/**
+ * ResidentDiscountCalculator.astro
+ *
+ * Calculadora interactiva del 75% de bonificación a residentes en Baleares
+ * para viajes aéreos y marítimos nacionales (Ministerio de Transportes).
+ * Cumple con GR-01 (CSS tokens), GR-02 (responsive), GR-04 (i18n cuatrilingüe),
+ * GR-07 (accesibilidad ARIA) y GR-09 (sin dependencias pesadas).
+ */
+import type { Locale } from "../i18n";
+
+export interface Props {
+  lang: Locale;
+}
+
+const { lang } = Astro.props;
+
+const labels: Record<
+  Locale,
+  {
+    badge: string;
+    title: string;
+    subtitle: string;
+    routeLabel: string;
+    customPriceLabel: string;
+    tripTypeLabel: string;
+    roundTrip: string;
+    oneWay: string;
+    standardFare: string;
+    residentDiscount: string;
+    finalPrice: string;
+    totalSavings: string;
+    saraNoticeTitle: string;
+    saraNoticeText: string;
+    selectRoutePlaceholder: string;
+  }
+> = {
+  es: {
+    badge: "Herramienta Oficial Interactiva",
+    title: "Calculadora de Ahorro: 75% Descuento de Residente Balear",
+    subtitle: "Comprueba en tiempo real cuánto te ahorras en tus billetes de avión y barco desde Mallorca.",
+    routeLabel: "Selecciona una ruta habitual o introduce el importe:",
+    customPriceLabel: "Importe del billete antes de tasas (tarifa base en €):",
+    tripTypeLabel: "Tipo de trayecto:",
+    roundTrip: "Ida y vuelta",
+    oneWay: "Solo ida",
+    standardFare: "Tarifa estándar no residente:",
+    residentDiscount: "Subvención estatal del 75%:",
+    finalPrice: "Precio final a pagar por el residente:",
+    totalSavings: "Ahorro directo para el residente:",
+    saraNoticeTitle: "Acreditación Telemática Automática (Sistema SARA):",
+    saraNoticeText:
+      "Al comprar en la web de la aerolínea o naviera, el sistema conecta automáticamente con el Ministerio del Interior. Solo si el sistema SARA da error necesitarás llevar tu certificado de viaje del Padrón.",
+    selectRoutePlaceholder: "Elige una ruta insular / peninsular...",
+  },
+  ca: {
+    badge: "Eina Oficial Interactiva",
+    title: "Calculadora d'Estalvi: 75% Descompte de Resident Balear",
+    subtitle: "Comprova en temps real quant t'estalvies en els teus bitllets d'avió i vaixell des de Mallorca.",
+    routeLabel: "Selecciona una ruta habitual o introdueix l'import:",
+    customPriceLabel: "Import del bitllet abans de taxes (tarifa base en €):",
+    tripTypeLabel: "Tipus de trajecte:",
+    roundTrip: "Anada i tornada",
+    oneWay: "Només anada",
+    standardFare: "Tarifa estàndard no resident:",
+    residentDiscount: "Subvenció estatal del 75%:",
+    finalPrice: "Preu final a pagar pel resident:",
+    totalSavings: "Estalvi directe per al resident:",
+    saraNoticeTitle: "Acreditació Telemàtica Automàtica (Sistema SARA):",
+    saraNoticeText:
+      "En comprar al web de l'aerolínia o naviliera, el sistema connecta automàticament amb el Ministeri. Només si falla el SARA caldrà dur el certificat de viatge del Padró.",
+    selectRoutePlaceholder: "Tria una ruta insular / peninsular...",
+  },
+  en: {
+    badge: "Official Interactive Tool",
+    title: "Savings Calculator: 75% Balearic Resident Discount",
+    subtitle: "Check in real time how much you save on flight and ferry tickets departing from Mallorca.",
+    routeLabel: "Select a standard route or enter custom fare:",
+    customPriceLabel: "Base ticket fare before airport taxes (€):",
+    tripTypeLabel: "Journey type:",
+    roundTrip: "Round trip",
+    oneWay: "One way",
+    standardFare: "Standard non-resident fare:",
+    residentDiscount: "75% Spanish Government Subsidy:",
+    finalPrice: "Final price payable by island resident:",
+    totalSavings: "Direct savings for the resident:",
+    saraNoticeTitle: "Automated Digital Verification (SARA System):",
+    saraNoticeText:
+      "When booking via airline or ferry portals, the SARA system verifies residency automatically with the Ministry of Transport. Physical paper certificates are only needed if electronic check fails.",
+    selectRoutePlaceholder: "Select an island / mainland route...",
+  },
+  de: {
+    badge: "Offizielles Interaktives Tool",
+    title: "Ersparnis-Rechner: 75% Residentenrabatt Balearen",
+    subtitle: "Berechnen Sie in Echtzeit Ihre Ersparnis bei Flug- und Fährtickets ab Mallorca.",
+    routeLabel: "Wählen Sie eine typische Flugroute oder geben Sie den Betrag ein:",
+    customPriceLabel: "Flugpreis vor Steuern / Grundpreis (€):",
+    tripTypeLabel: "Reiseart:",
+    roundTrip: "Hin- und Rückflug",
+    oneWay: "Einfache Strecke",
+    standardFare: "Regulärer Preis für Nicht-Residenten:",
+    residentDiscount: "75% staatlicher Zuschuss:",
+    finalPrice: "Endpreis für Balearen-Residenten:",
+    totalSavings: "Ihre direkte Nettoersparnis:",
+    saraNoticeTitle: "Automatische behördliche Online-Prüfung (SARA-System):",
+    saraNoticeText:
+      "Bei der Buchung prüft die Fluggesellschaft den Wohnsitzstatus automatisch über das SARA-System beim spanischen Innenministerium. Die Meldebescheinigung (Certificado de Viaje) ist nur nötig, wenn die Prüfung fehlschlägt.",
+    selectRoutePlaceholder: "Route auswählen...",
+  },
+};
+
+const l = labels[lang] || labels.es;
+
+const routes = [
+  { id: "bcn", name: "Palma (PMI) ⇄ Barcelona (BCN)", priceOneWay: 65, priceRound: 130 },
+  { id: "mad", name: "Palma (PMI) ⇄ Madrid (MAD)", priceOneWay: 75, priceRound: 150 },
+  { id: "vlc", name: "Palma (PMI) ⇄ Valencia (VLC)", priceOneWay: 55, priceRound: 110 },
+  { id: "ibz", name: "Palma (PMI) ⇄ Ibiza (IBZ)", priceOneWay: 45, priceRound: 90 },
+  { id: "mah", name: "Palma (PMI) ⇄ Menorca (MAH)", priceOneWay: 45, priceRound: 90 },
+  { id: "custom", name: "➕ Personalizado / Otro importe libre", priceOneWay: 100, priceRound: 200 },
+];
+---
+
+<section class="resident-calculator-card" aria-label={l.title}>
+  <div class="calc-badge">
+    <span>✈️ {l.badge}</span>
+  </div>
+
+  <h3 class="calc-title">{l.title}</h3>
+  <p class="calc-subtitle">{l.subtitle}</p>
+
+  <div class="calc-form">
+    <!-- Selector de Ruta -->
+    <div class="form-group">
+      <label for="calc-route-select" class="form-label">{l.routeLabel}</label>
+      <select id="calc-route-select" class="form-select">
+        <option value="" disabled selected>{l.selectRoutePlaceholder}</option>
+        {routes.map((r) => (
+          <option value={r.id} data-oneway={r.priceOneWay} data-round={r.priceRound}>
+            {r.name}
+          </option>
+        ))}
+      </select>
+    </div>
+
+    <div class="form-row-2col">
+      <!-- Selector de Tipo de Viaje -->
+      <div class="form-group">
+        <span class="form-label">{l.tripTypeLabel}</span>
+        <div class="toggle-group" role="radiogroup" aria-label={l.tripTypeLabel}>
+          <button type="button" class="toggle-btn active" id="btn-round-trip" data-type="round">
+            🔄 {l.roundTrip}
+          </button>
+          <button type="button" class="toggle-btn" id="btn-one-way" data-type="oneway">
+            ➡️ {l.oneWay}
+          </button>
+        </div>
+      </div>
+
+      <!-- Input de Importe Libre -->
+      <div class="form-group">
+        <label for="calc-price-input" class="form-label">{l.customPriceLabel}</label>
+        <div class="input-currency-wrapper">
+          <input
+            type="number"
+            id="calc-price-input"
+            class="form-input"
+            value="140"
+            min="10"
+            max="2500"
+            step="5"
+          />
+          <span class="currency-symbol">€</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Panel de Resultados en Tiempo Real -->
+  <div class="calc-results-panel">
+    <div class="result-row">
+      <span class="result-label">{l.standardFare}</span>
+      <span class="result-value standard" id="calc-standard-val">140,00 €</span>
+    </div>
+
+    <div class="result-row highlight-discount">
+      <span class="result-label">{l.residentDiscount}</span>
+      <span class="result-value discount" id="calc-discount-val">-105,00 €</span>
+    </div>
+
+    <hr class="calc-divider" />
+
+    <div class="result-row final-row">
+      <div class="final-text-group">
+        <span class="final-label">{l.finalPrice}</span>
+        <span class="final-pill">75% Bonificado</span>
+      </div>
+      <span class="result-value final" id="calc-final-val">35,00 €</span>
+    </div>
+
+    <div class="savings-alert-box">
+      <span class="savings-icon" aria-hidden="true">💰</span>
+      <div class="savings-text">
+        <span class="savings-lead">{l.totalSavings}</span>
+        <strong class="savings-number" id="calc-savings-val">105,00 € ahorrados</strong>
+      </div>
+    </div>
+  </div>
+
+  <!-- Nota de Verificación SARA -->
+  <aside class="sara-notice">
+    <div class="sara-icon" aria-hidden="true">ℹ️</div>
+    <div class="sara-content">
+      <h4 class="sara-title">{l.saraNoticeTitle}</h4>
+      <p class="sara-text">{l.saraNoticeText}</p>
+    </div>
+  </aside>
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const routeSelect = document.getElementById("calc-route-select") as HTMLSelectElement | null;
+    const priceInput = document.getElementById("calc-price-input") as HTMLInputElement | null;
+    const btnRound = document.getElementById("btn-round-trip");
+    const btnOneWay = document.getElementById("btn-one-way");
+
+    const standardVal = document.getElementById("calc-standard-val");
+    const discountVal = document.getElementById("calc-discount-val");
+    const finalVal = document.getElementById("calc-final-val");
+    const savingsVal = document.getElementById("calc-savings-val");
+
+    let isRoundTrip = true;
+
+    const formatEUR = (num: number) => {
+      return num.toLocaleString("es-ES", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " €";
+    };
+
+    const calculate = () => {
+      const base = parseFloat(priceInput?.value || "0") || 0;
+      const discount = base * 0.75;
+      const final = base - discount;
+
+      if (standardVal) standardVal.innerText = formatEUR(base);
+      if (discountVal) discountVal.innerText = "-" + formatEUR(discount);
+      if (finalVal) finalVal.innerText = formatEUR(final);
+      if (savingsVal) savingsVal.innerText = formatEUR(discount) + " ahorrados";
+    };
+
+    routeSelect?.addEventListener("change", () => {
+      const selected = routeSelect.options[routeSelect.selectedIndex];
+      if (!selected) return;
+
+      const oneWayPrice = parseFloat(selected.dataset.oneway || "60");
+      const roundPrice = parseFloat(selected.dataset.round || "120");
+
+      if (priceInput) {
+        priceInput.value = String(isRoundTrip ? roundPrice : oneWayPrice);
+      }
+      calculate();
+    });
+
+    btnRound?.addEventListener("click", () => {
+      if (isRoundTrip) return;
+      isRoundTrip = true;
+      btnRound.classList.add("active");
+      btnOneWay?.classList.remove("active");
+
+      const current = parseFloat(priceInput?.value || "0");
+      if (priceInput && current > 0) {
+        priceInput.value = String(Math.round(current * 2));
+      }
+      calculate();
+    });
+
+    btnOneWay?.addEventListener("click", () => {
+      if (!isRoundTrip) return;
+      isRoundTrip = false;
+      btnOneWay.classList.add("active");
+      btnRound?.classList.remove("active");
+
+      const current = parseFloat(priceInput?.value || "0");
+      if (priceInput && current > 0) {
+        priceInput.value = String(Math.round(current / 2));
+      }
+      calculate();
+    });
+
+    priceInput?.addEventListener("input", calculate);
+
+    // Initial calculation
+    calculate();
+  });
+</script>
+
+<style>
+  .resident-calculator-card {
+    background: var(--color-bg-card, #ffffff);
+    border: 2px solid var(--color-gold, #c89d5c);
+    border-radius: var(--radius-xl, 16px);
+    padding: 2rem;
+    margin: 2.5rem 0;
+    box-shadow: 0 4px 20px rgba(200, 157, 92, 0.12);
+  }
+
+  .calc-badge {
+    display: inline-flex;
+    padding: 0.25rem 0.75rem;
+    background: rgba(200, 157, 92, 0.12);
+    border: 1px solid rgba(200, 157, 92, 0.3);
+    border-radius: var(--radius-full, 9999px);
+    color: var(--color-gold-dark, #9a7332);
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+  }
+
+  .calc-title {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--color-text-main, #1a202c);
+  }
+
+  .calc-subtitle {
+    margin: 0 0 1.5rem 0;
+    font-size: 0.95rem;
+    color: var(--color-text-muted, #718096);
+  }
+
+  .calc-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+  }
+
+  .form-row-2col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+  }
+
+  .form-label {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--color-text-main, #2d3748);
+  }
+
+  .form-select,
+  .form-input {
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+    border: 1.5px solid var(--color-border, #cbd5e0);
+    border-radius: var(--radius-md, 8px);
+    background: var(--color-bg-main, #ffffff);
+    color: var(--color-text-main, #1a202c);
+    outline: none;
+    transition: border-color 0.2s ease;
+  }
+
+  .form-select:focus,
+  .form-input:focus {
+    border-color: var(--color-gold, #c89d5c);
+  }
+
+  .input-currency-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .input-currency-wrapper .form-input {
+    width: 100%;
+    padding-right: 2.25rem;
+    font-weight: 700;
+    font-size: 1.1rem;
+  }
+
+  .currency-symbol {
+    position: absolute;
+    right: 1rem;
+    font-weight: 700;
+    color: var(--color-text-muted, #718096);
+    pointer-events: none;
+  }
+
+  .toggle-group {
+    display: flex;
+    border: 1px solid var(--color-border, #cbd5e0);
+    border-radius: var(--radius-md, 8px);
+    overflow: hidden;
+  }
+
+  .toggle-btn {
+    flex: 1;
+    padding: 0.75rem 0.5rem;
+    background: var(--color-bg-alt, #f7fafc);
+    border: none;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--color-text-muted, #4a5568);
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .toggle-btn.active {
+    background: var(--color-gold, #c89d5c);
+    color: #ffffff;
+  }
+
+  /* Resultados */
+  .calc-results-panel {
+    background: var(--color-bg-alt, #f8fafc);
+    border: 1px solid var(--color-border, #e2e8f0);
+    border-radius: var(--radius-lg, 12px);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .result-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.45rem 0;
+  }
+
+  .result-label {
+    font-size: 0.92rem;
+    color: var(--color-text-muted, #4a5568);
+  }
+
+  .result-value {
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+
+  .result-value.standard {
+    color: var(--color-text-muted, #718096);
+    text-decoration: line-through;
+  }
+
+  .result-value.discount {
+    color: #16a34a;
+  }
+
+  .calc-divider {
+    border: none;
+    border-top: 1px dashed var(--color-border, #cbd5e0);
+    margin: 0.85rem 0;
+  }
+
+  .final-row {
+    align-items: baseline;
+    padding-top: 0.5rem;
+  }
+
+  .final-text-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .final-label {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: var(--color-text-main, #1a202c);
+  }
+
+  .final-pill {
+    font-size: 0.75rem;
+    font-weight: 700;
+    background: rgba(34, 197, 94, 0.15);
+    color: #15803d;
+    padding: 0.15rem 0.5rem;
+    border-radius: var(--radius-sm, 4px);
+  }
+
+  .result-value.final {
+    font-size: 1.75rem;
+    font-weight: 900;
+    color: var(--color-gold-dark, #9a7332);
+  }
+
+  .savings-alert-box {
+    margin-top: 1.25rem;
+    background: rgba(34, 197, 94, 0.1);
+    border: 1px solid rgba(34, 197, 94, 0.3);
+    border-radius: var(--radius-md, 8px);
+    padding: 0.85rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .savings-icon {
+    font-size: 1.5rem;
+  }
+
+  .savings-lead {
+    font-size: 0.85rem;
+    color: #166534;
+    display: block;
+  }
+
+  .savings-number {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: #14532d;
+  }
+
+  /* SARA Notice */
+  .sara-notice {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    background: rgba(59, 130, 246, 0.06);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    border-radius: var(--radius-md, 8px);
+    padding: 1rem;
+  }
+
+  .sara-icon {
+    font-size: 1.25rem;
+    flex-shrink: 0;
+  }
+
+  .sara-title {
+    margin: 0 0 0.25rem 0;
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: #1e40af;
+  }
+
+  .sara-text {
+    margin: 0;
+    font-size: 0.82rem;
+    line-height: 1.45;
+    color: #1e3a8a;
+  }
+
+  @media (max-width: 640px) {
+    .resident-calculator-card {
+      padding: 1.25rem;
+    }
+    .form-row-2col {
+      grid-template-columns: 1fr;
+    }
+    .result-value.final {
+      font-size: 1.4rem;
+    }
+  }
+</style>

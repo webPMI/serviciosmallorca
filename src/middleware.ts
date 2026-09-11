@@ -105,14 +105,23 @@ Explora el directorio completo y las valoraciones de restaurantes Michelin, chá
       return response;
     }
 
-    // Root redirect
-    if (pathname === "/" || pathname === "") {
+    // ── Non-localized path fallback redirect (e.g. / -> /es/ o /servicios/xyz -> /es/servicios/xyz) ──
+    const isStaticOrSystemPath =
+      pathname.includes(".") ||
+      pathname.startsWith("/_") ||
+      pathname.startsWith("/api/") ||
+      pathname.startsWith("/.well-known/") ||
+      pathname.startsWith("/mejores/");
+
+    if (!isStaticOrSystemPath) {
       const cookieLocale = cookies.get("locale")?.value;
       const detected =
         cookieLocale && LOCALES.includes(cookieLocale as any) ? (cookieLocale as any) : detectUserLocale(request);
       const prefix = getLangPrefix(detected);
-      // Hardening GR-13: la redirección 302 también viaja con las cabeceras de seguridad
-      const redirectResponse = redirect(prefix, 302);
+      const cleanPath = pathname.replace(/^\/+/, "");
+      const redirectUrl = cleanPath ? `${prefix}${cleanPath}` : prefix;
+      // Hardening GR-13: la redirección 302 viaja con las cabeceras de seguridad
+      const redirectResponse = redirect(redirectUrl, 302);
       for (const [key, value] of Object.entries(SECURITY_HEADERS)) {
         redirectResponse.headers.set(key, value);
       }

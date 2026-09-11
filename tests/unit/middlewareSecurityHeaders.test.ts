@@ -128,4 +128,13 @@ describe("🛡️ Middleware: cabeceras de seguridad HTTP (GR-13 / SECURITY.md �
     expect(response.headers.get("x-frame-options")).toBe("SAMEORIGIN");
     expect(response.headers.get("strict-transport-security")).toContain("max-age=31536000");
   });
+
+  it("ruta de servicio sin locale (p.ej. /servicios/bergantinos-bikes-mallorca) redirige 302 con cabeceras", async () => {
+    const { response } = await run("/servicios/bergantinos-bikes-mallorca");
+    expect(response.status).toBe(302);
+    expect(response.headers.get("location")).toMatch(/^\/(es|en|ca|de)\/servicios\/bergantinos-bikes-mallorca$/);
+    expect(response.headers.get("x-frame-options")).toBe("SAMEORIGIN");
+    expect(response.headers.get("strict-transport-security")).toContain("max-age=31536000");
+  });
 });
+

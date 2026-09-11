@@ -1,0 +1,741 @@
+---
+/**
+ * normativa/[slug].astro
+ *
+ * Ficha detallada y explicativa de decreto, ley o ayuda autonómica del BOIB.
+ * Incluye calculadora tributaria si aplica (ej. ITP Joven 0%) y métricas contrastadas.
+ * Cumple con GR-01 (CSS tokens), GR-02 (responsive), GR-03 (TypeScript estricto),
+ * GR-04 (i18n cuatrilingüe), GR-07 (accesibilidad semántica) y GR-11 (Zero Fake Data).
+ */
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Navbar from "../../../components/Navbar.astro";
+import Footer from "../../../components/Footer.astro";
+import ItpTaxCalculator from "../../../components/ItpTaxCalculator.astro";
+import GuideStatBanner from "../../../components/GuideStatBanner.astro";
+import { getRegulationBySlug, getAllRegulations } from "../../../data/officialRegulations";
+import { getGuideBySlug } from "../../../data/citizenGuides";
+import { getLocaleFromUrl, loadTranslations, getLangPrefix, type Locale } from "../../../i18n";
+
+export const prerender = false;
+
+const locale = getLocaleFromUrl(Astro.url) as Locale;
+const translations = await loadTranslations(locale);
+const prefix = getLangPrefix(locale);
+
+const { slug } = Astro.params;
+const regulation = slug ? getRegulationBySlug(slug) : undefined;
+
+if (!regulation) {
+  return Astro.redirect(`${prefix}normativa`);
+}
+
+const title = regulation.title[locale] || regulation.title.es;
+const summary = regulation.summary[locale] || regulation.summary.es;
+const benefits = regulation.benefitsSummary[locale] || regulation.benefitsSummary.es;
+
+// Resolver guías ciudadanas vinculadas
+const relatedGuides = (regulation.relatedGuideSlugs || [])
+  .map((gSlug) => getGuideBySlug(gSlug))
+  .filter(Boolean);
+
+const labels: Record<
+  Locale,
+  {
+    breadcrumbsHome: string;
+    breadcrumbsNormativa: string;
+    authorityLabel: string;
+    boibRefLabel: string;
+    pubDateLabel: string;
+    effectiveDateLabel: string;
+    officialSourceBtn: string;
+    benefitsTitle: string;
+    keyPointsTitle: string;
+    relatedGuidesTitle: string;
+    backToList: string;
+  }
+> = {
+  es: {
+    breadcrumbsHome: "Inicio",
+    breadcrumbsNormativa: "Normativa & BOIB",
+    authorityLabel: "Organismo Emisor:",
+    boibRefLabel: "Referencia Oficial:",
+    pubDateLabel: "Publicación en BOIB:",
+    effectiveDateLabel: "Entrada en Vigor:",
+    officialSourceBtn: "Consultar Texto Oficial en el BOIB ↗",
+    benefitsTitle: "Beneficio Clave & Ámbito de Aplicación",
+    keyPointsTitle: "Claves Prácticas y Puntos Esenciales del Decreto",
+    relatedGuidesTitle: "Trámites y Guías Ciudadanas Relacionadas",
+    backToList: "← Volver al catálogo de normativas",
+  },
+  ca: {
+    breadcrumbsHome: "Inici",
+    breadcrumbsNormativa: "Normativa & BOIB",
+    authorityLabel: "Organisme Emissor:",
+    boibRefLabel: "Referència Oficial:",
+    pubDateLabel: "Publicació al BOIB:",
+    effectiveDateLabel: "Entrada en Vigor:",
+    officialSourceBtn: "Consultar Text Oficial al BOIB ↗",
+    benefitsTitle: "Benefici Clau & Àmbit d'Aplicació",
+    keyPointsTitle: "Claus Pràctiques i Punts Essencials del Decret",
+    relatedGuidesTitle: "Tràmits i Guies Ciutadanes Relacionades",
+    backToList: "← Tornar al catàleg de normatives",
+  },
+  en: {
+    breadcrumbsHome: "Home",
+    breadcrumbsNormativa: "Regulations & BOIB",
+    authorityLabel: "Issuing Authority:",
+    boibRefLabel: "Official Reference:",
+    pubDateLabel: "BOIB Publication:",
+    effectiveDateLabel: "Effective Date:",
+    officialSourceBtn: "View Official Text in BOIB ↗",
+    benefitsTitle: "Key Benefit & Scope of Application",
+    keyPointsTitle: "Practical Highlights & Essential Terms",
+    relatedGuidesTitle: "Related Citizen Guides & Procedures",
+    backToList: "← Back to regulations directory",
+  },
+  de: {
+    breadcrumbsHome: "Startseite",
+    breadcrumbsNormativa: "Gesetze & Amtsblatt",
+    authorityLabel: "Herausgebende Behörde:",
+    boibRefLabel: "Offizielle Kennung:",
+    pubDateLabel: "BOIB-Veröffentlichung:",
+    effectiveDateLabel: "Inkrafttreten:",
+    officialSourceBtn: "Offiziellen Gesetzestext im BOIB ansehen ↗",
+    benefitsTitle: "Zentraler Vorteil & Geltungsbereich",
+    keyPointsTitle: "Praxis-Punkte & Wichtigste Regelungen",
+    relatedGuidesTitle: "Verwandte Behörden-Leitfäden",
+    backToList: "← Zurück zur Gesetzesübersicht",
+  },
+};
+
+const t = labels[locale] || labels.es;
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site || "https://serviciosmallorca.com").href;
+
+// Schema.org Legislation
+const schemaData = {
+  "@context": "https://schema.org",
+  "@type": "Legislation",
+  name: title,
+  description: summary,
+  legislationIdentifier: regulation.officialBoibNumber,
+  legislationDate: regulation.publicationDate,
+  legislationPassedBy: {
+    "@type": "GovernmentOrganization",
+    name: regulation.authority,
+  },
+  url: canonicalUrl,
+  inLanguage: locale,
+};
+---
+
+<BaseLayout
+  title={`${title} | Normativa Mallorca`}
+  description={summary}
+  ogImage="/images/og-normativa.webp"
+  canonicalUrl={canonicalUrl}
+  lang={locale}
+>
+  <Navbar lang={locale} translations={translations} />
+
+  <main id="main-content" class="regulation-detail-page">
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumb-container" aria-label="Breadcrumb">
+      <div class="site-container">
+        <ol class="breadcrumb-list">
+          <li class="breadcrumb-item">
+            <a href={prefix || "/"} class="breadcrumb-link">{t.breadcrumbsHome}</a>
+          </li>
+          <li class="breadcrumb-separator" aria-hidden="true">/</li>
+          <li class="breadcrumb-item">
+            <a href={`${prefix}normativa`} class="breadcrumb-link">{t.breadcrumbsNormativa}</a>
+          </li>
+          <li class="breadcrumb-separator" aria-hidden="true">/</li>
+          <li class="breadcrumb-item active" aria-current="page">{regulation.officialBoibNumber}</li>
+        </ol>
+      </div>
+    </nav>
+
+    <!-- Header Hero -->
+    <header class="detail-hero site-container">
+      <div class="hero-top-badges">
+        <span class="authority-badge">{regulation.authority}</span>
+        <span class="boib-number-badge">{regulation.officialBoibNumber}</span>
+      </div>
+
+      <h1 class="regulation-h1">{title}</h1>
+      <p class="regulation-lead">{summary}</p>
+
+      <!-- Key Metadata Box -->
+      <div class="meta-strip">
+        <div class="meta-item">
+          <span class="meta-label">{t.pubDateLabel}</span>
+          <time datetime={regulation.publicationDate} class="meta-val">{regulation.publicationDate}</time>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">{t.effectiveDateLabel}</span>
+          <time datetime={regulation.effectiveDate} class="meta-val">{regulation.effectiveDate}</time>
+        </div>
+        <div class="meta-item cta-item">
+          <a
+            href={regulation.officialSourceUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="boib-portal-btn"
+          >
+            {t.officialSourceBtn}
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <div class="site-container detail-layout">
+      <!-- Main Content Column -->
+      <div class="content-col">
+        <!-- Benefit Highlight Card -->
+        <section class="benefits-card" aria-label={t.benefitsTitle}>
+          <div class="benefits-header">
+            <div class="benefit-badge-icon">✨</div>
+            <h2 class="benefits-title">{t.benefitsTitle}</h2>
+          </div>
+          <p class="benefits-body">{benefits}</p>
+        </section>
+
+        <!-- Calculadora Interactiva Integrada si aplica -->
+        {regulation.calculatorType === "itp_joven" && (
+          <section class="calculator-embed-section" aria-label="Calculadora ITP Integrada">
+            <ItpTaxCalculator lang={locale} />
+          </section>
+        )}
+
+        <!-- Key Points Breakdown -->
+        <section class="key-points-section" aria-label={t.keyPointsTitle}>
+          <h2 class="section-title">{t.keyPointsTitle}</h2>
+          <div class="points-grid">
+            {regulation.keyPoints.map((point, index) => {
+              const pTitle = point.title[locale] || point.title.es;
+              const pDesc = point.description[locale] || point.description.es;
+              return (
+                <div class="point-card">
+                  <div class="point-num">{index + 1}</div>
+                  <div class="point-content">
+                    <h3 class="point-title">{pTitle}</h3>
+                    <p class="point-desc">{pDesc}</p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </section>
+
+        <!-- Estadísticas oficiales vinculadas si existen -->
+        {regulation.relatedStatIds && regulation.relatedStatIds.length > 0 && (
+          <section class="stats-section">
+            <GuideStatBanner statIds={regulation.relatedStatIds} lang={locale} />
+          </section>
+        )}
+
+        <!-- Enlace de regreso -->
+        <div class="back-link-wrapper">
+          <a href={`${prefix}normativa`} class="back-link">
+            {t.backToList}
+          </a>
+        </div>
+      </div>
+
+      <!-- Sidebar Column -->
+      <aside class="sidebar-col">
+        <!-- Official Verification Card -->
+        <div class="side-card side-official-card">
+          <div class="side-badge">Garantía Jurídica</div>
+          <h3 class="side-card-title">Texto Íntegro y Convalidación</h3>
+          <p class="side-card-text">
+            Este contenido analiza exclusivamente las disposiciones oficiales publicadas en el BOIB. Para la tramitación
+            administrativa, utiliza los formularios oficiales de la sede electrónica correspondiente.
+          </p>
+          <a
+            href={regulation.officialSourceUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="side-btn"
+          >
+            Abrir BOIB Oficial ↗
+          </a>
+        </div>
+
+        <!-- Related Citizen Guides -->
+        {relatedGuides.length > 0 && (
+          <div class="side-card side-guides-card">
+            <h3 class="side-card-title">{t.relatedGuidesTitle}</h3>
+            <div class="guides-mini-list">
+              {relatedGuides.map((g) => {
+                if (!g) return null;
+                const gTitle = g.title[locale] || g.title.es;
+                const gUrl = `${prefix}guias/${g.slug}`;
+                return (
+                  <a href={gUrl} class="mini-guide-item">
+                    <span class="mini-guide-icon">{g.icon}</span>
+                    <span class="mini-guide-text">{gTitle}</span>
+                  </a>
+                );
+              })}
+            </div>
+          </div>
+        )}
+      </aside>
+    </div>
+  </main>
+
+  <Footer lang={locale} translations={translations} />
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json" set:html={JSON.stringify(schemaData)}></script>
+</BaseLayout>
+
+<style>
+  .regulation-detail-page {
+    min-height: 80vh;
+    padding-bottom: 4rem;
+  }
+
+  .site-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .breadcrumb-container {
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--color-border, #e2e8f0);
+    margin-bottom: 2rem;
+  }
+
+  :global(.dark) .breadcrumb-container {
+    border-bottom-color: var(--color-border-dark, #2d3748);
+  }
+
+  .breadcrumb-list {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.875rem;
+    flex-wrap: wrap;
+  }
+
+  .breadcrumb-link {
+    color: var(--color-text-muted, #64748b);
+    text-decoration: none;
+  }
+
+  .breadcrumb-link:hover {
+    color: var(--color-primary, #0066cc);
+  }
+
+  .breadcrumb-separator {
+    color: var(--color-text-muted, #94a3b8);
+  }
+
+  .breadcrumb-item.active {
+    color: var(--color-text, #1e293b);
+    font-weight: 600;
+  }
+
+  :global(.dark) .breadcrumb-item.active {
+    color: var(--color-text-dark, #f1f5f9);
+  }
+
+  .detail-hero {
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-top-badges {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+  }
+
+  .authority-badge {
+    font-size: 0.8125rem;
+    font-weight: 700;
+    color: var(--color-primary, #0066cc);
+    background: color-mix(in srgb, var(--color-primary, #0066cc) 10%, transparent);
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+  }
+
+  .boib-number-badge {
+    font-size: 0.8125rem;
+    font-family: monospace;
+    font-weight: 600;
+    background: var(--color-bg-subtle, #f1f5f9);
+    border: 1px solid var(--color-border, #cbd5e1);
+    color: var(--color-text-muted, #475569);
+    padding: 0.2rem 0.6rem;
+    border-radius: var(--radius-sm, 0.25rem);
+  }
+
+  :global(.dark) .boib-number-badge {
+    background: var(--color-bg-subtle-dark, #1e293b);
+    border-color: var(--color-border-dark, #334155);
+    color: var(--color-text-muted, #94a3b8);
+  }
+
+  .regulation-h1 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: var(--color-text, #1a202c);
+    margin: 0 0 1rem 0;
+    line-height: 1.25;
+  }
+
+  @media (min-width: 768px) {
+    .regulation-h1 {
+      font-size: 2.75rem;
+    }
+  }
+
+  :global(.dark) .regulation-h1 {
+    color: var(--color-text-dark, #f7fafc);
+  }
+
+  .regulation-lead {
+    font-size: 1.125rem;
+    color: var(--color-text-muted, #4b5563);
+    line-height: 1.6;
+    margin: 0 0 1.5rem 0;
+  }
+
+  :global(.dark) .regulation-lead {
+    color: var(--color-text-muted, #cbd5e1);
+  }
+
+  .meta-strip {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    padding: 1.25rem;
+    background: var(--color-surface, #ffffff);
+    border: 1px solid var(--color-border, #e2e8f0);
+    border-radius: var(--radius-lg, 0.75rem);
+  }
+
+  :global(.dark) .meta-strip {
+    background: var(--color-surface-dark, #1a202c);
+    border-color: var(--color-border-dark, #2d3748);
+  }
+
+  .meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .meta-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--color-text-muted, #64748b);
+    text-transform: uppercase;
+  }
+
+  .meta-val {
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: var(--color-text, #1e293b);
+  }
+
+  :global(.dark) .meta-val {
+    color: var(--color-text-dark, #f1f5f9);
+  }
+
+  .cta-item {
+    margin-left: auto;
+  }
+
+  .boib-portal-btn {
+    background: var(--color-primary, #0066cc);
+    color: #ffffff;
+    font-size: 0.875rem;
+    font-weight: 600;
+    padding: 0.6rem 1.25rem;
+    border-radius: var(--radius-md, 0.5rem);
+    text-decoration: none;
+    transition: opacity 0.15s ease;
+  }
+
+  .boib-portal-btn:hover {
+    opacity: 0.9;
+  }
+
+  .detail-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    margin-top: 2.5rem;
+  }
+
+  @media (min-width: 1024px) {
+    .detail-layout {
+      grid-template-columns: 2fr 1fr;
+    }
+  }
+
+  .content-col {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .benefits-card {
+    background: color-mix(in srgb, var(--color-primary, #0066cc) 6%, transparent);
+    border: 2px solid color-mix(in srgb, var(--color-primary, #0066cc) 25%, transparent);
+    border-radius: var(--radius-xl, 1rem);
+    padding: 1.75rem;
+  }
+
+  :global(.dark) .benefits-card {
+    background: color-mix(in srgb, var(--color-primary, #0066cc) 12%, transparent);
+  }
+
+  .benefits-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .benefit-badge-icon {
+    font-size: 1.5rem;
+  }
+
+  .benefits-title {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--color-primary, #0066cc);
+    margin: 0;
+  }
+
+  :global(.dark) .benefits-title {
+    color: #60a5fa;
+  }
+
+  .benefits-body {
+    font-size: 1.0625rem;
+    font-weight: 500;
+    color: var(--color-text, #1e293b);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  :global(.dark) .benefits-body {
+    color: var(--color-text-dark, #f1f5f9);
+  }
+
+  .section-title {
+    font-size: 1.375rem;
+    font-weight: 800;
+    color: var(--color-text, #1a202c);
+    margin: 0 0 1.25rem 0;
+  }
+
+  :global(.dark) .section-title {
+    color: var(--color-text-dark, #f7fafc);
+  }
+
+  .points-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .point-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+    background: var(--color-surface, #ffffff);
+    border: 1px solid var(--color-border, #e2e8f0);
+    border-radius: var(--radius-lg, 0.75rem);
+    padding: 1.25rem;
+  }
+
+  :global(.dark) .point-card {
+    background: var(--color-surface-dark, #1a202c);
+    border-color: var(--color-border-dark, #2d3748);
+  }
+
+  .point-num {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    background: color-mix(in srgb, var(--color-primary, #0066cc) 12%, transparent);
+    color: var(--color-primary, #0066cc);
+    border-radius: 9999px;
+    font-weight: 800;
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+
+  .point-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .point-title {
+    font-size: 1.0625rem;
+    font-weight: 700;
+    color: var(--color-text, #1e293b);
+    margin: 0;
+  }
+
+  :global(.dark) .point-title {
+    color: var(--color-text-dark, #f1f5f9);
+  }
+
+  .point-desc {
+    font-size: 0.9375rem;
+    color: var(--color-text-muted, #64748b);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  :global(.dark) .point-desc {
+    color: var(--color-text-muted, #cbd5e1);
+  }
+
+  .back-link-wrapper {
+    margin-top: 1rem;
+  }
+
+  .back-link {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--color-primary, #0066cc);
+    text-decoration: none;
+  }
+
+  .back-link:hover {
+    text-decoration: underline;
+  }
+
+  /* Sidebar */
+  .sidebar-col {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .side-card {
+    background: var(--color-surface, #ffffff);
+    border: 1px solid var(--color-border, #e2e8f0);
+    border-radius: var(--radius-lg, 0.75rem);
+    padding: 1.5rem;
+  }
+
+  :global(.dark) .side-card {
+    background: var(--color-surface-dark, #1a202c);
+    border-color: var(--color-border-dark, #2d3748);
+  }
+
+  .side-badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #059669;
+    background: color-mix(in srgb, #10b981 15%, transparent);
+    padding: 0.2rem 0.5rem;
+    border-radius: var(--radius-sm, 0.25rem);
+    margin-bottom: 0.75rem;
+  }
+
+  .side-card-title {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--color-text, #1e293b);
+    margin: 0 0 0.5rem 0;
+  }
+
+  :global(.dark) .side-card-title {
+    color: var(--color-text-dark, #f1f5f9);
+  }
+
+  .side-card-text {
+    font-size: 0.875rem;
+    color: var(--color-text-muted, #64748b);
+    line-height: 1.5;
+    margin: 0 0 1.25rem 0;
+  }
+
+  :global(.dark) .side-card-text {
+    color: var(--color-text-muted, #94a3b8);
+  }
+
+  .side-btn {
+    display: block;
+    text-align: center;
+    background: var(--color-bg-subtle, #f1f5f9);
+    border: 1px solid var(--color-border, #cbd5e1);
+    color: var(--color-text, #1e293b);
+    font-size: 0.875rem;
+    font-weight: 600;
+    padding: 0.6rem 1rem;
+    border-radius: var(--radius-md, 0.5rem);
+    text-decoration: none;
+    transition: all 0.15s ease;
+  }
+
+  :global(.dark) .side-btn {
+    background: var(--color-bg-subtle-dark, #1e293b);
+    border-color: var(--color-border-dark, #334155);
+    color: var(--color-text-dark, #f1f5f9);
+  }
+
+  .side-btn:hover {
+    background: var(--color-primary, #0066cc);
+    color: #ffffff;
+    border-color: var(--color-primary, #0066cc);
+  }
+
+  .guides-mini-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .mini-guide-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.6rem 0.75rem;
+    border-radius: var(--radius-md, 0.5rem);
+    background: var(--color-bg-subtle, #f8fafc);
+    border: 1px solid var(--color-border, #e2e8f0);
+    text-decoration: none;
+    color: var(--color-text, #1e293b);
+    font-size: 0.875rem;
+    font-weight: 600;
+    transition: all 0.15s ease;
+  }
+
+  :global(.dark) .mini-guide-item {
+    background: var(--color-bg-subtle-dark, #232d3d);
+    border-color: var(--color-border-dark, #3b4759);
+    color: var(--color-text-dark, #f1f5f9);
+  }
+
+  .mini-guide-item:hover {
+    border-color: var(--color-primary, #0066cc);
+    transform: translateX(2px);
+  }
+
+  .mini-guide-icon {
+    font-size: 1.125rem;
+  }
+</style>

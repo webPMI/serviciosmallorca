@@ -1,0 +1,552 @@
+---
+/**
+ * normativa/index.astro
+ *
+ * Hub de Normativa Oficial, Decretos del BOIB y Ayudas Autonómicas de Mallorca.
+ * Cumple con GR-01 (CSS tokens), GR-02 (responsive), GR-03 (TypeScript estricto),
+ * GR-04 (i18n cuatrilingüe), GR-07 (accesibilidad semántica) y GR-11 (Zero Fake Data).
+ */
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Navbar from "../../../components/Navbar.astro";
+import Footer from "../../../components/Footer.astro";
+import RegulationCard from "../../../components/RegulationCard.astro";
+import { getAllRegulations, type RegulationCategory } from "../../../data/officialRegulations";
+import { getLocaleFromUrl, loadTranslations, getLangPrefix, type Locale } from "../../../i18n";
+
+export const prerender = false;
+
+const locale = getLocaleFromUrl(Astro.url) as Locale;
+const translations = await loadTranslations(locale);
+const prefix = getLangPrefix(locale);
+
+const regulations = getAllRegulations();
+
+const titles: Record<Locale, string> = {
+  es: "Normativa Oficial, Decretos del BOIB y Ayudas en Mallorca (2026)",
+  ca: "Normativa Oficial, Decrets del BOIB i Ajudes a Mallorca (2026)",
+  en: "Official Regulations, BOIB Decrees & Public Grants in Mallorca (2026)",
+  de: "Offizielle Gesetze, BOIB-Dekrete & Förderungen auf Mallorca (2026)",
+};
+
+const descriptions: Record<Locale, string> = {
+  es: "Guía práctica de la normativa vigente en Mallorca: ITP Joven 0%, Cuota Cero SOIB para autónomos, festivos comerciales 2026, moratoria de alquiler turístico y deducciones IRPF.",
+  ca: "Guia pràctica de la normativa vigent a Mallorca: ITP Jove 0%, Quota Zero SOIB per a autònoms, festius comercials 2026, moratòria de lloguer turístic i deduccions IRPF.",
+  en: "Clear guide to current laws in Mallorca: 0% Property Transfer Tax for youth, SOIB Zero Quota for freelancers, 2026 retail opening days, holiday rental limits, and regional tax deductions.",
+  de: "Praxis-Leitfaden zu aktuellen Gesetzen auf Mallorca: 0% Grunderwerbsteuer für U35, SOIB Null-Quote für Selbstständige, verkaufsoffene Sonntage 2026, ETV-Moratorium und Steuerabzüge.",
+};
+
+const filterLabels: Record<Locale, Record<string, string>> = {
+  es: {
+    all: "Todas las Normativas",
+    vivienda: "Vivienda & Urbanismo",
+    empresas_autonomos: "Empresas & Autónomos",
+    comercio: "Comercio & Festivos",
+    turismo: "Turismo & ETV",
+    fiscalidad: "Fiscalidad & Tributos",
+  },
+  ca: {
+    all: "Totes les Normatives",
+    vivienda: "Habitatge & Urbanisme",
+    empresas_autonomos: "Empreses & Autònoms",
+    comercio: "Comerç & Festius",
+    turismo: "Turisme & ETV",
+    fiscalidad: "Fiscalitat & Tributs",
+  },
+  en: {
+    all: "All Regulations",
+    vivienda: "Housing & Planning",
+    empresas_autonomos: "Business & Freelancers",
+    comercio: "Commerce & Retail",
+    turismo: "Tourism & Vacation Lets",
+    fiscalidad: "Taxes & Levies",
+  },
+  de: {
+    all: "Alle Vorschriften",
+    vivienda: "Wohnen & Bauen",
+    empresas_autonomos: "Unternehmen & Selbstständige",
+    comercio: "Handel & Öffnungszeiten",
+    turismo: "Tourismus & Ferienvermietung",
+    fiscalidad: "Steuern & Abgaben",
+  },
+};
+
+const filterT = filterLabels[locale] || filterLabels.es;
+const pageTitle = titles[locale] || titles.es;
+const pageDesc = descriptions[locale] || descriptions.es;
+
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site || "https://serviciosmallorca.com").href;
+
+// Schema.org para colección normativa
+const schemaData = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: pageTitle,
+  description: pageDesc,
+  url: canonicalUrl,
+  inLanguage: locale,
+  publisher: {
+    "@type": "Organization",
+    name: "Servicios Mallorca",
+    url: "https://serviciosmallorca.com",
+  },
+};
+---
+
+<BaseLayout
+  title={`${pageTitle} | Servicios Mallorca`}
+  description={pageDesc}
+  ogImage="/images/og-normativa.webp"
+  canonicalUrl={canonicalUrl}
+  lang={locale}
+>
+  <Navbar lang={locale} translations={translations} />
+
+  <main id="main-content" class="normativa-page">
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumb-container" aria-label="Breadcrumb">
+      <div class="site-container">
+        <ol class="breadcrumb-list">
+          <li class="breadcrumb-item">
+            <a href={prefix || "/"} class="breadcrumb-link">
+              {locale === "ca" ? "Inici" : locale === "en" ? "Home" : locale === "de" ? "Startseite" : "Inicio"}
+            </a>
+          </li>
+          <li class="breadcrumb-separator" aria-hidden="true">/</li>
+          <li class="breadcrumb-item active" aria-current="page">
+            {locale === "ca" ? "Normativa & BOIB" : locale === "en" ? "Regulations & BOIB" : locale === "de" ? "Gesetze & Amtsblatt" : "Normativa & BOIB"}
+          </li>
+        </ol>
+      </div>
+    </nav>
+
+    <!-- Header Hero -->
+    <header class="normativa-hero site-container">
+      <div class="hero-badge">
+        <svg class="hero-badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+          <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        <span>Boletín Oficial de les Illes Balears (BOIB)</span>
+      </div>
+
+      <h1 class="hero-title">{pageTitle}</h1>
+      <p class="hero-description">{pageDesc}</p>
+
+      <!-- Trust Badges -->
+      <div class="trust-strip">
+        <div class="trust-item">
+          <span class="trust-number">{regulations.length}</span>
+          <span class="trust-label">
+            {locale === "ca" ? "Normatives Auditades" : locale === "en" ? "Audited Decrees" : locale === "de" ? "Geprüfte Gesetze" : "Normativas Auditadas"}
+          </span>
+        </div>
+        <div class="trust-item">
+          <span class="trust-number">100%</span>
+          <span class="trust-label">
+            {locale === "ca" ? "Fonts Oficials CAIB" : locale === "en" ? "Official CAIB Sources" : locale === "de" ? "Offizielle CAIB-Quellen" : "Fuentes Oficiales CAIB"}
+          </span>
+        </div>
+        <div class="trust-item">
+          <span class="trust-number">2026</span>
+          <span class="trust-label">
+            {locale === "ca" ? "Vigència Actualitzada" : locale === "en" ? "In Force & Updated" : locale === "de" ? "Gültigkeit aktuell" : "Vigencia Actualizada"}
+          </span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Filter Bar -->
+    <section class="filters-section site-container" aria-label="Filtro de normativas por categoría">
+      <div class="filter-pills" role="tablist">
+        <button
+          type="button"
+          class="filter-pill active"
+          data-category="all"
+          role="tab"
+          aria-selected="true"
+        >
+          {filterT.all} ({regulations.length})
+        </button>
+        <button
+          type="button"
+          class="filter-pill"
+          data-category="vivienda"
+          role="tab"
+          aria-selected="false"
+        >
+          {filterT.vivienda}
+        </button>
+        <button
+          type="button"
+          class="filter-pill"
+          data-category="empresas_autonomos"
+          role="tab"
+          aria-selected="false"
+        >
+          {filterT.empresas_autonomos}
+        </button>
+        <button
+          type="button"
+          class="filter-pill"
+          data-category="comercio"
+          role="tab"
+          aria-selected="false"
+        >
+          {filterT.comercio}
+        </button>
+        <button
+          type="button"
+          class="filter-pill"
+          data-category="turismo"
+          role="tab"
+          aria-selected="false"
+        >
+          {filterT.turismo}
+        </button>
+        <button
+          type="button"
+          class="filter-pill"
+          data-category="fiscalidad"
+          role="tab"
+          aria-selected="false"
+        >
+          {filterT.fiscalidad}
+        </button>
+      </div>
+    </section>
+
+    <!-- Regulations List Grid -->
+    <section class="regulations-list-section site-container" aria-label="Listado de normativas">
+      <div class="regulations-grid" id="regulations-container">
+        {regulations.map((reg) => (
+          <div class="regulation-item" data-category={reg.category}>
+            <RegulationCard regulation={reg} lang={locale} />
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Legal Framework Info Box -->
+    <section class="legal-info-section site-container">
+      <div class="info-card">
+        <div class="info-icon">⚖️</div>
+        <div class="info-body">
+          <h2 class="info-title">
+            {locale === "ca"
+              ? "Com funciona el marc normatiu i el BOIB a les Illes Balears?"
+              : locale === "en"
+              ? "How does the legislative framework work in the Balearic Islands?"
+              : locale === "de"
+              ? "Wie funktioniert das Gesetzgebungsverfahren auf den Balearen?"
+              : "¿Cómo funciona el marco normativo y el BOIB en las Illes Balears?"}
+          </h2>
+          <p class="info-text">
+            {locale === "ca"
+              ? "Les lleis aprovades pel Parlament de les Illes Balears i els decrets del Govern de les Illes Balears es publiquen oficialment al BOIB. Les competències sobre urbanisme i transport recauen sobre el Consell Insular de Mallorca, mentre que les ordenances municipals són competència dels ajuntaments com el de Palma."
+              : locale === "en"
+              ? "Laws passed by the Parliament of the Balearic Islands and executive decrees enter into force upon publication in the official gazette (BOIB). Town planning, heritage and mobility are also regulated by the Consell Insular de Mallorca, with municipal bylaws managed by local town halls."
+              : locale === "de"
+              ? "Gesetze des balearischen Parlaments und Regierungsdekrete treten mit Veröffentlichung im BOIB in Kraft. Stadtplanung, Straßenverkehr und Tourismuslizenzen unterliegen dem Inselrat von Mallorca (Consell Insular) sowie den jeweiligen Rathäusern."
+              : "Las leyes autonómicas aprobadas por el Parlament de les Illes Balears y los decretos leyes del Govern de les Illes Balears adquieren plena eficacia jurídica tras su publicación en el BOIB. Las competencias de ordenación territorial, licencias ETV y carreteras recaen en el Consell Insular de Mallorca, coordinadas con los 53 ayuntamientos de la isla."}
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer lang={locale} translations={translations} />
+
+  <!-- Script interactivo de filtrado por categoría sin dependencias -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const filterPills = document.querySelectorAll<HTMLButtonElement>(".filter-pill");
+      const items = document.querySelectorAll<HTMLElement>(".regulation-item");
+
+      filterPills.forEach((pill) => {
+        pill.addEventListener("click", () => {
+          filterPills.forEach((p) => {
+            p.classList.remove("active");
+            p.setAttribute("aria-selected", "false");
+          });
+
+          pill.classList.add("active");
+          pill.setAttribute("aria-selected", "true");
+
+          const targetCategory = pill.getAttribute("data-category");
+
+          items.forEach((item) => {
+            const itemCat = item.getAttribute("data-category");
+            if (targetCategory === "all" || itemCat === targetCategory) {
+              item.style.display = "block";
+            } else {
+              item.style.display = "none";
+            }
+          });
+        });
+      });
+    });
+  </script>
+
+  <!-- Inyección de Schema.org -->
+  <script type="application/ld+json" set:html={JSON.stringify(schemaData)}></script>
+</BaseLayout>
+
+<style>
+  .normativa-page {
+    min-height: 80vh;
+    padding-bottom: 4rem;
+  }
+
+  .site-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .breadcrumb-container {
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--color-border, #e2e8f0);
+    margin-bottom: 2rem;
+  }
+
+  :global(.dark) .breadcrumb-container {
+    border-bottom-color: var(--color-border-dark, #2d3748);
+  }
+
+  .breadcrumb-list {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.875rem;
+  }
+
+  .breadcrumb-link {
+    color: var(--color-text-muted, #64748b);
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+
+  .breadcrumb-link:hover {
+    color: var(--color-primary, #0066cc);
+  }
+
+  .breadcrumb-separator {
+    color: var(--color-text-muted, #94a3b8);
+  }
+
+  .breadcrumb-item.active {
+    color: var(--color-text, #1e293b);
+    font-weight: 600;
+  }
+
+  :global(.dark) .breadcrumb-item.active {
+    color: var(--color-text-dark, #f1f5f9);
+  }
+
+  .normativa-hero {
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: color-mix(in srgb, var(--color-primary, #0066cc) 12%, transparent);
+    color: var(--color-primary, #0066cc);
+    padding: 0.35rem 0.85rem;
+    border-radius: 9999px;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .hero-badge-icon {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .hero-title {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: var(--color-text, #1a202c);
+    margin: 0 0 1rem 0;
+    line-height: 1.2;
+  }
+
+  @media (min-width: 768px) {
+    .hero-title {
+      font-size: 2.75rem;
+    }
+  }
+
+  :global(.dark) .hero-title {
+    color: var(--color-text-dark, #f7fafc);
+  }
+
+  .hero-description {
+    font-size: 1.125rem;
+    color: var(--color-text-muted, #64748b);
+    max-width: 800px;
+    margin: 0 0 2rem 0;
+    line-height: 1.6;
+  }
+
+  :global(.dark) .hero-description {
+    color: var(--color-text-muted, #a0aec0);
+  }
+
+  .trust-strip {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    padding: 1.25rem 1.5rem;
+    background: var(--color-bg-subtle, #f8fafc);
+    border: 1px solid var(--color-border, #e2e8f0);
+    border-radius: var(--radius-lg, 0.75rem);
+  }
+
+  :global(.dark) .trust-strip {
+    background: var(--color-bg-subtle-dark, #1e293b);
+    border-color: var(--color-border-dark, #334155);
+  }
+
+  .trust-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .trust-number {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--color-primary, #0066cc);
+    line-height: 1;
+  }
+
+  :global(.dark) .trust-number {
+    color: #60a5fa;
+  }
+
+  .trust-label {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--color-text-muted, #64748b);
+  }
+
+  .filters-section {
+    margin-bottom: 2rem;
+  }
+
+  .filter-pills {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+  }
+
+  .filter-pill {
+    background: var(--color-surface, #ffffff);
+    border: 1.5px solid var(--color-border, #cbd5e1);
+    color: var(--color-text, #475569);
+    font-size: 0.875rem;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    white-space: nowrap;
+  }
+
+  :global(.dark) .filter-pill {
+    background: var(--color-surface-dark, #1e293b);
+    border-color: var(--color-border-dark, #334155);
+    color: var(--color-text-dark, #cbd5e1);
+  }
+
+  .filter-pill:hover {
+    border-color: var(--color-primary, #0066cc);
+    color: var(--color-primary, #0066cc);
+  }
+
+  .filter-pill.active {
+    background: var(--color-primary, #0066cc);
+    border-color: var(--color-primary, #0066cc);
+    color: #ffffff;
+  }
+
+  .regulations-list-section {
+    margin-bottom: 3.5rem;
+  }
+
+  .regulations-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .regulations-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .legal-info-section {
+    margin-top: 2rem;
+  }
+
+  .info-card {
+    display: flex;
+    gap: 1.25rem;
+    background: var(--color-surface, #ffffff);
+    border: 1px solid var(--color-border, #e2e8f0);
+    border-radius: var(--radius-xl, 1rem);
+    padding: 2rem;
+    box-shadow: var(--shadow-sm, 0 1px 3px 0 rgba(0, 0, 0, 0.05));
+  }
+
+  :global(.dark) .info-card {
+    background: var(--color-surface-dark, #1a202c);
+    border-color: var(--color-border-dark, #2d3748);
+  }
+
+  .info-icon {
+    font-size: 2.25rem;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .info-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .info-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-text, #1e293b);
+    margin: 0;
+  }
+
+  :global(.dark) .info-title {
+    color: var(--color-text-dark, #f1f5f9);
+  }
+
+  .info-text {
+    font-size: 0.9375rem;
+    color: var(--color-text-muted, #64748b);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  :global(.dark) .info-text {
+    color: var(--color-text-muted, #94a3b8);
+  }
+</style>

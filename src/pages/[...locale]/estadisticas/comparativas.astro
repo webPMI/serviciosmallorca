@@ -10,6 +10,7 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
 import Navbar from "../../../components/Navbar.astro";
 import Footer from "../../../components/Footer.astro";
 import SectorHistoricalChart from "../../../components/SectorHistoricalChart.astro";
+import OpenDataExporter from "../../../components/OpenDataExporter.astro";
 import { HISTORICAL_SECTOR_SERIES } from "../../../data/historicalSectorStats";
 import { getLocaleFromUrl, loadTranslations, getLangPrefix, type Locale } from "../../../i18n";
 
@@ -153,13 +154,27 @@ const schemaOrg = {
         {
           "@type": "ListItem",
           position: 2,
-          name: locale === "ca" ? "Estadístiques" : locale === "en" ? "Statistics" : locale === "de" ? "Statistiken" : "Estadísticas",
+          name:
+            locale === "ca"
+              ? "Estadístiques"
+              : locale === "en"
+                ? "Statistics"
+                : locale === "de"
+                  ? "Statistiken"
+                  : "Estadísticas",
           item: `https://serviciosmallorca.com${prefix}estadisticas`,
         },
         {
           "@type": "ListItem",
           position: 3,
-          name: locale === "ca" ? "Comparatives Semestrals" : locale === "en" ? "Semiannual Comparisons" : locale === "de" ? "Halbjahres-Vergleiche" : "Comparativas Semestrales",
+          name:
+            locale === "ca"
+              ? "Comparatives Semestrals"
+              : locale === "en"
+                ? "Semiannual Comparisons"
+                : locale === "de"
+                  ? "Halbjahres-Vergleiche"
+                  : "Comparativas Semestrales",
           item: `https://serviciosmallorca.com${prefix}estadisticas/comparativas`,
         },
       ],
@@ -168,7 +183,8 @@ const schemaOrg = {
       "@type": "Dataset",
       "@id": `https://serviciosmallorca.com${prefix}estadisticas/comparativas#dataset`,
       name: "Mallorca Semiannual Economic & Social Time Series (2006-2026)",
-      description: "Historical semiannual indicators across 16 macroeconomic and social sectors of Mallorca sourced from IBESTAT, INE, Social Security, AENA, TIRME, and SFM.",
+      description:
+        "Historical semiannual indicators across 16 macroeconomic and social sectors of Mallorca sourced from IBESTAT, INE, Social Security, AENA, TIRME, and SFM.",
       temporalCoverage: "2006-01-01/2026-06-30",
       spatialCoverage: {
         "@type": "Place",
@@ -223,11 +239,35 @@ const schemaOrg = {
     <!-- Migas de Pan -->
     <nav class="comparativas-breadcrumbs" aria-label="Breadcrumb">
       <ol class="breadcrumbs-list">
-        <li><a href={prefix || "/"} class="breadcrumb-link">{locale === "ca" ? "Inici" : locale === "en" ? "Home" : locale === "de" ? "Startseite" : "Inicio"}</a></li>
+        <li>
+          <a href={prefix || "/"} class="breadcrumb-link"
+            >{locale === "ca" ? "Inici" : locale === "en" ? "Home" : locale === "de" ? "Startseite" : "Inicio"}</a>
+        </li>
         <li class="breadcrumb-separator" aria-hidden="true">/</li>
-        <li><a href={`${prefix}estadisticas`} class="breadcrumb-link">{locale === "ca" ? "Estadístiques" : locale === "en" ? "Statistics" : locale === "de" ? "Statistiken" : "Estadísticas"}</a></li>
+        <li>
+          <a href={`${prefix}estadisticas`} class="breadcrumb-link"
+            >{
+              locale === "ca"
+                ? "Estadístiques"
+                : locale === "en"
+                  ? "Statistics"
+                  : locale === "de"
+                    ? "Statistiken"
+                    : "Estadísticas"
+            }</a>
+        </li>
         <li class="breadcrumb-separator" aria-hidden="true">/</li>
-        <li class="breadcrumb-current" aria-current="page">{locale === "ca" ? "Comparatives Semestrals (20 Anys)" : locale === "en" ? "Semiannual Comparisons (20 Years)" : locale === "de" ? "Halbjahres-Vergleiche (20 Jahre)" : "Comparativas Semestrales (20 Años)"}</li>
+        <li class="breadcrumb-current" aria-current="page">
+          {
+            locale === "ca"
+              ? "Comparatives Semestrals (20 Anys)"
+              : locale === "en"
+                ? "Semiannual Comparisons (20 Years)"
+                : locale === "de"
+                  ? "Halbjahres-Vergleiche (20 Jahre)"
+                  : "Comparativas Semestrales (20 Años)"
+          }
+        </li>
       </ol>
     </nav>
 
@@ -245,10 +285,30 @@ const schemaOrg = {
           <span>← {texts.backToStatsBtn}</span>
         </a>
         <button id="print-report-btn" class="action-btn-print" type="button" aria-label="Imprimir Informe">
-          <span>🖨️ {locale === "ca" ? "Imprimir Informe Executiu" : locale === "en" ? "Print Executive Report" : locale === "de" ? "Bericht drucken" : "Imprimir Informe Ejecutivo"}</span>
+          <span
+            >🖨️ {
+              locale === "ca"
+                ? "Imprimir Informe Executiu"
+                : locale === "en"
+                  ? "Print Executive Report"
+                  : locale === "de"
+                    ? "Bericht drucken"
+                    : "Imprimir Informe Ejecutivo"
+            }</span
+          >
         </button>
         <button id="download-csv-btn" class="download-csv-btn" type="button" aria-label="Exportar datos a CSV">
-          <span>📥 {locale === "ca" ? "Descarregar Sèries (CSV)" : locale === "en" ? "Export Series (CSV)" : locale === "de" ? "Daten exportieren (CSV)" : "Descargar Series Oficiales (CSV)"}</span>
+          <span
+            >📥 {
+              locale === "ca"
+                ? "Descarregar Sèries (CSV)"
+                : locale === "en"
+                  ? "Export Series (CSV)"
+                  : locale === "de"
+                    ? "Daten exportieren (CSV)"
+                    : "Descargar Series Oficiales (CSV)"
+            }</span
+          >
         </button>
       </div>
     </header>
@@ -256,13 +316,73 @@ const schemaOrg = {
     <!-- Barra de Navegación Rápida por Sectores y Filtros Temáticos -->
     <nav class="sector-quicknav-bar" aria-label={texts.quickNavTitle}>
       <div class="theme-filters-row">
-        <span class="quicknav-title">{locale === "ca" ? "Filtrar per eix:" : locale === "en" ? "Filter by theme:" : locale === "de" ? "Nach Bereich filtern:" : "Filtrar por eje:"}</span>
+        <span class="quicknav-title"
+          >{
+            locale === "ca"
+              ? "Filtrar per eix:"
+              : locale === "en"
+                ? "Filter by theme:"
+                : locale === "de"
+                  ? "Nach Bereich filtern:"
+                  : "Filtrar por eje:"
+          }</span
+        >
         <div class="theme-filter-chips">
-          <button type="button" class="theme-chip-btn active" data-filter="all">🌐 {locale === "ca" ? `Tots els Sectors (${HISTORICAL_SECTOR_SERIES.length})` : locale === "en" ? `All Sectors (${HISTORICAL_SECTOR_SERIES.length})` : locale === "de" ? `Alle Branchen (${HISTORICAL_SECTOR_SERIES.length})` : `Todos los Sectores (${HISTORICAL_SECTOR_SERIES.length})`}</button>
-          <button type="button" class="theme-chip-btn" data-filter="economia">💼 {locale === "ca" ? "Economia & Empreses" : locale === "en" ? "Economy & Business" : locale === "de" ? "Wirtschaft & Firmen" : "Economía & Empresas"}</button>
-          <button type="button" class="theme-chip-btn" data-filter="turismo_movilidad">🏖️ {locale === "ca" ? "Turisme & Mobilitat" : locale === "en" ? "Tourism & Transit" : locale === "de" ? "Tourismus & Verkehr" : "Turismo & Movilidad"}</button>
-          <button type="button" class="theme-chip-btn" data-filter="territorio">🌿 {locale === "ca" ? "Territori & Sostenibilitat" : locale === "en" ? "Territory & Green" : locale === "de" ? "Territorium & Energie" : "Territorio & Sostenibilidad"}</button>
-          <button type="button" class="theme-chip-btn" data-filter="sociedad_bienestar">🏥 {locale === "ca" ? "Societat, Cultura & Esport" : locale === "en" ? "Society, Culture & Sport" : locale === "de" ? "Gesellschaft, Kultur & Sport" : "Sociedad, Cultura & Deporte"}</button>
+          <button type="button" class="theme-chip-btn active" data-filter="all"
+            >🌐 {
+              locale === "ca"
+                ? `Tots els Sectors (${HISTORICAL_SECTOR_SERIES.length})`
+                : locale === "en"
+                  ? `All Sectors (${HISTORICAL_SECTOR_SERIES.length})`
+                  : locale === "de"
+                    ? `Alle Branchen (${HISTORICAL_SECTOR_SERIES.length})`
+                    : `Todos los Sectores (${HISTORICAL_SECTOR_SERIES.length})`
+            }</button
+          >
+          <button type="button" class="theme-chip-btn" data-filter="economia"
+            >💼 {
+              locale === "ca"
+                ? "Economia & Empreses"
+                : locale === "en"
+                  ? "Economy & Business"
+                  : locale === "de"
+                    ? "Wirtschaft & Firmen"
+                    : "Economía & Empresas"
+            }</button
+          >
+          <button type="button" class="theme-chip-btn" data-filter="turismo_movilidad"
+            >🏖️ {
+              locale === "ca"
+                ? "Turisme & Mobilitat"
+                : locale === "en"
+                  ? "Tourism & Transit"
+                  : locale === "de"
+                    ? "Tourismus & Verkehr"
+                    : "Turismo & Movilidad"
+            }</button
+          >
+          <button type="button" class="theme-chip-btn" data-filter="territorio"
+            >🌿 {
+              locale === "ca"
+                ? "Territori & Sostenibilitat"
+                : locale === "en"
+                  ? "Territory & Green"
+                  : locale === "de"
+                    ? "Territorium & Energie"
+                    : "Territorio & Sostenibilidad"
+            }</button
+          >
+          <button type="button" class="theme-chip-btn" data-filter="sociedad_bienestar"
+            >🏥 {
+              locale === "ca"
+                ? "Societat, Cultura & Esport"
+                : locale === "en"
+                  ? "Society, Culture & Sport"
+                  : locale === "de"
+                    ? "Gesellschaft, Kultur & Sport"
+                    : "Sociedad, Cultura & Deporte"
+            }</button
+          >
         </div>
       </div>
 
@@ -310,12 +430,16 @@ const schemaOrg = {
                 return (
                   <tr data-theme={s.theme} class="matrix-row">
                     <td class="td-sector">
-                      <span class="table-sector-icon" aria-hidden="true">{s.icon}</span>
+                      <span class="table-sector-icon" aria-hidden="true">
+                        {s.icon}
+                      </span>
                       <strong>{sectorShortTitle}</strong>
                     </td>
                     <td class="td-mono">{val2006}</td>
                     <td class="td-mono">{val2016}</td>
-                    <td class="td-mono highlight-gold"><strong>{val2026}</strong></td>
+                    <td class="td-mono highlight-gold">
+                      <strong>{val2026}</strong>
+                    </td>
                     <td class="td-pct">
                       <span class="pct-pill up">+{s.insights.tenYearChangePct}%</span>
                     </td>
@@ -323,10 +447,16 @@ const schemaOrg = {
                       <span class="pct-pill up-strong">+{s.insights.twentyYearChangePct}%</span>
                     </td>
                     <td class="td-pct">
-                      <span class="cagr-badge">+{s.insights.cagr10Pct}% / +{s.insights.cagr20Pct}%</span>
+                      <span class="cagr-badge">
+                        +{s.insights.cagr10Pct}% / +{s.insights.cagr20Pct}%
+                      </span>
                     </td>
                     <td>
-                      <a href={`${prefix}blog/${s.relatedBlogSlug}`} class="table-read-link" title={texts.readDeepDiveBtn}>
+                      <a
+                        href={`${prefix}blog/${s.relatedBlogSlug}`}
+                        class="table-read-link"
+                        title={texts.readDeepDiveBtn}
+                      >
                         <span>Análisis ↗</span>
                       </a>
                     </td>
@@ -342,40 +472,109 @@ const schemaOrg = {
     <!-- Comparador Cruzado Interactivo Side-by-Side con Curva Indexada Base 100 -->
     <section class="cross-comparator-section" aria-label="Comparador Cruzado de Sectores">
       <header class="comparator-header">
-        <span class="comparator-badge">⚡ {locale === "ca" ? "Eina Interactiva" : locale === "en" ? "Interactive Tool" : locale === "de" ? "Interaktives Tool" : "Herramienta Interactiva"}</span>
+        <span class="comparator-badge"
+          >⚡ {
+            locale === "ca"
+              ? "Eina Interactiva"
+              : locale === "en"
+                ? "Interactive Tool"
+                : locale === "de"
+                  ? "Interaktives Tool"
+                  : "Herramienta Interactiva"
+          }</span
+        >
         <h2 class="comparator-title">
-          {locale === "ca" ? "Comparador Creuat de Sectors i Curva Indexada (Lado a Lado)" : locale === "en" ? "Cross-Sector Side-by-Side Comparator & Indexed Curve" : locale === "de" ? "Sektoren-Direktvergleich & Indexkurve" : "Comparador Cruzado de Sectores y Curva Indexada (Lado a Lado)"}
+          {
+            locale === "ca"
+              ? "Comparador Creuat de Sectors i Curva Indexada (Lado a Lado)"
+              : locale === "en"
+                ? "Cross-Sector Side-by-Side Comparator & Indexed Curve"
+                : locale === "de"
+                  ? "Sektoren-Direktvergleich & Indexkurve"
+                  : "Comparador Cruzado de Sectores y Curva Indexada (Lado a Lado)"
+          }
         </h2>
         <p class="comparator-lead">
-          {locale === "ca" ? "Selecciona dos sectors per contrastar el seu comportament macroeconòmic a 10 i 20 anys amb corba normalitzada Base 100." : locale === "en" ? "Select two sectors to contrast their 10-year and 20-year macroeconomic performance with normalized Base 100 curves." : locale === "de" ? "Wählen Sie zwei Branchen, um deren 10- und 20-Jahres-Dynamik mit normalisierter Basis-100-Kurve direkt zu vergleichen." : "Selecciona dos sectores para contrastar simultáneamente su comportamiento macroeconómico a 10 y 20 años mediante curva indexada Base 100."}
+          {
+            locale === "ca"
+              ? "Selecciona dos sectors per contrastar el seu comportament macroeconòmic a 10 i 20 anys amb corba normalitzada Base 100."
+              : locale === "en"
+                ? "Select two sectors to contrast their 10-year and 20-year macroeconomic performance with normalized Base 100 curves."
+                : locale === "de"
+                  ? "Wählen Sie zwei Branchen, um deren 10- und 20-Jahres-Dynamik mit normalisierter Basis-100-Kurve direkt zu vergleichen."
+                  : "Selecciona dos sectores para contrastar simultáneamente su comportamiento macroeconómico a 10 y 20 años mediante curva indexada Base 100."
+          }
         </p>
       </header>
 
       <!-- Presets de Comparativa -->
       <div class="comparator-presets-box">
-        <span class="presets-title">🎯 {locale === "ca" ? "Comparatives recomanades:" : locale === "en" ? "Recommended pairings:" : locale === "de" ? "Empfohlene Gegenüberstellungen:" : "Comparativas recomendadas:"}</span>
+        <span class="presets-title"
+          >🎯 {
+            locale === "ca"
+              ? "Comparatives recomanades:"
+              : locale === "en"
+                ? "Recommended pairings:"
+                : locale === "de"
+                  ? "Empfohlene Gegenüberstellungen:"
+                  : "Comparativas recomendadas:"
+          }</span
+        >
         <div class="presets-chip-container">
-          <button type="button" class="preset-pill" data-a="inmobiliaria_construccion" data-b="empresas_laboral">🏠 Vivienda vs 💼 Empleo</button>
-          <button type="button" class="preset-pill" data-a="turismo_afluencia" data-b="energia_sostenibilidad_agua">🏖️ Turismo vs 💧 Agua y Energía</button>
-          <button type="button" class="preset-pill" data-a="transporte_publico_ferrocarril" data-b="movilidad_aena">🚆 Transporte TIB vs ✈️ Aeropuerto</button>
-          <button type="button" class="preset-pill" data-a="tecnologia_innovacion" data-b="empresas_laboral">💻 Tecnología vs 💼 Empresas</button>
-          <button type="button" class="preset-pill" data-a="agricultura_producto_local" data-b="energia_sostenibilidad_agua">🍇 Agricultura Eco vs 💧 Energía</button>
-          <button type="button" class="preset-pill" data-a="cultura_patrimonio_museos" data-b="turismo_afluencia">🏛️ Cultura vs 🏖️ Turismo</button>
-          <button type="button" class="preset-pill" data-a="deporte_golf_nautica_activo" data-b="nautica_maritimo">⛳ Deporte & Golf vs ⛵ Náutica</button>
-          <button type="button" class="preset-pill" data-a="residuos_reciclaje" data-b="demografia_presion">♻️ Reciclaje vs 👥 Demografía</button>
-          <button type="button" class="preset-pill" data-a="salud_sanidad_privada" data-b="educacion_internacional">🏥 Sanidad vs 🎓 Colegios</button>
+          <button type="button" class="preset-pill" data-a="inmobiliaria_construccion" data-b="empresas_laboral"
+            >🏠 Vivienda vs 💼 Empleo</button
+          >
+          <button type="button" class="preset-pill" data-a="turismo_afluencia" data-b="energia_sostenibilidad_agua"
+            >🏖️ Turismo vs 💧 Agua y Energía</button
+          >
+          <button type="button" class="preset-pill" data-a="transporte_publico_ferrocarril" data-b="movilidad_aena"
+            >🚆 Transporte TIB vs ✈️ Aeropuerto</button
+          >
+          <button type="button" class="preset-pill" data-a="tecnologia_innovacion" data-b="empresas_laboral"
+            >💻 Tecnología vs 💼 Empresas</button
+          >
+          <button
+            type="button"
+            class="preset-pill"
+            data-a="agricultura_producto_local"
+            data-b="energia_sostenibilidad_agua">🍇 Agricultura Eco vs 💧 Energía</button
+          >
+          <button type="button" class="preset-pill" data-a="cultura_patrimonio_museos" data-b="turismo_afluencia"
+            >🏛️ Cultura vs 🏖️ Turismo</button
+          >
+          <button type="button" class="preset-pill" data-a="deporte_golf_nautica_activo" data-b="nautica_maritimo"
+            >⛳ Deporte & Golf vs ⛵ Náutica</button
+          >
+          <button type="button" class="preset-pill" data-a="residuos_reciclaje" data-b="demografia_presion"
+            >♻️ Reciclaje vs 👥 Demografía</button
+          >
+          <button type="button" class="preset-pill" data-a="salud_sanidad_privada" data-b="educacion_internacional"
+            >🏥 Sanidad vs 🎓 Colegios</button
+          >
         </div>
       </div>
 
       <div class="comparator-controls-grid">
         <div class="comparator-selector-col">
           <label for="compare-select-a" class="selector-label">
-            🔵 {locale === "ca" ? "Primer Sector (A)" : locale === "en" ? "First Sector (A)" : locale === "de" ? "Erste Branche (A)" : "Primer Sector (A)"}
+            🔵 {
+              locale === "ca"
+                ? "Primer Sector (A)"
+                : locale === "en"
+                  ? "First Sector (A)"
+                  : locale === "de"
+                    ? "Erste Branche (A)"
+                    : "Primer Sector (A)"
+            }
           </label>
           <select id="compare-select-a" class="comparator-select" aria-label="Seleccionar Sector A">
-            {HISTORICAL_SECTOR_SERIES.map((s, idx) => (
-              <option value={s.id} selected={idx === 0}>{s.icon} {s.title[locale]?.split(":")[0] || s.title.es.split(":")[0]}</option>
-            ))}
+            {
+              HISTORICAL_SECTOR_SERIES.map((s, idx) => (
+                <option value={s.id} selected={idx === 0}>
+                  {s.icon} {s.title[locale]?.split(":")[0] || s.title.es.split(":")[0]}
+                </option>
+              ))
+            }
           </select>
         </div>
 
@@ -383,12 +582,24 @@ const schemaOrg = {
 
         <div class="comparator-selector-col">
           <label for="compare-select-b" class="selector-label">
-            🟣 {locale === "ca" ? "Segon Sector (B)" : locale === "en" ? "Second Sector (B)" : locale === "de" ? "Zweite Branche (B)" : "Segundo Sector (B)"}
+            🟣 {
+              locale === "ca"
+                ? "Segon Sector (B)"
+                : locale === "en"
+                  ? "Second Sector (B)"
+                  : locale === "de"
+                    ? "Zweite Branche (B)"
+                    : "Segundo Sector (B)"
+            }
           </label>
           <select id="compare-select-b" class="comparator-select" aria-label="Seleccionar Sector B">
-            {HISTORICAL_SECTOR_SERIES.map((s, idx) => (
-              <option value={s.id} selected={idx === 1}>{s.icon} {s.title[locale]?.split(":")[0] || s.title.es.split(":")[0]}</option>
-            ))}
+            {
+              HISTORICAL_SECTOR_SERIES.map((s, idx) => (
+                <option value={s.id} selected={idx === 1}>
+                  {s.icon} {s.title[locale]?.split(":")[0] || s.title.es.split(":")[0]}
+                </option>
+              ))
+            }
           </select>
         </div>
       </div>
@@ -402,8 +613,28 @@ const schemaOrg = {
       <div class="dual-chart-panel">
         <div class="dual-chart-header">
           <div class="dual-chart-titles">
-            <h3 class="dual-chart-title">📈 {locale === "ca" ? "Corba Normalitzada de Creixement Relatiu (Base 100)" : locale === "en" ? "Normalized Relative Growth Trajectory (Base 100)" : locale === "de" ? "Normalisierter relativer Wachstumsverlauf (Basis 100)" : "Curva Normalizada de Crecimiento Relativo (Base 100)"}</h3>
-            <p class="dual-chart-subtitle">{locale === "ca" ? "Igualem el punt de partida a 100 per comparar el ritme percentual d'expansió entre sectors de diferent magnitud." : locale === "en" ? "Equalizes the starting period to 100 to contrast percentage expansion speed between sectors of different scale." : locale === "de" ? "Setzt den Startwert auf 100, um das prozentuale Expansionstempo direkt vergleichbar zu machen." : "Igualamos el punto de partida a 100 para comparar el ritmo porcentual de expansión entre sectores de diferente magnitud."}</p>
+            <h3 class="dual-chart-title">
+              📈 {
+                locale === "ca"
+                  ? "Corba Normalitzada de Creixement Relatiu (Base 100)"
+                  : locale === "en"
+                    ? "Normalized Relative Growth Trajectory (Base 100)"
+                    : locale === "de"
+                      ? "Normalisierter relativer Wachstumsverlauf (Basis 100)"
+                      : "Curva Normalizada de Crecimiento Relativo (Base 100)"
+              }
+            </h3>
+            <p class="dual-chart-subtitle">
+              {
+                locale === "ca"
+                  ? "Igualem el punt de partida a 100 per comparar el ritme percentual d'expansió entre sectors de diferent magnitud."
+                  : locale === "en"
+                    ? "Equalizes the starting period to 100 to contrast percentage expansion speed between sectors of different scale."
+                    : locale === "de"
+                      ? "Setzt den Startwert auf 100, um das prozentuale Expansionstempo direkt vergleichbar zu machen."
+                      : "Igualamos el punto de partida a 100 para comparar el ritmo porcentual de expansión entre sectores de diferente magnitud."
+              }
+            </p>
           </div>
           <div class="base-year-toggle" role="radiogroup" aria-label="Base temporal">
             <button type="button" class="base-btn active" data-base="2006">Base 2006 = 100 (20A)</button>
@@ -453,53 +684,67 @@ const schemaOrg = {
         ))
       }
     </section>
+
+    <!-- Descarga de Series Históricas (Open Data) -->
+    <div class="site-container" style="max-width: var(--max-width, 1200px); margin: 0 auto; padding: 0 1.5rem;">
+      <OpenDataExporter lang={locale} datasetMode="historical" />
+    </div>
   </main>
 
-  <script is:inline define:vars={{
-    sectorsData: HISTORICAL_SECTOR_SERIES.map((s) => ({
-      id: s.id,
-      icon: s.icon,
-      name: s.title[locale]?.split(":")[0] || s.title.es.split(":")[0],
-      fullTitle: s.title[locale] || s.title.es,
-      unit: s.unit[locale] || s.unit.es,
-      tenYearChangePct: s.insights.tenYearChangePct,
-      twentyYearChangePct: s.insights.twentyYearChangePct,
-      cagr10Pct: s.insights.cagr10Pct,
-      cagr20Pct: s.insights.cagr20Pct,
-      peakSemester: s.insights.peakSemester,
-      peakValueFormatted: s.insights.peakValueFormatted,
-      troughSemester: s.insights.troughSemester,
-      troughValueFormatted: s.insights.troughValueFormatted,
-      sourceEntity: s.sourceEntity,
-      blogSlug: s.relatedBlogSlug,
-      points: s.dataPoints.map((dp) => ({
-        period: dp.period,
-        year: dp.year,
-        semester: dp.semester,
-        value: dp.value,
-        formatted: dp.formattedValue
-      }))
-    })),
-    seriesCsvExport: HISTORICAL_SECTOR_SERIES.map((s) => ({
-      name: s.title.es.split(":")[0],
-      unit: s.unit.es,
-      source: s.sourceEntity,
-      points: s.dataPoints.map((dp) => ({
-        period: dp.period,
-        year: dp.year,
-        semester: dp.semester,
-        value: dp.value,
-        formatted: dp.formattedValue
-      }))
-    })),
-    prefix,
-    lbl10Yr: texts.change10Col,
-    lbl20Yr: texts.change20Col,
-    lblPeak: locale === "ca" ? "Pic Màxim" : locale === "en" ? "All-Time Peak" : locale === "de" ? "Höchstwert" : "Pico Máximo",
-    lblTrough: locale === "ca" ? "Mínim Sòl" : locale === "en" ? "Cycle Low" : locale === "de" ? "Tiefstwert" : "Mínimo Suelo",
-    lblSource: locale === "ca" ? "Font" : locale === "en" ? "Source" : locale === "de" ? "Quelle" : "Fuente",
-    lblArticle: texts.readDeepDiveBtn
-  }}>
+  <script
+    is:inline
+    define:vars={{
+      sectorsData: HISTORICAL_SECTOR_SERIES.map((s) => ({
+        id: s.id,
+        icon: s.icon,
+        name: s.title[locale]?.split(":")[0] || s.title.es.split(":")[0],
+        fullTitle: s.title[locale] || s.title.es,
+        unit: s.unit[locale] || s.unit.es,
+        tenYearChangePct: s.insights.tenYearChangePct,
+        twentyYearChangePct: s.insights.twentyYearChangePct,
+        cagr10Pct: s.insights.cagr10Pct,
+        cagr20Pct: s.insights.cagr20Pct,
+        peakSemester: s.insights.peakSemester,
+        peakValueFormatted: s.insights.peakValueFormatted,
+        troughSemester: s.insights.troughSemester,
+        troughValueFormatted: s.insights.troughValueFormatted,
+        sourceEntity: s.sourceEntity,
+        blogSlug: s.relatedBlogSlug,
+        points: s.dataPoints.map((dp) => ({
+          period: dp.period,
+          year: dp.year,
+          semester: dp.semester,
+          value: dp.value,
+          formatted: dp.formattedValue,
+        })),
+      })),
+      seriesCsvExport: HISTORICAL_SECTOR_SERIES.map((s) => ({
+        name: s.title.es.split(":")[0],
+        unit: s.unit.es,
+        source: s.sourceEntity,
+        points: s.dataPoints.map((dp) => ({
+          period: dp.period,
+          year: dp.year,
+          semester: dp.semester,
+          value: dp.value,
+          formatted: dp.formattedValue,
+        })),
+      })),
+      prefix,
+      lbl10Yr: texts.change10Col,
+      lbl20Yr: texts.change20Col,
+      lblPeak:
+        locale === "ca"
+          ? "Pic Màxim"
+          : locale === "en"
+            ? "All-Time Peak"
+            : locale === "de"
+              ? "Höchstwert"
+              : "Pico Máximo",
+      lblSource: locale === "ca" ? "Font" : locale === "en" ? "Source" : locale === "de" ? "Quelle" : "Fuente",
+      lblArticle: texts.readDeepDiveBtn,
+    }}
+  >
     document.addEventListener("DOMContentLoaded", () => {
       const selectA = document.getElementById("compare-select-a");
       const selectB = document.getElementById("compare-select-b");
@@ -577,7 +822,7 @@ const schemaOrg = {
           year: p.year,
           semester: p.semester,
           raw: p.formatted,
-          idx: (p.value / baseValA) * 100
+          idx: (p.value / baseValA) * 100,
         }));
 
         const normB = ptsB.map((p) => ({
@@ -585,7 +830,7 @@ const schemaOrg = {
           year: p.year,
           semester: p.semester,
           raw: p.formatted,
-          idx: (p.value / baseValB) * 100
+          idx: (p.value / baseValB) * 100,
         }));
 
         const allIdx = [...normA.map((d) => d.idx), ...normB.map((d) => d.idx)];
@@ -607,9 +852,6 @@ const schemaOrg = {
         const count = normA.length;
         const getX = (i) => padL + (i / (count - 1)) * innerW;
         const getY = (val) => padT + innerH - ((val - minY) / (maxY - minY)) * innerH;
-
-        // Base 100 line Y
-        const yBase100 = getY(100);
 
         // Path definitions
         let pathStrA = "";
@@ -650,8 +892,8 @@ const schemaOrg = {
           const y = getY(val);
           const isBase = Math.abs(val - 100) < 12;
           gridHtml += `
-            <line x1="${padL}" y1="${y}" x2="${w - padR}" y2="${y}" stroke="${isBase ? '#94a3b8' : '#e2e8f0'}" stroke-width="${isBase ? '1.5' : '1'}" stroke-dasharray="${isBase ? '4,4' : 'none'}" />
-            <text x="${padL - 10}" y="${y + 4}" font-size="11" text-anchor="end" fill="${isBase ? '#475569' : '#94a3b8'}" font-weight="${isBase ? '700' : '500'}">${Math.round(val)}</text>
+            <line x1="${padL}" y1="${y}" x2="${w - padR}" y2="${y}" stroke="${isBase ? "#94a3b8" : "#e2e8f0"}" stroke-width="${isBase ? "1.5" : "1"}" stroke-dasharray="${isBase ? "4,4" : "none"}" />
+            <text x="${padL - 10}" y="${y + 4}" font-size="11" text-anchor="end" fill="${isBase ? "#475569" : "#94a3b8"}" font-weight="${isBase ? "700" : "500"}">${Math.round(val)}</text>
           `;
         }
 
@@ -780,7 +1022,7 @@ const schemaOrg = {
                     &nbsp;|&nbsp;
                     <span style="color:#9333ea;font-weight:700;">${sB.name}: ${curB.raw} (Índice ${curB.idx.toFixed(1)})</span>
                     &nbsp;→&nbsp;
-                    <span>Divergencia: <strong>${diff >= 0 ? '+' : ''}${diff} pts</strong></span>
+                    <span>Divergencia: <strong>${diff >= 0 ? "+" : ""}${diff} pts</strong></span>
                   </div>
                 </div>
               `;
@@ -1033,7 +1275,9 @@ const schemaOrg = {
     padding: 0.55rem 1.15rem;
     border-radius: 8px;
     text-decoration: none;
-    transition: background 0.15s ease, border-color 0.15s ease;
+    transition:
+      background 0.15s ease,
+      border-color 0.15s ease;
   }
 
   .back-link-btn:hover {
@@ -1083,7 +1327,10 @@ const schemaOrg = {
     border-radius: 20px;
     padding: 0.35rem 0.85rem;
     text-decoration: none;
-    transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    transition:
+      background 0.15s ease,
+      border-color 0.15s ease,
+      color 0.15s ease;
   }
 
   .quicknav-chip:hover {
@@ -1250,7 +1497,9 @@ const schemaOrg = {
     padding: 0.55rem 1.15rem;
     border-radius: 8px;
     text-decoration: none;
-    transition: background 0.15s ease, transform 0.15s ease;
+    transition:
+      background 0.15s ease,
+      transform 0.15s ease;
   }
 
   .sector-blog-btn:hover {

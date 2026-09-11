@@ -1,0 +1,407 @@
+---
+/**
+ * RegulationCard.astro
+ *
+ * Tarjeta de presentación para decretos, leyes y normativas oficiales del BOIB / CAIB.
+ * Muestra resumen ejecutivo, claves prácticas, organismo emisor y acceso a la ficha completa.
+ * Cumple con GR-01 (CSS tokens), GR-02 (responsive), GR-04 (i18n cuatrilingüe),
+ * GR-07 (accesibilidad ARIA) y GR-11 (Zero Fake Data).
+ */
+import type { Locale } from "../i18n";
+import type { OfficialRegulation, RegulationCategory } from "../data/officialRegulations";
+
+export interface Props {
+  regulation: OfficialRegulation;
+  lang: Locale;
+}
+
+const { regulation, lang } = Astro.props;
+
+const categoryLabels: Record<RegulationCategory, Record<Locale, string>> = {
+  vivienda: {
+    es: "Vivienda & Urbanismo",
+    ca: "Habitatge & Urbanisme",
+    en: "Housing & Planning",
+    de: "Wohnen & Bauwesen",
+  },
+  empresas_autonomos: {
+    es: "Empresas & Autónomos",
+    ca: "Empreses & Autònoms",
+    en: "Business & Self-Employed",
+    de: "Unternehmen & Selbstständige",
+  },
+  comercio: {
+    es: "Comercio & Festivos",
+    ca: "Comerç & Festius",
+    en: "Commerce & Holidays",
+    de: "Handel & Feiertage",
+  },
+  turismo: {
+    es: "Turismo & Alojamientos",
+    ca: "Turisme & Allotjaments",
+    en: "Tourism & Accommodations",
+    de: "Tourismus & Unterkünfte",
+  },
+  fiscalidad: {
+    es: "Fiscalidad & Tributos",
+    ca: "Fiscalitat & Tributs",
+    en: "Taxation & Levies",
+    de: "Steuern & Abgaben",
+  },
+};
+
+const labels: Record<
+  Locale,
+  {
+    readGuide: string;
+    viewBoib: string;
+    inForceSince: string;
+    keyBenefitLabel: string;
+  }
+> = {
+  es: {
+    readGuide: "Ver análisis completo y requisitos →",
+    viewBoib: "Boletín Oficial (BOIB)",
+    inForceSince: "En vigor desde:",
+    keyBenefitLabel: "Impacto / Ventaja Principal:",
+  },
+  ca: {
+    readGuide: "Veure anàlisi completa i requisits →",
+    viewBoib: "Butlletí Oficial (BOIB)",
+    inForceSince: "En vigor des de:",
+    keyBenefitLabel: "Impacte / Avantatge Principal:",
+  },
+  en: {
+    readGuide: "View full analysis & requirements →",
+    viewBoib: "Official Gazette (BOIB)",
+    inForceSince: "In force since:",
+    keyBenefitLabel: "Key Benefit / Impact:",
+  },
+  de: {
+    readGuide: "Vollständige Analyse & Kriterien →",
+    viewBoib: "Amtsblatt (BOIB)",
+    inForceSince: "In Kraft seit:",
+    keyBenefitLabel: "Wichtigster Vorteil / Auswirkung:",
+  },
+};
+
+const t = labels[lang] || labels.es;
+const catLabel = categoryLabels[regulation.category]?.[lang] || categoryLabels[regulation.category]?.es;
+const title = regulation.title[lang] || regulation.title.es;
+const summary = regulation.summary[lang] || regulation.summary.es;
+const benefits = regulation.benefitsSummary[lang] || regulation.benefitsSummary.es;
+
+const detailUrl = lang === "es" ? `/normativa/${regulation.slug}` : `/${lang}/normativa/${regulation.slug}`;
+---
+
+<article class="regulation-card" aria-labelledby={`reg-title-${regulation.id}`}>
+  <header class="card-header">
+    <div class="header-badges">
+      <span class={`cat-badge cat-${regulation.category}`}>{catLabel}</span>
+      <span class="boib-tag" title="Referencia en boletín oficial">{regulation.officialBoibNumber}</span>
+    </div>
+    <span class="authority-name">{regulation.authority}</span>
+  </header>
+
+  <h3 class="reg-title" id={`reg-title-${regulation.id}`}>
+    <a href={detailUrl} class="title-link">
+      {title}
+    </a>
+  </h3>
+
+  <p class="reg-summary">{summary}</p>
+
+  <div class="benefits-highlight">
+    <div class="benefit-icon" aria-hidden="true">💡</div>
+    <div class="benefit-content">
+      <span class="benefit-label">{t.keyBenefitLabel}</span>
+      <p class="benefit-text">{benefits}</p>
+    </div>
+  </div>
+
+  <footer class="card-footer">
+    <div class="date-meta">
+      <span class="date-label">{t.inForceSince}</span>
+      <time datetime={regulation.effectiveDate} class="date-val">
+        {regulation.effectiveDate}
+      </time>
+    </div>
+
+    <div class="footer-actions">
+      <a
+        href={regulation.officialSourceUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="boib-external-link"
+        title={`Abrir ${regulation.officialBoibNumber} en sede oficial`}
+      >
+        <span>{t.viewBoib}</span>
+        <svg class="external-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+          <polyline points="15 3 21 3 21 9"></polyline>
+          <line x1="10" y1="14" x2="21" y2="3"></line>
+        </svg>
+      </a>
+
+      <a href={detailUrl} class="detail-link">
+        {t.readGuide}
+      </a>
+    </div>
+  </footer>
+</article>
+
+<style>
+  .regulation-card {
+    background: var(--color-surface, #ffffff);
+    border: 1.5px solid var(--color-border, #e2e8f0);
+    border-radius: var(--radius-xl, 1rem);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  }
+
+  :global(.dark) .regulation-card {
+    background: var(--color-surface-dark, #1a202c);
+    border-color: var(--color-border-dark, #2d3748);
+  }
+
+  .regulation-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md, 0 4px 6px -1px rgba(0, 0, 0, 0.08));
+    border-color: var(--color-primary, #0066cc);
+  }
+
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .header-badges {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .cat-badge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.2rem 0.6rem;
+    border-radius: 9999px;
+    background: var(--color-bg-subtle, #f1f5f9);
+    color: var(--color-text, #475569);
+  }
+
+  .cat-vivienda {
+    background: color-mix(in srgb, #3b82f6 15%, transparent);
+    color: #2563eb;
+  }
+
+  .cat-empresas_autonomos {
+    background: color-mix(in srgb, #10b981 15%, transparent);
+    color: #059669;
+  }
+
+  .cat-comercio {
+    background: color-mix(in srgb, #f59e0b 15%, transparent);
+    color: #d97706;
+  }
+
+  .cat-turismo {
+    background: color-mix(in srgb, #8b5cf6 15%, transparent);
+    color: #7c3aed;
+  }
+
+  .cat-fiscalidad {
+    background: color-mix(in srgb, #ec4899 15%, transparent);
+    color: #db2777;
+  }
+
+  .boib-tag {
+    font-size: 0.75rem;
+    font-family: monospace;
+    font-weight: 600;
+    background: var(--color-bg-subtle, #f8fafc);
+    border: 1px solid var(--color-border, #e2e8f0);
+    padding: 0.15rem 0.5rem;
+    border-radius: var(--radius-sm, 0.25rem);
+    color: var(--color-text-muted, #64748b);
+  }
+
+  :global(.dark) .boib-tag {
+    background: var(--color-bg-subtle-dark, #232d3d);
+    border-color: var(--color-border-dark, #3b4759);
+    color: var(--color-text-muted, #94a3b8);
+  }
+
+  .authority-name {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--color-text-muted, #94a3b8);
+  }
+
+  .reg-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.35;
+  }
+
+  .title-link {
+    color: var(--color-text, #1a202c);
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+
+  :global(.dark) .title-link {
+    color: var(--color-text-dark, #f7fafc);
+  }
+
+  .title-link:hover {
+    color: var(--color-primary, #0066cc);
+  }
+
+  :global(.dark) .title-link:hover {
+    color: #60a5fa;
+  }
+
+  .reg-summary {
+    font-size: 0.9375rem;
+    color: var(--color-text-muted, #4b5563);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  :global(.dark) .reg-summary {
+    color: var(--color-text-muted, #cbd5e1);
+  }
+
+  .benefits-highlight {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    background: color-mix(in srgb, var(--color-primary, #0066cc) 6%, transparent);
+    border-left: 3px solid var(--color-primary, #0066cc);
+    padding: 0.85rem 1rem;
+    border-radius: 0 var(--radius-md, 0.5rem) var(--radius-md, 0.5rem) 0;
+  }
+
+  :global(.dark) .benefits-highlight {
+    background: color-mix(in srgb, var(--color-primary, #0066cc) 12%, transparent);
+  }
+
+  .benefit-icon {
+    font-size: 1.125rem;
+    line-height: 1;
+  }
+
+  .benefit-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .benefit-label {
+    font-size: 0.6875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-primary, #0066cc);
+  }
+
+  :global(.dark) .benefit-label {
+    color: #60a5fa;
+  }
+
+  .benefit-text {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-text, #1e293b);
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  :global(.dark) .benefit-text {
+    color: var(--color-text-dark, #f1f5f9);
+  }
+
+  .card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-top: auto;
+    padding-top: 0.85rem;
+    border-top: 1px solid var(--color-border, #e2e8f0);
+    flex-wrap: wrap;
+  }
+
+  :global(.dark) .card-footer {
+    border-top-color: var(--color-border-dark, #2d3748);
+  }
+
+  .date-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.8125rem;
+    color: var(--color-text-muted, #94a3b8);
+  }
+
+  .date-val {
+    font-weight: 600;
+    color: var(--color-text, #475569);
+  }
+
+  :global(.dark) .date-val {
+    color: var(--color-text-dark, #cbd5e1);
+  }
+
+  .footer-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .boib-external-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.8125rem;
+    color: var(--color-text-muted, #64748b);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+
+  .boib-external-link:hover {
+    color: var(--color-primary, #0066cc);
+    text-decoration: underline;
+  }
+
+  .external-icon {
+    width: 0.75rem;
+    height: 0.75rem;
+  }
+
+  .detail-link {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--color-primary, #0066cc);
+    text-decoration: none;
+    transition: transform 0.15s ease;
+  }
+
+  .detail-link:hover {
+    text-decoration: underline;
+    transform: translateX(2px);
+  }
+
+  :global(.dark) .detail-link {
+    color: #60a5fa;
+  }
+</style>

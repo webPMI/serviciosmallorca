@@ -1,0 +1,953 @@
+---
+/**
+ * ItpTaxCalculator.astro
+ *
+ * Calculadora interactiva del Impuesto de Transmisiones Patrimoniales (ITP)
+ * de las Illes Balears (ATIB), incorporando la exención del 0% para menores de 36 años
+ * y tipos reducidos según el Decreto Ley 3/2023.
+ *
+ * Cumple con GR-01 (CSS tokens), GR-02 (responsive), GR-04 (i18n cuatrilingüe),
+ * GR-07 (accesibilidad ARIA), GR-09 (sin dependencias externas) y GR-11 (Zero Fake Data).
+ */
+import type { Locale } from "../i18n";
+
+export interface Props {
+  lang: Locale;
+}
+
+const { lang } = Astro.props;
+
+const labels: Record<
+  Locale,
+  {
+    badge: string;
+    title: string;
+    subtitle: string;
+    priceLabel: string;
+    profileLegend: string;
+    profileGeneral: string;
+    profileGeneralDesc: string;
+    profileYouth: string;
+    profileYouthDesc: string;
+    profileLargeFamily: string;
+    profileLargeFamilyDesc: string;
+    profileVpo: string;
+    profileVpoDesc: string;
+    residenceCondition: string;
+    residenceNotice: string;
+    resultsTitle: string;
+    taxBase: string;
+    effectiveRate: string;
+    finalTax: string;
+    youthSavings: string;
+    atibNoticeTitle: string;
+    atibNoticeText: string;
+    model600Note: string;
+    exceededThresholdWarning: string;
+  }
+> = {
+  es: {
+    badge: "Calculadora Fiscal Oficial ATIB",
+    title: "Calculadora ITP Balear: Compra de Vivienda & Cuota 0% Joven",
+    subtitle:
+      "Calcula con exactitud el Impuesto de Transmisiones Patrimoniales en Mallorca según el Decreto Ley 3/2023 y la escala general de la ATIB.",
+    priceLabel: "Precio de compraventa del inmueble (€):",
+    profileLegend: "Situación del comprador y tipo de inmueble:",
+    profileGeneral: "Régimen General (Escala progresiva autonómica 8% - 13%)",
+    profileGeneralDesc: "Aplica a compradores sin bonificación especial o segundas residencias.",
+    profileYouth: "Joven menor de 36 años (Exención 0% Decreto Ley 3/2023)",
+    profileYouthDesc: "1ª vivienda habitual, residencia previa de 3 años en Baleares y precio ≤ 270.151,20 €.",
+    profileLargeFamily: "Familia numerosa / monoparental o discapacidad ≥ 65% (Tipo reducido 2%)",
+    profileLargeFamilyDesc: "1ª vivienda habitual con precio hasta 350.000 €.",
+    profileVpo: "Vivienda de Protección Oficial (VPO) (Tipo reducido 4%)",
+    profileVpoDesc: "Inmuebles calificados oficialmente con régimen de protección pública.",
+    residenceCondition: "Cumplo el requisito de residencia continuada de al menos 3 años en las Illes Balears.",
+    residenceNotice: "Importante: La exención joven exige 3 años de empadronamiento continuo en Baleares antes de la compra.",
+    resultsTitle: "Liquidación Estimada del Impuesto (Modelo 600 ATIB)",
+    taxBase: "Valor de adquisición declarado:",
+    effectiveRate: "Tipo impositivo aplicado:",
+    finalTax: "Cuota tributaria a pagar (ITP):",
+    youthSavings: "Ahorro fiscal por bonificación autonómica:",
+    atibNoticeTitle: "Plazo de Liquidación ante la ATIB:",
+    atibNoticeText:
+      "El devengo se produce en la fecha de firma de la escritura notarial. Tienes 1 mes hábil para autoliquidar y presentar el Modelo 600 telemáticamente en la sede de la ATIB o presencialmente con cita previa.",
+    model600Note: "Cálculo oficial según el Decreto Ley 3/2023 de medidas urgentes en materia tributaria de Illes Balears.",
+    exceededThresholdWarning:
+      "Aviso: El precio supera el límite legal de 270.151,20 € para la exención del 0%. Se aplica la escala general autonómica sobre el total.",
+  },
+  ca: {
+    badge: "Calculadora Fiscal Oficial ATIB",
+    title: "Calculadora ITP Balear: Compra d'Habitatge & Quota 0% Jove",
+    subtitle:
+      "Calcula amb exactitud l'Impost de Transmissions Patrimonials a Mallorca segons el Decret llei 3/2023 i l'escala general de l'ATIB.",
+    priceLabel: "Preu de compravenda de l'immoble (€):",
+    profileLegend: "Situació del comprador i tipus d'immoble:",
+    profileGeneral: "Règim General (Escala progressiva autonòmica 8% - 13%)",
+    profileGeneralDesc: "Aplica a compradors sense bonificació especial o segones residències.",
+    profileYouth: "Jove menor de 36 anys (Exempció 0% Decret llei 3/2023)",
+    profileYouthDesc: "1r habitatge habitual, residència prèvia de 3 anys a Balears i preu ≤ 270.151,20 €.",
+    profileLargeFamily: "Família nombrosa / monoparental o discapacitat ≥ 65% (Tipus reduït 2%)",
+    profileLargeFamilyDesc: "1r habitatge habitual amb preu fins a 350.000 €.",
+    profileVpo: "Habitatge de Protecció Oficial (HPO) (Tipus reduït 4%)",
+    profileVpoDesc: "Immobles qualificats oficialment amb règim de protecció pública.",
+    residenceCondition: "Complisc el requisit de residència continuada d'almenys 3 anys a les Illes Balears.",
+    residenceNotice: "Important: L'exempció jove exigeix 3 anys d'empadronament continu a Balears abans de la compra.",
+    resultsTitle: "Liquidació Estimada de l'Impost (Model 600 ATIB)",
+    taxBase: "Valor d'adquisició declarat:",
+    effectiveRate: "Tipus impositiu aplicat:",
+    finalTax: "Quota tributària a pagar (ITP):",
+    youthSavings: "Estalvi fiscal per bonificació autonòmica:",
+    atibNoticeTitle: "Termini de Liquidació davant l'ATIB:",
+    atibNoticeText:
+      "La meritació es produeix en la data de signatura de l'escriptura pública. Disposes d'1 mes hàbil per autoliquidar i presentar el Model 600 telemàticament a la seu de l'ATIB o presencialment amb cita prèvia.",
+    model600Note: "Càlcul oficial segons el Decret llei 3/2023 de mesures urgents en matèria tributària d'Illes Balears.",
+    exceededThresholdWarning:
+      "Avís: El preu supera el límit legal de 270.151,20 € per a l'exempció del 0%. S'aplica l'escala general autonòmica sobre el total.",
+  },
+  en: {
+    badge: "Official ATIB Tax Calculator",
+    title: "Balearic Property Transfer Tax (ITP): Home Purchase & 0% Youth Exemption",
+    subtitle:
+      "Calculate your exact Property Transfer Tax in Mallorca under Decree-Law 3/2023 and the ATIB progressive tax brackets.",
+    priceLabel: "Property purchase price (€):",
+    profileLegend: "Buyer profile and property classification:",
+    profileGeneral: "Standard Scale (Progressive regional rate 8% - 13%)",
+    profileGeneralDesc: "Applies to standard buyers or secondary/holiday residences.",
+    profileYouth: "Youth under 36 years (0% Exemption Decree-Law 3/2023)",
+    profileYouthDesc: "First permanent home, 3+ years continuous residency in Balearics and price ≤ €270,151.20.",
+    profileLargeFamily: "Large/single-parent family or disability ≥ 65% (Reduced 2% rate)",
+    profileLargeFamilyDesc: "First primary residence with price up to €350,000.",
+    profileVpo: "Social Housing (VPO) (Reduced 4% rate)",
+    profileVpoDesc: "Officially registered subsidized social housing properties.",
+    residenceCondition: "I meet the requirement of at least 3 years continuous registered residence in the Balearics.",
+    residenceNotice: "Crucial requirement: The youth 0% exemption requires 3 years continuous municipal registration (Padrón).",
+    resultsTitle: "Estimated Tax Assessment (ATIB Form 600)",
+    taxBase: "Declared purchase value:",
+    effectiveRate: "Applicable tax rate:",
+    finalTax: "Total tax payable (ITP):",
+    youthSavings: "Direct tax savings from regional exemption:",
+    atibNoticeTitle: "Filing Deadline with Tax Agency (ATIB):",
+    atibNoticeText:
+      "The tax is triggered on the signing date of the notary deed. You have 1 calendar month to self-assess and file Form 600 through the ATIB electronic portal or in person with prior appointment.",
+    model600Note: "Official tax calculation following Balearic Islands Decree-Law 3/2023.",
+    exceededThresholdWarning:
+      "Notice: The price exceeds the statutory limit of €270,151.20 for the 0% youth exemption. The progressive general rate applies.",
+  },
+  de: {
+    badge: "Offizieller ATIB-Steuerrechner",
+    title: "Grunderwerbsteuer Mallorca (ITP): Immobilienkauf & 0% Jugendbefreiung",
+    subtitle:
+      "Berechnen Sie die Grunderwerbsteuer auf Mallorca exakt nach dem Dekret 3/2023 und der progressiven ATIB-Steuertabelle.",
+    priceLabel: "Kaufpreis der Immobilie (€):",
+    profileLegend: "Käuferprofil und Immobilienart:",
+    profileGeneral: "Regulärer Steuersatz (Progressive Tabelle 8% - 13%)",
+    profileGeneralDesc: "Gilt für reguläre Käufer oder Zweitwohnsitze / Ferienimmobilien.",
+    profileYouth: "Jugendliche unter 36 Jahren (0% Steuerbefreiung Dekret 3/2023)",
+    profileYouthDesc: "Erster Hauptwohnsitz, mind. 3 Jahre Wohnsitz auf den Balearen und Preis ≤ 270.151,20 €.",
+    profileLargeFamily: "Kinderreiche/Alleinerziehende Familie oder Behinderung ≥ 65% (Reduzierter Satz 2%)",
+    profileLargeFamilyDesc: "Erster Hauptwohnsitz bis maximal 350.000 €.",
+    profileVpo: "Geförderter sozialer Wohnungsbau (VPO) (Reduzierter Satz 4%)",
+    profileVpoDesc: "Offiziell als sozialer Wohnungsbau ausgewiesene Immobilien.",
+    residenceCondition: "Ich erfülle die Voraussetzung von mindestens 3 Jahren durchgehendem Wohnsitz auf den Balearen.",
+    residenceNotice: "Wichtig: Die 0%-Jugendbefreiung setzt eine mindestens 3-jährige Meldebescheinigung (Padrón) auf den Balearen voraus.",
+    resultsTitle: "Geschätzte Steuerlast (ATIB Modell 600)",
+    taxBase: "Erklärter Kaufpreis:",
+    effectiveRate: "Angewendeter Steuersatz:",
+    finalTax: "Zu zahlende Grunderwerbsteuer (ITP):",
+    youthSavings: "Steuerersparnis durch Regionalförderung:",
+    atibNoticeTitle: "Frist bei der Steuerbehörde (ATIB):",
+    atibNoticeText:
+      "Die Steuer wird mit Unterzeichnung der notariellen Urkunde fällig. Sie haben 1 Kalendermonat Zeit, das Modell 600 elektronisch bei der ATIB einzureichen.",
+    model600Note: "Offizielle Berechnung gemäß Dekret 3/2023 der autonomen Regierung der Balearen.",
+    exceededThresholdWarning:
+      "Hinweis: Der Preis übersteigt die gesetzliche Grenze von 270.151,20 € für die 0%-Befreiung. Es gilt der reguläre progressive Satz.",
+  },
+};
+
+const t = labels[lang] || labels.es;
+---
+
+<div class="itp-calculator-container" id="itp-calculator" aria-label={t.title}>
+  <header class="calc-header">
+    <div class="calc-badge">
+      <svg
+        class="badge-icon"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+      </svg>
+      <span>{t.badge}</span>
+    </div>
+    <h2 class="calc-title">{t.title}</h2>
+    <p class="calc-subtitle">{t.subtitle}</p>
+  </header>
+
+  <form class="calc-card" id="itp-form" onsubmit="return false;">
+    <!-- Purchase price input -->
+    <div class="field-group">
+      <label for="itp-price-input" class="field-label">
+        {t.priceLabel}
+      </label>
+      <div class="price-input-wrapper">
+        <input
+          type="number"
+          id="itp-price-input"
+          class="price-input"
+          min="10000"
+          max="10000000"
+          step="5000"
+          value="250000"
+          required
+          aria-describedby="itp-price-hint"
+        />
+        <span class="currency-symbol">€</span>
+      </div>
+      <div class="quick-presets" aria-label="Presets de precios habituales">
+        <button type="button" class="preset-btn" data-preset="180000">180.000 €</button>
+        <button type="button" class="preset-btn active" data-preset="250000">250.000 € (Límite Joven)</button>
+        <button type="button" class="preset-btn" data-preset="350000">350.000 €</button>
+        <button type="button" class="preset-btn" data-preset="500000">500.000 €</button>
+        <button type="button" class="preset-btn" data-preset="800000">800.000 €</button>
+      </div>
+    </div>
+
+    <!-- Buyer profile selection -->
+    <fieldset class="field-group profile-group">
+      <legend class="field-label">{t.profileLegend}</legend>
+      <div class="profile-options">
+        <label class="profile-card">
+          <input type="radio" name="buyer-profile" value="youth" checked />
+          <div class="profile-card-content">
+            <div class="profile-title-row">
+              <span class="profile-name">{t.profileYouth}</span>
+              <span class="tag tag-zero">0% ITP</span>
+            </div>
+            <p class="profile-desc">{t.profileYouthDesc}</p>
+          </div>
+        </label>
+
+        <label class="profile-card">
+          <input type="radio" name="buyer-profile" value="general" />
+          <div class="profile-card-content">
+            <div class="profile-title-row">
+              <span class="profile-name">{t.profileGeneral}</span>
+              <span class="tag">8% - 13%</span>
+            </div>
+            <p class="profile-desc">{t.profileGeneralDesc}</p>
+          </div>
+        </label>
+
+        <label class="profile-card">
+          <input type="radio" name="buyer-profile" value="large-family" />
+          <div class="profile-card-content">
+            <div class="profile-title-row">
+              <span class="profile-name">{t.profileLargeFamily}</span>
+              <span class="tag tag-reduced">2% ITP</span>
+            </div>
+            <p class="profile-desc">{t.profileLargeFamilyDesc}</p>
+          </div>
+        </label>
+
+        <label class="profile-card">
+          <input type="radio" name="buyer-profile" value="vpo" />
+          <div class="profile-card-content">
+            <div class="profile-title-row">
+              <span class="profile-name">{t.profileVpo}</span>
+              <span class="tag tag-reduced">4% ITP</span>
+            </div>
+            <p class="profile-desc">{t.profileVpoDesc}</p>
+          </div>
+        </label>
+      </div>
+    </fieldset>
+
+    <!-- Threshold warning (dynamic) -->
+    <div id="threshold-warning" class="warning-box" style="display: none;" role="alert">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="warning-icon">
+        <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+        <line x1="12" y1="9" x2="12" y2="13"></line>
+        <line x1="12" y1="17" x2="12.01" y2="17"></line>
+      </svg>
+      <span>{t.exceededThresholdWarning}</span>
+    </div>
+
+    <!-- Results Panel -->
+    <div class="results-card" aria-live="polite">
+      <h3 class="results-title">{t.resultsTitle}</h3>
+
+      <div class="results-grid">
+        <div class="result-row">
+          <span class="result-label">{t.taxBase}</span>
+          <span class="result-val" id="itp-res-base">250.000 €</span>
+        </div>
+
+        <div class="result-row">
+          <span class="result-label">{t.effectiveRate}</span>
+          <span class="result-val rate-val" id="itp-res-rate">0.0%</span>
+        </div>
+
+        <div class="result-row highlight-final">
+          <span class="result-label">{t.finalTax}</span>
+          <span class="result-val total-tax-val" id="itp-res-tax">0,00 €</span>
+        </div>
+
+        <div class="result-row savings-row" id="itp-savings-row">
+          <span class="result-label">{t.youthSavings}</span>
+          <span class="result-val savings-val" id="itp-res-savings">20.000,00 €</span>
+        </div>
+      </div>
+
+      <div class="rate-breakdown-details" id="itp-rate-breakdown">
+        <!-- Injected via JavaScript for progressive scale details -->
+      </div>
+    </div>
+
+    <!-- Official ATIB Notice -->
+    <div class="atib-notice-box">
+      <div class="notice-icon-wrapper">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="notice-icon">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="16" x2="12" y2="12"></line>
+          <line x1="12" y1="8" x2="12.01" y2="8"></line>
+        </svg>
+      </div>
+      <div class="notice-body">
+        <p class="notice-title">{t.atibNoticeTitle}</p>
+        <p class="notice-text">{t.atibNoticeText}</p>
+        <p class="notice-subtext">{t.model600Note}</p>
+      </div>
+    </div>
+  </form>
+</div>
+
+<script>
+  // Script de cálculo reactivo puro para ITP de Illes Balears
+  document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("itp-form");
+    if (!form) return;
+
+    const priceInput = document.getElementById("itp-price-input") as HTMLInputElement | null;
+    const baseOutput = document.getElementById("itp-res-base");
+    const rateOutput = document.getElementById("itp-res-rate");
+    const taxOutput = document.getElementById("itp-res-tax");
+    const savingsRow = document.getElementById("itp-savings-row");
+    const savingsOutput = document.getElementById("itp-res-savings");
+    const warningBox = document.getElementById("threshold-warning");
+    const breakdownBox = document.getElementById("itp-rate-breakdown");
+    const presetButtons = document.querySelectorAll(".preset-btn");
+
+    const YOUTH_PRICE_LIMIT = 270151.20;
+    const LARGE_FAMILY_LIMIT = 350000;
+
+    /**
+     * Calcula la escala general autonómica progresiva de ITP en Baleares
+     * Tramos:
+     * - Hasta 400.000: 8%
+     * - De 400.000 a 600.000: 9%
+     * - De 600.000 a 1.000.000: 10%
+     * - De 1.000.000 a 2.000.000: 12%
+     * - Más de 2.000.000: 13%
+     */
+    function calculateGeneralScale(price: number): { tax: number; breakdown: string[] } {
+      let tax = 0;
+      const breakdown: string[] = [];
+
+      if (price <= 400000) {
+        const t1 = price * 0.08;
+        tax += t1;
+        breakdown.push(`Tramo 1 (hasta 400.000 € al 8%): ${formatCurrency(t1)}`);
+      } else {
+        const t1 = 400000 * 0.08;
+        tax += t1;
+        breakdown.push(`Tramo 1 (primeros 400.000 € al 8%): ${formatCurrency(t1)}`);
+
+        if (price <= 600000) {
+          const t2 = (price - 400000) * 0.09;
+          tax += t2;
+          breakdown.push(`Tramo 2 (de 400.001 € a ${formatCurrency(price)} al 9%): ${formatCurrency(t2)}`);
+        } else {
+          const t2 = 200000 * 0.09;
+          tax += t2;
+          breakdown.push(`Tramo 2 (de 400.001 € a 600.000 € al 9%): ${formatCurrency(t2)}`);
+
+          if (price <= 1000000) {
+            const t3 = (price - 600000) * 0.10;
+            tax += t3;
+            breakdown.push(`Tramo 3 (de 600.001 € a ${formatCurrency(price)} al 10%): ${formatCurrency(t3)}`);
+          } else {
+            const t3 = 400000 * 0.10;
+            tax += t3;
+            breakdown.push(`Tramo 3 (de 600.001 € a 1.000.000 € al 10%): ${formatCurrency(t3)}`);
+
+            if (price <= 2000000) {
+              const t4 = (price - 1000000) * 0.12;
+              tax += t4;
+              breakdown.push(`Tramo 4 (de 1.000.001 € a ${formatCurrency(price)} al 12%): ${formatCurrency(t4)}`);
+            } else {
+              const t4 = 1000000 * 0.12;
+              tax += t4;
+              breakdown.push(`Tramo 4 (de 1.000.001 € a 2.000.000 € al 12%): ${formatCurrency(t4)}`);
+
+              const t5 = (price - 2000000) * 0.13;
+              tax += t5;
+              breakdown.push(`Tramo 5 (más de 2.000.000 € al 13%): ${formatCurrency(t5)}`);
+            }
+          }
+        }
+      }
+
+      return { tax, breakdown };
+    }
+
+    function formatCurrency(amount: number): string {
+      return new Intl.NumberFormat("es-ES", {
+        style: "currency",
+        currency: "EUR",
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+      }).format(amount);
+    }
+
+    function recalculate() {
+      if (!priceInput) return;
+      const price = Math.max(0, parseFloat(priceInput.value) || 0);
+
+      const profileRadio = form?.querySelector<HTMLInputElement>('input[name="buyer-profile"]:checked');
+      const profile = profileRadio ? profileRadio.value : "youth";
+
+      const generalResult = calculateGeneralScale(price);
+      let tax = 0;
+      let effectiveRate = 0;
+      let savings = 0;
+      let showWarning = false;
+      const breakdownNotes: string[] = [];
+
+      if (profile === "youth") {
+        if (price <= YOUTH_PRICE_LIMIT) {
+          tax = 0;
+          effectiveRate = 0;
+          savings = generalResult.tax;
+          breakdownNotes.push("Bonificación del 100% sobre la cuota (Tipo 0% aplicable por Decreto Ley 3/2023).");
+        } else {
+          showWarning = true;
+          tax = generalResult.tax;
+          effectiveRate = price > 0 ? (tax / price) * 100 : 8;
+          savings = 0;
+          breakdownNotes.push(...generalResult.breakdown);
+        }
+      } else if (profile === "large-family") {
+        if (price <= LARGE_FAMILY_LIMIT) {
+          effectiveRate = 2.0;
+          tax = price * 0.02;
+          savings = generalResult.tax - tax;
+          breakdownNotes.push("Tipo especial reducido del 2% para familia numerosa/monoparental o discapacidad.");
+        } else {
+          showWarning = true;
+          tax = generalResult.tax;
+          effectiveRate = price > 0 ? (tax / price) * 100 : 8;
+          savings = 0;
+          breakdownNotes.push(...generalResult.breakdown);
+        }
+      } else if (profile === "vpo") {
+        effectiveRate = 4.0;
+        tax = price * 0.04;
+        savings = generalResult.tax - tax;
+        breakdownNotes.push("Tipo especial reducido del 4% para Vivienda de Protección Oficial (VPO).");
+      } else {
+        tax = generalResult.tax;
+        effectiveRate = price > 0 ? (tax / price) * 100 : 8;
+        savings = 0;
+        breakdownNotes.push(...generalResult.breakdown);
+      }
+
+      // Actualizar UI
+      if (baseOutput) baseOutput.textContent = formatCurrency(price);
+      if (rateOutput) rateOutput.textContent = `${effectiveRate.toFixed(2)}%`;
+      if (taxOutput) taxOutput.textContent = formatCurrency(tax);
+
+      if (savingsRow && savingsOutput) {
+        if (savings > 0) {
+          savingsRow.style.display = "flex";
+          savingsOutput.textContent = formatCurrency(savings);
+        } else {
+          savingsRow.style.display = "none";
+        }
+      }
+
+      if (warningBox) {
+        warningBox.style.display = showWarning ? "flex" : "none";
+      }
+
+      if (breakdownBox) {
+        if (breakdownNotes.length > 0) {
+          breakdownBox.innerHTML = breakdownNotes.map((note) => `<div class="breakdown-item">${note}</div>`).join("");
+          breakdownBox.style.display = "block";
+        } else {
+          breakdownBox.style.display = "none";
+        }
+      }
+    }
+
+    priceInput?.addEventListener("input", recalculate);
+    form.querySelectorAll('input[name="buyer-profile"]').forEach((radio) => {
+      radio.addEventListener("change", recalculate);
+    });
+
+    presetButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        presetButtons.forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        const presetVal = btn.getAttribute("data-preset");
+        if (presetVal && priceInput) {
+          priceInput.value = presetVal;
+          recalculate();
+        }
+      });
+    });
+
+    // Cálculo inicial
+    recalculate();
+  });
+</script>
+
+<style>
+  .itp-calculator-container {
+    background: var(--color-surface, #ffffff);
+    border: 1px solid var(--color-border, #e2e8f0);
+    border-radius: var(--radius-xl, 1rem);
+    padding: 2rem;
+    box-shadow: var(--shadow-md, 0 4px 6px -1px rgba(0, 0, 0, 0.05));
+    margin: 2.5rem 0;
+  }
+
+  :global(.dark) .itp-calculator-container {
+    background: var(--color-surface-dark, #1a202c);
+    border-color: var(--color-border-dark, #2d3748);
+  }
+
+  .calc-header {
+    margin-bottom: 1.75rem;
+  }
+
+  .calc-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: color-mix(in srgb, var(--color-primary, #0066cc) 12%, transparent);
+    color: var(--color-primary, #0066cc);
+    padding: 0.35rem 0.85rem;
+    border-radius: 9999px;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+  }
+
+  .badge-icon {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .calc-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-text, #1a202c);
+    margin: 0 0 0.5rem 0;
+    line-height: 1.3;
+  }
+
+  :global(.dark) .calc-title {
+    color: var(--color-text-dark, #f7fafc);
+  }
+
+  .calc-subtitle {
+    font-size: 0.9375rem;
+    color: var(--color-text-muted, #718096);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .calc-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .field-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .field-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-text, #2d3748);
+  }
+
+  :global(.dark) .field-label {
+    color: var(--color-text-dark, #e2e8f0);
+  }
+
+  .price-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .price-input {
+    width: 100%;
+    font-size: 1.375rem;
+    font-weight: 700;
+    padding: 0.75rem 2.5rem 0.75rem 1rem;
+    border: 2px solid var(--color-border, #cbd5e0);
+    border-radius: var(--radius-md, 0.5rem);
+    background: var(--color-bg, #ffffff);
+    color: var(--color-text, #1a202c);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  :global(.dark) .price-input {
+    background: var(--color-bg-dark, #2d3748);
+    border-color: var(--color-border-dark, #4a5568);
+    color: var(--color-text-dark, #f7fafc);
+  }
+
+  .price-input:focus {
+    outline: none;
+    border-color: var(--color-primary, #0066cc);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary, #0066cc) 20%, transparent);
+  }
+
+  .currency-symbol {
+    position: absolute;
+    right: 1.25rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-text-muted, #718096);
+    pointer-events: none;
+  }
+
+  .quick-presets {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.25rem;
+  }
+
+  .preset-btn {
+    background: var(--color-bg-subtle, #f7fafc);
+    border: 1px solid var(--color-border, #e2e8f0);
+    color: var(--color-text, #4a5568);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    padding: 0.35rem 0.75rem;
+    border-radius: var(--radius-sm, 0.375rem);
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+
+  :global(.dark) .preset-btn {
+    background: var(--color-bg-subtle-dark, #2d3748);
+    border-color: var(--color-border-dark, #4a5568);
+    color: var(--color-text-dark, #cbd5e0);
+  }
+
+  .preset-btn:hover {
+    background: color-mix(in srgb, var(--color-primary, #0066cc) 8%, transparent);
+    border-color: var(--color-primary, #0066cc);
+  }
+
+  .preset-btn.active {
+    background: var(--color-primary, #0066cc);
+    color: #ffffff;
+    border-color: var(--color-primary, #0066cc);
+  }
+
+  .profile-options {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  @media (min-width: 640px) {
+    .profile-options {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .profile-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 1rem;
+    border: 1.5px solid var(--color-border, #e2e8f0);
+    border-radius: var(--radius-md, 0.5rem);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: var(--color-surface, #ffffff);
+  }
+
+  :global(.dark) .profile-card {
+    background: var(--color-surface-dark, #232d3d);
+    border-color: var(--color-border-dark, #3b4759);
+  }
+
+  .profile-card:hover {
+    border-color: var(--color-primary, #0066cc);
+  }
+
+  .profile-card:has(input:checked) {
+    border-color: var(--color-primary, #0066cc);
+    background: color-mix(in srgb, var(--color-primary, #0066cc) 4%, transparent);
+    box-shadow: 0 0 0 1px var(--color-primary, #0066cc);
+  }
+
+  .profile-card input[type="radio"] {
+    margin-top: 0.2rem;
+    accent-color: var(--color-primary, #0066cc);
+  }
+
+  .profile-card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    flex: 1;
+  }
+
+  .profile-title-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+
+  .profile-name {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-text, #1a202c);
+  }
+
+  :global(.dark) .profile-name {
+    color: var(--color-text-dark, #f7fafc);
+  }
+
+  .tag {
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.2rem 0.5rem;
+    border-radius: 9999px;
+    background: var(--color-bg-subtle, #edf2f7);
+    color: var(--color-text, #4a5568);
+  }
+
+  .tag-zero {
+    background: #10b981;
+    color: #ffffff;
+  }
+
+  .tag-reduced {
+    background: #3b82f6;
+    color: #ffffff;
+  }
+
+  .profile-desc {
+    font-size: 0.8125rem;
+    color: var(--color-text-muted, #718096);
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  .warning-box {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: color-mix(in srgb, #f59e0b 12%, transparent);
+    border: 1px solid #f59e0b;
+    border-radius: var(--radius-md, 0.5rem);
+    padding: 0.875rem 1rem;
+    color: #b45309;
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+
+  :global(.dark) .warning-box {
+    color: #fbbf24;
+  }
+
+  .warning-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    flex-shrink: 0;
+  }
+
+  .results-card {
+    background: color-mix(in srgb, var(--color-primary, #0066cc) 4%, transparent);
+    border: 1.5px solid color-mix(in srgb, var(--color-primary, #0066cc) 25%, transparent);
+    border-radius: var(--radius-lg, 0.75rem);
+    padding: 1.5rem;
+  }
+
+  :global(.dark) .results-card {
+    background: color-mix(in srgb, var(--color-primary, #0066cc) 8%, transparent);
+    border-color: color-mix(in srgb, var(--color-primary, #0066cc) 35%, transparent);
+  }
+
+  .results-title {
+    font-size: 1.0625rem;
+    font-weight: 700;
+    color: var(--color-text, #1a202c);
+    margin: 0 0 1rem 0;
+    border-bottom: 1px solid var(--color-border, #e2e8f0);
+    padding-bottom: 0.625rem;
+  }
+
+  :global(.dark) .results-title {
+    color: var(--color-text-dark, #f7fafc);
+    border-bottom-color: var(--color-border-dark, #3b4759);
+  }
+
+  .results-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.875rem;
+  }
+
+  .result-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9375rem;
+  }
+
+  .result-label {
+    color: var(--color-text-muted, #4a5568);
+  }
+
+  :global(.dark) .result-label {
+    color: var(--color-text-muted, #a0aec0);
+  }
+
+  .result-val {
+    font-weight: 600;
+    color: var(--color-text, #1a202c);
+  }
+
+  :global(.dark) .result-val {
+    color: var(--color-text-dark, #f7fafc);
+  }
+
+  .highlight-final {
+    padding: 0.75rem;
+    background: var(--color-surface, #ffffff);
+    border-radius: var(--radius-md, 0.5rem);
+    border: 1px solid var(--color-border, #cbd5e0);
+    margin: 0.25rem 0;
+  }
+
+  :global(.dark) .highlight-final {
+    background: var(--color-surface-dark, #232d3d);
+    border-color: var(--color-border-dark, #4a5568);
+  }
+
+  .total-tax-val {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--color-primary, #0066cc);
+  }
+
+  :global(.dark) .total-tax-val {
+    color: #60a5fa;
+  }
+
+  .savings-row {
+    background: color-mix(in srgb, #10b981 12%, transparent);
+    padding: 0.75rem;
+    border-radius: var(--radius-md, 0.5rem);
+    border: 1px solid #10b981;
+  }
+
+  .savings-val {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #059669;
+  }
+
+  :global(.dark) .savings-val {
+    color: #34d399;
+  }
+
+  .rate-breakdown-details {
+    margin-top: 1rem;
+    padding-top: 0.75rem;
+    border-top: 1px dashed var(--color-border, #cbd5e0);
+    font-size: 0.8125rem;
+    color: var(--color-text-muted, #718096);
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .atib-notice-box {
+    display: flex;
+    gap: 1rem;
+    background: var(--color-bg-subtle, #f8fafc);
+    border-left: 4px solid var(--color-primary, #0066cc);
+    padding: 1rem;
+    border-radius: 0 var(--radius-md, 0.5rem) var(--radius-md, 0.5rem) 0;
+  }
+
+  :global(.dark) .atib-notice-box {
+    background: var(--color-bg-subtle-dark, #1e293b);
+  }
+
+  .notice-icon-wrapper {
+    color: var(--color-primary, #0066cc);
+    flex-shrink: 0;
+  }
+
+  .notice-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .notice-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .notice-title {
+    font-weight: 700;
+    font-size: 0.875rem;
+    color: var(--color-text, #1e293b);
+    margin: 0;
+  }
+
+  :global(.dark) .notice-title {
+    color: var(--color-text-dark, #f1f5f9);
+  }
+
+  .notice-text {
+    font-size: 0.8125rem;
+    color: var(--color-text-muted, #64748b);
+    margin: 0;
+    line-height: 1.45;
+  }
+
+  .notice-subtext {
+    font-size: 0.75rem;
+    color: var(--color-text-muted, #94a3b8);
+    font-style: italic;
+    margin: 0.25rem 0 0 0;
+  }
+</style>
