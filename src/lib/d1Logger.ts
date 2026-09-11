@@ -106,11 +106,23 @@ export function sanitizeSensitiveData(val: any, depth = 0): any {
 
 // ── D1 BINDING HELPER ───────────────────────────────────────────────────────
 export function getD1Binding(context?: any): any {
-  if (context?.locals?.runtime?.env?.DB) return context.locals.runtime.env.DB;
-  if (context?.locals?.DB) return context.locals.DB;
-  if (context?.env?.DB) return context.env.DB;
-  if ((globalThis as any)?.DB) return (globalThis as any).DB;
   if (context && typeof context.prepare === "function") return context;
+  if (context?.DB && typeof context.DB.prepare === "function") return context.DB;
+  if (context?.locals?.DB && typeof context.locals.DB.prepare === "function") return context.locals.DB;
+  if (context?.env?.DB && typeof context.env.DB.prepare === "function") return context.env.DB;
+
+  try {
+    if (context?.locals?.runtime?.env?.DB) return context.locals.runtime.env.DB;
+  } catch {
+    // Astro v6+ deprecation proxy throws on runtime.env access
+  }
+
+  if ((globalThis as any)?.DB && typeof (globalThis as any).DB.prepare === "function") {
+    return (globalThis as any).DB;
+  }
+  if ((globalThis as any)?.env?.DB && typeof (globalThis as any).env.DB.prepare === "function") {
+    return (globalThis as any).env.DB;
+  }
   return undefined;
 }
 
@@ -133,7 +145,7 @@ function generateDedupKey(entry: ServerLogEntry): string {
 
 export function shouldThrottleLog(entry: ServerLogEntry): { throttle: boolean; count: number } {
   // Errores de seguridad o transacciones financieras críticas siempre se registran
-  if (entry.level === "SECURITY" || entry.category === "PAYMENT") {
+  if (entry.level === "SECURITY" || entry.level === "FATAL" || entry.category === "PAYMENT") {
     return { throttle: false, count: 1 };
   }
 
@@ -141,27 +153,23 @@ export function shouldThrottleLog(entry: ServerLogEntry): { throttle: boolean; c
   const now = Date.now();
   const existing = dedupCache.get(key);
 
-  if (existing) {
-    if (now - existing.firstSeen < DEDUP_WINDOW_MS) {
-      existing.count += 1;
-      existing.lastSeen = now;
-      // Permitir el primer registro, y luego solo avisar cada 20 repeticiones
-      const shouldLog = existing.count === 20 || existing.count === 50 || existing.count % 100 === 0;
-      return { throttle: !shouldLog, count: existing.count };
-    } else {
-      // Ventana expirada, resetear contador
-      dedupCache.set(key, { firstSeen: now, lastSeen: now, count: 1 });
-      return { throttle: false, count: 1 };
-    }
+  if (!existing) {
+    dedupCache.set(key, { firstSeen: now, lastSeen: now, count: 1 });
+    return { throttle: false, count: 1 };
   }
 
-  // Limpieza periódica de caché si crece demasiado
-  if (dedupCache.size > 1000) {
-    for (const [k, v] of dedupCache.entries()) {
-      if (now - v.lastSeen > DEDUP_WINDOW_MS) dedupCache.delete(k);
+  // Si está dentro de la ventana de dedup
+  if (now - existing.firstSeen < DEDUP_WINDOW_MS) {
+    existing.count += 1;
+    existing.lastSeen = now;
+    // Permitir el 1º, 10º y luego cada 50 para no silenciar anomalías masivas persistentes
+    if (existing.count === 10 || existing.count % 50 === 0) {
+      return { throttle: false, count: existing.count };
     }
+    return { throttle: true, count: existing.count };
   }
 
+  // Fuera de la ventana: reiniciar
   dedupCache.set(key, { firstSeen: now, lastSeen: now, count: 1 });
   return { throttle: false, count: 1 };
 }
@@ -181,7 +189,21 @@ export async function logToD1(
   d1BindingOrContext: any,
   entry: ServerLogEntry,
 ): Promise<{ success: boolean; logId: string; throttled?: boolean; error?: string }> {
-  const d1Binding = getD1Binding(d1BindingOrContext);
+  let d1Binding = getD1Binding(d1BindingOrContext);
+
+  if (!d1Binding || typeof d1Binding.prepare !== "function") {
+    try {
+      const cfMod = "cloudflare:workers";
+      // @ts-ignore
+      const cfWorkers = await import(/* @vite-ignore */ cfMod).catch(() => null);
+      if (cfWorkers?.env?.DB && typeof cfWorkers.env.DB.prepare === "function") {
+        d1Binding = cfWorkers.env.DB;
+      }
+    } catch {
+      // Ignorar en entornos sin módulo cloudflare:workers
+    }
+  }
+
   const { throttle, count } = shouldThrottleLog(entry);
 
   if (throttle) {

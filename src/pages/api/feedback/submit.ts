@@ -7,12 +7,34 @@ export const prerender = false;
 
 export const POST: APIRoute = async ({ request, locals }) => {
   try {
-    const runtimeEnv = (locals as any)?.runtime?.env;
-    const kvBinding = runtimeEnv?.KV || runtimeEnv?.CACHE;
+    let runtimeEnv: any = (locals as any)?.env;
+    try {
+      if (!runtimeEnv && (locals as any)?.runtime?.env) {
+        runtimeEnv = (locals as any).runtime.env;
+      }
+    } catch {
+      // Deprecation proxy in Astro v6+
+    }
+    if (!runtimeEnv) {
+      try {
+        const cfMod = "cloudflare:workers";
+        // @ts-ignore
+        const cf = await import(/* @vite-ignore */ cfMod).catch(() => null);
+        runtimeEnv = cf?.env;
+      } catch {}
+    }
+    const kvBinding = runtimeEnv?.SESSION || runtimeEnv?.KV || runtimeEnv?.CACHE;
 
-    const rateLimit = await checkRateLimit(request, { limit: 10, windowMs: 60000, keyPrefix: "feedback-submit" }, kvBinding);
+    const rateLimit = await checkRateLimit(
+      request,
+      { limit: 10, windowMs: 60000, keyPrefix: "feedback-submit" },
+      kvBinding,
+    );
     if (!rateLimit.allowed) {
-      return createRateLimitResponse(rateLimit, "Has enviado demasiados mensajes recientemente. Por favor, espera un minuto.");
+      return createRateLimitResponse(
+        rateLimit,
+        "Has enviado demasiados mensajes recientemente. Por favor, espera un minuto.",
+      );
     }
 
     const rawBody = await request.json();
