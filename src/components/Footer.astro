@@ -1,6 +1,7 @@
 ---
 import LanguageSwitcher from "./LanguageSwitcher.astro";
 import ThemeSwitcher from "./ThemeSwitcher.astro";
+import { CURRENT_PLATFORM_VERSION } from "../data/changelog.ts";
 
 interface Props {
   currentLocale: "es" | "en" | "ca" | "de";
@@ -40,7 +41,7 @@ const currentPath = Astro.url.pathname;
             🌿 {translations["nav.about"] || "Sobre Nosotros"}
           </a>
           <a href={`${getLangPrefix(currentLocale)}actualizaciones`} class="footer-link">
-            🚀 {translations["nav.changelog"] || "Actualizaciones & Beta v0.01"}
+            🚀 {translations["nav.changelog"] || "Actualizaciones & Beta"} ({CURRENT_PLATFORM_VERSION})
           </a>
           <a href={`${getLangPrefix(currentLocale)}terms`} class="footer-link">
             {translations["footer.terms"]}

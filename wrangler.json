@@ -12,5 +12,11 @@
       "pattern": "www.serviciosmallorca.com",
       "custom_domain": true
     }
+  ],
+  "kv_namespaces": [
+    {
+      "binding": "SESSION",
+      "id": "7fb0e9abe239401882d990063893aac2"
+    }
   ]
 }

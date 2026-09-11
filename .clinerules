@@ -21,6 +21,8 @@
 13. **GR-13 (Seguridad & Privacidad):** Protocolos HTTPS estrictos, cabeceras HTTP de seguridad (`X-Frame-Options`, `CSP`, `Referrer-Policy`) y reglas Firestore blindadas.
 14. **GR-14 (Sincronización Pre-Flight):** Verificar siempre el estado del repositorio antes de comenzar.
 15. **GR-15 (Telemetría y D1 Logger con Deduplicación):** Cero `catch` silenciosos. Todo error crítico debe registrarse en Cloudflare D1 (`src/lib/d1Logger.ts`) con deduplicación anti-spam (5 min window) para evitar saturación de base de datos.
+16. **GR-16 (Trazabilidad Temporal y Changelog):** Versionado y fecha de despliegue en `src/data/changelog.ts` y `/actualizaciones`.
+17. **GR-17 (Aislamiento Total de Proyectos):** TERMINANTEMENTE PROHIBIDO mezclar, importar, configurar o usar bases de datos o nombres de otros proyectos ajenos (como `inkenzo` o `inkenzo-db`). Este repositorio es 100% exclusivo de `serviciosmallorca`.
 
 ---
 

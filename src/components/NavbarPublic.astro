@@ -93,6 +93,74 @@ const isRegisterActive = isActive(`${homeUrl}register`);
         >
           🤖 {translations["nav.assistant"] || "Asistente"}
         </a>
+
+        <!-- ── Desktop "Explorar" Submenu Dropdown ── -->
+        <div class="nav-explore-dropdown nav-desktop-link">
+          <details class="explore-details" id="explore-dropdown-details">
+            <summary class="explore-summary" aria-label={translations["nav.section.explore"] || "Explorar"}>
+              <span>🧭 {translations["nav.section.explore"] || "Explorar"}</span>
+              <span class="explore-arrow" aria-hidden="true">▾</span>
+            </summary>
+            <div class="explore-menu" role="menu">
+              <a href={`${homeUrl}tours`} class="explore-item" role="menuitem">
+                <span class="explore-icon">🗺️</span>
+                <span>{translations["nav.tours"] || "Rutas & Experiencias"}</span>
+              </a>
+              <a href={`${homeUrl}memoria-historica`} class="explore-item" role="menuitem">
+                <span class="explore-icon">🏛️</span>
+                <span>{translations["nav.history"] || "Memoria Histórica"}</span>
+              </a>
+              <a href={`${homeUrl}estadisticas`} class="explore-item" role="menuitem">
+                <span class="explore-icon">📊</span>
+                <span>{translations["nav.stats"] || "Estadísticas Oficiales"}</span>
+              </a>
+              <a href={`${homeUrl}estadisticas/comparativas`} class="explore-item" role="menuitem">
+                <span class="explore-icon">📈</span>
+                <span
+                  >{
+                    localeTyped === "ca"
+                      ? "Comparatives 20 Anys"
+                      : localeTyped === "en"
+                        ? "20-Yr Comparisons"
+                        : localeTyped === "de"
+                          ? "20-Jahre-Vergleich"
+                          : "Comparativas 20 Años"
+                  }</span
+                >
+              </a>
+              <a href={`${homeUrl}guias`} class="explore-item" role="menuitem">
+                <span class="explore-icon">📋</span>
+                <span>{translations["nav.guides"] || "Trámites & Guías"}</span>
+              </a>
+              <a href={`${homeUrl}normativa`} class="explore-item" role="menuitem">
+                <span class="explore-icon">⚖️</span>
+                <span
+                  >{
+                    localeTyped === "ca"
+                      ? "Normativa & BOIB"
+                      : localeTyped === "en"
+                        ? "Regulations & BOIB"
+                        : localeTyped === "de"
+                          ? "Gesetze & BOIB"
+                          : "Normativa & BOIB"
+                  }</span
+                >
+              </a>
+              <a href={`${homeUrl}blog`} class="explore-item" role="menuitem">
+                <span class="explore-icon">📰</span>
+                <span>{translations["nav.blog"] || "Blog & Artículos"}</span>
+              </a>
+              <a href={`${homeUrl}actualizaciones`} class="explore-item" role="menuitem">
+                <span class="explore-icon">🚀</span>
+                <span>{translations["nav.changelog"] || "Actualizaciones & Beta"}</span>
+              </a>
+              <a href={`${homeUrl}sobre-nosotros`} class="explore-item" role="menuitem">
+                <span class="explore-icon">🌿</span>
+                <span>{translations["nav.about"] || "Sobre Nosotros"}</span>
+              </a>
+            </div>
+          </details>
+        </div>
         <a
           href={`${homeUrl}tours`}
           class:list={["nav-link", "nav-drawer-only", { active: isToursActive }]}
@@ -109,7 +177,11 @@ const isRegisterActive = isActive(`${homeUrl}register`);
         </a>
         <a
           href={`${homeUrl}estadisticas`}
-          class:list={["nav-link", "nav-drawer-only", { active: isStatsActive && !currentPath.includes("/comparativas") }]}
+          class:list={[
+            "nav-link",
+            "nav-drawer-only",
+            { active: isStatsActive && !currentPath.includes("/comparativas") },
+          ]}
           aria-current={isStatsActive && !currentPath.includes("/comparativas") ? "page" : undefined}
         >
           📊 {translations["nav.stats"] || "Estadísticas"}
@@ -119,7 +191,15 @@ const isRegisterActive = isActive(`${homeUrl}register`);
           class:list={["nav-link", "nav-drawer-only", { active: currentPath.includes("/estadisticas/comparativas") }]}
           aria-current={currentPath.includes("/estadisticas/comparativas") ? "page" : undefined}
         >
-          📈 {localeTyped === "ca" ? "Comparatives 20 Anys" : localeTyped === "en" ? "20-Yr Comparisons" : localeTyped === "de" ? "20-Jahre-Vergleich" : "Comparativas 20 Años"}
+          📈 {
+            localeTyped === "ca"
+              ? "Comparatives 20 Anys"
+              : localeTyped === "en"
+                ? "20-Yr Comparisons"
+                : localeTyped === "de"
+                  ? "20-Jahre-Vergleich"
+                  : "Comparativas 20 Años"
+          }
         </a>
         <a
           href={`${homeUrl}guias`}
@@ -133,7 +213,15 @@ const isRegisterActive = isActive(`${homeUrl}register`);
           class:list={["nav-link", "nav-drawer-only", { active: isNormativaActive }]}
           aria-current={isNormativaActive ? "page" : undefined}
         >
-          ⚖️ {localeTyped === "ca" ? "Normativa & BOIB" : localeTyped === "en" ? "Regulations & BOIB" : localeTyped === "de" ? "Gesetze & BOIB" : "Normativa & BOIB"}
+          ⚖️ {
+            localeTyped === "ca"
+              ? "Normativa & BOIB"
+              : localeTyped === "en"
+                ? "Regulations & BOIB"
+                : localeTyped === "de"
+                  ? "Gesetze & BOIB"
+                  : "Normativa & BOIB"
+          }
         </a>
 
         <!-- ── SECCIÓN 2: COMUNIDAD & ÉLITE ── -->
@@ -230,11 +318,102 @@ const isRegisterActive = isActive(`${homeUrl}register`);
 <script>
   import { initMobileMenuToggle } from "../lib/toggleMobileMenu";
   initMobileMenuToggle("public-menu-toggle", "public-navbar-menu");
+
+  // Close explore details when clicking outside
+  document.addEventListener("click", (e) => {
+    const details = document.getElementById("explore-dropdown-details") as HTMLDetailsElement | null;
+    if (details && details.open && !details.contains(e.target as Node)) {
+      details.removeAttribute("open");
+    }
+  });
 </script>
 
 <style>
   .navbar-header {
     background: var(--glass-bg);
     border-bottom: 1px solid var(--color-surface-border);
+  }
+
+  .nav-explore-dropdown {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .explore-details {
+    position: relative;
+    display: inline-block;
+  }
+
+  .explore-summary {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: var(--space-xs) var(--space-sm);
+    color: var(--color-text-muted);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    cursor: pointer;
+    list-style: none;
+    border-radius: var(--border-radius-md);
+    transition: all var(--transition-fast);
+  }
+
+  .explore-summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .explore-summary:hover {
+    color: var(--color-primary);
+    background-color: var(--color-surface-hover);
+  }
+
+  .explore-arrow {
+    font-size: 0.7em;
+    transition: transform var(--transition-fast);
+  }
+
+  .explore-details[open] .explore-arrow {
+    transform: rotate(180deg);
+  }
+
+  .explore-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    min-width: 250px;
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-surface-border);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-xl);
+    padding: var(--space-xs);
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    z-index: 1000;
+  }
+
+  .explore-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 12px;
+    border-radius: var(--border-radius-md);
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    color: var(--color-text);
+    text-decoration: none;
+    transition: all var(--transition-fast);
+  }
+
+  .explore-item:hover {
+    background-color: var(--color-surface-hover);
+    color: var(--color-primary);
+  }
+
+  @media (max-width: 1024px) {
+    .nav-explore-dropdown {
+      display: none !important;
+    }
   }
 </style>

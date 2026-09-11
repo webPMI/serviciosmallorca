@@ -193,6 +193,15 @@ Todo fallo crítico, excepción SSR, error en cliente y evento financiero anóma
 
 ---
 
+## GR-17: Aislamiento Total e Independencia de Proyectos (Zero Project Cross-Contamination)
+
+**El proyecto `serviciosmallorca` es 100% independiente y autónomo.**
+
+- ❌ **TERMINANTEMENTE PROHIBIDO:** Referenciar, importar, vincular, configurar o desplegar bases de datos (D1), KV, buckets o recursos de otros proyectos ajenos del usuario (como `inkenzo`, `inkenzo-db`, `inkenzo.com`, etc.) en este repositorio ni en `wrangler.json`.
+- ✅ Todos los recursos de infraestructura en `wrangler.json` deben pertenecer única y exclusivamente a `servicios-mallorca`.
+
+---
+
 ## Auditoría del Agente Maestro
 
 Antes de aceptar cualquier cambio, el Agente Maestro verifica:
@@ -214,4 +223,5 @@ Antes de aceptar cualquier cambio, el Agente Maestro verifica:
 [ ] GR-14: ¿Repositorio local sincronizado con la última versión de GitHub (Pre-Flight Git Fetch)?
 [ ] GR-15: ¿Telemetría y registro de errores conectado a Cloudflare D1 sin catch silenciosos?
 [ ] GR-16: ¿Versión, fecha y hora exacta de actualización registradas en src/data/changelog.ts y visibles en /actualizaciones?
+[ ] GR-17: ¿Cero contaminación cruzada con otros proyectos (prohibido inkenzo, etc.)?
 ```

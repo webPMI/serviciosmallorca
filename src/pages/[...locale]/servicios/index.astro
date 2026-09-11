@@ -50,7 +50,7 @@ const initialFilteredServices = SERVICES.filter((service) => {
     const descMatch = (service.shortDescription[locale] || service.shortDescription.en)
       .toLowerCase()
       .includes(searchQuery);
-    const tagMatch = service.tags.some((t) => t.toLowerCase().includes(searchQuery));
+    const tagMatch = Boolean(service.tags && service.tags.some((t) => t.toLowerCase().includes(searchQuery)));
     if (!nameMatch && !descMatch && !tagMatch) {
       return false;
     }
@@ -274,12 +274,16 @@ const initialFilteredServices = SERVICES.filter((service) => {
         SERVICES.map((service) => {
           const isMatch = initialFilteredServices.some((s) => s.id === service.id);
           const hasTerrace = Boolean(service.capabilities?.terrace || service.amenities?.includes("terrace"));
-          const isPetFriendly = Boolean(service.capabilities?.petFriendly || service.amenities?.includes("pet_friendly"));
-          const isAccessible = Boolean(service.capabilities?.wheelchairAccessible || service.amenities?.includes("wheelchair_accessible"));
+          const isPetFriendly = Boolean(
+            service.capabilities?.petFriendly || service.amenities?.includes("pet_friendly"),
+          );
+          const isAccessible = Boolean(
+            service.capabilities?.wheelchairAccessible || service.amenities?.includes("wheelchair_accessible"),
+          );
           const isMultilingual = Boolean(
             service.languagesSpoken?.some((l) => l === "en" || l === "de") ||
             service.culturalIdentity === "german_oriented" ||
-            service.culturalIdentity === "british_oriented"
+            service.culturalIdentity === "british_oriented",
           );
 
           return (
@@ -288,7 +292,7 @@ const initialFilteredServices = SERVICES.filter((service) => {
               data-id={service.id}
               data-name={service.name.toLowerCase()}
               data-desc={(service.shortDescription[locale] || service.shortDescription.en).toLowerCase()}
-              data-tags={service.tags.join(" ").toLowerCase()}
+              data-tags={(service.tags || []).join(" ").toLowerCase()}
               data-category={service.category}
               data-zone={service.zone}
               data-rating={service.rating || 0}
@@ -379,12 +383,21 @@ const initialFilteredServices = SERVICES.filter((service) => {
       const currentMin = parseInt(hStr, 10) * 60 + parseInt(mStr || "0", 10);
 
       const isSunday = dayStr.startsWith("dom") || dayStr.startsWith("sun");
-      if (isSunday && (raw.includes("lun - sáb") || raw.includes("lunes a viernes") || raw.includes("domingo cerrado") || raw.includes("dom: cerrado"))) {
+      if (
+        isSunday &&
+        (raw.includes("lun - sáb") ||
+          raw.includes("lunes a viernes") ||
+          raw.includes("domingo cerrado") ||
+          raw.includes("dom: cerrado"))
+      ) {
         return false;
       }
 
       const isSaturday = dayStr.startsWith("sáb") || dayStr.startsWith("sab") || dayStr.startsWith("sat");
-      if (isSaturday && (raw.includes("lunes a viernes") || raw.includes("lun - vie") || raw.includes("sáb: cerrado"))) {
+      if (
+        isSaturday &&
+        (raw.includes("lunes a viernes") || raw.includes("lun - vie") || raw.includes("sáb: cerrado"))
+      ) {
         return false;
       }
 

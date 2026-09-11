@@ -49,6 +49,7 @@ Toda la documentación del proyecto está en `docs/`. Antes de trabajar en cualq
 14. **GR-14**: Sincronización Continua con GitHub: Pre-flight `git fetch origin` y `git pull` obligatorio antes de iniciar o tras >12h sin sincronizar
 15. **GR-15**: Telemetría, Logs Resilientes y Control de Calidad en Producción (Cloudflare D1 con deduplicación anti-spam y cero flooding)
 16. **GR-16**: Registro de Versiones y Trazabilidad Temporal de Despliegues (`src/data/changelog.ts`, timestamp exacto y `/actualizaciones`)
+17. **GR-17**: Aislamiento Total e Independencia de Proyectos: Prohibición absoluta de mezclar, referenciar o configurar recursos o bases de datos de otros proyectos (como `inkenzo`).
 
 ## Protocolo de Curación Atómica (Cero Omisión)
 
