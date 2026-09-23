@@ -297,7 +297,7 @@ const initialFilteredServices = SERVICES.filter((service) => {
               data-zone={service.zone}
               data-rating={service.rating || 0}
               data-slug={service.slug}
-              data-schedule={service.schedule || ""}
+              data-schedule={typeof service.schedule === "string" ? service.schedule : ""}
               data-status={service.status || "open"}
               data-multilingual={String(isMultilingual)}
               data-terrace={String(hasTerrace)}
@@ -360,7 +360,7 @@ const initialFilteredServices = SERVICES.filter((service) => {
 
     function isBusinessCurrentlyOpen(scheduleText, status) {
       if (status === "permanently_closed" || status === "seasonal_closure") return false;
-      if (!scheduleText || scheduleText.trim() === "") return true; // Default fallback to active
+      if (!scheduleText || typeof scheduleText !== "string" || scheduleText.trim() === "" || scheduleText === "[object Object]") return true; // Default fallback to active
 
       const raw = scheduleText.toLowerCase();
       if (raw.includes("24 horas") || raw.includes("24h") || raw.includes("24/7")) return true;
