@@ -358,25 +358,54 @@ const shouldLoadAdSense =
     <!-- Universal Community Voice & Quality Feedback Modal -->
     <CommunityVoiceModal currentLocale={lang as any} translations={{}} />
 
+    <noscript>
+      <style>
+        #app-loading-overlay {
+          display: none !important;
+        }
+      </style>
+    </noscript>
+
     <!-- Loading screen controller (inline, fires before any module JS) -->
     <script is:inline>
       (function () {
         const overlay = document.getElementById("app-loading-overlay");
+        if (!overlay) return;
+        let isHidden = false;
         function hide() {
-          if (overlay && !overlay.classList.contains("is-hidden")) {
-            overlay.classList.add("is-hidden");
-          }
+          if (isHidden) return;
+          isHidden = true;
+          overlay.style.pointerEvents = "none";
+          overlay.classList.add("is-hidden");
+          setTimeout(function () {
+            overlay.style.display = "none";
+          }, 400);
         }
         // Listen for custom readiness event from authStore or main app
         window.addEventListener("app:ready", hide, { once: true });
-        // Fallback: hide after DOM is fully ready + small buffer
+        // Immediate check if document has already loaded
+        if (document.readyState === "complete" || document.readyState === "interactive") {
+          setTimeout(hide, 60);
+        } else {
+          window.addEventListener(
+            "DOMContentLoaded",
+            function () {
+              setTimeout(hide, 100);
+            },
+            { once: true },
+          );
+        }
+        // Additional lifecycle listeners (load, pageshow for bfcache)
         window.addEventListener(
-          "DOMContentLoaded",
+          "load",
           function () {
-            setTimeout(hide, 600);
+            setTimeout(hide, 60);
           },
           { once: true },
         );
+        window.addEventListener("pageshow", hide);
+        // Absolute safety backstop: overlay will NEVER trap the screen past 1.5s
+        setTimeout(hide, 1500);
       })();
     </script>
 

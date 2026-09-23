@@ -63,5 +63,11 @@
   "404.exploreServices": "Dienstleistungen entdecken",
   "404.exploreSports": "Sport & Padel",
   "404.exploreTours": "Erlebnisrouten",
+  "500.title": "Vorübergehender Serverfehler (500)",
+  "500.subtitle": "Wir haben ein vorübergehendes Serverproblem festgestellt.",
+  "500.description": "Der Vorfall wurde automatisch in unserer Cloudflare D1-Telemetrie protokolliert. Sie können die Seite neu laden oder zu einem sicheren Bereich navigieren.",
+  "500.retry": "Jetzt erneut versuchen",
+  "500.backHome": "Zur Startseite",
+  "500.exploreServices": "Dienstleistungen entdecken",
   "nav.section.explore": "Entdecken"
 }

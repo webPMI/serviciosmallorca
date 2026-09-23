@@ -87,11 +87,36 @@ function formatNextOpening(type: "today" | "tomorrow" | "monday", timeStr: strin
  * y calcula con precisión la próxima hora de apertura cuando está cerrado.
  */
 export function getLiveBusinessStatus(
-  scheduleText?: string,
+  scheduleInput?: string | Record<string, unknown>,
   serviceStatus: "open" | "seasonal_closure" | "permanently_closed" | "incomplete_admin_only" | undefined = "open",
   now: Date = new Date(),
   locale: Locale = "es",
 ): LiveStatusResult {
+  // --- Normalize schedule to string (handles legacy object format {monday: {open, close}}) ---
+  let scheduleText: string | undefined;
+  if (scheduleInput && typeof scheduleInput !== "string") {
+    // Convert structured schedule object to a human-readable string
+    const DAY_LABELS: Record<string, string> = {
+      monday: "Lunes",
+      tuesday: "Martes",
+      wednesday: "Miércoles",
+      thursday: "Jueves",
+      friday: "Viernes",
+      saturday: "Sábado",
+      sunday: "Domingo",
+    };
+    const parts: string[] = [];
+    for (const [day, hours] of Object.entries(scheduleInput)) {
+      const h = hours as { open?: string; close?: string };
+      if (!h || h.open === "closed" || h.close === "closed") continue;
+      const label = DAY_LABELS[day] || day;
+      parts.push(`${label}: ${h.open ?? "?"} - ${h.close ?? "?"}`);
+    }
+    scheduleText = parts.length > 0 ? parts.join(" | ") : undefined;
+  } else {
+    scheduleText = scheduleInput as string | undefined;
+  }
+
   if (serviceStatus === "permanently_closed") {
     const closedLabels = {
       es: "Permanentemente Cerrado",

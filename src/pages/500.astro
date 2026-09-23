@@ -1,0 +1,251 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import { detectUserLocale, loadTranslations, getLangPrefix, type Locale } from "../i18n";
+import { logToD1 } from "../lib/d1Logger";
+
+export const prerender = false;
+
+interface Props {
+  error?: unknown;
+}
+
+const { error } = Astro.props;
+
+const locale = (detectUserLocale(Astro.request) || "es") as Locale;
+const translations = await loadTranslations(locale);
+const prefix = getLangPrefix(locale);
+
+// Telemetría resiliente de error de servidor a Cloudflare D1
+if (error) {
+  try {
+    const errObj = error instanceof Error ? error : new Error(String(error));
+    await logToD1(Astro, {
+      level: "ERROR",
+      category: "SSR",
+      message: errObj.message || "Excepción no controlada en página SSR 500",
+      stack: errObj.stack,
+      url: Astro.url.pathname,
+      method: Astro.request.method,
+      status: 500,
+    });
+  } catch {
+    // Fail-safe silencioso
+  }
+}
+
+const pageTitle = translations["500.title"] || "Error Temporal del Servidor (500)";
+const subtitle = translations["500.subtitle"] || "Hemos detectado una incidencia temporal en el servidor.";
+const description =
+  translations["500.description"] ||
+  "El incidente ha sido registrado automáticamente en nuestra telemetría Cloudflare D1. Puedes reintentar la carga o navegar a una sección segura.";
+const retryBtn = translations["500.retry"] || "Reintentar ahora";
+const backHomeBtn = translations["500.backHome"] || "Volver al Inicio";
+const exploreBtn = translations["500.exploreServices"] || "Explorar Servicios";
+---
+
+<BaseLayout title={`${pageTitle} | Servicios Mallorca`} lang={locale} description={description}>
+  <Navbar currentLocale={locale} translations={translations} getLangPrefix={getLangPrefix} />
+
+  <main class="page-500-wrapper" role="main">
+    <div class="glow-bg" aria-hidden="true"></div>
+
+    <div class="page-500-container">
+      <div class="hero-visual" aria-hidden="true">
+        <div class="shield-badge">🛡️</div>
+        <span class="code-number">500</span>
+      </div>
+
+      <div class="status-tag">
+        <span>⚠️ {subtitle}</span>
+      </div>
+
+      <h1 class="headline">{pageTitle}</h1>
+      <p class="subheadline">{description}</p>
+
+      <div class="actions-group">
+        <button
+          type="button"
+          onclick="window.location.reload()"
+          class="btn btn-primary retry-btn"
+          id="server-error-retry-btn"
+        >
+          🔄 {retryBtn}
+        </button>
+        <a href={prefix} class="btn btn-secondary">
+          🏠 {backHomeBtn}
+        </a>
+        <a href={`${prefix}servicios`} class="btn btn-outline">
+          🔍 {exploreBtn}
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <Footer currentLocale={locale} translations={translations} getLangPrefix={getLangPrefix} />
+</BaseLayout>
+
+<style>
+  .page-500-wrapper {
+    position: relative;
+    min-height: calc(100vh - 160px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 1.5rem;
+    overflow: hidden;
+  }
+
+  .glow-bg {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(239, 68, 68, 0.08) 0%, rgba(212, 175, 55, 0.05) 50%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .page-500-container {
+    position: relative;
+    z-index: 1;
+    max-width: 680px;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .hero-visual {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .code-number {
+    font-size: clamp(5rem, 14vw, 8.5rem);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    background: linear-gradient(135deg, var(--color-primary, #0f172a) 30%, #ef4444 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 0.9;
+  }
+
+  .shield-badge {
+    position: absolute;
+    top: -10px;
+    right: -20px;
+    font-size: 2.5rem;
+    animation: pulse 3s infinite ease-in-out;
+  }
+
+  @keyframes pulse {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.15) rotate(6deg);
+    }
+  }
+
+  .status-tag {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    border-radius: 9999px;
+    background: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(239, 68, 68, 0.2);
+  }
+
+  .headline {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 800;
+    color: var(--color-text, #1e293b);
+    margin: 0 0 1rem;
+    letter-spacing: -0.02em;
+  }
+
+  .subheadline {
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    color: var(--color-text-muted, #64748b);
+    line-height: 1.6;
+    margin: 0 auto 2.5rem;
+    max-width: 540px;
+  }
+
+  .actions-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    border-radius: var(--radius-md, 8px);
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+  }
+
+  .btn-primary {
+    background: var(--color-primary, #0f172a);
+    color: #fff;
+  }
+
+  .btn-primary:hover {
+    background: var(--color-primary-hover, #1e293b);
+    transform: translateY(-2px);
+  }
+
+  .btn-secondary {
+    background: var(--color-bg-card, #f8fafc);
+    color: var(--color-text, #1e293b);
+    border-color: var(--color-border, #e2e8f0);
+  }
+
+  .btn-secondary:hover {
+    background: var(--color-bg-hover, #f1f5f9);
+    transform: translateY(-2px);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--color-accent, #d4af37);
+    border-color: var(--color-accent, #d4af37);
+  }
+
+  .btn-outline:hover {
+    background: rgba(212, 175, 55, 0.1);
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 640px) {
+    .actions-group {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .btn {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+</style>

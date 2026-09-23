@@ -11,17 +11,20 @@ import { cortana_palma_alta_costura_mediterranea } from "./cortana-palma-alta-co
 import { darder_mobles_arta_decoracio } from "./darder-mobles-arta-decoracio.ts";
 import { espacio_home_design_bisbe_campins_palma } from "./espacio-home-design-bisbe-campins-palma.ts";
 import { estiloSantFeliuDecorPalma } from "./estilo-sant-feliu-decor-palma.ts";
+import { floristeriaFlorsIColorsPalma } from "./floristeria-flors-i-colors-palma.ts";
 import { fornetDeLaSocaPalmaPatrimoni } from "./fornet-de-la-soca-palma-patrimoni.ts";
 import { joyeria_artesana_isabel_guarch_palma } from "./joyeria-artesana-isabel-guarch-palma.ts";
 import { joyeriaRelotgeriaAlemanyPalma } from "./joyeria-relotgeria-alemany-palma.ts";
 import { la_industrial_jugueteria_palma_1898 } from "./la-industrial-jugueteria-palma-1898.ts";
 import { laPajaritaBomboneriaPalma1872 } from "./la-pajarita-bomboneria-palma-1872.ts";
+import { libreriaAllIOliPalma } from "./libreria-all-i-oli-palma.ts";
 import { libreria_quart_creixent_palma_cultura } from "./libreria-quart-creixent-palma-cultura.ts";
 import { llibreria_drac_magic_palma } from "./llibreria-drac-magic-palma.ts";
 import { llibres_ramon_llull_palma } from "./llibres-ramon-llull-palma.ts";
 import { rialtoLivingLifestyleStorePalma } from "./rialto-living-lifestyle-store-palma.ts";
 import { solivera_bio_supermercat_palma } from "./solivera-bio-supermercat-palma.ts";
 import { suite13EcoFashionPalma } from "./suite-13-eco-fashion-palma.ts";
+import { tiendaCiclismoMallorcaBikehouse } from "./tienda-ciclismo-mallorca-bikehouse.ts";
 import { tony_mora_boots_mallorca_handcrafted_leather } from "./tony-mora-boots-mallorca-handcrafted-leather.ts";
 
 export { agromart_balear_sineu } from "./agromart-balear-sineu.ts";
@@ -36,17 +39,20 @@ export { cortana_palma_alta_costura_mediterranea } from "./cortana-palma-alta-co
 export { darder_mobles_arta_decoracio } from "./darder-mobles-arta-decoracio.ts";
 export { espacio_home_design_bisbe_campins_palma } from "./espacio-home-design-bisbe-campins-palma.ts";
 export { estiloSantFeliuDecorPalma } from "./estilo-sant-feliu-decor-palma.ts";
+export { floristeriaFlorsIColorsPalma } from "./floristeria-flors-i-colors-palma.ts";
 export { fornetDeLaSocaPalmaPatrimoni } from "./fornet-de-la-soca-palma-patrimoni.ts";
 export { joyeria_artesana_isabel_guarch_palma } from "./joyeria-artesana-isabel-guarch-palma.ts";
 export { joyeriaRelotgeriaAlemanyPalma } from "./joyeria-relotgeria-alemany-palma.ts";
 export { la_industrial_jugueteria_palma_1898 } from "./la-industrial-jugueteria-palma-1898.ts";
 export { laPajaritaBomboneriaPalma1872 } from "./la-pajarita-bomboneria-palma-1872.ts";
+export { libreriaAllIOliPalma } from "./libreria-all-i-oli-palma.ts";
 export { libreria_quart_creixent_palma_cultura } from "./libreria-quart-creixent-palma-cultura.ts";
 export { llibreria_drac_magic_palma } from "./llibreria-drac-magic-palma.ts";
 export { llibres_ramon_llull_palma } from "./llibres-ramon-llull-palma.ts";
 export { rialtoLivingLifestyleStorePalma } from "./rialto-living-lifestyle-store-palma.ts";
 export { solivera_bio_supermercat_palma } from "./solivera-bio-supermercat-palma.ts";
 export { suite13EcoFashionPalma } from "./suite-13-eco-fashion-palma.ts";
+export { tiendaCiclismoMallorcaBikehouse } from "./tienda-ciclismo-mallorca-bikehouse.ts";
 export { tony_mora_boots_mallorca_handcrafted_leather } from "./tony-mora-boots-mallorca-handcrafted-leather.ts";
 
 export const RETAIL_SERVICES: ServiceItem[] = [
@@ -62,16 +68,19 @@ export const RETAIL_SERVICES: ServiceItem[] = [
   darder_mobles_arta_decoracio,
   espacio_home_design_bisbe_campins_palma,
   estiloSantFeliuDecorPalma,
+  floristeriaFlorsIColorsPalma,
   fornetDeLaSocaPalmaPatrimoni,
   joyeria_artesana_isabel_guarch_palma,
   joyeriaRelotgeriaAlemanyPalma,
   la_industrial_jugueteria_palma_1898,
   laPajaritaBomboneriaPalma1872,
+  libreriaAllIOliPalma,
   libreria_quart_creixent_palma_cultura,
   llibreria_drac_magic_palma,
   llibres_ramon_llull_palma,
   rialtoLivingLifestyleStorePalma,
   solivera_bio_supermercat_palma,
   suite13EcoFashionPalma,
+  tiendaCiclismoMallorcaBikehouse,
   tony_mora_boots_mallorca_handcrafted_leather,
 ];

@@ -63,5 +63,11 @@
   "404.exploreServices": "Explorar Serveis",
   "404.exploreSports": "Pistes & Esport",
   "404.exploreTours": "Rutes d'Experiència",
+  "500.title": "Error Temporal del Servidor (500)",
+  "500.subtitle": "Hem detectat una incidència temporal al servidor.",
+  "500.description": "La incidència s'ha registrat automàticament a la nostra telemetria Cloudflare D1. Pots reintentar la càrrega o navegar cap a una secció segura.",
+  "500.retry": "Reintentar ara",
+  "500.backHome": "Tornar a l'Inici",
+  "500.exploreServices": "Explorar Serveis",
   "nav.section.explore": "Explorar"
 }

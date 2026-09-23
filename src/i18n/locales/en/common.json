@@ -63,5 +63,11 @@
   "404.exploreServices": "Explore Services",
   "404.exploreSports": "Sports & Courts",
   "404.exploreTours": "Experience Tours",
+  "500.title": "Temporary Server Error (500)",
+  "500.subtitle": "We detected a temporary server issue.",
+  "500.description": "The incident has been automatically reported to our Cloudflare D1 telemetry. You can retry the page or navigate to a safe section.",
+  "500.retry": "Retry now",
+  "500.backHome": "Back to Home",
+  "500.exploreServices": "Explore Services",
   "nav.section.explore": "Explore"
 }

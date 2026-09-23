@@ -63,5 +63,11 @@
   "404.exploreServices": "Explorar Servicios",
   "404.exploreSports": "Pistas & Deporte",
   "404.exploreTours": "Rutas de Experiencia",
+  "500.title": "Error Temporal del Servidor (500)",
+  "500.subtitle": "Hemos detectado una incidencia temporal en el servidor.",
+  "500.description": "El incidente ha sido registrado automáticamente en nuestra telemetría Cloudflare D1. Puedes reintentar la carga o navegar a una sección segura.",
+  "500.retry": "Reintentar ahora",
+  "500.backHome": "Volver al Inicio",
+  "500.exploreServices": "Explorar Servicios",
   "nav.section.explore": "Explorar"
 }
