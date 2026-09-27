@@ -96,5 +96,16 @@
   "boostWall.totalRaised": "Accumulated Community Pool:",
   "boostWall.backersCount": "Supporting Neighbors:",
   "boostWall.rankStatus": "Podium Standing:",
-  "boostWall.topNominated": "Featured Benchmark"
+  "boostWall.topNominated": "Featured Benchmark",
+  "honor.payment.cancelledTitle": "Payment Process Cancelled",
+  "honor.payment.cancelledDesc": "No charge was made to your card or bank account. If you wish to boost or position your business later, you can select it at any time.",
+  "honor.payment.successTitle": "Contribution Confirmed!",
+  "honor.payment.successDesc": "Payment of {amount}€ verified by the payment gateway. The business now appears on the Honor Board.",
+  "honor.payment.successDescNoAmount": "Payment verified by the payment gateway. The business now appears on the Honor Board.",
+  "honor.payment.unverifiedTitle": "Payment Not Verified",
+  "honor.payment.unverifiedDesc": "We could not confirm the payment with the gateway. If you have already paid, keep the reference and contact us.",
+  "honor.payment.missingSessionDesc": "The transaction arrived without a session reference, so it cannot be verified.",
+  "honor.modal.offlineAlert": "⚠️ No active internet connection detected. Please check your Wi-Fi or mobile data before paying.",
+  "honor.modal.timeoutAlert": "⏱️ The payment gateway connection timed out (20 seconds) due to latency or a network dropout. For your security the operation was cancelled without charge. Check your connection and try again.",
+  "honor.modal.gatewayErrorAlert": "Communication error with the payment gateway. Please check your connection and try again."
 }

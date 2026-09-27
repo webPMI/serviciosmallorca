@@ -10,6 +10,14 @@ import { MALLORCA_ZONES } from "../../../data/zones";
 import { SERVICES, getFeaturedServices } from "../../../data/services";
 import { getTopRankedServices } from "../../../lib/topEngine";
 import { pickDirectoryFeatured, shouldShowFeaturedServices, pinServiceFirst } from "../../../lib/directoryFeatured";
+import {
+  parsePageParam,
+  paginate,
+  buildDirectoryHref,
+  buildPageList,
+  SERVICES_PER_PAGE,
+} from "../../../lib/directoryPagination";
+import { parseIntentParam, filterByIntent } from "../../../lib/directoryIntents";
 import { getLocaleFromUrl, loadTranslations, getLangPrefix, type Locale } from "../../../i18n";
 
 export const prerender = false;
@@ -60,8 +68,42 @@ const initialFilteredServices = SERVICES.filter((service) => {
   return true;
 });
 
+// 🎯 Filtro de intención resuelto en el SERVIDOR: con paginación, filtrar en cliente
+// solo miraría 48 de ~953 fichas (resultados incorrectos).
+const selectedIntent = parseIntentParam(Astro.url.searchParams.get("intencion"));
+
+// 📄 Paginación SSR: 48 fichas por página → HTML pequeño, cacheable y crawlable (GEO).
+const requestedPage = parsePageParam(Astro.url.searchParams.get("pagina"));
+const intentFiltered = filterByIntent(initialFilteredServices, selectedIntent);
+const directory = paginate(intentFiltered, requestedPage, SERVICES_PER_PAGE);
+const isPaginated = directory.totalPages > 1;
+
+const directoryPath = `${prefix}servicios`;
+const directoryParams = {
+  categoria: selectedCategory,
+  zona: selectedZone,
+  q: Astro.url.searchParams.get("q") || undefined,
+  intencion: selectedIntent ?? undefined,
+};
+
+/** URL de una página conservando los filtros activos (pagar nunca pierde el contexto). */
+const pageHref = (n: number): string => buildDirectoryHref(directoryPath, directoryParams, n);
+
+/** URL del chip de intención: alterna activar/desactivar y vuelve a la página 1. */
+const intentHref = (intent: string): string =>
+  buildDirectoryHref(
+    directoryPath,
+    { ...directoryParams, intencion: selectedIntent === intent ? undefined : intent },
+    1,
+  );
+
+const pageLinks = buildPageList(directory.page, directory.totalPages);
+const paginationSummary = (translations["services.pagination.summary"] || "Page {page} of {total}")
+  .replace("{page}", String(directory.page))
+  .replace("{total}", String(directory.totalPages));
+
 // 🧠 Bloque "Servicios Destacados": se muestra SOLO si el visitante no llega filtrando
-// (sin ?categoria / ?zona / ?q). La misma regla se aplica en cliente al filtrar en vivo.
+// (sin ?categoria / ?zona / ?q / ?intencion). La misma regla se aplica en cliente al filtrar en vivo.
 const featuredForDirectory = pinServiceFirst(
   pickDirectoryFeatured(
     getFeaturedServices(),
@@ -70,7 +112,7 @@ const featuredForDirectory = pinServiceFirst(
   ),
 );
 const showFeaturedServices = shouldShowFeaturedServices(
-  { category: selectedCategory, zone: selectedZone, query: searchQuery },
+  { category: selectedCategory, zone: selectedZone, query: searchQuery, intentActive: Boolean(selectedIntent) },
   featuredForDirectory.length,
 );
 ---
@@ -149,6 +191,11 @@ const showFeaturedServices = shouldShowFeaturedServices(
             class="clear-search-btn"
             style={searchQuery ? "display:block;" : "display:none;"}>✕</button
           >
+          {
+            isPaginated && (
+              <small class="filter-hint">{translations["services.search.submitHint"]}</small>
+            )
+          }
         </div>
 
         <!-- Category Dropdown (Sorted alphabetically with exact real counts) -->
@@ -203,29 +250,49 @@ const showFeaturedServices = shouldShowFeaturedServices(
         </div>
       </form>
 
-      <!-- Intent Quick Filter Chips -->
+      <!-- Intent Quick Filter Chips · enlaces reales: funcionan sin JS y con paginación SSR -->
       <div class="intent-chips-bar" aria-label={translations["services.filter.intentsTitle"] || "Filtros Rápidos"}>
         <span class="intent-chips-label">⚡ {translations["services.filter.intentsTitle"] || "Filtros Rápidos"}:</span>
-        <button type="button" class="intent-chip-btn" data-intent-filter="open-now">
+        <a
+          class={`intent-chip-btn ${selectedIntent === "open-now" ? "active" : ""}`}
+          href={intentHref("open-now")}
+          aria-pressed={selectedIntent === "open-now" ? "true" : "false"}
+        >
           <span class="chip-icon">🕒</span>
           <span>{translations["services.filter.openNow"] || "Abierto Ahora"}</span>
-        </button>
-        <button type="button" class="intent-chip-btn" data-intent-filter="multilingual">
+        </a>
+        <a
+          class={`intent-chip-btn ${selectedIntent === "multilingual" ? "active" : ""}`}
+          href={intentHref("multilingual")}
+          aria-pressed={selectedIntent === "multilingual" ? "true" : "false"}
+        >
           <span class="chip-icon">🌐</span>
           <span>{translations["services.filter.multilingual"] || "Inglés / Alemán"}</span>
-        </button>
-        <button type="button" class="intent-chip-btn" data-intent-filter="terrace">
+        </a>
+        <a
+          class={`intent-chip-btn ${selectedIntent === "terrace" ? "active" : ""}`}
+          href={intentHref("terrace")}
+          aria-pressed={selectedIntent === "terrace" ? "true" : "false"}
+        >
           <span class="chip-icon">☀️</span>
           <span>{translations["services.filter.terrace"] || "Con Terraza"}</span>
-        </button>
-        <button type="button" class="intent-chip-btn" data-intent-filter="pet-friendly">
+        </a>
+        <a
+          class={`intent-chip-btn ${selectedIntent === "pet-friendly" ? "active" : ""}`}
+          href={intentHref("pet-friendly")}
+          aria-pressed={selectedIntent === "pet-friendly" ? "true" : "false"}
+        >
           <span class="chip-icon">🐾</span>
           <span>{translations["services.filter.petFriendly"] || "Pet Friendly"}</span>
-        </button>
-        <button type="button" class="intent-chip-btn" data-intent-filter="accessible">
+        </a>
+        <a
+          class={`intent-chip-btn ${selectedIntent === "accessible" ? "active" : ""}`}
+          href={intentHref("accessible")}
+          aria-pressed={selectedIntent === "accessible" ? "true" : "false"}
+        >
           <span class="chip-icon">♿</span>
           <span>{translations["services.filter.accessible"] || "Accesible PMR"}</span>
-        </button>
+        </a>
       </div>
     </section>
 
@@ -254,10 +321,10 @@ const showFeaturedServices = shouldShowFeaturedServices(
     <!-- Active Filter & Count Stats Toolbar -->
     <div class="results-stats-toolbar">
       <div class="results-count-text">
-        <span class="count-badge" id="results-count-num">{initialFilteredServices.length}</span>
+        <span class="count-badge" id="results-count-num">{directory.totalItems}</span>
         <span>
           {translations["services.results.showing"] || "Mostrando"}
-          <strong id="results-count-display">{initialFilteredServices.length}</strong>
+          <strong id="results-count-display">{directory.totalItems}</strong>
           {translations["services.results.of"] || "de"}
           {SERVICES.filter((s) => s.status !== "permanently_closed").length}
           {translations["services.results.label"] || "servicios"}
@@ -321,60 +388,99 @@ const showFeaturedServices = shouldShowFeaturedServices(
       </p>
     </div>
 
-    <!-- Results Directory Grid -->
-    <div id="services-grid" class="services-directory-grid" data-view="grid">
+    <!-- Results Directory Grid · solo se renderiza la página actual (48 fichas), no las ~953 -->
+    <div id="services-grid" class="services-directory-grid" data-view="grid" data-paginated={String(isPaginated)}>
       {
-        SERVICES.map((service) => {
-          const isMatch = initialFilteredServices.some((s) => s.id === service.id);
-          const hasTerrace = Boolean(service.capabilities?.terrace || service.amenities?.includes("terrace"));
-          const isPetFriendly = Boolean(
-            service.capabilities?.petFriendly || service.amenities?.includes("pet_friendly"),
-          );
-          const isAccessible = Boolean(
-            service.capabilities?.wheelchairAccessible || service.amenities?.includes("wheelchair_accessible"),
-          );
-          const isMultilingual = Boolean(
-            service.languagesSpoken?.some((l) => l === "en" || l === "de") ||
-            service.culturalIdentity === "german_oriented" ||
-            service.culturalIdentity === "british_oriented",
-          );
-
-          return (
-            <div
-              class="service-item-wrapper"
-              data-id={service.id}
-              data-name={service.name.toLowerCase()}
-              data-desc={(service.shortDescription[locale] || service.shortDescription.en).toLowerCase()}
-              data-tags={(service.tags || []).join(" ").toLowerCase()}
-              data-category={service.category}
-              data-zone={service.zone}
-              data-rating={service.rating || 0}
-              data-slug={service.slug}
-              data-schedule={typeof service.schedule === "string" ? service.schedule : ""}
-              data-status={service.status || "open"}
-              data-multilingual={String(isMultilingual)}
-              data-terrace={String(hasTerrace)}
-              data-pet={String(isPetFriendly)}
-              data-accessible={String(isAccessible)}
-              style={isMatch ? "display:block;" : "display:none;"}
-            >
-              <ServiceCard
-                service={service}
-                currentLocale={locale}
-                getLangPrefix={getLangPrefix}
-                translations={translations}
-              />
-            </div>
-          );
-        })
+        directory.slice.map((service) => (
+          <div
+            class="service-item-wrapper"
+            data-id={service.id}
+            data-name={service.name.toLowerCase()}
+            data-desc={(service.shortDescription[locale] || service.shortDescription.en).toLowerCase()}
+            data-tags={(service.tags || []).join(" ").toLowerCase()}
+            data-category={service.category}
+            data-zone={service.zone}
+            data-rating={service.rating || 0}
+            data-slug={service.slug}
+          >
+            <ServiceCard
+              service={service}
+              currentLocale={locale}
+              getLangPrefix={getLangPrefix}
+              translations={translations}
+            />
+          </div>
+        ))
       }
     </div>
+
+    <!-- Pagination SSR · cada página es una URL real, cacheable y rastreable por crawlers/IA -->
+    {
+      directory.totalPages > 1 && (
+        <nav
+          id="directory-pagination"
+          class="pagination-nav"
+          aria-label={translations["services.pagination.label"] || "Paginación"}
+        >
+          {directory.hasPrev ? (
+            <a
+              class="pagination-btn"
+              rel="prev"
+              href={pageHref(directory.page - 1)}
+              aria-label={translations["services.pagination.prev"] || "Anterior"}
+            >
+              ← {translations["services.pagination.prev"] || "Anterior"}
+            </a>
+          ) : (
+            <span class="pagination-btn is-disabled" aria-hidden="true">
+              ← {translations["services.pagination.prev"] || "Anterior"}
+            </span>
+          )}
+
+          {pageLinks.map((entry) =>
+            entry === "gap" ? (
+              <span class="pagination-gap" aria-hidden="true">
+                …
+              </span>
+            ) : (
+              <a
+                class={`pagination-btn ${entry === directory.page ? "is-current" : ""}`}
+                aria-current={entry === directory.page ? "page" : undefined}
+                aria-label={`${translations["services.pagination.pagePrefix"] || "Página"} ${entry}`}
+                href={pageHref(entry)}
+              >
+                {entry}
+              </a>
+            ),
+          )}
+
+          {directory.hasNext ? (
+            <a
+              class="pagination-btn"
+              rel="next"
+              href={pageHref(directory.page + 1)}
+              aria-label={translations["services.pagination.next"] || "Siguiente"}
+            >
+              {translations["services.pagination.next"] || "Siguiente"} →
+            </a>
+          ) : (
+            <span class="pagination-btn is-disabled" aria-hidden="true">
+              {translations["services.pagination.next"] || "Siguiente"} →
+            </span>
+          )}
+
+          <span class="pagination-summary" aria-live="polite">
+            {paginationSummary}
+          </span>
+        </nav>
+      )
+    }
 
     <!-- No Results Box -->
     <div
       id="no-results-box"
       class="no-results-box card card-glass text-center"
-      style={initialFilteredServices.length === 0 ? "display:flex;" : "display:none;"}
+      style={directory.totalItems === 0 ? "display:flex;" : "display:none;"}
     >
       <span class="no-results-icon">🔎</span>
       <h3>{translations["services.noResults"]}</h3>
@@ -407,10 +513,7 @@ const showFeaturedServices = shouldShowFeaturedServices(
     const noResultsBox = document.getElementById("no-results-box");
     const items = Array.from(document.querySelectorAll(".service-item-wrapper"));
     const catPills = Array.from(document.querySelectorAll("[data-cat-pill]"));
-    const intentChips = Array.from(document.querySelectorAll("[data-intent-filter]"));
     const featuredBlock = document.querySelector("[data-featured-services]");
-
-    const activeIntents = new Set();
 
     // 🧠 Los destacados ceden protagonismo en cuanto el visitante filtra (misma regla que el SSR).
     function syncFeaturedVisibility() {
@@ -418,76 +521,16 @@ const showFeaturedServices = shouldShowFeaturedServices(
       const filtering =
         Boolean((searchInput?.value || "").trim()) ||
         Boolean(categorySelect?.value) ||
-        Boolean(zoneSelect?.value) ||
-        activeIntents.size > 0;
+        Boolean(zoneSelect?.value);
       featuredBlock.style.display = filtering ? "none" : "";
     }
 
+    // 📄 Con paginación, el filtrado en vivo solo vería 48 de ~953 fichas (resultados falsos).
+    // En ese caso el buscador delega en el servidor: el formulario ya es GET sobre /servicios.
+    const isPaginated = document.getElementById("services-grid")?.getAttribute("data-paginated") === "true";
+    const filterForm = document.getElementById("directory-filter-form");
+
     syncFeaturedVisibility();
-
-    function isBusinessCurrentlyOpen(scheduleText, status) {
-      if (status === "permanently_closed" || status === "seasonal_closure") return false;
-      if (
-        !scheduleText ||
-        typeof scheduleText !== "string" ||
-        scheduleText.trim() === "" ||
-        scheduleText === "[object Object]"
-      )
-        return true; // Default fallback to active
-
-      const raw = scheduleText.toLowerCase();
-      if (raw.includes("24 horas") || raw.includes("24h") || raw.includes("24/7")) return true;
-
-      // Madrid / Mallorca current time
-      const now = new Date();
-      const formatterHour = new Intl.DateTimeFormat("es-ES", {
-        timeZone: "Europe/Madrid",
-        hour: "numeric",
-        minute: "numeric",
-        hour12: false,
-      });
-      const formatterDay = new Intl.DateTimeFormat("es-ES", {
-        timeZone: "Europe/Madrid",
-        weekday: "short",
-      });
-
-      const dayStr = formatterDay.format(now).toLowerCase();
-      const [hStr, mStr] = formatterHour.format(now).split(":");
-      const currentMin = parseInt(hStr, 10) * 60 + parseInt(mStr || "0", 10);
-
-      const isSunday = dayStr.startsWith("dom") || dayStr.startsWith("sun");
-      if (
-        isSunday &&
-        (raw.includes("lun - sáb") ||
-          raw.includes("lunes a viernes") ||
-          raw.includes("domingo cerrado") ||
-          raw.includes("dom: cerrado"))
-      ) {
-        return false;
-      }
-
-      const isSaturday = dayStr.startsWith("sáb") || dayStr.startsWith("sab") || dayStr.startsWith("sat");
-      if (
-        isSaturday &&
-        (raw.includes("lunes a viernes") || raw.includes("lun - vie") || raw.includes("sáb: cerrado"))
-      ) {
-        return false;
-      }
-
-      const regex = /(\d{1,2})[:.](\d{2})\s*(?:-|a|–)\s*(\d{1,2})[:.](\d{2})/g;
-      let match;
-      let hasRanges = false;
-      while ((match = regex.exec(scheduleText)) !== null) {
-        hasRanges = true;
-        const startMin = parseInt(match[1], 10) * 60 + parseInt(match[2], 10);
-        const endMin = parseInt(match[3], 10) * 60 + parseInt(match[4], 10);
-        if (currentMin >= startMin && currentMin < endMin) {
-          return true;
-        }
-      }
-
-      return !hasRanges; // Si no hay horas explícitas, asumir abierto si el día concuerda
-    }
 
     function applyFilters() {
       const q = (searchInput?.value || "").toLowerCase().trim();
@@ -498,7 +541,7 @@ const showFeaturedServices = shouldShowFeaturedServices(
         clearBtn.style.display = q ? "block" : "none";
       }
 
-      const hasActiveFilters = q || cat || zone || activeIntents.size > 0;
+      const hasActiveFilters = Boolean(q || cat || zone);
       if (resetBtn) {
         resetBtn.style.display = hasActiveFilters ? "inline-flex" : "none";
       }
@@ -521,35 +564,11 @@ const showFeaturedServices = shouldShowFeaturedServices(
         const name = el.getAttribute("data-name") || "";
         const desc = el.getAttribute("data-desc") || "";
         const tags = el.getAttribute("data-tags") || "";
-        const schedule = el.getAttribute("data-schedule") || "";
-        const status = el.getAttribute("data-status") || "open";
-        const isMultilingual = el.getAttribute("data-multilingual") === "true";
-        const hasTerrace = el.getAttribute("data-terrace") === "true";
-        const isPet = el.getAttribute("data-pet") === "true";
-        const isAccessible = el.getAttribute("data-accessible") === "true";
-
         let match = true;
 
         if (cat && itemCat !== cat) match = false;
         if (zone && itemZone !== zone) match = false;
         if (q && !name.includes(q) && !desc.includes(q) && !tags.includes(q)) match = false;
-
-        // Intent filters
-        if (match && activeIntents.has("open-now") && !isBusinessCurrentlyOpen(schedule, status)) {
-          match = false;
-        }
-        if (match && activeIntents.has("multilingual") && !isMultilingual) {
-          match = false;
-        }
-        if (match && activeIntents.has("terrace") && !hasTerrace) {
-          match = false;
-        }
-        if (match && activeIntents.has("pet-friendly") && !isPet) {
-          match = false;
-        }
-        if (match && activeIntents.has("accessible") && !isAccessible) {
-          match = false;
-        }
 
         if (match) {
           el.style.display = "block";
@@ -569,27 +588,14 @@ const showFeaturedServices = shouldShowFeaturedServices(
       syncFeaturedVisibility();
     }
 
-    // Toggle Intent Chips
-    intentChips.forEach((chip) => {
-      chip.addEventListener("click", () => {
-        const intentKey = chip.getAttribute("data-intent-filter");
-        if (!intentKey) return;
-
-        if (activeIntents.has(intentKey)) {
-          activeIntents.delete(intentKey);
-          chip.classList.remove("active");
-        } else {
-          activeIntents.add(intentKey);
-          chip.classList.add("active");
-        }
-        applyFilters();
-      });
-    });
-
-    // Debounced live typing search
+    // Debounced search: instantáneo sin paginación, submit al servidor con paginación
     let debounceTimer;
     searchInput?.addEventListener("input", () => {
       clearTimeout(debounceTimer);
+      if (isPaginated) {
+        debounceTimer = setTimeout(() => filterForm?.requestSubmit(), 600);
+        return;
+      }
       debounceTimer = setTimeout(applyFilters, 150);
     });
 
@@ -606,8 +612,6 @@ const showFeaturedServices = shouldShowFeaturedServices(
       if (searchInput) searchInput.value = "";
       if (categorySelect) categorySelect.value = "";
       if (zoneSelect) zoneSelect.value = "";
-      activeIntents.clear();
-      intentChips.forEach((chip) => chip.classList.remove("active"));
       applyFilters();
     };
 
@@ -853,6 +857,7 @@ const showFeaturedServices = shouldShowFeaturedServices(
     cursor: pointer;
     transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
     user-select: none;
+    text-decoration: none;
   }
 
   .intent-chip-btn:hover {

@@ -145,7 +145,8 @@ export const clinicaDentalAlomarInca: ServiceItem = {
       id: "rev-dental-alomar-1",
       authorName: "Miquel Fiol",
       rating: 5,
-      comment: "Molt professionals i atents. Em varen posar dos implants guiats per ordinador sense cap dolor ni inflamació. La millor clínica d'Inca!",
+      comment:
+        "Molt professionals i atents. Em varen posar dos implants guiats per ordinador sense cap dolor ni inflamació. La millor clínica d'Inca!",
       date: "2026-08-14",
       platform: "google_maps",
       language: "ca",
@@ -154,7 +155,8 @@ export const clinicaDentalAlomarInca: ServiceItem = {
       id: "rev-dental-alomar-2",
       authorName: "Annette Koch",
       rating: 5,
-      comment: "Sehr moderne und freundliche Zahnarztpraxis in Inca. Die Behandlung war absolut schmerzfrei und das Team spricht super Deutsch.",
+      comment:
+        "Sehr moderne und freundliche Zahnarztpraxis in Inca. Die Behandlung war absolut schmerzfrei und das Team spricht super Deutsch.",
       date: "2026-07-23",
       platform: "google_maps",
       language: "de",

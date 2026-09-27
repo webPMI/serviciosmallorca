@@ -92,27 +92,27 @@ SI ALGÚN PASO ES ❌ → REJECT with specific feedback
 
 ### Invariantes de datos (INV)
 
-| ID           | Invariante                                                                                                             | Estado hoy    | Riesgo si se viola             |
-| ------------ | ---------------------------------------------------------------------------------------------------------------------- | ------------- | ------------------------------ |
-| **INV-01**   | Solo `admin` escribe campos de verificación (`verified`, `verificationStatus`, `trustLevel`, `confidenceScore`), y siempre con `verificationMethod` + `documentUrl` reales del titular | ✅ Cerrado | Sello falso → GR-11/GR-13      |
-| **INV-02**   | La verificación administrativa **no** puede quedarse con `ownerUid`: la titularidad permanece en el manager legítimo    | ✅ Cerrado       | Bloqueo permanente del titular |
-| **INV-03**   | `role: "manager"` exige `managedServices` con la ficha reclamada; nunca uid ficticio (`"admin"`, vacío o `undefined`)   | ✅ Cerrado  | Escalada de privilegios        |
-| **INV-04**   | Un claim es único por (`uid`, `serviceId`) y se rechaza si la ficha ya tiene `claimedByUid`                             | ✅ Cerrado       | Duplicidad y apropiación       |
-| **INV-05**   | Claim + rol + override se confirman de forma atómica: sin efectos parciales ni estados intermedios                      | ✅ Cerrado       | Inconsistencia en producción   |
-| **INV-06**   | Cero `catch` silenciosos y cero `as any` injustificados en `serviceActions.ts` / `serviceOverrides.ts`                  | ✅ Cerrado  | GR-03 y GR-15                  |
-| **INV-07**   | Todo campo editable por el titular es visible en la ficha pública (merge SSR o hidratación completa)                    | 🟡 Parcial  | Dato fantasma: se guarda y no se ve |
-| **INV-08**   | Toda escritura deja rastro (`authorRole`, `authorUid`, `fieldChanged`, `oldValue`, `newValue`)                          | ✅ Cerrado       | Sin trazabilidad ni reversibilidad |
+| ID         | Invariante                                                                                                                                                                             | Estado hoy | Riesgo si se viola                  |
+| ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | ----------------------------------- |
+| **INV-01** | Solo `admin` escribe campos de verificación (`verified`, `verificationStatus`, `trustLevel`, `confidenceScore`), y siempre con `verificationMethod` + `documentUrl` reales del titular | ✅ Cerrado | Sello falso → GR-11/GR-13           |
+| **INV-02** | La verificación administrativa **no** puede quedarse con `ownerUid`: la titularidad permanece en el manager legítimo                                                                   | ✅ Cerrado | Bloqueo permanente del titular      |
+| **INV-03** | `role: "manager"` exige `managedServices` con la ficha reclamada; nunca uid ficticio (`"admin"`, vacío o `undefined`)                                                                  | ✅ Cerrado | Escalada de privilegios             |
+| **INV-04** | Un claim es único por (`uid`, `serviceId`) y se rechaza si la ficha ya tiene `claimedByUid`                                                                                            | ✅ Cerrado | Duplicidad y apropiación            |
+| **INV-05** | Claim + rol + override se confirman de forma atómica: sin efectos parciales ni estados intermedios                                                                                     | ✅ Cerrado | Inconsistencia en producción        |
+| **INV-06** | Cero `catch` silenciosos y cero `as any` injustificados en `serviceActions.ts` / `serviceOverrides.ts`                                                                                 | ✅ Cerrado | GR-03 y GR-15                       |
+| **INV-07** | Todo campo editable por el titular es visible en la ficha pública (merge SSR o hidratación completa)                                                                                   | 🟡 Parcial | Dato fantasma: se guarda y no se ve |
+| **INV-08** | Toda escritura deja rastro (`authorRole`, `authorUid`, `fieldChanged`, `oldValue`, `newValue`)                                                                                         | ✅ Cerrado | Sin trazabilidad ni reversibilidad  |
 
 ### Impacto por agente
 
-| Agente                   | Obligación derivada                                                                                                                                    |
-| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Agente                                  | Obligación derivada                                                                                                                                                                      |
+| --------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `@auth` (`src/lib/`, `firestore.rules`) | Propietario único de INV-01…INV-05. Ningún otro agente escribe en `serviceActions.ts`, `serviceOverrides.ts` ni `firestore.rules`; todo cambio requiere test que demuestre el invariante |
-| `@frontend`              | INV-07: si añades campos al editor del titular, **deben** renderizarse en la ficha pública; i18n en los 4 idiomas (GR-04)                              |
-| `@curation`              | Las fichas curadas no declaran verificación oficial ni `claimedByUid` (GR-11)                                                                            |
-| `@testing`               | INV-01…INV-08 deben tener cobertura en `tests/unit/` (hoy los tests cubren la escritura válida, no los escenarios de falsificación y escalada)          |
-| `@docs`                  | Mantener sincronizados `AUTH.md`, `DATA_VERIFICATION_PROCESS.md`/`DATA_VERIFICATION_PROTOCOL.md` y el informe de auditoría al cerrar cada P0              |
-| Agente Maestro           | PASO 17 de su protocolo de auditoría: si el diff toca este flujo y viola un INV → **REJECT**                                                             |
+| `@frontend`                             | INV-07: si añades campos al editor del titular, **deben** renderizarse en la ficha pública; i18n en los 4 idiomas (GR-04)                                                                |
+| `@curation`                             | Las fichas curadas no declaran verificación oficial ni `claimedByUid` (GR-11)                                                                                                            |
+| `@testing`                              | INV-01…INV-08 deben tener cobertura en `tests/unit/` (hoy los tests cubren la escritura válida, no los escenarios de falsificación y escalada)                                           |
+| `@docs`                                 | Mantener sincronizados `AUTH.md`, `DATA_VERIFICATION_PROCESS.md`/`DATA_VERIFICATION_PROTOCOL.md` y el informe de auditoría al cerrar cada P0                                             |
+| Agente Maestro                          | PASO 17 de su protocolo de auditoría: si el diff toca este flujo y viola un INV → **REJECT**                                                                                             |
 
 ### Checklist pre-merge específica (se suma a la auditoría GR-01…GR-16)
 

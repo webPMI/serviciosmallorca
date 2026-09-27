@@ -391,11 +391,7 @@ export const CITIZEN_GUIDES: CitizenGuide[] = [
       },
     ],
     relatedServiceCategories: ["motor-transporte", "deportes-fitness"],
-    recommendedServiceSlugs: [
-      "bergantinos-bikes-mallorca",
-      "autocares-transunion",
-      "megasport-centre-palma",
-    ],
+    recommendedServiceSlugs: ["bergantinos-bikes-mallorca", "autocares-transunion", "megasport-centre-palma"],
     assistanceHeader: {
       title: {
         es: "Movilidad urbana, transportes y deporte en Palma",

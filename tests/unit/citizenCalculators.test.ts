@@ -43,9 +43,9 @@ describe("Lógica Tributaria y Ahorro Ciudadano (citizenCalculators)", () => {
         } else {
           tax += 200000 * 0.09; // 18.000 € (Total 50.000 € acumulado hasta 600k)
           if (price <= 1000000) {
-            tax += (price - 600000) * 0.10;
+            tax += (price - 600000) * 0.1;
           } else {
-            tax += 400000 * 0.10; // 40.000 € (Total 90.000 € acumulado hasta 1M)
+            tax += 400000 * 0.1; // 40.000 € (Total 90.000 € acumulado hasta 1M)
             if (price <= 2000000) {
               tax += (price - 1000000) * 0.12;
             } else {
@@ -58,7 +58,7 @@ describe("Lógica Tributaria y Ahorro Ciudadano (citizenCalculators)", () => {
       return tax;
     }
 
-    const YOUTH_PRICE_LIMIT = 270151.20;
+    const YOUTH_PRICE_LIMIT = 270151.2;
     const LARGE_FAMILY_LIMIT = 350000;
 
     function calculateItpTax(price: number, profile: "youth" | "general" | "large-family" | "vpo") {

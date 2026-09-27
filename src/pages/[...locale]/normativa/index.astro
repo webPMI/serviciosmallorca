@@ -113,7 +113,15 @@ const schemaData = {
           </li>
           <li class="breadcrumb-separator" aria-hidden="true">/</li>
           <li class="breadcrumb-item active" aria-current="page">
-            {locale === "ca" ? "Normativa & BOIB" : locale === "en" ? "Regulations & BOIB" : locale === "de" ? "Gesetze & Amtsblatt" : "Normativa & BOIB"}
+            {
+              locale === "ca"
+                ? "Normativa & BOIB"
+                : locale === "en"
+                  ? "Regulations & BOIB"
+                  : locale === "de"
+                    ? "Gesetze & Amtsblatt"
+                    : "Normativa & BOIB"
+            }
           </li>
         </ol>
       </div>
@@ -140,19 +148,43 @@ const schemaData = {
         <div class="trust-item">
           <span class="trust-number">{regulations.length}</span>
           <span class="trust-label">
-            {locale === "ca" ? "Normatives Auditades" : locale === "en" ? "Audited Decrees" : locale === "de" ? "Geprüfte Gesetze" : "Normativas Auditadas"}
+            {
+              locale === "ca"
+                ? "Normatives Auditades"
+                : locale === "en"
+                  ? "Audited Decrees"
+                  : locale === "de"
+                    ? "Geprüfte Gesetze"
+                    : "Normativas Auditadas"
+            }
           </span>
         </div>
         <div class="trust-item">
           <span class="trust-number">100%</span>
           <span class="trust-label">
-            {locale === "ca" ? "Fonts Oficials CAIB" : locale === "en" ? "Official CAIB Sources" : locale === "de" ? "Offizielle CAIB-Quellen" : "Fuentes Oficiales CAIB"}
+            {
+              locale === "ca"
+                ? "Fonts Oficials CAIB"
+                : locale === "en"
+                  ? "Official CAIB Sources"
+                  : locale === "de"
+                    ? "Offizielle CAIB-Quellen"
+                    : "Fuentes Oficiales CAIB"
+            }
           </span>
         </div>
         <div class="trust-item">
           <span class="trust-number">2026</span>
           <span class="trust-label">
-            {locale === "ca" ? "Vigència Actualitzada" : locale === "en" ? "In Force & Updated" : locale === "de" ? "Gültigkeit aktuell" : "Vigencia Actualizada"}
+            {
+              locale === "ca"
+                ? "Vigència Actualitzada"
+                : locale === "en"
+                  ? "In Force & Updated"
+                  : locale === "de"
+                    ? "Gültigkeit aktuell"
+                    : "Vigencia Actualizada"
+            }
           </span>
         </div>
       </div>
@@ -161,58 +193,22 @@ const schemaData = {
     <!-- Filter Bar -->
     <section class="filters-section site-container" aria-label="Filtro de normativas por categoría">
       <div class="filter-pills" role="tablist">
-        <button
-          type="button"
-          class="filter-pill active"
-          data-category="all"
-          role="tab"
-          aria-selected="true"
-        >
+        <button type="button" class="filter-pill active" data-category="all" role="tab" aria-selected="true">
           {filterT.all} ({regulations.length})
         </button>
-        <button
-          type="button"
-          class="filter-pill"
-          data-category="vivienda"
-          role="tab"
-          aria-selected="false"
-        >
+        <button type="button" class="filter-pill" data-category="vivienda" role="tab" aria-selected="false">
           {filterT.vivienda}
         </button>
-        <button
-          type="button"
-          class="filter-pill"
-          data-category="empresas_autonomos"
-          role="tab"
-          aria-selected="false"
-        >
+        <button type="button" class="filter-pill" data-category="empresas_autonomos" role="tab" aria-selected="false">
           {filterT.empresas_autonomos}
         </button>
-        <button
-          type="button"
-          class="filter-pill"
-          data-category="comercio"
-          role="tab"
-          aria-selected="false"
-        >
+        <button type="button" class="filter-pill" data-category="comercio" role="tab" aria-selected="false">
           {filterT.comercio}
         </button>
-        <button
-          type="button"
-          class="filter-pill"
-          data-category="turismo"
-          role="tab"
-          aria-selected="false"
-        >
+        <button type="button" class="filter-pill" data-category="turismo" role="tab" aria-selected="false">
           {filterT.turismo}
         </button>
-        <button
-          type="button"
-          class="filter-pill"
-          data-category="fiscalidad"
-          role="tab"
-          aria-selected="false"
-        >
+        <button type="button" class="filter-pill" data-category="fiscalidad" role="tab" aria-selected="false">
           {filterT.fiscalidad}
         </button>
       </div>
@@ -221,11 +217,13 @@ const schemaData = {
     <!-- Regulations List Grid -->
     <section class="regulations-list-section site-container" aria-label="Listado de normativas">
       <div class="regulations-grid" id="regulations-container">
-        {regulations.map((reg) => (
-          <div class="regulation-item" data-category={reg.category}>
-            <RegulationCard regulation={reg} lang={locale} />
-          </div>
-        ))}
+        {
+          regulations.map((reg) => (
+            <div class="regulation-item" data-category={reg.category}>
+              <RegulationCard regulation={reg} lang={locale} />
+            </div>
+          ))
+        }
       </div>
     </section>
 
@@ -235,22 +233,26 @@ const schemaData = {
         <div class="info-icon">⚖️</div>
         <div class="info-body">
           <h2 class="info-title">
-            {locale === "ca"
-              ? "Com funciona el marc normatiu i el BOIB a les Illes Balears?"
-              : locale === "en"
-              ? "How does the legislative framework work in the Balearic Islands?"
-              : locale === "de"
-              ? "Wie funktioniert das Gesetzgebungsverfahren auf den Balearen?"
-              : "¿Cómo funciona el marco normativo y el BOIB en las Illes Balears?"}
+            {
+              locale === "ca"
+                ? "Com funciona el marc normatiu i el BOIB a les Illes Balears?"
+                : locale === "en"
+                  ? "How does the legislative framework work in the Balearic Islands?"
+                  : locale === "de"
+                    ? "Wie funktioniert das Gesetzgebungsverfahren auf den Balearen?"
+                    : "¿Cómo funciona el marco normativo y el BOIB en las Illes Balears?"
+            }
           </h2>
           <p class="info-text">
-            {locale === "ca"
-              ? "Les lleis aprovades pel Parlament de les Illes Balears i els decrets del Govern de les Illes Balears es publiquen oficialment al BOIB. Les competències sobre urbanisme i transport recauen sobre el Consell Insular de Mallorca, mentre que les ordenances municipals són competència dels ajuntaments com el de Palma."
-              : locale === "en"
-              ? "Laws passed by the Parliament of the Balearic Islands and executive decrees enter into force upon publication in the official gazette (BOIB). Town planning, heritage and mobility are also regulated by the Consell Insular de Mallorca, with municipal bylaws managed by local town halls."
-              : locale === "de"
-              ? "Gesetze des balearischen Parlaments und Regierungsdekrete treten mit Veröffentlichung im BOIB in Kraft. Stadtplanung, Straßenverkehr und Tourismuslizenzen unterliegen dem Inselrat von Mallorca (Consell Insular) sowie den jeweiligen Rathäusern."
-              : "Las leyes autonómicas aprobadas por el Parlament de les Illes Balears y los decretos leyes del Govern de les Illes Balears adquieren plena eficacia jurídica tras su publicación en el BOIB. Las competencias de ordenación territorial, licencias ETV y carreteras recaen en el Consell Insular de Mallorca, coordinadas con los 53 ayuntamientos de la isla."}
+            {
+              locale === "ca"
+                ? "Les lleis aprovades pel Parlament de les Illes Balears i els decrets del Govern de les Illes Balears es publiquen oficialment al BOIB. Les competències sobre urbanisme i transport recauen sobre el Consell Insular de Mallorca, mentre que les ordenances municipals són competència dels ajuntaments com el de Palma."
+                : locale === "en"
+                  ? "Laws passed by the Parliament of the Balearic Islands and executive decrees enter into force upon publication in the official gazette (BOIB). Town planning, heritage and mobility are also regulated by the Consell Insular de Mallorca, with municipal bylaws managed by local town halls."
+                  : locale === "de"
+                    ? "Gesetze des balearischen Parlaments und Regierungsdekrete treten mit Veröffentlichung im BOIB in Kraft. Stadtplanung, Straßenverkehr und Tourismuslizenzen unterliegen dem Inselrat von Mallorca (Consell Insular) sowie den jeweiligen Rathäusern."
+                    : "Las leyes autonómicas aprobadas por el Parlament de les Illes Balears y los decretos leyes del Govern de les Illes Balears adquieren plena eficacia jurídica tras su publicación en el BOIB. Las competencias de ordenación territorial, licencias ETV y carreteras recaen en el Consell Insular de Mallorca, coordinadas con los 53 ayuntamientos de la isla."
+            }
           </p>
         </div>
       </div>
@@ -291,7 +293,7 @@ const schemaData = {
   </script>
 
   <!-- Inyección de Schema.org -->
-  <script type="application/ld+json" set:html={JSON.stringify(schemaData)}></script>
+  <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
 </BaseLayout>
 
 <style>

@@ -6,7 +6,9 @@ import EcosystemGuideSection from "../../components/EcosystemGuideSection.astro"
 import HonorCategorySection from "../../components/HonorCategorySection.astro";
 import HonorCheckoutModal from "../../components/HonorCheckoutModal.astro";
 import { getLocaleFromUrl, loadTranslations, getLangPrefix, type Locale } from "../../i18n";
-import { HONOR_LISTS, getDefaultHonorSpots } from "../../lib/honorBoardEngine";
+import { HONOR_LISTS } from "../../lib/honorBoardEngine";
+import { loadAllHonorSpots } from "../../lib/honorBoardStore";
+import { getD1Binding } from "../../lib/d1Logger";
 
 export const prerender = false;
 
@@ -14,7 +16,11 @@ const locale = getLocaleFromUrl(Astro.url) as Locale;
 const translations = await loadTranslations(locale);
 const prefix = getLangPrefix(locale);
 
-const defaultSpots = getDefaultHonorSpots();
+// Podio real persistido en Cloudflare D1. Si el binding no está disponible
+// (dev local sin D1) devuelve catálogos vacíos: nunca datos inventados (GR-11).
+const d1Binding = getD1Binding((Astro as any).locals);
+const honorSpots = await loadAllHonorSpots(d1Binding);
+const defaultSpots = honorSpots;
 
 // JSON-LD Structured Data for SEO (ItemList + HowTo)
 const honorJsonLd = {
@@ -71,7 +77,20 @@ const honorJsonLd = {
 
   <main class="honor-container">
     <!-- Payment Return Status Banner (Cancel / Success Feedback) -->
-    <div id="payment-status-banner" class="payment-alert-banner" style="display: none;" role="status">
+    <div
+      id="payment-status-banner"
+      class="payment-alert-banner"
+      style="display: none;"
+      role="status"
+      data-i18n-cancelled-title={translations["honor.payment.cancelledTitle"]}
+      data-i18n-cancelled-desc={translations["honor.payment.cancelledDesc"]}
+      data-i18n-success-title={translations["honor.payment.successTitle"]}
+      data-i18n-success-desc={translations["honor.payment.successDesc"]}
+      data-i18n-success-desc-no-amount={translations["honor.payment.successDescNoAmount"]}
+      data-i18n-unverified-title={translations["honor.payment.unverifiedTitle"]}
+      data-i18n-unverified-desc={translations["honor.payment.unverifiedDesc"]}
+      data-i18n-missing-session-desc={translations["honor.payment.missingSessionDesc"]}
+    >
       <div class="alert-banner-content">
         <span id="payment-status-icon" class="alert-icon">ℹ️</span>
         <div class="alert-text-block">
@@ -226,14 +245,71 @@ const honorJsonLd = {
   const bannerDesc = document.getElementById("payment-status-desc");
   const bannerClose = document.getElementById("close-payment-banner-btn");
 
+  // GR-04: todos los textos provienen de los diccionarios i18n inyectados en data-*.
+  const t = (attr: string, fallback: string): string =>
+    banner?.getAttribute(attr) || fallback;
+  const paymentTexts = {
+    cancelledTitle: t("data-i18n-cancelled-title", "Payment cancelled"),
+    cancelledDesc: t("data-i18n-cancelled-desc", "No charge was made to your card or bank account."),
+    successTitle: t("data-i18n-success-title", "Contribution confirmed"),
+    successDesc: t("data-i18n-success-desc", "Payment of {amount} confirmed."),
+    successDescNoAmount: t("data-i18n-success-desc-no-amount", "Payment confirmed."),
+    unverifiedTitle: t("data-i18n-unverified-title", "Payment could not be verified"),
+    unverifiedDesc: t("data-i18n-unverified-desc", "We could not confirm the payment with the gateway."),
+    missingSessionDesc: t("data-i18n-missing-session-desc", "The payment reference is missing."),
+  };
+
+  // Verificación server-side del pago (GR-11/GR-13).
+  // `?payment=success` es un query param falsificable: NUNCA se muestra una
+  // confirmación sin que el servidor haya validado la sesión contra Stripe.
+  async function showVerifiedSuccessBanner(sessionId: string) {
+    try {
+      const res = await fetch("/api/verify-checkout-session", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ sessionId }),
+      });
+      const data = await res.json().catch(() => null);
+
+      if (!banner) return;
+
+      if (data?.verified) {
+        banner.className = "payment-alert-banner banner-success";
+        if (bannerIcon) bannerIcon.textContent = "🎉";
+        if (bannerTitle) bannerTitle.textContent = paymentTexts.successTitle;
+        if (bannerDesc) {
+          const amount = typeof data.amountEuros === "number" ? data.amountEuros.toFixed(2) : null;
+          bannerDesc.textContent = amount
+            ? paymentTexts.successDesc.replace("{amount}", amount)
+            : paymentTexts.successDescNoAmount;
+        }
+        banner.style.display = "flex";
+      } else {
+        // Pago no verificable: se informa con honestidad en vez de ocultar el problema (GR-11).
+        banner.className = "payment-alert-banner banner-warning";
+        if (bannerIcon) bannerIcon.textContent = "⚠️";
+        if (bannerTitle) bannerTitle.textContent = paymentTexts.unverifiedTitle;
+        if (bannerDesc) bannerDesc.textContent = paymentTexts.unverifiedDesc;
+        banner.style.display = "flex";
+      }
+    } catch {
+      if (banner) {
+        banner.className = "payment-alert-banner banner-warning";
+        if (bannerIcon) bannerIcon.textContent = "⚠️";
+        if (bannerTitle) bannerTitle.textContent = paymentTexts.unverifiedTitle;
+        if (bannerDesc) bannerDesc.textContent = paymentTexts.unverifiedDesc;
+        banner.style.display = "flex";
+      }
+    }
+  }
+
   if (paymentStatus && banner) {
     if (paymentStatus === "cancelled") {
       banner.className = "payment-alert-banner banner-warning";
       if (bannerIcon) bannerIcon.textContent = "ℹ️";
-      if (bannerTitle) bannerTitle.textContent = "Proceso de Pago Cancelado";
+      if (bannerTitle) bannerTitle.textContent = paymentTexts.cancelledTitle;
       if (bannerDesc) {
-        bannerDesc.textContent =
-          "No se ha realizado ningún cobro en tu tarjeta ni cuenta bancaria. Si deseas impulsar o posicionar tu comercio más adelante, puedes seleccionar el negocio en cualquier momento.";
+        bannerDesc.textContent = paymentTexts.cancelledDesc;
       }
       banner.style.display = "flex";
 
@@ -270,14 +346,18 @@ const honorJsonLd = {
         console.warn("Could not save cancelled transaction:", err);
       }
     } else if (paymentStatus === "success") {
-      banner.className = "payment-alert-banner banner-success";
-      if (bannerIcon) bannerIcon.textContent = "🎉";
-      if (bannerTitle) bannerTitle.textContent = "¡Aportación Confirmada con Éxito!";
-      if (bannerDesc) {
-        bannerDesc.textContent =
-          "Tu transacción ha sido validada por la pasarela bancaria. El comercio cuenta ahora con visibilidad prioritaria en el Cuadro de Honor e indexación oficial para motores de IA.";
+      const sessionId = params.get("session_id") || "";
+      if (sessionId) {
+        // Confirmación real: el servidor consulta a Stripe antes de mostrarla.
+        showVerifiedSuccessBanner(sessionId);
+      } else if (banner) {
+        // Sin session_id no hay nada que verificar: no se inventa una confirmación.
+        banner.className = "payment-alert-banner banner-warning";
+        if (bannerIcon) bannerIcon.textContent = "⚠️";
+        if (bannerTitle) bannerTitle.textContent = paymentTexts.unverifiedTitle;
+        if (bannerDesc) bannerDesc.textContent = paymentTexts.missingSessionDesc;
+        banner.style.display = "flex";
       }
-      banner.style.display = "flex";
     }
 
     bannerClose?.addEventListener("click", () => {

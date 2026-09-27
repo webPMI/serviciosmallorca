@@ -441,9 +441,14 @@ const AVATAR_PRESETS = ["👤", "🚀", "⚡", "👑", "🦊", "🦉", "🎨", "
 
     <!-- RGPD & Legal Compliance Management Card -->
     <div class="card profile-form-card" style="margin-top: var(--space-lg, 1.5rem);">
-      <h2 class="panel-title">📜 {translations["profile.legalTitle"] || "Consentimientos y Cumplimiento Legal (RGPD)"}</h2>
+      <h2 class="panel-title">
+        📜 {translations["profile.legalTitle"] || "Consentimientos y Cumplimiento Legal (RGPD)"}
+      </h2>
       <p class="panel-description">
-        {translations["profile.legalDesc"] || "Tus datos personales y consentimientos están protegidos conforme al Reglamento General de Protección de Datos (RGPD) y la LOPD-GDD."}
+        {
+          translations["profile.legalDesc"] ||
+            "Tus datos personales y consentimientos están protegidos conforme al Reglamento General de Protección de Datos (RGPD) y la LOPD-GDD."
+        }
       </p>
 
       <div class="legal-profile-status-box">
@@ -453,7 +458,9 @@ const AVATAR_PRESETS = ["👤", "🚀", "⚡", "👑", "🦊", "🦉", "🎨", "
         </div>
         <div class="legal-status-row">
           <span class="legal-status-label">Estado de Aceptación:</span>
-          <strong class="legal-status-val text-success" id="profile-legal-status">✅ Al día con la normativa vigente</strong>
+          <strong class="legal-status-val text-success" id="profile-legal-status"
+            >✅ Al día con la normativa vigente</strong
+          >
         </div>
         <div class="legal-status-row">
           <span class="legal-status-label">Fecha del Consentimiento:</span>

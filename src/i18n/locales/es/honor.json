@@ -96,5 +96,16 @@
   "boostWall.totalRaised": "Bolsa Popular Acumulada:",
   "boostWall.backersCount": "Vecinos que Apoyan:",
   "boostWall.rankStatus": "Estatus Gremial:",
-  "boostWall.topNominated": "Comercio Destacado"
+  "boostWall.topNominated": "Comercio Destacado",
+  "honor.payment.cancelledTitle": "Proceso de Pago Cancelado",
+  "honor.payment.cancelledDesc": "No se ha realizado ningún cobro en tu tarjeta ni cuenta bancaria. Si deseas impulsar o posicionar tu comercio más adelante, puedes seleccionar el negocio en cualquier momento.",
+  "honor.payment.successTitle": "¡Aportación Confirmada con Éxito!",
+  "honor.payment.successDesc": "Pago verificado de {amount}€ por la pasarela bancaria. El comercio ya figura en el Cuadro de Honor.",
+  "honor.payment.successDescNoAmount": "Pago verificado por la pasarela bancaria. El comercio ya figura en el Cuadro de Honor.",
+  "honor.payment.unverifiedTitle": "Pago no verificado",
+  "honor.payment.unverifiedDesc": "No hemos podido confirmar el pago con la pasarela. Si ya has abonado, conserva la referencia y contacta con nosotros.",
+  "honor.payment.missingSessionDesc": "La operación llegó sin referencia de sesión, por lo que no puede verificarse.",
+  "honor.modal.offlineAlert": "⚠️ No se detecta conexión activa a Internet. Por favor, revisa tu conexión de red Wi-Fi o datos móviles antes de realizar el pago.",
+  "honor.modal.timeoutAlert": "⏱️ La conexión con la pasarela bancaria ha superado el tiempo límite de espera (20 segundos) debido a latencia o microcorte de red. Por tu seguridad, la operación se ha cancelado sin cargo. Comprueba tu conexión e inténtalo de nuevo.",
+  "honor.modal.gatewayErrorAlert": "Error de comunicación con la pasarela bancaria. Por favor, revisa tu conexión e inténtalo de nuevo."
 }

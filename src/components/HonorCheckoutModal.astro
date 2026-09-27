@@ -68,6 +68,12 @@ const verifiedBusinessesData = JSON.stringify(
   data-i18n-default-biz={translations["honor.modal.defaultBizPlaceholder"] || "Comercio de Mallorca"}
   data-i18n-select-prompt={translations["honor.modal.selectBizPlaceholder"] || "Seleccionar Comercio de Mallorca..."}
   data-i18n-continue-step2={translations["honor.modal.continueToStep2"] || "Continuar al Importe & Pago SSL →"}
+  data-i18n-offline-alert={translations["honor.modal.offlineAlert"] ||
+    "⚠️ No se detecta conexión activa a Internet. Revisa tu red antes de pagar."}
+  data-i18n-timeout-alert={translations["honor.modal.timeoutAlert"] ||
+    "⏱️ La pasarela ha superado el tiempo de espera. Operación cancelada sin cargo."}
+  data-i18n-gateway-error-alert={translations["honor.modal.gatewayErrorAlert"] ||
+    "Error de comunicación con la pasarela bancaria."}
   data-i18n-login-to-continue={translations["honor.modal.loginToContinue"] ||
     "🔒 Inicia sesión como titular para continuar"}
   aria-hidden="true"
@@ -2076,9 +2082,7 @@ const verifiedBusinessesData = JSON.stringify(
 
       // 3. Detección de Desconexión de Red (Offline Guard)
       if (typeof navigator !== "undefined" && "onLine" in navigator && !navigator.onLine) {
-        alert(
-          "⚠️ No se detecta conexión activa a Internet. Por favor, revisa tu conexión de red Wi-Fi o datos móviles antes de realizar el pago.",
-        );
+        alert(modal.getAttribute("data-i18n-offline-alert") || "⚠️ No active internet connection detected.");
         return;
       }
 
@@ -2251,11 +2255,13 @@ const verifiedBusinessesData = JSON.stringify(
 
           if (fetchErr?.name === "AbortError") {
             alert(
-              "⏱️ La conexión con la pasarela bancaria ha superado el tiempo límite de espera (20 segundos) debido a latencia o microcorte de red. Por tu seguridad, la operación se ha cancelado sin cargo. Comprueba tu conexión e inténtalo de nuevo.",
+              modal.getAttribute("data-i18n-timeout-alert") ||
+                "⏱️ The payment gateway connection timed out. The operation was cancelled without charge.",
             );
           } else {
             alert(
-              "Error de comunicación con la pasarela bancaria. Por favor, revisa tu conexión e inténtalo de nuevo.",
+              modal.getAttribute("data-i18n-gateway-error-alert") ||
+                "Communication error with the payment gateway.",
             );
           }
 

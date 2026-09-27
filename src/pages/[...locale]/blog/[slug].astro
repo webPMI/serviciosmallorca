@@ -239,7 +239,14 @@ const itemListSchema =
 
         <!-- Featured Image -->
         <div class="post-cover-wrap">
-          <img src={post.coverImage} alt={title} class="post-cover-img" loading="eager" fetchpriority="high" decoding="async" />
+          <img
+            src={post.coverImage}
+            alt={title}
+            class="post-cover-img"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+          />
           <div class="post-cover-overlay"></div>
         </div>
 
@@ -254,10 +261,23 @@ const itemListSchema =
               <div class="post-historical-embed-card">
                 <div class="embed-header">
                   <div class="embed-tag">
-                    📈 {locale === "ca" ? "Observatori Estadístic Històric de Mallorca (2006–2026)" : locale === "en" ? "Mallorca Historical Statistical Observatory (2006–2026)" : locale === "de" ? "Historisches Statistik-Observatorium Mallorca (2006–2026)" : "Observatorio Estadístico Histórico de Mallorca (2006–2026)"}
+                    📈{" "}
+                    {locale === "ca"
+                      ? "Observatori Estadístic Històric de Mallorca (2006–2026)"
+                      : locale === "en"
+                        ? "Mallorca Historical Statistical Observatory (2006–2026)"
+                        : locale === "de"
+                          ? "Historisches Statistik-Observatorium Mallorca (2006–2026)"
+                          : "Observatorio Estadístico Histórico de Mallorca (2006–2026)"}
                   </div>
                   <a href={`${prefix}estadisticas/comparativas`} class="embed-hub-link">
-                    {locale === "ca" ? "Veure comparativa de 16 sectors →" : locale === "en" ? "View full 16-sector comparison →" : locale === "de" ? "16-Sektoren-Vergleich ansehen →" : "Ver comparativa de 16 sectores →"}
+                    {locale === "ca"
+                      ? "Veure comparativa de 16 sectors →"
+                      : locale === "en"
+                        ? "View full 16-sector comparison →"
+                        : locale === "de"
+                          ? "16-Sektoren-Vergleich ansehen →"
+                          : "Ver comparativa de 16 sectores →"}
                   </a>
                 </div>
                 <SectorHistoricalChart series={historicalSeries} lang={locale} />

@@ -18,5 +18,13 @@
       "binding": "SESSION",
       "id": "6fac5c8ccc6e4256bf972d86ce32f44c"
     }
+  ],
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "servicios-mallorca-logs",
+      "database_id": "f262c691-5d15-4cd7-b54e-004deadacc64",
+      "migrations_dir": "migrations"
+    }
   ]
 }

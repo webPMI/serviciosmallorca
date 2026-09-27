@@ -64,11 +64,12 @@ describe("🛡️ Firestore Security Rules — invariantes críticas (GR-13)", (
     expect(RULES).toMatch(/authorUid\s*==\s*request\.auth\.uid/);
   });
 
-  it("Cuadro de Honor: bid numérica ≥ 1.00 € y edición solo admin", () => {
-    expect(RULES).toMatch(/bidAmount is number/);
-    expect(RULES).toMatch(/bidAmount\s*>=\s*1\.0/);
-    const block = RULES.match(/match \/honor_nominations\/\{nominationId\}\s*\{[\s\S]*?\n    \}/);
-    expect(block?.[0]).toContain("getUserRole() == 'admin'");
+  it("Cuadro de Honor: sin colección honor_nominations en Firestore (fuente de verdad = D1)", () => {
+    // El podio y el libro de pujas viven en Cloudflare D1 (honorBoardStore.ts).
+    // Reglas huérfanas permitirían una vía alternativa de escritura sin auditoría.
+    expect(RULES).not.toMatch(/match \/honor_nominations\//);
+    expect(RULES).toMatch(/honor_spots/);
+    expect(RULES).toMatch(/match \/\{document=\*\*\}\s*\{\s*allow read, write: if false;/);
   });
 
   it("foro: creación anclada a authorUid y límites de longitud en contenido", () => {

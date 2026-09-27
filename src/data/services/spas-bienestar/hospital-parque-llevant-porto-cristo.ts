@@ -146,7 +146,8 @@ export const hospitalParqueLlevantPortoCristo: ServiceItem = {
       id: "rev-parque-llevant-1",
       authorName: "Markus Becker",
       rating: 5,
-      comment: "Ausgezeichnete Privatklinik! Schnelle Notfallbehandlung, die Ärztin sprach perfekt Deutsch und die Abrechnung mit der Auslandskrankenversicherung lief völlig reibungslos.",
+      comment:
+        "Ausgezeichnete Privatklinik! Schnelle Notfallbehandlung, die Ärztin sprach perfekt Deutsch und die Abrechnung mit der Auslandskrankenversicherung lief völlig reibungslos.",
       date: "2026-08-15",
       platform: "google_maps",
       language: "de",
@@ -155,7 +156,8 @@ export const hospitalParqueLlevantPortoCristo: ServiceItem = {
       id: "rev-parque-llevant-2",
       authorName: "Sarah Jenkins",
       rating: 5,
-      comment: "Outstanding hospital care in Porto Cristo. Very modern, spotlessly clean, and wonderful medical staff who made me feel completely at ease.",
+      comment:
+        "Outstanding hospital care in Porto Cristo. Very modern, spotlessly clean, and wonderful medical staff who made me feel completely at ease.",
       date: "2026-07-27",
       platform: "google_maps",
       language: "en",

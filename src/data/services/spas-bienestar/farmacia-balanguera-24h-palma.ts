@@ -32,14 +32,7 @@ export const farmaciaBalanguera24hPalma: ServiceItem = {
   googleMapsUrl: "https://www.google.com/maps/search/Farmacia+Balanguera+24h+Palma+Mallorca",
   appleMapsUrl: "https://maps.apple.com/?q=Farmacia+Balanguera+Palma",
   bingMapsUrl: "https://www.bing.com/maps?q=Farmacia+Balanguera+Palma",
-  tags: [
-    "zona:palma",
-    "product:premium",
-    "mod:en-local",
-    "mod:walk-in",
-    "aud:familias",
-    "temps:todo-el-ano",
-  ],
+  tags: ["zona:palma", "product:premium", "mod:en-local", "mod:walk-in", "aud:familias", "temps:todo-el-ano"],
   capabilities: {
     wheelchairAccessible: true,
     onlineBooking: false,
@@ -145,7 +138,8 @@ export const farmaciaBalanguera24hPalma: ServiceItem = {
       id: "rev-farmacia-balanguera-1",
       authorName: "Miquel Àngel Bosch",
       rating: 5,
-      comment: "Servei 24h excel·lent. Em varen atendre de matinada amb una amabilitat i rapidesa que s'agraeix molt en situacions d'urgència.",
+      comment:
+        "Servei 24h excel·lent. Em varen atendre de matinada amb una amabilitat i rapidesa que s'agraeix molt en situacions d'urgència.",
       date: "2026-08-16",
       platform: "google_maps",
       language: "ca",
@@ -154,7 +148,8 @@ export const farmaciaBalanguera24hPalma: ServiceItem = {
       id: "rev-farmacia-balanguera-2",
       authorName: "Sabine Keller",
       rating: 5,
-      comment: "Tolle 24-Stunden-Apotheke! Hatte mitten in der Nacht ein Rezept und wurde auf Deutsch bestens und sehr freundlich bedient.",
+      comment:
+        "Tolle 24-Stunden-Apotheke! Hatte mitten in der Nacht ein Rezept und wurde auf Deutsch bestens und sehr freundlich bedient.",
       date: "2026-07-22",
       platform: "google_maps",
       language: "de",

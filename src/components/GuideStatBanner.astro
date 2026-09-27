@@ -80,8 +80,8 @@ const statsUrl = lang === "es" ? "/estadisticas" : `/${lang}/estadisticas`;
             stroke-linejoin="round"
             aria-hidden="true"
           >
-            <path d="M3 3v18h18"></path>
-            <path d="M18 9l-5 5-4-4-6 6"></path>
+            <path d="M3 3v18h18" />
+            <path d="M18 9l-5 5-4-4-6 6" />
           </svg>
           <span>{t.sectionBadge}</span>
         </div>
@@ -127,7 +127,10 @@ const statsUrl = lang === "es" ? "/estadisticas" : `/${lang}/estadisticas`;
                     {stat.changeRate.direction === "neutral" && "→"}
                   </span>
                   <span class="trend-text">
-                    {stat.changeRate.percentage > 0 ? `+${stat.changeRate.percentage}%` : `${stat.changeRate.percentage}%`} {comparison}
+                    {stat.changeRate.percentage > 0
+                      ? `+${stat.changeRate.percentage}%`
+                      : `${stat.changeRate.percentage}%`}{" "}
+                    {comparison}
                   </span>
                 </div>
               )}
@@ -235,7 +238,9 @@ const statsUrl = lang === "es" ? "/estadisticas" : `/${lang}/estadisticas`;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
   }
 
   :global(.dark) .stat-card {

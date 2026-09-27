@@ -38,6 +38,8 @@ import { MALLORCA_ZONES } from "../../../data/zones";
 import { BLOG_POSTS } from "../../../data/posts";
 import { getLocaleFromUrl, loadTranslations, getLangPrefix, type Locale } from "../../../i18n";
 import { generateServiceJsonLd } from "../../../lib/jsonLdGenerator";
+import { loadAllHonorSpots } from "../../../lib/honorBoardStore";
+import { getD1Binding } from "../../../lib/d1Logger";
 import "../../../styles/service-detail.css";
 
 export const prerender = false;
@@ -57,6 +59,10 @@ const category = CATEGORIES.find((c) => c.id === service.category);
 const zone = MALLORCA_ZONES.find((z) => z.id === service.zone);
 const categoryName = category?.name[locale] || service.category;
 const zoneName = zone?.name[locale] || service.zone;
+
+// Podio real del Cuadro de Honor leído de D1: sin esto la insignia "Reconocido"
+// de la cabecera nunca aparecía, porque el catálogo por defecto está vacío.
+const honorCatalog = await loadAllHonorSpots(getD1Binding((Astro as any).locals));
 
 // Related blog posts with smart fallback by category / tags
 let relatedPosts = BLOG_POSTS.filter((p) => p.relatedServiceIds.includes(service.id));
@@ -191,7 +197,14 @@ const breadcrumbSchema = {
     </nav>
 
     <!-- Header Section (Breadcrumbs, Title, Badges, Quick Actions) -->
-    <ServiceHeaderHero service={service} category={category} zone={zone} translations={translations} locale={locale} />
+    <ServiceHeaderHero
+      service={service}
+      category={category}
+      zone={zone}
+      translations={translations}
+      locale={locale}
+      honorCatalog={honorCatalog}
+    />
 
     <!-- Quick Navigation (Pill Tabs for Zero-Friction Deep Linking) -->
     <ServiceQuickNav service={service} locale={locale} />

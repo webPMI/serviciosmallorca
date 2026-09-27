@@ -20,11 +20,7 @@ export type RequestStatus = "pending" | "approved" | "rejected" | "processed";
 
 /** Códigos de error de negocio del flujo de solicitudes (nunca mensajes ambiguos). */
 export type ServiceRequestErrorCode =
-  | "duplicate_claim"
-  | "already_claimed"
-  | "missing_business"
-  | "claim_not_found"
-  | "ownership_conflict";
+  "duplicate_claim" | "already_claimed" | "missing_business" | "claim_not_found" | "ownership_conflict";
 
 /**
  * Error tipado de las solicitudes de titularidad. La UI lo traduce a un mensaje
@@ -329,16 +325,14 @@ export interface ClaimDecision {
   force?: boolean;
 }
 
-/** Resuelve el slug canónico de una ficha a partir de su id o slug (import perezoso del catálogo). */
-async function resolveServiceSlug(serviceId: string): Promise<string> {
-  try {
-    const { SERVICES } = await import("../data/services/index.ts");
-    const match = SERVICES.find((s) => s.id === serviceId || s.slug === serviceId);
-    return match ? match.slug : serviceId;
-  } catch (error) {
-    reportClientFailure("updateClaimStatus/resolveSlug", error, { category: "DATABASE", resource: serviceId });
-    return serviceId;
-  }
+/** Resuelve el slug canónico de una ficha sin importar el catálogo.
+ *
+ * Importar `data/services` desde aquí arrastraba el catálogo completo (~6 MB) al bundle
+ * de cliente de las fichas de detalle y de /servicios/nuevo. La información necesaria
+ * viaja en la propia solicitud (`serviceSlug`) y, si faltara, se degrada al `serviceId`.
+ */
+function resolveServiceSlug(claim: ServiceClaim, serviceId: string, explicitSlug?: string): string {
+  return explicitSlug || claim.serviceSlug || serviceId;
 }
 
 /**
@@ -400,11 +394,13 @@ export async function updateClaimStatus(
   const claimSnap = await getDoc(doc(db, "service_claims", claimId));
   const claimExists = typeof claimSnap.exists === "function" ? claimSnap.exists() : Boolean(claimSnap.exists);
   if (!claimExists) {
-    throw new ServiceRequestError("claim_not_found", `La reclamación ${claimId} no existe o fue eliminada.`, { claimId });
+    throw new ServiceRequestError("claim_not_found", `La reclamación ${claimId} no existe o fue eliminada.`, {
+      claimId,
+    });
   }
   const claim = claimSnap.data() as ServiceClaim;
 
-  const slug = decision.serviceSlug || claim.serviceSlug || (await resolveServiceSlug(serviceId));
+  const slug = resolveServiceSlug(claim, serviceId, decision.serviceSlug);
   const [existingOverride, userSnap] = await Promise.all([
     getServiceOverrideFresh(db, slug),
     getDoc(doc(db, "users", applicantUid)),
@@ -450,7 +446,8 @@ export async function updateClaimStatus(
       reviewerUid,
       serviceId,
       businessTaxId: claim.businessTaxId || claim.verificationProof || "",
-      documentUrl: claim.documentUrl || (claim.verificationProof?.startsWith("https://") ? claim.verificationProof : undefined),
+      documentUrl:
+        claim.documentUrl || (claim.verificationProof?.startsWith("https://") ? claim.verificationProof : undefined),
       verificationMethod: claim.verificationMethod,
       claimedAt: reviewedAt,
       existingAuditTrail: existingOverride?.auditTrail,

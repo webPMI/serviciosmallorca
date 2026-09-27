@@ -1,0 +1,92 @@
+
+ ⛅️ wrangler 4.125.0
+────────────────────
+Created:     2026-08-31T20:26:31.203Z
+Author:      servicioweb.pmi@gmail.com
+Source:      Unknown (deployment)
+Message:     -
+Version(s):  (100%) 3a267f61-e24f-4184-9f59-e5433c6808e0
+                 Created:  2026-08-31T20:26:28.626Z
+                     Tag:  -
+                 Message:  -
+
+Created:     2026-09-02T12:35:01.383Z
+Author:      servicioweb.pmi@gmail.com
+Source:      Unknown (deployment)
+Message:     -
+Version(s):  (100%) 8f49cbdb-68e7-40f3-bb8b-35479397fc64
+                 Created:  2026-09-02T12:34:57.071Z
+                     Tag:  -
+                 Message:  -
+
+Created:     2026-09-23T13:34:49.131Z
+Author:      servicioweb.pmi@gmail.com
+Source:      Unknown (deployment)
+Message:     -
+Version(s):  (100%) c2942afd-b33a-4111-bc20-f5980640e8b6
+                 Created:  2026-09-23T13:34:46.389Z
+                     Tag:  -
+                 Message:  -
+
+Created:     2026-09-27T10:03:02.101Z
+Author:      servicioweb.pmi@gmail.com
+Source:      Unknown (deployment)
+Message:     -
+Version(s):  (100%) 7eac3e69-6a21-4277-86a9-e2d05d9e37fd
+                 Created:  2026-09-27T10:02:59.099Z
+                     Tag:  -
+                 Message:  -
+
+Created:     2026-09-27T10:11:41.771Z
+Author:      servicioweb.pmi@gmail.com
+Source:      Unknown (deployment)
+Message:     -
+Version(s):  (100%) 165216eb-7dbd-41b4-ad14-0948c5f03076
+                 Created:  2026-09-27T10:11:39.150Z
+                     Tag:  -
+                 Message:  -
+
+Created:     2026-09-27T10:49:56.140Z
+Author:      servicioweb.pmi@gmail.com
+Source:      Unknown (deployment)
+Message:     -
+Version(s):  (100%) 614bdf4c-b4e4-4e8c-abf4-31d3794b95ae
+                 Created:  2026-09-27T10:49:53.678Z
+                     Tag:  -
+                 Message:  -
+
+Created:     2026-09-27T11:28:09.394Z
+Author:      servicioweb.pmi@gmail.com
+Source:      Unknown (deployment)
+Message:     -
+Version(s):  (100%) e934f204-a635-40cc-8ee2-68c4b716aa70
+                 Created:  2026-09-27T11:28:06.581Z
+                     Tag:  -
+                 Message:  -
+
+Created:     2026-09-27T12:41:21.697Z
+Author:      servicioweb.pmi@gmail.com
+Source:      Unknown (deployment)
+Message:     -
+Version(s):  (100%) 076612b5-9f72-4c66-8780-e27cc76b993a
+                 Created:  2026-09-27T12:41:19.196Z
+                     Tag:  -
+                 Message:  -
+
+Created:     2026-09-27T13:08:22.953Z
+Author:      servicioweb.pmi@gmail.com
+Source:      Unknown (deployment)
+Message:     -
+Version(s):  (100%) 8d878b23-c037-4679-9bc4-6c20b9055f8b
+                 Created:  2026-09-27T13:08:20.131Z
+                     Tag:  -
+                 Message:  -
+
+Created:     2026-09-27T13:29:55.717Z
+Author:      servicioweb.pmi@gmail.com
+Source:      Unknown (deployment)
+Message:     -
+Version(s):  (100%) 93c751c7-09dd-49b9-acdc-966b12b8469b
+                 Created:  2026-09-27T13:29:53.035Z
+                     Tag:  -
+                 Message:  -

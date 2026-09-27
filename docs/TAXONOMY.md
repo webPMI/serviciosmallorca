@@ -223,7 +223,7 @@ Cada "tipo" es una clave técnica normalizada con traducciones. Subdivisión ori
 
 ## 6. Sectores de Expansión (no crear todavía)
 
-> 🔎 **Para el mapa completo de todos los negocios de Mallorca (20 super-sectores, ~160 categorías, ~1.100 tipos), ver [`docs/TAXONOMY_SCALE.md`](TAXONOMY_SCALE.md).** Este §6 solo recoge la ampliación mínima cercana.
+> 🔎 **Para el mapa completo de todos los negocios de Mallorca (20 super-sectores, ~160 categorías, ~1.100 tipos), consultar el §6Ampliación de este mismo documento (el mapa de escala está integrado aquí).** Este §6 solo recoge la ampliación mínima cercana.
 
 Estos sectores se preparan en la taxonomía pero **NO se materializan** en `CATEGORIES` hasta disponer de negocios reales verificados (P-04 + GR-11).
 
@@ -303,4 +303,4 @@ Cada fase se valida con `npm test` y cumple GR-05, GR-09 y GR-10.
 | `docs/SCALABILITY_AND_ARCHITECTURE.md` | Fases de escalado de la base de datos de negocios                                        |
 | `docs/WORKFLOW_CURATION.md`            | Protocolo de alta de negocios donde se aplica esta taxonomía                             |
 | `docs/STYLING.md`, `docs/I18N.md`      | Iconos/colores de categoría y claves i18n de etiquetas                                   |
-| `docs/TAXONOMY_SCALE.md`               | 🚀 Proyección masiva: 20 super-sectores, ~160 categorías, todos los negocios de Mallorca |
+| §6 de este documento               | 🚀 Proyección masiva: 20 super-sectores, ~160 categorías, todos los negocios de Mallorca |

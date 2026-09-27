@@ -32,14 +32,7 @@ export const farmaciaBagur24hAragoPalma: ServiceItem = {
   googleMapsUrl: "https://www.google.com/maps/search/Farmacia+Bagur+24h+Carrer+Arago+70+Palma+Mallorca",
   appleMapsUrl: "https://maps.apple.com/?q=Farmacia+Bagur+Palma",
   bingMapsUrl: "https://www.bing.com/maps?q=Farmacia+Bagur+Palma",
-  tags: [
-    "zona:palma",
-    "product:premium",
-    "mod:en-local",
-    "mod:walk-in",
-    "aud:familias",
-    "temps:todo-el-ano",
-  ],
+  tags: ["zona:palma", "product:premium", "mod:en-local", "mod:walk-in", "aud:familias", "temps:todo-el-ano"],
   capabilities: {
     wheelchairAccessible: true,
     onlineBooking: false,
@@ -145,7 +138,8 @@ export const farmaciaBagur24hAragoPalma: ServiceItem = {
       id: "rev-farmacia-bagur-1",
       authorName: "Jaume Vicens",
       rating: 5,
-      comment: "Molt bon servei a qualsevol hora. Em varen atendre de nit amb gran rapidesa i em varen donar el medicament que necessitava sense problemes.",
+      comment:
+        "Molt bon servei a qualsevol hora. Em varen atendre de nit amb gran rapidesa i em varen donar el medicament que necessitava sense problemes.",
       date: "2026-08-13",
       platform: "google_maps",
       language: "ca",

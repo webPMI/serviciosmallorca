@@ -277,10 +277,15 @@ describe("mergeServiceWithOverride · Merge parcial overlay", () => {
 describe("saveServiceOverride · Escritura blindada + auditoría", () => {
   it("guarda con merge:true, titularidad del manager y serverTimestamp, y refresca la caché local", async () => {
     const dbLike = { kind: "db" };
-    await saveServiceOverride(dbLike as never, "negocio-base-palma", { uid: "manager-77", role: "manager" }, {
-      phone: "+34900000000",
-      schedule: "L-D 10:00-20:00",
-    });
+    await saveServiceOverride(
+      dbLike as never,
+      "negocio-base-palma",
+      { uid: "manager-77", role: "manager" },
+      {
+        phone: "+34900000000",
+        schedule: "L-D 10:00-20:00",
+      },
+    );
 
     const [ref, payload, opts] = fb.setDoc.mock.calls[0];
     expect(ref).toMatchObject({ kind: "doc", name: "service_overrides", id: "negocio-base-palma" });
@@ -297,19 +302,14 @@ describe("saveServiceOverride · Escritura blindada + auditoría", () => {
   });
 
   it("un manager NO puede escribir campos de verificación: se filtran antes de persistir (INV-01)", async () => {
-    await saveServiceOverride(
-      { kind: "db" } as never,
-      "slug-shield-manager",
-      { uid: "manager-1", role: "manager" },
-      {
-        phone: "+34971111222",
-        verified: true,
-        verificationStatus: "verified_official",
-        confidenceScore: 98,
-        isClaimed: true,
-        claimedByUid: "manager-1",
-      } as never,
-    );
+    await saveServiceOverride({ kind: "db" } as never, "slug-shield-manager", { uid: "manager-1", role: "manager" }, {
+      phone: "+34971111222",
+      verified: true,
+      verificationStatus: "verified_official",
+      confidenceScore: 98,
+      isClaimed: true,
+      claimedByUid: "manager-1",
+    } as never);
 
     const [, payload] = fb.setDoc.mock.calls[0];
     expect(payload.phone).toBe("+34971111222");
@@ -367,15 +367,12 @@ describe("saveServiceOverride · Escritura blindada + auditoría", () => {
   });
 
   it("el histórico de auditoría NUNCA se acepta desde el cliente: se reconstruye (INV-08)", async () => {
-    await saveServiceOverride(
-      { kind: "db" } as never,
-      "slug-audit-forgery",
-      { uid: "manager-1", role: "manager" },
-      {
-        phone: "+34971110000",
-        auditTrail: [{ id: "fake", timestamp: "2020-01-01", action: "verified", authorRole: "admin", authorUid: "ghost" }],
-      } as never,
-    );
+    await saveServiceOverride({ kind: "db" } as never, "slug-audit-forgery", { uid: "manager-1", role: "manager" }, {
+      phone: "+34971110000",
+      auditTrail: [
+        { id: "fake", timestamp: "2020-01-01", action: "verified", authorRole: "admin", authorUid: "ghost" },
+      ],
+    } as never);
 
     const [, payload] = fb.setDoc.mock.calls[0];
     expect(payload.auditTrail).toHaveLength(1);
@@ -405,7 +402,6 @@ describe("saveServiceOverride · Escritura blindada + auditoría", () => {
     expect(fb.setDoc).not.toHaveBeenCalled();
   });
 });
-
 
 describe("mergeServiceWithOverride · Fusión estático + dinámico", () => {
   it("mergeServiceWithOverride fusiona campos de verificación y titularidad reclamada", () => {
@@ -477,7 +473,9 @@ describe("verifyBusinessAsAdmin · Sello oficial con evidencia y sin apropiació
   });
 
   it("exige método y documento https: sin evidencia real no hay sello (P0-2 · GR-11)", async () => {
-    await expect(verifyBusinessAsAdmin({ kind: "db" } as never, "bodega-sin-prueba", "admin-1", {})).rejects.toMatchObject({
+    await expect(
+      verifyBusinessAsAdmin({ kind: "db" } as never, "bodega-sin-prueba", "admin-1", {}),
+    ).rejects.toMatchObject({
       code: "missing_evidence",
     });
 
@@ -521,7 +519,11 @@ describe("Bloque vinculante · utilidades puras", () => {
     expect(resolveOwnerUid(null, { uid: "admin-1", role: "admin" })).toBeUndefined();
     expect(resolveOwnerUid({ ownerUid: "titular-real" }, { uid: "admin-1", role: "admin" })).toBeUndefined();
     expect(
-      resolveOwnerUid({ ownerUid: "titular-real" }, { uid: "admin-1", role: "admin" }, { transferOwnershipTo: "nuevo" }),
+      resolveOwnerUid(
+        { ownerUid: "titular-real" },
+        { uid: "admin-1", role: "admin" },
+        { transferOwnershipTo: "nuevo" },
+      ),
     ).toBe("nuevo");
   });
 

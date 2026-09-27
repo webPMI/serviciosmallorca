@@ -1,5 +1,6 @@
 import type { APIRoute } from "astro";
 import { SERVICES } from "../data/services/index.ts";
+import { SERVICES_PER_PAGE } from "../lib/directoryPagination.ts";
 import { CATEGORIES } from "../data/categories.ts";
 import { MALLORCA_ZONES } from "../data/zones.ts";
 import { DISCOVERY_TOURS } from "../data/discoveryTours.ts";
@@ -64,6 +65,14 @@ export const GET: APIRoute = async () => {
 
   // 2. Secciones Principales y Mercados de Autoridad
   addMultilingualUrl("/servicios", "0.95", "daily", now);
+
+  // 2.1 Directorio paginado: cada página es una URL independiente y rastreable.
+  // Sin esto, los crawlers y agentes de IA solo descubrirían la primera de ~20 páginas.
+  const directoryTotal = SERVICES.filter((s) => s.status !== "permanently_closed").length;
+  const directoryPages = Math.max(1, Math.ceil(directoryTotal / SERVICES_PER_PAGE));
+  for (let page = 2; page <= directoryPages; page++) {
+    addMultilingualUrl(`/servicios?pagina=${page}`, "0.6", "weekly", now);
+  }
   addMultilingualUrl("/cuadro-de-honor", "0.95", "daily", now);
   addMultilingualUrl("/blog", "0.90", "daily", now);
   addMultilingualUrl("/asistente", "0.90", "daily", now);

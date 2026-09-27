@@ -96,5 +96,16 @@
   "boostWall.totalRaised": "Gesammelter Community-Pool:",
   "boostWall.backersCount": "Unterstützende Nachbarn:",
   "boostWall.rankStatus": "Podium-Status:",
-  "boostWall.topNominated": "Hervorgehobener Betrieb"
+  "boostWall.topNominated": "Hervorgehobener Betrieb",
+  "honor.payment.cancelledTitle": "Zahlungsvorgang abgebrochen",
+  "honor.payment.cancelledDesc": "Es wurde keine Belastung Ihrer Karte oder Ihres Bankkontos vorgenommen. Wenn Sie Ihren Betrieb später boosten oder platzieren möchten, können Sie ihn jederzeit auswählen.",
+  "honor.payment.successTitle": "Beitrag erfolgreich bestätigt!",
+  "honor.payment.successDesc": "Zahlung von {amount}€ durch das Zahlungsportal verifiziert. Der Betrieb erscheint nun in der Ehrentafel.",
+  "honor.payment.successDescNoAmount": "Zahlung durch das Zahlungsportal verifiziert. Der Betrieb erscheint nun in der Ehrentafel.",
+  "honor.payment.unverifiedTitle": "Zahlung nicht verifiziert",
+  "honor.payment.unverifiedDesc": "Wir konnten die Zahlung nicht mit dem Zahlungsportal bestätigen. Falls Sie bereits bezahlt haben, bewahren Sie die Referenz auf und kontaktieren Sie uns.",
+  "honor.payment.missingSessionDesc": "Die Transaktion ist ohne Sitzungsreferenz eingegangen und kann daher nicht verifiziert werden.",
+  "honor.modal.offlineAlert": "⚠️ Es wird keine aktive Internetverbindung erkannt. Bitte prüfen Sie Ihre WLAN- oder Mobilfunkverbindung, bevor Sie bezahlen.",
+  "honor.modal.timeoutAlert": "⏱️ Die Verbindung zum Zahlungsportal hat das Zeitlimit (20 Sekunden) aufgrund von Latenz oder einem Netzausfall überschritten. Zu Ihrer Sicherheit wurde der Vorgang ohne Belastung abgebrochen. Prüfen Sie Ihre Verbindung und versuchen Sie es erneut.",
+  "honor.modal.gatewayErrorAlert": "Kommunikationsfehler mit dem Zahlungsportal. Bitte prüfen Sie Ihre Verbindung und versuchen Sie es erneut."
 }

@@ -145,7 +145,8 @@ export const sociasYRosselloPalma: ServiceItem = {
       id: "rev-socias-rossello-1",
       authorName: "Guillermo Martorell",
       rating: 5,
-      comment: "Showroom impresionante en Son Castelló. Elegimos todo el pavimento y los baños para nuestra casa y el asesoramiento técnico fue impecable. Muy recomendables.",
+      comment:
+        "Showroom impresionante en Son Castelló. Elegimos todo el pavimento y los baños para nuestra casa y el asesoramiento técnico fue impecable. Muy recomendables.",
       date: "2026-08-08",
       platform: "google_maps",
       language: "es",
@@ -154,7 +155,8 @@ export const sociasYRosselloPalma: ServiceItem = {
       id: "rev-socias-rossello-2",
       authorName: "Thomas Becker",
       rating: 5,
-      comment: "Riesige Auswahl an modernen Bädern und Fliesen. Sehr kompetente Beratung auf Deutsch und Englisch für unser Finca-Projekt.",
+      comment:
+        "Riesige Auswahl an modernen Bädern und Fliesen. Sehr kompetente Beratung auf Deutsch und Englisch für unser Finca-Projekt.",
       date: "2026-07-22",
       platform: "google_maps",
       language: "de",

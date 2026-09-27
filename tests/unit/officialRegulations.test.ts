@@ -81,10 +81,9 @@ describe("Catálogo Canónico de Normativas Oficiales del BOIB (officialRegulati
     OFFICIAL_REGULATIONS.forEach((reg) => {
       if (reg.relatedGuideSlugs && reg.relatedGuideSlugs.length > 0) {
         reg.relatedGuideSlugs.forEach((slug) => {
-          expect(
-            existingGuideSlugs.has(slug),
-            `La normativa ${reg.id} referencia una guía inexistente: ${slug}`
-          ).toBe(true);
+          expect(existingGuideSlugs.has(slug), `La normativa ${reg.id} referencia una guía inexistente: ${slug}`).toBe(
+            true,
+          );
         });
       }
     });
@@ -98,7 +97,7 @@ describe("Catálogo Canónico de Normativas Oficiales del BOIB (officialRegulati
         reg.relatedStatIds.forEach((statId) => {
           expect(
             existingStatIds.has(statId),
-            `La normativa ${reg.id} referencia una estadística inexistente: ${statId}`
+            `La normativa ${reg.id} referencia una estadística inexistente: ${statId}`,
           ).toBe(true);
         });
       }

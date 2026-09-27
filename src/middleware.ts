@@ -106,10 +106,7 @@ Explora el directorio completo y las valoraciones de restaurantes Michelin, chá
         response.headers.set("Pragma", "no-cache");
       } else if (request.method === "GET" || request.method === "HEAD") {
         // Reducción drástica de CPU Worker: Cloudflare Edge CDN almacena en caché 24h con revalidación en background
-        response.headers.set(
-          "Cache-Control",
-          "public, max-age=300, s-maxage=86400, stale-while-revalidate=604800",
-        );
+        response.headers.set("Cache-Control", "public, max-age=300, s-maxage=86400, stale-while-revalidate=604800");
       }
 
       return response;

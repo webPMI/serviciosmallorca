@@ -145,7 +145,8 @@ export const oftalmedicSalvaPalma: ServiceItem = {
       id: "rev-oftalmedic-salva-1",
       authorName: "Antoni Pons",
       rating: 5,
-      comment: "Em vaig operar de cataractes amb lents trifocals amb el Dr. Salvà i el resultat és immillorable. Veig perfectament de lluny i de prop sense ulleres.",
+      comment:
+        "Em vaig operar de cataractes amb lents trifocals amb el Dr. Salvà i el resultat és immillorable. Veig perfectament de lluny i de prop sense ulleres.",
       date: "2026-08-12",
       platform: "google_maps",
       language: "ca",
@@ -154,7 +155,8 @@ export const oftalmedicSalvaPalma: ServiceItem = {
       id: "rev-oftalmedic-salva-2",
       authorName: "Christine Bauer",
       rating: 5,
-      comment: "Hervorragende Femto-LASIK Behandlung! Keine Schmerzen, absolut professionelles Team und ab dem nächsten Tag 100% Sehkraft. Sehr zu empfehlen.",
+      comment:
+        "Hervorragende Femto-LASIK Behandlung! Keine Schmerzen, absolut professionelles Team und ab dem nächsten Tag 100% Sehkraft. Sehr zu empfehlen.",
       date: "2026-07-28",
       platform: "google_maps",
       language: "de",

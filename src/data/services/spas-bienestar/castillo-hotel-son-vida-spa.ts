@@ -26,8 +26,10 @@ export const castilloHotelSonVidaSpa: ServiceItem = {
   phone: "+34 971 49 34 93",
   whatsapp: "+34 971 49 34 93",
   email: "info.castillomallorca@arabella.com",
-  website: "https://www.marriott.com/en-us/hotels/pmilc-castillo-hotel-son-vida-a-luxury-collection-hotel-mallorca/overview/",
-  menuUrl: "https://www.marriott.com/en-us/hotels/pmilc-castillo-hotel-son-vida-a-luxury-collection-hotel-mallorca/overview/",
+  website:
+    "https://www.marriott.com/en-us/hotels/pmilc-castillo-hotel-son-vida-a-luxury-collection-hotel-mallorca/overview/",
+  menuUrl:
+    "https://www.marriott.com/en-us/hotels/pmilc-castillo-hotel-son-vida-a-luxury-collection-hotel-mallorca/overview/",
   googleMapsUrl: "https://www.google.com/maps/search/Castillo+Hotel+Son+Vida+Spa+Palma+Mallorca",
   appleMapsUrl: "https://maps.apple.com/?q=Castillo+Hotel+Son+Vida+Spa+Palma",
   bingMapsUrl: "https://www.bing.com/maps?q=Castillo+Hotel+Son+Vida+Spa+Palma",
@@ -145,7 +147,8 @@ export const castilloHotelSonVidaSpa: ServiceItem = {
       id: "rev-castillo-son-vida-spa-1",
       authorName: "Victoria von Bernstorff",
       rating: 5,
-      comment: "Traumhafter Spa-Bereich mit wunderschönem Blick auf Palma. Die Maria Galland Gesichtsbehandlung war erstklassig und die Therapeuten hochprofessionell.",
+      comment:
+        "Traumhafter Spa-Bereich mit wunderschönem Blick auf Palma. Die Maria Galland Gesichtsbehandlung war erstklassig und die Therapeuten hochprofessionell.",
       date: "2026-08-16",
       platform: "google_maps",
       language: "de",
@@ -154,7 +157,8 @@ export const castilloHotelSonVidaSpa: ServiceItem = {
       id: "rev-castillo-son-vida-spa-2",
       authorName: "Gonzalo de la Riva",
       rating: 5,
-      comment: "Instalaciones impecables y ambiente de absoluta relajación en Son Vida. El circuito de saunas y la piscina interior son una maravilla.",
+      comment:
+        "Instalaciones impecables y ambiente de absoluta relajación en Son Vida. El circuito de saunas y la piscina interior son una maravilla.",
       date: "2026-07-25",
       platform: "google_maps",
       language: "es",

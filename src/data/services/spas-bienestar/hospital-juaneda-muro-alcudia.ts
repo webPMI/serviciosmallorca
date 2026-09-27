@@ -146,7 +146,8 @@ export const hospitalJuanedaMuroAlcudia: ServiceItem = {
       id: "rev-juaneda-muro-1",
       authorName: "Oliver Becker",
       rating: 5,
-      comment: "Hervorragende Privatklinik! Wurde nach einem Fahrradunfall sofort geröntgt und erstklassig versorgt. Alle Ärzte sprechen Deutsch. Großes Lob!",
+      comment:
+        "Hervorragende Privatklinik! Wurde nach einem Fahrradunfall sofort geröntgt und erstklassig versorgt. Alle Ärzte sprechen Deutsch. Großes Lob!",
       date: "2026-08-17",
       platform: "google_maps",
       language: "de",
@@ -155,7 +156,8 @@ export const hospitalJuanedaMuroAlcudia: ServiceItem = {
       id: "rev-juaneda-muro-2",
       authorName: "Sarah Campbell",
       rating: 5,
-      comment: "Wonderful emergency service in Playa de Muro. Very fast, caring staff, and they handled all insurance paperwork directly.",
+      comment:
+        "Wonderful emergency service in Playa de Muro. Very fast, caring staff, and they handled all insurance paperwork directly.",
       date: "2026-07-29",
       platform: "google_maps",
       language: "en",

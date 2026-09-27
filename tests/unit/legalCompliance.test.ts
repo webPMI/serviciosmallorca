@@ -95,7 +95,12 @@ describe("⚖️ MOTOR DE CUMPLIMIENTO LEGAL, VERSIONADO Y BLINDAJE RGPD/LSSI", 
   describe("2. Registro de Consentimiento y Certificado de Auditoría RGPD", () => {
     it("debe registrar y recuperar el consentimiento en almacenamiento local", () => {
       const uid = "usr_maria_palma";
-      const record = recordUserLegalConsent(uid, "terms_update_modal", ["terms", "privacy", "cookies", "digital_withdrawal"]);
+      const record = recordUserLegalConsent(uid, "terms_update_modal", [
+        "terms",
+        "privacy",
+        "cookies",
+        "digital_withdrawal",
+      ]);
 
       expect(record.version).toBe(CURRENT_LEGAL_VERSION);
       expect(record.userId).toBe(uid);

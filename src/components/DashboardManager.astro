@@ -348,11 +348,13 @@ const { translations } = Astro.props;
             const claimId = btn.getAttribute("data-claim-id")!;
             const uid = btn.getAttribute("data-uid")!;
             const serviceId = btn.getAttribute("data-service-id") || "";
+            const serviceSlug = SERVICES.find((s) => s.id === serviceId || s.slug === serviceId)?.slug;
             btn.setAttribute("disabled", "true");
             try {
               await updateClaimStatus(db, claimId, "approved", {
                 applicantUid: uid,
                 serviceId,
+                serviceSlug,
                 reviewerUid: authStore.getState().user?.uid ?? "",
               });
               alert("✅ Reclamación aprobada. La titularidad y el rol Manager han sido verificados.");

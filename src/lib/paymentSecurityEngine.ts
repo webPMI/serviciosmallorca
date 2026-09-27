@@ -425,6 +425,83 @@ export function validatePaymentRequest(
   };
 }
 
+export interface VerifiedCheckoutSession {
+  verified: boolean;
+  error?: string;
+  sessionId?: string;
+  paymentStatus?: string;
+  amountEuros?: number;
+  invoiceId?: string;
+  serviceId?: string;
+  serviceSlug?: string;
+  category?: string;
+}
+
+/** Prefijo obligatorio de los identificadores de sesión de Stripe. */
+const STRIPE_SESSION_PREFIX = "cs_";
+
+/**
+ * Verifica una `session_id` de Stripe contra la API real antes de mostrar una
+ * confirmación al usuario.
+ *
+ * Por qué: la URL de retorno `?payment=success` es un parámetro de query
+ * perfectamente falsificable. Confiar en él permitiría mostrar un banner
+ * "pago confirmado" sin haber pagado nada (violación GR-11/GR-13).
+ *
+ * Solo devuelve `verified: true` si la sesión existe en Stripe y su
+ * `payment_status` es `paid` o `no_payment_required`.
+ */
+export async function verifyCheckoutSession(
+  sessionId: string,
+  stripeKey: string | undefined,
+): Promise<VerifiedCheckoutSession> {
+  if (!sessionId || !sessionId.startsWith(STRIPE_SESSION_PREFIX)) {
+    return { verified: false, error: "Identificador de sesión de Stripe con formato inválido." };
+  }
+
+  if (!stripeKey) {
+    return { verified: false, error: "No hay clave de API de Stripe configurada en el servidor." };
+  }
+
+  try {
+    const res = await fetch(`https://api.stripe.com/v1/checkout/sessions/${encodeURIComponent(sessionId)}`, {
+      method: "GET",
+      headers: { Authorization: `Bearer ${stripeKey}` },
+    });
+
+    if (!res.ok) {
+      return { verified: false, error: `Stripe respondió con HTTP ${res.status} al validar la sesión.` };
+    }
+
+    const session: any = await res.json();
+    const paymentStatus = String(session?.payment_status || "");
+
+    if (paymentStatus !== "paid" && paymentStatus !== "no_payment_required") {
+      return {
+        verified: false,
+        error: `La sesión de pago no está completada (estado: ${paymentStatus || "desconocido"}).`,
+        sessionId,
+        paymentStatus,
+      };
+    }
+
+    return {
+      verified: true,
+      sessionId,
+      paymentStatus,
+      amountEuros: session?.amount_total ? session.amount_total / 100 : undefined,
+      invoiceId: session?.metadata?.invoiceId,
+      serviceId: session?.metadata?.serviceId,
+      serviceSlug: session?.metadata?.serviceSlug,
+      category: session?.metadata?.category,
+    };
+  } catch (err: any) {
+    // GR-15: nunca silencioso
+    console.error("[StripeVerify] Error de red al verificar la sesión de checkout:", err?.message || err);
+    return { verified: false, error: "No se pudo contactar con la pasarela para validar el pago." };
+  }
+}
+
 /**
  * Verificador criptográfico de firmas de Webhooks de Stripe utilizando Web Crypto API.
  * Protege contra spoofing y ataques de reproducción (Replay Attacks).

@@ -143,7 +143,8 @@ export const mimbreriaVidalPalma: ServiceItem = {
       id: "rev-mimbreria-vidal-1",
       authorName: "Antònia Barceló",
       rating: 5,
-      comment: "Una botiga meravellosa que et fa viatjar en el temps. Els cistells són d'una qualitat insuperable i ens varen restaurar unes cadires de boga antigues que han quedat perfectes.",
+      comment:
+        "Una botiga meravellosa que et fa viatjar en el temps. Els cistells són d'una qualitat insuperable i ens varen restaurar unes cadires de boga antigues que han quedat perfectes.",
       date: "2026-07-15",
       platform: "google_maps",
       language: "ca",
@@ -152,7 +153,8 @@ export const mimbreriaVidalPalma: ServiceItem = {
       id: "rev-mimbreria-vidal-2",
       authorName: "Elena Rivas",
       rating: 5,
-      comment: "Comercio histórico y trato inmejorable. Compré dos capazos y una estera de esparto para casa y la calidad es espectacular. Imprescindible visitar en Palma.",
+      comment:
+        "Comercio histórico y trato inmejorable. Compré dos capazos y una estera de esparto para casa y la calidad es espectacular. Imprescindible visitar en Palma.",
       date: "2026-08-02",
       platform: "google_maps",
       language: "es",
@@ -162,10 +164,7 @@ export const mimbreriaVidalPalma: ServiceItem = {
     facebook: "https://www.facebook.com/mimbreriavidal/",
   },
   image: "/images/services/mimbreria-vidal-palma.jpg",
-  gallery: [
-    "/images/services/mimbreria-vidal-fachada.jpg",
-    "/images/services/mimbreria-vidal-senalles.jpg",
-  ],
+  gallery: ["/images/services/mimbreria-vidal-fachada.jpg", "/images/services/mimbreria-vidal-senalles.jpg"],
   schedule: "Lunes a Viernes: 09:30 - 13:30, 16:30 - 20:00 | Sábados: 10:00 - 13:30",
   confidenceScore: 99,
   verificationStatus: "verified",

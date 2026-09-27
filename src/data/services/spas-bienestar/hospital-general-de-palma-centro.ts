@@ -145,7 +145,8 @@ export const hospitalGeneralDePalmaCentro: ServiceItem = {
       id: "rev-hospital-general-1",
       authorName: "Maria Antònia Soler",
       rating: 5,
-      comment: "El tracte que va rebre la meva mare a la unitat de convalescència va ser d'una calidesa i tendresa excepcionals. Un hospital amb ànima.",
+      comment:
+        "El tracte que va rebre la meva mare a la unitat de convalescència va ser d'una calidesa i tendresa excepcionals. Un hospital amb ànima.",
       date: "2026-08-09",
       platform: "google_maps",
       language: "ca",
@@ -154,7 +155,8 @@ export const hospitalGeneralDePalmaCentro: ServiceItem = {
       id: "rev-hospital-general-2",
       authorName: "Jürgen Hartmann",
       rating: 5,
-      comment: "Beeindruckendes historisches Gebäude mit einem wunderschönen Kreuzgang und sehr fürsorglichem, liebevollem Pflegepersonal.",
+      comment:
+        "Beeindruckendes historisches Gebäude mit einem wunderschönen Kreuzgang und sehr fürsorglichem, liebevollem Pflegepersonal.",
       date: "2026-07-21",
       platform: "google_maps",
       language: "de",

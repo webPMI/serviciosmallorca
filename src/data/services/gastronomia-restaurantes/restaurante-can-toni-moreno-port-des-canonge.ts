@@ -145,7 +145,8 @@ export const restauranteCanToniMorenoPortDesCanonge: ServiceItem = {
       id: "rev-can-toni-moreno-1",
       authorName: "Joan Riera",
       rating: 5,
-      comment: "Una de les millors paelles de Mallorca davant la mar. El lloc és idíl·lic i el peix és fresquíssim. Cal reservar abans de baixar la carretera.",
+      comment:
+        "Una de les millors paelles de Mallorca davant la mar. El lloc és idíl·lic i el peix és fresquíssim. Cal reservar abans de baixar la carretera.",
       date: "2026-08-12",
       platform: "google_maps",
       language: "ca",
@@ -154,7 +155,8 @@ export const restauranteCanToniMorenoPortDesCanonge: ServiceItem = {
       id: "rev-can-toni-moreno-2",
       authorName: "Stephan Meier",
       rating: 5,
-      comment: "Traumhafter Ort direkt am Wasser! Die Paella war hervorragend und der Service sehr freundlich. Absoluter Geheimtipp nach einer Wanderung.",
+      comment:
+        "Traumhafter Ort direkt am Wasser! Die Paella war hervorragend und der Service sehr freundlich. Absoluter Geheimtipp nach einer Wanderung.",
       date: "2026-07-22",
       platform: "google_maps",
       language: "de",

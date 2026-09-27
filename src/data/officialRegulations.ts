@@ -7,12 +7,7 @@
  * GR-11 (Zero Fake Data: normativas reales contrastadas con boletín oficial) y GR-13 (HTTPS).
  */
 
-export type RegulationCategory =
-  | "vivienda"
-  | "empresas_autonomos"
-  | "comercio"
-  | "turismo"
-  | "fiscalidad";
+export type RegulationCategory = "vivienda" | "empresas_autonomos" | "comercio" | "turismo" | "fiscalidad";
 
 export interface RegulationKeyPoint {
   title: { es: string; ca: string; en: string; de: string };
@@ -63,7 +58,8 @@ export const OFFICIAL_REGULATIONS: OfficialRegulation[] = [
       en: "Official Balearic decree removing property transfer tax (0% rate) on first primary residence purchases under 35 years old valued up to €270,151.",
       de: "Offizielles Balearen-Dekret zur vollständigen Befreiung von der Grunderwerbsteuer (0% Steuersatz) beim Erstkauf von Hauptwohnsitzen unter 35 Jahren bis 270.151 €.",
     },
-    officialSourceUrl: "https://www.caib.es/eboibfront/es/2023/11768/675548/decreto-ley-3-2023-de-10-de-julio-de-modificacion-d",
+    officialSourceUrl:
+      "https://www.caib.es/eboibfront/es/2023/11768/675548/decreto-ley-3-2023-de-10-de-julio-de-modificacion-d",
     benefitsSummary: {
       es: "Ahorro fiscal directo de hasta 21.612 € en la compraventa de vivienda habitual frente a la tarifa general del 8%.",
       ca: "Estalvi fiscal directe de fins a 21.612 € en la compravenda d'habitatge habitual respecte a la tarifa general del 8%.",
@@ -104,7 +100,7 @@ export const OFFICIAL_REGULATIONS: OfficialRegulation[] = [
           es: "Obligación de Ocupación Efectiva",
           ca: "Obligació d'Ocupació Efectiva",
           en: "Mandatory Primary Occupancy",
-        de: "Verpflichtende Eigennutzung",
+          de: "Verpflichtende Eigennutzung",
         },
         description: {
           es: "La vivienda debe constituir la residencia habitual del comprador y habitarse en un plazo máximo de doce meses desde la adquisición, manteniéndose al menos 3 años.",

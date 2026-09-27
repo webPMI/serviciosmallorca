@@ -32,14 +32,7 @@ export const hospitalUniversitariSonEspasesPalma: ServiceItem = {
   googleMapsUrl: "https://www.google.com/maps/search/Hospital+Universitari+Son+Espases+Palma+Mallorca",
   appleMapsUrl: "https://maps.apple.com/?q=Hospital+Universitari+Son+Espases+Palma",
   bingMapsUrl: "https://www.bing.com/maps?q=Hospital+Universitari+Son+Espases+Palma",
-  tags: [
-    "zona:palma",
-    "product:premium",
-    "mod:en-local",
-    "mod:walk-in",
-    "aud:familias",
-    "temps:todo-el-ano",
-  ],
+  tags: ["zona:palma", "product:premium", "mod:en-local", "mod:walk-in", "aud:familias", "temps:todo-el-ano"],
   capabilities: {
     wheelchairAccessible: true,
     onlineBooking: true,
@@ -145,7 +138,8 @@ export const hospitalUniversitariSonEspasesPalma: ServiceItem = {
       id: "rev-son-espases-1",
       authorName: "Joan Manel Serra",
       rating: 5,
-      comment: "L'equip d'urgències i cirurgia és d'una professionalitat impecable. Tracte humà excel·lent i instal·lacions modernes.",
+      comment:
+        "L'equip d'urgències i cirurgia és d'una professionalitat impecable. Tracte humà excel·lent i instal·lacions modernes.",
       date: "2026-08-14",
       platform: "google_maps",
       language: "ca",
@@ -154,7 +148,8 @@ export const hospitalUniversitariSonEspasesPalma: ServiceItem = {
       id: "rev-son-espases-2",
       authorName: "Helmut Schneider",
       rating: 5,
-      comment: "Sehr professionelle und schnelle Notfallbehandlung. Die Ärzte sprechen hervorragend Englisch und das Krankenhaus ist technisch auf allerhöchstem Niveau.",
+      comment:
+        "Sehr professionelle und schnelle Notfallbehandlung. Die Ärzte sprechen hervorragend Englisch und das Krankenhaus ist technisch auf allerhöchstem Niveau.",
       date: "2026-07-29",
       platform: "google_maps",
       language: "de",

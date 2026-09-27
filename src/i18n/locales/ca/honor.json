@@ -96,5 +96,16 @@
   "boostWall.totalRaised": "Bossa Popular Acumulada:",
   "boostWall.backersCount": "Veïns que Donen Suport:",
   "boostWall.rankStatus": "Estatus Gremial:",
-  "boostWall.topNominated": "Comerç Destacat"
+  "boostWall.topNominated": "Comerç Destacat",
+  "honor.payment.cancelledTitle": "Procés de Pagament Cancel·lat",
+  "honor.payment.cancelledDesc": "No s'ha realitzat cap càrrec a la teva targeta ni compte bancari. Si vols impulsar o posicionar el teu comerç més endavant, pots seleccionar-lo en qualsevol moment.",
+  "honor.payment.successTitle": "¡Aportació Confirmada amb Èxit!",
+  "honor.payment.successDesc": "Pagament verificat de {amount}€ per la passarel·la bancària. El comerç ja figura al Quadre d'Honor.",
+  "honor.payment.successDescNoAmount": "Pagament verificat per la passarel·la bancària. El comerç ja figura al Quadre d'Honor.",
+  "honor.payment.unverifiedTitle": "Pagament no verificat",
+  "honor.payment.unverifiedDesc": "No hem pogut confirmar el pagament amb la passarel·la. Si ja has abonat, conserva la referència i contacta'ns.",
+  "honor.payment.missingSessionDesc": "L'operació va arribar sense referència de sessió, per la qual cosa no es pot verificar.",
+  "honor.modal.offlineAlert": "⚠️ No s detecta cap connexió activa a Internet. Comprova la teva connexió Wi-Fi o dades mòbils abans de pagar.",
+  "honor.modal.timeoutAlert": "⏱️ La connexió amb la passarel·la bancària ha superat el temps límit d'espera (20 segons) a causa de latència o un tall de connexió. Per la teva seguretat, l'operació s'ha cancel·lat sense càrrec. Comprova la connexió i torna-ho a provar.",
+  "honor.modal.gatewayErrorAlert": "Error de comunicació amb la passarel·la bancària. Comprova la connexió i torna-ho a provar."
 }

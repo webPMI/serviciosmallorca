@@ -139,4 +139,3 @@ describe("🛡️ Middleware: cabeceras de seguridad HTTP (GR-13 / SECURITY.md �
     expect(response.headers.get("strict-transport-security")).toContain("max-age=31536000");
   });
 });
-

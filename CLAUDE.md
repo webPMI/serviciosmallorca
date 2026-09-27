@@ -38,17 +38,17 @@ Antes de entregar cualquier tarea al usuario, DEBES ejecutar en consola:
 
 ## 📚 Índice de Documentación (`docs/`)
 
-| Documento                                                             | Contenido                                                 |
-| --------------------------------------------------------------------- | --------------------------------------------------------- |
-| [GOLDEN_RULES.md](docs/GOLDEN_RULES.md)                               | 🥇 Reglas inmutables (16 reglas completas)                |
-| [LOGGING_AND_QUALITY_CONTROL.md](docs/LOGGING_AND_QUALITY_CONTROL.md) | 📊 Telemetría y Logs Resilientes en Cloudflare D1 (GR-15) |
-| [AGENTS.md](docs/AGENTS.md)                                           | 🤖 Sistema multi-agente: roles, flujos                    |
-| [ARCHITECTURE.md](docs/ARCHITECTURE.md)                               | 🏗️ Stack Astro SSR + Cloudflare, flujo de datos           |
-| [DEVELOPMENT.md](docs/DEVELOPMENT.md)                                 | 🛠️ Setup, comandos, testing                               |
-| [SECURITY.md](docs/SECURITY.md)                                       | 🛡️ Seguridad, Firestore, RGPD/LOPDGDD                     |
-| [AUTH.md](docs/AUTH.md)                                               | 🔐 Firebase Auth, roles, AuthStore                        |
-| [I18N.md](docs/I18N.md)                                               | 🌍 Internacionalización (es, en, ca, de)                  |
-| [STYLING.md](docs/STYLING.md)                                         | 🎨 Temas, variables CSS, breakpoints                      |
+| Documento                                                                   | Contenido                                                                 |
+| --------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| [GOLDEN_RULES.md](docs/GOLDEN_RULES.md)                                     | 🥇 Reglas inmutables (16 reglas completas)                                |
+| [LOGGING_AND_QUALITY_CONTROL.md](docs/LOGGING_AND_QUALITY_CONTROL.md)       | 📊 Telemetría y Logs Resilientes en Cloudflare D1 (GR-15)                 |
+| [AGENTS.md](docs/AGENTS.md)                                                 | 🤖 Sistema multi-agente: roles, flujos                                    |
+| [ARCHITECTURE.md](docs/ARCHITECTURE.md)                                     | 🏗️ Stack Astro SSR + Cloudflare, flujo de datos                           |
+| [DEVELOPMENT.md](docs/DEVELOPMENT.md)                                       | 🛠️ Setup, comandos, testing                                               |
+| [SECURITY.md](docs/SECURITY.md)                                             | 🛡️ Seguridad, Firestore, RGPD/LOPDGDD                                     |
+| [AUTH.md](docs/AUTH.md)                                                     | 🔐 Firebase Auth, roles, AuthStore                                        |
+| [I18N.md](docs/I18N.md)                                                     | 🌍 Internacionalización (es, en, ca, de)                                  |
+| [STYLING.md](docs/STYLING.md)                                               | 🎨 Temas, variables CSS, breakpoints                                      |
 | [BUSINESS_OWNERSHIP_FLOW_REVIEW.md](docs/BUSINESS_OWNERSHIP_FLOW_REVIEW.md) | 🔄 ⚠️ **VINCULANTE**: flujo Reclamar / Crear / Editar, 5 P0 / 4 P1 / 8 P2 |
 
 ---
@@ -68,4 +68,3 @@ Antes de escribir en `src/lib/serviceActions.ts`, `src/lib/serviceOverrides.ts`,
 5. Añadir campos al editor del titular sin render público (INV-07), dejar `catch` silenciosos (GR-15) o usar `as any` al persistir `status` (GR-03).
 
 Todo cambio en este flujo exige tests unitarios del invariante (GR-05) y sincronizar `docs/AUTH.md` + el informe de auditoría (GR-06). El Agente Maestro lo audita como **PASO 17** de su protocolo.
-

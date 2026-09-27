@@ -46,7 +46,10 @@ describe("🌐 Observatorio Macroeconómico: User Flow & SEO Integration Suite",
   });
 
   it("audita que la página comparativas.astro define Schema.org enriquecido con Dataset, BreadcrumbList y CollectionPage", () => {
-    const compFile = readFileSync(resolve(__dirname, "../../src/pages/[...locale]/estadisticas/comparativas.astro"), "utf-8");
+    const compFile = readFileSync(
+      resolve(__dirname, "../../src/pages/[...locale]/estadisticas/comparativas.astro"),
+      "utf-8",
+    );
     expect(compFile).toContain('"@type": "CollectionPage"');
     expect(compFile).toContain('"@type": "BreadcrumbList"');
     expect(compFile).toContain('"@type": "Dataset"');

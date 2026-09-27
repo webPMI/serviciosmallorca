@@ -146,7 +146,8 @@ export const laRosaVermuteriaPalma: ServiceItem = {
       id: "rev-la-rosa-palma-1",
       authorName: "Carlos Méndez",
       rating: 5,
-      comment: "Parada obligatoria en Palma. El vermut de grifo está riquísimo, las gildas son las mejores de la isla y los torreznos espectaculares. Ambiente insuperable.",
+      comment:
+        "Parada obligatoria en Palma. El vermut de grifo está riquísimo, las gildas son las mejores de la isla y los torreznos espectaculares. Ambiente insuperable.",
       date: "2026-08-10",
       platform: "google_maps",
       language: "es",
@@ -155,7 +156,8 @@ export const laRosaVermuteriaPalma: ServiceItem = {
       id: "rev-la-rosa-palma-2",
       authorName: "Hannah Becker",
       rating: 5,
-      comment: "Tolle Atmosphäre und fantastischer Wermut! Die Tapas sind frisch und von bester Qualität. Absoluter Lieblingsort in der Altstadt von Palma.",
+      comment:
+        "Tolle Atmosphäre und fantastischer Wermut! Die Tapas sind frisch und von bester Qualität. Absoluter Lieblingsort in der Altstadt von Palma.",
       date: "2026-07-28",
       platform: "google_maps",
       language: "de",
@@ -166,10 +168,7 @@ export const laRosaVermuteriaPalma: ServiceItem = {
     facebook: "https://www.facebook.com/larosavermuteria/",
   },
   image: "/images/services/la-rosa-vermuteria-palma.jpg",
-  gallery: [
-    "/images/services/la-rosa-vermuteria-barra.jpg",
-    "/images/services/la-rosa-vermuteria-gildas.jpg",
-  ],
+  gallery: ["/images/services/la-rosa-vermuteria-barra.jpg", "/images/services/la-rosa-vermuteria-gildas.jpg"],
   schedule: "Lunes a Domingo: 12:00 - 00:00",
   confidenceScore: 99,
   verificationStatus: "verified",

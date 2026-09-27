@@ -104,11 +104,9 @@ export async function checkRateLimit(
 
           // Actualizar conteo manteniendo el TTL original
           const ttlSeconds = Math.max(60, Math.ceil((existingData.resetAt - now) / 1000));
-          await kvBinding.put(
-            storageKey,
-            JSON.stringify({ count: newCount, resetAt: existingData.resetAt }),
-            { expirationTtl: ttlSeconds },
-          );
+          await kvBinding.put(storageKey, JSON.stringify({ count: newCount, resetAt: existingData.resetAt }), {
+            expirationTtl: ttlSeconds,
+          });
 
           return {
             allowed,
@@ -123,11 +121,7 @@ export async function checkRateLimit(
       // Nueva ventana en KV
       const resetAt = now + windowMs;
       const ttlSeconds = Math.max(60, Math.ceil(windowMs / 1000));
-      await kvBinding.put(
-        storageKey,
-        JSON.stringify({ count: 1, resetAt }),
-        { expirationTtl: ttlSeconds },
-      );
+      await kvBinding.put(storageKey, JSON.stringify({ count: 1, resetAt }), { expirationTtl: ttlSeconds });
 
       return {
         allowed: true,

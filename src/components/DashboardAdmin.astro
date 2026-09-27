@@ -122,9 +122,9 @@ const withNewsCount = SERVICES.filter(
     <!-- Moderation Queues -->
     <div class="moderation-sections-grid">
       <!-- Etiquetas i18n para el script de verificación oficial (Overlay · GR-04) -->
-    <script type="application/json" id="admin-overlay-i18n" is:inline set:html={JSON.stringify(adminOverlayLabels)} />
+      <script type="application/json" id="admin-overlay-i18n" is:inline set:html={JSON.stringify(adminOverlayLabels)} />
 
-    <!-- 1. CLAIMS -->
+      <!-- 1. CLAIMS -->
       <article class="card card-glass moderation-card">
         <div class="card-title-row">
           <h3>
@@ -1325,12 +1325,14 @@ const withNewsCount = SERVICES.filter(
             const id = btn.getAttribute("data-id")!;
             const uid = btn.getAttribute("data-uid")!;
             const serviceId = btn.getAttribute("data-service-id") || "";
+            const serviceSlug = SERVICES.find((s) => s.id === serviceId || s.slug === serviceId)?.slug;
             btn.setAttribute("disabled", "true");
             btn.textContent = "⏳ Verificando y asignando mando...";
             try {
               await updateClaimStatus(db, id, "approved", {
                 applicantUid: uid,
                 serviceId,
+                serviceSlug,
                 reviewerUid: authStore.getState().user?.uid ?? "",
               });
               loadAdminData();

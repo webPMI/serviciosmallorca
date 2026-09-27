@@ -9,9 +9,36 @@ import {
   isPaymentsLiveMode,
   type PaymentAttemptPayload,
 } from "../../lib/paymentSecurityEngine";
-import { getDefaultHonorSpots } from "../../lib/honorBoardEngine";
+import { type HonorCategory } from "../../lib/honorBoardEngine";
+import { loadCategorySpots, recordHonorBid } from "../../lib/honorBoardStore";
+import { getD1Binding } from "../../lib/d1Logger";
 import { checkRateLimit, createRateLimitResponse } from "../../lib/rateLimiter";
 import { logToD1 } from "../../lib/d1Logger";
+
+const HONOR_CATEGORIES: HonorCategory[] = [
+  "elite-general",
+  "maestros-instalaciones",
+  "artesanos-sabor",
+  "excelencia-nautica",
+  "bienestar-salud",
+  "emprendimientos-emergentes",
+];
+
+/** Resuelve la categoría de honor solicitada, con fallback seguro. */
+function resolveHonorCategory(raw: unknown): HonorCategory {
+  const value = String(raw || "").trim();
+  return HONOR_CATEGORIES.includes(value as HonorCategory) ? (value as HonorCategory) : "elite-general";
+}
+
+/** Títulos_ES de cada gremio, reutilizados en la metadata de Stripe para las alertas de desplazamiento. */
+const HONOR_CATEGORY_TITLES: Record<HonorCategory, string> = {
+  "elite-general": "Élite Balear: Referentes de Confianza",
+  "maestros-instalaciones": "Maestros del Gremio & Instalaciones",
+  "artesanos-sabor": "Artesanos del Sabor & Producto Local",
+  "excelencia-nautica": "Excelencia Náutica & Chárter",
+  "bienestar-salud": "Santuarios de Bienestar & Salud",
+  "emprendimientos-emergentes": "Emprendimientos Emergentes de Mallorca",
+};
 
 export const prerender = false;
 
@@ -124,9 +151,12 @@ export const POST: APIRoute = async ({ request, locals }) => {
       b2bAddress: b2bAddress ? String(b2bAddress) : undefined,
     };
 
-    // 6. Validar seguridad e idempotencia (Anti-tampering, Anti-XSS, Anti-Collision)
-    const defaultSpots = getDefaultHonorSpots();
-    const currentSpots = Object.values(defaultSpots).flat();
+    // 6. Validar seguridad e idempotencia (Anti-tampering, Anti-XSS, Anti-Colisión)
+    // El podio se lee de Cloudflare D1: validar contra un catálogo vacío dejaría inerte
+    // la regla +1€ y permitiría pujar 1€ sobre un récord real de cualquier importe.
+    const d1 = getD1Binding(locals);
+    const honorCategory = resolveHonorCategory(body.category || body.catId);
+    const currentSpots = await loadCategorySpots(d1, honorCategory);
     const validation = validatePaymentRequest(payload, currentSpots);
 
     if (!validation.allowed) {
@@ -211,6 +241,18 @@ export const POST: APIRoute = async ({ request, locals }) => {
       stripeParams.append("metadata[invoiceId]", invoiceId);
       stripeParams.append("metadata[mode]", mode);
       stripeParams.append("metadata[amount]", String(safeAmount));
+      // Contexto del Cuadro de Honor imprescindible para que el webhook aplique la puja real.
+      stripeParams.append("metadata[category]", honorCategory);
+      stripeParams.append("metadata[sponsorName]", String(sanitized.backerName || "Vecino de Mallorca").slice(0, 80));
+      stripeParams.append("metadata[sponsorMessage]", String(sanitized.backerMessage || "").slice(0, 140));
+      stripeParams.append("metadata[locale]", safeLocale);
+      // Líder desplazado: permite que el webhook notifique sin recalcular desde cero.
+      const currentLeader = currentSpots.length > 0 ? currentSpots[0] : null;
+      if (currentLeader) {
+        stripeParams.append("metadata[displacedServiceId]", currentLeader.serviceId);
+        stripeParams.append("metadata[displacedServiceName]", currentLeader.serviceName);
+        stripeParams.append("metadata[categoryTitle]", HONOR_CATEGORY_TITLES[honorCategory]);
+      }
       if (sanitized.b2bTaxId) {
         stripeParams.append("metadata[b2bTaxId]", sanitized.b2bTaxId);
       }
@@ -264,6 +306,20 @@ export const POST: APIRoute = async ({ request, locals }) => {
     }
 
     // Modo Sandbox / Demostración transparente, seguro e instantáneo
+    // GR-11: la puja queda AUDITADA como `sandbox_recorded` pero NO altera el podio
+    // público, porque no existe cobro real. Solo el webhook de Stripe confirma posiciones.
+    await recordHonorBid(d1, {
+      idempotencyKey: activeIdempotencyKey,
+      category: honorCategory,
+      serviceId: service.id,
+      mode: String(mode),
+      amountEuros: safeAmount,
+      sponsorName: sanitized.backerName,
+      sponsorMessage: sanitized.backerMessage,
+      invoiceId,
+      status: "sandbox_recorded",
+    });
+
     return new Response(
       JSON.stringify({
         success: true,
@@ -274,6 +330,7 @@ export const POST: APIRoute = async ({ request, locals }) => {
         tax,
         serviceName: service.name,
         serviceSlug: service.slug,
+        honorCategory,
         backerName: sanitized.backerName || "Vecino de Mallorca",
         backerEmail: sanitized.backerEmail || payload.backerEmail,
         backerMessage: sanitized.backerMessage,

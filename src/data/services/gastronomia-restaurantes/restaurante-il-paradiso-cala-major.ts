@@ -148,7 +148,8 @@ export const restauranteIlParadisoCalaMajor: ServiceItem = {
       id: "rev-il-paradiso-1",
       authorName: "Alessandro Conti",
       rating: 5,
-      comment: "Vistas insuperables y una comida exquisita. Los ravioli de trufa y el pescado fresco son de diez. El servicio es sumamente atento y profesional.",
+      comment:
+        "Vistas insuperables y una comida exquisita. Los ravioli de trufa y el pescado fresco son de diez. El servicio es sumamente atento y profesional.",
       date: "2026-08-14",
       platform: "google_maps",
       language: "es",
@@ -157,7 +158,8 @@ export const restauranteIlParadisoCalaMajor: ServiceItem = {
       id: "rev-il-paradiso-2",
       authorName: "Markus Weber",
       rating: 5,
-      comment: "Traumhafter Ausblick über die Bucht von Palma und absolut köstliche italienische Küche. Perfekt für einen romantischen Abend!",
+      comment:
+        "Traumhafter Ausblick über die Bucht von Palma und absolut köstliche italienische Küche. Perfekt für einen romantischen Abend!",
       date: "2026-07-30",
       platform: "google_maps",
       language: "de",
@@ -178,34 +180,34 @@ export const restauranteIlParadisoCalaMajor: ServiceItem = {
     },
   },
   faqs: [
-      {
-          question: {
-              es: "¿Cómo contactar o reservar en Restaurante Il Paradiso (Cala Major - Palma)?",
-              en: "How to contact or book with Restaurante Il Paradiso (Cala Major - Palma)?",
-              ca: "Com contactar o reservar a Restaurante Il Paradiso (Cala Major - Palma)?",
-              de: "Wie kann man Restaurante Il Paradiso (Cala Major - Palma) kontaktieren oder buchen?"
-          },
-          answer: {
-              es: "Puede contactar directamente por teléfono, WhatsApp o a través de su página web oficial para solicitar información, citas o presupuestos sin compromiso.",
-              en: "You can reach out directly via telephone, WhatsApp, or through their official website to request information, appointments, or quotes.",
-              ca: "Pots contactar directament per telèfon, WhatsApp o mitjançant la seva web oficial per demanar informació o cites.",
-              de: "Sie können direkt per Telefon, WhatsApp oder über die offizielle Website Kontakt aufnehmen, um Angebote oder Termine anzufragen."
-          }
+    {
+      question: {
+        es: "¿Cómo contactar o reservar en Restaurante Il Paradiso (Cala Major - Palma)?",
+        en: "How to contact or book with Restaurante Il Paradiso (Cala Major - Palma)?",
+        ca: "Com contactar o reservar a Restaurante Il Paradiso (Cala Major - Palma)?",
+        de: "Wie kann man Restaurante Il Paradiso (Cala Major - Palma) kontaktieren oder buchen?",
       },
-      {
-          question: {
-              es: "¿En qué idiomas atienden al cliente?",
-              en: "What languages are spoken for customer assistance?",
-              ca: "En quins idiomes ofereixen atenció al client?",
-              de: "In welchen Sprachen wird der Kundenservice angeboten?"
-          },
-          answer: {
-              es: "El equipo ofrece atención multilingüe en español, inglés, alemán y catalán para atender a residentes y clientes internacionales.",
-              en: "The team provides multilingual assistance in Spanish, English, German, and Catalan for international clients and local residents.",
-              ca: "L'equip ofereix atenció multilingüe en català, castellà, anglès i alemany.",
-              de: "Das Team bietet mehrsprachigen Service auf Deutsch, Englisch, Spanisch und Katalanisch für internationale Kunden."
-          }
-      }
+      answer: {
+        es: "Puede contactar directamente por teléfono, WhatsApp o a través de su página web oficial para solicitar información, citas o presupuestos sin compromiso.",
+        en: "You can reach out directly via telephone, WhatsApp, or through their official website to request information, appointments, or quotes.",
+        ca: "Pots contactar directament per telèfon, WhatsApp o mitjançant la seva web oficial per demanar informació o cites.",
+        de: "Sie können direkt per Telefon, WhatsApp oder über die offizielle Website Kontakt aufnehmen, um Angebote oder Termine anzufragen.",
+      },
+    },
+    {
+      question: {
+        es: "¿En qué idiomas atienden al cliente?",
+        en: "What languages are spoken for customer assistance?",
+        ca: "En quins idiomes ofereixen atenció al client?",
+        de: "In welchen Sprachen wird der Kundenservice angeboten?",
+      },
+      answer: {
+        es: "El equipo ofrece atención multilingüe en español, inglés, alemán y catalán para atender a residentes y clientes internacionales.",
+        en: "The team provides multilingual assistance in Spanish, English, German, and Catalan for international clients and local residents.",
+        ca: "L'equip ofereix atenció multilingüe en català, castellà, anglès i alemany.",
+        de: "Das Team bietet mehrsprachigen Service auf Deutsch, Englisch, Spanisch und Katalanisch für internationale Kunden.",
+      },
+    },
   ],
   image: "/images/services/restaurante-il-paradiso-cala-major.jpg",
   gallery: [

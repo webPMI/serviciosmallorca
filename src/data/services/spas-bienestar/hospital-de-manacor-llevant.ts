@@ -155,7 +155,8 @@ export const hospitalDeManacorLlevant: ServiceItem = {
       id: "rev-hospital-manacor-2",
       authorName: "Monika Weber",
       rating: 5,
-      comment: "Wurde in der Notaufnahme schnell und hervorragend betreut. Die Ärztin sprach sehr gut Deutsch und Englisch.",
+      comment:
+        "Wurde in der Notaufnahme schnell und hervorragend betreut. Die Ärztin sprach sehr gut Deutsch und Englisch.",
       date: "2026-07-25",
       platform: "google_maps",
       language: "de",

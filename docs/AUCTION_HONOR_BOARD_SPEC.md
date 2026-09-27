@@ -1,9 +1,55 @@
 # 👑 Especificación Técnica: Sistema de Subasta Dinámica Incremental (+1€) y Cuadro de Honor
 
 **Documento Oficial de Arquitectura y Mecánica Económica**  
-_Plataforma Servicios Mallorca · Versión 2.0_
+_Plataforma Servicios Mallorca · Versión 2.1_
 
 ---
+
+## 🛠️ 0. Estado de Implementación (actualizado 2026-09-27)
+
+La mecánica de subasta y el motor (`honorBoardEngine.ts`) estaban completos y testeados, pero
+**el sistema no funcionaba de extremo a extremo** porque faltaban cuatro piezas de persistencia.
+Todas han sido cerradas:
+
+| Capa | Antes | Ahora |
+| :--- | :--- | :--- |
+| **Persistencia** | `getDefaultHonorSpots()` devolvía 6 listas `[]` hardcodeadas → el tablero siempre vacío | `src/lib/honorBoardStore.ts` persiste en Cloudflare D1 (`honor_spots` + `honor_bids`) |
+| **Aplicación de la puja** | El webhook solo escribía en el ledger; ninguna entrada llegaba al tablero | `webhooks/stripe.ts` llama a `applyConfirmedBid()` y reescribe el podio |
+| **Validación `+1€`** | Se validaba contra el catálogo vacío → la regla era inerte | `create-checkout-session.ts` valida contra el podio real leído de D1 |
+| **Idempotencia** | Solo ledger en memoria (se pierde entre isolates de Workers) | `isBidAlreadyProcessed()` consulta D1 (barrera durable anti-replay) |
+
+### Flujo de datos actual
+
+```
+Modal → POST /api/create-checkout-session
+          ├─ valida contra honor_spots (récord real)
+          ├─ sandbox  → honor_bids.status = 'sandbox_recorded'  (NO toca el podio · GR-11)
+          └─ live     → Stripe Checkout + metadata[category|sponsorName|mode]
+
+Stripe → POST /api/webhooks/stripe (checkout.session.completed)
+          └─ applyConfirmedBid()
+               ├─ isBidAlreadyProcessed()      → idempotencia durable
+               ├─ processHonorBid / processCommunityBoost
+               ├─ replaceCategorySpots()       → db.batch() atómico (INV-05)
+               └─ recordHonorBid(status)       → 'confirmed' o 'rejected' (INV-08)
+
+GET /cuadro-de-honor (SSR) → loadAllHonorSpots() → Podio real renderizado
+```
+
+> **Nota GR-11:** el modo sandbox (`PUBLIC_PAYMENTS_LIVE=false`) audita la intención de pago pero
+> **nunca altera el podio público**, porque no existe cobro real. Solo el webhook confirma posiciones.
+
+### Despliegue
+
+1. `wrangler.json` ya declara el binding `DB` en `d1_databases`. **Sustituir `PLACEHOLDER_DB_ID`**
+   por el `database_id` real (`npx wrangler d1 create servicios-mallorca-logs`).
+2. `migrations/0001_init.sql` contiene el esquema completo (telemetría + Cuadro de Honor).
+   Aplicar con `npx wrangler d1 execute servicios-mallorca-logs --file=migrations/0001_init.sql`.
+3. `HONOR_SCHEMA_SQL` en `honorBoardStore.ts` ejecuta el mismo esquema de forma perezosa y
+   tolerante a fallos: si D1 no está disponible, el sistema degrada a listas vacías.
+
+---
+
 
 ## 🎯 1. Concepto y Visión General
 

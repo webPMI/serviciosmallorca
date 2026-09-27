@@ -5,12 +5,30 @@ import {
   isPaymentAlreadyProcessed,
 } from "../../../lib/paymentSecurityEngine";
 import { createDisplacementAlert } from "../../../lib/displacementNotificationEngine";
-import { logToD1 } from "../../../lib/d1Logger";
+import { applyConfirmedBid } from "../../../lib/honorBoardStore";
+import { getServiceById } from "../../../data/services";
+import { getD1Binding, logToD1 } from "../../../lib/d1Logger";
+import type { HonorCategory } from "../../../lib/honorBoardEngine";
+
+const HONOR_CATEGORIES: HonorCategory[] = [
+  "elite-general",
+  "maestros-instalaciones",
+  "artesanos-sabor",
+  "excelencia-nautica",
+  "bienestar-salud",
+  "emprendimientos-emergentes",
+];
+
+/** Resuelve la categoría de honor llegando desde la metadata de Stripe. */
+function resolveCategory(raw: unknown): HonorCategory {
+  const value = String(raw || "").trim();
+  return HONOR_CATEGORIES.includes(value as HonorCategory) ? (value as HonorCategory) : "elite-general";
+}
 
 export const prerender = false;
 
 export const POST: APIRoute = async ({ request, locals }) => {
-  const d1Binding = (locals as any)?.runtime?.env?.DB;
+  const d1Binding = getD1Binding(locals);
 
   try {
     const signatureHeader = request.headers.get("stripe-signature");
@@ -67,6 +85,7 @@ export const POST: APIRoute = async ({ request, locals }) => {
       case "checkout.session.completed": {
         const idempotencyKey = session.client_reference_id || `stripe_${session.id}`;
         const serviceId = session.metadata?.serviceId || "unknown";
+        const serviceSlug = session.metadata?.serviceSlug || "";
         const invoiceId = session.metadata?.invoiceId || `INV-HONOR-${Date.now().toString(36).toUpperCase()}`;
         const amountEuros = session.amount_total ? session.amount_total / 100 : Number(session.metadata?.amount || 0);
 
@@ -96,6 +115,55 @@ export const POST: APIRoute = async ({ request, locals }) => {
             customerEmail: session.customer_email || session.customer_details?.email,
           },
         }).catch(() => {});
+
+        // ── Aplicar la puja REAL al Cuadro de Honor persistido en D1 ──────────────
+        // Sin este paso el podio quedaba congelado para siempre: el pago se
+        // registraba en el ledger, pero ninguna entrada llegaba a `honor_spots`.
+        const category = resolveCategory(session.metadata?.category);
+        const service = getServiceById(serviceSlug || serviceId);
+        const bidMode = session.metadata?.mode === "community_boost" ? "community_boost" : "owner_bid";
+        const sponsorName = session.metadata?.sponsorName || "Vecino de Mallorca";
+        const sponsorMessage = session.metadata?.sponsorMessage || undefined;
+
+        if (!service) {
+          await logToD1(d1Binding, {
+            level: "ERROR",
+            category: "PAYMENT",
+            message: `Pago confirmado para un servicio inexistente en el catálogo: ${serviceSlug || serviceId}`,
+            status: 200,
+            metadata: { serviceId, serviceSlug, invoiceId, idempotencyKey },
+          }).catch(() => {});
+        } else {
+          const applied = await applyConfirmedBid(d1Binding, {
+            category,
+            service,
+            mode: bidMode,
+            amountEuros,
+            sponsorName,
+            sponsorMessage,
+            idempotencyKey,
+            invoiceId,
+          });
+
+          if (!applied.applied) {
+            // GR-15 + GR-11: un rechazo del motor debe quedar trazado, nunca silencioso.
+            await logToD1(d1Binding, {
+              level: "WARN",
+              category: "PAYMENT",
+              message: `Pago confirmado que NO alteró el Cuadro de Honor (${serviceId}, ${amountEuros}€): ${applied.error}`,
+              status: 200,
+              metadata: {
+                serviceId,
+                category,
+                mode: bidMode,
+                amount: amountEuros,
+                invoiceId,
+                idempotencyKey,
+                alreadyProcessed: Boolean(applied.alreadyProcessed),
+              },
+            }).catch(() => {});
+          }
+        }
 
         // Desplazamiento en Cuadro de Honor si aplica
         if (session.metadata?.displacedServiceId && session.metadata?.displacedServiceName) {

@@ -145,7 +145,8 @@ export const hospitalSantJoanDeDeuPalma: ServiceItem = {
       id: "rev-sjd-palma-1",
       authorName: "Francesc Morey",
       rating: 5,
-      comment: "Després del meu ictus, la rehabilitació a Sant Joan de Déu em va canviar la vida. Els fisioterapeutes i terapeutes ocupacionals són extraordinaris.",
+      comment:
+        "Després del meu ictus, la rehabilitació a Sant Joan de Déu em va canviar la vida. Els fisioterapeutes i terapeutes ocupacionals són extraordinaris.",
       date: "2026-08-08",
       platform: "google_maps",
       language: "ca",
@@ -154,7 +155,8 @@ export const hospitalSantJoanDeDeuPalma: ServiceItem = {
       id: "rev-sjd-palma-2",
       authorName: "Heike Zimmermann",
       rating: 5,
-      comment: "Wunderbare Reha-Klinik direkt am Meer! Erstklassige Physiotherapeuten und modernste Therapiegeräte. Absolut empfehlenswert.",
+      comment:
+        "Wunderbare Reha-Klinik direkt am Meer! Erstklassige Physiotherapeuten und modernste Therapiegeräte. Absolut empfehlenswert.",
       date: "2026-07-26",
       platform: "google_maps",
       language: "de",

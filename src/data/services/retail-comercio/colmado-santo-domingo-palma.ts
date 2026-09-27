@@ -145,7 +145,8 @@ export const colmadoSantoDomingoPalma: ServiceItem = {
       id: "rev-colmado-santo-domingo-1",
       authorName: "Bernat Oliver",
       rating: 5,
-      comment: "La millor sobrassada de porc negre de Palma sense cap dubte. L'atenció d'en Pedro és excel·lent i t'ho envasen al buit al moment.",
+      comment:
+        "La millor sobrassada de porc negre de Palma sense cap dubte. L'atenció d'en Pedro és excel·lent i t'ho envasen al buit al moment.",
       date: "2026-08-11",
       platform: "google_maps",
       language: "ca",
@@ -154,7 +155,8 @@ export const colmadoSantoDomingoPalma: ServiceItem = {
       id: "rev-colmado-santo-domingo-2",
       authorName: "Anke Schulze",
       rating: 5,
-      comment: "Wunderbarer historischer Laden! Die Beratung war fantastisch und die Sobrasada vom schwarzen Schwein schmeckt unvergleichlich gut. Ein Muss in Palma!",
+      comment:
+        "Wunderbarer historischer Laden! Die Beratung war fantastisch und die Sobrasada vom schwarzen Schwein schmeckt unvergleichlich gut. Ein Muss in Palma!",
       date: "2026-07-27",
       platform: "google_maps",
       language: "de",

@@ -34,9 +34,7 @@ const summary = regulation.summary[locale] || regulation.summary.es;
 const benefits = regulation.benefitsSummary[locale] || regulation.benefitsSummary.es;
 
 // Resolver guías ciudadanas vinculadas
-const relatedGuides = (regulation.relatedGuideSlugs || [])
-  .map((gSlug) => getGuideBySlug(gSlug))
-  .filter(Boolean);
+const relatedGuides = (regulation.relatedGuideSlugs || []).map((gSlug) => getGuideBySlug(gSlug)).filter(Boolean);
 
 const labels: Record<
   Locale,
@@ -176,12 +174,7 @@ const schemaData = {
           <time datetime={regulation.effectiveDate} class="meta-val">{regulation.effectiveDate}</time>
         </div>
         <div class="meta-item cta-item">
-          <a
-            href={regulation.officialSourceUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="boib-portal-btn"
-          >
+          <a href={regulation.officialSourceUrl} target="_blank" rel="noopener noreferrer" class="boib-portal-btn">
             {t.officialSourceBtn}
           </a>
         </div>
@@ -201,38 +194,44 @@ const schemaData = {
         </section>
 
         <!-- Calculadora Interactiva Integrada si aplica -->
-        {regulation.calculatorType === "itp_joven" && (
-          <section class="calculator-embed-section" aria-label="Calculadora ITP Integrada">
-            <ItpTaxCalculator lang={locale} />
-          </section>
-        )}
+        {
+          regulation.calculatorType === "itp_joven" && (
+            <section class="calculator-embed-section" aria-label="Calculadora ITP Integrada">
+              <ItpTaxCalculator lang={locale} />
+            </section>
+          )
+        }
 
         <!-- Key Points Breakdown -->
         <section class="key-points-section" aria-label={t.keyPointsTitle}>
           <h2 class="section-title">{t.keyPointsTitle}</h2>
           <div class="points-grid">
-            {regulation.keyPoints.map((point, index) => {
-              const pTitle = point.title[locale] || point.title.es;
-              const pDesc = point.description[locale] || point.description.es;
-              return (
-                <div class="point-card">
-                  <div class="point-num">{index + 1}</div>
-                  <div class="point-content">
-                    <h3 class="point-title">{pTitle}</h3>
-                    <p class="point-desc">{pDesc}</p>
+            {
+              regulation.keyPoints.map((point, index) => {
+                const pTitle = point.title[locale] || point.title.es;
+                const pDesc = point.description[locale] || point.description.es;
+                return (
+                  <div class="point-card">
+                    <div class="point-num">{index + 1}</div>
+                    <div class="point-content">
+                      <h3 class="point-title">{pTitle}</h3>
+                      <p class="point-desc">{pDesc}</p>
+                    </div>
                   </div>
-                </div>
-              );
-            })}
+                );
+              })
+            }
           </div>
         </section>
 
         <!-- Estadísticas oficiales vinculadas si existen -->
-        {regulation.relatedStatIds && regulation.relatedStatIds.length > 0 && (
-          <section class="stats-section">
-            <GuideStatBanner statIds={regulation.relatedStatIds} lang={locale} />
-          </section>
-        )}
+        {
+          regulation.relatedStatIds && regulation.relatedStatIds.length > 0 && (
+            <section class="stats-section">
+              <GuideStatBanner statIds={regulation.relatedStatIds} lang={locale} />
+            </section>
+          )
+        }
 
         <!-- Enlace de regreso -->
         <div class="back-link-wrapper">
@@ -252,35 +251,32 @@ const schemaData = {
             Este contenido analiza exclusivamente las disposiciones oficiales publicadas en el BOIB. Para la tramitación
             administrativa, utiliza los formularios oficiales de la sede electrónica correspondiente.
           </p>
-          <a
-            href={regulation.officialSourceUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="side-btn"
-          >
+          <a href={regulation.officialSourceUrl} target="_blank" rel="noopener noreferrer" class="side-btn">
             Abrir BOIB Oficial ↗
           </a>
         </div>
 
         <!-- Related Citizen Guides -->
-        {relatedGuides.length > 0 && (
-          <div class="side-card side-guides-card">
-            <h3 class="side-card-title">{t.relatedGuidesTitle}</h3>
-            <div class="guides-mini-list">
-              {relatedGuides.map((g) => {
-                if (!g) return null;
-                const gTitle = g.title[locale] || g.title.es;
-                const gUrl = `${prefix}guias/${g.slug}`;
-                return (
-                  <a href={gUrl} class="mini-guide-item">
-                    <span class="mini-guide-icon">{g.icon}</span>
-                    <span class="mini-guide-text">{gTitle}</span>
-                  </a>
-                );
-              })}
+        {
+          relatedGuides.length > 0 && (
+            <div class="side-card side-guides-card">
+              <h3 class="side-card-title">{t.relatedGuidesTitle}</h3>
+              <div class="guides-mini-list">
+                {relatedGuides.map((g) => {
+                  if (!g) return null;
+                  const gTitle = g.title[locale] || g.title.es;
+                  const gUrl = `${prefix}guias/${g.slug}`;
+                  return (
+                    <a href={gUrl} class="mini-guide-item">
+                      <span class="mini-guide-icon">{g.icon}</span>
+                      <span class="mini-guide-text">{gTitle}</span>
+                    </a>
+                  );
+                })}
+              </div>
             </div>
-          </div>
-        )}
+          )
+        }
       </aside>
     </div>
   </main>
@@ -288,7 +284,7 @@ const schemaData = {
   <Footer lang={locale} translations={translations} />
 
   <!-- Schema.org JSON-LD -->
-  <script type="application/ld+json" set:html={JSON.stringify(schemaData)}></script>
+  <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
 </BaseLayout>
 
 <style>

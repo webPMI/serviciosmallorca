@@ -145,7 +145,8 @@ export const rafaNadalAcademyManacor: ServiceItem = {
       id: "rev-rafa-nadal-academy-1",
       authorName: "Marc Valls",
       rating: 5,
-      comment: "Instalaciones espectaculares de primer nivel mundial. El museo es imprescindible y el ambiente deportivo que se respira en toda la academia es único.",
+      comment:
+        "Instalaciones espectaculares de primer nivel mundial. El museo es imprescindible y el ambiente deportivo que se respira en toda la academia es único.",
       date: "2026-08-19",
       platform: "google_maps",
       language: "es",
@@ -154,7 +155,8 @@ export const rafaNadalAcademyManacor: ServiceItem = {
       id: "rev-rafa-nadal-academy-2",
       authorName: "David Miller",
       rating: 5,
-      comment: "World-class facilities, fantastic coaching staff, and exceptional atmosphere. The adult camp exceeded all expectations!",
+      comment:
+        "World-class facilities, fantastic coaching staff, and exceptional atmosphere. The adult camp exceeded all expectations!",
       date: "2026-07-28",
       platform: "google_maps",
       language: "en",

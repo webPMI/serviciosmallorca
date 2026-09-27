@@ -146,7 +146,8 @@ export const hospitalComarcalIncaRaiguer: ServiceItem = {
       id: "rev-hospital-inca-1",
       authorName: "Margalida Campins",
       rating: 5,
-      comment: "Molt agraïda a tot el personal d'urgències i planta. Tracte humà excel·lent, proximitat i gran professionalitat.",
+      comment:
+        "Molt agraïda a tot el personal d'urgències i planta. Tracte humà excel·lent, proximitat i gran professionalitat.",
       date: "2026-08-10",
       platform: "google_maps",
       language: "ca",
@@ -155,7 +156,8 @@ export const hospitalComarcalIncaRaiguer: ServiceItem = {
       id: "rev-hospital-inca-2",
       authorName: "Stefan Meyer",
       rating: 5,
-      comment: "Wurde nach einem Fahrradsturz in der Tramuntana hier behandelt. Schnelles Röntgen, kompetente Wundversorgung und sehr freundliche Ärzte!",
+      comment:
+        "Wurde nach einem Fahrradsturz in der Tramuntana hier behandelt. Schnelles Röntgen, kompetente Wundversorgung und sehr freundliche Ärzte!",
       date: "2026-07-16",
       platform: "google_maps",
       language: "de",

@@ -382,16 +382,20 @@ const schemaOrg = {
     <CitizenChecklist guideId={guide.id} documents={guide.documents} lang={locale} />
 
     <!-- Calculadoras Interactivas Oficiales Integradas si aplica -->
-    {guide.calculatorType === "residente_75" && (
-      <section class="guide-calculator-section" aria-label="Calculadora de Ahorro Residente">
-        <ResidentDiscountCalculator lang={locale} />
-      </section>
-    )}
-    {guide.calculatorType === "itp_joven" && (
-      <section class="guide-calculator-section" aria-label="Calculadora ITP Balear">
-        <ItpTaxCalculator lang={locale} />
-      </section>
-    )}
+    {
+      guide.calculatorType === "residente_75" && (
+        <section class="guide-calculator-section" aria-label="Calculadora de Ahorro Residente">
+          <ResidentDiscountCalculator lang={locale} />
+        </section>
+      )
+    }
+    {
+      guide.calculatorType === "itp_joven" && (
+        <section class="guide-calculator-section" aria-label="Calculadora ITP Balear">
+          <ItpTaxCalculator lang={locale} />
+        </section>
+      )
+    }
 
     <!-- Paso a Paso Secuencial -->
     <section class="guide-steps-section" aria-label={l.stepsTitle}>
@@ -536,9 +540,11 @@ const schemaOrg = {
     </section>
 
     <!-- Indicadores Estadísticos Oficiales Vinculados -->
-    {guide.relatedStatIds && guide.relatedStatIds.length > 0 && (
-      <GuideStatBanner statIds={guide.relatedStatIds} lang={locale} />
-    )}
+    {
+      guide.relatedStatIds && guide.relatedStatIds.length > 0 && (
+        <GuideStatBanner statIds={guide.relatedStatIds} lang={locale} />
+      )
+    }
 
     <!-- Conexión Cruzada con el Directorio Local de Servicios Mallorca -->
     <section class="guide-directory-bridge" aria-labelledby="directory-bridge-title">
@@ -553,18 +559,20 @@ const schemaOrg = {
         <p class="bridge-body">{assistanceBody}</p>
       </header>
 
-      {recommendedServices.length > 0 && (
-        <div class="bridge-services-grid">
-          {recommendedServices.map((service) => (
-            <ServiceCard
-              service={service}
-              currentLocale={locale}
-              getLangPrefix={getLangPrefix}
-              translations={translations}
-            />
-          ))}
-        </div>
-      )}
+      {
+        recommendedServices.length > 0 && (
+          <div class="bridge-services-grid">
+            {recommendedServices.map((service) => (
+              <ServiceCard
+                service={service}
+                currentLocale={locale}
+                getLangPrefix={getLangPrefix}
+                translations={translations}
+              />
+            ))}
+          </div>
+        )
+      }
 
       <footer class="bridge-footer">
         <a href={categoryExploreUrl} class="bridge-btn">
@@ -573,8 +581,7 @@ const schemaOrg = {
             <path
               fill-rule="evenodd"
               d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z"
-              clip-rule="evenodd"
-            />
+              clip-rule="evenodd"></path>
           </svg>
         </a>
       </footer>
@@ -1161,7 +1168,9 @@ const schemaOrg = {
     padding: 0.75rem 1.4rem;
     border-radius: var(--radius-md, 8px);
     text-decoration: none;
-    transition: background 0.2s ease, transform 0.15s ease;
+    transition:
+      background 0.2s ease,
+      transform 0.15s ease;
   }
 
   .bridge-btn:hover {

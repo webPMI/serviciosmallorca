@@ -273,12 +273,12 @@ Antes de hacer `git commit`, verificar cada ítem:
 
 | Recurso                                                                                                                                     | Propósito                             |
 | ------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------- |
-| [`src/data/services/types.ts`](file:///c:/Users/ink.enzo/Desktop/p/servicios-mallorca/src/data/services/types.ts)                           | Esquema oficial `ServiceItem`         |
-| [`src/data/tags.ts`](file:///c:/Users/ink.enzo/Desktop/p/servicios-mallorca/src/data/tags.ts)                                               | Catálogo cerrado de tags permitidos   |
-| [`src/data/zones.ts`](file:///c:/Users/ink.enzo/Desktop/p/servicios-mallorca/src/data/zones.ts)                                             | Zonas geográficas válidas             |
-| [`src/lib/verificationPipeline.ts`](file:///c:/Users/ink.enzo/Desktop/p/servicios-mallorca/src/lib/verificationPipeline.ts)                 | Hub de Verificación centralizado      |
-| [`scripts/business-intelligence-lookup.ts`](file:///c:/Users/ink.enzo/Desktop/p/servicios-mallorca/scripts/business-intelligence-lookup.ts) | Herramienta de minería                |
-| [`scripts/curate-business.ts`](file:///c:/Users/ink.enzo/Desktop/p/servicios-mallorca/scripts/curate-business.ts)                           | CLI de curación (Fase 3 → módulo .ts) |
-| [`docs/GOLDEN_RULES.md`](file:///c:/Users/ink.enzo/Desktop/p/servicios-mallorca/docs/GOLDEN_RULES.md)                                       | Reglas inmutables del proyecto        |
-| [`docs/I18N.md`](file:///c:/Users/ink.enzo/Desktop/p/servicios-mallorca/docs/I18N.md)                                                       | Guía de internacionalización          |
-| [`docs/STYLING.md`](file:///c:/Users/ink.enzo/Desktop/p/servicios-mallorca/docs/STYLING.md)                                                 | Variables CSS y diseño                |
+| [`src/data/services/types.ts`](src/data/services/types.ts)                           | Esquema oficial `ServiceItem`         |
+| [`src/data/tags.ts`](src/data/tags.ts)                                               | Catálogo cerrado de tags permitidos   |
+| [`src/data/zones.ts`](src/data/zones.ts)                                             | Zonas geográficas válidas             |
+| [`src/lib/verificationPipeline.ts`](src/lib/verificationPipeline.ts)                 | Hub de Verificación centralizado      |
+| [`scripts/business-intelligence-lookup.ts`](scripts/business-intelligence-lookup.ts) | Herramienta de minería                |
+| [`scripts/curate-business.ts`](scripts/curate-business.ts)                           | CLI de curación (Fase 3 → módulo .ts) |
+| [`docs/GOLDEN_RULES.md`](/GOLDEN_RULES.md)                                       | Reglas inmutables del proyecto        |
+| [`docs/I18N.md`](/I18N.md)                                                       | Guía de internacionalización          |
+| [`docs/STYLING.md`](/STYLING.md)                                                 | Variables CSS y diseño                |

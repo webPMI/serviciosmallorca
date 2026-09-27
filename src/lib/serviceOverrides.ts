@@ -108,14 +108,18 @@ export function resolveOwnerUid(
  * Reportero de errores de la capa de overrides: nunca `catch` silencioso (GR-15).
  * Delega en el reportero deduplicado compartido (`clientTelemetry`).
  */
-function reportOverrideFailure(scope: string, slug: string, error: unknown, level: "ERROR" | "SECURITY" = "ERROR"): void {
+function reportOverrideFailure(
+  scope: string,
+  slug: string,
+  error: unknown,
+  level: "ERROR" | "SECURITY" = "ERROR",
+): void {
   reportClientFailure(`service_overrides/${scope}`, error, {
     level,
     category: "DATABASE",
     resource: slug,
   });
 }
-
 
 /**
  * Variable global configurable que controla si se permite editar y sobreescribir contenido
@@ -489,7 +493,8 @@ export function buildClaimedOverridePayload(input: {
 }): ServiceOverride {
   const claimedAt = input.claimedAt ?? new Date().toISOString();
   const verificationMethod = input.verificationMethod ?? "manual_notarial";
-  const documentUrl = input.documentUrl ?? (input.businessTaxId?.startsWith("https://") ? input.businessTaxId : undefined);
+  const documentUrl =
+    input.documentUrl ?? (input.businessTaxId?.startsWith("https://") ? input.businessTaxId : undefined);
 
   const claimEntry: DetailedAuditTrailEntry = {
     id: `${Date.now()}-claim`,

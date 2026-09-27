@@ -32,14 +32,7 @@ export const hospitalSonLlatzerPalma: ServiceItem = {
   googleMapsUrl: "https://www.google.com/maps/search/Hospital+Son+Llatzer+Palma+Mallorca",
   appleMapsUrl: "https://maps.apple.com/?q=Hospital+Son+Llatzer+Palma",
   bingMapsUrl: "https://www.bing.com/maps?q=Hospital+Son+Llatzer+Palma",
-  tags: [
-    "zona:palma",
-    "product:premium",
-    "mod:en-local",
-    "mod:walk-in",
-    "aud:familias",
-    "temps:todo-el-ano",
-  ],
+  tags: ["zona:palma", "product:premium", "mod:en-local", "mod:walk-in", "aud:familias", "temps:todo-el-ano"],
   capabilities: {
     wheelchairAccessible: true,
     onlineBooking: true,
@@ -145,7 +138,8 @@ export const hospitalSonLlatzerPalma: ServiceItem = {
       id: "rev-son-llatzer-1",
       authorName: "Antonia Barceló",
       rating: 5,
-      comment: "Vaig tenir el meu fill aquí i l'atenció a la sala de parts i planta de maternitat va ser insuperable. Molt agraïda a tot l'equip de llevadores i metges.",
+      comment:
+        "Vaig tenir el meu fill aquí i l'atenció a la sala de parts i planta de maternitat va ser insuperable. Molt agraïda a tot l'equip de llevadores i metges.",
       date: "2026-08-18",
       platform: "google_maps",
       language: "ca",

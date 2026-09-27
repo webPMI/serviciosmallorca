@@ -32,14 +32,7 @@ export const farmaciaPortoPi24hPalma: ServiceItem = {
   googleMapsUrl: "https://www.google.com/maps/search/Farmacia+Porto+Pi+24h+Avinguda+Joan+Miro+186+Palma+Mallorca",
   appleMapsUrl: "https://maps.apple.com/?q=Farmacia+Porto+Pi+Palma",
   bingMapsUrl: "https://www.bing.com/maps?q=Farmacia+Porto+Pi+Palma",
-  tags: [
-    "zona:palma",
-    "product:premium",
-    "mod:en-local",
-    "mod:walk-in",
-    "aud:familias",
-    "temps:todo-el-ano",
-  ],
+  tags: ["zona:palma", "product:premium", "mod:en-local", "mod:walk-in", "aud:familias", "temps:todo-el-ano"],
   capabilities: {
     wheelchairAccessible: true,
     onlineBooking: false,
@@ -145,7 +138,8 @@ export const farmaciaPortoPi24hPalma: ServiceItem = {
       id: "rev-farmacia-portopi-1",
       authorName: "Carlos Menéndez",
       rating: 5,
-      comment: "Muy agradecido por la atención rápida de madrugada. Nos prepararon el botiquín para el barco de forma impecable.",
+      comment:
+        "Muy agradecido por la atención rápida de madrugada. Nos prepararon el botiquín para el barco de forma impecable.",
       date: "2026-08-11",
       platform: "google_maps",
       language: "es",
@@ -154,7 +148,8 @@ export const farmaciaPortoPi24hPalma: ServiceItem = {
       id: "rev-farmacia-portopi-2",
       authorName: "James Watson",
       rating: 5,
-      comment: "Lifesaver 24h pharmacy right by the port. The staff speak perfect English and sorted our emergency prescriptions right away.",
+      comment:
+        "Lifesaver 24h pharmacy right by the port. The staff speak perfect English and sorted our emergency prescriptions right away.",
       date: "2026-07-24",
       platform: "google_maps",
       language: "en",

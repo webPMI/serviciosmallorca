@@ -145,7 +145,8 @@ export const stpShipyardPalma: ServiceItem = {
       id: "rev-stp-palma-1",
       authorName: "Capt. James Harrington",
       rating: 5,
-      comment: "Top-class facility with world-class contractors. The open yard flexibility makes winter refits seamless. Outstanding management and security.",
+      comment:
+        "Top-class facility with world-class contractors. The open yard flexibility makes winter refits seamless. Outstanding management and security.",
       date: "2026-08-18",
       platform: "google_maps",
       language: "en",
@@ -154,7 +155,8 @@ export const stpShipyardPalma: ServiceItem = {
       id: "rev-stp-palma-2",
       authorName: "Klaus Von Berg",
       rating: 5,
-      comment: "Hervorragende Werft-Infrastruktur im Hafen von Palma. Schneller Travelift-Service und direkter Zugang zu den besten Technikern der Insel.",
+      comment:
+        "Hervorragende Werft-Infrastruktur im Hafen von Palma. Schneller Travelift-Service und direkter Zugang zu den besten Technikern der Insel.",
       date: "2026-07-29",
       platform: "google_maps",
       language: "de",

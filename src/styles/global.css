@@ -1388,3 +1388,68 @@ object {
   }
 }
 
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   PAGINACIÓN DEL DIRECTORIO /servicios (SSR, 48 fichas por página)
+   Reduce el HTML de ~5,5 MB a ~300 KB por página y elimina el riesgo de
+   error 1102 (límite de CPU del Worker). Solo variables CSS (GR-01).
+   ═══════════════════════════════════════════════════════════════════════════ */
+.pagination-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  margin: var(--space-lg) 0 var(--space-xl);
+}
+
+.pagination-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.5rem;
+  min-height: 2.5rem;
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--border-radius);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-size: var(--font-size-sm, 0.9rem);
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.pagination-btn:hover {
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+}
+
+.pagination-btn.is-current {
+  background: var(--color-primary);
+  color: var(--color-white, #ffffff);
+}
+
+.pagination-btn.is-disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.pagination-gap {
+  padding: 0 var(--space-xs);
+  color: var(--color-text-muted);
+}
+
+.pagination-summary {
+  width: 100%;
+  margin-top: var(--space-sm);
+  text-align: center;
+  font-size: var(--font-size-xs, 0.8rem);
+  color: var(--color-text-muted);
+}
+
+.filter-hint {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: var(--font-size-xs, 0.75rem);
+  color: var(--color-text-muted);
+}

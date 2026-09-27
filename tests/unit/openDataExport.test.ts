@@ -38,7 +38,9 @@ describe("Exportación y Estructura Open Data (openDataExport)", () => {
     expect(csvOutput.charCodeAt(0)).toBe(0xfeff);
 
     // Debe contener las cabeceras esperadas entrecomilladas según formato RFC
-    expect(csvOutput).toContain('"id","categoria","titulo_es","valor","periodo","fuente_oficial","codigo_serie","alcance"');
+    expect(csvOutput).toContain(
+      '"id","categoria","titulo_es","valor","periodo","fuente_oficial","codigo_serie","alcance"',
+    );
 
     // Debe contener todas las 18 filas
     const lines = csvOutput.trim().split("\r\n");
