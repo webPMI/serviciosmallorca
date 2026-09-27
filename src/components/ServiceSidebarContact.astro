@@ -164,7 +164,13 @@ const { service, translations, prefix = "/es/" } = Astro.props;
           </div>
         </div>
         <div class="business-owner-actions">
-          <button type="button" id="open-claim-modal-btn" class="btn btn-sm btn-accent btn-full">
+          <button
+            type="button"
+            id="open-claim-modal-btn"
+            class="btn btn-sm btn-accent btn-full"
+            data-open-modal="claim-modal"
+            aria-haspopup="dialog"
+          >
             ⚡ Reclamar Titularidad (0€)
           </button>
           <a
@@ -179,11 +185,12 @@ const { service, translations, prefix = "/es/" } = Astro.props;
               type="button"
               id="open-report-modal-btn"
               class="optout-link-btn"
+              data-open-modal="report-modal"
               style="color: var(--color-warning, #d97706); text-decoration: none;"
             >
               🚩 {translations["services.reportError"]}
             </button>
-            <button type="button" id="open-delete-modal-btn" class="optout-link-btn">
+            <button type="button" id="open-delete-modal-btn" class="optout-link-btn" data-open-modal="delete-modal">
               {translations["services.optoutLink"]}
             </button>
           </div>

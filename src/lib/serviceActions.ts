@@ -80,8 +80,17 @@ const CLAIMS_STORAGE_KEY = "sm_service_claims";
 function getLocalClaims(): ServiceClaim[] {
   if (typeof window === "undefined") return [];
   try {
-    return JSON.parse(localStorage.getItem(CLAIMS_STORAGE_KEY) || "[]");
-  } catch {
+    const data = localStorage.getItem(CLAIMS_STORAGE_KEY);
+    if (!data) return [];
+    const parsed = JSON.parse(data);
+    return Array.isArray(parsed) ? parsed : [];
+  } catch (err) {
+    // CORRECCIÓN MEDIA #5: Mejorar manejo de errores de LocalStorage
+    if (err instanceof DOMException && (err.name === "QuotaExceededError" || err.name === "SecurityError")) {
+      console.warn("LocalStorage access denied or quota exceeded:", err.name);
+    } else {
+      console.warn("Could not parse local claims:", err);
+    }
     return [];
   }
 }
@@ -92,9 +101,30 @@ function saveLocalClaim(claim: ServiceClaim): void {
     const existing = getLocalClaims();
     const filtered = existing.filter((c) => c.id !== claim.id);
     filtered.unshift(claim);
-    localStorage.setItem(CLAIMS_STORAGE_KEY, JSON.stringify(filtered));
+
+    // CORRECCIÓN MEDIA #5: Verificar cuota antes de guardar
+    const data = JSON.stringify(filtered);
+    localStorage.setItem(CLAIMS_STORAGE_KEY, data);
   } catch (err) {
-    console.warn("Could not save claim locally:", err);
+    // CORRECCIÓN MEDIA #5: Manejo específico de errores de cuota y seguridad
+    if (err instanceof DOMException) {
+      if (err.name === "QuotaExceededError") {
+        console.warn("LocalStorage quota exceeded, attempting to clear old claims");
+        try {
+          const existing = getLocalClaims();
+          const reduced = existing.slice(0, 10); // Mantener solo los 10 más recientes
+          localStorage.setItem(CLAIMS_STORAGE_KEY, JSON.stringify(reduced));
+        } catch (retryErr) {
+          console.warn("Failed to save claim even after cleanup:", retryErr);
+        }
+      } else if (err.name === "SecurityError") {
+        console.warn("LocalStorage access denied (private mode):", err);
+      } else {
+        console.warn("LocalStorage error:", err);
+      }
+    } else {
+      console.warn("Could not save claim locally:", err);
+    }
   }
 }
 

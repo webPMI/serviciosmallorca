@@ -55,19 +55,6 @@ export function initServiceDetailClient() {
   const deleteModal = document.getElementById("delete-modal");
   const reportModal = document.getElementById("report-modal");
 
-  // Open modals via data-open-modal
-  document.querySelectorAll("[data-open-modal]").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const modalId = btn.getAttribute("data-open-modal");
-      if (modalId) {
-        const targetModal = document.getElementById(modalId);
-        if (targetModal) {
-          targetModal.style.display = "flex";
-        }
-      }
-    });
-  });
-
   // Share Service Button Fallback
   const shareBtn = document.getElementById("share-service-btn");
   const shareModal = document.getElementById("social-share-modal");
@@ -77,6 +64,7 @@ export function initServiceDetailClient() {
     });
   }
 
+  // CORRECCIÓN CRÍTICA #1: Consolidar event listeners duplicados en un solo bloque
   // Abrir modales mediante selector universal [data-open-modal]
   document.querySelectorAll("[data-open-modal]").forEach((btn) => {
     btn.addEventListener("click", () => {
@@ -127,6 +115,9 @@ export function initServiceDetailClient() {
       if (alertSuccess) alertSuccess.style.display = "none";
       if (alertError) alertError.style.display = "none";
 
+      // CORRECCIÓN MEDIA #7: Deshabilitar botón al inicio para evitar múltiples clics
+      if (submitBtn) submitBtn.disabled = true;
+
       if (!user) {
         if (alertError) {
           const currentUrl = window.location.pathname + window.location.search;
@@ -140,20 +131,42 @@ export function initServiceDetailClient() {
           alertError.innerHTML = `Debes iniciar sesión con tu cuenta para reclamar este negocio. <a href="${prefix}login?returnTo=${encodeURIComponent(currentUrl)}&intent=claim" style="color: var(--color-accent, #ffd700); text-decoration: underline; font-weight: bold; margin-left: 6px;">👉 Iniciar Sesión aquí</a>`;
           alertError.style.display = "block";
         }
+        if (submitBtn) submitBtn.disabled = false;
         return;
       }
 
-      if (submitBtn) submitBtn.disabled = true;
-
       try {
+        // CORRECCIÓN MEDIA #2: Verificar que db está inicializado
+        if (!db) {
+          throw new Error("Firebase no está inicializado correctamente");
+        }
+
         const serviceId = (document.getElementById("claim-service-id") as HTMLInputElement).value;
         const serviceName = (document.getElementById("claim-service-name") as HTMLInputElement).value;
-        const name = (document.getElementById("claim-name") as HTMLInputElement).value;
-        const email = (document.getElementById("claim-email") as HTMLInputElement).value;
-        const phone = (document.getElementById("claim-phone") as HTMLInputElement).value;
-        const cif = (document.getElementById("claim-cif") as HTMLInputElement).value;
 
-        const claimId = `claim-${serviceId}-${user.uid.slice(0, 8)}`;
+        // CORRECCIÓN CRÍTICA #6: Sanitización de inputs
+        const name = (document.getElementById("claim-name") as HTMLInputElement).value.trim();
+        const email = (document.getElementById("claim-email") as HTMLInputElement).value.trim().toLowerCase();
+        const phone = (document.getElementById("claim-phone") as HTMLInputElement).value.trim();
+        const cif = (document.getElementById("claim-cif") as HTMLInputElement).value.trim();
+
+        // Validación básica de sanitización
+        if (!name || name.length < 2) {
+          throw new Error("El nombre debe tener al menos 2 caracteres");
+        }
+        if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          throw new Error("El correo electrónico no es válido");
+        }
+        if (!phone || phone.length < 9) {
+          throw new Error("El teléfono debe tener al menos 9 caracteres");
+        }
+        if (!cif || cif.length < 3) {
+          throw new Error("El CIF/documento debe tener al menos 3 caracteres");
+        }
+
+        // CORRECCIÓN BAJA #4: Usar ID único con timestamp
+        const claimId = `claim-${serviceId}-${user.uid}-${Date.now()}`;
+
         await createServiceClaim(db, {
           id: claimId,
           serviceId,
@@ -171,8 +184,19 @@ export function initServiceDetailClient() {
           if (claimModal) claimModal.style.display = "none";
         }, 2500);
       } catch (err: any) {
+        // CORRECCIÓN MEDIA #3: Manejo específico de errores
+        let errorMessage = "Error al procesar la reclamación";
+
+        if (err.code === "firestore/permission-denied") {
+          errorMessage = "No tienes permisos para realizar esta acción";
+        } else if (err.code === "firestore/unavailable") {
+          errorMessage = "Servicio no disponible. Por favor, intenta más tarde";
+        } else if (err.message) {
+          errorMessage = err.message;
+        }
+
         if (alertError) {
-          alertError.textContent = `Error al procesar la reclamación: ${err.message || err}`;
+          alertError.textContent = errorMessage;
           alertError.style.display = "block";
         }
       } finally {
@@ -197,10 +221,25 @@ export function initServiceDetailClient() {
       if (submitBtn) submitBtn.disabled = true;
 
       try {
+        // CORRECCIÓN MEDIA #2: Verificar que db está inicializado
+        if (!db) {
+          throw new Error("Firebase no está inicializado correctamente");
+        }
+
         const serviceId = (document.getElementById("delete-service-id") as HTMLInputElement).value;
         const serviceName = (document.getElementById("delete-service-name") as HTMLInputElement).value;
-        const email = (document.getElementById("delete-email") as HTMLInputElement).value;
-        const reason = (document.getElementById("delete-reason") as HTMLTextAreaElement).value;
+
+        // CORRECCIÓN CRÍTICA #6: Sanitización de inputs
+        const email = (document.getElementById("delete-email") as HTMLInputElement).value.trim().toLowerCase();
+        const reason = (document.getElementById("delete-reason") as HTMLTextAreaElement).value.trim();
+
+        // Validación básica
+        if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          throw new Error("El correo electrónico no es válido");
+        }
+        if (!reason || reason.length < 10) {
+          throw new Error("El motivo debe tener al menos 10 caracteres");
+        }
 
         const reqId = `del-${serviceId}-${Date.now()}`;
         await createServiceDeletionRequest(db, {
@@ -218,8 +257,19 @@ export function initServiceDetailClient() {
           if (deleteModal) deleteModal.style.display = "none";
         }, 2500);
       } catch (err: any) {
+        // CORRECCIÓN MEDIA #3: Manejo específico de errores
+        let errorMessage = "Error al solicitar la baja";
+
+        if (err.code === "firestore/permission-denied") {
+          errorMessage = "No tienes permisos para realizar esta acción";
+        } else if (err.code === "firestore/unavailable") {
+          errorMessage = "Servicio no disponible. Por favor, intenta más tarde";
+        } else if (err.message) {
+          errorMessage = err.message;
+        }
+
         if (alertError) {
-          alertError.textContent = `Error al solicitar la baja: ${err.message || err}`;
+          alertError.textContent = errorMessage;
           alertError.style.display = "block";
         }
       } finally {
@@ -240,23 +290,30 @@ export function initServiceDetailClient() {
       if (alertSuccess) alertSuccess.style.display = "none";
       if (alertError) alertError.style.display = "none";
 
-      const serviceId = (document.getElementById("report-service-id") as HTMLInputElement).value;
-      const serviceName = (document.getElementById("report-service-name") as HTMLInputElement).value;
-      const category = (document.getElementById("report-category") as HTMLSelectElement).value as ReportCategory;
-      const description = (document.getElementById("report-description") as HTMLTextAreaElement).value.trim();
-      const reporterEmail = (document.getElementById("report-email") as HTMLInputElement).value.trim();
-
-      if (!description) {
-        if (alertError) {
-          alertError.textContent = "Por favor, describe el error o la mejora que propones.";
-          alertError.style.display = "block";
-        }
-        return;
-      }
-
       if (submitBtn) submitBtn.disabled = true;
 
       try {
+        // CORRECCIÓN MEDIA #2: Verificar que db está inicializado
+        if (!db) {
+          throw new Error("Firebase no está inicializado correctamente");
+        }
+
+        const serviceId = (document.getElementById("report-service-id") as HTMLInputElement).value;
+        const serviceName = (document.getElementById("report-service-name") as HTMLInputElement).value;
+        const category = (document.getElementById("report-category") as HTMLSelectElement).value as ReportCategory;
+
+        // CORRECCIÓN CRÍTICA #6: Sanitización de inputs
+        const description = (document.getElementById("report-description") as HTMLTextAreaElement).value.trim();
+        const reporterEmail = (document.getElementById("report-email") as HTMLInputElement).value.trim().toLowerCase();
+
+        // Validación básica
+        if (!description || description.length < 10) {
+          throw new Error("Por favor, describe el error o la mejora que propones (mínimo 10 caracteres)");
+        }
+        if (reporterEmail && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(reporterEmail)) {
+          throw new Error("El correo electrónico no es válido");
+        }
+
         const user = auth.currentUser;
         const reportId = `rep-${serviceId}-${Date.now()}`;
         await createServiceReport(db, {
@@ -275,8 +332,19 @@ export function initServiceDetailClient() {
           if (reportModal) reportModal.style.display = "none";
         }, 2500);
       } catch (err: any) {
+        // CORRECCIÓN MEDIA #3: Manejo específico de errores
+        let errorMessage = "Error al enviar el reporte";
+
+        if (err.code === "firestore/permission-denied") {
+          errorMessage = "No tienes permisos para realizar esta acción";
+        } else if (err.code === "firestore/unavailable") {
+          errorMessage = "Servicio no disponible. Por favor, intenta más tarde";
+        } else if (err.message) {
+          errorMessage = err.message;
+        }
+
         if (alertError) {
-          alertError.textContent = `Error al enviar el reporte: ${err.message || err}`;
+          alertError.textContent = errorMessage;
           alertError.style.display = "block";
         }
       } finally {
