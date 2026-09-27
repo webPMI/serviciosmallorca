@@ -247,9 +247,9 @@ export interface ServiceItem {
   coordinates: GeoCoordinates;
   coordinatesAccuracy?: "extracted_from_html" | "generic" | "verified_manual"; // Flag para precisión de coordenadas
   rating: number | null; // Permite null cuando no hay rating disponible aún
-  ratingSource?: "extracted_from_html" | "pending_google_maps_extraction" | "verified_manual"; // Flag para origen del rating
+  ratingSource?: "extracted_from_html" | "pending_google_maps_extraction" | "verified_manual" | "website_direct"; // Flag para origen del rating
   reviewCount: number | null; // Permite null cuando no hay reseñas disponibles aún
-  reviewCountSource?: "extracted_from_html" | "pending_google_maps_extraction" | "verified_manual"; // Flag para origen de reseñas
+  reviewCountSource?: "extracted_from_html" | "pending_google_maps_extraction" | "verified_manual" | "website_direct"; // Flag para origen de reseñas
   priceRange: "€" | "€€" | "€€€" | "€€€€";
   verified: boolean;
   featured: boolean;
@@ -299,9 +299,9 @@ export interface ServiceItem {
   lastVerifiedAt?: string;
   createdAt?: string;
   lastUpdatedAt?: string;
-  googleMapsUrl: string;
-  appleMapsUrl: string;
-  bingMapsUrl: string;
+  googleMapsUrl?: string;
+  appleMapsUrl?: string;
+  bingMapsUrl?: string;
   phone: string;
   whatsapp?: string;
   email?: string;

@@ -9,16 +9,32 @@ interface Props {
 
 const { service } = Astro.props;
 
-// Calculate or parse multi-map presence
-const hasGoogleListing = Boolean(service.googleMapsUrl && !service.googleMapsUrl.includes("undefined"));
-const hasAppleListing = Boolean(service.appleMapsUrl && !service.appleMapsUrl.includes("undefined"));
-const hasBingListing = Boolean(service.bingMapsUrl && !service.bingMapsUrl.includes("undefined"));
+// Detect real map listings (must have a valid, non-empty, non-undefined URL)
+const hasGoogleListing = Boolean(
+  service.googleMapsUrl && service.googleMapsUrl !== "undefined" && !service.googleMapsUrl.includes("undefined"),
+);
+const hasAppleListing = Boolean(
+  service.appleMapsUrl && service.appleMapsUrl !== "undefined" && !service.appleMapsUrl.includes("undefined"),
+);
+const hasBingListing = Boolean(
+  service.bingMapsUrl && service.bingMapsUrl !== "undefined" && !service.bingMapsUrl.includes("undefined"),
+);
 
 const breakdown = service.reputationBreakdown;
-const googleRating = breakdown?.googleMaps?.rating ?? service.rating ?? 5.0;
-const googleReviewCount = breakdown?.googleMaps?.reviewCount ?? service.reviewCount ?? 0;
-const totalAggregatedReviews = breakdown?.totalReviewsAggregated ?? googleReviewCount;
-const overallScore = breakdown?.overallWeightedRating || googleRating;
+
+// Detect real platform data (non-null ratings)
+const hasGoogleData = Boolean(breakdown?.googleMaps?.rating != null && breakdown?.googleMaps?.reviewCount != null);
+const hasAppleData = Boolean(breakdown?.appleMaps?.rating != null && breakdown?.appleMaps?.reviewCount != null);
+const hasBingData = Boolean(breakdown?.bingMaps?.rating != null && breakdown?.bingMaps?.reviewCount != null);
+const hasAnyPlatformData = hasGoogleData || hasAppleData || hasBingData;
+
+const googleRating = hasGoogleData ? (breakdown!.googleMaps!.rating as number) : null;
+const googleReviewCount = hasGoogleData ? (breakdown!.googleMaps!.reviewCount as number) : null;
+const totalAggregatedReviews = breakdown?.totalReviewsAggregated ?? null;
+const overallScore = breakdown?.overallWeightedRating ?? (hasGoogleData ? googleRating : null);
+
+// Count how many platforms have listings
+const platformsWithListings = [hasGoogleListing, hasAppleListing, hasBingListing].filter(Boolean).length;
 ---
 
 <div class="maps-rating-card card card-glass">
@@ -30,146 +46,251 @@ const overallScore = breakdown?.overallWeightedRating || googleRating;
   </div>
 
   <!-- Aggregated Reputation Header Banner -->
-  <div class="reputation-summary-banner">
-    <div class="reputation-score-box">
-      <span class="score-stars">★★★★★</span>
-      <span class="score-val">{overallScore.toFixed(1)}</span>
-      <span class="score-max">/ 5.0</span>
-    </div>
-    <div class="reputation-desc-box">
-      <p class="reputation-main-text">
-        <strong>Puntuación Global Ponderada</strong> basada en <strong
-          >{totalAggregatedReviews.toLocaleString()} reseñas</strong
-        > auditadas en Google Maps, Apple Maps y directorios baleares.
-      </p>
-      <span class="reputation-sub-text"
-        >Fidelidad oficial con Google Maps y fuentes contrastadas — Sin opiniones manipuladas ni bots.</span
-      >
-    </div>
-  </div>
+  {
+    hasAnyPlatformData && overallScore != null ? (
+      <div class="reputation-summary-banner">
+        <div class="reputation-score-box">
+          <span class="score-stars">★★★★★</span>
+          <span class="score-val">{overallScore.toFixed(1)}</span>
+          <span class="score-max">/ 5.0</span>
+        </div>
+        <div class="reputation-desc-box">
+          <p class="reputation-main-text">
+            <strong>Puntuación Global Ponderada</strong> basada en{" "}
+            <strong>{totalAggregatedReviews != null ? totalAggregatedReviews.toLocaleString() : "—"} reseñas</strong>{" "}
+            auditadas en Google Maps, Apple Maps y directorios baleares.
+          </p>
+          <span class="reputation-sub-text">
+            Fidelidad oficial con Google Maps y fuentes contrastadas — Sin opiniones manipuladas ni bots.
+          </span>
+        </div>
+      </div>
+    ) : (
+      <div class="reputation-summary-banner reputation-no-data">
+        <div class="reputation-no-data-icon">🔍</div>
+        <div class="reputation-desc-box">
+          <p class="reputation-main-text">
+            <strong>Sin puntuación agregada de plataformas de mapas</strong>
+          </p>
+          <span class="reputation-sub-text">
+            Este negocio no tiene fichas comerciales activas en Google Maps, Apple Maps ni Bing Places. La valoración se
+            basa en reseñas directas de clientes verificados y presencia web oficial.
+          </span>
+        </div>
+      </div>
+    )
+  }
 
   <p class="maps-disclaimer">
     ℹ️ <em
       >Estas puntuaciones corresponden a los registros públicos consolidados de <strong>Google Business</strong>, <strong
         >Apple Maps</strong
-      > y <strong>Bing Places</strong>.</em
+      > y <strong>Bing Places</strong>. {
+        !hasAnyPlatformData && "Cuando un negocio no tiene ficha, se indica honestamente."
+      }</em
     >
   </p>
 
   <div class="maps-grid-platforms">
     <!-- GOOGLE MAPS CARD -->
-    <div class="platform-card google-card">
+    <div class={`platform-card google-card ${!hasGoogleListing && !hasGoogleData ? "platform-no-listing" : ""}`}>
       <div class="platform-header">
         <div class="platform-brand">
           <span class="platform-icon">📍</span>
           <span class="platform-name">Google Maps</span>
         </div>
         {
-          hasGoogleListing ? (
+          hasGoogleListing && hasGoogleData ? (
             <span class="status-badge status-listed">Ficha Comercial Activa</span>
-          ) : (
+          ) : hasGoogleListing ? (
             <span class="status-badge status-coords">Solo Coordenadas GPS</span>
+          ) : (
+            <span class="status-badge status-not-found">Sin ficha</span>
           )
         }
       </div>
 
       <div class="platform-body">
-        <div class="rating-display">
-          <span class="stars-gold">★★★★★</span>
-          <strong class="rating-number">{googleRating.toFixed(1)}</strong>
-          <span class="rating-total">/ 5.0</span>
-        </div>
-        <div class="reviews-count-text">
-          <span>Basado en <strong>{googleReviewCount.toLocaleString()}</strong> reseñas verificadas</span>
-        </div>
+        {
+          hasGoogleData && googleRating != null && googleReviewCount != null ? (
+            <Fragment>
+              <div class="rating-display">
+                <span class="stars-gold">★★★★★</span>
+                <strong class="rating-number">{googleRating.toFixed(1)}</strong>
+                <span class="rating-total">/ 5.0</span>
+              </div>
+              <div class="reviews-count-text">
+                <span>
+                  Basado en <strong>{googleReviewCount.toLocaleString()}</strong> reseñas verificadas
+                </span>
+              </div>
+            </Fragment>
+          ) : (
+            <div class="no-listing-info">
+              <span class="no-listing-icon">⚠️</span>
+              <span class="no-listing-text">No se encontró ficha comercial activa en Google Business Profile.</span>
+            </div>
+          )
+        }
       </div>
 
       <div class="platform-footer">
-        <a
-          href={service.googleMapsUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="btn btn-sm btn-platform google-btn"
-        >
-          <span>Ver Ficha en Google Maps ↗</span>
-        </a>
+        {
+          hasGoogleListing ? (
+            <a
+              href={service.googleMapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-sm btn-platform google-btn"
+            >
+              <span>Ver Ficha en Google Maps ↗</span>
+            </a>
+          ) : (
+            <span class="btn btn-sm btn-platform btn-disabled">
+              <span>Ficha no disponible en Google Maps</span>
+            </span>
+          )
+        }
       </div>
     </div>
 
     <!-- APPLE MAPS CARD -->
-    <div class="platform-card apple-card">
+    <div class={`platform-card apple-card ${!hasAppleListing && !hasAppleData ? "platform-no-listing" : ""}`}>
       <div class="platform-header">
         <div class="platform-brand">
           <span class="platform-icon">🍎</span>
           <span class="platform-name">Apple Maps</span>
         </div>
         {
-          hasAppleListing ? (
+          hasAppleListing && hasAppleData ? (
             <span class="status-badge status-listed">Ficha Local Activa</span>
-          ) : (
+          ) : hasAppleListing ? (
             <span class="status-badge status-coords">Punto GPS Directo</span>
+          ) : (
+            <span class="status-badge status-not-found">Sin ficha</span>
           )
         }
       </div>
 
       <div class="platform-body">
-        <div class="platform-info-text">
-          <span>Compatible con <strong>iOS & CarPlay</strong></span>
-        </div>
-        <div class="platform-coords-pill">
-          <span>GPS: {service.coordinates.lat.toFixed(4)}, {service.coordinates.lng.toFixed(4)}</span>
-        </div>
+        {
+          hasAppleListing ? (
+            <Fragment>
+              <div class="platform-info-text">
+                <span>
+                  Compatible con <strong>iOS & CarPlay</strong>
+                </span>
+              </div>
+              <div class="platform-coords-pill">
+                <span>
+                  GPS: {service.coordinates.lat.toFixed(4)}, {service.coordinates.lng.toFixed(4)}
+                </span>
+              </div>
+            </Fragment>
+          ) : (
+            <div class="no-listing-info">
+              <span class="no-listing-icon">⚠️</span>
+              <span class="no-listing-text">No se encontró ficha registrada en Apple Maps Connect.</span>
+            </div>
+          )
+        }
       </div>
 
       <div class="platform-footer">
-        <a
-          href={service.appleMapsUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="btn btn-sm btn-platform apple-btn"
-        >
-          <span>Abrir en Apple Maps ↗</span>
-        </a>
+        {
+          hasAppleListing ? (
+            <a
+              href={service.appleMapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-sm btn-platform apple-btn"
+            >
+              <span>Abrir en Apple Maps ↗</span>
+            </a>
+          ) : (
+            <span class="btn btn-sm btn-platform btn-disabled">
+              <span>Ficha no disponible en Apple Maps</span>
+            </span>
+          )
+        }
       </div>
     </div>
 
     <!-- BING MAPS CARD -->
-    <div class="platform-card bing-card">
+    <div class={`platform-card bing-card ${!hasBingListing && !hasBingData ? "platform-no-listing" : ""}`}>
       <div class="platform-header">
         <div class="platform-brand">
           <span class="platform-icon">🌐</span>
           <span class="platform-name">Bing Maps</span>
         </div>
         {
-          hasBingListing ? (
+          hasBingListing && hasBingData ? (
             <span class="status-badge status-listed">Ficha Indexada</span>
-          ) : (
+          ) : hasBingListing ? (
             <span class="status-badge status-coords">Punto GPS Directo</span>
+          ) : (
+            <span class="status-badge status-not-found">Sin ficha</span>
           )
         }
       </div>
 
       <div class="platform-body">
-        <div class="platform-info-text">
-          <span>Indexado en <strong>Microsoft Places</strong></span>
-        </div>
-        <div class="platform-coords-pill">
-          <span>Zona: {service.zone}</span>
-        </div>
+        {
+          hasBingListing ? (
+            <Fragment>
+              <div class="platform-info-text">
+                <span>
+                  Indexado en <strong>Microsoft Places</strong>
+                </span>
+              </div>
+              <div class="platform-coords-pill">
+                <span>Zona: {service.zone}</span>
+              </div>
+            </Fragment>
+          ) : (
+            <div class="no-listing-info">
+              <span class="no-listing-icon">⚠️</span>
+              <span class="no-listing-text">No se encontró ficha en Bing Places for Business.</span>
+            </div>
+          )
+        }
       </div>
 
       <div class="platform-footer">
-        <a
-          href={service.bingMapsUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="btn btn-sm btn-platform bing-btn"
-        >
-          <span>Abrir en Bing Maps ↗</span>
-        </a>
+        {
+          hasBingListing ? (
+            <a
+              href={service.bingMapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-sm btn-platform bing-btn"
+            >
+              <span>Abrir en Bing Maps ↗</span>
+            </a>
+          ) : (
+            <span class="btn btn-sm btn-platform btn-disabled">
+              <span>Ficha no disponible en Bing Maps</span>
+            </span>
+          )
+        }
       </div>
     </div>
   </div>
+
+  <!-- Coverage Summary -->
+  {
+    platformsWithListings < 3 && (
+      <div class="coverage-summary">
+        <span class="coverage-icon">📊</span>
+        <span class="coverage-text">
+          Cobertura en plataformas de mapas: <strong>{platformsWithListings} de 3</strong>.
+          {platformsWithListings === 0
+            ? " Este negocio opera exclusivamente a través de su web y canales directos."
+            : ` Algunas plataformas aún no han indexado este negocio.`}
+        </span>
+      </div>
+    )
+  }
 
   <!-- Social Media & Official Web Directory Presence -->
   {
@@ -601,5 +722,94 @@ const overallScore = breakdown?.overallWeightedRating || googleRating;
       padding-bottom: var(--space-xs);
       width: 100%;
     }
+  }
+
+  /* === No-listing / Not-found states === */
+
+  .platform-no-listing {
+    opacity: 0.7;
+    border-style: dashed;
+    background: color-mix(in srgb, var(--color-bg) 95%, var(--color-text-muted));
+  }
+
+  .platform-no-listing:hover {
+    transform: none;
+    border-color: var(--color-surface-border);
+  }
+
+  .status-not-found {
+    background: rgba(239, 68, 68, 0.08);
+    color: #ef4444;
+    border: 1px solid rgba(239, 68, 68, 0.2);
+  }
+
+  .no-listing-info {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.4rem;
+    padding: var(--space-sm);
+    background: color-mix(in srgb, var(--color-text-muted) 5%, var(--color-surface));
+    border: 1px dashed var(--color-surface-border);
+    border-radius: var(--border-radius-xs);
+  }
+
+  .no-listing-icon {
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+
+  .no-listing-text {
+    font-size: 0.78rem;
+    color: var(--color-text-muted);
+    line-height: 1.4;
+  }
+
+  .btn-disabled {
+    width: 100%;
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.45rem 0.75rem;
+    background: color-mix(in srgb, var(--color-text-muted) 8%, var(--color-surface));
+    color: var(--color-text-muted);
+    border: 1px dashed var(--color-surface-border);
+    cursor: not-allowed;
+    opacity: 0.6;
+    display: inline-block;
+  }
+
+  .coverage-summary {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    margin-top: var(--space-md);
+    padding: var(--space-sm) var(--space-md);
+    background: color-mix(in srgb, var(--color-text-muted) 5%, var(--color-surface));
+    border: 1px solid var(--color-surface-border);
+    border-radius: var(--border-radius-xs);
+  }
+
+  .coverage-icon {
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+
+  .coverage-text {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    line-height: 1.4;
+  }
+
+  .reputation-no-data {
+    background: color-mix(in srgb, var(--color-text-muted) 5%, var(--color-bg));
+    border: 1px dashed var(--color-surface-border);
+  }
+
+  .reputation-no-data-icon {
+    font-size: 1.8rem;
+    padding-right: var(--space-md);
+    border-right: 1px solid var(--color-surface-border);
+    display: flex;
+    align-items: center;
   }
 </style>

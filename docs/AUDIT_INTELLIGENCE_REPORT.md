@@ -1,6 +1,6 @@
 # 🛡️ Informe de Inteligencia y Auditoría Multi-Agente
 
-**Fecha de Auditoría:** 2026-09-27T10:04:56.431Z
+**Fecha de Auditoría:** 2026-09-27T10:11:01.131Z
 **Puntaje Global de Cumplimiento:** `100%`
 **Estado del Sistema:** `BLINDADO_OPTIMO`
 
@@ -119,7 +119,7 @@
 ### 17. ℹ️ [INFO] `HIST_STALE_VALIDATION` — inkEnzo - Tatuador Profesional Especializado
 
 - **Auditor Responsable:** HistoricalEvolution
-- **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 49%.
+- **Diagnóstico:** El negocio lleva 999 días sin revalidar. Su confianza efectiva ha bajado a 50%.
 - **Acción Recomendada:** Programar re-auditoría semestral con el scraper o contacto de verificación.
 
 ### 18. ℹ️ [INFO] `HIST_STALE_VALIDATION` — Küyen Art & Tattoo Studio
