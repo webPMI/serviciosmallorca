@@ -1333,3 +1333,58 @@ object {
     padding: 0.85rem;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SHARED: Cabecera de sección + carrusel/grid de fichas de servicios
+   Consumido por el Home (sección "Servicios Destacados") y por el directorio
+   /servicios (bloque de entrada). Única fuente de verdad: si cambia, cambia
+   para ambos. Solo variables CSS (GR-01) y breakpoint estándar 768px (GR-02).
+   ═══════════════════════════════════════════════════════════════════════════ */
+.section-header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: var(--space-lg);
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.section-subtitle {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  margin-top: 0.2rem;
+}
+
+.services-swipe-track {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--space-md);
+}
+
+.swipe-card-item {
+  min-width: 0;
+}
+
+@media (max-width: 768px) {
+  /* Scroll horizontal con snap en móvil (mismo comportamiento en Home y directorio) */
+  .services-swipe-track {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: var(--space-xs) 2px var(--space-md);
+    gap: 0.85rem;
+    scrollbar-width: none;
+  }
+
+  .services-swipe-track::-webkit-scrollbar {
+    display: none;
+  }
+
+  .swipe-card-item {
+    flex: 0 0 82vw;
+    max-width: 320px;
+    scroll-snap-align: start;
+  }
+}
+

@@ -53,6 +53,14 @@ const activeCategories = getActiveCategories(SERVICES);
 const featuredServices = getFeaturedServices();
 const featuredPosts = getFeaturedPosts();
 
+// Showcase del home: inkEnzo (negocio de referencia del catálogo, GR-11) fijado en 1ª posición.
+const PINNED_HOME_SERVICE_ID = "ink-enzo-tattoo-mallorca";
+const pinnedHomeService = featuredServices.find((s) => s.id === PINNED_HOME_SERVICE_ID);
+const homeShowcaseServices = [
+  ...(pinnedHomeService ? [pinnedHomeService] : []),
+  ...featuredServices.filter((s) => s.id !== PINNED_HOME_SERVICE_ID),
+].slice(0, 8);
+
 const { totalServices, totalReviews, categoryCountMap } = getCatalogStats();
 const totalCategories = activeCategories.length;
 const LANGUAGES = 4;
@@ -207,7 +215,7 @@ const homepageJsonLd = generateHomepageJsonLd(locale, canonicalUrl);
         <!-- Horizontal Swipeable Track on Mobile / Grid on Desktop -->
         <div class="services-swipe-track">
           {
-            featuredServices.slice(0, 8).map((service) => (
+            homeShowcaseServices.map((service) => (
               <div class="swipe-card-item">
                 <ServiceCard
                   service={service}
@@ -629,15 +637,7 @@ const homepageJsonLd = generateHomepageJsonLd(locale, canonicalUrl);
     gap: var(--space-sm);
   }
 
-  .section-header-flex {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin-bottom: var(--space-lg);
-    flex-wrap: wrap;
-    gap: var(--space-sm);
-  }
-
+  /* .section-header-flex vive ahora en global.css (compartido con /servicios) */
   .section-title {
     font-size: clamp(1.4rem, 3vw, var(--font-size-2xl));
     font-weight: 800;
@@ -645,12 +645,7 @@ const homepageJsonLd = generateHomepageJsonLd(locale, canonicalUrl);
     letter-spacing: -0.01em;
   }
 
-  .section-subtitle {
-    font-size: var(--font-size-sm);
-    color: var(--color-text-muted);
-    margin-top: 0.2rem;
-  }
-
+  /* .section-subtitle vive ahora en global.css (compartido con /servicios) */
   .section-link-more {
     font-size: var(--font-size-sm);
     font-weight: 700;
@@ -721,7 +716,7 @@ const homepageJsonLd = generateHomepageJsonLd(locale, canonicalUrl);
   }
 
   /* SWIPEABLE SERVICES TRACK ON MOBILE */
-  .services-swipe-track,
+  /* .services-swipe-track vive ahora en global.css (compartido con /servicios) */
   .blog-swipe-track {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -908,7 +903,6 @@ const homepageJsonLd = generateHomepageJsonLd(locale, canonicalUrl);
     }
 
     /* Horizontal swipe on mobile for services and blog cards */
-    .services-swipe-track,
     .blog-swipe-track {
       display: flex;
       overflow-x: auto;
@@ -919,12 +913,10 @@ const homepageJsonLd = generateHomepageJsonLd(locale, canonicalUrl);
       scrollbar-width: none;
     }
 
-    .services-swipe-track::-webkit-scrollbar,
     .blog-swipe-track::-webkit-scrollbar {
       display: none;
     }
 
-    .swipe-card-item,
     .blog-swipe-item {
       flex: 0 0 82vw;
       max-width: 320px;

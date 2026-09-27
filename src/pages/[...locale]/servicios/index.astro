@@ -7,7 +7,9 @@ import AdSenseSlot from "../../../components/AdSenseSlot.astro";
 import BusinessJoinBanner from "../../../components/BusinessJoinBanner.astro";
 import { getActiveCategories, CATEGORIES } from "../../../data/categories";
 import { MALLORCA_ZONES } from "../../../data/zones";
-import { SERVICES } from "../../../data/services";
+import { SERVICES, getFeaturedServices } from "../../../data/services";
+import { getTopRankedServices } from "../../../lib/topEngine";
+import { pickDirectoryFeatured, shouldShowFeaturedServices } from "../../../lib/directoryFeatured";
 import { getLocaleFromUrl, loadTranslations, getLangPrefix, type Locale } from "../../../i18n";
 
 export const prerender = false;
@@ -57,6 +59,18 @@ const initialFilteredServices = SERVICES.filter((service) => {
   }
   return true;
 });
+
+// 🧠 Bloque "Servicios Destacados": se muestra SOLO si el visitante no llega filtrando
+// (sin ?categoria / ?zona / ?q). La misma regla se aplica en cliente al filtrar en vivo.
+const featuredForDirectory = pickDirectoryFeatured(
+  getFeaturedServices(),
+  getTopRankedServices(12, locale).map((ranked) => ranked.service),
+  8,
+);
+const showFeaturedServices = shouldShowFeaturedServices(
+  { category: selectedCategory, zone: selectedZone, query: searchQuery },
+  featuredForDirectory.length,
+);
 ---
 
 <BaseLayout
@@ -73,6 +87,43 @@ const initialFilteredServices = SERVICES.filter((service) => {
       <h1 class="directory-title">{translations["services.title"]}</h1>
       <p class="directory-subtitle">{translations["services.subtitle"]}</p>
     </header>
+
+    <!-- SERVICIOS DESTACADOS: bloque de entrada del directorio. Se oculta en cuanto hay filtros activos. -->
+    {
+      showFeaturedServices && (
+        <section
+          id="services-featured"
+          class="featured-showcase-section fade-in"
+          aria-labelledby="services-featured-title"
+          data-featured-services
+        >
+          <div class="section-header-flex">
+            <div>
+              <h2 class="section-title" id="services-featured-title">
+                {translations["home.featured.title"]}
+              </h2>
+              <p class="section-subtitle">{translations["home.featured.subtitle"]}</p>
+            </div>
+            <a href={`${prefix}servicios#services-grid`} class="btn btn-secondary btn-sm">
+              {translations["home.explore"]} →
+            </a>
+          </div>
+
+          <div class="services-swipe-track">
+            {featuredForDirectory.map((service) => (
+              <div class="swipe-card-item">
+                <ServiceCard
+                  service={service}
+                  currentLocale={locale}
+                  getLangPrefix={getLangPrefix}
+                  translations={translations}
+                />
+              </div>
+            ))}
+          </div>
+        </section>
+      )
+    }
 
     <!-- Interactive Search & Filters Bar -->
     <section class="filters-card card card-glass fade-in">
@@ -355,8 +406,22 @@ const initialFilteredServices = SERVICES.filter((service) => {
     const items = Array.from(document.querySelectorAll(".service-item-wrapper"));
     const catPills = Array.from(document.querySelectorAll("[data-cat-pill]"));
     const intentChips = Array.from(document.querySelectorAll("[data-intent-filter]"));
+    const featuredBlock = document.querySelector("[data-featured-services]");
 
     const activeIntents = new Set();
+
+    // 🧠 Los destacados ceden protagonismo en cuanto el visitante filtra (misma regla que el SSR).
+    function syncFeaturedVisibility() {
+      if (!featuredBlock) return;
+      const filtering =
+        Boolean((searchInput?.value || "").trim()) ||
+        Boolean(categorySelect?.value) ||
+        Boolean(zoneSelect?.value) ||
+        activeIntents.size > 0;
+      featuredBlock.style.display = filtering ? "none" : "";
+    }
+
+    syncFeaturedVisibility();
 
     function isBusinessCurrentlyOpen(scheduleText, status) {
       if (status === "permanently_closed" || status === "seasonal_closure") return false;
@@ -492,6 +557,8 @@ const initialFilteredServices = SERVICES.filter((service) => {
       if (noResultsBox) {
         noResultsBox.style.display = visibleCount === 0 ? "flex" : "none";
       }
+
+      syncFeaturedVisibility();
     }
 
     // Toggle Intent Chips
