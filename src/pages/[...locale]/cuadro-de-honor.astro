@@ -246,7 +246,7 @@ const honorJsonLd = {
           try {
             const d = JSON.parse(draftStr);
             slug = d.serviceSlug || d.serviceName || "";
-          } catch (_) {}
+          } catch {}
         }
         const cancelledRecord = {
           serviceSlug: slug || "Aportación en Pasarela",
@@ -260,7 +260,7 @@ const honorJsonLd = {
           try {
             const parsedAuth = JSON.parse(authData);
             uid = parsedAuth?.user?.uid || null;
-          } catch (_) {}
+          } catch {}
         }
         const cancelledKey = uid ? `sm_user_${uid}_cancelled_transactions` : "sm_cancelled_transactions_guest";
         const existing = JSON.parse(localStorage.getItem(cancelledKey) || "[]");
@@ -288,7 +288,7 @@ const honorJsonLd = {
     try {
       const cleanUrl = window.location.pathname;
       window.history.replaceState({}, document.title, cleanUrl);
-    } catch (_) {}
+    } catch {}
   }
 
   if (params.get("intent") === "boost" || params.get("openCheckout") === "1" || params.get("resumeDraft") === "1") {

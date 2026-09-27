@@ -156,10 +156,8 @@ const title = LEGAL_VERSION_CHANGES.title[currentLocale] || LEGAL_VERSION_CHANGE
           document.body.classList.remove("modal-open");
         }
       } else {
-        // Para visitantes no registrados, comprobamos consentimiento global
-        const globalVersion = localStorage.getItem("sm_latest_accepted_legal_version");
-        // No forzamos bloqueo a visitantes anónimos hasta que interactúen o se registren,
-        // pero sí registramos su sesión si deciden navegar.
+        // Para visitantes no registrados no forzamos bloqueo hasta que interactúen o se registren;
+        // sí registramos su sesión si deciden navegar (consentimiento global en localStorage).
       }
     }
 

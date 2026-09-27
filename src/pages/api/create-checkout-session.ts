@@ -289,7 +289,9 @@ export const POST: APIRoute = async ({ request, locals }) => {
         headers: { "Content-Type": "application/json", "Cache-Control": "no-store" },
       },
     );
-  } catch (error: any) {
+  } catch (error) {
+    // GR-15: cero catches silenciosos — registrar el fallo de la pasarela antes de responder 500
+    console.error("[checkout] create-checkout-session failed:", error);
     if (activeIdempotencyKey) releasePaymentLock(activeIdempotencyKey);
     if (activeServiceId) releaseServiceResourceLock(activeServiceId);
 

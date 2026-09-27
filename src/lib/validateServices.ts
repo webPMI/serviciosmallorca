@@ -177,7 +177,7 @@ export function validateServicesList(services: ServiceItem[]): ValidationResult 
       ["Apple Maps", service.appleMapsUrl],
       ["Bing Maps", service.bingMapsUrl],
     ] as const) {
-      if (url == null || url === undefined || url === "") continue;
+      if (url === null || url === undefined || url === "") continue;
       if (
         !url.startsWith("http") ||
         url.includes("undefined") ||

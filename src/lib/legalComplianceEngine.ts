@@ -98,7 +98,7 @@ export function hasUserAcceptedCurrentTerms(userId: string): boolean {
     if (!raw) return false;
     const record: LegalConsentRecord = JSON.parse(raw);
     return hasAcceptedCurrentLegalTerms(record);
-  } catch (_) {
+  } catch {
     return false;
   }
 }
@@ -143,7 +143,7 @@ export function getUserLegalConsent(userId: string): LegalConsentRecord | null {
   try {
     const raw = localStorage.getItem(`sm_legal_consent_${userId}`);
     return raw ? JSON.parse(raw) : null;
-  } catch (_) {
+  } catch {
     return null;
   }
 }
@@ -213,7 +213,7 @@ export function getStoredCookiePreferences(): CookieConsentPreferences | null {
   try {
     const raw = localStorage.getItem("sm_cookie_preferences_v2");
     return raw ? JSON.parse(raw) : null;
-  } catch (_) {
+  } catch {
     return null;
   }
 }
@@ -231,7 +231,9 @@ export function saveCookiePreferences(prefs: Partial<CookieConsentPreferences>):
   if (typeof localStorage !== "undefined") {
     try {
       localStorage.setItem("sm_cookie_preferences_v2", JSON.stringify(finalPrefs));
-    } catch (_) {}
+    } catch {
+      // localStorage no disponible o cuota excedida: preferencias solo en memoria
+    }
   }
 
   return finalPrefs;

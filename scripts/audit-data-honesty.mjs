@@ -12,7 +12,7 @@ const JSON_OUTPUT = process.argv.includes("--json");
 const SEARCH_HINTS = ["maps/search", "maps?q=", "maps.apple.com/?q=", "/search/?api=", "?q="];
 
 function classifyMapsUrl(url) {
-  if (url == null || url === undefined) return "absent";
+  if (url === null || url === undefined) return "absent";
   const u = url.replace(/["'`]/g, "").trim();
   if (u === "" || u === "undefined" || u === "null") return "invalid";
   if (!/^https?:\/\//i.test(u)) return "invalid";
@@ -46,17 +46,19 @@ function main() {
     const b = classifyMapsUrl(extractField(content, "bingMapsUrl"));
     const reviewCountRaw = extractField(content, "reviewCount");
     const reviewCount =
-      reviewCountRaw == null || reviewCountRaw === "undefined" ? null : Number(reviewCountRaw.replace(/\D/g, "") || 0);
+      reviewCountRaw === null || reviewCountRaw === undefined || reviewCountRaw === "undefined"
+        ? null
+        : Number(reviewCountRaw.replace(/\D/g, "") || 0);
     const totalsAgg = content.match(/totalReviewsAggregated["']?\s*[:=]\s*(\d+)/);
     const googleClaims = (content.match(/platform:\s*["']google_maps["']/g) || []).length;
     const bingClaims = (content.match(/platform:\s*["']bing_maps["']/g) || []).length;
 
-    let flags = [];
+    const flags = [];
     if ([g, a, b].includes("search_fake")) flags.push("search_fake");
     if ([g, a, b].includes("invalid")) flags.push("invalid_url");
     if (googleClaims > 0 && g !== "listing") flags.push(`review_google_x${googleClaims}`);
     if (bingClaims > 0 && b !== "listing") flags.push(`review_bing_x${bingClaims}`);
-    if (totalsAgg && reviewCount != null && Number(totalsAgg[1]) > reviewCount) {
+    if (totalsAgg && reviewCount !== null && reviewCount !== undefined && Number(totalsAgg[1]) > reviewCount) {
       flags.push(`agg_${totalsAgg[1]}>rc_${reviewCount}`);
     }
     services.push({ file: rel, name, g, a, b, flags, reviewCount });

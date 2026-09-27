@@ -143,7 +143,7 @@ describe("Servicios Mallorca Data Layer", () => {
       // Si existe URL, debe ser una ficha u oficial contrastada — nunca cadenas fake.
       for (const service of SERVICES) {
         for (const url of [service.googleMapsUrl, service.appleMapsUrl, service.bingMapsUrl]) {
-          if (url == null || url === "" || url === "undefined") continue;
+          if (url === null || url === undefined || url === "" || url === "undefined") continue;
           expect(typeof url).toBe("string");
           expect(url.startsWith("https://") || url.startsWith("http://")).toBe(true);
           expect(url).not.toContain("undefined");
@@ -161,10 +161,12 @@ describe("Servicios Mallorca Data Layer", () => {
           if (review.platform === "google_maps") {
             // Invariante GR-11: no se atribuyen reseñas a Google Maps si no existe
             // NINGUNA referencia de ficha (URL o desglose) para esa plataforma.
-            expect(service.googleMapsUrl != null || service.reputationBreakdown?.googleMaps != null).toBe(true);
+            const googleListing = service.googleMapsUrl ?? service.reputationBreakdown?.googleMaps;
+            expect(googleListing !== null && googleListing !== undefined).toBe(true);
           }
           if (review.platform === "bing_maps") {
-            expect(service.bingMapsUrl != null || service.reputationBreakdown?.bingMaps != null).toBe(true);
+            const bingListing = service.bingMapsUrl ?? service.reputationBreakdown?.bingMaps;
+            expect(bingListing !== null && bingListing !== undefined).toBe(true);
           }
         }
       }

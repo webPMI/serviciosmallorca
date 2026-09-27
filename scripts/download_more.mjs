@@ -24,7 +24,9 @@ async function downloadMore() {
         fs.writeFileSync(img.dest, buffer);
         console.log(`Saved ${img.dest} (${buffer.length} bytes)`);
       }
-    } catch (e) {}
+    } catch (e) {
+      console.warn(`Failed to download ${img.url}:`, e instanceof Error ? e.message : e);
+    }
   }
 }
 downloadMore();
