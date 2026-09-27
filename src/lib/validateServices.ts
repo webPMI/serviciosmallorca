@@ -169,15 +169,24 @@ export function validateServicesList(services: ServiceItem[]): ValidationResult 
       }
     }
 
-    // 8. Check Multi-Platform Maps URLs
-    if (!service.googleMapsUrl || !service.googleMapsUrl.startsWith("http")) {
-      errors.push(`Enlace oficial de Google Maps requerido en "${service.name}"`);
-    }
-    if (!service.appleMapsUrl || !service.appleMapsUrl.startsWith("http")) {
-      errors.push(`Enlace oficial de Apple Maps requerido en "${service.name}"`);
-    }
-    if (!service.bingMapsUrl || !service.bingMapsUrl.startsWith("http")) {
-      errors.push(`Enlace oficial de Bing Maps requerido en "${service.name}"`);
+    // 8. Multi-Platform Maps URLs: OPCIONALES (GR-11/GR-12). Un negocio puede no tener ficha en
+    // Google/Apple/Bing Maps; la UI lo muestra como "Sin ficha". Solo si existe URL se valida
+    // que sea HTTP(S) bien formada y sin placeholders fake.
+    for (const [label, url] of [
+      ["Google Maps", service.googleMapsUrl],
+      ["Apple Maps", service.appleMapsUrl],
+      ["Bing Maps", service.bingMapsUrl],
+    ] as const) {
+      if (url == null || url === undefined || url === "") continue;
+      if (
+        !url.startsWith("http") ||
+        url.includes("undefined") ||
+        url.includes("null") ||
+        url.includes("{") ||
+        url.includes("}")
+      ) {
+        errors.push(`Enlace de ${label} inválido en "${service.name}": ${url}`);
+      }
     }
 
     // 9. Taxonomía: categoría/zona/tags contra catálogos cerrados (docs/TAXONOMY.md §3.1)

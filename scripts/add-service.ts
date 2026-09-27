@@ -259,8 +259,8 @@ export async function addServices(itemsToAdd: Partial<ServiceItem>[]): Promise<v
       zone: item.zone || "palma",
       address: item.address || "Mallorca, Illes Balears",
       coordinates: item.coordinates || { lat: 39.5696, lng: 2.6502 },
-      rating: item.rating ?? 4.8,
-      reviewCount: item.reviewCount ?? 50,
+      rating: item.rating ?? null,
+      reviewCount: item.reviewCount ?? null,
       priceRange: item.priceRange || "€€",
       verified: item.verified ?? true,
       featured: item.featured ?? false,
@@ -268,15 +268,11 @@ export async function addServices(itemsToAdd: Partial<ServiceItem>[]): Promise<v
       seasonality: item.seasonality || "year_round",
       isIconicHeritage: item.isIconicHeritage ?? false,
       lastVerifiedAt: item.lastVerifiedAt || today,
-      googleMapsUrl:
-        item.googleMapsUrl ||
-        `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent((item.name || "") + " " + (item.address || "") + " Mallorca")}`,
-      appleMapsUrl:
-        item.appleMapsUrl ||
-        `https://maps.apple.com/?q=${encodeURIComponent((item.name || "") + " " + (item.address || "") + " Mallorca")}`,
-      bingMapsUrl:
-        item.bingMapsUrl ||
-        `https://www.bing.com/maps?where1=${encodeURIComponent((item.name || "") + " " + (item.address || "") + " Mallorca")}`,
+      // GR-11/GR-12: solo se incluyen URLs de Google/Apple/Bing Maps cuando existe ficha real
+      // contrastada. Nunca autogenerar búsquedas genéricas como filler (falsa fidelidad multi-mapa).
+      googleMapsUrl: item.googleMapsUrl,
+      appleMapsUrl: item.appleMapsUrl,
+      bingMapsUrl: item.bingMapsUrl,
       phone: item.phone || "+34 971 000 000",
       whatsapp: item.whatsapp || item.phone || "+34 971 000 000",
       email: item.email || `info@${slug}.com`,

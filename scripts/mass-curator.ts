@@ -82,10 +82,8 @@ export function saveBusiness(biz: BusinessDataInput): void {
     }
   }
 
-  const mapsQuery = encodeURIComponent(`${biz.name} ${biz.address}`);
-  const gMaps = `https://www.google.com/maps/search/?api=1&query=${mapsQuery}`;
-  const aMaps = `https://maps.apple.com/?q=${mapsQuery}`;
-  const bMaps = `https://bing.com/maps?q=${mapsQuery}`;
+  // GR-11/GR-12: sin URLs ni desglose de reputación autogenerados. Solo se añaden fichas de
+  // mapas reales y contrastadas; si no existen, el perfil declara honestamente "sin ficha".
 
   const varName = biz.slug.replace(/-/g, "_");
 
@@ -102,9 +100,9 @@ export function saveBusiness(biz: BusinessDataInput): void {
     coordinates: biz.coordinates,
     coordinatesAccuracy: "verified_manual",
     rating: biz.rating,
-    ratingSource: "verified_manual",
+    ratingSource: "extracted_from_html",
     reviewCount: biz.reviewCount,
-    reviewCountSource: "verified_manual",
+    reviewCountSource: "extracted_from_html",
     priceRange: biz.priceRange,
     verified: true,
     featured: false,
@@ -117,21 +115,11 @@ export function saveBusiness(biz: BusinessDataInput): void {
     schedule: biz.schedule,
     image: imgPath,
     gallery: [imgPath],
-    googleMapsUrl: gMaps,
-    appleMapsUrl: aMaps,
-    bingMapsUrl: bMaps,
     shortDescription: biz.shortDescription,
     fullDescription: biz.fullDescription,
     highlights: biz.highlights,
     servicesProvided: biz.servicesProvided,
     specialties: biz.specialties,
-    reputationBreakdown: {
-      googleMaps: {
-        rating: biz.rating,
-        reviewCount: biz.reviewCount,
-        url: gMaps,
-      },
-    },
     createdAt: "2026-08-30",
     lastUpdatedAt: "2026-08-30",
   };

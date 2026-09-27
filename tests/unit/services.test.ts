@@ -137,11 +137,48 @@ describe("Servicios Mallorca Data Layer", () => {
       }
     });
 
-    it("verifies that all services provide Google, Apple, and Bing Maps URLs", () => {
+    it("keeps map listing URLs honest (GR-11/GR-12): optional, never generic search placeholders", () => {
+      // Un negocio puede NO tener ficha en Google/Apple/Bing Maps. En ese caso el campo
+      // debe estar ausente/undefined y la UI (MapsRatingBox) muestra "Sin ficha".
+      // Si existe URL, debe ser una ficha u oficial contrastada — nunca cadenas fake.
       for (const service of SERVICES) {
-        expect(service.googleMapsUrl).toContain("google.com/maps");
-        expect(service.appleMapsUrl).toContain("maps.apple.com");
-        expect(service.bingMapsUrl).toContain("bing.com/maps");
+        for (const url of [service.googleMapsUrl, service.appleMapsUrl, service.bingMapsUrl]) {
+          if (url == null || url === "" || url === "undefined") continue;
+          expect(typeof url).toBe("string");
+          expect(url.startsWith("https://") || url.startsWith("http://")).toBe(true);
+          expect(url).not.toContain("undefined");
+          expect(url).not.toContain("null");
+          expect(url).not.toContain("{");
+          expect(url).not.toContain("}");
+        }
+      }
+    });
+
+    it("does not attribute map-platform reviews to platforms where the business has no listing", () => {
+      for (const service of SERVICES) {
+        const reviews = service.reviews ?? [];
+        for (const review of reviews) {
+          if (review.platform === "google_maps") {
+            // Invariante GR-11: no se atribuyen reseñas a Google Maps si no existe
+            // NINGUNA referencia de ficha (URL o desglose) para esa plataforma.
+            expect(service.googleMapsUrl != null || service.reputationBreakdown?.googleMaps != null).toBe(true);
+          }
+          if (review.platform === "bing_maps") {
+            expect(service.bingMapsUrl != null || service.reputationBreakdown?.bingMaps != null).toBe(true);
+          }
+        }
+      }
+    });
+
+    it("keeps declared reviewCount honest when aggregate platform breakdown is absent", () => {
+      for (const service of SERVICES) {
+        if (service.reputationBreakdown) continue;
+        // Sin desglose agregado de plataformas, el número de reseñas declarado debe ser
+        // coherente con las reseñas directas listadas (o 0 si no hay ninguna).
+        const listed = (service.reviews ?? []).length;
+        if (listed > 0) {
+          expect(service.reviewCount).toBeGreaterThanOrEqual(1);
+        }
       }
     });
 

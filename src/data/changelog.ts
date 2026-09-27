@@ -85,6 +85,83 @@ export function getFormattedBuildTimestamp(locale: "es" | "en" | "ca" | "de" = "
 
 export const CHANGELOG_RELEASES: ReleaseLog[] = [
   {
+    version: "0.06.1",
+    versionLabel: {
+      es: "v0.06.1 · Honestidad de Datos Total (GR-11) & Corrección de Fichas Multi-Mapa",
+      en: "v0.06.1 · Total Data Honesty (GR-11) & Multi-Map Listing Corrections",
+      ca: "v0.06.1 · Honestedat de Dades Total (GR-11) i Correcció de Fitxes Multi-Mapa",
+      de: "v0.06.1 · Totale Datenintegrität (GR-11) & Korrektur von Multi-Karten-Einträgen",
+    },
+    type: "PATCH",
+    date: "2026-09-27",
+    summary: {
+      es: "Corrección de honestidad de datos en la ficha de inkEnzo: imágenes propias reales (7 webp oficiales), eliminación de URLs falsas de Google/Apple/Bing Maps y del desglose de reseñas inventado (48/16/12), y estados honestos 'Sin ficha' en el componente multi-mapa.",
+      en: "Data honesty fix on the inkEnzo profile: real own images (7 official webp), removal of fake Google/Apple/Bing Maps URLs and invented review breakdown (48/16/12), plus honest 'No listing' states across the multi-map component.",
+      ca: "Correcció d'honestedat de dades a la fitxa d'inkEnzo: imatges pròpies reals (7 webp oficials), eliminació d'URLs falses de Google/Apple/Bing Maps i del desglossament de ressenyes inventat (48/16/12), i estats honestos 'Sense fitxa' al component multi-mapa.",
+      de: "Datenintegritäts-Korrektur am inkEnzo-Profil: echte eigene Bilder (7 offizielle WebP), Entfernung falscher Google/Apple/Bing-Maps-URLs und erfundener Bewertungszahlen (48/16/12) sowie ehrliche „Kein Eintrag“-Zustände im Multi-Karten-Komponent.",
+    },
+    highlights: {
+      es: [
+        "inkEnzo: 7 imágenes reales propias (.webp) descargadas de inkenzo.com — antes usaba fotos de otros negocios.",
+        "Eliminadas URLs falsas de búsqueda genérica de Google/Apple/Bing Maps y el desglose de reputación inventado (48+16+12 reseñas).",
+        "reviewCount honesto: 4 reseñas directas verificadas (plataforma 'direct') en lugar de 48 inventadas.",
+        "Corregida la causa raíz sistémica: test, validador y scripts ya NO autogeneran URLs falsas de mapas.",
+      ],
+      en: [
+        "inkEnzo: 7 real own images (.webp) downloaded from inkenzo.com — previously used photos from other businesses.",
+        "Removed fake generic-search Google/Apple/Bing Maps URLs and the invented reputation breakdown (48+16+12 reviews).",
+        "Honest reviewCount: 4 verified direct reviews (platform 'direct') instead of 48 invented.",
+        "Root cause fixed: test, validator and generator scripts no longer auto-generate fake map URLs.",
+      ],
+      ca: [
+        "inkEnzo: 7 imatges pròpies reals (.webp) descarregades d'inkenzo.com — abans feia servir fotos d'altres negocis.",
+        "Eliminades URLs falses de cerca genèrica de Google/Apple/Bing Maps i el desglossament de reputació inventat (48+16+12 ressenyes).",
+        "reviewCount honest: 4 ressenyes directes verificades (plataforma 'direct') en lloc de 48 inventades.",
+        "Corregida la causa arrel sistèmica: test, validador i scripts ja NO autogeneren URLs falses de mapes.",
+      ],
+      de: [
+        "inkEnzo: 7 echte eigene Bilder (.webp) von inkenzo.com geladen — vorher wurden Fotos anderer Unternehmen verwendet.",
+        "Falsche generische Such-URLs für Google/Apple/Bing Maps und die erfundene Bewertungsaufschlüsselung (48+16+12) entfernt.",
+        "Ehrliche reviewCount: 4 verifizierte Direktbewertungen (Plattform 'direct') statt 48 erfundener.",
+        "Systemische Ursache behoben: Test, Validator und Generatoren erzeugen keine falschen Karten-URLs mehr.",
+      ],
+    },
+    entries: [
+      {
+        category: "FIX",
+        title: {
+          es: "inkEnzo: imágenes propias reales y cero datos falsos de mapas",
+          en: "inkEnzo: real own images and zero fake map data",
+          ca: "inkEnzo: imatges pròpies reals i zero dades falses de mapes",
+          de: "inkEnzo: echte eigene Bilder und keine erfundenen Kartendaten",
+        },
+        description: {
+          es: "La ficha usaba fotos de otros negocios, URLs de búsqueda genérica (sin ficha real) y 76 reseñas inventadas (48+16+12). Corregido: 7 imágenes webp oficiales, reviewCount=4 (reseñas directas) y el componente muestra honestamente 'Sin ficha'.",
+          en: "The profile used photos from other businesses, generic search URLs (no real listing) and 76 invented reviews (48+16+12). Fixed: 7 official webp images, reviewCount=4 (direct reviews) and the component now honestly shows 'No listing'.",
+          ca: "La fitxa usava fotos d'altres negocis, URLs de cerca genèrica (sense fitxa real) i 76 ressenyes inventades (48+16+12). Corregit: 7 imatges webp oficials, reviewCount=4 (ressenyes directes) i el component mostra honestament 'Sense fitxa'.",
+          de: "Das Profil verwendete Fotos anderer Unternehmen, generische Such-URLs (kein echter Eintrag) und 76 erfundene Bewertungen (48+16+12). Korrigiert: 7 offizielle WebP-Bilder, reviewCount=4 (Direktbewertungen) und das Komponent zeigt ehrlich „Kein Eintrag“.",
+        },
+        badgeText: { es: "Honestidad", en: "Honesty", ca: "Honestedat", de: "Integrität" },
+      },
+      {
+        category: "FIX",
+        title: {
+          es: "Bloqueada la generación sistémica de URLs de mapas falsas",
+          en: "Blocked systemic generation of fake map URLs",
+          ca: "Bloquejada la generació sistèmica d'URLs de mapes falses",
+          de: "Systemische Erzeugung falscher Karten-URLs blockiert",
+        },
+        description: {
+          es: "El test de servicios, el validador (validateServices) y los scripts add-service, mass-curator y rank-and-organize forzaban URLs de Google/Apple/Bing Maps en toda ficha. Ahora las URLs son opcionales y únicamente se muestran fichas reales contrastadas.",
+          en: "The services test, the validator (validateServices) and the add-service, mass-curator and rank-and-organize scripts forced Google/Apple/Bing Maps URLs on every listing. URLs are now optional and only verified real listings are shown.",
+          ca: "El test de serveis, el validador (validateServices) i els scripts add-service, mass-curator i rank-and-organize forçaven URLs de Google/Apple/Bing Maps a totes les fitxes. Ara les URLs són opcionals i només es mostren fitxes reals contrastades.",
+          de: "Der Services-Test, der Validator (validateServices) und die Skripte add-service, mass-curator und rank-and-organize erzwangen Google/Apple/Bing-Maps-URLs auf jedem Eintrag. URLs sind jetzt optional und es werden nur verifizierte echte Einträge angezeigt.",
+        },
+        badgeText: { es: "Anti-Fake", en: "Anti-Fake", ca: "Anti-Fake", de: "Anti-Fake" },
+      },
+    ],
+  },
+  {
     version: "0.06",
     versionLabel: {
       es: "v0.06-beta · GEO (Generative Engine Optimization), Indexación de Agentes IA, Checkout API y Hub de Posicionamiento B2B",

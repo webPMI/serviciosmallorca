@@ -29,7 +29,7 @@ describe("🚀 Changelog & Beta v0.02 Data Integrity (GR-03, GR-04, GR-16)", () 
     expect(CHANGELOG_RELEASES.length).toBeGreaterThan(0);
 
     const latest = CHANGELOG_RELEASES[0];
-    expect(latest.version).toBe("0.06");
+    expect(latest.version).toBe("0.06.1");
     expect(["MAJOR", "MINOR", "PATCH", "BETA"]).toContain(latest.type);
 
     // Summary i18n

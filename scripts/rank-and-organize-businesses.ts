@@ -185,7 +185,6 @@ export function rankAllBusinesses(): RankedBusinessItem[] {
             zone: t.zoneHint || "palma",
             zoneLabel: z?.name.es || "Palma & Bahía",
             website: t.website,
-            googleMapsUrl: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(t.name + " Mallorca")}`,
             rating: candidateRating,
             reviewCount: candidateReviews,
             confidenceScore: 85,

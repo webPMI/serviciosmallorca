@@ -141,7 +141,7 @@ describe("✅ validateServicesList — ramas avanzadas (GR-11 / GR-12 / GR-13)",
     expect(validateServicesList([fuera]).errors.join(" | ")).toContain("fuera del rango geográfico de Mallorca");
   });
 
-  it("GR-12: exige Google, Apple y Bing Maps oficiales", () => {
+  it("GR-12/GR-11: URLs de mapas opcionales; solo se rechazan placeholders o inválidas", () => {
     const sinMaps = makeService({
       id: "sinmaps",
       slug: "sinmaps",
@@ -149,10 +149,21 @@ describe("✅ validateServicesList — ramas avanzadas (GR-11 / GR-12 / GR-13)",
       appleMapsUrl: undefined,
       bingMapsUrl: undefined,
     });
-    const joined = validateServicesList([sinMaps]).errors.join(" | ");
-    expect(joined).toContain("Google Maps requerido");
-    expect(joined).toContain("Apple Maps requerido");
-    expect(joined).toContain("Bing Maps requerido");
+    const errorsSin = validateServicesList([sinMaps]).errors.join(" | ");
+    // Sin ficha en Google/Apple/Bing Maps es un estado HONESTO permitido (la UI muestra "Sin ficha")
+    expect(errorsSin).not.toContain("Google Maps requerido");
+    expect(errorsSin).not.toContain("Apple Maps requerido");
+    expect(errorsSin).not.toContain("Bing Maps requerido");
+
+    const placeholders = makeService({
+      id: "fake",
+      slug: "fake",
+      googleMapsUrl: "undefined",
+      appleMapsUrl: "https://maps.apple.com/?q=negocio-mallorca",
+      bingMapsUrl: "https://www.bing.com/maps?q=negocio-mallorca",
+    });
+    const errorsFake = validateServicesList([placeholders]).errors.join(" | ");
+    expect(errorsFake).toContain("Google Maps inválido");
   });
 
   it("GR-11: fotos de stock prohibidas detectadas en image, images, gallery y socialPosts", () => {
