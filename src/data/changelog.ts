@@ -194,6 +194,27 @@ export const CHANGELOG_RELEASES: ReleaseLog[] = [
           de: "Profil & Checkout",
         },
       },
+      {
+        category: "SECURITY",
+        title: {
+          es: "Versionado Legal Obligatorio (v2026.2), Modal de Re-Aceptación y Gestor de Cookies AEPD",
+          en: "Mandatory Legal Terms Versioning (v2026.2), Re-Acceptance Modal & AEPD Cookie Manager",
+          ca: "Versionat Legal Obligatori (v2026.2), Modal de Re-Acceptació i Gestor de Cookies AEPD",
+          de: "Verbindliche Rechtsversionskontrolle (v2026.2), Neu-Zustimmungs-Modal & AEPD-Cookie-Manager",
+        },
+        description: {
+          es: "Motor de cumplimiento RGPD con re-aceptación forzada ante cambios de normas, renuncia precontractual a desistimiento digital (Art. 103 LGDCU), banner de cookies AEPD y certificados de consentimiento descargables.",
+          en: "GDPR compliance engine with automatic re-acceptance prompts on policy updates, pre-contractual digital waiver (Art. 103 LGDCU), AEPD-compliant cookie manager, and downloadable consent certificates.",
+          ca: "Motor de compliment RGPD amb re-acceptació forçada davant canvis normatius, renúncia al desistiment digital (Art. 103 LGDCU), banner de cookies AEPD i certificats de consentiment descarregables.",
+          de: "DSGVO-Compliance-Engine mit automatischer Zustimmungsaufforderung bei Regeländerungen, digitaler Widerrufsverzicht (Art. 103 LGDCU), AEPD-Cookie-Banner und herunterladbare Einwilligungszertifikate.",
+        },
+        badgeText: {
+          es: "Legal & RGPD",
+          en: "Legal & GDPR",
+          ca: "Legal & RGPD",
+          de: "Legal & DSGVO",
+        },
+      },
     ],
   },
   {
