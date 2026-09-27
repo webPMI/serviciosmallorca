@@ -22,7 +22,7 @@
     "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "node ./node_modules/typescript/bin/tsc --noEmit",
     "audit:full": "node --experimental-strip-types scripts/run-full-audit.ts",
     "audit:services": "node --experimental-strip-types scripts/audit-services.ts",
     "audit:refresh": "node --experimental-strip-types scripts/refresh-catalog.ts",
@@ -53,8 +53,6 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.9",
-    "@astrojs/compiler-binding-wasm32-wasi": "^0.2.3",
-    "@napi-rs/wasm-runtime": "^1.2.4",
     "@types/node": "^26.1.1",
     "@typescript-eslint/eslint-plugin": "^8.65.0",
     "@typescript-eslint/parser": "^8.65.0",
