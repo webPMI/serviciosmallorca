@@ -123,6 +123,22 @@ const { translations, loginUrl } = Astro.props;
         <span class="form-error" id="confirmPassword-error"></span>
       </div>
 
+      <!-- RGPD & Terms of Service Consent Checkbox (Legal Compliance) -->
+      <div class="form-group legal-consent-group">
+        <label class="legal-checkbox-label">
+          <input type="checkbox" id="register-terms-checkbox" name="termsAccepted" class="legal-checkbox" required />
+          <span class="legal-checkbox-text">
+            He leído y acepto los <a href="./terms" target="_blank" rel="noopener" class="legal-inline-link"
+              >Términos de Servicio</a
+            > y la <a href="./privacy" target="_blank" rel="noopener" class="legal-inline-link"
+              >Política de Privacidad</a
+            >, prestando mi consentimiento libre e informado para el tratamiento de mis datos personales según el RGPD y
+            la LOPDGDD.
+          </span>
+        </label>
+        <span class="form-error" id="terms-error"></span>
+      </div>
+
       <div class="form-actions">
         <button type="submit" id="submit-btn" class="btn btn-primary btn-block">
           {translations["auth.register.submit"]}
@@ -169,12 +185,15 @@ const { translations, loginUrl } = Astro.props;
   import { createUserWithEmailAndPassword, updateProfile, signInWithPopup } from "firebase/auth";
   import { auth, googleProvider, db } from "../lib/firebase";
   import { createUserProfile } from "../lib/userProfile";
+  import { recordUserLegalConsent } from "../lib/legalComplianceEngine";
 
   const form = document.getElementById("register-form") as HTMLFormElement | null;
   const nameInput = document.getElementById("name") as HTMLInputElement | null;
   const emailInput = document.getElementById("email") as HTMLInputElement | null;
   const passwordInput = document.getElementById("password") as HTMLInputElement | null;
   const confirmPasswordInput = document.getElementById("confirmPassword") as HTMLInputElement | null;
+  const termsCheckbox = document.getElementById("register-terms-checkbox") as HTMLInputElement | null;
+  const termsError = document.getElementById("terms-error");
   const nameError = document.getElementById("name-error");
   const emailError = document.getElementById("email-error");
   const passwordError = document.getElementById("password-error");
@@ -254,6 +273,14 @@ const { translations, loginUrl } = Astro.props;
 
       let hasError = false;
 
+      if (termsError) termsError.textContent = "";
+
+      if (!termsCheckbox?.checked) {
+        if (termsError)
+          termsError.textContent = "Debes aceptar los Términos de Servicio y la Política de Privacidad para continuar.";
+        hasError = true;
+      }
+
       if (!nameInput.value.trim()) {
         nameError.textContent = form.dataset.errorName || "El nombre es requerido";
         hasError = true;
@@ -305,6 +332,8 @@ const { translations, loginUrl } = Astro.props;
           email: emailInput.value.trim(),
           displayName: nameInput.value.trim(),
         });
+        // Record verifiable legal consent (RGPD Art. 7)
+        recordUserLegalConsent(userCredential.user.uid, "registration", ["terms", "privacy", "cookies"]);
         sessionStorage.setItem("fromAuth", emailInput.value.trim());
         window.location.href = getRedirectTarget();
       } catch (error: any) {
@@ -338,6 +367,9 @@ const { translations, loginUrl } = Astro.props;
           email: user.email || "",
           displayName: user.displayName || "Usuario",
         });
+
+        // Record verifiable legal consent (RGPD Art. 7)
+        recordUserLegalConsent(user.uid, "registration", ["terms", "privacy", "cookies"]);
 
         sessionStorage.setItem("fromAuth", user.email || user.displayName || "Google");
 
@@ -584,6 +616,40 @@ const { translations, loginUrl } = Astro.props;
 
   .btn-google:active {
     transform: translateY(0);
+  }
+
+  .legal-consent-group {
+    margin-top: var(--space-xs);
+    margin-bottom: var(--space-md);
+  }
+
+  .legal-checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    color: var(--color-text-light, #94a3b8);
+  }
+
+  .legal-checkbox {
+    margin-top: 2px;
+    width: 16px;
+    height: 16px;
+    accent-color: var(--color-primary, #ffd700);
+    flex-shrink: 0;
+    cursor: pointer;
+  }
+
+  .legal-inline-link {
+    color: var(--color-primary, #ffd700);
+    text-decoration: underline;
+    font-weight: 600;
+  }
+
+  .legal-inline-link:hover {
+    color: var(--color-text, #fff);
   }
 
   .auth-footer {

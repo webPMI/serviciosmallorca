@@ -445,6 +445,28 @@ const verifiedBusinessesData = JSON.stringify(
         </div>
       </div>
 
+      <!-- Legal Compliance & Consumer Waiver (LGDCU Art. 103 + RGPD) -->
+      <div class="checkout-legal-consent-box">
+        <label class="checkout-legal-label">
+          <input type="checkbox" id="checkout-terms-checkbox" class="checkout-legal-checkbox" required />
+          <span class="checkout-legal-text">
+            He leído y acepto los <a href={`${prefix}terms`} target="_blank" rel="noopener" class="legal-gold-link"
+              >Términos de Servicio</a
+            > y la <a href={`${prefix}privacy`} target="_blank" rel="noopener" class="legal-gold-link"
+              >Política de Privacidad</a
+            > de Servicios Mallorca.
+          </span>
+        </label>
+        <label class="checkout-legal-label">
+          <input type="checkbox" id="checkout-waiver-checkbox" class="checkout-legal-checkbox" required />
+          <span class="checkout-legal-text">
+            <strong>Renuncia al desistimiento (Art. 103 LGDCU):</strong> Consiento expresamente que la activación y posicionamiento
+            digital comience de forma inmediata tras el pago y renuncio al derecho de desistimiento de 14 días.
+          </span>
+        </label>
+        <div id="checkout-legal-error" class="checkout-legal-alert" style="display: none;"></div>
+      </div>
+
       <!-- Step 2 Actions Footer -->
       <div class="step-2-actions-row">
         <button type="button" id="btn-back-step-2" class="btn btn-secondary">
@@ -1460,6 +1482,7 @@ const verifiedBusinessesData = JSON.stringify(
 
 <script>
   import { authStore } from "../lib/authStore";
+  import { recordUserLegalConsent, validateCheckoutLegalConsent } from "../lib/legalComplianceEngine";
 
   function initHonorCheckoutClient() {
     const modal = document.getElementById("honor-checkout-modal");
@@ -1952,6 +1975,27 @@ const verifiedBusinessesData = JSON.stringify(
         const currentPath = window.location.pathname;
         const targetUrl = `${currentPrefix}login?returnUrl=${encodeURIComponent(currentPath + "?intent=boost&resumeDraft=1")}`;
         window.location.href = targetUrl;
+        return;
+      }
+
+      // 2b. Legal Compliance Guard (RGPD, LSSI-CE & LGDCU Art. 103)
+      const termsCheck = document.getElementById("checkout-terms-checkbox") as HTMLInputElement | null;
+      const waiverCheck = document.getElementById("checkout-waiver-checkbox") as HTMLInputElement | null;
+      const legalAlert = document.getElementById("checkout-legal-error");
+
+      if (legalAlert) legalAlert.style.display = "none";
+
+      const legalValidation = validateCheckoutLegalConsent(Boolean(termsCheck?.checked), Boolean(waiverCheck?.checked));
+
+      if (!legalValidation.isValid) {
+        if (legalAlert) {
+          legalAlert.textContent =
+            legalValidation.errorMessage ||
+            "Debes aceptar los Términos de Servicio y la renuncia informada al desistimiento para proceder al pago.";
+          legalAlert.style.display = "block";
+        } else {
+          alert(legalValidation.errorMessage);
+        }
         return;
       }
 

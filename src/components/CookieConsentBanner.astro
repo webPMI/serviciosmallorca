@@ -1,0 +1,445 @@
+---
+/**
+ * CookieConsentBanner.astro
+ *
+ * 🍪 BANNER Y PANEL DE GESTIÓN DE COOKIES CONFORME A LA AEPD Y LSSI-CE (ART. 22.2)
+ *
+ * Proporciona:
+ *  - Consentimiento previo expreso antes de habilitar cookies no técnicas.
+ *  - Botones simétricos: "Aceptar Todas" y "Solo Necesarias (Rechazar)".
+ *  - Panel granular de configuración (Técnicas, Analíticas, Personalización).
+ *  - Enlace directo a la Política de Privacidad y Cookies.
+ */
+import { getLangPrefix, type Locale } from "../i18n";
+
+interface Props {
+  currentLocale?: "es" | "en" | "ca" | "de";
+}
+
+const { currentLocale = "es" } = Astro.props;
+const prefix = getLangPrefix(currentLocale as Locale);
+
+const i18n = {
+  es: {
+    title: "🍪 Tu Privacidad y Gestión de Cookies",
+    desc: "Utilizamos cookies propias y de terceros técnicas y necesarias para el funcionamiento del sitio web, así como analíticas para medir el rendimiento de forma anónima si así lo autorizas. Cumplimos rigurosamente con las directrices de la Agencia Española de Protección de Datos (AEPD).",
+    acceptAll: "Aceptar Todas",
+    rejectNonEssential: "Solo Necesarias",
+    configure: "Configurar",
+    saveConfig: "Guardar Preferencias",
+    privacyLink: "Leer Política de Cookies y Privacidad ↗",
+    technicalTitle: "Cookies Técnicas y Estrictamente Necesarias",
+    technicalDesc:
+      "Imprescindibles para la autenticación, navegación segura y carrito de compras. No pueden desactivarse.",
+    analyticsTitle: "Cookies Analíticas y de Rendimiento",
+    analyticsDesc:
+      "Nos permiten entender de forma agregada y anónima cómo se utiliza el portal para mejorar la velocidad y los servicios.",
+    personalizationTitle: "Cookies de Personalización",
+    personalizationDesc: "Recuerdan tus preferencias de idioma, favoritos locales y filtros de búsqueda en Mallorca.",
+    statusAlwaysActive: "Siempre Activas",
+  },
+  en: {
+    title: "🍪 Your Privacy & Cookie Management",
+    desc: "We use essential cookies for website operation and anonymous analytics cookies to improve speed if you consent. Strictly compliant with GDPR and AEPD guidelines.",
+    acceptAll: "Accept All",
+    rejectNonEssential: "Essential Only",
+    configure: "Customize",
+    saveConfig: "Save Preferences",
+    privacyLink: "Read Cookie & Privacy Policy ↗",
+    technicalTitle: "Technical & Strictly Necessary Cookies",
+    technicalDesc: "Essential for authentication, secure browsing, and checkout. Cannot be disabled.",
+    analyticsTitle: "Analytics & Performance Cookies",
+    analyticsDesc: "Help us understand anonymously how the portal is used to optimize performance.",
+    personalizationTitle: "Personalization Cookies",
+    personalizationDesc: "Remember your language preferences, local favorites, and search filters in Mallorca.",
+    statusAlwaysActive: "Always Active",
+  },
+  ca: {
+    title: "🍪 La Teva Privadesa i Gestió de Cookies",
+    desc: "Utilitzem cookies pròpies i de tercers tècniques i necessàries per al funcionament del web, així com analítiques anònimes si ho autoritzes. Complim estrictament amb les directrius de l'AEPD.",
+    acceptAll: "Acceptar Totes",
+    rejectNonEssential: "Només Necessàries",
+    configure: "Configurar",
+    saveConfig: "Desar Preferències",
+    privacyLink: "Llegir Política de Cookies i Privadesa ↗",
+    technicalTitle: "Cookies Tècniques i Estrictament Necessàries",
+    technicalDesc: "Imprescindibles per a l'autenticació, navegació segura i carret. No es poden desactivar.",
+    analyticsTitle: "Cookies Analítiques i de Rendiment",
+    analyticsDesc: "Permeten comprendre de forma anònima com s'utilitza el portal per millorar-ne el servei.",
+    personalizationTitle: "Cookies de Personalització",
+    personalizationDesc: "Recorden les teves preferències d'idioma, favorits i filtres a Mallorca.",
+    statusAlwaysActive: "Sempre Actives",
+  },
+  de: {
+    title: "🍪 Ihre Privatsphäre & Cookie-Einstellungen",
+    desc: "Wir verwenden technisch notwendige Cookies für den Betrieb der Website sowie anonyme Analyse-Cookies, wenn Sie zustimmen. Streng konform mit der DSGVO und den spanischen AEPD-Vorgaben.",
+    acceptAll: "Alle Akzeptieren",
+    rejectNonEssential: "Nur Notwendige",
+    configure: "Konfigurieren",
+    saveConfig: "Einstellungen Speichern",
+    privacyLink: "Cookie- & Datenschutzrichtlinie ↗",
+    technicalTitle: "Technisch Notwendige Cookies",
+    technicalDesc: "Unerlässlich für Authentifizierung, Sicherheit und Warenkorb. Können nicht deaktiviert werden.",
+    analyticsTitle: "Analyse- & Performance-Cookies",
+    analyticsDesc: "Helfen uns anonym zu verstehen, wie das Portal genutzt wird.",
+    personalizationTitle: "Personalisierungs-Cookies",
+    personalizationDesc: "Merken sich Ihre Spracheinstellungen, Favoriten und Suchfilter auf Mallorca.",
+    statusAlwaysActive: "Immer Aktiv",
+  },
+};
+
+const t = i18n[currentLocale] || i18n.es;
+---
+
+<div
+  id="cookie-consent-container"
+  class="cookie-banner-wrapper"
+  style="display: none;"
+  role="region"
+  aria-label="Consentimiento de cookies"
+>
+  <!-- Minimalist Floating Banner -->
+  <div id="cookie-main-banner" class="cookie-main-card card-glass fade-in">
+    <div class="cookie-text-area">
+      <h3 class="cookie-title">{t.title}</h3>
+      <p class="cookie-desc">
+        {t.desc}
+        <a href={`${prefix}privacy`} class="cookie-policy-link">{t.privacyLink}</a>
+      </p>
+    </div>
+
+    <div class="cookie-buttons-area">
+      <button type="button" id="cookie-accept-all" class="btn btn-primary btn-sm">
+        {t.acceptAll}
+      </button>
+      <button type="button" id="cookie-reject-all" class="btn btn-outline-secondary btn-sm">
+        {t.rejectNonEssential}
+      </button>
+      <button type="button" id="cookie-open-config" class="btn btn-secondary btn-sm">
+        ⚙️ {t.configure}
+      </button>
+    </div>
+  </div>
+
+  <!-- Granular Configuration Modal Drawer -->
+  <div id="cookie-config-modal" class="cookie-config-drawer" style="display: none;">
+    <div class="cookie-config-card card-glass">
+      <div class="cookie-config-header">
+        <h3 class="cookie-title">⚙️ Configuración Granular de Cookies</h3>
+        <button type="button" id="cookie-close-config" class="cookie-close-btn" aria-label="Cerrar">✕</button>
+      </div>
+
+      <div class="cookie-toggle-list">
+        <!-- Necessary -->
+        <div class="cookie-toggle-row">
+          <div class="cookie-toggle-info">
+            <strong>{t.technicalTitle}</strong>
+            <p>{t.technicalDesc}</p>
+          </div>
+          <span class="cookie-status-badge">{t.statusAlwaysActive}</span>
+        </div>
+
+        <!-- Analytics -->
+        <div class="cookie-toggle-row">
+          <div class="cookie-toggle-info">
+            <strong>{t.analyticsTitle}</strong>
+            <p>{t.analyticsDesc}</p>
+          </div>
+          <label class="switch-toggle">
+            <input type="checkbox" id="cookie-opt-analytics" checked />
+            <span class="slider-round"></span>
+          </label>
+        </div>
+
+        <!-- Personalization -->
+        <div class="cookie-toggle-row">
+          <div class="cookie-toggle-info">
+            <strong>{t.personalizationTitle}</strong>
+            <p>{t.personalizationDesc}</p>
+          </div>
+          <label class="switch-toggle">
+            <input type="checkbox" id="cookie-opt-personalization" checked />
+            <span class="slider-round"></span>
+          </label>
+        </div>
+      </div>
+
+      <div class="cookie-config-footer">
+        <button type="button" id="cookie-save-custom" class="btn btn-primary btn-sm">
+          {t.saveConfig}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  import { getStoredCookiePreferences, saveCookiePreferences } from "../lib/legalComplianceEngine";
+
+  function initCookieConsent() {
+    const container = document.getElementById("cookie-consent-container");
+    const mainBanner = document.getElementById("cookie-main-banner");
+    const configModal = document.getElementById("cookie-config-modal");
+    const btnAcceptAll = document.getElementById("cookie-accept-all");
+    const btnRejectAll = document.getElementById("cookie-reject-all");
+    const btnOpenConfig = document.getElementById("cookie-open-config");
+    const btnCloseConfig = document.getElementById("cookie-close-config");
+    const btnSaveCustom = document.getElementById("cookie-save-custom");
+    const checkAnalytics = document.getElementById("cookie-opt-analytics") as HTMLInputElement | null;
+    const checkPersonalization = document.getElementById("cookie-opt-personalization") as HTMLInputElement | null;
+
+    if (!container) return;
+
+    const existingPrefs = getStoredCookiePreferences();
+    if (!existingPrefs) {
+      container.style.display = "block";
+    }
+
+    btnAcceptAll?.addEventListener("click", () => {
+      saveCookiePreferences({
+        analytics: true,
+        personalization: true,
+        marketing: true,
+      });
+      container.style.display = "none";
+    });
+
+    btnRejectAll?.addEventListener("click", () => {
+      saveCookiePreferences({
+        analytics: false,
+        personalization: false,
+        marketing: false,
+      });
+      container.style.display = "none";
+    });
+
+    btnOpenConfig?.addEventListener("click", () => {
+      if (mainBanner) mainBanner.style.display = "none";
+      if (configModal) configModal.style.display = "block";
+    });
+
+    btnCloseConfig?.addEventListener("click", () => {
+      if (configModal) configModal.style.display = "none";
+      if (mainBanner) mainBanner.style.display = "flex";
+    });
+
+    btnSaveCustom?.addEventListener("click", () => {
+      saveCookiePreferences({
+        analytics: Boolean(checkAnalytics?.checked),
+        personalization: Boolean(checkPersonalization?.checked),
+        marketing: false,
+      });
+      container.style.display = "none";
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", initCookieConsent);
+</script>
+
+<style>
+  .cookie-banner-wrapper {
+    position: fixed;
+    bottom: var(--space-md, 1rem);
+    left: var(--space-md, 1rem);
+    right: var(--space-md, 1rem);
+    z-index: 99998;
+    max-width: 1080px;
+    margin: 0 auto;
+    pointer-events: none;
+  }
+
+  .cookie-main-card {
+    background: rgba(15, 23, 42, 0.95);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    border-radius: var(--border-radius-lg, 16px);
+    padding: var(--space-md, 1.25rem);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-lg, 1.5rem);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    pointer-events: auto;
+  }
+
+  .cookie-text-area {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .cookie-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+    margin: 0 0 4px 0;
+  }
+
+  .cookie-desc {
+    font-size: 0.82rem;
+    color: var(--color-text-light, #94a3b8);
+    line-height: 1.45;
+    margin: 0;
+  }
+
+  .cookie-policy-link {
+    color: #ffd700;
+    text-decoration: underline;
+    font-weight: 600;
+    margin-left: 4px;
+    white-space: nowrap;
+  }
+
+  .cookie-buttons-area {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+  }
+
+  /* Configuration Drawer */
+  .cookie-config-drawer {
+    pointer-events: auto;
+    margin-top: 10px;
+  }
+
+  .cookie-config-card {
+    background: rgba(15, 23, 42, 0.98);
+    border: 1px solid rgba(255, 215, 0, 0.4);
+    border-radius: var(--border-radius-lg, 16px);
+    padding: var(--space-lg, 1.5rem);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+  }
+
+  .cookie-config-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-md, 1rem);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: 10px;
+  }
+
+  .cookie-close-btn {
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+
+  .cookie-close-btn:hover {
+    color: #fff;
+  }
+
+  .cookie-toggle-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md, 1rem);
+    margin-bottom: var(--space-lg, 1.5rem);
+  }
+
+  .cookie-toggle-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-md, 1rem);
+    background: rgba(255, 255, 255, 0.03);
+    padding: 12px;
+    border-radius: 8px;
+  }
+
+  .cookie-toggle-info strong {
+    display: block;
+    font-size: 0.88rem;
+    color: #f8fafc;
+    margin-bottom: 2px;
+  }
+
+  .cookie-toggle-info p {
+    font-size: 0.78rem;
+    color: #94a3b8;
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  .cookie-status-badge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #4ade80;
+    background: rgba(74, 222, 128, 0.1);
+    padding: 4px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+
+  /* Custom Switch Toggle */
+  .switch-toggle {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+    flex-shrink: 0;
+  }
+
+  .switch-toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider-round {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #334155;
+    transition: 0.3s;
+    border-radius: 24px;
+  }
+
+  .slider-round:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.3s;
+    border-radius: 50%;
+  }
+
+  input:checked + .slider-round {
+    background-color: #ffd700;
+  }
+
+  input:checked + .slider-round:before {
+    transform: translateX(20px);
+    background-color: #0f172a;
+  }
+
+  .cookie-config-footer {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  @media (max-width: 768px) {
+    .cookie-main-card {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 12px;
+    }
+    .cookie-buttons-area {
+      justify-content: stretch;
+    }
+    .cookie-buttons-area .btn {
+      flex: 1;
+      text-align: center;
+      justify-content: center;
+    }
+  }
+</style>

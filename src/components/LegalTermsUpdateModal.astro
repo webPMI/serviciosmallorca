@@ -1,0 +1,411 @@
+---
+/**
+ * LegalTermsUpdateModal.astro
+ *
+ * 📜 MODAL UNIVERSAL DE RE-ACEPTACIÓN DE TÉRMINOS Y POLÍTICAS ACTUALIZADAS
+ *
+ * Garantiza cumplimiento estricto del RGPD (Art. 7) y LSSI-CE:
+ * Cada vez que la plataforma actualiza sus normas, pasarela de pago o política de privacidad,
+ * los usuarios registrados son notificados y deben re-aceptar de forma informada y demostrable.
+ */
+import {
+  CURRENT_LEGAL_VERSION,
+  LEGAL_POLICIES_LAST_UPDATED,
+  LEGAL_VERSION_CHANGES,
+} from "../lib/legalComplianceEngine";
+import { getLangPrefix, type Locale } from "../i18n";
+
+interface Props {
+  currentLocale?: "es" | "en" | "ca" | "de";
+}
+
+const { currentLocale = "es" } = Astro.props;
+const prefix = getLangPrefix(currentLocale as Locale);
+const changes = LEGAL_VERSION_CHANGES.changes[currentLocale] || LEGAL_VERSION_CHANGES.changes.es;
+const title = LEGAL_VERSION_CHANGES.title[currentLocale] || LEGAL_VERSION_CHANGES.title.es;
+---
+
+<div
+  id="legal-terms-update-modal"
+  class="legal-modal-backdrop"
+  style="display: none;"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="legal-modal-title"
+  data-current-version={CURRENT_LEGAL_VERSION}
+  data-prefix={prefix}
+>
+  <div class="legal-modal-card card-glass fade-in">
+    <!-- Header -->
+    <div class="legal-modal-header">
+      <div class="legal-badge-pill">
+        <span class="legal-badge-icon">⚖️</span>
+        <span class="legal-badge-text">Normativa Legal v{CURRENT_LEGAL_VERSION} · {LEGAL_POLICIES_LAST_UPDATED}</span>
+      </div>
+      <h2 id="legal-modal-title" class="legal-modal-title">{title}</h2>
+      <p class="legal-modal-subtitle">
+        Para continuar utilizando Servicios Mallorca con total seguridad jurídica y protección de tus derechos, te
+        informamos de las novedades aplicadas conforme al RGPD, LOPD-GDD y la Ley General de Defensa de los
+        Consumidores.
+      </p>
+    </div>
+
+    <!-- What Changed Box -->
+    <div class="legal-changes-box">
+      <h3 class="legal-changes-heading">📋 Principales mejoras y actualizaciones en esta versión:</h3>
+      <ul class="legal-changes-list">
+        {
+          changes.map((item) => (
+            <li>
+              <span class="change-bullet">✓</span>
+              <span class="change-text">{item}</span>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <!-- Official Documents Links -->
+    <div class="legal-docs-strip">
+      <span class="legal-docs-label">Puedes consultar los textos legales íntegros:</span>
+      <div class="legal-docs-links">
+        <a href={`${prefix}terms`} target="_blank" rel="noopener" class="legal-link">
+          📄 Términos de Servicio y Normas de Uso ↗
+        </a>
+        <span class="legal-link-sep">·</span>
+        <a href={`${prefix}privacy`} target="_blank" rel="noopener" class="legal-link">
+          🛡️ Política de Privacidad y Protección de Datos ↗
+        </a>
+      </div>
+    </div>
+
+    <!-- Consent Form -->
+    <form id="legal-consent-form" class="legal-consent-form">
+      <label class="legal-checkbox-label">
+        <input type="checkbox" id="legal-accept-checkbox" class="legal-checkbox" required />
+        <span class="legal-checkbox-custom"></span>
+        <span class="legal-checkbox-text">
+          He leído, comprendo y <strong>acepto expresamente</strong> los Términos de Servicio actualizados (v{
+            CURRENT_LEGAL_VERSION
+          }) y la Política de Privacidad, prestando mi consentimiento para el tratamiento de mis datos de conformidad
+          con el RGPD.
+        </span>
+      </label>
+
+      <!-- Action Buttons -->
+      <div class="legal-modal-actions">
+        <button type="submit" id="btn-confirm-legal-acceptance" class="btn btn-primary btn-block" disabled>
+          <span class="btn-icon">✅</span>
+          <span>Aceptar y Continuar en la Plataforma</span>
+        </button>
+        <button type="button" id="btn-decline-legal-logout" class="btn btn-outline-secondary btn-block">
+          <span>Rechazar y Cerrar Sesión</span>
+        </button>
+      </div>
+      <p class="legal-rights-footnote">
+        * Si decides no aceptar las nuevas condiciones, cerraremos tu sesión de forma segura y ningún dato será tratado
+        bajo las nuevas directrices. Puedes ejercer tus derechos ARCO en cualquier momento escribiendo a <a
+          href="mailto:legal@serviciosmallorca.com">legal@serviciosmallorca.com</a
+        >.
+      </p>
+    </form>
+  </div>
+</div>
+
+<script>
+  import { authStore } from "../lib/authStore";
+  import {
+    CURRENT_LEGAL_VERSION,
+    hasAcceptedCurrentLegalTerms,
+    recordUserLegalConsent,
+    getUserLegalConsent,
+  } from "../lib/legalComplianceEngine";
+
+  function initLegalTermsModal() {
+    const modal = document.getElementById("legal-terms-update-modal");
+    if (!modal) return;
+
+    const checkbox = document.getElementById("legal-accept-checkbox") as HTMLInputElement | null;
+    const confirmBtn = document.getElementById("btn-confirm-legal-acceptance") as HTMLButtonElement | null;
+    const declineBtn = document.getElementById("btn-decline-legal-logout");
+    const form = document.getElementById("legal-consent-form");
+
+    // Enable/disable submit button based on checkbox
+    checkbox?.addEventListener("change", () => {
+      if (confirmBtn) {
+        confirmBtn.disabled = !checkbox.checked;
+      }
+    });
+
+    // Check user compliance status
+    function checkCompliance() {
+      const state = authStore.getState();
+      const user = state.user;
+
+      // Si no hay usuario autenticado, comprobamos si ya aceptó previamente en sesión
+      const targetUid = user?.uid || null;
+
+      if (targetUid) {
+        const storedConsent = getUserLegalConsent(targetUid);
+        if (!hasAcceptedCurrentLegalTerms(storedConsent)) {
+          // Open Modal
+          modal.style.display = "flex";
+          document.body.classList.add("modal-open");
+        } else {
+          modal.style.display = "none";
+          document.body.classList.remove("modal-open");
+        }
+      } else {
+        // Para visitantes no registrados, comprobamos consentimiento global
+        const globalVersion = localStorage.getItem("sm_latest_accepted_legal_version");
+        // No forzamos bloqueo a visitantes anónimos hasta que interactúen o se registren,
+        // pero sí registramos su sesión si deciden navegar.
+      }
+    }
+
+    // Subscribe to auth changes
+    authStore.subscribe(() => {
+      checkCompliance();
+    });
+
+    // Form submission
+    form?.addEventListener("submit", (e) => {
+      e.preventDefault();
+      if (!checkbox?.checked) return;
+
+      const user = authStore.getState().user;
+      const uid = user?.uid || "guest_verified";
+
+      recordUserLegalConsent(uid, "terms_update_modal", ["terms", "privacy", "cookies", "digital_withdrawal"]);
+
+      // Close modal
+      modal.style.display = "none";
+      document.body.classList.remove("modal-open");
+
+      // Notify system
+      window.dispatchEvent(
+        new CustomEvent("legal-terms-accepted", {
+          detail: { version: CURRENT_LEGAL_VERSION, uid },
+        }),
+      );
+    });
+
+    // Decline / Logout
+    declineBtn?.addEventListener("click", async () => {
+      const confirmLogout = confirm(
+        "Al rechazar las condiciones actualizadas, tu sesión se cerrará de forma segura. ¿Deseas continuar?",
+      );
+      if (confirmLogout) {
+        await authStore.logout();
+        modal.style.display = "none";
+        document.body.classList.remove("modal-open");
+        window.location.reload();
+      }
+    });
+
+    // Initial check
+    setTimeout(checkCompliance, 400);
+  }
+
+  document.addEventListener("DOMContentLoaded", initLegalTermsModal);
+</script>
+
+<style>
+  .legal-modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 15, 29, 0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-md, 1rem);
+    box-sizing: border-box;
+  }
+
+  .legal-modal-card {
+    background: var(--color-surface, #1e293b);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    border-radius: var(--border-radius-lg, 16px);
+    max-width: 640px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: var(--space-xl, 2rem);
+    box-shadow:
+      0 20px 40px rgba(0, 0, 0, 0.5),
+      0 0 30px rgba(255, 215, 0, 0.1);
+    color: var(--color-text, #f8fafc);
+    box-sizing: border-box;
+  }
+
+  .legal-modal-header {
+    text-align: center;
+    margin-bottom: var(--space-lg, 1.5rem);
+  }
+
+  .legal-badge-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255, 215, 0, 0.12);
+    border: 1px solid rgba(255, 215, 0, 0.4);
+    color: #ffd700;
+    padding: 4px 12px;
+    border-radius: var(--border-radius-full, 9999px);
+    font-size: 0.78rem;
+    font-weight: 700;
+    margin-bottom: var(--space-sm, 0.75rem);
+  }
+
+  .legal-modal-title {
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: var(--space-xs, 0.5rem);
+    line-height: 1.3;
+  }
+
+  .legal-modal-subtitle {
+    font-size: 0.88rem;
+    color: var(--color-text-light, #94a3b8);
+    line-height: 1.5;
+  }
+
+  .legal-changes-box {
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid var(--color-surface-border, rgba(255, 255, 255, 0.08));
+    border-radius: var(--border-radius-md, 12px);
+    padding: var(--space-md, 1rem);
+    margin-bottom: var(--space-md, 1rem);
+  }
+
+  .legal-changes-heading {
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: #38bdf8;
+    margin-bottom: var(--space-sm, 0.75rem);
+  }
+
+  .legal-changes-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .legal-changes-list li {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    font-size: 0.84rem;
+    line-height: 1.45;
+    color: #cbd5e1;
+  }
+
+  .change-bullet {
+    color: #4ade80;
+    font-weight: bold;
+    flex-shrink: 0;
+  }
+
+  .legal-docs-strip {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin-bottom: var(--space-lg, 1.5rem);
+    font-size: 0.82rem;
+    text-align: center;
+  }
+
+  .legal-docs-label {
+    display: block;
+    color: #94a3b8;
+    margin-bottom: 6px;
+  }
+
+  .legal-docs-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .legal-link {
+    color: #ffd700;
+    text-decoration: underline;
+    font-weight: 600;
+    transition: color 0.2s;
+  }
+
+  .legal-link:hover {
+    color: #fff;
+  }
+
+  .legal-link-sep {
+    color: #64748b;
+  }
+
+  .legal-consent-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md, 1rem);
+  }
+
+  .legal-checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    cursor: pointer;
+    font-size: 0.84rem;
+    line-height: 1.45;
+    color: #e2e8f0;
+    background: rgba(255, 255, 255, 0.04);
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .legal-checkbox {
+    margin-top: 3px;
+    width: 18px;
+    height: 18px;
+    accent-color: #ffd700;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  .legal-modal-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: var(--space-xs, 0.5rem);
+  }
+
+  .legal-rights-footnote {
+    font-size: 0.72rem;
+    color: #64748b;
+    text-align: center;
+    line-height: 1.4;
+    margin-top: 6px;
+  }
+
+  .legal-rights-footnote a {
+    color: #94a3b8;
+    text-decoration: underline;
+  }
+
+  @media (max-width: 640px) {
+    .legal-modal-card {
+      padding: var(--space-md, 1rem);
+    }
+  }
+</style>

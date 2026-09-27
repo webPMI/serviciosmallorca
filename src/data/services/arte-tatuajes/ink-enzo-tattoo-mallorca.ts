@@ -3,7 +3,7 @@ import type { ServiceItem } from "../types.ts";
 export const inkEnzoTattooMallorca: ServiceItem = {
   id: "ink-enzo-tattoo-mallorca",
   slug: "ink-enzo-tattoo-mallorca",
-  name: "inkEnzo Tattoo Mallorca (Enzo Paez)",
+  name: "inkEnzo - Tatuador Profesional Especializado",
   category: "arte-tatuajes",
   categories: ["arte-tatuajes", "servicios-profesionales"],
   subcategories: ["realismo", "micro-tatuaje", "fine-line", "blackwork", "coverup-arreglo", "tatuaje-domicilio-villas"],
@@ -51,6 +51,18 @@ export const inkEnzoTattooMallorca: ServiceItem = {
       de: "Individuelle Angebote nach Motivgröße und Aufwand. Private Studio-Sessions und mobiler VIP-Service für Villen und Yachten.",
     },
   },
+  teamMembers: [
+    {
+      name: "Enzo Paez",
+      role: {
+        es: "Tatuador Profesional Especializado & Fundador",
+        en: "Specialized Professional Tattoo Artist & Founder",
+        ca: "Tatuador Professional Especialitzat i Fundador",
+        de: "Spezialisierter professioneller Tätowierer & Gründer",
+      },
+      specialty: "Realismo Black & Grey, Fine Line, Micro-tatuaje, Blackwork & Cover-ups",
+    },
+  ],
   specialties: {
     es: [
       "Realismo Black & Grey (Retratos, Esculturas y Texturas)",
@@ -82,23 +94,53 @@ export const inkEnzoTattooMallorca: ServiceItem = {
     ],
   },
   shortDescription: {
-    es: "Tatuador profesional en Palma de Mallorca especializado en realismo, fineline, blackwork, cover-ups y sesiones privadas a domicilio y en villas.",
-    en: "Professional tattoo artist in Palma de Mallorca specialized in realism, fine line, blackwork, cover-ups, and private on-demand villa sessions.",
-    ca: "Tatuador professional a Palma de Mallorca especialitzat en realisme, fine line, blackwork, cover-ups i sessions privades a domicili i vil·les.",
-    de: "Professioneller Tätowierer in Palma de Mallorca, spezialisiert auf Realismus, Fine Line, Blackwork, Cover-ups und private Vor-Ort-Sessions.",
+    es: "Tatuador profesional especializado en Palma de Mallorca en realismo Black & Grey, fine line, micro-tatuaje, blackwork y cover-ups, con atención en estudio y servicio VIP en villas y yates.",
+    en: "Specialized professional tattoo artist in Palma de Mallorca focusing on Black & Grey realism, fine line, micro-tattoos, blackwork, and cover-ups, with studio and VIP villa/yacht appointments.",
+    ca: "Tatuador professional especialitzat a Palma de Mallorca en realisme Black & Grey, fine line, microtatuatges, blackwork i cover-ups, amb atenció a estudi i servei VIP a vil·les i iots.",
+    de: "Spezialisierter professioneller Tätowierer in Palma de Mallorca für Black & Grey Realismus, Fine Line, Mikro-Tattoos, Blackwork und Cover-ups mit Studio- und Vor-Ort-VIP-Terminen.",
   },
   fullDescription: {
-    es: "inkEnzo, liderado por el tatuador profesional Enzo Paez en Palma de Mallorca, destaca por una ejecución técnica impecable en realismo Black & Grey, micro-realismo, fine line y transformación de tatuajes antiguos mediante cover-up. Además de su atención en estudio, ofrece un servicio exclusivo de tatuaje móvil para clientes en villas, hoteles de lujo y yates en toda la isla de Mallorca con material 100% esterilizado y homologado.",
-    en: "inkEnzo, led by professional tattoo artist Enzo Paez in Palma de Mallorca, is renowned for flawless technical execution in Black & Grey realism, detailed micro-realism, fine line, and creative cover-ups. In addition to private studio sessions, inkEnzo provides an exclusive on-demand mobile tattoo service across Mallorca for residences, luxury villas, and private yachts, adhering to strict hygiene and REACH-certified safety standards.",
-    ca: "inkEnzo, liderat pel tatuador professional Enzo Paez a Palma de Mallorca, destaca per una execució tècnica impecable en realisme Black & Grey, microrealisme, fine line i transformació de tatuatges antics mitjançant cover-up. A més de l'atenció a l'estudi, ofereix un servei exclusiu de tatuatge mòbil per a clients a vil·les, hotels de luxe i iots a tota l'illa de Mallorca amb material 100% esterilitzat i homologat.",
-    de: "inkEnzo, geführt vom professionellen Tätowierer Enzo Paez in Palma de Mallorca, überzeugt durch erstklassige Präzision in Black & Grey Realismus, Mikrorealismus, Fine Line und anspruchsvollen Cover-ups. Neben exklusiven Studio-Terminen bietet inkEnzo einen mobilen VIP-Tattoo-Service auf ganz Mallorca für private Villen, Luxushotels und Yachten unter strengsten hygienischen EU-REACH-Standards an.",
+    es: "inkEnzo, liderado por el tatuador profesional Enzo Paez en Palma de Mallorca, destaca como tatuador profesional especializado en realismo Black & Grey, micro-realismo, fine line y transformación de tatuajes antiguos mediante cover-up. Además de su atención en estudio, ofrece un servicio exclusivo de tatuaje móvil para clientes en villas, hoteles de lujo y yates en toda la isla de Mallorca con material 100% esterilizado y homologado.",
+    en: "inkEnzo, led by specialized professional tattoo artist Enzo Paez in Palma de Mallorca, is renowned for flawless technical execution in Black & Grey realism, detailed micro-realism, fine line, and creative cover-ups. In addition to private studio sessions, inkEnzo provides an exclusive on-demand mobile tattoo service across Mallorca for residences, luxury villas, and private yachts, adhering to strict hygiene and REACH-certified safety standards.",
+    ca: "inkEnzo, liderat pel tatuador professional Enzo Paez a Palma de Mallorca, destaca com a tatuador professional especialitzat en realisme Black & Grey, microrealisme, fine line i transformació de tatuatges antics mitjançant cover-up. A més de l'atenció a l'estudi, ofereix un servei exclusiu de tatuatge mòbil per a clients a vil·les, hotels de luxe i iots a tota l'illa de Mallorca amb material 100% esterilitzat i homologat.",
+    de: "inkEnzo, geführt vom spezialisierten professionellen Tätowierer Enzo Paez in Palma de Mallorca, überzeugt durch erstklassige Präzision in Black & Grey Realismus, Mikrorealismus, Fine Line und anspruchsvollen Cover-ups. Neben exklusiven Studio-Terminen bietet inkEnzo einen mobilen VIP-Tattoo-Service auf ganz Mallorca für private Villen, Luxushotels und Yachten unter strengsten hygienischen EU-REACH-Standards an.",
+  },
+  highlights: {
+    es: [
+      "Tatuador profesional especializado en realismo Black & Grey de máxima fidelidad y sombras suaves",
+      "Especialista en fine line, líneas limpias y micro-realismo de alta definición",
+      "Experto en cover-ups avanzados y corrección estética de tatuajes antiguos",
+      "Servicio exclusivo a domicilio para villas de lujo, fincas privadas y yates en Mallorca",
+      "Máximo estándar higiénico homologado y tintas conformes a la normativa europea REACH",
+    ],
+    en: [
+      "Specialized professional tattoo artist in high-fidelity Black & Grey realism and smooth gradients",
+      "Fine line and high-definition micro-realism specialist with ultra-clean linework",
+      "Advanced cover-up expert with artistic tattoo restoration solutions",
+      "Exclusive on-demand service for luxury villas, private estates, and yachts in Mallorca",
+      "Certified hygiene under Balearic health authorities and strict REACH-compliant European inks",
+    ],
+    ca: [
+      "Tatuador professional especialitzat en realisme Black & Grey de màxima fidelitat i ombres suaus",
+      "Especialista en fine line, línies netes i microrealisme d'alta definició",
+      "Expert en cover-ups avançats i correcció estètica de tatuatges antics",
+      "Servei exclusiu a domicili per a vil·les de luxe, finques privades i iots a Mallorca",
+      "Màxim estàndard higiènic homologat i tintes conformes a la normativa europea REACH",
+    ],
+    de: [
+      "Spezialisierter professioneller Tätowierer für Black & Grey Realismus mit feinsten Schattierungen",
+      "Spezialist für Fine Line, saubere Linienführung und hochauflösenden Mikrorealismus",
+      "Experte für anspruchsvolle Cover-ups und ästhetische Tattoo-Korrekturen",
+      "Exklusiver mobiler Vor-Ort-Service für Luxusvillen, Fincas und Yachten auf Mallorca",
+      "Offiziell homologierte Hygiene und Farben nach strengster EU-REACH-Verordnung",
+    ],
   },
   founderName: "Enzo Paez",
   founderStory: {
-    es: "Enzo Paez ha forjado su trayectoria como artista del tatuaje combinando una dedicación milimétrica al detalle anatómico y una técnica depurada en sombras, líneas finas y contrastes profundos, ofreciendo un trato cercano y una experiencia personalizada y segura.",
-    en: "Enzo Paez has built his reputation as a tattoo artist through millimeter precision, anatomical harmony, and a refined technique in shading, fine lines, and deep contrast, delivering a bespoke and safe client experience.",
-    ca: "Enzo Paez ha forjat la seva trajectòria com a artista del tatuatge combinant una dedicació mil·limètrica al detall anatòmic i una tècnica depurada en ombres, línies fines i contrastos profunds.",
-    de: "Enzo Paez hat sich als Tattoo-Künstler durch höchste Präzision, anatomisches Feingefühl und meisterhafte Schattierungskunst einen Namen gemacht und bietet maßgeschneiderte, sichere Tattoo-Erlebnisse.",
+    es: "Enzo Paez ha forjado su trayectoria como tatuador profesional especializado combinando una dedicación milimétrica al detalle anatómico y una técnica depurada en sombras, líneas finas y contrastes profundos, ofreciendo un trato cercano y una experiencia personalizada y segura.",
+    en: "Enzo Paez has built his reputation as a specialized professional tattoo artist through millimeter precision, anatomical harmony, and a refined technique in shading, fine lines, and deep contrast, delivering a bespoke and safe client experience.",
+    ca: "Enzo Paez ha forjat la seva trajectòria com a tatuador professional especialitzat combinant una dedicació mil·limètrica al detall anatòmic i una tècnica depurada en ombres, línies fines i contrastos profunds.",
+    de: "Enzo Paez hat sich als spezialisierter professioneller Tätowierer durch höchste Präzision, anatomisches Feingefühl und meisterhafte Schattierungskunst einen Namen gemacht und bietet maßgeschneiderte, sichere Tattoo-Erlebnisse.",
   },
   faqs: [
     {
@@ -134,10 +176,10 @@ export const inkEnzoTattooMallorca: ServiceItem = {
     {
       icon: "award",
       label: {
-        es: "Tatuador Profesional Especialista en Realismo & Fineline",
-        en: "Professional Tattoo Artist Specialist in Realism & Fineline",
-        ca: "Tatuador Professional Especialista en Realisme i Fineline",
-        de: "Professioneller Tätowierer & Spezialist für Realismus und Fine Line",
+        es: "Tatuador Profesional Especializado (Realismo, Fine Line & Cover-up)",
+        en: "Specialized Professional Tattoo Artist (Realism, Fine Line & Cover-ups)",
+        ca: "Tatuador Professional Especialitzat (Realisme, Fine Line i Cover-up)",
+        de: "Spezialisierter professioneller Tätowierer (Realismus, Fine Line & Cover-ups)",
       },
     },
     {
@@ -151,8 +193,13 @@ export const inkEnzoTattooMallorca: ServiceItem = {
     },
   ],
   localSeoKeywords: {
-    primary: "tatuador palma de mallorca inkenzo tatuajes realismo fineline",
-    secondary: ["tatuajes a domicilio mallorca", "tatuajes villas yates palma", "cover up tattoo mallorca"],
+    primary: "tatuador profesional especializado palma de mallorca inkenzo tatuajes realismo fineline",
+    secondary: [
+      "tatuador profesional mallorca",
+      "tatuajes a domicilio mallorca",
+      "tatuajes villas yates palma",
+      "cover up tattoo mallorca",
+    ],
     locationKeywords: ["Palma de Mallorca", "Palma", "Mallorca", "Illes Balears"],
   },
   image: "/images/services/ink-enzo-tattoo-mallorca.jpg",
