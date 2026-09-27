@@ -63,6 +63,16 @@ function main() {
   }
 
   const count = (pred) => services.filter(pred).length;
+  const bySector = {};
+  for (const s of services) {
+    const sector = s.file.split("/")[0];
+    bySector[sector] = bySector[sector] || { total: 0, searchFake: 0, listings: 0, absent: 0, clean: 0 };
+    bySector[sector].total++;
+    if (s.flags.includes("search_fake")) bySector[sector].searchFake++;
+    if (s.g === "listing" || s.a === "listing" || s.b === "listing") bySector[sector].listings++;
+    if (s.g === "absent" && s.a === "absent" && s.b === "absent") bySector[sector].absent++;
+    if (s.flags.length === 0) bySector[sector].clean++;
+  }
   const summary = {
     totalServices: services.length,
     google: {
@@ -91,7 +101,7 @@ function main() {
   };
 
   if (JSON_OUTPUT) {
-    console.log(JSON.stringify({ summary, offenders: services.filter((s) => s.flags.length > 0) }, null, 2));
+    console.log(JSON.stringify({ summary, bySector, offenders: services.filter((s) => s.flags.length > 0) }, null, 2));
     return;
   }
 
@@ -113,6 +123,13 @@ function main() {
   console.log(`Reseñas en plataforma sin ficha : ${summary.reviewPlatformMismatch}`);
   console.log(`Total agregado > reviewCount    : ${summary.aggregateGtReviewCount}`);
   console.log(`Fichas limpias                  : ${summary.clean}`);
+  console.log("--- Por sector (candidatos a curación P0) ---");
+  for (const [sector, v] of Object.entries(bySector).sort((a, b) => b[1].searchFake - a[1].searchFake)) {
+    if (v.searchFake > 0)
+      console.log(
+        `  ${sector.padEnd(30)} total=${v.total} fake=${v.searchFake} real=${v.listings} honesto=${v.absent} limpio=${v.clean}`,
+      );
+  }
   console.log("--- Muestra de casos (máx 60) ---");
   for (const s of services.filter((x) => x.flags.length > 0).slice(0, 60)) {
     console.log(`  ${s.file.padEnd(58)} ${s.flags.join(", ")}`);

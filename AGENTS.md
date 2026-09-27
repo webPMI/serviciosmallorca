@@ -24,6 +24,7 @@ Toda la documentación del proyecto está en `docs/`. Antes de trabajar en cualq
 - [DEVTOOLS.md](docs/DEVTOOLS.md) — 🛠️ Logger, Floating Button, DevTools Panel
 - [AGENT_CURATION_SOP.md](docs/AGENT_CURATION_SOP.md) — 🤖 SOP v2.0 para Agentes: Analista de Inteligencia de Negocios, 4 fases, 5 Pilares, Checklist de salida
 - [BUSINESS_DISCOVERY_SOP.md](docs/BUSINESS_DISCOVERY_SOP.md) — 🔎 Checklist Maestro: descubrimiento, minería y ranking por categoría/puntaje/alfabético (`npm run discover`, `npm run discover:mine`)
+- [DATA_HONESTY_BACKLOG.md](docs/DATA_HONESTY_BACKLOG.md) — 🛑 **P0-PRIORITARIO**: backlog de honestidad de datos multi-mapa (952 fichas con URLs de maps fabricadas) y plan de curación por fases (`node scripts/audit-data-honesty.mjs`)
 - [OFFICIAL_SOURCES_AND_CITIZEN_INTELLIGENCE.md](docs/OFFICIAL_SOURCES_AND_CITIZEN_INTELLIGENCE.md) — 🏛️ Fuentes oficiales de Baleares, guías al ciudadano y estadísticas IBESTAT
 - [CITIZEN_HUB_UI_UX_SPEC.md](docs/CITIZEN_HUB_UI_UX_SPEC.md) — 📑 Especificación técnica y UI/UX de la sección de Ciudadanía, Guías y Trámites
 - [BUSINESS_INTELLIGENCE_AND_MARKET_TRENDS.md](docs/BUSINESS_INTELLIGENCE_AND_MARKET_TRENDS.md) — 📈 Pulso empresarial de Mallorca: aperturas, disoluciones y sectores en auge
