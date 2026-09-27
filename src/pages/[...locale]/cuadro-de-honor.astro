@@ -70,6 +70,20 @@ const honorJsonLd = {
   <Navbar currentLocale={locale} translations={translations} getLangPrefix={getLangPrefix} />
 
   <main class="honor-container">
+    <!-- Payment Return Status Banner (Cancel / Success Feedback) -->
+    <div id="payment-status-banner" class="payment-alert-banner" style="display: none;" role="status">
+      <div class="alert-banner-content">
+        <span id="payment-status-icon" class="alert-icon">ℹ️</span>
+        <div class="alert-text-block">
+          <strong id="payment-status-title" class="alert-title">Estado de la Transacción</strong>
+          <p id="payment-status-desc" class="alert-desc"></p>
+        </div>
+      </div>
+      <button type="button" id="close-payment-banner-btn" class="alert-close-btn" aria-label="Cerrar notificación"
+        >×</button
+      >
+    </div>
+
     <!-- Hero Section -->
     <header class="honor-hero card card-glass">
       <div class="hero-badge">
@@ -203,13 +217,124 @@ const honorJsonLd = {
 
   // Auto-reopen modal if returning from login / auth redirect with intent
   const params = new URLSearchParams(window.location.search);
-  if (params.get("intent") === "boost" || params.get("openCheckout") === "1") {
-    const serviceName = params.get("serviceName") || "";
-    const minBid = Number(params.get("amount") || params.get("minBid") || "1.00");
-    const serviceId = params.get("serviceId") || "";
-    const serviceSlug = params.get("serviceSlug") || "";
-    const mode = params.get("mode") || "community_boost";
-    const catId = params.get("catId") || params.get("category") || "elite-general";
+
+  // Payment Status Banner Handler (Cancel / Success)
+  const paymentStatus = params.get("payment");
+  const banner = document.getElementById("payment-status-banner");
+  const bannerIcon = document.getElementById("payment-status-icon");
+  const bannerTitle = document.getElementById("payment-status-title");
+  const bannerDesc = document.getElementById("payment-status-desc");
+  const bannerClose = document.getElementById("close-payment-banner-btn");
+
+  if (paymentStatus && banner) {
+    if (paymentStatus === "cancelled") {
+      banner.className = "payment-alert-banner banner-warning";
+      if (bannerIcon) bannerIcon.textContent = "ℹ️";
+      if (bannerTitle) bannerTitle.textContent = "Proceso de Pago Cancelado";
+      if (bannerDesc) {
+        bannerDesc.textContent =
+          "No se ha realizado ningún cobro en tu tarjeta ni cuenta bancaria. Si deseas impulsar o posicionar tu comercio más adelante, puedes seleccionar el negocio en cualquier momento.";
+      }
+      banner.style.display = "flex";
+
+      // Sincronizar en el perfil del usuario como transacción cancelada sin coste (0,00€)
+      try {
+        const draftStr =
+          localStorage.getItem("sm_pending_checkout_draft") || sessionStorage.getItem("sm_pending_checkout_draft");
+        let slug = "";
+        if (draftStr) {
+          try {
+            const d = JSON.parse(draftStr);
+            slug = d.serviceSlug || d.serviceName || "";
+          } catch (_) {}
+        }
+        const cancelledRecord = {
+          serviceSlug: slug || "Aportación en Pasarela",
+          at: new Date().toISOString(),
+          reason: "Cancelado por el usuario en pasarela bancaria Stripe (0,00 €)",
+        };
+
+        const authData = localStorage.getItem("sm_auth_state");
+        let uid: string | null = null;
+        if (authData) {
+          try {
+            const parsedAuth = JSON.parse(authData);
+            uid = parsedAuth?.user?.uid || null;
+          } catch (_) {}
+        }
+        const cancelledKey = uid ? `sm_user_${uid}_cancelled_transactions` : "sm_cancelled_transactions_guest";
+        const existing = JSON.parse(localStorage.getItem(cancelledKey) || "[]");
+        existing.unshift(cancelledRecord);
+        localStorage.setItem(cancelledKey, JSON.stringify(existing.slice(0, 25)));
+      } catch (err) {
+        console.warn("Could not save cancelled transaction:", err);
+      }
+    } else if (paymentStatus === "success") {
+      banner.className = "payment-alert-banner banner-success";
+      if (bannerIcon) bannerIcon.textContent = "🎉";
+      if (bannerTitle) bannerTitle.textContent = "¡Aportación Confirmada con Éxito!";
+      if (bannerDesc) {
+        bannerDesc.textContent =
+          "Tu transacción ha sido validada por la pasarela bancaria. El comercio cuenta ahora con visibilidad prioritaria en el Cuadro de Honor e indexación oficial para motores de IA.";
+      }
+      banner.style.display = "flex";
+    }
+
+    bannerClose?.addEventListener("click", () => {
+      banner.style.display = "none";
+    });
+
+    // Limpiar query params de la barra de direcciones para evitar repeticiones al recargar
+    try {
+      const cleanUrl = window.location.pathname;
+      window.history.replaceState({}, document.title, cleanUrl);
+    } catch (_) {}
+  }
+
+  if (params.get("intent") === "boost" || params.get("openCheckout") === "1" || params.get("resumeDraft") === "1") {
+    let serviceName = params.get("serviceName") || "";
+    let minBid = Number(params.get("amount") || params.get("minBid") || "1.00");
+    let serviceId = params.get("serviceId") || "";
+    let serviceSlug = params.get("serviceSlug") || "";
+    let mode = params.get("mode") || "community_boost";
+    let catId = params.get("catId") || params.get("category") || "elite-general";
+    let backerName = "";
+    let backerEmail = "";
+    let backerMessage = "";
+    let isB2B = false;
+    let b2bTaxId = "";
+    let b2bLegalName = "";
+    let b2bAddress = "";
+    let resumed = false;
+
+    // Recuperar datos completos del borrador si volvemos de login/registro o desde el perfil
+    if (params.get("resumeDraft") === "1" || (!serviceId && !serviceName)) {
+      try {
+        const draftStr =
+          localStorage.getItem("sm_pending_checkout_draft") || sessionStorage.getItem("sm_pending_checkout_draft");
+        if (draftStr) {
+          const draft = JSON.parse(draftStr);
+          if (draft) {
+            resumed = true;
+            if (draft.serviceName) serviceName = draft.serviceName;
+            if (draft.serviceId) serviceId = draft.serviceId;
+            if (draft.serviceSlug) serviceSlug = draft.serviceSlug;
+            if (draft.amount) minBid = Number(draft.amount);
+            if (draft.mode) mode = draft.mode;
+            if (draft.catId) catId = draft.catId;
+            if (draft.backerName) backerName = draft.backerName;
+            if (draft.backerEmail) backerEmail = draft.backerEmail;
+            if (draft.backerMessage) backerMessage = draft.backerMessage;
+            if (draft.isB2B) isB2B = Boolean(draft.isB2B);
+            if (draft.b2bTaxId) b2bTaxId = draft.b2bTaxId;
+            if (draft.b2bLegalName) b2bLegalName = draft.b2bLegalName;
+            if (draft.b2bAddress) b2bAddress = draft.b2bAddress;
+          }
+        }
+      } catch (err) {
+        console.warn("Could not parse draft:", err);
+      }
+    }
 
     setTimeout(() => {
       window.dispatchEvent(
@@ -222,14 +347,94 @@ const honorJsonLd = {
             serviceName,
             minBid,
             mode,
+            backerName,
+            backerEmail,
+            backerMessage,
+            isB2B,
+            b2bTaxId,
+            b2bLegalName,
+            b2bAddress,
+            resumed,
           },
         }),
       );
-    }, 150);
+    }, 200);
   }
 </script>
 
 <style>
+  /* Payment Alert Banner (GR-01, GR-02) */
+  .payment-alert-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-md);
+    padding: var(--space-md) var(--space-lg);
+    border-radius: var(--border-radius-md, 12px);
+    margin-bottom: var(--space-lg);
+    box-shadow: var(--shadow-sm);
+    animation: fadeIn 0.3s ease-out;
+  }
+
+  .banner-warning {
+    background: var(--color-warning-bg, rgba(234, 179, 8, 0.12));
+    border: 1px solid var(--color-warning, #eab308);
+    color: var(--color-text);
+  }
+
+  .banner-success {
+    background: var(--color-success-bg, rgba(34, 197, 94, 0.12));
+    border: 1px solid var(--color-success, #22c55e);
+    color: var(--color-text);
+  }
+
+  .alert-banner-content {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-md);
+    flex: 1;
+  }
+
+  .alert-icon {
+    font-size: 1.5rem;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .alert-text-block {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .alert-title {
+    font-size: 0.95rem;
+    font-weight: 800;
+  }
+
+  .alert-desc {
+    font-size: 0.82rem;
+    margin: 0;
+    line-height: 1.4;
+    color: var(--color-text-muted);
+  }
+
+  .alert-close-btn {
+    background: transparent;
+    border: none;
+    font-size: 1.3rem;
+    line-height: 1;
+    cursor: pointer;
+    color: var(--color-text-muted);
+    padding: 4px 8px;
+    border-radius: var(--border-radius-sm);
+    transition: color var(--transition-fast);
+  }
+
+  .alert-close-btn:hover {
+    color: var(--color-text);
+  }
+
   .honor-container {
     width: 100%;
     max-width: 1200px;

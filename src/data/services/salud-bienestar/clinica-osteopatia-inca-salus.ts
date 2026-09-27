@@ -1,6 +1,6 @@
 import type { ServiceItem } from "../types";
 
-export const service: ServiceItem = {
+export const clinica_osteopatia_inca_salus: ServiceItem = {
   slug: "clinica-osteopatia-inca-salus",
   id: "clinica-osteopatia-inca-salus",
   name: "Clínica de Osteopatía Salus Inca",
@@ -20,7 +20,7 @@ export const service: ServiceItem = {
   verified: true,
   featured: false,
   status: "open",
-  tags: ["zona:inca", "product:premium", "mod:en-local", "aud:adultos", "aud:deportistas"],
+  tags: ["zona:inca", "product:premium", "mod:en-local"],
   phone: "+34 971 50 23 87",
   whatsapp: "+34 671 50 23 87",
   email: "info@salus-inca.com",
@@ -28,7 +28,8 @@ export const service: ServiceItem = {
   schedule: "Lunes a Viernes: 09:00 - 20:00 | Sábado: 09:00 - 13:00",
   image: "/images/services/clinica-osteopatia-inca-salus.jpg",
   gallery: ["/images/services/clinica-osteopatia-inca-salus.jpg"],
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica+Osteopat%C3%ADa+Salus+Inca+Carrer+Major+89",
+  googleMapsUrl:
+    "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica+Osteopat%C3%ADa+Salus+Inca+Carrer+Major+89",
   appleMapsUrl: "https://maps.apple.com/?q=Clinica+Osteopatia+Salus+Inca",
   bingMapsUrl: "https://bing.com/maps?q=Clinica+Osteopatia+Salus+Inca",
   shortDescription: {
@@ -44,20 +45,66 @@ export const service: ServiceItem = {
     de: "Die Osteopathie-Klinik Salus in Inca wird von D.O.-Osteopathen mit Hochschulausbildung in struktureller, viszeraler und kranialer Osteopathie betrieben. Mit einem ganzheitlichen Patientenansatz behandeln sie muskuloskelettale Beschwerden ebenso wie viszerale Dysfunktionen im Zusammenhang mit Stress.",
   },
   highlights: {
-    es: ["Osteópatas D.O. con formación universitaria en osteopatía integral", "Tratamiento global: osteopatía estructural, visceral y craneal", "Especializados en deportistas y patología cervical crónica", "Sesiones de 50 minutos de tratamiento individual completo"],
-    en: ["University-trained D.O. osteopaths in structural, visceral, and cranial osteopathy", "Holistic treatment approach covering all osteopathic disciplines", "Specialized in athletes and chronic cervical pathology", "50-minute individual full-treatment sessions"],
-    ca: ["Osteòpates D.O. amb formació universitària en osteopatia integral", "Tractament global: osteopatia estructural, visceral i cranial", "Especialitzats en esportistes i patologia cervical crònica", "Sessions de 50 minuts de tractament individual complet"],
-    de: ["Universitär ausgebildete D.O.-Osteopathen in ganzheitlicher Osteopathie", "Umfassender Behandlungsansatz: strukturell, viszeral und kranial", "Spezialisiert auf Sportler und chronische Halswirbelsäulenprobleme", "50-minütige Einzelbehandlungssitzungen"],
+    es: [
+      "Osteópatas D.O. con formación universitaria en osteopatía integral",
+      "Tratamiento global: osteopatía estructural, visceral y craneal",
+      "Especializados en deportistas y patología cervical crónica",
+      "Sesiones de 50 minutos de tratamiento individual completo",
+    ],
+    en: [
+      "University-trained D.O. osteopaths in structural, visceral, and cranial osteopathy",
+      "Holistic treatment approach covering all osteopathic disciplines",
+      "Specialized in athletes and chronic cervical pathology",
+      "50-minute individual full-treatment sessions",
+    ],
+    ca: [
+      "Osteòpates D.O. amb formació universitària en osteopatia integral",
+      "Tractament global: osteopatia estructural, visceral i cranial",
+      "Especialitzats en esportistes i patologia cervical crònica",
+      "Sessions de 50 minuts de tractament individual complet",
+    ],
+    de: [
+      "Universitär ausgebildete D.O.-Osteopathen in ganzheitlicher Osteopathie",
+      "Umfassender Behandlungsansatz: strukturell, viszeral und kranial",
+      "Spezialisiert auf Sportler und chronische Halswirbelsäulenprobleme",
+      "50-minütige Einzelbehandlungssitzungen",
+    ],
   },
   servicesProvided: {
-    es: ["Osteopatía estructural para escoliosis, hernias, protusiones y lumbalgias", "Osteopatía visceral para colon irritable, reflujo y disfunciones digestivas", "Terapia craneal para cefaleas, migrañas y trastornos del sueño", "Osteopatía pediátrica y neonatal para cólicos y plagiocefalia"],
-    en: ["Structural osteopathy for scoliosis, hernias, protrusions, and back pain", "Visceral osteopathy for IBS, acid reflux, and digestive dysfunction", "Cranial therapy for headaches, migraines, and sleep disorders", "Pediatric and neonatal osteopathy for colic and plagiocephaly"],
-    ca: ["Osteopatia estructural per a escoliosi, hèrnies, protusions i lumbàlgies", "Osteopatia visceral per a budell irritable, reflux i disfuncions digestives", "Teràpia cranial per a cefalees, migrànies i trastorns del son", "Osteopatia pediàtrica i neonatal per a còlics i plagiocefàlia"],
-    de: ["Strukturelle Osteopathie bei Skoliose, Hernien, Bandscheibenvorfällen und Rückenschmerzen", "Viszerale Osteopathie bei Reizdarmsyndrom, Reflux und Verdauungsstörungen", "Kraniale Therapie bei Kopfschmerzen, Migräne und Schlafstörungen", "Pädiatrische und neonatale Osteopathie bei Koliken und Plagiozephalie"],
+    es: [
+      "Osteopatía estructural para escoliosis, hernias, protusiones y lumbalgias",
+      "Osteopatía visceral para colon irritable, reflujo y disfunciones digestivas",
+      "Terapia craneal para cefaleas, migrañas y trastornos del sueño",
+      "Osteopatía pediátrica y neonatal para cólicos y plagiocefalia",
+    ],
+    en: [
+      "Structural osteopathy for scoliosis, hernias, protrusions, and back pain",
+      "Visceral osteopathy for IBS, acid reflux, and digestive dysfunction",
+      "Cranial therapy for headaches, migraines, and sleep disorders",
+      "Pediatric and neonatal osteopathy for colic and plagiocephaly",
+    ],
+    ca: [
+      "Osteopatia estructural per a escoliosi, hèrnies, protusions i lumbàlgies",
+      "Osteopatia visceral per a budell irritable, reflux i disfuncions digestives",
+      "Teràpia cranial per a cefalees, migrànies i trastorns del son",
+      "Osteopatia pediàtrica i neonatal per a còlics i plagiocefàlia",
+    ],
+    de: [
+      "Strukturelle Osteopathie bei Skoliose, Hernien, Bandscheibenvorfällen und Rückenschmerzen",
+      "Viszerale Osteopathie bei Reizdarmsyndrom, Reflux und Verdauungsstörungen",
+      "Kraniale Therapie bei Kopfschmerzen, Migräne und Schlafstörungen",
+      "Pädiatrische und neonatale Osteopathie bei Koliken und Plagiozephalie",
+    ],
   },
   reputationBreakdown: {
-    googleMaps: { rating: 4.9, reviewCount: 178, url: "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica+Osteopat%C3%ADa+Salus+Inca" },
+    googleMaps: {
+      rating: 4.9,
+      reviewCount: 178,
+      url: "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica+Osteopat%C3%ADa+Salus+Inca",
+    },
   },
   createdAt: "2026-09-05",
   lastUpdatedAt: "2026-09-05",
 };
+
+export const service = clinica_osteopatia_inca_salus;

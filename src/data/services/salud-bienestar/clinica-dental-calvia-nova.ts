@@ -1,6 +1,6 @@
 import type { ServiceItem } from "../types";
 
-export const service: ServiceItem = {
+export const clinica_dental_calvia_nova: ServiceItem = {
   slug: "clinica-dental-calvia-nova",
   id: "clinica-dental-calvia-nova",
   name: "Clínica Dental Calvià Nova",
@@ -20,7 +20,7 @@ export const service: ServiceItem = {
   verified: true,
   featured: false,
   status: "open",
-  tags: ["zona:palmanova", "product:premium", "mod:en-local", "aud:expats", "aud:turistas"],
+  tags: ["zona:palmanova", "product:premium", "mod:en-local", "aud:expat"],
   phone: "+34 971 68 01 45",
   whatsapp: "+34 971 68 01 45",
   email: "info@dentalcalvianova.com",
@@ -44,20 +44,66 @@ export const service: ServiceItem = {
     de: "Die Clínica Dental Calvià Nova ist die erste Adresse für die große deutsche, britische und skandinavische Expat-Gemeinschaft im Südwesten Mallorcas. Das mehrsprachige Team aus Zahnärzten, die Spanisch, Englisch, Deutsch, Schwedisch und Dänisch sprechen, bietet von Routinekontrollen bis zu Full-Mouth-Rehabilitationen mit All-on-4 und Emax-Veneers alles an.",
   },
   highlights: {
-    es: ["Atención en español, inglés, alemán, sueco y danés", "Especialistas en rehabilitaciones All-on-4 y All-on-6 sobre implantes", "Carillas Emax de precisión digital para sonrisas perfectas", "Acceso fácil y aparcamiento gratuito en Palmanova"],
-    en: ["Care in Spanish, English, German, Swedish, and Danish", "All-on-4 and All-on-6 implant rehabilitation specialists", "Digitally designed Emax porcelain veneers for perfect smiles", "Easy access and free parking in Palmanova"],
-    ca: ["Atenció en cinc idiomes per a residents internacionals", "Especialistes en rehabilitació All-on-4 i All-on-6 sobre implants", "Faccetes Emax de disseny digital per a somriures perfectes", "Accés fàcil i aparcament gratuït a Palmanova"],
-    de: ["Betreuung auf Spanisch, Englisch, Deutsch, Schwedisch und Dänisch", "All-on-4- und All-on-6-Implantat-Rehabilitation", "Digital geplante Emax-Porzellanveneers für ein perfektes Lächeln", "Einfache Erreichbarkeit und kostenloser Parkplatz in Palmanova"],
+    es: [
+      "Atención en español, inglés, alemán, sueco y danés",
+      "Especialistas en rehabilitaciones All-on-4 y All-on-6 sobre implantes",
+      "Carillas Emax de precisión digital para sonrisas perfectas",
+      "Acceso fácil y aparcamiento gratuito en Palmanova",
+    ],
+    en: [
+      "Care in Spanish, English, German, Swedish, and Danish",
+      "All-on-4 and All-on-6 implant rehabilitation specialists",
+      "Digitally designed Emax porcelain veneers for perfect smiles",
+      "Easy access and free parking in Palmanova",
+    ],
+    ca: [
+      "Atenció en cinc idiomes per a residents internacionals",
+      "Especialistes en rehabilitació All-on-4 i All-on-6 sobre implants",
+      "Faccetes Emax de disseny digital per a somriures perfectes",
+      "Accés fàcil i aparcament gratuït a Palmanova",
+    ],
+    de: [
+      "Betreuung auf Spanisch, Englisch, Deutsch, Schwedisch und Dänisch",
+      "All-on-4- und All-on-6-Implantat-Rehabilitation",
+      "Digital geplante Emax-Porzellanveneers für ein perfektes Lächeln",
+      "Einfache Erreichbarkeit und kostenloser Parkplatz in Palmanova",
+    ],
   },
   servicesProvided: {
-    es: ["Implantología All-on-4 y All-on-6 con carga inmediata", "Carillas de porcelana Emax y composite directo", "Ortodoncia Invisalign para adultos y adolescentes", "Blanqueamiento profesional en clínica y para casa"],
-    en: ["All-on-4 and All-on-6 immediate load dental implants", "Emax porcelain and direct composite veneers", "Invisalign orthodontics for adults and teens", "In-office and take-home professional whitening"],
-    ca: ["Implants All-on-4 i All-on-6 amb càrrega immediata", "Faccetes de porcellana Emax i composite directe", "Ortodòncia Invisalign per a adults i adolescents", "Blanquejament professional a la clínica i per a casa"],
-    de: ["All-on-4- und All-on-6-Sofortbelastungsimplantate", "Emax-Porzellan- und Direkt-Composite-Veneers", "Invisalign für Erwachsene und Teenager", "Professionelles Bleaching in der Praxis und als Heimanwendung"],
+    es: [
+      "Implantología All-on-4 y All-on-6 con carga inmediata",
+      "Carillas de porcelana Emax y composite directo",
+      "Ortodoncia Invisalign para adultos y adolescentes",
+      "Blanqueamiento profesional en clínica y para casa",
+    ],
+    en: [
+      "All-on-4 and All-on-6 immediate load dental implants",
+      "Emax porcelain and direct composite veneers",
+      "Invisalign orthodontics for adults and teens",
+      "In-office and take-home professional whitening",
+    ],
+    ca: [
+      "Implants All-on-4 i All-on-6 amb càrrega immediata",
+      "Faccetes de porcellana Emax i composite directe",
+      "Ortodòncia Invisalign per a adults i adolescents",
+      "Blanquejament professional a la clínica i per a casa",
+    ],
+    de: [
+      "All-on-4- und All-on-6-Sofortbelastungsimplantate",
+      "Emax-Porzellan- und Direkt-Composite-Veneers",
+      "Invisalign für Erwachsene und Teenager",
+      "Professionelles Bleaching in der Praxis und als Heimanwendung",
+    ],
   },
   reputationBreakdown: {
-    googleMaps: { rating: 4.7, reviewCount: 198, url: "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica+Dental+Calvi%C3%A0+Nova+Palmanova" },
+    googleMaps: {
+      rating: 4.7,
+      reviewCount: 198,
+      url: "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica+Dental+Calvi%C3%A0+Nova+Palmanova",
+    },
   },
   createdAt: "2026-09-05",
   lastUpdatedAt: "2026-09-05",
 };
+
+export const service = clinica_dental_calvia_nova;

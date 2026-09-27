@@ -235,6 +235,7 @@ import { trespaisPortAndratx } from "./trespais-port-andratx.ts";
 import { vandalPalma } from "./vandal-palma.ts";
 import { vinoDelMarPortAdriano } from "./vino-del-mar-port-adriano.ts";
 
+import { restaurante_sa_foradada_deia_arros_lena } from "./restaurante-sa-foradada-deia-arros-leña.ts";
 export { adrianQuetglas } from "./adrian-quetglas.ts";
 export { barBosch } from "./bar-bosch.ts";
 export { barEspanyaPalma } from "./bar-espanya-palma.ts";
@@ -471,7 +472,9 @@ export { trespaisPortAndratx } from "./trespais-port-andratx.ts";
 export { vandalPalma } from "./vandal-palma.ts";
 export { vinoDelMarPortAdriano } from "./vino-del-mar-port-adriano.ts";
 
+export { restaurante_sa_foradada_deia_arros_lena } from "./restaurante-sa-foradada-deia-arros-leña.ts";
 export const RESTAURANT_SERVICES: ServiceItem[] = [
+  restaurante_sa_foradada_deia_arros_lena,
   adrianQuetglas,
   barBosch,
   barEspanyaPalma,

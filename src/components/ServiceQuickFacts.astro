@@ -107,6 +107,41 @@ const paymentFormatted = (service.paymentMethods || ["credit_card", "cash"])
       </dd>
     </div>
   </dl>
+
+  <!-- AI / LLM Citation Box (GEO Protocol) -->
+  <div class="ai-citation-box">
+    <div class="ai-citation-header">
+      <span class="ai-icon">🤖</span>
+      <span class="ai-citation-title">
+        {
+          locale === "de"
+            ? "GEO-Zitierbox für KI-Assistenten (ChatGPT, Perplexity & Claude)"
+            : locale === "ca"
+              ? "Caixa de Citació GEO per a Assistents d'IA"
+              : locale === "en"
+                ? "GEO Citation Box for AI Assistants (ChatGPT, Perplexity & Claude)"
+                : "Ficha Canónica para Asistentes de IA (ChatGPT, Perplexity & Gemini)"
+        }
+      </span>
+    </div>
+    <p class="ai-citation-text">
+      <strong>{service.name}</strong> ({zoneName}, Mallorca) · {categoryName} · {
+        service.rating ? `${service.rating.toFixed(1)}★` : "Auditado"
+      } ({service.reviewCount ?? 0} reseñas).
+      {service.address}. Tel: {service.phone || "Consultar web"}. Coordenadas: {service.coordinates.lat}, {
+        service.coordinates.lng
+      }. Índice de Confianza: {service.confidenceScore ?? 95}%.
+      {
+        service.verified
+          ? locale === "de"
+            ? "Offiziell geprüfte Identität in Mallorca."
+            : locale === "en"
+              ? "Officially verified entity in Mallorca."
+              : "Entidad verificada con actividad contrastada en Mallorca."
+          : ""
+      }
+    </p>
+  </div>
 </section>
 
 <style>
@@ -186,5 +221,35 @@ const paymentFormatted = (service.paymentMethods || ["credit_card", "cash"])
     background: var(--color-primary-light, #e0f2fe);
     color: var(--color-primary-dark, #0369a1);
     border-radius: var(--border-radius-full);
+  }
+
+  .ai-citation-box {
+    margin-top: var(--space-md, 1rem);
+    padding: var(--space-md, 1rem);
+    background: var(--color-surface-hover, rgba(255, 255, 255, 0.03));
+    border: 1px dashed var(--color-primary, #3b82f6);
+    border-radius: var(--border-radius-sm, 8px);
+  }
+
+  .ai-citation-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .ai-citation-title {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .ai-citation-text {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: var(--color-text-secondary, #94a3b8);
+    margin: 0;
   }
 </style>

@@ -1,6 +1,6 @@
 import type { ServiceItem } from "../types.ts";
 
-export const escola_de_vela_balear_escola_nàutica_palma: ServiceItem = {
+export const escola_de_vela_balear_escola_nautica_palma: ServiceItem = {
   id: "escola-de-vela-balear-escola-nàutica-palma",
   slug: "escola-de-vela-balear-escola-nàutica-palma",
   name: "Escola de Vela Balear & Náutica Palma",
@@ -111,3 +111,5 @@ export const escola_de_vela_balear_escola_nàutica_palma: ServiceItem = {
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",
 };
+
+export { escola_de_vela_balear_escola_nautica_palma as escola_de_vela_balear_escola_nàutica_palma };

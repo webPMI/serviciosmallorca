@@ -1,10 +1,10 @@
 ﻿import type { ServiceItem } from "../types";
 
-export const service: ServiceItem = {
+export const escuela_vela_palma_escola_de_vela: ServiceItem = {
   slug: "escuela-vela-palma-escola-de-vela",
   id: "escuela-vela-palma-escola-de-vela",
   name: "Escola de Vela de Palma",
-  category: "educacion-formacion",
+  category: "academias-idiomas-formacion",
   sectorId: "educacion-formacion",
   subcategories: ["escuela-vela-palma", "titulaciones-nauticas", "cursos-capitan-yate"],
   zone: "palma",
@@ -20,7 +20,7 @@ export const service: ServiceItem = {
   verified: true,
   featured: false,
   status: "open",
-  tags: ["zona:paseo-maritimo", "product:premium", "mod:en-local", "aud:adultos", "aud:deportistas"],
+  tags: ["zona:paseo-maritimo", "product:premium", "mod:en-local"],
   phone: "+34 971 40 15 78",
   whatsapp: "+34 618 40 15 78",
   email: "info@escolavela.com",
@@ -44,20 +44,66 @@ export const service: ServiceItem = {
     de: "Die Escola de Vela de Palma ist eine offizielle Segelschule, die von der Generaldirektion der Handelsmarine akkreditiert ist, um PER-, PNB- und Yachtkapitän-Lizenzkurse durchzuführen. Mit zertifizierten Instruktoren und modernen Booten bietet sie auch Einführungskurse in das Segeln und maritime Sicherheitsschulungen an.",
   },
   highlights: {
-    es: ["Escuela náutica oficial acreditada por la Dirección General de Marina Mercante", "Titulaciones PER, PNB, Patrón de Yate y Capitán de Yate", "Más de 30 años de experiencia formando patrones en la Bahía de Palma", "Cursos de regata, perfeccionamiento y seguridad marítima todo el año"],
-    en: ["Official nautical school accredited by the Directorate General of Merchant Marine", "PER, PNB, Yacht Skipper, and Yacht Captain licenses", "Over 30 years of experience training skippers in Palma Bay", "Racing, improvement, and maritime safety courses all year round"],
-    ca: ["Escola nàutica oficial acreditada per la Direcció General de Marina Mercant", "Titulacions PER, PNB, Patró de Iot i Capità de Iot", "Més de 30 anys d'experiència formant patrons a la Badia de Palma", "Cursos de regata, perfeccionament i seguretat marítima tot l'any"],
-    de: ["Offizielle, von der Handelsmarine akkreditierte Segelschule", "PER-, PNB-, Yachtführerschein- und Yachtkapitän-Lizenzen", "Über 30 Jahre Erfahrung in der Ausbildung von Skippern in der Bucht von Palma", "Regatta-, Fortgeschrittenen- und maritime Sicherheitskurse das ganze Jahr"],
+    es: [
+      "Escuela náutica oficial acreditada por la Dirección General de Marina Mercante",
+      "Titulaciones PER, PNB, Patrón de Yate y Capitán de Yate",
+      "Más de 30 años de experiencia formando patrones en la Bahía de Palma",
+      "Cursos de regata, perfeccionamiento y seguridad marítima todo el año",
+    ],
+    en: [
+      "Official nautical school accredited by the Directorate General of Merchant Marine",
+      "PER, PNB, Yacht Skipper, and Yacht Captain licenses",
+      "Over 30 years of experience training skippers in Palma Bay",
+      "Racing, improvement, and maritime safety courses all year round",
+    ],
+    ca: [
+      "Escola nàutica oficial acreditada per la Direcció General de Marina Mercant",
+      "Titulacions PER, PNB, Patró de Iot i Capità de Iot",
+      "Més de 30 anys d'experiència formant patrons a la Badia de Palma",
+      "Cursos de regata, perfeccionament i seguretat marítima tot l'any",
+    ],
+    de: [
+      "Offizielle, von der Handelsmarine akkreditierte Segelschule",
+      "PER-, PNB-, Yachtführerschein- und Yachtkapitän-Lizenzen",
+      "Über 30 Jahre Erfahrung in der Ausbildung von Skippern in der Bucht von Palma",
+      "Regatta-, Fortgeschrittenen- und maritime Sicherheitskurse das ganze Jahr",
+    ],
   },
   servicesProvided: {
-    es: ["Cursos teórico-prácticos para el Patrón de Embarcaciones de Recreo (PER)", "Cursos para el Patrón de Yate y Capitán de Yate con salidas al mar", "Iniciación a la vela para adultos y niños desde 8 años", "Cursos de regata olímpica y competición para regatistas con experiencia"],
-    en: ["Theoretical and practical courses for the Recreational Craft Skipper (PER)", "Yacht Skipper and Yacht Captain courses with offshore sailing", "Introduction to sailing for adults and children from age 8", "Olympic racing and competition courses for experienced sailors"],
-    ca: ["Cursos teoricopràctics per al Patró d'Embarcacions d'Esbarjo (PER)", "Cursos per al Patró de Iot i Capità de Iot amb sortides a la mar", "Iniciació a la vela per a adults i nens des dels 8 anys", "Cursos de regata olímpica i competició per a regatistes amb experiència"],
-    de: ["Theorie- und Praxiskurse für den Sportbootführerschein See (PER)", "Yachtführerschein- und Yachtkapitän-Kurse mit Offshore-Segeln", "Segeleinführung für Erwachsene und Kinder ab 8 Jahren", "Olympische Regatta- und Wettkampfkurse für erfahrene Segler"],
+    es: [
+      "Cursos teórico-prácticos para el Patrón de Embarcaciones de Recreo (PER)",
+      "Cursos para el Patrón de Yate y Capitán de Yate con salidas al mar",
+      "Iniciación a la vela para adultos y niños desde 8 años",
+      "Cursos de regata olímpica y competición para regatistas con experiencia",
+    ],
+    en: [
+      "Theoretical and practical courses for the Recreational Craft Skipper (PER)",
+      "Yacht Skipper and Yacht Captain courses with offshore sailing",
+      "Introduction to sailing for adults and children from age 8",
+      "Olympic racing and competition courses for experienced sailors",
+    ],
+    ca: [
+      "Cursos teoricopràctics per al Patró d'Embarcacions d'Esbarjo (PER)",
+      "Cursos per al Patró de Iot i Capità de Iot amb sortides a la mar",
+      "Iniciació a la vela per a adults i nens des dels 8 anys",
+      "Cursos de regata olímpica i competició per a regatistes amb experiència",
+    ],
+    de: [
+      "Theorie- und Praxiskurse für den Sportbootführerschein See (PER)",
+      "Yachtführerschein- und Yachtkapitän-Kurse mit Offshore-Segeln",
+      "Segeleinführung für Erwachsene und Kinder ab 8 Jahren",
+      "Olympische Regatta- und Wettkampfkurse für erfahrene Segler",
+    ],
   },
   reputationBreakdown: {
-    googleMaps: { rating: 4.8, reviewCount: 312, url: "https://www.google.com/maps/search/?api=1&query=Escola+Vela+Palma" },
+    googleMaps: {
+      rating: 4.8,
+      reviewCount: 312,
+      url: "https://www.google.com/maps/search/?api=1&query=Escola+Vela+Palma",
+    },
   },
   createdAt: "2026-09-05",
   lastUpdatedAt: "2026-09-05",
 };
+
+export const service = escuela_vela_palma_escola_de_vela;

@@ -40,6 +40,7 @@ import { varaderoAlcudiamar } from "./varadero-alcudiamar.ts";
 import { varaderoPortitxol } from "./varadero-portitxol-services.ts";
 import { zoeaBuceoMallorca } from "./zoea-mallorca-buceo.ts";
 
+import { escola_de_vela_balear_escola_nautica_palma } from "./escola-de-vela-balear-escola-nàutica-palma.ts";
 export { alboran_charter_palma } from "./alboran-charter-palma.ts";
 export { alcudiamarMarinaResort } from "./alcudiamar-marina-resort.ts";
 export { attractionCatamarans } from "./attraction-catamarans.ts";
@@ -81,7 +82,9 @@ export { varaderoAlcudiamar } from "./varadero-alcudiamar.ts";
 export { varaderoPortitxol } from "./varadero-portitxol-services.ts";
 export { zoeaBuceoMallorca } from "./zoea-mallorca-buceo.ts";
 
+export { escola_de_vela_balear_escola_nautica_palma } from "./escola-de-vela-balear-escola-nàutica-palma.ts";
 export const NAUTICA_SERVICES: ServiceItem[] = [
+  escola_de_vela_balear_escola_nautica_palma,
   alboran_charter_palma,
   alcudiamarMarinaResort,
   attractionCatamarans,

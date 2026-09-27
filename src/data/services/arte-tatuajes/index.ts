@@ -22,6 +22,7 @@ import { macatelaTattoo } from "./macatela-tattoo.ts";
 import { museuSaBassaBlancaService } from "./museu-sa-bassa-blanca.ts";
 import { taller_enquadernacio_art_can_alcover_palma } from "./taller-enquadernacio-art-can-alcover-palma.ts";
 import { urbanSoulTattoo } from "./urban-soul-tattoo.ts";
+import { inkEnzoTattooMallorca } from "./ink-enzo-tattoo-mallorca.ts";
 
 export { artesaniaCerasPalma } from "./artesania-ceras-palma.ts";
 export { boxTattooPiercing } from "./box-tattoo-piercing.ts";
@@ -46,6 +47,7 @@ export { macatelaTattoo } from "./macatela-tattoo.ts";
 export { museuSaBassaBlancaService } from "./museu-sa-bassa-blanca.ts";
 export { taller_enquadernacio_art_can_alcover_palma } from "./taller-enquadernacio-art-can-alcover-palma.ts";
 export { urbanSoulTattoo } from "./urban-soul-tattoo.ts";
+export { inkEnzoTattooMallorca } from "./ink-enzo-tattoo-mallorca.ts";
 
 export const TATTOO_SERVICES: ServiceItem[] = [
   artesaniaCerasPalma,
@@ -64,6 +66,7 @@ export const TATTOO_SERVICES: ServiceItem[] = [
   galeriaPelairesService,
   goodLuckTattoo,
   gordian_tattoo_palma_custom_ink,
+  inkEnzoTattooMallorca,
   kuyenArtTattoo,
   l21_gallery_palma,
   la_fidel_tattoo_palma_estudio,

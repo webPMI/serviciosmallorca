@@ -569,20 +569,50 @@ const withNewsCount = SERVICES.filter(
   <!-- ======================================================================= -->
   <div id="admin-tab-services" class="admin-tab-panel" style="display: none;">
     <article class="card card-glass moderation-card">
-      <div class="card-title-row flex-between">
+      <div class="card-title-row flex-between" style="flex-wrap: wrap; gap: 0.75rem;">
         <div>
           <h3>🏢 Negocios Registrados en el Catálogo ({totalServices})</h3>
           <p class="text-muted" style="font-size: var(--font-size-xs); margin: 0.2rem 0 0 0;">
-            Supervisa el estado, enlaces oficiales a Google Maps y datos de contacto de todas las fichas activas.
+            Supervisa el estado, enlaces oficiales a Google Maps, veracidad y verificación en tiempo real de todas las
+            fichas.
           </p>
         </div>
-        <a href="/es/servicios" target="_blank" class="btn btn-primary btn-sm"> 👁️ Ver Directorio Público </a>
+        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+          <a href="/es/servicios" target="_blank" class="btn btn-primary btn-sm"> 👁️ Ver Directorio Público </a>
+        </div>
+      </div>
+
+      <!-- Buscador y filtro interactivo del Catálogo -->
+      <div
+        class="catalog-filter-bar"
+        style="margin-top: var(--space-md); margin-bottom: var(--space-md); display: flex; gap: 0.5rem; flex-wrap: wrap;"
+      >
+        <input
+          type="text"
+          id="catalog-search-input"
+          class="input-field"
+          placeholder="🔍 Buscar por nombre, dirección, teléfono, categoría o zona..."
+          style="flex: 1; min-width: 250px;"
+        />
+        <select id="catalog-status-filter" class="input-field" style="width: auto; min-width: 170px;">
+          <option value="all">Todos los negocios ({totalServices})</option>
+          <option value="verified">✅ Solo Verificados ({verifiedCount})</option>
+          <option value="unverified">⚠️ Sin Verificar ({totalServices - verifiedCount})</option>
+        </select>
       </div>
 
       <div class="catalog-services-table">
         {
           SERVICES.map((s, idx) => (
-            <div class="catalog-item-card">
+            <div
+              class="catalog-item-card"
+              data-service-name={s.name.toLowerCase()}
+              data-service-zone={s.zone.toLowerCase()}
+              data-service-category={s.category.toLowerCase()}
+              data-service-phone={s.phone || ""}
+              data-service-slug={s.slug}
+              data-service-verified={s.verified ? "true" : "false"}
+            >
               <div class="catalog-header">
                 <div class="catalog-info-left">
                   <span class="catalog-idx">#{idx + 1}</span>
@@ -591,6 +621,9 @@ const withNewsCount = SERVICES.filter(
                     <div class="catalog-tags">
                       <span class="badge badge-primary">{s.category}</span>
                       <span class="badge badge-accent">📍 {s.zone}</span>
+                      <span class={`badge catalog-verified-badge ${s.verified ? "badge-success" : "badge-secondary"}`}>
+                        {s.verified ? "✅ Verificado Oficial" : "⚠️ Público (Sin Verificar)"}
+                      </span>
                       <span class="badge badge-success">
                         ⭐ {s.rating ? s.rating.toFixed(1) : "N/A"} ({s.reviewCount ?? "N/A"})
                       </span>
@@ -598,6 +631,14 @@ const withNewsCount = SERVICES.filter(
                   </div>
                 </div>
                 <div class="catalog-actions-right">
+                  <button
+                    type="button"
+                    class={`btn btn-xs catalog-toggle-verify-btn ${s.verified ? "btn-secondary" : "btn-success"}`}
+                    data-service-slug={s.slug}
+                    data-is-verified={s.verified ? "true" : "false"}
+                  >
+                    {s.verified ? "✓ Revocar Verificación" : "⚡ Verificar Oficial"}
+                  </button>
                   <a href={`/es/servicios/${s.slug}`} target="_blank" class="btn btn-secondary btn-xs">
                     Ver Ficha ↗
                   </a>
@@ -607,7 +648,7 @@ const withNewsCount = SERVICES.filter(
                     rel="noopener noreferrer"
                     class="btn btn-outline-primary btn-xs"
                   >
-                    📍 Google Maps
+                    📍 Maps
                   </a>
                 </div>
               </div>
@@ -1006,6 +1047,7 @@ const withNewsCount = SERVICES.filter(
 
 <script>
   import { db } from "../lib/firebase";
+  import { authStore } from "../lib/authStore";
   import {
     getAllClaims,
     getAllSubmissions,
@@ -1017,6 +1059,9 @@ const withNewsCount = SERVICES.filter(
     updateReportStatus,
   } from "../lib/serviceActions";
   import { getAllUsers, updateUserRole } from "../lib/userProfile";
+  import { verifyBusinessAsAdmin, getAllServiceOverrides } from "../lib/serviceOverrides";
+  import { evaluateClaimSecurity } from "../lib/managerSecurityEngine";
+  import { SERVICES } from "../data/services/index";
   import type { UserRole } from "../lib/authStore";
 
   // Tab switching logic
@@ -1131,9 +1176,45 @@ const withNewsCount = SERVICES.filter(
           '<p class="text-muted empty-state">No hay solicitudes de reclamación registradas.</p>';
       } else {
         claimsContainer.innerHTML = claims
-          .map(
-            (c) => `
-          <div class="moderation-item-card" data-claim-id="${c.id}">
+          .map((c) => {
+            const targetService = SERVICES.find((s) => s.id === c.serviceId || s.slug === c.serviceId);
+            const secEval = targetService
+              ? evaluateClaimSecurity(
+                  {
+                    applicantUid: c.applicantUid,
+                    applicantEmail: c.applicantEmail,
+                    applicantPhone: c.applicantPhone,
+                    applicantName: c.applicantName,
+                    businessTaxId: c.verificationProof || "",
+                    verificationMethod: "official_document",
+                  },
+                  targetService,
+                )
+              : {
+                  passed: false,
+                  securityScore: 40,
+                  checks: {
+                    validTaxId: false,
+                    validBalearicPhone: false,
+                    matchingCorporateDomain: false,
+                    hasProofDocument: false,
+                    nonDisposableEmail: true,
+                  },
+                  reasons: ["No se ha podido contrastar automáticamente con la ficha de catálogo."],
+                  recommendedAction: "manual_admin_review" as const,
+                };
+
+            const scoreColor =
+              secEval.securityScore >= 80 ? "#10b981" : secEval.securityScore >= 50 ? "#f59e0b" : "#ef4444";
+            const scoreBadgeClass =
+              secEval.securityScore >= 80
+                ? "badge-success"
+                : secEval.securityScore >= 50
+                  ? "badge-accent"
+                  : "badge-danger";
+
+            return `
+          <div class="moderation-item-card" data-claim-id="${c.id}" style="border-left: 4px solid ${scoreColor};">
             <div class="item-header">
               <span class="item-title">🏢 ${c.serviceName} (ID: ${c.serviceId})</span>
               <span class="badge ${c.status === "pending" ? "badge-accent" : c.status === "approved" ? "badge-primary" : "badge-secondary"}">${c.status.toUpperCase()}</span>
@@ -1144,21 +1225,49 @@ const withNewsCount = SERVICES.filter(
               <span>📞 ${c.applicantPhone}</span>
             </div>
             <div class="item-proof">
-              <strong>Acreditación/CIF:</strong> ${c.verificationProof}
+              <strong>Acreditación/CIF aportado:</strong> <code>${c.verificationProof}</code>
             </div>
+
+            <!-- Panel de Auditoría y Verificación de Seguridad Fiscal -->
+            <div class="claim-security-audit-box" style="margin-top: 0.6rem; padding: 0.6rem 0.8rem; background: rgba(0, 0, 0, 0.15); border-radius: var(--radius-sm, 6px); border-left: 3px solid ${scoreColor};">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem; flex-wrap: wrap; gap: 0.4rem;">
+                <strong style="font-size: 0.85rem;">🛡️ Auditoría Motor de Seguridad Fiscal:</strong>
+                <span class="badge ${scoreBadgeClass}">
+                  ${secEval.securityScore}% Confianza (${secEval.recommendedAction === "auto_approve" ? "Aprobación Recomendada" : secEval.recommendedAction === "manual_admin_review" ? "Revisión Manual" : "Riesgo / Fraude"})
+                </span>
+              </div>
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 0.4rem; font-size: 0.78rem;">
+                <span>${secEval.checks.validTaxId ? "✅ CIF/NIF Válido" : "❌ CIF/NIF Inválido"}</span>
+                <span>${secEval.checks.validBalearicPhone ? "✅ +34 Balear Válido" : "⚠️ Teléfono No Balear"}</span>
+                <span>${secEval.checks.matchingCorporateDomain ? "✅ Dominio Web Coincide" : "ℹ️ Dominio Externo"}</span>
+                <span>${secEval.checks.nonDisposableEmail ? "🛡️ Email No Desechable" : "❌ Email Temporal"}</span>
+              </div>
+              ${
+                secEval.reasons.length > 0
+                  ? `
+                <div style="margin-top: 0.4rem; font-size: 0.75rem; color: #fca5a5;">
+                  ${secEval.reasons.map((r) => `<div>• ${r}</div>`).join("")}
+                </div>
+              `
+                  : ""
+              }
+            </div>
+
             ${
               c.status === "pending"
                 ? `
-              <div class="actions-flex">
-                <button type="button" class="btn btn-primary btn-sm approve-claim-btn" data-id="${c.id}" data-uid="${c.applicantUid}" data-service-id="${c.serviceId}">✓ Aprobar y asignar rol Manager</button>
+              <div class="actions-flex" style="margin-top: 0.75rem;">
+                <button type="button" class="btn btn-primary btn-sm approve-claim-btn" data-id="${c.id}" data-uid="${c.applicantUid}" data-service-id="${c.serviceId}">
+                  ✓ Aprobar y verificar titularidad (Manager)
+                </button>
                 <button type="button" class="btn btn-secondary btn-sm reject-claim-btn" data-id="${c.id}">✕ Rechazar</button>
               </div>
             `
                 : ""
             }
           </div>
-        `,
-          )
+        `;
+          })
           .join("");
 
         claimsContainer.querySelectorAll(".approve-claim-btn").forEach((btn) => {
@@ -1167,8 +1276,15 @@ const withNewsCount = SERVICES.filter(
             const uid = btn.getAttribute("data-uid")!;
             const serviceId = btn.getAttribute("data-service-id") || "";
             btn.setAttribute("disabled", "true");
-            await updateClaimStatus(db, id, "approved", uid, serviceId);
-            loadAdminData();
+            btn.textContent = "⏳ Verificando y asignando mando...";
+            try {
+              await updateClaimStatus(db, id, "approved", uid, serviceId);
+              loadAdminData();
+            } catch (err: any) {
+              alert("Error al verificar reclamación: " + (err.message || err));
+              btn.removeAttribute("disabled");
+              btn.textContent = "✓ Aprobar y verificar titularidad (Manager)";
+            }
           });
         });
 
@@ -1355,6 +1471,207 @@ const withNewsCount = SERVICES.filter(
           });
         });
       }
+    }
+
+    // Activar verificaciones interactivas e hidratar superposiciones
+    initOneClickVerification();
+    initCatalogFiltersAndToggles();
+    await hydrateOverridesIntoAdmin();
+  }
+
+  // ---------------------------------------------------------------------------
+  // One-Click Business Verification (Quality Control Tab)
+  // ---------------------------------------------------------------------------
+  function initOneClickVerification() {
+    document.querySelectorAll(".one-click-verify-btn").forEach((btn) => {
+      if (btn.getAttribute("data-listener-attached") === "true") return;
+      btn.setAttribute("data-listener-attached", "true");
+
+      btn.addEventListener("click", async () => {
+        const slug = btn.getAttribute("data-service-slug");
+        if (!slug) return;
+        const currentUser = authStore.getState().user;
+        const adminUid = currentUser?.uid || "admin";
+
+        const originalText = btn.innerHTML;
+        btn.setAttribute("disabled", "true");
+        btn.innerHTML = "⏳ Validando...";
+
+        try {
+          await verifyBusinessAsAdmin(db, slug, adminUid, {
+            confidenceScore: 95,
+            verified: true,
+            verificationStatus: "verified_official",
+            trustLevel: "level_3_official",
+          });
+
+          btn.innerHTML = "✓ Validado (95%)";
+          btn.classList.remove("btn-success");
+          btn.classList.add("btn-primary");
+
+          // Actualizar tarjeta en DOM
+          const card = btn.closest(".qc-service-card") as HTMLElement;
+          if (card) {
+            card.setAttribute("data-qc-status", "verified");
+            const badge = card.querySelector(".badge-accent");
+            if (badge) {
+              badge.className = "badge badge-success";
+              badge.textContent = "95% ✅ VERIFICADO";
+            }
+          }
+
+          // Actualizar contador del badge de la pestaña de triaje
+          const reviewBadge = document.querySelector('[data-tab="quality-control"] .tab-badge');
+          if (reviewBadge) {
+            const currentCount = parseInt(reviewBadge.textContent || "0", 10);
+            if (currentCount > 0) {
+              reviewBadge.textContent = (currentCount - 1).toString();
+            }
+          }
+
+          // Notificación visual de éxito
+          const toast = document.createElement("div");
+          toast.className = "alert-success";
+          toast.style.cssText =
+            "position: fixed; bottom: 20px; right: 20px; z-index: 9999; padding: 12px 20px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); font-weight: bold; background: #065f46; color: #fff;";
+          toast.textContent = `✅ Negocio (${slug}) verificado oficialmente con 95% de confianza.`;
+          document.body.appendChild(toast);
+          setTimeout(() => toast.remove(), 3500);
+        } catch (err: any) {
+          btn.removeAttribute("disabled");
+          btn.innerHTML = originalText;
+          alert("Error al verificar negocio: " + (err.message || err));
+        }
+      });
+    });
+  }
+
+  // ---------------------------------------------------------------------------
+  // Catalog Filters & Direct Verification Toggles (Catalog Tab)
+  // ---------------------------------------------------------------------------
+  function initCatalogFiltersAndToggles() {
+    const searchInput = document.getElementById("catalog-search-input") as HTMLInputElement;
+    const statusFilter = document.getElementById("catalog-status-filter") as HTMLSelectElement;
+    const catalogCards = document.querySelectorAll(".catalog-item-card");
+
+    function filterCatalog() {
+      const query = searchInput?.value.toLowerCase().trim() || "";
+      const filter = statusFilter?.value || "all";
+
+      catalogCards.forEach((card) => {
+        const name = card.getAttribute("data-service-name") || "";
+        const zone = card.getAttribute("data-service-zone") || "";
+        const cat = card.getAttribute("data-service-category") || "";
+        const phone = card.getAttribute("data-service-phone") || "";
+        const isVer = card.getAttribute("data-service-verified") === "true";
+
+        const matchesQuery =
+          !query || name.includes(query) || zone.includes(query) || cat.includes(query) || phone.includes(query);
+        const matchesFilter =
+          filter === "all" || (filter === "verified" && isVer) || (filter === "unverified" && !isVer);
+
+        (card as HTMLElement).style.display = matchesQuery && matchesFilter ? "flex" : "none";
+      });
+    }
+
+    if (searchInput && searchInput.getAttribute("data-filter-attached") !== "true") {
+      searchInput.setAttribute("data-filter-attached", "true");
+      searchInput.addEventListener("input", filterCatalog);
+    }
+    if (statusFilter && statusFilter.getAttribute("data-filter-attached") !== "true") {
+      statusFilter.setAttribute("data-filter-attached", "true");
+      statusFilter.addEventListener("change", filterCatalog);
+    }
+
+    document.querySelectorAll(".catalog-toggle-verify-btn").forEach((btn) => {
+      if (btn.getAttribute("data-toggle-attached") === "true") return;
+      btn.setAttribute("data-toggle-attached", "true");
+
+      btn.addEventListener("click", async () => {
+        const slug = btn.getAttribute("data-service-slug");
+        const isCurrentlyVerified = btn.getAttribute("data-is-verified") === "true";
+        if (!slug) return;
+        const currentUser = authStore.getState().user;
+        const adminUid = currentUser?.uid || "admin";
+
+        btn.setAttribute("disabled", "true");
+        const newVerifiedState = !isCurrentlyVerified;
+
+        try {
+          await verifyBusinessAsAdmin(db, slug, adminUid, {
+            verified: newVerifiedState,
+            verificationStatus: newVerifiedState ? "verified_official" : "unverified",
+            confidenceScore: newVerifiedState ? 95 : 70,
+            trustLevel: newVerifiedState ? "level_3_official" : "level_1_discovery",
+          });
+
+          btn.setAttribute("data-is-verified", newVerifiedState ? "true" : "false");
+          btn.textContent = newVerifiedState ? "✓ Revocar Verificación" : "⚡ Verificar Oficial";
+          btn.className = `btn btn-xs catalog-toggle-verify-btn ${newVerifiedState ? "btn-secondary" : "btn-success"}`;
+
+          const card = btn.closest(".catalog-item-card") as HTMLElement;
+          if (card) {
+            card.setAttribute("data-service-verified", newVerifiedState ? "true" : "false");
+            const badge = card.querySelector(".catalog-verified-badge");
+            if (badge) {
+              badge.className = `badge catalog-verified-badge ${newVerifiedState ? "badge-success" : "badge-secondary"}`;
+              badge.textContent = newVerifiedState ? "✅ Verificado Oficial" : "⚠️ Público (Sin Verificar)";
+            }
+          }
+        } catch (err: any) {
+          alert("Error al actualizar verificación: " + (err.message || err));
+        } finally {
+          btn.removeAttribute("disabled");
+        }
+      });
+    });
+  }
+
+  // ---------------------------------------------------------------------------
+  // Hydrate Overrides into Admin Panel UI (Live Synced State)
+  // ---------------------------------------------------------------------------
+  async function hydrateOverridesIntoAdmin() {
+    try {
+      const overrides = await getAllServiceOverrides(db);
+      Object.entries(overrides).forEach(([slug, ov]) => {
+        if (ov.verified !== undefined) {
+          // Actualizar tarjeta del Catálogo
+          const catalogCard = document.querySelector(`.catalog-item-card[data-service-slug="${slug}"]`);
+          if (catalogCard) {
+            catalogCard.setAttribute("data-service-verified", ov.verified ? "true" : "false");
+            const badge = catalogCard.querySelector(".catalog-verified-badge");
+            if (badge) {
+              badge.className = `badge catalog-verified-badge ${ov.verified ? "badge-success" : "badge-secondary"}`;
+              badge.textContent = ov.verified ? "✅ Verificado Oficial" : "⚠️ Público (Sin Verificar)";
+            }
+            const toggleBtn = catalogCard.querySelector(".catalog-toggle-verify-btn");
+            if (toggleBtn) {
+              toggleBtn.setAttribute("data-is-verified", ov.verified ? "true" : "false");
+              toggleBtn.textContent = ov.verified ? "✓ Revocar Verificación" : "⚡ Verificar Oficial";
+              toggleBtn.className = `btn btn-xs catalog-toggle-verify-btn ${ov.verified ? "btn-secondary" : "btn-success"}`;
+            }
+          }
+
+          // Actualizar tarjeta de Triaje / Control de Calidad
+          const qcBtn = document.querySelector(`.one-click-verify-btn[data-service-slug="${slug}"]`);
+          if (qcBtn && ov.verified) {
+            qcBtn.innerHTML = `✓ Validado (${ov.confidenceScore || 95}%)`;
+            qcBtn.classList.remove("btn-success");
+            qcBtn.classList.add("btn-primary");
+            const qcCard = qcBtn.closest(".qc-service-card") as HTMLElement;
+            if (qcCard) {
+              qcCard.setAttribute("data-qc-status", "verified");
+              const qcBadge = qcCard.querySelector(".badge-accent");
+              if (qcBadge) {
+                qcBadge.className = "badge badge-success";
+                qcBadge.textContent = `${ov.confidenceScore || 95}% ✅ VERIFICADO`;
+              }
+            }
+          }
+        }
+      });
+    } catch (err) {
+      console.warn("Could not hydrate overrides into admin:", err);
     }
   }
 

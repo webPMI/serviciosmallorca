@@ -1,6 +1,6 @@
 import type { ServiceItem } from "../types";
 
-export const service: ServiceItem = {
+export const optica_vision_plus_palma: ServiceItem = {
   slug: "optica-vision-plus-palma",
   id: "optica-vision-plus-palma",
   name: "Óptica Visión Plus Palma",
@@ -20,7 +20,7 @@ export const service: ServiceItem = {
   verified: true,
   featured: false,
   status: "open",
-  tags: ["zona:palma-centro", "product:premium", "mod:en-local", "aud:adultos", "aud:deportistas"],
+  tags: ["zona:palma-centro", "product:premium", "mod:en-local"],
   phone: "+34 971 72 45 67",
   whatsapp: "+34 971 72 45 67",
   email: "palma@visionplus.es",
@@ -28,7 +28,8 @@ export const service: ServiceItem = {
   schedule: "Lunes a Sábado: 09:30 - 20:00",
   image: "/images/services/optica-vision-plus-palma.jpg",
   gallery: ["/images/services/optica-vision-plus-palma.jpg"],
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=%C3%93ptica+Visi%C3%B3n+Plus+Palma+Avinguda+Rei+Jaume+III+11",
+  googleMapsUrl:
+    "https://www.google.com/maps/search/?api=1&query=%C3%93ptica+Visi%C3%B3n+Plus+Palma+Avinguda+Rei+Jaume+III+11",
   appleMapsUrl: "https://maps.apple.com/?q=Optica+Vision+Plus+Palma",
   bingMapsUrl: "https://bing.com/maps?q=Optica+Vision+Plus+Palma",
   shortDescription: {
@@ -44,20 +45,66 @@ export const service: ServiceItem = {
     de: "Óptica Visión Plus ist ein führender Optiker im kommerziellen Herz von Palma de Mallorca. Das fortgeschrittene Optometrie-Kabinett bietet umfassende Augenuntersuchungen mit Hornhauttopographie, Angiographie und Spezial-Kontaktlinsenanpassung. Das Showroom präsentiert über 2.000 Fassungen der exklusivsten Marken.",
   },
   highlights: {
-    es: ["Optómetras especializados en patología ocular y córnea irregular", "Más de 2.000 monturas de marcas premium y de lujo", "Adaptación de lentes de contacto esclerales y ortoqueratología", "Servicio exprés de 24 horas para gafas de graduación estándar"],
-    en: ["Optometrists specialized in ocular pathology and irregular cornea", "Over 2,000 premium and luxury eyewear frames", "Scleral contact lens fitting and orthokeratology", "24-hour express service for standard prescription glasses"],
-    ca: ["Optometristes especialitzats en patologia ocular i còrnia irregular", "Més de 2.000 muntures de marques premium i de luxe", "Adaptació de lents esclerals i ortoqueratologia", "Servei exprés de 24 hores per a ulleres de graduació estàndard"],
-    de: ["Auf Augenpathologie und irreguläre Hornhaut spezialisierte Optometristen", "Über 2.000 Premium- und Luxus-Brillenfassungen", "Sklerallinsen-Anpassung und Orthokeratologie", "24-Stunden-Express-Service für Standardbrillen"],
+    es: [
+      "Optómetras especializados en patología ocular y córnea irregular",
+      "Más de 2.000 monturas de marcas premium y de lujo",
+      "Adaptación de lentes de contacto esclerales y ortoqueratología",
+      "Servicio exprés de 24 horas para gafas de graduación estándar",
+    ],
+    en: [
+      "Optometrists specialized in ocular pathology and irregular cornea",
+      "Over 2,000 premium and luxury eyewear frames",
+      "Scleral contact lens fitting and orthokeratology",
+      "24-hour express service for standard prescription glasses",
+    ],
+    ca: [
+      "Optometristes especialitzats en patologia ocular i còrnia irregular",
+      "Més de 2.000 muntures de marques premium i de luxe",
+      "Adaptació de lents esclerals i ortoqueratologia",
+      "Servei exprés de 24 hores per a ulleres de graduació estàndard",
+    ],
+    de: [
+      "Auf Augenpathologie und irreguläre Hornhaut spezialisierte Optometristen",
+      "Über 2.000 Premium- und Luxus-Brillenfassungen",
+      "Sklerallinsen-Anpassung und Orthokeratologie",
+      "24-Stunden-Express-Service für Standardbrillen",
+    ],
   },
   servicesProvided: {
-    es: ["Examen visual completo con topografía corneal y OCT macular", "Adaptación de lentes de contacto blandas, RPG y esclerales", "Ortoqueratología nocturna para control de miopía en niños", "Gafas deportivas y de sol con graduación para ciclistas y náuticos"],
-    en: ["Full eye exam with corneal topography and macular OCT", "Soft, RGP, and scleral contact lens fitting", "Overnight orthokeratology for myopia control in children", "Prescription sports and cycling sunglasses"],
-    ca: ["Examen visual complet amb topografia corneal i OCT macular", "Adaptació de lents de contacte toves, RPG i esclerals", "Ortoqueratologia nocturna per al control de la miopia en nens", "Ulleres esportives i de sol graduades per a ciclistes i nàutica"],
-    de: ["Vollständige Augenuntersuchung mit Hornhauttopographie und Makulä-OCT", "Anpassung von weichen, formstabilen und Sklerallinsen", "Nacht-Orthokeratologie zur Myopiekontrolle bei Kindern", "Korrektionssportbrillen und Sonnenbrillen für Radfahrer und Segler"],
+    es: [
+      "Examen visual completo con topografía corneal y OCT macular",
+      "Adaptación de lentes de contacto blandas, RPG y esclerales",
+      "Ortoqueratología nocturna para control de miopía en niños",
+      "Gafas deportivas y de sol con graduación para ciclistas y náuticos",
+    ],
+    en: [
+      "Full eye exam with corneal topography and macular OCT",
+      "Soft, RGP, and scleral contact lens fitting",
+      "Overnight orthokeratology for myopia control in children",
+      "Prescription sports and cycling sunglasses",
+    ],
+    ca: [
+      "Examen visual complet amb topografia corneal i OCT macular",
+      "Adaptació de lents de contacte toves, RPG i esclerals",
+      "Ortoqueratologia nocturna per al control de la miopia en nens",
+      "Ulleres esportives i de sol graduades per a ciclistes i nàutica",
+    ],
+    de: [
+      "Vollständige Augenuntersuchung mit Hornhauttopographie und Makulä-OCT",
+      "Anpassung von weichen, formstabilen und Sklerallinsen",
+      "Nacht-Orthokeratologie zur Myopiekontrolle bei Kindern",
+      "Korrektionssportbrillen und Sonnenbrillen für Radfahrer und Segler",
+    ],
   },
   reputationBreakdown: {
-    googleMaps: { rating: 4.8, reviewCount: 287, url: "https://www.google.com/maps/search/?api=1&query=%C3%93ptica+Visi%C3%B3n+Plus+Palma" },
+    googleMaps: {
+      rating: 4.8,
+      reviewCount: 287,
+      url: "https://www.google.com/maps/search/?api=1&query=%C3%93ptica+Visi%C3%B3n+Plus+Palma",
+    },
   },
   createdAt: "2026-09-05",
   lastUpdatedAt: "2026-09-05",
 };
+
+export const service = optica_vision_plus_palma;

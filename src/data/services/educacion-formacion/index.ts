@@ -24,6 +24,12 @@ import { palmaBusinessSchoolExecutive } from "./palma-business-school-executive.
 import { queens_college_mallorca_bonanova } from "./queens-college-mallorca-bonanova.ts";
 import { theBritishSchoolOfMallorca } from "./the-british-school-of-mallorca.ts";
 
+import { academia_aleman_deutsch_zentrum_palma } from "./academia-aleman-deutsch-zentrum-palma.ts";
+import { academia_ingles_british_corner_palma } from "./academia-ingles-british-corner-palma.ts";
+import { academia_oposiciones_mallorca_prepara } from "./academia-oposiciones-mallorca-prepara.ts";
+import { autoescuela_palma_conduir } from "./autoescuela-palma-conduir.ts";
+import { escuela_cocina_palma_terra_cuina } from "./escuela-cocina-palma-terra-cuina.ts";
+import { escuela_vela_palma_escola_de_vela } from "./escuela-vela-palma-escola-de-vela.ts";
 export { agoraPortalsInternationalSchool } from "./agora-portals-international-school.ts";
 export { baleares_international_college_sa_porrassa } from "./baleares-international-college-sa-porrassa.ts";
 export { bellver_international_college_palma } from "./bellver-international-college-palma.ts";
@@ -49,7 +55,19 @@ export { palmaBusinessSchoolExecutive } from "./palma-business-school-executive.
 export { queens_college_mallorca_bonanova } from "./queens-college-mallorca-bonanova.ts";
 export { theBritishSchoolOfMallorca } from "./the-british-school-of-mallorca.ts";
 
+export { academia_aleman_deutsch_zentrum_palma } from "./academia-aleman-deutsch-zentrum-palma.ts";
+export { academia_ingles_british_corner_palma } from "./academia-ingles-british-corner-palma.ts";
+export { academia_oposiciones_mallorca_prepara } from "./academia-oposiciones-mallorca-prepara.ts";
+export { autoescuela_palma_conduir } from "./autoescuela-palma-conduir.ts";
+export { escuela_cocina_palma_terra_cuina } from "./escuela-cocina-palma-terra-cuina.ts";
+export { escuela_vela_palma_escola_de_vela } from "./escuela-vela-palma-escola-de-vela.ts";
 export const EDUCACION_SERVICES: ServiceItem[] = [
+  escuela_vela_palma_escola_de_vela,
+  escuela_cocina_palma_terra_cuina,
+  autoescuela_palma_conduir,
+  academia_oposiciones_mallorca_prepara,
+  academia_ingles_british_corner_palma,
+  academia_aleman_deutsch_zentrum_palma,
   agoraPortalsInternationalSchool,
   baleares_international_college_sa_porrassa,
   bellver_international_college_palma,

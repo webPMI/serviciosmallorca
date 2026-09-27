@@ -310,6 +310,37 @@ export function initServiceDetailClient() {
       if (override.schedule) {
         document.querySelectorAll(".schedule-display-text").forEach((el) => (el.textContent = override.schedule!));
       }
+
+      // Si el negocio ha sido reclamado formalmente o verificado como titular
+      if (override.isClaimed && override.claimedByUid) {
+        const unverifiedBox = document.querySelector(".unverified-notice-box");
+        if (unverifiedBox) {
+          unverifiedBox.className = "transparency-notice-box verified-owner-box";
+          unverifiedBox.innerHTML = `
+            <div class="notice-header">
+              <span class="notice-badge verified-badge" style="background: rgba(16, 185, 129, 0.2); color: var(--color-success, #10b981); border: 1px solid rgba(16, 185, 129, 0.4);">
+                👑 Ficha Oficial Gestionada por el Titular
+              </span>
+            </div>
+            <p class="notice-text" style="margin: 0; font-size: 0.88rem; color: var(--color-text-secondary);">
+              Este comercio ha sido formalmente auditado, reclamado y verificado por su titular registrado.
+            </p>
+          `;
+        }
+
+        const ownerBox = document.querySelector(".business-owner-box");
+        if (ownerBox) {
+          ownerBox.innerHTML = `
+            <div class="owner-box-header">
+              <span class="owner-icon">👑</span>
+              <div>
+                <strong style="color: var(--color-success, #10b981);">Titular Oficial Verificado</strong>
+                <p>Ficha administrada y contrastada directamente por la empresa.</p>
+              </div>
+            </div>
+          `;
+        }
+      }
     } catch {
       // Graceful degradation
     }

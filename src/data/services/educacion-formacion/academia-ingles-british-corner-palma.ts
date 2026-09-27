@@ -1,10 +1,10 @@
 ﻿import type { ServiceItem } from "../types";
 
-export const service: ServiceItem = {
+export const academia_ingles_british_corner_palma: ServiceItem = {
   slug: "academia-ingles-british-corner-palma",
   id: "academia-ingles-british-corner-palma",
   name: "Academia de Inglés British Corner Palma",
-  category: "educacion-formacion",
+  category: "academias-idiomas-formacion",
   sectorId: "educacion-formacion",
   subcategories: ["academia-ingles-palma", "cambridge-exams", "ingles-empresas"],
   zone: "palma",
@@ -20,7 +20,7 @@ export const service: ServiceItem = {
   verified: true,
   featured: false,
   status: "open",
-  tags: ["zona:palma-centro", "product:premium", "mod:en-local", "mod:online", "aud:adultos", "aud:empresas"],
+  tags: ["zona:palma-centro", "product:premium", "mod:en-local", "mod:online", "aud:b2b"],
   phone: "+34 971 29 45 12",
   whatsapp: "+34 621 29 45 12",
   email: "info@britishcornerpalma.com",
@@ -28,7 +28,8 @@ export const service: ServiceItem = {
   schedule: "Lunes a Viernes: 08:00 - 21:00 | Sábado: 09:00 - 14:00",
   image: "/images/services/academia-ingles-british-corner-palma.jpg",
   gallery: ["/images/services/academia-ingles-british-corner-palma.jpg"],
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Academia+Ingl%C3%A9s+British+Corner+Palma+Carrer+de+l%27Arag%C3%B3+78",
+  googleMapsUrl:
+    "https://www.google.com/maps/search/?api=1&query=Academia+Ingl%C3%A9s+British+Corner+Palma+Carrer+de+l%27Arag%C3%B3+78",
   appleMapsUrl: "https://maps.apple.com/?q=Academia+Ingles+British+Corner+Palma",
   bingMapsUrl: "https://bing.com/maps?q=Academia+Ingles+British+Corner+Palma",
   shortDescription: {
@@ -44,20 +45,66 @@ export const service: ServiceItem = {
     de: "British Corner Palma ist eine führende Englischschule auf Mallorca mit über 15 Jahren Erfahrung. Als offiziell akkreditiertes Prüfungszentrum für Cambridge Assessment English (KET, PET, FCE, CAE und CPE) bietet die Akademie Kleingruppenkurse, Einzelunterricht und Englischkurse für die Hotel- und Tourismusbranche an.",
   },
   highlights: {
-    es: ["Centro oficial acreditado para exámenes Cambridge KET, PET, FCE, CAE y CPE", "Profesores nativos con titulación CELTA/DELTA y amplia experiencia docente", "Inglés para el sector hotelero y turístico de Mallorca", "Clases online sincrónicas y cursos intensivos de verano para niños y adultos"],
-    en: ["Official accredited centre for Cambridge KET, PET, FCE, CAE, and CPE exams", "Native CELTA/DELTA-qualified teachers with extensive teaching experience", "English courses for Mallorca's hospitality and tourism sector", "Synchronous online classes and summer intensive courses for kids and adults"],
-    ca: ["Centre oficial acreditat per als exàmens Cambridge KET, PET, FCE, CAE i CPE", "Professors natius amb titulació CELTA/DELTA i àmplia experiència docent", "Anglès per al sector hoteler i turístic de Mallorca", "Classes en línia i cursos intensius d'estiu per a nens i adults"],
-    de: ["Offiziell akkreditiertes Zentrum für Cambridge KET, PET, FCE, CAE und CPE", "Muttersprachliche Lehrer mit CELTA/DELTA-Qualifikation und langjähriger Unterrichtserfahrung", "Englischkurse für Mallorcas Hotel- und Tourismussektor", "Synchrone Online-Kurse und Sommer-Intensivkurse für Kinder und Erwachsene"],
+    es: [
+      "Centro oficial acreditado para exámenes Cambridge KET, PET, FCE, CAE y CPE",
+      "Profesores nativos con titulación CELTA/DELTA y amplia experiencia docente",
+      "Inglés para el sector hotelero y turístico de Mallorca",
+      "Clases online sincrónicas y cursos intensivos de verano para niños y adultos",
+    ],
+    en: [
+      "Official accredited centre for Cambridge KET, PET, FCE, CAE, and CPE exams",
+      "Native CELTA/DELTA-qualified teachers with extensive teaching experience",
+      "English courses for Mallorca's hospitality and tourism sector",
+      "Synchronous online classes and summer intensive courses for kids and adults",
+    ],
+    ca: [
+      "Centre oficial acreditat per als exàmens Cambridge KET, PET, FCE, CAE i CPE",
+      "Professors natius amb titulació CELTA/DELTA i àmplia experiència docent",
+      "Anglès per al sector hoteler i turístic de Mallorca",
+      "Classes en línia i cursos intensius d'estiu per a nens i adults",
+    ],
+    de: [
+      "Offiziell akkreditiertes Zentrum für Cambridge KET, PET, FCE, CAE und CPE",
+      "Muttersprachliche Lehrer mit CELTA/DELTA-Qualifikation und langjähriger Unterrichtserfahrung",
+      "Englischkurse für Mallorcas Hotel- und Tourismussektor",
+      "Synchrone Online-Kurse und Sommer-Intensivkurse für Kinder und Erwachsene",
+    ],
   },
   servicesProvided: {
-    es: ["Clases de inglés general para todas las edades desde A1 hasta C2", "Preparación intensiva para exámenes Cambridge FCE, CAE y CPE", "Cursos de inglés de negocios y para el sector hostelero y turístico", "Tutorías individuales de conversación y preparación al IELTS"],
-    en: ["General English classes for all ages from A1 to C2", "Intensive Cambridge FCE, CAE, and CPE exam preparation", "Business English and hospitality & tourism sector courses", "One-to-one conversation tutorials and IELTS exam preparation"],
-    ca: ["Classes d'anglès general per a totes les edats des de A1 fins a C2", "Preparació intensiva per als exàmens Cambridge FCE, CAE i CPE", "Cursos d'anglès de negocis i per al sector hoteler i turístic", "Tutories individuals de conversa i preparació per a l'IELTS"],
-    de: ["Allgemeine Englischkurse für alle Altersgruppen von A1 bis C2", "Intensive Vorbereitung auf Cambridge FCE, CAE und CPE", "Business English und Kurse für den Hotel- und Tourismussektor", "Einzelstunden für Konversation und IELTS-Prüfungsvorbereitung"],
+    es: [
+      "Clases de inglés general para todas las edades desde A1 hasta C2",
+      "Preparación intensiva para exámenes Cambridge FCE, CAE y CPE",
+      "Cursos de inglés de negocios y para el sector hostelero y turístico",
+      "Tutorías individuales de conversación y preparación al IELTS",
+    ],
+    en: [
+      "General English classes for all ages from A1 to C2",
+      "Intensive Cambridge FCE, CAE, and CPE exam preparation",
+      "Business English and hospitality & tourism sector courses",
+      "One-to-one conversation tutorials and IELTS exam preparation",
+    ],
+    ca: [
+      "Classes d'anglès general per a totes les edats des de A1 fins a C2",
+      "Preparació intensiva per als exàmens Cambridge FCE, CAE i CPE",
+      "Cursos d'anglès de negocis i per al sector hoteler i turístic",
+      "Tutories individuals de conversa i preparació per a l'IELTS",
+    ],
+    de: [
+      "Allgemeine Englischkurse für alle Altersgruppen von A1 bis C2",
+      "Intensive Vorbereitung auf Cambridge FCE, CAE und CPE",
+      "Business English und Kurse für den Hotel- und Tourismussektor",
+      "Einzelstunden für Konversation und IELTS-Prüfungsvorbereitung",
+    ],
   },
   reputationBreakdown: {
-    googleMaps: { rating: 4.9, reviewCount: 328, url: "https://www.google.com/maps/search/?api=1&query=Academia+Ingl%C3%A9s+British+Corner+Palma" },
+    googleMaps: {
+      rating: 4.9,
+      reviewCount: 328,
+      url: "https://www.google.com/maps/search/?api=1&query=Academia+Ingl%C3%A9s+British+Corner+Palma",
+    },
   },
   createdAt: "2026-09-05",
   lastUpdatedAt: "2026-09-05",
 };
+
+export const service = academia_ingles_british_corner_palma;

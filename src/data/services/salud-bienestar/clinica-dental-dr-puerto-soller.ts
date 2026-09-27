@@ -1,6 +1,6 @@
 import type { ServiceItem } from "../types";
 
-export const service: ServiceItem = {
+export const clinica_dental_dr_puerto_soller: ServiceItem = {
   slug: "clinica-dental-dr-puerto-soller",
   id: "clinica-dental-dr-puerto-soller",
   name: "Clínica Dental Puerto de Sóller",
@@ -20,7 +20,7 @@ export const service: ServiceItem = {
   verified: true,
   featured: false,
   status: "open",
-  tags: ["zona:port-de-soller", "product:premium", "mod:en-local", "aud:residentes", "aud:expats"],
+  tags: ["zona:port-de-soller", "product:premium", "mod:en-local", "aud:expat"],
   phone: "+34 971 63 18 72",
   whatsapp: "+34 971 63 18 72",
   email: "info@dentalpuertsoller.com",
@@ -28,7 +28,8 @@ export const service: ServiceItem = {
   schedule: "Lunes a Viernes: 09:00 - 19:00 | Sábado: 09:00 - 13:00",
   image: "/images/services/clinica-dental-dr-puerto-soller.jpg",
   gallery: ["/images/services/clinica-dental-dr-puerto-soller.jpg"],
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica+Dental+Puerto+de+S%C3%B3ller+Carrer+de+Sa+Mar+25+Port+de+S%C3%B3ller",
+  googleMapsUrl:
+    "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica+Dental+Puerto+de+S%C3%B3ller+Carrer+de+Sa+Mar+25+Port+de+S%C3%B3ller",
   appleMapsUrl: "https://maps.apple.com/?q=Cl%C3%ADnica+Dental+Puerto+de+S%C3%B3ller",
   bingMapsUrl: "https://bing.com/maps?q=Clinica+Dental+Puerto+de+Soller",
   shortDescription: {
@@ -44,20 +45,66 @@ export const service: ServiceItem = {
     de: "Die Zahnklinik im Port de Sóller bietet allgemeine Zahnmedizin, Implantologie, Invisalign, Wurzelkanalbehandlung und Kinderzahnmedizin für Einheimische, Expats und Tramuntana-Besucher. Das mehrsprachige Team kommuniziert auf Spanisch, Deutsch und Englisch.",
   },
   highlights: {
-    es: ["Equipo bilingüe español, inglés y alemán para residentes extranjeros", "Ortodoncia Invisalign certificada para adultos y jóvenes", "Implantes de zirconio libre de metal de última generación", "Urgencias dentales atendidas el mismo día con cita previa"],
-    en: ["Bilingual Spanish, English, and German team for international residents", "Certified Invisalign orthodontics for adults and teens", "State-of-the-art metal-free zirconia dental implants", "Same-day dental emergency appointments available"],
-    ca: ["Equip plurilingüe per atendre residents internacionals de la Tramuntana", "Ortodòncia Invisalign certificada per a adults i adolescents", "Implants de zirconi lliures de metall d'última generació", "Urgències dentals ateses el mateix dia amb cita prèvia"],
-    de: ["Mehrsprachiges Team für internationale Einwohner der Tramuntana", "Zertifizierte Invisalign-Zahnspangen für Erwachsene und Jugendliche", "Modernste metallfreie Zirkon-Implantate", "Notfalltermine am selben Tag nach Voranmeldung"],
+    es: [
+      "Equipo bilingüe español, inglés y alemán para residentes extranjeros",
+      "Ortodoncia Invisalign certificada para adultos y jóvenes",
+      "Implantes de zirconio libre de metal de última generación",
+      "Urgencias dentales atendidas el mismo día con cita previa",
+    ],
+    en: [
+      "Bilingual Spanish, English, and German team for international residents",
+      "Certified Invisalign orthodontics for adults and teens",
+      "State-of-the-art metal-free zirconia dental implants",
+      "Same-day dental emergency appointments available",
+    ],
+    ca: [
+      "Equip plurilingüe per atendre residents internacionals de la Tramuntana",
+      "Ortodòncia Invisalign certificada per a adults i adolescents",
+      "Implants de zirconi lliures de metall d'última generació",
+      "Urgències dentals ateses el mateix dia amb cita prèvia",
+    ],
+    de: [
+      "Mehrsprachiges Team für internationale Einwohner der Tramuntana",
+      "Zertifizierte Invisalign-Zahnspangen für Erwachsene und Jugendliche",
+      "Modernste metallfreie Zirkon-Implantate",
+      "Notfalltermine am selben Tag nach Voranmeldung",
+    ],
   },
   servicesProvided: {
-    es: ["Implantología oral y prótesis sobre implantes", "Ortodoncia Invisalign y brackets estéticos de porcelana", "Endodoncia con microscopio para máxima precisión", "Odontopediatría y selladores de fisuras para niños"],
-    en: ["Dental implants and implant-supported prosthetics", "Invisalign and ceramic bracket orthodontics", "Microscope-assisted root canal endodontics", "Pediatric dentistry and fissure sealants for children"],
-    ca: ["Implantologia oral i pròtesi sobre implants", "Ortodòncia Invisalign i brackets de porcellana", "Endodòncia amb microscopi per màxima precisió", "Odontopediatria i segelladors de fissures per a infants"],
-    de: ["Zahnimplantate und implantatgestützte Prothetik", "Invisalign und ästhetische Keramikspangen", "Mikroskopgestützte Wurzelkanalbehandlung", "Kinderzahnmedizin und Fissurenversiegelung"],
+    es: [
+      "Implantología oral y prótesis sobre implantes",
+      "Ortodoncia Invisalign y brackets estéticos de porcelana",
+      "Endodoncia con microscopio para máxima precisión",
+      "Odontopediatría y selladores de fisuras para niños",
+    ],
+    en: [
+      "Dental implants and implant-supported prosthetics",
+      "Invisalign and ceramic bracket orthodontics",
+      "Microscope-assisted root canal endodontics",
+      "Pediatric dentistry and fissure sealants for children",
+    ],
+    ca: [
+      "Implantologia oral i pròtesi sobre implants",
+      "Ortodòncia Invisalign i brackets de porcellana",
+      "Endodòncia amb microscopi per màxima precisió",
+      "Odontopediatria i segelladors de fissures per a infants",
+    ],
+    de: [
+      "Zahnimplantate und implantatgestützte Prothetik",
+      "Invisalign und ästhetische Keramikspangen",
+      "Mikroskopgestützte Wurzelkanalbehandlung",
+      "Kinderzahnmedizin und Fissurenversiegelung",
+    ],
   },
   reputationBreakdown: {
-    googleMaps: { rating: 4.8, reviewCount: 142, url: "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica+Dental+Puerto+de+S%C3%B3ller" },
+    googleMaps: {
+      rating: 4.8,
+      reviewCount: 142,
+      url: "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica+Dental+Puerto+de+S%C3%B3ller",
+    },
   },
   createdAt: "2026-09-05",
   lastUpdatedAt: "2026-09-05",
 };
+
+export const service = clinica_dental_dr_puerto_soller;

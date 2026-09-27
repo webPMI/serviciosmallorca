@@ -19,6 +19,14 @@ import { institut_oftalmologic_mallorca_palma } from "./institut-oftalmologic-ma
 import { instituto_bernabeu_palma_fertilidad } from "./instituto-bernabeu-palma-fertilidad.ts";
 import { policlinica_miramar_palma } from "./policlinica-miramar-palma.ts";
 
+import { clinica_dental_calvia_nova } from "./clinica-dental-calvia-nova.ts";
+import { clinica_dental_dr_puerto_soller } from "./clinica-dental-dr-puerto-soller.ts";
+import { clinica_nutricion_dietetic_alcudia } from "./clinica-nutricion-dietetic-alcudia.ts";
+import { clinica_osteopatia_inca_salus } from "./clinica-osteopatia-inca-salus.ts";
+import { clinica_psicologia_palma_mente_sana } from "./clinica-psicologia-palma-mente-sana.ts";
+import { clinica_veterinaria_alcudia_animalia } from "./clinica-veterinaria-alcudia-animalia.ts";
+import { dermatologia_estetica_dr_riera_palma } from "./dermatologia-estetica-dr-riera-palma.ts";
+import { optica_vision_plus_palma } from "./optica-vision-plus-palma.ts";
 export { centre_fisioterapia_rehabilitacio_inca } from "./centre-fisioterapia-rehabilitacio-inca.ts";
 export { centre_medic_manacor_grup_policlinica } from "./centre-medic-manacor-grup-policlinica.ts";
 export { centre_medic_podologic_soller } from "./centre-medic-podologic-soller.ts";
@@ -39,7 +47,23 @@ export { institut_oftalmologic_mallorca_palma } from "./institut-oftalmologic-ma
 export { instituto_bernabeu_palma_fertilidad } from "./instituto-bernabeu-palma-fertilidad.ts";
 export { policlinica_miramar_palma } from "./policlinica-miramar-palma.ts";
 
+export { clinica_dental_calvia_nova } from "./clinica-dental-calvia-nova.ts";
+export { clinica_dental_dr_puerto_soller } from "./clinica-dental-dr-puerto-soller.ts";
+export { clinica_nutricion_dietetic_alcudia } from "./clinica-nutricion-dietetic-alcudia.ts";
+export { clinica_osteopatia_inca_salus } from "./clinica-osteopatia-inca-salus.ts";
+export { clinica_psicologia_palma_mente_sana } from "./clinica-psicologia-palma-mente-sana.ts";
+export { clinica_veterinaria_alcudia_animalia } from "./clinica-veterinaria-alcudia-animalia.ts";
+export { dermatologia_estetica_dr_riera_palma } from "./dermatologia-estetica-dr-riera-palma.ts";
+export { optica_vision_plus_palma } from "./optica-vision-plus-palma.ts";
 export const SALUD_SERVICES: ServiceItem[] = [
+  optica_vision_plus_palma,
+  dermatologia_estetica_dr_riera_palma,
+  clinica_veterinaria_alcudia_animalia,
+  clinica_psicologia_palma_mente_sana,
+  clinica_osteopatia_inca_salus,
+  clinica_nutricion_dietetic_alcudia,
+  clinica_dental_dr_puerto_soller,
+  clinica_dental_calvia_nova,
   centre_fisioterapia_rehabilitacio_inca,
   centre_medic_manacor_grup_policlinica,
   centre_medic_podologic_soller,

@@ -45,6 +45,9 @@ const AVATAR_PRESETS = ["👤", "🚀", "⚡", "👑", "🦊", "🦉", "🎨", "
     <button class="profile-tab active" id="tab-info" data-tab="info">
       {translations["profile.tabInfo"] || "👤 Información de Cuenta"}
     </button>
+    <button class="profile-tab" id="tab-purchases" data-tab="purchases">
+      {translations["profile.tabPurchases"] || "🧾 Mis Compras & Facturas"}
+    </button>
     <button class="profile-tab" id="tab-business" data-tab="business">
       {translations["profile.tabBusiness"] || "🏢 Mi Negocio & Impulsos"}
     </button>
@@ -249,6 +252,91 @@ const AVATAR_PRESETS = ["👤", "🚀", "⚡", "👑", "🦊", "🦉", "🎨", "
         </p>
         <div class="favs-boosted-grid" id="favs-boosted-list">
           <div class="empty-favs-txt">Cargando tus negocios respaldados...</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tab: Purchases, Official Invoices & Abandoned Carts / Drafts -->
+  <section class="profile-tab-panel" id="panel-purchases">
+    <div class="profile-panel-grid">
+      <!-- 1. Abandoned Carts / Pending Drafts Drawer -->
+      <div id="pending-drafts-card" class="card profile-form-card pending-draft-box" style="display: none;">
+        <div class="pending-draft-header">
+          <span class="draft-badge-icon">🛒</span>
+          <div class="draft-title-wrap">
+            <h3 class="pending-draft-title">
+              {translations["profile.draftTitle"] || "Aportación o Compra Pendiente de Completar"}
+            </h3>
+            <p class="pending-draft-subtitle">
+              {
+                translations["profile.draftSubtitle"] ||
+                  "Tienes una gestión o impulso a medias guardado en este dispositivo. Puedes reanudarla y finalizar el pago en 1 clic."
+              }
+            </p>
+          </div>
+        </div>
+        <div class="pending-draft-content">
+          <div class="draft-meta-row">
+            <span class="draft-label">🏢 Comercio:</span>
+            <strong id="draft-biz-name" class="draft-val">-</strong>
+          </div>
+          <div class="draft-meta-row">
+            <span class="draft-label">💰 Importe configurado:</span>
+            <strong id="draft-amount-val" class="draft-price">0.00€</strong>
+          </div>
+          <div class="draft-meta-row" id="draft-message-row" style="display: none;">
+            <span class="draft-label">✍️ Dedicatoria:</span>
+            <span id="draft-message-val" class="draft-desc"></span>
+          </div>
+          <div class="draft-meta-row">
+            <span class="draft-label">⏱️ Guardado el:</span>
+            <span id="draft-date-val" class="draft-time"></span>
+          </div>
+        </div>
+        <div class="pending-draft-actions">
+          <button type="button" id="btn-resume-draft" class="btn btn-primary btn-sm pulse-hover">
+            ⚡ {translations["profile.resumeDraftBtn"] || "Reanudar y Pagar Ahora →"}
+          </button>
+          <button type="button" id="btn-discard-draft" class="btn btn-outline-secondary btn-sm">
+            🗑️ {translations["profile.discardDraftBtn"] || "Descartar Borrador"}
+          </button>
+        </div>
+      </div>
+
+      <!-- 2. Confirmed Official Invoices & Payments -->
+      <div class="card profile-form-card">
+        <div class="section-title-row">
+          <h2 class="panel-title">
+            {translations["profile.invoicesTitle"] || "🧾 Facturas Oficiales & Historial de Pagos"}
+          </h2>
+          <span class="badge badge-primary">IVA 21% Deducible</span>
+        </div>
+        <p class="panel-description">
+          {
+            translations["profile.invoicesDesc"] ||
+              "Todas tus aportaciones, compras de posicionamiento e impulsos oficiales con factura fiscal emitida."
+          }
+        </p>
+
+        <div id="invoices-list-container" class="invoices-list-grid">
+          <div class="empty-invoices-box">
+            <p>Cargando facturas y transacciones...</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Cancelled Transactions History -->
+      <div id="cancelled-history-card" class="card profile-form-card" style="display: none;">
+        <h2 class="panel-title">{translations["profile.cancelledTitle"] || "❌ Gestiones Canceladas / Sin Cargo"}</h2>
+        <p class="panel-description">
+          {
+            translations["profile.cancelledDesc"] ||
+              "Intentos de aportación que fueron cancelados antes de procesar el cobro. No se realizó ningún cargo en tu tarjeta."
+          }
+        </p>
+        <div id="cancelled-list-container" class="cancelled-list-grid">
+          <!-- Populated dynamically via JS -->
         </div>
       </div>
     </div>
@@ -833,6 +921,181 @@ const AVATAR_PRESETS = ["👤", "🚀", "⚡", "👑", "🦊", "🦉", "🎨", "
           )
           .join("");
       }
+    }
+
+    // --- Purchases, Official Invoices & Abandoned Cart / Drafts Loader ---
+    const prefix = document.querySelector(".profile-container")?.getAttribute("data-prefix") || "/es/";
+    const pendingDraftsCard = document.getElementById("pending-drafts-card");
+    const draftBizName = document.getElementById("draft-biz-name");
+    const draftAmountVal = document.getElementById("draft-amount-val");
+    const draftMessageRow = document.getElementById("draft-message-row");
+    const draftMessageVal = document.getElementById("draft-message-val");
+    const draftDateVal = document.getElementById("draft-date-val");
+    const btnResumeDraft = document.getElementById("btn-resume-draft");
+    const btnDiscardDraft = document.getElementById("btn-discard-draft");
+
+    const invoicesContainer = document.getElementById("invoices-list-container");
+    const cancelledCard = document.getElementById("cancelled-history-card");
+    const cancelledContainer = document.getElementById("cancelled-list-container");
+
+    // Check tab query parameter
+    if (urlParams.get("tab") === "purchases" || urlParams.get("tab") === "invoices") {
+      const tabPurchases = document.getElementById("tab-purchases");
+      if (tabPurchases) {
+        document.querySelectorAll(".profile-tab").forEach((t) => t.classList.remove("active"));
+        document.querySelectorAll(".profile-tab-panel").forEach((p) => p.classList.remove("active"));
+        tabPurchases.classList.add("active");
+        const panel = document.getElementById("panel-purchases");
+        if (panel) panel.classList.add("active");
+      }
+    }
+
+    // 1. Populate Pending Drafts (Abandoned Cart Recovery)
+    try {
+      const draftStr = localStorage.getItem("sm_pending_checkout_draft");
+      if (draftStr && pendingDraftsCard) {
+        const draft = JSON.parse(draftStr);
+        if (draft && draft.serviceName) {
+          pendingDraftsCard.style.display = "block";
+          if (draftBizName) draftBizName.textContent = draft.serviceName;
+          if (draftAmountVal) draftAmountVal.textContent = `${Number(draft.amount || 1).toFixed(2)}€`;
+          if (draft.backerMessage && draftMessageRow && draftMessageVal) {
+            draftMessageRow.style.display = "flex";
+            draftMessageVal.textContent = `"${draft.backerMessage}"`;
+          }
+          if (draftDateVal && draft.savedAt) {
+            draftDateVal.textContent = new Date(draft.savedAt).toLocaleString("es-ES");
+          }
+
+          btnResumeDraft?.addEventListener("click", () => {
+            window.location.href = `${prefix}cuadro-de-honor?intent=boost&resumeDraft=1`;
+          });
+
+          btnDiscardDraft?.addEventListener("click", () => {
+            localStorage.removeItem("sm_pending_checkout_draft");
+            sessionStorage.removeItem("sm_pending_checkout_draft");
+            pendingDraftsCard.style.display = "none";
+            showSuccess("Borrador de aportación descartado correctamente.");
+          });
+        }
+      }
+    } catch (draftErr) {
+      console.warn("Could not load draft:", draftErr);
+    }
+
+    // 2. Populate Confirmed Official Invoices (Financial History)
+    if (invoicesContainer) {
+      try {
+        const allTx: any[] = JSON.parse(localStorage.getItem("user_honor_transactions") || "[]");
+        // Also check user private storage if user is logged in
+        const userTxKey = currentUser?.uid ? `sm_user_${currentUser.uid}_transactions` : null;
+        const userSpecificTx: any[] = userTxKey ? JSON.parse(localStorage.getItem(userTxKey) || "[]") : [];
+
+        // Merge and deduplicate by invoiceId
+        const mergedMap = new Map<string, any>();
+        [...userSpecificTx, ...allTx].forEach((tx) => {
+          if (tx && tx.invoiceId) mergedMap.set(tx.invoiceId, tx);
+        });
+        const transactions = Array.from(mergedMap.values());
+
+        if (transactions.length === 0) {
+          invoicesContainer.innerHTML = `
+            <div class="empty-invoices-box">
+              <span class="empty-invoice-icon">🧾</span>
+              <p>Aún no tienes ninguna factura oficial ni aportación completada.</p>
+              <a href="${prefix}cuadro-de-honor" class="btn btn-primary btn-sm">👑 Explorar Cuadro de Honor & Aupar</a>
+            </div>
+          `;
+        } else {
+          invoicesContainer.innerHTML = transactions
+            .map(
+              (tx) => `
+            <div class="invoice-item-card card card-glass">
+              <div class="invoice-card-top">
+                <div class="invoice-identity">
+                  <span class="invoice-chip-badge">✅ Factura Oficial</span>
+                  <code class="invoice-num-code">${tx.invoiceId || "INV-HONOR"}</code>
+                </div>
+                <strong class="invoice-price-total">${Number(tx.amount || 0).toFixed(2)}€</strong>
+              </div>
+
+              <div class="invoice-details-grid">
+                <div class="inv-col">
+                  <span class="inv-lbl">Comercio Impulsado:</span>
+                  <strong class="inv-val">
+                    <a href="${prefix}servicios/${tx.slug || ""}" class="inv-link">${tx.serviceName || "Comercio de Mallorca"} →</a>
+                  </strong>
+                </div>
+                <div class="inv-col">
+                  <span class="inv-lbl">Desglose Fiscal:</span>
+                  <span class="inv-val">Base: ${Number(tx.subtotal || 0).toFixed(2)}€ + IVA (21%): ${Number(tx.tax || 0).toFixed(2)}€</span>
+                </div>
+                <div class="inv-col">
+                  <span class="inv-lbl">Fecha & Hora:</span>
+                  <span class="inv-val">${tx.at ? new Date(tx.at).toLocaleString("es-ES") : "Reciente"}</span>
+                </div>
+                <div class="inv-col">
+                  <span class="inv-lbl">Titular / Pagador:</span>
+                  <span class="inv-val">${tx.backerName || "Usuario"}${tx.isB2B && tx.b2bLegalName ? ` (${tx.b2bLegalName} - ${tx.b2bTaxId || ""})` : ""}</span>
+                </div>
+              </div>
+
+              <div class="invoice-footer-actions">
+                <button type="button" class="btn btn-secondary btn-xs btn-print-single-invoice" data-invoice="${tx.invoiceId}">
+                  🖨️ Imprimir Factura / Guardar PDF
+                </button>
+                <a href="${prefix}cuadro-de-honor" class="btn btn-outline-secondary btn-xs">
+                  👑 Ver en Cuadro de Honor
+                </a>
+              </div>
+            </div>
+          `,
+            )
+            .join("");
+
+          // Add print handlers to buttons
+          document.querySelectorAll(".btn-print-single-invoice").forEach((btn) => {
+            btn.addEventListener("click", () => {
+              window.print();
+            });
+          });
+        }
+      } catch (txErr) {
+        console.warn("Could not load invoices:", txErr);
+      }
+    }
+
+    // 3. Populate Cancelled Transactions (No charge made, full audit record)
+    try {
+      const guestCancelled: any[] = JSON.parse(localStorage.getItem("sm_cancelled_transactions_guest") || "[]");
+      const cancelledKey = currentUser?.uid ? `sm_user_${currentUser.uid}_cancelled_transactions` : null;
+      let cancelledList: any[] = cancelledKey ? JSON.parse(localStorage.getItem(cancelledKey) || "[]") : guestCancelled;
+
+      if (cancelledKey && guestCancelled.length > 0) {
+        cancelledList = [...guestCancelled, ...cancelledList];
+        localStorage.setItem(cancelledKey, JSON.stringify(cancelledList.slice(0, 25)));
+        localStorage.removeItem("sm_cancelled_transactions_guest");
+      }
+
+      if (cancelledList.length > 0 && cancelledCard && cancelledContainer) {
+        cancelledCard.style.display = "block";
+        cancelledContainer.innerHTML = cancelledList
+          .map(
+            (c) => `
+          <div class="cancelled-item-row">
+            <span class="cancelled-icon">ℹ️</span>
+            <div class="cancelled-text">
+              <strong>${c.serviceSlug ? c.serviceSlug.replace(/-/g, " ").toUpperCase() : "Gestión cancelada"}</strong>
+              <span class="cancelled-date">${c.at ? new Date(c.at).toLocaleString("es-ES") : ""} · ${c.reason || "Sin cargo bancario"}</span>
+            </div>
+            <a href="${prefix}cuadro-de-honor" class="btn btn-secondary btn-xs">🔄 Reintentar</a>
+          </div>
+        `,
+          )
+          .join("");
+      }
+    } catch (cErr) {
+      console.warn("Could not load cancelled list:", cErr);
     }
   } catch (err) {
     console.warn("Profile params handling warning:", err);
@@ -1546,5 +1809,236 @@ const AVATAR_PRESETS = ["👤", "🚀", "⚡", "👑", "🦊", "🦉", "🎨", "
     color: var(--color-text-muted, #94a3b8);
     text-align: center;
     padding: var(--space-md, 1rem);
+  }
+
+  /* ── Purchases & Drafts Styles (GR-01, GR-02) ──────────────── */
+  .pending-draft-box {
+    border: 1px solid var(--color-accent, #ffd700);
+    background: var(--color-surface);
+    border-radius: var(--border-radius-md, 12px);
+    padding: var(--space-lg);
+    box-shadow: var(--shadow-md);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .pending-draft-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--color-accent, #ffd700);
+  }
+
+  .pending-draft-header {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-md);
+    margin-bottom: var(--space-md);
+  }
+
+  .draft-badge-icon {
+    font-size: 1.8rem;
+    line-height: 1;
+  }
+
+  .pending-draft-title {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--color-accent, #ffd700);
+    margin: 0 0 4px 0;
+  }
+
+  .pending-draft-subtitle {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  .pending-draft-content {
+    background: var(--color-bg);
+    border: 1px solid var(--color-surface-border);
+    border-radius: var(--border-radius-sm, 8px);
+    padding: var(--space-md);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: var(--space-md);
+  }
+
+  .draft-meta-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .draft-label {
+    color: var(--color-text-muted);
+  }
+
+  .draft-price {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--color-primary);
+  }
+
+  .pending-draft-actions {
+    display: flex;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+  }
+
+  .invoices-list-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    margin-top: var(--space-md);
+  }
+
+  .invoice-item-card {
+    padding: var(--space-lg);
+    border: 1px solid var(--color-surface-border);
+    border-radius: var(--border-radius-md, 12px);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    transition:
+      transform var(--transition-fast),
+      border-color var(--transition-fast);
+  }
+
+  .invoice-item-card:hover {
+    border-color: var(--color-primary);
+  }
+
+  .invoice-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    padding-bottom: var(--space-sm);
+    border-bottom: 1px solid var(--color-surface-border);
+  }
+
+  .invoice-identity {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .invoice-chip-badge {
+    background: var(--color-success-bg, rgba(34, 197, 94, 0.12));
+    color: var(--color-success, #22c55e);
+    border: 1px solid var(--color-success, #22c55e);
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: var(--border-radius-full, 9999px);
+  }
+
+  .invoice-num-code {
+    font-size: 0.82rem;
+    background: var(--color-bg);
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: var(--color-text-muted);
+  }
+
+  .invoice-price-total {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--color-primary);
+  }
+
+  .invoice-details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-sm);
+  }
+
+  .inv-col {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .inv-lbl {
+    font-size: 0.72rem;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  .inv-val {
+    font-size: 0.85rem;
+    color: var(--color-text);
+  }
+
+  .inv-link {
+    color: var(--color-primary);
+    text-decoration: underline;
+  }
+
+  .invoice-footer-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--space-sm);
+    padding-top: var(--space-sm);
+    border-top: 1px dashed var(--color-surface-border);
+    flex-wrap: wrap;
+  }
+
+  .empty-invoices-box {
+    text-align: center;
+    padding: var(--space-xl);
+    background: var(--color-bg);
+    border: 1px dashed var(--color-surface-border);
+    border-radius: var(--border-radius-md, 12px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-sm);
+  }
+
+  .empty-invoice-icon {
+    font-size: 2.2rem;
+  }
+
+  .cancelled-list-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: var(--space-sm);
+  }
+
+  .cancelled-item-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 10px 14px;
+    background: var(--color-bg);
+    border: 1px solid var(--color-surface-border);
+    border-radius: var(--border-radius-sm, 8px);
+    flex-wrap: wrap;
+  }
+
+  .cancelled-text {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    font-size: 0.85rem;
+  }
+
+  .cancelled-date {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
   }
 </style>

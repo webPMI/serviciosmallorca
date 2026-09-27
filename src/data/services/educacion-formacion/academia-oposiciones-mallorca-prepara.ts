@@ -1,10 +1,10 @@
 import type { ServiceItem } from "../types";
 
-export const service: ServiceItem = {
+export const academia_oposiciones_mallorca_prepara: ServiceItem = {
   id: "academia-oposiciones-mallorca-prepara",
   slug: "academia-oposiciones-mallorca-prepara",
   name: "Academia de Oposiciones Prepara Mallorca",
-  category: "educacion-formacion",
+  category: "academias-idiomas-formacion",
   sectorId: "educacion-formacion",
   subcategories: ["oposiciones-mallorca", "cuerpos-seguridad", "administracion-publica"],
   zone: "palma",
@@ -20,7 +20,7 @@ export const service: ServiceItem = {
   verified: true,
   featured: false,
   status: "open",
-  tags: ["zona:palma-centro", "product:premium", "mod:en-local", "mod:online", "aud:adultos"],
+  tags: ["zona:palma-centro", "product:premium", "mod:en-local", "mod:online"],
   phone: "+34 971 29 78 45",
   whatsapp: "+34 651 29 78 45",
   email: "info@preparamallorca.com",
@@ -105,3 +105,5 @@ export const service: ServiceItem = {
   createdAt: "2026-09-05",
   lastUpdatedAt: "2026-09-05",
 };
+
+export const service = academia_oposiciones_mallorca_prepara;

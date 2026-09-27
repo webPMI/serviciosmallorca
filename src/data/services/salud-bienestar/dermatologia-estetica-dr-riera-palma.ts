@@ -1,6 +1,6 @@
 import type { ServiceItem } from "../types";
 
-export const service: ServiceItem = {
+export const dermatologia_estetica_dr_riera_palma: ServiceItem = {
   slug: "dermatologia-estetica-dr-riera-palma",
   id: "dermatologia-estetica-dr-riera-palma",
   name: "Dermatología Estética Dr. Riera Palma",
@@ -20,7 +20,7 @@ export const service: ServiceItem = {
   verified: true,
   featured: true,
   status: "open",
-  tags: ["zona:palma-centro", "product:premium", "mod:en-local", "aud:adultos"],
+  tags: ["zona:palma-centro", "product:premium", "mod:en-local"],
   phone: "+34 971 72 65 10",
   whatsapp: "+34 971 72 65 10",
   email: "consulta@dermatologiariera.com",
@@ -44,20 +44,66 @@ export const service: ServiceItem = {
     de: "Dr. Riera ist ein zugelassener Dermatologe mit über 20 Jahren Erfahrung in der Diagnose und Behandlung von Hautkrankheiten auf Mallorca. Seine Privatpraxis im Zentrum von Palma bietet umfassende medizinische Dermatologie kombiniert mit fortgeschrittener ästhetischer Medizin.",
   },
   highlights: {
-    es: ["Dermatólogo colegiado con más de 20 años de experiencia en Mallorca", "Dermatoscopia digital de alta resolución para detección precoz de melanoma", "Medicina estética: toxina botulínica, ácido hialurónico y laser fraccionado", "Cirugía dermatológica ambulatoria de lesiones cutáneas benignas y malignas"],
-    en: ["Board-certified dermatologist with 20+ years of Mallorca experience", "High-resolution digital dermoscopy for early melanoma detection", "Aesthetic medicine: botulinum toxin, hyaluronic acid fillers, and fractional laser", "Outpatient dermatological surgery for benign and malignant skin lesions"],
-    ca: ["Dermatòleg col·legiat amb més de 20 anys d'experiència a Mallorca", "Dermoscòpia digital d'alta resolució per a detecció precoç de melanoma", "Medicina estètica: toxina botulínica, àcid hialurònic i làser fraccionat", "Cirurgia dermatològica ambulatòria de lesions cutànies benignes i malignes"],
-    de: ["Zugelassener Dermatologe mit über 20 Jahren Erfahrung auf Mallorca", "Hochauflösende digitale Dermatoskopie zur Früherkennnung von Melanomen", "Ästhetische Medizin: Botulinum-Toxin, Hyaluronsäure-Filler und fraktionierter Laser", "Ambulante Dermatochirurgie bei benignen und malignen Hautläsionen"],
+    es: [
+      "Dermatólogo colegiado con más de 20 años de experiencia en Mallorca",
+      "Dermatoscopia digital de alta resolución para detección precoz de melanoma",
+      "Medicina estética: toxina botulínica, ácido hialurónico y laser fraccionado",
+      "Cirugía dermatológica ambulatoria de lesiones cutáneas benignas y malignas",
+    ],
+    en: [
+      "Board-certified dermatologist with 20+ years of Mallorca experience",
+      "High-resolution digital dermoscopy for early melanoma detection",
+      "Aesthetic medicine: botulinum toxin, hyaluronic acid fillers, and fractional laser",
+      "Outpatient dermatological surgery for benign and malignant skin lesions",
+    ],
+    ca: [
+      "Dermatòleg col·legiat amb més de 20 anys d'experiència a Mallorca",
+      "Dermoscòpia digital d'alta resolució per a detecció precoç de melanoma",
+      "Medicina estètica: toxina botulínica, àcid hialurònic i làser fraccionat",
+      "Cirurgia dermatològica ambulatòria de lesions cutànies benignes i malignes",
+    ],
+    de: [
+      "Zugelassener Dermatologe mit über 20 Jahren Erfahrung auf Mallorca",
+      "Hochauflösende digitale Dermatoskopie zur Früherkennnung von Melanomen",
+      "Ästhetische Medizin: Botulinum-Toxin, Hyaluronsäure-Filler und fraktionierter Laser",
+      "Ambulante Dermatochirurgie bei benignen und malignen Hautläsionen",
+    ],
   },
   servicesProvided: {
-    es: ["Revisión y mapeo de lunares con dermatoscopia digital de alta definición", "Tratamiento del acné severo con isotretinoína oral y peelings químicos", "Rejuvenecimiento facial con laser fraccionado CO₂ y HIFU", "Extirpación quirúrgica de queratosis, quistes sebáceos y lipomas"],
-    en: ["Mole check and mapping with high-definition digital dermoscopy", "Severe acne treatment with oral isotretinoin and chemical peels", "Facial rejuvenation with fractional CO₂ laser and HIFU", "Surgical removal of keratoses, sebaceous cysts, and lipomas"],
-    ca: ["Revisió i mapeig de pigues amb dermoscòpia digital d'alta definició", "Tractament de l'acne sever amb isotretinoïna oral i peelings químics", "Rejoveniment facial amb làser fraccionat CO₂ i HIFU", "Extirpació quirúrgica de queratosi, quists sebacis i lipomes"],
-    de: ["Muttermalmapping und -prüfung mit hochauflösender digitaler Dermatoskopie", "Behandlung von schwerem Akne mit oraler Isotretinoin und chemischen Peelings", "Gesichtsverjüngung mit fraktioniertem CO₂-Laser und HIFU", "Chirurgische Entfernung von Keratosen, Talgzysten und Lipomen"],
+    es: [
+      "Revisión y mapeo de lunares con dermatoscopia digital de alta definición",
+      "Tratamiento del acné severo con isotretinoína oral y peelings químicos",
+      "Rejuvenecimiento facial con laser fraccionado CO₂ y HIFU",
+      "Extirpación quirúrgica de queratosis, quistes sebáceos y lipomas",
+    ],
+    en: [
+      "Mole check and mapping with high-definition digital dermoscopy",
+      "Severe acne treatment with oral isotretinoin and chemical peels",
+      "Facial rejuvenation with fractional CO₂ laser and HIFU",
+      "Surgical removal of keratoses, sebaceous cysts, and lipomas",
+    ],
+    ca: [
+      "Revisió i mapeig de pigues amb dermoscòpia digital d'alta definició",
+      "Tractament de l'acne sever amb isotretinoïna oral i peelings químics",
+      "Rejoveniment facial amb làser fraccionat CO₂ i HIFU",
+      "Extirpació quirúrgica de queratosi, quists sebacis i lipomes",
+    ],
+    de: [
+      "Muttermalmapping und -prüfung mit hochauflösender digitaler Dermatoskopie",
+      "Behandlung von schwerem Akne mit oraler Isotretinoin und chemischen Peelings",
+      "Gesichtsverjüngung mit fraktioniertem CO₂-Laser und HIFU",
+      "Chirurgische Entfernung von Keratosen, Talgzysten und Lipomen",
+    ],
   },
   reputationBreakdown: {
-    googleMaps: { rating: 4.9, reviewCount: 334, url: "https://www.google.com/maps/search/?api=1&query=Dermatolog%C3%ADa+Est%C3%A9tica+Dr+Riera+Palma" },
+    googleMaps: {
+      rating: 4.9,
+      reviewCount: 334,
+      url: "https://www.google.com/maps/search/?api=1&query=Dermatolog%C3%ADa+Est%C3%A9tica+Dr+Riera+Palma",
+    },
   },
   createdAt: "2026-09-05",
   lastUpdatedAt: "2026-09-05",
 };
+
+export const service = dermatologia_estetica_dr_riera_palma;

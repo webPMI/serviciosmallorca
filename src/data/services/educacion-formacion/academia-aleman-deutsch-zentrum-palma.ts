@@ -1,10 +1,10 @@
 ﻿import type { ServiceItem } from "../types";
 
-export const service: ServiceItem = {
+export const academia_aleman_deutsch_zentrum_palma: ServiceItem = {
   slug: "academia-aleman-deutsch-zentrum-palma",
   id: "academia-aleman-deutsch-zentrum-palma",
   name: "Academia de Alemán Deutsch Zentrum Palma",
-  category: "educacion-formacion",
+  category: "academias-idiomas-formacion",
   sectorId: "educacion-formacion",
   subcategories: ["academia-aleman-palma", "goethe-exams", "aleman-empresas"],
   zone: "palma",
@@ -20,7 +20,7 @@ export const service: ServiceItem = {
   verified: true,
   featured: false,
   status: "open",
-  tags: ["zona:palma-centro", "product:premium", "mod:en-local", "mod:online", "aud:adultos", "aud:empresas"],
+  tags: ["zona:palma-centro", "product:premium", "mod:en-local", "mod:online", "aud:b2b"],
   phone: "+34 971 40 22 78",
   whatsapp: "+34 670 40 22 78",
   email: "info@deutschzentrumpalma.com",
@@ -28,7 +28,8 @@ export const service: ServiceItem = {
   schedule: "Lunes a Viernes: 08:30 - 21:00 | Sábado: 09:00 - 13:30",
   image: "/images/services/academia-aleman-deutsch-zentrum-palma.jpg",
   gallery: ["/images/services/academia-aleman-deutsch-zentrum-palma.jpg"],
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Academia+Alem%C3%A1n+Deutsch+Zentrum+Palma+Joan+Mir%C3%B3+55",
+  googleMapsUrl:
+    "https://www.google.com/maps/search/?api=1&query=Academia+Alem%C3%A1n+Deutsch+Zentrum+Palma+Joan+Mir%C3%B3+55",
   appleMapsUrl: "https://maps.apple.com/?q=Academia+Aleman+Deutsch+Zentrum+Palma",
   bingMapsUrl: "https://bing.com/maps?q=Academia+Aleman+Deutsch+Zentrum+Palma",
   shortDescription: {
@@ -44,20 +45,66 @@ export const service: ServiceItem = {
     de: "Das Deutsch Zentrum Palma ist die führende Deutschsprachschule auf Mallorca. Mit muttersprachlichen Lehrern und einer kommunikativen Methode für schnelle Sprachflüssigkeit ist sie besonders beliebt bei Mitarbeitern im Gastgewerbe, die deutsche Gäste betreuen. Das Angebot umfasst reguläre Kleingruppen, Sommer-Intensivkurse und firmeneigene Schulungen.",
   },
   highlights: {
-    es: ["Profesores nativos alemanes con titulación DaF y amplia experiencia en Mallorca", "Preparación oficial para todos los niveles de examen Goethe-Institut (A1-C2)", "Cursos especializados en alemán para hostelería, turismo y ventas", "Clases online en tiempo real con la misma metodología que las presenciales"],
-    en: ["Native German teachers with DaF qualification and extensive Mallorca experience", "Official preparation for all Goethe-Institut exam levels (A1-C2)", "Specialized German courses for hospitality, tourism, and sales", "Real-time online classes with the same methodology as in-person courses"],
-    ca: ["Professors natius alemanys amb titulació DaF i àmplia experiència a Mallorca", "Preparació oficial per a tots els nivells d'examen Goethe-Institut (A1-C2)", "Cursos especialitzats en alemany per a hostaleria, turisme i vendes", "Classes en línia en temps real amb la mateixa metodologia que les presencials"],
-    de: ["Muttersprachliche Deutschlehrer mit DaF-Qualifikation und langjähriger Mallorca-Erfahrung", "Offizielle Vorbereitung auf alle Goethe-Institut-Prüfungen (A1-C2)", "Spezialisierte Deutschkurse für Gastgewerbe, Tourismus und Vertrieb", "Echtzeit-Online-Kurse mit derselben Methodik wie Präsenzkurse"],
+    es: [
+      "Profesores nativos alemanes con titulación DaF y amplia experiencia en Mallorca",
+      "Preparación oficial para todos los niveles de examen Goethe-Institut (A1-C2)",
+      "Cursos especializados en alemán para hostelería, turismo y ventas",
+      "Clases online en tiempo real con la misma metodología que las presenciales",
+    ],
+    en: [
+      "Native German teachers with DaF qualification and extensive Mallorca experience",
+      "Official preparation for all Goethe-Institut exam levels (A1-C2)",
+      "Specialized German courses for hospitality, tourism, and sales",
+      "Real-time online classes with the same methodology as in-person courses",
+    ],
+    ca: [
+      "Professors natius alemanys amb titulació DaF i àmplia experiència a Mallorca",
+      "Preparació oficial per a tots els nivells d'examen Goethe-Institut (A1-C2)",
+      "Cursos especialitzats en alemany per a hostaleria, turisme i vendes",
+      "Classes en línia en temps real amb la mateixa metodologia que les presencials",
+    ],
+    de: [
+      "Muttersprachliche Deutschlehrer mit DaF-Qualifikation und langjähriger Mallorca-Erfahrung",
+      "Offizielle Vorbereitung auf alle Goethe-Institut-Prüfungen (A1-C2)",
+      "Spezialisierte Deutschkurse für Gastgewerbe, Tourismus und Vertrieb",
+      "Echtzeit-Online-Kurse mit derselben Methodik wie Präsenzkurse",
+    ],
   },
   servicesProvided: {
-    es: ["Cursos de alemán en grupos reducidos de máximo 8 alumnos para todos los niveles", "Preparación a los exámenes Goethe-Institut A1, A2, B1, B2, C1 y C2", "Alemán profesional para hostelería, turismo y atención al cliente en hoteles", "Clases individuales de conversación y tutoría personalizada"],
-    en: ["Small-group German courses of maximum 8 students for all levels", "Goethe-Institut A1, A2, B1, B2, C1, and C2 exam preparation", "Professional German for hospitality, tourism, and hotel guest services", "One-to-one conversation and personalized tutoring sessions"],
-    ca: ["Cursos d'alemany en grups reduïts de màxim 8 alumnes per a tots els nivells", "Preparació per als exàmens Goethe-Institut A1, A2, B1, B2, C1 i C2", "Alemany professional per a hostaleria, turisme i atenció al client en hotels", "Classes individuals de conversa i tutoria personalitzada"],
-    de: ["Kleingruppenkurse Deutsch (max. 8 Teilnehmer) für alle Niveaus", "Goethe-Institut A1, A2, B1, B2, C1 und C2 Prüfungsvorbereitung", "Berufsdeutsch für Gastgewerbe, Tourismus und Hotelservice", "Einzelstunden für Konversation und personalisiertes Tutoring"],
+    es: [
+      "Cursos de alemán en grupos reducidos de máximo 8 alumnos para todos los niveles",
+      "Preparación a los exámenes Goethe-Institut A1, A2, B1, B2, C1 y C2",
+      "Alemán profesional para hostelería, turismo y atención al cliente en hoteles",
+      "Clases individuales de conversación y tutoría personalizada",
+    ],
+    en: [
+      "Small-group German courses of maximum 8 students for all levels",
+      "Goethe-Institut A1, A2, B1, B2, C1, and C2 exam preparation",
+      "Professional German for hospitality, tourism, and hotel guest services",
+      "One-to-one conversation and personalized tutoring sessions",
+    ],
+    ca: [
+      "Cursos d'alemany en grups reduïts de màxim 8 alumnes per a tots els nivells",
+      "Preparació per als exàmens Goethe-Institut A1, A2, B1, B2, C1 i C2",
+      "Alemany professional per a hostaleria, turisme i atenció al client en hotels",
+      "Classes individuals de conversa i tutoria personalitzada",
+    ],
+    de: [
+      "Kleingruppenkurse Deutsch (max. 8 Teilnehmer) für alle Niveaus",
+      "Goethe-Institut A1, A2, B1, B2, C1 und C2 Prüfungsvorbereitung",
+      "Berufsdeutsch für Gastgewerbe, Tourismus und Hotelservice",
+      "Einzelstunden für Konversation und personalisiertes Tutoring",
+    ],
   },
   reputationBreakdown: {
-    googleMaps: { rating: 4.8, reviewCount: 187, url: "https://www.google.com/maps/search/?api=1&query=Academia+Alem%C3%A1n+Deutsch+Zentrum+Palma" },
+    googleMaps: {
+      rating: 4.8,
+      reviewCount: 187,
+      url: "https://www.google.com/maps/search/?api=1&query=Academia+Alem%C3%A1n+Deutsch+Zentrum+Palma",
+    },
   },
   createdAt: "2026-09-05",
   lastUpdatedAt: "2026-09-05",
 };
+
+export const service = academia_aleman_deutsch_zentrum_palma;

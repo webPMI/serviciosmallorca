@@ -1,10 +1,10 @@
 import type { ServiceItem } from "../types";
 
-export const service: ServiceItem = {
+export const autoescuela_palma_conduir: ServiceItem = {
   id: "autoescuela-palma-conduir",
   slug: "autoescuela-palma-conduir",
   name: "Autoescuela Conduir Palma",
-  category: "educacion-formacion",
+  category: "academias-idiomas-formacion",
   sectorId: "educacion-formacion",
   subcategories: ["autoescuela-palma", "carnet-coche", "carnet-moto"],
   zone: "palma",
@@ -20,7 +20,7 @@ export const service: ServiceItem = {
   verified: true,
   featured: false,
   status: "open",
-  tags: ["zona:palma-centro", "mod:en-local", "aud:adultos", "aud:jovenes"],
+  tags: ["zona:palma-centro", "mod:en-local"],
   phone: "+34 971 72 18 90",
   whatsapp: "+34 617 72 18 90",
   email: "info@autoescolaconductir.com",
@@ -105,3 +105,5 @@ export const service: ServiceItem = {
   createdAt: "2026-09-05",
   lastUpdatedAt: "2026-09-05",
 };
+
+export const service = autoescuela_palma_conduir;

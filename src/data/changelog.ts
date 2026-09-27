@@ -55,9 +55,9 @@ export interface ReleaseLog {
   entries: ChangelogEntry[];
 }
 
-export const CURRENT_PLATFORM_VERSION = "0.05-beta";
-export const PLATFORM_RELEASE_DATE = "2026-09-05";
-export const PLATFORM_LAST_BUILD_TIMESTAMP = "2026-09-05T14:48:00+02:00";
+export const CURRENT_PLATFORM_VERSION = "0.06-beta";
+export const PLATFORM_RELEASE_DATE = "2026-09-27";
+export const PLATFORM_LAST_BUILD_TIMESTAMP = "2026-09-27T11:15:00+02:00";
 
 /**
  * Devuelve la fecha y hora formateada de la última actualización según el idioma.
@@ -84,6 +84,118 @@ export function getFormattedBuildTimestamp(locale: "es" | "en" | "ca" | "de" = "
 }
 
 export const CHANGELOG_RELEASES: ReleaseLog[] = [
+  {
+    version: "0.06",
+    versionLabel: {
+      es: "v0.06-beta · GEO (Generative Engine Optimization), Indexación de Agentes IA, Checkout API y Hub de Posicionamiento B2B",
+      en: "v0.06-beta · GEO (Generative Engine Optimization), AI Agent Indexing, Checkout API & B2B Authority Hub",
+      ca: "v0.06-beta · GEO (Generative Engine Optimization), Indexació d'Agents IA, Checkout API i Hub de Posicionament B2B",
+      de: "v0.06-beta · GEO (Generative Engine Optimization), KI-Agenten-Indexierung, Checkout-API & B2B-Positionierungs-Hub",
+    },
+    type: "MAJOR",
+    date: "2026-09-27",
+    summary: {
+      es: "Implementación integral de GEO (Generative Engine Optimization) para que los bots de IA (ChatGPT, Perplexity, Claude, Gemini) indexen y recomienden las empresas de Mallorca, nueva API de checkout con cálculo de IVA del 21%, simulador interactivo de prompts y ficha canónica de citación.",
+      en: "Full implementation of GEO (Generative Engine Optimization) so AI chatbots (ChatGPT, Perplexity, Claude, Gemini) index and recommend Mallorca businesses, new checkout API with 21% VAT calculation, interactive prompt simulator, and canonical citation box.",
+      ca: "Implementació integral de GEO (Generative Engine Optimization) per a que els bots d'IA indexin i recomanin les empreses de Mallorca, nova API de checkout amb càlcul d'IVA del 21%, simulador interactiu de prompts i caixa canònica de citació.",
+      de: "Umfassende Implementierung von GEO (Generative Engine Optimization), damit KI-Chatbots Mallorca-Unternehmen indexieren und empfehlen, neue Checkout-API mit 21% MwSt.-Berechnung, interaktiver Prompt-Simulator und kanonische Zitierbox.",
+    },
+    highlights: {
+      es: [
+        "Protocolo GEO nativo en /llms.txt, /llms-full.txt y /.well-known/agents.json con directrices de citación para LLMs.",
+        "Endpoint de servidor SSR /api/create-checkout-session con pasarela Stripe, modo Sandbox y cálculo fiscal.",
+        "Simulador interactivo de búsqueda conversacional de IA en el portal para empresas (/unete).",
+        "Caja de citación canónica para asistentes de IA (ChatGPT, Perplexity & Claude) en cada ficha de servicio.",
+        "Documentación arquitectónica completa en docs/GEO_AND_AI_POSITIONING_STRATEGY.md.",
+      ],
+      en: [
+        "Native GEO protocol in /llms.txt, /llms-full.txt, and /.well-known/agents.json with LLM citation rules.",
+        "SSR server endpoint /api/create-checkout-session with Stripe gateway, Sandbox fallback, and tax breakdown.",
+        "Live conversational AI prompt simulator on business positioning portal (/unete).",
+        "Canonical AI citation box for LLMs across all service detail listings.",
+        "Master architectural guide in docs/GEO_AND_AI_POSITIONING_STRATEGY.md.",
+      ],
+      ca: [
+        "Protocol GEO natiu a /llms.txt, /llms-full.txt i /.well-known/agents.json amb regles de citació per a LLMs.",
+        "Endpoint de servidor SSR /api/create-checkout-session amb passarel·la Stripe, Sandbox i desglossament d'IVA.",
+        "Simulador interactiu de cerca conversacional d'IA al portal d'empreses (/unete).",
+        "Caixa de citació canònica per a assistents d'IA a cada fitxa de servei.",
+        "Documentació arquitectònica completa a docs/GEO_AND_AI_POSITIONING_STRATEGY.md.",
+      ],
+      de: [
+        "Natives GEO-Protokoll in /llms.txt, /llms-full.txt und /.well-known/agents.json mit Zitierrichtlinien für LLMs.",
+        "SSR-Server-Endpoint /api/create-checkout-session mit Stripe-Gateway, Sandbox und Steuerberechnung.",
+        "Live-Prompt-Simulator für Konversations-KI auf der Unternehmensseite (/unete).",
+        "Kanonische KI-Zitierbox für Sprachmodelle in allen Diensteinträgen.",
+        "Architektur-Leitfaden in docs/GEO_AND_AI_POSITIONING_STRATEGY.md.",
+      ],
+    },
+    entries: [
+      {
+        category: "FEATURE",
+        title: {
+          es: "Estrategia e Infraestructura GEO (Generative Engine Optimization)",
+          en: "GEO Strategy and AI Agent Infrastructure",
+          ca: "Estratègia i Infraestructura GEO per a IA",
+          de: "GEO-Strategie und KI-Agenten-Infrastruktur",
+        },
+        description: {
+          es: "Optimización de datos estructurados, Schema.org y puntos finales de lenguaje para que los asistentes de IA recomienden a los comercios de Mallorca con máxima prioridad.",
+          en: "Structured data optimization, Schema.org, and LLM endpoints so AI assistants recommend Mallorca businesses with top priority.",
+          ca: "Optimització de dades estructurades, Schema.org i endpoints de llenguatge per a recomanacions prioritàries per IA.",
+          de: "Strukturierte Datenoptimierung und Sprachmodell-Endpunkte für vorrangige KI-Empfehlungen auf Mallorca.",
+        },
+        badgeText: {
+          es: "GEO 2026",
+          en: "GEO 2026",
+          ca: "GEO 2026",
+          de: "GEO 2026",
+        },
+      },
+      {
+        category: "SECURITY",
+        title: {
+          es: "Blindaje Financiero 360°, Anti-Duplicados y Prevención de Riesgos de Red/Hacking",
+          en: "360° Financial Risk Shield, Anti-Duplicates & Network/Hacking Defense",
+          ca: "Blindatge Financer 360°, Anti-Duplicats i Prevenció de Riscos",
+          de: "360°-Finanzschutz, Dublettenschutz & Netzwerk-/Hacking-Abwehr",
+        },
+        description: {
+          es: "Mutex locks anti-doble clic (20s), AbortController contra microcortes de red, validación fiscal NIF/CIF/NIE/VAT, verificación criptográfica HMAC-SHA256 de webhooks de Stripe y libro mayor de idempotencia permanente.",
+          en: "Anti-double-click mutex locks (20s), AbortController against network drops, strict NIF/CIF/NIE/VAT fiscal validation, Stripe HMAC-SHA256 webhook cryptographic verification, and permanent idempotency ledger.",
+          ca: "Mutex locks anti-doble clic (20s), AbortController contra microtalls de xarxa, validació fiscal NIF/CIF/NIE/VAT, verificació criptogràfica HMAC-SHA256 de webhooks de Stripe i llibre major d'idempotència.",
+          de: "Anti-Doppelklick-Mutex-Sperren (20s), AbortController gegen Netzwerkunterbrechungen, Steuerprüfung (NIF/CIF/VAT), kryptografische HMAC-SHA256-Stripe-Webhook-Verifizierung und Idempotenz-Hauptbuch.",
+        },
+        badgeText: {
+          es: "Blindaje 360°",
+          en: "360° Shield",
+          ca: "Blindatge 360°",
+          de: "360°-Schutz",
+        },
+      },
+      {
+        category: "FEATURE",
+        title: {
+          es: "Autenticación Obligatoria Previa al Pago, Recuperación de Carritos y Facturación Privada en Perfil",
+          en: "Auth-Gated Checkout, Abandoned Cart Recovery & Private Invoicing in User Profile",
+          ca: "Autenticació Obligatòria Prèvia al Pagament, Recuperació de Carrets i Facturació Privada al Perfil",
+          de: "Pflicht-Authentifizierung vor Zahlung, Warenkorb-Wiederherstellung & private Rechnungen im Profil",
+        },
+        description: {
+          es: "Puerta de acceso con returnUrl y resumeDraft=1, almacenamiento privado de facturas con desglose de IVA (21%), historial de cancelaciones sin cargo (0,00€) y reanudación o descarte en 1 clic desde el perfil del usuario.",
+          en: "Auth gate with returnUrl and resumeDraft=1, private per-user invoice vault with 21% VAT breakdown, zero-charge cancellation audit trail (0.00€), and 1-click draft resume/discard in user profile.",
+          ca: "Porta d'accés amb returnUrl i resumeDraft=1, emmagatzematge privat de factures amb desglossament d'IVA (21%), historial de cancel·lacions sense càrrec (0,00€) i represa o descart en 1 clic des del perfil.",
+          de: "Zugangsbarriere mit returnUrl und resumeDraft=1, privater Rechnungsspeicher mit 21% MwSt.-Aufschlüsselung, gebührenfreie Storno-Historie (0,00€) und 1-Klick-Wiederaufnahme/-Verwerfung im Profil.",
+        },
+        badgeText: {
+          es: "Perfil & Checkout",
+          en: "Profile & Checkout",
+          ca: "Perfil & Checkout",
+          de: "Profil & Checkout",
+        },
+      },
+    ],
+  },
   {
     version: "0.05",
     versionLabel: {
@@ -135,6 +247,27 @@ export const CHANGELOG_RELEASES: ReleaseLog[] = [
       ],
     },
     entries: [
+      {
+        category: "FEATURE",
+        title: {
+          es: "Panel Admin 2.0: Motor de Verificación de Negocios y Triaje en 1-Clic",
+          en: "Admin Control Center 2.0: Business Verification Engine & 1-Click Triage",
+          ca: "Panell Admin 2.0: Motor de Verificació de Negocis i Triatge en 1-Clic",
+          de: "Admin-Zentrale 2.0: Unternehmens-Verifizierungs-Engine & 1-Klick-Triage",
+        },
+        description: {
+          es: "Activación del sistema de verificación oficial en tiempo real con persistencia en service_overrides, validación en 1-clic con asignación de 95% de confianza, panel de auditoría fiscal (CIF/NIF AEAT, prefijo balear y dominio corporativo) en la cola de reclamaciones, y buscador interactivo con toggle de verificación en el catálogo.",
+          en: "Activation of the real-time official verification pipeline with service_overrides persistence, 1-click validation assigning 95% confidence score, fiscal audit breakdown (AEAT Tax ID, Balearic phone, corporate web domain) in claims moderation, and live search with verification toggles across the business catalog.",
+          ca: "Activació del sistema de verificació oficial en temps real amb persistència a service_overrides, validació en 1-clic amb assignació del 95% de confiança, panell d'auditoria fiscal (CIF/NIF AEAT, telèfon balear i domini web corporatiu) a la cua de reclamacions, i cercador interactiu amb toggle de verificació al catàleg.",
+          de: "Aktivierung der Echtzeit-Verifizierungs-Pipeline mit Persistenz in service_overrides, 1-Klick-Freigabe mit 95% Konfidenz-Score, steuerlicher Prüfbericht (AEAT-Steuernummer, Balearen-Telefon, Firmen-Webdomain) in der Reklamations-Queue sowie Live-Katalogsuche mit Direkt-Verifizierungs-Schaltern.",
+        },
+        badgeText: {
+          es: "Admin & Verificación",
+          en: "Admin & Verification",
+          ca: "Admin i Verificació",
+          de: "Admin & Verifizierung",
+        },
+      },
       {
         category: "FEATURE",
         title: {

@@ -1,6 +1,6 @@
 import type { ServiceItem } from "../types.ts";
 
-export const restaurante_sa_foradada_deia_arros_leña: ServiceItem = {
+export const restaurante_sa_foradada_deia_arros_lena: ServiceItem = {
   id: "restaurante-sa-foradada-deia-arros-leña",
   slug: "restaurante-sa-foradada-deia-arros-leña",
   name: "Restaurante Sa Foradada Deià Paellas & Arroces a la Leña",
@@ -111,3 +111,5 @@ export const restaurante_sa_foradada_deia_arros_leña: ServiceItem = {
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",
 };
+
+export { restaurante_sa_foradada_deia_arros_lena as restaurante_sa_foradada_deia_arros_leña };

@@ -1,6 +1,6 @@
 import type { ServiceItem } from "../types";
 
-export const service: ServiceItem = {
+export const clinica_nutricion_dietetic_alcudia: ServiceItem = {
   slug: "clinica-nutricion-dietetic-alcudia",
   id: "clinica-nutricion-dietetic-alcudia",
   name: "Clínica de Nutrición y Dietética Alcúdia",
@@ -20,7 +20,7 @@ export const service: ServiceItem = {
   verified: true,
   featured: false,
   status: "open",
-  tags: ["zona:port-dalcudia", "product:premium", "mod:en-local", "mod:online", "aud:deportistas", "aud:familias"],
+  tags: ["zona:port-d-alcudia", "product:premium", "mod:en-local", "mod:online", "aud:familias"],
   phone: "+34 971 54 70 23",
   whatsapp: "+34 655 54 70 23",
   email: "consulta@nutriciondietalcudia.com",
@@ -28,7 +28,8 @@ export const service: ServiceItem = {
   schedule: "Lunes a Viernes: 09:00 - 19:00 | Sábado: 09:30 - 13:00",
   image: "/images/services/clinica-nutricion-dietetic-alcudia.jpg",
   gallery: ["/images/services/clinica-nutricion-dietetic-alcudia.jpg"],
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica+Nutrici%C3%B3n+Diet%C3%A9tica+Alc%C3%BAdia+Carrer+del+Moll+14",
+  googleMapsUrl:
+    "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica+Nutrici%C3%B3n+Diet%C3%A9tica+Alc%C3%BAdia+Carrer+del+Moll+14",
   appleMapsUrl: "https://maps.apple.com/?q=Clinica+Nutricion+Alcudia",
   bingMapsUrl: "https://bing.com/maps?q=Clinica+Nutricion+Alcudia",
   shortDescription: {
@@ -44,20 +45,66 @@ export const service: ServiceItem = {
     de: "Die Ernährungs- und Diätklinik in Alcúdia wird von einer diplomierten Ernährungsberaterin mit Master in Sporternährung und fortgeschrittener Ausbildung in Verdauungspathologie geleitet. Sie betreut Einwohner und Athleten in Nordmallorca mit personalisierten Ernährungsplänen.",
   },
   highlights: {
-    es: ["Dietista-nutricionista colegiada con máster en nutrición deportiva", "Planes personalizados para triatletas, ciclistas y corredores de Mallorca", "Atención en español, inglés y alemán", "Consultas online y seguimiento por app de nutrición"],
-    en: ["Registered dietitian with a master's degree in sports nutrition", "Customized plans for Mallorca triathletes, cyclists, and runners", "Consultations in Spanish, English, and German", "Online sessions and nutrition app follow-up"],
-    ca: ["Dietista col·legiada amb màster en nutrició esportiva", "Plans personalitzats per a triatletes, ciclistes i corredors de Mallorca", "Atenció en català, castellà, anglès i alemany", "Consultes en línia i seguiment per app de nutrició"],
-    de: ["Diplomierte Ernährungsberaterin mit Master in Sporternährung", "Individuelle Pläne für Mallorca-Triathleten, Radfahrer und Läufer", "Beratung auf Spanisch, Englisch und Deutsch", "Online-Sitzungen und App-gestütztes Ernährungs-Follow-up"],
+    es: [
+      "Dietista-nutricionista colegiada con máster en nutrición deportiva",
+      "Planes personalizados para triatletas, ciclistas y corredores de Mallorca",
+      "Atención en español, inglés y alemán",
+      "Consultas online y seguimiento por app de nutrición",
+    ],
+    en: [
+      "Registered dietitian with a master's degree in sports nutrition",
+      "Customized plans for Mallorca triathletes, cyclists, and runners",
+      "Consultations in Spanish, English, and German",
+      "Online sessions and nutrition app follow-up",
+    ],
+    ca: [
+      "Dietista col·legiada amb màster en nutrició esportiva",
+      "Plans personalitzats per a triatletes, ciclistes i corredors de Mallorca",
+      "Atenció en català, castellà, anglès i alemany",
+      "Consultes en línia i seguiment per app de nutrició",
+    ],
+    de: [
+      "Diplomierte Ernährungsberaterin mit Master in Sporternährung",
+      "Individuelle Pläne für Mallorca-Triathleten, Radfahrer und Läufer",
+      "Beratung auf Spanisch, Englisch und Deutsch",
+      "Online-Sitzungen und App-gestütztes Ernährungs-Follow-up",
+    ],
   },
   servicesProvided: {
-    es: ["Planificación nutricional personalizada para pérdida de peso saludable", "Nutrición deportiva para triatletas, ciclistas y corredores", "Tratamiento dietético del SII, celiaquía y alergias alimentarias", "Planes nutricionales para diabetes tipo 2 y síndrome metabólico"],
-    en: ["Personalized nutrition planning for healthy weight management", "Sports nutrition for triathletes, cyclists, and distance runners", "Dietary management of IBS, celiac disease, and food allergies", "Nutrition plans for type 2 diabetes and metabolic syndrome"],
-    ca: ["Planificació nutricional personalitzada per a la pèrdua de pes saludable", "Nutrició esportiva per a triatletes, ciclistes i corredors", "Tractament dietètic del SII, celiaquia i al·lèrgies alimentàries", "Plans nutricionals per a la diabetis tipus 2 i la síndrome metabòlica"],
-    de: ["Personalisierte Ernährungsplanung für gesunden Gewichtsverlust", "Sporternährung für Triathleten, Radfahrer und Langstreckenläufer", "Diätmanagement bei Reizdarmsyndrom, Zöliakie und Nahrungsmittelallergien", "Ernährungspläne für Typ-2-Diabetes und metabolisches Syndrom"],
+    es: [
+      "Planificación nutricional personalizada para pérdida de peso saludable",
+      "Nutrición deportiva para triatletas, ciclistas y corredores",
+      "Tratamiento dietético del SII, celiaquía y alergias alimentarias",
+      "Planes nutricionales para diabetes tipo 2 y síndrome metabólico",
+    ],
+    en: [
+      "Personalized nutrition planning for healthy weight management",
+      "Sports nutrition for triathletes, cyclists, and distance runners",
+      "Dietary management of IBS, celiac disease, and food allergies",
+      "Nutrition plans for type 2 diabetes and metabolic syndrome",
+    ],
+    ca: [
+      "Planificació nutricional personalitzada per a la pèrdua de pes saludable",
+      "Nutrició esportiva per a triatletes, ciclistes i corredors",
+      "Tractament dietètic del SII, celiaquia i al·lèrgies alimentàries",
+      "Plans nutricionals per a la diabetis tipus 2 i la síndrome metabòlica",
+    ],
+    de: [
+      "Personalisierte Ernährungsplanung für gesunden Gewichtsverlust",
+      "Sporternährung für Triathleten, Radfahrer und Langstreckenläufer",
+      "Diätmanagement bei Reizdarmsyndrom, Zöliakie und Nahrungsmittelallergien",
+      "Ernährungspläne für Typ-2-Diabetes und metabolisches Syndrom",
+    ],
   },
   reputationBreakdown: {
-    googleMaps: { rating: 4.8, reviewCount: 156, url: "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica+Nutrici%C3%B3n+Alc%C3%BAdia" },
+    googleMaps: {
+      rating: 4.8,
+      reviewCount: 156,
+      url: "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica+Nutrici%C3%B3n+Alc%C3%BAdia",
+    },
   },
   createdAt: "2026-09-05",
   lastUpdatedAt: "2026-09-05",
 };
+
+export const service = clinica_nutricion_dietetic_alcudia;

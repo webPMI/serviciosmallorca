@@ -1,4 +1,10 @@
-import type { ServiceItem, ServiceStatus, ServiceEvolutionEntry } from "../data/services";
+import type {
+  ServiceItem,
+  ServiceStatus,
+  ServiceEvolutionEntry,
+  ExtendedVerificationStatus,
+  TrustLevel,
+} from "../data/services";
 import type { Firestore } from "firebase/firestore";
 
 /**
@@ -46,6 +52,14 @@ export interface ServiceOverride {
   };
   gallery?: string[];
   image?: string;
+  verified?: boolean;
+  verificationStatus?: ExtendedVerificationStatus | "verified";
+  trustLevel?: TrustLevel;
+  confidenceScore?: number;
+  lastVerifiedAt?: string;
+  isClaimed?: boolean;
+  claimedByUid?: string;
+  claimedAt?: string;
 }
 
 // -----------------------------------------------------------------------------
@@ -107,6 +121,14 @@ export function mergeServiceWithOverride(staticService: ServiceItem, override: S
     image: override.image || staticService.image,
     gallery: override.gallery && override.gallery.length > 0 ? override.gallery : staticService.gallery,
     evolutionHistory: mergedHistory.length > 0 ? mergedHistory : undefined,
+    verified: override.verified !== undefined ? override.verified : staticService.verified,
+    verificationStatus: override.verificationStatus || staticService.verificationStatus,
+    trustLevel: override.trustLevel || staticService.trustLevel,
+    confidenceScore: override.confidenceScore !== undefined ? override.confidenceScore : staticService.confidenceScore,
+    lastVerifiedAt: override.lastVerifiedAt || staticService.lastVerifiedAt,
+    isClaimed: override.isClaimed !== undefined ? override.isClaimed : staticService.isClaimed,
+    claimedByUid: override.claimedByUid || staticService.claimedByUid,
+    claimedAt: override.claimedAt || staticService.claimedAt,
     fullDescription: staticService.fullDescription
       ? {
           es: override.fullDescription?.es || staticService.fullDescription.es || "",
@@ -163,4 +185,57 @@ export async function saveServiceOverride(
     },
     cachedAt: Date.now(),
   });
+}
+
+/**
+ * Valida o verifica formalmente un negocio por parte de un administrador.
+ * Actualiza la colección 'service_overrides' con la confianza, estado y sello de verificación.
+ */
+export async function verifyBusinessAsAdmin(
+  db: Firestore,
+  slug: string,
+  adminUid: string,
+  options?: {
+    confidenceScore?: number;
+    verificationStatus?: ExtendedVerificationStatus | "verified";
+    trustLevel?: TrustLevel;
+    verified?: boolean;
+  },
+): Promise<ServiceOverride> {
+  const verifiedDoc: Partial<Omit<ServiceOverride, "ownerUid" | "updatedAt">> = {
+    verified: options?.verified ?? true,
+    verificationStatus: options?.verificationStatus ?? "verified_official",
+    trustLevel: options?.trustLevel ?? "level_3_official",
+    confidenceScore: options?.confidenceScore ?? 95,
+    lastVerifiedAt: new Date().toISOString(),
+  };
+
+  await saveServiceOverride(db, slug, adminUid, verifiedDoc);
+  return {
+    ownerUid: adminUid,
+    ...verifiedDoc,
+    updatedAt: new Date().toISOString(),
+  };
+}
+
+/**
+ * Obtiene todas las superposiciones de negocios almacenadas en Firestore.
+ * Útil para hidratar el estado de verificación global en el panel de administración.
+ */
+export async function getAllServiceOverrides(db: Firestore | undefined): Promise<Record<string, ServiceOverride>> {
+  if (!db) return {};
+  try {
+    const { collection, getDocs } = await import("firebase/firestore");
+    const snapshot = await getDocs(collection(db, "service_overrides"));
+    const results: Record<string, ServiceOverride> = {};
+    snapshot.forEach((doc) => {
+      const data = doc.data() as ServiceOverride;
+      results[doc.id] = data;
+      // Pre-poblar caché en memoria
+      OVERRIDES_CACHE.set(doc.id, { override: data, cachedAt: Date.now() });
+    });
+    return results;
+  } catch {
+    return {};
+  }
 }

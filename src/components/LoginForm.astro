@@ -172,7 +172,10 @@ const { translations, registerUrl } = Astro.props;
       function getRedirectTarget(): string {
         const urlParams = new URLSearchParams(window.location.search);
         const returnTo =
-          urlParams.get("returnTo") || urlParams.get("redirect") || sessionStorage.getItem("auth_return_to");
+          urlParams.get("returnTo") ||
+          urlParams.get("returnUrl") ||
+          urlParams.get("redirect") ||
+          sessionStorage.getItem("auth_return_to");
         sessionStorage.removeItem("auth_return_to");
 
         if (returnTo && returnTo.startsWith("/") && !returnTo.startsWith("//")) {
@@ -226,7 +229,10 @@ const { translations, registerUrl } = Astro.props;
 
         const urlParams = new URLSearchParams(window.location.search);
         const returnTo =
-          urlParams.get("returnTo") || urlParams.get("redirect") || sessionStorage.getItem("auth_return_to");
+          urlParams.get("returnTo") ||
+          urlParams.get("returnUrl") ||
+          urlParams.get("redirect") ||
+          sessionStorage.getItem("auth_return_to");
         sessionStorage.removeItem("auth_return_to");
         const target = returnTo && returnTo.startsWith("/") && !returnTo.startsWith("//") ? returnTo : "./dashboard";
 

@@ -29,6 +29,8 @@ Toda la documentación del proyecto está en `docs/`. Antes de trabajar en cualq
 - [BUSINESS_INTELLIGENCE_AND_MARKET_TRENDS.md](docs/BUSINESS_INTELLIGENCE_AND_MARKET_TRENDS.md) — 📈 Pulso empresarial de Mallorca: aperturas, disoluciones y sectores en auge
 - [SOCIOECONOMIC_AND_SEASONAL_INTELLIGENCE.md](docs/SOCIOECONOMIC_AND_SEASONAL_INTELLIGENCE.md) — 🏖️ Inteligencia socioeconómica: estacionalidad, IPH, demografía y coste de vida
 - [SPORTS_FITNESS_SECTION.md](docs/SPORTS_FITNESS_SECTION.md) — 🏋️ Vertical deportiva: gimnasios, centros deportivos y espacios públicos (taxonomía, SEO, plan de activación)
+- [GEO_AND_AI_POSITIONING_STRATEGY.md](docs/GEO_AND_AI_POSITIONING_STRATEGY.md) — 🧠 Estrategia Maestra GEO, indexación de agentes IA (ChatGPT, Perplexity, Claude), posicionamiento de pago y monetización
+- [PAYMENT_SECURITY_AND_RISK_SHIELD.md](docs/PAYMENT_SECURITY_AND_RISK_SHIELD.md) — 🛡️ Blindaje de pagos, idempotencia 360°, anti-duplicados, mitigación de riesgos de red, lag y hacking
 - [email-templates.md](docs/email-templates.md) — 📧 Plantillas de correo Firebase
 
 ## Golden Rules (Resumen)

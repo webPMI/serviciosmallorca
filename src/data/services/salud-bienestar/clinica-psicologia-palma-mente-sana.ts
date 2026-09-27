@@ -1,6 +1,6 @@
 import type { ServiceItem } from "../types";
 
-export const service: ServiceItem = {
+export const clinica_psicologia_palma_mente_sana: ServiceItem = {
   slug: "clinica-psicologia-palma-mente-sana",
   id: "clinica-psicologia-palma-mente-sana",
   name: "Clínica de Psicología Mente Sana Palma",
@@ -20,7 +20,7 @@ export const service: ServiceItem = {
   verified: true,
   featured: false,
   status: "open",
-  tags: ["zona:palma-centro", "product:premium", "mod:en-local", "mod:online", "aud:adultos", "aud:familias"],
+  tags: ["zona:palma-centro", "product:premium", "mod:en-local", "mod:online", "aud:familias"],
   phone: "+34 971 22 31 45",
   whatsapp: "+34 663 22 31 45",
   email: "citas@mentesanapalma.com",
@@ -28,7 +28,8 @@ export const service: ServiceItem = {
   schedule: "Lunes a Viernes: 09:00 - 20:00 | Sábado: 10:00 - 14:00",
   image: "/images/services/clinica-psicologia-palma-mente-sana.jpg",
   gallery: ["/images/services/clinica-psicologia-palma-mente-sana.jpg"],
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica+Psicolog%C3%ADa+Mente+Sana+Palma+Carrer+dels+Oms+32",
+  googleMapsUrl:
+    "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica+Psicolog%C3%ADa+Mente+Sana+Palma+Carrer+dels+Oms+32",
   appleMapsUrl: "https://maps.apple.com/?q=Clinica+Psicologia+Mente+Sana+Palma",
   bingMapsUrl: "https://bing.com/maps?q=Clinica+Psicologia+Mente+Sana+Palma",
   shortDescription: {
@@ -44,20 +45,66 @@ export const service: ServiceItem = {
     de: "Mente Sana Palma ist eine psychologische Praxis mit über zehn Jahren Erfahrung in der Innenstadt von Palma de Mallorca. Das lizenzierte Team bietet Einzel-, Paar- und Familientherapie an, spezialisiert auf Angststörungen, Depression, Trauma (EMDR), ADHS bei Erwachsenen und Kinder- und Jugendpsychologie.",
   },
   highlights: {
-    es: ["Equipo de psicólogos colegiados con formación especializada en TCC y EMDR", "Terapia para niños, adolescentes, adultos y parejas", "Sesiones online disponibles en español, inglés y alemán", "Centro acreditado para informes periciales psicológicos"],
-    en: ["Licensed psychologists trained in CBT and EMDR techniques", "Therapy for children, adolescents, adults, and couples", "Online sessions in Spanish, English, and German", "Accredited centre for psychological expert reports"],
-    ca: ["Psicòlegs col·legiats formats en TCC i EMDR", "Teràpia per a nins, adolescents, adults i parelles", "Sessions en línia en català, castellà, anglès i alemany", "Centre acreditat per a informes pericials psicològics"],
-    de: ["Zugelassene Psychologen mit Ausbildung in KVT und EMDR", "Therapie für Kinder, Jugendliche, Erwachsene und Paare", "Online-Sitzungen auf Spanisch, Englisch und Deutsch", "Akkreditiertes Zentrum für psychologische Gutachten"],
+    es: [
+      "Equipo de psicólogos colegiados con formación especializada en TCC y EMDR",
+      "Terapia para niños, adolescentes, adultos y parejas",
+      "Sesiones online disponibles en español, inglés y alemán",
+      "Centro acreditado para informes periciales psicológicos",
+    ],
+    en: [
+      "Licensed psychologists trained in CBT and EMDR techniques",
+      "Therapy for children, adolescents, adults, and couples",
+      "Online sessions in Spanish, English, and German",
+      "Accredited centre for psychological expert reports",
+    ],
+    ca: [
+      "Psicòlegs col·legiats formats en TCC i EMDR",
+      "Teràpia per a nins, adolescents, adults i parelles",
+      "Sessions en línia en català, castellà, anglès i alemany",
+      "Centre acreditat per a informes pericials psicològics",
+    ],
+    de: [
+      "Zugelassene Psychologen mit Ausbildung in KVT und EMDR",
+      "Therapie für Kinder, Jugendliche, Erwachsene und Paare",
+      "Online-Sitzungen auf Spanisch, Englisch und Deutsch",
+      "Akkreditiertes Zentrum für psychologische Gutachten",
+    ],
   },
   servicesProvided: {
-    es: ["Terapia cognitivo-conductual para ansiedad, fobias y depresión", "EMDR para trauma, TEPT y experiencias adversas", "Psicología infanto-juvenil y orientación a padres", "Terapia de pareja y mediación familiar"],
-    en: ["Cognitive-behavioral therapy for anxiety, phobias, and depression", "EMDR for trauma, PTSD, and adverse life experiences", "Child and adolescent psychology and parent coaching", "Couples therapy and family mediation"],
-    ca: ["Teràpia cognitivo-conductual per a ansietat, fòbies i depressió", "EMDR per a trauma, TEPT i experiències adverses", "Psicologia infantil i juvenil i orientació a pares", "Teràpia de parella i mediació familiar"],
-    de: ["Kognitive Verhaltenstherapie bei Angststörungen, Phobien und Depression", "EMDR für Trauma, PTBS und belastende Lebenserfahrungen", "Kinder- und Jugendpsychologie und Elterncoaching", "Paartherapie und Familienmediation"],
+    es: [
+      "Terapia cognitivo-conductual para ansiedad, fobias y depresión",
+      "EMDR para trauma, TEPT y experiencias adversas",
+      "Psicología infanto-juvenil y orientación a padres",
+      "Terapia de pareja y mediación familiar",
+    ],
+    en: [
+      "Cognitive-behavioral therapy for anxiety, phobias, and depression",
+      "EMDR for trauma, PTSD, and adverse life experiences",
+      "Child and adolescent psychology and parent coaching",
+      "Couples therapy and family mediation",
+    ],
+    ca: [
+      "Teràpia cognitivo-conductual per a ansietat, fòbies i depressió",
+      "EMDR per a trauma, TEPT i experiències adverses",
+      "Psicologia infantil i juvenil i orientació a pares",
+      "Teràpia de parella i mediació familiar",
+    ],
+    de: [
+      "Kognitive Verhaltenstherapie bei Angststörungen, Phobien und Depression",
+      "EMDR für Trauma, PTBS und belastende Lebenserfahrungen",
+      "Kinder- und Jugendpsychologie und Elterncoaching",
+      "Paartherapie und Familienmediation",
+    ],
   },
   reputationBreakdown: {
-    googleMaps: { rating: 4.9, reviewCount: 213, url: "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica+Psicolog%C3%ADa+Mente+Sana+Palma" },
+    googleMaps: {
+      rating: 4.9,
+      reviewCount: 213,
+      url: "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica+Psicolog%C3%ADa+Mente+Sana+Palma",
+    },
   },
   createdAt: "2026-09-05",
   lastUpdatedAt: "2026-09-05",
 };
+
+export const service = clinica_psicologia_palma_mente_sana;

@@ -1,10 +1,10 @@
 ﻿import type { ServiceItem } from "../types";
 
-export const service: ServiceItem = {
+export const escuela_cocina_palma_terra_cuina: ServiceItem = {
   slug: "escuela-cocina-palma-terra-cuina",
   id: "escuela-cocina-palma-terra-cuina",
   name: "Escuela de Cocina Terra Cuina Palma",
-  category: "educacion-formacion",
+  category: "academias-idiomas-formacion",
   sectorId: "educacion-formacion",
   subcategories: ["escuela-cocina-palma", "talleres-gastronomia", "cocina-mallorquina"],
   zone: "palma",
@@ -20,7 +20,7 @@ export const service: ServiceItem = {
   verified: true,
   featured: false,
   status: "open",
-  tags: ["zona:palma-centro", "product:premium", "mod:en-local", "aud:adultos", "aud:turistas", "aud:familias"],
+  tags: ["zona:palma-centro", "product:premium", "mod:en-local", "aud:familias"],
   phone: "+34 971 71 34 56",
   whatsapp: "+34 620 71 34 56",
   email: "reservas@terracuina.com",
@@ -44,20 +44,66 @@ export const service: ServiceItem = {
     de: "Terra Cuina Palma ist eine Boutique-Kochschule im Herzen der Altstadt von Palma de Mallorca. Gegründet von professionellen Köchen mit Michelin-Stern-Erfahrung, bietet sie Gastronomie-Workshops in kleinen Gruppen an, bei denen die Teilnehmer traditionelle mallorquinische Küche, Reisgerichte, kreative Tapas und spanische Konditorei erlernen.",
   },
   highlights: {
-    es: ["Chefs profesionales con experiencia en cocinas Michelin y producto local de Mallorca", "Talleres en grupos de máximo 10 personas para una experiencia íntima y personal", "Visita previa al mercado de Santa Catalina para seleccionar los ingredientes frescos", "Team buildings culinarios para empresas en un espacio histórico único"],
-    en: ["Professional chefs with Michelin kitchen experience and local Mallorca produce", "Workshops in groups of maximum 10 for an intimate and personal experience", "Prior visit to Santa Catalina market to select fresh ingredients", "Culinary team-building events for corporations in a unique historic space"],
-    ca: ["Xefs professionals amb experiència en cuines Michelin i producte local de Mallorca", "Tallers en grups de màxim 10 persones per a una experiència íntima i personal", "Visita prèvia al mercat de Santa Catalina per a seleccionar ingredients frescos", "Team buildings culinaris per a empreses en un espai històric únic"],
-    de: ["Professionelle Köche mit Michelin-Erfahrung und lokalen Mallorca-Zutaten", "Workshops in Gruppen von maximal 10 Personen für ein intimes Erlebnis", "Vorheriger Besuch des Santa-Catalina-Markts zur Auswahl frischer Zutaten", "Kulinarische Team-Building-Events für Unternehmen in einem einzigartigen historischen Raum"],
+    es: [
+      "Chefs profesionales con experiencia en cocinas Michelin y producto local de Mallorca",
+      "Talleres en grupos de máximo 10 personas para una experiencia íntima y personal",
+      "Visita previa al mercado de Santa Catalina para seleccionar los ingredientes frescos",
+      "Team buildings culinarios para empresas en un espacio histórico único",
+    ],
+    en: [
+      "Professional chefs with Michelin kitchen experience and local Mallorca produce",
+      "Workshops in groups of maximum 10 for an intimate and personal experience",
+      "Prior visit to Santa Catalina market to select fresh ingredients",
+      "Culinary team-building events for corporations in a unique historic space",
+    ],
+    ca: [
+      "Xefs professionals amb experiència en cuines Michelin i producte local de Mallorca",
+      "Tallers en grups de màxim 10 persones per a una experiència íntima i personal",
+      "Visita prèvia al mercat de Santa Catalina per a seleccionar ingredients frescos",
+      "Team buildings culinaris per a empreses en un espai històric únic",
+    ],
+    de: [
+      "Professionelle Köche mit Michelin-Erfahrung und lokalen Mallorca-Zutaten",
+      "Workshops in Gruppen von maximal 10 Personen für ein intimes Erlebnis",
+      "Vorheriger Besuch des Santa-Catalina-Markts zur Auswahl frischer Zutaten",
+      "Kulinarische Team-Building-Events für Unternehmen in einem einzigartigen historischen Raum",
+    ],
   },
   servicesProvided: {
-    es: ["Taller de cocina mallorquina tradicional: tumbet, frito, coca mallorquina", "Taller de arroces y paella valenciana auténtica", "Taller de tapas españolas creativas con maridaje de vinos de Mallorca", "Experiencias privadas: despedidas, teambuilding y food tours por Santa Catalina"],
-    en: ["Traditional Mallorcan cooking class: tumbet, frit mallorquí, coca mallorquina", "Rice and authentic Valencian paella workshop", "Creative Spanish tapas workshop with Mallorcan wine pairing", "Private experiences: hen/stag parties, team-building, and Santa Catalina food tours"],
-    ca: ["Taller de cuina mallorquina tradicional: tumbet, frit, coca mallorquina", "Taller d'arrossos i paella valenciana autèntica", "Taller de tapes espanyoles creatives amb maridatge de vins de Mallorca", "Experiències privades: despedides, team building i food tours per Santa Catalina"],
-    de: ["Workshop für traditionelle mallorquinische Küche: Tumbet, Frit, Coca", "Reis- und authentischer Valencianer Paella-Workshop", "Kreativer Tapas-Workshop mit mallorquinischer Weinbegleitung", "Private Erlebnisse: JGA/Mädelsabend, Team-Building und Santa-Catalina-Food-Touren"],
+    es: [
+      "Taller de cocina mallorquina tradicional: tumbet, frito, coca mallorquina",
+      "Taller de arroces y paella valenciana auténtica",
+      "Taller de tapas españolas creativas con maridaje de vinos de Mallorca",
+      "Experiencias privadas: despedidas, teambuilding y food tours por Santa Catalina",
+    ],
+    en: [
+      "Traditional Mallorcan cooking class: tumbet, frit mallorquí, coca mallorquina",
+      "Rice and authentic Valencian paella workshop",
+      "Creative Spanish tapas workshop with Mallorcan wine pairing",
+      "Private experiences: hen/stag parties, team-building, and Santa Catalina food tours",
+    ],
+    ca: [
+      "Taller de cuina mallorquina tradicional: tumbet, frit, coca mallorquina",
+      "Taller d'arrossos i paella valenciana autèntica",
+      "Taller de tapes espanyoles creatives amb maridatge de vins de Mallorca",
+      "Experiències privades: despedides, team building i food tours per Santa Catalina",
+    ],
+    de: [
+      "Workshop für traditionelle mallorquinische Küche: Tumbet, Frit, Coca",
+      "Reis- und authentischer Valencianer Paella-Workshop",
+      "Kreativer Tapas-Workshop mit mallorquinischer Weinbegleitung",
+      "Private Erlebnisse: JGA/Mädelsabend, Team-Building und Santa-Catalina-Food-Touren",
+    ],
   },
   reputationBreakdown: {
-    googleMaps: { rating: 4.9, reviewCount: 267, url: "https://www.google.com/maps/search/?api=1&query=Escuela+Cocina+Terra+Cuina+Palma" },
+    googleMaps: {
+      rating: 4.9,
+      reviewCount: 267,
+      url: "https://www.google.com/maps/search/?api=1&query=Escuela+Cocina+Terra+Cuina+Palma",
+    },
   },
   createdAt: "2026-09-05",
   lastUpdatedAt: "2026-09-05",
 };
+
+export const service = escuela_cocina_palma_terra_cuina;

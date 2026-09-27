@@ -212,6 +212,26 @@ export async function updateClaimStatus(
       const { assignBusinessToUser } = await import("./userProfile.ts");
       if (serviceId) {
         await assignBusinessToUser(db, targetUserUid, serviceId);
+
+        // Marcar formalmente el negocio en service_overrides como reclamado y verificado oficialmente
+        try {
+          const { saveServiceOverride } = await import("./serviceOverrides.ts");
+          const { SERVICES } = await import("../data/services/index.ts");
+          const match = SERVICES.find((s) => s.id === serviceId || s.slug === serviceId);
+          const slug = match ? match.slug : serviceId;
+          await saveServiceOverride(db, slug, targetUserUid, {
+            isClaimed: true,
+            claimedByUid: targetUserUid,
+            claimedAt: new Date().toISOString(),
+            verified: true,
+            verificationStatus: "verified_official",
+            trustLevel: "level_3_official",
+            confidenceScore: 98,
+            lastVerifiedAt: new Date().toISOString(),
+          });
+        } catch (overrideErr) {
+          console.warn("Could not save claim override for business verification:", overrideErr);
+        }
       } else {
         const userRef = doc(db, "users", targetUserUid);
         await updateDoc(userRef, {

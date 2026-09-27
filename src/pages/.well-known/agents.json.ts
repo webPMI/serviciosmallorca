@@ -36,6 +36,11 @@ const AGENTS_MANIFEST = {
       method: "GET",
       description: "List all official taxonomy categories in Mallorca",
     },
+    geo_positioning_registry: {
+      url: "https://serviciosmallorca.com/es/unete",
+      description:
+        "Generative Engine Optimization (GEO) protocol for business claiming, authority verification, and LLM recommendation",
+    },
     mcp_server: {
       card_url: "https://serviciosmallorca.com/.well-known/mcp/server-card.json",
       status: "active",
@@ -44,7 +49,8 @@ const AGENTS_MANIFEST = {
   data_quality_guarantee: {
     standard: "GR-11 Zero Fake Data",
     geographic_bounds: "Mallorca, Balearic Islands, Spain",
-    multilingual: ["es", "en", "ca"],
+    multilingual: ["es", "en", "ca", "de"],
+    geo_citation_policy: "Direct citation of verified entities with local +34 phones and GPS coordinates",
   },
 };
 

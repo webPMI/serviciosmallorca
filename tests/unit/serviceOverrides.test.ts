@@ -10,14 +10,18 @@ import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
 
 const fb = vi.hoisted(() => ({
   doc: vi.fn((_db: unknown, name: string, id: string) => ({ kind: "doc", name, id })),
+  collection: vi.fn((_db: unknown, name: string) => ({ kind: "collection", name })),
   getDoc: vi.fn(),
+  getDocs: vi.fn(),
   setDoc: vi.fn(),
   serverTimestamp: vi.fn(() => ({ serverTimestamp: true })),
 }));
 
 vi.mock("firebase/firestore", () => ({
   doc: fb.doc,
+  collection: fb.collection,
   getDoc: fb.getDoc,
+  getDocs: fb.getDocs,
   setDoc: fb.setDoc,
   serverTimestamp: fb.serverTimestamp,
 }));
@@ -26,6 +30,8 @@ import {
   getServiceOverride,
   mergeServiceWithOverride,
   saveServiceOverride,
+  verifyBusinessAsAdmin,
+  getAllServiceOverrides,
   setAllowDatabaseOverrides,
   isDatabaseOverridesEnabled,
 } from "../../src/lib/serviceOverrides";
@@ -270,5 +276,62 @@ describe("saveServiceOverride · Escritura + actualización de caché", () => {
     const cached = await getServiceOverride(dbLike as never, "negocio-base-palma");
     expect(fb.getDoc).not.toHaveBeenCalled();
     expect(cached).toMatchObject({ phone: "+34900000000" });
+  });
+
+  it("verifyBusinessAsAdmin guarda verificación oficial con 95% de confianza por defecto", async () => {
+    const dbLike = { kind: "db" };
+    const res = await verifyBusinessAsAdmin(dbLike as never, "bodega-mallorca", "admin-1");
+
+    expect(res.verified).toBe(true);
+    expect(res.confidenceScore).toBe(95);
+    expect(res.verificationStatus).toBe("verified_official");
+    expect(res.trustLevel).toBe("level_3_official");
+    expect(res.ownerUid).toBe("admin-1");
+
+    const [ref, payload] = fb.setDoc.mock.calls.at(-1)!;
+    expect(ref.id).toBe("bodega-mallorca");
+    expect(payload.verified).toBe(true);
+    expect(payload.confidenceScore).toBe(95);
+  });
+
+  it("mergeServiceWithOverride fusiona campos de verificación y titularidad reclamada", () => {
+    const override: ServiceOverride = {
+      ownerUid: "titular-123",
+      verified: true,
+      verificationStatus: "verified_official",
+      confidenceScore: 98,
+      trustLevel: "level_3_official",
+      isClaimed: true,
+      claimedByUid: "titular-123",
+      claimedAt: "2026-09-27T10:00:00Z",
+    };
+
+    const merged = mergeServiceWithOverride(staticService, override);
+    expect(merged.verified).toBe(true);
+    expect(merged.confidenceScore).toBe(98);
+    expect(merged.verificationStatus).toBe("verified_official");
+    expect(merged.trustLevel).toBe("level_3_official");
+    expect(merged.isClaimed).toBe(true);
+    expect(merged.claimedByUid).toBe("titular-123");
+    expect(merged.claimedAt).toBe("2026-09-27T10:00:00Z");
+  });
+
+  it("getAllServiceOverrides carga todos los overrides y los pre-puebla en caché", async () => {
+    const dbLike = { kind: "db" };
+    const mockSnap = [
+      { id: "slug-1", data: () => ({ ownerUid: "u1", verified: true, confidenceScore: 95 }) },
+      { id: "slug-2", data: () => ({ ownerUid: "u2", phone: "+34971222333" }) },
+    ];
+    fb.getDocs.mockResolvedValueOnce(mockSnap);
+
+    const all = await getAllServiceOverrides(dbLike as never);
+    expect(Object.keys(all)).toEqual(["slug-1", "slug-2"]);
+    expect(all["slug-1"].verified).toBe(true);
+
+    // Lectura posterior se atiende directamente desde caché sin consultar getDoc
+    fb.getDoc.mockReset();
+    const cached = await getServiceOverride(dbLike as never, "slug-1");
+    expect(fb.getDoc).not.toHaveBeenCalled();
+    expect(cached?.verified).toBe(true);
   });
 });

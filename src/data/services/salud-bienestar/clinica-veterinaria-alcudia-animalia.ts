@@ -1,6 +1,6 @@
 import type { ServiceItem } from "../types";
 
-export const service: ServiceItem = {
+export const clinica_veterinaria_alcudia_animalia: ServiceItem = {
   slug: "clinica-veterinaria-alcudia-animalia",
   id: "clinica-veterinaria-alcudia-animalia",
   name: "Clínica Veterinaria Animalia Alcúdia",
@@ -20,7 +20,7 @@ export const service: ServiceItem = {
   verified: true,
   featured: false,
   status: "open",
-  tags: ["zona:alcudia", "product:premium", "mod:en-local", "aud:mascotas", "aud:residentes"],
+  tags: ["zona:alcudia", "product:premium", "mod:en-local"],
   phone: "+34 971 54 51 23",
   whatsapp: "+34 971 54 51 23",
   email: "info@veterinariaanimalia.com",
@@ -44,20 +44,66 @@ export const service: ServiceItem = {
     de: "Die Tierklinik Animalia in Alcúdia ist die führende Veterinärpraxis in Nordmallorca. Das Team aus Spezialisten für minimalinvasive Chirurgie, Onkologie und Kardiologie verfügt über digitales Röntgen, modernes Ultraschallgerät und ein hauseigenes Labor sowie einen 24h-Notfalldienst.",
   },
   highlights: {
-    es: ["Cirugía laparoscópica mínimamente invasiva para esterilizaciones y extirpaciones", "Servicio de urgencias veterinarias 24h los 365 días del año", "Laboratorio propio para análisis sanguíneos y bioquímica en 30 minutos", "Oncología veterinaria y seguimiento de tumores con ecografía de alta resolución"],
-    en: ["Minimally invasive laparoscopic surgery for sterilizations and tumor removals", "24/7/365 veterinary emergency service", "In-house lab for blood and biochemistry analysis in 30 minutes", "Veterinary oncology and tumor follow-up with high-resolution ultrasound"],
-    ca: ["Cirurgia laparoscòpica mínimament invasiva per a esterilitzacions i extirpacions", "Servei d'urgències veterinàries 24h els 365 dies de l'any", "Laboratori propi per a anàlisis en 30 minuts", "Oncologia veterinària i seguiment de tumors amb ecografia d'alta resolució"],
-    de: ["Minimalinvasive laparoskopische Chirurgie für Sterilisationen und Tumorentfernungen", "24/7/365 tierärztlicher Notfalldienst", "Hauseigenes Labor für Blut- und Blutbiochemieanalysen in 30 Minuten", "Veterinäronkologie und Tumorverlaufskontrolle mit hochauflösendem Ultraschall"],
+    es: [
+      "Cirugía laparoscópica mínimamente invasiva para esterilizaciones y extirpaciones",
+      "Servicio de urgencias veterinarias 24h los 365 días del año",
+      "Laboratorio propio para análisis sanguíneos y bioquímica en 30 minutos",
+      "Oncología veterinaria y seguimiento de tumores con ecografía de alta resolución",
+    ],
+    en: [
+      "Minimally invasive laparoscopic surgery for sterilizations and tumor removals",
+      "24/7/365 veterinary emergency service",
+      "In-house lab for blood and biochemistry analysis in 30 minutes",
+      "Veterinary oncology and tumor follow-up with high-resolution ultrasound",
+    ],
+    ca: [
+      "Cirurgia laparoscòpica mínimament invasiva per a esterilitzacions i extirpacions",
+      "Servei d'urgències veterinàries 24h els 365 dies de l'any",
+      "Laboratori propi per a anàlisis en 30 minuts",
+      "Oncologia veterinària i seguiment de tumors amb ecografia d'alta resolució",
+    ],
+    de: [
+      "Minimalinvasive laparoskopische Chirurgie für Sterilisationen und Tumorentfernungen",
+      "24/7/365 tierärztlicher Notfalldienst",
+      "Hauseigenes Labor für Blut- und Blutbiochemieanalysen in 30 Minuten",
+      "Veterinäronkologie und Tumorverlaufskontrolle mit hochauflösendem Ultraschall",
+    ],
   },
   servicesProvided: {
-    es: ["Consultas de medicina interna, vacunaciones y desparasitaciones", "Cirugía laparoscópica: esterilización, gastropexia y extirpación de masas", "Cardiología veterinaria con ecocardiografía doppler y ECG", "Odontología veterinaria con profilaxis dental y extracciones bajo anestesia"],
-    en: ["Internal medicine consultations, vaccinations, and deworming", "Laparoscopic surgery: sterilization, gastropexy, and mass removal", "Veterinary cardiology with Doppler echocardiography and ECG", "Veterinary dentistry with dental prophylaxis and extractions under anesthesia"],
-    ca: ["Consultes de medicina interna, vacunació i desparasitació", "Cirurgia laparoscòpica: esterilització, gastropexia i extirpació de masses", "Cardiologia veterinària amb ecocardiografia doppler i ECG", "Odontologia veterinària amb profilaxis dental i extraccions sota anestèsia"],
-    de: ["Innere Medizin-Konsultationen, Impfungen und Entwurmung", "Laparoskopische Chirurgie: Sterilisation, Gastropexie und Massenentfernung", "Veterinärkardiologie mit Doppler-Echokardiographie und EKG", "Veterinärzahnheilkunde mit professioneller Reinigung und Extraktionen unter Narkose"],
+    es: [
+      "Consultas de medicina interna, vacunaciones y desparasitaciones",
+      "Cirugía laparoscópica: esterilización, gastropexia y extirpación de masas",
+      "Cardiología veterinaria con ecocardiografía doppler y ECG",
+      "Odontología veterinaria con profilaxis dental y extracciones bajo anestesia",
+    ],
+    en: [
+      "Internal medicine consultations, vaccinations, and deworming",
+      "Laparoscopic surgery: sterilization, gastropexy, and mass removal",
+      "Veterinary cardiology with Doppler echocardiography and ECG",
+      "Veterinary dentistry with dental prophylaxis and extractions under anesthesia",
+    ],
+    ca: [
+      "Consultes de medicina interna, vacunació i desparasitació",
+      "Cirurgia laparoscòpica: esterilització, gastropexia i extirpació de masses",
+      "Cardiologia veterinària amb ecocardiografia doppler i ECG",
+      "Odontologia veterinària amb profilaxis dental i extraccions sota anestèsia",
+    ],
+    de: [
+      "Innere Medizin-Konsultationen, Impfungen und Entwurmung",
+      "Laparoskopische Chirurgie: Sterilisation, Gastropexie und Massenentfernung",
+      "Veterinärkardiologie mit Doppler-Echokardiographie und EKG",
+      "Veterinärzahnheilkunde mit professioneller Reinigung und Extraktionen unter Narkose",
+    ],
   },
   reputationBreakdown: {
-    googleMaps: { rating: 4.8, reviewCount: 412, url: "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica+Veterinaria+Animalia+Alc%C3%BAdia" },
+    googleMaps: {
+      rating: 4.8,
+      reviewCount: 412,
+      url: "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica+Veterinaria+Animalia+Alc%C3%BAdia",
+    },
   },
   createdAt: "2026-09-05",
   lastUpdatedAt: "2026-09-05",
 };
+
+export const service = clinica_veterinaria_alcudia_animalia;
