@@ -10,6 +10,13 @@ interface Props {
 
 const { translations } = Astro.props;
 
+// Etiquetas i18n que el script cliente necesita para la verificación oficial (Overlay · GR-04).
+const adminOverlayLabels = {
+  verifyDocumentPrompt: translations["services.verifyDocumentPrompt"] || "",
+  verifyDocumentRequired: translations["services.verifyDocumentRequired"] || "",
+  verifyLoginRequired: translations["services.verifyLoginRequired"] || "",
+};
+
 // Compute live catalog metrics
 const totalServices = SERVICES.length;
 const totalReviews = SERVICES.reduce((acc, s) => acc + (s.reviewCount ?? 0), 0);
@@ -114,7 +121,10 @@ const withNewsCount = SERVICES.filter(
 
     <!-- Moderation Queues -->
     <div class="moderation-sections-grid">
-      <!-- 1. CLAIMS -->
+      <!-- Etiquetas i18n para el script de verificación oficial (Overlay · GR-04) -->
+    <script type="application/json" id="admin-overlay-i18n" is:inline set:html={JSON.stringify(adminOverlayLabels)} />
+
+    <!-- 1. CLAIMS -->
       <article class="card card-glass moderation-card">
         <div class="card-title-row">
           <h3>
@@ -1064,6 +1074,46 @@ const withNewsCount = SERVICES.filter(
   import { SERVICES } from "../data/services/index";
   import type { UserRole } from "../lib/authStore";
 
+  /** Etiquetas i18n expuestas por la isla JSON `#admin-overlay-i18n` (GR-04). */
+  interface AdminOverlayLabels {
+    verifyDocumentPrompt: string;
+    verifyDocumentRequired: string;
+    verifyLoginRequired: string;
+  }
+
+  function readAdminOverlayLabels(): AdminOverlayLabels {
+    const fallback: AdminOverlayLabels = {
+      verifyDocumentPrompt: "Enlace https:// al documento acreditativo del titular:",
+      verifyDocumentRequired: "La verificación oficial exige un enlace https:// al documento acreditativo.",
+      verifyLoginRequired: "Sesión de administrador no válida. Vuelve a iniciar sesión.",
+    };
+    const el = document.getElementById("admin-overlay-i18n");
+    if (!el?.textContent) return fallback;
+    try {
+      return { ...fallback, ...(JSON.parse(el.textContent) as Partial<AdminOverlayLabels>) };
+    } catch {
+      return fallback;
+    }
+  }
+
+  /**
+   * INV-01/GR-13: el sello oficial exige sesión de administrador y un documento
+   * acreditativo real. Sin ambos no se emite verificación (GR-11 Zero Fake Data).
+   */
+  function requireVerificationEvidence(): { uid: string; documentUrl: string } | null {
+    const currentUser = authStore.getState().user;
+    if (!currentUser?.uid) {
+      alert(readAdminOverlayLabels().verifyLoginRequired);
+      return null;
+    }
+    const documentUrl = window.prompt(readAdminOverlayLabels().verifyDocumentPrompt, "https://") || "";
+    if (!/^https:\/\/.+/i.test(documentUrl)) {
+      alert(readAdminOverlayLabels().verifyDocumentRequired);
+      return null;
+    }
+    return { uid: currentUser.uid, documentUrl };
+  }
+
   // Tab switching logic
   const tabBtns = document.querySelectorAll(".admin-tab-btn");
   const tabPanels = document.querySelectorAll(".admin-tab-panel");
@@ -1278,7 +1328,11 @@ const withNewsCount = SERVICES.filter(
             btn.setAttribute("disabled", "true");
             btn.textContent = "⏳ Verificando y asignando mando...";
             try {
-              await updateClaimStatus(db, id, "approved", uid, serviceId);
+              await updateClaimStatus(db, id, "approved", {
+                applicantUid: uid,
+                serviceId,
+                reviewerUid: authStore.getState().user?.uid ?? "",
+              });
               loadAdminData();
             } catch (err: any) {
               alert("Error al verificar reclamación: " + (err.message || err));
@@ -1292,7 +1346,7 @@ const withNewsCount = SERVICES.filter(
           btn.addEventListener("click", async () => {
             const id = btn.getAttribute("data-id")!;
             btn.setAttribute("disabled", "true");
-            await updateClaimStatus(db, id, "rejected");
+            await updateClaimStatus(db, id, "rejected", { reviewerUid: authStore.getState().user?.uid ?? "" });
             loadAdminData();
           });
         });
@@ -1490,8 +1544,10 @@ const withNewsCount = SERVICES.filter(
       btn.addEventListener("click", async () => {
         const slug = btn.getAttribute("data-service-slug");
         if (!slug) return;
-        const currentUser = authStore.getState().user;
-        const adminUid = currentUser?.uid || "admin";
+        // INV-01/GR-13: sesión de admin + documento acreditativo obligatorios
+        const evidence = requireVerificationEvidence();
+        if (!evidence) return;
+        const adminUid = evidence.uid;
 
         const originalText = btn.innerHTML;
         btn.setAttribute("disabled", "true");
@@ -1503,6 +1559,9 @@ const withNewsCount = SERVICES.filter(
             verified: true,
             verificationStatus: "verified_official",
             trustLevel: "level_3_official",
+            verificationMethod: "manual_notarial",
+            documentUrl: evidence.documentUrl,
+            notes: "Verificación manual desde el Centro de Calidad",
           });
 
           btn.innerHTML = "✓ Validado (95%)";
@@ -1592,10 +1651,22 @@ const withNewsCount = SERVICES.filter(
         const isCurrentlyVerified = btn.getAttribute("data-is-verified") === "true";
         if (!slug) return;
         const currentUser = authStore.getState().user;
-        const adminUid = currentUser?.uid || "admin";
+        if (!currentUser?.uid) {
+          alert(readAdminOverlayLabels().verifyLoginRequired);
+          return;
+        }
+        const adminUid = currentUser.uid;
 
         btn.setAttribute("disabled", "true");
         const newVerifiedState = !isCurrentlyVerified;
+
+        // Revocar no requiere evidencia; volver a sellar sí (INV-01).
+        let revokeDocumentUrl: string | undefined;
+        if (newVerifiedState) {
+          const evidence = requireVerificationEvidence();
+          if (!evidence) return;
+          revokeDocumentUrl = evidence.documentUrl;
+        }
 
         try {
           await verifyBusinessAsAdmin(db, slug, adminUid, {
@@ -1603,6 +1674,13 @@ const withNewsCount = SERVICES.filter(
             verificationStatus: newVerifiedState ? "verified_official" : "unverified",
             confidenceScore: newVerifiedState ? 95 : 70,
             trustLevel: newVerifiedState ? "level_3_official" : "level_1_discovery",
+            ...(newVerifiedState
+              ? {
+                  verificationMethod: "manual_notarial" as const,
+                  documentUrl: revokeDocumentUrl,
+                  notes: "Sello emitido desde el catálogo con documento acreditativo",
+                }
+              : { notes: "Verificación revocada por el administrador" }),
           });
 
           btn.setAttribute("data-is-verified", newVerifiedState ? "true" : "false");

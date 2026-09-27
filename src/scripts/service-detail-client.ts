@@ -3,10 +3,56 @@ import {
   createServiceClaim,
   createServiceDeletionRequest,
   createServiceReport,
+  buildClaimId,
   type ReportCategory,
 } from "../lib/serviceActions";
-import { getServiceOverride } from "../lib/serviceOverrides";
+import { getServiceOverride, mergeServiceWithOverride } from "../lib/serviceOverrides";
+import { checkRateLimit } from "../lib/managerSecurityEngine";
+import { reportClientFailure } from "../lib/clientTelemetry";
 import { initAutomaticClickTracking } from "../lib/conversionTracking";
+import type { ServiceItem } from "../data/services/types";
+
+/** Etiquetas i18n servidas por la isla JSON `#service-static-data` (GR-04). */
+interface OverlaySnapshotLabels {
+  statusSeasonalClosure?: string;
+  statusPermanentlyClosed?: string;
+  claimDuplicate?: string;
+  claimAlreadyClaimed?: string;
+  claimRateLimited?: string;
+}
+
+/** Instantánea estática de la ficha publicada (Overlay Pattern · INV-07). */
+type OverlaySnapshot = Partial<ServiceItem> & { labels?: OverlaySnapshotLabels };
+
+let cachedOverlaySnapshot: OverlaySnapshot | null | undefined;
+
+/** Lee (una sola vez) la instantánea estática publicada por el servidor. */
+function readOverlaySnapshot(): OverlaySnapshot | null {
+  if (cachedOverlaySnapshot !== undefined) return cachedOverlaySnapshot;
+  const el = document.getElementById("service-static-data");
+  if (!el?.textContent) {
+    cachedOverlaySnapshot = null;
+    return null;
+  }
+  try {
+    cachedOverlaySnapshot = JSON.parse(el.textContent) as OverlaySnapshot;
+  } catch (error) {
+    reportClientFailure("overlay/parse-snapshot", error, { category: "CLIENT_JS" });
+    cachedOverlaySnapshot = null;
+  }
+  return cachedOverlaySnapshot;
+}
+
+/** Etiquetas i18n para los avisos dinámicos (sin textos hardcodeados en el cliente). */
+function overlayLabels(): OverlaySnapshotLabels {
+  return readOverlaySnapshot()?.labels ?? {};
+}
+
+/** Clave de idioma segura derivada del documento SSR. */
+function currentLocaleKey(): "es" | "en" | "ca" | "de" {
+  const lang = (document.documentElement.lang || "es").slice(0, 2);
+  return lang === "en" || lang === "ca" || lang === "de" ? lang : "es";
+}
 
 export function initServiceDetailClient() {
   initAutomaticClickTracking();
@@ -164,18 +210,31 @@ export function initServiceDetailClient() {
           throw new Error("El CIF/documento debe tener al menos 3 caracteres");
         }
 
-        // CORRECCIÓN BAJA #4: Usar ID único con timestamp
-        const claimId = `claim-${serviceId}-${user.uid}-${Date.now()}`;
+        // INV-04: ID determinista → una única reclamación por usuario y negocio (inmune a dobles clics)
+        const claimId = buildClaimId(serviceId, user.uid);
+
+        // INV-06/GR-15: control de tasa anti-bombardeo antes de tocar Firestore
+        const gate = checkRateLimit(`claim:${user.uid}`, 3, 15 * 60 * 1000);
+        if (!gate.allowed) {
+          throw new Error(overlayLabels().claimRateLimited || "Demasiadas solicitudes seguidas.");
+        }
+
+        const serviceSlug = window.location.pathname.split("/").filter(Boolean).pop() || serviceId;
+        const isProofUrl = /^https:\/\/.+/i.test(cif);
 
         await createServiceClaim(db, {
           id: claimId,
           serviceId,
+          serviceSlug,
           serviceName,
           applicantUid: user.uid,
           applicantName: name,
           applicantEmail: email,
           applicantPhone: phone,
           verificationProof: cif,
+          businessTaxId: isProofUrl ? "" : cif.toUpperCase(),
+          documentUrl: isProofUrl ? cif : undefined,
+          verificationMethod: isProofUrl ? "official_document" : "manual_notarial",
         });
 
         if (alertSuccess) alertSuccess.style.display = "block";
@@ -184,10 +243,20 @@ export function initServiceDetailClient() {
           if (claimModal) claimModal.style.display = "none";
         }, 2500);
       } catch (err: any) {
-        // CORRECCIÓN MEDIA #3: Manejo específico de errores
-        let errorMessage = "Error al procesar la reclamación";
+        // GR-15: ningún fallo se queda mudo (consola + telemetría D1 con deduplicación)
+        reportClientFailure("claim/submit", err, {
+          category: "DATABASE",
+          resource: window.location.pathname.split("/").filter(Boolean).pop(),
+        });
 
-        if (err.code === "firestore/permission-denied") {
+        let errorMessage = "Error al procesar la reclamación";
+        const labels = overlayLabels();
+
+        if (err?.code === "duplicate_claim") {
+          errorMessage = labels.claimDuplicate || err.message;
+        } else if (err?.code === "already_claimed") {
+          errorMessage = labels.claimAlreadyClaimed || err.message;
+        } else if (err.code === "firestore/permission-denied") {
           errorMessage = "No tienes permisos para realizar esta acción";
         } else if (err.code === "firestore/unavailable") {
           errorMessage = "Servicio no disponible. Por favor, intenta más tarde";
@@ -353,7 +422,8 @@ export function initServiceDetailClient() {
     });
   }
 
-  // Dynamic Override Live Hydration (Overlay Pattern)
+  // Dynamic Override Live Hydration (Overlay Pattern · INV-07)
+  // Fusión con el MISMO motor que usa la capa estática: lo que el titular guarda se publica.
   async function hydrateDynamicOverrides() {
     try {
       const slug = window.location.pathname.split("/").filter(Boolean).pop();
@@ -362,21 +432,101 @@ export function initServiceDetailClient() {
       const override = await getServiceOverride(db, slug);
       if (!override) return;
 
-      if (override.phone) {
-        document.querySelectorAll(".phone-display-text").forEach((el) => (el.textContent = override.phone!));
+      const snapshot = readOverlaySnapshot();
+      const merged: ServiceItem | null = snapshot ? mergeServiceWithOverride(snapshot as ServiceItem, override) : null;
+      const localeKey = currentLocaleKey();
+
+      const phone = override.phone || merged?.phone;
+      if (phone) {
+        document.querySelectorAll(".phone-display-text").forEach((el) => (el.textContent = phone));
       }
-      if (override.whatsapp) {
+
+      const whatsapp = override.whatsapp || merged?.whatsapp;
+      if (whatsapp) {
         document.querySelectorAll(".btn-contact-whatsapp").forEach((btn) => {
-          btn.setAttribute("href", `https://wa.me/${override.whatsapp!.replace(/[^0-9]/g, "")}`);
+          btn.setAttribute("href", `https://wa.me/${whatsapp.replace(/[^0-9]/g, "")}`);
         });
       }
-      if (override.website) {
+
+      const website = override.website || merged?.website;
+      if (website) {
         document.querySelectorAll(".btn-contact-web").forEach((btn) => {
-          btn.setAttribute("href", override.website!);
+          btn.setAttribute("href", website);
         });
       }
-      if (override.schedule) {
-        document.querySelectorAll(".schedule-display-text").forEach((el) => (el.textContent = override.schedule!));
+
+      const email = override.email || merged?.email;
+      if (email) {
+        document.querySelectorAll(".email-display-text").forEach((el) => (el.textContent = email));
+      }
+
+      const rawSchedule = override.schedule || merged?.schedule;
+      const schedule = typeof rawSchedule === "string" ? rawSchedule : undefined;
+      if (schedule) {
+        document.querySelectorAll(".schedule-display-text").forEach((el) => (el.textContent = schedule));
+      }
+
+      // Descripción del titular (antes se guardaba y nunca se publicaba)
+      const description =
+        override.fullDescription?.[localeKey] || merged?.fullDescription?.[localeKey] || merged?.fullDescription?.es;
+      const descParagraph = document.getElementById("service-desc-paragraph");
+      if (description && descParagraph) {
+        descParagraph.textContent = description;
+        descParagraph.removeAttribute("hidden");
+      }
+
+      // Destacados del titular (reconstrucción segura con textContent: cero inyección HTML)
+      const highlights = override.highlights?.[localeKey]?.length
+        ? override.highlights[localeKey]
+        : merged?.highlights?.[localeKey];
+      const highlightsList = document.querySelector("#destacados .highlights-list");
+      if (highlights?.length && highlightsList) {
+        highlightsList.textContent = "";
+        highlights.forEach((item) => {
+          const li = document.createElement("li");
+          li.className = "highlight-item";
+          const icon = document.createElement("span");
+          icon.className = "check-icon";
+          icon.textContent = "✓";
+          const text = document.createElement("span");
+          text.textContent = item;
+          li.append(icon, text);
+          highlightsList.appendChild(li);
+        });
+      }
+
+      // Servicios incluidos declarados por el titular
+      const provided = override.servicesProvided?.[localeKey]?.length
+        ? override.servicesProvided[localeKey]
+        : merged?.servicesProvided?.[localeKey];
+      const chips = document.querySelector(".services-chips");
+      if (provided?.length && chips) {
+        chips.textContent = "";
+        provided.forEach((item) => {
+          const chip = document.createElement("span");
+          chip.className = "service-chip";
+          chip.textContent = `🔹 ${item}`;
+          chips.appendChild(chip);
+        });
+      }
+
+      // Aviso de estado operativo declarado por el titular (cierre estacional o definitivo)
+      const status = override.status || merged?.status;
+      const snapshotLabels = snapshot?.labels ?? {};
+      const statusMessage =
+        status === "seasonal_closure"
+          ? snapshotLabels.statusSeasonalClosure
+          : status === "permanently_closed"
+            ? snapshotLabels.statusPermanentlyClosed
+            : "";
+      const noticeAnchor = document.querySelector(".transparency-notice-box");
+      if (statusMessage && noticeAnchor && !document.getElementById("override-status-notice")) {
+        const statusNotice = document.createElement("div");
+        statusNotice.id = "override-status-notice";
+        statusNotice.className = "transparency-notice-box unverified-notice-box";
+        statusNotice.setAttribute("role", "status");
+        statusNotice.textContent = statusMessage;
+        noticeAnchor.parentElement?.insertBefore(statusNotice, noticeAnchor);
       }
 
       // Si el negocio ha sido reclamado formalmente o verificado como titular
@@ -409,8 +559,9 @@ export function initServiceDetailClient() {
           `;
         }
       }
-    } catch {
-      // Graceful degradation
+    } catch (error) {
+      // Degradación elegante… pero nunca silenciosa (GR-15)
+      reportClientFailure("hydrate/overrides", error, { category: "DATABASE" });
     }
   }
 

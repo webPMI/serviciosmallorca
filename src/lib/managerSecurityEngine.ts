@@ -11,13 +11,19 @@
 
 import type { ServiceItem } from "../data/services";
 
+/**
+ * Métodos admitidos para acreditar la titularidad de un negocio.
+ * Ningún sello oficial puede emitirse sin uno de ellos (GR-11 Zero Fake Data).
+ */
+export type VerificationMethod = "official_document" | "corporate_email" | "phone_sms_otp" | "manual_notarial";
+
 export interface ClaimVerificationPayload {
   applicantUid: string;
   applicantEmail: string;
   applicantPhone: string;
   applicantName: string;
   businessTaxId: string; // NIF / CIF / NIE
-  verificationMethod: "official_document" | "corporate_email" | "phone_sms_otp" | "manual_notarial";
+  verificationMethod: VerificationMethod;
   documentUrl?: string; // Enlace seguro a IAE Modelo 036/037 o escrituras
   notes?: string;
 }

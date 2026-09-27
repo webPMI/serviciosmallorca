@@ -55,9 +55,9 @@ export interface ReleaseLog {
   entries: ChangelogEntry[];
 }
 
-export const CURRENT_PLATFORM_VERSION = "0.06-beta";
+export const CURRENT_PLATFORM_VERSION = "0.07";
 export const PLATFORM_RELEASE_DATE = "2026-09-27";
-export const PLATFORM_LAST_BUILD_TIMESTAMP = "2026-09-27T11:15:00+02:00";
+export const PLATFORM_LAST_BUILD_TIMESTAMP = "2026-09-27T15:05:00+02:00";
 
 /**
  * Devuelve la fecha y hora formateada de la última actualización según el idioma.
@@ -84,6 +84,110 @@ export function getFormattedBuildTimestamp(locale: "es" | "en" | "ca" | "de" = "
 }
 
 export const CHANGELOG_RELEASES: ReleaseLog[] = [
+  {
+    version: "0.07",
+    versionLabel: {
+      es: "v0.07 · Flujo de Titularidad Blindado (Reclamar / Crear / Editar)",
+      en: "v0.07 · Hardened Ownership Flow (Claim / Create / Edit)",
+      ca: "v0.07 · Flux de Titularitat Blindat (Reclamar / Crear / Editar)",
+      de: "v0.07 · Gehärteter Eigentumsfluss (Fordern / Anlegen / Bearbeiten)",
+    },
+    type: "MINOR",
+    date: "2026-09-27",
+    summary: {
+      es: "Cierre de los 5 hallazgos P0 del flujo Reclamar/Crear/Editar. Los campos de verificación solo los escribe un administrador y siempre con método de acreditación y documento https; la titularidad de una ficha nunca se transfiere por accidente; los claims se deduplican con ID determinista y también en las reglas de Firestore; y la aprobación de un claim es un único batch atómico (rol + negocio asignado + titularidad con evidencia) sin posibilidad de escalada de rol sin negocio. Además, todo lo que el titular edita (descripción, destacados, servicios, email, estado) se publica de verdad en la ficha pública y cada escritura deja auditoría completa.",
+      en: "Closure of the 5 P0 findings in the Claim/Create/Edit flow. Verification fields can only be written by an administrator and always with a verification method plus an https document; ownership is never transferred by accident; claims are deduplicated with a deterministic id and also at Firestore rules level; and approving a claim is a single atomic batch (role + assigned business + ownership with evidence) with no possibility of escalating to manager without a business. In addition, everything the owner edits (description, highlights, services, email, status) is now really published on the public listing and every write leaves a full audit trail.",
+      ca: "Tancament dels 5 hallazgos P0 del flux Reclamar/Crear/Editar. Els camps de verificació només els escriu un administrador i sempre amb mètode d'acreditació i document https; la titularitat d'una fitxa mai no es transfereix per accident; les reclamacions es deduplicen amb ID determinista i també a les regles de Firestore; i l'aprovació d'una reclamació és un únic lot atòmic (rol + negoci assignat + titularitat amb evidència) sense possibilitat d'escalar a rol manager sense negoci. A més, tot el que edita el titular (descripció, destacats, serveis, email, estat) es publica realment a la fitxa pública i cada escriptura deixa auditoria completa.",
+      de: "Schließung der 5 P0-Befunde im Fordern/Anlegen/Bearbeiten-Fluss. Verifizierungsfelder können nur von einem Administrator geschrieben werden und immer mit Verifizierungsmethode und https-Dokument; die Eigentümerschaft einer Karte wird nie versehentlich übertragen; Anfragen werden mit deterministischer ID und zusätzlich auf Firestore-Rules-Ebene dedupliziert; und die Genehmigung einer Anfrage ist ein einziger atomarer Batch (Rolle + zugewiesenes Unternehmen + Eigentümerschaft mit Nachweis) ohne Möglichkeit einer Eskalation ohne Unternehmen. Zudem wird nun alles, was der Inhaber bearbeitet (Beschreibung, Highlights, Leistungen, E-Mail, Status), wirklich im öffentlichen Eintrag veröffentlicht und jeder Schreibvorgang hinterlässt ein vollständiges Audit-Trail.",
+    },
+    highlights: {
+      es: [
+        "Verificación blindada: verifyBusinessAsAdmin exige método + documento https y registra verifiedByUid/verifiedByRole; sin evidencia no hay sello (GR-11).",
+        "Titularidad intocable: el ownerUid existente nunca se sobrescribe y el admin jamás se convierte en dueño de la ficha al verificarla.",
+        "Claims deduplicados: ID determinista claim-{servicio}-{usuario} + preflight duplicate_claim / already_claimed + regla !exists(...) en Firestore.",
+        "Aprobación atómica: un único writeBatch actualiza claim + users.role + managedServices + override con la titularidad del solicitante.",
+        "Escalada de rol imposible sin negocio: aprobar sin solicitante y negocio lanza missing_business y no escribe nada.",
+        "Edición visible de verdad: la hidratación aplica mergeServiceWithOverride y publica descripción, destacados, servicios, email y estado.",
+        "Auditoría por escritura: cada guardado registra autor, rol, campos modificados y valores anterior/nuevo (máx. 20 entradas).",
+        "Telemetría sin silencios: clientTelemetry reporta a D1 con deduplicación de 5 minutos; 0 catch mudos en el flujo.",
+      ],
+      en: [
+        "Hardened verification: verifyBusinessAsAdmin requires a verification method + https document and records verifiedByUid/verifiedByRole; no evidence, no seal (GR-11).",
+        "Untouchable ownership: an existing ownerUid is never overwritten and an admin never becomes the listing owner by verifying it.",
+        "Deduplicated claims: deterministic claim-{service}-{user} id + duplicate_claim/already_claimed preflight + !exists(...) rule in Firestore.",
+        "Atomic approval: a single writeBatch updates claim + users.role + managedServices + override with the applicant's ownership.",
+        "Role escalation without a business is impossible: approving without applicant and business throws missing_business and writes nothing.",
+        "Edits are really published: hydration applies mergeServiceWithOverride and surfaces description, highlights, services, email and status.",
+        "Audit on every write: each save records author, role, changed fields and previous/new values (max 20 entries).",
+        "No silent telemetry: clientTelemetry reports to D1 with 5-minute deduplication; 0 muted catch blocks in the flow.",
+      ],
+      ca: [
+        "Verificació blindada: verifyBusinessAsAdmin exigeix mètode + document https i registra verifiedByUid/verifiedByRole; sense evidència no hi ha segell (GR-11).",
+        "Titularitat intocable: l'ownerUid existent mai no se sobreescriu i l'admin mai no es converteix en propietari de la fitxa en verificar-la.",
+        "Reclamacions deduplicades: ID determinista claim-{servei}-{usuari} + preflight duplicate_claim/already_claimed + regla !exists(...) a Firestore.",
+        "Aprovació atòmica: un únic writeBatch actualitza claim + users.role + managedServices + override amb la titularitat del sol·licitant.",
+        "Escalar de rol sense negoci és impossible: aprovar sense sol·licitant i negoci llança missing_business i no escriu res.",
+        "Les edicions es publiquen de veritat: la hidratació aplica mergeServiceWithOverride i mostra descripció, destacats, serveis, email i estat.",
+        "Auditoria per escriptura: cada desat registra autor, rol, camps modificats i valor anterior/nou (màx. 20 entrades).",
+        "Telemetria sense silencis: clientTelemetry informa a D1 amb deduplicació de 5 minuts; 0 catch mudos al flux.",
+      ],
+      de: [
+        "Gehärtete Verifizierung: verifyBusinessAsAdmin verlangt Methode + https-Dokument und speichert verifiedByUid/verifiedByRole; ohne Nachweis kein Siegel (GR-11).",
+        "Unantastbare Eigentümerschaft: Eine bestehende ownerUid wird nie überschrieben und ein Admin wird durch die Verifizierung nie zum Eigentümer.",
+        "Deduplizierte Anfragen: deterministische ID claim-{betrieb}-{nutzer} + Preflight duplicate_claim/already_claimed + !exists(...)-Regel in Firestore.",
+        "Atomare Genehmigung: Ein einziger writeBatch aktualisiert Anfrage + users.role + managedServices + Override mit Eigentümerschaft des Antragstellers.",
+        "Rollen-Eskalation ohne Unternehmen unmöglich: Genehmigung ohne Antragsteller und Unternehmen löst missing_business aus und schreibt nichts.",
+        "Änderungen werden wirklich veröffentlicht: Die Hydration nutzt mergeServiceWithOverride und zeigt Beschreibung, Highlights, Leistungen, E-Mail und Status.",
+        "Audit pro Schreibvorgang: Jeder Save protokolliert Autor, Rolle, geänderte Felder sowie alte/neue Werte (max. 20 Einträge).",
+        "Telemetrie ohne Schweigen: clientTelemetry meldet mit 5-Minuten-Deduplizierung an D1; 0 stumme catch-Blöcke im Fluss.",
+      ],
+    },
+    entries: [
+      {
+        category: "SECURITY",
+        title: {
+          es: "Flujo de titularidad blindado (5 P0 cerrados)",
+          en: "Hardened ownership flow (5 P0 closed)",
+          ca: "Flux de titularitat blindat (5 P0 tancats)",
+          de: "Gehärteter Eigentumsfluss (5 P0 geschlossen)",
+        },
+        description: {
+          es: "Solo el admin escribe el sello oficial y con evidencia real; la titularidad no se secuestra; los claims no se duplican; la aprobación es atómica y nunca escala roles sin negocio.",
+          en: "Only admins write the official seal and only with real evidence; ownership cannot be hijacked; claims cannot duplicate; approval is atomic and never escalates roles without a business.",
+          ca: "Només l'admin escriu el segell oficial i amb evidència real; la titularitat no es sequestra; les reclamacions no es dupliquen; l'aprovació és atòmica i mai escala rols sense negoci.",
+          de: "Nur Admins schreiben das offizielle Siegel und nur mit echtem Nachweis; Eigentümerschaft kann nicht entführt werden; Anfragen duplizieren sich nicht; die Genehmigung ist atomar und eskaliert nie Rollen ohne Unternehmen.",
+        },
+        badgeText: {
+          es: "INV-01…INV-06 OK",
+          en: "INV-01…INV-06 OK",
+          ca: "INV-01…INV-06 OK",
+          de: "INV-01…INV-06 OK",
+        },
+      },
+      {
+        category: "FIX",
+        title: {
+          es: "Lo que el titular edita, ahora se publica",
+          en: "What owners edit is now published",
+          ca: "Allò que edita el titular ara es publica",
+          de: "Was Inhaber bearbeiten, wird jetzt veröffentlicht",
+        },
+        description: {
+          es: "La hidratación de la ficha aplica el motor de fusión con la instantánea estática del servidor: descripción, destacados, servicios, email y estado operativo llegan al usuario final.",
+          en: "Listing hydration now applies the merge engine with the server-side static snapshot: description, highlights, services, email and operating status reach the end user.",
+          ca: "La hidratació de la fitxa aplica el motor de fusió amb la instantània estàtica del servidor: descripció, destacats, serveis, email i estat arriben a l'usuari final.",
+          de: "Die Hydration des Eintrags nutzt die Fusion mit dem serverseitigen Snapshot: Beschreibung, Highlights, Leistungen, E-Mail und Betriebsstatus erreichen die Endnutzer.",
+        },
+        badgeText: {
+          es: "INV-07 parcial",
+          en: "INV-07 partial",
+          ca: "INV-07 parcial",
+          de: "INV-07 teilweise",
+        },
+      },
+    ],
+  },
+
   {
     version: "0.06.2",
     versionLabel: {

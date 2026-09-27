@@ -68,6 +68,29 @@ if (relatedPosts.length === 0) {
   ).slice(0, 3);
 }
 
+// ── Overlay Pattern (INV-07): instantánea estática para la hidratación cliente ──
+// El titular solo puede sobrescribir estos campos; todo lo demás lo fija el catálogo editorial.
+const overlaySnapshot = {
+  phone: service.phone,
+  whatsapp: service.whatsapp,
+  email: service.email,
+  website: service.website,
+  schedule: service.schedule,
+  status: service.status,
+  image: service.image,
+  gallery: service.gallery ?? [],
+  fullDescription: service.fullDescription,
+  highlights: service.highlights,
+  servicesProvided: service.servicesProvided,
+  labels: {
+    statusSeasonalClosure: translations["services.statusSeasonalClosure"] || "",
+    statusPermanentlyClosed: translations["services.statusPermanentlyClosed"] || "",
+    claimDuplicate: translations["services.claimDuplicate"] || "",
+    claimAlreadyClaimed: translations["services.claimAlreadyClaimed"] || "",
+    claimRateLimited: translations["services.claimRateLimited"] || "",
+  },
+};
+
 // Dynamic Localized SEO Title & Meta Description with Search Intent
 const seoTitle = `${service.name} (${zoneName}, Mallorca) | ${categoryName} | ⭐ ${service.rating ? service.rating.toFixed(1) : "N/A"}`;
 const cleanDescText = (service.shortDescription?.[locale] || service.fullDescription?.[locale] || "")
@@ -241,6 +264,10 @@ const breadcrumbSchema = {
     </div>
 
     <!-- Modals (Claim Ownership, Delete Request, Report Error) -->
+    <!-- Overlay Pattern (INV-07): instantánea estática que consume la hidratación cliente
+         (mismo motor de fusión que el SSR) + etiquetas i18n para avisos dinámicos. -->
+    <script type="application/json" id="service-static-data" is:inline set:html={JSON.stringify(overlaySnapshot)} />
+
     <ServiceClaimDeleteModals service={service} translations={translations} />
 
     <!-- Modal Social Share Enriquecido -->

@@ -53,9 +53,11 @@ Antes de entregar cualquier tarea al usuario, DEBES ejecutar en consola:
 
 ---
 
-## 🔒 Bloque Vinculante: Flujo de Titularidad (P0 Activos)
+## 🔒 Bloque Vinculante: Flujo de Titularidad (Fase 1 ejecutada · invariantes vigentes)
 
 > Auditoría completa: [`docs/BUSINESS_OWNERSHIP_FLOW_REVIEW.md`](docs/BUSINESS_OWNERSHIP_FLOW_REVIEW.md) · Invariantes INV-01…INV-08: [`docs/AGENTS.md`](docs/AGENTS.md) § Bloque Vinculante.
+>
+> Los 5 P0 se remediaron el 2026-09-27 con cambio real + tests. Estas prohibiciones **siguen vigentes** como contrato: nadie reintroduce estas prácticas.
 
 Antes de escribir en `src/lib/serviceActions.ts`, `src/lib/serviceOverrides.ts`, `firestore.rules` o los `Dashboard*.astro`, tienes prohibido:
 

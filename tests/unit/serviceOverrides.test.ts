@@ -26,11 +26,26 @@ vi.mock("firebase/firestore", () => ({
   serverTimestamp: fb.serverTimestamp,
 }));
 
+/** Telemetría mockeada: se afirma que ningún fallo queda silencioso (GR-15). */
+const telemetry = vi.hoisted(() => ({ reportClientFailure: vi.fn() }));
+
+vi.mock("../../src/lib/clientTelemetry", () => ({
+  reportClientFailure: telemetry.reportClientFailure,
+  resetTelemetryDedupeWindow: vi.fn(),
+  TELEMETRY_DEDUPE_WINDOW_MS: 300000,
+}));
+
 import {
   getServiceOverride,
+  getServiceOverrideFresh,
   mergeServiceWithOverride,
   saveServiceOverride,
   verifyBusinessAsAdmin,
+  buildClaimedOverridePayload,
+  stripVerificationFields,
+  resolveOwnerUid,
+  VERIFICATION_FIELDS,
+  OverrideGuardError,
   getAllServiceOverrides,
   setAllowDatabaseOverrides,
   isDatabaseOverridesEnabled,
@@ -54,7 +69,9 @@ const staticService = {
 
 beforeEach(() => {
   fb.getDoc.mockReset();
+  fb.getDoc.mockResolvedValue({ exists: () => false, data: () => undefined });
   fb.setDoc.mockReset();
+  telemetry.reportClientFailure.mockReset();
 });
 
 describe("getServiceOverride · Caché TTL 5 minutos", () => {
@@ -257,10 +274,10 @@ describe("mergeServiceWithOverride · Merge parcial overlay", () => {
   });
 });
 
-describe("saveServiceOverride · Escritura + actualización de caché", () => {
-  it("guarda con merge:true, ownerUid y serverTimestamp, y refresca la caché local", async () => {
+describe("saveServiceOverride · Escritura blindada + auditoría", () => {
+  it("guarda con merge:true, titularidad del manager y serverTimestamp, y refresca la caché local", async () => {
     const dbLike = { kind: "db" };
-    await saveServiceOverride(dbLike as never, "negocio-base-palma", "manager-77", {
+    await saveServiceOverride(dbLike as never, "negocio-base-palma", { uid: "manager-77", role: "manager" }, {
       phone: "+34900000000",
       schedule: "L-D 10:00-20:00",
     });
@@ -273,27 +290,124 @@ describe("saveServiceOverride · Escritura + actualización de caché", () => {
     expect(opts).toEqual({ merge: true });
 
     // La lectura posterior NO vuelve a golpear Firestore (caché ya refrescada)
+    fb.getDoc.mockClear();
     const cached = await getServiceOverride(dbLike as never, "negocio-base-palma");
     expect(fb.getDoc).not.toHaveBeenCalled();
     expect(cached).toMatchObject({ phone: "+34900000000" });
   });
 
-  it("verifyBusinessAsAdmin guarda verificación oficial con 95% de confianza por defecto", async () => {
-    const dbLike = { kind: "db" };
-    const res = await verifyBusinessAsAdmin(dbLike as never, "bodega-mallorca", "admin-1");
+  it("un manager NO puede escribir campos de verificación: se filtran antes de persistir (INV-01)", async () => {
+    await saveServiceOverride(
+      { kind: "db" } as never,
+      "slug-shield-manager",
+      { uid: "manager-1", role: "manager" },
+      {
+        phone: "+34971111222",
+        verified: true,
+        verificationStatus: "verified_official",
+        confidenceScore: 98,
+        isClaimed: true,
+        claimedByUid: "manager-1",
+      } as never,
+    );
 
-    expect(res.verified).toBe(true);
-    expect(res.confidenceScore).toBe(95);
-    expect(res.verificationStatus).toBe("verified_official");
-    expect(res.trustLevel).toBe("level_3_official");
-    expect(res.ownerUid).toBe("admin-1");
-
-    const [ref, payload] = fb.setDoc.mock.calls.at(-1)!;
-    expect(ref.id).toBe("bodega-mallorca");
-    expect(payload.verified).toBe(true);
-    expect(payload.confidenceScore).toBe(95);
+    const [, payload] = fb.setDoc.mock.calls[0];
+    expect(payload.phone).toBe("+34971111222");
+    for (const field of VERIFICATION_FIELDS) {
+      expect(payload).not.toHaveProperty(field);
+    }
   });
 
+  it("NUNCA sobrescribe el ownerUid existente: el admin no se apropia la ficha (INV-02 · P0-4)", async () => {
+    fb.getDoc.mockResolvedValueOnce({
+      exists: true,
+      data: () => ({ ownerUid: "titular-real", phone: "+34970000000" }),
+    });
+
+    await saveServiceOverride({ kind: "db" } as never, "slug-owner-keep", { uid: "admin-1", role: "admin" }, {
+      verified: true,
+      verificationStatus: "verified_official",
+      verificationMethod: "manual_notarial",
+      documentUrl: "https://example.com/iae.pdf",
+      confidenceScore: 95,
+      verifiedByUid: "admin-1",
+      verifiedByRole: "admin",
+    } as never);
+
+    const [, payload] = fb.setDoc.mock.calls[0];
+    expect(payload).not.toHaveProperty("ownerUid");
+    expect(payload.verified).toBe(true);
+  });
+
+  it("registra auditoría con autor, campos y valores anterior/nuevo (INV-08)", async () => {
+    fb.getDoc.mockResolvedValueOnce({
+      exists: true,
+      data: () => ({ ownerUid: "manager-1", phone: "+34970000000", auditTrail: [] }),
+    });
+
+    await saveServiceOverride(
+      { kind: "db" } as never,
+      "slug-audit",
+      { uid: "manager-1", role: "manager" },
+      { phone: "+34971119999" },
+      { reason: "Nuevo teléfono verificado" },
+    );
+
+    const [, payload] = fb.setDoc.mock.calls[0];
+    expect(payload.auditTrail).toHaveLength(1);
+    expect(payload.auditTrail[0]).toMatchObject({
+      action: "updated",
+      fieldChanged: "phone",
+      oldValue: { phone: "+34970000000" },
+      newValue: { phone: "+34971119999" },
+      authorRole: "manager",
+      authorUid: "manager-1",
+      reason: "Nuevo teléfono verificado",
+    });
+  });
+
+  it("el histórico de auditoría NUNCA se acepta desde el cliente: se reconstruye (INV-08)", async () => {
+    await saveServiceOverride(
+      { kind: "db" } as never,
+      "slug-audit-forgery",
+      { uid: "manager-1", role: "manager" },
+      {
+        phone: "+34971110000",
+        auditTrail: [{ id: "fake", timestamp: "2020-01-01", action: "verified", authorRole: "admin", authorUid: "ghost" }],
+      } as never,
+    );
+
+    const [, payload] = fb.setDoc.mock.calls[0];
+    expect(payload.auditTrail).toHaveLength(1);
+    expect(payload.auditTrail[0]).toMatchObject({ action: "created", authorRole: "manager", authorUid: "manager-1" });
+    expect(JSON.stringify(payload.auditTrail)).not.toContain("ghost");
+  });
+
+  it("rechaza actores sin rol válido con error tipado (nunca escritura anónima)", async () => {
+    await expect(
+      saveServiceOverride({ kind: "db" } as never, "slug-x", { uid: "", role: "manager" }, { phone: "+34971000000" }),
+    ).rejects.toBeInstanceOf(OverrideGuardError);
+    expect(fb.setDoc).not.toHaveBeenCalled();
+  });
+
+  it("bloquea la transferencia de titularidad sobre una ficha ya gestionada", async () => {
+    fb.getDoc.mockResolvedValueOnce({ exists: true, data: () => ({ ownerUid: "titular-real" }) });
+
+    await expect(
+      saveServiceOverride(
+        { kind: "db" } as never,
+        "slug-y",
+        { uid: "admin-1", role: "admin" },
+        { phone: "+34971000000" },
+        { transferOwnershipTo: "otro-uid" },
+      ),
+    ).rejects.toMatchObject({ code: "ownership_conflict" });
+    expect(fb.setDoc).not.toHaveBeenCalled();
+  });
+});
+
+
+describe("mergeServiceWithOverride · Fusión estático + dinámico", () => {
   it("mergeServiceWithOverride fusiona campos de verificación y titularidad reclamada", () => {
     const override: ServiceOverride = {
       ownerUid: "titular-123",
@@ -333,5 +447,119 @@ describe("saveServiceOverride · Escritura + actualización de caché", () => {
     const cached = await getServiceOverride(dbLike as never, "slug-1");
     expect(fb.getDoc).not.toHaveBeenCalled();
     expect(cached?.verified).toBe(true);
+  });
+});
+
+describe("verifyBusinessAsAdmin · Sello oficial con evidencia y sin apropiación (INV-01/INV-02)", () => {
+  it("sella con método + documento https y NO se apropia de la titularidad", async () => {
+    const dbLike = { kind: "db" };
+    const res = await verifyBusinessAsAdmin(dbLike as never, "bodega-mallorca", "admin-1", {
+      verificationMethod: "official_document",
+      documentUrl: "https://example.com/iae036-bodega.pdf",
+    });
+
+    expect(res.verified).toBe(true);
+    expect(res.confidenceScore).toBe(95);
+    expect(res.verificationStatus).toBe("verified_official");
+    expect(res.trustLevel).toBe("level_3_official");
+    expect(res.ownerUid).toBeUndefined();
+
+    const [ref, payload] = fb.setDoc.mock.calls.at(-1)!;
+    expect(ref.id).toBe("bodega-mallorca");
+    expect(payload).toMatchObject({
+      verified: true,
+      verificationMethod: "official_document",
+      documentUrl: "https://example.com/iae036-bodega.pdf",
+      verifiedByUid: "admin-1",
+      verifiedByRole: "admin",
+    });
+    expect(payload).not.toHaveProperty("ownerUid");
+  });
+
+  it("exige método y documento https: sin evidencia real no hay sello (P0-2 · GR-11)", async () => {
+    await expect(verifyBusinessAsAdmin({ kind: "db" } as never, "bodega-sin-prueba", "admin-1", {})).rejects.toMatchObject({
+      code: "missing_evidence",
+    });
+
+    await expect(
+      verifyBusinessAsAdmin({ kind: "db" } as never, "bodega-sin-prueba", "admin-1", {
+        verificationMethod: "manual_notarial",
+        documentUrl: "http://insecure.local/x.pdf",
+      }),
+    ).rejects.toMatchObject({ code: "missing_evidence" });
+
+    expect(fb.setDoc).not.toHaveBeenCalled();
+  });
+
+  it("revocar la verificación no exige documento y baja la confianza", async () => {
+    const res = await verifyBusinessAsAdmin({ kind: "db" } as never, "bodega-revocada", "admin-1", {
+      verified: false,
+      verificationStatus: "unverified",
+    });
+
+    expect(res.verified).toBe(false);
+    expect(res.trustLevel).toBe("level_1_discovery");
+    expect(res.confidenceScore).toBe(70);
+  });
+});
+
+describe("Bloque vinculante · utilidades puras", () => {
+  it("stripVerificationFields elimina todo campo de verificación sin tocar los de negocio", () => {
+    const stripped = stripVerificationFields({
+      phone: "+34971000000",
+      schedule: "L-V",
+      verified: true,
+      claimedByUid: "x",
+      confidenceScore: 99,
+    });
+
+    expect(stripped).toEqual({ phone: "+34971000000", schedule: "L-V" });
+  });
+
+  it("resolveOwnerUid: el manager nuevo se apropia, el admin nunca, y el dueño existente es intocable", () => {
+    expect(resolveOwnerUid(null, { uid: "manager-1", role: "manager" })).toBe("manager-1");
+    expect(resolveOwnerUid(null, { uid: "admin-1", role: "admin" })).toBeUndefined();
+    expect(resolveOwnerUid({ ownerUid: "titular-real" }, { uid: "admin-1", role: "admin" })).toBeUndefined();
+    expect(
+      resolveOwnerUid({ ownerUid: "titular-real" }, { uid: "admin-1", role: "admin" }, { transferOwnershipTo: "nuevo" }),
+    ).toBe("nuevo");
+  });
+
+  it("buildClaimedOverridePayload firma la titularidad con la evidencia aportada (INV-01/INV-08)", () => {
+    const payload = buildClaimedOverridePayload({
+      applicantUid: "user-42",
+      reviewerUid: "admin-1",
+      serviceId: "svc-bar-1",
+      businessTaxId: "https://drive.example.com/iae036.pdf",
+      existingAuditTrail: [],
+    });
+
+    expect(payload).toMatchObject({
+      ownerUid: "user-42",
+      claimedByUid: "user-42",
+      isClaimed: true,
+      verifiedByUid: "admin-1",
+      verifiedByRole: "admin",
+      verificationMethod: "manual_notarial",
+      documentUrl: "https://drive.example.com/iae036.pdf",
+    });
+    expect(payload.auditTrail?.[0]).toMatchObject({ action: "claimed", authorRole: "admin", authorUid: "admin-1" });
+  });
+
+  it("getServiceOverrideFresh ignora la caché y reporta el fallo de lectura (INV-02 · GR-15)", async () => {
+    const dbLike = { kind: "db" };
+    fb.getDoc.mockResolvedValueOnce({ exists: true, data: () => ({ ownerUid: "titular-real" }) });
+
+    const fresh = await getServiceOverrideFresh(dbLike as never, "slug-fresco");
+    expect(fresh?.ownerUid).toBe("titular-real");
+
+    fb.getDoc.mockRejectedValueOnce(new Error("permission-denied"));
+    expect(await getServiceOverrideFresh(dbLike as never, "slug-error")).toBeNull();
+    expect(telemetry.reportClientFailure).toHaveBeenCalled();
+  });
+
+  it("getServiceOverrideFresh no consulta Firestore sin base de datos (SSR-safe)", async () => {
+    expect(await getServiceOverrideFresh(undefined, "cualquiera")).toBeNull();
+    expect(fb.getDoc).not.toHaveBeenCalled();
   });
 });

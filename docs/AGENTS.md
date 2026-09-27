@@ -88,20 +88,20 @@ SI ALGÚN PASO ES ❌ → REJECT with specific feedback
 ## 🔒 Bloque Vinculante: Titularidad, Verificación y Overlay (P0 Activos)
 
 > **Origen:** auditoría del flujo Reclamar / Crear / Editar negocio → [`BUSINESS_OWNERSHIP_FLOW_REVIEW.md`](BUSINESS_OWNERSHIP_FLOW_REVIEW.md).
-> **Obligatorio para todos los agentes.** No duplica el informe: fija los **invariantes** que ningún cambio de código puede violar mientras los P0 sigan abiertos.
+> **Obligatorio para todos los agentes.** No duplica el informe: fija los **invariantes** que ningún cambio de código puede violar. La Fase 1 de remediación se ejecutó el 2026-09-27 (5 P0 cerrados), pero **el bloque sigue vigente**: los invariantes son ley, no historial. Estado por invariante: ✅ cerrado · 🟡 parcial (pendiente merge SSR, Fase 2.4).
 
 ### Invariantes de datos (INV)
 
 | ID           | Invariante                                                                                                             | Estado hoy    | Riesgo si se viola             |
 | ------------ | ---------------------------------------------------------------------------------------------------------------------- | ------------- | ------------------------------ |
-| **INV-01**   | Solo `admin` escribe campos de verificación (`verified`, `verificationStatus`, `trustLevel`, `confidenceScore`), y siempre con `verificationMethod` + `documentUrl` reales del titular | ❌ P0-1/P0-2 | Sello falso → GR-11/GR-13      |
-| **INV-02**   | La verificación administrativa **no** puede quedarse con `ownerUid`: la titularidad permanece en el manager legítimo    | ❌ P0-4       | Bloqueo permanente del titular |
-| **INV-03**   | `role: "manager"` exige `managedServices` con la ficha reclamada; nunca uid ficticio (`"admin"`, vacío o `undefined`)   | ❌ P0-5/P0-4  | Escalada de privilegios        |
-| **INV-04**   | Un claim es único por (`uid`, `serviceId`) y se rechaza si la ficha ya tiene `claimedByUid`                             | ❌ P0-3       | Duplicidad y apropiación       |
-| **INV-05**   | Claim + rol + override se confirman de forma atómica: sin efectos parciales ni estados intermedios                      | ❌ P0-5       | Inconsistencia en producción   |
-| **INV-06**   | Cero `catch` silenciosos y cero `as any` injustificados en `serviceActions.ts` / `serviceOverrides.ts`                  | ❌ P1-4/P2-5  | GR-03 y GR-15                  |
-| **INV-07**   | Todo campo editable por el titular es visible en la ficha pública (merge SSR o hidratación completa)                    | ❌ P1-3/P2-1  | Dato fantasma: se guarda y no se ve |
-| **INV-08**   | Toda escritura deja rastro (`authorRole`, `authorUid`, `fieldChanged`, `oldValue`, `newValue`)                          | ❌ P2-2       | Sin trazabilidad ni reversibilidad |
+| **INV-01**   | Solo `admin` escribe campos de verificación (`verified`, `verificationStatus`, `trustLevel`, `confidenceScore`), y siempre con `verificationMethod` + `documentUrl` reales del titular | ✅ Cerrado | Sello falso → GR-11/GR-13      |
+| **INV-02**   | La verificación administrativa **no** puede quedarse con `ownerUid`: la titularidad permanece en el manager legítimo    | ✅ Cerrado       | Bloqueo permanente del titular |
+| **INV-03**   | `role: "manager"` exige `managedServices` con la ficha reclamada; nunca uid ficticio (`"admin"`, vacío o `undefined`)   | ✅ Cerrado  | Escalada de privilegios        |
+| **INV-04**   | Un claim es único por (`uid`, `serviceId`) y se rechaza si la ficha ya tiene `claimedByUid`                             | ✅ Cerrado       | Duplicidad y apropiación       |
+| **INV-05**   | Claim + rol + override se confirman de forma atómica: sin efectos parciales ni estados intermedios                      | ✅ Cerrado       | Inconsistencia en producción   |
+| **INV-06**   | Cero `catch` silenciosos y cero `as any` injustificados en `serviceActions.ts` / `serviceOverrides.ts`                  | ✅ Cerrado  | GR-03 y GR-15                  |
+| **INV-07**   | Todo campo editable por el titular es visible en la ficha pública (merge SSR o hidratación completa)                    | 🟡 Parcial  | Dato fantasma: se guarda y no se ve |
+| **INV-08**   | Toda escritura deja rastro (`authorRole`, `authorUid`, `fieldChanged`, `oldValue`, `newValue`)                          | ✅ Cerrado       | Sin trazabilidad ni reversibilidad |
 
 ### Impacto por agente
 

@@ -10,7 +10,7 @@ import {
 describe("🚀 Changelog & Beta v0.02 Data Integrity (GR-03, GR-04, GR-16)", () => {
   it("defines a valid semantic version and ISO 8601 build timestamp (GR-16)", () => {
     expect(CURRENT_PLATFORM_VERSION).toMatch(/^\d+\.\d+(-[a-z0-9]+)?$/);
-    expect(CURRENT_PLATFORM_VERSION).toBe("0.06-beta");
+    expect(CURRENT_PLATFORM_VERSION).toBe("0.07");
     expect(PLATFORM_RELEASE_DATE).toMatch(/^\d{4}-\d{2}-\d{2}$/);
     expect(PLATFORM_LAST_BUILD_TIMESTAMP).toMatch(/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}/);
 
@@ -29,7 +29,8 @@ describe("🚀 Changelog & Beta v0.02 Data Integrity (GR-03, GR-04, GR-16)", () 
     expect(CHANGELOG_RELEASES.length).toBeGreaterThan(0);
 
     const latest = CHANGELOG_RELEASES[0];
-    expect(latest.version).toBe("0.06.2");
+    // La entrada más reciente del changelog es la que fija la versión de plataforma (GR-16).
+    expect(latest.version).toBe("0.07");
     expect(["MAJOR", "MINOR", "PATCH", "BETA"]).toContain(latest.type);
 
     // Summary i18n

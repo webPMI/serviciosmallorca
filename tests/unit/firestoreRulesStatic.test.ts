@@ -79,4 +79,44 @@ describe("🛡️ Firestore Security Rules — invariantes críticas (GR-13)", (
   it("prohibición total de escrituras públicas (nunca 'write: if true')", () => {
     expect(RULES).not.toMatch(/write:\s*if\s+true/i);
   });
+
+  it("service_overrides: sello y titularidad blindados para managers (INV-01/INV-02 · P0-1/P0-4)", () => {
+    const block = RULES.match(/match \/service_overrides\/\{slug\}\s*\{[\s\S]*?\n    \}/);
+    expect(block).toBeTruthy();
+
+    // Lista canónica de campos protegidos + uso obligatorio en create/update
+    expect(RULES).toContain("function verificationFields()");
+    const protectedFields = [
+      "verified",
+      "verificationStatus",
+      "trustLevel",
+      "confidenceScore",
+      "lastVerifiedAt",
+      "verificationMethod",
+      "documentUrl",
+      "verifiedByUid",
+      "verifiedByRole",
+      "isClaimed",
+      "claimedByUid",
+      "claimedAt",
+    ];
+    for (const field of protectedFields) {
+      expect(RULES).toContain(`'${field}'`);
+    }
+
+    expect(block?.[0]).toContain("!request.resource.data.keys().hasAny(verificationFields())");
+    expect(block?.[0]).toContain(".diff(resource.data).affectedKeys().hasAny(verificationFields())");
+    // La titularidad no puede moverse en una actualización de manager
+    expect(block?.[0]).toContain("resource.data.ownerUid == request.auth.uid");
+    expect(block?.[0]).toContain("request.resource.data.ownerUid == request.auth.uid");
+    expect(block?.[0]).toMatch(/hasAny\(\['ownerUid'\]\)/);
+  });
+
+  it("service_claims: deduplicación por ID determinista y estado 'pending' obligatorio (INV-04 · P0-3)", () => {
+    const block = RULES.match(/match \/service_claims\/\{claimId\}\s*\{[\s\S]*?\n    \}/);
+    expect(block).toBeTruthy();
+    expect(block?.[0]).toContain("request.resource.data.status == 'pending'");
+    expect(block?.[0]).toMatch(/!exists\(\/databases\/\$\(database\)\/documents\/service_claims\/\$\(claimId\)\)/);
+    expect(block?.[0]).toContain("request.resource.data.applicantUid == request.auth.uid");
+  });
 });

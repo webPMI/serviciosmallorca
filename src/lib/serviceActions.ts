@@ -2,27 +2,81 @@ import {
   collection,
   doc,
   setDoc,
+  getDoc,
   getDocs,
   query,
   where,
   orderBy,
   serverTimestamp,
   updateDoc,
+  writeBatch,
+  arrayUnion,
   type Firestore,
 } from "firebase/firestore";
+import { reportClientFailure } from "./clientTelemetry";
+import { buildClaimedOverridePayload, getServiceOverrideFresh } from "./serviceOverrides";
 
 export type RequestStatus = "pending" | "approved" | "rejected" | "processed";
+
+/** Códigos de error de negocio del flujo de solicitudes (nunca mensajes ambiguos). */
+export type ServiceRequestErrorCode =
+  | "duplicate_claim"
+  | "already_claimed"
+  | "missing_business"
+  | "claim_not_found"
+  | "ownership_conflict";
+
+/**
+ * Error tipado de las solicitudes de titularidad. La UI lo traduce a un mensaje
+ * claro y la telemetría registra el intento (GR-15).
+ */
+export class ServiceRequestError extends Error {
+  constructor(
+    public readonly code: ServiceRequestErrorCode,
+    message: string,
+    public readonly metadata?: Record<string, unknown>,
+  ) {
+    super(message);
+    this.name = "ServiceRequestError";
+    reportClientFailure(`service_request:${code}`, this, {
+      level: "SECURITY",
+      category: "AUTH",
+      metadata,
+    });
+  }
+}
+
+/**
+ * ID determinista de reclamación: un usuario solo puede tener **una** solicitud
+ * por negocio (INV-04). Hace la deduplicación inmune a reintentos y dobles clics.
+ */
+export function buildClaimId(serviceId: string, applicantUid: string): string {
+  return `claim-${serviceId}-${applicantUid}`.replace(/[^\w-]/g, "_").slice(0, 500);
+}
 
 export interface ServiceClaim {
   id: string;
   serviceId: string;
+  /** Slug canónico de la ficha (para localizar el override sin ambigüedad). */
+  serviceSlug?: string;
   serviceName: string;
   applicantUid: string;
   applicantName: string;
   applicantEmail: string;
   applicantPhone: string;
   verificationProof: string;
+  /** NIF/CIF/NIE declarado por el solicitante (INV-08 · GR-11). */
+  businessTaxId?: string;
+  /** Método con el que se acredita la titularidad (INV-01). */
+  verificationMethod?: "official_document" | "corporate_email" | "phone_sms_otp" | "manual_notarial";
+  /** Enlace https:// al documento acreditativo. */
+  documentUrl?: string;
+  /** Puntuación del motor de seguridad en el momento de la solicitud. */
+  securityScore?: number;
   status: RequestStatus;
+  reviewedBy?: string;
+  reviewedAt?: string;
+  decisionNotes?: string;
   createdAt: any;
   updatedAt?: any;
 }
@@ -128,29 +182,77 @@ function saveLocalClaim(claim: ServiceClaim): void {
   }
 }
 
+/**
+ * Crea una reclamación de titularidad con **deduplicación real** (INV-04):
+ *  1. El ID es determinista (`serviceId` + `uid`), así un reintento no genera duplicados.
+ *  2. Se comprueba que el usuario no tenga ya una solicitud para ese negocio.
+ *  3. Se comprueba que la ficha no esté ya gestionada por otro titular.
+ *
+ * @throws {ServiceRequestError} `duplicate_claim` | `already_claimed`
+ */
 export async function createServiceClaim(
   db: Firestore,
   claim: Omit<ServiceClaim, "status" | "createdAt">,
-): Promise<void> {
+): Promise<string> {
+  const claimId = claim.id?.trim() ? claim.id : buildClaimId(claim.serviceId, claim.applicantUid);
   const fullClaim: ServiceClaim = {
     ...claim,
+    id: claimId,
     status: "pending",
     createdAt: new Date().toISOString(),
   };
 
-  // Guardar en LocalStorage para disponibilidad inmediata sin latencia
+  // 1) Deduplicación: ¿ya existe una solicitud con este ID determinista?
+  let existingClaim: ServiceClaim | null = null;
+  try {
+    const snap = await getDoc(doc(db, "service_claims", claimId));
+    const exists = typeof snap.exists === "function" ? snap.exists() : Boolean(snap.exists);
+    existingClaim = exists ? ((snap.data() as ServiceClaim) ?? null) : null;
+  } catch (error) {
+    reportClientFailure("createServiceClaim/preflight", error, {
+      category: "DATABASE",
+      resource: claimId,
+    });
+    throw error;
+  }
+
+  if (existingClaim) {
+    throw new ServiceRequestError(
+      "duplicate_claim",
+      "Ya existe una solicitud de titularidad para este negocio con tu cuenta. Espera la resolución del equipo antes de volver a reclamarlo.",
+      { claimId, status: existingClaim.status },
+    );
+  }
+
+  // 2) ¿La ficha pertenece ya a otro titular verificado?
+  const slug = claim.serviceSlug || claim.serviceId;
+  const override = await getServiceOverrideFresh(db, slug);
+  if (override?.claimedByUid && override.claimedByUid !== claim.applicantUid) {
+    throw new ServiceRequestError(
+      "already_claimed",
+      "Esta ficha ya está gestionada por su titular verificado. Si eres el titular legítimo, contacta con el equipo para impugnar la titularidad.",
+      { slug, claimedByUid: override.claimedByUid },
+    );
+  }
+
+  // 3) Resiliencia offline: la copia local permite reintentar sin perder los datos.
   saveLocalClaim(fullClaim);
 
   try {
-    const claimRef = doc(db, "service_claims", claim.id);
-    await setDoc(claimRef, {
+    await setDoc(doc(db, "service_claims", claimId), {
       ...claim,
+      id: claimId,
       status: "pending",
       createdAt: serverTimestamp(),
     });
-  } catch (err) {
-    console.warn("Firestore offline or unavailable, claim stored locally:", err);
+  } catch (error) {
+    reportClientFailure("createServiceClaim/write", error, {
+      category: "DATABASE",
+      resource: claimId,
+    });
   }
+
+  return claimId;
 }
 
 export async function getUserClaims(db: Firestore, uid: string): Promise<ServiceClaim[]> {
@@ -176,7 +278,8 @@ export async function getUserClaims(db: Firestore, uid: string): Promise<Service
         (typeof b.createdAt === "string" ? new Date(b.createdAt).getTime() : 0);
       return timeB - timeA;
     });
-  } catch {
+  } catch (error) {
+    reportClientFailure("getClaims/read", error, { category: "DATABASE" });
     return localClaims;
   }
 }
@@ -203,19 +306,61 @@ export async function getAllClaims(db: Firestore): Promise<ServiceClaim[]> {
         (typeof b.createdAt === "string" ? new Date(b.createdAt).getTime() : 0);
       return timeB - timeA;
     });
-  } catch {
+  } catch (error) {
+    reportClientFailure("getClaims/read", error, { category: "DATABASE" });
     return localClaims;
   }
 }
 
+/**
+ * Decisión del administrador sobre una reclamación.
+ * Al aprobar, `applicantUid` y `serviceId` son **obligatorios**: es imposible
+ * ascender a `manager` sin negocio asignado (INV-03 · P0-5).
+ */
+export interface ClaimDecision {
+  applicantUid?: string;
+  serviceId?: string;
+  serviceSlug?: string;
+  /** UID del administrador que decide (trazabilidad INV-08). */
+  reviewerUid?: string;
+  /** Notas internas de la decisión. */
+  notes?: string;
+  /** Reasignar una ficha ya gestionada por otro titular (por defecto, se bloquea). */
+  force?: boolean;
+}
+
+/** Resuelve el slug canónico de una ficha a partir de su id o slug (import perezoso del catálogo). */
+async function resolveServiceSlug(serviceId: string): Promise<string> {
+  try {
+    const { SERVICES } = await import("../data/services/index.ts");
+    const match = SERVICES.find((s) => s.id === serviceId || s.slug === serviceId);
+    return match ? match.slug : serviceId;
+  } catch (error) {
+    reportClientFailure("updateClaimStatus/resolveSlug", error, { category: "DATABASE", resource: serviceId });
+    return serviceId;
+  }
+}
+
+/**
+ * Resuelve una reclamación.
+ *
+ * Aprobación (INV-02/INV-03/INV-05/INV-08): se aplica en **un batch atómico** que
+ *  - marca la solicitud como aprobada con revisor y fecha,
+ *  - asigna el rol `manager` **junto al negocio** en `managedServices` (nunca vacío, nunca degrada a un admin),
+ *  - transfiere la titularidad del override al solicitante con el sello firmado por el admin
+ *    y la evidencia real aportada (`businessTaxId` + `documentUrl`).
+ *
+ * Rechazo: solo actualiza la solicitud, sin efectos sobre el rol ni la ficha.
+ *
+ * @throws {ServiceRequestError} `missing_business` | `claim_not_found` | `ownership_conflict`
+ */
 export async function updateClaimStatus(
   db: Firestore,
   claimId: string,
   status: RequestStatus,
-  targetUserUid?: string,
-  serviceId?: string,
+  decision: ClaimDecision = {},
 ): Promise<void> {
-  // Actualizar en LocalStorage
+  // Actualizar en LocalStorage (respuesta inmediata en UI)
   if (typeof window !== "undefined") {
     try {
       const all = getLocalClaims();
@@ -225,53 +370,103 @@ export async function updateClaimStatus(
         match.updatedAt = new Date().toISOString();
         localStorage.setItem(CLAIMS_STORAGE_KEY, JSON.stringify(all));
       }
-    } catch (err) {
-      console.warn("Could not update local claim status:", err);
+    } catch (error) {
+      reportClientFailure("updateClaimStatus/localStorage", error, { category: "CLIENT_JS", resource: claimId });
     }
   }
 
-  try {
-    const claimRef = doc(db, "service_claims", claimId);
-    await updateDoc(claimRef, {
+  if (status !== "approved") {
+    await updateDoc(doc(db, "service_claims", claimId), {
       status,
+      reviewedBy: decision.reviewerUid ?? null,
+      reviewedAt: new Date().toISOString(),
+      ...(decision.notes ? { decisionNotes: decision.notes } : {}),
       updatedAt: serverTimestamp(),
     });
+    return;
+  }
 
-    // Si se aprueba, asignamos el negocio al usuario y actualizamos su perfil
-    if (status === "approved" && targetUserUid) {
-      const { assignBusinessToUser } = await import("./userProfile.ts");
-      if (serviceId) {
-        await assignBusinessToUser(db, targetUserUid, serviceId);
+  // ── Aprobación: el negocio y el solicitante son obligatorios ───────────────
+  const applicantUid = decision.applicantUid?.trim();
+  const serviceId = decision.serviceId?.trim();
+  if (!applicantUid || !serviceId) {
+    throw new ServiceRequestError(
+      "missing_business",
+      "No se puede aprobar una reclamación sin solicitante y negocio identificados: nunca se otorga el rol manager sin ficha asignada.",
+      { claimId },
+    );
+  }
 
-        // Marcar formalmente el negocio en service_overrides como reclamado y verificado oficialmente
-        try {
-          const { saveServiceOverride } = await import("./serviceOverrides.ts");
-          const { SERVICES } = await import("../data/services/index.ts");
-          const match = SERVICES.find((s) => s.id === serviceId || s.slug === serviceId);
-          const slug = match ? match.slug : serviceId;
-          await saveServiceOverride(db, slug, targetUserUid, {
-            isClaimed: true,
-            claimedByUid: targetUserUid,
-            claimedAt: new Date().toISOString(),
-            verified: true,
-            verificationStatus: "verified_official",
-            trustLevel: "level_3_official",
-            confidenceScore: 98,
-            lastVerifiedAt: new Date().toISOString(),
-          });
-        } catch (overrideErr) {
-          console.warn("Could not save claim override for business verification:", overrideErr);
-        }
-      } else {
-        const userRef = doc(db, "users", targetUserUid);
-        await updateDoc(userRef, {
-          role: "manager",
-          updatedAt: serverTimestamp(),
-        });
-      }
-    }
-  } catch (err) {
-    console.warn("Firestore update error (fallback to local state applied):", err);
+  const claimSnap = await getDoc(doc(db, "service_claims", claimId));
+  const claimExists = typeof claimSnap.exists === "function" ? claimSnap.exists() : Boolean(claimSnap.exists);
+  if (!claimExists) {
+    throw new ServiceRequestError("claim_not_found", `La reclamación ${claimId} no existe o fue eliminada.`, { claimId });
+  }
+  const claim = claimSnap.data() as ServiceClaim;
+
+  const slug = decision.serviceSlug || claim.serviceSlug || (await resolveServiceSlug(serviceId));
+  const [existingOverride, userSnap] = await Promise.all([
+    getServiceOverrideFresh(db, slug),
+    getDoc(doc(db, "users", applicantUid)),
+  ]);
+
+  if (existingOverride?.claimedByUid && existingOverride.claimedByUid !== applicantUid && !decision.force) {
+    throw new ServiceRequestError(
+      "ownership_conflict",
+      "La ficha ya está asignada a otro titular verificado. Revoca esa titularidad antes de reasignarla.",
+      { slug, claimedByUid: existingOverride.claimedByUid },
+    );
+  }
+
+  const userExists = typeof userSnap.exists === "function" ? userSnap.exists() : Boolean(userSnap.exists);
+  const applicantProfile = userExists ? (userSnap.data() as { role?: string }) : undefined;
+  const reviewedAt = new Date().toISOString();
+  const reviewerUid = decision.reviewerUid ?? "";
+
+  const batch = writeBatch(db);
+
+  batch.update(doc(db, "service_claims", claimId), {
+    status: "approved",
+    reviewedBy: reviewerUid || null,
+    reviewedAt,
+    ...(decision.notes ? { decisionNotes: decision.notes } : {}),
+    updatedAt: serverTimestamp(),
+  });
+
+  batch.set(
+    doc(db, "users", applicantUid),
+    {
+      role: applicantProfile?.role === "admin" ? "admin" : "manager",
+      managedServices: arrayUnion(serviceId),
+      updatedAt: serverTimestamp(),
+    },
+    { merge: true },
+  );
+
+  batch.set(
+    doc(db, "service_overrides", slug),
+    buildClaimedOverridePayload({
+      applicantUid,
+      reviewerUid,
+      serviceId,
+      businessTaxId: claim.businessTaxId || claim.verificationProof || "",
+      documentUrl: claim.documentUrl || (claim.verificationProof?.startsWith("https://") ? claim.verificationProof : undefined),
+      verificationMethod: claim.verificationMethod,
+      claimedAt: reviewedAt,
+      existingAuditTrail: existingOverride?.auditTrail,
+    }),
+    { merge: true },
+  );
+
+  try {
+    await batch.commit();
+  } catch (error) {
+    reportClientFailure("updateClaimStatus/approve", error, {
+      level: "SECURITY",
+      category: "DATABASE",
+      resource: claimId,
+    });
+    throw error;
   }
 }
 
@@ -300,7 +495,8 @@ export async function getUserSubmissions(db: Firestore, uid: string): Promise<Se
       const timeB = (b.createdAt as any)?.toMillis?.() || (b.createdAt as any)?.seconds || 0;
       return timeB - timeA;
     });
-  } catch {
+  } catch (error) {
+    reportClientFailure("readCollection", error, { category: "DATABASE" });
     return [];
   }
 }
@@ -310,7 +506,8 @@ export async function getAllSubmissions(db: Firestore): Promise<ServiceSubmissio
     const q = query(collection(db, "service_submissions"), orderBy("createdAt", "desc"));
     const snapshot = await getDocs(q);
     return snapshot.docs.map((d) => ({ id: d.id, ...d.data() }) as ServiceSubmission);
-  } catch {
+  } catch (error) {
+    reportClientFailure("readCollection", error, { category: "DATABASE" });
     return [];
   }
 }
@@ -352,7 +549,8 @@ export async function getUserDeletionRequests(db: Firestore, uid: string): Promi
       const timeB = (b.createdAt as any)?.toMillis?.() || (b.createdAt as any)?.seconds || 0;
       return timeB - timeA;
     });
-  } catch {
+  } catch (error) {
+    reportClientFailure("readCollection", error, { category: "DATABASE" });
     return [];
   }
 }
@@ -362,7 +560,8 @@ export async function getAllDeletionRequests(db: Firestore): Promise<ServiceDele
     const q = query(collection(db, "service_deletion_requests"), orderBy("createdAt", "desc"));
     const snapshot = await getDocs(q);
     return snapshot.docs.map((d) => ({ id: d.id, ...d.data() }) as ServiceDeletionRequest);
-  } catch {
+  } catch (error) {
+    reportClientFailure("readCollection", error, { category: "DATABASE" });
     return [];
   }
 }
@@ -400,7 +599,8 @@ export async function getAllReports(db: Firestore): Promise<ServiceReport[]> {
     const q = query(collection(db, "service_reports"), orderBy("createdAt", "desc"));
     const snapshot = await getDocs(q);
     return snapshot.docs.map((d) => ({ id: d.id, ...d.data() }) as ServiceReport);
-  } catch {
+  } catch (error) {
+    reportClientFailure("readCollection", error, { category: "DATABASE" });
     return [];
   }
 }

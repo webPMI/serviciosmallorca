@@ -275,8 +275,10 @@ const { translations } = Astro.props;
   import { db } from "../lib/firebase";
   import { authStore } from "../lib/authStore";
   import { getUserClaims, getAllClaims, updateClaimStatus } from "../lib/serviceActions";
-  import { getServiceOverride, saveServiceOverride } from "../lib/serviceOverrides";
+  import { getServiceOverride, saveServiceOverride, OverrideGuardError } from "../lib/serviceOverrides";
+  import { reportClientFailure } from "../lib/clientTelemetry";
   import { SERVICES } from "../data/services";
+  import type { ServiceStatus } from "../data/services/types";
 
   const listContainer = document.getElementById("manager-services-list");
   const claimsContainer = document.getElementById("manager-claims-list");
@@ -323,7 +325,7 @@ const { translations } = Astro.props;
                 ${c.status.toUpperCase()}
               </span>
               ${
-                c.status === "pending"
+                role === "admin" && c.status === "pending"
                   ? `
                 <button type="button" class="btn btn-primary btn-sm btn-approve-claim" data-claim-id="${c.id}" data-uid="${c.applicantUid || ""}" data-service-id="${c.serviceId}">
                   ✅ Aprobar Titularidad
@@ -347,9 +349,19 @@ const { translations } = Astro.props;
             const uid = btn.getAttribute("data-uid")!;
             const serviceId = btn.getAttribute("data-service-id") || "";
             btn.setAttribute("disabled", "true");
-            await updateClaimStatus(db, claimId, "approved", uid, serviceId);
-            alert("✅ Reclamación aprobada. La titularidad y el rol Manager han sido verificados.");
-            location.reload();
+            try {
+              await updateClaimStatus(db, claimId, "approved", {
+                applicantUid: uid,
+                serviceId,
+                reviewerUid: authStore.getState().user?.uid ?? "",
+              });
+              alert("✅ Reclamación aprobada. La titularidad y el rol Manager han sido verificados.");
+              location.reload();
+            } catch (error) {
+              reportClientFailure("manager/approve-claim", error, { level: "SECURITY", category: "DATABASE" });
+              alert(error instanceof Error ? error.message : "No se pudo aprobar la reclamación.");
+              btn.removeAttribute("disabled");
+            }
           });
         });
 
@@ -357,9 +369,15 @@ const { translations } = Astro.props;
           btn.addEventListener("click", async () => {
             const claimId = btn.getAttribute("data-claim-id")!;
             btn.setAttribute("disabled", "true");
-            await updateClaimStatus(db, claimId, "rejected");
-            alert("❌ Reclamación rechazada.");
-            location.reload();
+            try {
+              await updateClaimStatus(db, claimId, "rejected", { reviewerUid: authStore.getState().user?.uid ?? "" });
+              alert("❌ Reclamación rechazada.");
+              location.reload();
+            } catch (error) {
+              reportClientFailure("manager/reject-claim", error, { category: "DATABASE" });
+              alert("❌ No se pudo rechazar la reclamación.");
+              btn.removeAttribute("disabled");
+            }
           });
         });
       }
@@ -471,21 +489,33 @@ const { translations } = Astro.props;
     }
 
     try {
-      await saveServiceOverride(db, slug, user.uid, {
-        phone: phoneInput.value.trim(),
-        whatsapp: whatsappInput.value.trim(),
-        website: websiteInput.value.trim(),
-        schedule: scheduleInput.value.trim(),
-        status: statusSelect.value as any,
-        fullDescription: {
-          es: descTextarea.value.trim(),
+      // INV-01: el manager solo edita campos de negocio; el sello oficial es competencia del admin.
+      await saveServiceOverride(
+        db,
+        slug,
+        { uid: user.uid, role: authStore.getState().role === "admin" ? "admin" : "manager" },
+        {
+          phone: phoneInput.value.trim(),
+          whatsapp: whatsappInput.value.trim(),
+          website: websiteInput.value.trim(),
+          schedule: scheduleInput.value.trim(),
+          status: statusSelect.value as ServiceStatus,
+          fullDescription: {
+            es: descTextarea.value.trim(),
+          },
         },
-      });
+        { reason: "Actualización de datos desde el panel del titular" },
+      );
 
       alert("✅ Datos del negocio actualizados correctamente.");
       if (modal) modal.style.display = "none";
-    } catch {
-      alert("❌ Error al guardar las modificaciones.");
+    } catch (error) {
+      reportClientFailure("manager/save-override", error, { category: "DATABASE", resource: slugHidden.value });
+      alert(
+        error instanceof OverrideGuardError
+          ? `❌ ${error.message}`
+          : "❌ Error al guardar las modificaciones. Inténtalo de nuevo.",
+      );
     } finally {
       if (saveBtn) {
         saveBtn.disabled = false;

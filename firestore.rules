@@ -39,6 +39,30 @@ service cloud.firestore {
       return val is string && val.size() <= maxLen;
     }
 
+    /** Returns true if the requester is an administrator. */
+    function isAdmin() {
+      return isSignedIn() && getUserRole() == 'admin';
+    }
+
+    /** Returns true if the requester is a business manager. */
+    function isManager() {
+      return isSignedIn() && getUserRole() == 'manager';
+    }
+
+    /**
+     * Fields of `service_overrides/{slug}` that ONLY an administrator may write.
+     * Blocks a manager from self-issuing the official seal or stealing ownership
+     * (INV-01/INV-02 · GR-11/GR-13). Must stay in sync with VERIFICATION_FIELDS
+     * in `src/lib/serviceOverrides.ts`.
+     */
+    function verificationFields() {
+      return [
+        'verified', 'verificationStatus', 'trustLevel', 'confidenceScore', 'lastVerifiedAt',
+        'verificationMethod', 'documentUrl', 'verifiedByUid', 'verifiedByRole',
+        'isClaimed', 'claimedByUid', 'claimedAt'
+      ];
+    }
+
     // -------------------------------------------------------------------------
     // Users collection
     // -------------------------------------------------------------------------
@@ -97,31 +121,48 @@ service cloud.firestore {
     // -------------------------------------------------------------------------
     match /service_overrides/{slug} {
       allow read: if true;
-      allow create, update: if isSignedIn() && (
-        getUserRole() == 'admin' ||
-        (getUserRole() == 'manager' && (
-          // Manager can create if setting ownerUid to themselves, or update if already owner
-          (!('ownerUid' in resource.data) && request.resource.data.ownerUid == request.auth.uid) ||
-          resource.data.ownerUid == request.auth.uid
-        ))
+
+      // Create: an admin may write anything (verification, ownership transfer).
+      // A manager may only create an override owned by themselves and WITHOUT any
+      // verification/titularity field (no self-issued seal).
+      allow create: if isAdmin() || (
+        isManager()
+        && request.resource.data.ownerUid == request.auth.uid
+        && !request.resource.data.keys().hasAny(verificationFields())
       );
-      allow delete: if isSignedIn() && getUserRole() == 'admin';
+
+      // Update: a manager can only edit business fields of their own ficha.
+      // Ownership can never move and no verification field may be touched
+      // (the admin keeps the monopoly of the official seal).
+      allow update: if isAdmin() || (
+        isManager()
+        && resource.data.ownerUid == request.auth.uid
+        && request.resource.data.ownerUid == request.auth.uid
+        && !request.resource.data.diff(resource.data).affectedKeys().hasAny(verificationFields())
+        && !request.resource.data.diff(resource.data).affectedKeys().hasAny(['ownerUid'])
+      );
+
+      allow delete: if isAdmin();
     }
 
     // -------------------------------------------------------------------------
     // Service Claims collection (Solicitudes de reclamación)
     // -------------------------------------------------------------------------
     match /service_claims/{claimId} {
-      // User can create a claim, read their own claims; Admin can read and update all claims
+      // One claim per (business, user): the client uses a deterministic id
+      // (`claim-{serviceId}-{uid}`) and rules reject any overwrite, so a double
+      // click or a retry can never create a duplicate (INV-04).
       allow create: if isSignedIn()
         && request.resource.data.applicantUid == request.auth.uid
+        && request.resource.data.status == 'pending'
         && withinLength(request.resource.data.applicantEmail, 254)
-        && withinLength(request.resource.data.verificationProof, 2000);
+        && withinLength(request.resource.data.verificationProof, 2000)
+        && !exists(/databases/$(database)/documents/service_claims/$(claimId));
       allow read: if isSignedIn() && (
         resource.data.applicantUid == request.auth.uid ||
-        getUserRole() == 'admin'
+        isAdmin()
       );
-      allow update, delete: if isSignedIn() && getUserRole() == 'admin';
+      allow update, delete: if isAdmin();
     }
 
     // -------------------------------------------------------------------------

@@ -12,12 +12,24 @@
  */
 import { describe, it, expect, vi, beforeEach } from "vitest";
 
-const fb = vi.hoisted(() => ({
-  setDoc: vi.fn(),
-  updateDoc: vi.fn(),
-  getDocs: vi.fn(),
-  getDoc: vi.fn().mockResolvedValue({ exists: () => true, data: () => ({ role: "user", businesses: [] }) }),
-}));
+const fb = vi.hoisted(() => {
+  const batch = { update: vi.fn(), set: vi.fn(), commit: vi.fn().mockResolvedValue(undefined) };
+  return {
+    setDoc: vi.fn(),
+    updateDoc: vi.fn(),
+    getDocs: vi.fn(),
+    getDoc: vi.fn(),
+    batch,
+    writeBatch: vi.fn(() => batch),
+    arrayUnion: vi.fn((...items: unknown[]) => ({ arrayUnion: items })),
+  };
+});
+
+/** Capa de overrides: se conserva el generador real y se aísla solo la lectura fresca. */
+const overrides = vi.hoisted(() => ({ getServiceOverrideFresh: vi.fn().mockResolvedValue(null) }));
+
+/** Telemetría: mockeada para poder afirmar que ningún fallo queda silencioso (GR-15). */
+const telemetry = vi.hoisted(() => ({ reportClientFailure: vi.fn() }));
 
 vi.mock("firebase/firestore", () => ({
   collection: (_db: unknown, name: string) => ({ kind: "collection", name }),
@@ -26,17 +38,32 @@ vi.mock("firebase/firestore", () => ({
   where: (...args: unknown[]) => args,
   orderBy: (...args: unknown[]) => args,
   serverTimestamp: () => ({ serverTimestamp: true }),
+  arrayUnion: fb.arrayUnion,
+  writeBatch: fb.writeBatch,
   setDoc: fb.setDoc,
   updateDoc: fb.updateDoc,
   getDocs: fb.getDocs,
   getDoc: fb.getDoc,
 }));
 
+vi.mock("../../src/lib/clientTelemetry", () => ({
+  reportClientFailure: telemetry.reportClientFailure,
+  resetTelemetryDedupeWindow: vi.fn(),
+  TELEMETRY_DEDUPE_WINDOW_MS: 300000,
+}));
+
+vi.mock("../../src/lib/serviceOverrides", async (importOriginal) => {
+  const actual = await importOriginal<typeof import("../../src/lib/serviceOverrides")>();
+  return { ...actual, getServiceOverrideFresh: overrides.getServiceOverrideFresh };
+});
+
 import {
   createServiceClaim,
+  buildClaimId,
   getUserClaims,
   getAllClaims,
   updateClaimStatus,
+  ServiceRequestError,
   createServiceSubmission,
   getUserSubmissions,
   getAllSubmissions,
@@ -52,6 +79,16 @@ import {
 import type { Firestore } from "firebase/firestore";
 
 const fakeDb = {} as Firestore;
+
+/** Snapshot no existente por defecto: cada test decide qué documentos existen. */
+function missingDoc() {
+  return { exists: () => false, data: () => undefined };
+}
+
+/** Snapshot existente con datos. */
+function existingDoc(data: Record<string, unknown>) {
+  return { exists: () => true, data: () => data };
+}
 
 function snapOf(rows: Array<{ id: string; data: Record<string, unknown> }>) {
   return { docs: rows.map((r) => ({ id: r.id, data: () => r.data })) };
@@ -72,20 +109,54 @@ beforeEach(() => {
   fb.setDoc.mockReset();
   fb.updateDoc.mockReset();
   fb.getDocs.mockReset();
+  fb.getDoc.mockReset();
+  fb.getDoc.mockResolvedValue(missingDoc());
+  fb.batch.update.mockReset();
+  fb.batch.set.mockReset();
+  fb.batch.commit.mockReset();
+  fb.batch.commit.mockResolvedValue(undefined);
+  overrides.getServiceOverrideFresh.mockReset();
+  overrides.getServiceOverrideFresh.mockResolvedValue(null);
+  telemetry.reportClientFailure.mockReset();
 });
 
 describe("ServiceActions · Claims (reclamación de negocio)", () => {
-  it("createServiceClaim persiste con estado 'pending' y serverTimestamp", async () => {
-    await createServiceClaim(fakeDb, claimFixture);
+  it("createServiceClaim persiste como 'pending' con serverTimestamp y devuelve el ID", async () => {
+    const claimId = await createServiceClaim(fakeDb, claimFixture);
 
+    expect(claimId).toBe("claim-1");
     expect(fb.setDoc).toHaveBeenCalledTimes(1);
     const [ref, payload] = fb.setDoc.mock.calls[0];
     expect(ref).toMatchObject({ kind: "doc", name: "service_claims", id: "claim-1" });
     expect(payload).toMatchObject({
       ...claimFixture,
+      id: "claim-1",
       status: "pending",
       createdAt: { serverTimestamp: true },
     });
+  });
+
+  it("createServiceClaim deriva un ID determinista cuando el cliente no lo envía (INV-04)", async () => {
+    const claimId = await createServiceClaim(fakeDb, { ...claimFixture, id: "" });
+
+    expect(claimId).toBe(buildClaimId(claimFixture.serviceId, claimFixture.applicantUid));
+    expect(claimId).toBe(`claim-${claimFixture.serviceId}-${claimFixture.applicantUid}`);
+    expect(fb.setDoc.mock.calls[0][0].id).toBe(claimId);
+  });
+
+  it("createServiceClaim bloquea reclamaciones duplicadas sin volver a escribir (INV-04)", async () => {
+    fb.getDoc.mockResolvedValue(existingDoc({ id: "claim-1", status: "pending" }));
+
+    await expect(createServiceClaim(fakeDb, claimFixture)).rejects.toThrowError(ServiceRequestError);
+    await expect(createServiceClaim(fakeDb, claimFixture)).rejects.toMatchObject({ code: "duplicate_claim" });
+    expect(fb.setDoc).not.toHaveBeenCalled();
+  });
+
+  it("createServiceClaim rechaza fichas ya gestionadas por otro titular (INV-04 · P0-3)", async () => {
+    overrides.getServiceOverrideFresh.mockResolvedValue({ ownerUid: "otro-uid", claimedByUid: "otro-uid" });
+
+    await expect(createServiceClaim(fakeDb, claimFixture)).rejects.toMatchObject({ code: "already_claimed" });
+    expect(fb.setDoc).not.toHaveBeenCalled();
   });
 
   it("getUserClaims ordena descendente priorizando toMillis sobre seconds", async () => {
@@ -102,10 +173,11 @@ describe("ServiceActions · Claims (reclamación de negocio)", () => {
     expect(claims.map((c) => c.id)).toEqual(["newest", "mid", "old", "orphan"]);
   });
 
-  it("getUserClaims devuelve [] ante fallo de Firestore (swallow silencioso)", async () => {
+  it("getUserClaims devuelve la copia local y reporta el fallo a telemetría (GR-15)", async () => {
     fb.getDocs.mockRejectedValue(new Error("offline"));
     const claims = await getUserClaims(fakeDb, "any");
     expect(claims).toEqual([]);
+    expect(telemetry.reportClientFailure).toHaveBeenCalled();
   });
 
   it("getAllClaims mapea los documentos respetando el orden remoto", async () => {
@@ -125,42 +197,142 @@ describe("ServiceActions · Claims (reclamación de negocio)", () => {
     expect(await getAllClaims(fakeDb)).toEqual([]);
   });
 
-  it("updateClaimStatus escribe status + updatedAt sin tocar users", async () => {
-    await updateClaimStatus(fakeDb, "claim-9", "rejected");
+  it("updateClaimStatus rechazado: solo toca la solicitud, con revisor y fecha (INV-03/INV-08)", async () => {
+    await updateClaimStatus(fakeDb, "claim-9", "rejected", { reviewerUid: "admin-1" });
+
     expect(fb.updateDoc).toHaveBeenCalledTimes(1);
     expect(fb.updateDoc.mock.calls[0][0]).toMatchObject({
       kind: "doc",
       name: "service_claims",
       id: "claim-9",
     });
-    expect(fb.updateDoc.mock.calls[0][1]).toEqual({
+    expect(fb.updateDoc.mock.calls[0][1]).toMatchObject({
       status: "rejected",
+      reviewedBy: "admin-1",
       updatedAt: { serverTimestamp: true },
     });
+    expect(typeof fb.updateDoc.mock.calls[0][1].reviewedAt).toBe("string");
+    expect(fb.batch.commit).not.toHaveBeenCalled();
   });
 
-  it("aprobación con targetUserUid escala al usuario a rol 'manager'", async () => {
-    await updateClaimStatus(fakeDb, "claim-1", "approved", "user-42");
-    expect(fb.updateDoc).toHaveBeenCalledTimes(2);
-    expect(fb.updateDoc.mock.calls[1][0]).toMatchObject({
-      kind: "doc",
-      name: "users",
-      id: "user-42",
+  it("updateClaimStatus nunca aprueba sin negocio asignado (INV-03 · P0-5)", async () => {
+    await expect(updateClaimStatus(fakeDb, "claim-1", "approved", { applicantUid: "user-42" })).rejects.toMatchObject({
+      code: "missing_business",
     });
-    expect(fb.updateDoc.mock.calls[1][1].role).toBe("manager");
+
+    expect(fb.updateDoc).not.toHaveBeenCalled();
+    expect(fb.batch.set).not.toHaveBeenCalled();
+    expect(fb.batch.commit).not.toHaveBeenCalled();
   });
 
-  it("aprobación con serviceId vincula el negocio al usuario mediante assignBusinessToUser", async () => {
-    await updateClaimStatus(fakeDb, "claim-1", "approved", "user-42", "svc-bar-1");
-    expect(fb.updateDoc).toHaveBeenCalled();
+  it("updateClaimStatus aprueba en un batch atómico: rol + negocio + titularidad sellada (INV-02/INV-03/INV-05)", async () => {
+    fb.getDoc.mockImplementation(async (ref: { name: string }) =>
+      ref.name === "service_claims"
+        ? existingDoc({
+            id: "claim-1",
+            applicantUid: "user-42",
+            serviceId: "svc-bar-1",
+            serviceSlug: "bar-sant-any",
+            verificationProof: "https://drive.example.com/iae036.pdf",
+            businessTaxId: "B07000000",
+            verificationMethod: "official_document",
+          })
+        : existingDoc({ role: "user", managedServices: [] }),
+    );
+
+    await updateClaimStatus(fakeDb, "claim-1", "approved", {
+      applicantUid: "user-42",
+      serviceId: "svc-bar-1",
+      reviewerUid: "admin-1",
+      notes: "CIF contrastado con el IAE 036",
+    });
+
+    // 1) La solicitud queda resuelta
+    const [claimRef, claimPayload] = fb.batch.update.mock.calls[0];
+    expect(claimRef).toMatchObject({ kind: "doc", name: "service_claims", id: "claim-1" });
+    expect(claimPayload).toMatchObject({
+      status: "approved",
+      reviewedBy: "admin-1",
+      decisionNotes: "CIF contrastado con el IAE 036",
+    });
+
+    // 2) El rol manager viaja SIEMPRE con el negocio asignado
+    const [userRef, userPayload, userOpts] = fb.batch.set.mock.calls[0];
+    expect(userRef).toMatchObject({ kind: "doc", name: "users", id: "user-42" });
+    expect(userPayload.role).toBe("manager");
+    expect(userPayload.managedServices).toEqual({ arrayUnion: ["svc-bar-1"] });
+    expect(userOpts).toEqual({ merge: true });
+
+    // 3) Titularidad al solicitante y sello firmado por el admin con evidencia real
+    const [overrideRef, overridePayload] = fb.batch.set.mock.calls[1];
+    expect(overrideRef).toMatchObject({ kind: "doc", name: "service_overrides", id: "bar-sant-any" });
+    expect(overridePayload).toMatchObject({
+      ownerUid: "user-42",
+      claimedByUid: "user-42",
+      isClaimed: true,
+      verified: true,
+      verificationStatus: "verified_official",
+      verificationMethod: "official_document",
+      documentUrl: "https://drive.example.com/iae036.pdf",
+      verifiedByUid: "admin-1",
+      verifiedByRole: "admin",
+    });
+    expect(overridePayload).not.toHaveProperty("ownerUid", "admin-1");
+
+    // 4) Un único commit atómico
+    expect(fb.batch.commit).toHaveBeenCalledTimes(1);
   });
 
-  it("updateClaimStatus tolera errores de Firestore de forma segura", async () => {
-    fb.updateDoc.mockRejectedValueOnce(new Error("network error"));
-    const warnSpy = vi.spyOn(console, "warn").mockImplementation(() => {});
-    await expect(updateClaimStatus(fakeDb, "claim-1", "approved")).resolves.not.toThrow();
-    expect(warnSpy).toHaveBeenCalled();
-    warnSpy.mockRestore();
+  it("updateClaimStatus conserva el rol admin del solicitante (nunca degrada privilegios)", async () => {
+    fb.getDoc.mockImplementation(async (ref: { name: string }) =>
+      ref.name === "service_claims"
+        ? existingDoc({ id: "claim-1", applicantUid: "admin-9", serviceId: "svc-bar-1", serviceSlug: "bar-sant-any" })
+        : existingDoc({ role: "admin" }),
+    );
+
+    await updateClaimStatus(fakeDb, "claim-1", "approved", {
+      applicantUid: "admin-9",
+      serviceId: "svc-bar-1",
+      reviewerUid: "admin-1",
+    });
+
+    expect(fb.batch.set.mock.calls[0][1].role).toBe("admin");
+  });
+
+  it("updateClaimStatus bloquea reasignar una ficha de otro titular (INV-02)", async () => {
+    fb.getDoc.mockImplementation(async (ref: { name: string }) =>
+      ref.name === "service_claims"
+        ? existingDoc({ id: "claim-1", applicantUid: "user-42", serviceId: "svc-bar-1", serviceSlug: "bar-sant-any" })
+        : existingDoc({ role: "user" }),
+    );
+    overrides.getServiceOverrideFresh.mockResolvedValue({ ownerUid: "titular-real", claimedByUid: "titular-real" });
+
+    await expect(
+      updateClaimStatus(fakeDb, "claim-1", "approved", {
+        applicantUid: "user-42",
+        serviceId: "svc-bar-1",
+        reviewerUid: "admin-1",
+      }),
+    ).rejects.toMatchObject({ code: "ownership_conflict" });
+    expect(fb.batch.commit).not.toHaveBeenCalled();
+  });
+
+  it("updateClaimStatus propaga y reporta el fallo del batch: nunca éxito falso (GR-15)", async () => {
+    fb.getDoc.mockImplementation(async (ref: { name: string }) =>
+      ref.name === "service_claims"
+        ? existingDoc({ id: "claim-1", applicantUid: "user-42", serviceId: "svc-bar-1", serviceSlug: "bar-sant-any" })
+        : existingDoc({ role: "user" }),
+    );
+    fb.batch.commit.mockRejectedValueOnce(new Error("network error"));
+
+    await expect(
+      updateClaimStatus(fakeDb, "claim-1", "approved", {
+        applicantUid: "user-42",
+        serviceId: "svc-bar-1",
+        reviewerUid: "admin-1",
+      }),
+    ).rejects.toThrow("network error");
+    expect(telemetry.reportClientFailure).toHaveBeenCalled();
   });
 });
 

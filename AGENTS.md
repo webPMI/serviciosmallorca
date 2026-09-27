@@ -39,7 +39,7 @@ Toda la documentación del proyecto está en `docs/`. Antes de trabajar en cualq
 
 Antes de tocar cualquier archivo del flujo de titularidad (`src/lib/serviceActions.ts`, `src/lib/serviceOverrides.ts`, `firestore.rules`, `Dashboard*.astro`, `service-detail-client.ts`, `nuevo.astro`, `ProfileForm.astro`), lee el bloque de invariantes **INV-01…INV-08** de [docs/AGENTS.md](docs/AGENTS.md) y el diagnóstico completo en [BUSINESS_OWNERSHIP_FLOW_REVIEW.md](docs/BUSINESS_OWNERSHIP_FLOW_REVIEW.md).
 
-**Prohibiciones vigentes mientras los P0 sigan abiertos:**
+**Prohibiciones vigentes (los P0 se remediaron en la Fase 1 del 2026-09-27; los invariantes siguen vigentes):**
 
 - ❌ Un `manager` **nunca** escribe campos de verificación (`verified`, `verificationStatus`, `trustLevel`, `confidenceScore`) en `service_overrides`.
 - ❌ **Nunca** se escribe `verified_official` / `confidenceScore` sin `verificationMethod` + `documentUrl` reales del titular.
