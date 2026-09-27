@@ -18,13 +18,31 @@ export interface DirectoryFilterState {
   intentActive?: boolean;
 }
 
+/**
+ * ID canónico del negocio de referencia del catálogo (inkEnzo), fijado en 1ª posición
+ * de los bloques "Servicios Destacados" (home y directorio).
+ */
+export const PINNED_FEATURED_SERVICE_ID = "ink-enzo-tattoo-mallorca";
+
+/**
+ * Fija `id` en la primera posición de la lista de destacados sin duplicarlo.
+ * Si el negocio no está en la lista (p.ej. no está `featured`), la lista se devuelve intacta.
+ */
+export function pinServiceFirst(list: ServiceItem[], id: string = PINNED_FEATURED_SERVICE_ID): ServiceItem[] {
+  const pinned = list.find((s) => s && (s.id === id || s.slug === id));
+  if (!pinned) return list;
+  const matchesPinned = (s: ServiceItem): boolean =>
+    Boolean(pinned.id && s && s.id === pinned.id) || Boolean(pinned.slug && s && s.slug === pinned.slug);
+  return [pinned, ...list.filter((s) => s && !matchesPinned(s))];
+}
+
 /** ¿El visitante tiene algún filtro activo en el directorio? */
 export function isDirectoryFiltered(state: DirectoryFilterState): boolean {
   return Boolean(
     (state.category && state.category.trim()) ||
-      (state.zone && state.zone.trim()) ||
-      (state.query && state.query.trim()) ||
-      state.intentActive,
+    (state.zone && state.zone.trim()) ||
+    (state.query && state.query.trim()) ||
+    state.intentActive,
   );
 }
 
@@ -48,7 +66,11 @@ export function shouldShowFeaturedServices(
  * si no alcanza el mínimo, se completa con los mejor valorados (`ranked`).
  * Nunca incluye negocios cerrados de forma permanente ni fichas duplicadas.
  */
-export function pickDirectoryFeatured(featured: ServiceItem[], ranked: ServiceItem[], limit: number = 8): ServiceItem[] {
+export function pickDirectoryFeatured(
+  featured: ServiceItem[],
+  ranked: ServiceItem[],
+  limit: number = 8,
+): ServiceItem[] {
   const selected: ServiceItem[] = [];
   const seen = new Set<string>();
 

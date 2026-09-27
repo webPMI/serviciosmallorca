@@ -10,6 +10,8 @@ import {
   isDirectoryFiltered,
   shouldShowFeaturedServices,
   pickDirectoryFeatured,
+  pinServiceFirst,
+  PINNED_FEATURED_SERVICE_ID,
   MIN_FEATURED_SERVICES,
 } from "../../src/lib/directoryFeatured";
 import type { ServiceItem } from "../../src/data/services";
@@ -81,5 +83,40 @@ describe("pickDirectoryFeatured · selección de fichas del bloque", () => {
 
   it("devuelve lista vacía sin fuentes (no rompe la página)", () => {
     expect(pickDirectoryFeatured([], [], 8)).toEqual([]);
+  });
+});
+
+describe("pinServiceFirst · fija inkEnzo en 1ª posición (home y directorio)", () => {
+  it("coloca el negocio fijado en primera posición sin duplicarlo", () => {
+    const list = [svc("a"), svc("ink-enzo-tattoo-mallorca"), svc("b")];
+    const pinned = pinServiceFirst(list);
+
+    expect(pinned[0].slug).toBe("ink-enzo-tattoo-mallorca");
+    expect(pinned).toHaveLength(3);
+    expect(pinned.filter((s) => s.slug === "ink-enzo-tattoo-mallorca")).toHaveLength(1);
+  });
+
+  it("empuja el resto de fichas manteniendo su orden relativo", () => {
+    const list = [svc("a"), svc("b"), svc("c"), svc("ink-enzo-tattoo-mallorca")];
+    const pinned = pinServiceFirst(list);
+
+    expect(pinned.map((s) => s.slug)).toEqual(["ink-enzo-tattoo-mallorca", "a", "b", "c"]);
+  });
+
+  it("acepta el id canónico y también el slug como clave", () => {
+    const byId = pinServiceFirst([
+      svc("x"),
+      { id: PINNED_FEATURED_SERVICE_ID, slug: "other", status: "open" } as ServiceItem,
+    ]);
+    expect(byId[0].id).toBe(PINNED_FEATURED_SERVICE_ID);
+
+    const bySlug = pinServiceFirst([svc("x"), svc(PINNED_FEATURED_SERVICE_ID)]);
+    expect(bySlug[0].slug).toBe(PINNED_FEATURED_SERVICE_ID);
+  });
+
+  it("devuelve la lista intacta si el negocio fijado no está presente", () => {
+    const list = [svc("a"), svc("b")];
+    expect(pinServiceFirst(list)).toEqual(list);
+    expect(pinServiceFirst([])).toEqual([]);
   });
 });

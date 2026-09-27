@@ -9,7 +9,7 @@ import { getActiveCategories, CATEGORIES } from "../../../data/categories";
 import { MALLORCA_ZONES } from "../../../data/zones";
 import { SERVICES, getFeaturedServices } from "../../../data/services";
 import { getTopRankedServices } from "../../../lib/topEngine";
-import { pickDirectoryFeatured, shouldShowFeaturedServices } from "../../../lib/directoryFeatured";
+import { pickDirectoryFeatured, shouldShowFeaturedServices, pinServiceFirst } from "../../../lib/directoryFeatured";
 import { getLocaleFromUrl, loadTranslations, getLangPrefix, type Locale } from "../../../i18n";
 
 export const prerender = false;
@@ -62,10 +62,12 @@ const initialFilteredServices = SERVICES.filter((service) => {
 
 // 🧠 Bloque "Servicios Destacados": se muestra SOLO si el visitante no llega filtrando
 // (sin ?categoria / ?zona / ?q). La misma regla se aplica en cliente al filtrar en vivo.
-const featuredForDirectory = pickDirectoryFeatured(
-  getFeaturedServices(),
-  getTopRankedServices(12, locale).map((ranked) => ranked.service),
-  8,
+const featuredForDirectory = pinServiceFirst(
+  pickDirectoryFeatured(
+    getFeaturedServices(),
+    getTopRankedServices(12, locale).map((ranked) => ranked.service),
+    8,
+  ),
 );
 const showFeaturedServices = shouldShowFeaturedServices(
   { category: selectedCategory, zone: selectedZone, query: searchQuery },
@@ -425,7 +427,13 @@ const showFeaturedServices = shouldShowFeaturedServices(
 
     function isBusinessCurrentlyOpen(scheduleText, status) {
       if (status === "permanently_closed" || status === "seasonal_closure") return false;
-      if (!scheduleText || typeof scheduleText !== "string" || scheduleText.trim() === "" || scheduleText === "[object Object]") return true; // Default fallback to active
+      if (
+        !scheduleText ||
+        typeof scheduleText !== "string" ||
+        scheduleText.trim() === "" ||
+        scheduleText === "[object Object]"
+      )
+        return true; // Default fallback to active
 
       const raw = scheduleText.toLowerCase();
       if (raw.includes("24 horas") || raw.includes("24h") || raw.includes("24/7")) return true;

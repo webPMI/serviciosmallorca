@@ -15,6 +15,7 @@ import { getFeaturedServices, SERVICES } from "../../data/services";
 import { getFeaturedPosts } from "../../data/posts";
 import { getLocaleFromUrl, loadTranslations, getLangPrefix, type Locale } from "../../i18n";
 import { generateHomepageJsonLd } from "../../lib/jsonLdGenerator";
+import { pinServiceFirst } from "../../lib/directoryFeatured";
 
 export const prerender = false;
 
@@ -54,12 +55,7 @@ const featuredServices = getFeaturedServices();
 const featuredPosts = getFeaturedPosts();
 
 // Showcase del home: inkEnzo (negocio de referencia del catálogo, GR-11) fijado en 1ª posición.
-const PINNED_HOME_SERVICE_ID = "ink-enzo-tattoo-mallorca";
-const pinnedHomeService = featuredServices.find((s) => s.id === PINNED_HOME_SERVICE_ID);
-const homeShowcaseServices = [
-  ...(pinnedHomeService ? [pinnedHomeService] : []),
-  ...featuredServices.filter((s) => s.id !== PINNED_HOME_SERVICE_ID),
-].slice(0, 8);
+const homeShowcaseServices = pinServiceFirst(featuredServices).slice(0, 8);
 
 const { totalServices, totalReviews, categoryCountMap } = getCatalogStats();
 const totalCategories = activeCategories.length;
