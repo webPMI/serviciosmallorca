@@ -16,7 +16,7 @@ const i18nTerms = {
     pageSubtitle:
       "Condiciones de uso, normas de la comunidad y directrices para usuarios y titulares de negocios en Mallorca.",
     badgeRegulation: "Marco Legal LSSI-CE & RGPD",
-    badgeUpdated: "Actualizado: Agosto 2026",
+    badgeUpdated: "Actualizado: Septiembre 2026 (v2026.2)",
     positiveCharterTitle: "Carta de Convivencia y Promedio Positivo",
     positiveCharterDesc:
       "Servicios Mallorca nace como un puente positivo entre residentes, visitantes y el comercio local. Promovemos un diálogo constructivo, el respeto mutuo y la valoración del esfuerzo diario de quienes trabajan en la isla.",
@@ -242,6 +242,34 @@ const t = i18nTerms[locale] || i18nTerms.es;
             <h2>{translations["legal.sections.modifications"] || "Modificaciones del Servicio"}</h2>
           </div>
           <p>{translations["legal.terms.modificationsContent"]}</p>
+        </section>
+
+        <!-- Contratación Electrónica, Pasarela de Pagos y Renuncia al Desistimiento (LGDCU Art. 103) -->
+        <section class="card card-glass legal-card">
+          <div class="section-icon-header">
+            <span class="sec-icon">💳</span>
+            <h2>Contratación Electrónica, Pagos y Derecho de Desistimiento</h2>
+          </div>
+          <p>
+            Las aportaciones populares comunitarias ("Community Boosts") y las pujas oficiales de posicionamiento para negocios ("Owner Bids") constituyen servicios de visibilidad y posicionamiento web de ejecución inmediata. De conformidad con el artículo 103 del Real Decreto Legislativo 1/2007 (Ley General para la Defensa de los Consumidores y Usuarios) y la Directiva 2011/83/UE, el usuario consiente expresamente el inicio de la prestación del servicio inmediatamente tras el pago y reconoce perder el derecho de desistimiento de 14 días una vez activado el servicio digital en la plataforma.
+          </p>
+          <p>
+            Todos los importes se facturan legalmente con desglose de IVA (21% en territorio español) y se emite la correspondiente factura oficial disponible en el perfil del usuario.
+          </p>
+        </section>
+
+        <!-- Versionado de Normas y Obligación de Re-Aceptación tras Actualizaciones -->
+        <section class="card card-glass legal-card">
+          <div class="section-icon-header">
+            <span class="sec-icon">📜</span>
+            <h2>Versionado de Normas y Obligación de Re-Aceptación</h2>
+          </div>
+          <p>
+            Servicios Mallorca mantiene un estricto protocolo de versionado de sus normas y políticas legales (versión actual vigente: <strong>v2026.2</strong>). Cada vez que se introduzcan modificaciones normativas, fiscales o de privacidad, los usuarios registrados serán notificados mediante una alerta interactiva en pantalla y deberán re-aceptar de forma expresa e informada las nuevas condiciones para continuar utilizando el servicio.
+          </p>
+          <p>
+            En caso de no conformidad con las nuevas condiciones, el usuario tiene derecho a revocar su consentimiento y cerrar su cuenta sin penalización alguna escribiendo a <a href="mailto:legal@serviciosmallorca.com" class="link-gold">legal@serviciosmallorca.com</a>.
+          </p>
         </section>
 
         <section class="card card-glass legal-card">

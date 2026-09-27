@@ -1473,6 +1473,61 @@ const verifiedBusinessesData = JSON.stringify(
     }
   }
 
+  /* Legal Consent & Consumer Waiver Box */
+  .checkout-legal-consent-box {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--color-surface-border, rgba(255, 255, 255, 0.1));
+    border-radius: var(--border-radius-md, 10px);
+    padding: 12px 14px;
+    margin: 8px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .checkout-legal-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    color: var(--color-text-light, #94a3b8);
+  }
+
+  .checkout-legal-checkbox {
+    margin-top: 2px;
+    width: 16px;
+    height: 16px;
+    accent-color: #ffd700;
+    flex-shrink: 0;
+    cursor: pointer;
+  }
+
+  .checkout-legal-text {
+    flex: 1;
+  }
+
+  .legal-gold-link {
+    color: #ffd700;
+    text-decoration: underline;
+    font-weight: 600;
+  }
+
+  .legal-gold-link:hover {
+    color: #fff;
+  }
+
+  .checkout-legal-alert {
+    background: rgba(239, 68, 68, 0.15);
+    border: 1px solid #ef4444;
+    color: #fca5a5;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 0.78rem;
+    line-height: 1.4;
+  }
+
   @media (max-width: 380px) {
     .quick-chips-row {
       grid-template-columns: repeat(3, 1fr);
@@ -2152,6 +2207,9 @@ const verifiedBusinessesData = JSON.stringify(
             if (currentUser?.uid) {
               const userTxKey = `sm_user_${currentUser.uid}_transactions`;
               const userTx = JSON.parse(localStorage.getItem(userTxKey) || "[]");
+
+              // Record legal consent with express waiver under RGPD and LGDCU
+              recordUserLegalConsent(currentUser.uid, "checkout", ["terms", "privacy", "digital_withdrawal"]);
               userTx.unshift(txRecord);
               localStorage.setItem(userTxKey, JSON.stringify(userTx));
             }

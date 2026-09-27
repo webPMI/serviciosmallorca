@@ -438,6 +438,38 @@ const AVATAR_PRESETS = ["👤", "🚀", "⚡", "👑", "🦊", "🦉", "🎨", "
         </div>
       </form>
     </div>
+
+    <!-- RGPD & Legal Compliance Management Card -->
+    <div class="card profile-form-card" style="margin-top: var(--space-lg, 1.5rem);">
+      <h2 class="panel-title">📜 {translations["profile.legalTitle"] || "Consentimientos y Cumplimiento Legal (RGPD)"}</h2>
+      <p class="panel-description">
+        {translations["profile.legalDesc"] || "Tus datos personales y consentimientos están protegidos conforme al Reglamento General de Protección de Datos (RGPD) y la LOPD-GDD."}
+      </p>
+
+      <div class="legal-profile-status-box">
+        <div class="legal-status-row">
+          <span class="legal-status-label">Versión de Términos Vigente:</span>
+          <span class="badge badge-primary" id="profile-legal-version">v2026.2</span>
+        </div>
+        <div class="legal-status-row">
+          <span class="legal-status-label">Estado de Aceptación:</span>
+          <strong class="legal-status-val text-success" id="profile-legal-status">✅ Al día con la normativa vigente</strong>
+        </div>
+        <div class="legal-status-row">
+          <span class="legal-status-label">Fecha del Consentimiento:</span>
+          <span class="legal-status-val" id="profile-legal-date">Reciente</span>
+        </div>
+      </div>
+
+      <div class="legal-profile-actions">
+        <button type="button" id="btn-download-consent-cert" class="btn btn-outline-secondary btn-sm">
+          📄 Descargar Certificado RGPD
+        </button>
+        <a href={`${prefix}privacy`} class="btn btn-secondary btn-sm" target="_blank" rel="noopener">
+          🛡️ Ejercer Derechos ARCO (Baja / Rectificación)
+        </a>
+      </div>
+    </div>
   </section>
 </div>
 
@@ -448,6 +480,12 @@ const AVATAR_PRESETS = ["👤", "🚀", "⚡", "👑", "🦊", "🦉", "🎨", "
   import { getUserProfile, updateUserProfile } from "../lib/userProfile";
   import { getUserClaims } from "../lib/serviceActions";
   import { toast } from "../lib/toast";
+  import {
+    CURRENT_LEGAL_VERSION,
+    getUserLegalConsent,
+    recordUserLegalConsent,
+    generateConsentAuditCertificate,
+  } from "../lib/legalComplianceEngine";
 
   // Elements
   const headerName = document.getElementById("profile-display-name-header");
@@ -1096,6 +1134,52 @@ const AVATAR_PRESETS = ["👤", "🚀", "⚡", "👑", "🦊", "🦉", "🎨", "
       }
     } catch (cErr) {
       console.warn("Could not load cancelled list:", cErr);
+    }
+
+    // 4. Populate Legal Consent & RGPD Compliance Status
+    try {
+      const legalVerEl = document.getElementById("profile-legal-version");
+      const legalStatusEl = document.getElementById("profile-legal-status");
+      const legalDateEl = document.getElementById("profile-legal-date");
+      const btnDownloadCert = document.getElementById("btn-download-consent-cert");
+
+      if (legalVerEl) legalVerEl.textContent = `v${CURRENT_LEGAL_VERSION}`;
+
+      let consent = currentUser?.uid ? getUserLegalConsent(currentUser.uid) : null;
+      if (!consent && currentUser?.uid) {
+        // Registrar consentimiento inicial si el usuario está autenticado y aún no tenía registro
+        consent = recordUserLegalConsent(currentUser.uid, "profile", ["terms", "privacy", "cookies"]);
+      }
+
+      if (consent) {
+        if (legalStatusEl) {
+          if (consent.version === CURRENT_LEGAL_VERSION) {
+            legalStatusEl.textContent = "✅ Al día con la normativa vigente";
+            legalStatusEl.className = "legal-status-val text-success";
+          } else {
+            legalStatusEl.textContent = `⚠️ Requiere actualización (Tu versión: v${consent.version})`;
+            legalStatusEl.className = "legal-status-val text-warning";
+          }
+        }
+        if (legalDateEl && consent.acceptedAt) {
+          legalDateEl.textContent = new Date(consent.acceptedAt).toLocaleString("es-ES");
+        }
+
+        btnDownloadCert?.addEventListener("click", () => {
+          const certText = generateConsentAuditCertificate(consent!);
+          const blob = new Blob([certText], { type: "text/plain;charset=utf-8" });
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement("a");
+          a.href = url;
+          a.download = `Certificado_RGPD_${currentUser?.uid || "usuario"}.txt`;
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          URL.revokeObjectURL(url);
+        });
+      }
+    } catch (legalErr) {
+      console.warn("Could not load legal consent:", legalErr);
     }
   } catch (err) {
     console.warn("Profile params handling warning:", err);
@@ -2040,5 +2124,48 @@ const AVATAR_PRESETS = ["👤", "🚀", "⚡", "👑", "🦊", "🦉", "🎨", "
   .cancelled-date {
     font-size: 0.75rem;
     color: var(--color-text-muted);
+  }
+
+  /* RGPD Legal Status Box */
+  .legal-profile-status-box {
+    background: var(--color-bg);
+    border: 1px solid var(--color-surface-border);
+    border-radius: var(--border-radius-md, 10px);
+    padding: var(--space-md, 1rem);
+    margin: var(--space-md, 1rem) 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .legal-status-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.88rem;
+  }
+
+  .legal-status-label {
+    color: var(--color-text-light);
+  }
+
+  .legal-status-val {
+    font-weight: 600;
+  }
+
+  .legal-profile-actions {
+    display: flex;
+    gap: var(--space-sm, 0.75rem);
+    flex-wrap: wrap;
+    margin-top: var(--space-sm, 0.75rem);
+  }
+
+  .text-success {
+    color: #4ade80 !important;
+  }
+
+  .text-warning {
+    color: #f59e0b !important;
   }
 </style>

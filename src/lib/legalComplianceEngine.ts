@@ -92,7 +92,7 @@ export function hasAcceptedCurrentLegalTerms(consent: LegalConsentRecord | null 
  * Comprueba en localStorage si el usuario ha aceptado la versión legal vigente.
  */
 export function hasUserAcceptedCurrentTerms(userId: string): boolean {
-  if (typeof window === "undefined" || !userId) return false;
+  if (typeof localStorage === "undefined" || !userId) return false;
   try {
     const raw = localStorage.getItem(`sm_legal_consent_${userId}`);
     if (!raw) return false;
@@ -122,7 +122,7 @@ export function recordUserLegalConsent(
     userAgent: extra?.userAgent || (typeof navigator !== "undefined" ? navigator.userAgent : undefined),
   };
 
-  if (typeof window !== "undefined") {
+  if (typeof localStorage !== "undefined") {
     try {
       localStorage.setItem(`sm_legal_consent_${record.userId}`, JSON.stringify(record));
       // También guardar la versión globalmente aceptada para comprobación rápida en sesión
@@ -139,7 +139,7 @@ export function recordUserLegalConsent(
  * Obtiene el registro de consentimiento del usuario.
  */
 export function getUserLegalConsent(userId: string): LegalConsentRecord | null {
-  if (typeof window === "undefined" || !userId) return null;
+  if (typeof localStorage === "undefined" || !userId) return null;
   try {
     const raw = localStorage.getItem(`sm_legal_consent_${userId}`);
     return raw ? JSON.parse(raw) : null;
@@ -209,7 +209,7 @@ export const DEFAULT_COOKIE_PREFERENCES: CookieConsentPreferences = {
 };
 
 export function getStoredCookiePreferences(): CookieConsentPreferences | null {
-  if (typeof window === "undefined") return null;
+  if (typeof localStorage === "undefined") return null;
   try {
     const raw = localStorage.getItem("sm_cookie_preferences_v2");
     return raw ? JSON.parse(raw) : null;
@@ -228,7 +228,7 @@ export function saveCookiePreferences(prefs: Partial<CookieConsentPreferences>):
     marketing: Boolean(prefs.marketing),
   };
 
-  if (typeof window !== "undefined") {
+  if (typeof localStorage !== "undefined") {
     try {
       localStorage.setItem("sm_cookie_preferences_v2", JSON.stringify(finalPrefs));
     } catch (_) {}
