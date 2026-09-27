@@ -151,3 +151,5 @@ Una vez publicado el negocio en el catálogo estático:
    - El titular verificado puede modificar horarios, teléfono, WhatsApp, web y descripción desde su panel privado.
    - Las modificaciones se guardan en `service_overrides/{slug}` en Firestore.
    - La **caché en memoria con TTL de 5 minutos** garantiza que las visitas públicas no consuman lecturas en Firebase, manteniendo el coste mensual en **0 €**.
+
+> ⚠️ **Estado real del código (P1-3, P2-1):** el motor de fusión `mergeServiceWithOverride()` (`src/lib/serviceOverrides.ts`) fusiona todos los campos, pero **hoy no tiene ningún consumidor en `src/`**: la ficha pública solo aplica 4 campos vía hidratación cliente, sin merge SSR. Todo lo demás que el titular guarda es invisible en producción. Ver [`BUSINESS_OWNERSHIP_FLOW_REVIEW.md`](BUSINESS_OWNERSHIP_FLOW_REVIEW.md) §5.2 y §5.3.

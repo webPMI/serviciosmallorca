@@ -78,14 +78,18 @@ Explora el directorio completo y las valoraciones de restaurantes Michelin, chá
         (typeof process !== "undefined" && process?.env?.NODE_ENV === "production") ||
         Boolean((import.meta as any).env?.PROD);
 
-      cookies.set("locale", firstSegment, {
-        path: "/",
-        maxAge: 365 * 24 * 60 * 60,
-        sameSite: "lax",
-        // In production (HTTPS) mark as secure
-        secure: isProd,
-        httpOnly: false, // needs to be readable client-side for i18n
-      });
+      const currentCookie = cookies.get("locale")?.value;
+      // Solo emitir Set-Cookie si el valor cambió, evitando invalidar la caché perimetral Edge CDN de Cloudflare
+      if (currentCookie !== firstSegment) {
+        cookies.set("locale", firstSegment, {
+          path: "/",
+          maxAge: 365 * 24 * 60 * 60,
+          sameSite: "lax",
+          // In production (HTTPS) mark as secure
+          secure: isProd,
+          httpOnly: false, // needs to be readable client-side for i18n
+        });
+      }
 
       const response = await next();
 
@@ -95,11 +99,17 @@ Explora el directorio completo y las valoraciones de restaurantes Michelin, chá
       }
       response.headers.set("Vary", "Accept, Accept-Language");
 
-      // ── Cache-Control: no-store for private/authenticated pages ─────────────
+      // ── Cache-Control: no-store para rutas privadas, Edge CDN para contenido público ──
       const isPrivate = PRIVATE_ROUTE_PATTERNS.some((re) => re.test(pathname));
       if (isPrivate) {
         response.headers.set("Cache-Control", "no-store, no-cache, must-revalidate, max-age=0");
         response.headers.set("Pragma", "no-cache");
+      } else if (request.method === "GET" || request.method === "HEAD") {
+        // Reducción drástica de CPU Worker: Cloudflare Edge CDN almacena en caché 24h con revalidación en background
+        response.headers.set(
+          "Cache-Control",
+          "public, max-age=300, s-maxage=86400, stale-while-revalidate=604800",
+        );
       }
 
       return response;
@@ -133,6 +143,12 @@ Explora el directorio completo y las valoraciones de restaurantes Michelin, chá
       response.headers.set(key, value);
     }
     response.headers.set("Vary", "Accept, Accept-Language");
+
+    if (!pathname.startsWith("/api/") && (request.method === "GET" || request.method === "HEAD")) {
+      if (!response.headers.has("Cache-Control")) {
+        response.headers.set("Cache-Control", "public, max-age=3600, s-maxage=86400, stale-while-revalidate=604800");
+      }
+    }
     return response;
   } catch (ssrError: any) {
     // 🛡️ Capturar y persistir error SSR crítico en Cloudflare D1

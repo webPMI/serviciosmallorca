@@ -110,10 +110,32 @@ export function calculateQualityBreakdown(service: ServiceItem, locale = "es"): 
   };
 }
 
+// ── Caché en memoria para evitar recálculos masivos de CPU (Optimización Cloudflare Workers) ──
+let lastServicesRef: typeof SERVICES | null = null;
+const topRankedCache = new Map<string, RankedService[]>();
+const weeklyTopsCache = new Map<string, RankedService[]>();
+const categoryTopsCache = new Map<string, RankedService[]>();
+const zoneTopsCache = new Map<string, RankedService[]>();
+
+function ensureFreshCache() {
+  if (lastServicesRef !== SERVICES) {
+    lastServicesRef = SERVICES;
+    topRankedCache.clear();
+    weeklyTopsCache.clear();
+    categoryTopsCache.clear();
+    zoneTopsCache.clear();
+  }
+}
+
 /**
  * Devuelve los negocios mejor valorados de una categoría específica con soporte de localización.
  */
 export function getTopServicesByCategory(category: string, limit = 5, locale = "es"): RankedService[] {
+  ensureFreshCache();
+  const cacheKey = `${category}:${limit}:${locale}`;
+  const cached = categoryTopsCache.get(cacheKey);
+  if (cached) return cached;
+
   const filtered = SERVICES.filter(
     (s) => (s.category === category || s.sectors?.includes(category)) && s.status !== "permanently_closed",
   );
@@ -148,7 +170,7 @@ export function getTopServicesByCategory(category: string, limit = 5, locale = "
     .sort((a, b) => b.score - a.score)
     .slice(0, limit);
 
-  return ranked.map((item, idx) => ({
+  const result = ranked.map((item, idx) => ({
     ...item,
     rank: idx + 1,
     badgeLabel:
@@ -168,12 +190,20 @@ export function getTopServicesByCategory(category: string, limit = 5, locale = "
               ? "🥉 Top #3"
               : `#${idx + 1}`,
   }));
+
+  categoryTopsCache.set(cacheKey, result);
+  return result;
 }
 
 /**
  * Filtra los mejores negocios de una zona geográfica específica.
  */
 export function getTopServicesByZone(zone: string, limit = 5, locale = "es"): RankedService[] {
+  ensureFreshCache();
+  const cacheKey = `${zone}:${limit}:${locale}`;
+  const cached = zoneTopsCache.get(cacheKey);
+  if (cached) return cached;
+
   const filtered = SERVICES.filter((s) => s.zone === zone && s.status !== "permanently_closed");
   const ranked = filtered
     .map((service) => {
@@ -188,23 +218,29 @@ export function getTopServicesByZone(zone: string, limit = 5, locale = "es"): Ra
     .sort((a, b) => b.score - a.score)
     .slice(0, limit);
 
-  return ranked.map((item, idx) => ({
+  const result = ranked.map((item, idx) => ({
     ...item,
     rank: idx + 1,
     badgeLabel: `Top #${idx + 1} ${zone}`,
   }));
+
+  zoneTopsCache.set(cacheKey, result);
+  return result;
 }
 
 /**
  * Devuelve el Top 3 curado de la semana con rotación determinista.
  */
 export function getWeeklyCuratedTops(date = new Date(), locale = "es"): RankedService[] {
-  const verifiedServices = SERVICES.filter((s) => s.verified && s.status !== "permanently_closed");
-  if (verifiedServices.length === 0) return [];
-
-  // Calcular número de semana del año para rotación
+  ensureFreshCache();
   const startOfYear = new Date(date.getFullYear(), 0, 1);
   const weekNumber = Math.ceil(((date.getTime() - startOfYear.getTime()) / 86400000 + startOfYear.getDay() + 1) / 7);
+  const cacheKey = `${date.getFullYear()}-w${weekNumber}:${locale}`;
+  const cached = weeklyTopsCache.get(cacheKey);
+  if (cached) return cached;
+
+  const verifiedServices = SERVICES.filter((s) => s.verified && s.status !== "permanently_closed");
+  if (verifiedServices.length === 0) return [];
 
   const startIndex = (weekNumber * 3) % verifiedServices.length;
   const weeklyServices: ServiceItem[] = [];
@@ -213,7 +249,7 @@ export function getWeeklyCuratedTops(date = new Date(), locale = "es"): RankedSe
     weeklyServices.push(verifiedServices[(startIndex + i) % verifiedServices.length]);
   }
 
-  return weeklyServices.map((service, idx) => {
+  const result = weeklyServices.map((service, idx) => {
     const breakdown = calculateQualityBreakdown(service, locale);
     return {
       service,
@@ -224,6 +260,9 @@ export function getWeeklyCuratedTops(date = new Date(), locale = "es"): RankedSe
       reasons: ["🏆 Destacado de la Semana", "✅ Información Contrastada"],
     };
   });
+
+  weeklyTopsCache.set(cacheKey, result);
+  return result;
 }
 
 /**
@@ -284,6 +323,11 @@ export function getComparisonList(params: ComparisonFilterParams = {}): RankedSe
  * Devuelve los mejores negocios globales de la isla de Mallorca.
  */
 export function getTopRankedServices(limit = 10, locale = "es"): RankedService[] {
+  ensureFreshCache();
+  const cacheKey = `${locale}:${limit}`;
+  const cached = topRankedCache.get(cacheKey);
+  if (cached) return cached;
+
   const ranked = SERVICES.filter((s) => s.status !== "permanently_closed")
     .map((service) => {
       const breakdown = calculateQualityBreakdown(service, locale);
@@ -297,11 +341,14 @@ export function getTopRankedServices(limit = 10, locale = "es"): RankedService[]
     .sort((a, b) => b.score - a.score)
     .slice(0, limit);
 
-  return ranked.map((item, idx) => ({
+  const result = ranked.map((item, idx) => ({
     ...item,
     rank: idx + 1,
     badgeLabel: idx === 0 ? "👑 Top #1 Mallorca" : `#${idx + 1}`,
   }));
+
+  topRankedCache.set(cacheKey, result);
+  return result;
 }
 
 /**

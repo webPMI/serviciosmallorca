@@ -4,7 +4,7 @@
 
 ---
 
-## 🥇 Las 16 Golden Rules Obligatorias (`docs/GOLDEN_RULES.md`)
+## 🥇 Las 17 Golden Rules Obligatorias (`docs/GOLDEN_RULES.md`)
 
 1. **GR-01 (CSS Variables):** Todo color o espaciado debe usar variables CSS (`var(--color-*)`, `var(--space-*)` de `src/styles/global.css`).
 2. **GR-02 (Responsive Design):** Mobile-first estricto (480px, 640px, 768px, 900px, 1024px).
@@ -22,6 +22,7 @@
 14. **GR-14 (Sincronización Pre-Flight):** Verificar el estado del repositorio antes de comenzar (`git fetch`).
 15. **GR-15 (Telemetría y D1 Logger):** Cero `catch` silenciosos. Registrar errores en Cloudflare D1 (`src/lib/d1Logger.ts`) con deduplicación anti-spam.
 16. **GR-16 (Registro de Versiones y Changelog):** Trazabilidad de builds y versiones mediante `src/data/changelog.ts`, timestamps ISO y `/actualizaciones`.
+17. **GR-17 (Aislamiento Total de Proyectos):** Prohibido mezclar, importar o configurar recursos, bases de datos o nombres de otros proyectos (p. ej. `inkenzo`). Este repositorio es 100% exclusivo de `serviciosmallorca`.
 
 ---
 
@@ -48,3 +49,21 @@ Antes de entregar cualquier tarea al usuario, DEBES ejecutar en consola:
 | [AUTH.md](docs/AUTH.md)                                               | 🔐 Firebase Auth, roles, AuthStore                        |
 | [I18N.md](docs/I18N.md)                                               | 🌍 Internacionalización (es, en, ca, de)                  |
 | [STYLING.md](docs/STYLING.md)                                         | 🎨 Temas, variables CSS, breakpoints                      |
+| [BUSINESS_OWNERSHIP_FLOW_REVIEW.md](docs/BUSINESS_OWNERSHIP_FLOW_REVIEW.md) | 🔄 ⚠️ **VINCULANTE**: flujo Reclamar / Crear / Editar, 5 P0 / 4 P1 / 8 P2 |
+
+---
+
+## 🔒 Bloque Vinculante: Flujo de Titularidad (P0 Activos)
+
+> Auditoría completa: [`docs/BUSINESS_OWNERSHIP_FLOW_REVIEW.md`](docs/BUSINESS_OWNERSHIP_FLOW_REVIEW.md) · Invariantes INV-01…INV-08: [`docs/AGENTS.md`](docs/AGENTS.md) § Bloque Vinculante.
+
+Antes de escribir en `src/lib/serviceActions.ts`, `src/lib/serviceOverrides.ts`, `firestore.rules` o los `Dashboard*.astro`, tienes prohibido:
+
+1. Escribir campos de verificación (`verified`, `verificationStatus`, `trustLevel`, `confidenceScore`) desde un rol distinto de `admin`, y solo con `verificationMethod` + `documentUrl` reales (GR-11/GR-13).
+2. Llamar `saveServiceOverride()` con el uid del admin para verificar una ficha: sobrescribe `ownerUid` y deja al titular legítimo bloqueado (P0-4).
+3. Elevar a `role: "manager"` sin `managedServices` asignado o con uid ficticio (`"admin"`) (P0-5).
+4. Aceptar un claim duplicado, o sobre una ficha con `claimedByUid` ya establecido (P0-3).
+5. Añadir campos al editor del titular sin render público (INV-07), dejar `catch` silenciosos (GR-15) o usar `as any` al persistir `status` (GR-03).
+
+Todo cambio en este flujo exige tests unitarios del invariante (GR-05) y sincronizar `docs/AUTH.md` + el informe de auditoría (GR-06). El Agente Maestro lo audita como **PASO 17** de su protocolo.
+

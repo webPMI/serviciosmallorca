@@ -4,7 +4,7 @@
 
 ---
 
-## 🥇 Las 15 Golden Rules Inmutables (`docs/GOLDEN_RULES.md`)
+## 🥇 Las 17 Golden Rules Inmutables (`docs/GOLDEN_RULES.md`)
 
 1. **GR-01 (CSS Variables):** Cero colores o espaciados hardcodeados. Usar siempre `var(--color-*)`, `var(--space-*)` de `src/styles/global.css`.
 2. **GR-02 (Responsive Design):** Mobile-first con breakpoints obligatorios: 480px, 640px, 768px, 900px, 1024px.
@@ -31,4 +31,23 @@
 Antes de dar por concluida cualquier tarea, el agente DEBE ejecutar y verificar:
 1. `npx tsc --noEmit` → **0 errores de tipos**.
 2. `npm test` → **100% tests pasando sin regresiones**.
-3. `npm run build` → **Build limpio y funcional**.
+3. `npm run build` → **Build limpio y funcional**.
+
+---
+
+## 🔒 Bloque Vinculante: Flujo de Titularidad (Reclamar / Crear / Editar)
+
+> Diagnóstico completo y evidencia `archivo:línea`: [`docs/BUSINESS_OWNERSHIP_FLOW_REVIEW.md`](docs/BUSINESS_OWNERSHIP_FLOW_REVIEW.md) · Invariantes INV-01…INV-08: `docs/AGENTS.md` § Bloque Vinculante.
+
+Los siguientes P0 están **abiertos** en el código. Ningún agente puede escribir código que los agrave, ni darlos por resueltos sin cambio real + test. Los IDs son **los mismos** que en `docs/AGENTS.md` § Bloque Vinculante (INV-01…INV-08):
+
+1. **INV-01** Solo `admin` escribe campos de verificación (`verified`, `verificationStatus`, `trustLevel`, `confidenceScore`), y siempre con `verificationMethod` + `documentUrl` reales del titular (P0-1/P0-2 · GR-11/GR-13).
+2. **INV-02** La titularidad (`ownerUid`) **nunca** queda en manos del admin: verificar una ficha no puede sobrescribir al manager legítimo (P0-4).
+3. **INV-03** Prohibido elevar a `role: "manager"` sin asignar la ficha en `managedServices`, o con uid ficticio (literal `"admin"`) (P0-5).
+4. **INV-04** Claim y submission requieren deduplicación: un claim por (`uid`, `serviceId`) y nada si la ficha ya tiene `claimedByUid` (P0-3).
+5. **INV-05** Claim + rol + override se confirman de forma atómica: sin efectos parciales (P0-5).
+6. **INV-06** Cero `as any` al persistir `status` y cero `catch` silenciosos en `serviceActions.ts` / `serviceOverrides.ts` (P1-4/P2-5 · GR-03/GR-15).
+7. **INV-07** Todo campo editable por el titular es visible en la ficha pública (merge SSR o hidratación completa) — hoy el merge multi-campo está desconectado (P1-3/P2-1).
+8. **INV-08** Toda escritura deja rastro (`authorRole`, `authorUid`, `fieldChanged`, `oldValue`, `newValue`) (P2-2).
+
+> Protocolo de proceso: todo cambio en este flujo exige tests del invariante (GR-05) y sincronizar `docs/AUTH.md` + el informe de auditoría (GR-06). El Agente Maestro lo audita como **PASO 17** y rechaza el merge si se viola un INV.

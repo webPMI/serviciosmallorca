@@ -88,36 +88,58 @@ export const SERVICES: ServiceItem[] = [
  */
 export const PUBLIC_SERVICES: ServiceItem[] = SERVICES.filter((s) => s.status !== "incomplete_admin_only");
 
+// ── Índices en memoria O(1) para eliminar latencia y consumo excesivo de CPU ──
+const SERVICE_BY_ID_OR_SLUG = new Map<string, ServiceItem>();
+for (const s of SERVICES) {
+  if (s.id) SERVICE_BY_ID_OR_SLUG.set(s.id, s);
+  if (s.slug && s.slug !== s.id) SERVICE_BY_ID_OR_SLUG.set(s.slug, s);
+}
+
+const FEATURED_SERVICES_CACHE: ServiceItem[] = SERVICES.filter((s) => s.featured && s.status === "open");
+
+const CATEGORY_SERVICES_CACHE = new Map<string, ServiceItem[]>();
+const ZONE_SERVICES_CACHE = new Map<string, ServiceItem[]>();
+
 /**
- * Busca un negocio por su ID o slug canónico.
+ * Busca un negocio por su ID o slug canónico en O(1).
  */
 export function getServiceById(id: string): ServiceItem | undefined {
   if (!id) return undefined;
-  return SERVICES.find((s) => s && (s.id === id || s.slug === id));
+  return SERVICE_BY_ID_OR_SLUG.get(id);
 }
 
 /**
- * Obtiene los servicios destacados y activos.
+ * Obtiene los servicios destacados y activos (precalculado).
  */
 export function getFeaturedServices(): ServiceItem[] {
-  return SERVICES.filter((s) => s.featured && s.status === "open");
+  return FEATURED_SERVICES_CACHE;
 }
 
 /**
- * Filtra servicios por categoría canónica.
+ * Filtra servicios por categoría canónica (memoizado).
  */
 export function getServicesByCategory(categoryId: string): ServiceItem[] {
-  return SERVICES.filter(
+  const cached = CATEGORY_SERVICES_CACHE.get(categoryId);
+  if (cached) return cached;
+
+  const result = SERVICES.filter(
     (s) =>
       (s.category === categoryId || s.secondaryCategories?.includes(categoryId)) && s.status !== "permanently_closed",
   );
+  CATEGORY_SERVICES_CACHE.set(categoryId, result);
+  return result;
 }
 
 /**
- * Filtra servicios por zona geográfica de Mallorca.
+ * Filtra servicios por zona geográfica de Mallorca (memoizado).
  */
 export function getServicesByZone(zoneId: string): ServiceItem[] {
-  return SERVICES.filter((s) => s.zone === zoneId && s.status !== "permanently_closed");
+  const cached = ZONE_SERVICES_CACHE.get(zoneId);
+  if (cached) return cached;
+
+  const result = SERVICES.filter((s) => s.zone === zoneId && s.status !== "permanently_closed");
+  ZONE_SERVICES_CACHE.set(zoneId, result);
+  return result;
 }
 
 export {

@@ -25,6 +25,7 @@ Toda la documentación del proyecto está en `docs/`. Antes de trabajar en cualq
 - [AGENT_CURATION_SOP.md](docs/AGENT_CURATION_SOP.md) — 🤖 SOP v2.0 para Agentes: Analista de Inteligencia de Negocios, 4 fases, 5 Pilares, Checklist de salida
 - [BUSINESS_DISCOVERY_SOP.md](docs/BUSINESS_DISCOVERY_SOP.md) — 🔎 Checklist Maestro: descubrimiento, minería y ranking por categoría/puntaje/alfabético (`npm run discover`, `npm run discover:mine`)
 - [DATA_HONESTY_BACKLOG.md](docs/DATA_HONESTY_BACKLOG.md) — 🛑 **P0-PRIORITARIO**: backlog de honestidad de datos multi-mapa (952 fichas con URLs de maps fabricadas) y plan de curación por fases (`node scripts/audit-data-honesty.mjs`)
+- [BUSINESS_OWNERSHIP_FLOW_REVIEW.md](docs/BUSINESS_OWNERSHIP_FLOW_REVIEW.md) — 🔄 ⚠️ **VINCULANTE (P0 activos)**: auditoría del flujo Reclamar / Crear / Editar negocio: mapa de vías, 5 P0 / 4 P1 / 8 P2 y plan de remediación en 4 fases
 - [OFFICIAL_SOURCES_AND_CITIZEN_INTELLIGENCE.md](docs/OFFICIAL_SOURCES_AND_CITIZEN_INTELLIGENCE.md) — 🏛️ Fuentes oficiales de Baleares, guías al ciudadano y estadísticas IBESTAT
 - [CITIZEN_HUB_UI_UX_SPEC.md](docs/CITIZEN_HUB_UI_UX_SPEC.md) — 📑 Especificación técnica y UI/UX de la sección de Ciudadanía, Guías y Trámites
 - [BUSINESS_INTELLIGENCE_AND_MARKET_TRENDS.md](docs/BUSINESS_INTELLIGENCE_AND_MARKET_TRENDS.md) — 📈 Pulso empresarial de Mallorca: aperturas, disoluciones y sectores en auge
@@ -33,6 +34,19 @@ Toda la documentación del proyecto está en `docs/`. Antes de trabajar en cualq
 - [GEO_AND_AI_POSITIONING_STRATEGY.md](docs/GEO_AND_AI_POSITIONING_STRATEGY.md) — 🧠 Estrategia Maestra GEO, indexación de agentes IA (ChatGPT, Perplexity, Claude), posicionamiento de pago y monetización
 - [PAYMENT_SECURITY_AND_RISK_SHIELD.md](docs/PAYMENT_SECURITY_AND_RISK_SHIELD.md) — 🛡️ Blindaje de pagos, idempotencia 360°, anti-duplicados, mitigación de riesgos de red, lag y hacking
 - [email-templates.md](docs/email-templates.md) — 📧 Plantillas de correo Firebase
+
+## ⚠️ Bloque Vinculante: Flujo Reclamar / Crear / Editar
+
+Antes de tocar cualquier archivo del flujo de titularidad (`src/lib/serviceActions.ts`, `src/lib/serviceOverrides.ts`, `firestore.rules`, `Dashboard*.astro`, `service-detail-client.ts`, `nuevo.astro`, `ProfileForm.astro`), lee el bloque de invariantes **INV-01…INV-08** de [docs/AGENTS.md](docs/AGENTS.md) y el diagnóstico completo en [BUSINESS_OWNERSHIP_FLOW_REVIEW.md](docs/BUSINESS_OWNERSHIP_FLOW_REVIEW.md).
+
+**Prohibiciones vigentes mientras los P0 sigan abiertos:**
+
+- ❌ Un `manager` **nunca** escribe campos de verificación (`verified`, `verificationStatus`, `trustLevel`, `confidenceScore`) en `service_overrides`.
+- ❌ **Nunca** se escribe `verified_official` / `confidenceScore` sin `verificationMethod` + `documentUrl` reales del titular.
+- ❌ **Nunca** se llama `saveServiceOverride()` con el uid del admin para verificar una ficha (sobrescribe `ownerUid` y bloquea al titular legítimo).
+- ❌ **Nunca** se asigna `role: "manager"` sin `managedServices` con la ficha reclamada (y jamás con uid ficticio como el literal `"admin"`).
+- ❌ **Nunca** se acepta un claim duplicado ni una ficha que ya tiene `claimedByUid`.
+- ❌ **Nunca** se usa `catch` silencioso en la lectura/escritura de overrides (GR-15).
 
 ## Golden Rules (Resumen)
 

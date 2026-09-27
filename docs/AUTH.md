@@ -32,6 +32,8 @@
 
 ## 3. Flujos de Operaciones de Negocio (B2B)
 
+> ⚠️ **Estado real del código (no ideal):** este flujo tiene **5 hallazgos P0 abiertos** — falsificación del sello de verificación por el propio manager, sello oficial sin `verificationMethod`/`documentUrl`, ausencia de deduplicación de claims, secuestro de `ownerUid` por la verificación del admin (bloquea al titular legítimo) y escalada de rol a `manager` sin negocio asignado. Diagnóstico con evidencia `archivo:línea` y plan de remediación: [`BUSINESS_OWNERSHIP_FLOW_REVIEW.md`](BUSINESS_OWNERSHIP_FLOW_REVIEW.md). Invariantes obligatorios: [`AGENTS.md`](AGENTS.md) § Bloque Vinculante.
+
 ### 3.1 Reclamación de Ficha Existente (_Service Claim_)
 
 1. El titular accede a su negocio en `/servicios/[slug]`.

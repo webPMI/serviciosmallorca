@@ -234,7 +234,7 @@ export async function logToD1(
     return { success: true, logId };
   }
 
-  try {
+  const performInsert = async () => {
     // Inicializar tabla de forma perezosa una sola vez
     if (!isTableInitialized) {
       try {
@@ -247,35 +247,54 @@ export async function logToD1(
       }
     }
 
-    const stmt = d1Binding.prepare(`
-      INSERT INTO server_error_logs (
-        id, timestamp, level, category, message, stack, url, method, status, client_ip, user_agent, user_id, metadata
-      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-    `);
+    try {
+      const stmt = d1Binding.prepare(`
+        INSERT INTO server_error_logs (
+          id, timestamp, level, category, message, stack, url, method, status, client_ip, user_agent, user_id, metadata
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+      `);
 
-    await stmt
-      .bind(
-        logId,
-        timestamp,
-        entry.level,
-        entry.category,
-        entry.message.slice(0, 2000),
-        entry.stack ? entry.stack.slice(0, 4000) : null,
-        entry.url ? entry.url.slice(0, 500) : null,
-        entry.method || "GET",
-        entry.status || 500,
-        entry.clientIp || "anonymized",
-        entry.userAgent ? entry.userAgent.slice(0, 300) : null,
-        entry.userId || null,
-        metaStr,
-      )
-      .run();
+      await stmt
+        .bind(
+          logId,
+          timestamp,
+          entry.level,
+          entry.category,
+          entry.message.slice(0, 2000),
+          entry.stack ? entry.stack.slice(0, 4000) : null,
+          entry.url ? entry.url.slice(0, 500) : null,
+          entry.method || "GET",
+          entry.status || 500,
+          entry.clientIp || "anonymized",
+          entry.userAgent ? entry.userAgent.slice(0, 300) : null,
+          entry.userId || null,
+          metaStr,
+        )
+        .run();
 
-    return { success: true, logId };
-  } catch (err: any) {
-    console.error("[D1-Logger] Failed to write log to Cloudflare D1:", err);
-    return { success: false, logId, error: err.message };
+      return { success: true, logId };
+    } catch (err: any) {
+      console.error("[D1-Logger] Failed to write log to Cloudflare D1:", err);
+      return { success: false, logId, error: err.message };
+    }
+  };
+
+  // Si disponemos del ciclo de vida waitUntil de Cloudflare Workers, ejecutar en background sin penalizar tiempo CPU de respuesta
+  const waitUntilFn =
+    d1BindingOrContext?.locals?.runtime?.ctx?.waitUntil ||
+    d1BindingOrContext?.waitUntil ||
+    (typeof d1BindingOrContext?.context?.waitUntil === "function" ? d1BindingOrContext.context.waitUntil : null);
+
+  if (typeof waitUntilFn === "function") {
+    try {
+      waitUntilFn(performInsert());
+      return { success: true, logId };
+    } catch {
+      // Fallback a await si waitUntil no acepta la promesa
+    }
   }
+
+  return await performInsert();
 }
 
 /**

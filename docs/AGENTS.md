@@ -77,10 +77,55 @@ Yo, [NOMBRE DEL AGENTE], me comprometo a:
 [ ] PASO 14 - GR-14: ¿Sincronización continua con GitHub (Pre-flight Git Fetch)?
 [ ] PASO 15 - GR-15: ¿Telemetría y logs conectados a Cloudflare D1 sin catch silenciosos?
 [ ] PASO 16 - GR-16: ¿Versión, fecha y hora exacta registradas en changelog.ts y visibles en /actualizaciones?
+[ ] PASO 17 - INV-01..INV-08: Si el diff toca el flujo Reclamar/Crear/Editar negocio (serviceActions.ts, serviceOverrides.ts, firestore.rules, Dashboard*.astro, service-detail-client.ts), ¿respeta TODOS los invariantes del Bloque Vinculante?
 
-SOLO SI LOS 16 PASOS SON ✅ → MERGE / DEPLOY
+SOLO SI LOS 17 PASOS SON ✅ → MERGE / DEPLOY
 SI ALGÚN PASO ES ❌ → REJECT with specific feedback
 ```
+
+---
+
+## 🔒 Bloque Vinculante: Titularidad, Verificación y Overlay (P0 Activos)
+
+> **Origen:** auditoría del flujo Reclamar / Crear / Editar negocio → [`BUSINESS_OWNERSHIP_FLOW_REVIEW.md`](BUSINESS_OWNERSHIP_FLOW_REVIEW.md).
+> **Obligatorio para todos los agentes.** No duplica el informe: fija los **invariantes** que ningún cambio de código puede violar mientras los P0 sigan abiertos.
+
+### Invariantes de datos (INV)
+
+| ID           | Invariante                                                                                                             | Estado hoy    | Riesgo si se viola             |
+| ------------ | ---------------------------------------------------------------------------------------------------------------------- | ------------- | ------------------------------ |
+| **INV-01**   | Solo `admin` escribe campos de verificación (`verified`, `verificationStatus`, `trustLevel`, `confidenceScore`), y siempre con `verificationMethod` + `documentUrl` reales del titular | ❌ P0-1/P0-2 | Sello falso → GR-11/GR-13      |
+| **INV-02**   | La verificación administrativa **no** puede quedarse con `ownerUid`: la titularidad permanece en el manager legítimo    | ❌ P0-4       | Bloqueo permanente del titular |
+| **INV-03**   | `role: "manager"` exige `managedServices` con la ficha reclamada; nunca uid ficticio (`"admin"`, vacío o `undefined`)   | ❌ P0-5/P0-4  | Escalada de privilegios        |
+| **INV-04**   | Un claim es único por (`uid`, `serviceId`) y se rechaza si la ficha ya tiene `claimedByUid`                             | ❌ P0-3       | Duplicidad y apropiación       |
+| **INV-05**   | Claim + rol + override se confirman de forma atómica: sin efectos parciales ni estados intermedios                      | ❌ P0-5       | Inconsistencia en producción   |
+| **INV-06**   | Cero `catch` silenciosos y cero `as any` injustificados en `serviceActions.ts` / `serviceOverrides.ts`                  | ❌ P1-4/P2-5  | GR-03 y GR-15                  |
+| **INV-07**   | Todo campo editable por el titular es visible en la ficha pública (merge SSR o hidratación completa)                    | ❌ P1-3/P2-1  | Dato fantasma: se guarda y no se ve |
+| **INV-08**   | Toda escritura deja rastro (`authorRole`, `authorUid`, `fieldChanged`, `oldValue`, `newValue`)                          | ❌ P2-2       | Sin trazabilidad ni reversibilidad |
+
+### Impacto por agente
+
+| Agente                   | Obligación derivada                                                                                                                                    |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `@auth` (`src/lib/`, `firestore.rules`) | Propietario único de INV-01…INV-05. Ningún otro agente escribe en `serviceActions.ts`, `serviceOverrides.ts` ni `firestore.rules`; todo cambio requiere test que demuestre el invariante |
+| `@frontend`              | INV-07: si añades campos al editor del titular, **deben** renderizarse en la ficha pública; i18n en los 4 idiomas (GR-04)                              |
+| `@curation`              | Las fichas curadas no declaran verificación oficial ni `claimedByUid` (GR-11)                                                                            |
+| `@testing`               | INV-01…INV-08 deben tener cobertura en `tests/unit/` (hoy los tests cubren la escritura válida, no los escenarios de falsificación y escalada)          |
+| `@docs`                  | Mantener sincronizados `AUTH.md`, `DATA_VERIFICATION_PROCESS.md`/`DATA_VERIFICATION_PROTOCOL.md` y el informe de auditoría al cerrar cada P0              |
+| Agente Maestro           | PASO 17 de su protocolo de auditoría: si el diff toca este flujo y viola un INV → **REJECT**                                                             |
+
+### Checklist pre-merge específica (se suma a la auditoría GR-01…GR-16)
+
+```
+[ ] BO-1 ¿El diff toca serviceActions.ts / serviceOverrides.ts / firestore.rules / Dashboard*.astro / service-detail-client.ts / nuevo.astro?
+[ ] BO-2 Si sí, ¿qué invariante INV-xx respeta o mejora? (citarlo en el reporte de entrega)
+[ ] BO-3 ¿Algún campo de verificación escrito por un rol distinto de admin? → REJECT
+[ ] BO-4 ¿ownerUid tocado, o role: "manager" asignado sin negocio? → REJECT
+[ ] BO-5 ¿Nuevos campos de override sin render público (INV-07) o catch silencioso (INV-06)? → REJECT
+[ ] BO-6 ¿Tests del invariante (GR-05) y docs sincronizados (GR-06)?
+```
+
+> 📖 Diagnóstico completo, evidencia `archivo:línea` y plan de 4 fases: [`BUSINESS_OWNERSHIP_FLOW_REVIEW.md`](BUSINESS_OWNERSHIP_FLOW_REVIEW.md).
 
 ---
 

@@ -81,7 +81,9 @@ describe("🛡️ Middleware: cabeceras de seguridad HTTP (GR-13 / SECURITY.md �
 
   it("rutas públicas NO reciben no-store (permanecen cacheables)", async () => {
     const { response } = await run("/es/");
-    expect(response.headers.get("cache-control")).toBeNull();
+    const cc = response.headers.get("cache-control");
+    expect(cc).toContain("public");
+    expect(cc).not.toContain("no-store");
     expect(response.headers.get("pragma")).toBeNull();
   });
 

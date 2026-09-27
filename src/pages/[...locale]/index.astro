@@ -22,21 +22,40 @@ const locale = getLocaleFromUrl(Astro.url) as Locale;
 const translations = await loadTranslations(locale);
 const prefix = getLangPrefix(locale);
 
+// Stats & Category counts memoizados para 0 ms de CPU por request
+let cachedStats: {
+  totalServices: number;
+  totalReviews: number;
+  categoryCountMap: Record<string, number>;
+} | null = null;
+
+function getCatalogStats() {
+  if (cachedStats) return cachedStats;
+  const map: Record<string, number> = {};
+  let reviews = 0;
+  let activeCount = 0;
+  for (const s of SERVICES) {
+    if (s.status !== "permanently_closed") {
+      activeCount++;
+      map[s.category] = (map[s.category] || 0) + 1;
+    }
+    if (s.reviewCount) reviews += s.reviewCount;
+  }
+  cachedStats = {
+    totalServices: activeCount,
+    totalReviews: reviews,
+    categoryCountMap: map,
+  };
+  return cachedStats;
+}
+
 const activeCategories = getActiveCategories(SERVICES);
 const featuredServices = getFeaturedServices();
 const featuredPosts = getFeaturedPosts();
 
-// Stats for hero bar
-const totalServices = SERVICES.filter((s) => s.status !== "permanently_closed").length;
+const { totalServices, totalReviews, categoryCountMap } = getCatalogStats();
 const totalCategories = activeCategories.length;
-const totalReviews = SERVICES.reduce((acc, s) => acc + (s.reviewCount || 0), 0);
 const LANGUAGES = 4;
-
-// Category count map
-const categoryCountMap = activeCategories.reduce<Record<string, number>>((acc, cat) => {
-  acc[cat.id] = SERVICES.filter((s) => s.category === cat.id && s.status !== "permanently_closed").length;
-  return acc;
-}, {});
 
 const canonicalUrl = `https://serviciosmallorca.com${prefix}`;
 const homepageJsonLd = generateHomepageJsonLd(locale, canonicalUrl);
