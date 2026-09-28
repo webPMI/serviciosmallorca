@@ -381,14 +381,57 @@ describe("ServiceActions · Submissions (alta de negocio)", () => {
     expect(await getAllSubmissions(fakeDb)).toEqual([]);
   });
 
-  it("updateSubmissionStatus escribe en la colección correcta", async () => {
-    await updateSubmissionStatus(fakeDb, "sub-7", "approved");
+  it("updateSubmissionStatus con 'rejected' actualiza el documento de solicitud", async () => {
+    fb.getDoc.mockResolvedValueOnce(existingDoc({ ...submissionFixture, id: "sub-7" }));
+    await updateSubmissionStatus(fakeDb, "sub-7", "rejected");
     expect(fb.updateDoc.mock.calls[0][0]).toMatchObject({
       kind: "doc",
       name: "service_submissions",
       id: "sub-7",
     });
-    expect(fb.updateDoc.mock.calls[0][1].status).toBe("approved");
+    expect(fb.updateDoc.mock.calls[0][1].status).toBe("rejected");
+  });
+
+  it("updateSubmissionStatus con 'approved' ejecuta writeBatch atómico creando override y asignando rol manager", async () => {
+    fb.getDoc.mockResolvedValueOnce(
+      existingDoc({
+        ...submissionFixture,
+        id: "sub-8",
+        applicantUid: "user-creator",
+        name: "Restaurante Ses Salines",
+        phone: "+34 971 65 00 00",
+        website: "https://sessalines.com",
+        description: "Pescados frescos del sur de Mallorca",
+      }),
+    );
+
+    const result = await updateSubmissionStatus(fakeDb, "sub-8", "approved", "admin-1");
+    expect(result).toEqual({ slug: "restaurante-ses-salines" });
+
+    // Verifica batch updates y sets
+    expect(fb.batch.update).toHaveBeenCalledWith(
+      expect.objectContaining({ kind: "doc", name: "service_submissions", id: "sub-8" }),
+      expect.objectContaining({ status: "approved", approvedSlug: "restaurante-ses-salines" }),
+    );
+    expect(fb.batch.set).toHaveBeenCalledWith(
+      expect.objectContaining({ kind: "doc", name: "service_overrides", id: "restaurante-ses-salines" }),
+      expect.objectContaining({
+        ownerUid: "user-creator",
+        isClaimed: true,
+        claimedByUid: "user-creator",
+        status: "open",
+      }),
+      { merge: true },
+    );
+    expect(fb.batch.set).toHaveBeenCalledWith(
+      expect.objectContaining({ kind: "doc", name: "users", id: "user-creator" }),
+      expect.objectContaining({
+        role: "manager",
+        managedServices: expect.objectContaining({ arrayUnion: ["restaurante-ses-salines"] }),
+      }),
+      { merge: true },
+    );
+    expect(fb.batch.commit).toHaveBeenCalled();
   });
 });
 

@@ -57,7 +57,7 @@ export interface ReleaseLog {
 
 export const CURRENT_PLATFORM_VERSION = "0.10";
 export const PLATFORM_RELEASE_DATE = "2026-09-28";
-export const PLATFORM_LAST_BUILD_TIMESTAMP = "2026-09-28T14:00:00+02:00";
+export const PLATFORM_LAST_BUILD_TIMESTAMP = "2026-09-28T14:35:00+02:00";
 
 /**
  * Devuelve la fecha y hora formateada de la última actualización según el idioma.
@@ -173,6 +173,48 @@ export const CHANGELOG_RELEASES: ReleaseLog[] = [
           en: "CI/CD Guard",
           ca: "CI/CD Guard",
           de: "CI/CD Guard",
+        },
+      },
+      {
+        category: "FEATURE",
+        title: {
+          es: "Motor de validación compartido de titularidad y seguridad anti-XSS",
+          en: "Shared ownership validation engine and anti-XSS security",
+          ca: "Motor de validació compartit de titularitat i seguretat anti-XSS",
+          de: "Gemeinsame Validierungs-Engine für Inhaberschaft und Anti-XSS-Sicherheit",
+        },
+        description: {
+          es: "Módulo unificado src/lib/ownershipValidation.ts con validaciones estrictas de CIF/NIF, formato telefónico balear y español (+34), URLs HTTPS seguras, emails con RFC y sanitización completa contra XSS. Integrado en el alta de negocios, reclamación de fichas y consola del gestor.",
+          en: "Unified module src/lib/ownershipValidation.ts with strict CIF/NIF validation, Balearic and Spanish (+34) phone validation, secure HTTPS URLs, RFC emails, and complete anti-XSS sanitization. Integrated into business registration, claim forms, and manager console.",
+          ca: "Mòdul unificat src/lib/ownershipValidation.ts amb validacions estrictes de CIF/NIF, telèfons balears i espanyols, URLs HTTPS segures, emails i sanitització contra XSS. Integrat a alta de negocis, reclamació i consola gestor.",
+          de: "Einheitliches Modul src/lib/ownershipValidation.ts mit strenger Validierung für CIF/NIF, balearische/spanische Telefonnummern, sichere HTTPS-URLs, E-Mails und vollständiger XSS-Bereinigung. Integriert in Unternehmensneuanlage, Antragsformular und Manager-Konsole.",
+        },
+        badgeText: {
+          es: "Seguridad P1-4",
+          en: "Security P1-4",
+          ca: "Seguretat P1-4",
+          de: "Sicherheit P1-4",
+        },
+      },
+      {
+        category: "FIX",
+        title: {
+          es: "Ciclo de vida completo para la creación de negocios (Vía B)",
+          en: "Full lifecycle for business creation (Path B)",
+          ca: "Cicle de vida complet per a la creació de negocis (Via B)",
+          de: "Vollständiger Lebenszyklus für Unternehmensneuanlage (Pfad B)",
+        },
+        description: {
+          es: "La aprobación de propuestas de negocio (service_submissions) ahora genera automáticamente un slug canónico único, persiste de forma atómica en writeBatch el service_overrides correspondiente con el titular solicitante y otorga el rol de manager vinculando el negocio a managedServices.",
+          en: "Business proposal approval (service_submissions) now automatically creates a canonical slug, atomically persists the corresponding service_overrides document via writeBatch with the applicant owner, and elevates user to manager role linked to managedServices.",
+          ca: "L'aprovació de propostes de negoci ara genera automàticament un slug canònic, persisteix atòmicament el service_overrides amb el titular i atorga el rol de manager vinculant el negoci a managedServices.",
+          de: "Die Genehmigung von Unternehmenseinreichungen erstellt nun automatisch einen kanonischen Slug, persistiert das service_overrides-Dokument atomar per writeBatch und weist dem Antragsteller die Manager-Rolle mit verknüpftem Geschäft zu.",
+        },
+        badgeText: {
+          es: "Titularidad P1-1",
+          en: "Ownership P1-1",
+          ca: "Titularitat P1-1",
+          de: "Inhaberschaft P1-1",
         },
       },
     ],

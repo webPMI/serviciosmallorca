@@ -219,6 +219,8 @@ const translations = await loadTranslations(locale);
 <script>
   import { auth, db } from "../../../lib/firebase";
   import { createServiceSubmission } from "../../../lib/serviceActions";
+  import { validateSubmissionForm } from "../../../lib/ownershipValidation";
+  import { checkRateLimit } from "../../../lib/managerSecurityEngine";
 
   const form = document.getElementById("new-service-form") as HTMLFormElement;
   if (form) {
@@ -240,30 +242,41 @@ const translations = await loadTranslations(locale);
         return;
       }
 
+      // Control anti-bombardeo (INV-06 / GR-15)
+      const gate = checkRateLimit(`submission:${user.uid}`, 3, 15 * 60 * 1000);
+      if (!gate.allowed) {
+        if (alertError) {
+          alertError.textContent = "Has enviado varias solicitudes en poco tiempo. Por favor, espera unos minutos.";
+          alertError.style.display = "block";
+        }
+        return;
+      }
+
       if (submitBtn) submitBtn.disabled = true;
 
       try {
-        const name = (document.getElementById("srv-name") as HTMLInputElement).value;
-        const category = (document.getElementById("srv-category") as HTMLSelectElement).value;
-        const zone = (document.getElementById("srv-zone") as HTMLSelectElement).value;
-        const address = (document.getElementById("srv-address") as HTMLInputElement).value;
-        const phone = (document.getElementById("srv-phone") as HTMLInputElement).value;
-        const website = (document.getElementById("srv-website") as HTMLInputElement).value;
-        const description = (document.getElementById("srv-desc") as HTMLTextAreaElement).value;
+        const rawData = {
+          name: (document.getElementById("srv-name") as HTMLInputElement).value,
+          category: (document.getElementById("srv-category") as HTMLSelectElement).value,
+          zone: (document.getElementById("srv-zone") as HTMLSelectElement).value,
+          address: (document.getElementById("srv-address") as HTMLInputElement).value,
+          phone: (document.getElementById("srv-phone") as HTMLInputElement).value,
+          website: (document.getElementById("srv-website") as HTMLInputElement).value,
+          description: (document.getElementById("srv-desc") as HTMLTextAreaElement).value,
+        };
+
+        const validation = validateSubmissionForm(rawData);
+        if (!validation.valid || !validation.sanitized) {
+          throw new Error(validation.errors.join(" "));
+        }
 
         const subId = `sub-${Date.now()}-${user.uid.slice(0, 6)}`;
         await createServiceSubmission(db, {
           id: subId,
           applicantUid: user.uid,
-          applicantName: user.displayName || name,
+          applicantName: user.displayName || validation.sanitized.name,
           applicantEmail: user.email || "",
-          name,
-          category,
-          zone,
-          address,
-          phone,
-          website,
-          description,
+          ...validation.sanitized,
         });
 
         if (alertSuccess) alertSuccess.style.display = "block";

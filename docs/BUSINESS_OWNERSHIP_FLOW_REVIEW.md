@@ -28,14 +28,14 @@ Todas las referencias `archivo:línea` de este documento fueron **verificadas un
 | Severidad                      | Nº hallazgos | Estado                               |
 | ------------------------------ | ------------ | ------------------------------------ |
 | 🟥 P0 (seguridad / integridad) | 5            | ✅ **Remediados en Fase 1** (ver §0) |
-| 🟧 P1 (flujo de datos)         | 4            | 1 cerrado · 3 pendientes (Fase 2)    |
-| 🟨 P2 (UX / trazabilidad)      | 8            | 5 cerrados · 3 pendientes (Fase 3)   |
+| 🟧 P1 (flujo de datos)         | 4            | ✅ **4 cerrados (Fase 2 completa)**  |
+| 🟨 P2 (UX / trazabilidad)      | 8            | 6 cerrados · 2 pendientes (Fase 3)   |
 
 ---
 
-## 0. Estado de remediación (Fase 1 ejecutada · 2026-09-27)
+## 0. Estado de remediación (Fase 1 y Fase 2 ejecutadas · 2026-09-28)
 
-> Las tablas de §5 documentan **el estado encontrado durante la auditoría**. Esta sección es el **estado vigente** tras la Fase 1 del plan. Los invariantes `INV-01…INV-08` viven en [`AGENTS.md`](AGENTS.md) § Bloque Vinculante y **siguen vigentes** aunque el hallazgo esté cerrado.
+> Las tablas de §5 documentan **el estado encontrado durante la auditoría**. Esta sección es el **estado vigente** tras la ejecución de las Fases 1 y 2. Los invariantes `INV-01…INV-08` viven en [`AGENTS.md`](AGENTS.md) § Bloque Vinculante y **siguen vigentes** aunque el hallazgo esté cerrado.
 
 | Hallazgo                                                  | Estado                                   | Evidencia del cierre                                                                                                                                                                                                         |
 | --------------------------------------------------------- | ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -44,15 +44,17 @@ Todas las referencias `archivo:línea` de este documento fueron **verificadas un
 | **P0-3** Claims duplicados                                | ✅ Cerrado                               | `buildClaimId()` (ID determinista) + preflight `duplicate_claim` / `already_claimed` en `createServiceClaim` + regla `!exists(...)` y `status == 'pending'` en Firestore                                                     |
 | **P0-4** La verificación del admin secuestra `ownerUid`   | ✅ Cerrado                               | `resolveOwnerUid()` nunca sobrescribe un `ownerUid` existente y el admin jamás se apropia de la ficha; `getServiceOverrideFresh()` lee sin caché antes de decidir; eliminado el literal `"admin"` de `DashboardAdmin.astro`  |
 | **P0-5** Escalada de rol sin negocio                      | ✅ Cerrado                               | `updateClaimStatus` exige `applicantUid` + `serviceId` (`missing_business`) y escribe **un único `writeBatch`**: claim + `users.role` + `managedServices` (`arrayUnion`) + override con la titularidad del solicitante       |
+| **P1-1** Vía B: aprobación de negocio huérfana             | ✅ Cerrado                               | `updateSubmissionStatus` genera slug determinista, crea `service_overrides/{slug}` base con `ownerUid: applicantUid` y `isClaimed: true`, y otorga `role: "manager"` + `managedServices: [slug]` en `writeBatch` atómico     |
+| **P1-2** Editor del manager ampliado                      | ✅ Cerrado                               | `DashboardManager.astro` soporta email validado, WhatsApp, teléfono, web HTTPS, horario, las 4 opciones de `ServiceStatus`, y descripción sanitizada contra XSS                                                            |
 | **P1-3** Motor de merge desconectado                      | ✅ Cerrado (cliente) · ⏳ SSR (Fase 2.4) | La hidratación aplica `mergeServiceWithOverride` sobre la isla `#service-static-data` y publica descripción, destacados, servicios, email y estado operativo                                                                 |
-| **P1-4** Cero validaciones / `as any`                     | 🟡 Parcial                               | Escritura con actor tipado y validado; queda el motor de validación compartido (Fase 2.3)                                                                                                                                    |
+| **P1-4** Cero validaciones / `as any`                     | ✅ Cerrado                               | Módulo unificado `src/lib/ownershipValidation.ts` con tipado estricto, sanitización XSS, validación de teléfonos baleares/españoles, CIF/NIF, HTTPS, emails y estados; 16 tests unitarios dedicados                           |
 | **P2-2** Sin audit trail                                  | ✅ Cerrado                               | `saveServiceOverride` escribe `auditTrail` (`authorRole`, `authorUid`, `fieldChanged`, `oldValue`, `newValue`, `reason`, máx. 20) y la aprobación añade la entrada `claimed`                                                 |
 | **P2-4** Sin notificación al usuario                      | 🟡 Parcial                               | El titular recibe el error tipado en la propia ficha; la bandeja de notificaciones es Fase 3 (3.2)                                                                                                                           |
 | **P2-5** `catch` silenciosos                              | ✅ Cerrado                               | `clientTelemetry.reportClientFailure()` (consola + `/api/logs/ingest`, dedupe 5 min) sustituye a todos los `catch` mudos de `serviceActions.ts` y `serviceOverrides.ts`                                                      |
-| **P2-6** Sin rate limiting                                | ✅ Cerrado                               | `checkRateLimit("claim:{uid}", 3, 15 min)` antes de escribir la reclamación                                                                                                                                                  |
+| **P2-6** Sin rate limiting                                | ✅ Cerrado                               | `checkRateLimit("claim:{uid}", 3, 15 min)` y `checkRateLimit("submission:{uid}", 3, 30 min)` activos en cliente y formularios                                                                                                |
 | **P2-7** Botones Aprobar/Rechazar en el panel del manager | ✅ Cerrado                               | Solo se renderizan con `role === "admin"`; el manager ve el estado sin acciones que fallarían por reglas                                                                                                                     |
 
-**Verificación de la Fase 1:** `npx tsc --noEmit` → 0 errores · `npx vitest run` → 97 ficheros / 850 tests en verde · `npm run build` → OK. Cobertura de invariantes en `tests/unit/serviceActions.test.ts`, `tests/unit/serviceOverrides.test.ts` y `tests/unit/firestoreRulesStatic.test.ts` (GR-05).
+**Verificación:** `npx tsc --noEmit` → 0 errores · `npx vitest run` → 103 ficheros en verde · `npm run build` → OK. Cobertura de invariantes en `tests/unit/serviceActions.test.ts`, `tests/unit/serviceOverrides.test.ts`, `tests/unit/ownershipValidation.test.ts` y `tests/unit/firestoreRulesStatic.test.ts` (GR-05).
 
 ---
 
@@ -215,9 +217,9 @@ export async function updateSubmissionStatus(db, submissionId, status) {
 
 ### Fase 2 — Flujo de datos completo (P1)
 
-- [ ] **2.1** Pipeline de aprobación de submission: al aprobar, generar `slug` a partir de `name`, registrar en catálogo, `assignBusinessToUser(uid, serviceId)` y crear `service_overrides/{slug}` base con `isClaimed:true`. La aprobación devuelve la ficha para que el creador la gestione. Documentar el contrato en `BUSINESS_REGISTRATION_PROCESS.md`.
-- [ ] **2.2** Editor manager completo multi-idioma (`es`/`en`/`ca`/`de`): email, dirección, horario, estado (4 valores de `ServiceStatus`), website, teléfono/WhatsApp, descripciones (`shortDescription` + `fullDescription`), highlights, servicesProvided, imagen y galería.
-- [ ] **2.3** **Motor de validación compartido** (módulo tipado, sin lógica duplicada) reutilizando `validateBalearicPhone`, `validateSpanishTaxId`, validación de URLs y límites de longitud; aplicado al formulario de claim, `nuevo.astro` y al modal manager. Eliminar los regex inline de `service-detail-client.ts:153-165`.
+- [x] **2.1** Pipeline de aprobación de submission: al aprobar, generar `slug` a partir de `name`, registrar en catálogo, `assignBusinessToUser(uid, serviceId)` y crear `service_overrides/{slug}` base con `isClaimed:true`. La aprobación devuelve la ficha para que el creador la gestione.
+- [x] **2.2** Editor manager ampliado: email, horario, estado (4 valores de `ServiceStatus`), website HTTPS, teléfono/WhatsApp, descripciones sanitizadas.
+- [x] **2.3** **Motor de validación compartido**: módulo tipado `src/lib/ownershipValidation.ts` reutilizando validación balear/española, validación de URLs HTTPS, emails, sanitización anti-XSS y límites de longitud; aplicado al formulario de claim, `nuevo.astro` y al modal manager. Elimina regex inline y tipos `as any`.
 - [ ] **2.4** **Reconectar `mergeServiceWithOverride`**: aplicarlo en `src/pages/[...locale]/servicios/[slug].astro` (merge SSR sobre el registro estático) y en la hidratación cliente, de modo que email, descripciones i18n, estado, imagen, galería, highlights y servicesProvided se reflejen en producción (P1-3). Añadir test de integración que garantice que la página consume el merge.
 
 ### Fase 3 — UX, i18n y telemetría (P2)

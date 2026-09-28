@@ -15,6 +15,7 @@ import {
 } from "firebase/firestore";
 import { reportClientFailure } from "./clientTelemetry";
 import { buildClaimedOverridePayload, getServiceOverrideFresh } from "./serviceOverrides";
+import { slugify } from "./ownershipValidation";
 
 export type RequestStatus = "pending" | "approved" | "rejected" | "processed";
 
@@ -513,12 +514,95 @@ export async function updateSubmissionStatus(
   db: Firestore,
   submissionId: string,
   status: RequestStatus,
-): Promise<void> {
+  reviewerUid?: string,
+): Promise<{ slug?: string } | void> {
   const subRef = doc(db, "service_submissions", submissionId);
-  await updateDoc(subRef, {
-    status,
+  const snap = await getDoc(subRef);
+  if (!snap.exists()) {
+    throw new Error(`Solicitud de alta ${submissionId} no encontrada`);
+  }
+  const submission = snap.data() as ServiceSubmission;
+
+  if (status !== "approved") {
+    await updateDoc(subRef, {
+      status,
+      updatedAt: serverTimestamp(),
+      ...(reviewerUid ? { reviewedBy: reviewerUid } : {}),
+    });
+    return;
+  }
+
+  // Generar slug canónico a partir del nombre comercial (Vía B · INV-02)
+  const baseSlug = slugify(submission.name || "nuevo-negocio");
+  const slug = baseSlug || `negocio-${submission.id}`;
+  const nowIso = new Date().toISOString();
+
+  const batch = writeBatch(db);
+
+  // 1. Actualizar estado de la solicitud con el slug aprobado
+  batch.update(subRef, {
+    status: "approved",
+    approvedSlug: slug,
+    reviewedBy: reviewerUid || undefined,
+    reviewedAt: nowIso,
     updatedAt: serverTimestamp(),
   });
+
+  // 2. Crear override base para que el titular comience a gestionar su ficha (INV-02)
+  batch.set(
+    doc(db, "service_overrides", slug),
+    {
+      ownerUid: submission.applicantUid,
+      isClaimed: true,
+      claimedByUid: submission.applicantUid,
+      claimedAt: nowIso,
+      phone: submission.phone || undefined,
+      website: submission.website || undefined,
+      fullDescription: {
+        es: submission.description || "",
+      },
+      status: "open",
+      updatedAt: serverTimestamp(),
+      auditTrail: [
+        {
+          id: `audit-${Date.now()}`,
+          timestamp: nowIso,
+          action: "created",
+          fieldChanged: "status,ownerUid,isClaimed",
+          newValue: { status: "open", ownerUid: submission.applicantUid, isClaimed: true },
+          authorRole: "admin",
+          authorUid: reviewerUid || "system_admin",
+          reason: `Propuesta de alta aprobada (solicitud ${submissionId})`,
+        },
+      ],
+    },
+    { merge: true },
+  );
+
+  // 3. Asignar rol manager al solicitante y vincular la ficha aprobada a managedServices (INV-03)
+  if (submission.applicantUid) {
+    batch.set(
+      doc(db, "users", submission.applicantUid),
+      {
+        role: "manager",
+        managedServices: arrayUnion(slug),
+        updatedAt: serverTimestamp(),
+      },
+      { merge: true },
+    );
+  }
+
+  try {
+    await batch.commit();
+    return { slug };
+  } catch (error) {
+    reportClientFailure("updateSubmissionStatus/approve", error, {
+      level: "SECURITY",
+      category: "DATABASE",
+      resource: submissionId,
+    });
+    throw error;
+  }
 }
 
 // -----------------------------------------------------------------------------

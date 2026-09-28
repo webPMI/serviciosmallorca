@@ -79,9 +79,15 @@ const { translations } = Astro.props;
           </div>
         </div>
 
-        <div class="form-group">
-          <label for="edit-website">🌐 Sitio Web Oficial / Perfil</label>
-          <input type="url" id="edit-website" class="input-field" placeholder="https://ejemplo.com" />
+        <div class="form-row-2">
+          <div class="form-group">
+            <label for="edit-website">🌐 Sitio Web Oficial / Perfil</label>
+            <input type="url" id="edit-website" class="input-field" placeholder="https://ejemplo.com" />
+          </div>
+          <div class="form-group">
+            <label for="edit-email">✉️ Correo Electrónico</label>
+            <input type="email" id="edit-email" class="input-field" placeholder="contacto@ejemplo.com" />
+          </div>
         </div>
 
         <div class="form-group">
@@ -94,6 +100,7 @@ const { translations } = Astro.props;
           <select id="edit-status" class="input-field">
             <option value="open">🟢 Abierto / En Funcionamiento</option>
             <option value="seasonal_closure">🟡 Cierre por Temporada / Vacaciones</option>
+            <option value="permanently_closed">🔴 Cerrado Definitivamente</option>
           </select>
         </div>
 
@@ -277,6 +284,7 @@ const { translations } = Astro.props;
   import { getUserClaims, getAllClaims, updateClaimStatus } from "../lib/serviceActions";
   import { getServiceOverride, saveServiceOverride, OverrideGuardError } from "../lib/serviceOverrides";
   import { reportClientFailure } from "../lib/clientTelemetry";
+  import { validatePhoneInput, validateHttpsUrl, validateEmailInput, isValidServiceStatus, sanitizeText } from "../lib/ownershipValidation";
   import { SERVICES } from "../data/services";
   import type { ServiceStatus } from "../data/services/types";
 
@@ -289,6 +297,7 @@ const { translations } = Astro.props;
   const phoneInput = document.getElementById("edit-phone") as HTMLInputElement;
   const whatsappInput = document.getElementById("edit-whatsapp") as HTMLInputElement;
   const websiteInput = document.getElementById("edit-website") as HTMLInputElement;
+  const emailInput = document.getElementById("edit-email") as HTMLInputElement;
   const scheduleInput = document.getElementById("edit-schedule") as HTMLInputElement;
   const statusSelect = document.getElementById("edit-status") as HTMLSelectElement;
   const descTextarea = document.getElementById("edit-description") as HTMLTextAreaElement;
@@ -458,6 +467,7 @@ const { translations } = Astro.props;
             phoneInput.value = override?.phone || targetService.phone;
             whatsappInput.value = override?.whatsapp || targetService.whatsapp;
             websiteInput.value = override?.website || targetService.website;
+            emailInput.value = override?.email || targetService.email || "";
             scheduleInput.value = override?.schedule || targetService.schedule;
             statusSelect.value = override?.status || targetService.status;
             descTextarea.value = override?.fullDescription?.es || targetService.fullDescription.es;
@@ -491,20 +501,47 @@ const { translations } = Astro.props;
     }
 
     try {
+      const phone = phoneInput.value.trim();
+      const whatsapp = whatsappInput.value.trim();
+      const website = websiteInput.value.trim();
+      const email = emailInput.value.trim();
+      const schedule = sanitizeText(scheduleInput.value.trim(), 120);
+      const statusRaw = statusSelect.value;
+      const desc = sanitizeText(descTextarea.value.trim(), 2000);
+
+      if (phone) {
+        const phoneCheck = validatePhoneInput(phone);
+        if (!phoneCheck.valid) throw new Error(phoneCheck.error || "Teléfono no válido");
+      }
+      if (whatsapp) {
+        const waCheck = validatePhoneInput(whatsapp);
+        if (!waCheck.valid) throw new Error(waCheck.error || "WhatsApp no válido");
+      }
+      if (website) {
+        const webCheck = validateHttpsUrl(website);
+        if (!webCheck.valid) throw new Error(webCheck.error || "Web no válida (requiere https://)");
+      }
+      if (email) {
+        const emailCheck = validateEmailInput(email);
+        if (!emailCheck.valid) throw new Error(emailCheck.error || "Email no válido");
+      }
+      if (statusRaw && !isValidServiceStatus(statusRaw)) {
+        throw new Error("Estado operativo no válido");
+      }
+
       // INV-01: el manager solo edita campos de negocio; el sello oficial es competencia del admin.
       await saveServiceOverride(
         db,
         slug,
         { uid: user.uid, role: authStore.getState().role === "admin" ? "admin" : "manager" },
         {
-          phone: phoneInput.value.trim(),
-          whatsapp: whatsappInput.value.trim(),
-          website: websiteInput.value.trim(),
-          schedule: scheduleInput.value.trim(),
-          status: statusSelect.value as ServiceStatus,
-          fullDescription: {
-            es: descTextarea.value.trim(),
-          },
+          phone: phone || undefined,
+          whatsapp: whatsapp || undefined,
+          website: website || undefined,
+          email: email || undefined,
+          schedule: schedule || undefined,
+          status: statusRaw as ServiceStatus,
+          fullDescription: desc ? { es: desc } : undefined,
         },
         { reason: "Actualización de datos desde el panel del titular" },
       );

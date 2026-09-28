@@ -10,6 +10,12 @@ import { getServiceOverride, mergeServiceWithOverride } from "../lib/serviceOver
 import { checkRateLimit } from "../lib/managerSecurityEngine";
 import { reportClientFailure } from "../lib/clientTelemetry";
 import { initAutomaticClickTracking } from "../lib/conversionTracking";
+import {
+  validatePhoneInput,
+  validateEmailInput,
+  validateTaxIdOrDocument,
+  sanitizeText,
+} from "../lib/ownershipValidation";
 import type { ServiceItem } from "../data/services/types";
 
 /** Etiquetas i18n servidas por la isla JSON `#service-static-data` (GR-04). */
@@ -190,24 +196,26 @@ export function initServiceDetailClient() {
         const serviceId = (document.getElementById("claim-service-id") as HTMLInputElement).value;
         const serviceName = (document.getElementById("claim-service-name") as HTMLInputElement).value;
 
-        // CORRECCIÓN CRÍTICA #6: Sanitización de inputs
-        const name = (document.getElementById("claim-name") as HTMLInputElement).value.trim();
-        const email = (document.getElementById("claim-email") as HTMLInputElement).value.trim().toLowerCase();
-        const phone = (document.getElementById("claim-phone") as HTMLInputElement).value.trim();
-        const cif = (document.getElementById("claim-cif") as HTMLInputElement).value.trim();
+        // CORRECCIÓN CRÍTICA #6: Sanitización y validación unificada (P1-4)
+        const name = sanitizeText((document.getElementById("claim-name") as HTMLInputElement).value, 100);
+        const email = sanitizeText((document.getElementById("claim-email") as HTMLInputElement).value, 120).toLowerCase();
+        const phone = sanitizeText((document.getElementById("claim-phone") as HTMLInputElement).value, 30);
+        const cif = sanitizeText((document.getElementById("claim-cif") as HTMLInputElement).value, 255);
 
-        // Validación básica de sanitización
-        if (!name || name.length < 2) {
+        if (name.length < 2) {
           throw new Error("El nombre debe tener al menos 2 caracteres");
         }
-        if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-          throw new Error("El correo electrónico no es válido");
+        const emailCheck = validateEmailInput(email);
+        if (!emailCheck.valid) {
+          throw new Error(emailCheck.error || "El correo electrónico no es válido");
         }
-        if (!phone || phone.length < 9) {
-          throw new Error("El teléfono debe tener al menos 9 caracteres");
+        const phoneCheck = validatePhoneInput(phone);
+        if (!phoneCheck.valid) {
+          throw new Error(phoneCheck.error || "El teléfono debe tener al menos 9 caracteres");
         }
-        if (!cif || cif.length < 3) {
-          throw new Error("El CIF/documento debe tener al menos 3 caracteres");
+        const proofCheck = validateTaxIdOrDocument(cif);
+        if (!proofCheck.valid) {
+          throw new Error(proofCheck.error || "El CIF/documento debe tener al menos 3 caracteres");
         }
 
         // INV-04: ID determinista → una única reclamación por usuario y negocio (inmune a dobles clics)
