@@ -34,11 +34,13 @@ export const limpiezasBalear: ServiceItem = {
     es: "Empresa de limpieza y mantenimiento en Mallorca especializada en limpieza fin de obra, cristales con agua osmotizada, villas, oficinas y comunidades.",
     en: "Professional cleaning and property maintenance service in Mallorca, specializing in post-construction deep cleaning, pure-water window washing, villas, and communities.",
     ca: "Empresa de neteja i manteniment a Mallorca especialitzada en neteja fi d'obra, vidres amb aigua d'osmosi, vil·les, oficines i comunitats.",
+    de: "Empresa de limpieza y mantenimiento en Mallorca especializada en limpieza fin de obra, cristales con agua osmotizada, villas, oficinas y comunidades.",
   },
   fullDescription: {
     es: "Limpiezas Balear es una empresa de servicios de limpieza integral con más de 15 años de experiencia en Mallorca. Con un equipo profesional uniformado y productos ecológicos biodegradables, se encarga de limpiezas de choque post-reforma y fin de obra, limpieza técnica de grandes ventanales y fachadas acristaladas con pértiga de agua pura osmotizada, mantenimiento de comunidades de vecinos y limpieza a fondo de villas y oficinas.",
     en: "Limpiezas Balear is a premier property cleaning and facility care contractor with over 15 years serving Mallorca. Utilizing vetted, uniformed staff and certified eco-friendly biodegradable products, they specialize in post-renovation builder handovers, pure-water reach-and-wash window cleaning, luxury residential villa turnovers, and ongoing HOA community care.",
     ca: "Limpiezas Balear és una empresa de serveis de neteja integral amb més de 15 anys d'experiència a Mallorca. Amb personal format i productes ecològics, s'encarrega de neteges a fons post-reforma, neteja tècnica de grans vidrieres amb aigua osmotitzada, manteniment de comunitats i viles.",
+    de: "Limpiezas Balear es una empresa de servicios de limpieza integral con más de 15 años de experiencia en Mallorca. Con un equipo profesional uniformado y productos ecológicos biodegradables, se encarga de limpiezas de choque post-reforma y fin de obra, limpieza técnica de grandes ventanales y fachadas acristaladas con pértiga de agua pura osmotizada, mantenimiento de comunidades de vecinos y limpieza a fondo de villas y oficinas.",
   },
   specialties: {
     es: [

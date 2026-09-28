@@ -34,11 +34,13 @@ export const fornCanPacoCampos: ServiceItem = {
     es: "Horno y pastelería tradicional en Campos desde 1968, famosos por sus cremadillos crujientes de crema quemada y cabello de ángel, panades caseras de cordero y ensaimadas artesanas.",
     en: "Traditional village bakery in Campos since 1968, renowned for caramelized 'cremadillos' filled with custard or angel hair pumpkin jam, savory lamb panades, and artisan ensaimadas.",
     ca: "Forn i pastisseria tradicional a Campos des de 1968, famosos pels seus cremadillos cruixents de crema cremada i cabell d'àngel, panades casolanes de xot i ensaïmades.",
+    de: "Traditioneller Ofen und Gebäck in Campos seit 1968, berühmt für seine knusprigen Cremadillos aus verbrannter Sahne und Engelshaar, hausgemachte Lammbäckereien und handwerkliche Ensaimadas.",
   },
   fullDescription: {
     es: "Forn Can Paco es un obrador tradicional y punto de referencia dulce en el pueblo de Campos, en la comarca del Migjorn mallorquín. Desde 1968, este negocio familiar elabora diariamente con materias primas de la isla sus aclamados cremadillos de fino hojaldre caramelizado al horno rellenos de crema artesana o chocolate, pan moreno mallorquín sin sal de masa madre natural, llonguets esponjosos, cocas de verdura y empanadas tradicionales de carne de cerdo y cordero.",
     en: "Forn Can Paco is an artisanal family bakery and sweet staple in Campos, south-central Mallorca. Since 1968, they have daily handcrafted their famous crisp, sugar-caramelized 'cremadillos' layered with velvety custard or rich dark chocolate, authentic salt-free Mallorcan brown sourdough, crusty llonguets, savory vegetable flatbreads, and traditional meat-filled panades.",
     ca: "El Forn Can Paco és un obrador tradicional i referent dolç a Campos (Migjorn de Mallorca). Des de 1968, elabora cada dia els seus afamats cremadillos d'ensaïmada o pasta de full caramel·litzada farcits de crema o xocolata, pa morè de massa mare, llonguets, coques de verdura i panades de carn.",
+    de: "Forn Can Paco ist eine traditionelle Werkstatt und ein süßer Bezugspunkt in der Stadt Campos, in der Region des mallorquinischen Migjorn. Seit 1968 stellt dieses Familienunternehmen täglich mit Rohstoffen der Insel seine gefeierten Cremadillos aus feinem karamellisiertem Blätterteig aus dem Ofen her, gefüllt mit hausgemachter Sahne oder Schokolade, mallorquinischem Schwarzbrot ohne Salz aus natürlichem Sauerteig, schwammigen Llonguets, Gemüsecokas und traditionellen Pasteten aus Schweine- und Lammfleisch.",
   },
   specialties: {
     es: [

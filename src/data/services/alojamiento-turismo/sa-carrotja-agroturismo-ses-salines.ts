@@ -43,7 +43,7 @@ export const saCarrotjaAgroturismoSesSalines: ServiceItem = {
   fullDescription: {
     es: "Agroturismo Sa Carrotja Ses Salines ofrece un servicio profesional de máxima categoría en Mallorca. Agroturismo  Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
     en: "Agroturismo Sa Carrotja Ses Salines delivers premier professional service in Mallorca. Adults-only stone agroturismo set in tranquil Mediterranean countryside near Es Trenc virgin beaches. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
-    ca: "Agroturismo Sa Carrotja Ses Salines ofereix un servei professional de màxima categoria a Mallorca. Agroturisme només per a adults de pedra tradicional a prop d Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    ca: "Agroturismo Sa Carrotja Ses Salines ofereix un servei professional de màxima categoria a Mallorca. Agroturisme només per a adults de pedra tradicional a prop d'Es Trenc. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
     de: "Agroturismo Sa Carrotja Ses Salines bietet erstklassigen professionellen Service auf Mallorca. Traditionelles Fincahotel  Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {

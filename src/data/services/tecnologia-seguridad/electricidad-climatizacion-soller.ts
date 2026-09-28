@@ -34,11 +34,13 @@ export const electricidadSoller: ServiceItem = {
     es: "Instaladores electricistas autorizados y especialistas en climatización y aerotermia en Sóller, Fornalutx, Deià y Port de Sóller desde 1994, reformas eléctricas de casas de piedra, domótica y boletines CIE.",
     en: "Licensed electrical and HVAC climate engineering company in Sóller, Fornalutx, and Deià since 1994, specializing in historic stone house electrical retrofitting, aerothermal heat pumps, and smart home lighting.",
     ca: "Instal·ladors electricistes autoritzats i especialistes en climatització a Sóller, Fornalutx i Deià des de 1994, reformes elèctriques de cases de pedra, domòtica i butlletins CIE.",
+    de: "Instaladores electricistas autorizados y especialistas en climatización y aerotermia en Sóller, Fornalutx, Deià y Port de Sóller desde 1994, reformas eléctricas de casas de piedra, domótica y boletines CIE.",
   },
   fullDescription: {
     es: "Electricidad & Climatización Sóller es una empresa técnica de referencia con 30 años de experiencia en el valle de Sóller y la Serra de Tramuntana (Sóller, Port de Sóller, Fornalutx, Biniaraix y Deià). Especializada en los retos arquitectónicos únicos de las casas rústicas de piedra y fincas de montaña, realiza renovaciones eléctricas integrales sin alterar la estética patrimonial, instalación de climatización por aerotermia y conductos invisibles, suelo radiante, sistemas de iluminación inteligente domótica y boletines oficiales CIE.",
     en: "Electricidad & Climatización Sóller is the trusted technical engineering contractor serving Sóller Valley and the Tramuntana mountain range (Sóller, Port de Sóller, Fornalutx, Biniaraix, and Deià) for three decades. Specializing in historic stone townhouse electrical renovations, discreet aerothermal climate controls, underfloor heating, smart lighting automation (KNX, Lutron), and official CIE safety certificates.",
     ca: "Electricitat & Climatització Sóller és una empresa tècnica instal·ladora amb 30 anys d'experiència a la vall de Sóller i la Serra de Tramuntana (Sóller, Fornalutx, Deià). Especialitzada en cases de pedra tradicionals i finques rústiques, realitza reformes elèctriques completes, climatització per aerotèrmia, terra radiant, domòtica i butlletins CIE.",
+    de: "QUERY LENGTH LIMIT EXCEEDED. MAX ALLOWED QUERY : 500 CHARS",
   },
   specialties: {
     es: [

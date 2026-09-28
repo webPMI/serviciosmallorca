@@ -34,11 +34,13 @@ export const cellerEsCellerPetra: ServiceItem = {
     es: "Celler tradicional en Petra (cuna de Fray Junípero Serra), cocina casera mallorquina en cazuelas de barro, sopes de verduras, lechona al horno y generosas raciones de comida típica.",
     en: "Traditional rustic celler in Petra (birthplace of Junipero Serra), serving authentic Balearic comfort food in clay pots, hearty vegetable sopes, and oven-roast suckling pig.",
     ca: "Celler tradicional a Petra, cuina casolana mallorquina en greixoneres de fang, sopes de verdura, porcella al forn i racions generoses de cuina de la terra.",
+    de: "Traditioneller Keller in Petra (Wiege von Fra Junípero Serra), mallorquinische Hausmannskost in Tontöpfen, Gemüsesuppen, gebackene Ferkel und großzügige Portionen typischer Speisen.",
   },
   fullDescription: {
     es: "Celler Es Celler es una parada gastronómica de culto en el pueblo de Petra, en pleno Pla de Mallorca. Ubicado en un edificio rústico de piedra con vigas vistas y aperos de labranza tradicionales decorando sus paredes, es famoso entre ciclistas, residentes y viajeros por su cocina tradicional mallorquina servida en cazuelas de barro cocido ('greixoneres'). Destacan sus sopes mallorquines melosas, el frit de porc, el lomo con col, la lechona asada y el tumbet casero.",
     en: "Celler Es Celler is a legendary culinary retreat in the rural town of Petra. Housed in a heritage stone building adorned with rustic farm implements and high timber beams, it is beloved by island cyclists, locals, and travelers for hearty Balearic home cooking served in traditional terracotta dishes ('greixoneres'). Highlights include steaming vegetable sopes, pork frit, cabbage-wrapped pork loin, crispy suckling pig, and tumbet.",
     ca: "El Celler Es Celler és una aturada gastronòmica emblemàtica a Petra. En un edifici rústic de pedra amb bigues de fusta i eines del camp, és conegut per la seva cuina mallorquina en greixoneres de fang: sopes mallorquines meloses, frit de porc, llom amb col, porcella rostida i tumbet.",
+    de: "Celler Es Celler ist ein kulinarischer Zwischenstopp im Dorf Petra, mitten auf der Pla de Mallorca. Es befindet sich in einem rustikalen Steingebäude mit freiliegenden Balken und traditionellen landwirtschaftlichen Geräten, die seine Wände schmücken. Es ist bei Radfahrern, Bewohnern und Reisenden für seine traditionelle mallorquinische Küche bekannt, die in Tontöpfen (\"greixoneres\") serviert wird. Hervorzuheben sind die melligen mallorquinischen Suppen, das frittierte Schweinefleisch, die Lende mit Kohl, die gebratene Spanferkel und der hausgemachte Tumbet.",
   },
   specialties: {
     es: [

@@ -34,11 +34,13 @@ export const cereriaArtesanaInca: ServiceItem = {
     es: "Taller cerero artesanal en Inca desde 1948, elaboración manual de velas de cera pura de abeja de apicultores mallorquines, cirios aromáticos con esencias de la Tramuntana y piezas decorativas.",
     en: "Traditional candle-making atelier in Inca since 1948, handcrafting pure beeswax candles sourced from local Balearic beekeepers, scented votives, and bespoke decorative pieces.",
     ca: "Taller cerer artesanal a Inca des de 1948, elaboració manual de veles de cera pura d'abella de Mallorca, ciris aromàtics amb essències de la Tramuntana i decoració.",
+    de: "Handwerkliche Wachswerkstatt in Inca seit 1948, manuelle Herstellung von Kerzen aus reinem Bienenwachs von mallorquinischen Imkern, aromatische Kerzen mit Essenzen aus der Tramuntana und dekorative Stücke.",
   },
   fullDescription: {
     es: "Cerería & Velas Artesanas Inca es uno de los talleres tradicionales con más solera de la comarca del Raiguer, preservando desde 1948 el oficio cerero manual. Utilizando cera virgen 100% natural procedente de panales de apicultura sostenible balear y mechas de algodón puro sin plomo, fabrica velas enrolladas a mano, cirios ceremoniales, velas litúrgicas y creaciones aromáticas infused con aceites esenciales de flor de azahar de Sóller, romero y lavanda silvestre.",
     en: "Cerería & Velas Artesanas Inca is a landmark traditional chandlery workshop in central Mallorca, safeguarding the ancestral art of hand-dipped and rolled candlemaking since 1948. Sourcing 100% pure virgin beeswax from local sustainable Balearic apiaries and lead-free cotton wicks, they handcraft natural honeycomb rolled candles, architectural votives, and botanical candles infused with Sóller orange blossom and wild lavender.",
     ca: "Cerería & Veles Artesanes Inca és un dels tallers tradicionals amb més història del Raiguer, preservant des de 1948 l'ofici cerer. Utilitzant cera verge 100% natural d'apicultors de Mallorca i metxes de cotó pur, fabrica veles enrotllades a mà, ciris i espelmes aromàtiques amb flor de taronger de Sóller i romaní.",
+    de: "Cerería & Velas Artesanas Inca ist eine der traditionsreichsten traditionellen Werkstätten der Region Raiguer, die seit 1948 das handwerkliche Wachshandwerk bewahrt. Mit 100% natürlichem jungfräulichem Wachs aus Waben aus nachhaltiger balearischer Imkerei und bleifreien reinen Baumwolldochten werden handgerollte Kerzen, zeremonielle Kerzen, liturgische Kerzen und aromatische Kreationen hergestellt, die mit ätherischen Ölen aus Orangenblüten aus Sóller, Rosmarin und wildem Lavendel angereichert sind.",
   },
   specialties: {
     es: [

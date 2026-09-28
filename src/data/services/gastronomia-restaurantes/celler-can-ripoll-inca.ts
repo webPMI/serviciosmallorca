@@ -34,11 +34,13 @@ export const cellerCanRipoll: ServiceItem = {
     es: "Celler histórico monumental en Inca fundado en 1768 declarado Bien de Interés Cultural, botas de vino centenarias de roble gigante, cocina tradicional mallorquina y patio ajardinado.",
     en: "Monumental heritage celler in Inca founded in 1768 and declared a Cultural Asset, featuring centennial giant oak wine vats, authentic traditional Mallorcan cuisine, and courtyard dining.",
     ca: "Celler històric monumental a Inca fundat el 1768 declarat Bé d'Interès Cultural, bótes centenàries de roure gegantines, cuina tradicional mallorquina i pati enjardinat.",
+    de: "Monumentaler historischer Celler in Inca, 1768 gegründet und zum Kulturgut erklärt, jahrhundertealte Weinstiefel aus Rieseneiche, traditionelle mallorquinische Küche und Gartenterrasse.",
   },
   fullDescription: {
     es: "El Celler Can Ripoll es el templo gastronómico e histórico más monumental de Inca, con más de 250 años de historia vinícola y culinaria. Declarado edificio histórico de interés cultural, sus impresionantes salas con arcos de piedra de marés albergan tinas y botas de roble centenarias de más de 8.000 litros de capacidad. Ofrece la cocina mallorquina más pura: arròs brut meloso con carne de caza, lechona asada crujiente al horno de leña, frito mallorquín y bacalao a la mallorquina.",
     en: "Celler Can Ripoll is Inca's most architecturally monumental and historic culinary sanctuary, boasting over 250 years of uninterrupted heritage. Declared an Official Cultural Heritage site, its cavernous marès stone-vaulted dining rooms showcase colossal 18th-century oak wine vats holding over 8,000 liters. They master authentic Balearic comfort classics: piping hot 'arròs brut' spiced rice, crispy roast suckling pig, frito mallorquín, and baked cod with greens.",
     ca: "El Celler Can Ripoll és el temple gastronòmic més monumental d'Inca, amb més de 250 anys d'història. Declarat Bé d'Interès Cultural, les seves sales d'arcs de marès acullen bótes centenàries de roure gegants. Ofereix la cuina mallorquina més autèntica: arròs brut, porcella rostida al forn de llenya, frit mallorquí i tumbet.",
+    de: "Der Celler Can Ripoll ist der monumentalste gastronomische und historische Tempel von Inca mit mehr als 250 Jahren Wein- und kulinarischer Geschichte. Als historisches Gebäude von kulturellem Interesse erklärt, beherbergen die beeindruckenden Säle mit Bögen aus Mares-Stein jahrhundertealte Eichenwannen und -stiefel mit einem Fassungsvermögen von mehr als 8.000 Litern. Es bietet die reinste mallorquinische Küche: melöser Arròs mit Wildfleisch, knusprig gebratenem Spanferkel aus dem Holzofen, mallorquinischem Frittiertem und mallorquinischem Kabeljau.",
   },
   specialties: {
     es: [

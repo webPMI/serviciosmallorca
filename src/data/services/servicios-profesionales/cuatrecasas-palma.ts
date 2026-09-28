@@ -34,11 +34,13 @@ export const cuatrecasasPalma: ServiceItem = {
     es: "Firma internacional de abogados líder en Palma, especializada en derecho inmobiliario, fiscalidad balear, mercantil y patrimonios.",
     en: "Premier international law firm in Palma, leading in real estate law, Balearic taxation, corporate M&A, and private wealth structuring.",
     ca: "Firma internacional d'advocats líder a Palma, especialitzada en dret immobiliari, fiscalitat balear, mercantil i patrimonis.",
+    de: "Firma internacional de abogados líder en Palma, especializada en derecho inmobiliario, fiscalidad balear, mercantil y patrimonios.",
   },
   fullDescription: {
     es: "La oficina de Cuatrecasas en Palma de Mallorca asesora a inversores nacionales e internacionales, empresas y particulares de alto patrimonio. Con un equipo multidisciplinar de juristas de primer nivel, cubre operaciones inmobiliarias complejas, reestructuraciones corporativas, fiscalidad balear y litigación en Baleares.",
     en: "Cuatrecasas Palma advises domestic and international investors, corporations, and high-net-worth individuals. With a top-tier multidisciplinary legal team, the firm handles complex real estate transactions, corporate restructurings, Balearic tax compliance, and commercial litigation.",
     ca: "L'oficina de Cuatrecasas a Palma assessora inversors nacionals i internacionals, empreses i patrimonis privats. Amb un equip de juristes de primer nivell, cobreix transaccions immobiliàries complexes, fiscalitat balear i litigació a Balears.",
+    de: "La oficina de Cuatrecasas en Palma de Mallorca asesora a inversores nacionales e internacionales, empresas y particulares de alto patrimonio. Con un equipo multidisciplinar de juristas de primer nivel, cubre operaciones inmobiliarias complejas, reestructuraciones corporativas, fiscalidad balear y litigación en Baleares.",
   },
   specialties: {
     es: [

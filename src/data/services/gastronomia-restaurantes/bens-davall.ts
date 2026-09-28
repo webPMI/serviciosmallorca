@@ -34,11 +34,13 @@ export const bensDavall: ServiceItem = {
     es: "Restaurante con 1 Estrella Michelin y Estrella Verde en la costa de Sóller, con vistas espectaculares al mar y cocina balear de autor.",
     en: "1 Michelin Star & Green Star restaurant perched on Sóller's cliffs, offering panoramic sea views and avant-garde Balearic cuisine.",
     ca: "Restaurant amb 1 Estrella Michelin i Estrella Verda a la costa de Sóller, amb vistes espectaculars a la mar i cuina balear d'autor.",
+    de: "Restaurant mit 1 Michelin-Stern und grünem Stern an der Küste von Sóller, mit spektakulärem Meerblick und balearischer Autorenküche.",
   },
   fullDescription: {
     es: "Fundado en 1971 por la familia Vicens, Bens d'Avall se erige sobre un acantilado entre Sóller y Deià ofreciendo una experiencia gastronómica inolvidable. Galardonado con 1 Estrella Michelin y Estrella Verde a la sostenibilidad, los chefs Benet y Jaume Vicens rinden homenaje a la despensa mallorquina con productos de su propio huerto ecológico y pescados de la costa norte.",
     en: "Founded in 1971 by the Vicens family, Bens d'Avall stands atop a dramatic cliff between Sóller and Deià. Awarded 1 Michelin Star and a Green Star for sustainability, chefs Benet and Jaume Vicens celebrate Mallorcan culinary heritage using organic produce from their own garden and fresh catch from northern waters.",
     ca: "Fundat el 1971 per la família Vicens, Bens d'Avall s'alça sobre un penya-segat entre Sóller i Deià oferint una experiència gastronòmica inoblidable. Guardonat amb 1 Estrella Michelin i Estrella Verda a la sostenibilitat, els xefs Benet i Jaume Vicens reten homenatge al receptari balear amb productes del seu propi hort.",
+    de: "Das 1971 von der Familie Vicens gegründete Bens d'Avall erhebt sich auf einer Klippe zwischen Sóller und Deià und bietet ein unvergessliches gastronomisches Erlebnis. Die mit einem Michelin-Stern und einem Grünen Stern für Nachhaltigkeit ausgezeichneten Köche Benet und Jaume Vicens ehren die mallorquinische Speisekammer mit Produkten aus ihrem eigenen Bio-Garten und Fisch von der Nordküste.",
   },
   specialties: {
     es: [

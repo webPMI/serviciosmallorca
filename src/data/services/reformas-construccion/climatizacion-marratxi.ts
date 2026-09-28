@@ -34,11 +34,13 @@ export const climaMarratxi: ServiceItem = {
     es: "Empresa instaladora autorizada de aire acondicionado, bombas de calor aerotérmicas y suelo radiante en Marratxí y Palma desde 1995, servicio técnico oficial multimarca (Daikin, Mitsubishi, Panasonic).",
     en: "Licensed HVAC, ducted air conditioning, and aerothermal heat pump contractor in Marratxí & Palma since 1995, certified technical service for Daikin, Mitsubishi, and Panasonic.",
     ca: "Empresa instal·ladora autoritzada d'aire condicionat, aerotèrmia i terra radiant a Marratxí i Palma des de 1995, servei tècnic oficial Daikin, Mitsubishi i Panasonic.",
+    de: "Empresa instaladora autorizada de aire acondicionado, bombas de calor aerotérmicas y suelo radiante en Marratxí y Palma desde 1995, servicio técnico oficial multimarca (Daikin, Mitsubishi, Panasonic).",
   },
   fullDescription: {
     es: "Instalaciones & Climatización Marratxí es una empresa instaladora técnica de climatización y eficiencia energética con 30 años de experiencia en chalets, pisos y fincas rústicas de Mallorca. Especializada en sistemas de climatización invisible por conductos con zonificación inteligente (Airzone), sustitución de calderas de gasóleo por bombas de calor aerotérmicas de alta eficiencia con suelo radiante y refrescante, y recarga ecológica de gases refrigerantes (R32).",
     en: "Instalaciones & Climatización Marratxí is a certified HVAC and energy-efficiency contractor serving villas, country estates, and residences across Mallorca for 30 years. They excel in concealed ducted AC systems with smart multi-zone temperature regulation (Airzone), oil boiler replacements with high-COP aerothermal heat pumps powering underfloor heating/cooling, and eco-friendly R32 refrigerant maintenance.",
     ca: "Instal·lacions & Climatització Marratxí és una empresa tècnica de climatització amb 30 anys d'experiència a xalets i pisos de Mallorca. Especialitzada en aire condicionat per conductes amb zonificació Airzone, aerotèrmia per a terra radiant i refrescant, i manteniment preventiu multimarca.",
+    de: "Instalaciones & Climatización Marratxí es una empresa instaladora técnica de climatización y eficiencia energética con 30 años de experiencia en chalets, pisos y fincas rústicas de Mallorca. Especializada en sistemas de climatización invisible por conductos con zonificación inteligente (Airzone), sustitución de calderas de gasóleo por bombas de calor aerotérmicas de alta eficiencia con suelo radiante y refrescante, y recarga ecológica de gases refrigerantes (R32).",
   },
   specialties: {
     es: [

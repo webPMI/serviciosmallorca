@@ -34,11 +34,13 @@ export const tallerLlevantManacor: ServiceItem = {
     es: "Taller multimarca de mecánica y diagnosis electrónica en Manacor desde 1996, especialistas en cajas de cambio automáticas (diálisis ATF), climatización, inyección diésel y servicio Pre-ITV.",
     en: "Multi-brand automotive mechanics and diagnostic repair center in Manacor since 1996, specializing in automatic transmission fluid flush (ATF), diesel injection, and Pre-ITV MOT servicing.",
     ca: "Taller multimarca de mecànica i diagnosi electrònica a Manacor des de 1996, especialistes en caixes de canvi automàtiques (diàlisi ATF), climatització i servei Pre-ITV.",
+    de: "Taller multimarca de mecánica y diagnosis electrónica en Manacor desde 1996, especialistas en cajas de cambio automáticas (diálisis ATF), climatización, inyección diésel y servicio Pre-ITV.",
   },
   fullDescription: {
     es: "Taller Mecánico & Diagnosis Llevant es un centro de reparación integral del automóvil con cerca de 30 años de prestigio en Manacor y la comarca de Llevant. Equipado con bancos de diagnosis computarizada multimarca (Bosch, Texa), máquina de diálisis y cambio de aceite de cajas de cambio automáticas (ATF), estación de carga de aire acondicionado y frenómetro, ofrece desde revisiones oficiales de mantenimiento sin perder la garantía del fabricante hasta resolución de averías complejas de inyección y turbo.",
     en: "Taller Mecánico & Diagnosis Llevant is a comprehensive automotive service and repair garage with nearly 30 years of excellence serving Manacor and eastern Mallorca. Outfitted with Bosch and Texa multi-brand diagnostic scanners, specialized automatic gearbox transmission fluid (ATF) flushing dialysis machines, AC recharging stations, and roller brake testers, they perform official manufacturer maintenance, clutch overhauls, and complex turbo/fuel injection diagnostics.",
     ca: "Taller Mecànic & Diagnosi Llevant és un centre de reparació de l'automòbil amb prop de 30 anys d'experiència a Manacor i el Llevant. Equipat amb maquinària de diagnosi Bosch, equip de canvi d'oli de caixes automàtiques ATF i estació de càrrega d'aire condicionat, ofereix manteniment oficial, revisió Pre-ITV i resolució d'avaries elèctriques.",
+    de: "QUERY LENGTH LIMIT EXCEEDED. MAX ALLOWED QUERY : 500 CHARS",
   },
   specialties: {
     es: [

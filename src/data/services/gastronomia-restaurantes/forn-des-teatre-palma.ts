@@ -34,11 +34,13 @@ export const fornDesTeatre: ServiceItem = {
     es: "Horno y pastelería modernista centenaria en la Plaza Weyler de Palma (1916), célebre por su fachada de dragón art nouveau, ensaimadas tradicionales y repostería salada mallorquina.",
     en: "Centennial Art Nouveau modernist bakery in Palma's Plaza Weyler (1916), famed for its iconic dragon facade, traditional ensaimadas, and artisan savoury Balearic pastries.",
     ca: "Forn i pastisseria modernista centenària a la Plaça Weyler de Palma (1916), cèlebre per la seva façana del drac, ensaïmades tradicionals i rebosteria salada mallorquina.",
+    de: "Ein jahrhundertealter modernistischer Ofen und Gebäck auf der Plaza Weyler in Palma (1916), berühmt für seine Drachenfassade im Jugendstil, traditionelle Ensaimadas und mallorquinisches herzhaftes Gebäck.",
   },
   fullDescription: {
     es: "El Forn des Teatre es una de las joyas arquitectónicas y gastronómicas más fotografiadas y queridas de Palma, ubicado frente al Teatre Principal desde el siglo XIX y reformado en 1916 con su emblemática fachada modernista de madera policromada y motivos vegetales y zoomórficos. Su obrador hornea diariamente ensaimadas tradicionales con IGP con manteca de cerdo ibérico, llonguets de masa madre crujiente, empanadas de cordero ('panades') y cocarrois de verduras.",
     en: "Forn des Teatre is one of Palma's most photographed and beloved architectural and culinary landmarks, situated directly opposite the Teatre Principal. Adorned in 1916 with a breathtaking polychrome wooden Art Nouveau facade featuring organic floral carvings and winged dragons, their bakery daily crafts classic PGI-certified ensaimadas, crispy llonguet bread rolls, traditional lamb panades, and vegetable cocarrois.",
     ca: "El Forn des Teatre és una de les joies arquitectòniques i gastronòmiques més estimades de Palma, davant el Teatre Principal. Amb la seva emblemàtica façana modernista de fusta de 1916, forneja diàriament ensaïmades tradicionals amb IGP, llonguets cruixents, panades de xot i cocarrois de verdures.",
+    de: "Das Forn des Teatre ist eines der meistfotografierten und beliebtesten architektonischen und gastronomischen Juwelen Palmas. Es befindet sich seit dem 19. Jahrhundert gegenüber dem Teatre Principal und wurde 1916 mit seiner emblematischen modernistischen Fassade aus polychromem Holz und pflanzlichen und zoomorphen Motiven renoviert. Die Bäckerei backt täglich traditionelle Ensaimadas mit g.g.A. mit iberischer Schweineschmalz, knusprigen Sauerteiglonguets, Lammpasteten (\"Panades\") und Gemüse-Cocarrois.",
   },
   specialties: {
     es: [

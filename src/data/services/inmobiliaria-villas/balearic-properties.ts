@@ -34,11 +34,13 @@ export const balearicProperties: ServiceItem = {
     es: "Agencia inmobiliaria internacional especializada en fincas rústicas, villas de lujo y propiedades exclusivas en Pollença y el norte de Mallorca.",
     en: "International real estate agency specializing in luxury villas, country estates, and exclusive properties in Pollença and northern Mallorca.",
     ca: "Agència immobiliària internacional especialitzada en finques rústiques, vil·les de luxe i propietats exclusives a Pollença i el nord de Mallorca.",
+    de: "Agencia inmobiliaria internacional especializada en fincas rústicas, villas de lujo y propiedades exclusivas en Pollença y el norte de Mallorca.",
   },
   fullDescription: {
     es: "Con más de 25 años de trayectoria en el mercado inmobiliario balear, Balearic Properties es la agencia de referencia para la compra, venta y alquiler de villas de lujo en Pollença, Alcúdia y toda Mallorca. Asociada a redes inmobiliarias globales, ofrece un servicio integral y multilingüe.",
     en: "With over 25 years of leadership in the Balearic property market, Balearic Properties is the premier agency for buying, selling, and renting luxury villas in Pollença, Alcúdia, and across Mallorca. Associated with premier global real estate networks, providing bespoke multilingual advisory.",
     ca: "Amb més de 25 anys de trajectòria al mercat immobiliari balear, Balearic Properties és l'agència de referència per a la compra, venda i lloguer de vil·les de luxe a Pollença, Alcúdia i tota Mallorca. Ofereix assessorament integral i multilingüe.",
+    de: "Con más de 25 años de trayectoria en el mercado inmobiliario balear, Balearic Properties es la agencia de referencia para la compra, venta y alquiler de villas de lujo en Pollença, Alcúdia y toda Mallorca. Asociada a redes inmobiliarias globales, ofrece un servicio integral y multilingüe.",
   },
   specialties: {
     es: [

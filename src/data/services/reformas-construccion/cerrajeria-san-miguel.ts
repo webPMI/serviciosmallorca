@@ -34,11 +34,13 @@ export const cerrajeriaSanMiguel: ServiceItem = {
     es: "Cerrajería tradicional en el centro de Palma desde 1960, duplicado de llaves de alta seguridad y servicio de apertura urgente 24 horas.",
     en: "Traditional locksmith workshop in central Palma since 1960, offering high-security key duplication and 24/7 non-destructive emergency lockouts.",
     ca: "Fusteria metàl·lica i serralleria tradicional al centre de Palma des de 1960, duplicat de claus de seguretat i obertura d'urgència 24h.",
+    de: "Cerrajería tradicional en el centro de Palma desde 1960, duplicado de llaves de alta seguridad y servicio de apertura urgente 24 horas.",
   },
   fullDescription: {
     es: "Cerrajería San Miguel es el taller cerrajero de referencia en el centro de Palma con más de seis décadas de experiencia. Especialistas en cerrajería de seguridad, bombines antibumping, amaestramiento de llaves para comunidades y apertura urgente de puertas y cajas fuertes sin causar daños.",
     en: "Cerrajería San Miguel is an iconic locksmith establishment in Palma old town with over 60 years of family craftsmanship. Specializing in high-security anti-snap cylinders, master key systems for residential communities, and rapid 24/7 non-destructive emergency door openings.",
     ca: "Serralleria Sant Miquel és el taller de serralleria de referència al centre de Palma des de fa més de sis dècades. Especialistes en seguretat, bombins antibumping, ensinistrament de claus per a comunitats i obertures urgents 24h.",
+    de: "Cerrajería San Miguel es el taller cerrajero de referencia en el centro de Palma con más de seis décadas de experiencia. Especialistas en cerrajería de seguridad, bombines antibumping, amaestramiento de llaves para comunidades y apertura urgente de puertas y cajas fuertes sin causar daños.",
   },
   specialties: {
     es: [

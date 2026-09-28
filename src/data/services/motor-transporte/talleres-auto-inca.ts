@@ -34,11 +34,13 @@ export const talleresAutoInca: ServiceItem = {
     es: "Taller integral de mecánica multimarca, chapa, pintura al horno y electricidad del automóvil en Inca desde 1982, especialistas en diagnosis computarizada y servicio Pre-ITV.",
     en: "Comprehensive auto repair, bodywork, spray-bake painting, and auto electrical garage in Inca since 1982, specializing in multi-brand diagnostics and Pre-ITV MOT servicing.",
     ca: "Taller integral de mecànica multimarca, xapa, pintura al forn i electricitat de l'automòbil a Inca des de 1982, especialistes en diagnosi computada i servei Pre-ITV.",
+    de: "Taller integral de mecánica multimarca, chapa, pintura al horno y electricidad del automóvil en Inca desde 1982, especialistas en diagnosis computarizada y servicio Pre-ITV.",
   },
   fullDescription: {
     es: "Talleres Auto-Inca es un centro de reparación integral del automóvil con más de cuatro décadas de arraigo en Inca y la comarca del Raiguer. Con amplias instalaciones equipadas con bancada de carrocería láser, cabina presurizada de pintura ecológica con secado al horno, elevadores hidráulicos y software de diagnosis multimarca, ofrece desde mantenimiento rutinario y sustitución de embragues hasta reparación de siniestros de chapa y pintura concertado con todas las aseguradoras.",
     en: "Talleres Auto-Inca is a premier full-service automotive and body repair center serving Inca and central Mallorca for over 40 years. Equipped with laser chassis alignment benches, a pressurized eco-friendly spray bake oven booth, multi-brand diagnostic scanners, and hydraulic lifts, they deliver everything from regular oil changes and clutch replacements to complete accident body repairs approved by all major insurance companies.",
     ca: "Tallers Auto-Inca és un centre de reparació integral de l'automòbil amb més de 40 anys de trajectòria a Inca i el Raiguer. Equipat amb bancada de xapa làser, cabina de pintura ecològica amb assecat al forn i diagnosi electrònica, ofereix manteniment de mecànica, canvi de pneumàtics i reparació de xapa concertat amb companyies d'assegurances.",
+    de: "Talleres Auto-Inca es un centro de reparación integral del automóvil con más de cuatro décadas de arraigo en Inca y la comarca del Raiguer. Con amplias instalaciones equipadas con bancada de carrocería láser, cabina presurizada de pintura ecológica con secado al horno, elevadores hidráulicos y software de diagnosis multimarca, ofrece desde mantenimiento rutinario y sustitución de embragues hasta reparación de siniestros de chapa y pintura concertado con todas las aseguradoras.",
   },
   specialties: {
     es: [

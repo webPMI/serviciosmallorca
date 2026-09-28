@@ -34,11 +34,13 @@ export const climaFrioBalear: ServiceItem = {
     es: "Instaladores autorizados de aire acondicionado, aerotermia y suelo radiante en Mallorca, sistemas de conductos silenciosos Daikin y Mitsubishi con máxima eficiencia energética A+++.",
     en: "Certified HVAC & heat pump specialists in Mallorca, installing ultra-quiet ducted air conditioning, aerothermal heating, and underfloor climate systems (Daikin, Mitsubishi).",
     ca: "Instal·ladors autoritzats d'aire condicionat, aerotèrmia i terra radiant a Mallorca, sistemes de conductes silenciosos Daikin i Mitsubishi amb màxima eficiència A+++.",
+    de: "Instaladores autorizados de aire acondicionado, aerotermia y suelo radiante en Mallorca, sistemas de conductos silenciosos Daikin y Mitsubishi con máxima eficiencia energética A+++.",
   },
   fullDescription: {
     es: "Clima & Frío Balear es una empresa técnica de referencia en Palma y Mallorca con más de 18 años especializada en climatización de alto rendimiento para fincas rústicas, villas y apartamentos. Instaladores oficiales de Daikin, Mitsubishi Electric y Panasonic, diseñan e instalan soluciones integrales de aerotermia, climatización por conductos con zonificación Airzone y suelo radiante/refrescante.",
     en: "Clima & Frío Balear is a premier HVAC and renewable thermal engineering contractor with over 18 years serving Mallorca's luxury residential market. As certified partners for Daikin, Mitsubishi Electric, and Panasonic, they engineer integrated aerothermal heat pump solutions, zoned ducted air conditioning (Airzone), and hydronic underfloor heating/cooling.",
     ca: "Clima & Frío Balear és una empresa tècnica de referència a Mallorca especialitzada en climatització d'alt rendiment per a finques i vil·les. Instal·ladors oficials de Daikin i Mitsubishi, dissenyen solucions integrals d'aerotèrmia, conductes zonificats Airzone i terra radiant.",
+    de: "Clima & Frío Balear es una empresa técnica de referencia en Palma y Mallorca con más de 18 años especializada en climatización de alto rendimiento para fincas rústicas, villas y apartamentos. Instaladores oficiales de Daikin, Mitsubishi Electric y Panasonic, diseñan e instalan soluciones integrales de aerotermia, climatización por conductos con zonificación Airzone y suelo radiante/refrescante.",
   },
   specialties: {
     es: [

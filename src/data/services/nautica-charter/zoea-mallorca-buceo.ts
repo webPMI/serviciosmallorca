@@ -33,11 +33,13 @@ export const zoeaBuceoMallorca: ServiceItem = {
     es: "Centro de buceo PADI 5 Star y excursiones náuticas en el Club Náutico de Santa Ponsa (Calvià), inmersiones diarias en las reservas marinas de El Toro e Islas Malgrats, bautismos y cursos.",
     en: "Premier PADI 5-Star dive center and boat charters in Santa Ponsa Yacht Club (Calvià), daily diving excursions to El Toro and Malgrats Marine Reserves, try dives, and certifications.",
     ca: "Centre de submarinisme PADI 5 Star i excursions nàutiques al Club Nàutic de Santa Ponça (Calvià), immersions diàries a les reserves marines del Toro i Illes Malgrats.",
+    de: "Centro de buceo PADI 5 Star y excursiones náuticas en el Club Náutico de Santa Ponsa (Calvià), inmersiones diarias en las reservas marinas de El Toro e Islas Malgrats, bautismos y cursos.",
   },
   fullDescription: {
     es: "Zoea Mallorca es el centro de buceo y actividades náuticas de referencia en el suroeste de Mallorca, con base privilegiada en el Club Náutico Santa Ponsa. Equipado con embarcaciones rápidas semirrígidas de última generación e instructores titulados multilingües, organiza inmersiones diarias guiadas en más de 30 puntos de la Reserva Marina de El Toro, Islas Malgrats y Dragonera, además de bautismos de buceo, cursos PADI desde Open Water hasta Divemaster y excursiones de snorkel en familia.",
     en: "Zoea Mallorca is the premier scuba diving resort and marine adventure center in southwest Mallorca, operating from prestigious Santa Ponsa Yacht Club. With high-speed custom dive catamarans and certified multilingual PADI instructors, they lead daily morning and afternoon boat dives to over 30 sites across El Toro Marine Reserve, Malgrats Islands, and Dragonera National Park, alongside try dives and PADI courses.",
     ca: "Zoea Mallorca és el centre de busseig de referència al sud-oest de Mallorca, al Club Nàutic Santa Ponça. Amb embarcacions ràpides i instructors titulats, organitza immersions guiades a les reserves marines del Toro, Illes Malgrats i sa Dragonera, cursos PADI i excursions de submarinisme.",
+    de: "Zoea Mallorca es el centro de buceo y actividades náuticas de referencia en el suroeste de Mallorca, con base privilegiada en el Club Náutico Santa Ponsa. Equipado con embarcaciones rápidas semirrígidas de última generación e instructores titulados multilingües, organiza inmersiones diarias guiadas en más de 30 puntos de la Reserva Marina de El Toro, Islas Malgrats y Dragonera, además de bautismos de buceo, cursos PADI desde Open Water hasta Divemaster y excursiones de snorkel en familia.",
   },
   specialties: {
     es: [

@@ -34,11 +34,13 @@ export const construccionesLlullSastre: ServiceItem = {
     es: "Empresa constructora centenaria líder en Mallorca, referente en villas de lujo, rehabilitación de patrimonio y proyectos arquitectónicos singulares.",
     en: "Centennial construction company in Mallorca since 1934, leading the construction of luxury bespoke villas, historic heritage restorations, and singular architectural projects.",
     ca: "Empresa constructora centenària líder a Mallorca, referent en vil·les de luxe, rehabilitació de patrimoni i projectes arquitectònics singulars.",
+    de: "Empresa constructora centenaria líder en Mallorca, referente en villas de lujo, rehabilitación de patrimonio y proyectos arquitectónicos singulares.",
   },
   fullDescription: {
     es: "Con casi un siglo de excelencia constructiva en Baleares, Construcciones Llull Sastre es la compañía de referencia para la edificación de villas residenciales de alto standing, hoteles emblemáticos y restauración de fincas históricas en Mallorca, combinando la maestría artesanal con la máxima innovación en sostenibilidad.",
     en: "With nearly a century of building craftsmanship across the Balearic Islands, Construcciones Llull Sastre is the gold standard for high-end residential estates, boutique luxury hotels, and authentic historical finca restorations, uniting traditional artisan skill with modern passive-house sustainability.",
     ca: "Amb gairebé un segle d'excel·lència constructiva a Balears, Construccions Llull Sastre és la companyia de referència per a l'edificació de vil·les residencials d'alt nivell, hotels emblemàtics i restauració de finques històriques a Mallorca.",
+    de: "Con casi un siglo de excelencia constructiva en Baleares, Construcciones Llull Sastre es la compañía de referencia para la edificación de villas residenciales de alto standing, hoteles emblemáticos y restauración de fincas históricas en Mallorca, combinando la maestría artesanal con la máxima innovación en sostenibilidad.",
   },
   specialties: {
     es: [

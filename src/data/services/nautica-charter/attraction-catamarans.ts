@@ -34,11 +34,13 @@ export const attractionCatamarans: ServiceItem = {
     es: "Excursiones en catamarán de vela y chárter privado por la bahía de Palma y las calas vírgenes del sur de Mallorca.",
     en: "Sailing catamaran day trips and private charters exploring the Bay of Palma and virgin coves of southern Mallorca.",
     ca: "Excursions en catamarà de vela i xàrter privat per la badia de Palma i les cales verges del sud de Mallorca.",
+    de: "Excursiones en catamarán de vela y chárter privado por la bahía de Palma y las calas vírgenes del sur de Mallorca.",
   },
   fullDescription: {
     es: "Attraction Catamarans ofrece inolvidables experiencias náuticas a bordo de modernos catamaranes de vela con salida desde el Paseo Marítimo de Palma. Disfruta de navegación a vela, fondeo en aguas cristalinas, snorkel, paddle surf y gastronomía a bordo con barbacoa mediterránea en calas como Cala Blava o Portals Vells.",
     en: "Attraction Catamarans offers unforgettable nautical adventures aboard modern sailing catamarans departing from Palma's Paseo Marítimo. Enjoy sailing, anchoring in crystal-clear waters, snorkeling, stand-up paddleboarding, and on-board Mediterranean barbecue in secluded coves.",
     ca: "Attraction Catamarans ofereix experiències nàutiques a bord de moderns catamarans de vela amb sortida des del Passeig Marítim de Palma. Gaudeix de navegació a vela, fondeig en aigües cristal·lines, snorkel, paddle surf i barbacoa mediterrània a bord a cales com Cala Blava o Portals Vells.",
+    de: "Attraction Catamarans ofrece inolvidables experiencias náuticas a bordo de modernos catamaranes de vela con salida desde el Paseo Marítimo de Palma. Disfruta de navegación a vela, fondeo en aguas cristalinas, snorkel, paddle surf y gastronomía a bordo con barbacoa mediterránea en calas como Cala Blava o Portals Vells.",
   },
   specialties: {
     es: [

@@ -34,11 +34,13 @@ export const cristaleriaBalear: ServiceItem = {
     es: "Taller artesanal e industrial de cristalería, doble acristalamiento Climalit y carpintería de aluminio en Palma desde 1988, mamparas de baño a medida y barandillas de vidrio de seguridad.",
     en: "Master glazing, double glazing (Climalit), and aluminium joinery workshop in Palma since 1988, specializing in bespoke shower enclosures and laminated safety glass railings.",
     ca: "Taller artesanal i industrial de vidrieria, doble vidre Climalit i fusteria d'alumini a Palma des de 1988, mampares de bany a mida i baranes de vidre de seguretat.",
+    de: "Taller artesanal e industrial de cristalería, doble acristalamiento Climalit y carpintería de aluminio en Palma desde 1988, mamparas de baño a medida y barandillas de vidrio de seguridad.",
   },
   fullDescription: {
     es: "Cristalería & Cerramientos Balear es un taller de referencia en manufactura del vidrio y cerramientos de aluminio en Palma con casi cuatro décadas de experiencia. Con maquinaria de corte por control numérico (CNC), canteado pulido y templado, fabrica e instala cerramientos acústicos y térmicos con doble acristalamiento Climalit, mamparas de ducha de vidrio templado a medida sin perfiles, barandillas panorámicas de vidrio laminado para terrazas y piscinas, y espejos a medida.",
     en: "Cristalería & Cerramientos Balear is a leading architectural glazing and aluminium fabrication workshop in Palma with nearly four decades of expertise. Outfitted with precision CNC glass cutting tables and edge polishers, they manufacture high-performance double-glazed acoustic/thermal windows (Climalit), bespoke frameless tempered glass shower screens, laminated glass pool balustrades, and custom oversized mirrors.",
     ca: "Cristaleria & Cerraments Balear és un taller de referència en manufactura del vidre i fusteria d'alumini a Palma amb prop de 40 anys d'experiència. Amb maquinària CNC de tall i polit, fabrica finestres amb doble vidre Climalit, mampares de dutxa de vidre temperat a mida, baranes de vidre per a terrasses i miralls.",
+    de: "Cristalería & Cerramientos Balear es un taller de referencia en manufactura del vidrio y cerramientos de aluminio en Palma con casi cuatro décadas de experiencia. Con maquinaria de corte por control numérico (CNC), canteado pulido y templado, fabrica e instala cerramientos acústicos y térmicos con doble acristalamiento Climalit, mamparas de ducha de vidrio templado a medida sin perfiles, barandillas panorámicas de vidrio laminado para terrazas y piscinas, y espejos a medida.",
   },
   specialties: {
     es: [

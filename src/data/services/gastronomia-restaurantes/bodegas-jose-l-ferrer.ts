@@ -34,11 +34,13 @@ export const bodegasJoseLFerrer: ServiceItem = {
     es: "Bodega histórica de Binissalem fundada en 1931, pionera del embotellado y crianza en roble en Mallorca, variedades autóctonas Mantonegro y Moll.",
     en: "Historic Binissalem winery founded in 1931, pioneer of estate bottling and oak barrel aging in Mallorca, showcasing indigenous Mantonegro and Moll grapes.",
     ca: "Celler històric de Binissalem fundat el 1931, pioner de l'embotellat i criança en roure a Mallorca, varietats autòctones Mantonegre i Moll.",
+    de: "Historisches Weingut von Binissalem, 1931 gegründet, Pionier der Abfüllung und Reifung in Eichenholz auf Mallorca, einheimische Sorten Mantonegro und Moll.",
   },
   fullDescription: {
     es: "Bodegas José L. Ferrer (Franja Roja) es uno de los cellers más representativos y queridos de la cultura vinícola de Mallorca. Fundada en 1931 en Binissalem, fue la bodega pionera en la introducción de la crianza en barricas de roble y en el impulso para la creación de la prestigiosa Denominación de Origen Binissalem. Ofrece visitas guiadas a sus cavas históricas, catas maridadas con quesos y sobrasadas, y venta directa de añadas emblemáticas.",
     en: "Bodegas José L. Ferrer (Franja Roja) is a cornerstone of Mallorca's viticultural identity. Established in 1931 in Binissalem, it was the island pioneer in introducing oak barrel aging and driving the establishment of the prestigious DO Binissalem appellation. Today, the fourth generation welcomes visitors for underground cellar tours, curated tastings paired with local artisan cheeses, and cellar-door sales.",
     ca: "Bodegas José L. Ferrer (Franja Roja) és un dels cellers més emblemàtics de la viticultura mallorquina. Fundat el 1931 a Binissalem, va ser pioner en la criança en barriques de roure i en la creació de la DO Binissalem. Ofereix visites a les caves subterrànies, tastos comentats i venda directa.",
+    de: "Bodegas José L. Ferrer (Roter Streifen) ist einer der repräsentativsten und beliebtesten Cellers der Weinkultur Mallorcas. Das 1931 in Binissalem gegründete Weingut war der Pionier bei der Einführung der Reifung in Eichenfässern und bei der Schaffung der prestigeträchtigen Herkunftsbezeichnung Binissalem. Es bietet Führungen durch seine historischen Keller, Verkostungen mit Käse und Sobrasadas und den Direktverkauf emblematischer Jahrgänge.",
   },
   specialties: {
     es: [

@@ -34,11 +34,13 @@ export const fornNouMuro: ServiceItem = {
     es: "Horno artesano y pastelería tradicional en Muro desde 1952, maestros del pan moreno de xeixa cocido a horno de leña, ensaimadas de manteca de cerdo ibérico y cocas de pimientos rojos torrados.",
     en: "Traditional artisan wood-fired bakery in Muro since 1952, crafting heritage 'xeixa' sourdough bread, slow-fermented ensaimadas, and roasted pepper flatbreads.",
     ca: "Forn artesà i pastisseria tradicional a Muro des de 1952, mestres del pa morè de xeixa cuit al forn de llenya, ensaïmades artesanes i coques de pebres torrats.",
+    de: "Horno artesano y pastelería tradicional en Muro desde 1952, maestros del pan moreno de xeixa cocido a horno de leña, ensaimadas de manteca de cerdo ibérico y cocas de pimientos rojos torrados.",
   },
   fullDescription: {
     es: "Forn Nou de Muro es un obrador centenario de panadería y confitería situado en el centro del pueblo de Muro, cerca de la bahía de Alcúdia y Playa de Muro. Con más de 70 años de fidelidad a los métodos de amasado lento y fermentación natural, cuece en su horno tradicional de leña pan moreno mallorquín sin sal elaborado con harina de trigo autóctono xeixa, llonguets de corteza crujiente, empanadas de carne y guisantes, y unas prestigiosas ensaimadas lisas, rellenas de crema pastelera o cabello de ángel.",
     en: "Forn Nou de Muro is a venerable family bakery and pastry atelier in the agricultural village of Muro, moments inland from Playa de Muro and Alcúdia Bay. Firing their ancestral wood oven for over 70 years, they produce authentic Mallorcan saltless sourdough using ancient local 'xeixa' wheat, crunchy llonguets, savory vegetable pies, and acclaimed slow-risen ensaimadas filled with pastry cream or candied pumpkin jam.",
     ca: "El Forn Nou de Muro és un obrador tradicional i pastisseria al centre de Muro. Amb més de 70 anys d'ofici flequer, cou al seu forn de llenya pa morè de farina de xeixa, llonguets cruixents, panades de carn i pèsols, cocarrois i ensaïmades artesanes de massa mare.",
+    de: "QUERY LENGTH LIMIT EXCEEDED. MAX ALLOWED QUERY : 500 CHARS",
   },
   specialties: {
     es: [

@@ -34,11 +34,13 @@ export const fornSaPelleteria: ServiceItem = {
     es: "Horno tradicional de leña en el barrio histórico de Sa Calatrava en Palma desde 1920, maestros del pan moreno mallorquín de trigo xeixa, ensaimadas de masa madre y cocas de verduras.",
     en: "Traditional wood-fired stone oven bakery in Palma's historic Sa Calatrava quarter since 1920, renowned for heritage brown sourdough bread ('pa moreno de xeixa') and ensaimadas.",
     ca: "Forn tradicional de llenya al barri de Sa Calatrava a Palma des de 1920, mestres del pa morè mallorquí de xeixa, ensaïmades de massa mare i coques de verdura.",
+    de: "Horno tradicional de leña en el barrio histórico de Sa Calatrava en Palma desde 1920, maestros del pan moreno mallorquín de trigo xeixa, ensaimadas de masa madre y cocas de verduras.",
   },
   fullDescription: {
     es: "El Forn de Sa Pelleteria es uno de los obradores de pan más auténticos y con más solera de Palma, escondido en las callejuelas medievales del barrio de Sa Calatrava. Con más de un siglo cociendo en su horno moruno de leña directa, elabora diariamente el tradicional pan moreno balear sin sal con harina de trigo autóctono xeixa molido a la piedra, llonguets crujientes, cocas de pimientos asados y ensaimadas tradicionales con manteca de cerdo ibérico.",
     en: "Forn de Sa Pelleteria is one of Palma's most treasured authentic bakeries, nestled along the ancient cobblestones of Sa Calatrava in the Old Town. Firing their original century-old stone wood hearth daily, they craft classic salt-free Mallorcan brown sourdough using stone-ground heritage xeixa wheat, crisp llonguet rolls, roasted bell pepper cocas, and artisanal PGI ensaimadas.",
     ca: "El Forn de Sa Pelleteria és un dels forns més autèntics de Palma, al cor de Sa Calatrava. Amb més d'un segle coent al seu forn de llenya, elabora pa morè tradicional sense sal amb farina de xeixa mòlta a la pedra, llonguets cruixents, coques de trempó i ensaïmades artesanes.",
+    de: "El Forn de Sa Pelleteria es uno de los obradores de pan más auténticos y con más solera de Palma, escondido en las callejuelas medievales del barrio de Sa Calatrava. Con más de un siglo cociendo en su horno moruno de leña directa, elabora diariamente el tradicional pan moreno balear sin sal con harina de trigo autóctono xeixa molido a la piedra, llonguets crujientes, cocas de pimientos asados y ensaimadas tradicionales con manteca de cerdo ibérico.",
   },
   specialties: {
     es: [

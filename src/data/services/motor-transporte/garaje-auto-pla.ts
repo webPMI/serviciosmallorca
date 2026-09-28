@@ -34,11 +34,13 @@ export const garajeAutoPla: ServiceItem = {
     es: "Taller mecánico multimarca y diagnosis electrónica en Inca, mantenimiento integral, frenos, neumáticos y preparación Pre-ITV.",
     en: "Independent multi-brand auto repair and electronic diagnostic workshop in Inca, offering scheduled servicing, brakes, tires, and Pre-ITV checks.",
     ca: "Taller mecànic multimarca i diagnosi electrònica a Inca, manteniment integral, frens, pneumàtics i preparació Pre-ITV.",
+    de: "Taller mecánico multimarca y diagnosis electrónica en Inca, mantenimiento integral, frenos, neumáticos y preparación Pre-ITV.",
   },
   fullDescription: {
     es: "Garaje Auto-Pla es un taller mecánico de confianza en Inca con más de 25 años de trayectoria en la comarca del Raiguer. Ofrece servicio integral para turismos y furgonetas de todas las marcas, desde cambio de aceite, filtros y correas de distribución hasta diagnosis computerizada, climatización de vehículos y revisión Pre-ITV con traslado incluido.",
     en: "Garaje Auto-Pla is a trusted, independent automotive repair garage in Inca serving the Raiguer region for over 25 years. Providing full multi-brand mechanical servicing, computerized engine diagnostics, brake and timing belt changes, air conditioning regas, and comprehensive Pre-ITV inspection passes.",
     ca: "Garaje Auto-Pla és un taller mecànic de confiança a Inca amb més de 25 anys de trajectòria al Raiguer. Ofereix manteniment per a turismes de totes les marques, canvis de corretges, diagnosi per ordinador i revisió Pre-ITV.",
+    de: "Garaje Auto-Pla es un taller mecánico de confianza en Inca con más de 25 años de trayectoria en la comarca del Raiguer. Ofrece servicio integral para turismos y furgonetas de todas las marcas, desde cambio de aceite, filtros y correas de distribución hasta diagnosis computerizada, climatización de vehículos y revisión Pre-ITV con traslado incluido.",
   },
   specialties: {
     es: [

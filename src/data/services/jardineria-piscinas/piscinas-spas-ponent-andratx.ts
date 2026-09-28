@@ -34,11 +34,13 @@ export const piscinasPonentAndratx: ServiceItem = {
     es: "Servicio técnico integral de mantenimiento, cloración salina, bombas de calor e iluminación LED para piscinas y spas en villas de Port d'Andratx, Andratx, Camp de Mar y Santa Ponça desde 2002.",
     en: "Comprehensive technical swimming pool & spa maintenance company in Port d'Andratx, Camp de Mar, and Santa Ponça since 2002, specializing in salt chlorination, heat pumps, and automated water testing.",
     ca: "Servei tècnic integral de manteniment, cloració salina, bombes de calor i il·luminació per a piscines i spas a vil·les d'Andratx i Port d'Andratx des de 2002.",
+    de: "Servicio técnico integral de mantenimiento, cloración salina, bombas de calor e iluminación LED para piscinas y spas en villas de Port d'Andratx, Andratx, Camp de Mar y Santa Ponça desde 2002.",
   },
   fullDescription: {
     es: "Mantenimiento Piscinas & Spas Ponent es una empresa técnica de servicios para el agua con más de 20 años de trayectoria cuidando las instalaciones acuáticas de fincas y villas residenciales en el suroeste de Mallorca (Andratx, Port d'Andratx, Monport, Cala Llamp, Camp de Mar y Santa Ponça). Especialistas en el mantenimiento químico y físico periódico, instalan sistemas ecológicos de electrolisis salina con control automático de pH, bombas de calor inverter para climatización todo el año, detección de fugas por ultrasonidos y cambio de arena por vidrio filtrante activo.",
     en: "Mantenimiento Piscinas & Spas Ponent is a premier pool and spa engineering contractor serving luxury estates across southwestern Mallorca (Port d'Andratx, Monport, Cala Llamp, Camp de Mar, and Santa Ponça) for over two decades. They deliver weekly chemical balancing, eco-friendly saltwater chlorination retrofits with automatic pH dosing, inverter heat pumps for year-round swimming, ultrasonic leak detection, and high-efficiency AFM glass filter media conversions.",
     ca: "Manteniment Piscines & Spas Ponent és una empresa tècnica amb més de 20 anys d'experiència a les instal·lacions aquàtiques de vil·les i cases d'Andratx, Port d'Andratx i Santa Ponça. Especialistes en manteniment químic, instal·len cloradors salins ecològics amb regulador automàtic de pH, bombes de calor inverter per a tot l'any i vidre filtrant ecològic.",
+    de: "QUERY LENGTH LIMIT EXCEEDED. MAX ALLOWED QUERY : 500 CHARS",
   },
   specialties: {
     es: [

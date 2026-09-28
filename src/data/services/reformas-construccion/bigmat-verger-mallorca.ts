@@ -34,11 +34,13 @@ export const bigmatVergerMallorca: ServiceItem = {
     es: "Gran centro de materiales de construcción, cerámica, baños y ferretería profesional en Manacor y Felanitx para reformas en toda Mallorca.",
     en: "Premier building materials, designer tiles, sanitaryware, and professional hardware center in Manacor & Felanitx delivering across Mallorca.",
     ca: "Gran centre de materials de construcció, ceràmica, banys i ferreteria professional a Manacor i Felanitx per a reformes a tota Mallorca.",
+    de: "Gran centro de materiales de construcción, cerámica, baños y ferretería profesional en Manacor y Felanitx para reformas en toda Mallorca.",
   },
   fullDescription: {
     es: "BigMat Verger es el almacén y showroom líder de materiales de construcción, reformas y saneamiento en la comarca de Llevant y toda Mallorca. Con más de 40 años de experiencia, cuenta con amplias exposiciones de cerámica de diseño, baños, aislamientos, ferretería industrial y servicio de transporte propio con camión grúa.",
     en: "BigMat Verger is the leading warehouse and design showroom for construction materials, home renovations, and sanitation in eastern Mallorca. With over 40 years of expertise, it features extensive displays of designer ceramics, bathroom suites, thermal insulation, industrial hardware, and fleet delivery with crane trucks.",
     ca: "BigMat Verger és el magatzem i showroom líder de materials de construcció, reformes i sanejament a la comarca de Llevant i tota Mallorca. Amb més de 40 anys d'experiència, compta amb àmplies exposicions de ceràmica de disseny, banys, aïllaments, ferreteria i transport propi amb camió grua.",
+    de: "BigMat Verger es el almacén y showroom líder de materiales de construcción, reformas y saneamiento en la comarca de Llevant y toda Mallorca. Con más de 40 años de experiencia, cuenta con amplias exposiciones de cerámica de diseño, baños, aislamientos, ferretería industrial y servicio de transporte propio con camión grúa.",
   },
   specialties: {
     es: [

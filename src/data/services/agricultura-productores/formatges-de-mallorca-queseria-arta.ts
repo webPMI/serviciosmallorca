@@ -43,7 +43,7 @@ export const formatgesDeMallorcaQueseriaArta: ServiceItem = {
   fullDescription: {
     es: "Formatges Son Jover & Quesería Km0 Artà ofrece un servicio profesional de máxima categoría en Mallorca. Quesería artesanal que elabora quesos curados de oveja de raza autóctona mallorquina alimentada en pastos libres. Con atención personalizada, un equipo técnico altamente cualificado y compromiso de excelencia para clientes y propiedades en toda la isla.",
     en: "Formatges Son Jover & Quesería Km0 Artà delivers premier professional service in Mallorca. Artisanal dairy producing cured cheeses from native Mallorcan sheep grazed on open Mediterranean pastures. Featuring personalized attention, certified expert staff, and strict quality standards for discerning clients across the Balearic island.",
-    ca: "Formatges Son Jover & Quesería Km0 Artà ofereix un servei professional de màxima categoria a Mallorca. Formatgeria artesanal que elabora formatges d Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
+    ca: "Formatges Son Jover & Quesería Km0 Artà ofereix un servei professional de màxima categoria a Mallorca. Formatgeria artesanal que elabora formatges d'ovella mallorquina autòctona a Artà. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
     de: "Formatges Son Jover & Quesería Km0 Artà bietet erstklassigen professionellen Service auf Mallorca. Handwerkliche Käserei in Artà mit Rohmilchkäse von autochthonen mallorquinischen Weideschafen. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
   schedule: {

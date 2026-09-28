@@ -34,11 +34,13 @@ export const carniceriaCanXarrier: ServiceItem = {
     es: "Carnicería y charcutería artesanal en Algaida desde 1955, elaboración propia de sobrasada de Porc Negre mallorquín con IGP, camaiot cocido y cordero lechal de pasto local.",
     en: "Artisan family butchery in Algaida since 1955, crafting award-winning native Black Pig PGI sobrassada, slow-boiled camaiot, and pasture-raised Balearic lamb.",
     ca: "Carnisseria i xarcuteria artesanal a Algaida des de 1955, elaboració pròpia de sobrassada de Porc Negre mallorquí amb IGP, camaiot i xot de pastura local.",
+    de: "Handwerkliche Metzgerei und Wurstwaren in Algaida seit 1955, eigene Herstellung von Sobrasada aus mallorquinischem Porc Negre mit g.g.A., gekochtem Camaiot und Milchlamm aus lokalem Gras.",
   },
   fullDescription: {
     es: "Carnisseria Can Xarrier es una institución gastronómica en el pueblo de Algaida con 70 años de devoción por el corte artesanal y los embutidos de matanza tradicional. Maestros charcuteros que elaboran de forma manual su premiada sobrasada de cerdo negro autóctono balear curada con pimentón de Tap de Cortí, botifarrons de caldereta con especias de la isla, cortes selectos de ternera madurada y cordero lechal criado en los campos de Algaida y Randa.",
     en: "Carnisseria Can Xarrier is a revered culinary institution in Algaida celebrating 70 years of master butchery and heritage charcuterie. Handcrafting award-winning native Black Pig sobrassadas naturally cellar-cured with local Tap de Cortí paprika, traditional spiced botifarrons, prime dry-aged beef, and milk-fed lamb pastured around Mount Randa.",
     ca: "Carnisseria Can Xarrier és una institució gastronòmica a Algaida amb 70 anys d'història. Mestres xarcuters que elaboren sobrassada de porc negre mallorquí amb pebre de Tap de Cortí, botifarrons de caldereta, vedella madurada i xot de pastura criat als camps d'Algaida i Randa.",
+    de: "Carnisseria Can Xarrier ist eine gastronomische Einrichtung im Dorf Algaida mit 70 Jahren Hingabe an den handwerklichen Schnitt und die traditionellen Schlachtwürste. Wurstwarenmeister, die ihre preisgekrönte Sobrasada aus einheimischem schwarzem balearischem Schwein, das mit Paprika aus Tap de Cortí, Botifarrons aus Eintopf mit Gewürzen der Insel, ausgewählten Schnitten aus gereiftem Kalbfleisch und Milchlamm aus den Feldern Algaida und Randa gereift ist, von Hand herstellen.",
   },
   specialties: {
     es: [

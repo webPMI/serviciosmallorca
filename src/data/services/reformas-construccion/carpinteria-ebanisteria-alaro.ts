@@ -34,11 +34,13 @@ export const carpinteriaAlaro: ServiceItem = {
     es: "Taller artesanal de carpintería y ebanistería en Alaró desde 1975, especialistas en persianas mallorquinas de madera maciza, puertas rústicas de fincas, vigas de madera y muebles a medida.",
     en: "Master artisan joinery and carpentry workshop in Alaró since 1975, specializing in solid wood Mallorcan louvered shutters, rustic finca entrance doors, and bespoke cabinetry.",
     ca: "Taller artesanal de fusteria i ebenisteria a Alaró des de 1975, especialistes en persianes mallorquines de fusta massissa, portals rústics de finques i mobles a mida.",
+    de: "Taller artesanal de carpintería y ebanistería en Alaró desde 1975, especialistas en persianas mallorquinas de madera maciza, puertas rústicas de fincas, vigas de madera y muebles a medida.",
   },
   fullDescription: {
     es: "Carpintería & Ebanistería Alaró es un taller de referencia en carpintería de madera noble para fincas rústicas y chalets en la comarca del Raiguer y la Serra de Tramuntana (Alaró, Orient, Bunyola, Santa Maria). Con cinco décadas de oficio, fabrica e instala persianas mallorquinas tradicionales de librillo en madera de iroko y teca con herrajes forjados, portones macizos de entrada a fincas con clavos artesanales, vigas decorativas tratadas, pérgolas de exterior y armarios empotrados a medida.",
     en: "Carpintería & Ebanistería Alaró is a premier solid wood joinery atelier serving rustic country fincas and villas across central Mallorca and the Tramuntana foothills for five decades. They custom-craft traditional Mallorcan louvered wooden shutters from decay-resistant Iroko and teak, massive finca entrance doors fitted with hand-forged iron studs, structural ceiling beams, exterior timber pergolas, and bespoke wardrobes.",
     ca: "Carpinteria & Ebenisteria Alaró és un taller de referència en fusteria tradicional per a finques rústiques i cases de camp a Alaró i el Raiguer. Amb 50 anys d'ofici, fabrica persianes mallorquines tradicionals de fusta d'iroko, portals massissos amb claus de forja, bigues de fusta i armaris a mida.",
+    de: "Carpintería & Ebanistería Alaró es un taller de referencia en carpintería de madera noble para fincas rústicas y chalets en la comarca del Raiguer y la Serra de Tramuntana (Alaró, Orient, Bunyola, Santa Maria). Con cinco décadas de oficio, fabrica e instala persianas mallorquinas tradicionales de librillo en madera de iroko y teca con herrajes forjados, portones macizos de entrada a fincas con clavos artesanales, vigas decorativas tratadas, pérgolas de exterior y armarios empotrados a medida.",
   },
   specialties: {
     es: [

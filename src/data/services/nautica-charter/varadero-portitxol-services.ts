@@ -34,11 +34,13 @@ export const varaderoPortitxol: ServiceItem = {
     es: "Servicio integral náutico y varadero en Es Portitxol (Palma), aplicación de patente antifouling, mecánica marina Volvo Penta/Yanmar, teca y pulido de casco.",
     en: "Full-service boatyard and marine maintenance facility in Es Portitxol (Palma), offering antifouling application, marine engine servicing (Volvo/Yanmar), and teak deck repair.",
     ca: "Servei integral nàutic i varador a Es Portitxol (Palma), aplicació d'antifouling, mecànica marina Volvo Penta/Yanmar, teca i polit de casc.",
+    de: "Servicio integral náutico y varadero en Es Portitxol (Palma), aplicación de patente antifouling, mecánica marina Volvo Penta/Yanmar, teca y pulido de casco.",
   },
   fullDescription: {
     es: "Varadero Portitxol Services es un taller náutico de confianza ubicado en el pintoresco puerto de Es Portitxol en la Bahía de Palma. Con más de 20 años atendiendo a armadores locales e internacionales, ofrece varada y botadura, limpieza de fondos a alta presión, tratamiento antiósmosis y patente antifouling de primeras marcas, reparación y calafateado de cubiertas de teca, electricidad naval e invernaje completo de motores fueraborda e intraborda.",
     en: "Varadero Portitxol Services is a trusted boutique boatyard and marine engineering facility located in Palma's historic Es Portitxol harbor. With over 20 years of maritime expertise, they provide travelift hauling and launching, high-pressure hull pressure washing, antifouling applications, marine diesel engine maintenance (Volvo Penta, Yanmar, Mercury), teak deck caulking, and seasonal yacht winterization.",
     ca: "Varador Portitxol Services és un taller nàutic de confiança al port d'Es Portitxol a Palma. Amb més de 20 anys d'experiència, ofereix varada, neteja de fons, aplicació d'antifouling, mecànica marina, calafatat de cobertes de teca i hivernatge d'embarcacions.",
+    de: "Varadero Portitxol Services es un taller náutico de confianza ubicado en el pintoresco puerto de Es Portitxol en la Bahía de Palma. Con más de 20 años atendiendo a armadores locales e internacionales, ofrece varada y botadura, limpieza de fondos a alta presión, tratamiento antiósmosis y patente antifouling de primeras marcas, reparación y calafateado de cubiertas de teca, electricidad naval e invernaje completo de motores fueraborda e intraborda.",
   },
   specialties: {
     es: [

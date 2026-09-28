@@ -34,11 +34,13 @@ export const restauranteFlanigan: ServiceItem = {
     es: "Emblemático restaurante en la marina de Puerto Portals desde 1987, famoso por su cocina de mercado, pescados frescos y su célebre tarta fina de manzana.",
     en: "Iconic restaurant in the marina of Puerto Portals since 1987, famous for its market cuisine, fresh fish and its famous fine apple tart.",
     ca: "Emblemàtic restaurant a la marina de Portals Nous des de 1987, famós per la seva cuina de mercat, peixos frescos i el seu cèlebre pastís fi de poma.",
+    de: "Emblemático restaurante en la marina de Puerto Portals desde 1987, famoso por su cocina de mercado, pescados frescos y su célebre tarta fina de manzana.",
   },
   fullDescription: {
     es: "Fundado en 1987 en el corazón de Puerto Portals (Calvià), Restaurante Flanigan es una de las instituciones gastronómicas y sociales más legendarias de Mallorca. Con vistas directas a los yates de la marina, ofrece una cocina mediterránea honesta basada en el mejor producto de lonja, mariscos selectos, carnes a la brasa y su mundialmente famosa tarta fina de manzana caliente con helado de vainilla.",
     en: "Founded in 1987 in the heart of Puerto Portals (Calvià), Restaurante Flanigan is one of Mallorca's most legendary gastronomic and social institutions. With direct views of the marina's yachts, it offers honest Mediterranean cuisine based on the best fish market produce, select seafood, grilled meats and its world-famous hot fine apple pie with vanilla ice cream.",
     ca: "Fundat el 1987 al cor de Puerto Portals (Calvià), Restaurant Flanigan és una de les institucions gastronòmiques i socials més llegendàries de Mallorca. Amb vista directa als iots de la marina, ofereix una cuina mediterrània honesta basada en el millor producte de llotja, mariscos selectes, carns a la brasa i el seu famós pastís fi de poma calenta amb gelat de vainilla.",
+    de: "Fundado en 1987 en el corazón de Puerto Portals (Calvià), Restaurante Flanigan es una de las instituciones gastronómicas y sociales más legendarias de Mallorca. Con vistas directas a los yates de la marina, ofrece una cocina mediterránea honesta basada en el mejor producto de lonja, mariscos selectos, carnes a la brasa y su mundialmente famosa tarta fina de manzana caliente con helado de vainilla.",
   },
   specialties: {
     es: [

@@ -34,11 +34,13 @@ export const carniceriaCaNaFina: ServiceItem = {
     es: "Carnicería y charcutería artesanal en el centro de Sóller, célebre por su sobrasada tradicional de porc negre, botifarrons, camaiot y cordero de la Tramuntana.",
     en: "Traditional butcher and artisan charcuterie in Sóller, renowned for authentic Black Pig sobrassada, botifarrons, camaiot, and free-range Tramuntana lamb.",
     ca: "Carnisseria i xarcuteria artesanal al centre de Sóller, cèlebre per la seva sobrassada tradicional de porc negre, botifarrons, camaiot i xai de pastura.",
+    de: "Metzgerei und handwerkliche Wurstwaren im Zentrum von Sóller, berühmt für seine traditionelle Sobrasada aus schwarzem Schweinefleisch, Botifarrons, Camaiot und Tramuntana-Lamm.",
   },
   fullDescription: {
     es: "Ca Na Fina es la carnicería tradicional de referencia en el Valle de Sóller, situada en la emblemática y comercial calle de Sa Lluna. Con más de 40 años de oficio, elabora sus propios embutidos mallorquines curados al aire de la Tramuntana siguiendo recetas familiares ancestrales: sobrasada de Porc Negre mallorquín con pimentón de tap de cortí, botifarrons, camaiot y cortes selectos de cordero y ternera balear.",
     en: "Ca Na Fina is the quintessential traditional butcher shop and artisan salumeria in the Sóller Valley, located on historic pedestrian Carrer de Sa Lluna. For over 40 years, the family has cured its own authentic Balearic charcuterie using the cool mountain breezes of the Tramuntana: Porc Negre sobrassada made with sweet Tap de Cortí paprika, botifarrons, camaiot, and pasture-raised Balearic lamb.",
     ca: "Ca Na Fina és la carnisseria tradicional de referència a la Vall de Sóller, situada al cèntric carrer de Sa Lluna. Amb més de 40 anys d'ofici, elabora els seus propis embotits mallorquins curats a l'aire de la Tramuntana: sobrassada de Porc Negre amb tap de cortí, botifarrons, camaiot i xai de pastura.",
+    de: "Ca Na Fina ist die traditionelle Metzgerei im Tal von Sóller, die sich in der emblematischen Einkaufsstraße Sa Lluna befindet. Mit mehr als 40 Jahren Erfahrung stellt er seine eigenen mallorquinischen Wurstwaren her, die in der Luft der Tramuntana nach althergebrachten Familienrezepten gereift sind: mallorquinische Porc Negre Sobrasada mit Tap de Corti-Paprika, Botifarrons, Camaiot und ausgewählten Lamm- und Balearen-Rindfleischstücken.",
   },
   specialties: {
     es: [

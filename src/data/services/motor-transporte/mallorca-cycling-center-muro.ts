@@ -34,11 +34,13 @@ export const mallorcaCyclingCenter: ServiceItem = {
     es: "Centro ciclista y taller profesional en Playa de Muro y Alcúdia, alquiler de bicicletas de carretera de carbono (BMC, Colnago), e-bikes, estudio biomecánico y servicio en ruta.",
     en: "Premier bike rental hub and professional cycling mechanics in Playa de Muro & Alcúdia, featuring premium carbon road bikes (BMC, Colnago), e-bikes, and bike fitting.",
     ca: "Centre ciclista i taller professional a Platja de Muro i Alcúdia, lloguer de bicicletes de carretera de carboni (BMC, Colnago), e-bikes, estudi biomecànic i servei en ruta.",
+    de: "Centro ciclista y taller profesional en Playa de Muro y Alcúdia, alquiler de bicicletas de carretera de carbono (BMC, Colnago), e-bikes, estudio biomecánico y servicio en ruta.",
   },
   fullDescription: {
     es: "Mallorca Cycling Center es el punto neurálgico del ciclismo de alto nivel en el norte de Mallorca, ubicado estratégicamente en Playa de Muro junto a la bahía de Alcúdia y el Parque Natural de s'Albufera. Equipado con taller mecánico oficial Shimano Service Center, ofrece una flota de bicicletas de carretera de carbono de última generación, e-bikes de largo alcance, estudios biomecánicos 3D para ajuste de posición y entrega directa en hoteles y villas.",
     en: "Mallorca Cycling Center is the premier hub for road cycling excellence in northern Mallorca, situated in Playa de Muro by Alcúdia Bay and s'Albufera Nature Reserve. Boasting a certified Shimano Service Center workshop, they provide an elite fleet of carbon road bikes (BMC, Pinarello, Colnago), high-range e-bikes, 3D Retül dynamic bike fitting, and villa bike delivery across the island.",
     ca: "Mallorca Cycling Center és el centre de referència del cicloturisme al nord de Mallorca, a Platja de Muro. Amb taller certificat Shimano, ofereix lloguer de bicicletes de carretera de carboni d'alta gamma, bicis elèctriques, estudis biomecànics 3D i lliurament a vil·les.",
+    de: "Mallorca Cycling Center es el punto neurálgico del ciclismo de alto nivel en el norte de Mallorca, ubicado estratégicamente en Playa de Muro junto a la bahía de Alcúdia y el Parque Natural de s'Albufera. Equipado con taller mecánico oficial Shimano Service Center, ofrece una flota de bicicletas de carretera de carbono de última generación, e-bikes de largo alcance, estudios biomecánicos 3D para ajuste de posición y entrega directa en hoteles y villas.",
   },
   specialties: {
     es: [

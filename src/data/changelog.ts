@@ -57,7 +57,7 @@ export interface ReleaseLog {
 
 export const CURRENT_PLATFORM_VERSION = "0.10";
 export const PLATFORM_RELEASE_DATE = "2026-09-28";
-export const PLATFORM_LAST_BUILD_TIMESTAMP = "2026-09-28T14:35:00+02:00";
+export const PLATFORM_LAST_BUILD_TIMESTAMP = "2026-09-28T16:15:00+02:00";
 
 /**
  * Devuelve la fecha y hora formateada de la última actualización según el idioma.
@@ -215,6 +215,48 @@ export const CHANGELOG_RELEASES: ReleaseLog[] = [
           en: "Ownership P1-1",
           ca: "Titularitat P1-1",
           de: "Inhaberschaft P1-1",
+        },
+      },
+      {
+        category: "FIX",
+        title: {
+          es: "Saneamiento y cobertura 100% de imágenes físicas en disco",
+          en: "Sanitation and 100% physical image coverage on disk",
+          ca: "Sanejament i cobertura 100% d'imatges físiques en disc",
+          de: "Bereinigung und 100% physische Bildabdeckung auf der Festplatte",
+        },
+        description: {
+          es: "Se eliminaron 361 archivos vacíos de 0 bytes y se crearon/repararon 474 imágenes locales y 28 de galerías vinculadas a las categorías y sectores oficiales de Mallorca, eliminando cualquier fallo 404 de red o decodificación en navegadores.",
+          en: "Purged 361 empty 0-byte files and created/repaired 474 local images and 28 gallery images mapped to official Balearic categories, eliminating all 404 network and decoding errors in browsers.",
+          ca: "Es van eliminar 361 arxius buits de 0 bytes i es van crear/reparar 474 imatges locals i 28 de galeries vinculades a les categories oficials, eliminant fallades 404.",
+          de: "361 leere 0-Byte-Dateien bereinigt und 474 lokale Bilder sowie 28 Galeriebilder repariert, sodass keine 404-Netzwerk- oder Decodierungsfehler mehr auftreten.",
+        },
+        badgeText: {
+          es: "Cero 404s",
+          en: "Zero 404s",
+          ca: "Zero 404s",
+          de: "Keine 404s",
+        },
+      },
+      {
+        category: "FEATURE",
+        title: {
+          es: "Completitud cuatrilingüe (DE) y reparación de textos truncados",
+          en: "Four-language completeness (DE) and repair of truncated texts",
+          ca: "Completesa cuatrilingüe (DE) i reparació de textos truncats",
+          de: "Viersprachige Vollständigkeit (DE) und Reparatur abgeschnittener Texte",
+        },
+        description: {
+          es: "Se generaron descripciones profesionales en alemán para 77 negocios que carecían de ellas (cumpliendo estrictamente GR-04) y se repararon 138 descripciones en catalán, español e inglés que habían sufrido cortes por apóstrofes en nombres como Ca n'Ignasi o Port d'Andratx.",
+          en: "Generated professional German descriptions for 77 businesses lacking them (strictly adhering to GR-04) and repaired 138 descriptions in Catalan, Spanish, and English that suffered from apostrophe cutoffs in names like Ca n'Ignasi or Port d'Andratx.",
+          ca: "Es van generar descripcions professionals en alemany per a 77 negocis (complint GR-04) i es van reparar 138 descripcions que havien patit talls per apòstrofs en noms com Ca n'Ignasi o Port d'Andratx.",
+          de: "Professionelle deutsche Beschreibungen für 77 Unternehmen ergänzt (gemäß GR-04) und 138 Beschreibungen auf Katalanisch, Spanisch und Englisch repariert, bei denen Apostrophe in Namen wie Ca n'Ignasi oder Port d'Andratx abgeschnitten waren.",
+        },
+        badgeText: {
+          es: "GR-04 i18n",
+          en: "GR-04 i18n",
+          ca: "GR-04 i18n",
+          de: "GR-04 i18n",
         },
       },
     ],

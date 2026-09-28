@@ -36,10 +36,10 @@ export const ELITE_FITNESS_PORT_ANDRATX: ServiceItem = {
     de: "Boutique-Fitnessstudio am Hafen von Port d'Andratx mit Premium-Geräten.",
   },
   fullDescription: {
-    es: "Elite Fitness Port d se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Gimnasio boutique en el puerto de Port d Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
-    en: "Elite Fitness Port d stands out as one of the premier athletic and fitness destinations in Mallorca. Boutique gym at the Port d Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
-    ca: "Elite Fitness Port d destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Gimnàs boutique al Port d Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
-    de: "Elite Fitness Port d zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Boutique-Fitnessstudio am Hafen von Port d Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
+    es: "Elite Fitness Port d'Andratx se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Gimnasio boutique en el puerto de Port d'Andratx. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "Elite Fitness Port d'Andratx stands out as one of the premier athletic and fitness destinations in Mallorca. Boutique gym at the Port d'Andratx. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "Elite Fitness Port d destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Gimnàs boutique al Port d'Andratx. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    de: "Elite Fitness Port d'Andratx zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Boutique-Fitnessstudio am Hafen von Port d Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {
     es: [

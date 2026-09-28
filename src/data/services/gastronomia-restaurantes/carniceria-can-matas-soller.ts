@@ -34,11 +34,13 @@ export const carniceriaCanMatas: ServiceItem = {
     es: "Carnicería y charcutería centenaria en la Calle de la Luna de Sóller (1920), especialistas en cordero lechal de pasto de la Serra de Tramuntana, sobrasada casera curada y embutidos tradicionales.",
     en: "Centennial butcher and artisan charcuterie on Sóller's historic Calle de la Luna (1920), specializing in pasture-raised Tramuntana lamb, house-cured sobrassada, and heritage sausages.",
     ca: "Carnisseria i xarcuteria centenària al Carrer de sa Lluna de Sóller (1920), especialistes en xot de pastura de la Serra de Tramuntana, sobrassada casolana curada i embotits tradicionals.",
+    de: "Hundertjährige Metzgerei und Wurstwaren in der Calle de la Luna in Sóller (1920), Spezialisten für Milchlamm aus Weide in der Serra de Tramuntana, hausgemachte Sobrasada und traditionelle Wurstwaren.",
   },
   fullDescription: {
     es: "Carnisseria Can Matas es un comercio emblemático situado en la comercial y adoquinada Calle de la Luna de Sóller, con más de un siglo suministrando carne de primera calidad al valle de los naranjos. Cuarta generación de carniceros artesanos que seleccionan corderos lechales criados en libertad en los olivares de la Tramuntana, ternera balear madurada, y elaboran de forma manual su aclamada sobrasada casera dulce y picante, botifarrons de caldereta y camaiot.",
     en: "Carnisseria Can Matas is a landmark family butchery located along Sóller's bustling pedestrian Carrer de sa Lluna, providing premium Balearic meats for over a century. Run by fourth-generation master butchers, they source free-range milk-fed lambs grazing in Tramuntana mountain olive groves, dry-aged local beef, and handcraft celebrated house-cured sweet and spicy sobrassadas, botifarrons, and camaiot.",
     ca: "Carnisseria Can Matas és un comerç emblemàtic al Carrer de sa Lluna de Sóller, amb més d'un segle d'història. Quarta generació de carnissers artesans que seleccionen xot de pastura de la Tramuntana, vedella madurada i elaboren sobrassada casolana dolça i coent, botifarrons i camaiot.",
+    de: "Carnisseria Can Matas ist ein emblematischer Handel in der kommerziellen und gepflasterten Calle de la Luna in Sóller, mit mehr als einem Jahrhundert Erfahrung in der Lieferung von hochwertigem Fleisch in das Tal der Orangenbäume. Vierte Generation von handwerklichen Metzgern, die frei in den Olivenhainen der Tramuntana aufgezogene Milchlämmer, gereiftes balearisches Kalbfleisch auswählen und ihre gefeierte süße und würzige hausgemachte Sobrasada, Botifarrons de Caldereta und Camaiot manuell herstellen.",
   },
   specialties: {
     es: [

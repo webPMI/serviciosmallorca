@@ -34,11 +34,13 @@ export const fornDeSantJoan: ServiceItem = {
     es: "Icónico restaurante en una panadería del siglo XIX en La Lonja, especializado en cocina mediterránea creativa y coctelería de autor.",
     en: "Iconic restaurant set in a 19th-century bakery in La Lonja, specializing in creative Mediterranean cuisine and signature cocktails.",
     ca: "Icònic restaurant en un antic forn del segle XIX a La Llotja, especialitzat en cuina mediterrània creativa i cocteleria d'autor.",
+    de: "Ikonisches Restaurant in einer Bäckerei aus dem 19. Jahrhundert in La Lonja, spezialisiert auf kreative mediterrane Küche und Designer-Cocktails.",
   },
   fullDescription: {
     es: "Ubicado en el corazón del emblemático barrio de La Lonja en Palma, Forn de Sant Joan es uno de los templos gastronómicos más prestigiosos de Mallorca. Fundado en una antigua panadería tradicional del siglo XIX, ofrece cuatro espacios con atmósferas diferenciadas (La Sala Principal, El Celler, La Sala de Cristal y La Sala Roja) donde convergen la alta cocina mediterránea de autor, el mejor producto de la lonja balear y una selecta coctelería contemporánea.",
     en: "Located in the heart of Palma's historic La Lonja district, Forn de Sant Joan is one of Mallorca's most celebrated dining institutions. Housed inside a former 19th-century bakery, it features four distinct dining atmospheres where innovative Mediterranean cuisine, fresh local seafood, and artisan mixology come together seamlessly.",
     ca: "Situat al cor de l'emblemàtic barri de La Llotja de Palma, Forn de Sant Joan és un dels referents gastronòmics més reconeguts de Mallorca. Establert en un antic forn tradicional del segle XIX, disposa de quatre sales amb ambients exclusius on es fusionen la cuina mediterrània contemporània, producte fresc balear i cocteleria d'autor.",
+    de: "Forn de Sant Joan liegt im Herzen des emblematischen Viertels La Lonja in Palma und ist einer der renommiertesten gastronomischen Tempel Mallorcas. Gegründet in einer alten traditionellen Bäckerei aus dem 19. Jahrhundert, bietet es vier Räume mit unterschiedlicher Atmosphäre (La Sala Principal, El Celler, La Sala de Cristal und La Sala Roja), in denen die gehobene mediterrane Autorenküche, das beste Produkt des balearischen Fischmarkts und eine erlesene zeitgenössische Cocktailbar konvergieren.",
   },
   specialties: {
     es: [

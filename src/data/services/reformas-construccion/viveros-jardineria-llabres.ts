@@ -34,11 +34,13 @@ export const viverosLlabres: ServiceItem = {
     es: "Centro de jardinería y vivero de producción vegetal en Marratxí desde 1970, más de 50.000 m² de plantas mediterráneas, olivos centenarios, árboles frutales y proyectos de paisajismo.",
     en: "Premier garden center and botanical nursery in Marratxí since 1970, featuring 50,000 m² of Mediterranean flora, ancient olive specimens, citrus trees, and landscape architecture.",
     ca: "Centre de jardineria i viver de producció vegetal a Marratxí des de 1970, més de 50.000 m² de plantes mediterrànies, oliveres centenàries, fruiters i projectes de paisatgisme.",
+    de: "Centro de jardinería y vivero de producción vegetal en Marratxí desde 1970, más de 50.000 m² de plantas mediterráneas, olivos centenarios, árboles frutales y proyectos de paisajismo.",
   },
   fullDescription: {
     es: "Viveros & Jardinería Llabrés es el vivero y centro botánico de referencia en Mallorca con más de 50 años de experiencia al servicio de los jardines de la isla. Con una extensión de más de cinco hectáreas en Marratxí, cultiva y aclimata especies autóctonas mediterráneas de bajo consumo hídrico: olivos centenarios y milenarios certificados, algarrobos monumentales, cítricos de Sóller, palmeras, plantas aromáticas y macetería de terracota, ofreciendo además servicios integrales de diseño y plantación en villas y fincas.",
     en: "Viveros & Jardinería Llabrés is a premier horticultural center and production tree nursery operating across five hectares in Marratxí for over 50 years. Acclimatizing native Mediterranean flora engineered for dry Balearic summers, they supply specimen centennial olive trees, monumental carob trees, Sóller citrus, drought-tolerant flowering shrubs, rustic terracotta pottery, and complete turnkey landscape execution.",
     ca: "Viveros & Jardineria Llabrés és el viver i centre botànic de referència a Mallorca amb més de 50 anys d'història. Amb més de 5 hectàrees a Marratxí, conrea espècies autòctones mediterrànies: oliveres centenàries, garrovers, cítrics de Sóller, plantes aromàtiques i testos de terracota, oferint serveis de plantació i paisatgisme a vil·les.",
+    de: "QUERY LENGTH LIMIT EXCEEDED. MAX ALLOWED QUERY : 500 CHARS",
   },
   specialties: {
     es: [

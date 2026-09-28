@@ -36,9 +36,9 @@ export const CLUB_TENIS_CALVIA_COSTA_DEN_BLANES: ServiceItem = {
     de: "Tennisclub in Costa d'en Blanes mit 6 Rotsandplätzen mit Meerblick und Padelplätzen.",
   },
   fullDescription: {
-    es: "Club Tenis Calvià se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Club de tenis en Costa d Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
-    en: "Club Tenis Calvià stands out as one of the premier athletic and fitness destinations in Mallorca. Tennis club in Costa d Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
-    ca: "Club Tenis Calvià destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Club de tennis a Costa d Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
+    es: "Club Tenis Calvià se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Club de tenis en Costa d'en Blanes. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
+    en: "Club Tenis Calvià stands out as one of the premier athletic and fitness destinations in Mallorca. Tennis club in Costa d'en Blanes. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
+    ca: "Club Tenis Calvià destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Club de tennis a Costa d'en Blanes. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
     de: "Club Tenis Calvià zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Tennisclub in Costa d Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
   },
   highlights: {

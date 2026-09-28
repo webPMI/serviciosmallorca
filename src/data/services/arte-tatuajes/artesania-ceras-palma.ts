@@ -34,11 +34,13 @@ export const artesaniaCerasPalma: ServiceItem = {
     es: "Taller centenario y tienda de cerería artesanal en el Casco Antiguo de Palma, velas 100% de cera pura de abeja de Mallorca, aromas botánicos y piezas decorativas.",
     en: "Centennial candlemaker and artisan wax atelier in Palma's Old Town, crafting 100% pure Balearic beeswax candles, botanical fragrances, and bespoke home decor.",
     ca: "Taller centenari i botiga de cereria artesanal al centre històric de Palma, espelmes 100% de cera pura d'abella de Mallorca i aromes botànics.",
+    de: "Hundertjährige Werkstatt und handwerklicher Wachsladen in der Altstadt von Palma, Kerzen aus 100% reinem mallorquinischen Bienenwachs, botanische Düfte und dekorative Stücke.",
   },
   fullDescription: {
     es: "Caxígalos es uno de los comercios artesanos con más solera y encanto de Palma, situado en una pintoresca callejuela del casco antiguo medieval. Con más de 160 años de tradición cerera heredada, elabora a mano velas puras de cera de abejas de la Serra de Tramuntana, cirios tradicionales, velas aromáticas con aceites esenciales de azahar de Sóller, higuera e hinojo marino, y detalles aromáticos para villas y eventos.",
     en: "Caxígalos is one of Palma's most atmospheric historic craft boutiques, nestled along a cobblestone alley in the medieval old quarter. Inheriting over 160 years of candlemaking mastery, they hand-pour 100% pure natural Tramuntana beeswax candles, traditional liturgical tapers, and Mediterranean botanical scented candles infused with Sóller orange blossom and wild fig essence.",
     ca: "Caxígalos és un dels comerços artesans amb més història de Palma. Amb més de 160 anys de tradició, elabora a mà espelmes pures de cera d'abella de la Tramuntana, ciris tradicionals i espelmes aromàtiques amb essències de flor de taronger de Sóller i figuera.",
+    de: "Caxígalos ist eines der traditionsreichsten und charmantesten Handwerksbetriebe Palmas und liegt in einer malerischen Gasse der mittelalterlichen Altstadt. Mit mehr als 160 Jahren geerbter Wachstradition stellt sie reine Bienenwachskerzen aus der Serra de Tramuntana, traditionelle Kerzen, Duftkerzen mit ätherischen Ölen aus Orangenblüten aus Sóller, Feigenbaum und Fenchel sowie aromatische Details für Villen und Veranstaltungen von Hand her.",
   },
   specialties: {
     es: [

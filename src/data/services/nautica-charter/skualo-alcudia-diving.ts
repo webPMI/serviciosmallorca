@@ -34,11 +34,13 @@ export const skualoAlcudia: ServiceItem = {
     es: "Centro de buceo PADI 5 Star en la bahía de Alcúdia y Can Picafort, inmersiones en las espectaculares cuevas marinas y túneles del Cabo Formentor y Parque Natural de Llevant.",
     en: "Premier PADI 5-Star dive and snorkel center in Alcúdia Bay & Can Picafort, exploring dramatic sea caves, tunnels, and marine drop-offs around Cape Formentor.",
     ca: "Centre de submarinisme PADI 5 Star a la badia d'Alcúdia i Can Picafort, immersions a les coves marines del Cap de Formentor i Parc Natural de Llevant.",
+    de: "Centro de buceo PADI 5 Star en la bahía de Alcúdia y Can Picafort, inmersiones en las espectaculares cuevas marinas y túneles del Cabo Formentor y Parque Natural de Llevant.",
   },
   fullDescription: {
     es: "Skualo Diving Center es uno de los centros de buceo y aventura marina con más solera en el norte de Mallorca, ubicado en el puerto deportivo de Can Picafort / Bahía de Alcúdia. Con lanchas rápidas semirrígidas de gran eslora, organiza expediciones diarias a los espectaculares acantilados y cavernas sumergidas de Formentor, la Cueva de los Quesos, Coll Baix y la Reserva Marina del Llevant, además de cursos PADI multilingües y safaris de snorkel para todas las edades.",
     en: "Skualo Diving Center is a premier scuba and coastal safari operator stationed along the expansive Bay of Alcúdia at Can Picafort Marina. Operating powerful custom rigid-inflatable dive vessels, they guide daily expeditions to Cape Formentor's dramatic drop-offs, the famous Swiss Cheese underwater caverns, and Llevant Marine Reserve, alongside introductory try dives and full PADI certification courses.",
     ca: "Skualo Diving Center és un centre de submarinisme de referència al nord de Mallorca, al port esportiu de Can Picafort. Amb llanxes ràpides, organitza sortides diàries als penya-segats de Formentor, la Cova dels Formatges i la Reserva Marina de Llevant, a més de cursos PADI i snorkel.",
+    de: "Skualo Diving Center es uno de los centros de buceo y aventura marina con más solera en el norte de Mallorca, ubicado en el puerto deportivo de Can Picafort / Bahía de Alcúdia. Con lanchas rápidas semirrígidas de gran eslora, organiza expediciones diarias a los espectaculares acantilados y cavernas sumergidas de Formentor, la Cueva de los Quesos, Coll Baix y la Reserva Marina del Llevant, además de cursos PADI multilingües y safaris de snorkel para todas las edades.",
   },
   specialties: {
     es: [

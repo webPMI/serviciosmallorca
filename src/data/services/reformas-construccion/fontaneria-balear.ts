@@ -34,11 +34,13 @@ export const fontaneriaBalear: ServiceItem = {
     es: "Fontanero profesional y empresa familiar de reparaciones, detección de fugas, termos y desatascos rápidos en Palma y alrededores.",
     en: "Family-owned certified plumbing and emergency repair service in Palma, specializing in leak detection, water heaters, and drain unclogging.",
     ca: "Lampista professional i empresa familiar de reparacions, detecció de fugides, termos i desatascos ràpids a Palma i voltants.",
+    de: "Fontanero profesional y empresa familiar de reparaciones, detección de fugas, termos y desatascos rápidos en Palma y alrededores.",
   },
   fullDescription: {
     es: "Fontanería Balear es una empresa familiar de instaladores autorizados con más de 20 años solucionando averías de fontanería, desatascos urgentes, fugas de agua y montaje de calderas y termos eléctricos en Palma, Marratxí y Calvià. Ofrece un trato directo, presupuestos transparentes y rapidez de respuesta con técnicos locales de confianza.",
     en: "Fontanería Balear is a family-run certified plumbing service with over 20 years of experience resolving household leaks, urgent drain blockages, water heater replacements, and pressure boost pumps across Palma, Marratxí, and Calvià. Delivering honest, prompt, and transparent localized service.",
     ca: "Fontaneria Balear és una empresa familiar d'instal·ladors autoritzats amb més de 20 anys solucionant avaries de lampisteria, desatascos urgents, fugides d'aigua i muntatge de termos elèctrics a Palma, Marratxí i Calvià amb tracte proper i pressupostos clars.",
+    de: "Fontanería Balear es una empresa familiar de instaladores autorizados con más de 20 años solucionando averías de fontanería, desatascos urgentes, fugas de agua y montaje de calderas y termos eléctricos en Palma, Marratxí y Calvià. Ofrece un trato directo, presupuestos transparentes y rapidez de respuesta con técnicos locales de confianza.",
   },
   specialties: {
     es: [

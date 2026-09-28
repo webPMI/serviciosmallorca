@@ -34,11 +34,13 @@ export const tallerHermanosBestard: ServiceItem = {
     es: "Taller mecánico familiar en Palma desde 1978, especialistas en diagnosis multimarca, cambio de correas de distribución, embragues, frenos y revisión Pre-ITV con traslado.",
     en: "Family-owned auto repair garage in Palma since 1978, specializing in multi-brand computerized diagnostics, timing belts, clutches, brakes, and Pre-MOT inspection service.",
     ca: "Taller mecànic familiar a Palma des de 1978, especialistes en diagnosi multimarca, corretges de distribució, embragatges, frens i revisió Pre-ITV amb trasllat.",
+    de: "Taller mecánico familiar en Palma desde 1978, especialistas en diagnosis multimarca, cambio de correas de distribución, embragues, frenos y revisión Pre-ITV con traslado.",
   },
   fullDescription: {
     es: "Taller Mecánico Hermanos Bestard es un taller de confianza del barrio de Son Espanyolet en Palma con casi 50 años de trayectoria ininterrumpida. Gestionado por mecánicos titulados de segunda generación, ofrece un servicio honesto y cercano de mecánica rápida y pesada: diagnosis electrónica avanzada multimarca, sustitución de kit de distribución y bomba de agua, amortiguadores, neumáticos y servicio integral de revisión y paso de ITV.",
     en: "Taller Mecánico Hermanos Bestard is a trusted neighborhood auto repair institution in Palma's Son Espanyolet quarter with nearly 50 years of family service. Led by master automotive technicians, they deliver transparent mechanical repairs: advanced computer diagnostics, timing belts and water pumps, brakes and suspension, tires, and a full ITV inspection handover service.",
     ca: "Taller Mecànic Hermanos Bestard és un taller de confiança a Son Espanyolet amb gairebé 50 anys d'història. Gestionat per mecànics titulats, ofereix un servei honest de mecànica ràpida i pesada: diagnosi electrònica multimarca, corretges de distribució, embragatges i pas d'ITV.",
+    de: "Taller Mecánico Hermanos Bestard es un taller de confianza del barrio de Son Espanyolet en Palma con casi 50 años de trayectoria ininterrumpida. Gestionado por mecánicos titulados de segunda generación, ofrece un servicio honesto y cercano de mecánica rápida y pesada: diagnosis electrónica avanzada multimarca, sustitución de kit de distribución y bomba de agua, amortiguadores, neumáticos y servicio integral de revisión y paso de ITV.",
   },
   specialties: {
     es: [

@@ -34,11 +34,13 @@ export const solarArta: ServiceItem = {
     es: "Instaladores electricistas autorizados y especialistas en energía solar fotovoltaica en Artà, Capdepera y el Llevant mallorquín desde 1998, instalaciones aisladas para fincas rústicas y baterías de litio.",
     en: "Certified electrical and solar photovoltaic engineering firm in Artà, Capdepera, and eastern Mallorca since 1998, specializing in off-grid rural finca solar arrays and lithium battery storage.",
     ca: "Instal·ladors electricistes autoritzats i especialistes en energia solar fotovoltaica a Artà i el Llevant des de 1998, instal·lacions aïllades per a finques rústiques i bateries de liti.",
+    de: "Instaladores electricistas autorizados y especialistas en energía solar fotovoltaica en Artà, Capdepera y el Llevant mallorquín desde 1998, instalaciones aisladas para fincas rústicas y baterías de litio.",
   },
   fullDescription: {
     es: "Electricidad & Energía Solar Artà es una empresa técnica de ingeniería eléctrica y energías renovables con más de 25 años de arraigo en Artà, Capdepera, Son Servera y Sant Llorenç. Especializada en la electrificación sostenible de fincas rústicas y chalets, diseña e instala campos solares fotovoltaicos con inversores de última generación (Fronius, Victron, SMA), acumuladores de litio para 100% de autosuficiencia energética, puntos de carga de vehículos y boletines eléctricos oficiales.",
     en: "Electricidad & Energía Solar Artà is an authorized electrical and renewable solar engineering company serving Artà, Capdepera, and eastern Mallorca for over 25 years. Specializing in sustainable power for off-grid country fincas and residential estates, they install smart photovoltaic rooftop/ground arrays, high-capacity lithium battery systems (Victron, Fronius, Huawei), smart EV charging, and official CIE electrical certificates.",
     ca: "Electricitat & Energia Solar Artà és una empresa tècnica instal·ladora i d'energies renovables amb més de 25 anys d'experiència a Artà i el Llevant. Especialitzada en finques rústiques aïllades, instal·la plaques solars fotovoltaiques amb bateries de liti per a màxima autosuficiència, punts de recàrrega de cotxe i butlletins oficials (CIE).",
+    de: "Electricidad & Energía Solar Artà es una empresa técnica de ingeniería eléctrica y energías renovables con más de 25 años de arraigo en Artà, Capdepera, Son Servera y Sant Llorenç. Especializada en la electrificación sostenible de fincas rústicas y chalets, diseña e instala campos solares fotovoltaicos con inversores de última generación (Fronius, Victron, SMA), acumuladores de litio para 100% de autosuficiencia energética, puntos de carga de vehículos y boletines eléctricos oficiales.",
   },
   specialties: {
     es: [

@@ -34,11 +34,13 @@ export const electricidadBinissalem: ServiceItem = {
     es: "Instaladores electricistas autorizados en Binissalem y la comarca vitivinícola del Raiguer desde 1990, especialistas en energía solar fotovoltaica con baterías, domótica KNX y boletines eléctricos oficiales.",
     en: "Licensed electrical and smart home contractor in Binissalem since 1990, specializing in grid-tied and off-grid solar photovoltaic systems, KNX home automation, and official electrical certification.",
     ca: "Instal·ladors electricistes autoritzats a Binissalem i el Raiguer des de 1990, especialistes en energia solar fotovoltaica amb bateries, domòtica KNX i butlletins elèctrics.",
+    de: "Instaladores electricistas autorizados en Binissalem y la comarca vitivinícola del Raiguer desde 1990, especialistas en energía solar fotovoltaica con baterías, domótica KNX y boletines eléctricos oficiales.",
   },
   fullDescription: {
     es: "Electricidad & Domótica Binissalem es una empresa técnica instaladora homologada con más de 30 años de experiencia en fincas rústicas, bodegas y villas de la comarca del Raiguer (Binissalem, Consell, Sencelles, Santa Maria). Especializada en instalaciones eléctricas de baja tensión de alta seguridad, proyecta sistemas de autoconsumo solar fotovoltaico con acumuladores de litio, domótica KNX para control de iluminación y climatización, puntos de recarga de vehículos eléctricos y boletines de enganche oficiales (CIE).",
     en: "Electricidad & Domótica Binissalem is a certified master electrical and automation firm with over 30 years of experience serving historic fincas, wineries, and country homes in central Mallorca. They specialize in high-spec low-voltage electrical panels, rooftop solar PV arrays with lithium battery storage, smart KNX home automation (lighting and climate control), EV chargers, and official electrical certificates (CIE).",
     ca: "Electricitat & Domòtica Binissalem és una empresa tècnica instal·ladora homologada amb més de 30 anys d'experiència a finques rústiques i cellers de Binissalem i pobles veïns. Especialitzada en baixa tensió, energia solar fotovoltaica amb bateries de liti, domòtica KNX i butlletins oficials (CIE).",
+    de: "QUERY LENGTH LIMIT EXCEEDED. MAX ALLOWED QUERY : 500 CHARS",
   },
   specialties: {
     es: [

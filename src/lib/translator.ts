@@ -47,7 +47,7 @@ async function translateViaApertium(text: string, pair: "spa|cat" | "spa|eng"): 
 /**
  * Traduce texto mediante MyMemory (memoria de traducción colaborativa multilingüe).
  */
-async function translateViaMyMemory(text: string, pair: "es|en" | "es|ca"): Promise<string> {
+async function translateViaMyMemory(text: string, pair: "es|en" | "es|ca" | "es|de"): Promise<string> {
   const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=${pair}`;
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 6000);
@@ -77,7 +77,7 @@ async function translateViaMyMemory(text: string, pair: "es|en" | "es|ca"): Prom
 /**
  * Traduce un texto único desde Español ('es') hacia el idioma objetivo ('en' o 'ca').
  */
-export async function translateText(text: string, targetLang: "en" | "ca"): Promise<string> {
+export async function translateText(text: string, targetLang: "en" | "ca" | "de"): Promise<string> {
   if (!text || text.trim() === "") return "";
   const trimmed = text.trim();
   const cacheKey = `es->${targetLang}:${trimmed}`;
@@ -110,6 +110,13 @@ export async function translateText(text: string, targetLang: "en" | "ca"): Prom
         translated = trimmed;
       }
     }
+  } else if (targetLang === "de") {
+    // Para alemán, traducción neural MyMemory (es|de)
+    try {
+      translated = await translateViaMyMemory(trimmed, "es|de");
+    } catch {
+      translated = trimmed;
+    }
   }
 
   if (translated) {
@@ -122,7 +129,7 @@ export async function translateText(text: string, targetLang: "en" | "ca"): Prom
 /**
  * Traduce una lista de textos de forma secuencial y controlada.
  */
-export async function translateTextArray(texts: string[], targetLang: "en" | "ca"): Promise<string[]> {
+export async function translateTextArray(texts: string[], targetLang: "en" | "ca" | "de"): Promise<string[]> {
   const results: string[] = [];
   for (const t of texts) {
     const res = await translateText(t, targetLang);
@@ -146,6 +153,22 @@ export async function generateTrilingualField(textEs: string): Promise<{ es: str
 }
 
 /**
+ * Genera el campo cuatrilingüe estándar { es, en, ca, de } a partir de un texto en español (GR-04).
+ */
+export async function generateQuadrilingualField(
+  textEs: string,
+): Promise<{ es: string; en: string; ca: string; de: string }> {
+  if (!textEs || textEs.trim() === "") {
+    return { es: "", en: "", ca: "", de: "" };
+  }
+  const es = textEs.trim();
+  const en = await translateText(es, "en");
+  const ca = await translateText(es, "ca");
+  const de = await translateText(es, "de");
+  return { es, en, ca, de };
+}
+
+/**
  * Genera el array trilingüe estándar { es: [], en: [], ca: [] } a partir de una lista en español.
  */
 export async function generateTrilingualArray(
@@ -158,6 +181,22 @@ export async function generateTrilingualArray(
   const en = await translateTextArray(es, "en");
   const ca = await translateTextArray(es, "ca");
   return { es, en, ca };
+}
+
+/**
+ * Genera el array cuatrilingüe estándar { es: [], en: [], ca: [], de: [] } a partir de una lista en español.
+ */
+export async function generateQuadrilingualArray(
+  textsEs: string[],
+): Promise<{ es: string[]; en: string[]; ca: string[]; de: string[] }> {
+  if (!textsEs || textsEs.length === 0) {
+    return { es: [], en: [], ca: [], de: [] };
+  }
+  const es = textsEs.map((t) => t.trim()).filter(Boolean);
+  const en = await translateTextArray(es, "en");
+  const ca = await translateTextArray(es, "ca");
+  const de = await translateTextArray(es, "de");
+  return { es, en, ca, de };
 }
 
 /**

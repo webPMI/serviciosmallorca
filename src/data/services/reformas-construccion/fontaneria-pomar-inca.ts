@@ -34,11 +34,13 @@ export const fontaneriaPomar: ServiceItem = {
     es: "Empresa instaladora de fontanería, aerotermia y calefacción en Inca y la comarca del Raiguer desde 1985, especialistas en suelo radiante, descalcificadores y energía solar térmica.",
     en: "Licensed plumbing, HVAC, and heat pump contractor in Inca and central Mallorca since 1985, specializing in underfloor heating, water softeners, and solar thermal systems.",
     ca: "Empresa instal·ladora de fontaneria, aerotèrmia i calefacció a Inca des de 1985, especialistes en terra radiant, descalcificadors i energia solar tèrmica.",
+    de: "Empresa instaladora de fontanería, aerotermia y calefacción en Inca y la comarca del Raiguer desde 1985, especialistas en suelo radiante, descalcificadores y energía solar térmica.",
   },
   fullDescription: {
     es: "Fontanería & Climatización Pomar es una empresa familiar instaladora homologada con cuatro décadas de trayectoria en la comarca del Raiguer (Inca, Binissalem, Lloseta, Selva, Mancor). Especializada en soluciones térmicas e hídricas eficientes para fincas rústicas y viviendas unifamiliares, diseña e instala calderas de biomasa, bombas de calor de aerotermia de alta eficiencia, suelo radiante refrescante, descalcificadores de agua contra la cal balear y grupos de presión para pozos.",
     en: "Fontanería & Climatización Pomar is a fully licensed family engineering and plumbing firm operating in central Mallorca's Raiguer district for four decades. Tailoring efficient energy and water solutions for rustic fincas and modern villas, they install high-COP aerothermal heat pumps, radiant underfloor heating/cooling, whole-house anti-limescale softeners, solar thermal collectors, and well water booster pumps.",
     ca: "Fontaneria & Climatització Pomar és una empresa familiar instal·ladora homologada amb 40 anys de trajectòria a Inca i la comarca del Raiguer. Especialitzada en aerotèrmia, terra radiant, descalcificadors d'aigua contra la calç i sistemes solars tèrmics per a finques i habitatges.",
+    de: "Fontanería & Climatización Pomar es una empresa familiar instaladora homologada con cuatro décadas de trayectoria en la comarca del Raiguer (Inca, Binissalem, Lloseta, Selva, Mancor). Especializada en soluciones térmicas e hídricas eficientes para fincas rústicas y viviendas unifamiliares, diseña e instala calderas de biomasa, bombas de calor de aerotermia de alta eficiencia, suelo radiante refrescante, descalcificadores de agua contra la cal balear y grupos de presión para pozos.",
   },
   specialties: {
     es: [

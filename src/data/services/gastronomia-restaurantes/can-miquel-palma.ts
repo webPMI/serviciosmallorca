@@ -34,11 +34,13 @@ export const canMiquelPalma: ServiceItem = {
     es: "Histórica heladería artesana y pastelería en el centro de Palma desde 1930, con más de 90 sabores únicos de helado natural y repostería tradicional.",
     en: "Historic artisan ice cream and pastry parlor in central Palma since 1930, famous for over 90 natural homemade gelato flavors and traditional pastries.",
     ca: "Històrica gelateria artesana i pastisseria al centre de Palma des de 1930, amb més de 90 sabors únics de gelat natural i rebosteria tradicional.",
+    de: "Historische handwerkliche Eisdiele und Konditorei im Zentrum von Palma seit 1930, mit mehr als 90 einzigartigen Aromen von natürlichem Eis und traditionellem Gebäck.",
   },
   fullDescription: {
     es: "Ca'n Miquel es una institución del helado artesano en Palma desde 1930. Situada a escasos metros de Jaime III y el Paseo Mallorca, cuenta con un obrador propio donde elabora diariamente más de 90 sabores de helados con fruta fresca local, leche de granja y frutos secos de Mallorca (como el helado de almendra de Sóller, naranja amarga o higos con queso de cabra), además de tartas y chocolates artesanos.",
     en: "Ca'n Miquel has been Palma's supreme artisan gelato and confectionery benchmark since 1930. Located just off Jaime III, their in-house laboratory crafts over 90 distinct homemade flavors daily using fresh local island fruit, farm milk, and Mallorcan nuts (like Sóller almond, bitter orange, or wild fig with goat cheese), alongside traditional cakes and hot chocolate.",
     ca: "Ca'n Miquel és una institució del gelat artesà a Palma des de 1930. Situada devora Jaume III, compta amb obrador propi on elabora diàriament més de 90 sabors de gelats amb fruita fresca de l'illa, llet de granja i ametlla de Mallorca, a més de coques i rebosteria tradicional.",
+    de: "Ca'n Miquel ist seit 1930 eine Institution für handwerklich hergestelltes Eis in Palma. Es liegt nur wenige Meter von Jaime III und dem Paseo Mallorca entfernt und verfügt über eine eigene Werkstatt, in der täglich mehr als 90 Eissorten mit frischem lokalem Obst, Bauernmilch und mallorquinischen Nüssen (wie Mandeleis aus Sóller, Bitterorange oder Feigen mit Ziegenkäse) sowie hausgemachte Kuchen und Pralinen zubereitet werden.",
   },
   specialties: {
     es: [

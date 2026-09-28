@@ -34,11 +34,13 @@ export const bodegaCastellMiquel: ServiceItem = {
     es: "Bodega de montaña en Alaró situada en las laderas de la Serra de Tramuntana, famosa por sus espectaculares bancales de piedra en seco 'Stairway to Heaven' y vinos ecológicos de guarda.",
     en: "Mountain boutique winery in Alaró nestled against the Serra de Tramuntana, renowned for its dramatic dry-stone vineyard terraces ('Stairway to Heaven') and reserve terroir wines.",
     ca: "Celler de muntanya a Alaró situat als pendents de la Serra de Tramuntana, famós per les seves marjades de pedra en sec 'Stairway to Heaven' i vins ecològics.",
+    de: "Bergkellerei in Alaró an den Hängen der Serra de Tramuntana, berühmt für seine spektakulären Trockensteinterrassen \"Stairway to Heaven\" und Bio-Weine zur Aufbewahrung.",
   },
   fullDescription: {
     es: "Bodega Castell Miquel es una de las fincas vinícolas más singulares y bellas de Mallorca, enclavada en las faldas del valle de Alaró. Con una topografía única de terrazas de piedra en seco construidas a mano llamadas 'Stairway to Heaven', aprovecha un microclima alpino-mediterráneo para cultivar viñedos de Cabernet Sauvignon, Syrah, Montonegro y Sauvignon Blanc con vendimia manual en pendiente y crianza en barricas de roble francés.",
     en: "Bodega Castell Miquel is one of Mallorca's most visually dramatic and unique mountain wine estates, perched in the foothills of the scenic Alaró valley. Defined by its hand-built dry-stone amphitheater terraces known as the 'Stairway to Heaven', the estate benefits from cool mountain breezes to craft expressive terroir wines from Cabernet Sauvignon, Syrah, indigenous Mantonegro, and Sauvignon Blanc aged in French oak.",
     ca: "Bodega Castell Miquel és una de les finques vinícoles més espectaculars de Mallorca, al peu de la vall d'Alaró. Amb marjades de pedra en sec anomenades 'Stairway to Heaven', aprofita un microclima de muntanya per elaborar vins de guarda d'alta expressió.",
+    de: "Das Weingut Castell Miquel ist eines der einzigartigsten und schönsten Weingüter Mallorcas und liegt am Fuße des Alaró-Tals. Mit einer einzigartigen Topographie von handgefertigten Trockensteinterrassen, die als \"Stairway to Heaven\" bezeichnet werden, profitieren Sie von einem alpin-mediterranen Mikroklima, um Cabernet Sauvignon-, Syrah-, Montonegro- und Sauvignon Blanc-Weinberge mit manueller Ernte an Hängen und Reifung in französischen Eichenfässern anzubauen.",
   },
   specialties: {
     es: [

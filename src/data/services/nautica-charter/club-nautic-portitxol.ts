@@ -34,11 +34,13 @@ export const clubNauticPortitxol: ServiceItem = {
     es: "Histórico club náutico y puerto deportivo en el emblemático barrio del Portitxol de Palma, con amarres, escuela de vela y restaurante marinero.",
     en: "Historic yacht club and marina founded in 1928 on Palma's charming Portitxol bay, offering moorings, a certified sailing academy, and a seafront restaurant.",
     ca: "Històric club nàutic i port esportiu a l'emblemàtic barri del Portitxol de Palma, amb amarraments, escola de vela i restaurant mariner.",
+    de: "Histórico club náutico y puerto deportivo en el emblemático barrio del Portitxol de Palma, con amarres, escuela de vela y restaurante marinero.",
   },
   fullDescription: {
     es: "El Club Nàutic Portitxol es uno de los puertos deportivos con mayor solera y encanto de la Bahía de Palma. Fundado en 1928, ofrece amarres para embarcaciones de hasta 16 metros, escuela de vela y piragüismo homologada, varadero con servicios de mantenimiento náutico y un reconocido restaurante sobre el mar.",
     en: "Club Nàutic Portitxol is one of the most storied and picturesque marinas in Palma Bay. Founded in 1928, it provides moorings for vessels up to 16 meters, an accredited sailing and kayaking school, full shipyard travelift services, and a celebrated Mediterranean seafood restaurant.",
     ca: "El Club Nàutic Portitxol és un dels ports esportius amb més solera i encant de la Badia de Palma. Fundat el 1928, ofereix amarraments fins a 16 metres, escola de vela homologada, escar amb serveis nàutics i un reconegut restaurant sobre la mar.",
+    de: "El Club Nàutic Portitxol es uno de los puertos deportivos con mayor solera y encanto de la Bahía de Palma. Fundado en 1928, ofrece amarres para embarcaciones de hasta 16 metros, escuela de vela y piragüismo homologada, varadero con servicios de mantenimiento náutico y un reconocido restaurante sobre el mar.",
   },
   specialties: {
     es: [

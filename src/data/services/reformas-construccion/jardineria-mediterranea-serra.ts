@@ -34,11 +34,13 @@ export const jardineriaSerra: ServiceItem = {
     es: "Empresa de diseño paisajístico y mantenimiento de jardines mediterráneos en Mallorca, especialistas en xerojardinería de bajo consumo de agua, poda de palmeras y riego inteligente.",
     en: "Landscape architecture and Mediterranean garden care specialists in Mallorca, excelling in drought-tolerant xeriscaping, palm tree pruning, and smart drip irrigation.",
     ca: "Empresa de disseny paisatgístic i manteniment de jardins mediterranis a Mallorca, especialistes en xerojardineria de baix consum d'aigua, poda de palmeres i reg intel·ligent.",
+    de: "Empresa de diseño paisajístico y mantenimiento de jardines mediterráneos en Mallorca, especialistas en xerojardinería de bajo consumo de agua, poda de palmeras y riego inteligente.",
   },
   fullDescription: {
     es: "Jardinería & Paisajismo Serra es una empresa especializada en la creación, rehabilitación y cuidado integral de jardines mediterráneos en fincas rústicas y villas de Mallorca (Palma, Calvià, Andratx, Alaró). Comprometida con la sostenibilidad y la sequía estival balear, diseña espacios con plantas autóctonas adaptadas al clima (olivos, lavandas, cipreses, buganvillas), poda técnica de palmeras y árboles de gran porte, y sistemas de riego por goteo automatizados.",
     en: "Jardinería & Paisajismo Serra is a premier landscape design and estate garden maintenance contractor serving luxury villas and country fincas across Mallorca (Son Vida, Calvià, Andratx). Focused on ecological sustainability and Mediterranean climate resilience, they engineer drought-hardy xeriscapes with native Flora (ancient olives, lavender, cypress), tree surgery, and smart weather-synced drip irrigation.",
     ca: "Jardineria & Paisatgisme Serra és una empresa especialitzada en la creació i manteniment de jardins mediterranis a finques i vil·les de Mallorca. Compromesa amb la sostenibilitat, dissenya espais amb plantes autòctones, poda de palmeres i sistemes de reg per degoteig intel·ligent.",
+    de: "Jardinería & Paisajismo Serra es una empresa especializada en la creación, rehabilitación y cuidado integral de jardines mediterráneos en fincas rústicas y villas de Mallorca (Palma, Calvià, Andratx, Alaró). Comprometida con la sostenibilidad y la sequía estival balear, diseña espacios con plantas autóctonas adaptadas al clima (olivos, lavandas, cipreses, buganvillas), poda técnica de palmeras y árboles de gran porte, y sistemas de riego por goteo automatizados.",
   },
   specialties: {
     es: [

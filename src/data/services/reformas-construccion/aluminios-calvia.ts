@@ -34,11 +34,13 @@ export const aluminiosCalvia: ServiceItem = {
     es: "Taller especializado en carpintería de aluminio de alta gama, rotura de puente térmico, barandillas de cristal y cerramientos de terrazas en Calvià y Andratx.",
     en: "Premier architectural aluminum and glazing workshop in Calvià & Andratx, specializing in thermal-break slimline windows, glass balustrades, and luxury terrace enclosures.",
     ca: "Taller especialitzat en fusteria d'alumini d'alta gamma, trencament de pont tèrmic, baranes de vidre i tancaments de terrasses a Calvià i Andratx.",
+    de: "Taller especializado en carpintería de aluminio de alta gama, rotura de puente térmico, barandillas de cristal y cerramientos de terrazas en Calvià y Andratx.",
   },
   fullDescription: {
     es: "Aluminios y Cristalería Calvià es una empresa consolidada en el polígono de Son Bugadelles especializada en carpintería metálica y vidrio arquitectónico para villas de lujo, reformas y apartamentos en el suroeste de Mallorca (Santa Ponsa, Portals, Andratx, Palmanova). Trabaja con marcas líderes europeas como Cortizo, Schüco y Technal, garantizando el máximo aislamiento acústico y térmico frente al clima marino.",
     en: "Aluminios y Cristalería Calvià is a specialized architectural glazing and metal fabrication company located in the Son Bugadelles industrial park. Servicing luxury villas and renovations across southwest Mallorca (Portals, Santa Ponsa, Andratx), they install premium thermal-break systems (Cortizo, Schüco, Technal), frameless glass balustrades, and bioclimatic pergola enclosures.",
     ca: "Aluminis i Cristalleria Calvià és una empresa especialitzada en fusteria metàl·lica i vidre arquitectònic per a vil·les i reformes al sud-oest de Mallorca. Treballa amb sistemes d'alta eficiència energètica de marques com Cortizo i Schüco, baranes de vidre de seguretat i cortines de vidre.",
+    de: "Aluminios y Cristalería Calvià es una empresa consolidada en el polígono de Son Bugadelles especializada en carpintería metálica y vidrio arquitectónico para villas de lujo, reformas y apartamentos en el suroeste de Mallorca (Santa Ponsa, Portals, Andratx, Palmanova). Trabaja con marcas líderes europeas como Cortizo, Schüco y Technal, garantizando el máximo aislamiento acústico y térmico frente al clima marino.",
   },
   specialties: {
     es: [

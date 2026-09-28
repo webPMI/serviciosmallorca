@@ -34,11 +34,13 @@ export const digitalCinemaMallorca: ServiceItem = {
     es: "Especialistas líderes en domótica inteligente, cines privados para villas y sistemas de sonido de alta fidelidad en Mallorca.",
     en: "Premier smart home automation, bespoke private cinemas, and audiophile sound systems specialists for luxury villas in Mallorca.",
     ca: "Especialistes líders en domòtica intel·ligent, cinemes privats per a vil·les i sistemes de so d'alta fidelitat a Mallorca.",
+    de: "Especialistas líderes en domótica inteligente, cines privados para villas y sistemas de sonido de alta fidelidad en Mallorca.",
   },
   fullDescription: {
     es: "Digital Cinema es la empresa pionera en integración de domótica, sonido High-End y salas de cine privadas en Mallorca. Diseña y ejecuta instalaciones audiovisuales personalizadas para villas de lujo, yates y hoteles boutique, integrando marcas de referencia como Bang & Olufsen, Bowers & Wilkins, Crestron, Lutron y Control4.",
     en: "Digital Cinema is the foremost integrator of smart home automation, High-End audio, and private luxury cinemas in Mallorca. Designing and executing bespoke audiovisual systems for prime residential estates, superyachts, and boutique hotels, integrating premier brands including Bang & Olufsen, Bowers & Wilkins, Crestron, Lutron, and Control4.",
     ca: "Digital Cinema és l'empresa pionera en integració de domòtica, so High-End i sales de cinema privades a Mallorca. Dissenya i executa instal·lacions audiovisuals a mida per a vil·les de luxe, iots i hotels boutique, integrant marques com Bang & Olufsen, Crestron i Lutron.",
+    de: "Digital Cinema es la empresa pionera en integración de domótica, sonido High-End y salas de cine privadas en Mallorca. Diseña y ejecuta instalaciones audiovisuales personalizadas para villas de lujo, yates y hoteles boutique, integrando marcas de referencia como Bang & Olufsen, Bowers & Wilkins, Crestron, Lutron y Control4.",
   },
   specialties: {
     es: [

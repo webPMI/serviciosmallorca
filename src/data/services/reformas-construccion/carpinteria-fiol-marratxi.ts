@@ -34,11 +34,13 @@ export const carpinteriaFiol: ServiceItem = {
     es: "Taller artesanal de carpintería y ebanistería tradicional en Marratxí desde 1975, persianas mallorquinas de madera noble, puertas y mobiliario a medida.",
     en: "Traditional master carpentry and cabinetmaking workshop in Marratxí since 1975, specializing in authentic wooden Mallorcan shutters, doors, and bespoke joinery.",
     ca: "Taller artesanal de fusteria i ebenisteria tradicional a Marratxí des de 1975, persianes mallorquines de fusta noble, portes i mobles a mida.",
+    de: "Taller artesanal de carpintería y ebanistería tradicional en Marratxí desde 1975, persianas mallorquinas de madera noble, puertas y mobiliario a medida.",
   },
   fullDescription: {
     es: "Carpintería y Ebanistería Fiol es un taller familiar fundado en 1975 en Marratxí. Especialistas en madera maciza de primera calidad (Iroko, Teca, Roble y Pino Flandes), elabora de forma totalmente artesanal persianas mallorquinas tradicionales, vigas decorativas, puertas de entrada rústicas y modernas, suelos de parqué y armarios empotrados a medida para fincas y viviendas de toda Mallorca.",
     en: "Carpintería Fiol is a celebrated family-owned woodworking and joinery atelier established in 1975 in Marratxí. Working with noble hardwoods (Iroko, Teak, Oak, Nordic Pine), they craft authentic wooden Mallorcan shutters, bespoke architectural entrance doors, custom kitchen cabinetry, and heritage timber restoration for fincas across the island.",
     ca: "Fusteria Fiol és un taller familiar fundat el 1975 a Marratxí. Especialistes en fusta massissa (Iroko, Roure i Pi Flandes), elabora de forma artesanal persianes mallorquines tradicionals, portes rústiques i mobles a mida per a finques i llars de Mallorca.",
+    de: "Carpintería y Ebanistería Fiol es un taller familiar fundado en 1975 en Marratxí. Especialistas en madera maciza de primera calidad (Iroko, Teca, Roble y Pino Flandes), elabora de forma totalmente artesanal persianas mallorquinas tradicionales, vigas decorativas, puertas de entrada rústicas y modernas, suelos de parqué y armarios empotrados a medida para fincas y viviendas de toda Mallorca.",
   },
   specialties: {
     es: [

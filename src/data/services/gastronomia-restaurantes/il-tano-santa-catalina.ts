@@ -34,11 +34,13 @@ export const ilTanoSantaCatalina: ServiceItem = {
     es: "Auténtica pizzería napolitana en el barrio de Santa Catalina con masa de fermentación lenta de 72h, horno de leña y pasta fresca artesana.",
     en: "Authentic Neapolitan pizzeria in Palma's lively Santa Catalina district, featuring 72-hour slow-fermented sourdough, wood-fired ovens, and fresh homemade pasta.",
     ca: "Autèntica pizzeria napolitana al barri de Santa Catalina amb massa de fermentació lenta de 72h, forn de llenya i pasta fresca artesana.",
+    de: "Auténtica pizzería napolitana en el barrio de Santa Catalina con masa de fermentación lenta de 72h, horno de leña y pasta fresca artesana.",
   },
   fullDescription: {
     es: "Il Tano es la pizzería artesanal italiana de referencia en el barrio gastronómico de Santa Catalina en Palma. Con un horno tradicional de leña a más de 450°C, elabora pizzas napolitanas de bordes aireados con harina italiana importada, mozzarella fior di latte, tomates San Marzano DOP y embutidos italianos de alta calidad, además de pastas caseras y postres tradicionales.",
     en: "Il Tano is a celebrated culinary institution in Palma's vibrant Santa Catalina neighborhood. Operating a traditional wood-fired oven at over 450°C, it serves authentic Neapolitan pizzas with fluffy cornicione crusts made from 72-hour fermented dough, Italian San Marzano tomatoes, fresh fior di latte, and handmade pastas.",
     ca: "Il Tano és la pizzeria artesana italiana de referència al barri gastronòmic de Santa Catalina a Palma. Amb un forn tradicional de llenya, elabora pizzes napolitanes de massa mare de fermentació lenta de 72 hores, tomàquet San Marzano i pasta fresca casolana.",
+    de: "Il Tano es la pizzería artesanal italiana de referencia en el barrio gastronómico de Santa Catalina en Palma. Con un horno tradicional de leña a más de 450°C, elabora pizzas napolitanas de bordes aireados con harina italiana importada, mozzarella fior di latte, tomates San Marzano DOP y embutidos italianos de alta calidad, además de pastas caseras y postres tradicionales.",
   },
   specialties: {
     es: [

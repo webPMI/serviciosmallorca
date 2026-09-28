@@ -34,11 +34,13 @@ export const oliDeJornets: ServiceItem = {
     es: "Finca oleícola histórica en Sencelles productora del galardonado Aceite de Oliva Virgen Extra ecológico Oli de Jornets (DO Oli de Mallorca), prensado en frío de aceituna Picual y Mallorquina.",
     en: "Historic olive estate in Sencelles producing multi-award-winning organic Extra Virgin Olive Oil (DO Oli de Mallorca), cold-extracted from Picual and indigenous Mallorquina olives.",
     ca: "Finca oleícola històrica a Sencelles productora del guardonat Oli d'Oliva Verge Extra ecològic Oli de Jornets (DO Oli de Mallorca), premsat en fred d'oliva Mallorquina.",
+    de: "Finca oleícola histórica en Sencelles productora del galardonado Aceite de Oliva Virgen Extra ecológico Oli de Jornets (DO Oli de Mallorca), prensado en frío de aceituna Picual y Mallorquina.",
   },
   fullDescription: {
     es: "Oli de Jornets es una de las almazaras ecológicas más premiadas de España y del Mediterráneo, situada en el enclave histórico del llogaret de Jornets (Sencelles). En un olivar de cultivo ecológico riguroso, cosecha de forma temprana y muele las aceitunas en frío en menos de 3 horas tras la recolección, logrando un Aceite de Oliva Virgen Extra de acidez casi nula (<0,1º) con intensos aromas herbáceos de tomatera, alcachofa y almendra verde.",
     en: "Oli de Jornets is one of the most decorated certified organic olive oil estates in the Mediterranean, located in the peaceful rural hamlet of Jornets near Sencelles. Practicing early autumn harvesting, they cold-extract their olives within three hours of picking, producing an ultra-low acidity (<0.1º) Extra Virgin Olive Oil renowned globally for its vibrant notes of green tomato, artichoke, and wild grass.",
     ca: "Oli de Jornets és un dels trulls ecològics més premiats de la Mediterrània, situat al llogaret històric de Jornets (Sencelles). Amb una collita primerenca i mòlta en fred en menys de 3 hores, aconsegueix un Oli d'Oliva Verge Extra ecològic de màxima puresa amb aromes d'ametlla verda i carxofa.",
+    de: "Oli de Jornets es una de las almazaras ecológicas más premiadas de España y del Mediterráneo, situada en el enclave histórico del llogaret de Jornets (Sencelles). En un olivar de cultivo ecológico riguroso, cosecha de forma temprana y muele las aceitunas en frío en menos de 3 horas tras la recolección, logrando un Aceite de Oliva Virgen Extra de acidez casi nula (<0,1º) con intensos aromas herbáceos de tomatera, alcachofa y almendra verde.",
   },
   specialties: {
     es: [

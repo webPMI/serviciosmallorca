@@ -34,11 +34,13 @@ export const electricidadLlabres: ServiceItem = {
     es: "Electricistas autorizados en Marratxí y Palma, especialistas en boletines eléctricos (CIE), cuadros eléctricos, iluminación LED y recarga de vehículos eléctricos.",
     en: "Certified licensed electricians in Marratxí and Palma, specializing in electrical safety certificates (CIE), consumer units, architectural LED lighting, and EV chargers.",
     ca: "Electricistes autoritzats a Marratxí i Palma, especialistes en butlletins elèctrics (CIE), quadres elèctrics, il·luminació LED i punts de recàrrega de vehicles elèctrics.",
+    de: "Electricistas autorizados en Marratxí y Palma, especialistas en boletines eléctricos (CIE), cuadros eléctricos, iluminación LED y recarga de vehículos eléctricos.",
   },
   fullDescription: {
     es: "Instalaciones Eléctricas Llabrés es una empresa familiar de instaladores electricistas autorizados con sede en Marratxí que da cobertura a toda la comarca y Palma. Con más de 20 años de experiencia técnica, se encarga de la legalización y emisión de boletines eléctricos oficiales (CIE), aumentos de potencia, reparación de cortocircuitos, renovación integral de cableado en viviendas antiguas, iluminación técnica y cargadores para coches eléctricos.",
     en: "Instalaciones Eléctricas Llabrés is a respected family-run electrical contracting business based in Marratxí, covering Palma and central Mallorca. With over two decades of licensed expertise, they deliver official electrical compliance certificates (CIE), power upgrades, emergency short-circuit repairs, full residential rewiring, and wallbox EV charging installations.",
     ca: "Instal·lacions Elèctriques Llabrés és una empresa familiar d'instal·ladors electricistes autoritzats a Marratxí. Amb més de 20 anys d'experiència, gestiona butlletins oficials (CIE), augments de potència, reparació de curtcircuits, renovació de cablejat i carregadors de vehicles elèctrics.",
+    de: "Instalaciones Eléctricas Llabrés es una empresa familiar de instaladores electricistas autorizados con sede en Marratxí que da cobertura a toda la comarca y Palma. Con más de 20 años de experiencia técnica, se encarga de la legalización y emisión de boletines eléctricos oficiales (CIE), aumentos de potencia, reparación de cortocircuitos, renovación integral de cableado en viviendas antiguas, iluminación técnica y cargadores para coches eléctricos.",
   },
   specialties: {
     es: [

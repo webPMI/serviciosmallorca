@@ -34,11 +34,13 @@ export const rataCorner: ServiceItem = {
     es: "Librería independiente de referencia en Palma con selección de literatura, cómic, arte, vinilos, café y presentaciones culturales.",
     en: "Independent boutique bookstore and cultural haven in Palma offering curated literature, graphic novels, vinyl records, coffee, and live author events.",
     ca: "Llibreria independent de referència a Palma amb selecció de literatura, còmic, art, vinils, cafè i presentacions culturals.",
+    de: "Librería independiente de referencia en Palma con selección de literatura, cómic, arte, vinilos, café y presentaciones culturales.",
   },
   fullDescription: {
     es: "Rata Corner es mucho más que una librería: es el epicentro cultural alternativo del centro de Palma. Ofrece una cuidada selección de novedades editoriales, novela gráfica, libros de arte, literatura balear, vinilos y fanzines, acompañada de una zona de cafetería con terraza interior y una activa agenda de firmas, talleres y recitales.",
     en: "Rata Corner is the cultural beating heart of central Palma. More than a bookstore, it curates exceptional indie fiction, graphic novels, art and design monographs, Balearic literature, and vinyl records, featuring an intimate courtyard cafe and an inspiring program of book signings and workshops.",
     ca: "Rata Corner és l'epicentre cultural alternatiu del centre de Palma. Ofereix una selecció de novel·la gràfica, llibres d'art, literatura balear i vinils, acompanyada d'una cafeteria amb pati i agenda de presentacions i tallers.",
+    de: "Rata Corner es mucho más que una librería: es el epicentro cultural alternativo del centro de Palma. Ofrece una cuidada selección de novedades editoriales, novela gráfica, libros de arte, literatura balear, vinilos y fanzines, acompañada de una zona de cafetería con terraza interior y una activa agenda de firmas, talleres y recitales.",
   },
   specialties: {
     es: [

@@ -34,11 +34,13 @@ export const carniceriaCanToni: ServiceItem = {
     es: "Carnicería y charcutería artesanal en Porreres desde 1965, embutidos caseros de matanza tradicional con pimentón Tap de Cortí, cordero balear y ternera de pasto criada en libertad.",
     en: "Traditional family butcher and artisan charcuterie in Porreres since 1965, crafting house-made heritage sobrassada with Tap de Cortí paprika, local lamb, and grass-fed Balearic beef.",
     ca: "Carnisseria i xarcuteria artesanal a Porreres des de 1965, embotits casolans de matances tradicionals amb pebre bord de Tap de Cortí, xot balear i vedella de pastura.",
+    de: "Handwerkliche Metzgerei und Wurstwaren in Porreres seit 1965, hausgemachte Wurstwaren aus traditioneller Schlachtung mit Tap de Cortí-Paprika, balearischem Lamm und frei aufgezogenem Weidekalb.",
   },
   fullDescription: {
     es: "Carnisseria Can Toni des Pla es un establecimiento señero de la gastronomía rural en el pueblo de Porreres, con seis décadas de dedicación al corte artesano y la charcutería tradicional. Selecciona exclusivamente carnes frescas procedentes de ganaderías de pasto de Mallorca y elabora de forma manual sus premiadas sobrasadas artesanas curadas en bodega con pimentón autóctono Tap de Cortí, camaiot cocido a fuego lento y butifarras caseras.",
     en: "Carnisseria Can Toni des Pla is a beloved culinary landmark in the agricultural village of Porreres, holding six decades of artisan butchery tradition. Sourcing exclusively from free-range Mallorcan pastoral farms, they handcraft award-winning cellar-cured artisan sobrassadas spiced with heirloom Tap de Cortí paprika, slow-simmered camaiot, and traditional herb sausages.",
     ca: "Carnisseria Can Toni des Pla és un comerç emblemàtic a Porreres amb sis dècades de tradició. Selecciona carn fresca de ramaderies de pastura de Mallorca i elabora de forma artesanal sobrassades curades al celler amb pebre de Tap de Cortí, camaiot cuit a foc lent i botifarrons.",
+    de: "Die Carnisseria Can Toni des Pla ist ein Meisterwerk der ländlichen Gastronomie im Dorf Porreres mit sechs Jahrzehnten Hingabe an den handwerklichen Schnitt und die traditionelle Wurstwarenherstellung. Er wählt ausschließlich frisches Fleisch aus mallorquinischen Weideviehbetrieben aus und bereitet seine preisgekrönten handwerklichen Sobrasadas manuell zu, die im Keller mit einheimischem Tap de Cortí-Paprika, langsam gekochtem Camaiot und hausgemachten Butifarras gereift werden.",
   },
   specialties: {
     es: [

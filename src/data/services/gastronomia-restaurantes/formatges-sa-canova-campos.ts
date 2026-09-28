@@ -34,11 +34,13 @@ export const formatgesSaCanova: ServiceItem = {
     es: "Quesería artesanal en Campos elaboradora de quesos tradicionales de leche cruda de oveja roja mallorquina y cabra, curados en cava natural con aceite de oliva y hierbas.",
     en: "Artisan farmhouse cheese dairy in Campos crafting traditional raw-milk cheeses from native Mallorcan red sheep and goats, cellar-aged in extra virgin olive oil and herbs.",
     ca: "Formatgeria artesana a Campos elaboradora de formatges tradicionals de llet crua d'ovella roja mallorquina i cabra, curats a la cava natural amb oli d'oliva i herbes.",
+    de: "Handwerkliche Käserei in Campos, die traditionelle Käsesorten aus roher mallorquinischer Schaf- und Ziegenmilch herstellt, die in einem natürlichen Cava mit Olivenöl und Kräutern gereift sind.",
   },
   fullDescription: {
     es: "Formatges Sa Cànova es una quesería familiar de referencia en el municipio rural de Campos (comarca del Migjorn). A partir de la leche cruda de su propio rebaño de ovejas de raza autóctona roja mallorquina (ovella roja) y cabras alimentadas en pastos naturales de la finca, elabora de forma 100% manual quesos frescos, semicurados, curados al pimentón de tap de cortí y quesos de larga maduración macerados en aceite virgen extra y romero silvestre.",
     en: "Formatges Sa Cànova is an authentic family farmhouse fromagerie in rural Campos. Using unpasteurized fresh raw milk from their own herd of native Balearic red sheep ('ovella roja mallorquina') grazing freely across Mediterranean pastures, they handcraft artisanal fresh, semi-cured, and cave-aged cheeses rubbed with Tap de Cortí paprika, local herbs, and extra virgin olive oil.",
     ca: "Formatges Sa Cànova és una formatgeria familiar de referència a Campos. Amb la llet crua del seu propi ramat d'ovella roja mallorquina i cabres de pastura, elabora artesanalment formatges frescos, semicurats, curats amb tap de cortí i formatges anyencs macerats en oli d'oliva.",
+    de: "Formatges Sa Cànova ist eine familiengeführte Käserei in der ländlichen Gemeinde Campos (Region Migjorn). Aus der Rohmilch seiner eigenen Herde von Schafen der einheimischen roten mallorquinischen Rasse (ovella rosso) und Ziegen, die auf den natürlichen Weiden des Anwesens gefüttert werden, stellt er 100 % von Hand frischen, halbgereiften, mit Tap de Corti-Paprika gereiften Käse und in nativem Olivenöl extra und wildem Rosmarin mazerierten, lang gereiften Käse her.",
   },
   specialties: {
     es: [

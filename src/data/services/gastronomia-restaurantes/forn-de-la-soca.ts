@@ -34,11 +34,13 @@ export const fornDeLaSoca: ServiceItem = {
     es: "Obrador artesano y panadería histórica en Palma dedicada a recuperar las recetas ancestrales de la repostería y panadería mallorquina.",
     en: "Artisan bakery and historical confectionery in Palma dedicated to reviving ancestral Mallorcan sourdough pastry and bakery recipes.",
     ca: "Obrador artesà i forn històric a Palma dedicat a recuperar les receptes ancestrals de la rebosteria i fleca mallorquina.",
+    de: "Handwerker und historische Bäckerei in Palma, die sich der Wiederherstellung der alten Rezepte der mallorquinischen Konditorei und Bäckerei widmet.",
   },
   fullDescription: {
     es: "El Forn de la Soca, fundado por el maestro pastelero Tomeu Arbona en el corazón de Palma, es un santuario de la arqueología gastronómica balear. Elabora a diario de forma totalmente artesanal ensaimadas tradicionales con manteca de cerdo negro, empanadas de cordero, cocas de verdura y dulces conventuales recuperados de recetarios de los siglos XVI al XIX.",
     en: "Forn de la Soca, founded by master baker Tomeu Arbona in the historic heart of Palma, is a living sanctuary of Balearic culinary heritage. Everything is handcrafted daily using ancestral sourdough, indigenous black pig lard (porc negre), lamb panades, vegetable cocas, and forgotten convent pastries dating from the 16th to 19th centuries.",
     ca: "El Forn de la Soca, fundat pel mestre pastisser Tomeu Arbona al cor de Palma, és un santuari de l'arqueologia gastronòmica balear. Elabora diàriament de forma artesanal ensaïmades tradicionals amb saïm de porc negre, panades de xai, coques de verdura i dolços conventuals recuperats de receptaris antics.",
+    de: "Der Forn de la Soca, gegründet vom Konditormeister Tomeu Arbona im Herzen von Palma, ist ein Heiligtum der balearischen gastronomischen Archäologie. Täglich werden traditionelle Ensaimadas mit schwarzem Schweineschmalz, Lammpasteten, Gemüsekokas und Klosterbonbons hergestellt, die aus Rezepten des 16. bis 19. Jahrhunderts gewonnen wurden.",
   },
   specialties: {
     es: [

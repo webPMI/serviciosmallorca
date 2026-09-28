@@ -34,11 +34,13 @@ export const carniceriaCanXim: ServiceItem = {
     es: "Carnicería y charcutería tradicional en la plaza de Alaró desde 1960, lechona de cerdo balear para asar, sobrasada casera curada al fresco de la montaña y cordero de pasto.",
     en: "Traditional family butcher on Alaró's main village square since 1960, specializing in native Mallorcan suckling pig, mountain-cured sobrassada, and grass-fed lamb.",
     ca: "Carnisseria i xarcuteria tradicional a la plaça d'Alaró des de 1960, porcella mallorquina per rostir, sobrassada casolana curada a la muntanya i xot de pastura.",
+    de: "Traditionelle Metzgerei und Wurstwaren auf der Plaza de Alaró seit 1960, balearische Schweinesauce zum Braten, hausgemachte Sobrasada in der Kühle des Berges und Weidelamm.",
   },
   fullDescription: {
     es: "Carnisseria Can Xim es un comercio emblemático situado en el corazón del pueblo de Alaró, a los pies de su histórico castillo. Desde 1960, esta carnicería familiar abastece a los vecinos, casas de campo y restaurantes de la zona con carnes frescas de ganaderías locales: cordero lechal de pasto criado en los olivares de la falda del Puig d'Alaró, lechona de cerdo mallorquín preparada para horno de leña, embutidos caseros y sobrasada curada al aire de la Serra.",
     en: "Carnisseria Can Xim is a landmark family butcher shop positioned on the central village square of Alaró beneath its dramatic castle peaks. Serving village residents, country fincas, and local taverns since 1960, they procure top-tier local Balearic meats: milk-fed lamb pastured among mountain olive terraces, oven-ready native suckling pig, and artisan cellar-cured sobrassada.",
     ca: "Carnisseria Can Xim és un comerç emblemàtic a la Plaça de la Vila d'Alaró. Des de 1960, aquesta carnisseria familiar ofereix carn de primera qualitat: xot de pastura criat als olivars d'Alaró, porcella mallorquina preparada per rostir, embotits casolans i sobrassada curada a la Serra.",
+    de: "Carnisseria Can Xim ist ein emblematischer Handel im Herzen des Dorfes Alaró, am Fuße seiner historischen Burg. Seit 1960 beliefert diese Familienmetzgerei die Nachbarn, Landhäuser und Restaurants der Gegend mit frischem Fleisch von lokalen Viehzuchtbetrieben: Milchlamm aus Weide, das in den Olivenhainen am Fuße des Puig d'Alaró aufgezogen wurde, Ferkel aus mallorquinischem Schwein, das für den Holzofen zubereitet wurde, hausgemachte Wurstwaren und luftgetrocknete Sobrasada aus der Serra.",
   },
   specialties: {
     es: [

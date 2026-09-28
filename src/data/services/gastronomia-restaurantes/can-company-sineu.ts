@@ -34,11 +34,13 @@ export const canCompany: ServiceItem = {
     es: "Criadores y maestros charcuteros del cerdo autóctono Porc Negre mallorquín en Sineu, sobrasadas de autor curadas en secadero natural y embutidos galardonados.",
     en: "Pioneering free-range breeders and master charcutiers of native Mallorcan Black Pig (Porc Negre) in Sineu, famous for award-winning reserve sobrassada.",
     ca: "Criadors i mestres xarcuters del Porc Negre mallorquí autòcton a Sineu, sobrassades d'autor curades al secador natural i embotits gurmet.",
+    de: "Züchter und Wurstmeister des einheimischen mallorquinischen Schweins Porc Negre in Sineu, in einem natürlichen Trockner gereifte Sobrasadas und preisgekrönte Wurstwaren.",
   },
   fullDescription: {
     es: "Can Company es el proyecto gastronómico de referencia en la recuperación del Porc Negre mallorquín criado en libertad en el Pla de Mallorca (Sineu y Llubí). Alimentados con higos secos, algarrobas y cereales autóctonos, elaboran sobrasadas de autor que han conquistado a los mejores chefs del mundo con estrellas Michelin, curadas lentamente durante meses en secaderos naturales con pimentón dulce Tap de Cortí.",
     en: "Can Company is an internationally acclaimed gastronomic project dedicated to the conservation and free-range farming of the indigenous Mallorcan Black Pig (Porc Negre). Raised ethically on wild figs, carob, and heirloom grains in the plains of Sineu, they craft artisanal reserve sobrassada cured for months with authentic Tap de Cortí paprika, supplying Michelin-starred kitchens globally.",
     ca: "Can Company és el projecte gastronòmic de referència en la recuperació del Porc Negre mallorquí criat en llibertat al Pla de Mallorca. Alimentats amb figues seques, garroves i cereals autòctons, elaboren sobrassades d'autor que han conquerit els millors restaurants del món.",
+    de: "Can Company ist das gastronomische Referenzprojekt bei der Rückgewinnung des mallorquinischen Porc Negre, der in Freiheit im Pla de Mallorca (Sineu und Llubí) aufgezogen wird. Sie werden mit getrockneten Feigen, Johannisbrot und einheimischen Cerealien gefüttert und stellen Sobrasadas her, die die besten Köche der Welt mit Michelin-Sternen erobert haben und monatelang langsam in natürlichen Trockenräumen mit süßem Paprika Tap de Cortí gereift sind.",
   },
   specialties: {
     es: [

@@ -34,11 +34,13 @@ export const tapiceriaToldosBalear: ServiceItem = {
     es: "Taller artesanal de tapicería tradicional y náutica en Palma desde 1982, confección de toldos a medida, retapizado de sofás con telas de 'llengües' mallorquinas y pérgolas.",
     en: "Master upholstery and bespoke awnings atelier in Palma since 1982, specializing in traditional furniture reupholstering with Mallorcan 'llengües' fabrics, yacht cushions, and sunshades.",
     ca: "Taller artesanal de tapisseria tradicional i nàutica a Palma des de 1982, confecció de tendals a mida, retapissat de sofàs amb robes de llengües i pèrgoles.",
+    de: "Taller artesanal de tapicería tradicional y náutica en Palma desde 1982, confección de toldos a medida, retapizado de sofás con telas de 'llengües' mallorquinas y pérgolas.",
   },
   fullDescription: {
     es: "Tapicería & Toldos Balear es un referente de la artesanía textil y el confort exterior en Mallorca desde hace más de 40 años. Con un equipo de maestros tapiceros en Son Castelló, se especializa en la restauración y tapizado a mano de mobiliario clásico y moderno utilizando las mejores telas de lino y telas de 'llengües' balear, así como tapicería marina impermeable y confección de toldos motorizados Somfy para terrazas de fincas y villas.",
     en: "Tapicería & Toldos Balear has been a hallmark of textile craftsmanship and sun protection in Mallorca for over 40 years. Located in Son Castelló, their master upholsterers hand-restore and re-cover antique and designer furniture using natural Mediterranean linen and iconic Balearic Ikat ('robes de llengües') fabrics, alongside marine-grade yacht upholstery and motorized Somfy sun awning systems.",
     ca: "Tapisseria & Toldos Balear és un referent de l'artesania tèxtil i el confort exterior a Mallorca des de fa més de 40 anys. Especialistes en restauració i tapissat a mà de mobles amb roba de llengües mallorquina, tapisseria nàutica impermeable i tendals motoritzats per a terrasses.",
+    de: "Tapicería & Toldos Balear es un referente de la artesanía textil y el confort exterior en Mallorca desde hace más de 40 años. Con un equipo de maestros tapiceros en Son Castelló, se especializa en la restauración y tapizado a mano de mobiliario clásico y moderno utilizando las mejores telas de lino y telas de 'llengües' balear, así como tapicería marina impermeable y confección de toldos motorizados Somfy para terrazas de fincas y villas.",
   },
   specialties: {
     es: [

@@ -34,11 +34,13 @@ export const bodegaSonPrim: ServiceItem = {
     es: "Bodega boutique familiar en Sencelles (Pla de Mallorca), creadores de prestigiosos vinos monovarietales de autor (Cabernet, Merlot, Syrah) cultivados en tierras rojas de call vermell.",
     en: "Boutique family winery in Sencelles (central Mallorca), crafting acclaimed single-varietal estate wines (Cabernet, Merlot, Syrah) grown on iron-rich 'call vermell' soils.",
     ca: "Celler familiar de producció limitada a Sencelles, creadors de prestigiosos vins monovarietals d'autor (Cabernet, Merlot, Syrah) conreats en terres de call vermell.",
+    de: "Familien-Boutique-Weingut in Sencelles (Pla de Mallorca), Schöpfer renommierter sortenreiner Autorenweine (Cabernet, Merlot, Syrah), die in roten Call Vermell-Ländern angebaut werden.",
   },
   fullDescription: {
     es: "Bodega Son Prim es una finca vitivinícola boutique familiar situada en el término municipal de Sencelles, en el corazón del Pla de Mallorca. Con una filosofía orientada a la máxima pureza varietal y rendimientos bajos, sus viñedos se asientan sobre el característico suelo rojo arcillo-calcáreo balear ('call vermell'), rico en hierro y gravas. La bodega, construida con arquitectura contemporánea integrada en el paisaje, elabora vinos de guarda envejecidos en barricas de roble francés y ofrece catas guiadas personalizadas.",
     en: "Bodega Son Prim is a benchmark family-run boutique estate winery nestled in Sencelles within the central plain of Mallorca. Driven by an uncompromising commitment to varietal purity and low vineyard yields, their vines thrive in the island's iconic iron-rich red stony clay soil ('call vermell'). Operating out of an architectural winery blending modern steel and local stone, they age expressive single-vineyard wines in French oak casks and host bespoke private tastings.",
     ca: "El Celler Son Prim és una finca vitivinícola boutique familiar a Sencelles. Amb una aposta ferma per la puresa varietal i el màxim respecte pel terrer, les seves vinyes creixen sobre la terra vermella tradicional ('call vermell'). Elabora vins de guarda criats en bótes de roure francès i ofereix visites i tastos guiats entre vinyes.",
+    de: "QUERY LENGTH LIMIT EXCEEDED. MAX ALLOWED QUERY : 500 CHARS",
   },
   specialties: {
     es: [

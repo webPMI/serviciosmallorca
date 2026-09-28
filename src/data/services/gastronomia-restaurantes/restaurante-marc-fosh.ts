@@ -37,11 +37,13 @@ export const restauranteMarcFosh: ServiceItem = {
     es: "Restaurante con 1 Estrella Michelin en el histórico Hotel Convent de la Missió de Palma, liderado por el chef británico Marc Fosh con una cocina mediterránea contemporánea.",
     en: "1 Michelin-starred restaurant in the historic Convent de la Missió Hotel in Palma, led by British chef Marc Fosh with contemporary Mediterranean cuisine.",
     ca: "Restaurant amb 1 Estrella Michelin en l'històric Hotel Convent de la Missió de Palma, liderat pel xef britànic Marc Fosh amb cuina mediterrània contemporània.",
+    de: "Restaurante con 1 Estrella Michelin en el histórico Hotel Convent de la Missió de Palma, liderado por el chef británico Marc Fosh con una cocina mediterránea contemporánea.",
   },
   fullDescription: {
     es: "Ubicado en un convento del siglo XVII en el casco antiguo de Palma, Restaurante Marc Fosh es una referencia indiscutible de la alta cocina en Baleares. Galardonado con 1 Estrella Michelin, el chef Marc Fosh crea menús degustación basados en productos locales mallorquines de temporada, hierbas silvestres y pescados frescos de la lonja, presentados con elegancia moderna y creatividad refinada.",
     en: "Located in a 17th-century convent in Palma's old town, Restaurante Marc Fosh is an undeniable benchmark of fine dining in the Balearic Islands. Awarded 1 Michelin Star, chef Marc Fosh creates tasting menus inspired by local seasonal Mallorcan produce, wild herbs, and fresh seafood.",
     ca: "Situat en un convent del segle XVII al nucli antic de Palma, Restaurant Marc Fosh és una referència indiscutible de l'alta cuina a les Balears. Guardonat amb 1 Estrella Michelin, el xef Marc Fosh crea menús degustació basats en productes locals mallorquins de temporada i peixos de llotja.",
+    de: "Ubicado en un convento del siglo XVII en el casco antiguo de Palma, Restaurante Marc Fosh es una referencia indiscutible de la alta cocina en Baleares. Galardonado con 1 Estrella Michelin, el chef Marc Fosh crea menús degustación basados en productos locales mallorquines de temporada, hierbas silvestres y pescados frescos de la lonja, presentados con elegancia moderna y creatividad refinada.",
   },
   specialties: {
     es: [

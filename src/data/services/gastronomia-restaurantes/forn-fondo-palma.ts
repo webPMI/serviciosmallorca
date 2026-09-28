@@ -34,11 +34,13 @@ export const fornFondoPalma: ServiceItem = {
     es: "Pastelería y chocolatería modernista centenaria en Palma fundada en 1911, célebre por sus ensaimadas artesanas de hojaldre fino, empanadas y bombones.",
     en: "Centennial modernist bakery and artisan chocolate shop in Palma founded in 1911, celebrated for delicate flaky ensaïmades, savory panades, and handcrafted chocolates.",
     ca: "Pastisseria i xocolateria modernista centenària a Palma fundada el 1911, cèlebre per les seves ensaïmades artesanes, panades i bombons.",
+    de: "Pastelería y chocolatería modernista centenaria en Palma fundada en 1911, célebre por sus ensaimadas artesanas de hojaldre fino, empanadas y bombones.",
   },
   fullDescription: {
     es: "Forn Fondo es una de las pastelerías más antiguas y fotografiadas de Palma, situada en la céntrica calle Unión desde 1911. Con una preciosa fachada modernista de principios del siglo XX y cuatro generaciones familiares, elabora artesanalmente ensaimadas tradicionales (lisas, rellenas de cabello de ángel, crema quemada o albaricoque), cocarrois de verduras y bombones de autor.",
     en: "Forn Fondo is one of Palma's most historic and cherished bakeries, gracing Carrer de la Unió since 1911. Boasting an original Art Nouveau facade preserved across four family generations, its master bakers craft award-winning traditional ensaïmades (plain, candied pumpkin, caramelized custard, or fresh apricots), savory cocarrois, and fine chocolates.",
     ca: "Forn Fondo és una de les pastisseries més antigues de Palma, situada al carrer Unió des de 1911. Amb una façana modernista protegida i quatre generacions familiars, elabora diàriament ensaïmades tradicionals, cocarrois de verdures i xocolates artesanes.",
+    de: "Forn Fondo ist eine der ältesten und am meisten fotografierten Konditoreien in Palma und befindet sich seit 1911 in der zentralen Calle Unión. Mit einer wunderschönen modernistischen Fassade aus dem frühen 20. Jahrhundert und vier Familiengenerationen werden traditionelle Ensaimadas (glatt, gefüllt mit Engelshaar, verbrannter Sahne oder Aprikose), Gemüse-Cocarrois und Signature-Pralinen von Hand hergestellt.",
   },
   specialties: {
     es: [

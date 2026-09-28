@@ -34,11 +34,13 @@ export const arquitectura81Palma: ServiceItem = {
     es: "Estudio de arquitectura e interiorismo en Palma, especializado en villas contemporáneas de lujo y reformas de fincas con encanto balear.",
     en: "Boutique architecture and interior design studio in Palma, specializing in luxury contemporary villas and bespoke Balearic estate restorations.",
     ca: "Estudi d'arquitectura i interiorisme a Palma, especialitzat en viles contemporànies de luxe i reformes de finques amb encant balear.",
+    de: "Estudio de arquitectura e interiorismo en Palma, especializado en villas contemporáneas de lujo y reformas de fincas con encanto balear.",
   },
   fullDescription: {
     es: "Arquitectura 81 (A81) es un reconocido estudio de arquitectura y diseño de interiores en Palma de Mallorca. Dirigido por un equipo multidisciplinar de arquitectos, desarrolla proyectos de obra nueva y rehabilitación donde prima la luz mediterránea, la integración paisajística y la máxima eficiencia energética pasiva.",
     en: "Arquitectura 81 (A81) is a renowned architecture and interior design studio based in Palma de Mallorca. Led by a multidisciplinary team of architects, A81 designs signature new builds and estate restorations celebrating natural Mediterranean light, harmonious landscape integration, and passive-energy sustainability.",
     ca: "Arquitectura 81 (A81) és un reconegut estudi d'arquitectura i disseny d'interiors a Palma. Dirigit per un equip multidisciplinari d'arquitectes, desenvolupa projectes d'obra nova i rehabilitació on prima la llum mediterrània, la integració paisatgística i la màxima eficiència energètica passiva.",
+    de: "Arquitectura 81 (A81) es un reconocido estudio de arquitectura y diseño de interiores en Palma de Mallorca. Dirigido por un equipo multidisciplinar de arquitectos, desarrolla proyectos de obra nueva y rehabilitación donde prima la luz mediterránea, la integración paisajística y la máxima eficiencia energética pasiva.",
   },
   specialties: {
     es: [

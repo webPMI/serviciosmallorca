@@ -34,11 +34,13 @@ export const fornCanGelabertBinissalem: ServiceItem = {
     es: "Horno y pastelería tradicional en el pueblo vitivinícola de Binissalem desde 1940, maestros del pan moreno de masa madre a la leña, ensaimadas de crema quemada y cocas de verduras.",
     en: "Traditional village bakery in wine country Binissalem since 1940, crafting wood-fired brown sourdough bread, caramelized custard ensaimadas, and savory vegetable flatbreads.",
     ca: "Forn i pastisseria tradicional al poble de Binissalem des de 1940, mestres del pa morè de massa mare al forn de llenya, ensaïmades de crema cremada i coques de verdura.",
+    de: "Traditioneller Ofen und Gebäck im Weindorf Binissalem seit 1940, Meister des holzbefeuerten Sauerteigbrots, Ensaimadas mit gebrannter Sahne und Gemüsekuchen.",
   },
   fullDescription: {
     es: "Forn Can Gelabert es un obrador artesano histórico ubicado en el corazón del pueblo de Binissalem, referente de la comarca del Raiguer. Con más de 80 años manteniendo encendido su horno tradicional de piedra, elabora pan mallorquín moreno con harinas de trigo local sin aditivos, llonguets crujientes, empanadas caseras de cordero, cocarrois de verduras y unas aclamadas ensaimadas de masa madre de fermentación natural con crema quemada o sobrasada.",
     en: "Forn Can Gelabert is a historic artisan bakery located in the heart of the winemaking town of Binissalem. Firing their traditional stone oven for over 80 years, they produce classic salt-free Mallorcan brown sourdough from clean local grains, crunchy llonguets, homemade savory lamb panades, vegetable cocarrois, and acclaimed slow-fermented ensaimadas with brûléed custard.",
     ca: "El Forn Can Gelabert és un obrador artesà històric a Binissalem. Amb més de 80 anys d'ofici flequer, elabora pa morè tradicional amb farines de la terra, llonguets cruixents, panades casolanes de xot, cocarrois i ensaïmades de massa mare amb crema cremada.",
+    de: "Forn Can Gelabert ist ein historischer Handwerkerbetrieb im Herzen des Dorfes Binissalem, dem Wahrzeichen der Region Raiguer. Seit über 80 Jahren hält sie ihren traditionellen Steinofen am Laufen und stellt mallorquinisches Schwarzbrot mit lokalem Weizenmehl ohne Zusatzstoffe, knusprige Llonguets, hausgemachte Lammkuchen, Gemüse-Cocarrois und einige gefeierte Ensaimadas aus natürlich gegorenem Sauerteig mit verbrannter Sahne oder Sobrasada her.",
   },
   specialties: {
     es: [

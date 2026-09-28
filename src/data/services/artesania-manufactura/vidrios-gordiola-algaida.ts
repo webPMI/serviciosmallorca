@@ -34,11 +34,13 @@ export const vidriosGordiola: ServiceItem = {
     es: "El taller artesanal de vidrio soplado a boca más antiguo de Mallorca fundado en 1719, horno en vivo, lámparas de cristal veneciano y piezas declaradas Patrimonio UNESCO.",
     en: "The oldest artisan hand-blown glass workshop in Mallorca founded in 1719, featuring live furnace glassblowing, bespoke chandeliers, and UNESCO World Heritage craft.",
     ca: "El taller artesanal de vidre bufat a boca més antic de Mallorca fundat el 1719, forn en viu, llums de cristall i peces declarades Patrimoni UNESCO.",
+    de: "Die älteste mundgeblasene Glaswerkstatt Mallorcas wurde 1719 gegründet und verfügt über einen Live-Ofen, venezianische Glaslampen und Stücke, die zum UNESCO-Weltkulturerbe gehören.",
   },
   fullDescription: {
     es: "Vidrios Gordiola es una leyenda viva de la artesanía mediterránea con más de 300 años y 8 generaciones familiares ininterrumpidas. Ubicado en un castillo señorial en Algaida, los maestros vidrieros soplan y moldean piezas únicas a mano frente a hornos a más de 1.200°C mediante caña y tenazas. Sus lámparas, jarrones, copas y esculturas han decorado palacios reales y están reconocidas como Patrimonio Cultural Inmaterial por la UNESCO.",
     en: "Vidrios Gordiola is a living legend of Mediterranean craft spanning eight family generations since 1719. Housed in a historic castle in Algaida, master glassmakers shape molten crystal at over 1,200°C before visitors using ancestral blowing irons. Their bespoke chandeliers, glassware, and art sculptures have adorned European palaces and are recognized as UNESCO Intangible Cultural Heritage.",
     ca: "Vidrios Gordiola és una llegenda viva de l'artesania mediterrània amb més de 300 anys i 8 generacions familiars. Ubicat en un castell a Algaida, els mestres vidriers bufen i modelen peces úniques a mà davant forns a més de 1.200°C. Les seves obres són reconegudes com a Patrimoni Cultural Immaterial per la UNESCO.",
+    de: "Vidrios Gordiola ist eine lebende Legende des mediterranen Handwerks mit mehr als 300 Jahren und 8 ununterbrochenen Familiengenerationen. In einem herrschaftlichen Schloss in Algaida gelegen, blasen und formen die Glasbläsermeister einzigartige Stücke von Hand vor Öfen bei über 1.200° C mit Schilf und Zangen. Seine Lampen, Vasen, Gläser und Skulpturen haben königliche Paläste geschmückt und sind von der UNESCO als immaterielles Kulturerbe anerkannt.",
   },
   specialties: {
     es: [

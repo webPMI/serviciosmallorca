@@ -34,11 +34,13 @@ export const varaderoAlcudiamar: ServiceItem = {
     es: "Varadero técnico naval y centro de mantenimiento de embarcaciones en el Puerto de Alcúdia, travelift de 150 toneladas, mecánica náutica (Volvo Penta, Yanmar), antifouling y carpintería naval.",
     en: "Full-service boatyard and marine engineering facility at Alcudiamar Marina (Port d'Alcúdia), featuring a 150-ton travelift, marine engine mechanics, antifouling, and teak carpentry.",
     ca: "Varador tècnic naval i manteniment d'embarcacions al Port d'Alcúdia, travelift de 150 tones, mecànica naval (Volvo Penta, Yanmar), antivegetatiu i fusteria de teca.",
+    de: "Varadero técnico naval y centro de mantenimiento de embarcaciones en el Puerto de Alcúdia, travelift de 150 toneladas, mecánica náutica (Volvo Penta, Yanmar), antifouling y carpintería naval.",
   },
   fullDescription: {
     es: "El Varadero de Alcudiamar es la infraestructura técnica náutica de referencia en el norte de Mallorca y la bahía de Pollença y Alcúdia. Con una explanada técnica de más de 12.000 m² y travelift de 150 toneladas, acoge veleros, yates de motor y catamaranes para trabajos integrales de varada: aplicación de antifouling con chorreado y tratamiento antiósmosis, reparación de motores marinos diésel y transmisiones, electricidad naval, pulido de gelcoat y carpintería de cubiertas de teca.",
     en: "Varadero Alcudiamar is the premier technical shipyard and marine refit facility in northern Mallorca, situated inside the Alcudiamar Marina complex. Featuring a 12,000 m² hardstanding yard and a 150-tonne travelift hoist, they cater to yachts, sailing cruisers, and catamarans, delivering professional hull antifouling, osmosis treatment, marine diesel engine maintenance (Volvo, Yanmar, MAN), marine electrical refits, and teak decking.",
     ca: "El Varador d'Alcudiamar és el centre tècnic naval de referència al nord de Mallorca. Amb més de 12.000 m² d'esplanada i travelift de 150 tones, ofereix treballs de varada complets: aplicació d'antivegetatiu, tractament antiosi, mecànica naval, electricitat i fusteria de cobertes de teca.",
+    de: "El Varadero de Alcudiamar es la infraestructura técnica náutica de referencia en el norte de Mallorca y la bahía de Pollença y Alcúdia. Con una explanada técnica de más de 12.000 m² y travelift de 150 toneladas, acoge veleros, yates de motor y catamaranes para trabajos integrales de varada: aplicación de antifouling con chorreado y tratamiento antiósmosis, reparación de motores marinos diésel y transmisiones, electricidad naval, pulido de gelcoat y carpintería de cubiertas de teca.",
   },
   specialties: {
     es: [

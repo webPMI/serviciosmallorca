@@ -34,11 +34,13 @@ export const cerrajeriaRapidaBalear: ServiceItem = {
     es: "Servicio profesional de cerrajería urgente 24 horas en Palma y toda Mallorca desde 1992, apertura limpia de puertas sin rotura, cambio de bombines antibumping de alta seguridad y cajas fuertes.",
     en: "Emergency 24/7 master locksmith service across Palma and Mallorca since 1992, non-destructive lock picking and door opening, anti-bumping cylinder upgrades, and safe opening.",
     ca: "Servei de serralleria urgent 24 hores a Palma i tot Mallorca des de 1992, obertura neta de portes sense trencar, canvi de bombins antibumping i caixes fortes.",
+    de: "Servicio profesional de cerrajería urgente 24 horas en Palma y toda Mallorca desde 1992, apertura limpia de puertas sin rotura, cambio de bombines antibumping de alta seguridad y cajas fuertes.",
   },
   fullDescription: {
     es: "Cerrajería Rápida Balear es una empresa técnica de cerrajería de seguridad con más de 30 años de servicio en Palma y municipios colindantes. Especializada en intervenciones de urgencia con llegada media en 20 minutos, realiza apertura de puertas acorazadas y blindadas sin dañar la estructura, instalación de bombines de máxima seguridad antibumping, antiganzúa y antirotura (Kaba, Mul-T-Lock, Mottura, Fichet), apertura de vehículos y amaestramiento de llaves para comunidades y villas.",
     en: "Cerrajería Rápida Balear is a premier licensed emergency locksmith company providing rapid-response security solutions across Palma and Mallorca for over three decades. Boasting an average 20-minute arrival time, their certified technicians perform non-destructive openings of armored and high-security doors, install anti-bumping/anti-snap euro cylinders (Kaba, Mul-T-Lock, Fichet), open locked cars, and configure master key systems for luxury villas.",
     ca: "Serralleria Ràpida Balear és una empresa tècnica de seguretat amb més de 30 anys d'experiència a Palma. Especialitzada en urgències 24h amb arribada en 20 minuts, realitza obertura de portes blindades sense danyar el pany, canvi de bombins antibumping d'alta seguretat i obertura de vehicles.",
+    de: "Cerrajería Rápida Balear es una empresa técnica de cerrajería de seguridad con más de 30 años de servicio en Palma y municipios colindantes. Especializada en intervenciones de urgencia con llegada media en 20 minutos, realiza apertura de puertas acorazadas y blindadas sin dañar la estructura, instalación de bombines de máxima seguridad antibumping, antiganzúa y antirotura (Kaba, Mul-T-Lock, Mottura, Fichet), apertura de vehículos y amaestramiento de llaves para comunidades y villas.",
   },
   specialties: {
     es: [

@@ -34,11 +34,13 @@ export const aluminiosManacor: ServiceItem = {
     es: "Taller artesanal e industrial de carpintería de aluminio, PVC y cristalería en Manacor desde 1990, persianas mallorquinas de aluminio con rotura de puente térmico y cerramientos Climalit.",
     en: "Master aluminium, PVC, and architectural glazing workshop in Manacor since 1990, specializing in thermal-break Mallorcan aluminium shutters and double-glazed windows.",
     ca: "Taller artesanal i industrial de fusteria d'alumini, PVC i vidrieria a Manacor des de 1990, persianes mallorquines d'alumini amb RPT i finestres Climalit.",
+    de: "Taller artesanal e industrial de carpintería de aluminio, PVC y cristalería en Manacor desde 1990, persianas mallorquinas de aluminio con rotura de puente térmico y cerramientos Climalit.",
   },
   fullDescription: {
     es: "Aluminios & Cristalería Manacor es un taller fabricante de cerramientos y carpintería metálica con más de 30 años de experiencia en la comarca de Llevant (Manacor, Porto Cristo, Cala Millor, Son Servera). Con taller de ensamblaje propio y maquinaria de corte de precisión, fabrica persianas mallorquinas de aluminio lacado con lamas fijas o regulables y rotura de puente térmico, ventanas y puertas de PVC de alta eficiencia energética con doble acristalamiento Climalit, barandillas de cristal y mamparas de baño a medida.",
     en: "Aluminios & Cristalería Manacor is a premier fenestration, glazing, and aluminium fabrication workshop serving eastern Mallorca for over three decades. Operating their own precision manufacturing plant, they produce durable powder-coated aluminium Mallorcan shutters with thermal breaks, high-performance acoustic/thermal PVC windows with Climalit double glazing, glass balcony balustrades, and custom shower enclosures.",
     ca: "Aluminis & Vidrieria Manacor és un taller fabricant de tancaments i fusteria d'alumini amb més de 30 anys d'experiència al Llevant de Mallorca. Fabrica persianes mallorquines d'alumini lacat amb trencament de pont tèrmic, finestres de PVC d'alta eficiència amb doble vidre Climalit, baranes de vidre i mampares de bany a mida.",
+    de: "QUERY LENGTH LIMIT EXCEEDED. MAX ALLOWED QUERY : 500 CHARS",
   },
   specialties: {
     es: [

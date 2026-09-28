@@ -34,11 +34,13 @@ export const fornGelabertLlubi: ServiceItem = {
     es: "Horno y pastelería tradicional en Llubí desde 1935, famosos en toda Mallorca por sus crujientes 'cremadillos' caramelizados, ensaimadas de albaricoque y empanadas artesanas.",
     en: "Centennial traditional bakery in Llubí since 1935, celebrated across Mallorca for their crispy caramelised 'cremadillos' puff pastries, apricot ensaimadas, and artisan meat pies.",
     ca: "Forn i pastisseria tradicional a Llubí des de 1935, famosos a tot Mallorca pels seus 'cremadillos' cruixents caramel·litzats, ensaïmades d'albercoc i panades casolanes.",
+    de: "Horno y pastelería tradicional en Llubí desde 1935, famosos en toda Mallorca por sus crujientes 'cremadillos' caramelizados, ensaimadas de albaricoque y empanadas artesanas.",
   },
   fullDescription: {
     es: "Forn i Pastisseria Gelabert es una parada gastronómica obligatoria en el corazón del Pla de Mallorca (Llubí). Con casi un siglo de tradición panadera familiar ininterrumpida, su obrador artesano es célebre en toda la isla por haber perfeccionado los 'cremadillos' mallorquines: triángulos de hojaldre crujiente caramelizado al horno rellenos de crema pastelera casera, sobrasada o chocolate, además de ensaimadas de masa madre con albaricoques de Porreres y panades de cordero.",
     en: "Forn i Pastisseria Gelabert is a legendary culinary destination tucked in central Mallorca's rural town of Llubí. Carrying forward almost a century of artisanal baking heritage, their wood ovens are revered across the island for their signature 'cremadillos'—delicate, flaky puff pastry turnovers baked with a glass-like caramelized sugar crust and filled with vanilla custard, local sobrassada, or dark chocolate.",
     ca: "Forn i Pastisseria Gelabert és una aturada gastronòmica de referència a Llubí. Amb gairebé un segle d'ofici flequer, el seu obrador artesà és cèlebre a tot Mallorca pels 'cremadillos': triangles de pasta de full caramel·litzats al forn farcits de crema, sobrassada o xocolata, a més d'ensaïmades d'albercoc i panades.",
+    de: "Forn i Pastisseria Gelabert es una parada gastronómica obligatoria en el corazón del Pla de Mallorca (Llubí). Con casi un siglo de tradición panadera familiar ininterrumpida, su obrador artesano es célebre en toda la isla por haber perfeccionado los 'cremadillos' mallorquines: triángulos de hojaldre crujiente caramelizado al horno rellenos de crema pastelera casera, sobrasada o chocolate, además de ensaimadas de masa madre con albaricoques de Porreres y panades de cordero.",
   },
   specialties: {
     es: [

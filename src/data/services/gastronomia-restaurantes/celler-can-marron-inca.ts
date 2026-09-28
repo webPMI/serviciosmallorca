@@ -34,11 +34,13 @@ export const cellerCanMarron: ServiceItem = {
     es: "Celler histórico en Inca con casi un siglo de tradición culinaria mallorquina (1928), arcos de piedra de marés, lechona asada en horno de leña, arròs brut meloso y frito balear casero.",
     en: "Historic stone-vaulted celler in Inca with nearly a century of culinary heritage (1928), serving wood-fired roast suckling pig, traditional spiced 'arròs brut', and Mallorcan frit.",
     ca: "Celler històric a Inca amb prop d'un segle de tradició culinària (1928), arcs de marès, porcella rostida al forn de llenya, arròs brut melós i frit mallorquí casolà.",
+    de: "Historischer Celler in Inca mit fast einem Jahrhundert mallorquinischer kulinarischer Tradition (1928), Bögen aus Mares-Stein, im Holzofen gebratenem Ferkel, süßem Arros und hausgemachtem balearischem Frittiertem.",
   },
   fullDescription: {
     es: "Celler Can Marrón es uno de los cellers tradicionales con mayor encanto y arraigo de Inca. Conservando su estructura subterránea original de piedra de marés con bóvedas de cañón y antiguas tinas de vino, ofrece una experiencia gastronómica 100% balear. Su cocina destaca por las recetas centenarias de cuchara: sopes mallorquines con verduras del huerto, frito de pascua, caracoles en salsa con alioli casero, arròs brut de caza y lechona crujiente asada lentamente.",
     en: "Celler Can Marrón is one of Inca's most atmospheric and deeply rooted heritage wine taverns. Preserving its subterranean marès stone vaults and vintage wine vats, it delivers a genuinely authentic Balearic culinary journey. Renowned for comfort classics: seasonal vegetable sopes mallorquines, herb-spiced frito, rustic snails with homemade garlic alioli, game arròs brut, and fork-tender suckling pig.",
     ca: "El Celler Can Marrón és un dels cellers més entranyables d'Inca. Conservant la seva estructura subterrània de pedra de marès i antigues bótes de vi, ofereix cuina mallorquina de veritat: sopes mallorquines, frit de pasqua, caragols amb allioli casolà, arròs brut i porcella cruixent.",
+    de: "Celler Can Marrón ist einer der traditionellen Cellers mit dem größten Charme und der tiefsten Verwurzelung der Inkas. Unter Beibehaltung seiner ursprünglichen unterirdischen Struktur aus Marés-Stein mit Tonnengewölben und alten Weinwannen bietet es ein 100% balearisches gastronomisches Erlebnis. Seine Küche zeichnet sich durch jahrhundertealte Löffelrezepte aus: mallorquinische Suppen mit Gemüse aus dem Garten, gebratene Ostergerichte, Schnecken in Sauce mit hausgemachtem Aioli, Wildbrut Arròs und langsam geröstetes knuspriges Ferkel.",
   },
   specialties: {
     es: [

@@ -34,11 +34,13 @@ export const canPomar: ServiceItem = {
     es: "Pastelería y bombonería histórica fundada en Campos en 1902, pionera de la ensaimada rellena de sobrasada con miel, bombones de autor y hojaldres artesanos.",
     en: "Historic pastry and artisan chocolate house in Campos established in 1902, legendary creator of sobrassada & honey ensaïmades and gourmet chocolates.",
     ca: "Pastisseria i bomboneria històrica fundada a Campos el 1902, creadora de l'ensaïmada farcida de sobrassada amb mel i bombons d'autor.",
+    de: "Historische Konditorei und Bonbonniere, 1902 in Campos gegründet, Pionierin der Ensaimada, gefüllt mit Sobrasada mit Honig, Signature-Pralinen und handwerklichen Blätterteigwaren.",
   },
   fullDescription: {
     es: "Can Pomar es una de las confiterías y pastelerías más prestigiosas de Mallorca, fundada en 1902 en la Plaça Major de Campos. Reconocida por su maestría artesana a lo largo de cuatro generaciones familiares, es célebre por haber popularizado la combinación gourmet de ensaimada con sobrasada de Porc Negre y miel de flores de Mallorca, así como sus bombones artesanos y empanadas.",
     en: "Can Pomar is an emblematic landmark of Balearic confectionery heritage, situated in Campos' Plaça Major since 1902. Honored across four generations of master patissiers, they are celebrated as the original creators of the iconic sweet-and-savory ensaïmada filled with artisanal black pig sobrassada and mountain honey, alongside handcrafted pralines.",
     ca: "Can Pomar és una de les pastisseries més prestigioses de Mallorca, fundada el 1902 a la Plaça Major de Campos. Reconeguda per quatre generacions de mestres pastissers, és cèlebre per l'ensaïmada farcida de sobrassada de Porc Negre i mel, a més dels seus bombons artesans.",
+    de: "Can Pomar ist eine der renommiertesten Konditoreien Mallorcas, die 1902 auf der Plaça Major de Campos gegründet wurde. Sie ist seit vier Familiengenerationen für ihr handwerkliches Können bekannt und berühmt für die Popularisierung der Gourmet-Kombination aus Ensaimada mit Sobrasada de Porc Negre und mallorquinischem Blütenhonig sowie ihrer handwerklichen Pralinen und Empanadas.",
   },
   specialties: {
     es: [

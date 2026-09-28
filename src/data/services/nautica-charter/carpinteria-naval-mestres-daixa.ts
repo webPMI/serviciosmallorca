@@ -34,11 +34,13 @@ export const carpinteriaNavalMestres: ServiceItem = {
     es: "Taller artesanal de carpintería de ribera y maestros de azuela (mestres d'aixa) en Portitxol desde 1965, restauración integral de llaüts de madera tradicionales y cubiertas de teca de Birmania para yates.",
     en: "Traditional shipwright and boat carpentry atelier in Portitxol (Palma) since 1965, restoring historic wooden Mallorcan 'llaüts', custom Burmese teak decking, and traditional caulking.",
     ca: "Taller artesanal de fusteria de ribera i mestres d'aixa al Portitxol des de 1965, restauració integral de llaüts tradicionals de fusta, calafatada i cobertes de teca per a iots.",
+    de: "Taller artesanal de carpintería de ribera y maestros de azuela (mestres d'aixa) en Portitxol desde 1965, restauración integral de llaüts de madera tradicionales y cubiertas de teca de Birmania para yates.",
   },
   fullDescription: {
     es: "Carpintería Naval & Mestres d'Aixa Balear es el taller de carpintería de ribera más respetado de la bahía de Palma, ubicado en el histórico varadero del Portitxol. Con seis décadas de maestría artesanal transmitida de generación en generación, preserva la construcción y restauración de los icónicos 'llaüts' de madera mallorquines: sustitución de cuadernas y quillas de roble e iroko, calafateado tradicional con estopa de cáñamo y brea, confección de timones artesanales y renovación de cubiertas completas de teca de Birmania para veleros y superyates.",
     en: "Carpintería Naval & Mestres d'Aixa Balear is the premier traditional wooden shipwright workshop in Palma Bay, stationed inside the historic Portitxol boatyard. Safeguarding six decades of ancestral maritime carpentry, they specialize in restoring authentic Mallorcan wooden 'llaüts': shaping steam-bent oak and iroko ribs, traditional pitch and hemp caulking, handcrafted hardwood rudders, and high-precision Burmese teak deck replacements for classic yachts.",
     ca: "Carpinteria Naval & Mestres d'Aixa Balear és el taller de fusteria de ribera de referència a la badia de Palma, al varador històric del Portitxol. Amb 60 anys d'ofici, preserva la restauració dels tradicionals llaüts de fusta: substitució de quadernes de roure i iroko, calafatada tradicional amb estopa, canvi de cobertes de teca i vernissos marins.",
+    de: "QUERY LENGTH LIMIT EXCEEDED. MAX ALLOWED QUERY : 500 CHARS",
   },
   specialties: {
     es: [

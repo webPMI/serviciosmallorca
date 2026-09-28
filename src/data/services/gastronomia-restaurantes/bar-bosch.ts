@@ -34,11 +34,13 @@ export const barBosch: ServiceItem = {
     es: "Histórico café y bar emblemático fundado en 1936 en la céntrica Plaza de las Tortugas de Palma, famoso por sus llonguets y terraza.",
     en: "Historic iconic cafe & bar established in 1936 on Palma's central Plaza de las Tortugas, world-famous for its traditional llonguets and outdoor terrace.",
     ca: "Històric cafè i bar emblemàtic fundat el 1936 a la cèntrica Plaça de les Tortugues de Palma, famós pels seus llonguets i terrassa.",
+    de: "Historisches Café und emblematische Bar, die 1936 auf der zentralen Plaza de las Tortugas in Palma gegründet wurde und für ihre Llonguets und Terrassen bekannt ist.",
   },
   fullDescription: {
     es: "Abierto desde 1936, el Bar Bosch es una auténtica institución de la vida social y cultural de Palma. Ubicado en el cruce del Paseo del Borne y Las Ramblas, es el punto de encuentro por excelencia para disfrutar de los mejores llonguets mallorquines, tapas tradicionales y café en su legendaria terraza.",
     en: "Serving Palma since 1936, Bar Bosch is a true cultural institution. Located at the vibrant crossroads of Passeig del Born and Las Ramblas, it is the quintessential gathering place to enjoy authentic Mallorcan llonguet sandwiches, tapas, and artisanal coffee on its historic terrace.",
     ca: "Obert des del 1936, el Bar Bosch és una autèntica institució de la vida social i cultural de Palma. Situat a l'encreuament del Passeig del Born i Les Rambles, és el punt de trobada per excel·lència per gaudir dels millors llonguets mallorquins, tapes i cafè.",
+    de: "Die seit 1936 geöffnete Bar Bosch ist eine authentische Institution des sozialen und kulturellen Lebens in Palma. An der Kreuzung des Paseo del Borne und Las Ramblas gelegen, ist es der Treffpunkt par excellence, um die besten mallorquinischen Llonguets, traditionelle Tapas und Kaffee auf seiner legendären Terrasse zu genießen.",
   },
   specialties: {
     es: [

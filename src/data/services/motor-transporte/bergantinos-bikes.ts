@@ -34,11 +34,13 @@ export const bergantinosBikes: ServiceItem = {
     es: "Taller especializado en reparación y alquiler de bicicletas en Can Pastilla y Playa de Palma, bicis eléctricas (e-bikes), carretera, paseo y servicio express.",
     en: "Premier bike repair shop and bicycle rental in Can Pastilla & Playa de Palma, offering electric e-bikes, road cycling, city cruisers, and express mechanics.",
     ca: "Taller especialitzat en reparació i lloguer de bicicletes a Can Pastilla i Platja de Palma, bicis elèctriques (e-bikes), carretera, passeig i servei exprés.",
+    de: "Taller especializado en reparación y alquiler de bicicletas en Can Pastilla y Playa de Palma, bicis eléctricas (e-bikes), carretera, paseo y servicio express.",
   },
   fullDescription: {
     es: "Bergantiños Bikes es la tienda y taller de bicicletas de referencia en Can Pastilla y el paseo marítimo de la Bahía de Palma. Con un equipo de mecánicos apasionados por el ciclismo, ofrece servicio de reparación express para todo tipo de bicicletas (carretera, MTB, gravel, e-bikes), ajuste de cambios, purgado de frenos hidráulicos, recambios Shimano/SRAM y una moderna flota de alquiler con entrega en hoteles y villas.",
     en: "Bergantiños Bikes is the premier neighborhood bike shop and repair workshop in Can Pastilla along the Bay of Palma coastal promenade. Their certified mechanics deliver express tune-ups for road, gravel, mountain, and e-bikes, hydraulic brake bleeds, genuine Shimano/SRAM parts, and top-tier rental fleets delivered directly to island hotels and villas.",
     ca: "Bergantiños Bikes és la botiga i taller de bicicletes de referència a Can Pastilla i el passeig marítim de la Badia de Palma. Amb mecànics experts, ofereix reparació exprés de bicis de carretera, gravel i elèctriques, recanvis oficials i lloguer amb lliurament a hotels i vil·les.",
+    de: "Bergantiños Bikes es la tienda y taller de bicicletas de referencia en Can Pastilla y el paseo marítimo de la Bahía de Palma. Con un equipo de mecánicos apasionados por el ciclismo, ofrece servicio de reparación express para todo tipo de bicicletas (carretera, MTB, gravel, e-bikes), ajuste de cambios, purgado de frenos hidráulicos, recambios Shimano/SRAM y una moderna flota de alquiler con entrega en hoteles y villas.",
   },
   specialties: {
     es: [

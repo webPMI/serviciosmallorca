@@ -34,11 +34,13 @@ export const restauranteCanPedro: ServiceItem = {
     es: "Legendario restaurante tradicional en Gènova (Palma) desde 1976, templo de las carnes a la brasa con carbón de encina, caracoles a la mallorquina con alioli, pa amb oli y raciones populares.",
     en: "Iconic traditional dining institution in Gènova (Palma) since 1976, celebrated for charcoal-grilled Balearic meats, Mallorcan-style herbal snails with aioli, and generous local comfort food.",
     ca: "Llegendari restaurant tradicional a Gènova (Palma) des de 1976, temple de les carns a la brasa de carbó d'alzina, caragols a la mallorquina amb allioli, pa amb oli i racions abundants.",
+    de: "Legendario restaurante tradicional en Gènova (Palma) desde 1976, templo de las carnes a la brasa con carbón de encina, caracoles a la mallorquina con alioli, pa amb oli y raciones populares.",
   },
   fullDescription: {
     es: "Restaurante Can Pedro es una de las instituciones gastronómicas más emblemáticas y queridas de Mallorca, ubicado en el pintoresco pueblo de Gènova, a solo 5 minutos del centro de Palma. Desde 1976, este templo de la cocina balear tradicional recibe a familias, residentes y visitantes ilustres con su espectacular brasería de carbón de encina: chuletillas de cordero lechal, solomillos de ternera, entrecots a la piedra, sus célebres cazuelas de caracoles a la mallorquina con hierbabuena e hinojo y sus postres caseros como el cardenal de Lloseta y el gató con helado de almendra.",
     en: "Restaurante Can Pedro is a beloved culinary landmark in the scenic hillside village of Gènova, just minutes above Palma. Firing their live holm-oak charcoal grills non-stop since 1976, they are famed island-wide for succulent milk-fed lamb cutlets, hot stone-seared dry-aged steaks, steaming clay pots of garden snails simmered with wild mint and fennel, and authentic Balearic almond desserts.",
     ca: "El Restaurant Can Pedro és una de les institucions gastronòmiques més estimades de Mallorca, al poble de Gènova (Palma). Des de 1976, aquest temple de la cuina tradicional ofereix carns a la brasa de carbó d'alzina: costelletes de xot, entrecots a la pedra, caragols a la mallorquina amb herba-sana i postres casolanes com el gató d'ametlla.",
+    de: "QUERY LENGTH LIMIT EXCEEDED. MAX ALLOWED QUERY : 500 CHARS",
   },
   specialties: {
     es: [

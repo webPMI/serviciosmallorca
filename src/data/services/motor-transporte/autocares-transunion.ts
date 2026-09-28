@@ -34,11 +34,13 @@ export const autocaresTransunion: ServiceItem = {
     es: "Compañía líder de transporte discrecional, autobuses y transfers privados en Mallorca, con más de 50 años conectando el aeropuerto, hoteles y eventos.",
     en: "Leading private and group coach transport company in Mallorca, boasting over 50 years of airport transfers, island excursions, and VIP corporate transport.",
     ca: "Companyia líder de transport discrecional, autobusos i trasllats privats a Mallorca, amb més de 50 anys connectant l'aeroport, hotels i esdeveniments.",
+    de: "Compañía líder de transporte discrecional, autobuses y transfers privados en Mallorca, con más de 50 años conectando el aeropuerto, hoteles y eventos.",
   },
   fullDescription: {
     es: "Autocares Mallorca Transunion es la empresa de transporte de pasajeros más veterana y consolidada de Baleares. Con una flota moderna de autocares, minibuses y vehículos ejecutivos con chófer, cubre transfers al Aeropuerto de Palma (PMI), excursiones turísticas, congresos y transporte para bodas y eventos en toda la isla.",
     en: "Autocares Mallorca Transunion is the premier and longest-standing passenger transport operator in the Balearic Islands. Operating an extensive fleet of modern touring coaches, minibuses, and chauffeur-driven executive cars, offering airport transfers, island tours, weddings, and convention logistics.",
     ca: "Autocars Mallorca Transunion és l'empresa de transport de passatgers més veterana i consolidada de Balears. Amb una flota moderna d'autocars, minibusos i vehicles executius amb xofer, cobreix trasllats a l'Aeroport de Palma, excursions i esdeveniments a tota l'illa.",
+    de: "Autocares Mallorca Transunion es la empresa de transporte de pasajeros más veterana y consolidada de Baleares. Con una flota moderna de autocares, minibuses y vehículos ejecutivos con chófer, cubre transfers al Aeropuerto de Palma (PMI), excursiones turísticas, congresos y transporte para bodas y eventos en toda la isla.",
   },
   specialties: {
     es: [

@@ -34,11 +34,13 @@ export const restauracionCasanova: ServiceItem = {
     es: "Taller artesanal en Palma de restauración y conservación de muebles antiguos desde 1980, barnizado tradicional a muñequilla con goma laca, marquetería y tratamiento anticarcoma.",
     en: "Master artisan atelier in Palma restoring antique furniture since 1980, specializing in traditional French polishing (goma laca), marquetry veneer repair, and woodworm treatments.",
     ca: "Taller artesanal a Palma de restauració i conservació de mobles antics des de 1980, envernissat a monyeca amb goma laca, marqueteria i tractament anticorc.",
+    de: "Taller artesanal en Palma de restauración y conservación de muebles antiguos desde 1980, barnizado tradicional a muñequilla con goma laca, marquetería y tratamiento anticarcoma.",
   },
   fullDescription: {
     es: "Restauración Casanova es un taller boutique de ebanistería y conservación artística con más de 40 años de oficio en el barrio de Santa Catalina en Palma. Especializado en el rescate y puesta en valor de cómodas mallorquinas, sillerías, bufetes y portones rústicos de maderas nobles (nogal, caoba, roble y pino flandes), utiliza técnicas históricas respetuosas: desinsectación y consolidación de maderas, reintegración de taraceas y barnizados tradicionales a muñequilla con goma laca natural.",
     en: "Restauración Casanova is a specialized master cabinetmaking and antique conservation studio located in Palma's historic Santa Catalina quarter for over four decades. Dedicated to preserving authentic Balearic heritage furniture, mahogany chests, inlaid consoles, and ancient finca doors, they employ historical methods: non-destructive woodworm eradication, veneer marquetry restoration, and hand-rubbed French polishing with natural shellac.",
     ca: "Restauració Casanova és un taller d'ebenisteria i conservació amb més de 40 anys d'ofici a Santa Catalina (Palma). Especialistes en la restauració de còmodes mallorquines, bufets i portes de fusta noble, utilitza tècniques històriques: tractament contra el corc, marqueteria i envernissat tradicional a monyeca amb goma laca.",
+    de: "Restauración Casanova es un taller boutique de ebanistería y conservación artística con más de 40 años de oficio en el barrio de Santa Catalina en Palma. Especializado en el rescate y puesta en valor de cómodas mallorquinas, sillerías, bufetes y portones rústicos de maderas nobles (nogal, caoba, roble y pino flandes), utiliza técnicas históricas respetuosas: desinsectación y consolidación de maderas, reintegración de taraceas y barnizados tradicionales a muñequilla con goma laca natural.",
   },
   specialties: {
     es: [

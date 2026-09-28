@@ -34,11 +34,13 @@ export const tapiceriaDecoracionInca: ServiceItem = {
     es: "Taller de tapicería tradicional y náutica en Inca desde 1985, retapizado de sofás, sillones orejeros y cabeceros con telas mallorquinas de lenguas (robes de llengües), cojines de exterior y cortinas a medida.",
     en: "Master upholstery and marine soft furnishings workshop in Inca since 1985, restoring heritage sofas, headboards, traditional Mallorcan 'llengües' fabrics, and waterproof outdoor/yacht cushions.",
     ca: "Taller de tapisseria tradicional i nàutica a Inca des de 1985, retapissat de sofàs, butaques i capçals amb robes de llengües mallorquines, coixins d'exterior i cortines a mida.",
+    de: "Taller de tapicería tradicional y náutica en Inca desde 1985, retapizado de sofás, sillones orejeros y cabeceros con telas mallorquinas de lenguas (robes de llengües), cojines de exterior y cortinas a medida.",
   },
   fullDescription: {
     es: "Tapicería & Decoración Inca es un taller artesanal familiar con cuatro décadas de experiencia en el corazón del Raiguer mallorquín. Especialistas en devolver la vida y el confort a muebles clásicos y modernos, renuevan interiores completos de chalets, fincas rústicas y embarcaciones: restauración de muelles y cinchas, rellenos de espuma de alta densidad indeformable, confección a medida de fundas con auténticas telas de lenguas mallorquinas (Teixits Vicens / Riera) y tapizado náutico con polipiel marina resistente a rayos UV y salitre.",
     en: "Tapicería & Decoración Inca is a family upholstery atelier with four decades of craft mastery in central Mallorca. Breathing renewed comfort and elegance into antique, contemporary, and nautical furnishings: re-springing, replacement of high-resilience foam cores, bespoke slipcovers featuring genuine Mallorcan ikat 'robes de llengües' textiles, and marine-grade waterproof outdoor cushioning.",
     ca: "Tapisseria & Decoració Inca és un taller artesanal amb 40 anys d'experiència al Raiguer. Especialistes en restaurar sofàs i mobles d'època i moderns per a cases de camp i vil·les: canvi de molles i cinxades, escumes d'alta densitat, confecció amb autèntiques robes de llengües mallorquines i tapisseria nàutica impermeable.",
+    de: "QUERY LENGTH LIMIT EXCEEDED. MAX ALLOWED QUERY : 500 CHARS",
   },
   specialties: {
     es: [
