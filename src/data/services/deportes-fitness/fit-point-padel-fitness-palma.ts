@@ -29,8 +29,6 @@ export const FIT_POINT_PADEL_FITNESS_PALMA: ServiceItem = {
   image: "/images/sports/fit-point-padel-fitness-palma.jpg",
   gallery: ["/images/sports/fit-point-padel-fitness-palma.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007015",
-  appleMapsUrl: "https://maps.apple.com/?q=Fit%20Point%20P%C3%A1del%20%26%20Fitness+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Fit%20Point%20P%C3%A1del%20%26%20Fitness+Mallorca",
   shortDescription: {
     es: "Centro deportivo en Son Castelló con 10 pistas de pádel de cristal, gimnasio y torneos semanales.",
     en: "Sports center in Son Castelló with 10 glass padel courts, fitness gym, and weekly events.",
@@ -94,13 +92,6 @@ export const FIT_POINT_PADEL_FITNESS_PALMA: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 430,
-      url: "https://www.google.com/maps?cid=12007015",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

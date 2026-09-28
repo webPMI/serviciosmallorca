@@ -31,12 +31,6 @@ export const turismo_activo_mallorca_hiking_guides_soller: ServiceItem = {
   schedule: "Lunes a Domingo: 08:00 - 20:00",
   image: "/images/services/turismo-activo-mallorca-hiking-guides-soller.jpg",
   gallery: ["/images/services/turismo-activo-mallorca-hiking-guides-soller.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Tramuntana%20Hiking%20%26%20Guided%20Mountain%20Tours%20S%C3%B3ller%20Pla%C3%A7a%20de%20la%20Constituci%C3%B3%2C%2014%2C%2007100%20S%C3%B3ller",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Tramuntana%20Hiking%20%26%20Guided%20Mountain%20Tours%20S%C3%B3ller%20Pla%C3%A7a%20de%20la%20Constituci%C3%B3%2C%2014%2C%2007100%20S%C3%B3ller",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Tramuntana%20Hiking%20%26%20Guided%20Mountain%20Tours%20S%C3%B3ller%20Pla%C3%A7a%20de%20la%20Constituci%C3%B3%2C%2014%2C%2007100%20S%C3%B3ller",
   shortDescription: {
     es: "Guías de montaña titulados (UIMLA/AEGM) para travesías por la Ruta de Pedra en Sec (GR-221), Torrent de Pareis y cumbres de la Tramuntana.",
     en: "Certified mountain guides (UIMLA/AEGM) for Dry Stone Route (GR-221), Torrent de Pareis canyoning, and Tramuntana summits.",
@@ -100,13 +94,6 @@ export const turismo_activo_mallorca_hiking_guides_soller: ServiceItem = {
       "Ausrüstungsverleih (Stöcke, Rucksäcke)",
       "Orientierungs- und Naturkundekurse",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 290,
-      url: "https://www.google.com/maps/search/?api=1&query=Tramuntana%20Hiking%20%26%20Guided%20Mountain%20Tours%20S%C3%B3ller%20Pla%C3%A7a%20de%20la%20Constituci%C3%B3%2C%2014%2C%2007100%20S%C3%B3ller",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

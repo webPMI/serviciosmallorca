@@ -21,9 +21,6 @@ export const talleresAutoInca: ServiceItem = {
   whatsapp: "+34 640 10 20 30",
   email: "taller@autoinca.com",
   website: "https://talleresautoinca.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Talleres%20Auto%20Inca",
-  appleMapsUrl: "https://maps.apple.com/?q=Talleres%20Auto%20Inca&ll=39.7150,2.9050",
-  bingMapsUrl: "https://www.bing.com/maps?where1=Talleres%20Auto%20Inca",
   coordinates: { lat: 39.715, lng: 2.905 },
   schedule: "Lunes a Viernes: 08:00 - 13:30 | 15:00 - 19:00 (Sábados y Domingos Cerrado)",
   lastVerifiedAt: "2026-08-25",
@@ -130,30 +127,13 @@ export const talleresAutoInca: ServiceItem = {
       instagramHandle: "@autoinca",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 220,
-      url: "https://www.google.com/maps/search/?api=1&query=Talleres%20Auto%20Inca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Talleres%20Auto%20Inca&ll=39.7150,2.9050",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 220,
-      url: "https://www.bing.com/maps?where1=Talleres%20Auto%20Inca",
-    },
-    totalReviewsAggregated: 220,
-    overallWeightedRating: 4.8,
-  },
   reviews: [
     {
       id: "rev-tai-1",
       authorName: "Llorenç Bauzà",
       rating: 5,
       date: "2025-05-16",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
       comment:
         "Taller de referència a Inca per a xapa i pintura. Varen reparar el cop del meu cotxe ràpidament, em varen deixar un vehicle de cortesia i la pintura ha quedat perfecta.",
@@ -164,7 +144,7 @@ export const talleresAutoInca: ServiceItem = {
       authorName: "Hans Richter",
       rating: 5,
       date: "2025-06-24",
-      platform: "google_maps",
+      platform: "direct",
       language: "en",
       comment:
         "Excellent garage in Inca! Fixed an urgent brake and AC problem before our road trip across the island. Clear quote, punctual delivery, and very friendly.",

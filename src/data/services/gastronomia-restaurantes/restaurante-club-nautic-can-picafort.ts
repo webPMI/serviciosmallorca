@@ -28,9 +28,6 @@ export const restauranteClubNauticCanPicafort: ServiceItem = {
   email: "info@cncanpicafort.com",
   website: "https://cncanpicafort.com/restaurante",
   menuUrl: "https://cncanpicafort.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Restaurante+Club+Nautic+Can+Picafort+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante+Club+Nautic+Can+Picafort",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante+Club+Nautic+Can+Picafort",
   tags: [
     "zona:alcudia-pollensa",
     "zona:can-picafort",

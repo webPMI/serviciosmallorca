@@ -28,9 +28,6 @@ export const bodegasSonBordilsInca: ServiceItem = {
   email: "bodega@sonbordils.es",
   website: "https://www.sonbordils.es",
   menuUrl: "https://www.sonbordils.es",
-  googleMapsUrl: "https://www.google.com/maps/search/Finca+Son+Bordils+Inca+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Finca+Son+Bordils+Inca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Finca+Son+Bordils+Inca",
   tags: ["zona:raiguer-pla", "zona:inca", "product:traditional", "mod:en-local", "aud:parejas", "temps:todo-el-ano"],
   capabilities: {
     parkingAvailable: true,

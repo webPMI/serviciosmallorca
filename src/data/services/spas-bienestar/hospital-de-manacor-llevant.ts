@@ -29,9 +29,6 @@ export const hospitalDeManacorLlevant: ServiceItem = {
   email: "info@hmanacor.org",
   website: "https://www.hospitaldemanacor.org",
   menuUrl: "https://www.hospitaldemanacor.org",
-  googleMapsUrl: "https://www.google.com/maps/search/Hospital+de+Manacor+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Hospital+de+Manacor",
-  bingMapsUrl: "https://www.bing.com/maps?q=Hospital+de+Manacor",
   tags: [
     "zona:manacor-llevant",
     "zona:manacor",
@@ -148,7 +145,7 @@ export const hospitalDeManacorLlevant: ServiceItem = {
       rating: 5,
       comment: "Molt agraït a tot l'equip mèdic i d'infermeria d'urgències. Tracte professional i ràpid.",
       date: "2026-08-05",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
     },
     {
@@ -158,7 +155,7 @@ export const hospitalDeManacorLlevant: ServiceItem = {
       comment:
         "Wurde in der Notaufnahme schnell und hervorragend betreut. Die Ärztin sprach sehr gut Deutsch und Englisch.",
       date: "2026-07-25",
-      platform: "google_maps",
+      platform: "direct",
       language: "de",
     },
   ],

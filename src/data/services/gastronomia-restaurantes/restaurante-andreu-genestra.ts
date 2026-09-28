@@ -24,9 +24,6 @@ export const restauranteAndreuGenestra: ServiceItem = {
   whatsapp: "+34 603 293 745",
   email: "reservas@andreugenestra.com",
   website: "https://andreugenestra.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Andreu%20Genestra%20Llucmajor",
-  appleMapsUrl: "https://maps.apple.com/?q=Andreu%20Genestra%20Llucmajor&ll=39.4385,2.8004",
-  bingMapsUrl: "https://www.bing.com/maps?where1=Andreu%20Genestra%20Llucmajor",
   coordinates: { lat: 39.4385, lng: 2.8004 },
   coordinatesAccuracy: "verified_manual",
   schedule:
@@ -153,23 +150,6 @@ export const restauranteAndreuGenestra: ServiceItem = {
       instagramHandle: "@andreugenestrarestaurante",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.6,
-      reviewCount: 120,
-      url: "https://www.google.com/maps/search/?api=1&query=Andreu%20Genestra%20Llucmajor",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Andreu%20Genestra%20Llucmajor&ll=39.4385,2.8004",
-    },
-    bingMaps: {
-      rating: 4.6,
-      reviewCount: 120,
-      url: "https://www.bing.com/maps?where1=Andreu%20Genestra%20Llucmajor",
-    },
-    totalReviewsAggregated: 120,
-    overallWeightedRating: 4.6,
-  },
   confidenceScore: 92,
   verificationStatus: "verified",
   sourceConfidence: "high",

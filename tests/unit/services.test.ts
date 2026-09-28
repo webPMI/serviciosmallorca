@@ -243,5 +243,43 @@ describe("Servicios Mallorca Data Layer", () => {
         }
       }
     });
+
+    it("verifies zero orphan files: every service .ts in subfolders is exported in the catalog", async () => {
+      const fs = await import("node:fs");
+      const path = await import("node:path");
+      const servicesDir = path.resolve(process.cwd(), "src/data/services");
+
+      const files: string[] = [];
+      const walk = (dir: string) => {
+        for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+          const full = path.join(dir, entry.name);
+          if (entry.isDirectory()) walk(full);
+          else if (entry.name.endsWith(".ts") && entry.name !== "index.ts" && entry.name !== "types.ts") {
+            files.push(full);
+          }
+        }
+      };
+      walk(servicesDir);
+
+      expect(files.length).toBe(SERVICES.length);
+
+      for (const file of files) {
+        const sectorDir = path.dirname(file);
+        const sectorIndex = path.join(sectorDir, "index.ts");
+        expect(fs.existsSync(sectorIndex), `Sector index missing for ${file}`).toBe(true);
+
+        const indexContent = fs.readFileSync(sectorIndex, "utf-8");
+        const filename = path.basename(file);
+        const baseWithoutExt = path.basename(file, ".ts");
+
+        const isImported =
+          indexContent.includes(`./${filename}`) ||
+          indexContent.includes(`./${baseWithoutExt}`) ||
+          indexContent.includes(`"${baseWithoutExt}"`) ||
+          indexContent.includes(`'${baseWithoutExt}'`);
+
+        expect(isImported, `Orphan service file detected: ${file} is not imported in ${sectorIndex}`).toBe(true);
+      }
+    });
   });
 });

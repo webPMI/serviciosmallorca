@@ -31,12 +31,6 @@ export const big_blue_diving_mallorca_palmanova: ServiceItem = {
   schedule: "Lunes a Domingo: 08:30 - 18:30 (Abril a Noviembre)",
   image: "/images/services/big-blue-diving-mallorca-palmanova.jpg",
   gallery: ["/images/services/big-blue-diving-mallorca-palmanova.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Big%20Blue%20Diving%20Mallorca%20(Palmanova)%20-%20Centro%20de%20Buceo%20PADI%205%20Estrellas%20Passeig%20del%20Mar%2C%2046%2C%2007181%20Palmanova%2C%20Calvi%C3%A0",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Big%20Blue%20Diving%20Mallorca%20(Palmanova)%20-%20Centro%20de%20Buceo%20PADI%205%20Estrellas%20Passeig%20del%20Mar%2C%2046%2C%2007181%20Palmanova%2C%20Calvi%C3%A0",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Big%20Blue%20Diving%20Mallorca%20(Palmanova)%20-%20Centro%20de%20Buceo%20PADI%205%20Estrellas%20Passeig%20del%20Mar%2C%2046%2C%2007181%20Palmanova%2C%20Calvi%C3%A0",
   shortDescription: {
     es: "Centro de buceo PADI 5 Estrellas en la playa de Palmanova desde 1997: salidas diarias en barco a las Reservas Marinas de Malgrats y El Toro, bautizos y cursos PADI.",
     en: "PADI 5 Star Dive Resort on Palmanova beach since 1997: daily boat diving trips to Malgrats and El Toro Marine Reserves, discovery dives, and courses.",
@@ -100,13 +94,6 @@ export const big_blue_diving_mallorca_palmanova: ServiceItem = {
       "Schnuppertauchen für Einsteiger ab 10 Jahren mit persönlicher Begleitung",
       "Verleih moderner Leihausrüstung namhafter Hersteller (Aqualung, Apeks, Scubapro)",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 460,
-      url: "https://www.google.com/maps/search/?api=1&query=Big%20Blue%20Diving%20Mallorca%20(Palmanova)%20-%20Centro%20de%20Buceo%20PADI%205%20Estrellas%20Passeig%20del%20Mar%2C%2046%2C%2007181%20Palmanova%2C%20Calvi%C3%A0",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

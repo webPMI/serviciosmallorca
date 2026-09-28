@@ -29,8 +29,6 @@ export const ILLES_CENTRES_BENESTAR_SON_RAPINYA: ServiceItem = {
   image: "/images/sports/illes-centres-benestar-son-rapinya.jpg",
   gallery: ["/images/sports/illes-centres-benestar-son-rapinya.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007034",
-  appleMapsUrl: "https://maps.apple.com/?q=Illes%20Centres%20de%20Benestar%20(Son%20Rapinya)+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Illes%20Centres%20de%20Benestar%20(Son%20Rapinya)+Mallorca",
   shortDescription: {
     es: "Centro integral con piscina semiolímpica climatizada, spa hidrotermal, box funcional y Les Mills.",
     en: "Comprehensive health center with heated semi-Olympic pool, thermal spa, functional box, and Les Mills.",
@@ -94,13 +92,6 @@ export const ILLES_CENTRES_BENESTAR_SON_RAPINYA: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 520,
-      url: "https://www.google.com/maps?cid=12007034",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

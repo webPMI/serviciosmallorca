@@ -31,12 +31,6 @@ export const escola_de_vela_balear_escola_nautica_palma: ServiceItem = {
   schedule: "Lunes a Domingo: 08:30 - 19:30 (Temporada Abril – Octubre)",
   image: "/images/services/escola-de-vela-balear-escola-nàutica-palma.jpg",
   gallery: ["/images/services/escola-de-vela-balear-escola-nàutica-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Escola%20de%20Vela%20Balear%20%26%20N%C3%A1utica%20Palma%20Club%20de%20Mar%20Palma%2C%20Moll%20Pelaires%20s%2Fn%2C%2007015%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Escola%20de%20Vela%20Balear%20%26%20N%C3%A1utica%20Palma%20Club%20de%20Mar%20Palma%2C%20Moll%20Pelaires%20s%2Fn%2C%2007015%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Escola%20de%20Vela%20Balear%20%26%20N%C3%A1utica%20Palma%20Club%20de%20Mar%20Palma%2C%20Moll%20Pelaires%20s%2Fn%2C%2007015%20Palma",
   shortDescription: {
     es: "Escuela náutica oficial homologada en el Club de Mar Palma: titulaciones PER, PNB, Patrón de Yate, cursos de vela ligera en Optimist y Laser y navegación a vela oceánica.",
     en: "Official government-approved nautical school at Club de Mar Palma: PER, PNB, Yacht Skipper licensing, dinghy sailing classes (Optimist & Laser) and offshore ocean sailing.",
@@ -100,13 +94,6 @@ export const escola_de_vela_balear_escola_nautica_palma: ServiceItem = {
       "Yachtkapitän-Kurs (Patrón de Yate & Capitán de Yate)",
       "Kinder- und Erwachsenensegelkurse in Optimist, Laser und 420",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 398,
-      url: "https://www.google.com/maps/search/?api=1&query=Escola%20de%20Vela%20Balear%20%26%20N%C3%A1utica%20Palma%20Club%20de%20Mar%20Palma%2C%20Moll%20Pelaires%20s%2Fn%2C%2007015%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

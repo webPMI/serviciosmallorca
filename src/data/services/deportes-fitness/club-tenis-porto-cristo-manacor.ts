@@ -29,8 +29,6 @@ export const CLUB_TENIS_PORTO_CRISTO_MANACOR: ServiceItem = {
   image: "/images/sports/club-tenis-porto-cristo-manacor.jpg",
   gallery: ["/images/sports/club-tenis-porto-cristo-manacor.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007033",
-  appleMapsUrl: "https://maps.apple.com/?q=Club%20Tenis%20Porto%20Cristo+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Club%20Tenis%20Porto%20Cristo+Mallorca",
   shortDescription: {
     es: "Club de tenis y pádel costero junto al puerto de Porto Cristo con pistas rápidas y bar terraza.",
     en: "Coastal tennis and padel club near Porto Cristo harbor with hard courts and terrace bar.",
@@ -94,13 +92,6 @@ export const CLUB_TENIS_PORTO_CRISTO_MANACOR: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 210,
-      url: "https://www.google.com/maps?cid=12007033",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

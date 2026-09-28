@@ -31,12 +31,6 @@ export const gestoria_oliver_palma_asesoria_empresas: ServiceItem = {
   schedule: "Lunes a Viernes: 08:30 - 15:30",
   image: "/images/services/gestoria-oliver-palma-asesoria-empresas.jpg",
   gallery: ["/images/services/gestoria-oliver-palma-asesoria-empresas.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Gestor%C3%ADa%20Oliver%20Palma%20Asesor%C3%ADa%20Integral%20Avinguda%20d'Alemanya%2C%2015%2C%2007003%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Gestor%C3%ADa%20Oliver%20Palma%20Asesor%C3%ADa%20Integral%20Avinguda%20d'Alemanya%2C%2015%2C%2007003%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Gestor%C3%ADa%20Oliver%20Palma%20Asesor%C3%ADa%20Integral%20Avinguda%20d'Alemanya%2C%2015%2C%2007003%20Palma",
   shortDescription: {
     es: "Gestoría administrativa y asesoría fiscal, contable y laboral en el centro de Palma: trámites de tráfico, matriculación de vehículos extranjeros, herencias y gestión de pymes.",
     en: "Administrative agency and tax, accounting, and payroll consultancy in central Palma: vehicle registrations, foreign car import, inheritance settlements, and SME management.",
@@ -100,13 +94,6 @@ export const gestoria_oliver_palma_asesoria_empresas: ServiceItem = {
       "Abwicklung von Erbschaften auf Mallorca und Erbschaftssteuererklärung",
       "Beantragung von NIE-Nummern und digitalen Zertifikaten",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 340,
-      url: "https://www.google.com/maps/search/?api=1&query=Gestor%C3%ADa%20Oliver%20Palma%20Asesor%C3%ADa%20Integral%20Avinguda%20d'Alemanya%2C%2015%2C%2007003%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

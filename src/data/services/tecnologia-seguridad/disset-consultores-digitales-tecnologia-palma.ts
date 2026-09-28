@@ -31,12 +31,6 @@ export const disset_consultores_digitales_tecnologia_palma: ServiceItem = {
   schedule: "Lunes a Viernes: 09:00 - 18:00",
   image: "/images/services/disset-consultores-digitales-tecnologia-palma.jpg",
   gallery: ["/images/services/disset-consultores-digitales-tecnologia-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Disset%20Consultores%20de%20Comunicaci%C3%B3n%20%26%20Tecnolog%C3%ADa%20Baleares%20Parc%20Bit%2C%20Edifici%20Disset%2C%20Carrer%20d'Isaac%20Newton%2C%20s%2Fn%2C%2007121%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Disset%20Consultores%20de%20Comunicaci%C3%B3n%20%26%20Tecnolog%C3%ADa%20Baleares%20Parc%20Bit%2C%20Edifici%20Disset%2C%20Carrer%20d'Isaac%20Newton%2C%20s%2Fn%2C%2007121%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Disset%20Consultores%20de%20Comunicaci%C3%B3n%20%26%20Tecnolog%C3%ADa%20Baleares%20Parc%20Bit%2C%20Edifici%20Disset%2C%20Carrer%20d'Isaac%20Newton%2C%20s%2Fn%2C%2007121%20Palma",
   shortDescription: {
     es: "Consultora líder balear en transformación digital, desarrollo tecnológico, ciberseguridad y comunicación corporativa con sede en ParcBit.",
     en: "Leading Balearic digital transformation consultancy, software engineering, cybersecurity, and corporate comms based in ParcBit.",
@@ -100,13 +94,6 @@ export const disset_consultores_digitales_tecnologia_palma: ServiceItem = {
       "Cybersicherheits-Audits und IT-Notfallkonzepte",
       "Corporate Communications und digitale Markenführung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 130,
-      url: "https://www.google.com/maps/search/?api=1&query=Disset%20Consultores%20de%20Comunicaci%C3%B3n%20%26%20Tecnolog%C3%ADa%20Baleares%20Parc%20Bit%2C%20Edifici%20Disset%2C%20Carrer%20d'Isaac%20Newton%2C%20s%2Fn%2C%2007121%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

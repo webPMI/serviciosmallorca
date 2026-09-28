@@ -31,12 +31,6 @@ export const balear_de_limpiezas_y_servicios_palma: ServiceItem = {
   schedule: "Lunes a Viernes: 08:00 - 19:00",
   image: "/images/services/balear-de-limpiezas-y-servicios-palma.jpg",
   gallery: ["/images/services/balear-de-limpiezas-y-servicios-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Balear%20de%20Limpiezas%20y%20Servicios%20Integrales%20Palma%20Carrer%20de%20Francesc%20Mart%C3%AD%20i%20M%C3%B3ra%2C%2024%2C%2007011%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Balear%20de%20Limpiezas%20y%20Servicios%20Integrales%20Palma%20Carrer%20de%20Francesc%20Mart%C3%AD%20i%20M%C3%B3ra%2C%2024%2C%2007011%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Balear%20de%20Limpiezas%20y%20Servicios%20Integrales%20Palma%20Carrer%20de%20Francesc%20Mart%C3%AD%20i%20M%C3%B3ra%2C%2024%2C%2007011%20Palma",
   shortDescription: {
     es: "Empresa de limpieza y mantenimiento integral de edificios en Palma: comunidades de propietarios, oficinas, cristales en altura, garajes y limpieza técnica de fin de obra.",
     en: "Comprehensive building and property cleaning company in Palma: residential communities, corporate offices, high-altitude window washing, and post-construction scrubbing.",
@@ -100,13 +94,6 @@ export const balear_de_limpiezas_y_servicios_palma: ServiceItem = {
       "Gründliche Bauendreinigung nach Neubau oder Kernsanierung",
       "Kristallisation und Politur von Marmor- und Terrazzoböden",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 320,
-      url: "https://www.google.com/maps/search/?api=1&query=Balear%20de%20Limpiezas%20y%20Servicios%20Integrales%20Palma%20Carrer%20de%20Francesc%20Mart%C3%AD%20i%20M%C3%B3ra%2C%2024%2C%2007011%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

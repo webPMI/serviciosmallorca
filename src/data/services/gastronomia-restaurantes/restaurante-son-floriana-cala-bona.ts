@@ -28,9 +28,6 @@ export const restauranteSonFlorianaCalaBona: ServiceItem = {
   email: "sonfloriana@protur.net",
   website: "https://restaurantesonfloriana.com",
   menuUrl: "https://restaurantesonfloriana.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Restaurante+Son+Floriana+Cala+Bona+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante+Son+Floriana+Cala+Bona",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante+Son+Floriana+Cala+Bona",
   tags: [
     "zona:manacor-llevant",
     "zona:cala-bona",

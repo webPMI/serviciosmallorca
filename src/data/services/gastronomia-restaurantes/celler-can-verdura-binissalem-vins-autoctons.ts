@@ -31,12 +31,6 @@ export const celler_can_verdura_binissalem_vins_autoctons: ServiceItem = {
   schedule: "Lunes a Viernes: 09:00 - 17:00. Catas con reserva previa.",
   image: "/images/services/celler-can-verdura-binissalem-vins-autoctons.jpg",
   gallery: ["/images/services/celler-can-verdura-binissalem-vins-autoctons.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Celler%20Ca%20n'Verdura%20Binissalem%20Vins%20d'Autor%20Carrer%20de%20sa%20Siquia%2C%203%2C%2007350%20Binissalem",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Celler%20Ca%20n'Verdura%20Binissalem%20Vins%20d'Autor%20Carrer%20de%20sa%20Siquia%2C%203%2C%2007350%20Binissalem",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Celler%20Ca%20n'Verdura%20Binissalem%20Vins%20d'Autor%20Carrer%20de%20sa%20Siquia%2C%203%2C%2007350%20Binissalem",
   shortDescription: {
     es: "Celler de autor en Binissalem especializado en la recuperación de variedades autóctonas mallorquinas olvidadas: Mantonegro, Moll, Escursac y Giró Ros.",
     en: "Signature micro-winery in Binissalem dedicated to reviving forgotten native Mallorcan grape varieties: Mantonegro, Moll, Escursac, and Giró Ros.",
@@ -100,13 +94,6 @@ export const celler_can_verdura_binissalem_vins_autoctons: ServiceItem = {
       "Fachführungen durch alte DO Binissalem Weinberge",
       "Direkter internationaler Weingutversand",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 310,
-      url: "https://www.google.com/maps/search/?api=1&query=Celler%20Ca%20n'Verdura%20Binissalem%20Vins%20d'Autor%20Carrer%20de%20sa%20Siquia%2C%203%2C%2007350%20Binissalem",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

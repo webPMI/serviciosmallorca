@@ -78,12 +78,6 @@ export const vilasTennisAcademyPalmanova: ServiceItem = {
   },
   image: "/images/services/vilas-tennis-academy-palmanova.jpg",
   gallery: ["/images/services/vilas-tennis-academy-palmanova.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Vilas%20Tennis%20Academy%20(Palmanova%20-%20Calvi%C3%A0)%20Carrer%20de%20les%20Cordes%2C%201%2C%2007181%20Palmanova%2C%20Calvi%C3%A0%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Vilas%20Tennis%20Academy%20(Palmanova%20-%20Calvi%C3%A0)%20Carrer%20de%20les%20Cordes%2C%201%2C%2007181%20Palmanova%2C%20Calvi%C3%A0%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://www.bing.com/maps?q=Vilas%20Tennis%20Academy%20(Palmanova%20-%20Calvi%C3%A0)%20Carrer%20de%20les%20Cordes%2C%201%2C%2007181%20Palmanova%2C%20Calvi%C3%A0%2C%20Illes%20Balears",
   phone: "+34 971 68 15 40",
   whatsapp: "+34971681540",
   website: "https://vilastennisacademy.com",

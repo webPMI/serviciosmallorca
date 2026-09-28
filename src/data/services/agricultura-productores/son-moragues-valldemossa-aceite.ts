@@ -76,12 +76,6 @@ export const sonMoraguesValldemossaAceite: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Son%20Moragues%20Organic%20Olive%20Oil%20%26%20Farm%20Valldemossa%20Mallorca",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Son%20Moragues%20Organic%20Olive%20Oil%20%26%20Farm%20Valldemossa%20Mallorca",
-  bingMapsUrl:
-    "https://www.bing.com/maps?q=Son%20Moragues%20Organic%20Olive%20Oil%20%26%20Farm%20Valldemossa%20Mallorca",
   pricing: {
     startingPrice: "Botella aceite virgen extra DOP desde 22€",
     rateType: "fixed",
@@ -108,21 +102,4 @@ export const sonMoraguesValldemossaAceite: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 540,
-      url: "https://www.google.com/maps/search/?api=1&query=Son%20Moragues%20Organic%20Olive%20Oil%20%26%20Farm%20Valldemossa%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Son%20Moragues%20Organic%20Olive%20Oil%20%26%20Farm%20Valldemossa%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 54,
-      url: "https://www.bing.com/maps?q=Son%20Moragues%20Organic%20Olive%20Oil%20%26%20Farm%20Valldemossa%20Mallorca",
-    },
-    totalReviewsAggregated: 594,
-    overallWeightedRating: 4.9,
-  },
 };

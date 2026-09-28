@@ -31,12 +31,6 @@ export const inmobiliaria_casas_mallorca_soller: ServiceItem = {
   schedule: "Lunes a Viernes: 09:30 - 18:00 | Sábado: 10:00 - 13:00 | Domingo: Cerrado",
   image: "/images/services/inmobiliaria-casas-mallorca-soller.jpg",
   gallery: ["/images/services/inmobiliaria-casas-mallorca-soller.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Inmobiliaria%20Casas%20Mallorca%20S%C3%B3ller%20Carrer%20de%20Sa%20Lluna%2C%2065%2C%2007100%20S%C3%B3ller%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Inmobiliaria%20Casas%20Mallorca%20S%C3%B3ller%20Carrer%20de%20Sa%20Lluna%2C%2065%2C%2007100%20S%C3%B3ller%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Inmobiliaria%20Casas%20Mallorca%20S%C3%B3ller%20Carrer%20de%20Sa%20Lluna%2C%2065%2C%2007100%20S%C3%B3ller%2C%20Illes%20Balears",
   shortDescription: {
     es: "Agencia inmobiliaria especialista en el Valle de Sóller, Fornalutx, Deià y la Sierra de Tramuntana, con más de 25 años intermediando fincas con olivares, casas señoriales y propiedades con encanto.",
     en: "Boutique real estate agency specializing in Sóller Valley, Fornalutx, Deià, and the Tramuntana mountains, with over 25 years handling historic stone townhouses and olive grove fincas.",
@@ -100,13 +94,6 @@ export const inmobiliaria_casas_mallorca_soller: ServiceItem = {
       "Baurechtliche Beratung bezüglich Bewohnbarkeitsbescheinigungen (Cédula) und Legalität",
       "Begleitung von der ersten Besichtigung über den Notartermin bis zur Ummeldung von Versorgern",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 190,
-      url: "https://www.google.com/maps/search/?api=1&query=Inmobiliaria%20Casas%20Mallorca%20S%C3%B3ller%20Carrer%20de%20Sa%20Lluna%2C%2065%2C%2007100%20S%C3%B3ller%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

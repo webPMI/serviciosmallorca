@@ -28,9 +28,6 @@ export const clinica_veterinaria_alcudia_animalia: ServiceItem = {
   schedule: "Lunes a Viernes: 09:00 - 20:00 | Sábado: 09:00 - 14:00 | Urgencias 24h",
   image: "/images/services/clinica-veterinaria-alcudia-animalia.jpg",
   gallery: ["/images/services/clinica-veterinaria-alcudia-animalia.jpg"],
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica+Veterinaria+Animalia+Alc%C3%BAdia",
-  appleMapsUrl: "https://maps.apple.com/?q=Clinica+Veterinaria+Animalia+Alcudia",
-  bingMapsUrl: "https://bing.com/maps?q=Clinica+Veterinaria+Animalia+Alcudia",
   shortDescription: {
     es: "Clínica veterinaria completa en Alcúdia con urgencias 24h, cirugía laparoscópica, radiología digital y ecografía avanzada para mascotas del norte de Mallorca.",
     en: "Full-service veterinary clinic in Alcúdia with 24h emergency care, laparoscopic surgery, digital radiology, and advanced ultrasound for pets in northern Mallorca.",
@@ -94,13 +91,6 @@ export const clinica_veterinaria_alcudia_animalia: ServiceItem = {
       "Veterinärkardiologie mit Doppler-Echokardiographie und EKG",
       "Veterinärzahnheilkunde mit professioneller Reinigung und Extraktionen unter Narkose",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 412,
-      url: "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica+Veterinaria+Animalia+Alc%C3%BAdia",
-    },
   },
   createdAt: "2026-09-05",
   lastUpdatedAt: "2026-09-05",

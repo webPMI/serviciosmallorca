@@ -31,12 +31,6 @@ export const aspace_balears_atencion_integral_marratxi: ServiceItem = {
   schedule: "Lunes a Viernes: 08:00 - 17:30",
   image: "/images/services/aspace-balears-atencion-integral-marratxi.jpg",
   gallery: ["/images/services/aspace-balears-atencion-integral-marratxi.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Aspace%20Balears%20-%20Atenci%C3%B3%20Integral%20i%20Par%C3%A0lisi%20Cerebral%20(Marratx%C3%AD)%20Carrer%20dels%20Treballadors%2C%2012%2C%20Es%20Pont%20d'Inca%2C%2007141%20Marratx%C3%AD",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Aspace%20Balears%20-%20Atenci%C3%B3%20Integral%20i%20Par%C3%A0lisi%20Cerebral%20(Marratx%C3%AD)%20Carrer%20dels%20Treballadors%2C%2012%2C%20Es%20Pont%20d'Inca%2C%2007141%20Marratx%C3%AD",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Aspace%20Balears%20-%20Atenci%C3%B3%20Integral%20i%20Par%C3%A0lisi%20Cerebral%20(Marratx%C3%AD)%20Carrer%20dels%20Treballadors%2C%2012%2C%20Es%20Pont%20d'Inca%2C%2007141%20Marratx%C3%AD",
   shortDescription: {
     es: "Centro referente en Baleares para el tratamiento médico, fisioterapia neurológica, colegio de educación especial y residencia para personas con parálisis cerebral.",
     en: "Reference center in the Balearic Islands for medical care, neuro-physiotherapy, special education, and residential services for cerebral palsy.",
@@ -100,13 +94,6 @@ export const aspace_balears_atencion_integral_marratxi: ServiceItem = {
       "Frühförderung für Säuglinge und Kleinkinder von 0 bis 6 Jahren",
       "Tagesförderstätte und vollstationäres Pflegeheim mit Rund-um-die-Uhr-Betreuung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 280,
-      url: "https://www.google.com/maps/search/?api=1&query=Aspace%20Balears%20-%20Atenci%C3%B3%20Integral%20i%20Par%C3%A0lisi%20Cerebral%20(Marratx%C3%AD)%20Carrer%20dels%20Treballadors%2C%2012%2C%20Es%20Pont%20d'Inca%2C%2007141%20Marratx%C3%AD",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

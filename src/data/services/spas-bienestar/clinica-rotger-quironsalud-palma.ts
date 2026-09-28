@@ -29,8 +29,6 @@ export const clinica_rotger_quironsalud_palma: ServiceItem = {
   image: "/images/spas/clinica-rotger-quironsalud-palma.jpg",
   gallery: ["/images/spas/clinica-rotger-quironsalud-palma.jpg", "/images/categories/salud.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=13008001",
-  appleMapsUrl: "https://maps.apple.com/?q=Cl%C3%ADnica%20Rotger%20Quir%C3%B3nsalud+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Cl%C3%ADnica%20Rotger%20Quir%C3%B3nsalud+Mallorca",
   shortDescription: {
     es: "Hospital privado de referencia histórica en el centro neurálgico de Palma con tecnología diagnóstica punta.",
     en: "Historic landmark private hospital in Palma's city center equipped with state-of-the-art diagnostic technology.",
@@ -94,13 +92,6 @@ export const clinica_rotger_quironsalud_palma: ServiceItem = {
       "Wellness- und Regenerationstherapien",
       "Kontinuierliche medizinische Nachbetreuung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.6,
-      reviewCount: 1180,
-      url: "https://www.google.com/maps?cid=13008001",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

@@ -31,12 +31,6 @@ export const institut_oftalmologic_mallorca_palma: ServiceItem = {
   schedule: "Lunes a Viernes: 08:30 - 20:00 | Sábado y Domingo: Cerrado",
   image: "/images/services/institut-oftalmologic-mallorca-palma.jpg",
   gallery: ["/images/services/institut-oftalmologic-mallorca-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Institut%20Oftalmol%C3%B2gic%20de%20Mallorca%20(IOM)%20Palma%20Carrer%20d'Anselm%20Turmeda%2C%206%2C%2007010%20Palma%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Institut%20Oftalmol%C3%B2gic%20de%20Mallorca%20(IOM)%20Palma%20Carrer%20d'Anselm%20Turmeda%2C%206%2C%2007010%20Palma%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Institut%20Oftalmol%C3%B2gic%20de%20Mallorca%20(IOM)%20Palma%20Carrer%20d'Anselm%20Turmeda%2C%206%2C%2007010%20Palma%2C%20Illes%20Balears",
   shortDescription: {
     es: "Clínica oftalmológica líder en Mallorca, especializada en cirugía refractiva láser, cataratas con lentes premium, retina, glaucoma y estética oculoplástica.",
     en: "Mallorca's leading ophthalmology institute, specializing in refractive laser surgery, premium cataract implants, retina care, glaucoma, and oculoplastics.",
@@ -100,13 +94,6 @@ export const institut_oftalmologic_mallorca_palma: ServiceItem = {
       "Netzhauttherapie: Intravitreale Injektionen, Vitrektomie und Laserkoagulation",
       "Vollständige augenärztliche Kontrollen, optische Kohärenztomographie (OCT) und Gesichtsfeld",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 380,
-      url: "https://www.google.com/maps/search/?api=1&query=Institut%20Oftalmol%C3%B2gic%20de%20Mallorca%20(IOM)%20Palma%20Carrer%20d'Anselm%20Turmeda%2C%206%2C%2007010%20Palma%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

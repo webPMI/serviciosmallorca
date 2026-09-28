@@ -31,12 +31,6 @@ export const pollentia_properties_mallorca_pollensa: ServiceItem = {
   schedule: "Lunes a Viernes de 09:30 a 18:00, Sábados de 10:00 a 13:30",
   image: "/images/services/pollentia-properties-mallorca-pollensa.jpg",
   gallery: ["/images/services/pollentia-properties-mallorca-pollensa.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Pollentia%20Properties%20Pollen%C3%A7a%20Old%20Town%20Carrer%20d'Alc%C3%BAdia%2C%2068%2C%2007460%20Pollen%C3%A7a%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Pollentia%20Properties%20Pollen%C3%A7a%20Old%20Town%20Carrer%20d'Alc%C3%BAdia%2C%2068%2C%2007460%20Pollen%C3%A7a%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Pollentia%20Properties%20Pollen%C3%A7a%20Old%20Town%20Carrer%20d'Alc%C3%BAdia%2C%2068%2C%2007460%20Pollen%C3%A7a%2C%20Illes%20Balears",
   shortDescription: {
     es: "Inmobiliaria de referencia en el norte de Mallorca. Fincas exclusivas, casas de pueblo históricas y villas en Pollença, Port de Pollença y Formentor.",
     en: "Benchmark real estate agency in northern Mallorca. Exclusive fincas, historical townhouses, and luxury villas in Pollença, Puerto Pollensa, and Formentor.",
@@ -122,13 +116,6 @@ export const pollentia_properties_mallorca_pollensa: ServiceItem = {
       "Restaurierte Stadthäuser mit Patio",
       "Villen mit ETV-Ferienvermietlizenz",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 165,
-      url: "https://www.google.com/maps/search/?api=1&query=Pollentia%20Properties%20Pollen%C3%A7a%20Old%20Town%20Carrer%20d'Alc%C3%BAdia%2C%2068%2C%2007460%20Pollen%C3%A7a%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

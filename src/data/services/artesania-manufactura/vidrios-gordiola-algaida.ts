@@ -21,9 +21,6 @@ export const vidriosGordiola: ServiceItem = {
   whatsapp: "+34 971 66 50 41",
   email: "info@gordiola.com",
   website: "https://gordiola.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Vidrios%20Gordiola%20Algaida",
-  appleMapsUrl: "https://maps.apple.com/?q=Vidrios%20Gordiola%20Algaida&ll=39.5605,2.8885",
-  bingMapsUrl: "https://www.bing.com/maps?where1=Vidrios%20Gordiola%20Algaida",
   coordinates: { lat: 39.5605, lng: 2.8885 },
   schedule: "Lunes a Sábado: 09:00 - 19:00 | Domingos: 09:30 - 13:30 (Demostración de Soplado en Vivo)",
   lastVerifiedAt: "2026-08-25",
@@ -131,30 +128,13 @@ export const vidriosGordiola: ServiceItem = {
       instagramHandle: "@vidriosgordiola",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.6,
-      reviewCount: 1350,
-      url: "https://www.google.com/maps/search/?api=1&query=Vidrios%20Gordiola%20Algaida",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Vidrios%20Gordiola%20Algaida&ll=39.5605,2.8885",
-    },
-    bingMaps: {
-      rating: 4.6,
-      reviewCount: 1350,
-      url: "https://www.bing.com/maps?where1=Vidrios%20Gordiola%20Algaida",
-    },
-    totalReviewsAggregated: 1350,
-    overallWeightedRating: 4.6,
-  },
   reviews: [
     {
       id: "rev-gor-1",
       authorName: "Miquel Àngel Llinàs",
       rating: 5,
       date: "2025-05-21",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
       comment:
         "Veure bufar el vidre davant el foc és un espectacle únic. Més de 300 anys d'història viva de Mallorca. Les peces tenen una màgia especial.",
@@ -165,7 +145,7 @@ export const vidriosGordiola: ServiceItem = {
       authorName: "Elizabeth Parker",
       rating: 5,
       date: "2025-06-28",
-      platform: "google_maps",
+      platform: "direct",
       language: "en",
       comment:
         "Fascinating stop on the road to Manacor! Watching master craftsmen at work is mesmerizing. Bought stunning wine glasses, packed super safely.",

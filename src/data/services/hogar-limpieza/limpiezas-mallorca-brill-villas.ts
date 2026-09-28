@@ -31,12 +31,6 @@ export const limpiezas_mallorca_brill_villas: ServiceItem = {
   schedule: "Lunes a Sábado de 07:30 a 19:30",
   image: "/images/services/limpiezas-mallorca-brill-villas.jpg",
   gallery: ["/images/services/limpiezas-mallorca-brill-villas.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Limpiezas%20Mallorca%20Brill%20Palma%20%26%20Calvi%C3%A0%20Carrer%20d'Arag%C3%B3%2C%20215%2C%2007008%20Palma%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Limpiezas%20Mallorca%20Brill%20Palma%20%26%20Calvi%C3%A0%20Carrer%20d'Arag%C3%B3%2C%20215%2C%2007008%20Palma%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Limpiezas%20Mallorca%20Brill%20Palma%20%26%20Calvi%C3%A0%20Carrer%20d'Arag%C3%B3%2C%20215%2C%2007008%20Palma%2C%20Illes%20Balears",
   shortDescription: {
     es: "Servicios profesionales de limpieza para villas de lujo, fincas rústicas y finales de obra en Palma, Son Vida y Calvià. Cristales en altura y ozonización.",
     en: "Professional cleaning services for luxury villas, fincas, and post-construction handovers in Palma, Son Vida, and Calvià. High-reach glass and ozonization.",
@@ -110,13 +104,6 @@ export const limpiezas_mallorca_brill_villas: ServiceItem = {
     en: ["Villa post-construction cleaning", "Pure water pole window washing", "Son Vida & Calvià estate cleaning"],
     ca: ["Neteja de fi d'obra a vil·les", "Vidres en alçada amb aigua pura", "Manteniment residencial a Son Vida"],
     de: ["Bauendreinigung für Luxusvillen", "Osmose-Glasreinigung in Höhen", "Fincapflege in Son Vida & Calvià"],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 160,
-      url: "https://www.google.com/maps/search/?api=1&query=Limpiezas%20Mallorca%20Brill%20Palma%20%26%20Calvi%C3%A0%20Carrer%20d'Arag%C3%B3%2C%20215%2C%2007008%20Palma%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

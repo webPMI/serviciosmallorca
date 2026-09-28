@@ -29,8 +29,6 @@ export const VIVAGYM_SON_FUSTER_PALMA: ServiceItem = {
   image: "/images/services/vivagym-son-fuster-palma.jpg",
   gallery: ["/images/services/vivagym-son-fuster-palma.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007039",
-  appleMapsUrl: "https://maps.apple.com/?q=VivaGym%20Son%20Fuster+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=VivaGym%20Son%20Fuster+Mallorca",
   shortDescription: {
     es: "Gimnasio moderno y espacioso en Son Fuster con maquinaria Matrix, peso libre y más de 100 clases semanales.",
     en: "Spacious modern gym in Son Fuster featuring Matrix equipment, free-weights area, and 100+ weekly classes.",
@@ -94,13 +92,6 @@ export const VIVAGYM_SON_FUSTER_PALMA: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.6,
-      reviewCount: 680,
-      url: "https://www.google.com/maps?cid=12007039",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

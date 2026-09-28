@@ -31,12 +31,6 @@ export const bodegas_jose_l_ferrer_binissalem: ServiceItem = {
   schedule: "Lunes a Viernes: 09:00 - 19:00; Sábado: 10:00 - 14:00",
   image: "/images/services/bodegas-jose-l-ferrer-binissalem.jpg",
   gallery: ["/images/services/bodegas-jose-l-ferrer-binissalem.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Bodegas%20Jos%C3%A9%20L.%20Ferrer%20D.O.%20Binissalem%20(1931)%20Carrer%20del%20Conquistador%2C%20103%2C%2007350%20Binissalem",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Bodegas%20Jos%C3%A9%20L.%20Ferrer%20D.O.%20Binissalem%20(1931)%20Carrer%20del%20Conquistador%2C%20103%2C%2007350%20Binissalem",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Bodegas%20Jos%C3%A9%20L.%20Ferrer%20D.O.%20Binissalem%20(1931)%20Carrer%20del%20Conquistador%2C%20103%2C%2007350%20Binissalem",
   shortDescription: {
     es: "Bodega histórica de referencia de la D.O. Binissalem desde 1931: pionera en el embotellado de vinos en Mallorca, variedades autóctonas Mantonegro y Moll, catas guiadas y visitas al viñedo.",
     en: "Benchmark historic winery of the D.O. Binissalem since 1931: pioneers in estate-bottled Mallorcan wine, native Mantonegro and Moll grapes, vineyard tours, and cellar tastings.",
@@ -100,13 +94,6 @@ export const bodegas_jose_l_ferrer_binissalem: ServiceItem = {
       "Weinverkauf ab Hof mit flugsicherer Flaschenverpackung",
       "Eventlocation für Firmenevents und private Feiern inmitten der Reben",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 1650,
-      url: "https://www.google.com/maps/search/?api=1&query=Bodegas%20Jos%C3%A9%20L.%20Ferrer%20D.O.%20Binissalem%20(1931)%20Carrer%20del%20Conquistador%2C%20103%2C%2007350%20Binissalem",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

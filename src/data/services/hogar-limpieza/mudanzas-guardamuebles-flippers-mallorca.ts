@@ -31,12 +31,6 @@ export const mudanzas_guardamuebles_flippers_mallorca: ServiceItem = {
   schedule: "Lunes a Viernes de 08:00 a 18:00",
   image: "/images/services/mudanzas-guardamuebles-flippers-mallorca.jpg",
   gallery: ["/images/services/mudanzas-guardamuebles-flippers-mallorca.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Mudanzas%20%26%20Guardamuebles%20Flippers%20Mallorca%20Palma%20Carrer%20del%20Gremi%20de%20Teixidors%2C%2035%2C%2007009%20Palma%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Mudanzas%20%26%20Guardamuebles%20Flippers%20Mallorca%20Palma%20Carrer%20del%20Gremi%20de%20Teixidors%2C%2035%2C%2007009%20Palma%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Mudanzas%20%26%20Guardamuebles%20Flippers%20Mallorca%20Palma%20Carrer%20del%20Gremi%20de%20Teixidors%2C%2035%2C%2007009%20Palma%2C%20Illes%20Balears",
   shortDescription: {
     es: "Líderes en mudanzas locales, nacionales e internacionales en Mallorca desde 1978. Guardamuebles propio vigilado 24h, embalaje de obras de arte y grúa elevadora.",
     en: "Leaders in local, domestic, and international removals in Mallorca since 1978. 24/7 guarded container storage, fine art packing, and high-reach furniture lifts.",
@@ -106,13 +100,6 @@ export const mudanzas_guardamuebles_flippers_mallorca: ServiceItem = {
     en: ["International relocations", "Climate-controlled storage in Palma", "Fine art and piano crating"],
     ca: ["Mudances internacionals", "Guardamobles climatitzat a Palma", "Embalatge d'obres d'art"],
     de: ["Internationale Relocations", "Klimatisiertes Möbellager in Palma", "Kunst- und Klaviertransporte"],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 180,
-      url: "https://www.google.com/maps/search/?api=1&query=Mudanzas%20%26%20Guardamuebles%20Flippers%20Mallorca%20Palma%20Carrer%20del%20Gremi%20de%20Teixidors%2C%2035%2C%2007009%20Palma%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

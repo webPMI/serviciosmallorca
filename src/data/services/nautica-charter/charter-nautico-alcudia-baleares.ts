@@ -31,12 +31,6 @@ export const charter_nautico_alcudia_baleares: ServiceItem = {
   schedule: "Lunes a Domingo: 08:30 - 20:30 (Temporada Abril a Noviembre)",
   image: "/images/services/charter-nautico-alcudia-baleares.jpg",
   gallery: ["/images/services/charter-nautico-alcudia-baleares.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Alcudia%20Bay%20Yacht%20Charter%20%26%20Sailing%20Tours%20Passeig%20Mar%C3%ADtim%2C%20s%2Fn%2C%20Port%20d'Alc%C3%BAdia%2C%2007400%20Alc%C3%BAdia",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Alcudia%20Bay%20Yacht%20Charter%20%26%20Sailing%20Tours%20Passeig%20Mar%C3%ADtim%2C%20s%2Fn%2C%20Port%20d'Alc%C3%BAdia%2C%2007400%20Alc%C3%BAdia",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Alcudia%20Bay%20Yacht%20Charter%20%26%20Sailing%20Tours%20Passeig%20Mar%C3%ADtim%2C%20s%2Fn%2C%20Port%20d'Alc%C3%BAdia%2C%2007400%20Alc%C3%BAdia",
   shortDescription: {
     es: "Alquiler privado de catamaranes y veleros con patrón para fondear en la Bahía de Pollença, Cabo Pinar y calas vírgenes de Formentor.",
     en: "Private skippered catamaran and sailboat charters exploring Pollença Bay, Cabo Pinar, and secluded coves of Formentor.",
@@ -100,13 +94,6 @@ export const charter_nautico_alcudia_baleares: ServiceItem = {
       "Wöchentlicher Bareboat- und Crewed-Charter",
       "Firmenevents und Teambuilding auf See",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 320,
-      url: "https://www.google.com/maps/search/?api=1&query=Alcudia%20Bay%20Yacht%20Charter%20%26%20Sailing%20Tours%20Passeig%20Mar%C3%ADtim%2C%20s%2Fn%2C%20Port%20d'Alc%C3%BAdia%2C%2007400%20Alc%C3%BAdia",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

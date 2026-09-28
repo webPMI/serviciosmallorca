@@ -27,9 +27,6 @@ export const rusticoPizzeriaPeguera: ServiceItem = {
   whatsapp: "+34 691 45 72 72",
   website: "https://www.google.com/maps/search/Rustico+Takeaway+Peguera+Mallorca",
   menuUrl: "https://www.google.com/maps/search/Rustico+Takeaway+Peguera+Mallorca",
-  googleMapsUrl: "https://www.google.com/maps/search/Rustico+Takeaway+Peguera+Bulevar+de+Peguera+61+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Rustico+Peguera+Calvia",
-  bingMapsUrl: "https://www.bing.com/maps?q=Rustico+Peguera+Calvia",
   tags: [
     "zona:calvia-andratx",
     "zona:peguera",
@@ -149,7 +146,7 @@ export const rusticoPizzeriaPeguera: ServiceItem = {
       comment:
         "La mejor pizza de Peguera sin duda. La masa es ligera, crujiente y con ingredientes de primerísima calidad italiana. La focaccia es espectacular.",
       date: "2026-07-20",
-      platform: "google_maps",
+      platform: "direct",
       language: "es",
     },
     {
@@ -159,7 +156,7 @@ export const rusticoPizzeriaPeguera: ServiceItem = {
       comment:
         "Unglaublich leckere Pizza und Focaccia! Perfekter Teig, super freundlicher Service und absolut faire Preise. Ein Muss in Peguera!",
       date: "2026-08-05",
-      platform: "google_maps",
+      platform: "direct",
       language: "de",
     },
   ],

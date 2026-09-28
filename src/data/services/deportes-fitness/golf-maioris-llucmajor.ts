@@ -29,8 +29,6 @@ export const GOLF_MAIORIS_LLUCMAJOR: ServiceItem = {
   image: "/images/sports/golf-maioris-llucmajor.jpg",
   gallery: ["/images/sports/golf-maioris-llucmajor.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007013",
-  appleMapsUrl: "https://maps.apple.com/?q=Golf%20Maioris+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Golf%20Maioris+Mallorca",
   shortDescription: {
     es: "Campo de 18 hoyos par 72 de diseño RS Group con calles anchas y 4 islas-green.",
     en: "18-hole par 72 course designed by RS Group with 4 island greens.",
@@ -94,13 +92,6 @@ export const GOLF_MAIORIS_LLUCMAJOR: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 440,
-      url: "https://www.google.com/maps?cid=12007013",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

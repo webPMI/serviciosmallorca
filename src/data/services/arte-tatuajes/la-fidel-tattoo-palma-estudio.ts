@@ -31,12 +31,6 @@ export const la_fidel_tattoo_palma_estudio: ServiceItem = {
   schedule: "Lunes a Sábado: 10:30 - 19:30",
   image: "/images/services/la-fidel-tattoo-palma-estudio.jpg",
   gallery: ["/images/services/la-fidel-tattoo-palma-estudio.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=La%20Fidel%20Tattoo%20Palma%20Estudio%20Art%C3%ADstico%20Carrer%20dels%20Horts%2C%208%2C%2007003%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=La%20Fidel%20Tattoo%20Palma%20Estudio%20Art%C3%ADstico%20Carrer%20dels%20Horts%2C%208%2C%2007003%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=La%20Fidel%20Tattoo%20Palma%20Estudio%20Art%C3%ADstico%20Carrer%20dels%20Horts%2C%208%2C%2007003%20Palma",
   shortDescription: {
     es: "Estudio de tatuaje de referencia en el centro de Palma: especialistas en realismo, blackwork, micro-tatuaje fino e ilustración personalizada con tatuadores residentes y artistas invitados.",
     en: "Premier custom tattoo studio in central Palma: specialists in realism, blackwork, fine-line micro tattoos, and custom flash art with guest artists.",
@@ -100,13 +94,6 @@ export const la_fidel_tattoo_palma_estudio: ServiceItem = {
       "Piercing mit Titan-Schmuck in Implantatqualität",
       "Ausführliche Pflegeberatung bis zur Abheilung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 360,
-      url: "https://www.google.com/maps/search/?api=1&query=La%20Fidel%20Tattoo%20Palma%20Estudio%20Art%C3%ADstico%20Carrer%20dels%20Horts%2C%208%2C%2007003%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

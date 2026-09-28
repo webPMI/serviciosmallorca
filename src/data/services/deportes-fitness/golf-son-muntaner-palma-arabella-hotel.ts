@@ -31,12 +31,6 @@ export const golf_son_muntaner_palma_arabella_hotel: ServiceItem = {
   schedule: "Diario: 07:30 - Sunset (todo el año)",
   image: "/images/services/golf-son-muntaner-palma-arabella-hotel.jpg",
   gallery: ["/images/services/golf-son-muntaner-palma-arabella-hotel.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Golf%20Son%20Muntaner%20Club%20%26%20Academy%20Palma%20(Arabella%20Hotels)%20Urbanizaci%C3%B3n%20Son%20Vida%2C%2007013%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Golf%20Son%20Muntaner%20Club%20%26%20Academy%20Palma%20(Arabella%20Hotels)%20Urbanizaci%C3%B3n%20Son%20Vida%2C%2007013%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Golf%20Son%20Muntaner%20Club%20%26%20Academy%20Palma%20(Arabella%20Hotels)%20Urbanizaci%C3%B3n%20Son%20Vida%2C%2007013%20Palma",
   shortDescription: {
     es: "Campo de golf par 72 de 18 hoyos en la exclusiva urbanización Son Vida de Palma: diseño de Folco Nardi con vistas a la bahía, academia de golf con pros certificados PGA y putting green.",
     en: "Par-72 18-hole golf course in Palma's exclusive Son Vida estate: Folco Nardi design with bay views, PGA-certified academy, and pro-quality putting green.",
@@ -100,13 +94,6 @@ export const golf_son_muntaner_palma_arabella_hotel: ServiceItem = {
       "Leihausrüstung: Schläger, Elektro-Trolleys und Buggys",
       "Mehr-Runden-Voucher und Jahresmitgliedschaften für Residenten",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 645,
-      url: "https://www.google.com/maps/search/?api=1&query=Golf%20Son%20Muntaner%20Club%20%26%20Academy%20Palma%20(Arabella%20Hotels)%20Urbanizaci%C3%B3n%20Son%20Vida%2C%2007013%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

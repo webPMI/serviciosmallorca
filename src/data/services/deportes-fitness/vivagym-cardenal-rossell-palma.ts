@@ -29,8 +29,6 @@ export const VIVAGYM_CARDENAL_ROSSELL_PALMA: ServiceItem = {
   image: "/images/services/vivagym-cardenal-rossell-palma.jpg",
   gallery: ["/images/services/vivagym-cardenal-rossell-palma.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007040",
-  appleMapsUrl: "https://maps.apple.com/?q=VivaGym%20Cardenal%20Rossell+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=VivaGym%20Cardenal%20Rossell+Mallorca",
   shortDescription: {
     es: "Gimnasio de gran formato en Coll d'en Rabassa con área funcional, zona de fuerza y cycling.",
     en: "Large format gym in Coll d'en Rabassa with functional zone, strength area, and indoor cycling.",
@@ -94,13 +92,6 @@ export const VIVAGYM_CARDENAL_ROSSELL_PALMA: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.6,
-      reviewCount: 590,
-      url: "https://www.google.com/maps?cid=12007040",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

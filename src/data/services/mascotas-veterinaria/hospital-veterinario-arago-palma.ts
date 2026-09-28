@@ -76,9 +76,6 @@ export const hospitalVeterinarioAragoPalma: ServiceItem = {
       close: "23:59",
     },
   },
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Hospital%20Veterinario%20Arag%C3%B3%2024h%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Hospital%20Veterinario%20Arag%C3%B3%2024h%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Hospital%20Veterinario%20Arag%C3%B3%2024h%20Mallorca",
   pricing: {
     startingPrice: "Consulta urgencias 24h desde 60€",
     rateType: "tiered",
@@ -105,21 +102,4 @@ export const hospitalVeterinarioAragoPalma: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 1680,
-      url: "https://www.google.com/maps/search/?api=1&query=Hospital%20Veterinario%20Arag%C3%B3%2024h%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Hospital%20Veterinario%20Arag%C3%B3%2024h%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.6,
-      reviewCount: 168,
-      url: "https://www.bing.com/maps?q=Hospital%20Veterinario%20Arag%C3%B3%2024h%20Mallorca",
-    },
-    totalReviewsAggregated: 1848,
-    overallWeightedRating: 4.7,
-  },
 };

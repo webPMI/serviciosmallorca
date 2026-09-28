@@ -29,8 +29,6 @@ export const MALLORCA_BIKE_HIRE_PORT_POLLENSA: ServiceItem = {
   image: "/images/services/mallorca-bike-hire-port-pollensa.jpg",
   gallery: ["/images/services/mallorca-bike-hire-port-pollensa.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007088",
-  appleMapsUrl: "https://maps.apple.com/?q=Mallorca%20Bike%20Hire+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Mallorca%20Bike%20Hire+Mallorca",
   shortDescription: {
     es: "Centro de alquiler de bicicletas de carretera de carbono de alta gama en el inicio de la ruta a Formentor.",
     en: "High-end carbon road bike rental and cycling hub located at the gateway to Cap de Formentor.",
@@ -94,13 +92,6 @@ export const MALLORCA_BIKE_HIRE_PORT_POLLENSA: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 430,
-      url: "https://www.google.com/maps?cid=12007088",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

@@ -21,9 +21,6 @@ export const aluminiosCalvia: ServiceItem = {
   whatsapp: "+34 659 70 80 90",
   email: "info@aluminioscalvia.com",
   website: "https://aluminioscalvia.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Aluminios%20Calvia%20Son%20Bugadelles",
-  appleMapsUrl: "https://maps.apple.com/?q=Aluminios%20Calvia%20Son%20Bugadelles&ll=39.5245,2.5012",
-  bingMapsUrl: "https://www.bing.com/maps?where1=Aluminios%20Calvia%20Son%20Bugadelles",
   coordinates: { lat: 39.5245, lng: 2.5012 },
   schedule: "Lunes a Viernes: 08:00 - 13:00 | 14:30 - 18:00 (Sábados y Domingos Cerrado)",
   lastVerifiedAt: "2026-08-25",
@@ -130,30 +127,13 @@ export const aluminiosCalvia: ServiceItem = {
       instagramHandle: "@aluminioscalvia",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 160,
-      url: "https://www.google.com/maps/search/?api=1&query=Aluminios%20Calvia%20Son%20Bugadelles",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Aluminios%20Calvia%20Son%20Bugadelles&ll=39.5245,2.5012",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 160,
-      url: "https://www.bing.com/maps?where1=Aluminios%20Calvia%20Son%20Bugadelles",
-    },
-    totalReviewsAggregated: 160,
-    overallWeightedRating: 4.8,
-  },
   reviews: [
     {
       id: "rev-ac-1",
       authorName: "Bernhard Meier",
       rating: 5,
       date: "2025-05-16",
-      platform: "google_maps",
+      platform: "direct",
       language: "en",
       comment:
         "Installed glass balustrades and slim sliding doors on our terrace in Santa Ponsa. Incredible quality, very clean job, and delivered on time.",
@@ -164,7 +144,7 @@ export const aluminiosCalvia: ServiceItem = {
       authorName: "Antoni Palmer",
       rating: 5,
       date: "2025-06-20",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
       comment:
         "Molt bona feina en la instal·lació de finestres d'alumini amb trencament tèrmic a la nostra casa de Calvià. Totalment recomanable.",

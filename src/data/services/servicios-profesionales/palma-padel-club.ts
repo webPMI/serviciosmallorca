@@ -81,23 +81,6 @@ export const palmaPadelClub: ServiceItem = {
     ca: "El club de pàdel més gran de Palma amb 16 pistes i ambient esportiu.",
     de: "Der größte und beliebteste Padel-Club in Palma mit 16 Plätzen und erstklassiger Infrastruktur.",
   },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.6,
-      reviewCount: 1350,
-      url: "https://www.google.com/maps/search/?api=1&query=Palma+Padel+Club",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Palma+Padel+Club",
-    },
-    bingMaps: {
-      rating: 4.6,
-      reviewCount: 95,
-      url: "https://www.bing.com/maps?q=Palma+Padel+Club",
-    },
-    totalReviewsAggregated: 1445,
-    overallWeightedRating: 4.6,
-  },
   reviews: [],
   socialLinks: {
     instagram: "https://instagram.com/palmapadel",
@@ -120,9 +103,6 @@ export const palmaPadelClub: ServiceItem = {
     },
   ],
   authorityProfiles: [],
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Palma+Padel+Club",
-  appleMapsUrl: "https://maps.apple.com/?q=Palma+Padel+Club",
-  bingMapsUrl: "https://www.bing.com/maps?q=Palma+Padel+Club",
   phone: "+34 971 25 47 30",
   whatsapp: "+34 971 25 47 30",
   email: "info@palmapadel.es",

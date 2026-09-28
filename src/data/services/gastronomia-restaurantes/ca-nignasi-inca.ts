@@ -27,9 +27,6 @@ export const caNignasiInca: ServiceItem = {
   email: "info@canignasi.es",
   website: "https://www.canignasi.es",
   menuUrl: "https://www.canignasi.es",
-  googleMapsUrl: "https://www.google.com/maps/search/Restaurante+Ca+n+Ignasi+Inca+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante+Ca+n+Ignasi+Inca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante+Ca+n+Ignasi+Inca",
   tags: ["zona:raiguer-pla", "zona:inca", "product:premium", "mod:en-local", "aud:parejas", "temps:todo-el-ano"],
   capabilities: {
     wheelchairAccessible: true,

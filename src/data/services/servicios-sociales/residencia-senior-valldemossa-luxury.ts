@@ -76,11 +76,6 @@ export const residenciaSeniorValldemossaLuxury: ServiceItem = {
       close: "23:59",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Residencia%20Senior%20Valldemossa%20%26%20Centro%20de%20D%C3%ADa%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Residencia%20Senior%20Valldemossa%20%26%20Centro%20de%20D%C3%ADa%20Mallorca",
-  bingMapsUrl:
-    "https://www.bing.com/maps?q=Residencia%20Senior%20Valldemossa%20%26%20Centro%20de%20D%C3%ADa%20Mallorca",
   pricing: {
     startingPrice: "Estancia residencial o centro de día desde 1.900€/mes",
     rateType: "tiered",
@@ -107,21 +102,4 @@ export const residenciaSeniorValldemossaLuxury: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 160,
-      url: "https://www.google.com/maps/search/?api=1&query=Residencia%20Senior%20Valldemossa%20%26%20Centro%20de%20D%C3%ADa%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Residencia%20Senior%20Valldemossa%20%26%20Centro%20de%20D%C3%ADa%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.7,
-      reviewCount: 16,
-      url: "https://www.bing.com/maps?q=Residencia%20Senior%20Valldemossa%20%26%20Centro%20de%20D%C3%ADa%20Mallorca",
-    },
-    totalReviewsAggregated: 176,
-    overallWeightedRating: 4.8,
-  },
 };

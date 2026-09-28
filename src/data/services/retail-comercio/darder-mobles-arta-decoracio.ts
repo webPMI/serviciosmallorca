@@ -31,12 +31,6 @@ export const darder_mobles_arta_decoracio: ServiceItem = {
   schedule: "Lunes a Viernes: 09:30 - 13:30, 16:30 - 20:00 | Sábado: 10:00 - 13:30 | Domingo: Cerrado",
   image: "/images/services/darder-mobles-arta-decoracio.jpg",
   gallery: ["/images/services/darder-mobles-arta-decoracio.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Darder%20Mobles%20Art%C3%A0%20(Mobiliari%20%26%20Interiorisme)%20Avinguda%20de%20Costa%20i%20Llobera%2C%2018%2C%2007570%20Art%C3%A0%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Darder%20Mobles%20Art%C3%A0%20(Mobiliari%20%26%20Interiorisme)%20Avinguda%20de%20Costa%20i%20Llobera%2C%2018%2C%2007570%20Art%C3%A0%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Darder%20Mobles%20Art%C3%A0%20(Mobiliari%20%26%20Interiorisme)%20Avinguda%20de%20Costa%20i%20Llobera%2C%2018%2C%2007570%20Art%C3%A0%2C%20Illes%20Balears",
   shortDescription: {
     es: "Showroom emblemático de muebles y decoración en Artà, especialista en mobiliario mediterráneo contemporáneo, maderas macizas, descanso premium y proyectos de interiorismo para fincas en Llevant.",
     en: "Emblematic furniture and home decor showroom in Artà, specializing in contemporary Mediterranean furnishings, solid woods, luxury bedding, and finca interior styling across Llevant.",
@@ -100,13 +94,6 @@ export const darder_mobles_arta_decoracio: ServiceItem = {
       "Ergonomische Schlafsysteme: Tonnentaschenfederkern- und Naturlatex-Matratzen",
       "Wetterfeste Outdoor-Loungemöbel für Terrassen, Teakholz-Gartentische und Dekoartikel",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 130,
-      url: "https://www.google.com/maps/search/?api=1&query=Darder%20Mobles%20Art%C3%A0%20(Mobiliari%20%26%20Interiorisme)%20Avinguda%20de%20Costa%20i%20Llobera%2C%2018%2C%2007570%20Art%C3%A0%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

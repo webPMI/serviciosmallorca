@@ -28,9 +28,6 @@ export const saTorreSantaEugenia: ServiceItem = {
   email: "info@sa-torre.com",
   website: "https://www.sa-torre.com",
   menuUrl: "https://www.sa-torre.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Restaurante+Sa+Torre+de+Santa+Eugenia+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante+Sa+Torre+Santa+Eugenia",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante+Sa+Torre+Santa+Eugenia",
   tags: [
     "zona:raiguer-pla",
     "zona:santa-eugenia",

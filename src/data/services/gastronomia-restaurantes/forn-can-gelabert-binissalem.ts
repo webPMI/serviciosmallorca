@@ -21,9 +21,6 @@ export const fornCanGelabertBinissalem: ServiceItem = {
   whatsapp: "+34 971 51 12 30",
   email: "info@forncangelabert.com",
   website: "https://forncangelabert.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Forn%20Can%20Gelabert%20Binissalem",
-  appleMapsUrl: "https://maps.apple.com/?q=Forn%20Can%20Gelabert%20Binissalem&ll=39.6890,2.8430",
-  bingMapsUrl: "https://www.bing.com/maps?where1=Forn%20Can%20Gelabert%20Binissalem",
   coordinates: { lat: 39.689, lng: 2.843 },
   schedule: "Lunes a Domingo: 07:00 - 14:00 | 17:00 - 20:30 (Abierto todos los días)",
   lastVerifiedAt: "2026-08-25",
@@ -130,30 +127,13 @@ export const fornCanGelabertBinissalem: ServiceItem = {
       instagramHandle: "@forncangelabert",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 290,
-      url: "https://www.google.com/maps/search/?api=1&query=Forn%20Can%20Gelabert%20Binissalem",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Forn%20Can%20Gelabert%20Binissalem&ll=39.6890,2.8430",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 290,
-      url: "https://www.bing.com/maps?where1=Forn%20Can%20Gelabert%20Binissalem",
-    },
-    totalReviewsAggregated: 290,
-    overallWeightedRating: 4.8,
-  },
   reviews: [
     {
       id: "rev-fcgb-1",
       authorName: "Antoni Salom",
       rating: 5,
       date: "2025-05-18",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
       comment:
         "Forn de tota la vida a Binissalem. El pa morè és excel·lent, amb una crosta cruixent i molla esponjosa. L'ensaïmada de crema cremada és imprescindible.",
@@ -164,7 +144,7 @@ export const fornCanGelabertBinissalem: ServiceItem = {
       authorName: "Martin Schmidt",
       rating: 5,
       date: "2025-06-25",
-      platform: "google_maps",
+      platform: "direct",
       language: "de",
       comment:
         "Wunderbare traditionelle Bäckerei in Binissalem! Perfektes Pa Moreno und köstliche Ensaimadas. Sehr freundliche Bedienung.",

@@ -31,12 +31,6 @@ export const colonya_caixa_pollenca_banca_etica: ServiceItem = {
   schedule: "Lunes a Viernes: 08:15 - 14:00, Jueves tarde: 16:45 - 19:15",
   image: "/images/services/colonya-caixa-pollenca-banca-etica.jpg",
   gallery: ["/images/services/colonya-caixa-pollenca-banca-etica.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Colonya%20Caixa%20de%20Pollen%C3%A7a%20(1880)%20-%20Banca%20%C3%88tica%20Balear%20Pla%C3%A7a%20Major%2C%207%2C%2007460%20Pollen%C3%A7a",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Colonya%20Caixa%20de%20Pollen%C3%A7a%20(1880)%20-%20Banca%20%C3%88tica%20Balear%20Pla%C3%A7a%20Major%2C%207%2C%2007460%20Pollen%C3%A7a",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Colonya%20Caixa%20de%20Pollen%C3%A7a%20(1880)%20-%20Banca%20%C3%88tica%20Balear%20Pla%C3%A7a%20Major%2C%207%2C%2007460%20Pollen%C3%A7a",
   shortDescription: {
     es: "Única caja de ahorros cooperativa e independiente de Baleares, fundada en 1880 por Guillem Cifre de Colonya con modelo de banca ética y social.",
     en: "The only independent cooperative savings bank in the Balearic Islands, established in 1880 by Guillem Cifre de Colonya championing ethical banking.",
@@ -100,13 +94,6 @@ export const colonya_caixa_pollenca_banca_etica: ServiceItem = {
       "Finanzierung von Photovoltaik- und Nachhaltigkeitsprojekten",
       "Modernes und sicheres Online- und Mobile-Banking",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 420,
-      url: "https://www.google.com/maps/search/?api=1&query=Colonya%20Caixa%20de%20Pollen%C3%A7a%20(1880)%20-%20Banca%20%C3%88tica%20Balear%20Pla%C3%A7a%20Major%2C%207%2C%2007460%20Pollen%C3%A7a",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

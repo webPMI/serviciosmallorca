@@ -76,9 +76,6 @@ export const prediSonJaumellCapdepera: ServiceItem = {
       close: "23:59",
     },
   },
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Predi%20Son%20Jaumell%20Hotel%20Rural%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Predi%20Son%20Jaumell%20Hotel%20Rural%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Predi%20Son%20Jaumell%20Hotel%20Rural%20Mallorca",
   pricing: {
     startingPrice: "Desde 360€ / noche",
     rateType: "tiered",
@@ -105,21 +102,4 @@ export const prediSonJaumellCapdepera: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 350,
-      url: "https://www.google.com/maps/search/?api=1&query=Predi%20Son%20Jaumell%20Hotel%20Rural%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Predi%20Son%20Jaumell%20Hotel%20Rural%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.7,
-      reviewCount: 35,
-      url: "https://www.bing.com/maps?q=Predi%20Son%20Jaumell%20Hotel%20Rural%20Mallorca",
-    },
-    totalReviewsAggregated: 385,
-    overallWeightedRating: 4.8,
-  },
 };

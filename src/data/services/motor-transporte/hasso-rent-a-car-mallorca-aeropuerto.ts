@@ -31,12 +31,6 @@ export const hasso_rent_a_car_mallorca_aeropuerto: ServiceItem = {
   schedule: "Lunes a Domingo: 07:00 - 23:00 (Servicio de entrega en aeropuerto 24h)",
   image: "/images/services/hasso-rent-a-car-mallorca-aeropuerto.jpg",
   gallery: ["/images/services/hasso-rent-a-car-mallorca-aeropuerto.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Hasso%20Rent%20a%20Car%20Mallorca%20(Aeropuerto%20de%20Palma%20%26%20Can%20Pastilla)%20Carrer%20del%20Canal%2C%2033%2C%20Can%20Pastilla%2C%2007610%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Hasso%20Rent%20a%20Car%20Mallorca%20(Aeropuerto%20de%20Palma%20%26%20Can%20Pastilla)%20Carrer%20del%20Canal%2C%2033%2C%20Can%20Pastilla%2C%2007610%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Hasso%20Rent%20a%20Car%20Mallorca%20(Aeropuerto%20de%20Palma%20%26%20Can%20Pastilla)%20Carrer%20del%20Canal%2C%2033%2C%20Can%20Pastilla%2C%2007610%20Palma",
   shortDescription: {
     es: "Compañía de alquiler de coches de referencia en Mallorca desde hace más de 40 años: precios claros sin sorpresas, seguro a todo riesgo sin franquicia y entrega inmediata en el aeropuerto.",
     en: "Trusted local car rental company in Mallorca for over 40 years: transparent all-inclusive rates, zero-excess full insurance, and fast airport shuttle handover.",
@@ -100,13 +94,6 @@ export const hasso_rent_a_car_mallorca_aeropuerto: ServiceItem = {
       "Geprüfte Kindersitze und Babyschalen für sicheres Reisen mit der Familie",
       "Kostenloser Zusatzfahrer in vielen Angeboten bereits enthalten",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 1850,
-      url: "https://www.google.com/maps/search/?api=1&query=Hasso%20Rent%20a%20Car%20Mallorca%20(Aeropuerto%20de%20Palma%20%26%20Can%20Pastilla)%20Carrer%20del%20Canal%2C%2033%2C%20Can%20Pastilla%2C%2007610%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

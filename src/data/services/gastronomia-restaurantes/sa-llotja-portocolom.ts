@@ -27,9 +27,6 @@ export const saLlotjaPortocolom: ServiceItem = {
   email: "info@restaurantsallotjaportocolom.com",
   website: "https://restaurantsallotjaportocolom.com/",
   menuUrl: "https://restaurantsallotjaportocolom.com/",
-  googleMapsUrl: "https://www.google.com/maps/search/Restaurante+Sa+Llotja+Portocolom+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante+Sa+Llotja+Portocolom",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante+Sa+Llotja+Portocolom",
   tags: [
     "zona:santanyi-migjorn",
     "zona:portocolom",

@@ -31,12 +31,6 @@ export const notaria_ramallo_palmer_palma_centro: ServiceItem = {
   schedule: "Lunes a Jueves: 09:00 - 18:00, Viernes: 09:00 - 14:30",
   image: "/images/services/notaria-ramallo-palmer-palma-centro.jpg",
   gallery: ["/images/services/notaria-ramallo-palmer-palma-centro.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Notar%C3%ADa%20Ramallo%20%26%20Palmer%20(Palma%20de%20Mallorca)%20Carrer%20del%20Palau%20Reial%2C%2018%2C%2007001%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Notar%C3%ADa%20Ramallo%20%26%20Palmer%20(Palma%20de%20Mallorca)%20Carrer%20del%20Palau%20Reial%2C%2018%2C%2007001%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Notar%C3%ADa%20Ramallo%20%26%20Palmer%20(Palma%20de%20Mallorca)%20Carrer%20del%20Palau%20Reial%2C%2018%2C%2007001%20Palma",
   shortDescription: {
     es: "Despacho notarial de referencia en el centro histórico de Palma: otorgamiento de escrituras públicas de compraventa, poderes, testamentos y derecho foral balear.",
     en: "Premier notary office in central historic Palma: public conveyancing deeds, powers of attorney, wills, and Balearic regional civil law.",
@@ -100,13 +94,6 @@ export const notaria_ramallo_palmer_palma_centro: ServiceItem = {
       "Testamentserrichtung nach europäischer Erbrechtsverordnung und Nachlassabwicklung",
       "Gründung von spanischen Kapitalgesellschaften (SL) und Satzungsänderungen",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 310,
-      url: "https://www.google.com/maps/search/?api=1&query=Notar%C3%ADa%20Ramallo%20%26%20Palmer%20(Palma%20de%20Mallorca)%20Carrer%20del%20Palau%20Reial%2C%2018%2C%2007001%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

@@ -28,9 +28,6 @@ export const bodegaCanVidalet: ServiceItem = {
   email: "tasting@canvidalet.com",
   website: "https://www.canvidalet.com",
   menuUrl: "https://www.canvidalet.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Bodega+Can+Vidalet+Pollensa+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Bodega+Can+Vidalet+Pollensa",
-  bingMapsUrl: "https://www.bing.com/maps?q=Bodega+Can+Vidalet+Pollensa",
   tags: [
     "zona:alcudia-pollensa",
     "zona:pollenca",

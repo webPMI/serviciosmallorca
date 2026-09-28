@@ -21,9 +21,6 @@ export const climaFrioBalear: ServiceItem = {
   whatsapp: "+34 648 90 12 34",
   email: "info@climafriobalear.com",
   website: "https://climafriobalear.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Clima%20Frio%20Balear%20Palma",
-  appleMapsUrl: "https://maps.apple.com/?q=Clima%20Frio%20Balear%20Palma&ll=39.6012,2.6685",
-  bingMapsUrl: "https://www.bing.com/maps?where1=Clima%20Frio%20Balear%20Palma",
   coordinates: { lat: 39.6012, lng: 2.6685 },
   schedule: "Lunes a Viernes: 08:00 - 18:30 | Servicio de Averías Urgentes de Climatización",
   lastVerifiedAt: "2026-08-25",
@@ -130,30 +127,13 @@ export const climaFrioBalear: ServiceItem = {
       instagramHandle: "@climafriobalear",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 145,
-      url: "https://www.google.com/maps/search/?api=1&query=Clima%20Frio%20Balear%20Palma",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Clima%20Frio%20Balear%20Palma&ll=39.6012,2.6685",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 145,
-      url: "https://www.bing.com/maps?where1=Clima%20Frio%20Balear%20Palma",
-    },
-    totalReviewsAggregated: 145,
-    overallWeightedRating: 4.8,
-  },
   reviews: [
     {
       id: "rev-cfb-1",
       authorName: "Guillem Barceló",
       rating: 5,
       date: "2025-05-20",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
       comment:
         "Ens varen instal·lar tot el sistema d'aerotèrmia i conductes a la nostra casa de camp. Molt professionals, impecables en la neteja i el consum elèctric ha baixat en picat.",
@@ -164,7 +144,7 @@ export const climaFrioBalear: ServiceItem = {
       authorName: "Alexander von Berg",
       rating: 5,
       date: "2025-06-25",
-      platform: "google_maps",
+      platform: "direct",
       language: "en",
       comment:
         "Installed Daikin ducted air conditioning in our apartment in Palma. Extremely quiet, super fast installation, and great English communication.",

@@ -29,8 +29,6 @@ export const BODY_VIP_FITNESS_INCA: ServiceItem = {
   image: "/images/sports/body-vip-fitness-inca.jpg",
   gallery: ["/images/sports/body-vip-fitness-inca.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007051",
-  appleMapsUrl: "https://maps.apple.com/?q=Body%20VIP%20Fitness%20Inca+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Body%20VIP%20Fitness%20Inca+Mallorca",
   shortDescription: {
     es: "Centro de fitness en Inca con sala de musculación completa, cycling y entrenadores titulados.",
     en: "Fitness center in Inca offering full strength floor, indoor cycling, and certified trainers.",
@@ -94,13 +92,6 @@ export const BODY_VIP_FITNESS_INCA: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 290,
-      url: "https://www.google.com/maps?cid=12007051",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

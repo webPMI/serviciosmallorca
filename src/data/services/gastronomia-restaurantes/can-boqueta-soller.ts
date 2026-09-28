@@ -28,9 +28,6 @@ export const canBoquetaSoller: ServiceItem = {
   email: "info@canboqueta.com",
   website: "https://www.canboqueta.com",
   menuUrl: "https://www.canboqueta.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Restaurante+Can+Boqueta+Soller+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante+Can+Boqueta+Soller",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante+Can+Boqueta+Soller",
   tags: ["zona:tramuntana", "zona:soller", "product:premium", "mod:en-local", "aud:parejas", "temps:todo-el-ano"],
   capabilities: {
     terrace: true,

@@ -31,12 +31,6 @@ export const can_garanya_manacor: ServiceItem = {
   schedule: "Lunes a Sábado: 09:30 - 13:30, 16:30 - 20:00",
   image: "/images/services/can-garanya-manacor.jpg",
   gallery: ["/images/services/can-garanya-manacor.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Can%20Garanya%20Esparto%20%26%20Artesania%201928%20Pla%C3%A7a%20del%20Rector%20Rub%C3%AD%2C%2012%2C%2007500%20Manacor",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Can%20Garanya%20Esparto%20%26%20Artesania%201928%20Pla%C3%A7a%20del%20Rector%20Rub%C3%AD%2C%2012%2C%2007500%20Manacor",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Can%20Garanya%20Esparto%20%26%20Artesania%201928%20Pla%C3%A7a%20del%20Rector%20Rub%C3%AD%2C%2012%2C%2007500%20Manacor",
   shortDescription: {
     es: "Tienda emblemática de artesanía mallorquina fundada en 1928 en Manacor: cestería de esparto, cerámica tradicional y objetos para el hogar.",
     en: "Iconic Mallorcan artisan shop founded in 1928 in Manacor: esparto basketry, traditional ceramics, and timeless home goods.",
@@ -100,13 +94,6 @@ export const can_garanya_manacor: ServiceItem = {
       "Rustikales balearisches Tongeschirr und Schmortöpfe",
       "Küchenutensilien aus regionalem Olivenholz",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 142,
-      url: "https://www.google.com/maps/search/?api=1&query=Can%20Garanya%20Esparto%20%26%20Artesania%201928%20Pla%C3%A7a%20del%20Rector%20Rub%C3%AD%2C%2012%2C%2007500%20Manacor",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

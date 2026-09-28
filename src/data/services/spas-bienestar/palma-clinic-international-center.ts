@@ -29,8 +29,6 @@ export const palma_clinic_international_center: ServiceItem = {
   image: "/images/services/palma-clinic-international-center.jpg",
   gallery: ["/images/services/palma-clinic-international-center.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=13008003",
-  appleMapsUrl: "https://maps.apple.com/?q=Palma%20Clinic%20International%20Medical%20Center+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Palma%20Clinic%20International%20Medical%20Center+Mallorca",
   shortDescription: {
     es: "Centro médico internacional privado con especialistas de habla alemana e inglesa y chequeos preventivos integrales.",
     en: "Private international medical center with German and English-speaking doctors and executive health checkups.",
@@ -94,13 +92,6 @@ export const palma_clinic_international_center: ServiceItem = {
       "Wellness- und Regenerationstherapien",
       "Kontinuierliche medizinische Nachbetreuung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 320,
-      url: "https://www.google.com/maps?cid=13008003",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

@@ -28,9 +28,6 @@ export const clinicaDentalAlomarInca: ServiceItem = {
   email: "info@dentalalomar.com",
   website: "https://www.dentalalomar.com",
   menuUrl: "https://www.dentalalomar.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Clinica+Dental+Alomar+Inca+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Clinica+Dental+Alomar+Inca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Clinica+Dental+Alomar+Inca",
   tags: [
     "zona:raiguer-pla",
     "zona:inca",
@@ -148,7 +145,7 @@ export const clinicaDentalAlomarInca: ServiceItem = {
       comment:
         "Molt professionals i atents. Em varen posar dos implants guiats per ordinador sense cap dolor ni inflamació. La millor clínica d'Inca!",
       date: "2026-08-14",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
     },
     {
@@ -158,7 +155,7 @@ export const clinicaDentalAlomarInca: ServiceItem = {
       comment:
         "Sehr moderne und freundliche Zahnarztpraxis in Inca. Die Behandlung war absolut schmerzfrei und das Team spricht super Deutsch.",
       date: "2026-07-23",
-      platform: "google_maps",
+      platform: "direct",
       language: "de",
     },
   ],

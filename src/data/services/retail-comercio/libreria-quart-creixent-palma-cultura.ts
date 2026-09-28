@@ -31,12 +31,6 @@ export const libreria_quart_creixent_palma_cultura: ServiceItem = {
   schedule: "Lunes a Viernes: 09:30 - 13:30, 16:30 - 20:00; Sábado: 10:00 - 14:00",
   image: "/images/services/libreria-quart-creixent-palma-cultura.jpg",
   gallery: ["/images/services/libreria-quart-creixent-palma-cultura.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Llibreria%20Quart%20Creixent%20Palma%20(1982)%20-%20Llibreria%20de%20Refer%C3%A8ncia%20Carrer%20d'en%20Rub%C3%AD%2C%205%2C%2007002%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Llibreria%20Quart%20Creixent%20Palma%20(1982)%20-%20Llibreria%20de%20Refer%C3%A8ncia%20Carrer%20d'en%20Rub%C3%AD%2C%205%2C%2007002%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Llibreria%20Quart%20Creixent%20Palma%20(1982)%20-%20Llibreria%20de%20Refer%C3%A8ncia%20Carrer%20d'en%20Rub%C3%AD%2C%205%2C%2007002%20Palma",
   shortDescription: {
     es: "Librería emblemática del casco antiguo de Palma fundada en 1982, templo de la literatura en catalán, narrativa balear, poesía e historia insular.",
     en: "Iconic historic bookshop in central Palma established in 1982, sanctuary of Balearic literature, Catalan publications, poetry, and island history.",
@@ -100,13 +94,6 @@ export const libreria_quart_creixent_palma_cultura: ServiceItem = {
       "Recherche und Beschaffung vergriffener Titel über Mallorca",
       "Postversand und persönliche Leseempfehlungen",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 320,
-      url: "https://www.google.com/maps/search/?api=1&query=Llibreria%20Quart%20Creixent%20Palma%20(1982)%20-%20Llibreria%20de%20Refer%C3%A8ncia%20Carrer%20d'en%20Rub%C3%AD%2C%205%2C%2007002%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

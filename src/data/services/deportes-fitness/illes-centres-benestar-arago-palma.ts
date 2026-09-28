@@ -29,8 +29,6 @@ export const ILLES_CENTRES_BENESTAR_ARAGO_PALMA: ServiceItem = {
   image: "/images/sports/illes-centres-benestar-arago-palma.jpg",
   gallery: ["/images/sports/illes-centres-benestar-arago-palma.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007037",
-  appleMapsUrl: "https://maps.apple.com/?q=Illes%20Centres%20de%20Benestar%20(Arag%C3%B3)+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Illes%20Centres%20de%20Benestar%20(Arag%C3%B3)+Mallorca",
   shortDescription: {
     es: "Centro de fitness urbano en calle Aragón con área de peso libre, cycling y clases dirigidas Les Mills.",
     en: "Urban fitness club on Carrer Aragó featuring free-weights zone, cycling, and Les Mills classes.",
@@ -94,13 +92,6 @@ export const ILLES_CENTRES_BENESTAR_ARAGO_PALMA: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.6,
-      reviewCount: 480,
-      url: "https://www.google.com/maps?cid=12007037",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

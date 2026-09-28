@@ -29,8 +29,6 @@ export const HUERZELER_BICYCLE_HOLIDAYS_PLAYA_MURO: ServiceItem = {
   image: "/images/sports/huerzeler-bicycle-holidays-playa-muro.jpg",
   gallery: ["/images/sports/huerzeler-bicycle-holidays-playa-muro.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007090",
-  appleMapsUrl: "https://maps.apple.com/?q=H%C3%BCrzeler%20Bicycle%20Holidays+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=H%C3%BCrzeler%20Bicycle%20Holidays+Mallorca",
   shortDescription: {
     es: "La mayor estación ciclista de Europa en Playa de Muro con flota Centurion y Cube, boutique y grupos guiados.",
     en: "Europe's largest cycling hub in Playa de Muro featuring Centurion & Cube fleets and guided group rides.",
@@ -94,13 +92,6 @@ export const HUERZELER_BICYCLE_HOLIDAYS_PLAYA_MURO: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 890,
-      url: "https://www.google.com/maps?cid=12007090",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

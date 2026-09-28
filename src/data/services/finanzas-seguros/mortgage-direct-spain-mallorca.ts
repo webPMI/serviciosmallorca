@@ -76,9 +76,6 @@ export const mortgageDirectSpainMallorca: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Mortgage%20Direct%20Brokers%20Mallorca%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Mortgage%20Direct%20Brokers%20Mallorca%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Mortgage%20Direct%20Brokers%20Mallorca%20Mallorca",
   pricing: {
     startingPrice: "Consultar servicios y presupuestos personalizados",
     rateType: "custom_quote",
@@ -105,21 +102,4 @@ export const mortgageDirectSpainMallorca: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 430,
-      url: "https://www.google.com/maps/search/?api=1&query=Mortgage%20Direct%20Brokers%20Mallorca%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Mortgage%20Direct%20Brokers%20Mallorca%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 43,
-      url: "https://www.bing.com/maps?q=Mortgage%20Direct%20Brokers%20Mallorca%20Mallorca",
-    },
-    totalReviewsAggregated: 473,
-    overallWeightedRating: 4.9,
-  },
 };

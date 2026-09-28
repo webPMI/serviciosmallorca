@@ -31,12 +31,6 @@ export const coves_d_arta_capdepera_marinas: ServiceItem = {
   schedule: "Diario: 10:00 - 17:00 (Noviembre a Abril: 10:00 - 16:00)",
   image: "/images/services/coves-d-arta-capdepera-marinas.jpg",
   gallery: ["/images/services/coves-d-arta-capdepera-marinas.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Coves%20d'Art%C3%A0%20Grutas%20Costeras%20Monumentales%20(Capdepera)%20Carretera%20de%20les%20Coves%2C%20s%2Fn%2C%2007589%20Canyamel%2C%20Capdepera",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Coves%20d'Art%C3%A0%20Grutas%20Costeras%20Monumentales%20(Capdepera)%20Carretera%20de%20les%20Coves%2C%20s%2Fn%2C%2007589%20Canyamel%2C%20Capdepera",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Coves%20d'Art%C3%A0%20Grutas%20Costeras%20Monumentales%20(Capdepera)%20Carretera%20de%20les%20Coves%2C%20s%2Fn%2C%2007589%20Canyamel%2C%20Capdepera",
   shortDescription: {
     es: "Monumentales cavernas costeras en los acantilados de Canyamel: salones subterráneos colosales, estalagmitas de 22 metros ('Reina de las Columnas') y vistas marinas sobre el Mediterráneo.",
     en: "Colossal coastal caves towering over Canyamel cliffs: cathedral-scale underground chambers, a 22-meter stalagmite ('Queen of Columns'), and dramatic sea views.",
@@ -100,13 +94,6 @@ export const coves_d_arta_capdepera_marinas: ServiceItem = {
       "Terrassencafé mit Panoramablick auf das Meer",
       "Kostenlose Besucherparkplätze",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 4600,
-      url: "https://www.google.com/maps/search/?api=1&query=Coves%20d'Art%C3%A0%20Grutas%20Costeras%20Monumentales%20(Capdepera)%20Carretera%20de%20les%20Coves%2C%20s%2Fn%2C%2007589%20Canyamel%2C%20Capdepera",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

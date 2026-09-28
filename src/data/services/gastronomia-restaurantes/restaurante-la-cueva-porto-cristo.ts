@@ -78,12 +78,6 @@ export const restauranteLaCuevaPortoCristo: ServiceItem = {
   },
   image: "/images/services/restaurante-la-cueva-porto-cristo.jpg",
   gallery: ["/images/services/restaurante-la-cueva-porto-cristo.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Restaurante%20La%20Cueva%20(Porto%20Cristo)%20Carrer%20d'en%20Gual%2C%2034%2C%2007680%20Porto%20Cristo%2C%20Manacor%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Restaurante%20La%20Cueva%20(Porto%20Cristo)%20Carrer%20d'en%20Gual%2C%2034%2C%2007680%20Porto%20Cristo%2C%20Manacor%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://www.bing.com/maps?q=Restaurante%20La%20Cueva%20(Porto%20Cristo)%20Carrer%20d'en%20Gual%2C%2034%2C%2007680%20Porto%20Cristo%2C%20Manacor%2C%20Illes%20Balears",
   phone: "+34 971 82 04 15",
   whatsapp: "+34971820415",
   website: "https://lacuevaportocristo.es",

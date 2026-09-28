@@ -31,12 +31,6 @@ export const bodegas_ribas_consell_enoturismo_1711: ServiceItem = {
   schedule: "Lunes a Viernes: 10:00 - 18:00, Sábado: 10:00 - 14:00 (Visitas con reserva)",
   image: "/images/services/bodegas-ribas-consell-enoturismo-1711.jpg",
   gallery: ["/images/services/bodegas-ribas-consell-enoturismo-1711.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Bodegas%20Ribas%20(Consell%20-%20Fundada%20en%201711)%20-%20La%20Bodega%20m%C3%A1s%20Antigua%20de%20Mallorca%20Carrer%20de%20Muntanya%2C%202%2C%2007330%20Consell",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Bodegas%20Ribas%20(Consell%20-%20Fundada%20en%201711)%20-%20La%20Bodega%20m%C3%A1s%20Antigua%20de%20Mallorca%20Carrer%20de%20Muntanya%2C%202%2C%2007330%20Consell",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Bodegas%20Ribas%20(Consell%20-%20Fundada%20en%201711)%20-%20La%20Bodega%20m%C3%A1s%20Antigua%20de%20Mallorca%20Carrer%20de%20Muntanya%2C%202%2C%2007330%20Consell",
   shortDescription: {
     es: "La bodega familiar más antigua de Mallorca y de España con más de 315 años ininterrumpidos elaborando grandes vinos con Mantonegro y Prensal Blanc en Consell.",
     en: "Mallorca and Spain's oldest continuous family winery with over 315 years crafting fine wines from native Mantonegro and Prensal Blanc in Consell.",
@@ -100,13 +94,6 @@ export const bodegas_ribas_consell_enoturismo_1711: ServiceItem = {
       "Direktverkauf limitierter Einzellagenweine und älterer Jahrgänge",
       "Exklusive Firmenveranstaltungen im historischen Innenhof des Weinguts",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 510,
-      url: "https://www.google.com/maps/search/?api=1&query=Bodegas%20Ribas%20(Consell%20-%20Fundada%20en%201711)%20-%20La%20Bodega%20m%C3%A1s%20Antigua%20de%20Mallorca%20Carrer%20de%20Muntanya%2C%202%2C%2007330%20Consell",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

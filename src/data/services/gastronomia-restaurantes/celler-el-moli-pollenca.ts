@@ -28,9 +28,6 @@ export const cellerElMoliPollenca: ServiceItem = {
   email: "info@elmoli-pollenca.com",
   website: "https://www.elmoli-pollenca.com",
   menuUrl: "https://www.elmoli-pollenca.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Celler+El+Moli+Pollenca+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Celler+El+Moli+Pollenca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Celler+El+Moli+Pollenca",
   tags: [
     "zona:alcudia-pollensa",
     "zona:pollenca",

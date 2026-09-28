@@ -28,9 +28,6 @@ export const restauranteLArcadaCalaFiguera: ServiceItem = {
   email: "info@restaurantlarcada.com",
   website: "https://restaurantlarcada.com",
   menuUrl: "https://restaurantlarcada.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Restaurante+L+Arcada+Cala+Figuera+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante+L+Arcada+Cala+Figuera",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante+L+Arcada+Cala+Figuera",
   tags: [
     "zona:santanyi-migjorn",
     "zona:cala-figuera",

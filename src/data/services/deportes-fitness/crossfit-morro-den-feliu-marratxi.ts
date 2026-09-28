@@ -29,8 +29,6 @@ export const CROSSFIT_MORRO_DEN_FELIU_MARRATXI: ServiceItem = {
   image: "/images/sports/crossfit-morro-den-feliu-marratxi.jpg",
   gallery: ["/images/sports/crossfit-morro-den-feliu-marratxi.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007060",
-  appleMapsUrl: "https://maps.apple.com/?q=CrossFit%20Morro%20d'en%20Feliu+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=CrossFit%20Morro%20d'en%20Feliu+Mallorca",
   shortDescription: {
     es: "Box espacioso en Marratxí con estructura Rogue para más de 20 atletas simultáneos y halterofilia.",
     en: "Spacious box in Marratxí featuring Rogue rig for 20+ athletes and Olympic weightlifting.",
@@ -94,13 +92,6 @@ export const CROSSFIT_MORRO_DEN_FELIU_MARRATXI: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 240,
-      url: "https://www.google.com/maps?cid=12007060",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

@@ -31,12 +31,6 @@ export const ies_mallorca_international_school_palma_british: ServiceItem = {
   schedule: "Lunes a Viernes: 08:00 - 17:00 (Septiembre a Junio)",
   image: "/images/services/ies-mallorca-international-school-palma-british.jpg",
   gallery: ["/images/services/ies-mallorca-international-school-palma-british.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Mallorca%20International%20School%20Colegio%20Brit%C3%A1nico%20Palma%20(IES)%20Carrer%20del%20General%20Riera%2C%2071%2C%2007010%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Mallorca%20International%20School%20Colegio%20Brit%C3%A1nico%20Palma%20(IES)%20Carrer%20del%20General%20Riera%2C%2071%2C%2007010%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Mallorca%20International%20School%20Colegio%20Brit%C3%A1nico%20Palma%20(IES)%20Carrer%20del%20General%20Riera%2C%2071%2C%2007010%20Palma",
   shortDescription: {
     es: "Colegio internacional de currículo británico (Cambridge) e IB en Palma: educación bilingüe español-inglés desde nursery hasta A-Levels, con acreditación CIE de Cambridge y acceso directo a universidades del Reino Unido y Estados Unidos.",
     en: "British curriculum (Cambridge) and IB international school in Palma: bilingual Spanish-English education from nursery through A-Levels, CIE Cambridge accredited with direct pathways to UK and US universities.",
@@ -100,13 +94,6 @@ export const ies_mallorca_international_school_palma_british: ServiceItem = {
       "Secondary School (12-16 Jahre): Cambridge IGCSE in 10+ Fächern",
       "Sixth Form (16-18 Jahre): Cambridge A-Levels und IB-Diplom-Option",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 287,
-      url: "https://www.google.com/maps/search/?api=1&query=Mallorca%20International%20School%20Colegio%20Brit%C3%A1nico%20Palma%20(IES)%20Carrer%20del%20General%20Riera%2C%2071%2C%2007010%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

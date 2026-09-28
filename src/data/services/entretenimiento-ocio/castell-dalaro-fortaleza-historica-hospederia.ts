@@ -31,12 +31,6 @@ export const castell_dalaro_fortaleza_historica_hospederia: ServiceItem = {
   schedule: "Lunes a Domingo: Acceso libre a las ruinas exteriores; Hospedería abierta todo el año",
   image: "/images/services/castell-dalaro-fortaleza-historica-hospederia.jpg",
   gallery: ["/images/services/castell-dalaro-fortaleza-historica-hospederia.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Castell%20d'Alar%C3%B3%20-%20Fortaleza%20Hist%C3%B3rica%20%26%20Hospeder%C3%ADa%20de%20Monta%C3%B1a%20Cim%20del%20Puig%20d'Alar%C3%B3%2C%2007340%20Alar%C3%B3",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Castell%20d'Alar%C3%B3%20-%20Fortaleza%20Hist%C3%B3rica%20%26%20Hospeder%C3%ADa%20de%20Monta%C3%B1a%20Cim%20del%20Puig%20d'Alar%C3%B3%2C%2007340%20Alar%C3%B3",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Castell%20d'Alar%C3%B3%20-%20Fortaleza%20Hist%C3%B3rica%20%26%20Hospeder%C3%ADa%20de%20Monta%C3%B1a%20Cim%20del%20Puig%20d'Alar%C3%B3%2C%2007340%20Alar%C3%B3",
   shortDescription: {
     es: "Fortaleza militar histórica a 822 metros de altitud en la cima del Puig d'Alaró: vistas panorámicas de 360° sobre toda Mallorca, ermita y hospedería tradicional.",
     en: "Historic medieval fortress perched at 822 meters on the Puig d'Alaró summit: 360° panoramic views across Mallorca, chapel, and rustic mountain lodge.",
@@ -100,13 +94,6 @@ export const castell_dalaro_fortaleza_historica_hospederia: ServiceItem = {
       "Übernachtungsmöglichkeiten in einfachen Schlafsälen und Zimmern für Wanderer",
       "Offizielle Stempelstelle für den Fernwanderweg GR-221",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 2150,
-      url: "https://www.google.com/maps/search/?api=1&query=Castell%20d'Alar%C3%B3%20-%20Fortaleza%20Hist%C3%B3rica%20%26%20Hospeder%C3%ADa%20de%20Monta%C3%B1a%20Cim%20del%20Puig%20d'Alar%C3%B3%2C%2007340%20Alar%C3%B3",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

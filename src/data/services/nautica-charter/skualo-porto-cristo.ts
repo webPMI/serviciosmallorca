@@ -27,9 +27,6 @@ export const skualoPortoCristo: ServiceItem = {
   email: "portocristo@skualo.com",
   website: "https://www.instagram.com/skualomallorca/",
   menuUrl: "https://www.instagram.com/skualomallorca/",
-  googleMapsUrl: "https://www.google.com/maps/search/Skualo+Porto+Cristo+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Skualo+Porto+Cristo",
-  bingMapsUrl: "https://www.bing.com/maps?q=Skualo+Porto+Cristo",
   tags: [
     "zona:manacor-llevant",
     "zona:porto-cristo",

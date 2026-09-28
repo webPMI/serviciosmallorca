@@ -31,12 +31,6 @@ export const vintage_motors_mallorca_scooter_vespa_palma: ServiceItem = {
   schedule: "Lunes a Domingo: 09:00 - 20:00",
   image: "/images/services/vintage-motors-mallorca-scooter-vespa-palma.jpg",
   gallery: ["/images/services/vintage-motors-mallorca-scooter-vespa-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Vintage%20Motors%20Scooter%20%26%20Vespa%20Rental%20Palma%20(2012)%20Carrer%20de%20Camilo%20Jos%C3%A9%20Cela%2C%203%2C%2007014%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Vintage%20Motors%20Scooter%20%26%20Vespa%20Rental%20Palma%20(2012)%20Carrer%20de%20Camilo%20Jos%C3%A9%20Cela%2C%203%2C%2007014%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Vintage%20Motors%20Scooter%20%26%20Vespa%20Rental%20Palma%20(2012)%20Carrer%20de%20Camilo%20Jos%C3%A9%20Cela%2C%203%2C%2007014%20Palma",
   shortDescription: {
     es: "Alquiler de Vespas italianas icónicas y scooters de 125cc a 750cc en Palma para recorrer playas y carreteras panorámicas sin atascos ni problemas de aparcamiento.",
     en: "Iconic Italian Vespa and 125cc-750cc scooter hire in Palma for effortless coastal cruising and easy city parking.",
@@ -100,13 +94,6 @@ export const vintage_motors_mallorca_scooter_vespa_palma: ServiceItem = {
       "Digitale Routenempfehlungen für Smartphone",
       "Handyhalterung mit USB-Ladeanschluss",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 950,
-      url: "https://www.google.com/maps/search/?api=1&query=Vintage%20Motors%20Scooter%20%26%20Vespa%20Rental%20Palma%20(2012)%20Carrer%20de%20Camilo%20Jos%C3%A9%20Cela%2C%203%2C%2007014%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

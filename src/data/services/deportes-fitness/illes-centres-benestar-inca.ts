@@ -29,8 +29,6 @@ export const ILLES_CENTRES_BENESTAR_INCA: ServiceItem = {
   image: "/images/sports/illes-centres-benestar-inca.jpg",
   gallery: ["/images/sports/illes-centres-benestar-inca.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007038",
-  appleMapsUrl: "https://maps.apple.com/?q=Illes%20Centres%20de%20Benestar%20(Inca)+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Illes%20Centres%20de%20Benestar%20(Inca)+Mallorca",
   shortDescription: {
     es: "El club deportivo integral del Raiguer con piscina cubierta, spa termal y zona de fuerza Technogym.",
     en: "Central Mallorca's premier sports club featuring indoor pool, thermal spa, and Technogym floor.",
@@ -94,13 +92,6 @@ export const ILLES_CENTRES_BENESTAR_INCA: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 360,
-      url: "https://www.google.com/maps?cid=12007038",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

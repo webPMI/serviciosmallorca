@@ -100,8 +100,5 @@ export const galeriaKewenigService: ServiceItem = {
     ],
   },
   amenities: ["wifi", "air_conditioning", "wheelchair_accessible"],
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Galeria+Kewenig+Palma",
-  appleMapsUrl: "https://maps.apple.com/?q=Galeria+Kewenig+Palma",
-  bingMapsUrl: "https://www.bing.com/maps?q=Galeria+Kewenig+Palma",
   confidenceScore: 98,
 };

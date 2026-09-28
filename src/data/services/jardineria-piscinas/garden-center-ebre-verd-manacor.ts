@@ -31,12 +31,6 @@ export const garden_center_ebre_verd_manacor: ServiceItem = {
   schedule: "Lunes a Sábado de 08:30 a 19:30, Domingos de 09:30 a 14:00",
   image: "/images/services/garden-center-ebre-verd-manacor.jpg",
   gallery: ["/images/services/garden-center-ebre-verd-manacor.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Garden%20Center%20Ebre%20Verd%20Manacor%20Ctra.%20Manacor%20a%20Felanitx%2C%20km%201.2%2C%2007500%20Manacor%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Garden%20Center%20Ebre%20Verd%20Manacor%20Ctra.%20Manacor%20a%20Felanitx%2C%20km%201.2%2C%2007500%20Manacor%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Garden%20Center%20Ebre%20Verd%20Manacor%20Ctra.%20Manacor%20a%20Felanitx%2C%20km%201.2%2C%2007500%20Manacor%2C%20Illes%20Balears",
   shortDescription: {
     es: "El mayor centro de jardinería y floristería del Llevant mallorquín en Manacor. Plantas de exterior, macetería, herramientas y árboles frutales.",
     en: "The largest garden center in eastern Mallorca, based in Manacor. Outdoor plants, pottery, tools, and fruit trees for estates and villas.",
@@ -110,13 +104,6 @@ export const garden_center_ebre_verd_manacor: ServiceItem = {
     en: ["Eastern Mallorca citrus and fruit trees", "Comprehensive garden nursery", "Terrace pottery and garden decor"],
     ca: ["Fruiters i cítrics per al Llevant", "Centre de jardineria integral", "Testos i decoració exterior"],
     de: ["Obst- und Zitrusbäume für Ostmallorca", "Umfassendes Gartencenter", "Pflanzkübel und Terrassengestaltung"],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 190,
-      url: "https://www.google.com/maps/search/?api=1&query=Garden%20Center%20Ebre%20Verd%20Manacor%20Ctra.%20Manacor%20a%20Felanitx%2C%20km%201.2%2C%2007500%20Manacor%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

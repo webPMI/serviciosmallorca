@@ -76,10 +76,6 @@ export const mallorcaHikingToursSoller: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Mallorca%20Hiking%20%26%20Tramuntana%20Guides%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Mallorca%20Hiking%20%26%20Tramuntana%20Guides%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Mallorca%20Hiking%20%26%20Tramuntana%20Guides%20Mallorca",
   pricing: {
     startingPrice: "Excursión guiada desde 45€ / persona",
     rateType: "tiered",
@@ -106,21 +102,4 @@ export const mallorcaHikingToursSoller: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 390,
-      url: "https://www.google.com/maps/search/?api=1&query=Mallorca%20Hiking%20%26%20Tramuntana%20Guides%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Mallorca%20Hiking%20%26%20Tramuntana%20Guides%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 39,
-      url: "https://www.bing.com/maps?q=Mallorca%20Hiking%20%26%20Tramuntana%20Guides%20Mallorca",
-    },
-    totalReviewsAggregated: 429,
-    overallWeightedRating: 4.9,
-  },
 };

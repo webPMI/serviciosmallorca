@@ -31,12 +31,6 @@ export const mallorca_site_real_estate_calvia: ServiceItem = {
   schedule: "Lunes a Viernes de 09:30 a 18:30",
   image: "/images/services/mallorca-site-real-estate-calvia.jpg",
   gallery: ["/images/services/mallorca-site-real-estate-calvia.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Mallorca%20Site%20Real%20Estate%20Santa%20Ponsa%20(Calvi%C3%A0)%20Carrer%20Illes%20Balears%2C%2014%2C%2007180%20Santa%20Ponsa%20(Calvi%C3%A0)%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Mallorca%20Site%20Real%20Estate%20Santa%20Ponsa%20(Calvi%C3%A0)%20Carrer%20Illes%20Balears%2C%2014%2C%2007180%20Santa%20Ponsa%20(Calvi%C3%A0)%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Mallorca%20Site%20Real%20Estate%20Santa%20Ponsa%20(Calvi%C3%A0)%20Carrer%20Illes%20Balears%2C%2014%2C%2007180%20Santa%20Ponsa%20(Calvi%C3%A0)%2C%20Illes%20Balears",
   shortDescription: {
     es: "Agencia inmobiliaria boutique especializada en villas y fincas exclusivas en Calvià, Andratx y Palma. Asesoría jurídica, confidencialidad y búsqueda a medida.",
     en: "Boutique real estate agency specializing in luxury villas and estates in Calvià, Andratx, and Palma. Legal expertise, strict privacy, and bespoke property searches.",
@@ -114,13 +108,6 @@ export const mallorca_site_real_estate_calvia: ServiceItem = {
       "Due Diligence i Property Finding",
     ],
     de: ["Luxusvillen in Calvià & Andratx", "Diskrete Off-Market-Immobilien", "Due Diligence & Suchmandate"],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 110,
-      url: "https://www.google.com/maps/search/?api=1&query=Mallorca%20Site%20Real%20Estate%20Santa%20Ponsa%20(Calvi%C3%A0)%20Carrer%20Illes%20Balears%2C%2014%2C%2007180%20Santa%20Ponsa%20(Calvi%C3%A0)%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

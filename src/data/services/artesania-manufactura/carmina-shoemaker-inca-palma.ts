@@ -76,10 +76,6 @@ export const carminaShoemakerIncaPalma: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Carmina%20Shoemaker%20Inca%20(Fundada%201866)%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Carmina%20Shoemaker%20Inca%20(Fundada%201866)%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Carmina%20Shoemaker%20Inca%20(Fundada%201866)%20Mallorca",
   pricing: {
     startingPrice: "Zapatos cosido Goodyear desde 420€",
     rateType: "tiered",
@@ -106,21 +102,4 @@ export const carminaShoemakerIncaPalma: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 520,
-      url: "https://www.google.com/maps/search/?api=1&query=Carmina%20Shoemaker%20Inca%20(Fundada%201866)%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Carmina%20Shoemaker%20Inca%20(Fundada%201866)%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 52,
-      url: "https://www.bing.com/maps?q=Carmina%20Shoemaker%20Inca%20(Fundada%201866)%20Mallorca",
-    },
-    totalReviewsAggregated: 572,
-    overallWeightedRating: 4.9,
-  },
 };

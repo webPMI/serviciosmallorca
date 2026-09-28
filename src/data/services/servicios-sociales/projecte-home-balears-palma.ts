@@ -31,12 +31,6 @@ export const projecte_home_balears_palma: ServiceItem = {
   schedule: "Lunes a Viernes: 08:30 - 19:30",
   image: "/images/services/projecte-home-balears-palma.jpg",
   gallery: ["/images/services/projecte-home-balears-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Projecte%20Home%20Balears%20Palma%20Cam%C3%AD%20dels%20Reis%2C%20150%2C%2007011%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Projecte%20Home%20Balears%20Palma%20Cam%C3%AD%20dels%20Reis%2C%20150%2C%2007011%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Projecte%20Home%20Balears%20Palma%20Cam%C3%AD%20dels%20Reis%2C%20150%2C%2007011%20Palma",
   shortDescription: {
     es: "Organización balear pionera en prevención, tratamiento y rehabilitación de adicciones y salud mental con sede central en Son Morro (Palma).",
     en: "Pioneering Balearic NGO dedicated to prevention, therapy, and rehabilitation for addiction and mental health based in Palma.",
@@ -100,13 +94,6 @@ export const projecte_home_balears_palma: ServiceItem = {
       "Berufsbegleitendes Abendprogramm Horabaixa für Erwerbstätige in Behandlung",
       "Schulungswerkstätten, Qualifizierungsmaßnahmen und Unterstützung bei der Jobsuche",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 88,
-      url: "https://www.google.com/maps/search/?api=1&query=Projecte%20Home%20Balears%20Palma%20Cam%C3%AD%20dels%20Reis%2C%20150%2C%2007011%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

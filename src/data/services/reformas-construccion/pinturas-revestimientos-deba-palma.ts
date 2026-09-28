@@ -31,12 +31,6 @@ export const pinturas_revestimientos_deba_palma: ServiceItem = {
   schedule: "Lunes a Viernes: 08:00 - 18:00",
   image: "/images/services/pinturas-revestimientos-deba-palma.jpg",
   gallery: ["/images/services/pinturas-revestimientos-deba-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Pinturas%20%26%20Revestimientos%20DEBA%20Palma%20Carrer%20del%20Gremi%20de%20Sucrers%20i%20Candelers%2C%2018%2C%20Pol%C3%ADgon%20Son%20Castell%C3%B3%2C%2007009%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Pinturas%20%26%20Revestimientos%20DEBA%20Palma%20Carrer%20del%20Gremi%20de%20Sucrers%20i%20Candelers%2C%2018%2C%20Pol%C3%ADgon%20Son%20Castell%C3%B3%2C%2007009%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Pinturas%20%26%20Revestimientos%20DEBA%20Palma%20Carrer%20del%20Gremi%20de%20Sucrers%20i%20Candelers%2C%2018%2C%20Pol%C3%ADgon%20Son%20Castell%C3%B3%2C%2007009%20Palma",
   shortDescription: {
     es: "Especialistas en pintura de alta decoración, microcemento continuo, rehabilitación de fachadas e impermeabilización en Mallorca.",
     en: "Specialists in decorative painting, seamless microcement, facade restoration, and building waterproofing in Mallorca.",
@@ -100,13 +94,6 @@ export const pinturas_revestimientos_deba_palma: ServiceItem = {
       "Fassadensanierung und langlebige Siloxan-Anstriche für Fincas und Villen",
       "Abdichtung von Flachdächern, Terrassen und Balkonen gegen eindringendes Wasser",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 64,
-      url: "https://www.google.com/maps/search/?api=1&query=Pinturas%20%26%20Revestimientos%20DEBA%20Palma%20Carrer%20del%20Gremi%20de%20Sucrers%20i%20Candelers%2C%2018%2C%20Pol%C3%ADgon%20Son%20Castell%C3%B3%2C%2007009%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

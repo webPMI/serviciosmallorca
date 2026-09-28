@@ -28,9 +28,6 @@ export const porxadaDeSaTorreCanyamel: ServiceItem = {
   email: "info@torredecanyamel.com",
   website: "https://www.torredecanyamel.com/es/gastronomia/porxada-de-sa-torre/",
   menuUrl: "https://www.torredecanyamel.com/es/gastronomia/porxada-de-sa-torre/",
-  googleMapsUrl: "https://www.google.com/maps/search/Restaurante+Porxada+de+Sa+Torre+Canyamel+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante+Porxada+de+Sa+Torre+Canyamel",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante+Porxada+de+Sa+Torre+Canyamel",
   tags: [
     "zona:manacor-llevant",
     "zona:canyamel",

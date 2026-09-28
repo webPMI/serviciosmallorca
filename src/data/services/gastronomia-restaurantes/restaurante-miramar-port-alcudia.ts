@@ -28,9 +28,6 @@ export const restauranteMiramarPortAlcudia: ServiceItem = {
   email: "info@miramaralcudia.com",
   website: "https://www.miramaralcudia.com",
   menuUrl: "https://www.miramaralcudia.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Restaurante+Miramar+Port+d+Alcudia+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante+Miramar+Port+Alcudia",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante+Miramar+Port+Alcudia",
   tags: [
     "zona:alcudia-pollensa",
     "zona:port-d-alcudia",

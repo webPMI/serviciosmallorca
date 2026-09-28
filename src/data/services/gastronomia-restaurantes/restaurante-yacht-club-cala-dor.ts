@@ -28,9 +28,6 @@ export const restauranteYachtClubCalaDor: ServiceItem = {
   email: "info@yccalador.com",
   website: "https://yachtclubcalador.com",
   menuUrl: "https://yachtclubcalador.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Infinity+Restaurant+Yacht+Club+Cala+d+Or+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante+Yacht+Club+Cala+d+Or",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante+Yacht+Club+Cala+d+Or",
   tags: [
     "zona:santanyi-migjorn",
     "zona:cala-d-or",

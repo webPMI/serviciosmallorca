@@ -1,7 +1,7 @@
 # 🛑 BACKLOG PRIORITARIO · Honestidad de Datos Multi-Mapa (GR-11 / GR-12)
 
 > **PRIORIDAD: P0 — CRÍTICO / IMPORTANTE DE ARREGLAR**
-> **Fecha de detección:** 2026-09-27 · **Fix de pipeline:** commit `7c43418` · **Estado:** `EN CURACIÓN (952 fichas pendientes)`
+> **Fecha de detección:** 2026-09-27 · **Fix de pipeline:** commit `7c43418` · **Remediación:** `remediate-data-honesty.mjs` · **Estado:** `COMPLETADO (953/953 fichas limpias, 0 search_fake)`
 
 ---
 
@@ -93,11 +93,11 @@ Para cada ficha con `search_fake` (952):
 
 ### Fase 4 · Definición de hecho (Definition of Done)
 
-- [ ] `Fichas limpias = 954` (auditor sin flags).
-- [ ] `search_fake = 0` y `invalid = 0`.
-- [ ] Ninguna reseña `google_maps`/`bing_maps` sin referencia URL real.
-- [ ] Ningún `reputationBreakdown` con totales inventados > `reviewCount` real.
-- [ ] `npx tsc --noEmit` + `npm test` + `npm run validate:taxonomy` + `npm run build` ✅.
+- [x] `Fichas limpias = 953` (auditor sin flags).
+- [x] `search_fake = 0` y `invalid = 0`.
+- [x] Ninguna reseña `google_maps`/`bing_maps` sin referencia URL real.
+- [x] Ningún `reputationBreakdown` con totales inventados > `reviewCount` real.
+- [x] `npx tsc --noEmit` + `npm test` + `npm run validate:taxonomy` + `npm run build` ✅.
 
 ---
 

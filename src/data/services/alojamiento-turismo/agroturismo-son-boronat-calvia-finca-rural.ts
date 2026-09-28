@@ -31,12 +31,6 @@ export const agroturismo_son_boronat_calvia_finca_rural: ServiceItem = {
   schedule: "Recepción: 08:30 - 21:30 (Abril a Noviembre)",
   image: "/images/services/agroturismo-son-boronat-calvia-finca-rural.jpg",
   gallery: ["/images/services/agroturismo-son-boronat-calvia-finca-rural.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Agroturismo%20Son%20Boronat%20Finca%20%26%20Gastronom%C3%ADa%20Calvi%C3%A0%20Carretera%20de%20Calvi%C3%A0%20a%20Puigpunyent%2C%20km%203.5%2C%2007184%20Calvi%C3%A0",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Agroturismo%20Son%20Boronat%20Finca%20%26%20Gastronom%C3%ADa%20Calvi%C3%A0%20Carretera%20de%20Calvi%C3%A0%20a%20Puigpunyent%2C%20km%203.5%2C%2007184%20Calvi%C3%A0",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Agroturismo%20Son%20Boronat%20Finca%20%26%20Gastronom%C3%ADa%20Calvi%C3%A0%20Carretera%20de%20Calvi%C3%A0%20a%20Puigpunyent%2C%20km%203.5%2C%2007184%20Calvi%C3%A0",
   shortDescription: {
     es: "Finca de agroturismo y restaurante en el valle de Calvià a los pies del Puig de Galatzó: suites de piedra natural, piscina infinita y cocina de producto de finca.",
     en: "Agritourism estate and restaurant in Calvià valley at the foot of Mount Galatzó: natural stone suites, infinity pool, and farm-to-table cuisine.",
@@ -100,13 +94,6 @@ export const agroturismo_son_boronat_calvia_finca_rural: ServiceItem = {
       "Organisation intimer Hochzeiten, Firmenevents und Privatfeiern",
       "Mountainbike-Verleih für Touren durch das Tramuntana-Gebirge",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 310,
-      url: "https://www.google.com/maps/search/?api=1&query=Agroturismo%20Son%20Boronat%20Finca%20%26%20Gastronom%C3%ADa%20Calvi%C3%A0%20Carretera%20de%20Calvi%C3%A0%20a%20Puigpunyent%2C%20km%203.5%2C%2007184%20Calvi%C3%A0",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

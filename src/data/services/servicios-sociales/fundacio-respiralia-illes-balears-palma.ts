@@ -31,12 +31,6 @@ export const fundacio_respiralia_illes_balears_palma: ServiceItem = {
   schedule: "Lunes a Viernes: 08:30 - 16:30 | Sábado y Domingo: Cerrado",
   image: "/images/services/fundacio-respiralia-illes-balears-palma.jpg",
   gallery: ["/images/services/fundacio-respiralia-illes-balears-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Fundaci%C3%B3%20Respir%C3%A0lia%20Illes%20Balears%20Carrer%20de%20Dinamarca%2C%209%2C%2007015%20Palma%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Fundaci%C3%B3%20Respir%C3%A0lia%20Illes%20Balears%20Carrer%20de%20Dinamarca%2C%209%2C%2007015%20Palma%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Fundaci%C3%B3%20Respir%C3%A0lia%20Illes%20Balears%20Carrer%20de%20Dinamarca%2C%209%2C%2007015%20Palma%2C%20Illes%20Balears",
   shortDescription: {
     es: "Fundación balear declarada de utilidad pública dedicada a mejorar la calidad de vida de niños y jóvenes con Fibrosis Quística mediante fisioterapia respiratoria avanzada y apoyo psicosocial integral.",
     en: "Public benefit foundation in Mallorca dedicated to improving the lives of children and youth with Cystic Fibrosis through advanced respiratory physiotherapy and holistic psychosocial care.",
@@ -100,13 +94,6 @@ export const fundacio_respiralia_illes_balears_palma: ServiceItem = {
       "Psychologische Begleitung für chronisch kranke Jugendliche und deren Familien",
       "Öffentlichkeitsarbeit, Aufklärung an Schulen und Förderung biomedizinischer Studien",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 140,
-      url: "https://www.google.com/maps/search/?api=1&query=Fundaci%C3%B3%20Respir%C3%A0lia%20Illes%20Balears%20Carrer%20de%20Dinamarca%2C%209%2C%2007015%20Palma%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

@@ -76,10 +76,6 @@ export const suite13EcoFashionPalma: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Suite%2013%20Sustainable%20Mediterranean%20Fashion%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Suite%2013%20Sustainable%20Mediterranean%20Fashion%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Suite%2013%20Sustainable%20Mediterranean%20Fashion%20Mallorca",
   pricing: {
     startingPrice: "Prendas de lino y algodón orgánico desde 65€",
     rateType: "tiered",
@@ -106,21 +102,4 @@ export const suite13EcoFashionPalma: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 280,
-      url: "https://www.google.com/maps/search/?api=1&query=Suite%2013%20Sustainable%20Mediterranean%20Fashion%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Suite%2013%20Sustainable%20Mediterranean%20Fashion%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 28,
-      url: "https://www.bing.com/maps?q=Suite%2013%20Sustainable%20Mediterranean%20Fashion%20Mallorca",
-    },
-    totalReviewsAggregated: 308,
-    overallWeightedRating: 4.9,
-  },
 };

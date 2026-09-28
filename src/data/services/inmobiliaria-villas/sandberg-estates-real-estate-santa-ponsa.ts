@@ -31,12 +31,6 @@ export const sandberg_estates_real_estate_santa_ponsa: ServiceItem = {
   schedule: "Lunes a Viernes: 09:30 - 18:30",
   image: "/images/services/sandberg-estates-real-estate-santa-ponsa.jpg",
   gallery: ["/images/services/sandberg-estates-real-estate-santa-ponsa.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Sandberg%20%26%20Estates%20Luxury%20Real%20Estate%20(Santa%20Ponsa)%20Gran%20Via%20Puig%20de%20Castellet%2C%201%2C%2007180%20Santa%20Ponsa%2C%20Calvi%C3%A0",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Sandberg%20%26%20Estates%20Luxury%20Real%20Estate%20(Santa%20Ponsa)%20Gran%20Via%20Puig%20de%20Castellet%2C%201%2C%2007180%20Santa%20Ponsa%2C%20Calvi%C3%A0",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Sandberg%20%26%20Estates%20Luxury%20Real%20Estate%20(Santa%20Ponsa)%20Gran%20Via%20Puig%20de%20Castellet%2C%201%2C%2007180%20Santa%20Ponsa%2C%20Calvi%C3%A0",
   shortDescription: {
     es: "Agencia inmobiliaria boutique de lujo en Santa Ponsa especializada en villas vanguardistas, primera línea de mar y propiedades en Port Adriano y Nova Santa Ponsa.",
     en: "Luxury boutique real estate agency in Santa Ponsa specialized in contemporary architectural villas, seafront estates, and Port Adriano residences.",
@@ -100,13 +94,6 @@ export const sandberg_estates_real_estate_santa_ponsa: ServiceItem = {
       "Beratung beim Erwerb von Baugrundstücken und Projektentwicklungen",
       "Zugang zu erstklassigen Architekten, Bauunternehmen und Fachanwälten",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 180,
-      url: "https://www.google.com/maps/search/?api=1&query=Sandberg%20%26%20Estates%20Luxury%20Real%20Estate%20(Santa%20Ponsa)%20Gran%20Via%20Puig%20de%20Castellet%2C%201%2C%2007180%20Santa%20Ponsa%2C%20Calvi%C3%A0",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

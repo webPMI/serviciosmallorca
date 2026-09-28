@@ -29,9 +29,6 @@ export const hospitalParqueLlevantPortoCristo: ServiceItem = {
   email: "info.llevant@hospitalesparque.es",
   website: "https://www.hospitalesparque.es/llevant",
   menuUrl: "https://www.hospitalesparque.es/llevant",
-  googleMapsUrl: "https://www.google.com/maps/search/Hospital+Parque+Llevant+Porto+Cristo+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Hospital+Parque+Llevant+Porto+Cristo",
-  bingMapsUrl: "https://www.bing.com/maps?q=Hospital+Parque+Llevant+Porto+Cristo",
   tags: [
     "zona:manacor-llevant",
     "product:lujo",
@@ -149,7 +146,7 @@ export const hospitalParqueLlevantPortoCristo: ServiceItem = {
       comment:
         "Ausgezeichnete Privatklinik! Schnelle Notfallbehandlung, die Ärztin sprach perfekt Deutsch und die Abrechnung mit der Auslandskrankenversicherung lief völlig reibungslos.",
       date: "2026-08-15",
-      platform: "google_maps",
+      platform: "direct",
       language: "de",
     },
     {
@@ -159,7 +156,7 @@ export const hospitalParqueLlevantPortoCristo: ServiceItem = {
       comment:
         "Outstanding hospital care in Porto Cristo. Very modern, spotlessly clean, and wonderful medical staff who made me feel completely at ease.",
       date: "2026-07-27",
-      platform: "google_maps",
+      platform: "direct",
       language: "en",
     },
   ],

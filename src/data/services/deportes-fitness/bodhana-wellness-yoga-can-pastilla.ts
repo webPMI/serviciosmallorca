@@ -29,8 +29,6 @@ export const BODHANA_WELLNESS_YOGA_CAN_PASTILLA: ServiceItem = {
   image: "/images/sports/bodhana-wellness-yoga-can-pastilla.jpg",
   gallery: ["/images/sports/bodhana-wellness-yoga-can-pastilla.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007077",
-  appleMapsUrl: "https://maps.apple.com/?q=Bodhana%20Wellness%20%26%20Yoga+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Bodhana%20Wellness%20%26%20Yoga+Mallorca",
   shortDescription: {
     es: "Centro holístico con yoga, masajes ayurvédicos y terapias corporales junto a la playa.",
     en: "Holistic wellness center offering yoga, Ayurvedic massage, and body therapies near the beach.",
@@ -94,13 +92,6 @@ export const BODHANA_WELLNESS_YOGA_CAN_PASTILLA: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 240,
-      url: "https://www.google.com/maps?cid=12007077",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

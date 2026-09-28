@@ -28,9 +28,6 @@ export const laRosaVermuteriaPalma: ServiceItem = {
   email: "info@larosatroupe.com",
   website: "https://larosatroupe.com",
   menuUrl: "https://larosatroupe.com",
-  googleMapsUrl: "https://www.google.com/maps/search/La+Rosa+Vermuteria+Colmado+Palma+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=La+Rosa+Vermuteria+Palma",
-  bingMapsUrl: "https://www.bing.com/maps?q=La+Rosa+Vermuteria+Palma",
   tags: [
     "zona:palma",
     "zona:casco-antiguo",
@@ -149,7 +146,7 @@ export const laRosaVermuteriaPalma: ServiceItem = {
       comment:
         "Parada obligatoria en Palma. El vermut de grifo está riquísimo, las gildas son las mejores de la isla y los torreznos espectaculares. Ambiente insuperable.",
       date: "2026-08-10",
-      platform: "google_maps",
+      platform: "direct",
       language: "es",
     },
     {
@@ -159,7 +156,7 @@ export const laRosaVermuteriaPalma: ServiceItem = {
       comment:
         "Tolle Atmosphäre und fantastischer Wermut! Die Tapas sind frisch und von bester Qualität. Absoluter Lieblingsort in der Altstadt von Palma.",
       date: "2026-07-28",
-      platform: "google_maps",
+      platform: "direct",
       language: "de",
     },
   ],

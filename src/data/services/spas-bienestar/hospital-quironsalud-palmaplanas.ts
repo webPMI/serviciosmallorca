@@ -29,8 +29,6 @@ export const hospital_quironsalud_palmaplanas: ServiceItem = {
   image: "/images/services/hospital-quironsalud-palmaplanas.jpg",
   gallery: ["/images/services/hospital-quironsalud-palmaplanas.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=13008000",
-  appleMapsUrl: "https://maps.apple.com/?q=Hospital%20Quir%C3%B3nsalud%20Palmaplanas+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Hospital%20Quir%C3%B3nsalud%20Palmaplanas+Mallorca",
   shortDescription: {
     es: "Hospital privado de alta resolución con urgencias 24h, UCI médica, cirugía avanzada y atención internacional multilingüe.",
     en: "High-resolution private hospital featuring 24/7 ER, ICU, advanced surgical suites, and multilingual patient care.",
@@ -94,13 +92,6 @@ export const hospital_quironsalud_palmaplanas: ServiceItem = {
       "Wellness- und Regenerationstherapien",
       "Kontinuierliche medizinische Nachbetreuung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.6,
-      reviewCount: 1420,
-      url: "https://www.google.com/maps?cid=13008000",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

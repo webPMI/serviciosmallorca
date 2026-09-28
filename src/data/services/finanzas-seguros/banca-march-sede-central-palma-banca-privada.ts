@@ -31,12 +31,6 @@ export const banca_march_sede_central_palma_banca_privada: ServiceItem = {
   schedule: "Lunes a Viernes: 08:30 - 14:00 (Gestión de Banca Privada con cita previa hasta 18:00)",
   image: "/images/services/banca-march-sede-central-palma-banca-privada.jpg",
   gallery: ["/images/services/banca-march-sede-central-palma-banca-privada.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Banca%20March%20S.A.%20Sede%20Central%20%26%20Banca%20Privada%20Palma%20(1926)%20Carrer%20de%20Sant%20Miquel%2C%2017%2C%2007002%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Banca%20March%20S.A.%20Sede%20Central%20%26%20Banca%20Privada%20Palma%20(1926)%20Carrer%20de%20Sant%20Miquel%2C%2017%2C%2007002%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Banca%20March%20S.A.%20Sede%20Central%20%26%20Banca%20Privada%20Palma%20(1926)%20Carrer%20de%20Sant%20Miquel%2C%2017%2C%2007002%20Palma",
   shortDescription: {
     es: "Banco familiar balear fundado en Palma en 1926: especialista en banca privada, gestión de grandes patrimonios, asesoramiento a empresas e hipotecas para no residentes.",
     en: "Family-owned Balearic private bank founded in Palma in 1926: private banking, wealth management, corporate advisory, and non-resident mortgages.",
@@ -100,13 +94,6 @@ export const banca_march_sede_central_palma_banca_privada: ServiceItem = {
       "Anlageberatung, Anleihefonds und ETF-Portfolio-Management",
       "Firmenkundenfinanzierung und Auslandsgeschäft für Inselunternehmen",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 420,
-      url: "https://www.google.com/maps/search/?api=1&query=Banca%20March%20S.A.%20Sede%20Central%20%26%20Banca%20Privada%20Palma%20(1926)%20Carrer%20de%20Sant%20Miquel%2C%2017%2C%2007002%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

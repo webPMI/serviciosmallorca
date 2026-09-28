@@ -76,12 +76,6 @@ export const clinicaVeterinariaSollerTramuntana: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica%20Veterin%C3%A0ria%20S%C3%B3ller%20%26%20Vall%20de%20Tramuntana%20Mallorca",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Cl%C3%ADnica%20Veterin%C3%A0ria%20S%C3%B3ller%20%26%20Vall%20de%20Tramuntana%20Mallorca",
-  bingMapsUrl:
-    "https://www.bing.com/maps?q=Cl%C3%ADnica%20Veterin%C3%A0ria%20S%C3%B3ller%20%26%20Vall%20de%20Tramuntana%20Mallorca",
   pricing: {
     startingPrice: "Consulta desde 40€",
     rateType: "tiered",
@@ -108,21 +102,4 @@ export const clinicaVeterinariaSollerTramuntana: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 390,
-      url: "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica%20Veterin%C3%A0ria%20S%C3%B3ller%20%26%20Vall%20de%20Tramuntana%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Cl%C3%ADnica%20Veterin%C3%A0ria%20S%C3%B3ller%20%26%20Vall%20de%20Tramuntana%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.7,
-      reviewCount: 39,
-      url: "https://www.bing.com/maps?q=Cl%C3%ADnica%20Veterin%C3%A0ria%20S%C3%B3ller%20%26%20Vall%20de%20Tramuntana%20Mallorca",
-    },
-    totalReviewsAggregated: 429,
-    overallWeightedRating: 4.8,
-  },
 };

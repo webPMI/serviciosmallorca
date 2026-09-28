@@ -28,9 +28,6 @@ export const restauranteLaCaracolaPortoPetro: ServiceItem = {
   email: "info@lacaracolaportopetro.com",
   website: "https://lacaracolaportopetro.com",
   menuUrl: "https://lacaracolaportopetro.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Restaurante+La+Caracola+Porto+Petro+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante+La+Caracola+Porto+Petro",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante+La+Caracola+Porto+Petro",
   tags: [
     "zona:santanyi-migjorn",
     "zona:porto-petro",

@@ -31,12 +31,6 @@ export const mallorcadomotica_loxone_control4_calvia: ServiceItem = {
   schedule: "Lunes a Viernes: 09:00 - 18:00",
   image: "/images/services/mallorcadomotica-loxone-control4-calvia.jpg",
   gallery: ["/images/services/mallorcadomotica-loxone-control4-calvia.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Mallorcadomotica%20-%20Integraci%C3%B3n%20Smart%20Home%20%26%20Loxone%20Calvi%C3%A0%20Avinguda%20de%20Son%20Maties%2C%204%2C%2007181%20Palmanova%2C%20Calvi%C3%A0",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Mallorcadomotica%20-%20Integraci%C3%B3n%20Smart%20Home%20%26%20Loxone%20Calvi%C3%A0%20Avinguda%20de%20Son%20Maties%2C%204%2C%2007181%20Palmanova%2C%20Calvi%C3%A0",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Mallorcadomotica%20-%20Integraci%C3%B3n%20Smart%20Home%20%26%20Loxone%20Calvi%C3%A0%20Avinguda%20de%20Son%20Maties%2C%204%2C%2007181%20Palmanova%2C%20Calvi%C3%A0",
   shortDescription: {
     es: "Especialistas en domótica integral, sistemas Loxone y Control4, cine en casa de alta fidelidad y control bioclimático en villas de Calvià y Andratx.",
     en: "Smart home integration specialists for Loxone and Control4, high-fidelity home cinema, and bioclimatic automation in southwest Mallorca villas.",
@@ -100,13 +94,6 @@ export const mallorcadomotica_loxone_control4_calvia: ServiceItem = {
       "Intelligente Lichtsteuerung und tageszeitabhängige Lichtszenen",
       "Flächendeckende Highspeed-WLAN-Netzwerke für Haus und Außenbereich",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 140,
-      url: "https://www.google.com/maps/search/?api=1&query=Mallorcadomotica%20-%20Integraci%C3%B3n%20Smart%20Home%20%26%20Loxone%20Calvi%C3%A0%20Avinguda%20de%20Son%20Maties%2C%204%2C%2007181%20Palmanova%2C%20Calvi%C3%A0",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

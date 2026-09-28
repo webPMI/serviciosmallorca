@@ -21,9 +21,6 @@ export const duranPalma: ServiceItem = {
   whatsapp: "+34 971 46 00 00",
   email: "atencionalcliente@gduran.com",
   website: "https://gduran.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Duran+Materiales+Palma+Coll+den+Rabassa",
-  appleMapsUrl: "https://maps.apple.com/?q=Duran+Materiales+Palma",
-  bingMapsUrl: "https://www.bing.com/maps?q=Duran+Materiales+Palma",
   coordinates: {
     lat: 39.5534,
     lng: 2.6982,
@@ -177,22 +174,13 @@ export const duranPalma: ServiceItem = {
       specialty: "Materiales y Baños de Diseño",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.6,
-      reviewCount: 428,
-      url: "https://www.google.com/maps/search/?api=1&query=Duran+Palma+Cami+dels+Reis",
-    },
-    totalReviewsAggregated: 428,
-    overallWeightedRating: 4.6,
-  },
   reviews: [
     {
       id: "rev-duran-1",
       authorName: "Antoni Pons",
       rating: 5,
       date: "2025-05-10",
-      platform: "google_maps",
+      platform: "direct",
       language: "es",
       comment:
         "Excelente exposición en Palma. Encontramos todos los materiales para la reforma de nuestra casa de campo y el asesoramiento fue de 10.",
@@ -203,7 +191,7 @@ export const duranPalma: ServiceItem = {
       authorName: "Karin Schneider",
       rating: 5,
       date: "2025-04-18",
-      platform: "google_maps",
+      platform: "direct",
       language: "de",
       comment:
         "Große Auswahl an modernen Fliesen und Badezimmerarmaturen. Sehr freundliche und kompetente Beratung auf Deutsch und Englisch.",

@@ -31,12 +31,6 @@ export const cuchilleria_ganivets_ordinas_llucmajor: ServiceItem = {
   schedule: "Lunes a Viernes: 09:00 - 13:30, 16:30 - 19:30",
   image: "/images/services/cuchilleria-ganivets-ordinas-llucmajor.jpg",
   gallery: ["/images/services/cuchilleria-ganivets-ordinas-llucmajor.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Cuchiller%C3%ADa%20Ganivets%20Ordinas%20Llucmajor%20Carrer%20del%20Bisbe%20Taixequet%2C%2022%2C%2007620%20Llucmajor",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Cuchiller%C3%ADa%20Ganivets%20Ordinas%20Llucmajor%20Carrer%20del%20Bisbe%20Taixequet%2C%2022%2C%2007620%20Llucmajor",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Cuchiller%C3%ADa%20Ganivets%20Ordinas%20Llucmajor%20Carrer%20del%20Bisbe%20Taixequet%2C%2022%2C%2007620%20Llucmajor",
   shortDescription: {
     es: "Cuchillería artesanal en Llucmajor: fabricación tradicional del ganivet de pastor mallorquín con mangos de cuerno de carnero y madera de olivo.",
     en: "Artisan cutlery workshop in Llucmajor: traditional Mallorcan shepherd knives hand-forged with ram horn and native olive wood handles.",
@@ -100,13 +94,6 @@ export const cuchilleria_ganivets_ordinas_llucmajor: ServiceItem = {
       "Professioneller Schleifservice auf Wassersteinen für Messer und Scheren",
       "Individuelle Klingen- und Zwingengravuren nach Kundenwunsch",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 54,
-      url: "https://www.google.com/maps/search/?api=1&query=Cuchiller%C3%ADa%20Ganivets%20Ordinas%20Llucmajor%20Carrer%20del%20Bisbe%20Taixequet%2C%2022%2C%2007620%20Llucmajor",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

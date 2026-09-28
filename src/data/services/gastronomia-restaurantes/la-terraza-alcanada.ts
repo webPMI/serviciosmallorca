@@ -27,9 +27,6 @@ export const laTerrazaAlcanada: ServiceItem = {
   email: "info@laterrazaalcanada.com",
   website: "https://laterrazaalcanada.com",
   menuUrl: "https://laterrazaalcanada.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Restaurante+La+Terraza+Alcanada+Alcudia+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante+La+Terraza+Alcanada+Alcudia",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante+La+Terraza+Alcanada+Alcudia",
   tags: [
     "zona:alcudia-pollensa",
     "zona:alcudia",

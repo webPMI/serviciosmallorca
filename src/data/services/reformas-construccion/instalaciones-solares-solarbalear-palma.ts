@@ -31,12 +31,6 @@ export const instalaciones_solares_solarbalear_palma: ServiceItem = {
   schedule: "Lunes a Viernes: 08:00 - 18:30 | Sábado y Domingo: Cerrado",
   image: "/images/services/instalaciones-solares-solarbalear-palma.jpg",
   gallery: ["/images/services/instalaciones-solares-solarbalear-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=SolarBalear%20Instalaciones%20Solares%20%26%20Aerotermia%20Palma%20Pol%C3%ADgon%20Son%20Valent%C3%AD%2C%20Carrer%20d'Alemanya%2C%2018%2C%2007011%20Palma%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=SolarBalear%20Instalaciones%20Solares%20%26%20Aerotermia%20Palma%20Pol%C3%ADgon%20Son%20Valent%C3%AD%2C%20Carrer%20d'Alemanya%2C%2018%2C%2007011%20Palma%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=SolarBalear%20Instalaciones%20Solares%20%26%20Aerotermia%20Palma%20Pol%C3%ADgon%20Son%20Valent%C3%AD%2C%20Carrer%20d'Alemanya%2C%2018%2C%2007011%20Palma%2C%20Illes%20Balears",
   shortDescription: {
     es: "Ingeniería e instalación de energía solar fotovoltaica, baterías de litio y aerotermia para villas y fincas en Mallorca, logrando autosuficiencia energética con más de 300 días de sol al año.",
     en: "Solar photovoltaic engineering and aerothermal heating contractor for villas and fincas across Mallorca, achieving total energy independence harnessing 300+ days of island sunshine.",
@@ -100,13 +94,6 @@ export const instalaciones_solares_solarbalear_palma: ServiceItem = {
       "Installation von Luft-Wasser-Wärmepumpen für energiesparende Fußbodenheizung und Warmwasser",
       "Intelligente Wallbox-Ladestationen für Elektroautos mit prioritärer Nutzung von Solarstrom",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 210,
-      url: "https://www.google.com/maps/search/?api=1&query=SolarBalear%20Instalaciones%20Solares%20%26%20Aerotermia%20Palma%20Pol%C3%ADgon%20Son%20Valent%C3%AD%2C%20Carrer%20d'Alemanya%2C%2018%2C%2007011%20Palma%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

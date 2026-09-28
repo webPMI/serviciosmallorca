@@ -29,8 +29,6 @@ export const GOLF_SON_GUAL_PALMA: ServiceItem = {
   image: "/images/sports/golf-son-gual-palma.jpg",
   gallery: ["/images/sports/golf-son-gual-palma.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007000",
-  appleMapsUrl: "https://maps.apple.com/?q=Golf%20Son%20Gual%20Mallorca+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Golf%20Son%20Gual%20Mallorca+Mallorca",
   shortDescription: {
     es: "Campo de golf de 18 hoyos par 72 de campeonato internacional diseñado por Thomas Himmel.",
     en: "Championship 18-hole par 72 golf course designed by Thomas Himmel.",
@@ -94,13 +92,6 @@ export const GOLF_SON_GUAL_PALMA: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 540,
-      url: "https://www.google.com/maps?cid=12007000",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

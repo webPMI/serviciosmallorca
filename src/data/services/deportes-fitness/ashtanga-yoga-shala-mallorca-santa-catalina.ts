@@ -29,8 +29,6 @@ export const ASHTANGA_YOGA_SHALA_MALLORCA_SANTA_CATALINA: ServiceItem = {
   image: "/images/sports/ashtanga-yoga-shala-mallorca-santa-catalina.jpg",
   gallery: ["/images/sports/ashtanga-yoga-shala-mallorca-santa-catalina.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007072",
-  appleMapsUrl: "https://maps.apple.com/?q=Ashtanga%20Yoga%20Shala%20Mallorca+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Ashtanga%20Yoga%20Shala%20Mallorca+Mallorca",
   shortDescription: {
     es: "Shala tradicional de Ashtanga Yoga en Santa Catalina con práctica Mysore matinal y profesores autorizados.",
     en: "Traditional Ashtanga Yoga Shala in Santa Catalina offering morning Mysore practice and authorized teachers.",
@@ -94,13 +92,6 @@ export const ASHTANGA_YOGA_SHALA_MALLORCA_SANTA_CATALINA: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 240,
-      url: "https://www.google.com/maps?cid=12007072",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

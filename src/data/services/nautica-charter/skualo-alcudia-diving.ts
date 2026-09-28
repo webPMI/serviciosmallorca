@@ -21,9 +21,6 @@ export const skualoAlcudia: ServiceItem = {
   whatsapp: "+34 609 80 90 10",
   email: "alcudia@skualo.com",
   website: "https://skualo.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Skualo%20Diving%20Alcudia%20Can%20Picafort",
-  appleMapsUrl: "https://maps.apple.com/?q=Skualo%20Diving%20Alcudia%20Can%20Picafort&ll=39.7680,3.1580",
-  bingMapsUrl: "https://www.bing.com/maps?where1=Skualo%20Diving%20Alcudia%20Can%20Picafort",
   coordinates: { lat: 39.768, lng: 3.158 },
   schedule: "Lunes a Domingo: 08:30 - 19:00 (Salidas diarias en lancha rápida a Formentor)",
   lastVerifiedAt: "2026-08-25",
@@ -131,30 +128,13 @@ export const skualoAlcudia: ServiceItem = {
       instagramHandle: "@skualodiving",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 540,
-      url: "https://www.google.com/maps/search/?api=1&query=Skualo%20Diving%20Alcudia%20Can%20Picafort",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Skualo%20Diving%20Alcudia%20Can%20Picafort&ll=39.7680,3.1580",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 540,
-      url: "https://www.bing.com/maps?where1=Skualo%20Diving%20Alcudia%20Can%20Picafort",
-    },
-    totalReviewsAggregated: 540,
-    overallWeightedRating: 4.8,
-  },
   reviews: [
     {
       id: "rev-sda-1",
       authorName: "Bernat Serra",
       rating: 5,
       date: "2025-05-19",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
       comment:
         "Experiència espectacular bussejant a les coves de Formentor. L'equip de Skualo és super professional, les llanxes ràpides són comodíssimes i la visibilitat era increïble.",
@@ -165,7 +145,7 @@ export const skualoAlcudia: ServiceItem = {
       authorName: "Lukas Hoffmann",
       rating: 5,
       date: "2025-06-27",
-      platform: "google_maps",
+      platform: "direct",
       language: "de",
       comment:
         "Tolles PADI Tauchzentrum in Can Picafort! Sehr gut organisierte Bootsausflüge nach Formentor. Professionelle Tauchlehrer, top Ausrüstung und fantastische Unterwasserhöhlen.",

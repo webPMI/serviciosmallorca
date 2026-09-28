@@ -29,8 +29,6 @@ export const arabella_spa_st_regis_mardavall_calvia: ServiceItem = {
   image: "/images/spas/arabella-spa-st-regis-mardavall-calvia.jpg",
   gallery: ["/images/spas/arabella-spa-st-regis-mardavall-calvia.jpg", "/images/categories/salud.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=13008016",
-  appleMapsUrl: "https://maps.apple.com/?q=Arabella%20Spa%20(The%20St.%20Regis%20Mardavall)+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Arabella%20Spa%20(The%20St.%20Regis%20Mardavall)+Mallorca",
   shortDescription: {
     es: "Uno de los spas más grandes de Europa (4.700 m²) con medicina tradicional china, talasoterapia y circuito termal.",
     en: "One of Europe's largest luxury spas (4,700 m²) featuring Traditional Chinese Medicine and thalassotherapy.",
@@ -94,13 +92,6 @@ export const arabella_spa_st_regis_mardavall_calvia: ServiceItem = {
       "Wellness- und Regenerationstherapien",
       "Kontinuierliche medizinische Nachbetreuung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 430,
-      url: "https://www.google.com/maps?cid=13008016",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

@@ -28,9 +28,6 @@ export const academia_oposiciones_mallorca_prepara: ServiceItem = {
   schedule: "Lunes a Viernes: 09:00 - 21:00 | Sábado: 09:00 - 14:00",
   image: "/images/services/academia-oposiciones-mallorca-prepara.jpg",
   gallery: ["/images/services/academia-oposiciones-mallorca-prepara.jpg"],
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Academia+Oposiciones+Prepara+Mallorca+Palma",
-  appleMapsUrl: "https://maps.apple.com/?q=Academia+Oposiciones+Prepara+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Academia+Oposiciones+Prepara+Mallorca",
   shortDescription: {
     es: "Academia de oposiciones en Palma especializada en Guardia Civil, Policía Nacional, Policía Local de Mallorca, auxiliar administrativo y cuerpos de la CAIB.",
     en: "Civil service exam academy in Palma specializing in Civil Guard, National Police, Mallorcan Local Police, administrative assistant, and CAIB public body exams.",
@@ -94,13 +91,6 @@ export const academia_oposiciones_mallorca_prepara: ServiceItem = {
       "Vorbereitung auf die Lokalpolizei Mallorca und Balearen",
       "Verwaltungsassistent-Prüfungen für AGE, CAIB und Consell de Mallorca",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 218,
-      url: "https://www.google.com/maps/search/?api=1&query=Academia+Oposiciones+Prepara+Mallorca",
-    },
   },
   createdAt: "2026-09-05",
   lastUpdatedAt: "2026-09-05",

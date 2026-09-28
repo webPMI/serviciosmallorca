@@ -31,12 +31,6 @@ export const menestralia_vidre_bufat_artesanal_campanet: ServiceItem = {
   schedule: "Lunes a Sábado: 09:00 - 18:30; Domingo: 09:30 - 13:30",
   image: "/images/services/menestralia-vidre-bufat-artesanal-campanet.jpg",
   gallery: ["/images/services/menestralia-vidre-bufat-artesanal-campanet.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Menestralia%20Vidre%20Bufat%20Artesanal%20Campanet%20(1965)%20Carretera%20Palma-Alc%C3%BAdia%2C%20km%2036%2C%2007310%20Campanet",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Menestralia%20Vidre%20Bufat%20Artesanal%20Campanet%20(1965)%20Carretera%20Palma-Alc%C3%BAdia%2C%20km%2036%2C%2007310%20Campanet",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Menestralia%20Vidre%20Bufat%20Artesanal%20Campanet%20(1965)%20Carretera%20Palma-Alc%C3%BAdia%2C%20km%2036%2C%2007310%20Campanet",
   shortDescription: {
     es: "Fábrica artesanal de vidrio soplado a pie de autopista en Campanet: demostraciones en vivo de soplado tradicional con caña y exposición de lámparas y artesanía balear.",
     en: "Artisan glassblowing workshop at Campanet along the northern highway: live traditional blowpipe demonstrations, blown glass lamps, and Balearic craft gallery.",
@@ -100,13 +94,6 @@ export const menestralia_vidre_bufat_artesanal_campanet: ServiceItem = {
       "Restaurierung und Anfertigung antiker Lampenschirme nach Maß",
       "Sicherer weltweiter Frachtversand mit Spezialverpackung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 389,
-      url: "https://www.google.com/maps/search/?api=1&query=Menestralia%20Vidre%20Bufat%20Artesanal%20Campanet%20(1965)%20Carretera%20Palma-Alc%C3%BAdia%2C%20km%2036%2C%2007310%20Campanet",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

@@ -28,9 +28,6 @@ export const bodegasBordoyLlucmajor: ServiceItem = {
   email: "promocion@bodegasbordoy.es",
   website: "https://bodegasbordoy.es",
   menuUrl: "https://bodegasbordoy.es",
-  googleMapsUrl: "https://www.google.com/maps/search/Bodegas+Bordoy+Llucmajor+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Bodegas+Bordoy+Llucmajor",
-  bingMapsUrl: "https://www.bing.com/maps?q=Bodegas+Bordoy+Llucmajor",
   tags: [
     "zona:santanyi-migjorn",
     "zona:llucmajor",

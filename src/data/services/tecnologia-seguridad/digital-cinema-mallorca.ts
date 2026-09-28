@@ -21,9 +21,6 @@ export const digitalCinemaMallorca: ServiceItem = {
   whatsapp: "+34 971 77 44 88",
   email: "info@digitalcinema.es",
   website: "https://digitalcinema.es",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Digital%20Cinema%20Mallorca%20Palma",
-  appleMapsUrl: "https://maps.apple.com/?q=Digital%20Cinema%20Mallorca%20Palma&ll=39.6025,2.6728",
-  bingMapsUrl: "https://www.bing.com/maps?where1=Digital%20Cinema%20Mallorca%20Palma",
   coordinates: { lat: 39.6025, lng: 2.6728 },
   schedule: "Lunes a Viernes: 09:00 - 18:30 (Sábados con Cita Previa)",
   lastVerifiedAt: "2026-08-25",
@@ -133,30 +130,13 @@ export const digitalCinemaMallorca: ServiceItem = {
       instagramHandle: "@digitalcinemamallorca",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 220,
-      url: "https://www.google.com/maps/search/?api=1&query=Digital%20Cinema%20Mallorca%20Palma",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Digital%20Cinema%20Mallorca%20Palma&ll=39.6025,2.6728",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 220,
-      url: "https://www.bing.com/maps?where1=Digital%20Cinema%20Mallorca%20Palma",
-    },
-    totalReviewsAggregated: 220,
-    overallWeightedRating: 4.8,
-  },
   reviews: [
     {
       id: "rev-dc-1",
       authorName: "Henrik Larsson",
       rating: 5,
       date: "2025-04-16",
-      platform: "google_maps",
+      platform: "direct",
       language: "en",
       comment:
         "Incredible private cinema installation in our villa in Andratx. The sound isolation and picture quality are beyond expectations.",
@@ -167,7 +147,7 @@ export const digitalCinemaMallorca: ServiceItem = {
       authorName: "Guillem Bauzà",
       rating: 5,
       date: "2025-06-21",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
       comment:
         "Molt professionals en la integració de domòtica i so per a tota la casa. El servei d'assistència tècnica és impecable.",

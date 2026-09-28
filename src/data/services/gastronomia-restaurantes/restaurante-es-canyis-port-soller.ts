@@ -28,9 +28,6 @@ export const restauranteEsCanyisPortSoller: ServiceItem = {
   email: "info@escanyis.es",
   website: "https://escanyis.es",
   menuUrl: "https://escanyis.es",
-  googleMapsUrl: "https://www.google.com/maps/search/Restaurante+Es+Canyis+Port+de+Soller+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante+Es+Canyis+Port+de+Soller",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante+Es+Canyis+Port+de+Soller",
   tags: [
     "zona:tramuntana",
     "zona:port-de-soller",

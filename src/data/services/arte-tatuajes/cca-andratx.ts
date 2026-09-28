@@ -100,8 +100,5 @@ export const ccaAndratxService: ServiceItem = {
     ],
   },
   amenities: ["wifi", "air_conditioning", "wheelchair_accessible", "parking_nearby"],
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=CCA+Andratx+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=CCA+Andratx+Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=CCA+Andratx+Mallorca",
   confidenceScore: 98,
 };

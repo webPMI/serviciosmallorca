@@ -31,12 +31,6 @@ export const fusteria_tradicional_inca_madera_noble: ServiceItem = {
   schedule: "Lunes a Viernes: 07:30 - 17:00",
   image: "/images/services/fusteria-tradicional-inca-madera-noble.jpg",
   gallery: ["/images/services/fusteria-tradicional-inca-madera-noble.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Fusteria%20Tradicional%20Inca%20Carpinter%C3%ADa%20%26%20Ebanister%C3%ADa%20Balear%20(1975)%20Pol%C3%ADgon%20Industrial%20Can%20Matzar%C3%AD%2C%20Carrer%20dels%20Sabaters%2C%2045%2C%2007300%20Inca",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Fusteria%20Tradicional%20Inca%20Carpinter%C3%ADa%20%26%20Ebanister%C3%ADa%20Balear%20(1975)%20Pol%C3%ADgon%20Industrial%20Can%20Matzar%C3%AD%2C%20Carrer%20dels%20Sabaters%2C%2045%2C%2007300%20Inca",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Fusteria%20Tradicional%20Inca%20Carpinter%C3%ADa%20%26%20Ebanister%C3%ADa%20Balear%20(1975)%20Pol%C3%ADgon%20Industrial%20Can%20Matzar%C3%AD%2C%20Carrer%20dels%20Sabaters%2C%2045%2C%2007300%20Inca",
   shortDescription: {
     es: "Taller artesano de carpintería y ebanistería en Inca desde 1975: restauración de vigas de madera noble, fabricación de persianas mallorquinas tradicionales, vigas visto y puertas de finca.",
     en: "Artisan carpentry and joinery workshop in Inca since 1975: noble wood beam restoration, traditional Mallorcan louvered shutters, and rustic estate doors.",
@@ -100,13 +94,6 @@ export const fusteria_tradicional_inca_madera_noble: ServiceItem = {
       "Eingangstüren für Landfincas mit handgeschmiedeten Eisenbeschlägen",
       "Maßmöbel, begehbare Kleiderschränke und Edelholzküchen für Villen",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 210,
-      url: "https://www.google.com/maps/search/?api=1&query=Fusteria%20Tradicional%20Inca%20Carpinter%C3%ADa%20%26%20Ebanister%C3%ADa%20Balear%20(1975)%20Pol%C3%ADgon%20Industrial%20Can%20Matzar%C3%AD%2C%20Carrer%20dels%20Sabaters%2C%2045%2C%2007300%20Inca",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

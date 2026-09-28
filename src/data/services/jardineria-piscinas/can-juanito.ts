@@ -21,9 +21,6 @@ export const canJuanito: ServiceItem = {
   whatsapp: "+34 685 46 07 73",
   email: "canjuanitoclients@canjuanito.com",
   website: "https://canjuanito.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Viveros+Can+Juanito+Son+Ferriol+Palma",
-  appleMapsUrl: "https://maps.apple.com/?q=Viveros+Can+Juanito",
-  bingMapsUrl: "https://www.bing.com/maps?q=Can+Juanito+Palma",
   coordinates: {
     lat: 39.5768,
     lng: 2.7094,
@@ -189,22 +186,13 @@ export const canJuanito: ServiceItem = {
       specialty: "Flora Mediterránea y Xerojardinería",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 390,
-      url: "https://www.google.com/maps/search/?api=1&query=Viveros+Can+Juanito+Son+Ferriol+Palma",
-    },
-    totalReviewsAggregated: 390,
-    overallWeightedRating: 4.7,
-  },
   reviews: [
     {
       id: "rev-juanito-1",
       authorName: "Joan Riera",
       rating: 5,
       date: "2025-05-18",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
       comment:
         "El millor viver de Mallorca sense dubte. Vam comprar dues oliveres centenàries per a la finca i el trasplantament va ser perfecte.",
@@ -215,7 +203,7 @@ export const canJuanito: ServiceItem = {
       authorName: "Sabine Müller",
       rating: 5,
       date: "2025-04-02",
-      platform: "google_maps",
+      platform: "direct",
       language: "de",
       comment:
         "Wunderschöne Gärtnerei mit riesiger Auswahl an mediterranen Pflanzen. Sehr kompetente Beratung zur Bewässerung.",

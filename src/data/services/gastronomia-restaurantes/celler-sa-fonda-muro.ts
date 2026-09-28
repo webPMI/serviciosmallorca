@@ -28,9 +28,6 @@ export const cellerSaFondaMuro: ServiceItem = {
   email: "info@safondamuro.com",
   website: "https://www.safondamuro.com",
   menuUrl: "https://www.safondamuro.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Restaurante+Sa+Fonda+Muro+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante+Sa+Fonda+Muro",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante+Sa+Fonda+Muro",
   tags: [
     "zona:alcudia-pollensa",
     "zona:muro",

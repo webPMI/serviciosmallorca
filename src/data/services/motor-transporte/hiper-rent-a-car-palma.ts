@@ -31,12 +31,6 @@ export const hiper_rent_a_car_palma: ServiceItem = {
   schedule: "Lunes a Domingo: 07:00 - 23:00",
   image: "/images/services/hiper-rent-a-car-palma.jpg",
   gallery: ["/images/services/hiper-rent-a-car-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Hiper%20Rent%20a%20Car%20Palma%201969%20Cam%C3%AD%20de%20Can%20Pastilla%2C%2041%2C%2007610%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Hiper%20Rent%20a%20Car%20Palma%201969%20Cam%C3%AD%20de%20Can%20Pastilla%2C%2041%2C%2007610%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Hiper%20Rent%20a%20Car%20Palma%201969%20Cam%C3%AD%20de%20Can%20Pastilla%2C%2041%2C%2007610%20Palma",
   shortDescription: {
     es: "Compañía balear de alquiler de coches fundada en 1969: amplia flota, servicio en el aeropuerto de Palma y oficinas por toda la isla.",
     en: "Major Balearic car rental company established in 1969: modern fleet, Palma Airport shuttle, and branches across Mallorca.",
@@ -100,13 +94,6 @@ export const hiper_rent_a_car_palma: ServiceItem = {
       "Kostenloser Express-Shuttle direkt am Flughafen Palma de Mallorca",
       "Zustellung und Abholung an Hotels und Fincas nach Vereinbarung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.6,
-      reviewCount: 1450,
-      url: "https://www.google.com/maps/search/?api=1&query=Hiper%20Rent%20a%20Car%20Palma%201969%20Cam%C3%AD%20de%20Can%20Pastilla%2C%2041%2C%2007610%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

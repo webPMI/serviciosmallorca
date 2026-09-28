@@ -31,12 +31,6 @@ export const baleares_international_college_sa_porrassa: ServiceItem = {
   schedule: "Lunes a Viernes: 08:30 - 17:00",
   image: "/images/services/baleares-international-college-sa-porrassa.jpg",
   gallery: ["/images/services/baleares-international-college-sa-porrassa.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Baleares%20International%20College%20BIC%20(Sa%20Porrassa%20-%20Calvi%C3%A0%20-%201957)%20Ctra.%20Cala%20Figuera%20a%20Sa%20Porrassa%2C%20s%2Fn%2C%2007181%20Calvi%C3%A0",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Baleares%20International%20College%20BIC%20(Sa%20Porrassa%20-%20Calvi%C3%A0%20-%201957)%20Ctra.%20Cala%20Figuera%20a%20Sa%20Porrassa%2C%20s%2Fn%2C%2007181%20Calvi%C3%A0",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Baleares%20International%20College%20BIC%20(Sa%20Porrassa%20-%20Calvi%C3%A0%20-%201957)%20Ctra.%20Cala%20Figuera%20a%20Sa%20Porrassa%2C%20s%2Fn%2C%2007181%20Calvi%C3%A0",
   shortDescription: {
     es: "Colegio británico internacional fundado en 1957 en Calvià: National Curriculum for England, IGCSE y A-Levels en un campus rural con instalaciones deportivas de primer nivel.",
     en: "Established British international school in Calvià operating since 1957: National Curriculum for England, IGCSEs, and A-Levels on a spacious countryside campus.",
@@ -100,13 +94,6 @@ export const baleares_international_college_sa_porrassa: ServiceItem = {
       "Hauseigene Mensa mit frischer und gesunder Verpflegung",
       "Umfangreiches Nachmittagsangebot: Reiten, Segeln, Robotik und Musik",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 420,
-      url: "https://www.google.com/maps/search/?api=1&query=Baleares%20International%20College%20BIC%20(Sa%20Porrassa%20-%20Calvi%C3%A0%20-%201957)%20Ctra.%20Cala%20Figuera%20a%20Sa%20Porrassa%2C%20s%2Fn%2C%2007181%20Calvi%C3%A0",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

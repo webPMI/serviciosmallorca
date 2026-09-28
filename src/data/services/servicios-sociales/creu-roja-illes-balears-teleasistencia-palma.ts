@@ -31,12 +31,6 @@ export const creu_roja_illes_balears_teleasistencia_palma: ServiceItem = {
   schedule: "Lunes a Viernes: 08:00 - 20:00 (Urgencias 24h)",
   image: "/images/services/creu-roja-illes-balears-teleasistencia-palma.jpg",
   gallery: ["/images/services/creu-roja-illes-balears-teleasistencia-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Creu%20Roja%20Illes%20Balears%20-%20Teleassist%C3%A8ncia%20%26%20Serveis%20Socials%20Palma%20Carrer%20de%20l'Arquitecte%20Benn%C3%A0ssar%2C%2073%2C%2007004%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Creu%20Roja%20Illes%20Balears%20-%20Teleassist%C3%A8ncia%20%26%20Serveis%20Socials%20Palma%20Carrer%20de%20l'Arquitecte%20Benn%C3%A0ssar%2C%2073%2C%2007004%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Creu%20Roja%20Illes%20Balears%20-%20Teleassist%C3%A8ncia%20%26%20Serveis%20Socials%20Palma%20Carrer%20de%20l'Arquitecte%20Benn%C3%A0ssar%2C%2073%2C%2007004%20Palma",
   shortDescription: {
     es: "Sede central de Cruz Roja en Baleares: servicio de teleasistencia domiciliaria 24h para personas mayores, ayuda humanitaria, voluntariado y apoyo a familias vulnerables.",
     en: "Balearic Red Cross headquarters in Palma: 24/7 home telecare for elderly citizens, humanitarian relief, volunteer network, and family assistance.",
@@ -100,13 +94,6 @@ export const creu_roja_illes_balears_teleasistencia_palma: ServiceItem = {
       "Erste-Hilfe-Kurse und Ausbildung von Rettungsschwimmern",
       "Ausgabe von Lebensmitteln und Unterstützung bedürftiger Familien",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 460,
-      url: "https://www.google.com/maps/search/?api=1&query=Creu%20Roja%20Illes%20Balears%20-%20Teleassist%C3%A8ncia%20%26%20Serveis%20Socials%20Palma%20Carrer%20de%20l'Arquitecte%20Benn%C3%A0ssar%2C%2073%2C%2007004%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

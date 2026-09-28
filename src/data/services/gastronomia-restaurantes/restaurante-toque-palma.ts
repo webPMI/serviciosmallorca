@@ -81,23 +81,6 @@ export const restauranteToquePalma: ServiceItem = {
     ca: "Un bistró familiar d'alta cuina belga-mediterrània a prop del Passeig Marítim de Palma.",
     de: "Ein familiengeführtes Gourmet-Bistro mit belgisch-mediterraner Küche in der Nähe des Paseo Marítimo in Palma.",
   },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 980,
-      url: "https://www.google.com/maps/search/?api=1&query=Restaurante+Toque+Palma",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Restaurante+Toque+Palma",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 85,
-      url: "https://www.bing.com/maps?q=Restaurante+Toque+Palma",
-    },
-    totalReviewsAggregated: 1065,
-    overallWeightedRating: 4.8,
-  },
   reviews: [],
   socialLinks: {
     instagram: "https://instagram.com/restaurantetoque",
@@ -120,9 +103,6 @@ export const restauranteToquePalma: ServiceItem = {
     },
   ],
   authorityProfiles: [],
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Restaurante+Toque+Palma",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante+Toque+Palma",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante+Toque+Palma",
   phone: "+34 971 28 87 08",
   whatsapp: "+34 971 28 87 08",
   email: "info@restaurantetoque.com",

@@ -29,8 +29,6 @@ export const PULA_GOLF_RESORT_SON_SERVERA: ServiceItem = {
   image: "/images/services/pula-golf-resort-son-servera.jpg",
   gallery: ["/images/services/pula-golf-resort-son-servera.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007010",
-  appleMapsUrl: "https://maps.apple.com/?q=Pula%20Golf%20Resort+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Pula%20Golf%20Resort+Mallorca",
   shortDescription: {
     es: "Sede de 8 torneos del PGA European Tour, rediseñado por José María Olazábal con hotel y spa.",
     en: "Host of 8 PGA European Tour events, redesigned by José María Olazábal with hotel & spa.",
@@ -94,13 +92,6 @@ export const PULA_GOLF_RESORT_SON_SERVERA: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 470,
-      url: "https://www.google.com/maps?cid=12007010",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

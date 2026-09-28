@@ -119,30 +119,13 @@ export const vandalPalma: ServiceItem = {
     en: "Established in 2017 in Palma's bohemian Santa Catalina district, Vandal arose from the creative synergy between Argentine chef Bernabe Caravotta and sommelier Sebastian Perez after global culinary travels. Their mission was to break fine-dining rules, creating an electric experience where drinks and food converse course by course.",
     ca: "Nascut el 2017 al barri de Santa Catalina a Palma, Vandal va néixer de la complicitat entre el xef Bernabé Caravotta i el sommelier Sebastián Pérez. El seu objectiu va ser trencar els convencionalismes de l'alta cuina i crear una experiència on menjar i beure dialoguen plat a plat.",
   },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.6,
-      reviewCount: 1650,
-      url: "https://www.google.com/maps/search/?api=1&query=Vandal%20Palma%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Vandal%20Palma%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.6,
-      reviewCount: 95,
-      url: "https://www.bing.com/maps?q=Vandal%20Palma%20Mallorca",
-    },
-    totalReviewsAggregated: 1745,
-    overallWeightedRating: 4.6,
-  },
   reviews: [
     {
       id: "rev-vp-1",
       authorName: "Ignacio P.",
       rating: 5,
       date: "2026-07-11",
-      platform: "google_maps",
+      platform: "direct",
       language: "es",
       comment:
         "Una de las experiencias gastronómicas más divertidas y sorprendentes de Palma. El tartar de atún y el maridaje con cócteles son sublimes.",
@@ -213,9 +196,6 @@ export const vandalPalma: ServiceItem = {
     },
   ],
   authorityProfiles: [],
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Vandal%20Palma%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Vandal%20Palma%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Vandal%20Palma%20Mallorca",
   phone: "+34 871 04 51 74",
   whatsapp: "+34 871 04 51 74",
   email: "info@vandalpalma.com",

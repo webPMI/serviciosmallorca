@@ -25,9 +25,6 @@ export const mallorcaGlobalCharter: ServiceItem = {
   whatsapp: "+34 676 00 48 28",
   email: "info@mallorcaglobalcharter.com",
   website: "https://mallorcaglobalcharter.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Mallorca+Global+Charter+Puerto+Portals",
-  appleMapsUrl: "https://maps.apple.com/?q=Mallorca+Global+Charter+Puerto+Portals",
-  bingMapsUrl: "https://www.bing.com/maps?q=Mallorca+Global+Charter+Puerto+Portals",
   schedule: "Lunes a Domingo: 08:30 - 21:00 (Temporada de Navegación)",
   lastVerifiedAt: "2026-08-25",
   createdAt: "2026-08-25",
@@ -183,22 +180,13 @@ export const mallorcaGlobalCharter: ServiceItem = {
       instagramHandle: "@mallorcaglobalcharter",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 78,
-      url: "https://www.google.com/maps/search/?api=1&query=Mallorca+Global+Charter",
-    },
-    totalReviewsAggregated: 78,
-    overallWeightedRating: 4.9,
-  },
   reviews: [
     {
       id: "mgc-rev-1",
       authorName: "Alexander von Berg",
       rating: 5,
       date: "2025-07-14",
-      platform: "google_maps",
+      platform: "direct",
       language: "en",
       comment:
         "Incredible charter experience from Puerto Portals to Portals Vells. The yacht was pristine and the captain made the day unforgettable.",
@@ -211,7 +199,7 @@ export const mallorcaGlobalCharter: ServiceItem = {
       authorName: "Clara Miralles",
       rating: 5,
       date: "2025-08-02",
-      platform: "google_maps",
+      platform: "direct",
       language: "es",
       comment:
         "Organizamos una salida familiar en catamarán por la bahía. Trato exquisito, puntualidad británica y un catering delicioso a bordo.",

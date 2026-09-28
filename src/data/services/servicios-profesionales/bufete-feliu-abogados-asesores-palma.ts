@@ -31,12 +31,6 @@ export const bufete_feliu_abogados_asesores_palma: ServiceItem = {
   schedule: "Lunes a Viernes: 09:00 - 18:30 | Sábado y Domingo: Cerrado",
   image: "/images/services/bufete-feliu-abogados-asesores-palma.jpg",
   gallery: ["/images/services/bufete-feliu-abogados-asesores-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Bufete%20Feliu%20Abogados%20%26%20Asesores%20Tributarios%20Palma%20Passeig%20de%20Mallorca%2C%2018%2C%2007012%20Palma%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Bufete%20Feliu%20Abogados%20%26%20Asesores%20Tributarios%20Palma%20Passeig%20de%20Mallorca%2C%2018%2C%2007012%20Palma%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Bufete%20Feliu%20Abogados%20%26%20Asesores%20Tributarios%20Palma%20Passeig%20de%20Mallorca%2C%2018%2C%2007012%20Palma%2C%20Illes%20Balears",
   shortDescription: {
     es: "Despacho multidisciplinar de abogados y economistas en Palma con más de 40 años de trayectoria, especializados en compraventa de inmuebles de lujo, derecho fiscal y planificación sucesoria internacional.",
     en: "Multidisciplinary law and tax firm in Palma with over 40 years of expertise, specializing in luxury real estate conveyancing, tax planning, and international estate succession.",
@@ -100,13 +94,6 @@ export const bufete_feliu_abogados_asesores_palma: ServiceItem = {
       "Steuerberatung für Residenten und Nicht-Residenten: Nicht-Residenten-Steuer (Modell 210) und Vermögensteuer",
       "Abwicklung internationaler Erbfälle mit Vermögenswerten auf Mallorca und Nachlassoptimierung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 220,
-      url: "https://www.google.com/maps/search/?api=1&query=Bufete%20Feliu%20Abogados%20%26%20Asesores%20Tributarios%20Palma%20Passeig%20de%20Mallorca%2C%2018%2C%2007012%20Palma%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

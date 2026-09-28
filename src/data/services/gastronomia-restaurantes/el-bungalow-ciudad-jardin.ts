@@ -28,9 +28,6 @@ export const elBungalowCiudadJardin: ServiceItem = {
   email: "info@rtebungalow.com",
   website: "https://rtebungalow.com",
   menuUrl: "https://rtebungalow.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Restaurante+El+Bungalow+Ciudad+Jardin+Palma+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante+El+Bungalow+Palma",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante+El+Bungalow+Palma",
   tags: ["zona:palma", "zona:ciutat-jardi", "product:premium", "mod:en-local", "aud:parejas", "temps:todo-el-ano"],
   capabilities: {
     terrace: true,

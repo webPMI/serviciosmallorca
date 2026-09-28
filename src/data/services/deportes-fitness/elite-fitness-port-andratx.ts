@@ -29,8 +29,6 @@ export const ELITE_FITNESS_PORT_ANDRATX: ServiceItem = {
   image: "/images/sports/elite-fitness-port-andratx.jpg",
   gallery: ["/images/sports/elite-fitness-port-andratx.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007050",
-  appleMapsUrl: "https://maps.apple.com/?q=Elite%20Fitness%20Port%20d'Andratx+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Elite%20Fitness%20Port%20d'Andratx+Mallorca",
   shortDescription: {
     es: "Gimnasio boutique en el puerto de Port d'Andratx con maquinaria premium y entrenamiento funcional.",
     en: "Boutique gym at the Port d'Andratx marina with premium gear and functional fitness.",
@@ -94,13 +92,6 @@ export const ELITE_FITNESS_PORT_ANDRATX: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 210,
-      url: "https://www.google.com/maps?cid=12007050",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

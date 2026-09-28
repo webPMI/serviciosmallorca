@@ -76,10 +76,6 @@ export const limpiezasMallorcaBrillPalma: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Limpiezas%20Mallorca%20Brill%20(Servicios%20Integrales)%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Limpiezas%20Mallorca%20Brill%20(Servicios%20Integrales)%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Limpiezas%20Mallorca%20Brill%20(Servicios%20Integrales)%20Mallorca",
   pricing: {
     startingPrice: "Presupuesto y tarifas personalizadas",
     rateType: "tiered",
@@ -106,21 +102,4 @@ export const limpiezasMallorcaBrillPalma: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 580,
-      url: "https://www.google.com/maps/search/?api=1&query=Limpiezas%20Mallorca%20Brill%20(Servicios%20Integrales)%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Limpiezas%20Mallorca%20Brill%20(Servicios%20Integrales)%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.7,
-      reviewCount: 58,
-      url: "https://www.bing.com/maps?q=Limpiezas%20Mallorca%20Brill%20(Servicios%20Integrales)%20Mallorca",
-    },
-    totalReviewsAggregated: 638,
-    overallWeightedRating: 4.8,
-  },
 };

@@ -28,9 +28,6 @@ export const bodegasSebastiaPastorSantaMaria: ServiceItem = {
   email: "info@sebastiapastor.com",
   website: "https://www.sebastiapastor.com",
   menuUrl: "https://www.sebastiapastor.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Bodegas+Sebastia+Pastor+Santa+Maria+del+Cami+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Bodegas+Sebastia+Pastor+Santa+Maria",
-  bingMapsUrl: "https://www.bing.com/maps?q=Bodegas+Sebastia+Pastor+Santa+Maria",
   tags: [
     "zona:raiguer-pla",
     "zona:santa-maria-del-cami",

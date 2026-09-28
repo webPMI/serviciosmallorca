@@ -31,12 +31,6 @@ export const mapfre_direccion_territorial_baleares_palma: ServiceItem = {
   schedule: "Lunes a Viernes: 09:00 - 14:00, 16:00 - 19:00",
   image: "/images/services/mapfre-direccion-territorial-baleares-palma.jpg",
   gallery: ["/images/services/mapfre-direccion-territorial-baleares-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Mapfre%20Direcci%C3%B3n%20Territorial%20Baleares%20-%20Seguros%20%26%20Hogar%20Cam%C3%AD%20dels%20Reis%2C%20308%2C%2007010%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Mapfre%20Direcci%C3%B3n%20Territorial%20Baleares%20-%20Seguros%20%26%20Hogar%20Cam%C3%AD%20dels%20Reis%2C%20308%2C%2007010%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Mapfre%20Direcci%C3%B3n%20Territorial%20Baleares%20-%20Seguros%20%26%20Hogar%20Cam%C3%AD%20dels%20Reis%2C%20308%2C%2007010%20Palma",
   shortDescription: {
     es: "Sede territorial de Mapfre en Palma: primera aseguradora de Baleares en pólizas de hogar, autos, comunidades de propietarios y salud.",
     en: "Mapfre territorial headquarters in Palma: leading insurer in the Balearics for home, auto, homeowner associations, and health insurance.",
@@ -100,13 +94,6 @@ export const mapfre_direccion_territorial_baleares_palma: ServiceItem = {
       "Versicherungen für Eigentümergemeinschaften (Comunidades)",
       "Lebensversicherungen, Rentenpläne und Kapitalanlagen",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.6,
-      reviewCount: 540,
-      url: "https://www.google.com/maps/search/?api=1&query=Mapfre%20Direcci%C3%B3n%20Territorial%20Baleares%20-%20Seguros%20%26%20Hogar%20Cam%C3%AD%20dels%20Reis%2C%20308%2C%2007010%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

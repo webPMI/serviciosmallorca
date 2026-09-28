@@ -21,9 +21,6 @@ export const carniceriaCanToni: ServiceItem = {
   whatsapp: "+34 679 40 50 60",
   email: "info@cantonidespla.com",
   website: "https://cantonidespla.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Carnisseria%20Can%20Toni%20Porreres",
-  appleMapsUrl: "https://maps.apple.com/?q=Carnisseria%20Can%20Toni%20Porreres&ll=39.5165,3.0230",
-  bingMapsUrl: "https://www.bing.com/maps?where1=Carnisseria%20Can%20Toni%20Porreres",
   coordinates: { lat: 39.5165, lng: 3.023 },
   schedule: "Lunes a Sábado: 08:30 - 14:00 | 17:00 - 20:00 (Domingos Cerrado)",
   lastVerifiedAt: "2026-08-25",
@@ -130,30 +127,13 @@ export const carniceriaCanToni: ServiceItem = {
       instagramHandle: "@cantonidespla",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 210,
-      url: "https://www.google.com/maps/search/?api=1&query=Carnisseria%20Can%20Toni%20Porreres",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Carnisseria%20Can%20Toni%20Porreres&ll=39.5165,3.0230",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 210,
-      url: "https://www.bing.com/maps?where1=Carnisseria%20Can%20Toni%20Porreres",
-    },
-    totalReviewsAggregated: 210,
-    overallWeightedRating: 4.8,
-  },
   reviews: [
     {
       id: "rev-ctp-1",
       authorName: "Guillem Barceló",
       rating: 5,
       date: "2025-05-17",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
       comment:
         "La sobrassada de Can Toni a Porreres és de les millors de Mallorca. El camaiot i el xot són de primera qualitat. Tracte amable i professional.",
@@ -164,7 +144,7 @@ export const carniceriaCanToni: ServiceItem = {
       authorName: "Dirk Zimmermann",
       rating: 5,
       date: "2025-06-25",
-      platform: "google_maps",
+      platform: "direct",
       language: "en",
       comment:
         "Top-notch butcher in Porreres! The cured sobrassada and ribeye steaks were sensational for our finca dinner. Vacuum-packed perfectly for transport.",

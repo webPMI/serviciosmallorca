@@ -28,9 +28,6 @@ export const bodegasVinyesMortitx: ServiceItem = {
   email: "info@vinyesmortitx.com",
   website: "https://www.vinyesmortitx.com",
   menuUrl: "https://www.vinyesmortitx.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Vinyes+Mortitx+Escorca+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Vinyes+Mortitx+Escorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Vinyes+Mortitx+Escorca",
   tags: ["zona:tramuntana", "zona:escorca", "product:premium", "mod:en-local", "aud:parejas", "temps:todo-el-ano"],
   capabilities: {
     parkingAvailable: true,

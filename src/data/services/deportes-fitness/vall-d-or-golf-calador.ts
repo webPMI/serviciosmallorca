@@ -29,8 +29,6 @@ export const VALL_D_OR_GOLF_CALADOR: ServiceItem = {
   image: "/images/services/vall-d-or-golf-calador.jpg",
   gallery: ["/images/services/vall-d-or-golf-calador.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007012",
-  appleMapsUrl: "https://maps.apple.com/?q=Vall%20d'Or%20Golf+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Vall%20d'Or%20Golf+Mallorca",
   shortDescription: {
     es: "Campo de 18 hoyos par 71 con vistas panorámicas al mar Mediterráneo y a Portocolom.",
     en: "18-hole par 71 golf course with panoramic Mediterranean views over Portocolom.",
@@ -94,13 +92,6 @@ export const VALL_D_OR_GOLF_CALADOR: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 520,
-      url: "https://www.google.com/maps?cid=12007012",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

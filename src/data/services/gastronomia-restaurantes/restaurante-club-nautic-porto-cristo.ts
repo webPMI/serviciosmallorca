@@ -28,9 +28,6 @@ export const restauranteClubNauticPortoCristo: ServiceItem = {
   email: "eventos@cnportocristo.com",
   website: "https://www.cnportocristo.com",
   menuUrl: "https://www.cnportocristo.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Restaurante+Sa+Cantina+Club+Nautic+Porto+Cristo+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante+Club+Nautic+Porto+Cristo",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante+Club+Nautic+Porto+Cristo",
   tags: [
     "zona:manacor-llevant",
     "zona:porto-cristo",

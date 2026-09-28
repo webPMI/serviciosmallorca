@@ -29,8 +29,6 @@ export const MALLORCA_CLIMBING_SCHOOL_VALLDEMOSSA: ServiceItem = {
   image: "/images/sports/mallorca-climbing-school-valldemossa.jpg",
   gallery: ["/images/sports/mallorca-climbing-school-valldemossa.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007084",
-  appleMapsUrl: "https://maps.apple.com/?q=Mallorca%20Climbing%20School+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Mallorca%20Climbing%20School+Mallorca",
   shortDescription: {
     es: "Guías oficiales de escalada en roca en la Serra de Tramuntana, psicobloc en acantilados y cursos.",
     en: "Certified rock climbing guides in Tramuntana mountains, deep water soloing (psicobloc), and courses.",
@@ -94,13 +92,6 @@ export const MALLORCA_CLIMBING_SCHOOL_VALLDEMOSSA: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 190,
-      url: "https://www.google.com/maps?cid=12007084",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

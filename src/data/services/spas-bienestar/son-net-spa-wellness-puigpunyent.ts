@@ -29,8 +29,6 @@ export const son_net_spa_wellness_puigpunyent: ServiceItem = {
   image: "/images/spas/son-net-spa-wellness-puigpunyent.jpg",
   gallery: ["/images/spas/son-net-spa-wellness-puigpunyent.jpg", "/images/categories/salud.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=13008022",
-  appleMapsUrl: "https://maps.apple.com/?q=Son%20Net%20Spa%20%26%20Wellness+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Son%20Net%20Spa%20%26%20Wellness+Mallorca",
   shortDescription: {
     es: "Santuario de bienestar en un palacio señorial del siglo XVII en Puigpunyent con tratamientos holísticos de autor.",
     en: "Wellness sanctuary in a 17th-century aristocratic estate in Puigpunyent featuring bespoke holistic rituals.",
@@ -94,13 +92,6 @@ export const son_net_spa_wellness_puigpunyent: ServiceItem = {
       "Wellness- und Regenerationstherapien",
       "Kontinuierliche medizinische Nachbetreuung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 260,
-      url: "https://www.google.com/maps?cid=13008022",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

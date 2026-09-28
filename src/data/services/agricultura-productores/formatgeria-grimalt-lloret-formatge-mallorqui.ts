@@ -31,12 +31,6 @@ export const formatgeria_grimalt_lloret_formatge_mallorqui: ServiceItem = {
   schedule: "Lunes a Viernes: 09:00 - 13:30, 16:30 - 19:30; Sábado: 09:00 - 13:30",
   image: "/images/services/formatgeria-grimalt-lloret-formatge-mallorqui.jpg",
   gallery: ["/images/services/formatgeria-grimalt-lloret-formatge-mallorqui.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Formatgeria%20Grimalt%20(Lloret%20de%20Vistalegre)%20-%20Formatge%20Mallorqu%C3%AD%20Carrer%20de%20Sant%20Dom%C3%A8nec%2C%2016%2C%2007518%20Lloret%20de%20Vistalegre",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Formatgeria%20Grimalt%20(Lloret%20de%20Vistalegre)%20-%20Formatge%20Mallorqu%C3%AD%20Carrer%20de%20Sant%20Dom%C3%A8nec%2C%2016%2C%2007518%20Lloret%20de%20Vistalegre",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Formatgeria%20Grimalt%20(Lloret%20de%20Vistalegre)%20-%20Formatge%20Mallorqu%C3%AD%20Carrer%20de%20Sant%20Dom%C3%A8nec%2C%2016%2C%2007518%20Lloret%20de%20Vistalegre",
   shortDescription: {
     es: "Tradición quesera en el corazón del Pla de Mallorca desde hace más de 70 años: queso mallorquín tierno, semicurado y curado frotado con romero.",
     en: "Heritage cheese dairy in the heart of Pla de Mallorca for over 70 years: tender, semi-cured, and aged cheeses rubbed with fresh rosemary.",
@@ -100,13 +94,6 @@ export const formatgeria_grimalt_lloret_formatge_mallorqui: ServiceItem = {
       "Feinkostpakete kombiniert mit original mallorquinischer Sobrassada",
       "Belieferung von Inselgastronomie und gehobenen Boutique-Hotels",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 220,
-      url: "https://www.google.com/maps/search/?api=1&query=Formatgeria%20Grimalt%20(Lloret%20de%20Vistalegre)%20-%20Formatge%20Mallorqu%C3%AD%20Carrer%20de%20Sant%20Dom%C3%A8nec%2C%2016%2C%2007518%20Lloret%20de%20Vistalegre",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

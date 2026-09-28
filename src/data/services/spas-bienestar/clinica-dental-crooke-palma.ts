@@ -76,10 +76,6 @@ export const clinicaDentalCrookePalma: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica%20Dental%20Crooke%20%26%20Laguna%20Palma%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Cl%C3%ADnica%20Dental%20Crooke%20%26%20Laguna%20Palma%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Cl%C3%ADnica%20Dental%20Crooke%20%26%20Laguna%20Palma%20Mallorca",
   pricing: {
     startingPrice: "Primera consulta y TAC 3D diagnóstico gratuito",
     rateType: "tiered",
@@ -106,21 +102,4 @@ export const clinicaDentalCrookePalma: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 520,
-      url: "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica%20Dental%20Crooke%20%26%20Laguna%20Palma%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Cl%C3%ADnica%20Dental%20Crooke%20%26%20Laguna%20Palma%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 52,
-      url: "https://www.bing.com/maps?q=Cl%C3%ADnica%20Dental%20Crooke%20%26%20Laguna%20Palma%20Mallorca",
-    },
-    totalReviewsAggregated: 572,
-    overallWeightedRating: 4.9,
-  },
 };

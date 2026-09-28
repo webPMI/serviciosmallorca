@@ -29,8 +29,6 @@ export const PADEL_INDOOR_MANACOR: ServiceItem = {
   image: "/images/sports/padel-indoor-manacor.jpg",
   gallery: ["/images/sports/padel-indoor-manacor.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007027",
-  appleMapsUrl: "https://maps.apple.com/?q=P%C3%A0del%20Indoor%20Manacor+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=P%C3%A0del%20Indoor%20Manacor+Mallorca",
   shortDescription: {
     es: "Centro de pádel indoor de referencia en Manacor con 6 pistas cubiertas, iluminación LED y escuela.",
     en: "Premier indoor padel center in Manacor with 6 covered courts, LED lighting, and academy.",
@@ -94,13 +92,6 @@ export const PADEL_INDOOR_MANACOR: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 310,
-      url: "https://www.google.com/maps?cid=12007027",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

@@ -21,9 +21,6 @@ export const piscinasPonentAndratx: ServiceItem = {
   whatsapp: "+34 689 12 34 50",
   email: "info@piscinasponent.com",
   website: "https://piscinasponentandratx.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Piscinas%20Spas%20Ponent%20Andratx",
-  appleMapsUrl: "https://maps.apple.com/?q=Piscinas%20Spas%20Ponent%20Andratx&ll=39.5760,2.4210",
-  bingMapsUrl: "https://www.bing.com/maps?where1=Piscinas%20Spas%20Ponent%20Andratx",
   coordinates: { lat: 39.576, lng: 2.421 },
   schedule: "Lunes a Viernes: 08:00 - 18:30 (Servicio de Mantenimiento y Guardias en Villas)",
   lastVerifiedAt: "2026-08-25",
@@ -131,30 +128,13 @@ export const piscinasPonentAndratx: ServiceItem = {
       instagramHandle: "@piscinasponent",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 140,
-      url: "https://www.google.com/maps/search/?api=1&query=Piscinas%20Spas%20Ponent%20Andratx",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Piscinas%20Spas%20Ponent%20Andratx&ll=39.5760,2.4210",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 140,
-      url: "https://www.bing.com/maps?where1=Piscinas%20Spas%20Ponent%20Andratx",
-    },
-    totalReviewsAggregated: 140,
-    overallWeightedRating: 4.8,
-  },
   reviews: [
     {
       id: "rev-pspa-1",
       authorName: "Antoni Palmer",
       rating: 5,
       date: "2025-05-18",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
       comment:
         "Molt bon servei a Port d'Andratx. Varen instal·lar el clorador salí i la bomba de calor a la nostra piscina. L'aigua està cristal·lina tot l'any i el servei setmanal és immillorable.",
@@ -165,7 +145,7 @@ export const piscinasPonentAndratx: ServiceItem = {
       authorName: "Markus Zimmermann",
       rating: 5,
       date: "2025-06-25",
-      platform: "google_maps",
+      platform: "direct",
       language: "de",
       comment:
         "Perfekter Poolservice in Port d'Andratx! Sehr zuverlässige wöchentliche Pflege unserer Villa-Poolanlage. Kristallklares Salzwasser und exzellente deutsche Betreuung.",

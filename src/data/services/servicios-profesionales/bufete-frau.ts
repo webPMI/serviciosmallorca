@@ -21,9 +21,6 @@ export const bufeteFrau: ServiceItem = {
   whatsapp: "+34 971 22 80 36",
   email: "info@bufetefrau.com",
   website: "https://bufetefrau.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Bufete+Frau+Abogados+Palma+Sant+Miquel",
-  appleMapsUrl: "https://maps.apple.com/?q=Bufete+Frau+Palma",
-  bingMapsUrl: "https://www.bing.com/maps?q=Bufete+Frau+Abogados",
   coordinates: {
     lat: 39.5746,
     lng: 2.6528,
@@ -182,22 +179,13 @@ export const bufeteFrau: ServiceItem = {
       specialty: "Derecho Inmobiliario y Patrimonial Internacional",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 114,
-      url: "https://www.google.com/maps/search/?api=1&query=Bufete+Frau+Abogados+Palma+Sant+Miquel",
-    },
-    totalReviewsAggregated: 114,
-    overallWeightedRating: 4.8,
-  },
   reviews: [
     {
       id: "rev-frau-1",
       authorName: "James Thornton",
       rating: 5,
       date: "2025-06-11",
-      platform: "google_maps",
+      platform: "direct",
       language: "en",
       comment:
         "José Frau and his team handled our villa purchase in Port d'Andratx with utter precision and clarity. Outstanding bilingual legal advice.",
@@ -208,7 +196,7 @@ export const bufeteFrau: ServiceItem = {
       authorName: "Marta Alcover",
       rating: 5,
       date: "2025-03-24",
-      platform: "google_maps",
+      platform: "direct",
       language: "es",
       comment:
         "Grandes profesionales. Nos resolvieron una herencia compleja con bienes internacionales de manera rápida y transparente.",

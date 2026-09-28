@@ -29,8 +29,6 @@ export const PALMA_RACKET_CLUB_SON_RAPINYA: ServiceItem = {
   image: "/images/sports/palma-racket-club-son-rapinya.jpg",
   gallery: ["/images/sports/palma-racket-club-son-rapinya.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007019",
-  appleMapsUrl: "https://maps.apple.com/?q=Palma%20Racket%20Club+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Palma%20Racket%20Club+Mallorca",
   shortDescription: {
     es: "Club deportivo y social con solera en Son Rapinya: tenis en tierra batida, pádel de cristal y piscina.",
     en: "Charming traditional racquet club in Son Rapinya: red clay tennis, glass padel, and summer pool.",
@@ -94,13 +92,6 @@ export const PALMA_RACKET_CLUB_SON_RAPINYA: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 460,
-      url: "https://www.google.com/maps?cid=12007019",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

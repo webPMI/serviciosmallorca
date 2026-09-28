@@ -31,12 +31,6 @@ export const colegio_nuestra_senora_montesion_palma: ServiceItem = {
   schedule: "Lunes a Viernes de 08:00 a 17:30",
   image: "/images/services/colegio-nuestra-senora-montesion-palma.jpg",
   gallery: ["/images/services/colegio-nuestra-senora-montesion-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Colegio%20Nuestra%20Se%C3%B1ora%20de%20Montesi%C3%B3n%20Palma%20(1561)%20Carrer%20de%20Monti-Si%C3%B3n%2C%2024%2C%2007001%20Palma%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Colegio%20Nuestra%20Se%C3%B1ora%20de%20Montesi%C3%B3n%20Palma%20(1561)%20Carrer%20de%20Monti-Si%C3%B3n%2C%2024%2C%2007001%20Palma%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Colegio%20Nuestra%20Se%C3%B1ora%20de%20Montesi%C3%B3n%20Palma%20(1561)%20Carrer%20de%20Monti-Si%C3%B3n%2C%2024%2C%2007001%20Palma%2C%20Illes%20Balears",
   shortDescription: {
     es: "Fundado en 1561, Montesión es el colegio más antiguo de Mallorca. Modelo pedagógico ignaciano jesuita de excelencia académica y multilingüismo en el corazón de Palma.",
     en: "Founded in 1561, Montesión is Mallorca's oldest school. Ignatian Jesuit pedagogical excellence fostering bilingualism, integrity, and academic rigor in central Palma.",
@@ -106,13 +100,6 @@ export const colegio_nuestra_senora_montesion_palma: ServiceItem = {
     en: ["American Dual Diploma", "Personalized Ignatian education", "Experimental sciences & robotics"],
     ca: ["Batxillerat Dual Americà", "Educació ignasiana personalitzada", "Ciències experimentals i robòtica"],
     de: ["Amerikanisches Duales Abitur", "Persönlichkeitsbildende Pädagogik", "MINT-Fächer und Robotik"],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 310,
-      url: "https://www.google.com/maps/search/?api=1&query=Colegio%20Nuestra%20Se%C3%B1ora%20de%20Montesi%C3%B3n%20Palma%20(1561)%20Carrer%20de%20Monti-Si%C3%B3n%2C%2024%2C%2007001%20Palma%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

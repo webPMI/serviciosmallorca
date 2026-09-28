@@ -76,10 +76,6 @@ export const monlexAbogadosTuristicoPalma: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Monlex%20Abogados%20%26%20Hospitality%20Law%20Palma%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Monlex%20Abogados%20%26%20Hospitality%20Law%20Palma%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Monlex%20Abogados%20%26%20Hospitality%20Law%20Palma%20Mallorca",
   pricing: {
     startingPrice: "Asesoramiento legal corporativo",
     rateType: "custom_quote",
@@ -106,21 +102,4 @@ export const monlexAbogadosTuristicoPalma: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 310,
-      url: "https://www.google.com/maps/search/?api=1&query=Monlex%20Abogados%20%26%20Hospitality%20Law%20Palma%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Monlex%20Abogados%20%26%20Hospitality%20Law%20Palma%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 31,
-      url: "https://www.bing.com/maps?q=Monlex%20Abogados%20%26%20Hospitality%20Law%20Palma%20Mallorca",
-    },
-    totalReviewsAggregated: 341,
-    overallWeightedRating: 4.9,
-  },
 };

@@ -76,9 +76,6 @@ export const oliSolivellasAlcudia: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Oli%20Solivellas%20-%20Es%20Guinyent%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Oli%20Solivellas%20-%20Es%20Guinyent%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Oli%20Solivellas%20-%20Es%20Guinyent%20Mallorca",
   pricing: {
     startingPrice: "Aceite virgen extra 500ml desde 16€",
     rateType: "fixed",
@@ -105,21 +102,4 @@ export const oliSolivellasAlcudia: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 360,
-      url: "https://www.google.com/maps/search/?api=1&query=Oli%20Solivellas%20-%20Es%20Guinyent%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Oli%20Solivellas%20-%20Es%20Guinyent%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 36,
-      url: "https://www.bing.com/maps?q=Oli%20Solivellas%20-%20Es%20Guinyent%20Mallorca",
-    },
-    totalReviewsAggregated: 396,
-    overallWeightedRating: 4.9,
-  },
 };

@@ -28,9 +28,6 @@ export const bodegasSonRamonLlubi: ServiceItem = {
   email: "bodega@sonramon.com",
   website: "https://www.sonramon.com",
   menuUrl: "https://www.sonramon.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Bodegas+Son+Ramon+Llubi+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Bodegas+Son+Ramon+Llubi",
-  bingMapsUrl: "https://www.bing.com/maps?q=Bodegas+Son+Ramon+Llubi",
   tags: ["zona:raiguer-pla", "zona:llubi", "product:premium", "mod:en-local", "aud:parejas", "temps:todo-el-ano"],
   capabilities: {
     parkingAvailable: true,

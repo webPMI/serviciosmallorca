@@ -31,12 +31,6 @@ export const ceramica_sa_roca_llisa_portol: ServiceItem = {
   schedule: "Lunes a Viernes: 08:00 - 13:00, 15:00 - 19:00",
   image: "/images/services/ceramica-sa-roca-llisa-portol.jpg",
   gallery: ["/images/services/ceramica-sa-roca-llisa-portol.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Cer%C3%A0mica%20Sa%20Roca%20Llisa%20P%C3%B2rtol%201861%20Carrer%20Major%2C%20115%2C%2007141%20P%C3%B2rtol%2C%20Marratx%C3%AD",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Cer%C3%A0mica%20Sa%20Roca%20Llisa%20P%C3%B2rtol%201861%20Carrer%20Major%2C%20115%2C%2007141%20P%C3%B2rtol%2C%20Marratx%C3%AD",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Cer%C3%A0mica%20Sa%20Roca%20Llisa%20P%C3%B2rtol%201861%20Carrer%20Major%2C%20115%2C%2007141%20P%C3%B2rtol%2C%20Marratx%C3%AD",
   shortDescription: {
     es: "Taller alfarero histórico en Pòrtol desde 1861: greixoneres de barro refractario, vajillas esmaltadas y piezas cerámicas tradicionales.",
     en: "Historic pottery workshop in Pòrtol since 1861: refractory clay cooking dishes, glazed tableware, and classic ceramics.",
@@ -100,13 +94,6 @@ export const ceramica_sa_roca_llisa_portol: ServiceItem = {
       "Pflanztöpfe, Krüge und Terrakotta für Gärten",
       "Werkstattbesuche mit Vorführung an der Töpferscheibe",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 88,
-      url: "https://www.google.com/maps/search/?api=1&query=Cer%C3%A0mica%20Sa%20Roca%20Llisa%20P%C3%B2rtol%201861%20Carrer%20Major%2C%20115%2C%2007141%20P%C3%B2rtol%2C%20Marratx%C3%AD",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

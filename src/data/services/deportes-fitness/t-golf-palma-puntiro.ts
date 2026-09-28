@@ -29,8 +29,6 @@ export const T_GOLF_PALMA_PUNTIRO: ServiceItem = {
   image: "/images/services/t-golf-palma-puntiro.jpg",
   gallery: ["/images/services/t-golf-palma-puntiro.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007006",
-  appleMapsUrl: "https://maps.apple.com/?q=T%20Golf%20Palma%20Puntir%C3%B3+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=T%20Golf%20Palma%20Puntir%C3%B3+Mallorca",
   shortDescription: {
     es: "Único campo en Mallorca diseñado por la prestigiosa firma Nicklaus Design (18 hoyos par 71).",
     en: "The only course in Mallorca designed by Nicklaus Design (18 holes par 71).",
@@ -94,13 +92,6 @@ export const T_GOLF_PALMA_PUNTIRO: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 390,
-      url: "https://www.google.com/maps?cid=12007006",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

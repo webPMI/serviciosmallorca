@@ -28,9 +28,6 @@ export const bodegasCanAxartellPollenca: ServiceItem = {
   email: "info@canaxartell.com",
   website: "https://canaxartell.com",
   menuUrl: "https://canaxartell.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Bodegas+Can+Axartell+Pollenca+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Bodegas+Can+Axartell+Pollenca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Bodegas+Can+Axartell+Pollenca",
   tags: [
     "zona:alcudia-pollensa",
     "zona:pollenca",

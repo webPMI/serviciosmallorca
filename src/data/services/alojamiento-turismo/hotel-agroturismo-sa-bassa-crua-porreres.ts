@@ -31,12 +31,6 @@ export const hotel_agroturismo_sa_bassa_crua_porreres: ServiceItem = {
   schedule: "Recepción: 08:00 - 22:00 (Check-in online disponible)",
   image: "/images/services/hotel-agroturismo-sa-bassa-crua-porreres.jpg",
   gallery: ["/images/services/hotel-agroturismo-sa-bassa-crua-porreres.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Agroturismo%20Sa%20Bassa%20Cr%C3%BAa%20Porreres%20Cam%C3%AD%20de%20Sa%20Bassa%20Cr%C3%BAa%2C%20s%2Fn%2C%2007260%20Porreres",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Agroturismo%20Sa%20Bassa%20Cr%C3%BAa%20Porreres%20Cam%C3%AD%20de%20Sa%20Bassa%20Cr%C3%BAa%2C%20s%2Fn%2C%2007260%20Porreres",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Agroturismo%20Sa%20Bassa%20Cr%C3%BAa%20Porreres%20Cam%C3%AD%20de%20Sa%20Bassa%20Cr%C3%BAa%2C%20s%2Fn%2C%2007260%20Porreres",
   shortDescription: {
     es: "Finca rústica del siglo XVII reconvertida en agroturismo exclusivo con piscina exterior, huerto ecológico y suites con terraza privada.",
     en: "17th-century historic country estate converted into an exclusive agrotourism retreat with pool, organic farm, and private suites.",
@@ -100,13 +94,6 @@ export const hotel_agroturismo_sa_bassa_crua_porreres: ServiceItem = {
       "Private Degustations-Abendessen auf Anfrage",
       "Freiluft-Massagen und Wellness-Anwendungen",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 140,
-      url: "https://www.google.com/maps/search/?api=1&query=Agroturismo%20Sa%20Bassa%20Cr%C3%BAa%20Porreres%20Cam%C3%AD%20de%20Sa%20Bassa%20Cr%C3%BAa%2C%20s%2Fn%2C%2007260%20Porreres",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

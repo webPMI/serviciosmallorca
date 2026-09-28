@@ -100,8 +100,5 @@ export const portDeSollerMarinaService: ServiceItem = {
     ],
   },
   amenities: ["wifi", "parking_available", "wheelchair_accessible"],
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Port+de+Soller+Marina+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Port+de+Soller+Marina+Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Port+de+Soller+Marina+Mallorca",
   confidenceScore: 98,
 };

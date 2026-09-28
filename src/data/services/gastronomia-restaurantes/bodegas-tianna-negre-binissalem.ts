@@ -28,9 +28,6 @@ export const bodegasTiannaNegreBinissalem: ServiceItem = {
   email: "visitas@tiannanegre.com",
   website: "https://tiannanegre.com",
   menuUrl: "https://tiannanegre.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Celler+Tianna+Negre+Binissalem+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Celler+Tianna+Negre+Binissalem",
-  bingMapsUrl: "https://www.bing.com/maps?q=Celler+Tianna+Negre+Binissalem",
   tags: ["zona:raiguer-pla", "zona:binissalem", "product:premium", "mod:en-local", "aud:parejas", "temps:todo-el-ano"],
   capabilities: {
     parkingAvailable: true,

@@ -76,9 +76,6 @@ export const sunseekerCharterMallorcaPortals: ServiceItem = {
       close: "20:00",
     },
   },
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Sunseeker%20Mallorca%20Yacht%20Charter%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Sunseeker%20Mallorca%20Yacht%20Charter%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Sunseeker%20Mallorca%20Yacht%20Charter%20Mallorca",
   pricing: {
     startingPrice: "Chárter de día desde 2.400€",
     rateType: "tiered",
@@ -105,21 +102,4 @@ export const sunseekerCharterMallorcaPortals: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 420,
-      url: "https://www.google.com/maps/search/?api=1&query=Sunseeker%20Mallorca%20Yacht%20Charter%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Sunseeker%20Mallorca%20Yacht%20Charter%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 42,
-      url: "https://www.bing.com/maps?q=Sunseeker%20Mallorca%20Yacht%20Charter%20Mallorca",
-    },
-    totalReviewsAggregated: 462,
-    overallWeightedRating: 4.9,
-  },
 };

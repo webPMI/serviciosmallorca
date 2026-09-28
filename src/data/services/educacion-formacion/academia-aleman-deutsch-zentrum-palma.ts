@@ -28,10 +28,6 @@ export const academia_aleman_deutsch_zentrum_palma: ServiceItem = {
   schedule: "Lunes a Viernes: 08:30 - 21:00 | Sábado: 09:00 - 13:30",
   image: "/images/services/academia-aleman-deutsch-zentrum-palma.jpg",
   gallery: ["/images/services/academia-aleman-deutsch-zentrum-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Academia+Alem%C3%A1n+Deutsch+Zentrum+Palma+Joan+Mir%C3%B3+55",
-  appleMapsUrl: "https://maps.apple.com/?q=Academia+Aleman+Deutsch+Zentrum+Palma",
-  bingMapsUrl: "https://bing.com/maps?q=Academia+Aleman+Deutsch+Zentrum+Palma",
   shortDescription: {
     es: "Academia de alemán en Palma con profesores nativos, preparación oficial para exámenes Goethe-Institut y alemán para el sector hostelero y turístico de Mallorca.",
     en: "German language academy in Palma with native teachers, official Goethe-Institut exam preparation, and German for Mallorca's hospitality and tourism sector.",
@@ -95,13 +91,6 @@ export const academia_aleman_deutsch_zentrum_palma: ServiceItem = {
       "Berufsdeutsch für Gastgewerbe, Tourismus und Hotelservice",
       "Einzelstunden für Konversation und personalisiertes Tutoring",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 187,
-      url: "https://www.google.com/maps/search/?api=1&query=Academia+Alem%C3%A1n+Deutsch+Zentrum+Palma",
-    },
   },
   createdAt: "2026-09-05",
   lastUpdatedAt: "2026-09-05",

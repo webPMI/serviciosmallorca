@@ -29,8 +29,6 @@ export const PALMA_BOXING_CLUB_SON_ARMADAMS: ServiceItem = {
   image: "/images/sports/palma-boxing-club-son-armadams.jpg",
   gallery: ["/images/sports/palma-boxing-club-son-armadams.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007055",
-  appleMapsUrl: "https://maps.apple.com/?q=Palma%20Boxing%20Club+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Palma%20Boxing%20Club+Mallorca",
   shortDescription: {
     es: "Club tradicional de boxeo inglés, kickboxing y defensa personal con ring de competición.",
     en: "Traditional English boxing, kickboxing, and self-defense club with competition ring.",
@@ -94,13 +92,6 @@ export const PALMA_BOXING_CLUB_SON_ARMADAMS: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 210,
-      url: "https://www.google.com/maps?cid=12007055",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

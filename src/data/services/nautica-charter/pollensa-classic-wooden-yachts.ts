@@ -76,10 +76,6 @@ export const pollensaClassicWoodenYachts: ServiceItem = {
       close: "20:00",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Classic%20Wooden%20Yachts%20%26%20Llauts%20Pollen%C3%A7a%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Classic%20Wooden%20Yachts%20%26%20Llauts%20Pollen%C3%A7a%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Classic%20Wooden%20Yachts%20%26%20Llauts%20Pollen%C3%A7a%20Mallorca",
   pricing: {
     startingPrice: "Llaut tradicional con patrón desde 550€ / medio día",
     rateType: "tiered",
@@ -106,21 +102,4 @@ export const pollensaClassicWoodenYachts: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 390,
-      url: "https://www.google.com/maps/search/?api=1&query=Classic%20Wooden%20Yachts%20%26%20Llauts%20Pollen%C3%A7a%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Classic%20Wooden%20Yachts%20%26%20Llauts%20Pollen%C3%A7a%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 39,
-      url: "https://www.bing.com/maps?q=Classic%20Wooden%20Yachts%20%26%20Llauts%20Pollen%C3%A7a%20Mallorca",
-    },
-    totalReviewsAggregated: 429,
-    overallWeightedRating: 4.9,
-  },
 };

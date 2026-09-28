@@ -27,9 +27,6 @@ export const miceliSelva: ServiceItem = {
   email: "reservas@miceli.es",
   website: "https://www.miceli.es",
   menuUrl: "https://www.miceli.es",
-  googleMapsUrl: "https://www.google.com/maps/search/Restaurante+Miceli+Selva+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante+Miceli+Selva",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante+Miceli+Selva",
   tags: ["zona:raiguer-pla", "zona:selva", "product:premium", "mod:en-local", "aud:parejas", "temps:todo-el-ano"],
   capabilities: {
     terrace: true,

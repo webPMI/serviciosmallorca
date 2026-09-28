@@ -31,12 +31,6 @@ export const instalaciones_fonfred_climatizacion_palma: ServiceItem = {
   schedule: "Lunes a Viernes: 08:00 - 18:00",
   image: "/images/services/instalaciones-fonfred-climatizacion-palma.jpg",
   gallery: ["/images/services/instalaciones-fonfred-climatizacion-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Instalaciones%20Fonfred%20Climatizaci%C3%B3n%20%26%20Aerotermia%20Palma%20Gremi%20de%20Fusters%2C%2022%2C%20Pol%C3%ADgono%20Son%20Castell%C3%B3%2C%2007009%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Instalaciones%20Fonfred%20Climatizaci%C3%B3n%20%26%20Aerotermia%20Palma%20Gremi%20de%20Fusters%2C%2022%2C%20Pol%C3%ADgono%20Son%20Castell%C3%B3%2C%2007009%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Instalaciones%20Fonfred%20Climatizaci%C3%B3n%20%26%20Aerotermia%20Palma%20Gremi%20de%20Fusters%2C%2022%2C%20Pol%C3%ADgono%20Son%20Castell%C3%B3%2C%2007009%20Palma",
   shortDescription: {
     es: "Especialistas en aerotermia, climatización y suelo radiante en Mallorca: instalación y mantenimiento de sistemas térmicos eficientes para villas y fincas.",
     en: "Heating, cooling, and aerothermal specialists in Mallorca: installation and servicing of high-efficiency heat pumps, underfloor heating, and HVAC for villas.",
@@ -100,13 +94,6 @@ export const instalaciones_fonfred_climatizacion_palma: ServiceItem = {
       "Klimaanlagen mit Einzelraumsteuerung über Airzone-Systeme",
       "Sanitärinstallationen, Druckerhöhungsanlagen und Wasserenthärtung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 290,
-      url: "https://www.google.com/maps/search/?api=1&query=Instalaciones%20Fonfred%20Climatizaci%C3%B3n%20%26%20Aerotermia%20Palma%20Gremi%20de%20Fusters%2C%2022%2C%20Pol%C3%ADgono%20Son%20Castell%C3%B3%2C%2007009%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

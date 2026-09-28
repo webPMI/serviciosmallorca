@@ -28,9 +28,6 @@ export const hospitalSantJoanDeDeuPalma: ServiceItem = {
   email: "hospitalmallorca.atu@sjd.es",
   website: "https://www.sjdmallorca.com",
   menuUrl: "https://www.sjdmallorca.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Hospital+Sant+Joan+de+Deu+Cala+Gamba+Palma+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Hospital+Sant+Joan+de+Deu+Palma",
-  bingMapsUrl: "https://www.bing.com/maps?q=Hospital+Sant+Joan+de+Deu+Palma",
   tags: [
     "zona:palma",
     "product:premium",
@@ -148,7 +145,7 @@ export const hospitalSantJoanDeDeuPalma: ServiceItem = {
       comment:
         "Després del meu ictus, la rehabilitació a Sant Joan de Déu em va canviar la vida. Els fisioterapeutes i terapeutes ocupacionals són extraordinaris.",
       date: "2026-08-08",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
     },
     {
@@ -158,7 +155,7 @@ export const hospitalSantJoanDeDeuPalma: ServiceItem = {
       comment:
         "Wunderbare Reha-Klinik direkt am Meer! Erstklassige Physiotherapeuten und modernste Therapiegeräte. Absolut empfehlenswert.",
       date: "2026-07-26",
-      platform: "google_maps",
+      platform: "direct",
       language: "de",
     },
   ],

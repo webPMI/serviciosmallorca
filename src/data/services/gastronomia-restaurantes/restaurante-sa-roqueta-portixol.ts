@@ -28,9 +28,6 @@ export const restauranteSaRoquetaPortixol: ServiceItem = {
   email: "info@restaurantesaroqueta.com",
   website: "https://www.restaurantesaroqueta.com",
   menuUrl: "https://www.restaurantesaroqueta.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Restaurante+Sa+Roqueta+Portixol+Palma+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante+Sa+Roqueta+Portixol+Palma",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante+Sa+Roqueta+Portixol+Palma",
   tags: ["zona:palma", "zona:portixol", "product:premium", "mod:en-local", "aud:parejas", "temps:todo-el-ano"],
   capabilities: {
     wheelchairAccessible: true,

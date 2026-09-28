@@ -76,10 +76,6 @@ export const katmanduParkMagalufCalvia: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Katmandu%20Park%20Theme%20Park%20Calvi%C3%A0%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Katmandu%20Park%20Theme%20Park%20Calvi%C3%A0%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Katmandu%20Park%20Theme%20Park%20Calvi%C3%A0%20Mallorca",
   pricing: {
     startingPrice: "Presupuesto y tarifas personalizadas",
     rateType: "tiered",
@@ -106,21 +102,4 @@ export const katmanduParkMagalufCalvia: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.6,
-      reviewCount: 8900,
-      url: "https://www.google.com/maps/search/?api=1&query=Katmandu%20Park%20Theme%20Park%20Calvi%C3%A0%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Katmandu%20Park%20Theme%20Park%20Calvi%C3%A0%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.5,
-      reviewCount: 890,
-      url: "https://www.bing.com/maps?q=Katmandu%20Park%20Theme%20Park%20Calvi%C3%A0%20Mallorca",
-    },
-    totalReviewsAggregated: 9790,
-    overallWeightedRating: 4.6,
-  },
 };

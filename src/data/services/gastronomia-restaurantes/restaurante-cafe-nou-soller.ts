@@ -28,9 +28,6 @@ export const restauranteCafeNouSoller: ServiceItem = {
   email: "info@cafenou.com",
   website: "https://cafenou.com",
   menuUrl: "https://cafenou.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Cafe+Nou+Soller+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Cafe+Nou+Soller",
-  bingMapsUrl: "https://www.bing.com/maps?q=Cafe+Nou+Soller",
   tags: ["zona:tramuntana", "zona:soller", "product:traditional", "mod:en-local", "aud:familias", "temps:todo-el-ano"],
   capabilities: {
     terrace: true,

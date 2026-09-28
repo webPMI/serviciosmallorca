@@ -27,9 +27,6 @@ export const nautinortChartersPollensa: ServiceItem = {
   email: "info@nautinort.com",
   website: "https://nautinort.com",
   menuUrl: "https://nautinort.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Nautinort+Port+de+Pollensa+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Nautinort+Port+de+Pollensa",
-  bingMapsUrl: "https://www.bing.com/maps?q=Nautinort+Port+de+Pollensa",
   tags: [
     "zona:alcudia-pollensa",
     "zona:port-de-pollenca",

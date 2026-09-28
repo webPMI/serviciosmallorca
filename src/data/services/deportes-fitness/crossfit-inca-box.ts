@@ -29,8 +29,6 @@ export const CROSSFIT_INCA_BOX: ServiceItem = {
   image: "/images/sports/crossfit-inca-box.jpg",
   gallery: ["/images/sports/crossfit-inca-box.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007061",
-  appleMapsUrl: "https://maps.apple.com/?q=CrossFit%20Inca+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=CrossFit%20Inca+Mallorca",
   shortDescription: {
     es: "El box de CrossFit de referencia en el centro de Mallorca con clases WOD, halterofilia y movilidad.",
     en: "Central Mallorca's leading CrossFit box with WOD classes, weightlifting, and mobility.",
@@ -94,13 +92,6 @@ export const CROSSFIT_INCA_BOX: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 230,
-      url: "https://www.google.com/maps?cid=12007061",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

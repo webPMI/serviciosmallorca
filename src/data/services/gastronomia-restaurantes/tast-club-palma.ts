@@ -31,10 +31,6 @@ export const tast_club_palma: ServiceItem = {
   schedule: "Lunes a Domingo: 13:00 - 01:00",
   image: "/images/services/tast-club-palma.jpg",
   gallery: ["/images/services/tast-club-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Tast%20Club%20Palma%20Carrer%20de%20Sant%20Jaume%2C%206%2C%2007012%20Palma",
-  appleMapsUrl: "https://maps.apple.com/?q=Tast%20Club%20Palma%20Carrer%20de%20Sant%20Jaume%2C%206%2C%2007012%20Palma",
-  bingMapsUrl: "https://bing.com/maps?q=Tast%20Club%20Palma%20Carrer%20de%20Sant%20Jaume%2C%206%2C%2007012%20Palma",
   shortDescription: {
     es: "Exclusivo bistró clandestino estilo club inglés en Palma: coctelería de autor, carnes a la brasa, mariscos y tapas refinadas.",
     en: "Exclusive speakeasy bistro inspired by British gentlemen's clubs in Palma: signature cocktails, grilled cuts, and fine tapas.",
@@ -98,13 +94,6 @@ export const tast_club_palma: ServiceItem = {
       "Holzkohlegrill-Spezialitäten und gereiftes Rindfleisch",
       "Cocktailbar mit feinen Drinks und seltenen Spirituosen",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 540,
-      url: "https://www.google.com/maps/search/?api=1&query=Tast%20Club%20Palma%20Carrer%20de%20Sant%20Jaume%2C%206%2C%2007012%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

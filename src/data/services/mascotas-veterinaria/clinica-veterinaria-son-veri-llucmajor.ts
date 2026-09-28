@@ -31,12 +31,6 @@ export const clinica_veterinaria_son_veri_llucmajor: ServiceItem = {
   schedule: "Lunes a Viernes: 09:30 - 13:30, 16:30 - 19:30, Sábados: 10:00 - 13:00",
   image: "/images/services/clinica-veterinaria-son-veri-llucmajor.jpg",
   gallery: ["/images/services/clinica-veterinaria-son-veri-llucmajor.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica%20Veterinaria%20Son%20Ver%C3%AD%20Llucmajor%20Carrer%20de%20Dragonera%2C%2010%2C%2007600%20Son%20Ver%C3%AD%20Nou%2C%20Llucmajor",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Cl%C3%ADnica%20Veterinaria%20Son%20Ver%C3%AD%20Llucmajor%20Carrer%20de%20Dragonera%2C%2010%2C%2007600%20Son%20Ver%C3%AD%20Nou%2C%20Llucmajor",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Cl%C3%ADnica%20Veterinaria%20Son%20Ver%C3%AD%20Llucmajor%20Carrer%20de%20Dragonera%2C%2010%2C%2007600%20Son%20Ver%C3%AD%20Nou%2C%20Llucmajor",
   shortDescription: {
     es: "Clínica veterinaria en Son Verí Nou (costa de Llucmajor): medicina felina y canina, anestesia inhalatoria, radiología y peluquería canina.",
     en: "Veterinary clinic in Son Verí Nou (Llucmajor coast): feline and canine medicine, digital X-rays, gas anesthesia, and dog grooming.",
@@ -100,13 +94,6 @@ export const clinica_veterinaria_son_veri_llucmajor: ServiceItem = {
       "Bildgebende Diagnostik: digitales Röntgen und Bauchraum-Ultraschall",
       "Hundefellpflege mit Scherenschnitt und saisonalem Zecken-/Flohschutz",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 88,
-      url: "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica%20Veterinaria%20Son%20Ver%C3%AD%20Llucmajor%20Carrer%20de%20Dragonera%2C%2010%2C%2007600%20Son%20Ver%C3%AD%20Nou%2C%20Llucmajor",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

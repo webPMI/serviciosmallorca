@@ -31,12 +31,6 @@ export const centre_medic_pollenca: ServiceItem = {
   schedule: "Lunes a Viernes: 08:00 - 20:00 | Sábado: 09:00 - 13:00 | Domingo: Cerrado",
   image: "/images/services/centre-medic-pollenca.jpg",
   gallery: ["/images/services/centre-medic-pollenca.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Centre%20M%C3%A8dic%20Pollen%C3%A7a%20Via%20Pollentia%2C%2045%2C%2007460%20Pollen%C3%A7a%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Centre%20M%C3%A8dic%20Pollen%C3%A7a%20Via%20Pollentia%2C%2045%2C%2007460%20Pollen%C3%A7a%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Centre%20M%C3%A8dic%20Pollen%C3%A7a%20Via%20Pollentia%2C%2045%2C%2007460%20Pollen%C3%A7a%2C%20Illes%20Balears",
   shortDescription: {
     es: "Centro policlínico integral en Pollença con medicina familiar, pediatría, análisis clínicos, traumatología, fisioterapia y atención multilingüe para residentes y visitantes.",
     en: "Comprehensive medical outpatient centre in Pollença offering general practice, pediatrics, blood tests, orthopedics, physical therapy, and multilingual patient consultations.",
@@ -100,13 +94,6 @@ export const centre_medic_pollenca: ServiceItem = {
       "Blutentnahmestelle für umfassende Laborprofile und Gesundheitschecks",
       "Krankengymnastik, osteopathische Physiotherapie und Schmerztherapie",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.6,
-      reviewCount: 155,
-      url: "https://www.google.com/maps/search/?api=1&query=Centre%20M%C3%A8dic%20Pollen%C3%A7a%20Via%20Pollentia%2C%2045%2C%2007460%20Pollen%C3%A7a%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

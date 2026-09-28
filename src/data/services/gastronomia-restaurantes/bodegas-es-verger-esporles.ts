@@ -28,9 +28,6 @@ export const bodegasEsVergerEsporles: ServiceItem = {
   email: "info@esverger.es",
   website: "https://www.esverger.es",
   menuUrl: "https://www.esverger.es",
-  googleMapsUrl: "https://www.google.com/maps/search/Bodegas+Es+Verger+Esporles+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Bodegas+Es+Verger+Esporles",
-  bingMapsUrl: "https://www.bing.com/maps?q=Bodegas+Es+Verger+Esporles",
   tags: ["zona:tramuntana", "zona:esporles", "product:premium", "mod:en-local", "aud:parejas", "temps:todo-el-ano"],
   capabilities: {
     parkingAvailable: true,

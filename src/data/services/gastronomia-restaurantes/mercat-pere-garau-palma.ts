@@ -81,23 +81,6 @@ export const mercatPereGarauPalma: ServiceItem = {
     ca: "Inaugurat el 1943, Pere Garau manté intacta la seva essència popular, sent el mercat més autèntic i accessible de la ciutat.",
     de: "1943 eröffnet, hat sich Pere Garau seinen authentischen Inselcharakter und faire Erzeugerpreise bewahrt.",
   },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.5,
-      reviewCount: 6100,
-      url: "https://www.google.com/maps/search/?api=1&query=Mercat+de+Pere+Garau+Palma",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Mercat+de+Pere+Garau+Palma",
-    },
-    bingMaps: {
-      rating: 4.5,
-      reviewCount: 390,
-      url: "https://www.bing.com/maps?q=Mercat+de+Pere+Garau+Palma",
-    },
-    totalReviewsAggregated: 6490,
-    overallWeightedRating: 4.5,
-  },
   reviews: [],
   socialLinks: {
     instagram: "https://instagram.com/mercatperegarau",
@@ -120,9 +103,6 @@ export const mercatPereGarauPalma: ServiceItem = {
     },
   ],
   authorityProfiles: [],
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Mercat+de+Pere+Garau+Palma",
-  appleMapsUrl: "https://maps.apple.com/?q=Mercat+de+Pere+Garau+Palma",
-  bingMapsUrl: "https://www.bing.com/maps?q=Mercat+de+Pere+Garau+Palma",
   phone: "+34 971 275 041",
   whatsapp: "+34 971 275 041",
   website: "https://palma.cat/mercats",

@@ -31,12 +31,6 @@ export const fiatc_seguros_agencia_palma: ServiceItem = {
   schedule: "Lunes a Jueves: 08:30 - 17:30, Viernes: 08:30 - 15:00",
   image: "/images/services/fiatc-seguros-agencia-palma.jpg",
   gallery: ["/images/services/fiatc-seguros-agencia-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=FIATC%20Seguros%20Delegaci%C3%B3n%20Palma%20Carrer%20del%20General%20Riera%2C%2037%2C%2007010%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=FIATC%20Seguros%20Delegaci%C3%B3n%20Palma%20Carrer%20del%20General%20Riera%2C%2037%2C%2007010%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=FIATC%20Seguros%20Delegaci%C3%B3n%20Palma%20Carrer%20del%20General%20Riera%2C%2037%2C%2007010%20Palma",
   shortDescription: {
     es: "Mutua de seguros de referencia en Palma: seguros de salud con cuadro médico balear completo, seguros de hogar para villas y pólizas náuticas.",
     en: "Leading insurance mutual branch in Palma: top health insurance with Balearic medical network, villa home cover, and marine policies.",
@@ -100,13 +94,6 @@ export const fiatc_seguros_agencia_palma: ServiceItem = {
       "Boots- und Yachtversicherungen für Liegeplätze in allen Häfen der Insel",
       "Gewerbliche Haftpflicht-, Betriebsgebäude- und Gruppenkrankenversicherungen",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.6,
-      reviewCount: 52,
-      url: "https://www.google.com/maps/search/?api=1&query=FIATC%20Seguros%20Delegaci%C3%B3n%20Palma%20Carrer%20del%20General%20Riera%2C%2037%2C%2007010%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

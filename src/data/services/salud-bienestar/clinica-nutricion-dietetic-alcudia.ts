@@ -28,10 +28,6 @@ export const clinica_nutricion_dietetic_alcudia: ServiceItem = {
   schedule: "Lunes a Viernes: 09:00 - 19:00 | Sábado: 09:30 - 13:00",
   image: "/images/services/clinica-nutricion-dietetic-alcudia.jpg",
   gallery: ["/images/services/clinica-nutricion-dietetic-alcudia.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica+Nutrici%C3%B3n+Diet%C3%A9tica+Alc%C3%BAdia+Carrer+del+Moll+14",
-  appleMapsUrl: "https://maps.apple.com/?q=Clinica+Nutricion+Alcudia",
-  bingMapsUrl: "https://bing.com/maps?q=Clinica+Nutricion+Alcudia",
   shortDescription: {
     es: "Dietista-nutricionista titulada en Port d'Alcúdia, especializada en pérdida de peso saludable, nutrición deportiva para triatletas e IBS/patologías digestivas.",
     en: "Registered dietitian and nutritionist in Port d'Alcúdia, specializing in healthy weight loss, sports nutrition for triathletes, and IBS/digestive disorders.",
@@ -95,13 +91,6 @@ export const clinica_nutricion_dietetic_alcudia: ServiceItem = {
       "Diätmanagement bei Reizdarmsyndrom, Zöliakie und Nahrungsmittelallergien",
       "Ernährungspläne für Typ-2-Diabetes und metabolisches Syndrom",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 156,
-      url: "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica+Nutrici%C3%B3n+Alc%C3%BAdia",
-    },
   },
   createdAt: "2026-09-05",
   lastUpdatedAt: "2026-09-05",

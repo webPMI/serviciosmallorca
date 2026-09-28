@@ -28,9 +28,6 @@ export const bodegasSonCampanerSencelles: ServiceItem = {
   email: "info@soncampaner.es",
   website: "https://www.soncampaner.es",
   menuUrl: "https://www.soncampaner.es",
-  googleMapsUrl: "https://www.google.com/maps/search/Bodegas+Son+Campaner+Sencelles+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Bodegas+Son+Campaner+Sencelles",
-  bingMapsUrl: "https://www.bing.com/maps?q=Bodegas+Son+Campaner+Sencelles",
   tags: ["zona:raiguer-pla", "zona:sencelles", "product:premium", "mod:en-local", "aud:parejas", "temps:todo-el-ano"],
   capabilities: {
     parkingAvailable: true,

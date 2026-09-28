@@ -31,12 +31,6 @@ export const mallorca_country_club_santa_ponsa: ServiceItem = {
   schedule: "Lunes a Domingo: 07:30 - 22:00",
   image: "/images/services/mallorca-country-club-santa-ponsa.jpg",
   gallery: ["/images/services/mallorca-country-club-santa-ponsa.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Mallorca%20Country%20Club%20Santa%20Ponsa%20Avinguda%20del%20Golf%2C%2020%2C%2007180%20Santa%20Ponsa%2C%20Calvi%C3%A0",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Mallorca%20Country%20Club%20Santa%20Ponsa%20Avinguda%20del%20Golf%2C%2020%2C%2007180%20Santa%20Ponsa%2C%20Calvi%C3%A0",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Mallorca%20Country%20Club%20Santa%20Ponsa%20Avinguda%20del%20Golf%2C%2020%2C%2007180%20Santa%20Ponsa%2C%20Calvi%C3%A0",
   shortDescription: {
     es: "Exclusivo club de raqueta y fitness en Santa Ponsa, sede del ATP Mallorca Championships con pistas de hierba natural, tierra batida y pádel.",
     en: "Exclusive racquet and lifestyle club in Santa Ponsa, venue of the ATP Mallorca Championships featuring grass, clay, and padel courts.",
@@ -100,13 +94,6 @@ export const mallorca_country_club_santa_ponsa: ServiceItem = {
       "Tennisakademie mit lizenzierten ATP- und ITF-Trainern",
       "High-Tech-Fitnessstudio, Wellnessbereich und Clubrestaurant",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 320,
-      url: "https://www.google.com/maps/search/?api=1&query=Mallorca%20Country%20Club%20Santa%20Ponsa%20Avinguda%20del%20Golf%2C%2020%2C%2007180%20Santa%20Ponsa%2C%20Calvi%C3%A0",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

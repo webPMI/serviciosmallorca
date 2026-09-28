@@ -31,12 +31,6 @@ export const restaurante_sa_lloca_alcudia_puerto_marisco: ServiceItem = {
   schedule: "Diario: 12:30 - 16:00 y 19:30 - 23:30 (Cerrado Noviembre)",
   image: "/images/services/restaurante-sa-lloca-alcudia-puerto-marisco.jpg",
   gallery: ["/images/services/restaurante-sa-lloca-alcudia-puerto-marisco.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Restaurante%20Sa%20Lloca%20Puerto%20de%20Alc%C3%BAdia%20Marisquer%C3%ADa%20%26%20Arroces%20Passeig%20Mar%C3%ADtim%2C%2014%2C%2007400%20Port%20d'Alc%C3%BAdia",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Restaurante%20Sa%20Lloca%20Puerto%20de%20Alc%C3%BAdia%20Marisquer%C3%ADa%20%26%20Arroces%20Passeig%20Mar%C3%ADtim%2C%2014%2C%2007400%20Port%20d'Alc%C3%BAdia",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Restaurante%20Sa%20Lloca%20Puerto%20de%20Alc%C3%BAdia%20Marisquer%C3%ADa%20%26%20Arroces%20Passeig%20Mar%C3%ADtim%2C%2014%2C%2007400%20Port%20d'Alc%C3%BAdia",
   shortDescription: {
     es: "Marisquería y arrocería de referencia en el paseo marítimo del Puerto de Alcúdia: bogavante vivo en cetárea propia, gamba roja de Sóller y arroces a la llauna frente a los barcos.",
     en: "Seafood and rice restaurant on Port d'Alcúdia marina promenade: live lobster tank, Sóller red prawns, and tin-baked paellas facing the yachts.",
@@ -100,13 +94,6 @@ export const restaurante_sa_lloca_alcudia_puerto_marisco: ServiceItem = {
       "Weinauswahl an Weißweinen und Cavas passend zu Fischgerichten",
       "Reservierungen für Firmenessen und Familienfeiern am Wasser",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 680,
-      url: "https://www.google.com/maps/search/?api=1&query=Restaurante%20Sa%20Lloca%20Puerto%20de%20Alc%C3%BAdia%20Marisquer%C3%ADa%20%26%20Arroces%20Passeig%20Mar%C3%ADtim%2C%2014%2C%2007400%20Port%20d'Alc%C3%BAdia",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

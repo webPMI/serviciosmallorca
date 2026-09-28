@@ -31,12 +31,6 @@ export const club_de_golf_alcanada_alcudia: ServiceItem = {
   schedule: "Diario: 07:30 - 20:00 (Apertura todo el año)",
   image: "/images/services/club-de-golf-alcanada-alcudia.jpg",
   gallery: ["/images/services/club-de-golf-alcanada-alcudia.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Club%20de%20Golf%20Alcanada%2018%20Hoyos%20(Alc%C3%BAdia)%20Carretera%20del%20Faro%2C%20s%2Fn%2C%2007400%20Port%20d'Alc%C3%BAdia",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Club%20de%20Golf%20Alcanada%2018%20Hoyos%20(Alc%C3%BAdia)%20Carretera%20del%20Faro%2C%20s%2Fn%2C%2007400%20Port%20d'Alc%C3%BAdia",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Club%20de%20Golf%20Alcanada%2018%20Hoyos%20(Alc%C3%BAdia)%20Carretera%20del%20Faro%2C%20s%2Fn%2C%2007400%20Port%20d'Alc%C3%BAdia",
   shortDescription: {
     es: "Considerado uno de los mejores campos de golf de Europa: 18 hoyos de campeonato diseñados por Robert Trent Jones Jr. frente a la bahía de Alcúdia con vistas al histórico faro de Alcanada.",
     en: "Consistently ranked among Europe's finest golf courses: 18 championship holes designed by Robert Trent Jones Jr. overlooking Alcúdia Bay and the historic Alcanada lighthouse island.",
@@ -100,13 +94,6 @@ export const club_de_golf_alcanada_alcudia: ServiceItem = {
       "Golfakademie mit PGA-Pros und Schläger-Fitting",
       "Clubhaus-Restaurant mit herrlicher Terrasse über der Bucht von Alcúdia",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 1780,
-      url: "https://www.google.com/maps/search/?api=1&query=Club%20de%20Golf%20Alcanada%2018%20Hoyos%20(Alc%C3%BAdia)%20Carretera%20del%20Faro%2C%20s%2Fn%2C%2007400%20Port%20d'Alc%C3%BAdia",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

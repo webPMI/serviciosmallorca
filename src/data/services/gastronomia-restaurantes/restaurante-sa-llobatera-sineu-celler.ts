@@ -31,12 +31,6 @@ export const restaurante_sa_llobatera_sineu_celler: ServiceItem = {
   schedule: "Miércoles a Domingo: 12:30 - 16:00 y 19:30 - 23:00; Lunes y Martes: Cerrado",
   image: "/images/services/restaurante-sa-llobatera-sineu-celler.jpg",
   gallery: ["/images/services/restaurante-sa-llobatera-sineu-celler.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Celler%20Sa%20Llobatera%20Restaurante%20Tradicional%20Sineu%20Carrer%20de%20les%20Parres%2C%2012%2C%2007300%20Sineu",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Celler%20Sa%20Llobatera%20Restaurante%20Tradicional%20Sineu%20Carrer%20de%20les%20Parres%2C%2012%2C%2007300%20Sineu",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Celler%20Sa%20Llobatera%20Restaurante%20Tradicional%20Sineu%20Carrer%20de%20les%20Parres%2C%2012%2C%2007300%20Sineu",
   shortDescription: {
     es: "Celler tradicional en el centro histórico de Sineu: cocina mallorquina auténtica elaborada en horno de leña, lechona asada, frito mallorquín y sopas secas en una antigua bodega del siglo XVI.",
     en: "Traditional celler in Sineu's historic centre: authentic Mallorcan wood-fired cuisine, roast suckling pig, frito mallorquín, and dry vegetable soups in a 16th-century wine cellar.",
@@ -100,13 +94,6 @@ export const restaurante_sa_llobatera_sineu_celler: ServiceItem = {
       "Private Speiseräume in umgebauten Riesengärfässern für bis zu 25 Personen",
       "Feiern für Familienfeste, Kommunionen und Firmenessen",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 654,
-      url: "https://www.google.com/maps/search/?api=1&query=Celler%20Sa%20Llobatera%20Restaurante%20Tradicional%20Sineu%20Carrer%20de%20les%20Parres%2C%2012%2C%2007300%20Sineu",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

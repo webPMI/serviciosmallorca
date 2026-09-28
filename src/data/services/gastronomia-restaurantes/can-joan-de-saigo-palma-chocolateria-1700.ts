@@ -31,12 +31,6 @@ export const can_joan_de_saigo_palma_chocolateria_1700: ServiceItem = {
   schedule: "Lunes a Domingo: 08:00 - 21:00",
   image: "/images/services/can-joan-de-saigo-palma-chocolateria-1700.jpg",
   gallery: ["/images/services/can-joan-de-saigo-palma-chocolateria-1700.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Ca'n%20Joan%20de%20s'Aigo%20Chocolater%C3%ADa%20%26%20Horchater%C3%ADa%20Palma%20(1700)%20Carrer%20de%20Can%20San%C3%A7%2C%2010%2C%2007001%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Ca'n%20Joan%20de%20s'Aigo%20Chocolater%C3%ADa%20%26%20Horchater%C3%ADa%20Palma%20(1700)%20Carrer%20de%20Can%20San%C3%A7%2C%2010%2C%2007001%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Ca'n%20Joan%20de%20s'Aigo%20Chocolater%C3%ADa%20%26%20Horchater%C3%ADa%20Palma%20(1700)%20Carrer%20de%20Can%20San%C3%A7%2C%2010%2C%2007001%20Palma",
   shortDescription: {
     es: "La chocolatería y cafetería más antigua de Mallorca (fundada en 1700): célebre por sus ensaimadas calientes, cuartos esponjosos, chocolate a la taza y helados artesanos de almendra.",
     en: "Mallorca's oldest tearoom and chocolatier (operating since 1700): famed for warm traditional ensaimadas, fluffy cuartos sponge cakes, thick hot chocolate, and almond ice cream.",
@@ -100,13 +94,6 @@ export const can_joan_de_saigo_palma_chocolateria_1700: ServiceItem = {
       "Hausgemachtes Eis im Becher oder in der Waffel zum Mitnehmen",
       "Kaffeespezialitäten und balearische Traditionskonditorei",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 3850,
-      url: "https://www.google.com/maps/search/?api=1&query=Ca'n%20Joan%20de%20s'Aigo%20Chocolater%C3%ADa%20%26%20Horchater%C3%ADa%20Palma%20(1700)%20Carrer%20de%20Can%20San%C3%A7%2C%2010%2C%2007001%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

@@ -76,10 +76,6 @@ export const formatgesDeMallorcaQueseriaArta: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Formatges%20Son%20Jover%20%26%20Queser%C3%ADa%20Km0%20Art%C3%A0%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Formatges%20Son%20Jover%20%26%20Queser%C3%ADa%20Km0%20Art%C3%A0%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Formatges%20Son%20Jover%20%26%20Queser%C3%ADa%20Km0%20Art%C3%A0%20Mallorca",
   pricing: {
     startingPrice: "Queso artesano desde 18€ / kg",
     rateType: "tiered",
@@ -106,21 +102,4 @@ export const formatgesDeMallorcaQueseriaArta: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 320,
-      url: "https://www.google.com/maps/search/?api=1&query=Formatges%20Son%20Jover%20%26%20Queser%C3%ADa%20Km0%20Art%C3%A0%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Formatges%20Son%20Jover%20%26%20Queser%C3%ADa%20Km0%20Art%C3%A0%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.7,
-      reviewCount: 32,
-      url: "https://www.bing.com/maps?q=Formatges%20Son%20Jover%20%26%20Queser%C3%ADa%20Km0%20Art%C3%A0%20Mallorca",
-    },
-    totalReviewsAggregated: 352,
-    overallWeightedRating: 4.8,
-  },
 };

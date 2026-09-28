@@ -29,8 +29,6 @@ export const policlinica_quironsalud_manacor: ServiceItem = {
   image: "/images/spas/policlinica-quironsalud-manacor.jpg",
   gallery: ["/images/spas/policlinica-quironsalud-manacor.jpg", "/images/categories/salud.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=13008006",
-  appleMapsUrl: "https://maps.apple.com/?q=Policl%C3%ADnica%20Quir%C3%B3nsalud%20Manacor+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Policl%C3%ADnica%20Quir%C3%B3nsalud%20Manacor+Mallorca",
   shortDescription: {
     es: "Centro de consultas médicas, traumatología, ginecología y radiología en la comarca de Llevant.",
     en: "Medical specialties clinic offering traumatology, gynecology, and radiology in the Llevant region.",
@@ -94,13 +92,6 @@ export const policlinica_quironsalud_manacor: ServiceItem = {
       "Wellness- und Regenerationstherapien",
       "Kontinuierliche medizinische Nachbetreuung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.6,
-      reviewCount: 260,
-      url: "https://www.google.com/maps?cid=13008006",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

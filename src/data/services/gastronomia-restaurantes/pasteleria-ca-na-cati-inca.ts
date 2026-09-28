@@ -31,12 +31,6 @@ export const pasteleria_ca_na_cati_inca: ServiceItem = {
   schedule: "Martes a Sábado: 08:00 - 14:00 y 16:30 - 20:30; Domingo: 08:00 - 14:30",
   image: "/images/services/pasteleria-ca-na-cati-inca.jpg",
   gallery: ["/images/services/pasteleria-ca-na-cati-inca.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Pastisseria%20Ca%20Na%20Cati%20Artesania%20Dol%C3%A7a%20Inca%20Avinguda%20del%20Tren%2C%2032%2C%2007300%20Inca",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Pastisseria%20Ca%20Na%20Cati%20Artesania%20Dol%C3%A7a%20Inca%20Avinguda%20del%20Tren%2C%2032%2C%2007300%20Inca",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Pastisseria%20Ca%20Na%20Cati%20Artesania%20Dol%C3%A7a%20Inca%20Avinguda%20del%20Tren%2C%2032%2C%2007300%20Inca",
   shortDescription: {
     es: "Pastelería artesana premiada en Inca: ensaimadas gourmet rellenas de crema y albaricoque, tartas de autor, bombones artesanos y repostería festiva mallorquina.",
     en: "Award-winning pastry boutique in Inca: gourmet ensaimadas filled with custard and apricot, designer celebration cakes, artisan pralines, and traditional pastries.",
@@ -100,13 +94,6 @@ export const pasteleria_ca_na_cati_inca: ServiceItem = {
       "Reiseverpackte Ensaimadas als Mitbringsel",
       "Dessert-Catering für Feierlichkeiten",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 760,
-      url: "https://www.google.com/maps/search/?api=1&query=Pastisseria%20Ca%20Na%20Cati%20Artesania%20Dol%C3%A7a%20Inca%20Avinguda%20del%20Tren%2C%2032%2C%2007300%20Inca",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

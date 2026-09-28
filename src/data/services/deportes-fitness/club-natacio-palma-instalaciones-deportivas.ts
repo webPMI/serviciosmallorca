@@ -31,12 +31,6 @@ export const club_natacio_palma_instalaciones_deportivas: ServiceItem = {
   schedule: "Lunes a Viernes: 06:30 - 22:30; Sábado: 08:00 - 20:00; Domingo: 08:00 - 14:00",
   image: "/images/services/club-natacio-palma-instalaciones-deportivas.jpg",
   gallery: ["/images/services/club-natacio-palma-instalaciones-deportivas.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Club%20Nataci%C3%B3%20Palma%20Instalaciones%20Acu%C3%A1ticas%20Carrer%20de%20Francesc%20Vallduv%C3%AD%2C%201%2C%2007011%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Club%20Nataci%C3%B3%20Palma%20Instalaciones%20Acu%C3%A1ticas%20Carrer%20de%20Francesc%20Vallduv%C3%AD%2C%201%2C%2007011%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Club%20Nataci%C3%B3%20Palma%20Instalaciones%20Acu%C3%A1ticas%20Carrer%20de%20Francesc%20Vallduv%C3%AD%2C%201%2C%2007011%20Palma",
   shortDescription: {
     es: "Club de natación histórico y centro acuático de alto rendimiento en Palma: piscinas climatizadas de 50 y 25 metros, escuela infantil, natación máster y fitness acuático.",
     en: "Historic swimming club and high-performance aquatic sports centre in Palma: 50m and 25m heated pools, swim school, master swimming, and water fitness.",
@@ -100,13 +94,6 @@ export const club_natacio_palma_instalaciones_deportivas: ServiceItem = {
       "Wettkampftraining für Nachwuchs und Masters-Schwimmer",
       "Aquafitness- und Wassergymnastikkurse",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 650,
-      url: "https://www.google.com/maps/search/?api=1&query=Club%20Nataci%C3%B3%20Palma%20Instalaciones%20Acu%C3%A1ticas%20Carrer%20de%20Francesc%20Vallduv%C3%AD%2C%201%2C%2007011%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

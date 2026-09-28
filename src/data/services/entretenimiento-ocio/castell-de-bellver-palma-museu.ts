@@ -31,12 +31,6 @@ export const castell_de_bellver_palma_museu: ServiceItem = {
   schedule: "Martes a Domingo: 10:00 - 18:00 (Domingos entrada gratuita, Lunes cerrado)",
   image: "/images/services/castell-de-bellver-palma-museu.jpg",
   gallery: ["/images/services/castell-de-bellver-palma-museu.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Castell%20de%20Bellver%20Fortaleza%20G%C3%B3tica%20Circular%20%26%20Museu%20de%20Palma%20(1300)%20Carrer%20Camilo%20Jos%C3%A9%20Cela%2C%20s%2Fn%2C%2007014%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Castell%20de%20Bellver%20Fortaleza%20G%C3%B3tica%20Circular%20%26%20Museu%20de%20Palma%20(1300)%20Carrer%20Camilo%20Jos%C3%A9%20Cela%2C%20s%2Fn%2C%2007014%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Castell%20de%20Bellver%20Fortaleza%20G%C3%B3tica%20Circular%20%26%20Museu%20de%20Palma%20(1300)%20Carrer%20Camilo%20Jos%C3%A9%20Cela%2C%20s%2Fn%2C%2007014%20Palma",
   shortDescription: {
     es: "Única fortaleza gótica de planta circular de España (siglo XIV): residencia real de Jaume II de Mallorca, torre del homenaje exenta y museo de historia con vistas a toda la bahía de Palma.",
     en: "Spain's only circular Gothic royal fortress (14th century): commissioned by King James II of Mallorca, featuring a detached keep tower and city history museum with panoramic bay views.",
@@ -100,13 +94,6 @@ export const castell_de_bellver_palma_museu: ServiceItem = {
       "Sommerkonzerte der Balearischen Symphoniker im stimmungsvollen Innenhof",
       "Spazierwege durch den Pinienwald und Parkplätze am Schloss",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 16800,
-      url: "https://www.google.com/maps/search/?api=1&query=Castell%20de%20Bellver%20Fortaleza%20G%C3%B3tica%20Circular%20%26%20Museu%20de%20Palma%20(1300)%20Carrer%20Camilo%20Jos%C3%A9%20Cela%2C%20s%2Fn%2C%2007014%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

@@ -28,9 +28,6 @@ export const saCuinaDeNainaSencelles: ServiceItem = {
   email: "info@sacuinadenaina.com",
   website: "https://www.sacuinadenaina.com",
   menuUrl: "https://www.sacuinadenaina.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Sa+Cuina+de+n+Aina+Sencelles+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Sa+Cuina+de+n+Aina+Sencelles",
-  bingMapsUrl: "https://www.bing.com/maps?q=Sa+Cuina+de+n+Aina+Sencelles",
   tags: [
     "zona:raiguer-pla",
     "zona:sencelles",

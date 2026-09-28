@@ -31,12 +31,6 @@ export const solivera_bio_supermercat_palma: ServiceItem = {
   schedule: "Lunes a Viernes: 09:00 - 20:30 | Sábado: 09:00 - 15:00 | Domingo: Cerrado",
   image: "/images/services/solivera-bio-supermercat-palma.jpg",
   gallery: ["/images/services/solivera-bio-supermercat-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=S'Olivera%20Bio%20Supermercat%20Santa%20Catalina%20Palma%20Pla%C3%A7a%20del%20Progr%C3%A9s%2C%2019%2C%2007013%20Santa%20Catalina%2C%20Palma%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=S'Olivera%20Bio%20Supermercat%20Santa%20Catalina%20Palma%20Pla%C3%A7a%20del%20Progr%C3%A9s%2C%2019%2C%2007013%20Santa%20Catalina%2C%20Palma%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=S'Olivera%20Bio%20Supermercat%20Santa%20Catalina%20Palma%20Pla%C3%A7a%20del%20Progr%C3%A9s%2C%2019%2C%2007013%20Santa%20Catalina%2C%20Palma%2C%20Illes%20Balears",
   shortDescription: {
     es: "Supermercado ecológico independiente en Santa Catalina (Palma), referente en alimentación bio 100% certificada, fruta y verdura de payeses locales, productos a granel y cosmética natural.",
     en: "Independent organic supermarket in vibrant Santa Catalina (Palma), offering 100% certified bio food, farm-fresh local produce, zero-waste bulk goods, and natural vegan cosmetics.",
@@ -100,13 +94,6 @@ export const solivera_bio_supermercat_palma: ServiceItem = {
       "Täglich frisches Bio-Bauerbrot aus Natursauerteig mit alten mallorquinischen Weizensorten",
       "Zertifizierte schadstofffreie Naturkosmetik, ätherische Öle und biologisch abbaubare Waschmittel",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 260,
-      url: "https://www.google.com/maps/search/?api=1&query=S'Olivera%20Bio%20Supermercat%20Santa%20Catalina%20Palma%20Pla%C3%A7a%20del%20Progr%C3%A9s%2C%2019%2C%2007013%20Santa%20Catalina%2C%20Palma%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

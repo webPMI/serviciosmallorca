@@ -76,9 +76,6 @@ export const capRocatHotelPalmaBay: ServiceItem = {
       close: "23:59",
     },
   },
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Cap%20Rocat%20Hotel%20%26%20Fortress%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Cap%20Rocat%20Hotel%20%26%20Fortress%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Cap%20Rocat%20Hotel%20%26%20Fortress%20Mallorca",
   pricing: {
     startingPrice: "Desde 750€ / noche",
     rateType: "tiered",
@@ -105,21 +102,4 @@ export const capRocatHotelPalmaBay: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 780,
-      url: "https://www.google.com/maps/search/?api=1&query=Cap%20Rocat%20Hotel%20%26%20Fortress%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Cap%20Rocat%20Hotel%20%26%20Fortress%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 78,
-      url: "https://www.bing.com/maps?q=Cap%20Rocat%20Hotel%20%26%20Fortress%20Mallorca",
-    },
-    totalReviewsAggregated: 858,
-    overallWeightedRating: 4.9,
-  },
 };

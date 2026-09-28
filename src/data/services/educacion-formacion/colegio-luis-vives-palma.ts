@@ -31,12 +31,6 @@ export const colegio_luis_vives_palma: ServiceItem = {
   schedule: "Lunes a Viernes: 08:30 - 17:00",
   image: "/images/services/colegio-luis-vives-palma.jpg",
   gallery: ["/images/services/colegio-luis-vives-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Colegio%20Luis%20Vives%20Palma%20Carrer%20de%20Sant%20Joan%20de%20la%20Salle%2C%205%2C%2007003%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Colegio%20Luis%20Vives%20Palma%20Carrer%20de%20Sant%20Joan%20de%20la%20Salle%2C%205%2C%2007003%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Colegio%20Luis%20Vives%20Palma%20Carrer%20de%20Sant%20Joan%20de%20la%20Salle%2C%205%2C%2007003%20Palma",
   shortDescription: {
     es: "Centro educativo de tradición en el centro de Palma: proyecto bilingüe de inglés, Bachillerato Dual americano y valores humanistas.",
     en: "Traditional and innovative private school in central Palma: bilingual English project, American Dual Diploma, and humanist values.",
@@ -100,13 +94,6 @@ export const colegio_luis_vives_palma: ServiceItem = {
       "Offizielles Cambridge-Prüfungszentrum",
       "Eigene Schulküche mit täglich frisch zubereiteter mediterraner Kost",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 78,
-      url: "https://www.google.com/maps/search/?api=1&query=Colegio%20Luis%20Vives%20Palma%20Carrer%20de%20Sant%20Joan%20de%20la%20Salle%2C%205%2C%2007003%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

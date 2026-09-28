@@ -29,8 +29,6 @@ export const ANYTIME_FITNESS_SANTA_CATALINA: ServiceItem = {
   image: "/images/sports/anytime-fitness-santa-catalina.jpg",
   gallery: ["/images/sports/anytime-fitness-santa-catalina.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007043",
-  appleMapsUrl: "https://maps.apple.com/?q=Anytime%20Fitness%20Santa%20Catalina+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Anytime%20Fitness%20Santa%20Catalina+Mallorca",
   shortDescription: {
     es: "Gimnasio boutique abierto las 24 horas del día los 365 días del año en Santa Catalina.",
     en: "24/7 boutique gym in Santa Catalina open 365 days a year with worldwide access.",
@@ -94,13 +92,6 @@ export const ANYTIME_FITNESS_SANTA_CATALINA: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 310,
-      url: "https://www.google.com/maps?cid=12007043",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

@@ -76,10 +76,6 @@ export const lucasFoxMallorcaInmobiliaria: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Lucas%20Fox%20Prime%20Real%20Estate%20Mallorca%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Lucas%20Fox%20Prime%20Real%20Estate%20Mallorca%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Lucas%20Fox%20Prime%20Real%20Estate%20Mallorca%20Mallorca",
   pricing: {
     startingPrice: "Propiedades exclusivas y villas",
     rateType: "custom_quote",
@@ -106,21 +102,4 @@ export const lucasFoxMallorcaInmobiliaria: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 390,
-      url: "https://www.google.com/maps/search/?api=1&query=Lucas%20Fox%20Prime%20Real%20Estate%20Mallorca%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Lucas%20Fox%20Prime%20Real%20Estate%20Mallorca%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 39,
-      url: "https://www.bing.com/maps?q=Lucas%20Fox%20Prime%20Real%20Estate%20Mallorca%20Mallorca",
-    },
-    totalReviewsAggregated: 429,
-    overallWeightedRating: 4.9,
-  },
 };

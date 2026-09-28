@@ -55,9 +55,9 @@ export interface ReleaseLog {
   entries: ChangelogEntry[];
 }
 
-export const CURRENT_PLATFORM_VERSION = "0.09";
-export const PLATFORM_RELEASE_DATE = "2026-09-27";
-export const PLATFORM_LAST_BUILD_TIMESTAMP = "2026-09-27T17:10:00+02:00";
+export const CURRENT_PLATFORM_VERSION = "0.10";
+export const PLATFORM_RELEASE_DATE = "2026-09-28";
+export const PLATFORM_LAST_BUILD_TIMESTAMP = "2026-09-28T14:00:00+02:00";
 
 /**
  * Devuelve la fecha y hora formateada de la última actualización según el idioma.
@@ -84,6 +84,99 @@ export function getFormattedBuildTimestamp(locale: "es" | "en" | "ca" | "de" = "
 }
 
 export const CHANGELOG_RELEASES: ReleaseLog[] = [
+  {
+    version: "0.10",
+    versionLabel: {
+      es: "v0.10 · Honestidad de Datos Multi-Mapa (GR-11/GR-12) y Linter de Catálogo Integrado",
+      en: "v0.10 · Multi-Map Data Honesty (GR-11/GR-12) and Integrated Catalog Linter",
+      ca: "v0.10 · Honestedat de Dades Multi-Mapa (GR-11/GR-12) i Linter de Catàleg Integrat",
+      de: "v0.10 · Multi-Karten-Datenehrlichkeit (GR-11/GR-12) und integrierter Katalog-Linter",
+    },
+    type: "MINOR",
+    date: "2026-09-28",
+    summary: {
+      es: "Remediación global del backlog prioritario P0 de honestidad de datos (DATA_HONESTY_BACKLOG.md). Se eliminaron 952 URLs de búsqueda falsas que apuntaban a búsquedas genéricas de Google, Apple y Bing Maps en lugar de fichas comerciales reales. Se conservaron intactos los 125 listados oficiales de Google Maps verificados con CID real. Se eliminaron desgloses de reputación inventados y se reclasificaron las reseñas no asociadas a fichas de mapas como 'direct', dejando el 100% de las 953 fichas del catálogo limpias. Además, se integró un linter estricto de ficheros huérfanos en la suite CI/CD garantizando coherencia total entre el sistema de archivos y el catálogo.",
+      en: "Global remediation of the P0 data honesty backlog (DATA_HONESTY_BACKLOG.md). 952 fabricated search URLs that pointed to generic Google, Apple, and Bing Maps searches instead of real business listings were purged. 125 verified official Google Maps listings with authentic CIDs were strictly preserved. Fabricated reputation breakdowns were removed, and reviews lacking official map listings were converted to 'direct', bringing 100% of the 953 catalog services to clean status. Additionally, a strict orphan files linter was integrated into the CI/CD test suite ensuring complete integrity between filesystem services and the catalog.",
+      ca: "Remei global del backlog prioritari P0 d'honestedat de dades (DATA_HONESTY_BACKLOG.md). Es van eliminar 952 URLs de cerca falses que apuntaven a cerques genèriques de Google, Apple i Bing Maps en lloc de fitxes comercials reals. Es van conservar intactes els 125 llistats oficials de Google Maps verificats amb CID real. Es van eliminar desglossaments de reputació inventats i es van reclassificar les ressenyes no associades a fitxes com a 'direct', deixant el 100% de les 953 fitxes netes. A més, es va integrar un linter estricte de fitxers orfes a la suite de tests garantint coherència total.",
+      de: "Umfassende Behebung des vorrangigen P0-Rückstands zur Datenehrlichkeit (DATA_HONESTY_BACKLOG.md). 952 erfundene Such-URLs, die auf generische Suchen statt auf echte Firmeneinträge verwiesen, wurden entfernt. 125 verifizierte offizielle Google Maps-Einträge mit echten CIDs blieben unangetastet. Fabrizierte Reputationsaufschlüsselungen wurden bereinigt und Bewertungen ohne Karteneintrag auf 'direct' umgestellt, wodurch 100% der 953 Dienstleistungen sauber sind. Zudem wurde ein strenger Linter für verwaiste Dateien in die Testsuite integriert.",
+    },
+    highlights: {
+      es: [
+        "953 de 953 fichas catalogadas en estado limpio en el auditor de honestidad de datos (scripts/audit-data-honesty.mjs).",
+        "Eliminadas 827 URLs fake de búsqueda en Google Maps, 952 en Apple Maps y 952 en Bing Maps.",
+        "Preservados intactos los 125 listados oficiales de Google Maps con CID contrastado.",
+        "Reclasificadas 123 atribuciones de reseñas sin ficha de mapa a origen 'direct' honesto.",
+        "Nuevo linter de ficheros huérfanos en tests/unit/services.test.ts para prevenir desincronizaciones.",
+        "Eliminación de re-exportador obsoleto arte-tatuajes.ts en la raíz de services.",
+      ],
+      en: [
+        "953 of 953 catalogued services in clean status in the data honesty auditor (scripts/audit-data-honesty.mjs).",
+        "Removed 827 fake search URLs in Google Maps, 952 in Apple Maps, and 952 in Bing Maps.",
+        "Strictly preserved all 125 official Google Maps listings with verified CID.",
+        "Reclassified 123 unbacked map-platform review claims to honest 'direct' origin.",
+        "New orphan file linter in tests/unit/services.test.ts to prevent directory desynchronization.",
+        "Purged legacy obsolete re-export file arte-tatuajes.ts in services root.",
+      ],
+      ca: [
+        "953 de 953 fitxes catalogades en estat net a l'auditor d'honestedat de dades.",
+        "Eliminades 827 URLs fake de cerca a Google Maps, 952 a Apple Maps i 952 a Bing Maps.",
+        "Preservats intactes els 125 llistats oficials de Google Maps amb CID contrastat.",
+        "Reclassificades 123 atribucions de ressenyes sense fitxa a origen 'direct' honest.",
+        "Nou linter de fitxers orfes a tests/unit/services.test.ts per evitar desincronitzacions.",
+      ],
+      de: [
+        "953 von 953 katalogisierten Dienstleistungen im Status 'sauber' im Datenehrlichkeitsprüfer.",
+        "827 gefälschte Google Maps-Such-URLs, 952 Apple Maps und 952 Bing Maps bereinigt.",
+        "Alle 125 offiziellen Google Maps-Einträge mit verifiziertem CID geschützt.",
+        "123 nicht belegte Plattformbewertungen auf ehrliche 'direct'-Herkunft umgestellt.",
+        "Neuer Linter für verwaiste Dateien in tests/unit/services.test.ts.",
+      ],
+    },
+    entries: [
+      {
+        category: "FIX",
+        title: {
+          es: "Cero URLs de mapas fabricadas y saneamiento de reseñas",
+          en: "Zero fabricated map URLs and review sanitation",
+          ca: "Zero URLs de mapes fabricades i sanejament de ressenyes",
+          de: "Keine fabrizierten Karten-URLs und Bereinigung von Rezensionen",
+        },
+        description: {
+          es: "Se ejecutó la remediación masiva con scripts/remediate-data-honesty.mjs eliminando cualquier búsqueda genérica como si fuera ficha comercial, cumpliendo estrictamente con GR-11 y GR-12.",
+          en: "Executed mass remediation via scripts/remediate-data-honesty.mjs eliminating generic searches masquerading as business listings, adhering to GR-11 and GR-12.",
+          ca: "Es va executar el remei massiu amb scripts/remediate-data-honesty.mjs eliminant cerques genèriques, complint amb GR-11 i GR-12.",
+          de: "Massensanierung über scripts/remediate-data-honesty.mjs durchgeführt, um generische Suchen zu entfernen, gemäß GR-11 und GR-12.",
+        },
+        badgeText: {
+          es: "GR-11 Zero Fake Data",
+          en: "GR-11 Zero Fake Data",
+          ca: "GR-11 Zero Fake Data",
+          de: "GR-11 Zero Fake Data",
+        },
+      },
+      {
+        category: "FEATURE",
+        title: {
+          es: "Linter de ficheros de servicio huérfanos",
+          en: "Orphan service files linter",
+          ca: "Linter de fitxers de servei orfes",
+          de: "Linter für verwaiste Servicedateien",
+        },
+        description: {
+          es: "Integrada comprobación en vitest que audita recursivamente todas las subcarpetas del catálogo y valida que cada módulo individual esté debidamente importado en su índice sectorial y exportado globalmente.",
+          en: "Integrated vitest check that recursively audits all catalog subdirectories and validates that every single module is correctly imported in its sector index and globally exported.",
+          ca: "Integrada comprovació a vitest que audita recursivament totes les subcarpetes del catàleg i valida que cada mòdul estigui importat al seu índex sectorial i exportat globalment.",
+          de: "Integrierte Prüfung in vitest, die rekursiv alle Unterordner prüft und sicherstellt, dass jedes Modul im Sektorindex importiert und global exportiert wird.",
+        },
+        badgeText: {
+          es: "CI/CD Guard",
+          en: "CI/CD Guard",
+          ca: "CI/CD Guard",
+          de: "CI/CD Guard",
+        },
+      },
+    ],
+  },
   {
     version: "0.09",
     versionLabel: {

@@ -31,12 +31,6 @@ export const escuela_vela_calanova_palma: ServiceItem = {
   schedule: "Lunes a Domingo: 09:00 - 19:00 (Cursos náuticos durante todo el año)",
   image: "/images/services/escuela-vela-calanova-palma.jpg",
   gallery: ["/images/services/escuela-vela-calanova-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Escuela%20Nacional%20de%20Vela%20Calanova%20Palma%20Avinguda%20de%20Joan%20Mir%C3%B3%2C%20327%2C%2007015%20Palma%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Escuela%20Nacional%20de%20Vela%20Calanova%20Palma%20Avinguda%20de%20Joan%20Mir%C3%B3%2C%20327%2C%2007015%20Palma%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Escuela%20Nacional%20de%20Vela%20Calanova%20Palma%20Avinguda%20de%20Joan%20Mir%C3%B3%2C%20327%2C%2007015%20Palma%2C%20Illes%20Balears",
   shortDescription: {
     es: "Academia náutica de referencia en la bahía de Palma, con cursos de vela ligera, crucero, windsurf, paddle surf, kayak y campamentos náuticos infantiles durante todo el año.",
     en: "Premier sailing and watersports academy in Palma Bay, offering dinghy sailing, yacht cruising, windsurfing, stand-up paddleboarding, and year-round youth sea camps.",
@@ -100,13 +94,6 @@ export const escuela_vela_calanova_palma: ServiceItem = {
       "Kurse für Windsurfen, Wingfoiling, Stand-Up-Paddling und geführte Kajaktouren",
       "Beliebte Sommercamps für Kinder und Schülergruppen mit abwechslungsreichem Wassersport",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 410,
-      url: "https://www.google.com/maps/search/?api=1&query=Escuela%20Nacional%20de%20Vela%20Calanova%20Palma%20Avinguda%20de%20Joan%20Mir%C3%B3%2C%20327%2C%2007015%20Palma%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

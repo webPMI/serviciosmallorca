@@ -31,12 +31,6 @@ export const agromart_balear_sineu: ServiceItem = {
   schedule: "Lunes a Sábado: 08:30 - 20:30 | Domingo: 09:00 - 14:00",
   image: "/images/services/agromart-balear-sineu.jpg",
   gallery: ["/images/services/agromart-balear-sineu.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Agromart%20Balear%20Sin%C3%A9u%20Carretera%20de%20Sineu%20a%20Lloret%2C%20km%201%2C%2007430%20Sineu%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Agromart%20Balear%20Sin%C3%A9u%20Carretera%20de%20Sineu%20a%20Lloret%2C%20km%201%2C%2007430%20Sineu%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Agromart%20Balear%20Sin%C3%A9u%20Carretera%20de%20Sineu%20a%20Lloret%2C%20km%201%2C%2007430%20Sineu%2C%20Illes%20Balears",
   shortDescription: {
     es: "Punto de venta y supermercado agrícola en el Pla de Mallorca con fruta y verdura de cosecha propia, producto kilómetro cero, embutidos tradicionales y quesos artesanos.",
     en: "Flagship agricultural market in Pla de Mallorca offering farm-direct seasonal produce, zero-kilometer fruits and vegetables, artisan sobrasada, and local cheeses.",
@@ -100,13 +94,6 @@ export const agromart_balear_sineu: ServiceItem = {
       "Bäckerecke mit traditionellem Xeixa-Weizengebäck und Sauerteigbrot",
       "Mallorquinische Feinkost: Mandelprodukte, Meersalz aus Es Trenc und Inselhonig",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 820,
-      url: "https://www.google.com/maps/search/?api=1&query=Agromart%20Balear%20Sin%C3%A9u%20Carretera%20de%20Sineu%20a%20Lloret%2C%20km%201%2C%2007430%20Sineu%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

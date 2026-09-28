@@ -31,12 +31,6 @@ export const robotbas_automatizacion_domotica_edificios_palma: ServiceItem = {
   schedule: "Lunes a Viernes: 08:00 - 17:00",
   image: "/images/services/robotbas-automatizacion-domotica-edificios-palma.jpg",
   gallery: ["/images/services/robotbas-automatizacion-domotica-edificios-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=ROBOTBAS%20(Robot%2C%20S.A.)%20-%20Automatizaci%C3%B3n%20%26%20Dom%C3%B3tica%20Industrial%20(1983)%20Parc%20Bit%2C%20Carrer%20Laura%20Bassi%2C%20Edifici%20Robot%2C%2007121%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=ROBOTBAS%20(Robot%2C%20S.A.)%20-%20Automatizaci%C3%B3n%20%26%20Dom%C3%B3tica%20Industrial%20(1983)%20Parc%20Bit%2C%20Carrer%20Laura%20Bassi%2C%20Edifici%20Robot%2C%2007121%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=ROBOTBAS%20(Robot%2C%20S.A.)%20-%20Automatizaci%C3%B3n%20%26%20Dom%C3%B3tica%20Industrial%20(1983)%20Parc%20Bit%2C%20Carrer%20Laura%20Bassi%2C%20Edifici%20Robot%2C%2007121%20Palma",
   shortDescription: {
     es: "Empresa cotizada en BME Growth con sede en ParcBit, pionera desde 1983 en el diseño y fabricación de sistemas de automatización de edificios y control energético.",
     en: "BME Growth-listed tech pioneer headquartered in ParcBit since 1983, designing and manufacturing smart building automation and energy control systems.",
@@ -100,13 +94,6 @@ export const robotbas_automatizacion_domotica_edificios_palma: ServiceItem = {
       "Zentralisierte Steuerung von Klimaanlagen, Wärmepumpen und DALI-Licht",
       "Energieeffizienzberatung und digitales Verbrauchsmonitoring",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 160,
-      url: "https://www.google.com/maps/search/?api=1&query=ROBOTBAS%20(Robot%2C%20S.A.)%20-%20Automatizaci%C3%B3n%20%26%20Dom%C3%B3tica%20Industrial%20(1983)%20Parc%20Bit%2C%20Carrer%20Laura%20Bassi%2C%20Edifici%20Robot%2C%2007121%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

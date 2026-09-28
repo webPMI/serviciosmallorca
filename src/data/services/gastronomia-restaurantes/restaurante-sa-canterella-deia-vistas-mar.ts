@@ -31,12 +31,6 @@ export const restaurante_sa_canterella_deia_vistas_mar: ServiceItem = {
   schedule: "Diario: 13:00 - 16:00 y 19:30 - 23:00 (Abril – Octubre)",
   image: "/images/services/restaurante-sa-canterella-deia-vistas-mar.jpg",
   gallery: ["/images/services/restaurante-sa-canterella-deia-vistas-mar.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Restaurante%20Sa%20Canterella%20Dei%C3%A0%20Cocina%20Mediterr%C3%A1nea%20%26%20Vistas%20Carrer%20Arxiduc%20Llu%C3%ADs%20Salvador%2C%2012%2C%2007179%20Dei%C3%A0",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Restaurante%20Sa%20Canterella%20Dei%C3%A0%20Cocina%20Mediterr%C3%A1nea%20%26%20Vistas%20Carrer%20Arxiduc%20Llu%C3%ADs%20Salvador%2C%2012%2C%2007179%20Dei%C3%A0",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Restaurante%20Sa%20Canterella%20Dei%C3%A0%20Cocina%20Mediterr%C3%A1nea%20%26%20Vistas%20Carrer%20Arxiduc%20Llu%C3%ADs%20Salvador%2C%2012%2C%2007179%20Dei%C3%A0",
   shortDescription: {
     es: "Restaurante panorámico en el acantilado de Deià: pescados frescos del puerto de Sóller, arroces marineros y vistas al atardecer sobre Cala Deià y la Serra de Tramuntana.",
     en: "Panoramic cliffside restaurant in Deià: fresh fish from Sóller harbor, seafood rice dishes, and sunset views over Cala Deià and Tramuntana mountains.",
@@ -100,13 +94,6 @@ export const restaurante_sa_canterella_deia_vistas_mar: ServiceItem = {
       "Reservierung von Panoramatischen in der ersten Terrassenreihe",
       "Gruppen-Dinner und exklusive Privatfeiern beim Sonnenuntergang",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 390,
-      url: "https://www.google.com/maps/search/?api=1&query=Restaurante%20Sa%20Canterella%20Dei%C3%A0%20Cocina%20Mediterr%C3%A1nea%20%26%20Vistas%20Carrer%20Arxiduc%20Llu%C3%ADs%20Salvador%2C%2012%2C%2007179%20Dei%C3%A0",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

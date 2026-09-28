@@ -31,12 +31,6 @@ export const escola_oficial_idiomes_eoi_palma: ServiceItem = {
   schedule: "Lunes a Viernes: 08:30 - 21:00 | Sábado y Domingo: Cerrado",
   image: "/images/services/escola-oficial-idiomes-eoi-palma.jpg",
   gallery: ["/images/services/escola-oficial-idiomes-eoi-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Escola%20Oficial%20d'Idiomes%20de%20Palma%20(EOI%20Palma)%20Carrer%20d'Arag%C3%B3%2C%2059%2C%2007005%20Palma%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Escola%20Oficial%20d'Idiomes%20de%20Palma%20(EOI%20Palma)%20Carrer%20d'Arag%C3%B3%2C%2059%2C%2007005%20Palma%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Escola%20Oficial%20d'Idiomes%20de%20Palma%20(EOI%20Palma)%20Carrer%20d'Arag%C3%B3%2C%2059%2C%2007005%20Palma%2C%20Illes%20Balears",
   shortDescription: {
     es: "Centro público oficial de enseñanza y certificación de lenguas modernas en Palma, impartiendo cursos presenciales y semipresenciales de alemán, inglés, francés, catalán, español para extranjeros y más idiomas.",
     en: "Official public language institute in Palma offering accredited courses and certifications in German, English, French, Spanish for foreigners, and Catalan aligned with CEFR standards.",
@@ -100,13 +94,6 @@ export const escola_oficial_idiomes_eoi_palma: ServiceItem = {
       "Offizielle Prüfungsabnahmen für interne Schüler und externe Zertifikatskandidaten",
       "Konversationszirkel, Grammatik-Workshops und Fachsprachenkurse für Hotel und Gastronomie",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.5,
-      reviewCount: 380,
-      url: "https://www.google.com/maps/search/?api=1&query=Escola%20Oficial%20d'Idiomes%20de%20Palma%20(EOI%20Palma)%20Carrer%20d'Arag%C3%B3%2C%2059%2C%2007005%20Palma%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

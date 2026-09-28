@@ -29,8 +29,6 @@ export const FIT_CLUB_MALLORCA_SON_BUGADELLES: ServiceItem = {
   image: "/images/services/fit-club-mallorca-son-bugadelles.jpg",
   gallery: ["/images/services/fit-club-mallorca-son-bugadelles.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007044",
-  appleMapsUrl: "https://maps.apple.com/?q=Fit%20Club%20Mallorca+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Fit%20Club%20Mallorca+Mallorca",
   shortDescription: {
     es: "Gimnasio boutique de alto nivel en Calvià con entrenamiento funcional, fuerza, boxeo y recuperación.",
     en: "High-end boutique gym in Calvià with functional training, strength, boxing, and recovery.",
@@ -94,13 +92,6 @@ export const FIT_CLUB_MALLORCA_SON_BUGADELLES: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 280,
-      url: "https://www.google.com/maps?cid=12007044",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

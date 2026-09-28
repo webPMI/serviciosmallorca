@@ -31,12 +31,6 @@ export const fundacio_amadip_esment_mallorca_inclusio: ServiceItem = {
   schedule: "Lunes a Viernes: 08:30 - 17:00",
   image: "/images/services/fundacio-amadip-esment-mallorca-inclusio.jpg",
   gallery: ["/images/services/fundacio-amadip-esment-mallorca-inclusio.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Fundaci%C3%B3%20Amadip%20Esment%20(Esment)%20-%20Inclusi%C3%B3%20Social%20%26%20Laboral%20Cam%C3%AD%20de%20Son%20Fangos%2C%20100%2C%20Son%20Ferriol%2C%2007198%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Fundaci%C3%B3%20Amadip%20Esment%20(Esment)%20-%20Inclusi%C3%B3%20Social%20%26%20Laboral%20Cam%C3%AD%20de%20Son%20Fangos%2C%20100%2C%20Son%20Ferriol%2C%2007198%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Fundaci%C3%B3%20Amadip%20Esment%20(Esment)%20-%20Inclusi%C3%B3%20Social%20%26%20Laboral%20Cam%C3%AD%20de%20Son%20Fangos%2C%20100%2C%20Son%20Ferriol%2C%2007198%20Palma",
   shortDescription: {
     es: "Organización de referencia en Baleares desde 1962 dedicada a la atención integral, formación laboral, empleo y calidad de vida de personas con necesidades especiales.",
     en: "Benchmark Balearic foundation since 1962 dedicated to comprehensive care, vocational training, employment, and quality of life for people with special needs.",
@@ -100,13 +94,6 @@ export const fundacio_amadip_esment_mallorca_inclusio: ServiceItem = {
       "Berufliche Eingliederung in Unternehmen des ersten Arbeitsmarkts",
       "Inklusiver Catering-Service für Firmenfeiern und private Anlässe",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 520,
-      url: "https://www.google.com/maps/search/?api=1&query=Fundaci%C3%B3%20Amadip%20Esment%20(Esment)%20-%20Inclusi%C3%B3%20Social%20%26%20Laboral%20Cam%C3%AD%20de%20Son%20Fangos%2C%20100%2C%20Son%20Ferriol%2C%2007198%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

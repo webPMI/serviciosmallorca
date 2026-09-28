@@ -21,9 +21,6 @@ export const electricidadLlabres: ServiceItem = {
   whatsapp: "+34 639 55 44 33",
   email: "contacto@electricidadllabres.com",
   website: "https://electricidadllabres.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Electricidad%20Llabres%20Marratxi",
-  appleMapsUrl: "https://maps.apple.com/?q=Electricidad%20Llabres%20Marratxi&ll=39.6198,2.7532",
-  bingMapsUrl: "https://www.bing.com/maps?where1=Electricidad%20Llabres%20Marratxi",
   coordinates: { lat: 39.6198, lng: 2.7532 },
   schedule: "Lunes a Viernes: 08:00 - 19:00 | Servicio de Averías Eléctricas Urgentes",
   lastVerifiedAt: "2026-08-25",
@@ -130,30 +127,13 @@ export const electricidadLlabres: ServiceItem = {
       instagramHandle: "@electricidadllabres",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 175,
-      url: "https://www.google.com/maps/search/?api=1&query=Electricidad%20Llabres%20Marratxi",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Electricidad%20Llabres%20Marratxi&ll=39.6198,2.7532",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 175,
-      url: "https://www.bing.com/maps?where1=Electricidad%20Llabres%20Marratxi",
-    },
-    totalReviewsAggregated: 175,
-    overallWeightedRating: 4.8,
-  },
   reviews: [
     {
       id: "rev-llab-1",
       authorName: "Pere Joan Serra",
       rating: 5,
       date: "2025-05-11",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
       comment:
         "Ens varen tramitar el butlletí elèctric i canviar tot el quadre en temps rècord. Molt seriosos i puntuals.",
@@ -164,7 +144,7 @@ export const electricidadLlabres: ServiceItem = {
       authorName: "Arthur Morgan",
       rating: 5,
       date: "2025-06-25",
-      platform: "google_maps",
+      platform: "direct",
       language: "en",
       comment:
         "Installed an EV charger in our garage. Flawless installation, explained everything patiently, and handled all the paperwork.",

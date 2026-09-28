@@ -76,10 +76,6 @@ export const blevinsFranksWealthManagementPalma: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Blevins%20Franks%20Wealth%20Management%20Mallorca%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Blevins%20Franks%20Wealth%20Management%20Mallorca%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Blevins%20Franks%20Wealth%20Management%20Mallorca%20Mallorca",
   pricing: {
     startingPrice: "Consultar servicios y presupuestos personalizados",
     rateType: "custom_quote",
@@ -106,21 +102,4 @@ export const blevinsFranksWealthManagementPalma: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 210,
-      url: "https://www.google.com/maps/search/?api=1&query=Blevins%20Franks%20Wealth%20Management%20Mallorca%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Blevins%20Franks%20Wealth%20Management%20Mallorca%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 21,
-      url: "https://www.bing.com/maps?q=Blevins%20Franks%20Wealth%20Management%20Mallorca%20Mallorca",
-    },
-    totalReviewsAggregated: 231,
-    overallWeightedRating: 4.9,
-  },
 };

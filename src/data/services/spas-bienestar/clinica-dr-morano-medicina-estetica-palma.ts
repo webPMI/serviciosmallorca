@@ -29,8 +29,6 @@ export const clinica_dr_morano_medicina_estetica_palma: ServiceItem = {
   image: "/images/spas/clinica-dr-morano-medicina-estetica-palma.jpg",
   gallery: ["/images/spas/clinica-dr-morano-medicina-estetica-palma.jpg", "/images/categories/salud.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=13008009",
-  appleMapsUrl: "https://maps.apple.com/?q=Cl%C3%ADnica%20Dr.%20Morano+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Cl%C3%ADnica%20Dr.%20Morano+Mallorca",
   shortDescription: {
     es: "Más de 30 años de excelencia en medicina estética, rejuvenecimiento facial no quirúrgico y nutrición médica.",
     en: "Over 30 years of excellence in aesthetic medicine, non-surgical facial rejuvenation, and medical nutrition.",
@@ -94,13 +92,6 @@ export const clinica_dr_morano_medicina_estetica_palma: ServiceItem = {
       "Wellness- und Regenerationstherapien",
       "Kontinuierliche medizinische Nachbetreuung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 360,
-      url: "https://www.google.com/maps?cid=13008009",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

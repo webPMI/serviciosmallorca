@@ -29,8 +29,6 @@ export const YOGA_MALLORCA_PORTIXOL: ServiceItem = {
   image: "/images/sports/yoga-mallorca-portixol.jpg",
   gallery: ["/images/sports/yoga-mallorca-portixol.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007076",
-  appleMapsUrl: "https://maps.apple.com/?q=Yoga%20Mallorca%20Portixol+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Yoga%20Mallorca%20Portixol+Mallorca",
   shortDescription: {
     es: "Estudio de yoga frente al mar en Portixol con sesiones de Vinyasa al amanecer y Yin Yoga.",
     en: "Seafront yoga studio in Portixol offering sunrise Vinyasa sessions and evening Yin Yoga.",
@@ -94,13 +92,6 @@ export const YOGA_MALLORCA_PORTIXOL: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 210,
-      url: "https://www.google.com/maps?cid=12007076",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

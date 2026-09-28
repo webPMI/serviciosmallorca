@@ -28,9 +28,6 @@ export const restauranteNautilusPortSoller: ServiceItem = {
   email: "info@nautilus-soller.com",
   website: "https://nautilus-soller.com",
   menuUrl: "https://nautilus-soller.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Restaurante+Nautilus+Port+de+Soller+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante+Nautilus+Port+Soller",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante+Nautilus+Port+Soller",
   tags: [
     "zona:tramuntana",
     "zona:port-de-soller",

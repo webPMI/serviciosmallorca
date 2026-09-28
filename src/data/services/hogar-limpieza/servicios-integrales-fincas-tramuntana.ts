@@ -76,10 +76,6 @@ export const serviciosIntegralesFincasTramuntana: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Tramuntana%20Care%20Fincas%20%26%20Home%20Maintenance%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Tramuntana%20Care%20Fincas%20%26%20Home%20Maintenance%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Tramuntana%20Care%20Fincas%20%26%20Home%20Maintenance%20Mallorca",
   pricing: {
     startingPrice: "Mantenimiento mensual integral de finca desde 350€/mes",
     rateType: "tiered",
@@ -106,21 +102,4 @@ export const serviciosIntegralesFincasTramuntana: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 190,
-      url: "https://www.google.com/maps/search/?api=1&query=Tramuntana%20Care%20Fincas%20%26%20Home%20Maintenance%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Tramuntana%20Care%20Fincas%20%26%20Home%20Maintenance%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 19,
-      url: "https://www.bing.com/maps?q=Tramuntana%20Care%20Fincas%20%26%20Home%20Maintenance%20Mallorca",
-    },
-    totalReviewsAggregated: 209,
-    overallWeightedRating: 4.9,
-  },
 };

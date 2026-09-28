@@ -31,12 +31,6 @@ export const restaurante_tierra_palma_cocina_mallorquina_contemporanea: ServiceI
   schedule: "Martes a Sábado: 13:00 - 15:30 y 19:30 - 23:00; Lunes y Domingo: Cerrado",
   image: "/images/services/restaurante-tierra-palma-cocina-mallorquina-contemporanea.jpg",
   gallery: ["/images/services/restaurante-tierra-palma-cocina-mallorquina-contemporanea.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Tierra%20Restaurante%20Cocina%20Mallorquina%20Contempor%C3%A1nea%20Palma%20Carrer%20dels%20Apuntadors%2C%205%2C%2007012%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Tierra%20Restaurante%20Cocina%20Mallorquina%20Contempor%C3%A1nea%20Palma%20Carrer%20dels%20Apuntadors%2C%205%2C%2007012%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Tierra%20Restaurante%20Cocina%20Mallorquina%20Contempor%C3%A1nea%20Palma%20Carrer%20dels%20Apuntadors%2C%205%2C%2007012%20Palma",
   shortDescription: {
     es: "Restaurante de cocina mallorquina contemporánea en el barrio de La Llonja de Palma: menú degustación de producto local KM0 con técnicas actuales y referentes en la Guía Michelin.",
     en: "Contemporary Mallorcan cuisine restaurant in Palma's La Llonja quarter: KM0 local product tasting menu with modern techniques, recommended in the Michelin Guide.",
@@ -100,13 +94,6 @@ export const restaurante_tierra_palma_cocina_mallorquina_contemporanea: ServiceI
       "Mallorquinische Weinbegleitung durch den Sommelier",
       "Privatessen und gastronomische Events im Separee (bis 16 Personen)",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 598,
-      url: "https://www.google.com/maps/search/?api=1&query=Tierra%20Restaurante%20Cocina%20Mallorquina%20Contempor%C3%A1nea%20Palma%20Carrer%20dels%20Apuntadors%2C%205%2C%2007012%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

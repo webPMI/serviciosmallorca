@@ -27,9 +27,6 @@ export const portPetitCalaDor: ServiceItem = {
   email: "info@portpetit.com",
   website: "https://portpetit.com",
   menuUrl: "https://portpetit.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Restaurante+Port+Petit+Cala+d+Or+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante+Port+Petit+Cala+d+Or",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante+Port+Petit+Cala+d+Or",
   tags: ["zona:santanyi-migjorn", "zona:cala-d-or", "product:lujo", "mod:en-local", "aud:parejas", "temps:verano"],
   capabilities: {
     terrace: true,

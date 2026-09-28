@@ -31,12 +31,6 @@ export const escola_hoteleria_illes_balears_ehib_palma: ServiceItem = {
   schedule: "Lunes a Viernes: 08:30 - 20:00",
   image: "/images/services/escola-hoteleria-illes-balears-ehib-palma.jpg",
   gallery: ["/images/services/escola-hoteleria-illes-balears-ehib-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Escola%20d'Hoteleria%20de%20les%20Illes%20Balears%20(EHIB)%20-%20Campus%20UIB%20Campus%20de%20la%20Universitat%20de%20les%20Illes%20Balears%2C%20Ctra.%20de%20Valldemossa%2C%20Km%207.5%2C%2007122%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Escola%20d'Hoteleria%20de%20les%20Illes%20Balears%20(EHIB)%20-%20Campus%20UIB%20Campus%20de%20la%20Universitat%20de%20les%20Illes%20Balears%2C%20Ctra.%20de%20Valldemossa%2C%20Km%207.5%2C%2007122%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Escola%20d'Hoteleria%20de%20les%20Illes%20Balears%20(EHIB)%20-%20Campus%20UIB%20Campus%20de%20la%20Universitat%20de%20les%20Illes%20Balears%2C%20Ctra.%20de%20Valldemossa%2C%20Km%207.5%2C%2007122%20Palma",
   shortDescription: {
     es: "Centro universitario y de formación profesional de excelencia en el Campus UIB: cuna de los mejores chefs, directores de hotel y sumilleres de Baleares.",
     en: "Premier hospitality and culinary academy on the UIB University Campus: training top chefs, hotel managers, and sommeliers in the Balearics.",
@@ -100,13 +94,6 @@ export const escola_hoteleria_illes_balears_ehib_palma: ServiceItem = {
       "Weiterbildungskurse für Fach- und Führungskräfte der Hotelbranche",
       "Mittags-Gourmetmenüs im Lehrrestaurant nach vorheriger Reservierung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 380,
-      url: "https://www.google.com/maps/search/?api=1&query=Escola%20d'Hoteleria%20de%20les%20Illes%20Balears%20(EHIB)%20-%20Campus%20UIB%20Campus%20de%20la%20Universitat%20de%20les%20Illes%20Balears%2C%20Ctra.%20de%20Valldemossa%2C%20Km%207.5%2C%2007122%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

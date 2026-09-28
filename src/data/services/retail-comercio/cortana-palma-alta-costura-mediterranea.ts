@@ -31,12 +31,6 @@ export const cortana_palma_alta_costura_mediterranea: ServiceItem = {
   schedule: "Lunes a Sábado: 10:30 - 14:30, 16:30 - 20:00",
   image: "/images/services/cortana-palma-alta-costura-mediterranea.jpg",
   gallery: ["/images/services/cortana-palma-alta-costura-mediterranea.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Cortana%20Palma%20-%20Alta%20Costura%20%26%20Moda%20Mediterr%C3%A1nea%20de%20Autora%20Carrer%20de%20Can%20Asprer%2C%201%2C%2007012%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Cortana%20Palma%20-%20Alta%20Costura%20%26%20Moda%20Mediterr%C3%A1nea%20de%20Autora%20Carrer%20de%20Can%20Asprer%2C%201%2C%2007012%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Cortana%20Palma%20-%20Alta%20Costura%20%26%20Moda%20Mediterr%C3%A1nea%20de%20Autora%20Carrer%20de%20Can%20Asprer%2C%201%2C%2007012%20Palma",
   shortDescription: {
     es: "Boutique insignia de la diseñadora mallorquina Rosa Esteva: sedas naturales, cortes fluidos, vestidos de novia poéticos y moda de lujo sostenible.",
     en: "Flagship boutique of renowned Mallorcan designer Rosa Esteva: natural silks, flowing silhouettes, poetic bridal couture, and sustainable luxury.",
@@ -100,13 +94,6 @@ export const cortana_palma_alta_costura_mediterranea: ServiceItem = {
       "Wohntextilien aus edlem Naturleinen und Seidenkissen",
       "Persönliche Stylingberatung für Hochzeiten und Feierlichkeiten",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 190,
-      url: "https://www.google.com/maps/search/?api=1&query=Cortana%20Palma%20-%20Alta%20Costura%20%26%20Moda%20Mediterr%C3%A1nea%20de%20Autora%20Carrer%20de%20Can%20Asprer%2C%201%2C%2007012%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

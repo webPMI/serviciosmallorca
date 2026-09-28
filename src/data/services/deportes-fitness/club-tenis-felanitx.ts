@@ -29,8 +29,6 @@ export const CLUB_TENIS_FELANITX: ServiceItem = {
   image: "/images/sports/club-tenis-felanitx.jpg",
   gallery: ["/images/sports/club-tenis-felanitx.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007028",
-  appleMapsUrl: "https://maps.apple.com/?q=Club%20Tenis%20Felanitx+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Club%20Tenis%20Felanitx+Mallorca",
   shortDescription: {
     es: "Club deportivo en Felanitx con pistas de tenis en tierra batida, pádel, piscina y bar social.",
     en: "Sports club in Felanitx offering clay tennis courts, padel, pool, and clubhouse bar.",
@@ -94,13 +92,6 @@ export const CLUB_TENIS_FELANITX: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 230,
-      url: "https://www.google.com/maps?cid=12007028",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

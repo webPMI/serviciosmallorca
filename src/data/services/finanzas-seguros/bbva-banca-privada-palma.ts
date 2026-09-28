@@ -31,12 +31,6 @@ export const bbva_banca_privada_palma: ServiceItem = {
   schedule: "Lunes a Viernes: 08:30 - 16:30",
   image: "/images/services/bbva-banca-privada-palma.jpg",
   gallery: ["/images/services/bbva-banca-privada-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=BBVA%20Banca%20Privada%20Palma%20Rossell%C3%B3%20Avinguda%20d'Alexandre%20Rossell%C3%B3%2C%2013%2C%2007002%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=BBVA%20Banca%20Privada%20Palma%20Rossell%C3%B3%20Avinguda%20d'Alexandre%20Rossell%C3%B3%2C%2013%2C%2007002%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=BBVA%20Banca%20Privada%20Palma%20Rossell%C3%B3%20Avinguda%20d'Alexandre%20Rossell%C3%B3%2C%2013%2C%2007002%20Palma",
   shortDescription: {
     es: "Centro de banca privada y gestión patrimonial de BBVA en las Avenidas de Palma: soluciones de inversión global, sostenibilidad y financiación.",
     en: "BBVA private banking and wealth management center on Palma's Avenidas: global investment strategies, ESG funds, and premium lending.",
@@ -100,13 +94,6 @@ export const bbva_banca_privada_palma: ServiceItem = {
       "Vermögensverwaltung mit globalen thematischen Investmentfonds",
       "Beratung bei der Unternehmensnachfolge und Erstellung von Familienstatuten",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 38,
-      url: "https://www.google.com/maps/search/?api=1&query=BBVA%20Banca%20Privada%20Palma%20Rossell%C3%B3%20Avinguda%20d'Alexandre%20Rossell%C3%B3%2C%2013%2C%2007002%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

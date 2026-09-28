@@ -21,9 +21,6 @@ export const bodegaSonPrim: ServiceItem = {
   whatsapp: "+34 689 50 60 70",
   email: "info@sonprim.com",
   website: "https://sonprim.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Bodega%20Son%20Prim%20Sencelles",
-  appleMapsUrl: "https://maps.apple.com/?q=Bodega%20Son%20Prim%20Sencelles&ll=39.6580,2.9020",
-  bingMapsUrl: "https://www.bing.com/maps?where1=Bodega%20Son%20Prim%20Sencelles",
   coordinates: { lat: 39.658, lng: 2.902 },
   schedule: "Lunes a Sábado: 10:00 - 18:00 (Visitas Guiadas a la Bodega con Cata de Vinos)",
   lastVerifiedAt: "2026-08-25",
@@ -131,30 +128,13 @@ export const bodegaSonPrim: ServiceItem = {
       instagramHandle: "@bodegasonprim",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 190,
-      url: "https://www.google.com/maps/search/?api=1&query=Bodega%20Son%20Prim%20Sencelles",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Bodega%20Son%20Prim%20Sencelles&ll=39.6580,2.9020",
-    },
-    bingMaps: {
-      rating: 4.9,
-      reviewCount: 190,
-      url: "https://www.bing.com/maps?where1=Bodega%20Son%20Prim%20Sencelles",
-    },
-    totalReviewsAggregated: 190,
-    overallWeightedRating: 4.9,
-  },
   reviews: [
     {
       id: "rev-bsp-1",
       authorName: "Antoni Company",
       rating: 5,
       date: "2025-05-19",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
       comment:
         "Una de les millors bodegues de Mallorca. Els seus vins monovarietals de Cabernet i Merlot són sublims. El tast a la terrassa amb vistes a la vinya és una experiència fantàstica.",
@@ -165,7 +145,7 @@ export const bodegaSonPrim: ServiceItem = {
       authorName: "Christian Keller",
       rating: 5,
       date: "2025-06-26",
-      platform: "google_maps",
+      platform: "direct",
       language: "de",
       comment:
         "Hervorragendes Boutique-Weingut in Sencelles! Die sortenreinen Weine sind von Weltklasse-Niveau. Sehr herzliche und informative Weinprobe mit lokalem Käse.",

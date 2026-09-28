@@ -31,12 +31,6 @@ export const helvetia_seguros_mallorca_palma: ServiceItem = {
   schedule: "Lunes a Jueves: 09:00 - 17:30, Viernes: 08:30 - 14:30",
   image: "/images/services/helvetia-seguros-mallorca-palma.jpg",
   gallery: ["/images/services/helvetia-seguros-mallorca-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Helvetia%20Seguros%20Mallorca%20Palma%20Carrer%20d'Arag%C3%B3%2C%2026%2C%2007006%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Helvetia%20Seguros%20Mallorca%20Palma%20Carrer%20d'Arag%C3%B3%2C%2026%2C%2007006%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Helvetia%20Seguros%20Mallorca%20Palma%20Carrer%20d'Arag%C3%B3%2C%2026%2C%2007006%20Palma",
   shortDescription: {
     es: "Compañía aseguradora de origen suizo en Palma: coberturas premium para residencias exclusivas, planes de ahorro y seguros para la comunidad internacional.",
     en: "Swiss-rooted insurance company in Palma: premium home cover for luxury residences, retirement savings, and international community services.",
@@ -100,13 +94,6 @@ export const helvetia_seguros_mallorca_palma: ServiceItem = {
       "Private Rentenversicherungen, Sparpläne und Lebensversicherungen",
       "Expat-Versicherungspakete mit Policen und Beratung auf Deutsch und Englisch",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 48,
-      url: "https://www.google.com/maps/search/?api=1&query=Helvetia%20Seguros%20Mallorca%20Palma%20Carrer%20d'Arag%C3%B3%2C%2026%2C%2007006%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

@@ -31,12 +31,6 @@ export const seguridad_alarmas_baleares_mallorca_secure: ServiceItem = {
   schedule: "Lunes a Viernes: 08:30 - 19:00 (CRA y Asistencia Técnica 24/365)",
   image: "/images/services/seguridad-alarmas-baleares-mallorca-secure.jpg",
   gallery: ["/images/services/seguridad-alarmas-baleares-mallorca-secure.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Mallorca%20Secure%20Alarmas%20%26%20CCTV%20Fincas%20Palma%20Carrer%20del%20Gremi%20d'Hortelans%2C%2011%2C%20Son%20Malferit%2C%2007007%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Mallorca%20Secure%20Alarmas%20%26%20CCTV%20Fincas%20Palma%20Carrer%20del%20Gremi%20d'Hortelans%2C%2011%2C%20Son%20Malferit%2C%2007007%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Mallorca%20Secure%20Alarmas%20%26%20CCTV%20Fincas%20Palma%20Carrer%20del%20Gremi%20d'Hortelans%2C%2011%2C%20Son%20Malferit%2C%2007007%20Palma",
   shortDescription: {
     es: "Sistemas de seguridad de alta tecnología para villas y fincas en Mallorca: detección perimetral anticipada por radar, CCTV con IA y conexión a CRA.",
     en: "High-tech security systems for luxury villas and country estates in Mallorca: perimeter radar, AI CCTV, and 24/7 alarm monitoring.",
@@ -100,13 +94,6 @@ export const seguridad_alarmas_baleares_mallorca_secure: ServiceItem = {
       "Biometrische Zutrittskontrolle & Torfernsteuerung",
       "Regelmäßige Wartung und 24/7 technischer Bereitschaftsdienst",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 220,
-      url: "https://www.google.com/maps/search/?api=1&query=Mallorca%20Secure%20Alarmas%20%26%20CCTV%20Fincas%20Palma%20Carrer%20del%20Gremi%20d'Hortelans%2C%2011%2C%20Son%20Malferit%2C%2007007%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

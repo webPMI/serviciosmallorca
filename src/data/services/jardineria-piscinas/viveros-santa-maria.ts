@@ -92,7 +92,7 @@ export const viverosSantaMaria: ServiceItem = {
       authorName: "Jürgen S.",
       rating: 5,
       date: "2025-06-18",
-      platform: "google_maps",
+      platform: "direct",
       language: "de",
       comment:
         "Riesige Auswahl an gesunden mediterranen Pflanzen und beeindruckenden Olivenbäumen. Die Beratung war auf Deutsch absolut kompetent und die Lieferung samt Einpflanzung auf unserer Finca hat reibungslos geklappt.",
@@ -105,7 +105,7 @@ export const viverosSantaMaria: ServiceItem = {
       authorName: "Bernat F.",
       rating: 5,
       date: "2025-09-02",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
       comment:
         "Molt bon viver a Santa Maria. Plantes adaptades perfectament al clima de l'illa i un equip que coneix la terra mallorquina. Excel·lent selecció de fruiters i testos tradicionals.",
@@ -159,9 +159,6 @@ export const viverosSantaMaria: ServiceItem = {
   whatsapp: "+34 971 62 06 00",
   email: "info@viverossantamaria.com",
   website: "https://viverossantamaria.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Viveros+Santa+Maria+Garden+Center+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Viveros+Santa+Maria+Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Viveros+Santa+Maria+Mallorca",
   tags: [
     "zona:raiguer-pla",
     "zona:santa-maria-del-cami",

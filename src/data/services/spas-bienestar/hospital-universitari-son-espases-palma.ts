@@ -29,9 +29,6 @@ export const hospitalUniversitariSonEspasesPalma: ServiceItem = {
   email: "atencioclient.huse@ssib.es",
   website: "https://www.hospitalsonespases.es",
   menuUrl: "https://www.hospitalsonespases.es",
-  googleMapsUrl: "https://www.google.com/maps/search/Hospital+Universitari+Son+Espases+Palma+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Hospital+Universitari+Son+Espases+Palma",
-  bingMapsUrl: "https://www.bing.com/maps?q=Hospital+Universitari+Son+Espases+Palma",
   tags: ["zona:palma", "product:premium", "mod:en-local", "mod:walk-in", "aud:familias", "temps:todo-el-ano"],
   capabilities: {
     wheelchairAccessible: true,
@@ -141,7 +138,7 @@ export const hospitalUniversitariSonEspasesPalma: ServiceItem = {
       comment:
         "L'equip d'urgències i cirurgia és d'una professionalitat impecable. Tracte humà excel·lent i instal·lacions modernes.",
       date: "2026-08-14",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
     },
     {
@@ -151,7 +148,7 @@ export const hospitalUniversitariSonEspasesPalma: ServiceItem = {
       comment:
         "Sehr professionelle und schnelle Notfallbehandlung. Die Ärzte sprechen hervorragend Englisch und das Krankenhaus ist technisch auf allerhöchstem Niveau.",
       date: "2026-07-29",
-      platform: "google_maps",
+      platform: "direct",
       language: "de",
     },
   ],

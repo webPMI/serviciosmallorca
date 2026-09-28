@@ -28,9 +28,6 @@ export const fornSantFrancesc: ServiceItem = {
   email: "info@fornsantfrancesc.com",
   website: "https://fornsantfrancesc.com",
   menuUrl: "https://fornsantfrancesc.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Forn+Sant+Francesc+Inca+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Forn+Sant+Francesc+Inca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Forn+Sant+Francesc+Inca",
   tags: ["zona:raiguer-pla", "zona:inca", "product:traditional", "mod:en-local", "aud:familias", "temps:todo-el-ano"],
   capabilities: {
     wheelchairAccessible: true,

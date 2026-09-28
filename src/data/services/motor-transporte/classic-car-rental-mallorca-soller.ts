@@ -31,12 +31,6 @@ export const classic_car_rental_mallorca_soller: ServiceItem = {
   schedule: "Lunes a Domingo: 08:30 - 20:00",
   image: "/images/services/classic-car-rental-mallorca-soller.jpg",
   gallery: ["/images/services/classic-car-rental-mallorca-soller.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Mallorca%20Driving%20Classic%20Cars%20%26%20Roadsters%20S%C3%B3ller%20Carrer%20de%20Sa%20Lluna%2C%2032%2C%2007100%20S%C3%B3ller",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Mallorca%20Driving%20Classic%20Cars%20%26%20Roadsters%20S%C3%B3ller%20Carrer%20de%20Sa%20Lluna%2C%2032%2C%2007100%20S%C3%B3ller",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Mallorca%20Driving%20Classic%20Cars%20%26%20Roadsters%20S%C3%B3ller%20Carrer%20de%20Sa%20Lluna%2C%2032%2C%2007100%20S%C3%B3ller",
   shortDescription: {
     es: "Alquiler de coches clásicos descapotables (Morgan, Porsche 356, Alfa Romeo Spider) para recorrer las curvas de la Serra de Tramuntana.",
     en: "Vintage and classic roadster car rental (Morgan, Porsche 356, Alfa Romeo) for scenic Serra de Tramuntana drives.",
@@ -100,13 +94,6 @@ export const classic_car_rental_mallorca_soller: ServiceItem = {
       "Vorprogrammierte GPS-Panoramatouren",
       "Geschenkgutscheine für besondere Anlässe",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 175,
-      url: "https://www.google.com/maps/search/?api=1&query=Mallorca%20Driving%20Classic%20Cars%20%26%20Roadsters%20S%C3%B3ller%20Carrer%20de%20Sa%20Lluna%2C%2032%2C%2007100%20S%C3%B3ller",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

@@ -31,12 +31,6 @@ export const teatre_principal_de_palma: ServiceItem = {
   schedule: "Martes a Sábado: taquilla 11:00 - 14:00, 17:00 - 20:00 | Funciones según cartelera",
   image: "/images/services/teatre-principal-de-palma.jpg",
   gallery: ["/images/services/teatre-principal-de-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Teatre%20Principal%20de%20Palma%20Carrer%20de%20la%20Riera%2C%202%2C%2007003%20Palma%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Teatre%20Principal%20de%20Palma%20Carrer%20de%20la%20Riera%2C%202%2C%2007003%20Palma%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Teatre%20Principal%20de%20Palma%20Carrer%20de%20la%20Riera%2C%202%2C%2007003%20Palma%2C%20Illes%20Balears",
   shortDescription: {
     es: "Teatro de ópera y artes escénicas de referencia en Baleares, fundado en 1857 en el corazón de Palma, con una programación anual de ópera, teatro dramático, danza y conciertos.",
     en: "The Balearic Islands' flagship opera house and performing arts theatre, established in 1857 in central Palma, presenting a rich year-round season of opera, drama, dance, and symphonies.",
@@ -100,13 +94,6 @@ export const teatre_principal_de_palma: ServiceItem = {
       "Vermietung der Theatersäle für Firmenveranstaltungen, Kulturkongresse und Filmaufnahmen",
       "Traditionsreiche Theaterbar für Erfrischungen in den Veranstaltungspausen",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 1680,
-      url: "https://www.google.com/maps/search/?api=1&query=Teatre%20Principal%20de%20Palma%20Carrer%20de%20la%20Riera%2C%202%2C%2007003%20Palma%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

@@ -31,12 +31,6 @@ export const clinica_veterinaria_felanitx: ServiceItem = {
   schedule: "Lunes a Viernes: 09:30 - 13:00, 16:30 - 19:30",
   image: "/images/services/clinica-veterinaria-felanitx.jpg",
   gallery: ["/images/services/clinica-veterinaria-felanitx.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica%20Veterin%C3%A0ria%20Felanitx%20Carrer%20Major%2C%2046%2C%2007200%20Felanitx",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Cl%C3%ADnica%20Veterin%C3%A0ria%20Felanitx%20Carrer%20Major%2C%2046%2C%2007200%20Felanitx",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Cl%C3%ADnica%20Veterin%C3%A0ria%20Felanitx%20Carrer%20Major%2C%2046%2C%2007200%20Felanitx",
   shortDescription: {
     es: "Atención veterinaria integral para animales de compañía y apoyo a explotaciones rurales en Felanitx y comarca.",
     en: "Comprehensive veterinary clinic for companion pets and rural animal health support in Felanitx and surrounding areas.",
@@ -100,13 +94,6 @@ export const clinica_veterinaria_felanitx: ServiceItem = {
       "Kastrationen, Weichteilchirurgie und Zahnsteinentfernung",
       "Vor-Ort-Fincabesuche nach Vereinbarung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.6,
-      reviewCount: 65,
-      url: "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica%20Veterin%C3%A0ria%20Felanitx%20Carrer%20Major%2C%2046%2C%2007200%20Felanitx",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

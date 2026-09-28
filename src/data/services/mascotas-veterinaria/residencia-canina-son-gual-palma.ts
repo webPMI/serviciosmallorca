@@ -31,12 +31,6 @@ export const residencia_canina_son_gual_palma: ServiceItem = {
   schedule: "Lunes a Domingo: 09:00 - 13:30 y 16:30 - 19:30",
   image: "/images/services/residencia-canina-son-gual-palma.jpg",
   gallery: ["/images/services/residencia-canina-son-gual-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Residencia%20Canina%20Son%20Gual%20Hotel%20%26%20Adiestramiento%20Palma%20Cam%C3%AD%20de%20Son%20Gual%2C%20s%2Fn%2C%2007199%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Residencia%20Canina%20Son%20Gual%20Hotel%20%26%20Adiestramiento%20Palma%20Cam%C3%AD%20de%20Son%20Gual%2C%20s%2Fn%2C%2007199%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Residencia%20Canina%20Son%20Gual%20Hotel%20%26%20Adiestramiento%20Palma%20Cam%C3%AD%20de%20Son%20Gual%2C%20s%2Fn%2C%2007199%20Palma",
   shortDescription: {
     es: "Hotel y residencia canina en plena naturaleza en Son Gual (Palma): amplios parques de recreo arbolados, boxes individuales climatizados, vigilancia 24h y adiestramiento positivo.",
     en: "Country canine hotel and boarding resort in Son Gual (Palma): spacious grassy play parks, individual climate-controlled suites, 24/7 care, and positive training.",
@@ -100,13 +94,6 @@ export const residencia_canina_son_gual_palma: ServiceItem = {
       "Hundeschule mit Einzeltraining und Verhaltensberatung",
       "Fellpflege und Waschservice vor der Heimreise",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 490,
-      url: "https://www.google.com/maps/search/?api=1&query=Residencia%20Canina%20Son%20Gual%20Hotel%20%26%20Adiestramiento%20Palma%20Cam%C3%AD%20de%20Son%20Gual%2C%20s%2Fn%2C%2007199%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

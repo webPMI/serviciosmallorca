@@ -31,12 +31,6 @@ export const correduria_seguros_serra_palma: ServiceItem = {
   schedule: "Lunes a Jueves: 08:30 - 18:00, Viernes: 08:30 - 14:30",
   image: "/images/services/correduria-seguros-serra-palma.jpg",
   gallery: ["/images/services/correduria-seguros-serra-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Corredur%C3%ADa%20de%20Seguros%20Serra%20Palma%20-%20Empresas%20%26%20Patrimonios%20Gran%20Via%20Asima%2C%2020%2C%20Pol%C3%ADgon%20Son%20Castell%C3%B3%2C%2007009%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Corredur%C3%ADa%20de%20Seguros%20Serra%20Palma%20-%20Empresas%20%26%20Patrimonios%20Gran%20Via%20Asima%2C%2020%2C%20Pol%C3%ADgon%20Son%20Castell%C3%B3%2C%2007009%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Corredur%C3%ADa%20de%20Seguros%20Serra%20Palma%20-%20Empresas%20%26%20Patrimonios%20Gran%20Via%20Asima%2C%2020%2C%20Pol%C3%ADgon%20Son%20Castell%C3%B3%2C%2007009%20Palma",
   shortDescription: {
     es: "Correduría de seguros líder en Baleares especializada en coberturas para empresas, hoteles, villas de lujo y flotas industriales.",
     en: "Leading Balearic insurance brokerage specialized in corporate risk, hospitality assets, luxury villas, and commercial vehicle fleets.",
@@ -100,13 +94,6 @@ export const correduria_seguros_serra_palma: ServiceItem = {
       "D&O- und Vermögensschaden-Haftpflicht für Geschäftsführer",
       "Betriebliche Krankenversicherung und Altersvorsorgekonzepte",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 290,
-      url: "https://www.google.com/maps/search/?api=1&query=Corredur%C3%ADa%20de%20Seguros%20Serra%20Palma%20-%20Empresas%20%26%20Patrimonios%20Gran%20Via%20Asima%2C%2020%2C%20Pol%C3%ADgon%20Son%20Castell%C3%B3%2C%2007009%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

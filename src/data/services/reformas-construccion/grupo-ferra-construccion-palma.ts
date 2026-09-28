@@ -31,12 +31,6 @@ export const grupo_ferra_construccion_palma: ServiceItem = {
   schedule: "Lunes a Viernes: 08:00 - 17:00",
   image: "/images/services/grupo-ferra-construccion-palma.jpg",
   gallery: ["/images/services/grupo-ferra-construccion-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Grupo%20Ferr%C3%A1%20Construcci%C3%B3n%20%26%20Edificaci%C3%B3n%20Palma%20(1950)%20Gran%20Via%20Asima%2C%2034%2C%20Pol%C3%ADgono%20Son%20Castell%C3%B3%2C%2007009%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Grupo%20Ferr%C3%A1%20Construcci%C3%B3n%20%26%20Edificaci%C3%B3n%20Palma%20(1950)%20Gran%20Via%20Asima%2C%2034%2C%20Pol%C3%ADgono%20Son%20Castell%C3%B3%2C%2007009%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Grupo%20Ferr%C3%A1%20Construcci%C3%B3n%20%26%20Edificaci%C3%B3n%20Palma%20(1950)%20Gran%20Via%20Asima%2C%2034%2C%20Pol%C3%ADgono%20Son%20Castell%C3%B3%2C%2007009%20Palma",
   shortDescription: {
     es: "Grupo constructor referente en Baleares desde 1950: construcción de villas de lujo, rehabilitación de edificios patrimoniales y proyectos hoteleros con los más altos estándares de sostenibilidad.",
     en: "Benchmark construction group in the Balearics since 1950: luxury villa construction, architectural heritage restoration, and sustainable commercial hotel projects.",
@@ -100,13 +94,6 @@ export const grupo_ferra_construccion_palma: ServiceItem = {
       "Umbau und Modernisierung von Hotels und Gewerbeobjekten",
       "Baugenehmigungsmanagement und Bauleitung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 220,
-      url: "https://www.google.com/maps/search/?api=1&query=Grupo%20Ferr%C3%A1%20Construcci%C3%B3n%20%26%20Edificaci%C3%B3n%20Palma%20(1950)%20Gran%20Via%20Asima%2C%2034%2C%20Pol%C3%ADgono%20Son%20Castell%C3%B3%2C%2007009%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

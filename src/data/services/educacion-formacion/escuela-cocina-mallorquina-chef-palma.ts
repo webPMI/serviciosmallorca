@@ -31,12 +31,6 @@ export const escuela_cocina_mallorquina_chef_palma: ServiceItem = {
   schedule: "Martes a Sábado: 10:00 - 15:00 y 18:00 - 22:30",
   image: "/images/services/escuela-cocina-mallorquina-chef-palma.jpg",
   gallery: ["/images/services/escuela-cocina-mallorquina-chef-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Palma%20Cooking%20School%20%26%20Mediterranean%20Culinary%20Workshops%20Carrer%20de%20la%20Santa%20Creu%2C%208%2C%2007012%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Palma%20Cooking%20School%20%26%20Mediterranean%20Culinary%20Workshops%20Carrer%20de%20la%20Santa%20Creu%2C%208%2C%2007012%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Palma%20Cooking%20School%20%26%20Mediterranean%20Culinary%20Workshops%20Carrer%20de%20la%20Santa%20Creu%2C%208%2C%2007012%20Palma",
   shortDescription: {
     es: "Escuela de cocina en el casco antiguo de Palma: talleres prácticos con visita al Mercat de Santa Catalina, elaboración de paella, tapas y maridaje con vinos baleares.",
     en: "Hands-on culinary school in Palma Old Town: Santa Catalina market tour, paella masterclass, gourmet tapas, and local wine pairing.",
@@ -100,13 +94,6 @@ export const escuela_cocina_mallorquina_chef_palma: ServiceItem = {
       "Kulinarisches Teambuilding und Firmenevents",
       "Traditionelle Backkurse für Ensaimadas und Mandelkuchen",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 410,
-      url: "https://www.google.com/maps/search/?api=1&query=Palma%20Cooking%20School%20%26%20Mediterranean%20Culinary%20Workshops%20Carrer%20de%20la%20Santa%20Creu%2C%208%2C%2007012%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

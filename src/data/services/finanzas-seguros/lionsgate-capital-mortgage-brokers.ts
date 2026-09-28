@@ -76,9 +76,6 @@ export const lionsgateCapitalMortgageBrokers: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Lionsgate%20Capital%20Mortgages%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Lionsgate%20Capital%20Mortgages%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Lionsgate%20Capital%20Mortgages%20Mallorca",
   pricing: {
     startingPrice: "Consulta inicial gratuita",
     rateType: "custom_quote",
@@ -105,21 +102,4 @@ export const lionsgateCapitalMortgageBrokers: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 380,
-      url: "https://www.google.com/maps/search/?api=1&query=Lionsgate%20Capital%20Mortgages%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Lionsgate%20Capital%20Mortgages%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 38,
-      url: "https://www.bing.com/maps?q=Lionsgate%20Capital%20Mortgages%20Mallorca",
-    },
-    totalReviewsAggregated: 418,
-    overallWeightedRating: 4.9,
-  },
 };

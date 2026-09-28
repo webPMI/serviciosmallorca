@@ -76,10 +76,6 @@ export const mallorcaPrivateChauffeurLimousine: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Palma%20VIP%20Chauffeur%20%26%20Executive%20Limousine%20Service%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Palma%20VIP%20Chauffeur%20%26%20Executive%20Limousine%20Service%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Palma%20VIP%20Chauffeur%20%26%20Executive%20Limousine%20Service%20Mallorca",
   pricing: {
     startingPrice: "Transfer aeropuerto VIP Mercedes Clase S desde 120€",
     rateType: "tiered",
@@ -106,21 +102,4 @@ export const mallorcaPrivateChauffeurLimousine: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 650,
-      url: "https://www.google.com/maps/search/?api=1&query=Palma%20VIP%20Chauffeur%20%26%20Executive%20Limousine%20Service%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Palma%20VIP%20Chauffeur%20%26%20Executive%20Limousine%20Service%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 65,
-      url: "https://www.bing.com/maps?q=Palma%20VIP%20Chauffeur%20%26%20Executive%20Limousine%20Service%20Mallorca",
-    },
-    totalReviewsAggregated: 715,
-    overallWeightedRating: 4.9,
-  },
 };

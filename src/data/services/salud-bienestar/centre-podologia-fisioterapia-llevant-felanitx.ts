@@ -31,12 +31,6 @@ export const centre_podologia_fisioterapia_llevant_felanitx: ServiceItem = {
   schedule: "Lunes a Viernes: 09:00 - 13:00, 16:00 - 19:30",
   image: "/images/services/centre-podologia-fisioterapia-llevant-felanitx.jpg",
   gallery: ["/images/services/centre-podologia-fisioterapia-llevant-felanitx.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Centre%20de%20Podologia%20%26%20Fisioter%C3%A0pia%20Llevant%20Felanitx%20Carrer%20Major%2C%2012%2C%2007200%20Felanitx",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Centre%20de%20Podologia%20%26%20Fisioter%C3%A0pia%20Llevant%20Felanitx%20Carrer%20Major%2C%2012%2C%2007200%20Felanitx",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Centre%20de%20Podologia%20%26%20Fisioter%C3%A0pia%20Llevant%20Felanitx%20Carrer%20Major%2C%2012%2C%2007200%20Felanitx",
   shortDescription: {
     es: "Clínica podológica y de fisioterapia en Felanitx: estudio biomecánico de la marcha, plantillas a medida, quiropodia y pie diabético.",
     en: "Podiatry and physiotherapy clinic in Felanitx: gait biomechanical analysis, custom orthotics, chiropody, and diabetic foot care.",
@@ -100,13 +94,6 @@ export const centre_podologia_fisioterapia_llevant_felanitx: ServiceItem = {
       "Medizinische Fußpflege: Hornhautentfernung, Hühneraugen und Nagelpilzbehandlung",
       "Physiotherapie für Fuß und Sprunggelenk: Bänderdehnungen und Achillessehnenbeschwerden",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 68,
-      url: "https://www.google.com/maps/search/?api=1&query=Centre%20de%20Podologia%20%26%20Fisioter%C3%A0pia%20Llevant%20Felanitx%20Carrer%20Major%2C%2012%2C%2007200%20Felanitx",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

@@ -76,10 +76,6 @@ export const oamArquitecturaMediterraneaPalma: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Oliver%20%26%20Associates%20Mediterranean%20Architecture%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Oliver%20%26%20Associates%20Mediterranean%20Architecture%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Oliver%20%26%20Associates%20Mediterranean%20Architecture%20Mallorca",
   pricing: {
     startingPrice: "Presupuesto y atención a medida",
     rateType: "tiered",
@@ -106,21 +102,4 @@ export const oamArquitecturaMediterraneaPalma: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 210,
-      url: "https://www.google.com/maps/search/?api=1&query=Oliver%20%26%20Associates%20Mediterranean%20Architecture%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Oliver%20%26%20Associates%20Mediterranean%20Architecture%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 21,
-      url: "https://www.bing.com/maps?q=Oliver%20%26%20Associates%20Mediterranean%20Architecture%20Mallorca",
-    },
-    totalReviewsAggregated: 231,
-    overallWeightedRating: 4.9,
-  },
 };

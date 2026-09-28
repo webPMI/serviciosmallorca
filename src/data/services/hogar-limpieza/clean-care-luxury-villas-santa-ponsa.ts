@@ -76,10 +76,6 @@ export const cleanCareLuxuryVillasSantaPonsa: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Clean%20%26%20Care%20Luxury%20Villa%20Management%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Clean%20%26%20Care%20Luxury%20Villa%20Management%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Clean%20%26%20Care%20Luxury%20Villa%20Management%20Mallorca",
   pricing: {
     startingPrice: "Presupuesto y tarifas personalizadas",
     rateType: "tiered",
@@ -106,21 +102,4 @@ export const cleanCareLuxuryVillasSantaPonsa: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 320,
-      url: "https://www.google.com/maps/search/?api=1&query=Clean%20%26%20Care%20Luxury%20Villa%20Management%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Clean%20%26%20Care%20Luxury%20Villa%20Management%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 32,
-      url: "https://www.bing.com/maps?q=Clean%20%26%20Care%20Luxury%20Villa%20Management%20Mallorca",
-    },
-    totalReviewsAggregated: 352,
-    overallWeightedRating: 4.9,
-  },
 };

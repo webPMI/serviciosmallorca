@@ -29,8 +29,6 @@ export const clinica_salva_fisioterapia_osteopatia_palma: ServiceItem = {
   image: "/images/spas/clinica-salva-fisioterapia-osteopatia-palma.jpg",
   gallery: ["/images/spas/clinica-salva-fisioterapia-osteopatia-palma.jpg", "/images/categories/salud.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=13008015",
-  appleMapsUrl: "https://maps.apple.com/?q=Cl%C3%ADnica%20Salv%C3%A0%20Fisioterapia%20%26%20Osteopat%C3%ADa+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Cl%C3%ADnica%20Salv%C3%A0%20Fisioterapia%20%26%20Osteopat%C3%ADa+Mallorca",
   shortDescription: {
     es: "Fisioterapia avanzada, osteopatía estructural, ecografía musculoesquelética y readaptación deportiva.",
     en: "Advanced physiotherapy, structural osteopathy, ultrasound diagnosis, and sports injury rehabilitation.",
@@ -94,13 +92,6 @@ export const clinica_salva_fisioterapia_osteopatia_palma: ServiceItem = {
       "Wellness- und Regenerationstherapien",
       "Kontinuierliche medizinische Nachbetreuung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 340,
-      url: "https://www.google.com/maps?cid=13008015",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

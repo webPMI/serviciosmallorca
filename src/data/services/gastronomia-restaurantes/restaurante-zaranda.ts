@@ -24,9 +24,6 @@ export const restauranteZaranda: ServiceItem = {
   whatsapp: "+34 680 60 25 80",
   email: "zaranda@zaranda.es",
   website: "https://zaranda.es",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Restaurante%20Zaranda%20Palma",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante%20Zaranda%20Palma&ll=39.5656,2.6554",
-  bingMapsUrl: "https://www.bing.com/maps?where1=Restaurante%20Zaranda%20Palma",
   coordinates: { lat: 39.5656, lng: 2.6554 },
   coordinatesAccuracy: "verified_manual",
   schedule:
@@ -145,23 +142,6 @@ export const restauranteZaranda: ServiceItem = {
       instagramHandle: "@zarandarest",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.6,
-      reviewCount: 120,
-      url: "https://www.google.com/maps/search/?api=1&query=Restaurante%20Zaranda%20Palma",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Restaurante%20Zaranda%20Palma&ll=39.5656,2.6554",
-    },
-    bingMaps: {
-      rating: 4.6,
-      reviewCount: 120,
-      url: "https://www.bing.com/maps?where1=Restaurante%20Zaranda%20Palma",
-    },
-    totalReviewsAggregated: 120,
-    overallWeightedRating: 4.6,
-  },
   confidenceScore: 92,
   verificationStatus: "verified",
   sourceConfidence: "high",

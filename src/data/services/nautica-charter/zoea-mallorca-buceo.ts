@@ -21,9 +21,6 @@ export const zoeaBuceoMallorca: ServiceItem = {
   whatsapp: "+34 687 40 50 60",
   email: "reservas@zoeamallorca.com",
   website: "https://zoeamallorca.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Zoea%20Mallorca%20Buceo%20Santa%20Ponsa",
-  appleMapsUrl: "https://maps.apple.com/?q=Zoea%20Mallorca%20Buceo%20Santa%20Ponsa&ll=39.5165,2.4820",
-  bingMapsUrl: "https://www.bing.com/maps?where1=Zoea%20Mallorca%20Buceo%20Santa%20Ponsa",
   coordinates: { lat: 39.5165, lng: 2.482 },
   schedule: "Lunes a Domingo: 08:30 - 19:30 (Salidas diarias a Reservas Marinas)",
   image: "/images/services/zoea-mallorca-buceo-charter.jpg",
@@ -130,30 +127,13 @@ export const zoeaBuceoMallorca: ServiceItem = {
       instagramHandle: "@zoeamallorca",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 780,
-      url: "https://www.google.com/maps/search/?api=1&query=Zoea%20Mallorca%20Buceo%20Santa%20Ponsa",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Zoea%20Mallorca%20Buceo%20Santa%20Ponsa&ll=39.5165,2.4820",
-    },
-    bingMaps: {
-      rating: 4.9,
-      reviewCount: 780,
-      url: "https://www.bing.com/maps?where1=Zoea%20Mallorca%20Buceo%20Santa%20Ponsa",
-    },
-    totalReviewsAggregated: 780,
-    overallWeightedRating: 4.9,
-  },
   reviews: [
     {
       id: "rev-zm-1",
       authorName: "Marc Vallespir",
       rating: 5,
       date: "2025-05-18",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
       comment:
         "El millor centre de submarinisme de Mallorca. Vam anar a la Reserva del Toro i vam veure desenes de meros enormes. Els vaixells són ràpids i còmodes.",
@@ -164,7 +144,7 @@ export const zoeaBuceoMallorca: ServiceItem = {
       authorName: "Alexander Becker",
       rating: 5,
       date: "2025-06-28",
-      platform: "google_maps",
+      platform: "direct",
       language: "en",
       comment:
         "Outstanding PADI 5-star dive center! Completed my Advanced Open Water with Zoea. Friendly, professional instructors, top gear, and unbelievable visibility in El Toro marine reserve.",

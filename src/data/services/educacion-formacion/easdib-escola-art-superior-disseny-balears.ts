@@ -31,12 +31,6 @@ export const easdib_escola_art_superior_disseny_balears: ServiceItem = {
   schedule: "Lunes a Viernes: 08:30 - 21:00 | Sábado y Domingo: Cerrado",
   image: "/images/services/easdib-escola-art-superior-disseny-balears.jpg",
   gallery: ["/images/services/easdib-escola-art-superior-disseny-balears.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=EASDIB%20Escola%20d'Art%20i%20Superior%20de%20Disseny%20de%20les%20Illes%20Balears%20Carrer%20de%20l'Institut%20Balear%2C%205%2C%2007012%20Palma%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=EASDIB%20Escola%20d'Art%20i%20Superior%20de%20Disseny%20de%20les%20Illes%20Balears%20Carrer%20de%20l'Institut%20Balear%2C%205%2C%2007012%20Palma%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=EASDIB%20Escola%20d'Art%20i%20Superior%20de%20Disseny%20de%20les%20Illes%20Balears%20Carrer%20de%20l'Institut%20Balear%2C%205%2C%2007012%20Palma%2C%20Illes%20Balears",
   shortDescription: {
     es: "Centro universitario público de diseño en Palma, formando a creadores en diseño gráfico, diseño de interiores, diseño de moda y producto con titulación oficial.",
     en: "Premier public design university in Palma offering accredited degrees in graphic design, interior architecture, fashion design, and product engineering.",
@@ -100,13 +94,6 @@ export const easdib_escola_art_superior_disseny_balears: ServiceItem = {
       "Bachelor Modedesign: Schnittkonstruktion, Textiltechnik und nachhaltige Mode",
       "Bachelor Produktdesign: Möbelentwurf, Leuchtendesign und serielle Fertigung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 160,
-      url: "https://www.google.com/maps/search/?api=1&query=EASDIB%20Escola%20d'Art%20i%20Superior%20de%20Disseny%20de%20les%20Illes%20Balears%20Carrer%20de%20l'Institut%20Balear%2C%205%2C%2007012%20Palma%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

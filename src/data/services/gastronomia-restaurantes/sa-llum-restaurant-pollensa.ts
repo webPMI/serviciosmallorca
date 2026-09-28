@@ -76,9 +76,6 @@ export const saLlumRestaurantPollensa: ServiceItem = {
       close: "17:00",
     },
   },
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Restaurante%20Sa%20Llum%20Pollen%C3%A7a%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante%20Sa%20Llum%20Pollen%C3%A7a%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante%20Sa%20Llum%20Pollen%C3%A7a%20Mallorca",
   pricing: {
     startingPrice: "Carta y menús degustación disponibles",
     rateType: "tiered",
@@ -105,21 +102,4 @@ export const saLlumRestaurantPollensa: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 510,
-      url: "https://www.google.com/maps/search/?api=1&query=Restaurante%20Sa%20Llum%20Pollen%C3%A7a%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Restaurante%20Sa%20Llum%20Pollen%C3%A7a%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.7,
-      reviewCount: 51,
-      url: "https://www.bing.com/maps?q=Restaurante%20Sa%20Llum%20Pollen%C3%A7a%20Mallorca",
-    },
-    totalReviewsAggregated: 561,
-    overallWeightedRating: 4.8,
-  },
 };

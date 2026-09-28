@@ -31,12 +31,6 @@ export const gran_hotel_son_net_puigpunyent_palacio: ServiceItem = {
   schedule: "Recepción 24 horas (Abierto todo el año)",
   image: "/images/services/gran-hotel-son-net-puigpunyent-palacio.jpg",
   gallery: ["/images/services/gran-hotel-son-net-puigpunyent-palacio.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Gran%20Hotel%20Son%20Net%20Palacio%20Hist%C3%B3rico%20Puigpunyent%20(1672)%20Carrer%20del%20Castillo%20de%20Son%20Net%2C%20s%2Fn%2C%2007194%20Puigpunyent",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Gran%20Hotel%20Son%20Net%20Palacio%20Hist%C3%B3rico%20Puigpunyent%20(1672)%20Carrer%20del%20Castillo%20de%20Son%20Net%2C%20s%2Fn%2C%2007194%20Puigpunyent",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Gran%20Hotel%20Son%20Net%20Palacio%20Hist%C3%B3rico%20Puigpunyent%20(1672)%20Carrer%20del%20Castillo%20de%20Son%20Net%2C%20s%2Fn%2C%2007194%20Puigpunyent",
   shortDescription: {
     es: "Palacio histórico señorial del siglo XVII restaurado como hotel de gran lujo en Puigpunyent: piscina de 30 metros, viñedo propio y arte clásico.",
     en: "Restored 17th-century historic aristocratic palace hotel in Puigpunyent: 30-meter pool, estate vineyard, and museum-grade fine art.",
@@ -100,13 +94,6 @@ export const gran_hotel_son_net_puigpunyent_palacio: ServiceItem = {
       "Wellness-Spa mit balearischen Pflanzen-Extrakten",
       "Private Weinproben im historischen Gewölbekeller",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 520,
-      url: "https://www.google.com/maps/search/?api=1&query=Gran%20Hotel%20Son%20Net%20Palacio%20Hist%C3%B3rico%20Puigpunyent%20(1672)%20Carrer%20del%20Castillo%20de%20Son%20Net%2C%20s%2Fn%2C%2007194%20Puigpunyent",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

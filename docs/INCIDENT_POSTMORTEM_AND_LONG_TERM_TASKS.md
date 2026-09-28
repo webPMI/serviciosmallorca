@@ -23,9 +23,9 @@
 
 ### Fase 2: Automatización y Control de Calidad Continuo (CI/CD)
 
-- [ ] **Linter de Ficheros Huérfanos**: Integrar un test unitario en `tests/unit/services.test.ts` que recorra todas las subcarpetas de `src/data/services/` y falle si algún `.ts` (excepto `index.ts`) no está exportado en el catálogo.
+- [x] **Linter de Ficheros Huérfanos**: Integrar un test unitario en `tests/unit/services.test.ts` que recorra todas las subcarpetas de `src/data/services/` y falle si algún `.ts` (excepto `index.ts`) no está exportado en el catálogo.
 - [ ] **Validador de Esquema en Pre-commit**: Añadir hook de Husky que ejecute `validateServicesList` antes de permitir cualquier commit que modifique archivos de servicios.
-- [ ] **Fallback de Logging Local**: En `src/middleware.ts` y `src/lib/d1Logger.ts`, si D1 no está disponible (ej. en desarrollo local sin emulador Cloudflare), imprimir errores en consola estándar con formato legible en lugar de descartarlos silenciosamente.
+- [x] **Fallback de Logging Local**: En `src/middleware.ts` y `src/lib/d1Logger.ts`, si D1 no está disponible (ej. en desarrollo local sin emulador Cloudflare), imprimir errores en consola estándar con formato legible en lugar de descartarlos silenciosamente.
 
 ### Fase 3: Optimización del Catálogo y SEO
 

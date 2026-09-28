@@ -31,12 +31,6 @@ export const instalaciones_electricas_elecbal_palma: ServiceItem = {
   schedule: "Lunes a Viernes: 07:30 - 16:30",
   image: "/images/services/instalaciones-electricas-elecbal-palma.jpg",
   gallery: ["/images/services/instalaciones-electricas-elecbal-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Instalaciones%20El%C3%A9ctricas%20ELECBAL%20Palma%20Carrer%20del%20Gremi%20de%20Fusters%2C%2024%2C%20Pol%C3%ADgon%20Son%20Castell%C3%B3%2C%2007009%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Instalaciones%20El%C3%A9ctricas%20ELECBAL%20Palma%20Carrer%20del%20Gremi%20de%20Fusters%2C%2024%2C%20Pol%C3%ADgon%20Son%20Castell%C3%B3%2C%2007009%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Instalaciones%20El%C3%A9ctricas%20ELECBAL%20Palma%20Carrer%20del%20Gremi%20de%20Fusters%2C%2024%2C%20Pol%C3%ADgon%20Son%20Castell%C3%B3%2C%2007009%20Palma",
   shortDescription: {
     es: "Instaladores eléctricos autorizados en Mallorca: proyectos de baja y media tensión, iluminación led arquitectónica y energía solar para villas.",
     en: "Authorized electrical contractors in Mallorca: low/medium voltage installations, architectural lighting, and solar PV for villas.",
@@ -100,13 +94,6 @@ export const instalaciones_electricas_elecbal_palma: ServiceItem = {
       "Photovoltaikanlagen für Eigenverbrauch mit Speicherbatterien",
       "Fachgerechte Installation von Wallboxen und E-Auto-Ladestationen",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 72,
-      url: "https://www.google.com/maps/search/?api=1&query=Instalaciones%20El%C3%A9ctricas%20ELECBAL%20Palma%20Carrer%20del%20Gremi%20de%20Fusters%2C%2024%2C%20Pol%C3%ADgon%20Son%20Castell%C3%B3%2C%2007009%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

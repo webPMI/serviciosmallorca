@@ -28,9 +28,6 @@ export const barSHostalMontuiri: ServiceItem = {
   email: "info@barshostalmontuiri.com",
   website: "https://www.facebook.com/barshostalmontuiri",
   menuUrl: "https://www.facebook.com/barshostalmontuiri",
-  googleMapsUrl: "https://www.google.com/maps/search/Bar+s+Hostal+Montuiri+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Bar+s+Hostal+Montuiri",
-  bingMapsUrl: "https://www.bing.com/maps?q=Bar+s+Hostal+Montuiri",
   tags: [
     "zona:raiguer-pla",
     "zona:montuiri",

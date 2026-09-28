@@ -76,10 +76,6 @@ export const traduccionesJuradasMallorcaSworn: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Mallorca%20Sworn%20Translations%20%26%20Official%20Interpreters%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Mallorca%20Sworn%20Translations%20%26%20Official%20Interpreters%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Mallorca%20Sworn%20Translations%20%26%20Official%20Interpreters%20Mallorca",
   pricing: {
     startingPrice: "Traducción jurada oficial desde 40€ / página",
     rateType: "tiered",
@@ -106,21 +102,4 @@ export const traduccionesJuradasMallorcaSworn: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 260,
-      url: "https://www.google.com/maps/search/?api=1&query=Mallorca%20Sworn%20Translations%20%26%20Official%20Interpreters%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Mallorca%20Sworn%20Translations%20%26%20Official%20Interpreters%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 26,
-      url: "https://www.bing.com/maps?q=Mallorca%20Sworn%20Translations%20%26%20Official%20Interpreters%20Mallorca",
-    },
-    totalReviewsAggregated: 286,
-    overallWeightedRating: 4.9,
-  },
 };

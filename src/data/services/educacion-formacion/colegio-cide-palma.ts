@@ -31,12 +31,6 @@ export const colegio_cide_palma: ServiceItem = {
   schedule: "Lunes a Viernes de 07:30 a 18:00",
   image: "/images/services/colegio-cide-palma.jpg",
   gallery: ["/images/services/colegio-cide-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Colegio%20CIDE%20Palma%20(Cooperativa%20d'Ensenyament)%20Carrer%20del%20CIDE%2C%201%2C%2007013%20Palma%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Colegio%20CIDE%20Palma%20(Cooperativa%20d'Ensenyament)%20Carrer%20del%20CIDE%2C%201%2C%2007013%20Palma%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Colegio%20CIDE%20Palma%20(Cooperativa%20d'Ensenyament)%20Carrer%20del%20CIDE%2C%201%2C%2007013%20Palma%2C%20Illes%20Balears",
   shortDescription: {
     es: "Referente en innovación pedagógica cooperativa desde 1968 en Son Rapinya, Palma. Educación desde los 4 meses hasta formación profesional y bachillerato.",
     en: "Leading cooperative school in Palma since 1968 located in Son Rapinya. Progressive teaching from nursery through to vocational training and high school.",
@@ -110,13 +104,6 @@ export const colegio_cide_palma: ServiceItem = {
     ],
     ca: ["Metodologies cooperatives actives", "Esport federat i natació", "Formació professional dual"],
     de: ["Kooperative Lernmethoden", "Leistungssport und Schwimmförderung", "Duale Berufsausbildung"],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 280,
-      url: "https://www.google.com/maps/search/?api=1&query=Colegio%20CIDE%20Palma%20(Cooperativa%20d'Ensenyament)%20Carrer%20del%20CIDE%2C%201%2C%2007013%20Palma%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

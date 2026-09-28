@@ -21,9 +21,6 @@ export const carpinteriaNavalMestres: ServiceItem = {
   whatsapp: "+34 689 30 40 50",
   email: "info@mestresdaixa.com",
   website: "https://mestresdaixabalear.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Mestres%20d%20Aixa%20Portitxol%20Palma",
-  appleMapsUrl: "https://maps.apple.com/?q=Mestres%20d%20Aixa%20Portitxol%20Palma&ll=39.5610,2.6730",
-  bingMapsUrl: "https://www.bing.com/maps?where1=Mestres%20d%20Aixa%20Portitxol%20Palma",
   coordinates: { lat: 39.561, lng: 2.673 },
   schedule: "Lunes a Viernes: 08:00 - 18:00 (Presupuestos Técnicos y Varada de Embarcaciones)",
   lastVerifiedAt: "2026-08-25",
@@ -132,30 +129,13 @@ export const carpinteriaNavalMestres: ServiceItem = {
       instagramHandle: "@mestresdaixa_mallorca",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 130,
-      url: "https://www.google.com/maps/search/?api=1&query=Mestres%20d%20Aixa%20Portitxol%20Palma",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Mestres%20d%20Aixa%20Portitxol%20Palma&ll=39.5610,2.6730",
-    },
-    bingMaps: {
-      rating: 4.9,
-      reviewCount: 130,
-      url: "https://www.bing.com/maps?where1=Mestres%20d%20Aixa%20Portitxol%20Palma",
-    },
-    totalReviewsAggregated: 130,
-    overallWeightedRating: 4.9,
-  },
   reviews: [
     {
       id: "rev-cnm-1",
       authorName: "Bernat Oliver",
       rating: 5,
       date: "2025-05-18",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
       comment:
         "Els millors mestres d'aixa de Mallorca sense discussió. Varen restaurar el llaüt familiar de fusta al Portitxol: canvi de quadernes, calafatada i coberta de teca nova. Una obra d'art viva.",
@@ -166,7 +146,7 @@ export const carpinteriaNavalMestres: ServiceItem = {
       authorName: "Captain Alistair Campbell",
       rating: 5,
       date: "2025-06-25",
-      platform: "google_maps",
+      platform: "direct",
       language: "en",
       comment:
         "True maritime masters in Portitxol! They re-caulked and refurbished the teak deck on our classic wooden sailing yacht. Impeccable craftsmanship, precise joinery, and deep knowledge.",

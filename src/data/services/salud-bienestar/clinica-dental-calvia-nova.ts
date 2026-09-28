@@ -28,9 +28,6 @@ export const clinica_dental_calvia_nova: ServiceItem = {
   schedule: "Lunes a Viernes: 09:00 - 20:00 | Sábado: 09:00 - 14:00",
   image: "/images/services/clinica-dental-calvia-nova.jpg",
   gallery: ["/images/services/clinica-dental-calvia-nova.jpg"],
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica+Dental+Calvi%C3%A0+Nova+Palmanova",
-  appleMapsUrl: "https://maps.apple.com/?q=Clinica+Dental+Calvia+Nova+Palmanova",
-  bingMapsUrl: "https://bing.com/maps?q=Clinica+Dental+Calvia+Nova+Palmanova",
   shortDescription: {
     es: "Clínica dental en Palmanova (Calvià) con atención en cinco idiomas, especializada en implantes y carillas de porcelana para la comunidad expat del suroeste de Mallorca.",
     en: "Dental clinic in Palmanova (Calvià) offering five-language care, specializing in implants and porcelain veneers for the expat community of southwest Mallorca.",
@@ -94,13 +91,6 @@ export const clinica_dental_calvia_nova: ServiceItem = {
       "Invisalign für Erwachsene und Teenager",
       "Professionelles Bleaching in der Praxis und als Heimanwendung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 198,
-      url: "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica+Dental+Calvi%C3%A0+Nova+Palmanova",
-    },
   },
   createdAt: "2026-09-05",
   lastUpdatedAt: "2026-09-05",

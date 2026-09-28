@@ -31,12 +31,6 @@ export const gestoria_administrativa_asesoria_marroig_palma: ServiceItem = {
   schedule: "Lunes a Jueves: 08:30 - 17:30, Viernes: 08:30 - 14:30",
   image: "/images/services/gestoria-administrativa-asesoria-marroig-palma.jpg",
   gallery: ["/images/services/gestoria-administrativa-asesoria-marroig-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Gestor%C3%ADa%20Administrativa%20%26%20Asesor%C3%ADa%20Marroig%20Palma%20Carrer%20del%20Bar%C3%B3%20de%20Santa%20Maria%20del%20Sepulcre%2C%208%2C%2007012%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Gestor%C3%ADa%20Administrativa%20%26%20Asesor%C3%ADa%20Marroig%20Palma%20Carrer%20del%20Bar%C3%B3%20de%20Santa%20Maria%20del%20Sepulcre%2C%208%2C%2007012%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Gestor%C3%ADa%20Administrativa%20%26%20Asesor%C3%ADa%20Marroig%20Palma%20Carrer%20del%20Bar%C3%B3%20de%20Santa%20Maria%20del%20Sepulcre%2C%208%2C%2007012%20Palma",
   shortDescription: {
     es: "Gestoría administrativa colegiada en Palma: matriculación y transferencia de vehículos, visados de residencia y asesoría contable-fiscal para autónomos y pymes.",
     en: "Chartered administrative agency in Palma for vehicle registration, residency visa processing, and tax/payroll accounting for SMEs.",
@@ -100,13 +94,6 @@ export const gestoria_administrativa_asesoria_marroig_palma: ServiceItem = {
       "Steuererklärungen (Einkommen-, Mehrwert-, Körperschaftsteuer)",
       "Visa-Verfahren und spanische Staatsbürgerschaft",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 220,
-      url: "https://www.google.com/maps/search/?api=1&query=Gestor%C3%ADa%20Administrativa%20%26%20Asesor%C3%ADa%20Marroig%20Palma%20Carrer%20del%20Bar%C3%B3%20de%20Santa%20Maria%20del%20Sepulcre%2C%208%2C%2007012%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

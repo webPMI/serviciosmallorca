@@ -31,12 +31,6 @@ export const hotel_canino_felino_es_garrover_marratxi: ServiceItem = {
   schedule: "Lunes a Sábado: 09:00 - 13:00 y 16:30 - 19:30; Domingo: 10:00 - 13:00",
   image: "/images/services/hotel-canino-felino-es-garrover-marratxi.jpg",
   gallery: ["/images/services/hotel-canino-felino-es-garrover-marratxi.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Hotel%20Canino%20%26%20Felino%20Es%20Garrover%20(Marratx%C3%AD)%20Cam%C3%AD%20de%20sa%20Coma%2C%2014%2C%2007141%20Marratx%C3%AD",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Hotel%20Canino%20%26%20Felino%20Es%20Garrover%20(Marratx%C3%AD)%20Cam%C3%AD%20de%20sa%20Coma%2C%2014%2C%2007141%20Marratx%C3%AD",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Hotel%20Canino%20%26%20Felino%20Es%20Garrover%20(Marratx%C3%AD)%20Cam%C3%AD%20de%20sa%20Coma%2C%2014%2C%2007141%20Marratx%C3%AD",
   shortDescription: {
     es: "Residencia y hotel de vacaciones para perros y gatos en Marratxí: suite felina independiente y tranquila, pistas de arena y césped para perros y asistencia veterinaria permanente.",
     en: "Holiday hotel and boarding retreat for dogs and cats in Marratxí: peaceful separate cattery suites, grass play paddocks for canines, and permanent veterinary oversight.",
@@ -100,13 +94,6 @@ export const hotel_canino_felino_es_garrover_marratxi: ServiceItem = {
       "Fütterung nach Halter- und Tierarztvorgaben",
       "Hundebad und professionelle Fellpflege vor dem Abholen",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 380,
-      url: "https://www.google.com/maps/search/?api=1&query=Hotel%20Canino%20%26%20Felino%20Es%20Garrover%20(Marratx%C3%AD)%20Cam%C3%AD%20de%20sa%20Coma%2C%2014%2C%2007141%20Marratx%C3%AD",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

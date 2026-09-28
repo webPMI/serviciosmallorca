@@ -76,9 +76,6 @@ export const eurocampusDeutscheSchulePalma: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Eurocampus%20Deutsche%20Schule%20Mallorca%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Eurocampus%20Deutsche%20Schule%20Mallorca%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Eurocampus%20Deutsche%20Schule%20Mallorca%20Mallorca",
   pricing: {
     startingPrice: "Presupuesto y tarifas personalizadas",
     rateType: "tiered",
@@ -105,21 +102,4 @@ export const eurocampusDeutscheSchulePalma: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 240,
-      url: "https://www.google.com/maps/search/?api=1&query=Eurocampus%20Deutsche%20Schule%20Mallorca%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Eurocampus%20Deutsche%20Schule%20Mallorca%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.7,
-      reviewCount: 24,
-      url: "https://www.bing.com/maps?q=Eurocampus%20Deutsche%20Schule%20Mallorca%20Mallorca",
-    },
-    totalReviewsAggregated: 264,
-    overallWeightedRating: 4.8,
-  },
 };

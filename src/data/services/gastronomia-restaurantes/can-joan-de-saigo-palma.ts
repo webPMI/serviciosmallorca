@@ -28,9 +28,6 @@ export const canJoanDeSAigoPalma: ServiceItem = {
   email: "info@canjoandesaigo.com",
   website: "https://canjoandesaigo.com",
   menuUrl: "https://canjoandesaigo.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Can+Joan+de+s+Aigo+Palma+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Can+Joan+de+s+Aigo+Palma",
-  bingMapsUrl: "https://www.bing.com/maps?q=Can+Joan+de+s+Aigo+Palma",
   tags: [
     "zona:palma",
     "zona:casco-antiguo",

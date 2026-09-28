@@ -28,9 +28,6 @@ export const bodegasCondeDeSuyrotColoniaSantPere: ServiceItem = {
   email: "info@condedesuyrot.com",
   website: "https://condedesuyrot.com",
   menuUrl: "https://condedesuyrot.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Bodegas+Conde+de+Suyrot+Colonia+de+Sant+Pere+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Bodegas+Conde+de+Suyrot+Colonia+Sant+Pere",
-  bingMapsUrl: "https://www.bing.com/maps?q=Bodegas+Conde+de+Suyrot+Colonia+Sant+Pere",
   tags: [
     "zona:manacor-llevant",
     "zona:colonia-de-sant-pere",

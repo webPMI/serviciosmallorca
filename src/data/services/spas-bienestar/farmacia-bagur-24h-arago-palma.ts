@@ -29,9 +29,6 @@ export const farmaciaBagur24hAragoPalma: ServiceItem = {
   email: "info@farmaciaguijarro.com",
   website: "https://www.farmaciaguijarro.com",
   menuUrl: "https://www.farmaciaguijarro.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Farmacia+Bagur+24h+Carrer+Arago+70+Palma+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Farmacia+Bagur+Palma",
-  bingMapsUrl: "https://www.bing.com/maps?q=Farmacia+Bagur+Palma",
   tags: ["zona:palma", "product:premium", "mod:en-local", "mod:walk-in", "aud:familias", "temps:todo-el-ano"],
   capabilities: {
     wheelchairAccessible: true,
@@ -141,7 +138,7 @@ export const farmaciaBagur24hAragoPalma: ServiceItem = {
       comment:
         "Molt bon servei a qualsevol hora. Em varen atendre de nit amb gran rapidesa i em varen donar el medicament que necessitava sense problemes.",
       date: "2026-08-13",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
     },
     {
@@ -150,7 +147,7 @@ export const farmaciaBagur24hAragoPalma: ServiceItem = {
       rating: 5,
       comment: "Farmacia 24h imprescindible en la calle Aragón. Trato muy profesional y siempre tienen de todo.",
       date: "2026-07-19",
-      platform: "google_maps",
+      platform: "direct",
       language: "es",
     },
   ],

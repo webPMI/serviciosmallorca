@@ -78,12 +78,6 @@ export const restauranteElOlivoDeia: ServiceItem = {
   },
   image: "/images/services/restaurante-el-olivo-deia.jpg",
   gallery: ["/images/services/restaurante-el-olivo-deia.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Restaurante%20El%20Olivo%20(Belmond%20La%20Residencia%20-%20Dei%C3%A0)%20Carrer%20Son%20Canals%2C%20s%2Fn%2C%2007179%20Dei%C3%A0%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Restaurante%20El%20Olivo%20(Belmond%20La%20Residencia%20-%20Dei%C3%A0)%20Carrer%20Son%20Canals%2C%20s%2Fn%2C%2007179%20Dei%C3%A0%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://www.bing.com/maps?q=Restaurante%20El%20Olivo%20(Belmond%20La%20Residencia%20-%20Dei%C3%A0)%20Carrer%20Son%20Canals%2C%20s%2Fn%2C%2007179%20Dei%C3%A0%2C%20Illes%20Balears",
   phone: "+34 971 63 90 11",
   whatsapp: "+34971639011",
   website: "https://belmond.com/la-residencia-deia/dining/el-olivo",

@@ -28,9 +28,6 @@ export const barEspanyaPalma: ServiceItem = {
   email: "info@barespanya.es",
   website: "https://www.barespanya.es",
   menuUrl: "https://www.barespanya.es",
-  googleMapsUrl: "https://www.google.com/maps/search/Bar+Espana+Palma+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Bar+Espana+Palma",
-  bingMapsUrl: "https://www.bing.com/maps?q=Bar+Espana+Palma",
   tags: [
     "zona:palma",
     "zona:casco-antiguo",

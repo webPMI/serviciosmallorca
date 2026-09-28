@@ -76,10 +76,6 @@ export const notariaAlvaroDelgadoPalma: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Notar%C3%ADa%20%C3%81lvaro%20Delgado%20Palma%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Notar%C3%ADa%20%C3%81lvaro%20Delgado%20Palma%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Notar%C3%ADa%20%C3%81lvaro%20Delgado%20Palma%20Mallorca",
   pricing: {
     startingPrice: "Consultar servicios y presupuestos personalizados",
     rateType: "custom_quote",
@@ -106,21 +102,4 @@ export const notariaAlvaroDelgadoPalma: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 520,
-      url: "https://www.google.com/maps/search/?api=1&query=Notar%C3%ADa%20%C3%81lvaro%20Delgado%20Palma%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Notar%C3%ADa%20%C3%81lvaro%20Delgado%20Palma%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.7,
-      reviewCount: 52,
-      url: "https://www.bing.com/maps?q=Notar%C3%ADa%20%C3%81lvaro%20Delgado%20Palma%20Mallorca",
-    },
-    totalReviewsAggregated: 572,
-    overallWeightedRating: 4.8,
-  },
 };

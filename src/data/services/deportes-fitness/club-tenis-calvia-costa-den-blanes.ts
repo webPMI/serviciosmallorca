@@ -29,8 +29,6 @@ export const CLUB_TENIS_CALVIA_COSTA_DEN_BLANES: ServiceItem = {
   image: "/images/sports/club-tenis-calvia-costa-den-blanes.jpg",
   gallery: ["/images/sports/club-tenis-calvia-costa-den-blanes.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007023",
-  appleMapsUrl: "https://maps.apple.com/?q=Club%20Tenis%20Calvi%C3%A0+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Club%20Tenis%20Calvi%C3%A0+Mallorca",
   shortDescription: {
     es: "Club de tenis en Costa d'en Blanes con 6 pistas de tierra batida con vistas al mar y pistas de pádel.",
     en: "Tennis club in Costa d'en Blanes featuring 6 sea-view red clay courts and padel courts.",
@@ -94,13 +92,6 @@ export const CLUB_TENIS_CALVIA_COSTA_DEN_BLANES: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 290,
-      url: "https://www.google.com/maps?cid=12007023",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

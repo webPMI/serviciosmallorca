@@ -31,12 +31,6 @@ export const bodega_son_juliana_santa_eugenia: ServiceItem = {
   schedule: "Lunes a Sábado: 10:00 - 18:00 | Domingo: Cerrado",
   image: "/images/services/bodega-son-juliana-santa-eugenia.jpg",
   gallery: ["/images/services/bodega-son-juliana-santa-eugenia.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Bodega%20Son%20Juliana%20Santa%20Eug%C3%A8nia%20Ctra.%20Santa%20Maria%20a%20Sencelles%2C%20km%207.2%2C%2007142%20Santa%20Eug%C3%A8nia%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Bodega%20Son%20Juliana%20Santa%20Eug%C3%A8nia%20Ctra.%20Santa%20Maria%20a%20Sencelles%2C%20km%207.2%2C%2007142%20Santa%20Eug%C3%A8nia%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Bodega%20Son%20Juliana%20Santa%20Eug%C3%A8nia%20Ctra.%20Santa%20Maria%20a%20Sencelles%2C%20km%207.2%2C%2007142%20Santa%20Eug%C3%A8nia%2C%20Illes%20Balears",
   shortDescription: {
     es: "Bodega de arquitectura bioclimática y energía 100% solar en Santa Eugènia, elaborando vinos ecológicos de alta expresión con variedades autóctonas y una espectacular sala de catas panorámica.",
     en: "Solar-powered bioclimatic architectural winery in Santa Eugènia, producing organic terroir wines from native grapes alongside a breathtaking panoramic tasting hall.",
@@ -100,13 +94,6 @@ export const bodega_son_juliana_santa_eugenia: ServiceItem = {
       "Fachmännische Weinverkostungen mit mallorquinischen Bio-Tapas und Käsespezialitäten",
       "Exklusive Event-Location für private Feiern, Firmenveranstaltungen und Weinabende",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 195,
-      url: "https://www.google.com/maps/search/?api=1&query=Bodega%20Son%20Juliana%20Santa%20Eug%C3%A8nia%20Ctra.%20Santa%20Maria%20a%20Sencelles%2C%20km%207.2%2C%2007142%20Santa%20Eug%C3%A8nia%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

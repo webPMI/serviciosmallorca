@@ -27,9 +27,6 @@ export const namaDeia: ServiceItem = {
   email: "reservations@restaurantnama.com",
   website: "https://restaurantnama.com",
   menuUrl: "https://restaurantnama.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Restaurante+Nama+Deia+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante+Nama+Deia",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante+Nama+Deia",
   tags: ["zona:tramuntana", "zona:deia", "product:lujo", "mod:en-local", "aud:parejas", "temps:verano"],
   capabilities: {
     terrace: true,

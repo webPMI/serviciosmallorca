@@ -28,9 +28,6 @@ export const restauranteSaBarcaPortSoller: ServiceItem = {
   email: "info@sabarcarestaurant.com",
   website: "https://sabarcarestaurant.com",
   menuUrl: "https://sabarcarestaurant.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Restaurante+Sa+Barca+Port+de+Soller+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante+Sa+Barca+Port+Soller",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante+Sa+Barca+Port+Soller",
   tags: [
     "zona:tramuntana",
     "zona:port-de-soller",

@@ -29,8 +29,6 @@ export const PALACIO_MUNICIPAL_DEPORTES_SON_MOIX: ServiceItem = {
   image: "/images/sports/palacio-municipal-deportes-son-moix.jpg",
   gallery: ["/images/sports/palacio-municipal-deportes-son-moix.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007092",
-  appleMapsUrl: "https://maps.apple.com/?q=Palau%20Municipal%20d'Esports%20Son%20Moix+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Palau%20Municipal%20d'Esports%20Son%20Moix+Mallorca",
   shortDescription: {
     es: "El mayor complejo polideportivo público de Palma con piscina de 50m, pabellón cubierto y fitness.",
     en: "Palma's largest public municipal sports complex featuring 50m pool, indoor arena, and gym.",
@@ -94,13 +92,6 @@ export const PALACIO_MUNICIPAL_DEPORTES_SON_MOIX: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.6,
-      reviewCount: 890,
-      url: "https://www.google.com/maps?cid=12007092",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

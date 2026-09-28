@@ -29,8 +29,6 @@ export const CLUB_TENIS_PORRERES: ServiceItem = {
   image: "/images/sports/club-tenis-porreres.jpg",
   gallery: ["/images/sports/club-tenis-porreres.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007099",
-  appleMapsUrl: "https://maps.apple.com/?q=Club%20Tenis%20Porreres+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Club%20Tenis%20Porreres+Mallorca",
   shortDescription: {
     es: "Club deportivo en el Pla de Mallorca con pistas de tierra batida, pádel y escuela municipal.",
     en: "Sports club in central Mallorca offering red clay courts, padel, and municipal school.",
@@ -94,13 +92,6 @@ export const CLUB_TENIS_PORRERES: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 160,
-      url: "https://www.google.com/maps?cid=12007099",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

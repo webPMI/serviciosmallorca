@@ -29,8 +29,6 @@ export const HOT_YOGA_PALMA_AVENIDAS: ServiceItem = {
   image: "/images/sports/hot-yoga-palma-avenidas.jpg",
   gallery: ["/images/sports/hot-yoga-palma-avenidas.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007073",
-  appleMapsUrl: "https://maps.apple.com/?q=Hot%20Yoga%20Palma+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Hot%20Yoga%20Palma+Mallorca",
   shortDescription: {
     es: "Estudio de Hot Yoga y Bikram a 40°C en el centro de Palma para desintoxicación y flexibilidad profunda.",
     en: "Hot Yoga and Bikram studio at 40°C in central Palma for deep detox and flexibility.",
@@ -94,13 +92,6 @@ export const HOT_YOGA_PALMA_AVENIDAS: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 220,
-      url: "https://www.google.com/maps?cid=12007073",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

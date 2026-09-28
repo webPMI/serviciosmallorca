@@ -28,9 +28,6 @@ export const tiendaCiclismoMallorcaBikehouse: ServiceItem = {
   schedule: "Todos los días: 09:00 - 19:00",
   image: "/images/services/tienda-ciclismo-mallorca-bikehouse.jpg",
   gallery: ["/images/services/tienda-ciclismo-mallorca-bikehouse.jpg"],
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Bike+House+Mallorca+Carrer+de+la+Fabrica+19+Palma",
-  appleMapsUrl: "https://maps.apple.com/?q=Bike+House+Mallorca+Palma",
-  bingMapsUrl: "https://bing.com/maps?q=Bike+House+Mallorca+Palma",
   shortDescription: {
     es: "Tienda de ciclismo premium en Palma con las mejores marcas de bicicletas de carretera y montaña, alquiler de bicis de carbono y taller de reparación profesional.",
     en: "Premium cycling shop in Palma with top road and mountain bike brands, carbon bike rental, and professional repair workshop.",
@@ -94,13 +91,6 @@ export const tiendaCiclismoMallorcaBikehouse: ServiceItem = {
       "Personalisiertes Bikefit mit Body-Geometry-Technologie und Pedalanalyse",
       "Reparaturwerkstatt: Inspektionen, Antriebsstrang-Überholungen, Scheibenbremsen-Einstellung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 487,
-      url: "https://www.google.com/maps/search/?api=1&query=Bike+House+Mallorca+Palma",
-    },
   },
   createdAt: "2026-09-05",
   lastUpdatedAt: "2026-09-05",

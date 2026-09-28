@@ -31,12 +31,6 @@ export const correduria_seguros_baleares_nautica_villas_palma: ServiceItem = {
   schedule: "Lunes a Viernes: 08:30 - 18:00",
   image: "/images/services/correduria-seguros-baleares-nautica-villas-palma.jpg",
   gallery: ["/images/services/correduria-seguros-baleares-nautica-villas-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Balear%20Insurance%20Corredur%C3%ADa%20de%20Seguros%20Palma%20(1985)%20Avinguda%20d'Alexandre%20Rossell%C3%B3%2C%2018%2C%2007002%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Balear%20Insurance%20Corredur%C3%ADa%20de%20Seguros%20Palma%20(1985)%20Avinguda%20d'Alexandre%20Rossell%C3%B3%2C%2018%2C%2007002%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Balear%20Insurance%20Corredur%C3%ADa%20de%20Seguros%20Palma%20(1985)%20Avinguda%20d'Alexandre%20Rossell%C3%B3%2C%2018%2C%2007002%20Palma",
   shortDescription: {
     es: "Correduría de seguros independiente colegiada en Palma: pólizas a medida para superyates, villas de lujo, fincas rústicas y salud privada internacional.",
     en: "Independent chartered insurance broker in Palma: bespoke policies for superyachts, luxury villas, rustic fincas, and international private health.",
@@ -100,13 +94,6 @@ export const correduria_seguros_baleares_nautica_villas_palma: ServiceItem = {
       "Internationale private Krankenversicherung ohne Selbstbeteiligung",
       "Kostenloser Check bestehender Versicherungspolicen",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 230,
-      url: "https://www.google.com/maps/search/?api=1&query=Balear%20Insurance%20Corredur%C3%ADa%20de%20Seguros%20Palma%20(1985)%20Avinguda%20d'Alexandre%20Rossell%C3%B3%2C%2018%2C%2007002%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

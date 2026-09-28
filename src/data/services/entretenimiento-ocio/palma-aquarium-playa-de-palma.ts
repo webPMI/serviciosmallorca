@@ -76,9 +76,6 @@ export const palmaAquariumPlayaDePalma: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Palma%20Aquarium%20%26%20Parque%20Marino%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Palma%20Aquarium%20%26%20Parque%20Marino%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Palma%20Aquarium%20%26%20Parque%20Marino%20Mallorca",
   pricing: {
     startingPrice: "Presupuesto y tarifas personalizadas",
     rateType: "tiered",
@@ -105,21 +102,4 @@ export const palmaAquariumPlayaDePalma: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 14200,
-      url: "https://www.google.com/maps/search/?api=1&query=Palma%20Aquarium%20%26%20Parque%20Marino%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Palma%20Aquarium%20%26%20Parque%20Marino%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.6,
-      reviewCount: 1420,
-      url: "https://www.bing.com/maps?q=Palma%20Aquarium%20%26%20Parque%20Marino%20Mallorca",
-    },
-    totalReviewsAggregated: 15620,
-    overallWeightedRating: 4.7,
-  },
 };

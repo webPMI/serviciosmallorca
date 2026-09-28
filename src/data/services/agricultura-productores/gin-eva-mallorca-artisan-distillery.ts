@@ -76,10 +76,6 @@ export const ginEvaMallorcaArtisanDistillery: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Gin%20Eva%20Mallorca%20Artisan%20Botanical%20Distillery%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Gin%20Eva%20Mallorca%20Artisan%20Botanical%20Distillery%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Gin%20Eva%20Mallorca%20Artisan%20Botanical%20Distillery%20Mallorca",
   pricing: {
     startingPrice: "Consultar servicios y presupuestos personalizados",
     rateType: "custom_quote",
@@ -106,21 +102,4 @@ export const ginEvaMallorcaArtisanDistillery: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 360,
-      url: "https://www.google.com/maps/search/?api=1&query=Gin%20Eva%20Mallorca%20Artisan%20Botanical%20Distillery%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Gin%20Eva%20Mallorca%20Artisan%20Botanical%20Distillery%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 36,
-      url: "https://www.bing.com/maps?q=Gin%20Eva%20Mallorca%20Artisan%20Botanical%20Distillery%20Mallorca",
-    },
-    totalReviewsAggregated: 396,
-    overallWeightedRating: 4.9,
-  },
 };

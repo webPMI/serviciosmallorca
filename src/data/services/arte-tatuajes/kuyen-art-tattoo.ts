@@ -211,10 +211,6 @@ export const kuyenArtTattoo: ServiceItem = {
     en: "Küyen Art & Tattoo was founded in Palma's historic center as an intimate artistic sanctuary where every piece is crafted as a unique artwork. Merging fine line botanical delicacy with clinical-grade sterilization standards.",
     ca: "Küyen Art & Tattoo neix al cor de Palma com un santuari artístic on cada disseny és una obra única. Combina la delicadesa del fine line botànic amb els estàndards clínics més exigents.",
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Kuyen%20Art%20Tattoo%20Carrer%20dels%20Hostals%2018%20Palma",
-  appleMapsUrl: "https://maps.apple.com/?q=Kuyen%20Art%20Tattoo%20Palma",
-  bingMapsUrl: "https://www.bing.com/maps?q=Kuyen%20Art%20Tattoo%20Palma",
   phone: "+34 623 19 72 11",
   whatsapp: "+34 623 19 72 11",
   email: "info@kuyenart.com",
@@ -307,32 +303,13 @@ export const kuyenArtTattoo: ServiceItem = {
     "https://kuyenart.com/images/tattoos_vika/fotos%20de%20vika/20230929_151752.jpg",
     "https://kuyenart.com/images/enzo/serpiente_ombto.jpg",
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 5,
-      reviewCount: 148,
-      url: "https://www.google.com/maps/search/?api=1&query=Kuyen%20Art%20Tattoo%20Carrer%20dels%20Hostals%2018%20Palma",
-    },
-    bingMaps: {
-      rating: 5,
-      reviewCount: 14,
-      url: "https://www.bing.com/maps?q=Kuyen%20Art%20Tattoo%20Palma",
-    },
-    tripadvisor: {
-      rating: 5,
-      reviewCount: 12,
-      url: "https://www.google.com/search?q=site:tripadvisor.es+Kuyen+Art+Tattoo+Palma",
-    },
-    totalReviewsAggregated: 174,
-    overallWeightedRating: 5,
-  },
   reviews: [
     {
       id: "kuyen-rev-1",
       authorName: "Elena García",
       rating: 5,
       date: "2025-11-14",
-      platform: "google_maps",
+      platform: "direct",
       language: "es",
       comment:
         "Vika es una auténtica artista. El trazo fine line es perfecto y el estudio impecable en cuanto a higiene y trato.",
@@ -343,7 +320,7 @@ export const kuyenArtTattoo: ServiceItem = {
       authorName: "Markus Weber",
       rating: 5,
       date: "2025-09-20",
-      platform: "google_maps",
+      platform: "direct",
       language: "de",
       comment:
         "Bester Tattoo-Laden in Palma! Sehr sauber, hochprofessionell und exzellente Beratung. Absolut empfehlenswert.",
@@ -365,7 +342,7 @@ export const kuyenArtTattoo: ServiceItem = {
       authorName: "Miquel Àngel Oliver",
       rating: 5,
       date: "2025-05-12",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
       comment: "Tracte immillorable i màxima professionalitat al centre de Palma. Repetiré segur.",
       verifiedCustomer: true,

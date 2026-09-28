@@ -76,10 +76,6 @@ export const casaJacintoGenovaBrasas: ServiceItem = {
       close: "17:00",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Restaurante%20Casa%20Jacinto%20G%C3%A8nova%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante%20Casa%20Jacinto%20G%C3%A8nova%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante%20Casa%20Jacinto%20G%C3%A8nova%20Mallorca",
   pricing: {
     startingPrice: "Carta y menús degustación disponibles",
     rateType: "tiered",
@@ -106,21 +102,4 @@ export const casaJacintoGenovaBrasas: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 2150,
-      url: "https://www.google.com/maps/search/?api=1&query=Restaurante%20Casa%20Jacinto%20G%C3%A8nova%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Restaurante%20Casa%20Jacinto%20G%C3%A8nova%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.7,
-      reviewCount: 215,
-      url: "https://www.bing.com/maps?q=Restaurante%20Casa%20Jacinto%20G%C3%A8nova%20Mallorca",
-    },
-    totalReviewsAggregated: 2365,
-    overallWeightedRating: 4.8,
-  },
 };

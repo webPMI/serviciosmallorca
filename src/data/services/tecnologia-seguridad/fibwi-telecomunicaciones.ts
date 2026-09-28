@@ -92,7 +92,7 @@ export const fibwiTelecomunicaciones: ServiceItem = {
       authorName: "Bernhard K.",
       rating: 5,
       date: "2025-08-11",
-      platform: "google_maps",
+      platform: "direct",
       language: "de",
       comment:
         "Perfekte Lösung für unsere Finca bei Sineu! Wo kein anderer Anbieter Glasfaser verlegen konnte, hat Fibwi innerhalb von 48 Stunden eine stabile WiMAX-Verbindung mit deutschem Kundenservice installiert.",
@@ -105,7 +105,7 @@ export const fibwiTelecomunicaciones: ServiceItem = {
       authorName: "Miquel R.",
       rating: 5,
       date: "2025-10-03",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
       comment:
         "Tracte proper a la central d'Inca i atenció al client real en català i castellà sense robots. La fibra funciona de meravella i l'empresa és 100% de la nostra terra.",
@@ -160,9 +160,6 @@ export const fibwiTelecomunicaciones: ServiceItem = {
   whatsapp: "+34 971 57 05 70",
   email: "info@fibwi.com",
   website: "https://fibwi.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Fibwi+Telecomunicaciones+Inca+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Fibwi+Inca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Fibwi+Mallorca",
   tags: [
     "zona:raiguer-pla",
     "zona:inca",

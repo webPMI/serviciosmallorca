@@ -29,8 +29,6 @@ export const SANTANYI_YOGA_SHALA: ServiceItem = {
   image: "/images/sports/santanyi-yoga-shala.jpg",
   gallery: ["/images/sports/santanyi-yoga-shala.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007079",
-  appleMapsUrl: "https://maps.apple.com/?q=Santany%C3%AD%20Yoga%20Shala+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Santany%C3%AD%20Yoga%20Shala+Mallorca",
   shortDescription: {
     es: "Espacio de yoga en piedra de Santanyí con patio al aire libre y clases bilingües de Vinyasa.",
     en: "Yoga space built in traditional Santanyí stone with outdoor courtyard and bilingual Vinyasa.",
@@ -94,13 +92,6 @@ export const SANTANYI_YOGA_SHALA: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 190,
-      url: "https://www.google.com/maps?cid=12007079",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

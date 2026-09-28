@@ -31,12 +31,6 @@ export const estudio_tattoo_inkspiration_alcudia_art: ServiceItem = {
   schedule: "Lunes a Sábado: 11:00 - 20:00",
   image: "/images/services/estudio-tattoo-inkspiration-alcudia-art.jpg",
   gallery: ["/images/services/estudio-tattoo-inkspiration-alcudia-art.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Inkspiration%20Tattoo%20Studio%20%26%20Piercing%20Port%20d'Alc%C3%BAdia%20Carrer%20de%20la%20Marina%2C%2012%2C%2007400%20Port%20d'Alc%C3%BAdia",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Inkspiration%20Tattoo%20Studio%20%26%20Piercing%20Port%20d'Alc%C3%BAdia%20Carrer%20de%20la%20Marina%2C%2012%2C%2007400%20Port%20d'Alc%C3%BAdia",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Inkspiration%20Tattoo%20Studio%20%26%20Piercing%20Port%20d'Alc%C3%BAdia%20Carrer%20de%20la%20Marina%2C%2012%2C%2007400%20Port%20d'Alc%C3%BAdia",
   shortDescription: {
     es: "Estudio de tatuajes y piercing en Port d'Alcúdia: tatuadores residentes e invitados internacionales especialistas en realismo, fineline, blackwork y arreglos de tatuajes antiguos.",
     en: "Tattoo and body piercing studio in Port d'Alcúdia: resident and guest artists specializing in realism, fine-line, blackwork, and cover-up work.",
@@ -100,13 +94,6 @@ export const estudio_tattoo_inkspiration_alcudia_art: ServiceItem = {
       "Narben-Überdeckung und Umgestaltung alter Tattoos (Cover-ups)",
       "Ohr-, Nasen- und Körper-Piercing mit Einweg-Sterilnadeln",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 310,
-      url: "https://www.google.com/maps/search/?api=1&query=Inkspiration%20Tattoo%20Studio%20%26%20Piercing%20Port%20d'Alc%C3%BAdia%20Carrer%20de%20la%20Marina%2C%2012%2C%2007400%20Port%20d'Alc%C3%BAdia",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

@@ -31,12 +31,6 @@ export const gordian_tattoo_palma_custom_ink: ServiceItem = {
   schedule: "Lunes a Viernes: 10:00 - 19:00; Sábado: 10:00 - 15:00",
   image: "/images/services/gordian-tattoo-palma-custom-ink.jpg",
   gallery: ["/images/services/gordian-tattoo-palma-custom-ink.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Gordian%20Tattoo%20Palma%20Custom%20Ink%20Studio%20Carrer%20de%20Sant%20Miquel%2C%2074%2C%2007002%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Gordian%20Tattoo%20Palma%20Custom%20Ink%20Studio%20Carrer%20de%20Sant%20Miquel%2C%2074%2C%2007002%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Gordian%20Tattoo%20Palma%20Custom%20Ink%20Studio%20Carrer%20de%20Sant%20Miquel%2C%2074%2C%2007002%20Palma",
   shortDescription: {
     es: "Estudio boutique de tatuaje en la calle Sant Miquel de Palma: maestros del tatuaje geométrico, dotwork (puntillismo), micro-ilustración y caligrafía de precisión.",
     en: "Boutique tattoo parlour on Palma's Carrer de Sant Miquel: master artisans in geometric tattooing, dotwork, micro-illustration, and fine script.",
@@ -100,13 +94,6 @@ export const gordian_tattoo_palma_custom_ink: ServiceItem = {
       "Tattoo-Projekte vom Einzelmotiv bis zum Full Sleeve",
       "Professionelle Nachsorgeberatung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 330,
-      url: "https://www.google.com/maps/search/?api=1&query=Gordian%20Tattoo%20Palma%20Custom%20Ink%20Studio%20Carrer%20de%20Sant%20Miquel%2C%2074%2C%2007002%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

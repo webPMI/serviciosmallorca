@@ -31,12 +31,6 @@ export const gimnasio_fitness_illes_marratxi_centro_deportivo: ServiceItem = {
   schedule: "Lunes a Viernes: 06:30 - 22:30; Sábado y Domingo: 08:30 - 20:00",
   image: "/images/services/gimnasio-fitness-illes-marratxi-centro-deportivo.jpg",
   gallery: ["/images/services/gimnasio-fitness-illes-marratxi-centro-deportivo.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Illes%20Marratx%C3%AD%20Centro%20Deportivo%20%26%20Fitness%20Club%20(Marratx%C3%AD)%20Carrer%20del%20T%C3%A8xtil%2C%204%2C%20Pol%C3%ADgon%20de%20Marratx%C3%AD%2C%2007009%20Marratx%C3%AD",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Illes%20Marratx%C3%AD%20Centro%20Deportivo%20%26%20Fitness%20Club%20(Marratx%C3%AD)%20Carrer%20del%20T%C3%A8xtil%2C%204%2C%20Pol%C3%ADgon%20de%20Marratx%C3%AD%2C%2007009%20Marratx%C3%AD",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Illes%20Marratx%C3%AD%20Centro%20Deportivo%20%26%20Fitness%20Club%20(Marratx%C3%AD)%20Carrer%20del%20T%C3%A8xtil%2C%204%2C%20Pol%C3%ADgon%20de%20Marratx%C3%AD%2C%2007009%20Marratx%C3%AD",
   shortDescription: {
     es: "Centro deportivo y club de fitness integral en Marratxí: sala musculación de 1.500 m², piscina climatizada de 25m, spa, padel y más de 100 clases dirigidas semanales.",
     en: "Comprehensive sports and fitness club in Marratxí: 1,500 m² gym floor, 25m heated pool, spa, padel courts, and 100+ weekly group fitness classes.",
@@ -100,13 +94,6 @@ export const gimnasio_fitness_illes_marratxi_centro_deportivo: ServiceItem = {
       "Kinderschwimmschule und Erwachsenenunterricht mit RFEN-Trainern",
       "Überdachte Glas-Padel-Feld-Miete mit App-Buchung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 890,
-      url: "https://www.google.com/maps/search/?api=1&query=Illes%20Marratx%C3%AD%20Centro%20Deportivo%20%26%20Fitness%20Club%20(Marratx%C3%AD)%20Carrer%20del%20T%C3%A8xtil%2C%204%2C%20Pol%C3%ADgon%20de%20Marratx%C3%AD%2C%2007009%20Marratx%C3%AD",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

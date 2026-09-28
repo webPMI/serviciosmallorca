@@ -25,9 +25,6 @@ export const illeslexAbogados: ServiceItem = {
   whatsapp: "+34 971 72 80 08",
   email: "info@illeslex.com",
   website: "https://illeslex.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Illeslex+Abogados+Palma",
-  appleMapsUrl: "https://maps.apple.com/?q=Illeslex+Abogados+Palma",
-  bingMapsUrl: "https://www.bing.com/maps?q=Illeslex+Abogados+Palma",
   schedule: "Lunes a Jueves: 09:00 - 18:30 | Viernes: 09:00 - 15:00",
   lastVerifiedAt: "2026-08-25",
   createdAt: "2026-08-25",
@@ -178,22 +175,13 @@ export const illeslexAbogados: ServiceItem = {
       specialty: "Fiscalidad Internacional y Tributación de No Residentes",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 112,
-      url: "https://www.google.com/maps/search/?api=1&query=Illeslex+Abogados+Palma",
-    },
-    totalReviewsAggregated: 112,
-    overallWeightedRating: 4.9,
-  },
   reviews: [
     {
       id: "ilx-rev-1",
       authorName: "Oliver Schneider",
       rating: 5,
       date: "2025-04-10",
-      platform: "google_maps",
+      platform: "direct",
       language: "de",
       comment:
         "Hervorragende rechtliche Begleitung beim Hauskauf auf Mallorca. Sehr gründliche Prüfung der Baugenehmigungen und exzellente deutsche Beratung.",
@@ -206,7 +194,7 @@ export const illeslexAbogados: ServiceItem = {
       authorName: "Maria Antònia Soler",
       rating: 5,
       date: "2025-06-22",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
       comment:
         "Molt professionals i resolutius en la tramitació d'una herència complexa a Palma. Tracte proper, clar i de total confiança.",

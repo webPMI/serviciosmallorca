@@ -81,23 +81,6 @@ export const mercatCobertInca: ServiceItem = {
     ca: "Edificat el 1930 per organitzar l'intercanvi agrícola del centre de l'illa, el Mercat Cobert d'Inca és el gran rebost del Raiguer.",
     de: "1930 als zentraler Umschlagplatz für Agrarerzeugnisse erbaut, ist der Markt bis heute die Speisekammer der Inselmitte.",
   },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.5,
-      reviewCount: 3800,
-      url: "https://www.google.com/maps/search/?api=1&query=Mercat+Cobert+d+Inca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Mercat+Cobert+d+Inca",
-    },
-    bingMaps: {
-      rating: 4.5,
-      reviewCount: 240,
-      url: "https://www.bing.com/maps?q=Mercat+Cobert+d+Inca",
-    },
-    totalReviewsAggregated: 4040,
-    overallWeightedRating: 4.5,
-  },
   reviews: [],
   socialLinks: {
     instagram: "https://instagram.com/incaciutat",
@@ -120,9 +103,6 @@ export const mercatCobertInca: ServiceItem = {
     },
   ],
   authorityProfiles: [],
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Mercat+Cobert+d+Inca",
-  appleMapsUrl: "https://maps.apple.com/?q=Mercat+Cobert+d+Inca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Mercat+Cobert+d+Inca",
   phone: "+34 971 880 140",
   whatsapp: "+34 971 880 140",
   website: "https://incaciutat.com/mercats",

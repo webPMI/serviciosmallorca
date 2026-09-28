@@ -28,9 +28,6 @@ export const restauranteClubNauticSaRapita: ServiceItem = {
   email: "restaurante@cnrapita.com",
   website: "https://cnrapita.com",
   menuUrl: "https://cnrapita.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Restaurante+Club+Nautic+Sa+Rapita+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante+Club+Nautic+Sa+Rapita",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante+Club+Nautic+Sa+Rapita",
   tags: [
     "zona:santanyi-migjorn",
     "zona:sa-rapita",

@@ -76,10 +76,6 @@ export const carpinteriaEbonisteriaFusteriaPalma: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Fusteria%20%26%20Ebanister%C3%ADa%20Tradicional%20de%20Mallorca%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Fusteria%20%26%20Ebanister%C3%ADa%20Tradicional%20de%20Mallorca%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Fusteria%20%26%20Ebanister%C3%ADa%20Tradicional%20de%20Mallorca%20Mallorca",
   pricing: {
     startingPrice: "Carpintería noble a medida según proyecto",
     rateType: "custom_quote",
@@ -106,21 +102,4 @@ export const carpinteriaEbonisteriaFusteriaPalma: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 310,
-      url: "https://www.google.com/maps/search/?api=1&query=Fusteria%20%26%20Ebanister%C3%ADa%20Tradicional%20de%20Mallorca%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Fusteria%20%26%20Ebanister%C3%ADa%20Tradicional%20de%20Mallorca%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 31,
-      url: "https://www.bing.com/maps?q=Fusteria%20%26%20Ebanister%C3%ADa%20Tradicional%20de%20Mallorca%20Mallorca",
-    },
-    totalReviewsAggregated: 341,
-    overallWeightedRating: 4.9,
-  },
 };

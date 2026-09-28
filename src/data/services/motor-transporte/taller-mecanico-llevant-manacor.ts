@@ -21,9 +21,6 @@ export const tallerLlevantManacor: ServiceItem = {
   whatsapp: "+34 640 50 60 70",
   email: "contacto@tallerllevant.com",
   website: "https://tallerllevantmanacor.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Taller%20Mecanico%20Llevant%20Manacor",
-  appleMapsUrl: "https://maps.apple.com/?q=Taller%20Mecanico%20Llevant%20Manacor&ll=39.5740,3.2120",
-  bingMapsUrl: "https://www.bing.com/maps?where1=Taller%20Mecanico%20Llevant%20Manacor",
   coordinates: { lat: 39.574, lng: 3.212 },
   schedule: "Lunes a Viernes: 08:00 - 13:30 | 15:00 - 19:00 (Sábados y Domingos Cerrado)",
   lastVerifiedAt: "2026-08-25",
@@ -130,30 +127,13 @@ export const tallerLlevantManacor: ServiceItem = {
       instagramHandle: "@tallerllevant",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 180,
-      url: "https://www.google.com/maps/search/?api=1&query=Taller%20Mecanico%20Llevant%20Manacor",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Taller%20Mecanico%20Llevant%20Manacor&ll=39.5740,3.2120",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 180,
-      url: "https://www.bing.com/maps?where1=Taller%20Mecanico%20Llevant%20Manacor",
-    },
-    totalReviewsAggregated: 180,
-    overallWeightedRating: 4.8,
-  },
   reviews: [
     {
       id: "rev-tml-1",
       authorName: "Antoni Riera",
       rating: 5,
       date: "2025-05-18",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
       comment:
         "Taller de màxima confiança a Manacor. Varen fer el manteniment de la caixa automàtica del meu cotxe amb diàlisi i ara canvia de marxes suau com el primer dia. Molt recomanable.",
@@ -164,7 +144,7 @@ export const tallerLlevantManacor: ServiceItem = {
       authorName: "Klaus Hoffmann",
       rating: 5,
       date: "2025-06-25",
-      platform: "google_maps",
+      platform: "direct",
       language: "de",
       comment:
         "Sehr kompetente Autowerkstatt in Manacor! Schnelle Fehlerdiagnose bei der Motorelektronik und pünktliche Reparatur. Faire Preise und freundlicher Service.",

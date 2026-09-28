@@ -31,12 +31,6 @@ export const aubocassa_oli_de_mallorca_manacor: ServiceItem = {
   schedule: "Lunes a Viernes: 09:00 - 17:00 (Visitas con reserva previa)",
   image: "/images/services/aubocassa-oli-de-mallorca-manacor.jpg",
   gallery: ["/images/services/aubocassa-oli-de-mallorca-manacor.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Aubocassa%20Oli%20de%20Mallorca%20Manacor%20Camino%20de%20Son%20Valls%2C%20s%2Fn%2C%2007500%20Manacor",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Aubocassa%20Oli%20de%20Mallorca%20Manacor%20Camino%20de%20Son%20Valls%2C%20s%2Fn%2C%2007500%20Manacor",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Aubocassa%20Oli%20de%20Mallorca%20Manacor%20Camino%20de%20Son%20Valls%2C%20s%2Fn%2C%2007500%20Manacor",
   shortDescription: {
     es: "Finca histórica y almazara de aceite de oliva virgen extra de pago en Manacor (DOP Oli de Mallorca): visitas, catas y oleoturismo de élite.",
     en: "Historic olive estate and single-estate extra virgin olive oil mill in Manacor (DOP Oli de Mallorca): tours, tastings, and elite oleotourism.",
@@ -100,13 +94,6 @@ export const aubocassa_oli_de_mallorca_manacor: ServiceItem = {
       "Professionelle Olivenöl-Verkostungen mit regionalem Brot und Meersalz",
       "Hofladenverkauf und weltweiter Versand ausgewählter Jahrgänge",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 165,
-      url: "https://www.google.com/maps/search/?api=1&query=Aubocassa%20Oli%20de%20Mallorca%20Manacor%20Camino%20de%20Son%20Valls%2C%20s%2Fn%2C%2007500%20Manacor",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

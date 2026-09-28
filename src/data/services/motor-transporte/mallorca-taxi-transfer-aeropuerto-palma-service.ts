@@ -31,12 +31,6 @@ export const mallorca_taxi_transfer_aeropuerto_palma_service: ServiceItem = {
   schedule: "Servicio 24 horas / 365 días (Reserva previa online o telefónica)",
   image: "/images/services/mallorca-taxi-transfer-aeropuerto-palma-service.jpg",
   gallery: ["/images/services/mallorca-taxi-transfer-aeropuerto-palma-service.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Mallorca%20Taxi%20Transfer%20Aeropuerto%20Palma%20%26%20VIP%20Private%20Shuttle%20Aeropuerto%20de%20Palma%20de%20Mallorca%20(PMI)%2C%20Salidas%2FLlegadas%2C%2007071%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Mallorca%20Taxi%20Transfer%20Aeropuerto%20Palma%20%26%20VIP%20Private%20Shuttle%20Aeropuerto%20de%20Palma%20de%20Mallorca%20(PMI)%2C%20Salidas%2FLlegadas%2C%2007071%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Mallorca%20Taxi%20Transfer%20Aeropuerto%20Palma%20%26%20VIP%20Private%20Shuttle%20Aeropuerto%20de%20Palma%20de%20Mallorca%20(PMI)%2C%20Salidas%2FLlegadas%2C%2007071%20Palma",
   shortDescription: {
     es: "Servicio oficial de traslados privados en taxi, minivans y vehículos ejecutivos desde el Aeropuerto de Palma (PMI) a cualquier villa, hotel o puerto de Mallorca.",
     en: "Official private taxi, minivan, and executive vehicle transfer service from Palma Airport (PMI) to any villa, hotel, or port in Mallorca.",
@@ -100,13 +94,6 @@ export const mallorca_taxi_transfer_aeropuerto_palma_service: ServiceItem = {
       "VIP-Executive-Fahrten für Kongresse und Events in Palma",
       "Nacht-Shuttleservice für Restaurantabende und Finca-Hochzeiten",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 1450,
-      url: "https://www.google.com/maps/search/?api=1&query=Mallorca%20Taxi%20Transfer%20Aeropuerto%20Palma%20%26%20VIP%20Private%20Shuttle%20Aeropuerto%20de%20Palma%20de%20Mallorca%20(PMI)%2C%20Salidas%2FLlegadas%2C%2007071%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

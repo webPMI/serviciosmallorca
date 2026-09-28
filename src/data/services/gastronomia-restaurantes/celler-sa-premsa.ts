@@ -81,23 +81,6 @@ export const cellerSaPremsa: ServiceItem = {
     ca: "Fundat el 1958, Sa Premsa conserva les bótes de vi gegants originals i els arcs de marès emblemàtics.",
     de: "Gegründet 1958, bewahrt Sa Premsa riesige originale Weinfässer und Sandsteinbögen im Herzen von Palma.",
   },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.4,
-      reviewCount: 3890,
-      url: "https://www.google.com/maps/search/?api=1&query=Celler+Sa+Premsa+Palma",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Celler+Sa+Premsa+Palma",
-    },
-    bingMaps: {
-      rating: 4.4,
-      reviewCount: 320,
-      url: "https://www.bing.com/maps?q=Celler+Sa+Premsa+Palma",
-    },
-    totalReviewsAggregated: 4210,
-    overallWeightedRating: 4.4,
-  },
   reviews: [],
   socialLinks: {
     facebook: "https://facebook.com/cellersapremsa",
@@ -120,9 +103,6 @@ export const cellerSaPremsa: ServiceItem = {
     },
   ],
   authorityProfiles: [],
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Celler+Sa+Premsa+Palma",
-  appleMapsUrl: "https://maps.apple.com/?q=Celler+Sa+Premsa+Palma",
-  bingMapsUrl: "https://www.bing.com/maps?q=Celler+Sa+Premsa+Palma",
   phone: "+34 971 72 35 29",
   whatsapp: "+34 971 72 35 29",
   email: "info@cellersapremsa.com",

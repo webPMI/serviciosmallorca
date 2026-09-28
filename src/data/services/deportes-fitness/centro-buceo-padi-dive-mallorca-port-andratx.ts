@@ -31,12 +31,6 @@ export const centro_buceo_padi_dive_mallorca_port_andratx: ServiceItem = {
   schedule: "Diario: 08:00 - 19:00 (Temporada: Abril – Noviembre)",
   image: "/images/services/centro-buceo-padi-dive-mallorca-port-andratx.jpg",
   gallery: ["/images/services/centro-buceo-padi-dive-mallorca-port-andratx.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Dive%20Mallorca%20PADI%205*%20Centre%20Port%20d'Andratx%20Carrer%20de%20Isaac%20Peral%2C%205%2C%2007157%20Port%20d'Andratx",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Dive%20Mallorca%20PADI%205*%20Centre%20Port%20d'Andratx%20Carrer%20de%20Isaac%20Peral%2C%205%2C%2007157%20Port%20d'Andratx",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Dive%20Mallorca%20PADI%205*%20Centre%20Port%20d'Andratx%20Carrer%20de%20Isaac%20Peral%2C%205%2C%2007157%20Port%20d'Andratx",
   shortDescription: {
     es: "Centro de buceo PADI 5 Star Instructor Development Centre en Port d'Andratx: cursos Open Water, Divemaster, Rescue Diver y expediciones de buceo técnico en la reserva marina de Cabrera.",
     en: "PADI 5-Star Instructor Development Centre in Port d'Andratx: Open Water courses, Divemaster training, Rescue Diver, and technical diving expeditions to Cabrera Marine Reserve.",
@@ -100,13 +94,6 @@ export const centro_buceo_padi_dive_mallorca_port_andratx: ServiceItem = {
       "Geführte Abenteuer-Tauchgänge in Cabrera, Andratx und s'Estanyol",
       "PADI Divemaster, Rescue Diver und IDC-Instructorkurs",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 465,
-      url: "https://www.google.com/maps/search/?api=1&query=Dive%20Mallorca%20PADI%205*%20Centre%20Port%20d'Andratx%20Carrer%20de%20Isaac%20Peral%2C%205%2C%2007157%20Port%20d'Andratx",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

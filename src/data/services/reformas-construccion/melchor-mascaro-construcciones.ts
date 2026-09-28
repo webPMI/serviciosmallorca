@@ -78,12 +78,6 @@ export const melchorMascaroConstrucciones: ServiceItem = {
   },
   image: "/images/services/melchor-mascaro-construcciones.jpg",
   gallery: ["/images/services/melchor-mascaro-construcciones.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Melchor%20Mascar%C3%B3%20Construcciones%20%26%20Obra%20Civil%20(Palma%20%2F%20Manacor)%20Carrer%20Gremi%20de%20Teixidors%2C%2022%2C%2007009%20Palma%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Melchor%20Mascar%C3%B3%20Construcciones%20%26%20Obra%20Civil%20(Palma%20%2F%20Manacor)%20Carrer%20Gremi%20de%20Teixidors%2C%2022%2C%2007009%20Palma%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://www.bing.com/maps?q=Melchor%20Mascar%C3%B3%20Construcciones%20%26%20Obra%20Civil%20(Palma%20%2F%20Manacor)%20Carrer%20Gremi%20de%20Teixidors%2C%2022%2C%2007009%20Palma%2C%20Illes%20Balears",
   phone: "+34 971 70 60 00",
   whatsapp: "+34971706000",
   website: "https://melchormascaro.com",

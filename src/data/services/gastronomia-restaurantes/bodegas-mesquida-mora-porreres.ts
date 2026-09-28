@@ -28,9 +28,6 @@ export const bodegasMesquidaMoraPorreres: ServiceItem = {
   email: "info@mesquidamora.com",
   website: "https://mesquidamora.com",
   menuUrl: "https://mesquidamora.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Bodegas+Mesquida+Mora+Porreres+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Bodegas+Mesquida+Mora+Porreres",
-  bingMapsUrl: "https://www.bing.com/maps?q=Bodegas+Mesquida+Mora+Porreres",
   tags: ["zona:raiguer-pla", "zona:porreres", "product:premium", "mod:en-local", "aud:parejas", "temps:todo-el-ano"],
   capabilities: {
     parkingAvailable: true,

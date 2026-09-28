@@ -28,9 +28,6 @@ export const bodegasSonArtiguesPorreres: ServiceItem = {
   email: "info@sonartigues.com",
   website: "https://www.sonartigues.com",
   menuUrl: "https://www.sonartigues.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Bodega+Son+Artigues+Porreres+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Bodega+Son+Artigues+Porreres",
-  bingMapsUrl: "https://www.bing.com/maps?q=Bodega+Son+Artigues+Porreres",
   tags: [
     "zona:santanyi-migjorn",
     "zona:porreres",

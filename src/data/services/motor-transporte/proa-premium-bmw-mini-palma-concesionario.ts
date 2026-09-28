@@ -31,12 +31,6 @@ export const proa_premium_bmw_mini_palma_concesionario: ServiceItem = {
   schedule: "Lunes a Viernes: 08:30 - 20:00, Sábado: 10:00 - 13:30",
   image: "/images/services/proa-premium-bmw-mini-palma-concesionario.jpg",
   gallery: ["/images/services/proa-premium-bmw-mini-palma-concesionario.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Proa%20Premium%20Concesionario%20Oficial%20BMW%20%26%20MINI%20(Palma)%20Carrer%20del%2016%20de%20Juliol%2C%203%2C%20Pol%C3%ADgon%20Son%20Castell%C3%B3%2C%2007009%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Proa%20Premium%20Concesionario%20Oficial%20BMW%20%26%20MINI%20(Palma)%20Carrer%20del%2016%20de%20Juliol%2C%203%2C%20Pol%C3%ADgon%20Son%20Castell%C3%B3%2C%2007009%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Proa%20Premium%20Concesionario%20Oficial%20BMW%20%26%20MINI%20(Palma)%20Carrer%20del%2016%20de%20Juliol%2C%203%2C%20Pol%C3%ADgon%20Son%20Castell%C3%B3%2C%2007009%20Palma",
   shortDescription: {
     es: "Concesionario y taller oficial de BMW, BMW M, BMW i y MINI en Mallorca: gama de modelos nuevos, vehículos de ocasión 'BMW Premium Selection' y servicio técnico.",
     en: "Official BMW, BMW M, BMW i, and MINI dealership and service center in Mallorca: new models, 'BMW Premium Selection' pre-owned, and master service.",
@@ -100,13 +94,6 @@ export const proa_premium_bmw_mini_palma_concesionario: ServiceItem = {
       "Herstellerservice mit 'BMW Service Inclusive'-Paketen und Reifenservice",
       "Karosserieinstandsetzung und Lackierung nach strengen BMW-Werksvorgaben",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 1190,
-      url: "https://www.google.com/maps/search/?api=1&query=Proa%20Premium%20Concesionario%20Oficial%20BMW%20%26%20MINI%20(Palma)%20Carrer%20del%2016%20de%20Juliol%2C%203%2C%20Pol%C3%ADgon%20Son%20Castell%C3%B3%2C%2007009%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

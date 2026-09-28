@@ -100,8 +100,5 @@ export const ribClubMallorcaService: ServiceItem = {
     ],
   },
   amenities: ["wifi", "parking_available", "wheelchair_accessible"],
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Rib+Club+Mallorca+Puerto+Portals",
-  appleMapsUrl: "https://maps.apple.com/?q=Rib+Club+Mallorca+Puerto+Portals",
-  bingMapsUrl: "https://www.bing.com/maps?q=Rib+Club+Mallorca+Puerto+Portals",
   confidenceScore: 98,
 };

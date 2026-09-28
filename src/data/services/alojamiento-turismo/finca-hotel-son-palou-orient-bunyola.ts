@@ -31,12 +31,6 @@ export const finca_hotel_son_palou_orient_bunyola: ServiceItem = {
   schedule: "Abierto de Febrero a Noviembre",
   image: "/images/services/finca-hotel-son-palou-orient-bunyola.jpg",
   gallery: ["/images/services/finca-hotel-son-palou-orient-bunyola.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Finca%20Hotel%20Son%20Palou%20Orient%20(Bunyola)%20Pla%C3%A7a%20de%20l'Esgl%C3%A9sia%2C%20s%2Fn%2C%2007110%20Orient%20(Bunyola)%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Finca%20Hotel%20Son%20Palou%20Orient%20(Bunyola)%20Pla%C3%A7a%20de%20l'Esgl%C3%A9sia%2C%20s%2Fn%2C%2007110%20Orient%20(Bunyola)%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Finca%20Hotel%20Son%20Palou%20Orient%20(Bunyola)%20Pla%C3%A7a%20de%20l'Esgl%C3%A9sia%2C%20s%2Fn%2C%2007110%20Orient%20(Bunyola)%2C%20Illes%20Balears",
   shortDescription: {
     es: "Hotel rural de lujo en una posesión del siglo XIV en el valle escondido de Orient. Huertos de manzanos, cocina mediterránea y silencio absoluto en la Tramuntana.",
     en: "Luxury country hotel in a 14th-century mountain estate in the secluded valley of Orient. Apple orchards, fine dining, and absolute peace in the Tramuntana.",
@@ -110,13 +104,6 @@ export const finca_hotel_son_palou_orient_bunyola: ServiceItem = {
     ],
     ca: ["Hotel rural a la vall d'Orient", "Escapades romàntiques a la Tramuntana", "Gastronomia amb hort propi"],
     de: ["Fincahotel im Orient-Tal", "Romantischer Tramuntana-Rückzugsort", "Gourmetküche mit eigenem Garten"],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 220,
-      url: "https://www.google.com/maps/search/?api=1&query=Finca%20Hotel%20Son%20Palou%20Orient%20(Bunyola)%20Pla%C3%A7a%20de%20l'Esgl%C3%A9sia%2C%20s%2Fn%2C%2007110%20Orient%20(Bunyola)%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

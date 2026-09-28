@@ -28,9 +28,6 @@ export const bodegaBarahonaCasaManolo: ServiceItem = {
   email: "info@bodegabarahonacasamanolo.es",
   website: "https://bodegabarahonacasamanolo.es",
   menuUrl: "https://bodegabarahonacasamanolo.es",
-  googleMapsUrl: "https://www.google.com/maps/search/Casa+Manolo+Bodega+Barahona+Ses+Salines+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Casa+Manolo+Ses+Salines",
-  bingMapsUrl: "https://www.bing.com/maps?q=Casa+Manolo+Ses+Salines",
   tags: [
     "zona:santanyi-migjorn",
     "zona:ses-salines",

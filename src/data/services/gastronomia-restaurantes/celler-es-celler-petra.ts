@@ -21,9 +21,6 @@ export const cellerEsCellerPetra: ServiceItem = {
   whatsapp: "+34 971 56 15 16",
   email: "reserves@escellerpetra.com",
   website: "https://escellerpetra.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Es%20Celler%20Petra",
-  appleMapsUrl: "https://maps.apple.com/?q=Es%20Celler%20Petra&ll=39.6140,3.1120",
-  bingMapsUrl: "https://www.bing.com/maps?where1=Es%20Celler%20Petra",
   coordinates: { lat: 39.614, lng: 3.112 },
   schedule: "Lunes a Domingo: 13:00 - 16:00 | 20:00 - 23:30 (Abierto todos los días)",
   lastVerifiedAt: "2026-08-25",
@@ -130,30 +127,13 @@ export const cellerEsCellerPetra: ServiceItem = {
       instagramHandle: "@escellerpetra",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 860,
-      url: "https://www.google.com/maps/search/?api=1&query=Es%20Celler%20Petra",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Es%20Celler%20Petra&ll=39.6140,3.1120",
-    },
-    bingMaps: {
-      rating: 4.7,
-      reviewCount: 860,
-      url: "https://www.bing.com/maps?where1=Es%20Celler%20Petra",
-    },
-    totalReviewsAggregated: 860,
-    overallWeightedRating: 4.7,
-  },
   reviews: [
     {
       id: "rev-ecp-1",
       authorName: "Guillem Bauzà",
       rating: 5,
       date: "2025-05-18",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
       comment:
         "El celler més autèntic del Pla de Mallorca. Les sopes mallorquines són insuperables, la porcella és deliciosa i les racions són molt abundants. Un clàssic imprescindible a Petra.",
@@ -164,7 +144,7 @@ export const cellerEsCellerPetra: ServiceItem = {
       authorName: "Oliver Chapman",
       rating: 5,
       date: "2025-06-25",
-      platform: "google_maps",
+      platform: "direct",
       language: "en",
       comment:
         "Fantastic authentic cycling stop in Petra! We had the sopes mallorquines and roast pork in clay pots. Incredibly tasty, great value, and friendly service.",

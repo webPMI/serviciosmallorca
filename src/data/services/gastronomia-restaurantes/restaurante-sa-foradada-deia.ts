@@ -31,12 +31,6 @@ export const restaurante_sa_foradada_deia: ServiceItem = {
   schedule: "Diario: 12:30 - 18:00 (Abril a Octubre, acceso a pie o en barco)",
   image: "/images/services/restaurante-sa-foradada-deia.jpg",
   gallery: ["/images/services/restaurante-sa-foradada-deia.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Restaurante%20Sa%20Foradada%20(Dei%C3%A0)%20Pen%C3%ADnsula%20de%20Sa%20Foradada%2C%20Cam%C3%AD%20de%20Sa%20Foradada%2C%2007179%20Dei%C3%A0",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Restaurante%20Sa%20Foradada%20(Dei%C3%A0)%20Pen%C3%ADnsula%20de%20Sa%20Foradada%2C%20Cam%C3%AD%20de%20Sa%20Foradada%2C%2007179%20Dei%C3%A0",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Restaurante%20Sa%20Foradada%20(Dei%C3%A0)%20Pen%C3%ADnsula%20de%20Sa%20Foradada%2C%20Cam%C3%AD%20de%20Sa%20Foradada%2C%2007179%20Dei%C3%A0",
   shortDescription: {
     es: "Mítico restaurante al final del sendero de Sa Foradada en Deià: paellas tradicionales cocinadas a fuego de leña de encina sobre el acantilado más icónico de la costa oeste.",
     en: "Mythic cliffside restaurant at the tip of the Sa Foradada peninsula in Deià: traditional paellas cooked over holm oak wood fires overlooking the open Mediterranean.",
@@ -100,13 +94,6 @@ export const restaurante_sa_foradada_deia: ServiceItem = {
       "Tischreservierung dringend im Voraus erforderlich",
       "Kühle Getränke für Wanderer",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 1890,
-      url: "https://www.google.com/maps/search/?api=1&query=Restaurante%20Sa%20Foradada%20(Dei%C3%A0)%20Pen%C3%ADnsula%20de%20Sa%20Foradada%2C%20Cam%C3%AD%20de%20Sa%20Foradada%2C%2007179%20Dei%C3%A0",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

@@ -31,12 +31,6 @@ export const canteras_mares_can_burguera_llucmajor: ServiceItem = {
   schedule: "Lunes a Viernes: 07:30 - 17:30 | Sábado: 08:00 - 13:00 | Domingo: Cerrado",
   image: "/images/services/canteras-mares-can-burguera-llucmajor.jpg",
   gallery: ["/images/services/canteras-mares-can-burguera-llucmajor.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Canteres%20%26%20Mar%C3%A8s%20Can%20Burguera%20Llucmajor%20Carretera%20Llucmajor%20a%20Porreres%2C%20km%202%2C%2007620%20Llucmajor%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Canteres%20%26%20Mar%C3%A8s%20Can%20Burguera%20Llucmajor%20Carretera%20Llucmajor%20a%20Porreres%2C%20km%202%2C%2007620%20Llucmajor%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Canteres%20%26%20Mar%C3%A8s%20Can%20Burguera%20Llucmajor%20Carretera%20Llucmajor%20a%20Porreres%2C%20km%202%2C%2007620%20Llucmajor%2C%20Illes%20Balears",
   shortDescription: {
     es: "Cantera histórica y taller de corte de marès en Llucmajor, extrayendo y tallando bloques de auténtica piedra arenisca mallorquina para bóvedas, arcos de medio punto, cornisas y cerramientos tradicionales.",
     en: "Heritage quarry and marès stone cutting workshop in Llucmajor, extracting and sculpting authentic Mallorcan sandstone blocks for vaulted ceilings, arches, cornices, and traditional walls.",
@@ -100,13 +94,6 @@ export const canteras_mares_can_burguera_llucmajor: ServiceItem = {
       "Gestockte und strukturierte Marès-Platten für rustikale Fassadenverkleidungen im Innen- und Außenbereich",
       "Bautechnische Beratung für Architekten zur fachgerechten Verarbeitung mit Naturkalkmörtel",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 135,
-      url: "https://www.google.com/maps/search/?api=1&query=Canteres%20%26%20Mar%C3%A8s%20Can%20Burguera%20Llucmajor%20Carretera%20Llucmajor%20a%20Porreres%2C%20km%202%2C%2007620%20Llucmajor%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

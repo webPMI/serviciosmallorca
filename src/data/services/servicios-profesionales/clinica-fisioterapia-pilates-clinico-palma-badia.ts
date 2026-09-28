@@ -31,12 +31,6 @@ export const clinica_fisioterapia_pilates_clinico_palma_badia: ServiceItem = {
   schedule: "Lunes a Viernes: 08:00 - 20:30; Sábado: 09:00 - 14:00",
   image: "/images/services/clinica-fisioterapia-pilates-clinico-palma-badia.jpg",
   gallery: ["/images/services/clinica-fisioterapia-pilates-clinico-palma-badia.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica%20FisioMar%20Fisioterapia%20%26%20Pilates%20Cl%C3%ADnico%20Palma%20Carrer%20de%20Blanquerna%2C%2014%2C%20Baixos%2C%2007003%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Cl%C3%ADnica%20FisioMar%20Fisioterapia%20%26%20Pilates%20Cl%C3%ADnico%20Palma%20Carrer%20de%20Blanquerna%2C%2014%2C%20Baixos%2C%2007003%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Cl%C3%ADnica%20FisioMar%20Fisioterapia%20%26%20Pilates%20Cl%C3%ADnico%20Palma%20Carrer%20de%20Blanquerna%2C%2014%2C%20Baixos%2C%2007003%20Palma",
   shortDescription: {
     es: "Clínica de fisioterapia, osteopatía y pilates terapéutico en Palma con fisioterapeutas especializados en deporte, suelo pélvico, neurología y lesiones crónicas del aparato locomotor.",
     en: "Palma physiotherapy clinic specializing in sports rehab, pelvic floor, neurology, and chronic musculoskeletal conditions, with clinical Pilates studio.",
@@ -100,13 +94,6 @@ export const clinica_fisioterapia_pilates_clinico_palma_badia: ServiceItem = {
       "Beckenbodentherapie: Inkontinenz, Diastase und Geburtsvorbereitung",
       "Einzel- und Kleingruppentraining im Klinischen Reformer-Pilates",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 520,
-      url: "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica%20FisioMar%20Fisioterapia%20%26%20Pilates%20Cl%C3%ADnico%20Palma%20Carrer%20de%20Blanquerna%2C%2014%2C%20Baixos%2C%2007003%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

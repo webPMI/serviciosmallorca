@@ -27,9 +27,6 @@ export const marYMarPeguera: ServiceItem = {
   email: "info@marymar-mallorca.com",
   website: "https://marymar-mallorca.com",
   menuUrl: "https://marymar-mallorca.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Restaurante+Mar+y+Mar+Peguera+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante+Mar+y+Mar+Peguera",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante+Mar+y+Mar+Peguera",
   tags: [
     "zona:calvia-andratx",
     "zona:peguera",

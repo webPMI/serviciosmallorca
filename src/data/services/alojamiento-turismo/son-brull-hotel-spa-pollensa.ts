@@ -76,9 +76,6 @@ export const sonBrullHotelSpaPollensa: ServiceItem = {
       close: "23:59",
     },
   },
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Son%20Brull%20Hotel%20%26%20Spa%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Son%20Brull%20Hotel%20%26%20Spa%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Son%20Brull%20Hotel%20%26%20Spa%20Mallorca",
   pricing: {
     startingPrice: "Desde 490€ / noche",
     rateType: "tiered",
@@ -105,21 +102,4 @@ export const sonBrullHotelSpaPollensa: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 460,
-      url: "https://www.google.com/maps/search/?api=1&query=Son%20Brull%20Hotel%20%26%20Spa%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Son%20Brull%20Hotel%20%26%20Spa%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.7,
-      reviewCount: 46,
-      url: "https://www.bing.com/maps?q=Son%20Brull%20Hotel%20%26%20Spa%20Mallorca",
-    },
-    totalReviewsAggregated: 506,
-    overallWeightedRating: 4.8,
-  },
 };

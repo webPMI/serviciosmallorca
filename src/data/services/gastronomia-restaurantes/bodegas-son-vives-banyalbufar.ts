@@ -28,9 +28,6 @@ export const bodegasSonVivesBanyalbufar: ServiceItem = {
   email: "visit@bodegasonvives.com",
   website: "https://www.sonvives.com",
   menuUrl: "https://www.sonvives.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Bodega+Son+Vives+Banyalbufar+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Bodega+Son+Vives+Banyalbufar",
-  bingMapsUrl: "https://www.bing.com/maps?q=Bodega+Son+Vives+Banyalbufar",
   tags: ["zona:tramuntana", "zona:banyalbufar", "product:premium", "mod:en-local", "aud:parejas", "temps:todo-el-ano"],
   capabilities: {
     terrace: true,

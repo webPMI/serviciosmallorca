@@ -21,9 +21,6 @@ export const viverosLlabres: ServiceItem = {
   whatsapp: "+34 670 50 60 70",
   email: "info@viverosllabres.com",
   website: "https://viverosllabres.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Viveros%20Llabres%20Marratxi",
-  appleMapsUrl: "https://maps.apple.com/?q=Viveros%20Llabres%20Marratxi&ll=39.6320,2.7350",
-  bingMapsUrl: "https://www.bing.com/maps?where1=Viveros%20Llabres%20Marratxi",
   coordinates: { lat: 39.632, lng: 2.735 },
   schedule: "Lunes a Sábado: 08:30 - 19:30 | Domingos: 09:00 - 14:00 (Centro de Jardinería Abierto)",
   lastVerifiedAt: "2026-08-25",
@@ -131,30 +128,13 @@ export const viverosLlabres: ServiceItem = {
       instagramHandle: "@viverosllabres",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 320,
-      url: "https://www.google.com/maps/search/?api=1&query=Viveros%20Llabres%20Marratxi",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Viveros%20Llabres%20Marratxi&ll=39.6320,2.7350",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 320,
-      url: "https://www.bing.com/maps?where1=Viveros%20Llabres%20Marratxi",
-    },
-    totalReviewsAggregated: 320,
-    overallWeightedRating: 4.8,
-  },
   reviews: [
     {
       id: "rev-vll-1",
       authorName: "Miquel Àngel Frontera",
       rating: 5,
       date: "2025-05-16",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
       comment:
         "El viver més gran i complet de Mallorca. Vam comprar dues oliveres centenàries per a la finca i ens les varen dur amb camió grua i plantar de manera impecable.",
@@ -165,7 +145,7 @@ export const viverosLlabres: ServiceItem = {
       authorName: "Sabine Neumann",
       rating: 5,
       date: "2025-06-24",
-      platform: "google_maps",
+      platform: "direct",
       language: "de",
       comment:
         "Wunderschöne Gärtnerei in Marratxí! Riesige Auswahl an Olivenbäumen, Zitruspflanzen und mediterranen Blumen. Sehr kompetente Beratung und reibungslose Lieferung.",

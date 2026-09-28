@@ -28,9 +28,6 @@ export const restauranteEsRacoDesPortSoller: ServiceItem = {
   email: "info@esracodesport.com",
   website: "https://www.esracodesport.com",
   menuUrl: "https://www.esracodesport.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Restaurante+Es+Raco+d+es+Port+Soller+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante+Es+Raco+des+Port+Soller",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante+Es+Raco+des+Port+Soller",
   tags: [
     "zona:tramuntana",
     "zona:port-de-soller",

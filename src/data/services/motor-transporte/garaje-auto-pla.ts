@@ -21,9 +21,6 @@ export const garajeAutoPla: ServiceItem = {
   whatsapp: "+34 650 88 12 34",
   email: "taller@autopla-inca.com",
   website: "https://autopla-inca.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Garaje%20Auto%20Pla%20Inca%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Garaje%20Auto%20Pla%20Inca%20Mallorca&ll=39.7185,2.9112",
-  bingMapsUrl: "https://www.bing.com/maps?where1=Garaje%20Auto%20Pla%20Inca%20Mallorca",
   coordinates: { lat: 39.7185, lng: 2.9112 },
   schedule: "Lunes a Viernes: 08:00 - 13:00 | 15:00 - 19:00 (Sábados y Domingos Cerrado)",
   lastVerifiedAt: "2026-08-25",
@@ -130,30 +127,13 @@ export const garajeAutoPla: ServiceItem = {
       instagramHandle: "@autopla_inca",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 310,
-      url: "https://www.google.com/maps/search/?api=1&query=Garaje%20Auto%20Pla%20Inca%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Garaje%20Auto%20Pla%20Inca%20Mallorca&ll=39.7185,2.9112",
-    },
-    bingMaps: {
-      rating: 4.7,
-      reviewCount: 310,
-      url: "https://www.bing.com/maps?where1=Garaje%20Auto%20Pla%20Inca%20Mallorca",
-    },
-    totalReviewsAggregated: 310,
-    overallWeightedRating: 4.7,
-  },
   reviews: [
     {
       id: "rev-gap-1",
       authorName: "Bartomeu Gelabert",
       rating: 5,
       date: "2025-05-10",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
       comment:
         "Taller mecànic molt professional a Inca. Em varen canviar la distribució i passar la ITV el mateix dia. Preu honest.",
@@ -164,7 +144,7 @@ export const garajeAutoPla: ServiceItem = {
       authorName: "Mark Henderson",
       rating: 5,
       date: "2025-06-20",
-      platform: "google_maps",
+      platform: "direct",
       language: "en",
       comment:
         "Great auto repair garage in Inca. Diagnosed and fixed my brake issue quickly while I was in Mallorca. Very helpful.",

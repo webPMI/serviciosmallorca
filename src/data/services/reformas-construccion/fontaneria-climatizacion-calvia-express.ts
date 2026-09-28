@@ -31,12 +31,6 @@ export const fontaneria_climatizacion_calvia_express: ServiceItem = {
   schedule: "Lunes a Viernes: 08:00 - 19:00 (Servicio de Urgencias 24h)",
   image: "/images/services/fontaneria-climatizacion-calvia-express.jpg",
   gallery: ["/images/services/fontaneria-climatizacion-calvia-express.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Calvi%C3%A0%20Express%20Fontaner%C3%ADa%20%26%20Aerotermia%20Carrer%20de%20les%20Illes%20Can%C3%A0ries%2C%2018%2C%2007180%20Santa%20Ponsa",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Calvi%C3%A0%20Express%20Fontaner%C3%ADa%20%26%20Aerotermia%20Carrer%20de%20les%20Illes%20Can%C3%A0ries%2C%2018%2C%2007180%20Santa%20Ponsa",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Calvi%C3%A0%20Express%20Fontaner%C3%ADa%20%26%20Aerotermia%20Carrer%20de%20les%20Illes%20Can%C3%A0ries%2C%2018%2C%2007180%20Santa%20Ponsa",
   shortDescription: {
     es: "Instalación y reparación urgente de fontanería, aerotermia, suelo radiante y sistemas de descalcificación en el suroeste de Mallorca.",
     en: "Emergency plumbing, heat pump aerothermia, underfloor heating, and water softening systems in Southwest Mallorca.",
@@ -100,13 +94,6 @@ export const fontaneria_climatizacion_calvia_express: ServiceItem = {
       "Umkehrosmose und Entkalker",
       "Fußbodenheizung und Klimatechnik",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 168,
-      url: "https://www.google.com/maps/search/?api=1&query=Calvi%C3%A0%20Express%20Fontaner%C3%ADa%20%26%20Aerotermia%20Carrer%20de%20les%20Illes%20Can%C3%A0ries%2C%2018%2C%2007180%20Santa%20Ponsa",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

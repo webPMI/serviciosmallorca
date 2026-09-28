@@ -29,8 +29,6 @@ export const ROCK_N_PALMA_ROCODROMO_SON_CASTELLO: ServiceItem = {
   image: "/images/sports/rock-n-palma-rocodromo-son-castello.jpg",
   gallery: ["/images/sports/rock-n-palma-rocodromo-son-castello.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007082",
-  appleMapsUrl: "https://maps.apple.com/?q=Rock'n'Palma%20Roc%C3%B3dromo+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Rock'n'Palma%20Roc%C3%B3dromo+Mallorca",
   shortDescription: {
     es: "El mayor rocódromo y centro de escalada indoor de Baleares con más de 1.200 m² escalables.",
     en: "The largest indoor climbing and bouldering center in the Balearics with 1,200 m² climbing surface.",
@@ -94,13 +92,6 @@ export const ROCK_N_PALMA_ROCODROMO_SON_CASTELLO: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 410,
-      url: "https://www.google.com/maps?cid=12007082",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

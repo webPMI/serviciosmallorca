@@ -31,12 +31,6 @@ export const celler_can_ripoll_inca_1768: ServiceItem = {
   schedule: "Martes a Domingo: 13:00 - 16:00 y 20:00 - 23:00 (Lunes cerrado)",
   image: "/images/services/celler-can-ripoll-inca-1768.jpg",
   gallery: ["/images/services/celler-can-ripoll-inca-1768.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Celler%20Ca'n%20Ripoll%20Monumento%20Hist%C3%B3rico%20Inca%20(1768)%20Carrer%20de%20Jaume%20Armengol%2C%204%2C%2007300%20Inca",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Celler%20Ca'n%20Ripoll%20Monumento%20Hist%C3%B3rico%20Inca%20(1768)%20Carrer%20de%20Jaume%20Armengol%2C%204%2C%2007300%20Inca",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Celler%20Ca'n%20Ripoll%20Monumento%20Hist%C3%B3rico%20Inca%20(1768)%20Carrer%20de%20Jaume%20Armengol%2C%204%2C%2007300%20Inca",
   shortDescription: {
     es: "Monumento Histórico Artístico y celler señorial de 1768 en Inca: lechona asada al horno de leña, sopes mallorquines y frito balear entre gigantescas tinas de vino centenarias.",
     en: "Designated Historical Artistic Monument and 1768 wine cellar in Inca: wood-roasted suckling pig, traditional sopes mallorquines, and frito balear surrounded by giant oak vats.",
@@ -100,13 +94,6 @@ export const celler_can_ripoll_inca_1768: ServiceItem = {
       "Große Auswahl an balearischen Weinen",
       "Spanferkel auf Vorbestellung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 1920,
-      url: "https://www.google.com/maps/search/?api=1&query=Celler%20Ca'n%20Ripoll%20Monumento%20Hist%C3%B3rico%20Inca%20(1768)%20Carrer%20de%20Jaume%20Armengol%2C%204%2C%2007300%20Inca",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

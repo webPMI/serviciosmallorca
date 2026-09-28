@@ -31,12 +31,6 @@ export const limpiezas_brillant_mallorca_manacor: ServiceItem = {
   schedule: "Lunes a Viernes: 08:00 - 18:00",
   image: "/images/services/limpiezas-brillant-mallorca-manacor.jpg",
   gallery: ["/images/services/limpiezas-brillant-mallorca-manacor.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Limpiezas%20Brillant%20Serveis%20Integrals%20de%20Neteja%20Manacor%20Carrer%20del%20Pou%20Fondo%2C%2018%2C%2007500%20Manacor",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Limpiezas%20Brillant%20Serveis%20Integrals%20de%20Neteja%20Manacor%20Carrer%20del%20Pou%20Fondo%2C%2018%2C%2007500%20Manacor",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Limpiezas%20Brillant%20Serveis%20Integrals%20de%20Neteja%20Manacor%20Carrer%20del%20Pou%20Fondo%2C%2018%2C%2007500%20Manacor",
   shortDescription: {
     es: "Empresa de limpieza y servicios para el hogar y empresas en la comarca de Llevant (Manacor, Porto Cristo, Cala Millor): limpieza de chalets, cristales, oficinas y tapicerías.",
     en: "Professional cleaning company serving the eastern Llevant district (Manacor, Porto Cristo, Cala Millor): private villas, office maintenance, window washing, and upholstery cleaning.",
@@ -100,13 +94,6 @@ export const limpiezas_brillant_mallorca_manacor: ServiceItem = {
       "Schaufenster- und Glasreinigung für Geschäfte",
       "Grundreinigungen nach Umzug oder Renovierungsarbeiten",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 260,
-      url: "https://www.google.com/maps/search/?api=1&query=Limpiezas%20Brillant%20Serveis%20Integrals%20de%20Neteja%20Manacor%20Carrer%20del%20Pou%20Fondo%2C%2018%2C%2007500%20Manacor",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

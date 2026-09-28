@@ -21,9 +21,6 @@ export const limpiezasBalear: ServiceItem = {
   whatsapp: "+34 660 30 40 50",
   email: "info@limpiezasbalear.com",
   website: "https://limpiezasbalear.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Limpiezas%20Balear%20Palma",
-  appleMapsUrl: "https://maps.apple.com/?q=Limpiezas%20Balear%20Palma&ll=39.5935,2.6742",
-  bingMapsUrl: "https://www.bing.com/maps?where1=Limpiezas%20Balear%20Palma",
   coordinates: { lat: 39.5935, lng: 2.6742 },
   schedule: "Lunes a Viernes: 07:30 - 19:30 | Sábados: 08:00 - 14:00 (Urgencias y Fines de Obra)",
   lastVerifiedAt: "2026-08-25",
@@ -127,30 +124,13 @@ export const limpiezasBalear: ServiceItem = {
       instagramHandle: "@limpiezasbalear",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 190,
-      url: "https://www.google.com/maps/search/?api=1&query=Limpiezas%20Balear%20Palma",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Limpiezas%20Balear%20Palma&ll=39.5935,2.6742",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 190,
-      url: "https://www.bing.com/maps?where1=Limpiezas%20Balear%20Palma",
-    },
-    totalReviewsAggregated: 190,
-    overallWeightedRating: 4.8,
-  },
   reviews: [
     {
       id: "rev-lb-1",
       authorName: "Antoni Gual",
       rating: 5,
       date: "2025-05-12",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
       comment:
         "Varen fer la neteja de fi d'obra del nostre pis a Palma. Varen deixar tots els vidres, banys i terres brillants en un sol dia. Impecable.",
@@ -161,7 +141,7 @@ export const limpiezasBalear: ServiceItem = {
       authorName: "David Sterling",
       rating: 5,
       date: "2025-06-24",
-      platform: "google_maps",
+      platform: "direct",
       language: "en",
       comment:
         "Used their pure water window cleaning service for our villa in Son Vida. Amazing results on floor-to-ceiling glass without leaving a single streak.",

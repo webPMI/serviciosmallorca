@@ -100,8 +100,5 @@ export const fundacioMiroMallorcaService: ServiceItem = {
     ],
   },
   amenities: ["wifi", "air_conditioning", "wheelchair_accessible", "parking_nearby"],
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Fundacio+Miro+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Fundacio+Miro+Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Fundacio+Miro+Mallorca",
   confidenceScore: 99,
 };

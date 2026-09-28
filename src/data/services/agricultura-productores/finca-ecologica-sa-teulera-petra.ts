@@ -31,12 +31,6 @@ export const finca_ecologica_sa_teulera_petra: ServiceItem = {
   schedule: "Lunes a Sábado: 08:30 - 13:30, 16:30 - 20:00",
   image: "/images/services/finca-ecologica-sa-teulera-petra.jpg",
   gallery: ["/images/services/finca-ecologica-sa-teulera-petra.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Finca%20Ecol%C3%B2gica%20Sa%20Teulera%20Petra%20Ctra.%20Petra-Santa%20Margalida%2C%20Km%202%2C%2007250%20Petra",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Finca%20Ecol%C3%B2gica%20Sa%20Teulera%20Petra%20Ctra.%20Petra-Santa%20Margalida%2C%20Km%202%2C%2007250%20Petra",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Finca%20Ecol%C3%B2gica%20Sa%20Teulera%20Petra%20Ctra.%20Petra-Santa%20Margalida%2C%20Km%202%2C%2007250%20Petra",
   shortDescription: {
     es: "Explotación agroecológica pionera en Petra: lácteos ecológicos de vacas de pasto, quesos artesanales, yogures y huerta bio de Mallorca.",
     en: "Pioneering organic farm in Petra: pasture-raised cow dairy, artisan cheeses, yogurts, and biodynamic vegetables in Mallorca.",
@@ -100,13 +94,6 @@ export const finca_ecologica_sa_teulera_petra: ServiceItem = {
       "Tagesfrisch geerntetes Bio-Gemüse und sonnengereiftes Obst aus Petra",
       "Freilandeier von Bio-Hühnern und traditionelles Brot aus Urweizen (Xeixa)",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 130,
-      url: "https://www.google.com/maps/search/?api=1&query=Finca%20Ecol%C3%B2gica%20Sa%20Teulera%20Petra%20Ctra.%20Petra-Santa%20Margalida%2C%20Km%202%2C%2007250%20Petra",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

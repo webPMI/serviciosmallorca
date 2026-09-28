@@ -31,12 +31,6 @@ export const teixits_riera_lloseta_robes_llengues_1896: ServiceItem = {
   schedule: "Lunes a Viernes: 09:30 - 13:30, 16:30 - 20:00; Sábado: 10:00 - 13:30",
   image: "/images/services/teixits-riera-lloseta-robes-llengues-1896.jpg",
   gallery: ["/images/services/teixits-riera-lloseta-robes-llengues-1896.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Teixits%20Riera%20(Robes%20de%20Lleng%C3%BCes%20Lloseta%20-%201896)%20Carrer%20Major%2C%2050%2C%2007360%20Lloseta",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Teixits%20Riera%20(Robes%20de%20Lleng%C3%BCes%20Lloseta%20-%201896)%20Carrer%20Major%2C%2050%2C%2007360%20Lloseta",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Teixits%20Riera%20(Robes%20de%20Lleng%C3%BCes%20Lloseta%20-%201896)%20Carrer%20Major%2C%2050%2C%2007360%20Lloseta",
   shortDescription: {
     es: "Taller textil artesanal fundado en 1896 en Lloseta: una de las últimas tres fábricas del mundo que elabora a mano la auténtica tela de lenguas (Ikat) mallorquina.",
     en: "Artisan textile workshop established in 1896 in Lloseta: one of only three workshops in the world weaving authentic Mallorcan Ikat (robes de llengües) by hand.",
@@ -100,13 +94,6 @@ export const teixits_riera_lloseta_robes_llengues_1896: ServiceItem = {
       "Handgefertigte Taschen, Espadrilles und modische Wohnaccessoires",
       "Sonderanfertigungen für Boutique-Hotels und renommierte Innenarchitekten",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 310,
-      url: "https://www.google.com/maps/search/?api=1&query=Teixits%20Riera%20(Robes%20de%20Lleng%C3%BCes%20Lloseta%20-%201896)%20Carrer%20Major%2C%2050%2C%2007360%20Lloseta",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

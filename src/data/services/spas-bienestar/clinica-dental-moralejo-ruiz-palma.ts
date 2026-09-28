@@ -29,8 +29,6 @@ export const clinica_dental_moralejo_ruiz_palma: ServiceItem = {
   image: "/images/spas/clinica-dental-moralejo-ruiz-palma.jpg",
   gallery: ["/images/spas/clinica-dental-moralejo-ruiz-palma.jpg", "/images/categories/salud.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=13008010",
-  appleMapsUrl: "https://maps.apple.com/?q=Cl%C3%ADnica%20Dental%20Moralejo%20%26%20Ruiz+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Cl%C3%ADnica%20Dental%20Moralejo%20%26%20Ruiz+Mallorca",
   shortDescription: {
     es: "Clínica odontológica de alta gama especializada en diseño de sonrisa digital, implantes guiados e Invisalign.",
     en: "High-end dental clinic specialized in digital smile design, computer-guided implants, and Invisalign.",
@@ -94,13 +92,6 @@ export const clinica_dental_moralejo_ruiz_palma: ServiceItem = {
       "Wellness- und Regenerationstherapien",
       "Kontinuierliche medizinische Nachbetreuung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 410,
-      url: "https://www.google.com/maps?cid=13008010",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

@@ -76,10 +76,6 @@ export const lafioreVidrioArtesanal: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Lafiore%20Vidrio%20Soplado%20%26%20Espacio%20Creativo%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Lafiore%20Vidrio%20Soplado%20%26%20Espacio%20Creativo%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Lafiore%20Vidrio%20Soplado%20%26%20Espacio%20Creativo%20Mallorca",
   pricing: {
     startingPrice: "Aceitera de vidrio artesana desde 24€",
     rateType: "tiered",
@@ -106,21 +102,4 @@ export const lafioreVidrioArtesanal: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 710,
-      url: "https://www.google.com/maps/search/?api=1&query=Lafiore%20Vidrio%20Soplado%20%26%20Espacio%20Creativo%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Lafiore%20Vidrio%20Soplado%20%26%20Espacio%20Creativo%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.7,
-      reviewCount: 71,
-      url: "https://www.bing.com/maps?q=Lafiore%20Vidrio%20Soplado%20%26%20Espacio%20Creativo%20Mallorca",
-    },
-    totalReviewsAggregated: 781,
-    overallWeightedRating: 4.8,
-  },
 };

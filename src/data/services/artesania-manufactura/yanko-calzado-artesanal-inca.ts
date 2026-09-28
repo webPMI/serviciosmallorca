@@ -31,12 +31,6 @@ export const yanko_calzado_artesanal_inca: ServiceItem = {
   schedule: "Lunes a Viernes: 09:30 - 13:30, 16:00 - 19:30",
   image: "/images/services/yanko-calzado-artesanal-inca.jpg",
   gallery: ["/images/services/yanko-calzado-artesanal-inca.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Yanko%20Calzado%20Artesanal%20Inca%201961%20Carrer%20de%20Bartomeu%20Coc%2C%2024%2C%2007300%20Inca",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Yanko%20Calzado%20Artesanal%20Inca%201961%20Carrer%20de%20Bartomeu%20Coc%2C%2024%2C%2007300%20Inca",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Yanko%20Calzado%20Artesanal%20Inca%201961%20Carrer%20de%20Bartomeu%20Coc%2C%2024%2C%2007300%20Inca",
   shortDescription: {
     es: "Firma histórica del calzado de alta gama en Inca desde 1961, célebre por su confección artesanal con cosido Goodyear Welted.",
     en: "Historic high-end footwear house in Inca since 1961, famed for master Goodyear welted shoemaking and fine leather.",
@@ -100,13 +94,6 @@ export const yanko_calzado_artesanal_inca: ServiceItem = {
       "Chelsea-Boots und elegante Halbschuhe",
       "Lederpflegeprodukte, Zedernholz-Schuhspanner und Accessoires",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 110,
-      url: "https://www.google.com/maps/search/?api=1&query=Yanko%20Calzado%20Artesanal%20Inca%201961%20Carrer%20de%20Bartomeu%20Coc%2C%2024%2C%2007300%20Inca",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

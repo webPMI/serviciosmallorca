@@ -31,12 +31,6 @@ export const queseria_artesana_son_jover_formatges_inca: ServiceItem = {
   schedule: "Lunes a Sábado: 09:00 - 14:00 y 16:30 - 19:30",
   image: "/images/services/queseria-artesana-son-jover-formatges-inca.jpg",
   gallery: ["/images/services/queseria-artesana-son-jover-formatges-inca.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Formatges%20Son%20Jover%20Formatgeria%20Artesana%20Inca%20(1998)%20Cam%C3%AD%20de%20Son%20Jover%2C%20s%2Fn%2C%2007300%20Inca",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Formatges%20Son%20Jover%20Formatgeria%20Artesana%20Inca%20(1998)%20Cam%C3%AD%20de%20Son%20Jover%2C%20s%2Fn%2C%2007300%20Inca",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Formatges%20Son%20Jover%20Formatgeria%20Artesana%20Inca%20(1998)%20Cam%C3%AD%20de%20Son%20Jover%2C%20s%2Fn%2C%2007300%20Inca",
   shortDescription: {
     es: "Quesería artesana y ganadería ecológica en Inca productora de quesos de leche cruda de oveja roja mallorquina (ovella roja) y cabra autóctona.",
     en: "Artisan organic dairy in Inca crafting raw milk cheeses from endangered native red Mallorcan sheep (ovella roja) and local goats.",
@@ -100,13 +94,6 @@ export const queseria_artesana_son_jover_formatges_inca: ServiceItem = {
       "Käseverkostungen mit lokalem Xeixa-Brot und Chutneys",
       "Gekühlter Frischeversand inselweit und aufs spanische Festland",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 340,
-      url: "https://www.google.com/maps/search/?api=1&query=Formatges%20Son%20Jover%20Formatgeria%20Artesana%20Inca%20(1998)%20Cam%C3%AD%20de%20Son%20Jover%2C%20s%2Fn%2C%2007300%20Inca",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

@@ -31,12 +31,6 @@ export const reparacion_barcos_varadero_portocolom_nautica: ServiceItem = {
   schedule: "Lunes a Viernes: 08:00 - 18:00",
   image: "/images/services/reparacion-barcos-varadero-portocolom-nautica.jpg",
   gallery: ["/images/services/reparacion-barcos-varadero-portocolom-nautica.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Portocolom%20Yacht%20Refit%20%26%20Drydock%20Services%20Carrer%20del%20Pescadors%2C%204%2C%2007670%20Portocolom",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Portocolom%20Yacht%20Refit%20%26%20Drydock%20Services%20Carrer%20del%20Pescadors%2C%204%2C%2007670%20Portocolom",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Portocolom%20Yacht%20Refit%20%26%20Drydock%20Services%20Carrer%20del%20Pescadors%2C%204%2C%2007670%20Portocolom",
   shortDescription: {
     es: "Varadero náutico y taller de reparación integral de embarcaciones en el puerto natural de Portocolom: antifouling, motores marinos y fibra.",
     en: "Marine shipyard and comprehensive yacht repair workshop in Portocolom natural harbor: antifouling, marine engines, and fiberglass.",
@@ -100,13 +94,6 @@ export const reparacion_barcos_varadero_portocolom_nautica: ServiceItem = {
       "GFK- und Gelcoat-Reparaturen",
       "Hallen-Winterlager und Yacht-Pflegeservice",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 110,
-      url: "https://www.google.com/maps/search/?api=1&query=Portocolom%20Yacht%20Refit%20%26%20Drydock%20Services%20Carrer%20del%20Pescadors%2C%204%2C%2007670%20Portocolom",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

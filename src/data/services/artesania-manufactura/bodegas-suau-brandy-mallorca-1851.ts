@@ -76,11 +76,6 @@ export const bodegasSuauBrandyMallorca1851: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Bodegas%20Suau%20-%20Brandy%20%26%20Ron%20de%20Mallorca%20(1851)%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Bodegas%20Suau%20-%20Brandy%20%26%20Ron%20de%20Mallorca%20(1851)%20Mallorca",
-  bingMapsUrl:
-    "https://www.bing.com/maps?q=Bodegas%20Suau%20-%20Brandy%20%26%20Ron%20de%20Mallorca%20(1851)%20Mallorca",
   pricing: {
     startingPrice: "Consultar servicios y presupuestos personalizados",
     rateType: "custom_quote",
@@ -107,21 +102,4 @@ export const bodegasSuauBrandyMallorca1851: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 620,
-      url: "https://www.google.com/maps/search/?api=1&query=Bodegas%20Suau%20-%20Brandy%20%26%20Ron%20de%20Mallorca%20(1851)%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Bodegas%20Suau%20-%20Brandy%20%26%20Ron%20de%20Mallorca%20(1851)%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 62,
-      url: "https://www.bing.com/maps?q=Bodegas%20Suau%20-%20Brandy%20%26%20Ron%20de%20Mallorca%20(1851)%20Mallorca",
-    },
-    totalReviewsAggregated: 682,
-    overallWeightedRating: 4.9,
-  },
 };

@@ -31,12 +31,6 @@ export const construcciones_canteria_pedres_de_mallorca_felanitx: ServiceItem = 
   schedule: "Lunes a Viernes: 07:00 - 17:00",
   image: "/images/services/construcciones-canteria-pedres-de-mallorca-felanitx.jpg",
   gallery: ["/images/services/construcciones-canteria-pedres-de-mallorca-felanitx.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Pedres%20de%20Mallorca%20Canter%C3%ADa%20%26%20Piedra%20Natural%20Felanitx%20(Mar%C3%A9s)%20Carretera%20Felanitx-Campos%2C%20km%203%2C%2007200%20Felanitx",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Pedres%20de%20Mallorca%20Canter%C3%ADa%20%26%20Piedra%20Natural%20Felanitx%20(Mar%C3%A9s)%20Carretera%20Felanitx-Campos%2C%20km%203%2C%2007200%20Felanitx",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Pedres%20de%20Mallorca%20Canter%C3%ADa%20%26%20Piedra%20Natural%20Felanitx%20(Mar%C3%A9s)%20Carretera%20Felanitx-Campos%2C%20km%203%2C%2007200%20Felanitx",
   shortDescription: {
     es: "Cantera y taller artesano de cantería en Felanitx: extracción y labrado de piedra de marés, construcción de muros de pedra en sec por margeters certificados y arcos tradicionales.",
     en: "Quarry and artisan stonecraft workshop in Felanitx: marés sandstone quarrying, pedra en sec dry-stone walling by certified margeters, and arch construction.",
@@ -100,13 +94,6 @@ export const construcciones_canteria_pedres_de_mallorca_felanitx: ServiceItem = 
       "Sanierung historischer Finca-Steinfassaden und alter Brunnen",
       "Gewölbe- und Bogenbau aus Naturstein für Weinkeller und Veranden",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 230,
-      url: "https://www.google.com/maps/search/?api=1&query=Pedres%20de%20Mallorca%20Canter%C3%ADa%20%26%20Piedra%20Natural%20Felanitx%20(Mar%C3%A9s)%20Carretera%20Felanitx-Campos%2C%20km%203%2C%2007200%20Felanitx",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

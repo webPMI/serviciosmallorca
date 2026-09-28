@@ -76,12 +76,6 @@ export const mantenimientoPiscinasSalinasCalvia: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=AquaPure%20Pools%20-%20Mantenimiento%20%26%20Cloraci%C3%B3n%20Salina%20Calvi%C3%A0%20Mallorca",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=AquaPure%20Pools%20-%20Mantenimiento%20%26%20Cloraci%C3%B3n%20Salina%20Calvi%C3%A0%20Mallorca",
-  bingMapsUrl:
-    "https://www.bing.com/maps?q=AquaPure%20Pools%20-%20Mantenimiento%20%26%20Cloraci%C3%B3n%20Salina%20Calvi%C3%A0%20Mallorca",
   pricing: {
     startingPrice: "Mantenimiento mensual piscina desde 160€/mes",
     rateType: "tiered",
@@ -108,21 +102,4 @@ export const mantenimientoPiscinasSalinasCalvia: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 340,
-      url: "https://www.google.com/maps/search/?api=1&query=AquaPure%20Pools%20-%20Mantenimiento%20%26%20Cloraci%C3%B3n%20Salina%20Calvi%C3%A0%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=AquaPure%20Pools%20-%20Mantenimiento%20%26%20Cloraci%C3%B3n%20Salina%20Calvi%C3%A0%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.7,
-      reviewCount: 34,
-      url: "https://www.bing.com/maps?q=AquaPure%20Pools%20-%20Mantenimiento%20%26%20Cloraci%C3%B3n%20Salina%20Calvi%C3%A0%20Mallorca",
-    },
-    totalReviewsAggregated: 374,
-    overallWeightedRating: 4.8,
-  },
 };

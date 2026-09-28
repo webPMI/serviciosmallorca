@@ -29,8 +29,6 @@ export const PRO_CYCLE_HIRE_ALCUDIA_POLLENSA: ServiceItem = {
   image: "/images/services/pro-cycle-hire-alcudia-pollensa.jpg",
   gallery: ["/images/services/pro-cycle-hire-alcudia-pollensa.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007089",
-  appleMapsUrl: "https://maps.apple.com/?q=Pro%20Cycle%20Hire%20Mallorca+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Pro%20Cycle%20Hire%20Mallorca+Mallorca",
   shortDescription: {
     es: "Centro ciclista histórico fundado por Bruce Berkeley con flota Massi y Colnago de carbono.",
     en: "Historic cycling center founded by Bruce Berkeley featuring premium Massi and Colnago carbon bikes.",
@@ -94,13 +92,6 @@ export const PRO_CYCLE_HIRE_ALCUDIA_POLLENSA: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 380,
-      url: "https://www.google.com/maps?cid=12007089",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

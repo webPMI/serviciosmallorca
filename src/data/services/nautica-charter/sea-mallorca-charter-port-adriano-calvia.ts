@@ -31,12 +31,6 @@ export const sea_mallorca_charter_port_adriano_calvia: ServiceItem = {
   schedule: "Lunes a Domingo: 09:00 - 20:00 (Mayo a Octubre)",
   image: "/images/services/sea-mallorca-charter-port-adriano-calvia.jpg",
   gallery: ["/images/services/sea-mallorca-charter-port-adriano-calvia.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Sea%20Mallorca%20Charter%20Port%20Adriano%20Urbanizaci%C3%B3n%20El%20Toro%2C%20Port%20Adriano%2C%20Local%2012%2C%2007180%20Calvi%C3%A0",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Sea%20Mallorca%20Charter%20Port%20Adriano%20Urbanizaci%C3%B3n%20El%20Toro%2C%20Port%20Adriano%2C%20Local%2012%2C%2007180%20Calvi%C3%A0",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Sea%20Mallorca%20Charter%20Port%20Adriano%20Urbanizaci%C3%B3n%20El%20Toro%2C%20Port%20Adriano%2C%20Local%2012%2C%2007180%20Calvi%C3%A0",
   shortDescription: {
     es: "Chárter de lanchas y yates de alta velocidad en Port Adriano (Calvià): alquiler con y sin patrón para descubrir la reserva marina de las Islas Malgrats y Cala Fornells.",
     en: "Speedboat and yacht charter based at prestigious Port Adriano: bareboat and skippered rentals exploring Malgrats Islands marine reserve and Cala Fornells.",
@@ -100,13 +94,6 @@ export const sea_mallorca_charter_port_adriano_calvia: ServiceItem = {
       "Romantische Sunset-Touren mit Champagner",
       "Liegeplatz- und Tankservice",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 280,
-      url: "https://www.google.com/maps/search/?api=1&query=Sea%20Mallorca%20Charter%20Port%20Adriano%20Urbanizaci%C3%B3n%20El%20Toro%2C%20Port%20Adriano%2C%20Local%2012%2C%2007180%20Calvi%C3%A0",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

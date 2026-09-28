@@ -100,8 +100,5 @@ export const clubDeMarMallorcaService: ServiceItem = {
     ],
   },
   amenities: ["wifi", "parking_available", "wheelchair_accessible"],
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Club+de+Mar+Mallorca+Palma",
-  appleMapsUrl: "https://maps.apple.com/?q=Club+de+Mar+Mallorca+Palma",
-  bingMapsUrl: "https://www.bing.com/maps?q=Club+de+Mar+Mallorca+Palma",
   confidenceScore: 99,
 };

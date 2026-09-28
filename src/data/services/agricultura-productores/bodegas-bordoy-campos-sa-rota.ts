@@ -31,12 +31,6 @@ export const bodegas_bordoy_campos_sa_rota: ServiceItem = {
   schedule: "Lunes a Viernes: 09:00 - 17:00 | Sábado con cita previa | Domingo: Cerrado",
   image: "/images/services/bodegas-bordoy-campos-sa-rota.jpg",
   gallery: ["/images/services/bodegas-bordoy-campos-sa-rota.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Bodegas%20Bordoy%20-%20Finca%20Sa%20Rota%20(D.O.%20Pla%20i%20Llevant)%20Cam%C3%AD%20de%20Sa%20Torre%2C%20km%208.5%2C%2007620%20Campos%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Bodegas%20Bordoy%20-%20Finca%20Sa%20Rota%20(D.O.%20Pla%20i%20Llevant)%20Cam%C3%AD%20de%20Sa%20Torre%2C%20km%208.5%2C%2007620%20Campos%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Bodegas%20Bordoy%20-%20Finca%20Sa%20Rota%20(D.O.%20Pla%20i%20Llevant)%20Cam%C3%AD%20de%20Sa%20Torre%2C%20km%208.5%2C%2007620%20Campos%2C%20Illes%20Balears",
   shortDescription: {
     es: "Bodega histórica de la D.O. Pla i Llevant en la Finca Sa Rota de Campos, elaborando vinos tintos, blancos y rosados de uvas autóctonas como Callet y Giró Ros, con visitas y catas entre viñedos.",
     en: "Historic D.O. Pla i Llevant winery at Finca Sa Rota in Campos, crafting red, white, and rosé wines from indigenous grapes like Callet and Giró Ros, with vineyard tours and tastings.",
@@ -100,13 +94,6 @@ export const bodegas_bordoy_campos_sa_rota: ServiceItem = {
       "Kommentierte Weinverkostungen mit Sommelier auf der Terrasse inmitten der Reben",
       "Sicherer Kartonversand nach Deutschland, Österreich, in die Schweiz und die gesamte EU",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 240,
-      url: "https://www.google.com/maps/search/?api=1&query=Bodegas%20Bordoy%20-%20Finca%20Sa%20Rota%20(D.O.%20Pla%20i%20Llevant)%20Cam%C3%AD%20de%20Sa%20Torre%2C%20km%208.5%2C%2007620%20Campos%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

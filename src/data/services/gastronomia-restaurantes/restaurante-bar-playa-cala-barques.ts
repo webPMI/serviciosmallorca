@@ -82,12 +82,6 @@ export const restauranteBarPlayaCalaBarques: ServiceItem = {
   },
   image: "/images/services/restaurante-bar-playa-cala-barques.jpg",
   gallery: ["/images/services/restaurante-bar-playa-cala-barques.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Restaurante%20Bar%20Playa%20(Cala%20Barques%20-%20Cala%20Sant%20Vicen%C3%A7)%20Carrer%20Cala%20Barques%2C%209%2C%2007469%20Cala%20Sant%20Vicen%C3%A7%2C%20Pollen%C3%A7a%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Restaurante%20Bar%20Playa%20(Cala%20Barques%20-%20Cala%20Sant%20Vicen%C3%A7)%20Carrer%20Cala%20Barques%2C%209%2C%2007469%20Cala%20Sant%20Vicen%C3%A7%2C%20Pollen%C3%A7a%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://www.bing.com/maps?q=Restaurante%20Bar%20Playa%20(Cala%20Barques%20-%20Cala%20Sant%20Vicen%C3%A7)%20Carrer%20Cala%20Barques%2C%209%2C%2007469%20Cala%20Sant%20Vicen%C3%A7%2C%20Pollen%C3%A7a%2C%20Illes%20Balears",
   phone: "+34 971 53 04 22",
   whatsapp: "+34971530422",
   website: "https://barplaya.com",

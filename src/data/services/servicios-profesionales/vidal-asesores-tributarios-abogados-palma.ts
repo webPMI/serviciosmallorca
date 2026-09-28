@@ -31,12 +31,6 @@ export const vidal_asesores_tributarios_abogados_palma: ServiceItem = {
   schedule: "Lunes a Viernes: 08:30 - 18:00",
   image: "/images/services/vidal-asesores-tributarios-abogados-palma.jpg",
   gallery: ["/images/services/vidal-asesores-tributarios-abogados-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Vidal%20Asesores%20Tributarios%20%26%20Abogados%20Palma%201983%20Avinguda%20d'Alemanya%2C%202%2C%2007003%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Vidal%20Asesores%20Tributarios%20%26%20Abogados%20Palma%201983%20Avinguda%20d'Alemanya%2C%202%2C%2007003%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Vidal%20Asesores%20Tributarios%20%26%20Abogados%20Palma%201983%20Avinguda%20d'Alemanya%2C%202%2C%2007003%20Palma",
   shortDescription: {
     es: "Firma balear de abogados y economistas fundada en 1983: fiscalidad de no residentes, derecho inmobiliario, sucesiones y empresa familiar.",
     en: "Balearic law and tax advisory firm founded in 1983: non-resident taxation, real estate law, estate planning, and family business.",
@@ -100,13 +94,6 @@ export const vidal_asesores_tributarios_abogados_palma: ServiceItem = {
       "Erbschaftsplanung, internationale Testamente und Nachlassabwicklung",
       "Gesellschaftsrecht, Unternehmensgründungen und Familienstatuten",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 42,
-      url: "https://www.google.com/maps/search/?api=1&query=Vidal%20Asesores%20Tributarios%20%26%20Abogados%20Palma%201983%20Avinguda%20d'Alemanya%2C%202%2C%2007003%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

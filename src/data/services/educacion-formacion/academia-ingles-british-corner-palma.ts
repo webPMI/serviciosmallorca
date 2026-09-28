@@ -28,10 +28,6 @@ export const academia_ingles_british_corner_palma: ServiceItem = {
   schedule: "Lunes a Viernes: 08:00 - 21:00 | Sábado: 09:00 - 14:00",
   image: "/images/services/academia-ingles-british-corner-palma.jpg",
   gallery: ["/images/services/academia-ingles-british-corner-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Academia+Ingl%C3%A9s+British+Corner+Palma+Carrer+de+l%27Arag%C3%B3+78",
-  appleMapsUrl: "https://maps.apple.com/?q=Academia+Ingles+British+Corner+Palma",
-  bingMapsUrl: "https://bing.com/maps?q=Academia+Ingles+British+Corner+Palma",
   shortDescription: {
     es: "Academia de inglés en Palma con profesores nativos, centro oficial de exámenes Cambridge y cursos intensivos para empresas y profesionales de Mallorca.",
     en: "English language academy in Palma with native teachers, official Cambridge exam centre, and intensive corporate and professional courses for Mallorca businesses.",
@@ -95,13 +91,6 @@ export const academia_ingles_british_corner_palma: ServiceItem = {
       "Business English und Kurse für den Hotel- und Tourismussektor",
       "Einzelstunden für Konversation und IELTS-Prüfungsvorbereitung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 328,
-      url: "https://www.google.com/maps/search/?api=1&query=Academia+Ingl%C3%A9s+British+Corner+Palma",
-    },
   },
   createdAt: "2026-09-05",
   lastUpdatedAt: "2026-09-05",

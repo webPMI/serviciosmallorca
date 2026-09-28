@@ -100,8 +100,5 @@ export const marinaDeCalaDorService: ServiceItem = {
     ],
   },
   amenities: ["wifi", "parking_available", "wheelchair_accessible"],
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Marina+de+Cala+dOr+Santanyi",
-  appleMapsUrl: "https://maps.apple.com/?q=Marina+de+Cala+dOr+Santanyi",
-  bingMapsUrl: "https://www.bing.com/maps?q=Marina+de+Cala+dOr+Santanyi",
   confidenceScore: 98,
 };

@@ -29,8 +29,6 @@ export const GOLF_DE_ANDRATX_CAMP_DE_MAR: ServiceItem = {
   image: "/images/services/golf-de-andratx-camp-de-mar.jpg",
   gallery: ["/images/services/golf-de-andratx-camp-de-mar.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007007",
-  appleMapsUrl: "https://maps.apple.com/?q=Golf%20de%20Andratx+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Golf%20de%20Andratx+Mallorca",
   shortDescription: {
     es: "Campo de 18 hoyos con el hoyo más largo de España ('Green Monster' de 609 metros).",
     en: "Spectacular 18-hole course with Spain's longest hole ('Green Monster', 609m).",
@@ -94,13 +92,6 @@ export const GOLF_DE_ANDRATX_CAMP_DE_MAR: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 610,
-      url: "https://www.google.com/maps?cid=12007007",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

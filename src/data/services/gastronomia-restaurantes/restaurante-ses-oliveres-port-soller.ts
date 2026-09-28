@@ -28,9 +28,6 @@ export const restauranteSesOliveresPortSoller: ServiceItem = {
   email: "info@sesoliveres.com",
   website: "https://sesoliveresportdesoller.com",
   menuUrl: "https://sesoliveresportdesoller.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Restaurante+Ses+Oliveres+Port+de+Soller+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante+Ses+Oliveres+Port+Soller",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante+Ses+Oliveres+Port+Soller",
   tags: [
     "zona:tramuntana",
     "zona:port-de-soller",

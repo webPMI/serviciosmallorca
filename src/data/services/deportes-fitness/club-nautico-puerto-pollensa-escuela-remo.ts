@@ -31,12 +31,6 @@ export const club_nautico_puerto_pollensa_escuela_remo: ServiceItem = {
   schedule: "Diario: 08:00 - 21:00",
   image: "/images/services/club-nautico-puerto-pollensa-escuela-remo.jpg",
   gallery: ["/images/services/club-nautico-puerto-pollensa-escuela-remo.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Real%20Club%20N%C3%A1utico%20Puerto%20Pollensa%20%26%20Escuela%20de%20Remo%20Carrer%20de%20la%20Verge%20del%20Carme%2C%201%2C%2007470%20Port%20de%20Pollen%C3%A7a",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Real%20Club%20N%C3%A1utico%20Puerto%20Pollensa%20%26%20Escuela%20de%20Remo%20Carrer%20de%20la%20Verge%20del%20Carme%2C%201%2C%2007470%20Port%20de%20Pollen%C3%A7a",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Real%20Club%20N%C3%A1utico%20Puerto%20Pollensa%20%26%20Escuela%20de%20Remo%20Carrer%20de%20la%20Verge%20del%20Carme%2C%201%2C%2007470%20Port%20de%20Pollen%C3%A7a",
   shortDescription: {
     es: "Club náutico histórico fundado en 1961 en la bahía de Pollença: escuela de remo olímpico y de mar, cursos de vela ligera, 400 amarres y restaurante panorámico.",
     en: "Historic nautical club founded in 1961 in Pollença Bay: coastal and Olympic rowing school, dinghy sailing academy, 400 berths, and oceanview restaurant.",
@@ -100,13 +94,6 @@ export const club_nautico_puerto_pollensa_escuela_remo: ServiceItem = {
       "Verleih von Seekajaks, Kanus und Stand-Up-Paddle-Boards (SUP)",
       "Tages-, Monats- und Saisonliegeplätze für Mitglieder und Gastlieger",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 520,
-      url: "https://www.google.com/maps/search/?api=1&query=Real%20Club%20N%C3%A1utico%20Puerto%20Pollensa%20%26%20Escuela%20de%20Remo%20Carrer%20de%20la%20Verge%20del%20Carme%2C%201%2C%2007470%20Port%20de%20Pollen%C3%A7a",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

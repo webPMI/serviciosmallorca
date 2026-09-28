@@ -21,9 +21,6 @@ export const cellerCanMarron: ServiceItem = {
   whatsapp: "+34 971 50 10 50",
   email: "info@cellercanmarron.com",
   website: "https://cellercanmarron.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Celler%20Can%20Marron%20Inca",
-  appleMapsUrl: "https://maps.apple.com/?q=Celler%20Can%20Marron%20Inca&ll=39.7220,2.9070",
-  bingMapsUrl: "https://www.bing.com/maps?where1=Celler%20Can%20Marron%20Inca",
   coordinates: { lat: 39.722, lng: 2.907 },
   schedule: "Lunes a Domingo: 13:00 - 16:00 | 20:00 - 23:00 (Martes Noche Cerrado)",
   lastVerifiedAt: "2026-08-25",
@@ -127,30 +124,13 @@ export const cellerCanMarron: ServiceItem = {
       instagramHandle: "@cellercanmarron",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 980,
-      url: "https://www.google.com/maps/search/?api=1&query=Celler%20Can%20Marron%20Inca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Celler%20Can%20Marron%20Inca&ll=39.7220,2.9070",
-    },
-    bingMaps: {
-      rating: 4.7,
-      reviewCount: 980,
-      url: "https://www.bing.com/maps?where1=Celler%20Can%20Marron%20Inca",
-    },
-    totalReviewsAggregated: 980,
-    overallWeightedRating: 4.7,
-  },
   reviews: [
     {
       id: "rev-ccm-1",
       authorName: "Rafel Amengual",
       rating: 5,
       date: "2025-05-18",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
       comment:
         "Celler autèntic a Inca amb molt bona cuina mallorquina. La porcella és espectacular, amb la pell molt cruixent, i les sopes són de les millors de l'illa.",
@@ -161,7 +141,7 @@ export const cellerCanMarron: ServiceItem = {
       authorName: "Sarah Miller",
       rating: 5,
       date: "2025-06-25",
-      platform: "google_maps",
+      platform: "direct",
       language: "en",
       comment:
         "Wonderful traditional dining in a cozy historic stone cellar! The roast suckling pig and garlic snails were phenomenal. Very welcoming and generous portions.",

@@ -31,12 +31,6 @@ export const l21_gallery_palma: ServiceItem = {
   schedule: "Martes a Viernes de 10:30 a 14:00 y 16:30 a 20:00, Sábados de 11:00 a 14:00",
   image: "/images/services/l21-gallery-palma.jpg",
   gallery: ["/images/services/l21-gallery-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=L21%20Gallery%20Palma%20Carrer%20del%20Gremi%20de%20Ferrers%2C%2025%2C%2007009%20Palma%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=L21%20Gallery%20Palma%20Carrer%20del%20Gremi%20de%20Ferrers%2C%2025%2C%2007009%20Palma%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=L21%20Gallery%20Palma%20Carrer%20del%20Gremi%20de%20Ferrers%2C%2025%2C%2007009%20Palma%2C%20Illes%20Balears",
   shortDescription: {
     es: "L21 Gallery es una prestigiosa galería de arte contemporáneo internacional fundada en Palma por Óscar Florit, referente en creación emergente y ferias globales.",
     en: "L21 Gallery is a prestigious international contemporary art gallery founded in Palma by Óscar Florit, a benchmark for emerging artists and global fairs.",
@@ -122,13 +116,6 @@ export const l21_gallery_palma: ServiceItem = {
       "Konzeptuelle Skulptur und Rauminstallationen",
       "Internationale Nachwuchskünstler",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 95,
-      url: "https://www.google.com/maps/search/?api=1&query=L21%20Gallery%20Palma%20Carrer%20del%20Gremi%20de%20Ferrers%2C%2025%2C%2007009%20Palma%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

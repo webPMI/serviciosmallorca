@@ -31,12 +31,6 @@ export const galeria_horrach_moya_palma: ServiceItem = {
   schedule: "Lunes a Viernes: 10:00 - 14:00, 16:30 - 20:00 | Sábado: 10:30 - 14:00 | Domingo: Cerrado",
   image: "/images/services/galeria-horrach-moya-palma.jpg",
   gallery: ["/images/services/galeria-horrach-moya-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Galeria%20Horrach%20Moy%C3%A0%20Palma%20Carrer%20de%20Catalunya%2C%204%2C%2007011%20Palma%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Galeria%20Horrach%20Moy%C3%A0%20Palma%20Carrer%20de%20Catalunya%2C%204%2C%2007011%20Palma%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Galeria%20Horrach%20Moy%C3%A0%20Palma%20Carrer%20de%20Catalunya%2C%204%2C%2007011%20Palma%2C%20Illes%20Balears",
   shortDescription: {
     es: "Galería de arte contemporáneo de vanguardia en Palma con múltiples espacios expositivos, representando a creadores como Joana Vasconcelos, Carles Congost y Susy Gómez.",
     en: "Cutting-edge contemporary art gallery in Palma operating multiple exhibition spaces, representing acclaimed artists like Joana Vasconcelos, Carles Congost, and Susy Gómez.",
@@ -100,13 +94,6 @@ export const galeria_horrach_moya_palma: ServiceItem = {
       "Künstlergespräche, Fachvorträge und private Abendführungen",
       "Fachgerechte Kunsttransporte, Hängungen und museale Installationen",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 160,
-      url: "https://www.google.com/maps/search/?api=1&query=Galeria%20Horrach%20Moy%C3%A0%20Palma%20Carrer%20de%20Catalunya%2C%204%2C%2007011%20Palma%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

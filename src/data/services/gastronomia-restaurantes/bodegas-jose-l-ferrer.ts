@@ -21,9 +21,6 @@ export const bodegasJoseLFerrer: ServiceItem = {
   whatsapp: "+34 971 51 10 50",
   email: "info@vinosferrer.com",
   website: "https://vinosferrer.com/visitas",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Bodegas%20Jose%20L%20Ferrer%20Binissalem%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Bodegas%20Jose%20L%20Ferrer%20Binissalem&ll=39.6842,2.8415",
-  bingMapsUrl: "https://www.bing.com/maps?where1=Bodegas%20Jose%20L%20Ferrer%20Binissalem",
   coordinates: { lat: 39.6842, lng: 2.8415 },
   schedule: "Lunes a Viernes: 09:00 - 19:00 | Sábados: 10:00 - 18:00 | Domingos: 10:00 - 14:00",
   lastVerifiedAt: "2026-08-25",
@@ -131,30 +128,13 @@ export const bodegasJoseLFerrer: ServiceItem = {
       instagramHandle: "@bodegasjoselferrer",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 890,
-      url: "https://www.google.com/maps/search/?api=1&query=Bodegas%20Jose%20L%20Ferrer%20Binissalem",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Bodegas%20Jose%20L%20Ferrer%20Binissalem&ll=39.6842,2.8415",
-    },
-    bingMaps: {
-      rating: 4.7,
-      reviewCount: 890,
-      url: "https://www.bing.com/maps?where1=Bodegas%20Jose%20L%20Ferrer%20Binissalem",
-    },
-    totalReviewsAggregated: 890,
-    overallWeightedRating: 4.7,
-  },
   reviews: [
     {
       id: "rev-jlf-1",
       authorName: "Bartomeu Sastre",
       rating: 5,
       date: "2025-05-19",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
       comment:
         "Visita obligada a Binissalem. El Veritas Reserva i el blanc de Moll són excel·lents. La visita subterrània és pura història de Mallorca.",
@@ -165,7 +145,7 @@ export const bodegasJoseLFerrer: ServiceItem = {
       authorName: "Christine Meyer",
       rating: 5,
       date: "2025-06-22",
-      platform: "google_maps",
+      platform: "direct",
       language: "de",
       comment:
         "Wunderschönes Weingut in Binissalem! Tolle Führung auf Deutsch, fantastische Weine und leckere Tapas im Garten.",

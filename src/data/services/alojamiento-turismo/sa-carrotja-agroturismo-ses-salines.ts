@@ -76,10 +76,6 @@ export const saCarrotjaAgroturismoSesSalines: ServiceItem = {
       close: "23:59",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Agroturismo%20Sa%20Carrotja%20Ses%20Salines%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Agroturismo%20Sa%20Carrotja%20Ses%20Salines%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Agroturismo%20Sa%20Carrotja%20Ses%20Salines%20Mallorca",
   pricing: {
     startingPrice: "Consultar tarifa por noche según temporada",
     rateType: "tiered",
@@ -106,21 +102,4 @@ export const saCarrotjaAgroturismoSesSalines: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 340,
-      url: "https://www.google.com/maps/search/?api=1&query=Agroturismo%20Sa%20Carrotja%20Ses%20Salines%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Agroturismo%20Sa%20Carrotja%20Ses%20Salines%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 34,
-      url: "https://www.bing.com/maps?q=Agroturismo%20Sa%20Carrotja%20Ses%20Salines%20Mallorca",
-    },
-    totalReviewsAggregated: 374,
-    overallWeightedRating: 4.9,
-  },
 };

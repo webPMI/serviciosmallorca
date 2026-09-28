@@ -29,8 +29,6 @@ export const F45_TRAINING_PALMA_CENTRO: ServiceItem = {
   image: "/images/sports/f45-training-palma-centro.jpg",
   gallery: ["/images/sports/f45-training-palma-centro.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007054",
-  appleMapsUrl: "https://maps.apple.com/?q=F45%20Training%20Palma%20Centro+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=F45%20Training%20Palma%20Centro+Mallorca",
   shortDescription: {
     es: "Entrenamientos funcionales en circuito de 45 minutos de alta intensidad en el centro de Palma.",
     en: "High-intensity 45-minute circuit functional group workouts in central Palma.",
@@ -94,13 +92,6 @@ export const F45_TRAINING_PALMA_CENTRO: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 230,
-      url: "https://www.google.com/maps?cid=12007054",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

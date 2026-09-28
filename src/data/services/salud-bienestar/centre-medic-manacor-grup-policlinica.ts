@@ -31,12 +31,6 @@ export const centre_medic_manacor_grup_policlinica: ServiceItem = {
   schedule: "Lunes a Viernes: 08:00 - 20:30 | Sábado: 08:30 - 13:30 | Domingo: Cerrado",
   image: "/images/services/centre-medic-manacor-grup-policlinica.jpg",
   gallery: ["/images/services/centre-medic-manacor-grup-policlinica.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Centre%20M%C3%A8dic%20Manacor%20(Grup%20Policl%C3%ADnica)%20Avinguda%20del%20Tren%2C%2040%2C%2007500%20Manacor%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Centre%20M%C3%A8dic%20Manacor%20(Grup%20Policl%C3%ADnica)%20Avinguda%20del%20Tren%2C%2040%2C%2007500%20Manacor%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Centre%20M%C3%A8dic%20Manacor%20(Grup%20Policl%C3%ADnica)%20Avinguda%20del%20Tren%2C%2040%2C%2007500%20Manacor%2C%20Illes%20Balears",
   shortDescription: {
     es: "Centro médico policlínico en Manacor con más de 20 especialidades médicas, consultas de traumatología, ginecología, dermatología, cardiología, diagnóstico por imagen y laboratorio clínico.",
     en: "Multi-specialty outpatient medical centre in Manacor offering over 20 medical disciplines, orthopedics, gynecology, cardiology, dermatology, diagnostic imaging, and on-site lab.",
@@ -100,13 +94,6 @@ export const centre_medic_manacor_grup_policlinica: ServiceItem = {
       "Bildgebende Diagnostik: digitales Röntgen, Gelenk- und Bauchultraschall",
       "Medizinische Tauglichkeitsprüfungen für Führerscheine, Sportbootführerscheine und Tauchsport",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.6,
-      reviewCount: 280,
-      url: "https://www.google.com/maps/search/?api=1&query=Centre%20M%C3%A8dic%20Manacor%20(Grup%20Policl%C3%ADnica)%20Avinguda%20del%20Tren%2C%2040%2C%2007500%20Manacor%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

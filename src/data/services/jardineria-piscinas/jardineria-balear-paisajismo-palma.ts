@@ -31,12 +31,6 @@ export const jardineria_balear_paisajismo_palma: ServiceItem = {
   schedule: "Lunes a Viernes: 07:30 - 17:00",
   image: "/images/services/jardineria-balear-paisajismo-palma.jpg",
   gallery: ["/images/services/jardineria-balear-paisajismo-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Jardiner%C3%ADa%20Balear%20Paisajismo%20%26%20Mantenimiento%20Palma%20Cam%C3%AD%20de%20Jes%C3%BAs%2C%2068%2C%2007011%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Jardiner%C3%ADa%20Balear%20Paisajismo%20%26%20Mantenimiento%20Palma%20Cam%C3%AD%20de%20Jes%C3%BAs%2C%2068%2C%2007011%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Jardiner%C3%ADa%20Balear%20Paisajismo%20%26%20Mantenimiento%20Palma%20Cam%C3%AD%20de%20Jes%C3%BAs%2C%2068%2C%2007011%20Palma",
   shortDescription: {
     es: "Diseño de paisajes, poda de palmeras y mantenimiento integral de jardines en Mallorca: flora mediterránea autóctona resistente a la sequía y riego inteligente por goteo.",
     en: "Landscape design, palm tree pruning, and garden maintenance in Mallorca: drought-tolerant native Mediterranean flora and smart drip irrigation systems.",
@@ -100,13 +94,6 @@ export const jardineria_balear_paisajismo_palma: ServiceItem = {
       "Palmenschnitt und Verpflanzung großer Olivenbäume",
       "Planung und Einbau automatischer Bewässerungsanlagen",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 310,
-      url: "https://www.google.com/maps/search/?api=1&query=Jardiner%C3%ADa%20Balear%20Paisajismo%20%26%20Mantenimiento%20Palma%20Cam%C3%AD%20de%20Jes%C3%BAs%2C%2068%2C%2007011%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

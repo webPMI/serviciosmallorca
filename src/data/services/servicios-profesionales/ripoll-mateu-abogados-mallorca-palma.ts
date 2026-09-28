@@ -31,12 +31,6 @@ export const ripoll_mateu_abogados_mallorca_palma: ServiceItem = {
   schedule: "Lunes a Jueves: 09:00 - 19:00; Viernes: 09:00 - 14:30",
   image: "/images/services/ripoll-mateu-abogados-mallorca-palma.jpg",
   gallery: ["/images/services/ripoll-mateu-abogados-mallorca-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Ripoll%20%26%20Mateu%20Abogados%20Palma%20Carrer%20dels%20Oms%2C%2042%2C%2007003%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Ripoll%20%26%20Mateu%20Abogados%20Palma%20Carrer%20dels%20Oms%2C%2042%2C%2007003%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Ripoll%20%26%20Mateu%20Abogados%20Palma%20Carrer%20dels%20Oms%2C%2042%2C%2007003%20Palma",
   shortDescription: {
     es: "Despacho de abogados multidisciplinar en el centro de Palma: asesoramiento riguroso en compraventa de inmuebles, derecho civil, herencias, urbanismo y resolución de conflictos.",
     en: "Multidisciplinary law firm in central Palma: rigorous legal guidance in real estate conveyancing, civil law, inheritances, urban planning, and dispute litigation.",
@@ -100,13 +94,6 @@ export const ripoll_mateu_abogados_mallorca_palma: ServiceItem = {
       "Erstellung von spanischen Testamenten und Nachlassabwicklung",
       "Vertretung vor Gericht bei Zivil- und Vertragsstreitigkeiten",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 240,
-      url: "https://www.google.com/maps/search/?api=1&query=Ripoll%20%26%20Mateu%20Abogados%20Palma%20Carrer%20dels%20Oms%2C%2042%2C%2007003%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

@@ -28,9 +28,6 @@ export const bodegasCanXanetPollensa: ServiceItem = {
   email: "info@canxanet.com",
   website: "https://www.canxanet.com",
   menuUrl: "https://www.canxanet.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Bodega+Can+Xanet+Pollensa+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Bodega+Can+Xanet+Pollensa",
-  bingMapsUrl: "https://www.bing.com/maps?q=Bodega+Can+Xanet+Pollensa",
   tags: [
     "zona:alcudia-pollensa",
     "zona:pollenca",

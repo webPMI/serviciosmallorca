@@ -21,9 +21,6 @@ export const jardineriaSerra: ServiceItem = {
   whatsapp: "+34 680 12 34 89",
   email: "info@jardineriaserra.com",
   website: "https://jardineriaserra.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Jardineria%20Serra%20Palma%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Jardineria%20Serra%20Palma%20Mallorca&ll=39.6125,2.6450",
-  bingMapsUrl: "https://www.bing.com/maps?where1=Jardineria%20Serra%20Palma%20Mallorca",
   coordinates: { lat: 39.6125, lng: 2.645 },
   schedule: "Lunes a Viernes: 07:30 - 18:00 | Sábados: 08:00 - 13:00 (Urgencias de Poda y Riego)",
   lastVerifiedAt: "2026-08-25",
@@ -131,30 +128,13 @@ export const jardineriaSerra: ServiceItem = {
       instagramHandle: "@jardineriaserramallorca",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 140,
-      url: "https://www.google.com/maps/search/?api=1&query=Jardineria%20Serra%20Palma%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Jardineria%20Serra%20Palma%20Mallorca&ll=39.6125,2.6450",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 140,
-      url: "https://www.bing.com/maps?where1=Jardineria%20Serra%20Palma%20Mallorca",
-    },
-    totalReviewsAggregated: 140,
-    overallWeightedRating: 4.8,
-  },
   reviews: [
     {
       id: "rev-js-1",
       authorName: "Bernat Oliver",
       rating: 5,
       date: "2025-05-17",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
       comment:
         "Ens varen transformar tot el jardí de la finca a Santa Maria amb plantes mediterrànies i reg per degoteig. El consum d'aigua ha baixat molt i el jardí està espectacular.",
@@ -165,7 +145,7 @@ export const jardineriaSerra: ServiceItem = {
       authorName: "Maximilian Wagner",
       rating: 5,
       date: "2025-06-23",
-      platform: "google_maps",
+      platform: "direct",
       language: "en",
       comment:
         "Fantastic landscaping service in Mallorca! They planted mature olive trees and designed our entire villa garden in Calvià. Punctual and very neat.",

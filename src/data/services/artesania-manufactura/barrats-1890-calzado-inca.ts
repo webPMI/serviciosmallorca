@@ -31,12 +31,6 @@ export const barrats_1890_calzado_inca: ServiceItem = {
   schedule: "Lunes a Viernes: 09:30 - 19:30; Sábado: 10:00 - 14:00",
   image: "/images/services/barrats-1890-calzado-inca.jpg",
   gallery: ["/images/services/barrats-1890-calzado-inca.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Barrats%201890%20Calzado%20Artesano%20Tradicional%20Inca%20Avinguda%20del%20General%20Luque%2C%2048%2C%2007300%20Inca",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Barrats%201890%20Calzado%20Artesano%20Tradicional%20Inca%20Avinguda%20del%20General%20Luque%2C%2048%2C%2007300%20Inca",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Barrats%201890%20Calzado%20Artesano%20Tradicional%20Inca%20Avinguda%20del%20General%20Luque%2C%2048%2C%2007300%20Inca",
   shortDescription: {
     es: "Firma centenaria de calzado artesano fundada en Inca en 1890: elegancia atemporal, cosido artesano blake y goodyear y selección de pieles suaves para un confort insuperable.",
     en: "Centenary artisan shoemaker founded in Inca in 1890: timeless elegance, Goodyear and Blake stitched footwear, and buttery leathers delivering supreme comfort.",
@@ -100,13 +94,6 @@ export const barrats_1890_calzado_inca: ServiceItem = {
       "Passende Ledergürtel und Lederpflege",
       "Versandservice europaweit",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 620,
-      url: "https://www.google.com/maps/search/?api=1&query=Barrats%201890%20Calzado%20Artesano%20Tradicional%20Inca%20Avinguda%20del%20General%20Luque%2C%2048%2C%2007300%20Inca",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

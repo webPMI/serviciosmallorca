@@ -26,9 +26,6 @@ export const mimbreriaVidalPalma: ServiceItem = {
   phone: "+34 971 71 12 43",
   whatsapp: "+34 971 71 12 43",
   website: "https://www.google.com/maps/search/Mimbreria+Vidal+Corderia+Palma+Mallorca",
-  googleMapsUrl: "https://www.google.com/maps/search/Mimbreria+Vidal+Corderia+13+Palma+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Mimbreria+Vidal+Palma",
-  bingMapsUrl: "https://www.bing.com/maps?q=Mimbreria+Vidal+Palma",
   tags: [
     "zona:palma",
     "zona:casco-antiguo",
@@ -146,7 +143,7 @@ export const mimbreriaVidalPalma: ServiceItem = {
       comment:
         "Una botiga meravellosa que et fa viatjar en el temps. Els cistells són d'una qualitat insuperable i ens varen restaurar unes cadires de boga antigues que han quedat perfectes.",
       date: "2026-07-15",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
     },
     {
@@ -156,7 +153,7 @@ export const mimbreriaVidalPalma: ServiceItem = {
       comment:
         "Comercio histórico y trato inmejorable. Compré dos capazos y una estera de esparto para casa y la calidad es espectacular. Imprescindible visitar en Palma.",
       date: "2026-08-02",
-      platform: "google_maps",
+      platform: "direct",
       language: "es",
     },
   ],

@@ -76,10 +76,6 @@ export const balearRedesFibraWifiMallorca: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Balear%20WiFi%20%26%20High-Speed%20Networks%20Mallorca%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Balear%20WiFi%20%26%20High-Speed%20Networks%20Mallorca%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Balear%20WiFi%20%26%20High-Speed%20Networks%20Mallorca%20Mallorca",
   pricing: {
     startingPrice: "Presupuesto y atención a medida",
     rateType: "tiered",
@@ -106,21 +102,4 @@ export const balearRedesFibraWifiMallorca: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 310,
-      url: "https://www.google.com/maps/search/?api=1&query=Balear%20WiFi%20%26%20High-Speed%20Networks%20Mallorca%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Balear%20WiFi%20%26%20High-Speed%20Networks%20Mallorca%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.7,
-      reviewCount: 31,
-      url: "https://www.bing.com/maps?q=Balear%20WiFi%20%26%20High-Speed%20Networks%20Mallorca%20Mallorca",
-    },
-    totalReviewsAggregated: 341,
-    overallWeightedRating: 4.8,
-  },
 };

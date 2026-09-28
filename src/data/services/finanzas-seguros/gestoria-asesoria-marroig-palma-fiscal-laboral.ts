@@ -31,12 +31,6 @@ export const gestoria_asesoria_marroig_palma_fiscal_laboral: ServiceItem = {
   schedule: "Lunes a Viernes: 08:30 - 15:00 (Cita previa para consultas complejas)",
   image: "/images/services/gestoria-asesoria-marroig-palma-fiscal-laboral.jpg",
   gallery: ["/images/services/gestoria-asesoria-marroig-palma-fiscal-laboral.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Gestor%C3%ADa%20Marroig%20Asesores%20Fiscales%20%26%20Laborales%20Palma%20(1968)%20Carrer%20de%20Bonaire%2C%2012%2C%201%C2%BA%2C%2007012%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Gestor%C3%ADa%20Marroig%20Asesores%20Fiscales%20%26%20Laborales%20Palma%20(1968)%20Carrer%20de%20Bonaire%2C%2012%2C%201%C2%BA%2C%2007012%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Gestor%C3%ADa%20Marroig%20Asesores%20Fiscales%20%26%20Laborales%20Palma%20(1968)%20Carrer%20de%20Bonaire%2C%2012%2C%201%C2%BA%2C%2007012%20Palma",
   shortDescription: {
     es: "Gestoría administrativa y asesoría fiscal, laboral y contable en Palma fundada en 1968: transferencia de vehículos, liquidación de impuestos, NIE/residencia y constitución de empresas.",
     en: "Administrative consultancy and tax, labor, and accounting firm in Palma founded in 1968: vehicle transfers, tax filings, NIE/residency, and company formation.",
@@ -100,13 +94,6 @@ export const gestoria_asesoria_marroig_palma_fiscal_laboral: ServiceItem = {
       "NIE-Nummern, TIE-Residencia-Karten und steuerlicher Wohnsitz",
       "Firmengründung (S.L.), Autónomo-Anmeldung und Lohnbuchhaltung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 380,
-      url: "https://www.google.com/maps/search/?api=1&query=Gestor%C3%ADa%20Marroig%20Asesores%20Fiscales%20%26%20Laborales%20Palma%20(1968)%20Carrer%20de%20Bonaire%2C%2012%2C%201%C2%BA%2C%2007012%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

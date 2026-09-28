@@ -31,12 +31,6 @@ export const clinica_veterinaria_mediterranea_santa_catalina: ServiceItem = {
   schedule: "Lunes a Viernes: 09:00 - 20:00, Sábados: 10:00 - 14:00 (Urgencias 24h)",
   image: "/images/services/clinica-veterinaria-mediterranea-santa-catalina.jpg",
   gallery: ["/images/services/clinica-veterinaria-mediterranea-santa-catalina.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica%20Veterinaria%20Mediterr%C3%A0nia%20Santa%20Catalina%20Carrer%20de%20Sant%20Mag%C3%AD%2C%2054%2C%2007013%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Cl%C3%ADnica%20Veterinaria%20Mediterr%C3%A0nia%20Santa%20Catalina%20Carrer%20de%20Sant%20Mag%C3%AD%2C%2054%2C%2007013%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Cl%C3%ADnica%20Veterinaria%20Mediterr%C3%A0nia%20Santa%20Catalina%20Carrer%20de%20Sant%20Mag%C3%AD%2C%2054%2C%2007013%20Palma",
   shortDescription: {
     es: "Clínica veterinaria en Santa Catalina con acreditación Cat Friendly Clinic, diagnóstico por imagen y quirófano de tejidos blandos.",
     en: "Veterinary clinic in Santa Catalina with Cat Friendly Clinic accreditation, diagnostic imaging, and soft tissue surgery.",
@@ -100,13 +94,6 @@ export const clinica_veterinaria_mediterranea_santa_catalina: ServiceItem = {
       "Zahnsteinentfernung mit Ultraschall",
       "Mikrochip-Implantation und EU-Heimtierausweis",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 280,
-      url: "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica%20Veterinaria%20Mediterr%C3%A0nia%20Santa%20Catalina%20Carrer%20de%20Sant%20Mag%C3%AD%2C%2054%2C%2007013%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

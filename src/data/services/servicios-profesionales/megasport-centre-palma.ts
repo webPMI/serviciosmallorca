@@ -78,12 +78,6 @@ export const megasportCentrePalma: ServiceItem = {
   },
   image: "/images/services/megasport-centre-palma.jpg",
   gallery: ["/images/services/megasport-centre-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Megasport%20Centre%20(Palma)%20Carrer%20de%20Francesc%20Vallduv%C3%AD%2C%201%2C%2007011%20Palma%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Megasport%20Centre%20(Palma)%20Carrer%20de%20Francesc%20Vallduv%C3%AD%2C%201%2C%2007011%20Palma%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://www.bing.com/maps?q=Megasport%20Centre%20(Palma)%20Carrer%20de%20Francesc%20Vallduv%C3%AD%2C%201%2C%2007011%20Palma%2C%20Illes%20Balears",
   phone: "+34 971 76 33 33",
   whatsapp: "+34971763333",
   website: "https://megasportcentre.com",

@@ -31,12 +31,6 @@ export const clinica_rotger_palma_hospital_urgencias_24h: ServiceItem = {
   schedule: "Urgencias 24 horas / 365 días (Consultas externas: Lunes a Viernes 08:00 - 20:00)",
   image: "/images/services/clinica-rotger-palma-hospital-urgencias-24h.jpg",
   gallery: ["/images/services/clinica-rotger-palma-hospital-urgencias-24h.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica%20Rotger%20Centro%20M%C3%A9dico%20%26%20Hospital%20Urgencias%2024h%20Palma%20(Quir%C3%B3nsalud)%20Carrer%20de%20Santiago%20Rusi%C3%B1ol%2C%209%2C%2007012%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Cl%C3%ADnica%20Rotger%20Centro%20M%C3%A9dico%20%26%20Hospital%20Urgencias%2024h%20Palma%20(Quir%C3%B3nsalud)%20Carrer%20de%20Santiago%20Rusi%C3%B1ol%2C%209%2C%2007012%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Cl%C3%ADnica%20Rotger%20Centro%20M%C3%A9dico%20%26%20Hospital%20Urgencias%2024h%20Palma%20(Quir%C3%B3nsalud)%20Carrer%20de%20Santiago%20Rusi%C3%B1ol%2C%209%2C%2007012%20Palma",
   shortDescription: {
     es: "Hospital privado de referencia en el centro de Palma del grupo Quirónsalud: servicio de urgencias 24 horas, todas las especialidades médico-quirúrgicas y UCI de alta tecnología.",
     en: "Reference private hospital in central Palma by Quirónsalud: 24-hour emergency room, all medical and surgical specialties, and high-tech ICU.",
@@ -100,13 +94,6 @@ export const clinica_rotger_palma_hospital_urgencias_24h: ServiceItem = {
       "Stationäre Unterbringung in Einzelzimmern mit Begleitbett und eigenem Bad",
       "Manager-Vorsorge-Check-up-Zentrum und Sportmedizin",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 1250,
-      url: "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica%20Rotger%20Centro%20M%C3%A9dico%20%26%20Hospital%20Urgencias%2024h%20Palma%20(Quir%C3%B3nsalud)%20Carrer%20de%20Santiago%20Rusi%C3%B1ol%2C%209%2C%2007012%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

@@ -21,9 +21,6 @@ export const fornGelabertLlubi: ServiceItem = {
   whatsapp: "+34 971 52 20 40",
   email: "info@forngelabert.com",
   website: "https://forngelabert.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Forn%20Gelabert%20Llubi",
-  appleMapsUrl: "https://maps.apple.com/?q=Forn%20Gelabert%20Llubi&ll=39.6995,3.0050",
-  bingMapsUrl: "https://www.bing.com/maps?where1=Forn%20Gelabert%20Llubi",
   coordinates: { lat: 39.6995, lng: 3.005 },
   schedule: "Lunes a Domingo: 07:00 - 14:00 | 17:00 - 20:30 (Abierto todos los días)",
   lastVerifiedAt: "2026-08-25",
@@ -131,30 +128,13 @@ export const fornGelabertLlubi: ServiceItem = {
       instagramHandle: "@forngelabert_llubi",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 380,
-      url: "https://www.google.com/maps/search/?api=1&query=Forn%20Gelabert%20Llubi",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Forn%20Gelabert%20Llubi&ll=39.6995,3.0050",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 380,
-      url: "https://www.bing.com/maps?where1=Forn%20Gelabert%20Llubi",
-    },
-    totalReviewsAggregated: 380,
-    overallWeightedRating: 4.8,
-  },
   reviews: [
     {
       id: "rev-fgl-1",
       authorName: "Antònia Perelló",
       rating: 5,
       date: "2025-05-18",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
       comment:
         "Els millors cremadillos de tot Mallorca sense discussió. La pasta de full caramel·litzada cruixent i la crema casolana són un espectacle. Val la pena el viatge a Llubí.",
@@ -165,7 +145,7 @@ export const fornGelabertLlubi: ServiceItem = {
       authorName: "Marcus Vance",
       rating: 5,
       date: "2025-06-26",
-      platform: "google_maps",
+      platform: "direct",
       language: "en",
       comment:
         "Phenomenal bakery in rural Mallorca! Stopped during our cycling ride through Llubí; the warm caramelized cremadillos and coffee were sheer bliss.",

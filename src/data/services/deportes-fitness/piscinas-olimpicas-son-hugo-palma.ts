@@ -29,8 +29,6 @@ export const PISCINAS_OLIMPICAS_SON_HUGO_PALMA: ServiceItem = {
   image: "/images/sports/piscinas-olimpicas-son-hugo-palma.jpg",
   gallery: ["/images/sports/piscinas-olimpicas-son-hugo-palma.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007093",
-  appleMapsUrl: "https://maps.apple.com/?q=Piscines%20Municipals%20Son%20Hugo+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Piscines%20Municipals%20Son%20Hugo+Mallorca",
   shortDescription: {
     es: "Complejo de natación con piscina olímpica de 50 metros exterior e interior, foso de saltos y spa.",
     en: "Aquatic center with indoor and outdoor 50m Olympic pools, diving tower, and wellness area.",
@@ -94,13 +92,6 @@ export const PISCINAS_OLIMPICAS_SON_HUGO_PALMA: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 740,
-      url: "https://www.google.com/maps?cid=12007093",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

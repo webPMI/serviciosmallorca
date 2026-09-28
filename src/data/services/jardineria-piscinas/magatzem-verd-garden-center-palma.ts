@@ -31,12 +31,6 @@ export const magatzem_verd_garden_center_palma: ServiceItem = {
   schedule: "Lunes a Sábado: 09:00 - 20:00, Domingo: 10:00 - 14:00",
   image: "/images/services/magatzem-verd-garden-center-palma.jpg",
   gallery: ["/images/services/magatzem-verd-garden-center-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Magatzem%20Verd%20Garden%20Center%20%26%20Vivero%20Palma%20Cam%C3%AD%20de%20Jes%C3%BAs%2C%2048%2C%2007011%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Magatzem%20Verd%20Garden%20Center%20%26%20Vivero%20Palma%20Cam%C3%AD%20de%20Jes%C3%BAs%2C%2048%2C%2007011%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Magatzem%20Verd%20Garden%20Center%20%26%20Vivero%20Palma%20Cam%C3%AD%20de%20Jes%C3%BAs%2C%2048%2C%2007011%20Palma",
   shortDescription: {
     es: "Vivero histórico y centro de jardinería emblemático en Palma con la mayor variedad botánica insular y herramientas de cultivo.",
     en: "Historic plant nursery and garden center in Palma offering Mallorca's widest selection of native flora and horticultural tools.",
@@ -100,13 +94,6 @@ export const magatzem_verd_garden_center_palma: ServiceItem = {
       "Pflanzerden, Mulch und Spezialsubstrate",
       "Pflanzenschutzberatung und Schädlingsbekämpfung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.6,
-      reviewCount: 1480,
-      url: "https://www.google.com/maps/search/?api=1&query=Magatzem%20Verd%20Garden%20Center%20%26%20Vivero%20Palma%20Cam%C3%AD%20de%20Jes%C3%BAs%2C%2048%2C%2007011%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

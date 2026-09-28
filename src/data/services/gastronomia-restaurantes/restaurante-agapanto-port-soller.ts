@@ -28,9 +28,6 @@ export const restauranteAgapantoPortSoller: ServiceItem = {
   email: "info@agapanto.com",
   website: "https://agapanto.com",
   menuUrl: "https://agapanto.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Restaurante+Agapanto+Port+de+Soller+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante+Agapanto+Port+Soller",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante+Agapanto+Port+Soller",
   tags: [
     "zona:tramuntana",
     "zona:port-de-soller",

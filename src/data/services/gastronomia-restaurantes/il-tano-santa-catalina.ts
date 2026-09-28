@@ -21,9 +21,6 @@ export const ilTanoSantaCatalina: ServiceItem = {
   whatsapp: "+34 971 28 34 83",
   email: "santacatalina@iltano.com",
   website: "https://iltano.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Il%20Tano%20Santa%20Catalina%20Palma",
-  appleMapsUrl: "https://maps.apple.com/?q=Il%20Tano%20Santa%20Catalina%20Palma&ll=39.5718,2.6375",
-  bingMapsUrl: "https://www.bing.com/maps?where1=Il%20Tano%20Santa%20Catalina%20Palma",
   coordinates: { lat: 39.5718, lng: 2.6375 },
   schedule: "Lunes a Domingo: 13:00 - 16:00 | 19:30 - 23:30",
   lastVerifiedAt: "2026-08-25",
@@ -128,30 +125,13 @@ export const ilTanoSantaCatalina: ServiceItem = {
       instagramHandle: "@iltanomallorca",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 1850,
-      url: "https://www.google.com/maps/search/?api=1&query=Il%20Tano%20Santa%20Catalina%20Palma",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Il%20Tano%20Santa%20Catalina%20Palma&ll=39.5718,2.6375",
-    },
-    bingMaps: {
-      rating: 4.7,
-      reviewCount: 1850,
-      url: "https://www.bing.com/maps?where1=Il%20Tano%20Santa%20Catalina%20Palma",
-    },
-    totalReviewsAggregated: 1850,
-    overallWeightedRating: 4.7,
-  },
   reviews: [
     {
       id: "rev-tano-1",
       authorName: "Marc Vallespir",
       rating: 5,
       date: "2025-05-14",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
       comment:
         "La millor pizza napolitana de Palma sens dubte. La massa és lleugera, saborosa i el tracte del personal és de 10.",
@@ -162,7 +142,7 @@ export const ilTanoSantaCatalina: ServiceItem = {
       authorName: "Sophie Martin",
       rating: 5,
       date: "2025-06-27",
-      platform: "google_maps",
+      platform: "direct",
       language: "en",
       comment:
         "Outstanding pizza in Santa Catalina! Perfect bubbly crust, high quality ingredients, and super friendly Italian team.",

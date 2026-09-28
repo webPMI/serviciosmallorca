@@ -28,9 +28,6 @@ export const canTorratPlayaPalma: ServiceItem = {
   email: "info@cantorrat.com",
   website: "https://www.cantorrat.com",
   menuUrl: "https://www.cantorrat.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Restaurante+Can+Torrat+Platja+de+Palma+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante+Can+Torrat+Palma",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante+Can+Torrat+Palma",
   tags: [
     "zona:palma",
     "zona:platja-de-palma",

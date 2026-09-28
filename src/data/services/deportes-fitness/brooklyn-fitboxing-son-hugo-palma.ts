@@ -29,8 +29,6 @@ export const BROOKLYN_FITBOXING_SON_HUGO_PALMA: ServiceItem = {
   image: "/images/sports/brooklyn-fitboxing-son-hugo-palma.jpg",
   gallery: ["/images/sports/brooklyn-fitboxing-son-hugo-palma.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007046",
-  appleMapsUrl: "https://maps.apple.com/?q=Brooklyn%20Fitboxing%20Son%20Hugo+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Brooklyn%20Fitboxing%20Son%20Hugo+Mallorca",
   shortDescription: {
     es: "Centro oficial de Fitboxing en Son Hugo con sacos inteligentes y entrenamientos de 47 minutos.",
     en: "Official Fitboxing center in Son Hugo featuring smart bags and 47-minute workouts.",
@@ -94,13 +92,6 @@ export const BROOKLYN_FITBOXING_SON_HUGO_PALMA: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 290,
-      url: "https://www.google.com/maps?cid=12007046",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

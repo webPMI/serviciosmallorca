@@ -29,8 +29,6 @@ export const PADEL_LLUCMAJOR_CLUB: ServiceItem = {
   image: "/images/sports/padel-llucmajor-club.jpg",
   gallery: ["/images/sports/padel-llucmajor-club.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007032",
-  appleMapsUrl: "https://maps.apple.com/?q=P%C3%A0del%20Llucmajor%20Club+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=P%C3%A0del%20Llucmajor%20Club+Mallorca",
   shortDescription: {
     es: "Club de pádel en Llucmajor con pistas panorámicas de cristal, torneos de fin de semana y bar.",
     en: "Padel club in Llucmajor with panoramic glass courts, weekend tournaments, and bar.",
@@ -94,13 +92,6 @@ export const PADEL_LLUCMAJOR_CLUB: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 250,
-      url: "https://www.google.com/maps?cid=12007032",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

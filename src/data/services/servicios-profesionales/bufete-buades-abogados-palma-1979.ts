@@ -76,10 +76,6 @@ export const bufeteBuadesAbogadosPalma1979: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Bufete%20Buades%20Abogados%20Palma%20(1979)%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Bufete%20Buades%20Abogados%20Palma%20(1979)%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Bufete%20Buades%20Abogados%20Palma%20(1979)%20Mallorca",
   pricing: {
     startingPrice: "Consultar servicios y presupuestos personalizados",
     rateType: "custom_quote",
@@ -106,21 +102,4 @@ export const bufeteBuadesAbogadosPalma1979: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 380,
-      url: "https://www.google.com/maps/search/?api=1&query=Bufete%20Buades%20Abogados%20Palma%20(1979)%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Bufete%20Buades%20Abogados%20Palma%20(1979)%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 38,
-      url: "https://www.bing.com/maps?q=Bufete%20Buades%20Abogados%20Palma%20(1979)%20Mallorca",
-    },
-    totalReviewsAggregated: 418,
-    overallWeightedRating: 4.9,
-  },
 };

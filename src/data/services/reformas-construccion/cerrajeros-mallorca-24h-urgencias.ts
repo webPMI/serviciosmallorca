@@ -31,12 +31,6 @@ export const cerrajeros_mallorca_24h_urgencias: ServiceItem = {
   schedule: "Servicio de urgencias 24 horas / 365 días (Llegada en 25 min)",
   image: "/images/services/cerrajeros-mallorca-24h-urgencias.jpg",
   gallery: ["/images/services/cerrajeros-mallorca-24h-urgencias.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Cerrajeros%20Mallorca%2024h%20Aperturas%20Urgentes%20%26%20Seguridad%20Carrer%20de%20Blanquerna%2C%2030%2C%2007003%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Cerrajeros%20Mallorca%2024h%20Aperturas%20Urgentes%20%26%20Seguridad%20Carrer%20de%20Blanquerna%2C%2030%2C%2007003%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Cerrajeros%20Mallorca%2024h%20Aperturas%20Urgentes%20%26%20Seguridad%20Carrer%20de%20Blanquerna%2C%2030%2C%2007003%20Palma",
   shortDescription: {
     es: "Servicio de cerrajería urgente las 24 horas en toda Mallorca: apertura de puertas sin rotura, cambio de bombines antibumping, cerrojos de alta seguridad y cajas fuertes.",
     en: "24-hour emergency locksmith service across Mallorca: non-destructive door opening, anti-bumping cylinder upgrades, high-security deadbolts, and safe cracking.",
@@ -100,13 +94,6 @@ export const cerrajeros_mallorca_24h_urgencias: ServiceItem = {
       "Nachrüstung von elektronischen Smart-Locks und Zusatz-Panzerriegeln",
       "Öffnung von Safes, Tresoren und Garagentoren",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 780,
-      url: "https://www.google.com/maps/search/?api=1&query=Cerrajeros%20Mallorca%2024h%20Aperturas%20Urgentes%20%26%20Seguridad%20Carrer%20de%20Blanquerna%2C%2030%2C%2007003%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

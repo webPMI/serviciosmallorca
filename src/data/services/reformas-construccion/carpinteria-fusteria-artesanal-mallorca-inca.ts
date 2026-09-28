@@ -31,12 +31,6 @@ export const carpinteria_fusteria_artesanal_mallorca_inca: ServiceItem = {
   schedule: "Lunes a Viernes: 07:30 - 17:30",
   image: "/images/services/carpinteria-fusteria-artesanal-mallorca-inca.jpg",
   gallery: ["/images/services/carpinteria-fusteria-artesanal-mallorca-inca.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Fusteria%20%26%20Ebanister%C3%ADa%20Tradicional%20Balear%20Inca%20(1975)%20Carrer%20del%20Gremi%20de%20Fusters%2C%208%2C%20Pol%C3%ADgon%20Can%20Valero%20Inca%2C%2007300%20Inca",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Fusteria%20%26%20Ebanister%C3%ADa%20Tradicional%20Balear%20Inca%20(1975)%20Carrer%20del%20Gremi%20de%20Fusters%2C%208%2C%20Pol%C3%ADgon%20Can%20Valero%20Inca%2C%2007300%20Inca",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Fusteria%20%26%20Ebanister%C3%ADa%20Tradicional%20Balear%20Inca%20(1975)%20Carrer%20del%20Gremi%20de%20Fusters%2C%208%2C%20Pol%C3%ADgon%20Can%20Valero%20Inca%2C%2007300%20Inca",
   shortDescription: {
     es: "Taller artesano de carpintería y ebanistería en Inca: persianas mallorquinas de librillo de madera de iroko/norte, puertas rústicas macizas y vigas de madera.",
     en: "Artisan carpentry and joinery in Inca: traditional wooden Mallorcan shutter blinds (persianas), solid rustic doors, and timber ceiling beams.",
@@ -100,13 +94,6 @@ export const carpinteria_fusteria_artesanal_mallorca_inca: ServiceItem = {
       "Individuelle Massivholzküchen und Einbauschränke",
       "Restaurierung historischer Holzelemente und Dachbalken",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 145,
-      url: "https://www.google.com/maps/search/?api=1&query=Fusteria%20%26%20Ebanister%C3%ADa%20Tradicional%20Balear%20Inca%20(1975)%20Carrer%20del%20Gremi%20de%20Fusters%2C%208%2C%20Pol%C3%ADgon%20Can%20Valero%20Inca%2C%2007300%20Inca",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

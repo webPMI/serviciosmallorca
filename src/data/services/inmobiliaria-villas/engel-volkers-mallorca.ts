@@ -25,9 +25,6 @@ export const engelVolkersMallorca: ServiceItem = {
   whatsapp: "+34 971 23 85 84",
   email: "mallorca@engelvoelkers.com",
   website: "https://www.engelvoelkers.com/es-es/mallorca/",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Engel+and+Volkers+Palma+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Engel+and+Volkers+Palma+Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Engel+and+Volkers+Palma+Mallorca",
   schedule: "Lunes a Viernes: 09:30 - 19:30 | Sábados: 10:00 - 14:00",
   lastVerifiedAt: "2026-08-25",
   createdAt: "2026-08-25",
@@ -182,22 +179,13 @@ export const engelVolkersMallorca: ServiceItem = {
       instagramHandle: "@engelvoelkers.global",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 320,
-      url: "https://www.google.com/maps/search/?api=1&query=Engel+and+Volkers+Palma",
-    },
-    totalReviewsAggregated: 320,
-    overallWeightedRating: 4.8,
-  },
   reviews: [
     {
       id: "ev-rev-1",
       authorName: "Markus H.",
       rating: 5,
       date: "2025-05-19",
-      platform: "google_maps",
+      platform: "direct",
       language: "de",
       comment:
         "Sehr professionelle Beratung beim Immobilienkauf in Son Vida. Transparenter Ablauf vom ersten Kontakt bis zum Notartermin.",
@@ -210,7 +198,7 @@ export const engelVolkersMallorca: ServiceItem = {
       authorName: "Patricia Gómez",
       rating: 5,
       date: "2025-07-28",
-      platform: "google_maps",
+      platform: "direct",
       language: "es",
       comment:
         "Excelente gestión en la venta de nuestro ático en Palma. Gran discreción, valoración acertada y rapidez en encontrar comprador.",

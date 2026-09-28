@@ -76,10 +76,6 @@ export const kuhnAndPartnerLuxuryPalma: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=K%C3%BChn%20%26%20Partner%20Real%20Estate%20Palma%20(1987)%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=K%C3%BChn%20%26%20Partner%20Real%20Estate%20Palma%20(1987)%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=K%C3%BChn%20%26%20Partner%20Real%20Estate%20Palma%20(1987)%20Mallorca",
   pricing: {
     startingPrice: "Consultar servicios y presupuestos personalizados",
     rateType: "custom_quote",
@@ -106,21 +102,4 @@ export const kuhnAndPartnerLuxuryPalma: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 290,
-      url: "https://www.google.com/maps/search/?api=1&query=K%C3%BChn%20%26%20Partner%20Real%20Estate%20Palma%20(1987)%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=K%C3%BChn%20%26%20Partner%20Real%20Estate%20Palma%20(1987)%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.7,
-      reviewCount: 29,
-      url: "https://www.bing.com/maps?q=K%C3%BChn%20%26%20Partner%20Real%20Estate%20Palma%20(1987)%20Mallorca",
-    },
-    totalReviewsAggregated: 319,
-    overallWeightedRating: 4.8,
-  },
 };

@@ -31,12 +31,6 @@ export const omniaccess_satellite_connectivity_superyacht_palma: ServiceItem = {
   schedule: "Lunes a Viernes: 08:30 - 17:30 (Soporte NOC 24/7)",
   image: "/images/services/omniaccess-satellite-connectivity-superyacht-palma.jpg",
   gallery: ["/images/services/omniaccess-satellite-connectivity-superyacht-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=OmniAccess%20Marine%20%26%20Superyacht%20Broadband%20Connectivity%20Parc%20Bit%2C%20Carrer%20d'Isaac%20Newton%2C%20Edifici%20Son%20Espanyol%2C%2007121%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=OmniAccess%20Marine%20%26%20Superyacht%20Broadband%20Connectivity%20Parc%20Bit%2C%20Carrer%20d'Isaac%20Newton%2C%20Edifici%20Son%20Espanyol%2C%2007121%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=OmniAccess%20Marine%20%26%20Superyacht%20Broadband%20Connectivity%20Parc%20Bit%2C%20Carrer%20d'Isaac%20Newton%2C%20Edifici%20Son%20Espanyol%2C%2007121%20Palma",
   shortDescription: {
     es: "Líder mundial en conectividad satelital de banda ancha, redes Starlink marítimas y ciberseguridad para superyates y villas exclusivas, fundado en Palma.",
     en: "World leader in satellite broadband, maritime Starlink networks, and cybersecurity for superyachts and luxury estates, founded in Palma.",
@@ -100,13 +94,6 @@ export const omniaccess_satellite_connectivity_superyacht_palma: ServiceItem = {
       "IPTV-Systeme und Streaming-Infrastruktur für Gäste an Bord",
       "Vor-Ort-Service direkt an den Stegen in Palma, Port Adriano und Andratx",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 150,
-      url: "https://www.google.com/maps/search/?api=1&query=OmniAccess%20Marine%20%26%20Superyacht%20Broadband%20Connectivity%20Parc%20Bit%2C%20Carrer%20d'Isaac%20Newton%2C%20Edifici%20Son%20Espanyol%2C%2007121%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

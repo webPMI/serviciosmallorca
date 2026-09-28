@@ -21,9 +21,6 @@ export const climaMarratxi: ServiceItem = {
   whatsapp: "+34 639 20 30 40",
   email: "info@climatizacionmarratxi.com",
   website: "https://climatizacionmarratxi.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Climatizacion%20Marratxi",
-  appleMapsUrl: "https://maps.apple.com/?q=Climatizacion%20Marratxi&ll=39.6190,2.7380",
-  bingMapsUrl: "https://www.bing.com/maps?where1=Climatizacion%20Marratxi",
   coordinates: { lat: 39.619, lng: 2.738 },
   schedule: "Lunes a Viernes: 08:00 - 18:30 (Servicio Técnico y Urgencias de Clima)",
   lastVerifiedAt: "2026-08-25",
@@ -131,30 +128,13 @@ export const climaMarratxi: ServiceItem = {
       instagramHandle: "@climatizacionmarratxi",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 150,
-      url: "https://www.google.com/maps/search/?api=1&query=Climatizacion%20Marratxi",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Climatizacion%20Marratxi&ll=39.6190,2.7380",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 150,
-      url: "https://www.bing.com/maps?where1=Climatizacion%20Marratxi",
-    },
-    totalReviewsAggregated: 150,
-    overallWeightedRating: 4.8,
-  },
   reviews: [
     {
       id: "rev-cmm-1",
       authorName: "Joan Carles Pou",
       rating: 5,
       date: "2025-05-17",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
       comment:
         "Ens varen muntar l'aire condicionat per conductes amb sistema Airzone a casa nostra a Marratxí. Feina finíssima, molt nets treballant i la temperatura és ideal a cada habitació.",
@@ -165,7 +145,7 @@ export const climaMarratxi: ServiceItem = {
       authorName: "Stefan Meyer",
       rating: 5,
       date: "2025-06-24",
-      platform: "google_maps",
+      platform: "direct",
       language: "de",
       comment:
         "Sehr professionelle Klimatechnik-Firma! Sie haben unsere alte Ölheizung durch eine moderne Daikin-Wärmepumpe ersetzt. Tolle Energieeinsparung und pünktliche Installation.",

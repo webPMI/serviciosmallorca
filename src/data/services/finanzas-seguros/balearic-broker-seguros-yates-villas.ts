@@ -76,10 +76,6 @@ export const balearicBrokerSegurosYatesVillas: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Balearic%20Marine%20%26%20Villa%20Insurance%20Brokers%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Balearic%20Marine%20%26%20Villa%20Insurance%20Brokers%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Balearic%20Marine%20%26%20Villa%20Insurance%20Brokers%20Mallorca",
   pricing: {
     startingPrice: "Auditoría de póliza gratuita",
     rateType: "custom_quote",
@@ -106,21 +102,4 @@ export const balearicBrokerSegurosYatesVillas: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 310,
-      url: "https://www.google.com/maps/search/?api=1&query=Balearic%20Marine%20%26%20Villa%20Insurance%20Brokers%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Balearic%20Marine%20%26%20Villa%20Insurance%20Brokers%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 31,
-      url: "https://www.bing.com/maps?q=Balearic%20Marine%20%26%20Villa%20Insurance%20Brokers%20Mallorca",
-    },
-    totalReviewsAggregated: 341,
-    overallWeightedRating: 4.9,
-  },
 };

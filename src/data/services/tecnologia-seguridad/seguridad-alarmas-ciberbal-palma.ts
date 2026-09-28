@@ -31,12 +31,6 @@ export const seguridad_alarmas_ciberbal_palma: ServiceItem = {
   schedule: "Lunes a Viernes: 08:30 - 18:30 | Servicio Urgencias CRA: 24/7",
   image: "/images/services/seguridad-alarmas-ciberbal-palma.jpg",
   gallery: ["/images/services/seguridad-alarmas-ciberbal-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Sistemas%20de%20Seguridad%20Alarmas%20Ciberbal%20Palma%20Carrer%20del%20Gremi%20de%20Teixidors%2C%2031%2C%20Pol%C3%ADgon%20Son%20Castell%C3%B3%2C%2007009%20Palma%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Sistemas%20de%20Seguridad%20Alarmas%20Ciberbal%20Palma%20Carrer%20del%20Gremi%20de%20Teixidors%2C%2031%2C%20Pol%C3%ADgon%20Son%20Castell%C3%B3%2C%2007009%20Palma%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Sistemas%20de%20Seguridad%20Alarmas%20Ciberbal%20Palma%20Carrer%20del%20Gremi%20de%20Teixidors%2C%2031%2C%20Pol%C3%ADgon%20Son%20Castell%C3%B3%2C%2007009%20Palma%2C%20Illes%20Balears",
   shortDescription: {
     es: "Empresa de seguridad privada en Mallorca homologada por el Ministerio del Interior, experta en alarmas conectadas a CRA, videovigilancia perimetral en fincas y control de accesos biométrico.",
     en: "Certified private security provider in Mallorca approved by the Ministry of the Interior, specializing in CRA-connected alarms, perimeter video surveillance for fincas, and biometric access control.",
@@ -100,13 +94,6 @@ export const seguridad_alarmas_ciberbal_palma: ServiceItem = {
       "Biometrische Zutrittskontrollsysteme, Handy-Türöffnung und IP-Video-Sprechanlagen",
       "Regelmäßige technische Wartung, Sicherheitsberatung vor Ort und Notfall-Akkutausch",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 220,
-      url: "https://www.google.com/maps/search/?api=1&query=Sistemas%20de%20Seguridad%20Alarmas%20Ciberbal%20Palma%20Carrer%20del%20Gremi%20de%20Teixidors%2C%2031%2C%20Pol%C3%ADgon%20Son%20Castell%C3%B3%2C%2007009%20Palma%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

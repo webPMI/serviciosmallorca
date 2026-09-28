@@ -76,10 +76,6 @@ export const cuidadoYSaludMallorcaCare: ServiceItem = {
       close: "23:59",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Mallorca%20Senior%20Care%20%26%20Asistencia%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Mallorca%20Senior%20Care%20%26%20Asistencia%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Mallorca%20Senior%20Care%20%26%20Asistencia%20Mallorca",
   pricing: {
     startingPrice: "Desde 18€ / hora",
     rateType: "tiered",
@@ -106,21 +102,4 @@ export const cuidadoYSaludMallorcaCare: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 220,
-      url: "https://www.google.com/maps/search/?api=1&query=Mallorca%20Senior%20Care%20%26%20Asistencia%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Mallorca%20Senior%20Care%20%26%20Asistencia%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 22,
-      url: "https://www.bing.com/maps?q=Mallorca%20Senior%20Care%20%26%20Asistencia%20Mallorca",
-    },
-    totalReviewsAggregated: 242,
-    overallWeightedRating: 4.9,
-  },
 };

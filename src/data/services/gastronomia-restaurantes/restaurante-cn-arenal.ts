@@ -28,9 +28,6 @@ export const restauranteCnArenal: ServiceItem = {
   email: "restaurante@cnarenal.com",
   website: "https://www.restauranteclubnauticosarenal.com",
   menuUrl: "https://www.restauranteclubnauticosarenal.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Restaurante+Club+Nautic+S+Arenal+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante+Club+Nautic+Arenal",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante+Club+Nautic+Arenal",
   tags: [
     "zona:santanyi-migjorn",
     "zona:s-arenal",

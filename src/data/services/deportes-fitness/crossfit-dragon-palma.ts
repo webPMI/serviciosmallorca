@@ -29,8 +29,6 @@ export const CROSSFIT_DRAGON_PALMA: ServiceItem = {
   image: "/images/sports/crossfit-dragon-palma.jpg",
   gallery: ["/images/sports/crossfit-dragon-palma.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007066",
-  appleMapsUrl: "https://maps.apple.com/?q=CrossFit%20Dragon%20Palma+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=CrossFit%20Dragon%20Palma+Mallorca",
   shortDescription: {
     es: "Box céntrico en Palma especializado en halterofilia técnica, gimnasia y acondicionamiento metabólico.",
     en: "Central Palma box specializing in Olympic lifting technique, gymnastics, and metcon.",
@@ -94,13 +92,6 @@ export const CROSSFIT_DRAGON_PALMA: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 270,
-      url: "https://www.google.com/maps?cid=12007066",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

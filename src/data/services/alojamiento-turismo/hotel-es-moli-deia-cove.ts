@@ -76,9 +76,6 @@ export const hotelEsMoliDeiaCove: ServiceItem = {
       close: "23:59",
     },
   },
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Hotel%20Es%20Moli%20Deia%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Hotel%20Es%20Moli%20Deia%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Hotel%20Es%20Moli%20Deia%20Mallorca",
   pricing: {
     startingPrice: "Consultar tarifa por noche según temporada",
     rateType: "tiered",
@@ -105,21 +102,4 @@ export const hotelEsMoliDeiaCove: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 620,
-      url: "https://www.google.com/maps/search/?api=1&query=Hotel%20Es%20Moli%20Deia%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Hotel%20Es%20Moli%20Deia%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.7,
-      reviewCount: 62,
-      url: "https://www.bing.com/maps?q=Hotel%20Es%20Moli%20Deia%20Mallorca",
-    },
-    totalReviewsAggregated: 682,
-    overallWeightedRating: 4.8,
-  },
 };

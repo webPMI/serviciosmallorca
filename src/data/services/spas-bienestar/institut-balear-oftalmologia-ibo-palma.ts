@@ -29,8 +29,6 @@ export const institut_balear_oftalmologia_ibo_palma: ServiceItem = {
   image: "/images/spas/institut-balear-oftalmologia-ibo-palma.jpg",
   gallery: ["/images/spas/institut-balear-oftalmologia-ibo-palma.jpg", "/images/categories/salud.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=13008013",
-  appleMapsUrl: "https://maps.apple.com/?q=Institut%20Balear%20d'Oftalmologia%20(IBO)+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Institut%20Balear%20d'Oftalmologia%20(IBO)+Mallorca",
   shortDescription: {
     es: "Centro de referencia en cirugía refractiva láser Femto-LASIK, cataratas, retina y glaucoma en Baleares.",
     en: "Balearic leading ophthalmic center for Femto-LASIK laser surgery, cataract, retina, and glaucoma care.",
@@ -94,13 +92,6 @@ export const institut_balear_oftalmologia_ibo_palma: ServiceItem = {
       "Wellness- und Regenerationstherapien",
       "Kontinuierliche medizinische Nachbetreuung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 480,
-      url: "https://www.google.com/maps?cid=13008013",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

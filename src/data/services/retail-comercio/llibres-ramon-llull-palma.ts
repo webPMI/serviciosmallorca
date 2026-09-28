@@ -31,12 +31,6 @@ export const llibres_ramon_llull_palma: ServiceItem = {
   schedule: "Lunes a Viernes: 10:00 - 14:00, 16:30 - 20:00 | Sábado: 10:00 - 14:00 | Domingo: Cerrado",
   image: "/images/services/llibres-ramon-llull-palma.jpg",
   gallery: ["/images/services/llibres-ramon-llull-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Llibres%20Ramon%20Llull%20Palma%20Carrer%20del%20Campana%2C%203%2C%2007001%20Palma%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Llibres%20Ramon%20Llull%20Palma%20Carrer%20del%20Campana%2C%203%2C%2007001%20Palma%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Llibres%20Ramon%20Llull%20Palma%20Carrer%20del%20Campana%2C%203%2C%2007001%20Palma%2C%20Illes%20Balears",
   shortDescription: {
     es: "Librería independiente emblemática en el corazón del casco antiguo de Palma, templo de la literatura de calidad, humanidades, historia balear y presentaciones de autores.",
     en: "Iconic independent bookshop tucked in Palma's historic old town, celebrated for curated literary fiction, humanities, Balearic history, and intimate author talks.",
@@ -100,13 +94,6 @@ export const llibres_ramon_llull_palma: ServiceItem = {
       "Schneller Bestellservice für spanische und internationale Publikationen",
       "Veranstaltung von Buchpräsentationen, Signierstunden und literarischen Events",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 310,
-      url: "https://www.google.com/maps/search/?api=1&query=Llibres%20Ramon%20Llull%20Palma%20Carrer%20del%20Campana%2C%203%2C%2007001%20Palma%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

@@ -28,9 +28,6 @@ export const colmadoSantoDomingoPalma: ServiceItem = {
   email: "info@colmadosantodomingo.com",
   website: "https://colmadosantodomingo.com",
   menuUrl: "https://colmadosantodomingo.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Colmado+Santo+Domingo+Sant+Domingo+1+Palma+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Colmado+Santo+Domingo+Palma",
-  bingMapsUrl: "https://www.bing.com/maps?q=Colmado+Santo+Domingo+Palma",
   tags: [
     "zona:palma",
     "zona:casco-antiguo",
@@ -148,7 +145,7 @@ export const colmadoSantoDomingoPalma: ServiceItem = {
       comment:
         "La millor sobrassada de porc negre de Palma sense cap dubte. L'atenció d'en Pedro és excel·lent i t'ho envasen al buit al moment.",
       date: "2026-08-11",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
     },
     {
@@ -158,7 +155,7 @@ export const colmadoSantoDomingoPalma: ServiceItem = {
       comment:
         "Wunderbarer historischer Laden! Die Beratung war fantastisch und die Sobrasada vom schwarzen Schwein schmeckt unvergleichlich gut. Ein Muss in Palma!",
       date: "2026-07-27",
-      platform: "google_maps",
+      platform: "direct",
       language: "de",
     },
   ],

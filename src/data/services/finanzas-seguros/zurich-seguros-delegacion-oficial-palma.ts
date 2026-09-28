@@ -31,12 +31,6 @@ export const zurich_seguros_delegacion_oficial_palma: ServiceItem = {
   schedule: "Lunes a Jueves: 09:00 - 18:00 | Viernes: 09:00 - 15:00 | Sábado y Domingo: Cerrado",
   image: "/images/services/zurich-seguros-delegacion-oficial-palma.jpg",
   gallery: ["/images/services/zurich-seguros-delegacion-oficial-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Zurich%20Seguros%20Delegaci%C3%B3n%20Oficial%20Palma%20Avinguda%20de%20Gabriel%20Alomar%2C%2027%2C%2007006%20Palma%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Zurich%20Seguros%20Delegaci%C3%B3n%20Oficial%20Palma%20Avinguda%20de%20Gabriel%20Alomar%2C%2027%2C%2007006%20Palma%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Zurich%20Seguros%20Delegaci%C3%B3n%20Oficial%20Palma%20Avinguda%20de%20Gabriel%20Alomar%2C%2027%2C%2007006%20Palma%2C%20Illes%20Balears",
   shortDescription: {
     es: "Delegación oficial de Zurich Seguros en Palma, ofreciendo pólizas de alta cobertura para villas residenciales, seguros de embarcaciones y yates, planes de pensiones y coberturas integrales para empresas en Baleares.",
     en: "Official Zurich Insurance agency in Palma, providing high-coverage policies for luxury villas, yacht and boat marine insurance, pension schemes, and commercial corporate protection.",
@@ -100,13 +94,6 @@ export const zurich_seguros_delegacion_oficial_palma: ServiceItem = {
       "Gewerbeversicherungen, Betriebshaftpflicht, Ertragsausfall und Flottenversicherungen",
       "Private Rentenversicherungen, Lebensversicherungen und kapitalbildende Vorsorgepläne",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 220,
-      url: "https://www.google.com/maps/search/?api=1&query=Zurich%20Seguros%20Delegaci%C3%B3n%20Oficial%20Palma%20Avinguda%20de%20Gabriel%20Alomar%2C%2027%2C%2007006%20Palma%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

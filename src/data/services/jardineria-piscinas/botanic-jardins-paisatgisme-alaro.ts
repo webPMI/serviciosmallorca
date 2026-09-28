@@ -31,12 +31,6 @@ export const botanic_jardins_paisatgisme_alaro: ServiceItem = {
   schedule: "Lunes a Viernes de 07:30 a 16:30",
   image: "/images/services/botanic-jardins-paisatgisme-alaro.jpg",
   gallery: ["/images/services/botanic-jardins-paisatgisme-alaro.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Botanic%20Jardins%20%26%20Paisatgisme%20Alar%C3%B3%20Carrer%20de%20Joan%20Alcover%2C%2018%2C%2007340%20Alar%C3%B3%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Botanic%20Jardins%20%26%20Paisatgisme%20Alar%C3%B3%20Carrer%20de%20Joan%20Alcover%2C%2018%2C%2007340%20Alar%C3%B3%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Botanic%20Jardins%20%26%20Paisatgisme%20Alar%C3%B3%20Carrer%20de%20Joan%20Alcover%2C%2018%2C%2007340%20Alar%C3%B3%2C%20Illes%20Balears",
   shortDescription: {
     es: "Estudio de paisajismo y jardinería sostenible en Alaró. Diseño de jardines secos mediterráneos, xerojardinería, podas de altura e iluminación exterior para fincas.",
     en: "Sustainable landscaping and garden design studio in Alaró. Mediterranean dry gardens, xeriscaping, tree pruning, and architectural lighting for fincas.",
@@ -110,13 +104,6 @@ export const botanic_jardins_paisatgisme_alaro: ServiceItem = {
     en: ["Sustainable Mediterranean landscaping", "Water-wise xeriscaping", "High-reach olive & palm tree surgery"],
     ca: ["Paisatgisme mediterrani sostenible", "Xerojardineria d'estalvi hídric", "Poda d'alçada d'oliveres"],
     de: ["Nachhaltiger Fincagartenbau", "Mediterrane Trockengärten", "Seilkletter-Baumpflege"],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 90,
-      url: "https://www.google.com/maps/search/?api=1&query=Botanic%20Jardins%20%26%20Paisatgisme%20Alar%C3%B3%20Carrer%20de%20Joan%20Alcover%2C%2018%2C%2007340%20Alar%C3%B3%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

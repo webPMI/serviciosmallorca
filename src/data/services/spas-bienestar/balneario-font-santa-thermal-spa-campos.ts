@@ -31,12 +31,6 @@ export const balneario_font_santa_thermal_spa_campos: ServiceItem = {
   schedule: "Circuito Termal y Spa: 09:00 - 21:00",
   image: "/images/services/balneario-font-santa-thermal-spa-campos.jpg",
   gallery: ["/images/services/balneario-font-santa-thermal-spa-campos.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Fontsanta%20Hotel%20Thermal%20Spa%20%26%20Wellness%20Campos%20Ctra.%20Campos%20a%20Sa%20Col%C3%B2nia%20de%20Sant%20Jordi%20Km%208.2%2C%2007638%20Campos",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Fontsanta%20Hotel%20Thermal%20Spa%20%26%20Wellness%20Campos%20Ctra.%20Campos%20a%20Sa%20Col%C3%B2nia%20de%20Sant%20Jordi%20Km%208.2%2C%2007638%20Campos",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Fontsanta%20Hotel%20Thermal%20Spa%20%26%20Wellness%20Campos%20Ctra.%20Campos%20a%20Sa%20Col%C3%B2nia%20de%20Sant%20Jordi%20Km%208.2%2C%2007638%20Campos",
   shortDescription: {
     es: "El único balneario de aguas termales mineromedicinales naturales de las Islas Baleares (38°C), circuito hidrotermal y tratamientos dérmicos.",
     en: "The only natural mineral-medicinal thermal spring spa in the Balearic Islands (38°C), featuring hydrothermal baths and wellness therapies.",
@@ -100,13 +94,6 @@ export const balneario_font_santa_thermal_spa_campos: ServiceItem = {
       "Tiefengewebsmassagen und Meersalz-Körperrituale",
       "Mehrtägige Detox- und Anti-Stress-Kuren",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 420,
-      url: "https://www.google.com/maps/search/?api=1&query=Fontsanta%20Hotel%20Thermal%20Spa%20%26%20Wellness%20Campos%20Ctra.%20Campos%20a%20Sa%20Col%C3%B2nia%20de%20Sant%20Jordi%20Km%208.2%2C%2007638%20Campos",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

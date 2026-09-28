@@ -81,23 +81,6 @@ export const mercatSantaCatalinaPalma: ServiceItem = {
     ca: "Construït el 1905 per abastir el barri pescador de Santa Catalina, avui és punt de trobada entre gastronomia tradicional i vida mediterrània.",
     de: "1905 für die Fischerfamilien von Santa Catalina erbaut, verbindet der Markt heute historische Tradition mit moderner Gastronomieszene.",
   },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.6,
-      reviewCount: 9400,
-      url: "https://www.google.com/maps/search/?api=1&query=Mercat+de+Santa+Catalina+Palma",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Mercat+de+Santa+Catalina+Palma",
-    },
-    bingMaps: {
-      rating: 4.6,
-      reviewCount: 620,
-      url: "https://www.bing.com/maps?q=Mercat+de+Santa+Catalina+Palma",
-    },
-    totalReviewsAggregated: 10020,
-    overallWeightedRating: 4.6,
-  },
   reviews: [],
   socialLinks: {
     instagram: "https://instagram.com/mercatsantacatalina",
@@ -120,9 +103,6 @@ export const mercatSantaCatalinaPalma: ServiceItem = {
     },
   ],
   authorityProfiles: [],
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Mercat+de+Santa+Catalina+Palma",
-  appleMapsUrl: "https://maps.apple.com/?q=Mercat+de+Santa+Catalina+Palma",
-  bingMapsUrl: "https://www.bing.com/maps?q=Mercat+de+Santa+Catalina+Palma",
   phone: "+34 971 730 710",
   whatsapp: "+34 971 730 710",
   website: "https://mercatdesantacatalina.com",

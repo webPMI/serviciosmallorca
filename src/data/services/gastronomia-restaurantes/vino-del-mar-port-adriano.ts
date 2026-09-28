@@ -27,9 +27,6 @@ export const vinoDelMarPortAdriano: ServiceItem = {
   email: "info@vinodelmar.es",
   website: "https://vinodelmar.es",
   menuUrl: "https://vinodelmar.es",
-  googleMapsUrl: "https://www.google.com/maps/search/Restaurante+Vino+del+Mar+Port+Adriano+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante+Vino+del+Mar+Port+Adriano",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante+Vino+del+Mar+Port+Adriano",
   tags: [
     "zona:calvia-andratx",
     "zona:port-adriano",

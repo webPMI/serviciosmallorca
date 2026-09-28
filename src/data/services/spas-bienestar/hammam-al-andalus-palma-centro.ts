@@ -29,8 +29,6 @@ export const hammam_al_andalus_palma_centro: ServiceItem = {
   image: "/images/spas/hammam-al-andalus-palma-centro.jpg",
   gallery: ["/images/spas/hammam-al-andalus-palma-centro.jpg", "/images/categories/salud.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=13008018",
-  appleMapsUrl: "https://maps.apple.com/?q=Hammam%20Al%20%C3%81ndalus%20Palma+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Hammam%20Al%20%C3%81ndalus%20Palma+Mallorca",
   shortDescription: {
     es: "Auténticos baños árabes en el casco antiguo de Palma con salas de agua templada, caliente y fría, vapor y kessa.",
     en: "Authentic Arab baths in Palma's historic old town with cold, warm and hot water pools, steam and kessa massage.",
@@ -94,13 +92,6 @@ export const hammam_al_andalus_palma_centro: ServiceItem = {
       "Wellness- und Regenerationstherapien",
       "Kontinuierliche medizinische Nachbetreuung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 620,
-      url: "https://www.google.com/maps?cid=13008018",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

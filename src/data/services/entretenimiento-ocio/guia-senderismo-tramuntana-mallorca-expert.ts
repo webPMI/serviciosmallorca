@@ -31,12 +31,6 @@ export const guia_senderismo_tramuntana_mallorca_expert: ServiceItem = {
   schedule: "Diario: 07:00 - 19:00 (Septiembre a Junio)",
   image: "/images/services/guia-senderismo-tramuntana-mallorca-expert.jpg",
   gallery: ["/images/services/guia-senderismo-tramuntana-mallorca-expert.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Tramuntana%20Trekking%20Expert%20Gu%C3%ADas%20de%20Monta%C3%B1a%20Soller%20Pla%C3%A7a%20de%20la%20Constituci%C3%B3%2C%201%2C%2007100%20S%C3%B3ller",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Tramuntana%20Trekking%20Expert%20Gu%C3%ADas%20de%20Monta%C3%B1a%20Soller%20Pla%C3%A7a%20de%20la%20Constituci%C3%B3%2C%201%2C%2007100%20S%C3%B3ller",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Tramuntana%20Trekking%20Expert%20Gu%C3%ADas%20de%20Monta%C3%B1a%20Soller%20Pla%C3%A7a%20de%20la%20Constituci%C3%B3%2C%201%2C%2007100%20S%C3%B3ller",
   shortDescription: {
     es: "Guías de montaña certificados UIMLA en la Sierra de Tramuntana Patrimonio UNESCO: rutas del GR-221 Pedra en Sec, rutas al Puig Major, Barranc de Biniaraix y paso de sa Costera.",
     en: "UIMLA-certified mountain guides in the UNESCO Sierra de Tramuntana: GR-221 Pedra en Sec long-distance route, Puig Major, Biniaraix Gorge, and Sa Costera coastal path.",
@@ -100,13 +94,6 @@ export const guia_senderismo_tramuntana_mallorca_expert: ServiceItem = {
       "Botanische und geologische Themen-Gruppentouren",
       "Transfers von Palma und Sóller für Routen über 15 km inkl.",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 5,
-      reviewCount: 389,
-      url: "https://www.google.com/maps/search/?api=1&query=Tramuntana%20Trekking%20Expert%20Gu%C3%ADas%20de%20Monta%C3%B1a%20Soller%20Pla%C3%A7a%20de%20la%20Constituci%C3%B3%2C%201%2C%2007100%20S%C3%B3ller",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

@@ -31,12 +31,6 @@ export const ecovinyassa_soller_citricos_ecologicos_huerto: ServiceItem = {
   schedule: "Lunes, Miércoles y Viernes: 10:00 - 15:00 (Con reserva previa)",
   image: "/images/services/ecovinyassa-soller-citricos-ecologicos-huerto.jpg",
   gallery: ["/images/services/ecovinyassa-soller-citricos-ecologicos-huerto.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Ecovinyassa%20S%C3%B3ller%20-%20Huerto%20de%20Naranjos%20Ecol%C3%B3gicos%20%26%20Visitas%20Ctra.%20Fornalutx%2C%20s%2Fn%20(Sa%20Vinyassa)%2C%2007100%20S%C3%B3ller",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Ecovinyassa%20S%C3%B3ller%20-%20Huerto%20de%20Naranjos%20Ecol%C3%B3gicos%20%26%20Visitas%20Ctra.%20Fornalutx%2C%20s%2Fn%20(Sa%20Vinyassa)%2C%2007100%20S%C3%B3ller",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Ecovinyassa%20S%C3%B3ller%20-%20Huerto%20de%20Naranjos%20Ecol%C3%B3gicos%20%26%20Visitas%20Ctra.%20Fornalutx%2C%20s%2Fn%20(Sa%20Vinyassa)%2C%2007100%20S%C3%B3ller",
   shortDescription: {
     es: "Finca de 18.000 m² a los pies del macizo del Penyal des Migdia: cultivo ecológico de naranjas y limones de Sóller, historia y cata de zumo fresco.",
     en: "Picturesque 18,000 sqm organic citrus orchard beneath the Tramuntana peaks in Sóller: heritage oranges, lemons, and freshly squeezed tastings.",
@@ -100,13 +94,6 @@ export const ecovinyassa_soller_citricos_ecologicos_huerto: ServiceItem = {
       "Versand frisch gepflückter Kisten mit Bio-Orangen und Zitronen",
       "Private Fotoshootings und naturverbundene Veranstaltungen im Orangenhain",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 680,
-      url: "https://www.google.com/maps/search/?api=1&query=Ecovinyassa%20S%C3%B3ller%20-%20Huerto%20de%20Naranjos%20Ecol%C3%B3gicos%20%26%20Visitas%20Ctra.%20Fornalutx%2C%20s%2Fn%20(Sa%20Vinyassa)%2C%2007100%20S%C3%B3ller",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

@@ -29,8 +29,6 @@ export const NORDIC_WALKING_TRAMUNTANA_SOLLER: ServiceItem = {
   image: "/images/sports/nordic-walking-tramuntana-soller.jpg",
   gallery: ["/images/sports/nordic-walking-tramuntana-soller.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007098",
-  appleMapsUrl: "https://maps.apple.com/?q=Nordic%20Walking%20Tramuntana%20S%C3%B3ller+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Nordic%20Walking%20Tramuntana%20S%C3%B3ller+Mallorca",
   shortDescription: {
     es: "Escuela y rutas guiadas de Nordic Walking y senderismo activo por los olivares y senderos de piedra en seco.",
     en: "Nordic Walking academy and guided active trekking through ancient olive groves and stone trails.",
@@ -94,13 +92,6 @@ export const NORDIC_WALKING_TRAMUNTANA_SOLLER: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 180,
-      url: "https://www.google.com/maps?cid=12007098",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

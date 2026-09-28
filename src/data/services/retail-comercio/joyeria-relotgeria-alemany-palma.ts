@@ -76,10 +76,6 @@ export const joyeriaRelotgeriaAlemanyPalma: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Joyer%C3%ADa%20Relojer%C3%ADa%20Nicol%C3%A1s%20Joyeros%201925%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Joyer%C3%ADa%20Relojer%C3%ADa%20Nicol%C3%A1s%20Joyeros%201925%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Joyer%C3%ADa%20Relojer%C3%ADa%20Nicol%C3%A1s%20Joyeros%201925%20Mallorca",
   pricing: {
     startingPrice: "Alta joyería y relojería suiza",
     rateType: "tiered",
@@ -106,21 +102,4 @@ export const joyeriaRelotgeriaAlemanyPalma: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 480,
-      url: "https://www.google.com/maps/search/?api=1&query=Joyer%C3%ADa%20Relojer%C3%ADa%20Nicol%C3%A1s%20Joyeros%201925%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Joyer%C3%ADa%20Relojer%C3%ADa%20Nicol%C3%A1s%20Joyeros%201925%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 48,
-      url: "https://www.bing.com/maps?q=Joyer%C3%ADa%20Relojer%C3%ADa%20Nicol%C3%A1s%20Joyeros%201925%20Mallorca",
-    },
-    totalReviewsAggregated: 528,
-    overallWeightedRating: 4.9,
-  },
 };

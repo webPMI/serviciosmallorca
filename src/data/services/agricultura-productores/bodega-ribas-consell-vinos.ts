@@ -76,9 +76,6 @@ export const bodegaRibasConsellVinos: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Bodega%20Ribas%20Consell%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Bodega%20Ribas%20Consell%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Bodega%20Ribas%20Consell%20Mallorca",
   pricing: {
     startingPrice: "Visita y cata desde 25€",
     rateType: "tiered",
@@ -105,21 +102,4 @@ export const bodegaRibasConsellVinos: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 680,
-      url: "https://www.google.com/maps/search/?api=1&query=Bodega%20Ribas%20Consell%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Bodega%20Ribas%20Consell%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 68,
-      url: "https://www.bing.com/maps?q=Bodega%20Ribas%20Consell%20Mallorca",
-    },
-    totalReviewsAggregated: 748,
-    overallWeightedRating: 4.9,
-  },
 };

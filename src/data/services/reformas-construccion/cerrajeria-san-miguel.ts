@@ -21,9 +21,6 @@ export const cerrajeriaSanMiguel: ServiceItem = {
   whatsapp: "+34 629 11 22 33",
   email: "info@cerrajeriasanmiguel.com",
   website: "https://cerrajeriasanmiguel.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Cerrajeria%20San%20Miguel%20Palma",
-  appleMapsUrl: "https://maps.apple.com/?q=Cerrajeria%20San%20Miguel%20Palma&ll=39.5745,2.6521",
-  bingMapsUrl: "https://www.bing.com/maps?where1=Cerrajeria%20San%20Miguel%20Palma",
   coordinates: { lat: 39.5745, lng: 2.6521 },
   schedule: "Lunes a Viernes: 08:30 - 19:30 | Servicio de Urgencias 24h",
   lastVerifiedAt: "2026-08-25",
@@ -127,30 +124,13 @@ export const cerrajeriaSanMiguel: ServiceItem = {
       instagramHandle: "@cerrajeriasanmiguel",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 280,
-      url: "https://www.google.com/maps/search/?api=1&query=Cerrajeria%20San%20Miguel%20Palma",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Cerrajeria%20San%20Miguel%20Palma&ll=39.5745,2.6521",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 280,
-      url: "https://www.bing.com/maps?where1=Cerrajeria%20San%20Miguel%20Palma",
-    },
-    totalReviewsAggregated: 280,
-    overallWeightedRating: 4.8,
-  },
   reviews: [
     {
       id: "rev-csm-1",
       authorName: "Rafel Vicens",
       rating: 5,
       date: "2025-04-22",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
       comment: "Serrallers de tota la vida a Palma. Varen obrir la porta en 10 minuts sense fer ni una sola ratllada.",
       verifiedCustomer: true,
@@ -160,7 +140,7 @@ export const cerrajeriaSanMiguel: ServiceItem = {
       authorName: "Oliver Grant",
       rating: 5,
       date: "2025-06-15",
-      platform: "google_maps",
+      platform: "direct",
       language: "en",
       comment:
         "Locked myself out of my apartment in Palma. Arrived in 20 minutes and charged exactly the quote given on the phone.",

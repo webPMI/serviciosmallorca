@@ -31,12 +31,6 @@ export const la_industrial_jugueteria_palma_1898: ServiceItem = {
   schedule: "Lunes a Viernes: 10:00 - 13:30, 16:30 - 20:00; Sábado: 10:00 - 14:00",
   image: "/images/services/la-industrial-jugueteria-palma-1898.jpg",
   gallery: ["/images/services/la-industrial-jugueteria-palma-1898.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=La%20Industrial%20Jugueter%C3%ADa%20Hist%C3%B3rica%20Palma%20(1898)%20Carrer%20del%20Pas%20d'en%20Quint%2C%208%2C%2007001%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=La%20Industrial%20Jugueter%C3%ADa%20Hist%C3%B3rica%20Palma%20(1898)%20Carrer%20del%20Pas%20d'en%20Quint%2C%208%2C%2007001%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=La%20Industrial%20Jugueter%C3%ADa%20Hist%C3%B3rica%20Palma%20(1898)%20Carrer%20del%20Pas%20d'en%20Quint%2C%208%2C%2007001%20Palma",
   shortDescription: {
     es: "La juguetería más antigua de Mallorca y una de las más longevas de España (fundada en 1898): juguetes de madera, miniaturas, maquetas y muñecas clásicas.",
     en: "Mallorca's oldest toy shop and one of Spain's oldest (established in 1898): classic wooden toys, collector miniatures, train sets, and porcelain dolls.",
@@ -100,13 +94,6 @@ export const la_industrial_jugueteria_palma_1898: ServiceItem = {
       "Individuelle Kaufberatung nach Entwicklungsstufen",
       "Liebevoller traditioneller Geschenkeinpackservice",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 410,
-      url: "https://www.google.com/maps/search/?api=1&query=La%20Industrial%20Jugueter%C3%ADa%20Hist%C3%B3rica%20Palma%20(1898)%20Carrer%20del%20Pas%20d'en%20Quint%2C%208%2C%2007001%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

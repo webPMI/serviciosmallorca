@@ -76,10 +76,6 @@ export const ferraturConstruccionesCalvia: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Ferratur%20Construcciones%20%26%20Villas%20Calvi%C3%A0%20(1978)%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Ferratur%20Construcciones%20%26%20Villas%20Calvi%C3%A0%20(1978)%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Ferratur%20Construcciones%20%26%20Villas%20Calvi%C3%A0%20(1978)%20Mallorca",
   pricing: {
     startingPrice: "Presupuesto y atención a medida",
     rateType: "tiered",
@@ -106,21 +102,4 @@ export const ferraturConstruccionesCalvia: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 320,
-      url: "https://www.google.com/maps/search/?api=1&query=Ferratur%20Construcciones%20%26%20Villas%20Calvi%C3%A0%20(1978)%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Ferratur%20Construcciones%20%26%20Villas%20Calvi%C3%A0%20(1978)%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.7,
-      reviewCount: 32,
-      url: "https://www.bing.com/maps?q=Ferratur%20Construcciones%20%26%20Villas%20Calvi%C3%A0%20(1978)%20Mallorca",
-    },
-    totalReviewsAggregated: 352,
-    overallWeightedRating: 4.8,
-  },
 };

@@ -28,9 +28,6 @@ export const restauranteElPenon1957Palma: ServiceItem = {
   email: "info@elpenon1957.com",
   website: "https://www.elpenon1957.com",
   menuUrl: "https://www.elpenon1957.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Restaurante+El+Penon+1957+Palma+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante+El+Penon+1957+Palma",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante+El+Penon+1957+Palma",
   tags: [
     "zona:palma",
     "zona:coll-d-en-rabassa",

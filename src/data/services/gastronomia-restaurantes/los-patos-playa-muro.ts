@@ -28,9 +28,6 @@ export const losPatosPlayaMuro: ServiceItem = {
   email: "info@lospatosrestaurant.com",
   website: "https://www.lospatosrestaurant.com",
   menuUrl: "https://www.lospatosrestaurant.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Restaurante+Los+Patos+Alcudia+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante+Los+Patos+Alcudia",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante+Los+Patos+Alcudia",
   tags: [
     "zona:alcudia-pollensa",
     "zona:playa-de-muro",

@@ -29,8 +29,6 @@ export const CROSSFIT_MANACOR_BOX: ServiceItem = {
   image: "/images/sports/crossfit-manacor-box.jpg",
   gallery: ["/images/sports/crossfit-manacor-box.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007062",
-  appleMapsUrl: "https://maps.apple.com/?q=CrossFit%20Manacor+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=CrossFit%20Manacor+Mallorca",
   shortDescription: {
     es: "Box oficial afiliado en Manacor con entrenamientos de fuerza, gimnásticos y ambiente de piña.",
     en: "Official affiliate box in Manacor with strength conditioning, gymnastics, and tight community.",
@@ -94,13 +92,6 @@ export const CROSSFIT_MANACOR_BOX: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 250,
-      url: "https://www.google.com/maps?cid=12007062",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

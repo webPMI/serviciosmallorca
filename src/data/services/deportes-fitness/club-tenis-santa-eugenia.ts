@@ -29,8 +29,6 @@ export const CLUB_TENIS_SANTA_EUGENIA: ServiceItem = {
   image: "/images/sports/club-tenis-santa-eugenia.jpg",
   gallery: ["/images/sports/club-tenis-santa-eugenia.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007020",
-  appleMapsUrl: "https://maps.apple.com/?q=Club%20Tennis%20Santa%20Eug%C3%A8nia+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Club%20Tennis%20Santa%20Eug%C3%A8nia+Mallorca",
   shortDescription: {
     es: "Club de raqueta en el Pla de Mallorca con pistas de tierra batida, pádel panorámico y ambiente familiar.",
     en: "Racquet club in central Mallorca with red clay tennis courts, panoramic padel, and family vibe.",
@@ -94,13 +92,6 @@ export const CLUB_TENIS_SANTA_EUGENIA: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 210,
-      url: "https://www.google.com/maps?cid=12007020",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

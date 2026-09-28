@@ -21,10 +21,6 @@ export const fornDeSantJoan: ServiceItem = {
   whatsapp: "+34 971 72 84 22",
   email: "info@fornprojects.com",
   website: "https://forndesantjoan.com",
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Restaurante%20Forn%20de%20Sant%20Joan%20Palma%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante%20Forn%20de%20Sant%20Joan%20Palma%20Mallorca&ll=39.5694,2.6441",
-  bingMapsUrl: "https://www.bing.com/maps?where1=Restaurante%20Forn%20de%20Sant%20Joan%20Palma%20Mallorca",
   coordinates: { lat: 39.5694, lng: 2.6441 },
   schedule: "Lunes a Domingo: 13:00 - 16:00 | 19:30 - 23:30",
   lastVerifiedAt: "2026-08-25",
@@ -129,30 +125,13 @@ export const fornDeSantJoan: ServiceItem = {
       instagramHandle: "@forndesantjoan",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 2150,
-      url: "https://www.google.com/maps/search/?api=1&query=Restaurante%20Forn%20de%20Sant%20Joan%20Palma%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Restaurante%20Forn%20de%20Sant%20Joan%20Palma%20Mallorca&ll=39.5694,2.6441",
-    },
-    bingMaps: {
-      rating: 4.7,
-      reviewCount: 2150,
-      url: "https://www.bing.com/maps?where1=Restaurante%20Forn%20de%20Sant%20Joan%20Palma%20Mallorca",
-    },
-    totalReviewsAggregated: 2150,
-    overallWeightedRating: 4.7,
-  },
   reviews: [
     {
       id: "rev-forn-1",
       authorName: "Marc V.",
       rating: 5,
       date: "2025-10-14",
-      platform: "google_maps",
+      platform: "direct",
       language: "es",
       comment:
         "Una experiencia culinaria imprescindible en Palma. El edificio histórico de La Lonja es espectacular y el tártar de atún con la porcella crujiente son de otro nivel.",
@@ -163,7 +142,7 @@ export const fornDeSantJoan: ServiceItem = {
       authorName: "Sarah Jenkins",
       rating: 5,
       date: "2025-11-02",
-      platform: "google_maps",
+      platform: "direct",
       language: "en",
       comment:
         "Outstanding food and atmosphere in the Old Town. The multi-level architecture is gorgeous and the cocktails were exquisite.",

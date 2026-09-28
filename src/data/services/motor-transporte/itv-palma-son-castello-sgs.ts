@@ -31,12 +31,6 @@ export const itv_palma_son_castello_sgs: ServiceItem = {
   schedule: "Lunes a Viernes: 06:30 - 21:00 | Sábado: 07:30 - 14:00 | Domingo: Cerrado",
   image: "/images/services/itv-palma-son-castello-sgs.jpg",
   gallery: ["/images/services/itv-palma-son-castello-sgs.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Estaci%C3%B3%20ITV%20Palma%20Son%20Castell%C3%B3%20(SGS)%20Gran%20Via%20Asima%2C%2023%2C%20Pol%C3%ADgon%20Son%20Castell%C3%B3%2C%2007009%20Palma%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Estaci%C3%B3%20ITV%20Palma%20Son%20Castell%C3%B3%20(SGS)%20Gran%20Via%20Asima%2C%2023%2C%20Pol%C3%ADgon%20Son%20Castell%C3%B3%2C%2007009%20Palma%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Estaci%C3%B3%20ITV%20Palma%20Son%20Castell%C3%B3%20(SGS)%20Gran%20Via%20Asima%2C%2023%2C%20Pol%C3%ADgon%20Son%20Castell%C3%B3%2C%2007009%20Palma%2C%20Illes%20Balears",
   shortDescription: {
     es: "Estación oficial de Inspección Técnica de Vehículos (ITV) en el polígono Son Castelló de Palma, con líneas para turismos, motocicletas, vehículos industriales y homologaciones.",
     en: "Official vehicle roadworthiness inspection station (ITV) in Palma's Son Castelló industrial park, featuring test lanes for passenger cars, motorbikes, commercial fleets, and import homologations.",
@@ -100,13 +94,6 @@ export const itv_palma_son_castello_sgs: ServiceItem = {
       "Eintragung und Homologation von Anhängerkupplungen, Fahrwerken und Sonderbauten",
       "Ausstellung von Zweitschriften des spanischen Kfz-Scheins (Ficha Técnica)",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.4,
-      reviewCount: 1450,
-      url: "https://www.google.com/maps/search/?api=1&query=Estaci%C3%B3%20ITV%20Palma%20Son%20Castell%C3%B3%20(SGS)%20Gran%20Via%20Asima%2C%2023%2C%20Pol%C3%ADgon%20Son%20Castell%C3%B3%2C%2007009%20Palma%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

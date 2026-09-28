@@ -29,8 +29,6 @@ export const SAMADHI_YOGA_POLLENSA: ServiceItem = {
   image: "/images/sports/samadhi-yoga-pollensa.jpg",
   gallery: ["/images/sports/samadhi-yoga-pollensa.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007078",
-  appleMapsUrl: "https://maps.apple.com/?q=Samadhi%20Yoga%20Pollen%C3%A7a+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Samadhi%20Yoga%20Pollen%C3%A7a+Mallorca",
   shortDescription: {
     es: "Estudio de yoga sereno en Pollença con clases de Hatha, Ashtanga, pranayama y meditación sonora.",
     en: "Serene yoga studio in Pollença offering Hatha, Ashtanga, pranayama, and sound meditation.",
@@ -94,13 +92,6 @@ export const SAMADHI_YOGA_POLLENSA: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 170,
-      url: "https://www.google.com/maps?cid=12007078",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

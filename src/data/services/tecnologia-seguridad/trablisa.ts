@@ -21,9 +21,6 @@ export const trablisaSeguridad: ServiceItem = {
   whatsapp: "+34 971 70 80 90",
   email: "direccion@trablisa.es",
   website: "https://www.trablisa.es",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Trablisa+Seguridad+Palma+Son+Castello",
-  appleMapsUrl: "https://maps.apple.com/?q=Trablisa+Palma",
-  bingMapsUrl: "https://www.bing.com/maps?q=Trablisa+Mallorca",
   coordinates: {
     lat: 39.6052,
     lng: 2.6682,
@@ -185,22 +182,13 @@ export const trablisaSeguridad: ServiceItem = {
       specialty: "Protección Residencial y Perimetral Balear",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.6,
-      reviewCount: 485,
-      url: "https://www.google.com/maps/search/?api=1&query=Trablisa+Seguridad+Palma+Son+Castello",
-    },
-    totalReviewsAggregated: 485,
-    overallWeightedRating: 4.6,
-  },
   reviews: [
     {
       id: "rev-trab-1",
       authorName: "Guillem Sureda",
       rating: 5,
       date: "2025-06-25",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
       comment:
         "Tenim l'alarma de la casa i del negoci amb Trablisa des de fa més de 10 anys. La resposta de la central receptora és immediata.",
@@ -211,7 +199,7 @@ export const trablisaSeguridad: ServiceItem = {
       authorName: "Oliver Wright",
       rating: 5,
       date: "2025-04-14",
-      platform: "google_maps",
+      platform: "direct",
       language: "en",
       comment:
         "Excellent smart alarm setup for our villa in Son Vida. The mobile app and quick response patrol give absolute peace of mind.",

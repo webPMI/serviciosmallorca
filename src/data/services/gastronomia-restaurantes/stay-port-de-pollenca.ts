@@ -27,9 +27,6 @@ export const stayPortDePollenca: ServiceItem = {
   email: "stay@stayrestaurant.com",
   website: "https://stayrestaurant.com",
   menuUrl: "https://stayrestaurant.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Restaurante+Stay+Port+de+Pollenca+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante+Stay+Port+de+Pollenca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante+Stay+Port+de+Pollenca",
   tags: [
     "zona:alcudia-pollensa",
     "zona:port-de-pollenca",

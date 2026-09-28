@@ -31,12 +31,6 @@ export const oli_soller_cooperativa_agricola_sant_bartomeu: ServiceItem = {
   schedule: "Lunes a Viernes: 08:30 - 19:30, Sábados: 09:00 - 14:00",
   image: "/images/services/oli-soller-cooperativa-agricola-sant-bartomeu.jpg",
   gallery: ["/images/services/oli-soller-cooperativa-agricola-sant-bartomeu.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Cooperativa%20Agr%C3%ADcola%20Sant%20Bartomeu%20de%20S%C3%B3ller%20(1899)%20Ctra.%20de%20Fornalutx%2C%208%2C%2007100%20S%C3%B3ller",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Cooperativa%20Agr%C3%ADcola%20Sant%20Bartomeu%20de%20S%C3%B3ller%20(1899)%20Ctra.%20de%20Fornalutx%2C%208%2C%2007100%20S%C3%B3ller",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Cooperativa%20Agr%C3%ADcola%20Sant%20Bartomeu%20de%20S%C3%B3ller%20(1899)%20Ctra.%20de%20Fornalutx%2C%208%2C%2007100%20S%C3%B3ller",
   shortDescription: {
     es: "Cooperativa centenaria fundada en 1899 productora del afamado Aceite de Mallorca DOP de olivos de la Serra y naranjas del valle de Sóller.",
     en: "Centenary cooperative founded in 1899 producing celebrated PDO Mallorca Extra Virgin Olive Oil and Sóller valley citrus.",
@@ -100,13 +94,6 @@ export const oli_soller_cooperativa_agricola_sant_bartomeu: ServiceItem = {
       "Mühlenbesichtigungen mit Olivenöl- und Zitrusverkostung",
       "Mallorquinische Feinkost (Orangenmarmelade, Honig, Meersalz)",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 890,
-      url: "https://www.google.com/maps/search/?api=1&query=Cooperativa%20Agr%C3%ADcola%20Sant%20Bartomeu%20de%20S%C3%B3ller%20(1899)%20Ctra.%20de%20Fornalutx%2C%208%2C%2007100%20S%C3%B3ller",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

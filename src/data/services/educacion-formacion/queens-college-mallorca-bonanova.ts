@@ -31,12 +31,6 @@ export const queens_college_mallorca_bonanova: ServiceItem = {
   schedule: "Lunes a Viernes: 08:30 - 16:30 | Sábado y Domingo: Cerrado",
   image: "/images/services/queens-college-mallorca-bonanova.jpg",
   gallery: ["/images/services/queens-college-mallorca-bonanova.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Queen's%20College%20Mallorca%20Bonanova%20Carrer%20Saridakis%2C%2064%2C%2007015%20Palma%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Queen's%20College%20Mallorca%20Bonanova%20Carrer%20Saridakis%2C%2064%2C%2007015%20Palma%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Queen's%20College%20Mallorca%20Bonanova%20Carrer%20Saridakis%2C%2064%2C%2007015%20Palma%2C%20Illes%20Balears",
   shortDescription: {
     es: "Colegio británico internacional fundado en 1977 en La Bonanova (Palma), impartiendo el Currículo Nacional Británico desde educación infantil hasta Bachillerato (IGCSE y A-Levels) con vistas a la bahía de Palma.",
     en: "Prestigious British international school founded in 1977 in La Bonanova (Palma), delivering the British National Curriculum from Early Years to A-Levels overlooking Palma Bay.",
@@ -100,13 +94,6 @@ export const queens_college_mallorca_bonanova: ServiceItem = {
       "Gymnasiale Oberstufe (Sixth Form) mit international anerkanntem A-Level-Abitur",
       "Vielfältige Arbeitsgemeinschaften: Instrumentalunterricht, Schultheater, Fußball und Naturwissenschaften",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 165,
-      url: "https://www.google.com/maps/search/?api=1&query=Queen's%20College%20Mallorca%20Bonanova%20Carrer%20Saridakis%2C%2064%2C%2007015%20Palma%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

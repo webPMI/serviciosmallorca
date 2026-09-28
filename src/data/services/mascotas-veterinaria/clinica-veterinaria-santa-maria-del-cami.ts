@@ -31,12 +31,6 @@ export const clinica_veterinaria_santa_maria_del_cami: ServiceItem = {
   schedule: "Lunes a Viernes: 09:30 - 13:30, 16:30 - 20:00 | Sábado: 10:00 - 13:30 | Domingo: Cerrado",
   image: "/images/services/clinica-veterinaria-santa-maria-del-cami.jpg",
   gallery: ["/images/services/clinica-veterinaria-santa-maria-del-cami.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica%20Veterin%C3%A0ria%20Santa%20Maria%20del%20Cam%C3%AD%20Pla%C3%A7a%20Nova%2C%208%2C%2007320%20Santa%20Maria%20del%20Cam%C3%AD%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Cl%C3%ADnica%20Veterin%C3%A0ria%20Santa%20Maria%20del%20Cam%C3%AD%20Pla%C3%A7a%20Nova%2C%208%2C%2007320%20Santa%20Maria%20del%20Cam%C3%AD%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Cl%C3%ADnica%20Veterin%C3%A0ria%20Santa%20Maria%20del%20Cam%C3%AD%20Pla%C3%A7a%20Nova%2C%208%2C%2007320%20Santa%20Maria%20del%20Cam%C3%AD%2C%20Illes%20Balears",
   shortDescription: {
     es: "Clínica veterinaria de proximidad en Santa Maria del Camí, ofreciendo medicina preventiva, vacunaciones, cirugía de tejidos blandos, odontología y diagnóstico ecográfico para perros y gatos.",
     en: "Community veterinary clinic in Santa Maria del Camí providing preventive medicine, vaccinations, soft-tissue surgery, dental scaling, and ultrasound diagnostics for pets.",
@@ -100,13 +94,6 @@ export const clinica_veterinaria_santa_maria_del_cami: ServiceItem = {
       "Weichteilchirurgie: schonende Kastrationen und Entfernung von Hautzubildungen",
       "Ultraschall-Zahnsteinentfernung und Politur zur Vorbeugung von Parodontitis",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 155,
-      url: "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica%20Veterin%C3%A0ria%20Santa%20Maria%20del%20Cam%C3%AD%20Pla%C3%A7a%20Nova%2C%208%2C%2007320%20Santa%20Maria%20del%20Cam%C3%AD%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

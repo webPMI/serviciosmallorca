@@ -76,10 +76,6 @@ export const hospitalVeterinarioCanisMallorca: ServiceItem = {
       close: "23:59",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Hospital%20Veterinario%20Canis%20Palma%2024h%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Hospital%20Veterinario%20Canis%20Palma%2024h%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Hospital%20Veterinario%20Canis%20Palma%2024h%20Mallorca",
   pricing: {
     startingPrice: "Consulta urgencias desde 55€",
     rateType: "tiered",
@@ -106,21 +102,4 @@ export const hospitalVeterinarioCanisMallorca: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 1420,
-      url: "https://www.google.com/maps/search/?api=1&query=Hospital%20Veterinario%20Canis%20Palma%2024h%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Hospital%20Veterinario%20Canis%20Palma%2024h%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.7,
-      reviewCount: 142,
-      url: "https://www.bing.com/maps?q=Hospital%20Veterinario%20Canis%20Palma%2024h%20Mallorca",
-    },
-    totalReviewsAggregated: 1562,
-    overallWeightedRating: 4.8,
-  },
 };

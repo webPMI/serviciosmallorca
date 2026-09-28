@@ -31,12 +31,6 @@ export const reformas_integrales_mallorca_nord_alcudia: ServiceItem = {
   schedule: "Lunes a Viernes: 08:00 - 18:00",
   image: "/images/services/reformas-integrales-mallorca-nord-alcudia.jpg",
   gallery: ["/images/services/reformas-integrales-mallorca-nord-alcudia.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Mallorca%20Nord%20Reformes%20%26%20Construcci%C3%B3%20Alc%C3%BAdia%20Passeig%20Pere%20Ventayol%2C%2014%2C%2007400%20Alc%C3%BAdia",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Mallorca%20Nord%20Reformes%20%26%20Construcci%C3%B3%20Alc%C3%BAdia%20Passeig%20Pere%20Ventayol%2C%2014%2C%2007400%20Alc%C3%BAdia",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Mallorca%20Nord%20Reformes%20%26%20Construcci%C3%B3%20Alc%C3%BAdia%20Passeig%20Pere%20Ventayol%2C%2014%2C%2007400%20Alc%C3%BAdia",
   shortDescription: {
     es: "Empresa constructora especializada en reformas integrales de viviendas históricas en el casco antiguo y chalets costeros.",
     en: "Construction company specializing in comprehensive renovations of historic townhouses and coastal villas in Northern Mallorca.",
@@ -100,13 +94,6 @@ export const reformas_integrales_mallorca_nord_alcudia: ServiceItem = {
       "Wärmedämmung und Wärmepumpen",
       "Fugenlose Mikrozementböden",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 92,
-      url: "https://www.google.com/maps/search/?api=1&query=Mallorca%20Nord%20Reformes%20%26%20Construcci%C3%B3%20Alc%C3%BAdia%20Passeig%20Pere%20Ventayol%2C%2014%2C%2007400%20Alc%C3%BAdia",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

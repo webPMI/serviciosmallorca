@@ -28,9 +28,6 @@ export const rafaNadalAcademyManacor: ServiceItem = {
   email: "info@rafanadalacademy.com",
   website: "https://www.rafanadalacademy.com",
   menuUrl: "https://www.rafanadalacademy.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Rafa+Nadal+Academy+by+Movistar+Manacor+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Rafa+Nadal+Academy+Manacor",
-  bingMapsUrl: "https://www.bing.com/maps?q=Rafa+Nadal+Academy+Manacor",
   tags: [
     "zona:manacor-llevant",
     "zona:manacor",
@@ -148,7 +145,7 @@ export const rafaNadalAcademyManacor: ServiceItem = {
       comment:
         "Instalaciones espectaculares de primer nivel mundial. El museo es imprescindible y el ambiente deportivo que se respira en toda la academia es único.",
       date: "2026-08-19",
-      platform: "google_maps",
+      platform: "direct",
       language: "es",
     },
     {
@@ -158,7 +155,7 @@ export const rafaNadalAcademyManacor: ServiceItem = {
       comment:
         "World-class facilities, fantastic coaching staff, and exceptional atmosphere. The adult camp exceeded all expectations!",
       date: "2026-07-28",
-      platform: "google_maps",
+      platform: "direct",
       language: "en",
     },
   ],

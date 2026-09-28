@@ -31,12 +31,6 @@ export const peluqueria_canina_mallorca_the_dog_spa_palma: ServiceItem = {
   schedule: "Lunes a Sábado: 09:00 - 19:30",
   image: "/images/services/peluqueria-canina-mallorca-the-dog-spa-palma.jpg",
   gallery: ["/images/services/peluqueria-canina-mallorca-the-dog-spa-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=The%20Dog%20Spa%20Peluquer%C3%ADa%20Canina%20%26%20Est%C3%A9tica%20Felina%20Palma%20Carrer%20de%20Joan%20Mir%C3%B3%2C%20148%2C%2007015%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=The%20Dog%20Spa%20Peluquer%C3%ADa%20Canina%20%26%20Est%C3%A9tica%20Felina%20Palma%20Carrer%20de%20Joan%20Mir%C3%B3%2C%20148%2C%2007015%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=The%20Dog%20Spa%20Peluquer%C3%ADa%20Canina%20%26%20Est%C3%A9tica%20Felina%20Palma%20Carrer%20de%20Joan%20Mir%C3%B3%2C%20148%2C%2007015%20Palma",
   shortDescription: {
     es: "Peluquería canina y felina premium en Palma con estilistas especializados por razas: baño medicado, corte de raza, tratamientos de spa anti-estrés y servicio de recogida y entrega a domicilio.",
     en: "Premium dog and cat grooming salon in Palma with breed-specialist stylists: medicated baths, show-cut styling, anti-stress spa treatments, and home pick-up & drop-off.",
@@ -100,13 +94,6 @@ export const peluqueria_canina_mallorca_the_dog_spa_palma: ServiceItem = {
       "Spa-Behandlungen: Vulkanschlamm, Arganöl, Kopfmassage und Aromatherapie",
       "Ohrenreinigung, Nagelschnitt und Analdrüsen im Service inklusive",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 398,
-      url: "https://www.google.com/maps/search/?api=1&query=The%20Dog%20Spa%20Peluquer%C3%ADa%20Canina%20%26%20Est%C3%A9tica%20Felina%20Palma%20Carrer%20de%20Joan%20Mir%C3%B3%2C%20148%2C%2007015%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

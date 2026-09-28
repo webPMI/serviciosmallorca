@@ -28,10 +28,6 @@ export const clinica_psicologia_palma_mente_sana: ServiceItem = {
   schedule: "Lunes a Viernes: 09:00 - 20:00 | Sábado: 10:00 - 14:00",
   image: "/images/services/clinica-psicologia-palma-mente-sana.jpg",
   gallery: ["/images/services/clinica-psicologia-palma-mente-sana.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica+Psicolog%C3%ADa+Mente+Sana+Palma+Carrer+dels+Oms+32",
-  appleMapsUrl: "https://maps.apple.com/?q=Clinica+Psicologia+Mente+Sana+Palma",
-  bingMapsUrl: "https://bing.com/maps?q=Clinica+Psicologia+Mente+Sana+Palma",
   shortDescription: {
     es: "Clínica de psicología en el centro de Palma con terapia cognitivo-conductual, EMDR y psicología infanto-juvenil. Sesiones presenciales y online disponibles.",
     en: "Psychology clinic in central Palma offering cognitive-behavioral therapy, EMDR, and child and adolescent psychology. In-person and online sessions available.",
@@ -95,13 +91,6 @@ export const clinica_psicologia_palma_mente_sana: ServiceItem = {
       "Kinder- und Jugendpsychologie und Elterncoaching",
       "Paartherapie und Familienmediation",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 213,
-      url: "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica+Psicolog%C3%ADa+Mente+Sana+Palma",
-    },
   },
   createdAt: "2026-09-05",
   lastUpdatedAt: "2026-09-05",

@@ -31,12 +31,6 @@ export const rent_march_bike_pollensa_cycling: ServiceItem = {
   schedule: "Lunes a Domingo: 08:30 - 13:30, 16:30 - 19:30 (Temporada ciclista)",
   image: "/images/services/rent-march-bike-pollensa-cycling.jpg",
   gallery: ["/images/services/rent-march-bike-pollensa-cycling.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Rent%20March%20Bike%20Pollen%C3%A7a%20(1994)%20-%20Alquiler%20de%20Bicicletas%20%26%20Ciclismo%20Carrer%20de%20Joan%20XXIII%2C%2089%2C%2007470%20Port%20de%20Pollen%C3%A7a",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Rent%20March%20Bike%20Pollen%C3%A7a%20(1994)%20-%20Alquiler%20de%20Bicicletas%20%26%20Ciclismo%20Carrer%20de%20Joan%20XXIII%2C%2089%2C%2007470%20Port%20de%20Pollen%C3%A7a",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Rent%20March%20Bike%20Pollen%C3%A7a%20(1994)%20-%20Alquiler%20de%20Bicicletas%20%26%20Ciclismo%20Carrer%20de%20Joan%20XXIII%2C%2089%2C%2007470%20Port%20de%20Pollen%C3%A7a",
   shortDescription: {
     es: "Tienda histórica y taller de ciclismo en Port de Pollença desde 1994: alquiler de bicicletas de carretera de carbono de alta gama, e-bikes y servicio técnico para rutas a Formentor y Sa Calobra.",
     en: "Historic bike rental center in Port de Pollença since 1994: high-end carbon road bikes, e-bikes, and mechanic support for Formentor and Sa Calobra rides.",
@@ -100,13 +94,6 @@ export const rent_march_bike_pollensa_cycling: ServiceItem = {
       "Radsport-Shop mit Helmen, Trikots, Ersatzschläuchen und Sportnahrung",
       "Pannenhilfe und mobiler Abholservice bei Defekten auf der Bergtour",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 790,
-      url: "https://www.google.com/maps/search/?api=1&query=Rent%20March%20Bike%20Pollen%C3%A7a%20(1994)%20-%20Alquiler%20de%20Bicicletas%20%26%20Ciclismo%20Carrer%20de%20Joan%20XXIII%2C%2089%2C%2007470%20Port%20de%20Pollen%C3%A7a",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

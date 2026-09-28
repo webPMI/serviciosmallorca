@@ -31,12 +31,6 @@ export const fundacio_natzaret_palma_infancia: ServiceItem = {
   schedule: "Lunes a Viernes de 08:30 a 18:30",
   image: "/images/services/fundacio-natzaret-palma-infancia.jpg",
   gallery: ["/images/services/fundacio-natzaret-palma-infancia.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Fundaci%C3%B3%20Natzaret%20Palma%20(Protecci%C3%B3%20Inf%C3%A0ncia%20des%20de%201924)%20Avinguda%20de%20Joan%20Mir%C3%B3%2C%20101%2C%2007015%20Palma%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Fundaci%C3%B3%20Natzaret%20Palma%20(Protecci%C3%B3%20Inf%C3%A0ncia%20des%20de%201924)%20Avinguda%20de%20Joan%20Mir%C3%B3%2C%20101%2C%2007015%20Palma%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Fundaci%C3%B3%20Natzaret%20Palma%20(Protecci%C3%B3%20Inf%C3%A0ncia%20des%20de%201924)%20Avinguda%20de%20Joan%20Mir%C3%B3%2C%20101%2C%2007015%20Palma%2C%20Illes%20Balears",
   shortDescription: {
     es: "Institución centenaria en Palma dedicada a la acogida, protección y desarrollo integral de niños, adolescentes y familias en situación de vulnerabilidad.",
     en: "Centenary institution in Palma dedicated to the care, shelter, and full social development of vulnerable children, adolescents, and families.",
@@ -110,13 +104,6 @@ export const fundacio_natzaret_palma_infancia: ServiceItem = {
     en: ["Child protection in Mallorca", "Residential socio-educational care", "Youth vocational integration"],
     ca: ["Protecció de la infància a Mallorca", "Acolliment socioeducatiu residencial", "Inserció laboral de joves"],
     de: ["Kinderschutz auf Mallorca", "Stationäre Jugendhilfe", "Berufliche Jugendintegration"],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 140,
-      url: "https://www.google.com/maps/search/?api=1&query=Fundaci%C3%B3%20Natzaret%20Palma%20(Protecci%C3%B3%20Inf%C3%A0ncia%20des%20de%201924)%20Avinguda%20de%20Joan%20Mir%C3%B3%2C%20101%2C%2007015%20Palma%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

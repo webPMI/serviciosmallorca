@@ -29,8 +29,6 @@ export const TENNIS_CLUB_INCA_RAIGUER: ServiceItem = {
   image: "/images/sports/tennis-club-inca-raiguer.jpg",
   gallery: ["/images/sports/tennis-club-inca-raiguer.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007022",
-  appleMapsUrl: "https://maps.apple.com/?q=Tennis%20Club%20Inca+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Tennis%20Club%20Inca+Mallorca",
   shortDescription: {
     es: "Club histórico del corazón de Mallorca con 8 pistas de tierra batida, pádel y escuela de cantera.",
     en: "Historic tennis club in central Mallorca with 8 red clay courts, padel, and youth academy.",
@@ -94,13 +92,6 @@ export const TENNIS_CLUB_INCA_RAIGUER: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 340,
-      url: "https://www.google.com/maps?cid=12007022",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

@@ -28,9 +28,6 @@ export const dermatologia_estetica_dr_riera_palma: ServiceItem = {
   schedule: "Lunes a Viernes: 09:30 - 19:30",
   image: "/images/services/dermatologia-estetica-dr-riera-palma.jpg",
   gallery: ["/images/services/dermatologia-estetica-dr-riera-palma.jpg"],
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Dermatolog%C3%ADa+Est%C3%A9tica+Dr+Riera+Palma",
-  appleMapsUrl: "https://maps.apple.com/?q=Dermatologia+Estetica+Dr+Riera+Palma",
-  bingMapsUrl: "https://bing.com/maps?q=Dermatologia+Estetica+Dr+Riera+Palma",
   shortDescription: {
     es: "Consulta de dermatología médica y estética en Palma con más de 20 años de experiencia, especializada en melanoma, laser fraccionado y toxina botulínica.",
     en: "Medical and aesthetic dermatology practice in Palma with over 20 years of experience, specializing in melanoma detection, fractional laser, and botulinum toxin.",
@@ -94,13 +91,6 @@ export const dermatologia_estetica_dr_riera_palma: ServiceItem = {
       "Gesichtsverjüngung mit fraktioniertem CO₂-Laser und HIFU",
       "Chirurgische Entfernung von Keratosen, Talgzysten und Lipomen",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 334,
-      url: "https://www.google.com/maps/search/?api=1&query=Dermatolog%C3%ADa+Est%C3%A9tica+Dr+Riera+Palma",
-    },
   },
   createdAt: "2026-09-05",
   lastUpdatedAt: "2026-09-05",

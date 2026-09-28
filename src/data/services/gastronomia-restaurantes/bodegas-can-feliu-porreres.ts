@@ -28,9 +28,6 @@ export const bodegasCanFeliuPorreres: ServiceItem = {
   email: "info@canfeliu.es",
   website: "https://www.canfeliu.es",
   menuUrl: "https://www.canfeliu.es",
-  googleMapsUrl: "https://www.google.com/maps/search/Bodegas+Can+Feliu+Porreres+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Bodegas+Can+Feliu+Porreres",
-  bingMapsUrl: "https://www.bing.com/maps?q=Bodegas+Can+Feliu+Porreres",
   tags: ["zona:raiguer-pla", "zona:porreres", "product:premium", "mod:en-local", "aud:parejas", "temps:todo-el-ano"],
   capabilities: {
     parkingAvailable: true,

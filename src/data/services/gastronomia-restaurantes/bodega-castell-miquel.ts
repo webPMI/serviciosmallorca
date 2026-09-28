@@ -21,9 +21,6 @@ export const bodegaCastellMiquel: ServiceItem = {
   whatsapp: "+34 971 51 06 98",
   email: "info@castellmiquel.com",
   website: "https://castellmiquel.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Bodega%20Castell%20Miquel%20Alaro",
-  appleMapsUrl: "https://maps.apple.com/?q=Bodega%20Castell%20Miquel%20Alaro&ll=39.7120,2.8055",
-  bingMapsUrl: "https://www.bing.com/maps?where1=Bodega%20Castell%20Miquel%20Alaro",
   coordinates: { lat: 39.712, lng: 2.8055 },
   schedule: "Lunes a Viernes: 10:00 - 17:00 | Sábados: 10:00 - 14:00 (Visitas y Catas Guiadas)",
   lastVerifiedAt: "2026-08-25",
@@ -131,30 +128,13 @@ export const bodegaCastellMiquel: ServiceItem = {
       instagramHandle: "@castellmiquel",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 390,
-      url: "https://www.google.com/maps/search/?api=1&query=Bodega%20Castell%20Miquel%20Alaro",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Bodega%20Castell%20Miquel%20Alaro&ll=39.7120,2.8055",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 390,
-      url: "https://www.bing.com/maps?where1=Bodega%20Castell%20Miquel%20Alaro",
-    },
-    totalReviewsAggregated: 390,
-    overallWeightedRating: 4.8,
-  },
   reviews: [
     {
       id: "rev-bcm-1",
       authorName: "Antoni Colom",
       rating: 5,
       date: "2025-05-20",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
       comment:
         "Les marjades de vinyes a la muntanya d'Alaró són un espectacle visual únic. El vi negre Stairway to Heaven és potent i elegant. Visita obligada.",
@@ -165,7 +145,7 @@ export const bodegaCastellMiquel: ServiceItem = {
       authorName: "Markus Schneider",
       rating: 5,
       date: "2025-06-27",
-      platform: "google_maps",
+      platform: "direct",
       language: "de",
       comment:
         "Traumhaftes Weingut am Fuße des Tramuntana-Gebirges! Die Terrassenweine 'Stairway to Heaven' sind absolute Spitzenklasse. Tolle Weinprobe auf der Schlossterrasse.",

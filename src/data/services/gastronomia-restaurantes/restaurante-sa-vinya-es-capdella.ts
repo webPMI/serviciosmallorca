@@ -28,9 +28,6 @@ export const restauranteSaVinyaEsCapdella: ServiceItem = {
   email: "info@escapdella.com",
   website: "https://www.escapdella.com",
   menuUrl: "https://www.escapdella.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Restaurante+Sa+Vinya+Es+Capdella+Calvia+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante+Sa+Vinya+Es+Capdella",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante+Sa+Vinya+Es+Capdella",
   tags: [
     "zona:calvia-andratx",
     "zona:es-capdella",

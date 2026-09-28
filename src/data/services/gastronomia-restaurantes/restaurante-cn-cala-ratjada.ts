@@ -28,9 +28,6 @@ export const restauranteCnCalaRatjada: ServiceItem = {
   email: "info@cncalaratjada.com",
   website: "https://www.cncalaratjada.com",
   menuUrl: "https://www.cncalaratjada.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Restaurante+La+Cantina+Club+Nautico+Cala+Ratjada+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante+Club+Nautico+Cala+Ratjada",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante+Club+Nautico+Cala+Ratjada",
   tags: [
     "zona:manacor-llevant",
     "zona:cala-ratjada",

@@ -28,9 +28,6 @@ export const cellerBarRandaAlgaida: ServiceItem = {
   email: "info@cellerderanda.com",
   website: "https://www.cellerderanda.com",
   menuUrl: "https://www.cellerderanda.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Celler+Bar+Randa+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Celler+Bar+Randa",
-  bingMapsUrl: "https://www.bing.com/maps?q=Celler+Bar+Randa",
   tags: ["zona:raiguer-pla", "zona:randa", "product:traditional", "mod:en-local", "aud:familias", "temps:todo-el-ano"],
   capabilities: {
     terrace: true,

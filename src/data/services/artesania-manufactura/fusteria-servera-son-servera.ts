@@ -31,12 +31,6 @@ export const fusteria_servera_son_servera: ServiceItem = {
   schedule: "Lunes a Viernes: 07:30 - 15:30",
   image: "/images/services/fusteria-servera-son-servera.jpg",
   gallery: ["/images/services/fusteria-servera-son-servera.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Fusteria%20Servera%20Son%20Servera%20Carrer%20de%20Pere%20Antoni%20Servera%2C%2042%2C%2007550%20Son%20Servera",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Fusteria%20Servera%20Son%20Servera%20Carrer%20de%20Pere%20Antoni%20Servera%2C%2042%2C%2007550%20Son%20Servera",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Fusteria%20Servera%20Son%20Servera%20Carrer%20de%20Pere%20Antoni%20Servera%2C%2042%2C%2007550%20Son%20Servera",
   shortDescription: {
     es: "Carpintería de madera artesanal en Son Servera especializada en persianas mallorquinas, vigas vistas y mobiliario a medida.",
     en: "Artisan wood carpentry in Son Servera specializing in traditional Mallorcan shutters, exposed beams, and bespoke furniture.",
@@ -100,13 +94,6 @@ export const fusteria_servera_son_servera: ServiceItem = {
       "Echtholzbalken und maßgefertigte Pergolen",
       "Handgefertigte Einbaumöbel und rustikale Küchen",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 38,
-      url: "https://www.google.com/maps/search/?api=1&query=Fusteria%20Servera%20Son%20Servera%20Carrer%20de%20Pere%20Antoni%20Servera%2C%2042%2C%2007550%20Son%20Servera",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

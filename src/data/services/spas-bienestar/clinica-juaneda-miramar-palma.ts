@@ -29,8 +29,6 @@ export const clinica_juaneda_miramar_palma: ServiceItem = {
   image: "/images/spas/clinica-juaneda-miramar-palma.jpg",
   gallery: ["/images/spas/clinica-juaneda-miramar-palma.jpg", "/images/categories/salud.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=13008002",
-  appleMapsUrl: "https://maps.apple.com/?q=Cl%C3%ADnica%20Juaneda%20Miramar+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Cl%C3%ADnica%20Juaneda%20Miramar+Mallorca",
   shortDescription: {
     es: "Complejo hospitalario privado con amplias instalaciones, área quirúrgica puntera y centro de reproducción asistida.",
     en: "Private hospital complex with state-of-the-art surgical suites and fertility reproduction center.",
@@ -94,13 +92,6 @@ export const clinica_juaneda_miramar_palma: ServiceItem = {
       "Wellness- und Regenerationstherapien",
       "Kontinuierliche medizinische Nachbetreuung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.5,
-      reviewCount: 950,
-      url: "https://www.google.com/maps?cid=13008002",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

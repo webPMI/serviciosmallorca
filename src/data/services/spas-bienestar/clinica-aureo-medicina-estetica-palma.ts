@@ -29,8 +29,6 @@ export const clinica_aureo_medicina_estetica_palma: ServiceItem = {
   image: "/images/services/clinica-aureo-medicina-estetica-palma.jpg",
   gallery: ["/images/services/clinica-aureo-medicina-estetica-palma.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=13008007",
-  appleMapsUrl: "https://maps.apple.com/?q=Cl%C3%ADnica%20%C3%81ureo%20Medicina%20Est%C3%A9tica+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Cl%C3%ADnica%20%C3%81ureo%20Medicina%20Est%C3%A9tica+Mallorca",
   shortDescription: {
     es: "Clínica boutique de medicina estética, armonización facial, dermatología clínica y tecnología láser de vanguardia.",
     en: "Boutique clinic for aesthetic medicine, facial harmonization, clinical dermatology, and cutting-edge lasers.",
@@ -94,13 +92,6 @@ export const clinica_aureo_medicina_estetica_palma: ServiceItem = {
       "Wellness- und Regenerationstherapien",
       "Kontinuierliche medizinische Nachbetreuung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 290,
-      url: "https://www.google.com/maps?cid=13008007",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

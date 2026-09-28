@@ -28,9 +28,6 @@ export const esGuixEscorca: ServiceItem = {
   email: "reservas@esguix.com",
   website: "https://esguix.com",
   menuUrl: "https://esguix.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Restaurante+Es+Guix+Escorca+Lluc+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante+Es+Guix+Escorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante+Es+Guix+Escorca",
   tags: ["zona:tramuntana", "zona:escorca", "product:traditional", "mod:en-local", "aud:parejas", "temps:todo-el-ano"],
   capabilities: {
     terrace: true,

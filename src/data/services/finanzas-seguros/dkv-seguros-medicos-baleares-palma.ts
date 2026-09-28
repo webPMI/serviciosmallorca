@@ -31,12 +31,6 @@ export const dkv_seguros_medicos_baleares_palma: ServiceItem = {
   schedule: "Lunes a Jueves: 09:00 - 18:00, Viernes: 09:00 - 15:00",
   image: "/images/services/dkv-seguros-medicos-baleares-palma.jpg",
   gallery: ["/images/services/dkv-seguros-medicos-baleares-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=DKV%20Seguros%20M%C3%A9dicos%20%26%20Salud%20Internacional%20Baleares%20Avinguda%20d'Alemanya%2C%2015%2C%2007003%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=DKV%20Seguros%20M%C3%A9dicos%20%26%20Salud%20Internacional%20Baleares%20Avinguda%20d'Alemanya%2C%2015%2C%2007003%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=DKV%20Seguros%20M%C3%A9dicos%20%26%20Salud%20Internacional%20Baleares%20Avinguda%20d'Alemanya%2C%2015%2C%2007003%20Palma",
   shortDescription: {
     es: "Sede territorial de DKV en Palma: seguros de salud privados para residentes internacionales, familias y empresas con cobertura en los mejores hospitales.",
     en: "DKV regional headquarters in Palma: private medical insurance for international expats and families with direct access to top hospitals.",
@@ -100,13 +94,6 @@ export const dkv_seguros_medicos_baleares_palma: ServiceItem = {
       "Residencia-konforme Policen ohne Zuzahlung für den spanischen Aufenthaltstitel",
       "Rücktransportversicherung und Zahnzusatztarife",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 310,
-      url: "https://www.google.com/maps/search/?api=1&query=DKV%20Seguros%20M%C3%A9dicos%20%26%20Salud%20Internacional%20Baleares%20Avinguda%20d'Alemanya%2C%2015%2C%2007003%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

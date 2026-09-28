@@ -31,12 +31,6 @@ export const beach_club_illetes_mhares_sea_club_calvia: ServiceItem = {
   schedule: "Diario: 11:00 - 23:00 (Temporada: Mayo – Octubre)",
   image: "/images/services/beach-club-illetes-mhares-sea-club-calvia.jpg",
   gallery: ["/images/services/beach-club-illetes-mhares-sea-club-calvia.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Mhares%20Sea%20Club%20Beach%20Club%20%26%20Restaurante%20Illetes%20Calvi%C3%A0%20Carretera%20d'Illetes%2C%2039%2C%2007181%20Illetes%2C%20Calvi%C3%A0",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Mhares%20Sea%20Club%20Beach%20Club%20%26%20Restaurante%20Illetes%20Calvi%C3%A0%20Carretera%20d'Illetes%2C%2039%2C%2007181%20Illetes%2C%20Calvi%C3%A0",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Mhares%20Sea%20Club%20Beach%20Club%20%26%20Restaurante%20Illetes%20Calvi%C3%A0%20Carretera%20d'Illetes%2C%2039%2C%2007181%20Illetes%2C%20Calvi%C3%A0",
   shortDescription: {
     es: "Beach club y restaurante de referencia en las aguas turquesas de Illetes (Calvià): gastronomía mediterránea de autor, zona de baño privado, piscina infinita con DJ y sunsets legendarios.",
     en: "Iconic beach club and restaurant on the turquoise waters of Illetes (Calvià): signature Mediterranean cuisine, private swimming area, infinity pool with DJ sessions, and legendary sunsets.",
@@ -100,13 +94,6 @@ export const beach_club_illetes_mhares_sea_club_calvia: ServiceItem = {
       "Infinity-Pool mit Poolbar und DJ-Sessions (Mittag und Sonnenuntergang)",
       "Privatfeiern, intime Hochzeiten und Firmenevents am Meer",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 1024,
-      url: "https://www.google.com/maps/search/?api=1&query=Mhares%20Sea%20Club%20Beach%20Club%20%26%20Restaurante%20Illetes%20Calvi%C3%A0%20Carretera%20d'Illetes%2C%2039%2C%2007181%20Illetes%2C%20Calvi%C3%A0",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

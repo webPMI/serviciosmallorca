@@ -31,12 +31,6 @@ export const hammam_palma_banos_arabes_centro_historico: ServiceItem = {
   schedule: "Martes a Domingo: 10:00 - 22:00 (Turnos cada 2 horas)",
   image: "/images/services/hammam-palma-banos-arabes-centro-historico.jpg",
   gallery: ["/images/services/hammam-palma-banos-arabes-centro-historico.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Hammam%20Palma%20Ba%C3%B1os%20%C3%81rabes%20Centro%20Hist%C3%B3rico%20Carrer%20de%20Can%20Serra%2C%207%2C%2007001%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Hammam%20Palma%20Ba%C3%B1os%20%C3%81rabes%20Centro%20Hist%C3%B3rico%20Carrer%20de%20Can%20Serra%2C%207%2C%2007001%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Hammam%20Palma%20Ba%C3%B1os%20%C3%81rabes%20Centro%20Hist%C3%B3rico%20Carrer%20de%20Can%20Serra%2C%207%2C%2007001%20Palma",
   shortDescription: {
     es: "Auténtico hammam y circuito termal en el casco histórico de Palma: salas de agua templada, caliente y fría, baño de vapor, jabón negro de eucalipto y masajes relajantes.",
     en: "Authentic Arabic hammam and thermal bath circuit in Palma's historic old town: warm, hot, and cold plunge pools, steam room, eucalyptus black soap kessa scrubs, and massages.",
@@ -100,13 +94,6 @@ export const hammam_palma_banos_arabes_centro_historico: ServiceItem = {
       "Paar-Pakete mit Cava und Schokolade",
       "Geschenkgutscheine für Wellness-Rituale",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 920,
-      url: "https://www.google.com/maps/search/?api=1&query=Hammam%20Palma%20Ba%C3%B1os%20%C3%81rabes%20Centro%20Hist%C3%B3rico%20Carrer%20de%20Can%20Serra%2C%207%2C%2007001%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

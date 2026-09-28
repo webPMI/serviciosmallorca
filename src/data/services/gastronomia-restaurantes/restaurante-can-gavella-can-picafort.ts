@@ -28,9 +28,6 @@ export const restauranteCanGavellaCanPicafort: ServiceItem = {
   email: "info@cangavella.com",
   website: "https://www.cangavella.com",
   menuUrl: "https://www.cangavella.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Restaurante+Can+Gavella+Can+Picafort+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante+Can+Gavella+Can+Picafort",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante+Can+Gavella+Can+Picafort",
   tags: [
     "zona:alcudia-pollensa",
     "zona:can-picafort",

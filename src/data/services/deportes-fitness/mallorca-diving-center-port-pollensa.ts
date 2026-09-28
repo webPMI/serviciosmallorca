@@ -29,8 +29,6 @@ export const MALLORCA_DIVING_CENTER_PORT_POLLENSA: ServiceItem = {
   image: "/images/sports/mallorca-diving-center-port-pollensa.jpg",
   gallery: ["/images/sports/mallorca-diving-center-port-pollensa.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007097",
-  appleMapsUrl: "https://maps.apple.com/?q=Mallorca%20Diving%20Center%20Port%20Pollen%C3%A7a+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Mallorca%20Diving%20Center%20Port%20Pollen%C3%A7a+Mallorca",
   shortDescription: {
     es: "Centro de buceo 5 Estrellas PADI con inmersiones diarias en Cap de Formentor e Isla de Manresa.",
     en: "PADI 5 Star dive center with daily boat excursions to Cap de Formentor and marine caves.",
@@ -94,13 +92,6 @@ export const MALLORCA_DIVING_CENTER_PORT_POLLENSA: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 340,
-      url: "https://www.google.com/maps?cid=12007097",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

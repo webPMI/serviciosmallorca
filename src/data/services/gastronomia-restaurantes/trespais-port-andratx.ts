@@ -27,9 +27,6 @@ export const trespaisPortAndratx: ServiceItem = {
   email: "info@trespais-mallorca.com",
   website: "https://www.trespais-mallorca.com",
   menuUrl: "https://www.trespais-mallorca.com/#menu",
-  googleMapsUrl: "https://www.google.com/maps/search/Restaurante+Trespais+Port+d+Andratx+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante+Trespais+Port+d+Andratx",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante+Trespais+Port+d+Andratx",
   tags: [
     "zona:calvia-andratx",
     "zona:andratx",

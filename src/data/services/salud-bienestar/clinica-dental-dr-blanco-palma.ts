@@ -31,12 +31,6 @@ export const clinica_dental_dr_blanco_palma: ServiceItem = {
   schedule: "Lunes a Viernes de 09:00 a 20:00",
   image: "/images/services/clinica-dental-dr-blanco-palma.jpg",
   gallery: ["/images/services/clinica-dental-dr-blanco-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica%20Dental%20Dr.%20Blanco%20Palma%20Avinguda%20d'Alemanya%2C%2015%2C%2007003%20Palma%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Cl%C3%ADnica%20Dental%20Dr.%20Blanco%20Palma%20Avinguda%20d'Alemanya%2C%2015%2C%2007003%20Palma%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Cl%C3%ADnica%20Dental%20Dr.%20Blanco%20Palma%20Avinguda%20d'Alemanya%2C%2015%2C%2007003%20Palma%2C%20Illes%20Balears",
   shortDescription: {
     es: "Clínica odontológica de alta gama en las Avenidas de Palma. Especialistas en implantología guiada, ortodoncia invisible y diseño digital de sonrisas.",
     en: "High-end dental clinic on Palma's Avenidas avenue. Specialists in guided implantology, invisible orthodontics, and digital smile design.",
@@ -106,13 +100,6 @@ export const clinica_dental_dr_blanco_palma: ServiceItem = {
     en: ["Immediate load implantology", "Digital Smile Design (DSD)", "Conscious sedation"],
     ca: ["Implantologia de càrrega immediata", "Disseny digital de somriure", "Sedació conscient"],
     de: ["Sofortbelastbare Zahnimplantate", "Digitales Smile Design", "Dämmerschlafsedierung"],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 220,
-      url: "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica%20Dental%20Dr.%20Blanco%20Palma%20Avinguda%20d'Alemanya%2C%2015%2C%2007003%20Palma%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

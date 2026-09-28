@@ -31,12 +31,6 @@ export const colegio_san_cayetano_palma: ServiceItem = {
   schedule: "Lunes a Viernes: 08:30 - 17:00",
   image: "/images/services/colegio-san-cayetano-palma.jpg",
   gallery: ["/images/services/colegio-san-cayetano-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Colegio%20San%20Cayetano%20Palma%20Avinguda%20de%20Picasso%2C%2031%2C%2007014%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Colegio%20San%20Cayetano%20Palma%20Avinguda%20de%20Picasso%2C%2031%2C%2007014%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Colegio%20San%20Cayetano%20Palma%20Avinguda%20de%20Picasso%2C%2031%2C%2007014%20Palma",
   shortDescription: {
     es: "Colegio privado concertado e internacional de referencia en Palma: Bachillerato Internacional (IB), bilingüismo y excelencia deportiva.",
     en: "Premier private international school in Palma: International Baccalaureate (IB), bilingual excellence, and top sports facilities.",
@@ -100,13 +94,6 @@ export const colegio_san_cayetano_palma: ServiceItem = {
       "Englisch-Sprachprogramm mit muttersprachlichen Lehrern und Cambridge-Zertifikaten",
       "Nachmittagsangebote: Schwimmen, Basketball, Robotik und Schach",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 95,
-      url: "https://www.google.com/maps/search/?api=1&query=Colegio%20San%20Cayetano%20Palma%20Avinguda%20de%20Picasso%2C%2031%2C%2007014%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

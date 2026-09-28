@@ -31,12 +31,6 @@ export const basic_fit_palma_avenidas_gimnasio: ServiceItem = {
   schedule: "Lunes a Viernes: 06:00 - 22:30; Sábado y Domingo: 09:00 - 19:00",
   image: "/images/services/basic-fit-palma-avenidas-gimnasio.jpg",
   gallery: ["/images/services/basic-fit-palma-avenidas-gimnasio.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Basic-Fit%20Palma%20Avenidas%20Gimnasio%20%26%20Fitness%20Avinguda%20de%20Gabriel%20Alomar%2C%2029%2C%2007006%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Basic-Fit%20Palma%20Avenidas%20Gimnasio%20%26%20Fitness%20Avinguda%20de%20Gabriel%20Alomar%2C%2029%2C%2007006%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Basic-Fit%20Palma%20Avenidas%20Gimnasio%20%26%20Fitness%20Avinguda%20de%20Gabriel%20Alomar%2C%2029%2C%2007006%20Palma",
   shortDescription: {
     es: "Gimnasio amplio y moderno en las Avenidas de Palma: maquinaria Matrix de última generación, zona de peso libre, cardio y clases virtuales con horarios extendidos.",
     en: "Spacious modern gym on Palma's Avenidas: Matrix cardio and strength machines, extensive free weights area, and virtual fitness classes with long opening hours.",
@@ -100,13 +94,6 @@ export const basic_fit_palma_avenidas_gimnasio: ServiceItem = {
       "Yanga Sports Water Getränkestation",
       "Umkleideräume mit Einzelduschen und Spinden",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.6,
-      reviewCount: 980,
-      url: "https://www.google.com/maps/search/?api=1&query=Basic-Fit%20Palma%20Avenidas%20Gimnasio%20%26%20Fitness%20Avinguda%20de%20Gabriel%20Alomar%2C%2029%2C%2007006%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

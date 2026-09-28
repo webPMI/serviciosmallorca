@@ -21,9 +21,6 @@ export const carpinteriaAlaro: ServiceItem = {
   whatsapp: "+34 619 30 40 50",
   email: "taller@carpinteriaalaro.com",
   website: "https://carpinteriaalaro.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Carpinteria%20Alaro",
-  appleMapsUrl: "https://maps.apple.com/?q=Carpinteria%20Alaro&ll=39.7050,2.7950",
-  bingMapsUrl: "https://www.bing.com/maps?where1=Carpinteria%20Alaro",
   coordinates: { lat: 39.705, lng: 2.795 },
   schedule: "Lunes a Viernes: 07:30 - 18:00 (Medición Técnica en Obra con Cita Previa)",
   lastVerifiedAt: "2026-08-25",
@@ -131,30 +128,13 @@ export const carpinteriaAlaro: ServiceItem = {
       instagramHandle: "@carpinteriaalaro",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 140,
-      url: "https://www.google.com/maps/search/?api=1&query=Carpinteria%20Alaro",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Carpinteria%20Alaro&ll=39.7050,2.7950",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 140,
-      url: "https://www.bing.com/maps?where1=Carpinteria%20Alaro",
-    },
-    totalReviewsAggregated: 140,
-    overallWeightedRating: 4.8,
-  },
   reviews: [
     {
       id: "rev-cfa-1",
       authorName: "Antoni Rosselló",
       rating: 5,
       date: "2025-05-16",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
       comment:
         "Ens varen fer totes les persianes mallorquines d'iroko i el portal de la finca d'Alaró. La fusta és de primera qualitat i el muntatge va ser impecable.",
@@ -165,7 +145,7 @@ export const carpinteriaAlaro: ServiceItem = {
       authorName: "Michael Evans",
       rating: 5,
       date: "2025-06-22",
-      platform: "google_maps",
+      platform: "direct",
       language: "en",
       comment:
         "Outstanding carpenters in Alaró! Handcrafted bespoke teak shutters and fitted oak wardrobes for our country villa. Beautiful finish and great craftsmanship.",

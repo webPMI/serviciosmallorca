@@ -28,9 +28,6 @@ export const bodegasSonPuigPuigpunyent: ServiceItem = {
   email: "info@vinsdesonpuig.com",
   website: "https://vinsdesonpuig.com",
   menuUrl: "https://vinsdesonpuig.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Bodegas+Son+Puig+Puigpunyent+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Bodegas+Son+Puig+Puigpunyent",
-  bingMapsUrl: "https://www.bing.com/maps?q=Bodegas+Son+Puig+Puigpunyent",
   tags: ["zona:tramuntana", "zona:puigpunyent", "product:premium", "mod:en-local", "aud:parejas", "temps:todo-el-ano"],
   capabilities: {
     parkingAvailable: true,

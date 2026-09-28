@@ -31,12 +31,6 @@ export const paisajismo_jardines_tramuntana_soller_olivos: ServiceItem = {
   schedule: "Lunes a Viernes: 08:00 - 18:00",
   image: "/images/services/paisajismo-jardines-tramuntana-soller-olivos.jpg",
   gallery: ["/images/services/paisajismo-jardines-tramuntana-soller-olivos.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Tramuntana%20Landscapes%20%26%20Mediterranean%20Gardens%20S%C3%B3ller%20Cam%C3%AD%20de%20Son%20Pons%2C%2012%2C%2007100%20S%C3%B3ller",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Tramuntana%20Landscapes%20%26%20Mediterranean%20Gardens%20S%C3%B3ller%20Cam%C3%AD%20de%20Son%20Pons%2C%2012%2C%2007100%20S%C3%B3ller",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Tramuntana%20Landscapes%20%26%20Mediterranean%20Gardens%20S%C3%B3ller%20Cam%C3%AD%20de%20Son%20Pons%2C%2012%2C%2007100%20S%C3%B3ller",
   shortDescription: {
     es: "Diseño y ejecución de jardines de alta gama en bancales de la Serra de Tramuntana: reconstrucción de 'marges' de piedra en seco, olivos y flora autóctona.",
     en: "High-end landscape architecture on Tramuntana terraces: dry-stone wall restoration ('marges'), ancient olive trees, and native botanical species.",
@@ -100,13 +94,6 @@ export const paisajismo_jardines_tramuntana_soller_olivos: ServiceItem = {
       "Zisternenbau und solarbetriebene Bewässerungsanlagen",
       "Fachgerechter Schnitt uralter Oliven- und Zitrusbäume",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 160,
-      url: "https://www.google.com/maps/search/?api=1&query=Tramuntana%20Landscapes%20%26%20Mediterranean%20Gardens%20S%C3%B3ller%20Cam%C3%AD%20de%20Son%20Pons%2C%2012%2C%2007100%20S%C3%B3ller",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

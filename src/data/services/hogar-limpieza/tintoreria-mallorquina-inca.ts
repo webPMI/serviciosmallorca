@@ -31,12 +31,6 @@ export const tintoreria_mallorquina_inca: ServiceItem = {
   schedule: "Lunes a Viernes: 08:30 - 13:30, 16:30 - 19:30 | Sábado: 09:00 - 13:00 | Domingo: Cerrado",
   image: "/images/services/tintoreria-mallorquina-inca.jpg",
   gallery: ["/images/services/tintoreria-mallorquina-inca.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Tintorer%C3%ADa%20Mallorquina%20Inca%20Avinguda%20del%20Tren%2C%2012%2C%2007300%20Inca%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Tintorer%C3%ADa%20Mallorquina%20Inca%20Avinguda%20del%20Tren%2C%2012%2C%2007300%20Inca%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Tintorer%C3%ADa%20Mallorquina%20Inca%20Avinguda%20del%20Tren%2C%2012%2C%2007300%20Inca%2C%20Illes%20Balears",
   shortDescription: {
     es: "Tintorería y lavandería ecológica en Inca con más de 30 años de experiencia, especializada en limpieza en seco, cuidado de pieles, alfombras de lana, cortinajes de fincas y lencería fina.",
     en: "Eco-friendly dry cleaners and laundry service in Inca with over 30 years of expertise in garment care, leather garments, wool rugs, heavy curtains, and fine linens.",
@@ -100,13 +94,6 @@ export const tintoreria_mallorquina_inca: ServiceItem = {
       "Tiefenreinigung und Fleckenbehandlung für Wollteppiche, Orientteppiche und Naturfasern",
       "Aufbereitung von Vorhängen, Daunenbetten, Tagesdecken und Hotelbettwäsche für Fincas",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 175,
-      url: "https://www.google.com/maps/search/?api=1&query=Tintorer%C3%ADa%20Mallorquina%20Inca%20Avinguda%20del%20Tren%2C%2012%2C%2007300%20Inca%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

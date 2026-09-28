@@ -29,8 +29,6 @@ export const T_GOLF_CALVIA_MAGALUF: ServiceItem = {
   image: "/images/services/t-golf-calvia-magaluf.jpg",
   gallery: ["/images/services/t-golf-calvia-magaluf.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007005",
-  appleMapsUrl: "https://maps.apple.com/?q=T%20Golf%20Calvi%C3%A0+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=T%20Golf%20Calvi%C3%A0+Mallorca",
   shortDescription: {
     es: "Obra maestra de John Harris completamente renovada con 18 hoyos, 15 lagos y restaurante T-elicious.",
     en: "Masterpiece by John Harris fully restored with 18 holes, 15 lakes, and T-elicious restaurant.",
@@ -94,13 +92,6 @@ export const T_GOLF_CALVIA_MAGALUF: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 480,
-      url: "https://www.google.com/maps?cid=12007005",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

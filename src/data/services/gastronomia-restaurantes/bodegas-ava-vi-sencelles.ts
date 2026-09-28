@@ -28,9 +28,6 @@ export const bodegasAvaViSencelles: ServiceItem = {
   email: "info@ava-vi.com",
   website: "https://ava-vi.es",
   menuUrl: "https://ava-vi.es",
-  googleMapsUrl: "https://www.google.com/maps/search/Bodegas+AVA+Vi+Sencelles+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Bodegas+AVA+Vi+Sencelles",
-  bingMapsUrl: "https://www.bing.com/maps?q=Bodegas+AVA+Vi+Sencelles",
   tags: ["zona:raiguer-pla", "zona:sencelles", "product:premium", "mod:en-local", "aud:parejas", "temps:todo-el-ano"],
   capabilities: {
     parkingAvailable: true,

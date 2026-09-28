@@ -31,12 +31,6 @@ export const arabella_golf_mallorca_son_vida_son_muntaner: ServiceItem = {
   schedule: "Diario: 07:30 - 20:00 (Horario continuo)",
   image: "/images/services/arabella-golf-mallorca-son-vida-son-muntaner.jpg",
   gallery: ["/images/services/arabella-golf-mallorca-son-vida-son-muntaner.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Arabella%20Golf%20Mallorca%20(Son%20Vida%2C%20Son%20Muntaner%20%26%20Son%20Quint)%20Carrer%20de%20Solleric%2C%201%2C%2007013%20Son%20Vida%2C%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Arabella%20Golf%20Mallorca%20(Son%20Vida%2C%20Son%20Muntaner%20%26%20Son%20Quint)%20Carrer%20de%20Solleric%2C%201%2C%2007013%20Son%20Vida%2C%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Arabella%20Golf%20Mallorca%20(Son%20Vida%2C%20Son%20Muntaner%20%26%20Son%20Quint)%20Carrer%20de%20Solleric%2C%201%2C%2007013%20Son%20Vida%2C%20Palma",
   shortDescription: {
     es: "El complejo de golf líder en el Mediterráneo: 63 hoyos repartidos en cuatro campos emblemáticos (Golf Son Vida, Golf Son Muntaner, Golf Son Quint y Pitch & Putt) junto a Palma.",
     en: "The Mediterranean's leading golf destination: 63 holes across four iconic courses (Golf Son Vida, Golf Son Muntaner, Golf Son Quint, and Pitch & Putt) in Palma.",
@@ -100,13 +94,6 @@ export const arabella_golf_mallorca_son_vida_son_muntaner: ServiceItem = {
       "Einzeltraining und Platzreifekurse mit PGA-zertifizierten Golf-Pros",
       "Clubhäuser mit exklusiven Pro-Shops und Gastronomie",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 1450,
-      url: "https://www.google.com/maps/search/?api=1&query=Arabella%20Golf%20Mallorca%20(Son%20Vida%2C%20Son%20Muntaner%20%26%20Son%20Quint)%20Carrer%20de%20Solleric%2C%201%2C%2007013%20Son%20Vida%2C%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

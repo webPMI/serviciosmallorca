@@ -76,10 +76,6 @@ export const vonPollRealEstateMallorcaSouthwest: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=VON%20POLL%20REAL%20ESTATE%20Mallorca%20Southwest%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=VON%20POLL%20REAL%20ESTATE%20Mallorca%20Southwest%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=VON%20POLL%20REAL%20ESTATE%20Mallorca%20Southwest%20Mallorca",
   pricing: {
     startingPrice: "Consultar servicios y presupuestos personalizados",
     rateType: "custom_quote",
@@ -106,21 +102,4 @@ export const vonPollRealEstateMallorcaSouthwest: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 260,
-      url: "https://www.google.com/maps/search/?api=1&query=VON%20POLL%20REAL%20ESTATE%20Mallorca%20Southwest%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=VON%20POLL%20REAL%20ESTATE%20Mallorca%20Southwest%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.7,
-      reviewCount: 26,
-      url: "https://www.bing.com/maps?q=VON%20POLL%20REAL%20ESTATE%20Mallorca%20Southwest%20Mallorca",
-    },
-    totalReviewsAggregated: 286,
-    overallWeightedRating: 4.8,
-  },
 };

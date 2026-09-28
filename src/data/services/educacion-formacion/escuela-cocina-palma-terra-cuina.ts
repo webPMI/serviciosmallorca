@@ -28,9 +28,6 @@ export const escuela_cocina_palma_terra_cuina: ServiceItem = {
   schedule: "Martes a Domingo: 10:00 - 22:00 (talleres con reserva)",
   image: "/images/services/escuela-cocina-palma-terra-cuina.jpg",
   gallery: ["/images/services/escuela-cocina-palma-terra-cuina.jpg"],
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Escuela+Cocina+Terra+Cuina+Palma+Carrer+Can+Veri+8",
-  appleMapsUrl: "https://maps.apple.com/?q=Escuela+Cocina+Terra+Cuina+Palma",
-  bingMapsUrl: "https://bing.com/maps?q=Escuela+Cocina+Terra+Cuina+Palma",
   shortDescription: {
     es: "Escuela de cocina en el casco antiguo de Palma con talleres de cocina mallorquina, paella, tapas y pastelería para turistas, residentes y teambuildings corporativos.",
     en: "Cooking school in Palma's old town offering Mallorcan cuisine, paella, tapas, and pastry workshops for tourists, locals, and corporate team-building events.",
@@ -94,13 +91,6 @@ export const escuela_cocina_palma_terra_cuina: ServiceItem = {
       "Kreativer Tapas-Workshop mit mallorquinischer Weinbegleitung",
       "Private Erlebnisse: JGA/Mädelsabend, Team-Building und Santa-Catalina-Food-Touren",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 267,
-      url: "https://www.google.com/maps/search/?api=1&query=Escuela+Cocina+Terra+Cuina+Palma",
-    },
   },
   createdAt: "2026-09-05",
   lastUpdatedAt: "2026-09-05",

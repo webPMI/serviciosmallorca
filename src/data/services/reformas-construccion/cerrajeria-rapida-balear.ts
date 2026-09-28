@@ -21,9 +21,6 @@ export const cerrajeriaRapidaBalear: ServiceItem = {
   whatsapp: "+34 650 10 20 30",
   email: "contacto@cerrajeriarapidabalear.com",
   website: "https://cerrajeriarapidabalear.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Cerrajeria%20Rapida%20Balear%20Palma",
-  appleMapsUrl: "https://maps.apple.com/?q=Cerrajeria%20Rapida%20Balear%20Palma&ll=39.5780,2.6620",
-  bingMapsUrl: "https://www.bing.com/maps?where1=Cerrajeria%20Rapida%20Balear%20Palma",
   coordinates: { lat: 39.578, lng: 2.662 },
   schedule: "Lunes a Domingo: 24 Horas (Servicio Urgente 24/7 de Apertura de Puertas)",
   lastVerifiedAt: "2026-08-25",
@@ -131,30 +128,13 @@ export const cerrajeriaRapidaBalear: ServiceItem = {
       instagramHandle: "@cerrajeriarapidabalear",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 230,
-      url: "https://www.google.com/maps/search/?api=1&query=Cerrajeria%20Rapida%20Balear%20Palma",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Cerrajeria%20Rapida%20Balear%20Palma&ll=39.5780,2.6620",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 230,
-      url: "https://www.bing.com/maps?where1=Cerrajeria%20Rapida%20Balear%20Palma",
-    },
-    totalReviewsAggregated: 230,
-    overallWeightedRating: 4.8,
-  },
   reviews: [
     {
       id: "rev-crb-1",
       authorName: "Joan Manel Palmer",
       rating: 5,
       date: "2025-05-17",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
       comment:
         "Ens vam deixar les claus a dins de casa a Palma un diumenge vespre. Varen arribar en 20 minuts i varen obrir la porta blindada sense fer cap rascada. Servei ràpid, net i preu acordat per telèfon.",
@@ -165,7 +145,7 @@ export const cerrajeriaRapidaBalear: ServiceItem = {
       authorName: "David Thornton",
       rating: 5,
       date: "2025-06-24",
-      platform: "google_maps",
+      platform: "direct",
       language: "en",
       comment:
         "Superb emergency locksmith in Palma! Prompt arrival within 25 minutes, opened our apartment door swiftly without damage, and installed a high-security anti-bumping lock. Very professional.",

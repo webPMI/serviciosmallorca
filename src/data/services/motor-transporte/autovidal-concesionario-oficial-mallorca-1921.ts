@@ -31,12 +31,6 @@ export const autovidal_concesionario_oficial_mallorca_1921: ServiceItem = {
   schedule: "Lunes a Viernes: 08:30 - 20:00, Sábado: 10:00 - 13:30",
   image: "/images/services/autovidal-concesionario-oficial-mallorca-1921.jpg",
   gallery: ["/images/services/autovidal-concesionario-oficial-mallorca-1921.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Autovidal%20Concesionario%20Oficial%20Baleares%20(1921)%20-%20Mercedes-Benz%20%26%20Smart%20Gran%20Via%20Asima%2C%2032%2C%20Pol%C3%ADgon%20Son%20Castell%C3%B3%2C%2007009%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Autovidal%20Concesionario%20Oficial%20Baleares%20(1921)%20-%20Mercedes-Benz%20%26%20Smart%20Gran%20Via%20Asima%2C%2032%2C%20Pol%C3%ADgon%20Son%20Castell%C3%B3%2C%2007009%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Autovidal%20Concesionario%20Oficial%20Baleares%20(1921)%20-%20Mercedes-Benz%20%26%20Smart%20Gran%20Via%20Asima%2C%2032%2C%20Pol%C3%ADgon%20Son%20Castell%C3%B3%2C%2007009%20Palma",
   shortDescription: {
     es: "Grupo de automoción centenario fundado en 1921 en Palma: concesionario y taller oficial de Mercedes-Benz, Smart, Maserati y marcas de alta gama en Baleares.",
     en: "Centennial automotive group founded in 1921 in Palma: official dealership and service center for Mercedes-Benz, Smart, Maserati, and luxury vehicles.",
@@ -100,13 +94,6 @@ export const autovidal_concesionario_oficial_mallorca_1921: ServiceItem = {
       "Hersteller-Inspektionen, Computerdiagnose und Original-Ersatzteile",
       "Karosserie- und Lackzentrum mit Direktabwicklung aller Versicherungsschäden",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 1350,
-      url: "https://www.google.com/maps/search/?api=1&query=Autovidal%20Concesionario%20Oficial%20Baleares%20(1921)%20-%20Mercedes-Benz%20%26%20Smart%20Gran%20Via%20Asima%2C%2032%2C%20Pol%C3%ADgon%20Son%20Castell%C3%B3%2C%2007009%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

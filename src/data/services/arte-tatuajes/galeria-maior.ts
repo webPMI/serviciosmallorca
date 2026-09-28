@@ -100,8 +100,5 @@ export const galeriaMaiorService: ServiceItem = {
     ],
   },
   amenities: ["wifi", "air_conditioning", "wheelchair_accessible"],
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Galeria+Maior+Pollensa",
-  appleMapsUrl: "https://maps.apple.com/?q=Galeria+Maior+Pollensa",
-  bingMapsUrl: "https://www.bing.com/maps?q=Galeria+Maior+Pollensa",
   confidenceScore: 97,
 };

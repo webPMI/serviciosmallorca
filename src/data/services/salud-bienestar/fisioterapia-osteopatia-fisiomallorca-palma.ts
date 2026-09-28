@@ -31,12 +31,6 @@ export const fisioterapia_osteopatia_fisiomallorca_palma: ServiceItem = {
   schedule: "Lunes a Viernes: 08:30 - 20:30",
   image: "/images/services/fisioterapia-osteopatia-fisiomallorca-palma.jpg",
   gallery: ["/images/services/fisioterapia-osteopatia-fisiomallorca-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Fisioterapia%20%26%20Osteopat%C3%ADa%20FisioMallorca%20Palma%20Carrer%20de%20Francesc%20Suau%2C%2018%2C%2007004%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Fisioterapia%20%26%20Osteopat%C3%ADa%20FisioMallorca%20Palma%20Carrer%20de%20Francesc%20Suau%2C%2018%2C%2007004%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Fisioterapia%20%26%20Osteopat%C3%ADa%20FisioMallorca%20Palma%20Carrer%20de%20Francesc%20Suau%2C%2018%2C%2007004%20Palma",
   shortDescription: {
     es: "Centro de fisioterapia avanzada, osteopatía y readaptación de lesiones deportivas en Palma con ecografía musculoesquelética e INDIBA.",
     en: "Advanced physiotherapy, osteopathy, and sports injury rehabilitation center in Palma featuring ultrasound and INDIBA radiofrequency.",
@@ -100,13 +94,6 @@ export const fisioterapia_osteopatia_fisiomallorca_palma: ServiceItem = {
       "Regenerative INDIBA-Activ-Radiofrequenztherapie bei Muskel- und Sehnenverletzungen",
       "Ultraschallgeführte Dry-Needling-Behandlung und Stoßwellentherapie bei Fersensporn",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 145,
-      url: "https://www.google.com/maps/search/?api=1&query=Fisioterapia%20%26%20Osteopat%C3%ADa%20FisioMallorca%20Palma%20Carrer%20de%20Francesc%20Suau%2C%2018%2C%2007004%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

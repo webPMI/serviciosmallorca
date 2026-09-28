@@ -29,8 +29,6 @@ export const GOLF_SON_MUNTANER_PALMA: ServiceItem = {
   image: "/images/services/golf-son-muntaner-palma.jpg",
   gallery: ["/images/services/golf-son-muntaner-palma.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007002",
-  appleMapsUrl: "https://maps.apple.com/?q=Golf%20Son%20Muntaner+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Golf%20Son%20Muntaner+Mallorca",
   shortDescription: {
     es: "Campo de golf de nivel DP World Tour con el olivo milenario protegido 'Na Capitana'.",
     en: "DP World Tour host golf course home to the thousand-year-old olive tree 'Na Capitana'.",
@@ -94,13 +92,6 @@ export const GOLF_SON_MUNTANER_PALMA: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 490,
-      url: "https://www.google.com/maps?cid=12007002",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

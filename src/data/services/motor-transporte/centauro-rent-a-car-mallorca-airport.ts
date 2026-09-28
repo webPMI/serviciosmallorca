@@ -31,12 +31,6 @@ export const centauro_rent_a_car_mallorca_airport: ServiceItem = {
   schedule: "Lunes a Domingo: 07:00 - 23:00",
   image: "/images/services/centauro-rent-a-car-mallorca-airport.jpg",
   gallery: ["/images/services/centauro-rent-a-car-mallorca-airport.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Centauro%20Rent%20a%20Car%20Mallorca%20Airport%20Carrer%20del%20Canal%20de%20Sant%20Jordi%2C%2029%2C%2007610%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Centauro%20Rent%20a%20Car%20Mallorca%20Airport%20Carrer%20del%20Canal%20de%20Sant%20Jordi%2C%2029%2C%2007610%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Centauro%20Rent%20a%20Car%20Mallorca%20Airport%20Carrer%20del%20Canal%20de%20Sant%20Jordi%2C%2029%2C%2007610%20Palma",
   shortDescription: {
     es: "Flota moderna de alquiler de vehículos junto al Aeropuerto de Palma: cobertura Smart sin franquicia, recogida digital y shuttle exprés.",
     en: "Modern car rental branch next to Palma Airport: zero-excess Smart Cover, digital check-in, and express shuttle.",
@@ -100,13 +94,6 @@ export const centauro_rent_a_car_mallorca_airport: ServiceItem = {
       "Schnellabholung per digitalem SmartLock-Schlüsselsafe",
       "Kostenloser Dauershuttle direkt vom Terminal zum Mietwagenzentrum",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.5,
-      reviewCount: 1820,
-      url: "https://www.google.com/maps/search/?api=1&query=Centauro%20Rent%20a%20Car%20Mallorca%20Airport%20Carrer%20del%20Canal%20de%20Sant%20Jordi%2C%2029%2C%2007610%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

@@ -29,8 +29,6 @@ export const CLUB_TENIS_ANDRATX: ServiceItem = {
   image: "/images/sports/club-tenis-andratx.jpg",
   gallery: ["/images/sports/club-tenis-andratx.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007029",
-  appleMapsUrl: "https://maps.apple.com/?q=Club%20Tenis%20Andratx+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Club%20Tenis%20Andratx+Mallorca",
   shortDescription: {
     es: "Club de tenis en el pueblo de Andratx con pistas de tierra batida, pádel y escuela juvenil.",
     en: "Tennis club in the village of Andratx with clay courts, padel, and junior academy.",
@@ -94,13 +92,6 @@ export const CLUB_TENIS_ANDRATX: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 240,
-      url: "https://www.google.com/maps?cid=12007029",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

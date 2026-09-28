@@ -28,9 +28,6 @@ export const bodegasCanMajoralAlgaida: ServiceItem = {
   email: "info@canmajoral.com",
   website: "https://canmajoral.com",
   menuUrl: "https://canmajoral.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Bodegas+Can+Majoral+Algaida+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Bodegas+Can+Majoral+Algaida",
-  bingMapsUrl: "https://www.bing.com/maps?q=Bodegas+Can+Majoral+Algaida",
   tags: ["zona:raiguer-pla", "zona:algaida", "product:premium", "mod:en-local", "aud:parejas", "temps:todo-el-ano"],
   capabilities: {
     parkingAvailable: true,

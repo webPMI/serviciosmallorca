@@ -76,10 +76,6 @@ export const banyBanulsInteriorBathroomsPalma: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Bany%20Banyuls%20Luxury%20Bathrooms%20%26%20Stone%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Bany%20Banyuls%20Luxury%20Bathrooms%20%26%20Stone%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Bany%20Banyuls%20Luxury%20Bathrooms%20%26%20Stone%20Mallorca",
   pricing: {
     startingPrice: "Grifería y sanitarios de diseño según catálogo",
     rateType: "custom_quote",
@@ -106,21 +102,4 @@ export const banyBanulsInteriorBathroomsPalma: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 310,
-      url: "https://www.google.com/maps/search/?api=1&query=Bany%20Banyuls%20Luxury%20Bathrooms%20%26%20Stone%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Bany%20Banyuls%20Luxury%20Bathrooms%20%26%20Stone%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.7,
-      reviewCount: 31,
-      url: "https://www.bing.com/maps?q=Bany%20Banyuls%20Luxury%20Bathrooms%20%26%20Stone%20Mallorca",
-    },
-    totalReviewsAggregated: 341,
-    overallWeightedRating: 4.8,
-  },
 };

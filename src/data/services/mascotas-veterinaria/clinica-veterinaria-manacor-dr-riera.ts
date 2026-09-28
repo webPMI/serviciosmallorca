@@ -31,12 +31,6 @@ export const clinica_veterinaria_manacor_dr_riera: ServiceItem = {
   schedule: "Lunes a Viernes: 09:00 - 13:30, 16:30 - 20:00 | Sábado: 09:30 - 13:00 | Domingo: Cerrado",
   image: "/images/services/clinica-veterinaria-manacor-dr-riera.jpg",
   gallery: ["/images/services/clinica-veterinaria-manacor-dr-riera.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica%20Veterin%C3%A0ria%20Manacor%20(Dr.%20Riera)%20Carrer%20de%20Moss%C3%A8n%20Alcover%2C%2022%2C%2007500%20Manacor%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Cl%C3%ADnica%20Veterin%C3%A0ria%20Manacor%20(Dr.%20Riera)%20Carrer%20de%20Moss%C3%A8n%20Alcover%2C%2022%2C%2007500%20Manacor%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Cl%C3%ADnica%20Veterin%C3%A0ria%20Manacor%20(Dr.%20Riera)%20Carrer%20de%20Moss%C3%A8n%20Alcover%2C%2022%2C%2007500%20Manacor%2C%20Illes%20Balears",
   shortDescription: {
     es: "Clínica veterinaria de referencia en Manacor con más de 20 años de experiencia, dotada de radiología digital, ecografía, quirófano quirúrgico y hospitalización diurna para animales de compañía.",
     en: "Benchmark veterinary clinic in Manacor with over 20 years of clinical practice, equipped with digital radiography, ultrasound, surgical theatre, and day hospitalization.",
@@ -100,13 +94,6 @@ export const clinica_veterinaria_manacor_dr_riera: ServiceItem = {
       "Präzise Bildgebung mittels digitalem Röntgen und Ultraschalluntersuchung der inneren Organe",
       "Diagnose, Therapie und wirksamer Schutz vor Mittelmeerkrankheiten (Leishmaniose)",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 210,
-      url: "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica%20Veterin%C3%A0ria%20Manacor%20(Dr.%20Riera)%20Carrer%20de%20Moss%C3%A8n%20Alcover%2C%2022%2C%2007500%20Manacor%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

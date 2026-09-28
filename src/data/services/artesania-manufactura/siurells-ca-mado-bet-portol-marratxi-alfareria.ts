@@ -31,12 +31,6 @@ export const siurells_ca_mado_bet_portol_marratxi_alfareria: ServiceItem = {
   schedule: "Lunes a Viernes: 09:00 - 13:30 y 16:30 - 20:00; Sábado: 09:30 - 13:30",
   image: "/images/services/siurells-ca-mado-bet-portol-marratxi-alfareria.jpg",
   gallery: ["/images/services/siurells-ca-mado-bet-portol-marratxi-alfareria.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Siurells%20Ca%20Mad%C3%B2%20Bet%20P%C3%B2rtol%20Marratx%C3%AD%20Alfarer%C3%ADa%20Tradicional%20(1888)%20Carrer%20Major%2C%2048%2C%20P%C3%B2rtol%2C%2007009%20Marratx%C3%AD",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Siurells%20Ca%20Mad%C3%B2%20Bet%20P%C3%B2rtol%20Marratx%C3%AD%20Alfarer%C3%ADa%20Tradicional%20(1888)%20Carrer%20Major%2C%2048%2C%20P%C3%B2rtol%2C%2007009%20Marratx%C3%AD",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Siurells%20Ca%20Mad%C3%B2%20Bet%20P%C3%B2rtol%20Marratx%C3%AD%20Alfarer%C3%ADa%20Tradicional%20(1888)%20Carrer%20Major%2C%2048%2C%20P%C3%B2rtol%2C%2007009%20Marratx%C3%AD",
   shortDescription: {
     es: "El taller de siurells más antiguo de Mallorca en Pòrtol (Marratxí): figuras de barro modeladas y pintadas a mano con el característico silbato y rayas rojas y verdes desde 1888.",
     en: "Mallorca's oldest artisan siurell workshop in Pòrtol (Marratxí): hand-molded clay whistle figures painted in traditional red and green stripes since 1888.",
@@ -100,13 +94,6 @@ export const siurells_ca_mado_bet_portol_marratxi_alfareria: ServiceItem = {
       "Siurell-Malworkshops für Kinder und Familien nach Anmeldung",
       "Maßanfertigung von Siurells für Gastgeschenke und Firmenpräsente",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 380,
-      url: "https://www.google.com/maps/search/?api=1&query=Siurells%20Ca%20Mad%C3%B2%20Bet%20P%C3%B2rtol%20Marratx%C3%AD%20Alfarer%C3%ADa%20Tradicional%20(1888)%20Carrer%20Major%2C%2048%2C%20P%C3%B2rtol%2C%2007009%20Marratx%C3%AD",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

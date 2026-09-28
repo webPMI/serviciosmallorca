@@ -31,12 +31,6 @@ export const trasteros_mallorca_self_storage_palma: ServiceItem = {
   schedule: "Lunes a Domingo: 06:00 - 23:00 (Acceso 365 días)",
   image: "/images/services/trasteros-mallorca-self-storage-palma.jpg",
   gallery: ["/images/services/trasteros-mallorca-self-storage-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Trasteros%20Mallorca%20Self%20Storage%20Palma%20Carrer%20del%20Gremi%20de%20Sabaters%2C%2044%2C%20Pol%C3%ADgon%20Son%20Castell%C3%B3%2C%2007009%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Trasteros%20Mallorca%20Self%20Storage%20Palma%20Carrer%20del%20Gremi%20de%20Sabaters%2C%2044%2C%20Pol%C3%ADgon%20Son%20Castell%C3%B3%2C%2007009%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Trasteros%20Mallorca%20Self%20Storage%20Palma%20Carrer%20del%20Gremi%20de%20Sabaters%2C%2044%2C%20Pol%C3%ADgon%20Son%20Castell%C3%B3%2C%2007009%20Palma",
   shortDescription: {
     es: "Centro de alquiler de trasteros y guardamuebles privados en Palma: módulos individuales desde 1 m², acceso por código PIN y videovigilancia 24h.",
     en: "Private self-storage and furniture repository in Palma: individual storage units from 1 sqm, PIN code access, and 24/7 video monitoring.",
@@ -100,13 +94,6 @@ export const trasteros_mallorca_self_storage_palma: ServiceItem = {
       "Gewerbliche Zwischenlagerung für Akten, Werkzeug und Messestände",
       "Verkauf von Umzugsmaterial: stabile Kartons, Luftpolsterfolie und Packdecken",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 110,
-      url: "https://www.google.com/maps/search/?api=1&query=Trasteros%20Mallorca%20Self%20Storage%20Palma%20Carrer%20del%20Gremi%20de%20Sabaters%2C%2044%2C%20Pol%C3%ADgon%20Son%20Castell%C3%B3%2C%2007009%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

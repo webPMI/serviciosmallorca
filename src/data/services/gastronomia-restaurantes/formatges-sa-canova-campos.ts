@@ -21,9 +21,6 @@ export const formatgesSaCanova: ServiceItem = {
   whatsapp: "+34 628 30 40 50",
   email: "info@sacanova.com",
   website: "https://formatgessacanova.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Formatges%20Sa%20Canova%20Campos",
-  appleMapsUrl: "https://maps.apple.com/?q=Formatges%20Sa%20Canova%20Campos&ll=39.4055,3.0012",
-  bingMapsUrl: "https://www.bing.com/maps?where1=Formatges%20Sa%20Canova%20Campos",
   coordinates: { lat: 39.4055, lng: 3.0012 },
   schedule: "Lunes a Sábado: 09:00 - 14:00 | 16:30 - 20:00 (Visitas a la Finca y Quesería)",
   lastVerifiedAt: "2026-08-25",
@@ -131,30 +128,13 @@ export const formatgesSaCanova: ServiceItem = {
       instagramHandle: "@formatgessacanova",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 420,
-      url: "https://www.google.com/maps/search/?api=1&query=Formatges%20Sa%20Canova%20Campos",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Formatges%20Sa%20Canova%20Campos&ll=39.4055,3.0012",
-    },
-    bingMaps: {
-      rating: 4.9,
-      reviewCount: 420,
-      url: "https://www.bing.com/maps?where1=Formatges%20Sa%20Canova%20Campos",
-    },
-    totalReviewsAggregated: 420,
-    overallWeightedRating: 4.9,
-  },
   reviews: [
     {
       id: "rev-fsc-1",
       authorName: "Joan Rigo",
       rating: 5,
       date: "2025-05-19",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
       comment:
         "El millor formatge d'ovella roja de Mallorca. El curat amb pebre de tap de cortí i el brossat fresc són una autèntica meravella artesana.",
@@ -165,7 +145,7 @@ export const formatgesSaCanova: ServiceItem = {
       authorName: "Charlotte Miller",
       rating: 5,
       date: "2025-06-26",
-      platform: "google_maps",
+      platform: "direct",
       language: "en",
       comment:
         "Fabulous authentic cheese farm in Campos! We tasted their raw milk cheeses and bought several wheels vacuum-sealed for home. Outstanding quality.",

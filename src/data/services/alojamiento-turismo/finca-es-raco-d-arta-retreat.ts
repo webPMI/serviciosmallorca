@@ -76,10 +76,6 @@ export const fincaEsRacoDArtaRetreat: ServiceItem = {
       close: "23:59",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Es%20Raco%20d'Arta%20Sustainable%20Retreat%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Es%20Raco%20d'Arta%20Sustainable%20Retreat%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Es%20Raco%20d'Arta%20Sustainable%20Retreat%20Mallorca",
   pricing: {
     startingPrice: "Consultar tarifa por noche según temporada",
     rateType: "tiered",
@@ -106,21 +102,4 @@ export const fincaEsRacoDArtaRetreat: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 380,
-      url: "https://www.google.com/maps/search/?api=1&query=Es%20Raco%20d'Arta%20Sustainable%20Retreat%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Es%20Raco%20d'Arta%20Sustainable%20Retreat%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 38,
-      url: "https://www.bing.com/maps?q=Es%20Raco%20d'Arta%20Sustainable%20Retreat%20Mallorca",
-    },
-    totalReviewsAggregated: 418,
-    overallWeightedRating: 4.9,
-  },
 };

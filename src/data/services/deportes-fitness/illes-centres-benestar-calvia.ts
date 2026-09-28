@@ -29,8 +29,6 @@ export const ILLES_CENTRES_BENESTAR_CALVIA: ServiceItem = {
   image: "/images/sports/illes-centres-benestar-calvia.jpg",
   gallery: ["/images/sports/illes-centres-benestar-calvia.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007035",
-  appleMapsUrl: "https://maps.apple.com/?q=Illes%20Centres%20de%20Benestar%20(Calvi%C3%A0)+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Illes%20Centres%20de%20Benestar%20(Calvi%C3%A0)+Mallorca",
   shortDescription: {
     es: "Centro de fitness y bienestar en Calvià con piscina cubierta, spa, sala de fuerza y actividades dirigidas.",
     en: "Calvià health and fitness club featuring indoor pool, wellness spa, gym floor, and group studios.",
@@ -94,13 +92,6 @@ export const ILLES_CENTRES_BENESTAR_CALVIA: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 390,
-      url: "https://www.google.com/maps?cid=12007035",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

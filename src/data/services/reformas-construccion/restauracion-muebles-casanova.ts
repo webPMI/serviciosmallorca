@@ -21,9 +21,6 @@ export const restauracionCasanova: ServiceItem = {
   whatsapp: "+34 610 22 33 44",
   email: "taller@restauracioncasanova.com",
   website: "https://restauracioncasanova.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Restauracion%20Muebles%20Casanova%20Palma",
-  appleMapsUrl: "https://maps.apple.com/?q=Restauracion%20Muebles%20Casanova%20Palma&ll=39.5722,2.6360",
-  bingMapsUrl: "https://www.bing.com/maps?where1=Restauracion%20Muebles%20Casanova%20Palma",
   coordinates: { lat: 39.5722, lng: 2.636 },
   schedule: "Lunes a Viernes: 08:30 - 13:30 | 15:30 - 19:00 (Sábados con Cita Previa)",
   lastVerifiedAt: "2026-08-25",
@@ -131,30 +128,13 @@ export const restauracionCasanova: ServiceItem = {
       instagramHandle: "@restauracioncasanova",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 115,
-      url: "https://www.google.com/maps/search/?api=1&query=Restauracion%20Muebles%20Casanova%20Palma",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Restauracion%20Muebles%20Casanova%20Palma&ll=39.5722,2.6360",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 115,
-      url: "https://www.bing.com/maps?where1=Restauracion%20Muebles%20Casanova%20Palma",
-    },
-    totalReviewsAggregated: 115,
-    overallWeightedRating: 4.8,
-  },
   reviews: [
     {
       id: "rev-rc-1",
       authorName: "Antònia Bestard",
       rating: 5,
       date: "2025-05-12",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
       comment:
         "Varen restaurar una còmoda mallorquina familiar del segle XIX amb goma laca a monyeca. El resultat és senzillament magistral, varen respectar tota la fusta original.",
@@ -165,7 +145,7 @@ export const restauracionCasanova: ServiceItem = {
       authorName: "Charles Montgomery",
       rating: 5,
       date: "2025-06-20",
-      platform: "google_maps",
+      platform: "direct",
       language: "en",
       comment:
         "Incredible craftsmen! Treated and polished our antique dining table and chairs in Santa Catalina. Flawless French polish finish and very careful handling.",

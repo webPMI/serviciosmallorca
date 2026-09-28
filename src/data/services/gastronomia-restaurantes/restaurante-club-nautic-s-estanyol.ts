@@ -28,9 +28,6 @@ export const restauranteClubNauticSEstanyol: ServiceItem = {
   email: "restaurante@cnestanyol.es",
   website: "https://www.cnestanyol.es",
   menuUrl: "https://www.cnestanyol.es",
-  googleMapsUrl: "https://www.google.com/maps/search/Restaurante+Club+Nautic+s+Estanyol+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante+Club+Nautic+S+Estanyol",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante+Club+Nautic+S+Estanyol",
   tags: [
     "zona:santanyi-migjorn",
     "zona:s-estanyol",

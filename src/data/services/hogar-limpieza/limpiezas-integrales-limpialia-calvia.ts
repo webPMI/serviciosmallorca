@@ -31,12 +31,6 @@ export const limpiezas_integrales_limpialia_calvia: ServiceItem = {
   schedule: "Lunes a Viernes: 08:00 - 19:00 | Sábado: 08:30 - 14:00 | Domingo: Cerrado",
   image: "/images/services/limpiezas-integrales-limpialia-calvia.jpg",
   gallery: ["/images/services/limpiezas-integrales-limpialia-calvia.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Limpiezas%20%26%20Servicios%20Integrales%20Limpialia%20Calvi%C3%A0%20Carrer%20de%20les%20Illes%20Balears%2C%2014%2C%2007181%20Calvi%C3%A0%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Limpiezas%20%26%20Servicios%20Integrales%20Limpialia%20Calvi%C3%A0%20Carrer%20de%20les%20Illes%20Balears%2C%2014%2C%2007181%20Calvi%C3%A0%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Limpiezas%20%26%20Servicios%20Integrales%20Limpialia%20Calvi%C3%A0%20Carrer%20de%20les%20Illes%20Balears%2C%2014%2C%2007181%20Calvi%C3%A0%2C%20Illes%20Balears",
   shortDescription: {
     es: "Empresa de limpieza premium para villas y residencias de lujo en Calvià, Santa Ponça y Andratx, especializada en limpiezas de fin de obra, cambio de huéspedes y cristales en altura.",
     en: "Premier cleaning service for luxury villas and estates in Calvià, Santa Ponça, and Andratx, specializing in post-construction deep cleaning, turnover shifts, and high-reach glass.",
@@ -100,13 +94,6 @@ export const limpiezas_integrales_limpialia_calvia: ServiceItem = {
       "Professionelle Glas- und Fassadenreinigung mit Osmosewasser bis 15 Meter Höhe",
       "Vor-Ort-Polsterreinigung für Sofas, Matratzen und Outdoormöbel mit Sprühextraktion",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 230,
-      url: "https://www.google.com/maps/search/?api=1&query=Limpiezas%20%26%20Servicios%20Integrales%20Limpialia%20Calvi%C3%A0%20Carrer%20de%20les%20Illes%20Balears%2C%2014%2C%2007181%20Calvi%C3%A0%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

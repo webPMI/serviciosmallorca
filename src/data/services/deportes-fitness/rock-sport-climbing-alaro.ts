@@ -29,8 +29,6 @@ export const ROCK_SPORT_CLIMBING_ALARO: ServiceItem = {
   image: "/images/sports/rock-sport-climbing-alaro.jpg",
   gallery: ["/images/sports/rock-sport-climbing-alaro.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007086",
-  appleMapsUrl: "https://maps.apple.com/?q=Rock%20Sport%20Climbing%20Alar%C3%B3+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Rock%20Sport%20Climbing%20Alar%C3%B3+Mallorca",
   shortDescription: {
     es: "Escuela y punto de encuentro de escalada deportiva para los sectores del Castell d'Alaró.",
     en: "Sport climbing academy and hub for the world-famous Castell d'Alaró climbing sectors.",
@@ -94,13 +92,6 @@ export const ROCK_SPORT_CLIMBING_ALARO: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 160,
-      url: "https://www.google.com/maps?cid=12007086",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

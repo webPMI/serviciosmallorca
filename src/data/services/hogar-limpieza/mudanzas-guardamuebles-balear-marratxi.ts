@@ -31,12 +31,6 @@ export const mudanzas_guardamuebles_balear_marratxi: ServiceItem = {
   schedule: "Lunes a Viernes: 08:00 - 18:30 | Sábado: 08:30 - 13:00 | Domingo: Cerrado",
   image: "/images/services/mudanzas-guardamuebles-balear-marratxi.jpg",
   gallery: ["/images/services/mudanzas-guardamuebles-balear-marratxi.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Mudanzas%20%26%20Guardamuebles%20Balear%20Marratx%C3%AD%20Pol%C3%ADgon%20Marratx%C3%AD%2C%20Carrer%20dels%20Fusters%2C%2022%2C%2007141%20Marratx%C3%AD%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Mudanzas%20%26%20Guardamuebles%20Balear%20Marratx%C3%AD%20Pol%C3%ADgon%20Marratx%C3%AD%2C%20Carrer%20dels%20Fusters%2C%2022%2C%2007141%20Marratx%C3%AD%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Mudanzas%20%26%20Guardamuebles%20Balear%20Marratx%C3%AD%20Pol%C3%ADgon%20Marratx%C3%AD%2C%20Carrer%20dels%20Fusters%2C%2022%2C%2007141%20Marratx%C3%AD%2C%20Illes%20Balears",
   shortDescription: {
     es: "Empresa líder en mudanzas insulares, nacionales e internacionales con sede en Marratxí, ofreciendo guardamuebles vigilado, embalajes de arte y grúas montamuebles de fachada.",
     en: "Leading relocation and storage company in Mallorca based in Marratxí, specializing in island and international moving, video-surveilled storage, and exterior furniture cranes.",
@@ -100,13 +94,6 @@ export const mudanzas_guardamuebles_balear_marratxi: ServiceItem = {
       "Monatliche Anmietung von Lagerboxen mit Feuchtigkeitskontrolle und Versicherungsschutz",
       "Fachgerechte Möbel-De- und Remontage sowie Verkauf von Umzugskartons und Schutzfolien",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 310,
-      url: "https://www.google.com/maps/search/?api=1&query=Mudanzas%20%26%20Guardamuebles%20Balear%20Marratx%C3%AD%20Pol%C3%ADgon%20Marratx%C3%AD%2C%20Carrer%20dels%20Fusters%2C%2022%2C%2007141%20Marratx%C3%AD%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

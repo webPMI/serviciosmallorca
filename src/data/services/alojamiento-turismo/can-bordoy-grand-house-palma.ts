@@ -76,10 +76,6 @@ export const canBordoyGrandHousePalma: ServiceItem = {
       close: "23:59",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Can%20Bordoy%20Grand%20House%20%26%20Garden%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Can%20Bordoy%20Grand%20House%20%26%20Garden%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Can%20Bordoy%20Grand%20House%20%26%20Garden%20Mallorca",
   pricing: {
     startingPrice: "Desde 520€ / noche",
     rateType: "tiered",
@@ -106,21 +102,4 @@ export const canBordoyGrandHousePalma: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 420,
-      url: "https://www.google.com/maps/search/?api=1&query=Can%20Bordoy%20Grand%20House%20%26%20Garden%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Can%20Bordoy%20Grand%20House%20%26%20Garden%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 42,
-      url: "https://www.bing.com/maps?q=Can%20Bordoy%20Grand%20House%20%26%20Garden%20Mallorca",
-    },
-    totalReviewsAggregated: 462,
-    overallWeightedRating: 4.9,
-  },
 };

@@ -31,12 +31,6 @@ export const electricistas_homologados_baleares_cie: ServiceItem = {
   schedule: "Lunes a Viernes: 08:00 - 19:00 (Guardia de averías eléctricas 24h)",
   image: "/images/services/electricistas-homologados-baleares-cie.jpg",
   gallery: ["/images/services/electricistas-homologados-baleares-cie.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Electricistas%20Homologados%20Baleares%20Boletines%20%26%20Urgencias%20CIE%20Palma%20Carrer%20d'Arag%C3%B3%2C%2048%2C%2007005%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Electricistas%20Homologados%20Baleares%20Boletines%20%26%20Urgencias%20CIE%20Palma%20Carrer%20d'Arag%C3%B3%2C%2048%2C%2007005%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Electricistas%20Homologados%20Baleares%20Boletines%20%26%20Urgencias%20CIE%20Palma%20Carrer%20d'Arag%C3%B3%2C%2048%2C%2007005%20Palma",
   shortDescription: {
     es: "Instaladores electricistas autorizados en Mallorca: boletines eléctricos oficiales CIE, aumento de potencia con Endesa, cuadros eléctricos y reparación de apagones 24h.",
     en: "Certified licensed electrical contractors in Mallorca: official CIE electrical safety certificates, Endesa power upgrades, fuse boards, and 24h blackout repairs.",
@@ -100,13 +94,6 @@ export const electricistas_homologados_baleares_cie: ServiceItem = {
       "Installation von Wallbox-Ladestationen für E-Fahrzeuge",
       "LED-Beleuchtungskonzepte für Wohnräume und Gartenanlagen",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 510,
-      url: "https://www.google.com/maps/search/?api=1&query=Electricistas%20Homologados%20Baleares%20Boletines%20%26%20Urgencias%20CIE%20Palma%20Carrer%20d'Arag%C3%B3%2C%2048%2C%2007005%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

@@ -29,8 +29,6 @@ export const CROSSFIT_BLAU_SON_MOIX: ServiceItem = {
   image: "/images/services/crossfit-blau-son-moix.jpg",
   gallery: ["/images/services/crossfit-blau-son-moix.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007064",
-  appleMapsUrl: "https://maps.apple.com/?q=CrossFit%20Blau+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=CrossFit%20Blau+Mallorca",
   shortDescription: {
     es: "Box funcional en la zona deportiva de Son Moix con enfoque en salud postural, fuerza y resistencia.",
     en: "Functional box in Son Moix sports area focusing on posture health, strength, and endurance.",
@@ -94,13 +92,6 @@ export const CROSSFIT_BLAU_SON_MOIX: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 220,
-      url: "https://www.google.com/maps?cid=12007064",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

@@ -76,10 +76,6 @@ export const centroVeterinarioPortalsNous: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Portals%20Nous%20International%20Veterinary%20Clinic%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Portals%20Nous%20International%20Veterinary%20Clinic%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Portals%20Nous%20International%20Veterinary%20Clinic%20Mallorca",
   pricing: {
     startingPrice: "Consulta general desde 48€",
     rateType: "tiered",
@@ -106,21 +102,4 @@ export const centroVeterinarioPortalsNous: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 460,
-      url: "https://www.google.com/maps/search/?api=1&query=Portals%20Nous%20International%20Veterinary%20Clinic%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Portals%20Nous%20International%20Veterinary%20Clinic%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 46,
-      url: "https://www.bing.com/maps?q=Portals%20Nous%20International%20Veterinary%20Clinic%20Mallorca",
-    },
-    totalReviewsAggregated: 506,
-    overallWeightedRating: 4.9,
-  },
 };

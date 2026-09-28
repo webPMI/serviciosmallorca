@@ -31,12 +31,6 @@ export const agroturismo_son_foguero_holistic_retreat_maria: ServiceItem = {
   schedule: "Recepción: 09:00 - 20:00 (Temporada: Marzo – Noviembre)",
   image: "/images/services/agroturismo-son-foguero-holistic-retreat-maria.jpg",
   gallery: ["/images/services/agroturismo-son-foguero-holistic-retreat-maria.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Son%20Foguer%C3%B3%20Holistic%20Retreat%20%26%20Agroturismo%20Maria%20de%20la%20Salut%20Cam%C3%AD%20de%20Son%20Foguer%C3%B3%2C%20s%2Fn%2C%2007519%20Maria%20de%20la%20Salut",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Son%20Foguer%C3%B3%20Holistic%20Retreat%20%26%20Agroturismo%20Maria%20de%20la%20Salut%20Cam%C3%AD%20de%20Son%20Foguer%C3%B3%2C%20s%2Fn%2C%2007519%20Maria%20de%20la%20Salut",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Son%20Foguer%C3%B3%20Holistic%20Retreat%20%26%20Agroturismo%20Maria%20de%20la%20Salut%20Cam%C3%AD%20de%20Son%20Foguer%C3%B3%2C%20s%2Fn%2C%2007519%20Maria%20de%20la%20Salut",
   shortDescription: {
     es: "Agroturismo y santuario holístico adults-only en Maria de la Salut: diseño sostenible, retiros de yoga, piscina de agua salada y gastronomía vegetal de finca.",
     en: "Adults-only holistic retreat and agritourism estate in Maria de la Salut: sustainable design, yoga retreats, saltwater pool, and farm-to-table plant-based cuisine.",
@@ -100,13 +94,6 @@ export const agroturismo_son_foguero_holistic_retreat_maria: ServiceItem = {
       "Kristallschalen-Klangbäder und ganzheitliche Aromatherapie-Massagen",
       "Pflanzliches Gourmet-Frühstück am Salzwasserpool",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 290,
-      url: "https://www.google.com/maps/search/?api=1&query=Son%20Foguer%C3%B3%20Holistic%20Retreat%20%26%20Agroturismo%20Maria%20de%20la%20Salut%20Cam%C3%AD%20de%20Son%20Foguer%C3%B3%2C%20s%2Fn%2C%2007519%20Maria%20de%20la%20Salut",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

@@ -35,12 +35,6 @@ export const clinica_veterinaria_son_dureta_palma_24h: ServiceItem = {
   schedule: "Urgencias 24 horas / 365 días (Consultas: Lunes a Sábado 09:00 - 20:30)",
   image: "/images/services/clinica-veterinaria-son-dureta-palma-24h.jpg",
   gallery: ["/images/services/clinica-veterinaria-son-dureta-palma-24h.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica%20Veterinaria%20Son%20Dureta%20Hospital%20%26%20Urgencias%2024h%20Palma%20Carrer%20de%20Andrea%20Doria%2C%2044%2C%2007014%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Cl%C3%ADnica%20Veterinaria%20Son%20Dureta%20Hospital%20%26%20Urgencias%2024h%20Palma%20Carrer%20de%20Andrea%20Doria%2C%2044%2C%2007014%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Cl%C3%ADnica%20Veterinaria%20Son%20Dureta%20Hospital%20%26%20Urgencias%2024h%20Palma%20Carrer%20de%20Andrea%20Doria%2C%2044%2C%2007014%20Palma",
   shortDescription: {
     es: "Hospital veterinario 24 horas en el barrio de Son Dureta de Palma: servicio médico presencial 24/7, cirugía de urgencia, ecografía avanzada, laboratorio clínico y UCI animal.",
     en: "24-hour veterinary hospital in Palma's Son Dureta district: 24/7 on-site emergency care, emergency surgery, advanced ultrasound, ICU, and blood bank.",
@@ -104,13 +98,6 @@ export const clinica_veterinaria_son_dureta_palma_24h: ServiceItem = {
       "Diagnostik: Doppler-Ultraschall, digitales Röntgen und EKG",
       "Jahres-Gesundheits-Abos, Impfungen, offizieller Microchip und EU-Heimtierausweis",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 680,
-      url: "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica%20Veterinaria%20Son%20Dureta%20Hospital%20%26%20Urgencias%2024h%20Palma%20Carrer%20de%20Andrea%20Doria%2C%2044%2C%2007014%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

@@ -21,9 +21,6 @@ export const fornCanPacoCampos: ServiceItem = {
   whatsapp: "+34 971 65 04 80",
   email: "info@forncanpaco.com",
   website: "https://forncanpaco.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Forn%20Can%20Paco%20Campos",
-  appleMapsUrl: "https://maps.apple.com/?q=Forn%20Can%20Paco%20Campos&ll=39.4310,3.0180",
-  bingMapsUrl: "https://www.bing.com/maps?where1=Forn%20Can%20Paco%20Campos",
   coordinates: { lat: 39.431, lng: 3.018 },
   schedule: "Lunes a Domingo: 06:30 - 14:00 | 17:00 - 20:30 (Abierto todos los días)",
   lastVerifiedAt: "2026-08-25",
@@ -130,30 +127,13 @@ export const fornCanPacoCampos: ServiceItem = {
       instagramHandle: "@forncanpaco",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 310,
-      url: "https://www.google.com/maps/search/?api=1&query=Forn%20Can%20Paco%20Campos",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Forn%20Can%20Paco%20Campos&ll=39.4310,3.0180",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 310,
-      url: "https://www.bing.com/maps?where1=Forn%20Can%20Paco%20Campos",
-    },
-    totalReviewsAggregated: 310,
-    overallWeightedRating: 4.8,
-  },
   reviews: [
     {
       id: "rev-fcp-1",
       authorName: "Antoni Vanrell",
       rating: 5,
       date: "2025-05-18",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
       comment:
         "Els millors cremadillos de crema de tot Mallorca es fan a Can Paco a Campos. El full és finíssim i cruixent. Les panades també són boníssimes.",
@@ -164,7 +144,7 @@ export const fornCanPacoCampos: ServiceItem = {
       authorName: "Stefan Meyer",
       rating: 5,
       date: "2025-06-25",
-      platform: "google_maps",
+      platform: "direct",
       language: "de",
       comment:
         "Absoluter Geheimtipp in Campos! Die Cremadillos mit Vanillecreme sind himmlisch knusprig. Fantastisches Pa Moreno und sehr freundliches Personal.",

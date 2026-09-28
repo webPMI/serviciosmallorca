@@ -31,12 +31,6 @@ export const studio_botanico_palma_spa_wellness: ServiceItem = {
   schedule: "Lunes a Sábado: 10:00 - 20:00",
   image: "/images/services/studio-botanico-palma-spa-wellness.jpg",
   gallery: ["/images/services/studio-botanico-palma-spa-wellness.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Studio%20Bot%C3%A1nico%20Palma%20Spa%20%26%20Organic%20Wellness%20Carrer%20de%20Sant%20Feliu%2C%2014%2C%2007012%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Studio%20Bot%C3%A1nico%20Palma%20Spa%20%26%20Organic%20Wellness%20Carrer%20de%20Sant%20Feliu%2C%2014%2C%2007012%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Studio%20Bot%C3%A1nico%20Palma%20Spa%20%26%20Organic%20Wellness%20Carrer%20de%20Sant%20Feliu%2C%2014%2C%2007012%20Palma",
   shortDescription: {
     es: "Boutique spa y centro de belleza orgánica en el corazón de Palma: tratamientos faciales botánicos, masajes holísticos con plantas autóctonas y cosmética vegana certificada.",
     en: "Boutique organic day spa in central Palma: botanical facial therapies, holistic body massages with native island herbs, and certified vegan skincare.",
@@ -100,13 +94,6 @@ export const studio_botanico_palma_spa_wellness: ServiceItem = {
       "Körperpeelings mit Meersalz aus Es Trenc",
       "Hautanalyse und individuelle Naturkosmetik-Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 210,
-      url: "https://www.google.com/maps/search/?api=1&query=Studio%20Bot%C3%A1nico%20Palma%20Spa%20%26%20Organic%20Wellness%20Carrer%20de%20Sant%20Feliu%2C%2014%2C%2007012%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

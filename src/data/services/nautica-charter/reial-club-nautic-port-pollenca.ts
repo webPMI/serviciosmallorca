@@ -78,12 +78,6 @@ export const reialClubNauticPortPollenca: ServiceItem = {
   },
   image: "/images/services/reial-club-nautic-port-pollenca.jpg",
   gallery: ["/images/services/reial-club-nautic-port-pollenca.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Reial%20Club%20N%C3%A0utic%20Port%20de%20Pollen%C3%A7a%20(1961)%20Moll%20Vell%2C%20s%2Fn%2C%2007470%20Port%20de%20Pollen%C3%A7a%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Reial%20Club%20N%C3%A0utic%20Port%20de%20Pollen%C3%A7a%20(1961)%20Moll%20Vell%2C%20s%2Fn%2C%2007470%20Port%20de%20Pollen%C3%A7a%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://www.bing.com/maps?q=Reial%20Club%20N%C3%A0utic%20Port%20de%20Pollen%C3%A7a%20(1961)%20Moll%20Vell%2C%20s%2Fn%2C%2007470%20Port%20de%20Pollen%C3%A7a%2C%20Illes%20Balears",
   phone: "+34 971 86 46 35",
   whatsapp: "+34971864635",
   website: "https://rcnpp.es",

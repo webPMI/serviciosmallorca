@@ -28,9 +28,6 @@ export const bodegasSonJulianaSantaEugenia: ServiceItem = {
   email: "info@sonjuliana.es",
   website: "https://sonjuliana.es",
   menuUrl: "https://sonjuliana.es",
-  googleMapsUrl: "https://www.google.com/maps/search/Bodegas+Son+Juliana+Santa+Eugenia+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Bodegas+Son+Juliana+Santa+Eugenia",
-  bingMapsUrl: "https://www.bing.com/maps?q=Bodegas+Son+Juliana+Santa+Eugenia",
   tags: [
     "zona:raiguer-pla",
     "zona:santa-eugenia",

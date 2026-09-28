@@ -31,12 +31,6 @@ export const wifibaleares_telecomunicaciones_inca: ServiceItem = {
   schedule: "Lunes a Viernes: 09:00 - 14:00, 16:00 - 19:00",
   image: "/images/services/wifibaleares-telecomunicaciones-inca.jpg",
   gallery: ["/images/services/wifibaleares-telecomunicaciones-inca.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Wifibaleares%20Telecomunicaciones%20Inca%20Avinguda%20del%20General%20Luque%2C%20280%2C%2007300%20Inca",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Wifibaleares%20Telecomunicaciones%20Inca%20Avinguda%20del%20General%20Luque%2C%20280%2C%2007300%20Inca",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Wifibaleares%20Telecomunicaciones%20Inca%20Avinguda%20del%20General%20Luque%2C%20280%2C%2007300%20Inca",
   shortDescription: {
     es: "Operador balear de telecomunicaciones en Inca: fibra óptica simétrica, internet WiMAX de alta velocidad para fincas rurales y telefonía.",
     en: "Balearic telecom operator in Inca: symmetrical fiber optics, high-speed rural WiMAX internet for fincas, and mobile services.",
@@ -100,13 +94,6 @@ export const wifibaleares_telecomunicaciones_inca: ServiceItem = {
       "Mesh-WLAN-Systeme mit großer Reichweite für Terrassen, Pools und Fincagärten",
       "Mobilfunk- und Festnetztarife mit unkomplizierter Rufnummernmitnahme",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 95,
-      url: "https://www.google.com/maps/search/?api=1&query=Wifibaleares%20Telecomunicaciones%20Inca%20Avinguda%20del%20General%20Luque%2C%20280%2C%2007300%20Inca",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

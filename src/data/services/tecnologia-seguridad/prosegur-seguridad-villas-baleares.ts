@@ -76,10 +76,6 @@ export const prosegurSeguridadVillasBaleares: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Alarmas%20%26%20Videovigilancia%20CCTV%20Mallorca%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Alarmas%20%26%20Videovigilancia%20CCTV%20Mallorca%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Alarmas%20%26%20Videovigilancia%20CCTV%20Mallorca%20Mallorca",
   pricing: {
     startingPrice: "Sistema de alarma perimetral conectada a CRA desde 49€/mes",
     rateType: "tiered",
@@ -106,21 +102,4 @@ export const prosegurSeguridadVillasBaleares: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 540,
-      url: "https://www.google.com/maps/search/?api=1&query=Alarmas%20%26%20Videovigilancia%20CCTV%20Mallorca%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Alarmas%20%26%20Videovigilancia%20CCTV%20Mallorca%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.7,
-      reviewCount: 54,
-      url: "https://www.bing.com/maps?q=Alarmas%20%26%20Videovigilancia%20CCTV%20Mallorca%20Mallorca",
-    },
-    totalReviewsAggregated: 594,
-    overallWeightedRating: 4.8,
-  },
 };

@@ -31,12 +31,6 @@ export const real_cartuja_valldemossa_museo_chopin: ServiceItem = {
   schedule: "Lunes a Sábado: 10:00 - 17:30, Domingo: 10:00 - 15:00",
   image: "/images/services/real-cartuja-valldemossa-museo-chopin.jpg",
   gallery: ["/images/services/real-cartuja-valldemossa-museo-chopin.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Real%20Cartuja%20de%20Valldemossa%20(1399)%20-%20Museo%20Chopin%20%26%20George%20Sand%20Pla%C3%A7a%20Cartoixa%2C%20s%2Fn%2C%2007170%20Valldemossa",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Real%20Cartuja%20de%20Valldemossa%20(1399)%20-%20Museo%20Chopin%20%26%20George%20Sand%20Pla%C3%A7a%20Cartoixa%2C%20s%2Fn%2C%2007170%20Valldemossa",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Real%20Cartuja%20de%20Valldemossa%20(1399)%20-%20Museo%20Chopin%20%26%20George%20Sand%20Pla%C3%A7a%20Cartoixa%2C%20s%2Fn%2C%2007170%20Valldemossa",
   shortDescription: {
     es: "Monumento histórico en la Serra de Tramuntana fundado como palacio real en 1399: la Celda de Chopin con su piano Pleyel, la farmacia monástica y el claustro.",
     en: "Historic landmark in the Tramuntana mountains founded as a royal palace in 1399: Chopin and George Sand's cell with Pleyel piano, pharmacy, and cloisters.",
@@ -100,13 +94,6 @@ export const real_cartuja_valldemossa_museo_chopin: ServiceItem = {
       "Interaktive mehrsprachige Audio-Guides für Smartphones",
       "Kurze klassische Live-Klavierkonzerte während der Hauptsaison",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 8900,
-      url: "https://www.google.com/maps/search/?api=1&query=Real%20Cartuja%20de%20Valldemossa%20(1399)%20-%20Museo%20Chopin%20%26%20George%20Sand%20Pla%C3%A7a%20Cartoixa%2C%20s%2Fn%2C%2007170%20Valldemossa",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

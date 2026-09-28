@@ -31,12 +31,6 @@ export const ibertrac_control_plagas_mallorca: ServiceItem = {
   schedule: "Lunes a Viernes de 08:00 a 18:00",
   image: "/images/services/ibertrac-control-plagas-mallorca.jpg",
   gallery: ["/images/services/ibertrac-control-plagas-mallorca.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Ibertrac%20Control%20de%20Plagas%20%26%20Xil%C3%B3fagos%20Mallorca%20Carrer%20del%20Gremi%20de%20Sabaters%2C%2021%2C%2007009%20Palma%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Ibertrac%20Control%20de%20Plagas%20%26%20Xil%C3%B3fagos%20Mallorca%20Carrer%20del%20Gremi%20de%20Sabaters%2C%2021%2C%2007009%20Palma%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Ibertrac%20Control%20de%20Plagas%20%26%20Xil%C3%B3fagos%20Mallorca%20Carrer%20del%20Gremi%20de%20Sabaters%2C%2021%2C%2007009%20Palma%2C%20Illes%20Balears",
   shortDescription: {
     es: "Especialistas técnicos en erradicación de termitas, carcoma y patologías de la madera en fincas y cascos históricos de Mallorca. Garantía certificada de hasta 10 años.",
     en: "Technical specialists in eliminating termites, woodworm, and timber pests in historic properties and country fincas. Certified guarantees of up to 10 years.",
@@ -110,13 +104,6 @@ export const ibertrac_control_plagas_mallorca: ServiceItem = {
     en: ["Subterranean termite eradication", "Timber woodworm treatments", "Historic building pest control"],
     ca: ["Erradicació de tèrmits subterranis", "Tractament de corc en bigues", "Control de xilòfags a Mallorca"],
     de: ["Termitenbeseitigung ohne Gifteinsatz", "Holzwurmsanierung alter Balken", "Fachbetrieb für Holzschutz"],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 135,
-      url: "https://www.google.com/maps/search/?api=1&query=Ibertrac%20Control%20de%20Plagas%20%26%20Xil%C3%B3fagos%20Mallorca%20Carrer%20del%20Gremi%20de%20Sabaters%2C%2021%2C%2007009%20Palma%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

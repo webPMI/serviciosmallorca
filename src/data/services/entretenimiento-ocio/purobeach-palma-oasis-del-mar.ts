@@ -31,12 +31,6 @@ export const purobeach_palma_oasis_del_mar: ServiceItem = {
   schedule: "Lunes a Domingo: 11:00 - 22:00 (Temporada Verano)",
   image: "/images/services/purobeach-palma-oasis-del-mar.jpg",
   gallery: ["/images/services/purobeach-palma-oasis-del-mar.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Purobeach%20Palma%20Urban%20Oasis%20del%20Mar%20Carrer%20del%20Pagell%2C%201%2C%20Cala%20Est%C3%A0ncia%2C%2007071%20Can%20Pastilla",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Purobeach%20Palma%20Urban%20Oasis%20del%20Mar%20Carrer%20del%20Pagell%2C%201%2C%20Cala%20Est%C3%A0ncia%2C%2007071%20Can%20Pastilla",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Purobeach%20Palma%20Urban%20Oasis%20del%20Mar%20Carrer%20del%20Pagell%2C%201%2C%20Cala%20Est%C3%A0ncia%2C%2007071%20Can%20Pastilla",
   shortDescription: {
     es: "Mítico beach club en una pequeña península rocosa de Cala Estància con piscina infinity de fondo negro, camas balinesas y DJ sesiones.",
     en: "Iconic oceanfront beach club on a rocky peninsula in Cala Estància with black-tile infinity pool, sunbeds, and DJ sunsets.",
@@ -100,13 +94,6 @@ export const purobeach_palma_oasis_del_mar: ServiceItem = {
       "Exklusive Hochzeiten und Firmenevents",
       "Puro Music und Lifestyle-Boutique",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 1350,
-      url: "https://www.google.com/maps/search/?api=1&query=Purobeach%20Palma%20Urban%20Oasis%20del%20Mar%20Carrer%20del%20Pagell%2C%201%2C%20Cala%20Est%C3%A0ncia%2C%2007071%20Can%20Pastilla",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

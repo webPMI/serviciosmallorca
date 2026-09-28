@@ -31,12 +31,6 @@ export const mel_vallespir_artesania_apicola_maria_de_la_salut: ServiceItem = {
   schedule: "Lunes a Sábado: 09:00 - 13:30, 16:30 - 20:00",
   image: "/images/services/mel-vallespir-artesania-apicola-maria-de-la-salut.jpg",
   gallery: ["/images/services/mel-vallespir-artesania-apicola-maria-de-la-salut.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Mel%20Vallespir%20Artesania%20Ap%C3%ADcola%201985%20Carrer%20de%20la%20Creu%2C%2014%2C%2007519%20Maria%20de%20la%20Salut",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Mel%20Vallespir%20Artesania%20Ap%C3%ADcola%201985%20Carrer%20de%20la%20Creu%2C%2014%2C%2007519%20Maria%20de%20la%20Salut",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Mel%20Vallespir%20Artesania%20Ap%C3%ADcola%201985%20Carrer%20de%20la%20Creu%2C%2014%2C%2007519%20Maria%20de%20la%20Salut",
   shortDescription: {
     es: "Apicultura artesanal en Maria de la Salut desde 1985: miel cruda pura de romero, azahar y milflores de Mallorca sin pasteurizar.",
     en: "Artisan beekeeping in Maria de la Salut since 1985: 100% unpasteurized raw rosemary, orange blossom, and wildflower honey.",
@@ -100,13 +94,6 @@ export const mel_vallespir_artesania_apicola_maria_de_la_salut: ServiceItem = {
       "Natürliche Bienenheilmittel: Propolis-Tinktur und frisches Gelee Royale",
       "Geschenkkörbe mit handgemachten Honigspezialitäten der Balearen",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 92,
-      url: "https://www.google.com/maps/search/?api=1&query=Mel%20Vallespir%20Artesania%20Ap%C3%ADcola%201985%20Carrer%20de%20la%20Creu%2C%2014%2C%2007519%20Maria%20de%20la%20Salut",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

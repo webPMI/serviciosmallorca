@@ -27,8 +27,6 @@ export const marinaPortDeMallorca: ServiceItem = {
   email: "info@portdemallorca.com",
   website: "https://portdemallorca.com",
   googleMapsUrl: "https://www.google.com/maps?cid=18293049182394857261",
-  appleMapsUrl: "https://maps.apple.com/?q=Marina+Port+de+Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Marina+Port+de+Mallorca",
   tags: ["zona:palma", "product:lujo", "mod:walk-in", "aud:expat", "temps:todo-el-ano"],
   capabilities: {
     seaViews: true,

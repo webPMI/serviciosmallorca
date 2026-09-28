@@ -31,12 +31,6 @@ export const piscinas_es_pou_campos_santanyi: ServiceItem = {
   schedule: "Lunes a Viernes: 08:00 - 13:30, 15:30 - 19:00",
   image: "/images/services/piscinas-es-pou-campos-santanyi.jpg",
   gallery: ["/images/services/piscinas-es-pou-campos-santanyi.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Piscinas%20Es%20Pou%20-%20Construcci%C3%B3n%20%26%20Cloraci%C3%B3n%20Salina%20Mallorca%20Carrer%20de%20Son%20Llad%C3%B3%2C%2014%2C%2007630%20Campos",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Piscinas%20Es%20Pou%20-%20Construcci%C3%B3n%20%26%20Cloraci%C3%B3n%20Salina%20Mallorca%20Carrer%20de%20Son%20Llad%C3%B3%2C%2014%2C%2007630%20Campos",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Piscinas%20Es%20Pou%20-%20Construcci%C3%B3n%20%26%20Cloraci%C3%B3n%20Salina%20Mallorca%20Carrer%20de%20Son%20Llad%C3%B3%2C%2014%2C%2007630%20Campos",
   shortDescription: {
     es: "Empresa familiar de Campos líder en construcción de piscinas de gresite, lámina armada, cloración salina y climatización en el Migjorn.",
     en: "Family-owned pool construction company in Campos leading in mosaic tile, reinforced PVC liner, saltwater systems, and heating in south Mallorca.",
@@ -100,13 +94,6 @@ export const piscinas_es_pou_campos_santanyi: ServiceItem = {
       "Automatische Unterflur-Sicherheitsabdeckungen",
       "Wöchentlicher Pflegeservice und Wasseranalyse",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 210,
-      url: "https://www.google.com/maps/search/?api=1&query=Piscinas%20Es%20Pou%20-%20Construcci%C3%B3n%20%26%20Cloraci%C3%B3n%20Salina%20Mallorca%20Carrer%20de%20Son%20Llad%C3%B3%2C%2014%2C%2007630%20Campos",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

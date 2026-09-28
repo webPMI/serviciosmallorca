@@ -30,9 +30,6 @@ export const castilloHotelSonVidaSpa: ServiceItem = {
     "https://www.marriott.com/en-us/hotels/pmilc-castillo-hotel-son-vida-a-luxury-collection-hotel-mallorca/overview/",
   menuUrl:
     "https://www.marriott.com/en-us/hotels/pmilc-castillo-hotel-son-vida-a-luxury-collection-hotel-mallorca/overview/",
-  googleMapsUrl: "https://www.google.com/maps/search/Castillo+Hotel+Son+Vida+Spa+Palma+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Castillo+Hotel+Son+Vida+Spa+Palma",
-  bingMapsUrl: "https://www.bing.com/maps?q=Castillo+Hotel+Son+Vida+Spa+Palma",
   tags: [
     "zona:palma",
     "zona:son-vida",
@@ -150,7 +147,7 @@ export const castilloHotelSonVidaSpa: ServiceItem = {
       comment:
         "Traumhafter Spa-Bereich mit wunderschönem Blick auf Palma. Die Maria Galland Gesichtsbehandlung war erstklassig und die Therapeuten hochprofessionell.",
       date: "2026-08-16",
-      platform: "google_maps",
+      platform: "direct",
       language: "de",
     },
     {
@@ -160,7 +157,7 @@ export const castilloHotelSonVidaSpa: ServiceItem = {
       comment:
         "Instalaciones impecables y ambiente de absoluta relajación en Son Vida. El circuito de saunas y la piscina interior son una maravilla.",
       date: "2026-07-25",
-      platform: "google_maps",
+      platform: "direct",
       language: "es",
     },
   ],

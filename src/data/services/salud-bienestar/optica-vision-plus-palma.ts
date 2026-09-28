@@ -28,10 +28,6 @@ export const optica_vision_plus_palma: ServiceItem = {
   schedule: "Lunes a Sábado: 09:30 - 20:00",
   image: "/images/services/optica-vision-plus-palma.jpg",
   gallery: ["/images/services/optica-vision-plus-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=%C3%93ptica+Visi%C3%B3n+Plus+Palma+Avinguda+Rei+Jaume+III+11",
-  appleMapsUrl: "https://maps.apple.com/?q=Optica+Vision+Plus+Palma",
-  bingMapsUrl: "https://bing.com/maps?q=Optica+Vision+Plus+Palma",
   shortDescription: {
     es: "Óptica premium en la Avenida Jaume III de Palma con optometría avanzada, lentes de contacto a medida y gafas de sol de las mejores marcas internacionales.",
     en: "Premium optical store on Palma's Jaume III Avenue with advanced optometry, custom contact lenses, and sunglasses from top international brands.",
@@ -95,13 +91,6 @@ export const optica_vision_plus_palma: ServiceItem = {
       "Nacht-Orthokeratologie zur Myopiekontrolle bei Kindern",
       "Korrektionssportbrillen und Sonnenbrillen für Radfahrer und Segler",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 287,
-      url: "https://www.google.com/maps/search/?api=1&query=%C3%93ptica+Visi%C3%B3n+Plus+Palma",
-    },
   },
   createdAt: "2026-09-05",
   lastUpdatedAt: "2026-09-05",

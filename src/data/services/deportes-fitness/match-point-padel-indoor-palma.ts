@@ -29,8 +29,6 @@ export const MATCH_POINT_PADEL_INDOOR_PALMA: ServiceItem = {
   image: "/images/sports/match-point-padel-indoor-palma.jpg",
   gallery: ["/images/sports/match-point-padel-indoor-palma.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007024",
-  appleMapsUrl: "https://maps.apple.com/?q=Match%20Point%20P%C3%A1del%20Indoor+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Match%20Point%20P%C3%A1del%20Indoor+Mallorca",
   shortDescription: {
     es: "Pistas de pádel cubiertas de alta competición con climatización y torneos express diarios.",
     en: "High-spec indoor padel courts with climate control and daily express tournaments.",
@@ -94,13 +92,6 @@ export const MATCH_POINT_PADEL_INDOOR_PALMA: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 410,
-      url: "https://www.google.com/maps?cid=12007024",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

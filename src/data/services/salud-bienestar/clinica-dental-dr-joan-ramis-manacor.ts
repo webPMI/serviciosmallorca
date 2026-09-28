@@ -31,12 +31,6 @@ export const clinica_dental_dr_joan_ramis_manacor: ServiceItem = {
   schedule: "Lunes a Viernes: 09:00 - 13:30, 16:00 - 20:00 | Sábado y Domingo: Cerrado",
   image: "/images/services/clinica-dental-dr-joan-ramis-manacor.jpg",
   gallery: ["/images/services/clinica-dental-dr-joan-ramis-manacor.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica%20Dental%20Dr.%20Joan%20Ramis%20Manacor%20Pla%C3%A7a%20de%20Ramon%20Llull%2C%2014%2C%2007500%20Manacor%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Cl%C3%ADnica%20Dental%20Dr.%20Joan%20Ramis%20Manacor%20Pla%C3%A7a%20de%20Ramon%20Llull%2C%2014%2C%2007500%20Manacor%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Cl%C3%ADnica%20Dental%20Dr.%20Joan%20Ramis%20Manacor%20Pla%C3%A7a%20de%20Ramon%20Llull%2C%2014%2C%2007500%20Manacor%2C%20Illes%20Balears",
   shortDescription: {
     es: "Clínica odontológica de referencia en Manacor y la comarca de Llevant, especializada en implantología guiada 3D, ortodoncia invisible Invisalign y estética dental.",
     en: "Benchmark dental clinic in Manacor and the Llevant region, renowned for 3D guided dental implants, Invisalign clear aligners, and cosmetic dentistry.",
@@ -100,13 +94,6 @@ export const clinica_dental_dr_joan_ramis_manacor: ServiceItem = {
       "Ästhetische Zahnmedizin: professionelles Bleaching, Keramik-Veneers und Bonding",
       "Mikroskopische Wurzelkanalbehandlung, Parodontitistherapie und Prophylaxe",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 210,
-      url: "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica%20Dental%20Dr.%20Joan%20Ramis%20Manacor%20Pla%C3%A7a%20de%20Ramon%20Llull%2C%2014%2C%2007500%20Manacor%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

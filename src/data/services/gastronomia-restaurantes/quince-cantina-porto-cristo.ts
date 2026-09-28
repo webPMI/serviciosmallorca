@@ -27,9 +27,6 @@ export const quinceCantinaPortoCristo: ServiceItem = {
   email: "info@restaurantequince.com",
   website: "https://www.restaurantequince.com",
   menuUrl: "https://www.restaurantequince.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Restaurante+Quince+Porto+Cristo+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante+Quince+Porto+Cristo",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante+Quince+Porto+Cristo",
   tags: [
     "zona:manacor-llevant",
     "zona:porto-cristo",

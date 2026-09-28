@@ -31,12 +31,6 @@ export const agroturismo_ses_vistes_porreres: ServiceItem = {
   schedule: "Lunes a Domingo: 08:00 - 22:00",
   image: "/images/services/agroturismo-ses-vistes-porreres.jpg",
   gallery: ["/images/services/agroturismo-ses-vistes-porreres.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Agroturismo%20Ses%20Vistes%20Porreres%20Cam%C3%AD%20de%20Ses%20Vistes%2C%20s%2Fn%2C%2007260%20Porreres",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Agroturismo%20Ses%20Vistes%20Porreres%20Cam%C3%AD%20de%20Ses%20Vistes%2C%20s%2Fn%2C%2007260%20Porreres",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Agroturismo%20Ses%20Vistes%20Porreres%20Cam%C3%AD%20de%20Ses%20Vistes%2C%20s%2Fn%2C%2007260%20Porreres",
   shortDescription: {
     es: "Agroturismo boutique en Porreres con espectaculares vistas panorámicas al Pla de Mallorca, spa íntimo y diseño contemporáneo.",
     en: "Boutique rural retreat in Porreres with sweeping views of the Pla de Mallorca, intimate spa, and contemporary rustic design.",
@@ -100,13 +94,6 @@ export const agroturismo_ses_vistes_porreres: ServiceItem = {
       "Wellnessbereich mit Trockensauna, Dampfbad und Massageangeboten",
       "Panoramapool mit balinesischen Liegen und Honest-Bar",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 140,
-      url: "https://www.google.com/maps/search/?api=1&query=Agroturismo%20Ses%20Vistes%20Porreres%20Cam%C3%AD%20de%20Ses%20Vistes%2C%20s%2Fn%2C%2007260%20Porreres",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

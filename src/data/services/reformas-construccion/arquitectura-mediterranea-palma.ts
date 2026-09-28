@@ -76,10 +76,6 @@ export const arquitecturaMediterraneaPalma: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Estudio%20de%20Arquitectura%20%26%20Interiorismo%20Balear%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Estudio%20de%20Arquitectura%20%26%20Interiorismo%20Balear%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Estudio%20de%20Arquitectura%20%26%20Interiorismo%20Balear%20Mallorca",
   pricing: {
     startingPrice: "Proyecto arquitectónico a medida",
     rateType: "custom_quote",
@@ -106,21 +102,4 @@ export const arquitecturaMediterraneaPalma: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 290,
-      url: "https://www.google.com/maps/search/?api=1&query=Estudio%20de%20Arquitectura%20%26%20Interiorismo%20Balear%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Estudio%20de%20Arquitectura%20%26%20Interiorismo%20Balear%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 29,
-      url: "https://www.bing.com/maps?q=Estudio%20de%20Arquitectura%20%26%20Interiorismo%20Balear%20Mallorca",
-    },
-    totalReviewsAggregated: 319,
-    overallWeightedRating: 4.9,
-  },
 };

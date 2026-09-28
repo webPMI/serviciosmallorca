@@ -29,8 +29,6 @@ export const MCFIT_PALMA_SON_MALFERIT: ServiceItem = {
   image: "/images/sports/mcfit-palma-son-malferit.jpg",
   gallery: ["/images/sports/mcfit-palma-son-malferit.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007042",
-  appleMapsUrl: "https://maps.apple.com/?q=McFit%20Palma%20Son%20Malferit+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=McFit%20Palma%20Son%20Malferit+Mallorca",
   shortDescription: {
     es: "Gimnasio de gran formato en Son Malferit con amplia zona de peso libre, jaula cross-training y aparcamiento.",
     en: "Large-scale fitness studio in Son Malferit with vast free-weights area, cross-training cage, and parking.",
@@ -94,13 +92,6 @@ export const MCFIT_PALMA_SON_MALFERIT: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.6,
-      reviewCount: 820,
-      url: "https://www.google.com/maps?cid=12007042",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

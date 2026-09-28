@@ -31,12 +31,6 @@ export const agroturismo_sa_talaia_blanca_muro_playa: ServiceItem = {
   schedule: "Recepción: 08:30 - 21:30 (Abierto todo el año)",
   image: "/images/services/agroturismo-sa-talaia-blanca-muro-playa.jpg",
   gallery: ["/images/services/agroturismo-sa-talaia-blanca-muro-playa.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Agroturismo%20Sa%20Talaia%20Blanca%20Muro%20%26%20Playa%20de%20Muro%20Cam%C3%AD%20de%20sa%20Talaia%2C%20s%2Fn%2C%2007440%20Muro",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Agroturismo%20Sa%20Talaia%20Blanca%20Muro%20%26%20Playa%20de%20Muro%20Cam%C3%AD%20de%20sa%20Talaia%2C%20s%2Fn%2C%2007440%20Muro",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Agroturismo%20Sa%20Talaia%20Blanca%20Muro%20%26%20Playa%20de%20Muro%20Cam%C3%AD%20de%20sa%20Talaia%2C%20s%2Fn%2C%2007440%20Muro",
   shortDescription: {
     es: "Agroturismo ecológico con vistas al mar entre los naranjos de Muro y la bahía de Alcúdia: piscina de agua salada, desayunos KM0 con productos de la finca y alquiler de bicicletas.",
     en: "Eco-agrotourism estate between Muro orange groves and Alcúdia Bay: saltwater pool, farm-to-table KM0 breakfasts, and bicycle hire.",
@@ -100,13 +94,6 @@ export const agroturismo_sa_talaia_blanca_muro_playa: ServiceItem = {
       "Verleih von Rennrädern und E-Bikes für Touren durch die Ebene von Mallorca",
       "Freiluft-Massagen im Gartenpavillon nach Voranmeldung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 340,
-      url: "https://www.google.com/maps/search/?api=1&query=Agroturismo%20Sa%20Talaia%20Blanca%20Muro%20%26%20Playa%20de%20Muro%20Cam%C3%AD%20de%20sa%20Talaia%2C%20s%2Fn%2C%2007440%20Muro",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

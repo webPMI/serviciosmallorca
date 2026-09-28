@@ -31,12 +31,6 @@ export const aluminios_pvc_alumallorca_marratxi: ServiceItem = {
   schedule: "Lunes a Viernes: 08:00 - 17:00",
   image: "/images/services/aluminios-pvc-alumallorca-marratxi.jpg",
   gallery: ["/images/services/aluminios-pvc-alumallorca-marratxi.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Aluminios%20%26%20PVC%20Alumallorca%20Marratx%C3%AD%20Carrer%20dels%20Teixidors%2C%2015%2C%20Pol%C3%ADgon%20de%20Marratx%C3%AD%2C%2007141%20Marratx%C3%AD",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Aluminios%20%26%20PVC%20Alumallorca%20Marratx%C3%AD%20Carrer%20dels%20Teixidors%2C%2015%2C%20Pol%C3%ADgon%20de%20Marratx%C3%AD%2C%2007141%20Marratx%C3%AD",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Aluminios%20%26%20PVC%20Alumallorca%20Marratx%C3%AD%20Carrer%20dels%20Teixidors%2C%2015%2C%20Pol%C3%ADgon%20de%20Marratx%C3%AD%2C%2007141%20Marratx%C3%AD",
   shortDescription: {
     es: "Carpintería de aluminio y PVC en Marratxí: ventanas con rotura de puente térmico, correderas minimalistas de gran formato y cerramientos de cristal.",
     en: "Aluminum and PVC workshop in Marratxí: thermal break windows, panoramic sliding doors, and architectural glass enclosures.",
@@ -100,13 +94,6 @@ export const aluminios_pvc_alumallorca_marratxi: ServiceItem = {
       "Rahmenlose Glas-Faltwände für Terrassen, Pergolen und Wintergärten",
       "Wartungsfreie Fensterläden aus Aluminium mit Holzmaserungs-Effekt",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 56,
-      url: "https://www.google.com/maps/search/?api=1&query=Aluminios%20%26%20PVC%20Alumallorca%20Marratx%C3%AD%20Carrer%20dels%20Teixidors%2C%2015%2C%20Pol%C3%ADgon%20de%20Marratx%C3%AD%2C%2007141%20Marratx%C3%AD",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

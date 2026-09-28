@@ -31,12 +31,6 @@ export const lottusse_calzado_piel_inca: ServiceItem = {
   schedule: "Lunes a Viernes: 09:30 - 19:30; Sábado: 10:00 - 14:00",
   image: "/images/services/lottusse-calzado-piel-inca.jpg",
   gallery: ["/images/services/lottusse-calzado-piel-inca.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Lottusse%20Calzado%20Artesanal%20%26%20Marroquiner%C3%ADa%20Inca%20(1877)%20Carrer%20dels%20Menestrals%2C%2018%2C%2007300%20Inca",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Lottusse%20Calzado%20Artesanal%20%26%20Marroquiner%C3%ADa%20Inca%20(1877)%20Carrer%20dels%20Menestrals%2C%2018%2C%2007300%20Inca",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Lottusse%20Calzado%20Artesanal%20%26%20Marroquiner%C3%ADa%20Inca%20(1877)%20Carrer%20dels%20Menestrals%2C%2018%2C%2007300%20Inca",
   shortDescription: {
     es: "Fábrica y firma de calzado de lujo centenaria en Inca desde 1877: maestros del cosido artesanal Goodyear Welted, chaquetas de piel selecta, bolsos y accesorios de alta marroquinería.",
     en: "Luxury artisanal footwear and leather goods manufacturer in Inca since 1877: master artisans in Goodyear Welted construction, fine leather jackets, and bespoke accessories.",
@@ -100,13 +94,6 @@ export const lottusse_calzado_piel_inca: ServiceItem = {
       "Maßanfertigung und Individualisierung von Schuhen",
       "Exklusive Lederaccessoires, Aktentaschen und Reisegepäck",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 1350,
-      url: "https://www.google.com/maps/search/?api=1&query=Lottusse%20Calzado%20Artesanal%20%26%20Marroquiner%C3%ADa%20Inca%20(1877)%20Carrer%20dels%20Menestrals%2C%2018%2C%2007300%20Inca",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

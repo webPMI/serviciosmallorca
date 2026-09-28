@@ -29,8 +29,6 @@ export const can_alomar_urban_spa_palma: ServiceItem = {
   image: "/images/spas/can-alomar-urban-spa-palma.jpg",
   gallery: ["/images/spas/can-alomar-urban-spa-palma.jpg", "/images/categories/salud.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=13008023",
-  appleMapsUrl: "https://maps.apple.com/?q=Can%20Alomar%20Urban%20Spa+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Can%20Alomar%20Urban%20Spa+Mallorca",
   shortDescription: {
     es: "Spa boutique en el Passeig del Born de Palma con piscina mirador en la azotea y tratamientos cosméticos de alta gama.",
     en: "Boutique rooftop urban spa on Palma's Passeig del Born with plunge pool and luxury cosmetic treatments.",
@@ -94,13 +92,6 @@ export const can_alomar_urban_spa_palma: ServiceItem = {
       "Wellness- und Regenerationstherapien",
       "Kontinuierliche medizinische Nachbetreuung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 210,
-      url: "https://www.google.com/maps?cid=13008023",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

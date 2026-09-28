@@ -76,12 +76,6 @@ export const embutidosCanCompanyPorcNegre: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Can%20Company%20-%20Sobrassada%20de%20Porc%20Negre%20de%20Mallorca%20Mallorca",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Can%20Company%20-%20Sobrassada%20de%20Porc%20Negre%20de%20Mallorca%20Mallorca",
-  bingMapsUrl:
-    "https://www.bing.com/maps?q=Can%20Company%20-%20Sobrassada%20de%20Porc%20Negre%20de%20Mallorca%20Mallorca",
   pricing: {
     startingPrice: "Sobrasada de autor desde 28€ / kg",
     rateType: "tiered",
@@ -108,21 +102,4 @@ export const embutidosCanCompanyPorcNegre: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 410,
-      url: "https://www.google.com/maps/search/?api=1&query=Can%20Company%20-%20Sobrassada%20de%20Porc%20Negre%20de%20Mallorca%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Can%20Company%20-%20Sobrassada%20de%20Porc%20Negre%20de%20Mallorca%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 41,
-      url: "https://www.bing.com/maps?q=Can%20Company%20-%20Sobrassada%20de%20Porc%20Negre%20de%20Mallorca%20Mallorca",
-    },
-    totalReviewsAggregated: 451,
-    overallWeightedRating: 4.9,
-  },
 };

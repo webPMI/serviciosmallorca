@@ -31,12 +31,6 @@ export const agroturismo_can_maica_manacor_finca_rural: ServiceItem = {
   schedule: "Recepción: 08:30 - 21:00 (Marzo a Noviembre)",
   image: "/images/services/agroturismo-can-maica-manacor-finca-rural.jpg",
   gallery: ["/images/services/agroturismo-can-maica-manacor-finca-rural.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Agroturismo%20Ca'n%20Maica%20Finca%20Rural%20%26%20C%C3%ADtricos%20Manacor%20Cam%C3%AD%20de%20sa%20Marineta%2C%20s%2Fn%2C%2007500%20Manacor",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Agroturismo%20Ca'n%20Maica%20Finca%20Rural%20%26%20C%C3%ADtricos%20Manacor%20Cam%C3%AD%20de%20sa%20Marineta%2C%20s%2Fn%2C%2007500%20Manacor",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Agroturismo%20Ca'n%20Maica%20Finca%20Rural%20%26%20C%C3%ADtricos%20Manacor%20Cam%C3%AD%20de%20sa%20Marineta%2C%20s%2Fn%2C%2007500%20Manacor",
   shortDescription: {
     es: "Finca de agroturismo tradicional en Manacor rodeada de almendros y naranjos: apartamentos rústicos de piedra, piscina de agua salada y desayunos de huerto propio.",
     en: "Traditional agritourism estate in Manacor surrounded by almond and citrus trees: rustic stone apartments, saltwater pool, and homegrown produce breakfasts.",
@@ -100,13 +94,6 @@ export const agroturismo_can_maica_manacor_finca_rural: ServiceItem = {
       "Mountainbike-Verleih für Touren durch das Llevant-Binnenland",
       "Schnellladestationen für Elektro- und Plug-in-Hybrid-Fahrzeuge",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 240,
-      url: "https://www.google.com/maps/search/?api=1&query=Agroturismo%20Ca'n%20Maica%20Finca%20Rural%20%26%20C%C3%ADtricos%20Manacor%20Cam%C3%AD%20de%20sa%20Marineta%2C%20s%2Fn%2C%2007500%20Manacor",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

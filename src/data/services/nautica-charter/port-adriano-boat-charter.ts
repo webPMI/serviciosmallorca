@@ -81,23 +81,6 @@ export const portAdrianoBoatCharter: ServiceItem = {
     ca: "Amb base al port dissenyat per Philippe Starck a Calvià, ofereix accés directe a les millors cales del sud-oest.",
     de: "Im von Philippe Starck entworfenen Luxushafen von Calvià gelegen, bietet es erstklassigen Yachtcharter im Südwesten Mallorcas.",
   },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 650,
-      url: "https://www.google.com/maps/search/?api=1&query=Port+Adriano+Boat+Charter+Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Port+Adriano+Boat+Charter+Mallorca",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 50,
-      url: "https://www.bing.com/maps?q=Port+Adriano+Boat+Charter+Mallorca",
-    },
-    totalReviewsAggregated: 700,
-    overallWeightedRating: 4.8,
-  },
   reviews: [],
   socialLinks: {
     instagram: "https://instagram.com/portadriano",
@@ -120,9 +103,6 @@ export const portAdrianoBoatCharter: ServiceItem = {
     },
   ],
   authorityProfiles: [],
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Port+Adriano+Boat+Charter+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Port+Adriano+Boat+Charter+Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Port+Adriano+Boat+Charter+Mallorca",
   phone: "+34 971 23 24 94",
   whatsapp: "+34 971 23 24 94",
   email: "charter@portadriano.com",

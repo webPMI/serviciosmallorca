@@ -76,10 +76,6 @@ export const domoReformasIntegralesPalma: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Domo%20Reformas%20Integrales%20%26%20Interiorismo%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Domo%20Reformas%20Integrales%20%26%20Interiorismo%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Domo%20Reformas%20Integrales%20%26%20Interiorismo%20Mallorca",
   pricing: {
     startingPrice: "Presupuesto y atención a medida",
     rateType: "tiered",
@@ -106,21 +102,4 @@ export const domoReformasIntegralesPalma: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 380,
-      url: "https://www.google.com/maps/search/?api=1&query=Domo%20Reformas%20Integrales%20%26%20Interiorismo%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Domo%20Reformas%20Integrales%20%26%20Interiorismo%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.7,
-      reviewCount: 38,
-      url: "https://www.bing.com/maps?q=Domo%20Reformas%20Integrales%20%26%20Interiorismo%20Mallorca",
-    },
-    totalReviewsAggregated: 418,
-    overallWeightedRating: 4.8,
-  },
 };

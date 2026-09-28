@@ -31,12 +31,6 @@ export const fundacion_rana_baleares_infancia_palma: ServiceItem = {
   schedule: "Lunes a Viernes: 09:00 - 14:00, 16:00 - 19:00",
   image: "/images/services/fundacion-rana-baleares-infancia-palma.jpg",
   gallery: ["/images/services/fundacion-rana-baleares-infancia-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Fundaci%C3%B3n%20RANA%20Baleares%20Infancia%20Palma%20Carrer%20dels%20Apuntadors%2C%2012%2C%2007012%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Fundaci%C3%B3n%20RANA%20Baleares%20Infancia%20Palma%20Carrer%20dels%20Apuntadors%2C%2012%2C%2007012%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Fundaci%C3%B3n%20RANA%20Baleares%20Infancia%20Palma%20Carrer%20dels%20Apuntadors%2C%2012%2C%2007012%20Palma",
   shortDescription: {
     es: "Fundación balear sin ánimo de lucro dedicada a la prevención del maltrato y abuso infantil mediante educación y atención psicológica especializada.",
     en: "Balearic non-profit foundation dedicated to preventing child abuse and exploitation through education, awareness, and specialized psychological care.",
@@ -100,13 +94,6 @@ export const fundacion_rana_baleares_infancia_palma: ServiceItem = {
       "Fortbildungen für Lehrer, Ärzte, Pflegepersonal und Vereinstrainer",
       "Vertrauliche rechtliche und psychosoziale Beratung für Eltern",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 65,
-      url: "https://www.google.com/maps/search/?api=1&query=Fundaci%C3%B3n%20RANA%20Baleares%20Infancia%20Palma%20Carrer%20dels%20Apuntadors%2C%2012%2C%2007012%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

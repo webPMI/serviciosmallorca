@@ -29,8 +29,6 @@ export const PINS_PADEL_CLUB_PALMA: ServiceItem = {
   image: "/images/sports/pins-padel-club-palma.jpg",
   gallery: ["/images/sports/pins-padel-club-palma.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007018",
-  appleMapsUrl: "https://maps.apple.com/?q=Pins%20P%C3%A1del%20Club+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Pins%20P%C3%A1del%20Club+Mallorca",
   shortDescription: {
     es: "Club de pádel de referencia en Palma con 16 pistas al aire libre y cubiertas, piscina de verano y restaurante.",
     en: "Iconic padel club in Palma featuring 16 outdoor and covered courts set amidst pines, pool, and restaurant.",
@@ -94,13 +92,6 @@ export const PINS_PADEL_CLUB_PALMA: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 710,
-      url: "https://www.google.com/maps?cid=12007018",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

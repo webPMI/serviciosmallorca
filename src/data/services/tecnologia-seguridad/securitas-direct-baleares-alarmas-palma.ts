@@ -31,12 +31,6 @@ export const securitas_direct_baleares_alarmas_palma: ServiceItem = {
   schedule: "Lunes a Domingo: 24 Horas",
   image: "/images/services/securitas-direct-baleares-alarmas-palma.jpg",
   gallery: ["/images/services/securitas-direct-baleares-alarmas-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Securitas%20Direct%20Baleares%20Central%20Palma%20Carrer%20del%20Gremi%20de%20Sabaters%2C%2021%2C%20Pol%C3%ADgon%20Son%20Castell%C3%B3%2C%2007009%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Securitas%20Direct%20Baleares%20Central%20Palma%20Carrer%20del%20Gremi%20de%20Sabaters%2C%2021%2C%20Pol%C3%ADgon%20Son%20Castell%C3%B3%2C%2007009%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Securitas%20Direct%20Baleares%20Central%20Palma%20Carrer%20del%20Gremi%20de%20Sabaters%2C%2021%2C%20Pol%C3%ADgon%20Son%20Castell%C3%B3%2C%2007009%20Palma",
   shortDescription: {
     es: "Sede central balear de alarmas inteligentes conectadas a Central Receptora 24h: protección perimetral de villas, Zerovision y control móvil.",
     en: "Balearic headquarters for smart alarm systems connected to a 24/7 Monitoring Center: villa perimeter detection and Zerovision fog.",
@@ -100,13 +94,6 @@ export const securitas_direct_baleares_alarmas_palma: ServiceItem = {
       "Zerovision-Sicherheitsnebelanlage zur sofortigen Abwehr von Eindringlingen",
       "SOS-Notfallknopf für medizinische Notrufe und Seniorenabsicherung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.6,
-      reviewCount: 380,
-      url: "https://www.google.com/maps/search/?api=1&query=Securitas%20Direct%20Baleares%20Central%20Palma%20Carrer%20del%20Gremi%20de%20Sabaters%2C%2021%2C%20Pol%C3%ADgon%20Son%20Castell%C3%B3%2C%2007009%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

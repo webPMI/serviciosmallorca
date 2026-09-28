@@ -27,9 +27,6 @@ export const cassaiBeachHouse: ServiceItem = {
   email: "info@cassaibeachhouse.com",
   website: "https://cassaibeachhouse.com",
   menuUrl: "https://cassaibeachhouse.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Cassai+Beach+House+Colonia+Sant+Jordi+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Cassai+Beach+House",
-  bingMapsUrl: "https://www.bing.com/maps?q=Cassai+Beach+House",
   tags: [
     "zona:santanyi-migjorn",
     "zona:colonia-de-sant-jordi",

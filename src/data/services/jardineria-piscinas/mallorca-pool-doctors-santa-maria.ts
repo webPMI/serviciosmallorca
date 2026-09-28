@@ -35,12 +35,6 @@ export const mallorca_pool_doctors_santa_maria: ServiceItem = {
   schedule: "Lunes a Viernes: 08:00 - 18:30 | Sábado: 09:00 - 13:00 | Domingo: Cerrado",
   image: "/images/services/mallorca-pool-doctors-santa-maria.jpg",
   gallery: ["/images/services/mallorca-pool-doctors-santa-maria.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Mallorca%20Pool%20Doctors%20Santa%20Maria%20Carrer%20Llarg%2C%2034%2C%2007320%20Santa%20Maria%20del%20Cam%C3%AD%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Mallorca%20Pool%20Doctors%20Santa%20Maria%20Carrer%20Llarg%2C%2034%2C%2007320%20Santa%20Maria%20del%20Cam%C3%AD%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Mallorca%20Pool%20Doctors%20Santa%20Maria%20Carrer%20Llarg%2C%2034%2C%2007320%20Santa%20Maria%20del%20Cam%C3%AD%2C%20Illes%20Balears",
   shortDescription: {
     es: "Servicio técnico especializado en piscinas para villas y fincas en Mallorca, expertos en cloración salina, bombas de calor ecológicas, automatización y detección electrónica de fugas.",
     en: "Specialist pool maintenance and technical engineering for villas and fincas across Mallorca, expert in saltwater chlorination, heat pumps, automation, and electronic leak detection.",
@@ -104,13 +98,6 @@ export const mallorca_pool_doctors_santa_maria: ServiceItem = {
       "Punktgenaue Leckortung und Unterwasserreparatur ohne teures Beckenentleeren",
       "Lieferung und Montage automatischer Solar-Lamellenabdeckungen und Sicherheitsplanen",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 165,
-      url: "https://www.google.com/maps/search/?api=1&query=Mallorca%20Pool%20Doctors%20Santa%20Maria%20Carrer%20Llarg%2C%2034%2C%2007320%20Santa%20Maria%20del%20Cam%C3%AD%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

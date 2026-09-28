@@ -31,12 +31,6 @@ export const taller_mecanico_bosom_bosch_car_service_palma: ServiceItem = {
   schedule: "Lunes a Viernes: 08:00 - 18:00",
   image: "/images/services/taller-mecanico-bosom-bosch-car-service-palma.jpg",
   gallery: ["/images/services/taller-mecanico-bosom-bosch-car-service-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Taller%20Mec%C3%A1nico%20Bosom%20Bosch%20Car%20Service%20Palma%20(1968)%20Carrer%20del%20Gremi%20de%20Sabaters%2C%2044%2C%20Son%20Castell%C3%B3%2C%2007009%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Taller%20Mec%C3%A1nico%20Bosom%20Bosch%20Car%20Service%20Palma%20(1968)%20Carrer%20del%20Gremi%20de%20Sabaters%2C%2044%2C%20Son%20Castell%C3%B3%2C%2007009%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Taller%20Mec%C3%A1nico%20Bosom%20Bosch%20Car%20Service%20Palma%20(1968)%20Carrer%20del%20Gremi%20de%20Sabaters%2C%2044%2C%20Son%20Castell%C3%B3%2C%2007009%20Palma",
   shortDescription: {
     es: "Taller multimarca oficial Bosch Car Service en Palma: diagnosis electrónica avanzada, mantenimiento oficial sin perder garantía y mecánica de precisión.",
     en: "Official Bosch Car Service workshop in Palma: advanced electronic diagnostics, warranty-preserving maintenance, and engine mechanics.",
@@ -100,13 +94,6 @@ export const taller_mecanico_bosom_bosch_car_service_palma: ServiceItem = {
       "Klimaservice und Kältemittel R1234yf",
       "Vollständige Vorab-ITV-Prüfung inkl. Prüfstellenvorführung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 340,
-      url: "https://www.google.com/maps/search/?api=1&query=Taller%20Mec%C3%A1nico%20Bosom%20Bosch%20Car%20Service%20Palma%20(1968)%20Carrer%20del%20Gremi%20de%20Sabaters%2C%2044%2C%20Son%20Castell%C3%B3%2C%2007009%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

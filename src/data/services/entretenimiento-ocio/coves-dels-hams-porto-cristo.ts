@@ -31,12 +31,6 @@ export const coves_dels_hams_porto_cristo: ServiceItem = {
   schedule: "Diario: 10:00 - 17:00",
   image: "/images/services/coves-dels-hams-porto-cristo.jpg",
   gallery: ["/images/services/coves-dels-hams-porto-cristo.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Coves%20dels%20Hams%20Espect%C3%A1culo%20%26%20Jard%C3%ADn%20Bot%C3%A1nico%20(Porto%20Cristo%20-%201905)%20Carretera%20Ma-4020%20Manacor%20-%20Porto%20Cristo%2C%20km%2011%2C%2007680%20Porto%20Cristo",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Coves%20dels%20Hams%20Espect%C3%A1culo%20%26%20Jard%C3%ADn%20Bot%C3%A1nico%20(Porto%20Cristo%20-%201905)%20Carretera%20Ma-4020%20Manacor%20-%20Porto%20Cristo%2C%20km%2011%2C%2007680%20Porto%20Cristo",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Coves%20dels%20Hams%20Espect%C3%A1culo%20%26%20Jard%C3%ADn%20Bot%C3%A1nico%20(Porto%20Cristo%20-%201905)%20Carretera%20Ma-4020%20Manacor%20-%20Porto%20Cristo%2C%20km%2011%2C%2007680%20Porto%20Cristo",
   shortDescription: {
     es: "Famosas por sus exclusivas estalactitas en forma de anzuelo ('hams'): cuevas descubiertas en 1905 con jardín botánico en la Cueva Redonda y espectáculo musical en el lago subterráneo.",
     en: "Famed worldwide for rare fishhook-shaped stalactites ('hams'): discovered in 1905, featuring a lush botanical garden in the Round Cave and musical light show on Lake Venice.",
@@ -100,13 +94,6 @@ export const coves_dels_hams_porto_cristo: ServiceItem = {
       "Dino Park mit lebensgroßen Dinosaurier-Modellen für Kinder",
       "Café, Sonnenterrasse und Souvenir-Boutique",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 9400,
-      url: "https://www.google.com/maps/search/?api=1&query=Coves%20dels%20Hams%20Espect%C3%A1culo%20%26%20Jard%C3%ADn%20Bot%C3%A1nico%20(Porto%20Cristo%20-%201905)%20Carretera%20Ma-4020%20Manacor%20-%20Porto%20Cristo%2C%20km%2011%2C%2007680%20Porto%20Cristo",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

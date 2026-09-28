@@ -29,8 +29,6 @@ export const ILLES_CENTRES_BENESTAR_MARRATXI: ServiceItem = {
   image: "/images/sports/illes-centres-benestar-marratxi.jpg",
   gallery: ["/images/sports/illes-centres-benestar-marratxi.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007036",
-  appleMapsUrl: "https://maps.apple.com/?q=Illes%20Centres%20de%20Benestar%20(Marratx%C3%AD)+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Illes%20Centres%20de%20Benestar%20(Marratx%C3%AD)+Mallorca",
   shortDescription: {
     es: "Complejo deportivo con pistas de pádel cubiertas, piscina climatizada, spa y sala de fitness.",
     en: "Sports complex with covered padel courts, heated pool, spa, and comprehensive gym floor.",
@@ -94,13 +92,6 @@ export const ILLES_CENTRES_BENESTAR_MARRATXI: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 440,
-      url: "https://www.google.com/maps?cid=12007036",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

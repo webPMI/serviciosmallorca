@@ -31,12 +31,6 @@ export const mudanzas_transbalear_mallorca_guardamuebles: ServiceItem = {
   schedule: "Lunes a Viernes: 08:00 - 18:30; Sábado: 09:00 - 13:00",
   image: "/images/services/mudanzas-transbalear-mallorca-guardamuebles.jpg",
   gallery: ["/images/services/mudanzas-transbalear-mallorca-guardamuebles.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Mudanzas%20Transbalear%20Mallorca%20%26%20Guardamuebles%20Palma%20Gremi%20de%20Sabaters%2C%2045%2C%20Pol%C3%ADgono%20Son%20Castell%C3%B3%2C%2007009%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Mudanzas%20Transbalear%20Mallorca%20%26%20Guardamuebles%20Palma%20Gremi%20de%20Sabaters%2C%2045%2C%20Pol%C3%ADgono%20Son%20Castell%C3%B3%2C%2007009%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Mudanzas%20Transbalear%20Mallorca%20%26%20Guardamuebles%20Palma%20Gremi%20de%20Sabaters%2C%2045%2C%20Pol%C3%ADgono%20Son%20Castell%C3%B3%2C%2007009%20Palma",
   shortDescription: {
     es: "Empresa líder de mudanzas insulares, nacionales e internacionales en Mallorca: traslados marítimos con la península, elevador por fachada y guardamuebles vigilado 24h.",
     en: "Premier domestic, national, and international removal company in Mallorca: container sea freight to the mainland, exterior furniture lifts, and 24/7 secure storage.",
@@ -100,13 +94,6 @@ export const mudanzas_transbalear_mallorca_guardamuebles: ServiceItem = {
       "Sichere Möbeleinlagerung auf Zeit im Containerlager",
       "Einpackservice, Demontage und fachgerechte Montage vor Ort",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 440,
-      url: "https://www.google.com/maps/search/?api=1&query=Mudanzas%20Transbalear%20Mallorca%20%26%20Guardamuebles%20Palma%20Gremi%20de%20Sabaters%2C%2045%2C%20Pol%C3%ADgono%20Son%20Castell%C3%B3%2C%2007009%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

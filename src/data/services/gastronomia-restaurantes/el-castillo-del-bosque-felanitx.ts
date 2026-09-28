@@ -27,9 +27,6 @@ export const elCastilloDelBosque: ServiceItem = {
   email: "info@elcastillodelbosque.es",
   website: "https://elcastillodelbosque.es/",
   menuUrl: "https://elcastillodelbosque.es/",
-  googleMapsUrl: "https://www.google.com/maps/search/Restaurante+El+Castillo+del+Bosque+Felanitx+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante+El+Castillo+del+Bosque+Felanitx",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante+El+Castillo+del+Bosque+Felanitx",
   tags: [
     "zona:santanyi-migjorn",
     "zona:felanitx",

@@ -31,12 +31,6 @@ export const pwc_baleares_asesores_auditores_palma: ServiceItem = {
   schedule: "Lunes a Viernes: 09:00 - 18:30",
   image: "/images/services/pwc-baleares-asesores-auditores-palma.jpg",
   gallery: ["/images/services/pwc-baleares-asesores-auditores-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=PwC%20Baleares%20Asesores%20%26%20Auditores%20Palma%20Passeig%20de%20Mallorca%2C%2018%2C%2007012%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=PwC%20Baleares%20Asesores%20%26%20Auditores%20Palma%20Passeig%20de%20Mallorca%2C%2018%2C%2007012%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=PwC%20Baleares%20Asesores%20%26%20Auditores%20Palma%20Passeig%20de%20Mallorca%2C%2018%2C%2007012%20Palma",
   shortDescription: {
     es: "Oficina balear de PricewaterhouseCoopers en Palma: auditoría financiera, asesoramiento fiscal internacional, legal y consultoría estratégica.",
     en: "PricewaterhouseCoopers Balearic office in Palma: financial audit, international tax advisory, legal services, and strategy consulting.",
@@ -100,13 +94,6 @@ export const pwc_baleares_asesores_auditores_palma: ServiceItem = {
       "Wirtschafts-, Gesellschafts- und Immobilienrecht für den Tourismussektor",
       "Financial & Tax Due Diligence bei Hotelübernahmen und Fincakäufen",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 34,
-      url: "https://www.google.com/maps/search/?api=1&query=PwC%20Baleares%20Asesores%20%26%20Auditores%20Palma%20Passeig%20de%20Mallorca%2C%2018%2C%2007012%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

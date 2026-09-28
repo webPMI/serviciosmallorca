@@ -76,12 +76,6 @@ export const smartHomeDomoticaMallorcaKnx: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Smart%20Home%20Mallorca%20-%20Dom%C3%B3tica%20KNX%20%26%20Crestron%20Mallorca",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Smart%20Home%20Mallorca%20-%20Dom%C3%B3tica%20KNX%20%26%20Crestron%20Mallorca",
-  bingMapsUrl:
-    "https://www.bing.com/maps?q=Smart%20Home%20Mallorca%20-%20Dom%C3%B3tica%20KNX%20%26%20Crestron%20Mallorca",
   pricing: {
     startingPrice: "Presupuesto y atención a medida",
     rateType: "tiered",
@@ -108,21 +102,4 @@ export const smartHomeDomoticaMallorcaKnx: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 260,
-      url: "https://www.google.com/maps/search/?api=1&query=Smart%20Home%20Mallorca%20-%20Dom%C3%B3tica%20KNX%20%26%20Crestron%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Smart%20Home%20Mallorca%20-%20Dom%C3%B3tica%20KNX%20%26%20Crestron%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 26,
-      url: "https://www.bing.com/maps?q=Smart%20Home%20Mallorca%20-%20Dom%C3%B3tica%20KNX%20%26%20Crestron%20Mallorca",
-    },
-    totalReviewsAggregated: 286,
-    overallWeightedRating: 4.9,
-  },
 };

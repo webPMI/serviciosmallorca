@@ -31,12 +31,6 @@ export const assaona_beach_club_palma: ServiceItem = {
   schedule: "Lunes a Domingo: 10:00 - 23:30",
   image: "/images/services/assaona-beach-club-palma.jpg",
   gallery: ["/images/services/assaona-beach-club-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Assaona%20Gastrobeach%20Club%20Palma%20Passeig%20del%20Portitxol%2C%20s%2Fn%2C%2007006%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Assaona%20Gastrobeach%20Club%20Palma%20Passeig%20del%20Portitxol%2C%20s%2Fn%2C%2007006%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Assaona%20Gastrobeach%20Club%20Palma%20Passeig%20del%20Portitxol%2C%20s%2Fn%2C%2007006%20Palma",
   shortDescription: {
     es: "Gastrobeach club exclusivo en la playa del Portitxol con vistas a la Catedral de Palma: gastronomía de autor, camas de playa y coctelería.",
     en: "Exclusive gastrobeach club on Portitxol beach with direct views of Palma Cathedral: fine dining, beach daybeds, and cocktails.",
@@ -100,13 +94,6 @@ export const assaona_beach_club_palma: ServiceItem = {
       "Kreative Cocktailkarte, erlesene Weine und Champagner",
       "Ausrichtung privater Feiern und Hochzeiten direkt am Meer",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 620,
-      url: "https://www.google.com/maps/search/?api=1&query=Assaona%20Gastrobeach%20Club%20Palma%20Passeig%20del%20Portitxol%2C%20s%2Fn%2C%2007006%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

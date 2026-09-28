@@ -29,8 +29,6 @@ export const SYNERGYM_PALMA_SAN_FERNANDO: ServiceItem = {
   image: "/images/sports/synergym-palma-san-fernando.jpg",
   gallery: ["/images/sports/synergym-palma-san-fernando.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007041",
-  appleMapsUrl: "https://maps.apple.com/?q=Synergym%20Palma%20San%20Fernando+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Synergym%20Palma%20San%20Fernando+Mallorca",
   shortDescription: {
     es: "Gimnasio céntrico en Avenida San Fernando con maquinaria Life Fitness, zona funcional y cycling.",
     en: "Central Palma gym on Avenida San Fernando with Life Fitness equipment, functional turf, and cycling.",
@@ -94,13 +92,6 @@ export const SYNERGYM_PALMA_SAN_FERNANDO: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 540,
-      url: "https://www.google.com/maps?cid=12007041",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

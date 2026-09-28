@@ -134,10 +134,6 @@ export const urbanSoulTattoo: ServiceItem = {
     "/images/services/box-tattoo-piercing.jpg",
     "/images/services/electric-tattoo-palma.jpg",
   ],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Urban+Soul+Tattoo+Palma+Mallorca+Passatge+Particular+Antoni+Torrandell+9",
-  appleMapsUrl: "https://maps.apple.com/?q=Urban+Soul+Tattoo+Mallorca+Palma",
-  bingMapsUrl: "https://www.bing.com/maps?q=Urban+Soul+Tattoo+Mallorca+Palma",
   phone: "+34 603 60 24 80",
   whatsapp: "+34603602480",
   email: "Streetartstudio2020@gmail.com",

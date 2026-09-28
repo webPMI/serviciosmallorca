@@ -28,10 +28,6 @@ export const restauranteCmSanAntonioCanPastilla: ServiceItem = {
   email: "restaurante@cmsap.com",
   website: "https://www.cmsap.com",
   menuUrl: "https://www.cmsap.com",
-  googleMapsUrl:
-    "https://www.google.com/maps/search/Restaurante+Club+Maritimo+San+Antonio+de+la+Playa+Can+Pastilla+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante+Club+Maritimo+San+Antonio+Can+Pastilla",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante+Club+Maritimo+San+Antonio+Can+Pastilla",
   tags: ["zona:palma", "zona:can-pastilla", "product:traditional", "mod:en-local", "aud:familias", "temps:todo-el-ano"],
   capabilities: {
     terrace: true,

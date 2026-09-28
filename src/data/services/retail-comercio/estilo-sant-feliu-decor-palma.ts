@@ -76,10 +76,6 @@ export const estiloSantFeliuDecorPalma: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Estilo%20Sant%20Feliu%20Interior%20%26%20Lifestyle%20Palma%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Estilo%20Sant%20Feliu%20Interior%20%26%20Lifestyle%20Palma%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Estilo%20Sant%20Feliu%20Interior%20%26%20Lifestyle%20Palma%20Mallorca",
   pricing: {
     startingPrice: "Objetos de diseño mediterráneo desde 30€",
     rateType: "tiered",
@@ -106,21 +102,4 @@ export const estiloSantFeliuDecorPalma: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 340,
-      url: "https://www.google.com/maps/search/?api=1&query=Estilo%20Sant%20Feliu%20Interior%20%26%20Lifestyle%20Palma%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Estilo%20Sant%20Feliu%20Interior%20%26%20Lifestyle%20Palma%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.7,
-      reviewCount: 34,
-      url: "https://www.bing.com/maps?q=Estilo%20Sant%20Feliu%20Interior%20%26%20Lifestyle%20Palma%20Mallorca",
-    },
-    totalReviewsAggregated: 374,
-    overallWeightedRating: 4.8,
-  },
 };

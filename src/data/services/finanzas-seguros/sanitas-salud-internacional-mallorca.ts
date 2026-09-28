@@ -76,10 +76,6 @@ export const sanitasSaludInternacionalMallorca: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Sanitas%20Expat%20Health%20%26%20International%20Coverage%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Sanitas%20Expat%20Health%20%26%20International%20Coverage%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Sanitas%20Expat%20Health%20%26%20International%20Coverage%20Mallorca",
   pricing: {
     startingPrice: "Seguro médico privado desde 65€ / mes",
     rateType: "tiered",
@@ -106,21 +102,4 @@ export const sanitasSaludInternacionalMallorca: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 340,
-      url: "https://www.google.com/maps/search/?api=1&query=Sanitas%20Expat%20Health%20%26%20International%20Coverage%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Sanitas%20Expat%20Health%20%26%20International%20Coverage%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.6,
-      reviewCount: 34,
-      url: "https://www.bing.com/maps?q=Sanitas%20Expat%20Health%20%26%20International%20Coverage%20Mallorca",
-    },
-    totalReviewsAggregated: 374,
-    overallWeightedRating: 4.7,
-  },
 };

@@ -76,10 +76,6 @@ export const petitHotelSesRotgesCalaRatjada: ServiceItem = {
       close: "23:59",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Petit%20Hotel%20Ses%20Rotges%20Cala%20Ratjada%20(1954)%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Petit%20Hotel%20Ses%20Rotges%20Cala%20Ratjada%20(1954)%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Petit%20Hotel%20Ses%20Rotges%20Cala%20Ratjada%20(1954)%20Mallorca",
   pricing: {
     startingPrice: "Consultar tarifa por noche según temporada",
     rateType: "tiered",
@@ -106,21 +102,4 @@ export const petitHotelSesRotgesCalaRatjada: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 290,
-      url: "https://www.google.com/maps/search/?api=1&query=Petit%20Hotel%20Ses%20Rotges%20Cala%20Ratjada%20(1954)%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Petit%20Hotel%20Ses%20Rotges%20Cala%20Ratjada%20(1954)%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.7,
-      reviewCount: 29,
-      url: "https://www.bing.com/maps?q=Petit%20Hotel%20Ses%20Rotges%20Cala%20Ratjada%20(1954)%20Mallorca",
-    },
-    totalReviewsAggregated: 319,
-    overallWeightedRating: 4.8,
-  },
 };

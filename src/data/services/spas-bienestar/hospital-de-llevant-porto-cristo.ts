@@ -31,12 +31,6 @@ export const hospital_de_llevant_porto_cristo: ServiceItem = {
   schedule: "Urgencias 24 horas / 365 días (Consultas: Lunes a Viernes 08:30 - 20:30)",
   image: "/images/services/hospital-de-llevant-porto-cristo.jpg",
   gallery: ["/images/services/hospital-de-llevant-porto-cristo.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Hospital%20de%20Llevant%20Urgencias%2024h%20(Porto%20Cristo)%20Carrer%20Escamarl%C3%A0%2C%206%2C%2007680%20Porto%20Cristo",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Hospital%20de%20Llevant%20Urgencias%2024h%20(Porto%20Cristo)%20Carrer%20Escamarl%C3%A0%2C%206%2C%2007680%20Porto%20Cristo",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Hospital%20de%20Llevant%20Urgencias%2024h%20(Porto%20Cristo)%20Carrer%20Escamarl%C3%A0%2C%206%2C%2007680%20Porto%20Cristo",
   shortDescription: {
     es: "Hospital privado y centro médico de referencia en la comarca de Llevant de Mallorca: servicio de urgencias 24 horas, quirófanos de alta tecnología y atención multilingüe para residentes y turistas.",
     en: "Premier private hospital and medical clinic in eastern Mallorca: 24/7 emergency department, high-tech surgical theaters, and multilingual care for residents and international travelers.",
@@ -100,13 +94,6 @@ export const hospital_de_llevant_porto_cristo: ServiceItem = {
       "Bildgebende Diagnostik: MRT, CT, Ultraschall und Laboranalysen",
       "Stationäre Aufnahme in modernen Einzelzimmern mit Begleitbett",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 980,
-      url: "https://www.google.com/maps/search/?api=1&query=Hospital%20de%20Llevant%20Urgencias%2024h%20(Porto%20Cristo)%20Carrer%20Escamarl%C3%A0%2C%206%2C%2007680%20Porto%20Cristo",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

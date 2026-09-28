@@ -31,12 +31,6 @@ export const restaurante_cas_patro_march_cala_deia: ServiceItem = {
   schedule: "Diario: 12:30 - 18:00 (Mayo a Octubre)",
   image: "/images/services/restaurante-cas-patro-march-cala-deia.jpg",
   gallery: ["/images/services/restaurante-cas-patro-march-cala-deia.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Ca's%20Patr%C3%B3%20March%20Restaurante%20Marinero%20(Cala%20Dei%C3%A0)%20Cala%20Dei%C3%A0%2C%20s%2Fn%2C%2007179%20Dei%C3%A0",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Ca's%20Patr%C3%B3%20March%20Restaurante%20Marinero%20(Cala%20Dei%C3%A0)%20Cala%20Dei%C3%A0%2C%20s%2Fn%2C%2007179%20Dei%C3%A0",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Ca's%20Patr%C3%B3%20March%20Restaurante%20Marinero%20(Cala%20Dei%C3%A0)%20Cala%20Dei%C3%A0%2C%20s%2Fn%2C%2007179%20Dei%C3%A0",
   shortDescription: {
     es: "Icónico restaurante rústico sobre los acantilados de Cala Deià: pescados salvajes a la plancha, marisco fresco y calamares sobre las aguas turquesas del mar balear.",
     en: "Iconic rustic seafood haven perched directly above the turquoise waters of Cala Deià: wild fresh grilled fish, Balearic shellfish, and panoramic rocky bay views.",
@@ -100,13 +94,6 @@ export const restaurante_cas_patro_march_cala_deia: ServiceItem = {
       "Auswahl an gekühlten mallorquinischen Weißweinen",
       "Direkter Strandzugang zur Kieselbucht von Deià",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.6,
-      reviewCount: 2650,
-      url: "https://www.google.com/maps/search/?api=1&query=Ca's%20Patr%C3%B3%20March%20Restaurante%20Marinero%20(Cala%20Dei%C3%A0)%20Cala%20Dei%C3%A0%2C%20s%2Fn%2C%2007179%20Dei%C3%A0",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

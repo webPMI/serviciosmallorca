@@ -31,12 +31,6 @@ export const aqualand_el_arenal_parque_acuatico: ServiceItem = {
   schedule: "Diario: 10:00 - 18:00 (Mayo a Octubre)",
   image: "/images/services/aqualand-el-arenal-parque-acuatico.jpg",
   gallery: ["/images/services/aqualand-el-arenal-parque-acuatico.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Aqualand%20El%20Arenal%20El%20Mayor%20Parque%20Acu%C3%A1tico%20de%20Mallorca%20(Llucmajor)%20Autov%C3%ADa%20Palma%20-%20Arenal%2C%20km%2015%2C%2007600%20El%20Arenal%2C%20Llucmajor",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Aqualand%20El%20Arenal%20El%20Mayor%20Parque%20Acu%C3%A1tico%20de%20Mallorca%20(Llucmajor)%20Autov%C3%ADa%20Palma%20-%20Arenal%2C%20km%2015%2C%2007600%20El%20Arenal%2C%20Llucmajor",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Aqualand%20El%20Arenal%20El%20Mayor%20Parque%20Acu%C3%A1tico%20de%20Mallorca%20(Llucmajor)%20Autov%C3%ADa%20Palma%20-%20Arenal%2C%20km%2015%2C%2007600%20El%20Arenal%2C%20Llucmajor",
   shortDescription: {
     es: "El parque acuático más grande de Mallorca en S'Arenal: más de 20 atracciones acuáticas de adrenalina ('King Cobra', 'Tsunami', 'Tornado'), piscinas de olas y extensos pinares con césped.",
     en: "Mallorca's largest water adventure park in S'Arenal: over 20 thrill and family slides ('King Cobra', 'Tsunami', 'Tornado'), wave lagoons, and lush pine lawns.",
@@ -100,13 +94,6 @@ export const aqualand_el_arenal_parque_acuatico: ServiceItem = {
       "VIP-Liegebereiche mit reservierten Schirmen und Schließfächern",
       "Große Gastronomieauswahl mit Pizzeria, Burgern und Erfrischungen",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.6,
-      reviewCount: 11200,
-      url: "https://www.google.com/maps/search/?api=1&query=Aqualand%20El%20Arenal%20El%20Mayor%20Parque%20Acu%C3%A1tico%20de%20Mallorca%20(Llucmajor)%20Autov%C3%ADa%20Palma%20-%20Arenal%2C%20km%2015%2C%2007600%20El%20Arenal%2C%20Llucmajor",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

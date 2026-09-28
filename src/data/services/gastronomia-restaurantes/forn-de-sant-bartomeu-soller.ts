@@ -31,12 +31,6 @@ export const forn_de_sant_bartomeu_soller: ServiceItem = {
   schedule: "Lunes a Sábado: 07:00 - 14:00 y 17:00 - 20:00",
   image: "/images/services/forn-de-sant-bartomeu-soller.jpg",
   gallery: ["/images/services/forn-de-sant-bartomeu-soller.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Forn%20de%20Sant%20Bartomeu%20Forn%20Tradicional%20S%C3%B3ller%20Carrer%20de%20Sant%20Bartomeu%2C%2011%2C%2007100%20S%C3%B3ller",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Forn%20de%20Sant%20Bartomeu%20Forn%20Tradicional%20S%C3%B3ller%20Carrer%20de%20Sant%20Bartomeu%2C%2011%2C%2007100%20S%C3%B3ller",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Forn%20de%20Sant%20Bartomeu%20Forn%20Tradicional%20S%C3%B3ller%20Carrer%20de%20Sant%20Bartomeu%2C%2011%2C%2007100%20S%C3%B3ller",
   shortDescription: {
     es: "Horno tradicional en el casco histórico de Sóller: pan moreno artesano cocido en horno de piedra, empanadas de cordero, cocarrois de verduras y ensaimadas de masa madre.",
     en: "Artisan bakery in Sóller's historic center: stone-baked brown bread (pa moreno), lamb panades, vegetable cocarrois, and sourdough ensaimadas.",
@@ -100,13 +94,6 @@ export const forn_de_sant_bartomeu_soller: ServiceItem = {
       "Vorbestellung von Ensaimadas für die Heimreise",
       "Saisonales Festtagsgebäck (Crespells und Rubiols)",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 820,
-      url: "https://www.google.com/maps/search/?api=1&query=Forn%20de%20Sant%20Bartomeu%20Forn%20Tradicional%20S%C3%B3ller%20Carrer%20de%20Sant%20Bartomeu%2C%2011%2C%2007100%20S%C3%B3ller",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

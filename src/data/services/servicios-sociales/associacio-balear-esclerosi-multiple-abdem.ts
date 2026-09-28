@@ -31,12 +31,6 @@ export const associacio_balear_esclerosi_multiple_abdem: ServiceItem = {
   schedule: "Lunes a Viernes: 08:00 - 16:30 | Sábado y Domingo: Cerrado",
   image: "/images/services/associacio-balear-esclerosi-multiple-abdem.jpg",
   gallery: ["/images/services/associacio-balear-esclerosi-multiple-abdem.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Associaci%C3%B3%20Balear%20d'Esclerosi%20M%C3%BAltiple%20(ABDEM)%20Carrer%20de%20la%20Creu%20dels%20Menestrals%2C%207%2C%2007010%20Palma%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Associaci%C3%B3%20Balear%20d'Esclerosi%20M%C3%BAltiple%20(ABDEM)%20Carrer%20de%20la%20Creu%20dels%20Menestrals%2C%207%2C%2007010%20Palma%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Associaci%C3%B3%20Balear%20d'Esclerosi%20M%C3%BAltiple%20(ABDEM)%20Carrer%20de%20la%20Creu%20dels%20Menestrals%2C%207%2C%2007010%20Palma%2C%20Illes%20Balears",
   shortDescription: {
     es: "Entidad social sin ánimo de lucro en Palma con centro de día y servicio de neurorrehabilitación integral para personas con Esclerosis Múltiple y enfermedades neurodegenerativas en Baleares.",
     en: "Non-profit social organization in Palma operating an accredited day centre and comprehensive neuro-rehabilitation for individuals with Multiple Sclerosis and neurodegenerative conditions.",
@@ -100,13 +94,6 @@ export const associacio_balear_esclerosi_multiple_abdem: ServiceItem = {
       "Neuropsychologische Diagnostik, Hirnleistungstraining und Gesprächsgruppen für Angehörige",
       "Tagesbetreuung mit warmem Mittagstisch und barrierefreiem Fahrdienst von Haus zu Haus",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 110,
-      url: "https://www.google.com/maps/search/?api=1&query=Associaci%C3%B3%20Balear%20d'Esclerosi%20M%C3%BAltiple%20(ABDEM)%20Carrer%20de%20la%20Creu%20dels%20Menestrals%2C%207%2C%2007010%20Palma%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

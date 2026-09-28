@@ -31,12 +31,6 @@ export const viveros_santa_maria_del_cami: ServiceItem = {
   schedule: "Lunes a Sábado de 08:00 a 19:00, Domingos de 09:00 a 14:00",
   image: "/images/services/viveros-santa-maria-del-cami.jpg",
   gallery: ["/images/services/viveros-santa-maria-del-cami.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Viveros%20Santa%20Maria%20del%20Cam%C3%AD%20Ctra.%20Palma-Alc%C3%BAdia%2C%20km%2014.5%2C%2007320%20Santa%20Maria%20del%20Cam%C3%AD%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Viveros%20Santa%20Maria%20del%20Cam%C3%AD%20Ctra.%20Palma-Alc%C3%BAdia%2C%20km%2014.5%2C%2007320%20Santa%20Maria%20del%20Cam%C3%AD%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Viveros%20Santa%20Maria%20del%20Cam%C3%AD%20Ctra.%20Palma-Alc%C3%BAdia%2C%20km%2014.5%2C%2007320%20Santa%20Maria%20del%20Cam%C3%AD%2C%20Illes%20Balears",
   shortDescription: {
     es: "Vivero líder en el corazón de Mallorca. Olivos centenarios, palmeras aclimatadas, cítricos, plantas autóctonas y suministros de jardinería para fincas.",
     en: "Leading plant nursery in the heart of Mallorca. Century-old olive trees, acclimatized palms, citrus trees, native plants, and estate landscaping supplies.",
@@ -106,13 +100,6 @@ export const viveros_santa_maria_del_cami: ServiceItem = {
     en: ["Ancient monumental olive trees", "Sustainable Mediterranean flora", "Specialist crane delivery"],
     ca: ["Oliveres monumentals per a finques", "Jardineria mediterrània sostenible", "Transport amb camió grua"],
     de: ["Monumentale Olivenbäume", "Mediterrane Fincagärten", "Kran-Pflanzservice"],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 230,
-      url: "https://www.google.com/maps/search/?api=1&query=Viveros%20Santa%20Maria%20del%20Cam%C3%AD%20Ctra.%20Palma-Alc%C3%BAdia%2C%20km%2014.5%2C%2007320%20Santa%20Maria%20del%20Cam%C3%AD%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

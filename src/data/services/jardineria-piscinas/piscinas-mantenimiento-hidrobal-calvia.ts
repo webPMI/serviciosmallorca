@@ -31,12 +31,6 @@ export const piscinas_mantenimiento_hidrobal_calvia: ServiceItem = {
   schedule: "Lunes a Viernes de 08:00 a 17:30",
   image: "/images/services/piscinas-mantenimiento-hidrobal-calvia.jpg",
   gallery: ["/images/services/piscinas-mantenimiento-hidrobal-calvia.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Piscinas%20%26%20Mantenimiento%20HidroBal%20Calvi%C3%A0%20Gran%20Via%20Puig%20des%20Castellet%2C%201%2C%2007180%20Santa%20Ponsa%20(Calvi%C3%A0)%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Piscinas%20%26%20Mantenimiento%20HidroBal%20Calvi%C3%A0%20Gran%20Via%20Puig%20des%20Castellet%2C%201%2C%2007180%20Santa%20Ponsa%20(Calvi%C3%A0)%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Piscinas%20%26%20Mantenimiento%20HidroBal%20Calvi%C3%A0%20Gran%20Via%20Puig%20des%20Castellet%2C%201%2C%2007180%20Santa%20Ponsa%20(Calvi%C3%A0)%2C%20Illes%20Balears",
   shortDescription: {
     es: "Especialistas en construcción, mantenimiento y climatización de piscinas en Calvià y Andratx. Cloración salina, bombas de calor y domótica de agua.",
     en: "Specialists in swimming pool construction, servicing, and heating in Calvià and Andratx. Saltwater chlorination, heat pumps, and automated pool control.",
@@ -110,13 +104,6 @@ export const piscinas_mantenimiento_hidrobal_calvia: ServiceItem = {
     en: ["Saltwater & magnesium pool systems", "Heat pump pool acclimatization", "Calvià luxury villa pool care"],
     ca: ["Cloració salina i magnesi", "Climatització de piscines", "Manteniment a Calvià i Andratx"],
     de: ["Salzwasser- und Magnesiumpools", "Poolbeheizung mit Wärmepumpen", "Villen-Poolservice in Calvià"],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 155,
-      url: "https://www.google.com/maps/search/?api=1&query=Piscinas%20%26%20Mantenimiento%20HidroBal%20Calvi%C3%A0%20Gran%20Via%20Puig%20des%20Castellet%2C%201%2C%2007180%20Santa%20Ponsa%20(Calvi%C3%A0)%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

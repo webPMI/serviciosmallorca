@@ -28,9 +28,6 @@ export const hospitalGeneralDePalmaCentro: ServiceItem = {
   email: "info@hospitalsonespases.es",
   website: "https://www.ibsalut.es",
   menuUrl: "https://www.ibsalut.es",
-  googleMapsUrl: "https://www.google.com/maps/search/Hospital+General+Placa+Hospital+3+Palma+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Hospital+General+Palma",
-  bingMapsUrl: "https://www.bing.com/maps?q=Hospital+General+Palma",
   tags: [
     "zona:palma",
     "zona:casco-antiguo",
@@ -148,7 +145,7 @@ export const hospitalGeneralDePalmaCentro: ServiceItem = {
       comment:
         "El tracte que va rebre la meva mare a la unitat de convalescència va ser d'una calidesa i tendresa excepcionals. Un hospital amb ànima.",
       date: "2026-08-09",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
     },
     {
@@ -158,7 +155,7 @@ export const hospitalGeneralDePalmaCentro: ServiceItem = {
       comment:
         "Beeindruckendes historisches Gebäude mit einem wunderschönen Kreuzgang und sehr fürsorglichem, liebevollem Pflegepersonal.",
       date: "2026-07-21",
-      platform: "google_maps",
+      platform: "direct",
       language: "de",
     },
   ],

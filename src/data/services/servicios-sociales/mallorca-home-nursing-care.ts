@@ -76,10 +76,6 @@ export const mallorcaHomeNursingCare: ServiceItem = {
       close: "23:59",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Mallorca%20Private%20Nursing%20%26%20Medical%20Home%20Care%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Mallorca%20Private%20Nursing%20%26%20Medical%20Home%20Care%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Mallorca%20Private%20Nursing%20%26%20Medical%20Home%20Care%20Mallorca",
   pricing: {
     startingPrice: "Visita de enfermería a domicilio desde 45€",
     rateType: "tiered",
@@ -106,21 +102,4 @@ export const mallorcaHomeNursingCare: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 210,
-      url: "https://www.google.com/maps/search/?api=1&query=Mallorca%20Private%20Nursing%20%26%20Medical%20Home%20Care%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Mallorca%20Private%20Nursing%20%26%20Medical%20Home%20Care%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 21,
-      url: "https://www.bing.com/maps?q=Mallorca%20Private%20Nursing%20%26%20Medical%20Home%20Care%20Mallorca",
-    },
-    totalReviewsAggregated: 231,
-    overallWeightedRating: 4.9,
-  },
 };

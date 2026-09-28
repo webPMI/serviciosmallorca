@@ -88,7 +88,7 @@ export const puertoPortalsMarina: ServiceItem = {
       authorName: "Oliver H.",
       rating: 5,
       date: "2025-09-14",
-      platform: "google_maps",
+      platform: "direct",
       language: "en",
       comment:
         "One of the cleanest and best-managed marinas in the entire Mediterranean. Staff at the harbourmaster tower are extremely professional, and the atmosphere on the promenade is unbeatable.",
@@ -101,7 +101,7 @@ export const puertoPortalsMarina: ServiceItem = {
       authorName: "Maximilian B.",
       rating: 5,
       date: "2025-11-20",
-      platform: "google_maps",
+      platform: "direct",
       language: "de",
       comment:
         "Erstklassiger Yachthafen mit exzellenter Infrastruktur. Ob Liegeplatz, Segelschule oder ein Spaziergang an der Promenade mit edlen Boutiquen – Puerto Portals setzt Maßstäbe auf Mallorca.",
@@ -154,9 +154,6 @@ export const puertoPortalsMarina: ServiceItem = {
   whatsapp: "+34 971 17 11 00",
   email: "marina@puertoportals.com",
   website: "https://puertoportals.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Puerto+Portals+Marina+Calvia+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Puerto+Portals+Calvia",
-  bingMapsUrl: "https://www.bing.com/maps?q=Puerto+Portals+Mallorca",
   tags: [
     "zona:calvia-andratx",
     "zona:puerto-portals",

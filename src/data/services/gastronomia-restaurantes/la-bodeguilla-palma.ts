@@ -31,12 +31,6 @@ export const la_bodeguilla_palma: ServiceItem = {
   schedule: "Lunes a Sábado: 13:00 - 16:00, 20:00 - 23:30 (Domingo cerrado)",
   image: "/images/services/la-bodeguilla-palma.jpg",
   gallery: ["/images/services/la-bodeguilla-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=La%20Bodeguilla%20Palma%201986%20Carrer%20de%20Sant%20Jaume%2C%203%2C%2007012%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=La%20Bodeguilla%20Palma%201986%20Carrer%20de%20Sant%20Jaume%2C%203%2C%2007012%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=La%20Bodeguilla%20Palma%201986%20Carrer%20de%20Sant%20Jaume%2C%203%2C%2007012%20Palma",
   shortDescription: {
     es: "Emblemática taberna gastronómica y vinoteca en el centro histórico de Palma: tapas selectas, jamón ibérico de bellota y carta de vinos de referencia.",
     en: "Iconic wine bistro and tapas institution in Palma's old town: artisan tapas, bellota acorn-fed Iberian ham, and a benchmark wine cellar.",
@@ -100,13 +94,6 @@ export const la_bodeguilla_palma: ServiceItem = {
       "Klimatisierter Weinkeller mit Sommelier und offenen Spitzenweinen",
       "Private Speisezimmer in historischen Gewölberäumen",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 680,
-      url: "https://www.google.com/maps/search/?api=1&query=La%20Bodeguilla%20Palma%201986%20Carrer%20de%20Sant%20Jaume%2C%203%2C%2007012%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

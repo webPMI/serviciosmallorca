@@ -31,12 +31,6 @@ export const servilim_mallorca_limpieza_villas: ServiceItem = {
   schedule: "Lunes a Sábado: 08:00 - 20:00",
   image: "/images/services/servilim-mallorca-limpieza-villas.jpg",
   gallery: ["/images/services/servilim-mallorca-limpieza-villas.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Servilim%20Mallorca%20Limpieza%20de%20Villas%201998%20Carrer%20del%20Gremi%20de%20Fusters%2C%2033%2C%20Pol%C3%ADgon%20Son%20Castell%C3%B3%2C%2007009%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Servilim%20Mallorca%20Limpieza%20de%20Villas%201998%20Carrer%20del%20Gremi%20de%20Fusters%2C%2033%2C%20Pol%C3%ADgon%20Son%20Castell%C3%B3%2C%2007009%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Servilim%20Mallorca%20Limpieza%20de%20Villas%201998%20Carrer%20del%20Gremi%20de%20Fusters%2C%2033%2C%20Pol%C3%ADgon%20Son%20Castell%C3%B3%2C%2007009%20Palma",
   shortDescription: {
     es: "Empresa de limpieza integral para villas de lujo, fincas rústicas y comunidades en Mallorca desde 1998.",
     en: "Comprehensive cleaning company for luxury villas, rustic fincas, and residential communities in Mallorca since 1998.",
@@ -100,13 +94,6 @@ export const servilim_mallorca_limpieza_villas: ServiceItem = {
       "Kristallisieren, Polieren und Versiegeln von Naturstein- und Marmorböden",
       "Professionelle Reinigung großer Glasfronten und Wintergärten",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 78,
-      url: "https://www.google.com/maps/search/?api=1&query=Servilim%20Mallorca%20Limpieza%20de%20Villas%201998%20Carrer%20del%20Gremi%20de%20Fusters%2C%2033%2C%20Pol%C3%ADgon%20Son%20Castell%C3%B3%2C%2007009%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

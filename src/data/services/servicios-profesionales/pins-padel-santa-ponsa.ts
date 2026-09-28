@@ -81,23 +81,6 @@ export const pinsPadelSantaPonsa: ServiceItem = {
     ca: "Complex esportiu i social de referència a Santa Ponça (Calvià).",
     de: "Ein führender Sport- und Lifestyle-Club im Südwesten Mallorcas mit Padel, Pool und mediterranem Club-Restaurant.",
   },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 920,
-      url: "https://www.google.com/maps/search/?api=1&query=Pins+Padel+Santa+Ponsa",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Pins+Padel+Santa+Ponsa",
-    },
-    bingMaps: {
-      rating: 4.7,
-      reviewCount: 75,
-      url: "https://www.bing.com/maps?q=Pins+Padel+Santa+Ponsa",
-    },
-    totalReviewsAggregated: 995,
-    overallWeightedRating: 4.7,
-  },
   reviews: [],
   socialLinks: {
     instagram: "https://instagram.com/pinspadel",
@@ -120,9 +103,6 @@ export const pinsPadelSantaPonsa: ServiceItem = {
     },
   ],
   authorityProfiles: [],
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Pins+Padel+Santa+Ponsa",
-  appleMapsUrl: "https://maps.apple.com/?q=Pins+Padel+Santa+Ponsa",
-  bingMapsUrl: "https://www.bing.com/maps?q=Pins+Padel+Santa+Ponsa",
   phone: "+34 971 69 44 20",
   whatsapp: "+34 971 69 44 20",
   email: "info@pinspadel.com",

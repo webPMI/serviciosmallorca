@@ -31,12 +31,6 @@ export const mallorca_smart_home_domotica_calvia: ServiceItem = {
   schedule: "Lunes a Viernes de 09:00 a 18:00",
   image: "/images/services/mallorca-smart-home-domotica-calvia.jpg",
   gallery: ["/images/services/mallorca-smart-home-domotica-calvia.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Mallorca%20Smart%20Home%20Dom%C3%B2tica%20Son%20Bugadelles%20Carrer%20de%20les%20Illes%20Balears%2C%2028%2C%2007180%20Santa%20Ponsa%20(Calvi%C3%A0)%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Mallorca%20Smart%20Home%20Dom%C3%B2tica%20Son%20Bugadelles%20Carrer%20de%20les%20Illes%20Balears%2C%2028%2C%2007180%20Santa%20Ponsa%20(Calvi%C3%A0)%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Mallorca%20Smart%20Home%20Dom%C3%B2tica%20Son%20Bugadelles%20Carrer%20de%20les%20Illes%20Balears%2C%2028%2C%2007180%20Santa%20Ponsa%20(Calvi%C3%A0)%2C%20Illes%20Balears",
   shortDescription: {
     es: "Especialistas en domótica KNX, iluminación Lutron y audio multiroom para villas de lujo en Calvià, Andratx y Son Vida. Hogares inteligentes totalmente integrados.",
     en: "Specialists in KNX home automation, Lutron lighting, and multiroom audio for luxury villas in Calvià, Andratx, and Son Vida. Fully integrated smart homes.",
@@ -106,13 +100,6 @@ export const mallorca_smart_home_domotica_calvia: ServiceItem = {
     en: ["KNX luxury villa automation", "Lutron smart lighting & shades", "Enterprise Wi-Fi & multiroom audio"],
     ca: ["Domòtica KNX per a vil·les de luxe", "Il·luminació intel·ligent Lutron", "Xarxes Wi-Fi i àudio multiroom"],
     de: ["KNX-Gebäudeautomation", "Lutron Lichtsteuerung", "High-End Multiroom Audio"],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 95,
-      url: "https://www.google.com/maps/search/?api=1&query=Mallorca%20Smart%20Home%20Dom%C3%B2tica%20Son%20Bugadelles%20Carrer%20de%20les%20Illes%20Balears%2C%2028%2C%2007180%20Santa%20Ponsa%20(Calvi%C3%A0)%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

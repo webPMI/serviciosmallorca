@@ -27,9 +27,6 @@ export const casXorcSoller: ServiceItem = {
   email: "stay@casxorc.com",
   website: "https://casxorc.com",
   menuUrl: "https://casxorc.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Restaurante+Cas+Xorc+Barretes+Soller+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante+Cas+Xorc+Soller",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante+Cas+Xorc+Soller",
   tags: ["zona:tramuntana", "zona:soller", "product:lujo", "mod:en-local", "aud:parejas", "temps:todo-el-ano"],
   capabilities: {
     terrace: true,

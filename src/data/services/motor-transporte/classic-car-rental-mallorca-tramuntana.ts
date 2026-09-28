@@ -76,10 +76,6 @@ export const classicCarRentalMallorcaTramuntana: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Mallorca%20Classic%20Cars%20%26%20Vintage%20Roadsters%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Mallorca%20Classic%20Cars%20%26%20Vintage%20Roadsters%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Mallorca%20Classic%20Cars%20%26%20Vintage%20Roadsters%20Mallorca",
   pricing: {
     startingPrice: "Alquiler Porsche 356 / Jaguar E-Type desde 390€ / día",
     rateType: "daily",
@@ -106,21 +102,4 @@ export const classicCarRentalMallorcaTramuntana: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 390,
-      url: "https://www.google.com/maps/search/?api=1&query=Mallorca%20Classic%20Cars%20%26%20Vintage%20Roadsters%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Mallorca%20Classic%20Cars%20%26%20Vintage%20Roadsters%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 39,
-      url: "https://www.bing.com/maps?q=Mallorca%20Classic%20Cars%20%26%20Vintage%20Roadsters%20Mallorca",
-    },
-    totalReviewsAggregated: 429,
-    overallWeightedRating: 4.9,
-  },
 };

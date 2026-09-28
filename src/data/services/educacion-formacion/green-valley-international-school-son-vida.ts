@@ -31,12 +31,6 @@ export const green_valley_international_school_son_vida: ServiceItem = {
   schedule: "Lunes a Viernes: 08:30 - 16:30",
   image: "/images/services/green-valley-international-school-son-vida.jpg",
   gallery: ["/images/services/green-valley-international-school-son-vida.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Green%20Valley%20International%20School%20Bachillerato%20Internacional%20IB%20(Son%20Vida)%20Cam%C3%AD%20de%20Son%20Rapinya%2C%2015%2C%2007013%20Son%20Vida%2C%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Green%20Valley%20International%20School%20Bachillerato%20Internacional%20IB%20(Son%20Vida)%20Cam%C3%AD%20de%20Son%20Rapinya%2C%2015%2C%2007013%20Son%20Vida%2C%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Green%20Valley%20International%20School%20Bachillerato%20Internacional%20IB%20(Son%20Vida)%20Cam%C3%AD%20de%20Son%20Rapinya%2C%2015%2C%2007013%20Son%20Vida%2C%20Palma",
   shortDescription: {
     es: "Colegio internacional ecológico y holístico en Son Vida: Bachillerato Internacional (IB World School) para alumnos de 3 a 18 años, valores de sostenibilidad, bienestar y pensamiento crítico.",
     en: "Eco-holistic international IB World School in Son Vida: International Baccalaureate curriculum for ages 3-18, emphasizing sustainability, wellbeing, and critical global thinking.",
@@ -100,13 +94,6 @@ export const green_valley_international_school_son_vida: ServiceItem = {
       "Englischsprachiger Unterricht mit Spanisch- und Deutschförderung",
       "AGs in Permakultur, Robotik, Schach und Musik",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 290,
-      url: "https://www.google.com/maps/search/?api=1&query=Green%20Valley%20International%20School%20Bachillerato%20Internacional%20IB%20(Son%20Vida)%20Cam%C3%AD%20de%20Son%20Rapinya%2C%2015%2C%2007013%20Son%20Vida%2C%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

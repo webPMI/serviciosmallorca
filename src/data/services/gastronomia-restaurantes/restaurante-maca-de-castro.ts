@@ -24,9 +24,6 @@ export const restauranteMacaDeCastro: ServiceItem = {
   whatsapp: "+34 971 89 23 91",
   email: "info@macadecastro.com",
   website: "https://macadecastro.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Restaurante%20Maca%20de%20Castro%20Alcudia",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante%20Maca%20de%20Castro%20Alcudia&ll=39.8340,3.1182",
-  bingMapsUrl: "https://www.bing.com/maps?where1=Restaurante%20Maca%20de%20Castro%20Alcudia",
   coordinates: { lat: 39.834, lng: 3.1182 },
   coordinatesAccuracy: "verified_manual",
   schedule:
@@ -145,23 +142,6 @@ export const restauranteMacaDeCastro: ServiceItem = {
       instagramHandle: "@maca_de_castro",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.6,
-      reviewCount: 120,
-      url: "https://www.google.com/maps/search/?api=1&query=Restaurante%20Maca%20de%20Castro%20Alcudia",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Restaurante%20Maca%20de%20Castro%20Alcudia&ll=39.8340,3.1182",
-    },
-    bingMaps: {
-      rating: 4.6,
-      reviewCount: 120,
-      url: "https://www.bing.com/maps?where1=Restaurante%20Maca%20de%20Castro%20Alcudia",
-    },
-    totalReviewsAggregated: 120,
-    overallWeightedRating: 4.6,
-  },
   confidenceScore: 92,
   verificationStatus: "verified",
   sourceConfidence: "high",

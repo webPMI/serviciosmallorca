@@ -31,12 +31,6 @@ export const hasso_rent_a_car_mallorca: ServiceItem = {
   schedule: "Lunes a Domingo de 07:00 a 23:00 (Servicio Aeropuerto)",
   image: "/images/services/hasso-rent-a-car-mallorca.jpg",
   gallery: ["/images/services/hasso-rent-a-car-mallorca.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Hasso%20Rent%20a%20Car%20Aeroport%20Palma%20(des%20de%201960)%20Cam%C3%AD%20de%20Can%20Pastilla%2C%2049%2C%2007610%20Palma%20(Aeroport)%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Hasso%20Rent%20a%20Car%20Aeroport%20Palma%20(des%20de%201960)%20Cam%C3%AD%20de%20Can%20Pastilla%2C%2049%2C%2007610%20Palma%20(Aeroport)%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Hasso%20Rent%20a%20Car%20Aeroport%20Palma%20(des%20de%201960)%20Cam%C3%AD%20de%20Can%20Pastilla%2C%2049%2C%2007610%20Palma%20(Aeroport)%2C%20Illes%20Balears",
   shortDescription: {
     es: "Una de las empresas de alquiler de coches pioneras de Mallorca fundada en 1960. Servicio transparente junto al Aeropuerto de Palma, sin costes ocultos ni colas.",
     en: "One of Mallorca's pioneer car rental companies established in 1960. Transparent service next to Palma Airport with no hidden fees and quick shuttle transfers.",
@@ -106,13 +100,6 @@ export const hasso_rent_a_car_mallorca: ServiceItem = {
     en: ["Transparent Palma car rental", "Queue-free airport shuttle", "Family cars and SUVs"],
     ca: ["Lloguer transparent a l'Aeroport de Palma", "Sense cues ni costos ocults", "Cotxes familiars i SUV"],
     de: ["Transparente Autovermietung Mallorca", "Schneller Flughafen-Shuttleservice", "Familien-SUVs und Kombis"],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 290,
-      url: "https://www.google.com/maps/search/?api=1&query=Hasso%20Rent%20a%20Car%20Aeroport%20Palma%20(des%20de%201960)%20Cam%C3%AD%20de%20Can%20Pastilla%2C%2049%2C%2007610%20Palma%20(Aeroport)%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

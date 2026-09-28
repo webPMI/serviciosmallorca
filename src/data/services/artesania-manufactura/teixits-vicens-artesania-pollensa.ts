@@ -76,10 +76,6 @@ export const teixitsVicensArtesaniaPollensa: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Teixits%20Vicens%20(Robes%20de%20Lleng%C3%BCes%201854)%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Teixits%20Vicens%20(Robes%20de%20Lleng%C3%BCes%201854)%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Teixits%20Vicens%20(Robes%20de%20Lleng%C3%BCes%201854)%20Mallorca",
   pricing: {
     startingPrice: "Telas de lenguas por metro desde 38€/m",
     rateType: "tiered",
@@ -106,21 +102,4 @@ export const teixitsVicensArtesaniaPollensa: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 680,
-      url: "https://www.google.com/maps/search/?api=1&query=Teixits%20Vicens%20(Robes%20de%20Lleng%C3%BCes%201854)%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Teixits%20Vicens%20(Robes%20de%20Lleng%C3%BCes%201854)%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 68,
-      url: "https://www.bing.com/maps?q=Teixits%20Vicens%20(Robes%20de%20Lleng%C3%BCes%201854)%20Mallorca",
-    },
-    totalReviewsAggregated: 748,
-    overallWeightedRating: 4.9,
-  },
 };

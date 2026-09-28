@@ -76,10 +76,6 @@ export const bilingualNanniesVillasMallorca: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Balearic%20Nannies%20%26%20Childcare%20for%20Villas%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Balearic%20Nannies%20%26%20Childcare%20for%20Villas%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Balearic%20Nannies%20%26%20Childcare%20for%20Villas%20Mallorca",
   pricing: {
     startingPrice: "Niñera cualificada desde 22€ / hora",
     rateType: "hourly",
@@ -106,21 +102,4 @@ export const bilingualNanniesVillasMallorca: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 310,
-      url: "https://www.google.com/maps/search/?api=1&query=Balearic%20Nannies%20%26%20Childcare%20for%20Villas%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Balearic%20Nannies%20%26%20Childcare%20for%20Villas%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 31,
-      url: "https://www.bing.com/maps?q=Balearic%20Nannies%20%26%20Childcare%20for%20Villas%20Mallorca",
-    },
-    totalReviewsAggregated: 341,
-    overallWeightedRating: 4.9,
-  },
 };

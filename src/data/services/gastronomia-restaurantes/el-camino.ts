@@ -21,9 +21,6 @@ export const elCaminoPalma: ServiceItem = {
   whatsapp: "+34 971 72 04 65",
   email: "info@el-camino.es",
   website: "https://www.elcaminopalma.es",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=El+Camino+Palma+Carrer+de+Brondo",
-  appleMapsUrl: "https://maps.apple.com/?q=El+Camino+Palma",
-  bingMapsUrl: "https://www.bing.com/maps?q=El+Camino+Palma",
   coordinates: {
     lat: 39.5712,
     lng: 2.6496,
@@ -178,22 +175,13 @@ export const elCaminoPalma: ServiceItem = {
       specialty: "Restauración y Barras Gastronómicas",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 1420,
-      url: "https://www.google.com/maps/search/?api=1&query=El+Camino+Palma+Carrer+de+Brondo",
-    },
-    totalReviewsAggregated: 1420,
-    overallWeightedRating: 4.8,
-  },
   reviews: [
     {
       id: "rev-camino-1",
       authorName: "Laura Vidal",
       rating: 5,
       date: "2025-07-22",
-      platform: "google_maps",
+      platform: "direct",
       language: "es",
       comment:
         "Increíble la experiencia en la barra. Las gambas de Sóller y los chipirones con sobrasada fueron espectaculares. El ambiente es vibrante y el servicio impecable.",
@@ -204,7 +192,7 @@ export const elCaminoPalma: ServiceItem = {
       authorName: "Thomas Bradley",
       rating: 5,
       date: "2025-06-18",
-      platform: "google_maps",
+      platform: "direct",
       language: "en",
       comment:
         "By far the best tapas bar in Palma. Sitting at the marble counter watching the chefs prepare each dish was magical.",

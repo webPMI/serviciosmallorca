@@ -28,9 +28,6 @@ export const escuela_vela_palma_escola_de_vela: ServiceItem = {
   schedule: "Todos los días: 08:00 - 20:00 (temporada alta) | Lunes a Viernes: 08:00 - 18:00 (temporada baja)",
   image: "/images/services/escuela-vela-palma-escola-de-vela.jpg",
   gallery: ["/images/services/escuela-vela-palma-escola-de-vela.jpg"],
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Escola+de+Vela+de+Palma+Moll+Vell",
-  appleMapsUrl: "https://maps.apple.com/?q=Escola+de+Vela+de+Palma+Moll+Vell",
-  bingMapsUrl: "https://bing.com/maps?q=Escola+de+Vela+Palma",
   shortDescription: {
     es: "Escuela de vela oficial en el Puerto de Palma con cursos para obtener el título de Patrón de Embarcaciones de Recreo, Patrón de Yate y formación en seguridad marítima.",
     en: "Official sailing school at Palma Harbour offering courses to obtain Recreational Craft Skipper and Yacht Master licenses, and maritime safety training.",
@@ -94,13 +91,6 @@ export const escuela_vela_palma_escola_de_vela: ServiceItem = {
       "Segeleinführung für Erwachsene und Kinder ab 8 Jahren",
       "Olympische Regatta- und Wettkampfkurse für erfahrene Segler",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 312,
-      url: "https://www.google.com/maps/search/?api=1&query=Escola+Vela+Palma",
-    },
   },
   createdAt: "2026-09-05",
   lastUpdatedAt: "2026-09-05",

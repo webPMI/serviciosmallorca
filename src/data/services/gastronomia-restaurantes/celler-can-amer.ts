@@ -81,23 +81,6 @@ export const cellerCanAmer: ServiceItem = {
     ca: "Celler històric del segle XVII a Inca que recupera el receptari tradicional amb productes de la terra.",
     de: "Historischer Weinkeller aus dem 17. Jahrhundert in Inca, der traditionelle mallorquinische Gerichte modern interpretiert.",
   },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.5,
-      reviewCount: 1450,
-      url: "https://www.google.com/maps/search/?api=1&query=Celler+Can+Amer+Inca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Celler+Can+Amer+Inca",
-    },
-    bingMaps: {
-      rating: 4.5,
-      reviewCount: 110,
-      url: "https://www.bing.com/maps?q=Celler+Can+Amer+Inca",
-    },
-    totalReviewsAggregated: 1560,
-    overallWeightedRating: 4.5,
-  },
   reviews: [],
   socialLinks: {
     instagram: "https://instagram.com/cellercanamer",
@@ -120,9 +103,6 @@ export const cellerCanAmer: ServiceItem = {
     },
   ],
   authorityProfiles: [],
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Celler+Can+Amer+Inca",
-  appleMapsUrl: "https://maps.apple.com/?q=Celler+Can+Amer+Inca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Celler+Can+Amer+Inca",
   phone: "+34 971 50 12 61",
   whatsapp: "+34 971 50 12 61",
   email: "info@canamer.es",

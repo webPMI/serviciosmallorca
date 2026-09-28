@@ -137,9 +137,6 @@ export const dinsSantiTaura: ServiceItem = {
     ca: "DINS Santi Taura neix de la passió del xef Santi Taura per recuperar i reinterpretar el receptari històric de Mallorca amb producte local.",
     de: "Santi Taura widmet seit über zwei Jahrzehnten seine Leidenschaft der Erforschung vergessener mallorquinischer Rezepte und lokaler Kulturtraditionen.",
   },
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=DINS%20Santi%20Taura%20Palma%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=DINS%20Santi%20Taura%20Palma",
-  bingMapsUrl: "https://www.bing.com/maps?q=DINS%20Santi%20Taura%20Palma",
   phone: "+34 971 67 77 70",
   whatsapp: "+34 680 50 48 82",
   email: "info@dinssantitaura.com",
@@ -219,15 +216,6 @@ export const dinsSantiTaura: ServiceItem = {
   },
   image: "/images/services/dins-santi-taura.jpg",
   gallery: ["/images/services/dins-santi-taura.jpg"],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 460,
-      url: "https://www.google.com/maps/search/?api=1&query=DINS%20Santi%20Taura%20Palma%20Mallorca",
-    },
-    totalReviewsAggregated: 460,
-    overallWeightedRating: 4.8,
-  },
   socialLinks: {
     instagram: "https://www.instagram.com/dinssantitaura/",
     facebook: "https://www.facebook.com/dinssantitaura/",

@@ -31,12 +31,6 @@ export const vilapadel_marratxi: ServiceItem = {
   schedule: "Lunes a Domingo: 08:00 - 23:30",
   image: "/images/services/vilapadel-marratxi.jpg",
   gallery: ["/images/services/vilapadel-marratxi.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Vilapadel%20Marratx%C3%AD%20Carrer%20de%20la%20Mar%20Mediterr%C3%A0nia%2C%2034%2C%20Pol%C3%ADgon%20de%20Marratx%C3%AD%2C%2007141%20Marratx%C3%AD",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Vilapadel%20Marratx%C3%AD%20Carrer%20de%20la%20Mar%20Mediterr%C3%A0nia%2C%2034%2C%20Pol%C3%ADgon%20de%20Marratx%C3%AD%2C%2007141%20Marratx%C3%AD",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Vilapadel%20Marratx%C3%AD%20Carrer%20de%20la%20Mar%20Mediterr%C3%A0nia%2C%2034%2C%20Pol%C3%ADgon%20de%20Marratx%C3%AD%2C%2007141%20Marratx%C3%AD",
   shortDescription: {
     es: "Gran club de pádel indoor y outdoor en el Polígono de Marratxí: pistas climatizadas, escuela de adultos y niños, torneos y cafetería.",
     en: "Major indoor and outdoor padel club in Marratxí: climate-controlled courts, junior and adult academy, tournaments, and lounge café.",
@@ -100,13 +94,6 @@ export const vilapadel_marratxi: ServiceItem = {
       "Turniere, Ranglisten-Ligen und amerikanische Spielformate",
       "Pro-Shop für Schläger, Padel-Schuhe und Leihausrüstung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 240,
-      url: "https://www.google.com/maps/search/?api=1&query=Vilapadel%20Marratx%C3%AD%20Carrer%20de%20la%20Mar%20Mediterr%C3%A0nia%2C%2034%2C%20Pol%C3%ADgon%20de%20Marratx%C3%AD%2C%2007141%20Marratx%C3%AD",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

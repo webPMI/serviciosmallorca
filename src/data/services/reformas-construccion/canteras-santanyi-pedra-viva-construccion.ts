@@ -76,10 +76,6 @@ export const canterasSantanyiPedraVivaConstruccion: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Pedra%20de%20Santany%C3%AD%20Canteras%20%26%20Construcci%C3%B3n%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Pedra%20de%20Santany%C3%AD%20Canteras%20%26%20Construcci%C3%B3n%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Pedra%20de%20Santany%C3%AD%20Canteras%20%26%20Construcci%C3%B3n%20Mallorca",
   pricing: {
     startingPrice: "Presupuesto y atención a medida",
     rateType: "tiered",
@@ -106,21 +102,4 @@ export const canterasSantanyiPedraVivaConstruccion: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 290,
-      url: "https://www.google.com/maps/search/?api=1&query=Pedra%20de%20Santany%C3%AD%20Canteras%20%26%20Construcci%C3%B3n%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Pedra%20de%20Santany%C3%AD%20Canteras%20%26%20Construcci%C3%B3n%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 29,
-      url: "https://www.bing.com/maps?q=Pedra%20de%20Santany%C3%AD%20Canteras%20%26%20Construcci%C3%B3n%20Mallorca",
-    },
-    totalReviewsAggregated: 319,
-    overallWeightedRating: 4.9,
-  },
 };

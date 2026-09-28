@@ -31,12 +31,6 @@ export const caser_seguros_agencia_palma: ServiceItem = {
   schedule: "Lunes a Viernes: 09:00 - 18:00",
   image: "/images/services/caser-seguros-agencia-palma.jpg",
   gallery: ["/images/services/caser-seguros-agencia-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Caser%20Seguros%20Agencia%20Palma%20Jaume%20III%20Avinguda%20de%20Jaume%20III%2C%205%2C%2007012%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Caser%20Seguros%20Agencia%20Palma%20Jaume%20III%20Avinguda%20de%20Jaume%20III%2C%205%2C%2007012%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Caser%20Seguros%20Agencia%20Palma%20Jaume%20III%20Avinguda%20de%20Jaume%20III%2C%205%2C%2007012%20Palma",
   shortDescription: {
     es: "Agencia de seguros en la Avinguda Jaume III de Palma: seguros de comunidades de propietarios, comercios, salud y protección jurídica.",
     en: "Established insurance agency on Palma's Avinguda Jaume III: residential community cover, retail businesses, health, and legal defense.",
@@ -100,13 +94,6 @@ export const caser_seguros_agencia_palma: ServiceItem = {
       "Mietausfallversicherung mit Räumungsschutz und Vandalismusklausel",
       "Familien-Krankenversicherungen, Zahnzusatzschutz und Bestattungsvorsorge",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.6,
-      reviewCount: 60,
-      url: "https://www.google.com/maps/search/?api=1&query=Caser%20Seguros%20Agencia%20Palma%20Jaume%20III%20Avinguda%20de%20Jaume%20III%2C%205%2C%2007012%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

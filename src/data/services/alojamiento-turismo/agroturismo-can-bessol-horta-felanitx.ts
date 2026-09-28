@@ -31,12 +31,6 @@ export const agroturismo_can_bessol_horta_felanitx: ServiceItem = {
   schedule: "Lunes a Domingo: 08:00 - 22:00",
   image: "/images/services/agroturismo-can-bessol-horta-felanitx.jpg",
   gallery: ["/images/services/agroturismo-can-bessol-horta-felanitx.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Agroturismo%20Can%20Bessol%20S'Horta%20Felanitx%20Cam%C3%AD%20de%20Can%20Bessol%2C%20s%2Fn%2C%2007669%20S'Horta%2C%20Felanitx",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Agroturismo%20Can%20Bessol%20S'Horta%20Felanitx%20Cam%C3%AD%20de%20Can%20Bessol%2C%20s%2Fn%2C%2007669%20S'Horta%2C%20Felanitx",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Agroturismo%20Can%20Bessol%20S'Horta%20Felanitx%20Cam%C3%AD%20de%20Can%20Bessol%2C%20s%2Fn%2C%2007669%20S'Horta%2C%20Felanitx",
   shortDescription: {
     es: "Finca ecológica familiar en S'Horta (Felanitx) con animales de granja, piscina salina y apartamentos rústicos a minutos del mar.",
     en: "Organic family agro-estate in S'Horta (Felanitx) with farm animals, saltwater pool, and rustic apartments near the coast.",
@@ -100,13 +94,6 @@ export const agroturismo_can_bessol_horta_felanitx: ServiceItem = {
       "Bauernhof-Erlebnisse und Gemüsepflücken für Kinder",
       "Kostenlose Leihfahrräder für Touren auf den ruhigen Fincawegen von S'Horta",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 160,
-      url: "https://www.google.com/maps/search/?api=1&query=Agroturismo%20Can%20Bessol%20S'Horta%20Felanitx%20Cam%C3%AD%20de%20Can%20Bessol%2C%20s%2Fn%2C%2007669%20S'Horta%2C%20Felanitx",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

@@ -31,12 +31,6 @@ export const clinica_dental_miravet_palma: ServiceItem = {
   schedule: "Lunes a Viernes: 09:00 - 13:30, 15:30 - 20:00 | Sábado y Domingo: Cerrado",
   image: "/images/services/clinica-dental-miravet-palma.jpg",
   gallery: ["/images/services/clinica-dental-miravet-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica%20Dental%20Miravet%20Palma%20Carrer%20del%20Sindicat%2C%2069%2C%2007002%20Palma%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Cl%C3%ADnica%20Dental%20Miravet%20Palma%20Carrer%20del%20Sindicat%2C%2069%2C%2007002%20Palma%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Cl%C3%ADnica%20Dental%20Miravet%20Palma%20Carrer%20del%20Sindicat%2C%2069%2C%2007002%20Palma%2C%20Illes%20Balears",
   shortDescription: {
     es: "Clínica odontológica de prestigio en el centro de Palma, referente en implantes guiados por ordenador, diseño digital de sonrisas con carillas de porcelana y ortodoncia invisible.",
     en: "Renowned dental clinic in central Palma, benchmark for computer-guided implants, digital smile design with porcelain veneers, and invisible aligner orthodontics.",
@@ -100,13 +94,6 @@ export const clinica_dental_miravet_palma: ServiceItem = {
       "Ästhetische Zahnheilkunde: hauchdünne Keramik-Veneers und sanftes Power-Bleaching",
       "Parodontosebehandlung, maschinelle Wurzelkanalbehandlung und Air-Flow-Prophylaxe",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 230,
-      url: "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica%20Dental%20Miravet%20Palma%20Carrer%20del%20Sindicat%2C%2069%2C%2007002%20Palma%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

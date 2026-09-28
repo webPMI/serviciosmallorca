@@ -31,12 +31,6 @@ export const roedl_and_partner_abogados_asesores_palma: ServiceItem = {
   schedule: "Lunes a Jueves: 08:30 - 18:00, Viernes: 08:30 - 15:00",
   image: "/images/services/roedl-and-partner-abogados-asesores-palma.jpg",
   gallery: ["/images/services/roedl-and-partner-abogados-asesores-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=R%C3%B6dl%20%26%20Partner%20Abogados%20%26%20Asesores%20Fiscales%20(Palma%20de%20Mallorca)%20Carrer%20de%20Bonaire%2C%2010%2C%2007012%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=R%C3%B6dl%20%26%20Partner%20Abogados%20%26%20Asesores%20Fiscales%20(Palma%20de%20Mallorca)%20Carrer%20de%20Bonaire%2C%2010%2C%2007012%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=R%C3%B6dl%20%26%20Partner%20Abogados%20%26%20Asesores%20Fiscales%20(Palma%20de%20Mallorca)%20Carrer%20de%20Bonaire%2C%2010%2C%2007012%20Palma",
   shortDescription: {
     es: "Firma internacional de abogados y asesores fiscales con sede en Palma: asesoramiento integral para patrimonios extranjeros, inversiones inmobiliarias y empresas.",
     en: "International law and tax consulting firm in Palma: legal and fiscal advisory for foreign high-net-worth individuals, real estate, and companies.",
@@ -100,13 +94,6 @@ export const roedl_and_partner_abogados_asesores_palma: ServiceItem = {
       "Spanisch-deutsches Erbrecht, Testamentsgestaltung und Nachlassabwicklung",
       "Wirtschaftsprüfung und laufende Steuerberatung für spanische Gesellschaften",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 170,
-      url: "https://www.google.com/maps/search/?api=1&query=R%C3%B6dl%20%26%20Partner%20Abogados%20%26%20Asesores%20Fiscales%20(Palma%20de%20Mallorca)%20Carrer%20de%20Bonaire%2C%2010%2C%2007012%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

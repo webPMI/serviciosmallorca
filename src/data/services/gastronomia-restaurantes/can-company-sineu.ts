@@ -21,9 +21,6 @@ export const canCompany: ServiceItem = {
   whatsapp: "+34 971 85 52 14",
   email: "info@cancompany.es",
   website: "https://cancompany.es/restauracion",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Can%20Company%20Sineu%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Can%20Company%20Sineu%20Mallorca&ll=39.6582,3.0112",
-  bingMapsUrl: "https://www.bing.com/maps?where1=Can%20Company%20Sineu%20Mallorca",
   coordinates: { lat: 39.6582, lng: 3.0112 },
   schedule: "Lunes a Viernes: 08:30 - 18:00 | Sábados: 09:00 - 13:30 (Visitas a la Finca con Reserva)",
   lastVerifiedAt: "2026-08-25",
@@ -131,30 +128,13 @@ export const canCompany: ServiceItem = {
       instagramHandle: "@cancompany",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 530,
-      url: "https://www.google.com/maps/search/?api=1&query=Can%20Company%20Sineu%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Can%20Company%20Sineu%20Mallorca&ll=39.6582,3.0112",
-    },
-    bingMaps: {
-      rating: 4.9,
-      reviewCount: 530,
-      url: "https://www.bing.com/maps?where1=Can%20Company%20Sineu%20Mallorca",
-    },
-    totalReviewsAggregated: 530,
-    overallWeightedRating: 4.9,
-  },
   reviews: [
     {
       id: "rev-cc-1",
       authorName: "Antoni Mas",
       rating: 5,
       date: "2025-05-18",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
       comment:
         "La millor sobrassada del món sense cap mena de dubte. La curació del Porc Negre i el gust del pebre de tap de cortí són una obra d'art.",
@@ -165,7 +145,7 @@ export const canCompany: ServiceItem = {
       authorName: "Jean-Paul Gautier",
       rating: 5,
       date: "2025-06-27",
-      platform: "google_maps",
+      platform: "direct",
       language: "fr",
       comment:
         "Charcuterie d'exception! La sobrasada de Porc Negre fond en bouche avec une finesse absolue. Visite passionnante au cœur de l'île.",

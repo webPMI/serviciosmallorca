@@ -21,9 +21,6 @@ export const electricidadSoller: ServiceItem = {
   whatsapp: "+34 670 20 30 50",
   email: "info@electricidadsoller.com",
   website: "https://electricidadsoller.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Electricidad%20Climatizacion%20Soller",
-  appleMapsUrl: "https://maps.apple.com/?q=Electricidad%20Climatizacion%20Soller&ll=39.7660,2.7150",
-  bingMapsUrl: "https://www.bing.com/maps?where1=Electricidad%20Climatizacion%20Soller",
   coordinates: { lat: 39.766, lng: 2.715 },
   schedule: "Lunes a Viernes: 08:00 - 18:30 (Servicio de Urgencias Eléctricas 24h en Tramuntana)",
   lastVerifiedAt: "2026-08-25",
@@ -131,30 +128,13 @@ export const electricidadSoller: ServiceItem = {
       instagramHandle: "@electricidadsoller",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 150,
-      url: "https://www.google.com/maps/search/?api=1&query=Electricidad%20Climatizacion%20Soller",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Electricidad%20Climatizacion%20Soller&ll=39.7660,2.7150",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 150,
-      url: "https://www.bing.com/maps?where1=Electricidad%20Climatizacion%20Soller",
-    },
-    totalReviewsAggregated: 150,
-    overallWeightedRating: 4.8,
-  },
   reviews: [
     {
       id: "rev-ecs-1",
       authorName: "Antoni Arbona",
       rating: 5,
       date: "2025-05-18",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
       comment:
         "Molt bons electricistes a Sóller. Varen fer tota la reforma elèctrica i la climatització per aerotèrmia de la nostra casa de pedra a Fornalutx. Feina molt neta, respectant les parets tradicionals.",
@@ -165,7 +145,7 @@ export const electricidadSoller: ServiceItem = {
       authorName: "Jean-Pierre Laurent",
       rating: 5,
       date: "2025-06-25",
-      platform: "google_maps",
+      platform: "direct",
       language: "fr",
       comment:
         "Entreprise technique formidable à Sóller et Deià! Ils ont installé notre climatisation réversible et la domotique. Travail très soigné, ponctuel et excellente communication en français.",

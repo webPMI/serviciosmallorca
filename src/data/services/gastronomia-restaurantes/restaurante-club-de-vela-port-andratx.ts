@@ -28,9 +28,6 @@ export const restauranteClubDeVelaPortAndratx: ServiceItem = {
   email: "restaurante@cvpa.es",
   website: "https://www.cvpa.es/restaurante",
   menuUrl: "https://www.cvpa.es",
-  googleMapsUrl: "https://www.google.com/maps/search/Restaurante+Club+de+Vela+Puerto+de+Andratx+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante+Club+de+Vela+Puerto+de+Andratx",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante+Club+de+Vela+Puerto+de+Andratx",
   tags: [
     "zona:calvia-andratx",
     "zona:port-d-andratx",

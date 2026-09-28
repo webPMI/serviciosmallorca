@@ -29,8 +29,6 @@ export const CROSSFIT_070_PALMA: ServiceItem = {
   image: "/images/sports/crossfit-070-palma.jpg",
   gallery: ["/images/sports/crossfit-070-palma.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007059",
-  appleMapsUrl: "https://maps.apple.com/?q=CrossFit%20070+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=CrossFit%20070+Mallorca",
   shortDescription: {
     es: "Box oficial con programación de alto rendimiento, gimnasia deportiva y preparación para competiciones.",
     en: "Official box with high-performance programming, gymnastics, and competition prep.",
@@ -94,13 +92,6 @@ export const CROSSFIT_070_PALMA: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 310,
-      url: "https://www.google.com/maps?cid=12007059",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

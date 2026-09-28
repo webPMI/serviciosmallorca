@@ -76,10 +76,6 @@ export const minknerAndPartnerSantaPonsa: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Minkner%20%26%20Partner%20Luxury%20Real%20Estate%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Minkner%20%26%20Partner%20Luxury%20Real%20Estate%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Minkner%20%26%20Partner%20Luxury%20Real%20Estate%20Mallorca",
   pricing: {
     startingPrice: "Consultar servicios y presupuestos personalizados",
     rateType: "custom_quote",
@@ -106,21 +102,4 @@ export const minknerAndPartnerSantaPonsa: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 340,
-      url: "https://www.google.com/maps/search/?api=1&query=Minkner%20%26%20Partner%20Luxury%20Real%20Estate%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Minkner%20%26%20Partner%20Luxury%20Real%20Estate%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 34,
-      url: "https://www.bing.com/maps?q=Minkner%20%26%20Partner%20Luxury%20Real%20Estate%20Mallorca",
-    },
-    totalReviewsAggregated: 374,
-    overallWeightedRating: 4.9,
-  },
 };

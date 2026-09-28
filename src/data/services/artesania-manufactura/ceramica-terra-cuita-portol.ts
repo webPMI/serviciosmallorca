@@ -76,10 +76,6 @@ export const ceramicaTerraCuitaPortol: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Cer%C3%A0mica%20Terra%20Cuita%20P%C3%B2rtol%20(Fundada%201861)%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Cer%C3%A0mica%20Terra%20Cuita%20P%C3%B2rtol%20(Fundada%201861)%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Cer%C3%A0mica%20Terra%20Cuita%20P%C3%B2rtol%20(Fundada%201861)%20Mallorca",
   pricing: {
     startingPrice: "Vajilla artesana desde 12€",
     rateType: "tiered",
@@ -106,21 +102,4 @@ export const ceramicaTerraCuitaPortol: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 430,
-      url: "https://www.google.com/maps/search/?api=1&query=Cer%C3%A0mica%20Terra%20Cuita%20P%C3%B2rtol%20(Fundada%201861)%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Cer%C3%A0mica%20Terra%20Cuita%20P%C3%B2rtol%20(Fundada%201861)%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 43,
-      url: "https://www.bing.com/maps?q=Cer%C3%A0mica%20Terra%20Cuita%20P%C3%B2rtol%20(Fundada%201861)%20Mallorca",
-    },
-    totalReviewsAggregated: 473,
-    overallWeightedRating: 4.9,
-  },
 };

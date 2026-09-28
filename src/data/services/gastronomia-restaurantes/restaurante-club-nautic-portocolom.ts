@@ -28,9 +28,6 @@ export const restauranteClubNauticPortocolom: ServiceItem = {
   email: "restaurante@clubnautic.es",
   website: "https://clubnautic.es",
   menuUrl: "https://clubnautic.es",
-  googleMapsUrl: "https://www.google.com/maps/search/Restaurante+Club+Nautic+Portocolom+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante+Club+Nautic+Portocolom",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante+Club+Nautic+Portocolom",
   tags: [
     "zona:santanyi-migjorn",
     "zona:portocolom",

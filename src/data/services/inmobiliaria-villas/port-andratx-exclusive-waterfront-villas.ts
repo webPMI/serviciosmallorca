@@ -31,12 +31,6 @@ export const port_andratx_exclusive_waterfront_villas: ServiceItem = {
   schedule: "Lunes a Viernes: 09:30 - 19:30, Sábados: 10:00 - 15:00",
   image: "/images/services/port-andratx-exclusive-waterfront-villas.jpg",
   gallery: ["/images/services/port-andratx-exclusive-waterfront-villas.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Port%20d'Andratx%20Luxury%20Waterfront%20Real%20Estate%20Avinguda%20de%20Gabriel%20Roca%20i%20Garc%C3%ADas%2C%2019%2C%2007157%20Port%20d'Andratx",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Port%20d'Andratx%20Luxury%20Waterfront%20Real%20Estate%20Avinguda%20de%20Gabriel%20Roca%20i%20Garc%C3%ADas%2C%2019%2C%2007157%20Port%20d'Andratx",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Port%20d'Andratx%20Luxury%20Waterfront%20Real%20Estate%20Avinguda%20de%20Gabriel%20Roca%20i%20Garc%C3%ADas%2C%2019%2C%2007157%20Port%20d'Andratx",
   shortDescription: {
     es: "Inmobiliaria de referencia en Port d'Andratx para villas contemporáneas en primera línea de mar, Cala Llamp, Monport y La Mola.",
     en: "Premier Port d'Andratx real estate agency for contemporary sea-view villas in Cala Llamp, Monport, and La Mola.",
@@ -100,13 +94,6 @@ export const port_andratx_exclusive_waterfront_villas: ServiceItem = {
       "Gutachterliche Wertermittlung im High-End-Segment",
       "Vollständige notarielle und steuerliche Kaufbegleitung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 130,
-      url: "https://www.google.com/maps/search/?api=1&query=Port%20d'Andratx%20Luxury%20Waterfront%20Real%20Estate%20Avinguda%20de%20Gabriel%20Roca%20i%20Garc%C3%ADas%2C%2019%2C%2007157%20Port%20d'Andratx",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

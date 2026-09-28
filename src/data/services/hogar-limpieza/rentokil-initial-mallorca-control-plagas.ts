@@ -31,12 +31,6 @@ export const rentokil_initial_mallorca_control_plagas: ServiceItem = {
   schedule: "Lunes a Viernes: 08:00 - 18:30 (Urgencias 24h)",
   image: "/images/services/rentokil-initial-mallorca-control-plagas.jpg",
   gallery: ["/images/services/rentokil-initial-mallorca-control-plagas.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Rentokil%20Initial%20Mallorca%20Control%20de%20Plagas%20%26%20Desinfecci%C3%B3n%20Gran%20Via%20Asima%2C%2012%2C%20Pol%C3%ADgono%20Son%20Castell%C3%B3%2C%2007009%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Rentokil%20Initial%20Mallorca%20Control%20de%20Plagas%20%26%20Desinfecci%C3%B3n%20Gran%20Via%20Asima%2C%2012%2C%20Pol%C3%ADgono%20Son%20Castell%C3%B3%2C%2007009%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Rentokil%20Initial%20Mallorca%20Control%20de%20Plagas%20%26%20Desinfecci%C3%B3n%20Gran%20Via%20Asima%2C%2012%2C%20Pol%C3%ADgono%20Son%20Castell%C3%B3%2C%2007009%20Palma",
   shortDescription: {
     es: "Empresa líder mundial en control de plagas y sanidad ambiental en Mallorca: erradicación de termitas, carcoma en vigas históricas, cucarachas, roedores y control de legionella.",
     en: "Global leader in pest control and environmental hygiene in Mallorca: termite eradication, woodworm treatment in historic beams, cockroach and rodent control, and legionella prevention.",
@@ -100,13 +94,6 @@ export const rentokil_initial_mallorca_control_plagas: ServiceItem = {
       "Bekämpfung von Kakerlaken, Ameisen, Wespen und Nagetieren",
       "Legionellenprüfung und Desinfektion von Warmwasseranlagen",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 380,
-      url: "https://www.google.com/maps/search/?api=1&query=Rentokil%20Initial%20Mallorca%20Control%20de%20Plagas%20%26%20Desinfecci%C3%B3n%20Gran%20Via%20Asima%2C%2012%2C%20Pol%C3%ADgono%20Son%20Castell%C3%B3%2C%2007009%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

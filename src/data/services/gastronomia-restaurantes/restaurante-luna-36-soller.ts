@@ -28,9 +28,6 @@ export const restauranteLuna36Soller: ServiceItem = {
   email: "info@luna36.es",
   website: "https://luna36.es",
   menuUrl: "https://luna36.es",
-  googleMapsUrl: "https://www.google.com/maps/search/Restaurante+Luna+36+Soller+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante+Luna+36+Soller",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante+Luna+36+Soller",
   tags: ["zona:tramuntana", "zona:soller", "product:premium", "mod:en-local", "aud:parejas", "temps:todo-el-ano"],
   capabilities: {
     terrace: true,

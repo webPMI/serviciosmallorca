@@ -76,10 +76,6 @@ export const mallorcaMortgagesInternationalBuyers: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Balearic%20Private%20Mortgages%20%26%20Wealth%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Balearic%20Private%20Mortgages%20%26%20Wealth%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Balearic%20Private%20Mortgages%20%26%20Wealth%20Mallorca",
   pricing: {
     startingPrice: "Estudio de viabilidad hipotecaria sin coste",
     rateType: "custom_quote",
@@ -106,21 +102,4 @@ export const mallorcaMortgagesInternationalBuyers: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 270,
-      url: "https://www.google.com/maps/search/?api=1&query=Balearic%20Private%20Mortgages%20%26%20Wealth%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Balearic%20Private%20Mortgages%20%26%20Wealth%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 27,
-      url: "https://www.bing.com/maps?q=Balearic%20Private%20Mortgages%20%26%20Wealth%20Mallorca",
-    },
-    totalReviewsAggregated: 297,
-    overallWeightedRating: 4.9,
-  },
 };

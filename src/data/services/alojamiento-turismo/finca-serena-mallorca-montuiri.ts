@@ -76,10 +76,6 @@ export const fincaSerenaMallorcaMontuiri: ServiceItem = {
       close: "23:59",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Finca%20Serena%20Mallorca%20Luxury%20Hotel%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Finca%20Serena%20Mallorca%20Luxury%20Hotel%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Finca%20Serena%20Mallorca%20Luxury%20Hotel%20Mallorca",
   pricing: {
     startingPrice: "Desde 480€ / noche",
     rateType: "tiered",
@@ -106,21 +102,4 @@ export const fincaSerenaMallorcaMontuiri: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 340,
-      url: "https://www.google.com/maps/search/?api=1&query=Finca%20Serena%20Mallorca%20Luxury%20Hotel%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Finca%20Serena%20Mallorca%20Luxury%20Hotel%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 34,
-      url: "https://www.bing.com/maps?q=Finca%20Serena%20Mallorca%20Luxury%20Hotel%20Mallorca",
-    },
-    totalReviewsAggregated: 374,
-    overallWeightedRating: 4.9,
-  },
 };

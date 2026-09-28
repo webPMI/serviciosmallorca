@@ -29,8 +29,6 @@ export const CROSSFIT_CAN_PASTILLA: ServiceItem = {
   image: "/images/sports/crossfit-can-pastilla.jpg",
   gallery: ["/images/sports/crossfit-can-pastilla.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007065",
-  appleMapsUrl: "https://maps.apple.com/?q=CrossFit%20Can%20Pastilla+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=CrossFit%20Can%20Pastilla+Mallorca",
   shortDescription: {
     es: "Box a 200m de la playa de Can Pastilla con entrenamientos funcionales, carreras en arena y WODs.",
     en: "Box 200m from Can Pastilla beach with functional fitness, beach sprint sessions, and WODs.",
@@ -94,13 +92,6 @@ export const CROSSFIT_CAN_PASTILLA: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 230,
-      url: "https://www.google.com/maps?cid=12007065",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

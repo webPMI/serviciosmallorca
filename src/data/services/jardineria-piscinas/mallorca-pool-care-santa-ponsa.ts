@@ -76,10 +76,6 @@ export const mallorcaPoolCareSantaPonsa: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Mallorca%20Pool%20Care%20%26%20Renovation%20Santa%20Ponsa%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Mallorca%20Pool%20Care%20%26%20Renovation%20Santa%20Ponsa%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Mallorca%20Pool%20Care%20%26%20Renovation%20Santa%20Ponsa%20Mallorca",
   pricing: {
     startingPrice: "Presupuesto y tarifas personalizadas",
     rateType: "tiered",
@@ -106,21 +102,4 @@ export const mallorcaPoolCareSantaPonsa: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 310,
-      url: "https://www.google.com/maps/search/?api=1&query=Mallorca%20Pool%20Care%20%26%20Renovation%20Santa%20Ponsa%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Mallorca%20Pool%20Care%20%26%20Renovation%20Santa%20Ponsa%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 31,
-      url: "https://www.bing.com/maps?q=Mallorca%20Pool%20Care%20%26%20Renovation%20Santa%20Ponsa%20Mallorca",
-    },
-    totalReviewsAggregated: 341,
-    overallWeightedRating: 4.9,
-  },
 };

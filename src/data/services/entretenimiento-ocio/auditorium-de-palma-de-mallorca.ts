@@ -31,12 +31,6 @@ export const auditorium_de_palma_de_mallorca: ServiceItem = {
   schedule: "Lunes a Domingo: taquilla 10:00 - 14:00, 16:00 - 21:00 | Funciones según eventos",
   image: "/images/services/auditorium-de-palma-de-mallorca.jpg",
   gallery: ["/images/services/auditorium-de-palma-de-mallorca.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Auditorium%20de%20Palma%20de%20Mallorca%20Passeig%20Mar%C3%ADtim%2C%2018%2C%2007014%20Palma%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Auditorium%20de%20Palma%20de%20Mallorca%20Passeig%20Mar%C3%ADtim%2C%2018%2C%2007014%20Palma%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Auditorium%20de%20Palma%20de%20Mallorca%20Passeig%20Mar%C3%ADtim%2C%2018%2C%2007014%20Palma%2C%20Illes%20Balears",
   shortDescription: {
     es: "El gran centro de congresos y artes escénicas frente al mar en el Paseo Marítimo de Palma, escenario principal para musicales de Broadway, giras internacionales de pop-rock, ballet y sinfónicas.",
     en: "Palma's premier seafront performing arts and convention centre on the Paseo Marítimo, hosting Broadway musicals, international pop-rock tours, world ballets, and symphony concerts.",
@@ -100,13 +94,6 @@ export const auditorium_de_palma_de_mallorca: ServiceItem = {
       "Umfassende hauseigene Veranstaltungstechnik für Licht, Ton und HD-Projektionen",
       "Cateringbereiche für Stehempfänge, Kaffeepausen und repräsentative Galas",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.6,
-      reviewCount: 2900,
-      url: "https://www.google.com/maps/search/?api=1&query=Auditorium%20de%20Palma%20de%20Mallorca%20Passeig%20Mar%C3%ADtim%2C%2018%2C%2007014%20Palma%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

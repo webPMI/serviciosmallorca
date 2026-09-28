@@ -21,9 +21,6 @@ export const tallerHermanosBestard: ServiceItem = {
   whatsapp: "+34 629 11 22 33",
   email: "taller@hermanosbestard.com",
   website: "https://tallerhermanosbestard.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Taller%20Hermanos%20Bestard%20Palma",
-  appleMapsUrl: "https://maps.apple.com/?q=Taller%20Hermanos%20Bestard%20Palma&ll=39.5785,2.6342",
-  bingMapsUrl: "https://www.bing.com/maps?where1=Taller%20Hermanos%20Bestard%20Palma",
   coordinates: { lat: 39.5785, lng: 2.6342 },
   schedule: "Lunes a Viernes: 08:00 - 13:30 | 15:00 - 19:00 (Sábados y Domingos Cerrado)",
   lastVerifiedAt: "2026-08-25",
@@ -130,30 +127,13 @@ export const tallerHermanosBestard: ServiceItem = {
       instagramHandle: "@hermanosbestard",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 210,
-      url: "https://www.google.com/maps/search/?api=1&query=Taller%20Hermanos%20Bestard%20Palma",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Taller%20Hermanos%20Bestard%20Palma&ll=39.5785,2.6342",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 210,
-      url: "https://www.bing.com/maps?where1=Taller%20Hermanos%20Bestard%20Palma",
-    },
-    totalReviewsAggregated: 210,
-    overallWeightedRating: 4.8,
-  },
   reviews: [
     {
       id: "rev-hb-1",
       authorName: "Rafel Pons",
       rating: 5,
       date: "2025-05-19",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
       comment:
         "Taller de tota la vida de màxima confiança a Palma. Em varen canviar la corretja de distribució i passar la ITV el mateix dia. Preu just i honest.",
@@ -164,7 +144,7 @@ export const tallerHermanosBestard: ServiceItem = {
       authorName: "Simon Cooper",
       rating: 5,
       date: "2025-06-26",
-      platform: "google_maps",
+      platform: "direct",
       language: "en",
       comment:
         "Best mechanic in Palma! Honest, punctual, transparent pricing, and they fixed a strange engine noise two other garages couldn't figure out.",

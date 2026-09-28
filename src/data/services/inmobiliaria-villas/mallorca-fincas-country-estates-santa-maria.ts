@@ -31,12 +31,6 @@ export const mallorca_fincas_country_estates_santa_maria: ServiceItem = {
   schedule: "Lunes a Viernes: 09:30 - 19:00, Sábados: 10:00 - 14:00",
   image: "/images/services/mallorca-fincas-country-estates-santa-maria.jpg",
   gallery: ["/images/services/mallorca-fincas-country-estates-santa-maria.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Mallorca%20Fincas%20%26%20Historic%20Country%20Estates%20Santa%20Maria%20Pla%C3%A7a%20Hostals%2C%206%2C%2007320%20Santa%20Maria%20del%20Cam%C3%AD",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Mallorca%20Fincas%20%26%20Historic%20Country%20Estates%20Santa%20Maria%20Pla%C3%A7a%20Hostals%2C%206%2C%2007320%20Santa%20Maria%20del%20Cam%C3%AD",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Mallorca%20Fincas%20%26%20Historic%20Country%20Estates%20Santa%20Maria%20Pla%C3%A7a%20Hostals%2C%206%2C%2007320%20Santa%20Maria%20del%20Cam%C3%AD",
   shortDescription: {
     es: "Agencia inmobiliaria boutique especializada exclusivamente en la compraventa de fincas rústicas, viñedos y posesiones históricas en el interior de Mallorca.",
     en: "Boutique real estate agency specializing exclusively in rustic estates, vineyard properties, and historic manor houses in central Mallorca.",
@@ -100,13 +94,6 @@ export const mallorca_fincas_country_estates_santa_maria: ServiceItem = {
       "Individueller Suchauftrag (Property Hunting)",
       "Beratung zu Agroturismo- und Ferienvermietungslizenzen",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 110,
-      url: "https://www.google.com/maps/search/?api=1&query=Mallorca%20Fincas%20%26%20Historic%20Country%20Estates%20Santa%20Maria%20Pla%C3%A7a%20Hostals%2C%206%2C%2007320%20Santa%20Maria%20del%20Cam%C3%AD",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

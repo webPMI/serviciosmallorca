@@ -31,12 +31,6 @@ export const caritas_diocesana_de_mallorca_palma: ServiceItem = {
   schedule: "Lunes a Viernes: 08:30 - 14:30",
   image: "/images/services/caritas-diocesana-de-mallorca-palma.jpg",
   gallery: ["/images/services/caritas-diocesana-de-mallorca-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=C%C3%A1ritas%20Diocesana%20de%20Mallorca%20Palma%20Carrer%20del%20Socors%2C%2022%2C%2007002%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=C%C3%A1ritas%20Diocesana%20de%20Mallorca%20Palma%20Carrer%20del%20Socors%2C%2022%2C%2007002%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=C%C3%A1ritas%20Diocesana%20de%20Mallorca%20Palma%20Carrer%20del%20Socors%2C%2022%2C%2007002%20Palma",
   shortDescription: {
     es: "Organización social de referencia en Mallorca: acogida comunitaria, ayuda a personas mayores, comedores y programas de inserción sociolaboral.",
     en: "Benchmark charitable social organization in Mallorca: community care, senior assistance, food aid, and vocational integration programs.",
@@ -100,13 +94,6 @@ export const caritas_diocesana_de_mallorca_palma: ServiceItem = {
       "Berufliche Weiterbildung und Arbeitsvermittlung für Erwerbslose",
       "Betrieb von Secondhand-Boutiquen und Textilrecycling-Projekten",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 190,
-      url: "https://www.google.com/maps/search/?api=1&query=C%C3%A1ritas%20Diocesana%20de%20Mallorca%20Palma%20Carrer%20del%20Socors%2C%2022%2C%2007002%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

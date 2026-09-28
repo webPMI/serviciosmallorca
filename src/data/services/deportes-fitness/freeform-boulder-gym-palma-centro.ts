@@ -29,8 +29,6 @@ export const FREEFORM_BOULDER_GYM_PALMA_CENTRO: ServiceItem = {
   image: "/images/sports/freeform-boulder-gym-palma-centro.jpg",
   gallery: ["/images/sports/freeform-boulder-gym-palma-centro.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007083",
-  appleMapsUrl: "https://maps.apple.com/?q=Freeform%20Boulder%20Gym+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Freeform%20Boulder%20Gym+Mallorca",
   shortDescription: {
     es: "Rocódromo boutique de escalada en bloque en el centro urbano de Palma, junto a la estación de tren.",
     en: "Boutique bouldering gym located in central Palma, steps from the central transit station.",
@@ -94,13 +92,6 @@ export const FREEFORM_BOULDER_GYM_PALMA_CENTRO: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 280,
-      url: "https://www.google.com/maps?cid=12007083",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

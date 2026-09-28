@@ -29,8 +29,6 @@ export const STUDIO_1_PERSONAL_TRAINING_PALMA: ServiceItem = {
   image: "/images/sports/studio-1-personal-training-palma.jpg",
   gallery: ["/images/sports/studio-1-personal-training-palma.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007047",
-  appleMapsUrl: "https://maps.apple.com/?q=Studio%201%20Personal%20Training+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Studio%201%20Personal%20Training+Mallorca",
   shortDescription: {
     es: "Estudio privado de entrenamiento personal de élite, readaptación y fisioterapia en Paseo Mallorca.",
     en: "Elite private personal training studio, rehabilitation, and physiotherapy on Paseo Mallorca.",
@@ -94,13 +92,6 @@ export const STUDIO_1_PERSONAL_TRAINING_PALMA: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 190,
-      url: "https://www.google.com/maps?cid=12007047",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

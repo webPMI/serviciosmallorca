@@ -28,9 +28,6 @@ export const restauranteMiradorDeCabrera: ServiceItem = {
   email: "info@mirador-de-cabrera.com",
   website: "https://www.mirador-de-cabrera.com",
   menuUrl: "https://www.mirador-de-cabrera.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Restaurante+Mirador+de+Cabrera+Vallgornera+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante+Mirador+de+Cabrera+Vallgornera",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante+Mirador+de+Cabrera+Vallgornera",
   tags: [
     "zona:santanyi-migjorn",
     "zona:llucmajor",

@@ -31,12 +31,6 @@ export const jardins_tramuntana_alaro: ServiceItem = {
   schedule: "Lunes a Viernes: 08:00 - 17:00 | Sábado y Domingo: Cerrado",
   image: "/images/services/jardins-tramuntana-alaro.jpg",
   gallery: ["/images/services/jardins-tramuntana-alaro.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Jardins%20de%20Tramuntana%20Alar%C3%B3%20Cam%C3%AD%20d'Orient%2C%20km%202%2C%2007340%20Alar%C3%B3%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Jardins%20de%20Tramuntana%20Alar%C3%B3%20Cam%C3%AD%20d'Orient%2C%20km%202%2C%2007340%20Alar%C3%B3%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Jardins%20de%20Tramuntana%20Alar%C3%B3%20Cam%C3%AD%20d'Orient%2C%20km%202%2C%2007340%20Alar%C3%B3%2C%20Illes%20Balears",
   shortDescription: {
     es: "Estudio de paisajismo y mantenimiento integral de fincas en Alaró y la Sierra de Tramuntana, especialistas en bancales de piedra en seco, olivares y jardines mediterráneos.",
     en: "Landscape architecture and finca garden estate management in Alaró and the Tramuntana mountains, renowned for dry-stone terracing, olive grove restoration, and native flora.",
@@ -100,13 +94,6 @@ export const jardins_tramuntana_alaro: ServiceItem = {
       "Bau und Sanierung von Trockensteinmauern und Natursteintreppen",
       "Installation sensorgesteuerter Bewässerungssysteme mit Smartphone-App-Überwachung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 110,
-      url: "https://www.google.com/maps/search/?api=1&query=Jardins%20de%20Tramuntana%20Alar%C3%B3%20Cam%C3%AD%20d'Orient%2C%20km%202%2C%2007340%20Alar%C3%B3%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

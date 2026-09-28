@@ -31,12 +31,6 @@ export const diving_scuba_mallorca_port_pollensa_center: ServiceItem = {
   schedule: "Lunes a Domingo: 08:30 - 19:00 (Temporada Abril - Noviembre)",
   image: "/images/services/diving-scuba-mallorca-port-pollensa-center.jpg",
   gallery: ["/images/services/diving-scuba-mallorca-port-pollensa-center.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Scuba%20Mallorca%20PADI%205%20Star%20Dive%20Resort%20Port%20de%20Pollen%C3%A7a%20Carrer%20d'Elcano%2C%2023%2C%2007470%20Port%20de%20Pollen%C3%A7a",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Scuba%20Mallorca%20PADI%205%20Star%20Dive%20Resort%20Port%20de%20Pollen%C3%A7a%20Carrer%20d'Elcano%2C%2023%2C%2007470%20Port%20de%20Pollen%C3%A7a",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Scuba%20Mallorca%20PADI%205%20Star%20Dive%20Resort%20Port%20de%20Pollen%C3%A7a%20Carrer%20d'Elcano%2C%2023%2C%2007470%20Port%20de%20Pollen%C3%A7a",
   shortDescription: {
     es: "Centro de buceo PADI 5 Star en el Puerto de Pollensa con salidas diarias en barco al Cabo Formentor, cuevas marinas y pecios.",
     en: "PADI 5 Star Dive Resort in Port de Pollença offering daily boat diving trips to Cap de Formentor, sea caves, and marine reserves.",
@@ -100,13 +94,6 @@ export const diving_scuba_mallorca_port_pollensa_center: ServiceItem = {
       "PADI-Tauchscheine (Open Water, Advanced, Nitrox)",
       "Verleih von Scubapro- & Aqualung-Ausrüstung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 430,
-      url: "https://www.google.com/maps/search/?api=1&query=Scuba%20Mallorca%20PADI%205%20Star%20Dive%20Resort%20Port%20de%20Pollen%C3%A7a%20Carrer%20d'Elcano%2C%2023%2C%2007470%20Port%20de%20Pollen%C3%A7a",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

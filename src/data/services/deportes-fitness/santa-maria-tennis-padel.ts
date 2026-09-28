@@ -29,8 +29,6 @@ export const SANTA_MARIA_TENNIS_PADEL: ServiceItem = {
   image: "/images/sports/santa-maria-tennis-padel.jpg",
   gallery: ["/images/sports/santa-maria-tennis-padel.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007030",
-  appleMapsUrl: "https://maps.apple.com/?q=Santa%20Maria%20Tennis%20%26%20P%C3%A0del%20Club+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Santa%20Maria%20Tennis%20%26%20P%C3%A0del%20Club+Mallorca",
   shortDescription: {
     es: "Club deportivo en Santa Maria del Camí con pistas de tenis rápidas, pádel de cristal y terraza.",
     en: "Sports club in Santa Maria del Camí featuring hard tennis courts, glass padel, and terrace.",
@@ -94,13 +92,6 @@ export const SANTA_MARIA_TENNIS_PADEL: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 270,
-      url: "https://www.google.com/maps?cid=12007030",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

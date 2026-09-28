@@ -27,9 +27,6 @@ export const terraePortDePollenca: ServiceItem = {
   email: "info@terraerestaurant.com",
   website: "https://terraerestaurant.com",
   menuUrl: "https://terraerestaurant.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Restaurante+Terrae+Port+de+Pollensa+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante+Terrae+Port+de+Pollensa",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante+Terrae+Port+de+Pollensa",
   tags: [
     "zona:alcudia-pollensa",
     "zona:port-de-pollenca",

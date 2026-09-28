@@ -31,12 +31,6 @@ export const galletas_quely_fabrica_inca: ServiceItem = {
   schedule: "Lunes a Viernes: 08:30 - 18:30; Sábado: 09:00 - 13:30",
   image: "/images/services/galletas-quely-fabrica-inca.jpg",
   gallery: ["/images/services/galletas-quely-fabrica-inca.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Galletas%20Quely%20F%C3%A1brica%20Hist%C3%B3rica%20Inca%20(1853)%20Carrer%20de%20Balmes%2C%202%2C%2007300%20Inca",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Galletas%20Quely%20F%C3%A1brica%20Hist%C3%B3rica%20Inca%20(1853)%20Carrer%20de%20Balmes%2C%202%2C%2007300%20Inca",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Galletas%20Quely%20F%C3%A1brica%20Hist%C3%B3rica%20Inca%20(1853)%20Carrer%20de%20Balmes%2C%202%2C%2007300%20Inca",
   shortDescription: {
     es: "La fábrica de galletas de aceite más emblemática de Mallorca desde 1853: creadores de las auténticas 'Quelitas', el snack crujiente indispensable en la dieta de la isla.",
     en: "Mallorca's most iconic olive oil cracker bakery since 1853: creators of authentic crunchy 'Quelitas', the quintessential savory snack of the Balearic Islands.",
@@ -100,13 +94,6 @@ export const galletas_quely_fabrica_inca: ServiceItem = {
       "Geschenksets mit typischen Inselprodukten",
       "Direktverkauf ab Manufaktur in Inca",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 3450,
-      url: "https://www.google.com/maps/search/?api=1&query=Galletas%20Quely%20F%C3%A1brica%20Hist%C3%B3rica%20Inca%20(1853)%20Carrer%20de%20Balmes%2C%202%2C%2007300%20Inca",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

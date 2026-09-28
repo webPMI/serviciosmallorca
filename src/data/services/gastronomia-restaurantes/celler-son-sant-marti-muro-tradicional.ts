@@ -31,12 +31,6 @@ export const celler_son_sant_marti_muro_tradicional: ServiceItem = {
   schedule: "Martes a Domingo: 13:00 - 16:00 y 20:00 - 23:30",
   image: "/images/services/celler-son-sant-marti-muro-tradicional.jpg",
   gallery: ["/images/services/celler-son-sant-marti-muro-tradicional.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Celler%20Son%20Sant%20Mart%C3%AD%20Cuina%20Mallorquina%20Muro%20Carrer%20de%20Santa%20Anna%2C%2028%2C%2007440%20Muro",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Celler%20Son%20Sant%20Mart%C3%AD%20Cuina%20Mallorquina%20Muro%20Carrer%20de%20Santa%20Anna%2C%2028%2C%2007440%20Muro",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Celler%20Son%20Sant%20Mart%C3%AD%20Cuina%20Mallorquina%20Muro%20Carrer%20de%20Santa%20Anna%2C%2028%2C%2007440%20Muro",
   shortDescription: {
     es: "Celler emblemático en una casa señorial de Muro especializado en platos de cuchara mallorquines: caracoles con alioli, arròs brut y frito de matanzas.",
     en: "Emblematic celler inside a historic Muro manor house serving traditional Mallorcan spoon dishes: braised snails with aioli, arròs brut, and frito.",
@@ -100,13 +94,6 @@ export const celler_son_sant_marti_muro_tradicional: ServiceItem = {
       "Traditionelle Gerichte zum Mitnehmen",
       "Hausgemachte Desserts (Mandelkuchen, Quarkkuchen)",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 920,
-      url: "https://www.google.com/maps/search/?api=1&query=Celler%20Son%20Sant%20Mart%C3%AD%20Cuina%20Mallorquina%20Muro%20Carrer%20de%20Santa%20Anna%2C%2028%2C%2007440%20Muro",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

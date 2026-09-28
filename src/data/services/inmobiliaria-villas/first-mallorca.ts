@@ -21,9 +21,6 @@ export const firstMallorca: ServiceItem = {
   whatsapp: "+34 971 67 94 44",
   email: "info@firstmallorca.com",
   website: "https://www.firstmallorca.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=First+Mallorca+Costa+den+Blanes",
-  appleMapsUrl: "https://maps.apple.com/?q=First+Mallorca+Real+Estate",
-  bingMapsUrl: "https://www.bing.com/maps?q=First+Mallorca",
   coordinates: {
     lat: 39.5312,
     lng: 2.5534,
@@ -180,22 +177,13 @@ export const firstMallorca: ServiceItem = {
       specialty: "Villas de Lujo y Fincas en Mallorca",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 318,
-      url: "https://www.google.com/maps/search/?api=1&query=First+Mallorca+Costa+den+Blanes",
-    },
-    totalReviewsAggregated: 318,
-    overallWeightedRating: 4.9,
-  },
   reviews: [
     {
       id: "rev-first-1",
       authorName: "Alexander von Weber",
       rating: 5,
       date: "2025-06-03",
-      platform: "google_maps",
+      platform: "direct",
       language: "de",
       comment:
         "Hervorragender Service bei der Suche nach unserer Villa in Costa d'en Blanes. Absolut professionell und diskret.",
@@ -206,7 +194,7 @@ export const firstMallorca: ServiceItem = {
       authorName: "Patricia Gomila",
       rating: 5,
       date: "2025-04-12",
-      platform: "google_maps",
+      platform: "direct",
       language: "es",
       comment:
         "El trato recibido por el equipo de First Mallorca fue impecable de principio a fin. Gestión transparente y muy seria.",

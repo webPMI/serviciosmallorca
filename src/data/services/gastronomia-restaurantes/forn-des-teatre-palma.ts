@@ -21,9 +21,6 @@ export const fornDesTeatre: ServiceItem = {
   whatsapp: "+34 971 71 52 54",
   email: "info@forndesteatre.com",
   website: "https://forndesteatre.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Forn%20des%20Teatre%20Palma",
-  appleMapsUrl: "https://maps.apple.com/?q=Forn%20des%20Teatre%20Palma&ll=39.5714,2.6515",
-  bingMapsUrl: "https://www.bing.com/maps?where1=Forn%20des%20Teatre%20Palma",
   coordinates: { lat: 39.5714, lng: 2.6515 },
   schedule: "Lunes a Domingo: 08:00 - 20:30 (Horario continuo)",
   lastVerifiedAt: "2026-08-25",
@@ -131,30 +128,13 @@ export const fornDesTeatre: ServiceItem = {
       instagramHandle: "@forndesteatre",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.6,
-      reviewCount: 2100,
-      url: "https://www.google.com/maps/search/?api=1&query=Forn%20des%20Teatre%20Palma",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Forn%20des%20Teatre%20Palma&ll=39.5714,2.6515",
-    },
-    bingMaps: {
-      rating: 4.6,
-      reviewCount: 2100,
-      url: "https://www.bing.com/maps?where1=Forn%20des%20Teatre%20Palma",
-    },
-    totalReviewsAggregated: 2100,
-    overallWeightedRating: 4.6,
-  },
   reviews: [
     {
       id: "rev-fdt-1",
       authorName: "Miquel Àngel Salom",
       rating: 5,
       date: "2025-05-18",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
       comment:
         "La façana modernista és un símbol de Palma i les ensaïmades de crema cremada són increïbles. Obradors com aquest mantenen viva la ciutat.",
@@ -165,7 +145,7 @@ export const fornDesTeatre: ServiceItem = {
       authorName: "Elena Rossi",
       rating: 5,
       date: "2025-06-25",
-      platform: "google_maps",
+      platform: "direct",
       language: "en",
       comment:
         "Iconic bakery in Palma! The Art Nouveau dragon facade is stunning, and the fresh ensaimadas packed for our flight were absolutely heavenly.",

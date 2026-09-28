@@ -28,10 +28,6 @@ export const clinica_dental_dr_puerto_soller: ServiceItem = {
   schedule: "Lunes a Viernes: 09:00 - 19:00 | Sábado: 09:00 - 13:00",
   image: "/images/services/clinica-dental-dr-puerto-soller.jpg",
   gallery: ["/images/services/clinica-dental-dr-puerto-soller.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica+Dental+Puerto+de+S%C3%B3ller+Carrer+de+Sa+Mar+25+Port+de+S%C3%B3ller",
-  appleMapsUrl: "https://maps.apple.com/?q=Cl%C3%ADnica+Dental+Puerto+de+S%C3%B3ller",
-  bingMapsUrl: "https://bing.com/maps?q=Clinica+Dental+Puerto+de+Soller",
   shortDescription: {
     es: "Clínica dental integral en el Puerto de Sóller, con especialistas en implantología, ortodoncia invisible y blanqueamiento para residentes y visitantes de la Tramuntana.",
     en: "Full-service dental clinic in Port de Sóller, offering dental implants, Invisalign and teeth whitening for residents and visitors of the Tramuntana area.",
@@ -95,13 +91,6 @@ export const clinica_dental_dr_puerto_soller: ServiceItem = {
       "Mikroskopgestützte Wurzelkanalbehandlung",
       "Kinderzahnmedizin und Fissurenversiegelung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 142,
-      url: "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica+Dental+Puerto+de+S%C3%B3ller",
-    },
   },
   createdAt: "2026-09-05",
   lastUpdatedAt: "2026-09-05",

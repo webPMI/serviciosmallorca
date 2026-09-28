@@ -31,12 +31,6 @@ export const brujula_tecnologias_informacion_palma: ServiceItem = {
   schedule: "Lunes a Viernes: 08:30 - 18:30",
   image: "/images/services/brujula-tecnologias-informacion-palma.jpg",
   gallery: ["/images/services/brujula-tecnologias-informacion-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Br%C3%BAjula%20Tecnolog%C3%ADas%20de%20la%20Informaci%C3%B3n%20Palma%20Carrer%20del%20Gremi%20de%20Teixidors%2C%2026%2C%20Pol%C3%ADgon%20Son%20Castell%C3%B3%2C%2007009%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Br%C3%BAjula%20Tecnolog%C3%ADas%20de%20la%20Informaci%C3%B3n%20Palma%20Carrer%20del%20Gremi%20de%20Teixidors%2C%2026%2C%20Pol%C3%ADgon%20Son%20Castell%C3%B3%2C%2007009%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Br%C3%BAjula%20Tecnolog%C3%ADas%20de%20la%20Informaci%C3%B3n%20Palma%20Carrer%20del%20Gremi%20de%20Teixidors%2C%2026%2C%20Pol%C3%ADgon%20Son%20Castell%C3%B3%2C%2007009%20Palma",
   shortDescription: {
     es: "Consultora tecnológica balear pionera en desarrollo de software, ciberseguridad corporativa e integración cloud para el sector hotelero.",
     en: "Pioneering Balearic IT consulting firm specializing in custom software, corporate cybersecurity, and cloud solutions for hospitality.",
@@ -100,13 +94,6 @@ export const brujula_tecnologias_informacion_palma: ServiceItem = {
       "Cloud-Architektur und nahtlose Migration zu AWS, Microsoft Azure und Google Cloud",
       "24/7-IT-Managed-Services, Netzwerkbetreuung und Infrastruktur-Support",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 42,
-      url: "https://www.google.com/maps/search/?api=1&query=Br%C3%BAjula%20Tecnolog%C3%ADas%20de%20la%20Informaci%C3%B3n%20Palma%20Carrer%20del%20Gremi%20de%20Teixidors%2C%2026%2C%20Pol%C3%ADgon%20Son%20Castell%C3%B3%2C%2007009%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

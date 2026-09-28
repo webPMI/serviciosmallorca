@@ -76,9 +76,6 @@ export const florDeSalEsTrenc: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Flor%20de%20Sal%20d'Es%20Trenc%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Flor%20de%20Sal%20d'Es%20Trenc%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Flor%20de%20Sal%20d'Es%20Trenc%20Mallorca",
   pricing: {
     startingPrice: "Visita guiada desde 10€",
     rateType: "fixed",
@@ -105,21 +102,4 @@ export const florDeSalEsTrenc: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.6,
-      reviewCount: 950,
-      url: "https://www.google.com/maps/search/?api=1&query=Flor%20de%20Sal%20d'Es%20Trenc%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Flor%20de%20Sal%20d'Es%20Trenc%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.5,
-      reviewCount: 95,
-      url: "https://www.bing.com/maps?q=Flor%20de%20Sal%20d'Es%20Trenc%20Mallorca",
-    },
-    totalReviewsAggregated: 1045,
-    overallWeightedRating: 4.6,
-  },
 };

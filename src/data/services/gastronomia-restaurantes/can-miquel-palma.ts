@@ -21,9 +21,6 @@ export const canMiquelPalma: ServiceItem = {
   whatsapp: "+34 971 71 85 96",
   email: "info@canmiquel.es",
   website: "https://canmiquel.es",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Can%20Miquel%20Palma",
-  appleMapsUrl: "https://maps.apple.com/?q=Can%20Miquel%20Palma&ll=39.5710,2.6432",
-  bingMapsUrl: "https://www.bing.com/maps?where1=Can%20Miquel%20Palma",
   coordinates: { lat: 39.571, lng: 2.6432 },
   schedule: "Lunes a Domingo: 09:00 - 23:30",
   lastVerifiedAt: "2026-08-25",
@@ -128,30 +125,13 @@ export const canMiquelPalma: ServiceItem = {
       instagramHandle: "@canmiquelgelats",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.6,
-      reviewCount: 1450,
-      url: "https://www.google.com/maps/search/?api=1&query=Can%20Miquel%20Palma",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Can%20Miquel%20Palma&ll=39.5710,2.6432",
-    },
-    bingMaps: {
-      rating: 4.6,
-      reviewCount: 1450,
-      url: "https://www.bing.com/maps?where1=Can%20Miquel%20Palma",
-    },
-    totalReviewsAggregated: 1450,
-    overallWeightedRating: 4.6,
-  },
   reviews: [
     {
       id: "rev-cm-1",
       authorName: "Antònia Font",
       rating: 5,
       date: "2025-05-19",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
       comment:
         "El gelat d'ametlla torrada i el de taronja de Sóller són incomparables. Gairebé 100 anys d'història que es noten en cada cullerada.",
@@ -162,7 +142,7 @@ export const canMiquelPalma: ServiceItem = {
       authorName: "Lukas Weber",
       rating: 5,
       date: "2025-07-02",
-      platform: "google_maps",
+      platform: "direct",
       language: "en",
       comment:
         "The best ice cream in Palma by far! Unbelievable variety of unique artisan flavors and very friendly staff.",

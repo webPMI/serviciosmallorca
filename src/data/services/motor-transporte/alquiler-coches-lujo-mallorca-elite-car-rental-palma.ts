@@ -31,12 +31,6 @@ export const alquiler_coches_lujo_mallorca_elite_car_rental_palma: ServiceItem =
   schedule: "Diario: 08:00 - 21:00 (365 días / Entrega en aeropuerto 24h)",
   image: "/images/services/alquiler-coches-lujo-mallorca-elite-car-rental-palma.jpg",
   gallery: ["/images/services/alquiler-coches-lujo-mallorca-elite-car-rental-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Elite%20Car%20Mallorca%20Alquiler%20Coches%20Lujo%20%26%20Deportivos%20Palma%20Carrer%20de%20Manacor%2C%2036%2C%20Bajos%2C%2007006%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Elite%20Car%20Mallorca%20Alquiler%20Coches%20Lujo%20%26%20Deportivos%20Palma%20Carrer%20de%20Manacor%2C%2036%2C%20Bajos%2C%2007006%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Elite%20Car%20Mallorca%20Alquiler%20Coches%20Lujo%20%26%20Deportivos%20Palma%20Carrer%20de%20Manacor%2C%2036%2C%20Bajos%2C%2007006%20Palma",
   shortDescription: {
     es: "Alquiler de coches de lujo y deportivos de alta gama en Mallorca: Ferrari, Lamborghini, Porsche, Range Rover y McLaren con entrega en aeropuerto, hotel o puerto deportivo.",
     en: "Luxury and sports car hire in Mallorca: Ferrari, Lamborghini, Porsche, Range Rover, and McLaren with delivery to airport, hotel, or marina.",
@@ -100,13 +94,6 @@ export const alquiler_coches_lujo_mallorca_elite_car_rental_palma: ServiceItem =
       "Privatchauffeur im Mercedes S-Klasse oder BMW 7er",
       "Oldtimer und Cabrios für Hochzeiten und Events",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 412,
-      url: "https://www.google.com/maps/search/?api=1&query=Elite%20Car%20Mallorca%20Alquiler%20Coches%20Lujo%20%26%20Deportivos%20Palma%20Carrer%20de%20Manacor%2C%2036%2C%20Bajos%2C%2007006%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

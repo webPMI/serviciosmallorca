@@ -28,9 +28,6 @@ export const restauranteClubNauticPortitxol: ServiceItem = {
   email: "restaurante@cnportitxol.com",
   website: "https://rcnportitxol.com",
   menuUrl: "https://rcnportitxol.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Restaurante+Club+Nautic+Portitxol+Palma+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante+Club+Nautic+Portitxol+Palma",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante+Club+Nautic+Portitxol+Palma",
   tags: ["zona:palma", "zona:portixol", "product:premium", "mod:en-local", "aud:parejas", "temps:todo-el-ano"],
   capabilities: {
     terrace: true,

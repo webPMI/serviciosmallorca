@@ -31,12 +31,6 @@ export const altafit_palma_gimnasio_centro_deportivo: ServiceItem = {
   schedule: "Lunes a Viernes: 07:00 - 22:30; Sábado: 09:00 - 19:30; Domingo: 09:00 - 14:30",
   image: "/images/services/altafit-palma-gimnasio-centro-deportivo.jpg",
   gallery: ["/images/services/altafit-palma-gimnasio-centro-deportivo.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=AltaFit%20Gym%20Club%20Palma%20Centro%20Deportivo%20Carrer%20del%20Cardenal%20Rossell%2C%20168%2C%2007007%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=AltaFit%20Gym%20Club%20Palma%20Centro%20Deportivo%20Carrer%20del%20Cardenal%20Rossell%2C%20168%2C%2007007%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=AltaFit%20Gym%20Club%20Palma%20Centro%20Deportivo%20Carrer%20del%20Cardenal%20Rossell%2C%20168%2C%2007007%20Palma",
   shortDescription: {
     es: "Club deportivo y gimnasio de alta calidad en Palma: más de 2.000 m² con maquinaria de última generación, amplia sala de peso libre y más de 50 clases dirigidas semanales.",
     en: "High-quality fitness and health club in Palma: over 2,000 m² featuring advanced gym machinery, spacious free weights, and 50+ weekly instructor-led group classes.",
@@ -100,13 +94,6 @@ export const altafit_palma_gimnasio_centro_deportivo: ServiceItem = {
       "Personal Training auf Wunsch buchbar",
       "App-Zugang und Nutzung aller AltaFit-Clubs in ganz Spanien",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 840,
-      url: "https://www.google.com/maps/search/?api=1&query=AltaFit%20Gym%20Club%20Palma%20Centro%20Deportivo%20Carrer%20del%20Cardenal%20Rossell%2C%20168%2C%2007007%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

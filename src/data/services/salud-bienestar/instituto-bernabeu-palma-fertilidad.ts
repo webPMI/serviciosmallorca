@@ -31,12 +31,6 @@ export const instituto_bernabeu_palma_fertilidad: ServiceItem = {
   schedule: "Lunes a Viernes: 08:30 - 20:00 | Sábado: 09:00 - 14:00 | Domingo: Cerrado",
   image: "/images/services/instituto-bernabeu-palma-fertilidad.jpg",
   gallery: ["/images/services/instituto-bernabeu-palma-fertilidad.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Instituto%20Bernabeu%20Palma%20Medicina%20Reproductiva%20%26%20Fertilidad%20Carrer%20d'Arag%C3%B3%2C%208%2C%2007006%20Palma%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Instituto%20Bernabeu%20Palma%20Medicina%20Reproductiva%20%26%20Fertilidad%20Carrer%20d'Arag%C3%B3%2C%208%2C%2007006%20Palma%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Instituto%20Bernabeu%20Palma%20Medicina%20Reproductiva%20%26%20Fertilidad%20Carrer%20d'Arag%C3%B3%2C%208%2C%2007006%20Palma%2C%20Illes%20Balears",
   shortDescription: {
     es: "Clínica de fertilidad y medicina reproductiva avanzada en Palma, pionera en fecundación in vitro (FIV), ovodonación, diagnóstico genético preimplantacional y preservación de fertilidad.",
     en: "Premier fertility and reproductive medicine clinic in Palma, pioneering IVF, egg donation, pre-implantation genetic diagnosis, and egg freezing with high success rates.",
@@ -100,13 +94,6 @@ export const instituto_bernabeu_palma_fertilidad: ServiceItem = {
       "Fertilitätserhalt (Social Freezing): Vitrifikation von Eizellen und Samenkryokonservierung",
       "Spezialdiagnostik bei wiederholtem Einnistungsversagen und habituellen Fehlgeburten",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 340,
-      url: "https://www.google.com/maps/search/?api=1&query=Instituto%20Bernabeu%20Palma%20Medicina%20Reproductiva%20%26%20Fertilidad%20Carrer%20d'Arag%C3%B3%2C%208%2C%2007006%20Palma%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

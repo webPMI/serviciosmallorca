@@ -100,8 +100,5 @@ export const museuSaBassaBlancaService: ServiceItem = {
     ],
   },
   amenities: ["wifi", "air_conditioning", "wheelchair_accessible", "parking_nearby"],
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Museu+Sa+Bassa+Blanca+Alcudia",
-  appleMapsUrl: "https://maps.apple.com/?q=Museu+Sa+Bassa+Blanca+Alcudia",
-  bingMapsUrl: "https://www.bing.com/maps?q=Museu+Sa+Bassa+Blanca+Alcudia",
   confidenceScore: 98,
 };

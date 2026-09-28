@@ -76,9 +76,6 @@ export const cellerCaNIgnasiInca: ServiceItem = {
       close: "17:00",
     },
   },
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Celler%20Ca%20n'Ignasi%20Inca%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Celler%20Ca%20n'Ignasi%20Inca%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Celler%20Ca%20n'Ignasi%20Inca%20Mallorca",
   pricing: {
     startingPrice: "Carta y menús degustación disponibles",
     rateType: "tiered",
@@ -105,21 +102,4 @@ export const cellerCaNIgnasiInca: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 690,
-      url: "https://www.google.com/maps/search/?api=1&query=Celler%20Ca%20n'Ignasi%20Inca%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Celler%20Ca%20n'Ignasi%20Inca%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 69,
-      url: "https://www.bing.com/maps?q=Celler%20Ca%20n'Ignasi%20Inca%20Mallorca",
-    },
-    totalReviewsAggregated: 759,
-    overallWeightedRating: 4.9,
-  },
 };

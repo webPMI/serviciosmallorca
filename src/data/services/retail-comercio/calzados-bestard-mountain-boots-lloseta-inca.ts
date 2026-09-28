@@ -31,12 +31,6 @@ export const calzados_bestard_mountain_boots_lloseta_inca: ServiceItem = {
   schedule: "Lunes a Viernes: 09:30 - 13:30 y 16:00 - 20:00, Sábados: 09:30 - 13:30",
   image: "/images/services/calzados-bestard-mountain-boots-lloseta-inca.jpg",
   gallery: ["/images/services/calzados-bestard-mountain-boots-lloseta-inca.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Bestard%20Mountain%20Boots%20Cal%C3%A7at%20de%20Muntanya%20Lloseta%20(1940)%20Carrer%20d'Estellencs%2C%20s%2Fn%2C%2007360%20Lloseta%20(Inca)",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Bestard%20Mountain%20Boots%20Cal%C3%A7at%20de%20Muntanya%20Lloseta%20(1940)%20Carrer%20d'Estellencs%2C%20s%2Fn%2C%2007360%20Lloseta%20(Inca)",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Bestard%20Mountain%20Boots%20Cal%C3%A7at%20de%20Muntanya%20Lloseta%20(1940)%20Carrer%20d'Estellencs%2C%20s%2Fn%2C%2007360%20Lloseta%20(Inca)",
   shortDescription: {
     es: "Fábrica y tienda emblemática de calzado de montaña fundada en 1940 en Lloseta: botas de senderismo y alpinismo con Gore-Tex y suelas Vibram.",
     en: "Legendary handcrafted mountain bootmaker established in 1940 in Lloseta: technical hiking boots with Gore-Tex and Vibram soles.",
@@ -100,13 +94,6 @@ export const calzados_bestard_mountain_boots_lloseta_inca: ServiceItem = {
       "Neubesohlung mit Original-Vibram-Sohlen",
       "Pflegemittel und Imprägniersprays",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 1420,
-      url: "https://www.google.com/maps/search/?api=1&query=Bestard%20Mountain%20Boots%20Cal%C3%A7at%20de%20Muntanya%20Lloseta%20(1940)%20Carrer%20d'Estellencs%2C%20s%2Fn%2C%2007360%20Lloseta%20(Inca)",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

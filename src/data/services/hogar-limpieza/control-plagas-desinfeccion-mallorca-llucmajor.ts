@@ -31,12 +31,6 @@ export const control_plagas_desinfeccion_mallorca_llucmajor: ServiceItem = {
   schedule: "Lunes a Viernes: 08:00 - 19:00 (Servicio de Urgencias 24h)",
   image: "/images/services/control-plagas-desinfeccion-mallorca-llucmajor.jpg",
   gallery: ["/images/services/control-plagas-desinfeccion-mallorca-llucmajor.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Mallorca%20EcoPlagas%20%26%20Control%20Ambiental%20Llucmajor%20Carrer%20del%20Bisbe%20Taixequet%2C%2044%2C%2007620%20Llucmajor",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Mallorca%20EcoPlagas%20%26%20Control%20Ambiental%20Llucmajor%20Carrer%20del%20Bisbe%20Taixequet%2C%2044%2C%2007620%20Llucmajor",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Mallorca%20EcoPlagas%20%26%20Control%20Ambiental%20Llucmajor%20Carrer%20del%20Bisbe%20Taixequet%2C%2044%2C%2007620%20Llucmajor",
   shortDescription: {
     es: "Empresa de sanidad ambiental y control de plagas en Mallorca: endoterapia preventiva del picudo rojo en palmeras, procesionaria del pino y control de roedores.",
     en: "Environmental pest control company in Mallorca: palm tree red weevil endotherapy, pine processionary moth eradication, and rodent control.",
@@ -100,13 +94,6 @@ export const control_plagas_desinfeccion_mallorca_llucmajor: ServiceItem = {
       "Schädlingsbekämpfung (Nager, Schaben, Ameisen)",
       "Desinfektion und Reinigung von Trinkwasserzisternen",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 190,
-      url: "https://www.google.com/maps/search/?api=1&query=Mallorca%20EcoPlagas%20%26%20Control%20Ambiental%20Llucmajor%20Carrer%20del%20Bisbe%20Taixequet%2C%2044%2C%2007620%20Llucmajor",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

@@ -31,12 +31,6 @@ export const residencia_mayores_can_bibiloni_palma_ancians: ServiceItem = {
   schedule: "Recepción: 08:00 - 20:00. Centro de Día: 07:30 - 20:30 (Lunes a Viernes)",
   image: "/images/services/residencia-mayores-can-bibiloni-palma-ancians.jpg",
   gallery: ["/images/services/residencia-mayores-can-bibiloni-palma-ancians.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Resid%C3%A8ncia%20Can%20Bibiloni%20Atenci%C3%B3%20a%20la%20Gent%20Gran%20Palma%20Carrer%20de%20Caro%2C%2025%2C%2007013%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Resid%C3%A8ncia%20Can%20Bibiloni%20Atenci%C3%B3%20a%20la%20Gent%20Gran%20Palma%20Carrer%20de%20Caro%2C%2025%2C%2007013%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Resid%C3%A8ncia%20Can%20Bibiloni%20Atenci%C3%B3%20a%20la%20Gent%20Gran%20Palma%20Carrer%20de%20Caro%2C%2025%2C%2007013%20Palma",
   shortDescription: {
     es: "Residencia de mayores y centro de día en Palma con atención especializada en demencia, Alzheimer y cuidados paliativos: habitaciones individuales, fisioterapia propia y actividades de estimulación cognitiva.",
     en: "Care home and day centre in Palma specialising in dementia, Alzheimer's, and palliative care: private rooms, in-house physiotherapy, and cognitive stimulation activities.",
@@ -100,13 +94,6 @@ export const residencia_mayores_can_bibiloni_palma_ancians: ServiceItem = {
       "Häuslicher Pflegedienst (SAD) mit qualifizierten Geriatrie-Pflegekräften",
       "Bearbeitung des Pflegegrades und Verwaltung öffentlicher Pflegeleistungen",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 198,
-      url: "https://www.google.com/maps/search/?api=1&query=Resid%C3%A8ncia%20Can%20Bibiloni%20Atenci%C3%B3%20a%20la%20Gent%20Gran%20Palma%20Carrer%20de%20Caro%2C%2025%2C%2007013%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

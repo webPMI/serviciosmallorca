@@ -27,9 +27,6 @@ export const restauranteGolfAlcanada: ServiceItem = {
   email: "restaurante@golf-alcanada.com",
   website: "https://www.restaurantegolfalcanada.com",
   menuUrl: "https://www.restaurantegolfalcanada.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Restaurante+Club+Golf+Alcanada+Alcudia+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante+Club+Golf+Alcanada",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante+Club+Golf+Alcanada",
   tags: [
     "zona:alcudia-pollensa",
     "zona:alcanada",

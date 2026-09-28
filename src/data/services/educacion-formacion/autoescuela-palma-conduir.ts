@@ -28,9 +28,6 @@ export const autoescuela_palma_conduir: ServiceItem = {
   schedule: "Lunes a Viernes: 09:00 - 21:00 | Sábado: 09:30 - 14:00",
   image: "/images/services/autoescuela-palma-conduir.jpg",
   gallery: ["/images/services/autoescuela-palma-conduir.jpg"],
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Autoescuela+Conduir+Palma+Reina+Maria+Cristina+32",
-  appleMapsUrl: "https://maps.apple.com/?q=Autoescuela+Conduir+Palma",
-  bingMapsUrl: "https://bing.com/maps?q=Autoescuela+Conduir+Palma",
   shortDescription: {
     es: "Autoescuela en Palma con alta tasa de aprobados en primera convocatoria, clases en simulador homologado y carnets de coche, moto, camión y autobús.",
     en: "Driving school in Palma with a high first-attempt pass rate, certified simulator training, and car, motorcycle, truck, and bus licenses.",
@@ -94,13 +91,6 @@ export const autoescuela_palma_conduir: ServiceItem = {
       "C LKW- und D Bus-Führerschein mit Übungen in Gelenkfahrzeugen",
       "CAP (Berufskraftfahrer-Nachweis) für Güter- und Personenbeförderung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 543,
-      url: "https://www.google.com/maps/search/?api=1&query=Autoescuela+Conduir+Palma",
-    },
   },
   createdAt: "2026-09-05",
   lastUpdatedAt: "2026-09-05",

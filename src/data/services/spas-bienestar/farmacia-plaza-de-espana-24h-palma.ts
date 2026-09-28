@@ -31,12 +31,6 @@ export const farmacia_plaza_de_espana_24h_palma: ServiceItem = {
   schedule: "Abierto 24 horas / 365 días del año (Sin interrupción)",
   image: "/images/services/farmacia-plaza-de-espana-24h-palma.jpg",
   gallery: ["/images/services/farmacia-plaza-de-espana-24h-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Farmacia%2024h%20Plaza%20de%20Espa%C3%B1a%20Palma%20Pla%C3%A7a%20d'Espanya%2C%206%2C%2007002%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Farmacia%2024h%20Plaza%20de%20Espa%C3%B1a%20Palma%20Pla%C3%A7a%20d'Espanya%2C%206%2C%2007002%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Farmacia%2024h%20Plaza%20de%20Espa%C3%B1a%20Palma%20Pla%C3%A7a%20d'Espanya%2C%206%2C%2007002%20Palma",
   shortDescription: {
     es: "Farmacia de guardia permanente 24 horas en la Plaza de España de Palma: dispensación de medicamentos, fórmulas magistrales, ortopedia, dermofarmacia y atención multilingüe.",
     en: "Permanent 24-hour emergency pharmacy in central Palma's Plaça d'Espanya: prescription fulfillment, compounding lab, orthopedics, dermocosmetics, and multilingual staff.",
@@ -100,13 +94,6 @@ export const farmacia_plaza_de_espana_24h_palma: ServiceItem = {
       "Verkauf und Verleih von Gehhilfen, Bandagen und Orthopädie",
       "Hochwertige Sonnenpflege und Apothekenkosmetik",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 1650,
-      url: "https://www.google.com/maps/search/?api=1&query=Farmacia%2024h%20Plaza%20de%20Espa%C3%B1a%20Palma%20Pla%C3%A7a%20d'Espanya%2C%206%2C%2007002%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

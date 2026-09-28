@@ -28,9 +28,6 @@ export const canMarchManacor: ServiceItem = {
   email: "info@canmarch.com",
   website: "https://canmarch.com",
   menuUrl: "https://canmarch.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Restaurante+Can+March+Manacor+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante+Can+March+Manacor",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante+Can+March+Manacor",
   tags: ["zona:manacor-llevant", "zona:manacor", "product:premium", "mod:en-local", "aud:parejas", "temps:todo-el-ano"],
   capabilities: {
     wheelchairAccessible: true,

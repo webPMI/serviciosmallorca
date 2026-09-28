@@ -103,30 +103,13 @@ export const macatelaTattoo: ServiceItem = {
     en: "Located on the bustling pedestrian Carrer dels Oms in central Palma, Macatela Tattoo Studio was founded as an artisan workshop devoted to classic tattooing, solid line work, and bespoke ink. Its welcoming atmosphere and steadfast quality have established it as a staple for tattoo enthusiasts in Majorca.",
     ca: "Situat al cèntric carrer dels Oms de Palma, Macatela Tattoo Studio va néixer com un taller d'art dedicat al tatuatge clàssic, la línia sòlida i el disseny a mida, esdevenint un referent proper i de confiança a l'illa.",
   },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 380,
-      url: "https://www.google.com/maps/search/?api=1&query=Macatela%20Tattoo%20Palma%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Macatela%20Tattoo%20Palma%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 40,
-      url: "https://www.bing.com/maps?q=Macatela%20Tattoo%20Palma%20Mallorca",
-    },
-    totalReviewsAggregated: 420,
-    overallWeightedRating: 4.8,
-  },
   reviews: [
     {
       id: "rev-mt-1",
       authorName: "Adriana S.",
       rating: 5,
       date: "2026-06-25",
-      platform: "google_maps",
+      platform: "direct",
       language: "es",
       comment:
         "Tatuaje tradicional perfecto. Líneas limpias, colores vivos y un trato súper profesional e higiénico. 100% recomendable en Palma centro.",
@@ -137,7 +120,7 @@ export const macatelaTattoo: ServiceItem = {
       authorName: "Markus K.",
       rating: 5,
       date: "2026-05-14",
-      platform: "google_maps",
+      platform: "direct",
       language: "en",
       comment:
         "Walked in during my holiday in Palma. Super clean studio, fast consultation, and amazing blackwork piece. Highly recommended!",
@@ -165,9 +148,6 @@ export const macatelaTattoo: ServiceItem = {
   ],
   awards: [],
   authorityProfiles: [],
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Macatela%20Tattoo%20Palma%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Macatela%20Tattoo%20Palma%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Macatela%20Tattoo%20Palma%20Mallorca",
   phone: "+34 971 71 83 24",
   whatsapp: "+34 689 31 77 09",
   email: "info@macatelatattoo.com",

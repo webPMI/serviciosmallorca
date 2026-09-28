@@ -31,12 +31,6 @@ export const padelindoor_mallorca_club_son_hugo_palma: ServiceItem = {
   schedule: "Lunes a Viernes: 07:00 - 23:00; Sábado y Domingo: 08:00 - 22:00",
   image: "/images/services/padelindoor-mallorca-club-son-hugo-palma.jpg",
   gallery: ["/images/services/padelindoor-mallorca-club-son-hugo-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=P%C3%A0del%20Indoor%20Son%20Hugo%20Club%20%26%20Academia%20Palma%20Carrer%20de%20Gremi%20Hortolans%2C%2018%2C%20Son%20Hugo%2C%2007009%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=P%C3%A0del%20Indoor%20Son%20Hugo%20Club%20%26%20Academia%20Palma%20Carrer%20de%20Gremi%20Hortolans%2C%2018%2C%20Son%20Hugo%2C%2007009%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=P%C3%A0del%20Indoor%20Son%20Hugo%20Club%20%26%20Academia%20Palma%20Carrer%20de%20Gremi%20Hortolans%2C%2018%2C%20Son%20Hugo%2C%2007009%20Palma",
   shortDescription: {
     es: "Mayor club de pádel indoor de Mallorca en Son Hugo, Palma: 24 pistas de pádel cubiertas con césped artificial de última generación, academia con entrenadores federados FBP y tienda de material.",
     en: "Mallorca's largest indoor padel club at Son Hugo, Palma: 24 covered padel courts with latest-generation artificial turf, FBP-federated coaches academy, and pro equipment shop.",
@@ -100,13 +94,6 @@ export const padelindoor_mallorca_club_son_hugo_palma: ServiceItem = {
       "Monatliche Verbandsturniere und soziale Ligen nach Niveau",
       "Padelshop mit offizieller Ausrüstung von Head, Bullpadel und NOX",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 1124,
-      url: "https://www.google.com/maps/search/?api=1&query=P%C3%A0del%20Indoor%20Son%20Hugo%20Club%20%26%20Academia%20Palma%20Carrer%20de%20Gremi%20Hortolans%2C%2018%2C%20Son%20Hugo%2C%2007009%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

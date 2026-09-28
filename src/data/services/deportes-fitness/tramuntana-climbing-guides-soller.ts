@@ -29,8 +29,6 @@ export const TRAMUNTANA_CLIMBING_GUIDES_SOLLER: ServiceItem = {
   image: "/images/sports/tramuntana-climbing-guides-soller.jpg",
   gallery: ["/images/sports/tramuntana-climbing-guides-soller.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007085",
-  appleMapsUrl: "https://maps.apple.com/?q=Tramuntana%20Climbing%20Guides+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Tramuntana%20Climbing%20Guides+Mallorca",
   shortDescription: {
     es: "Servicio de guías para vías ferratas, escalada clásica en Sa Gubia y barranquismo en Mallorca.",
     en: "Mountain guide services for via ferratas, multi-pitch climbing at Sa Gubia, and canyoning.",
@@ -94,13 +92,6 @@ export const TRAMUNTANA_CLIMBING_GUIDES_SOLLER: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 180,
-      url: "https://www.google.com/maps?cid=12007085",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

@@ -31,12 +31,6 @@ export const banco_santander_private_banking_palma: ServiceItem = {
   schedule: "Lunes a Viernes: 08:30 - 16:30",
   image: "/images/services/banco-santander-private-banking-palma.jpg",
   gallery: ["/images/services/banco-santander-private-banking-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Banco%20Santander%20Private%20Banking%20Palma%20Born%20Passeig%20del%20Born%2C%2020%2C%2007012%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Banco%20Santander%20Private%20Banking%20Palma%20Born%20Passeig%20del%20Born%2C%2020%2C%2007012%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Banco%20Santander%20Private%20Banking%20Palma%20Born%20Passeig%20del%20Born%2C%2020%2C%2007012%20Palma",
   shortDescription: {
     es: "División especializada en gestión de grandes patrimonios, inversiones y financiación inmobiliaria premium en el Paseo del Borne de Palma.",
     en: "Specialized wealth management, investment advisory, and prime mortgage division located on Palma's Passeig del Born.",
@@ -100,13 +94,6 @@ export const banco_santander_private_banking_palma: ServiceItem = {
       "Steuerliche und rechtliche Vermögensstrukturierung für Balearen-Investitionen",
       "Internationales Treasury und Währungsmanagement",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 45,
-      url: "https://www.google.com/maps/search/?api=1&query=Banco%20Santander%20Private%20Banking%20Palma%20Born%20Passeig%20del%20Born%2C%2020%2C%2007012%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

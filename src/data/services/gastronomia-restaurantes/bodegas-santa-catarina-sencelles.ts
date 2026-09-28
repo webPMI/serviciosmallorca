@@ -28,9 +28,6 @@ export const bodegasSantaCatarinaSencelles: ServiceItem = {
   email: "enoturismo@bodegasantacatarina.com",
   website: "https://www.bodegasantacatarina.com",
   menuUrl: "https://www.bodegasantacatarina.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Bodega+Santa+Catarina+Sencelles+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Bodega+Santa+Catarina+Sencelles",
-  bingMapsUrl: "https://www.bing.com/maps?q=Bodega+Santa+Catarina+Sencelles",
   tags: ["zona:raiguer-pla", "zona:sencelles", "product:premium", "mod:en-local", "aud:parejas", "temps:todo-el-ano"],
   capabilities: {
     parkingAvailable: true,

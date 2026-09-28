@@ -76,10 +76,6 @@ export const portAndratxRibBoatRental: ServiceItem = {
       close: "20:00",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Port%20d'Andratx%20Luxury%20RIB%20%26%20Boat%20Charter%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Port%20d'Andratx%20Luxury%20RIB%20%26%20Boat%20Charter%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Port%20d'Andratx%20Luxury%20RIB%20%26%20Boat%20Charter%20Mallorca",
   pricing: {
     startingPrice: "Semirrígida premium desde 450€ / día",
     rateType: "tiered",
@@ -106,21 +102,4 @@ export const portAndratxRibBoatRental: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 510,
-      url: "https://www.google.com/maps/search/?api=1&query=Port%20d'Andratx%20Luxury%20RIB%20%26%20Boat%20Charter%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Port%20d'Andratx%20Luxury%20RIB%20%26%20Boat%20Charter%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.7,
-      reviewCount: 51,
-      url: "https://www.bing.com/maps?q=Port%20d'Andratx%20Luxury%20RIB%20%26%20Boat%20Charter%20Mallorca",
-    },
-    totalReviewsAggregated: 561,
-    overallWeightedRating: 4.8,
-  },
 };

@@ -28,9 +28,6 @@ export const restauranteCanPescadorPlayaDeMuro: ServiceItem = {
   email: "info@canpescador.es",
   website: "https://canpescador.es",
   menuUrl: "https://canpescador.es",
-  googleMapsUrl: "https://www.google.com/maps/search/Restaurante+Can+Pescador+Playa+de+Muro+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante+Can+Pescador+Playa+de+Muro",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante+Can+Pescador+Playa+de+Muro",
   tags: [
     "zona:alcudia-pollensa",
     "zona:playa-de-muro",

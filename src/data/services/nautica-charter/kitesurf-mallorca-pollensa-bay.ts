@@ -76,10 +76,6 @@ export const kitesurfMallorcaPollensaBay: ServiceItem = {
       close: "18:00",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Kite%20%26%20Wing%20Foil%20Center%20Mallorca%20Bay%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Kite%20%26%20Wing%20Foil%20Center%20Mallorca%20Bay%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Kite%20%26%20Wing%20Foil%20Center%20Mallorca%20Bay%20Mallorca",
   pricing: {
     startingPrice: "Curso iniciación 3 horas desde 140€",
     rateType: "hourly",
@@ -106,21 +102,4 @@ export const kitesurfMallorcaPollensaBay: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 390,
-      url: "https://www.google.com/maps/search/?api=1&query=Kite%20%26%20Wing%20Foil%20Center%20Mallorca%20Bay%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Kite%20%26%20Wing%20Foil%20Center%20Mallorca%20Bay%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 39,
-      url: "https://www.bing.com/maps?q=Kite%20%26%20Wing%20Foil%20Center%20Mallorca%20Bay%20Mallorca",
-    },
-    totalReviewsAggregated: 429,
-    overallWeightedRating: 4.9,
-  },
 };

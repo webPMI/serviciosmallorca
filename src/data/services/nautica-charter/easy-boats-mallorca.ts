@@ -27,8 +27,6 @@ export const easyBoatsMallorca: ServiceItem = {
   email: "info@easyboats.com",
   website: "https://www.easyboats.com",
   googleMapsUrl: "https://www.google.com/maps?cid=10928374829102938475",
-  appleMapsUrl: "https://maps.apple.com/?q=Easy+Boats+Puerto+Portals",
-  bingMapsUrl: "https://www.bing.com/maps?q=Easy+Boats+Puerto+Portals",
   tags: [
     "zona:calvia-andratx",
     "zona:puerto-portals",

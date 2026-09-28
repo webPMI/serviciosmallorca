@@ -29,8 +29,6 @@ export const CROSSFIT_POLLENSA_BOX: ServiceItem = {
   image: "/images/sports/crossfit-pollensa-box.jpg",
   gallery: ["/images/sports/crossfit-pollensa-box.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007069",
-  appleMapsUrl: "https://maps.apple.com/?q=CrossFit%20Pollen%C3%A7a+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=CrossFit%20Pollen%C3%A7a+Mallorca",
   shortDescription: {
     es: "Box en Pollença para amantes del entreno funcional, con clases reducidas y drop-ins para ciclistas.",
     en: "Box in Pollença for functional training lovers, offering small groups and cyclist drop-ins.",
@@ -94,13 +92,6 @@ export const CROSSFIT_POLLENSA_BOX: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 200,
-      url: "https://www.google.com/maps?cid=12007069",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

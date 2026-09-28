@@ -76,10 +76,6 @@ export const kensingtonFinestPropertiesPalma: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Kensington%20Finest%20Properties%20International%20Palma%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Kensington%20Finest%20Properties%20International%20Palma%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Kensington%20Finest%20Properties%20International%20Palma%20Mallorca",
   pricing: {
     startingPrice: "Villas y áticos de alto standing",
     rateType: "custom_quote",
@@ -106,21 +102,4 @@ export const kensingtonFinestPropertiesPalma: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 420,
-      url: "https://www.google.com/maps/search/?api=1&query=Kensington%20Finest%20Properties%20International%20Palma%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Kensington%20Finest%20Properties%20International%20Palma%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.7,
-      reviewCount: 42,
-      url: "https://www.bing.com/maps?q=Kensington%20Finest%20Properties%20International%20Palma%20Mallorca",
-    },
-    totalReviewsAggregated: 462,
-    overallWeightedRating: 4.8,
-  },
 };

@@ -81,23 +81,6 @@ export const electricTattooPalma: ServiceItem = {
     ca: "Pioners del tatuatge tradicional al barri de Santa Catalina a Palma.",
     de: "Pioniere der traditionellen Tattoo-Kunst im Szeneviertel Santa Catalina in Palma mit handgemalten Flash-Motiven.",
   },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 540,
-      url: "https://www.google.com/maps/search/?api=1&query=Electric+Tattoo+Palma",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Electric+Tattoo+Palma",
-    },
-    bingMaps: {
-      rating: 4.9,
-      reviewCount: 45,
-      url: "https://www.bing.com/maps?q=Electric+Tattoo+Palma",
-    },
-    totalReviewsAggregated: 585,
-    overallWeightedRating: 4.9,
-  },
   reviews: [],
   socialLinks: {
     instagram: "https://instagram.com/electrictattoopalma",
@@ -120,9 +103,6 @@ export const electricTattooPalma: ServiceItem = {
     },
   ],
   authorityProfiles: [],
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Electric+Tattoo+Palma",
-  appleMapsUrl: "https://maps.apple.com/?q=Electric+Tattoo+Palma",
-  bingMapsUrl: "https://www.bing.com/maps?q=Electric+Tattoo+Palma",
   phone: "+34 971 73 89 20",
   whatsapp: "+34 971 73 89 20",
   email: "info@electrictattoopalma.com",

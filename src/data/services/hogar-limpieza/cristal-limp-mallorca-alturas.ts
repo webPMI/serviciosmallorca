@@ -76,12 +76,6 @@ export const cristalLimpMallorcaAlturas: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Cristal%20Limp%20Mallorca%20-%20Limpieza%20de%20Cristales%20en%20Altura%20Mallorca",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Cristal%20Limp%20Mallorca%20-%20Limpieza%20de%20Cristales%20en%20Altura%20Mallorca",
-  bingMapsUrl:
-    "https://www.bing.com/maps?q=Cristal%20Limp%20Mallorca%20-%20Limpieza%20de%20Cristales%20en%20Altura%20Mallorca",
   pricing: {
     startingPrice: "Limpieza de cristales villa con agua osmotizada desde 150€",
     rateType: "tiered",
@@ -108,21 +102,4 @@ export const cristalLimpMallorcaAlturas: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 260,
-      url: "https://www.google.com/maps/search/?api=1&query=Cristal%20Limp%20Mallorca%20-%20Limpieza%20de%20Cristales%20en%20Altura%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Cristal%20Limp%20Mallorca%20-%20Limpieza%20de%20Cristales%20en%20Altura%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 26,
-      url: "https://www.bing.com/maps?q=Cristal%20Limp%20Mallorca%20-%20Limpieza%20de%20Cristales%20en%20Altura%20Mallorca",
-    },
-    totalReviewsAggregated: 286,
-    overallWeightedRating: 4.9,
-  },
 };

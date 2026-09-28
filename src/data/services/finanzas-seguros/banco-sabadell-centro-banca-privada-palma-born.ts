@@ -31,12 +31,6 @@ export const banco_sabadell_centro_banca_privada_palma_born: ServiceItem = {
   schedule: "Lunes a Viernes: 08:30 - 14:30 | Tardes con cita previa",
   image: "/images/services/banco-sabadell-centro-banca-privada-palma-born.jpg",
   gallery: ["/images/services/banco-sabadell-centro-banca-privada-palma-born.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Banco%20Sabadell%20Centro%20de%20Banca%20Privada%20Palma%20Born%20Passeig%20del%20Born%2C%2017%2C%2007012%20Palma%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Banco%20Sabadell%20Centro%20de%20Banca%20Privada%20Palma%20Born%20Passeig%20del%20Born%2C%2017%2C%2007012%20Palma%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Banco%20Sabadell%20Centro%20de%20Banca%20Privada%20Palma%20Born%20Passeig%20del%20Born%2C%2017%2C%2007012%20Palma%2C%20Illes%20Balears",
   shortDescription: {
     es: "Centro exclusivo de Banca Privada de Banco Sabadell en el emblemático Paseo del Born de Palma, ofreciendo asesoramiento patrimonial personalizado, family office y financiación a medida para inversores.",
     en: "Exclusive Banco Sabadell Private Banking Centre on Palma's iconic Passeig del Born, delivering bespoke wealth management, family office solutions, and structured mortgages for high-net-worth clients.",
@@ -100,13 +94,6 @@ export const banco_sabadell_centro_banca_privada_palma_born: ServiceItem = {
       "Strategische Nachlassplanung, Generationswechsel und grenzüberschreitende Steuerstrukturierung",
       "Zugang zu alternativen Anlageklassen: Private Equity, Sachwerte und nachhaltige Erneuerbare Energien",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 180,
-      url: "https://www.google.com/maps/search/?api=1&query=Banco%20Sabadell%20Centro%20de%20Banca%20Privada%20Palma%20Born%20Passeig%20del%20Born%2C%2017%2C%2007012%20Palma%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

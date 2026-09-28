@@ -21,9 +21,6 @@ export const carniceriaCanMatas: ServiceItem = {
   whatsapp: "+34 689 30 40 50",
   email: "contacto@carnisseriacanmatas.com",
   website: "https://carnisseriacanmatas.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Carnisseria%20Can%20Matas%20Soller",
-  appleMapsUrl: "https://maps.apple.com/?q=Carnisseria%20Can%20Matas%20Soller&ll=39.7658,2.7160",
-  bingMapsUrl: "https://www.bing.com/maps?where1=Carnisseria%20Can%20Matas%20Soller",
   coordinates: { lat: 39.7658, lng: 2.716 },
   schedule: "Lunes a Sábado: 08:30 - 14:00 | 17:00 - 20:00 (Domingos Cerrado)",
   lastVerifiedAt: "2026-08-25",
@@ -130,30 +127,13 @@ export const carniceriaCanMatas: ServiceItem = {
       instagramHandle: "@canmatassoller",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 310,
-      url: "https://www.google.com/maps/search/?api=1&query=Carnisseria%20Can%20Matas%20Soller",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Carnisseria%20Can%20Matas%20Soller&ll=39.7658,2.7160",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 310,
-      url: "https://www.bing.com/maps?where1=Carnisseria%20Can%20Matas%20Soller",
-    },
-    totalReviewsAggregated: 310,
-    overallWeightedRating: 4.8,
-  },
   reviews: [
     {
       id: "rev-ccm-1",
       authorName: "Tomeu Castanyer",
       rating: 5,
       date: "2025-05-17",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
       comment:
         "La millor carnisseria de Sóller. La sobrassada casolana és autèntica i el xot de la Serra és tendre i gustós. Tracte familiar de tota la vida.",
@@ -164,7 +144,7 @@ export const carniceriaCanMatas: ServiceItem = {
       authorName: "Patrick O'Connor",
       rating: 5,
       date: "2025-06-23",
-      platform: "google_maps",
+      platform: "direct",
       language: "en",
       comment:
         "Top-quality butcher in Sóller! Bought lamb chops and homemade sobrassada for our villa barbecue in Fornalutx. Fresh, delicious, and vacuum-packed neatly.",

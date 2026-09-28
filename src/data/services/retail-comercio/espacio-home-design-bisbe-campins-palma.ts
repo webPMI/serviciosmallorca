@@ -31,12 +31,6 @@ export const espacio_home_design_bisbe_campins_palma: ServiceItem = {
   schedule: "Lunes a Viernes: 10:00 - 19:00 | Sábado: 10:30 - 14:00 | Domingo: Cerrado",
   image: "/images/services/espacio-home-design-bisbe-campins-palma.jpg",
   gallery: ["/images/services/espacio-home-design-bisbe-campins-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Espacio%20Home%20Design%20Palma%20Carrer%20del%20Bisbe%20Campins%2C%2011%2C%2007012%20Palma%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Espacio%20Home%20Design%20Palma%20Carrer%20del%20Bisbe%20Campins%2C%2011%2C%2007012%20Palma%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Espacio%20Home%20Design%20Palma%20Carrer%20del%20Bisbe%20Campins%2C%2011%2C%2007012%20Palma%2C%20Illes%20Balears",
   shortDescription: {
     es: "Grupo líder en interiorismo, cocinas de alta gama, baños de autor y mobiliario contemporáneo en Palma, con showrooms icónicos representando a firmas como Poliform, Boffi y Minotti.",
     en: "Leading luxury interior design, premium kitchen, and designer furniture studio in Palma, operating flagship showrooms representing brands like Poliform, Boffi, and Minotti.",
@@ -100,13 +94,6 @@ export const espacio_home_design_bisbe_campins_palma: ServiceItem = {
       "Exklusive begehbare Ankleiden, maßgefertigte Einbauschränke und Innentüren aus Edelholz",
       "Wohnzimmermöbel, modulare Design-Sofas, Leuchtkonzepte und wetterfeste Luxus-Outdoormöbel",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 180,
-      url: "https://www.google.com/maps/search/?api=1&query=Espacio%20Home%20Design%20Palma%20Carrer%20del%20Bisbe%20Campins%2C%2011%2C%2007012%20Palma%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

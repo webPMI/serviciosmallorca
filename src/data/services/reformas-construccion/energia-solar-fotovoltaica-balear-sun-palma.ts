@@ -31,12 +31,6 @@ export const energia_solar_fotovoltaica_balear_sun_palma: ServiceItem = {
   schedule: "Lunes a Viernes: 08:00 - 18:30",
   image: "/images/services/energia-solar-fotovoltaica-balear-sun-palma.jpg",
   gallery: ["/images/services/energia-solar-fotovoltaica-balear-sun-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Balear%20Sun%20Fotovoltaica%20%26%20Energ%C3%ADa%20Solar%20Palma%20Carrer%20del%20Gremi%20de%20Teixidors%2C%2026%2C%20Son%20Castell%C3%B3%2C%2007009%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Balear%20Sun%20Fotovoltaica%20%26%20Energ%C3%ADa%20Solar%20Palma%20Carrer%20del%20Gremi%20de%20Teixidors%2C%2026%2C%20Son%20Castell%C3%B3%2C%2007009%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Balear%20Sun%20Fotovoltaica%20%26%20Energ%C3%ADa%20Solar%20Palma%20Carrer%20del%20Gremi%20de%20Teixidors%2C%2026%2C%20Son%20Castell%C3%B3%2C%2007009%20Palma",
   shortDescription: {
     es: "Ingeniería e instalación de energía solar fotovoltaica para villas y empresas en Mallorca: paneles solares de alta eficiencia, baterías de litio y puntos de recarga VE.",
     en: "Solar PV engineering and installation for luxury villas and businesses in Mallorca: Tier-1 panels, lithium battery storage, and EV wallbox chargers.",
@@ -100,13 +94,6 @@ export const energia_solar_fotovoltaica_balear_sun_palma: ServiceItem = {
       "Autarke Inselanlagen mit Notstrom-Generator für Fincas",
       "Installation intelligenter Wallbox-Ladestationen",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 280,
-      url: "https://www.google.com/maps/search/?api=1&query=Balear%20Sun%20Fotovoltaica%20%26%20Energ%C3%ADa%20Solar%20Palma%20Carrer%20del%20Gremi%20de%20Teixidors%2C%2026%2C%20Son%20Castell%C3%B3%2C%2007009%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

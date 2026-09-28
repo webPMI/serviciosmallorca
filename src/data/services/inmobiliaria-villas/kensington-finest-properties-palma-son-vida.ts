@@ -31,12 +31,6 @@ export const kensington_finest_properties_palma_son_vida: ServiceItem = {
   schedule: "Lunes a Viernes: 09:30 - 18:30",
   image: "/images/services/kensington-finest-properties-palma-son-vida.jpg",
   gallery: ["/images/services/kensington-finest-properties-palma-son-vida.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Kensington%20Finest%20Properties%20International%20(Palma%20%26%20Son%20Vida)%20Carrer%20de%20Bonaire%2C%2017%2C%2007012%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Kensington%20Finest%20Properties%20International%20(Palma%20%26%20Son%20Vida)%20Carrer%20de%20Bonaire%2C%2017%2C%2007012%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Kensington%20Finest%20Properties%20International%20(Palma%20%26%20Son%20Vida)%20Carrer%20de%20Bonaire%2C%2017%2C%2007012%20Palma",
   shortDescription: {
     es: "Agencia inmobiliaria internacional de ultra lujo en Palma y Son Vida: comercialización exclusiva de mansiones, áticos de autor y villas en las zonas más cotizadas.",
     en: "Ultra-luxury international real estate agency in Palma and Son Vida: exclusive mansions, designer penthouses, and premier estates in Mallorca's top postcodes.",
@@ -100,13 +94,6 @@ export const kensington_finest_properties_palma_son_vida: ServiceItem = {
       "Diskrete Suchmandate für internationale Kunden",
       "Steuerliche und rechtliche Kaufabwicklung mit renommierten Kanzleien",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 260,
-      url: "https://www.google.com/maps/search/?api=1&query=Kensington%20Finest%20Properties%20International%20(Palma%20%26%20Son%20Vida)%20Carrer%20de%20Bonaire%2C%2017%2C%2007012%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

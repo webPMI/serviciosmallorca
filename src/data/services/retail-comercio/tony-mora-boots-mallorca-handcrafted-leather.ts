@@ -31,12 +31,6 @@ export const tony_mora_boots_mallorca_handcrafted_leather: ServiceItem = {
   schedule: "Lunes a Viernes: 09:30 - 18:30, Sábado: 10:00 - 14:00",
   image: "/images/services/tony-mora-boots-mallorca-handcrafted-leather.jpg",
   gallery: ["/images/services/tony-mora-boots-mallorca-handcrafted-leather.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Tony%20Mora%20Handcrafted%20Boots%20Mallorca%20(1918)%20-%20Botas%20Camperas%20Ctra.%20Alar%C3%B3%2C%20Km%204%2C%2007340%20Alar%C3%B3",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Tony%20Mora%20Handcrafted%20Boots%20Mallorca%20(1918)%20-%20Botas%20Camperas%20Ctra.%20Alar%C3%B3%2C%20Km%204%2C%2007340%20Alar%C3%B3",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Tony%20Mora%20Handcrafted%20Boots%20Mallorca%20(1918)%20-%20Botas%20Camperas%20Ctra.%20Alar%C3%B3%2C%20Km%204%2C%2007340%20Alar%C3%B3",
   shortDescription: {
     es: "Fábrica artesanal de botas de piel y estilo campero cosidas a mano con cosido Goodyear Welted en Mallorca desde 1918.",
     en: "Legendary handcrafted leather cowboy and ankle boots manufacturer using authentic Goodyear welted stitching in Mallorca since 1918.",
@@ -100,13 +94,6 @@ export const tony_mora_boots_mallorca_handcrafted_leather: ServiceItem = {
       "Passende Vollleder-Gürtel und handgefertigte Lederaccessoires",
       "Werkseigener Reparaturservice und Neubesohlung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 380,
-      url: "https://www.google.com/maps/search/?api=1&query=Tony%20Mora%20Handcrafted%20Boots%20Mallorca%20(1918)%20-%20Botas%20Camperas%20Ctra.%20Alar%C3%B3%2C%20Km%204%2C%2007340%20Alar%C3%B3",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

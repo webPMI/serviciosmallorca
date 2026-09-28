@@ -29,9 +29,6 @@ export const hospitalJuanedaMuroAlcudia: ServiceItem = {
   email: "info@juaneda.es",
   website: "https://www.juaneda.es",
   menuUrl: "https://www.juaneda.es",
-  googleMapsUrl: "https://www.google.com/maps/search/Hospital+Juaneda+Muro+Playa+de+Muro+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Hospital+Juaneda+Muro",
-  bingMapsUrl: "https://www.bing.com/maps?q=Hospital+Juaneda+Muro",
   tags: [
     "zona:alcudia-pollensa",
     "product:lujo",
@@ -149,7 +146,7 @@ export const hospitalJuanedaMuroAlcudia: ServiceItem = {
       comment:
         "Hervorragende Privatklinik! Wurde nach einem Fahrradunfall sofort geröntgt und erstklassig versorgt. Alle Ärzte sprechen Deutsch. Großes Lob!",
       date: "2026-08-17",
-      platform: "google_maps",
+      platform: "direct",
       language: "de",
     },
     {
@@ -159,7 +156,7 @@ export const hospitalJuanedaMuroAlcudia: ServiceItem = {
       comment:
         "Wonderful emergency service in Playa de Muro. Very fast, caring staff, and they handled all insurance paperwork directly.",
       date: "2026-07-29",
-      platform: "google_maps",
+      platform: "direct",
       language: "en",
     },
   ],

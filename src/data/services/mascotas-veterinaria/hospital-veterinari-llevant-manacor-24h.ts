@@ -35,12 +35,6 @@ export const hospital_veterinari_llevant_manacor_24h: ServiceItem = {
   schedule: "Urgencias 24 horas / 365 días (Consultas: Lunes a Sábado 09:00 - 20:00)",
   image: "/images/services/hospital-veterinari-llevant-manacor-24h.jpg",
   gallery: ["/images/services/hospital-veterinari-llevant-manacor-24h.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Hospital%20Veterinari%20Llevant%20Manacor%2024%20Horas%20Via%20Palma%2C%2042%2C%2007500%20Manacor",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Hospital%20Veterinari%20Llevant%20Manacor%2024%20Horas%20Via%20Palma%2C%2042%2C%2007500%20Manacor",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Hospital%20Veterinari%20Llevant%20Manacor%2024%20Horas%20Via%20Palma%2C%2042%2C%2007500%20Manacor",
   shortDescription: {
     es: "Hospital veterinario de referencia 24h en el Llevant de Mallorca (Manacor): urgencias 24 horas, quirófano de alta tecnología, TAC veterinario, UCI e hospitalización de pequeños animales.",
     en: "24-hour reference veterinary hospital in eastern Mallorca (Manacor): 24h emergency room, high-tech operating theatre, veterinary CT scanner, ICU, and pet hospitalization.",
@@ -104,13 +98,6 @@ export const hospital_veterinari_llevant_manacor_24h: ServiceItem = {
       "Bildgebende Diagnostik: CT-Scan, digitales Röntgen und Ultraschall",
       "Klimatisierte Einzel-Stationsboxen mit Sauerstofftherapie",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 410,
-      url: "https://www.google.com/maps/search/?api=1&query=Hospital%20Veterinari%20Llevant%20Manacor%2024%20Horas%20Via%20Palma%2C%2042%2C%2007500%20Manacor",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

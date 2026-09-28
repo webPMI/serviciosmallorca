@@ -28,9 +28,6 @@ export const restauranteEsCruceVilafranca: ServiceItem = {
   email: "info@restaurantescruce.com",
   website: "https://restaurantescruce.com",
   menuUrl: "https://restaurantescruce.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Restaurante+Es+Cruce+Vilafranca+de+Bonany+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante+Es+Cruce+Vilafranca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante+Es+Cruce+Vilafranca",
   tags: [
     "zona:raiguer-pla",
     "zona:vilafranca-de-bonany",

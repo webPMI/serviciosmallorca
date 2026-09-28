@@ -31,12 +31,6 @@ export const policlinica_miramar_palma: ServiceItem = {
   schedule: "Lunes a Domingo: 24 Horas (Urgencias 24/7 y Hospitalización)",
   image: "/images/services/policlinica-miramar-palma.jpg",
   gallery: ["/images/services/policlinica-miramar-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Policl%C3%ADnica%20Miramar%20Palma%20(Quir%C3%B3nsalud)%20Cam%C3%AD%20de%20la%20Vileta%2C%2030%2C%2007011%20Palma%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Policl%C3%ADnica%20Miramar%20Palma%20(Quir%C3%B3nsalud)%20Cam%C3%AD%20de%20la%20Vileta%2C%2030%2C%2007011%20Palma%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Policl%C3%ADnica%20Miramar%20Palma%20(Quir%C3%B3nsalud)%20Cam%C3%AD%20de%20la%20Vileta%2C%2030%2C%2007011%20Palma%2C%20Illes%20Balears",
   shortDescription: {
     es: "Hospital privado multidisciplinar en Palma integrado en el grupo Quirónsalud, con servicio de urgencias 24h, UCI y más de 30 especialidades médicas y quirúrgicas.",
     en: "Comprehensive private hospital in Palma part of Quirónsalud, featuring 24/7 emergency care, ICU, and over 30 medical and surgical specialties with multilingual doctors.",
@@ -100,13 +94,6 @@ export const policlinica_miramar_palma: ServiceItem = {
       "Komplette Radiologie mit 3T-MRT, CT, digitaler Mammographie und Ultraschall",
       "Ganzheitliche Vorsorgeuntersuchungen und Abrechnung mit Auslandskrankenkassen",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.4,
-      reviewCount: 980,
-      url: "https://www.google.com/maps/search/?api=1&query=Policl%C3%ADnica%20Miramar%20Palma%20(Quir%C3%B3nsalud)%20Cam%C3%AD%20de%20la%20Vileta%2C%2030%2C%2007011%20Palma%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

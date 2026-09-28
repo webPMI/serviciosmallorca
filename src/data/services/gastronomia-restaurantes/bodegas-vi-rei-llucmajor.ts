@@ -28,9 +28,6 @@ export const bodegasViReiLlucmajor: ServiceItem = {
   email: "info@bodegasvirei.com",
   website: "https://bodegasvirei.com",
   menuUrl: "https://bodegasvirei.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Bodegas+Vi+Rei+Llucmajor+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Bodegas+Vi+Rei+Llucmajor",
-  bingMapsUrl: "https://www.bing.com/maps?q=Bodegas+Vi+Rei+Llucmajor",
   tags: [
     "zona:santanyi-migjorn",
     "zona:llucmajor",

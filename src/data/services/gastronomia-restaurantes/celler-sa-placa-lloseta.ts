@@ -28,9 +28,6 @@ export const cellerSaPlacaLloseta: ServiceItem = {
   email: "info@cellersaplaca.com",
   website: "https://www.cellersaplaca.com",
   menuUrl: "https://www.cellersaplaca.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Celler+Sa+Placa+Lloseta+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Celler+Sa+Placa+Lloseta",
-  bingMapsUrl: "https://www.bing.com/maps?q=Celler+Sa+Placa+Lloseta",
   tags: [
     "zona:raiguer-pla",
     "zona:lloseta",

@@ -31,12 +31,6 @@ export const taller_mecanic_can_toni_algaida: ServiceItem = {
   schedule: "Lunes a Viernes: 08:00 - 13:00, 15:00 - 19:00 | Sábado y Domingo: Cerrado",
   image: "/images/services/taller-mecanic-can-toni-algaida.jpg",
   gallery: ["/images/services/taller-mecanic-can-toni-algaida.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Taller%20Mec%C3%A0nic%20%26%20Xapa%20Can%20Toni%20Algaida%20Carretera%20de%20Manacor%2C%20km%2021%2C%2007210%20Algaida%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Taller%20Mec%C3%A0nic%20%26%20Xapa%20Can%20Toni%20Algaida%20Carretera%20de%20Manacor%2C%20km%2021%2C%2007210%20Algaida%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Taller%20Mec%C3%A0nic%20%26%20Xapa%20Can%20Toni%20Algaida%20Carretera%20de%20Manacor%2C%20km%2021%2C%2007210%20Algaida%2C%20Illes%20Balears",
   shortDescription: {
     es: "Taller multimarca de mecánica general, diagnosis electrónica y chapa y pintura en Algaida, con servicio de pre-ITV y vehículo de cortesía en el corazón del Pla de Mallorca.",
     en: "Multi-brand auto repair, electronic diagnostics, and body paint workshop in Algaida, offering pre-ITV checks and courtesy cars in the heart of Pla de Mallorca.",
@@ -100,13 +94,6 @@ export const taller_mecanic_can_toni_algaida: ServiceItem = {
       "Unfallinstandsetzung, Ausbeulen und hochwertige Teillackierungen",
       "Reifenservice mit Auswuchten, Achsvermessung und Klimaanlagen-Desinfektion und Befüllung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 160,
-      url: "https://www.google.com/maps/search/?api=1&query=Taller%20Mec%C3%A0nic%20%26%20Xapa%20Can%20Toni%20Algaida%20Carretera%20de%20Manacor%2C%20km%2021%2C%2007210%20Algaida%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

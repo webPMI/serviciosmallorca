@@ -31,12 +31,6 @@ export const limpiezas_villas_mallorca_lux_calvia: ServiceItem = {
   schedule: "Lunes a Sábado: 08:00 - 20:00",
   image: "/images/services/limpiezas-villas-mallorca-lux-calvia.jpg",
   gallery: ["/images/services/limpiezas-villas-mallorca-lux-calvia.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Mallorca%20Lux%20Villa%20Cleaning%20%26%20Services%20Calvi%C3%A0%20Avinguda%20del%20Rei%20Jaume%20I%2C%20108%2C%2007180%20Santa%20Ponsa",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Mallorca%20Lux%20Villa%20Cleaning%20%26%20Services%20Calvi%C3%A0%20Avinguda%20del%20Rei%20Jaume%20I%2C%20108%2C%2007180%20Santa%20Ponsa",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Mallorca%20Lux%20Villa%20Cleaning%20%26%20Services%20Calvi%C3%A0%20Avinguda%20del%20Rei%20Jaume%20I%2C%20108%2C%2007180%20Santa%20Ponsa",
   shortDescription: {
     es: "Servicio de limpieza y mantenimiento de villas de alto standing, preparación pre-llegada de propietarios y cambio de huéspedes.",
     en: "Premium cleaning and maintenance service for luxury villas, owner pre-arrival staging, and guest changeovers.",
@@ -100,13 +94,6 @@ export const limpiezas_villas_mallorca_lux_calvia: ServiceItem = {
       "Kristallisation und Pflege von Marmorböden",
       "Wäsche- und Bügelservice vor Ort",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 135,
-      url: "https://www.google.com/maps/search/?api=1&query=Mallorca%20Lux%20Villa%20Cleaning%20%26%20Services%20Calvi%C3%A0%20Avinguda%20del%20Rei%20Jaume%20I%2C%20108%2C%2007180%20Santa%20Ponsa",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

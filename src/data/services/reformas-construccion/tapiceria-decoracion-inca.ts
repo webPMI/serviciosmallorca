@@ -21,9 +21,6 @@ export const tapiceriaDecoracionInca: ServiceItem = {
   whatsapp: "+34 670 45 60 70",
   email: "info@tapiceriainca.com",
   website: "https://tapiceriainca.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Tapiceria%20Decoracion%20Inca",
-  appleMapsUrl: "https://maps.apple.com/?q=Tapiceria%20Decoracion%20Inca&ll=39.7180,2.9100",
-  bingMapsUrl: "https://www.bing.com/maps?where1=Tapiceria%20Decoracion%20Inca",
   coordinates: { lat: 39.718, lng: 2.91 },
   schedule: "Lunes a Viernes: 08:30 - 13:30 | 16:00 - 19:30 (Visitas y Muestrarios a Domicilio)",
   lastVerifiedAt: "2026-08-25",
@@ -131,30 +128,13 @@ export const tapiceriaDecoracionInca: ServiceItem = {
       instagramHandle: "@tapiceriainca",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 160,
-      url: "https://www.google.com/maps/search/?api=1&query=Tapiceria%20Decoracion%20Inca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Tapiceria%20Decoracion%20Inca&ll=39.7180,2.9100",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 160,
-      url: "https://www.bing.com/maps?where1=Tapiceria%20Decoracion%20Inca",
-    },
-    totalReviewsAggregated: 160,
-    overallWeightedRating: 4.8,
-  },
   reviews: [
     {
       id: "rev-tdi-1",
       authorName: "Antoni Morro",
       rating: 5,
       date: "2025-05-18",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
       comment:
         "Varen retapissar el sofà i les butaques de la nostra finca amb tela de llengües mallorquines. La feina és impecable, les costures perfectes i el tracte excel·lent. Molt recomanable a Inca.",
@@ -165,7 +145,7 @@ export const tapiceriaDecoracionInca: ServiceItem = {
       authorName: "Karin Schmid",
       rating: 5,
       date: "2025-06-25",
-      platform: "google_maps",
+      platform: "direct",
       language: "de",
       comment:
         "Hervorragende Polsterei in Inca! Wir haben unsere Garten- und Terrassenpolster mit wetterfestem Sunbrella-Stoff neu beziehen lassen. Schnelle Lieferung und erstklassige Verarbeitung.",

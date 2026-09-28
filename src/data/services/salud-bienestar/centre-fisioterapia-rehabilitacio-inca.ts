@@ -31,12 +31,6 @@ export const centre_fisioterapia_rehabilitacio_inca: ServiceItem = {
   schedule: "Lunes a Viernes: 08:30 - 20:30 | Sábado y Domingo: Cerrado",
   image: "/images/services/centre-fisioterapia-rehabilitacio-inca.jpg",
   gallery: ["/images/services/centre-fisioterapia-rehabilitacio-inca.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Centre%20de%20Fisioter%C3%A0pia%20%26%20Rehabilitaci%C3%B3%20Inca%20Carrer%20del%20Bisbe%20Llompart%2C%2054%2C%2007300%20Inca%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Centre%20de%20Fisioter%C3%A0pia%20%26%20Rehabilitaci%C3%B3%20Inca%20Carrer%20del%20Bisbe%20Llompart%2C%2054%2C%2007300%20Inca%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Centre%20de%20Fisioter%C3%A0pia%20%26%20Rehabilitaci%C3%B3%20Inca%20Carrer%20del%20Bisbe%20Llompart%2C%2054%2C%2007300%20Inca%2C%20Illes%20Balears",
   shortDescription: {
     es: "Centro avanzado de fisioterapia, osteopatía y readaptación física en Inca, especialistas en lesiones de columna, fisioterapia deportiva para ciclistas y corredores, y suelo pélvico.",
     en: "Advanced physical therapy, osteopathy, and sports rehabilitation clinic in Inca, specialized in spinal pain, sports injuries for cyclists and runners, and pelvic floor therapy.",
@@ -100,13 +94,6 @@ export const centre_fisioterapia_rehabilitacio_inca: ServiceItem = {
       "Indiba-Tiefenwärmetherapie zur Beschleunigung der Gewebe- und Sehnenregeneration",
       "Gezielte Beckenbodentherapie bei Inkontinenz, nach der Entbindung und bei Beckenbeschwerden",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 165,
-      url: "https://www.google.com/maps/search/?api=1&query=Centre%20de%20Fisioter%C3%A0pia%20%26%20Rehabilitaci%C3%B3%20Inca%20Carrer%20del%20Bisbe%20Llompart%2C%2054%2C%2007300%20Inca%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

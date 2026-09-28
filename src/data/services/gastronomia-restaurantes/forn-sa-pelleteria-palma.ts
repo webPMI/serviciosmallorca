@@ -21,9 +21,6 @@ export const fornSaPelleteria: ServiceItem = {
   whatsapp: "+34 971 72 15 80",
   email: "info@fornsapelleteria.com",
   website: "https://fornsapelleteria.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Forn%20de%20Sa%20Pelleteria%20Palma",
-  appleMapsUrl: "https://maps.apple.com/?q=Forn%20de%20Sa%20Pelleteria%20Palma&ll=39.5678,2.6535",
-  bingMapsUrl: "https://www.bing.com/maps?where1=Forn%20de%20Sa%20Pelleteria%20Palma",
   coordinates: { lat: 39.5678, lng: 2.6535 },
   schedule: "Lunes a Sábado: 07:30 - 14:30 | 17:00 - 20:30 (Domingos Cerrado)",
   lastVerifiedAt: "2026-08-25",
@@ -131,30 +128,13 @@ export const fornSaPelleteria: ServiceItem = {
       instagramHandle: "@fornsapelleteria",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 490,
-      url: "https://www.google.com/maps/search/?api=1&query=Forn%20de%20Sa%20Pelleteria%20Palma",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Forn%20de%20Sa%20Pelleteria%20Palma&ll=39.5678,2.6535",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 490,
-      url: "https://www.bing.com/maps?where1=Forn%20de%20Sa%20Pelleteria%20Palma",
-    },
-    totalReviewsAggregated: 490,
-    overallWeightedRating: 4.8,
-  },
   reviews: [
     {
       id: "rev-fsp-1",
       authorName: "Jaume Vicens",
       rating: 5,
       date: "2025-05-18",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
       comment:
         "L'autèntic pa morè de llenya a Palma. El pa de xeixa dura dies fresc i les coques de pebres són una delícia. Un dels millors forns de l'illa.",
@@ -165,7 +145,7 @@ export const fornSaPelleteria: ServiceItem = {
       authorName: "Clara Dupont",
       rating: 5,
       date: "2025-06-25",
-      platform: "google_maps",
+      platform: "direct",
       language: "en",
       comment:
         "Hidden gem in Sa Calatrava! The wood-fired sourdough ensaimadas and savory cocas are out of this world. Highly recommend stopping by in the morning.",

@@ -29,8 +29,6 @@ export const B_FIT_MALLORCA_PALMANOVA: ServiceItem = {
   image: "/images/sports/b-fit-mallorca-palmanova.jpg",
   gallery: ["/images/sports/b-fit-mallorca-palmanova.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007048",
-  appleMapsUrl: "https://maps.apple.com/?q=B-Fit%20Mallorca%20Gym+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=B-Fit%20Mallorca%20Gym+Mallorca",
   shortDescription: {
     es: "Gimnasio frente al mar en Palmanova con maquinaria de fuerza, cardio panorámico y terraza outdoor.",
     en: "Beachfront gym in Palmanova with strength machines, panoramic cardio, and outdoor terrace.",
@@ -94,13 +92,6 @@ export const B_FIT_MALLORCA_PALMANOVA: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 310,
-      url: "https://www.google.com/maps?cid=12007048",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

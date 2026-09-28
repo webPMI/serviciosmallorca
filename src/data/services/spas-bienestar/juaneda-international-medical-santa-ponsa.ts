@@ -29,8 +29,6 @@ export const juaneda_international_medical_santa_ponsa: ServiceItem = {
   image: "/images/spas/juaneda-international-medical-santa-ponsa.jpg",
   gallery: ["/images/spas/juaneda-international-medical-santa-ponsa.jpg", "/images/categories/salud.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=13008004",
-  appleMapsUrl: "https://maps.apple.com/?q=Juaneda%20Medical%20Center%20Santa%20Ponsa+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Juaneda%20Medical%20Center%20Santa%20Ponsa+Mallorca",
   shortDescription: {
     es: "Centro médico ambulatorio para residentes y náutica en el suroeste con servicio a domicilio y hoteles.",
     en: "Outpatient medical center for southwest residents and yachting community with house & hotel call service.",
@@ -94,13 +92,6 @@ export const juaneda_international_medical_santa_ponsa: ServiceItem = {
       "Wellness- und Regenerationstherapien",
       "Kontinuierliche medizinische Nachbetreuung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 280,
-      url: "https://www.google.com/maps?cid=13008004",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

@@ -21,9 +21,6 @@ export const tapiceriaToldosBalear: ServiceItem = {
   whatsapp: "+34 619 40 50 60",
   email: "info@tapiceriabalear.com",
   website: "https://tapiceriabalear.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Tapiceria%20Toldos%20Balear%20Palma",
-  appleMapsUrl: "https://maps.apple.com/?q=Tapiceria%20Toldos%20Balear%20Palma&ll=39.6055,2.6698",
-  bingMapsUrl: "https://www.bing.com/maps?where1=Tapiceria%20Toldos%20Balear%20Palma",
   coordinates: { lat: 39.6055, lng: 2.6698 },
   schedule: "Lunes a Viernes: 08:00 - 13:30 | 15:00 - 18:30 (Sábados y Domingos Cerrado)",
   lastVerifiedAt: "2026-08-25",
@@ -128,30 +125,13 @@ export const tapiceriaToldosBalear: ServiceItem = {
       instagramHandle: "@tapiceriabalear",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 135,
-      url: "https://www.google.com/maps/search/?api=1&query=Tapiceria%20Toldos%20Balear%20Palma",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Tapiceria%20Toldos%20Balear%20Palma&ll=39.6055,2.6698",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 135,
-      url: "https://www.bing.com/maps?where1=Tapiceria%20Toldos%20Balear%20Palma",
-    },
-    totalReviewsAggregated: 135,
-    overallWeightedRating: 4.8,
-  },
   reviews: [
     {
       id: "rev-ttb-1",
       authorName: "Margalida Bauzà",
       rating: 5,
       date: "2025-05-16",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
       comment:
         "Ens varen entapissar les cadires de menjador amb roba de llengües i varen instal·lar dos tendals a la terrassa. Feina impecable, ràpida i molt polida.",
@@ -162,7 +142,7 @@ export const tapiceriaToldosBalear: ServiceItem = {
       authorName: "Edward Harrison",
       rating: 5,
       date: "2025-06-23",
-      platform: "google_maps",
+      platform: "direct",
       language: "en",
       comment:
         "Outstanding craftmanship! Recovered all our outdoor terrace sofas and fitted a Somfy electric awning in Son Vida. 10/10 service.",

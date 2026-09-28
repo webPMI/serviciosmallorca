@@ -119,30 +119,13 @@ export const caNaToneta: ServiceItem = {
     ca: "Al poble de Caimari, als peus de la Serra de Tramuntana, les germanes Maria i Teresa Solivellas varen transformar la casa de sa mare, na Toneta, en un dels santuaris gastronòmics més autèntics del Mediterrani, reconegut amb l'Estrella Verda Michelin.",
     de: "Maria und Teresa Solivellas verwandelten das Haus ihrer Familie in Caimari in einen Zufluchtsort für unverfälschte mallorquinische Esskultur und nachhaltige Landwirtschaft.",
   },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 920,
-      url: "https://www.google.com/maps/search/?api=1&query=Ca%20Na%20Toneta%20Caimari%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Ca%20Na%20Toneta%20Caimari%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.7,
-      reviewCount: 65,
-      url: "https://www.bing.com/maps?q=Ca%20Na%20Toneta%20Caimari%20Mallorca",
-    },
-    totalReviewsAggregated: 985,
-    overallWeightedRating: 4.7,
-  },
   reviews: [
     {
       id: "rev-cnt-1",
       authorName: "Bernat M.",
       rating: 5,
       date: "2026-06-18",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
       comment:
         "Autenticitat absoluta. Les coques de xeixa i el tractament dels vegetals de l'hort són pura màgia de la Serra de Tramuntana.",
@@ -213,9 +196,6 @@ export const caNaToneta: ServiceItem = {
     },
   ],
   authorityProfiles: [],
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Ca%20Na%20Toneta%20Caimari%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Ca%20Na%20Toneta%20Caimari%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Ca%20Na%20Toneta%20Caimari%20Mallorca",
   phone: "+34 971 51 52 26",
   whatsapp: "+34 971 51 52 26",
   email: "info@canatoneta.com",

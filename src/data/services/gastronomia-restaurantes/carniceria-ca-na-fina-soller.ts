@@ -21,9 +21,6 @@ export const carniceriaCaNaFina: ServiceItem = {
   whatsapp: "+34 971 63 08 22",
   email: "info@canafina.com",
   website: "https://canafina.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Carniceria%20Ca%20Na%20Fina%20Soller",
-  appleMapsUrl: "https://maps.apple.com/?q=Carniceria%20Ca%20Na%20Fina%20Soller&ll=39.7668,2.7162",
-  bingMapsUrl: "https://www.bing.com/maps?where1=Carniceria%20Ca%20Na%20Fina%20Soller",
   coordinates: { lat: 39.7668, lng: 2.7162 },
   schedule: "Lunes a Sábado: 08:30 - 14:00 | 17:00 - 20:00 (Domingos Cerrado)",
   lastVerifiedAt: "2026-08-25",
@@ -131,30 +128,13 @@ export const carniceriaCaNaFina: ServiceItem = {
       instagramHandle: "@canafina_soller",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 380,
-      url: "https://www.google.com/maps/search/?api=1&query=Carniceria%20Ca%20Na%20Fina%20Soller",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Carniceria%20Ca%20Na%20Fina%20Soller&ll=39.7668,2.7162",
-    },
-    bingMaps: {
-      rating: 4.9,
-      reviewCount: 380,
-      url: "https://www.bing.com/maps?where1=Carniceria%20Ca%20Na%20Fina%20Soller",
-    },
-    totalReviewsAggregated: 380,
-    overallWeightedRating: 4.9,
-  },
   reviews: [
     {
       id: "rev-cnf-1",
       authorName: "Bernat Mayol",
       rating: 5,
       date: "2025-05-17",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
       comment:
         "La millor sobrassada de Sóller i de tot Mallorca. Carn excel·lent, tracte familiar i ens varen envasar tot al buit per portar.",
@@ -165,7 +145,7 @@ export const carniceriaCaNaFina: ServiceItem = {
       authorName: "Gérard Lefebvre",
       rating: 5,
       date: "2025-06-21",
-      platform: "google_maps",
+      platform: "direct",
       language: "fr",
       comment:
         "Boucherie traditionnelle exceptionnelle à Sóller! La sobrasada et les viandes d'agneau de la montagne sont d'une qualité rare.",

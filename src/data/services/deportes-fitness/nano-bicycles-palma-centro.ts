@@ -29,8 +29,6 @@ export const NANO_BICYCLES_PALMA_CENTRO: ServiceItem = {
   image: "/images/sports/nano-bicycles-palma-centro.jpg",
   gallery: ["/images/sports/nano-bicycles-palma-centro.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007091",
-  appleMapsUrl: "https://maps.apple.com/?q=Nano%20Bicycles%20Palma+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Nano%20Bicycles%20Palma+Mallorca",
   shortDescription: {
     es: "Alquiler de bicicletas de carretera Specialized, urbanas y eléctricas en el corazón histórico de Palma.",
     en: "Specialized road, urban, and e-bike rental in the historic heart of Palma.",
@@ -94,13 +92,6 @@ export const NANO_BICYCLES_PALMA_CENTRO: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 520,
-      url: "https://www.google.com/maps?cid=12007091",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

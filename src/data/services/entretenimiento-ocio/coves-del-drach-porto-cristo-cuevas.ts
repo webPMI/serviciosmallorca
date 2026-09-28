@@ -31,12 +31,6 @@ export const coves_del_drach_porto_cristo_cuevas: ServiceItem = {
   schedule: "Lunes a Domingo: 10:00 - 17:00 (Turnos horarios concertados)",
   image: "/images/services/coves-del-drach-porto-cristo-cuevas.jpg",
   gallery: ["/images/services/coves-del-drach-porto-cristo-cuevas.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Coves%20del%20Drach%20Cuevas%20Milenarias%20%26%20Lago%20Martel%20(Porto%20Cristo)%20Ctra.%20de%20les%20Coves%2C%20s%2Fn%2C%2007680%20Porto%20Cristo",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Coves%20del%20Drach%20Cuevas%20Milenarias%20%26%20Lago%20Martel%20(Porto%20Cristo)%20Ctra.%20de%20les%20Coves%2C%20s%2Fn%2C%2007680%20Porto%20Cristo",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Coves%20del%20Drach%20Cuevas%20Milenarias%20%26%20Lago%20Martel%20(Porto%20Cristo)%20Ctra.%20de%20les%20Coves%2C%20s%2Fn%2C%2007680%20Porto%20Cristo",
   shortDescription: {
     es: "La mayor maravilla geológica subterránea de Mallorca: un recorrido de 1.200 metros entre estalactitas gigantes, el Lago Martel y un concierto de música clásica en directo a bordo de barcas de madera.",
     en: "Mallorca's premier underground geological wonder: 1,200 meters of subterranean caverns, Lake Martel, and a live classical music concert performed from illuminated wooden boats.",
@@ -100,13 +94,6 @@ export const coves_del_drach_porto_cristo_cuevas: ServiceItem = {
       "Café, Picknick-Areal und Souvenir-Boutique mit Mallorquinischen Perlen",
       "Große kostenlose Parkplätze für PKW und Reisebusse",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 28500,
-      url: "https://www.google.com/maps/search/?api=1&query=Coves%20del%20Drach%20Cuevas%20Milenarias%20%26%20Lago%20Martel%20(Porto%20Cristo)%20Ctra.%20de%20les%20Coves%2C%20s%2Fn%2C%2007680%20Porto%20Cristo",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

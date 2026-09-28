@@ -29,8 +29,6 @@ export const VIVAGYM_SON_MOIX_PALMA: ServiceItem = {
   image: "/images/services/vivagym-son-moix-palma.jpg",
   gallery: ["/images/services/vivagym-son-moix-palma.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007052",
-  appleMapsUrl: "https://maps.apple.com/?q=VivaGym%20Son%20Moix+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=VivaGym%20Son%20Moix+Mallorca",
   shortDescription: {
     es: "Gimnasio moderno junto al estadio de Son Moix con sala Matrix, zona HIIT y cycling.",
     en: "Modern gym next to Son Moix stadium with Matrix floor, HIIT zone, and indoor cycling.",
@@ -94,13 +92,6 @@ export const VIVAGYM_SON_MOIX_PALMA: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 620,
-      url: "https://www.google.com/maps?cid=12007052",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

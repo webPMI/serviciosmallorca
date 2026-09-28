@@ -92,7 +92,7 @@ export const mallorcaSothebysRealty: ServiceItem = {
       authorName: "Alexander V.",
       rating: 5,
       date: "2025-07-29",
-      platform: "google_maps",
+      platform: "direct",
       language: "en",
       comment:
         "Flawless representation from start to finish. The team handled the acquisition of our villa in Son Vida with the utmost discretion and market expertise. Truly the premier agency on the island.",
@@ -105,7 +105,7 @@ export const mallorcaSothebysRealty: ServiceItem = {
       authorName: "Cornelia W.",
       rating: 5,
       date: "2025-10-14",
-      platform: "google_maps",
+      platform: "direct",
       language: "de",
       comment:
         "Sehr professionelle und vertrauensvolle Betreuung durch das mehrsprachige Team im Büro Palma. Die Auswahl an außergewöhnlichen Objekten ist konkurrenzlos.",
@@ -160,9 +160,6 @@ export const mallorcaSothebysRealty: ServiceItem = {
   whatsapp: "+34 971 72 10 00",
   email: "info@mallorcasir.com",
   website: "https://www.mallorcasir.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Mallorca+Sothebys+International+Realty+Palma",
-  appleMapsUrl: "https://maps.apple.com/?q=Mallorca+Sothebys+Palma",
-  bingMapsUrl: "https://www.bing.com/maps?q=Mallorca+Sothebys+Palma",
   tags: [
     "zona:palma",
     "zona:casco-antiguo",

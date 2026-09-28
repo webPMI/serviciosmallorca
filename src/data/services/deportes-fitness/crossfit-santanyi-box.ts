@@ -29,8 +29,6 @@ export const CROSSFIT_SANTANYI_BOX: ServiceItem = {
   image: "/images/sports/crossfit-santanyi-box.jpg",
   gallery: ["/images/sports/crossfit-santanyi-box.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007095",
-  appleMapsUrl: "https://maps.apple.com/?q=CrossFit%20Santany%C3%AD+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=CrossFit%20Santany%C3%AD+Mallorca",
   shortDescription: {
     es: "Box de CrossFit y acondicionamiento físico en el sureste de Mallorca con clases grupales y Open Box.",
     en: "CrossFit and conditioning box in southeast Mallorca offering group sessions and Open Box.",
@@ -94,13 +92,6 @@ export const CROSSFIT_SANTANYI_BOX: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 190,
-      url: "https://www.google.com/maps?cid=12007095",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

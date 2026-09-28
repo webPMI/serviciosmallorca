@@ -31,12 +31,6 @@ export const restaurante_sa_llama_porto_cristo_marisco_vistas: ServiceItem = {
   schedule: "Diario: 12:30 - 16:00 y 19:30 - 23:00 (Cerrado Miércoles en Invierno)",
   image: "/images/services/restaurante-sa-llama-porto-cristo-marisco-vistas.jpg",
   gallery: ["/images/services/restaurante-sa-llama-porto-cristo-marisco-vistas.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Restaurante%20Sa%20Llama%20Porto%20Cristo%20Pescados%20%26%20Arroces%20Frente%20al%20Mar%20Carrer%20de%20Bordils%2C%2018%2C%2007680%20Porto%20Cristo%2C%20Manacor",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Restaurante%20Sa%20Llama%20Porto%20Cristo%20Pescados%20%26%20Arroces%20Frente%20al%20Mar%20Carrer%20de%20Bordils%2C%2018%2C%2007680%20Porto%20Cristo%2C%20Manacor",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Restaurante%20Sa%20Llama%20Porto%20Cristo%20Pescados%20%26%20Arroces%20Frente%20al%20Mar%20Carrer%20de%20Bordils%2C%2018%2C%2007680%20Porto%20Cristo%2C%20Manacor",
   shortDescription: {
     es: "Restaurante marinero sobre la ría natural de Porto Cristo: pescados frescos desembarcados en el puerto, caldereta de langosta balear y arroz meloso de ciego.",
     en: "Seafood restaurant along Porto Cristo's natural fjord: fresh fish landed at the harbor, Balearic lobster stew, and creamy seafood rice.",
@@ -100,13 +94,6 @@ export const restaurante_sa_llama_porto_cristo_marisco_vistas: ServiceItem = {
       "Weinkarte mit Weinen aus Felanitx, Binissalem und Pla i Llevant",
       "Familienessen-Reservierungen nach dem Besuch der Drachenhöhlen",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 540,
-      url: "https://www.google.com/maps/search/?api=1&query=Restaurante%20Sa%20Llama%20Porto%20Cristo%20Pescados%20%26%20Arroces%20Frente%20al%20Mar%20Carrer%20de%20Bordils%2C%2018%2C%2007680%20Porto%20Cristo%2C%20Manacor",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

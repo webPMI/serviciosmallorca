@@ -21,9 +21,6 @@ export const carniceriaCanXarrier: ServiceItem = {
   whatsapp: "+34 689 70 80 90",
   email: "info@canxarrier.com",
   website: "https://canxarrier.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Carnisseria%20Can%20Xarrier%20Algaida",
-  appleMapsUrl: "https://maps.apple.com/?q=Carnisseria%20Can%20Xarrier%20Algaida&ll=39.5590,2.8940",
-  bingMapsUrl: "https://www.bing.com/maps?where1=Carnisseria%20Can%20Xarrier%20Algaida",
   coordinates: { lat: 39.559, lng: 2.894 },
   schedule: "Lunes a Sábado: 08:30 - 14:00 | 17:00 - 20:00 (Domingos Cerrado)",
   lastVerifiedAt: "2026-08-25",
@@ -130,30 +127,13 @@ export const carniceriaCanXarrier: ServiceItem = {
       instagramHandle: "@canxarrier",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 230,
-      url: "https://www.google.com/maps/search/?api=1&query=Carnisseria%20Can%20Xarrier%20Algaida",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Carnisseria%20Can%20Xarrier%20Algaida&ll=39.5590,2.8940",
-    },
-    bingMaps: {
-      rating: 4.9,
-      reviewCount: 230,
-      url: "https://www.bing.com/maps?where1=Carnisseria%20Can%20Xarrier%20Algaida",
-    },
-    totalReviewsAggregated: 230,
-    overallWeightedRating: 4.9,
-  },
   reviews: [
     {
       id: "rev-ccx-1",
       authorName: "Joan Coll",
       rating: 5,
       date: "2025-05-18",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
       comment:
         "La millor sobrassada de porc negre de tot Mallorca es fa a Can Xarrier a Algaida. El xot és tendríssim i el tracte és familiar i proper com abans.",
@@ -164,7 +144,7 @@ export const carniceriaCanXarrier: ServiceItem = {
       authorName: "Markus Bauer",
       rating: 5,
       date: "2025-06-25",
-      platform: "google_maps",
+      platform: "direct",
       language: "de",
       comment:
         "Fantastische Metzgerei in Algaida! Die hausgemachte Sobrassada vom schwarzen Schwein ist weltklasse. Perfekt vakuumverpackt für den Heimflug nach München.",

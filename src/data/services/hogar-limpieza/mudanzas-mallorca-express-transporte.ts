@@ -76,10 +76,6 @@ export const mudanzasMallorcaExpressTransporte: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Mudanzas%20Mallorca%20Express%20%26%20Guardamuebles%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Mudanzas%20Mallorca%20Express%20%26%20Guardamuebles%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Mudanzas%20Mallorca%20Express%20%26%20Guardamuebles%20Mallorca",
   pricing: {
     startingPrice: "Mudanza local desde 280€ / Guardamuebles desde 70€/mes",
     rateType: "tiered",
@@ -106,21 +102,4 @@ export const mudanzasMallorcaExpressTransporte: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 390,
-      url: "https://www.google.com/maps/search/?api=1&query=Mudanzas%20Mallorca%20Express%20%26%20Guardamuebles%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Mudanzas%20Mallorca%20Express%20%26%20Guardamuebles%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.7,
-      reviewCount: 39,
-      url: "https://www.bing.com/maps?q=Mudanzas%20Mallorca%20Express%20%26%20Guardamuebles%20Mallorca",
-    },
-    totalReviewsAggregated: 429,
-    overallWeightedRating: 4.8,
-  },
 };

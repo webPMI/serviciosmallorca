@@ -31,12 +31,6 @@ export const casa_lima_palma_muebles_diseno: ServiceItem = {
   schedule: "Lunes a Viernes: 10:30 - 19:00, Sábados: 10:30 - 14:30",
   image: "/images/services/casa-lima-palma-muebles-diseno.jpg",
   gallery: ["/images/services/casa-lima-palma-muebles-diseno.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Casa%20Lima%20Palma%20Muebles%20%26%20Interiorismo%20Carrer%20de%20Can%20Ver%C3%AD%2C%205%2C%2007001%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Casa%20Lima%20Palma%20Muebles%20%26%20Interiorismo%20Carrer%20de%20Can%20Ver%C3%AD%2C%205%2C%2007001%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Casa%20Lima%20Palma%20Muebles%20%26%20Interiorismo%20Carrer%20de%20Can%20Ver%C3%AD%2C%205%2C%2007001%20Palma",
   shortDescription: {
     es: "Showroom de mobiliario de diseño, maderas nobles sostenibles e interiorismo a medida en el casco antiguo de Palma.",
     en: "Designer furniture showroom, sustainable solid wood furnishings, and bespoke interior design in Palma's old town.",
@@ -100,13 +94,6 @@ export const casa_lima_palma_muebles_diseno: ServiceItem = {
       "Wetterfeste Outdoor-Möbel für Terrassen und Poolbereiche",
       "Handgefertigte Sofas mit Bezügen aus europäischem Naturleinen",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 38,
-      url: "https://www.google.com/maps/search/?api=1&query=Casa%20Lima%20Palma%20Muebles%20%26%20Interiorismo%20Carrer%20de%20Can%20Ver%C3%AD%2C%205%2C%2007001%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

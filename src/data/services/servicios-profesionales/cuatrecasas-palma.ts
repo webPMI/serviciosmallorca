@@ -21,9 +21,6 @@ export const cuatrecasasPalma: ServiceItem = {
   whatsapp: "+34 971 71 80 00",
   email: "palma@cuatrecasas.com",
   website: "https://www.cuatrecasas.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Cuatrecasas%20Abogados%20Palma",
-  appleMapsUrl: "https://maps.apple.com/?q=Cuatrecasas%20Abogados%20Palma&ll=39.5702,2.6482",
-  bingMapsUrl: "https://www.bing.com/maps?where1=Cuatrecasas%20Abogados%20Palma",
   coordinates: { lat: 39.5702, lng: 2.6482 },
   schedule: "Lunes a Viernes: 09:00 - 19:30 (Sábados y Domingos Cerrado)",
   lastVerifiedAt: "2026-08-25",
@@ -132,30 +129,13 @@ export const cuatrecasasPalma: ServiceItem = {
       instagramHandle: "@cuatrecasas",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 310,
-      url: "https://www.google.com/maps/search/?api=1&query=Cuatrecasas%20Abogados%20Palma",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Cuatrecasas%20Abogados%20Palma&ll=39.5702,2.6482",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 310,
-      url: "https://www.bing.com/maps?where1=Cuatrecasas%20Abogados%20Palma",
-    },
-    totalReviewsAggregated: 310,
-    overallWeightedRating: 4.8,
-  },
   reviews: [
     {
       id: "rev-cuatre-1",
       authorName: "Frederik Van Houten",
       rating: 5,
       date: "2025-05-28",
-      platform: "google_maps",
+      platform: "direct",
       language: "en",
       comment:
         "Handled the acquisition of our hotel asset in Mallorca with flawless precision and deep local market insight.",
@@ -166,7 +146,7 @@ export const cuatrecasasPalma: ServiceItem = {
       authorName: "Antoni Colom",
       rating: 5,
       date: "2025-07-11",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
       comment:
         "Assessorament jurídic i fiscal de primeríssim nivell a Palma. Rigor, claredat i professionalitat absoluta.",

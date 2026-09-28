@@ -76,9 +76,6 @@ export const belmondLaResidenciaDeia: ServiceItem = {
       close: "23:59",
     },
   },
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Belmond%20La%20Residencia%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Belmond%20La%20Residencia%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Belmond%20La%20Residencia%20Mallorca",
   pricing: {
     startingPrice: "Desde 650€ / noche",
     rateType: "tiered",
@@ -105,21 +102,4 @@ export const belmondLaResidenciaDeia: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 920,
-      url: "https://www.google.com/maps/search/?api=1&query=Belmond%20La%20Residencia%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Belmond%20La%20Residencia%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 92,
-      url: "https://www.bing.com/maps?q=Belmond%20La%20Residencia%20Mallorca",
-    },
-    totalReviewsAggregated: 1012,
-    overallWeightedRating: 4.9,
-  },
 };

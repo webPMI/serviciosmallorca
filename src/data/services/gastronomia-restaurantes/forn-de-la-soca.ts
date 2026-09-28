@@ -21,9 +21,6 @@ export const fornDeLaSoca: ServiceItem = {
   whatsapp: "+34 971 72 26 23",
   email: "info@forndelasoca.com",
   website: "https://forndelasoca.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Forn%20de%20la%20Soca%20Palma",
-  appleMapsUrl: "https://maps.apple.com/?q=Forn%20de%20la%20Soca%20Palma&ll=39.5698,2.6501",
-  bingMapsUrl: "https://www.bing.com/maps?where1=Forn%20de%20la%20Soca%20Palma",
   coordinates: { lat: 39.5698, lng: 2.6501 },
   schedule: "Lunes a Sábado: 08:30 - 20:00 | Domingo: 09:00 - 14:30",
   lastVerifiedAt: "2026-08-25",
@@ -132,30 +129,13 @@ export const fornDeLaSoca: ServiceItem = {
       instagramHandle: "@forndelasoca",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 1250,
-      url: "https://www.google.com/maps/search/?api=1&query=Forn%20de%20la%20Soca%20Palma",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Forn%20de%20la%20Soca%20Palma&ll=39.5698,2.6501",
-    },
-    bingMaps: {
-      rating: 4.7,
-      reviewCount: 1250,
-      url: "https://www.bing.com/maps?where1=Forn%20de%20la%20Soca%20Palma",
-    },
-    totalReviewsAggregated: 1250,
-    overallWeightedRating: 4.7,
-  },
   reviews: [
     {
       id: "rev-soca-1",
       authorName: "Margalida Rosselló",
       rating: 5,
       date: "2025-05-12",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
       comment:
         "L'ensaïmada de saïm de porc negre i les panades de xai són les millors de tota Mallorca. Pur art gastronòmic.",
@@ -166,7 +146,7 @@ export const fornDeLaSoca: ServiceItem = {
       authorName: "Sarah Jenkins",
       rating: 5,
       date: "2025-07-02",
-      platform: "google_maps",
+      platform: "direct",
       language: "en",
       comment:
         "Incredible bakery in Palma! The history, the smell, and the authentic pastry textures are unforgettable. A must-visit!",

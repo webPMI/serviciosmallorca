@@ -76,10 +76,6 @@ export const petSpaGroomingSantaCatalina: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Santa%20Catalina%20Pet%20Spa%20%26%20Organic%20Grooming%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Santa%20Catalina%20Pet%20Spa%20%26%20Organic%20Grooming%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Santa%20Catalina%20Pet%20Spa%20%26%20Organic%20Grooming%20Mallorca",
   pricing: {
     startingPrice: "Baño orgánico y corte desde 45€",
     rateType: "tiered",
@@ -106,21 +102,4 @@ export const petSpaGroomingSantaCatalina: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 380,
-      url: "https://www.google.com/maps/search/?api=1&query=Santa%20Catalina%20Pet%20Spa%20%26%20Organic%20Grooming%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Santa%20Catalina%20Pet%20Spa%20%26%20Organic%20Grooming%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 38,
-      url: "https://www.bing.com/maps?q=Santa%20Catalina%20Pet%20Spa%20%26%20Organic%20Grooming%20Mallorca",
-    },
-    totalReviewsAggregated: 418,
-    overallWeightedRating: 4.9,
-  },
 };

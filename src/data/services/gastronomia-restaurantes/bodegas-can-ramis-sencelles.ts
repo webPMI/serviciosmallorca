@@ -28,9 +28,6 @@ export const bodegasCanRamisSencelles: ServiceItem = {
   email: "perecanramis@hotmail.com",
   website: "https://canramis.com",
   menuUrl: "https://canramis.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Bodegas+Can+Ramis+Sencelles+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Bodegas+Can+Ramis+Sencelles",
-  bingMapsUrl: "https://www.bing.com/maps?q=Bodegas+Can+Ramis+Sencelles",
   tags: ["zona:raiguer-pla", "zona:sencelles", "product:premium", "mod:en-local", "aud:parejas", "temps:todo-el-ano"],
   capabilities: {
     parkingAvailable: true,

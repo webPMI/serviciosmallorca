@@ -31,12 +31,6 @@ export const mallorca_car_hire_transfer_aeroport_palma: ServiceItem = {
   schedule: "Lunes a Domingo: 06:00 - 23:30 (Entregas y recogidas en aeropuerto)",
   image: "/images/services/mallorca-car-hire-transfer-aeroport-palma.jpg",
   gallery: ["/images/services/mallorca-car-hire-transfer-aeroport-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Mallorca%20Car%20Hire%20%26%20Transfer%20Solutions%20Aeroport%20Palma%20Cam%C3%AD%20de%20Can%20Pastilla%2C%2048%2C%2007610%20Palma%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Mallorca%20Car%20Hire%20%26%20Transfer%20Solutions%20Aeroport%20Palma%20Cam%C3%AD%20de%20Can%20Pastilla%2C%2048%2C%2007610%20Palma%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Mallorca%20Car%20Hire%20%26%20Transfer%20Solutions%20Aeroport%20Palma%20Cam%C3%AD%20de%20Can%20Pastilla%2C%2048%2C%2007610%20Palma%2C%20Illes%20Balears",
   shortDescription: {
     es: "Servicio de alquiler de coches y traslados privados junto al Aeropuerto de Palma de Mallorca, con precios transparentes sin letra pequeña, seguro a todo riesgo sin franquicia y entrega directa en terminal.",
     en: "Car hire and private VIP airport transfer service at Palma de Mallorca Airport, offering transparent pricing, zero-excess full comprehensive insurance, and direct terminal handover.",
@@ -100,13 +94,6 @@ export const mallorca_car_hire_transfer_aeroport_palma: ServiceItem = {
       "Individuelle Fahrzeuganlieferung und -abholung an Yachthäfen und Luxushotels",
       "Kostenfreie, geprüfte i-Size-Kindersitze und Sitzerhöhungen bereits fertig montiert",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 480,
-      url: "https://www.google.com/maps/search/?api=1&query=Mallorca%20Car%20Hire%20%26%20Transfer%20Solutions%20Aeroport%20Palma%20Cam%C3%AD%20de%20Can%20Pastilla%2C%2048%2C%2007610%20Palma%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

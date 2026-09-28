@@ -29,8 +29,6 @@ export const CLUB_TENIS_SOLLER_VALLE: ServiceItem = {
   image: "/images/sports/club-tenis-soller-valle.jpg",
   gallery: ["/images/sports/club-tenis-soller-valle.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007026",
-  appleMapsUrl: "https://maps.apple.com/?q=Club%20de%20Tenis%20%26%20P%C3%A1del%20S%C3%B3ller+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Club%20de%20Tenis%20%26%20P%C3%A1del%20S%C3%B3ller+Mallorca",
   shortDescription: {
     es: "Club deportivo entre naranjos con vistas panorámicas al valle de Sóller y la Serra de Tramuntana.",
     en: "Sports club set among orange groves with panoramic views of Sóller valley and mountains.",
@@ -94,13 +92,6 @@ export const CLUB_TENIS_SOLLER_VALLE: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 280,
-      url: "https://www.google.com/maps?cid=12007026",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

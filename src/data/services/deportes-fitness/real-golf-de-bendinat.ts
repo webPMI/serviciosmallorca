@@ -29,8 +29,6 @@ export const REAL_GOLF_DE_BENDINAT: ServiceItem = {
   image: "/images/services/real-golf-de-bendinat.jpg",
   gallery: ["/images/services/real-golf-de-bendinat.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007004",
-  appleMapsUrl: "https://maps.apple.com/?q=Real%20Golf%20de%20Bendinat+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Real%20Golf%20de%20Bendinat+Mallorca",
   shortDescription: {
     es: "Campo de golf de 18 hoyos par 70 diseñado por Martin Hawtree con vistas al Castillo de Bendinat.",
     en: "Scenic 18-hole par 70 course designed by Martin Hawtree overlooking Bendinat Castle.",
@@ -94,13 +92,6 @@ export const REAL_GOLF_DE_BENDINAT: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 560,
-      url: "https://www.google.com/maps?cid=12007004",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

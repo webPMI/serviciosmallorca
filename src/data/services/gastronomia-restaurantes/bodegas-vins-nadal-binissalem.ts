@@ -28,9 +28,6 @@ export const bodegasVinsNadalBinissalem: ServiceItem = {
   email: "info@vinsnadal.es",
   website: "https://vinsnadal.es",
   menuUrl: "https://vinsnadal.es",
-  googleMapsUrl: "https://www.google.com/maps/search/Bodegas+Vins+Nadal+Binissalem+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Bodegas+Vins+Nadal+Binissalem",
-  bingMapsUrl: "https://www.bing.com/maps?q=Bodegas+Vins+Nadal+Binissalem",
   tags: ["zona:raiguer-pla", "zona:binissalem", "product:premium", "mod:en-local", "aud:parejas", "temps:todo-el-ano"],
   capabilities: {
     parkingAvailable: true,

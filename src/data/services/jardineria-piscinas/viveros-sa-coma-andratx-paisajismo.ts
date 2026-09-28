@@ -31,12 +31,6 @@ export const viveros_sa_coma_andratx_paisajismo: ServiceItem = {
   schedule: "Lunes a Viernes: 08:00 - 18:00, Sábado: 08:30 - 13:30",
   image: "/images/services/viveros-sa-coma-andratx-paisajismo.jpg",
   gallery: ["/images/services/viveros-sa-coma-andratx-paisajismo.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Viveros%20Sa%20Coma%20Andratx%20-%20Flora%20Aut%C3%B3ctona%20%26%20Olivos%20Centenarios%20Ctra.%20d'Andratx%20a%20Es%20Capdell%C3%A0%2C%20Km%201.5%2C%2007150%20Andratx",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Viveros%20Sa%20Coma%20Andratx%20-%20Flora%20Aut%C3%B3ctona%20%26%20Olivos%20Centenarios%20Ctra.%20d'Andratx%20a%20Es%20Capdell%C3%A0%2C%20Km%201.5%2C%2007150%20Andratx",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Viveros%20Sa%20Coma%20Andratx%20-%20Flora%20Aut%C3%B3ctona%20%26%20Olivos%20Centenarios%20Ctra.%20d'Andratx%20a%20Es%20Capdell%C3%A0%2C%20Km%201.5%2C%2007150%20Andratx",
   shortDescription: {
     es: "Vivero especializado en olivos monumentales centenarios, algarrobos y diseño de jardines de lujo en Andratx y Port d'Andratx.",
     en: "Specialist plant nursery supplying monumental ancient olive trees, carobs, and luxury garden landscaping in southwest Mallorca.",
@@ -100,13 +94,6 @@ export const viveros_sa_coma_andratx_paisajismo: ServiceItem = {
       "Trockensteinmauern (Marjades) und wassersparende Bepflanzung",
       "Ganzjährige professionelle Villengartenpflege",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 340,
-      url: "https://www.google.com/maps/search/?api=1&query=Viveros%20Sa%20Coma%20Andratx%20-%20Flora%20Aut%C3%B3ctona%20%26%20Olivos%20Centenarios%20Ctra.%20d'Andratx%20a%20Es%20Capdell%C3%A0%2C%20Km%201.5%2C%2007150%20Andratx",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

@@ -31,12 +31,6 @@ export const restaurante_arrosseria_sa_cranca_palma_paseo_maritimo: ServiceItem 
   schedule: "Martes a Domingo: 13:00 - 16:00 y 20:00 - 23:30",
   image: "/images/services/restaurante-arrosseria-sa-cranca-palma-paseo-maritimo.jpg",
   gallery: ["/images/services/restaurante-arrosseria-sa-cranca-palma-paseo-maritimo.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Restaurante%20Arroseria%20Sa%20Cranca%20Palma%20Avinguda%20de%20Gabriel%20Roca%2C%2037%2C%2007014%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Restaurante%20Arroseria%20Sa%20Cranca%20Palma%20Avinguda%20de%20Gabriel%20Roca%2C%2037%2C%2007014%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Restaurante%20Arroseria%20Sa%20Cranca%20Palma%20Avinguda%20de%20Gabriel%20Roca%2C%2037%2C%2007014%20Palma",
   shortDescription: {
     es: "Arrocería emblemática en el Paseo Marítimo de Palma especializada en paellas de marisco, arroz caldoso de bogavante y fideuàs.",
     en: "Iconic rice specialty restaurant on Palma's seafront promenade famous for seafood paella, lobster soupy rice, and fideuà.",
@@ -100,13 +94,6 @@ export const restaurante_arrosseria_sa_cranca_palma_paseo_maritimo: ServiceItem 
       "Gruppenmenüs für Feierlichkeiten",
       "Ausgewählte Weine von Mallorca und Cavas",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 2100,
-      url: "https://www.google.com/maps/search/?api=1&query=Restaurante%20Arroseria%20Sa%20Cranca%20Palma%20Avinguda%20de%20Gabriel%20Roca%2C%2037%2C%2007014%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

@@ -76,10 +76,6 @@ export const kingRichardThirdCollegePortals: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=King%20Richard%20III%20College%20Portals%20Nous%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=King%20Richard%20III%20College%20Portals%20Nous%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=King%20Richard%20III%20College%20Portals%20Nous%20Mallorca",
   pricing: {
     startingPrice: "Consultar admisiones anuales",
     rateType: "tiered",
@@ -106,21 +102,4 @@ export const kingRichardThirdCollegePortals: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 310,
-      url: "https://www.google.com/maps/search/?api=1&query=King%20Richard%20III%20College%20Portals%20Nous%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=King%20Richard%20III%20College%20Portals%20Nous%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.6,
-      reviewCount: 31,
-      url: "https://www.bing.com/maps?q=King%20Richard%20III%20College%20Portals%20Nous%20Mallorca",
-    },
-    totalReviewsAggregated: 341,
-    overallWeightedRating: 4.7,
-  },
 };

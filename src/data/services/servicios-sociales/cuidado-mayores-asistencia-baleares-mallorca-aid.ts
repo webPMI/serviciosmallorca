@@ -31,12 +31,6 @@ export const cuidado_mayores_asistencia_baleares_mallorca_aid: ServiceItem = {
   schedule: "Oficina: Lunes a Viernes: 09:00 - 18:00 (Atención telefónica 24 horas / 365 días)",
   image: "/images/services/cuidado-mayores-asistencia-baleares-mallorca-aid.jpg",
   gallery: ["/images/services/cuidado-mayores-asistencia-baleares-mallorca-aid.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Mallorca%20Aid%20Asistencia%20%26%20Cuidado%20Domiciliario%20de%20Mayores%20Carrer%20d'Arag%C3%B3%2C%2065%2C%2007005%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Mallorca%20Aid%20Asistencia%20%26%20Cuidado%20Domiciliario%20de%20Mayores%20Carrer%20d'Arag%C3%B3%2C%2065%2C%2007005%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Mallorca%20Aid%20Asistencia%20%26%20Cuidado%20Domiciliario%20de%20Mayores%20Carrer%20d'Arag%C3%B3%2C%2065%2C%2007005%20Palma",
   shortDescription: {
     es: "Servicio acreditado de ayuda a domicilio y cuidado de personas mayores en Mallorca: cuidadoras internas, acompañamiento hospitalario y enfermería.",
     en: "Accredited home care and elderly care agency in Mallorca: live-in caregivers, hospital accompaniment, and nursing assistance.",
@@ -100,13 +94,6 @@ export const cuidado_mayores_asistencia_baleares_mallorca_aid: ServiceItem = {
       "Haushaltshilfe, kochen seniorengerechter Mahlzeiten und Einkäufe",
       "Tag- und Nacht-Sitzwachen im Krankenhaus (Son Espases, Quirón)",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 180,
-      url: "https://www.google.com/maps/search/?api=1&query=Mallorca%20Aid%20Asistencia%20%26%20Cuidado%20Domiciliario%20de%20Mayores%20Carrer%20d'Arag%C3%B3%2C%2065%2C%2007005%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

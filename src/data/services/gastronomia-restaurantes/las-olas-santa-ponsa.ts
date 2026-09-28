@@ -27,9 +27,6 @@ export const lasOlasSantaPonsa: ServiceItem = {
   email: "info@lasolassantaponsa.com",
   website: "https://serviciosmallorca.com/es/servicios/las-olas-santa-ponsa",
   menuUrl: "https://serviciosmallorca.com/es/servicios/las-olas-santa-ponsa",
-  googleMapsUrl: "https://www.google.com/maps/search/Restaurante+Las+Olas+Santa+Ponsa+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante+Las+Olas+Santa+Ponsa",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante+Las+Olas+Santa+Ponsa",
   tags: [
     "zona:calvia-andratx",
     "zona:santa-ponsa",

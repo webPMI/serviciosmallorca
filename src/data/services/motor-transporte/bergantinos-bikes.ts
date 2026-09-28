@@ -21,9 +21,6 @@ export const bergantinosBikes: ServiceItem = {
   whatsapp: "+34 678 12 34 56",
   email: "info@bergantinosbikes.com",
   website: "https://bergantinosbikes.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Bergantinos%20Bikes%20Can%20Pastilla%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Bergantinos%20Bikes%20Can%20Pastilla%20Mallorca&ll=39.5372,2.7145",
-  bingMapsUrl: "https://www.bing.com/maps?where1=Bergantinos%20Bikes%20Can%20Pastilla%20Mallorca",
   coordinates: { lat: 39.5372, lng: 2.7145 },
   schedule: "Lunes a Domingo: 09:00 - 19:30",
   lastVerifiedAt: "2026-08-25",
@@ -131,30 +128,13 @@ export const bergantinosBikes: ServiceItem = {
       instagramHandle: "@bergantinosbikes",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 450,
-      url: "https://www.google.com/maps/search/?api=1&query=Bergantinos%20Bikes%20Can%20Pastilla%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Bergantinos%20Bikes%20Can%20Pastilla%20Mallorca&ll=39.5372,2.7145",
-    },
-    bingMaps: {
-      rating: 4.9,
-      reviewCount: 450,
-      url: "https://www.bing.com/maps?where1=Bergantinos%20Bikes%20Can%20Pastilla%20Mallorca",
-    },
-    totalReviewsAggregated: 450,
-    overallWeightedRating: 4.9,
-  },
   reviews: [
     {
       id: "rev-bb-1",
       authorName: "Miquel Àngel Bosch",
       rating: 5,
       date: "2025-05-18",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
       comment:
         "Taller de bicis de 10 a Can Pastilla. Em varen arreglar el canvi i el fre en mitja hora. Ràpids, amables i preus molt correctes.",
@@ -165,7 +145,7 @@ export const bergantinosBikes: ServiceItem = {
       authorName: "Hans Becker",
       rating: 5,
       date: "2025-06-27",
-      platform: "google_maps",
+      platform: "direct",
       language: "de",
       comment:
         "Bester Fahrradladen an der Playa de Palma! Top gepflegte Rennräder, superfreundlicher Service und unkomplizierte Abwicklung.",

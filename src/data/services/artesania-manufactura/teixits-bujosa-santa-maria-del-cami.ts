@@ -31,12 +31,6 @@ export const teixits_bujosa_santa_maria_del_cami: ServiceItem = {
   schedule: "Lunes a Viernes: 09:00 - 13:30, 16:30 - 20:00 | Sábado: 09:30 - 13:30 | Domingo: Cerrado",
   image: "/images/services/teixits-bujosa-santa-maria-del-cami.jpg",
   gallery: ["/images/services/teixits-bujosa-santa-maria-del-cami.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Teixits%20Bujosa%20Santa%20Maria%20del%20Cam%C3%AD%20Carrer%20de%20Bernat%20de%20Santa%20Eug%C3%A8nia%2C%2053%2C%2007320%20Santa%20Maria%20del%20Cam%C3%AD%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Teixits%20Bujosa%20Santa%20Maria%20del%20Cam%C3%AD%20Carrer%20de%20Bernat%20de%20Santa%20Eug%C3%A8nia%2C%2053%2C%2007320%20Santa%20Maria%20del%20Cam%C3%AD%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Teixits%20Bujosa%20Santa%20Maria%20del%20Cam%C3%AD%20Carrer%20de%20Bernat%20de%20Santa%20Eug%C3%A8nia%2C%2053%2C%2007320%20Santa%20Maria%20del%20Cam%C3%AD%2C%20Illes%20Balears",
   shortDescription: {
     es: "Taller textil artesanal fundado en 1949 en Santa Maria del Camí, conservando telares mecánicos centenarios para la elaboración de la auténtica tela de lenguas mallorquina (roba de llengües) mediante la técnica ancestral del Ikat.",
     en: "Artisan textile workshop established in 1949 in Santa Maria del Camí, preserving traditional looms to weave authentic Mallorcan 'roba de llengües' fabrics using the ancient Ikat dye technique.",
@@ -100,13 +94,6 @@ export const teixits_bujosa_santa_maria_del_cami: ServiceItem = {
       "Handgefertigte Accessoires aus Stoffresten: Taschen, Espadrilles, Rucksäcke und Küchenschürzen",
       "Individuelle textile Ausstattung für Boutiquehotels und mediterrane Wohnprojekte",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 220,
-      url: "https://www.google.com/maps/search/?api=1&query=Teixits%20Bujosa%20Santa%20Maria%20del%20Cam%C3%AD%20Carrer%20de%20Bernat%20de%20Santa%20Eug%C3%A8nia%2C%2053%2C%2007320%20Santa%20Maria%20del%20Cam%C3%AD%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

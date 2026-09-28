@@ -31,12 +31,6 @@ export const taller_enquadernacio_art_can_alcover_palma: ServiceItem = {
   schedule: "Lunes a Viernes: 09:00 - 13:30, 16:30 - 19:30 | Sábado y Domingo: Cerrado",
   image: "/images/services/taller-enquadernacio-art-can-alcover-palma.jpg",
   gallery: ["/images/services/taller-enquadernacio-art-can-alcover-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Taller%20d'Enquadernaci%C3%B3%20%26%20Restauraci%C3%B3%20Can%20Alcover%20Palma%20Carrer%20de%20Sant%20Alonso%2C%2024%2C%2007001%20Palma%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Taller%20d'Enquadernaci%C3%B3%20%26%20Restauraci%C3%B3%20Can%20Alcover%20Palma%20Carrer%20de%20Sant%20Alonso%2C%2024%2C%2007001%20Palma%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Taller%20d'Enquadernaci%C3%B3%20%26%20Restauraci%C3%B3%20Can%20Alcover%20Palma%20Carrer%20de%20Sant%20Alonso%2C%2024%2C%2007001%20Palma%2C%20Illes%20Balears",
   shortDescription: {
     es: "Taller artesanal centenario en el casco antiguo de Palma, especialistas en encuadernación artística en piel noble, restauración de documentos históricos y enmarcado de conservación de obras de arte.",
     en: "Heritage artisan workshop in old Palma specializing in bespoke fine leather bookbinding, historical document restoration, and museum-grade conservation art framing.",
@@ -100,13 +94,6 @@ export const taller_enquadernacio_art_can_alcover_palma: ServiceItem = {
       "Konservatorische Bildeinrahmung für Aquarelle, Gemälde und Originalfotografien",
       "Handgefertigte säurefreie Archivkassetten und Schuber für wertvolle Sammlungen",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 95,
-      url: "https://www.google.com/maps/search/?api=1&query=Taller%20d'Enquadernaci%C3%B3%20%26%20Restauraci%C3%B3%20Can%20Alcover%20Palma%20Carrer%20de%20Sant%20Alonso%2C%2024%2C%2007001%20Palma%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

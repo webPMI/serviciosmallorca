@@ -27,9 +27,6 @@ export const sieteFuegosSantaPonsa: ServiceItem = {
   email: "info@7fuegos.es",
   website: "https://7fuegos.es",
   menuUrl: "https://7fuegos.es",
-  googleMapsUrl: "https://www.google.com/maps/search/Restaurante+7Fuegos+Club+Nautico+Santa+Ponsa+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante+7Fuegos+Santa+Ponsa",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante+7Fuegos+Santa+Ponsa",
   tags: [
     "zona:calvia-andratx",
     "zona:santa-ponsa",

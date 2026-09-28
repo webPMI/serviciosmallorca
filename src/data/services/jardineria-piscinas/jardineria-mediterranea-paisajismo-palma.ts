@@ -76,12 +76,6 @@ export const jardineriaMediterraneaPaisajismoPalma: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Jardins%20de%20Tramuntana%20Paisajismo%20%26%20Xerojardiner%C3%ADa%20Mallorca",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Jardins%20de%20Tramuntana%20Paisajismo%20%26%20Xerojardiner%C3%ADa%20Mallorca",
-  bingMapsUrl:
-    "https://www.bing.com/maps?q=Jardins%20de%20Tramuntana%20Paisajismo%20%26%20Xerojardiner%C3%ADa%20Mallorca",
   pricing: {
     startingPrice: "Proyecto paisajístico y xerojardinería a medida",
     rateType: "custom_quote",
@@ -108,21 +102,4 @@ export const jardineriaMediterraneaPaisajismoPalma: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 380,
-      url: "https://www.google.com/maps/search/?api=1&query=Jardins%20de%20Tramuntana%20Paisajismo%20%26%20Xerojardiner%C3%ADa%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Jardins%20de%20Tramuntana%20Paisajismo%20%26%20Xerojardiner%C3%ADa%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 38,
-      url: "https://www.bing.com/maps?q=Jardins%20de%20Tramuntana%20Paisajismo%20%26%20Xerojardiner%C3%ADa%20Mallorca",
-    },
-    totalReviewsAggregated: 418,
-    overallWeightedRating: 4.9,
-  },
 };

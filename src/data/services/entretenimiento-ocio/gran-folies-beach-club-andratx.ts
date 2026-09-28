@@ -76,10 +76,6 @@ export const granFoliesBeachClubAndratx: ServiceItem = {
       close: "17:00",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Beach%20Club%20Gran%20Folies%20Cala%20Llamp%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Beach%20Club%20Gran%20Folies%20Cala%20Llamp%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Beach%20Club%20Gran%20Folies%20Cala%20Llamp%20Mallorca",
   pricing: {
     startingPrice: "Hamaca con sombrilla desde 45€",
     rateType: "tiered",
@@ -106,21 +102,4 @@ export const granFoliesBeachClubAndratx: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 1680,
-      url: "https://www.google.com/maps/search/?api=1&query=Beach%20Club%20Gran%20Folies%20Cala%20Llamp%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Beach%20Club%20Gran%20Folies%20Cala%20Llamp%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.7,
-      reviewCount: 168,
-      url: "https://www.bing.com/maps?q=Beach%20Club%20Gran%20Folies%20Cala%20Llamp%20Mallorca",
-    },
-    totalReviewsAggregated: 1848,
-    overallWeightedRating: 4.8,
-  },
 };

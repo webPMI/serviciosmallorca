@@ -31,12 +31,6 @@ export const vivers_llinas_campos: ServiceItem = {
   schedule: "Lunes a Viernes: 08:00 - 13:00, 15:00 - 19:00, Sábados: 08:30 - 13:30",
   image: "/images/services/vivers-llinas-campos.jpg",
   gallery: ["/images/services/vivers-llinas-campos.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Vivers%20Llin%C3%A0s%20Campos%201978%20Ctra.%20Campos-Col%C3%B2nia%20de%20Sant%20Jordi%2C%20Km%201.5%2C%2007630%20Campos",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Vivers%20Llin%C3%A0s%20Campos%201978%20Ctra.%20Campos-Col%C3%B2nia%20de%20Sant%20Jordi%2C%20Km%201.5%2C%2007630%20Campos",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Vivers%20Llin%C3%A0s%20Campos%201978%20Ctra.%20Campos-Col%C3%B2nia%20de%20Sant%20Jordi%2C%20Km%201.5%2C%2007630%20Campos",
   shortDescription: {
     es: "Vivero y centro de jardinería en Campos desde 1978: olivos centenarios, palmeras, plantas autóctonas y paisajismo para fincas.",
     en: "Plant nursery and garden center in Campos since 1978: ancient olive trees, palms, native flora, and finca landscaping.",
@@ -100,13 +94,6 @@ export const vivers_llinas_campos: ServiceItem = {
       "Mediterrane Kräuter, Blühpflanzen und wassersparende Gartenbegrünung",
       "Bio-Erden, Terrakotta-Pflanzgefäße und Kranwagen-Lieferung zur Finca",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 94,
-      url: "https://www.google.com/maps/search/?api=1&query=Vivers%20Llin%C3%A0s%20Campos%201978%20Ctra.%20Campos-Col%C3%B2nia%20de%20Sant%20Jordi%2C%20Km%201.5%2C%2007630%20Campos",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

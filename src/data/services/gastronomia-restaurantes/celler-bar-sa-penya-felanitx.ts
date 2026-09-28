@@ -31,12 +31,6 @@ export const celler_bar_sa_penya_felanitx: ServiceItem = {
   schedule: "Lunes a Domingo: 06:30 - 22:00",
   image: "/images/services/celler-bar-sa-penya-felanitx.jpg",
   gallery: ["/images/services/celler-bar-sa-penya-felanitx.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Celler%20Bar%20Sa%20Penya%20Felanitx%20Pla%C3%A7a%20d'Espanya%2C%206%2C%2007200%20Felanitx",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Celler%20Bar%20Sa%20Penya%20Felanitx%20Pla%C3%A7a%20d'Espanya%2C%206%2C%2007200%20Felanitx",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Celler%20Bar%20Sa%20Penya%20Felanitx%20Pla%C3%A7a%20d'Espanya%2C%206%2C%2007200%20Felanitx",
   shortDescription: {
     es: "Histórico bar y celler tradicional en la plaza principal de Felanitx: variats mallorquins, tapas caseras y ambiente de pueblo auténtico.",
     en: "Historic bar and traditional celler in Felanitx's main square: iconic 'variat' tapas, homemade recipes, and village hospitality.",
@@ -100,13 +94,6 @@ export const celler_bar_sa_penya_felanitx: ServiceItem = {
       "Pica-Pica vom Tintenfisch, Kutteln und Landschnecken",
       "Außenterrasse direkt am belebten autofreien Marktplatz",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.6,
-      reviewCount: 220,
-      url: "https://www.google.com/maps/search/?api=1&query=Celler%20Bar%20Sa%20Penya%20Felanitx%20Pla%C3%A7a%20d'Espanya%2C%206%2C%2007200%20Felanitx",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

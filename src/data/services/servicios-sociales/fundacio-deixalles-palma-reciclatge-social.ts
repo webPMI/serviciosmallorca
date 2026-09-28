@@ -31,12 +31,6 @@ export const fundacio_deixalles_palma_reciclatge_social: ServiceItem = {
   schedule: "Lunes a Viernes: 09:00 - 19:00 | Sábado: 09:30 - 14:00 | Domingo: Cerrado",
   image: "/images/services/fundacio-deixalles-palma-reciclatge-social.jpg",
   gallery: ["/images/services/fundacio-deixalles-palma-reciclatge-social.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Fundaci%C3%B3%20Deixalles%20Mallorca%20(Inclusi%C3%B3%20%26%20Economia%20Circular)%20Cam%C3%AD%20dels%20Reis%2C%20137%2C%2007011%20Palma%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Fundaci%C3%B3%20Deixalles%20Mallorca%20(Inclusi%C3%B3%20%26%20Economia%20Circular)%20Cam%C3%AD%20dels%20Reis%2C%20137%2C%2007011%20Palma%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Fundaci%C3%B3%20Deixalles%20Mallorca%20(Inclusi%C3%B3%20%26%20Economia%20Circular)%20Cam%C3%AD%20dels%20Reis%2C%20137%2C%2007011%20Palma%2C%20Illes%20Balears",
   shortDescription: {
     es: "Entidad social y ambiental de referencia en Mallorca desde 1986, dedicada a la inserción sociolaboral de personas en situación de vulnerabilidad a través del reciclaje de muebles, ropa y economía circular.",
     en: "Leading social and environmental non-profit foundation in Mallorca since 1986, driving job integration for vulnerable groups through furniture recycling, upcycling, and circular economy.",
@@ -100,13 +94,6 @@ export const fundacio_deixalles_palma_reciclatge_social: ServiceItem = {
       "Verkauf von Upcycling-Produkten: modische Taschen und Accessoires aus wiederverwendeten Stoffen",
       "Qualifizierungsprogramme, Arbeitsvermittlung und soziales Freiwilligenengagement",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.6,
-      reviewCount: 490,
-      url: "https://www.google.com/maps/search/?api=1&query=Fundaci%C3%B3%20Deixalles%20Mallorca%20(Inclusi%C3%B3%20%26%20Economia%20Circular)%20Cam%C3%AD%20dels%20Reis%2C%20137%2C%2007011%20Palma%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

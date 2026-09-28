@@ -31,12 +31,6 @@ export const tintoreria_bugaderia_can_beltran_inca: ServiceItem = {
   schedule: "Lunes a Viernes de 08:30 a 13:30 y 16:30 a 20:00, Sábados de 09:00 a 13:30",
   image: "/images/services/tintoreria-bugaderia-can-beltran-inca.jpg",
   gallery: ["/images/services/tintoreria-bugaderia-can-beltran-inca.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Tintorer%C3%ADa%20%26%20Bugaderia%20Ecol%C3%B2gica%20Can%20Beltran%20Inca%20Carrer%20del%20Bisbe%20Llompart%2C%2032%2C%2007300%20Inca%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Tintorer%C3%ADa%20%26%20Bugaderia%20Ecol%C3%B2gica%20Can%20Beltran%20Inca%20Carrer%20del%20Bisbe%20Llompart%2C%2032%2C%2007300%20Inca%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Tintorer%C3%ADa%20%26%20Bugaderia%20Ecol%C3%B2gica%20Can%20Beltran%20Inca%20Carrer%20del%20Bisbe%20Llompart%2C%2032%2C%2007300%20Inca%2C%20Illes%20Balears",
   shortDescription: {
     es: "Tintorería artesana y lavandería ecológica en Inca. Tratamiento especializado para prendas delicadas de lana, cuero, trajes tradicionales y telas de lenguas.",
     en: "Artisan dry cleaner and eco-laundry in Inca. Specialized care for delicate wool garments, leather, traditional regional costumes, and flame cloth (llengües).",
@@ -110,13 +104,6 @@ export const tintoreria_bugaderia_can_beltran_inca: ServiceItem = {
     en: ["Inca leather garment restoration", "Traditional Mallorcan textile care", "Eco-friendly Wet Cleaning"],
     ca: ["Neteja de peces de cuir d'Inca", "Cura de robes de llengües mallorquines", "Wet Cleaning ecològic"],
     de: ["Lederreinigung in Inca", "Pflege von Trachten und Zungenstoffen", "Ökologische Textilpflege"],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 115,
-      url: "https://www.google.com/maps/search/?api=1&query=Tintorer%C3%ADa%20%26%20Bugaderia%20Ecol%C3%B2gica%20Can%20Beltran%20Inca%20Carrer%20del%20Bisbe%20Llompart%2C%2032%2C%2007300%20Inca%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

@@ -31,12 +31,6 @@ export const meermin_mallorca_shoes_inca: ServiceItem = {
   schedule: "Lunes a Viernes: 10:00 - 18:00; Sábado: 10:00 - 14:00",
   image: "/images/services/meermin-mallorca-shoes-inca.jpg",
   gallery: ["/images/services/meermin-mallorca-shoes-inca.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Meermin%20Mallorca%20Calzado%20Artesanal%20Goodyear%20Inca%20Carrer%20d'Espanya%2C%2012%2C%2007300%20Inca",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Meermin%20Mallorca%20Calzado%20Artesanal%20Goodyear%20Inca%20Carrer%20d'Espanya%2C%2012%2C%2007300%20Inca",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Meermin%20Mallorca%20Calzado%20Artesanal%20Goodyear%20Inca%20Carrer%20d'Espanya%2C%2012%2C%2007300%20Inca",
   shortDescription: {
     es: "Firma de calzado artesanal de caballero en Inca: zapatos clásicos cosidos con construcción Goodyear Welted y pieles francesas e italianas de las tenerías más prestigiosas.",
     en: "Artisanal men's footwear atelier based in Inca: classic Goodyear Welted shoes crafted with French and Italian calf leathers from Europe's top tanneries.",
@@ -100,13 +94,6 @@ export const meermin_mallorca_shoes_inca: ServiceItem = {
       "Farblich exakt abgestimmte Ledergürtel",
       "Schuhpflegeprodukte und Zedernholz-Schuhspanner",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 980,
-      url: "https://www.google.com/maps/search/?api=1&query=Meermin%20Mallorca%20Calzado%20Artesanal%20Goodyear%20Inca%20Carrer%20d'Espanya%2C%2012%2C%2007300%20Inca",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

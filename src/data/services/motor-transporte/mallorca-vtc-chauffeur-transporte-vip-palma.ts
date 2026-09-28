@@ -31,12 +31,6 @@ export const mallorca_vtc_chauffeur_transporte_vip_palma: ServiceItem = {
   schedule: "Servicio 24 horas / 365 días (Reservas online 24/7)",
   image: "/images/services/mallorca-vtc-chauffeur-transporte-vip-palma.jpg",
   gallery: ["/images/services/mallorca-vtc-chauffeur-transporte-vip-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Mallorca%20VTC%20Chauffeur%20%26%20Traslados%20VIP%20Carrer%20del%20Canal%2C%2020%2C%2007610%20Can%20Pastilla%2C%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Mallorca%20VTC%20Chauffeur%20%26%20Traslados%20VIP%20Carrer%20del%20Canal%2C%2020%2C%2007610%20Can%20Pastilla%2C%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Mallorca%20VTC%20Chauffeur%20%26%20Traslados%20VIP%20Carrer%20del%20Canal%2C%2020%2C%2007610%20Can%20Pastilla%2C%20Palma",
   shortDescription: {
     es: "Servicio premium de chófer privado y transporte VTC en Mallorca: traslados aeropuerto en vehículos Mercedes-Benz de alta gama, servicios a disposición para eventos y villas.",
     en: "Premium private chauffeur and VTC licensed executive transport in Mallorca: airport transfers in high-end Mercedes-Benz fleet, disposals, and villa concierge mobility.",
@@ -100,13 +94,6 @@ export const mallorca_vtc_chauffeur_transporte_vip_palma: ServiceItem = {
       "Fahrdienste für Hochzeiten und Kongresse",
       "Private geführte Inselrundfahrten durch das Tramuntana-Gebirge",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 410,
-      url: "https://www.google.com/maps/search/?api=1&query=Mallorca%20VTC%20Chauffeur%20%26%20Traslados%20VIP%20Carrer%20del%20Canal%2C%2020%2C%2007610%20Can%20Pastilla%2C%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

@@ -31,12 +31,6 @@ export const bellver_international_college_palma: ServiceItem = {
   schedule: "Lunes a Viernes: 08:30 - 16:30",
   image: "/images/services/bellver-international-college-palma.jpg",
   gallery: ["/images/services/bellver-international-college-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Bellver%20International%20College%20El%20Colegio%20Brit%C3%A1nico%20Decano%20de%20Espa%C3%B1a%20(1950)%20Carrer%20de%20Josep%20Costa%20Ferrer%2C%205%2C%2007015%20Palma%20(Cala%20Major)",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Bellver%20International%20College%20El%20Colegio%20Brit%C3%A1nico%20Decano%20de%20Espa%C3%B1a%20(1950)%20Carrer%20de%20Josep%20Costa%20Ferrer%2C%205%2C%2007015%20Palma%20(Cala%20Major)",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Bellver%20International%20College%20El%20Colegio%20Brit%C3%A1nico%20Decano%20de%20Espa%C3%B1a%20(1950)%20Carrer%20de%20Josep%20Costa%20Ferrer%2C%205%2C%2007015%20Palma%20(Cala%20Major)",
   shortDescription: {
     es: "El colegio privado británico más antiguo de España (fundado en 1950 en Cala Major, Palma): educación en inglés de 3 a 18 años con doble titulación británica y española.",
     en: "The oldest private British school in Spain (founded in 1950 in Cala Major, Palma): British education for ages 3-18 offering dual British and Spanish graduation credentials.",
@@ -100,13 +94,6 @@ export const bellver_international_college_palma: ServiceItem = {
       "Verstärkter Sprachunterricht in Spanisch, Katalanisch und Französisch",
       "Schulverpflegung, Nachmittagsaktivitäten und Sommercamps",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 360,
-      url: "https://www.google.com/maps/search/?api=1&query=Bellver%20International%20College%20El%20Colegio%20Brit%C3%A1nico%20Decano%20de%20Espa%C3%B1a%20(1950)%20Carrer%20de%20Josep%20Costa%20Ferrer%2C%205%2C%2007015%20Palma%20(Cala%20Major)",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

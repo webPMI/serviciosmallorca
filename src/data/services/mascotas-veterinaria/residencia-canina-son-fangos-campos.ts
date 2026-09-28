@@ -31,12 +31,6 @@ export const residencia_canina_son_fangos_campos: ServiceItem = {
   schedule: "Lunes a Domingo: 08:30 - 13:00 y 16:30 - 19:30",
   image: "/images/services/residencia-canina-son-fangos-campos.jpg",
   gallery: ["/images/services/residencia-canina-son-fangos-campos.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Residencia%20Canina%20%26%20Adiestramiento%20Son%20Fangos%20Campos%20Cam%C3%AD%20de%20Son%20Fangos%2C%20Km%203.5%2C%2007630%20Campos",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Residencia%20Canina%20%26%20Adiestramiento%20Son%20Fangos%20Campos%20Cam%C3%AD%20de%20Son%20Fangos%2C%20Km%203.5%2C%2007630%20Campos",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Residencia%20Canina%20%26%20Adiestramiento%20Son%20Fangos%20Campos%20Cam%C3%AD%20de%20Son%20Fangos%2C%20Km%203.5%2C%2007630%20Campos",
   shortDescription: {
     es: "Hotel canino campestre con más de 15.000 m² de parques de recreo arbolados, suites climatizadas y piscina canina.",
     en: "Country dog hotel with over 15,000 m² of shaded play parks, climate-controlled suites, and canine swimming pool.",
@@ -100,13 +94,6 @@ export const residencia_canina_son_fangos_campos: ServiceItem = {
       "Hundeschule für Grundgehorsam und Verhalten",
       "Wasch- und Pflegeservice vor Abholung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 165,
-      url: "https://www.google.com/maps/search/?api=1&query=Residencia%20Canina%20%26%20Adiestramiento%20Son%20Fangos%20Campos%20Cam%C3%AD%20de%20Son%20Fangos%2C%20Km%203.5%2C%2007630%20Campos",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

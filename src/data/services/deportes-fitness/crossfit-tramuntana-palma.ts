@@ -29,8 +29,6 @@ export const CROSSFIT_TRAMUNTANA_PALMA: ServiceItem = {
   image: "/images/services/crossfit-tramuntana-palma.jpg",
   gallery: ["/images/services/crossfit-tramuntana-palma.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007056",
-  appleMapsUrl: "https://maps.apple.com/?q=CrossFit%20Tramuntana+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=CrossFit%20Tramuntana+Mallorca",
   shortDescription: {
     es: "Box oficial afiliado de CrossFit en Son Castelló con más de 700 m², Rogue Fitness y Open Box continuo.",
     en: "Official CrossFit affiliate box in Son Castelló offering 700 m², Rogue Fitness gear, and continuous Open Box.",
@@ -94,13 +92,6 @@ export const CROSSFIT_TRAMUNTANA_PALMA: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 340,
-      url: "https://www.google.com/maps?cid=12007056",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

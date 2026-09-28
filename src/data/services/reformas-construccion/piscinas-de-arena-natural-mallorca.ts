@@ -76,10 +76,6 @@ export const piscinasDeArenaNaturalMallorca: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Sand%20Pools%20Mallorca%20-%20Piscinas%20de%20Arena%20y%20Oasis%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Sand%20Pools%20Mallorca%20-%20Piscinas%20de%20Arena%20y%20Oasis%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Sand%20Pools%20Mallorca%20-%20Piscinas%20de%20Arena%20y%20Oasis%20Mallorca",
   pricing: {
     startingPrice: "Piscina tipo playa de arena desde 35.000€",
     rateType: "custom_quote",
@@ -106,21 +102,4 @@ export const piscinasDeArenaNaturalMallorca: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 340,
-      url: "https://www.google.com/maps/search/?api=1&query=Sand%20Pools%20Mallorca%20-%20Piscinas%20de%20Arena%20y%20Oasis%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Sand%20Pools%20Mallorca%20-%20Piscinas%20de%20Arena%20y%20Oasis%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 34,
-      url: "https://www.bing.com/maps?q=Sand%20Pools%20Mallorca%20-%20Piscinas%20de%20Arena%20y%20Oasis%20Mallorca",
-    },
-    totalReviewsAggregated: 374,
-    overallWeightedRating: 4.9,
-  },
 };

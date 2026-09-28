@@ -21,9 +21,6 @@ export const cristaleriaBalear: ServiceItem = {
   whatsapp: "+34 629 80 90 10",
   email: "info@cristaleriabalear.com",
   website: "https://cristaleriabalear.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Cristaleria%20Balear%20Palma",
-  appleMapsUrl: "https://maps.apple.com/?q=Cristaleria%20Balear%20Palma&ll=39.6050,2.6710",
-  bingMapsUrl: "https://www.bing.com/maps?where1=Cristaleria%20Balear%20Palma",
   coordinates: { lat: 39.605, lng: 2.671 },
   schedule: "Lunes a Viernes: 08:00 - 18:00 (Servicio de Medición y Urgencias de Rotura)",
   lastVerifiedAt: "2026-08-25",
@@ -131,30 +128,13 @@ export const cristaleriaBalear: ServiceItem = {
       instagramHandle: "@cristaleriabalear",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 160,
-      url: "https://www.google.com/maps/search/?api=1&query=Cristaleria%20Balear%20Palma",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Cristaleria%20Balear%20Palma&ll=39.6050,2.6710",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 160,
-      url: "https://www.bing.com/maps?where1=Cristaleria%20Balear%20Palma",
-    },
-    totalReviewsAggregated: 160,
-    overallWeightedRating: 4.8,
-  },
   reviews: [
     {
       id: "rev-ckb-1",
       authorName: "Antoni Servera",
       rating: 5,
       date: "2025-05-15",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
       comment:
         "Ens varen instal·lar la barana de vidre laminat a la terrassa i dues mampares de bany a Palma. Feina impecable, mesura al mil·límetre i preu molt correcte.",
@@ -165,7 +145,7 @@ export const cristaleriaBalear: ServiceItem = {
       authorName: "Oliver Chapman",
       rating: 5,
       date: "2025-06-22",
-      platform: "google_maps",
+      platform: "direct",
       language: "en",
       comment:
         "Top-quality glazing team in Palma! Installed custom double glazing throughout our apartment. Noticeable noise reduction from the street and very clean installers.",

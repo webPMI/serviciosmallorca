@@ -31,12 +31,6 @@ export const hotel_boutique_sa_pedrissa_deia: ServiceItem = {
   schedule: "Recepción 24 horas (Temporada de Marzo a Noviembre)",
   image: "/images/services/hotel-boutique-sa-pedrissa-deia.jpg",
   gallery: ["/images/services/hotel-boutique-sa-pedrissa-deia.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Hotel%20Boutique%20%26%20Restaurant%20Sa%20Pedrissa%20Dei%C3%A0%20Ctra.%20Valldemossa-Dei%C3%A0%20Km%2064.5%2C%2007179%20Dei%C3%A0",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Hotel%20Boutique%20%26%20Restaurant%20Sa%20Pedrissa%20Dei%C3%A0%20Ctra.%20Valldemossa-Dei%C3%A0%20Km%2064.5%2C%2007179%20Dei%C3%A0",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Hotel%20Boutique%20%26%20Restaurant%20Sa%20Pedrissa%20Dei%C3%A0%20Ctra.%20Valldemossa-Dei%C3%A0%20Km%2064.5%2C%2007179%20Dei%C3%A0",
   shortDescription: {
     es: "Antigua posesión del siglo XVII convertida en hotel boutique 'Adults Only' encaramada sobre los acantilados de Deià con vistas a Sa Foradada.",
     en: "17th-century historic cliffside estate transformed into an Adults-Only boutique hotel overlooking Deià and Sa Foradada sunsets.",
@@ -100,13 +94,6 @@ export const hotel_boutique_sa_pedrissa_deia: ServiceItem = {
       "Garten-Massagen mit mediterranen Ölen",
       "Helikopter-Transfers und Chauffeurdienste",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 380,
-      url: "https://www.google.com/maps/search/?api=1&query=Hotel%20Boutique%20%26%20Restaurant%20Sa%20Pedrissa%20Dei%C3%A0%20Ctra.%20Valldemossa-Dei%C3%A0%20Km%2064.5%2C%2007179%20Dei%C3%A0",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

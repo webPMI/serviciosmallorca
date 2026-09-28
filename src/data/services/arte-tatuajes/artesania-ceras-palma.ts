@@ -21,9 +21,6 @@ export const artesaniaCerasPalma: ServiceItem = {
   whatsapp: "+34 971 71 42 30",
   email: "info@caxigalos.com",
   website: "https://caxigalos.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Caxigalos%20Cera%20Artesanal%20Palma",
-  appleMapsUrl: "https://maps.apple.com/?q=Caxigalos%20Cera%20Artesanal%20Palma&ll=39.5695,2.6512",
-  bingMapsUrl: "https://www.bing.com/maps?where1=Caxigalos%20Cera%20Artesanal%20Palma",
   coordinates: { lat: 39.5695, lng: 2.6512 },
   schedule: "Lunes a Sábado: 10:00 - 14:00 | 16:30 - 20:00 (Domingos Cerrado)",
   lastVerifiedAt: "2026-08-25",
@@ -131,30 +128,13 @@ export const artesaniaCerasPalma: ServiceItem = {
       instagramHandle: "@caxigalos_palma",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 290,
-      url: "https://www.google.com/maps/search/?api=1&query=Caxigalos%20Cera%20Artesanal%20Palma",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Caxigalos%20Cera%20Artesanal%20Palma&ll=39.5695,2.6512",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 290,
-      url: "https://www.bing.com/maps?where1=Caxigalos%20Cera%20Artesanal%20Palma",
-    },
-    totalReviewsAggregated: 290,
-    overallWeightedRating: 4.8,
-  },
   reviews: [
     {
       id: "rev-cax-1",
       authorName: "Maria Antònia Ferrer",
       rating: 5,
       date: "2025-05-18",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
       comment:
         "Una joia històrica al centre de Palma. L'olor de cera d'abella i taronger et captiva només entrar. Les espelmes duren moltíssim i no fan gens de fum.",
@@ -165,7 +145,7 @@ export const artesaniaCerasPalma: ServiceItem = {
       authorName: "Hannah Wilson",
       rating: 5,
       date: "2025-06-28",
-      platform: "google_maps",
+      platform: "direct",
       language: "en",
       comment:
         "Magical little traditional candlemaker in the old town. Pure beeswax candles with amazing natural scents. Lovely souvenir from Palma.",

@@ -31,12 +31,6 @@ export const open_marratxi_padel_indoor_club: ServiceItem = {
   schedule: "Lunes a Domingo: 08:00 - 23:30",
   image: "/images/services/open-marratxi-padel-indoor-club.jpg",
   gallery: ["/images/services/open-marratxi-padel-indoor-club.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Open%20Marratx%C3%AD%20P%C3%A1del%20Indoor%20Club%20Carrer%20del%20Gremi%20de%20Sabaters%2C%2014%2C%20Pol%C3%ADgon%20Marratx%C3%AD%2C%2007141%20Marratx%C3%AD",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Open%20Marratx%C3%AD%20P%C3%A1del%20Indoor%20Club%20Carrer%20del%20Gremi%20de%20Sabaters%2C%2014%2C%20Pol%C3%ADgon%20Marratx%C3%AD%2C%2007141%20Marratx%C3%AD",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Open%20Marratx%C3%AD%20P%C3%A1del%20Indoor%20Club%20Carrer%20del%20Gremi%20de%20Sabaters%2C%2014%2C%20Pol%C3%ADgon%20Marratx%C3%AD%2C%2007141%20Marratx%C3%AD",
   shortDescription: {
     es: "El club indoor de pádel de referencia en Mallorca con pistas climatizadas panorámicas, césped Mondo WPT, escuela y bar-cafetería.",
     en: "Premier indoor padel club in Mallorca featuring climate-controlled panoramic courts, Mondo WPT turf, academy, and clubhouse café.",
@@ -100,13 +94,6 @@ export const open_marratxi_padel_indoor_club: ServiceItem = {
       "Wöchentliche Schleifchenturniere und Firmenevents",
       "Testcenter und Schlägerverleih führender Marken",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 310,
-      url: "https://www.google.com/maps/search/?api=1&query=Open%20Marratx%C3%AD%20P%C3%A1del%20Indoor%20Club%20Carrer%20del%20Gremi%20de%20Sabaters%2C%2014%2C%20Pol%C3%ADgon%20Marratx%C3%AD%2C%2007141%20Marratx%C3%AD",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

@@ -21,9 +21,6 @@ export const solarArta: ServiceItem = {
   whatsapp: "+34 650 30 40 50",
   email: "info@solararta.com",
   website: "https://solararta.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Electricidad%20Solar%20Arta",
-  appleMapsUrl: "https://maps.apple.com/?q=Electricidad%20Solar%20Arta&ll=39.6940,3.3510",
-  bingMapsUrl: "https://www.bing.com/maps?where1=Electricidad%20Solar%20Arta",
   coordinates: { lat: 39.694, lng: 3.351 },
   schedule: "Lunes a Viernes: 08:00 - 18:30 (Servicio de Urgencias Eléctricas 24h en Llevant)",
   lastVerifiedAt: "2026-08-25",
@@ -127,30 +124,13 @@ export const solarArta: ServiceItem = {
       instagramHandle: "@solararta",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 120,
-      url: "https://www.google.com/maps/search/?api=1&query=Electricidad%20Solar%20Arta",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Electricidad%20Solar%20Arta&ll=39.6940,3.3510",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 120,
-      url: "https://www.bing.com/maps?where1=Electricidad%20Solar%20Arta",
-    },
-    totalReviewsAggregated: 120,
-    overallWeightedRating: 4.8,
-  },
   reviews: [
     {
       id: "rev-esa-1",
       authorName: "Antoni Gili",
       rating: 5,
       date: "2025-05-18",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
       comment:
         "Ens varen fer la instal·lació solar aïllada amb bateries de liti a la finca d'Artà. Molt professionals, varen tramitar totes les ajudes i el sistema funciona de manera impecable.",
@@ -161,7 +141,7 @@ export const solarArta: ServiceItem = {
       authorName: "Jens Lindner",
       rating: 5,
       date: "2025-06-25",
-      platform: "google_maps",
+      platform: "direct",
       language: "de",
       comment:
         "Exzellente Solar- und Elektro-Firma in Artà! Sie haben unsere Finca komplett auf Solarenergie mit Victron-Batterien umgestellt. Sehr saubere Arbeit und tolle deutsche Beratung.",

@@ -28,9 +28,6 @@ export const bodegasRamanyaSantaMaria: ServiceItem = {
   email: "info@bodegaramanya.com",
   website: "https://bodegaramanya.com",
   menuUrl: "https://bodegaramanya.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Bodega+Ramanya+Santa+Maria+del+Cami+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Bodega+Ramanya+Santa+Maria",
-  bingMapsUrl: "https://www.bing.com/maps?q=Bodega+Ramanya+Santa+Maria",
   tags: [
     "zona:raiguer-pla",
     "zona:santa-maria-del-cami",

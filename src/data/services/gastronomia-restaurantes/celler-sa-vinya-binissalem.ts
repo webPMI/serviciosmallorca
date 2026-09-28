@@ -28,9 +28,6 @@ export const cellerSaVinyaBinissalem: ServiceItem = {
   email: "info@cellersavinya.com",
   website: "https://www.cellersavinya.com",
   menuUrl: "https://www.cellersavinya.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Celler+Sa+Vinya+Binissalem+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Celler+Sa+Vinya+Binissalem",
-  bingMapsUrl: "https://www.bing.com/maps?q=Celler+Sa+Vinya+Binissalem",
   tags: [
     "zona:raiguer-pla",
     "zona:binissalem",

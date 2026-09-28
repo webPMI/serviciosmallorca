@@ -21,9 +21,6 @@ export const carniceriaCanXim: ServiceItem = {
   whatsapp: "+34 689 20 30 40",
   email: "info@canximalaro.com",
   website: "https://canximalaro.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Carnisseria%20Can%20Xim%20Alaro",
-  appleMapsUrl: "https://maps.apple.com/?q=Carnisseria%20Can%20Xim%20Alaro&ll=39.7060,2.7910",
-  bingMapsUrl: "https://www.bing.com/maps?where1=Carnisseria%20Can%20Xim%20Alaro",
   coordinates: { lat: 39.706, lng: 2.791 },
   schedule: "Lunes a Sábado: 08:30 - 14:00 | 17:00 - 20:00 (Domingos Cerrado)",
   lastVerifiedAt: "2026-08-25",
@@ -130,30 +127,13 @@ export const carniceriaCanXim: ServiceItem = {
       instagramHandle: "@canximalaro",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 190,
-      url: "https://www.google.com/maps/search/?api=1&query=Carnisseria%20Can%20Xim%20Alaro",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Carnisseria%20Can%20Xim%20Alaro&ll=39.7060,2.7910",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 190,
-      url: "https://www.bing.com/maps?where1=Carnisseria%20Can%20Xim%20Alaro",
-    },
-    totalReviewsAggregated: 190,
-    overallWeightedRating: 4.8,
-  },
   reviews: [
     {
       id: "rev-ccxa-1",
       authorName: "Antoni Simonet",
       rating: 5,
       date: "2025-05-18",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
       comment:
         "La carnisseria de referència a Alaró. La porcella per rostir al forn queda cruixentíssima i la sobrassada casolana és d'una qualitat excepcional. Tracte molt agradable.",
@@ -164,7 +144,7 @@ export const carniceriaCanXim: ServiceItem = {
       authorName: "Thomas Bradley",
       rating: 5,
       date: "2025-06-25",
-      platform: "google_maps",
+      platform: "direct",
       language: "en",
       comment:
         "Great local butcher in the center of Alaró! Picked up lamb chops and homemade sausages for our villa barbecue. Fresh, tender, and vacuum-packed neatly.",

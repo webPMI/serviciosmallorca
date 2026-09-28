@@ -31,12 +31,6 @@ export const mudanzas_guardamuebles_balear_llucmajor_transports: ServiceItem = {
   schedule: "Lunes a Viernes: 08:00 - 19:00; Sábado: 08:30 - 13:30",
   image: "/images/services/mudanzas-guardamuebles-balear-llucmajor-transports.jpg",
   gallery: ["/images/services/mudanzas-guardamuebles-balear-llucmajor-transports.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Mudanzas%20%26%20Guardamuebles%20Balear%20Llucmajor%20(Nacionales%20e%20Internacionales)%20Pol%C3%ADgon%20Industrial%20Son%20Noguera%2C%20Carrer%20Juli%20Ramis%2C%2018%2C%2007620%20Llucmajor",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Mudanzas%20%26%20Guardamuebles%20Balear%20Llucmajor%20(Nacionales%20e%20Internacionales)%20Pol%C3%ADgon%20Industrial%20Son%20Noguera%2C%20Carrer%20Juli%20Ramis%2C%2018%2C%2007620%20Llucmajor",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Mudanzas%20%26%20Guardamuebles%20Balear%20Llucmajor%20(Nacionales%20e%20Internacionales)%20Pol%C3%ADgon%20Industrial%20Son%20Noguera%2C%20Carrer%20Juli%20Ramis%2C%2018%2C%2007620%20Llucmajor",
   shortDescription: {
     es: "Empresa de mudanzas locales, nacionales e internacionales en Mallorca: servicio de embalaje profesional, camiones con elevador exterior de fachada y nave guardamuebles climatizada y vigilada 24h.",
     en: "Local, national, and international moving company in Mallorca: professional packing, exterior ladder hoists, and climate-controlled 24h secured storage warehouse.",
@@ -100,13 +94,6 @@ export const mudanzas_guardamuebles_balear_llucmajor_transports: ServiceItem = {
       "Tür-zu-Tür internationale Umzüge für Auswanderer und Residenten",
       "Spezialtransport für Flügel/Pianos, Kunstwerke und wertvolle Antiquitäten",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 340,
-      url: "https://www.google.com/maps/search/?api=1&query=Mudanzas%20%26%20Guardamuebles%20Balear%20Llucmajor%20(Nacionales%20e%20Internacionales)%20Pol%C3%ADgon%20Industrial%20Son%20Noguera%2C%20Carrer%20Juli%20Ramis%2C%2018%2C%2007620%20Llucmajor",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

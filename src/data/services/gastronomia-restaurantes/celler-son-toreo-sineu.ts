@@ -28,9 +28,6 @@ export const cellerSonToreoSineu: ServiceItem = {
   email: "info@cellersontoreo.com",
   website: "https://www.cellersontoreo.com",
   menuUrl: "https://www.cellersontoreo.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Celler+Son+Toreo+Sineu+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Celler+Son+Toreo+Sineu",
-  bingMapsUrl: "https://www.bing.com/maps?q=Celler+Son+Toreo+Sineu",
   tags: ["zona:raiguer-pla", "zona:sineu", "product:traditional", "mod:en-local", "aud:familias", "temps:todo-el-ano"],
   capabilities: {
     wheelchairAccessible: true,

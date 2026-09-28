@@ -29,8 +29,6 @@ export const PURE_SALT_YOGA_PORT_ADRIANO: ServiceItem = {
   image: "/images/sports/pure-salt-yoga-port-adriano.jpg",
   gallery: ["/images/sports/pure-salt-yoga-port-adriano.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007081",
-  appleMapsUrl: "https://maps.apple.com/?q=Pure%20Salt%20Yoga%20%26%20Spa%20Port%20Adriano+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Pure%20Salt%20Yoga%20%26%20Spa%20Port%20Adriano+Mallorca",
   shortDescription: {
     es: "Sesiones de yoga en terraza sobre el acantilado con vistas al puerto deportivo diseñado por Philippe Starck.",
     en: "Cliff-edge terrace yoga sessions overlooking the Philippe Starck designed luxury marina.",
@@ -94,13 +92,6 @@ export const PURE_SALT_YOGA_PORT_ADRIANO: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 160,
-      url: "https://www.google.com/maps?cid=12007081",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

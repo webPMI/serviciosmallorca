@@ -21,9 +21,6 @@ export const construccionesLlullSastre: ServiceItem = {
   whatsapp: "+34 971 43 14 00",
   email: "info@llullsastre.com",
   website: "https://llullsastre.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Construcciones%20Llull%20Sastre%20Palma",
-  appleMapsUrl: "https://maps.apple.com/?q=Construcciones%20Llull%20Sastre%20Palma&ll=39.6042,2.6735",
-  bingMapsUrl: "https://www.bing.com/maps?where1=Construcciones%20Llull%20Sastre%20Palma",
   coordinates: { lat: 39.6042, lng: 2.6735 },
   schedule: "Lunes a Viernes: 08:00 - 18:00 (Sábados y Domingos Cerrado)",
   lastVerifiedAt: "2026-08-25",
@@ -133,30 +130,13 @@ export const construccionesLlullSastre: ServiceItem = {
       instagramHandle: "@llullsastre_oficial",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 290,
-      url: "https://www.google.com/maps/search/?api=1&query=Construcciones%20Llull%20Sastre%20Palma",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Construcciones%20Llull%20Sastre%20Palma&ll=39.6042,2.6735",
-    },
-    bingMaps: {
-      rating: 4.7,
-      reviewCount: 290,
-      url: "https://www.bing.com/maps?where1=Construcciones%20Llull%20Sastre%20Palma",
-    },
-    totalReviewsAggregated: 290,
-    overallWeightedRating: 4.7,
-  },
   reviews: [
     {
       id: "rev-llull-1",
       authorName: "Bernhard Von Schantz",
       rating: 5,
       date: "2025-04-20",
-      platform: "google_maps",
+      platform: "direct",
       language: "en",
       comment:
         "Built our private villa in Son Vida on schedule and within budget. Incredible attention to stone details and insulation.",
@@ -167,7 +147,7 @@ export const construccionesLlullSastre: ServiceItem = {
       authorName: "Mateu Riera",
       rating: 5,
       date: "2025-06-17",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
       comment: "Una de les millors empreses de construcció de Mallorca. Rigor absolut i gran solvència tècnica.",
       verifiedCustomer: true,

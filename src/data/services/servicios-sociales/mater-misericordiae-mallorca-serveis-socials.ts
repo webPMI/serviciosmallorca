@@ -31,12 +31,6 @@ export const mater_misericordiae_mallorca_serveis_socials: ServiceItem = {
   schedule: "Lunes a Viernes: 08:30 - 16:30",
   image: "/images/services/mater-misericordiae-mallorca-serveis-socials.jpg",
   gallery: ["/images/services/mater-misericordiae-mallorca-serveis-socials.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Mater%20Misericordiae%20Mallorca%20-%20Educaci%C3%B3%20Especial%20%26%20Resid%C3%A8ncies%20Carrer%20de%20Francesc%20Juli%C3%A0%2C%2054%2C%2007008%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Mater%20Misericordiae%20Mallorca%20-%20Educaci%C3%B3%20Especial%20%26%20Resid%C3%A8ncies%20Carrer%20de%20Francesc%20Juli%C3%A0%2C%2054%2C%2007008%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Mater%20Misericordiae%20Mallorca%20-%20Educaci%C3%B3%20Especial%20%26%20Resid%C3%A8ncies%20Carrer%20de%20Francesc%20Juli%C3%A0%2C%2054%2C%2007008%20Palma",
   shortDescription: {
     es: "Organización social fundada en 1964 en Palma dedicada a la atención integral de personas con discapacidad intelectual y sus familias a lo largo de todas las etapas vitales.",
     en: "Social organization founded in 1964 in Palma providing holistic support for individuals with intellectual disabilities and their families across all life stages.",
@@ -100,13 +94,6 @@ export const mater_misericordiae_mallorca_serveis_socials: ServiceItem = {
       "Werkstätten für Holzhandwerk, Wäscherei und Landschaftsgärtnerei",
       "Betreute Wohnformen mitten im Stadtteil und begleitete Freizeitangebote",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 390,
-      url: "https://www.google.com/maps/search/?api=1&query=Mater%20Misericordiae%20Mallorca%20-%20Educaci%C3%B3%20Especial%20%26%20Resid%C3%A8ncies%20Carrer%20de%20Francesc%20Juli%C3%A0%2C%2054%2C%2007008%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

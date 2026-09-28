@@ -31,12 +31,6 @@ export const vip_cars_mallorca_luxury_rental_aeroport: ServiceItem = {
   schedule: "Lunes a Domingo 24h (Entrega en Aeropuerto y Villas)",
   image: "/images/services/vip-cars-mallorca-luxury-rental-aeroport.jpg",
   gallery: ["/images/services/vip-cars-mallorca-luxury-rental-aeroport.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=VIP%20Cars%20Mallorca%20Luxury%20Car%20Rental%20Son%20Sant%20Joan%20Cam%C3%AD%20de%20Son%20Fangos%2C%20142%2C%2007007%20Palma%20(Aeroport)%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=VIP%20Cars%20Mallorca%20Luxury%20Car%20Rental%20Son%20Sant%20Joan%20Cam%C3%AD%20de%20Son%20Fangos%2C%20142%2C%2007007%20Palma%20(Aeroport)%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=VIP%20Cars%20Mallorca%20Luxury%20Car%20Rental%20Son%20Sant%20Joan%20Cam%C3%AD%20de%20Son%20Fangos%2C%20142%2C%2007007%20Palma%20(Aeroport)%2C%20Illes%20Balears",
   shortDescription: {
     es: "Alquiler de vehículos de alta gama y deportivos en el Aeropuerto de Palma y entrega directa en villas de Mallorca. Porsche, Mercedes-Benz, Range Rover y cabrios.",
     en: "Luxury and prestige sports car rentals at Palma Airport and direct delivery to villas across Mallorca. Porsche, Mercedes-Benz, Range Rover, and convertibles.",
@@ -114,13 +108,6 @@ export const vip_cars_mallorca_luxury_rental_aeroport: ServiceItem = {
       "SUV de luxe per a vil·les a Mallorca",
     ],
     de: ["Sportwagen- und Cabrio-Vermietung", "VIP-Übergabe am Privatjet-Terminal", "Luxus-SUVs für Fincaurlauber"],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 210,
-      url: "https://www.google.com/maps/search/?api=1&query=VIP%20Cars%20Mallorca%20Luxury%20Car%20Rental%20Son%20Sant%20Joan%20Cam%C3%AD%20de%20Son%20Fangos%2C%20142%2C%2007007%20Palma%20(Aeroport)%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

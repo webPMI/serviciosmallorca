@@ -28,9 +28,6 @@ export const libreriaAllIOliPalma: ServiceItem = {
   schedule: "Lunes a Sábado: 10:00 - 14:00 | 16:30 - 20:00",
   image: "/images/services/libreria-all-i-oli-palma.jpg",
   gallery: ["/images/services/libreria-all-i-oli-palma.jpg"],
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Libreria+All+i+Oli+Palma+Carrer+de+la+Concepcio+5",
-  appleMapsUrl: "https://maps.apple.com/?q=Libreria+All+i+Oli+Palma",
-  bingMapsUrl: "https://bing.com/maps?q=Libreria+All+i+Oli+Palma",
   shortDescription: {
     es: "Librería independiente en el corazón del casco histórico de Palma, especializada en literatura catalana, balear y española, con amplio fondo en inglés, alemán y francés.",
     en: "Independent bookshop in the heart of Palma's historic quarter, specializing in Catalan, Balearic, and Spanish literature, with a wide selection in English, German, and French.",
@@ -94,13 +91,6 @@ export const libreriaAllIOliPalma: ServiceItem = {
       "Monatlicher Lesekreis für Erwachsene mit quartalsweisem Gastautor",
       "Kreativschreib- und Illustrationsworkshops für Kinder und Erwachsene",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 287,
-      url: "https://www.google.com/maps/search/?api=1&query=Libreria+All+i+Oli+Palma",
-    },
   },
   createdAt: "2026-09-05",
   lastUpdatedAt: "2026-09-05",

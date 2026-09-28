@@ -31,12 +31,6 @@ export const talleres_son_castello_reparaciones_palma: ServiceItem = {
   schedule: "Lunes a Viernes: 08:00 - 18:00",
   image: "/images/services/talleres-son-castello-reparaciones-palma.jpg",
   gallery: ["/images/services/talleres-son-castello-reparaciones-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Talleres%20Son%20Castell%C3%B3%20Electromec%C3%A1nica%20%26%20Chapa%20Palma%20Gremi%20de%20Teixidors%2C%2031%2C%20Pol%C3%ADgono%20Son%20Castell%C3%B3%2C%2007009%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Talleres%20Son%20Castell%C3%B3%20Electromec%C3%A1nica%20%26%20Chapa%20Palma%20Gremi%20de%20Teixidors%2C%2031%2C%20Pol%C3%ADgono%20Son%20Castell%C3%B3%2C%2007009%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Talleres%20Son%20Castell%C3%B3%20Electromec%C3%A1nica%20%26%20Chapa%20Palma%20Gremi%20de%20Teixidors%2C%2031%2C%20Pol%C3%ADgono%20Son%20Castell%C3%B3%2C%2007009%20Palma",
   shortDescription: {
     es: "Taller multimarca de mecánica integral, electricidad y chapa y pintura en el Polígono Son Castelló de Palma: diagnosis computerizada, pre-ITV y mantenimiento garantizado.",
     en: "Multi-brand mechanical, electrical, and body shop in Palma's Son Castelló industrial park: computerized diagnostics, pre-ITV testing, and guaranteed maintenance.",
@@ -100,13 +94,6 @@ export const talleres_son_castello_reparaciones_palma: ServiceItem = {
       "Fehlerspeicher-Diagnose für Motorsteuerung und Elektronik",
       "TÜV-Service (ITV-Vorführung)",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.6,
-      reviewCount: 195,
-      url: "https://www.google.com/maps/search/?api=1&query=Talleres%20Son%20Castell%C3%B3%20Electromec%C3%A1nica%20%26%20Chapa%20Palma%20Gremi%20de%20Teixidors%2C%2031%2C%20Pol%C3%ADgono%20Son%20Castell%C3%B3%2C%2007009%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

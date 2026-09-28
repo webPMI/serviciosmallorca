@@ -21,9 +21,6 @@ export const roigPremium: ServiceItem = {
   whatsapp: "+34 971 65 71 10",
   email: "rentacar@roig.com",
   website: "https://roig.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Roig+Premium+Mallorca+Airport",
-  appleMapsUrl: "https://maps.apple.com/?q=Roig+Premium+Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Roig+Mallorca",
   coordinates: {
     lat: 39.5517,
     lng: 2.7388,
@@ -175,22 +172,13 @@ export const roigPremium: ServiceItem = {
       specialty: "Gestión de Transporte y Movilidad Balear",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 520,
-      url: "https://www.google.com/maps/search/?api=1&query=Roig+Rent+a+Car+Mallorca",
-    },
-    totalReviewsAggregated: 520,
-    overallWeightedRating: 4.8,
-  },
   reviews: [
     {
       id: "rev-roig-1",
       authorName: "Markus Becker",
       rating: 5,
       date: "2025-07-14",
-      platform: "google_maps",
+      platform: "direct",
       language: "de",
       comment:
         "Perfekter VIP-Transfer vom Flughafen Palma direkt zu unserer Finca in Santanyí. Der Fahrer war überpünktlich und äußerst professionell.",
@@ -201,7 +189,7 @@ export const roigPremium: ServiceItem = {
       authorName: "Elena Miró",
       rating: 5,
       date: "2025-06-20",
-      platform: "google_maps",
+      platform: "direct",
       language: "es",
       comment:
         "Servicio impecable para la boda de mi hermana. Las furgonetas Mercedes Clase V estaban relucientes y los chóferes fueron amabilísimos.",

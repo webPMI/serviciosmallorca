@@ -31,12 +31,6 @@ export const ib_red_telecomunicaciones_manacor: ServiceItem = {
   schedule: "Lunes a Viernes: 09:00 - 14:00, 16:00 - 19:30 | Sábado: 09:30 - 13:00 | Domingo: Cerrado",
   image: "/images/services/ib-red-telecomunicaciones-manacor.jpg",
   gallery: ["/images/services/ib-red-telecomunicaciones-manacor.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=IB-Red%20Telecomunicaciones%20Manacor%20Pla%C3%A7a%20del%20Rector%20Rub%C3%AD%2C%209%2C%2007500%20Manacor%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=IB-Red%20Telecomunicaciones%20Manacor%20Pla%C3%A7a%20del%20Rector%20Rub%C3%AD%2C%209%2C%2007500%20Manacor%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=IB-Red%20Telecomunicaciones%20Manacor%20Pla%C3%A7a%20del%20Rector%20Rub%C3%AD%2C%209%2C%2007500%20Manacor%2C%20Illes%20Balears",
   shortDescription: {
     es: "Operador balear de telecomunicaciones nacido en Mallorca, especialista en llevar fibra óptica simétrica, WiMAX y conectividad de alta velocidad a fincas rústicas y zonas rurales.",
     en: "Balearic telecom operator founded in Mallorca, specialized in bringing high-speed symmetric optical fiber, WiMAX, and broadband internet to rural fincas and remote locations.",
@@ -100,13 +94,6 @@ export const ib_red_telecomunicaciones_manacor: ServiceItem = {
       "Mobilfunktarife im 5G-Netz, Festnetz und virtuelle Telefonanlagen für Firmen",
       "Professionelle WLAN-Mesh-Netzwerke für lückenlosen Empfang im ganzen Haus und Außenbereich",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 350,
-      url: "https://www.google.com/maps/search/?api=1&query=IB-Red%20Telecomunicaciones%20Manacor%20Pla%C3%A7a%20del%20Rector%20Rub%C3%AD%2C%209%2C%2007500%20Manacor%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

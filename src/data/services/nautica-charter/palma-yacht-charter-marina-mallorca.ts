@@ -31,12 +31,6 @@ export const palma_yacht_charter_marina_mallorca: ServiceItem = {
   schedule: "Lunes a Domingo: 08:30 - 20:30",
   image: "/images/services/palma-yacht-charter-marina-mallorca.jpg",
   gallery: ["/images/services/palma-yacht-charter-marina-mallorca.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Palma%20Yacht%20Charter%20Marina%20de%20Palma%20Muelle%20Mar%C3%ADtimo%2C%20s%2Fn%2C%2007014%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Palma%20Yacht%20Charter%20Marina%20de%20Palma%20Muelle%20Mar%C3%ADtimo%2C%20s%2Fn%2C%2007014%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Palma%20Yacht%20Charter%20Marina%20de%20Palma%20Muelle%20Mar%C3%ADtimo%2C%20s%2Fn%2C%2007014%20Palma",
   shortDescription: {
     es: "Empresa líder de chárter náutico en Palma de Mallorca: alquiler de yates a motor, catamaranes y veleros de lujo con tripulación profesional para travesías por Baleares.",
     en: "Premier yacht charter agency in Palma de Mallorca: luxury motor yachts, catamarans, and sailing yachts with professional skippers and crew.",
@@ -100,13 +94,6 @@ export const palma_yacht_charter_marina_mallorca: ServiceItem = {
       "Firmenevents, Teambuilding und private Feiern auf See",
       "VIP-Bootstransfers zwischen Mallorca und Ibiza",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 310,
-      url: "https://www.google.com/maps/search/?api=1&query=Palma%20Yacht%20Charter%20Marina%20de%20Palma%20Muelle%20Mar%C3%ADtimo%2C%20s%2Fn%2C%2007014%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

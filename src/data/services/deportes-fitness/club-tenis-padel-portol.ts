@@ -29,8 +29,6 @@ export const CLUB_TENIS_PADEL_PORTOL: ServiceItem = {
   image: "/images/sports/club-tenis-padel-portol.jpg",
   gallery: ["/images/sports/club-tenis-padel-portol.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007021",
-  appleMapsUrl: "https://maps.apple.com/?q=Club%20de%20Tenis%20%26%20P%C3%A1del%20P%C3%B2rtol+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Club%20de%20Tenis%20%26%20P%C3%A1del%20P%C3%B2rtol+Mallorca",
   shortDescription: {
     es: "Club deportivo tradicional en Pòrtol con pistas de tierra batida, pádel, piscina y restaurante.",
     en: "Charming traditional sports club in Pòrtol with red clay tennis, glass padel, pool, and restaurant.",
@@ -94,13 +92,6 @@ export const CLUB_TENIS_PADEL_PORTOL: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 320,
-      url: "https://www.google.com/maps?cid=12007021",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

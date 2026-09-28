@@ -31,12 +31,6 @@ export const mezzo_magic_port_de_soller_charter: ServiceItem = {
   schedule: "Lunes a Domingo: 08:00 - 21:00 (Abril a Octubre)",
   image: "/images/services/mezzo-magic-port-de-soller-charter.jpg",
   gallery: ["/images/services/mezzo-magic-port-de-soller-charter.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Mezzo%20Magic%20Luxury%20Boat%20Charter%20(Port%20de%20S%C3%B3ller)%20Passeig%20Es%20Traves%2C%20s%2Fn%2C%20Marina%20Port%20de%20S%C3%B3ller%2C%2007108%20Port%20de%20S%C3%B3ller",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Mezzo%20Magic%20Luxury%20Boat%20Charter%20(Port%20de%20S%C3%B3ller)%20Passeig%20Es%20Traves%2C%20s%2Fn%2C%20Marina%20Port%20de%20S%C3%B3ller%2C%2007108%20Port%20de%20S%C3%B3ller",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Mezzo%20Magic%20Luxury%20Boat%20Charter%20(Port%20de%20S%C3%B3ller)%20Passeig%20Es%20Traves%2C%20s%2Fn%2C%20Marina%20Port%20de%20S%C3%B3ller%2C%2007108%20Port%20de%20S%C3%B3ller",
   shortDescription: {
     es: "Empresa de chárter náutico de lujo en Port de Sóller: excursiones privadas en lancha y yate a Sa Calobra, Cala Deià, Sa Foradada y calas secretas de la Tramuntana.",
     en: "Luxury private yacht charter company in Port de Sóller: bespoke boat cruises to Sa Calobra, Cala Deià, Sa Foradada, and secluded Tramuntana sea caves.",
@@ -100,13 +94,6 @@ export const mezzo_magic_port_de_soller_charter: ServiceItem = {
       "Bootstransfer zu bekannten Küstenrestaurants wie Ca's Patró March oder Sa Foradada",
       "Hochwertige Schnorchelausrüstung und Stand-Up-Paddles für alle Gäste an Bord",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 380,
-      url: "https://www.google.com/maps/search/?api=1&query=Mezzo%20Magic%20Luxury%20Boat%20Charter%20(Port%20de%20S%C3%B3ller)%20Passeig%20Es%20Traves%2C%20s%2Fn%2C%20Marina%20Port%20de%20S%C3%B3ller%2C%2007108%20Port%20de%20S%C3%B3ller",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

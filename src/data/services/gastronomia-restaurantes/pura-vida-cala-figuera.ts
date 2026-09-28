@@ -27,9 +27,6 @@ export const puraVidaCalaFiguera: ServiceItem = {
   email: "info@puravida-mallorca.com",
   website: "https://www.instagram.com/puravidamallorca/",
   menuUrl: "https://www.instagram.com/puravidamallorca/",
-  googleMapsUrl: "https://www.google.com/maps/search/Restaurante+Pura+Vida+Cala+Figuera+Santanyi+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante+Pura+Vida+Cala+Figuera",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante+Pura+Vida+Cala+Figuera",
   tags: [
     "zona:santanyi-migjorn",
     "zona:cala-figuera",

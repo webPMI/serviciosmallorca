@@ -28,9 +28,6 @@ export const stpShipyardPalma: ServiceItem = {
   email: "info@stp-palma.com",
   website: "https://stp-palma.com",
   menuUrl: "https://stp-palma.com",
-  googleMapsUrl: "https://www.google.com/maps/search/STP+Shipyard+Palma+Muelle+Viejo+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=STP+Shipyard+Palma",
-  bingMapsUrl: "https://www.bing.com/maps?q=STP+Shipyard+Palma",
   tags: [
     "zona:palma",
     "zona:paseo-maritimo",
@@ -148,7 +145,7 @@ export const stpShipyardPalma: ServiceItem = {
       comment:
         "Top-class facility with world-class contractors. The open yard flexibility makes winter refits seamless. Outstanding management and security.",
       date: "2026-08-18",
-      platform: "google_maps",
+      platform: "direct",
       language: "en",
     },
     {
@@ -158,7 +155,7 @@ export const stpShipyardPalma: ServiceItem = {
       comment:
         "Hervorragende Werft-Infrastruktur im Hafen von Palma. Schneller Travelift-Service und direkter Zugang zu den besten Technikern der Insel.",
       date: "2026-07-29",
-      platform: "google_maps",
+      platform: "direct",
       language: "de",
     },
   ],

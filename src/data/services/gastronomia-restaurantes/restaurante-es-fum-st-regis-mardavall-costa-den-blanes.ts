@@ -31,12 +31,6 @@ export const restaurante_es_fum_st_regis_mardavall_costa_den_blanes: ServiceItem
   schedule: "Miércoles a Domingo: 19:00 - 22:30 (Marzo a Octubre)",
   image: "/images/services/restaurante-es-fum-st-regis-mardavall-costa-den-blanes.jpg",
   gallery: ["/images/services/restaurante-es-fum-st-regis-mardavall-costa-den-blanes.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Restaurante%20Es%20Fum%20(The%20St.%20Regis%20Mardavall%20Mallorca)%20Carretera%20Palma-Andratx%2C%2019%2C%2007181%20Costa%20d'en%20Blanes%2C%20Calvi%C3%A0",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Restaurante%20Es%20Fum%20(The%20St.%20Regis%20Mardavall%20Mallorca)%20Carretera%20Palma-Andratx%2C%2019%2C%2007181%20Costa%20d'en%20Blanes%2C%20Calvi%C3%A0",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Restaurante%20Es%20Fum%20(The%20St.%20Regis%20Mardavall%20Mallorca)%20Carretera%20Palma-Andratx%2C%2019%2C%2007181%20Costa%20d'en%20Blanes%2C%20Calvi%C3%A0",
   shortDescription: {
     es: "Restaurante con 1 Estrella Michelin en The St. Regis Mardavall: menú degustación de vanguardia mediterránea creado por el chef Miguel Navarro frente a jardines señoriales y el mar.",
     en: "One Michelin-Starred restaurant at The St. Regis Mardavall: avant-garde Mediterranean tasting menus by chef Miguel Navarro overlooking stately gardens and the sea.",
@@ -100,13 +94,6 @@ export const restaurante_es_fum_st_regis_mardavall_costa_den_blanes: ServiceItem
       "Romantische Abendessen auf der Gartenterrasse",
       "Online-Tischreservierung mit Vorbestätigung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 380,
-      url: "https://www.google.com/maps/search/?api=1&query=Restaurante%20Es%20Fum%20(The%20St.%20Regis%20Mardavall%20Mallorca)%20Carretera%20Palma-Andratx%2C%2019%2C%2007181%20Costa%20d'en%20Blanes%2C%20Calvi%C3%A0",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

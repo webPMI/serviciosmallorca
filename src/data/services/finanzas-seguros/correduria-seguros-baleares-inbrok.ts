@@ -76,10 +76,6 @@ export const correduriaSegurosBalearesInbrok: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Inbrok%20Corredur%C3%ADa%20de%20Seguros%20Calvi%C3%A0%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Inbrok%20Corredur%C3%ADa%20de%20Seguros%20Calvi%C3%A0%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Inbrok%20Corredur%C3%ADa%20de%20Seguros%20Calvi%C3%A0%20Mallorca",
   pricing: {
     startingPrice: "Consultar servicios y presupuestos personalizados",
     rateType: "custom_quote",
@@ -106,21 +102,4 @@ export const correduriaSegurosBalearesInbrok: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 190,
-      url: "https://www.google.com/maps/search/?api=1&query=Inbrok%20Corredur%C3%ADa%20de%20Seguros%20Calvi%C3%A0%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Inbrok%20Corredur%C3%ADa%20de%20Seguros%20Calvi%C3%A0%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.7,
-      reviewCount: 19,
-      url: "https://www.bing.com/maps?q=Inbrok%20Corredur%C3%ADa%20de%20Seguros%20Calvi%C3%A0%20Mallorca",
-    },
-    totalReviewsAggregated: 209,
-    overallWeightedRating: 4.8,
-  },
 };

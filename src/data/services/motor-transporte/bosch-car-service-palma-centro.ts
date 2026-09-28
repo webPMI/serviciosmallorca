@@ -76,10 +76,6 @@ export const boschCarServicePalmaCentro: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Taller%20Mec%C3%A1nico%20Bosch%20Car%20Service%20Palma%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Taller%20Mec%C3%A1nico%20Bosch%20Car%20Service%20Palma%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Taller%20Mec%C3%A1nico%20Bosch%20Car%20Service%20Palma%20Mallorca",
   pricing: {
     startingPrice: "Presupuesto y atención a medida",
     rateType: "tiered",
@@ -106,21 +102,4 @@ export const boschCarServicePalmaCentro: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 640,
-      url: "https://www.google.com/maps/search/?api=1&query=Taller%20Mec%C3%A1nico%20Bosch%20Car%20Service%20Palma%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Taller%20Mec%C3%A1nico%20Bosch%20Car%20Service%20Palma%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.7,
-      reviewCount: 64,
-      url: "https://www.bing.com/maps?q=Taller%20Mec%C3%A1nico%20Bosch%20Car%20Service%20Palma%20Mallorca",
-    },
-    totalReviewsAggregated: 704,
-    overallWeightedRating: 4.8,
-  },
 };

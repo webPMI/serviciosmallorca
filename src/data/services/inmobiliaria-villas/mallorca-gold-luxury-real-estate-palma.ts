@@ -31,12 +31,6 @@ export const mallorca_gold_luxury_real_estate_palma: ServiceItem = {
   schedule: "Lunes a Viernes: 09:30 - 18:30 (Sábados con cita previa)",
   image: "/images/services/mallorca-gold-luxury-real-estate-palma.jpg",
   gallery: ["/images/services/mallorca-gold-luxury-real-estate-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Mallorca%20Gold%20Luxury%20Real%20Estate%20Paseo%20Mar%C3%ADtimo%2C%2038%2C%2007014%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Mallorca%20Gold%20Luxury%20Real%20Estate%20Paseo%20Mar%C3%ADtimo%2C%2038%2C%2007014%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Mallorca%20Gold%20Luxury%20Real%20Estate%20Paseo%20Mar%C3%ADtimo%2C%2038%2C%2007014%20Palma",
   shortDescription: {
     es: "Agencia inmobiliaria exclusiva para propiedades de ultra-lujo en Mallorca: villas frente al mar en Son Vida, Andratx y Portals, fincas históricas señoriales y áticos de diseño.",
     en: "Boutique ultra-luxury real estate agency in Mallorca: prime waterfront villas in Son Vida, Andratx, Portals, historic country estates, and design penthouses.",
@@ -100,13 +94,6 @@ export const mallorca_gold_luxury_real_estate_palma: ServiceItem = {
       "Professionelle Immobilienbewertung und Marktanalyse",
       "Diskreter Verkauf über Non-Disclosure-Agreements (NDA)",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 180,
-      url: "https://www.google.com/maps/search/?api=1&query=Mallorca%20Gold%20Luxury%20Real%20Estate%20Paseo%20Mar%C3%ADtimo%2C%2038%2C%2007014%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

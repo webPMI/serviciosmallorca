@@ -28,9 +28,6 @@ export const restauranteRocamarPortAndratx: ServiceItem = {
   email: "info@rocamarrestaurante.com",
   website: "https://rocamarrestaurante.com",
   menuUrl: "https://rocamarrestaurante.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Restaurante+Rocamar+Port+d+Andratx+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante+Rocamar+Port+Andratx",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante+Rocamar+Port+Andratx",
   tags: [
     "zona:calvia-andratx",
     "zona:port-d-andratx",

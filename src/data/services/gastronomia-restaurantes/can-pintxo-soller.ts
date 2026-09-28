@@ -27,9 +27,6 @@ export const canPintxoSoller: ServiceItem = {
   email: "info@canpintxo.com",
   website: "https://canpintxo.com",
   menuUrl: "https://canpintxo.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Restaurante+Can+Pintxo+Soller+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante+Can+Pintxo+Soller",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante+Can+Pintxo+Soller",
   tags: ["zona:tramuntana", "zona:soller", "product:premium", "mod:en-local", "aud:parejas", "temps:todo-el-ano"],
   capabilities: {
     terrace: true,

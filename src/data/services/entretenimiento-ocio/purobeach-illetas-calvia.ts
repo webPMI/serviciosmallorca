@@ -31,12 +31,6 @@ export const purobeach_illetas_calvia: ServiceItem = {
   schedule: "Lunes a Domingo: 11:00 - 22:00 (Temporada de Abril a Octubre)",
   image: "/images/services/purobeach-illetas-calvia.jpg",
   gallery: ["/images/services/purobeach-illetas-calvia.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Purobeach%20Illetas%20Calvi%C3%A0%20Passeig%20Illetes%2C%2058%2C%2007181%20Illetes%2C%20Calvi%C3%A0",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Purobeach%20Illetas%20Calvi%C3%A0%20Passeig%20Illetes%2C%2058%2C%2007181%20Illetes%2C%20Calvi%C3%A0",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Purobeach%20Illetas%20Calvi%C3%A0%20Passeig%20Illetes%2C%2058%2C%2007181%20Illetes%2C%20Calvi%C3%A0",
   shortDescription: {
     es: "Exclusivo oasis mediterráneo en los acantilados de Illetas: camas balinesas frente al mar, gastronomía M3, spa y sesiones de DJ.",
     en: "Exclusive cliffside Mediterranean beach club in Illetas: sea-facing Balinese daybeds, M3 cuisine, spa treatments, and sunset DJ sessions.",
@@ -100,13 +94,6 @@ export const purobeach_illetas_calvia: ServiceItem = {
       "Puro Spa mit Massagen und Wellnessanwendungen im Freien",
       "DJ-Sets zum Sonnenuntergang und erlesene Signature-Cocktails",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 890,
-      url: "https://www.google.com/maps/search/?api=1&query=Purobeach%20Illetas%20Calvi%C3%A0%20Passeig%20Illetes%2C%2058%2C%2007181%20Illetes%2C%20Calvi%C3%A0",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

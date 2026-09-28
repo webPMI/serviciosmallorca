@@ -21,9 +21,6 @@ export const restauranteMarcFosh: ServiceItem = {
   whatsapp: "+34 971 72 01 14",
   email: "info@marcfosh.com",
   website: "https://marcfosh.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Restaurante%20Marc%20Fosh%20Palma%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante%20Marc%20Fosh%20Palma%20Mallorca&ll=39.5746,2.6517",
-  bingMapsUrl: "https://www.bing.com/maps?where1=Restaurante%20Marc%20Fosh%20Palma%20Mallorca",
   coordinates: { lat: 39.5746, lng: 2.6517 },
   schedule: "Miércoles a Domingo: 13:00 - 15:00 | 19:00 - 22:00",
   image: "https://www.marcfosh.com/wp-content/uploads/2026/08/MarcFosh-y-Davis-Mariottini.webp",
@@ -132,30 +129,13 @@ export const restauranteMarcFosh: ServiceItem = {
       instagramHandle: "@marcfosh",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.6,
-      reviewCount: 1120,
-      url: "https://www.google.com/maps/search/?api=1&query=Restaurante%20Marc%20Fosh%20Palma%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Restaurante%20Marc%20Fosh%20Palma%20Mallorca&ll=39.5746,2.6517",
-    },
-    bingMaps: {
-      rating: 4.6,
-      reviewCount: 1120,
-      url: "https://www.bing.com/maps?where1=Restaurante%20Marc%20Fosh%20Palma%20Mallorca",
-    },
-    totalReviewsAggregated: 1120,
-    overallWeightedRating: 4.6,
-  },
   reviews: [
     {
       id: "rev-fosh-1",
       authorName: "David Harrison",
       rating: 5,
       date: "2025-07-14",
-      platform: "google_maps",
+      platform: "direct",
       language: "en",
       comment:
         "An extraordinary culinary journey. Every course of the tasting menu was balanced and celebrated Mallorcan ingredients.",
@@ -166,7 +146,7 @@ export const restauranteMarcFosh: ServiceItem = {
       authorName: "Marta Rullán",
       rating: 5,
       date: "2025-08-02",
-      platform: "google_maps",
+      platform: "direct",
       language: "es",
       comment:
         "Experiencia gastronómica sublime en el centro de Palma. El patio del convento es mágico y el maridaje insuperable.",

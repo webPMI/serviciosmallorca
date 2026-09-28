@@ -28,9 +28,6 @@ export const bodegasAngelSantaMaria: ServiceItem = {
   email: "info@bodegasangel.com",
   website: "https://www.bodegasangel.com",
   menuUrl: "https://www.bodegasangel.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Bodegas+Angel+Santa+Maria+del+Cami+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Bodegas+Angel+Santa+Maria+del+Cami",
-  bingMapsUrl: "https://www.bing.com/maps?q=Bodegas+Angel+Santa+Maria+del+Cami",
   tags: [
     "zona:raiguer-pla",
     "zona:santa-maria-del-cami",

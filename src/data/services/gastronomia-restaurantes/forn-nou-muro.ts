@@ -21,9 +21,6 @@ export const fornNouMuro: ServiceItem = {
   whatsapp: "+34 971 53 71 20",
   email: "info@fornnoumuro.com",
   website: "https://fornnoumuro.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Forn%20Nou%20Muro",
-  appleMapsUrl: "https://maps.apple.com/?q=Forn%20Nou%20Muro&ll=39.7360,3.0560",
-  bingMapsUrl: "https://www.bing.com/maps?where1=Forn%20Nou%20Muro",
   coordinates: { lat: 39.736, lng: 3.056 },
   schedule: "Lunes a Domingo: 07:00 - 14:00 | 17:00 - 20:30 (Abierto todos los días)",
   lastVerifiedAt: "2026-08-25",
@@ -130,30 +127,13 @@ export const fornNouMuro: ServiceItem = {
       instagramHandle: "@fornnoumuro",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 280,
-      url: "https://www.google.com/maps/search/?api=1&query=Forn%20Nou%20Muro",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Forn%20Nou%20Muro&ll=39.7360,3.0560",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 280,
-      url: "https://www.bing.com/maps?where1=Forn%20Nou%20Muro",
-    },
-    totalReviewsAggregated: 280,
-    overallWeightedRating: 4.8,
-  },
   reviews: [
     {
       id: "rev-fnm-1",
       authorName: "Antoni Moranta",
       rating: 5,
       date: "2025-05-18",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
       comment:
         "Forn de poble autèntic a Muro. El pa de xeixa cuit a la llenya té una aroma increïble i dura dies fresc. Les ensaïmades de crema són de les millors de Mallorca.",
@@ -164,7 +144,7 @@ export const fornNouMuro: ServiceItem = {
       authorName: "Sabine Becker",
       rating: 5,
       date: "2025-06-25",
-      platform: "google_maps",
+      platform: "direct",
       language: "de",
       comment:
         "Fantastische traditionelle Holzofen-Bäckerei in Muro! Wunderbares dunkles Brot und köstliche Ensaimadas. Sehr netter Familienbetrieb.",

@@ -31,12 +31,6 @@ export const llibreria_drac_magic_palma: ServiceItem = {
   schedule: "Lunes a Viernes: 10:00 - 13:30, 16:30 - 20:00 | Sábado: 10:00 - 14:00 | Domingo: Cerrado",
   image: "/images/services/llibreria-drac-magic-palma.jpg",
   gallery: ["/images/services/llibreria-drac-magic-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Llibreria%20Drac%20M%C3%A0gic%20Palma%20Carrer%20de%20Jeroni%20Antich%2C%201%2C%2007002%20Palma%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Llibreria%20Drac%20M%C3%A0gic%20Palma%20Carrer%20de%20Jeroni%20Antich%2C%201%2C%2007002%20Palma%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Llibreria%20Drac%20M%C3%A0gic%20Palma%20Carrer%20de%20Jeroni%20Antich%2C%201%2C%2007002%20Palma%2C%20Illes%20Balears",
   shortDescription: {
     es: "Librería infantil y juvenil de referencia en Palma, especializada en álbumes ilustrados, literatura infantil en catalán y castellano, juegos cooperativos y pedagogía creativa.",
     en: "Palma's beloved independent children's bookstore, specializing in gorgeous illustrated storybooks, young adult literature, cooperative games, and educational toys.",
@@ -100,13 +94,6 @@ export const llibreria_drac_magic_palma: ServiceItem = {
       "Fachberatung für Kindergärten, Schulen und private Lesekreise",
       "Live-Märchenerzählungen und Signierstunden mit bekannten Illustratoren",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 290,
-      url: "https://www.google.com/maps/search/?api=1&query=Llibreria%20Drac%20M%C3%A0gic%20Palma%20Carrer%20de%20Jeroni%20Antich%2C%201%2C%2007002%20Palma%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

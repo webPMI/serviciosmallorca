@@ -21,9 +21,6 @@ export const electricidadBinissalem: ServiceItem = {
   whatsapp: "+34 620 44 55 66",
   email: "info@electricidadbinissalem.com",
   website: "https://electricidadbinissalem.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Electricidad%20Domotica%20Binissalem",
-  appleMapsUrl: "https://maps.apple.com/?q=Electricidad%20Domotica%20Binissalem&ll=39.6880,2.8420",
-  bingMapsUrl: "https://www.bing.com/maps?where1=Electricidad%20Domotica%20Binissalem",
   coordinates: { lat: 39.688, lng: 2.842 },
   schedule: "Lunes a Viernes: 08:00 - 18:30 (Servicio de Urgencias Eléctricas 24h)",
   lastVerifiedAt: "2026-08-25",
@@ -131,30 +128,13 @@ export const electricidadBinissalem: ServiceItem = {
       instagramHandle: "@electricidadbinissalem",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 110,
-      url: "https://www.google.com/maps/search/?api=1&query=Electricidad%20Domotica%20Binissalem",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Electricidad%20Domotica%20Binissalem&ll=39.6880,2.8420",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 110,
-      url: "https://www.bing.com/maps?where1=Electricidad%20Domotica%20Binissalem",
-    },
-    totalReviewsAggregated: 110,
-    overallWeightedRating: 4.8,
-  },
   reviews: [
     {
       id: "rev-edb-1",
       authorName: "Joan Bibiloni",
       rating: 5,
       date: "2025-05-14",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
       comment:
         "Ens varen instal·lar les plaques solars amb bateria i la domòtica de la casa a Binissalem. Molt seriosos, varen tramitar totes les subvencions i tot funciona a la perfecció.",
@@ -165,7 +145,7 @@ export const electricidadBinissalem: ServiceItem = {
       authorName: "Thomas Fischer",
       rating: 5,
       date: "2025-06-20",
-      platform: "google_maps",
+      platform: "direct",
       language: "en",
       comment:
         "Outstanding electricians in central Mallorca! Upgraded our entire finca power panel and installed an EV charger. Professional, clean work, and prompt communication.",

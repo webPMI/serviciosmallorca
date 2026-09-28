@@ -28,9 +28,6 @@ export const bodegasCanColetoPetra: ServiceItem = {
   email: "info@vinscancoleto.com",
   website: "https://www.vinscancoleto.com",
   menuUrl: "https://www.vinscancoleto.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Bodegas+Can+Coleto+Petra+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Bodegas+Can+Coleto+Petra",
-  bingMapsUrl: "https://www.bing.com/maps?q=Bodegas+Can+Coleto+Petra",
   tags: ["zona:raiguer-pla", "zona:petra", "product:premium", "mod:en-local", "aud:parejas", "temps:todo-el-ano"],
   capabilities: {
     parkingAvailable: true,

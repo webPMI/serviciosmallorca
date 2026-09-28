@@ -31,12 +31,6 @@ export const es_garrover_de_mallorca_algarroba_llucmajor: ServiceItem = {
   schedule: "Lunes a Viernes: 08:30 - 14:00, 15:30 - 18:30",
   image: "/images/services/es-garrover-de-mallorca-algarroba-llucmajor.jpg",
   gallery: ["/images/services/es-garrover-de-mallorca-algarroba-llucmajor.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Es%20Garrover%20de%20Mallorca%20Algarroba%20Llucmajor%20Carrer%20de%20Convent%2C%2018%2C%2007620%20Llucmajor",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Es%20Garrover%20de%20Mallorca%20Algarroba%20Llucmajor%20Carrer%20de%20Convent%2C%2018%2C%2007620%20Llucmajor",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Es%20Garrover%20de%20Mallorca%20Algarroba%20Llucmajor%20Carrer%20de%20Convent%2C%2018%2C%2007620%20Llucmajor",
   shortDescription: {
     es: "Pioneros en la valorización de la algarroba ecológica de Mallorca: cremas untables Johannis, harina bio y productos gourmet derivados del garrofer.",
     en: "Pioneers in high-grade organic Mallorcan carob: Johannis gourmet spreads, raw carob flour, and healthy superfoods.",
@@ -100,13 +94,6 @@ export const es_garrover_de_mallorca_algarroba_llucmajor: ServiceItem = {
       "Natürlicher Johannisbrotsirup als aromatisches Süßungsmittel für Küche und Bar",
       "Großgebinde für Bäckereien, gehobene Gastronomie und Bio-Supermärkte",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 76,
-      url: "https://www.google.com/maps/search/?api=1&query=Es%20Garrover%20de%20Mallorca%20Algarroba%20Llucmajor%20Carrer%20de%20Convent%2C%2018%2C%2007620%20Llucmajor",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

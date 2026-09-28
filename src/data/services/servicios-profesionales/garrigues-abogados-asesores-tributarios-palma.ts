@@ -31,12 +31,6 @@ export const garrigues_abogados_asesores_tributarios_palma: ServiceItem = {
   schedule: "Lunes a Jueves: 09:00 - 19:30; Viernes: 09:00 - 15:00",
   image: "/images/services/garrigues-abogados-asesores-tributarios-palma.jpg",
   gallery: ["/images/services/garrigues-abogados-asesores-tributarios-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Garrigues%20Abogados%20%26%20Asesores%20Tributarios%20Palma%20Pla%C3%A7a%20de%20Weyler%2C%203%2C%2007001%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Garrigues%20Abogados%20%26%20Asesores%20Tributarios%20Palma%20Pla%C3%A7a%20de%20Weyler%2C%203%2C%2007001%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Garrigues%20Abogados%20%26%20Asesores%20Tributarios%20Palma%20Pla%C3%A7a%20de%20Weyler%2C%203%2C%2007001%20Palma",
   shortDescription: {
     es: "Sede balear del despacho jurídico líder internacional en Palma: especialistas en derecho tributario, inmobiliario, mercantil, societario y laboral para empresas e inversores.",
     en: "Balearic office of the premier international law firm in Palma: specialized in tax, real estate, corporate, commercial, and labour law for enterprises and investors.",
@@ -100,13 +94,6 @@ export const garrigues_abogados_asesores_tributarios_palma: ServiceItem = {
       "Rechtliche Due-Diligence-Prüfungen bei Immobilientransaktionen",
       "Zivil- und wirtschaftsrechtliche Prozessführung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 310,
-      url: "https://www.google.com/maps/search/?api=1&query=Garrigues%20Abogados%20%26%20Asesores%20Tributarios%20Palma%20Pla%C3%A7a%20de%20Weyler%2C%203%2C%2007001%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

@@ -28,9 +28,6 @@ export const oftalmedicSalvaPalma: ServiceItem = {
   email: "info@oftalmedicsalva.com",
   website: "https://www.oftalmedicsalva.com",
   menuUrl: "https://www.oftalmedicsalva.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Oftalmedic+Salva+Cami+Son+Rapinya+1+Palma+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Oftalmedic+Salva+Palma",
-  bingMapsUrl: "https://www.bing.com/maps?q=Oftalmedic+Salva+Palma",
   tags: [
     "zona:palma",
     "product:lujo",
@@ -148,7 +145,7 @@ export const oftalmedicSalvaPalma: ServiceItem = {
       comment:
         "Em vaig operar de cataractes amb lents trifocals amb el Dr. Salvà i el resultat és immillorable. Veig perfectament de lluny i de prop sense ulleres.",
       date: "2026-08-12",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
     },
     {
@@ -158,7 +155,7 @@ export const oftalmedicSalvaPalma: ServiceItem = {
       comment:
         "Hervorragende Femto-LASIK Behandlung! Keine Schmerzen, absolut professionelles Team und ab dem nächsten Tag 100% Sehkraft. Sehr zu empfehlen.",
       date: "2026-07-28",
-      platform: "google_maps",
+      platform: "direct",
       language: "de",
     },
   ],

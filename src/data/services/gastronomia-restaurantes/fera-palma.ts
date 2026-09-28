@@ -27,9 +27,6 @@ export const feraPalma: ServiceItem = {
   email: "reservations@ferapalma.com",
   website: "https://ferapalma.com",
   menuUrl: "https://ferapalma.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Restaurante+Fera+Palma+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante+Fera+Palma",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante+Fera+Palma",
   tags: ["zona:palma", "zona:casco-antiguo", "product:lujo", "mod:en-local", "aud:parejas", "temps:todo-el-ano"],
   capabilities: {
     terrace: true,

@@ -76,10 +76,6 @@ export const marinelandMallorcaCostaDEnBlanes: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Marineland%20Mallorca%20Costa%20d'en%20Blanes%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Marineland%20Mallorca%20Costa%20d'en%20Blanes%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Marineland%20Mallorca%20Costa%20d'en%20Blanes%20Mallorca",
   pricing: {
     startingPrice: "Presupuesto y tarifas personalizadas",
     rateType: "tiered",
@@ -106,21 +102,4 @@ export const marinelandMallorcaCostaDEnBlanes: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.5,
-      reviewCount: 6700,
-      url: "https://www.google.com/maps/search/?api=1&query=Marineland%20Mallorca%20Costa%20d'en%20Blanes%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Marineland%20Mallorca%20Costa%20d'en%20Blanes%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.4,
-      reviewCount: 670,
-      url: "https://www.bing.com/maps?q=Marineland%20Mallorca%20Costa%20d'en%20Blanes%20Mallorca",
-    },
-    totalReviewsAggregated: 7370,
-    overallWeightedRating: 4.5,
-  },
 };

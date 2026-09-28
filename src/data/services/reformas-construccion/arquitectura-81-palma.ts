@@ -21,9 +21,6 @@ export const arquitectura81Palma: ServiceItem = {
   whatsapp: "+34 971 75 81 81",
   email: "estudio@a81.es",
   website: "https://a81.es",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Arquitectura%2081%20Palma",
-  appleMapsUrl: "https://maps.apple.com/?q=Arquitectura%2081%20Palma&ll=39.5824,2.6542",
-  bingMapsUrl: "https://www.bing.com/maps?where1=Arquitectura%2081%20Palma",
   coordinates: { lat: 39.5824, lng: 2.6542 },
   schedule: "Lunes a Viernes: 08:30 - 18:30 (Sábados y Domingos Cerrado)",
   lastVerifiedAt: "2026-08-25",
@@ -131,30 +128,13 @@ export const arquitectura81Palma: ServiceItem = {
       instagramHandle: "@a81_arquitectura",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 185,
-      url: "https://www.google.com/maps/search/?api=1&query=Arquitectura%2081%20Palma",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Arquitectura%2081%20Palma&ll=39.5824,2.6542",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 185,
-      url: "https://www.bing.com/maps?where1=Arquitectura%2081%20Palma",
-    },
-    totalReviewsAggregated: 185,
-    overallWeightedRating: 4.8,
-  },
   reviews: [
     {
       id: "rev-a81-1",
       authorName: "Karin Lindström",
       rating: 5,
       date: "2025-05-19",
-      platform: "google_maps",
+      platform: "direct",
       language: "en",
       comment:
         "Designed our contemporary villa in Santa Ponsa. Brilliant use of light, natural stone, and seamless outdoor living areas.",
@@ -165,7 +145,7 @@ export const arquitectura81Palma: ServiceItem = {
       authorName: "Miquel Àngel Bosch",
       rating: 5,
       date: "2025-07-08",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
       comment:
         "Molt bon estudi d'arquitectura a Palma. Gran sensibilitat en el tractament dels materials i la llum natural.",

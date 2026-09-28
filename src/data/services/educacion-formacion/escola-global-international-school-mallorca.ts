@@ -38,9 +38,6 @@ export const escola_global_international_school_mallorca: ServiceItem = {
   ],
   image: "/images/services/escola-global-international-school-mallorca.jpg",
   gallery: ["/images/services/escola-global-international-school-mallorca.jpg"],
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Escola+Global+International+School+Parc+Bit+Palma",
-  appleMapsUrl: "https://maps.apple.com/?q=Escola+Global+International+School+Parc+Bit+Palma",
-  bingMapsUrl: "https://www.bing.com/maps?q=Escola+Global+International+School+Parc+Bit+Palma",
   shortDescription: {
     es: "Escola Global es un colegio internacional de referencia en Parc Bit (Palma), ofreciendo un modelo educativo holístico bilingüe británico-español integrado en la naturaleza.",
     en: "Escola Global is a leading international school in Parc Bit (Palma), delivering a holistic bilingual British-Spanish curriculum surrounded by nature.",

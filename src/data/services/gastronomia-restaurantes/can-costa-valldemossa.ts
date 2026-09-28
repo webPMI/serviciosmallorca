@@ -28,9 +28,6 @@ export const canCostaValldemossa: ServiceItem = {
   email: "reservas@cancostavalldemossa.com",
   website: "https://www.cancostavalldemossa.com",
   menuUrl: "https://www.cancostavalldemossa.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Restaurante+Can+Costa+Valldemossa+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante+Can+Costa+Valldemossa",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante+Can+Costa+Valldemossa",
   tags: [
     "zona:tramuntana",
     "zona:valldemossa",

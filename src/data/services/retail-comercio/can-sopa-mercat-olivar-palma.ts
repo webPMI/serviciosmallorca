@@ -31,12 +31,6 @@ export const can_sopa_mercat_olivar_palma: ServiceItem = {
   schedule: "Lunes a Sábado: 07:30 - 15:00 | Domingo: Cerrado",
   image: "/images/services/can-sopa-mercat-olivar-palma.jpg",
   gallery: ["/images/services/can-sopa-mercat-olivar-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Can%20Sopa%20Formatges%20%26%20Xarcuteria%20Mercat%20de%20l'Olivar%20Mercat%20de%20l'Olivar%2C%20Puesto%2044%2C%2007002%20Palma%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Can%20Sopa%20Formatges%20%26%20Xarcuteria%20Mercat%20de%20l'Olivar%20Mercat%20de%20l'Olivar%2C%20Puesto%2044%2C%2007002%20Palma%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Can%20Sopa%20Formatges%20%26%20Xarcuteria%20Mercat%20de%20l'Olivar%20Mercat%20de%20l'Olivar%2C%20Puesto%2044%2C%2007002%20Palma%2C%20Illes%20Balears",
   shortDescription: {
     es: "Puesto gourmet centenario en el Mercat de l'Olivar de Palma, célebre por su afinado de quesos mallorquines y europeos, sobrasadas de porc negre y jamón ibérico de bellota.",
     en: "Renowned gourmet cheese and charcuterie counter at Palma's Mercat de l'Olivar, famed for cave-aged Mallorcan and European cheeses, heritage black pig sobrasada, and acorn-fed Iberian ham.",
@@ -100,13 +94,6 @@ export const can_sopa_mercat_olivar_palma: ServiceItem = {
       "Flugtaugliche Vakuumverpackung für den sicheren Transport im Reisegepäck",
       "Verkostung vor Ort und kompetente Weinbegleitungsempfehlungen",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 195,
-      url: "https://www.google.com/maps/search/?api=1&query=Can%20Sopa%20Formatges%20%26%20Xarcuteria%20Mercat%20de%20l'Olivar%20Mercat%20de%20l'Olivar%2C%20Puesto%2044%2C%2007002%20Palma%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

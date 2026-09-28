@@ -31,12 +31,6 @@ export const scutum_seguridad_baleares_palma: ServiceItem = {
   schedule: "Lunes a Viernes de 08:30 a 18:30 (CRA 24h/365d)",
   image: "/images/services/scutum-seguridad-baleares-palma.jpg",
   gallery: ["/images/services/scutum-seguridad-baleares-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Scutum%20Seguridad%20Baleares%20Palma%20Carrer%20del%20Gremi%20de%20Teixidors%2C%2024%2C%2007009%20Palma%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Scutum%20Seguridad%20Baleares%20Palma%20Carrer%20del%20Gremi%20de%20Teixidors%2C%2024%2C%2007009%20Palma%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Scutum%20Seguridad%20Baleares%20Palma%20Carrer%20del%20Gremi%20de%20Teixidors%2C%2024%2C%2007009%20Palma%2C%20Illes%20Balears",
   shortDescription: {
     es: "Ingeniería de seguridad electrónica en Palma. Sistemas de alarma perimetral con inteligencia artificial, CCTV en alta definición y control de accesos para fincas y villas.",
     en: "Electronic security engineering in Palma. AI perimeter defense systems, high-definition CCTV, and automated access control for fincas and luxury villas.",
@@ -114,13 +108,6 @@ export const scutum_seguridad_baleares_palma: ServiceItem = {
       "Connexió a CRA homologada",
     ],
     de: ["Perimeterschutz für Fincas und Villen", "KI-Videoüberwachung", "Zertifizierte Notruf-Aufschaltung"],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 120,
-      url: "https://www.google.com/maps/search/?api=1&query=Scutum%20Seguridad%20Baleares%20Palma%20Carrer%20del%20Gremi%20de%20Teixidors%2C%2024%2C%2007009%20Palma%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

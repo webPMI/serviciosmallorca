@@ -29,9 +29,6 @@ export const farmaciaPortoPi24hPalma: ServiceItem = {
   email: "info@farmaciaportopi.com",
   website: "https://www.farmaciaportopi.com",
   menuUrl: "https://www.farmaciaportopi.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Farmacia+Porto+Pi+24h+Avinguda+Joan+Miro+186+Palma+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Farmacia+Porto+Pi+Palma",
-  bingMapsUrl: "https://www.bing.com/maps?q=Farmacia+Porto+Pi+Palma",
   tags: ["zona:palma", "product:premium", "mod:en-local", "mod:walk-in", "aud:familias", "temps:todo-el-ano"],
   capabilities: {
     wheelchairAccessible: true,
@@ -141,7 +138,7 @@ export const farmaciaPortoPi24hPalma: ServiceItem = {
       comment:
         "Muy agradecido por la atención rápida de madrugada. Nos prepararon el botiquín para el barco de forma impecable.",
       date: "2026-08-11",
-      platform: "google_maps",
+      platform: "direct",
       language: "es",
     },
     {
@@ -151,7 +148,7 @@ export const farmaciaPortoPi24hPalma: ServiceItem = {
       comment:
         "Lifesaver 24h pharmacy right by the port. The staff speak perfect English and sorted our emergency prescriptions right away.",
       date: "2026-07-24",
-      platform: "google_maps",
+      platform: "direct",
       language: "en",
     },
   ],

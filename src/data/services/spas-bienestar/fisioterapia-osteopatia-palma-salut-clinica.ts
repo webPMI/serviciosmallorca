@@ -31,12 +31,6 @@ export const fisioterapia_osteopatia_palma_salut_clinica: ServiceItem = {
   schedule: "Lunes a Viernes: 08:30 - 20:30",
   image: "/images/services/fisioterapia-osteopatia-palma-salut-clinica.jpg",
   gallery: ["/images/services/fisioterapia-osteopatia-palma-salut-clinica.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica%20de%20Fisioter%C3%A1pia%20%26%20Osteopat%C3%ADa%20Palma%20Salut%20Carrer%20de%2031%20de%20Desembre%2C%2021%2C%2007004%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Cl%C3%ADnica%20de%20Fisioter%C3%A1pia%20%26%20Osteopat%C3%ADa%20Palma%20Salut%20Carrer%20de%2031%20de%20Desembre%2C%2021%2C%2007004%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Cl%C3%ADnica%20de%20Fisioter%C3%A1pia%20%26%20Osteopat%C3%ADa%20Palma%20Salut%20Carrer%20de%2031%20de%20Desembre%2C%2021%2C%2007004%20Palma",
   shortDescription: {
     es: "Centro de fisioterapia avanzada y osteopatía en Palma: ecografía musculoesquelética, punción seca, diatermia Indiba y readaptación de lesiones.",
     en: "Advanced physiotherapy and osteopathy clinic in Palma: musculoskeletal ultrasound, dry needling, Indiba radiofrequency, and sports rehabilitation.",
@@ -100,13 +94,6 @@ export const fisioterapia_osteopatia_palma_salut_clinica: ServiceItem = {
       "Ultraschallgestütztes Dry Needling & Neuromodulation",
       "Klinisches Einzel-Pilates und Reha-Training",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 340,
-      url: "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica%20de%20Fisioter%C3%A1pia%20%26%20Osteopat%C3%ADa%20Palma%20Salut%20Carrer%20de%2031%20de%20Desembre%2C%2021%2C%2007004%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

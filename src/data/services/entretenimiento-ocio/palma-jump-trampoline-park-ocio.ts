@@ -31,12 +31,6 @@ export const palma_jump_trampoline_park_ocio: ServiceItem = {
   schedule: "Lunes a Domingo: 10:00 - 21:00",
   image: "/images/services/palma-jump-trampoline-park-ocio.jpg",
   gallery: ["/images/services/palma-jump-trampoline-park-ocio.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Palma%20Jump%20-%20Parque%20de%20Trampolines%20%26%20Ocio%20Activo%20(Son%20Fuster)%20Carrer%20del%20Ter%2C%2023%2C%20Pol%C3%ADgon%20Son%20Fuster%2C%2007009%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Palma%20Jump%20-%20Parque%20de%20Trampolines%20%26%20Ocio%20Activo%20(Son%20Fuster)%20Carrer%20del%20Ter%2C%2023%2C%20Pol%C3%ADgon%20Son%20Fuster%2C%2007009%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Palma%20Jump%20-%20Parque%20de%20Trampolines%20%26%20Ocio%20Activo%20(Son%20Fuster)%20Carrer%20del%20Ter%2C%2023%2C%20Pol%C3%ADgon%20Son%20Fuster%2C%2007009%20Palma",
   shortDescription: {
     es: "El primer gran parque cubierto de trampolines de Mallorca: camas elásticas interconectadas, zona de mates de baloncesto, piscina de espuma y ocio para todas las edades.",
     en: "Mallorca's first large-scale indoor trampoline park: interconnected jump zones, slam-dunk basketball lanes, foam pits, and fitness for all ages.",
@@ -100,13 +94,6 @@ export const palma_jump_trampoline_park_ocio: ServiceItem = {
       "FitJump-Fitnesskurse für gelenkschonendes Ganzkörpertraining",
       "Teambuilding-Events für Unternehmen und exklusive Hallenmiete",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.6,
-      reviewCount: 2200,
-      url: "https://www.google.com/maps/search/?api=1&query=Palma%20Jump%20-%20Parque%20de%20Trampolines%20%26%20Ocio%20Activo%20(Son%20Fuster)%20Carrer%20del%20Ter%2C%2023%2C%20Pol%C3%ADgon%20Son%20Fuster%2C%2007009%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

@@ -31,12 +31,6 @@ export const clinica_veterinaria_pollensa: ServiceItem = {
   schedule: "Lunes a Viernes: 09:30 - 13:30, 16:30 - 19:30, Sábados: 10:00 - 13:00",
   image: "/images/services/clinica-veterinaria-pollensa.jpg",
   gallery: ["/images/services/clinica-veterinaria-pollensa.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica%20Veterin%C3%A0ria%20Pollen%C3%A7a%20Carrer%20de%20Cecili%20Metel%2C%2059%2C%2007460%20Pollen%C3%A7a",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Cl%C3%ADnica%20Veterin%C3%A0ria%20Pollen%C3%A7a%20Carrer%20de%20Cecili%20Metel%2C%2059%2C%2007460%20Pollen%C3%A7a",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Cl%C3%ADnica%20Veterin%C3%A0ria%20Pollen%C3%A7a%20Carrer%20de%20Cecili%20Metel%2C%2059%2C%2007460%20Pollen%C3%A7a",
   shortDescription: {
     es: "Centro veterinario en Pollença con atención bilingüe, radiología digital, cirugía y cuidados especializados para perros y gatos.",
     en: "Veterinary clinic in Pollença offering multilingual consultations, digital imaging, surgery, and tailored pet care.",
@@ -100,13 +94,6 @@ export const clinica_veterinaria_pollensa: ServiceItem = {
       "Digitales Röntgen und Ultraschalluntersuchungen",
       "Hundefellpflege und dermatologische Spezialbehandlungen",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 92,
-      url: "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica%20Veterin%C3%A0ria%20Pollen%C3%A7a%20Carrer%20de%20Cecili%20Metel%2C%2059%2C%2007460%20Pollen%C3%A7a",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

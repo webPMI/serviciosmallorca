@@ -76,10 +76,6 @@ export const pedraDeSantanyiCanteresArtesanes: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Pedra%20de%20Santany%C3%AD%20Canteras%20%26%20Picapedrers%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Pedra%20de%20Santany%C3%AD%20Canteras%20%26%20Picapedrers%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Pedra%20de%20Santany%C3%AD%20Canteras%20%26%20Picapedrers%20Mallorca",
   pricing: {
     startingPrice: "Presupuesto a medida según proyecto",
     rateType: "custom_quote",
@@ -106,21 +102,4 @@ export const pedraDeSantanyiCanteresArtesanes: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 140,
-      url: "https://www.google.com/maps/search/?api=1&query=Pedra%20de%20Santany%C3%AD%20Canteras%20%26%20Picapedrers%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Pedra%20de%20Santany%C3%AD%20Canteras%20%26%20Picapedrers%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 14,
-      url: "https://www.bing.com/maps?q=Pedra%20de%20Santany%C3%AD%20Canteras%20%26%20Picapedrers%20Mallorca",
-    },
-    totalReviewsAggregated: 154,
-    overallWeightedRating: 4.9,
-  },
 };

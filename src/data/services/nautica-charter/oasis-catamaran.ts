@@ -21,9 +21,6 @@ export const oasisCatamaran: ServiceItem = {
   whatsapp: "+34 672 10 04 24",
   email: "info@oasiscatamaran.com",
   website: "https://oasiscatamaran.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Oasis+Catamaran+Palma+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Oasis+Catamaran+Palma",
-  bingMapsUrl: "https://www.bing.com/maps?q=Oasis+Catamaran+Palma",
   coordinates: {
     lat: 39.5668,
     lng: 2.6372,
@@ -185,22 +182,13 @@ export const oasisCatamaran: ServiceItem = {
       specialty: "Navegación a Vela y Seguridad en Bahía de Palma",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 468,
-      url: "https://www.google.com/maps/search/?api=1&query=Oasis+Catamaran+Palma+Mallorca",
-    },
-    totalReviewsAggregated: 468,
-    overallWeightedRating: 4.8,
-  },
   reviews: [
     {
       id: "rev-oasis-1",
       authorName: "Sophie Laurent",
       rating: 5,
       date: "2025-08-02",
-      platform: "google_maps",
+      platform: "direct",
       language: "fr",
       comment:
         "Une expérience inoubliable ! Le mouillage à Cala Blava était sublime, l'équipage aux petits soins et le barbecue délicieux.",
@@ -211,7 +199,7 @@ export const oasisCatamaran: ServiceItem = {
       authorName: "Carlos Menéndez",
       rating: 5,
       date: "2025-07-19",
-      platform: "google_maps",
+      platform: "direct",
       language: "es",
       comment:
         "La mejor excursión en barco de Palma. El catamarán navega muy suave, la comida a bordo es excelente y los paddle surf dieron muchísimo juego.",

@@ -28,9 +28,6 @@ export const bodegasButxetMuro: ServiceItem = {
   email: "bodega@butxet.com",
   website: "https://butxet.com",
   menuUrl: "https://butxet.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Bodegas+Butxet+Muro+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Bodegas+Butxet+Muro",
-  bingMapsUrl: "https://www.bing.com/maps?q=Bodegas+Butxet+Muro",
   tags: ["zona:alcudia-pollensa", "zona:muro", "product:premium", "mod:en-local", "aud:parejas", "temps:todo-el-ano"],
   capabilities: {
     parkingAvailable: true,

@@ -31,12 +31,6 @@ export const centre_medic_santanyi: ServiceItem = {
   schedule: "Lunes a Viernes: 08:30 - 13:30, 16:30 - 19:30 | Sábado y Domingo: Cerrado",
   image: "/images/services/centre-medic-santanyi.jpg",
   gallery: ["/images/services/centre-medic-santanyi.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Centre%20M%C3%A8dic%20%26%20Fisioter%C3%A0pia%20Santany%C3%AD%20Carrer%20de%20s'Aljub%2C%208%2C%2007650%20Santany%C3%AD%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Centre%20M%C3%A8dic%20%26%20Fisioter%C3%A0pia%20Santany%C3%AD%20Carrer%20de%20s'Aljub%2C%208%2C%2007650%20Santany%C3%AD%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Centre%20M%C3%A8dic%20%26%20Fisioter%C3%A0pia%20Santany%C3%AD%20Carrer%20de%20s'Aljub%2C%208%2C%2007650%20Santany%C3%AD%2C%20Illes%20Balears",
   shortDescription: {
     es: "Centro de salud integral en Santanyí que une medicina familiar, enfermería, fisioterapia deportiva y osteopatía, brindando atención cálida y multilingüe en la comarca del Migjorn.",
     en: "Comprehensive healthcare and physical therapy centre in Santanyí combining family medicine, nursing, sports physiotherapy, and osteopathy in the Migjorn region.",
@@ -100,13 +94,6 @@ export const centre_medic_santanyi: ServiceItem = {
       "Krankenpflegerische Wundversorgung, Fädenziehen, Injektionen und Blutdruckkontrolle",
       "Medizinische Atteste, Tauglichkeitsbescheinigungen und Rezeptausstellung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 140,
-      url: "https://www.google.com/maps/search/?api=1&query=Centre%20M%C3%A8dic%20%26%20Fisioter%C3%A0pia%20Santany%C3%AD%20Carrer%20de%20s'Aljub%2C%208%2C%2007650%20Santany%C3%AD%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

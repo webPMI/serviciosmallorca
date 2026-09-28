@@ -31,12 +31,6 @@ export const gestoria_administrativa_fiscal_sampol_inca: ServiceItem = {
   schedule: "Lunes a Viernes: 08:30 - 14:00, 16:00 - 19:30 | Sábado y Domingo: Cerrado",
   image: "/images/services/gestoria-administrativa-fiscal-sampol-inca.jpg",
   gallery: ["/images/services/gestoria-administrativa-fiscal-sampol-inca.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Gestoria%20Administrativa%20%26%20Fiscal%20Sampol%20Inca%20Carrer%20des%20Tren%2C%208%2C%2007300%20Inca%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Gestoria%20Administrativa%20%26%20Fiscal%20Sampol%20Inca%20Carrer%20des%20Tren%2C%208%2C%2007300%20Inca%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Gestoria%20Administrativa%20%26%20Fiscal%20Sampol%20Inca%20Carrer%20des%20Tren%2C%208%2C%2007300%20Inca%2C%20Illes%20Balears",
   shortDescription: {
     es: "Gestoría administrativa y asesoría fiscal colegiada en Inca con más de 30 años de experiencia, especialistas en trámites de tráfico, matriculaciones de vehículos, asesoría laboral y fiscal para autónomos y pymes del Raiguer.",
     en: "Collegiate administrative and tax consultancy in Inca with over 30 years of experience, specialized in vehicle registration, DGT traffic procedures, payroll, and tax accounting for businesses in Raiguer.",
@@ -100,13 +94,6 @@ export const gestoria_administrativa_fiscal_sampol_inca: ServiceItem = {
       "Personalverwaltung: An- und Abmeldungen bei der spanischen Sozialversicherung, Arbeitsverträge und Gehaltsabrechnungen",
       "Firmengründungen (S.L.), Gewerbeanmeldungen für Selbstständige (Autónomo) und Erbschaftsabwicklungen",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 190,
-      url: "https://www.google.com/maps/search/?api=1&query=Gestoria%20Administrativa%20%26%20Fiscal%20Sampol%20Inca%20Carrer%20des%20Tren%2C%208%2C%2007300%20Inca%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

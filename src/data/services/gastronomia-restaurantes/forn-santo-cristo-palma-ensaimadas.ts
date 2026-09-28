@@ -31,12 +31,6 @@ export const forn_santo_cristo_palma_ensaimadas: ServiceItem = {
   schedule: "Lunes a Domingo: 08:30 - 20:30",
   image: "/images/services/forn-santo-cristo-palma-ensaimadas.jpg",
   gallery: ["/images/services/forn-santo-cristo-palma-ensaimadas.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Forn%20Santo%20Cristo%20Pasteler%C3%ADa%20%26%20Ensaimadas%20Palma%20(1910)%20Carrer%20dels%20Paraires%2C%202%2C%2007001%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Forn%20Santo%20Cristo%20Pasteler%C3%ADa%20%26%20Ensaimadas%20Palma%20(1910)%20Carrer%20dels%20Paraires%2C%202%2C%2007001%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Forn%20Santo%20Cristo%20Pasteler%C3%ADa%20%26%20Ensaimadas%20Palma%20(1910)%20Carrer%20dels%20Paraires%2C%202%2C%2007001%20Palma",
   shortDescription: {
     es: "Horno artesano centenario de Palma fundado en 1910: referente mundial de la auténtica Ensaimada de Mallorca con I.G.P., cremallillos, empanadas y rubiols tradicionales.",
     en: "Centenary artisan bakery in Palma operating since 1910: world reference for authentic PGI Ensaimada de Mallorca, cremallillos, panades, and rubiols pastries.",
@@ -100,13 +94,6 @@ export const forn_santo_cristo_palma_ensaimadas: ServiceItem = {
       "Vorbestellung und Abholung vor der Fahrt zum Flughafen",
       "Café mit frischem Gebäck und Kaffeespezialitäten",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 3100,
-      url: "https://www.google.com/maps/search/?api=1&query=Forn%20Santo%20Cristo%20Pasteler%C3%ADa%20%26%20Ensaimadas%20Palma%20(1910)%20Carrer%20dels%20Paraires%2C%202%2C%2007001%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

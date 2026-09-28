@@ -31,12 +31,6 @@ export const piscinas_cristal_infinity_santanyi: ServiceItem = {
   schedule: "Lunes a Viernes: 08:00 - 17:00",
   image: "/images/services/piscinas-cristal-infinity-santanyi.jpg",
   gallery: ["/images/services/piscinas-cristal-infinity-santanyi.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Piscinas%20Cristal%20Infinity%20Santany%C3%AD%20Carrer%20de%20Bernat%20Vidal%20i%20Tom%C3%A0s%2C%2072%2C%2007650%20Santany%C3%AD",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Piscinas%20Cristal%20Infinity%20Santany%C3%AD%20Carrer%20de%20Bernat%20Vidal%20i%20Tom%C3%A0s%2C%2072%2C%2007650%20Santany%C3%AD",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Piscinas%20Cristal%20Infinity%20Santany%C3%AD%20Carrer%20de%20Bernat%20Vidal%20i%20Tom%C3%A0s%2C%2072%2C%2007650%20Santany%C3%AD",
   shortDescription: {
     es: "Construcción y rehabilitación de piscinas desbordantes infinity con gresite vitrificado y sistemas de electrolisis salina.",
     en: "Construction and renovation of luxury infinity pools with vitrified mosaic tile and saltwater chlorination.",
@@ -100,13 +94,6 @@ export const piscinas_cristal_infinity_santanyi: ServiceItem = {
       "Wärmepumpen und Smart-Pool-Technik",
       "Kompletter Wasserpflegeservice",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 98,
-      url: "https://www.google.com/maps/search/?api=1&query=Piscinas%20Cristal%20Infinity%20Santany%C3%AD%20Carrer%20de%20Bernat%20Vidal%20i%20Tom%C3%A0s%2C%2072%2C%2007650%20Santany%C3%AD",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

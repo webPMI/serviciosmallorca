@@ -21,9 +21,6 @@ export const canPomar: ServiceItem = {
   whatsapp: "+34 971 65 00 24",
   email: "info@canpomar.com",
   website: "https://canpomar.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Can%20Pomar%20Campos%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Can%20Pomar%20Campos%20Mallorca&ll=39.4312,3.0185",
-  bingMapsUrl: "https://www.bing.com/maps?where1=Can%20Pomar%20Campos%20Mallorca",
   coordinates: { lat: 39.4312, lng: 3.0185 },
   schedule: "Lunes a Domingo: 08:00 - 14:00 | 17:00 - 20:30",
   lastVerifiedAt: "2026-08-25",
@@ -131,30 +128,13 @@ export const canPomar: ServiceItem = {
       instagramHandle: "@canpomar",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 850,
-      url: "https://www.google.com/maps/search/?api=1&query=Can%20Pomar%20Campos%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Can%20Pomar%20Campos%20Mallorca&ll=39.4312,3.0185",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 850,
-      url: "https://www.bing.com/maps?where1=Can%20Pomar%20Campos%20Mallorca",
-    },
-    totalReviewsAggregated: 850,
-    overallWeightedRating: 4.8,
-  },
   reviews: [
     {
       id: "rev-cp-1",
       authorName: "Antònia Roig",
       rating: 5,
       date: "2025-05-22",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
       comment:
         "L'ensaïmada de sobrassada amb mel és de les millors coses que es poden tastar a Mallorca. Parada obligatòria a Campos.",
@@ -165,7 +145,7 @@ export const canPomar: ServiceItem = {
       authorName: "Oliver Jenkins",
       rating: 5,
       date: "2025-06-29",
-      platform: "google_maps",
+      platform: "direct",
       language: "en",
       comment:
         "Incredible pastry shop in Campos. The sobrassada honey ensaïmada is sublime, and the chocolates are world-class.",

@@ -31,12 +31,6 @@ export const aecc_baleares_associacio_cancer_palma: ServiceItem = {
   schedule: "Lunes a Jueves de 08:00 a 19:00, Viernes de 08:00 a 15:00",
   image: "/images/services/aecc-baleares-associacio-cancer-palma.jpg",
   gallery: ["/images/services/aecc-baleares-associacio-cancer-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=AECC%20Baleares%20-%20Associaci%C3%B3%20Contra%20el%20C%C3%A0ncer%20Palma%20Carrer%20de%20Sim%C3%B3%20Ballester%2C%209%2C%2007011%20Palma%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=AECC%20Baleares%20-%20Associaci%C3%B3%20Contra%20el%20C%C3%A0ncer%20Palma%20Carrer%20de%20Sim%C3%B3%20Ballester%2C%209%2C%2007011%20Palma%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=AECC%20Baleares%20-%20Associaci%C3%B3%20Contra%20el%20C%C3%A0ncer%20Palma%20Carrer%20de%20Sim%C3%B3%20Ballester%2C%209%2C%2007011%20Palma%2C%20Illes%20Balears",
   shortDescription: {
     es: "Sede provincial en Palma de la Asociación Española Contra el Cáncer. Apoyo psicológico gratuito, fisioterapia para linfedema, pisos de acogida e investigación oncológica.",
     en: "Provincial headquarters of the Spanish Association Against Cancer in Palma. Free psycho-oncology, lymphedema physiotherapy, foster apartments, and research funding.",
@@ -106,13 +100,6 @@ export const aecc_baleares_associacio_cancer_palma: ServiceItem = {
     en: ["Free psycho-oncology", "Lymphedema rehabilitation", "Patient foster housing in Palma"],
     ca: ["Psicooncologia gratuïta", "Tractament de limfedema", "Pisos d'acollida a Palma"],
     de: ["Kostenlose Psychoonkologie", "Lymphödem-Therapie", "Patientenunterkünfte in Palma"],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 195,
-      url: "https://www.google.com/maps/search/?api=1&query=AECC%20Baleares%20-%20Associaci%C3%B3%20Contra%20el%20C%C3%A0ncer%20Palma%20Carrer%20de%20Sim%C3%B3%20Ballester%2C%209%2C%2007011%20Palma%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

@@ -31,12 +31,6 @@ export const lucie_hauri_real_estate_santanyi: ServiceItem = {
   schedule: "Lunes a Viernes: 09:30 - 18:00",
   image: "/images/services/lucie-hauri-real-estate-santanyi.jpg",
   gallery: ["/images/services/lucie-hauri-real-estate-santanyi.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Lucie%20Hauri%20Real%20Estate%20-%20Fincas%20%26%20Casas%20de%20Pueblo%20(Santany%C3%AD)%20Carrer%20del%20Bisbe%20Verger%2C%2028%2C%2007650%20Santany%C3%AD",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Lucie%20Hauri%20Real%20Estate%20-%20Fincas%20%26%20Casas%20de%20Pueblo%20(Santany%C3%AD)%20Carrer%20del%20Bisbe%20Verger%2C%2028%2C%2007650%20Santany%C3%AD",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Lucie%20Hauri%20Real%20Estate%20-%20Fincas%20%26%20Casas%20de%20Pueblo%20(Santany%C3%AD)%20Carrer%20del%20Bisbe%20Verger%2C%2028%2C%2007650%20Santany%C3%AD",
   shortDescription: {
     es: "Inmobiliaria de referencia en Santanyí desde 1982: fincas rústicas con encanto, casas de pueblo históricas de piedra de Santanyí y villas en el sureste.",
     en: "Benchmark real estate agency in Santanyí since 1982: authentic country fincas, historic sandstone townhouses, and coastal villas in southeast Mallorca.",
@@ -100,13 +94,6 @@ export const lucie_hauri_real_estate_santanyi: ServiceItem = {
       "Projektbegleitung bei Finca-Sanierungen und Baugenehmigungen",
       "Persönliche Begleitung bei Notartermin und Grundbucheintragung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 150,
-      url: "https://www.google.com/maps/search/?api=1&query=Lucie%20Hauri%20Real%20Estate%20-%20Fincas%20%26%20Casas%20de%20Pueblo%20(Santany%C3%AD)%20Carrer%20del%20Bisbe%20Verger%2C%2028%2C%2007650%20Santany%C3%AD",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

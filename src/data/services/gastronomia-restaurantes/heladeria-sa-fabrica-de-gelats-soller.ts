@@ -78,12 +78,6 @@ export const heladeriaSaFabricaDeGelatsSoller: ServiceItem = {
   },
   image: "/images/services/heladeria-sa-fabrica-de-gelats-soller.jpg",
   gallery: ["/images/services/heladeria-sa-fabrica-de-gelats-soller.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Sa%20F%C3%A0brica%20de%20Gelats%20de%20S%C3%B3ller%20(1994)%20Pla%C3%A7a%20des%20Mercat%2C%20s%2Fn%2C%2007100%20S%C3%B3ller%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Sa%20F%C3%A0brica%20de%20Gelats%20de%20S%C3%B3ller%20(1994)%20Pla%C3%A7a%20des%20Mercat%2C%20s%2Fn%2C%2007100%20S%C3%B3ller%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://www.bing.com/maps?q=Sa%20F%C3%A0brica%20de%20Gelats%20de%20S%C3%B3ller%20(1994)%20Pla%C3%A7a%20des%20Mercat%2C%20s%2Fn%2C%2007100%20S%C3%B3ller%2C%20Illes%20Balears",
   phone: "+34 971 63 81 20",
   whatsapp: "+34971638120",
   website: "https://gelatssoller.com",

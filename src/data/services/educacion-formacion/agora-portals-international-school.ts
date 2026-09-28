@@ -76,9 +76,6 @@ export const agoraPortalsInternationalSchool: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Agora%20Portals%20International%20School%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Agora%20Portals%20International%20School%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Agora%20Portals%20International%20School%20Mallorca",
   pricing: {
     startingPrice: "Consultar admisión y cuotas anuales",
     rateType: "tiered",
@@ -105,21 +102,4 @@ export const agoraPortalsInternationalSchool: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 420,
-      url: "https://www.google.com/maps/search/?api=1&query=Agora%20Portals%20International%20School%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Agora%20Portals%20International%20School%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.6,
-      reviewCount: 42,
-      url: "https://www.bing.com/maps?q=Agora%20Portals%20International%20School%20Mallorca",
-    },
-    totalReviewsAggregated: 462,
-    overallWeightedRating: 4.7,
-  },
 };

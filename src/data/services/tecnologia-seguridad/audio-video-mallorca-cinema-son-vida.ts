@@ -31,12 +31,6 @@ export const audio_video_mallorca_cinema_son_vida: ServiceItem = {
   schedule: "Lunes a Viernes de 09:30 a 18:30 (Cita Previa)",
   image: "/images/services/audio-video-mallorca-cinema-son-vida.jpg",
   gallery: ["/images/services/audio-video-mallorca-cinema-son-vida.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Audio%20Video%20Mallorca%20Palma%20(Cine%20Privado%20%26%20Alta%20Fidelidad)%20Carrer%20de%20Joan%20Mir%C3%B3%2C%20260%2C%2007015%20Palma%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Audio%20Video%20Mallorca%20Palma%20(Cine%20Privado%20%26%20Alta%20Fidelidad)%20Carrer%20de%20Joan%20Mir%C3%B3%2C%20260%2C%2007015%20Palma%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Audio%20Video%20Mallorca%20Palma%20(Cine%20Privado%20%26%20Alta%20Fidelidad)%20Carrer%20de%20Joan%20Mir%C3%B3%2C%20260%2C%2007015%20Palma%2C%20Illes%20Balears",
   shortDescription: {
     es: "Diseño y construcción de salas de cine privado exclusivas, acústica arquitectónica e instalación de sistemas de sonido de referencia para villas de Mallorca.",
     en: "Design and installation of bespoke private home cinemas, architectural acoustics, and reference-grade sound systems for luxury villas in Mallorca.",
@@ -106,13 +100,6 @@ export const audio_video_mallorca_cinema_son_vida: ServiceItem = {
     en: ["Luxury residential private cinemas", "Dolby Atmos acoustic calibration", "4K native laser projection"],
     ca: ["Cinemes privats de luxe a mida", "Calibratge acústic Dolby Atmos", "Projecció làser 4K"],
     de: ["Private Luxus-Heimkinos", "Raumakustik & Dolby Atmos", "4K-Laserprojektion"],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 85,
-      url: "https://www.google.com/maps/search/?api=1&query=Audio%20Video%20Mallorca%20Palma%20(Cine%20Privado%20%26%20Alta%20Fidelidad)%20Carrer%20de%20Joan%20Mir%C3%B3%2C%20260%2C%2007015%20Palma%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

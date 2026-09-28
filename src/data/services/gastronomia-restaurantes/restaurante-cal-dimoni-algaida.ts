@@ -28,9 +28,6 @@ export const restauranteCalDimoniAlgaida: ServiceItem = {
   email: "info@caldimoni.es",
   website: "https://www.caldimoni.es",
   menuUrl: "https://www.caldimoni.es",
-  googleMapsUrl: "https://www.google.com/maps/search/Restaurante+Cal+Dimoni+Algaida+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante+Cal+Dimoni+Algaida",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante+Cal+Dimoni+Algaida",
   tags: [
     "zona:raiguer-pla",
     "zona:algaida",

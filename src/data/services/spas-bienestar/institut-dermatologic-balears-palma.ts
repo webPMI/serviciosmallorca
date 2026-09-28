@@ -29,8 +29,6 @@ export const institut_dermatologic_balears_palma: ServiceItem = {
   image: "/images/spas/institut-dermatologic-balears-palma.jpg",
   gallery: ["/images/spas/institut-dermatologic-balears-palma.jpg", "/images/categories/salud.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=13008008",
-  appleMapsUrl: "https://maps.apple.com/?q=Institut%20Dermatol%C3%B2gic%20de%20Balears+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Institut%20Dermatol%C3%B2gic%20de%20Balears+Mallorca",
   shortDescription: {
     es: "Instituto médico dermatológico líder en cáncer de piel, microscopía confocal, dermatología pediátrica y estética.",
     en: "Leading dermatology institute specialized in skin cancer screening, confocal microscopy, and aesthetic laser.",
@@ -94,13 +92,6 @@ export const institut_dermatologic_balears_palma: ServiceItem = {
       "Wellness- und Regenerationstherapien",
       "Kontinuierliche medizinische Nachbetreuung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 310,
-      url: "https://www.google.com/maps?cid=13008008",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

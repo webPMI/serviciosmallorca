@@ -29,8 +29,6 @@ export const URBAN_CROSSFIT_PALMA: ServiceItem = {
   image: "/images/sports/urban-crossfit-palma.jpg",
   gallery: ["/images/sports/urban-crossfit-palma.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007070",
-  appleMapsUrl: "https://maps.apple.com/?q=Urban%20CrossFit%20Palma+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Urban%20CrossFit%20Palma+Mallorca",
   shortDescription: {
     es: "Box urbano de CrossFit en Palma con amplia zona de Open Box y programación para atletas de élite.",
     en: "Urban CrossFit box in Palma with spacious Open Box zone and competitive athletic programming.",
@@ -94,13 +92,6 @@ export const URBAN_CROSSFIT_PALMA: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 250,
-      url: "https://www.google.com/maps?cid=12007070",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

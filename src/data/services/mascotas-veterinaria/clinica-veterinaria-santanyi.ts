@@ -31,12 +31,6 @@ export const clinica_veterinaria_santanyi: ServiceItem = {
   schedule: "Lunes a Viernes: 09:30 - 13:30, 16:30 - 19:30, Sábados: 10:00 - 13:00",
   image: "/images/services/clinica-veterinaria-santanyi.jpg",
   gallery: ["/images/services/clinica-veterinaria-santanyi.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica%20Veterin%C3%A0ria%20Santany%C3%AD%20Carrer%20de%20Bernat%20Vidal%20i%20Tom%C3%A0s%2C%2071%2C%2007650%20Santany%C3%AD",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Cl%C3%ADnica%20Veterin%C3%A0ria%20Santany%C3%AD%20Carrer%20de%20Bernat%20Vidal%20i%20Tom%C3%A0s%2C%2071%2C%2007650%20Santany%C3%AD",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Cl%C3%ADnica%20Veterin%C3%A0ria%20Santany%C3%AD%20Carrer%20de%20Bernat%20Vidal%20i%20Tom%C3%A0s%2C%2071%2C%2007650%20Santany%C3%AD",
   shortDescription: {
     es: "Centro veterinario de referencia en el sureste de Mallorca: medicina preventiva, cirugía general, diagnóstico por imagen y urgencias.",
     en: "Premier veterinary clinic in southeastern Mallorca: preventive medicine, soft tissue surgery, diagnostic imaging, and emergency care.",
@@ -100,13 +94,6 @@ export const clinica_veterinaria_santanyi: ServiceItem = {
       "Digitales Röntgen und Ultraschalldiagnostik",
       "Praxiseigenes Labor für schnelle Blutanalysen",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 86,
-      url: "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica%20Veterin%C3%A0ria%20Santany%C3%AD%20Carrer%20de%20Bernat%20Vidal%20i%20Tom%C3%A0s%2C%2071%2C%2007650%20Santany%C3%AD",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

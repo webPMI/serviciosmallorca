@@ -31,12 +31,6 @@ export const bodega_son_crespi_santa_maria_vi_de_la_terra: ServiceItem = {
   schedule: "Lunes a Sábado: 09:00 - 13:30 y 16:30 - 19:30",
   image: "/images/services/bodega-son-crespi-santa-maria-vi-de-la-terra.jpg",
   gallery: ["/images/services/bodega-son-crespi-santa-maria-vi-de-la-terra.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Celler%20Son%20Cresp%C3%AD%20Santa%20Maria%20del%20Cam%C3%AD%20Cam%C3%AD%20de%20Passatemps%2C%2042%2C%2007320%20Santa%20Maria%20del%20Cam%C3%AD",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Celler%20Son%20Cresp%C3%AD%20Santa%20Maria%20del%20Cam%C3%AD%20Cam%C3%AD%20de%20Passatemps%2C%2042%2C%2007320%20Santa%20Maria%20del%20Cam%C3%AD",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Celler%20Son%20Cresp%C3%AD%20Santa%20Maria%20del%20Cam%C3%AD%20Cam%C3%AD%20de%20Passatemps%2C%2042%2C%2007320%20Santa%20Maria%20del%20Cam%C3%AD",
   shortDescription: {
     es: "Bodega familiar con viñedos propios en Santa Maria del Camí: vinos ecológicos elaborados con variedades autóctonas Manto Negro, Callet y Premsal Blanc.",
     en: "Family winery with estate vineyards in Santa Maria del Camí crafting organic wines with native Manto Negro, Callet, and Premsal Blanc grapes.",
@@ -100,13 +94,6 @@ export const bodega_son_crespi_santa_maria_vi_de_la_terra: ServiceItem = {
       "Weingutsshop mit persönlicher Winzerberatung",
       "Sicherer Kartonversand in alle europäischen Länder",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 210,
-      url: "https://www.google.com/maps/search/?api=1&query=Celler%20Son%20Cresp%C3%AD%20Santa%20Maria%20del%20Cam%C3%AD%20Cam%C3%AD%20de%20Passatemps%2C%2042%2C%2007320%20Santa%20Maria%20del%20Cam%C3%AD",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

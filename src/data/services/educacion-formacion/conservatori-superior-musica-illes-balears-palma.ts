@@ -31,12 +31,6 @@ export const conservatori_superior_musica_illes_balears_palma: ServiceItem = {
   schedule: "Lunes a Viernes: 08:30 - 21:30",
   image: "/images/services/conservatori-superior-musica-illes-balears-palma.jpg",
   gallery: ["/images/services/conservatori-superior-musica-illes-balears-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Conservatori%20Superior%20de%20M%C3%BAsica%20de%20les%20Illes%20Balears%20(CSMIB)%20Carrer%20d'Alfons%20el%20Magn%C3%A0nim%2C%2064%2C%2007004%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Conservatori%20Superior%20de%20M%C3%BAsica%20de%20les%20Illes%20Balears%20(CSMIB)%20Carrer%20d'Alfons%20el%20Magn%C3%A0nim%2C%2064%2C%2007004%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Conservatori%20Superior%20de%20M%C3%BAsica%20de%20les%20Illes%20Balears%20(CSMIB)%20Carrer%20d'Alfons%20el%20Magn%C3%A0nim%2C%2064%2C%2007004%20Palma",
   shortDescription: {
     es: "Máximo centro universitario de enseñanza musical de las Islas Baleares en Palma: estudios superiores de interpretación clásica, jazz, composición y pedagogía.",
     en: "The Balearic Islands' highest music conservatory in Palma: university-level degrees in classical performance, jazz, composition, and music pedagogy.",
@@ -100,13 +94,6 @@ export const conservatori_superior_musica_illes_balears_palma: ServiceItem = {
       "Studiengänge in Komposition und Orchesterleitung",
       "Öffentliche Kammermusikabende, Meisterkurse und Gastspiele",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 290,
-      url: "https://www.google.com/maps/search/?api=1&query=Conservatori%20Superior%20de%20M%C3%BAsica%20de%20les%20Illes%20Balears%20(CSMIB)%20Carrer%20d'Alfons%20el%20Magn%C3%A0nim%2C%2064%2C%2007004%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

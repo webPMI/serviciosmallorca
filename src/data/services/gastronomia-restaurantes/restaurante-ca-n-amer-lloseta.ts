@@ -28,9 +28,6 @@ export const restauranteCaNAmerLloseta: ServiceItem = {
   email: "info@celler-canamer.es",
   website: "https://www.celler-canamer.es",
   menuUrl: "https://www.celler-canamer.es",
-  googleMapsUrl: "https://www.google.com/maps/search/Restaurante+Celler+Can+Amer+Lloseta+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante+Can+Amer+Lloseta",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante+Can+Amer+Lloseta",
   tags: [
     "zona:raiguer-pla",
     "zona:lloseta",

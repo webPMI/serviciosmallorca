@@ -31,12 +31,6 @@ export const fusteria_fustes_balear_manacor: ServiceItem = {
   schedule: "Lunes a Viernes: 08:00 - 13:00, 15:00 - 18:30 | Sábado y Domingo: Cerrado",
   image: "/images/services/fusteria-fustes-balear-manacor.jpg",
   gallery: ["/images/services/fusteria-fustes-balear-manacor.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Fusteria%20%26%20Fustes%20Balear%20Manacor%20(Estructures%20de%20Fusta)%20Pol%C3%ADgon%20Agrorebollet%2C%20Carrer%20dels%20Fusters%2C%2014%2C%2007500%20Manacor%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Fusteria%20%26%20Fustes%20Balear%20Manacor%20(Estructures%20de%20Fusta)%20Pol%C3%ADgon%20Agrorebollet%2C%20Carrer%20dels%20Fusters%2C%2014%2C%2007500%20Manacor%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Fusteria%20%26%20Fustes%20Balear%20Manacor%20(Estructures%20de%20Fusta)%20Pol%C3%ADgon%20Agrorebollet%2C%20Carrer%20dels%20Fusters%2C%2014%2C%2007500%20Manacor%2C%20Illes%20Balears",
   shortDescription: {
     es: "Carpintería artesanal e industrial de madera en Manacor con más de 30 años de experiencia, especializada en pérgolas rústicas, vigas vistas, puertas tradicionales mallorquinas y persianas de lamas.",
     en: "Artisan and architectural wood carpentry workshop in Manacor with over 30 years of experience, specializing in rustic pergolas, exposed timber beams, traditional Mallorcan doors, and shutters.",
@@ -100,13 +94,6 @@ export const fusteria_fustes_balear_manacor: ServiceItem = {
       "Herstellung traditioneller mallorquinischer Holz-Fensterläden und isolierverglaster Holzfenster",
       "Rustikale Eingangstore aus Eiche und Iroko, Schiebetüren im Scheunenstil und Zäune",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 160,
-      url: "https://www.google.com/maps/search/?api=1&query=Fusteria%20%26%20Fustes%20Balear%20Manacor%20(Estructures%20de%20Fusta)%20Pol%C3%ADgon%20Agrorebollet%2C%20Carrer%20dels%20Fusters%2C%2014%2C%2007500%20Manacor%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

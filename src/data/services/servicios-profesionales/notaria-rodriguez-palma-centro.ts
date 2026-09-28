@@ -76,10 +76,6 @@ export const notariaRodriguezPalmaCentro: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Notar%C3%ADa%20Jaime%20Rodr%C3%ADguez%20%26%20Asociados%20Palma%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Notar%C3%ADa%20Jaime%20Rodr%C3%ADguez%20%26%20Asociados%20Palma%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Notar%C3%ADa%20Jaime%20Rodr%C3%ADguez%20%26%20Asociados%20Palma%20Mallorca",
   pricing: {
     startingPrice: "Aranceles notariales oficiales según BOE",
     rateType: "fixed",
@@ -106,21 +102,4 @@ export const notariaRodriguezPalmaCentro: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 310,
-      url: "https://www.google.com/maps/search/?api=1&query=Notar%C3%ADa%20Jaime%20Rodr%C3%ADguez%20%26%20Asociados%20Palma%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Notar%C3%ADa%20Jaime%20Rodr%C3%ADguez%20%26%20Asociados%20Palma%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.7,
-      reviewCount: 31,
-      url: "https://www.bing.com/maps?q=Notar%C3%ADa%20Jaime%20Rodr%C3%ADguez%20%26%20Asociados%20Palma%20Mallorca",
-    },
-    totalReviewsAggregated: 341,
-    overallWeightedRating: 4.8,
-  },
 };

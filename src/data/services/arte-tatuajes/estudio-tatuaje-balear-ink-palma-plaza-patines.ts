@@ -31,12 +31,6 @@ export const estudio_tatuaje_balear_ink_palma_plaza_patines: ServiceItem = {
   schedule: "Lunes a Sábado: 10:30 - 20:00",
   image: "/images/services/estudio-tatuaje-balear-ink-palma-plaza-patines.jpg",
   gallery: ["/images/services/estudio-tatuaje-balear-ink-palma-plaza-patines.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Balearic%20Ink%20Tattoo%20%26%20Piercing%20Studio%20Palma%20Pla%C3%A7a%20del%20Bisbe%20Berenguer%20de%20Palou%2C%206%2C%2007003%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Balearic%20Ink%20Tattoo%20%26%20Piercing%20Studio%20Palma%20Pla%C3%A7a%20del%20Bisbe%20Berenguer%20de%20Palou%2C%206%2C%2007003%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Balearic%20Ink%20Tattoo%20%26%20Piercing%20Studio%20Palma%20Pla%C3%A7a%20del%20Bisbe%20Berenguer%20de%20Palou%2C%206%2C%2007003%20Palma",
   shortDescription: {
     es: "Estudio de tatuaje de vanguardia en la Plaza de los Patines de Palma: fine line, micro-realismo, diseños botánicos y piercing de titanio grado implante.",
     en: "Cutting-edge tattoo studio in Palma's Plaza de los Patines: fine line, micro-realism, botanical art, and implant-grade titanium piercing.",
@@ -100,13 +94,6 @@ export const estudio_tatuaje_balear_ink_palma_plaza_patines: ServiceItem = {
       "Cover-Up und Tattoo-Verschönerungen",
       "Vegane zertifizierte Tattoopflegeprodukte",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 380,
-      url: "https://www.google.com/maps/search/?api=1&query=Balearic%20Ink%20Tattoo%20%26%20Piercing%20Studio%20Palma%20Pla%C3%A7a%20del%20Bisbe%20Berenguer%20de%20Palou%2C%206%2C%2007003%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

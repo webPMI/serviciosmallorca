@@ -29,8 +29,6 @@ export const GOLF_SON_VIDA_PALMA: ServiceItem = {
   image: "/images/services/golf-son-vida-palma.jpg",
   gallery: ["/images/services/golf-son-vida-palma.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007001",
-  appleMapsUrl: "https://maps.apple.com/?q=Golf%20Son%20Vida+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Golf%20Son%20Vida+Mallorca",
   shortDescription: {
     es: "El campo de golf más legendario y veterano de Mallorca, inaugurado en 1964 y sede de European Tour.",
     en: "Mallorca's most historic golf course, opened in 1964 and former European Tour host.",
@@ -94,13 +92,6 @@ export const GOLF_SON_VIDA_PALMA: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 680,
-      url: "https://www.google.com/maps?cid=12007001",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

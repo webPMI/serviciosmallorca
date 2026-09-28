@@ -31,12 +31,6 @@ export const club_nautico_can_picafort_escuela_vela_kayak: ServiceItem = {
   schedule: "Diario: 08:30 - 20:30 (Abril a Octubre)",
   image: "/images/services/club-nautico-can-picafort-escuela-vela-kayak.jpg",
   gallery: ["/images/services/club-nautico-can-picafort-escuela-vela-kayak.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Club%20N%C3%A1utico%20Ca'n%20Picafort%20Escuela%20de%20Vela%20%26%20Kayak%20Passeig%20Mar%C3%ADtim%2C%201%2C%2007458%20Can%20Picafort",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Club%20N%C3%A1utico%20Ca'n%20Picafort%20Escuela%20de%20Vela%20%26%20Kayak%20Passeig%20Mar%C3%ADtim%2C%201%2C%2007458%20Can%20Picafort",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Club%20N%C3%A1utico%20Ca'n%20Picafort%20Escuela%20de%20Vela%20%26%20Kayak%20Passeig%20Mar%C3%ADtim%2C%201%2C%2007458%20Can%20Picafort",
   shortDescription: {
     es: "Club náutico y escuela de deportes acuáticos en la bahía de Alcúdia: cursos de vela ligera para niños y adultos, alquiler de kayaks de mar, paddle surf y windsurf.",
     en: "Nautical club and water sports school in Alcúdia Bay: dinghy sailing courses for adults and kids, sea kayak, SUP, and windsurf rentals.",
@@ -100,13 +94,6 @@ export const club_nautico_can_picafort_escuela_vela_kayak: ServiceItem = {
       "Stundenweiser Verleih von Seekajaks (Einzel & Doppel) und SUP-Boards",
       "Liegeplatz- und Trockenliege-Vermietung für Privatyachten",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 390,
-      url: "https://www.google.com/maps/search/?api=1&query=Club%20N%C3%A1utico%20Ca'n%20Picafort%20Escuela%20de%20Vela%20%26%20Kayak%20Passeig%20Mar%C3%ADtim%2C%201%2C%2007458%20Can%20Picafort",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

@@ -31,12 +31,6 @@ export const ceramica_artesana_ca_n_oliver_sineu_alfares: ServiceItem = {
   schedule: "Lunes a Sábado: 09:30 - 13:30 y 16:30 - 20:00 (Miércoles todo el día por mercado)",
   image: "/images/services/ceramica-artesana-ca-n-oliver-sineu-alfares.jpg",
   gallery: ["/images/services/ceramica-artesana-ca-n-oliver-sineu-alfares.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Cer%C3%A0mica%20Artesana%20Ca%20n'Oliver%20Sineu%20Alfarer%C3%ADa%20Tradicional%20Carrer%20Major%2C%2018%2C%2007300%20Sineu",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Cer%C3%A0mica%20Artesana%20Ca%20n'Oliver%20Sineu%20Alfarer%C3%ADa%20Tradicional%20Carrer%20Major%2C%2018%2C%2007300%20Sineu",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Cer%C3%A0mica%20Artesana%20Ca%20n'Oliver%20Sineu%20Alfarer%C3%ADa%20Tradicional%20Carrer%20Major%2C%2018%2C%2007300%20Sineu",
   shortDescription: {
     es: "Alfarería y cerámica artesanal en el centro de Sineu: greixoneres tradicionales, siurells hechos a mano, vajillas de barro cocido vidriado y piezas de decoración mallorquina.",
     en: "Artisan pottery and ceramics in central Sineu: traditional clay cooking pots (greixoneres), handmade siurells, glazed earthenware tableware, and Mallorcan home decor.",
@@ -100,13 +94,6 @@ export const ceramica_artesana_ca_n_oliver_sineu_alfares: ServiceItem = {
       "Maßanfertigung kompletter Geschirrsets für Restaurants und Privathäuser",
       "Verstärkte Spezial-Schutzverpackung für den Transport auf Reisen",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 310,
-      url: "https://www.google.com/maps/search/?api=1&query=Cer%C3%A0mica%20Artesana%20Ca%20n'Oliver%20Sineu%20Alfarer%C3%ADa%20Tradicional%20Carrer%20Major%2C%2018%2C%2007300%20Sineu",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

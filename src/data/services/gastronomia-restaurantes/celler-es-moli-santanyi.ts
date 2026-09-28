@@ -28,9 +28,6 @@ export const cellerEsMoliSantanyi: ServiceItem = {
   email: "info@restaurantesmoli.com",
   website: "https://www.restaurantesmoli.com",
   menuUrl: "https://www.restaurantesmoli.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Restaurante+Es+Moli+Santanyi+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante+Es+Moli+Santanyi",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante+Es+Moli+Santanyi",
   tags: [
     "zona:santanyi-migjorn",
     "zona:santanyi",

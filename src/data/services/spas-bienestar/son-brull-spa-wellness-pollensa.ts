@@ -29,8 +29,6 @@ export const son_brull_spa_wellness_pollensa: ServiceItem = {
   image: "/images/spas/son-brull-spa-wellness-pollensa.jpg",
   gallery: ["/images/spas/son-brull-spa-wellness-pollensa.jpg", "/images/categories/salud.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=13008020",
-  appleMapsUrl: "https://maps.apple.com/?q=Son%20Brull%20Spa%20%26%20Wellness+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Son%20Brull%20Spa%20%26%20Wellness+Mallorca",
   shortDescription: {
     es: "Spa ecológico en un monasterio del siglo XVIII en Pollença con esencias botánicas de chumbera y almendra mallorquina.",
     en: "Eco-luxury spa in an 18th-century monastery in Pollença using native prickly pear and almond essences.",
@@ -94,13 +92,6 @@ export const son_brull_spa_wellness_pollensa: ServiceItem = {
       "Wellness- und Regenerationstherapien",
       "Kontinuierliche medizinische Nachbetreuung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 290,
-      url: "https://www.google.com/maps?cid=13008020",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

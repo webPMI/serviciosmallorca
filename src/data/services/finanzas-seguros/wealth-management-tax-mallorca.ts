@@ -76,10 +76,6 @@ export const wealthManagementTaxMallorca: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Mallorca%20Wealth%20%26%20Family%20Office%20Advisory%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Mallorca%20Wealth%20%26%20Family%20Office%20Advisory%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Mallorca%20Wealth%20%26%20Family%20Office%20Advisory%20Mallorca",
   pricing: {
     startingPrice: "Consultoría patrimonial inicial personalizada",
     rateType: "custom_quote",
@@ -106,21 +102,4 @@ export const wealthManagementTaxMallorca: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 180,
-      url: "https://www.google.com/maps/search/?api=1&query=Mallorca%20Wealth%20%26%20Family%20Office%20Advisory%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Mallorca%20Wealth%20%26%20Family%20Office%20Advisory%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 18,
-      url: "https://www.bing.com/maps?q=Mallorca%20Wealth%20%26%20Family%20Office%20Advisory%20Mallorca",
-    },
-    totalReviewsAggregated: 198,
-    overallWeightedRating: 4.9,
-  },
 };

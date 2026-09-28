@@ -21,9 +21,6 @@ export const varaderoAlcudiamar: ServiceItem = {
   whatsapp: "+34 680 70 80 90",
   email: "varadero@alcudiamar.es",
   website: "https://alcudiamar.es",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Varadero%20Alcudiamar%20Port%20d%20Alcudia",
-  appleMapsUrl: "https://maps.apple.com/?q=Varadero%20Alcudiamar%20Port%20d%20Alcudia&ll=39.8350,3.1320",
-  bingMapsUrl: "https://www.bing.com/maps?where1=Varadero%20Alcudiamar%20Port%20d%20Alcudia",
   coordinates: { lat: 39.835, lng: 3.132 },
   schedule: "Lunes a Viernes: 08:00 - 18:00 | Sábados: 08:30 - 13:30 (Servicio de Varada de Guardia)",
   lastVerifiedAt: "2026-08-25",
@@ -131,30 +128,13 @@ export const varaderoAlcudiamar: ServiceItem = {
       instagramHandle: "@alcudiamar_marina",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 230,
-      url: "https://www.google.com/maps/search/?api=1&query=Varadero%20Alcudiamar%20Port%20d%20Alcudia",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Varadero%20Alcudiamar%20Port%20d%20Alcudia&ll=39.8350,3.1320",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 230,
-      url: "https://www.bing.com/maps?where1=Varadero%20Alcudiamar%20Port%20d%20Alcudia",
-    },
-    totalReviewsAggregated: 230,
-    overallWeightedRating: 4.8,
-  },
   reviews: [
     {
       id: "rev-va-1",
       authorName: "Antoni Moragues",
       rating: 5,
       date: "2025-05-18",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
       comment:
         "El millor varador del nord de Mallorca. Vam treure el veler amb el travelift per fer antivegetatiu i canvi d'ànodes. Servei ràpid, net i molt professional.",
@@ -165,7 +145,7 @@ export const varaderoAlcudiamar: ServiceItem = {
       authorName: "Captain Peter Scott",
       rating: 5,
       date: "2025-06-25",
-      platform: "google_maps",
+      platform: "direct",
       language: "en",
       comment:
         "First-rate shipyard in Alcúdia! The 150t travelift operators are extremely careful with catamarans. Excellent mechanics and immaculate facilities.",

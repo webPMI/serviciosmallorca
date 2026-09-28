@@ -31,12 +31,6 @@ export const hospital_veterinario_aragon_palma_24h: ServiceItem = {
   schedule: "Lunes a Domingo: 24 Horas (Urgencias Veterinarias 24/7 y Hospitalización)",
   image: "/images/services/hospital-veterinario-aragon-palma-24h.jpg",
   gallery: ["/images/services/hospital-veterinario-aragon-palma-24h.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Hospital%20Veterinario%20Arag%C3%B3n%20Palma%2024H%20Carrer%20d'Arag%C3%B3%2C%2067%2C%2007005%20Palma%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Hospital%20Veterinario%20Arag%C3%B3n%20Palma%2024H%20Carrer%20d'Arag%C3%B3%2C%2067%2C%2007005%20Palma%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Hospital%20Veterinario%20Arag%C3%B3n%20Palma%2024H%20Carrer%20d'Arag%C3%B3%2C%2067%2C%2007005%20Palma%2C%20Illes%20Balears",
   shortDescription: {
     es: "Hospital veterinario de referencia en Palma con servicio ininterrumpido de urgencias 24 horas, quirófanos de alta tecnología, UCI con monitorización continua, TAC veterinario y laboratorio propio.",
     en: "Premier veterinary hospital in Palma offering around-the-clock 24/7 emergency care, advanced surgical suites, intensive care unit (ICU), veterinary CT scanner, and on-site clinical lab.",
@@ -100,13 +94,6 @@ export const hospital_veterinario_aragon_palma_24h: ServiceItem = {
       "Stationäre Intensivbetreuung Tag und Nacht mit kontinuierlicher ärztlicher Überwachung",
       "Klinikeigenes Sofortlabor: Blutbild, Organwerte und Blutgasanalyse innerhalb von 15 Minuten",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.6,
-      reviewCount: 920,
-      url: "https://www.google.com/maps/search/?api=1&query=Hospital%20Veterinario%20Arag%C3%B3n%20Palma%2024H%20Carrer%20d'Arag%C3%B3%2C%2067%2C%2007005%20Palma%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

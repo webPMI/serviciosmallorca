@@ -31,12 +31,6 @@ export const formatges_es_pinaro_de_ses_mines_lloseta: ServiceItem = {
   schedule: "Lunes a Sábado: 09:30 - 13:30",
   image: "/images/services/formatges-es-pinaro-de-ses-mines-lloseta.jpg",
   gallery: ["/images/services/formatges-es-pinaro-de-ses-mines-lloseta.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Formatges%20Es%20Pinar%C3%B3%20de%20ses%20Mines%20-%20Formatgeria%20Artesana%20(Lloseta)%20Cam%C3%AD%20de%20ses%20Mines%2C%20s%2Fn%2C%2007360%20Lloseta",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Formatges%20Es%20Pinar%C3%B3%20de%20ses%20Mines%20-%20Formatgeria%20Artesana%20(Lloseta)%20Cam%C3%AD%20de%20ses%20Mines%2C%20s%2Fn%2C%2007360%20Lloseta",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Formatges%20Es%20Pinar%C3%B3%20de%20ses%20Mines%20-%20Formatgeria%20Artesana%20(Lloseta)%20Cam%C3%AD%20de%20ses%20Mines%2C%20s%2Fn%2C%2007360%20Lloseta",
   shortDescription: {
     es: "Quesería artesanal familiar en las faldas de Lloseta: quesos curados, semicurados y frescos de cabra y oveja con leche cruda de pastoreo.",
     en: "Family artisan cheese dairy at the foothills of Lloseta: raw goat and sheep milk cheeses crafted through traditional ripening.",
@@ -100,13 +94,6 @@ export const formatges_es_pinaro_de_ses_mines_lloseta: ServiceItem = {
       "Kühlversand inselweit und auf das spanische Festland",
       "Führungen durch den Käsereibetrieb nach Voranmeldung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 160,
-      url: "https://www.google.com/maps/search/?api=1&query=Formatges%20Es%20Pinar%C3%B3%20de%20ses%20Mines%20-%20Formatgeria%20Artesana%20(Lloseta)%20Cam%C3%AD%20de%20ses%20Mines%2C%20s%2Fn%2C%2007360%20Lloseta",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

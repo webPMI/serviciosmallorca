@@ -31,12 +31,6 @@ export const finca_son_roig_hotel_rural_porreres: ServiceItem = {
   schedule: "Lunes a Domingo: 08:00 - 23:00",
   image: "/images/services/finca-son-roig-hotel-rural-porreres.jpg",
   gallery: ["/images/services/finca-son-roig-hotel-rural-porreres.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Finca%20Son%20Roig%20Hotel%20Rural%20Porreres%20Ctra.%20Porreres-Llucmajor%2C%20Km%2022%2C%2007260%20Porreres",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Finca%20Son%20Roig%20Hotel%20Rural%20Porreres%20Ctra.%20Porreres-Llucmajor%2C%20Km%2022%2C%2007260%20Porreres",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Finca%20Son%20Roig%20Hotel%20Rural%20Porreres%20Ctra.%20Porreres-Llucmajor%2C%20Km%2022%2C%2007260%20Porreres",
   shortDescription: {
     es: "Hotel rural señorial del siglo XVIII en Porreres: jardines con palmeras, piscina panorámica, restaurante gourmet y silencio absoluto.",
     en: "Noble 18th-century country hotel in Porreres: palm gardens, panoramic swimming pool, fine dining restaurant, and absolute tranquility.",
@@ -100,13 +94,6 @@ export const finca_son_roig_hotel_rural_porreres: ServiceItem = {
       "Außenpool mit balinesischen Liegen und Handtuchservice",
       "Weinproben und Ausflüge zu den umliegenden Bodegas des Pla de Mallorca",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 185,
-      url: "https://www.google.com/maps/search/?api=1&query=Finca%20Son%20Roig%20Hotel%20Rural%20Porreres%20Ctra.%20Porreres-Llucmajor%2C%20Km%2022%2C%2007260%20Porreres",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

@@ -76,10 +76,6 @@ export const bioPestControlMallorcaPalmeras: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=BioPest%20Control%20Mallorca%20-%20Picudo%20%26%20Fincas%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=BioPest%20Control%20Mallorca%20-%20Picudo%20%26%20Fincas%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=BioPest%20Control%20Mallorca%20-%20Picudo%20%26%20Fincas%20Mallorca",
   pricing: {
     startingPrice: "Tratamiento de endoterapia palmera desde 45€ / unidad",
     rateType: "tiered",
@@ -106,21 +102,4 @@ export const bioPestControlMallorcaPalmeras: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 320,
-      url: "https://www.google.com/maps/search/?api=1&query=BioPest%20Control%20Mallorca%20-%20Picudo%20%26%20Fincas%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=BioPest%20Control%20Mallorca%20-%20Picudo%20%26%20Fincas%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 32,
-      url: "https://www.bing.com/maps?q=BioPest%20Control%20Mallorca%20-%20Picudo%20%26%20Fincas%20Mallorca",
-    },
-    totalReviewsAggregated: 352,
-    overallWeightedRating: 4.9,
-  },
 };

@@ -21,9 +21,6 @@ export const goodLuckTattoo: ServiceItem = {
   whatsapp: "+34 613 13 36 04",
   email: "info@goodlucktattoomallorca.com",
   website: "https://goodlucktattoomallorca.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Good+Luck+Tattoo+Mallorca+Palma",
-  appleMapsUrl: "https://maps.apple.com/?q=Good+Luck+Tattoo+Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Good+Luck+Tattoo+Mallorca",
   coordinates: {
     lat: 39.5714,
     lng: 2.6438,
@@ -185,22 +182,13 @@ export const goodLuckTattoo: ServiceItem = {
       specialty: "Realismo, Fine Line y Traditional",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 5,
-      reviewCount: 384,
-      url: "https://www.google.com/maps/search/?api=1&query=Good+Luck+Tattoo+Mallorca+Palma",
-    },
-    totalReviewsAggregated: 384,
-    overallWeightedRating: 5,
-  },
   reviews: [
     {
       id: "rev-goodluck-1",
       authorName: "Antònia Oliver",
       rating: 5,
       date: "2025-06-28",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
       comment:
         "Tracte immillorable i professionalitat màxima. El traç de la línia fina és finíssim i la cicatrització ha estat perfecta.",
@@ -211,7 +199,7 @@ export const goodLuckTattoo: ServiceItem = {
       authorName: "Michael Evans",
       rating: 5,
       date: "2025-05-14",
-      platform: "google_maps",
+      platform: "direct",
       language: "en",
       comment:
         "Best tattoo studio in Palma without question. The artists are super friendly, hygienic, and extremely talented with custom designs.",

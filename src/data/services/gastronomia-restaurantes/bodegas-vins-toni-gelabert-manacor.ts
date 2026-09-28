@@ -28,9 +28,6 @@ export const bodegasVinsToniGelabertManacor: ServiceItem = {
   email: "info@vinstonigelabert.com",
   website: "https://vinstonigelabert.com",
   menuUrl: "https://vinstonigelabert.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Vins+Toni+Gelabert+Manacor+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Vins+Toni+Gelabert+Manacor",
-  bingMapsUrl: "https://www.bing.com/maps?q=Vins+Toni+Gelabert+Manacor",
   tags: ["zona:manacor-llevant", "zona:manacor", "product:premium", "mod:en-local", "aud:parejas", "temps:todo-el-ano"],
   capabilities: {
     parkingAvailable: true,

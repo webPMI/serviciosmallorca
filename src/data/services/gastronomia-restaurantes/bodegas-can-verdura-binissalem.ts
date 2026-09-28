@@ -28,9 +28,6 @@ export const bodegasCanVerduraBinissalem: ServiceItem = {
   email: "info@vinscanverdura.com",
   website: "https://vinscanverdura.com",
   menuUrl: "https://vinscanverdura.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Bodegas+Can+Verdura+Binissalem+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Bodegas+Can+Verdura+Binissalem",
-  bingMapsUrl: "https://www.bing.com/maps?q=Bodegas+Can+Verdura+Binissalem",
   tags: ["zona:raiguer-pla", "zona:binissalem", "product:premium", "mod:en-local", "aud:parejas", "temps:todo-el-ano"],
   capabilities: {
     parkingAvailable: true,

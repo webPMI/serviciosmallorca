@@ -31,12 +31,6 @@ export const agroturisme_son_siurana_alcudia: ServiceItem = {
   schedule: "Abierto de Marzo a Noviembre (Recepción 24h)",
   image: "/images/services/agroturisme-son-siurana-alcudia.jpg",
   gallery: ["/images/services/agroturisme-son-siurana-alcudia.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Agroturisme%20Son%20Siurana%20Alc%C3%BAdia%20Ctra.%20Palma-Alc%C3%BAdia%2C%20km%2042.8%2C%2007400%20Alc%C3%BAdia%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Agroturisme%20Son%20Siurana%20Alc%C3%BAdia%20Ctra.%20Palma-Alc%C3%BAdia%2C%20km%2042.8%2C%2007400%20Alc%C3%BAdia%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Agroturisme%20Son%20Siurana%20Alc%C3%BAdia%20Ctra.%20Palma-Alc%C3%BAdia%2C%20km%2042.8%2C%2007400%20Alc%C3%BAdia%2C%20Illes%20Balears",
   shortDescription: {
     es: "Exclusivo agroturismo en una finca señorial de 100 hectáreas en el norte de Mallorca. Almendros, ovejas autóctonas, piscina panorámica y casas rurales restauradas.",
     en: "Exclusive boutique agrotourism on a 100-hectare historic country estate in northern Mallorca. Almond groves, indigenous sheep, scenic pool, and heritage cottages.",
@@ -106,13 +100,6 @@ export const agroturisme_son_siurana_alcudia: ServiceItem = {
     en: ["Heritage agroturismo in Alcúdia", "Charming private stone cottages", "Km 0 organic estate breakfast"],
     ca: ["Agroturisme senyorial a Alcúdia", "Caselles rústiques amb encant", "Esmorzar ecològic Km 0 de finca"],
     de: ["Traditionsreiches Agroturismo Alcúdia", "Romantische Naturstein-Cottages", "Bio-Frühstück vom Gutshof"],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 180,
-      url: "https://www.google.com/maps/search/?api=1&query=Agroturisme%20Son%20Siurana%20Alc%C3%BAdia%20Ctra.%20Palma-Alc%C3%BAdia%2C%20km%2042.8%2C%2007400%20Alc%C3%BAdia%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

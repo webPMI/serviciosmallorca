@@ -31,12 +31,6 @@ export const axa_seguros_agencia_exclusiva_palma_jaime_iii: ServiceItem = {
   schedule: "Lunes a Jueves: 09:00 - 18:30 | Viernes: 09:00 - 14:30 | Sábado y Domingo: Cerrado",
   image: "/images/services/axa-seguros-agencia-exclusiva-palma-jaime-iii.jpg",
   gallery: ["/images/services/axa-seguros-agencia-exclusiva-palma-jaime-iii.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=AXA%20Seguros%20Agencia%20Palma%20Passeig%20Mallorca%20Passeig%20de%20Mallorca%2C%2014%2C%2007012%20Palma%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=AXA%20Seguros%20Agencia%20Palma%20Passeig%20Mallorca%20Passeig%20de%20Mallorca%2C%2014%2C%2007012%20Palma%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=AXA%20Seguros%20Agencia%20Palma%20Passeig%20Mallorca%20Passeig%20de%20Mallorca%2C%2014%2C%2007012%20Palma%2C%20Illes%20Balears",
   shortDescription: {
     es: "Agencia de AXA Seguros en el Passeig de Mallorca de Palma, líder en seguros de salud con cuadro médico internacional, seguros para fincas exclusivas y asesoramiento patrimonial.",
     en: "Premier AXA Insurance agency on Passeig de Mallorca in central Palma, leader in private health policies with international hospital networks, luxury finca insurance, and wealth security.",
@@ -100,13 +94,6 @@ export const axa_seguros_agencia_exclusiva_palma_jaime_iii: ServiceItem = {
       "Vollkaskoversicherungen für Sportwagen, Cabrios und hochwertige Inselfahrzeuge",
       "Risiko-Lebensversicherungen und steueroptimierte Sparpläne nach spanischem Recht",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 190,
-      url: "https://www.google.com/maps/search/?api=1&query=AXA%20Seguros%20Agencia%20Palma%20Passeig%20Mallorca%20Passeig%20de%20Mallorca%2C%2014%2C%2007012%20Palma%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

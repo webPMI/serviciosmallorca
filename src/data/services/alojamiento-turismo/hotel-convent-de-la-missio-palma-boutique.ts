@@ -31,12 +31,6 @@ export const hotel_convent_de_la_missio_palma_boutique: ServiceItem = {
   schedule: "Recepción 24 horas (Abierto todo el año)",
   image: "/images/services/hotel-convent-de-la-missio-palma-boutique.jpg",
   gallery: ["/images/services/hotel-convent-de-la-missio-palma-boutique.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Hotel%20Convent%20de%20la%20Missi%C3%B3%20Boutique%20%26%20Spa%20Palma%20(Relais%20%26%20Ch%C3%A2teaux)%20Carrer%20de%20la%20Missi%C3%B3%2C%207A%2C%2007003%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Hotel%20Convent%20de%20la%20Missi%C3%B3%20Boutique%20%26%20Spa%20Palma%20(Relais%20%26%20Ch%C3%A2teaux)%20Carrer%20de%20la%20Missi%C3%B3%2C%207A%2C%2007003%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Hotel%20Convent%20de%20la%20Missi%C3%B3%20Boutique%20%26%20Spa%20Palma%20(Relais%20%26%20Ch%C3%A2teaux)%20Carrer%20de%20la%20Missi%C3%B3%2C%207A%2C%2007003%20Palma",
   shortDescription: {
     es: "Hotel boutique de 5 estrellas en un antiguo convento del siglo XVII en el centro de Palma: restaurante con estrella Michelin, terraza en azotea con piscina y spa urbano subterráneo.",
     en: "5-star boutique hotel in a restored 17th-century monastery in central Palma: Michelin-starred dining, rooftop pool terrace, and subterranean urban spa.",
@@ -100,13 +94,6 @@ export const hotel_convent_de_la_missio_palma_boutique: ServiceItem = {
       "Michelin-Stern-Fine-Dining im Restaurant Marc Fosh",
       "VIP-Concierge-Service, Flughafen-Transfers und Yacht-Charter",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 480,
-      url: "https://www.google.com/maps/search/?api=1&query=Hotel%20Convent%20de%20la%20Missi%C3%B3%20Boutique%20%26%20Spa%20Palma%20(Relais%20%26%20Ch%C3%A2teaux)%20Carrer%20de%20la%20Missi%C3%B3%2C%207A%2C%2007003%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

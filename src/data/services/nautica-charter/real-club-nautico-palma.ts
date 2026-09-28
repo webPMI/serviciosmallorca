@@ -81,23 +81,6 @@ export const realClubNauticoPalma: ServiceItem = {
     ca: "Fundat el 1948 al Passeig Marítim de Palma, és la institució nàutica més emblemàtica de les Balears.",
     de: "Gegründet 1948 am Paseo Marítimo von Palma, ist der Club die renommierteste nautische Institution Spaniens.",
   },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.6,
-      reviewCount: 2150,
-      url: "https://www.google.com/maps/search/?api=1&query=Real+Club+Nautico+de+Palma",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Real+Club+Nautico+de+Palma",
-    },
-    bingMaps: {
-      rating: 4.6,
-      reviewCount: 180,
-      url: "https://www.bing.com/maps?q=Real+Club+Nautico+de+Palma",
-    },
-    totalReviewsAggregated: 2330,
-    overallWeightedRating: 4.6,
-  },
   reviews: [],
   socialLinks: {
     instagram: "https://instagram.com/rcnpalma",
@@ -120,9 +103,6 @@ export const realClubNauticoPalma: ServiceItem = {
     },
   ],
   authorityProfiles: [],
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Real+Club+Nautico+de+Palma",
-  appleMapsUrl: "https://maps.apple.com/?q=Real+Club+Nautico+de+Palma",
-  bingMapsUrl: "https://www.bing.com/maps?q=Real+Club+Nautico+de+Palma",
   phone: "+34 971 72 68 48",
   whatsapp: "+34 971 72 68 48",
   email: "club@rcnp.es",

@@ -28,9 +28,6 @@ export const bodegas7103PetitCellerSantaMaria: ServiceItem = {
   email: "info@7103-petitceller.com",
   website: "https://www.7103-petitceller.com",
   menuUrl: "https://www.7103-petitceller.com",
-  googleMapsUrl: "https://www.google.com/maps/search/7103+Petit+Celler+Santa+Maria+del+Cami+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=7103+Petit+Celler+Santa+Maria",
-  bingMapsUrl: "https://www.bing.com/maps?q=7103+Petit+Celler+Santa+Maria",
   tags: [
     "zona:raiguer-pla",
     "zona:santa-maria-del-cami",

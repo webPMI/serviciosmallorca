@@ -105,30 +105,13 @@ export const adrianQuetglas: ServiceItem = {
     ca: "Nascut a Buenos Aires de pare mallorquí, Adrián Quetglas es va formar a París abans de triomfar a Moscou. El 2015 va tornar a Mallorca per obrir el seu propi restaurant al Passeig de Mallorca, aconseguint una Estrella Michelin.",
     de: "Chefkoch Adrián Quetglas sammelte internationale Erfahrung in renommierten Küchen Moskaus und Westeuropas, bevor er nach Mallorca zurückkehrte, um seine Vision einer anspruchsvollen, zugänglichen Haute Cuisine zu verwirklichen.",
   },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.6,
-      reviewCount: 1240,
-      url: "https://www.google.com/maps/search/?api=1&query=Restaurante%20Adrian%20Quetglas%20Palma%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Restaurante%20Adrian%20Quetglas%20Palma%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.6,
-      reviewCount: 85,
-      url: "https://www.bing.com/maps?q=Restaurante%20Adrian%20Quetglas%20Palma%20Mallorca",
-    },
-    totalReviewsAggregated: 1325,
-    overallWeightedRating: 4.6,
-  },
   reviews: [
     {
       id: "rev-aq-1",
       authorName: "Marcos L.",
       rating: 5,
       date: "2026-07-02",
-      platform: "google_maps",
+      platform: "direct",
       language: "es",
       comment:
         "Experiencia de estrella Michelin insuperable en relación calidad-precio. El menú de mediodía es una auténtica joya en Palma.",
@@ -199,9 +182,6 @@ export const adrianQuetglas: ServiceItem = {
     },
   ],
   authorityProfiles: [],
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Restaurante%20Adrian%20Quetglas%20Palma%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante%20Adrian%20Quetglas%20Palma%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante%20Adrian%20Quetglas%20Palma%20Mallorca",
   phone: "+34 971 78 11 19",
   whatsapp: "+34 971 78 11 19",
   email: "reservas@adrianquetglas.es",

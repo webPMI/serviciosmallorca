@@ -21,9 +21,6 @@ export const attractionCatamarans: ServiceItem = {
   whatsapp: "+34 971 73 70 00",
   email: "info@attractioncatamarans.com",
   website: "https://attractioncatamarans.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Attraction%20Catamarans%20Palma%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Attraction%20Catamarans%20Palma%20Mallorca&ll=39.5645,2.6358",
-  bingMapsUrl: "https://www.bing.com/maps?where1=Attraction%20Catamarans%20Palma%20Mallorca",
   coordinates: { lat: 39.5645, lng: 2.6358 },
   schedule: "Lunes a Domingo: 09:30 - 20:30 (Salidas diarias de mañana y atardecer)",
   lastVerifiedAt: "2026-08-25",
@@ -129,30 +126,13 @@ export const attractionCatamarans: ServiceItem = {
       instagramHandle: "@attraction_catamarans",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 860,
-      url: "https://www.google.com/maps/search/?api=1&query=Attraction%20Catamarans%20Palma%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Attraction%20Catamarans%20Palma%20Mallorca&ll=39.5645,2.6358",
-    },
-    bingMaps: {
-      rating: 4.7,
-      reviewCount: 860,
-      url: "https://www.bing.com/maps?where1=Attraction%20Catamarans%20Palma%20Mallorca",
-    },
-    totalReviewsAggregated: 860,
-    overallWeightedRating: 4.7,
-  },
   reviews: [
     {
       id: "rev-attraction-1",
       authorName: "Laura Gómez",
       rating: 5,
       date: "2025-07-28",
-      platform: "google_maps",
+      platform: "direct",
       language: "es",
       comment:
         "Una experiencia increíble en la bahía de Palma. El barco es comodísimo, la tripulación atentísima y la comida riquísima.",
@@ -163,7 +143,7 @@ export const attractionCatamarans: ServiceItem = {
       authorName: "Oliver Becker",
       rating: 5,
       date: "2025-08-15",
-      platform: "google_maps",
+      platform: "direct",
       language: "en",
       comment:
         "Best catamaran tour in Mallorca. The sunset sailing was breathtaking and the swimming spot in Cala Blava was paradise.",

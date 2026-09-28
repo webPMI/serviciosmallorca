@@ -28,9 +28,6 @@ export const bodegasGalmesIRibotSantaMargalida: ServiceItem = {
   email: "vins@galmesiribot.com",
   website: "https://galmesiribot.com",
   menuUrl: "https://galmesiribot.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Bodegas+Galmes+i+Ribot+Santa+Margalida+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Bodegas+Galmes+i+Ribot+Santa+Margalida",
-  bingMapsUrl: "https://www.bing.com/maps?q=Bodegas+Galmes+i+Ribot+Santa+Margalida",
   tags: [
     "zona:alcudia-pollensa",
     "zona:santa-margalida",

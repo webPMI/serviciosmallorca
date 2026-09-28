@@ -31,12 +31,6 @@ export const clinica_veterinaria_hospital_llevant_manacor: ServiceItem = {
   schedule: "Consultas: Lunes a Sábado: 09:00 - 20:30 (Urgencias y Hospitalización 24h / 365 días)",
   image: "/images/services/clinica-veterinaria-hospital-llevant-manacor.jpg",
   gallery: ["/images/services/clinica-veterinaria-hospital-llevant-manacor.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Hospital%20Veterinari%20%26%20Urg%C3%A8ncies%2024h%20Llevant%20Manacor%20Avinguda%20del%20Parc%2C%2038%2C%2007500%20Manacor",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Hospital%20Veterinari%20%26%20Urg%C3%A8ncies%2024h%20Llevant%20Manacor%20Avinguda%20del%20Parc%2C%2038%2C%2007500%20Manacor",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Hospital%20Veterinari%20%26%20Urg%C3%A8ncies%2024h%20Llevant%20Manacor%20Avinguda%20del%20Parc%2C%2038%2C%2007500%20Manacor",
   shortDescription: {
     es: "Hospital veterinario con urgencias 24 horas y UCI en Manacor: quirófano de traumatología, TAC veterinario, ecografía y hospitalización canina y felina separada.",
     en: "24/7 veterinary hospital and intensive care in Manacor: orthopedic surgery, veterinary CT scanner, and separate dog/cat hospitalization wards.",
@@ -100,13 +94,6 @@ export const clinica_veterinaria_hospital_llevant_manacor: ServiceItem = {
       "CT-Diagnostik für Neurologie und Onkologie",
       "Sofortlabor für Blutanalysen und Bluttransfusionen",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 460,
-      url: "https://www.google.com/maps/search/?api=1&query=Hospital%20Veterinari%20%26%20Urg%C3%A8ncies%2024h%20Llevant%20Manacor%20Avinguda%20del%20Parc%2C%2038%2C%2007500%20Manacor",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

@@ -76,10 +76,6 @@ export const terraeRestaurantPortPollensa: ServiceItem = {
       close: "17:00",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Terrae%20Restaurant%20Port%20de%20Pollen%C3%A7a%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Terrae%20Restaurant%20Port%20de%20Pollen%C3%A7a%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Terrae%20Restaurant%20Port%20de%20Pollen%C3%A7a%20Mallorca",
   pricing: {
     startingPrice: "Carta y menús degustación disponibles",
     rateType: "tiered",
@@ -106,21 +102,4 @@ export const terraeRestaurantPortPollensa: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 580,
-      url: "https://www.google.com/maps/search/?api=1&query=Terrae%20Restaurant%20Port%20de%20Pollen%C3%A7a%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Terrae%20Restaurant%20Port%20de%20Pollen%C3%A7a%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 58,
-      url: "https://www.bing.com/maps?q=Terrae%20Restaurant%20Port%20de%20Pollen%C3%A7a%20Mallorca",
-    },
-    totalReviewsAggregated: 638,
-    overallWeightedRating: 4.9,
-  },
 };

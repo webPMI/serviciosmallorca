@@ -76,10 +76,6 @@ export const seniorsResidenciasMallorcaPalma: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Seniors%20Residencias%20Palma%20%26%20Can%20Picafort%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Seniors%20Residencias%20Palma%20%26%20Can%20Picafort%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Seniors%20Residencias%20Palma%20%26%20Can%20Picafort%20Mallorca",
   pricing: {
     startingPrice: "Presupuesto y atención a medida",
     rateType: "tiered",
@@ -106,21 +102,4 @@ export const seniorsResidenciasMallorcaPalma: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 290,
-      url: "https://www.google.com/maps/search/?api=1&query=Seniors%20Residencias%20Palma%20%26%20Can%20Picafort%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Seniors%20Residencias%20Palma%20%26%20Can%20Picafort%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.6,
-      reviewCount: 29,
-      url: "https://www.bing.com/maps?q=Seniors%20Residencias%20Palma%20%26%20Can%20Picafort%20Mallorca",
-    },
-    totalReviewsAggregated: 319,
-    overallWeightedRating: 4.7,
-  },
 };

@@ -28,9 +28,6 @@ export const fetASollerFabricaGelats: ServiceItem = {
   email: "info@fetasoller.com",
   website: "https://www.fetasoller.com",
   menuUrl: "https://www.fetasoller.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Fet+a+Soller+Fabrica+Gelats+Soller+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Fet+a+Soller+Gelats",
-  bingMapsUrl: "https://www.bing.com/maps?q=Fet+a+Soller+Gelats",
   tags: ["zona:tramuntana", "zona:soller", "product:traditional", "mod:en-local", "aud:familias", "temps:todo-el-ano"],
   capabilities: {
     terrace: true,

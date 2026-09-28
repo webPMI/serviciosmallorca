@@ -76,12 +76,6 @@ export const knxSmartHomeDomoticaMallorca: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Balearic%20Smart%20Living%20-%20Dom%C3%B3tica%20KNX%20%26%20Control4%20Mallorca",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Balearic%20Smart%20Living%20-%20Dom%C3%B3tica%20KNX%20%26%20Control4%20Mallorca",
-  bingMapsUrl:
-    "https://www.bing.com/maps?q=Balearic%20Smart%20Living%20-%20Dom%C3%B3tica%20KNX%20%26%20Control4%20Mallorca",
   pricing: {
     startingPrice: "Proyecto integral de automatización residencial",
     rateType: "custom_quote",
@@ -108,21 +102,4 @@ export const knxSmartHomeDomoticaMallorca: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 320,
-      url: "https://www.google.com/maps/search/?api=1&query=Balearic%20Smart%20Living%20-%20Dom%C3%B3tica%20KNX%20%26%20Control4%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Balearic%20Smart%20Living%20-%20Dom%C3%B3tica%20KNX%20%26%20Control4%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 32,
-      url: "https://www.bing.com/maps?q=Balearic%20Smart%20Living%20-%20Dom%C3%B3tica%20KNX%20%26%20Control4%20Mallorca",
-    },
-    totalReviewsAggregated: 352,
-    overallWeightedRating: 4.9,
-  },
 };

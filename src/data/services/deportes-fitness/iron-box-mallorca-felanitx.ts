@@ -29,8 +29,6 @@ export const IRON_BOX_MALLORCA_FELANITX: ServiceItem = {
   image: "/images/sports/iron-box-mallorca-felanitx.jpg",
   gallery: ["/images/sports/iron-box-mallorca-felanitx.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007067",
-  appleMapsUrl: "https://maps.apple.com/?q=Iron%20Box%20Mallorca+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Iron%20Box%20Mallorca+Mallorca",
   shortDescription: {
     es: "Box de entrenamiento funcional y fuerza en Felanitx con jaulas de potencia y entrenadores titulados.",
     en: "Functional and strength box in Felanitx featuring power racks and certified coaches.",
@@ -94,13 +92,6 @@ export const IRON_BOX_MALLORCA_FELANITX: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 190,
-      url: "https://www.google.com/maps?cid=12007067",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

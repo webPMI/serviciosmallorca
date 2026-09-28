@@ -31,12 +31,6 @@ export const climatizacion_aerotermia_balear_inca_calefaccion: ServiceItem = {
   schedule: "Lunes a Viernes: 08:00 - 18:00",
   image: "/images/services/climatizacion-aerotermia-balear-inca-calefaccion.jpg",
   gallery: ["/images/services/climatizacion-aerotermia-balear-inca-calefaccion.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Climatizaci%C3%B3n%20%26%20Aerotermia%20Balear%20Inca%20(Daikin%20%26%20Mitsubishi)%20Gran%20Via%20de%20Colom%2C%20142%2C%2007300%20Inca",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Climatizaci%C3%B3n%20%26%20Aerotermia%20Balear%20Inca%20(Daikin%20%26%20Mitsubishi)%20Gran%20Via%20de%20Colom%2C%20142%2C%2007300%20Inca",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Climatizaci%C3%B3n%20%26%20Aerotermia%20Balear%20Inca%20(Daikin%20%26%20Mitsubishi)%20Gran%20Via%20de%20Colom%2C%20142%2C%2007300%20Inca",
   shortDescription: {
     es: "Ingeniería e instalación de aerotermia, suelo radiante y aire acondicionado inverter en Mallorca: servicio técnico oficial Daikin, Mitsubishi Electric y Panasonic para villas y edificios.",
     en: "Air-source heat pump, underfloor heating, and inverter AC engineering in Mallorca: official Daikin, Mitsubishi Electric, and Panasonic installer for villas.",
@@ -100,13 +94,6 @@ export const climatizacion_aerotermia_balear_inca_calefaccion: ServiceItem = {
       "Umrüstung alter Ölheizungen auf hocheffiziente Luft-Wasser-Wärmepumpen",
       "Jährliche Wartung und 24h-Notdienst für Klimatechnik",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 312,
-      url: "https://www.google.com/maps/search/?api=1&query=Climatizaci%C3%B3n%20%26%20Aerotermia%20Balear%20Inca%20(Daikin%20%26%20Mitsubishi)%20Gran%20Via%20de%20Colom%2C%20142%2C%2007300%20Inca",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

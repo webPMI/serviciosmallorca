@@ -31,12 +31,6 @@ export const agroturismo_finca_sa_rota_de_morell_sineu: ServiceItem = {
   schedule: "Abierto todo el año",
   image: "/images/services/agroturismo-finca-sa-rota-de-morell-sineu.jpg",
   gallery: ["/images/services/agroturismo-finca-sa-rota-de-morell-sineu.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Agroturismo%20Finca%20Sa%20Rota%20de%20Morell%20Sineu%20Cam%C3%AD%20de%20Morell%2C%20km%202.1%2C%2007510%20Sineu%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Agroturismo%20Finca%20Sa%20Rota%20de%20Morell%20Sineu%20Cam%C3%AD%20de%20Morell%2C%20km%202.1%2C%2007510%20Sineu%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Agroturismo%20Finca%20Sa%20Rota%20de%20Morell%20Sineu%20Cam%C3%AD%20de%20Morell%2C%20km%202.1%2C%2007510%20Sineu%2C%20Illes%20Balears",
   shortDescription: {
     es: "Agroturismo con encanto en el centro geográfico de Mallorca, a las afueras del pueblo medieval de Sineu. Finca rústica con piscina, viñedos, huerto y facilidades para cicloturistas.",
     en: "Charming agroturismo in the geographic heart of Mallorca, near the medieval village of Sineu. Country estate with pool, vineyards, orchard, and cycling facilities.",
@@ -118,13 +112,6 @@ export const agroturismo_finca_sa_rota_de_morell_sineu: ServiceItem = {
       "Radlerfreundliches Gut bei Sineu",
       "Ländliche Erholung & perfekte Mittellage",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 155,
-      url: "https://www.google.com/maps/search/?api=1&query=Agroturismo%20Finca%20Sa%20Rota%20de%20Morell%20Sineu%20Cam%C3%AD%20de%20Morell%2C%20km%202.1%2C%2007510%20Sineu%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

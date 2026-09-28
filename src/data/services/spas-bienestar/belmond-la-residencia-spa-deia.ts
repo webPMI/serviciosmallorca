@@ -29,8 +29,6 @@ export const belmond_la_residencia_spa_deia: ServiceItem = {
   image: "/images/spas/belmond-la-residencia-spa-deia.jpg",
   gallery: ["/images/spas/belmond-la-residencia-spa-deia.jpg", "/images/categories/salud.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=13008017",
-  appleMapsUrl: "https://maps.apple.com/?q=Belmond%20La%20Residencia%20Spa+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Belmond%20La%20Residencia%20Spa+Mallorca",
   shortDescription: {
     es: "Spa galardonado en Deià con tratamientos basados en aceite de oliva local, cítricos de Sóller y vistas a la montaña.",
     en: "Award-winning spa in Deià offering treatments infused with local olive oil and mountain terrace relaxation.",
@@ -94,13 +92,6 @@ export const belmond_la_residencia_spa_deia: ServiceItem = {
       "Wellness- und Regenerationstherapien",
       "Kontinuierliche medizinische Nachbetreuung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 380,
-      url: "https://www.google.com/maps?cid=13008017",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

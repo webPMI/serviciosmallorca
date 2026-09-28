@@ -31,12 +31,6 @@ export const seguridad_alarmas_mallorca_prosegur_inca: ServiceItem = {
   schedule: "Lunes a Viernes: 08:30 - 18:30 (CRA 24h/365 días)",
   image: "/images/services/seguridad-alarmas-mallorca-prosegur-inca.jpg",
   gallery: ["/images/services/seguridad-alarmas-mallorca-prosegur-inca.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=SecurBalear%20Sistemas%20de%20Seguridad%20%26%20Alarmas%20Mallorca%20Inca%20Pol%C3%ADgon%20Industrial%20Can%20Valero%2C%20Carrer%20Foners%2012%2C%2007009%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=SecurBalear%20Sistemas%20de%20Seguridad%20%26%20Alarmas%20Mallorca%20Inca%20Pol%C3%ADgon%20Industrial%20Can%20Valero%2C%20Carrer%20Foners%2012%2C%2007009%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=SecurBalear%20Sistemas%20de%20Seguridad%20%26%20Alarmas%20Mallorca%20Inca%20Pol%C3%ADgon%20Industrial%20Can%20Valero%2C%20Carrer%20Foners%2012%2C%2007009%20Palma",
   shortDescription: {
     es: "Empresa instaladora de sistemas de seguridad electrónica en Mallorca: alarmas grado 2 y grado 3, CCTV-IP 4K, control de accesos biométrico y central receptora de alarmas propia 24h.",
     en: "Electronic security systems installer in Mallorca: Grade 2 & 3 burglar alarms, 4K IP CCTV, biometric access control, and in-house 24h alarm receiving centre.",
@@ -100,13 +94,6 @@ export const seguridad_alarmas_mallorca_prosegur_inca: ServiceItem = {
       "Biometrische Zugangskontrolle und Torautomatik",
       "24/365-Überwachung durch eigene Notrufzentrale mit Polizei- und Eigentümerbenachrichtigung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 234,
-      url: "https://www.google.com/maps/search/?api=1&query=SecurBalear%20Sistemas%20de%20Seguridad%20%26%20Alarmas%20Mallorca%20Inca%20Pol%C3%ADgon%20Industrial%20Can%20Valero%2C%20Carrer%20Foners%2012%2C%2007009%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

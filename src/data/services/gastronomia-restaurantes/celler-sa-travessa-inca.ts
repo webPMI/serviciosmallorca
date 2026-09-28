@@ -78,12 +78,6 @@ export const cellerSaTravessaInca: ServiceItem = {
   },
   image: "/images/services/celler-sa-travessa-inca.jpg",
   gallery: ["/images/services/celler-sa-travessa-inca.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Celler%20Sa%20Travessa%20(Inca%20-%201930)%20Carrer%20de%20la%20Travessa%2C%2019%2C%2007300%20Inca%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Celler%20Sa%20Travessa%20(Inca%20-%201930)%20Carrer%20de%20la%20Travessa%2C%2019%2C%2007300%20Inca%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://www.bing.com/maps?q=Celler%20Sa%20Travessa%20(Inca%20-%201930)%20Carrer%20de%20la%20Travessa%2C%2019%2C%2007300%20Inca%2C%20Illes%20Balears",
   phone: "+34 971 50 00 49",
   whatsapp: "+34971500049",
   website: "https://satravessa-inca.com",

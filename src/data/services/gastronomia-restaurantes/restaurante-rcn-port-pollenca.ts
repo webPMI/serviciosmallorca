@@ -28,9 +28,6 @@ export const restauranteRcnPortPollenca: ServiceItem = {
   email: "restaurante@rcnpp.net",
   website: "https://www.rcnpp.net",
   menuUrl: "https://www.rcnpp.net",
-  googleMapsUrl: "https://www.google.com/maps/search/Restaurante+Reial+Club+Nautic+Port+de+Pollenca+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante+Club+Nautic+Port+de+Pollenca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante+Club+Nautic+Port+de+Pollenca",
   tags: [
     "zona:alcudia-pollensa",
     "zona:port-de-pollenca",

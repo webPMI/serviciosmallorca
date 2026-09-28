@@ -21,9 +21,6 @@ export const clubNauticPortitxol: ServiceItem = {
   whatsapp: "+34 971 27 10 70",
   email: "club@cnportitxol.com",
   website: "https://cnportitxol.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Club%20Nautic%20Portitxol%20Palma",
-  appleMapsUrl: "https://maps.apple.com/?q=Club%20Nautic%20Portitxol%20Palma&ll=39.5614,2.6712",
-  bingMapsUrl: "https://www.bing.com/maps?where1=Club%20Nautic%20Portitxol%20Palma",
   coordinates: { lat: 39.5614, lng: 2.6712 },
   schedule: "Lunes a Domingo: 08:00 - 23:00 (Oficinas: 09:00 - 18:00)",
   lastVerifiedAt: "2026-08-25",
@@ -132,30 +129,13 @@ export const clubNauticPortitxol: ServiceItem = {
       instagramHandle: "@cnportitxol",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.6,
-      reviewCount: 1650,
-      url: "https://www.google.com/maps/search/?api=1&query=Club%20Nautic%20Portitxol%20Palma",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Club%20Nautic%20Portitxol%20Palma&ll=39.5614,2.6712",
-    },
-    bingMaps: {
-      rating: 4.6,
-      reviewCount: 1650,
-      url: "https://www.bing.com/maps?where1=Club%20Nautic%20Portitxol%20Palma",
-    },
-    totalReviewsAggregated: 1650,
-    overallWeightedRating: 4.6,
-  },
   reviews: [
     {
       id: "rev-cnp-1",
       authorName: "Guillem Sureda",
       rating: 5,
       date: "2025-06-03",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
       comment:
         "Port esportiu acollidor i amb molt d'encant al Portitxol. Molt bon servei de marineria i restaurant fantàstic.",
@@ -166,7 +146,7 @@ export const clubNauticPortitxol: ServiceItem = {
       authorName: "Oliver Davies",
       rating: 5,
       date: "2025-07-19",
-      platform: "google_maps",
+      platform: "direct",
       language: "en",
       comment:
         "Lovely marina with great facilities and friendly staff. Best place in Palma for seaside walks and fresh fish.",

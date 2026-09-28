@@ -31,12 +31,6 @@ export const ebro_jardi_garden_center_inca: ServiceItem = {
   schedule: "Lunes a Sábado: 08:30 - 19:30 | Domingo: 09:30 - 14:00",
   image: "/images/services/ebro-jardi-garden-center-inca.jpg",
   gallery: ["/images/services/ebro-jardi-garden-center-inca.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Ebro%20Jard%C3%AD%20Garden%20Center%20Inca%20Carrer%20dels%20Menestrals%2C%2012%2C%20Pol%C3%ADgon%20d'Inca%2C%2007300%20Inca%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Ebro%20Jard%C3%AD%20Garden%20Center%20Inca%20Carrer%20dels%20Menestrals%2C%2012%2C%20Pol%C3%ADgon%20d'Inca%2C%2007300%20Inca%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Ebro%20Jard%C3%AD%20Garden%20Center%20Inca%20Carrer%20dels%20Menestrals%2C%2012%2C%20Pol%C3%ADgon%20d'Inca%2C%2007300%20Inca%2C%20Illes%20Balears",
   shortDescription: {
     es: "Centro de jardinería y vivero integral en Inca con más de 10.000 m² dedicados a plantas autóctonas de Mallorca, olivos centenarios, palmeras, cítricos, macetas de diseño y riego automático.",
     en: "Comprehensive garden centre and plant nursery in Inca featuring 10,000 m² of Mediterranean flora, ancient olive trees, palms, citrus, designer pots, and smart irrigation systems.",
@@ -100,13 +94,6 @@ export const ebro_jardi_garden_center_inca: ServiceItem = {
       "Planung und Verkauf von automatischen Tröpfchenbewässerungsanlagen",
       "Hochwertige Pflanzerde, Zierkies, Pinienrinde und ökologische Düngemittel",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 340,
-      url: "https://www.google.com/maps/search/?api=1&query=Ebro%20Jard%C3%AD%20Garden%20Center%20Inca%20Carrer%20dels%20Menestrals%2C%2012%2C%20Pol%C3%ADgon%20d'Inca%2C%2007300%20Inca%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

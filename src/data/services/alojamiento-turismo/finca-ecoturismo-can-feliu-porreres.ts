@@ -76,9 +76,6 @@ export const fincaEcoturismoCanFeliuPorreres: ServiceItem = {
       close: "23:59",
     },
   },
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Finca%20Can%20Feliu%20Eco-Agroturismo%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Finca%20Can%20Feliu%20Eco-Agroturismo%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Finca%20Can%20Feliu%20Eco-Agroturismo%20Mallorca",
   pricing: {
     startingPrice: "Desde 195€ / noche",
     rateType: "tiered",
@@ -105,21 +102,4 @@ export const fincaEcoturismoCanFeliuPorreres: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 290,
-      url: "https://www.google.com/maps/search/?api=1&query=Finca%20Can%20Feliu%20Eco-Agroturismo%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Finca%20Can%20Feliu%20Eco-Agroturismo%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.7,
-      reviewCount: 29,
-      url: "https://www.bing.com/maps?q=Finca%20Can%20Feliu%20Eco-Agroturismo%20Mallorca",
-    },
-    totalReviewsAggregated: 319,
-    overallWeightedRating: 4.8,
-  },
 };

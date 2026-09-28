@@ -31,12 +31,6 @@ export const alboran_charter_palma: ServiceItem = {
   schedule: "Lunes a Domingo: 08:30 - 20:00",
   image: "/images/services/alboran-charter-palma.jpg",
   gallery: ["/images/services/alboran-charter-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Alboran%20Charter%20Palma%201990%20Muelle%20de%20San%20Pedro%2C%20s%2Fn%2C%20Real%20Club%20N%C3%A1utico%20de%20Palma%2C%2007012%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Alboran%20Charter%20Palma%201990%20Muelle%20de%20San%20Pedro%2C%20s%2Fn%2C%20Real%20Club%20N%C3%A1utico%20de%20Palma%2C%2007012%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Alboran%20Charter%20Palma%201990%20Muelle%20de%20San%20Pedro%2C%20s%2Fn%2C%20Real%20Club%20N%C3%A1utico%20de%20Palma%2C%2007012%20Palma",
   shortDescription: {
     es: "Pioneros del alquiler de veleros y catamaranes en Mallorca desde 1990 con base en el Real Club Náutico de Palma.",
     en: "Pioneering sailing yacht and catamaran charter company in Mallorca since 1990, based at the Real Club Náutico de Palma.",
@@ -100,13 +94,6 @@ export const alboran_charter_palma: ServiceItem = {
       "Ein- bis zweiwöchige Törnplanung nach Cabrera, Menorca und Ibiza",
       "Yachtwartung, Verproviantierung und Transferservice",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 195,
-      url: "https://www.google.com/maps/search/?api=1&query=Alboran%20Charter%20Palma%201990%20Muelle%20de%20San%20Pedro%2C%20s%2Fn%2C%20Real%20Club%20N%C3%A1utico%20de%20Palma%2C%2007012%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

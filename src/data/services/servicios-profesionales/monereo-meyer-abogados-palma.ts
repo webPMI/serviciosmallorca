@@ -76,9 +76,6 @@ export const monereoMeyerAbogadosPalma: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Monereo%20Meyer%20Abogados%20Palma%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Monereo%20Meyer%20Abogados%20Palma%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Monereo%20Meyer%20Abogados%20Palma%20Mallorca",
   pricing: {
     startingPrice: "Consultar servicios y presupuestos personalizados",
     rateType: "custom_quote",
@@ -105,21 +102,4 @@ export const monereoMeyerAbogadosPalma: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 240,
-      url: "https://www.google.com/maps/search/?api=1&query=Monereo%20Meyer%20Abogados%20Palma%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Monereo%20Meyer%20Abogados%20Palma%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 24,
-      url: "https://www.bing.com/maps?q=Monereo%20Meyer%20Abogados%20Palma%20Mallorca",
-    },
-    totalReviewsAggregated: 264,
-    overallWeightedRating: 4.9,
-  },
 };

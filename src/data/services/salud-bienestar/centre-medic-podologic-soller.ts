@@ -31,12 +31,6 @@ export const centre_medic_podologic_soller: ServiceItem = {
   schedule: "Lunes a Viernes de 09:00 a 14:00 y 16:00 a 19:30",
   image: "/images/services/centre-medic-podologic-soller.jpg",
   gallery: ["/images/services/centre-medic-podologic-soller.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Centre%20M%C3%A8dic%20%26%20Podol%C3%B2gic%20S%C3%B3ller%20Gran%20Via%2C%2022%2C%2007100%20S%C3%B3ller%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Centre%20M%C3%A8dic%20%26%20Podol%C3%B2gic%20S%C3%B3ller%20Gran%20Via%2C%2022%2C%2007100%20S%C3%B3ller%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Centre%20M%C3%A8dic%20%26%20Podol%C3%B2gic%20S%C3%B3ller%20Gran%20Via%2C%2022%2C%2007100%20S%C3%B3ller%2C%20Illes%20Balears",
   shortDescription: {
     es: "Consultorio médico, podológico y de fisioterapia en la Gran Via de Sóller. Atención sanitaria integral para residentes y deportistas de la Serra de Tramuntana.",
     en: "Medical, podiatry, and physiotherapy clinic on Sóller's Gran Via. Healthcare services for residents, hikers, and cyclists in the Tramuntana mountains.",
@@ -110,13 +104,6 @@ export const centre_medic_podologic_soller: ServiceItem = {
       "Medicina preventiva familiar",
     ],
     de: ["Sportpodologie für Bergwanderer", "Physiotherapie für Outdoorsportler", "Familienmedizinische Vorsorge"],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 95,
-      url: "https://www.google.com/maps/search/?api=1&query=Centre%20M%C3%A8dic%20%26%20Podol%C3%B2gic%20S%C3%B3ller%20Gran%20Via%2C%2022%2C%2007100%20S%C3%B3ller%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

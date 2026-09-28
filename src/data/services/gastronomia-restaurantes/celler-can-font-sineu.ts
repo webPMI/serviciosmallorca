@@ -28,9 +28,6 @@ export const cellerCanFontSineu: ServiceItem = {
   email: "info@canfontsineu.com",
   website: "https://canfontsineu.com",
   menuUrl: "https://canfontsineu.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Celler+Can+Font+Sineu+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Celler+Can+Font+Sineu",
-  bingMapsUrl: "https://www.bing.com/maps?q=Celler+Can+Font+Sineu",
   tags: ["zona:raiguer-pla", "zona:sineu", "product:traditional", "mod:en-local", "aud:familias", "temps:todo-el-ano"],
   capabilities: {
     wheelchairAccessible: true,

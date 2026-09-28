@@ -28,9 +28,6 @@ export const cellerSaSiniSantaMaria: ServiceItem = {
   email: "info@cellersasini.net",
   website: "https://cellersasini.net",
   menuUrl: "https://cellersasini.net",
-  googleMapsUrl: "https://www.google.com/maps/search/Celler+Sa+Sini+Santa+Maria+del+Cami+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Celler+Sa+Sini+Santa+Maria",
-  bingMapsUrl: "https://www.bing.com/maps?q=Celler+Sa+Sini+Santa+Maria",
   tags: [
     "zona:raiguer-pla",
     "zona:santa-maria-del-cami",

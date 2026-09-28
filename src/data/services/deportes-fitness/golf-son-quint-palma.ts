@@ -29,8 +29,6 @@ export const GOLF_SON_QUINT_PALMA: ServiceItem = {
   image: "/images/services/golf-son-quint-palma.jpg",
   gallery: ["/images/services/golf-son-quint-palma.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007003",
-  appleMapsUrl: "https://maps.apple.com/?q=Golf%20Son%20Quint+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Golf%20Son%20Quint+Mallorca",
   shortDescription: {
     es: "Campo de 18 hoyos dinámico con vistas a Palma y campo corto Pitch & Putt de 9 hoyos.",
     en: "Dynamic 18-hole course with Palma views and 9-hole Pitch & Putt facility.",
@@ -94,13 +92,6 @@ export const GOLF_SON_QUINT_PALMA: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 420,
-      url: "https://www.google.com/maps?cid=12007003",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

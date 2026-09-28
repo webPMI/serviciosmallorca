@@ -21,9 +21,6 @@ export const carpinteriaFiol: ServiceItem = {
   whatsapp: "+34 620 40 50 60",
   email: "info@carpinteriafiol.com",
   website: "https://carpinteriafiol.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Carpinteria%20Fiol%20Marratxi",
-  appleMapsUrl: "https://maps.apple.com/?q=Carpinteria%20Fiol%20Marratxi&ll=39.5982,2.7012",
-  bingMapsUrl: "https://www.bing.com/maps?where1=Carpinteria%20Fiol%20Marratxi",
   coordinates: { lat: 39.5982, lng: 2.7012 },
   schedule: "Lunes a Viernes: 08:00 - 13:00 | 15:00 - 18:30 (Sábados y Domingos Cerrado)",
   lastVerifiedAt: "2026-08-25",
@@ -131,30 +128,13 @@ export const carpinteriaFiol: ServiceItem = {
       instagramHandle: "@carpinteriafiol",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 210,
-      url: "https://www.google.com/maps/search/?api=1&query=Carpinteria%20Fiol%20Marratxi",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Carpinteria%20Fiol%20Marratxi&ll=39.5982,2.7012",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 210,
-      url: "https://www.bing.com/maps?where1=Carpinteria%20Fiol%20Marratxi",
-    },
-    totalReviewsAggregated: 210,
-    overallWeightedRating: 4.8,
-  },
   reviews: [
     {
       id: "rev-fiol-1",
       authorName: "Bernat Mascaró",
       rating: 5,
       date: "2025-04-18",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
       comment:
         "Ens varen fer totes les persianes mallorquines d'Iroko per a la nostra casa de camp. Qualitat impressionant i acabats de luxe.",
@@ -165,7 +145,7 @@ export const carpinteriaFiol: ServiceItem = {
       authorName: "Klaus Zimmermann",
       rating: 5,
       date: "2025-06-22",
-      platform: "google_maps",
+      platform: "direct",
       language: "en",
       comment:
         "Master carpenters! Designed and built custom fitted wardrobes for our finca in Santa Maria. Reliable, punctual, and top craftmanship.",

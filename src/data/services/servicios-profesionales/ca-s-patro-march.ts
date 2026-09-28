@@ -81,23 +81,6 @@ export const caPatroMarch: ServiceItem = {
     ca: "Un xiringuito històric sobre les roques de Cala Deià convertit en temple del peix fresc.",
     de: "Ein historisches Fischlokal auf den Klippen der Cala Deià, weltberühmt für fangfrische Meeresspezialitäten.",
   },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.5,
-      reviewCount: 1850,
-      url: "https://www.google.com/maps/search/?api=1&query=Ca%27s+Patro+March+Cala+Deia",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Cas+Patro+March+Deia",
-    },
-    bingMaps: {
-      rating: 4.5,
-      reviewCount: 120,
-      url: "https://www.bing.com/maps?q=Cas+Patro+March+Deia",
-    },
-    totalReviewsAggregated: 1970,
-    overallWeightedRating: 4.5,
-  },
   reviews: [],
   socialLinks: {},
   socialPosts: [],
@@ -118,9 +101,6 @@ export const caPatroMarch: ServiceItem = {
     },
   ],
   authorityProfiles: [],
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Ca%27s+Patro+March+Cala+Deia",
-  appleMapsUrl: "https://maps.apple.com/?q=Cas+Patro+March+Deia",
-  bingMapsUrl: "https://www.bing.com/maps?q=Cas+Patro+March+Deia",
   phone: "+34 971 63 91 37",
   whatsapp: "+34 971 63 91 37",
   email: "info@caspatromarch.com",

@@ -31,12 +31,6 @@ export const flor_de_sal_des_trenc_salinas_mallorca: ServiceItem = {
   schedule: "Lunes a Domingo: 10:00 - 18:00",
   image: "/images/services/flor-de-sal-des-trenc-salinas-mallorca.jpg",
   gallery: ["/images/services/flor-de-sal-des-trenc-salinas-mallorca.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Flor%20de%20Sal%20d'Es%20Trenc%20-%20Salinas%20Naturales%20de%20Mallorca%20Ctra.%20de%20Campos%20a%20Col%C3%B2nia%20de%20Sant%20Jordi%2C%20Km%208.7%2C%2007630%20Campos",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Flor%20de%20Sal%20d'Es%20Trenc%20-%20Salinas%20Naturales%20de%20Mallorca%20Ctra.%20de%20Campos%20a%20Col%C3%B2nia%20de%20Sant%20Jordi%2C%20Km%208.7%2C%2007630%20Campos",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Flor%20de%20Sal%20d'Es%20Trenc%20-%20Salinas%20Naturales%20de%20Mallorca%20Ctra.%20de%20Campos%20a%20Col%C3%B2nia%20de%20Sant%20Jordi%2C%20Km%208.7%2C%2007630%20Campos",
   shortDescription: {
     es: "Salinas históricas y reserva natural en el sur de Mallorca: recolección artesanal de la afamada Flor de Sal d'Es Trenc, pura y rica en minerales marinos.",
     en: "Protected historic salt flats in southern Mallorca: traditional artisan harvesting of world-renowned Flor de Sal d'Es Trenc, rich in natural minerals.",
@@ -100,13 +94,6 @@ export const flor_de_sal_des_trenc_salinas_mallorca: ServiceItem = {
       "Präsentboxen für Feinschmecker und Firmenkunden",
       "Bildungsworkshops über traditionelle Salzgewinnung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 940,
-      url: "https://www.google.com/maps/search/?api=1&query=Flor%20de%20Sal%20d'Es%20Trenc%20-%20Salinas%20Naturales%20de%20Mallorca%20Ctra.%20de%20Campos%20a%20Col%C3%B2nia%20de%20Sant%20Jordi%2C%20Km%208.7%2C%2007630%20Campos",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

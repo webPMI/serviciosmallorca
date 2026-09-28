@@ -21,9 +21,6 @@ export const fontaneriaBalear: ServiceItem = {
   whatsapp: "+34 670 45 12 89",
   email: "contacto@fontaneriabalear.com",
   website: "https://fontaneriabalear.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Fontaneria%20Balear%20Palma",
-  appleMapsUrl: "https://maps.apple.com/?q=Fontaneria%20Balear%20Palma&ll=39.5794,2.6712",
-  bingMapsUrl: "https://www.bing.com/maps?where1=Fontaneria%20Balear%20Palma",
   coordinates: { lat: 39.5794, lng: 2.6712 },
   schedule: "Lunes a Viernes: 08:00 - 19:00 | Urgencias 24h Disponibles",
   lastVerifiedAt: "2026-08-25",
@@ -130,30 +127,13 @@ export const fontaneriaBalear: ServiceItem = {
       instagramHandle: "@fontaneriabalear",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 190,
-      url: "https://www.google.com/maps/search/?api=1&query=Fontaneria%20Balear%20Palma",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Fontaneria%20Balear%20Palma&ll=39.5794,2.6712",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 190,
-      url: "https://www.bing.com/maps?where1=Fontaneria%20Balear%20Palma",
-    },
-    totalReviewsAggregated: 190,
-    overallWeightedRating: 4.8,
-  },
   reviews: [
     {
       id: "rev-font-1",
       authorName: "Bernat Oliver",
       rating: 5,
       date: "2025-04-10",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
       comment: "Ens varen canviar el termo elèctric el mateix matí de la telefonada. Ràpids, nets i preu molt just.",
       verifiedCustomer: true,
@@ -163,7 +143,7 @@ export const fontaneriaBalear: ServiceItem = {
       authorName: "Michael Evans",
       rating: 5,
       date: "2025-06-25",
-      platform: "google_maps",
+      platform: "direct",
       language: "en",
       comment:
         "Fixed a nasty water leak under our kitchen sink in Palma within 2 hours of calling. Super reliable and polite.",

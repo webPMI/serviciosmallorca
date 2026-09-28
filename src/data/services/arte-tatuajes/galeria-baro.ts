@@ -100,8 +100,5 @@ export const galeriaBaroService: ServiceItem = {
     ],
   },
   amenities: ["wifi", "air_conditioning", "wheelchair_accessible"],
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Galeria+Baro+Palma",
-  appleMapsUrl: "https://maps.apple.com/?q=Galeria+Baro+Palma",
-  bingMapsUrl: "https://www.bing.com/maps?q=Galeria+Baro+Palma",
   confidenceScore: 97,
 };

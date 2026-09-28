@@ -21,9 +21,6 @@ export const balearicProperties: ServiceItem = {
   whatsapp: "+34 971 53 29 84",
   email: "info@balearic-properties.com",
   website: "https://balearic-properties.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Balearic%20Properties%20Pollensa%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Balearic%20Properties%20Pollensa%20Mallorca&ll=39.8765,3.0162",
-  bingMapsUrl: "https://www.bing.com/maps?where1=Balearic%20Properties%20Pollensa%20Mallorca",
   coordinates: { lat: 39.8765, lng: 3.0162 },
   schedule: "Lunes a Viernes: 09:00 - 19:00 | Sábados: 10:00 - 14:00",
   lastVerifiedAt: "2026-08-25",
@@ -132,30 +129,13 @@ export const balearicProperties: ServiceItem = {
       instagramHandle: "@balearicproperties",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 380,
-      url: "https://www.google.com/maps/search/?api=1&query=Balearic%20Properties%20Pollensa%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Balearic%20Properties%20Pollensa%20Mallorca&ll=39.8765,3.0162",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 380,
-      url: "https://www.bing.com/maps?where1=Balearic%20Properties%20Pollensa%20Mallorca",
-    },
-    totalReviewsAggregated: 380,
-    overallWeightedRating: 4.8,
-  },
   reviews: [
     {
       id: "rev-balearic-1",
       authorName: "James Thornton",
       rating: 5,
       date: "2025-05-14",
-      platform: "google_maps",
+      platform: "direct",
       language: "en",
       comment:
         "Outstanding service from start to finish. Found our dream villa in Pollença with complete professionalism.",
@@ -166,7 +146,7 @@ export const balearicProperties: ServiceItem = {
       authorName: "Hans Müller",
       rating: 5,
       date: "2025-07-09",
-      platform: "google_maps",
+      platform: "direct",
       language: "de",
       comment: "Sehr kompetente Beratung und transparente Abwicklung beim Kauf unserer Finca in Alcúdia.",
       verifiedCustomer: true,

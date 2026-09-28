@@ -31,12 +31,6 @@ export const bconnected_concept_store_santa_catalina: ServiceItem = {
   schedule: "Lunes a Viernes: 10:00 - 19:00, Sábado: 10:00 - 15:00",
   image: "/images/services/bconnected-concept-store-santa-catalina.jpg",
   gallery: ["/images/services/bconnected-concept-store-santa-catalina.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=bconnected%20Concept%20Store%20%26%20Interior%20Design%20Santa%20Catalina%20Pla%C3%A7a%20de%20la%20Navegaci%C3%B3%2C%2014%2C%2007013%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=bconnected%20Concept%20Store%20%26%20Interior%20Design%20Santa%20Catalina%20Pla%C3%A7a%20de%20la%20Navegaci%C3%B3%2C%2014%2C%2007013%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=bconnected%20Concept%20Store%20%26%20Interior%20Design%20Santa%20Catalina%20Pla%C3%A7a%20de%20la%20Navegaci%C3%B3%2C%2014%2C%2007013%20Palma",
   shortDescription: {
     es: "Tienda de diseño de interiores, moda boho chic, mobiliario contemporáneo y piezas de arte vintage en Santa Catalina (Palma).",
     en: "Eclectic interior design studio, boho-chic fashion boutique, contemporary furnishings, and vintage art in Santa Catalina (Palma).",
@@ -100,13 +94,6 @@ export const bconnected_concept_store_santa_catalina: ServiceItem = {
       "Wohnaccessoires, echte Berberteppiche und Duftkerzen",
       "Professionelles Home-Staging zur Immobilien-Wertsteigerung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 230,
-      url: "https://www.google.com/maps/search/?api=1&query=bconnected%20Concept%20Store%20%26%20Interior%20Design%20Santa%20Catalina%20Pla%C3%A7a%20de%20la%20Navegaci%C3%B3%2C%2014%2C%2007013%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

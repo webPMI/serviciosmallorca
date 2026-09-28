@@ -21,9 +21,6 @@ export const fontaneriaPomar: ServiceItem = {
   whatsapp: "+34 639 20 10 30",
   email: "contacto@instalacionespomar.com",
   website: "https://instalacionespomar.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Instalaciones%20Pomar%20Inca",
-  appleMapsUrl: "https://maps.apple.com/?q=Instalaciones%20Pomar%20Inca&ll=39.7190,2.9110",
-  bingMapsUrl: "https://www.bing.com/maps?where1=Instalaciones%20Pomar%20Inca",
   coordinates: { lat: 39.719, lng: 2.911 },
   schedule: "Lunes a Viernes: 08:00 - 18:30 (Servicio de Urgencias de Fugas y Calderas)",
   lastVerifiedAt: "2026-08-25",
@@ -130,30 +127,13 @@ export const fontaneriaPomar: ServiceItem = {
       instagramHandle: "@instalacionespomar",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 130,
-      url: "https://www.google.com/maps/search/?api=1&query=Instalaciones%20Pomar%20Inca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Instalaciones%20Pomar%20Inca&ll=39.7190,2.9110",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 130,
-      url: "https://www.bing.com/maps?where1=Instalaciones%20Pomar%20Inca",
-    },
-    totalReviewsAggregated: 130,
-    overallWeightedRating: 4.8,
-  },
   reviews: [
     {
       id: "rev-fpi-1",
       authorName: "Gabriel Alomar",
       rating: 5,
       date: "2025-05-15",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
       comment:
         "Ens varen instal·lar el sistema complet d'aerotèrmia i terra radiant a la nostra casa de Selva. Feina impecable, puntuals i molt professionals.",
@@ -164,7 +144,7 @@ export const fontaneriaPomar: ServiceItem = {
       authorName: "David Jenkins",
       rating: 5,
       date: "2025-06-22",
-      platform: "google_maps",
+      platform: "direct",
       language: "en",
       comment:
         "Top-class plumbing and heating service in central Mallorca! Replaced our failing boiler with a Daikin heat pump and installed a water softener. Highly recommend.",

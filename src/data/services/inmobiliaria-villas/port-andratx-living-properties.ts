@@ -76,10 +76,6 @@ export const portAndratxLivingProperties: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Port%20d'Andratx%20Living%20Luxury%20Villas%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Port%20d'Andratx%20Living%20Luxury%20Villas%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Port%20d'Andratx%20Living%20Luxury%20Villas%20Mallorca",
   pricing: {
     startingPrice: "Villas con vistas al mar en Monport y Cala Llamp",
     rateType: "custom_quote",
@@ -106,21 +102,4 @@ export const portAndratxLivingProperties: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 290,
-      url: "https://www.google.com/maps/search/?api=1&query=Port%20d'Andratx%20Living%20Luxury%20Villas%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Port%20d'Andratx%20Living%20Luxury%20Villas%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 29,
-      url: "https://www.bing.com/maps?q=Port%20d'Andratx%20Living%20Luxury%20Villas%20Mallorca",
-    },
-    totalReviewsAggregated: 319,
-    overallWeightedRating: 4.9,
-  },
 };

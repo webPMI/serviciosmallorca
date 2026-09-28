@@ -31,12 +31,6 @@ export const bodega_4_kilos_vinicola_felanitx: ServiceItem = {
   schedule: "Lunes a Viernes: 09:00 - 16:30 (Visitas concertadas)",
   image: "/images/services/bodega-4-kilos-vinicola-felanitx.jpg",
   gallery: ["/images/services/bodega-4-kilos-vinicola-felanitx.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=4%20Kilos%20Vin%C3%ADcola%20Vinos%20de%20Autor%20(Felanitx)%201%C2%AA%20Volta%2C%20168%2C%20Puig%20Blanc%2C%2007200%20Felanitx",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=4%20Kilos%20Vin%C3%ADcola%20Vinos%20de%20Autor%20(Felanitx)%201%C2%AA%20Volta%2C%20168%2C%20Puig%20Blanc%2C%2007200%20Felanitx",
-  bingMapsUrl:
-    "https://bing.com/maps?q=4%20Kilos%20Vin%C3%ADcola%20Vinos%20de%20Autor%20(Felanitx)%201%C2%AA%20Volta%2C%20168%2C%20Puig%20Blanc%2C%2007200%20Felanitx",
   shortDescription: {
     es: "Vinos de autor de culto en Felanitx: proyecto enológico independiente de Francesc Grimalt y Sergio Caballero ('4 Kilos', '12 Volts', 'Gallinas y Focas') con mínima intervención.",
     en: "Acclaimed independent winery in Felanitx: boutique artisanal project by Francesc Grimalt and Sergio Caballero ('4 Kilos', '12 Volts', 'Gallinas y Focas') focusing on minimal intervention.",
@@ -100,13 +94,6 @@ export const bodega_4_kilos_vinicola_felanitx: ServiceItem = {
       "Direktverkauf limitierter Flaschenkontingente ab Hof",
       "Workshops über autochthonen Weinbau und Terroir",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 680,
-      url: "https://www.google.com/maps/search/?api=1&query=4%20Kilos%20Vin%C3%ADcola%20Vinos%20de%20Autor%20(Felanitx)%201%C2%AA%20Volta%2C%20168%2C%20Puig%20Blanc%2C%2007200%20Felanitx",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

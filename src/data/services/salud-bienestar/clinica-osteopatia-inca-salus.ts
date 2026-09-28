@@ -28,10 +28,6 @@ export const clinica_osteopatia_inca_salus: ServiceItem = {
   schedule: "Lunes a Viernes: 09:00 - 20:00 | Sábado: 09:00 - 13:00",
   image: "/images/services/clinica-osteopatia-inca-salus.jpg",
   gallery: ["/images/services/clinica-osteopatia-inca-salus.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica+Osteopat%C3%ADa+Salus+Inca+Carrer+Major+89",
-  appleMapsUrl: "https://maps.apple.com/?q=Clinica+Osteopatia+Salus+Inca",
-  bingMapsUrl: "https://bing.com/maps?q=Clinica+Osteopatia+Salus+Inca",
   shortDescription: {
     es: "Clínica de osteopatía estructural y visceral en Inca, referente en el tratamiento de dolor cervical, lumbalgias crónicas y cefaleas tensionales en el centro de Mallorca.",
     en: "Structural and visceral osteopathy clinic in Inca, a reference for treating neck pain, chronic lower back pain, and tension headaches in central Mallorca.",
@@ -95,13 +91,6 @@ export const clinica_osteopatia_inca_salus: ServiceItem = {
       "Kraniale Therapie bei Kopfschmerzen, Migräne und Schlafstörungen",
       "Pädiatrische und neonatale Osteopathie bei Koliken und Plagiozephalie",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 178,
-      url: "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica+Osteopat%C3%ADa+Salus+Inca",
-    },
   },
   createdAt: "2026-09-05",
   lastUpdatedAt: "2026-09-05",

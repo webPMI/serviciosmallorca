@@ -76,9 +76,6 @@ export const mallorcaBalloonsManacor: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Mallorca%20Balloons%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Mallorca%20Balloons%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Mallorca%20Balloons%20Mallorca",
   pricing: {
     startingPrice: "Desde 190€ / persona",
     rateType: "fixed",
@@ -105,21 +102,4 @@ export const mallorcaBalloonsManacor: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 1450,
-      url: "https://www.google.com/maps/search/?api=1&query=Mallorca%20Balloons%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Mallorca%20Balloons%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 145,
-      url: "https://www.bing.com/maps?q=Mallorca%20Balloons%20Mallorca",
-    },
-    totalReviewsAggregated: 1595,
-    overallWeightedRating: 4.9,
-  },
 };

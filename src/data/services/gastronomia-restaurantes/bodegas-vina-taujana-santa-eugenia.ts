@@ -28,9 +28,6 @@ export const bodegasVinaTaujanaSantaEugenia: ServiceItem = {
   email: "vinyataujana@gmail.com",
   website: "https://www.vinyataujana.es",
   menuUrl: "https://www.vinyataujana.es",
-  googleMapsUrl: "https://www.google.com/maps/search/Bodegas+Vinya+Taujana+Santa+Eugenia+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Bodegas+Vinya+Taujana+Santa+Eugenia",
-  bingMapsUrl: "https://www.bing.com/maps?q=Bodegas+Vinya+Taujana+Santa+Eugenia",
   tags: [
     "zona:raiguer-pla",
     "zona:santa-eugenia",

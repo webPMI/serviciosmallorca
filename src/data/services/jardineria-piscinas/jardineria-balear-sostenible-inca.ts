@@ -31,12 +31,6 @@ export const jardineria_balear_sostenible_inca: ServiceItem = {
   schedule: "Lunes a Viernes: 08:00 - 18:00, Sábados: 08:30 - 13:30",
   image: "/images/services/jardineria-balear-sostenible-inca.jpg",
   gallery: ["/images/services/jardineria-balear-sostenible-inca.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Jardiner%C3%ADa%20Balear%20Sostenible%20Inca%20Avinguda%20del%20Raiguer%2C%2045%2C%2007300%20Inca",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Jardiner%C3%ADa%20Balear%20Sostenible%20Inca%20Avinguda%20del%20Raiguer%2C%2045%2C%2007300%20Inca",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Jardiner%C3%ADa%20Balear%20Sostenible%20Inca%20Avinguda%20del%20Raiguer%2C%2045%2C%2007300%20Inca",
   shortDescription: {
     es: "Especialistas en diseño de jardines mediterráneos de bajo consumo hídrico, poda de palmeras y sistemas de riego.",
     en: "Specialists in low-water Mediterranean garden design, palm tree pruning, and smart irrigation systems.",
@@ -100,13 +94,6 @@ export const jardineria_balear_sostenible_inca: ServiceItem = {
       "Automatische Tröpfchenbewässerung",
       "Ökologischer Pflanzenschutz",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 115,
-      url: "https://www.google.com/maps/search/?api=1&query=Jardiner%C3%ADa%20Balear%20Sostenible%20Inca%20Avinguda%20del%20Raiguer%2C%2045%2C%2007300%20Inca",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

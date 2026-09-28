@@ -31,12 +31,6 @@ export const cesteria_artesana_arta_ses_madones_de_sa_llata: ServiceItem = {
   schedule: "Lunes a Sábado: 09:30 - 13:30 y 16:30 - 20:00 (Martes día de mercado)",
   image: "/images/services/cesteria-artesana-arta-ses-madones-de-sa-llata.jpg",
   gallery: ["/images/services/cesteria-artesana-arta-ses-madones-de-sa-llata.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Artesania%20de%20Sa%20Llata%20%26%20Cistelleria%20Art%C3%A0%20Carrer%20de%20Ciutat%2C%2018%2C%2007570%20Art%C3%A0",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Artesania%20de%20Sa%20Llata%20%26%20Cistelleria%20Art%C3%A0%20Carrer%20de%20Ciutat%2C%2018%2C%2007570%20Art%C3%A0",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Artesania%20de%20Sa%20Llata%20%26%20Cistelleria%20Art%C3%A0%20Carrer%20de%20Ciutat%2C%2018%2C%2007570%20Art%C3%A0",
   shortDescription: {
     es: "Taller artesanal en Artà dedicado al milenario oficio de la llata: trenzado de hojas de palmito (garballó) para crear senalles, capazos y sombreros.",
     en: "Artisan workshop in Artà dedicated to the ancient craft of 'sa llata': hand-braiding native dwarf palm leaves into baskets and hats.",
@@ -100,13 +94,6 @@ export const cesteria_artesana_arta_ses_madones_de_sa_llata: ServiceItem = {
       "Flecht-Workshops in kleinen Gruppen",
       "Weltweiter Versand an Privatkunden und Boutiquen",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 275,
-      url: "https://www.google.com/maps/search/?api=1&query=Artesania%20de%20Sa%20Llata%20%26%20Cistelleria%20Art%C3%A0%20Carrer%20de%20Ciutat%2C%2018%2C%2007570%20Art%C3%A0",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

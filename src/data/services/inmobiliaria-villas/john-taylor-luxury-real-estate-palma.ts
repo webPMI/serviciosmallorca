@@ -31,12 +31,6 @@ export const john_taylor_luxury_real_estate_palma: ServiceItem = {
   schedule: "Lunes a Viernes: 09:30 - 18:30, Sábados con cita previa",
   image: "/images/services/john-taylor-luxury-real-estate-palma.jpg",
   gallery: ["/images/services/john-taylor-luxury-real-estate-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=John%20Taylor%20Luxury%20Real%20Estate%20Palma%201864%20Avinguda%20de%20Jaume%20III%2C%2020%2C%2007012%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=John%20Taylor%20Luxury%20Real%20Estate%20Palma%201864%20Avinguda%20de%20Jaume%20III%2C%2020%2C%2007012%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=John%20Taylor%20Luxury%20Real%20Estate%20Palma%201864%20Avinguda%20de%20Jaume%20III%2C%2020%2C%2007012%20Palma",
   shortDescription: {
     es: "Agencia inmobiliaria internacional de ultra-lujo fundada en 1864: fincas señoriales, áticos en el casco antiguo y villas frente al mar.",
     en: "Ultra-luxury international real estate agency established in 1864: historic country estates, old town penthouses, and waterfront villas.",
@@ -100,13 +94,6 @@ export const john_taylor_luxury_real_estate_palma: ServiceItem = {
       "Vermietung von Luxus-Ferienvillen mit individuellem Concierge-Service",
       "Diskrete Off-Market-Transaktionen für anspruchsvolle Privatinvestoren",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 28,
-      url: "https://www.google.com/maps/search/?api=1&query=John%20Taylor%20Luxury%20Real%20Estate%20Palma%201864%20Avinguda%20de%20Jaume%20III%2C%2020%2C%2007012%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

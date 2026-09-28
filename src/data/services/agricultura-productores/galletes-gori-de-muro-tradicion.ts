@@ -31,12 +31,6 @@ export const galletes_gori_de_muro_tradicion: ServiceItem = {
   schedule: "Lunes a Viernes: 08:30 - 14:00 y 16:30 - 20:00; Sábado: 08:30 - 13:30",
   image: "/images/services/galletes-gori-de-muro-tradicion.jpg",
   gallery: ["/images/services/galletes-gori-de-muro-tradicion.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Galletes%20Gori%20de%20Muro%20Forn%20Artesanal%20(1890)%20Carrer%20Major%2C%2041%2C%2007440%20Muro",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Galletes%20Gori%20de%20Muro%20Forn%20Artesanal%20(1890)%20Carrer%20Major%2C%2041%2C%2007440%20Muro",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Galletes%20Gori%20de%20Muro%20Forn%20Artesanal%20(1890)%20Carrer%20Major%2C%2041%2C%2007440%20Muro",
   shortDescription: {
     es: "Taller artesanal de galletas de aceite fundado en Muro en 1890: elaboración manual tradicional con aceite de oliva virgen extra de Mallorca, crujientes e inconfundibles.",
     en: "Artisan olive oil cracker bakery founded in Muro in 1890: traditional handmade production with Balearic extra virgin olive oil, wonderfully crispy and unique.",
@@ -100,13 +94,6 @@ export const galletes_gori_de_muro_tradicion: ServiceItem = {
       "Belieferung gehobener Restaurants und Feinkostläden",
       "Verkauf traditioneller Backwaren aus Muro",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 520,
-      url: "https://www.google.com/maps/search/?api=1&query=Galletes%20Gori%20de%20Muro%20Forn%20Artesanal%20(1890)%20Carrer%20Major%2C%2041%2C%2007440%20Muro",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

@@ -29,8 +29,6 @@ export const CLUB_TENIS_ALARO: ServiceItem = {
   image: "/images/sports/club-tenis-alaro.jpg",
   gallery: ["/images/sports/club-tenis-alaro.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007031",
-  appleMapsUrl: "https://maps.apple.com/?q=Club%20Tenis%20Alar%C3%B3+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Club%20Tenis%20Alar%C3%B3+Mallorca",
   shortDescription: {
     es: "Club de tenis con vistas al Castillo de Alaró, pistas de resina sintética, pádel y piscina.",
     en: "Tennis club with views of Alaró Castle, synthetic hard courts, padel, and pool.",
@@ -94,13 +92,6 @@ export const CLUB_TENIS_ALARO: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 210,
-      url: "https://www.google.com/maps?cid=12007031",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

@@ -76,10 +76,6 @@ export const vespamallorcaScooterRentalPalma: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Vespa%20Mallorca%20Iconic%20Scooter%20Rental%20Palma%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Vespa%20Mallorca%20Iconic%20Scooter%20Rental%20Palma%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Vespa%20Mallorca%20Iconic%20Scooter%20Rental%20Palma%20Mallorca",
   pricing: {
     startingPrice: "Presupuesto y atención a medida",
     rateType: "tiered",
@@ -106,21 +102,4 @@ export const vespamallorcaScooterRentalPalma: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 790,
-      url: "https://www.google.com/maps/search/?api=1&query=Vespa%20Mallorca%20Iconic%20Scooter%20Rental%20Palma%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Vespa%20Mallorca%20Iconic%20Scooter%20Rental%20Palma%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.7,
-      reviewCount: 79,
-      url: "https://www.bing.com/maps?q=Vespa%20Mallorca%20Iconic%20Scooter%20Rental%20Palma%20Mallorca",
-    },
-    totalReviewsAggregated: 869,
-    overallWeightedRating: 4.8,
-  },
 };

@@ -29,9 +29,6 @@ export const hospitalComarcalIncaRaiguer: ServiceItem = {
   email: "hcin_sau@hcin.es",
   website: "https://www.hospitalcomarcalinca.es",
   menuUrl: "https://www.hospitalcomarcalinca.es",
-  googleMapsUrl: "https://www.google.com/maps/search/Hospital+Comarcal+d+Inca+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Hospital+Comarcal+Inca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Hospital+Comarcal+Inca",
   tags: [
     "zona:raiguer-pla",
     "zona:inca",
@@ -149,7 +146,7 @@ export const hospitalComarcalIncaRaiguer: ServiceItem = {
       comment:
         "Molt agraïda a tot el personal d'urgències i planta. Tracte humà excel·lent, proximitat i gran professionalitat.",
       date: "2026-08-10",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
     },
     {
@@ -159,7 +156,7 @@ export const hospitalComarcalIncaRaiguer: ServiceItem = {
       comment:
         "Wurde nach einem Fahrradsturz in der Tramuntana hier behandelt. Schnelles Röntgen, kompetente Wundversorgung und sehr freundliche Ärzte!",
       date: "2026-07-16",
-      platform: "google_maps",
+      platform: "direct",
       language: "de",
     },
   ],

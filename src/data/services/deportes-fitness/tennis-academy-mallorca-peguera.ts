@@ -29,8 +29,6 @@ export const TENNIS_ACADEMY_MALLORCA_PEGUERA: ServiceItem = {
   image: "/images/services/tennis-academy-mallorca-peguera.jpg",
   gallery: ["/images/services/tennis-academy-mallorca-peguera.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007014",
-  appleMapsUrl: "https://maps.apple.com/?q=Tennis%20Academy%20Mallorca%20(Peguera)+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Tennis%20Academy%20Mallorca%20(Peguera)+Mallorca",
   shortDescription: {
     es: "Academia internacional de tenis en Peguera con 15 pistas de tierra batida y entrenadores ATP/WTA.",
     en: "International tennis academy in Peguera featuring 15 red clay courts and ATP/WTA coaches.",
@@ -94,13 +92,6 @@ export const TENNIS_ACADEMY_MALLORCA_PEGUERA: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 320,
-      url: "https://www.google.com/maps?cid=12007014",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

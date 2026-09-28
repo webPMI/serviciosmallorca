@@ -31,12 +31,6 @@ export const cineciutat_palma_s_escorxador: ServiceItem = {
   schedule: "Lunes a Domingo: 16:30 - 22:30 (Sesiones continuas en V.O.S.E.)",
   image: "/images/services/cineciutat-palma-s-escorxador.jpg",
   gallery: ["/images/services/cineciutat-palma-s-escorxador.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=CineCiutat%20Palma%20(S'Escorxador)%20Carrer%20de%20l'Emperadriu%20Eug%C3%A8nia%2C%206%2C%2007010%20Palma%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=CineCiutat%20Palma%20(S'Escorxador)%20Carrer%20de%20l'Emperadriu%20Eug%C3%A8nia%2C%206%2C%2007010%20Palma%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=CineCiutat%20Palma%20(S'Escorxador)%20Carrer%20de%20l'Emperadriu%20Eug%C3%A8nia%2C%206%2C%2007010%20Palma%2C%20Illes%20Balears",
   shortDescription: {
     es: "Cine comunitario e independiente sin ánimo de lucro en el centro cultural S'Escorxador de Palma, proyectando cine de autor, estrenos internacionales en versión original subtitulada (V.O.S.E.) y ciclos culturales.",
     en: "Community-owned non-profit independent cinema at Palma's S'Escorxador cultural hub, screening arthouse cinema, international releases in original version with subtitles (VOSE), and film festivals.",
@@ -100,13 +94,6 @@ export const cineciutat_palma_s_escorxador: ServiceItem = {
       "Saalvermietung für private Filmvorführungen, Presse-Screenings und Firmenfeiern",
       "Schulvorstellungen, Matinee-Kinderkino am Wochenende und Filmgespräche mit Regisseuren",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 1950,
-      url: "https://www.google.com/maps/search/?api=1&query=CineCiutat%20Palma%20(S'Escorxador)%20Carrer%20de%20l'Emperadriu%20Eug%C3%A8nia%2C%206%2C%2007010%20Palma%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

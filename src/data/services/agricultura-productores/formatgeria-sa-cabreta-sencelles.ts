@@ -31,12 +31,6 @@ export const formatgeria_sa_cabreta_sencelles: ServiceItem = {
   schedule: "Lunes a Sábado: 09:00 - 13:30, 16:30 - 19:00 | Domingo: 09:30 - 13:00",
   image: "/images/services/formatgeria-sa-cabreta-sencelles.jpg",
   gallery: ["/images/services/formatgeria-sa-cabreta-sencelles.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Formatgeria%20Sa%20Cabreta%20Sencelles%20(Artesania%20L%C3%A0ctia)%20Cam%C3%AD%20de%20Son%20Catiu%2C%20s%2Fn%2C%2007140%20Sencelles%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Formatgeria%20Sa%20Cabreta%20Sencelles%20(Artesania%20L%C3%A0ctia)%20Cam%C3%AD%20de%20Son%20Catiu%2C%20s%2Fn%2C%2007140%20Sencelles%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Formatgeria%20Sa%20Cabreta%20Sencelles%20(Artesania%20L%C3%A0ctia)%20Cam%C3%AD%20de%20Son%20Catiu%2C%20s%2Fn%2C%2007140%20Sencelles%2C%20Illes%20Balears",
   shortDescription: {
     es: "Quesería artesana en el corazón rural de Sencelles elaborando quesos de cabra con leche cruda fresca de su propio rebaño, madurados lentamente al estilo tradicional mallorquín.",
     en: "Artisan dairy farm in the rural heart of Sencelles producing handcrafted raw goat's milk cheeses from their own grazing herd, slowly aged following traditional Mallorcan methods.",
@@ -100,13 +94,6 @@ export const formatgeria_sa_cabreta_sencelles: ServiceItem = {
       "Individuelle handwerkliche Käseplatten für Finca-Veranstaltungen, Hochzeiten und Feinschmeckerlokale",
       "Lehrreiche Hofführungen für Familien mit Kindern rund um Ziegenhaltung und Käsereihandwerk",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 145,
-      url: "https://www.google.com/maps/search/?api=1&query=Formatgeria%20Sa%20Cabreta%20Sencelles%20(Artesania%20L%C3%A0ctia)%20Cam%C3%AD%20de%20Son%20Catiu%2C%20s%2Fn%2C%2007140%20Sencelles%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

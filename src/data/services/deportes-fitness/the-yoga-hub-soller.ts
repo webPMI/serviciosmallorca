@@ -29,8 +29,6 @@ export const THE_YOGA_HUB_SOLLER: ServiceItem = {
   image: "/images/sports/the-yoga-hub-soller.jpg",
   gallery: ["/images/sports/the-yoga-hub-soller.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007075",
-  appleMapsUrl: "https://maps.apple.com/?q=The%20Yoga%20Hub%20S%C3%B3ller+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=The%20Yoga%20Hub%20S%C3%B3ller+Mallorca",
   shortDescription: {
     es: "Santuario de yoga en el centro histórico de Sóller con clases diarias, meditación y retiros.",
     en: "Yoga sanctuary in historic Sóller center offering daily classes, meditation, and retreats.",
@@ -94,13 +92,6 @@ export const THE_YOGA_HUB_SOLLER: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 180,
-      url: "https://www.google.com/maps?cid=12007075",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

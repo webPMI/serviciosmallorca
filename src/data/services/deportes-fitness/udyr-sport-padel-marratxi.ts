@@ -29,8 +29,6 @@ export const UDYR_SPORT_PADEL_MARRATXI: ServiceItem = {
   image: "/images/sports/udyr-sport-padel-marratxi.jpg",
   gallery: ["/images/sports/udyr-sport-padel-marratxi.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007016",
-  appleMapsUrl: "https://maps.apple.com/?q=Udyr%20Sport%20P%C3%A1del%20Club+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Udyr%20Sport%20P%C3%A1del%20Club+Mallorca",
   shortDescription: {
     es: "Gran complejo indoor de 10 pistas panorámicas climatizadas, escuela de tecnificación y restaurante.",
     en: "Premier indoor facility with 10 covered climate-controlled courts, pro coaching, and restaurant.",
@@ -94,13 +92,6 @@ export const UDYR_SPORT_PADEL_MARRATXI: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 380,
-      url: "https://www.google.com/maps?cid=12007016",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

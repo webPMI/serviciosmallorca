@@ -31,12 +31,6 @@ export const balearic_lawyers_property_tax_palma: ServiceItem = {
   schedule: "Lunes a Viernes: 09:00 - 18:30",
   image: "/images/services/balearic-lawyers-property-tax-palma.jpg",
   gallery: ["/images/services/balearic-lawyers-property-tax-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Balearic%20Property%20%26%20Tax%20Lawyers%20Palma%20Carrer%20de%20Sant%20Jaume%2C%2012%2C%2007012%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Balearic%20Property%20%26%20Tax%20Lawyers%20Palma%20Carrer%20de%20Sant%20Jaume%2C%2012%2C%2007012%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Balearic%20Property%20%26%20Tax%20Lawyers%20Palma%20Carrer%20de%20Sant%20Jaume%2C%2012%2C%2007012%20Palma",
   shortDescription: {
     es: "Bufete internacional de abogados colegiados en Palma especializado en compraventas inmobiliarias, urbanismo y planificación fiscal de no residentes.",
     en: "International law firm in Palma specializing in luxury real estate conveyancing, urban planning, and non-resident tax structuring.",
@@ -100,13 +94,6 @@ export const balearic_lawyers_property_tax_palma: ServiceItem = {
       "Steuerabwicklung (Grunderwerbsteuer, Nichtresidentensteuer)",
       "Gründung spanischer Kapitalgesellschaften",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 190,
-      url: "https://www.google.com/maps/search/?api=1&query=Balearic%20Property%20%26%20Tax%20Lawyers%20Palma%20Carrer%20de%20Sant%20Jaume%2C%2012%2C%2007012%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

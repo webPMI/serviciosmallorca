@@ -29,8 +29,6 @@ export const CROSSFIT_CALVIA_EL_TORO: ServiceItem = {
   image: "/images/sports/crossfit-calvia-el-toro.jpg",
   gallery: ["/images/sports/crossfit-calvia-el-toro.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007063",
-  appleMapsUrl: "https://maps.apple.com/?q=CrossFit%20Calvi%C3%A0%20(El%20Toro)+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=CrossFit%20Calvi%C3%A0%20(El%20Toro)+Mallorca",
   shortDescription: {
     es: "Box junto a Port Adriano con comunidad multicultural, entrenadores bilingües y WODs diarios.",
     en: "Box next to Port Adriano featuring multicultural community, bilingual coaches, and daily WODs.",
@@ -94,13 +92,6 @@ export const CROSSFIT_CALVIA_EL_TORO: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 210,
-      url: "https://www.google.com/maps?cid=12007063",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

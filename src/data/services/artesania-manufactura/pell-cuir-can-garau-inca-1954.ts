@@ -31,12 +31,6 @@ export const pell_cuir_can_garau_inca_1954: ServiceItem = {
   schedule: "Lunes a Sábado: 09:30 - 13:30, 16:30 - 20:00",
   image: "/images/services/pell-cuir-can-garau-inca-1954.jpg",
   gallery: ["/images/services/pell-cuir-can-garau-inca-1954.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Pell%20%26%20Cuir%20Can%20Garau%20Inca%201954%20Carrer%20del%20Bisbe%20Llompart%2C%2019%2C%2007300%20Inca",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Pell%20%26%20Cuir%20Can%20Garau%20Inca%201954%20Carrer%20del%20Bisbe%20Llompart%2C%2019%2C%2007300%20Inca",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Pell%20%26%20Cuir%20Can%20Garau%20Inca%201954%20Carrer%20del%20Bisbe%20Llompart%2C%2019%2C%2007300%20Inca",
   shortDescription: {
     es: "Taller artesano de marroquinería y confección de chaquetas de piel en Inca desde 1954: bolsos, cinturones y arreglos a medida.",
     en: "Artisan leather workshop and jacket tailors in Inca since 1954: bespoke handbags, belts, and master leather repairs.",
@@ -100,13 +94,6 @@ export const pell_cuir_can_garau_inca_1954: ServiceItem = {
       "Reparatur von Reißverschlüssen, Innenfuttern und Nachfärben von Leder",
       "Handgefertigte Lederschuhe für Damen und Herren aus lokaler Fertigung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 95,
-      url: "https://www.google.com/maps/search/?api=1&query=Pell%20%26%20Cuir%20Can%20Garau%20Inca%201954%20Carrer%20del%20Bisbe%20Llompart%2C%2019%2C%2007300%20Inca",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

@@ -28,9 +28,6 @@ export const caNantunaFornalutx: ServiceItem = {
   email: "info@canantuna.com",
   website: "https://www.instagram.com/can_antuna/",
   menuUrl: "https://www.instagram.com/can_antuna/",
-  googleMapsUrl: "https://www.google.com/maps/search/Restaurante+Ca+N+Antuna+Fornalutx+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante+Ca+N+Antuna+Fornalutx",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante+Ca+N+Antuna+Fornalutx",
   tags: [
     "zona:tramuntana",
     "zona:fornalutx",

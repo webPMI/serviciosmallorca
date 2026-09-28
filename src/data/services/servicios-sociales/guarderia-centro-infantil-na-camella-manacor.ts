@@ -31,12 +31,6 @@ export const guarderia_centro_infantil_na_camella_manacor: ServiceItem = {
   schedule: "Lunes a Viernes: 07:30 - 17:30 (Abierto todo el año excepto Agosto)",
   image: "/images/services/guarderia-centro-infantil-na-camella-manacor.jpg",
   gallery: ["/images/services/guarderia-centro-infantil-na-camella-manacor.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Escola%20Infantil%20Na%20Camel%C2%B7la%20Centro%20Educaci%C3%B3n%20Infantil%20Manacor%20Pla%C3%A7a%20de%20sa%20Mora%2C%208%2C%2007500%20Manacor",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Escola%20Infantil%20Na%20Camel%C2%B7la%20Centro%20Educaci%C3%B3n%20Infantil%20Manacor%20Pla%C3%A7a%20de%20sa%20Mora%2C%208%2C%2007500%20Manacor",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Escola%20Infantil%20Na%20Camel%C2%B7la%20Centro%20Educaci%C3%B3n%20Infantil%20Manacor%20Pla%C3%A7a%20de%20sa%20Mora%2C%208%2C%2007500%20Manacor",
   shortDescription: {
     es: "Escuela de educación infantil de 0 a 3 años en Manacor homologada por la Conselleria d'Educació: proyecto pedagógico activo, cocina propia con menú nutricional y amplio patio con huerto escolar.",
     en: "Government-approved early childhood education centre (ages 0-3) in Manacor: active learning project, in-house kitchen with nutritionist-planned menus, and outdoor play garden with organic vegetable patch.",
@@ -100,13 +94,6 @@ export const guarderia_centro_infantil_na_camella_manacor: ServiceItem = {
       "Sommer-Kita im Juli für Kinder von 0 bis 6 Jahren",
       "Frühbetreuung (Escola Matinera) ab 07:30 Uhr",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 165,
-      url: "https://www.google.com/maps/search/?api=1&query=Escola%20Infantil%20Na%20Camel%C2%B7la%20Centro%20Educaci%C3%B3n%20Infantil%20Manacor%20Pla%C3%A7a%20de%20sa%20Mora%2C%208%2C%2007500%20Manacor",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

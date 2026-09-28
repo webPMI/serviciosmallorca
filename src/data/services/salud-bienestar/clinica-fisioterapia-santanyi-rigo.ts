@@ -31,12 +31,6 @@ export const clinica_fisioterapia_santanyi_rigo: ServiceItem = {
   schedule: "Lunes a Viernes de 08:30 a 13:30 y 15:30 a 20:00",
   image: "/images/services/clinica-fisioterapia-santanyi-rigo.jpg",
   gallery: ["/images/services/clinica-fisioterapia-santanyi-rigo.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica%20Fisioter%C3%A0pia%20Santany%C3%AD%20(Carles%20Rigo)%20Carrer%20de%20s'Aljub%2C%2014%2C%2007650%20Santany%C3%AD%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Cl%C3%ADnica%20Fisioter%C3%A0pia%20Santany%C3%AD%20(Carles%20Rigo)%20Carrer%20de%20s'Aljub%2C%2014%2C%2007650%20Santany%C3%AD%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Cl%C3%ADnica%20Fisioter%C3%A0pia%20Santany%C3%AD%20(Carles%20Rigo)%20Carrer%20de%20s'Aljub%2C%2014%2C%2007650%20Santany%C3%AD%2C%20Illes%20Balears",
   shortDescription: {
     es: "Clínica de fisioterapia y osteopatía avanzada en Santanyí. Terapia manual, ecografía musculoesquelética y rehabilitación funcional en el Migjorn.",
     en: "Advanced physiotherapy and osteopathy clinic in Santanyí. Manual therapy, musculoskeletal ultrasound, and active rehabilitation in the Migjorn region.",
@@ -106,13 +100,6 @@ export const clinica_fisioterapia_santanyi_rigo: ServiceItem = {
     en: ["Musculoskeletal ultrasound", "Percutaneous electrolysis (EPI)", "Manual therapy in Migjorn"],
     ca: ["Ecografia musculoesquelètica", "Electròlisi percutània (EPI)", "Fisioteràpia manual al Migjorn"],
     de: ["Muskuloskelettaler Ultraschall", "Perkutane Elektrolyse (EPI)", "Manuelle Physiotherapie"],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 125,
-      url: "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica%20Fisioter%C3%A0pia%20Santany%C3%AD%20(Carles%20Rigo)%20Carrer%20de%20s'Aljub%2C%2014%2C%2007650%20Santany%C3%AD%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

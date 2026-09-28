@@ -31,12 +31,6 @@ export const alquiler_scooter_vespa_mallorca_can_pastilla: ServiceItem = {
   schedule: "Diario: 08:30 - 20:00 (Abril a Octubre)",
   image: "/images/services/alquiler-scooter-vespa-mallorca-can-pastilla.jpg",
   gallery: ["/images/services/alquiler-scooter-vespa-mallorca-can-pastilla.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Mallorca%20Scooter%20%26%20Vespa%20Rental%20Can%20Pastilla%20(Palma%20Beach)%20Carrer%20de%20la%20Tramuntana%2C%208%2C%2007610%20Can%20Pastilla%2C%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Mallorca%20Scooter%20%26%20Vespa%20Rental%20Can%20Pastilla%20(Palma%20Beach)%20Carrer%20de%20la%20Tramuntana%2C%208%2C%2007610%20Can%20Pastilla%2C%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Mallorca%20Scooter%20%26%20Vespa%20Rental%20Can%20Pastilla%20(Palma%20Beach)%20Carrer%20de%20la%20Tramuntana%2C%208%2C%2007610%20Can%20Pastilla%2C%20Palma",
   shortDescription: {
     es: "Alquiler de scooters de 50cc, 125cc y Vespas icónicas a 5 minutos del Aeropuerto de Palma en Can Pastilla: cascos incluidos, kilometraje ilimitado y entrega en hotel.",
     en: "50cc, 125cc scooter and iconic Vespa rental 5 minutes from Palma Airport in Can Pastilla: helmets included, unlimited mileage, and hotel delivery.",
@@ -100,13 +94,6 @@ export const alquiler_scooter_vespa_mallorca_can_pastilla: ServiceItem = {
       "Hotel-Bring- und Abhol-Service in Palma und an der Playa de Palma",
       "Optionale Extras: Topcase, Smartphone-Halterung und Vollkasko-Versicherung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 620,
-      url: "https://www.google.com/maps/search/?api=1&query=Mallorca%20Scooter%20%26%20Vespa%20Rental%20Can%20Pastilla%20(Palma%20Beach)%20Carrer%20de%20la%20Tramuntana%2C%208%2C%2007610%20Can%20Pastilla%2C%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

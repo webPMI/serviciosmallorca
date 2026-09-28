@@ -31,11 +31,6 @@ export const celler_sa_cova_inca: ServiceItem = {
   schedule: "Martes a Domingo: 12:30 - 16:00, 19:30 - 23:00 (Lunes cerrado)",
   image: "/images/services/celler-sa-cova-inca.jpg",
   gallery: ["/images/services/celler-sa-cova-inca.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Celler%20Sa%20Cova%20Inca%20Carrer%20de%20l'Estrella%2C%2038%2C%2007300%20Inca",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Celler%20Sa%20Cova%20Inca%20Carrer%20de%20l'Estrella%2C%2038%2C%2007300%20Inca",
-  bingMapsUrl: "https://bing.com/maps?q=Celler%20Sa%20Cova%20Inca%20Carrer%20de%20l'Estrella%2C%2038%2C%2007300%20Inca",
   shortDescription: {
     es: "Auténtico celler mallorquín en Inca con barricas tricentenarias, cocinado tradicional de puchero, arroces secos y carnes a la brasa.",
     en: "Authentic Mallorcan celler in Inca with 300-year-old oak vats, serving slow-cooked stews, dry rice dishes, and grilled meats.",
@@ -99,13 +94,6 @@ export const celler_sa_cova_inca: ServiceItem = {
       "Klassischer Frito Mallorquín, Gemüsesuppen und Eintöpfe",
       "Weinkarte mit Weinen der DO Binissalem und Pla i Llevant",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.6,
-      reviewCount: 310,
-      url: "https://www.google.com/maps/search/?api=1&query=Celler%20Sa%20Cova%20Inca%20Carrer%20de%20l'Estrella%2C%2038%2C%2007300%20Inca",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

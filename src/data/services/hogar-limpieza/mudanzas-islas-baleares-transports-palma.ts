@@ -31,12 +31,6 @@ export const mudanzas_islas_baleares_transports_palma: ServiceItem = {
   schedule: "Lunes a Viernes: 08:00 - 19:00, Sábados: 08:30 - 14:00",
   image: "/images/services/mudanzas-islas-baleares-transports-palma.jpg",
   gallery: ["/images/services/mudanzas-islas-baleares-transports-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Mudanzas%20%26%20Guardamuebles%20Islas%20Baleares%20Palma%20Carrer%20del%20Gremi%20de%20Teixidors%2C%2038%2C%20Pol%C3%ADgon%20Son%20Castell%C3%B3%2C%2007009%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Mudanzas%20%26%20Guardamuebles%20Islas%20Baleares%20Palma%20Carrer%20del%20Gremi%20de%20Teixidors%2C%2038%2C%20Pol%C3%ADgon%20Son%20Castell%C3%B3%2C%2007009%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Mudanzas%20%26%20Guardamuebles%20Islas%20Baleares%20Palma%20Carrer%20del%20Gremi%20de%20Teixidors%2C%2038%2C%20Pol%C3%ADgon%20Son%20Castell%C3%B3%2C%2007009%20Palma",
   shortDescription: {
     es: "Empresa líder en mudanzas locales en Mallorca, traslados a la península y Europa, grúas elevadoras y guardamuebles vigilado.",
     en: "Leading moving company for local Mallorca relocations, mainland and European shipping, furniture lifts, and secure storage.",
@@ -100,13 +94,6 @@ export const mudanzas_islas_baleares_transports_palma: ServiceItem = {
       "Einpackservice sowie Möbel-De- und -Montage",
       "Flexible Einlagerung und Lagerboxen-Vermietung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 310,
-      url: "https://www.google.com/maps/search/?api=1&query=Mudanzas%20%26%20Guardamuebles%20Islas%20Baleares%20Palma%20Carrer%20del%20Gremi%20de%20Teixidors%2C%2038%2C%20Pol%C3%ADgon%20Son%20Castell%C3%B3%2C%2007009%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

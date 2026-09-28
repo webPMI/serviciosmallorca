@@ -28,10 +28,6 @@ export const floristeriaFlorsIColorsPalma: ServiceItem = {
   schedule: "Lunes a Sábado: 09:00 - 20:00",
   image: "/images/services/floristeria-flors-i-colors-palma.jpg",
   gallery: ["/images/services/floristeria-flors-i-colors-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Florister%C3%ADa+Flors+i+Colors+Palma+Carrer+dels+Oms+19",
-  appleMapsUrl: "https://maps.apple.com/?q=Floristeria+Flors+i+Colors+Palma",
-  bingMapsUrl: "https://bing.com/maps?q=Floristeria+Flors+i+Colors+Palma",
   shortDescription: {
     es: "Floristería artística en el centro de Palma con especialización en decoración floral de bodas, eventos corporativos y flores frescas de temporada de producción local.",
     en: "Artistic florist in central Palma specializing in floral décor for weddings, corporate events, and fresh seasonal flowers from local growers.",
@@ -95,13 +91,6 @@ export const floristeriaFlorsIColorsPalma: ServiceItem = {
       "Blumengestecke für zu Hause und Lieferung in ganz Mallorca",
       "Kreative Floristik-Workshops für private Gruppen und Firmenveranstaltungen",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 312,
-      url: "https://www.google.com/maps/search/?api=1&query=Florister%C3%ADa+Flors+i+Colors+Palma",
-    },
   },
   createdAt: "2026-09-05",
   lastUpdatedAt: "2026-09-05",

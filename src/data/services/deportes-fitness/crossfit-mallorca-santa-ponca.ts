@@ -29,8 +29,6 @@ export const CROSSFIT_MALLORCA_SANTA_PONCA: ServiceItem = {
   image: "/images/sports/crossfit-mallorca-santa-ponca.jpg",
   gallery: ["/images/sports/crossfit-mallorca-santa-ponca.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007057",
-  appleMapsUrl: "https://maps.apple.com/?q=CrossFit%20Mallorca+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=CrossFit%20Mallorca+Mallorca",
   shortDescription: {
     es: "El primer box oficial afiliado de CrossFit de Mallorca, con ambiente internacional en Calvià.",
     en: "Mallorca's original official CrossFit affiliate box with a vibrant international community in Calvià.",
@@ -94,13 +92,6 @@ export const CROSSFIT_MALLORCA_SANTA_PONCA: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 290,
-      url: "https://www.google.com/maps?cid=12007057",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

@@ -29,8 +29,6 @@ export const CROSSFIT_PORTIXOL_PALMA: ServiceItem = {
   image: "/images/sports/crossfit-portixol-palma.jpg",
   gallery: ["/images/sports/crossfit-portixol-palma.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007058",
-  appleMapsUrl: "https://maps.apple.com/?q=CrossFit%20Portixol+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=CrossFit%20Portixol+Mallorca",
   shortDescription: {
     es: "Box oficial de CrossFit junto al paseo marítimo del Portitxol con entrenamientos al aire libre y WODs diarios.",
     en: "Official CrossFit box by the Portixol promenade offering outdoor workouts and daily WODs.",
@@ -94,13 +92,6 @@ export const CROSSFIT_PORTIXOL_PALMA: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 260,
-      url: "https://www.google.com/maps?cid=12007058",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

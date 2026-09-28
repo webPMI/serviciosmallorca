@@ -29,8 +29,6 @@ export const MALLORCA_KITESCHOOL_SA_MARINA: ServiceItem = {
   image: "/images/services/mallorca-kiteschool-sa-marina.jpg",
   gallery: ["/images/services/mallorca-kiteschool-sa-marina.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007096",
-  appleMapsUrl: "https://maps.apple.com/?q=Mallorca%20Kite%20School%20Sa%20Marina+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Mallorca%20Kite%20School%20Sa%20Marina+Mallorca",
   shortDescription: {
     es: "Escuela oficial IKO de Kitesurf y Wingfoil en el spot con viento térmico más constante de la isla.",
     en: "Official IKO Kitesurfing and Wingfoil academy at the island's most reliable thermal wind spot.",
@@ -94,13 +92,6 @@ export const MALLORCA_KITESCHOOL_SA_MARINA: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 320,
-      url: "https://www.google.com/maps?cid=12007096",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

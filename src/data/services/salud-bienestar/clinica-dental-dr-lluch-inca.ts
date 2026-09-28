@@ -31,12 +31,6 @@ export const clinica_dental_dr_lluch_inca: ServiceItem = {
   schedule: "Lunes a Viernes: 09:00 - 13:30, 16:00 - 20:00",
   image: "/images/services/clinica-dental-dr-lluch-inca.jpg",
   gallery: ["/images/services/clinica-dental-dr-lluch-inca.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica%20Dental%20Dr.%20Lluch%20Inca%20Carrer%20des%20Tren%2C%2032%2C%2007300%20Inca",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Cl%C3%ADnica%20Dental%20Dr.%20Lluch%20Inca%20Carrer%20des%20Tren%2C%2032%2C%2007300%20Inca",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Cl%C3%ADnica%20Dental%20Dr.%20Lluch%20Inca%20Carrer%20des%20Tren%2C%2032%2C%2007300%20Inca",
   shortDescription: {
     es: "Clínica odontológica integral en Inca especializada en implantología guiada por ordenador, ortodoncia invisible Invisalign y diseño de sonrisa.",
     en: "Comprehensive dental clinic in Inca specializing in computer-guided implantology, Invisalign invisible orthodontics, and smile design.",
@@ -100,13 +94,6 @@ export const clinica_dental_dr_lluch_inca: ServiceItem = {
       "Ästhetische Zahnmedizin: hauchdünne Keramik-Veneers und LED-Bleaching",
       "Parodontitisbehandlung, mikroskopische Wurzelkanalbehandlung und Kinderzahnheilkunde",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 115,
-      url: "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica%20Dental%20Dr.%20Lluch%20Inca%20Carrer%20des%20Tren%2C%2032%2C%2007300%20Inca",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

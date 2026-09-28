@@ -78,12 +78,6 @@ export const alcudiamarMarinaResort: ServiceItem = {
   },
   image: "/images/services/alcudiamar-marina-resort.jpg",
   gallery: ["/images/services/alcudiamar-marina-resort.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Alcudiamar%20Yacht%20Marina%20%26%20Nautical%20Resort%20Passeig%20Mar%C3%ADtim%2C%201%2C%2007400%20Port%20d'Alc%C3%BAdia%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Alcudiamar%20Yacht%20Marina%20%26%20Nautical%20Resort%20Passeig%20Mar%C3%ADtim%2C%201%2C%2007400%20Port%20d'Alc%C3%BAdia%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://www.bing.com/maps?q=Alcudiamar%20Yacht%20Marina%20%26%20Nautical%20Resort%20Passeig%20Mar%C3%ADtim%2C%201%2C%2007400%20Port%20d'Alc%C3%BAdia%2C%20Illes%20Balears",
   phone: "+34 971 54 60 00",
   whatsapp: "+34971546000",
   website: "https://alcudiamar.es/puerto-deportivo",

@@ -31,12 +31,6 @@ export const motyvel_yachts_palma: ServiceItem = {
   schedule: "Lunes a Viernes: 09:00 - 18:30, Sábados con cita previa",
   image: "/images/services/motyvel-yachts-palma.jpg",
   gallery: ["/images/services/motyvel-yachts-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Motyvel%20Yachts%20Palma%201984%20Paseo%20Mar%C3%ADtimo%2C%2038%2C%2007014%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Motyvel%20Yachts%20Palma%201984%20Paseo%20Mar%C3%ADtimo%2C%2038%2C%2007014%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Motyvel%20Yachts%20Palma%201984%20Paseo%20Mar%C3%ADtimo%2C%2038%2C%2007014%20Palma",
   shortDescription: {
     es: "Distribuidor oficial de yates de lujo, Jeanneau y catamarans Prestige en Baleares con servicio integral de chárter y brokerage desde 1984.",
     en: "Official dealer of luxury yachts, Jeanneau, and Prestige in the Balearics offering brokerage and VIP yacht charters since 1984.",
@@ -100,13 +94,6 @@ export const motyvel_yachts_palma: ServiceItem = {
       "Luxusyacht-Charter mit Kapitän, Crew und Catering",
       "Liegeplatzvermittlung und Werft-Serviceabwicklung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 74,
-      url: "https://www.google.com/maps/search/?api=1&query=Motyvel%20Yachts%20Palma%201984%20Paseo%20Mar%C3%ADtimo%2C%2038%2C%2007014%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

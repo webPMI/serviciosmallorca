@@ -31,12 +31,6 @@ export const lycee_francais_de_palma: ServiceItem = {
   schedule: "Lunes a Viernes: 08:30 - 17:00",
   image: "/images/services/lycee-francais-de-palma.jpg",
   gallery: ["/images/services/lycee-francais-de-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Lyc%C3%A9e%20Fran%C3%A7ais%20de%20Palma%20Escuela%20Oficial%20Francesa%20(1972)%20Carrer%20de%20Josep%20Burgues%20Zaforteza%2C%204%2C%2007005%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Lyc%C3%A9e%20Fran%C3%A7ais%20de%20Palma%20Escuela%20Oficial%20Francesa%20(1972)%20Carrer%20de%20Josep%20Burgues%20Zaforteza%2C%204%2C%2007005%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Lyc%C3%A9e%20Fran%C3%A7ais%20de%20Palma%20Escuela%20Oficial%20Francesa%20(1972)%20Carrer%20de%20Josep%20Burgues%20Zaforteza%2C%204%2C%2007005%20Palma",
   shortDescription: {
     es: "El único colegio oficial francés de Baleares (homologado por la AEFE desde 1972): educación plurilingüe de excelencia en francés, español, inglés y catalán de 2 a 18 años.",
     en: "The only official French school in the Balearics (accredited by the AEFE since 1972): multilingual French Baccalaureate education for students aged 2 to 18.",
@@ -100,13 +94,6 @@ export const lycee_francais_de_palma: ServiceItem = {
       "Hauseigene Schulkantine mit französischer und mediterraner Küche",
       "Nachmittagsaktivitäten in Sport, Kunst und Musik",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 310,
-      url: "https://www.google.com/maps/search/?api=1&query=Lyc%C3%A9e%20Fran%C3%A7ais%20de%20Palma%20Escuela%20Oficial%20Francesa%20(1972)%20Carrer%20de%20Josep%20Burgues%20Zaforteza%2C%204%2C%2007005%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

@@ -28,9 +28,6 @@ export const bodegasJaumeDePuntiroSantaMaria: ServiceItem = {
   email: "bodega@vinsjaumedepuntiro.com",
   website: "https://vinsjaumedepuntiro.com",
   menuUrl: "https://vinsjaumedepuntiro.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Bodegas+Jaume+de+Puntiro+Santa+Maria+del+Cami+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Bodegas+Jaume+de+Puntiro+Santa+Maria",
-  bingMapsUrl: "https://www.bing.com/maps?q=Bodegas+Jaume+de+Puntiro+Santa+Maria",
   tags: [
     "zona:raiguer-pla",
     "zona:santa-maria-del-cami",

@@ -100,8 +100,5 @@ export const esBaluardMuseuService: ServiceItem = {
     ],
   },
   amenities: ["wifi", "air_conditioning", "wheelchair_accessible", "parking_nearby"],
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Es+Baluard+Museu+Palma",
-  appleMapsUrl: "https://maps.apple.com/?q=Es+Baluard+Museu+Palma",
-  bingMapsUrl: "https://www.bing.com/maps?q=Es+Baluard+Museu+Palma",
   confidenceScore: 99,
 };

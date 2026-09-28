@@ -31,12 +31,6 @@ export const fundacio_patronat_obrer_sant_josep_palma: ServiceItem = {
   schedule: "Lunes a Viernes de 08:30 a 17:00",
   image: "/images/services/fundacio-patronat-obrer-sant-josep-palma.jpg",
   gallery: ["/images/services/fundacio-patronat-obrer-sant-josep-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Fundaci%C3%B3%20Patronat%20Obrer%20de%20Sant%20Josep%20Palma%20(1907)%20Carrer%20de%20l'Hospitalet%2C%2012%2C%2007002%20Palma%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Fundaci%C3%B3%20Patronat%20Obrer%20de%20Sant%20Josep%20Palma%20(1907)%20Carrer%20de%20l'Hospitalet%2C%2012%2C%2007002%20Palma%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Fundaci%C3%B3%20Patronat%20Obrer%20de%20Sant%20Josep%20Palma%20(1907)%20Carrer%20de%20l'Hospitalet%2C%2012%2C%2007002%20Palma%2C%20Illes%20Balears",
   shortDescription: {
     es: "Institución social centenaria en el casco antiguo de Palma fundada en 1907. Formación para el empleo, comedores solidarios y apoyo socioeducativo a colectivos vulnerables.",
     en: "Centenary social foundation in Palma's historic quarter established in 1907. Vocational employment workshops, community dining, and support for vulnerable groups.",
@@ -114,13 +108,6 @@ export const fundacio_patronat_obrer_sant_josep_palma: ServiceItem = {
       "Acció social comunitària a Palma",
     ],
     de: ["Gastronomische Berufsbildung", "Arbeitsvermittlung für Benachteiligte", "Gemeinwesenarbeit in Palma"],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 160,
-      url: "https://www.google.com/maps/search/?api=1&query=Fundaci%C3%B3%20Patronat%20Obrer%20de%20Sant%20Josep%20Palma%20(1907)%20Carrer%20de%20l'Hospitalet%2C%2012%2C%2007002%20Palma%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

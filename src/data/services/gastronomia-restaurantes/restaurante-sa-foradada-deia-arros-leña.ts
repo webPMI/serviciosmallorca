@@ -31,12 +31,6 @@ export const restaurante_sa_foradada_deia_arros_lena: ServiceItem = {
   schedule: "Diario: 12:30 - 18:30 (Mayo a Octubre)",
   image: "/images/services/restaurante-sa-foradada-deia-arros-leña.jpg",
   gallery: ["/images/services/restaurante-sa-foradada-deia-arros-leña.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Restaurante%20Sa%20Foradada%20Dei%C3%A0%20Paellas%20%26%20Arroces%20a%20la%20Le%C3%B1a%20Punta%20de%20Sa%20Foradada%2C%2007179%20Dei%C3%A0",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Restaurante%20Sa%20Foradada%20Dei%C3%A0%20Paellas%20%26%20Arroces%20a%20la%20Le%C3%B1a%20Punta%20de%20Sa%20Foradada%2C%2007179%20Dei%C3%A0",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Restaurante%20Sa%20Foradada%20Dei%C3%A0%20Paellas%20%26%20Arroces%20a%20la%20Le%C3%B1a%20Punta%20de%20Sa%20Foradada%2C%2007179%20Dei%C3%A0",
   shortDescription: {
     es: "Iconico restaurante sobre el acantilado de la península de Sa Foradada en Deià: arroces a la leña de cepa de viña cocinados al aire libre sobre el mar Mediterráneo.",
     en: "Iconic cliffside restaurant on Sa Foradada peninsula in Deià: open-air wood-fired paellas cooked over vine wood overlooking the Mediterranean.",
@@ -100,13 +94,6 @@ export const restaurante_sa_foradada_deia_arros_lena: ServiceItem = {
       "Mallorquinische Weine und Tropen-Cocktails auf der Klippenterrasse",
       "Exklusive Gruppen-Reservierungen für Yacht-Charter-Gäste",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 1120,
-      url: "https://www.google.com/maps/search/?api=1&query=Restaurante%20Sa%20Foradada%20Dei%C3%A0%20Paellas%20%26%20Arroces%20a%20la%20Le%C3%B1a%20Punta%20de%20Sa%20Foradada%2C%2007179%20Dei%C3%A0",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

@@ -28,9 +28,6 @@ export const restauranteCanTroncaSantJoan: ServiceItem = {
   email: "info@restaurantecantronca.com",
   website: "https://www.restaurantecantronca.com",
   menuUrl: "https://www.restaurantecantronca.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Restaurante+Can+Tronca+Sant+Joan+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante+Can+Tronca+Sant+Joan",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante+Can+Tronca+Sant+Joan",
   tags: [
     "zona:raiguer-pla",
     "zona:sant-joan",

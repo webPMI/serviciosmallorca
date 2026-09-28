@@ -29,8 +29,6 @@ export const WINDSURF_STATION_POLLENSA_BAY: ServiceItem = {
   image: "/images/sports/windsurf-station-pollensa-bay.jpg",
   gallery: ["/images/sports/windsurf-station-pollensa-bay.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007094",
-  appleMapsUrl: "https://maps.apple.com/?q=Windsurf%20Station%20Pollen%C3%A7a%20Bay+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Windsurf%20Station%20Pollen%C3%A7a%20Bay+Mallorca",
   shortDescription: {
     es: "Estación náutica en la bahía de Pollença con cursos de Windsurf, Wingfoil y alquiler de material Fanatic.",
     en: "Water sports station in Pollença Bay offering Windsurfing, Wingfoil courses, and Fanatic gear hire.",
@@ -94,13 +92,6 @@ export const WINDSURF_STATION_POLLENSA_BAY: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 290,
-      url: "https://www.google.com/maps?cid=12007094",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

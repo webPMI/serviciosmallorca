@@ -76,10 +76,6 @@ export const theBritishSchoolOfMallorca: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=The%20Academy%20International%20School%20Marratx%C3%AD%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=The%20Academy%20International%20School%20Marratx%C3%AD%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=The%20Academy%20International%20School%20Marratx%C3%AD%20Mallorca",
   pricing: {
     startingPrice: "Consultar matrícula y cuotas",
     rateType: "tiered",
@@ -106,21 +102,4 @@ export const theBritishSchoolOfMallorca: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 290,
-      url: "https://www.google.com/maps/search/?api=1&query=The%20Academy%20International%20School%20Marratx%C3%AD%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=The%20Academy%20International%20School%20Marratx%C3%AD%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.7,
-      reviewCount: 29,
-      url: "https://www.bing.com/maps?q=The%20Academy%20International%20School%20Marratx%C3%AD%20Mallorca",
-    },
-    totalReviewsAggregated: 319,
-    overallWeightedRating: 4.8,
-  },
 };

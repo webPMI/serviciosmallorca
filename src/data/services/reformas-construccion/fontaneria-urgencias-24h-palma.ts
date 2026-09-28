@@ -31,12 +31,6 @@ export const fontaneria_urgencias_24h_palma: ServiceItem = {
   schedule: "Servicio de guardia de fontanería 24 horas los 365 días",
   image: "/images/services/fontaneria-urgencias-24h-palma.jpg",
   gallery: ["/images/services/fontaneria-urgencias-24h-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Fontaner%C3%ADa%20%26%20Desatascos%20Urgencias%2024h%20Palma%20y%20Mallorca%20Carrer%20de%20Nuredduna%2C%2012%2C%2007006%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Fontaner%C3%ADa%20%26%20Desatascos%20Urgencias%2024h%20Palma%20y%20Mallorca%20Carrer%20de%20Nuredduna%2C%2012%2C%2007006%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Fontaner%C3%ADa%20%26%20Desatascos%20Urgencias%2024h%20Palma%20y%20Mallorca%20Carrer%20de%20Nuredduna%2C%2012%2C%2007006%20Palma",
   shortDescription: {
     es: "Fontanería de urgencia 24 horas y desatascos en toda Mallorca: localización geofónica de fugas sin obra, desatascos con camión cuba, reparación de termos y tuberías.",
     en: "24-hour emergency plumbing and drain unblocking across Mallorca: non-invasive acoustic leak detection, vacuum jetting trucks, boiler repairs, and pipe relining.",
@@ -100,13 +94,6 @@ export const fontaneria_urgencias_24h_palma: ServiceItem = {
       "Lieferung und Montage neuer Warmwasser-Boiler innerhalb weniger Stunden",
       "Einbau von Wasserenthärtungsanlagen gegen den hohen Kalkgehalt auf Mallorca",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 620,
-      url: "https://www.google.com/maps/search/?api=1&query=Fontaner%C3%ADa%20%26%20Desatascos%20Urgencias%2024h%20Palma%20y%20Mallorca%20Carrer%20de%20Nuredduna%2C%2012%2C%2007006%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

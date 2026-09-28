@@ -31,12 +31,6 @@ export const clinica_veterinaria_algaida_raiguer_pla: ServiceItem = {
   schedule: "Lunes a Viernes: 09:30 - 13:30, 16:30 - 19:30, Sábados: 10:00 - 13:00",
   image: "/images/services/clinica-veterinaria-algaida-raiguer-pla.jpg",
   gallery: ["/images/services/clinica-veterinaria-algaida-raiguer-pla.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica%20Veterin%C3%A0ria%20Algaida%20Carrer%20del%20Rei%20En%20Jaume%2C%2025%2C%2007210%20Algaida",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Cl%C3%ADnica%20Veterin%C3%A0ria%20Algaida%20Carrer%20del%20Rei%20En%20Jaume%2C%2025%2C%2007210%20Algaida",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Cl%C3%ADnica%20Veterin%C3%A0ria%20Algaida%20Carrer%20del%20Rei%20En%20Jaume%2C%2025%2C%2007210%20Algaida",
   shortDescription: {
     es: "Centro veterinario de proximidad en Algaida: medicina preventiva para animales de compañía, cirugías, desparasitación y atención rural en fincas.",
     en: "Local veterinary clinic in Algaida: companion animal medicine, surgery, parasite control, and rural finca support.",
@@ -100,13 +94,6 @@ export const clinica_veterinaria_algaida_raiguer_pla: ServiceItem = {
       "Digitales Röntgen und praxiseigene Blutanalysen für schnelle Befunde",
       "Fachhandel für tiermedizinisches Diätfutter, Spezialnahrung und Pflegemittel",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 74,
-      url: "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica%20Veterin%C3%A0ria%20Algaida%20Carrer%20del%20Rei%20En%20Jaume%2C%2025%2C%2007210%20Algaida",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

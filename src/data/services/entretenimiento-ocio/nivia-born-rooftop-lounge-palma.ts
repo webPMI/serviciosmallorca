@@ -76,10 +76,6 @@ export const niviaBornRooftopLoungePalma: ServiceItem = {
       close: "17:00",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=The%20Fly%20Chic%20Rooftop%20Bar%20-%20Nivia%20Born%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=The%20Fly%20Chic%20Rooftop%20Bar%20-%20Nivia%20Born%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=The%20Fly%20Chic%20Rooftop%20Bar%20-%20Nivia%20Born%20Mallorca",
   pricing: {
     startingPrice: "Cócteles de autor desde 16€",
     rateType: "fixed",
@@ -106,21 +102,4 @@ export const niviaBornRooftopLoungePalma: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 310,
-      url: "https://www.google.com/maps/search/?api=1&query=The%20Fly%20Chic%20Rooftop%20Bar%20-%20Nivia%20Born%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=The%20Fly%20Chic%20Rooftop%20Bar%20-%20Nivia%20Born%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.7,
-      reviewCount: 31,
-      url: "https://www.bing.com/maps?q=The%20Fly%20Chic%20Rooftop%20Bar%20-%20Nivia%20Born%20Mallorca",
-    },
-    totalReviewsAggregated: 341,
-    overallWeightedRating: 4.8,
-  },
 };

@@ -28,9 +28,6 @@ export const bodegasOliverMoraguesAlgaida: ServiceItem = {
   email: "info@olivermoragues.com",
   website: "https://www.olivermoragues.com",
   menuUrl: "https://www.olivermoragues.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Bodegas+Oliver+Moragues+Algaida+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Bodegas+Oliver+Moragues+Algaida",
-  bingMapsUrl: "https://www.bing.com/maps?q=Bodegas+Oliver+Moragues+Algaida",
   tags: ["zona:raiguer-pla", "zona:algaida", "product:premium", "mod:en-local", "aud:parejas", "temps:todo-el-ano"],
   capabilities: {
     parkingAvailable: true,

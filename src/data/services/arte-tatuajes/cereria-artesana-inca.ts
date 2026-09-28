@@ -21,9 +21,6 @@ export const cereriaArtesanaInca: ServiceItem = {
   whatsapp: "+34 670 12 34 80",
   email: "info@cereriainca.com",
   website: "https://cereriainca.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Cereria%20Artesana%20Inca",
-  appleMapsUrl: "https://maps.apple.com/?q=Cereria%20Artesana%20Inca&ll=39.7205,2.9085",
-  bingMapsUrl: "https://www.bing.com/maps?where1=Cereria%20Artesana%20Inca",
   coordinates: { lat: 39.7205, lng: 2.9085 },
   schedule: "Lunes a Viernes: 09:30 - 13:30 | 16:30 - 20:00 | Sábados: 10:00 - 13:30",
   lastVerifiedAt: "2026-08-25",
@@ -131,30 +128,13 @@ export const cereriaArtesanaInca: ServiceItem = {
       instagramHandle: "@cereriainca",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 140,
-      url: "https://www.google.com/maps/search/?api=1&query=Cereria%20Artesana%20Inca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Cereria%20Artesana%20Inca&ll=39.7205,2.9085",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 140,
-      url: "https://www.bing.com/maps?where1=Cereria%20Artesana%20Inca",
-    },
-    totalReviewsAggregated: 140,
-    overallWeightedRating: 4.8,
-  },
   reviews: [
     {
       id: "rev-cai-1",
       authorName: "Margalida Pons",
       rating: 5,
       date: "2025-05-18",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
       comment:
         "Una botiga amb molta màgia a Inca. Les veles de cera d'abella fan una olor natural a mel fantàstica i duren moltíssim. Tracte molt agradable i producte autèntic.",
@@ -165,7 +145,7 @@ export const cereriaArtesanaInca: ServiceItem = {
       authorName: "Emma Watson",
       rating: 5,
       date: "2025-06-25",
-      platform: "google_maps",
+      platform: "direct",
       language: "en",
       comment:
         "Charming traditional candle shop in Inca! Bought pure honeycomb beeswax candles and orange blossom scents. Beautifully wrapped and 100% natural.",

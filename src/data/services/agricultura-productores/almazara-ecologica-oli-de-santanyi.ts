@@ -31,12 +31,6 @@ export const almazara_ecologica_oli_de_santanyi: ServiceItem = {
   schedule: "Lunes a Sábado: 09:30 - 14:00 y 16:00 - 19:00",
   image: "/images/services/almazara-ecologica-oli-de-santanyi.jpg",
   gallery: ["/images/services/almazara-ecologica-oli-de-santanyi.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Oli%20de%20Santany%C3%AD%20Almazara%20Ecol%C3%B3gica%20%26%20Olivar%20Santanyi%20Cam%C3%AD%20de%20sa%20Marina%2C%20s%2Fn%2C%2007650%20Santany%C3%AD",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Oli%20de%20Santany%C3%AD%20Almazara%20Ecol%C3%B3gica%20%26%20Olivar%20Santanyi%20Cam%C3%AD%20de%20sa%20Marina%2C%20s%2Fn%2C%2007650%20Santany%C3%AD",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Oli%20de%20Santany%C3%AD%20Almazara%20Ecol%C3%B3gica%20%26%20Olivar%20Santanyi%20Cam%C3%AD%20de%20sa%20Marina%2C%20s%2Fn%2C%2007650%20Santany%C3%AD",
   shortDescription: {
     es: "Almazara artesana y olivar ecológico en Santanyí: aceite de oliva virgen extra de extracción en frío con sello DOP Oli de Mallorca y catas en finca.",
     en: "Artisan olive oil mill and organic grove in Santanyí: cold-extracted extra virgin olive oil with DOP Oli de Mallorca seal and estate tastings.",
@@ -100,13 +94,6 @@ export const almazara_ecologica_oli_de_santanyi: ServiceItem = {
       "Gourmet-Geschenkkörbe mit Meersalz und lokalen Santanyí-Produkten",
       "Gesicherter Versand nach Spanien und Europa",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 215,
-      url: "https://www.google.com/maps/search/?api=1&query=Oli%20de%20Santany%C3%AD%20Almazara%20Ecol%C3%B3gica%20%26%20Olivar%20Santanyi%20Cam%C3%AD%20de%20sa%20Marina%2C%20s%2Fn%2C%2007650%20Santany%C3%AD",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

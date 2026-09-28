@@ -31,12 +31,6 @@ export const noma_beach_club_playa_de_palma: ServiceItem = {
   schedule: "Diario: 11:00 - 00:30 (Abril a Octubre)",
   image: "/images/services/noma-beach-club-playa-de-palma.jpg",
   gallery: ["/images/services/noma-beach-club-playa-de-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Noma%20Beach%20Club%20Palma%20Carrer%20de%20les%20Maravelles%2C%201%2C%2007610%20Palma%20(Platja%20de%20Palma)",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Noma%20Beach%20Club%20Palma%20Carrer%20de%20les%20Maravelles%2C%201%2C%2007610%20Palma%20(Platja%20de%20Palma)",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Noma%20Beach%20Club%20Palma%20Carrer%20de%20les%20Maravelles%2C%201%2C%2007610%20Palma%20(Platja%20de%20Palma)",
   shortDescription: {
     es: "Exclusivo club de playa y restaurante en Platja de Palma: camas balinesas frente al mar, cocina fusión mediterránea, cócteles de autor y sesiones de música en directo.",
     en: "Upscale beachfront beach club and restaurant in Platja de Palma: oceanfront Balinese daybeds, Mediterranean fusion dining, signature cocktails, and live DJ sets.",
@@ -100,13 +94,6 @@ export const noma_beach_club_playa_de_palma: ServiceItem = {
       "Private Events und exklusive Feiern",
       "Kreative Cocktailkarte und Champagnerservice",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 420,
-      url: "https://www.google.com/maps/search/?api=1&query=Noma%20Beach%20Club%20Palma%20Carrer%20de%20les%20Maravelles%2C%201%2C%2007610%20Palma%20(Platja%20de%20Palma)",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

@@ -28,9 +28,6 @@ export const cellerPagesPalma: ServiceItem = {
   email: "info@cellerpages.com",
   website: "https://cellerpages.com",
   menuUrl: "https://cellerpages.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Celler+Pages+Palma+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Celler+Pages+Palma",
-  bingMapsUrl: "https://www.bing.com/maps?q=Celler+Pages+Palma",
   tags: [
     "zona:palma",
     "zona:casco-antiguo",

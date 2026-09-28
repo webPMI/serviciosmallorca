@@ -31,12 +31,6 @@ export const domotica_baleares_smart_villas_palma: ServiceItem = {
   schedule: "Lunes a Viernes: 08:30 - 18:30",
   image: "/images/services/domotica-baleares-smart-villas-palma.jpg",
   gallery: ["/images/services/domotica-baleares-smart-villas-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Smart%20Villas%20Dom%C3%B3tica%20%26%20Redes%20Baleares%20Palma%20Carrer%20del%20Gran%20Via%20Asima%2C%2022%2C%20Son%20Castell%C3%B3%2C%2007009%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Smart%20Villas%20Dom%C3%B3tica%20%26%20Redes%20Baleares%20Palma%20Carrer%20del%20Gran%20Via%20Asima%2C%2022%2C%20Son%20Castell%C3%B3%2C%2007009%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Smart%20Villas%20Dom%C3%B3tica%20%26%20Redes%20Baleares%20Palma%20Carrer%20del%20Gran%20Via%20Asima%2C%2022%2C%20Son%20Castell%C3%B3%2C%2007009%20Palma",
   shortDescription: {
     es: "Ingeniería de domótica KNX y Control4, salas de cine privadas de alta fidelidad, videovigilancia y redes Wi-Fi profesionales para fincas.",
     en: "KNX and Control4 smart home engineering, high-end private cinema rooms, CCTV, and enterprise Wi-Fi for luxury estates.",
@@ -100,13 +94,6 @@ export const domotica_baleares_smart_villas_palma: ServiceItem = {
       "Perimeter-Sicherheit mit Wärmebild- und KI-Kameras",
       "Sichere Profi-Netzwerke und Richtfunkstrecken",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 88,
-      url: "https://www.google.com/maps/search/?api=1&query=Smart%20Villas%20Dom%C3%B3tica%20%26%20Redes%20Baleares%20Palma%20Carrer%20del%20Gran%20Via%20Asima%2C%2022%2C%20Son%20Castell%C3%B3%2C%2007009%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

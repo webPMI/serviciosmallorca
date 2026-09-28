@@ -76,12 +76,6 @@ export const fornetDeLaSocaPalmaPatrimoni: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Fornet%20de%20la%20Soca%20-%20Arqueolog%C3%ADa%20Gastron%C3%B3mica%20Mallorca",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Fornet%20de%20la%20Soca%20-%20Arqueolog%C3%ADa%20Gastron%C3%B3mica%20Mallorca",
-  bingMapsUrl:
-    "https://www.bing.com/maps?q=Fornet%20de%20la%20Soca%20-%20Arqueolog%C3%ADa%20Gastron%C3%B3mica%20Mallorca",
   pricing: {
     startingPrice: "Presupuesto y tarifas personalizadas",
     rateType: "tiered",
@@ -108,21 +102,4 @@ export const fornetDeLaSocaPalmaPatrimoni: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 1820,
-      url: "https://www.google.com/maps/search/?api=1&query=Fornet%20de%20la%20Soca%20-%20Arqueolog%C3%ADa%20Gastron%C3%B3mica%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Fornet%20de%20la%20Soca%20-%20Arqueolog%C3%ADa%20Gastron%C3%B3mica%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 182,
-      url: "https://www.bing.com/maps?q=Fornet%20de%20la%20Soca%20-%20Arqueolog%C3%ADa%20Gastron%C3%B3mica%20Mallorca",
-    },
-    totalReviewsAggregated: 2002,
-    overallWeightedRating: 4.9,
-  },
 };

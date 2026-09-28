@@ -31,12 +31,6 @@ export const mallorca_academy_languages_palma_centro: ServiceItem = {
   schedule: "Lunes a Viernes: 08:30 - 20:30, Sábados: 09:30 - 13:30",
   image: "/images/services/mallorca-academy-languages-palma-centro.jpg",
   gallery: ["/images/services/mallorca-academy-languages-palma-centro.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Mallorca%20International%20Language%20Academy%20Palma%20Carrer%20dels%20Oms%2C%2028%2C%2007003%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Mallorca%20International%20Language%20Academy%20Palma%20Carrer%20dels%20Oms%2C%2028%2C%2007003%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Mallorca%20International%20Language%20Academy%20Palma%20Carrer%20dels%20Oms%2C%2028%2C%2007003%20Palma",
   shortDescription: {
     es: "Academia de idiomas en el centro de Palma acreditada por el Instituto Cervantes: cursos intensivos de español (DELE/CCSE), alemán e inglés con profesores nativos.",
     en: "Language academy in central Palma accredited by Instituto Cervantes: intensive Spanish (DELE/CCSE), German, and Cambridge English.",
@@ -100,13 +94,6 @@ export const mallorca_academy_languages_palma_centro: ServiceItem = {
       "Deutschkurse für Gastronomie und Yachting",
       "Individueller Einzelunterricht für Führungskräfte",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 155,
-      url: "https://www.google.com/maps/search/?api=1&query=Mallorca%20International%20Language%20Academy%20Palma%20Carrer%20dels%20Oms%2C%2028%2C%2007003%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

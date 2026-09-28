@@ -121,30 +121,13 @@ export const caNEduardo: ServiceItem = {
     ca: "Fundat el 1943 a l'epicentre del port pesquer de Palma, Ca n'Eduardo va néixer per retre tribut a la riquesa de la mar balear. Durant més de vuit dècades, ha estat el punt de trobada de navegants i residents a la recerca del millor producte de llotja amb la Seu de Palma com a fons.",
     de: "Gegründet 1943 direkt an der Fischbörse, wird Ca n'Eduardo seit Generationen für seine kompromisslose Frische und familiäre Gastfreundschaft geschätzt.",
   },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.5,
-      reviewCount: 1840,
-      url: "https://www.google.com/maps/search/?api=1&query=Ca%20n'Eduardo%20Palma%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Ca%20n'Eduardo%20Palma%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.5,
-      reviewCount: 120,
-      url: "https://www.bing.com/maps?q=Ca%20n'Eduardo%20Palma%20Mallorca",
-    },
-    totalReviewsAggregated: 1960,
-    overallWeightedRating: 4.5,
-  },
   reviews: [
     {
       id: "rev-ce-1",
       authorName: "Guillermo R.",
       rating: 5,
       date: "2026-06-14",
-      platform: "google_maps",
+      platform: "direct",
       language: "es",
       comment:
         "Insuperable arroz a banda y gamba roja fresca de Sóller. Las vistas a la Catedral y al puerto al atardecer son las mejores de Palma.",
@@ -215,9 +198,6 @@ export const caNEduardo: ServiceItem = {
     },
   ],
   authorityProfiles: [],
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Ca%20n'Eduardo%20Palma%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Ca%20n'Eduardo%20Palma%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Ca%20n'Eduardo%20Palma%20Mallorca",
   phone: "+34 971 72 11 82",
   whatsapp: "+34 971 72 11 82",
   email: "info@caneduardo.com",

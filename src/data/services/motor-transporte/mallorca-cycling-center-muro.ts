@@ -21,9 +21,6 @@ export const mallorcaCyclingCenter: ServiceItem = {
   whatsapp: "+34 670 88 99 00",
   email: "info@mallorcacyclingcenter.com",
   website: "https://mallorcacyclingcenter.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Mallorca%20Cycling%20Center%20Playa%20de%20Muro",
-  appleMapsUrl: "https://maps.apple.com/?q=Mallorca%20Cycling%20Center%20Playa%20de%20Muro&ll=39.8125,3.1180",
-  bingMapsUrl: "https://www.bing.com/maps?where1=Mallorca%20Cycling%20Center%20Playa%20de%20Muro",
   coordinates: { lat: 39.8125, lng: 3.118 },
   schedule: "Lunes a Domingo: 08:30 - 19:30 (Abierto todo el año para cicloturistas)",
   lastVerifiedAt: "2026-08-25",
@@ -128,30 +125,13 @@ export const mallorcaCyclingCenter: ServiceItem = {
       instagramHandle: "@mallorcacyclingcenter",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 510,
-      url: "https://www.google.com/maps/search/?api=1&query=Mallorca%20Cycling%20Center%20Playa%20de%20Muro",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Mallorca%20Cycling%20Center%20Playa%20de%20Muro&ll=39.8125,3.1180",
-    },
-    bingMaps: {
-      rating: 4.9,
-      reviewCount: 510,
-      url: "https://www.bing.com/maps?where1=Mallorca%20Cycling%20Center%20Playa%20de%20Muro",
-    },
-    totalReviewsAggregated: 510,
-    overallWeightedRating: 4.9,
-  },
   reviews: [
     {
       id: "rev-mcc-1",
       authorName: "Klaus Lindemann",
       rating: 5,
       date: "2025-05-16",
-      platform: "google_maps",
+      platform: "direct",
       language: "de",
       comment:
         "Perfekter Radverleih an der Playa de Muro! BMC Rennrad mit Di2 war brandneu und perfekt eingestellt. Super freundliche Mechaniker.",
@@ -162,7 +142,7 @@ export const mallorcaCyclingCenter: ServiceItem = {
       authorName: "James Bennett",
       rating: 5,
       date: "2025-06-25",
-      platform: "google_maps",
+      platform: "direct",
       language: "en",
       comment:
         "Unbeatable service in northern Mallorca! Delivered top-spec carbon bikes directly to our villa in Pollença and took care of everything seamlessly.",

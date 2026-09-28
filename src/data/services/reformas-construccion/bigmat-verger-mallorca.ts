@@ -21,9 +21,6 @@ export const bigmatVergerMallorca: ServiceItem = {
   whatsapp: "+34 971 84 31 11",
   email: "manacor@verger.bigmat.es",
   website: "https://bigmatverger.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=BigMat%20Verger%20Manacor%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=BigMat%20Verger%20Manacor%20Mallorca&ll=39.5678,3.2012",
-  bingMapsUrl: "https://www.bing.com/maps?where1=BigMat%20Verger%20Manacor%20Mallorca",
   coordinates: { lat: 39.5678, lng: 3.2012 },
   schedule: "Lunes a Viernes: 07:30 - 19:30 | Sábados: 08:00 - 13:00 (Domingos Cerrado)",
   lastVerifiedAt: "2026-08-25",
@@ -128,30 +125,13 @@ export const bigmatVergerMallorca: ServiceItem = {
       instagramHandle: "@bigmatverger",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.6,
-      reviewCount: 450,
-      url: "https://www.google.com/maps/search/?api=1&query=BigMat%20Verger%20Manacor%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=BigMat%20Verger%20Manacor%20Mallorca&ll=39.5678,3.2012",
-    },
-    bingMaps: {
-      rating: 4.6,
-      reviewCount: 450,
-      url: "https://www.bing.com/maps?where1=BigMat%20Verger%20Manacor%20Mallorca",
-    },
-    totalReviewsAggregated: 450,
-    overallWeightedRating: 4.6,
-  },
   reviews: [
     {
       id: "rev-bm-1",
       authorName: "Joan Carles Nadal",
       rating: 5,
       date: "2025-05-14",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
       comment:
         "Gran exposició de ceràmica a Manacor. El tracte dels venedors i la rapidesa de la descàrrega amb camió grua són de 10.",
@@ -162,7 +142,7 @@ export const bigmatVergerMallorca: ServiceItem = {
       authorName: "Lars Lindström",
       rating: 5,
       date: "2025-07-20",
-      platform: "google_maps",
+      platform: "direct",
       language: "en",
       comment:
         "Top building supplier in Mallorca. Bought tiles and bathroom fixtures for our renovation, excellent quality and service.",

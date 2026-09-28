@@ -31,12 +31,6 @@ export const piscinas_mallorca_blue_construccion_mantenimiento: ServiceItem = {
   schedule: "Lunes a Viernes: 08:00 - 18:30; Sábado: 09:00 - 13:00",
   image: "/images/services/piscinas-mallorca-blue-construccion-mantenimiento.jpg",
   gallery: ["/images/services/piscinas-mallorca-blue-construccion-mantenimiento.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Piscinas%20Mallorca%20Blue%20Construcci%C3%B3n%20%26%20Mantenimiento%20Carrer%20del%20Ter%2C%2048%2C%20Pol%C3%ADgono%20Son%20Fuster%2C%2007009%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Piscinas%20Mallorca%20Blue%20Construcci%C3%B3n%20%26%20Mantenimiento%20Carrer%20del%20Ter%2C%2048%2C%20Pol%C3%ADgono%20Son%20Fuster%2C%2007009%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Piscinas%20Mallorca%20Blue%20Construcci%C3%B3n%20%26%20Mantenimiento%20Carrer%20del%20Ter%2C%2048%2C%20Pol%C3%ADgono%20Son%20Fuster%2C%2007009%20Palma",
   shortDescription: {
     es: "Empresa de construcción, rehabilitación y mantenimiento de piscinas en Mallorca: piscinas desbordantes infinity, cloración salina, bombas de calor y domótica de agua.",
     en: "Swimming pool construction, renovation, and maintenance company in Mallorca: infinity overflow pools, saltwater chlorination, heating heat pumps, and smart automation.",
@@ -100,13 +94,6 @@ export const piscinas_mallorca_blue_construccion_mantenimiento: ServiceItem = {
       "Salzelektrolyse-Anlagen, automatische pH-Regulierung und Poolabdeckungen",
       "Ortung und Reparatur von Leckagen",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 270,
-      url: "https://www.google.com/maps/search/?api=1&query=Piscinas%20Mallorca%20Blue%20Construcci%C3%B3n%20%26%20Mantenimiento%20Carrer%20del%20Ter%2C%2048%2C%20Pol%C3%ADgono%20Son%20Fuster%2C%2007009%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

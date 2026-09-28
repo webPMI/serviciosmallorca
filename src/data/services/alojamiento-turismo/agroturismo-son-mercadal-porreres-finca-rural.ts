@@ -31,12 +31,6 @@ export const agroturismo_son_mercadal_porreres_finca_rural: ServiceItem = {
   schedule: "Recepción: 08:30 - 21:00 (Marzo a Noviembre)",
   image: "/images/services/agroturismo-son-mercadal-porreres-finca-rural.jpg",
   gallery: ["/images/services/agroturismo-son-mercadal-porreres-finca-rural.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Agroturismo%20Son%20Mercadal%20Finca%20Rural%20Porreres%20Cam%C3%AD%20de%20Son%20Mercadal%2C%20s%2Fn%2C%2007260%20Porreres",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Agroturismo%20Son%20Mercadal%20Finca%20Rural%20Porreres%20Cam%C3%AD%20de%20Son%20Mercadal%2C%20s%2Fn%2C%2007260%20Porreres",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Agroturismo%20Son%20Mercadal%20Finca%20Rural%20Porreres%20Cam%C3%AD%20de%20Son%20Mercadal%2C%20s%2Fn%2C%2007260%20Porreres",
   shortDescription: {
     es: "Finca de agroturismo señorial del siglo XIV en Porreres: 100 hectáreas de cultivo ecológico, piscina entre jardines autóctonos y desayunos con mermeladas de albaricoque de la finca.",
     en: "14th-century manor agritourism estate in Porreres: 100 hectares of organic farming, swimming pool surrounded by native gardens, and estate apricot jam breakfasts.",
@@ -100,13 +94,6 @@ export const agroturismo_son_mercadal_porreres_finca_rural: ServiceItem = {
       "Geführte Wander- und Radtouren durch das Landgut und die Weinberge",
       "Verkostungen des hauseigenen Bio-Olivenöls extra vergine",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 260,
-      url: "https://www.google.com/maps/search/?api=1&query=Agroturismo%20Son%20Mercadal%20Finca%20Rural%20Porreres%20Cam%C3%AD%20de%20Son%20Mercadal%2C%20s%2Fn%2C%2007260%20Porreres",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

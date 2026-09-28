@@ -31,12 +31,6 @@ export const clinica_dental_dra_neus_pico_inca: ServiceItem = {
   schedule: "Lunes a Jueves de 09:30 a 13:30 y 16:00 a 20:00, Viernes de 09:30 a 14:00",
   image: "/images/services/clinica-dental-dra-neus-pico-inca.jpg",
   gallery: ["/images/services/clinica-dental-dra-neus-pico-inca.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica%20Dental%20Dra.%20Neus%20Pic%C3%B3%20Inca%20Carrer%20Major%2C%2048%2C%2007300%20Inca%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Cl%C3%ADnica%20Dental%20Dra.%20Neus%20Pic%C3%B3%20Inca%20Carrer%20Major%2C%2048%2C%2007300%20Inca%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Cl%C3%ADnica%20Dental%20Dra.%20Neus%20Pic%C3%B3%20Inca%20Carrer%20Major%2C%2048%2C%2007300%20Inca%2C%20Illes%20Balears",
   shortDescription: {
     es: "Clínica dental familiar en el centro peatonal de Inca. Odontología integral con cercanía y tecnología para pacientes de toda la comarca del Raiguer.",
     en: "Family dental clinic in Inca's pedestrian shopping street. Comprehensive, friendly dental care and modern technology for the Raiguer region.",
@@ -106,13 +100,6 @@ export const clinica_dental_dra_neus_pico_inca: ServiceItem = {
     en: ["Pediatric dentistry", "Clear aligners", "Cosmetic dental prosthetics"],
     ca: ["Odontopediatria", "Ortodòncia invisible", "Pròtesis dental estètica"],
     de: ["Kinderzahnheilkunde", "Zahnschienen", "Ästhetischer Zahnersatz"],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 110,
-      url: "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica%20Dental%20Dra.%20Neus%20Pic%C3%B3%20Inca%20Carrer%20Major%2C%2048%2C%2007300%20Inca%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

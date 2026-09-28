@@ -28,9 +28,6 @@ export const restauranteCnColoniaSantPere: ServiceItem = {
   email: "info@cncoloniasp.com",
   website: "https://cncoloniasp.com",
   menuUrl: "https://delnautico.shop",
-  googleMapsUrl: "https://www.google.com/maps/search/Restaurante+Club+Nautic+Colonia+Sant+Pere+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante+Club+Nautic+Colonia+Sant+Pere",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante+Club+Nautic+Colonia+Sant+Pere",
   tags: [
     "zona:manacor-llevant",
     "zona:colonia-de-sant-pere",

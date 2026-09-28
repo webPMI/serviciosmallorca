@@ -31,12 +31,6 @@ export const club_hipico_la_gubia_bunyola_equitacion: ServiceItem = {
   schedule: "Martes a Domingo: 08:30 - 20:30, Lunes cerrado",
   image: "/images/services/club-hipico-la-gubia-bunyola-equitacion.jpg",
   gallery: ["/images/services/club-hipico-la-gubia-bunyola-equitacion.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Club%20H%C3%ADpico%20La%20Gubia%20(Bunyola)%20-%20Escuela%20de%20Equitaci%C3%B3n%20%26%20Rutas%20Ctra.%20Palma-S%C3%B3ller%2C%20Km%2012.5%2C%2007110%20Bunyola",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Club%20H%C3%ADpico%20La%20Gubia%20(Bunyola)%20-%20Escuela%20de%20Equitaci%C3%B3n%20%26%20Rutas%20Ctra.%20Palma-S%C3%B3ller%2C%20Km%2012.5%2C%2007110%20Bunyola",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Club%20H%C3%ADpico%20La%20Gubia%20(Bunyola)%20-%20Escuela%20de%20Equitaci%C3%B3n%20%26%20Rutas%20Ctra.%20Palma-S%C3%B3ller%2C%20Km%2012.5%2C%2007110%20Bunyola",
   shortDescription: {
     es: "Centro ecuestre de referencia en Mallorca a los pies de la Serra de Tramuntana: clases de salto, doma clásica, poni club para niños y pupilaje de primer nivel.",
     en: "Premier equestrian center in Mallorca at the foothills of the Tramuntana mountains: show jumping, dressage, children's pony club, and luxury horse livery.",
@@ -100,13 +94,6 @@ export const club_hipico_la_gubia_bunyola_equitacion: ServiceItem = {
       "Abnahme der spanischen Reitabzeichen (Galopes)",
       "Geführte Ausritte durch die mediterrane Berglandschaft von Bunyola",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 310,
-      url: "https://www.google.com/maps/search/?api=1&query=Club%20H%C3%ADpico%20La%20Gubia%20(Bunyola)%20-%20Escuela%20de%20Equitaci%C3%B3n%20%26%20Rutas%20Ctra.%20Palma-S%C3%B3ller%2C%20Km%2012.5%2C%2007110%20Bunyola",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

@@ -31,12 +31,6 @@ export const kensington_international_real_estate_palma_lujo: ServiceItem = {
   schedule: "Lunes a Viernes: 09:00 - 18:30; Sábado: 10:00 - 14:00",
   image: "/images/services/kensington-international-real-estate-palma-lujo.jpg",
   gallery: ["/images/services/kensington-international-real-estate-palma-lujo.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Kensington%20International%20Real%20Estate%20Mallorca%20Palma%20Carrer%20de%20Jaume%20III%2C%205%2C%2007012%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Kensington%20International%20Real%20Estate%20Mallorca%20Palma%20Carrer%20de%20Jaume%20III%2C%205%2C%2007012%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Kensington%20International%20Real%20Estate%20Mallorca%20Palma%20Carrer%20de%20Jaume%20III%2C%205%2C%2007012%20Palma",
   shortDescription: {
     es: "Boutique inmobiliaria de lujo en Palma especializada en villas señoriales, propiedades frente al mar y fincas en Son Vida, Andratx y la Serra de Tramuntana.",
     en: "Luxury real estate boutique in Palma specialising in prime villas, waterfront estates, and luxury fincas in Son Vida, Andratx, and the Tramuntana range.",
@@ -100,13 +94,6 @@ export const kensington_international_real_estate_palma_lujo: ServiceItem = {
       "Off-Market-Suche für vermögende Privatkunden (HNWIs)",
       "Luxus-Ferienvermietung und Langzeitverwaltung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 412,
-      url: "https://www.google.com/maps/search/?api=1&query=Kensington%20International%20Real%20Estate%20Mallorca%20Palma%20Carrer%20de%20Jaume%20III%2C%205%2C%2007012%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

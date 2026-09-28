@@ -31,12 +31,6 @@ export const mallorca_clean_villas_calvia: ServiceItem = {
   schedule: "Lunes a Domingo: 08:00 - 20:00 (Servicio de guardia de llaves)",
   image: "/images/services/mallorca-clean-villas-calvia.jpg",
   gallery: ["/images/services/mallorca-clean-villas-calvia.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Mallorca%20Clean%20Villas%20Limpieza%20%26%20Mantenimiento%20de%20Villas%20(Calvi%C3%A0)%20Avinguda%20del%20Rei%20Jaume%20I%2C%20102%2C%2007180%20Santa%20Pon%C3%A7a%2C%20Calvi%C3%A0",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Mallorca%20Clean%20Villas%20Limpieza%20%26%20Mantenimiento%20de%20Villas%20(Calvi%C3%A0)%20Avinguda%20del%20Rei%20Jaume%20I%2C%20102%2C%2007180%20Santa%20Pon%C3%A7a%2C%20Calvi%C3%A0",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Mallorca%20Clean%20Villas%20Limpieza%20%26%20Mantenimiento%20de%20Villas%20(Calvi%C3%A0)%20Avinguda%20del%20Rei%20Jaume%20I%2C%20102%2C%2007180%20Santa%20Pon%C3%A7a%2C%20Calvi%C3%A0",
   shortDescription: {
     es: "Servicio exclusivo de limpieza y cuidado de villas de lujo y fincas en Calvià y Andratx: preparación para propietarios, cambios de sábanas en alquiler vacacional y lavandería de alta gama.",
     en: "Exclusive luxury villa cleaning and estate management in Calvià and Andratx: owner arrival preparation, vacation rental turnovers, and premium linen service.",
@@ -100,13 +94,6 @@ export const mallorca_clean_villas_calvia: ServiceItem = {
       "Reinigung von Teakholz-Terrassen, Gartenmöbeln und Grillanlagen",
       "Wasch- und Bügelservice für Bettwäsche und Tischdecken",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 290,
-      url: "https://www.google.com/maps/search/?api=1&query=Mallorca%20Clean%20Villas%20Limpieza%20%26%20Mantenimiento%20de%20Villas%20(Calvi%C3%A0)%20Avinguda%20del%20Rei%20Jaume%20I%2C%20102%2C%2007180%20Santa%20Pon%C3%A7a%2C%20Calvi%C3%A0",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

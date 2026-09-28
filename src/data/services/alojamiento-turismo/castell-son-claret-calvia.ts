@@ -76,9 +76,6 @@ export const castellSonClaretCalvia: ServiceItem = {
       close: "23:59",
     },
   },
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Castell%20Son%20Claret%20Luxury%20Retreat%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Castell%20Son%20Claret%20Luxury%20Retreat%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Castell%20Son%20Claret%20Luxury%20Retreat%20Mallorca",
   pricing: {
     startingPrice: "Desde 590€ / noche",
     rateType: "tiered",
@@ -105,21 +102,4 @@ export const castellSonClaretCalvia: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 510,
-      url: "https://www.google.com/maps/search/?api=1&query=Castell%20Son%20Claret%20Luxury%20Retreat%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Castell%20Son%20Claret%20Luxury%20Retreat%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 51,
-      url: "https://www.bing.com/maps?q=Castell%20Son%20Claret%20Luxury%20Retreat%20Mallorca",
-    },
-    totalReviewsAggregated: 561,
-    overallWeightedRating: 4.9,
-  },
 };

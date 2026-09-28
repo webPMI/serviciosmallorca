@@ -31,12 +31,6 @@ export const ceramica_marratxi_oleries_portol_fang: ServiceItem = {
   schedule: "Lunes a Viernes: 09:00 - 13:30 y 15:30 - 19:30, Sábados: 09:30 - 13:30",
   image: "/images/services/ceramica-marratxi-oleries-portol-fang.jpg",
   gallery: ["/images/services/ceramica-marratxi-oleries-portol-fang.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Cer%C3%A0mica%20Tradicional%20%26%20Siurells%20de%20P%C3%B2rtol%20(Marratx%C3%AD)%20Carrer%20Major%2C%2046%2C%2007141%20P%C3%B2rtol%2C%20Marratx%C3%AD",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Cer%C3%A0mica%20Tradicional%20%26%20Siurells%20de%20P%C3%B2rtol%20(Marratx%C3%AD)%20Carrer%20Major%2C%2046%2C%2007141%20P%C3%B2rtol%2C%20Marratx%C3%AD",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Cer%C3%A0mica%20Tradicional%20%26%20Siurells%20de%20P%C3%B2rtol%20(Marratx%C3%AD)%20Carrer%20Major%2C%2046%2C%2007141%20P%C3%B2rtol%2C%20Marratx%C3%AD",
   shortDescription: {
     es: "Alfarería tradicional en la villa alfarera de Pòrtol: cazuelas de barro 'greixoneres' resistentes al fuego directo, vajillas esmaltadas y siurells artesanales.",
     en: "Traditional pottery in the ceramic village of Pòrtol: authentic terracotta 'greixoneres' clay pots, glazed tableware, and hand-painted siurells.",
@@ -100,13 +94,6 @@ export const ceramica_marratxi_oleries_portol_fang: ServiceItem = {
       "Traditionelle Siurell-Sammlerfiguren",
       "Töpferkurse an der Drehscheibe auf Anfrage",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 310,
-      url: "https://www.google.com/maps/search/?api=1&query=Cer%C3%A0mica%20Tradicional%20%26%20Siurells%20de%20P%C3%B2rtol%20(Marratx%C3%AD)%20Carrer%20Major%2C%2046%2C%2007141%20P%C3%B2rtol%2C%20Marratx%C3%AD",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

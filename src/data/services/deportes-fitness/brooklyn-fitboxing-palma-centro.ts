@@ -29,8 +29,6 @@ export const BROOKLYN_FITBOXING_PALMA_CENTRO: ServiceItem = {
   image: "/images/sports/brooklyn-fitboxing-palma-centro.jpg",
   gallery: ["/images/sports/brooklyn-fitboxing-palma-centro.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007045",
-  appleMapsUrl: "https://maps.apple.com/?q=Brooklyn%20Fitboxing%20Palma%20Centro+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Brooklyn%20Fitboxing%20Palma%20Centro+Mallorca",
   shortDescription: {
     es: "Entrenamiento de fitboxing de alta intensidad sin contacto con sacos sensorizados y música sincronizada.",
     en: "High-intensity non-contact fitboxing with sensor-equipped bags, gamification, and music.",
@@ -94,13 +92,6 @@ export const BROOKLYN_FITBOXING_PALMA_CENTRO: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 390,
-      url: "https://www.google.com/maps?cid=12007045",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

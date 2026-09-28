@@ -31,12 +31,6 @@ export const western_water_park_magaluf_calvia: ServiceItem = {
   schedule: "Diario: 10:00 - 18:00 (Mayo a Octubre)",
   image: "/images/services/western-water-park-magaluf-calvia.jpg",
   gallery: ["/images/services/western-water-park-magaluf-calvia.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Western%20Water%20Park%20Parque%20Acu%C3%A1tico%20Tem%C3%A1tico%20(Magaluf%20-%20Calvi%C3%A0)%20Carretera%20Cala%20Figuera%20a%20Sa%20Porrassa%2C%202-22%2C%2007181%20Magaluf%2C%20Calvi%C3%A0",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Western%20Water%20Park%20Parque%20Acu%C3%A1tico%20Tem%C3%A1tico%20(Magaluf%20-%20Calvi%C3%A0)%20Carretera%20Cala%20Figuera%20a%20Sa%20Porrassa%2C%202-22%2C%2007181%20Magaluf%2C%20Calvi%C3%A0",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Western%20Water%20Park%20Parque%20Acu%C3%A1tico%20Tem%C3%A1tico%20(Magaluf%20-%20Calvi%C3%A0)%20Carretera%20Cala%20Figuera%20a%20Sa%20Porrassa%2C%202-22%2C%2007181%20Magaluf%2C%20Calvi%C3%A0",
   shortDescription: {
     es: "Parque acuático ambientado en el Lejano Oeste en Calvià: toboganes gigantes de adrenalina ('The Beast', 'Boomerang'), piscina de olas, río lento y zona infantil 'Children's Paradise'.",
     en: "Wild West-themed water park in Calvià: extreme adrenaline flumes ('The Beast', 'Boomerang'), wave pool, lazy river, and dedicated children's splash zones.",
@@ -100,13 +94,6 @@ export const western_water_park_magaluf_calvia: ServiceItem = {
       "Themen-Gastronomie mit Burgern, Pizza und Eisständen",
       "Shop für Badebekleidung, Handtücher und Souvenirs",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.6,
-      reviewCount: 6800,
-      url: "https://www.google.com/maps/search/?api=1&query=Western%20Water%20Park%20Parque%20Acu%C3%A1tico%20Tem%C3%A1tico%20(Magaluf%20-%20Calvi%C3%A0)%20Carretera%20Cala%20Figuera%20a%20Sa%20Porrassa%2C%202-22%2C%2007181%20Magaluf%2C%20Calvi%C3%A0",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

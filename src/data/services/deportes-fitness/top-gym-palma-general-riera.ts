@@ -29,8 +29,6 @@ export const TOP_GYM_PALMA_GENERAL_RIERA: ServiceItem = {
   image: "/images/sports/top-gym-palma-general-riera.jpg",
   gallery: ["/images/sports/top-gym-palma-general-riera.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007049",
-  appleMapsUrl: "https://maps.apple.com/?q=Top%20Gym%20Palma+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Top%20Gym%20Palma+Mallorca",
   shortDescription: {
     es: "Gimnasio clásico de culturismo y fitness en General Riera con gran variedad de máquinas de palanca.",
     en: "Classic bodybuilding and fitness gym on General Riera with a wide range of lever machines.",
@@ -94,13 +92,6 @@ export const TOP_GYM_PALMA_GENERAL_RIERA: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 380,
-      url: "https://www.google.com/maps?cid=12007049",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

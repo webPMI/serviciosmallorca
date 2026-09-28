@@ -42,9 +42,6 @@ export const clinica_veterinaria_alcudia: ServiceItem = {
   ],
   image: "/images/services/clinica-veterinaria-alcudia.jpg",
   gallery: ["/images/services/clinica-veterinaria-alcudia.jpg"],
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Clinica+Veterinaria+Alcudia+Carrer+Serra+18+Alcudia",
-  appleMapsUrl: "https://maps.apple.com/?q=Clinica+Veterinaria+Alcudia+Carrer+Serra+18+Alcudia",
-  bingMapsUrl: "https://www.bing.com/maps?q=Clinica+Veterinaria+Alcudia+Carrer+Serra+18+Alcudia",
   shortDescription: {
     es: "Clínica Veterinaria Alcúdia proporciona atención médica y quirúrgica completa para perros, gatos y pequeñas mascotas en el norte de Mallorca.",
     en: "Clínica Veterinaria Alcúdia provides comprehensive veterinary medicine and surgery for dogs, cats, and small pets in northern Mallorca.",

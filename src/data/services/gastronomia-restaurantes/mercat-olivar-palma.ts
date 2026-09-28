@@ -81,23 +81,6 @@ export const mercatOlivarPalma: ServiceItem = {
     ca: "Inaugurat el 1951 al centre de Palma, el Mercat de l'Olivar és l'epicentre gastronòmic de l'illa, unint productors locals i ciutadania.",
     de: "1951 im Herzen Palmas eröffnet, ist der Mercat de l'Olivar das pulsierende Zentrum mallorquinischer Esskultur und regionaler Erzeugnisse.",
   },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.6,
-      reviewCount: 14200,
-      url: "https://www.google.com/maps/search/?api=1&query=Mercat+de+l+Olivar+Palma",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Mercat+de+l+Olivar+Palma",
-    },
-    bingMaps: {
-      rating: 4.6,
-      reviewCount: 850,
-      url: "https://www.bing.com/maps?q=Mercat+de+l+Olivar+Palma",
-    },
-    totalReviewsAggregated: 15050,
-    overallWeightedRating: 4.6,
-  },
   reviews: [],
   socialLinks: {
     instagram: "https://instagram.com/mercatolivar",
@@ -120,9 +103,6 @@ export const mercatOlivarPalma: ServiceItem = {
     },
   ],
   authorityProfiles: [],
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Mercat+de+l+Olivar+Palma",
-  appleMapsUrl: "https://maps.apple.com/?q=Mercat+de+l+Olivar+Palma",
-  bingMapsUrl: "https://www.bing.com/maps?q=Mercat+de+l+Olivar+Palma",
   phone: "+34 971 720 314",
   whatsapp: "+34 971 720 314",
   website: "https://mercatdelolivar.com",

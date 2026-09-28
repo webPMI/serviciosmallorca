@@ -76,10 +76,6 @@ export const palmaBusinessSchoolExecutive: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Palma%20International%20Executive%20Education%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Palma%20International%20Executive%20Education%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Palma%20International%20Executive%20Education%20Mallorca",
   pricing: {
     startingPrice: "Programas ejecutivos desde 1.500€",
     rateType: "tiered",
@@ -106,21 +102,4 @@ export const palmaBusinessSchoolExecutive: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 190,
-      url: "https://www.google.com/maps/search/?api=1&query=Palma%20International%20Executive%20Education%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Palma%20International%20Executive%20Education%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.7,
-      reviewCount: 19,
-      url: "https://www.bing.com/maps?q=Palma%20International%20Executive%20Education%20Mallorca",
-    },
-    totalReviewsAggregated: 209,
-    overallWeightedRating: 4.8,
-  },
 };

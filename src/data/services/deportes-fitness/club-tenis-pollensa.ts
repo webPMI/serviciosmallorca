@@ -29,8 +29,6 @@ export const CLUB_TENIS_POLLENSA: ServiceItem = {
   image: "/images/sports/club-tenis-pollensa.jpg",
   gallery: ["/images/sports/club-tenis-pollensa.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007025",
-  appleMapsUrl: "https://maps.apple.com/?q=Club%20Tenis%20Pollen%C3%A7a+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Club%20Tenis%20Pollen%C3%A7a+Mallorca",
   shortDescription: {
     es: "Club de tenis al pie de la Serra de Tramuntana en Pollença con pistas de tierra batida y pádel de cristal.",
     en: "Tennis club at the foot of the Tramuntana mountains in Pollença with clay courts and padel.",
@@ -94,13 +92,6 @@ export const CLUB_TENIS_POLLENSA: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 260,
-      url: "https://www.google.com/maps?cid=12007025",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

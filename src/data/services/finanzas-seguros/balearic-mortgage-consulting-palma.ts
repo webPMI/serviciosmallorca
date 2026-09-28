@@ -31,12 +31,6 @@ export const balearic_mortgage_consulting_palma: ServiceItem = {
   schedule: "Lunes a Viernes: 09:00 - 18:00 (Atención presencial y online)",
   image: "/images/services/balearic-mortgage-consulting-palma.jpg",
   gallery: ["/images/services/balearic-mortgage-consulting-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Balearic%20Mortgage%20%26%20Financial%20Consulting%20Palma%20Passeig%20del%20Born%2C%2015%2C%2007012%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Balearic%20Mortgage%20%26%20Financial%20Consulting%20Palma%20Passeig%20del%20Born%2C%2015%2C%2007012%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Balearic%20Mortgage%20%26%20Financial%20Consulting%20Palma%20Passeig%20del%20Born%2C%2015%2C%2007012%20Palma",
   shortDescription: {
     es: "Consultoría hipotecaria independiente especializada en financiación inmobiliaria para compradores no residentes e inversores internacionales.",
     en: "Independent mortgage advisory specializing in property financing for non-resident buyers and international investors.",
@@ -100,13 +94,6 @@ export const balearic_mortgage_consulting_palma: ServiceItem = {
       "Umschuldung und Optimierung bestehender Darlehen",
       "Steuerliche und notarielle Finanzbegleitung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 145,
-      url: "https://www.google.com/maps/search/?api=1&query=Balearic%20Mortgage%20%26%20Financial%20Consulting%20Palma%20Passeig%20del%20Born%2C%2015%2C%2007012%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

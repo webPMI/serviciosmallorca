@@ -78,12 +78,6 @@ export const scubaMallorcaPortPollenca: ServiceItem = {
   },
   image: "/images/services/scuba-mallorca-port-pollenca.jpg",
   gallery: ["/images/services/scuba-mallorca-port-pollenca.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Scuba%20Mallorca%20PADI%205%20Star%20Dive%20Centre%20(Port%20de%20Pollen%C3%A7a)%20Carrer%20d'Elcano%2C%2023%2C%2007470%20Port%20de%20Pollen%C3%A7a%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Scuba%20Mallorca%20PADI%205%20Star%20Dive%20Centre%20(Port%20de%20Pollen%C3%A7a)%20Carrer%20d'Elcano%2C%2023%2C%2007470%20Port%20de%20Pollen%C3%A7a%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://www.bing.com/maps?q=Scuba%20Mallorca%20PADI%205%20Star%20Dive%20Centre%20(Port%20de%20Pollen%C3%A7a)%20Carrer%20d'Elcano%2C%2023%2C%2007470%20Port%20de%20Pollen%C3%A7a%2C%20Illes%20Balears",
   phone: "+34 971 86 80 87",
   whatsapp: "+34971868087",
   website: "https://scubamallorca.com",

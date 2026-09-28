@@ -31,12 +31,6 @@ export const palmer_inmobiliaria_mallorca_palma: ServiceItem = {
   schedule: "Lunes a Viernes: 09:00 - 19:30 | Sábado: 10:00 - 14:00 | Domingo: Cerrado",
   image: "/images/services/palmer-inmobiliaria-mallorca-palma.jpg",
   gallery: ["/images/services/palmer-inmobiliaria-mallorca-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Palmer%20Inmobiliaria%20Mallorca%20Palma%20Avinguda%20de%20Jaume%20III%2C%2020%2C%2007012%20Palma%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Palmer%20Inmobiliaria%20Mallorca%20Palma%20Avinguda%20de%20Jaume%20III%2C%2020%2C%2007012%20Palma%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Palmer%20Inmobiliaria%20Mallorca%20Palma%20Avinguda%20de%20Jaume%20III%2C%2020%2C%2007012%20Palma%2C%20Illes%20Balears",
   shortDescription: {
     es: "Grupo inmobiliario balear fundado en Palma con más de cuatro décadas de experiencia, disponiendo de amplia red de oficinas y miles de propiedades en venta y alquiler en toda Mallorca.",
     en: "Major Balearic real estate group founded in Palma with over 40 years of market expertise, featuring a large network of offices and thousands of homes across Mallorca.",
@@ -100,13 +94,6 @@ export const palmer_inmobiliaria_mallorca_palma: ServiceItem = {
       "Unabhängige Baufinanzierungsberatung und Vermittlung spanischer Hypothekendarlehen",
       "Komplette Dokumentenabwicklung: Grundbuchauszüge, Energieausweise und Steuerberatung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.6,
-      reviewCount: 520,
-      url: "https://www.google.com/maps/search/?api=1&query=Palmer%20Inmobiliaria%20Mallorca%20Palma%20Avinguda%20de%20Jaume%20III%2C%2020%2C%2007012%20Palma%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

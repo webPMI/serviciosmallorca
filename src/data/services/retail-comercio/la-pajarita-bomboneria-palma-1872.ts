@@ -76,10 +76,6 @@ export const laPajaritaBomboneriaPalma1872: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=La%20Pajarita%20Bomboner%C3%ADa%20%26%20Colmado%20(1872)%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=La%20Pajarita%20Bomboner%C3%ADa%20%26%20Colmado%20(1872)%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=La%20Pajarita%20Bomboner%C3%ADa%20%26%20Colmado%20(1872)%20Mallorca",
   pricing: {
     startingPrice: "Presupuesto y tarifas personalizadas",
     rateType: "tiered",
@@ -106,21 +102,4 @@ export const laPajaritaBomboneriaPalma1872: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 930,
-      url: "https://www.google.com/maps/search/?api=1&query=La%20Pajarita%20Bomboner%C3%ADa%20%26%20Colmado%20(1872)%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=La%20Pajarita%20Bomboner%C3%ADa%20%26%20Colmado%20(1872)%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.7,
-      reviewCount: 93,
-      url: "https://www.bing.com/maps?q=La%20Pajarita%20Bomboner%C3%ADa%20%26%20Colmado%20(1872)%20Mallorca",
-    },
-    totalReviewsAggregated: 1023,
-    overallWeightedRating: 4.8,
-  },
 };

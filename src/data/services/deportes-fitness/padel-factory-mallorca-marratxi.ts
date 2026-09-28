@@ -29,8 +29,6 @@ export const PADEL_FACTORY_MALLORCA_MARRATXI: ServiceItem = {
   image: "/images/sports/padel-factory-mallorca-marratxi.jpg",
   gallery: ["/images/sports/padel-factory-mallorca-marratxi.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007017",
-  appleMapsUrl: "https://maps.apple.com/?q=Padel%20Factory%20Mallorca+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Padel%20Factory%20Mallorca+Mallorca",
   shortDescription: {
     es: "Club de pádel indoor con 8 pistas panorámicas cubiertas, césped WPT y 10 metros de altura libre.",
     en: "Modern indoor padel club featuring 8 covered panoramic courts, WPT turf, and 10m clearance.",
@@ -94,13 +92,6 @@ export const PADEL_FACTORY_MALLORCA_MARRATXI: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 390,
-      url: "https://www.google.com/maps?cid=12007017",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

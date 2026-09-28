@@ -29,8 +29,6 @@ export const TRAMUNTANA_FLOW_YOGA_ALARO: ServiceItem = {
   image: "/images/services/tramuntana-flow-yoga-alaro.jpg",
   gallery: ["/images/services/tramuntana-flow-yoga-alaro.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007080",
-  appleMapsUrl: "https://maps.apple.com/?q=Tramuntana%20Flow%20Yoga%20Retreats+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Tramuntana%20Flow%20Yoga%20Retreats+Mallorca",
   shortDescription: {
     es: "Finca de retiros de yoga y bienestar en Alaró con shala de madera, piscina y vistas a las montañas.",
     en: "Yoga and wellness retreat finca in Alaró featuring wooden shala, pool, and mountain vistas.",
@@ -94,13 +92,6 @@ export const TRAMUNTANA_FLOW_YOGA_ALARO: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 210,
-      url: "https://www.google.com/maps?cid=12007080",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

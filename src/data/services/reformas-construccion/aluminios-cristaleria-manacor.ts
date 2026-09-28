@@ -21,9 +21,6 @@ export const aluminiosManacor: ServiceItem = {
   whatsapp: "+34 629 10 20 30",
   email: "info@aluminiosmanacor.com",
   website: "https://aluminiosmanacor.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Aluminios%20Cristaleria%20Manacor",
-  appleMapsUrl: "https://maps.apple.com/?q=Aluminios%20Cristaleria%20Manacor&ll=39.5750,3.2100",
-  bingMapsUrl: "https://www.bing.com/maps?where1=Aluminios%20Cristaleria%20Manacor",
   coordinates: { lat: 39.575, lng: 3.21 },
   schedule: "Lunes a Viernes: 08:00 - 18:00 (Medición y Presupuestos Técnicos en Obra)",
   lastVerifiedAt: "2026-08-25",
@@ -131,30 +128,13 @@ export const aluminiosManacor: ServiceItem = {
       instagramHandle: "@aluminiosmanacor",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 170,
-      url: "https://www.google.com/maps/search/?api=1&query=Aluminios%20Cristaleria%20Manacor",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Aluminios%20Cristaleria%20Manacor&ll=39.5750,3.2100",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 170,
-      url: "https://www.bing.com/maps?where1=Aluminios%20Cristaleria%20Manacor",
-    },
-    totalReviewsAggregated: 170,
-    overallWeightedRating: 4.8,
-  },
   reviews: [
     {
       id: "rev-acm-1",
       authorName: "Miquel Femenies",
       rating: 5,
       date: "2025-05-18",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
       comment:
         "Ens varen fabricar i instal·lar totes les persianes mallorquines d'alumini i les finestres de PVC a la casa de camp a Manacor. Feina molt ben feta, aïllen del fred i de la calor perfectament.",
@@ -165,7 +145,7 @@ export const aluminiosManacor: ServiceItem = {
       authorName: "Oliver Becker",
       rating: 5,
       date: "2025-06-24",
-      platform: "google_maps",
+      platform: "direct",
       language: "en",
       comment:
         "Top-quality aluminium workshop in Manacor! Installed bespoke double-glazed sliding doors and balcony glass railings. Very clean installation, precise fit, and good communication.",

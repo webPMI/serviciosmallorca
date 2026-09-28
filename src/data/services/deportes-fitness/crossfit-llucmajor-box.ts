@@ -29,8 +29,6 @@ export const CROSSFIT_LLUCMAJOR_BOX: ServiceItem = {
   image: "/images/sports/crossfit-llucmajor-box.jpg",
   gallery: ["/images/sports/crossfit-llucmajor-box.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007068",
-  appleMapsUrl: "https://maps.apple.com/?q=CrossFit%20Llucmajor+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=CrossFit%20Llucmajor+Mallorca",
   shortDescription: {
     es: "Box en el polígono Son Noguera de Llucmajor con más de 500 m² de superficie de entreno y material Xenios.",
     en: "Box in Son Noguera industrial park in Llucmajor with 500 m² floor and Xenios gear.",
@@ -94,13 +92,6 @@ export const CROSSFIT_LLUCMAJOR_BOX: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 210,
-      url: "https://www.google.com/maps?cid=12007068",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

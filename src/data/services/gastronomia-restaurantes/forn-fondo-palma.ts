@@ -21,9 +21,6 @@ export const fornFondoPalma: ServiceItem = {
   whatsapp: "+34 971 71 16 34",
   email: "info@fornfondo.com",
   website: "https://fornfondo.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Forn%20Fondo%20Palma",
-  appleMapsUrl: "https://maps.apple.com/?q=Forn%20Fondo%20Palma&ll=39.5715,2.6488",
-  bingMapsUrl: "https://www.bing.com/maps?where1=Forn%20Fondo%20Palma",
   coordinates: { lat: 39.5715, lng: 2.6488 },
   schedule: "Lunes a Sábado: 08:30 - 20:30 | Domingo: 09:00 - 14:00",
   lastVerifiedAt: "2026-08-25",
@@ -131,30 +128,13 @@ export const fornFondoPalma: ServiceItem = {
       instagramHandle: "@fornfondopalma",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.6,
-      reviewCount: 1980,
-      url: "https://www.google.com/maps/search/?api=1&query=Forn%20Fondo%20Palma",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Forn%20Fondo%20Palma&ll=39.5715,2.6488",
-    },
-    bingMaps: {
-      rating: 4.6,
-      reviewCount: 1980,
-      url: "https://www.bing.com/maps?where1=Forn%20Fondo%20Palma",
-    },
-    totalReviewsAggregated: 1980,
-    overallWeightedRating: 4.6,
-  },
   reviews: [
     {
       id: "rev-ff-1",
       authorName: "Joan Carles Puig",
       rating: 5,
       date: "2025-05-14",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
       comment:
         "L'ensaïmada de crema cremada és una meravella absoluta. La botiga modernista té un encant històric únic.",
@@ -165,7 +145,7 @@ export const fornFondoPalma: ServiceItem = {
       authorName: "Rebecca Taylor",
       rating: 5,
       date: "2025-06-28",
-      platform: "google_maps",
+      platform: "direct",
       language: "en",
       comment:
         "Historic bakery in Palma with sensational ensaïmadas! They packed our boxes perfectly for the flight home.",

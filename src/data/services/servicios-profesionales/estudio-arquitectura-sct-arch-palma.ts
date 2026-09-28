@@ -31,12 +31,6 @@ export const estudio_arquitectura_sct_arch_palma: ServiceItem = {
   schedule: "Lunes a Viernes: 09:00 - 18:30 | Sábado y Domingo: Cerrado",
   image: "/images/services/estudio-arquitectura-sct-arch-palma.jpg",
   gallery: ["/images/services/estudio-arquitectura-sct-arch-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=SCT%20Arquitectura%20Palma%20(%C3%81ngel%20S%C3%A1nchez-Cantalejo%20%26%20Vicente%20Tom%C3%A1s)%20Carrer%20de%20la%20Uni%C3%B3%2C%206%2C%2007001%20Palma%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=SCT%20Arquitectura%20Palma%20(%C3%81ngel%20S%C3%A1nchez-Cantalejo%20%26%20Vicente%20Tom%C3%A1s)%20Carrer%20de%20la%20Uni%C3%B3%2C%206%2C%2007001%20Palma%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=SCT%20Arquitectura%20Palma%20(%C3%81ngel%20S%C3%A1nchez-Cantalejo%20%26%20Vicente%20Tom%C3%A1s)%20Carrer%20de%20la%20Uni%C3%B3%2C%206%2C%2007001%20Palma%2C%20Illes%20Balears",
   shortDescription: {
     es: "Estudio de arquitectura de vanguardia en Palma con más de 30 años de prestigio internacional, autores de icónicas villas contemporáneas, hoteles boutique y rehabilitaciones históricas en Mallorca.",
     en: "Award-winning architectural practice in Palma with over 30 years of international acclaim, designers of iconic contemporary villas, boutique hotels, and heritage restorations across Mallorca.",
@@ -100,13 +94,6 @@ export const estudio_arquitectura_sct_arch_palma: ServiceItem = {
       "Erstellung von Bauanträgen und Verhandlung mit den Bauämtern der mallorquinischen Gemeinden",
       "Komplette Bauleitung vor Ort, Qualitätsüberwachung und Koordination aller Fachgewerke",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 110,
-      url: "https://www.google.com/maps/search/?api=1&query=SCT%20Arquitectura%20Palma%20(%C3%81ngel%20S%C3%A1nchez-Cantalejo%20%26%20Vicente%20Tom%C3%A1s)%20Carrer%20de%20la%20Uni%C3%B3%2C%206%2C%2007001%20Palma%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

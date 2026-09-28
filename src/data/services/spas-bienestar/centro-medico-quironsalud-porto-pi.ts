@@ -29,8 +29,6 @@ export const centro_medico_quironsalud_porto_pi: ServiceItem = {
   image: "/images/spas/centro-medico-quironsalud-porto-pi.jpg",
   gallery: ["/images/spas/centro-medico-quironsalud-porto-pi.jpg", "/images/categories/salud.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=13008005",
-  appleMapsUrl: "https://maps.apple.com/?q=Centro%20M%C3%A9dico%20Quir%C3%B3nsalud%20Porto%20Pi+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Centro%20M%C3%A9dico%20Quir%C3%B3nsalud%20Porto%20Pi+Mallorca",
   shortDescription: {
     es: "Consultas externas especializadas frente al puerto de Palma con servicio rápido de diagnóstico y análisis clínicos.",
     en: "Specialist outpatient clinic overlooking Palma harbor with rapid diagnostic testing and clinical lab.",
@@ -94,13 +92,6 @@ export const centro_medico_quironsalud_porto_pi: ServiceItem = {
       "Wellness- und Regenerationstherapien",
       "Kontinuierliche medizinische Nachbetreuung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 310,
-      url: "https://www.google.com/maps?cid=13008005",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

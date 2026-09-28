@@ -31,12 +31,6 @@ export const wedding_planner_lujo_mallorca_bella_rosa_events: ServiceItem = {
   schedule: "Lunes a Viernes: 09:30 - 18:00 (Con cita previa)",
   image: "/images/services/wedding-planner-lujo-mallorca-bella-rosa-events.jpg",
   gallery: ["/images/services/wedding-planner-lujo-mallorca-bella-rosa-events.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Bella%20Rosa%20Luxury%20Weddings%20%26%20Events%20Mallorca%20Palma%20Carrer%20de%20la%20Missi%C3%B3%2C%207A%2C%2007003%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Bella%20Rosa%20Luxury%20Weddings%20%26%20Events%20Mallorca%20Palma%20Carrer%20de%20la%20Missi%C3%B3%2C%207A%2C%2007003%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Bella%20Rosa%20Luxury%20Weddings%20%26%20Events%20Mallorca%20Palma%20Carrer%20de%20la%20Missi%C3%B3%2C%207A%2C%2007003%20Palma",
   shortDescription: {
     es: "Wedding planner de lujo en Mallorca especializada en bodas exclusivas en fincas históricas, castillos y yates privados con coordinación integral y red de proveedores premium en la isla.",
     en: "Luxury wedding planner in Mallorca specializing in exclusive weddings at historic estates, castles, and private yachts with full coordination and a premium island supplier network.",
@@ -100,13 +94,6 @@ export const wedding_planner_lujo_mallorca_bella_rosa_events: ServiceItem = {
       "Dienstleister-Koordination: Catering, Blumen, Live-Musik, Fotografie",
       "Luxuriöse Firmenevents, Team-Building-Retreats und Private Incentives",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 5,
-      reviewCount: 178,
-      url: "https://www.google.com/maps/search/?api=1&query=Bella%20Rosa%20Luxury%20Weddings%20%26%20Events%20Mallorca%20Palma%20Carrer%20de%20la%20Missi%C3%B3%2C%207A%2C%2007003%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

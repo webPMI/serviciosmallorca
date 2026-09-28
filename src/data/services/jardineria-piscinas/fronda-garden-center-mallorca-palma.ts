@@ -31,12 +31,6 @@ export const fronda_garden_center_mallorca_palma: ServiceItem = {
   schedule: "Lunes a Sábado: 09:30 - 20:30, Domingo: 10:00 - 14:30",
   image: "/images/services/fronda-garden-center-mallorca-palma.jpg",
   gallery: ["/images/services/fronda-garden-center-mallorca-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Fronda%20Garden%20Center%20Mallorca%20(Palma)%20Cam%C3%AD%20Fondo%2C%2042%2C%2007007%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Fronda%20Garden%20Center%20Mallorca%20(Palma)%20Cam%C3%AD%20Fondo%2C%2042%2C%2007007%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Fronda%20Garden%20Center%20Mallorca%20(Palma)%20Cam%C3%AD%20Fondo%2C%2042%2C%2007007%20Palma",
   shortDescription: {
     es: "Gran centro de jardinería, plantas de exterior mediterráneas, árboles frutales, floristería y decoración exterior en Palma.",
     en: "Premier garden center in Palma featuring Mediterranean outdoor flora, fruit trees, florist studio, and outdoor patio furniture.",
@@ -100,13 +94,6 @@ export const fronda_garden_center_mallorca_palma: ServiceItem = {
       "Gartenmöbel, Pflanzgefäße und Grillstationen",
       "Automatische Bewässerung und biologischer Pflanzenschutz",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 1620,
-      url: "https://www.google.com/maps/search/?api=1&query=Fronda%20Garden%20Center%20Mallorca%20(Palma)%20Cam%C3%AD%20Fondo%2C%2042%2C%2007007%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

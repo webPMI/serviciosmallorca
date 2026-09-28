@@ -31,12 +31,6 @@ export const cristaleria_aluminios_mallorca_climalit: ServiceItem = {
   schedule: "Lunes a Viernes: 08:00 - 18:00",
   image: "/images/services/cristaleria-aluminios-mallorca-climalit.jpg",
   gallery: ["/images/services/cristaleria-aluminios-mallorca-climalit.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Cristaler%C3%ADa%20%26%20Cerramientos%20Aluminios%20Mallorca%20Climalit%20(Son%20Castell%C3%B3)%20Gremi%20de%20Fusters%2C%2038%2C%20Pol%C3%ADgono%20Son%20Castell%C3%B3%2C%2007009%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Cristaler%C3%ADa%20%26%20Cerramientos%20Aluminios%20Mallorca%20Climalit%20(Son%20Castell%C3%B3)%20Gremi%20de%20Fusters%2C%2038%2C%20Pol%C3%ADgono%20Son%20Castell%C3%B3%2C%2007009%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Cristaler%C3%ADa%20%26%20Cerramientos%20Aluminios%20Mallorca%20Climalit%20(Son%20Castell%C3%B3)%20Gremi%20de%20Fusters%2C%2038%2C%20Pol%C3%ADgono%20Son%20Castell%C3%B3%2C%2007009%20Palma",
   shortDescription: {
     es: "Fábrica e instalación de carpintería de aluminio, PVC y cristalería técnica en Palma: ventanas con rotura de puente térmico, doble acristalamiento Climalit, barandillas de vidrio y cortinas de cristal.",
     en: "Manufacturer and installer of architectural aluminum, PVC, and structural glazing in Palma: thermal-break windows, Climalit double glazing, glass balustrades, and frameless terrace closures.",
@@ -100,13 +94,6 @@ export const cristaleria_aluminios_mallorca_climalit: ServiceItem = {
       "Montage von Ganzglasgeländern für Balkone und Poolsicherungen",
       "Duschabtrennungen aus Einscheiben-Sicherheitsglas nach Maß und Design-Spiegel",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 420,
-      url: "https://www.google.com/maps/search/?api=1&query=Cristaler%C3%ADa%20%26%20Cerramientos%20Aluminios%20Mallorca%20Climalit%20(Son%20Castell%C3%B3)%20Gremi%20de%20Fusters%2C%2038%2C%20Pol%C3%ADgono%20Son%20Castell%C3%B3%2C%2007009%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

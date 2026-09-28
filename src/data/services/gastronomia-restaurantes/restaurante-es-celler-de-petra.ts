@@ -28,9 +28,6 @@ export const restauranteEsCellerDePetra: ServiceItem = {
   email: "info@escellerdepetra.com",
   website: "https://www.facebook.com/escellerdepetra",
   menuUrl: "https://www.facebook.com/escellerdepetra",
-  googleMapsUrl: "https://www.google.com/maps/search/Restaurante+Es+Celler+de+Petra+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante+Es+Celler+de+Petra",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante+Es+Celler+de+Petra",
   tags: ["zona:raiguer-pla", "zona:petra", "product:traditional", "mod:en-local", "aud:familias", "temps:todo-el-ano"],
   capabilities: {
     terrace: true,

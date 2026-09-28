@@ -31,12 +31,6 @@ export const limpieza_villas_fincas_mallorca_clean_palma: ServiceItem = {
   schedule: "Diario: 08:00 - 20:00 (365 días al año)",
   image: "/images/services/limpieza-villas-fincas-mallorca-clean-palma.jpg",
   gallery: ["/images/services/limpieza-villas-fincas-mallorca-clean-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Mallorca%20Villa%20Cleaning%20Servicio%20Limpieza%20Profesional%20Villas%20%26%20Fincas%20Carrer%20de%20Casablanca%2C%2022%2C%2007181%20Portals%20Nous%2C%20Calvi%C3%A0",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Mallorca%20Villa%20Cleaning%20Servicio%20Limpieza%20Profesional%20Villas%20%26%20Fincas%20Carrer%20de%20Casablanca%2C%2022%2C%2007181%20Portals%20Nous%2C%20Calvi%C3%A0",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Mallorca%20Villa%20Cleaning%20Servicio%20Limpieza%20Profesional%20Villas%20%26%20Fincas%20Carrer%20de%20Casablanca%2C%2022%2C%2007181%20Portals%20Nous%2C%20Calvi%C3%A0",
   shortDescription: {
     es: "Servicio profesional de limpieza de villas, fincas y alquileres vacacionales en el suroeste de Mallorca: cambios entre huéspedes, limpieza a fondo, lavandería y gestión de ropa de cama.",
     en: "Professional villa, finca, and vacation rental cleaning service in southwest Mallorca: turnover cleans, deep cleans, laundry service, and linen management.",
@@ -100,13 +94,6 @@ export const limpieza_villas_fincas_mallorca_clean_palma: ServiceItem = {
       "Wäscheservice: Waschen, Trocknen, Bügeln und Falten von Bettwäsche",
       "Fotobericht nach Reinigung mit Inventarzustand der Villa",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 567,
-      url: "https://www.google.com/maps/search/?api=1&query=Mallorca%20Villa%20Cleaning%20Servicio%20Limpieza%20Profesional%20Villas%20%26%20Fincas%20Carrer%20de%20Casablanca%2C%2022%2C%2007181%20Portals%20Nous%2C%20Calvi%C3%A0",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

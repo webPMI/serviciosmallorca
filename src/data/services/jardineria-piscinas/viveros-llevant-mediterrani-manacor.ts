@@ -31,12 +31,6 @@ export const viveros_llevant_mediterrani_manacor: ServiceItem = {
   schedule: "Lunes a Sábado: 08:30 - 19:30, Domingos: 09:30 - 14:00",
   image: "/images/services/viveros-llevant-mediterrani-manacor.jpg",
   gallery: ["/images/services/viveros-llevant-mediterrani-manacor.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Viveros%20Llevant%20Mediterrani%20Manacor%20Ctra.%20Manacor-Porto%20Cristo%20Km%202.2%2C%2007500%20Manacor",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Viveros%20Llevant%20Mediterrani%20Manacor%20Ctra.%20Manacor-Porto%20Cristo%20Km%202.2%2C%2007500%20Manacor",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Viveros%20Llevant%20Mediterrani%20Manacor%20Ctra.%20Manacor-Porto%20Cristo%20Km%202.2%2C%2007500%20Manacor",
   shortDescription: {
     es: "Gran centro de jardinería y vivero con amplia variedad de olivos centenarios, cítricos, plantas mediterráneas y macetería.",
     en: "Large garden center and nursery offering ancient olive trees, citrus, Mediterranean plants, and pottery.",
@@ -100,13 +94,6 @@ export const viveros_llevant_mediterrani_manacor: ServiceItem = {
       "Botanische Beratung vor Ort",
       "Erden und organische Düngemittel",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 240,
-      url: "https://www.google.com/maps/search/?api=1&query=Viveros%20Llevant%20Mediterrani%20Manacor%20Ctra.%20Manacor-Porto%20Cristo%20Km%202.2%2C%2007500%20Manacor",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

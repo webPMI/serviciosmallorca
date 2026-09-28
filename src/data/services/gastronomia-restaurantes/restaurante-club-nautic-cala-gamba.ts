@@ -28,9 +28,6 @@ export const restauranteClubNauticCalaGamba: ServiceItem = {
   email: "info@cncg.es",
   website: "https://www.cncg.es",
   menuUrl: "https://www.cncg.es",
-  googleMapsUrl: "https://www.google.com/maps/search/Restaurante+Club+Nautic+Cala+Gamba+Palma+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante+Club+Nautic+Cala+Gamba",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante+Club+Nautic+Cala+Gamba",
   tags: ["zona:palma", "zona:cala-gamba", "product:traditional", "mod:en-local", "aud:familias", "temps:todo-el-ano"],
   capabilities: {
     terrace: true,

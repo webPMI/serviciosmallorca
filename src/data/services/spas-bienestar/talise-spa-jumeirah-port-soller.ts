@@ -29,8 +29,6 @@ export const talise_spa_jumeirah_port_soller: ServiceItem = {
   image: "/images/spas/talise-spa-jumeirah-port-soller.jpg",
   gallery: ["/images/spas/talise-spa-jumeirah-port-soller.jpg", "/images/categories/salud.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=13008021",
-  appleMapsUrl: "https://maps.apple.com/?q=Talise%20Spa%20(Jumeirah%20Port%20Soller)+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Talise%20Spa%20(Jumeirah%20Port%20Soller)+Mallorca",
   shortDescription: {
     es: "Spa de lujo sobre el acantilado del Port de Sóller con piscina de hidromasaje exterior y vistas al mar y la montaña.",
     en: "Cliff-edge luxury spa in Port de Sóller with outdoor hydrotherapy pool and Tramuntana mountain vistas.",
@@ -94,13 +92,6 @@ export const talise_spa_jumeirah_port_soller: ServiceItem = {
       "Wellness- und Regenerationstherapien",
       "Kontinuierliche medizinische Nachbetreuung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 410,
-      url: "https://www.google.com/maps?cid=13008021",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

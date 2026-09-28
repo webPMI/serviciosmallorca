@@ -28,9 +28,6 @@ export const restauranteMarIVentBanyalbufar: ServiceItem = {
   email: "info@hotelmarivent.com",
   website: "https://www.hotelmarivent.com",
   menuUrl: "https://www.hotelmarivent.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Restaurante+Mar+i+Vent+Banyalbufar+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante+Mar+i+Vent+Banyalbufar",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante+Mar+i+Vent+Banyalbufar",
   tags: [
     "zona:tramuntana",
     "zona:banyalbufar",

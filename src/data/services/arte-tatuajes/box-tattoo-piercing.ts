@@ -98,9 +98,6 @@ export const boxTattooPiercing: ServiceItem = {
       },
     },
   ],
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Box%20Tattoo%20Piercing%20Jaume%20II%20Palma",
-  appleMapsUrl: "https://maps.apple.com/?q=Box%20Tattoo%20Piercing%20Palma",
-  bingMapsUrl: "https://www.bing.com/maps?q=Box%20Tattoo%20Piercing%20Palma",
   phone: "+34 656 68 57 82",
   whatsapp: "+34 656 68 57 82",
   email: "info@boxtattoopiercing.com",
@@ -190,32 +187,13 @@ export const boxTattooPiercing: ServiceItem = {
   },
   image: "/images/services/box-tattoo-piercing.jpg",
   gallery: ["/images/services/box-tattoo-piercing.jpg"],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 190,
-      url: "https://www.google.com/maps/search/?api=1&query=Box%20Tattoo%20Piercing%20Jaume%20II%20Palma",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 18,
-      url: "https://www.bing.com/maps?q=Box%20Tattoo%20Piercing%20Palma",
-    },
-    tripadvisor: {
-      rating: 4.8,
-      reviewCount: 15,
-      url: "https://www.google.com/search?q=site:tripadvisor.es+Box+Tattoo+Piercing+Palma",
-    },
-    totalReviewsAggregated: 223,
-    overallWeightedRating: 4.8,
-  },
   reviews: [
     {
       id: "box-rev-1",
       authorName: "Antònia Font",
       rating: 5,
       date: "2025-10-18",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
       comment: "Molt bon tracte i màxima professionalitat al carrer Jaume II. Em vaig fer un pírcing i tot impecable.",
       verifiedCustomer: true,
@@ -225,7 +203,7 @@ export const boxTattooPiercing: ServiceItem = {
       authorName: "David Muñoz",
       rating: 5,
       date: "2025-08-04",
-      platform: "google_maps",
+      platform: "direct",
       language: "es",
       comment:
         "Me hicieron un cover-up de un tatuaje antiguo y el resultado superó todas mis expectativas. 100% recomendable.",

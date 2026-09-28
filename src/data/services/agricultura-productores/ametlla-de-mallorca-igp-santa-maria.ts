@@ -31,12 +31,6 @@ export const ametlla_de_mallorca_igp_santa_maria: ServiceItem = {
   schedule: "Lunes a Viernes: 08:30 - 14:30",
   image: "/images/services/ametlla-de-mallorca-igp-santa-maria.jpg",
   gallery: ["/images/services/ametlla-de-mallorca-igp-santa-maria.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Indicaci%C3%B3%20Geogr%C3%A0fica%20Protegida%20Ametlla%20de%20Mallorca%20Carrer%20del%20Camp%20Vell%2C%204%2C%2007320%20Santa%20Maria%20del%20Cam%C3%AD",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Indicaci%C3%B3%20Geogr%C3%A0fica%20Protegida%20Ametlla%20de%20Mallorca%20Carrer%20del%20Camp%20Vell%2C%204%2C%2007320%20Santa%20Maria%20del%20Cam%C3%AD",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Indicaci%C3%B3%20Geogr%C3%A0fica%20Protegida%20Ametlla%20de%20Mallorca%20Carrer%20del%20Camp%20Vell%2C%204%2C%2007320%20Santa%20Maria%20del%20Cam%C3%AD",
   shortDescription: {
     es: "Consejo Regulador oficial de la almendra de Mallorca (IGP): almendra cruda y tostada tradicional con sello de calidad y alto contenido oleico.",
     en: "Official Regulatory Council for the Almond of Mallorca (PGI): traditional raw and toasted almonds with proven high oleic quality.",
@@ -100,13 +94,6 @@ export const ametlla_de_mallorca_igp_santa_maria: ServiceItem = {
       "Verzeichnis zertifizierter Erzeugerbetriebe und traditioneller Bäckereien",
       "Lehrreiche Verkostungen und Informationen zur Mandeltradition auf der Insel",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 78,
-      url: "https://www.google.com/maps/search/?api=1&query=Indicaci%C3%B3%20Geogr%C3%A0fica%20Protegida%20Ametlla%20de%20Mallorca%20Carrer%20del%20Camp%20Vell%2C%204%2C%2007320%20Santa%20Maria%20del%20Cam%C3%AD",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

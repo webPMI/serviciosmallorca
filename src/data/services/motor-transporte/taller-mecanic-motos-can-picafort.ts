@@ -31,12 +31,6 @@ export const taller_mecanic_motos_can_picafort: ServiceItem = {
   schedule: "Lunes a Viernes de 08:00 a 13:00 y 15:00 a 19:00",
   image: "/images/services/taller-mecanic-motos-can-picafort.jpg",
   gallery: ["/images/services/taller-mecanic-motos-can-picafort.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Taller%20Mec%C3%A0nic%20%26%20Motos%20Can%20Picafort%20Ctra.%20d'Art%C3%A0%2C%2058%2C%2007458%20Can%20Picafort%20(Santa%20Margalida)%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Taller%20Mec%C3%A0nic%20%26%20Motos%20Can%20Picafort%20Ctra.%20d'Art%C3%A0%2C%2058%2C%2007458%20Can%20Picafort%20(Santa%20Margalida)%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Taller%20Mec%C3%A0nic%20%26%20Motos%20Can%20Picafort%20Ctra.%20d'Art%C3%A0%2C%2058%2C%2007458%20Can%20Picafort%20(Santa%20Margalida)%2C%20Illes%20Balears",
   shortDescription: {
     es: "Taller multimarca de mecánica rápida, diagnosis electrónica, neumáticos y reparación de motocicletas y scooters en la bahía de Alcúdia y Can Picafort.",
     en: "Multi-brand workshop for car maintenance, electronic diagnostics, tires, and motorcycle and scooter repairs in Alcúdia Bay and Can Picafort.",
@@ -110,13 +104,6 @@ export const taller_mecanic_motos_can_picafort: ServiceItem = {
     en: ["Alcúdia Bay car mechanics", "Motorbike & scooter repair", "Electronic diagnostics and tires"],
     ca: ["Mecànica multimarca a Can Picafort", "Reparació de motos i escúters", "Diagnosi electrònica i pneumàtics"],
     de: ["Meisterwerkstatt Can Picafort", "Motorrad- und Rollerservice", "Kfz-Diagnose und Reifen"],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 145,
-      url: "https://www.google.com/maps/search/?api=1&query=Taller%20Mec%C3%A0nic%20%26%20Motos%20Can%20Picafort%20Ctra.%20d'Art%C3%A0%2C%2058%2C%2007458%20Can%20Picafort%20(Santa%20Margalida)%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

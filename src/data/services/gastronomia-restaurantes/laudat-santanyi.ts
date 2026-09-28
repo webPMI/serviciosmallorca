@@ -27,9 +27,6 @@ export const laudatSantanyi: ServiceItem = {
   email: "info@restaurantlaudat.com",
   website: "https://restaurantlaudat.com",
   menuUrl: "https://restaurantlaudat.com/galeria-de-fotos/",
-  googleMapsUrl: "https://www.google.com/maps/search/Restaurante+Laudat+Santanyi+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante+Laudat+Santanyi",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante+Laudat+Santanyi",
   tags: ["zona:santanyi-migjorn", "zona:santanyi", "product:lujo", "mod:en-local", "aud:parejas", "temps:todo-el-ano"],
   capabilities: {
     terrace: true,

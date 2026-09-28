@@ -31,12 +31,6 @@ export const porta_mallorquina_real_estate_palma: ServiceItem = {
   schedule: "Lunes a Viernes: 09:30 - 18:30, Sábado: 10:00 - 14:00",
   image: "/images/services/porta-mallorquina-real-estate-palma.jpg",
   gallery: ["/images/services/porta-mallorquina-real-estate-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Porta%20Mallorquina%20Real%20Estate%20(Palma%20Head%20Office)%20Carrer%20dels%20Conquidors%2C%208%2C%2007001%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Porta%20Mallorquina%20Real%20Estate%20(Palma%20Head%20Office)%20Carrer%20dels%20Conquidors%2C%208%2C%2007001%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Porta%20Mallorquina%20Real%20Estate%20(Palma%20Head%20Office)%20Carrer%20dels%20Conquidors%2C%208%2C%2007001%20Palma",
   shortDescription: {
     es: "Una de las redes inmobiliarias líderes de Mallorca con más de 2.000 propiedades seleccionadas, oficinas por toda la isla y equipo multilingüe.",
     en: "One of Mallorca's premier real estate networks featuring over 2,000 vetted properties, island-wide branch offices, and multilingual advisors.",
@@ -100,13 +94,6 @@ export const porta_mallorquina_real_estate_palma: ServiceItem = {
       "Internationales Premium-Marketing mit professioneller Drohnen- und Innenfotografie",
       "Behördenservice, NIE-Beschaffung und professionelle Notarbegleitung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 390,
-      url: "https://www.google.com/maps/search/?api=1&query=Porta%20Mallorquina%20Real%20Estate%20(Palma%20Head%20Office)%20Carrer%20dels%20Conquidors%2C%208%2C%2007001%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

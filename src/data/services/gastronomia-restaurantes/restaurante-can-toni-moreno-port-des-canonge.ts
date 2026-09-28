@@ -27,9 +27,6 @@ export const restauranteCanToniMorenoPortDesCanonge: ServiceItem = {
   whatsapp: "+34 971 61 04 26",
   website: "https://www.google.com/maps/search/Restaurante+Can+Toni+Moreno+Port+des+Canonge+Mallorca",
   menuUrl: "https://www.google.com/maps/search/Restaurante+Can+Toni+Moreno+Port+des+Canonge+Mallorca",
-  googleMapsUrl: "https://www.google.com/maps/search/Restaurante+Can+Toni+Moreno+Port+des+Canonge+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Can+Toni+Moreno+Port+des+Canonge",
-  bingMapsUrl: "https://www.bing.com/maps?q=Can+Toni+Moreno+Port+des+Canonge",
   tags: [
     "zona:tramuntana",
     "zona:banyalbufar",
@@ -148,7 +145,7 @@ export const restauranteCanToniMorenoPortDesCanonge: ServiceItem = {
       comment:
         "Una de les millors paelles de Mallorca davant la mar. El lloc és idíl·lic i el peix és fresquíssim. Cal reservar abans de baixar la carretera.",
       date: "2026-08-12",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
     },
     {
@@ -158,7 +155,7 @@ export const restauranteCanToniMorenoPortDesCanonge: ServiceItem = {
       comment:
         "Traumhafter Ort direkt am Wasser! Die Paella war hervorragend und der Service sehr freundlich. Absoluter Geheimtipp nach einer Wanderung.",
       date: "2026-07-22",
-      platform: "google_maps",
+      platform: "direct",
       language: "de",
     },
   ],

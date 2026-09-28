@@ -31,12 +31,6 @@ export const club_de_vela_port_d_andratx: ServiceItem = {
   schedule: "Diario: 08:30 - 20:30 (Servicio de marinería 24h)",
   image: "/images/services/club-de-vela-port-d-andratx.jpg",
   gallery: ["/images/services/club-de-vela-port-d-andratx.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Club%20de%20Vela%20Puerto%20de%20Andratx%20Marina%20%26%20Escuela%20de%20Vela%20Carrer%20de%20Benito%20Feij%C3%B3o%2C%20s%2Fn%2C%2007157%20Port%20d'Andratx",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Club%20de%20Vela%20Puerto%20de%20Andratx%20Marina%20%26%20Escuela%20de%20Vela%20Carrer%20de%20Benito%20Feij%C3%B3o%2C%20s%2Fn%2C%2007157%20Port%20d'Andratx",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Club%20de%20Vela%20Puerto%20de%20Andratx%20Marina%20%26%20Escuela%20de%20Vela%20Carrer%20de%20Benito%20Feij%C3%B3o%2C%20s%2Fn%2C%2007157%20Port%20d'Andratx",
   shortDescription: {
     es: "Club náutico de referencia en el suroeste de Mallorca: puerto deportivo exclusivo en Port d'Andratx con cerca de 500 amarres, escuela homologada de vela y restaurante sobre el agua.",
     en: "Premier yacht club in southwest Mallorca: exclusive marina in Port d'Andratx with nearly 500 berths, certified sailing school, and waterfront restaurant.",
@@ -100,13 +94,6 @@ export const club_de_vela_port_d_andratx: ServiceItem = {
       "Trockendock mit Travellift, Yachtservice und Antifouling-Arbeiten",
       "Clubhaus-Restaurant mit herrlicher Panoramaterrasse am Hafen",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 1420,
-      url: "https://www.google.com/maps/search/?api=1&query=Club%20de%20Vela%20Puerto%20de%20Andratx%20Marina%20%26%20Escuela%20de%20Vela%20Carrer%20de%20Benito%20Feij%C3%B3o%2C%20s%2Fn%2C%2007157%20Port%20d'Andratx",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

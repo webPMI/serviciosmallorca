@@ -28,9 +28,6 @@ export const cellerCanCarrossaLloseta: ServiceItem = {
   email: "info@cancarrossa.com",
   website: "https://www.cancarrossa.com",
   menuUrl: "https://www.cancarrossa.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Celler+Can+Carrossa+Lloseta+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Celler+Can+Carrossa+Lloseta",
-  bingMapsUrl: "https://www.bing.com/maps?q=Celler+Can+Carrossa+Lloseta",
   tags: [
     "zona:raiguer-pla",
     "zona:lloseta",

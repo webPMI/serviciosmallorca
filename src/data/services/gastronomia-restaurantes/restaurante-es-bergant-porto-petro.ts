@@ -28,9 +28,6 @@ export const restauranteEsBergantPortoPetro: ServiceItem = {
   email: "info@esbergantportopetro.com",
   website: "https://esbergantportopetro.com",
   menuUrl: "https://esbergantportopetro.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Restaurante+Es+Bergant+Porto+Petro+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante+Es+Bergant+Porto+Petro",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante+Es+Bergant+Porto+Petro",
   tags: [
     "zona:santanyi-migjorn",
     "zona:porto-petro",

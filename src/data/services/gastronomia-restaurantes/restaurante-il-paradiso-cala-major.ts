@@ -29,9 +29,6 @@ export const restauranteIlParadisoCalaMajor: ServiceItem = {
   email: "reservas@ilparadiso.es",
   website: "https://ilparadiso.es",
   menuUrl: "https://ilparadiso.es",
-  googleMapsUrl: "https://www.google.com/maps/search/Restaurante+Il+Paradiso+Cala+Major+Palma+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante+Il+Paradiso+Palma",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante+Il+Paradiso+Palma",
   tags: [
     "zona:palma",
     "zona:paseo-maritimo",
@@ -151,7 +148,7 @@ export const restauranteIlParadisoCalaMajor: ServiceItem = {
       comment:
         "Vistas insuperables y una comida exquisita. Los ravioli de trufa y el pescado fresco son de diez. El servicio es sumamente atento y profesional.",
       date: "2026-08-14",
-      platform: "google_maps",
+      platform: "direct",
       language: "es",
     },
     {
@@ -161,7 +158,7 @@ export const restauranteIlParadisoCalaMajor: ServiceItem = {
       comment:
         "Traumhafter Ausblick über die Bucht von Palma und absolut köstliche italienische Küche. Perfekt für einen romantischen Abend!",
       date: "2026-07-30",
-      platform: "google_maps",
+      platform: "direct",
       language: "de",
     },
   ],

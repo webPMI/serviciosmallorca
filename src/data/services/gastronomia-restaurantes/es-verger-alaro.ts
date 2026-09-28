@@ -28,9 +28,6 @@ export const esVergerAlaro: ServiceItem = {
   email: "info@esverger.es",
   website: "https://www.instagram.com/esverger_alaro/",
   menuUrl: "https://www.instagram.com/esverger_alaro/",
-  googleMapsUrl: "https://www.google.com/maps/search/Restaurante+Es+Verger+Alaro+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante+Es+Verger+Alaro",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante+Es+Verger+Alaro",
   tags: ["zona:raiguer-pla", "zona:alaro", "product:traditional", "mod:en-local", "aud:familias", "temps:todo-el-ano"],
   capabilities: {
     terrace: true,

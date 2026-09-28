@@ -21,9 +21,6 @@ export const restauranteFlanigan: ServiceItem = {
   whatsapp: "+34 971 67 91 91",
   email: "info@flanigan.es",
   website: "https://flanigan.es",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Restaurante%20Flanigan%20Puerto%20Portals%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante%20Flanigan%20Puerto%20Portals%20Mallorca&ll=39.5323,2.5512",
-  bingMapsUrl: "https://www.bing.com/maps?where1=Restaurante%20Flanigan%20Puerto%20Portals%20Mallorca",
   coordinates: { lat: 39.5323, lng: 2.5512 },
   schedule: "Lunes a Domingo: 13:00 - 23:30",
   lastVerifiedAt: "2026-08-25",
@@ -129,30 +126,13 @@ export const restauranteFlanigan: ServiceItem = {
       instagramHandle: "@flanigan.es",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.5,
-      reviewCount: 1850,
-      url: "https://www.google.com/maps/search/?api=1&query=Restaurante%20Flanigan%20Puerto%20Portals%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Restaurante%20Flanigan%20Puerto%20Portals%20Mallorca&ll=39.5323,2.5512",
-    },
-    bingMaps: {
-      rating: 4.5,
-      reviewCount: 1850,
-      url: "https://www.bing.com/maps?where1=Restaurante%20Flanigan%20Puerto%20Portals%20Mallorca",
-    },
-    totalReviewsAggregated: 1850,
-    overallWeightedRating: 4.5,
-  },
   reviews: [
     {
       id: "rev-flanigan-1",
       authorName: "Guillermo P.",
       rating: 5,
       date: "2025-08-18",
-      platform: "google_maps",
+      platform: "direct",
       language: "es",
       comment:
         "Un clásico imprescindible en Puerto Portals. El pescado a la sal exquisito y la tarta de manzana caliente es insuperable.",
@@ -163,7 +143,7 @@ export const restauranteFlanigan: ServiceItem = {
       authorName: "Alexander Schmidt",
       rating: 5,
       date: "2025-09-04",
-      platform: "google_maps",
+      platform: "direct",
       language: "en",
       comment:
         "Superb dining experience by the marina. Excellent seafood, attentive service, and the famous apple tart is a must-try.",

@@ -27,9 +27,6 @@ export const laHaciendaPeguera: ServiceItem = {
   email: "info@hacienda-steakhouse.es",
   website: "https://hacienda-steakhouse.es",
   menuUrl: "https://hacienda-steakhouse.es",
-  googleMapsUrl: "https://www.google.com/maps/search/La+Hacienda+Steak+House+Peguera+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=La+Hacienda+Steak+House+Peguera",
-  bingMapsUrl: "https://www.bing.com/maps?q=La+Hacienda+Steak+House+Peguera",
   tags: [
     "zona:calvia-andratx",
     "zona:peguera",

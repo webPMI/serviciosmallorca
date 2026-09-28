@@ -76,10 +76,6 @@ export const mallorcaNanniesCangurosVip: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Mallorca%20Nannies%20%26%20Babysitting%20VIP%20Agency%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Mallorca%20Nannies%20%26%20Babysitting%20VIP%20Agency%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Mallorca%20Nannies%20%26%20Babysitting%20VIP%20Agency%20Mallorca",
   pricing: {
     startingPrice: "Presupuesto y atención a medida",
     rateType: "tiered",
@@ -106,21 +102,4 @@ export const mallorcaNanniesCangurosVip: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 320,
-      url: "https://www.google.com/maps/search/?api=1&query=Mallorca%20Nannies%20%26%20Babysitting%20VIP%20Agency%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Mallorca%20Nannies%20%26%20Babysitting%20VIP%20Agency%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 32,
-      url: "https://www.bing.com/maps?q=Mallorca%20Nannies%20%26%20Babysitting%20VIP%20Agency%20Mallorca",
-    },
-    totalReviewsAggregated: 352,
-    overallWeightedRating: 4.9,
-  },
 };

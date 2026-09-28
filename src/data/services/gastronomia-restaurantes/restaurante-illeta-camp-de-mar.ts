@@ -78,12 +78,6 @@ export const restauranteIlletaCampDeMar: ServiceItem = {
   },
   image: "/images/services/restaurante-illeta-camp-de-mar.jpg",
   gallery: ["/images/services/restaurante-illeta-camp-de-mar.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Restaurante%20Illeta%20(Camp%20de%20Mar%20-%20Andratx)%20Platja%20de%20Camp%20de%20Mar%2C%20s%2Fn%2C%2007160%20Camp%20de%20Mar%2C%20Andratx%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Restaurante%20Illeta%20(Camp%20de%20Mar%20-%20Andratx)%20Platja%20de%20Camp%20de%20Mar%2C%20s%2Fn%2C%2007160%20Camp%20de%20Mar%2C%20Andratx%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://www.bing.com/maps?q=Restaurante%20Illeta%20(Camp%20de%20Mar%20-%20Andratx)%20Platja%20de%20Camp%20de%20Mar%2C%20s%2Fn%2C%2007160%20Camp%20de%20Mar%2C%20Andratx%2C%20Illes%20Balears",
   phone: "+34 971 23 58 84",
   whatsapp: "+34971235884",
   website: "https://restauranteilleta.com",

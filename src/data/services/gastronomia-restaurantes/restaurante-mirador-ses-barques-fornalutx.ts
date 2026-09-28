@@ -78,12 +78,6 @@ export const restauranteMiradorSesBarquesFornalutx: ServiceItem = {
   },
   image: "/images/services/restaurante-mirador-ses-barques-fornalutx.jpg",
   gallery: ["/images/services/restaurante-mirador-ses-barques-fornalutx.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Restaurante%20Mirador%20de%20Ses%20Barques%20(Fornalutx)%20Carretera%20Ma-10%2C%20Km%2044.8%2C%2007109%20Fornalutx%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Restaurante%20Mirador%20de%20Ses%20Barques%20(Fornalutx)%20Carretera%20Ma-10%2C%20Km%2044.8%2C%2007109%20Fornalutx%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://www.bing.com/maps?q=Restaurante%20Mirador%20de%20Ses%20Barques%20(Fornalutx)%20Carretera%20Ma-10%2C%20Km%2044.8%2C%2007109%20Fornalutx%2C%20Illes%20Balears",
   phone: "+34 971 63 02 64",
   whatsapp: "+34971630264",
   website: "https://miradorsesbarques.com",

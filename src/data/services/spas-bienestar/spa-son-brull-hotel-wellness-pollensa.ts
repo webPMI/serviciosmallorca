@@ -31,12 +31,6 @@ export const spa_son_brull_hotel_wellness_pollensa: ServiceItem = {
   schedule: "Diario: 10:00 - 20:00 (Abierto Abril – Noviembre)",
   image: "/images/services/spa-son-brull-hotel-wellness-pollensa.jpg",
   gallery: ["/images/services/spa-son-brull-hotel-wellness-pollensa.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Son%20Brull%20Hotel%20%26%20Spa%20Boutique%20Pollen%C3%A7a%20Carretera%20Palma-Pollen%C3%A7a%2C%20km%2050%2C%2007460%20Pollen%C3%A7a",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Son%20Brull%20Hotel%20%26%20Spa%20Boutique%20Pollen%C3%A7a%20Carretera%20Palma-Pollen%C3%A7a%2C%20km%2050%2C%2007460%20Pollen%C3%A7a",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Son%20Brull%20Hotel%20%26%20Spa%20Boutique%20Pollen%C3%A7a%20Carretera%20Palma-Pollen%C3%A7a%2C%20km%2050%2C%2007460%20Pollen%C3%A7a",
   shortDescription: {
     es: "Spa ecológico en un antiguo monasterio del siglo XVIII en Pollença: tratamientos holísticos con aceite de oliva de cosecha propia, almendra y sal marina de Mallorca.",
     en: "Eco-spa in a restored 18th-century monastery in Pollença: holistic treatments featuring estate-harvested olive oil, almond, and Mallorcan sea salt.",
@@ -100,13 +94,6 @@ export const spa_son_brull_hotel_wellness_pollensa: ServiceItem = {
       "Hydrotherapie-Kreislauf mit beheiztem Pool, Hammam und Sauna",
       "Bio-Gesichtsbehandlungen mit Botanik-Extrakten der Tramuntana",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 450,
-      url: "https://www.google.com/maps/search/?api=1&query=Son%20Brull%20Hotel%20%26%20Spa%20Boutique%20Pollen%C3%A7a%20Carretera%20Palma-Pollen%C3%A7a%2C%20km%2050%2C%2007460%20Pollen%C3%A7a",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

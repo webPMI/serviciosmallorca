@@ -76,9 +76,6 @@ export const elCaminoTapasBarPalma: ServiceItem = {
       close: "17:00",
     },
   },
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=El%20Camino%20Tapas%20Bar%20Palma%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=El%20Camino%20Tapas%20Bar%20Palma%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=El%20Camino%20Tapas%20Bar%20Palma%20Mallorca",
   pricing: {
     startingPrice: "Carta y menús degustación disponibles",
     rateType: "tiered",
@@ -105,21 +102,4 @@ export const elCaminoTapasBarPalma: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 1890,
-      url: "https://www.google.com/maps/search/?api=1&query=El%20Camino%20Tapas%20Bar%20Palma%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=El%20Camino%20Tapas%20Bar%20Palma%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.7,
-      reviewCount: 189,
-      url: "https://www.bing.com/maps?q=El%20Camino%20Tapas%20Bar%20Palma%20Mallorca",
-    },
-    totalReviewsAggregated: 2079,
-    overallWeightedRating: 4.8,
-  },
 };

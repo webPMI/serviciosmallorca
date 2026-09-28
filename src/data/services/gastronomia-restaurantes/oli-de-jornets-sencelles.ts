@@ -21,9 +21,6 @@ export const oliDeJornets: ServiceItem = {
   whatsapp: "+34 971 87 22 10",
   email: "info@olidejornets.com",
   website: "https://olidejornets.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Oli%20de%20Jornets%20Sencelles%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Oli%20de%20Jornets%20Sencelles%20Mallorca&ll=39.6450,2.9010",
-  bingMapsUrl: "https://www.bing.com/maps?where1=Oli%20de%20Jornets%20Sencelles%20Mallorca",
   coordinates: { lat: 39.645, lng: 2.901 },
   schedule: "Lunes a Viernes: 09:00 - 17:00 | Visitas al Olivar y Almazara con Cita Previa",
   lastVerifiedAt: "2026-08-25",
@@ -131,30 +128,13 @@ export const oliDeJornets: ServiceItem = {
       instagramHandle: "@olidejornets",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 260,
-      url: "https://www.google.com/maps/search/?api=1&query=Oli%20de%20Jornets%20Sencelles%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Oli%20de%20Jornets%20Sencelles%20Mallorca&ll=39.6450,2.9010",
-    },
-    bingMaps: {
-      rating: 4.9,
-      reviewCount: 260,
-      url: "https://www.bing.com/maps?where1=Oli%20de%20Jornets%20Sencelles%20Mallorca",
-    },
-    totalReviewsAggregated: 260,
-    overallWeightedRating: 4.9,
-  },
   reviews: [
     {
       id: "rev-odj-1",
       authorName: "Guillem Gelabert",
       rating: 5,
       date: "2025-05-18",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
       comment:
         "El millor oli verge extra de Mallorca amb diferència. Gust intens a tomàtiga i herba fresca. El llogaret de Jornets té una pau màgica.",
@@ -165,7 +145,7 @@ export const oliDeJornets: ServiceItem = {
       authorName: "Henrik Larsson",
       rating: 5,
       date: "2025-06-25",
-      platform: "google_maps",
+      platform: "direct",
       language: "en",
       comment:
         "Sensational organic olive oil! We visited the estate in Sencelles, tasted the oils, and had two cases shipped to Sweden. Absolute perfection.",

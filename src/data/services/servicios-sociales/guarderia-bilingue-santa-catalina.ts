@@ -76,10 +76,6 @@ export const guarderiaBilingueSantaCatalina: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Happy%20Faces%20Bilingual%20Nursery%20Santa%20Catalina%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Happy%20Faces%20Bilingual%20Nursery%20Santa%20Catalina%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Happy%20Faces%20Bilingual%20Nursery%20Santa%20Catalina%20Mallorca",
   pricing: {
     startingPrice: "Mensualidad guardería (0-3 años) desde 380€",
     rateType: "tiered",
@@ -106,21 +102,4 @@ export const guarderiaBilingueSantaCatalina: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 190,
-      url: "https://www.google.com/maps/search/?api=1&query=Happy%20Faces%20Bilingual%20Nursery%20Santa%20Catalina%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Happy%20Faces%20Bilingual%20Nursery%20Santa%20Catalina%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 19,
-      url: "https://www.bing.com/maps?q=Happy%20Faces%20Bilingual%20Nursery%20Santa%20Catalina%20Mallorca",
-    },
-    totalReviewsAggregated: 209,
-    overallWeightedRating: 4.9,
-  },
 };

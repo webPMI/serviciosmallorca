@@ -29,8 +29,6 @@ export const SYNERGYM_PALMA_ESCORXADOR: ServiceItem = {
   image: "/images/sports/synergym-palma-escorxador.jpg",
   gallery: ["/images/sports/synergym-palma-escorxador.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007053",
-  appleMapsUrl: "https://maps.apple.com/?q=Synergym%20Palma%20s'Escorxador+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Synergym%20Palma%20s'Escorxador+Mallorca",
   shortDescription: {
     es: "Gimnasio junto al centro cultural s'Escorxador con zona funcional de césped y cardio interactivo.",
     en: "Gym next to s'Escorxador cultural hub featuring functional turf and interactive cardio.",
@@ -94,13 +92,6 @@ export const SYNERGYM_PALMA_ESCORXADOR: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 510,
-      url: "https://www.google.com/maps?cid=12007053",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

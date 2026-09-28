@@ -21,9 +21,6 @@ export const varaderoPortitxol: ServiceItem = {
   whatsapp: "+34 670 45 60 70",
   email: "info@varaderoportitxol.com",
   website: "https://varaderoportitxol.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Varadero%20Portitxol%20Palma",
-  appleMapsUrl: "https://maps.apple.com/?q=Varadero%20Portitxol%20Palma&ll=39.5620,2.6710",
-  bingMapsUrl: "https://www.bing.com/maps?where1=Varadero%20Portitxol%20Palma",
   coordinates: { lat: 39.562, lng: 2.671 },
   schedule: "Lunes a Viernes: 08:00 - 18:00 | Sábados: 08:30 - 13:30 (Emergencias Náuticas)",
   lastVerifiedAt: "2026-08-25",
@@ -127,30 +124,13 @@ export const varaderoPortitxol: ServiceItem = {
       instagramHandle: "@varaderoportitxol",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 120,
-      url: "https://www.google.com/maps/search/?api=1&query=Varadero%20Portitxol%20Palma",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Varadero%20Portitxol%20Palma&ll=39.5620,2.6710",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 120,
-      url: "https://www.bing.com/maps?where1=Varadero%20Portitxol%20Palma",
-    },
-    totalReviewsAggregated: 120,
-    overallWeightedRating: 4.8,
-  },
   reviews: [
     {
       id: "rev-vps-1",
       authorName: "Jaume Frontera",
       rating: 5,
       date: "2025-05-14",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
       comment:
         "Feina impecable amb la patent i el canvi d'ànodes del meu llagut. Puntuals, preu just i molt professionals.",
@@ -161,7 +141,7 @@ export const varaderoPortitxol: ServiceItem = {
       authorName: "Lars Lindqvist",
       rating: 5,
       date: "2025-06-20",
-      platform: "google_maps",
+      platform: "direct",
       language: "en",
       comment:
         "Great boatyard in Portitxol! They serviced our Yanmar engine and polished the hull to perfection before our summer cruise.",

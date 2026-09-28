@@ -31,12 +31,6 @@ export const nova_mallorca_inmobiliaria_palma: ServiceItem = {
   schedule: "Lunes a Viernes de 09:00 a 19:30",
   image: "/images/services/nova-mallorca-inmobiliaria-palma.jpg",
   gallery: ["/images/services/nova-mallorca-inmobiliaria-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Nova%20Mallorca%20Inmobiliaria%20Palma%20(des%20de%201969)%20Carrer%20de%20Cecili%20Metel%2C%203%2C%2007003%20Palma%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Nova%20Mallorca%20Inmobiliaria%20Palma%20(des%20de%201969)%20Carrer%20de%20Cecili%20Metel%2C%203%2C%2007003%20Palma%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Nova%20Mallorca%20Inmobiliaria%20Palma%20(des%20de%201969)%20Carrer%20de%20Cecili%20Metel%2C%203%2C%2007003%20Palma%2C%20Illes%20Balears",
   shortDescription: {
     es: "Una de las agencias inmobiliarias pioneras y más respetadas de Palma desde 1969. Expertos en el casco antiguo, paseo marítimo y fincas residenciales de toda la isla.",
     en: "One of Palma's pioneering and most respected real estate agencies since 1969. Experts in the historic old quarter, seafront promenade, and island-wide estates.",
@@ -114,13 +108,6 @@ export const nova_mallorca_inmobiliaria_palma: ServiceItem = {
       "Finques rústiques a tota Mallorca",
     ],
     de: ["Altstadt von Palma und Hafenmeile", "API-Maklerkanzlei seit 1969", "Traditionelle Fincas inselweit"],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 240,
-      url: "https://www.google.com/maps/search/?api=1&query=Nova%20Mallorca%20Inmobiliaria%20Palma%20(des%20de%201969)%20Carrer%20de%20Cecili%20Metel%2C%203%2C%2007003%20Palma%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

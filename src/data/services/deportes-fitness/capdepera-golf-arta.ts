@@ -29,8 +29,6 @@ export const CAPDEPERA_GOLF_ARTA: ServiceItem = {
   image: "/images/services/capdepera-golf-arta.jpg",
   gallery: ["/images/services/capdepera-golf-arta.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007011",
-  appleMapsUrl: "https://maps.apple.com/?q=Capdepera%20Golf+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Capdepera%20Golf+Mallorca",
   shortDescription: {
     es: "Campo de 18 hoyos diseñado por Dan Maples entre valles con el famoso hoyo 15 panorámico.",
     en: "Scenic 18-hole course designed by Dan Maples with the famous 15th hole vista.",
@@ -94,13 +92,6 @@ export const CAPDEPERA_GOLF_ARTA: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 510,
-      url: "https://www.google.com/maps?cid=12007011",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

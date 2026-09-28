@@ -76,12 +76,6 @@ export const energiaSolarFotovoltaicaBaleares: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Balearic%20Solar%20Tech%20-%20Autoconsumo%20%26%20Bater%C3%ADas%20Tesla%20Mallorca",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Balearic%20Solar%20Tech%20-%20Autoconsumo%20%26%20Bater%C3%ADas%20Tesla%20Mallorca",
-  bingMapsUrl:
-    "https://www.bing.com/maps?q=Balearic%20Solar%20Tech%20-%20Autoconsumo%20%26%20Bater%C3%ADas%20Tesla%20Mallorca",
   pricing: {
     startingPrice: "Instalación solar villa con batería desde 9.800€",
     rateType: "tiered",
@@ -108,21 +102,4 @@ export const energiaSolarFotovoltaicaBaleares: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 460,
-      url: "https://www.google.com/maps/search/?api=1&query=Balearic%20Solar%20Tech%20-%20Autoconsumo%20%26%20Bater%C3%ADas%20Tesla%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Balearic%20Solar%20Tech%20-%20Autoconsumo%20%26%20Bater%C3%ADas%20Tesla%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.7,
-      reviewCount: 46,
-      url: "https://www.bing.com/maps?q=Balearic%20Solar%20Tech%20-%20Autoconsumo%20%26%20Bater%C3%ADas%20Tesla%20Mallorca",
-    },
-    totalReviewsAggregated: 506,
-    overallWeightedRating: 4.8,
-  },
 };

@@ -29,8 +29,6 @@ export const ES_CAU_BOULDER_FELANITX: ServiceItem = {
   image: "/images/sports/es-cau-boulder-felanitx.jpg",
   gallery: ["/images/sports/es-cau-boulder-felanitx.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007087",
-  appleMapsUrl: "https://maps.apple.com/?q=Es%20Cau%20Boulder%20Felanitx+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Es%20Cau%20Boulder%20Felanitx+Mallorca",
   shortDescription: {
     es: "Sala de boulder cooperativa en Felanitx con bloques técnicos y entrenamiento de fuerza para escaladores.",
     en: "Cooperative bouldering gym in Felanitx with technical problems and strength boards.",
@@ -94,13 +92,6 @@ export const ES_CAU_BOULDER_FELANITX: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 150,
-      url: "https://www.google.com/maps?cid=12007087",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

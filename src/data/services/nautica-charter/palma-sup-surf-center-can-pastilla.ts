@@ -76,10 +76,6 @@ export const palmaSupSurfCenterCanPastilla: ServiceItem = {
       close: "18:00",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Palma%20Paddle%20Surf%20%26%20Foil%20Academy%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Palma%20Paddle%20Surf%20%26%20Foil%20Academy%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Palma%20Paddle%20Surf%20%26%20Foil%20Academy%20Mallorca",
   pricing: {
     startingPrice: "Alquiler SUP 1h desde 18€",
     rateType: "hourly",
@@ -106,21 +102,4 @@ export const palmaSupSurfCenterCanPastilla: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 460,
-      url: "https://www.google.com/maps/search/?api=1&query=Palma%20Paddle%20Surf%20%26%20Foil%20Academy%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Palma%20Paddle%20Surf%20%26%20Foil%20Academy%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.7,
-      reviewCount: 46,
-      url: "https://www.bing.com/maps?q=Palma%20Paddle%20Surf%20%26%20Foil%20Academy%20Mallorca",
-    },
-    totalReviewsAggregated: 506,
-    overallWeightedRating: 4.8,
-  },
 };

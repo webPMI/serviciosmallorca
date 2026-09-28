@@ -28,9 +28,6 @@ export const restauranteClubDeMarPalma: ServiceItem = {
   email: "info@clubdemar-mallorca.com",
   website: "https://www.clubdemar-mallorca.com",
   menuUrl: "https://www.clubdemar-mallorca.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Restaurante+Club+de+Mar+Palma+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante+Club+de+Mar+Palma",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante+Club+de+Mar+Palma",
   tags: ["zona:palma", "zona:paseo-maritimo", "product:premium", "mod:en-local", "aud:parejas", "temps:todo-el-ano"],
   capabilities: {
     terrace: true,

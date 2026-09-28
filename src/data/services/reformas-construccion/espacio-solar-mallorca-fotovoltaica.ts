@@ -76,10 +76,6 @@ export const espacioSolarMallorcaFotovoltaica: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Espacio%20Solar%20Mallorca%20-%20Energ%C3%ADa%20Fotovoltaica%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Espacio%20Solar%20Mallorca%20-%20Energ%C3%ADa%20Fotovoltaica%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Espacio%20Solar%20Mallorca%20-%20Energ%C3%ADa%20Fotovoltaica%20Mallorca",
   pricing: {
     startingPrice: "Presupuesto y atención a medida",
     rateType: "tiered",
@@ -106,21 +102,4 @@ export const espacioSolarMallorcaFotovoltaica: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 440,
-      url: "https://www.google.com/maps/search/?api=1&query=Espacio%20Solar%20Mallorca%20-%20Energ%C3%ADa%20Fotovoltaica%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Espacio%20Solar%20Mallorca%20-%20Energ%C3%ADa%20Fotovoltaica%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 44,
-      url: "https://www.bing.com/maps?q=Espacio%20Solar%20Mallorca%20-%20Energ%C3%ADa%20Fotovoltaica%20Mallorca",
-    },
-    totalReviewsAggregated: 484,
-    overallWeightedRating: 4.9,
-  },
 };

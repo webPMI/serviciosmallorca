@@ -31,12 +31,6 @@ export const agroturismo_sa_duaia_arta: ServiceItem = {
   schedule: "Lunes a Domingo: 08:00 - 23:00",
   image: "/images/services/agroturismo-sa-duaia-arta.jpg",
   gallery: ["/images/services/agroturismo-sa-duaia-arta.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Agroturismo%20Sa%20Duaia%20Art%C3%A0%20Pol%C3%ADgon%2013%2C%20Parcela%2093%2C%2007570%20Art%C3%A0",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Agroturismo%20Sa%20Duaia%20Art%C3%A0%20Pol%C3%ADgon%2013%2C%20Parcela%2093%2C%2007570%20Art%C3%A0",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Agroturismo%20Sa%20Duaia%20Art%C3%A0%20Pol%C3%ADgon%2013%2C%20Parcela%2093%2C%2007570%20Art%C3%A0",
   shortDescription: {
     es: "Posesión histórica del siglo XV en las montañas de Artà con piscina infinita, vistas a la bahía y cocina tradicional mallorquina.",
     en: "15th-century historic estate nestled in the Artà mountains featuring an infinity pool, sea bay views, and traditional cuisine.",
@@ -100,13 +94,6 @@ export const agroturismo_sa_duaia_arta: ServiceItem = {
       "Landfrühstück mit handwerklicher Wurst, Inselkäse und hausgemachter Marmelade",
       "Außenpool, Sonnenterrasse und Ruhezellen im Freien",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 210,
-      url: "https://www.google.com/maps/search/?api=1&query=Agroturismo%20Sa%20Duaia%20Art%C3%A0%20Pol%C3%ADgon%2013%2C%20Parcela%2093%2C%2007570%20Art%C3%A0",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

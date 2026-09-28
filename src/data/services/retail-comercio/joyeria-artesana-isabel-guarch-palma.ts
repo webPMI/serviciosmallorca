@@ -31,12 +31,6 @@ export const joyeria_artesana_isabel_guarch_palma: ServiceItem = {
   schedule: "Lunes a Sábado: 10:30 - 20:00",
   image: "/images/services/joyeria-artesana-isabel-guarch-palma.jpg",
   gallery: ["/images/services/joyeria-artesana-isabel-guarch-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Isabel%20Guarch%20Alta%20Joyer%C3%ADa%20%26%20Dise%C3%B1o%20Mediterr%C3%A1neo%20Palma%20Pla%C3%A7a%20del%20Mercat%2C%2016%2C%2007001%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Isabel%20Guarch%20Alta%20Joyer%C3%ADa%20%26%20Dise%C3%B1o%20Mediterr%C3%A1neo%20Palma%20Pla%C3%A7a%20del%20Mercat%2C%2016%2C%2007001%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Isabel%20Guarch%20Alta%20Joyer%C3%ADa%20%26%20Dise%C3%B1o%20Mediterr%C3%A1neo%20Palma%20Pla%C3%A7a%20del%20Mercat%2C%2016%2C%2007001%20Palma",
   shortDescription: {
     es: "Firma de alta joyería mediterránea en la Plaça del Mercat de Palma inspirada en la arquitectura, la Cruz de Calatrava y los fondos marinos de Mallorca.",
     en: "Iconic Mediterranean fine jewelry atelier in Palma's Plaça del Mercat inspired by Balearic history, heritage crosses, and sea corals.",
@@ -100,13 +94,6 @@ export const joyeria_artesana_isabel_guarch_palma: ServiceItem = {
       "Umarbeitung und Modernisierung von Erbstücken",
       "Weltweiter Wertversand in Luxusetuis",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 310,
-      url: "https://www.google.com/maps/search/?api=1&query=Isabel%20Guarch%20Alta%20Joyer%C3%ADa%20%26%20Dise%C3%B1o%20Mediterr%C3%A1neo%20Palma%20Pla%C3%A7a%20del%20Mercat%2C%2016%2C%2007001%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

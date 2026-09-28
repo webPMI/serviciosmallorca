@@ -31,12 +31,6 @@ export const camper_calzado_artesano_inca: ServiceItem = {
   schedule: "Lunes a Sábado: 10:00 - 20:30",
   image: "/images/services/camper-calzado-artesano-inca.jpg",
   gallery: ["/images/services/camper-calzado-artesano-inca.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Camper%20Sede%20Central%20%26%20Tienda%20Emblem%C3%A1tica%20Inca%20(1877%2F1975)%20Pol%C3%ADgono%20Industrial%20Ca%20na%20Lloreta%2C%20s%2Fn%2C%2007300%20Inca",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Camper%20Sede%20Central%20%26%20Tienda%20Emblem%C3%A1tica%20Inca%20(1877%2F1975)%20Pol%C3%ADgono%20Industrial%20Ca%20na%20Lloreta%2C%20s%2Fn%2C%2007300%20Inca",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Camper%20Sede%20Central%20%26%20Tienda%20Emblem%C3%A1tica%20Inca%20(1877%2F1975)%20Pol%C3%ADgono%20Industrial%20Ca%20na%20Lloreta%2C%20s%2Fn%2C%2007300%20Inca",
   shortDescription: {
     es: "La marca de calzado de diseño más universal de Mallorca, nacida en Inca de una tradición zapatera familiar desde 1877: icono mundial de calzado ergonómico, urbano y sostenible.",
     en: "Mallorca's globally acclaimed design footwear brand, born in Inca from a family cobbling heritage dating back to 1877: world icon of ergonomic, urban, and sustainable shoes.",
@@ -100,13 +94,6 @@ export const camper_calzado_artesano_inca: ServiceItem = {
       "Mehrsprachige Fachberatung für Passform und Ergonomie",
       "Offizielle Herstellergarantie und weltweiter Kundenservice",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 2450,
-      url: "https://www.google.com/maps/search/?api=1&query=Camper%20Sede%20Central%20%26%20Tienda%20Emblem%C3%A1tica%20Inca%20(1877%2F1975)%20Pol%C3%ADgono%20Industrial%20Ca%20na%20Lloreta%2C%20s%2Fn%2C%2007300%20Inca",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

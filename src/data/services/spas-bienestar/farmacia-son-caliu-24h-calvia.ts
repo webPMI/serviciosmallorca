@@ -31,12 +31,6 @@ export const farmacia_son_caliu_24h_calvia: ServiceItem = {
   schedule: "Abierto 24 horas los 365 días del año",
   image: "/images/services/farmacia-son-caliu-24h-calvia.jpg",
   gallery: ["/images/services/farmacia-son-caliu-24h-calvia.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Farmacia%20Son%20Caliu%2024h%20Guardia%20Permanente%20(Calvi%C3%A0)%20Avinguda%20Son%20Caliu%2C%201%2C%2007181%20Calvi%C3%A0",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Farmacia%20Son%20Caliu%2024h%20Guardia%20Permanente%20(Calvi%C3%A0)%20Avinguda%20Son%20Caliu%2C%201%2C%2007181%20Calvi%C3%A0",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Farmacia%20Son%20Caliu%2024h%20Guardia%20Permanente%20(Calvi%C3%A0)%20Avinguda%20Son%20Caliu%2C%201%2C%2007181%20Calvi%C3%A0",
   shortDescription: {
     es: "Farmacia de guardia permanente 24 horas en Calvià (Son Caliu - Palmanova): dispensación continuada de medicamentos día y noche, ortopedia, atención bilingüe y aparcamiento.",
     en: "24-hour permanent emergency pharmacy in Calvià (Son Caliu - Palmanova): round-the-clock prescription dispensing, orthopedics, multilingual support, and easy parking.",
@@ -100,13 +94,6 @@ export const farmacia_son_caliu_24h_calvia: ServiceItem = {
       "Verleih von Krücken, Rollstühlen und orthopädischen Hilfsmitteln",
       "Hochwertiger Sonnenschutz und Kindergesundheit",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 1420,
-      url: "https://www.google.com/maps/search/?api=1&query=Farmacia%20Son%20Caliu%2024h%20Guardia%20Permanente%20(Calvi%C3%A0)%20Avinguda%20Son%20Caliu%2C%201%2C%2007181%20Calvi%C3%A0",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

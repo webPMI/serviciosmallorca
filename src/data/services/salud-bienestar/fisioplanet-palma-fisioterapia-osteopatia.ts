@@ -31,12 +31,6 @@ export const fisioplanet_palma_fisioterapia_osteopatia: ServiceItem = {
   schedule: "Lunes a Viernes de 08:30 a 20:30",
   image: "/images/services/fisioplanet-palma-fisioterapia-osteopatia.jpg",
   gallery: ["/images/services/fisioplanet-palma-fisioterapia-osteopatia.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Fisioplanet%20Palma%20(Fisioter%C3%A0pia%20%26%20Osteopatia)%20Carrer%20de%20Cecili%20Metel%2C%2011%2C%2007003%20Palma%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Fisioplanet%20Palma%20(Fisioter%C3%A0pia%20%26%20Osteopatia)%20Carrer%20de%20Cecili%20Metel%2C%2011%2C%2007003%20Palma%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Fisioplanet%20Palma%20(Fisioter%C3%A0pia%20%26%20Osteopatia)%20Carrer%20de%20Cecili%20Metel%2C%2011%2C%2007003%20Palma%2C%20Illes%20Balears",
   shortDescription: {
     es: "Centro clínico de fisioterapia, osteopatía y readaptación física en Palma. Especialistas en dolor crónico, lesiones deportivas y suelo pélvico.",
     en: "Clinical center for physiotherapy, osteopathy, and rehabilitation in Palma. Specialists in chronic back pain, sports injuries, and pelvic health.",
@@ -106,13 +100,6 @@ export const fisioplanet_palma_fisioterapia_osteopatia: ServiceItem = {
     en: ["Orthopedic manual therapy", "Indiba Activ radiofrequency", "Sports osteopathy"],
     ca: ["Teràpia manual ortopèdica", "Radiofreqüència Indiba Activ", "Osteopatia esportiva"],
     de: ["Orthopädische Manualtherapie", "Indiba Tiefenwärme", "Sportosteopathie"],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 165,
-      url: "https://www.google.com/maps/search/?api=1&query=Fisioplanet%20Palma%20(Fisioter%C3%A0pia%20%26%20Osteopatia)%20Carrer%20de%20Cecili%20Metel%2C%2011%2C%2007003%20Palma%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

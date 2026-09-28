@@ -28,9 +28,6 @@ export const restauranteCaNOlesaPollenca: ServiceItem = {
   email: "info@canolesa-pollenca.com",
   website: "https://www.canolesa-pollenca.com",
   menuUrl: "https://www.canolesa-pollenca.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Restaurante+Ca+n+Olesa+Pollenca+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante+Ca+n+Olesa+Pollenca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante+Ca+n+Olesa+Pollenca",
   tags: [
     "zona:alcudia-pollensa",
     "zona:pollenca",

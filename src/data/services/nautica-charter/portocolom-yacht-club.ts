@@ -100,8 +100,5 @@ export const clubNauticPortocolomService: ServiceItem = {
     ],
   },
   amenities: ["wifi", "parking_available", "wheelchair_accessible"],
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Club+Nautic+Portocolom+Felanitx",
-  appleMapsUrl: "https://maps.apple.com/?q=Club+Nautic+Portocolom+Felanitx",
-  bingMapsUrl: "https://www.bing.com/maps?q=Club+Nautic+Portocolom+Felanitx",
   confidenceScore: 98,
 };

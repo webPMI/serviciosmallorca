@@ -28,9 +28,6 @@ export const bodegasVinsMiquelGelabert: ServiceItem = {
   email: "info@vinsmiquelgelabert.com",
   website: "https://vinsmiquelgelabert.com",
   menuUrl: "https://vinsmiquelgelabert.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Vins+Miquel+Gelabert+Manacor+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Vins+Miquel+Gelabert+Manacor",
-  bingMapsUrl: "https://www.bing.com/maps?q=Vins+Miquel+Gelabert+Manacor",
   tags: ["zona:manacor-llevant", "zona:manacor", "product:premium", "mod:en-local", "aud:parejas", "temps:todo-el-ano"],
   capabilities: {
     parkingAvailable: true,

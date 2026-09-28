@@ -21,9 +21,6 @@ export const restauranteCanPedro: ServiceItem = {
   whatsapp: "+34 971 40 24 05",
   email: "reservas@canpedro.es",
   website: "https://canpedro.es",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Restaurante%20Can%20Pedro%20Genova%20Palma",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante%20Can%20Pedro%20Genova%20Palma&ll=39.5580,2.6020",
-  bingMapsUrl: "https://www.bing.com/maps?where1=Restaurante%20Can%20Pedro%20Genova%20Palma",
   coordinates: { lat: 39.558, lng: 2.602 },
   schedule: "Lunes a Domingo: 13:00 - 23:30 (Cocina Ininterrumpida todos los días)",
   lastVerifiedAt: "2026-08-25",
@@ -131,30 +128,13 @@ export const restauranteCanPedro: ServiceItem = {
       instagramHandle: "@canpedrogenova",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.6,
-      reviewCount: 3800,
-      url: "https://www.google.com/maps/search/?api=1&query=Restaurante%20Can%20Pedro%20Genova%20Palma",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Restaurante%20Can%20Pedro%20Genova%20Palma&ll=39.5580,2.6020",
-    },
-    bingMaps: {
-      rating: 4.6,
-      reviewCount: 3800,
-      url: "https://www.bing.com/maps?where1=Restaurante%20Can%20Pedro%20Genova%20Palma",
-    },
-    totalReviewsAggregated: 3800,
-    overallWeightedRating: 4.6,
-  },
   reviews: [
     {
       id: "rev-rcp-1",
       authorName: "Bernat Vidal",
       rating: 5,
       date: "2025-05-18",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
       comment:
         "Can Pedro a Gènova és un autèntic clàssic de Mallorca que mai falla. Els caragols són boníssims amb el seu allioli i les costelletes de xot a la brasa tenen el sabor autèntic del carbó d'alzina.",
@@ -165,7 +145,7 @@ export const restauranteCanPedro: ServiceItem = {
       authorName: "Alexander Schmidt",
       rating: 5,
       date: "2025-06-25",
-      platform: "google_maps",
+      platform: "direct",
       language: "de",
       comment:
         "Ein absolutes Muss auf Mallorca! Can Pedro in Genova bietet fantastisches Fleisch vom Holzgrill, köstliche Aioli und ein tolles traditionelles Ambiente. Sehr schneller und aufmerksamer Service.",

@@ -31,12 +31,6 @@ export const hidrobal_piscinas_mantenimiento_alcudia: ServiceItem = {
   schedule: "Lunes a Viernes: 08:30 - 17:30",
   image: "/images/services/hidrobal-piscinas-mantenimiento-alcudia.jpg",
   gallery: ["/images/services/hidrobal-piscinas-mantenimiento-alcudia.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Hidrobal%20Piscinas%20%26%20Riego%20Autom%C3%A1tico%20Alc%C3%BAdia%20Pol%C3%ADgon%20Industrial%20Ca%20Na%20Lloreta%2C%20Carrer%20del%20Fonoll%2C%2012%2C%2007400%20Alc%C3%BAdia",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Hidrobal%20Piscinas%20%26%20Riego%20Autom%C3%A1tico%20Alc%C3%BAdia%20Pol%C3%ADgon%20Industrial%20Ca%20Na%20Lloreta%2C%20Carrer%20del%20Fonoll%2C%2012%2C%2007400%20Alc%C3%BAdia",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Hidrobal%20Piscinas%20%26%20Riego%20Autom%C3%A1tico%20Alc%C3%BAdia%20Pol%C3%ADgon%20Industrial%20Ca%20Na%20Lloreta%2C%20Carrer%20del%20Fonoll%2C%2012%2C%2007400%20Alc%C3%BAdia",
   shortDescription: {
     es: "Especialistas en ingeniería hidráulica, depuración de piscinas y riego inteligente para chalets y fincas en el norte de Mallorca.",
     en: "Hydraulic engineering specialists offering pool filtration, smart irrigation systems, and pump repairs in northern Mallorca.",
@@ -100,13 +94,6 @@ export const hidrobal_piscinas_mantenimiento_alcudia: ServiceItem = {
       "Zonierte Rasen- und Gehölzbewässerung für Fincas",
       "Wasserentkalkungsanlagen für Brunnenwasser auf dem Land",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 185,
-      url: "https://www.google.com/maps/search/?api=1&query=Hidrobal%20Piscinas%20%26%20Riego%20Autom%C3%A1tico%20Alc%C3%BAdia%20Pol%C3%ADgon%20Industrial%20Ca%20Na%20Lloreta%2C%20Carrer%20del%20Fonoll%2C%2012%2C%2007400%20Alc%C3%BAdia",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

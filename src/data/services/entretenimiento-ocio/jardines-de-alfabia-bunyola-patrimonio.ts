@@ -31,12 +31,6 @@ export const jardines_de_alfabia_bunyola_patrimonio: ServiceItem = {
   schedule: "Lunes a Domingo: 09:30 - 18:30 (Marzo a Octubre)",
   image: "/images/services/jardines-de-alfabia-bunyola-patrimonio.jpg",
   gallery: ["/images/services/jardines-de-alfabia-bunyola-patrimonio.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Jardines%20de%20Alfabia%20(Bunyola)%20-%20Casa%20Se%C3%B1orial%20%26%20Jardines%20Hispano-%C3%81rabes%20Ctra.%20Palma-S%C3%B3ller%2C%20Km%2017%2C%2007110%20Bunyola",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Jardines%20de%20Alfabia%20(Bunyola)%20-%20Casa%20Se%C3%B1orial%20%26%20Jardines%20Hispano-%C3%81rabes%20Ctra.%20Palma-S%C3%B3ller%2C%20Km%2017%2C%2007110%20Bunyola",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Jardines%20de%20Alfabia%20(Bunyola)%20-%20Casa%20Se%C3%B1orial%20%26%20Jardines%20Hispano-%C3%81rabes%20Ctra.%20Palma-S%C3%B3ller%2C%20Km%2017%2C%2007110%20Bunyola",
   shortDescription: {
     es: "Conjunto histórico hispano-árabe en Bunyola con raíces en el siglo XII: pérgola de juegos de agua, frondosos jardines botánicos y casa señorial amueblada.",
     en: "Moorish-rooted historical estate in Bunyola dating to the 12th century: famous water-jet pergola, lush botanical gardens, and furnished manor house.",
@@ -100,13 +94,6 @@ export const jardines_de_alfabia_bunyola_patrimonio: ServiceItem = {
       "Exklusive Hochzeitsfeiern und Firmenevents im historischen Ambiente",
       "Kostenloser Kundenparkplatz und Ladestationen für Elektrofahrzeuge",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 3600,
-      url: "https://www.google.com/maps/search/?api=1&query=Jardines%20de%20Alfabia%20(Bunyola)%20-%20Casa%20Se%C3%B1orial%20%26%20Jardines%20Hispano-%C3%81rabes%20Ctra.%20Palma-S%C3%B3ller%2C%20Km%2017%2C%2007110%20Bunyola",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

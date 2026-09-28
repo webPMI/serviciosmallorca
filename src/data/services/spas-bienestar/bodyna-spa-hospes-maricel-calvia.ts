@@ -29,8 +29,6 @@ export const bodyna_spa_hospes_maricel_calvia: ServiceItem = {
   image: "/images/spas/bodyna-spa-hospes-maricel-calvia.jpg",
   gallery: ["/images/spas/bodyna-spa-hospes-maricel-calvia.jpg", "/images/categories/salud.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=13008019",
-  appleMapsUrl: "https://maps.apple.com/?q=Bodyna%20Spa%20(Hospes%20Maricel)+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Bodyna%20Spa%20(Hospes%20Maricel)+Mallorca",
   shortDescription: {
     es: "Cabinas de masaje esculpidas en arcos de piedra frente al mar Mediterráneo con sonido de las olas.",
     en: "Seafront massage arches carved into natural stone with the relaxing sound of the Mediterranean waves.",
@@ -94,13 +92,6 @@ export const bodyna_spa_hospes_maricel_calvia: ServiceItem = {
       "Wellness- und Regenerationstherapien",
       "Kontinuierliche medizinische Nachbetreuung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 350,
-      url: "https://www.google.com/maps?cid=13008019",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

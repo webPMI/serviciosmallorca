@@ -76,10 +76,6 @@ export const bufeteBuadesAbogadosPalma: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Bufete%20Buades%20-%20Abogados%20%26%20Asesores%20Tributarios%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Bufete%20Buades%20-%20Abogados%20%26%20Asesores%20Tributarios%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Bufete%20Buades%20-%20Abogados%20%26%20Asesores%20Tributarios%20Mallorca",
   pricing: {
     startingPrice: "Consulta jurídica especializada",
     rateType: "custom_quote",
@@ -106,21 +102,4 @@ export const bufeteBuadesAbogadosPalma: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 380,
-      url: "https://www.google.com/maps/search/?api=1&query=Bufete%20Buades%20-%20Abogados%20%26%20Asesores%20Tributarios%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Bufete%20Buades%20-%20Abogados%20%26%20Asesores%20Tributarios%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.8,
-      reviewCount: 38,
-      url: "https://www.bing.com/maps?q=Bufete%20Buades%20-%20Abogados%20%26%20Asesores%20Tributarios%20Mallorca",
-    },
-    totalReviewsAggregated: 418,
-    overallWeightedRating: 4.9,
-  },
 };

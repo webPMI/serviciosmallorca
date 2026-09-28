@@ -76,9 +76,6 @@ export const rialtoLivingLifestyleStorePalma: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Rialto%20Living%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Rialto%20Living%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Rialto%20Living%20Mallorca",
   pricing: {
     startingPrice: "Moda y decoración desde 40€",
     rateType: "tiered",
@@ -105,21 +102,4 @@ export const rialtoLivingLifestyleStorePalma: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 980,
-      url: "https://www.google.com/maps/search/?api=1&query=Rialto%20Living%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Rialto%20Living%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.7,
-      reviewCount: 98,
-      url: "https://www.bing.com/maps?q=Rialto%20Living%20Mallorca",
-    },
-    totalReviewsAggregated: 1078,
-    overallWeightedRating: 4.8,
-  },
 };

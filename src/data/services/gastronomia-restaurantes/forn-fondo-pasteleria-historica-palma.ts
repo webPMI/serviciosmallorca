@@ -31,12 +31,6 @@ export const forn_fondo_pasteleria_historica_palma: ServiceItem = {
   schedule: "Lunes a Sábado: 07:30 - 20:00, Domingos: 08:00 - 14:00",
   image: "/images/services/forn-fondo-pasteleria-historica-palma.jpg",
   gallery: ["/images/services/forn-fondo-pasteleria-historica-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Forn%20Fondo%20Pasteler%C3%ADa%20Tradicional%20Palma%20(1911)%20Carrer%20del%20Caputxins%2C%2013%2C%2007002%20Palma",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Forn%20Fondo%20Pasteler%C3%ADa%20Tradicional%20Palma%20(1911)%20Carrer%20del%20Caputxins%2C%2013%2C%2007002%20Palma",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Forn%20Fondo%20Pasteler%C3%ADa%20Tradicional%20Palma%20(1911)%20Carrer%20del%20Caputxins%2C%2013%2C%2007002%20Palma",
   shortDescription: {
     es: "Horno y pastelería modernista centenaria fundada en 1911 famosa por sus ensaimadas de manteca de cerdo negro, cremadillos y cuartos.",
     en: "Century-old modernist bakery founded in 1911 celebrated for its authentic black pig lard ensaimadas and traditional pastries.",
@@ -100,13 +94,6 @@ export const forn_fondo_pasteleria_historica_palma: ServiceItem = {
       "Traditionelles Café mit Thekenausschank",
       "Vorbestellungen für den Abflug",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 1850,
-      url: "https://www.google.com/maps/search/?api=1&query=Forn%20Fondo%20Pasteler%C3%ADa%20Tradicional%20Palma%20(1911)%20Carrer%20del%20Caputxins%2C%2013%2C%2007002%20Palma",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

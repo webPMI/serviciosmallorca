@@ -21,9 +21,6 @@ export const cellerCanRipoll: ServiceItem = {
   whatsapp: "+34 971 50 00 24",
   email: "reserves@cellercanripoll.com",
   website: "https://cellercanripoll.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Celler%20Can%20Ripoll%20Inca",
-  appleMapsUrl: "https://maps.apple.com/?q=Celler%20Can%20Ripoll%20Inca&ll=39.7210,2.9090",
-  bingMapsUrl: "https://www.bing.com/maps?where1=Celler%20Can%20Ripoll%20Inca",
   coordinates: { lat: 39.721, lng: 2.909 },
   schedule: "Lunes a Domingo: 13:00 - 16:00 | 20:00 - 23:00 (Miércoles Noche Cerrado)",
   lastVerifiedAt: "2026-08-25",
@@ -131,30 +128,13 @@ export const cellerCanRipoll: ServiceItem = {
       instagramHandle: "@cellercanripoll",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.6,
-      reviewCount: 1450,
-      url: "https://www.google.com/maps/search/?api=1&query=Celler%20Can%20Ripoll%20Inca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Celler%20Can%20Ripoll%20Inca&ll=39.7210,2.9090",
-    },
-    bingMaps: {
-      rating: 4.6,
-      reviewCount: 1450,
-      url: "https://www.bing.com/maps?where1=Celler%20Can%20Ripoll%20Inca",
-    },
-    totalReviewsAggregated: 1450,
-    overallWeightedRating: 4.6,
-  },
   reviews: [
     {
       id: "rev-ccr-1",
       authorName: "Bartomeu Canyelles",
       rating: 5,
       date: "2025-05-19",
-      platform: "google_maps",
+      platform: "direct",
       language: "ca",
       comment:
         "Menjar dins aquest celler monumental amb les bótes gegants és una experiència única a Mallorca. La porcella rostida i l'arròs brut són insuperables.",
@@ -165,7 +145,7 @@ export const cellerCanRipoll: ServiceItem = {
       authorName: "Liam Henderson",
       rating: 5,
       date: "2025-06-25",
-      platform: "google_maps",
+      platform: "direct",
       language: "en",
       comment:
         "Spectacular 18th-century wine cellar restaurant in Inca! Massive oak barrels, lovely courtyard garden, and the roast suckling pig was out of this world.",

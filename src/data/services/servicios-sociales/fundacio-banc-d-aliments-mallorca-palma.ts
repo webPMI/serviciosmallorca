@@ -31,12 +31,6 @@ export const fundacio_banc_d_aliments_mallorca_palma: ServiceItem = {
   schedule: "Lunes a Viernes de 08:00 a 14:00",
   image: "/images/services/fundacio-banc-d-aliments-mallorca-palma.jpg",
   gallery: ["/images/services/fundacio-banc-d-aliments-mallorca-palma.jpg"],
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Fundaci%C3%B3%20Banc%20d'Aliments%20de%20Mallorca%20Palma%20Carrer%20del%20Gremi%20de%20Teixidors%2C%2022%2C%2007009%20Palma%2C%20Illes%20Balears",
-  appleMapsUrl:
-    "https://maps.apple.com/?q=Fundaci%C3%B3%20Banc%20d'Aliments%20de%20Mallorca%20Palma%20Carrer%20del%20Gremi%20de%20Teixidors%2C%2022%2C%2007009%20Palma%2C%20Illes%20Balears",
-  bingMapsUrl:
-    "https://bing.com/maps?q=Fundaci%C3%B3%20Banc%20d'Aliments%20de%20Mallorca%20Palma%20Carrer%20del%20Gremi%20de%20Teixidors%2C%2022%2C%2007009%20Palma%2C%20Illes%20Balears",
   shortDescription: {
     es: "Organización benéfica que recupera excedentes alimentarios y coordina la distribución solidaria a más de 30.000 personas en situación de vulnerabilidad en Mallorca.",
     en: "Charitable foundation recovering surplus food and coordinating solidarity distribution to over 30,000 vulnerable individuals across Mallorca.",
@@ -110,13 +104,6 @@ export const fundacio_banc_d_aliments_mallorca_palma: ServiceItem = {
     en: ["Solidarity food distribution logistics", "Food waste mitigation", "Community volunteering in Mallorca"],
     ca: ["Logística solidària d'aliments", "Lluita contra el malbaratament", "Voluntariat social a Mallorca"],
     de: ["Lebensmittel-Hilfslogistik", "Bekämpfung von Lebensmittelverschwendung", "Ehrenamtliche Sozialarbeit"],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 310,
-      url: "https://www.google.com/maps/search/?api=1&query=Fundaci%C3%B3%20Banc%20d'Aliments%20de%20Mallorca%20Palma%20Carrer%20del%20Gremi%20de%20Teixidors%2C%2022%2C%2007009%20Palma%2C%20Illes%20Balears",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

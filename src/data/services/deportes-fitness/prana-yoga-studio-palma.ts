@@ -29,8 +29,6 @@ export const PRANA_YOGA_STUDIO_PALMA: ServiceItem = {
   image: "/images/sports/prana-yoga-studio-palma.jpg",
   gallery: ["/images/sports/prana-yoga-studio-palma.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007071",
-  appleMapsUrl: "https://maps.apple.com/?q=Prana%20Yoga%20Studio%20Palma+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Prana%20Yoga%20Studio%20Palma+Mallorca",
   shortDescription: {
     es: "Estudio de Yoga consciente en el centro de Palma con clases de Vinyasa Flow, Hatha y Pranayama.",
     en: "Mindful Yoga studio in central Palma offering Vinyasa Flow, Hatha, and Pranayama sessions.",
@@ -94,13 +92,6 @@ export const PRANA_YOGA_STUDIO_PALMA: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 220,
-      url: "https://www.google.com/maps?cid=12007071",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

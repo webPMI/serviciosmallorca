@@ -29,8 +29,6 @@ export const PILATES_STUDIO_PALMA_PASEO_MALLORCA: ServiceItem = {
   image: "/images/sports/pilates-studio-palma-paseo-mallorca.jpg",
   gallery: ["/images/sports/pilates-studio-palma-paseo-mallorca.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007074",
-  appleMapsUrl: "https://maps.apple.com/?q=Pilates%20Studio%20Paseo%20Mallorca+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Pilates%20Studio%20Paseo%20Mallorca+Mallorca",
   shortDescription: {
     es: "Estudio de Pilates con máquinas Reformer, Cadillac y Wunda Chair con atención personalizada 1 a 1.",
     en: "Pilates studio with Reformer, Cadillac, and Wunda Chair apparatus with 1-on-1 private sessions.",
@@ -94,13 +92,6 @@ export const PILATES_STUDIO_PALMA_PASEO_MALLORCA: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.9,
-      reviewCount: 190,
-      url: "https://www.google.com/maps?cid=12007074",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

@@ -76,10 +76,6 @@ export const fusterSegurosCorreduriaPalma: ServiceItem = {
       close: "closed",
     },
   },
-  googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Fuster%20Corredur%C3%ADa%20de%20Seguros%20Palma%20(1940)%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Fuster%20Corredur%C3%ADa%20de%20Seguros%20Palma%20(1940)%20Mallorca",
-  bingMapsUrl: "https://www.bing.com/maps?q=Fuster%20Corredur%C3%ADa%20de%20Seguros%20Palma%20(1940)%20Mallorca",
   pricing: {
     startingPrice: "Consultar servicios y presupuestos personalizados",
     rateType: "custom_quote",
@@ -106,21 +102,4 @@ export const fusterSegurosCorreduriaPalma: ServiceItem = {
       },
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.8,
-      reviewCount: 320,
-      url: "https://www.google.com/maps/search/?api=1&query=Fuster%20Corredur%C3%ADa%20de%20Seguros%20Palma%20(1940)%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Fuster%20Corredur%C3%ADa%20de%20Seguros%20Palma%20(1940)%20Mallorca",
-    },
-    bingMaps: {
-      rating: 4.7,
-      reviewCount: 32,
-      url: "https://www.bing.com/maps?q=Fuster%20Corredur%C3%ADa%20de%20Seguros%20Palma%20(1940)%20Mallorca",
-    },
-    totalReviewsAggregated: 352,
-    overallWeightedRating: 4.8,
-  },
 };

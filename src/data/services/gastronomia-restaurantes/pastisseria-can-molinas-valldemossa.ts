@@ -28,9 +28,6 @@ export const pastisseriaCanMolinasValldemossa: ServiceItem = {
   email: "info@canmolinas.com",
   website: "https://canmolinas.com",
   menuUrl: "https://canmolinas.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Pastisseria+Can+Molinas+Valldemossa+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Pastisseria+Can+Molinas+Valldemossa",
-  bingMapsUrl: "https://www.bing.com/maps?q=Pastisseria+Can+Molinas+Valldemossa",
   tags: [
     "zona:tramuntana",
     "zona:valldemossa",

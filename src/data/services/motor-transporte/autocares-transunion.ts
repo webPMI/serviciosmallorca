@@ -21,9 +21,6 @@ export const autocaresTransunion: ServiceItem = {
   whatsapp: "+34 971 43 00 00",
   email: "comercial@transunion.com",
   website: "https://transunion.com",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Autocares%20Transunion%20Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Autocares%20Transunion%20Mallorca&ll=39.6012,2.6714",
-  bingMapsUrl: "https://www.bing.com/maps?where1=Autocares%20Transunion%20Mallorca",
   coordinates: { lat: 39.6012, lng: 2.6714 },
   schedule: "Lunes a Domingo: 24 Horas (Operaciones y Transfers Ininterrumpidos)",
   lastVerifiedAt: "2026-08-25",
@@ -133,30 +130,13 @@ export const autocaresTransunion: ServiceItem = {
       instagramHandle: "@transunionmallorca",
     },
   ],
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.6,
-      reviewCount: 980,
-      url: "https://www.google.com/maps/search/?api=1&query=Autocares%20Transunion%20Mallorca",
-    },
-    appleMaps: {
-      url: "https://maps.apple.com/?q=Autocares%20Transunion%20Mallorca&ll=39.6012,2.6714",
-    },
-    bingMaps: {
-      rating: 4.6,
-      reviewCount: 980,
-      url: "https://www.bing.com/maps?where1=Autocares%20Transunion%20Mallorca",
-    },
-    totalReviewsAggregated: 980,
-    overallWeightedRating: 4.6,
-  },
   reviews: [
     {
       id: "rev-trans-1",
       authorName: "Carlos Menéndez",
       rating: 5,
       date: "2025-06-11",
-      platform: "google_maps",
+      platform: "direct",
       language: "es",
       comment:
         "Contratamos el autobús para nuestra boda en Formentor y la puntualidad y amabilidad del chófer fueron impecables.",
@@ -167,7 +147,7 @@ export const autocaresTransunion: ServiceItem = {
       authorName: "David Miller",
       rating: 5,
       date: "2025-07-29",
-      platform: "google_maps",
+      platform: "direct",
       language: "en",
       comment:
         "Flawless airport transfer service for our corporate group of 45 people. Modern bus with great AC and Wi-Fi.",

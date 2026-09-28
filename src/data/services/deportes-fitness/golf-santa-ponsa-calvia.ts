@@ -29,8 +29,6 @@ export const GOLF_SANTA_PONSA_CALVIA: ServiceItem = {
   image: "/images/services/golf-santa-ponsa-calvia.jpg",
   gallery: ["/images/services/golf-santa-ponsa-calvia.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007008",
-  appleMapsUrl: "https://maps.apple.com/?q=Golf%20Santa%20Ponsa+Mallorca",
-  bingMapsUrl: "https://bing.com/maps?q=Golf%20Santa%20Ponsa+Mallorca",
   shortDescription: {
     es: "Complejo de golf histórico de Calvià, sede en seis ocasiones del Open de Baleares (PGA European Tour).",
     en: "Historic golf resort in Calvià, 6-time host of the PGA European Tour Balearic Open.",
@@ -94,13 +92,6 @@ export const GOLF_SANTA_PONSA_CALVIA: ServiceItem = {
       "Verleih von Ausrüstung und Plätzen",
       "Individuelle sportliche Beratung",
     ],
-  },
-  reputationBreakdown: {
-    googleMaps: {
-      rating: 4.7,
-      reviewCount: 580,
-      url: "https://www.google.com/maps?cid=12007008",
-    },
   },
   createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",

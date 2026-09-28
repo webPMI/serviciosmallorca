@@ -28,9 +28,6 @@ export const canNofrePalma: ServiceItem = {
   email: "contacto@cannofre.es",
   website: "https://www.instagram.com/restaurante_can_nofre/",
   menuUrl: "https://www.instagram.com/restaurante_can_nofre/",
-  googleMapsUrl: "https://www.google.com/maps/search/Restaurante+Can+Nofre+Palma+Mallorca",
-  appleMapsUrl: "https://maps.apple.com/?q=Restaurante+Can+Nofre+Palma",
-  bingMapsUrl: "https://www.bing.com/maps?q=Restaurante+Can+Nofre+Palma",
   tags: ["zona:palma", "zona:palma-centro", "product:traditional", "mod:en-local", "aud:familias", "temps:todo-el-ano"],
   capabilities: {
     wheelchairAccessible: true,
