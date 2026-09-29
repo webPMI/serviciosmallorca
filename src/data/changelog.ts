@@ -55,9 +55,9 @@ export interface ReleaseLog {
   entries: ChangelogEntry[];
 }
 
-export const CURRENT_PLATFORM_VERSION = "0.10";
+export const CURRENT_PLATFORM_VERSION = "0.11";
 export const PLATFORM_RELEASE_DATE = "2026-09-29";
-export const PLATFORM_LAST_BUILD_TIMESTAMP = "2026-09-29T15:10:00+02:00";
+export const PLATFORM_LAST_BUILD_TIMESTAMP = "2026-09-29T15:30:00+02:00";
 
 /**
  * Devuelve la fecha y hora formateada de la última actualización según el idioma.
@@ -84,6 +84,104 @@ export function getFormattedBuildTimestamp(locale: "es" | "en" | "ca" | "de" = "
 }
 
 export const CHANGELOG_RELEASES: ReleaseLog[] = [
+  {
+    version: "0.11",
+    versionLabel: {
+      es: "v0.11 · Fusión SSR Dinámica, Blindaje de Titularidad Fase 2/3 y Paridad i18n",
+      en: "v0.11 · Dynamic SSR Merge, Ownership Shield Phase 2/3 and i18n Parity",
+      ca: "v0.11 · Fusió SSR Dinàmica, Blindatge de Titularitat Fase 2/3 i Paritat i18n",
+      de: "v0.11 · Dynamische SSR-Zusammenführung, Eigentumsschutz Phase 2/3 und i18n-Parität",
+    },
+    type: "MINOR",
+    date: "2026-09-29",
+    summary: {
+      es: "Culminación integral de las Fases 2 y 3 del plan de remediación del flujo de titularidad (BUSINESS_OWNERSHIP_FLOW_REVIEW.md). Se reconectó la fusión de datos dinámicos en SSR (`resolveServiceWithOverrides`) en la página pública de servicios con fallback ultrarrápido y sincronización con Schema.org JSON-LD para SEO y crawlers. Se activó el rate limiting defensivo con ventanas deslizantes para mitigar abusos, auditoría server-side de cambios, centralización 100% cuatrilingüe de formularios (627 claves con paridad exacta) y bandeja multi-negocio con visual timeline de 3 fases y toasts de notificación en el perfil de usuario.",
+      en: "Complete delivery of Phases 2 and 3 of the ownership remediation plan (BUSINESS_OWNERSHIP_FLOW_REVIEW.md). Reconnected SSR dynamic overlay merge (`resolveServiceWithOverrides`) on the public service page with resilient timeout fallback and Schema.org JSON-LD synchronization for SEO and search bots. Activated defensive rate limiting with sliding windows, server-side audit logs, 100% quadrilingual form key centralization (627 keys in strict parity), and a multi-business timeline inbox with state change toast alerts in the user profile.",
+      ca: "Culminació integral de les Fases 2 i 3 del pla de remei del flux de titularitat (BUSINESS_OWNERSHIP_FLOW_REVIEW.md). Es va reconnectar la fusió de dades dinàmiques en SSR (`resolveServiceWithOverrides`) a la fitxa pública amb fallback resilient i sincronització amb Schema.org JSON-LD. Es va activar rate limiting defensiu, auditoria server-side, centralització cuatrilingüe de formularis (627 claus en paritat estricta) i safata multi-negoci amb timeline visual de 3 fases al perfil d'usuari.",
+      de: "Vollständiger Abschluss der Phasen 2 und 3 des Sanierungsplans für Inhaberschaftsabläufe (BUSINESS_OWNERSHIP_FLOW_REVIEW.md). Dynamische SSR-Zusammenführung (`resolveServiceWithOverrides`) auf öffentlichen Dienstleistungsseiten mit Fallback-Timeout und Schema.org JSON-LD-Synchronisierung aktiviert. Defensives Rate-Limiting, serverseitige Audit-Trails, 100% viersprachige Formular-Lokalisierung (627 Schlüssel mit exakter Parität) und Multi-Unternehmens-Timeline im Benutzerprofil implementiert.",
+    },
+    highlights: {
+      es: [
+        "Fusión SSR dinámica de Overrides (`resolveServiceWithOverrides`) en `servicios/[slug].astro` y sincronización JSON-LD.",
+        "Test de integración `tests/integration/serviceDetailSsrMerge.test.ts` con cobertura de fallback y Schema.org.",
+        "Rate limiting sliding-window en creación de claims, propuestas, solicitudes de baja y reportes.",
+        "Paridad estricta i18n cuatrilingüe alcanzando 627 claves por idioma sin textos hardcodeados.",
+        "Bandeja multi-negocio en ProfileForm con track visual de 3 pasos y toasts reactivos ante aprobación de titularidad.",
+        "100% BLINDADO_OPTIMO ratificado en la suite de 5 auditores multi-agente sobre 953 servicios.",
+      ],
+      en: [
+        "Dynamic SSR Overrides merge (`resolveServiceWithOverrides`) on `servicios/[slug].astro` with JSON-LD sync.",
+        "New integration test `tests/integration/serviceDetailSsrMerge.test.ts` validating fallback and Schema.org.",
+        "Sliding-window rate limiting for claims, submissions, deletions, and community reports.",
+        "Strict quadrilingual i18n parity reaching 627 keys per locale with zero hardcoded UI strings.",
+        "Multi-business timeline inbox in ProfileForm with a 3-step visual track and approval toast notifications.",
+        "100% BLINDADO_OPTIMO across all 5 multi-agent audit engines for 953 services.",
+      ],
+      ca: [
+        "Fusió SSR dinàmica d'Overrides (`resolveServiceWithOverrides`) a `servicios/[slug].astro` i sincronització JSON-LD.",
+        "Test d'integració `tests/integration/serviceDetailSsrMerge.test.ts` amb cobertura de fallback i Schema.org.",
+        "Rate limiting defensiu per a reclamacions, propostes, baixes i suggeriments comunitaris.",
+        "Paritat estricta cuatrilingüe assolint 627 claus per idioma sense textos hardcodejats.",
+        "Safata multi-negoci a ProfileForm amb track visual de 3 passos i notificacions toast d'aprovació.",
+        "100% BLINDADO_OPTIMO a la suite de 5 auditors multi-agent sobre 953 serveis.",
+      ],
+      de: [
+        "Dynamische SSR-Zusammenführung (`resolveServiceWithOverrides`) auf `servicios/[slug].astro` mit JSON-LD-Synchronisierung.",
+        "Neuer Integrationstest `tests/integration/serviceDetailSsrMerge.test.ts` für Fallback und Schema.org.",
+        "Sliding-Window Rate-Limiting für Ansprüche, Neueinträge, Löschungen und Meldungen.",
+        "Strikte viersprachige i18n-Parität mit 627 Schlüsseln pro Sprache ohne fest verdrahtete Texte.",
+        "Multi-Unternehmens-Timeline in ProfileForm mit 3-Phasen-Statusanzeige und Toast-Benachrichtigungen.",
+        "100% BLINDADO_OPTIMO über alle 5 Multi-Agenten-Auditoren für 953 Dienstleistungen.",
+      ],
+    },
+    entries: [
+      {
+        category: "FEATURE",
+        title: {
+          es: "Fusión Dinámica SSR de Overrides en la Ficha Pública",
+          en: "Dynamic SSR Overrides Merge on Public Service Page",
+          ca: "Fusió Dinàmica SSR d'Overrides a la Fitxa Pública",
+          de: "Dynamische SSR-Zusammenführung von Overrides auf der öffentlichen Seite",
+        },
+        description: {
+          es: "Permite que las actualizaciones del titular (horarios, teléfonos, fotos, descripciones i18n) se rendericen en el HTML inicial para SEO y usuarios.",
+          en: "Allows owner updates (schedules, phones, photos, i18n descriptions) to be rendered in the initial HTML for SEO and users.",
+          ca: "Permet que les actualitzacions del titular (horaris, telèfons, fotos, descripcions i18n) es renderitzin a l'HTML inicial.",
+          de: "Ermöglicht das Rendern von Inhaberaktualisierungen (Öffnungszeiten, Telefon, Fotos, i18n-Beschreibungen) im initialen HTML.",
+        },
+      },
+      {
+        category: "FEATURE",
+        title: {
+          es: "Timeline Visual y Notificaciones de Titularidad en Perfil",
+          en: "Visual Timeline and Ownership Notifications in Profile",
+          ca: "Timeline Visual i Notificacions de Titularitat al Perfil",
+          de: "Visuelle Timeline und Benachrichtigungen im Profil",
+        },
+        description: {
+          es: "Bandeja multi-negocio con seguimiento de 3 estados de tramitación y alertas reactivas al aprobarse la titularidad.",
+          en: "Multi-business inbox with 3-step state tracking and reactive toast alerts upon ownership approval.",
+          ca: "Safata multi-negoci amb seguiment de 3 estats de tramitació i alertes toast reactives en aprovar-se la titularitat.",
+          de: "Multi-Unternehmens-Posteingang mit 3-Stufen-Statusverfolgung und Toast-Benachrichtigungen bei Inhaberschaftsgenehmigung.",
+        },
+      },
+      {
+        category: "SECURITY",
+        title: {
+          es: "Rate Limiting Defensivo con Ventanas Deslizantes",
+          en: "Defensive Sliding-Window Rate Limiting",
+          ca: "Rate Limiting Defensiu amb Finestres Llisquants",
+          de: "Defensives Sliding-Window-Rate-Limiting",
+        },
+        description: {
+          es: "Protección anti-spam y anti-bombardeo en endpoints y acciones de reclamación, propuesta, reporte y baja.",
+          en: "Anti-spam protection across claim, submission, report, and deletion endpoints and actions.",
+          ca: "Protecció anti-spam en accions de reclamació, proposta, report i baixa.",
+          de: "Spam-Schutz bei Anträgen auf Inhaberschaft, Neueinträgen, Meldungen und Löschungen.",
+        },
+      },
+    ],
+  },
   {
     version: "0.10",
     versionLabel: {

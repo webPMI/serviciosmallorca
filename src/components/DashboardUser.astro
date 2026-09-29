@@ -10,14 +10,18 @@ const { translations } = Astro.props;
   <!-- Quick Actions Banner -->
   <div class="card card-glass quick-actions-banner">
     <div>
-      <h2 class="banner-title">🌴 Bienvenido a tu espacio de Servicios Mallorca</h2>
+      <h2 class="banner-title">🌴 {translations["dashboard.welcome"] || "¡Bienvenido a Servicios Mallorca!"}</h2>
       <p class="text-muted">
-        Explora los mejores servicios de la isla, guarda tus favoritos o da de alta y reclama tu propio negocio.
+        {translations["dashboard.subtitle"] || "Gestiona tus favoritos, solicitudes de recomendación y perfil."}
       </p>
     </div>
     <div class="actions-group">
-      <a href="./servicios/nuevo" class="btn btn-primary btn-sm">➕ Publicar Negocio</a>
-      <a href="./servicios" class="btn btn-secondary btn-sm">🔍 Explorar Servicios</a>
+      <a href="./servicios/nuevo" class="btn btn-primary btn-sm"
+        >{translations["dashboard.publishCta"] || "➕ Publicar Negocio"}</a
+      >
+      <a href="./servicios" class="btn btn-secondary btn-sm"
+        >{translations["dashboard.exploreCta"] || "🔍 Explorar Servicios"}</a
+      >
     </div>
   </div>
 
@@ -27,8 +31,15 @@ const { translations } = Astro.props;
       <div class="card-title-row">
         <h3>🏢 {translations["dashboard.myClaims"] || "Mis Solicitudes de Negocio"}</h3>
       </div>
-      <div id="user-claims-list" class="requests-list">
-        <p class="text-muted empty-state">Cargando tus solicitudes...</p>
+      <div
+        id="user-claims-list"
+        class="requests-list"
+        data-empty={translations["dashboard.emptyClaims"] || "No has solicitado reclamar ningún negocio aún."}
+        data-approved={translations["dashboard.approved"] || "Aprobado"}
+        data-pending={translations["dashboard.pending"] || "Pendiente"}
+        data-rejected={translations["dashboard.rejected"] || "Rechazado"}
+      >
+        <p class="text-muted empty-state">{translations["dashboard.loadingClaims"] || "Cargando tus solicitudes..."}</p>
       </div>
     </article>
 
@@ -36,8 +47,17 @@ const { translations } = Astro.props;
       <div class="card-title-row">
         <h3>📝 {translations["dashboard.submissionsTitle"] || "Mis Propuestas de Nuevos Negocios"}</h3>
       </div>
-      <div id="user-subs-list" class="requests-list">
-        <p class="text-muted empty-state">Cargando tus propuestas...</p>
+      <div
+        id="user-subs-list"
+        class="requests-list"
+        data-empty={translations["dashboard.emptySubmissions"] || "No has propuesto nuevos negocios aún."}
+        data-approved={translations["dashboard.approved"] || "Aprobado"}
+        data-pending={translations["dashboard.pending"] || "Pendiente"}
+        data-rejected={translations["dashboard.rejected"] || "Rechazado"}
+      >
+        <p class="text-muted empty-state">
+          {translations["dashboard.loadingSubmissions"] || "Cargando tus propuestas..."}
+        </p>
       </div>
     </article>
   </div>
@@ -161,22 +181,30 @@ const { translations } = Astro.props;
       const claims = await getUserClaims(db, user.uid);
       const claimsContainer = document.getElementById("user-claims-list");
       if (claimsContainer) {
+        const emptyMsg = claimsContainer.dataset.empty || "No claims found";
+        const approvedLbl = claimsContainer.dataset.approved || "Approved";
+        const pendingLbl = claimsContainer.dataset.pending || "Pending";
+        const rejectedLbl = claimsContainer.dataset.rejected || "Rejected";
+
         if (claims.length === 0) {
-          claimsContainer.innerHTML =
-            '<p class="text-muted empty-state">No has solicitado reclamar ningún negocio aún.</p>';
+          claimsContainer.innerHTML = `<p class="text-muted empty-state">${emptyMsg}</p>`;
         } else {
           claimsContainer.innerHTML = claims
-            .map(
-              (c) => `
-            <div class="user-item-card">
-              <div>
-                <strong>${c.serviceName}</strong>
-                <div class="text-muted" style="font-size: 0.75rem;">ID: ${c.serviceId}</div>
-              </div>
-              <span class="badge ${c.status === "approved" ? "badge-primary" : c.status === "pending" ? "badge-accent" : "badge-secondary"}">${c.status.toUpperCase()}</span>
-            </div>
-          `,
-            )
+            .map((c) => {
+              const statusLabel =
+                c.status === "approved" ? approvedLbl : c.status === "pending" ? pendingLbl : rejectedLbl;
+              const badgeClass =
+                c.status === "approved" ? "badge-primary" : c.status === "pending" ? "badge-accent" : "badge-secondary";
+              return `
+                  <div class="user-item-card">
+                    <div>
+                      <strong>${c.serviceName}</strong>
+                      <div class="text-muted" style="font-size: 0.75rem;">ID: ${c.serviceId}</div>
+                    </div>
+                    <span class="badge ${badgeClass}">${statusLabel.toUpperCase()}</span>
+                  </div>
+                `;
+            })
             .join("");
         }
       }
@@ -185,21 +213,30 @@ const { translations } = Astro.props;
       const submissions = await getUserSubmissions(db, user.uid);
       const subsContainer = document.getElementById("user-subs-list");
       if (subsContainer) {
+        const emptySubsMsg = subsContainer.dataset.empty || "No submissions found";
+        const approvedLbl = subsContainer.dataset.approved || "Approved";
+        const pendingLbl = subsContainer.dataset.pending || "Pending";
+        const rejectedLbl = subsContainer.dataset.rejected || "Rejected";
+
         if (submissions.length === 0) {
-          subsContainer.innerHTML = '<p class="text-muted empty-state">No has propuesto nuevos negocios aún.</p>';
+          subsContainer.innerHTML = `<p class="text-muted empty-state">${emptySubsMsg}</p>`;
         } else {
           subsContainer.innerHTML = submissions
-            .map(
-              (s) => `
-            <div class="user-item-card">
-              <div>
-                <strong>${s.name}</strong>
-                <div class="text-muted" style="font-size: 0.75rem;">${s.category} · 📍 ${s.zone}</div>
-              </div>
-              <span class="badge ${s.status === "approved" ? "badge-primary" : s.status === "pending" ? "badge-accent" : "badge-secondary"}">${s.status.toUpperCase()}</span>
-            </div>
-          `,
-            )
+            .map((s) => {
+              const statusLabel =
+                s.status === "approved" ? approvedLbl : s.status === "pending" ? pendingLbl : rejectedLbl;
+              const badgeClass =
+                s.status === "approved" ? "badge-primary" : s.status === "pending" ? "badge-accent" : "badge-secondary";
+              return `
+                  <div class="user-item-card">
+                    <div>
+                      <strong>${s.name}</strong>
+                      <div class="text-muted" style="font-size: 0.75rem;">${s.category} · 📍 ${s.zone}</div>
+                    </div>
+                    <span class="badge ${badgeClass}">${statusLabel.toUpperCase()}</span>
+                  </div>
+                `;
+            })
             .join("");
         }
       }

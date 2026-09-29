@@ -217,20 +217,22 @@ const AVATAR_PRESETS = ["👤", "🚀", "⚡", "👑", "🦊", "🦉", "🎨", "
           </a>
         </div>
 
-        <div id="claimed-business-box" class="claimed-status-box" style="display: none;">
-          <div class="claimed-header">
-            <div class="claimed-icon">🛡️</div>
-            <div>
-              <h3 id="claimed-business-name" class="claimed-name">Nombre Empresa</h3>
-              <p id="claimed-audit-desc" class="claimed-audit-text">
-                {
-                  translations["profile.claimedPending"] ||
-                    "⏳ Solicitud de cesión en proceso de validación fiscal por nuestro equipo de auditoría."
-                }
-              </p>
-            </div>
-          </div>
-          <div class="claimed-actions">
+        <div
+          id="claimed-business-box"
+          class="claimed-status-box"
+          style="display: none;"
+          data-label-step-submitted={translations["profile.timelineStepSubmitted"]}
+          data-label-step-audit={translations["profile.timelineStepAudit"]}
+          data-label-step-resolution={translations["profile.timelineStepResolution"]}
+          data-label-claimed-approved={translations["profile.claimedApproved"]}
+          data-label-claimed-pending={translations["profile.claimedPending"]}
+          data-label-claimed-rejected={translations["profile.claimedRejected"]}
+          data-label-manage={translations["profile.goToManager"]}
+          data-label-toast-approved={translations["profile.claimApprovedToast"]}
+          data-prefix={prefix}
+        >
+          <div id="user-claims-timeline-list" class="user-claims-timeline-grid"></div>
+          <div class="claimed-actions" style="margin-top: var(--space-md, 1rem);">
             <a href={`${prefix}cuadro-de-honor`} class="btn btn-secondary btn-sm">
               {translations["profile.viewHonorSpot"] || "👑 Ver mi Puesto en Cuadro de Honor"}
             </a>
@@ -887,26 +889,109 @@ const AVATAR_PRESETS = ["👤", "🚀", "⚡", "👑", "🦊", "🦉", "🎨", "
     const claims = await getUserClaims(db, uid);
     const noBizBox = document.getElementById("no-business-box");
     const claimedBox = document.getElementById("claimed-business-box");
-    const claimedName = document.getElementById("claimed-business-name");
-    const claimedAuditDesc = document.getElementById("claimed-audit-desc");
     const statusBadge = document.getElementById("business-status-badge");
+    const timelineList = document.getElementById("user-claims-timeline-list");
 
-    if (claims.length > 0) {
-      const latestClaim = claims[0];
+    if (claims.length > 0 && claimedBox) {
       if (noBizBox) noBizBox.style.display = "none";
-      if (claimedBox) claimedBox.style.display = "block";
-      if (claimedName) claimedName.textContent = latestClaim.serviceName;
+      claimedBox.style.display = "block";
+
+      const labels = {
+        stepSubmitted: claimedBox.dataset.labelStepSubmitted || "Solicitud enviada",
+        stepAudit: claimedBox.dataset.labelStepAudit || "Auditoría fiscal",
+        stepResolution: claimedBox.dataset.labelStepResolution || "Resolución y mando",
+        claimedApproved: claimedBox.dataset.labelClaimedApproved || "Titularidad verificada",
+        claimedPending: claimedBox.dataset.labelClaimedPending || "En proceso de auditoría",
+        claimedRejected: claimedBox.dataset.labelClaimedRejected || "Solicitud no aprobada",
+        manage: claimedBox.dataset.labelManage || "Panel de Gestión",
+        toastApproved: claimedBox.dataset.labelToastApproved || "¡Titularidad aprobada!",
+        prefix: claimedBox.dataset.prefix || "/",
+      };
+
       if (statusBadge) {
-        statusBadge.textContent = latestClaim.status.toUpperCase();
-        statusBadge.className = `badge ${latestClaim.status === "approved" ? "badge-primary" : latestClaim.status === "pending" ? "badge-accent" : "badge-secondary"}`;
+        statusBadge.textContent = `${claims.length} ${claims.length === 1 ? "Negocio" : "Negocios"}`;
+        const hasApproved = claims.some((c) => c.status === "approved");
+        statusBadge.className = `badge ${hasApproved ? "badge-primary" : "badge-accent"}`;
       }
-      if (claimedAuditDesc) {
-        claimedAuditDesc.textContent =
-          latestClaim.status === "approved"
-            ? "✅ Titularidad verificada. Tienes control administrativo sobre este negocio."
-            : latestClaim.status === "pending"
-              ? "⏳ Solicitud de cesión en proceso de validación fiscal por nuestro equipo de auditoría."
-              : "❌ Solicitud no aprobada. Puedes volver a enviar la documentación.";
+
+      // Check status changes for toast notifications (P2-4)
+      claims.forEach((claim) => {
+        const cacheKey = `sm_claim_status_${claim.id}`;
+        const prevStatus = localStorage.getItem(cacheKey);
+        if (prevStatus === "pending" && claim.status === "approved") {
+          toast.success(labels.toastApproved.replace("{name}", claim.serviceName));
+        }
+        localStorage.setItem(cacheKey, claim.status);
+      });
+
+      if (timelineList) {
+        timelineList.innerHTML = claims
+          .map((claim) => {
+            const isApproved = claim.status === "approved";
+            const isPending = claim.status === "pending";
+            const isRejected = claim.status === "rejected";
+
+            const badgeClass = isApproved ? "badge-primary" : isPending ? "badge-accent" : "badge-secondary";
+            const auditText = isApproved
+              ? labels.claimedApproved
+              : isPending
+                ? labels.claimedPending
+                : labels.claimedRejected;
+
+            const step2Status = isApproved ? "completed" : isRejected ? "rejected" : "active";
+            const step3Status = isApproved ? "completed" : isRejected ? "rejected" : "waiting";
+
+            const step2Icon = isApproved ? "✓" : isRejected ? "✗" : "⏳";
+            const step3Icon = isApproved ? "👑" : isRejected ? "✗" : "🔒";
+
+            return `
+              <div class="claim-timeline-card">
+                <div class="claim-timeline-header">
+                  <div>
+                    <h3 class="claimed-name" style="margin: 0; font-size: var(--font-size-base); font-weight: 700;">
+                      ${claim.serviceName}
+                    </h3>
+                    <div class="text-muted" style="font-size: 0.75rem; margin-top: 2px;">
+                      ID: ${claim.serviceId} · CIF/NIF: ${claim.businessTaxId || "Acreditado"}
+                    </div>
+                  </div>
+                  <span class="badge ${badgeClass}">${claim.status.toUpperCase()}</span>
+                </div>
+
+                <!-- 3-Step Visual Timeline -->
+                <div class="claim-timeline-track">
+                  <div class="claim-track-step step-completed">
+                    <span class="step-circle">✓</span>
+                    <span class="step-title">${labels.stepSubmitted}</span>
+                  </div>
+                  <div class="claim-track-line ${isApproved ? "line-completed" : ""}"></div>
+                  <div class="claim-track-step step-${step2Status}">
+                    <span class="step-circle">${step2Icon}</span>
+                    <span class="step-title">${labels.stepAudit}</span>
+                  </div>
+                  <div class="claim-track-line ${isApproved ? "line-completed" : ""}"></div>
+                  <div class="claim-track-step step-${step3Status}">
+                    <span class="step-circle">${step3Icon}</span>
+                    <span class="step-title">${labels.stepResolution}</span>
+                  </div>
+                </div>
+
+                <p class="claimed-audit-text" style="margin: var(--space-xs, 0.5rem) 0 var(--space-sm, 0.75rem);">
+                  ${auditText}
+                </p>
+
+                <div class="claim-timeline-actions" style="display: flex; gap: 8px; flex-wrap: wrap;">
+                  ${
+                    isApproved
+                      ? `<a href="${labels.prefix}dashboard/manager" class="btn btn-primary btn-sm">${labels.manage}</a>
+                         <a href="${labels.prefix}servicios/${claim.serviceId}" class="btn btn-outline-secondary btn-sm" target="_blank">Ver Ficha Pública ↗</a>`
+                      : `<a href="${labels.prefix}servicios/${claim.serviceId}" class="btn btn-outline-secondary btn-sm">Ver Ficha</a>`
+                  }
+                </div>
+              </div>
+            `;
+          })
+          .join("");
       }
     } else {
       if (statusBadge) {
@@ -2174,5 +2259,94 @@ const AVATAR_PRESETS = ["👤", "🚀", "⚡", "👑", "🦊", "🦉", "🎨", "
 
   .text-warning {
     color: #f59e0b !important;
+  }
+
+  /* Claims Multi-Business Timeline Grid (P2-4) */
+  .user-claims-timeline-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md, 1rem);
+  }
+
+  .claim-timeline-card {
+    background: var(--color-bg);
+    border: 1px solid var(--color-surface-border);
+    border-radius: var(--border-radius-md, 10px);
+    padding: var(--space-md, 1rem);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm, 0.75rem);
+  }
+
+  .claim-timeline-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: var(--space-sm, 0.5rem);
+  }
+
+  .claim-timeline-track {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-sm, 0.5rem) 0;
+    gap: 8px;
+  }
+
+  .claim-track-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    text-align: center;
+    flex: 1;
+  }
+
+  .step-circle {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.82rem;
+    font-weight: 700;
+  }
+
+  .step-title {
+    font-size: 0.72rem;
+    color: var(--color-text-muted);
+    font-weight: 500;
+  }
+
+  .step-completed .step-circle {
+    background: var(--color-success, #10b981);
+    color: #ffffff;
+  }
+
+  .step-active .step-circle {
+    background: var(--color-accent, #f59e0b);
+    color: #000000;
+  }
+
+  .step-waiting .step-circle {
+    background: var(--color-surface-border);
+    color: var(--color-text-muted);
+  }
+
+  .step-rejected .step-circle {
+    background: var(--color-danger, #ef4444);
+    color: #ffffff;
+  }
+
+  .claim-track-line {
+    height: 2px;
+    flex: 1;
+    background: var(--color-surface-border);
+    margin-bottom: 18px;
+  }
+
+  .claim-track-line.line-completed {
+    background: var(--color-success, #10b981);
   }
 </style>

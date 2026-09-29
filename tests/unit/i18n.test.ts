@@ -92,8 +92,8 @@ describe("i18n utility module", () => {
       for (const locale of LOCALES) {
         const trans = await loadTranslations(locale);
         expect(trans).toBeDefined();
-        // 569 claves = 558 previas + 11 del flujo de pago verificado del Cuadro de Honor
-        expect(Object.keys(trans).length).toBe(569);
+        // 627 claves = 569 previas + 58 de los flujos de titularidad (modales de claim/baja, nuevo negocio, dashboard manager y timelines de perfil)
+        expect(Object.keys(trans).length).toBe(627);
         expect(trans["site.title"]).toBe("Servicios Mallorca");
       }
     });

@@ -28,27 +28,47 @@ const { service, translations } = Astro.props;
       <input type="hidden" id="claim-service-name" value={service.name} />
 
       <div class="form-group">
-        <label class="form-label" for="claim-name"
-          >{translations["services.claimApplicantName"] || "Nombre y Apellidos del Solicitante"}</label
-        >
-        <input type="text" id="claim-name" class="form-input" required placeholder="Tu nombre" />
+        <label class="form-label" for="claim-name">{translations["services.claimApplicantName"]}</label>
+        <input
+          type="text"
+          id="claim-name"
+          class="form-input"
+          required
+          placeholder={translations["services.claimNamePlaceholder"]}
+        />
       </div>
 
       <div class="form-group">
-        <label class="form-label" for="claim-email"
-          >{translations["services.claimApplicantEmail"] || "Correo Electrónico de Contacto"}</label
-        >
-        <input type="email" id="claim-email" class="form-input" required placeholder="nombre@empresa.com" />
+        <label class="form-label" for="claim-email">{translations["services.claimApplicantEmail"]}</label>
+        <input
+          type="email"
+          id="claim-email"
+          class="form-input"
+          required
+          placeholder={translations["services.claimEmailPlaceholder"]}
+        />
       </div>
 
       <div class="form-group">
         <label class="form-label" for="claim-phone">{translations["services.claimPhone"]}</label>
-        <input type="tel" id="claim-phone" class="form-input" required placeholder="+34 600 000 000" />
+        <input
+          type="tel"
+          id="claim-phone"
+          class="form-input"
+          required
+          placeholder={translations["services.claimPhonePlaceholder"]}
+        />
       </div>
 
       <div class="form-group">
         <label class="form-label" for="claim-cif">{translations["services.claimCif"]}</label>
-        <input type="text" id="claim-cif" class="form-input" required placeholder="CIF o documento acreditativo" />
+        <input
+          type="text"
+          id="claim-cif"
+          class="form-input"
+          required
+          placeholder={translations["services.claimCifPlaceholder"]}
+        />
       </div>
 
       <div class="modal-actions">
@@ -68,10 +88,7 @@ const { service, translations } = Astro.props;
       <button type="button" class="modal-close-btn" data-close-modal="delete-modal">&times;</button>
     </div>
     <p class="modal-desc">
-      {
-        translations["services.deleteDesc"] ||
-          "Conforme a la normativa RGPD/LOPD, el titular legítimo puede solicitar la retirada de su ficha en cualquier momento."
-      }
+      {translations["services.deleteDesc"]}
     </p>
 
     <div id="delete-alert-success" class="alert-success" style="display: none;">
@@ -84,10 +101,14 @@ const { service, translations } = Astro.props;
       <input type="hidden" id="delete-service-name" value={service.name} />
 
       <div class="form-group">
-        <label class="form-label" for="delete-email"
-          >{translations["services.deleteApplicantEmail"] || "Correo Electrónico del Solicitante"}</label
-        >
-        <input type="email" id="delete-email" class="form-input" required placeholder="titular@empresa.com" />
+        <label class="form-label" for="delete-email">{translations["services.deleteApplicantEmail"]}</label>
+        <input
+          type="email"
+          id="delete-email"
+          class="form-input"
+          required
+          placeholder={translations["services.deleteApplicantEmailPlaceholder"]}
+        />
       </div>
 
       <div class="form-group">
@@ -96,7 +117,7 @@ const { service, translations } = Astro.props;
           id="delete-reason"
           class="form-input form-textarea"
           required
-          placeholder="Indica el motivo de la supresión o acreditación de titularidad..."></textarea>
+          placeholder={translations["services.deleteReasonPlaceholder"]}></textarea>
       </div>
 
       <div class="modal-actions">
@@ -145,12 +166,17 @@ const { service, translations } = Astro.props;
           class="form-input form-textarea"
           required
           minlength="10"
-          placeholder="Describe con detalle qué información está desactualizada o errónea..."></textarea>
+          placeholder={translations["services.reportDescriptionPlaceholder"]}></textarea>
       </div>
 
       <div class="form-group">
-        <label class="form-label" for="report-email">Tu correo (opcional, para seguimiento)</label>
-        <input type="email" id="report-email" class="form-input" placeholder="tu@correo.com" />
+        <label class="form-label" for="report-email">{translations["services.reportEmailLabel"]}</label>
+        <input
+          type="email"
+          id="report-email"
+          class="form-input"
+          placeholder={translations["services.reportEmailPlaceholder"]}
+        />
       </div>
 
       <div class="modal-actions">

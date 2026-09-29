@@ -47,6 +47,7 @@ import {
   VERIFICATION_FIELDS,
   OverrideGuardError,
   getAllServiceOverrides,
+  resolveServiceWithOverrides,
   setAllowDatabaseOverrides,
   isDatabaseOverridesEnabled,
 } from "../../src/lib/serviceOverrides";
@@ -563,5 +564,58 @@ describe("Bloque vinculante · utilidades puras", () => {
   it("getServiceOverrideFresh no consulta Firestore sin base de datos (SSR-safe)", async () => {
     expect(await getServiceOverrideFresh(undefined, "cualquiera")).toBeNull();
     expect(fb.getDoc).not.toHaveBeenCalled();
+  });
+});
+
+describe("resolveServiceWithOverrides · SSR Resilient Dynamic Overlay", () => {
+  it("devuelve el servicio estático si db es undefined (SSR-safe)", async () => {
+    const result = await resolveServiceWithOverrides(undefined, "test-slug", staticService);
+    expect(result).toBe(staticService);
+  });
+
+  it("devuelve el servicio estático si el slug está vacío", async () => {
+    const result = await resolveServiceWithOverrides({ kind: "db" } as never, "", staticService);
+    expect(result).toBe(staticService);
+  });
+
+  it("fusiona datos dinámicos cuando existe override en Firestore", async () => {
+    const dbLike = { kind: "db" };
+    fb.getDoc.mockResolvedValueOnce({
+      exists: () => true,
+      data: () => ({
+        phone: "+34971999888",
+        email: "nuevo@example.com",
+        status: "seasonal_closure",
+        highlights: { es: ["Nuevo destacado SSR"] },
+      }),
+    });
+
+    const result = await resolveServiceWithOverrides(dbLike as never, "test-slug", staticService);
+    expect(result.phone).toBe("+34971999888");
+    expect(result.email).toBe("nuevo@example.com");
+    expect(result.status).toBe("seasonal_closure");
+    expect(result.highlights?.es).toEqual(["Nuevo destacado SSR"]);
+    // Campos no modificados se preservan del estático
+    expect(result.schedule).toBe(staticService.schedule);
+  });
+
+  it("retorna el servicio estático si la consulta a Firestore falla (cero crash en SSR)", async () => {
+    const dbLike = { kind: "db" };
+    fb.getDoc.mockRejectedValueOnce(new Error("Firestore network timeout"));
+
+    const result = await resolveServiceWithOverrides(dbLike as never, "slug-error-network", staticService);
+    expect(result).toBe(staticService);
+  });
+
+  it("retorna el servicio estático si la base de datos está deshabilitada", async () => {
+    setAllowDatabaseOverrides(false);
+    try {
+      const dbLike = { kind: "db" };
+      const result = await resolveServiceWithOverrides(dbLike as never, "test-slug", staticService);
+      expect(result).toBe(staticService);
+      expect(fb.getDoc).not.toHaveBeenCalled();
+    } finally {
+      setAllowDatabaseOverrides(true);
+    }
   });
 });

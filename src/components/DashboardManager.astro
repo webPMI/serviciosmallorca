@@ -15,7 +15,7 @@ const { translations } = Astro.props;
         <span class="stat-trend positive">Verificado</span>
       </div>
       <div class="stat-value">Manager B2B</div>
-      <div class="stat-label">Estado de Titularidad</div>
+      <div class="stat-label">{translations["dashboard.statOwnership"] || "Estado de Titularidad"}</div>
     </article>
 
     <article class="stat-card card hover-lift">
@@ -24,7 +24,7 @@ const { translations } = Astro.props;
         <span class="stat-trend positive">Activo</span>
       </div>
       <div class="stat-value" id="manager-services-count">1</div>
-      <div class="stat-label">Negocios Vinculados</div>
+      <div class="stat-label">{translations["dashboard.statLinked"] || "Negocios Vinculados"}</div>
     </article>
 
     <article class="stat-card card hover-lift">
@@ -33,17 +33,21 @@ const { translations } = Astro.props;
         <span class="stat-trend positive">Directo</span>
       </div>
       <div class="stat-value">WhatsApp</div>
-      <div class="stat-label">Canal de Contacto Principal</div>
+      <div class="stat-label">{translations["dashboard.statContact"] || "Canal de Contacto Principal"}</div>
     </article>
   </section>
 
   <!-- PENDING CLAIMS AUDIT SECTION -->
   <article class="card card-glass" id="claims-audit-section">
     <div class="card-title-row">
-      <h3>🛡️ Auditoría & Verificación de Reclamaciones de Titularidad</h3>
+      <h3>
+        {translations["dashboard.claimsAuditTitle"] || "🛡️ Auditoría & Verificación de Reclamaciones de Titularidad"}
+      </h3>
     </div>
     <div id="manager-claims-list" class="claims-audit-list">
-      <p class="text-muted empty-state">Cargando solicitudes de reclamación...</p>
+      <p class="text-muted empty-state">
+        {translations["dashboard.loadingClaimsAudit"] || "Cargando solicitudes de reclamación..."}
+      </p>
     </div>
   </article>
 
@@ -53,7 +57,9 @@ const { translations } = Astro.props;
       <h3>🏢 {translations["dashboard.myManagedServices"] || "Mis Negocios Verificados"}</h3>
     </div>
     <div id="manager-services-list" class="services-managed-list">
-      <p class="text-muted empty-state">Cargando negocios vinculados...</p>
+      <p class="text-muted empty-state">
+        {translations["dashboard.loadingManaged"] || "Cargando negocios vinculados..."}
+      </p>
     </div>
   </article>
 
@@ -61,7 +67,7 @@ const { translations } = Astro.props;
   <div id="manager-edit-modal" class="modal-overlay" style="display: none;">
     <div class="modal-card card card-glass">
       <div class="modal-header">
-        <h3 id="modal-service-title">✏️ Modificar Datos del Negocio</h3>
+        <h3 id="modal-service-title">{translations["dashboard.managerTitle"] || "✏️ Modificar Datos del Negocio"}</h3>
         <button type="button" id="close-modal-btn" class="btn-close" aria-label="Cerrar modal">✕</button>
       </div>
 
@@ -70,48 +76,60 @@ const { translations } = Astro.props;
 
         <div class="form-row-2">
           <div class="form-group">
-            <label for="edit-phone">📞 Teléfono de Contacto</label>
+            <label for="edit-phone">{translations["dashboard.managerPhone"] || "📞 Teléfono de Contacto"}</label>
             <input type="text" id="edit-phone" class="input-field" required />
           </div>
           <div class="form-group">
-            <label for="edit-whatsapp">💬 WhatsApp Directo</label>
+            <label for="edit-whatsapp">{translations["dashboard.managerWhatsapp"] || "💬 WhatsApp Directo"}</label>
             <input type="text" id="edit-whatsapp" class="input-field" required />
           </div>
         </div>
 
         <div class="form-row-2">
           <div class="form-group">
-            <label for="edit-website">🌐 Sitio Web Oficial / Perfil</label>
+            <label for="edit-website"
+              >{translations["dashboard.managerWebsite"] || "🌐 Sitio Web Oficial / Perfil"}</label
+            >
             <input type="url" id="edit-website" class="input-field" placeholder="https://ejemplo.com" />
           </div>
           <div class="form-group">
-            <label for="edit-email">✉️ Correo Electrónico</label>
+            <label for="edit-email">{translations["dashboard.managerEmail"] || "✉️ Correo Electrónico"}</label>
             <input type="email" id="edit-email" class="input-field" placeholder="contacto@ejemplo.com" />
           </div>
         </div>
 
         <div class="form-group">
-          <label for="edit-schedule">🕒 Horario Operativo</label>
+          <label for="edit-schedule">{translations["dashboard.managerSchedule"] || "🕒 Horario Operativo"}</label>
           <input type="text" id="edit-schedule" class="input-field" placeholder="Lun - Sáb: 10:00 - 20:00" required />
         </div>
 
         <div class="form-group">
-          <label for="edit-status">🚦 Estado Operativo</label>
+          <label for="edit-status">{translations["dashboard.managerStatus"] || "🚦 Estado Operativo"}</label>
           <select id="edit-status" class="input-field">
-            <option value="open">🟢 Abierto / En Funcionamiento</option>
-            <option value="seasonal_closure">🟡 Cierre por Temporada / Vacaciones</option>
-            <option value="permanently_closed">🔴 Cerrado Definitivamente</option>
+            <option value="open">{translations["dashboard.statusOpen"] || "🟢 Abierto / En Funcionamiento"}</option>
+            <option value="seasonal_closure"
+              >{translations["dashboard.statusSeasonal"] || "🟡 Cierre por Temporada / Vacaciones"}</option
+            >
+            <option value="permanently_closed"
+              >{translations["dashboard.statusClosed"] || "🔴 Cerrado Definitivamente"}</option
+            >
           </select>
         </div>
 
         <div class="form-group">
-          <label for="edit-description">📝 Descripción Principal (Español)</label>
+          <label for="edit-description"
+            >{translations["dashboard.managerDescription"] || "📝 Descripción Principal"}</label
+          >
           <textarea id="edit-description" class="input-field" rows="4" required></textarea>
         </div>
 
         <div class="modal-actions">
-          <button type="button" id="cancel-edit-btn" class="btn btn-secondary">Cancelar</button>
-          <button type="submit" id="save-override-btn" class="btn btn-primary"> 💾 Guardar y Actualizar Ficha </button>
+          <button type="button" id="cancel-edit-btn" class="btn btn-secondary"
+            >{translations["dashboard.managerCancel"] || "Cancelar"}</button
+          >
+          <button type="submit" id="save-override-btn" class="btn btn-primary"
+            >{translations["dashboard.managerSave"] || "💾 Guardar y Actualizar Ficha"}</button
+          >
         </div>
       </form>
     </div>
@@ -284,7 +302,13 @@ const { translations } = Astro.props;
   import { getUserClaims, getAllClaims, updateClaimStatus } from "../lib/serviceActions";
   import { getServiceOverride, saveServiceOverride, OverrideGuardError } from "../lib/serviceOverrides";
   import { reportClientFailure } from "../lib/clientTelemetry";
-  import { validatePhoneInput, validateHttpsUrl, validateEmailInput, isValidServiceStatus, sanitizeText } from "../lib/ownershipValidation";
+  import {
+    validatePhoneInput,
+    validateHttpsUrl,
+    validateEmailInput,
+    isValidServiceStatus,
+    sanitizeText,
+  } from "../lib/ownershipValidation";
   import { SERVICES } from "../data/services";
   import type { ServiceStatus } from "../data/services/types";
 

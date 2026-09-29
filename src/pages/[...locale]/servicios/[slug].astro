@@ -33,6 +33,8 @@ import UnclaimedDataDisclaimer from "../../../components/UnclaimedDataDisclaimer
 import BusinessJoinBanner from "../../../components/BusinessJoinBanner.astro";
 
 import { getServiceById } from "../../../data/services";
+import { db, isFirebaseConfigured } from "../../../lib/firebase";
+import { resolveServiceWithOverrides } from "../../../lib/serviceOverrides";
 import { CATEGORIES } from "../../../data/categories";
 import { MALLORCA_ZONES } from "../../../data/zones";
 import { BLOG_POSTS } from "../../../data/posts";
@@ -49,11 +51,17 @@ const translations = await loadTranslations(locale);
 const prefix = getLangPrefix(locale);
 
 const { slug } = Astro.params;
-const service = slug ? getServiceById(slug) : undefined;
+const rawService = slug ? getServiceById(slug) : undefined;
 
-if (!service) {
+if (!rawService) {
   return Astro.redirect(`${prefix}servicios`);
 }
+
+// ── Merge dinámico SSR de Overrides (P1-3 · P2-1) ──
+// Permite que modificaciones del titular (teléfono, horario, descripción i18n, estado, fotos)
+// se rendericen directamente en el HTML inicial para usuarios sin JS y motores de búsqueda (SEO/GEO).
+const service =
+  isFirebaseConfigured && db && slug ? await resolveServiceWithOverrides(db, slug, rawService) : rawService;
 
 const category = CATEGORIES.find((c) => c.id === service.category);
 const zone = MALLORCA_ZONES.find((z) => z.id === service.zone);

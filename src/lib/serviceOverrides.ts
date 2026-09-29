@@ -308,6 +308,29 @@ export function mergeServiceWithOverride(staticService: ServiceItem, override: S
 }
 
 /**
+ * Resuelve un servicio aplicando la superposición dinámica (SSR o cliente).
+ * Si Firestore no está disponible, está deshabilitado o la lectura excede
+ * el timeout de seguridad, retorna el registro estático intacto (GR-10 / GR-15).
+ */
+export async function resolveServiceWithOverrides(
+  db: Firestore | undefined,
+  slug: string,
+  staticService: ServiceItem,
+  timeoutMs: number = 800,
+): Promise<ServiceItem> {
+  if (!db || !slug || !isDatabaseOverridesEnabled()) return staticService;
+  try {
+    const override = await Promise.race([
+      getServiceOverride(db, slug),
+      new Promise<null>((res) => setTimeout(() => res(null), timeoutMs)),
+    ]);
+    return override ? mergeServiceWithOverride(staticService, override) : staticService;
+  } catch {
+    return staticService;
+  }
+}
+
+/**
  * Lee el override **fresco** desde Firestore (sin caché) para poder decidir
  * con seguridad sobre la titularidad y el histórico antes de escribir.
  */

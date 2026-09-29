@@ -1,6 +1,6 @@
 # 🛡️ Informe de Inteligencia y Auditoría Multi-Agente
 
-**Fecha de Auditoría:** 2026-09-29T13:11:16.559Z
+**Fecha de Auditoría:** 2026-09-29T13:29:25.175Z
 **Puntaje Global de Cumplimiento:** `100%`
 **Estado del Sistema:** `BLINDADO_OPTIMO`
 
@@ -8,13 +8,13 @@
 
 ## 📊 Resumen por Subsistema Auditor
 
-| Auditor | Evaluados | Críticos | Advertencias | Informativos | Cumplimiento |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| 🛡️ **Seguridad & Acceso** | 953 | 0 | 0 | 0 | **100%** |
-| 📊 **Integridad Zero Fake Data** | 953 | 0 | 0 | 0 | **100%** |
-| 🏛️ **Evolución & Memoria Histórica** | 953 | 0 | 0 | 0 | **100%** |
-| 👑 **Cuadro de Honor & Subastas** | 6 | 0 | 0 | 0 | **100%** |
-| ⚡ **Rendimiento & Assets** | 953 | 0 | 0 | 0 | **100%** |
+| Auditor                              | Evaluados | Críticos | Advertencias | Informativos | Cumplimiento |
+| :----------------------------------- | :-------- | :------- | :----------- | :----------- | :----------- |
+| 🛡️ **Seguridad & Acceso**            | 953       | 0        | 0            | 0            | **100%**     |
+| 📊 **Integridad Zero Fake Data**     | 953       | 0        | 0            | 0            | **100%**     |
+| 🏛️ **Evolución & Memoria Histórica** | 953       | 0        | 0            | 0            | **100%**     |
+| 👑 **Cuadro de Honor & Subastas**    | 6         | 0        | 0            | 0            | **100%**     |
+| ⚡ **Rendimiento & Assets**          | 953       | 0        | 0            | 0            | **100%**     |
 
 ---
 
