@@ -105,7 +105,10 @@ const claimFixture = {
   verificationProof: "https://drive.example.com/proof.pdf",
 };
 
+import { resetRateLimitBuckets } from "../../src/lib/managerSecurityEngine";
+
 beforeEach(() => {
+  resetRateLimitBuckets();
   fb.setDoc.mockReset();
   fb.updateDoc.mockReset();
   fb.getDocs.mockReset();
@@ -157,6 +160,15 @@ describe("ServiceActions · Claims (reclamación de negocio)", () => {
 
     await expect(createServiceClaim(fakeDb, claimFixture)).rejects.toMatchObject({ code: "already_claimed" });
     expect(fb.setDoc).not.toHaveBeenCalled();
+  });
+
+  it("createServiceClaim bloquea si se supera el rate limit (P2-6 / rate_limited)", async () => {
+    for (let i = 0; i < 5; i++) {
+      await createServiceClaim(fakeDb, { ...claimFixture, id: `claim-rl-${i}` });
+    }
+    await expect(createServiceClaim(fakeDb, { ...claimFixture, id: "claim-rl-over" })).rejects.toMatchObject({
+      code: "rate_limited",
+    });
   });
 
   it("getUserClaims ordena descendente priorizando toMillis sobre seconds", async () => {
@@ -358,6 +370,15 @@ describe("ServiceActions · Submissions (alta de negocio)", () => {
     expect(payload.status).toBe("pending");
   });
 
+  it("createServiceSubmission bloquea si se supera el rate limit (P2-6 / rate_limited)", async () => {
+    for (let i = 0; i < 5; i++) {
+      await createServiceSubmission(fakeDb, { ...submissionFixture, id: `sub-rl-${i}` });
+    }
+    await expect(createServiceSubmission(fakeDb, { ...submissionFixture, id: "sub-rl-over" })).rejects.toMatchObject({
+      code: "rate_limited",
+    });
+  });
+
   it("getUserSubmissions ordena desc por seconds y devuelve [] ante fallo", async () => {
     fb.getDocs.mockResolvedValueOnce(
       snapOf([
@@ -452,6 +473,15 @@ describe("ServiceActions · Deletion Requests (RGPD supresión)", () => {
     expect(payload.status).toBe("pending");
   });
 
+  it("createServiceDeletionRequest bloquea si se supera el rate limit (P2-6 / rate_limited)", async () => {
+    for (let i = 0; i < 3; i++) {
+      await createServiceDeletionRequest(fakeDb, { ...deletionFixture, id: `del-rl-${i}` });
+    }
+    await expect(createServiceDeletionRequest(fakeDb, { ...deletionFixture, id: "del-rl-over" })).rejects.toMatchObject(
+      { code: "rate_limited" },
+    );
+  });
+
   it("getUserDeletionRequests ordena y traga errores", async () => {
     fb.getDocs.mockResolvedValueOnce(
       snapOf([
@@ -503,6 +533,23 @@ describe("ServiceActions · Reports (reportes de datos)", () => {
     expect(ref).toMatchObject({ kind: "doc", name: "service_reports", id: "rep-1" });
     expect(payload.status).toBe("pending");
     expect(payload.createdAt).toEqual({ serverTimestamp: true });
+  });
+
+  it("createServiceReport bloquea si se supera el rate limit (P2-6 / rate_limited)", async () => {
+    const reportData = {
+      serviceId: "svc-r",
+      serviceName: "Restaurante X",
+      reporterUid: "u-rate-limit",
+      reporterEmail: "rep@example.com",
+      category: "horario_incorrecto" as const,
+      description: "Cierra los lunes",
+    };
+    for (let i = 0; i < 5; i++) {
+      await createServiceReport(fakeDb, { ...reportData, id: `rep-rl-${i}` });
+    }
+    await expect(createServiceReport(fakeDb, { ...reportData, id: "rep-rl-over" })).rejects.toMatchObject({
+      code: "rate_limited",
+    });
   });
 
   it("getAllReports mapea documentos y devuelve [] ante fallo", async () => {

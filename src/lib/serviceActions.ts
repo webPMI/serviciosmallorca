@@ -16,12 +16,18 @@ import {
 import { reportClientFailure } from "./clientTelemetry";
 import { buildClaimedOverridePayload, getServiceOverrideFresh } from "./serviceOverrides";
 import { slugify } from "./ownershipValidation";
+import { checkRateLimit } from "./managerSecurityEngine";
 
 export type RequestStatus = "pending" | "approved" | "rejected" | "processed";
 
 /** Códigos de error de negocio del flujo de solicitudes (nunca mensajes ambiguos). */
 export type ServiceRequestErrorCode =
-  "duplicate_claim" | "already_claimed" | "missing_business" | "claim_not_found" | "ownership_conflict";
+  | "duplicate_claim"
+  | "already_claimed"
+  | "missing_business"
+  | "claim_not_found"
+  | "ownership_conflict"
+  | "rate_limited";
 
 /**
  * Error tipado de las solicitudes de titularidad. La UI lo traduce a un mensaje
@@ -192,6 +198,17 @@ export async function createServiceClaim(
   claim: Omit<ServiceClaim, "status" | "createdAt">,
 ): Promise<string> {
   const claimId = claim.id?.trim() ? claim.id : buildClaimId(claim.serviceId, claim.applicantUid);
+
+  // 0) Rate limiting (P2-6 / INV-04): control de bombardeo en la creación de solicitudes
+  const claimRate = checkRateLimit(`claim:${claim.applicantUid}:${claim.serviceId}`, 5, 60000);
+  if (!claimRate.allowed) {
+    throw new ServiceRequestError(
+      "rate_limited",
+      "Demasiadas solicitudes de reclamación en poco tiempo. Por favor espera un momento antes de volver a intentarlo.",
+      { applicantUid: claim.applicantUid, serviceId: claim.serviceId },
+    );
+  }
+
   const fullClaim: ServiceClaim = {
     ...claim,
     id: claimId,
@@ -475,6 +492,15 @@ export async function createServiceSubmission(
   db: Firestore,
   submission: Omit<ServiceSubmission, "status" | "createdAt">,
 ): Promise<void> {
+  const subRate = checkRateLimit(`submission:${submission.applicantUid}`, 5, 60000);
+  if (!subRate.allowed) {
+    throw new ServiceRequestError(
+      "rate_limited",
+      "Demasiadas propuestas de alta enviadas en poco tiempo. Por favor espera unos minutos antes de enviar otra.",
+      { applicantUid: submission.applicantUid },
+    );
+  }
+
   const subRef = doc(db, "service_submissions", submission.id);
   await setDoc(subRef, {
     ...submission,
@@ -612,6 +638,15 @@ export async function createServiceDeletionRequest(
   db: Firestore,
   request: Omit<ServiceDeletionRequest, "status" | "createdAt">,
 ): Promise<void> {
+  const delRate = checkRateLimit(`deletion:${request.applicantUid}:${request.serviceId}`, 3, 60000);
+  if (!delRate.allowed) {
+    throw new ServiceRequestError(
+      "rate_limited",
+      "Demasiadas solicitudes de baja en poco tiempo. Por favor espera un momento.",
+      { applicantUid: request.applicantUid, serviceId: request.serviceId },
+    );
+  }
+
   const delRef = doc(db, "service_deletion_requests", request.id);
   await setDoc(delRef, {
     ...request,
@@ -667,6 +702,16 @@ export async function createServiceReport(
   db: Firestore,
   data: Omit<ServiceReport, "status" | "createdAt" | "updatedAt">,
 ): Promise<void> {
+  const reportKey = data.reporterUid ? `report:${data.reporterUid}` : `report:${data.serviceId}`;
+  const repRate = checkRateLimit(reportKey, 5, 60000);
+  if (!repRate.allowed) {
+    throw new ServiceRequestError(
+      "rate_limited",
+      "Demasiados reportes enviados en poco tiempo. Por favor espera un momento.",
+      { serviceId: data.serviceId },
+    );
+  }
+
   const docRef = doc(db, "service_reports", data.id);
   await setDoc(docRef, {
     ...data,

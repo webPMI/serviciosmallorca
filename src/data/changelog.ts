@@ -57,7 +57,7 @@ export interface ReleaseLog {
 
 export const CURRENT_PLATFORM_VERSION = "0.10";
 export const PLATFORM_RELEASE_DATE = "2026-09-29";
-export const PLATFORM_LAST_BUILD_TIMESTAMP = "2026-09-29T14:45:00+02:00";
+export const PLATFORM_LAST_BUILD_TIMESTAMP = "2026-09-29T15:10:00+02:00";
 
 /**
  * Devuelve la fecha y hora formateada de la última actualización según el idioma.
@@ -320,6 +320,27 @@ export const CHANGELOG_RELEASES: ReleaseLog[] = [
           en: "Optimal Shield",
           ca: "Blindat Òptim",
           de: "Optimaler Schutz",
+        },
+      },
+      {
+        category: "SECURITY",
+        title: {
+          es: "Control de tasa (Rate Limiting) en solicitudes de titularidad y reporte",
+          en: "Rate limiting on ownership claims and reporting requests",
+          ca: "Control de taxa (Rate Limiting) en sol·licituds de titularitat i report",
+          de: "Ratenbegrenzung (Rate Limiting) bei Inhaberschaftsanträgen und Meldungen",
+        },
+        description: {
+          es: "Se activó el control de tasa con checkRateLimit en reclamación de negocio, alta de propuestas, solicitud de supresión RGPD y reportes, mitigando ataques de fuerza bruta y bombardeo de peticiones (P2-6).",
+          en: "Activated rate limiting via checkRateLimit across business claims, submissions, GDPR deletion requests, and error reports, mitigating brute-force and request flooding attacks (P2-6).",
+          ca: "S'ha activat el control de taxa amb checkRateLimit a reclamacions, altes, sol·licituds de supressió RGPD i reports, mitigant atacs de força bruta (P2-6).",
+          de: "Ratenbegrenzung via checkRateLimit für Unternehmensansprüche, Neuanmeldungen, DSGVO-Löschanfragen und Berichte aktiviert, um Brute-Force- und Überflutungsangriffe abzuwehren (P2-6).",
+        },
+        badgeText: {
+          es: "Rate Limiting P2-6",
+          en: "Rate Limiting P2-6",
+          ca: "Rate Limiting P2-6",
+          de: "Rate Limiting P2-6",
         },
       },
     ],

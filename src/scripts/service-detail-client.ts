@@ -198,7 +198,10 @@ export function initServiceDetailClient() {
 
         // CORRECCIÓN CRÍTICA #6: Sanitización y validación unificada (P1-4)
         const name = sanitizeText((document.getElementById("claim-name") as HTMLInputElement).value, 100);
-        const email = sanitizeText((document.getElementById("claim-email") as HTMLInputElement).value, 120).toLowerCase();
+        const email = sanitizeText(
+          (document.getElementById("claim-email") as HTMLInputElement).value,
+          120,
+        ).toLowerCase();
         const phone = sanitizeText((document.getElementById("claim-phone") as HTMLInputElement).value, 30);
         const cif = sanitizeText((document.getElementById("claim-cif") as HTMLInputElement).value, 255);
 
@@ -264,6 +267,8 @@ export function initServiceDetailClient() {
           errorMessage = labels.claimDuplicate || err.message;
         } else if (err?.code === "already_claimed") {
           errorMessage = labels.claimAlreadyClaimed || err.message;
+        } else if (err?.code === "rate_limited") {
+          errorMessage = labels.claimRateLimited || err.message;
         } else if (err.code === "firestore/permission-denied") {
           errorMessage = "No tienes permisos para realizar esta acción";
         } else if (err.code === "firestore/unavailable") {
