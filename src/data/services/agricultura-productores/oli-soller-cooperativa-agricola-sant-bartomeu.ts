@@ -21,6 +21,7 @@ export const oli_soller_cooperativa_agricola_sant_bartomeu: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:soller", "product:enoturismo", "mod:walk-in"],

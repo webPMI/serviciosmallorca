@@ -21,6 +21,7 @@ export const studio_botanico_palma_spa_wellness: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:palma-centro", "product:premium", "mod:cita-previa"],

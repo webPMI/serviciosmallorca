@@ -21,6 +21,7 @@ export const gordian_tattoo_palma_custom_ink: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:palma-centro", "product:fine-line", "mod:cita-previa"],

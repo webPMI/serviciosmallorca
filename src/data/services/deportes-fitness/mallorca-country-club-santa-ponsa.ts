@@ -21,6 +21,7 @@ export const mallorca_country_club_santa_ponsa: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:santa-ponsa", "product:lujo", "mod:en-local", "aud:expat"],

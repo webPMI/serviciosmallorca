@@ -21,6 +21,7 @@ export const lucie_hauri_real_estate_santanyi: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:santanyi", "product:lujo", "mod:cita-previa", "aud:expat"],

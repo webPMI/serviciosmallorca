@@ -18,6 +18,7 @@ export const CROSSFIT_DRAGON_PALMA: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: true,
   status: "open",
   tags: ["product:crossfit", "product:boxeo-artes-marciales", "zona:palma-centro"],

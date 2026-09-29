@@ -18,6 +18,7 @@ export const libreriaAllIOliPalma: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:palma-centro", "product:premium", "mod:en-local", "aud:familias", "aud:expat"],

@@ -21,6 +21,7 @@ export const rent_march_bike_pollensa_cycling: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:port-de-pollenca", "product:premium", "mod:walk-in", "aud:expat"],

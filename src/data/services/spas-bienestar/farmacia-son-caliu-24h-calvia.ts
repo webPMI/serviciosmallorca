@@ -21,6 +21,7 @@ export const farmacia_son_caliu_24h_calvia: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:calvia-andratx", "product:accesible", "mod:walk-in"],

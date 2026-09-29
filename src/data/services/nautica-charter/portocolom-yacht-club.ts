@@ -18,6 +18,7 @@ export const clubNauticPortocolomService: ServiceItem = {
   rating: 4.7,
   reviewCount: 450,
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: true,
   status: "open",
   priceRange: "€€",

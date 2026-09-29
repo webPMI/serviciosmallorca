@@ -21,6 +21,7 @@ export const mudanzas_guardamuebles_balear_llucmajor_transports: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:llucmajor", "product:accesible", "mod:cita-previa"],

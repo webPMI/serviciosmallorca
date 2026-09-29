@@ -21,6 +21,7 @@ export const ecovinyassa_soller_citricos_ecologicos_huerto: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:soller", "product:premium", "mod:cita-previa", "aud:familias"],

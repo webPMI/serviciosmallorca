@@ -21,6 +21,7 @@ export const garden_center_ebre_verd_manacor: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:manacor-llevant", "product:accesible", "mod:en-local", "aud:familias"],

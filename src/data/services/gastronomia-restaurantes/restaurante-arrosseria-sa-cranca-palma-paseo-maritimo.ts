@@ -21,6 +21,7 @@ export const restaurante_arrosseria_sa_cranca_palma_paseo_maritimo: ServiceItem 
   reviewCountSource: "verified_manual",
   priceRange: "€€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:palma-centro", "product:paellas-arroces", "mod:walk-in"],

@@ -21,6 +21,7 @@ export const agroturismo_son_mercadal_porreres_finca_rural: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:raiguer-pla", "product:lujo", "mod:cita-previa"],

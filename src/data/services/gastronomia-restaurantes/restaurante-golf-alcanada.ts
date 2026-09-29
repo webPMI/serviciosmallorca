@@ -17,6 +17,7 @@ export const restauranteGolfAlcanada: ServiceItem = {
   reviewCount: 680,
   priceRange: "€€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: true,
   status: "open",
   culturalIdentity: "international_luxury",

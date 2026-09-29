@@ -21,6 +21,7 @@ export const balneario_font_santa_thermal_spa_campos: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:campos", "product:lujo", "mod:cita-previa"],

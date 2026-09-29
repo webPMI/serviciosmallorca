@@ -21,6 +21,7 @@ export const can_joan_de_saigo_palma_chocolateria_1700: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:casco-antiguo", "product:traditional", "mod:walk-in"],

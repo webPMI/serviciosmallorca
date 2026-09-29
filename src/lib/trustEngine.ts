@@ -43,13 +43,20 @@ export function getDaysSinceValidation(lastValidatedAt?: string, currentDate: Da
 }
 
 /**
+ * Resuelve la fecha ISO efectiva de la última validación o auditoría del servicio.
+ */
+export function getEffectiveValidationDate(service: ServiceItem): string | undefined {
+  return service.lastValidatedAt || service.lastVerifiedAt || service.createdAt;
+}
+
+/**
  * Calcula el puntaje de confianza dinámico con degradación temporal por obsolescencia.
  * Si un negocio no se audita en 6 meses (>180 días), su puntaje baja un 30%.
  * Si supera 1 año (>365 días), su puntaje baja un 50%.
  */
 export function calculateDecayedConfidenceScore(service: ServiceItem, currentDate: Date = new Date()): number {
   const baseScore = service.confidenceScore ?? (service.verified ? 90 : 50);
-  const days = getDaysSinceValidation(service.lastValidatedAt, currentDate);
+  const days = getDaysSinceValidation(getEffectiveValidationDate(service), currentDate);
 
   if (days > ONE_YEAR_DAYS) {
     return Math.max(20, Math.round(baseScore * 0.5));
@@ -92,7 +99,7 @@ export function calculateTrustLevel(service: ServiceItem, currentDate: Date = ne
  * Evalúa integralmente la confianza, acciones permitidas y badges del servicio.
  */
 export function evaluateServiceTrust(service: ServiceItem, currentDate: Date = new Date()): TrustEvaluation {
-  const days = getDaysSinceValidation(service.lastValidatedAt, currentDate);
+  const days = getDaysSinceValidation(getEffectiveValidationDate(service), currentDate);
   const effectiveScore = calculateDecayedConfidenceScore(service, currentDate);
   const trustLevel = calculateTrustLevel(service, currentDate);
   const isDecayed = days > SIX_MONTHS_DAYS;

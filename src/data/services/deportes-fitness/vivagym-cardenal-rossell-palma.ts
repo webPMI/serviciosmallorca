@@ -18,6 +18,7 @@ export const VIVAGYM_CARDENAL_ROSSELL_PALMA: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["product:fitness-gym", "zona:palma-centro"],

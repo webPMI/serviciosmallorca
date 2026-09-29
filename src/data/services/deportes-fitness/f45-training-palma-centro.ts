@@ -18,6 +18,7 @@ export const F45_TRAINING_PALMA_CENTRO: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: true,
   status: "open",
   tags: ["product:fitness-gym", "zona:palma-centro"],

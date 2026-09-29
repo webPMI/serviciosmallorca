@@ -18,6 +18,7 @@ export const galeriaKewenigService: ServiceItem = {
   rating: 4.8,
   reviewCount: 160,
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: true,
   status: "open",
   priceRange: "€€€",

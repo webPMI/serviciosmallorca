@@ -21,6 +21,7 @@ export const palma_jump_trampoline_park_ocio: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:palma", "product:familiar", "mod:walk-in", "aud:familias"],

@@ -21,6 +21,7 @@ export const vivers_llinas_campos: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:campos", "product:premium", "mod:en-local", "aud:familias"],

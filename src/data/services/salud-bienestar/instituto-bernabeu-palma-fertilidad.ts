@@ -21,6 +21,7 @@ export const instituto_bernabeu_palma_fertilidad: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:palma", "product:lujo", "mod:en-local", "aud:parejas"],

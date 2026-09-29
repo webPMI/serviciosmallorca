@@ -21,6 +21,7 @@ export const clinica_dental_dra_neus_pico_inca: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:raiguer-pla", "product:accesible", "mod:cita-previa", "aud:familias"],

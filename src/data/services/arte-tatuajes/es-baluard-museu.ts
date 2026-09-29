@@ -18,6 +18,7 @@ export const esBaluardMuseuService: ServiceItem = {
   rating: 4.6,
   reviewCount: 3200,
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: true,
   status: "open",
   priceRange: "€€",

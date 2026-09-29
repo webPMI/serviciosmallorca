@@ -21,6 +21,7 @@ export const clinica_del_pie_mallorca_dr_garcias: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:palma", "product:accesible", "mod:cita-previa", "aud:familias"],

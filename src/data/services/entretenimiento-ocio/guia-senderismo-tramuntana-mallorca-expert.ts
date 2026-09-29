@@ -21,6 +21,7 @@ export const guia_senderismo_tramuntana_mallorca_expert: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:soller", "product:senderismo-rutas", "mod:cita-previa"],

@@ -21,6 +21,7 @@ export const hotel_convent_de_la_missio_palma_boutique: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:palma-centro", "product:lujo", "temps:todo-el-ano"],

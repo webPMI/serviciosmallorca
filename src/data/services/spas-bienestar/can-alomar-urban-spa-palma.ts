@@ -18,6 +18,7 @@ export const can_alomar_urban_spa_palma: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: true,
   status: "open",
   tags: ["zona:palma-centro"],

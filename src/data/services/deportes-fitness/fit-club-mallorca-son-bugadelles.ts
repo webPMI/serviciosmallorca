@@ -18,6 +18,7 @@ export const FIT_CLUB_MALLORCA_SON_BUGADELLES: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: true,
   status: "open",
   tags: ["product:fitness-gym", "product:boxeo-artes-marciales", "zona:santa-ponsa"],

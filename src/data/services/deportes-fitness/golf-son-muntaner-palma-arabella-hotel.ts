@@ -21,6 +21,7 @@ export const golf_son_muntaner_palma_arabella_hotel: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:palma-centro", "product:golf", "mod:cita-previa"],

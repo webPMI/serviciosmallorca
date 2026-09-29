@@ -21,6 +21,7 @@ export const club_nautico_can_picafort_escuela_vela_kayak: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:muro", "product:vela-ligera", "mod:cita-previa"],

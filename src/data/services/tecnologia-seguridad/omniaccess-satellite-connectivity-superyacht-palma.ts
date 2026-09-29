@@ -21,6 +21,7 @@ export const omniaccess_satellite_connectivity_superyacht_palma: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:palma", "product:lujo", "mod:cita-previa", "aud:b2b"],

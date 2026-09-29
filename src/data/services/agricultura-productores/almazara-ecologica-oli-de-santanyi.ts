@@ -21,6 +21,7 @@ export const almazara_ecologica_oli_de_santanyi: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:santanyi-migjorn", "product:enoturismo", "mod:cita-previa"],

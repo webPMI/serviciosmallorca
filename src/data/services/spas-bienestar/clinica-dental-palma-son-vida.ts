@@ -18,6 +18,7 @@ export const clinica_dental_palma_son_vida: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: true,
   status: "open",
   tags: ["zona:palma-centro"],

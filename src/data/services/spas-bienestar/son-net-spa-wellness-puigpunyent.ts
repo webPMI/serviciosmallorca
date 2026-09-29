@@ -18,6 +18,7 @@ export const son_net_spa_wellness_puigpunyent: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: true,
   status: "open",
   tags: ["zona:soller"],

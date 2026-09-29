@@ -21,6 +21,7 @@ export const restaurante_sa_llobatera_sineu_celler: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:raiguer-pla", "product:cocina-mallorquina", "mod:walk-in"],

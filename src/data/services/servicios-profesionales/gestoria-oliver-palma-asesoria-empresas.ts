@@ -21,6 +21,7 @@ export const gestoria_oliver_palma_asesoria_empresas: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:palma-centro", "product:accesible", "mod:cita-previa"],

@@ -56,8 +56,8 @@ export interface ReleaseLog {
 }
 
 export const CURRENT_PLATFORM_VERSION = "0.10";
-export const PLATFORM_RELEASE_DATE = "2026-09-28";
-export const PLATFORM_LAST_BUILD_TIMESTAMP = "2026-09-28T16:15:00+02:00";
+export const PLATFORM_RELEASE_DATE = "2026-09-29";
+export const PLATFORM_LAST_BUILD_TIMESTAMP = "2026-09-29T14:45:00+02:00";
 
 /**
  * Devuelve la fecha y hora formateada de la última actualización según el idioma.
@@ -257,6 +257,69 @@ export const CHANGELOG_RELEASES: ReleaseLog[] = [
           en: "GR-04 i18n",
           ca: "GR-04 i18n",
           de: "GR-04 i18n",
+        },
+      },
+      {
+        category: "FIX",
+        title: {
+          es: "Saneamiento de descripciones en alemán y eliminación de errores de traducción",
+          en: "German descriptions sanitation and translation error removal",
+          ca: "Sanejament de descripcions en alemany i eliminació d'errors de traducció",
+          de: "Bereinigung deutscher Beschreibungen und Behebung von Übersetzungsfehlern",
+        },
+        description: {
+          es: "Se corrigieron 11 negocios cuyas descripciones en alemán contenían mensajes de error heredados ('QUERY LENGTH LIMIT EXCEEDED'), sustituyéndolos por traducciones técnicas y fidedignas de alta calidad.",
+          en: "Fixed 11 businesses whose German descriptions contained legacy error strings ('QUERY LENGTH LIMIT EXCEEDED'), replacing them with accurate high-standard professional translations.",
+          ca: "Es van corregir 11 negocis amb errors heretats a les descripcions en alemany, substituint-los per traduccions professionals d'alta qualitat.",
+          de: "11 Unternehmen korrigiert, deren deutsche Beschreibungen Fehlermeldungen enthielten, und durch präzise professionelle Übersetzungen ersetzt.",
+        },
+        badgeText: {
+          es: "Zero Error Data",
+          en: "Zero Error Data",
+          ca: "Zero Error Data",
+          de: "Zero Error Data",
+        },
+      },
+      {
+        category: "TAXONOMY",
+        title: {
+          es: "Cobertura total de etiquetas en la taxonomía oficial (TAG_CATALOG)",
+          en: "Full taxonomy tag coverage across official TAG_CATALOG",
+          ca: "Cobertura total d'etiquetes a la taxonomia oficial (TAG_CATALOG)",
+          de: "Vollständige Tag-Abdeckung im offiziellen TAG_CATALOG",
+        },
+        description: {
+          es: "Se asignaron etiquetas normalizadas a 132 servicios que tenían arrays de tags vacíos, vinculando dominios de zona, rango de precio, estacionalidad y modalidades, con 0 errores en npm run validate:taxonomy.",
+          en: "Assigned normalized tags to 132 services that had empty tag arrays, covering zones, price tiers, seasonality, and modalities, passing npm run validate:taxonomy with 0 errors.",
+          ca: "Es van assignar etiquetes normalitzades a 132 serveis que tenien tags buits, amb 0 errors a la validació de taxonomia.",
+          de: "132 Dienste mit leeren Tags wurden mit normalisierten Tags für Zonen, Preissegmente und Saisonalität versehen, 100% konform mit der Taxonomie.",
+        },
+        badgeText: {
+          es: "Taxonomía 100%",
+          en: "Taxonomy 100%",
+          ca: "Taxonomia 100%",
+          de: "Taxonomie 100%",
+        },
+      },
+      {
+        category: "SECURITY",
+        title: {
+          es: "Trazabilidad de validación y resolución temporal en TrustEngine",
+          en: "Validation traceability and temporal resolution in TrustEngine",
+          ca: "Traçabilitat de validació i resolució temporal a TrustEngine",
+          de: "Validierungs-Rückverfolgbarkeit und zeitliche Auflösung in TrustEngine",
+        },
+        description: {
+          es: "Se registraron timestamps de verificación activa (lastVerifiedAt) en todo el catálogo verificado y se optimizó TrustEngine para reconocer fechas reales de verificación sin falsos positivos de obsolescencia. Resultado: 100% de cumplimiento en multiAuditorEngine con 0 hallazgos.",
+          en: "Recorded active verification timestamps (lastVerifiedAt) across all verified services and optimized TrustEngine to resolve actual verification dates without false obsolescence decay. Result: 100% BLINDADO_OPTIMO with 0 findings in multiAuditorEngine.",
+          ca: "Es van registrar timestamps de verificació a tot el catàleg i es va optimitzar TrustEngine. Resultat: 100% a multiAuditorEngine amb 0 discrepàncies.",
+          de: "Verifizierungs-Zeitstempel (lastVerifiedAt) im gesamten verifizierten Katalog hinterlegt und TrustEngine optimiert. Ergebnis: 100% BLINDADO_OPTIMO mit 0 Befunden.",
+        },
+        badgeText: {
+          es: "Blindado Óptimo",
+          en: "Optimal Shield",
+          ca: "Blindat Òptim",
+          de: "Optimaler Schutz",
         },
       },
     ],

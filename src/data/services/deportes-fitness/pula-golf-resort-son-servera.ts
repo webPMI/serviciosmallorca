@@ -18,6 +18,7 @@ export const PULA_GOLF_RESORT_SON_SERVERA: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: true,
   status: "open",
   tags: ["product:golf", "zona:manacor"],

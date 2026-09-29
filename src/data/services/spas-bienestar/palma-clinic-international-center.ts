@@ -18,6 +18,7 @@ export const palma_clinic_international_center: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: true,
   status: "open",
   tags: ["zona:palma-centro"],

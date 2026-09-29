@@ -21,6 +21,7 @@ export const alquiler_scooter_vespa_mallorca_can_pastilla: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:palma-centro", "product:accesible", "mod:online"],

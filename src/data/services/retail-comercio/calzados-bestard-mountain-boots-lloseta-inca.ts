@@ -21,6 +21,7 @@ export const calzados_bestard_mountain_boots_lloseta_inca: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:lloseta", "product:calzado-artesanal", "mod:en-local"],

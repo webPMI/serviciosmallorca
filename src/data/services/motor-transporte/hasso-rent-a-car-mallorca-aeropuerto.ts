@@ -21,6 +21,7 @@ export const hasso_rent_a_car_mallorca_aeropuerto: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:can-pastilla", "product:accesible", "mod:walk-in", "aud:familias"],

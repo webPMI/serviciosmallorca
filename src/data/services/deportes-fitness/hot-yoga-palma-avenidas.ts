@@ -18,6 +18,7 @@ export const HOT_YOGA_PALMA_AVENIDAS: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: true,
   status: "open",
   tags: ["product:yoga-pilates", "zona:palma-centro"],

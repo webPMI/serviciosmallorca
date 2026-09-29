@@ -21,6 +21,7 @@ export const barrats_1890_calzado_inca: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:raiguer-pla", "product:premium", "mod:walk-in"],

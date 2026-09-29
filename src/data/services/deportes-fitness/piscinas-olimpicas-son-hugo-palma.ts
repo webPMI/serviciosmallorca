@@ -18,6 +18,7 @@ export const PISCINAS_OLIMPICAS_SON_HUGO_PALMA: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["product:polideportivo", "product:fitness-gym", "zona:palma-centro"],

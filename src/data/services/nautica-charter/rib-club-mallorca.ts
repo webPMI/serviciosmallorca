@@ -18,6 +18,7 @@ export const ribClubMallorcaService: ServiceItem = {
   rating: 4.9,
   reviewCount: 185,
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: true,
   status: "open",
   priceRange: "€€€",

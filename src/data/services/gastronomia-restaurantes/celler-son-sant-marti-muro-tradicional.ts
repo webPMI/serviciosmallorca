@@ -21,6 +21,7 @@ export const celler_son_sant_marti_muro_tradicional: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:muro", "product:cocina-mallorquina", "mod:walk-in"],

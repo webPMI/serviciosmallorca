@@ -17,6 +17,7 @@ export const restauranteClubNauticArenal: ServiceItem = {
   reviewCount: 1350,
   priceRange: "€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: true,
   status: "open",
   culturalIdentity: "mallorquin_heritage",

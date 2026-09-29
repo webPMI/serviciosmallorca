@@ -21,6 +21,7 @@ export const cesteria_artesana_arta_ses_madones_de_sa_llata: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:arta", "product:cesteria-llata", "mod:en-local"],

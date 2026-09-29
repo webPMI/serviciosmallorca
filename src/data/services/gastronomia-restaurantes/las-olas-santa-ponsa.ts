@@ -17,6 +17,7 @@ export const lasOlasSantaPonsa: ServiceItem = {
   reviewCount: 620,
   priceRange: "€€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   culturalIdentity: "mallorquin_heritage",

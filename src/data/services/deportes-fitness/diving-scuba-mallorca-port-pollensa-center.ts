@@ -21,6 +21,7 @@ export const diving_scuba_mallorca_port_pollensa_center: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:port-de-pollenca", "product:buceo", "mod:walk-in"],

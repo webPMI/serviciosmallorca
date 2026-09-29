@@ -21,6 +21,7 @@ export const restaurante_cas_patro_march_cala_deia: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:tramuntana", "product:premium", "mod:cita-previa"],

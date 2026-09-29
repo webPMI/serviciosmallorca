@@ -21,6 +21,7 @@ export const hospital_veterinario_aragon_palma_24h: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:palma", "product:premium", "mod:en-local", "aud:familias"],

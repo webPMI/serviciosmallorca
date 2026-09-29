@@ -21,6 +21,7 @@ export const inmobiliaria_casas_mallorca_soller: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:tramuntana", "product:lujo", "mod:en-local", "aud:expat"],

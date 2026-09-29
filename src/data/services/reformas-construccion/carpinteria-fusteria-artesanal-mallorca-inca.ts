@@ -21,6 +21,7 @@ export const carpinteria_fusteria_artesanal_mallorca_inca: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:inca", "product:ebanisteria-madera", "mod:cita-previa"],

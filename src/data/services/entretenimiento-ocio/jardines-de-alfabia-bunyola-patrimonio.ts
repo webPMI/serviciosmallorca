@@ -21,6 +21,7 @@ export const jardines_de_alfabia_bunyola_patrimonio: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:esporles", "product:accesible", "mod:walk-in", "aud:familias"],

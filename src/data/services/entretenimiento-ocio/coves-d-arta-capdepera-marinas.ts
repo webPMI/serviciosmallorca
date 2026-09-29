@@ -21,6 +21,7 @@ export const coves_d_arta_capdepera_marinas: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:manacor-llevant", "product:familiar", "mod:walk-in"],

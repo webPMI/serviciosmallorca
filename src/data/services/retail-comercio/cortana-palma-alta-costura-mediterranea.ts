@@ -21,6 +21,7 @@ export const cortana_palma_alta_costura_mediterranea: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:palma", "product:lujo", "mod:walk-in", "aud:parejas"],

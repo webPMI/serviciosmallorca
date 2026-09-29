@@ -21,6 +21,7 @@ export const auditorium_de_palma_de_mallorca: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:palma", "product:premium", "mod:en-local", "aud:familias"],

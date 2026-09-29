@@ -18,6 +18,7 @@ export const dermatologia_estetica_dr_riera_palma: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: true,
   status: "open",
   tags: ["zona:palma-centro", "product:premium", "mod:en-local"],

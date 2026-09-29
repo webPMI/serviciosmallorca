@@ -21,6 +21,7 @@ export const estudio_tatuaje_balear_ink_palma_plaza_patines: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:palma-centro", "product:fine-line", "mod:walk-in"],

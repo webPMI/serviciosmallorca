@@ -21,6 +21,7 @@ export const bconnected_concept_store_santa_catalina: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:santa-catalina", "product:premium", "mod:walk-in", "aud:expat"],

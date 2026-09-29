@@ -21,6 +21,7 @@ export const fusteria_tradicional_inca_madera_noble: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:inca", "product:construccion-villas", "mod:cita-previa"],

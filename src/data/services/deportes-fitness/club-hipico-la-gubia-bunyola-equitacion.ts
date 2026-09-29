@@ -21,6 +21,7 @@ export const club_hipico_la_gubia_bunyola_equitacion: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:esporles", "product:premium", "mod:cita-previa", "aud:familias"],

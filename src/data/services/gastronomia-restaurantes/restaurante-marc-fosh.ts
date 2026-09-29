@@ -10,6 +10,7 @@ export const restauranteMarcFosh: ServiceItem = {
   rating: 4.6,
   reviewCount: 1120,
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: true,
   status: "open",
   seasonality: "year_round",

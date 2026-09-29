@@ -21,6 +21,7 @@ export const centro_buceo_padi_dive_mallorca_port_andratx: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:andratx", "product:buceo", "mod:cita-previa"],

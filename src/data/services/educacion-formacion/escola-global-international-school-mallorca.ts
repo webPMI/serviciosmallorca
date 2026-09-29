@@ -21,6 +21,7 @@ export const escola_global_international_school_mallorca: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: true,
   status: "open",
   tags: ["zona:palma", "product:lujo", "aud:familias", "mod:cita-previa"],

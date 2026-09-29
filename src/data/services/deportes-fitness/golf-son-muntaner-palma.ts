@@ -18,6 +18,7 @@ export const GOLF_SON_MUNTANER_PALMA: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: true,
   status: "open",
   tags: ["product:golf", "zona:palma-centro"],

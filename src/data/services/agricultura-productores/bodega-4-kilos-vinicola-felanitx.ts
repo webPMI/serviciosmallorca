@@ -21,6 +21,7 @@ export const bodega_4_kilos_vinicola_felanitx: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:santanyi-migjorn", "product:lujo", "mod:cita-previa"],

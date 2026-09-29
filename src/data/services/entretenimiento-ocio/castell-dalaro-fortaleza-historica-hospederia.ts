@@ -21,6 +21,7 @@ export const castell_dalaro_fortaleza_historica_hospederia: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:alaro", "product:accesible", "mod:walk-in", "aud:familias"],

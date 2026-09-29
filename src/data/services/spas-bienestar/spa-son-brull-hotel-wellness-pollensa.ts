@@ -21,6 +21,7 @@ export const spa_son_brull_hotel_wellness_pollensa: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:alcudia-pollensa", "product:spa-circuitos-termales", "mod:cita-previa"],

@@ -18,6 +18,7 @@ export const hammam_al_andalus_palma_centro: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: true,
   status: "open",
   tags: ["zona:palma-centro"],

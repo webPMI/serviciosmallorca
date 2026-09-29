@@ -21,6 +21,7 @@ export const climatizacion_aerotermia_balear_inca_calefaccion: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:inca", "product:energia-solar-fotovoltaica", "mod:cita-previa"],

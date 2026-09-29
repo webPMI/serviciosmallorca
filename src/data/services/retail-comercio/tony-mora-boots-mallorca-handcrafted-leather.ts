@@ -21,6 +21,7 @@ export const tony_mora_boots_mallorca_handcrafted_leather: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:alaro", "product:lujo", "mod:walk-in", "aud:expat"],

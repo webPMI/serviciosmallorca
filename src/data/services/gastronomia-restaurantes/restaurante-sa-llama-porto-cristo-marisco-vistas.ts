@@ -21,6 +21,7 @@ export const restaurante_sa_llama_porto_cristo_marisco_vistas: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:manacor", "product:paellas-arroces", "mod:walk-in"],

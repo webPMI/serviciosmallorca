@@ -21,6 +21,7 @@ export const pollentia_properties_mallorca_pollensa: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:alcudia-pollensa", "product:lujo", "mod:cita-previa", "aud:expat"],

@@ -21,6 +21,7 @@ export const limpiezas_villas_mallorca_lux_calvia: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:santa-ponsa", "product:lujo", "mod:a-domicilio"],

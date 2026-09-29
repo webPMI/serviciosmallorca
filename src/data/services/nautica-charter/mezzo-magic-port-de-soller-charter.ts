@@ -21,6 +21,7 @@ export const mezzo_magic_port_de_soller_charter: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:port-de-soller", "product:lujo", "mod:cita-previa", "aud:parejas"],

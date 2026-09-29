@@ -18,6 +18,7 @@ export const MALLORCA_DIVING_CENTER_PORT_POLLENSA: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: true,
   status: "open",
   tags: ["product:deportes-nauticos", "zona:port-de-pollenca"],

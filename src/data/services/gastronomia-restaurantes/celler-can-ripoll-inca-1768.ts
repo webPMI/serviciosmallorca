@@ -21,6 +21,7 @@ export const celler_can_ripoll_inca_1768: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:raiguer-pla", "product:traditional", "mod:walk-in"],

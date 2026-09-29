@@ -18,6 +18,7 @@ export const ccaAndratxService: ServiceItem = {
   rating: 4.7,
   reviewCount: 385,
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: true,
   status: "open",
   priceRange: "€€",

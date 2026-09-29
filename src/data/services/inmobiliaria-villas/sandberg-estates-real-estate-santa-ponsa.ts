@@ -21,6 +21,7 @@ export const sandberg_estates_real_estate_santa_ponsa: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:santa-ponsa", "product:lujo", "mod:cita-previa", "aud:expat"],

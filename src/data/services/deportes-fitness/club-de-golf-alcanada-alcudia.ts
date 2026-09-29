@@ -21,6 +21,7 @@ export const club_de_golf_alcanada_alcudia: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:alcudia-pollensa", "product:lujo", "mod:cita-previa"],

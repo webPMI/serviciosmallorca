@@ -18,6 +18,7 @@ export const PALMA_BOXING_CLUB_SON_ARMADAMS: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: true,
   status: "open",
   tags: ["product:boxeo-artes-marciales", "product:fitness-gym", "zona:palma-centro"],

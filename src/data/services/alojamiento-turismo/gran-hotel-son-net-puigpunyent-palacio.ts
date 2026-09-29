@@ -21,6 +21,7 @@ export const gran_hotel_son_net_puigpunyent_palacio: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:puigpunyent", "product:lujo", "temps:todo-el-ano"],

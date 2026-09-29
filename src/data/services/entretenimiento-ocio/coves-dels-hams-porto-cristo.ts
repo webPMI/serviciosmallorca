@@ -21,6 +21,7 @@ export const coves_dels_hams_porto_cristo: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:manacor", "product:familiar", "mod:walk-in"],

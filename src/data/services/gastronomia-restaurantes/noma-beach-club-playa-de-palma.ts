@@ -21,6 +21,7 @@ export const noma_beach_club_playa_de_palma: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:platja-de-palma", "product:premium", "mod:walk-in"],

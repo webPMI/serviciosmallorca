@@ -18,6 +18,7 @@ export const ROCK_SPORT_CLIMBING_ALARO: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: true,
   status: "open",
   tags: ["product:escalada-rocodromo", "zona:inca"],

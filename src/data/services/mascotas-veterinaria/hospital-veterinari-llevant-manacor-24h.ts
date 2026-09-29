@@ -25,6 +25,7 @@ export const hospital_veterinari_llevant_manacor_24h: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:manacor", "product:accesible", "mod:walk-in"],

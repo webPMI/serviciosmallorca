@@ -21,6 +21,7 @@ export const pell_cuir_can_garau_inca_1954: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:inca", "product:premium", "mod:en-local", "aud:familias"],

@@ -21,6 +21,7 @@ export const assaona_beach_club_palma: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:portixol", "product:lujo", "mod:en-local", "aud:parejas"],

@@ -21,6 +21,7 @@ export const can_garanya_manacor: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:manacor", "product:premium", "mod:en-local", "aud:familias"],

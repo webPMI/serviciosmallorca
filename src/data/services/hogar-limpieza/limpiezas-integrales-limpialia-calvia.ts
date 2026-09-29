@@ -21,6 +21,7 @@ export const limpiezas_integrales_limpialia_calvia: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:calvia-andratx", "product:premium", "mod:a-domicilio", "aud:familias"],

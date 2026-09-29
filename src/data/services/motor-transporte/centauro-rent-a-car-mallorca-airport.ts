@@ -21,6 +21,7 @@ export const centauro_rent_a_car_mallorca_airport: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:platja-de-palma", "product:accesible", "mod:en-local", "aud:familias"],

@@ -21,6 +21,7 @@ export const formatges_es_pinaro_de_ses_mines_lloseta: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:lloseta", "product:premium", "mod:walk-in", "aud:familias"],

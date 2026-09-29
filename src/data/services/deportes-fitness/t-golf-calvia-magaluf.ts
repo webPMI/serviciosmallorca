@@ -18,6 +18,7 @@ export const T_GOLF_CALVIA_MAGALUF: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: true,
   status: "open",
   tags: ["product:golf", "zona:santa-ponsa"],

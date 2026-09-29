@@ -21,6 +21,7 @@ export const club_nautico_puerto_pollensa_escuela_remo: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:alcudia-pollensa", "product:vela-ligera", "mod:cita-previa"],

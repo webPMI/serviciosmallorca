@@ -21,6 +21,7 @@ export const formatgeria_grimalt_lloret_formatge_mallorqui: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:sineu", "product:accesible", "mod:walk-in", "aud:familias"],

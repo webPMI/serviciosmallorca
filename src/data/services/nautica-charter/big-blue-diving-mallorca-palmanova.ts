@@ -21,6 +21,7 @@ export const big_blue_diving_mallorca_palmanova: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:palmanova", "product:accesible", "mod:walk-in", "aud:familias"],

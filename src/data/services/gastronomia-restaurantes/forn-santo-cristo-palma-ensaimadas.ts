@@ -21,6 +21,7 @@ export const forn_santo_cristo_palma_ensaimadas: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:casco-antiguo", "product:traditional", "mod:walk-in"],

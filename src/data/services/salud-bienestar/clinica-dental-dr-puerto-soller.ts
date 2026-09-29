@@ -18,6 +18,7 @@ export const clinica_dental_dr_puerto_soller: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:port-de-soller", "product:premium", "mod:en-local", "aud:expat"],

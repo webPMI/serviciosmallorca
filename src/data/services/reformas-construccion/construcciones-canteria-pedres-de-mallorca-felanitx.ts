@@ -21,6 +21,7 @@ export const construcciones_canteria_pedres_de_mallorca_felanitx: ServiceItem = 
   reviewCountSource: "verified_manual",
   priceRange: "€€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:felanitx", "product:canteria-mares", "mod:cita-previa"],

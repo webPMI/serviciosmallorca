@@ -21,6 +21,7 @@ export const real_cartuja_valldemossa_museo_chopin: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:valldemossa", "product:accesible", "mod:walk-in", "aud:familias"],

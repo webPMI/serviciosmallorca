@@ -21,6 +21,7 @@ export const flor_de_sal_des_trenc_salinas_mallorca: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:ses-salines", "product:premium", "mod:walk-in", "aud:familias"],

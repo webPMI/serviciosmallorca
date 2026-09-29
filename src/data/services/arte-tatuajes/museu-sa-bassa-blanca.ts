@@ -18,6 +18,7 @@ export const museuSaBassaBlancaService: ServiceItem = {
   rating: 4.8,
   reviewCount: 620,
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: true,
   status: "open",
   priceRange: "€€",

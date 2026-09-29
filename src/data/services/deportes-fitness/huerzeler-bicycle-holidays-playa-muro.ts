@@ -18,6 +18,7 @@ export const HUERZELER_BICYCLE_HOLIDAYS_PLAYA_MURO: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: true,
   status: "open",
   tags: ["product:cicloturismo-carretera", "zona:port-de-pollenca"],

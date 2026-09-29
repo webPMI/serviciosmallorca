@@ -21,6 +21,7 @@ export const limpieza_villas_fincas_mallorca_clean_palma: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:calvia-andratx", "product:limpieza-villas", "mod:cita-previa"],

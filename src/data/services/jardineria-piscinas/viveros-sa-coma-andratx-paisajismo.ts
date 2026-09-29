@@ -21,6 +21,7 @@ export const viveros_sa_coma_andratx_paisajismo: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:andratx", "product:premium", "mod:walk-in", "aud:expat"],

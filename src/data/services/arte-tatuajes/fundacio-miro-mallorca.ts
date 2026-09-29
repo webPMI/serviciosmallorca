@@ -18,6 +18,7 @@ export const fundacioMiroMallorcaService: ServiceItem = {
   rating: 4.8,
   reviewCount: 1450,
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: true,
   status: "open",
   priceRange: "€€",

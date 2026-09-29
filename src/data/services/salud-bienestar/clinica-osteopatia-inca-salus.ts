@@ -18,6 +18,7 @@ export const clinica_osteopatia_inca_salus: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:inca", "product:premium", "mod:en-local"],

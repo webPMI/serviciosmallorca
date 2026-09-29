@@ -21,6 +21,7 @@ export const palma_yacht_charter_marina_mallorca: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:paseo-maritimo", "product:lujo", "mod:cita-previa"],

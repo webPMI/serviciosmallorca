@@ -21,6 +21,7 @@ export const bodegas_ribas_consell_enoturismo_1711: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:binissalem", "product:lujo", "mod:cita-previa", "aud:expat"],

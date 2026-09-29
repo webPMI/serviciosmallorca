@@ -21,6 +21,7 @@ export const control_plagas_desinfeccion_mallorca_llucmajor: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:llucmajor", "product:accesible", "mod:a-domicilio"],

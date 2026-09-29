@@ -21,6 +21,7 @@ export const bodega_son_crespi_santa_maria_vi_de_la_terra: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:santa-maria-del-cami", "product:enoturismo", "mod:en-local"],

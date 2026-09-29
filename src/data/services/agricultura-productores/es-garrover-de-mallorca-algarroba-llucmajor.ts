@@ -21,6 +21,7 @@ export const es_garrover_de_mallorca_algarroba_llucmajor: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:llucmajor", "product:premium", "mod:en-local", "aud:familias"],

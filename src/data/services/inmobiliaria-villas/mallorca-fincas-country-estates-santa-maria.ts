@@ -21,6 +21,7 @@ export const mallorca_fincas_country_estates_santa_maria: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:santa-maria-del-cami", "product:lujo", "mod:cita-previa"],

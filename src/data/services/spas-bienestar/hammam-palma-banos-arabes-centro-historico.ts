@@ -21,6 +21,7 @@ export const hammam_palma_banos_arabes_centro_historico: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:casco-antiguo", "product:lujo", "mod:cita-previa"],

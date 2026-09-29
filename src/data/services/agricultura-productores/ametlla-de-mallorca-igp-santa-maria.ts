@@ -21,6 +21,7 @@ export const ametlla_de_mallorca_igp_santa_maria: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:santa-maria-del-cami", "product:premium", "mod:en-local", "aud:familias"],

@@ -21,6 +21,7 @@ export const restaurante_sa_lloca_alcudia_puerto_marisco: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:port-d-alcudia", "product:paellas-arroces", "mod:walk-in"],

@@ -21,6 +21,7 @@ export const escola_de_vela_balear_escola_nautica_palma: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:palma-centro", "product:vela-ligera", "mod:cita-previa"],

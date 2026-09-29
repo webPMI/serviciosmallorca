@@ -18,6 +18,7 @@ export const clinica_nutricion_dietetic_alcudia: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:port-d-alcudia", "product:premium", "mod:en-local", "mod:online", "aud:familias"],

@@ -21,6 +21,7 @@ export const farmacia_plaza_de_espana_24h_palma: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:palma-centro", "product:accesible", "mod:walk-in"],

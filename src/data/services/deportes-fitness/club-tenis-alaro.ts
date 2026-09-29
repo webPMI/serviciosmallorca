@@ -18,6 +18,7 @@ export const CLUB_TENIS_ALARO: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["product:tenis-mallorca", "product:padel-mallorca", "zona:inca"],

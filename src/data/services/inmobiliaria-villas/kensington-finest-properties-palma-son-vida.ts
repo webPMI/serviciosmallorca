@@ -21,6 +21,7 @@ export const kensington_finest_properties_palma_son_vida: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€€€",
   verified: true,
+  lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",
   tags: ["zona:son-vida", "product:lujo", "mod:cita-previa", "aud:expat"],
