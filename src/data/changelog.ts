@@ -5,7 +5,7 @@
  * Cumple con GR-03 (TypeScript estricto) y GR-04 (i18n cuatrilingüe).
  */
 
-export type ReleaseType = "MAJOR" | "MINOR" | "PATCH" | "BETA";
+export type ReleaseType = "MAJOR" | "MINOR" | "PATCH";
 export type ChangelogCategory = "FEATURE" | "FIX" | "PERFORMANCE" | "TAXONOMY" | "SECURITY" | "DOCS";
 
 export interface ChangelogEntry {
@@ -395,39 +395,39 @@ export const CHANGELOG_RELEASES: ReleaseLog[] = [
     type: "MAJOR",
     date: "2026-09-30",
     summary: {
-      es: "Salto histórico a la versión de producción oficial 1.0 (General Availability) de Servicios Mallorca tras completar satisfactoriamente todas las etapas de validación, auditoría multi-agente y blindaje de infraestructura. La plataforma deja atrás la fase preliminar (beta) con un catálogo de más de 950 comercios auditados con datos públicos reales (cero enlaces fabricados), 104 suites con 942 tests automatizados pasando al 100%, flujo de titularidad y reclamación en 3 fases verificado, infraestructura resiliente Edge en Cloudflare Pages y compatibilidad lingüística plena en 4 idiomas (ES, EN, CA, DE).",
-      en: "Historic milestone marking the official 1.0 Production Release (General Availability) of Servicios Mallorca after successfully passing all validation stages, multi-agent audits, and infrastructure hardening. The platform graduates from beta with a catalog of over 950 verified businesses with genuine public data (zero fabricated links), 104 test suites with 942 automated tests passing at 100%, a 3-phase verified ownership and claim flow, high-speed Edge delivery on Cloudflare Pages, and full 4-language parity (ES, EN, CA, DE).",
-      ca: "Fita històrica assolint la versió de producció oficial 1.0 (General Availability) de Serveis Mallorca després de completar amb èxit totes les etapes de validació, auditoria multi-agent i blindatge d'infraestructura. La plataforma deixa enrere la fase beta amb un catàleg de més de 950 comerços auditats amb dades públiques reals (zero enllaços fabricats), 104 suites amb 942 proves automatitzades al 100%, flux de titularitat verificat en 3 fases, infraestructura resilient al Edge de Cloudflare i compatibilitat plena en 4 idiomes (ES, EN, CA, DE).",
-      de: "Historischer Meilenstein mit dem offiziellen 1.0-Produktionsrelease (General Availability) von Servicios Mallorca nach erfolgreichem Abschluss aller Validierungsstufen, Multi-Agenten-Audits und Infrastrukturhärtungen. Die Plattform verlässt die Betaphase mit einem Verzeichnis von über 950 verifizierten Betrieben mit echten öffentlichen Daten (keine erfundenen Links), 104 Test-Suites mit 942 automatisierten Tests bei 100% Erfolgsquote, einem 3-Phasen-Eigentumsverifizierungsablauf, Cloudflare-Edge-Highspeed-Architektur und vollständiger 4-Sprachen-Parität (ES, EN, CA, DE).",
+      es: "Salto histórico a la versión de producción oficial 1.0 (General Availability) de Servicios Mallorca tras completar satisfactoriamente todas las etapas de validación, auditoría multi-agente y blindaje de infraestructura. La plataforma consolida un catálogo de más de 950 comercios auditados con datos públicos reales (cero enlaces fabricados), 104 suites con 942 tests automatizados pasando al 100%, flujo de titularidad y reclamación en 3 fases verificado, infraestructura resiliente Edge en Cloudflare Pages y compatibilidad lingüística plena en 4 idiomas (ES, EN, CA, DE).",
+      en: "Historic milestone marking the official 1.0 Production Release (General Availability) of Servicios Mallorca after successfully passing all validation stages, multi-agent audits, and infrastructure hardening. The platform consolidates a catalog of over 950 verified businesses with genuine public data (zero fabricated links), 104 test suites with 942 automated tests passing at 100%, a 3-phase verified ownership and claim flow, high-speed Edge delivery on Cloudflare Pages, and full 4-language parity (ES, EN, CA, DE).",
+      ca: "Fita històrica assolint la versió de producció oficial 1.0 (General Availability) de Serveis Mallorca després de completar amb èxit totes les etapes de validació, auditoria multi-agent i blindatge d'infraestructura. La plataforma consolida un catàleg de més de 950 comerços auditats amb dades públiques reals (zero enllaços fabricats), 104 suites amb 942 proves automatitzades al 100%, flux de titularitat verificat en 3 fases, infraestructura resilient al Edge de Cloudflare i compatibilitat plena en 4 idiomes (ES, EN, CA, DE).",
+      de: "Historischer Meilenstein mit dem offiziellen 1.0-Produktionsrelease (General Availability) von Servicios Mallorca nach erfolgreichem Abschluss aller Validierungsstufen, Multi-Agenten-Audits und Infrastrukturhärtungen. Die Plattform konsolidiert ein Verzeichnis von über 950 verifizierten Betrieben mit echten öffentlichen Daten (keine erfundenen Links), 104 Test-Suites mit 942 automatisierten Tests bei 100% Erfolgsquote, einem 3-Phasen-Eigentumsverifizierungsablauf, Cloudflare-Edge-Highspeed-Architektur und vollständiger 4-Sprachen-Parität (ES, EN, CA, DE).",
     },
     highlights: {
       es: [
-        "Graduación oficial de fase beta a versión 1.0 de producción estable (General Availability).",
-        "Retirada de los avisos preliminares y optimización de la cabecera para máxima limpieza visual.",
+        "Lanzamiento oficial de la versión 1.0 de producción estable (General Availability).",
+        "Optimización de la cabecera para máxima limpieza visual y rendimiento.",
         "953 comercios y servicios verificados en los 53 municipios de Mallorca con auditoría de datos públicos reales.",
         "104 suites y 942 tests automatizados ejecutándose con tasa de éxito del 100% y cero regresiones.",
         "Flujo integral de titularidad empresarial en 3 fases (reclamar, verificar, editar) con fusión dinámica SSR.",
         "Infraestructura Edge global de alta velocidad (<300ms) con Cloudflare Pages, SSR y D1 resilient telemetry.",
       ],
       en: [
-        "Official graduation from beta to 1.0 stable production (General Availability).",
-        "Retirement of preliminary banners and header optimization for a distraction-free, premium experience.",
+        "Official launch of 1.0 stable production (General Availability).",
+        "Header optimization for a distraction-free, premium experience.",
         "953 verified businesses and services across all 53 Mallorca municipalities with genuine public data audit.",
         "104 test suites and 942 automated tests passing with 100% success rate and zero regressions.",
         "Comprehensive 3-phase business ownership flow (claim, verify, edit) with SSR dynamic data overlay.",
         "Global high-speed Edge infrastructure (<300ms) powered by Cloudflare Pages, SSR, and resilient D1 telemetry.",
       ],
       ca: [
-        "Graduació oficial de fase beta a la versió 1.0 de producció estable (General Availability).",
-        "Retirada dels avisos preliminars i optimització de la capçalera per a una experiència premium i neta.",
+        "Llançament oficial de la versió 1.0 de producció estable (General Availability).",
+        "Optimització de la capçalera per a una experiència premium i neta.",
         "953 comerços i serveis verificats als 53 municipis de Mallorca amb auditoria de dades reals.",
         "104 suites i 942 proves automatitzades executant-se amb un 100% d'èxit i zero regressions.",
         "Flux integral de titularitat empresarial en 3 fases (reclamar, verificar, editar) amb fusió dinàmica SSR.",
         "Infraestructura Edge global d'alta velocitat (<300ms) amb Cloudflare Pages, SSR i telemetria D1 resilient.",
       ],
       de: [
-        "Offizielle Graduierung von der Betaphase zur stabilen 1.0-Produktionsversion (General Availability).",
-        "Entfernung des Beta-Banners und Optimierung der Kopfzeile für ein klares, professionelles Design.",
+        "Offizieller Launch der stabilen 1.0-Produktionsversion (General Availability).",
+        "Optimierung der Kopfzeile für ein klares, professionelles Design.",
         "953 verifizierte Betriebe und Dienstleistungen in allen 53 Gemeinden Mallorcas mit Echtdaten-Audit.",
         "104 Test-Suites und 942 automatisierte Tests mit 100% Erfolgsquote ohne Regressionen.",
         "Vollständiger 3-Phasen-Eigentümer-Workflow (Beanspruchen, Verifizieren, Bearbeiten) mit SSR-Datenfusion.",
@@ -459,10 +459,10 @@ export const CHANGELOG_RELEASES: ReleaseLog[] = [
           de: "Graduierung zur offiziellen Produktion v1.0 (General Availability)",
         },
         description: {
-          es: "Lanzamiento oficial de la plataforma para residentes, visitantes y comercios de Mallorca, eliminando etiquetas beta y desplegando la experiencia de usuario definitiva.",
-          en: "Official platform launch for Mallorca residents, visitors, and businesses, removing beta badges and rolling out the definitive production user experience.",
-          ca: "Llançament oficial de la plataforma per a residents, visitants i comerços de Mallorca, eliminant etiquetes beta.",
-          de: "Offizieller Plattform-Start für Bewohner, Besucher und Unternehmen Mallorcas ohne Beta-Einschränkungen.",
+          es: "Lanzamiento oficial de la plataforma para residentes, visitantes y comercios de Mallorca, desplegando la experiencia de usuario definitiva.",
+          en: "Official platform launch for Mallorca residents, visitors, and businesses, rolling out the definitive production user experience.",
+          ca: "Llançament oficial de la plataforma per a residents, visitants i comerços de Mallorca, desplegant l'experiència d'usuari definitiva.",
+          de: "Offizieller Plattform-Start für Bewohner, Besucher und Unternehmen Mallorcas mit erstklassiger Benutzererfahrung.",
         },
       },
       {
@@ -1358,10 +1358,10 @@ export const CHANGELOG_RELEASES: ReleaseLog[] = [
   {
     version: "0.06",
     versionLabel: {
-      es: "v0.06-beta · GEO (Generative Engine Optimization), Indexación de Agentes IA, Checkout API y Hub de Posicionamiento B2B",
-      en: "v0.06-beta · GEO (Generative Engine Optimization), AI Agent Indexing, Checkout API & B2B Authority Hub",
-      ca: "v0.06-beta · GEO (Generative Engine Optimization), Indexació d'Agents IA, Checkout API i Hub de Posicionament B2B",
-      de: "v0.06-beta · GEO (Generative Engine Optimization), KI-Agenten-Indexierung, Checkout-API & B2B-Positionierungs-Hub",
+      es: "v0.06 · GEO (Generative Engine Optimization), Indexación de Agentes IA, Checkout API y Hub de Posicionamiento B2B",
+      en: "v0.06 · GEO (Generative Engine Optimization), AI Agent Indexing, Checkout API & B2B Authority Hub",
+      ca: "v0.06 · GEO (Generative Engine Optimization), Indexació d'Agents IA, Checkout API i Hub de Posicionament B2B",
+      de: "v0.06 · GEO (Generative Engine Optimization), KI-Agenten-Indexierung, Checkout-API & B2B-Positionierungs-Hub",
     },
     type: "MAJOR",
     date: "2026-09-27",
@@ -1491,12 +1491,12 @@ export const CHANGELOG_RELEASES: ReleaseLog[] = [
   {
     version: "0.05",
     versionLabel: {
-      es: "v0.05-beta · Observatorio Macroeconómico a 20 Años (16 Sectores), Curva Base 100 & Floating WhatsApp FAB",
-      en: "v0.05-beta · 20-Year Historical Observatory (16 Sectors), Base 100 Curve & Floating WhatsApp FAB",
-      ca: "v0.05-beta · Observatori Macroeconòmic a 20 Anys (16 Sectors), Corba Base 100 i Floating WhatsApp FAB",
-      de: "v0.05-beta · 20-Jahre-Makro-Observatorium (16 Branchen), Basis-100-Indexkurve & Floating WhatsApp FAB",
+      es: "v0.05 · Observatorio Macroeconómico a 20 Años (16 Sectores), Curva Base 100 & Floating WhatsApp FAB",
+      en: "v0.05 · 20-Year Historical Observatory (16 Sectors), Base 100 Curve & Floating WhatsApp FAB",
+      ca: "v0.05 · Observatori Macroeconòmic a 20 Anys (16 Sectors), Corba Base 100 i Floating WhatsApp FAB",
+      de: "v0.05 · 20-Jahre-Makro-Observatorium (16 Branchen), Basis-100-Indexkurve & Floating WhatsApp FAB",
     },
-    type: "BETA",
+    type: "MINOR",
     date: "2026-09-05",
     summary: {
       es: "Lanzamiento del Observatorio Histórico Insular a 20 Años (2006–2026) con 16 sectores canónicos (656 puntos semestrales contrastados), comparador cruzado con curva normalizada Base 100, exportador CSV blindado RFC 4180, 16 monografías en el blog con gráficas SVG dinámicas y optimización móvil para el botón flotante de WhatsApp con normalización automática de prefijo telefónico.",
@@ -1628,12 +1628,12 @@ export const CHANGELOG_RELEASES: ReleaseLog[] = [
   {
     version: "0.04",
     versionLabel: {
-      es: "v0.04-beta · Core Web Vitals, Filtros de Intención Rápida & Rate Limiting RGPD",
-      en: "v0.04-beta · Core Web Vitals, Quick Intent Filters & GDPR Rate Limiting",
-      ca: "v0.04-beta · Core Web Vitals, Filtres d'Intenció Ràpida i Rate Limiting RGPD",
-      de: "v0.04-beta · Core Web Vitals, Schnellfilter & DSGVO-Rate-Limiting",
+      es: "v0.04 · Core Web Vitals, Filtros de Intención Rápida & Rate Limiting RGPD",
+      en: "v0.04 · Core Web Vitals, Quick Intent Filters & GDPR Rate Limiting",
+      ca: "v0.04 · Core Web Vitals, Filtres d'Intenció Ràpida i Rate Limiting RGPD",
+      de: "v0.04 · Core Web Vitals, Schnellfilter & DSGVO-Rate-Limiting",
     },
-    type: "BETA",
+    type: "MINOR",
     date: "2026-09-02",
     summary: {
       es: "Optimización de LCP con fetchpriority en imágenes principales, barra de filtros rápidos por intención en el buscador (Abierto ahora, Multilingüe, Terraza, Pet Friendly, Accesible) y blindaje de endpoints con limitador de tasa y anonimización RGPD.",
@@ -1718,12 +1718,12 @@ export const CHANGELOG_RELEASES: ReleaseLog[] = [
   {
     version: "0.03",
     versionLabel: {
-      es: "v0.03-beta · Expansión Deportiva de Élite, 100% Fotos Reales Locales & Blindaje TypeScript",
-      en: "v0.03-beta · Elite Sports Vertical Expansion, 100% Real Local Photos & TypeScript Shielding",
-      ca: "v0.03-beta · Expansió Esportiva d'Elit, 100% Fotos Reals Locals i Blindatge TypeScript",
-      de: "v0.03-beta · Elite-Sportbereich-Erweiterung, 100% Echte Lokale Fotos & TypeScript-Härtung",
+      es: "v0.03 · Expansión Deportiva de Élite, 100% Fotos Reales Locales & Blindaje TypeScript",
+      en: "v0.03 · Elite Sports Vertical Expansion, 100% Real Local Photos & TypeScript Shielding",
+      ca: "v0.03 · Expansió Esportiva d'Elit, 100% Fotos Reals Locals i Blindatge TypeScript",
+      de: "v0.03 · Elite-Sportbereich-Erweiterung, 100% Echte Lokale Fotos & TypeScript-Härtung",
     },
-    type: "BETA",
+    type: "MINOR",
     date: "2026-08-30",
     summary: {
       es: "Incorporación de la vertical deportiva de élite (Rafa Nadal Academy, Palma Tennis Club 1964, Megasport, Vilas Tennis), migración total a fotografías reales locales verificadas en alta resolución y optimizaciones de metadatos sociales para WhatsApp.",
@@ -1806,12 +1806,12 @@ export const CHANGELOG_RELEASES: ReleaseLog[] = [
   {
     version: "0.02",
     versionLabel: {
-      es: "v0.02-beta · Rediseño Editorial del Blog, Directorio Reactivo y Optimizaciones SEO",
-      en: "v0.02-beta · Editorial Blog Redesign, Reactive Directory & SEO Optimizations",
-      ca: "v0.02-beta · Redisseny Editorial del Blog, Directori Reactiu i Optimitzacions SEO",
-      de: "v0.02-beta · Redaktionelles Blog-Redesign, Reaktives Verzeichnis & SEO-Optimierung",
+      es: "v0.02 · Rediseño Editorial del Blog, Directorio Reactivo y Optimizaciones SEO",
+      en: "v0.02 · Editorial Blog Redesign, Reactive Directory & SEO Optimizations",
+      ca: "v0.02 · Redisseny Editorial del Blog, Directori Reactiu i Optimitzacions SEO",
+      de: "v0.02 · Redaktionelles Blog-Redesign, Reaktives Verzeichnis & SEO-Optimierung",
     },
-    type: "BETA",
+    type: "MINOR",
     date: "2026-08-29",
     summary: {
       es: "Gran actualización editorial y visual: nuevo diseño magazine para el blog con TOC sticky y barra de progreso, directorio de servicios con ordenación dinámica y vista de lista/tarjetas, y optimizaciones de SEO/Sitemap globales.",
@@ -1915,18 +1915,18 @@ export const CHANGELOG_RELEASES: ReleaseLog[] = [
   {
     version: "0.01",
     versionLabel: {
-      es: "v0.01-beta · Lanzamiento y Cimentación del Ecosistema Balear",
-      en: "v0.01-beta · Launch & Foundation of the Balearic Ecosystem",
-      ca: "v0.01-beta · Llançament i Fonamentació de l'Ecosistema Balear",
-      de: "v0.01-beta · Start & Grundsteinlegung des Balearen-Ökosystems",
+      es: "v0.01 · Lanzamiento y Cimentación del Ecosistema Balear",
+      en: "v0.01 · Launch & Foundation of the Balearic Ecosystem",
+      ca: "v0.01 · Llançament i Fonamentació de l'Ecosistema Balear",
+      de: "v0.01 · Start & Grundsteinlegung des Balearen-Ökosystems",
     },
-    type: "BETA",
+    type: "MINOR",
     date: "2026-08-28",
     summary: {
-      es: "Primera versión pública beta de Servicios Mallorca: catálogo de 313 comercios auditados mediante búsqueda continua en fuentes oficiales, Cuadro de Honor meritocrático, diseño 100% responsivo y arquitectura de alta velocidad.",
-      en: "First public beta release of Servicios Mallorca: directory of 313 local businesses audited through continuous public research, merit-based Honor Board, 100% responsive design, and high-speed architecture.",
-      ca: "Primera versió pública beta de Serveis Mallorca: catàleg de 313 comerços auditats mitjançant recerca contínua en fonts oficials, Quadre d'Honor meritocràtic, disseny 100% adaptatiu i arquitectura d'alta velocitat.",
-      de: "Erste öffentliche Beta-Version von Servicios Mallorca: Verzeichnis von 313 Betrieben, auditiert durch stetige Recherche offizieller Quellen, Honor Board, 100% responsives Design und Highspeed-Architektur.",
+      es: "Primera versión pública de Servicios Mallorca: catálogo de 313 comercios auditados mediante búsqueda continua en fuentes oficiales, Cuadro de Honor meritocrático, diseño 100% responsivo y arquitectura de alta velocidad.",
+      en: "First public release of Servicios Mallorca: directory of 313 local businesses audited through continuous public research, merit-based Honor Board, 100% responsive design, and high-speed architecture.",
+      ca: "Primera versió pública de Serveis Mallorca: catàleg de 313 comerços auditats mitjançant recerca contínua en fonts oficials, Quadre d'Honor meritocràtic, disseny 100% adaptatiu i arquitectura d'alta velocitat.",
+      de: "Erste öffentliche Version von Servicios Mallorca: Verzeichnis von 313 Betrieben, auditiert durch stetige Recherche offizieller Quellen, Honor Board, 100% responsives Design und Highspeed-Architektur.",
     },
     highlights: {
       es: [

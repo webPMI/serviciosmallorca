@@ -33,7 +33,7 @@ describe("🚀 Changelog & Official Release v1.0 Data Integrity (GR-03, GR-04, G
     const latest = CHANGELOG_RELEASES[0];
     // La entrada más reciente del changelog es la que fija la versión de plataforma (GR-16).
     expect(latest.version).toBe(CURRENT_PLATFORM_VERSION);
-    expect(["MAJOR", "MINOR", "PATCH", "BETA"]).toContain(latest.type);
+    expect(["MAJOR", "MINOR", "PATCH"]).toContain(latest.type);
 
     // Summary i18n
     expect(latest.summary.es).toBeTruthy();
