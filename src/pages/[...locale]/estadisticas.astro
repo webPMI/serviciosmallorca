@@ -506,6 +506,9 @@ const schemaOrg = {
   /* Barra de Filtros */
   .stats-filter-bar {
     margin-bottom: 2rem;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    -webkit-overflow-scrolling: touch;
   }
 
   .filter-buttons-wrapper {
@@ -525,6 +528,16 @@ const schemaOrg = {
     border-radius: var(--border-radius-full, 9999px);
     cursor: pointer;
     transition: all var(--transition-fast, 0.15s ease);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 640px) {
+    .filter-buttons-wrapper {
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      padding: 0 0.5rem;
+    }
   }
 
   .filter-btn:hover {

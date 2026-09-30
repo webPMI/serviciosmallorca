@@ -38,6 +38,15 @@ const isAboutActive = isActive(`${homeUrl}sobre-nosotros`) || currentPath.includ
 const isFavoritesActive = isActive(`${homeUrl}favoritos`) || currentPath.includes("/favoritos");
 const isLoginActive = isActive(`${homeUrl}login`);
 const isRegisterActive = isActive(`${homeUrl}register`);
+const isExploreChildActive =
+  isToursActive ||
+  isHistoryActive ||
+  isStatsActive ||
+  isGuidesActive ||
+  isNormativaActive ||
+  isBlogActive ||
+  isAboutActive ||
+  currentPath.includes("/actualizaciones");
 ---
 
 <header class="navbar-header nav-public">
@@ -172,72 +181,100 @@ const isRegisterActive = isActive(`${homeUrl}register`);
             </div>
           </details>
         </div>
-        <a
-          href={`${homeUrl}tours`}
-          class:list={["nav-link", "nav-drawer-only", { active: isToursActive }]}
-          aria-current={isToursActive ? "page" : undefined}
-        >
-          🗺️ {translations["nav.tours"] || "Rutas & Experiencias"}
-        </a>
-        <a
-          href={`${homeUrl}memoria-historica`}
-          class:list={["nav-link", "nav-drawer-only", { active: isHistoryActive }]}
-          aria-current={isHistoryActive ? "page" : undefined}
-        >
-          🏛️ {translations["nav.history"] || "Memoria Histórica"}
-        </a>
-        <a
-          href={`${homeUrl}estadisticas`}
-          class:list={[
-            "nav-link",
-            "nav-drawer-only",
-            { active: isStatsActive && !currentPath.includes("/comparativas") },
-          ]}
-          aria-current={isStatsActive && !currentPath.includes("/comparativas") ? "page" : undefined}
-        >
-          📊 {translations["nav.stats"] || "Estadísticas"}
-        </a>
-        <a
-          href={`${homeUrl}estadisticas/comparativas`}
-          class:list={["nav-link", "nav-drawer-only", { active: currentPath.includes("/estadisticas/comparativas") }]}
-          aria-current={currentPath.includes("/estadisticas/comparativas") ? "page" : undefined}
-        >
-          📈 {
-            localeTyped === "ca"
-              ? "Comparatives 20 Anys"
-              : localeTyped === "en"
-                ? "20-Yr Comparisons"
-                : localeTyped === "de"
-                  ? "20-Jahre-Vergleich"
-                  : "Comparativas 20 Años"
-          }
-        </a>
-        <a
-          href={`${homeUrl}guias`}
-          class:list={["nav-link", "nav-drawer-only", { active: isGuidesActive }]}
-          aria-current={isGuidesActive ? "page" : undefined}
-        >
-          📋 {translations["nav.guides"] || "Trámites & Guías"}
-        </a>
-        <a
-          href={`${homeUrl}normativa`}
-          class:list={["nav-link", "nav-drawer-only", { active: isNormativaActive }]}
-          aria-current={isNormativaActive ? "page" : undefined}
-        >
-          ⚖️ {
-            localeTyped === "ca"
-              ? "Normativa & BOIB"
-              : localeTyped === "en"
-                ? "Regulations & BOIB"
-                : localeTyped === "de"
-                  ? "Gesetze & BOIB"
-                  : "Normativa & BOIB"
-          }
-        </a>
+        <!-- Mobile Collapsible "Explorar" Accordion -->
+        <details class="drawer-explore-accordion nav-drawer-only" open={isExploreChildActive}>
+          <summary class="drawer-explore-summary">
+            <span>🧭 {translations["nav.section.explore"] || "Más Guías y Exploración"}</span>
+            <span class="drawer-explore-arrow" aria-hidden="true">▾</span>
+          </summary>
+          <div class="drawer-explore-content">
+            <a
+              href={`${homeUrl}tours`}
+              class:list={["drawer-sublink", { active: isToursActive }]}
+              aria-current={isToursActive ? "page" : undefined}
+            >
+              🗺️ {translations["nav.tours"] || "Rutas & Experiencias"}
+            </a>
+            <a
+              href={`${homeUrl}memoria-historica`}
+              class:list={["drawer-sublink", { active: isHistoryActive }]}
+              aria-current={isHistoryActive ? "page" : undefined}
+            >
+              🏛️ {translations["nav.history"] || "Memoria Histórica"}
+            </a>
+            <a
+              href={`${homeUrl}estadisticas`}
+              class:list={[
+                "drawer-sublink",
+                { active: isStatsActive && !currentPath.includes("/comparativas") },
+              ]}
+              aria-current={isStatsActive && !currentPath.includes("/comparativas") ? "page" : undefined}
+            >
+              📊 {translations["nav.stats"] || "Estadísticas"}
+            </a>
+            <a
+              href={`${homeUrl}estadisticas/comparativas`}
+              class:list={["drawer-sublink", { active: currentPath.includes("/estadisticas/comparativas") }]}
+              aria-current={currentPath.includes("/estadisticas/comparativas") ? "page" : undefined}
+            >
+              📈 {
+                localeTyped === "ca"
+                  ? "Comparatives 20 Anys"
+                  : localeTyped === "en"
+                    ? "20-Yr Comparisons"
+                    : localeTyped === "de"
+                      ? "20-Jahre-Vergleich"
+                      : "Comparativas 20 Años"
+              }
+            </a>
+            <a
+              href={`${homeUrl}guias`}
+              class:list={["drawer-sublink", { active: isGuidesActive }]}
+              aria-current={isGuidesActive ? "page" : undefined}
+            >
+              📋 {translations["nav.guides"] || "Trámites & Guías"}
+            </a>
+            <a
+              href={`${homeUrl}normativa`}
+              class:list={["drawer-sublink", { active: isNormativaActive }]}
+              aria-current={isNormativaActive ? "page" : undefined}
+            >
+              ⚖️ {
+                localeTyped === "ca"
+                  ? "Normativa & BOIB"
+                  : localeTyped === "en"
+                    ? "Regulations & BOIB"
+                    : localeTyped === "de"
+                      ? "Gesetze & BOIB"
+                      : "Normativa & BOIB"
+              }
+            </a>
+            <a
+              href={`${homeUrl}blog`}
+              class:list={["drawer-sublink", { active: isBlogActive }]}
+              aria-current={isBlogActive ? "page" : undefined}
+            >
+              📰 {translations["nav.blog"] || "Blog & Guías"}
+            </a>
+            <a
+              href={`${homeUrl}actualizaciones`}
+              class:list={["drawer-sublink", { active: currentPath.includes("/actualizaciones") }]}
+              aria-current={currentPath.includes("/actualizaciones") ? "page" : undefined}
+            >
+              🚀 {translations["nav.changelog"] || "Actualizaciones & Versiones"}
+            </a>
+            <a
+              href={`${homeUrl}sobre-nosotros`}
+              class:list={["drawer-sublink", { active: isAboutActive }]}
+              aria-current={isAboutActive ? "page" : undefined}
+            >
+              🌿 {translations["nav.about"] || "Sobre Nosotros"}
+            </a>
+          </div>
+        </details>
 
         <!-- ── SECCIÓN 2: COMUNIDAD & ÉLITE ── -->
-        <span class="nav-section-title">🌟 {translations["nav.section.community"] || "Comunidad & Reconocimiento"}</span
-        >
+        <span class="nav-section-title">🌟 {translations["nav.section.community"] || "Comunidad & Reconocimiento"}</span>
 
         <a
           href={`${homeUrl}cuadro-de-honor`}
@@ -252,20 +289,6 @@ const isRegisterActive = isActive(`${homeUrl}register`);
           aria-current={isCommunityActive ? "page" : undefined}
         >
           💬 {translations["nav.community"] || "Comunidad"}
-        </a>
-        <a
-          href={`${homeUrl}blog`}
-          class:list={["nav-link", "nav-drawer-only", { active: isBlogActive }]}
-          aria-current={isBlogActive ? "page" : undefined}
-        >
-          📰 {translations["nav.blog"] || "Blog & Guías"}
-        </a>
-        <a
-          href={`${homeUrl}sobre-nosotros`}
-          class:list={["nav-link", "nav-drawer-only", { active: isAboutActive }]}
-          aria-current={isAboutActive ? "page" : undefined}
-        >
-          🌿 {translations["nav.about"] || "Sobre Nosotros"}
         </a>
 
         <!-- ── SECCIÓN 3: EMPRESAS ── -->
@@ -470,6 +493,87 @@ const isRegisterActive = isActive(`${homeUrl}register`);
 
   @media (max-width: 1024px) {
     .nav-explore-dropdown {
+      display: none !important;
+    }
+  }
+
+  /* Mobile Drawer Explore Accordion */
+  .drawer-explore-accordion {
+    width: 100%;
+    margin: 4px 0 8px;
+    border: 1px solid var(--color-surface-border);
+    border-radius: var(--border-radius-md);
+    background: var(--color-surface);
+    overflow: hidden;
+  }
+
+  .drawer-explore-accordion.nav-drawer-only {
+    display: block;
+  }
+
+  .drawer-explore-summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.65rem 0.85rem;
+    font-size: var(--font-size-sm);
+    font-weight: 700;
+    color: var(--color-text);
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+    transition: background-color var(--transition-fast);
+  }
+
+  .drawer-explore-summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .drawer-explore-summary:hover {
+    background-color: var(--color-surface-hover);
+    color: var(--color-primary);
+  }
+
+  .drawer-explore-arrow {
+    font-size: 0.8em;
+    transition: transform var(--transition-fast);
+    color: var(--color-text-muted);
+  }
+
+  .drawer-explore-accordion[open] .drawer-explore-arrow {
+    transform: rotate(180deg);
+  }
+
+  .drawer-explore-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 6px;
+    background: var(--color-surface-hover);
+    border-top: 1px solid var(--color-surface-border);
+  }
+
+  .drawer-sublink {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border-radius: var(--border-radius-sm);
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    color: var(--color-text-light);
+    text-decoration: none;
+    transition: all var(--transition-fast);
+  }
+
+  .drawer-sublink:hover,
+  .drawer-sublink.active {
+    background: var(--color-primary-bg);
+    color: var(--color-primary);
+  }
+
+  @media (min-width: 1025px) {
+    .drawer-explore-accordion {
       display: none !important;
     }
   }

@@ -1329,6 +1329,8 @@ const schemaOrg = {
     border-radius: 20px;
     padding: 0.35rem 0.85rem;
     text-decoration: none;
+    flex-shrink: 0;
+    white-space: nowrap;
     transition:
       background 0.15s ease,
       border-color 0.15s ease,
@@ -2012,7 +2014,18 @@ const schemaOrg = {
     flex-wrap: wrap;
   }
 
+  @media (max-width: 640px) {
+    .theme-filter-chips {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      padding-bottom: 0.35rem;
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+
   .theme-chip-btn {
+    flex-shrink: 0;
+    white-space: nowrap;
     background: var(--color-surface, #f8fafc);
     border: 1px solid var(--color-border, #cbd5e1);
     color: var(--color-text-main, #334155);

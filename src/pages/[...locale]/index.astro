@@ -58,6 +58,9 @@ const featuredPosts = getFeaturedPosts();
 const homeShowcaseServices = pinServiceFirst(featuredServices).slice(0, 8);
 
 const { totalServices, totalReviews, categoryCountMap } = getCatalogStats();
+const sortedHomeCategories = [...activeCategories].sort(
+  (a, b) => (categoryCountMap[b.id] || 0) - (categoryCountMap[a.id] || 0)
+);
 const totalCategories = activeCategories.length;
 const LANGUAGES = 4;
 
@@ -268,22 +271,48 @@ const homepageJsonLd = generateHomepageJsonLd(locale, canonicalUrl);
             </a>
           </div>
 
-          <div class="categories-compact-grid">
-            {activeCategories.map((cat) => {
-              const count = categoryCountMap[cat.id] || 0;
-              return (
-                <a href={`${prefix}servicios?categoria=${cat.id}`} class="cat-pill-card hover-lift">
-                  <div class="cat-pill-icon">{cat.icon}</div>
-                  <div class="cat-pill-text">
-                    <span class="cat-pill-name">{cat.name[locale]}</span>
-                    <span class="cat-pill-count">
-                      {count} {count === 1 ? "sitio" : "sitios"}
-                    </span>
-                  </div>
-                </a>
-              );
-            })}
+          <div class="categories-compact-grid" id="home-categories-grid">
+            {
+              sortedHomeCategories.map((cat, idx) => {
+                const count = categoryCountMap[cat.id] || 0;
+                const isOverflow = idx >= 12;
+                return (
+                  <a
+                    href={`${prefix}servicios?categoria=${cat.id}`}
+                    class:list={["cat-pill-card", "hover-lift", { "cat-pill-overflow is-collapsed": isOverflow }]}
+                  >
+                    <div class="cat-pill-icon">{cat.icon}</div>
+                    <div class="cat-pill-text">
+                      <span class="cat-pill-name">{cat.name[locale]}</span>
+                      <span class="cat-pill-count">
+                        {count} {count === 1 ? "sitio" : "sitios"}
+                      </span>
+                    </div>
+                  </a>
+                );
+              })
+            }
           </div>
+
+          {
+            sortedHomeCategories.length > 12 && (
+              <div class="categories-toggle-wrapper">
+                <button
+                  type="button"
+                  id="toggle-home-cats-btn"
+                  class="toggle-home-cats-btn"
+                  aria-expanded="false"
+                  data-text-expand={translations["services.pills.viewAll"] || "Ver todas"}
+                  data-text-collapse={translations["services.pills.viewLess"] || "Ver menos"}
+                >
+                  <span class="toggle-home-text">
+                    {translations["services.pills.viewAll"] || "Ver todas las categorías"} ({sortedHomeCategories.length})
+                  </span>
+                  <span class="toggle-home-icon" aria-hidden="true">▾</span>
+                </button>
+              </div>
+            )
+          }
           <AdSenseSlot format="horizontal" slotId="home-mid-banner" />
         </section>
       )
@@ -528,6 +557,29 @@ const homepageJsonLd = generateHomepageJsonLd(locale, canonicalUrl);
       { threshold: 0.3 },
     );
     observer.observe(statsBar);
+  }
+
+  // Categories Expand/Collapse Toggle
+  const toggleHomeCatsBtn = document.getElementById("toggle-home-cats-btn");
+  if (toggleHomeCatsBtn) {
+    toggleHomeCatsBtn.addEventListener("click", () => {
+      const isExpanded = toggleHomeCatsBtn.getAttribute("aria-expanded") === "true";
+      const overflowPills = document.querySelectorAll(".cat-pill-overflow");
+      const textSpan = toggleHomeCatsBtn.querySelector(".toggle-home-text");
+      const expandText = toggleHomeCatsBtn.getAttribute("data-text-expand") || "Ver todas";
+      const collapseText = toggleHomeCatsBtn.getAttribute("data-text-collapse") || "Ver menos";
+      const totalCount = overflowPills.length + 12;
+
+      if (isExpanded) {
+        overflowPills.forEach((el) => el.classList.add("is-collapsed"));
+        toggleHomeCatsBtn.setAttribute("aria-expanded", "false");
+        if (textSpan) textSpan.textContent = `${expandText} (${totalCount})`;
+      } else {
+        overflowPills.forEach((el) => el.classList.remove("is-collapsed"));
+        toggleHomeCatsBtn.setAttribute("aria-expanded", "true");
+        if (textSpan) textSpan.textContent = collapseText;
+      }
+    });
   }
 </script>
 
@@ -808,6 +860,48 @@ const homepageJsonLd = generateHomepageJsonLd(locale, canonicalUrl);
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     gap: 0.75rem;
+  }
+
+  .cat-pill-overflow.is-collapsed {
+    display: none !important;
+  }
+
+  .categories-toggle-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.25rem;
+  }
+
+  .toggle-home-cats-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.35rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-surface-border);
+    border-radius: var(--border-radius-full);
+    font-size: var(--font-size-sm);
+    font-weight: 700;
+    color: var(--color-primary);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    box-shadow: var(--shadow-xs);
+  }
+
+  .toggle-home-cats-btn:hover {
+    background: var(--color-primary-bg);
+    border-color: var(--color-primary);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .toggle-home-icon {
+    font-size: 0.85em;
+    transition: transform var(--transition-fast);
+  }
+
+  .toggle-home-cats-btn[aria-expanded="true"] .toggle-home-icon {
+    transform: rotate(180deg);
   }
 
   .cat-pill-card {
