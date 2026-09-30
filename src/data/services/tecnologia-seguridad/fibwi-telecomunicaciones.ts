@@ -5,6 +5,7 @@ export const fibwiTelecomunicaciones: ServiceItem = {
   slug: "fibwi-telecomunicaciones",
   name: "Fibwi Telecomunicaciones Baleares",
   category: "tecnologia-seguridad",
+  sectorId: "tecnologia-seguridad-domotica",
   secondaryCategories: ["servicios-profesionales"],
   zone: "raiguer-pla",
   address: "Carrer dels Menestrals, 14, 07300 Inca, Illes Balears",

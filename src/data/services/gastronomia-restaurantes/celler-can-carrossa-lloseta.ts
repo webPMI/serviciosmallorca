@@ -5,7 +5,7 @@ export const cellerCanCarrossaLloseta: ServiceItem = {
   slug: "celler-can-carrossa-lloseta",
   name: "Celler Can Carrossa (Lloseta - 1928)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "raiguer-pla",
   address: "Carrer Nou, 28, 07360 Lloseta, Mallorca",

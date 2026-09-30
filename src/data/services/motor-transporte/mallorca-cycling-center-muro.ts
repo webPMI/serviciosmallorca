@@ -5,7 +5,7 @@ export const mallorcaCyclingCenter: ServiceItem = {
   slug: "mallorca-cycling-center-muro",
   name: "Mallorca Cycling Center & Taller (Playa de Muro)",
   category: "motor-transporte",
-  sectorId: "motor-movilidad",
+  sectorId: "movilidad-transporte",
   culturalIdentity: "international_luxury",
   rating: 4.9,
   reviewCount: 510,

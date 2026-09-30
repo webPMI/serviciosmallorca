@@ -5,7 +5,7 @@ export const restauranteSaVinyaEsCapdella: ServiceItem = {
   slug: "restaurante-sa-vinya-es-capdella",
   name: "Restaurante Sa Vinya (Es Capdellà - Calvià)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "calvia-andratx",
   address: "Carrer d'en Vinya, 4, 07196 Es Capdellà (Calvià), Mallorca",

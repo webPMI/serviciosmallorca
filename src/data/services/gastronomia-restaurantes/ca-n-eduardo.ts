@@ -5,6 +5,7 @@ export const caNEduardo: ServiceItem = {
   slug: "ca-n-eduardo",
   name: "Restaurante Ca n'Eduardo",
   category: "gastronomia-catering",
+  sectorId: "hosteleria-gastronomia",
   secondaryCategories: [],
   zone: "palma",
   address: "Contramoll Mollet, 3, 07012 Palma, Illes Balears",

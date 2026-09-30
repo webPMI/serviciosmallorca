@@ -5,7 +5,7 @@ export const restauranteElPenon1957Palma: ServiceItem = {
   slug: "restaurante-el-penon-1957-palma",
   name: "Restaurante El Peñón 1957 (Palma - Coll d'en Rabassa)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "palma",
   address: "Carrer Illa de Samos, s/n, 07007 Palma (Coll d'en Rabassa), Mallorca",

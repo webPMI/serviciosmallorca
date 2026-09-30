@@ -5,7 +5,7 @@ export const restauranteCanPescadorPlayaDeMuro: ServiceItem = {
   slug: "restaurante-can-pescador-playa-de-muro",
   name: "Restaurante Ca'n Pescador (Playa de Muro - 2012)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "alcudia-pollensa",
   address: "Avinguda de s'Albufera, s/n (Esq. Carrer Romaní), 07440 Playa de Muro, Mallorca",

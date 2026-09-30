@@ -5,7 +5,7 @@ export const cellerSaVinyaBinissalem: ServiceItem = {
   slug: "celler-sa-vinya-binissalem",
   name: "Celler Sa Vinya (Binissalem - 1980)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "raiguer-pla",
   address: "Carrer del Conquistador, 98, 07350 Binissalem, Mallorca",

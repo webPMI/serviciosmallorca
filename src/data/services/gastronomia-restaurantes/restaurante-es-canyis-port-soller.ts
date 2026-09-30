@@ -5,7 +5,7 @@ export const restauranteEsCanyisPortSoller: ServiceItem = {
   slug: "restaurante-es-canyis-port-soller",
   name: "Restaurante Es Canyís (Port de Sóller - 1954)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "tramuntana",
   address: "Passeig Platja d'en Repic, 21, 07108 Port de Sóller, Mallorca",

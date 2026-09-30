@@ -5,7 +5,7 @@ export const restauranteMarIVentBanyalbufar: ServiceItem = {
   slug: "restaurante-mar-i-vent-banyalbufar",
   name: "Restaurante Mar i Vent (Banyalbufar - 1931)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "tramuntana",
   address: "Carrer Major, 49, 07191 Banyalbufar, Mallorca",

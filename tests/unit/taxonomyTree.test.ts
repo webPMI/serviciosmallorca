@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { TAXONOMY_TREE, inferNicheTags } from "../../src/lib/taxonomyTree";
-import { galeriaKewenigService } from "../../src/data/services/arte-tatuajes/galeria-kewenig";
+import { galeriaKewenigService } from "../../src/data/services/galerias-museos/galeria-kewenig";
 import { kuyenArtTattoo } from "../../src/data/services/arte-tatuajes/kuyen-art-tattoo";
 import { marinaDeCalaDorService } from "../../src/data/services/nautica-charter/marina-de-cala-dor";
 

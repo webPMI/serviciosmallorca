@@ -5,7 +5,7 @@ export const bodegasVinaTaujanaSantaEugenia: ServiceItem = {
   slug: "bodegas-vina-taujana-santa-eugenia",
   name: "Bodegas Vinya Taujana (Santa Eugènia - 1994)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "raiguer-pla",
   address: "Carrer de la Balanguera, 40, 07142 Santa Eugènia, Mallorca",

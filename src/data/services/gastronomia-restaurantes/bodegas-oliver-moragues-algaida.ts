@@ -5,7 +5,7 @@ export const bodegasOliverMoraguesAlgaida: ServiceItem = {
   slug: "bodegas-oliver-moragues-algaida",
   name: "Bodegas Oliver Moragues (Algaida - 1511)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "raiguer-pla",
   address: "Possessió Ses Rotes des Riber - Camí de ses Vinyes, s/n, 07210 Algaida, Mallorca",

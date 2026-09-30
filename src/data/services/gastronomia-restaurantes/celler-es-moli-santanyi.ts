@@ -5,7 +5,7 @@ export const cellerEsMoliSantanyi: ServiceItem = {
   slug: "celler-es-moli-santanyi",
   name: "Celler Es Molí (Santanyí - 1974)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "santanyi-migjorn",
   address: "Carrer Consolació, 19, 07650 Santanyí, Mallorca",

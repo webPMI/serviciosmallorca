@@ -5,7 +5,7 @@ export const fetASollerFabricaGelats: ServiceItem = {
   slug: "fet-a-soller-fabrica-gelats",
   name: "Fet a Sóller & Sa Fàbrica de Gelats (Sóller - 1994)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "tramuntana",
   address: "Plaça des Mercat, s/n, 07100 Sóller, Mallorca",

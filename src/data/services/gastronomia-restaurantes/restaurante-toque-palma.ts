@@ -5,7 +5,7 @@ export const restauranteToquePalma: ServiceItem = {
   slug: "restaurante-toque-palma",
   name: "Restaurante Toque",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-hosteleria",
+  sectorId: "hosteleria-gastronomia",
   culturalIdentity: "international_luxury",
   zone: "palma",
   address: "Carrer de Federico García Lorca, 6, 07014 Palma, Illes Balears",

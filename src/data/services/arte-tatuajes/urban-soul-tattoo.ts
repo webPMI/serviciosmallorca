@@ -7,7 +7,7 @@ export const urbanSoulTattoo: ServiceItem = {
   category: "arte-tatuajes",
   categories: ["arte-tatuajes", "servicios-profesionales"],
   subcategories: ["realismo", "micro-tatuaje", "fine-line", "piercing-titanio", "coverup-arreglo", "tattoo-removal"],
-  sectorId: "arte-cultura",
+  sectorId: "arte-estilo-cultura",
   zone: "palma",
   address: "Passatge Particular Antoni Torrandell, 9, 07003 Palma, Illes Balears",
   addressAccuracy: "verified_manual",

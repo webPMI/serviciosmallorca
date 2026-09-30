@@ -5,7 +5,7 @@ export const bodegasCondeDeSuyrotColoniaSantPere: ServiceItem = {
   slug: "bodegas-conde-de-suyrot-colonia-sant-pere",
   name: "Bodegas Conde de Suyrot (Colònia de Sant Pere - 2006)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "manacor-llevant",
   address: "Carretera de Betlem, Km 6, 07579 Colònia de Sant Pere (Artà), Mallorca",

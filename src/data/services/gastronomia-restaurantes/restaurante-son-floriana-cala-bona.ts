@@ -5,7 +5,7 @@ export const restauranteSonFlorianaCalaBona: ServiceItem = {
   slug: "restaurante-son-floriana-cala-bona",
   name: "Restaurante Son Floriana (Cala Bona - Son Servera)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "manacor-llevant",
   address: "Avinguda Magnòlia, 6, 07550 Cala Bona (Son Servera), Mallorca",

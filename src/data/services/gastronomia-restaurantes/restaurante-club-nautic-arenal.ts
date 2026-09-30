@@ -5,7 +5,7 @@ export const restauranteClubNauticArenal: ServiceItem = {
   slug: "restaurante-club-nautic-arenal",
   name: "Restaurante Club Nàutic S'Arenal (Llucmajor - 1952)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "santanyi-migjorn",
   address: "Carrer de les Roses, s/n, 07600 S'Arenal (Llucmajor), Mallorca",

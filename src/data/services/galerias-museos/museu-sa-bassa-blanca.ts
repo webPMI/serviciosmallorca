@@ -4,7 +4,9 @@ export const museuSaBassaBlancaService: ServiceItem = {
   id: "museu-sa-bassa-blanca-alcudia",
   slug: "museu-sa-bassa-blanca-alcudia",
   name: "Museu Sa Bassa Blanca - Fundación Yannick y Ben Jakober",
-  category: "arte-tatuajes",
+  category: "galerias-arte-exposiciones",
+  sectorId: "arte-estilo-cultura",
+  subcategories: ["galeria-arte-contemporaneo", "exposiciones-mallorca", "patrimonio-cultural"],
   zone: "alcudia-pollensa",
   address: "Camí del Coll Baix, s/n, 07400 Alcúdia, Illes Balears",
   coordinates: {

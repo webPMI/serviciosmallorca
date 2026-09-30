@@ -5,7 +5,7 @@ export const miceliSelva: ServiceItem = {
   slug: "miceli-selva",
   name: "Restaurante Miceli (Chef Marga Coll)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "raiguer-pla",
   address: "Carrer dels Àngels, 11, 07313 Selva, Mallorca",

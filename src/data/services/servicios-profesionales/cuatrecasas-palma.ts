@@ -5,7 +5,7 @@ export const cuatrecasasPalma: ServiceItem = {
   slug: "cuatrecasas-palma",
   name: "Cuatrecasas Abogados Palma",
   category: "servicios-profesionales",
-  sectorId: "legal-financiero",
+  sectorId: "servicios-profesionales-legal",
   culturalIdentity: "international_luxury",
   rating: 4.8,
   reviewCount: 310,

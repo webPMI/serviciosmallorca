@@ -5,7 +5,7 @@ export const casXorcSoller: ServiceItem = {
   slug: "cas-xorc-soller",
   name: "Restaurante Ca's Xorc (Barretes)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "tramuntana",
   address: "Carretera de Deià, Km 56.1, 07100 Sóller, Mallorca",

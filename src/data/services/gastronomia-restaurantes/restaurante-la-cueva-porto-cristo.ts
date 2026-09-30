@@ -5,7 +5,7 @@ export const restauranteLaCuevaPortoCristo: ServiceItem = {
   slug: "restaurante-la-cueva-porto-cristo",
   name: "Restaurante La Cueva (Porto Cristo)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-hosteleria",
+  sectorId: "hosteleria-gastronomia",
   culturalIdentity: "mallorquin_heritage",
   zone: "manacor-llevant",
   address: "Carrer d'en Gual, 34, 07680 Porto Cristo, Manacor, Illes Balears",

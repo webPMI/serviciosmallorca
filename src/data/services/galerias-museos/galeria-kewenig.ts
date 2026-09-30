@@ -4,7 +4,9 @@ export const galeriaKewenigService: ServiceItem = {
   id: "galeria-kewenig-palma",
   slug: "galeria-kewenig-palma",
   name: "Galería Kewenig",
-  category: "arte-tatuajes",
+  category: "galerias-arte-exposiciones",
+  sectorId: "arte-estilo-cultura",
+  subcategories: ["galeria-arte-contemporaneo", "exposiciones-mallorca", "patrimonio-cultural"],
   zone: "palma",
   address: "Carrer de Sant Feliu, 17, 07012 Palma, Illes Balears",
   coordinates: {

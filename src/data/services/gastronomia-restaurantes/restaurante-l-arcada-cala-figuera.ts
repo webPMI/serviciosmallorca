@@ -5,7 +5,7 @@ export const restauranteLArcadaCalaFiguera: ServiceItem = {
   slug: "restaurante-l-arcada-cala-figuera",
   name: "Restaurante L'Arcada (Cala Figuera - 1980)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "santanyi-migjorn",
   address: "Carrer Verge del Carme, 80, 07659 Cala Figuera (Santanyí), Mallorca",

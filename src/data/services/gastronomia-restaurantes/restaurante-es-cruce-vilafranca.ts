@@ -5,7 +5,7 @@ export const restauranteEsCruceVilafranca: ServiceItem = {
   slug: "restaurante-es-cruce-vilafranca",
   name: "Restaurante Es Cruce (Vilafranca de Bonany - 1970)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "raiguer-pla",
   address: "Carretera de Palma a Manacor, Km 41, 07250 Vilafranca de Bonany, Mallorca",

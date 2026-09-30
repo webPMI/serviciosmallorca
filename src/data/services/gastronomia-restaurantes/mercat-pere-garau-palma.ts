@@ -5,7 +5,7 @@ export const mercatPereGarauPalma: ServiceItem = {
   slug: "mercat-pere-garau-palma",
   name: "Mercat de Pere Garau (Palma)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-hosteleria",
+  sectorId: "hosteleria-gastronomia",
   culturalIdentity: "mallorquin_heritage",
   zone: "palma",
   address: "Plaça de Pere Garau, s/n, 07007 Palma, Illes Balears",

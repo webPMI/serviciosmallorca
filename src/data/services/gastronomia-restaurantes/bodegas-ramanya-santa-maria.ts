@@ -5,7 +5,7 @@ export const bodegasRamanyaSantaMaria: ServiceItem = {
   slug: "bodegas-ramanya-santa-maria",
   name: "Bodegas Ramanyà (Santa Maria - 2003)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "raiguer-pla",
   address: "Camí des Coscois, 16, 07320 Santa Maria del Camí, Mallorca",

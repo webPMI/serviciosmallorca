@@ -4,7 +4,9 @@ export const galeriaBaroService: ServiceItem = {
   id: "galeria-baro-palma",
   slug: "galeria-baro-palma",
   name: "Galería Baró",
-  category: "arte-tatuajes",
+  category: "galerias-arte-exposiciones",
+  sectorId: "arte-estilo-cultura",
+  subcategories: ["galeria-arte-contemporaneo", "exposiciones-mallorca", "patrimonio-cultural"],
   zone: "palma",
   address: "Carrer del Carme, 20, 07003 Palma, Illes Balears",
   coordinates: {

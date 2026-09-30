@@ -5,7 +5,7 @@ export const restauranteAgapantoPortSoller: ServiceItem = {
   slug: "restaurante-agapanto-port-soller",
   name: "Restaurante Agapanto (Port de Sóller - 2004)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "tramuntana",
   address: "Camí del Far, 2 (Platja d'en Repic), 07108 Port de Sóller, Mallorca",

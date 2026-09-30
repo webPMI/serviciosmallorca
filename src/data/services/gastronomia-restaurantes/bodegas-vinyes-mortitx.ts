@@ -5,7 +5,7 @@ export const bodegasVinyesMortitx: ServiceItem = {
   slug: "bodegas-vinyes-mortitx",
   name: "Vinyes Mortitx (Escorca - 2001)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "tramuntana",
   address: "Carretera Pollença a Lluc, Km 10,5, 07315 Escorca, Mallorca",

@@ -5,6 +5,7 @@ export const mallorcaSothebysRealty: ServiceItem = {
   slug: "mallorca-sothebys-realty",
   name: "Mallorca Sotheby's International Realty",
   category: "inmobiliaria-villas",
+  sectorId: "inmobiliario-fincas",
   secondaryCategories: ["servicios-profesionales"],
   zone: "palma",
   address: "Carrer del Conquistador, 12, 07001 Palma, Illes Balears",

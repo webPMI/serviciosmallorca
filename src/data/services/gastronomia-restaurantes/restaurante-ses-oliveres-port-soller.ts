@@ -5,7 +5,7 @@ export const restauranteSesOliveresPortSoller: ServiceItem = {
   slug: "restaurante-ses-oliveres-port-soller",
   name: "Restaurante Ses Oliveres (Port de Sóller - 1956)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "tramuntana",
   address: "Passeig des Través, 18, 07108 Port de Sóller, Mallorca",

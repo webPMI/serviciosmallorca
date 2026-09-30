@@ -5,7 +5,7 @@ export const restauranteYachtClubCalaDor: ServiceItem = {
   slug: "restaurante-yacht-club-cala-dor",
   name: "Restaurante Yacht Club Cala d'Or (1974)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "santanyi-migjorn",
   address: "Avinguda de Cala Llonga, s/n, 07660 Cala d'Or (Santanyí), Mallorca",

@@ -5,7 +5,7 @@ export const piscinasPonentAndratx: ServiceItem = {
   slug: "piscinas-spas-ponent-andratx",
   name: "Mantenimiento Piscinas & Spas Ponent (Andratx - 2002)",
   category: "jardineria-piscinas",
-  sectorId: "jardineria-piscinas-mantenimiento",
+  sectorId: "jardineria-paisajismo-piscinas",
   culturalIdentity: "mallorquin_heritage",
   rating: 4.8,
   reviewCount: 140,

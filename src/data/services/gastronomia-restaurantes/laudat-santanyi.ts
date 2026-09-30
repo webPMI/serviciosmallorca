@@ -5,7 +5,7 @@ export const laudatSantanyi: ServiceItem = {
   slug: "laudat-santanyi",
   name: "Restaurante Laudat",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "santanyi-migjorn",
   address: "Carrer de Sant Andreu, 18, 07650 Santanyí, Mallorca",

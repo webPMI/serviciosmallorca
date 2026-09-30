@@ -5,7 +5,7 @@ export const cellerSaPlacaLloseta: ServiceItem = {
   slug: "celler-sa-placa-lloseta",
   name: "Celler Sa Plaça (Lloseta - 1970)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "raiguer-pla",
   address: "Carrer de l'Església, 16, 07360 Lloseta, Mallorca",

@@ -7,7 +7,7 @@ export const inkEnzoTattooMallorca: ServiceItem = {
   category: "arte-tatuajes",
   categories: ["arte-tatuajes", "servicios-profesionales"],
   subcategories: ["realismo", "micro-tatuaje", "fine-line", "blackwork", "coverup-arreglo", "tatuaje-domicilio-villas"],
-  sectorId: "arte-cultura",
+  sectorId: "arte-estilo-cultura",
   sectors: ["arte-cultura", "servicios-premium", "turismo-experiencial"],
   zone: "palma",
   address: "Palma de Mallorca (Estudio & Servicio Exclusivo a Domicilio, Villas y Yates), 07001 Palma, Illes Balears",

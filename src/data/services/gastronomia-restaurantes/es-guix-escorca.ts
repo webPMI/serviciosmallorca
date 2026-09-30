@@ -5,7 +5,7 @@ export const esGuixEscorca: ServiceItem = {
   slug: "es-guix-escorca",
   name: "Restaurante Es Guix (Escorca / Lluc - 1970)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "tramuntana",
   address: "Carrer Baix, 1, 07315 Escorca (Lluc), Mallorca",

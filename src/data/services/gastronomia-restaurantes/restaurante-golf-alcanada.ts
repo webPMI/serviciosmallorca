@@ -5,7 +5,7 @@ export const restauranteGolfAlcanada: ServiceItem = {
   slug: "restaurante-golf-alcanada",
   name: "Restaurante Club de Golf Alcanada (Casa Gallega)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "alcudia-pollensa",
   address: "Carretera del Faro, s/n, 07400 Port d'Alcúdia (Alcanada), Mallorca",

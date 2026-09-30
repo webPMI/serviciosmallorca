@@ -5,7 +5,7 @@ export const restauranteElOlivoDeia: ServiceItem = {
   slug: "restaurante-el-olivo-deia",
   name: "Restaurante El Olivo (Belmond La Residencia - Deià)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-hosteleria",
+  sectorId: "hosteleria-gastronomia",
   culturalIdentity: "mallorquin_heritage",
   zone: "tramuntana",
   address: "Carrer Son Canals, s/n, 07179 Deià, Illes Balears",

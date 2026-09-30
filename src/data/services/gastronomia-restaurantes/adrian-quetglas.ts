@@ -5,6 +5,7 @@ export const adrianQuetglas: ServiceItem = {
   slug: "adrian-quetglas",
   name: "Restaurante Adrián Quetglas",
   category: "gastronomia-catering",
+  sectorId: "hosteleria-gastronomia",
   secondaryCategories: [],
   zone: "palma",
   address: "Passeig de Mallorca, 20, 07012 Palma, Illes Balears",

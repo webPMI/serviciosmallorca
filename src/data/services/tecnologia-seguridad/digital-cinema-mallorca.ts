@@ -5,7 +5,7 @@ export const digitalCinemaMallorca: ServiceItem = {
   slug: "digital-cinema-mallorca",
   name: "Digital Cinema Domótica & Audio Mallorca",
   category: "tecnologia-seguridad",
-  sectorId: "tecnologia-comunicaciones",
+  sectorId: "tecnologia-seguridad-domotica",
   culturalIdentity: "mallorquin_heritage",
   rating: 4.8,
   reviewCount: 220,

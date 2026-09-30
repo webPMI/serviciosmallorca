@@ -5,7 +5,7 @@ export const pinsPadelSantaPonsa: ServiceItem = {
   slug: "pins-padel-santa-ponsa",
   name: "Pins Padel Club Santa Ponsa",
   category: "servicios-profesionales",
-  sectorId: "servicios-profesionales-b2b",
+  sectorId: "servicios-profesionales-legal",
   culturalIdentity: "international_luxury",
   zone: "calvia-andratx",
   address: "Carrer Riu Sil, 2, Santa Ponsa, 07180 Calvià, Illes Balears",

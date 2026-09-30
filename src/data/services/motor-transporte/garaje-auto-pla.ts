@@ -5,7 +5,7 @@ export const garajeAutoPla: ServiceItem = {
   slug: "garaje-auto-pla-inca",
   name: "Garaje Auto-Pla Inca (Taller Mecánico)",
   category: "motor-transporte",
-  sectorId: "motor-movilidad",
+  sectorId: "movilidad-transporte",
   culturalIdentity: "mallorquin_heritage",
   rating: 4.7,
   reviewCount: 310,

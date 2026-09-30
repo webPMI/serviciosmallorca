@@ -5,7 +5,7 @@ export const cellerSaFondaMuro: ServiceItem = {
   slug: "celler-sa-fonda-muro",
   name: "Celler Sa Fonda (Muro - 1930)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "alcudia-pollensa",
   address: "Carrer de Sant Jaume, 1, 07440 Muro, Mallorca",

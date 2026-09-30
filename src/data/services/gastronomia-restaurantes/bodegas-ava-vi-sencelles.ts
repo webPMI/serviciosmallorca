@@ -5,7 +5,7 @@ export const bodegasAvaViSencelles: ServiceItem = {
   slug: "bodegas-ava-vi-sencelles",
   name: "Bodegas AVA Vi (Sencelles - 2014)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "raiguer-pla",
   address: "Camí de Muro, Polígon 9, Parcel·la 40, 07140 Sencelles, Mallorca",

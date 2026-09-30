@@ -4,7 +4,9 @@ export const ccaAndratxService: ServiceItem = {
   id: "cca-andratx-arte-contemporaneo",
   slug: "cca-andratx-arte-contemporaneo",
   name: "CCA Andratx - Centro de Arte Contemporáneo",
-  category: "arte-tatuajes",
+  category: "galerias-arte-exposiciones",
+  sectorId: "arte-estilo-cultura",
+  subcategories: ["galeria-arte-contemporaneo", "exposiciones-mallorca", "patrimonio-cultural"],
   zone: "calvia-andratx",
   address: "Carrer Estanyera, 2, 07150 Andratx, Illes Balears",
   coordinates: {

@@ -5,7 +5,7 @@ export const bodegasSonPuigPuigpunyent: ServiceItem = {
   slug: "bodegas-son-puig-puigpunyent",
   name: "Bodegas Son Puig (Puigpunyent - 1999)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "tramuntana",
   address: "Finca Son Puig, s/n (Ctra. Puigpunyent, km 12,8), 07194 Puigpunyent, Mallorca",

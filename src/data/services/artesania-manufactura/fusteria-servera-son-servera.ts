@@ -21,6 +21,7 @@ export const fusteria_servera_son_servera: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€€",
   verified: true,
+  confidenceScore: 85,
   lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",

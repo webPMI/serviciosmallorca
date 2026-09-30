@@ -5,7 +5,7 @@ export const sieteFuegosSantaPonsa: ServiceItem = {
   slug: "siete-fuegos-santa-ponsa",
   name: "Restaurante 7Fuegos (Club Náutico Santa Ponsa)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "calvia-andratx",
   address: "Vía de la Cruz, s/n, Club Náutico Santa Ponsa, 07180 Santa Ponsa (Calvià), Mallorca",

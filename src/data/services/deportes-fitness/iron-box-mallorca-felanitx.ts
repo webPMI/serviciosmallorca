@@ -18,6 +18,7 @@ export const IRON_BOX_MALLORCA_FELANITX: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€",
   verified: true,
+  confidenceScore: 85,
   lastVerifiedAt: "2026-09-28",
   featured: true,
   status: "open",

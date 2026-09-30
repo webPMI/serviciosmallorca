@@ -4,7 +4,9 @@ export const galeriaMaiorService: ServiceItem = {
   id: "galeria-maior-pollensa",
   slug: "galeria-maior-pollensa",
   name: "Galería Maior",
-  category: "arte-tatuajes",
+  category: "galerias-arte-exposiciones",
+  sectorId: "arte-estilo-cultura",
+  subcategories: ["galeria-arte-contemporaneo", "exposiciones-mallorca", "patrimonio-cultural"],
   zone: "alcudia-pollensa",
   address: "Carrer de Formentor, 6, 07460 Pollença, Illes Balears",
   coordinates: {

@@ -5,7 +5,7 @@ export const bodegasSonRamonLlubi: ServiceItem = {
   slug: "bodegas-son-ramon-llubi",
   name: "Bodegas Son Ramon (Llubí - 1760)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "raiguer-pla",
   address: "Carretera Muro a Inca, Km 4,5, 07430 Llubí, Mallorca",

@@ -5,7 +5,7 @@ export const caPatroMarch: ServiceItem = {
   slug: "ca-s-patro-march",
   name: "Ca's Patro March",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-hosteleria",
+  sectorId: "hosteleria-gastronomia",
   culturalIdentity: "mallorquin_heritage",
   zone: "tramuntana",
   address: "Carrer Sa Cala, 16, 07179 Cala Deià, Illes Balears",

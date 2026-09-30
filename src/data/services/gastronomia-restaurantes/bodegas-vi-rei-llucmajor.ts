@@ -5,7 +5,7 @@ export const bodegasViReiLlucmajor: ServiceItem = {
   slug: "bodegas-vi-rei-llucmajor",
   name: "Bodegas Vi Rei (Llucmajor - 2014)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "santanyi-migjorn",
   address: "Carretera Cap Blanc, Km 25, 07620 Llucmajor, Mallorca",

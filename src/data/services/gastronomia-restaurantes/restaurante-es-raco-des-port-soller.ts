@@ -5,7 +5,7 @@ export const restauranteEsRacoDesPortSoller: ServiceItem = {
   slug: "restaurante-es-raco-des-port-soller",
   name: "Restaurante Es Racó d'es Port (Port de Sóller - 1984)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "tramuntana",
   address: "Passeig Esportiu, 10, 07108 Port de Sóller, Mallorca",

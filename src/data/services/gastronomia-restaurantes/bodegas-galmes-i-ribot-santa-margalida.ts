@@ -5,7 +5,7 @@ export const bodegasGalmesIRibotSantaMargalida: ServiceItem = {
   slug: "bodegas-galmes-i-ribot-santa-margalida",
   name: "Bodegas Galmés i Ribot (Santa Margalida - 1997)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "alcudia-pollensa",
   address: "Ctra. Santa Margalida - Petra, Km 2,4, 07450 Santa Margalida, Mallorca",

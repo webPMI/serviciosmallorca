@@ -5,7 +5,7 @@ export const nautinortChartersPollensa: ServiceItem = {
   slug: "nautinort-charters-pollensa",
   name: "Nautinort Charters & Boats (Port de Pollença - 1991)",
   category: "nautica-charter",
-  sectorId: "nautica-deportes-mar",
+  sectorId: "nautica-maritimo",
   sectors: ["nautica-deportes-mar"],
   zone: "alcudia-pollensa",
   address: "Carretera Pollença al Port (Rotonda Hidroavión), Km 60, 07470 Port de Pollença, Mallorca",

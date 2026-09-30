@@ -5,7 +5,7 @@ export const cellerPagesPalma: ServiceItem = {
   slug: "celler-pages-palma",
   name: "Celler Pagès (Palma - 1956)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "palma",
   address: "Carrer de Felip Bauzà, 2, 07012 Palma (Casco Antiguo), Mallorca",

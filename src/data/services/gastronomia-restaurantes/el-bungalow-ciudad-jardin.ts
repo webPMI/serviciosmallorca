@@ -5,7 +5,7 @@ export const elBungalowCiudadJardin: ServiceItem = {
   slug: "el-bungalow-ciudad-jardin",
   name: "Restaurante El Bungalow (Ciutat Jardí - Palma)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "palma",
   address: "Carrer dels Esculls, 2, 07007 Palma (Ciutat Jardí), Mallorca",

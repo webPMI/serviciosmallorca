@@ -5,7 +5,7 @@ export const restauranteRocamarPortAndratx: ServiceItem = {
   slug: "restaurante-rocamar-port-andratx",
   name: "Restaurante Rocamar (Port d'Andratx - 1968)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "calvia-andratx",
   address: "Avinguda de l'Almirall Riera Alemany, 27, 07157 Port d'Andratx, Mallorca",

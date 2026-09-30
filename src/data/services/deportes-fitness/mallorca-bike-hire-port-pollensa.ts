@@ -18,6 +18,7 @@ export const MALLORCA_BIKE_HIRE_PORT_POLLENSA: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€€",
   verified: true,
+  confidenceScore: 85,
   lastVerifiedAt: "2026-09-28",
   featured: true,
   status: "open",

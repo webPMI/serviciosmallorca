@@ -5,7 +5,7 @@ export const hospitalUniversitariSonEspasesPalma: ServiceItem = {
   slug: "hospital-universitari-son-espases-palma",
   name: "Hospital Universitari Son Espases (Palma)",
   category: "salud-bienestar",
-  sectorId: "spas-bienestar",
+  sectorId: "salud-bienestar-belleza",
   sectors: ["spas-bienestar"],
   zone: "palma",
   address: "Carretera de Valldemossa, 79, 07120 Palma, Illes Balears",

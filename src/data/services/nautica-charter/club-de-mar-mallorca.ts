@@ -5,6 +5,7 @@ export const clubDeMarMallorcaService: ServiceItem = {
   slug: "club-de-mar-mallorca",
   name: "Club de Mar Mallorca",
   category: "nautica-charter",
+  sectorId: "nautica-maritimo",
   zone: "palma",
   address: "Avinguda de Gabriel Roca, s/n, 07015 Palma, Illes Balears",
   coordinates: {

@@ -5,7 +5,7 @@ export const cassaiBeachHouse: ServiceItem = {
   slug: "cassai-beach-house-colonia-sant-jordi",
   name: "Cassai Beach House (Colònia de Sant Jordi)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "santanyi-migjorn",
   address: "Carrer de Gabriel Roca, 3, 07638 Colònia de Sant Jordi (Ses Salines), Mallorca",

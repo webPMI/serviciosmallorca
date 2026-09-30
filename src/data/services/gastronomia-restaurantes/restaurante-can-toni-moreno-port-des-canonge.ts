@@ -5,7 +5,7 @@ export const restauranteCanToniMorenoPortDesCanonge: ServiceItem = {
   slug: "restaurante-can-toni-moreno-port-des-canonge",
   name: "Restaurante Can Toni Moreno (Port des Canonge)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "tramuntana",
   address: "Carrer del Port des Canonge, 2, 07191 Port des Canonge (Banyalbufar), Mallorca",

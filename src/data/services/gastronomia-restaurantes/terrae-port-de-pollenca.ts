@@ -5,7 +5,7 @@ export const terraePortDePollenca: ServiceItem = {
   slug: "terrae-port-de-pollenca",
   name: "Restaurante Terrae (Estrella Verde Michelin)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "alcudia-pollensa",
   address: "Carrer de la Verge del Carme, 28, 07470 Port de Pollença, Mallorca",

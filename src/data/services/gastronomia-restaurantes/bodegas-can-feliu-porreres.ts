@@ -5,7 +5,7 @@ export const bodegasCanFeliuPorreres: ServiceItem = {
   slug: "bodegas-can-feliu-porreres",
   name: "Bodegas Can Feliu (Porreres - 2004)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "raiguer-pla",
   address: "Finca Son Dagueta - Camí de Sa Serra, km 1,2, 07260 Porreres, Mallorca",

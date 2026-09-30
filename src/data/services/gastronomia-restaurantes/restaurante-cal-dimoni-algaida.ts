@@ -5,7 +5,7 @@ export const restauranteCalDimoniAlgaida: ServiceItem = {
   slug: "restaurante-cal-dimoni-algaida",
   name: "Restaurante Ca'l Dimoni (Algaida - 1955)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "raiguer-pla",
   address: "Carretera Palma - Manacor, Km 21, 07210 Algaida, Mallorca",

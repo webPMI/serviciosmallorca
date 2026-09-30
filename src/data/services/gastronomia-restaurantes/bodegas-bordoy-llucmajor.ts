@@ -5,7 +5,7 @@ export const bodegasBordoyLlucmajor: ServiceItem = {
   slug: "bodegas-bordoy-llucmajor",
   name: "Bodegas Bordoy (Llucmajor - 1993)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "santanyi-migjorn",
   address: "Camí de Can Cabrians, s/n (Finca Sa Torre), 07609 Llucmajor, Mallorca",

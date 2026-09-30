@@ -5,6 +5,7 @@ export const clubNauticPortocolomService: ServiceItem = {
   slug: "club-nautic-portocolom",
   name: "Club Nàutic Portocolom",
   category: "nautica-charter",
+  sectorId: "nautica-maritimo",
   zone: "manacor-llevant",
   address: "Carrer dels Pescadors, s/n, 07670 Portocolom, Felanitx, Illes Balears",
   coordinates: {

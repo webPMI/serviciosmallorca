@@ -5,7 +5,7 @@ export const bodegasMaciaBatle: ServiceItem = {
   slug: "bodegas-macia-batle",
   name: "Bodegas Macià Batle (1856)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-hosteleria",
+  sectorId: "hosteleria-gastronomia",
   culturalIdentity: "mallorquin_heritage",
   zone: "raiguer-pla",
   address: "Camí de Coanegra, s/n, 07320 Santa Maria del Camí, Illes Balears",

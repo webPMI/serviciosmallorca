@@ -5,7 +5,7 @@ export const cellerSonToreoSineu: ServiceItem = {
   slug: "celler-son-toreo-sineu",
   name: "Celler Son Toreó (Sineu - 1933)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "raiguer-pla",
   address: "Carrer de Son Torelló, 1, 07510 Sineu, Mallorca",

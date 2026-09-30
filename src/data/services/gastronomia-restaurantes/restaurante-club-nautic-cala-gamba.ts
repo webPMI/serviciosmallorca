@@ -5,7 +5,7 @@ export const restauranteClubNauticCalaGamba: ServiceItem = {
   slug: "restaurante-club-nautic-cala-gamba",
   name: "Restaurante Club Nàutic Cala Gamba (1938)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "palma",
   address: "Passeig Cala Gamba, s/n, 07007 Palma (Coll d'en Rabassa), Mallorca",

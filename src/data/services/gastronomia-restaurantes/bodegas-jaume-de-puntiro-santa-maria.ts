@@ -5,7 +5,7 @@ export const bodegasJaumeDePuntiroSantaMaria: ServiceItem = {
   slug: "bodegas-jaume-de-puntiro-santa-maria",
   name: "Bodegas Jaume de Puntiró (Santa Maria - 1980)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "raiguer-pla",
   address: "Plaça Nova, 23, 07320 Santa Maria del Camí, Mallorca",

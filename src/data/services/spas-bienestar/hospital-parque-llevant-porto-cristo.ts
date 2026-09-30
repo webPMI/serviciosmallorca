@@ -5,7 +5,7 @@ export const hospitalParqueLlevantPortoCristo: ServiceItem = {
   slug: "hospital-parque-llevant-porto-cristo",
   name: "Hospital Parque Llevant (Porto Cristo)",
   category: "salud-bienestar",
-  sectorId: "spas-bienestar",
+  sectorId: "salud-bienestar-belleza",
   sectors: ["spas-bienestar"],
   zone: "manacor-llevant",
   address: "Carrer de l'Escamarlà, 6, 07680 Porto Cristo, Illes Balears",

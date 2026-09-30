@@ -5,7 +5,7 @@ export const bodegasCanVerduraBinissalem: ServiceItem = {
   slug: "bodegas-can-verdura-binissalem",
   name: "Bodegas Can Verdura (Binissalem - 2012)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "raiguer-pla",
   address: "Carrer de s'Era, 6, 07350 Binissalem, Mallorca",

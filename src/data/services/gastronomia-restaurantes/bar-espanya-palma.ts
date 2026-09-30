@@ -5,7 +5,7 @@ export const barEspanyaPalma: ServiceItem = {
   slug: "bar-espanya-palma",
   name: "Bar España (Palma - 1928)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "palma",
   address: "Carrer de Can Escursac, 12, 07001 Palma (Casco Antiguo), Mallorca",

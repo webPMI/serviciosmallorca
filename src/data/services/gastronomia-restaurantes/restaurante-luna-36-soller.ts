@@ -5,7 +5,7 @@ export const restauranteLuna36Soller: ServiceItem = {
   slug: "restaurante-luna-36-soller",
   name: "Restaurante Luna 36 (Sóller - 2013)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "tramuntana",
   address: "Carrer de Sa Lluna, 36, 07100 Sóller, Mallorca",

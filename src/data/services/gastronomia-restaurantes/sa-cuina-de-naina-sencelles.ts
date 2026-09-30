@@ -5,7 +5,7 @@ export const saCuinaDeNainaSencelles: ServiceItem = {
   slug: "sa-cuina-de-naina-sencelles",
   name: "Restaurante Sa Cuina de n'Aina (Sencelles - 1995)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "raiguer-pla",
   address: "Carrer des Rafal, 31, 07140 Sencelles, Mallorca",

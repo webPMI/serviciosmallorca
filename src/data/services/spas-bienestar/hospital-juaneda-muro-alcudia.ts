@@ -5,7 +5,7 @@ export const hospitalJuanedaMuroAlcudia: ServiceItem = {
   slug: "hospital-juaneda-muro-alcudia",
   name: "Hospital Juaneda Muro (Zona Norte)",
   category: "salud-bienestar",
-  sectorId: "spas-bienestar",
+  sectorId: "salud-bienestar-belleza",
   sectors: ["spas-bienestar"],
   zone: "alcudia-pollensa",
   address: "Carrer Veler, 1, 07458 Playa de Muro, Illes Balears",

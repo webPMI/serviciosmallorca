@@ -5,7 +5,7 @@ export const realClubNauticoPalma: ServiceItem = {
   slug: "real-club-nautico-palma",
   name: "Real Club Náutico de Palma Chárter & Vela",
   category: "nautica-charter",
-  sectorId: "motor-nautica",
+  sectorId: "nautica-maritimo",
   culturalIdentity: "mallorquin_heritage",
   zone: "palma",
   address: "Plaça de Sant Pere, 1, 07012 Palma, Illes Balears",

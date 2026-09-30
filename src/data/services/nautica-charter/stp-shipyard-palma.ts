@@ -5,7 +5,7 @@ export const stpShipyardPalma: ServiceItem = {
   slug: "stp-shipyard-palma",
   name: "STP Shipyard Palma (Muelle Viejo)",
   category: "nautica-charter",
-  sectorId: "nautica-charter",
+  sectorId: "nautica-maritimo",
   sectors: ["nautica-charter"],
   zone: "palma",
   address: "Muelle Viejo, Pantalán del Mediterráneo, s/n, 07012 Palma, Illes Balears",

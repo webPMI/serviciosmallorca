@@ -5,7 +5,7 @@ export const bodegasMesquidaMoraPorreres: ServiceItem = {
   slug: "bodegas-mesquida-mora-porreres",
   name: "Bodegas Mesquida Mora (Porreres - 2012)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "raiguer-pla",
   address: "Camí Pas des Frare, s/n, 07260 Porreres, Mallorca",

@@ -5,7 +5,7 @@ export const laHaciendaPeguera: ServiceItem = {
   slug: "la-hacienda-peguera",
   name: "La Hacienda Steak House",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "calvia-andratx",
   address: "Carrer dels Ametllers, 2, 07160 Peguera (Calvià), Mallorca",

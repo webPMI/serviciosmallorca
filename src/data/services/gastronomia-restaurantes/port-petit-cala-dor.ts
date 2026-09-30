@@ -5,7 +5,7 @@ export const portPetitCalaDor: ServiceItem = {
   slug: "port-petit-cala-dor",
   name: "Restaurante Port Petit (Cala d'Or - 1988)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "santanyi-migjorn",
   address: "Carrer del Port Petit, 39, 07660 Cala d'Or (Santanyí), Mallorca",

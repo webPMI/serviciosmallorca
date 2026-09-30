@@ -5,7 +5,7 @@ export const easyBoatsMallorca: ServiceItem = {
   slug: "easy-boats-mallorca-puerto-portals",
   name: "Easy Boats Mallorca",
   category: "nautica-charter",
-  sectorId: "nautica-charter",
+  sectorId: "nautica-maritimo",
   sectors: ["nautica-charter", "turismo-experiencias"],
   zone: "calvia-andratx",
   address: "Local 73, Puerto Portals, 07181 Portals Nous, Calvià, Illes Balears",

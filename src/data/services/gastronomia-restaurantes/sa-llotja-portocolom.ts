@@ -5,7 +5,7 @@ export const saLlotjaPortocolom: ServiceItem = {
   slug: "sa-llotja-portocolom",
   name: "Restaurante Sa Llotja (Portocolom)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "santanyi-migjorn",
   address: "Carrer Pescadors, s/n (Edificio Portuario), 07670 Portocolom (Felanitx), Mallorca",

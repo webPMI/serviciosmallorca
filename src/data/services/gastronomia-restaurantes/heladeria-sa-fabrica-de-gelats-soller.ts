@@ -5,7 +5,7 @@ export const heladeriaSaFabricaDeGelatsSoller: ServiceItem = {
   slug: "heladeria-sa-fabrica-de-gelats-soller",
   name: "Sa Fàbrica de Gelats de Sóller (1994)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-hosteleria",
+  sectorId: "hosteleria-gastronomia",
   culturalIdentity: "mallorquin_heritage",
   zone: "tramuntana",
   address: "Plaça des Mercat, s/n, 07100 Sóller, Illes Balears",

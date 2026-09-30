@@ -5,6 +5,7 @@ export const boxTattooPiercing: ServiceItem = {
   slug: "box-tattoo-piercing",
   name: "Box Tattoo Piercing Palma",
   category: "arte-tatuajes",
+  sectorId: "arte-estilo-cultura",
   secondaryCategories: [],
   zone: "palma",
   address: "Carrer de Jaume II, 12, 07001 Palma, Illes Balears",

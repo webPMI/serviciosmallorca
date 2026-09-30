@@ -5,7 +5,7 @@ export const feraPalma: ServiceItem = {
   slug: "fera-palma",
   name: "Restaurante Fera Palma",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "palma",
   address: "Carrer de la Concepció, 4, 07012 Palma, Mallorca",

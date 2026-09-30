@@ -5,7 +5,7 @@ export const bodegasVinsToniGelabertManacor: ServiceItem = {
   slug: "bodegas-vins-toni-gelabert-manacor",
   name: "Bodegas Vins Toni Gelabert (Manacor - 1993)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "manacor-llevant",
   address: "Camí dels Horts de Llodrà, Km 1,3 (Celler Ses Tres Ermites), 07500 Manacor, Mallorca",

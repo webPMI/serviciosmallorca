@@ -5,7 +5,7 @@ export const stayPortDePollenca: ServiceItem = {
   slug: "stay-port-de-pollenca",
   name: "Restaurante Stay",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "alcudia-pollensa",
   address: "Moll Nou, s/n, 07470 Port de Pollença, Mallorca",

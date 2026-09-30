@@ -5,6 +5,7 @@ export const vandalPalma: ServiceItem = {
   slug: "vandal-palma",
   name: "Restaurante Vandal Palma",
   category: "gastronomia-catering",
+  sectorId: "hosteleria-gastronomia",
   secondaryCategories: [],
   zone: "palma",
   address: "Plaça del Progrés, 15, 07013 Palma, Illes Balears",

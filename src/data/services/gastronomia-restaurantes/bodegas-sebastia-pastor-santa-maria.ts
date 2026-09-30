@@ -5,7 +5,7 @@ export const bodegasSebastiaPastorSantaMaria: ServiceItem = {
   slug: "bodegas-sebastia-pastor-santa-maria",
   name: "Bodegas Sebastià Pastor (Santa Maria - 1937)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "raiguer-pla",
   address: "Carrer Paborde Jaume, 17 / Carrer Mossèn Joan Mesquida, 81, 07320 Santa Maria del Camí, Mallorca",

@@ -5,7 +5,7 @@ export const bodegaBarahonaCasaManolo: ServiceItem = {
   slug: "bodega-barahona-casa-manolo",
   name: "Bodega Barahona - Casa Manolo (Ses Salines - 1945)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "santanyi-migjorn",
   address: "Plaça Sant Bartomeu, 2, 07640 Ses Salines, Mallorca",

@@ -5,7 +5,7 @@ export const canJoanDeSAigoPalma: ServiceItem = {
   slug: "can-joan-de-saigo-palma",
   name: "Can Joan de s'Aigo (Palma - 1700)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "palma",
   address: "Carrer de Can Sanç, 10, 07001 Palma (Casco Antiguo), Mallorca",

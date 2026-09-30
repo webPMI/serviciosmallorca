@@ -5,7 +5,7 @@ export const marYMarPeguera: ServiceItem = {
   slug: "mar-y-mar-peguera",
   name: "Restaurante Mar y Mar",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "calvia-andratx",
   address: "Carrer Pinaret, 1-2, 07160 Peguera (Playa Torà, Calvià), Mallorca",

@@ -5,7 +5,7 @@ export const cellerElMoliPollenca: ServiceItem = {
   slug: "celler-el-moli-pollenca",
   name: "Celler El Molí (Pollença - 1982)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "alcudia-pollensa",
   address: "Carrer del Pare Vives, 72, 07460 Pollença, Mallorca",

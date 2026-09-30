@@ -5,7 +5,7 @@ export const saTorreSantaEugenia: ServiceItem = {
   slug: "sa-torre-santa-eugenia",
   name: "Restaurante Sa Torre de Santa Eugènia (1546)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "raiguer-pla",
   address: "Carretera Santa Maria a Sencelles (MA-3020), Km 7, 07142 Santa Eugènia, Mallorca",

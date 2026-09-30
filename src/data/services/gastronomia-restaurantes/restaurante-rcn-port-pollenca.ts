@@ -5,7 +5,7 @@ export const restauranteRcnPortPollenca: ServiceItem = {
   slug: "restaurante-rcn-port-pollenca",
   name: "Restaurante Reial Club Nàutic Port de Pollença (1961)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "alcudia-pollensa",
   address: "Moll Vell, s/n, 07470 Port de Pollença, Mallorca",

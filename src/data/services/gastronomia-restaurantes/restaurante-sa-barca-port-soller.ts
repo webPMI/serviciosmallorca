@@ -5,7 +5,7 @@ export const restauranteSaBarcaPortSoller: ServiceItem = {
   slug: "restaurante-sa-barca-port-soller",
   name: "Restaurante Sa Barca (Port de Sóller - 2014)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "tramuntana",
   address: "Passeig des Través, 19, 07108 Port de Sóller, Mallorca",

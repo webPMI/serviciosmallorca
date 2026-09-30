@@ -5,7 +5,7 @@ export const restauranteCnCalaRatjada: ServiceItem = {
   slug: "restaurante-cn-cala-ratjada",
   name: "Restaurante Club Nàutic Cala Ratjada (1967)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "manacor-llevant",
   address: "Carrer de Leonor Servera, 74, 07590 Cala Ratjada (Capdepera), Mallorca",

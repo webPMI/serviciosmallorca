@@ -5,7 +5,7 @@ export const farmaciaPortoPi24hPalma: ServiceItem = {
   slug: "farmacia-porto-pi-24h-palma",
   name: "Farmacia Porto Pi 24h (Palma)",
   category: "salud-bienestar",
-  sectorId: "spas-bienestar",
+  sectorId: "salud-bienestar-belleza",
   sectors: ["spas-bienestar"],
   zone: "palma",
   address: "Avinguda de Joan Miró, 186, 07015 Palma, Illes Balears",

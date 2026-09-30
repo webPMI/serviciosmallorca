@@ -5,7 +5,7 @@ export const bodegasVinsNadalBinissalem: ServiceItem = {
   slug: "bodegas-vins-nadal-binissalem",
   name: "Bodegas Vins Nadal (Binissalem - 1932)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "raiguer-pla",
   address: "Carrer de Ramon Llull, 2, 07350 Binissalem, Mallorca",

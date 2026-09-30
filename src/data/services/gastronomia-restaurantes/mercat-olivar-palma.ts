@@ -5,7 +5,7 @@ export const mercatOlivarPalma: ServiceItem = {
   slug: "mercat-olivar-palma",
   name: "Mercat de l'Olivar (Palma)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-hosteleria",
+  sectorId: "hosteleria-gastronomia",
   culturalIdentity: "mallorquin_heritage",
   zone: "palma",
   address: "Plaça de l'Olivar, 4, 07002 Palma, Illes Balears",

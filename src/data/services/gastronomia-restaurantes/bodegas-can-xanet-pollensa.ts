@@ -5,7 +5,7 @@ export const bodegasCanXanetPollensa: ServiceItem = {
   slug: "bodegas-can-xanet-pollensa",
   name: "Bodegas Can Xanet (Pollença - 2008)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "alcudia-pollensa",
   address: "Carretera Pollença - Alcúdia (MA-2200), Km 53, 07460 Pollença, Mallorca",

@@ -5,7 +5,7 @@ export const restauranteCnColoniaSantPere: ServiceItem = {
   slug: "restaurante-cn-colonia-sant-pere",
   name: "Restaurante Club Nàutic Colònia de Sant Pere (1966)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "manacor-llevant",
   address: "Passeig del Mar, 73, 07579 Colònia de Sant Pere (Artà), Mallorca",

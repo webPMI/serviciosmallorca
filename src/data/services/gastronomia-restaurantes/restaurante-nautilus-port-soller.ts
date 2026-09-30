@@ -5,7 +5,7 @@ export const restauranteNautilusPortSoller: ServiceItem = {
   slug: "restaurante-nautilus-port-soller",
   name: "Restaurante Nautilus (Port de Sóller - 1962)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "tramuntana",
   address: "Carrer de Llebeig, 1, 07108 Port de Sóller, Mallorca",

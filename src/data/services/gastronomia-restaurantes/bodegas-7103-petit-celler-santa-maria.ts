@@ -5,7 +5,7 @@ export const bodegas7103PetitCellerSantaMaria: ServiceItem = {
   slug: "bodegas-7103-petit-celler-santa-maria",
   name: "Bodegas 7103 Petit Celler (Santa Maria del Camí - 2011)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "raiguer-pla",
   address: "Carrer de Jaume Oliver Frontera, s/n, 07320 Santa Maria del Camí, Mallorca",

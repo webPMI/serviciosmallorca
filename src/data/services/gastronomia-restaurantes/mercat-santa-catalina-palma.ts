@@ -5,7 +5,7 @@ export const mercatSantaCatalinaPalma: ServiceItem = {
   slug: "mercat-santa-catalina-palma",
   name: "Mercat de Santa Catalina (Palma)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-hosteleria",
+  sectorId: "hosteleria-gastronomia",
   culturalIdentity: "mallorquin_heritage",
   zone: "palma",
   address: "Plaça del Navegació, s/n, 07013 Palma, Illes Balears",

@@ -5,7 +5,7 @@ export const bodegaBiniagual: ServiceItem = {
   slug: "bodega-biniagual",
   name: "Finca & Bodega Biniagual (Binissalem)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-hosteleria",
+  sectorId: "hosteleria-gastronomia",
   culturalIdentity: "mallorquin_heritage",
   zone: "raiguer-pla",
   address: "Llogaret de Biniagual, s/n, 07350 Binissalem, Illes Balears",

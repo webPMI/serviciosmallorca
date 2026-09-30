@@ -5,7 +5,7 @@ export const rusticoPizzeriaPeguera: ServiceItem = {
   slug: "rustico-pizzeria-peguera",
   name: "Rústico Pizzeria & Trattoria (Peguera)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "calvia-andratx",
   address: "Bulevar de Peguera, 61, 07160 Peguera (Calvià), Mallorca",

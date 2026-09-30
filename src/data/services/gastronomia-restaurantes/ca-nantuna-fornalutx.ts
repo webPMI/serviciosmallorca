@@ -5,7 +5,7 @@ export const caNantunaFornalutx: ServiceItem = {
   slug: "ca-nantuna-fornalutx",
   name: "Restaurante Ca N'Antuna (Fornalutx)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "tramuntana",
   address: "Carrer Arbona-Colom, 14, 07109 Fornalutx, Mallorca",

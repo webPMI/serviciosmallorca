@@ -5,7 +5,7 @@ export const hospitalDeManacorLlevant: ServiceItem = {
   slug: "hospital-de-manacor-llevant",
   name: "Hospital de Manacor (Llevant)",
   category: "salud-bienestar",
-  sectorId: "spas-bienestar",
+  sectorId: "salud-bienestar-belleza",
   sectors: ["spas-bienestar"],
   zone: "manacor-llevant",
   address: "Carretera Manacor-Alcúdia, s/n, 07500 Manacor, Illes Balears",

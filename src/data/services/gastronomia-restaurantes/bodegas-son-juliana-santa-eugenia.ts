@@ -5,7 +5,7 @@ export const bodegasSonJulianaSantaEugenia: ServiceItem = {
   slug: "bodegas-son-juliana-santa-eugenia",
   name: "Bodegas Son Juliana (Santa Eugènia - 2013)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "raiguer-pla",
   address: "Carretera Santa Maria - Sencelles, Km 7,2, 07142 Santa Eugènia, Mallorca",

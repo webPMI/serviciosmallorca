@@ -5,6 +5,7 @@ export const puertoPortalsMarina: ServiceItem = {
   slug: "puerto-portals-marina",
   name: "Puerto Portals Marina & Yacht Club",
   category: "nautica-charter",
+  sectorId: "nautica-maritimo",
   secondaryCategories: ["motor-transporte", "servicios-profesionales"],
   zone: "calvia-andratx",
   address: "Torre de Capitanía, 07181 Portals Nous, Calvià, Illes Balears",

@@ -5,7 +5,7 @@ export const farmaciaBagur24hAragoPalma: ServiceItem = {
   slug: "farmacia-bagur-24h-arago-palma",
   name: "Farmacia Bagur 24h (Palma - Carrer d'Aragó)",
   category: "salud-bienestar",
-  sectorId: "spas-bienestar",
+  sectorId: "salud-bienestar-belleza",
   sectors: ["spas-bienestar"],
   zone: "palma",
   address: "Carrer d'Aragó, 70, 07005 Palma, Illes Balears",

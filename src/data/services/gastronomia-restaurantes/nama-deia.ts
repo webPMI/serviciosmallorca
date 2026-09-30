@@ -5,7 +5,7 @@ export const namaDeia: ServiceItem = {
   slug: "nama-deia",
   name: "Restaurante Nama Deià",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "tramuntana",
   address: "Carrer Arxiduc Lluís Salvador, 22, 07179 Deià, Mallorca",

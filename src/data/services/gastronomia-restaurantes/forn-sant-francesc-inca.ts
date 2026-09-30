@@ -5,7 +5,7 @@ export const fornSantFrancesc: ServiceItem = {
   slug: "forn-sant-francesc-inca",
   name: "Forn Sant Francesc (Inca - 1871)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "raiguer-pla",
   address: "Carrer de Sant Francesc, 10, 07300 Inca, Mallorca",

@@ -5,7 +5,7 @@ export const elCastilloDelBosque: ServiceItem = {
   slug: "el-castillo-del-bosque-felanitx",
   name: "Restaurante El Castillo del Bosque (Felanitx / Portocolom)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "santanyi-migjorn",
   address: "Carretera Felanitx a Portocolom, Km 8, 07670 Felanitx, Mallorca",

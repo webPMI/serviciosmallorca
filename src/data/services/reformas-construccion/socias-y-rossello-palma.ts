@@ -5,7 +5,7 @@ export const sociasYRosselloPalma: ServiceItem = {
   slug: "socias-y-rossello-palma",
   name: "Socías y Rosselló (Palma Son Castelló)",
   category: "reformas-hogar",
-  sectorId: "reformas-construccion",
+  sectorId: "construccion-reformas",
   sectors: ["reformas-construccion"],
   zone: "palma",
   address: "Gran Vía Asima, 3, Polígon Son Castelló, 07009 Palma, Illes Balears",

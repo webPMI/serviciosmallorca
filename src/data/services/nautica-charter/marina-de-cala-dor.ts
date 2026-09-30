@@ -5,6 +5,7 @@ export const marinaDeCalaDorService: ServiceItem = {
   slug: "marina-de-cala-dor",
   name: "Marina de Cala d'Or",
   category: "nautica-charter",
+  sectorId: "nautica-maritimo",
   zone: "santanyi-migjorn",
   address: "Puerto Deportivo Marina de Cala d'Or, 07660 Cala d'Or, Santanyí, Illes Balears",
   coordinates: {

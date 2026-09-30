@@ -5,7 +5,7 @@ export const restauranteSaRoquetaPortixol: ServiceItem = {
   slug: "restaurante-sa-roqueta-portixol",
   name: "Restaurante Sa Roqueta (Portixol - Palma - 1987)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "palma",
   address: "Carrer de la Sirena, 11, 07006 Palma (Es Portitxol), Mallorca",

@@ -5,7 +5,7 @@ export const palmaPadelClub: ServiceItem = {
   slug: "palma-padel-club",
   name: "Palma Padel Club",
   category: "servicios-profesionales",
-  sectorId: "servicios-profesionales-b2b",
+  sectorId: "servicios-profesionales-legal",
   culturalIdentity: "mallorquin_heritage",
   zone: "palma",
   address: "Carrer de l'Uruguai, s/n, Son Valentí, 07011 Palma, Illes Balears",

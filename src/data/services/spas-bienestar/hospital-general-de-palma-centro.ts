@@ -5,7 +5,7 @@ export const hospitalGeneralDePalmaCentro: ServiceItem = {
   slug: "hospital-general-de-palma-centro",
   name: "Hospital General de Palma (Casco Antiguo - 1456)",
   category: "salud-bienestar",
-  sectorId: "spas-bienestar",
+  sectorId: "salud-bienestar-belleza",
   sectors: ["spas-bienestar"],
   zone: "palma",
   address: "Plaça de l'Hospital, 3, 07012 Palma, Illes Balears",

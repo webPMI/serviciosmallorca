@@ -4,7 +4,9 @@ export const galeriaPelairesService: ServiceItem = {
   id: "galeria-pelaires-palma",
   slug: "galeria-pelaires-palma",
   name: "Galería Pelaires",
-  category: "arte-tatuajes",
+  category: "galerias-arte-exposiciones",
+  sectorId: "arte-estilo-cultura",
+  subcategories: ["galeria-arte-contemporaneo", "exposiciones-mallorca", "patrimonio-cultural"],
   zone: "palma",
   address: "Carrer de Can Verí, 3, 07001 Palma, Illes Balears",
   coordinates: {

@@ -5,7 +5,7 @@ export const farmaciaBalanguera24hPalma: ServiceItem = {
   slug: "farmacia-balanguera-24h-palma",
   name: "Farmacia Balanguera 24h (Palma)",
   category: "salud-bienestar",
-  sectorId: "spas-bienestar",
+  sectorId: "salud-bienestar-belleza",
   sectors: ["spas-bienestar"],
   zone: "palma",
   address: "Carrer de la Balanguera, 15, 07011 Palma, Illes Balears",

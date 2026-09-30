@@ -5,6 +5,7 @@ export const portDeSollerMarinaService: ServiceItem = {
   slug: "port-de-soller-marina",
   name: "Port de Sóller Marina & Nautical Services",
   category: "nautica-charter",
+  sectorId: "nautica-maritimo",
   zone: "tramuntana",
   address: "Carrer de Santa Catalina, s/n, 07108 Port de Sóller, Illes Balears",
   coordinates: {

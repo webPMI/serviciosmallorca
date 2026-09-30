@@ -5,7 +5,7 @@ export const bergantinosBikes: ServiceItem = {
   slug: "bergantinos-bikes-mallorca",
   name: "Bergantiños Bikes Can Pastilla (Taller & Alquiler)",
   category: "motor-transporte",
-  sectorId: "motor-movilidad",
+  sectorId: "movilidad-transporte",
   culturalIdentity: "mallorquin_heritage",
   rating: 4.9,
   reviewCount: 450,

@@ -5,7 +5,7 @@ export const laCantinaClubNauticCalaRatjada: ServiceItem = {
   slug: "la-cantina-club-nautic-cala-ratjada",
   name: "La Cantina Club Nàutic (Cala Ratjada)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "manacor-llevant",
   address: "Carrer Leonor Servera, 74, 07590 Cala Ratjada (Capdepera), Mallorca",

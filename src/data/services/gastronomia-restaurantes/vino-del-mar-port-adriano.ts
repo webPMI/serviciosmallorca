@@ -5,7 +5,7 @@ export const vinoDelMarPortAdriano: ServiceItem = {
   slug: "vino-del-mar-port-adriano",
   name: "Restaurante Vino del Mar",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "calvia-andratx",
   address: "Port Adriano, Local 3 - Bajo, 07180 El Toro (Calvià), Mallorca",

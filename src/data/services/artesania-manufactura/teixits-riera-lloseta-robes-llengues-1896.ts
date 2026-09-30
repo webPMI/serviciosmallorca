@@ -21,6 +21,7 @@ export const teixits_riera_lloseta_robes_llengues_1896: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€€",
   verified: true,
+  confidenceScore: 85,
   lastVerifiedAt: "2026-09-28",
   featured: false,
   status: "open",

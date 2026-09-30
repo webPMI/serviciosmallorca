@@ -5,7 +5,7 @@ export const canBoquetaSoller: ServiceItem = {
   slug: "can-boqueta-soller",
   name: "Restaurante Ca'n Boqueta (Sóller - Michelin)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "tramuntana",
   address: "Gran Via, 43, 07100 Sóller, Mallorca",

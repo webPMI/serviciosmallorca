@@ -5,6 +5,7 @@ export const ribClubMallorcaService: ServiceItem = {
   slug: "rib-club-mallorca",
   name: "Rib Club Mallorca",
   category: "nautica-charter",
+  sectorId: "nautica-maritimo",
   zone: "calvia-andratx",
   address: "Puerto Portals & Port Adriano, 07181 Calvià, Illes Balears",
   coordinates: {

@@ -5,7 +5,7 @@ export const restauranteIlletaCampDeMar: ServiceItem = {
   slug: "restaurante-illeta-camp-de-mar",
   name: "Restaurante Illeta (Camp de Mar - Andratx)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-hosteleria",
+  sectorId: "hosteleria-gastronomia",
   culturalIdentity: "mallorquin_heritage",
   zone: "calvia-andratx",
   address: "Platja de Camp de Mar, s/n, 07160 Camp de Mar, Andratx, Illes Balears",

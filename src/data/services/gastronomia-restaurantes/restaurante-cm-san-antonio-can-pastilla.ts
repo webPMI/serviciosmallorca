@@ -5,7 +5,7 @@ export const restauranteCmSanAntonioCanPastilla: ServiceItem = {
   slug: "restaurante-cm-san-antonio-can-pastilla",
   name: "Restaurante Club Marítimo San Antonio de la Playa (1934)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "palma",
   address: "Carrer de Virgili, 27, 07610 Can Pastilla (Palma), Mallorca",

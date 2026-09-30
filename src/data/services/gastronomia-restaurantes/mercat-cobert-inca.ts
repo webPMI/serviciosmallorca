@@ -5,7 +5,7 @@ export const mercatCobertInca: ServiceItem = {
   slug: "mercat-cobert-inca",
   name: "Mercat Municipal Cobert d'Inca",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-hosteleria",
+  sectorId: "hosteleria-gastronomia",
   culturalIdentity: "mallorquin_heritage",
   zone: "raiguer-pla",
   address: "Carrer del Bisbe Llompart, 63, 07300 Inca, Illes Balears",

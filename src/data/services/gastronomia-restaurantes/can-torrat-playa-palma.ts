@@ -5,7 +5,7 @@ export const canTorratPlayaPalma: ServiceItem = {
   slug: "can-torrat-playa-palma",
   name: "Restaurante Ca'n Torrat (Platja de Palma - 1962)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "palma",
   address: "Camí de les Meravelles, 25, 07610 Platja de Palma, Mallorca",

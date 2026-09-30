@@ -5,7 +5,7 @@ export const esVergerAlaro: ServiceItem = {
   slug: "es-verger-alaro",
   name: "Restaurante Es Verger (Castell d'Alaró)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "raiguer-pla",
   address: "Camí del Castell, 143, 07340 Alaró, Mallorca",

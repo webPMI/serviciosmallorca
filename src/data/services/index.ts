@@ -7,6 +7,7 @@
 
 import type { ServiceItem } from "./types.ts";
 import { TATTOO_SERVICES } from "./arte-tatuajes/index.ts";
+import { GALERIAS_MUSEOS_SERVICES } from "./galerias-museos/index.ts";
 import { RESTAURANT_SERVICES } from "./gastronomia-restaurantes/index.ts";
 import { NAUTICA_SERVICES } from "./nautica-charter/index.ts";
 import { SPAS_SERVICES } from "./spas-bienestar/index.ts";
@@ -31,6 +32,7 @@ import { SALUD_SERVICES } from "./salud-bienestar/index.ts";
 
 export * from "./types.ts";
 export { TATTOO_SERVICES } from "./arte-tatuajes/index.ts";
+export { GALERIAS_MUSEOS_SERVICES } from "./galerias-museos/index.ts";
 export { RESTAURANT_SERVICES } from "./gastronomia-restaurantes/index.ts";
 export { NAUTICA_SERVICES } from "./nautica-charter/index.ts";
 export { SPAS_SERVICES } from "./spas-bienestar/index.ts";
@@ -59,6 +61,7 @@ export { SALUD_SERVICES } from "./salud-bienestar/index.ts";
  */
 export const SERVICES: ServiceItem[] = [
   ...TATTOO_SERVICES,
+  ...GALERIAS_MUSEOS_SERVICES,
   ...RESTAURANT_SERVICES,
   ...NAUTICA_SERVICES,
   ...SPAS_SERVICES,

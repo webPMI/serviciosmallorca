@@ -5,7 +5,7 @@ export const restauranteCanTroncaSantJoan: ServiceItem = {
   slug: "restaurante-can-tronca-sant-joan",
   name: "Restaurante Can Tronca (Sant Joan - 1935)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "raiguer-pla",
   address: "Carrer del Mestre Mas, s/n, 07240 Sant Joan, Mallorca",

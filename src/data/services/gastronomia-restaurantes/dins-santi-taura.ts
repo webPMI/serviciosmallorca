@@ -5,6 +5,7 @@ export const dinsSantiTaura: ServiceItem = {
   slug: "dins-santi-taura",
   name: "DINS Santi Taura",
   category: "gastronomia-catering",
+  sectorId: "hosteleria-gastronomia",
   secondaryCategories: [],
   zone: "palma",
   address: "Plaça de Llorenç Villalonga, 4, 07001 Palma, Illes Balears",

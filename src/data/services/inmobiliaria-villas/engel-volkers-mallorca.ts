@@ -5,7 +5,7 @@ export const engelVolkersMallorca: ServiceItem = {
   slug: "engel-volkers-mallorca",
   name: "Engel & Völkers Mallorca",
   category: "inmobiliaria-villas",
-  sectorId: "inmobiliaria-villas-lujo",
+  sectorId: "inmobiliario-fincas",
   culturalIdentity: "mallorquin_heritage",
   rating: 4.8,
   reviewCount: 320,

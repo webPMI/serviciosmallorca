@@ -5,7 +5,7 @@ export const vilasTennisAcademyPalmanova: ServiceItem = {
   slug: "vilas-tennis-academy-palmanova",
   name: "Vilas Tennis Academy (Palmanova - Calvià)",
   category: "servicios-profesionales",
-  sectorId: "servicios-profesionales",
+  sectorId: "servicios-profesionales-legal",
   culturalIdentity: "mallorquin_heritage",
   zone: "calvia-andratx",
   address: "Carrer de les Cordes, 1, 07181 Palmanova, Calvià, Illes Balears",

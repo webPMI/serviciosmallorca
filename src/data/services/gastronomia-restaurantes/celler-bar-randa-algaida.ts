@@ -5,7 +5,7 @@ export const cellerBarRandaAlgaida: ServiceItem = {
   slug: "celler-bar-randa-algaida",
   name: "Celler Bar Randa (Algaida - 1968)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "raiguer-pla",
   address: "Carrer de l'Església, 24, 07629 Randa (Algaida), Mallorca",

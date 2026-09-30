@@ -5,7 +5,7 @@ export const caNignasiInca: ServiceItem = {
   slug: "ca-nignasi-inca",
   name: "Restaurante Ca n'Ignasi (Inca)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "raiguer-pla",
   address: "Carrer de s'Aigua, 29, 07300 Inca, Mallorca",

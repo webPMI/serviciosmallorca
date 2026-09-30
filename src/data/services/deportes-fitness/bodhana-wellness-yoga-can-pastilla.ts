@@ -18,6 +18,7 @@ export const BODHANA_WELLNESS_YOGA_CAN_PASTILLA: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€€",
   verified: true,
+  confidenceScore: 85,
   lastVerifiedAt: "2026-09-28",
   featured: true,
   status: "open",

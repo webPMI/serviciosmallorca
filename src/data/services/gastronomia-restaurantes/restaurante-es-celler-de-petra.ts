@@ -5,7 +5,7 @@ export const restauranteEsCellerDePetra: ServiceItem = {
   slug: "restaurante-es-celler-de-petra",
   name: "Restaurante Es Celler de Petra (1965)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "raiguer-pla",
   address: "Carrer de l'Hospital, 46, 07520 Petra, Mallorca",

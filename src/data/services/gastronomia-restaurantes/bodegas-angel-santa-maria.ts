@@ -5,7 +5,7 @@ export const bodegasAngelSantaMaria: ServiceItem = {
   slug: "bodegas-angel-santa-maria",
   name: "Bodegas Ángel (Santa Maria del Camí - 2006)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "raiguer-pla",
   address: "Carretera Santa Maria - Sencelles, Km 4,8, 07320 Santa Maria del Camí, Mallorca",

@@ -5,7 +5,7 @@ export const restauranteIlParadisoCalaMajor: ServiceItem = {
   slug: "restaurante-il-paradiso-cala-major",
   name: "Restaurante Il Paradiso (Cala Major - Palma)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "palma",
   address: "Avinguda de Joan Miró, 243, 07015 Palma (Cala Major), Illes Balears",

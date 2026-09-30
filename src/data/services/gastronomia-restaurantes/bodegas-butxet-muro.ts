@@ -5,7 +5,7 @@ export const bodegasButxetMuro: ServiceItem = {
   slug: "bodegas-butxet-muro",
   name: "Bodegas Butxet (Muro - 2001)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "alcudia-pollensa",
   address: "Carretera Muro a Can Picafort, Km 330, Parcela 565, 07440 Muro, Mallorca",

@@ -5,7 +5,7 @@ export const bodegasCanColetoPetra: ServiceItem = {
   slug: "bodegas-can-coleto-petra",
   name: "Bodegas Can Coleto (Petra - 1999)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "raiguer-pla",
   address: "Camí de Son Reixac, s/n, 07520 Petra, Mallorca",

@@ -5,7 +5,7 @@ export const tallerLlevantManacor: ServiceItem = {
   slug: "taller-mecanico-llevant-manacor",
   name: "Taller Mecánico & Diagnosis Llevant (Manacor - 1996)",
   category: "motor-transporte",
-  sectorId: "motor-movilidad",
+  sectorId: "movilidad-transporte",
   culturalIdentity: "mallorquin_heritage",
   rating: 4.8,
   reviewCount: 180,

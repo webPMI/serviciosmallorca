@@ -5,6 +5,7 @@ export const caNaToneta: ServiceItem = {
   slug: "ca-na-toneta",
   name: "Ca Na Toneta",
   category: "gastronomia-catering",
+  sectorId: "hosteleria-gastronomia",
   secondaryCategories: [],
   zone: "raiguer-pla",
   address: "Carrer de Sant Pere, 9, 07314 Caimari, Illes Balears",

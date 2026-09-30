@@ -5,7 +5,7 @@ export const hospitalSonLlatzerPalma: ServiceItem = {
   slug: "hospital-son-llatzer-palma",
   name: "Hospital Son Llàtzer (Palma)",
   category: "salud-bienestar",
-  sectorId: "spas-bienestar",
+  sectorId: "salud-bienestar-belleza",
   sectors: ["spas-bienestar"],
   zone: "palma",
   address: "Carretera de Manacor, Km 4, 07198 Palma, Illes Balears",

@@ -5,7 +5,7 @@ export const clinicaDentalAlomarInca: ServiceItem = {
   slug: "clinica-dental-alomar-inca",
   name: "Clínica Dental Alomar (Inca - Raiguer)",
   category: "salud-bienestar",
-  sectorId: "spas-bienestar",
+  sectorId: "salud-bienestar-belleza",
   sectors: ["spas-bienestar"],
   zone: "raiguer-pla",
   address: "Avinguda del Bisbe Llompart, 12, 07300 Inca, Illes Balears",

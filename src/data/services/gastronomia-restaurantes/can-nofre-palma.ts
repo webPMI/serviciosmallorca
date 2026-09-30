@@ -5,7 +5,7 @@ export const canNofrePalma: ServiceItem = {
   slug: "can-nofre-palma",
   name: "Restaurante Ca'n Nofre (Palma)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "palma",
   address: "Carrer de Manacor, 27, 07006 Palma, Mallorca",

@@ -5,7 +5,7 @@ export const bodegasSonVivesBanyalbufar: ServiceItem = {
   slug: "bodegas-son-vives-banyalbufar",
   name: "Bodegas Son Vives (Banyalbufar - 1986)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "tramuntana",
   address: "Carretera Ma-10, Km 87,5 (C/ Font de la Vila, 2), 07191 Banyalbufar, Mallorca",

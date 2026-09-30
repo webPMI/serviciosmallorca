@@ -5,7 +5,7 @@ export const restauranteMiramarPortAlcudia: ServiceItem = {
   slug: "restaurante-miramar-port-alcudia",
   name: "Restaurante Miramar (Port d'Alcúdia - 1871)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "alcudia-pollensa",
   address: "Passeig Marítim, 2, 07410 Port d'Alcúdia, Mallorca",

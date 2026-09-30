@@ -5,7 +5,7 @@ export const portAdrianoBoatCharter: ServiceItem = {
   slug: "port-adriano-boat-charter",
   name: "Port Adriano Yacht & Boat Charter",
   category: "nautica-charter",
-  sectorId: "motor-nautica",
+  sectorId: "nautica-maritimo",
   culturalIdentity: "international_luxury",
   zone: "calvia-andratx",
   address: "Urbanización El Toro, s/n, Port Adriano, 07180 Calvià, Illes Balears",

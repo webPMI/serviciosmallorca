@@ -5,7 +5,7 @@ export const restauranteLaCaracolaPortoPetro: ServiceItem = {
   slug: "restaurante-la-caracola-porto-petro",
   name: "Restaurante La Caracola (Porto Petro - 1978)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "santanyi-migjorn",
   address: "Passeig des Port, 40, 07691 Porto Petro (Santanyí), Mallorca",

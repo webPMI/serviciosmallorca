@@ -5,6 +5,7 @@ export const kuyenArtTattoo: ServiceItem = {
   slug: "kuyen-art-tattoo",
   name: "Küyen Art & Tattoo Studio",
   category: "arte-tatuajes",
+  sectorId: "arte-estilo-cultura",
   secondaryCategories: [],
   zone: "palma",
   address: "Carrer dels Hostals, 18, 07002 Palma, Illes Balears",

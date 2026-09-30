@@ -5,7 +5,7 @@ export const porxadaDeSaTorreCanyamel: ServiceItem = {
   slug: "porxada-de-sa-torre-canyamel",
   name: "Restaurante Porxada de Sa Torre (Canyamel)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "manacor-llevant",
   address: "Carretera Artà - Canyamel, Km 8, 07580 Capdepera (Canyamel), Mallorca",

@@ -5,7 +5,7 @@ export const bodegasSantaCatarinaSencelles: ServiceItem = {
   slug: "bodegas-santa-catarina-sencelles",
   name: "Bodegas Santa Catarina (Sencelles - 1985)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "raiguer-pla",
   address: "Carretera Inca - Sencelles, Km 3 (Finca Son Aloy), 07140 Sencelles, Mallorca",

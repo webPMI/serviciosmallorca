@@ -5,7 +5,7 @@ export const mallorcaGlobalCharter: ServiceItem = {
   slug: "mallorca-global-charter",
   name: "Mallorca Global Charter",
   category: "nautica-charter",
-  sectorId: "nautica-alquiler-embarcaciones",
+  sectorId: "nautica-maritimo",
   culturalIdentity: "mallorquin_heritage",
   rating: 4.9,
   reviewCount: 78,

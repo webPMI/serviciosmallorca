@@ -5,7 +5,7 @@ export const barSHostalMontuiri: ServiceItem = {
   slug: "bar-s-hostal-montuiri",
   name: "Bar s'Hostal de Montuïri (1950)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "raiguer-pla",
   address: "Camí de Manacor, 59, 07230 Montuïri, Mallorca",

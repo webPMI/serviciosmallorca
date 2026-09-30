@@ -5,7 +5,7 @@ export const cellerCanFontSineu: ServiceItem = {
   slug: "celler-can-font-sineu",
   name: "Celler Can Font (Sineu - 1964)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "raiguer-pla",
   address: "Plaça des Fossar, 18, 07510 Sineu, Mallorca",

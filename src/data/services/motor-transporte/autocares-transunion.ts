@@ -5,7 +5,7 @@ export const autocaresTransunion: ServiceItem = {
   slug: "autocares-transunion",
   name: "Autocares Mallorca Transunion",
   category: "motor-transporte",
-  sectorId: "transporte-movilidad",
+  sectorId: "movilidad-transporte",
   culturalIdentity: "mallorquin_heritage",
   rating: 4.6,
   reviewCount: 980,

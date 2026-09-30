@@ -5,7 +5,7 @@ export const puraVidaCalaFiguera: ServiceItem = {
   slug: "pura-vida-cala-figuera",
   name: "Restaurante Pura Vida (Cala Figuera)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "santanyi-migjorn",
   address: "Carrer Tomarinar, 25, 07659 Cala Figuera (Santanyí), Mallorca",

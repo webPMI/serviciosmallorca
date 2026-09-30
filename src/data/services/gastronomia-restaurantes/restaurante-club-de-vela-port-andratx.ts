@@ -5,7 +5,7 @@ export const restauranteClubDeVelaPortAndratx: ServiceItem = {
   slug: "restaurante-club-de-vela-port-andratx",
   name: "Restaurante Club de Vela Puerto de Andratx (1968)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "calvia-andratx",
   address: "Avinguda de Gabriel Roca i Garcías, 27, 07157 Port d'Andratx, Mallorca",

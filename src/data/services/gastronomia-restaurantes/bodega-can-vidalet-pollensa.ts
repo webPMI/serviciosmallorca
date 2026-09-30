@@ -5,7 +5,7 @@ export const bodegaCanVidalet: ServiceItem = {
   slug: "bodega-can-vidalet-pollensa",
   name: "Bodegas Can Vidalet (Pollença - 1996)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "alcudia-pollensa",
   address: "Carretera Alcúdia - Pollença, MA-2201 Km 4,85, 07460 Pollença, Mallorca",

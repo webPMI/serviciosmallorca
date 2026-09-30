@@ -5,7 +5,7 @@ export const restauranteClubNauticSEstanyol: ServiceItem = {
   slug: "restaurante-club-nautic-s-estanyol",
   name: "Restaurante Club Nàutic S'Estanyol (1970)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "santanyi-migjorn",
   address: "Via de la Mediterrània, s/n, 07639 S'Estanyol de Migjorn (Llucmajor), Mallorca",

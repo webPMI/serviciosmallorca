@@ -5,7 +5,7 @@ export const melchorMascaroConstrucciones: ServiceItem = {
   slug: "melchor-mascaro-construcciones",
   name: "Melchor Mascaró Construcciones & Obra Civil (Palma / Manacor)",
   category: "reformas-hogar",
-  sectorId: "reformas-mantenimiento",
+  sectorId: "construccion-reformas",
   culturalIdentity: "mallorquin_heritage",
   zone: "palma",
   address: "Carrer Gremi de Teixidors, 22, 07009 Palma, Illes Balears",

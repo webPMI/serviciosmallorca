@@ -4,7 +4,9 @@ export const fundacioMiroMallorcaService: ServiceItem = {
   id: "fundacio-miro-mallorca",
   slug: "fundacio-miro-mallorca",
   name: "Fundació Pilar i Joan Miró a Mallorca",
-  category: "arte-tatuajes",
+  category: "galerias-arte-exposiciones",
+  sectorId: "arte-estilo-cultura",
+  subcategories: ["galeria-arte-contemporaneo", "exposiciones-mallorca", "patrimonio-cultural"],
   zone: "palma",
   address: "Carrer de Saridakis, 29, 07015 Palma, Illes Balears",
   coordinates: {

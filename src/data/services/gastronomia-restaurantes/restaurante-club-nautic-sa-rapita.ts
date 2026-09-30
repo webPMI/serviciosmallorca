@@ -5,7 +5,7 @@ export const restauranteClubNauticSaRapita: ServiceItem = {
   slug: "restaurante-club-nautic-sa-rapita",
   name: "Restaurante Club Nàutic Sa Ràpita (Campos - 1970)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "santanyi-migjorn",
   address: "Explanada del Puerto, s/n, 07639 Sa Ràpita (Campos), Mallorca",

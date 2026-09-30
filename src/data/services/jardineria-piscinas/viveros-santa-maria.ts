@@ -5,6 +5,7 @@ export const viverosSantaMaria: ServiceItem = {
   slug: "viveros-santa-maria",
   name: "Viveros Santa Maria Garden Center & Paisajismo",
   category: "jardineria-piscinas",
+  sectorId: "jardineria-paisajismo-piscinas",
   secondaryCategories: ["reformas-hogar"],
   zone: "raiguer-pla",
   address: "Ctra. Santa Maria a Sencelles, km 0.5, 07320 Santa Maria del Camí, Illes Balears",

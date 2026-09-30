@@ -5,7 +5,7 @@ export const lasOlasSantaPonsa: ServiceItem = {
   slug: "las-olas-santa-ponsa",
   name: "Restaurante Las Olas",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "calvia-andratx",
   address: "Carrer de Ramon de Montcada, 18, 07183 Santa Ponsa (Calvià), Mallorca",

@@ -5,7 +5,7 @@ export const canMarchManacor: ServiceItem = {
   slug: "can-march-manacor",
   name: "Restaurante Can March (Manacor - 1925)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "manacor-llevant",
   address: "Carrer de València, 7, 07500 Manacor, Mallorca",

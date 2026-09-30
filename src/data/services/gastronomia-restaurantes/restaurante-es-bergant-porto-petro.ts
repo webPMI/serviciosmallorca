@@ -5,7 +5,7 @@ export const restauranteEsBergantPortoPetro: ServiceItem = {
   slug: "restaurante-es-bergant-porto-petro",
   name: "Restaurante Es Bergant (Porto Petro - 1999)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "santanyi-migjorn",
   address: "Passeig des Port, 39, 07691 Porto Petro (Santanyí), Mallorca",

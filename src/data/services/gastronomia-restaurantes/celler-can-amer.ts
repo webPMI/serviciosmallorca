@@ -5,7 +5,7 @@ export const cellerCanAmer: ServiceItem = {
   slug: "celler-can-amer",
   name: "Celler Ca'n Amer",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-hosteleria",
+  sectorId: "hosteleria-gastronomia",
   culturalIdentity: "mallorquin_heritage",
   zone: "raiguer-pla",
   address: "Carrer de Miquel dels Sants Oliver, 10, 07300 Inca, Illes Balears",

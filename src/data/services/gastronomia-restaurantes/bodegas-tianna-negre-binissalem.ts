@@ -5,7 +5,7 @@ export const bodegasTiannaNegreBinissalem: ServiceItem = {
   slug: "bodegas-tianna-negre-binissalem",
   name: "Bodegas Tianna Negre (Binissalem - 2007)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "raiguer-pla",
   address: "Camí des Mitjans, Parcela 67, 07350 Binissalem, Mallorca",

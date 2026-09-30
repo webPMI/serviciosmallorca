@@ -5,7 +5,7 @@ export const restauranteClubNauticPortoCristo: ServiceItem = {
   slug: "restaurante-club-nautic-porto-cristo",
   name: "Restaurante Club Nàutic Porto Cristo (1969)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "manacor-llevant",
   address: "Carrer de la Vela, 29, 07680 Porto Cristo (Manacor), Mallorca",

@@ -5,7 +5,7 @@ export const laTerrazaAlcanada: ServiceItem = {
   slug: "la-terraza-alcanada",
   name: "Restaurante La Terraza Alcanada",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "alcudia-pollensa",
   address: "Plaça de Pompeu Fabra, 7, 07400 Alcanada (Alcúdia), Mallorca",

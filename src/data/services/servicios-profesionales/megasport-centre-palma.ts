@@ -5,7 +5,7 @@ export const megasportCentrePalma: ServiceItem = {
   slug: "megasport-centre-palma",
   name: "Megasport Centre (Palma)",
   category: "servicios-profesionales",
-  sectorId: "servicios-profesionales",
+  sectorId: "servicios-profesionales-legal",
   culturalIdentity: "mallorquin_heritage",
   zone: "palma",
   address: "Carrer de Francesc Vallduví, 1, 07011 Palma, Illes Balears",

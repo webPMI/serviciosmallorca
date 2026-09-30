@@ -5,7 +5,7 @@ export const quinceCantinaPortoCristo: ServiceItem = {
   slug: "quince-cantina-porto-cristo",
   name: "Restaurante Quince Cantina & Garden (Porto Cristo)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "manacor-llevant",
   address: "Carrer del Verí, 1, 07680 Porto Cristo, Mallorca",

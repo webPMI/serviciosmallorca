@@ -5,7 +5,7 @@ export const bodegasVinsMiquelGelabert: ServiceItem = {
   slug: "bodegas-vins-miquel-gelabert-manacor",
   name: "Vins Miquel Gelabert (Manacor - 1985)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "manacor-llevant",
   address: "Carrer de Salas i Ferragut, 28, 07500 Manacor, Mallorca",

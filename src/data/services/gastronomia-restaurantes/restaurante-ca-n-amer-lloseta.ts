@@ -5,7 +5,7 @@ export const restauranteCaNAmerLloseta: ServiceItem = {
   slug: "restaurante-ca-n-amer-lloseta",
   name: "Restaurante Ca n'Amer (Lloseta - 1968)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "raiguer-pla",
   address: "Carrer dels Miners, 4, 07360 Lloseta, Mallorca",

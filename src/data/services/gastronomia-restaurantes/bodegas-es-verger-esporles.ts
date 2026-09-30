@@ -5,7 +5,7 @@ export const bodegasEsVergerEsporles: ServiceItem = {
   slug: "bodegas-es-verger-esporles",
   name: "Bodegas Es Verger (Esporles - 2001)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "tramuntana",
   address: "S'Hort d'Es Verger, s/n, 07190 Esporles, Mallorca",

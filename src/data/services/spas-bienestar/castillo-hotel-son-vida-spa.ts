@@ -5,7 +5,7 @@ export const castilloHotelSonVidaSpa: ServiceItem = {
   slug: "castillo-hotel-son-vida-spa",
   name: "Castillo Hotel Son Vida Spa (Palma - Son Vida)",
   category: "salud-bienestar",
-  sectorId: "spas-bienestar",
+  sectorId: "salud-bienestar-belleza",
   sectors: ["spas-bienestar"],
   zone: "palma",
   address: "Carrer Raixa, 2, Urbanización Son Vida, 07013 Palma, Illes Balears",

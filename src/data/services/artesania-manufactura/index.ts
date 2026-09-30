@@ -1,3 +1,6 @@
+import { artesaniaCerasPalma } from "./artesania-ceras-palma.ts";
+import { cereriaArtesanaInca } from "./cereria-artesana-inca.ts";
+import { taller_enquadernacio_art_can_alcover_palma } from "./taller-enquadernacio-art-can-alcover-palma.ts";
 import type { ServiceItem } from "../types.ts";
 import { barrats_1890_calzado_inca } from "./barrats-1890-calzado-inca.ts";
 import { bodegasSuauBrandyMallorca1851 } from "./bodegas-suau-brandy-mallorca-1851.ts";
@@ -49,6 +52,9 @@ export { teixits_bujosa_santa_maria_del_cami } from "./teixits-bujosa-santa-mari
 export { teixits_riera_lloseta_robes_llengues_1896 } from "./teixits-riera-lloseta-robes-llengues-1896.ts";
 export { teixitsVicensArtesaniaPollensa } from "./teixits-vicens-artesania-pollensa.ts";
 export { vidriosGordiola } from "./vidrios-gordiola-algaida.ts";
+export { artesaniaCerasPalma } from "./artesania-ceras-palma.ts";
+export { cereriaArtesanaInca } from "./cereria-artesana-inca.ts";
+export { taller_enquadernacio_art_can_alcover_palma } from "./taller-enquadernacio-art-can-alcover-palma.ts";
 export { yanko_calzado_artesanal_inca } from "./yanko-calzado-artesanal-inca.ts";
 
 export const ARTESANIA_SERVICES: ServiceItem[] = [
@@ -76,5 +82,8 @@ export const ARTESANIA_SERVICES: ServiceItem[] = [
   teixits_riera_lloseta_robes_llengues_1896,
   teixitsVicensArtesaniaPollensa,
   vidriosGordiola,
+  artesaniaCerasPalma,
+  cereriaArtesanaInca,
+  taller_enquadernacio_art_can_alcover_palma,
   yanko_calzado_artesanal_inca,
 ];

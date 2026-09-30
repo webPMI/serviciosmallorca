@@ -5,7 +5,7 @@ export const rataCorner: ServiceItem = {
   slug: "rata-corner-palma",
   name: "Rata Corner Llibreria & Cultura",
   category: "servicios-profesionales",
-  sectorId: "retail-comercio",
+  sectorId: "servicios-profesionales-legal",
   culturalIdentity: "mallorquin_heritage",
   rating: 4.8,
   reviewCount: 850,

@@ -5,7 +5,7 @@ export const skualoPortoCristo: ServiceItem = {
   slug: "skualo-porto-cristo-buceo",
   name: "Skualo Diving Porto Cristo (PADI 5 Star)",
   category: "nautica-charter",
-  sectorId: "nautica-charter",
+  sectorId: "nautica-maritimo",
   sectors: ["nautica-charter"],
   zone: "manacor-llevant",
   address: "Passeig del Cap des Toll, 11, 07680 Porto Cristo, Mallorca",

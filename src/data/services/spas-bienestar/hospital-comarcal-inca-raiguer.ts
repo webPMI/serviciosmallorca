@@ -5,7 +5,7 @@ export const hospitalComarcalIncaRaiguer: ServiceItem = {
   slug: "hospital-comarcal-inca-raiguer",
   name: "Hospital Comarcal d'Inca (Raiguer)",
   category: "salud-bienestar",
-  sectorId: "spas-bienestar",
+  sectorId: "salud-bienestar-belleza",
   sectors: ["spas-bienestar"],
   zone: "raiguer-pla",
   address: "Carretera Vella de Llubí, s/n, 07300 Inca, Illes Balears",

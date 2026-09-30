@@ -5,7 +5,7 @@ export const canCostaValldemossa: ServiceItem = {
   slug: "can-costa-valldemossa",
   name: "Restaurante Ca'n Costa (Valldemossa - 1974)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "tramuntana",
   address: "Carretera Deià, Km 2,5, 07170 Valldemossa, Mallorca",

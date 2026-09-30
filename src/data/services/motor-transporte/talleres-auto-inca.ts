@@ -5,7 +5,7 @@ export const talleresAutoInca: ServiceItem = {
   slug: "talleres-auto-inca-mecanica",
   name: "Talleres Auto-Inca (Inca - 1982)",
   category: "motor-transporte",
-  sectorId: "motor-movilidad",
+  sectorId: "movilidad-transporte",
   culturalIdentity: "mallorquin_heritage",
   rating: 4.8,
   reviewCount: 220,

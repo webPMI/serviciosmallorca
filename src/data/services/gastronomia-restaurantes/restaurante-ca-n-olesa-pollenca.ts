@@ -5,7 +5,7 @@ export const restauranteCaNOlesaPollenca: ServiceItem = {
   slug: "restaurante-ca-n-olesa-pollenca",
   name: "Restaurante Ca n'Olesa (Pollença - 1968)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "alcudia-pollensa",
   address: "Plaça Major, 12, 07460 Pollença, Mallorca",

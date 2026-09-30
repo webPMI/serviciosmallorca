@@ -5,7 +5,7 @@ export const rafaNadalAcademyManacor: ServiceItem = {
   slug: "rafa-nadal-academy-manacor",
   name: "Rafa Nadal Academy by Movistar (Manacor)",
   category: "deportes-fitness",
-  sectorId: "deportes-fitness",
+  sectorId: "deportes-aire-libre",
   sectors: ["deportes-fitness"],
   zone: "manacor-llevant",
   address: "Ctra. Cales de Mallorca s/n, Km 1,2, 07500 Manacor, Illes Balears",

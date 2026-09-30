@@ -5,7 +5,7 @@ export const losPatosPlayaMuro: ServiceItem = {
   slug: "los-patos-playa-muro",
   name: "Restaurante Los Patos (Playa de Muro / Alcúdia - 1976)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "alcudia-pollensa",
   address: "Camí de Can Blau, 42, 07400 Port d'Alcúdia (Playa de Muro), Mallorca",

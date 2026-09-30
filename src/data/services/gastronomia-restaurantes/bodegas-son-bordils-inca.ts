@@ -5,7 +5,7 @@ export const bodegasSonBordilsInca: ServiceItem = {
   slug: "bodegas-son-bordils-inca",
   name: "Bodegas Finca Son Bordils (Inca - 1433)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "raiguer-pla",
   address: "Carretera Inca-Sineu, Km 4,1, 07300 Inca, Mallorca",

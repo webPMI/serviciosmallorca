@@ -5,7 +5,7 @@ export const marinaPortDeMallorca: ServiceItem = {
   slug: "marina-port-de-mallorca-palma",
   name: "Marina Port de Mallorca",
   category: "nautica-charter",
-  sectorId: "nautica-charter",
+  sectorId: "nautica-maritimo",
   sectors: ["nautica-charter", "servicios-profesionales"],
   zone: "palma",
   address: "Paseo Marítimo, s/n, 07014 Palma, Illes Balears",

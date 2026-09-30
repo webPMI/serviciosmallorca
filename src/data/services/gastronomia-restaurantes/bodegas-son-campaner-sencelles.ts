@@ -5,7 +5,7 @@ export const bodegasSonCampanerSencelles: ServiceItem = {
   slug: "bodegas-son-campaner-sencelles",
   name: "Bodegas Son Campaner (Sencelles - 2004)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "raiguer-pla",
   address: "Ctra. Inca - Sencelles (Ma-3120, km 5,5), 07140 Sencelles, Mallorca",

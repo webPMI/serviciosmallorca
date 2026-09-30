@@ -5,7 +5,7 @@ export const laRosaVermuteriaPalma: ServiceItem = {
   slug: "la-rosa-vermuteria-palma",
   name: "La Rosa Vermutería & Colmado (Palma)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "palma",
   address: "Carrer de la Rosa, 5, 07003 Palma, Illes Balears",

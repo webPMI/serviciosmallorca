@@ -5,7 +5,7 @@ export const bodegasSonArtiguesPorreres: ServiceItem = {
   slug: "bodegas-son-artigues-porreres",
   name: "Bodegas Son Artigues (Porreres - 2004)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "santanyi-migjorn",
   address: "Ctra. Porreres - Felanitx, Km 6,5, 07260 Porreres, Mallorca",

@@ -5,7 +5,7 @@ export const cellerSaSiniSantaMaria: ServiceItem = {
   slug: "celler-sa-sini-santa-maria",
   name: "Celler Sa Sini (Santa Maria del Camí - 1962)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "raiguer-pla",
   address: "Plaça dels Hostals, 20, 07320 Santa Maria del Camí, Mallorca",

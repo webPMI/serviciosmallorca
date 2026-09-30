@@ -5,7 +5,7 @@ export const trespaisPortAndratx: ServiceItem = {
   slug: "trespais-port-andratx",
   name: "Restaurante Trespais",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "calvia-andratx",
   address: "Carrer d'Antoni Calafat, 24, 07157 Port d'Andratx, Mallorca",

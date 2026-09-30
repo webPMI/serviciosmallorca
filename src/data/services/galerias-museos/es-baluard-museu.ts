@@ -4,7 +4,9 @@ export const esBaluardMuseuService: ServiceItem = {
   id: "es-baluard-museu-palma",
   slug: "es-baluard-museu-palma",
   name: "Es Baluard Museu d'Art Contemporani de Palma",
-  category: "arte-tatuajes",
+  category: "galerias-arte-exposiciones",
+  sectorId: "arte-estilo-cultura",
+  subcategories: ["galeria-arte-contemporaneo", "exposiciones-mallorca", "patrimonio-cultural"],
   zone: "palma",
   address: "Plaça de la Porta de Santa Catalina, 10, 07012 Palma, Illes Balears",
   coordinates: {

@@ -18,6 +18,7 @@ export const bodyna_spa_hospes_maricel_calvia: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€€€",
   verified: true,
+  confidenceScore: 85,
   lastVerifiedAt: "2026-09-28",
   featured: true,
   status: "open",

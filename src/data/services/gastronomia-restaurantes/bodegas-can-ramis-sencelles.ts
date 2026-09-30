@@ -5,7 +5,7 @@ export const bodegasCanRamisSencelles: ServiceItem = {
   slug: "bodegas-can-ramis-sencelles",
   name: "Bodegas Can Ramis (Sencelles - 1870)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "raiguer-pla",
   address: "Carrer de Sor Francinaina Cirer, 14, 07140 Sencelles, Mallorca",

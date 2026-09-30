@@ -5,7 +5,7 @@ export const restauranteMiradorDeCabrera: ServiceItem = {
   slug: "restaurante-mirador-de-cabrera",
   name: "Restaurante Mirador de Cabrera (Vallgornera / Cala Pi - 1990)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "santanyi-migjorn",
   address: "Carrer de Murillo, 8, 07639 Es Pas de Vallgornera (Cala Pi / Llucmajor), Mallorca",

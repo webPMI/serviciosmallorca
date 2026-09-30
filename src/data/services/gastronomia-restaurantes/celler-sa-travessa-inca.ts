@@ -5,7 +5,7 @@ export const cellerSaTravessaInca: ServiceItem = {
   slug: "celler-sa-travessa-inca",
   name: "Celler Sa Travessa (Inca - 1930)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-hosteleria",
+  sectorId: "hosteleria-gastronomia",
   culturalIdentity: "mallorquin_heritage",
   zone: "raiguer-pla",
   address: "Carrer de la Travessa, 19, 07300 Inca, Illes Balears",

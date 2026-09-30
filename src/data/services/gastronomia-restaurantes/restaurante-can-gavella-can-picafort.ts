@@ -5,7 +5,7 @@ export const restauranteCanGavellaCanPicafort: ServiceItem = {
   slug: "restaurante-can-gavella-can-picafort",
   name: "Restaurante Can Gavella (Can Picafort - 2011)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "alcudia-pollensa",
   address: "Casetes des Capellans, 174, 07420 Platja de Muro (Can Picafort), Mallorca",

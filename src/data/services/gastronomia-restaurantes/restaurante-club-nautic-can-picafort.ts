@@ -5,7 +5,7 @@ export const restauranteClubNauticCanPicafort: ServiceItem = {
   slug: "restaurante-club-nautic-can-picafort",
   name: "Restaurante Club Nàutic Can Picafort (1971)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "alcudia-pollensa",
   address: "Carrer Enginyer Felicià Fuster, s/n, 07458 Can Picafort (Santa Margalida), Mallorca",

@@ -5,7 +5,7 @@ export const restauranteMiradorSesBarquesFornalutx: ServiceItem = {
   slug: "restaurante-mirador-ses-barques-fornalutx",
   name: "Restaurante Mirador de Ses Barques (Fornalutx)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-hosteleria",
+  sectorId: "hosteleria-gastronomia",
   culturalIdentity: "mallorquin_heritage",
   zone: "tramuntana",
   address: "Carretera Ma-10, Km 44.8, 07109 Fornalutx, Illes Balears",

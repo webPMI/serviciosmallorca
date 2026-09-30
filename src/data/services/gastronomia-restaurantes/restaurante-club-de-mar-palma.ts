@@ -5,7 +5,7 @@ export const restauranteClubDeMarPalma: ServiceItem = {
   slug: "restaurante-club-de-mar-palma",
   name: "Restaurante Club de Mar Palma (1972)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "palma",
   address: "Muelle de Pelaires, s/n, 07015 Palma (Paseo Marítimo), Mallorca",

@@ -5,7 +5,7 @@ export const canPintxoSoller: ServiceItem = {
   slug: "can-pintxo-soller",
   name: "Restaurante Ca'n Pintxo (Sóller)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "tramuntana",
   address: "Carrer de la Rectoria, 1, 07100 Sóller, Mallorca",

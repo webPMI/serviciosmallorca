@@ -5,7 +5,7 @@ export const restauranteClubNauticPortitxol: ServiceItem = {
   slug: "restaurante-club-nautic-portitxol",
   name: "Restaurante Club Nàutic Portitxol (1928)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "palma",
   address: "Passeig Bartomeu Barceló i Mir, 2, 07006 Palma (Es Portitxol), Mallorca",

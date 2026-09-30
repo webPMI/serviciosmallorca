@@ -5,7 +5,7 @@ export const bodegasCanAxartellPollenca: ServiceItem = {
   slug: "bodegas-can-axartell-pollenca",
   name: "Bodegas Can Axartell (Pollença - 2013)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "alcudia-pollensa",
   address: "Ctra. Vella Pollença - Campanet, Km 1,5, 07460 Pollença, Mallorca",

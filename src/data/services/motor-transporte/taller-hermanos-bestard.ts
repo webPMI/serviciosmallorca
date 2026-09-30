@@ -5,7 +5,7 @@ export const tallerHermanosBestard: ServiceItem = {
   slug: "taller-hermanos-bestard-palma",
   name: "Taller Mecánico Hermanos Bestard (1978)",
   category: "motor-transporte",
-  sectorId: "motor-movilidad",
+  sectorId: "movilidad-transporte",
   culturalIdentity: "mallorquin_heritage",
   rating: 4.8,
   reviewCount: 210,

@@ -5,7 +5,7 @@ export const bodegasCanMajoralAlgaida: ServiceItem = {
   slug: "bodegas-can-majoral-algaida",
   name: "Bodegas Can Majoral (Algaida - 1979)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "raiguer-pla",
   address: "Carrer del Campanar, s/n, 07210 Algaida, Mallorca",

@@ -5,6 +5,7 @@ export const macatelaTattoo: ServiceItem = {
   slug: "macatela-tattoo",
   name: "Macatela Tattoo Studio Palma",
   category: "arte-tatuajes",
+  sectorId: "arte-estilo-cultura",
   secondaryCategories: [],
   zone: "palma",
   address: "Carrer dels Oms, 26, 07003 Palma, Illes Balears",

@@ -5,7 +5,7 @@ export const hospitalSantJoanDeDeuPalma: ServiceItem = {
   slug: "hospital-sant-joan-de-deu-palma",
   name: "Hospital Sant Joan de Déu (Palma - Cala Gamba)",
   category: "salud-bienestar",
-  sectorId: "spas-bienestar",
+  sectorId: "salud-bienestar-belleza",
   sectors: ["spas-bienestar"],
   zone: "palma",
   address: "Carrer Sant Joan de Déu, 7, 07007 Palma, Illes Balears",

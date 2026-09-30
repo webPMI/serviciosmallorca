@@ -5,7 +5,7 @@ export const restauranteCafeNouSoller: ServiceItem = {
   slug: "restaurante-cafe-nou-soller",
   name: "Restaurante Cafè Nou (Sóller - 1960)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "tramuntana",
   address: "Plaça d'Espanya, 4, 07100 Sóller, Mallorca",

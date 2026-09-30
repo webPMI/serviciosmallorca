@@ -5,7 +5,7 @@ export const restauranteCnPortocolom: ServiceItem = {
   slug: "restaurante-cn-portocolom",
   name: "Restaurante Club Nàutic Portocolom (1964)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "santanyi-migjorn",
   address: "Carrer dels Pescadors, s/n, 07670 Portocolom (Felanitx), Mallorca",

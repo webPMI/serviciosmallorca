@@ -5,7 +5,7 @@ export const restauranteBarPlayaCalaBarques: ServiceItem = {
   slug: "restaurante-bar-playa-cala-barques",
   name: "Restaurante Bar Playa (Cala Barques - Cala Sant Vicenç)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-hosteleria",
+  sectorId: "hosteleria-gastronomia",
   culturalIdentity: "mallorquin_heritage",
   zone: "alcudia-pollensa",
   address: "Carrer Cala Barques, 9, 07469 Cala Sant Vicenç, Pollença, Illes Balears",

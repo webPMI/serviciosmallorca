@@ -5,7 +5,7 @@ export const pastisseriaCanMolinasValldemossa: ServiceItem = {
   slug: "pastisseria-can-molinas-valldemossa",
   name: "Pastisseria Ca'n Molinas (Valldemossa - 1920)",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-restaurantes",
+  sectorId: "hosteleria-gastronomia",
   sectors: ["gastronomia-restaurantes"],
   zone: "tramuntana",
   address: "Vía Blanquerna, 15, 07170 Valldemossa, Mallorca",

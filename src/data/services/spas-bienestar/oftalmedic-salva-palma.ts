@@ -5,7 +5,7 @@ export const oftalmedicSalvaPalma: ServiceItem = {
   slug: "oftalmedic-salva-palma",
   name: "Oftalmedic Salvà (Palma - Son Rapinya)",
   category: "salud-bienestar",
-  sectorId: "spas-bienestar",
+  sectorId: "salud-bienestar-belleza",
   sectors: ["spas-bienestar"],
   zone: "palma",
   address: "Camí de Son Rapinya, 1, 07013 Palma, Illes Balears",

@@ -5,7 +5,7 @@ export const cellerSaPremsa: ServiceItem = {
   slug: "celler-sa-premsa",
   name: "Celler Sa Premsa",
   category: "gastronomia-catering",
-  sectorId: "gastronomia-hosteleria",
+  sectorId: "hosteleria-gastronomia",
   culturalIdentity: "mallorquin_heritage",
   zone: "palma",
   address: "Plaça del Bisbe Berenguer de Palou, 8, 07003 Palma, Illes Balears",
