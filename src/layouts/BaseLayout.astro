@@ -27,7 +27,12 @@ const {
   jsonLd,
 } = Astro.props;
 
-const currentOrigin = Astro.url.origin || "https://serviciosmallorca.com";
+const siteOrigin = Astro.site ? Astro.site.origin : "https://serviciosmallorca.com";
+const isProduction = import.meta.env.PROD;
+const currentOrigin =
+  isProduction && (!Astro.url.origin || Astro.url.origin.includes("localhost") || Astro.url.origin.includes("127.0.0.1"))
+    ? siteOrigin
+    : (Astro.url.origin || siteOrigin);
 const pageCanonical = canonicalUrl || `${currentOrigin}${Astro.url.pathname}`;
 
 // Alternates Multilingües para SEO Internacional e IA (hreflang)
@@ -103,11 +108,11 @@ const loadingAria =
   lang === "en" ? "Loading application" : lang === "ca" ? "Carregant aplicació" : "Cargando aplicación";
 
 const isAdSenseDisabled = import.meta.env.PUBLIC_ENABLE_ADSENSE === "false";
+const isLocalhost = Astro.url.hostname.includes("localhost") || Astro.url.hostname.includes("127.0.0.1");
 const shouldLoadAdSense =
   !isAdSenseDisabled &&
-  import.meta.env.PROD &&
-  !Astro.url.hostname.includes("localhost") &&
-  !Astro.url.hostname.includes("127.0.0.1");
+  isProduction &&
+  (!isLocalhost || Boolean(Astro.site && Astro.site.hostname === "serviciosmallorca.com"));
 ---
 
 <!doctype html>

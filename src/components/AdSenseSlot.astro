@@ -4,22 +4,34 @@ interface Props {
   format?: "auto" | "rectangle" | "horizontal" | "in-feed";
   responsive?: boolean;
   className?: string;
+  lang?: string;
 }
 
-const { slotId, format = "auto", responsive = true, className = "" } = Astro.props;
+const { slotId, format = "auto", responsive = true, className = "", lang } = Astro.props;
 
 const isAdSenseDisabled = import.meta.env.PUBLIC_ENABLE_ADSENSE === "false";
+const isLocalhost = Astro.url.hostname.includes("localhost") || Astro.url.hostname.includes("127.0.0.1");
 const isProductionDomain =
   !isAdSenseDisabled &&
   import.meta.env.PROD &&
-  !Astro.url.hostname.includes("localhost") &&
-  !Astro.url.hostname.includes("127.0.0.1");
+  (!isLocalhost || Boolean(Astro.site && Astro.site.hostname === "serviciosmallorca.com"));
 
 const isNumericSlot = slotId && /^\d+$/.test(slotId.trim());
+
+const locale = (lang || Astro.currentLocale || "es") as "es" | "en" | "ca" | "de";
+
+const adLabels: Record<string, { label: string; aria: string }> = {
+  es: { label: "Publicidad", aria: "Espacio publicitario" },
+  en: { label: "Advertisement", aria: "Advertising space" },
+  ca: { label: "Publicitat", aria: "Espai publicitari" },
+  de: { label: "Anzeige", aria: "Werbefläche" },
+};
+
+const currentAd = adLabels[locale] || adLabels.es;
 ---
 
-<aside class:list={["adsense-container", `adsense-${format}`, className]} aria-label="Espacio publicitario">
-  <span class="ad-label">Publicidad</span>
+<aside class:list={["adsense-container", `adsense-${format}`, className]} aria-label={currentAd.aria}>
+  <span class="ad-label">{currentAd.label}</span>
   {
     isProductionDomain ? (
       <>

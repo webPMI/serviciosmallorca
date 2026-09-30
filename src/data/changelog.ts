@@ -525,6 +525,21 @@ export const CHANGELOG_RELEASES: ReleaseLog[] = [
           de: "Ausführliche Dokumentation in docs/ zu allen 17 Golden Rules, Curation-SOPs und Echtdaten-Audits.",
         },
       },
+      {
+        category: "PERFORMANCE",
+        title: {
+          es: "Monetización AdSense & Optimización de Dominio Canónico Global",
+          en: "AdSense Monetization & Global Canonical Domain Optimization",
+          ca: "Monetització AdSense i Optimització de Domini Canònic Global",
+          de: "AdSense-Monetarisierung & Globale Kanonische Domain-Optimierung",
+        },
+        description: {
+          es: "Configuración canónica oficial en Astro (site: serviciosmallorca.com), integración universal de scripts AdSense en páginas estáticas y dinámicas, y soporte i18n cuatrilingüe en etiquetas de publicidad (GR-04).",
+          en: "Official canonical site configuration in Astro (site: serviciosmallorca.com), universal AdSense script integration across static and SSR pages, and 4-language i18n advertising labels (GR-04).",
+          ca: "Configuració canònica oficial a Astro (site: serviciosmallorca.com), integració universal de scripts AdSense a pàgines estàtiques i SSR, i etiquetes i18n cuatrilingües de publicitat (GR-04).",
+          de: "Offizielle kanonische Site-Konfiguration in Astro (site: serviciosmallorca.com), universelle AdSense-Script-Integration auf statischen und SSR-Seiten sowie 4-sprachige Werbekennzeichnung (GR-04).",
+        },
+      },
     ],
   },
   {
