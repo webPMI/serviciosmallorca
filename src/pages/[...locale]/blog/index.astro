@@ -6,31 +6,21 @@ import BlogCard from "../../../components/BlogCard.astro";
 import AdSenseSlot from "../../../components/AdSenseSlot.astro";
 import { CATEGORIES } from "../../../data/categories";
 import { BLOG_POSTS } from "../../../data/posts";
-import { getLocaleFromUrl, loadTranslations, getLangPrefix, type Locale } from "../../../i18n";
+import { getLocaleFromUrl, loadTranslations, getLangPrefix, type Locale, LOCALES } from "../../../i18n";
 
-export const prerender = false;
+export function getStaticPaths() {
+  return LOCALES.map((locale) => ({ params: { locale } }));
+}
+
+export const prerender = true;
 
 const locale = getLocaleFromUrl(Astro.url) as Locale;
 const translations = await loadTranslations(locale);
 const prefix = getLangPrefix(locale);
 
-const selectedCategory = Astro.url.searchParams.get("categoria") || "";
-const searchQuery = (Astro.url.searchParams.get("q") || "").toLowerCase().trim();
-
-const filteredPosts = BLOG_POSTS.filter((post) => {
-  if (selectedCategory && post.category !== selectedCategory) {
-    return false;
-  }
-  if (searchQuery) {
-    const titleMatch = post.title[locale].toLowerCase().includes(searchQuery);
-    const excerptMatch = post.excerpt[locale].toLowerCase().includes(searchQuery);
-    const tagMatch = post.tags.some((t) => t.toLowerCase().includes(searchQuery));
-    if (!titleMatch && !excerptMatch && !tagMatch) {
-      return false;
-    }
-  }
-  return true;
-});
+const selectedCategory = "";
+const searchQuery = "";
+const filteredPosts = BLOG_POSTS;
 
 // Featured hero post (first featured post)
 const heroPost = BLOG_POSTS.find((p) => p.featured);
@@ -189,25 +179,26 @@ const activeCategories = CATEGORIES.filter((cat) => (categoryCounts[cat.id] || 0
             <div
               class:list={[
                 "blog-grid-item",
-                { "blog-grid-item--wide": idx === 0 && !selectedCategory && !searchQuery },
+                { "blog-grid-item--wide": idx === 0 },
               ]}
               style={`animation-delay: ${idx * 0.06}s`}
+              data-category={post.category}
+              data-search={`${post.title[locale]} ${post.excerpt[locale]} ${post.tags.join(" ")}`.toLowerCase()}
             >
               <BlogCard post={post} currentLocale={locale} getLangPrefix={getLangPrefix} translations={translations} />
             </div>
           ))}
         </div>
-      ) : (
-        <div class="no-results-box card text-center">
-          <span class="no-results-icon">🔎</span>
-          <h3>{translations["blog.search.noResults"] || "No se encontraron artículos"}</h3>
-          <p>Intenta con otros términos o visualiza todos los artículos.</p>
-          <a href={`${prefix}blog`} class="btn btn-primary btn-sm" style="margin-top: 1rem;">
-            {translations["blog.search.clearFilters"] || "Ver todos los artículos"}
-          </a>
-        </div>
-      )
+      ) : null
     }
+    <div class="no-results-box card text-center" id="blog-no-results" style="display: none;">
+      <span class="no-results-icon">🔎</span>
+      <h3>{translations["blog.search.noResults"] || "No se encontraron artículos"}</h3>
+      <p>Intenta con otros términos o visualiza todos los artículos.</p>
+      <a href={`${prefix}blog`} class="btn btn-primary btn-sm" style="margin-top: 1rem;">
+        {translations["blog.search.clearFilters"] || "Ver todos los artículos"}
+      </a>
+    </div>
 
     <!-- AdSense Bottom Slot -->
     <AdSenseSlot format="horizontal" slotId="blog-directory-bottom" />
@@ -216,9 +207,65 @@ const activeCategories = CATEGORIES.filter((cat) => (categoryCounts[cat.id] || 0
   <Footer translations={translations} currentLocale={locale} getLangPrefix={getLangPrefix} />
 </BaseLayout>
 
-<!-- Live search script -->
+<!-- Client-side filtering script for prerendered blog -->
 <script>
   const input = document.getElementById("blog-search-input") as HTMLInputElement | null;
+  const items = Array.from(document.querySelectorAll<HTMLElement>(".blog-grid-item"));
+  const pills = Array.from(document.querySelectorAll<HTMLAnchorElement>(".category-pills-bar .pill-link"));
+  const noResults = document.getElementById("blog-no-results");
+  const heroSection = document.querySelector<HTMLElement>(".blog-hero");
+
+  function filterPosts() {
+    const url = new URL(window.location.href);
+    const cat = url.searchParams.get("categoria") || "";
+    const q = (url.searchParams.get("q") || "").toLowerCase().trim();
+
+    let visibleCount = 0;
+    items.forEach((item) => {
+      const matchCat = !cat || item.dataset.category === cat;
+      const matchQ = !q || (item.dataset.search || "").includes(q);
+      const isVisible = matchCat && matchQ;
+      item.style.display = isVisible ? "" : "none";
+      if (isVisible) visibleCount++;
+    });
+
+    if (noResults) {
+      noResults.style.display = visibleCount === 0 ? "flex" : "none";
+    }
+
+    if (heroSection) {
+      heroSection.style.display = cat || q ? "none" : "";
+    }
+
+    pills.forEach((p) => {
+      const pUrl = new URL(p.href, window.location.origin);
+      const pCat = pUrl.searchParams.get("categoria") || "";
+      if (pCat === cat) {
+        p.classList.add("active");
+        p.setAttribute("aria-current", "page");
+      } else {
+        p.classList.remove("active");
+        p.removeAttribute("aria-current");
+      }
+    });
+  }
+
+  pills.forEach((p) => {
+    p.addEventListener("click", (e) => {
+      e.preventDefault();
+      const pUrl = new URL(p.href, window.location.origin);
+      const currentUrl = new URL(window.location.href);
+      const cat = pUrl.searchParams.get("categoria");
+      if (cat) {
+        currentUrl.searchParams.set("categoria", cat);
+      } else {
+        currentUrl.searchParams.delete("categoria");
+      }
+      window.history.pushState({}, "", currentUrl.toString());
+      filterPosts();
+    });
+  });
+
   if (input) {
     let debounceTimer: ReturnType<typeof setTimeout>;
     input.addEventListener("input", () => {
@@ -231,11 +278,20 @@ const activeCategories = CATEGORIES.filter((cat) => (categoryCounts[cat.id] || 0
         } else {
           url.searchParams.delete("q");
         }
-        window.location.href = url.toString();
-      }, 420);
+        window.history.replaceState({}, "", url.toString());
+        filterPosts();
+      }, 150);
     });
-    // Focus on load if has value
-    if (input.value) input.focus();
+
+    const initialUrl = new URL(window.location.href);
+    if (initialUrl.searchParams.get("q")) {
+      input.value = initialUrl.searchParams.get("q") || "";
+    }
+  }
+
+  window.addEventListener("popstate", filterPosts);
+  if (window.location.search) {
+    filterPosts();
   }
 </script>
 

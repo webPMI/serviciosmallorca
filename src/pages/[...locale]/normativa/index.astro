@@ -11,9 +11,13 @@ import Navbar from "../../../components/Navbar.astro";
 import Footer from "../../../components/Footer.astro";
 import RegulationCard from "../../../components/RegulationCard.astro";
 import { getAllRegulations, type RegulationCategory } from "../../../data/officialRegulations";
-import { getLocaleFromUrl, loadTranslations, getLangPrefix, type Locale } from "../../../i18n";
+import { getLocaleFromUrl, loadTranslations, getLangPrefix, type Locale, LOCALES } from "../../../i18n";
 
-export const prerender = false;
+export function getStaticPaths() {
+  return LOCALES.map((locale) => ({ params: { locale } }));
+}
+
+export const prerender = true;
 
 const locale = getLocaleFromUrl(Astro.url) as Locale;
 const translations = await loadTranslations(locale);
@@ -99,7 +103,7 @@ const schemaData = {
   canonicalUrl={canonicalUrl}
   lang={locale}
 >
-  <Navbar lang={locale} translations={translations} />
+  <Navbar currentLocale={locale} translations={translations} getLangPrefix={getLangPrefix} />
 
   <main id="main-content" class="normativa-page">
     <!-- Breadcrumbs -->
@@ -259,7 +263,7 @@ const schemaData = {
     </section>
   </main>
 
-  <Footer lang={locale} translations={translations} />
+  <Footer currentLocale={locale} translations={translations} getLangPrefix={getLangPrefix} />
 
   <!-- Script interactivo de filtrado por categoría sin dependencias -->
   <script>

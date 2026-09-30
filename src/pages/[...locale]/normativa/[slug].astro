@@ -14,9 +14,18 @@ import ItpTaxCalculator from "../../../components/ItpTaxCalculator.astro";
 import GuideStatBanner from "../../../components/GuideStatBanner.astro";
 import { getRegulationBySlug, getAllRegulations } from "../../../data/officialRegulations";
 import { getGuideBySlug } from "../../../data/citizenGuides";
-import { getLocaleFromUrl, loadTranslations, getLangPrefix, type Locale } from "../../../i18n";
+import { getLocaleFromUrl, loadTranslations, getLangPrefix, type Locale, LOCALES } from "../../../i18n";
 
-export const prerender = false;
+export function getStaticPaths() {
+  const regulations = getAllRegulations();
+  return LOCALES.flatMap((locale) =>
+    regulations.map((reg) => ({
+      params: { locale, slug: reg.slug },
+    }))
+  );
+}
+
+export const prerender = true;
 
 const locale = getLocaleFromUrl(Astro.url) as Locale;
 const translations = await loadTranslations(locale);
@@ -133,7 +142,7 @@ const schemaData = {
   canonicalUrl={canonicalUrl}
   lang={locale}
 >
-  <Navbar lang={locale} translations={translations} />
+  <Navbar currentLocale={locale} translations={translations} getLangPrefix={getLangPrefix} />
 
   <main id="main-content" class="regulation-detail-page">
     <!-- Breadcrumbs -->
@@ -281,7 +290,7 @@ const schemaData = {
     </div>
   </main>
 
-  <Footer lang={locale} translations={translations} />
+  <Footer currentLocale={locale} translations={translations} getLangPrefix={getLangPrefix} />
 
   <!-- Schema.org JSON-LD -->
   <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />

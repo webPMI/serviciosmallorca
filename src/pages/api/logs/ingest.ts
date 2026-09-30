@@ -3,12 +3,26 @@ import { logToD1, type LogLevel, type LogCategory } from "../../../lib/d1Logger"
 
 export const prerender = false;
 
+const CORS_HEADERS = {
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Methods": "POST, GET, OPTIONS",
+  "Access-Control-Allow-Headers": "Content-Type, Authorization",
+  "Access-Control-Max-Age": "86400",
+};
+
+export const OPTIONS: APIRoute = async () => {
+  return new Response(null, {
+    status: 204,
+    headers: CORS_HEADERS,
+  });
+};
+
 export const POST: APIRoute = async (context) => {
   const { request } = context;
   try {
     const body = await request.json();
 
-    const level: LogLevel = ["INFO", "WARN", "ERROR", "FATAL", "SECURITY"].includes(body.level) ? body.level : "ERROR";
+    const level: LogLevel = ["INFO", "WARN", "ERROR", "FATAL", "SECURITY"].includes(body?.level) ? body.level : "ERROR";
 
     const category: LogCategory = [
       "SSR",
@@ -19,7 +33,7 @@ export const POST: APIRoute = async (context) => {
       "DATABASE",
       "TAXONOMY",
       "CLIENT_JS",
-    ].includes(body.category)
+    ].includes(body?.category)
       ? body.category
       : "CLIENT_JS";
 
@@ -29,25 +43,25 @@ export const POST: APIRoute = async (context) => {
     const result = await logToD1(context, {
       level,
       category,
-      message: String(body.message || "Error no especificado en cliente").slice(0, 1000),
-      stack: body.stack ? String(body.stack).slice(0, 3000) : undefined,
-      url: body.url ? String(body.url).slice(0, 500) : undefined,
-      method: body.method || "CLIENT",
-      status: Number(body.status) || 0,
+      message: String(body?.message || "Error no especificado en cliente").slice(0, 1000),
+      stack: body?.stack ? String(body.stack).slice(0, 3000) : undefined,
+      url: body?.url ? String(body.url).slice(0, 500) : undefined,
+      method: body?.method || "CLIENT",
+      status: Number(body?.status) || 0,
       clientIp,
       userAgent,
-      userId: body.userId ? String(body.userId).slice(0, 100) : undefined,
-      metadata: body.metadata && typeof body.metadata === "object" ? body.metadata : undefined,
+      userId: body?.userId ? String(body.userId).slice(0, 100) : undefined,
+      metadata: body?.metadata && typeof body.metadata === "object" ? body.metadata : undefined,
     });
 
     return new Response(JSON.stringify({ success: true, logId: result.logId, throttled: result.throttled }), {
       status: 200,
-      headers: { "Content-Type": "application/json" },
+      headers: { "Content-Type": "application/json", ...CORS_HEADERS },
     });
   } catch (err: any) {
-    return new Response(JSON.stringify({ success: false, error: err.message }), {
-      status: 400,
-      headers: { "Content-Type": "application/json" },
+    return new Response(JSON.stringify({ success: false, ignored: true, error: err?.message || "Invalid payload" }), {
+      status: 200,
+      headers: { "Content-Type": "application/json", ...CORS_HEADERS },
     });
   }
 };

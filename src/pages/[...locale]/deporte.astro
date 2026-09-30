@@ -3,10 +3,14 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import Navbar from "../../components/Navbar.astro";
 import Footer from "../../components/Footer.astro";
 import SportsExplorer from "../../components/SportsExplorer.astro";
-import { getLocaleFromUrl, loadTranslations, getLangPrefix, type Locale } from "../../i18n";
+import { getLocaleFromUrl, loadTranslations, getLangPrefix, type Locale, LOCALES } from "../../i18n";
 import { SPORTS_FACILITIES } from "../../data/sports/facilities";
 
-export const prerender = false;
+export function getStaticPaths() {
+  return LOCALES.map((locale) => ({ params: { locale } }));
+}
+
+export const prerender = true;
 
 const locale = getLocaleFromUrl(Astro.url) as Locale;
 const translations = await loadTranslations(locale);

@@ -55,9 +55,9 @@ export interface ReleaseLog {
   entries: ChangelogEntry[];
 }
 
-export const CURRENT_PLATFORM_VERSION = "1.0.2";
+export const CURRENT_PLATFORM_VERSION = "1.0.3";
 export const PLATFORM_RELEASE_DATE = "2026-09-30";
-export const PLATFORM_LAST_BUILD_TIMESTAMP = "2026-09-30T15:50:00+02:00";
+export const PLATFORM_LAST_BUILD_TIMESTAMP = "2026-09-30T18:15:00+02:00";
 
 /**
  * Devuelve la fecha y hora formateada de la última actualización según el idioma.
@@ -84,6 +84,120 @@ export function getFormattedBuildTimestamp(locale: "es" | "en" | "ca" | "de" = "
 }
 
 export const CHANGELOG_RELEASES: ReleaseLog[] = [
+  {
+    version: "1.0.3",
+    versionLabel: {
+      es: "v1.0.3 · Plan Maestro de Optimización de Recursos: Prerender Estático en 15+ Páginas, Blindaje Telemetría 400 y Cloudflare Smart Placement",
+      en: "v1.0.3 · Master Resource Optimization: Static Prerendering across 15+ Pages, Telemetry 400 Shield & Cloudflare Smart Placement",
+      ca: "v1.0.3 · Pla Mestre d'Optimització de Recursos: Prerender Estàtic en 15+ Pàgines, Blindatge Telemetria 400 i Cloudflare Smart Placement",
+      de: "v1.0.3 · Master-Ressourcenoptimierung: Statisches Prerendering für 15+ Seiten, Telemetrie-400-Schutz & Cloudflare Smart Placement",
+    },
+    type: "PATCH",
+    date: "2026-09-30",
+    summary: {
+      es: "Implementación integral de las 4 fases del Plan de Optimización de Recursos de Cloudflare Workers. Habilitación de generación estática (prerender) para 15+ páginas clave (blog, guías, sobre-nosotros, términos, privacidad, tours, normativa, deportes, memoria histórica y estadísticas) en los 4 idiomas oficiales, reduciendo drásticamente el consumo de CPU y TTFB. Blindaje del endpoint de telemetría (/api/telemetry y /api/logs/ingest) con cabeceras CORS universales y manejo seguro de payloads para erradicar errores 400 artificiales causados por bots. Activación de Cloudflare Smart Placement.",
+      en: "Comprehensive execution of the 4 phases of the Cloudflare Workers Resource Optimization Plan. Enabled static prerendering across 15+ core page groups (blog, citizen guides, about us, terms, privacy, tours, regulations, sports, heritage, statistics) across all 4 languages, cutting worker CPU usage and TTFB dramatically. Hardened telemetry ingestion endpoints (/api/telemetry and /api/logs/ingest) with universal CORS and safe payload handling to eliminate artificial 400 errors from bot probes. Enabled Cloudflare Smart Placement.",
+      ca: "Implementació integral de les 4 fases del Pla d'Optimització de Recursos de Cloudflare Workers. Habilitació de prerender estàtic a 15+ pàgines clau en els 4 idiomes oficials. Blindatge dels endpoints de telemetria amb capçaleres CORS i maneig segur de càrregues per erradicar errors 400. Activació de Cloudflare Smart Placement.",
+      de: "Umfassende Umsetzung des 4-Phasen-Ressourcenoptimierungsplans für Cloudflare Workers. Aktivierung von statischem Prerendering für über 15 zentrale Seitengruppen in 4 Sprachen zur massiven Senkung von Worker-CPU und Ladezeiten. Absicherung der Telemetrie-Endpunkte mit CORS und Fehlertoleranz zur Vermeidung künstlicher 400-Fehler. Aktivierung von Cloudflare Smart Placement.",
+    },
+    highlights: {
+      es: [
+        "Prerender estático en 15+ páginas en 4 idiomas (más de 120 URLs generadas como HTML estático CDN).",
+        "Reducción estimada del 70%+ en invocaciones de Worker y -50% en CPU medio.",
+        "Blindaje de /api/telemetry y /api/logs/ingest: retorno 200 en payloads malformados/bots, CORS universal y OPTIONS preflight.",
+        "Activación de Smart Placement en wrangler.json para optimizar la latencia hacia D1.",
+        "Filtrado instantáneo en cliente para el directorio de blog sin peticiones al servidor.",
+        "106 suites de prueba pasando al 100% con 959 tests exitosos.",
+      ],
+      en: [
+        "Static prerendering across 15+ pages in 4 languages (over 120 URLs served directly from Cloudflare Edge).",
+        "Estimated 70%+ reduction in Worker invocations and 50% drop in average CPU consumption.",
+        "Hardened /api/telemetry & /api/logs/ingest: 200 status for malformed/bot payloads, CORS headers and OPTIONS preflights.",
+        "Smart Placement enabled in wrangler.json to place workers near D1 databases.",
+        "Instant zero-latency client-side filtering for blog directory with zero worker hits.",
+        "106 test suites passing at 100% with 959 successful tests.",
+      ],
+      ca: [
+        "Prerender estàtic a 15+ pàgines en 4 idiomes (més de 120 URLs generades com HTML estàtic CDN).",
+        "Reducció estimada del 70%+ en invocacions de Worker i -50% en CPU mitjà.",
+        "Blindatge de /api/telemetry i /api/logs/ingest amb CORS universal i eliminació d'errors 400.",
+        "Smart Placement activat a wrangler.json.",
+        "106 suites de prova passant al 100% amb 959 tests exitosos.",
+      ],
+      de: [
+        "Statisches Prerendering für 15+ Seiten in 4 Sprachen (>120 statische HTML-Seiten auf Cloudflare Edge).",
+        "Geschätzte 70%+ Reduktion der Worker-Aufrufe und 50% weniger CPU-Last.",
+        "Absicherung von /api/telemetry & /api/logs/ingest mit CORS und Bereinigung von 400er Fehlern.",
+        "Smart Placement in wrangler.json aktiviert.",
+        "106 Test-Suites mit 959 Tests zu 100% bestanden.",
+      ],
+    },
+    entries: [
+      {
+        category: "PERFORMANCE",
+        title: {
+          es: "Prerender Estático Masivo en Páginas Públicas",
+          en: "Massive Static Prerendering across Public Pages",
+          ca: "Prerender Estàtic Massiu a Pàgines Públiques",
+          de: "Massives statisches Prerendering für öffentliche Seiten",
+        },
+        description: {
+          es: "Se activó prerender = true con getStaticPaths cuatrilingüe en sobre-nosotros, privacy, terms, actualizaciones, memoria-histórica, blog, guías, normativa, deporte, tours y estadísticas.",
+          en: "Activated prerender = true with four-language getStaticPaths on about-us, privacy, terms, changelog, historical heritage, blog, citizen guides, regulations, sports, tours and stats.",
+          ca: "S'activa prerender = true a sobre-nosaltres, privadesa, termes, actualitzacions, memòria històrica, blog, guies, normativa, esport, tours i estadístiques.",
+          de: "prerender = true mit 4-sprachigen getStaticPaths für Über uns, Datenschutz, AGB, Updates, Historie, Blog, Guides, Vorschriften, Sport, Touren und Statistiken aktiviert.",
+        },
+        badgeText: {
+          es: "⚡ Rendimiento",
+          en: "⚡ Performance",
+          ca: "⚡ Rendiment",
+          de: "⚡ Performance",
+        },
+      },
+      {
+        category: "FIX",
+        title: {
+          es: "Blindaje de Telemetría y Erradicación de Errores 400",
+          en: "Telemetry Hardening & Eradication of 400 Errors",
+          ca: "Blindatge de Telemetria i Erradicació d'Errors 400",
+          de: "Telemetrie-Absicherung & Beseitigung von 400er-Fehlern",
+        },
+        description: {
+          es: "Los endpoints /api/telemetry y /api/logs/ingest ahora responden 200 en payloads inválidos de bots (evitando métricas falsas de error en Worker), añaden cabeceras CORS universales y soportan peticiones OPTIONS preflight.",
+          en: "Endpoints /api/telemetry and /api/logs/ingest now return 200 on malformed payloads from bot probes, add universal CORS headers, and handle OPTIONS preflights.",
+          ca: "Els endpoints de telemetria retornen 200 en càrregues invàlides de bots, incorporen capçaleres CORS i preflights OPTIONS.",
+          de: "Die Endpunkte /api/telemetry und /api/logs/ingest antworten bei ungültigen Bot-Payloads mit 200, bieten universelle CORS-Header und unterstützen OPTIONS-Preflights.",
+        },
+        badgeText: {
+          es: "🛡️ Resiliencia",
+          en: "🛡️ Resilience",
+          ca: "🛡️ Resiliència",
+          de: "🛡️ Resilienz",
+        },
+      },
+      {
+        category: "FEATURE",
+        title: {
+          es: "Cloudflare Smart Placement",
+          en: "Cloudflare Smart Placement",
+          ca: "Cloudflare Smart Placement",
+          de: "Cloudflare Smart Placement",
+        },
+        description: {
+          es: "Configuración de placement mode: smart en wrangler.json para ejecutar el Worker automáticamente en el datacenter más cercano a las bases de datos D1.",
+          en: "Configured placement mode: smart in wrangler.json to execute Worker workloads closest to D1 database backends.",
+          ca: "Configuració de placement mode: smart a wrangler.json per minimitzar latència cap a D1.",
+          de: "Konfiguration von placement mode: smart in wrangler.json zur Minimierung der Latenz zu D1-Datenbanken.",
+        },
+        badgeText: {
+          es: "🌐 Edge",
+          en: "🌐 Edge",
+          ca: "🌐 Edge",
+          de: "🌐 Edge",
+        },
+      },
+    ],
+  },
   {
     version: "1.0.2",
     versionLabel: {

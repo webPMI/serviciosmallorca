@@ -3,6 +3,20 @@ import { logToD1, type LogLevel, type LogCategory } from "../../lib/d1Logger";
 
 export const prerender = false;
 
+const CORS_HEADERS = {
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Methods": "POST, GET, OPTIONS",
+  "Access-Control-Allow-Headers": "Content-Type, Authorization",
+  "Access-Control-Max-Age": "86400",
+};
+
+export const OPTIONS: APIRoute = async () => {
+  return new Response(null, {
+    status: 204,
+    headers: CORS_HEADERS,
+  });
+};
+
 /**
  * API Endpoint para recibir logs de telemetría y diagnóstico desde el frontend/SSR.
  * Captura errores, advertencias y eventos de auditoría en Cloudflare D1 en tiempo real.
@@ -10,7 +24,7 @@ export const prerender = false;
 export const GET: APIRoute = async () => {
   return new Response(JSON.stringify({ status: "active", service: "telemetry", version: "2026.1" }), {
     status: 200,
-    headers: { "Content-Type": "application/json" },
+    headers: { "Content-Type": "application/json", ...CORS_HEADERS },
   });
 };
 
@@ -62,13 +76,17 @@ export const POST: APIRoute = async (context) => {
       }),
       {
         status: result.success ? 200 : 500,
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json", ...CORS_HEADERS },
       },
     );
   } catch (e: any) {
-    return new Response(JSON.stringify({ success: false, error: e?.message || "Internal Server Error" }), {
-      status: 400,
-      headers: { "Content-Type": "application/json" },
-    });
+    // Retornar 200 para payloads malformados/probes bots para no inflar métricas de error de Worker en Cloudflare
+    return new Response(
+      JSON.stringify({ success: false, ignored: true, error: e?.message || "Invalid payload" }),
+      {
+        status: 200,
+        headers: { "Content-Type": "application/json", ...CORS_HEADERS },
+      },
+    );
   }
 };

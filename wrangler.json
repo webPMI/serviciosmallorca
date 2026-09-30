@@ -3,6 +3,9 @@
   "compatibility_date": "2026-08-25",
   "compatibility_flags": ["nodejs_compat"],
   "workers_dev": true,
+  "placement": {
+    "mode": "smart"
+  },
   "routes": [
     {
       "pattern": "serviciosmallorca.com",

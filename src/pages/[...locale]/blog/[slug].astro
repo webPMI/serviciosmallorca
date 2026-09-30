@@ -5,13 +5,21 @@ import Footer from "../../../components/Footer.astro";
 import ServiceCard from "../../../components/ServiceCard.astro";
 import AdSenseSlot from "../../../components/AdSenseSlot.astro";
 import SectorHistoricalChart from "../../../components/SectorHistoricalChart.astro";
-import { getPostBySlug } from "../../../data/posts";
+import { getPostBySlug, BLOG_POSTS } from "../../../data/posts";
 import { getHistoricalSeriesById } from "../../../data/historicalSectorStats";
 import { CATEGORIES } from "../../../data/categories";
 import { getServiceById } from "../../../data/services";
-import { getLocaleFromUrl, loadTranslations, getLangPrefix, type Locale } from "../../../i18n";
+import { getLocaleFromUrl, loadTranslations, getLangPrefix, type Locale, LOCALES } from "../../../i18n";
 
-export const prerender = false;
+export function getStaticPaths() {
+  return LOCALES.flatMap((locale) =>
+    BLOG_POSTS.map((post) => ({
+      params: { locale, slug: post.slug },
+    }))
+  );
+}
+
+export const prerender = true;
 
 const locale = getLocaleFromUrl(Astro.url) as Locale;
 const translations = await loadTranslations(locale);

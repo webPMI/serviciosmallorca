@@ -12,10 +12,14 @@ import Footer from "../../components/Footer.astro";
 import OfficialStatCard from "../../components/OfficialStatCard.astro";
 import HumanPressureGauge from "../../components/HumanPressureGauge.astro";
 import OpenDataExporter from "../../components/OpenDataExporter.astro";
-import { getLocaleFromUrl, loadTranslations, getLangPrefix, type Locale } from "../../i18n";
+import { getLocaleFromUrl, loadTranslations, getLangPrefix, type Locale, LOCALES } from "../../i18n";
 import { OFFICIAL_STATISTICS } from "../../data/officialStats";
 
-export const prerender = false;
+export function getStaticPaths() {
+  return LOCALES.map((locale) => ({ params: { locale } }));
+}
+
+export const prerender = true;
 
 const locale = getLocaleFromUrl(Astro.url) as Locale;
 const translations = await loadTranslations(locale);
