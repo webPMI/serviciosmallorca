@@ -452,12 +452,15 @@ const schemaData = {
   .filter-pills {
     display: flex;
     gap: 0.5rem;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     overflow-x: auto;
     padding-bottom: 0.5rem;
+    scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
   }
 
   .filter-pill {
+    flex-shrink: 0;
     background: var(--color-surface, #ffffff);
     border: 1.5px solid var(--color-border, #cbd5e1);
     color: var(--color-text, #475569);

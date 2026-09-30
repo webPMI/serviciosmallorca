@@ -136,5 +136,7 @@
   "services.filter.multilingual": "🌐 English / German",
   "services.filter.terrace": "☀️ Terrace / Outdoor",
   "services.filter.petFriendly": "🐾 Pet Friendly",
-  "services.filter.accessible": "♿ Accessible"
+  "services.filter.accessible": "♿ Accessible",
+  "services.pills.viewAll": "View all",
+  "services.pills.viewLess": "Show less"
 }

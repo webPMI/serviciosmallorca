@@ -136,5 +136,7 @@
   "services.filter.multilingual": "🌐 Anglès / Alemany",
   "services.filter.terrace": "☀️ Amb Terrassa",
   "services.filter.petFriendly": "🐾 Pet Friendly",
-  "services.filter.accessible": "♿ Accessible PMR"
+  "services.filter.accessible": "♿ Accessible PMR",
+  "services.pills.viewAll": "Veure totes",
+  "services.pills.viewLess": "Veure menys"
 }

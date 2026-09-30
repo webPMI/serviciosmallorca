@@ -92,8 +92,8 @@ describe("i18n utility module", () => {
       for (const locale of LOCALES) {
         const trans = await loadTranslations(locale);
         expect(trans).toBeDefined();
-        // 627 claves = 569 previas + 58 de los flujos de titularidad (modales de claim/baja, nuevo negocio, dashboard manager y timelines de perfil)
-        expect(Object.keys(trans).length).toBe(627);
+        // 629 claves = 627 previas + 2 de los controles de visualización de categorías (services.pills.viewAll / viewLess)
+        expect(Object.keys(trans).length).toBe(629);
         expect(trans["site.title"]).toBe("Servicios Mallorca");
       }
     });

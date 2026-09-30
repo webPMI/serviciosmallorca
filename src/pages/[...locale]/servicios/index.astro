@@ -330,22 +330,65 @@ const showFeaturedServices = shouldShowFeaturedServices(
     <!-- Category Quick Filter Pills (Only active categories) -->
     {
       activeCategories.length > 0 && (
-        <div class="category-pills-bar">
-          <a href={`${prefix}servicios`} class:list={["pill-link", { active: !selectedCategory }]} data-cat-pill="">
-            <span>🌟</span>
-            <span>{translations["services.allCategories"]}</span>
-          </a>
-          {activeCategories.map((cat) => (
-            <a
-              href={`${prefix}servicios?categoria=${cat.id}${selectedZone ? `&zona=${selectedZone}` : ""}`}
-              class:list={["pill-link", { active: selectedCategory === cat.id }]}
-              data-cat-pill={cat.id}
-            >
-              <span>{cat.icon}</span>
-              <span>{cat.name[locale]}</span>
-            </a>
-          ))}
-        </div>
+        <section class="category-pills-section" aria-label={translations["services.allCategories"] || "Filtro rápido por categoría"}>
+          <div class="category-pills-header">
+            <div class="category-pills-title-group">
+              <span class="category-pills-icon">🧭</span>
+              <span class="category-pills-title">{translations["services.allCategories"]}</span>
+              <span class="category-pills-count">({activeCategories.length})</span>
+            </div>
+            <div class="category-pills-actions">
+              <button
+                type="button"
+                id="cat-pills-scroll-left"
+                class="cat-pills-arrow-btn"
+                aria-label="Desplazar categorías a la izquierda"
+                title="Desplazar a la izquierda"
+              >
+                ‹
+              </button>
+              <button
+                type="button"
+                id="cat-pills-scroll-right"
+                class="cat-pills-arrow-btn"
+                aria-label="Desplazar categorías a la derecha"
+                title="Desplazar a la derecha"
+              >
+                ›
+              </button>
+              <button
+                type="button"
+                id="toggle-cat-pills-btn"
+                class="toggle-cat-pills-btn"
+                aria-expanded="false"
+                data-text-expand={translations["services.pills.viewAll"] || "Ver todas"}
+                data-text-collapse={translations["services.pills.viewLess"] || "Ver menos"}
+              >
+                <span class="toggle-btn-text">{translations["services.pills.viewAll"] || "Ver todas"} ({activeCategories.length})</span>
+                <span class="toggle-btn-icon">▾</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="category-pills-wrapper" id="category-pills-wrapper">
+            <div class="category-pills-bar" id="category-pills-bar">
+              <a href={`${prefix}servicios`} class:list={["pill-link", { active: !selectedCategory }]} data-cat-pill="">
+                <span>🌟</span>
+                <span>{translations["services.allCategories"]}</span>
+              </a>
+              {activeCategories.map((cat) => (
+                <a
+                  href={`${prefix}servicios?categoria=${cat.id}${selectedZone ? `&zona=${selectedZone}` : ""}`}
+                  class:list={["pill-link", { active: selectedCategory === cat.id }]}
+                  data-cat-pill={cat.id}
+                >
+                  <span>{cat.icon}</span>
+                  <span>{cat.name[locale]}</span>
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
       )
     }
 
@@ -763,6 +806,47 @@ const showFeaturedServices = shouldShowFeaturedServices(
       gridBtn?.classList.remove("active");
       gridBtn?.setAttribute("aria-pressed", "false");
     });
+
+    // ─── CATEGORY PILLS HORIZONTAL SCROLL & EXPAND ───
+    const toggleCatPillsBtn = document.getElementById("toggle-cat-pills-btn");
+    const catPillsSection = document.querySelector(".category-pills-section");
+    const catPillsBar = document.getElementById("category-pills-bar");
+    const scrollLeftBtn = document.getElementById("cat-pills-scroll-left");
+    const scrollRightBtn = document.getElementById("cat-pills-scroll-right");
+
+    if (toggleCatPillsBtn && catPillsSection) {
+      const textExpand = toggleCatPillsBtn.getAttribute("data-text-expand") || "Ver todas";
+      const textCollapse = toggleCatPillsBtn.getAttribute("data-text-collapse") || "Ver menos";
+      const totalCount = catPills.length;
+      const btnTextSpan = toggleCatPillsBtn.querySelector(".toggle-btn-text");
+
+      toggleCatPillsBtn.addEventListener("click", () => {
+        const isExpanded = catPillsSection.classList.toggle("is-expanded");
+        toggleCatPillsBtn.setAttribute("aria-expanded", String(isExpanded));
+        if (btnTextSpan) {
+          btnTextSpan.textContent = isExpanded ? textCollapse : `${textExpand} (${totalCount})`;
+        }
+      });
+    }
+
+    if (scrollLeftBtn && catPillsBar) {
+      scrollLeftBtn.addEventListener("click", () => {
+        catPillsBar.scrollBy({ left: -260, behavior: "smooth" });
+      });
+    }
+    if (scrollRightBtn && catPillsBar) {
+      scrollRightBtn.addEventListener("click", () => {
+        catPillsBar.scrollBy({ left: 260, behavior: "smooth" });
+      });
+    }
+
+    // Scroll active pill into view smoothly
+    const activePill = catPillsBar?.querySelector(".pill-link.active");
+    if (activePill && catPillsBar) {
+      setTimeout(() => {
+        activePill.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+      }, 150);
+    }
   });
 </script>
 
@@ -933,10 +1017,18 @@ const showFeaturedServices = shouldShowFeaturedServices(
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
     margin-top: 1rem;
     padding-top: 0.75rem;
+    padding-bottom: 0.25rem;
     border-top: 1px solid var(--color-surface-border, rgba(255, 255, 255, 0.08));
+  }
+
+  .intent-chips-bar::-webkit-scrollbar {
+    display: none;
   }
 
   .intent-chips-label {
@@ -944,6 +1036,7 @@ const showFeaturedServices = shouldShowFeaturedServices(
     font-weight: 700;
     color: var(--color-text-muted);
     white-space: nowrap;
+    flex-shrink: 0;
   }
 
   .intent-chip-btn {
@@ -961,6 +1054,8 @@ const showFeaturedServices = shouldShowFeaturedServices(
     transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
     user-select: none;
     text-decoration: none;
+    flex-shrink: 0;
+    white-space: nowrap;
   }
 
   .intent-chip-btn:hover {
@@ -976,14 +1071,148 @@ const showFeaturedServices = shouldShowFeaturedServices(
     box-shadow: 0 2px 8px rgba(201, 147, 62, 0.35);
   }
 
+  /* ═══ CATEGORY PILLS TOOLBAR & SCROLL TRACK ═══ */
+  .category-pills-section {
+    margin-bottom: var(--space-md);
+    background: var(--color-surface);
+    border: 1px solid var(--color-surface-border);
+    border-radius: var(--border-radius-md);
+    padding: var(--space-xs) var(--space-sm);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-normal);
+  }
+
+  .category-pills-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.35rem 0.25rem 0.5rem;
+    border-bottom: 1px solid var(--color-surface-border);
+    margin-bottom: 0.5rem;
+    gap: var(--space-xs);
+  }
+
+  .category-pills-title-group {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    color: var(--color-text);
+    white-space: nowrap;
+  }
+
+  .category-pills-count {
+    color: var(--color-text-muted);
+    font-weight: 500;
+  }
+
+  .category-pills-actions {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+
+  .cat-pills-arrow-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: var(--border-radius-full);
+    background: var(--color-bg);
+    border: 1px solid var(--color-surface-border);
+    color: var(--color-text);
+    font-size: 1.15rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+  }
+
+  .cat-pills-arrow-btn:hover {
+    background: var(--color-primary);
+    color: var(--color-white);
+    border-color: var(--color-primary);
+  }
+
+  .toggle-cat-pills-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.25rem 0.75rem;
+    background: color-mix(in srgb, var(--color-primary) 10%, var(--color-surface));
+    border: 1px solid color-mix(in srgb, var(--color-primary) 30%, transparent);
+    border-radius: var(--border-radius-full);
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    color: var(--color-primary);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    white-space: nowrap;
+  }
+
+  .toggle-cat-pills-btn:hover {
+    background: var(--color-primary);
+    color: var(--color-white);
+    transform: translateY(-1px);
+  }
+
+  .toggle-btn-icon {
+    transition: transform var(--transition-fast);
+    display: inline-block;
+  }
+
+  .category-pills-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  /* Compact Mode (Default): Horizontal Scroll Track */
   .category-pills-bar {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
     gap: var(--space-xs);
-    margin-bottom: var(--space-md);
+    padding-bottom: 0.5rem;
+    padding-top: 0.15rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-surface-border) transparent;
+    scroll-behavior: smooth;
+  }
+
+  .category-pills-bar::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  .category-pills-bar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .category-pills-bar::-webkit-scrollbar-thumb {
+    background: var(--color-surface-border);
+    border-radius: 4px;
+  }
+
+  /* Expanded Mode: Full Wrap Grid */
+  .category-pills-section.is-expanded .category-pills-bar {
+    flex-wrap: wrap;
+    overflow-x: visible;
+    padding-bottom: 0.25rem;
+  }
+
+  .category-pills-section.is-expanded .cat-pills-arrow-btn {
+    display: none;
+  }
+
+  .category-pills-section.is-expanded .toggle-btn-icon {
+    transform: rotate(180deg);
   }
 
   .pill-link {
+    flex-shrink: 0;
     display: inline-flex;
     align-items: center;
     gap: 0.4rem;
@@ -996,6 +1225,7 @@ const showFeaturedServices = shouldShowFeaturedServices(
     color: var(--color-text);
     text-decoration: none;
     transition: all var(--transition-fast);
+    white-space: nowrap;
   }
 
   .pill-link:hover,

@@ -505,11 +505,17 @@ const ZONES: Array<{ id: string; name: Record<Locale, string> }> = [
 
   .toggle-pills-row {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    overflow-x: auto;
     gap: 0.4rem;
+    padding-bottom: 0.35rem;
+    scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
   }
 
   .toggle-pill {
+    flex-shrink: 0;
+    white-space: nowrap;
     display: inline-flex;
     align-items: center;
     gap: 0.3rem;

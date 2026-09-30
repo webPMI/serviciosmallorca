@@ -136,5 +136,7 @@
   "services.filter.multilingual": "🌐 Englisch / Deutsch",
   "services.filter.terrace": "☀️ Mit Terrasse",
   "services.filter.petFriendly": "🐾 Haustierfreundlich",
-  "services.filter.accessible": "♿ Barrierefrei"
+  "services.filter.accessible": "♿ Barrierefrei",
+  "services.pills.viewAll": "Alle anzeigen",
+  "services.pills.viewLess": "Weniger anzeigen"
 }
