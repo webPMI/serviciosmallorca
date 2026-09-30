@@ -9,13 +9,11 @@ import { bodega_son_juliana_santa_eugenia } from "./bodega-son-juliana-santa-eug
 import { bodegas_anima_negra_felanitx } from "./bodegas-anima-negra-felanitx.ts";
 import { bodegas_bordoy_campos_sa_rota } from "./bodegas-bordoy-campos-sa-rota.ts";
 import { bodegas_jose_l_ferrer_binissalem } from "./bodegas-jose-l-ferrer-binissalem.ts";
-import { bodegas_ribas_consell_enoturismo_1711 } from "./bodegas-ribas-consell-enoturismo-1711.ts";
 import { ecovinyassa_soller_citricos_ecologicos_huerto } from "./ecovinyassa-soller-citricos-ecologicos-huerto.ts";
 import { embutidosCanCompanyPorcNegre } from "./embutidos-can-company-porc-negre.ts";
 import { es_garrover_de_mallorca_algarroba_llucmajor } from "./es-garrover-de-mallorca-algarroba-llucmajor.ts";
 import { finca_ecologica_sa_teulera_petra } from "./finca-ecologica-sa-teulera-petra.ts";
 import { flor_de_sal_des_trenc_salinas_mallorca } from "./flor-de-sal-des-trenc-salinas-mallorca.ts";
-import { florDeSalEsTrenc } from "./flor-de-sal-es-trenc.ts";
 import { formatgeria_grimalt_lloret_formatge_mallorqui } from "./formatgeria-grimalt-lloret-formatge-mallorqui.ts";
 import { formatgeria_sa_cabreta_sencelles } from "./formatgeria-sa-cabreta-sencelles.ts";
 import { formatgesDeMallorcaQueseriaArta } from "./formatges-de-mallorca-queseria-arta.ts";
@@ -39,13 +37,11 @@ export { bodega_son_juliana_santa_eugenia } from "./bodega-son-juliana-santa-eug
 export { bodegas_anima_negra_felanitx } from "./bodegas-anima-negra-felanitx.ts";
 export { bodegas_bordoy_campos_sa_rota } from "./bodegas-bordoy-campos-sa-rota.ts";
 export { bodegas_jose_l_ferrer_binissalem } from "./bodegas-jose-l-ferrer-binissalem.ts";
-export { bodegas_ribas_consell_enoturismo_1711 } from "./bodegas-ribas-consell-enoturismo-1711.ts";
 export { ecovinyassa_soller_citricos_ecologicos_huerto } from "./ecovinyassa-soller-citricos-ecologicos-huerto.ts";
 export { embutidosCanCompanyPorcNegre } from "./embutidos-can-company-porc-negre.ts";
 export { es_garrover_de_mallorca_algarroba_llucmajor } from "./es-garrover-de-mallorca-algarroba-llucmajor.ts";
 export { finca_ecologica_sa_teulera_petra } from "./finca-ecologica-sa-teulera-petra.ts";
 export { flor_de_sal_des_trenc_salinas_mallorca } from "./flor-de-sal-des-trenc-salinas-mallorca.ts";
-export { florDeSalEsTrenc } from "./flor-de-sal-es-trenc.ts";
 export { formatgeria_grimalt_lloret_formatge_mallorqui } from "./formatgeria-grimalt-lloret-formatge-mallorqui.ts";
 export { formatgeria_sa_cabreta_sencelles } from "./formatgeria-sa-cabreta-sencelles.ts";
 export { formatgesDeMallorcaQueseriaArta } from "./formatges-de-mallorca-queseria-arta.ts";
@@ -70,13 +66,11 @@ export const AGRICULTURA_SERVICES: ServiceItem[] = [
   bodegas_anima_negra_felanitx,
   bodegas_bordoy_campos_sa_rota,
   bodegas_jose_l_ferrer_binissalem,
-  bodegas_ribas_consell_enoturismo_1711,
   ecovinyassa_soller_citricos_ecologicos_huerto,
   embutidosCanCompanyPorcNegre,
   es_garrover_de_mallorca_algarroba_llucmajor,
   finca_ecologica_sa_teulera_petra,
   flor_de_sal_des_trenc_salinas_mallorca,
-  florDeSalEsTrenc,
   formatgeria_grimalt_lloret_formatge_mallorqui,
   formatgeria_sa_cabreta_sencelles,
   formatgesDeMallorcaQueseriaArta,

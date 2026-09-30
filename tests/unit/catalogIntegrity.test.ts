@@ -3,8 +3,8 @@ import { SERVICES } from "../../src/data/services/index.ts";
 import { CATEGORIES, SUPER_SECTORS } from "../../src/data/categories.ts";
 
 describe("Catalog Integrity & Categorization Sanity", () => {
-  it("contiene exactamente 953 servicios con IDs y slugs únicos", () => {
-    expect(SERVICES.length).toBe(953);
+  it("contiene exactamente 930 servicios con IDs y slugs únicos", () => {
+    expect(SERVICES.length).toBe(930);
     const ids = new Set<string>();
     for (const s of SERVICES) {
       expect(ids.has(s.id)).toBe(false);

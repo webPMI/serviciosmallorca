@@ -4,9 +4,7 @@ import { engelVolkersMallorca } from "./engel-volkers-mallorca.ts";
 import { firstMallorca } from "./first-mallorca.ts";
 import { inmobiliaria_casas_mallorca_soller } from "./inmobiliaria-casas-mallorca-soller.ts";
 import { john_taylor_luxury_real_estate_palma } from "./john-taylor-luxury-real-estate-palma.ts";
-import { kensington_finest_properties_palma_son_vida } from "./kensington-finest-properties-palma-son-vida.ts";
 import { kensingtonFinestPropertiesPalma } from "./kensington-finest-properties-palma.ts";
-import { kensington_international_real_estate_palma_lujo } from "./kensington-international-real-estate-palma-lujo.ts";
 import { kuhnAndPartnerLuxuryPalma } from "./kuhn-and-partner-luxury-palma.ts";
 import { livingBlueMallorcaSantaMaria } from "./living-blue-mallorca-santa-maria.ts";
 import { lucasFoxMallorcaInmobiliaria } from "./lucas-fox-mallorca-inmobiliaria.ts";
@@ -30,9 +28,7 @@ export { engelVolkersMallorca } from "./engel-volkers-mallorca.ts";
 export { firstMallorca } from "./first-mallorca.ts";
 export { inmobiliaria_casas_mallorca_soller } from "./inmobiliaria-casas-mallorca-soller.ts";
 export { john_taylor_luxury_real_estate_palma } from "./john-taylor-luxury-real-estate-palma.ts";
-export { kensington_finest_properties_palma_son_vida } from "./kensington-finest-properties-palma-son-vida.ts";
 export { kensingtonFinestPropertiesPalma } from "./kensington-finest-properties-palma.ts";
-export { kensington_international_real_estate_palma_lujo } from "./kensington-international-real-estate-palma-lujo.ts";
 export { kuhnAndPartnerLuxuryPalma } from "./kuhn-and-partner-luxury-palma.ts";
 export { livingBlueMallorcaSantaMaria } from "./living-blue-mallorca-santa-maria.ts";
 export { lucasFoxMallorcaInmobiliaria } from "./lucas-fox-mallorca-inmobiliaria.ts";
@@ -57,9 +53,7 @@ export const INMOBILIARIA_SERVICES: ServiceItem[] = [
   firstMallorca,
   inmobiliaria_casas_mallorca_soller,
   john_taylor_luxury_real_estate_palma,
-  kensington_finest_properties_palma_son_vida,
   kensingtonFinestPropertiesPalma,
-  kensington_international_real_estate_palma_lujo,
   kuhnAndPartnerLuxuryPalma,
   livingBlueMallorcaSantaMaria,
   lucasFoxMallorcaInmobiliaria,

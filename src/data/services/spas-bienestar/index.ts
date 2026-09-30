@@ -15,7 +15,6 @@ import { clinica_dental_palma_son_vida } from "./clinica-dental-palma-son-vida.t
 import { clinica_dental_portals_nous_calvia } from "./clinica-dental-portals-nous-calvia.ts";
 import { clinica_dr_morano_medicina_estetica_palma } from "./clinica-dr-morano-medicina-estetica-palma.ts";
 import { clinica_juaneda_miramar_palma } from "./clinica-juaneda-miramar-palma.ts";
-import { clinica_rotger_quironsalud_palma } from "./clinica-rotger-quironsalud-palma.ts";
 import { clinica_salva_fisioterapia_osteopatia_palma } from "./clinica-salva-fisioterapia-osteopatia-palma.ts";
 import { farmaciaBagur24hAragoPalma } from "./farmacia-bagur-24h-arago-palma.ts";
 import { farmaciaBalanguera24hPalma } from "./farmacia-balanguera-24h-palma.ts";
@@ -26,7 +25,6 @@ import { fisioterapia_osteopatia_palma_salut_clinica } from "./fisioterapia-oste
 import { hammam_al_andalus_palma_centro } from "./hammam-al-andalus-palma-centro.ts";
 import { hammam_palma_banos_arabes_centro_historico } from "./hammam-palma-banos-arabes-centro-historico.ts";
 import { hospitalComarcalIncaRaiguer } from "./hospital-comarcal-inca-raiguer.ts";
-import { hospital_de_llevant_porto_cristo } from "./hospital-de-llevant-porto-cristo.ts";
 import { hospitalDeManacorLlevant } from "./hospital-de-manacor-llevant.ts";
 import { hospitalGeneralDePalmaCentro } from "./hospital-general-de-palma-centro.ts";
 import { hospitalJuanedaMuroAlcudia } from "./hospital-juaneda-muro-alcudia.ts";
@@ -41,7 +39,6 @@ import { juaneda_international_medical_santa_ponsa } from "./juaneda-internation
 import { oftalmedicSalvaPalma } from "./oftalmedic-salva-palma.ts";
 import { palma_clinic_international_center } from "./palma-clinic-international-center.ts";
 import { policlinica_quironsalud_manacor } from "./policlinica-quironsalud-manacor.ts";
-import { son_brull_spa_wellness_pollensa } from "./son-brull-spa-wellness-pollensa.ts";
 import { son_net_spa_wellness_puigpunyent } from "./son-net-spa-wellness-puigpunyent.ts";
 import { spa_son_brull_hotel_wellness_pollensa } from "./spa-son-brull-hotel-wellness-pollensa.ts";
 import { studio_botanico_palma_spa_wellness } from "./studio-botanico-palma-spa-wellness.ts";
@@ -63,7 +60,6 @@ export { clinica_dental_palma_son_vida } from "./clinica-dental-palma-son-vida.t
 export { clinica_dental_portals_nous_calvia } from "./clinica-dental-portals-nous-calvia.ts";
 export { clinica_dr_morano_medicina_estetica_palma } from "./clinica-dr-morano-medicina-estetica-palma.ts";
 export { clinica_juaneda_miramar_palma } from "./clinica-juaneda-miramar-palma.ts";
-export { clinica_rotger_quironsalud_palma } from "./clinica-rotger-quironsalud-palma.ts";
 export { clinica_salva_fisioterapia_osteopatia_palma } from "./clinica-salva-fisioterapia-osteopatia-palma.ts";
 export { farmaciaBagur24hAragoPalma } from "./farmacia-bagur-24h-arago-palma.ts";
 export { farmaciaBalanguera24hPalma } from "./farmacia-balanguera-24h-palma.ts";
@@ -74,7 +70,6 @@ export { fisioterapia_osteopatia_palma_salut_clinica } from "./fisioterapia-oste
 export { hammam_al_andalus_palma_centro } from "./hammam-al-andalus-palma-centro.ts";
 export { hammam_palma_banos_arabes_centro_historico } from "./hammam-palma-banos-arabes-centro-historico.ts";
 export { hospitalComarcalIncaRaiguer } from "./hospital-comarcal-inca-raiguer.ts";
-export { hospital_de_llevant_porto_cristo } from "./hospital-de-llevant-porto-cristo.ts";
 export { hospitalDeManacorLlevant } from "./hospital-de-manacor-llevant.ts";
 export { hospitalGeneralDePalmaCentro } from "./hospital-general-de-palma-centro.ts";
 export { hospitalJuanedaMuroAlcudia } from "./hospital-juaneda-muro-alcudia.ts";
@@ -89,7 +84,6 @@ export { juaneda_international_medical_santa_ponsa } from "./juaneda-internation
 export { oftalmedicSalvaPalma } from "./oftalmedic-salva-palma.ts";
 export { palma_clinic_international_center } from "./palma-clinic-international-center.ts";
 export { policlinica_quironsalud_manacor } from "./policlinica-quironsalud-manacor.ts";
-export { son_brull_spa_wellness_pollensa } from "./son-brull-spa-wellness-pollensa.ts";
 export { son_net_spa_wellness_puigpunyent } from "./son-net-spa-wellness-puigpunyent.ts";
 export { spa_son_brull_hotel_wellness_pollensa } from "./spa-son-brull-hotel-wellness-pollensa.ts";
 export { studio_botanico_palma_spa_wellness } from "./studio-botanico-palma-spa-wellness.ts";
@@ -112,7 +106,6 @@ export const SPAS_SERVICES: ServiceItem[] = [
   clinica_dental_portals_nous_calvia,
   clinica_dr_morano_medicina_estetica_palma,
   clinica_juaneda_miramar_palma,
-  clinica_rotger_quironsalud_palma,
   clinica_salva_fisioterapia_osteopatia_palma,
   farmaciaBagur24hAragoPalma,
   farmaciaBalanguera24hPalma,
@@ -123,7 +116,6 @@ export const SPAS_SERVICES: ServiceItem[] = [
   hammam_al_andalus_palma_centro,
   hammam_palma_banos_arabes_centro_historico,
   hospitalComarcalIncaRaiguer,
-  hospital_de_llevant_porto_cristo,
   hospitalDeManacorLlevant,
   hospitalGeneralDePalmaCentro,
   hospitalJuanedaMuroAlcudia,
@@ -138,7 +130,6 @@ export const SPAS_SERVICES: ServiceItem[] = [
   oftalmedicSalvaPalma,
   palma_clinic_international_center,
   policlinica_quironsalud_manacor,
-  son_brull_spa_wellness_pollensa,
   son_net_spa_wellness_puigpunyent,
   spa_son_brull_hotel_wellness_pollensa,
   studio_botanico_palma_spa_wellness,

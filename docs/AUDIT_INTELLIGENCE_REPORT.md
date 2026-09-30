@@ -1,6 +1,6 @@
 # 🛡️ Informe de Inteligencia y Auditoría Multi-Agente
 
-**Fecha de Auditoría:** 2026-09-30T13:21:31.665Z
+**Fecha de Auditoría:** 2026-09-30T13:26:18.366Z
 **Puntaje Global de Cumplimiento:** `100%`
 **Estado del Sistema:** `BLINDADO_OPTIMO`
 
@@ -10,11 +10,11 @@
 
 | Auditor                              | Evaluados | Críticos | Advertencias | Informativos | Cumplimiento |
 | :----------------------------------- | :-------- | :------- | :----------- | :----------- | :----------- |
-| 🛡️ **Seguridad & Acceso**            | 953       | 0        | 0            | 0            | **100%**     |
-| 📊 **Integridad Zero Fake Data**     | 953       | 0        | 0            | 0            | **100%**     |
-| 🏛️ **Evolución & Memoria Histórica** | 953       | 0        | 0            | 0            | **100%**     |
+| 🛡️ **Seguridad & Acceso**            | 930       | 0        | 0            | 0            | **100%**     |
+| 📊 **Integridad Zero Fake Data**     | 930       | 0        | 0            | 0            | **100%**     |
+| 🏛️ **Evolución & Memoria Histórica** | 930       | 0        | 0            | 0            | **100%**     |
 | 👑 **Cuadro de Honor & Subastas**    | 6         | 0        | 0            | 0            | **100%**     |
-| ⚡ **Rendimiento & Assets**          | 953       | 0        | 0            | 0            | **100%**     |
+| ⚡ **Rendimiento & Assets**          | 930       | 0        | 0            | 0            | **100%**     |
 
 ---
 

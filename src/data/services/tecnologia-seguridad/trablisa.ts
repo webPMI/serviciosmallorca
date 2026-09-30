@@ -15,10 +15,10 @@ export const trablisaSeguridad: ServiceItem = {
   seasonality: "year_round",
   isIconicHeritage: true,
   priceRange: "€€€",
-  address: "Carrer del Gremi de Teixidors, 25, 07009 Palma, Illes Balears",
+  address: "Camí dels Reis, s/n, Edifici TRABLISA, Polígon Son Castelló, 07009 Palma, Illes Balears",
   zone: "palma",
-  phone: "+34 971 70 80 90",
-  whatsapp: "+34 971 70 80 90",
+  phone: "+34 900 535 961",
+  whatsapp: "+34 971 430 532",
   email: "direccion@trablisa.es",
   website: "https://www.trablisa.es",
   coordinates: {

@@ -40,7 +40,6 @@ import { CROSSFIT_POLLENSA_BOX } from "./crossfit-pollensa-box.ts";
 import { CROSSFIT_PORTIXOL_PALMA } from "./crossfit-portixol-palma.ts";
 import { CROSSFIT_SANTANYI_BOX } from "./crossfit-santanyi-box.ts";
 import { CROSSFIT_TRAMUNTANA_PALMA } from "./crossfit-tramuntana-palma.ts";
-import { diving_scuba_mallorca_port_pollensa_center } from "./diving-scuba-mallorca-port-pollensa-center.ts";
 import { ELITE_FITNESS_PORT_ANDRATX } from "./elite-fitness-port-andratx.ts";
 import { ES_CAU_BOULDER_FELANITX } from "./es-cau-boulder-felanitx.ts";
 import { F45_TRAINING_PALMA_CENTRO } from "./f45-training-palma-centro.ts";
@@ -53,7 +52,6 @@ import { GOLF_MAIORIS_LLUCMAJOR } from "./golf-maioris-llucmajor.ts";
 import { GOLF_SANTA_PONSA_CALVIA } from "./golf-santa-ponsa-calvia.ts";
 import { GOLF_SON_GUAL_PALMA } from "./golf-son-gual-palma.ts";
 import { golf_son_muntaner_palma_arabella_hotel } from "./golf-son-muntaner-palma-arabella-hotel.ts";
-import { GOLF_SON_MUNTANER_PALMA } from "./golf-son-muntaner-palma.ts";
 import { GOLF_SON_QUINT_PALMA } from "./golf-son-quint-palma.ts";
 import { GOLF_SON_VIDA_PALMA } from "./golf-son-vida-palma.ts";
 import { HOT_YOGA_PALMA_AVENIDAS } from "./hot-yoga-palma-avenidas.ts";
@@ -158,7 +156,6 @@ export { CROSSFIT_POLLENSA_BOX } from "./crossfit-pollensa-box.ts";
 export { CROSSFIT_PORTIXOL_PALMA } from "./crossfit-portixol-palma.ts";
 export { CROSSFIT_SANTANYI_BOX } from "./crossfit-santanyi-box.ts";
 export { CROSSFIT_TRAMUNTANA_PALMA } from "./crossfit-tramuntana-palma.ts";
-export { diving_scuba_mallorca_port_pollensa_center } from "./diving-scuba-mallorca-port-pollensa-center.ts";
 export { ELITE_FITNESS_PORT_ANDRATX } from "./elite-fitness-port-andratx.ts";
 export { ES_CAU_BOULDER_FELANITX } from "./es-cau-boulder-felanitx.ts";
 export { F45_TRAINING_PALMA_CENTRO } from "./f45-training-palma-centro.ts";
@@ -171,7 +168,6 @@ export { GOLF_MAIORIS_LLUCMAJOR } from "./golf-maioris-llucmajor.ts";
 export { GOLF_SANTA_PONSA_CALVIA } from "./golf-santa-ponsa-calvia.ts";
 export { GOLF_SON_GUAL_PALMA } from "./golf-son-gual-palma.ts";
 export { golf_son_muntaner_palma_arabella_hotel } from "./golf-son-muntaner-palma-arabella-hotel.ts";
-export { GOLF_SON_MUNTANER_PALMA } from "./golf-son-muntaner-palma.ts";
 export { GOLF_SON_QUINT_PALMA } from "./golf-son-quint-palma.ts";
 export { GOLF_SON_VIDA_PALMA } from "./golf-son-vida-palma.ts";
 export { HOT_YOGA_PALMA_AVENIDAS } from "./hot-yoga-palma-avenidas.ts";
@@ -277,7 +273,6 @@ export const DEPORTES_SERVICES: ServiceItem[] = [
   CROSSFIT_PORTIXOL_PALMA,
   CROSSFIT_SANTANYI_BOX,
   CROSSFIT_TRAMUNTANA_PALMA,
-  diving_scuba_mallorca_port_pollensa_center,
   ELITE_FITNESS_PORT_ANDRATX,
   ES_CAU_BOULDER_FELANITX,
   F45_TRAINING_PALMA_CENTRO,
@@ -290,7 +285,6 @@ export const DEPORTES_SERVICES: ServiceItem[] = [
   GOLF_SANTA_PONSA_CALVIA,
   GOLF_SON_GUAL_PALMA,
   golf_son_muntaner_palma_arabella_hotel,
-  GOLF_SON_MUNTANER_PALMA,
   GOLF_SON_QUINT_PALMA,
   GOLF_SON_VIDA_PALMA,
   HOT_YOGA_PALMA_AVENIDAS,

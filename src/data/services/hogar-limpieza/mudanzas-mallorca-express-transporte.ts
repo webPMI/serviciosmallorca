@@ -34,7 +34,8 @@ export const mudanzasMallorcaExpressTransporte: ServiceItem = {
   inVillaService: true,
   features: ["credit_card"],
   paymentMethods: ["credit_card", "bank_transfer", "cash"],
-  phone: "+34 971 70 80 90",
+  phone: "+34 664 55 13 80",
+  whatsapp: "+34 664 55 13 80",
   website: "https://www.mudanzasmallorcaexpress.com/",
   image: "/images/services/mudanzas-mallorca-express-transporte.webp",
   shortDescription: {
