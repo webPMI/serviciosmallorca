@@ -27,7 +27,6 @@ export const restauranteCanToniMorenoPortDesCanonge: ServiceItem = {
   phone: "+34 971 61 04 26",
   whatsapp: "+34 971 61 04 26",
   website: "",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Restaurante+Can+Toni+Moreno+Port+des+Canonge",
   tags: [
     "zona:tramuntana",
     "zona:banyalbufar",

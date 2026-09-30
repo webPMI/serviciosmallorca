@@ -30,7 +30,6 @@ export const THE_YOGA_HUB_SOLLER: ServiceItem = {
   schedule: "Lunes a Viernes: 08:30 - 20:30 | Sábados: 09:00 - 13:00",
   image: "/images/sports/the-yoga-hub-soller.jpg",
   gallery: ["/images/sports/the-yoga-hub-soller.jpg", "/images/categories/deportes.jpg"],
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=SEspai+6+Soller",
   shortDescription: {
     es: "Estudio de Yoga y Pilates en Sóller con clases regulares de Hatha, Vinyasa, Jivamukti y talleres de bienestar.",
     en: "Yoga and Pilates studio in Sóller offering daily Hatha, Vinyasa, and Jivamukti classes alongside wellness workshops.",

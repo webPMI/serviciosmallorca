@@ -26,7 +26,6 @@ export const mimbreriaVidalPalma: ServiceItem = {
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 71 12 43",
   website: "https://www.mimbreriavidal.com",
-  googleMapsUrl: "https://www.google.com/maps/search/Mimbreria+Vidal+Corderia+Palma+Mallorca",
   tags: [
     "zona:palma",
     "zona:casco-antiguo",

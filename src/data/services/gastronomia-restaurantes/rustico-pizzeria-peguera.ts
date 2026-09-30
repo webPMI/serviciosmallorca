@@ -27,7 +27,6 @@ export const rusticoPizzeriaPeguera: ServiceItem = {
   phone: "+34 691 45 72 72",
   whatsapp: "+34 691 45 72 72",
   website: "",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Rustico+Takeaway+Peguera+Mallorca",
   tags: [
     "zona:calvia-andratx",
     "zona:peguera",
