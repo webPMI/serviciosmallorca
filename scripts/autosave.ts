@@ -1,4 +1,4 @@
-﻿/**
+/**
  * scripts/autosave.ts
  *
  * 💾 AUTO-GUARDADO CONTINUO — Git Commit + Push sin Build
@@ -14,6 +14,7 @@
  */
 
 import { execSync } from "node:child_process";
+import { bumpVersion } from "./bump-version.ts";
 
 const GREEN = "\x1b[32m";
 const YELLOW = "\x1b[33m";
@@ -55,14 +56,10 @@ function getTimestamp(): string {
 
 const ts = getTimestamp();
 const customMsg = process.argv.slice(2).join(" ");
-const commitMsg = customMsg
-  ? `chore(autosave): ${customMsg} [${ts}]`
-  : `chore(autosave): checkpoint ${ts} — multi-agent session`;
 
 console.log(`\n${CYAN}${BOLD}╔══════════════════════════════════════════╗${RESET}`);
 console.log(`${CYAN}${BOLD}║  💾 AUTO-GUARDADO — SERVICIOS MALLORCA   ║${RESET}`);
 console.log(`${CYAN}${BOLD}╚══════════════════════════════════════════╝${RESET}`);
-console.log(`${CYAN}⏰ ${ts} | ${commitMsg}${RESET}\n`);
 
 // 1. Verificar si hay cambios
 const status = execSync("git status --porcelain", { encoding: "utf-8" }).trim();
@@ -71,15 +68,23 @@ if (!status) {
   process.exit(0);
 }
 
+// 2. Bump de versión para trazabilidad del push (GR-16)
+const { nextVersion } = bumpVersion(customMsg || undefined);
+const commitMsg = customMsg
+  ? `chore(v${nextVersion}): ${customMsg} [${ts}]`
+  : `chore(v${nextVersion}): auto-save checkpoint ${ts}`;
+
+console.log(`${CYAN}⏰ ${ts} | ${commitMsg}${RESET}\n`);
+
 const lines = status.split("\n");
 const nw = lines.filter((l) => l.startsWith("?")).length;
 const nm = lines.filter((l) => l.match(/^[MAD]/)).length;
 console.log(`${CYAN}📊 ${lines.length} archivos cambiados (${nw} nuevos, ${nm} modificados/borrados)${RESET}\n`);
 
-// 2. Stage
+// 3. Stage
 run("git add -A", "git add -A");
 
-// 3. Commit (--no-verify para saltar husky en modo autosave)
+// 4. Commit (--no-verify para saltar husky en modo autosave)
 run(`git commit -m "${commitMsg}" --no-verify`, "git commit");
 
 // 4. Pull rebase (sincronizar con otros agentes remotos)

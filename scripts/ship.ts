@@ -14,6 +14,7 @@
 
 import { execSync } from "node:child_process";
 import https from "node:https";
+import { bumpVersion } from "./bump-version.ts";
 
 const GREEN = "\x1b[32m";
 const YELLOW = "\x1b[33m";
@@ -64,51 +65,57 @@ async function main() {
   console.log(`${BOLD}${CYAN} 🚀 SERVICIOS MALLORCA — PIPELINE DE DESPLIEGUE BLINDADO ${RESET}`);
   console.log(`${BOLD}${CYAN}=====================================================${RESET}`);
 
-  const commitMsg = process.argv.slice(2).join(" ") || "chore: automated verified deploy and synchronization";
+  const rawMsg = process.argv.slice(2).join(" ");
+  const commitMsg = rawMsg || "chore: automated verified deploy and synchronization";
 
-  // 1. Typecheck
-  logStep(1, 7, "TypeScript Strict Typecheck");
+  // 1. Auto-increment Platform Version (GR-16)
+  logStep(1, 8, "Auto-incremento de Versión de Plataforma (GR-16)");
+  const { nextVersion } = bumpVersion(commitMsg);
+  const finalCommitMsg = `release(v${nextVersion}): ${commitMsg}`;
+
+  // 2. Typecheck
+  logStep(2, 8, "TypeScript Strict Typecheck");
   runCommand("npm run typecheck", "Typecheck");
 
-  // 2. Validate Taxonomy
-  logStep(2, 7, "Validación de Integridad Taxonómica");
+  // 3. Validate Taxonomy
+  logStep(3, 8, "Validación de Integridad Taxonómica");
   runCommand("npm run validate:taxonomy", "Taxonomy Validation");
 
-  // 3. Test Suites
-  logStep(3, 7, "Batería de Pruebas Unitarias y de Integración");
+  // 4. Test Suites
+  logStep(4, 8, "Batería de Pruebas Unitarias y de Integración");
   runCommand("npm test", "Test Suites");
 
-  // 4. Multi-Auditor Intelligence
-  logStep(4, 7, "Auditoría de Inteligencia Multi-Agente");
+  // 5. Multi-Auditor Intelligence
+  logStep(5, 8, "Auditoría de Inteligencia Multi-Agente");
   runCommand("npm run audit:full", "Multi-Auditor Intelligence");
 
-  // 5. Astro Production Build
-  logStep(5, 7, "Compilación de Producción Astro/Cloudflare");
+  // 6. Astro Production Build
+  logStep(6, 8, "Compilación de Producción Astro/Cloudflare");
   runCommand("npm run build", "Production Build");
 
-  // 6. Git Push & Commit
-  logStep(6, 7, "Sincronización Continua con GitHub (origin main)");
+  // 7. Git Push & Commit
+  logStep(7, 8, "Sincronización Continua con GitHub (origin main)");
   try {
     execSync("git add -A", { stdio: "inherit" });
     const status = execSync("git status --porcelain").toString().trim();
     if (status) {
-      execSync(`git commit -m "${commitMsg}" --no-verify`, { stdio: "inherit" });
+      execSync(`git commit -m "${finalCommitMsg}" --no-verify`, { stdio: "inherit" });
     }
     execSync("git push origin main --no-verify", { stdio: "inherit" });
-    console.log(`${GREEN}✔ GitHub sincronizado en origin main.${RESET}`);
+    console.log(`${GREEN}✔ GitHub sincronizado en origin main (v${nextVersion}).${RESET}`);
   } catch (err: any) {
     console.warn(`${YELLOW}⚠️ Nota sobre git sync: ${err.message}${RESET}`);
   }
 
-  // 7. Cloudflare Workers Deploy & Healthcheck
-  logStep(7, 7, "Despliegue a Cloudflare Workers & Healthcheck");
+  // 8. Cloudflare Workers Deploy & Healthcheck
+  logStep(8, 8, "Despliegue a Cloudflare Workers & Healthcheck");
   runCommand("npx wrangler deploy", "Cloudflare Workers Deploy");
 
   console.log(`\n${CYAN}🔍 Verificando estado en vivo en producción...${RESET}`);
   await verifyLiveHealth("https://serviciosmallorca.com");
 
   console.log(`\n${BOLD}${GREEN}=====================================================${RESET}`);
-  console.log(`${BOLD}${GREEN} 🎉 DESPLIEGUE BLINDADO COMPLETADO Y VERIFICADO AL 100% ${RESET}`);
+  console.log(`${BOLD}${GREEN} 🎉 DESPLIEGUE BLINDADO v${nextVersion} COMPLETADO Y VERIFICADO AL 100% ${RESET}`);
   console.log(`${BOLD}${GREEN}=====================================================${RESET}\n`);
 }
 
