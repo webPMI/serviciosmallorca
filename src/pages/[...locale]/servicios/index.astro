@@ -43,8 +43,8 @@ const sortedCategories = CATEGORIES.filter(
 ).sort((a, b) => (a.name[locale] || a.name.es).localeCompare(b.name[locale] || b.name.es, locale));
 
 // Query parameters from URL for initial SSR rendering
-const selectedCategory = Astro.url.searchParams.get("categoria") || "";
-const selectedZone = Astro.url.searchParams.get("zona") || "";
+const selectedCategory = Astro.url.searchParams.get("categoria") || Astro.url.searchParams.get("category") || "";
+const selectedZone = Astro.url.searchParams.get("zona") || Astro.url.searchParams.get("zone") || "";
 const searchQuery = (Astro.url.searchParams.get("q") || "").toLowerCase().trim();
 
 // Mapa optimizado de categorías y sinónimos para matching multilingüe
@@ -103,10 +103,12 @@ const initialFilteredServices = SERVICES.filter((service) => {
 
 // 🎯 Filtro de intención resuelto en el SERVIDOR: con paginación, filtrar en cliente
 // solo miraría 48 de ~953 fichas (resultados incorrectos).
-const selectedIntent = parseIntentParam(Astro.url.searchParams.get("intencion"));
+const selectedIntent = parseIntentParam(
+  Astro.url.searchParams.get("intencion") || Astro.url.searchParams.get("intent"),
+);
 
 // 📄 Paginación SSR: 48 fichas por página → HTML pequeño, cacheable y crawlable (GEO).
-const requestedPage = parsePageParam(Astro.url.searchParams.get("pagina"));
+const requestedPage = parsePageParam(Astro.url.searchParams.get("pagina") || Astro.url.searchParams.get("page"));
 const intentFiltered = filterByIntent(initialFilteredServices, selectedIntent);
 const directory = paginate(intentFiltered, requestedPage, SERVICES_PER_PAGE);
 const isPaginated = directory.totalPages > 1;

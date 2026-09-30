@@ -20,7 +20,8 @@ const { slug } = Astro.params;
 const hubConfigs: Record<
   string,
   {
-    categoryId: string;
+    categoryId?: string;
+    sectorId?: string;
     zoneId?: string;
     title: { es: string; en: string; ca: string; de: string };
     desc: { es: string; en: string; ca: string; de: string };
@@ -74,7 +75,7 @@ const hubConfigs: Record<
     },
   },
   "deporte-padel-mallorca": {
-    categoryId: "deportes-aire-libre",
+    sectorId: "deportes-aire-libre",
     title: {
       es: "Los Mejores Clubs de Pádel, Tenis y Deporte en Mallorca",
       en: "Best Padel & Tennis Clubs and Fitness Centers in Mallorca",
@@ -105,7 +106,7 @@ const hubConfigs: Record<
     },
   },
   "hoteles-boutique-mallorca": {
-    categoryId: "turismo-alojamiento",
+    categoryId: "hoteles-boutique-agroturismo",
     title: {
       es: "Los Mejores Hoteles Boutique y Fincas de Lujo en Mallorca",
       en: "Best Boutique Hotels & Luxury Fincas in Mallorca",
@@ -120,7 +121,7 @@ const hubConfigs: Record<
     },
   },
   "inmobiliarias-lujo-mallorca": {
-    categoryId: "inmobiliaria-arquitectura",
+    categoryId: "inmobiliaria-villas",
     title: {
       es: "Las Mejores Inmobiliarias y Agencias de Lujo en Mallorca",
       en: "Best Luxury Real Estate Agencies in Mallorca",
@@ -135,7 +136,7 @@ const hubConfigs: Record<
     },
   },
   "bodegas-catas-mallorca": {
-    categoryId: "agroalimentario-bodegas",
+    categoryId: "bodegas-enoturismo",
     title: {
       es: "Las Mejores Bodegas, Vinos DO y Catas en Mallorca",
       en: "Best Wineries, DO Binissalem & Wine Tastings in Mallorca",
@@ -150,7 +151,7 @@ const hubConfigs: Record<
     },
   },
   "artesania-tradicional-mallorca": {
-    categoryId: "artesania-manufactura",
+    sectorId: "artesania-manufactura",
     title: {
       es: "Los Mejores Talleres de Artesanía Tradicional y Vidrio Soplado en Mallorca",
       en: "Best Traditional Craft & Blown Glass Workshops in Mallorca",
@@ -162,6 +163,21 @@ const hubConfigs: Record<
       en: "Master craftsmen, Ikat fabrics, traditional pottery and blown glass with verified Balearic quality seal.",
       ca: "Mestres artesans, roba de llengües, ceràmica tradicional i vidre bufat amb segell de qualitat.",
       de: "Meisterhandwerker, traditionelle Ikat-Stoffe, Keramik und mundgeblasenes Glas mit balearischem Gütesiegel.",
+    },
+  },
+  "galerias-museos-mallorca": {
+    categoryId: "galerias-arte-exposiciones",
+    title: {
+      es: "Las Mejores Galerías de Arte, Museos y Fundaciones en Mallorca",
+      en: "Best Art Galleries, Museums & Foundations in Mallorca",
+      ca: "Les Millors Galeries d'Art, Museus i Fundacions a Mallorca",
+      de: "Die besten Kunstgalerien, Museen & Kunststiftungen auf Mallorca",
+    },
+    desc: {
+      es: "Espacios de arte contemporáneo, museos de autor, exposiciones internacionales y fundaciones culturales auditadas.",
+      en: "Contemporary art venues, artist-founded museums, international exhibitions and verified cultural foundations.",
+      ca: "Espais d'art contemporani, museus d'autor, exposicions internacionals i fundacions culturals auditades.",
+      de: "Zentren für Gegenwartskunst, Künstlermuseen, internationale Ausstellungen und geprüfte Kulturstiftungen.",
     },
   },
 };
@@ -182,13 +198,15 @@ const config = hubConfigs[slug || ""] || {
   },
 };
 
-const category = CATEGORIES.find((c) => c.id === config.categoryId);
-const categoryName = category?.name[locale] || config.categoryId;
+const category = config.categoryId ? CATEGORIES.find((c) => c.id === config.categoryId) : undefined;
+const categoryName =
+  category?.name[locale] || config.categoryId || (locale === "de" ? "Dienstleistungen" : "Servicios");
 const zone = config.zoneId ? MALLORCA_ZONES.find((z) => z.id === config.zoneId) : undefined;
 const zoneName = zone?.name[locale] || "Mallorca";
 
 const rankedServices = getComparisonList({
   category: config.categoryId,
+  sectorId: config.sectorId,
   zone: config.zoneId,
   locale,
   limit: 15,

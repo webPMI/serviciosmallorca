@@ -20,7 +20,8 @@ const { slug } = Astro.params;
 const hubConfigs: Record<
   string,
   {
-    categoryId: string;
+    categoryId?: string;
+    sectorId?: string;
     zoneId?: string;
     title: { es: string; en: string; ca: string; de: string };
     desc: { es: string; en: string; ca: string; de: string };
@@ -74,7 +75,7 @@ const hubConfigs: Record<
     },
   },
   "deporte-padel-mallorca": {
-    categoryId: "deportes-aire-libre",
+    sectorId: "deportes-aire-libre",
     title: {
       es: "Los Mejores Clubs de Pádel, Tenis y Deporte en Mallorca",
       en: "Best Padel & Tennis Clubs and Fitness Centers in Mallorca",
@@ -104,6 +105,81 @@ const hubConfigs: Record<
       de: "Zertifizierte Tattoo-Studios mit Experten für Realismus, Fine Line, Traditional und Piercings.",
     },
   },
+  "hoteles-boutique-mallorca": {
+    categoryId: "hoteles-boutique-agroturismo",
+    title: {
+      es: "Los Mejores Hoteles Boutique y Fincas de Lujo en Mallorca",
+      en: "Best Boutique Hotels & Luxury Fincas in Mallorca",
+      ca: "Els Millors Hotels Boutique i Finques de Luxe a Mallorca",
+      de: "Die besten Boutique-Hotels & Luxus-Fincas auf Mallorca",
+    },
+    desc: {
+      es: "Alojamiento con encanto en palacetes restaurados de Palma, fincas rurales en la Tramuntana y retiros exclusivos auditados.",
+      en: "Charming accommodations in restored Palma palaces, Tramuntana country estates and verified exclusive retreats.",
+      ca: "Allotjament amb encant en palaus restaurats de Palma i finques rurals a la Tramuntana.",
+      de: "Charmante Unterkünfte in restaurierten Stadtpalästen in Palma und exklusiven Fincas im Tramuntana-Gebirge.",
+    },
+  },
+  "inmobiliarias-lujo-mallorca": {
+    categoryId: "inmobiliaria-villas",
+    title: {
+      es: "Las Mejores Inmobiliarias y Agencias de Lujo en Mallorca",
+      en: "Best Luxury Real Estate Agencies in Mallorca",
+      ca: "Les Millors Immobiliàries i Agències de Luxe a Mallorca",
+      de: "Die besten Luxus-Immobilienagenturen auf Mallorca",
+    },
+    desc: {
+      es: "Agencias inmobiliarias certificadas especializadas en villas frente al mar, fincas históricas y propiedades de inversión premium.",
+      en: "Certified real estate agencies specializing in seafront villas, historic fincas and premium investment properties.",
+      ca: "Agències immobiliàries certificades especialitzades en viles davant la mar i finques històriques.",
+      de: "Zertifizierte Immobilienmakler für Villen mit Meerblick, historische Fincas und exklusive Anlageobjekte.",
+    },
+  },
+  "bodegas-catas-mallorca": {
+    categoryId: "bodegas-enoturismo",
+    title: {
+      es: "Las Mejores Bodegas, Vinos DO y Catas en Mallorca",
+      en: "Best Wineries, DO Binissalem & Wine Tastings in Mallorca",
+      ca: "Els Millors Cellers, Vins DO i Tastades a Mallorca",
+      de: "Die besten Weingüter, DO-Weine & Weinverkostungen auf Mallorca",
+    },
+    desc: {
+      es: "Rutas enoturísticas, viñedos centenarios de Binissalem y Pla i Llevant, y catas privadas con sumilleres expertos.",
+      en: "Wine tourism routes, centenary vineyards in Binissalem and Pla i Llevant, and private tastings with certified sommeliers.",
+      ca: "Rutes enoturístiques, vinyes centenàries a Binissalem i el Pla i Llevant, i tastades privades.",
+      de: "Weintourismus-Routen, traditionsreiche Weinberge in Binissalem und Pla i Llevant sowie exklusive Verkostungen.",
+    },
+  },
+  "artesania-tradicional-mallorca": {
+    sectorId: "artesania-manufactura",
+    title: {
+      es: "Los Mejores Talleres de Artesanía Tradicional y Vidrio Soplado en Mallorca",
+      en: "Best Traditional Craft & Blown Glass Workshops in Mallorca",
+      ca: "Els Millors Tallers d'Artesania Tradicional i Vidre Bufat a Mallorca",
+      de: "Die besten traditionellen Kunsthandwerks- & Glasbläserei-Werkstätten auf Mallorca",
+    },
+    desc: {
+      es: "Maestros artesanos, tela de lenguas, cerámica tradicional y vidrio soplado con sello de calidad balear.",
+      en: "Master craftsmen, Ikat fabrics, traditional pottery and blown glass with verified Balearic quality seal.",
+      ca: "Mestres artesans, roba de llengües, ceràmica tradicional i vidre bufat amb segell de qualitat.",
+      de: "Meisterhandwerker, traditionelle Ikat-Stoffe, Keramik und mundgeblasenes Glas mit balearischem Gütesiegel.",
+    },
+  },
+  "galerias-museos-mallorca": {
+    categoryId: "galerias-arte-exposiciones",
+    title: {
+      es: "Las Mejores Galerías de Arte, Museos y Fundaciones en Mallorca",
+      en: "Best Art Galleries, Museums & Foundations in Mallorca",
+      ca: "Les Millors Galeries d'Art, Museus i Fundacions a Mallorca",
+      de: "Die besten Kunstgalerien, Museen & Kunststiftungen auf Mallorca",
+    },
+    desc: {
+      es: "Espacios de arte contemporáneo, museos de autor, exposiciones internacionales y fundaciones culturales auditadas.",
+      en: "Contemporary art venues, artist-founded museums, international exhibitions and verified cultural foundations.",
+      ca: "Espais d'art contemporani, museus d'autor, exposicions internacionals i fundacions culturals auditades.",
+      de: "Zentren für Gegenwartskunst, Künstlermuseen, internationale Ausstellungen und geprüfte Kulturstiftungen.",
+    },
+  },
 };
 
 const config = hubConfigs[slug || ""] || {
@@ -122,13 +198,15 @@ const config = hubConfigs[slug || ""] || {
   },
 };
 
-const category = CATEGORIES.find((c) => c.id === config.categoryId);
-const categoryName = category?.name[locale] || config.categoryId;
+const category = config.categoryId ? CATEGORIES.find((c) => c.id === config.categoryId) : undefined;
+const categoryName =
+  category?.name[locale] || config.categoryId || (locale === "de" ? "Dienstleistungen" : "Servicios");
 const zone = config.zoneId ? MALLORCA_ZONES.find((z) => z.id === config.zoneId) : undefined;
 const zoneName = zone?.name[locale] || "Mallorca";
 
 const rankedServices = getComparisonList({
   category: config.categoryId,
+  sectorId: config.sectorId,
   zone: config.zoneId,
   locale,
   limit: 15,
