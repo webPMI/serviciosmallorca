@@ -35,6 +35,7 @@ const isHonorActive = isActive(`${homeUrl}cuadro-de-honor`) || currentPath.inclu
 const isJoinActive = isActive(`${homeUrl}unete`) || currentPath.includes("/unete");
 const isBlogActive = isActive(`${homeUrl}blog`) || currentPath.includes("/blog");
 const isAboutActive = isActive(`${homeUrl}sobre-nosotros`) || currentPath.includes("/sobre-nosotros");
+const isFavoritesActive = isActive(`${homeUrl}favoritos`) || currentPath.includes("/favoritos");
 const isLoginActive = isActive(`${homeUrl}login`);
 const isRegisterActive = isActive(`${homeUrl}register`);
 ---
@@ -92,6 +93,16 @@ const isRegisterActive = isActive(`${homeUrl}register`);
           aria-current={isAssistantActive ? "page" : undefined}
         >
           🤖 {translations["nav.assistant"] || "Asistente"}
+        </a>
+        <a
+          href={`${homeUrl}favoritos`}
+          class:list={["nav-link", "nav-fav-link", { active: isFavoritesActive }]}
+          aria-current={isFavoritesActive ? "page" : undefined}
+          title={translations["nav.favorites"] || "Favoritos"}
+        >
+          <span class="fav-icon-heart" aria-hidden="true">❤️</span>
+          <span class="fav-link-label">{translations["nav.favorites"] || "Favoritos"}</span>
+          <span id="nav-fav-badge" class="nav-fav-counter-badge" style="display: none;">0</span>
         </a>
 
         <!-- ── Desktop "Explorar" Submenu Dropdown ── -->
@@ -152,7 +163,7 @@ const isRegisterActive = isActive(`${homeUrl}register`);
               </a>
               <a href={`${homeUrl}actualizaciones`} class="explore-item" role="menuitem">
                 <span class="explore-icon">🚀</span>
-                <span>{translations["nav.changelog"] || "Actualizaciones & Beta"}</span>
+                <span>{translations["nav.changelog"] || "Actualizaciones & Versiones"}</span>
               </a>
               <a href={`${homeUrl}sobre-nosotros`} class="explore-item" role="menuitem">
                 <span class="explore-icon">🌿</span>
@@ -326,9 +337,55 @@ const isRegisterActive = isActive(`${homeUrl}register`);
       details.removeAttribute("open");
     }
   });
+
+  // Reactive Favorites Badge Updater
+  function updateNavFavCount() {
+    try {
+      const data = localStorage.getItem("mallorca_user_favorites");
+      const list = data ? JSON.parse(data) : [];
+      const badge = document.getElementById("nav-fav-badge");
+      if (badge) {
+        if (Array.isArray(list) && list.length > 0) {
+          badge.textContent = String(list.length);
+          badge.style.display = "inline-flex";
+        } else {
+          badge.style.display = "none";
+        }
+      }
+    } catch {
+      // Ignored
+    }
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", updateNavFavCount);
+  } else {
+    updateNavFavCount();
+  }
+  window.addEventListener("favorites:updated", updateNavFavCount);
 </script>
 
 <style>
+  .nav-fav-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+
+  .nav-fav-counter-badge {
+    background: var(--color-danger, #ef4444);
+    color: #ffffff;
+    font-size: 0.65rem;
+    font-weight: 800;
+    line-height: 1;
+    padding: 2px 5px;
+    border-radius: var(--border-radius-full, 9999px);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    min-width: 16px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
   .navbar-header {
     background: var(--glass-bg);
     border-bottom: 1px solid var(--color-surface-border);

@@ -207,6 +207,8 @@ const honorJsonLd = {
 </BaseLayout>
 
 <script>
+  import { trackPurchase } from "../../lib/conversionTracking";
+
   // Open Honor Checkout Modal on Click with full metadata
   const openButtons = document.querySelectorAll(".open-nominate-modal");
   openButtons.forEach((btn) => {
@@ -246,8 +248,7 @@ const honorJsonLd = {
   const bannerClose = document.getElementById("close-payment-banner-btn");
 
   // GR-04: todos los textos provienen de los diccionarios i18n inyectados en data-*.
-  const t = (attr: string, fallback: string): string =>
-    banner?.getAttribute(attr) || fallback;
+  const t = (attr: string, fallback: string): string => banner?.getAttribute(attr) || fallback;
   const paymentTexts = {
     cancelledTitle: t("data-i18n-cancelled-title", "Payment cancelled"),
     cancelledDesc: t("data-i18n-cancelled-desc", "No charge was made to your card or bank account."),
@@ -284,6 +285,16 @@ const honorJsonLd = {
             : paymentTexts.successDescNoAmount;
         }
         banner.style.display = "flex";
+
+        // Registrar evento purchase en GA4
+        if (typeof data.amountEuros === "number" && data.amountEuros > 0) {
+          trackPurchase({
+            transactionId: data.invoiceId || sessionId,
+            value: data.amountEuros,
+            serviceId: data.serviceId || data.serviceSlug || "",
+            serviceName: data.serviceSlug || "",
+          });
+        }
       } else {
         // Pago no verificable: se informa con honestidad en vez de ocultar el problema (GR-11).
         banner.className = "payment-alert-banner banner-warning";

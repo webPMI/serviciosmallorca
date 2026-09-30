@@ -8,7 +8,7 @@
  */
 // @vitest-environment happy-dom
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
-import { trackConversion, initAutomaticClickTracking } from "../../src/lib/conversionTracking";
+import { trackConversion, initAutomaticClickTracking, trackPurchase } from "../../src/lib/conversionTracking";
 
 const beaconCalls: Array<{ url: string; blob: Blob }> = [];
 
@@ -81,6 +81,74 @@ describe("trackConversion · canal de envío", () => {
       serviceId: "svc-fallback",
       eventType: "directions_click",
     });
+  });
+
+  it("despacha eventos a window.gtag cuando está inicializado (GA4 Key Events)", () => {
+    const gtagMock = vi.fn();
+    (window as any).gtag = gtagMock;
+
+    trackConversion("yacht-club-palma", "whatsapp_click", { source: "hero" });
+
+    expect(gtagMock).toHaveBeenCalledWith(
+      "event",
+      "generate_lead",
+      expect.objectContaining({
+        lead_type: "whatsapp",
+        service_id: "yacht-club-palma",
+      }),
+    );
+    expect(gtagMock).toHaveBeenCalledWith(
+      "event",
+      "contact",
+      expect.objectContaining({
+        method: "whatsapp",
+        service_id: "yacht-club-palma",
+      }),
+    );
+    expect(gtagMock).toHaveBeenCalledWith(
+      "event",
+      "whatsapp_click",
+      expect.objectContaining({
+        service_id: "yacht-club-palma",
+        source: "hero",
+      }),
+    );
+
+    delete (window as any).gtag;
+  });
+
+  it("despacha evento e-commerce 'purchase' a window.gtag con datos de transacción", () => {
+    const gtagMock = vi.fn();
+    (window as any).gtag = gtagMock;
+
+    trackPurchase({
+      transactionId: "INV-HONOR-2026-X1",
+      value: 25.0,
+      currency: "EUR",
+      serviceId: "forn-inca",
+      serviceName: "Forn Inca",
+      mode: "community_boost",
+    });
+
+    expect(gtagMock).toHaveBeenCalledWith(
+      "event",
+      "purchase",
+      expect.objectContaining({
+        transaction_id: "INV-HONOR-2026-X1",
+        value: 25.0,
+        currency: "EUR",
+        service_id: "forn-inca",
+        items: [
+          expect.objectContaining({
+            item_id: "forn-inca",
+            item_name: "Forn Inca",
+            price: 25.0,
+          }),
+        ],
+      }),
+    );
+
+    delete (window as any).gtag;
   });
 });
 

@@ -1544,6 +1544,7 @@ const verifiedBusinessesData = JSON.stringify(
 <script>
   import { authStore } from "../lib/authStore";
   import { recordUserLegalConsent, validateCheckoutLegalConsent } from "../lib/legalComplianceEngine";
+  import { trackPurchase } from "../lib/conversionTracking";
 
   function initHonorCheckoutClient() {
     const modal = document.getElementById("honor-checkout-modal");
@@ -2221,6 +2222,15 @@ const verifiedBusinessesData = JSON.stringify(
             // Clear draft after completed payment
             localStorage.removeItem("sm_pending_checkout_draft");
             sessionStorage.removeItem("sm_pending_checkout_draft");
+
+            // Telemetría GA4 E-Commerce / Purchase Key Event
+            trackPurchase({
+              transactionId: resolvedInvoiceId,
+              value: amount,
+              serviceId: serviceIdInput?.value || slug,
+              serviceName: bizName,
+              mode,
+            });
           } catch (err) {
             console.warn("Storage warning:", err);
           }
@@ -2260,8 +2270,7 @@ const verifiedBusinessesData = JSON.stringify(
             );
           } else {
             alert(
-              modal.getAttribute("data-i18n-gateway-error-alert") ||
-                "Communication error with the payment gateway.",
+              modal.getAttribute("data-i18n-gateway-error-alert") || "Communication error with the payment gateway.",
             );
           }
 
@@ -2398,6 +2407,11 @@ const verifiedBusinessesData = JSON.stringify(
     closeBtn?.addEventListener("click", closeModal);
     modal.addEventListener("click", (e) => {
       if (e.target === modal) closeModal();
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && modal?.classList.contains("is-active")) {
+        closeModal();
+      }
     });
   }
 

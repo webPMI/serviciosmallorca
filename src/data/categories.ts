@@ -534,6 +534,16 @@ export const CATEGORIES: ServiceCategory[] = [
       "pintor",
       "reforma integral",
       "rehabilitacion fincas",
+      "plumber",
+      "plumbing",
+      "electrician",
+      "builder",
+      "carpenter",
+      "painter",
+      "handyman",
+      "klempner",
+      "elektriker",
+      "handwerker",
     ],
     popularSpecialties: {
       es: [

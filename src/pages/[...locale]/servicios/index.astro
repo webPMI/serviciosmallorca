@@ -47,6 +47,18 @@ const selectedCategory = Astro.url.searchParams.get("categoria") || "";
 const selectedZone = Astro.url.searchParams.get("zona") || "";
 const searchQuery = (Astro.url.searchParams.get("q") || "").toLowerCase().trim();
 
+// Mapa optimizado de categorías y sinónimos para matching multilingüe
+const categoryMetaMap = new Map<string, { names: string; synonyms: string; searchIndex: string }>();
+for (const cat of CATEGORIES) {
+  const names = [cat.name.es, cat.name.en, cat.name.ca, cat.name.de].join(" ").toLowerCase();
+  const descs = [cat.description.es, cat.description.en, cat.description.ca, cat.description.de]
+    .join(" ")
+    .toLowerCase();
+  const synonyms = (cat.synonyms || []).join(" ").toLowerCase();
+  const searchIndex = `${names} ${descs} ${synonyms}`;
+  categoryMetaMap.set(cat.id, { names, synonyms, searchIndex });
+}
+
 // Filter services for initial SSR
 const initialFilteredServices = SERVICES.filter((service) => {
   if (selectedCategory && service.category !== selectedCategory) {
@@ -57,11 +69,32 @@ const initialFilteredServices = SERVICES.filter((service) => {
   }
   if (searchQuery) {
     const nameMatch = service.name.toLowerCase().includes(searchQuery);
-    const descMatch = (service.shortDescription[locale] || service.shortDescription.en)
+    const descMatch = (
+      service.shortDescription[locale] ||
+      service.shortDescription.en ||
+      service.shortDescription.es ||
+      ""
+    )
       .toLowerCase()
       .includes(searchQuery);
     const tagMatch = Boolean(service.tags && service.tags.some((t) => t.toLowerCase().includes(searchQuery)));
-    if (!nameMatch && !descMatch && !tagMatch) {
+    const catMeta = categoryMetaMap.get(service.category);
+    const catMatch = Boolean(
+      service.category.toLowerCase().includes(searchQuery) ||
+      (catMeta &&
+        (catMeta.names.includes(searchQuery) ||
+          catMeta.synonyms.includes(searchQuery) ||
+          catMeta.searchIndex.includes(searchQuery))),
+    );
+    const zoneMatch = Boolean(service.zone && service.zone.toLowerCase().includes(searchQuery));
+    const specialtiesMatch = Boolean(
+      service.specialties &&
+      (service.specialties[locale] || service.specialties.en || service.specialties.es || []).some((sp: string) =>
+        sp.toLowerCase().includes(searchQuery),
+      ),
+    );
+
+    if (!nameMatch && !descMatch && !tagMatch && !catMatch && !zoneMatch && !specialtiesMatch) {
       return false;
     }
   }
@@ -191,11 +224,7 @@ const showFeaturedServices = shouldShowFeaturedServices(
             class="clear-search-btn"
             style={searchQuery ? "display:block;" : "display:none;"}>✕</button
           >
-          {
-            isPaginated && (
-              <small class="filter-hint">{translations["services.search.submitHint"]}</small>
-            )
-          }
+          {isPaginated && <small class="filter-hint">{translations["services.search.submitHint"]}</small>}
         </div>
 
         <!-- Category Dropdown (Sorted alphabetically with exact real counts) -->
@@ -379,38 +408,83 @@ const showFeaturedServices = shouldShowFeaturedServices(
     <!-- Banner Informativo de Transparencia del Directorio -->
     <div class="directory-transparency-banner">
       <p>
-        <span
-          >🤖 <strong>Transparencia Informativa:</strong> Los datos de comercios no reclamados se recopilan de fuentes públicas
-          abiertas (Google Maps y webs oficiales) para facilitar el contacto. Recomendamos verificar horarios y precios con
-          cada establecimiento antes de acudir. ¿Eres titular? <a href={`${prefix}dashboard`}>Reclama tu ficha gratis</a
-          >.</span
-        >
+        <span>
+          🤖 <strong>
+            {
+              locale === "en"
+                ? "Directory Transparency:"
+                : locale === "de"
+                  ? "Transparenz-Hinweis:"
+                  : locale === "ca"
+                    ? "Transparència Informativa:"
+                    : "Transparencia Informativa:"
+            }
+          </strong>{" "}
+          {
+            locale === "en"
+              ? "Unclaimed business listings are sourced from open public registries (Google Maps & official directories) for community reference. We advise verifying schedules directly with establishments. Business owner? "
+              : locale === "de"
+                ? "Nicht beanspruchte Betriebe basieren auf öffentlich zugänglichen Daten (Google Maps & Websites) zur Orientierung. Öffnungszeiten bitte direkt anfragen. Inhaber? "
+                : locale === "ca"
+                  ? "Les dades de comerços no reclamats es recopilen de fonts públiques obertes per facilitar el contacte veïnal. Ets titular? "
+                  : "Los datos de comercios no reclamados se recopilan de fuentes públicas abiertas (Google Maps y webs oficiales) para facilitar el contacto. Recomendamos verificar horarios y precios con cada establecimiento antes de acudir. ¿Eres titular? "
+          }
+          <a href={`${prefix}dashboard`}>
+            {
+              locale === "en"
+                ? "Claim your listing for free"
+                : locale === "de"
+                  ? "Eintrag kostenlos beanspruchen"
+                  : locale === "ca"
+                    ? "Reclama la teva fitxa de franc"
+                    : "Reclama tu ficha gratis"
+            }
+          </a>.
+        </span>
       </p>
     </div>
 
     <!-- Results Directory Grid · solo se renderiza la página actual (48 fichas), no las ~953 -->
     <div id="services-grid" class="services-directory-grid" data-view="grid" data-paginated={String(isPaginated)}>
       {
-        directory.slice.map((service) => (
-          <div
-            class="service-item-wrapper"
-            data-id={service.id}
-            data-name={service.name.toLowerCase()}
-            data-desc={(service.shortDescription[locale] || service.shortDescription.en).toLowerCase()}
-            data-tags={(service.tags || []).join(" ").toLowerCase()}
-            data-category={service.category}
-            data-zone={service.zone}
-            data-rating={service.rating || 0}
-            data-slug={service.slug}
-          >
-            <ServiceCard
-              service={service}
-              currentLocale={locale}
-              getLangPrefix={getLangPrefix}
-              translations={translations}
-            />
-          </div>
-        ))
+        directory.slice.map((service) => {
+          const catMeta = categoryMetaMap.get(service.category);
+          const enrichedTags = [
+            ...(service.tags || []),
+            catMeta?.synonyms || "",
+            catMeta?.names || "",
+            service.zone || "",
+            ...(service.specialties?.[locale] || service.specialties?.en || service.specialties?.es || []),
+          ]
+            .join(" ")
+            .toLowerCase();
+
+          return (
+            <div
+              class="service-item-wrapper"
+              data-id={service.id}
+              data-name={service.name.toLowerCase()}
+              data-desc={(
+                service.shortDescription[locale] ||
+                service.shortDescription.en ||
+                service.shortDescription.es ||
+                ""
+              ).toLowerCase()}
+              data-tags={enrichedTags}
+              data-category={service.category}
+              data-zone={service.zone}
+              data-rating={service.rating || 0}
+              data-slug={service.slug}
+            >
+              <ServiceCard
+                service={service}
+                currentLocale={locale}
+                getLangPrefix={getLangPrefix}
+                translations={translations}
+              />
+            </div>
+          );
+        })
       }
     </div>
 
@@ -483,10 +557,39 @@ const showFeaturedServices = shouldShowFeaturedServices(
       style={directory.totalItems === 0 ? "display:flex;" : "display:none;"}
     >
       <span class="no-results-icon">🔎</span>
-      <h3>{translations["services.noResults"]}</h3>
-      <p>Prueba a buscar por otra palabra clave, cambiar de categoría o restablecer los filtros.</p>
+      <h3>
+        {
+          translations["services.noResults"] ||
+            (locale === "en"
+              ? "No services found"
+              : locale === "de"
+                ? "Keine Dienstleistungen gefunden"
+                : locale === "ca"
+                  ? "No s'han trobat serveis"
+                  : "No se han encontrado servicios")
+        }
+      </h3>
+      <p>
+        {
+          locale === "en"
+            ? "Try searching with another keyword, selecting a different category, or resetting filters."
+            : locale === "de"
+              ? "Versuchen Sie es mit einem anderen Suchbegriff, einer anderen Kategorie oder setzen Sie die Filter zurück."
+              : locale === "ca"
+                ? "Prova de cercar amb una altra paraula clau, canviar de categoria o restablir els filtres."
+                : "Prueba a buscar por otra palabra clave, cambiar de categoría o restablecer los filtros."
+        }
+      </p>
       <button type="button" id="no-results-reset-btn" class="btn btn-primary btn-sm" style="margin-top: 1rem;">
-        Ver todos los servicios
+        {
+          locale === "en"
+            ? "View all services"
+            : locale === "de"
+              ? "Alle Dienstleistungen anzeigen"
+              : locale === "ca"
+                ? "Veure tots els serveis"
+                : "Ver todos los servicios"
+        }
       </button>
     </div>
 
@@ -519,9 +622,7 @@ const showFeaturedServices = shouldShowFeaturedServices(
     function syncFeaturedVisibility() {
       if (!featuredBlock) return;
       const filtering =
-        Boolean((searchInput?.value || "").trim()) ||
-        Boolean(categorySelect?.value) ||
-        Boolean(zoneSelect?.value);
+        Boolean((searchInput?.value || "").trim()) || Boolean(categorySelect?.value) || Boolean(zoneSelect?.value);
       featuredBlock.style.display = filtering ? "none" : "";
     }
 

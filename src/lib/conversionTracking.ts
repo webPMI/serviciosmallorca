@@ -1,5 +1,6 @@
 export type ConversionEventType =
   | "whatsapp_click"
+  | "whatsapp_floating_click"
   | "phone_click"
   | "website_click"
   | "directions_click"
@@ -37,6 +38,35 @@ export function trackConversion(
   };
 
   try {
+    // 📊 Google Analytics 4 Event Dispatch (Key Events / Conversions)
+    if (typeof (window as any).gtag === "function") {
+      try {
+        if (eventType === "whatsapp_click" || eventType === "phone_click") {
+          const contactMethod = eventType === "whatsapp_click" ? "whatsapp" : "phone";
+          (window as any).gtag("event", "generate_lead", {
+            lead_type: contactMethod,
+            service_id: serviceId,
+            event_category: "conversion",
+            event_label: serviceId,
+            locale: payload.locale,
+          });
+          (window as any).gtag("event", "contact", {
+            method: contactMethod,
+            service_id: serviceId,
+          });
+        }
+
+        // Custom event con telemetría de servicio
+        (window as any).gtag("event", eventType, {
+          service_id: serviceId,
+          locale: payload.locale,
+          ...metadata,
+        });
+      } catch {
+        // Ignored
+      }
+    }
+
     const jsonStr = JSON.stringify(payload);
     const endpoint = "/api/track-conversion";
 
@@ -75,7 +105,8 @@ export function initAutomaticClickTracking(): void {
     if (!target) return;
 
     const eventType = target.getAttribute("data-track-event") as ConversionEventType;
-    const serviceId = target.getAttribute("data-service-id");
+    const serviceId =
+      target.getAttribute("data-service-id") || (eventType === "whatsapp_floating_click" ? "platform" : null);
 
     if (eventType && serviceId) {
       trackConversion(serviceId, eventType, {
@@ -84,4 +115,43 @@ export function initAutomaticClickTracking(): void {
       });
     }
   });
+}
+
+export interface PurchaseEventParams {
+  transactionId: string;
+  value: number;
+  currency?: string;
+  serviceId?: string;
+  serviceName?: string;
+  mode?: string;
+}
+
+/**
+ * Registra un evento de compra/conversión monetaria oficial (GA4 Purchase Key Event).
+ */
+export function trackPurchase(params: PurchaseEventParams): void {
+  if (typeof window === "undefined" || !params.transactionId) return;
+
+  if (typeof (window as any).gtag === "function") {
+    try {
+      (window as any).gtag("event", "purchase", {
+        transaction_id: params.transactionId,
+        value: Number(params.value.toFixed(2)),
+        currency: params.currency || "EUR",
+        service_id: params.serviceId || "",
+        service_name: params.serviceName || "",
+        mode: params.mode || "community_boost",
+        items: [
+          {
+            item_id: params.serviceId || "honor_spot",
+            item_name: params.serviceName || "Posicionamiento Cuadro de Honor",
+            price: Number(params.value.toFixed(2)),
+            quantity: 1,
+          },
+        ],
+      });
+    } catch {
+      // Graceful fallback
+    }
+  }
 }

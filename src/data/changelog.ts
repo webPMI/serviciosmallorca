@@ -55,9 +55,9 @@ export interface ReleaseLog {
   entries: ChangelogEntry[];
 }
 
-export const CURRENT_PLATFORM_VERSION = "0.11";
-export const PLATFORM_RELEASE_DATE = "2026-09-29";
-export const PLATFORM_LAST_BUILD_TIMESTAMP = "2026-09-29T15:30:00+02:00";
+export const CURRENT_PLATFORM_VERSION = "1.0";
+export const PLATFORM_RELEASE_DATE = "2026-09-30";
+export const PLATFORM_LAST_BUILD_TIMESTAMP = "2026-09-30T14:18:00+02:00";
 
 /**
  * Devuelve la fecha y hora formateada de la última actualización según el idioma.
@@ -84,6 +84,149 @@ export function getFormattedBuildTimestamp(locale: "es" | "en" | "ca" | "de" = "
 }
 
 export const CHANGELOG_RELEASES: ReleaseLog[] = [
+  {
+    version: "1.0",
+    versionLabel: {
+      es: "v1.0 · Lanzamiento Oficial de Servicios Mallorca: General Availability & Producción Estable",
+      en: "v1.0 · Servicios Mallorca Official Launch: General Availability & Stable Production",
+      ca: "v1.0 · Llançament Oficial de Serveis Mallorca: General Availability & Producció Estable",
+      de: "v1.0 · Offizieller Launch von Servicios Mallorca: General Availability & Stabile Produktion",
+    },
+    type: "MAJOR",
+    date: "2026-09-30",
+    summary: {
+      es: "Salto histórico a la versión de producción oficial 1.0 (General Availability) de Servicios Mallorca tras completar satisfactoriamente todas las etapas de validación, auditoría multi-agente y blindaje de infraestructura. La plataforma deja atrás la fase preliminar (beta) con un catálogo de más de 950 comercios auditados con datos públicos reales (cero enlaces fabricados), 104 suites con 942 tests automatizados pasando al 100%, flujo de titularidad y reclamación en 3 fases verificado, infraestructura resiliente Edge en Cloudflare Pages y compatibilidad lingüística plena en 4 idiomas (ES, EN, CA, DE).",
+      en: "Historic milestone marking the official 1.0 Production Release (General Availability) of Servicios Mallorca after successfully passing all validation stages, multi-agent audits, and infrastructure hardening. The platform graduates from beta with a catalog of over 950 verified businesses with genuine public data (zero fabricated links), 104 test suites with 942 automated tests passing at 100%, a 3-phase verified ownership and claim flow, high-speed Edge delivery on Cloudflare Pages, and full 4-language parity (ES, EN, CA, DE).",
+      ca: "Fita històrica assolint la versió de producció oficial 1.0 (General Availability) de Serveis Mallorca després de completar amb èxit totes les etapes de validació, auditoria multi-agent i blindatge d'infraestructura. La plataforma deixa enrere la fase beta amb un catàleg de més de 950 comerços auditats amb dades públiques reals (zero enllaços fabricats), 104 suites amb 942 proves automatitzades al 100%, flux de titularitat verificat en 3 fases, infraestructura resilient al Edge de Cloudflare i compatibilitat plena en 4 idiomes (ES, EN, CA, DE).",
+      de: "Historischer Meilenstein mit dem offiziellen 1.0-Produktionsrelease (General Availability) von Servicios Mallorca nach erfolgreichem Abschluss aller Validierungsstufen, Multi-Agenten-Audits und Infrastrukturhärtungen. Die Plattform verlässt die Betaphase mit einem Verzeichnis von über 950 verifizierten Betrieben mit echten öffentlichen Daten (keine erfundenen Links), 104 Test-Suites mit 942 automatisierten Tests bei 100% Erfolgsquote, einem 3-Phasen-Eigentumsverifizierungsablauf, Cloudflare-Edge-Highspeed-Architektur und vollständiger 4-Sprachen-Parität (ES, EN, CA, DE).",
+    },
+    highlights: {
+      es: [
+        "Graduación oficial de fase beta a versión 1.0 de producción estable (General Availability).",
+        "Retirada de los avisos preliminares y optimización de la cabecera para máxima limpieza visual.",
+        "953 comercios y servicios verificados en los 53 municipios de Mallorca con auditoría de datos públicos reales.",
+        "104 suites y 942 tests automatizados ejecutándose con tasa de éxito del 100% y cero regresiones.",
+        "Flujo integral de titularidad empresarial en 3 fases (reclamar, verificar, editar) con fusión dinámica SSR.",
+        "Infraestructura Edge global de alta velocidad (<300ms) con Cloudflare Pages, SSR y D1 resilient telemetry.",
+      ],
+      en: [
+        "Official graduation from beta to 1.0 stable production (General Availability).",
+        "Retirement of preliminary banners and header optimization for a distraction-free, premium experience.",
+        "953 verified businesses and services across all 53 Mallorca municipalities with genuine public data audit.",
+        "104 test suites and 942 automated tests passing with 100% success rate and zero regressions.",
+        "Comprehensive 3-phase business ownership flow (claim, verify, edit) with SSR dynamic data overlay.",
+        "Global high-speed Edge infrastructure (<300ms) powered by Cloudflare Pages, SSR, and resilient D1 telemetry.",
+      ],
+      ca: [
+        "Graduació oficial de fase beta a la versió 1.0 de producció estable (General Availability).",
+        "Retirada dels avisos preliminars i optimització de la capçalera per a una experiència premium i neta.",
+        "953 comerços i serveis verificats als 53 municipis de Mallorca amb auditoria de dades reals.",
+        "104 suites i 942 proves automatitzades executant-se amb un 100% d'èxit i zero regressions.",
+        "Flux integral de titularitat empresarial en 3 fases (reclamar, verificar, editar) amb fusió dinàmica SSR.",
+        "Infraestructura Edge global d'alta velocitat (<300ms) amb Cloudflare Pages, SSR i telemetria D1 resilient.",
+      ],
+      de: [
+        "Offizielle Graduierung von der Betaphase zur stabilen 1.0-Produktionsversion (General Availability).",
+        "Entfernung des Beta-Banners und Optimierung der Kopfzeile für ein klares, professionelles Design.",
+        "953 verifizierte Betriebe und Dienstleistungen in allen 53 Gemeinden Mallorcas mit Echtdaten-Audit.",
+        "104 Test-Suites und 942 automatisierte Tests mit 100% Erfolgsquote ohne Regressionen.",
+        "Vollständiger 3-Phasen-Eigentümer-Workflow (Beanspruchen, Verifizieren, Bearbeiten) mit SSR-Datenfusion.",
+        "Globale Highspeed-Edge-Infrastruktur (<300ms) auf Cloudflare Pages mit resilienter D1-Telemetrie.",
+      ],
+    },
+    entries: [
+      {
+        category: "SECURITY",
+        title: {
+          es: "Auditoría 360° de la Pasarela de Pagos y Telemetría GA4 E-Commerce",
+          en: "360° Payment Gateway Security Audit & GA4 E-Commerce Telemetry",
+          ca: "Auditoria 360° de la Passarel·la de Pagaments i Telemetria GA4 E-Commerce",
+          de: "360°-Zahlungsgateway-Sicherheitsaudit & GA4 E-Commerce-Telemetrie",
+        },
+        description: {
+          es: "Blindaje de idempotencia durable en Cloudflare D1 ante ataques de repetición, aislamiento estricto de pasarela Live vs. Sandbox, cálculo de IVA del 21% en servidor, teclado accesible (GR-07) y eventos de compra para Google Analytics 4.",
+          en: "Durable Cloudflare D1 multi-edge idempotency against replay attacks, strict Live vs. Sandbox gateway separation, server-side 21% VAT calculation, accessible Escape navigation (GR-07), and purchase Key Events for GA4.",
+          ca: "Blindatge d'idempotència durable a Cloudflare D1 davant atacs de repetició, aïllament estricte de passarel·la Live vs. Sandbox, càlcul d'IVA del 21% al servidor i esdeveniments de compra per a GA4.",
+          de: "Dauerhafte Cloudflare D1 Multi-Edge-Idempotenz gegen Replay-Angriffe, strikte Trennung von Live- und Sandbox-Gateway, serverseitige 21% MwSt.-Berechnung und GA4-Kauf-Ereignisse.",
+        },
+      },
+      {
+        category: "FEATURE",
+        title: {
+          es: "Graduación a Producción Oficial v1.0 (General Availability)",
+          en: "Graduation to Official Production v1.0 (General Availability)",
+          ca: "Graduació a Producció Oficial v1.0 (General Availability)",
+          de: "Graduierung zur offiziellen Produktion v1.0 (General Availability)",
+        },
+        description: {
+          es: "Lanzamiento oficial de la plataforma para residentes, visitantes y comercios de Mallorca, eliminando etiquetas beta y desplegando la experiencia de usuario definitiva.",
+          en: "Official platform launch for Mallorca residents, visitors, and businesses, removing beta badges and rolling out the definitive production user experience.",
+          ca: "Llançament oficial de la plataforma per a residents, visitants i comerços de Mallorca, eliminant etiquetes beta.",
+          de: "Offizieller Plattform-Start für Bewohner, Besucher und Unternehmen Mallorcas ohne Beta-Einschränkungen.",
+        },
+      },
+      {
+        category: "SECURITY",
+        title: {
+          es: "Blindaje de Titularidad Empresarial y Cero Exposición Backend",
+          en: "Business Ownership Shield and Zero Backend Exposure",
+          ca: "Blindatge de Titularitat Empresarial i Cero Exposició Backend",
+          de: "Unternehmerischer Eigentumsschutz und Zero Backend-Exposition",
+        },
+        description: {
+          es: "Validación de permisos server-side, rate limiting defensivo, inmutabilidad de verificaciones y reglas de seguridad de Firestore auditadas.",
+          en: "Server-side permissions enforcement, sliding-window rate limiting, verification immutability, and audited Firestore security rules.",
+          ca: "Validació de permisos al servidor, rate limiting defensiu, immutabilitat de verificacions i regles de seguretat de Firestore auditades.",
+          de: "Serverseitige Rechteprüfung, defensives Rate-Limiting, Unveränderbarkeit von Prüfungen und geprüfte Firestore-Sicherheitsregeln.",
+        },
+      },
+      {
+        category: "TAXONOMY",
+        title: {
+          es: "Consolidación de 953 Comercios en 53 Municipios",
+          en: "Consolidation of 953 Businesses across 53 Municipalities",
+          ca: "Consolidació de 953 Comerços als 53 Municipis",
+          de: "Konsolidierung von 953 Betrieben in 53 Gemeinden",
+        },
+        description: {
+          es: "Catálogo estructurado con taxonomía estricta, geolocalización contrastada, puntuación de confianza y soporte para verticales deportivas y de experiencias.",
+          en: "Structured catalog with strict taxonomy, verified geolocation, trust confidence scoring, and dedicated sports and experience hubs.",
+          ca: "Catàleg estructurat amb taxonomia estricta, geolocalització contrastada i suport per a verticals d'esport i experiències.",
+          de: "Strukturiertes Verzeichnis mit strikter Taxonomie, geprüfter Geolokalisierung und Unterstützung für Sport- und Erlebnis-Hubs.",
+        },
+      },
+      {
+        category: "PERFORMANCE",
+        title: {
+          es: "Arquitectura SSR en Cloudflare Edge y Resiliencia D1",
+          en: "Cloudflare Edge SSR Architecture and D1 Resilience",
+          ca: "Arquitectura SSR a Cloudflare Edge i Resiliència D1",
+          de: "Cloudflare Edge SSR-Architektur und D1-Resilienz",
+        },
+        description: {
+          es: "Tiempos de respuesta inferiores a 300ms a nivel global, fallback instantáneo ante cortes de red y telemetría de logs con deduplicación.",
+          en: "Sub-300ms global response times, instant failover on network drops, and deduplicated resilient log telemetry.",
+          ca: "Temps de resposta inferiors a 300ms a nivell global, fallback instantani i telemetria de logs amb deduplicació.",
+          de: "Antwortzeiten unter 300ms weltweit, sofortiger Fallback bei Netzunterbrechungen und resilienter Log-Telemetrie.",
+        },
+      },
+      {
+        category: "DOCS",
+        title: {
+          es: "Publicación de Auditorías y Guías de Honestidad de Datos",
+          en: "Publication of Data Honesty Audits and Verification Guides",
+          ca: "Publicació d'Auditories i Guies d'Honestedat de Dades",
+          de: "Veröffentlichung von Daten-Audits und Verifizierungsleitfäden",
+        },
+        description: {
+          es: "Documentación exhaustiva en docs/ de las 17 Golden Rules, protocolos de curación atómica y auditorías de datos oficiales.",
+          en: "Comprehensive documentation in docs/ covering all 17 Golden Rules, atomic curation SOPs, and verified official source audits.",
+          ca: "Documentació exhaustiva a docs/ de les 17 Golden Rules, protocols de curació i auditories de dades oficials.",
+          de: "Ausführliche Dokumentation in docs/ zu allen 17 Golden Rules, Curation-SOPs und Echtdaten-Audits.",
+        },
+      },
+    ],
+  },
   {
     version: "0.11",
     versionLabel: {

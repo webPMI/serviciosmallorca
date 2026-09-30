@@ -181,9 +181,6 @@ export const POST: APIRoute = async ({ request, locals }) => {
     const currentYear = new Date().getFullYear();
     const invoiceId = `INV-HONOR-${currentYear}-${Date.now().toString(36).toUpperCase()}`;
 
-    // 7. Registro en el libro de transacciones completadas (Idempotencia permanente)
-    recordCompletedPayment(activeIdempotencyKey, service.id, safeAmount, invoiceId);
-
     // 8. Telemetría de pago resiliente en Cloudflare D1 (GR-15)
     const d1Binding = (locals as any)?.runtime?.env?.DB;
     await logToD1(d1Binding, {
@@ -217,7 +214,26 @@ export const POST: APIRoute = async ({ request, locals }) => {
     const successUrl = `${origin}/${safeLocale}/cuadro-de-honor?payment=success&session_id={CHECKOUT_SESSION_ID}&invoiceId=${invoiceId}&service=${service.slug}`;
     const cancelUrl = `${origin}/${safeLocale}/cuadro-de-honor?payment=cancelled&service=${service.slug}`;
 
-    if (isLive && stripeKey) {
+    if (isLive) {
+      if (!stripeKey) {
+        releaseServiceResourceLock(service.id);
+        releasePaymentLock(activeIdempotencyKey);
+        await logToD1(d1Binding, {
+          level: "SECURITY",
+          category: "PAYMENT",
+          message: "Pasarela de pagos en modo LIVE pero STRIPE_SECRET_KEY no está configurada.",
+          status: 500,
+        }).catch(() => {});
+
+        return new Response(
+          JSON.stringify({
+            success: false,
+            error: "La pasarela de pagos segura no está configurada en este entorno.",
+          }),
+          { status: 500, headers: { "Content-Type": "application/json", "Cache-Control": "no-store" } },
+        );
+      }
+
       // Integración directa con Stripe Checkout API mediante fetch REST estándar (compatible con Cloudflare Workers)
       const stripeParams = new URLSearchParams();
       stripeParams.append("payment_method_types[0]", "card");
@@ -268,6 +284,9 @@ export const POST: APIRoute = async ({ request, locals }) => {
         });
 
         const stripeSession = await stripeRes.json();
+        // Liberar el bloqueo del recurso tras generar la sesión (el webhook manejará la confirmación definitiva)
+        releaseServiceResourceLock(service.id);
+
         if (stripeRes.ok && stripeSession?.url) {
           return new Response(
             JSON.stringify({
@@ -287,7 +306,7 @@ export const POST: APIRoute = async ({ request, locals }) => {
             },
           );
         } else {
-          // Si la llamada a Stripe falla, registrar en D1 y ofrecer fallback controlado
+          releasePaymentLock(activeIdempotencyKey);
           await logToD1(d1Binding, {
             level: "ERROR",
             category: "PAYMENT",
@@ -295,17 +314,44 @@ export const POST: APIRoute = async ({ request, locals }) => {
             status: stripeRes.status,
             metadata: { stripeError: stripeSession?.error },
           }).catch(() => {});
+
+          return new Response(
+            JSON.stringify({
+              success: false,
+              error: stripeSession?.error?.message || "No se pudo generar la sesión de pago seguro con Stripe.",
+            }),
+            {
+              status: 502,
+              headers: { "Content-Type": "application/json", "Cache-Control": "no-store" },
+            },
+          );
         }
       } catch (stripeErr: any) {
+        releasePaymentLock(activeIdempotencyKey);
+        releaseServiceResourceLock(service.id);
         await logToD1(d1Binding, {
           level: "ERROR",
           category: "PAYMENT",
           message: `Fallo de conexión con Stripe API: ${stripeErr?.message || stripeErr}`,
         }).catch(() => {});
+
+        return new Response(
+          JSON.stringify({
+            success: false,
+            error: "Error de conexión con la pasarela bancaria. Inténtalo de nuevo.",
+          }),
+          {
+            status: 502,
+            headers: { "Content-Type": "application/json", "Cache-Control": "no-store" },
+          },
+        );
       }
     }
 
     // Modo Sandbox / Demostración transparente, seguro e instantáneo
+    // Registro en el libro de transacciones completadas (Idempotencia para entorno sandbox)
+    recordCompletedPayment(activeIdempotencyKey, service.id, safeAmount, invoiceId);
+
     // GR-11: la puja queda AUDITADA como `sandbox_recorded` pero NO altera el podio
     // público, porque no existe cobro real. Solo el webhook de Stripe confirma posiciones.
     await recordHonorBid(d1, {

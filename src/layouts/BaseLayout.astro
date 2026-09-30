@@ -1,7 +1,6 @@
 ---
 import "../styles/global.css";
 import ToastContainer from "../components/ToastContainer.astro";
-import BetaBanner from "../components/BetaBanner.astro";
 import CommunityVoiceModal from "../components/CommunityVoiceModal.astro";
 import LegalTermsUpdateModal from "../components/LegalTermsUpdateModal.astro";
 import CookieConsentBanner from "../components/CookieConsentBanner.astro";
@@ -352,9 +351,6 @@ const shouldLoadAdSense =
     <!-- Global Toast Container for reactive notifications -->
     <ToastContainer />
 
-    <!-- Top Informative Beta Banner (v0.01) -->
-    <BetaBanner currentLocale={lang as any} />
-
     <slot />
 
     <!-- Universal Community Voice & Quality Feedback Modal -->
@@ -419,7 +415,9 @@ const shouldLoadAdSense =
 
     <script>
       import { initClientErrorReporter } from "../scripts/client-error-reporter";
+      import { initAutomaticClickTracking } from "../lib/conversionTracking";
       initClientErrorReporter();
+      initAutomaticClickTracking();
     </script>
   </body>
 </html>

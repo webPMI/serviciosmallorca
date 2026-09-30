@@ -7,7 +7,7 @@ import {
   getFormattedBuildTimestamp,
 } from "../../src/data/changelog";
 
-describe("🚀 Changelog & Beta v0.02 Data Integrity (GR-03, GR-04, GR-16)", () => {
+describe("🚀 Changelog & Official Release v1.0 Data Integrity (GR-03, GR-04, GR-16)", () => {
   it("defines a valid semantic version and ISO 8601 build timestamp (GR-16)", () => {
     expect(CURRENT_PLATFORM_VERSION).toMatch(/^\d+\.\d+(-[a-z0-9]+)?$/);
     // No fijamos un número concreto: varios agentes suben versión a la vez y lo que

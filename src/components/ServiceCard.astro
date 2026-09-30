@@ -233,6 +233,7 @@ const smartCta = getSmartActionCta(
               rel={smartCta.isExternal ? "noopener noreferrer" : undefined}
               class="btn btn-secondary btn-xs smart-action-btn"
               data-track-event={smartCta.trackingEvent}
+              data-service-id={service.id}
             >
               <span>
                 {smartCta.icon} {smartCta.label}

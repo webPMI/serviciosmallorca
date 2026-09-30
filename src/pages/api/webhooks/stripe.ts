@@ -3,9 +3,10 @@ import {
   verifyStripeWebhookSignature,
   recordCompletedPayment,
   isPaymentAlreadyProcessed,
+  isPaymentsLiveMode,
 } from "../../../lib/paymentSecurityEngine";
 import { createDisplacementAlert } from "../../../lib/displacementNotificationEngine";
-import { applyConfirmedBid } from "../../../lib/honorBoardStore";
+import { applyConfirmedBid, isBidAlreadyProcessed } from "../../../lib/honorBoardStore";
 import { getServiceById } from "../../../data/services";
 import { getD1Binding, logToD1 } from "../../../lib/d1Logger";
 import type { HonorCategory } from "../../../lib/honorBoardEngine";
@@ -57,6 +58,20 @@ export const POST: APIRoute = async ({ request, locals }) => {
           { status: 400, headers: { "Content-Type": "application/json" } },
         );
       }
+    } else if (isPaymentsLiveMode()) {
+      await logToD1(d1Binding, {
+        level: "SECURITY",
+        category: "PAYMENT",
+        message: "Webhook de Stripe recibido en modo LIVE pero STRIPE_WEBHOOK_SECRET no está configurado.",
+        status: 500,
+        url: request.url,
+        method: "POST",
+      }).catch(() => {});
+
+      return new Response(
+        JSON.stringify({ success: false, error: "Configuración de seguridad incompleta en el servidor." }),
+        { status: 500, headers: { "Content-Type": "application/json" } },
+      );
     }
 
     // 2. Parsear el evento de Stripe
@@ -89,8 +104,9 @@ export const POST: APIRoute = async ({ request, locals }) => {
         const invoiceId = session.metadata?.invoiceId || `INV-HONOR-${Date.now().toString(36).toUpperCase()}`;
         const amountEuros = session.amount_total ? session.amount_total / 100 : Number(session.metadata?.amount || 0);
 
-        // Anti-Replay: Si ya fue procesado, no repetir
-        if (isPaymentAlreadyProcessed(idempotencyKey)) {
+        // Anti-Replay: Si ya fue procesado en memoria o persistido en D1, no repetir
+        const alreadyInD1 = await isBidAlreadyProcessed(d1Binding, idempotencyKey);
+        if (isPaymentAlreadyProcessed(idempotencyKey) || alreadyInD1) {
           return new Response(
             JSON.stringify({ received: true, note: "Transacción ya procesada previamente (idempotente)." }),
             { status: 200, headers: { "Content-Type": "application/json" } },
