@@ -49,6 +49,63 @@ export const bufeteBuadesAbogadosPalma1979: ServiceItem = {
     ca: "Bufete Buades Abogados Palma (1979) ofereix un servei professional de màxima categoria a Mallorca. Despatx jurídic de referència a Balears des de 1979 en dret immobiliari, mercantil i tributari. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
     de: "Bufete Buades Abogados Palma (1979) bietet erstklassigen professionellen Service auf Mallorca. Führende renommierte Großkanzlei auf den Balearen seit 1979 für Immobilien-, Gesellschafts- und Steuerrecht. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
+  highlights: {
+    es: [
+      "Firma profesional consolidada y de contrastada solvencia en Palma de Mallorca",
+      "Equipo multidisciplinar experto en derecho balear, tributación e inmobiliario",
+      "Atención multilingüe para clientes residentes, no residentes y corporaciones",
+      "Transparencia tarifaria, rigor deontológico y respuesta ágil",
+    ],
+    en: [
+      "Established professional practice with trusted track record in Palma de Mallorca",
+      "Multidisciplinary experts in Balearic real estate law, tax and corporate governance",
+      "Multilingual service for international residents, investors, and local businesses",
+      "Transparent fees, strict ethics, and swift turnaround times",
+    ],
+    ca: [
+      "Firma professional consolidada i de contrastada solvència a Palma de Mallorca",
+      "Equip multidisciplinari expert en dret balear, tributació i immobiliari",
+      "Atenció multilingüe per a clients residents, no residents i corporacions",
+      "Transparència tarifària, rigor deontològic i resposta àgil",
+    ],
+    de: [
+      "Renommierte Kanzlei mit langjähriger Beratungserfahrung in Palma de Mallorca",
+      "Spezialisiert auf balearisches Immobilienrecht, Steuerberatung und Firmengründungen",
+      "Mehrsprachige Betreuung für Residenten, Investoren und Unternehmen",
+      "Klare Honorarstrukturen, hohe Verlässlichkeit und zügige Abwicklung",
+    ],
+  },
+  servicesProvided: {
+    es: [
+      "Asesoramiento Jurídico en Compraventas Inmobiliarias y Herencias",
+      "Planificación Fiscal y Declaración de Impuestos para No Residentes",
+      "Constitución y Gestión Contable de Sociedades en España",
+      "Auditoría Legal, Urbanística (Due Diligence) y Contratos",
+      "Representación ante Notarías, Registro de la Propiedad y Administraciones",
+    ],
+    en: [
+      "Legal Real Estate Conveyancing and Inheritance Advisory",
+      "Cross-Border Tax Planning and Non-Resident Tax Returns",
+      "Spanish Company Formation, Accounting and Corporate Law",
+      "Town-Planning Due Diligence, Title Searches and Contracts",
+      "Legal Representation at Notaries, Land Registry and Public Bodies",
+    ],
+    ca: [
+      "Assessorament Jurídic en Compravendes Immobiliàries i Herències",
+      "Planificació Fiscal i Declaració d'Impostos per a No Residents",
+      "Constitució i Gestió Comptable de Societats a Espanya",
+      "Auditoria Legal, Urbanística (Due Diligence) i Contractes",
+      "Representació davant Notaries, Registre de la Propietat i Administracions",
+    ],
+    de: [
+      "Rechtliche Begleitung beim Immobilienkauf und Erbrecht",
+      "Internationale Steuerplanung und Steuererklärungen für Nicht-Residenten",
+      "Gesellschaftsgründungen, Buchhaltung und Unternehmensberatung",
+      "Baurechtliche Due Diligence und Ausarbeitung von zweisprachigen Verträgen",
+      "Vertretung bei Notaren, Grundbuchämtern und Behörden",
+    ],
+  },
+
   schedule: {
     monday: {
       open: "09:00",

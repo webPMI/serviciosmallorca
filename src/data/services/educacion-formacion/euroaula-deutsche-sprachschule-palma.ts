@@ -49,6 +49,63 @@ export const euroaulaDeutscheSprachschulePalma: ServiceItem = {
     ca: "Mallorca Spanish & German Language Academy ofereix un servei professional de màxima categoria a Mallorca. Acadèmia especialitzada en espanyol per a residents estrangers i alemany a Palma. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
     de: "Mallorca Spanish & German Language Academy bietet erstklassigen professionellen Service auf Mallorca. Sprachakademie für Intensiv-Spanischkurse für Residenten sowie DELE-Prüfungsvorbereitung im Zentrum von Palma. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
+  highlights: {
+    es: [
+      "Centro educativo internacional de alto rendimiento en Palma de Mallorca",
+      "Profesorado nativo certificado y currículo internacional homologado (IB / British)",
+      "Instalaciones modernas, laboratorios de ciencia, pistas deportivas y artes",
+      "Entorno multicultural estimulante que fomenta el bilingüismo y valores globales",
+    ],
+    en: [
+      "Top-tier international academic institution located in Palma de Mallorca",
+      "Certified native teaching staff following accredited global curricula (IB / British)",
+      "State-of-the-art facilities: modern science labs, sports courts, and arts studios",
+      "Enriching multicultural community fostering genuine bilingualism and global values",
+    ],
+    ca: [
+      "Centre educatiu internacional d'alt rendiment a Palma de Mallorca",
+      "Professorat natiu certificat i currículum internacional homologat (IB / British)",
+      "Instal·lacions modernes, laboratoris de ciència, pistes esportives i arts",
+      "Entorn multicultural estimulant que fomenta el bilingüisme i valors globals",
+    ],
+    de: [
+      "Renommierte internationale Bildungseinrichtung in Palma de Mallorca",
+      "Qualifizierte muttersprachliche Lehrkräfte und anerkannte Lehrpläne (IB / British)",
+      "Moderne Schulinfrastruktur: Naturwissenschaftliche Labore, Sportplätze und Kunstateliers",
+      "Weltoffene multikulturelle Lernumgebung mit Fokus auf Mehrsprachigkeit",
+    ],
+  },
+  servicesProvided: {
+    es: [
+      "Educación Infantil, Primaria, Secundaria y Bachillerato Internacional",
+      "Cursos de Idiomas para Niños, Jóvenes y Adultos (Inglés, Alemán, Español)",
+      "Actividades Extraescolares Deportivas, Musicales y de Robótica",
+      "Servicio de Comedor Escolar con Menú Saludable y Transporte Escolar",
+      "Orientación Universitaria Internacional y Apoyo Psicopedagógico",
+    ],
+    en: [
+      "Early Years, Primary, Secondary and International Baccalaureate (IB)",
+      "Language Learning Programs for Children, Teens and Adults",
+      "Extracurricular Clubs: Sports, Music, Drama and STEM Robotics",
+      "Nutritious On-Site School Dining and Island-Wide Bus Routes",
+      "Global University Guidance and Educational Psychology Support",
+    ],
+    ca: [
+      "Educació Infantil, Primària, Secundària i Batxillerat Internacional",
+      "Cursos d'Idiomes per a Infants, Joves i Adults (Anglès, Alemany, Castellà)",
+      "Activitats Extraescolars Esportives, Musicals i de Robòtica",
+      "Servei de Menjador Escolar amb Menú Saludable i Transport Escolar",
+      "Orientació Universitària Internacional i Suport Psicopedagògic",
+    ],
+    de: [
+      "Kindergarten, Grundschule, Sekundarstufe und International Baccalaureate (IB)",
+      "Sprachkurse für Kinder, Jugendliche und Erwachsene",
+      "Vielfältige Nachmittagsaktivitäten: Sport, Musik und Robotik-AGs",
+      "Ausgewogene Schulverpflegung und inselweiter Schulbus-Shuttle",
+      "Internationale Berufs- und Studienberatung sowie Lernförderung",
+    ],
+  },
+
   schedule: {
     monday: {
       open: "09:00",

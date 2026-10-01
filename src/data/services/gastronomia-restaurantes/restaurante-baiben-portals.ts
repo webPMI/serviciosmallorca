@@ -50,6 +50,37 @@ export const restauranteBaibenPortals: ServiceItem = {
     ca: "Baibén és un concepte gastronòmic sofisticat situat a l'extrem més exclusiu de Portals Nous amb una terrassa sobre l'aigua, cuina mediterrània d'autor i una barra de cocteleria guardonada.",
     de: "Baibén verbindet modernes Design mit erstklassiger mediterraner Küche in bester Lage von Puerto Portals. Die großzügige Terrasse am Wasser lädt zu raffinierten Gerichten und preisgekrönten Signature-Cocktails ein.",
   },
+  servicesProvided: {
+    es: [
+      "Servicio de Almuerzos y Cenas a la Carta",
+      "Menús de Degustación y Sugerencias de Temporada",
+      "Eventos Privados, Grupos y Celebraciones",
+      "Servicio de Sumiller y Maridaje de Vinos",
+      "Reserva Preferente de Mesa y Atención Personalizada",
+    ],
+    en: [
+      "À la Carte Lunch and Dinner Service",
+      "Tasting Menus and Seasonal Chef Specials",
+      "Private Dining, Group Bookings and Celebrations",
+      "Sommelier Service and Curated Wine Pairings",
+      "Priority Table Booking and Dedicated Concierge",
+    ],
+    ca: [
+      "Servei de Dinar i Sopar a la Carta",
+      "Menús de Degustació i Suggeriments de Temporada",
+      "Esdeveniments Privats, Grups i Celebracions",
+      "Servei de Sommelier i Maridatge de Vins",
+      "Reserva Preferent de Taula i Atenció Personalitzada",
+    ],
+    de: [
+      "Mittags- und Abendservice à la carte",
+      "Degustationsmenüs und saisonale Tagesempfehlungen",
+      "Private Feiern, Gruppenreservierungen und Events",
+      "Sommelier-Service und Weindegustationen",
+      "Bevorzugte Tischreservierung und persönlicher Gästeservice",
+    ],
+  },
+
   specialties: {
     es: [
       "Arroz meloso de carabinero con alioli de azafrán mallorquín",

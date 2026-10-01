@@ -49,6 +49,63 @@ export const serviciosIntegralesFincasTramuntana: ServiceItem = {
     ca: "Tramuntana Care Fincas & Home Maintenance ofereix un servei professional de màxima categoria a Mallorca. Custòdia de claus, inspecció de finques i manteniment integral a la Tramuntana. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
     de: "Tramuntana Care Fincas & Home Maintenance bietet erstklassigen professionellen Service auf Mallorca. Schlüsselverwaltung, Sturm-Checks, Heizungskontrollen und ganzjährige Finca-Betreuung in der Tramuntana. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
+  highlights: {
+    es: [
+      "Servicio especializado de limpieza y mantenimiento de fincas en Mallorca",
+      "Personal de confianza con seguro de responsabilidad civil y supervisión continua",
+      "Productos ecológicos de limpieza biodegradables respetuosos con el medio ambiente",
+      "Flexibilidad horaria total, servicio de cambio de huéspedes y aperturas de temporada",
+    ],
+    en: [
+      "Specialized property care and villa turnaround services across Mallorca",
+      "Vetted reliable staff backed by comprehensive public liability insurance",
+      "Eco-friendly biodegradable cleaning products protecting home and nature",
+      "High flexibility for holiday turnover cleans and seasonal property openings",
+    ],
+    ca: [
+      "Servei especialitzat de neteja i manteniment de finques a Mallorca",
+      "Personal de confiança amb assegurança de responsabilitat civil i supervisió",
+      "Productes ecològics de neteja biodegradables respectuosos amb el medi ambient",
+      "Flexibilitat horària total, servei de canvi d'hostes i obertures de temporada",
+    ],
+    de: [
+      "Professioneller Reinigungs- und Pflegeservice für Villen und Fincas in Mallorca",
+      "Zuverlässiges, versichertes Fachpersonal mit kontinuierlicher Qualitätskontrolle",
+      "Umweltfreundliche, biologisch abbaubare Pflegemittel für anspruchsvolle Oberflächen",
+      "Flexible Einsatzplanung für Wechselreinigungen und Saison-Inbetriebnahmen",
+    ],
+  },
+  servicesProvided: {
+    es: [
+      "Limpieza de Cambio de Huéspedes para Alquiler Vacacional de Villas",
+      "Limpieza de Fin de Obra y Puestas a Punto de Temporada",
+      "Lavandería y Tratamiento Textil de Ropa de Cama y Toallas",
+      "Limpieza de Cristales en Altura y Superficies Acristaladas",
+      "Mantenimiento Periódico de Interiores y Custodia de Llaves",
+    ],
+    en: [
+      "Turnaround Cleaning and Linen Service for Luxury Holiday Rentals",
+      "Deep Post-Construction Cleans and Pre-Season Spring Refresh",
+      "Professional Laundry Service for Bed Linens and Towels",
+      "High-Reach Glass and Panoramic Window Cleaning",
+      "Regular Domestic Cleaning and Keyholding Inspection Checks",
+    ],
+    ca: [
+      "Neteja de Canvi d'Hostes per a Lloguer Vacacional de Vil·les",
+      "Neteja de Fi d'Obra i Posades a Punt de Temporada",
+      "Bugaderia i Tractament Tèxtil de Roba de Llit i Tovalloles",
+      "Neteja de Vidres en Alçada i Superfícies Envàs",
+      "Manteniment Periòdic d'Interiors i Custòdia de Claus",
+    ],
+    de: [
+      "Gäste-Wechselreinigung für hochwertige Ferienvermietungen",
+      "Bauendreinigung und gründlicher Frühjahrsputz für Fincas",
+      "Wäscheservice für Bettwäsche, Kissen und Handtücher",
+      "Streifenfreie Fenster- und Glasfassadenreinigung",
+      "Regelmäßige Innenreinigung und Schlüsselverwahrungs-Service",
+    ],
+  },
+
   schedule: {
     monday: {
       open: "09:00",

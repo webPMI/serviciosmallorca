@@ -49,6 +49,63 @@ export const classicCarRentalMallorcaTramuntana: ServiceItem = {
     ca: "Mallorca Classic Cars & Vintage Roadsters ofereix un servei professional de màxima categoria a Mallorca. Lloguer de cotxes clàssics descapotables per recórrer la Serra de Tramuntana. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
     de: "Mallorca Classic Cars & Vintage Roadsters bietet erstklassigen professionellen Service auf Mallorca. Oldtimer- und Cabrio-Verleih (Porsche 356 Speedster, Mercedes Pagode, Jaguar E-Type) für Panoramatouren durch die Tramuntana. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
+  highlights: {
+    es: [
+      "Taller y servicio de automoción de referencia en Mallorca",
+      "Mecánicos titulados y diagnosis electrónica avanzada multimarca",
+      "Coche de sustitución, revisiones pre-ITV y mantenimiento garantizado",
+      "Presupuesto previo detallado y piezas con garantía oficial del fabricante",
+    ],
+    en: [
+      "Leading automotive and vehicle care specialist in Mallorca",
+      "Certified master mechanics and advanced multi-brand computerized diagnostics",
+      "Courtesy replacement vehicles, pre-ITV inspection, and guaranteed servicing",
+      "Detailed upfront estimates and genuine manufacturer-approved spare parts",
+    ],
+    ca: [
+      "Taller i servei d'automoció de referència a Mallorca",
+      "Mecànics titulats i diagnosi electrònica avançada multimarca",
+      "Cotxe de substitució, revisions pre-ITV i manteniment garantit",
+      "Pressupost previ detallat i peces amb garantia oficial del fabricant",
+    ],
+    de: [
+      "Führender Kfz-Fachbetrieb und Meisterservice in Mallorca",
+      "Qualifizierte Mechatroniker und modernste elektronische Mehrmarken-Diagnose",
+      "Ersatzwagen, Vorbereitung auf die Hauptuntersuchung (ITV) und garantierte Wartung",
+      "Transparente Kostenvoranschläge und Originalersatzteile nach Herstellervorgaben",
+    ],
+  },
+  servicesProvided: {
+    es: [
+      "Mantenimiento Periódico, Cambio de Aceite y Filtros",
+      "Diagnosis Electrónica del Motor y Reparación de Averías",
+      "Revisión y Preparación Completa para la ITV",
+      "Servicio Rápido de Neumáticos, Frenos y Amortiguadores",
+      "Climatización, Carga de Aire Acondicionado y Baterías",
+    ],
+    en: [
+      "Scheduled Servicing, Oil and Filter Replacements",
+      "Engine Diagnostics and Electrical Fault Troubleshooting",
+      "Comprehensive Pre-ITV Roadworthiness Inspections",
+      "Express Tyres, Brakes and Suspension Services",
+      "Air Conditioning Recharging and Battery Replacement",
+    ],
+    ca: [
+      "Manteniment Periòdic, Canvi d'Oli i Filtres",
+      "Diagnosi Electrònica del Motor i Reparació d'Avaries",
+      "Revisió i Preparació Completa per a la ITV",
+      "Servei Ràpid de Pneumàtics, Frens i Amortidors",
+      "Climatització, Càrrega d'Aire Condicionat i Bateries",
+    ],
+    de: [
+      "Regelmäßige Inspektion, Öl- und Filterwechsel",
+      "Elektronische Motordiagnose und Fehlerbehebung",
+      "Vollständige Überprüfung und Vorbereitung zur ITV",
+      "Schnellservice für Reifen, Bremsen und Stoßdämpfer",
+      "Klimaservice, Kältemittel-Nachfüllung und Batteriewechsel",
+    ],
+  },
+
   schedule: {
     monday: {
       open: "09:00",

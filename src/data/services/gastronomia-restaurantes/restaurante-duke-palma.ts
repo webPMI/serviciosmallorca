@@ -50,6 +50,37 @@ export const restauranteDukePalma: ServiceItem = {
     ca: "Fundat pels xefs i surfistes Ronny i Juan al cor bohemi de Santa Catalina, Duke Restaurant és un homenatge als viatges pels cinc continents amb ceviches frescos, currys de coco aromàtics i tacos gurmet en un ambient cosmopolita.",
     de: "Gegründet von den weitgereisten Köchen und Surfern Ronny und Juan im Künstlerviertel Santa Catalina, serviert das Duke Restaurant weltweite Street-Food-Highlights: von peruanischem Ceviche über aromatische Thai-Currys bis zu Gourmet-Tacos.",
   },
+  servicesProvided: {
+    es: [
+      "Servicio de Almuerzos y Cenas a la Carta",
+      "Menús de Degustación y Sugerencias de Temporada",
+      "Eventos Privados, Grupos y Celebraciones",
+      "Servicio de Sumiller y Maridaje de Vinos",
+      "Reserva Preferente de Mesa y Atención Personalizada",
+    ],
+    en: [
+      "À la Carte Lunch and Dinner Service",
+      "Tasting Menus and Seasonal Chef Specials",
+      "Private Dining, Group Bookings and Celebrations",
+      "Sommelier Service and Curated Wine Pairings",
+      "Priority Table Booking and Dedicated Concierge",
+    ],
+    ca: [
+      "Servei de Dinar i Sopar a la Carta",
+      "Menús de Degustació i Suggeriments de Temporada",
+      "Esdeveniments Privats, Grups i Celebracions",
+      "Servei de Sommelier i Maridatge de Vins",
+      "Reserva Preferent de Taula i Atenció Personalitzada",
+    ],
+    de: [
+      "Mittags- und Abendservice à la carte",
+      "Degustationsmenüs und saisonale Tagesempfehlungen",
+      "Private Feiern, Gruppenreservierungen und Events",
+      "Sommelier-Service und Weindegustationen",
+      "Bevorzugte Tischreservierung und persönlicher Gästeservice",
+    ],
+  },
+
   specialties: {
     es: [
       "Ceviche clásico de corvina con leche de tigre, choclo y boniato",

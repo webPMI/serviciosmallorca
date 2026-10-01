@@ -49,6 +49,63 @@ export const prosegurSeguridadVillasBaleares: ServiceItem = {
     ca: "Alarmas & Videovigilancia CCTV Mallorca ofereix un servei professional de màxima categoria a Mallorca. Instal·lació d'alarmes perimetrals i videovigilància CCTV a Mallorca. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
     de: "Alarmas & Videovigilancia CCTV Mallorca bietet erstklassigen professionellen Service auf Mallorca. Perimeter-Infrarotschranken, thermische KI-Überwachungskameras und 24h-Aufschaltung zur Notrufzentrale mit Polizeiverbindung. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
+  highlights: {
+    es: [
+      "Especialistas en domótica, redes de alta velocidad y seguridad en Palma de Mallorca",
+      "Sistemas integrados de videovigilancia CCTV y alarma conectada 24/7",
+      "Instalación certificada de fibra, WiFi de largo alcance y audio multiroom",
+      "Soporte técnico presencial rápido y mantenimiento remoto preventivo",
+    ],
+    en: [
+      "Smart home automation, high-speed networking and security experts in Palma de Mallorca",
+      "Integrated 24/7 connected alarm systems and HD CCTV surveillance",
+      "Certified enterprise WiFi, structured cabling and multiroom audio installations",
+      "Prompt on-site technical assistance and proactive remote monitoring",
+    ],
+    ca: [
+      "Especialistes en domòtica, xarxes d'alta velocitat i seguretat a Palma de Mallorca",
+      "Sistemes integrats de videovigilància CCTV i alarma connectada 24/7",
+      "Instal·lació certificada de fibra, WiFi de llarg abast i àudio multiroom",
+      "Suport tècnic presencial ràpid i manteniment remot preventiu",
+    ],
+    de: [
+      "Experten für Smart-Home-Automatisierung, Netzwerke und Sicherheitstechnik in Palma de Mallorca",
+      "Integrierte Videoüberwachung (CCTV) und 24/7 aufgeschaltete Alarmanlagen",
+      "Zertifizierte High-Speed-WLAN-Lösungen und Multiroom-Soundsysteme für Villen",
+      "Zuverlässiger technischer Vor-Ort-Kundendienst und präventive Fernwartung",
+    ],
+  },
+  servicesProvided: {
+    es: [
+      "Instalación y Configuración de Sistemas de Alarma y CCTV",
+      "Domótica Integral: Control de Iluminación, Clima y Accesos",
+      "Redes WiFi Profesionales y Cableado Estructurado para Fincas",
+      "Sistemas de Sonido Hi-Fi y Cine en Casa Personalizado",
+      "Mantenimiento Preventivo y Soporte Informático para Empresas",
+    ],
+    en: [
+      "Alarm and CCTV Surveillance Systems Installation",
+      "Complete Smart Home Integration: Lighting, Climate and Access",
+      "High-Performance Commercial WiFi and Structured Cabling",
+      "Custom Home Cinema and Hi-Fi Multiroom Sound Systems",
+      "Preventative Maintenance and Corporate IT Support",
+    ],
+    ca: [
+      "Instal·lació i Configuració de Sistemes d'Alarma i CCTV",
+      "Domòtica Integral: Control d'Il·luminació, Clima i Accessos",
+      "Xarxes WiFi Professionals i Cablatge Estructurat per a Finques",
+      "Sistemes de So Hi-Fi i Cinema a Casa Personalitzat",
+      "Manteniment Preventiu i Suport Informàtic per a Empreses",
+    ],
+    de: [
+      "Installation von Alarmsystemen und CCTV-Videoüberwachung",
+      "Ganzheitliche Hausautomation: Licht-, Klima- und Zugangssteuerung",
+      "Professionelle WLAN-Ausleuchtung und strukturierte Netzwerkverkabelung",
+      "Individuelle Heimkino- und Multiroom-Audioanlagen",
+      "Wartungsverträge und IT-Support für Privathäuser und Unternehmen",
+    ],
+  },
+
   schedule: {
     monday: {
       open: "09:00",

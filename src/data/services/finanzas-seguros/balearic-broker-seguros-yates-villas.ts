@@ -49,6 +49,63 @@ export const balearicBrokerSegurosYatesVillas: ServiceItem = {
     ca: "Balearic Marine & Villa Insurance Brokers ofereix un servei professional de màxima categoria a Mallorca. Corredoria especialitzada en assegurances de iots i vil·les de luxe a Balears. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
     de: "Balearic Marine & Villa Insurance Brokers bietet erstklassigen professionellen Service auf Mallorca. Unabhängiger Versicherungsmakler für Kaskoversicherungen von Luxusyachten und hochwertige Fincas auf den Balearen. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
+  highlights: {
+    es: [
+      "Correduría y asesoría financiera independiente con sede en Palma de Mallorca",
+      "Acceso directo a las principales compañías aseguradoras y entidades bancarias europeas",
+      "Soluciones específicas para residentes extranjeros, patrimonios y fincas rústicas",
+      "Atención multilingüe y defensa activa del asegurado en la tramitación de siniestros",
+    ],
+    en: [
+      "Independent insurance brokerage and financial advisory based in Palma de Mallorca",
+      "Direct access to leading European insurance carriers and mortgage lenders",
+      "Bespoke policies tailored for international residents, high-value assets and fincas",
+      "Multilingual advisors dedicated to defending client claims with swift payouts",
+    ],
+    ca: [
+      "Corredoria i assessoria financera independent amb seu a Palma de Mallorca",
+      "Accés directe a les principals companyies asseguradores i bancs europeus",
+      "Solucions específiques per a residents estrangers, patrimonis i finques rústiques",
+      "Atenció multilingüe i defensa activa de l'assegurat en la tramitació de sinistres",
+    ],
+    de: [
+      "Unabhängige Versicherungs- und Finanzierungsberatung in Palma de Mallorca",
+      "Direkter Zugriff auf führende spanische und europäische Versicherer und Banken",
+      "Maßgeschneiderte Policen für Residenten, Fincas, Yachten und hochwertige Immobilien",
+      "Mehrsprachige Betreuung und persönliche Unterstützung im Schadensfall",
+    ],
+  },
+  servicesProvided: {
+    es: [
+      "Seguros de Salud Privados Internacionales con Cobertura Balear",
+      "Pólizas Multirriesgo del Hogar para Villas, Fincas y Apartamentos",
+      "Seguros Náuticos para Embarcaciones de Recreo y Yates",
+      "Intermediación Hipotecaria y Financiación para No Residentes",
+      "Planes de Ahorro, Pensiones y Seguros de Vida Patrimoniales",
+    ],
+    en: [
+      "International Private Health Insurance with Premier Balearic Cover",
+      "Comprehensive Home and Contents Insurance for Fincas and Luxury Villas",
+      "Marine and Yacht Insurance Policies",
+      "Mortgage Brokerage and Lending Solutions for Non-Residents",
+      "Wealth Protection, Life Insurance and Guaranteed Savings Plans",
+    ],
+    ca: [
+      "Assegurances de Salut Privades Internacionals amb Cobertura Balear",
+      "Pòlisses Multirisc de la Llar per a Vil·les, Finques i Apartaments",
+      "Assegurances Nàutiques per a Embarcacions d'Esbarjo i Iots",
+      "Intermediació Hipotecària i Finançament per a No Residents",
+      "Plans d'Estalvi, Pensions i Assegurances de Vida Patrimonials",
+    ],
+    de: [
+      "Internationale private Krankenversicherungen mit freier Arztwahl auf Mallorca",
+      "Gebäude- und Hausratversicherung für Fincas und Luxusvillen",
+      "Kaskoversicherung und Haftpflicht für Boote und Yachten",
+      "Hypothekenvermittlung und Baufinanzierung für Nicht-Residenten",
+      "Altersvorsorge, Vermögenssicherung und Lebensversicherungen",
+    ],
+  },
+
   schedule: {
     monday: {
       open: "09:00",

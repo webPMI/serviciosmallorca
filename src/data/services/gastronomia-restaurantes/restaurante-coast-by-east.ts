@@ -50,6 +50,37 @@ export const restauranteCoastByEast: ServiceItem = {
     ca: "Ubicat al port esportiu de disseny Port Adriano a Calvià, Coast by East ofereix un concepte avantguardista de gastronomia panasiàtica, sushi d'autor i robata grill japonesa amb una terrassa panoràmica amb piscina.",
     de: "Im avantgardistischen Yachthafen Port Adriano in Calvià bietet das Coast by East panasiatische Spitzenküche, Sushi und Robata-Grill-Spezialitäten. Die großzügige Pool-Terrasse am Wasser ist der Treffpunkt für elegante Sonnenuntergänge und Champagner.",
   },
+  servicesProvided: {
+    es: [
+      "Servicio de Almuerzos y Cenas a la Carta",
+      "Menús de Degustación y Sugerencias de Temporada",
+      "Eventos Privados, Grupos y Celebraciones",
+      "Servicio de Sumiller y Maridaje de Vinos",
+      "Reserva Preferente de Mesa y Atención Personalizada",
+    ],
+    en: [
+      "À la Carte Lunch and Dinner Service",
+      "Tasting Menus and Seasonal Chef Specials",
+      "Private Dining, Group Bookings and Celebrations",
+      "Sommelier Service and Curated Wine Pairings",
+      "Priority Table Booking and Dedicated Concierge",
+    ],
+    ca: [
+      "Servei de Dinar i Sopar a la Carta",
+      "Menús de Degustació i Suggeriments de Temporada",
+      "Esdeveniments Privats, Grups i Celebracions",
+      "Servei de Sommelier i Maridatge de Vins",
+      "Reserva Preferent de Taula i Atenció Personalitzada",
+    ],
+    de: [
+      "Mittags- und Abendservice à la carte",
+      "Degustationsmenüs und saisonale Tagesempfehlungen",
+      "Private Feiern, Gruppenreservierungen und Events",
+      "Sommelier-Service und Weindegustationen",
+      "Bevorzugte Tischreservierung und persönlicher Gästeservice",
+    ],
+  },
+
   specialties: {
     es: [
       "Rolls de sushi crujiente de tempura de bogavante con salsa unagi",

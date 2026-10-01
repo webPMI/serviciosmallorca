@@ -49,6 +49,63 @@ export const niviaBornRooftopLoungePalma: ServiceItem = {
     ca: "The Fly Chic Rooftop Bar - Nivia Born ofereix un servei professional de màxima categoria a Mallorca. Terrassa panoràmica al Passeig del Born amb vistes a la Seu de Palma. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
     de: "The Fly Chic Rooftop Bar - Nivia Born bietet erstklassigen professionellen Service auf Mallorca. Elegante Dachterrassen-Bar über den Platanen des Paseo del Borne mit Blick auf die Kathedrale. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
+  highlights: {
+    es: [
+      "Experiencias inolvidables y momentos exclusivos en los rincones más bellos de Palma de Mallorca",
+      "Guías y profesionales acreditados con profundo conocimiento cultural y natural de Mallorca",
+      "Itinerarios privados y eventos a medida con atención a cada detalle",
+      "Seguridad, flexibilidad de fechas y atención multilingüe personalizada",
+    ],
+    en: [
+      "Unforgettable experiences and VIP moments in the most scenic spots of Palma de Mallorca",
+      "Certified guides and coordinators with extensive local knowledge of Majorca",
+      "Private itineraries and tailored celebrations designed around your wishes",
+      "Safety-first ethos, flexible scheduling, and dedicated multilingual care",
+    ],
+    ca: [
+      "Experiències inoblidables i moments exclusius als racons més bells de Palma de Mallorca",
+      "Guies i professionals acreditats amb profund coneixement cultural i natural de Mallorca",
+      "Itineraris privats i esdeveniments a mida amb atenció a cada detall",
+      "Seguretat, flexibilitat de dates i atenció multilingüe personalitzada",
+    ],
+    de: [
+      "Unvergessliche Erlebnisse an den schönsten Küsten- und Bergabschnitten in Palma de Mallorca",
+      "Zertifizierte Guides und Eventprofis mit fundierten Insel- und Kulturkenntnissen",
+      "Maßgeschneiderte private Touren und Feiern mit Liebe zum kleinsten Detail",
+      "Höchste Sicherheitsstandards, flexible Buchung und persönliche Betreuung",
+    ],
+  },
+  servicesProvided: {
+    es: [
+      "Tours Privados y Excursiones Guiadas Exclusivas",
+      "Planificación y Coordinación Integral de Eventos y Bodas",
+      "Reserva de Espacios Exclusivos, Camas Balinesas y Zonas VIP",
+      "Alquiler de Equipamiento Deportivo y Logística de Rutas",
+      "Servicio de Fotografía, Vídeo y Asistencia Durante la Experiencia",
+    ],
+    en: [
+      "Private Guided Day Tours and Tailored Island Excursions",
+      "Full-Service Wedding and Event Planning Coordination",
+      "VIP Daybeds and Exclusive Venue Area Reservations",
+      "Sports Equipment Rental and Route Logistics",
+      "On-Tour Photography, Videography and Concierge Support",
+    ],
+    ca: [
+      "Tours Privats i Excursions Guiades Exclusives",
+      "Planificació i Coordinació Integral d'Esdeveniments i Casaments",
+      "Reserva d'Espais Exclusius, Llits Balinesos i Zones VIP",
+      "Lloguer d'Equipament Esportiu i Logística de Rutes",
+      "Servei de Fotografia, Vídeo i Assistència Durant l'Experiència",
+    ],
+    de: [
+      "Private Tagestouren und geführte Inselausflüge abseits der Massen",
+      "Komplettplanung und Durchführung von Hochzeiten und Firmenfeiern",
+      "Reservierung von VIP-Daybeds, Terrassenplätzen und exklusiven Lounges",
+      "Verleih von Sport- und Outdoor-Equipment inklusive Routenplanung",
+      "Professionelle Fotobegleitung und persönlicher Betreuungsservice",
+    ],
+  },
+
   schedule: {
     monday: {
       open: "13:00",

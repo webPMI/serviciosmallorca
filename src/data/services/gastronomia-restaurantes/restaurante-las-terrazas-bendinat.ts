@@ -50,6 +50,37 @@ export const restauranteLasTerrazasBendinat: ServiceItem = {
     ca: "Situat a l'emblemàtic Hotel Bendinat a Calvià, Las Terrazas del Bendinat és un dels restaurants costaners més bells del Mediterrani amb taules sota els pins vora la mar, arrossos excepcionals i peix fresc de la llotja.",
     de: "Im traditionsreichen Hotel Bendinat in Calvià gelegen, gilt Las Terrazas del Bendinat als eines der schönsten Küstenrestaurants im gesamten Mittelmeerraum. Unter schattigen Pinien direkt über den Klippen genießen Gäste herausragende Paellas und fangfrischen Fisch.",
   },
+  servicesProvided: {
+    es: [
+      "Servicio de Almuerzos y Cenas a la Carta",
+      "Menús de Degustación y Sugerencias de Temporada",
+      "Eventos Privados, Grupos y Celebraciones",
+      "Servicio de Sumiller y Maridaje de Vinos",
+      "Reserva Preferente de Mesa y Atención Personalizada",
+    ],
+    en: [
+      "À la Carte Lunch and Dinner Service",
+      "Tasting Menus and Seasonal Chef Specials",
+      "Private Dining, Group Bookings and Celebrations",
+      "Sommelier Service and Curated Wine Pairings",
+      "Priority Table Booking and Dedicated Concierge",
+    ],
+    ca: [
+      "Servei de Dinar i Sopar a la Carta",
+      "Menús de Degustació i Suggeriments de Temporada",
+      "Esdeveniments Privats, Grups i Celebracions",
+      "Servei de Sommelier i Maridatge de Vins",
+      "Reserva Preferent de Taula i Atenció Personalitzada",
+    ],
+    de: [
+      "Mittags- und Abendservice à la carte",
+      "Degustationsmenüs und saisonale Tagesempfehlungen",
+      "Private Feiern, Gruppenreservierungen und Events",
+      "Sommelier-Service und Weindegustationen",
+      "Bevorzugte Tischreservierung und persönlicher Gästeservice",
+    ],
+  },
+
   specialties: {
     es: [
       "Paella de marisco 'Las Terrazas' con gamba roja y cigalas",

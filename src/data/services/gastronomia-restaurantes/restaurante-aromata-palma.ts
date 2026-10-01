@@ -101,6 +101,32 @@ export const restauranteAromataPalma: ServiceItem = {
       "Auszeichnung im Guide Michelin (Bib Gourmand)",
     ],
   },
+  servicesProvided: {
+    es: [
+      "Menú Degustación y Carta de Temporada",
+      "Eventos Privados en Patio Histórico del Siglo XVII",
+      "Servicio de Sumiller y Maridaje Balear",
+      "Reservas Online y Experiencias Gastronómicas",
+    ],
+    en: [
+      "Tasting Menu and Seasonal À la Carte",
+      "Private Dining in 17th-Century Courtyard",
+      "Sommelier Service and Balearic Wine Pairing",
+      "Online Table Reservations and Culinary Experiences",
+    ],
+    ca: [
+      "Menú Degustació i Carta de Temporada",
+      "Esdeveniments Privats en Pati Històric del Segle XVII",
+      "Servei de Sommelier i Maridatge Balear",
+      "Reserves Online i Experiències Gastronòmiques",
+    ],
+    de: [
+      "Degustationsmenü und saisonale Speisekarte",
+      "Private Veranstaltungen im historischen Innenhof",
+      "Sommelier-Service und balearische Weinbegleitung",
+      "Online-Tischreservierung und Gourmet-Erlebnisse",
+    ],
+  },
   tags: ["zona:casco-antiguo", "product:lujo", "mod:cita-previa", "aud:parejas"],
   createdAt: "2026-08-26",
   lastUpdatedAt: "2026-08-26",

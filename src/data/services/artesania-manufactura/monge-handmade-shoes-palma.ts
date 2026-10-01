@@ -49,6 +49,63 @@ export const mongeHandmadeShoesPalma: ServiceItem = {
     ca: "Monge Handmade Shoes Palma ofereix un servei professional de màxima categoria a Mallorca. Calçat artesà d'autor cosit a mà amb construcció Goodyear a Mallorca. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
     de: "Monge Handmade Shoes Palma bietet erstklassigen professionellen Service auf Mallorca. Handgefertigte Luxus-Schuhmanufaktur mit rahmengenähter Goodyear-Verarbeitung auf Mallorca. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
+  highlights: {
+    es: [
+      "Taller artesano con décadas de tradición y oficio manual vivo en Palma de Mallorca",
+      "Piezas únicas moldeadas a mano con materias primas nobles y técnicas ancestrales",
+      "Encargos personalizados a medida para arquitectos, interioristas y particulares",
+      "Empaquetado protector especial para transporte de piezas artesanales",
+    ],
+    en: [
+      "Master artisan workshop with decades of heritage and living handcraft in Palma de Mallorca",
+      "Unique handcrafted creations made from premium natural raw materials",
+      "Bespoke commissioned pieces for architects, interior designers and collectors",
+      "Specialized reinforced packaging for secure international luggage transit",
+    ],
+    ca: [
+      "Taller artesà amb dècades de tradició i ofici manual viu a Palma de Mallorca",
+      "Peces úniques modelades a mà amb matèries primeres nobles i tècniques ancestrals",
+      "Encàrrecs personalitzats a mida per a arquitectes, interioristes i particulars",
+      "Empaquetatge protector especial per a transport de peces artesanals",
+    ],
+    de: [
+      "Traditionsreiche Kunsthandwerksmanufaktur mit meisterlicher Handarbeit in Palma de Mallorca",
+      "Einzigartige handgefertigte Unikate aus edlen natürlichen Materialien",
+      "Individuelle Maßanfertigungen für Architekten, Innenarchitekten und Liebhaber",
+      "Sichere Spezialverpackung für den unbeschadeten Transport im Reisegepäck",
+    ],
+  },
+  servicesProvided: {
+    es: [
+      "Venta de Piezas Únicas de Artesanía Tradicional y Contemporánea",
+      "Encargos Personalizados a Medida para Decoración y Arquitectura",
+      "Restauración y Reparación Experta de Piezas Antiguas",
+      "Demostraciones en Vivo de Oficio Artesanal y Visitas al Taller",
+      "Envío Seguro y Embalaje Especial a Todo el Mundo",
+    ],
+    en: [
+      "Retail of Traditional and Contemporary Handmade Designer Pieces",
+      "Custom Bespoke Orders for Interior Styling and Architecture",
+      "Expert Restoration and Maintenance of Heritage Craftwork",
+      "Live Crafting Demonstrations and Behind-the-Scenes Workshop Tours",
+      "Worldwide Insured Shipping with Impact-Resistant Packaging",
+    ],
+    ca: [
+      "Venda de Peces Úniques d'Artesania Tradicional i Contemporània",
+      "Encàrrecs Personalitzats a Mida per a Decoració i Arquitectura",
+      "Restauració i Reparació Experta de Peces Antigues",
+      "Demostracions en Viu d'Ofici Artesanal i Visites al Taller",
+      "Enviament Segur i Embalatge Especial a Tot el Món",
+    ],
+    de: [
+      "Verkauf traditioneller und moderner handgefertigter Kunstobjekte",
+      "Individuelle Sonderanfertigungen für Wohnkultur und Architektur",
+      "Fachgerechte Restaurierung und Reparatur historischer Stücke",
+      "Vorführungen alter Handwerkstechniken und Werkstattbesuche",
+      "Weltweiter versicherter Versand in bruchsicherer Schutzverpackung",
+    ],
+  },
+
   schedule: {
     monday: {
       open: "09:00",

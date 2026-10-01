@@ -49,6 +49,63 @@ export const estiloSantFeliuDecorPalma: ServiceItem = {
     ca: "Estilo Sant Feliu Interior & Lifestyle Palma ofereix un servei professional de màxima categoria a Mallorca. Showroom d'interiorisme mediterrani amb ceràmiques exclusives i llums naturals a Palma. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
     de: "Estilo Sant Feliu Interior & Lifestyle Palma bietet erstklassigen professionellen Service auf Mallorca. Mediterraner Einrichtungs-Showroom mit exklusiver Keramik, Leinenkissen und Designerleuchten in Palma. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
+  highlights: {
+    es: [
+      "Espacio de referencia en estilo mediterráneo, moda y diseño en Palma de Mallorca",
+      "Selección cuidada de marcas exclusivas, tejidos naturales y prendas de diseñadores independientes",
+      "Asesoramiento de estilismo y decoración personalizado sin compromiso",
+      "Ambiente acogedor, atención cercana y piezas únicas con esencia balear",
+    ],
+    en: [
+      "Premier destination for Mediterranean lifestyle, fashion and design in Palma de Mallorca",
+      "Curated collection of niche designer labels, organic natural linen and luxury homeware",
+      "Complimentary personal styling and interior decoration advice",
+      "Warm welcoming ambience and unique pieces reflecting true island aesthetic",
+    ],
+    ca: [
+      "Espai de referència en estil mediterrani, moda i disseny a Palma de Mallorca",
+      "Selecció cuidada de marques exclusives, teixits naturals i peces de dissenyadors independents",
+      "Assessorament d'estilisme i decoració personalitzat sense compromís",
+      "Ambient acollidor, atenció propera i peces úniques amb essència balear",
+    ],
+    de: [
+      "Top-Adresse für mediterrane Mode, Wohnkultur und Design in Palma de Mallorca",
+      "Handverlesenes Sortiment exklusiver Labels, Naturleinen und Designerstücke",
+      "Individuelle Stil- und Einrichtungsberatung durch erfahrene Berater",
+      "Stilvolles Ambiente und unverwechselbare Kollektionen mit balearischem Charakter",
+    ],
+  },
+  servicesProvided: {
+    es: [
+      "Venta de Colecciones de Moda de Diseñadores y Ropa de Lino Mediterráneo",
+      "Mobiliario de Autor, Iluminación y Piezas de Decoración Interior y Exterior",
+      "Servicio de Personal Shopper y Asesoría de Imagen Privada",
+      "Proyectos de Decoración y Amueblamiento para Villas y Apartamentos",
+      "Envíos Nacionales e Internacionales y Tarjetas Regalo Exclusivas",
+    ],
+    en: [
+      "Designer Fashion Collections and Pure Mediterranean Linen Apparel",
+      "Bespoke Furniture, Lighting and Interior/Outdoor Home Accents",
+      "Personal Shopper Service and Private Styling Consultations",
+      "Interior Design and Turnkey Home Furnishing for Villas and Homes",
+      "Worldwide Insured Delivery and Luxury Gift Cards",
+    ],
+    ca: [
+      "Venda de Col·leccions de Moda de Dissenyadors i Roba de Li Mediterrani",
+      "Mobiliari d'Autor, Il·luminació i Peces de Decoració Interior i Exterior",
+      "Servei de Personal Shopper i Assessoria d'Imatge Privada",
+      "Projectes de Decoració i Mobiliari per a Vil·les i Apartaments",
+      "Enviaments Nacionals i Internacionals i Targetes Regal Exclusives",
+    ],
+    de: [
+      "Exklusive Designermode und Kleidung aus feinstem mediterranem Leinen",
+      "Designer-Möbel, Beleuchtungskonzepte und Wohnaccessoires für innen und außen",
+      "Personal-Shopper-Service und private Styling-Termine",
+      "Einrichtungskonzepte und Möblierungspakete für Villen und Fincas",
+      "Weltweiter versicherter Versand und edle Geschenkgutscheine",
+    ],
+  },
+
   schedule: {
     monday: {
       open: "09:00",

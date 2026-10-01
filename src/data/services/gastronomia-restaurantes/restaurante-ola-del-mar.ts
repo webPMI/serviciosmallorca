@@ -51,6 +51,37 @@ export const restauranteOlaDelMar: ServiceItem = {
     ca: "Situat a l'encantador i tradicional barri mariner del Portitxol a Palma, Restaurant Ola del Mar és un temple de la cuina marinera balear. La seva terrassa amb vistes panoràmiques a la badia de Palma i al port esportiu ofereix una experiència inoblidable centrada en el peix salvatge a la sal, la caldereta de llagosta balear i una varietat magistral d'arrossos.",
     de: "Im charmanten Fischerhafen Portixol in Palma gelegen, ist das Restaurante Ola del Mar ein Paradies für balearische Meeresfrüchteküche. Seine Terrasse mit Panoramablick auf die Bucht von Palma bietet frischen Wildfisch in Salzkruste, traditionellen Hummereintopf und erstklassige Paellas.",
   },
+  servicesProvided: {
+    es: [
+      "Servicio de Almuerzos y Cenas a la Carta",
+      "Menús de Degustación y Sugerencias de Temporada",
+      "Eventos Privados, Grupos y Celebraciones",
+      "Servicio de Sumiller y Maridaje de Vinos",
+      "Reserva Preferente de Mesa y Atención Personalizada",
+    ],
+    en: [
+      "À la Carte Lunch and Dinner Service",
+      "Tasting Menus and Seasonal Chef Specials",
+      "Private Dining, Group Bookings and Celebrations",
+      "Sommelier Service and Curated Wine Pairings",
+      "Priority Table Booking and Dedicated Concierge",
+    ],
+    ca: [
+      "Servei de Dinar i Sopar a la Carta",
+      "Menús de Degustació i Suggeriments de Temporada",
+      "Esdeveniments Privats, Grups i Celebracions",
+      "Servei de Sommelier i Maridatge de Vins",
+      "Reserva Preferent de Taula i Atenció Personalitzada",
+    ],
+    de: [
+      "Mittags- und Abendservice à la carte",
+      "Degustationsmenüs und saisonale Tagesempfehlungen",
+      "Private Feiern, Gruppenreservierungen und Events",
+      "Sommelier-Service und Weindegustationen",
+      "Bevorzugte Tischreservierung und persönlicher Gästeservice",
+    ],
+  },
+
   specialties: {
     es: [
       "Arroz ciego de marisco y pescado de roca",

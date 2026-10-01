@@ -49,6 +49,63 @@ export const kuhnAndPartnerLuxuryPalma: ServiceItem = {
     ca: "Kühn & Partner Real Estate Palma (1987) ofereix un servei professional de màxima categoria a Mallorca. Pioners del mercat immobiliari residencial de luxe a Mallorca des de 1987 al centre de Palma. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
     de: "Kühn & Partner Real Estate Palma (1987) bietet erstklassigen professionellen Service auf Mallorca. Pioniere des Luxusimmobilienmarktes auf Mallorca seit 1987 mit Hauptsitz in der Altstadt von Palma. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
+  highlights: {
+    es: [
+      "Especialistas líderes en propiedades exclusivas y fincas en Palma de Mallorca",
+      "Cartera selecta de villas de lujo, áticos y solares con alta rentabilidad",
+      "Asesoramiento integral multilingüe legal, fiscal y de valoración de mercado",
+      "Discreción absoluta y red internacional de compradores cualificados",
+    ],
+    en: [
+      "Leading property advisors for prestigious estates and villas in Palma de Mallorca",
+      "Exclusive portfolio of luxury villas, penthouses, and prime development plots",
+      "Comprehensive multilingual legal, financial, and market valuation guidance",
+      "Absolute discretion and direct access to qualified international buyers",
+    ],
+    ca: [
+      "Especialistes capdavanters en propietats exclusives i finques a Palma de Mallorca",
+      "Cartera selecta de vil·les de luxe, àtics i solars amb alta rendibilitat",
+      "Assessorament integral multilingüe legal, fiscal i de valoració de mercat",
+      "Discreció absoluta i xarxa internacional de compradors qualificats",
+    ],
+    de: [
+      "Führende Immobilienexperten für Premium-Immobilien und Fincas in Palma de Mallorca",
+      "Exklusives Portfolio an Luxusvillen, Penthäusern und werthaltigen Grundstücken",
+      "Umfassende mehrsprachige Rechts-, Finanz- und Marktberatung",
+      "Höchste Diskretion und erstklassiges Netzwerk internationaler Kaufinteressenten",
+    ],
+  },
+  servicesProvided: {
+    es: [
+      "Intermediación en Compraventa de Villas y Fincas de Lujo",
+      "Valoración Profesional y Tasación Oficial de Propiedades",
+      "Gestión Integral de Alquiler de Temporada y Larga Estancia",
+      "Asesoramiento Jurídico, Fiscal y Urbanístico en Baleares",
+      "Búsqueda Personalizada de Propiedades (Property Finder VIP)",
+    ],
+    en: [
+      "Luxury Villa and Estate Sale Brokerage",
+      "Professional Property Appraisal and Market Valuation",
+      "Long-term and High-End Holiday Rental Management",
+      "Balearic Legal, Tax and Urban Planning Advisory",
+      "Bespoke Property Finder and VIP Acquisition Support",
+    ],
+    ca: [
+      "Intermediació en Compravenda de Vil·les i Finques de Luxe",
+      "Valoració Professional i Taxació Oficial de Propietats",
+      "Gestió Integral de Lloguer de Temporada i Llarga Estada",
+      "Assessorament Jurídic, Fiscal i Urbanístic a Balears",
+      "Cerca Personalitzada d'Immobles (Property Finder VIP)",
+    ],
+    de: [
+      "Vermittlung von Kauf und Verkauf von Luxusvillen und Fincas",
+      "Professionelle Immobilienbewertung und Marktanalyse",
+      "Verwaltung von Langzeit- und Premium-Ferienvermietungen",
+      "Rechts-, Steuer- und Bauordnungsberatung auf den Balearen",
+      "Exklusiver Suchservice für anspruchsvolle Immobilienkäufer (Property Finder)",
+    ],
+  },
+
   schedule: {
     monday: {
       open: "09:00",

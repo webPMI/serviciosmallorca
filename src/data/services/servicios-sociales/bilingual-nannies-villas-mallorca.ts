@@ -49,6 +49,63 @@ export const bilingualNanniesVillasMallorca: ServiceItem = {
     ca: "Balearic Nannies & Childcare for Villas ofereix un servei professional de màxima categoria a Mallorca. Mainaderes titulades multilingües per a vil·les de luxe i hotels a Mallorca. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
     de: "Balearic Nannies & Childcare for Villas bietet erstklassigen professionellen Service auf Mallorca. Qualifizierte mehrsprachige Nannies (DE/EN/ES) mit Erste-Hilfe-Zertifikat für Villen, Yachten und Hotels auf Mallorca. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
+  highlights: {
+    es: [
+      "Atención asistencial profesional y humana de máxima confianza en Mallorca",
+      "Cuidadores y enfermeros cualificados con vocación de servicio acreditada",
+      "Planes asistenciales personalizados a domicilio por horas o internos 24h",
+      "Supervisión continuada y coordinación médica y social con las familias",
+    ],
+    en: [
+      "Compassionate and professional home care services across Mallorca",
+      "Vetted registered nurses and qualified caregivers with proven track record",
+      "Tailored home care plans: hourly support or 24/7 live-in companionship",
+      "Ongoing medical coordination and transparent communication with families",
+    ],
+    ca: [
+      "Atenció assistencial professional i humana de màxima confiança a Mallorca",
+      "Cuidadors i infermers qualificats amb vocació de servei acreditada",
+      "Plans assistencials personalitzats a domicili per hores o interns 24h",
+      "Supervisió continuada i coordinació mèdica i social amb les famílies",
+    ],
+    de: [
+      "Kompetente und einfühlsame Betreuung für Senioren und Familien in Mallorca",
+      "Qualifizierte Pflegefachkräfte und Betreuer mit langjähriger Erfahrung",
+      "Individuelle Betreuungspläne: Stundenweise Unterstützung oder 24-Stunden-Pflege",
+      "Kontinuierliche Begleitung und enge Abstimmung mit Angehörigen und Ärzten",
+    ],
+  },
+  servicesProvided: {
+    es: [
+      "Acompañamiento y Ayuda a Domicilio para Personas Mayores",
+      "Atención de Enfermería, Curas y Control de Medicación",
+      "Movilización, Fisioterapia y Estimulación Cognitiva",
+      "Servicio de Cuidadora Interna 24 Horas o Fines de Semana",
+      "Acompañamiento a Citas Médicas, Gestiones y Paseos Terapéuticos",
+    ],
+    en: [
+      "Companionship and Daily Living Assistance for Seniors",
+      "Home Nursing Care, Wound Dressing and Medication Management",
+      "Mobility Assistance, Physiotherapy and Cognitive Stimulation",
+      "24/7 Live-In Caregiver and Respite Weekend Support",
+      "Escort to Medical Appointments, Errands and Therapeutic Walks",
+    ],
+    ca: [
+      "Acompanyament i Ajuda a Domicili per a Persones Grans",
+      "Atenció d'Infermeria, Cures i Control de Medicació",
+      "Mobilització, Fisioteràpia i Estimulació Cognitiva",
+      "Servei de Cuidadora Interna 24 Hores o Caps de Setmana",
+      "Acompanyament a Cites Mèdiques, Gestions i Passejades Terapèutiques",
+    ],
+    de: [
+      "Alltagsbegleitung und hauswirtschaftliche Unterstützung für Senioren",
+      "Häusliche Krankenpflege, Wundversorgung und Medikamentenüberwachung",
+      "Mobilisation, Physiotherapie und kognitive Förderung",
+      "24-Stunden-Betreuung zu Hause und Entlastungspflege am Wochenende",
+      "Begleitung zu Arztterminen, Einkäufen und Spaziergängen",
+    ],
+  },
+
   schedule: {
     monday: {
       open: "09:00",

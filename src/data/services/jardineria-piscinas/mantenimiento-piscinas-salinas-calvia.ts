@@ -49,6 +49,63 @@ export const mantenimientoPiscinasSalinasCalvia: ServiceItem = {
     ca: "AquaPure Pools - Mantenimiento & Cloración Salina Calvià ofereix un servei professional de màxima categoria a Mallorca. Manteniment de piscines i cloració salina a Calvià i Andratx. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
     de: "AquaPure Pools - Mantenimiento & Cloración Salina Calvià bietet erstklassigen professionellen Service auf Mallorca. Poolpflege für Luxusvillen, Umrüstung auf Salzelektrolyse, Inverter-Wärmepumpen und automatisierte Wasseranalytik. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
+  highlights: {
+    es: [
+      "Empresa de paisajismo y mantenimiento integral de piscinas en Mallorca",
+      "Diseño de jardines mediterráneos sostenibles de bajo consumo hídrico",
+      "Tratamiento de aguas con cloración salina, domótica y climatización de piscinas",
+      "Equipo cualificado con maquinaria propia y servicio regular de abonado y poda",
+    ],
+    en: [
+      "Premier landscaping and comprehensive pool care company in Mallorca",
+      "Sustainable Mediterranean garden design engineered for low water consumption",
+      "Saltwater pool conversion, smart automation, and pool heating solutions",
+      "Skilled garden maintenance crew with modern machinery and scheduled care",
+    ],
+    ca: [
+      "Empresa de paisatgisme i manteniment integral de piscines a Mallorca",
+      "Disseny de jardins mediterranis sostenibles de baix consum hídric",
+      "Tractament d'aigües amb cloració salina, domòtica i climatització de piscines",
+      "Equip qualificat amb maquinària pròpia i servei regular d'adobat i poda",
+    ],
+    de: [
+      "Fachbetrieb für Gartenbau, Landschaftsgestaltung und Poolpflege in Mallorca",
+      "Planung wassersparender, robuster mediterraner Gartenanlagen",
+      "Salzelektrolyse, Pool-Fernüberwachung und Poolheizungstechnik",
+      "Regelmäßige Gartenpflege, Baumschnitt und professioneller Pflanzenschutz",
+    ],
+  },
+  servicesProvided: {
+    es: [
+      "Mantenimiento Periódico de Jardines, Césped y Poda de Palmeras",
+      "Limpieza, Análisis Químico y Puesta a Punto de Piscinas",
+      "Diseño e Instalación de Sistemas de Riego Automático por Goteo",
+      "Instalación de Bombas de Calor y Cloradores Salinos",
+      "Tratamientos Fitosanitarios Preventivos y Control de Picudo Rojo",
+    ],
+    en: [
+      "Scheduled Garden Upkeep, Lawn Mowing and Palm Tree Pruning",
+      "Pool Cleaning, Chemical Water Balancing and Seasonal Commissioning",
+      "Automated Drip Irrigation Design and System Installation",
+      "Saltwater Chlorinator and Pool Heat Pump Installation",
+      "Preventative Phytosanitary Treatments and Palm Weevil Control",
+    ],
+    ca: [
+      "Manteniment Periòdic de Jardins, Gespa i Poda de Palmeres",
+      "Neteja, Anàlisi Química i Posada a Punt de Piscines",
+      "Disseny i Instal·lació de Sistemes de Reg Automàtic per Degoteig",
+      "Instal·lació de Bombes de Calor i Cloradors Salins",
+      "Tractaments Fitosanitaris Preventius i Control d'Escarabat Morrut",
+    ],
+    de: [
+      "Regelmäßige Gartenpflege, Rasenmähen und Baumschnitt",
+      "Poolreinigung, Wasseranalyse und Saison-Inbetriebnahme",
+      "Planung und Einbau automatischer Tröpfchenbewässerung",
+      "Installation von Salzelektrolyseanlagen und Pool-Wärmepumpen",
+      "Pflanzenschutzbehandlungen und Bekämpfung des Palmenrüsslers",
+    ],
+  },
+
   schedule: {
     monday: {
       open: "09:00",

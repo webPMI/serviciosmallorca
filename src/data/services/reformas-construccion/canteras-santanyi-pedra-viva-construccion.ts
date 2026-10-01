@@ -49,6 +49,63 @@ export const canterasSantanyiPedraVivaConstruccion: ServiceItem = {
     ca: "Pedra de Santanyí Canteras & Construcción ofereix un servei professional de màxima categoria a Mallorca. Extracció artesana i picapedrers de pedra de Santanyí per a façanes, arcs i columnes tradicionals. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
     de: "Pedra de Santanyí Canteras & Construcción bietet erstklassigen professionellen Service auf Mallorca. Traditioneller Abbau und handwerkliche Steinmetzarbeiten aus echtem goldenem Santanyí-Kalkstein. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
+  highlights: {
+    es: [
+      "Equipo técnico consolidado de arquitectos y constructores en Mallorca",
+      "Especialistas en rehabilitación de fincas rústicas y arquitectura bioclimática balear",
+      "Garantía estricta de plazos, presupuesto cerrado y materiales prémium",
+      "Gestión integral de licencias de obra mayor, proyectos y permisos municipales",
+    ],
+    en: [
+      "Experienced team of master builders and architects based in Mallorca",
+      "Specialized in authentic rustic finca restorations and sustainable Balearic design",
+      "Guaranteed deadlines, fixed pricing quotes and top-tier construction materials",
+      "End-to-end management of town hall planning permissions and architectural blueprints",
+    ],
+    ca: [
+      "Equip tècnic consolidat d'arquitectes i constructors a Mallorca",
+      "Especialistes en rehabilitació de finques rústiques i arquitectura bioclimàtica balear",
+      "Garantia estricta de terminis, pressupost tancat i materials prémium",
+      "Gestió integral de llicències d'obra major, projectes i permisos municipals",
+    ],
+    de: [
+      "Etabliertes Team aus Architekten und Bauleitern mit Sitz in Mallorca",
+      "Spezialisiert auf Sanierung historischer Fincas und mediterrane Architektur",
+      "Feste Termin- und Kostengarantie mit hochwertigen Markenbaustoffen",
+      "Komplette Abwicklung von Bauanträgen, Baugenehmigungen und Denkmalschutzauflagen",
+    ],
+  },
+  servicesProvided: {
+    es: [
+      "Proyectos de Arquitectura, Interiorismo y Dirección de Obra",
+      "Reformas Integrales de Viviendas, Villas y Fincas Rústicas",
+      "Construcción de Piscinas de Obra y Zonas Exteriores",
+      "Restauración de Muros de Piedra Seca y Carpintería Tradicional",
+      "Tramitación de Licencias Urbanísticas y Cédulas de Habitabilidad",
+    ],
+    en: [
+      "Architectural Design, Interior Styling and Project Management",
+      "Full Renovation of Luxury Villas and Historic Country Houses",
+      "Custom Swimming Pool Construction and Landscaping",
+      "Restoration of Dry-Stone Walls and Heritage Woodwork",
+      "Building Permits and Habitation Certificate Processing",
+    ],
+    ca: [
+      "Projectes d'Arquitectura, Interiorisme i Direcció d'Obra",
+      "Reformes Integrals d'Habitatges, Vil·les i Finques Rústiques",
+      "Construcció de Piscines d'Obra i Espais Exteriors",
+      "Restauració de Marges de Pedra en Sec i Fusteria Tradicional",
+      "Tramitació de Llicències Urbanístiques i Cèdules d'Habitabilitat",
+    ],
+    de: [
+      "Architekturplanung, Innenarchitektur und Bauleitung vor Ort",
+      "Komplettsanierung von Villen, Stadthäusern und Fincas",
+      "Neubau von maßgeschneiderten Swimmingpools und Außenanlagen",
+      "Fachgerechte Restaurierung traditioneller Trockensteinmauern und Holzelemente",
+      "Behördenmanagement für Baugenehmigungen und Bewohnbarkeitsbescheinigungen",
+    ],
+  },
+
   schedule: {
     monday: {
       open: "09:00",

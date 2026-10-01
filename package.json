@@ -1,7 +1,7 @@
 {
   "name": "servicios-mallorca",
   "type": "module",
-  "version": "1.0.6",
+  "version": "1.0.9",
   "engines": {
     "node": ">=22.6.0"
   },
@@ -54,6 +54,7 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.9",
+    "@astrojs/compiler-binding-wasm32-wasi": "^0.2.3",
     "@types/node": "^26.1.1",
     "@typescript-eslint/eslint-plugin": "^8.65.0",
     "@typescript-eslint/parser": "^8.65.0",

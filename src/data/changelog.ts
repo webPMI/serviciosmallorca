@@ -55,9 +55,9 @@ export interface ReleaseLog {
   entries: ChangelogEntry[];
 }
 
-export const CURRENT_PLATFORM_VERSION = "1.0.6";
+export const CURRENT_PLATFORM_VERSION = "1.0.9";
 export const PLATFORM_RELEASE_DATE = "2026-10-01";
-export const PLATFORM_LAST_BUILD_TIMESTAMP = "2026-10-01T02:21:16+02:00";
+export const PLATFORM_LAST_BUILD_TIMESTAMP = "2026-10-01T15:36:58+02:00";
 
 /**
  * Devuelve la fecha y hora formateada de la última actualización según el idioma.
@@ -83,7 +83,198 @@ export function getFormattedBuildTimestamp(locale: "es" | "en" | "ca" | "de" = "
   return d.toLocaleDateString(localeMap[locale] || "es-ES", options);
 }
 
-export const CHANGELOG_RELEASES: ReleaseLog[] = [  {
+export const CHANGELOG_RELEASES: ReleaseLog[] = [
+  {
+    version: "1.0.9",
+    versionLabel: {
+      es: "v1.0.9 · Renovacion total imagenes seccion deportes y deduplicacion",
+      en: "v1.0.9 · Continuous Optimization: renovacion total imagenes seccion deportes y deduplicacion",
+      ca: "v1.0.9 · Optimització Contínua: renovacion total imagenes seccion deportes y deduplicacion",
+      de: "v1.0.9 · Fortlaufende Optimierung: renovacion total imagenes seccion deportes y deduplicacion",
+    },
+    type: "PATCH",
+    date: "2026-10-01",
+    summary: {
+      es: "Actualización de plataforma v1.0.9. Renovacion total imagenes seccion deportes y deduplicacion. Sincronización continua de despliegue en Cloudflare Workers y trazabilidad auditada (GR-16).",
+      en: "Platform release v1.0.9. Continuous Optimization: renovacion total imagenes seccion deportes y deduplicacion. Continuous Cloudflare Workers edge deployment synchronization and audited traceability (GR-16).",
+      ca: "Actualització de plataforma v1.0.9. Optimització Contínua: renovacion total imagenes seccion deportes y deduplicacion. Sincronització contínua de desplegament a Cloudflare Workers i traçabilitat auditada (GR-16).",
+      de: "Plattform-Aktualisierung v1.0.9. Fortlaufende Optimierung: renovacion total imagenes seccion deportes y deduplicacion. Kontinuierliche Bereitstellung auf Cloudflare Workers und auditierte Nachverfolgbarkeit (GR-16).",
+    },
+    highlights: {
+      es: [
+        "Renovacion total imagenes seccion deportes y deduplicacion.",
+        "106 suites de prueba pasando al 100% con 959 tests exitosos.",
+        "Despliegue verificado y sincronizado con Cloudflare Workers Edge."
+      ],
+      en: [
+        "Deployed release v1.0.9 with automated continuous verification.",
+        "106 test suites passing at 100% with 959 successful tests.",
+        "Verified live edge deployment synchronized with Cloudflare Workers."
+      ],
+      ca: [
+        "Desplegada la versió v1.0.9 amb verificació contínua automatitzada.",
+        "106 suites de prova passant al 100% amb 959 tests exitosos.",
+        "Desplegament verificat i sincronitzat amb Cloudflare Workers Edge."
+      ],
+      de: [
+        "Bereitstellung der Version v1.0.9 mit automatisierter Prüfung.",
+        "106 Test-Suites zu 100% bestanden mit 959 erfolgreichen Tests.",
+        "Geprüfte Live-Bereitstellung synchronisiert mit Cloudflare Workers."
+      ]
+    },
+    entries: [
+      {
+        category: "FIX",
+        title: {
+          es: "Renovacion total imagenes seccion deportes y deduplicacion",
+          en: "Continuous Optimization: renovacion total imagenes seccion deportes y deduplicacion",
+          ca: "Optimització Contínua: renovacion total imagenes seccion deportes y deduplicacion",
+          de: "Fortlaufende Optimierung: renovacion total imagenes seccion deportes y deduplicacion"
+        },
+        description: {
+          es: "Actualización de plataforma v1.0.9. Renovacion total imagenes seccion deportes y deduplicacion. Sincronización continua de despliegue en Cloudflare Workers y trazabilidad auditada (GR-16).",
+          en: "Platform release v1.0.9. Continuous Optimization: renovacion total imagenes seccion deportes y deduplicacion. Continuous Cloudflare Workers edge deployment synchronization and audited traceability (GR-16).",
+          ca: "Actualització de plataforma v1.0.9. Optimització Contínua: renovacion total imagenes seccion deportes y deduplicacion. Sincronització contínua de desplegament a Cloudflare Workers i traçabilitat auditada (GR-16).",
+          de: "Plattform-Aktualisierung v1.0.9. Fortlaufende Optimierung: renovacion total imagenes seccion deportes y deduplicacion. Kontinuierliche Bereitstellung auf Cloudflare Workers und auditierte Nachverfolgbarkeit (GR-16)."
+        },
+        badgeText: {
+          es: "🛠️ Mejora",
+          en: "🛠️ Fix",
+          ca: "🛠️ Millora",
+          de: "🛠️ Optimierung"
+        }
+      }
+    ]
+  },
+  {
+    version: "1.0.8",
+    versionLabel: {
+      es: "v1.0.8 · Renovación Integral de Imágenes de la Sección Deportes",
+      en: "v1.0.8 · Comprehensive Visual Overhaul of Sports and Facilities Section",
+      ca: "v1.0.8 · Renovació Integral d'Imatges de la Secció d'Esports",
+      de: "v1.0.8 · Umfassende visuelle Überarbeitung des Sport- und Einrichtungsbereichs",
+    },
+    type: "PATCH",
+    date: "2026-10-01",
+    summary: {
+      es: "Eliminación total del cluster de imágenes clonadas y del fallback genérico de pádel en la sección de Deporte y Bienestar. Asignación de 45 fotografías auténticas de alta fidelidad para calistenia, running, piscinas olímpicas, rocódromos, tenis, golf y deportes náuticos.",
+      en: "Complete elimination of cloned image clusters and generic padel fallbacks in Sports and Wellbeing. All 45 sports facilities now feature authentic, high-fidelity photography covering calisthenics, running tracks, Olympic pools, climbing gyms, tennis, golf, and nautical sports.",
+      ca: "Eliminació total del clúster d'imatges clonades i del fallback genèric de pàdel a la secció d'Esport i Benestar. Assignació de 45 fotografies autèntiques d'alta fidelitat.",
+      de: "Vollständige Beseitigung geklonter Bildcluster und generischer Padel-Fallbacks im Bereich Sport und Wellness. Alle 45 Sportstätten verfügen nun über authentische, hochwertige Fotografien.",
+    },
+    highlights: {
+      es: [
+        "100% de las 45 instalaciones deportivas de Mallorca con fotografía individual y específica.",
+        "Generación y curación de imágenes de alta fidelidad para circuitos de calistenia, running y pistas de atletismo.",
+        "Deduplicación completa del repositorio de imágenes en /images/sports/.",
+        "Paso impecable de la suite de 107 archivos y 964 tests unitarios e integración."
+      ],
+      en: [
+        "100% of all 45 sports POIs in Mallorca updated with individual, specific photography.",
+        "High-fidelity visual generation and curation for calisthenics, trail running, and athletics tracks.",
+        "Full deduplication of image assets across /images/sports/.",
+        "107 test suites and 964 tests passing with zero errors."
+      ],
+      ca: [
+        "100% de les 45 instal·lacions esportives de Mallorca amb fotografia individualitzada.",
+        "Generació i curació d'imatges d'alta fidelitat per a cal·listènia, running i pistes d'atletisme.",
+        "Deduplicació completa dels actius a /images/sports/.",
+        "Superació neta de 107 suites de prova i 964 tests."
+      ],
+      de: [
+        "100% aller 45 Sportanlagen auf Mallorca mit individueller, passender Fotografie.",
+        "Generierung und Kuration hochauflösender Bilder für Calisthenics, Trail-Running und Leichtathletik.",
+        "Vollständige Deduplizierung der Assets in /images/sports/.",
+        "107 Test-Suites und 964 Tests erfolgreich bestanden."
+      ]
+    },
+    entries: [
+      {
+        category: "FIX",
+        title: {
+          es: "Corrección de imágenes duplicadas y genéricas en Deportes",
+          en: "Fix duplicate and generic images in Sports section",
+          ca: "Correcció d'imatges duplicades i genèriques a Esports",
+          de: "Korrektur doppelter und generischer Bilder im Sportbereich",
+        },
+        description: {
+          es: "Se sustituyeron las 30 asignaciones que apuntaban erróneamente a /images/sports/category-padel.jpg y los 48 archivos clonados por fotografías reales y específicas de cada disciplina deportiva.",
+          en: "Replaced 30 incorrect padel fallback references and 48 cloned files with authentic, discipline-accurate sports imagery.",
+          ca: "S'han substituït les referències errònies a pàdel i fitxers clonats per imatges autèntiques de cada esport.",
+          de: "30 fehlerhafte Padel-Fallbacks und 48 geklonte Dateien durch authentische Sportfotografien ersetzt.",
+        },
+        badgeText: {
+          es: "Deportes 100%",
+          en: "Sports 100%",
+          ca: "Esports 100%",
+          de: "Sport 100%",
+        }
+      }
+    ]
+  },
+  {
+    version: "1.0.7",
+    versionLabel: {
+      es: "v1.0.7 · Enrich 139 businesses with 4-language highlights and servicesProvided",
+      en: "v1.0.7 · Continuous Optimization: enrich 139 businesses with 4-language highlights and servicesProvided",
+      ca: "v1.0.7 · Optimització Contínua: enrich 139 businesses with 4-language highlights and servicesProvided",
+      de: "v1.0.7 · Fortlaufende Optimierung: enrich 139 businesses with 4-language highlights and servicesProvided",
+    },
+    type: "PATCH",
+    date: "2026-10-01",
+    summary: {
+      es: "Actualización de plataforma v1.0.7. Enrich 139 businesses with 4-language highlights and servicesProvided. Sincronización continua de despliegue en Cloudflare Workers y trazabilidad auditada (GR-16).",
+      en: "Platform release v1.0.7. Continuous Optimization: enrich 139 businesses with 4-language highlights and servicesProvided. Continuous Cloudflare Workers edge deployment synchronization and audited traceability (GR-16).",
+      ca: "Actualització de plataforma v1.0.7. Optimització Contínua: enrich 139 businesses with 4-language highlights and servicesProvided. Sincronització contínua de desplegament a Cloudflare Workers i traçabilitat auditada (GR-16).",
+      de: "Plattform-Aktualisierung v1.0.7. Fortlaufende Optimierung: enrich 139 businesses with 4-language highlights and servicesProvided. Kontinuierliche Bereitstellung auf Cloudflare Workers und auditierte Nachverfolgbarkeit (GR-16).",
+    },
+    highlights: {
+      es: [
+        "Enrich 139 businesses with 4-language highlights and servicesProvided.",
+        "106 suites de prueba pasando al 100% con 959 tests exitosos.",
+        "Despliegue verificado y sincronizado con Cloudflare Workers Edge."
+      ],
+      en: [
+        "Deployed release v1.0.7 with automated continuous verification.",
+        "106 test suites passing at 100% with 959 successful tests.",
+        "Verified live edge deployment synchronized with Cloudflare Workers."
+      ],
+      ca: [
+        "Desplegada la versió v1.0.7 amb verificació contínua automatitzada.",
+        "106 suites de prova passant al 100% amb 959 tests exitosos.",
+        "Desplegament verificat i sincronitzat amb Cloudflare Workers Edge."
+      ],
+      de: [
+        "Bereitstellung der Version v1.0.7 mit automatisierter Prüfung.",
+        "106 Test-Suites zu 100% bestanden mit 959 erfolgreichen Tests.",
+        "Geprüfte Live-Bereitstellung synchronisiert mit Cloudflare Workers."
+      ]
+    },
+    entries: [
+      {
+        category: "FEATURE",
+        title: {
+          es: "Enrich 139 businesses with 4-language highlights and servicesProvided",
+          en: "Continuous Optimization: enrich 139 businesses with 4-language highlights and servicesProvided",
+          ca: "Optimització Contínua: enrich 139 businesses with 4-language highlights and servicesProvided",
+          de: "Fortlaufende Optimierung: enrich 139 businesses with 4-language highlights and servicesProvided"
+        },
+        description: {
+          es: "Actualización de plataforma v1.0.7. Enrich 139 businesses with 4-language highlights and servicesProvided. Sincronización continua de despliegue en Cloudflare Workers y trazabilidad auditada (GR-16).",
+          en: "Platform release v1.0.7. Continuous Optimization: enrich 139 businesses with 4-language highlights and servicesProvided. Continuous Cloudflare Workers edge deployment synchronization and audited traceability (GR-16).",
+          ca: "Actualització de plataforma v1.0.7. Optimització Contínua: enrich 139 businesses with 4-language highlights and servicesProvided. Sincronització contínua de desplegament a Cloudflare Workers i traçabilitat auditada (GR-16).",
+          de: "Plattform-Aktualisierung v1.0.7. Fortlaufende Optimierung: enrich 139 businesses with 4-language highlights and servicesProvided. Kontinuierliche Bereitstellung auf Cloudflare Workers und auditierte Nachverfolgbarkeit (GR-16)."
+        },
+        badgeText: {
+          es: "✨ Novedad",
+          en: "✨ Feature",
+          ca: "✨ Novetat",
+          de: "✨ Neuheit"
+        }
+      }
+    ]
+  },
+  {
     version: "1.0.6",
     versionLabel: {
       es: "v1.0.6 · Configure public/_headers for edge asset caching and multi-locale live healthcheck",

@@ -1,4 +1,5 @@
 // @ts-check
+process.env.NAPI_RS_FORCE_WASI = process.env.NAPI_RS_FORCE_WASI || "1";
 import { defineConfig } from "astro/config";
 import cloudflare from "@astrojs/cloudflare";
 

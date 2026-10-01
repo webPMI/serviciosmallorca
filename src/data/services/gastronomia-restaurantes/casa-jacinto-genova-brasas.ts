@@ -49,6 +49,63 @@ export const casaJacintoGenovaBrasas: ServiceItem = {
     ca: "Restaurante Casa Jacinto Gènova ofereix un servei professional de màxima categoria a Mallorca. Temple de carns a la brasa de llenya d'alzina i cuina tradicional al poble de Gènova. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
     de: "Restaurante Casa Jacinto Gènova bietet erstklassigen professionellen Service auf Mallorca. Legendäres Fleischrestaurant in Gènova für über Eichenholz gegrillte gereifte Steaks. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
+  highlights: {
+    es: [
+      "Ubicación privilegiada y ambiente exclusivo en Palma de Mallorca",
+      "Ingredientes frescos de temporada y producto de lonjas y huertas de Mallorca",
+      "Servicio atento, profesional y bodega seleccionada con referencias locales e internacionales",
+      "Reserva de mesa personalizada y opciones adaptadas a comensales exigentes",
+    ],
+    en: [
+      "Prime location and distinctive dining atmosphere in Palma de Mallorca",
+      "Fresh seasonal ingredients sourced from local Majorcan markets and farms",
+      "Attentive professional service with a curated local and international wine cellar",
+      "Personalized table reservations and tailored culinary options",
+    ],
+    ca: [
+      "Ubicació privilegiada i ambient exclusiu a Palma de Mallorca",
+      "Ingredients frescos de temporada i producte de llotges i horts de Mallorca",
+      "Servei atent, professional i celler seleccionat amb referències locals i internacionals",
+      "Reserva de taula personalitzada i opcions adaptades a comensals exigents",
+    ],
+    de: [
+      "Erstklassige Lage und besonderes Ambiente in Palma de Mallorca",
+      "Frische saisonale Zutaten von lokalen Märkten und Fincas auf Mallorca",
+      "Aufmerksamer professioneller Service und handverlesene Weinkarte mit Inselweinen",
+      "Individuelle Tischreservierungen und abgestimmte gastronomische Angebote",
+    ],
+  },
+  servicesProvided: {
+    es: [
+      "Servicio de Almuerzos y Cenas a la Carta",
+      "Menús de Degustación y Sugerencias de Temporada",
+      "Eventos Privados, Grupos y Celebraciones",
+      "Servicio de Sumiller y Maridaje de Vinos",
+      "Reserva Preferente de Mesa y Atención Personalizada",
+    ],
+    en: [
+      "À la Carte Lunch and Dinner Service",
+      "Tasting Menus and Seasonal Chef Specials",
+      "Private Dining, Group Bookings and Celebrations",
+      "Sommelier Service and Curated Wine Pairings",
+      "Priority Table Booking and Dedicated Concierge",
+    ],
+    ca: [
+      "Servei de Dinar i Sopar a la Carta",
+      "Menús de Degustació i Suggeriments de Temporada",
+      "Esdeveniments Privats, Grups i Celebracions",
+      "Servei de Sommelier i Maridatge de Vins",
+      "Reserva Preferent de Taula i Atenció Personalitzada",
+    ],
+    de: [
+      "Mittags- und Abendservice à la carte",
+      "Degustationsmenüs und saisonale Tagesempfehlungen",
+      "Private Feiern, Gruppenreservierungen und Events",
+      "Sommelier-Service und Weindegustationen",
+      "Bevorzugte Tischreservierung und persönlicher Gästeservice",
+    ],
+  },
+
   schedule: {
     monday: {
       open: "13:00",

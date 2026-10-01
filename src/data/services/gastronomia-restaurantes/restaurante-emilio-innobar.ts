@@ -50,6 +50,37 @@ export const restauranteEmilioInnobar: ServiceItem = {
     ca: "Emilio Innobar és un dels espais d'alta gastronomia més avantguardistes i sol·licitats de Palma. El xef Emilio Castrejón combina talls impecables de sashimi de pesca balear amb marinats mexicans i tècniques japoneses en una cuina oberta.",
     de: "Emilio Innobar ist eines der gefragtesten Fine-Dining-Restaurants in Palma. Chefkoch Emilio Castrejón vereint fangfrisches Sashimi mit mexikanischen Marinaden und japanischer Kochkunst in einer offenen Show-Küche.",
   },
+  servicesProvided: {
+    es: [
+      "Servicio de Almuerzos y Cenas a la Carta",
+      "Menús de Degustación y Sugerencias de Temporada",
+      "Eventos Privados, Grupos y Celebraciones",
+      "Servicio de Sumiller y Maridaje de Vinos",
+      "Reserva Preferente de Mesa y Atención Personalizada",
+    ],
+    en: [
+      "À la Carte Lunch and Dinner Service",
+      "Tasting Menus and Seasonal Chef Specials",
+      "Private Dining, Group Bookings and Celebrations",
+      "Sommelier Service and Curated Wine Pairings",
+      "Priority Table Booking and Dedicated Concierge",
+    ],
+    ca: [
+      "Servei de Dinar i Sopar a la Carta",
+      "Menús de Degustació i Suggeriments de Temporada",
+      "Esdeveniments Privats, Grups i Celebracions",
+      "Servei de Sommelier i Maridatge de Vins",
+      "Reserva Preferent de Taula i Atenció Personalitzada",
+    ],
+    de: [
+      "Mittags- und Abendservice à la carte",
+      "Degustationsmenüs und saisonale Tagesempfehlungen",
+      "Private Feiern, Gruppenreservierungen und Events",
+      "Sommelier-Service und Weindegustationen",
+      "Bevorzugte Tischreservierung und persönlicher Gästeservice",
+    ],
+  },
+
   specialties: {
     es: [
       "Sashimi de lubina y dorada salvaje con aliño de yuzu y jalapeño",

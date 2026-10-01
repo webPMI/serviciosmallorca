@@ -49,6 +49,63 @@ export const sonMoraguesValldemossaAceite: ServiceItem = {
     ca: "Son Moragues Organic Olive Oil & Farm Valldemossa ofereix un servei professional de màxima categoria a Mallorca. Possessió històrica del segle XIV a Valldemossa que produeix oli d'oliva verge extra ecològic DOP. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
     de: "Son Moragues Organic Olive Oil & Farm Valldemossa bietet erstklassigen professionellen Service auf Mallorca. Historisches Landgut aus dem 14. Jahrhundert in Valldemossa mit bio-zertifiziertem Olivenöl aus uralten Hainen. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
+  highlights: {
+    es: [
+      "Productor artesano de referencia con sello de origen y tradición en Mallorca",
+      "Elaboración con variedades autóctonas mallorquinas y agricultura respetuosa",
+      "Visitas guiadas a plantaciones, almazaras o bodegas con cata comentada",
+      "Venta directa de producto fresco Km 0 certificado con envíos a domicilio",
+    ],
+    en: [
+      "Authentic artisanal producer celebrating local Balearic heritage in Mallorca",
+      "Cultivated from native Majorcan varieties using sustainable farming practices",
+      "Guided estate and cellar tours paired with sommelier and producer tastings",
+      "Direct purchase of certified Km 0 local gourmet products with global shipping",
+    ],
+    ca: [
+      "Productor artesà de referència amb segell d'origen i tradició a Mallorca",
+      "Elaboració amb varietats autòctones mallorquines i agricultura respectuosa",
+      "Visites guiades a plantacions, tafones o cellers amb tast comentat",
+      "Venda directa de producte fresc Km 0 certificat amb enviaments a domicili",
+    ],
+    de: [
+      "Authentischer lokaler Erzeuger mit langer Tradition und Gütesiegel in Mallorca",
+      "Verarbeitung autochthoner balearischer Sorten aus nachhaltiger Landwirtschaft",
+      "Führungen durch Weinberge, Ölmühlen oder Käsereien mit Verkostung",
+      "Direktverkauf zertifizierter regionaler Spezialitäten (Km 0) und Versandservice",
+    ],
+  },
+  servicesProvided: {
+    es: [
+      "Venta Directa de Producto Artesano Balear en Bodega y Tienda Propia",
+      "Visitas Guiadas a Fincas, Almazaras y Bodegas con Maridaje",
+      "Catas Sensoriales Exclusivas para Grupos y Aficionados",
+      "Cestas Gourmet de Regalo y Lotes de Empresa de Temporada",
+      "Envíos Seguros a Domicilio en Baleares, Península y Europa",
+    ],
+    en: [
+      "Direct Cellar-Door and Farm Shop Sales of Artisanal Produce",
+      "Guided Estate, Mill and Cellar Tours with Gastronomic Pairings",
+      "Private Tasting Sessions for Wine Lovers and Private Groups",
+      "Curated Gourmet Gift Hampers and Corporate Seasonal Sets",
+      "Insured Home Delivery Across the Balearics, Mainland Spain and Europe",
+    ],
+    ca: [
+      "Venda Directa de Producte Artesà Balear a Celler i Botiga Pròpia",
+      "Visites Guiades a Finques, Tafones i Cellers amb Maridatge",
+      "Tastos Sensorials Exclusius per a Grups i Aficionats",
+      "Paneres Gourmet de Regal i Lots d'Empresa de Temporada",
+      "Enviaments Segurs a Domicili a Balears, Península i Europa",
+    ],
+    de: [
+      "Direktverkauf ab Hof und hauseigener Feinkostladen",
+      "Geführte Touren durch Fincas und Bodegas mit Verkostung",
+      "Exklusive Degustationen für Genießer und private Gruppen",
+      "Gourmet-Geschenkkörbe und kulinarische Insel-Präsentboxen",
+      "Versicherter europaweiter Versand von Delikatessen und Weinen",
+    ],
+  },
+
   schedule: {
     monday: {
       open: "09:00",

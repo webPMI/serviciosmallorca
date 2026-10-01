@@ -70,7 +70,7 @@ const uniqueServices = SERVICES.filter((s) => {
 console.log("Services with truly unique images:", uniqueServices.length);
 
 const duplicateServicesList: any[] = [];
-for (const [_hash, data] of hashToServices.entries()) {
+for (const data of hashToServices.values()) {
   if (data.count > 1) {
     duplicateServicesList.push(...data.services);
   }

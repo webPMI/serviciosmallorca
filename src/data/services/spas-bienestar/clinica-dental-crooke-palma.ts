@@ -49,6 +49,63 @@ export const clinicaDentalCrookePalma: ServiceItem = {
     ca: "Clínica Dental Crooke & Laguna Palma és un centre de referència en salut, estètica i benestar a Mallorca. Clínica odontològica d Ofereix un entorn exclusiu amb equipament d'avantguarda, professionals titulats i atenció personalitzada multilingüe per a residents i visitants.",
     de: "Clínica Dental Crooke & Laguna Palma ist eine führende Adresse für Gesundheit, Ästhetik und Wohlbefinden auf Mallorca. Mehrsprachige High-Tech-Zahnklinik für Sofortimplantate (Same-Day) und digitales Smile Design in Palma. Ausgestattet mit modernster Medizintechnik, qualifizierten Therapeuten und individueller mehrsprachiger Betreuung in stilvollem Ambiente.",
   },
+  highlights: {
+    es: [
+      "Servicio contrastado y especializado con cobertura en Palma de Mallorca",
+      "Atención personalizada con profesionales cualificados y amplia experiencia",
+      "Compromiso de calidad, presupuesto transparente y atención cercana",
+      "Instalaciones modernas y servicio adaptado a las necesidades de cada cliente",
+    ],
+    en: [
+      "Trusted and professional service covering Palma de Mallorca",
+      "Dedicated personalized attention by certified and experienced specialists",
+      "Commitment to quality, upfront pricing, and friendly customer care",
+      "Modern facilities and services tailored to meet individual client requirements",
+    ],
+    ca: [
+      "Servei contrastat i especialitzat amb cobertura a Palma de Mallorca",
+      "Atenció personalitzada amb professionals qualificats i àmplia experiència",
+      "Compromís de qualitat, pressupost transparent i atenció propera",
+      "Instal·lacions modernes i servei adaptat a les necessitats de cada client",
+    ],
+    de: [
+      "Verlässlicher Fachbetrieb mit bewährtem Kundenservice in Palma de Mallorca",
+      "Persönliche Beratung durch qualifizierte Experten mit langjähriger Erfahrung",
+      "Hoher Qualitätsstandard, transparente Kostenvoranschläge und verlässliche Betreuung",
+      "Moderne Ausstattung und bedarfsgerechte Leistungen für jeden Kunden",
+    ],
+  },
+  servicesProvided: {
+    es: [
+      "Servicios Especializados de Salud bienestar",
+      "Consultoría y Asesoramiento Técnico Personalizado",
+      "Atención de Urgencias y Citas Previas Adaptadas",
+      "Mantenimiento Periódico y Soporte Continuo",
+      "Presupuestos a Medida Sin Compromiso",
+    ],
+    en: [
+      "Specialized Services in Salud bienestar",
+      "Custom Technical Consulting and Advisory",
+      "Scheduled Appointments and Priority Care",
+      "Regular Maintenance and Ongoing Customer Support",
+      "Tailored Quotes with No Obligation",
+    ],
+    ca: [
+      "Serveis Especialitzats de Salud bienestar",
+      "Consultoria i Assessorament Tècnic Personalitzat",
+      "Atenció d'Urgències i Cites Prèvies Adaptades",
+      "Manteniment Periòdic i Suport Continuat",
+      "Pressupostos a Mida Sense Compromís",
+    ],
+    de: [
+      "Fachleistungen im Bereich Salud bienestar",
+      "Individuelle Fachberatung und Planung",
+      "Terminvereinbarung und zügige Auftragsabwicklung",
+      "Regelmäßige Betreuung und verlässlicher Support",
+      "Unverbindliche und maßgeschneiderte Angebote",
+    ],
+  },
+
   schedule: {
     monday: {
       open: "09:00",

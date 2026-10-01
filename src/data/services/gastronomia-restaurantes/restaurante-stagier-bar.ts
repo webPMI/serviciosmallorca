@@ -49,6 +49,37 @@ export const restauranteStagierBar: ServiceItem = {
     ca: "Stagier Bar ret homenatge als cuiners en formació als grans restaurants del món. El xef Joel Baeza, després de passar per El Celler de Can Roca i Azurmendi, tradueix l'alta cuina en un format de tapes sublims a Santa Catalina.",
     de: "Die Stagier Bar ist eine Hommage an die Lehrjahre in den besten Küchen der Welt. Küchenchef Joel Baeza, ausgebildet im 3-Sterne-Restaurant El Celler de Can Roca, verwandelt Spitzengastronomie in unkomplizierte, kreative Gourmet-Tapas.",
   },
+  servicesProvided: {
+    es: [
+      "Servicio de Almuerzos y Cenas a la Carta",
+      "Menús de Degustación y Sugerencias de Temporada",
+      "Eventos Privados, Grupos y Celebraciones",
+      "Servicio de Sumiller y Maridaje de Vinos",
+      "Reserva Preferente de Mesa y Atención Personalizada",
+    ],
+    en: [
+      "À la Carte Lunch and Dinner Service",
+      "Tasting Menus and Seasonal Chef Specials",
+      "Private Dining, Group Bookings and Celebrations",
+      "Sommelier Service and Curated Wine Pairings",
+      "Priority Table Booking and Dedicated Concierge",
+    ],
+    ca: [
+      "Servei de Dinar i Sopar a la Carta",
+      "Menús de Degustació i Suggeriments de Temporada",
+      "Esdeveniments Privats, Grups i Celebracions",
+      "Servei de Sommelier i Maridatge de Vins",
+      "Reserva Preferent de Taula i Atenció Personalitzada",
+    ],
+    de: [
+      "Mittags- und Abendservice à la carte",
+      "Degustationsmenüs und saisonale Tagesempfehlungen",
+      "Private Feiern, Gruppenreservierungen und Events",
+      "Sommelier-Service und Weindegustationen",
+      "Bevorzugte Tischreservierung und persönlicher Gästeservice",
+    ],
+  },
+
   specialties: {
     es: [
       "Croqueta cremosa de jamón ibérico de bellota con velo de panceta",

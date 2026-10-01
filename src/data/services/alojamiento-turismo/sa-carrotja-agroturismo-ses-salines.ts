@@ -49,6 +49,63 @@ export const saCarrotjaAgroturismoSesSalines: ServiceItem = {
     ca: "Agroturismo Sa Carrotja Ses Salines ofereix un servei professional de màxima categoria a Mallorca. Agroturisme només per a adults de pedra tradicional a prop d'Es Trenc. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
     de: "Agroturismo Sa Carrotja Ses Salines bietet erstklassigen professionellen Service auf Mallorca. Traditionelles Fincahotel  Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
+  highlights: {
+    es: [
+      "Entorno natural y exclusivo de máxima tranquilidad en Mallorca",
+      "Habitaciones y suites decoradas con carácter balear y confort contemporáneo",
+      "Desayunos artesanos con productos ecológicos y gastronomía Km 0",
+      "Piscina, jardines mediterráneos y atención personalizada para una estancia inolvidable",
+    ],
+    en: [
+      "Peaceful and serene natural surroundings in Mallorca",
+      "Charming rooms and suites blending traditional Balearic style with modern comfort",
+      "Artisanal farm-to-table breakfast featuring organic local produce",
+      "Outdoor swimming pool, lush Mediterranean gardens, and dedicated concierge",
+    ],
+    ca: [
+      "Entorn natural i exclusiu de màxima tranquil·litat a Mallorca",
+      "Habitacions i suites decorades amb caràcter balear i confort contemporani",
+      "Esmorzars artesans amb productes ecològics i gastronomia Km 0",
+      "Piscina, jardins mediterranis i atenció personalitzada per a una estada inoblidable",
+    ],
+    de: [
+      "Ruhige und idyllische Naturkulisse in Mallorca",
+      "Stilvolle Zimmer und Suiten mit balearischem Flair und modernstem Komfort",
+      "Hausgemachtes Landfrühstück mit Bioprodukten direkt aus der Region",
+      "Swimmingpool im Grünen, mediterrane Gärten und individueller Gästeservice",
+    ],
+  },
+  servicesProvided: {
+    es: [
+      "Alojamiento Exclusivo en Habitaciones y Suites Boutique",
+      "Desayuno Gourmet Km 0 y Gastronomía Balear",
+      "Piscina Exterior, Zonas de Relax y Solárium",
+      "Servicio de Conserjería, Alquiler de Vehículos y Excursiones",
+      "Organización de Retiros, Bodas Íntimas y Eventos Privados",
+    ],
+    en: [
+      "Exclusive Boutique Rooms and Country Suites Accommodation",
+      "Farm-to-Table Gourmet Breakfast and Local Dining",
+      "Outdoor Swimming Pool, Sun Terrace, and Relaxation Zones",
+      "Concierge Services, Car Hire and Tailored Excursions",
+      "Organization of Wellness Retreats, Intimate Weddings and Events",
+    ],
+    ca: [
+      "Allotjament Exclusiu en Habitacions i Suites Boutique",
+      "Esmorzar Gourmet Km 0 i Gastronomia Balear",
+      "Piscina Exterior, Zones de Relax i Solàrium",
+      "Servei de Consergeria, Lloguer de Vehicles i Excursions",
+      "Organització de Retirs, Casaments Íntims i Esdeveniments Privats",
+    ],
+    de: [
+      "Exklusive Übernachtungen in Boutique-Zimmern und Suiten",
+      "Gourmet-Frühstücksbuffet mit regionalen Inselprodukten",
+      "Außenpool, Liegebereiche und Sonnenterrassen im Garten",
+      "Concierge-Service, Mietwagenvermittlung und individuelle Ausflüge",
+      "Planung von Wellness-Retreats, privaten Hochzeiten und Feiern",
+    ],
+  },
+
   schedule: {
     monday: {
       open: "00:00",

@@ -50,6 +50,37 @@ export const restauranteRitziPortals: ServiceItem = {
     ca: "Ritzi Puerto Portals és un clàssic indiscutible del luxe balear a Calvià. Amb una terrassa panoràmica amb vistes als iots del port, combina l'excel·lència de la cuina italiana amb el millor producte balear i un ambient exclusiu.",
     de: "Das Ritzi Puerto Portals ist eine feste Größe der gehobenen Gastronomie auf Mallorca. Die Terrasse direkt an der Hafenpromenade bietet den perfekten Blick auf Luxusyachten, handgemachte Pasta mit frischem Trüffel und abendliche Lounge-Atmosphäre.",
   },
+  servicesProvided: {
+    es: [
+      "Servicio de Almuerzos y Cenas a la Carta",
+      "Menús de Degustación y Sugerencias de Temporada",
+      "Eventos Privados, Grupos y Celebraciones",
+      "Servicio de Sumiller y Maridaje de Vinos",
+      "Reserva Preferente de Mesa y Atención Personalizada",
+    ],
+    en: [
+      "À la Carte Lunch and Dinner Service",
+      "Tasting Menus and Seasonal Chef Specials",
+      "Private Dining, Group Bookings and Celebrations",
+      "Sommelier Service and Curated Wine Pairings",
+      "Priority Table Booking and Dedicated Concierge",
+    ],
+    ca: [
+      "Servei de Dinar i Sopar a la Carta",
+      "Menús de Degustació i Suggeriments de Temporada",
+      "Esdeveniments Privats, Grups i Celebracions",
+      "Servei de Sommelier i Maridatge de Vins",
+      "Reserva Preferent de Taula i Atenció Personalitzada",
+    ],
+    de: [
+      "Mittags- und Abendservice à la carte",
+      "Degustationsmenüs und saisonale Tagesempfehlungen",
+      "Private Feiern, Gruppenreservierungen und Events",
+      "Sommelier-Service und Weindegustationen",
+      "Bevorzugte Tischreservierung und persönlicher Gästeservice",
+    ],
+  },
+
   specialties: {
     es: [
       "Tagliolini caseros con trufa negra fresca y parmesano reggiano",

@@ -49,6 +49,63 @@ export const portAndratxRibBoatRental: ServiceItem = {
     ca: "Port d'Andratx Luxury RIB & Boat Charter ofereix un servei professional de màxima categoria a Mallorca. Lloguer de semirrígides d'alta gamma a Port d'Andratx i Sa Dragonera. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
     de: "Port d'Andratx Luxury RIB & Boat Charter bietet erstklassigen professionellen Service auf Mallorca. Premium-Schlauchbootverleih (RIB) in Port d Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
+  highlights: {
+    es: [
+      "Operaciones náuticas con base estratégica y amarres en Mallorca",
+      "Flota moderna revisada rigurosamente con los máximos estándares de seguridad marítima",
+      "Patrones profesionales y tripulaciones locales con titulación oficial mercante",
+      "Experiencias personalizadas a calas vírgenes de Mallorca y reservas marinas",
+    ],
+    en: [
+      "Strategic nautical base and premier berths located in Mallorca",
+      "Modern fleet thoroughly inspected under highest maritime safety standards",
+      "Licensed commercial skippers and expert local Balearic sea crews",
+      "Tailored private day itineraries to secluded coves and marine reserves",
+    ],
+    ca: [
+      "Operacions nàutiques amb base estratègica i amarratges a Mallorca",
+      "Flota moderna revisada rigorosament amb els màxims estàndards de seguretat marítima",
+      "Patrons professionals i tripulacions locals amb titulació oficial",
+      "Experiències personalitzades a cales verges de Mallorca i reserves marines",
+    ],
+    de: [
+      "Strategischer Liegeplatz und moderne Marina-Infrastruktur in Mallorca",
+      "Top-gewartete Charterflotte nach höchsten Sicherheitsstandards",
+      "Erfahrene, lizenzierte Skipper und mehrsprachige Crew",
+      "Maßgeschneiderte Bootstouren zu einsamen Buchten und Meeresschutzgebieten",
+    ],
+  },
+  servicesProvided: {
+    es: [
+      "Alquiler de Embarcaciones con y sin Patrón",
+      "Excursiones Náuticas Privadas y Salidas de Puesta de Sol",
+      "Mantenimiento Naval, Varadero y Mecánica Náutica",
+      "Escuela Náutica y Cursos Oficiales de Navegación",
+      "Aprovisionamiento y Servicios de Concierge para Yates",
+    ],
+    en: [
+      "Bareboat and Crewed Yacht Charter Services",
+      "Private Boat Excursions and Sunset Cruises",
+      "Marine Maintenance, Shipyard Services and Boat Mechanics",
+      "Sailing School and Official Nautical Licences",
+      "Yacht Provisioning and VIP Harbor Concierge",
+    ],
+    ca: [
+      "Lloguer d'Embarcacions amb i sense Patró",
+      "Excursions Nàutiques Privades i Sortides de Posta de Sol",
+      "Manteniment Naval, Varador i Mecànica Nàutica",
+      "Escola Nàutica i Cursos Oficials de Navegació",
+      "Aprovisionament i Serveis de Concierge per a Iots",
+    ],
+    de: [
+      "Yachtcharter mit und ohne Skipper",
+      "Private Bootstouren, Tagestrips und Sonnenuntergangsfahrten",
+      "Bootswartung, Werftservice und Marinemechanik",
+      "Segelschule und amtliche Sportbootführerscheine",
+      "Yacht-Catering, Proviantservice und Hafenbetreuung",
+    ],
+  },
+
   schedule: {
     monday: {
       open: "08:00",

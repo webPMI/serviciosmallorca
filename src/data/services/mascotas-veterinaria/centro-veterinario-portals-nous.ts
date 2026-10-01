@@ -49,6 +49,63 @@ export const centroVeterinarioPortalsNous: ServiceItem = {
     ca: "Portals Nous International Veterinary Clinic ofereix un servei professional de màxima categoria a Mallorca. Clínica veterinària internacional a Portals Nous amb atenció multilingüe. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
     de: "Portals Nous International Veterinary Clinic bietet erstklassigen professionellen Service auf Mallorca. Internationale Tierarztpraxis in Portals Nous mit mehrsprachigem Team (DE/EN/ES), Reisegesundheitszeugnissen und Kardiologie. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
+  highlights: {
+    es: [
+      "Atención veterinaria de máxima confianza y profesionalidad en Mallorca",
+      "Equipo veterinario cualificado con tecnología diagnóstica avanzada en clínica",
+      "Servicio de urgencias 24h, quirófano estéril y hospitalización monitorizada",
+      "Trato empático y libre de estrés tanto para perros y gatos como exóticos",
+    ],
+    en: [
+      "Trusted and compassionate veterinary care practice in Mallorca",
+      "Expert veterinary surgeons with on-site advanced medical diagnostic equipment",
+      "24/7 emergency service, sterile surgical theatre and dedicated inpatient recovery",
+      "Fear-free, stress-reduced handling for dogs, cats and small exotic pets",
+    ],
+    ca: [
+      "Atenció veterinària de màxima confiança i professionalitat a Mallorca",
+      "Equip veterinari qualificat amb tecnologia diagnòstica avançada a la clínica",
+      "Servei d'urgències 24h, quiròfan estèril i hospitalització monitoritzada",
+      "Tracte empàtic i lliure d'estrès per a gossos, gats i animals exòtics",
+    ],
+    de: [
+      "Erstklassige tierärztliche Versorgung und Notfallmedizin in Mallorca",
+      "Erfahrenes Veterinärteam mit moderner klinischer Diagnostik im Haus",
+      "24h-Notfalldienst, steriler Operationssaal und betreute Krankenstation",
+      "Stressfreie und liebevolle Behandlung für Hunde, Katzen und Heimtiere",
+    ],
+  },
+  servicesProvided: {
+    es: [
+      "Medicina Preventiva, Vacunaciones, Desparasitaciones y Microchip",
+      "Cirugía General, Traumatología y Anestesia Monitorizada",
+      "Diagnóstico por Imagen: Radiología Digital y Ecografía de Alta Resolución",
+      "Atención de Urgencias Veterinarias 24 Horas y Hospitalización",
+      "Peluquería Canina, Higiene Dental y Nutrición Especializada",
+    ],
+    en: [
+      "Preventative Care, Vaccinations, Parasite Control and Microchipping",
+      "General Surgery, Orthopaedics and Monitored Inhalation Anaesthesia",
+      "Diagnostic Imaging: Digital X-Ray and Ultrasound Scanning",
+      "24-Hour Emergency Veterinary Care and Monitored Hospitalization",
+      "Pet Grooming, Professional Dental Scaling and Clinical Nutrition",
+    ],
+    ca: [
+      "Medicina Preventiva, Vacunacions, Desparasitacions i Microxip",
+      "Cirurgia General, Traumatologia i Anestèsia Monitoritzada",
+      "Diagnòstic per Imatge: Radiologia Digital i Ecografia d'Alta Resolució",
+      "Atenció d'Urgències Veterinàries 24 Hores i Hospitalització",
+      "Perruqueria Canina, Higiene Dental i Nutrició Especialitzada",
+    ],
+    de: [
+      "Vorsorgeuntersuchungen, Impfungen, Entwurmung und Chip-Registrierung",
+      "Weichteil- und Knochenchirurgie mit Inhalationsnarkose-Überwachung",
+      "Klinische Bildgebung: Digitales Röntgen und hochauflösender Ultraschall",
+      "24-Stunden-Notfallbereitschaft und stationäre Intensivpflege",
+      "Medizinische Zahnreinigung, Hundepflege und Ernährungsberatung",
+    ],
+  },
+
   schedule: {
     monday: {
       open: "09:00",

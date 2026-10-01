@@ -49,6 +49,63 @@ export const mallorcaBalloonsManacor: ServiceItem = {
     ca: "Mallorca Balloons ofereix un servei professional de màxima categoria a Mallorca. Vols panoràmics sobre el Pla de Mallorca amb copa de cava. Amb atenció personalitzada, equip tècnic altament qualificat i compromís d'excel·lència per a clients a tota l'illa.",
     de: "Mallorca Balloons bietet erstklassigen professionellen Service auf Mallorca. Panorama-Ballonfahrten über die Inselmitte und Küste inklusive Cava-Taufe. Mit persönlicher Betreuung, hochqualifiziertem Fachteam und verlässlicher Qualität für Kunden und Immobilien auf der gesamten Insel.",
   },
+  highlights: {
+    es: [
+      "Experiencias inolvidables y momentos exclusivos en los rincones más bellos de Mallorca",
+      "Guías y profesionales acreditados con profundo conocimiento cultural y natural de Mallorca",
+      "Itinerarios privados y eventos a medida con atención a cada detalle",
+      "Seguridad, flexibilidad de fechas y atención multilingüe personalizada",
+    ],
+    en: [
+      "Unforgettable experiences and VIP moments in the most scenic spots of Mallorca",
+      "Certified guides and coordinators with extensive local knowledge of Majorca",
+      "Private itineraries and tailored celebrations designed around your wishes",
+      "Safety-first ethos, flexible scheduling, and dedicated multilingual care",
+    ],
+    ca: [
+      "Experiències inoblidables i moments exclusius als racons més bells de Mallorca",
+      "Guies i professionals acreditats amb profund coneixement cultural i natural de Mallorca",
+      "Itineraris privats i esdeveniments a mida amb atenció a cada detall",
+      "Seguretat, flexibilitat de dates i atenció multilingüe personalitzada",
+    ],
+    de: [
+      "Unvergessliche Erlebnisse an den schönsten Küsten- und Bergabschnitten in Mallorca",
+      "Zertifizierte Guides und Eventprofis mit fundierten Insel- und Kulturkenntnissen",
+      "Maßgeschneiderte private Touren und Feiern mit Liebe zum kleinsten Detail",
+      "Höchste Sicherheitsstandards, flexible Buchung und persönliche Betreuung",
+    ],
+  },
+  servicesProvided: {
+    es: [
+      "Tours Privados y Excursiones Guiadas Exclusivas",
+      "Planificación y Coordinación Integral de Eventos y Bodas",
+      "Reserva de Espacios Exclusivos, Camas Balinesas y Zonas VIP",
+      "Alquiler de Equipamiento Deportivo y Logística de Rutas",
+      "Servicio de Fotografía, Vídeo y Asistencia Durante la Experiencia",
+    ],
+    en: [
+      "Private Guided Day Tours and Tailored Island Excursions",
+      "Full-Service Wedding and Event Planning Coordination",
+      "VIP Daybeds and Exclusive Venue Area Reservations",
+      "Sports Equipment Rental and Route Logistics",
+      "On-Tour Photography, Videography and Concierge Support",
+    ],
+    ca: [
+      "Tours Privats i Excursions Guiades Exclusives",
+      "Planificació i Coordinació Integral d'Esdeveniments i Casaments",
+      "Reserva d'Espais Exclusius, Llits Balinesos i Zones VIP",
+      "Lloguer d'Equipament Esportiu i Logística de Rutes",
+      "Servei de Fotografia, Vídeo i Assistència Durant l'Experiència",
+    ],
+    de: [
+      "Private Tagestouren und geführte Inselausflüge abseits der Massen",
+      "Komplettplanung und Durchführung von Hochzeiten und Firmenfeiern",
+      "Reservierung von VIP-Daybeds, Terrassenplätzen und exklusiven Lounges",
+      "Verleih von Sport- und Outdoor-Equipment inklusive Routenplanung",
+      "Professionelle Fotobegleitung und persönlicher Betreuungsservice",
+    ],
+  },
+
   schedule: {
     monday: {
       open: "09:00",

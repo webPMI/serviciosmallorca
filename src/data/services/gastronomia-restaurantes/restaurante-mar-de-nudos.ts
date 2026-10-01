@@ -51,6 +51,37 @@ export const restauranteMarDeNudos: ServiceItem = {
     ca: "Situat al Moll Vell del port de Palma, Mar de Nudos ofereix una doble proposta d'alt nivell: cuina mediterrània i italiana amb peixos frescos d'una banda, i una carta japonesa refinada amb nigiris prèmium per l'altra.",
     de: "In bester Lage am Moll Vell im Hafen von Palma bietet das Mar de Nudos ein hochklassiges Doppel-Konzept: zeitgenössische mediterrane und italienische Küche sowie eine exquisite japanische Karte mit Premium-Sashimi und Signature-Rolls.",
   },
+  servicesProvided: {
+    es: [
+      "Servicio de Almuerzos y Cenas a la Carta",
+      "Menús de Degustación y Sugerencias de Temporada",
+      "Eventos Privados, Grupos y Celebraciones",
+      "Servicio de Sumiller y Maridaje de Vinos",
+      "Reserva Preferente de Mesa y Atención Personalizada",
+    ],
+    en: [
+      "À la Carte Lunch and Dinner Service",
+      "Tasting Menus and Seasonal Chef Specials",
+      "Private Dining, Group Bookings and Celebrations",
+      "Sommelier Service and Curated Wine Pairings",
+      "Priority Table Booking and Dedicated Concierge",
+    ],
+    ca: [
+      "Servei de Dinar i Sopar a la Carta",
+      "Menús de Degustació i Suggeriments de Temporada",
+      "Esdeveniments Privats, Grups i Celebracions",
+      "Servei de Sommelier i Maridatge de Vins",
+      "Reserva Preferent de Taula i Atenció Personalitzada",
+    ],
+    de: [
+      "Mittags- und Abendservice à la carte",
+      "Degustationsmenüs und saisonale Tagesempfehlungen",
+      "Private Feiern, Gruppenreservierungen und Events",
+      "Sommelier-Service und Weindegustationen",
+      "Bevorzugte Tischreservierung und persönlicher Gästeservice",
+    ],
+  },
+
   specialties: {
     es: [
       "Nigiri de wagyu flambeado con foie gras y reducción de teriyaki",
