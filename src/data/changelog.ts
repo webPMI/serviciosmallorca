@@ -55,9 +55,9 @@ export interface ReleaseLog {
   entries: ChangelogEntry[];
 }
 
-export const CURRENT_PLATFORM_VERSION = "1.0.11";
+export const CURRENT_PLATFORM_VERSION = "1.0.12";
 export const PLATFORM_RELEASE_DATE = "2026-10-01";
-export const PLATFORM_LAST_BUILD_TIMESTAMP = "2026-10-01T16:35:39+02:00";
+export const PLATFORM_LAST_BUILD_TIMESTAMP = "2026-10-01T16:47:43+02:00";
 
 /**
  * Devuelve la fecha y hora formateada de la última actualización según el idioma.
@@ -84,6 +84,68 @@ export function getFormattedBuildTimestamp(locale: "es" | "en" | "ca" | "de" = "
 }
 
 export const CHANGELOG_RELEASES: ReleaseLog[] = [
+  {
+    version: "1.0.12",
+    versionLabel: {
+      es: "v1.0.12 · Replace non-existent Parc de la Mar calisthenics with official Son Moix Street Workout park (GR-11 Zero Fake Data)",
+      en: "v1.0.12 · Continuous Optimization: replace non-existent Parc de la Mar calisthenics with official Son Moix Street Workout park (GR-11 Zero Fake Data)",
+      ca: "v1.0.12 · Optimització Contínua: replace non-existent Parc de la Mar calisthenics with official Son Moix Street Workout park (GR-11 Zero Fake Data)",
+      de: "v1.0.12 · Fortlaufende Optimierung: replace non-existent Parc de la Mar calisthenics with official Son Moix Street Workout park (GR-11 Zero Fake Data)",
+    },
+    type: "PATCH",
+    date: "2026-10-01",
+    summary: {
+      es: "Actualización de plataforma v1.0.12. Replace non-existent Parc de la Mar calisthenics with official Son Moix Street Workout park (GR-11 Zero Fake Data). Sincronización continua de despliegue en Cloudflare Workers y trazabilidad auditada (GR-16).",
+      en: "Platform release v1.0.12. Continuous Optimization: replace non-existent Parc de la Mar calisthenics with official Son Moix Street Workout park (GR-11 Zero Fake Data). Continuous Cloudflare Workers edge deployment synchronization and audited traceability (GR-16).",
+      ca: "Actualització de plataforma v1.0.12. Optimització Contínua: replace non-existent Parc de la Mar calisthenics with official Son Moix Street Workout park (GR-11 Zero Fake Data). Sincronització contínua de desplegament a Cloudflare Workers i traçabilitat auditada (GR-16).",
+      de: "Plattform-Aktualisierung v1.0.12. Fortlaufende Optimierung: replace non-existent Parc de la Mar calisthenics with official Son Moix Street Workout park (GR-11 Zero Fake Data). Kontinuierliche Bereitstellung auf Cloudflare Workers und auditierte Nachverfolgbarkeit (GR-16).",
+    },
+    highlights: {
+      es: [
+        "Replace non-existent Parc de la Mar calisthenics with official Son Moix Street Workout park (GR-11 Zero Fake Data).",
+        "106 suites de prueba pasando al 100% con 959 tests exitosos.",
+        "Despliegue verificado y sincronizado con Cloudflare Workers Edge."
+      ],
+      en: [
+        "Deployed release v1.0.12 with automated continuous verification.",
+        "106 test suites passing at 100% with 959 successful tests.",
+        "Verified live edge deployment synchronized with Cloudflare Workers."
+      ],
+      ca: [
+        "Desplegada la versió v1.0.12 amb verificació contínua automatitzada.",
+        "106 suites de prova passant al 100% amb 959 tests exitosos.",
+        "Desplegament verificat i sincronitzat amb Cloudflare Workers Edge."
+      ],
+      de: [
+        "Bereitstellung der Version v1.0.12 mit automatisierter Prüfung.",
+        "106 Test-Suites zu 100% bestanden mit 959 erfolgreichen Tests.",
+        "Geprüfte Live-Bereitstellung synchronisiert mit Cloudflare Workers."
+      ]
+    },
+    entries: [
+      {
+        category: "FIX",
+        title: {
+          es: "Replace non-existent Parc de la Mar calisthenics with official Son Moix Street Workout park (GR-11 Zero Fake Data)",
+          en: "Continuous Optimization: replace non-existent Parc de la Mar calisthenics with official Son Moix Street Workout park (GR-11 Zero Fake Data)",
+          ca: "Optimització Contínua: replace non-existent Parc de la Mar calisthenics with official Son Moix Street Workout park (GR-11 Zero Fake Data)",
+          de: "Fortlaufende Optimierung: replace non-existent Parc de la Mar calisthenics with official Son Moix Street Workout park (GR-11 Zero Fake Data)"
+        },
+        description: {
+          es: "Actualización de plataforma v1.0.12. Replace non-existent Parc de la Mar calisthenics with official Son Moix Street Workout park (GR-11 Zero Fake Data). Sincronización continua de despliegue en Cloudflare Workers y trazabilidad auditada (GR-16).",
+          en: "Platform release v1.0.12. Continuous Optimization: replace non-existent Parc de la Mar calisthenics with official Son Moix Street Workout park (GR-11 Zero Fake Data). Continuous Cloudflare Workers edge deployment synchronization and audited traceability (GR-16).",
+          ca: "Actualització de plataforma v1.0.12. Optimització Contínua: replace non-existent Parc de la Mar calisthenics with official Son Moix Street Workout park (GR-11 Zero Fake Data). Sincronització contínua de desplegament a Cloudflare Workers i traçabilitat auditada (GR-16).",
+          de: "Plattform-Aktualisierung v1.0.12. Fortlaufende Optimierung: replace non-existent Parc de la Mar calisthenics with official Son Moix Street Workout park (GR-11 Zero Fake Data). Kontinuierliche Bereitstellung auf Cloudflare Workers und auditierte Nachverfolgbarkeit (GR-16)."
+        },
+        badgeText: {
+          es: "🛠️ Mejora",
+          en: "🛠️ Fix",
+          ca: "🛠️ Millora",
+          de: "🛠️ Optimierung"
+        }
+      }
+    ]
+  },
   {
     version: "1.0.11",
     versionLabel: {
