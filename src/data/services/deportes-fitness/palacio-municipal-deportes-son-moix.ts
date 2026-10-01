@@ -28,8 +28,8 @@ export const PALACIO_MUNICIPAL_DEPORTES_SON_MOIX: ServiceItem = {
   email: "info@ime.palma.cat",
   website: "https://ime.palma.cat/son-moix",
   schedule: "Lunes a Domingo: 08:00 - 22:00",
-  image: "/images/sports/palacio-municipal-deportes-son-moix.jpg",
-  gallery: ["/images/sports/palacio-municipal-deportes-son-moix.jpg", "/images/categories/deportes.jpg"],
+  image: "/images/sports/palau-municipal-esports-son-moix-palma.jpg",
+  gallery: ["/images/sports/palau-municipal-esports-son-moix-palma.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007092",
   shortDescription: {
     es: "El mayor complejo polideportivo público de Palma con piscina de 50m, pabellón cubierto y fitness.",

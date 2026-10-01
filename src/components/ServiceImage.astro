@@ -29,19 +29,31 @@ const {
 const categoryBanners: Record<string, string> = {
   "gastronomia-catering": "/images/categories/gastronomia.jpg",
   "salud-bienestar": "/images/categories/salud.jpg",
+  "spas-bienestar": "/images/categories/salud.jpg",
   "nautica-charter": "/images/categories/nautica.jpg",
   "deportes-aire-libre": "/images/categories/deportes.jpg",
+  "deportes-fitness": "/images/categories/deportes.jpg",
+  "gimnasios-crossfit-mallorca": "/images/categories/deportes.jpg",
+  "golf-clubs-mallorca": "/images/categories/deportes.jpg",
+  "padel-tenis-clubs": "/images/categories/deportes.jpg",
+  "ciclismo-bike-rental": "/images/categories/deportes.jpg",
   deporte: "/images/categories/deportes.jpg",
   "reformas-hogar": "/images/categories/reformas.jpg",
+  "reformas-construccion": "/images/categories/reformas.jpg",
   "inmobiliaria-villas": "/images/categories/inmobiliaria.jpg",
+  "alojamiento-turismo": "/images/categories/inmobiliaria.jpg",
   "arte-tatuajes": "/images/categories/arte.jpg",
+  "entretenimiento-ocio": "/images/categories/arte.jpg",
   "servicios-profesionales": "/images/categories/profesionales.jpg",
+  "educacion-formacion": "/images/categories/profesionales.jpg",
   "motor-transporte": "/images/categories/motor.jpg",
   "jardineria-piscinas": "/images/categories/reformas.jpg",
   "tecnologia-seguridad": "/images/categories/profesionales.jpg",
+  "mascotas-veterinaria": "/images/categories/salud.jpg",
+  "hogar-limpieza": "/images/categories/reformas.jpg",
 };
 
-const fallbackBanner = categoryBanners[categorySlug] || "/images/categories/profesionales.jpg";
+const fallbackBanner = categoryBanners[categorySlug] || "/images/categories/deportes.jpg";
 
 // Block known broken hosts like expired Imgur URLs
 const isKnownBrokenUrl = Boolean(

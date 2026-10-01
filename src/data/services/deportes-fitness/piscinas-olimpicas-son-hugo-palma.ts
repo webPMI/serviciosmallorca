@@ -28,8 +28,8 @@ export const PISCINAS_OLIMPICAS_SON_HUGO_PALMA: ServiceItem = {
   email: "info@ime.palma.cat",
   website: "https://ime.palma.cat/son-hugo",
   schedule: "Lunes a Domingo: 08:00 - 22:00",
-  image: "/images/sports/piscinas-olimpicas-son-hugo-palma.jpg",
-  gallery: ["/images/sports/piscinas-olimpicas-son-hugo-palma.jpg", "/images/categories/deportes.jpg"],
+  image: "/images/sports/piscines-municipals-son-hugo-palma.jpg",
+  gallery: ["/images/sports/piscines-municipals-son-hugo-palma.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007093",
   shortDescription: {
     es: "Complejo de natación con piscina olímpica de 50 metros exterior e interior, foso de saltos y spa.",

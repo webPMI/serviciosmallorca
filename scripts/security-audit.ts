@@ -42,7 +42,7 @@ interface ScanRule {
 
 const RULES: ScanRule[] = [
   { id: "google-api-key", re: /AIza[0-9A-Za-z_\\-]{30,}/, highSignal: true },
-  { id: "openai-style-key", re: /sk-[A-Za-z0-9]{20,}/, highSignal: true },
+  { id: "openai-style-key", re: /\bsk-[A-Za-z0-9]{20,}\b/, highSignal: true },
   { id: "private-key-block", re: /-----BEGIN [A-Z ]*PRIVATE KEY-----/, highSignal: true },
   { id: "jwt-signed", re: /eyJ[A-Za-z0-9_\-]{20,}\.[A-Za-z0-9_\-]{10,}\.[A-Za-z0-9_\-]{10,}/, highSignal: true },
   {

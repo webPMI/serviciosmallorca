@@ -55,9 +55,9 @@ export interface ReleaseLog {
   entries: ChangelogEntry[];
 }
 
-export const CURRENT_PLATFORM_VERSION = "1.0.9";
+export const CURRENT_PLATFORM_VERSION = "1.0.10";
 export const PLATFORM_RELEASE_DATE = "2026-10-01";
-export const PLATFORM_LAST_BUILD_TIMESTAMP = "2026-10-01T15:36:58+02:00";
+export const PLATFORM_LAST_BUILD_TIMESTAMP = "2026-10-01T16:09:06+02:00";
 
 /**
  * Devuelve la fecha y hora formateada de la última actualización según el idioma.
@@ -84,6 +84,68 @@ export function getFormattedBuildTimestamp(locale: "es" | "en" | "ca" | "de" = "
 }
 
 export const CHANGELOG_RELEASES: ReleaseLog[] = [
+  {
+    version: "1.0.10",
+    versionLabel: {
+      es: "v1.0.10 · Automated verified deploy and synchronization",
+      en: "v1.0.10 · Continuous Optimization: automated verified deploy and synchronization",
+      ca: "v1.0.10 · Optimització Contínua: automated verified deploy and synchronization",
+      de: "v1.0.10 · Fortlaufende Optimierung: automated verified deploy and synchronization",
+    },
+    type: "PATCH",
+    date: "2026-10-01",
+    summary: {
+      es: "Actualización de plataforma v1.0.10. Automated verified deploy and synchronization. Sincronización continua de despliegue en Cloudflare Workers y trazabilidad auditada (GR-16).",
+      en: "Platform release v1.0.10. Continuous Optimization: automated verified deploy and synchronization. Continuous Cloudflare Workers edge deployment synchronization and audited traceability (GR-16).",
+      ca: "Actualització de plataforma v1.0.10. Optimització Contínua: automated verified deploy and synchronization. Sincronització contínua de desplegament a Cloudflare Workers i traçabilitat auditada (GR-16).",
+      de: "Plattform-Aktualisierung v1.0.10. Fortlaufende Optimierung: automated verified deploy and synchronization. Kontinuierliche Bereitstellung auf Cloudflare Workers und auditierte Nachverfolgbarkeit (GR-16).",
+    },
+    highlights: {
+      es: [
+        "Automated verified deploy and synchronization.",
+        "106 suites de prueba pasando al 100% con 959 tests exitosos.",
+        "Despliegue verificado y sincronizado con Cloudflare Workers Edge."
+      ],
+      en: [
+        "Deployed release v1.0.10 with automated continuous verification.",
+        "106 test suites passing at 100% with 959 successful tests.",
+        "Verified live edge deployment synchronized with Cloudflare Workers."
+      ],
+      ca: [
+        "Desplegada la versió v1.0.10 amb verificació contínua automatitzada.",
+        "106 suites de prova passant al 100% amb 959 tests exitosos.",
+        "Desplegament verificat i sincronitzat amb Cloudflare Workers Edge."
+      ],
+      de: [
+        "Bereitstellung der Version v1.0.10 mit automatisierter Prüfung.",
+        "106 Test-Suites zu 100% bestanden mit 959 erfolgreichen Tests.",
+        "Geprüfte Live-Bereitstellung synchronisiert mit Cloudflare Workers."
+      ]
+    },
+    entries: [
+      {
+        category: "FIX",
+        title: {
+          es: "Automated verified deploy and synchronization",
+          en: "Continuous Optimization: automated verified deploy and synchronization",
+          ca: "Optimització Contínua: automated verified deploy and synchronization",
+          de: "Fortlaufende Optimierung: automated verified deploy and synchronization"
+        },
+        description: {
+          es: "Actualización de plataforma v1.0.10. Automated verified deploy and synchronization. Sincronización continua de despliegue en Cloudflare Workers y trazabilidad auditada (GR-16).",
+          en: "Platform release v1.0.10. Continuous Optimization: automated verified deploy and synchronization. Continuous Cloudflare Workers edge deployment synchronization and audited traceability (GR-16).",
+          ca: "Actualització de plataforma v1.0.10. Optimització Contínua: automated verified deploy and synchronization. Sincronització contínua de desplegament a Cloudflare Workers i traçabilitat auditada (GR-16).",
+          de: "Plattform-Aktualisierung v1.0.10. Fortlaufende Optimierung: automated verified deploy and synchronization. Kontinuierliche Bereitstellung auf Cloudflare Workers und auditierte Nachverfolgbarkeit (GR-16)."
+        },
+        badgeText: {
+          es: "🛠️ Mejora",
+          en: "🛠️ Fix",
+          ca: "🛠️ Millora",
+          de: "🛠️ Optimierung"
+        }
+      }
+    ]
+  },
   {
     version: "1.0.9",
     versionLabel: {
