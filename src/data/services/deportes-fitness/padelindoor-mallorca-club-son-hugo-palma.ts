@@ -32,7 +32,7 @@ export const padelindoor_mallorca_club_son_hugo_palma: ServiceItem = {
   website: "https://padelinsonhugo.com",
   schedule: "Lunes a Viernes: 07:00 - 23:00; Sábado y Domingo: 08:00 - 22:00",
   image: "/images/services/padelindoor-mallorca-club-son-hugo-palma.jpg",
-  gallery: ["/images/services/padelindoor-mallorca-club-son-hugo-palma.jpg"],
+  gallery: ["/images/services/padelindoor-mallorca-club-son-hugo-palma.jpg", "/images/categories/deportes.jpg"],
   shortDescription: {
     es: "Mayor club de pádel indoor de Mallorca en Son Hugo, Palma: 24 pistas de pádel cubiertas con césped artificial de última generación, academia con entrenadores federados FBP y tienda de material.",
     en: "Mallorca's largest indoor padel club at Son Hugo, Palma: 24 covered padel courts with latest-generation artificial turf, FBP-federated coaches academy, and pro equipment shop.",
@@ -97,6 +97,32 @@ export const padelindoor_mallorca_club_son_hugo_palma: ServiceItem = {
       "Padelshop mit offizieller Ausrüstung von Head, Bullpadel und NOX",
     ],
   },
-  createdAt: "2026-08-30",
+    specialties: {
+      "es": [
+          "Pistas panorámicas de pádel de última generación con césped de alta competición",
+          "Escuela de pádel para todos los niveles, desde iniciación hasta tecnificación",
+          "Torneos de fin de semana, ligas regulares y partidas organizadas por nivel",
+          "Alquiler de pistas con iluminación LED y reserva ágil online"
+      ],
+      "en": [
+          "Panoramic next-generation padel courts with competition-grade turf",
+          "Padel academy for all player levels, from beginner fundamentals to advanced drills",
+          "Weekend tournaments, regular leagues, and match-making by rating",
+          "Court hire with high-efficiency LED floodlights and fast online booking"
+      ],
+      "ca": [
+          "Pistes panoràmiques de pàdel de darrera generació amb gespa d'alta competició",
+          "Escola de pàdel per a tots els nivells, des d'iniciació fins a tecnificació",
+          "Tornejos de cap de setmana, lligues regulars i partits anivellats",
+          "Lloguer de pistes amb il·luminació LED d'última tecnologia"
+      ],
+      "de": [
+          "Panorama-Padelplätze der neuesten Generation mit Wettkampf-Kunstrasen",
+          "Padelschule für alle Spielstärken, von Einsteigerkursen bis zur Turnierreife",
+          "Wochenendturniere, regelmäßige Ligen und spielstärkengerechte Spielpartnersuche",
+          "Flutlicht-Platzmiete mit moderner, schneller Online-Reservierung"
+      ]
+  },
+createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",
 };

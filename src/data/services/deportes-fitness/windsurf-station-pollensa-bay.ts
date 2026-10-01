@@ -95,6 +95,32 @@ export const WINDSURF_STATION_POLLENSA_BAY: ServiceItem = {
       "Individuelle sportliche Beratung",
     ],
   },
-  createdAt: "2026-08-30",
+    specialties: {
+      "es": [
+          "Cursos y bautismos con certificación oficial (PADI / SSI / RFEV) en aguas cristalinas",
+          "Inmersiones y travesías guiadas en reservas marinas protegidas de Mallorca",
+          "Material náutico y de buceo de alta gama revisado e higienizado tras cada salida",
+          "Embarcaciones de apoyo propias con patrones titulados y equipo de seguridad completo"
+      ],
+      "en": [
+          "Official certification courses and introductory try-dives (PADI / SSI / RFEV)",
+          "Guided dive excursions and boat routes along Mallorca's protected marine reserves",
+          "High-end water sports and scuba gear rigorously serviced and sanitized after each use",
+          "Dedicated support boats skippered by certified captains with comprehensive safety gear"
+      ],
+      "ca": [
+          "Cursos i batejos amb acreditació oficial (PADI / SSI / RFEV) en aigües cristal·lines",
+          "Immersions i rutes guiades per les reserves marines protegides de Mallorca",
+          "Material nàutic d'alta gamma revisat periòdicament i homologat",
+          "Embarcacions pròpies amb patrons professionals i protocols de seguretat"
+      ],
+      "de": [
+          "Offizielle PADI / SSI / RFEV Tauch- und Wassersportkurse für alle Erfahrungsstufen",
+          "Geführte Tauch- und Bootstouren zu den schönsten Meeresschutzgebieten Mallorcas",
+          "Hochwertige Leihausrüstung, regelmäßig gewartet und nach jedem Einsatz desinfiziert",
+          "Eigene Tauch- und Begleitboote mit erfahrenen Skippern und vollständiger Rettungsausrüstung"
+      ]
+  },
+createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",
 };

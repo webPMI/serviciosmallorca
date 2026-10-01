@@ -32,7 +32,7 @@ export const centro_buceo_padi_dive_mallorca_port_andratx: ServiceItem = {
   website: "https://divemallorca.com",
   schedule: "Diario: 08:00 - 19:00 (Temporada: Abril – Noviembre)",
   image: "/images/services/centro-buceo-padi-dive-mallorca-port-andratx.jpg",
-  gallery: ["/images/services/centro-buceo-padi-dive-mallorca-port-andratx.jpg"],
+  gallery: ["/images/services/centro-buceo-padi-dive-mallorca-port-andratx.jpg", "/images/categories/deportes.jpg"],
   shortDescription: {
     es: "Centro de buceo PADI 5 Star Instructor Development Centre en Port d'Andratx: cursos Open Water, Divemaster, Rescue Diver y expediciones de buceo técnico en la reserva marina de Cabrera.",
     en: "PADI 5-Star Instructor Development Centre in Port d'Andratx: Open Water courses, Divemaster training, Rescue Diver, and technical diving expeditions to Cabrera Marine Reserve.",
@@ -97,6 +97,32 @@ export const centro_buceo_padi_dive_mallorca_port_andratx: ServiceItem = {
       "PADI Divemaster, Rescue Diver und IDC-Instructorkurs",
     ],
   },
-  createdAt: "2026-08-30",
+    specialties: {
+      "es": [
+          "Cursos y bautismos con certificación oficial (PADI / SSI / RFEV) en aguas cristalinas",
+          "Inmersiones y travesías guiadas en reservas marinas protegidas de Mallorca",
+          "Material náutico y de buceo de alta gama revisado e higienizado tras cada salida",
+          "Embarcaciones de apoyo propias con patrones titulados y equipo de seguridad completo"
+      ],
+      "en": [
+          "Official certification courses and introductory try-dives (PADI / SSI / RFEV)",
+          "Guided dive excursions and boat routes along Mallorca's protected marine reserves",
+          "High-end water sports and scuba gear rigorously serviced and sanitized after each use",
+          "Dedicated support boats skippered by certified captains with comprehensive safety gear"
+      ],
+      "ca": [
+          "Cursos i batejos amb acreditació oficial (PADI / SSI / RFEV) en aigües cristal·lines",
+          "Immersions i rutes guiades per les reserves marines protegides de Mallorca",
+          "Material nàutic d'alta gamma revisat periòdicament i homologat",
+          "Embarcacions pròpies amb patrons professionals i protocols de seguretat"
+      ],
+      "de": [
+          "Offizielle PADI / SSI / RFEV Tauch- und Wassersportkurse für alle Erfahrungsstufen",
+          "Geführte Tauch- und Bootstouren zu den schönsten Meeresschutzgebieten Mallorcas",
+          "Hochwertige Leihausrüstung, regelmäßig gewartet und nach jedem Einsatz desinfiziert",
+          "Eigene Tauch- und Begleitboote mit erfahrenen Skippern und vollständiger Rettungsausrüstung"
+      ]
+  },
+createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",
 };

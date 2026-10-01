@@ -117,6 +117,43 @@ const ZONES: Array<{ id: string; name: Record<Locale, string> }> = [
 
   <!-- Active Layer Filter Bar -->
   <div class="sports-filter-panel card card-glass" id="sports-filter-panel">
+    <!-- Live Search & Counter Row -->
+    <div class="sports-search-bar-row">
+      <div class="sports-search-input-wrap">
+        <span class="sports-search-icon" aria-hidden="true">🔍</span>
+        <input
+          type="search"
+          id="sports-search-input"
+          class="sports-search-input"
+          placeholder={
+            currentLocale === "de"
+              ? "Sportstätte, Padel, Ort oder Disziplin suchen (z.B. Son Moix, Calvià, Tartán)..."
+              : currentLocale === "ca"
+                ? "Cerca instal·lació, pàdel, municipi o esport (ex. Son Moix, Calvià, Tartan)..."
+                : currentLocale === "en"
+                  ? "Search sports venue, padel, town or sport (e.g. Son Moix, Calvià, Track)..."
+                  : "Buscar instalación, pádel, municipio o disciplina (ej. Son Moix, Calvià, Tartán)..."
+          }
+          aria-label={t["sports.search.label"] || "Buscar instalaciones deportivas"}
+        />
+        <button type="button" id="sports-search-clear" class="search-clear-btn" style="display: none;" aria-label="Borrar búsqueda">✕</button>
+      </div>
+      <div class="sports-live-counter" id="sports-counter-wrap">
+        <span id="sports-count-num" class="count-badge">{SPORTS_FACILITIES.length}</span>
+        <span class="count-label">
+          {
+            currentLocale === "de"
+              ? "Orte gelistet"
+              : currentLocale === "ca"
+                ? "instal·lacions"
+                : currentLocale === "en"
+                  ? "venues shown"
+                  : "instalaciones"
+          }
+        </span>
+      </div>
+    </div>
+
     <!-- Activity Chips -->
     <div class="filter-group">
       <label class="filter-label">🎯 {t["sports.filter.activity"] || "Tipo de Actividad:"}</label>
@@ -155,6 +192,10 @@ const ZONES: Array<{ id: string; name: Record<Locale, string> }> = [
       <div class="amenities-toggles-wrap">
         <span class="filter-label">✨ {t["sports.filter.amenities"] || "Comodidades Clave:"}</span>
         <div class="toggle-pills-row">
+          <button type="button" class="toggle-pill" data-amenity="abiertoAhora" aria-pressed="false">
+            <span>🟢</span>
+            <span>{t["sports.amenity.openNow"] || "Abierto Ahora"}</span>
+          </button>
           <button type="button" class="toggle-pill" data-amenity="tieneSombra" aria-pressed="false">
             <span>🌳</span>
             <span>{t["sports.amenity.shade"] || "Con Sombra"}</span>
@@ -231,6 +272,10 @@ const ZONES: Array<{ id: string; name: Record<Locale, string> }> = [
         <article
           class="sports-poi-card card"
           data-facility-id={facility.id}
+          data-name={facility.name.toLowerCase()}
+          data-address={facility.address.toLowerCase()}
+          data-schedule={facility.schedule || ""}
+          data-surface={(facility.surfaceLabel[currentLocale] || facility.surfaceLabel.es).toLowerCase()}
           data-activities={JSON.stringify(facility.activityTypes)}
           data-zone={facility.zone}
           data-amenity-sombra={String(facility.amenities.tieneSombra)}
@@ -344,6 +389,46 @@ const ZONES: Array<{ id: string; name: Record<Locale, string> }> = [
       ))
     }
   </div>
+
+  <!-- Empty State when filters yield 0 results -->
+  <div class="sports-no-results card card-glass" id="sports-no-results" style="display: none;">
+    <span class="no-results-icon" aria-hidden="true">🔍</span>
+    <h3 class="no-results-title">
+      {
+        currentLocale === "de"
+          ? "Keine Sportstätten gefunden"
+          : currentLocale === "ca"
+            ? "No s'han trobat instal·lacions"
+            : currentLocale === "en"
+              ? "No sports venues found"
+              : "No se encontraron instalaciones"
+      }
+    </h3>
+    <p class="no-results-desc">
+      {
+        currentLocale === "de"
+          ? "Bitte passen Sie die Suchbegriffe oder aktiven Filter an."
+          : currentLocale === "ca"
+            ? "Prova d'ajustar la cerca de text o els filtres actius."
+            : currentLocale === "en"
+              ? "Try adjusting your search query or active amenity filters."
+              : "Prueba a ajustar el término de búsqueda o desactivar algunos filtros."
+      }
+    </p>
+    <button type="button" class="btn btn-secondary btn-sm" id="reset-sports-filters">
+      <span>
+        {
+          currentLocale === "de"
+            ? "Alle Filter zurücksetzen"
+            : currentLocale === "ca"
+              ? "Restablir filtres"
+              : currentLocale === "en"
+                ? "Reset all filters"
+                : "Restablecer todos los filtros"
+        }
+      </span>
+    </button>
+  </div>
 </div>
 
 <style>
@@ -416,6 +501,119 @@ const ZONES: Array<{ id: string; name: Record<Locale, string> }> = [
     color: var(--color-btn-primary-text, #ffffff);
     font-weight: 800;
     box-shadow: var(--shadow-sm);
+  }
+
+  /* Live Search Bar */
+  .sports-search-bar-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+    padding-bottom: var(--space-sm);
+    border-bottom: 1px solid var(--color-surface-border);
+  }
+
+  .sports-search-input-wrap {
+    position: relative;
+    flex: 1;
+    min-width: 240px;
+    display: flex;
+    align-items: center;
+  }
+
+  .sports-search-icon {
+    position: absolute;
+    left: 0.85rem;
+    font-size: 1rem;
+    pointer-events: none;
+    opacity: 0.7;
+  }
+
+  .sports-search-input {
+    width: 100%;
+    padding: 0.65rem 2.2rem 0.65rem 2.5rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-surface-border);
+    border-radius: var(--border-radius-full);
+    color: var(--color-text);
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all var(--transition-fast);
+  }
+
+  .sports-search-input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+  }
+
+  .search-clear-btn {
+    position: absolute;
+    right: 0.75rem;
+    background: transparent;
+    border: none;
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    cursor: pointer;
+    padding: 0.2rem 0.4rem;
+    border-radius: 50%;
+  }
+
+  .search-clear-btn:hover {
+    color: var(--color-text);
+  }
+
+  .sports-live-counter {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    flex-shrink: 0;
+  }
+
+  .count-badge {
+    background: var(--color-primary);
+    color: var(--color-btn-primary-text, #ffffff);
+    font-weight: 800;
+    font-size: 0.85rem;
+    padding: 0.2rem 0.55rem;
+    border-radius: var(--border-radius-full);
+    min-width: 26px;
+    text-align: center;
+  }
+
+  .count-label {
+    font-size: 0.82rem;
+    color: var(--color-text-muted);
+    font-weight: 600;
+  }
+
+  /* Empty State */
+  .sports-no-results {
+    padding: var(--space-2xl) var(--space-lg);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-sm);
+    margin-top: var(--space-lg);
+  }
+
+  .no-results-icon {
+    font-size: 2.5rem;
+    opacity: 0.8;
+  }
+
+  .no-results-title {
+    margin: 0;
+    font-size: 1.25rem;
+  }
+
+  .no-results-desc {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    max-width: 420px;
+    margin: 0 0 var(--space-sm);
   }
 
   /* Filter Panel */
@@ -844,6 +1042,38 @@ const ZONES: Array<{ id: string; name: Record<Locale, string> }> = [
 </style>
 
 <script>
+  function isFacilityOpenNow(scheduleStr: string): boolean {
+    if (!scheduleStr) return true;
+    const lower = scheduleStr.toLowerCase();
+    if (lower.includes("amanecer hasta el anochecer") || lower.includes("24h") || lower.includes("libre")) {
+      return true;
+    }
+    try {
+      const now = new Date();
+      const formatter = new Intl.DateTimeFormat("en-US", {
+        timeZone: "Europe/Madrid",
+        hour: "numeric",
+        minute: "numeric",
+        hour12: false,
+      });
+      const parts = formatter.formatToParts(now);
+      const hour = parseInt(parts.find((p) => p.type === "hour")?.value || "12", 10);
+      const minute = parseInt(parts.find((p) => p.type === "minute")?.value || "0", 10);
+      const currentTimeVal = hour * 60 + minute;
+
+      const timeRanges = [...scheduleStr.matchAll(/(\d{1,2}):(\d{2})\s*-\s*(\d{1,2}):(\d{2})/g)];
+      if (timeRanges.length === 0) return true;
+
+      return timeRanges.some((m) => {
+        const start = parseInt(m[1], 10) * 60 + parseInt(m[2], 10);
+        const end = parseInt(m[3], 10) * 60 + parseInt(m[4], 10);
+        return currentTimeVal >= start && currentTimeVal <= end;
+      });
+    } catch {
+      return true;
+    }
+  }
+
   function initSportsExplorer() {
     const root = document.getElementById("sports-explorer");
     if (!root) return;
@@ -854,10 +1084,17 @@ const ZONES: Array<{ id: string; name: Record<Locale, string> }> = [
     const togglePills = root.querySelectorAll<HTMLButtonElement>(".toggle-pill");
     const mapSection = root.querySelector<HTMLElement>("#sports-map-view");
     const cards = root.querySelectorAll<HTMLElement>(".sports-poi-card");
+    const searchInput = root.querySelector<HTMLInputElement>("#sports-search-input");
+    const searchClear = root.querySelector<HTMLButtonElement>("#sports-search-clear");
+    const countBadge = root.querySelector<HTMLElement>("#sports-count-num");
+    const noResults = root.querySelector<HTMLElement>("#sports-no-results");
+    const resetBtn = root.querySelector<HTMLButtonElement>("#reset-sports-filters");
 
     let currentActivity = "all";
     let currentZone = zoneSelect?.value || "all";
+    let searchQuery = "";
     const activeAmenities: Record<string, boolean> = {
+      abiertoAhora: false,
       tieneSombra: false,
       fuenteAgua: false,
       accesiblePmr: false,
@@ -866,9 +1103,15 @@ const ZONES: Array<{ id: string; name: Record<Locale, string> }> = [
     };
 
     function filterCards() {
+      let visibleCount = 0;
+
       cards.forEach((card) => {
         const activities: string[] = JSON.parse(card.dataset.activities || "[]");
         const zone = card.dataset.zone || "";
+        const name = card.dataset.name || "";
+        const address = card.dataset.address || "";
+        const surface = card.dataset.surface || "";
+        const schedule = card.dataset.schedule || "";
         const sombra = card.dataset.amenitySombra === "true";
         const agua = card.dataset.amenityAgua === "true";
         const pmr = card.dataset.amenityPmr === "true";
@@ -882,16 +1125,56 @@ const ZONES: Array<{ id: string; name: Record<Locale, string> }> = [
         const matchPmr = !activeAmenities.accesiblePmr || pmr;
         const matchPet = !activeAmenities.petFriendly || pet;
         const matchGratis = !activeAmenities.gratis || gratis;
+        const matchOpenNow = !activeAmenities.abiertoAhora || isFacilityOpenNow(schedule);
 
-        if (matchActivity && matchZone && matchSombra && matchAgua && matchPmr && matchPet && matchGratis) {
+        const matchQuery =
+          !searchQuery ||
+          name.includes(searchQuery) ||
+          address.includes(searchQuery) ||
+          surface.includes(searchQuery) ||
+          zone.includes(searchQuery);
+
+        if (
+          matchActivity &&
+          matchZone &&
+          matchSombra &&
+          matchAgua &&
+          matchPmr &&
+          matchPet &&
+          matchGratis &&
+          matchOpenNow &&
+          matchQuery
+        ) {
           card.style.display = "flex";
+          visibleCount++;
         } else {
           card.style.display = "none";
         }
       });
+
+      if (countBadge) countBadge.textContent = String(visibleCount);
+      if (noResults) noResults.style.display = visibleCount === 0 ? "flex" : "none";
     }
 
-    // 1. Mode Switching
+    // 1. Live Search
+    if (searchInput) {
+      searchInput.addEventListener("input", () => {
+        searchQuery = searchInput.value.toLowerCase().trim();
+        if (searchClear) searchClear.style.display = searchQuery ? "block" : "none";
+        filterCards();
+      });
+    }
+
+    if (searchClear) {
+      searchClear.addEventListener("click", () => {
+        if (searchInput) searchInput.value = "";
+        searchQuery = "";
+        searchClear.style.display = "none";
+        filterCards();
+      });
+    }
+
+    // 2. Mode Switching
     modeTabs.forEach((tab) => {
       tab.addEventListener("click", () => {
         modeTabs.forEach((t) => {
@@ -906,7 +1189,6 @@ const ZONES: Array<{ id: string; name: Record<Locale, string> }> = [
           if (mapSection) mapSection.style.display = "block";
         } else if (mode === "recomendados") {
           if (mapSection) mapSection.style.display = "none";
-          // Activar actividades recomendadas
           currentActivity = "padel";
           chipBtns.forEach((c) => c.classList.toggle("active", c.dataset.activity === "padel"));
           filterCards();
@@ -916,7 +1198,7 @@ const ZONES: Array<{ id: string; name: Record<Locale, string> }> = [
       });
     });
 
-    // 2. Activity Chips
+    // 3. Activity Chips
     chipBtns.forEach((btn) => {
       btn.addEventListener("click", () => {
         chipBtns.forEach((b) => b.classList.remove("active"));
@@ -926,13 +1208,13 @@ const ZONES: Array<{ id: string; name: Record<Locale, string> }> = [
       });
     });
 
-    // 3. Zone Select
+    // 4. Zone Select
     zoneSelect?.addEventListener("change", () => {
       currentZone = zoneSelect.value;
       filterCards();
     });
 
-    // 4. Amenity Toggles
+    // 5. Amenity Toggles
     togglePills.forEach((pill) => {
       pill.addEventListener("click", () => {
         const key = pill.dataset.amenity;
@@ -942,6 +1224,24 @@ const ZONES: Array<{ id: string; name: Record<Locale, string> }> = [
         pill.setAttribute("aria-pressed", String(activeAmenities[key]));
         filterCards();
       });
+    });
+
+    // 6. Reset Filters
+    resetBtn?.addEventListener("click", () => {
+      currentActivity = "all";
+      currentZone = "all";
+      searchQuery = "";
+      if (searchInput) searchInput.value = "";
+      if (searchClear) searchClear.style.display = "none";
+      if (zoneSelect) zoneSelect.value = "all";
+
+      Object.keys(activeAmenities).forEach((k) => (activeAmenities[k] = false));
+      togglePills.forEach((p) => {
+        p.classList.remove("active");
+        p.setAttribute("aria-pressed", "false");
+      });
+      chipBtns.forEach((b) => b.classList.toggle("active", b.dataset.activity === "all"));
+      filterCards();
     });
   }
 

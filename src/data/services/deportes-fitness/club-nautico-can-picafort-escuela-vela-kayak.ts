@@ -32,7 +32,7 @@ export const club_nautico_can_picafort_escuela_vela_kayak: ServiceItem = {
   website: "https://cncanpicafort.com/escuela-de-vela",
   schedule: "Diario: 08:30 - 20:30 (Abril a Octubre)",
   image: "/images/services/club-nautico-can-picafort-escuela-vela-kayak.jpg",
-  gallery: ["/images/services/club-nautico-can-picafort-escuela-vela-kayak.jpg"],
+  gallery: ["/images/services/club-nautico-can-picafort-escuela-vela-kayak.jpg", "/images/categories/deportes.jpg"],
   shortDescription: {
     es: "Club náutico y escuela de deportes acuáticos en la bahía de Alcúdia: cursos de vela ligera para niños y adultos, alquiler de kayaks de mar, paddle surf y windsurf.",
     en: "Nautical club and water sports school in Alcúdia Bay: dinghy sailing courses for adults and kids, sea kayak, SUP, and windsurf rentals.",
@@ -97,6 +97,32 @@ export const club_nautico_can_picafort_escuela_vela_kayak: ServiceItem = {
       "Liegeplatz- und Trockenliege-Vermietung für Privatyachten",
     ],
   },
-  createdAt: "2026-08-30",
+    specialties: {
+      "es": [
+          "Cursos y bautismos con certificación oficial (PADI / SSI / RFEV) en aguas cristalinas",
+          "Inmersiones y travesías guiadas en reservas marinas protegidas de Mallorca",
+          "Material náutico y de buceo de alta gama revisado e higienizado tras cada salida",
+          "Embarcaciones de apoyo propias con patrones titulados y equipo de seguridad completo"
+      ],
+      "en": [
+          "Official certification courses and introductory try-dives (PADI / SSI / RFEV)",
+          "Guided dive excursions and boat routes along Mallorca's protected marine reserves",
+          "High-end water sports and scuba gear rigorously serviced and sanitized after each use",
+          "Dedicated support boats skippered by certified captains with comprehensive safety gear"
+      ],
+      "ca": [
+          "Cursos i batejos amb acreditació oficial (PADI / SSI / RFEV) en aigües cristal·lines",
+          "Immersions i rutes guiades per les reserves marines protegides de Mallorca",
+          "Material nàutic d'alta gamma revisat periòdicament i homologat",
+          "Embarcacions pròpies amb patrons professionals i protocols de seguretat"
+      ],
+      "de": [
+          "Offizielle PADI / SSI / RFEV Tauch- und Wassersportkurse für alle Erfahrungsstufen",
+          "Geführte Tauch- und Bootstouren zu den schönsten Meeresschutzgebieten Mallorcas",
+          "Hochwertige Leihausrüstung, regelmäßig gewartet und nach jedem Einsatz desinfiziert",
+          "Eigene Tauch- und Begleitboote mit erfahrenen Skippern und vollständiger Rettungsausrüstung"
+      ]
+  },
+createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",
 };

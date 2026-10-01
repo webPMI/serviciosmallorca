@@ -32,7 +32,7 @@ export const vilapadel_marratxi: ServiceItem = {
   website: "https://vilapadel.com",
   schedule: "Lunes a Domingo: 08:00 - 23:30",
   image: "/images/services/vilapadel-marratxi.jpg",
-  gallery: ["/images/services/vilapadel-marratxi.jpg"],
+  gallery: ["/images/services/vilapadel-marratxi.jpg", "/images/categories/deportes.jpg"],
   shortDescription: {
     es: "Gran club de pádel indoor y outdoor en el Polígono de Marratxí: pistas climatizadas, escuela de adultos y niños, torneos y cafetería.",
     en: "Major indoor and outdoor padel club in Marratxí: climate-controlled courts, junior and adult academy, tournaments, and lounge café.",
@@ -97,6 +97,32 @@ export const vilapadel_marratxi: ServiceItem = {
       "Pro-Shop für Schläger, Padel-Schuhe und Leihausrüstung",
     ],
   },
-  createdAt: "2026-08-30",
+    specialties: {
+      "es": [
+          "Pistas panorámicas de pádel de última generación con césped de alta competición",
+          "Escuela de pádel para todos los niveles, desde iniciación hasta tecnificación",
+          "Torneos de fin de semana, ligas regulares y partidas organizadas por nivel",
+          "Alquiler de pistas con iluminación LED y reserva ágil online"
+      ],
+      "en": [
+          "Panoramic next-generation padel courts with competition-grade turf",
+          "Padel academy for all player levels, from beginner fundamentals to advanced drills",
+          "Weekend tournaments, regular leagues, and match-making by rating",
+          "Court hire with high-efficiency LED floodlights and fast online booking"
+      ],
+      "ca": [
+          "Pistes panoràmiques de pàdel de darrera generació amb gespa d'alta competició",
+          "Escola de pàdel per a tots els nivells, des d'iniciació fins a tecnificació",
+          "Tornejos de cap de setmana, lligues regulars i partits anivellats",
+          "Lloguer de pistes amb il·luminació LED d'última tecnologia"
+      ],
+      "de": [
+          "Panorama-Padelplätze der neuesten Generation mit Wettkampf-Kunstrasen",
+          "Padelschule für alle Spielstärken, von Einsteigerkursen bis zur Turnierreife",
+          "Wochenendturniere, regelmäßige Ligen und spielstärkengerechte Spielpartnersuche",
+          "Flutlicht-Platzmiete mit moderner, schneller Online-Reservierung"
+      ]
+  },
+createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",
 };

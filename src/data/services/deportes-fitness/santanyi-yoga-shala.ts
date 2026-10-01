@@ -95,6 +95,32 @@ export const SANTANYI_YOGA_SHALA: ServiceItem = {
       "Individuelle sportliche Beratung",
     ],
   },
-  createdAt: "2026-08-30",
+    specialties: {
+      "es": [
+          "Clases presenciales de Yoga (Hatha, Vinyasa Flow, Ashtanga, Yin) y Pilates",
+          "Instructores certificados con amplia experiencia y corrección personalizada",
+          "Estudio equipado con esterillas antideslizantes, bloques, correas y bolsters",
+          "Talleres intensivos de respiración consciente, meditación y movilidad articular"
+      ],
+      "en": [
+          "In-person Yoga classes (Hatha, Vinyasa Flow, Ashtanga, Yin) and Pilates",
+          "Experienced certified instructors providing attentive alignment corrections",
+          "Fully equipped studio with grip mats, blocks, straps, and bolster cushions",
+          "Deep-dive workshops focusing on conscious breathwork, meditation & joint mobility"
+      ],
+      "ca": [
+          "Classes de Ioga (Hatha, Vinyasa Flow, Ashtanga, Yin) i Pilates postural",
+          "Instructors titulats amb atenció acurada i correccions individualitzades",
+          "Estudi equipat amb estoretes professionals, blocs, corretges i coixins",
+          "Tallers de respiració conscient, relaxació profunda i meditació"
+      ],
+      "de": [
+          "Präsenzkurse für Yoga (Hatha, Vinyasa Flow, Ashtanga, Yin) und Pilates",
+          "Zertifizierte Lehrer mit individueller Haltungs- und Bewegungskorrektur",
+          "Voll ausgestattetes Studio mit rutschfesten Matten, Blöcken und Gurten",
+          "Intensiv-Workshops für bewusste Atemführung (Pranayama) und Meditation"
+      ]
+  },
+createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",
 };

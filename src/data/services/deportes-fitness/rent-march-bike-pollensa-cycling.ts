@@ -32,7 +32,7 @@ export const rent_march_bike_pollensa_cycling: ServiceItem = {
   website: "https://rentmarch.com",
   schedule: "Lunes a Domingo: 08:30 - 13:30, 16:30 - 19:30 (Temporada ciclista)",
   image: "/images/services/rent-march-bike-pollensa-cycling.jpg",
-  gallery: ["/images/services/rent-march-bike-pollensa-cycling.jpg"],
+  gallery: ["/images/services/rent-march-bike-pollensa-cycling.jpg", "/images/categories/deportes.jpg"],
   shortDescription: {
     es: "Tienda histórica y taller de ciclismo en Port de Pollença desde 1994: alquiler de bicicletas de carretera de carbono de alta gama, e-bikes y servicio técnico para rutas a Formentor y Sa Calobra.",
     en: "Historic bike rental center in Port de Pollença since 1994: high-end carbon road bikes, e-bikes, and mechanic support for Formentor and Sa Calobra rides.",
@@ -97,6 +97,32 @@ export const rent_march_bike_pollensa_cycling: ServiceItem = {
       "Pannenhilfe und mobiler Abholservice bei Defekten auf der Bergtour",
     ],
   },
-  createdAt: "2026-08-30",
+    specialties: {
+      "es": [
+          "Flota de bicicletas de carretera de carbono y e-bikes de primeras marcas",
+          "Ajuste biomecánico personalizado de sillín, manillar y calas antes de cada ruta",
+          "Taller mecánico oficial con herramientas de precisión y repuestos originales",
+          "Rutas ciclistas guiadas y tracks GPS para explorar la Serra de Tramuntana"
+      ],
+      "en": [
+          "Premium fleet of carbon road bikes and performance e-bikes from leading brands",
+          "Custom ergonomic bike fitting including saddle height, handlebar reach & cleat setup",
+          "Professional workshop staffed with certified mechanics and genuine parts",
+          "Guided cycling expeditions and verified GPS routes across the Tramuntana range"
+      ],
+      "ca": [
+          "Flota de bicicletes de carretera de carboni i e-bikes d'alta gamma",
+          "Ajust biomecànic precís de selló i cales per a un pedaleig eficient",
+          "Taller mecànic especialitzat amb recanvis originals i eines de precisió",
+          "Rutes cicloturístiques guiades i itineraris GPS per la Serra de Tramuntana"
+      ],
+      "de": [
+          "Flotte erstklassiger Carbon-Rennräder und sportlicher E-Bikes von Top-Marken",
+          "Individuelles Bike-Fitting für Sitzposition, Lenkerhöhe und Pedalsysteme",
+          "Fachwerkstatt mit professionellem Werkzeug und Original-Ersatzteilen",
+          "Geführte Rennradtouren und erprobte GPS-Strecken durch das Tramuntana-Gebirge"
+      ]
+  },
+createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",
 };

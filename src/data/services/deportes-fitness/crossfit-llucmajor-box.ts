@@ -95,6 +95,32 @@ export const CROSSFIT_LLUCMAJOR_BOX: ServiceItem = {
       "Individuelle sportliche Beratung",
     ],
   },
-  createdAt: "2026-08-30",
+    specialties: {
+      "es": [
+          "WODs diarios escalables y guiados por entrenadores certificados CrossFit",
+          "Zona completa de halterofilia con barras olímpicas y discos de competición",
+          "Entrenamiento gimnástico, trepa de cuerda y máquinas de cardio Concept2",
+          "Open Box supervisado para programación individual y preparación atlética"
+      ],
+      "en": [
+          "Daily scalable WODs coached by certified CrossFit instructors",
+          "Full Olympic weightlifting platform with barbells and competition bumper plates",
+          "Gymnastics conditioning, rope climbs, and Concept2 cardio ergs",
+          "Supervised Open Box hours for self-paced training and athlete preparation"
+      ],
+      "ca": [
+          "WODs diaris adaptats i guiats per entrenadors certificats CrossFit",
+          "Zona d'halterofília olímpica amb material oficial de competició",
+          "Entrenament gimnàstic funcional, corda i ergòmetres d'alta intensitat",
+          "Open Box vigilat per a entrenament lliure i preparació física"
+      ],
+      "de": [
+          "Täglich skalierbare WODs unter Anleitung lizenzierter CrossFit-Trainer",
+          "Kompletter olympischer Gewichtheberbereich mit Wettkampf-Bumper-Plates",
+          "Gymnastics-Elemente, Kletterseile und Concept2 Ausdauergeräte",
+          "Betreutes Open Box für individuelles Training und Athleten-Aufbau"
+      ]
+  },
+createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",
 };

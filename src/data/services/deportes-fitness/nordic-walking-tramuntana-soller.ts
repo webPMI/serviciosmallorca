@@ -95,6 +95,32 @@ export const NORDIC_WALKING_TRAMUNTANA_SOLLER: ServiceItem = {
       "Individuelle sportliche Beratung",
     ],
   },
-  createdAt: "2026-08-30",
+    specialties: {
+      "es": [
+          "Rutas guiadas de Nordic Walking por la Serra de Tramuntana con guías locales certificados",
+          "Enseñanza de la técnica original con bastones adaptados a cada fisonomía",
+          "Itinerarios variados por olivares centenarios, costa escarpada y valles de naranjos",
+          "Actividades saludables al aire libre orientadas a la movilidad articular y cardiovascular"
+      ],
+      "en": [
+          "Guided Nordic Walking excursions across the Tramuntana range with certified local guides",
+          "Instruction in proper pole technique tailored to individual physiology and stride",
+          "Diverse routes through ancient olive groves, rugged coastlines, and orange valleys",
+          "Health-focused outdoor fitness improving joint mobility, posture, and stamina"
+      ],
+      "ca": [
+          "Rutes guiades de marxa nòrdica per la Serra de Tramuntana amb guies locals titulats",
+          "Ensenyament de la tècnica correcta amb bastons adaptats a cada persona",
+          "Itineraris variats per oliverars mil·lenaris, costa verge i la vall de Sóller",
+          "Activitat esportiva saludable que millora la mobilitat articular i la resistència"
+      ],
+      "de": [
+          "Geführte Nordic-Walking-Touren durch die Serra de Tramuntana mit lizenzierten Guides",
+          "Schulung der biomechanisch korrekten Stocktechnik abgestimmt auf jeden Teilnehmer",
+          "Abwechslungsreiche Routen durch jahrhundertealte Olivenhaine, Küstenpfade und Täler",
+          "Gelenkschonendes Ganzkörpertraining an der frischen Bergluft zur Förderung der Ausdauer"
+      ]
+  },
+createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",
 };

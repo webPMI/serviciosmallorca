@@ -170,6 +170,7 @@ async function main() {
   await verifyLiveHealth("https://serviciosmallorca.com/en/", "EN Portal (English)");
   await verifyLiveHealth("https://serviciosmallorca.com/ca/", "CA Portal (Català)");
   await verifyLiveHealth("https://serviciosmallorca.com/de/", "DE Portal (Deutsch)");
+  await verifyLiveHealth("https://serviciosmallorca.com/es/deporte", "Sports Hub & Interactive Explorer");
   await verifyLiveHealth("https://serviciosmallorca.com/llms.txt", "LLMs Discovery Index");
 
   console.log(`\n${BOLD}${GREEN}=====================================================${RESET}`);

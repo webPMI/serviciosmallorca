@@ -95,6 +95,32 @@ export const GOLF_SON_GUAL_PALMA: ServiceItem = {
       "Individuelle sportliche Beratung",
     ],
   },
-  createdAt: "2026-08-30",
+    specialties: {
+      "es": [
+          "Recorrido reglamentario de 18 hoyos par 72 con vistas panorámicas",
+          "Zona de prácticas, putting green y driving range con tecnología TrackMan",
+          "Casa Club con pro-shop de primeras marcas y restaurante gastronómico",
+          "Clases de golf individuales y clinics impartidos por profesionales PGA"
+      ],
+      "en": [
+          "Championship 18-hole par 72 golf course with panoramic Mediterranean views",
+          "Practice academy with driving range, putting greens & TrackMan analysis",
+          "Clubhouse featuring pro shop apparel and scenic terrace dining",
+          "Private lessons and intensive clinics by certified PGA professionals"
+      ],
+      "ca": [
+          "Recorregut de 18 forats par 72 amb vistes panoràmiques a la natura mallorquina",
+          "Zona de pràctiques, putting green i acadèmia de golf professional",
+          "Casa Club amb botiga especialitzada i restaurant d'alta gastronomia",
+          "Classes particulars i clínics amb instructors titulats PGA"
+      ],
+      "de": [
+          "18-Loch Meisterschaftsplatz Par 72 mit spektakulärer mallorquinischer Kulisse",
+          "Übungsanlage mit Driving Range, Putting Green und TrackMan-Technologie",
+          "Clubhaus mit erstklassigem Pro-Shop und gehobenem Club-Restaurant",
+          "Einzeltraining und Intensivkurse durch PGA-zertifizierte Golf-Professionals"
+      ]
+  },
+createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",
 };

@@ -32,7 +32,7 @@ export const basic_fit_palma_avenidas_gimnasio: ServiceItem = {
   website: "https://www.basic-fit.com/es-es/gimnasios/palma-avenidas",
   schedule: "Lunes a Viernes: 06:00 - 22:30; Sábado y Domingo: 09:00 - 19:00",
   image: "/images/services/basic-fit-palma-avenidas-gimnasio.jpg",
-  gallery: ["/images/services/basic-fit-palma-avenidas-gimnasio.jpg"],
+  gallery: ["/images/services/basic-fit-palma-avenidas-gimnasio.jpg", "/images/categories/deportes.jpg"],
   shortDescription: {
     es: "Gimnasio amplio y moderno en las Avenidas de Palma: maquinaria Matrix de última generación, zona de peso libre, cardio y clases virtuales con horarios extendidos.",
     en: "Spacious modern gym on Palma's Avenidas: Matrix cardio and strength machines, extensive free weights area, and virtual fitness classes with long opening hours.",
@@ -97,6 +97,32 @@ export const basic_fit_palma_avenidas_gimnasio: ServiceItem = {
       "Umkleideräume mit Einzelduschen und Spinden",
     ],
   },
-  createdAt: "2026-08-30",
+    specialties: {
+      "es": [
+          "WODs diarios escalables y guiados por entrenadores certificados CrossFit",
+          "Zona completa de halterofilia con barras olímpicas y discos de competición",
+          "Entrenamiento gimnástico, trepa de cuerda y máquinas de cardio Concept2",
+          "Open Box supervisado para programación individual y preparación atlética"
+      ],
+      "en": [
+          "Daily scalable WODs coached by certified CrossFit instructors",
+          "Full Olympic weightlifting platform with barbells and competition bumper plates",
+          "Gymnastics conditioning, rope climbs, and Concept2 cardio ergs",
+          "Supervised Open Box hours for self-paced training and athlete preparation"
+      ],
+      "ca": [
+          "WODs diaris adaptats i guiats per entrenadors certificats CrossFit",
+          "Zona d'halterofília olímpica amb material oficial de competició",
+          "Entrenament gimnàstic funcional, corda i ergòmetres d'alta intensitat",
+          "Open Box vigilat per a entrenament lliure i preparació física"
+      ],
+      "de": [
+          "Täglich skalierbare WODs unter Anleitung lizenzierter CrossFit-Trainer",
+          "Kompletter olympischer Gewichtheberbereich mit Wettkampf-Bumper-Plates",
+          "Gymnastics-Elemente, Kletterseile und Concept2 Ausdauergeräte",
+          "Betreutes Open Box für individuelles Training und Athleten-Aufbau"
+      ]
+  },
+createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",
 };

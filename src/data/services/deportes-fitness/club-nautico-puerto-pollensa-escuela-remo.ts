@@ -32,7 +32,7 @@ export const club_nautico_puerto_pollensa_escuela_remo: ServiceItem = {
   website: "https://cnportpollenca.com",
   schedule: "Diario: 08:00 - 21:00",
   image: "/images/services/club-nautico-puerto-pollensa-escuela-remo.jpg",
-  gallery: ["/images/services/club-nautico-puerto-pollensa-escuela-remo.jpg"],
+  gallery: ["/images/services/club-nautico-puerto-pollensa-escuela-remo.jpg", "/images/categories/deportes.jpg"],
   shortDescription: {
     es: "Club náutico histórico fundado en 1961 en la bahía de Pollença: escuela de remo olímpico y de mar, cursos de vela ligera, 400 amarres y restaurante panorámico.",
     en: "Historic nautical club founded in 1961 in Pollença Bay: coastal and Olympic rowing school, dinghy sailing academy, 400 berths, and oceanview restaurant.",
@@ -97,6 +97,32 @@ export const club_nautico_puerto_pollensa_escuela_remo: ServiceItem = {
       "Tages-, Monats- und Saisonliegeplätze für Mitglieder und Gastlieger",
     ],
   },
-  createdAt: "2026-08-30",
+    specialties: {
+      "es": [
+          "Cursos y bautismos con certificación oficial (PADI / SSI / RFEV) en aguas cristalinas",
+          "Inmersiones y travesías guiadas en reservas marinas protegidas de Mallorca",
+          "Material náutico y de buceo de alta gama revisado e higienizado tras cada salida",
+          "Embarcaciones de apoyo propias con patrones titulados y equipo de seguridad completo"
+      ],
+      "en": [
+          "Official certification courses and introductory try-dives (PADI / SSI / RFEV)",
+          "Guided dive excursions and boat routes along Mallorca's protected marine reserves",
+          "High-end water sports and scuba gear rigorously serviced and sanitized after each use",
+          "Dedicated support boats skippered by certified captains with comprehensive safety gear"
+      ],
+      "ca": [
+          "Cursos i batejos amb acreditació oficial (PADI / SSI / RFEV) en aigües cristal·lines",
+          "Immersions i rutes guiades per les reserves marines protegides de Mallorca",
+          "Material nàutic d'alta gamma revisat periòdicament i homologat",
+          "Embarcacions pròpies amb patrons professionals i protocols de seguretat"
+      ],
+      "de": [
+          "Offizielle PADI / SSI / RFEV Tauch- und Wassersportkurse für alle Erfahrungsstufen",
+          "Geführte Tauch- und Bootstouren zu den schönsten Meeresschutzgebieten Mallorcas",
+          "Hochwertige Leihausrüstung, regelmäßig gewartet und nach jedem Einsatz desinfiziert",
+          "Eigene Tauch- und Begleitboote mit erfahrenen Skippern und vollständiger Rettungsausrüstung"
+      ]
+  },
+createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",
 };

@@ -29,7 +29,7 @@ export const GOLF_DE_ANDRATX_CAMP_DE_MAR: ServiceItem = {
   website: "https://golfdeandratx.com",
   schedule: "Lunes a Domingo: 08:00 - 22:00",
   image: "/images/services/golf-de-andratx-camp-de-mar.jpg",
-  gallery: ["/images/services/golf-de-andratx-camp-de-mar.jpg"],
+  gallery: ["/images/services/golf-de-andratx-camp-de-mar.jpg", "/images/categories/deportes.jpg"],
   googleMapsUrl: "https://www.google.com/maps?cid=12007007",
   shortDescription: {
     es: "Campo de 18 hoyos con el hoyo más largo de España ('Green Monster' de 609 metros).",
@@ -95,6 +95,32 @@ export const GOLF_DE_ANDRATX_CAMP_DE_MAR: ServiceItem = {
       "Individuelle sportliche Beratung",
     ],
   },
-  createdAt: "2026-08-30",
+    specialties: {
+      "es": [
+          "Recorrido reglamentario de 18 hoyos par 72 con vistas panorámicas",
+          "Zona de prácticas, putting green y driving range con tecnología TrackMan",
+          "Casa Club con pro-shop de primeras marcas y restaurante gastronómico",
+          "Clases de golf individuales y clinics impartidos por profesionales PGA"
+      ],
+      "en": [
+          "Championship 18-hole par 72 golf course with panoramic Mediterranean views",
+          "Practice academy with driving range, putting greens & TrackMan analysis",
+          "Clubhouse featuring pro shop apparel and scenic terrace dining",
+          "Private lessons and intensive clinics by certified PGA professionals"
+      ],
+      "ca": [
+          "Recorregut de 18 forats par 72 amb vistes panoràmiques a la natura mallorquina",
+          "Zona de pràctiques, putting green i acadèmia de golf professional",
+          "Casa Club amb botiga especialitzada i restaurant d'alta gastronomia",
+          "Classes particulars i clínics amb instructors titulats PGA"
+      ],
+      "de": [
+          "18-Loch Meisterschaftsplatz Par 72 mit spektakulärer mallorquinischer Kulisse",
+          "Übungsanlage mit Driving Range, Putting Green und TrackMan-Technologie",
+          "Clubhaus mit erstklassigem Pro-Shop und gehobenem Club-Restaurant",
+          "Einzeltraining und Intensivkurse durch PGA-zertifizierte Golf-Professionals"
+      ]
+  },
+createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",
 };

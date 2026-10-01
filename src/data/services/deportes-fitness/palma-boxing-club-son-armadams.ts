@@ -95,6 +95,32 @@ export const PALMA_BOXING_CLUB_SON_ARMADAMS: ServiceItem = {
       "Individuelle sportliche Beratung",
     ],
   },
-  createdAt: "2026-08-30",
+    specialties: {
+      "es": [
+          "Sesiones de fitboxing de alta intensidad combinando golpeo de saco y ejercicios de fuerza",
+          "Tecnología interactiva con sensores en sacos para medir pegada, ritmo y quema calórica",
+          "Entrenadores profesionales que supervisan la postura y técnica en cada round",
+          "Ambiente motivador con sesiones grupales y música diseñada para marcar el tempo"
+      ],
+      "en": [
+          "High-intensity fitboxing rounds combining heavy bag punching and functional strength",
+          "Punch-tracking sensor tech in bags tracking power, sync, and calories burned",
+          "Expert coaches closely monitoring form, footwork, and strike technique each round",
+          "Electric group atmosphere with synchronized playlists designed to keep the rhythm"
+      ],
+      "ca": [
+          "Sessions de fitboxing d'alta intensitat combinant sac de boxa i exercicis de força",
+          "Sensors tecnològics als sacs que mesuren la potència, el ritme i les calories cremades",
+          "Entrenadors que supervisen la postura correcta i la coordinació a cada assalt",
+          "Ambient motivador amb música rítmica i classes dirigides dinàmiques"
+      ],
+      "de": [
+          "Intensive Fitboxing-Einheiten am Boxsack kombiniert mit funktionellem Krafttraining",
+          "Sensor-Technologie in den Boxsäcken zur exakten Messung von Treffern, Kraft und Kalorien",
+          "Erfahrene Trainer für kontinuierliche Haltungskontrolle und saubere Schlagtechnik",
+          "Mitreißende Trainingsatmosphäre mit treibender Musik für den optimalen Rhythmus"
+      ]
+  },
+createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",
 };

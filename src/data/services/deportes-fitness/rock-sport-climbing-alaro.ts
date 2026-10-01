@@ -95,6 +95,32 @@ export const ROCK_SPORT_CLIMBING_ALARO: ServiceItem = {
       "Individuelle sportliche Beratung",
     ],
   },
-  createdAt: "2026-08-30",
+    specialties: {
+      "es": [
+          "Muros de búlder indoor con desplomes, placas técnicas y colchonetas de alta absorción",
+          "Rutas y problemas renovados periódicamente por route setters federados",
+          "Campus board, MoonBoard y zona de entrenamiento funcional para escaladores",
+          "Bautismos de escalada, cursos de progresión y salidas guiadas a roca natural"
+      ],
+      "en": [
+          "Indoor bouldering walls featuring overhangs, technical slabs & high-impact crash mats",
+          "Problems frequently reset across all difficulty levels by certified route setters",
+          "Campus board, MoonBoard, and dedicated climber-specific strength conditioning",
+          "Introductory climbing clinics, progression courses & guided outdoor crag trips"
+      ],
+      "ca": [
+          "Murs de bloc indoor amb desploms, plaques tècniques i matalassos de seguretat",
+          "Blocs renovats assíduament per equips de route setting especialitzats",
+          "Campus board, MoonBoard i zona d'entrenament de força per a escaladors",
+          "Batejos d'escalada, cursos de seguretat i excursions guiades a roca natural"
+      ],
+      "de": [
+          "Indoor-Boulderwände mit Überhängen, Slopers und dicken Sicherheits-Fallschutzmatten",
+          "Regelmäßig neu geschraubte Boulder-Probleme in allen Schwierigkeitsgraden",
+          "Campusboard, MoonBoard und kletterspezifischer Athletik- und Fingerkraftbereich",
+          "Schnupperklettern, Technikkurse und geführte Kletterausflüge an Mallorcas Naturfelsen"
+      ]
+  },
+createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",
 };

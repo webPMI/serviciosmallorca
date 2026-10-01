@@ -32,7 +32,7 @@ export const gimnasio_fitness_illes_marratxi_centro_deportivo: ServiceItem = {
   website: "https://illesfitness.es",
   schedule: "Lunes a Viernes: 06:30 - 22:30; Sábado y Domingo: 08:30 - 20:00",
   image: "/images/services/gimnasio-fitness-illes-marratxi-centro-deportivo.jpg",
-  gallery: ["/images/services/gimnasio-fitness-illes-marratxi-centro-deportivo.jpg"],
+  gallery: ["/images/services/gimnasio-fitness-illes-marratxi-centro-deportivo.jpg", "/images/categories/deportes.jpg"],
   shortDescription: {
     es: "Centro deportivo y club de fitness integral en Marratxí: sala musculación de 1.500 m², piscina climatizada de 25m, spa, padel y más de 100 clases dirigidas semanales.",
     en: "Comprehensive sports and fitness club in Marratxí: 1,500 m² gym floor, 25m heated pool, spa, padel courts, and 100+ weekly group fitness classes.",
@@ -97,6 +97,32 @@ export const gimnasio_fitness_illes_marratxi_centro_deportivo: ServiceItem = {
       "Überdachte Glas-Padel-Feld-Miete mit App-Buchung",
     ],
   },
-  createdAt: "2026-08-30",
+    specialties: {
+      "es": [
+          "WODs diarios escalables y guiados por entrenadores certificados CrossFit",
+          "Zona completa de halterofilia con barras olímpicas y discos de competición",
+          "Entrenamiento gimnástico, trepa de cuerda y máquinas de cardio Concept2",
+          "Open Box supervisado para programación individual y preparación atlética"
+      ],
+      "en": [
+          "Daily scalable WODs coached by certified CrossFit instructors",
+          "Full Olympic weightlifting platform with barbells and competition bumper plates",
+          "Gymnastics conditioning, rope climbs, and Concept2 cardio ergs",
+          "Supervised Open Box hours for self-paced training and athlete preparation"
+      ],
+      "ca": [
+          "WODs diaris adaptats i guiats per entrenadors certificats CrossFit",
+          "Zona d'halterofília olímpica amb material oficial de competició",
+          "Entrenament gimnàstic funcional, corda i ergòmetres d'alta intensitat",
+          "Open Box vigilat per a entrenament lliure i preparació física"
+      ],
+      "de": [
+          "Täglich skalierbare WODs unter Anleitung lizenzierter CrossFit-Trainer",
+          "Kompletter olympischer Gewichtheberbereich mit Wettkampf-Bumper-Plates",
+          "Gymnastics-Elemente, Kletterseile und Concept2 Ausdauergeräte",
+          "Betreutes Open Box für individuelles Training und Athleten-Aufbau"
+      ]
+  },
+createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",
 };

@@ -32,7 +32,7 @@ export const club_natacio_palma_instalaciones_deportivas: ServiceItem = {
   website: "https://www.cnpalma.es",
   schedule: "Lunes a Viernes: 06:30 - 22:30; Sábado: 08:00 - 20:00; Domingo: 08:00 - 14:00",
   image: "/images/services/club-natacio-palma-instalaciones-deportivas.jpg",
-  gallery: ["/images/services/club-natacio-palma-instalaciones-deportivas.jpg"],
+  gallery: ["/images/services/club-natacio-palma-instalaciones-deportivas.jpg", "/images/categories/deportes.jpg"],
   shortDescription: {
     es: "Club de natación histórico y centro acuático de alto rendimiento en Palma: piscinas climatizadas de 50 y 25 metros, escuela infantil, natación máster y fitness acuático.",
     en: "Historic swimming club and high-performance aquatic sports centre in Palma: 50m and 25m heated pools, swim school, master swimming, and water fitness.",
@@ -97,6 +97,32 @@ export const club_natacio_palma_instalaciones_deportivas: ServiceItem = {
       "Aquafitness- und Wassergymnastikkurse",
     ],
   },
-  createdAt: "2026-08-30",
+    specialties: {
+      "es": [
+          "Vasos de natación olímpicos homologados con carriles segregados por velocidad de nado",
+          "Agua tratada con sistemas avanzados de filtrado y control permanente de temperatura",
+          "Cursos de natación para adultos, perfeccionamiento técnico de estilos y natación infantil",
+          "Zona complementaria de spa, hidromasaje y vestuarios climatizados"
+      ],
+      "en": [
+          "Olympic competition swimming pools with lap lanes organized by swimming speed",
+          "Advanced water filtration and continuous digital water temperature monitoring",
+          "Swimming courses for adults, stroke refinement clinics, and youth swim school",
+          "Complementary spa amenities, hydrotherapy jets, and heated modern locker rooms"
+      ],
+      "ca": [
+          "Piscines olímpiques homologades amb carrers distribuïts per ritme de nedada",
+          "Aigua tractada amb filtratge avançat i temperatura controlada contínuament",
+          "Cursets de natació per a adults, perfeccionament d'estils i escola esportiva infantil",
+          "Zona complementària de spa, hidromassatge i vestidors moderns"
+      ],
+      "de": [
+          "Wettkampfgerechte Sport- und 50m-Olympia-Becken mit nach Tempo geteilten Schwimmbahnen",
+          "Modernste Wasseraufbereitung mit permanenter digitaler Temperaturüberwachung",
+          "Schwimmkurse für Erwachsene, Kraul-Techniktraining und Kinder-Schwimmschule",
+          "Ergänzender Erholungsbereich mit Whirlpool, Sauna und gepflegten Umkleiden"
+      ]
+  },
+createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",
 };

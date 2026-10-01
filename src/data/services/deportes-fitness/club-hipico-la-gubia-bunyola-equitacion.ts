@@ -32,7 +32,7 @@ export const club_hipico_la_gubia_bunyola_equitacion: ServiceItem = {
   website: "https://hipicalagubia.com",
   schedule: "Martes a Domingo: 08:30 - 20:30, Lunes cerrado",
   image: "/images/services/club-hipico-la-gubia-bunyola-equitacion.jpg",
-  gallery: ["/images/services/club-hipico-la-gubia-bunyola-equitacion.jpg"],
+  gallery: ["/images/services/club-hipico-la-gubia-bunyola-equitacion.jpg", "/images/categories/deportes.jpg"],
   shortDescription: {
     es: "Centro ecuestre de referencia en Mallorca a los pies de la Serra de Tramuntana: clases de salto, doma clásica, poni club para niños y pupilaje de primer nivel.",
     en: "Premier equestrian center in Mallorca at the foothills of the Tramuntana mountains: show jumping, dressage, children's pony club, and luxury horse livery.",
@@ -97,6 +97,32 @@ export const club_hipico_la_gubia_bunyola_equitacion: ServiceItem = {
       "Geführte Ausritte durch die mediterrane Berglandschaft von Bunyola",
     ],
   },
-  createdAt: "2026-08-30",
+    specialties: {
+      "es": [
+          "Pistas de doma y salto con suelo geotextil profesional de alta amortiguación",
+          "Pupilaje completo en boxes espaciosos, ventilados y con salida a paddocks",
+          "Clases de equitación para niños y adultos con caballos y ponis nobles de escuela",
+          "Rutas a caballo guiadas por el entorno natural de la Serra de Tramuntana"
+      ],
+      "en": [
+          "Dressage and jumping arenas with cushioned professional geotextile footing",
+          "Full livery boarding in well-ventilated boxes with direct paddock access",
+          "Riding instruction for children and adults with gentle, well-schooled horses & ponies",
+          "Guided scenic horseback trail rides through the Serra de Tramuntana landscapes"
+      ],
+      "ca": [
+          "Pistes de doma clàssica i salt d'obstacles amb terra geotèxtil professional",
+          "Pupil·latge en boxes amplis amb ventilació i sortida a paddocks de descans",
+          "Classes d'equitació per a totes les edats amb cavalls i ponis d'escola dòcils",
+          "Rutes guiades a cavall pel paisatge natural de la Serra de Tramuntana"
+      ],
+      "de": [
+          "Dressur- und Springplätze mit gelenkschonendem professionellem Geotextil-Sand",
+          "Pferdepension mit Vollpension in hellen, gut belüfteten Boxen mit Paddock-Zugang",
+          "Reitunterricht für Kinder und Erwachsene auf ausgeglichenen Schulpferden und Ponys",
+          "Geführte Ausritte durch die malerische Naturkulisse der Tramuntana-Ausläufer"
+      ]
+  },
+createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",
 };

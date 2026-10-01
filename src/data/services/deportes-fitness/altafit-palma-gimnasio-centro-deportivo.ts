@@ -32,7 +32,7 @@ export const altafit_palma_gimnasio_centro_deportivo: ServiceItem = {
   website: "https://altafitgymclub.com/gimnasios/mallorca-palma/",
   schedule: "Lunes a Viernes: 07:00 - 22:30; Sábado: 09:00 - 19:30; Domingo: 09:00 - 14:30",
   image: "/images/services/altafit-palma-gimnasio-centro-deportivo.jpg",
-  gallery: ["/images/services/altafit-palma-gimnasio-centro-deportivo.jpg"],
+  gallery: ["/images/services/altafit-palma-gimnasio-centro-deportivo.jpg", "/images/categories/deportes.jpg"],
   shortDescription: {
     es: "Club deportivo y gimnasio de alta calidad en Palma: más de 2.000 m² con maquinaria de última generación, amplia sala de peso libre y más de 50 clases dirigidas semanales.",
     en: "High-quality fitness and health club in Palma: over 2,000 m² featuring advanced gym machinery, spacious free weights, and 50+ weekly instructor-led group classes.",
@@ -97,6 +97,32 @@ export const altafit_palma_gimnasio_centro_deportivo: ServiceItem = {
       "App-Zugang und Nutzung aller AltaFit-Clubs in ganz Spanien",
     ],
   },
-  createdAt: "2026-08-30",
+    specialties: {
+      "es": [
+          "WODs diarios escalables y guiados por entrenadores certificados CrossFit",
+          "Zona completa de halterofilia con barras olímpicas y discos de competición",
+          "Entrenamiento gimnástico, trepa de cuerda y máquinas de cardio Concept2",
+          "Open Box supervisado para programación individual y preparación atlética"
+      ],
+      "en": [
+          "Daily scalable WODs coached by certified CrossFit instructors",
+          "Full Olympic weightlifting platform with barbells and competition bumper plates",
+          "Gymnastics conditioning, rope climbs, and Concept2 cardio ergs",
+          "Supervised Open Box hours for self-paced training and athlete preparation"
+      ],
+      "ca": [
+          "WODs diaris adaptats i guiats per entrenadors certificats CrossFit",
+          "Zona d'halterofília olímpica amb material oficial de competició",
+          "Entrenament gimnàstic funcional, corda i ergòmetres d'alta intensitat",
+          "Open Box vigilat per a entrenament lliure i preparació física"
+      ],
+      "de": [
+          "Täglich skalierbare WODs unter Anleitung lizenzierter CrossFit-Trainer",
+          "Kompletter olympischer Gewichtheberbereich mit Wettkampf-Bumper-Plates",
+          "Gymnastics-Elemente, Kletterseile und Concept2 Ausdauergeräte",
+          "Betreutes Open Box für individuelles Training und Athleten-Aufbau"
+      ]
+  },
+createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",
 };

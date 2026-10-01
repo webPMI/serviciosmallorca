@@ -95,6 +95,32 @@ export const B_FIT_MALLORCA_PALMANOVA: ServiceItem = {
       "Individuelle sportliche Beratung",
     ],
   },
-  createdAt: "2026-08-30",
+    specialties: {
+      "es": [
+          "Sala de peso libre completa con mancuernas de alto gramaje, bancos y barras olímpicas",
+          "Maquinaria de musculación selectorizada y guiada de última tecnología biomecánica",
+          "Zona cardiovascular moderna con cintas de correr, elípticas y pantallas multimedia",
+          "Parrilla completa de clases dirigidas semanales y opción de entrenamiento personal"
+      ],
+      "en": [
+          "Extensive free-weight training floor with heavy dumbbells, benches, and Olympic bars",
+          "Selectorized resistance machines designed with state-of-the-art biomechanics",
+          "Modern cardiovascular deck equipped with high-performance treadmills & ellipticals",
+          "Comprehensive weekly instructor-led classes schedule and certified personal coaching"
+      ],
+      "ca": [
+          "Zona de pes lliure completa amb manuelles pesades, bancs i barres olímpiques",
+          "Maquinària de musculació d'última generació amb disseny biomecànic avançat",
+          "Zona de càrdio moderna amb cintes de córrer, el·líptiques i pantalles multimèdia",
+          "Parrilla de classes dirigides setmanals i opció d'entrenador personal"
+      ],
+      "de": [
+          "Großer Freihantelbereich mit schweren Kurzhanteln, Flachbänken und olympischen Stangen",
+          "Hochwertige Kraftgeräte mit ergonomischer Biomechanik für gezielten Muskelaufbau",
+          "Moderner Cardio-Bereich mit Laufbändern, Crosstrainern und vernetzten Konsolen",
+          "Umfangreicher wöchentlicher Gruppenkursplan sowie qualifiziertes Personal Training"
+      ]
+  },
+createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",
 };

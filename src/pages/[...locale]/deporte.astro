@@ -3,8 +3,10 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import Navbar from "../../components/Navbar.astro";
 import Footer from "../../components/Footer.astro";
 import SportsExplorer from "../../components/SportsExplorer.astro";
+import ServiceCard from "../../components/ServiceCard.astro";
 import { getLocaleFromUrl, loadTranslations, getLangPrefix, type Locale, LOCALES } from "../../i18n";
 import { SPORTS_FACILITIES } from "../../data/sports/facilities";
+import { DEPORTES_SERVICES } from "../../data/services/deportes-fitness";
 
 export function getStaticPaths() {
   return LOCALES.map((locale) => ({ params: { locale } }));
@@ -29,6 +31,42 @@ const pageDescriptions: Record<Locale, string> = {
   ca: "Guia interactiva de pistes de pàdel, parcs de cal·listènia, circuits de running i centres esportius a Mallorca amb filtres d'ombra i aigua.",
   de: "Interaktiver Guide für Padel-Plätze, Calisthenics-Parks, Laufstrecken und Sportzentren auf Mallorca mit Schatten-, Wasserfiltern und Karten.",
 };
+
+const showcaseTitles: Record<Locale, string> = {
+  es: "Clubs y Centros Deportivos Auditados",
+  en: "Audited Sports Clubs & Training Centers",
+  ca: "Clubs i Centres Esportius Auditats",
+  de: "Geprüfte Sport- & Trainingsclubs",
+};
+
+const showcaseSubtitles: Record<Locale, string> = {
+  es: "Instalaciones de alto rendimiento, academias de tenis, campos de golf, boxes de CrossFit y estudios con auditoría de calidad y estándares contrastados.",
+  en: "High-performance training facilities, tennis academies, championship golf courses, CrossFit boxes, and fitness studios verified by our editorial team.",
+  ca: "Instal·lacions privades d'alt rendiment, acadèmies de tennis, camps de golf, boxes de CrossFit i estudis amb auditoria de qualitat i estàndards contrastats.",
+  de: "Erstklassige private Trainingszentren, Tennisakademien, Meisterschafts-Golfplätze, CrossFit-Boxen und Fitness-Studios mit Qualitätsprüfung.",
+};
+
+const showcaseCtaLabels: Record<Locale, string> = {
+  es: "Ver todos los centros deportivos en Mallorca (115)",
+  en: "Explore all 115 sports clubs in Mallorca",
+  ca: "Veure tots els centres esportius a Mallorca (115)",
+  de: "Alle 115 Sportzentren auf Mallorca ansehen",
+};
+
+const FLAGSHIP_SPORTS_IDS = [
+  "rafa-nadal-academy-manacor",
+  "pins-padel-club-palma",
+  "mallorca-country-club-santa-ponsa",
+  "arabella-golf-mallorca-son-vida-son-muntaner",
+  "b-fit-mallorca-palmanova",
+  "huerzeler-bicycle-holidays-playa-muro",
+  "freeform-boulder-gym-palma-centro",
+  "centro-buceo-padi-dive-mallorca-port-andratx",
+];
+
+const showcaseServices = FLAGSHIP_SPORTS_IDS
+  .map((id) => DEPORTES_SERVICES.find((s) => s.id === id || s.slug === id))
+  .filter((s): s is NonNullable<typeof s> => Boolean(s));
 
 const sportsJsonLd = {
   "@context": "https://schema.org",
@@ -85,6 +123,39 @@ const sportsJsonLd = {
 
     <!-- Sports Explorer Interactive Component -->
     <SportsExplorer currentLocale={locale} translations={translations} />
+
+    <!-- Commercial Sports Clubs & Studios Showcase -->
+    <section class="sports-showcase-section" aria-labelledby="sports-showcase-title">
+      <div class="showcase-header">
+        <div class="showcase-badge">
+          <span class="badge-icon">🏅</span>
+          <span>{locale === "de" ? "Qualitätsgeprüft" : locale === "en" ? "Audited & Verified" : locale === "ca" ? "Auditat i Verificat" : "Auditado y Verificado"}</span>
+        </div>
+        <h2 id="sports-showcase-title" class="showcase-title">{showcaseTitles[locale]}</h2>
+        <p class="showcase-subtitle">{showcaseSubtitles[locale]}</p>
+      </div>
+
+      <div class="showcase-grid">
+        {showcaseServices.map((service) => (
+          <ServiceCard
+            service={service}
+            currentLocale={locale}
+            getLangPrefix={getLangPrefix}
+            translations={translations}
+          />
+        ))}
+      </div>
+
+      <div class="showcase-cta-container">
+        <a href={`${prefix}servicios?categoria=deportes-fitness`} class="btn btn-primary showcase-cta-btn">
+          <span>{showcaseCtaLabels[locale]}</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </div>
+    </section>
   </main>
 
   <Footer translations={translations} currentLocale={locale} getLangPrefix={getLangPrefix} />
@@ -108,5 +179,92 @@ const sportsJsonLd = {
   .active-crumb {
     color: var(--color-text);
     font-weight: 600;
+  }
+
+  /* Sports Showcase Section */
+  .sports-showcase-section {
+    margin-top: var(--space-2xl);
+    padding-top: var(--space-2xl);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .showcase-header {
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto var(--space-xl);
+  }
+
+  .showcase-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-primary);
+    background: var(--color-primary-light, rgba(230, 81, 0, 0.08));
+    padding: var(--space-2xs) var(--space-sm);
+    border-radius: var(--radius-full, 9999px);
+    margin-bottom: var(--space-sm);
+  }
+
+  .showcase-title {
+    font-size: clamp(var(--font-size-xl), 3vw, var(--font-size-2xl));
+    font-weight: 800;
+    color: var(--color-text);
+    margin: 0 0 var(--space-xs);
+    letter-spacing: -0.02em;
+  }
+
+  .showcase-subtitle {
+    font-size: var(--font-size-base);
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .showcase-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--space-lg);
+    margin-bottom: var(--space-xl);
+  }
+
+  .showcase-cta-container {
+    display: flex;
+    justify-content: center;
+    margin-top: var(--space-xl);
+  }
+
+  .showcase-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-md) var(--space-xl);
+    font-size: var(--font-size-base);
+    font-weight: 700;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    text-decoration: none;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  }
+
+  .showcase-cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  @media (max-width: 640px) {
+    .showcase-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-md);
+    }
+
+    .showcase-cta-btn {
+      width: 100%;
+      justify-content: center;
+      text-align: center;
+    }
   }
 </style>

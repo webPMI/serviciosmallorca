@@ -32,7 +32,7 @@ export const golf_son_muntaner_palma_arabella_hotel: ServiceItem = {
   website: "https://arabellasoncampos.com/golf/son-muntaner",
   schedule: "Diario: 07:30 - Sunset (todo el año)",
   image: "/images/services/golf-son-muntaner-palma-arabella-hotel.jpg",
-  gallery: ["/images/services/golf-son-muntaner-palma-arabella-hotel.jpg"],
+  gallery: ["/images/services/golf-son-muntaner-palma-arabella-hotel.jpg", "/images/categories/deportes.jpg"],
   shortDescription: {
     es: "Campo de golf par 72 de 18 hoyos en la exclusiva urbanización Son Vida de Palma: diseño de Folco Nardi con vistas a la bahía, academia de golf con pros certificados PGA y putting green.",
     en: "Par-72 18-hole golf course in Palma's exclusive Son Vida estate: Folco Nardi design with bay views, PGA-certified academy, and pro-quality putting green.",
@@ -97,6 +97,32 @@ export const golf_son_muntaner_palma_arabella_hotel: ServiceItem = {
       "Mehr-Runden-Voucher und Jahresmitgliedschaften für Residenten",
     ],
   },
-  createdAt: "2026-08-30",
+    specialties: {
+      "es": [
+          "Recorrido reglamentario de 18 hoyos par 72 con vistas panorámicas",
+          "Zona de prácticas, putting green y driving range con tecnología TrackMan",
+          "Casa Club con pro-shop de primeras marcas y restaurante gastronómico",
+          "Clases de golf individuales y clinics impartidos por profesionales PGA"
+      ],
+      "en": [
+          "Championship 18-hole par 72 golf course with panoramic Mediterranean views",
+          "Practice academy with driving range, putting greens & TrackMan analysis",
+          "Clubhouse featuring pro shop apparel and scenic terrace dining",
+          "Private lessons and intensive clinics by certified PGA professionals"
+      ],
+      "ca": [
+          "Recorregut de 18 forats par 72 amb vistes panoràmiques a la natura mallorquina",
+          "Zona de pràctiques, putting green i acadèmia de golf professional",
+          "Casa Club amb botiga especialitzada i restaurant d'alta gastronomia",
+          "Classes particulars i clínics amb instructors titulats PGA"
+      ],
+      "de": [
+          "18-Loch Meisterschaftsplatz Par 72 mit spektakulärer mallorquinischer Kulisse",
+          "Übungsanlage mit Driving Range, Putting Green und TrackMan-Technologie",
+          "Clubhaus mit erstklassigem Pro-Shop und gehobenem Club-Restaurant",
+          "Einzeltraining und Intensivkurse durch PGA-zertifizierte Golf-Professionals"
+      ]
+  },
+createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",
 };

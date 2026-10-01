@@ -95,6 +95,32 @@ export const CLUB_TENIS_PORRERES: ServiceItem = {
       "Individuelle sportliche Beratung",
     ],
   },
-  createdAt: "2026-08-30",
+    specialties: {
+      "es": [
+          "Pistas panorámicas de pádel de última generación con césped de alta competición",
+          "Escuela de pádel para todos los niveles, desde iniciación hasta tecnificación",
+          "Torneos de fin de semana, ligas regulares y partidas organizadas por nivel",
+          "Alquiler de pistas con iluminación LED y reserva ágil online"
+      ],
+      "en": [
+          "Panoramic next-generation padel courts with competition-grade turf",
+          "Padel academy for all player levels, from beginner fundamentals to advanced drills",
+          "Weekend tournaments, regular leagues, and match-making by rating",
+          "Court hire with high-efficiency LED floodlights and fast online booking"
+      ],
+      "ca": [
+          "Pistes panoràmiques de pàdel de darrera generació amb gespa d'alta competició",
+          "Escola de pàdel per a tots els nivells, des d'iniciació fins a tecnificació",
+          "Tornejos de cap de setmana, lligues regulars i partits anivellats",
+          "Lloguer de pistes amb il·luminació LED d'última tecnologia"
+      ],
+      "de": [
+          "Panorama-Padelplätze der neuesten Generation mit Wettkampf-Kunstrasen",
+          "Padelschule für alle Spielstärken, von Einsteigerkursen bis zur Turnierreife",
+          "Wochenendturniere, regelmäßige Ligen und spielstärkengerechte Spielpartnersuche",
+          "Flutlicht-Platzmiete mit moderner, schneller Online-Reservierung"
+      ]
+  },
+createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",
 };

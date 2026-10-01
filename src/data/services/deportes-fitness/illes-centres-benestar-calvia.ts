@@ -95,6 +95,32 @@ export const ILLES_CENTRES_BENESTAR_CALVIA: ServiceItem = {
       "Individuelle sportliche Beratung",
     ],
   },
-  createdAt: "2026-08-30",
+    specialties: {
+      "es": [
+          "Vasos de natación olímpicos homologados con carriles segregados por velocidad de nado",
+          "Agua tratada con sistemas avanzados de filtrado y control permanente de temperatura",
+          "Cursos de natación para adultos, perfeccionamiento técnico de estilos y natación infantil",
+          "Zona complementaria de spa, hidromasaje y vestuarios climatizados"
+      ],
+      "en": [
+          "Olympic competition swimming pools with lap lanes organized by swimming speed",
+          "Advanced water filtration and continuous digital water temperature monitoring",
+          "Swimming courses for adults, stroke refinement clinics, and youth swim school",
+          "Complementary spa amenities, hydrotherapy jets, and heated modern locker rooms"
+      ],
+      "ca": [
+          "Piscines olímpiques homologades amb carrers distribuïts per ritme de nedada",
+          "Aigua tractada amb filtratge avançat i temperatura controlada contínuament",
+          "Cursets de natació per a adults, perfeccionament d'estils i escola esportiva infantil",
+          "Zona complementària de spa, hidromassatge i vestidors moderns"
+      ],
+      "de": [
+          "Wettkampfgerechte Sport- und 50m-Olympia-Becken mit nach Tempo geteilten Schwimmbahnen",
+          "Modernste Wasseraufbereitung mit permanenter digitaler Temperaturüberwachung",
+          "Schwimmkurse für Erwachsene, Kraul-Techniktraining und Kinder-Schwimmschule",
+          "Ergänzender Erholungsbereich mit Whirlpool, Sauna und gepflegten Umkleiden"
+      ]
+  },
+createdAt: "2026-08-30",
   lastUpdatedAt: "2026-08-30",
 };
