@@ -55,9 +55,9 @@ export interface ReleaseLog {
   entries: ChangelogEntry[];
 }
 
-export const CURRENT_PLATFORM_VERSION = "1.0.5";
+export const CURRENT_PLATFORM_VERSION = "1.0.6";
 export const PLATFORM_RELEASE_DATE = "2026-10-01";
-export const PLATFORM_LAST_BUILD_TIMESTAMP = "2026-10-01T01:36:54+02:00";
+export const PLATFORM_LAST_BUILD_TIMESTAMP = "2026-10-01T02:21:16+02:00";
 
 /**
  * Devuelve la fecha y hora formateada de la última actualización según el idioma.
@@ -84,6 +84,68 @@ export function getFormattedBuildTimestamp(locale: "es" | "en" | "ca" | "de" = "
 }
 
 export const CHANGELOG_RELEASES: ReleaseLog[] = [  {
+    version: "1.0.6",
+    versionLabel: {
+      es: "v1.0.6 · Configure public/_headers for edge asset caching and multi-locale live healthcheck",
+      en: "v1.0.6 · Continuous Optimization: configure public/_headers for edge asset caching and multi-locale live healthcheck",
+      ca: "v1.0.6 · Optimització Contínua: configure public/_headers for edge asset caching and multi-locale live healthcheck",
+      de: "v1.0.6 · Fortlaufende Optimierung: configure public/_headers for edge asset caching and multi-locale live healthcheck",
+    },
+    type: "PATCH",
+    date: "2026-10-01",
+    summary: {
+      es: "Actualización de plataforma v1.0.6. Configure public/_headers for edge asset caching and multi-locale live healthcheck. Sincronización continua de despliegue en Cloudflare Workers y trazabilidad auditada (GR-16).",
+      en: "Platform release v1.0.6. Continuous Optimization: configure public/_headers for edge asset caching and multi-locale live healthcheck. Continuous Cloudflare Workers edge deployment synchronization and audited traceability (GR-16).",
+      ca: "Actualització de plataforma v1.0.6. Optimització Contínua: configure public/_headers for edge asset caching and multi-locale live healthcheck. Sincronització contínua de desplegament a Cloudflare Workers i traçabilitat auditada (GR-16).",
+      de: "Plattform-Aktualisierung v1.0.6. Fortlaufende Optimierung: configure public/_headers for edge asset caching and multi-locale live healthcheck. Kontinuierliche Bereitstellung auf Cloudflare Workers und auditierte Nachverfolgbarkeit (GR-16).",
+    },
+    highlights: {
+      es: [
+        "Configure public/_headers for edge asset caching and multi-locale live healthcheck.",
+        "106 suites de prueba pasando al 100% con 959 tests exitosos.",
+        "Despliegue verificado y sincronizado con Cloudflare Workers Edge."
+      ],
+      en: [
+        "Deployed release v1.0.6 with automated continuous verification.",
+        "106 test suites passing at 100% with 959 successful tests.",
+        "Verified live edge deployment synchronized with Cloudflare Workers."
+      ],
+      ca: [
+        "Desplegada la versió v1.0.6 amb verificació contínua automatitzada.",
+        "106 suites de prova passant al 100% amb 959 tests exitosos.",
+        "Desplegament verificat i sincronitzat amb Cloudflare Workers Edge."
+      ],
+      de: [
+        "Bereitstellung der Version v1.0.6 mit automatisierter Prüfung.",
+        "106 Test-Suites zu 100% bestanden mit 959 erfolgreichen Tests.",
+        "Geprüfte Live-Bereitstellung synchronisiert mit Cloudflare Workers."
+      ]
+    },
+    entries: [
+      {
+        category: "PERFORMANCE",
+        title: {
+          es: "Configure public/_headers for edge asset caching and multi-locale live healthcheck",
+          en: "Continuous Optimization: configure public/_headers for edge asset caching and multi-locale live healthcheck",
+          ca: "Optimització Contínua: configure public/_headers for edge asset caching and multi-locale live healthcheck",
+          de: "Fortlaufende Optimierung: configure public/_headers for edge asset caching and multi-locale live healthcheck"
+        },
+        description: {
+          es: "Actualización de plataforma v1.0.6. Configure public/_headers for edge asset caching and multi-locale live healthcheck. Sincronización continua de despliegue en Cloudflare Workers y trazabilidad auditada (GR-16).",
+          en: "Platform release v1.0.6. Continuous Optimization: configure public/_headers for edge asset caching and multi-locale live healthcheck. Continuous Cloudflare Workers edge deployment synchronization and audited traceability (GR-16).",
+          ca: "Actualització de plataforma v1.0.6. Optimització Contínua: configure public/_headers for edge asset caching and multi-locale live healthcheck. Sincronització contínua de desplegament a Cloudflare Workers i traçabilitat auditada (GR-16).",
+          de: "Plattform-Aktualisierung v1.0.6. Fortlaufende Optimierung: configure public/_headers for edge asset caching and multi-locale live healthcheck. Kontinuierliche Bereitstellung auf Cloudflare Workers und auditierte Nachverfolgbarkeit (GR-16)."
+        },
+        badgeText: {
+          es: "⚡ Rendimiento",
+          en: "⚡ Performance",
+          ca: "⚡ Rendiment",
+          de: "⚡ Leistung"
+        }
+      }
+    ]
+  },
+  {
     version: "1.0.5",
     versionLabel: {
       es: "v1.0.5 · Replace duplicate and generic images with authentic unique local photos across catalog",

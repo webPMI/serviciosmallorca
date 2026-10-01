@@ -138,4 +138,17 @@ describe("🛡️ Middleware: cabeceras de seguridad HTTP (GR-13 / SECURITY.md �
     expect(response.headers.get("x-frame-options")).toBe("SAMEORIGIN");
     expect(response.headers.get("strict-transport-security")).toContain("max-age=31536000");
   });
+
+  it("public/_headers existe y define reglas de caché para imágenes y tipografías (GR-10 / GR-15)", async () => {
+    const fs = await import("node:fs");
+    const path = await import("node:path");
+    const headersPath = path.resolve("public/_headers");
+    expect(fs.existsSync(headersPath)).toBe(true);
+
+    const content = fs.readFileSync(headersPath, "utf-8");
+    expect(content).toContain("/images/*");
+    expect(content).toContain("Cache-Control: public, max-age=604800, stale-while-revalidate=86400");
+    expect(content).toContain("/fonts/*");
+    expect(content).toContain("Cache-Control: public, max-age=31536000, immutable");
+  });
 });

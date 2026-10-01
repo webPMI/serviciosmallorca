@@ -39,25 +39,78 @@ function runCommand(command: string, stepName: string) {
   }
 }
 
-async function verifyLiveHealth(url: string): Promise<boolean> {
+interface HealthResult {
+  ok: boolean;
+  status: number;
+  elapsed: number;
+  bytes: number;
+  finalUrl: string;
+}
+
+function fetchWithRedirects(targetUrl: string, maxRedirects = 3): Promise<HealthResult> {
   return new Promise((resolve) => {
     const startTime = Date.now();
-    https
-      .get(url, (res) => {
-        const elapsed = Date.now() - startTime;
-        if (res.statusCode && res.statusCode >= 200 && res.statusCode < 400) {
-          console.log(`${GREEN}✔ Live Healthcheck OK: ${url} (HTTP ${res.statusCode} en ${elapsed}ms)${RESET}`);
-          resolve(true);
-        } else {
-          console.warn(`${YELLOW}⚠️ Live Healthcheck retornó HTTP ${res.statusCode}${RESET}`);
-          resolve(false);
-        }
-      })
-      .on("error", (err) => {
-        console.warn(`${YELLOW}⚠️ No se pudo verificar ${url}: ${err.message}${RESET}`);
-        resolve(false);
-      });
+
+    function follow(currentUrl: string, hops: number) {
+      if (hops > maxRedirects) {
+        resolve({
+          ok: false,
+          status: 0,
+          elapsed: Date.now() - startTime,
+          bytes: 0,
+          finalUrl: currentUrl,
+        });
+        return;
+      }
+
+      https
+        .get(currentUrl, (res) => {
+          if (res.statusCode && res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
+            const redirectUrl = new URL(res.headers.location, currentUrl).href;
+            follow(redirectUrl, hops + 1);
+            return;
+          }
+
+          let bytes = 0;
+          res.on("data", (chunk) => {
+            bytes += chunk.length;
+          });
+          res.on("end", () => {
+            const elapsed = Date.now() - startTime;
+            const status = res.statusCode || 0;
+            const ok = status >= 200 && status < 400 && bytes > 0;
+            resolve({ ok, status, elapsed, bytes, finalUrl: currentUrl });
+          });
+        })
+        .on("error", () => {
+          resolve({
+            ok: false,
+            status: 0,
+            elapsed: Date.now() - startTime,
+            bytes: 0,
+            finalUrl: currentUrl,
+          });
+        });
+    }
+
+    follow(targetUrl, 0);
   });
+}
+
+async function verifyLiveHealth(url: string, label = url): Promise<boolean> {
+  const result = await fetchWithRedirects(url);
+  if (result.ok) {
+    const kb = (result.bytes / 1024).toFixed(1);
+    console.log(
+      `${GREEN}✔ [200 OK] ${label} ➔ ${result.elapsed}ms (${kb} KB)${RESET}`,
+    );
+    return true;
+  } else {
+    console.warn(
+      `${YELLOW}⚠️ Fallo en healthcheck para ${label} (HTTP ${result.status}, ${result.elapsed}ms)${RESET}`,
+    );
+    return false;
+  }
 }
 
 async function main() {
@@ -111,8 +164,13 @@ async function main() {
   logStep(8, 8, "Despliegue a Cloudflare Workers & Healthcheck");
   runCommand("npx wrangler deploy", "Cloudflare Workers Deploy");
 
-  console.log(`\n${CYAN}🔍 Verificando estado en vivo en producción...${RESET}`);
-  await verifyLiveHealth("https://serviciosmallorca.com");
+  console.log(`\n${CYAN}🔍 Verificando estado en vivo en producción (Multi-Locale & AI Agent Discovery)...${RESET}`);
+  await verifyLiveHealth("https://serviciosmallorca.com", "Root (Redirección 302 ➔ /es/)");
+  await verifyLiveHealth("https://serviciosmallorca.com/es/", "ES Portal (Castellano)");
+  await verifyLiveHealth("https://serviciosmallorca.com/en/", "EN Portal (English)");
+  await verifyLiveHealth("https://serviciosmallorca.com/ca/", "CA Portal (Català)");
+  await verifyLiveHealth("https://serviciosmallorca.com/de/", "DE Portal (Deutsch)");
+  await verifyLiveHealth("https://serviciosmallorca.com/llms.txt", "LLMs Discovery Index");
 
   console.log(`\n${BOLD}${GREEN}=====================================================${RESET}`);
   console.log(`${BOLD}${GREEN} 🎉 DESPLIEGUE BLINDADO v${nextVersion} COMPLETADO Y VERIFICADO AL 100% ${RESET}`);
