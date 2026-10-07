@@ -20,7 +20,7 @@ export const fornFondoPalma: ServiceItem = {
   phone: "+34 971 71 16 34",
   whatsapp: "+34 971 71 16 34",
   email: "info@fornfondo.com",
-  website: "https://fornfondo.com",
+  website: "",
   coordinates: { lat: 39.5715, lng: 2.6488 },
   schedule: "Lunes a Sábado: 08:30 - 20:30 | Domingo: 09:00 - 14:00",
   lastVerifiedAt: "2026-08-25",

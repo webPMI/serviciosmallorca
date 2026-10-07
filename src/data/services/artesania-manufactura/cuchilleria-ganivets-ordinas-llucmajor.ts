@@ -29,7 +29,7 @@ export const cuchilleria_ganivets_ordinas_llucmajor: ServiceItem = {
   phone: "+34 971 66 04 12",
   whatsapp: "+34 971 66 04 12",
   email: "info@ganivetsordinas.com",
-  website: "https://ganivetsordinas.com",
+  website: "",
   schedule: "Lunes a Viernes: 09:00 - 13:30, 16:30 - 19:30",
   image: "/images/services/cuchilleria-ganivets-ordinas-llucmajor.jpg",
   gallery: ["/images/services/cuchilleria-ganivets-ordinas-llucmajor.jpg"],

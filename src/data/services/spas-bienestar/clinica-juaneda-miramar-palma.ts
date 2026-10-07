@@ -30,7 +30,6 @@ export const clinica_juaneda_miramar_palma: ServiceItem = {
   schedule: "Lunes a Domingo: 08:00 - 20:00",
   image: "/images/spas/clinica-juaneda-miramar-palma.jpg",
   gallery: ["/images/spas/clinica-juaneda-miramar-palma.jpg", "/images/categories/salud.jpg"],
-  googleMapsUrl: "https://www.google.com/maps?cid=13008002",
   shortDescription: {
     es: "Complejo hospitalario privado con amplias instalaciones, área quirúrgica puntera y centro de reproducción asistida.",
     en: "Private hospital complex with state-of-the-art surgical suites and fertility reproduction center.",

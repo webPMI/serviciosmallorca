@@ -29,7 +29,7 @@ export const proa_premium_bmw_mini_palma_concesionario: ServiceItem = {
   phone: "+34 971 432 400",
   whatsapp: "+34 971 432 400",
   email: "info@proapremium.bmw.es",
-  website: "https://proapremium.bmw.es",
+  website: "https://www.bmw.es",
   schedule: "Lunes a Viernes: 08:30 - 20:00, Sábado: 10:00 - 13:30",
   image: "/images/services/proa-premium-bmw-mini-palma-concesionario.jpg",
   gallery: ["/images/services/proa-premium-bmw-mini-palma-concesionario.jpg"],

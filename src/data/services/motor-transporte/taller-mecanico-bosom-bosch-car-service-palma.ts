@@ -29,7 +29,7 @@ export const taller_mecanico_bosom_bosch_car_service_palma: ServiceItem = {
   phone: "+34 971 431 220",
   whatsapp: "+34 971 431 220",
   email: "info@tallerbosomboschpalma.com",
-  website: "https://tallerbosomboschpalma.com",
+  website: "",
   schedule: "Lunes a Viernes: 08:00 - 18:00",
   image: "/images/services/taller-mecanico-bosom-bosch-car-service-palma.jpg",
   gallery: ["/images/services/taller-mecanico-bosom-bosch-car-service-palma.jpg"],

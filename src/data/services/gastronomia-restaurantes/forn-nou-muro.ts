@@ -20,7 +20,7 @@ export const fornNouMuro: ServiceItem = {
   phone: "+34 971 53 71 20",
   whatsapp: "+34 971 53 71 20",
   email: "info@fornnoumuro.com",
-  website: "https://fornnoumuro.com",
+  website: "",
   coordinates: { lat: 39.736, lng: 3.056 },
   schedule: "Lunes a Domingo: 07:00 - 14:00 | 17:00 - 20:30 (Abierto todos los días)",
   lastVerifiedAt: "2026-08-25",

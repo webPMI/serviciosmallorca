@@ -29,7 +29,7 @@ export const clinica_veterinaria_algaida_raiguer_pla: ServiceItem = {
   phone: "+34 971 66 58 40",
   whatsapp: "+34 971 66 58 40",
   email: "info@veterinariaalgaida.com",
-  website: "https://veterinariaalgaida.com",
+  website: "",
   schedule: "Lunes a Viernes: 09:30 - 13:30, 16:30 - 19:30, Sábados: 10:00 - 13:00",
   image: "/images/services/clinica-veterinaria-algaida-raiguer-pla.jpg",
   gallery: ["/images/services/clinica-veterinaria-algaida-raiguer-pla.jpg"],

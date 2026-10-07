@@ -35,7 +35,7 @@ export const guarderiaBilingueSantaCatalina: ServiceItem = {
   features: ["wifi", "air_conditioning", "credit_card"],
   paymentMethods: ["credit_card", "bank_transfer", "cash"],
   phone: "+34 971 28 55 90",
-  website: "https://www.happyfacesmallorca.com/",
+  website: "",
   image: "/images/services/guarderia-bilingue-santa-catalina.webp",
   shortDescription: {
     es: "Escuela infantil bilingüe de 0 a 3 años con pedagogía activa Montessori, patio exterior soleado y cocina propia con menús orgánicos.",

@@ -21,7 +21,7 @@ export const restauranteEmilioInnobar: ServiceItem = {
   phone: "+34 971 71 05 85",
   whatsapp: "+34 971 71 05 85",
   email: "info@emilioinnobar.com",
-  website: "https://emilioinnobar.com",
+  website: "",
   coordinates: { lat: 39.5732, lng: 2.6454 },
   schedule: "Martes a Sábado: 13:00 - 15:30, 19:30 - 23:00",
   lastVerifiedAt: "2026-08-26",

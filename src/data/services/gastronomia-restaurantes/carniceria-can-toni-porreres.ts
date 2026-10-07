@@ -20,7 +20,7 @@ export const carniceriaCanToni: ServiceItem = {
   phone: "+34 971 64 72 30",
   whatsapp: "+34 679 40 50 60",
   email: "info@cantonidespla.com",
-  website: "https://cantonidespla.com",
+  website: "",
   coordinates: { lat: 39.5165, lng: 3.023 },
   schedule: "Lunes a Sábado: 08:30 - 14:00 | 17:00 - 20:00 (Domingos Cerrado)",
   lastVerifiedAt: "2026-08-25",

@@ -30,7 +30,6 @@ export const PALACIO_MUNICIPAL_DEPORTES_SON_MOIX: ServiceItem = {
   schedule: "Lunes a Domingo: 08:00 - 22:00",
   image: "/images/sports/palau-municipal-esports-son-moix-palma.jpg",
   gallery: ["/images/sports/palau-municipal-esports-son-moix-palma.jpg", "/images/categories/deportes.jpg"],
-  googleMapsUrl: "https://www.google.com/maps?cid=12007092",
   shortDescription: {
     es: "El mayor complejo polideportivo público de Palma con piscina de 50m, pabellón cubierto y fitness.",
     en: "Palma's largest public municipal sports complex featuring 50m pool, indoor arena, and gym.",
@@ -38,10 +37,10 @@ export const PALACIO_MUNICIPAL_DEPORTES_SON_MOIX: ServiceItem = {
     de: "Palmas größter öffentlicher Sportkomplex mit 50m-Hallenbad, Mehrzweckhalle und Fitness.",
   },
   fullDescription: {
-    es: "Palau Municipal d se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. El mayor complejo polideportivo público de Palma con piscina de 50m, pabellón cubierto y fitness. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
-    en: "Palau Municipal d stands out as one of the premier athletic and fitness destinations in Mallorca. Palma Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
-    ca: "Palau Municipal d destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. El major complex poliesportiu públic de Palma amb piscina de 50m, pavelló i gimnàs. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
-    de: "Palau Municipal d zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Palmas größter öffentlicher Sportkomplex mit 50m-Hallenbad, Mehrzweckhalle und Fitness. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
+      "es": "El Palau Municipal d'Esports Son Moix es el mayor complejo polideportivo público de Palma (IME). Cuenta con pabellón cubierto para competiciones, piscina climatizada de 25 metros, salas de fitness, pistas polideportivas y acceso público accesible.",
+      "en": "Palau Municipal d'Esports Son Moix is Palma's flagship municipal athletic complex, hosting an indoor arena, 25m heated pool, gym suites, and diverse community sports courts.",
+      "ca": "El Palau Municipal d'Esports Son Moix és el recinte esportiu públic principal de Palma (IME), amb pavelló cobert, piscina de 25m i sales de fitness.",
+      "de": "Der Palau Municipal d'Esports Son Moix ist Palmas größte städtische Sportarena mit Hallenbad, Fitnessbereichen und Multifunktionsplätzen."
   },
   highlights: {
     es: [

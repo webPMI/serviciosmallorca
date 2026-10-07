@@ -35,7 +35,7 @@ export const boschCarServicePalmaCentro: ServiceItem = {
   features: ["parking", "credit_card"],
   paymentMethods: ["credit_card", "bank_transfer", "cash"],
   phone: "+34 971 43 28 50",
-  website: "https://www.boschcarservicemallorca.com/",
+  website: "",
   image: "/images/services/bosch-car-service-palma-centro.webp",
   shortDescription: {
     es: "Taller mecánico integral multimarca con diagnosis computarizada, mantenimiento oficial, neumáticos y preparación ITV.",

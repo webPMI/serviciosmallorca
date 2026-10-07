@@ -20,7 +20,7 @@ export const bergantinosBikes: ServiceItem = {
   phone: "+34 971 74 30 08",
   whatsapp: "+34 678 12 34 56",
   email: "info@bergantinosbikes.com",
-  website: "https://bergantinosbikes.com",
+  website: "",
   coordinates: { lat: 39.5372, lng: 2.7145 },
   schedule: "Lunes a Domingo: 09:00 - 19:30",
   lastVerifiedAt: "2026-08-25",

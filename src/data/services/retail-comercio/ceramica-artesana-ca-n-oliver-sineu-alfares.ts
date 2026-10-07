@@ -29,7 +29,7 @@ export const ceramica_artesana_ca_n_oliver_sineu_alfares: ServiceItem = {
   phone: "+34 971 520 045",
   whatsapp: "+34 971 520 045",
   email: "info@canoliversineu.es",
-  website: "https://canoliversineu.es",
+  website: "",
   schedule: "Lunes a Sábado: 09:30 - 13:30 y 16:30 - 20:00 (Miércoles todo el día por mercado)",
   image: "/images/services/ceramica-artesana-ca-n-oliver-sineu-alfares.jpg",
   gallery: ["/images/services/ceramica-artesana-ca-n-oliver-sineu-alfares.jpg"],

@@ -3,8 +3,8 @@ import { SERVICES } from "../../src/data/services/index.ts";
 import { CATEGORIES, SUPER_SECTORS } from "../../src/data/categories.ts";
 
 describe("Catalog Integrity & Categorization Sanity", () => {
-  it("contiene exactamente 930 servicios con IDs y slugs únicos", () => {
-    expect(SERVICES.length).toBe(930);
+  it("contiene exactamente 812 servicios con IDs y slugs únicos", () => {
+    expect(SERVICES.length).toBe(812);
     const ids = new Set<string>();
     for (const s of SERVICES) {
       expect(ids.has(s.id)).toBe(false);
@@ -25,7 +25,7 @@ describe("Catalog Integrity & Categorization Sanity", () => {
 
   it("garantiza que arte-tatuajes contiene solo estudios de tatuaje y piercing auténticos", () => {
     const tattooServices = SERVICES.filter((s) => s.category === "arte-tatuajes");
-    expect(tattooServices.length).toBe(11);
+    expect(tattooServices.length).toBe(9);
     const nonTattooNames = ["Es Baluard", "Miró", "Gordiola", "Caxígalos", "Cerería", "CCA Andratx", "Pelaires"];
     for (const s of tattooServices) {
       for (const forbidden of nonTattooNames) {

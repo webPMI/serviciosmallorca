@@ -29,7 +29,7 @@ export const almazara_ecologica_oli_de_santanyi: ServiceItem = {
   phone: "+34 971 163 204",
   whatsapp: "+34 971 163 204",
   email: "info@olisantanyi.es",
-  website: "https://olisantanyi.es",
+  website: "",
   schedule: "Lunes a Sábado: 09:30 - 14:00 y 16:00 - 19:00",
   image: "/images/services/almazara-ecologica-oli-de-santanyi.jpg",
   gallery: ["/images/services/almazara-ecologica-oli-de-santanyi.jpg"],

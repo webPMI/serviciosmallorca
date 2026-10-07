@@ -35,7 +35,7 @@ export const fincaSerenaMallorcaMontuiri: ServiceItem = {
   features: ["wifi", "parking", "pool", "spa", "restaurant"],
   paymentMethods: ["credit_card", "bank_transfer", "cash"],
   phone: "+34 971 18 17 58",
-  website: "https://www.fincaserena.com/",
+  website: "https://www.fincaserenamallorca.com",
   image: "/images/services/finca-serena-mallorca-montuiri.webp",
   shortDescription: {
     es: "Exclusivo hotel 5 estrellas en una finca de 40 hectáreas de olivos y viñedos en Montuïri.",

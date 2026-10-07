@@ -27,7 +27,7 @@ export const restauranteCnArenal: ServiceItem = {
   phone: "+34 971 44 04 27",
   whatsapp: "+34 971 44 04 27",
   email: "restaurante@cnarenal.com",
-  website: "https://www.restauranteclubnauticosarenal.com",
+  website: "",
   menuUrl: "https://www.restauranteclubnauticosarenal.com",
   tags: [
     "zona:santanyi-migjorn",

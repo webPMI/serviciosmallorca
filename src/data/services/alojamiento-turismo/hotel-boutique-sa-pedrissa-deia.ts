@@ -29,7 +29,7 @@ export const hotel_boutique_sa_pedrissa_deia: ServiceItem = {
   phone: "+34 971 639 111",
   whatsapp: "+34 971 639 111",
   email: "info@sapedrissaboutiquehotel.com",
-  website: "https://sapedrissaboutiquehotel.com",
+  website: "https://sapedrissa.com",
   schedule: "Recepción 24 horas (Temporada de Marzo a Noviembre)",
   image: "/images/services/hotel-boutique-sa-pedrissa-deia.jpg",
   gallery: ["/images/services/hotel-boutique-sa-pedrissa-deia.jpg"],

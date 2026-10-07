@@ -29,7 +29,7 @@ export const la_fidel_tattoo_palma_estudio: ServiceItem = {
   phone: "+34 971 724 150",
   whatsapp: "+34 971 724 150",
   email: "info@lafideltattoo.com",
-  website: "https://lafideltattoo.com",
+  website: "",
   schedule: "Lunes a Sábado: 10:30 - 19:30",
   image: "/images/services/la-fidel-tattoo-palma-estudio.jpg",
   gallery: ["/images/services/la-fidel-tattoo-palma-estudio.jpg"],

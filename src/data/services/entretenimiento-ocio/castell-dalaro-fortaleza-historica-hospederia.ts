@@ -29,7 +29,7 @@ export const castell_dalaro_fortaleza_historica_hospederia: ServiceItem = {
   phone: "+34 971 182 112",
   whatsapp: "+34 971 182 112",
   email: "info@casteldalaro.cat",
-  website: "https://casteldalaro.cat",
+  website: "",
   schedule: "Lunes a Domingo: Acceso libre a las ruinas exteriores; Hospedería abierta todo el año",
   image: "/images/services/castell-dalaro-fortaleza-historica-hospederia.jpg",
   gallery: ["/images/services/castell-dalaro-fortaleza-historica-hospederia.jpg"],

@@ -30,7 +30,6 @@ export const hammam_al_andalus_palma_centro: ServiceItem = {
   schedule: "Lunes a Domingo: 08:00 - 20:00",
   image: "/images/spas/hammam-al-andalus-palma-centro.jpg",
   gallery: ["/images/spas/hammam-al-andalus-palma-centro.jpg", "/images/categories/salud.jpg"],
-  googleMapsUrl: "https://www.google.com/maps?cid=13008018",
   shortDescription: {
     es: "Auténticos baños árabes en el casco antiguo de Palma con salas de agua templada, caliente y fría, vapor y kessa.",
     en: "Authentic Arab baths in Palma's historic old town with cold, warm and hot water pools, steam and kessa massage.",

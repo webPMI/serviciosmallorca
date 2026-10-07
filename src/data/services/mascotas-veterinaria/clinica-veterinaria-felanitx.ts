@@ -29,7 +29,7 @@ export const clinica_veterinaria_felanitx: ServiceItem = {
   phone: "+34 971 58 10 50",
   whatsapp: "+34 971 58 10 50",
   email: "info@veterinariafelanitx.com",
-  website: "https://veterinariafelanitx.com",
+  website: "",
   schedule: "Lunes a Viernes: 09:30 - 13:00, 16:30 - 19:30",
   image: "/images/services/clinica-veterinaria-felanitx.jpg",
   gallery: ["/images/services/clinica-veterinaria-felanitx.jpg"],

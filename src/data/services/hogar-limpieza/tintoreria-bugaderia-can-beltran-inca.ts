@@ -29,7 +29,7 @@ export const tintoreria_bugaderia_can_beltran_inca: ServiceItem = {
   phone: "+34 971 50 11 44",
   whatsapp: "+34 971 50 11 44",
   email: "canbeltran@bugaderiainca.com",
-  website: "https://bugaderiainca.com",
+  website: "",
   schedule: "Lunes a Viernes de 08:30 a 13:30 y 16:30 a 20:00, Sábados de 09:00 a 13:30",
   image: "/images/services/tintoreria-bugaderia-can-beltran-inca.jpg",
   gallery: ["/images/services/tintoreria-bugaderia-can-beltran-inca.jpg"],

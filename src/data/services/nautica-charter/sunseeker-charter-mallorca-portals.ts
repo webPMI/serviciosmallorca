@@ -35,7 +35,7 @@ export const sunseekerCharterMallorcaPortals: ServiceItem = {
   features: ["wifi", "credit_card"],
   paymentMethods: ["credit_card", "bank_transfer", "cash"],
   phone: "+34 971 67 63 95",
-  website: "https://www.sunseeker-mallorca.com/",
+  website: "https://sunseekercharter.com",
   image: "/images/services/sunseeker-charter-mallorca-portals.webp",
   shortDescription: {
     es: "Alquiler oficial de yates Sunseeker de 50 a 90 pies con patrón y azafata en Puerto Portals y Port Adriano.",

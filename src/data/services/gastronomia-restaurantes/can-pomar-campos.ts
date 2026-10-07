@@ -20,7 +20,7 @@ export const canPomar: ServiceItem = {
   phone: "+34 971 65 00 24",
   whatsapp: "+34 971 65 00 24",
   email: "info@canpomar.com",
-  website: "https://canpomar.com",
+  website: "",
   coordinates: { lat: 39.4312, lng: 3.0185 },
   schedule: "Lunes a Domingo: 08:00 - 14:00 | 17:00 - 20:30",
   lastVerifiedAt: "2026-08-25",

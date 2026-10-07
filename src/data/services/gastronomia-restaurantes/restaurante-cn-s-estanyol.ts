@@ -27,7 +27,7 @@ export const restauranteCnSEstanyol: ServiceItem = {
   phone: "+34 971 64 00 36",
   whatsapp: "+34 971 64 00 36",
   email: "restaurante@cnestanyol.es",
-  website: "https://www.restauranteclubnauticosestanyol.com",
+  website: "",
   menuUrl: "https://www.restauranteclubnauticosestanyol.com",
   tags: [
     "zona:santanyi-migjorn",

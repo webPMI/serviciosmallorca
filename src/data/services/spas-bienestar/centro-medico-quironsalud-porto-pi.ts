@@ -30,7 +30,6 @@ export const centro_medico_quironsalud_porto_pi: ServiceItem = {
   schedule: "Lunes a Domingo: 08:00 - 20:00",
   image: "/images/spas/centro-medico-quironsalud-porto-pi.jpg",
   gallery: ["/images/spas/centro-medico-quironsalud-porto-pi.jpg", "/images/categories/salud.jpg"],
-  googleMapsUrl: "https://www.google.com/maps?cid=13008005",
   shortDescription: {
     es: "Consultas externas especializadas frente al puerto de Palma con servicio rápido de diagnóstico y análisis clínicos.",
     en: "Specialist outpatient clinic overlooking Palma harbor with rapid diagnostic testing and clinical lab.",

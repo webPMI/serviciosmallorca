@@ -29,7 +29,7 @@ export const celler_can_verdura_binissalem_vins_autoctons: ServiceItem = {
   phone: "+34 971 870 120",
   whatsapp: "+34 971 870 120",
   email: "info@canverdura.com",
-  website: "https://canverdura.com",
+  website: "",
   schedule: "Lunes a Viernes: 09:00 - 17:00. Catas con reserva previa.",
   image: "/images/services/celler-can-verdura-binissalem-vins-autoctons.jpg",
   gallery: ["/images/services/celler-can-verdura-binissalem-vins-autoctons.jpg"],

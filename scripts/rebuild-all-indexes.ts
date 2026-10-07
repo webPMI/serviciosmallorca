@@ -38,7 +38,10 @@ for (const [sector, arrName] of Object.entries(sectorExportNames)) {
   const sectorDir = path.join(baseDir, sector);
   if (!fs.existsSync(sectorDir)) continue;
 
-  const files = fs.readdirSync(sectorDir).filter((f) => f.endsWith(".ts") && f !== "index.ts");
+  const files = fs
+    .readdirSync(sectorDir)
+    .filter((f) => f.endsWith(".ts") && f !== "index.ts")
+    .sort();
 
   const imports: string[] = [];
   const exportsList: string[] = [];

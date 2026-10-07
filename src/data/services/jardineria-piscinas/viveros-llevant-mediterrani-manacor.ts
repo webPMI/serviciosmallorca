@@ -29,7 +29,7 @@ export const viveros_llevant_mediterrani_manacor: ServiceItem = {
   phone: "+34 971 845 670",
   whatsapp: "+34 971 845 670",
   email: "info@viverosllevantmediterrani.es",
-  website: "https://viverosllevantmediterrani.es",
+  website: "",
   schedule: "Lunes a Sábado: 08:30 - 19:30, Domingos: 09:30 - 14:00",
   image: "/images/services/viveros-llevant-mediterrani-manacor.jpg",
   gallery: ["/images/services/viveros-llevant-mediterrani-manacor.jpg"],

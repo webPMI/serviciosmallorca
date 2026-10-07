@@ -30,7 +30,6 @@ export const son_net_spa_wellness_puigpunyent: ServiceItem = {
   schedule: "Lunes a Domingo: 08:00 - 20:00",
   image: "/images/spas/son-net-spa-wellness-puigpunyent.jpg",
   gallery: ["/images/spas/son-net-spa-wellness-puigpunyent.jpg", "/images/categories/salud.jpg"],
-  googleMapsUrl: "https://www.google.com/maps?cid=13008022",
   shortDescription: {
     es: "Santuario de bienestar en un palacio señorial del siglo XVII en Puigpunyent con tratamientos holísticos de autor.",
     en: "Wellness sanctuary in a 17th-century aristocratic estate in Puigpunyent featuring bespoke holistic rituals.",

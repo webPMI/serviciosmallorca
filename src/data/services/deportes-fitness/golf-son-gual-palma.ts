@@ -30,7 +30,6 @@ export const GOLF_SON_GUAL_PALMA: ServiceItem = {
   schedule: "Lunes a Domingo: 08:00 - 22:00",
   image: "/images/sports/golf-son-gual-palma.jpg",
   gallery: ["/images/sports/golf-son-gual-palma.jpg", "/images/categories/deportes.jpg"],
-  googleMapsUrl: "https://www.google.com/maps?cid=12007000",
   shortDescription: {
     es: "Campo de golf de 18 hoyos par 72 de campeonato internacional diseñado por Thomas Himmel.",
     en: "Championship 18-hole par 72 golf course designed by Thomas Himmel.",
@@ -38,10 +37,10 @@ export const GOLF_SON_GUAL_PALMA: ServiceItem = {
     de: "18-Loch Par 72 Meisterschaftsgolfplatz von Thomas Himmel.",
   },
   fullDescription: {
-    es: "Golf Son Gual Mallorca se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Campo de golf de 18 hoyos par 72 de campeonato internacional diseñado por Thomas Himmel. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
-    en: "Golf Son Gual Mallorca stands out as one of the premier athletic and fitness destinations in Mallorca. Championship 18-hole par 72 golf course designed by Thomas Himmel. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
-    ca: "Golf Son Gual Mallorca destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Camp de golf de 18 forats par 72 de campionat internacional dissenyat per Thomas Himmel. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
-    de: "Golf Son Gual Mallorca zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. 18-Loch Par 72 Meisterschaftsgolfplatz von Thomas Himmel. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
+      "es": "Golf Son Gual es un campo privado de campeonato de 18 hoyos considerado de forma unánime entre los mejores de Europa continental. Diseñado por Thomas Himmel sobre una finca de 156 hectáreas, destaca por su impecable mantenimiento, bunkers de diseño artístico y lagos de agua cristalina.",
+      "en": "Golf Son Gual is an elite private championship course ranked among the finest in Continental Europe. Designed by Thomas Himmel across 156 hectares, it features immaculate conditioning, sculpted bunkers, and pristine lakes.",
+      "ca": "Golf Son Gual és un camp de campionat privat d'alt nivell a Palma, dissenyat per Thomas Himmel amb un manteniment immillorable i búnquers de disseny exquisit.",
+      "de": "Golf Son Gual zählt zu den besten Meisterschaftsplätzen Kontinentaleuropas, meisterhaft gestaltet von Thomas Himmel mit spektakulären Bunkern und Traum-Grüns."
   },
   highlights: {
     es: [

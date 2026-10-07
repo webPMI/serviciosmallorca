@@ -35,7 +35,7 @@ export const canterasSantanyiPedraVivaConstruccion: ServiceItem = {
   features: ["parking", "credit_card"],
   paymentMethods: ["credit_card", "bank_transfer", "cash"],
   phone: "+34 971 65 30 15",
-  website: "https://www.pedradesantanyi.es/",
+  website: "",
   image: "/images/services/canteras-santanyi-pedra-viva-construccion.webp",
   shortDescription: {
     es: "Extracción artesana y labra de auténtica piedra caliza dorada de Santanyí para fachadas, arcos, columnas y solados rústicos.",

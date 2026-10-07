@@ -27,7 +27,7 @@ export const cellerSaVinyaBinissalem: ServiceItem = {
   phone: "+34 971 51 13 73",
   whatsapp: "+34 971 51 13 73",
   email: "info@cellersavinya.com",
-  website: "https://www.cellersavinya.com",
+  website: "",
   menuUrl: "https://www.cellersavinya.com",
   tags: [
     "zona:raiguer-pla",

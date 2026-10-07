@@ -35,7 +35,7 @@ export const ginEvaMallorcaArtisanDistillery: ServiceItem = {
   features: ["parking", "credit_card"],
   paymentMethods: ["credit_card", "bank_transfer", "cash"],
   phone: "+34 971 66 90 20",
-  website: "https://www.gineva.es/",
+  website: "",
   image: "/images/services/gin-eva-mallorca-artisan-distillery.webp",
   shortDescription: {
     es: "Destilería artesana creadora de la mejor ginebra del mundo (World Gin Awards) destilada con enebro de Formentor y cítricos locales.",

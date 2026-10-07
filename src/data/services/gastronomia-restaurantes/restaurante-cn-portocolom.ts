@@ -27,7 +27,7 @@ export const restauranteCnPortocolom: ServiceItem = {
   phone: "+34 971 82 46 90",
   whatsapp: "+34 971 82 46 90",
   email: "info@cnportocolom.com",
-  website: "https://www.restauranteclubnauticoportocolom.com",
+  website: "",
   menuUrl: "https://www.restauranteclubnauticoportocolom.com",
   tags: [
     "zona:santanyi-migjorn",

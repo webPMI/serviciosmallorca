@@ -30,7 +30,6 @@ export const bodyna_spa_hospes_maricel_calvia: ServiceItem = {
   schedule: "Lunes a Domingo: 08:00 - 20:00",
   image: "/images/spas/bodyna-spa-hospes-maricel-calvia.jpg",
   gallery: ["/images/spas/bodyna-spa-hospes-maricel-calvia.jpg", "/images/categories/salud.jpg"],
-  googleMapsUrl: "https://www.google.com/maps?cid=13008019",
   shortDescription: {
     es: "Cabinas de masaje esculpidas en arcos de piedra frente al mar Mediterráneo con sonido de las olas.",
     en: "Seafront massage arches carved into natural stone with the relaxing sound of the Mediterranean waves.",

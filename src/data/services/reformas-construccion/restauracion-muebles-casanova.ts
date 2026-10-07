@@ -20,7 +20,7 @@ export const restauracionCasanova: ServiceItem = {
   phone: "+34 971 73 30 18",
   whatsapp: "+34 610 22 33 44",
   email: "taller@restauracioncasanova.com",
-  website: "https://restauracioncasanova.com",
+  website: "",
   coordinates: { lat: 39.5722, lng: 2.636 },
   schedule: "Lunes a Viernes: 08:30 - 13:30 | 15:30 - 19:00 (Sábados con Cita Previa)",
   lastVerifiedAt: "2026-08-25",

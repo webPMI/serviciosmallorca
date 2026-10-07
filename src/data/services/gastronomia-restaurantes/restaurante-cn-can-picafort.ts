@@ -27,7 +27,7 @@ export const restauranteCnCanPicafort: ServiceItem = {
   phone: "+34 625 79 00 76",
   whatsapp: "+34 625 79 00 76",
   email: "info@cncanpicafort.com",
-  website: "https://www.nauticcanpicafort.com",
+  website: "",
   menuUrl: "https://www.nauticcanpicafort.com",
   tags: [
     "zona:alcudia-pollensa",

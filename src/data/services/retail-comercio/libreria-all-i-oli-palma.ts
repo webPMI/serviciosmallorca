@@ -26,7 +26,7 @@ export const libreriaAllIOliPalma: ServiceItem = {
   phone: "+34 971 72 60 41",
   whatsapp: "+34 971 72 60 41",
   email: "info@libreriaallioli.com",
-  website: "https://libreriaallioli.com",
+  website: "",
   schedule: "Lunes a Sábado: 10:00 - 14:00 | 16:30 - 20:00",
   image: "/images/services/libreria-all-i-oli-palma.jpg",
   gallery: ["/images/services/libreria-all-i-oli-palma.jpg"],

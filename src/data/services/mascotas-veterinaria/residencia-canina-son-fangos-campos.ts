@@ -29,7 +29,7 @@ export const residencia_canina_son_fangos_campos: ServiceItem = {
   phone: "+34 971 651 890",
   whatsapp: "+34 971 651 890",
   email: "info@sonfangoscampos.es",
-  website: "https://sonfangoscampos.es",
+  website: "",
   schedule: "Lunes a Domingo: 08:30 - 13:00 y 16:30 - 19:30",
   image: "/images/services/residencia-canina-son-fangos-campos.jpg",
   gallery: ["/images/services/residencia-canina-son-fangos-campos.jpg"],

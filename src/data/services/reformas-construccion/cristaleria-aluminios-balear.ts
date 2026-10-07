@@ -20,7 +20,7 @@ export const cristaleriaBalear: ServiceItem = {
   phone: "+34 971 43 20 18",
   whatsapp: "+34 629 80 90 10",
   email: "info@cristaleriabalear.com",
-  website: "https://cristaleriabalear.com",
+  website: "",
   coordinates: { lat: 39.605, lng: 2.671 },
   schedule: "Lunes a Viernes: 08:00 - 18:00 (Servicio de Medición y Urgencias de Rotura)",
   lastVerifiedAt: "2026-08-25",

@@ -35,7 +35,7 @@ export const canTemHistoricHotelAlcudia: ServiceItem = {
   features: ["wifi", "air_conditioning"],
   paymentMethods: ["credit_card", "bank_transfer", "cash"],
   phone: "+34 971 54 70 36",
-  website: "https://www.cantem.com.es/",
+  website: "",
   image: "/images/services/can-tem-historic-hotel-alcudia.webp",
   shortDescription: {
     es: "Mansión solariega del siglo XVII restaurada dentro del recinto medieval amurallado de Alcúdia.",

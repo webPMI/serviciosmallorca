@@ -35,7 +35,7 @@ export const lafioreVidrioArtesanal: ServiceItem = {
   features: ["parking", "credit_card"],
   paymentMethods: ["credit_card", "bank_transfer", "cash"],
   phone: "+34 971 61 40 12",
-  website: "https://lafiore.com/",
+  website: "https://www.lafiore.com",
   image: "/images/services/lafiore-vidrio-artesanal.webp",
   shortDescription: {
     es: "Taller artesano de vidrio soplado 100% reciclado y galería de diseño mediterráneo en la carretera de Valldemossa.",

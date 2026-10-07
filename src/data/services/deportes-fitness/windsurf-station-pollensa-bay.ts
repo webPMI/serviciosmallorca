@@ -30,7 +30,6 @@ export const WINDSURF_STATION_POLLENSA_BAY: ServiceItem = {
   schedule: "Lunes a Domingo: 08:00 - 22:00",
   image: "/images/sports/windsurf-station-pollensa-bay.jpg",
   gallery: ["/images/sports/windsurf-station-pollensa-bay.jpg", "/images/categories/deportes.jpg"],
-  googleMapsUrl: "https://www.google.com/maps?cid=12007094",
   shortDescription: {
     es: "Estación náutica en la bahía de Pollença con cursos de Windsurf, Wingfoil y alquiler de material Fanatic.",
     en: "Water sports station in Pollença Bay offering Windsurfing, Wingfoil courses, and Fanatic gear hire.",
@@ -38,10 +37,10 @@ export const WINDSURF_STATION_POLLENSA_BAY: ServiceItem = {
     de: "Wassersportstation in der Bucht von Pollença mit Windsurf- und Wingfoilkursen.",
   },
   fullDescription: {
-    es: "Windsurf Station Pollença Bay se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Estación náutica en la bahía de Pollença con cursos de Windsurf, Wingfoil y alquiler de material Fanatic. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
-    en: "Windsurf Station Pollença Bay stands out as one of the premier athletic and fitness destinations in Mallorca. Water sports station in Pollença Bay offering Windsurfing, Wingfoil courses, and Fanatic gear hire. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
-    ca: "Windsurf Station Pollença Bay destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Estació nàutica a la badia de Pollença amb Windsurf, Wingfoil i material Fanatic. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
-    de: "Windsurf Station Pollença Bay zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Wassersportstation in der Bucht von Pollença mit Windsurf- und Wingfoilkursen. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
+      "es": "Windsurfclub Pollentia en Can Cap de Bou (Bahía de Pollença) es una de las escuelas de deportes acuáticos más tradicionales de Mallorca. Especializada en windsurf, wingfoil, stand-up paddle y catamarán, aprovechando las aguas calmas y el viento térmico del norte insular.",
+      "en": "Windsurfclub Pollentia at Can Cap de Bou (Pollença Bay) is a premier watersports station specializing in windsurfing, wingfoil, paddleboarding, and catamaran sailing.",
+      "ca": "Windsurfclub Pollentia a Can Cap de Bou (Badia de Pollença) és escola històrica de windsurf, wingfoil i vela lleugera amb vents tèrmics ideals.",
+      "de": "Windsurfclub Pollentia in Can Cap de Bou an der Bucht von Pollença bietet professionellen Unterricht und Verleih für Windsurfen, Wingfoiling und Katamaransegeln."
   },
   highlights: {
     es: [

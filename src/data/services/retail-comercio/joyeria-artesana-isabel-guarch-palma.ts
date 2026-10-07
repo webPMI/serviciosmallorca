@@ -29,7 +29,7 @@ export const joyeria_artesana_isabel_guarch_palma: ServiceItem = {
   phone: "+34 971 284 785",
   whatsapp: "+34 971 284 785",
   email: "info@isabelguarchjoyas.com",
-  website: "https://isabelguarchjoyas.com",
+  website: "https://isabelguarch.com",
   schedule: "Lunes a Sábado: 10:30 - 20:00",
   image: "/images/services/joyeria-artesana-isabel-guarch-palma.jpg",
   gallery: ["/images/services/joyeria-artesana-isabel-guarch-palma.jpg"],

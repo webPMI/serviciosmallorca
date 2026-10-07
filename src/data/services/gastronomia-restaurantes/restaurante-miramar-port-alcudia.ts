@@ -27,7 +27,7 @@ export const restauranteMiramarPortAlcudia: ServiceItem = {
   phone: "+34 971 54 52 93",
   whatsapp: "+34 971 54 52 93",
   email: "info@miramaralcudia.com",
-  website: "https://www.miramaralcudia.com",
+  website: "",
   menuUrl: "https://www.miramaralcudia.com",
   tags: [
     "zona:alcudia-pollensa",

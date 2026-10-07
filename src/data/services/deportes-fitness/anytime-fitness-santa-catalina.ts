@@ -30,7 +30,6 @@ export const ANYTIME_FITNESS_SANTA_CATALINA: ServiceItem = {
   schedule: "Lunes a Domingo: 08:00 - 22:00",
   image: "/images/sports/anytime-fitness-santa-catalina.jpg",
   gallery: ["/images/sports/anytime-fitness-santa-catalina.jpg", "/images/categories/deportes.jpg"],
-  googleMapsUrl: "https://www.google.com/maps?cid=12007043",
   shortDescription: {
     es: "Gimnasio boutique abierto las 24 horas del día los 365 días del año en Santa Catalina.",
     en: "24/7 boutique gym in Santa Catalina open 365 days a year with worldwide access.",
@@ -38,10 +37,10 @@ export const ANYTIME_FITNESS_SANTA_CATALINA: ServiceItem = {
     de: "Boutique-Fitnessstudio in Santa Catalina, 24/7 an 365 Tagen im Jahr geöffnet.",
   },
   fullDescription: {
-    es: "Anytime Fitness Santa Catalina se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Gimnasio boutique abierto las 24 horas del día los 365 días del año en Santa Catalina. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
-    en: "Anytime Fitness Santa Catalina stands out as one of the premier athletic and fitness destinations in Mallorca. 24/7 boutique gym in Santa Catalina open 365 days a year with worldwide access. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
-    ca: "Anytime Fitness Santa Catalina destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Gimnàs boutique obert les 24 hores del dia els 365 dies de l Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
-    de: "Anytime Fitness Santa Catalina zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Boutique-Fitnessstudio in Santa Catalina, 24/7 an 365 Tagen im Jahr geöffnet. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
+      "es": "Anytime Fitness Santa Catalina es un gimnasio abierto 24 horas los 365 días del año en el corazón de Santa Catalina (Palma). Equipado con maquinaria cardiovascular y de fuerza de última generación Life Fitness, área funcional y duchas individuales para entrenar con total flexibilidad.",
+      "en": "Anytime Fitness Santa Catalina is a 24/7 gym in the heart of Palma's vibrant Santa Catalina district. Equipped with premium Life Fitness machines, functional turf, and private showers for maximum schedule flexibility.",
+      "ca": "Anytime Fitness Santa Catalina és un gimnàs obert les 24 hores tot l'any a Palma amb maquinària Life Fitness d'última generació i espai funcional.",
+      "de": "Anytime Fitness Santa Catalina ist ein 24/7-Fitnessstudio im Herzen von Palmas Szeneviertel mit modernsten Life-Fitness-Geräten und flexiblen Trainingszeiten."
   },
   highlights: {
     es: [

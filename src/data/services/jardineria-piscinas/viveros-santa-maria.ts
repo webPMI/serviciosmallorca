@@ -159,7 +159,7 @@ export const viverosSantaMaria: ServiceItem = {
   phone: "+34 971 62 06 00",
   whatsapp: "+34 971 62 06 00",
   email: "info@viverossantamaria.com",
-  website: "https://viverossantamaria.com",
+  website: "",
   tags: [
     "zona:raiguer-pla",
     "zona:santa-maria-del-cami",

@@ -26,11 +26,10 @@ export const clinica_dr_morano_medicina_estetica_palma: ServiceItem = {
   phone: "+34 971 718 120",
   whatsapp: "+34 971 718 120",
   email: "info@clinicamorano.com",
-  website: "https://clinicamorano.com",
+  website: "",
   schedule: "Lunes a Domingo: 08:00 - 20:00",
   image: "/images/spas/clinica-dr-morano-medicina-estetica-palma.jpg",
   gallery: ["/images/spas/clinica-dr-morano-medicina-estetica-palma.jpg", "/images/categories/salud.jpg"],
-  googleMapsUrl: "https://www.google.com/maps?cid=13008009",
   shortDescription: {
     es: "Más de 30 años de excelencia en medicina estética, rejuvenecimiento facial no quirúrgico y nutrición médica.",
     en: "Over 30 years of excellence in aesthetic medicine, non-surgical facial rejuvenation, and medical nutrition.",

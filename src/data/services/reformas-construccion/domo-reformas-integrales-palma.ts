@@ -35,7 +35,7 @@ export const domoReformasIntegralesPalma: ServiceItem = {
   features: ["wifi", "credit_card"],
   paymentMethods: ["credit_card", "bank_transfer", "cash"],
   phone: "+34 971 27 60 10",
-  website: "https://www.domoreformas.com/",
+  website: "",
   image: "/images/services/domo-reformas-integrales-palma.webp",
   shortDescription: {
     es: "Reformas integrales de viviendas, cocinas alemanas de diseño, baños de microcemento y carpintería a medida con plazos garantizados.",

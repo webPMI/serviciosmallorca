@@ -29,7 +29,7 @@ export const queseria_artesana_son_jover_formatges_inca: ServiceItem = {
   phone: "+34 971 504 120",
   whatsapp: "+34 971 504 120",
   email: "info@formatgessonjover.es",
-  website: "https://formatgessonjover.es",
+  website: "",
   schedule: "Lunes a Sábado: 09:00 - 14:00 y 16:30 - 19:30",
   image: "/images/services/queseria-artesana-son-jover-formatges-inca.jpg",
   gallery: ["/images/services/queseria-artesana-son-jover-formatges-inca.jpg"],

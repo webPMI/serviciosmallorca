@@ -35,7 +35,7 @@ export const fincaSonLladoAgroturismoCampos: ServiceItem = {
   features: ["wifi", "parking", "pool"],
   paymentMethods: ["credit_card", "bank_transfer", "cash"],
   phone: "+34 971 16 04 22",
-  website: "https://www.sonllado.com/",
+  website: "",
   image: "/images/services/finca-son-llado-agroturismo-campos.webp",
   shortDescription: {
     es: "Agroturismo familiar con huerto ecológico, animales de granja y casas independientes para familias.",

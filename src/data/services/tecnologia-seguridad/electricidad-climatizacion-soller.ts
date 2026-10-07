@@ -20,7 +20,7 @@ export const electricidadSoller: ServiceItem = {
   phone: "+34 971 63 28 50",
   whatsapp: "+34 670 20 30 50",
   email: "info@electricidadsoller.com",
-  website: "https://electricidadsoller.com",
+  website: "",
   coordinates: { lat: 39.766, lng: 2.715 },
   schedule: "Lunes a Viernes: 08:00 - 18:30 (Servicio de Urgencias Eléctricas 24h en Tramuntana)",
   lastVerifiedAt: "2026-08-25",

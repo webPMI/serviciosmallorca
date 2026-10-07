@@ -20,7 +20,7 @@ export const carpinteriaNavalMestres: ServiceItem = {
   phone: "+34 971 27 45 60",
   whatsapp: "+34 689 30 40 50",
   email: "info@mestresdaixa.com",
-  website: "https://mestresdaixabalear.com",
+  website: "",
   coordinates: { lat: 39.561, lng: 2.673 },
   schedule: "Lunes a Viernes: 08:00 - 18:00 (Presupuestos Técnicos y Varada de Embarcaciones)",
   lastVerifiedAt: "2026-08-25",

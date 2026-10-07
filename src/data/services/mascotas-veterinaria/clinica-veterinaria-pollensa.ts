@@ -29,7 +29,7 @@ export const clinica_veterinaria_pollensa: ServiceItem = {
   phone: "+34 971 53 42 18",
   whatsapp: "+34 971 53 42 18",
   email: "info@veterinariapollensa.es",
-  website: "https://veterinariapollensa.es",
+  website: "",
   schedule: "Lunes a Viernes: 09:30 - 13:30, 16:30 - 19:30, Sábados: 10:00 - 13:00",
   image: "/images/services/clinica-veterinaria-pollensa.jpg",
   gallery: ["/images/services/clinica-veterinaria-pollensa.jpg"],

@@ -20,7 +20,7 @@ export const cellerCanMarron: ServiceItem = {
   phone: "+34 971 50 10 50",
   whatsapp: "+34 971 50 10 50",
   email: "info@cellercanmarron.com",
-  website: "https://cellercanmarron.com",
+  website: "",
   coordinates: { lat: 39.722, lng: 2.907 },
   schedule: "Lunes a Domingo: 13:00 - 16:00 | 20:00 - 23:00 (Martes Noche Cerrado)",
   lastVerifiedAt: "2026-08-25",

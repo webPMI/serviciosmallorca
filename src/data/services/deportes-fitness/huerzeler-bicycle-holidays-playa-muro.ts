@@ -30,7 +30,6 @@ export const HUERZELER_BICYCLE_HOLIDAYS_PLAYA_MURO: ServiceItem = {
   schedule: "Lunes a Domingo: 08:00 - 22:00",
   image: "/images/sports/huerzeler-bicycle-holidays-playa-muro.jpg",
   gallery: ["/images/sports/huerzeler-bicycle-holidays-playa-muro.jpg", "/images/categories/deportes.jpg"],
-  googleMapsUrl: "https://www.google.com/maps?cid=12007090",
   shortDescription: {
     es: "La mayor estación ciclista de Europa en Playa de Muro con flota Centurion y Cube, boutique y grupos guiados.",
     en: "Europe's largest cycling hub in Playa de Muro featuring Centurion & Cube fleets and guided group rides.",
@@ -38,10 +37,10 @@ export const HUERZELER_BICYCLE_HOLIDAYS_PLAYA_MURO: ServiceItem = {
     de: "Europas größte Radsportstation an der Playa de Muro mit Centurion- und Cube-Flotte und Touren.",
   },
   fullDescription: {
-    es: "Hürzeler Bicycle Holidays se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. La mayor estación ciclista de Europa en Playa de Muro con flota Centurion y Cube, boutique y grupos guiados. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
-    en: "Hürzeler Bicycle Holidays stands out as one of the premier athletic and fitness destinations in Mallorca. Europe Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
-    ca: "Hürzeler Bicycle Holidays destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. La major estació ciclista d Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
-    de: "Hürzeler Bicycle Holidays zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Europas größte Radsportstation an der Playa de Muro mit Centurion- und Cube-Flotte und Touren. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
+      "es": "Hürzeler Bicycle Holidays en Playa de Muro es la estación ciclista insignia del mayor operador de cicloturismo de Mallorca. Ofrece alquiler de bicicletas de carretera de gama alta, boutique especializada, taller mecánico profesional y avituallamiento para rutas por la Tramuntana.",
+      "en": "Hürzeler Bicycle Holidays at Playa de Muro is the flagship cycling station on Mallorca, offering high-end carbon road bike rentals, full mechanical support, route planning, and pro-shop equipment.",
+      "ca": "Hürzeler Bicycle Holidays a Platja de Muro és l'estació ciclista de referència a Mallorca amb lloguer de bicicletes de carretera de carboni, taller i assessorament de rutes.",
+      "de": "Hürzeler Bicycle Holidays an der Playa de Muro ist die Hauptstation des führenden Radsportanbieters auf Mallorca mit Top-Rennrädern, Werkstatt und Routenservice."
   },
   highlights: {
     es: [

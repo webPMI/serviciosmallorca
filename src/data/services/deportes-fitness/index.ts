@@ -26,7 +26,7 @@ import { CLUB_TENIS_PORRERES } from "./club-tenis-porreres.ts";
 import { CLUB_TENIS_PORTO_CRISTO_MANACOR } from "./club-tenis-porto-cristo-manacor.ts";
 import { CLUB_TENIS_SANTA_EUGENIA } from "./club-tenis-santa-eugenia.ts";
 import { CLUB_TENIS_SOLLER_VALLE } from "./club-tenis-soller-valle.ts";
-import { CROSSFIT_070_PALMA } from "./crossfit-070-palma.ts";
+import { NAMA_CROSSFIT_PALMA } from "./crossfit-070-palma.ts";
 import { CROSSFIT_BLAU_SON_MOIX } from "./crossfit-blau-son-moix.ts";
 import { CROSSFIT_CALVIA_EL_TORO } from "./crossfit-calvia-el-toro.ts";
 import { CROSSFIT_CAN_PASTILLA } from "./crossfit-can-pastilla.ts";
@@ -96,7 +96,7 @@ import { SANTA_MARIA_TENNIS_PADEL } from "./santa-maria-tennis-padel.ts";
 import { SANTANYI_YOGA_SHALA } from "./santanyi-yoga-shala.ts";
 import { STUDIO_1_PERSONAL_TRAINING_PALMA } from "./studio-1-personal-training-palma.ts";
 import { SYNERGYM_PALMA_ESCORXADOR } from "./synergym-palma-escorxador.ts";
-import { SYNERGYM_PALMA_SAN_FERNANDO } from "./synergym-palma-san-fernando.ts";
+import { SYNERGYM_PALMA_LES_ESTACIONS } from "./synergym-palma-san-fernando.ts";
 import { T_GOLF_CALVIA_MAGALUF } from "./t-golf-calvia-magaluf.ts";
 import { T_GOLF_PALMA_PUNTIRO } from "./t-golf-palma-puntiro.ts";
 import { TENNIS_ACADEMY_MALLORCA_PEGUERA } from "./tennis-academy-mallorca-peguera.ts";
@@ -109,9 +109,9 @@ import { UDYR_SPORT_PADEL_MARRATXI } from "./udyr-sport-padel-marratxi.ts";
 import { URBAN_CROSSFIT_PALMA } from "./urban-crossfit-palma.ts";
 import { VALL_D_OR_GOLF_CALADOR } from "./vall-d-or-golf-calador.ts";
 import { vilapadel_marratxi } from "./vilapadel-marratxi.ts";
-import { VIVAGYM_CARDENAL_ROSSELL_PALMA } from "./vivagym-cardenal-rossell-palma.ts";
+import { VIVAGYM_PORTO_PI_PALMA } from "./vivagym-cardenal-rossell-palma.ts";
 import { VIVAGYM_SON_FUSTER_PALMA } from "./vivagym-son-fuster-palma.ts";
-import { VIVAGYM_SON_MOIX_PALMA } from "./vivagym-son-moix-palma.ts";
+import { VIVAGYM_NUREDDUNA_PALMA } from "./vivagym-son-moix-palma.ts";
 import { WINDSURF_STATION_POLLENSA_BAY } from "./windsurf-station-pollensa-bay.ts";
 import { YOGA_MALLORCA_PORTIXOL } from "./yoga-mallorca-portixol.ts";
 
@@ -142,7 +142,7 @@ export { CLUB_TENIS_PORRERES } from "./club-tenis-porreres.ts";
 export { CLUB_TENIS_PORTO_CRISTO_MANACOR } from "./club-tenis-porto-cristo-manacor.ts";
 export { CLUB_TENIS_SANTA_EUGENIA } from "./club-tenis-santa-eugenia.ts";
 export { CLUB_TENIS_SOLLER_VALLE } from "./club-tenis-soller-valle.ts";
-export { CROSSFIT_070_PALMA } from "./crossfit-070-palma.ts";
+export { NAMA_CROSSFIT_PALMA } from "./crossfit-070-palma.ts";
 export { CROSSFIT_BLAU_SON_MOIX } from "./crossfit-blau-son-moix.ts";
 export { CROSSFIT_CALVIA_EL_TORO } from "./crossfit-calvia-el-toro.ts";
 export { CROSSFIT_CAN_PASTILLA } from "./crossfit-can-pastilla.ts";
@@ -212,7 +212,7 @@ export { SANTA_MARIA_TENNIS_PADEL } from "./santa-maria-tennis-padel.ts";
 export { SANTANYI_YOGA_SHALA } from "./santanyi-yoga-shala.ts";
 export { STUDIO_1_PERSONAL_TRAINING_PALMA } from "./studio-1-personal-training-palma.ts";
 export { SYNERGYM_PALMA_ESCORXADOR } from "./synergym-palma-escorxador.ts";
-export { SYNERGYM_PALMA_SAN_FERNANDO } from "./synergym-palma-san-fernando.ts";
+export { SYNERGYM_PALMA_LES_ESTACIONS } from "./synergym-palma-san-fernando.ts";
 export { T_GOLF_CALVIA_MAGALUF } from "./t-golf-calvia-magaluf.ts";
 export { T_GOLF_PALMA_PUNTIRO } from "./t-golf-palma-puntiro.ts";
 export { TENNIS_ACADEMY_MALLORCA_PEGUERA } from "./tennis-academy-mallorca-peguera.ts";
@@ -225,9 +225,9 @@ export { UDYR_SPORT_PADEL_MARRATXI } from "./udyr-sport-padel-marratxi.ts";
 export { URBAN_CROSSFIT_PALMA } from "./urban-crossfit-palma.ts";
 export { VALL_D_OR_GOLF_CALADOR } from "./vall-d-or-golf-calador.ts";
 export { vilapadel_marratxi } from "./vilapadel-marratxi.ts";
-export { VIVAGYM_CARDENAL_ROSSELL_PALMA } from "./vivagym-cardenal-rossell-palma.ts";
+export { VIVAGYM_PORTO_PI_PALMA } from "./vivagym-cardenal-rossell-palma.ts";
 export { VIVAGYM_SON_FUSTER_PALMA } from "./vivagym-son-fuster-palma.ts";
-export { VIVAGYM_SON_MOIX_PALMA } from "./vivagym-son-moix-palma.ts";
+export { VIVAGYM_NUREDDUNA_PALMA } from "./vivagym-son-moix-palma.ts";
 export { WINDSURF_STATION_POLLENSA_BAY } from "./windsurf-station-pollensa-bay.ts";
 export { YOGA_MALLORCA_PORTIXOL } from "./yoga-mallorca-portixol.ts";
 
@@ -259,7 +259,7 @@ export const DEPORTES_SERVICES: ServiceItem[] = [
   CLUB_TENIS_PORTO_CRISTO_MANACOR,
   CLUB_TENIS_SANTA_EUGENIA,
   CLUB_TENIS_SOLLER_VALLE,
-  CROSSFIT_070_PALMA,
+  NAMA_CROSSFIT_PALMA,
   CROSSFIT_BLAU_SON_MOIX,
   CROSSFIT_CALVIA_EL_TORO,
   CROSSFIT_CAN_PASTILLA,
@@ -329,7 +329,7 @@ export const DEPORTES_SERVICES: ServiceItem[] = [
   SANTANYI_YOGA_SHALA,
   STUDIO_1_PERSONAL_TRAINING_PALMA,
   SYNERGYM_PALMA_ESCORXADOR,
-  SYNERGYM_PALMA_SAN_FERNANDO,
+  SYNERGYM_PALMA_LES_ESTACIONS,
   T_GOLF_CALVIA_MAGALUF,
   T_GOLF_PALMA_PUNTIRO,
   TENNIS_ACADEMY_MALLORCA_PEGUERA,
@@ -342,9 +342,9 @@ export const DEPORTES_SERVICES: ServiceItem[] = [
   URBAN_CROSSFIT_PALMA,
   VALL_D_OR_GOLF_CALADOR,
   vilapadel_marratxi,
-  VIVAGYM_CARDENAL_ROSSELL_PALMA,
+  VIVAGYM_PORTO_PI_PALMA,
   VIVAGYM_SON_FUSTER_PALMA,
-  VIVAGYM_SON_MOIX_PALMA,
+  VIVAGYM_NUREDDUNA_PALMA,
   WINDSURF_STATION_POLLENSA_BAY,
   YOGA_MALLORCA_PORTIXOL,
 ];

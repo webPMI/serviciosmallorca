@@ -29,7 +29,7 @@ export const conservatori_superior_musica_illes_balears_palma: ServiceItem = {
   phone: "+34 971 763 444",
   whatsapp: "+34 971 763 444",
   email: "info@csmib.es",
-  website: "https://csmib.es",
+  website: "https://www.caib.es/sites/conservatorisuperior/",
   schedule: "Lunes a Viernes: 08:30 - 21:30",
   image: "/images/services/conservatori-superior-musica-illes-balears-palma.jpg",
   gallery: ["/images/services/conservatori-superior-musica-illes-balears-palma.jpg"],

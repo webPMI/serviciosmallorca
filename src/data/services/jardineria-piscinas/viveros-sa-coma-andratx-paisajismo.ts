@@ -29,7 +29,7 @@ export const viveros_sa_coma_andratx_paisajismo: ServiceItem = {
   phone: "+34 971 136 620",
   whatsapp: "+34 971 136 620",
   email: "info@viverosacoma.com",
-  website: "https://viverosacoma.com",
+  website: "",
   schedule: "Lunes a Viernes: 08:00 - 18:00, Sábado: 08:30 - 13:30",
   image: "/images/services/viveros-sa-coma-andratx-paisajismo.jpg",
   gallery: ["/images/services/viveros-sa-coma-andratx-paisajismo.jpg"],

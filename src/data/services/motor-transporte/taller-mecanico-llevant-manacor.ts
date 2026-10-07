@@ -20,7 +20,7 @@ export const tallerLlevantManacor: ServiceItem = {
   phone: "+34 971 84 45 20",
   whatsapp: "+34 640 50 60 70",
   email: "contacto@tallerllevant.com",
-  website: "https://tallerllevantmanacor.com",
+  website: "",
   coordinates: { lat: 39.574, lng: 3.212 },
   schedule: "Lunes a Viernes: 08:00 - 13:30 | 15:00 - 19:00 (Sábados y Domingos Cerrado)",
   lastVerifiedAt: "2026-08-25",

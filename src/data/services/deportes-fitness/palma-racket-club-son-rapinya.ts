@@ -30,7 +30,6 @@ export const PALMA_RACKET_CLUB_SON_RAPINYA: ServiceItem = {
   schedule: "Lunes a Domingo: 08:00 - 22:00",
   image: "/images/sports/palma-racket-club-son-rapinya.jpg",
   gallery: ["/images/sports/palma-racket-club-son-rapinya.jpg", "/images/categories/deportes.jpg"],
-  googleMapsUrl: "https://www.google.com/maps?cid=12007019",
   shortDescription: {
     es: "Club deportivo y social con solera en Son Rapinya: tenis en tierra batida, pádel de cristal y piscina.",
     en: "Charming traditional racquet club in Son Rapinya: red clay tennis, glass padel, and summer pool.",
@@ -38,10 +37,10 @@ export const PALMA_RACKET_CLUB_SON_RAPINYA: ServiceItem = {
     de: "Traditionsreicher Racketsport-Club in Son Rapinya mit Rotsand-Tennis, Glas-Padel und Pool.",
   },
   fullDescription: {
-    es: "Palma Racket Club se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Club deportivo y social con solera en Son Rapinya: tenis en tierra batida, pádel de cristal y piscina. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
-    en: "Palma Racket Club stands out as one of the premier athletic and fitness destinations in Mallorca. Charming traditional racquet club in Son Rapinya: red clay tennis, glass padel, and summer pool. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
-    ca: "Palma Racket Club destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Club esportiu i social a Son Rapinya amb tennis de terra batuda, pàdel de vidre i piscina. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
-    de: "Palma Racket Club zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Traditionsreicher Racketsport-Club in Son Rapinya mit Rotsand-Tennis, Glas-Padel und Pool. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
+      "es": "Palma Racket Club en Son Rapinya es un club de raqueta social y deportivo con pistas de tenis de tierra batida, pistas de pádel de cristal, piscina de verano, escuela infantil y restaurante terraza.",
+      "en": "Palma Racket Club in Son Rapinya is a premier tennis and padel club featuring clay courts, glass padel courts, outdoor pool, junior academy, and a clubhouse terrace restaurant.",
+      "ca": "Palma Racket Club a Son Rapinya disposa de pistes de tennis de terra batuda, pàdel, piscina d'estiu i escola esportiva.",
+      "de": "Palma Racket Club in Son Rapinya bietet Sand-Tennisplätze, Padel-Courts, einen Sommerpool und eine beliebte Club-Gastronomie."
   },
   highlights: {
     es: [

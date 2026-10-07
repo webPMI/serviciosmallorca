@@ -29,7 +29,7 @@ export const celler_bar_sa_penya_felanitx: ServiceItem = {
   phone: "+34 971 58 05 45",
   whatsapp: "+34 971 58 05 45",
   email: "info@sapenyafelanitx.com",
-  website: "https://sapenyafelanitx.com",
+  website: "",
   schedule: "Lunes a Domingo: 06:30 - 22:00",
   image: "/images/services/celler-bar-sa-penya-felanitx.jpg",
   gallery: ["/images/services/celler-bar-sa-penya-felanitx.jpg"],

@@ -80,7 +80,7 @@ export const restauranteMiradorSesBarquesFornalutx: ServiceItem = {
   gallery: ["/images/services/restaurante-mirador-ses-barques-fornalutx.jpg"],
   phone: "+34 971 63 02 64",
   whatsapp: "+34971630264",
-  website: "https://miradorsesbarques.com",
+  website: "",
   email: "info@miradorsesbarques.com",
   webAccessibility: "active",
   tags: ["zona:tramuntana", "mod:cita-previa", "product:premium"],

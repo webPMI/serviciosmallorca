@@ -29,7 +29,7 @@ export const ceramica_marratxi_oleries_portol_fang: ServiceItem = {
   phone: "+34 971 601 420",
   whatsapp: "+34 971 601 420",
   email: "info@ceramicaportol.es",
-  website: "https://ceramicaportol.es",
+  website: "",
   schedule: "Lunes a Viernes: 09:00 - 13:30 y 15:30 - 19:30, Sábados: 09:30 - 13:30",
   image: "/images/services/ceramica-marratxi-oleries-portol-fang.jpg",
   gallery: ["/images/services/ceramica-marratxi-oleries-portol-fang.jpg"],

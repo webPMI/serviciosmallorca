@@ -35,7 +35,7 @@ export const oamArquitecturaMediterraneaPalma: ServiceItem = {
   features: ["wifi", "air_conditioning"],
   paymentMethods: ["credit_card", "bank_transfer", "cash"],
   phone: "+34 971 71 50 80",
-  website: "https://www.oam-arquitectura.com/",
+  website: "",
   image: "/images/services/oam-arquitectura-mediterranea-palma.webp",
   shortDescription: {
     es: "Estudio de arquitectura especializado en rehabilitación de palacetes históricos y diseño de villas mediterráneas bioclimáticas.",

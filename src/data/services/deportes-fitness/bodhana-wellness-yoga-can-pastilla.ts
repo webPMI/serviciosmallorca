@@ -30,7 +30,6 @@ export const BODHANA_WELLNESS_YOGA_CAN_PASTILLA: ServiceItem = {
   schedule: "Lunes a Domingo: 08:00 - 22:00",
   image: "/images/sports/bodhana-wellness-yoga-can-pastilla.jpg",
   gallery: ["/images/sports/bodhana-wellness-yoga-can-pastilla.jpg", "/images/categories/deportes.jpg"],
-  googleMapsUrl: "https://www.google.com/maps?cid=12007077",
   shortDescription: {
     es: "Centro holístico con yoga, masajes ayurvédicos y terapias corporales junto a la playa.",
     en: "Holistic wellness center offering yoga, Ayurvedic massage, and body therapies near the beach.",
@@ -38,10 +37,10 @@ export const BODHANA_WELLNESS_YOGA_CAN_PASTILLA: ServiceItem = {
     de: "Ganzheitliches Zentrum mit Yoga, Ayurveda-Massagen und Körpertherapie nahe dem Strand.",
   },
   fullDescription: {
-    es: "Bodhana Wellness & Yoga se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Centro holístico con yoga, masajes ayurvédicos y terapias corporales junto a la playa. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
-    en: "Bodhana Wellness & Yoga stands out as one of the premier athletic and fitness destinations in Mallorca. Holistic wellness center offering yoga, Ayurvedic massage, and body therapies near the beach. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
-    ca: "Bodhana Wellness & Yoga destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Centre holístic amb ioga, massatges aiurvèdics i teràpies corporals a Can Pastilla. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
-    de: "Bodhana Wellness & Yoga zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Ganzheitliches Zentrum mit Yoga, Ayurveda-Massagen und Körpertherapie nahe dem Strand. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
+      "es": "Bodhana Wellness & Yoga ofrece sesiones de yoga frente a la bahía de Palma y tratamientos holísticos de masaje ayurvédico y relajación en Can Pastilla, orientados a la desconexión física y mental junto al mar.",
+      "en": "Bodhana Wellness & Yoga provides seaside yoga sessions and holistic Ayurvedic wellness treatments in Can Pastilla, combining restorative bodywork and mindfulness near Palma bay.",
+      "ca": "Bodhana Wellness & Yoga ofereix sessions de ioga vora la mar i tractaments de benestar a Can Pastilla per a la relaxació integral.",
+      "de": "Bodhana Wellness & Yoga bietet Yoga-Klassen direkt am Meer und ganzheitliche ayurvedische Behandlungen in Can Pastilla."
   },
   highlights: {
     es: [

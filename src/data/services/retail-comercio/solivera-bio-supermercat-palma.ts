@@ -29,7 +29,7 @@ export const solivera_bio_supermercat_palma: ServiceItem = {
   phone: "+34 971 73 99 22",
   whatsapp: "+34 971 73 99 22",
   email: "info@soliverabio.com",
-  website: "https://soliverabio.com",
+  website: "",
   schedule: "Lunes a Viernes: 09:00 - 20:30 | Sábado: 09:00 - 15:00 | Domingo: Cerrado",
   image: "/images/services/solivera-bio-supermercat-palma.jpg",
   gallery: ["/images/services/solivera-bio-supermercat-palma.jpg"],

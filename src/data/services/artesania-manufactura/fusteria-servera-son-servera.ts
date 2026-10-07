@@ -29,7 +29,7 @@ export const fusteria_servera_son_servera: ServiceItem = {
   phone: "+34 971 56 71 82",
   whatsapp: "+34 971 56 71 82",
   email: "info@fusteriaservera.es",
-  website: "https://fusteriaservera.es",
+  website: "",
   schedule: "Lunes a Viernes: 07:30 - 15:30",
   image: "/images/services/fusteria-servera-son-servera.jpg",
   gallery: ["/images/services/fusteria-servera-son-servera.jpg"],

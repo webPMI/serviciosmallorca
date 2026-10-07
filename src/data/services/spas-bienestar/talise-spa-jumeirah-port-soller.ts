@@ -30,7 +30,6 @@ export const talise_spa_jumeirah_port_soller: ServiceItem = {
   schedule: "Lunes a Domingo: 08:00 - 20:00",
   image: "/images/spas/talise-spa-jumeirah-port-soller.jpg",
   gallery: ["/images/spas/talise-spa-jumeirah-port-soller.jpg", "/images/categories/salud.jpg"],
-  googleMapsUrl: "https://www.google.com/maps?cid=13008021",
   shortDescription: {
     es: "Spa de lujo sobre el acantilado del Port de Sóller con piscina de hidromasaje exterior y vistas al mar y la montaña.",
     en: "Cliff-edge luxury spa in Port de Sóller with outdoor hydrotherapy pool and Tramuntana mountain vistas.",

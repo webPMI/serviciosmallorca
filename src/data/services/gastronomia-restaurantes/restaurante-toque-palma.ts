@@ -106,7 +106,7 @@ export const restauranteToquePalma: ServiceItem = {
   phone: "+34 971 28 87 08",
   whatsapp: "+34 971 28 87 08",
   email: "info@restaurantetoque.com",
-  website: "https://restaurantetoque.com",
+  website: "",
   webAccessibility: "active",
   tags: ["zona:santa-catalina", "mod:cita-previa", "product:premium"],
   shortDescription: {

@@ -29,7 +29,7 @@ export const ebro_jardi_garden_center_inca: ServiceItem = {
   phone: "+34 971 88 02 11",
   whatsapp: "+34 971 88 02 11",
   email: "info@ebrojardi.com",
-  website: "https://ebrojardi.com",
+  website: "",
   schedule: "Lunes a Sábado: 08:30 - 19:30 | Domingo: 09:30 - 14:00",
   image: "/images/services/ebro-jardi-garden-center-inca.jpg",
   gallery: ["/images/services/ebro-jardi-garden-center-inca.jpg"],

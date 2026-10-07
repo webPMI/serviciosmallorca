@@ -25,6 +25,7 @@ Toda la documentación del proyecto está en `docs/`. Antes de trabajar en cualq
 - [AGENT_CURATION_SOP.md](docs/AGENT_CURATION_SOP.md) — 🤖 SOP v2.0 para Agentes: Analista de Inteligencia de Negocios, 4 fases, 5 Pilares, Checklist de salida
 - [BUSINESS_DISCOVERY_SOP.md](docs/BUSINESS_DISCOVERY_SOP.md) — 🔎 Checklist Maestro: descubrimiento, minería y ranking por categoría/puntaje/alfabético (`npm run discover`, `npm run discover:mine`)
 - [DATA_HONESTY_BACKLOG.md](docs/DATA_HONESTY_BACKLOG.md) — 🛑 **P0-PRIORITARIO**: backlog de honestidad de datos multi-mapa (952 fichas con URLs de maps fabricadas) y plan de curación por fases (`node scripts/audit-data-honesty.mjs`)
+- [SECTOR_AUDIT_GUIDE.md](docs/SECTOR_AUDIT_GUIDE.md) — 📊 Guía Maestra de Auditoría por Sectores (`npm run audit:sector`, desglose por 22 sectores, GR-11 Zero Fake Data)
 - [BUSINESS_OWNERSHIP_FLOW_REVIEW.md](docs/BUSINESS_OWNERSHIP_FLOW_REVIEW.md) — 🔄 ⚠️ **VINCULANTE (P0 activos)**: auditoría del flujo Reclamar / Crear / Editar negocio: mapa de vías, 5 P0 / 4 P1 / 8 P2 y plan de remediación en 4 fases
 - [OFFICIAL_SOURCES_AND_CITIZEN_INTELLIGENCE.md](docs/OFFICIAL_SOURCES_AND_CITIZEN_INTELLIGENCE.md) — 🏛️ Fuentes oficiales de Baleares, guías al ciudadano y estadísticas IBESTAT
 - [CITIZEN_HUB_UI_UX_SPEC.md](docs/CITIZEN_HUB_UI_UX_SPEC.md) — 📑 Especificación técnica y UI/UX de la sección de Ciudadanía, Guías y Trámites

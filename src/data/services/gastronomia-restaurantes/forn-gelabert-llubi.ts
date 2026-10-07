@@ -20,7 +20,7 @@ export const fornGelabertLlubi: ServiceItem = {
   phone: "+34 971 52 20 40",
   whatsapp: "+34 971 52 20 40",
   email: "info@forngelabert.com",
-  website: "https://forngelabert.com",
+  website: "",
   coordinates: { lat: 39.6995, lng: 3.005 },
   schedule: "Lunes a Domingo: 07:00 - 14:00 | 17:00 - 20:30 (Abierto todos los días)",
   lastVerifiedAt: "2026-08-25",

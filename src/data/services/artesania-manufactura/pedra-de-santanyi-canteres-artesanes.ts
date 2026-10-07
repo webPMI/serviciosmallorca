@@ -35,7 +35,7 @@ export const pedraDeSantanyiCanteresArtesanes: ServiceItem = {
   features: ["parking", "credit_card"],
   paymentMethods: ["credit_card", "bank_transfer", "cash"],
   phone: "+34 971 65 31 10",
-  website: "https://www.pedradesantanyi.com/",
+  website: "",
   image: "/images/services/pedra-de-santanyi-canteres-artesanes.webp",
   shortDescription: {
     es: "Cantería artesanal y extracción de auténtica piedra dorada de Santanyí.",

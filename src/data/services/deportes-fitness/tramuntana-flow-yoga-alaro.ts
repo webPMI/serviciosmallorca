@@ -30,7 +30,6 @@ export const TRAMUNTANA_FLOW_YOGA_ALARO: ServiceItem = {
   schedule: "Lunes a Domingo: 08:00 - 22:00",
   image: "/images/services/tramuntana-flow-yoga-alaro.jpg",
   gallery: ["/images/services/tramuntana-flow-yoga-alaro.jpg", "/images/categories/deportes.jpg"],
-  googleMapsUrl: "https://www.google.com/maps?cid=12007080",
   shortDescription: {
     es: "Finca de retiros de yoga y bienestar en Alaró con shala de madera, piscina y vistas a las montañas.",
     en: "Yoga and wellness retreat finca in Alaró featuring wooden shala, pool, and mountain vistas.",
@@ -38,10 +37,10 @@ export const TRAMUNTANA_FLOW_YOGA_ALARO: ServiceItem = {
     de: "Yoga- und Wellness-Finca in Alaró mit Holz-Shala, Pool und Bergblick auf die Tramuntana.",
   },
   fullDescription: {
-    es: "Tramuntana Flow Yoga Retreats se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Finca de retiros de yoga y bienestar en Alaró con shala de madera, piscina y vistas a las montañas. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
-    en: "Tramuntana Flow Yoga Retreats stands out as one of the premier athletic and fitness destinations in Mallorca. Yoga and wellness retreat finca in Alaró featuring wooden shala, pool, and mountain vistas. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
-    ca: "Tramuntana Flow Yoga Retreats destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Finca de retirs de ioga a Alaró amb shala de fusta, piscina i vistes a la Serra. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
-    de: "Tramuntana Flow Yoga Retreats zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Yoga- und Wellness-Finca in Alaró mit Holz-Shala, Pool und Bergblick auf die Tramuntana. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
+      "es": "Tramuntana Flow en Alaró es un centro internacional de retiros de yoga y desarrollo personal a los pies de la Serra de Tramuntana. Cuenta con shala luminosa con vistas a las montañas, piscina y jardines mediterráneos.",
+      "en": "Tramuntana Flow in Alaró is an international yoga retreat sanctuary at the foot of the Tramuntana mountains, featuring a panoramic yoga shala, pool, and peaceful gardens.",
+      "ca": "Tramuntana Flow a Alaró és un espai de retirs de ioga internacional amb shala panoràmica als peus de la Serra de Tramuntana i jardins meditatius.",
+      "de": "Tramuntana Flow in Alaró ist ein internationales Yoga-Retreat-Zentrum am Fuße des Tramuntana-Gebirges mit Panoramasaal und mediterranem Garten."
   },
   highlights: {
     es: [

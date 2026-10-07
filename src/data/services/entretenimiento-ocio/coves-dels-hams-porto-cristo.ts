@@ -29,7 +29,7 @@ export const coves_dels_hams_porto_cristo: ServiceItem = {
   phone: "+34 971 820 987",
   whatsapp: "+34 971 820 987",
   email: "info@covesdelshams.com",
-  website: "https://covesdelshams.com",
+  website: "https://cuevas-hams.com",
   schedule: "Diario: 10:00 - 17:00",
   image: "/images/services/coves-dels-hams-porto-cristo.jpg",
   gallery: ["/images/services/coves-dels-hams-porto-cristo.jpg"],

@@ -20,7 +20,7 @@ export const artesaniaCerasPalma: ServiceItem = {
   phone: "+34 971 71 42 30",
   whatsapp: "+34 971 71 42 30",
   email: "info@caxigalos.com",
-  website: "https://caxigalos.com",
+  website: "",
   coordinates: { lat: 39.5695, lng: 2.6512 },
   schedule: "Lunes a Sábado: 10:00 - 14:00 | 16:30 - 20:00 (Domingos Cerrado)",
   lastVerifiedAt: "2026-08-25",

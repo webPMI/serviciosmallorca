@@ -29,7 +29,7 @@ export const bodega_son_crespi_santa_maria_vi_de_la_terra: ServiceItem = {
   phone: "+34 971 621 150",
   whatsapp: "+34 971 621 150",
   email: "info@soncrespiceller.es",
-  website: "https://soncrespiceller.es",
+  website: "",
   schedule: "Lunes a Sábado: 09:00 - 13:30 y 16:30 - 19:30",
   image: "/images/services/bodega-son-crespi-santa-maria-vi-de-la-terra.jpg",
   gallery: ["/images/services/bodega-son-crespi-santa-maria-vi-de-la-terra.jpg"],

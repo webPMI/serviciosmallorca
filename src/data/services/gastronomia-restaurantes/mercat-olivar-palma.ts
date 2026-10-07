@@ -105,7 +105,7 @@ export const mercatOlivarPalma: ServiceItem = {
   authorityProfiles: [],
   phone: "+34 971 720 314",
   whatsapp: "+34 971 720 314",
-  website: "https://mercatdelolivar.com",
+  website: "https://mercatolivar.com",
   email: "info@mercatdelolivar.com",
   webAccessibility: "active",
   tags: ["zona:palma", "mod:cita-previa", "product:premium"],

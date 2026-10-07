@@ -35,7 +35,6 @@ import { petitHotelSesRotgesCalaRatjada } from "./petit-hotel-ses-rotges-cala-ra
 import { prediSonJaumellCapdepera } from "./predi-son-jaumell-capdepera.ts";
 import { saCarrotjaAgroturismoSesSalines } from "./sa-carrotja-agroturismo-ses-salines.ts";
 import { sonBrullHotelSpaPollensa } from "./son-brull-hotel-spa-pollensa.ts";
-import { turismo_activo_mallorca_hiking_guides_soller } from "./turismo-activo-mallorca-hiking-guides-soller.ts";
 
 export { agroturisme_son_siurana_alcudia } from "./agroturisme-son-siurana-alcudia.ts";
 export { agroturismo_can_bessol_horta_felanitx } from "./agroturismo-can-bessol-horta-felanitx.ts";
@@ -73,7 +72,6 @@ export { petitHotelSesRotgesCalaRatjada } from "./petit-hotel-ses-rotges-cala-ra
 export { prediSonJaumellCapdepera } from "./predi-son-jaumell-capdepera.ts";
 export { saCarrotjaAgroturismoSesSalines } from "./sa-carrotja-agroturismo-ses-salines.ts";
 export { sonBrullHotelSpaPollensa } from "./son-brull-hotel-spa-pollensa.ts";
-export { turismo_activo_mallorca_hiking_guides_soller } from "./turismo-activo-mallorca-hiking-guides-soller.ts";
 
 export const ALOJAMIENTO_SERVICES: ServiceItem[] = [
   agroturisme_son_siurana_alcudia,
@@ -112,5 +110,4 @@ export const ALOJAMIENTO_SERVICES: ServiceItem[] = [
   prediSonJaumellCapdepera,
   saCarrotjaAgroturismoSesSalines,
   sonBrullHotelSpaPollensa,
-  turismo_activo_mallorca_hiking_guides_soller,
 ];

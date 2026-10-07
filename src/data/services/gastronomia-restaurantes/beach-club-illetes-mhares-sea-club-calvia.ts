@@ -29,7 +29,7 @@ export const beach_club_illetes_mhares_sea_club_calvia: ServiceItem = {
   phone: "+34 971 402 762",
   whatsapp: "+34 971 402 762",
   email: "info@mharesmallorca.com",
-  website: "https://mharesmallorca.com",
+  website: "",
   schedule: "Diario: 11:00 - 23:00 (Temporada: Mayo – Octubre)",
   image: "/images/services/beach-club-illetes-mhares-sea-club-calvia.jpg",
   gallery: ["/images/services/beach-club-illetes-mhares-sea-club-calvia.jpg"],

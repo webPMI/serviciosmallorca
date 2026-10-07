@@ -29,7 +29,7 @@ export const ripoll_mateu_abogados_mallorca_palma: ServiceItem = {
   phone: "+34 971 718 010",
   whatsapp: "+34 971 718 010",
   email: "info@ripollmateu.com",
-  website: "https://ripollmateu.com",
+  website: "",
   schedule: "Lunes a Jueves: 09:00 - 19:00; Viernes: 09:00 - 14:30",
   image: "/images/services/ripoll-mateu-abogados-mallorca-palma.jpg",
   gallery: ["/images/services/ripoll-mateu-abogados-mallorca-palma.jpg"],

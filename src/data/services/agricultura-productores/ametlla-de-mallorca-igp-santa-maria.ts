@@ -29,7 +29,7 @@ export const ametlla_de_mallorca_igp_santa_maria: ServiceItem = {
   phone: "+34 971 62 15 50",
   whatsapp: "+34 971 62 15 50",
   email: "info@ametllademallorca.me",
-  website: "https://ametllademallorca.me",
+  website: "",
   schedule: "Lunes a Viernes: 08:30 - 14:30",
   image: "/images/services/ametlla-de-mallorca-igp-santa-maria.jpg",
   gallery: ["/images/services/ametlla-de-mallorca-igp-santa-maria.jpg"],

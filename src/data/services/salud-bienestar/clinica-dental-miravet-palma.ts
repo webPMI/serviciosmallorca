@@ -29,7 +29,7 @@ export const clinica_dental_miravet_palma: ServiceItem = {
   phone: "+34 971 71 63 33",
   whatsapp: "+34 971 71 63 33",
   email: "info@clinicamiravet.com",
-  website: "https://clinicamiravet.com",
+  website: "",
   schedule: "Lunes a Viernes: 09:00 - 13:30, 15:30 - 20:00 | Sábado y Domingo: Cerrado",
   image: "/images/services/clinica-dental-miravet-palma.jpg",
   gallery: ["/images/services/clinica-dental-miravet-palma.jpg"],

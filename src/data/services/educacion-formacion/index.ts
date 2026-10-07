@@ -11,25 +11,16 @@ import { easdib_escola_art_superior_disseny_balears } from "./easdib-escola-art-
 import { escola_global_international_school_mallorca } from "./escola-global-international-school-mallorca.ts";
 import { escola_hoteleria_illes_balears_ehib_palma } from "./escola-hoteleria-illes-balears-ehib-palma.ts";
 import { escola_oficial_idiomes_eoi_palma } from "./escola-oficial-idiomes-eoi-palma.ts";
-import { escuela_cocina_mallorquina_chef_palma } from "./escuela-cocina-mallorquina-chef-palma.ts";
 import { escuela_vela_calanova_palma } from "./escuela-vela-calanova-palma.ts";
-import { euroaulaDeutscheSprachschulePalma } from "./euroaula-deutsche-sprachschule-palma.ts";
+import { escuela_vela_palma_escola_de_vela } from "./escuela-vela-palma-escola-de-vela.ts";
 import { eurocampusDeutscheSchulePalma } from "./eurocampus-deutsche-schule-palma.ts";
 import { green_valley_international_school_son_vida } from "./green-valley-international-school-son-vida.ts";
 import { ies_mallorca_international_school_palma_british } from "./ies-mallorca-international-school-palma-british.ts";
 import { kingRichardThirdCollegePortals } from "./king-richard-third-college-portals.ts";
 import { lycee_francais_de_palma } from "./lycee-francais-de-palma.ts";
-import { mallorca_academy_languages_palma_centro } from "./mallorca-academy-languages-palma-centro.ts";
-import { palmaBusinessSchoolExecutive } from "./palma-business-school-executive.ts";
 import { queens_college_mallorca_bonanova } from "./queens-college-mallorca-bonanova.ts";
 import { theBritishSchoolOfMallorca } from "./the-british-school-of-mallorca.ts";
 
-import { academia_aleman_deutsch_zentrum_palma } from "./academia-aleman-deutsch-zentrum-palma.ts";
-import { academia_ingles_british_corner_palma } from "./academia-ingles-british-corner-palma.ts";
-import { academia_oposiciones_mallorca_prepara } from "./academia-oposiciones-mallorca-prepara.ts";
-import { autoescuela_palma_conduir } from "./autoescuela-palma-conduir.ts";
-import { escuela_cocina_palma_terra_cuina } from "./escuela-cocina-palma-terra-cuina.ts";
-import { escuela_vela_palma_escola_de_vela } from "./escuela-vela-palma-escola-de-vela.ts";
 export { agoraPortalsInternationalSchool } from "./agora-portals-international-school.ts";
 export { baleares_international_college_sa_porrassa } from "./baleares-international-college-sa-porrassa.ts";
 export { bellver_international_college_palma } from "./bellver-international-college-palma.ts";
@@ -42,32 +33,17 @@ export { easdib_escola_art_superior_disseny_balears } from "./easdib-escola-art-
 export { escola_global_international_school_mallorca } from "./escola-global-international-school-mallorca.ts";
 export { escola_hoteleria_illes_balears_ehib_palma } from "./escola-hoteleria-illes-balears-ehib-palma.ts";
 export { escola_oficial_idiomes_eoi_palma } from "./escola-oficial-idiomes-eoi-palma.ts";
-export { escuela_cocina_mallorquina_chef_palma } from "./escuela-cocina-mallorquina-chef-palma.ts";
 export { escuela_vela_calanova_palma } from "./escuela-vela-calanova-palma.ts";
-export { euroaulaDeutscheSprachschulePalma } from "./euroaula-deutsche-sprachschule-palma.ts";
+export { escuela_vela_palma_escola_de_vela } from "./escuela-vela-palma-escola-de-vela.ts";
 export { eurocampusDeutscheSchulePalma } from "./eurocampus-deutsche-schule-palma.ts";
 export { green_valley_international_school_son_vida } from "./green-valley-international-school-son-vida.ts";
 export { ies_mallorca_international_school_palma_british } from "./ies-mallorca-international-school-palma-british.ts";
 export { kingRichardThirdCollegePortals } from "./king-richard-third-college-portals.ts";
 export { lycee_francais_de_palma } from "./lycee-francais-de-palma.ts";
-export { mallorca_academy_languages_palma_centro } from "./mallorca-academy-languages-palma-centro.ts";
-export { palmaBusinessSchoolExecutive } from "./palma-business-school-executive.ts";
 export { queens_college_mallorca_bonanova } from "./queens-college-mallorca-bonanova.ts";
 export { theBritishSchoolOfMallorca } from "./the-british-school-of-mallorca.ts";
 
-export { academia_aleman_deutsch_zentrum_palma } from "./academia-aleman-deutsch-zentrum-palma.ts";
-export { academia_ingles_british_corner_palma } from "./academia-ingles-british-corner-palma.ts";
-export { academia_oposiciones_mallorca_prepara } from "./academia-oposiciones-mallorca-prepara.ts";
-export { autoescuela_palma_conduir } from "./autoescuela-palma-conduir.ts";
-export { escuela_cocina_palma_terra_cuina } from "./escuela-cocina-palma-terra-cuina.ts";
-export { escuela_vela_palma_escola_de_vela } from "./escuela-vela-palma-escola-de-vela.ts";
 export const EDUCACION_SERVICES: ServiceItem[] = [
-  escuela_vela_palma_escola_de_vela,
-  escuela_cocina_palma_terra_cuina,
-  autoescuela_palma_conduir,
-  academia_oposiciones_mallorca_prepara,
-  academia_ingles_british_corner_palma,
-  academia_aleman_deutsch_zentrum_palma,
   agoraPortalsInternationalSchool,
   baleares_international_college_sa_porrassa,
   bellver_international_college_palma,
@@ -80,16 +56,13 @@ export const EDUCACION_SERVICES: ServiceItem[] = [
   escola_global_international_school_mallorca,
   escola_hoteleria_illes_balears_ehib_palma,
   escola_oficial_idiomes_eoi_palma,
-  escuela_cocina_mallorquina_chef_palma,
   escuela_vela_calanova_palma,
-  euroaulaDeutscheSprachschulePalma,
+  escuela_vela_palma_escola_de_vela,
   eurocampusDeutscheSchulePalma,
   green_valley_international_school_son_vida,
   ies_mallorca_international_school_palma_british,
   kingRichardThirdCollegePortals,
   lycee_francais_de_palma,
-  mallorca_academy_languages_palma_centro,
-  palmaBusinessSchoolExecutive,
   queens_college_mallorca_bonanova,
   theBritishSchoolOfMallorca,
 ];

@@ -30,7 +30,6 @@ export const TENNIS_CLUB_INCA_RAIGUER: ServiceItem = {
   schedule: "Lunes a Domingo: 08:00 - 22:00",
   image: "/images/sports/tennis-club-inca-raiguer.jpg",
   gallery: ["/images/sports/tennis-club-inca-raiguer.jpg", "/images/categories/deportes.jpg"],
-  googleMapsUrl: "https://www.google.com/maps?cid=12007022",
   shortDescription: {
     es: "Club histórico del corazón de Mallorca con 8 pistas de tierra batida, pádel y escuela de cantera.",
     en: "Historic tennis club in central Mallorca with 8 red clay courts, padel, and youth academy.",
@@ -38,10 +37,10 @@ export const TENNIS_CLUB_INCA_RAIGUER: ServiceItem = {
     de: "Traditionsreicher Tennisclub in Inca mit 8 Rotsandplätzen, Padel und Jugendakademie.",
   },
   fullDescription: {
-    es: "Tennis Club Inca se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Club histórico del corazón de Mallorca con 8 pistas de tierra batida, pádel y escuela de cantera. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
-    en: "Tennis Club Inca stands out as one of the premier athletic and fitness destinations in Mallorca. Historic tennis club in central Mallorca with 8 red clay courts, padel, and youth academy. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
-    ca: "Tennis Club Inca destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Club històric d Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
-    de: "Tennis Club Inca zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Traditionsreicher Tennisclub in Inca mit 8 Rotsandplätzen, Padel und Jugendakademie. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
+      "es": "Club Tennis & Pàdel Open Sportinca es el complejo de raqueta central de la comarca del Raiguer, situado en Inca. Dispone de pistas de tenis de tierra batida, pistas de pádel de cristal iluminadas y escuela formativa.",
+      "en": "Club Tennis & Pàdel Open Sportinca in Inca is the primary racquet facility in central Mallorca, featuring clay courts, floodlit padel courts, and youth coaching.",
+      "ca": "Club Tennis & Pàdel Open Sportinca a Inca compta amb pistes de terra batuda, pàdel de vidre il·luminat i escola formativa al cor del Raiguer.",
+      "de": "Club Tennis & Pàdel Open Sportinca in Inca ist das Tennis- und Padelzentrum der Region Raiguer mit Sandplätzen und Flutlicht-Padel."
   },
   highlights: {
     es: [

@@ -20,7 +20,7 @@ export const carniceriaCanXim: ServiceItem = {
   phone: "+34 971 51 02 15",
   whatsapp: "+34 689 20 30 40",
   email: "info@canximalaro.com",
-  website: "https://canximalaro.com",
+  website: "",
   coordinates: { lat: 39.706, lng: 2.791 },
   schedule: "Lunes a Sábado: 08:30 - 14:00 | 17:00 - 20:00 (Domingos Cerrado)",
   lastVerifiedAt: "2026-08-25",

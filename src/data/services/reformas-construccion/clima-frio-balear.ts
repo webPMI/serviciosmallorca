@@ -20,7 +20,7 @@ export const climaFrioBalear: ServiceItem = {
   phone: "+34 971 43 28 10",
   whatsapp: "+34 648 90 12 34",
   email: "info@climafriobalear.com",
-  website: "https://climafriobalear.com",
+  website: "",
   coordinates: { lat: 39.6012, lng: 2.6685 },
   schedule: "Lunes a Viernes: 08:00 - 18:30 | Servicio de Averías Urgentes de Climatización",
   lastVerifiedAt: "2026-08-25",

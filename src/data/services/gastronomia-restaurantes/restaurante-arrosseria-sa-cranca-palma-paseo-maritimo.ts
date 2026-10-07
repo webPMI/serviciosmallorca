@@ -29,7 +29,7 @@ export const restaurante_arrosseria_sa_cranca_palma_paseo_maritimo: ServiceItem 
   phone: "+34 971 737 447",
   whatsapp: "+34 971 737 447",
   email: "info@sacrancapalma.com",
-  website: "https://sacrancapalma.com",
+  website: "https://sacranca.com",
   schedule: "Martes a Domingo: 13:00 - 16:00 y 20:00 - 23:30",
   image: "/images/services/restaurante-arrosseria-sa-cranca-palma-paseo-maritimo.jpg",
   gallery: ["/images/services/restaurante-arrosseria-sa-cranca-palma-paseo-maritimo.jpg"],

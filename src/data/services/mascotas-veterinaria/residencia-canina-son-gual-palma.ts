@@ -29,7 +29,7 @@ export const residencia_canina_son_gual_palma: ServiceItem = {
   phone: "+34 971 267 890",
   whatsapp: "+34 971 267 890",
   email: "info@songualmascotas.com",
-  website: "https://songualmascotas.com",
+  website: "",
   schedule: "Lunes a Domingo: 09:00 - 13:30 y 16:30 - 19:30",
   image: "/images/services/residencia-canina-son-gual-palma.jpg",
   gallery: ["/images/services/residencia-canina-son-gual-palma.jpg"],

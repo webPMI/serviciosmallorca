@@ -15,7 +15,7 @@ export const clubDeMarMallorcaService: ServiceItem = {
   phone: "+34971403611",
   whatsapp: "+34971403611",
   email: "info@clubdemar-mallorca.com",
-  website: "https://marina.clubdemar-mallorca.com",
+  website: "https://www.clubdemar-mallorca.com",
   rating: 4.8,
   reviewCount: 920,
   verified: true,

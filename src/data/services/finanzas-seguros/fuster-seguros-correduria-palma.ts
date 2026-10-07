@@ -35,7 +35,7 @@ export const fusterSegurosCorreduriaPalma: ServiceItem = {
   features: ["wifi", "air_conditioning", "credit_card"],
   paymentMethods: ["credit_card", "bank_transfer", "cash"],
   phone: "+34 971 72 24 00",
-  website: "https://www.fusterseguros.com/",
+  website: "",
   image: "/images/services/fuster-seguros-correduria-palma.webp",
   shortDescription: {
     es: "Más de 80 años asegurando embarcaciones de recreo, superyates, fincas rústicas y patrimonios familiares en Baleares.",

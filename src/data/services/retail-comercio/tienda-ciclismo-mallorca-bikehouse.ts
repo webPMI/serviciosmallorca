@@ -26,7 +26,7 @@ export const tiendaCiclismoMallorcaBikehouse: ServiceItem = {
   phone: "+34 971 40 87 23",
   whatsapp: "+34 630 40 87 23",
   email: "info@bikehousemallorca.com",
-  website: "https://bikehousemallorca.com",
+  website: "",
   schedule: "Todos los días: 09:00 - 19:00",
   image: "/images/services/tienda-ciclismo-mallorca-bikehouse.jpg",
   gallery: ["/images/services/tienda-ciclismo-mallorca-bikehouse.jpg"],

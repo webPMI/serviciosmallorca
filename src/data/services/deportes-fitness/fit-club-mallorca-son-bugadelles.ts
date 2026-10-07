@@ -30,7 +30,6 @@ export const FIT_CLUB_MALLORCA_SON_BUGADELLES: ServiceItem = {
   schedule: "Lunes a Domingo: 08:00 - 22:00",
   image: "/images/services/fit-club-mallorca-son-bugadelles.jpg",
   gallery: ["/images/services/fit-club-mallorca-son-bugadelles.jpg", "/images/categories/deportes.jpg"],
-  googleMapsUrl: "https://www.google.com/maps?cid=12007044",
   shortDescription: {
     es: "Gimnasio boutique de alto nivel en Calvià con entrenamiento funcional, fuerza, boxeo y recuperación.",
     en: "High-end boutique gym in Calvià with functional training, strength, boxing, and recovery.",
@@ -38,10 +37,10 @@ export const FIT_CLUB_MALLORCA_SON_BUGADELLES: ServiceItem = {
     de: "Exklusives Boutique-Gym in Calvià mit Functional Training, Kraftbereich, Boxen und Recovery.",
   },
   fullDescription: {
-    es: "Fit Club Mallorca se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Gimnasio boutique de alto nivel en Calvià con entrenamiento funcional, fuerza, boxeo y recuperación. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
-    en: "Fit Club Mallorca stands out as one of the premier athletic and fitness destinations in Mallorca. High-end boutique gym in Calvià with functional training, strength, boxing, and recovery. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
-    ca: "Fit Club Mallorca destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Gimnàs boutique d Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
-    de: "Fit Club Mallorca zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Exklusives Boutique-Gym in Calvià mit Functional Training, Kraftbereich, Boxen und Recovery. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
+      "es": "Fit Club Mallorca en Son Bugadelles (Calvià) es un gimnasio espacioso y moderno con maquinaria selectorizada, área de peso libre, cardio y programas de entrenamiento funcional adaptados tanto a residentes como a deportistas internacionales.",
+      "en": "Fit Club Mallorca in Son Bugadelles (Calvià) provides an expansive, modern fitness center with premium plate-loaded machines, free weights, and cross-training spaces catering to local residents and expat fitness enthusiasts.",
+      "ca": "Fit Club Mallorca a Son Bugadelles (Calvià) compta amb àmplia sala de musculació, pes lliure i zona funcional per a entrenaments complets.",
+      "de": "Fit Club Mallorca in Son Bugadelles (Calvià) ist ein modernes Fitnessstudio mit umfassendem Freihantel- und Gerätebereich für jedes Trainingsziel."
   },
   highlights: {
     es: [

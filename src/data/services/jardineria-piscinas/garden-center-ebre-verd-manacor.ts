@@ -29,7 +29,7 @@ export const garden_center_ebre_verd_manacor: ServiceItem = {
   phone: "+34 971 84 55 10",
   whatsapp: "+34 971 84 55 10",
   email: "info@ebreverdmanacor.com",
-  website: "https://ebreverdmanacor.com",
+  website: "",
   schedule: "Lunes a Sábado de 08:30 a 19:30, Domingos de 09:30 a 14:00",
   image: "/images/services/garden-center-ebre-verd-manacor.jpg",
   gallery: ["/images/services/garden-center-ebre-verd-manacor.jpg"],

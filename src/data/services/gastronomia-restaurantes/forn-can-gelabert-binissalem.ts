@@ -20,7 +20,7 @@ export const fornCanGelabertBinissalem: ServiceItem = {
   phone: "+34 971 51 12 30",
   whatsapp: "+34 971 51 12 30",
   email: "info@forncangelabert.com",
-  website: "https://forncangelabert.com",
+  website: "",
   coordinates: { lat: 39.689, lng: 2.843 },
   schedule: "Lunes a Domingo: 07:00 - 14:00 | 17:00 - 20:30 (Abierto todos los días)",
   lastVerifiedAt: "2026-08-25",

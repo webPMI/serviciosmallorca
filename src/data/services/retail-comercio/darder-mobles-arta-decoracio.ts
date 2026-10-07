@@ -29,7 +29,7 @@ export const darder_mobles_arta_decoracio: ServiceItem = {
   phone: "+34 971 82 92 84",
   whatsapp: "+34 971 82 92 84",
   email: "info@dardermobles.com",
-  website: "https://dardermobles.com",
+  website: "",
   schedule: "Lunes a Viernes: 09:30 - 13:30, 16:30 - 20:00 | Sábado: 10:00 - 13:30 | Domingo: Cerrado",
   image: "/images/services/darder-mobles-arta-decoracio.jpg",
   gallery: ["/images/services/darder-mobles-arta-decoracio.jpg"],

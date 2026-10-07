@@ -30,7 +30,6 @@ export const REAL_GOLF_DE_BENDINAT: ServiceItem = {
   schedule: "Lunes a Domingo: 08:00 - 22:00",
   image: "/images/services/real-golf-de-bendinat.jpg",
   gallery: ["/images/services/real-golf-de-bendinat.jpg", "/images/categories/deportes.jpg"],
-  googleMapsUrl: "https://www.google.com/maps?cid=12007004",
   shortDescription: {
     es: "Campo de golf de 18 hoyos par 70 diseñado por Martin Hawtree con vistas al Castillo de Bendinat.",
     en: "Scenic 18-hole par 70 course designed by Martin Hawtree overlooking Bendinat Castle.",
@@ -38,10 +37,10 @@ export const REAL_GOLF_DE_BENDINAT: ServiceItem = {
     de: "Malerischer 18-Loch Par 70 Golfplatz von Martin Hawtree im noblen Bendinat.",
   },
   fullDescription: {
-    es: "Real Golf de Bendinat se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Campo de golf de 18 hoyos par 70 diseñado por Martin Hawtree con vistas al Castillo de Bendinat. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
-    en: "Real Golf de Bendinat stands out as one of the premier athletic and fitness destinations in Mallorca. Scenic 18-hole par 70 course designed by Martin Hawtree overlooking Bendinat Castle. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
-    ca: "Real Golf de Bendinat destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Camp de golf de 18 forats par 70 dissenyat per Martin Hawtree a Bendinat. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
-    de: "Real Golf de Bendinat zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Malerischer 18-Loch Par 70 Golfplatz von Martin Hawtree im noblen Bendinat. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
+      "es": "Real Golf de Bendinat es un campo de 18 hoyos diseñado por Martin Hawtree en una exclusiva zona residencial de Calvià, entre colinas y pinos con vistas a la bahía de Palma y al castillo de Bendinat.",
+      "en": "Real Golf de Bendinat is an 18-hole course designed by Martin Hawtree nestled between pine-clad hills and luxury villas, offering views of Palma Bay and Bendinat Castle.",
+      "ca": "Real Golf de Bendinat és un camp de 18 forats dissenyat per Martin Hawtree a Calvià entre boscos de pins i vistes al castell de Bendinat.",
+      "de": "Real Golf de Bendinat wurde von Martin Hawtree entworfen und schlängelt sich durch Pinienwälder mit weitem Blick auf die Bucht von Palma."
   },
   highlights: {
     es: [

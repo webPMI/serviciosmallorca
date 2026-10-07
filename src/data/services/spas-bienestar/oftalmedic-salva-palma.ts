@@ -27,7 +27,7 @@ export const oftalmedicSalvaPalma: ServiceItem = {
   phone: "+34 971 73 00 55",
   whatsapp: "+34 971 73 00 55",
   email: "info@oftalmedicsalva.com",
-  website: "https://www.oftalmedicsalva.com",
+  website: "",
   menuUrl: "https://www.oftalmedicsalva.com",
   tags: [
     "zona:palma",

@@ -35,7 +35,7 @@ export const clinicaVeterinariaSollerTramuntana: ServiceItem = {
   features: ["wifi", "credit_card"],
   paymentMethods: ["credit_card", "bank_transfer", "cash"],
   phone: "+34 971 63 38 70",
-  website: "https://www.veterinariasoller.com/",
+  website: "",
   image: "/images/services/clinica-veterinaria-soller-tramuntana.webp",
   shortDescription: {
     es: "Atención veterinaria integral para animales de compañía y equinos en el valle de Sóller y la Serra de Tramuntana.",

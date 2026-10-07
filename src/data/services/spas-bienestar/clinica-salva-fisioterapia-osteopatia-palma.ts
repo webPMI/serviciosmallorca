@@ -26,11 +26,10 @@ export const clinica_salva_fisioterapia_osteopatia_palma: ServiceItem = {
   phone: "+34 971 721 111",
   whatsapp: "+34 971 721 111",
   email: "info@clinicasalvafisio.com",
-  website: "https://clinicasalvafisio.com",
+  website: "",
   schedule: "Lunes a Domingo: 08:00 - 20:00",
   image: "/images/spas/clinica-salva-fisioterapia-osteopatia-palma.jpg",
   gallery: ["/images/spas/clinica-salva-fisioterapia-osteopatia-palma.jpg", "/images/categories/salud.jpg"],
-  googleMapsUrl: "https://www.google.com/maps?cid=13008015",
   shortDescription: {
     es: "Fisioterapia avanzada, osteopatía estructural, ecografía musculoesquelética y readaptación deportiva.",
     en: "Advanced physiotherapy, structural osteopathy, ultrasound diagnosis, and sports injury rehabilitation.",

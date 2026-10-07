@@ -29,7 +29,7 @@ export const clinica_veterinaria_hospital_llevant_manacor: ServiceItem = {
   phone: "+34 971 843 990",
   whatsapp: "+34 971 843 990",
   email: "info@hospitalveterinarillevant.es",
-  website: "https://hospitalveterinarillevant.es",
+  website: "",
   schedule: "Consultas: Lunes a Sábado: 09:00 - 20:30 (Urgencias y Hospitalización 24h / 365 días)",
   image: "/images/services/clinica-veterinaria-hospital-llevant-manacor.jpg",
   gallery: ["/images/services/clinica-veterinaria-hospital-llevant-manacor.jpg"],

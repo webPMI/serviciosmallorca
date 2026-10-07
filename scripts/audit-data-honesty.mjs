@@ -9,6 +9,9 @@ import path from "node:path";
 
 const SERVICES_DIR = path.resolve("src/data/services");
 const JSON_OUTPUT = process.argv.includes("--json");
+const sectorArg =
+  process.argv.find((a) => a.startsWith("--sector="))?.split("=")[1] ||
+  process.argv.find((a) => !a.startsWith("--") && a !== process.argv[0] && a !== process.argv[1]);
 const SEARCH_HINTS = ["maps/search", "maps?q=", "maps.apple.com/?q=", "/search/?api=", "?q="];
 
 function classifyMapsUrl(url) {
@@ -17,6 +20,10 @@ function classifyMapsUrl(url) {
   if (u === "" || u === "undefined" || u === "null") return "invalid";
   if (!/^https?:\/\//i.test(u)) return "invalid";
   if (SEARCH_HINTS.some((hint) => u.includes(hint))) return "search_fake";
+  const cidMatch = u.match(/cid=(\d+)/i);
+  if (cidMatch && (cidMatch[1].length < 14 || cidMatch[1].startsWith("12007") || cidMatch[1].startsWith("13008"))) {
+    return "search_fake";
+  }
   return "listing";
 }
 
@@ -31,8 +38,15 @@ function main() {
   const walk = (dir) => {
     for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
       const p = path.join(dir, entry.name);
-      if (entry.isDirectory()) walk(p);
-      else if (entry.name.endsWith(".ts") && entry.name !== "types.ts" && entry.name !== "index.ts") files.push(p);
+      if (entry.isDirectory()) {
+        if (!sectorArg || entry.name.toLowerCase().includes(sectorArg.toLowerCase()) || dir !== SERVICES_DIR) {
+          walk(p);
+        }
+      } else if (entry.name.endsWith(".ts") && entry.name !== "types.ts" && entry.name !== "index.ts") {
+        if (!sectorArg || p.toLowerCase().includes(sectorArg.toLowerCase())) {
+          files.push(p);
+        }
+      }
     }
   };
   walk(SERVICES_DIR);
@@ -60,6 +74,16 @@ function main() {
     if (bingClaims > 0 && b !== "listing") flags.push(`review_bing_x${bingClaims}`);
     if (totalsAgg && reviewCount !== null && reviewCount !== undefined && Number(totalsAgg[1]) > reviewCount) {
       flags.push(`agg_${totalsAgg[1]}>rc_${reviewCount}`);
+    }
+    const phoneRaw = extractField(content, "phone");
+    if (phoneRaw) {
+      const digits = phoneRaw.replace(/\D/g, "");
+      if (digits.endsWith("1234") || digits.endsWith("12345")) {
+        flags.push("dummy_phone");
+      }
+    }
+    if (content.includes("se posiciona como una de las instalaciones deportivas")) {
+      flags.push("boilerplate_ai");
     }
     services.push({ file: rel, name, g, a, b, flags, reviewCount });
   }
@@ -108,7 +132,7 @@ function main() {
   }
 
   console.log("======================================================");
-  console.log("AUDITOR DE HONESTIDAD DE DATOS (GR-11 / GR-12)");
+  console.log(`AUDITOR DE HONESTIDAD DE DATOS (GR-11 / GR-12)${sectorArg ? ` [Sector: ${sectorArg}]` : ""}`);
   console.log(`Total de fichas analizadas: ${summary.totalServices}`);
   for (const [label, p] of [
     ["Google", summary.google],
@@ -124,17 +148,23 @@ function main() {
   console.log(`Negocios con >=1 URL inválida   : ${summary.anyInvalidUrl}`);
   console.log(`Reseñas en plataforma sin ficha : ${summary.reviewPlatformMismatch}`);
   console.log(`Total agregado > reviewCount    : ${summary.aggregateGtReviewCount}`);
-  console.log(`Fichas limpias                  : ${summary.clean}`);
-  console.log("--- Por sector (candidatos a curación P0) ---");
-  for (const [sector, v] of Object.entries(bySector).sort((a, b) => b[1].searchFake - a[1].searchFake)) {
-    if (v.searchFake > 0)
-      console.log(
-        `  ${sector.padEnd(30)} total=${v.total} fake=${v.searchFake} real=${v.listings} honesto=${v.absent} limpio=${v.clean}`,
-      );
+  console.log(
+    `Fichas limpias                  : ${summary.clean} (${summary.totalServices > 0 ? Math.round((summary.clean / summary.totalServices) * 100) : 100}%)`,
+  );
+
+  console.log("\n--- Desglose por Sector ---");
+  for (const [sector, v] of Object.entries(bySector).sort((a, b) => a[0].localeCompare(b[0]))) {
+    const statusMark = v.clean === v.total ? "🟢 Limpio" : `🚨 ${v.total - v.clean} anomalías`;
+    console.log(
+      `  ${sector.padEnd(28)} total=${v.total.toString().padStart(3, " ")} | real=${v.listings.toString().padStart(2, " ")} | honesto=${v.absent.toString().padStart(3, " ")} | ${statusMark}`,
+    );
   }
-  console.log("--- Muestra de casos (máx 60) ---");
-  for (const s of services.filter((x) => x.flags.length > 0).slice(0, 60)) {
-    console.log(`  ${s.file.padEnd(58)} ${s.flags.join(", ")}`);
+
+  if (summary.clean < summary.totalServices) {
+    console.log("\n--- Muestra de casos con discrepancias ---");
+    for (const s of services.filter((x) => x.flags.length > 0).slice(0, 60)) {
+      console.log(`  ${s.file.padEnd(58)} ${s.flags.join(", ")}`);
+    }
   }
 }
 

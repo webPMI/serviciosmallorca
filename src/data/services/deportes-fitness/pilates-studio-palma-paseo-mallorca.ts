@@ -30,7 +30,6 @@ export const PILATES_STUDIO_PALMA_PASEO_MALLORCA: ServiceItem = {
   schedule: "Lunes a Domingo: 08:00 - 22:00",
   image: "/images/sports/pilates-studio-palma-paseo-mallorca.jpg",
   gallery: ["/images/sports/pilates-studio-palma-paseo-mallorca.jpg", "/images/categories/deportes.jpg"],
-  googleMapsUrl: "https://www.google.com/maps?cid=12007074",
   shortDescription: {
     es: "Estudio de Pilates con máquinas Reformer, Cadillac y Wunda Chair con atención personalizada 1 a 1.",
     en: "Pilates studio with Reformer, Cadillac, and Wunda Chair apparatus with 1-on-1 private sessions.",
@@ -38,10 +37,10 @@ export const PILATES_STUDIO_PALMA_PASEO_MALLORCA: ServiceItem = {
     de: "Pilates-Studio mit Reformer, Cadillac und Wunda Chair mit individuellem Einzeltraining.",
   },
   fullDescription: {
-    es: "Pilates Studio Paseo Mallorca se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Estudio de Pilates con máquinas Reformer, Cadillac y Wunda Chair con atención personalizada 1 a 1. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
-    en: "Pilates Studio Paseo Mallorca stands out as one of the premier athletic and fitness destinations in Mallorca. Pilates studio with Reformer, Cadillac, and Wunda Chair apparatus with 1-on-1 private sessions. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
-    ca: "Pilates Studio Paseo Mallorca destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Estudi de Pilates amb màquines Reformer, Cadillac i atenció personalitzada a Palma. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
-    de: "Pilates Studio Paseo Mallorca zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Pilates-Studio mit Reformer, Cadillac und Wunda Chair mit individuellem Einzeltraining. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
+      "es": "Kensho Pilates Studio en Santa Catalina es un centro especializado en el método Pilates clásico con máquinas Reformer, Cadillac y Wunda Chair, ofreciendo sesiones individuales y grupos reducidos guiados por instructores certificados.",
+      "en": "Kensho Pilates Studio in Santa Catalina specializes in classical Pilates using Reformers, Cadillacs, and Wunda Chairs with private sessions and small group classes.",
+      "ca": "Kensho Pilates Studio a Santa Catalina ofereix mètode Pilates clàssic amb màquines Reformer i atenció personalitzada en grups reduïts.",
+      "de": "Kensho Pilates Studio in Santa Catalina bietet klassisches Pilates-Gerätetraining mit Reformer und Cadillac in kleinen, persönlichen Gruppen."
   },
   highlights: {
     es: [

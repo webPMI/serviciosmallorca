@@ -20,7 +20,7 @@ export const garajeAutoPla: ServiceItem = {
   phone: "+34 971 50 48 10",
   whatsapp: "+34 650 88 12 34",
   email: "taller@autopla-inca.com",
-  website: "https://autopla-inca.com",
+  website: "",
   coordinates: { lat: 39.7185, lng: 2.9112 },
   schedule: "Lunes a Viernes: 08:00 - 13:00 | 15:00 - 19:00 (Sábados y Domingos Cerrado)",
   lastVerifiedAt: "2026-08-25",

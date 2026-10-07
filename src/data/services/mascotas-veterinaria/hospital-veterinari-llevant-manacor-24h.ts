@@ -33,7 +33,7 @@ export const hospital_veterinari_llevant_manacor_24h: ServiceItem = {
   phone: "+34 971 555 012",
   whatsapp: "+34 971 555 012",
   email: "info@hvllevant.es",
-  website: "https://hvllevant.es",
+  website: "",
   schedule: "Urgencias 24 horas / 365 días (Consultas: Lunes a Sábado 09:00 - 20:00)",
   image: "/images/services/hospital-veterinari-llevant-manacor-24h.jpg",
   gallery: ["/images/services/hospital-veterinari-llevant-manacor-24h.jpg"],

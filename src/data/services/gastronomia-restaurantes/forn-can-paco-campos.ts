@@ -20,7 +20,7 @@ export const fornCanPacoCampos: ServiceItem = {
   phone: "+34 971 65 04 80",
   whatsapp: "+34 971 65 04 80",
   email: "info@forncanpaco.com",
-  website: "https://forncanpaco.com",
+  website: "",
   coordinates: { lat: 39.431, lng: 3.018 },
   schedule: "Lunes a Domingo: 06:30 - 14:00 | 17:00 - 20:30 (Abierto todos los días)",
   lastVerifiedAt: "2026-08-25",

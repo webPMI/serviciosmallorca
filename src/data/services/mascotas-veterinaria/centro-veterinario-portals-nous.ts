@@ -35,7 +35,7 @@ export const centroVeterinarioPortalsNous: ServiceItem = {
   features: ["wifi", "air_conditioning", "credit_card"],
   paymentMethods: ["credit_card", "bank_transfer", "cash"],
   phone: "+34 971 67 61 71",
-  website: "https://www.veterinariaportals.com/",
+  website: "",
   image: "/images/services/centro-veterinario-portals-nous.webp",
   shortDescription: {
     es: "Clínica veterinaria internacional con atención multilingüe nativa (EN/DE/ES), pasaportes de viaje y cardiología.",

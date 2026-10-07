@@ -20,7 +20,7 @@ export const talleresAutoInca: ServiceItem = {
   phone: "+34 971 50 28 40",
   whatsapp: "+34 640 10 20 30",
   email: "taller@autoinca.com",
-  website: "https://talleresautoinca.com",
+  website: "",
   coordinates: { lat: 39.715, lng: 2.905 },
   schedule: "Lunes a Viernes: 08:00 - 13:30 | 15:00 - 19:00 (Sábados y Domingos Cerrado)",
   lastVerifiedAt: "2026-08-25",

@@ -30,7 +30,6 @@ export const PRO_CYCLE_HIRE_ALCUDIA_POLLENSA: ServiceItem = {
   schedule: "Lunes a Domingo: 08:00 - 22:00",
   image: "/images/services/pro-cycle-hire-alcudia-pollensa.jpg",
   gallery: ["/images/services/pro-cycle-hire-alcudia-pollensa.jpg", "/images/categories/deportes.jpg"],
-  googleMapsUrl: "https://www.google.com/maps?cid=12007089",
   shortDescription: {
     es: "Centro ciclista histórico fundado por Bruce Berkeley con flota Massi y Colnago de carbono.",
     en: "Historic cycling center founded by Bruce Berkeley featuring premium Massi and Colnago carbon bikes.",
@@ -38,10 +37,10 @@ export const PRO_CYCLE_HIRE_ALCUDIA_POLLENSA: ServiceItem = {
     de: "Traditionsreicher Radverleih von Bruce Berkeley mit Massi- und Colnago-Carbonrädern.",
   },
   fullDescription: {
-    es: "Pro Cycle Hire Mallorca se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Centro ciclista histórico fundado por Bruce Berkeley con flota Massi y Colnago de carbono. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
-    en: "Pro Cycle Hire Mallorca stands out as one of the premier athletic and fitness destinations in Mallorca. Historic cycling center founded by Bruce Berkeley featuring premium Massi and Colnago carbon bikes. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
-    ca: "Pro Cycle Hire Mallorca destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Centre ciclista històric al Port de Pollença amb bicicletes de carboni Massi i Colnago. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
-    de: "Pro Cycle Hire Mallorca zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Traditionsreicher Radverleih von Bruce Berkeley mit Massi- und Colnago-Carbonrädern. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
+      "es": "Pro Cycle Hire Mallorca en Port de Pollença es una de las empresas de alquiler de bicicletas más prestigiosas de la isla, fundada en 2004 por Bruce Berkeley. Cuenta con bicicletas Colnago y Van Nicholas, mecánico profesional y tienda técnica.",
+      "en": "Pro Cycle Hire in Port de Pollença is a legendary cycle hire center established in 2004, offering premium Colnago carbon bikes, expert bike fitting, and servicing.",
+      "ca": "Pro Cycle Hire al Port de Pollença ofereix bicicletes de carretera de gamma alta Colnago, ajust biomecànic i servei tècnic especialitzat.",
+      "de": "Pro Cycle Hire in Port de Pollença ist eine Radsport-Institution seit 2004 mit erstklassigen Colnago-Rennrädern und professionellem Werkstattservice."
   },
   highlights: {
     es: [

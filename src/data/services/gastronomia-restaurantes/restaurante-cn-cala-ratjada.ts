@@ -27,7 +27,7 @@ export const restauranteCnCalaRatjada: ServiceItem = {
   phone: "+34 630 90 75 39",
   whatsapp: "+34 630 90 75 39",
   email: "info@cncalaratjada.com",
-  website: "https://www.cncalaratjada.com",
+  website: "",
   menuUrl: "https://www.cncalaratjada.com",
   tags: [
     "zona:manacor-llevant",

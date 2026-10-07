@@ -29,7 +29,7 @@ export const teixits_bujosa_santa_maria_del_cami: ServiceItem = {
   phone: "+34 971 62 00 54",
   whatsapp: "+34 971 62 00 54",
   email: "info@teixitsbujosa.com",
-  website: "https://teixitsbujosa.com",
+  website: "",
   schedule: "Lunes a Viernes: 09:00 - 13:30, 16:30 - 20:00 | Sábado: 09:30 - 13:30 | Domingo: Cerrado",
   image: "/images/services/teixits-bujosa-santa-maria-del-cami.jpg",
   gallery: ["/images/services/teixits-bujosa-santa-maria-del-cami.jpg"],

@@ -29,7 +29,7 @@ export const agroturismo_son_mercadal_porreres_finca_rural: ServiceItem = {
   phone: "+34 971 647 120",
   whatsapp: "+34 971 647 120",
   email: "info@sonmercadal.es",
-  website: "https://sonmercadal.es",
+  website: "",
   schedule: "Recepción: 08:30 - 21:00 (Marzo a Noviembre)",
   image: "/images/services/agroturismo-son-mercadal-porreres-finca-rural.jpg",
   gallery: ["/images/services/agroturismo-son-mercadal-porreres-finca-rural.jpg"],

@@ -35,7 +35,7 @@ export const formatgesDeMallorcaQueseriaArta: ServiceItem = {
   features: ["parking", "credit_card"],
   paymentMethods: ["credit_card", "bank_transfer", "cash"],
   phone: "+34 971 83 51 22",
-  website: "https://formatgesonjover.com/",
+  website: "",
   image: "/images/services/formatges-de-mallorca-queseria-arta.webp",
   shortDescription: {
     es: "Quesería artesanal que elabora quesos curados de oveja de raza autóctona mallorquina alimentada en pastos libres.",

@@ -29,7 +29,7 @@ export const celler_son_sant_marti_muro_tradicional: ServiceItem = {
   phone: "+34 971 537 440",
   whatsapp: "+34 971 537 440",
   email: "info@sonsantmartimuro.es",
-  website: "https://sonsantmartimuro.es",
+  website: "",
   schedule: "Martes a Domingo: 13:00 - 16:00 y 20:00 - 23:30",
   image: "/images/services/celler-son-sant-marti-muro-tradicional.jpg",
   gallery: ["/images/services/celler-son-sant-marti-muro-tradicional.jpg"],

@@ -35,7 +35,7 @@ export const banyBanulsInteriorBathroomsPalma: ServiceItem = {
   features: ["parking", "credit_card"],
   paymentMethods: ["credit_card", "bank_transfer", "cash"],
   phone: "+34 971 27 60 11",
-  website: "https://www.banybanyuls.com/",
+  website: "",
   image: "/images/services/bany-banuls-interior-bathrooms-palma.webp",
   shortDescription: {
     es: "Showroom de baños de lujo, griferías de autor (Dornbracht, CEA Design), bañeras exentas y piedra natural para villas.",

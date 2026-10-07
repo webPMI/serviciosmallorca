@@ -29,7 +29,7 @@ export const gestoria_administrativa_asesoria_marroig_palma: ServiceItem = {
   phone: "+34 971 721 110",
   whatsapp: "+34 971 721 110",
   email: "info@gestoriamarroigpalma.es",
-  website: "https://gestoriamarroigpalma.es",
+  website: "",
   schedule: "Lunes a Jueves: 08:30 - 17:30, Viernes: 08:30 - 14:30",
   image: "/images/services/gestoria-administrativa-asesoria-marroig-palma.jpg",
   gallery: ["/images/services/gestoria-administrativa-asesoria-marroig-palma.jpg"],

@@ -29,7 +29,7 @@ export const fundacio_patronat_obrer_sant_josep_palma: ServiceItem = {
   phone: "+34 971 72 26 40",
   whatsapp: "+34 971 72 26 40",
   email: "info@patronatobrer.org",
-  website: "https://patronatobrer.org",
+  website: "",
   schedule: "Lunes a Viernes de 08:30 a 17:00",
   image: "/images/services/fundacio-patronat-obrer-sant-josep-palma.jpg",
   gallery: ["/images/services/fundacio-patronat-obrer-sant-josep-palma.jpg"],

@@ -29,7 +29,7 @@ export const taller_mecanic_motos_can_picafort: ServiceItem = {
   phone: "+34 971 85 03 33",
   whatsapp: "+34 971 85 03 33",
   email: "info@motocanpicafort.com",
-  website: "https://motocanpicafort.com",
+  website: "",
   schedule: "Lunes a Viernes de 08:00 a 13:00 y 15:00 a 19:00",
   image: "/images/services/taller-mecanic-motos-can-picafort.jpg",
   gallery: ["/images/services/taller-mecanic-motos-can-picafort.jpg"],

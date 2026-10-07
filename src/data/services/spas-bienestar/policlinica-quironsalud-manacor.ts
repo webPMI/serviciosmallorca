@@ -30,7 +30,6 @@ export const policlinica_quironsalud_manacor: ServiceItem = {
   schedule: "Lunes a Domingo: 08:00 - 20:00",
   image: "/images/spas/policlinica-quironsalud-manacor.jpg",
   gallery: ["/images/spas/policlinica-quironsalud-manacor.jpg", "/images/categories/salud.jpg"],
-  googleMapsUrl: "https://www.google.com/maps?cid=13008006",
   shortDescription: {
     es: "Centro de consultas médicas, traumatología, ginecología y radiología en la comarca de Llevant.",
     en: "Medical specialties clinic offering traumatology, gynecology, and radiology in the Llevant region.",

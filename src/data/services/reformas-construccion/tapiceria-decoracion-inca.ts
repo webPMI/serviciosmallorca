@@ -20,7 +20,7 @@ export const tapiceriaDecoracionInca: ServiceItem = {
   phone: "+34 971 50 35 40",
   whatsapp: "+34 670 45 60 70",
   email: "info@tapiceriainca.com",
-  website: "https://tapiceriainca.com",
+  website: "",
   coordinates: { lat: 39.718, lng: 2.91 },
   schedule: "Lunes a Viernes: 08:30 - 13:30 | 16:00 - 19:30 (Visitas y Muestrarios a Domicilio)",
   lastVerifiedAt: "2026-08-25",

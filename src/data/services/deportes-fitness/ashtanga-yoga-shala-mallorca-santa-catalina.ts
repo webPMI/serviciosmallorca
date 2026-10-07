@@ -23,14 +23,13 @@ export const ASHTANGA_YOGA_SHALA_MALLORCA_SANTA_CATALINA: ServiceItem = {
   featured: true,
   status: "open",
   tags: ["product:yoga-pilates", "zona:palma-centro"],
-  phone: "+34 678 912 345",
-  whatsapp: "+34 678 912 345",
+  phone: "+34 626 55 49 46",
+  whatsapp: "+34 626 55 49 46",
   email: "info@ashtangayogamallorca.com",
   website: "https://ashtangayogamallorca.com",
   schedule: "Lunes a Domingo: 08:00 - 22:00",
   image: "/images/sports/ashtanga-yoga-shala-mallorca-santa-catalina.jpg",
   gallery: ["/images/sports/ashtanga-yoga-shala-mallorca-santa-catalina.jpg", "/images/categories/deportes.jpg"],
-  googleMapsUrl: "https://www.google.com/maps?cid=12007072",
   shortDescription: {
     es: "Shala tradicional de Ashtanga Yoga en Santa Catalina con práctica Mysore matinal y profesores autorizados.",
     en: "Traditional Ashtanga Yoga Shala in Santa Catalina offering morning Mysore practice and authorized teachers.",
@@ -38,10 +37,10 @@ export const ASHTANGA_YOGA_SHALA_MALLORCA_SANTA_CATALINA: ServiceItem = {
     de: "Traditionelle Ashtanga-Yoga-Shala in Santa Catalina mit morgendlicher Mysore-Praxis.",
   },
   fullDescription: {
-    es: "Ashtanga Yoga Shala Mallorca se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Shala tradicional de Ashtanga Yoga en Santa Catalina con práctica Mysore matinal y profesores autorizados. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
-    en: "Ashtanga Yoga Shala Mallorca stands out as one of the premier athletic and fitness destinations in Mallorca. Traditional Ashtanga Yoga Shala in Santa Catalina offering morning Mysore practice and authorized teachers. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
-    ca: "Ashtanga Yoga Shala Mallorca destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Shala tradicional d Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
-    de: "Ashtanga Yoga Shala Mallorca zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Traditionelle Ashtanga-Yoga-Shala in Santa Catalina mit morgendlicher Mysore-Praxis. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
+      "es": "Ashtanga Yoga Shala Mallorca es el espacio de referencia en Santa Catalina dedicado a la transmisión del método tradicional de Ashtanga Yoga según el linaje KPJAYI. Ofrece clases estilo Mysore a primera hora de la mañana y sesiones guiadas para practicantes de todos los niveles en un ambiente sereno y acogedor.",
+      "en": "Ashtanga Yoga Shala Mallorca is a dedicated sanctuary in Santa Catalina teaching traditional Ashtanga Yoga in the authentic KPJAYI lineage. Offering morning Mysore style practice and led classes for all levels in a tranquil setting.",
+      "ca": "Ashtanga Yoga Shala Mallorca és un espai dedicat al mètode tradicional d'Ashtanga Ioga a Santa Catalina, amb pràctica matinal Mysore i sessions guiades.",
+      "de": "Ashtanga Yoga Shala Mallorca ist eine traditionelle Ashtanga-Yoga-Schule in Santa Catalina mit morgendlicher Mysore-Praxis für Anfänger und Fortgeschrittene."
   },
   highlights: {
     es: [

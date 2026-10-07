@@ -26,11 +26,10 @@ export const institut_balear_oftalmologia_ibo_palma: ServiceItem = {
   phone: "+34 971 288 888",
   whatsapp: "+34 971 288 888",
   email: "info@iboftalmologia.com",
-  website: "https://iboftalmologia.com",
+  website: "https://ibo.es",
   schedule: "Lunes a Domingo: 08:00 - 20:00",
   image: "/images/spas/institut-balear-oftalmologia-ibo-palma.jpg",
   gallery: ["/images/spas/institut-balear-oftalmologia-ibo-palma.jpg", "/images/categories/salud.jpg"],
-  googleMapsUrl: "https://www.google.com/maps?cid=13008013",
   shortDescription: {
     es: "Centro de referencia en cirugía refractiva láser Femto-LASIK, cataratas, retina y glaucoma en Baleares.",
     en: "Balearic leading ophthalmic center for Femto-LASIK laser surgery, cataract, retina, and glaucoma care.",

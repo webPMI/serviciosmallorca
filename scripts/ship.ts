@@ -122,32 +122,40 @@ async function main() {
   const commitMsg = rawMsg || "chore: automated verified deploy and synchronization";
 
   // 1. Auto-increment Platform Version (GR-16)
-  logStep(1, 8, "Auto-incremento de Versión de Plataforma (GR-16)");
+  logStep(1, 10, "Auto-incremento de Versión de Plataforma (GR-16)");
   const { nextVersion } = bumpVersion(commitMsg);
   const finalCommitMsg = `release(v${nextVersion}): ${commitMsg}`;
 
   // 2. Typecheck
-  logStep(2, 8, "TypeScript Strict Typecheck");
+  logStep(2, 10, "TypeScript Strict Typecheck");
   runCommand("npm run typecheck", "Typecheck");
 
   // 3. Validate Taxonomy
-  logStep(3, 8, "Validación de Integridad Taxonómica");
+  logStep(3, 10, "Validación de Integridad Taxonómica");
   runCommand("npm run validate:taxonomy", "Taxonomy Validation");
 
-  // 4. Test Suites
-  logStep(4, 8, "Batería de Pruebas Unitarias y de Integración");
+  // 4. Validate Sports Facilities
+  logStep(4, 10, "Validación de Integridad de Deportes (Zero Fake Data)");
+  runCommand("npm run validate:sports", "Sports Facilities Validation");
+
+  // 5. Audit Data Honesty
+  logStep(5, 10, "Auditoría de Honestidad de Datos (GR-11 Zero Fake Data)");
+  runCommand("npm run audit:honesty", "Data Honesty Audit");
+
+  // 6. Test Suites
+  logStep(6, 10, "Batería de Pruebas Unitarias y de Integración");
   runCommand("npm test", "Test Suites");
 
-  // 5. Multi-Auditor Intelligence
-  logStep(5, 8, "Auditoría de Inteligencia Multi-Agente");
+  // 7. Multi-Auditor Intelligence
+  logStep(7, 10, "Auditoría de Inteligencia Multi-Agente");
   runCommand("npm run audit:full", "Multi-Auditor Intelligence");
 
-  // 6. Astro Production Build
-  logStep(6, 8, "Compilación de Producción Astro/Cloudflare");
+  // 8. Astro Production Build
+  logStep(8, 10, "Compilación de Producción Astro/Cloudflare");
   runCommand("npm run build", "Production Build");
 
-  // 7. Git Push & Commit
-  logStep(7, 8, "Sincronización Continua con GitHub (origin main)");
+  // 9. Git Push & Commit
+  logStep(9, 10, "Sincronización Continua con GitHub (origin main)");
   try {
     execSync("git add -A", { stdio: "inherit" });
     const status = execSync("git status --porcelain").toString().trim();
@@ -160,8 +168,8 @@ async function main() {
     console.warn(`${YELLOW}⚠️ Nota sobre git sync: ${err.message}${RESET}`);
   }
 
-  // 8. Cloudflare Workers Deploy & Healthcheck
-  logStep(8, 8, "Despliegue a Cloudflare Workers & Healthcheck");
+  // 10. Cloudflare Workers Deploy & Healthcheck
+  logStep(10, 10, "Despliegue a Cloudflare Workers & Healthcheck");
   runCommand("npx wrangler deploy", "Cloudflare Workers Deploy");
 
   console.log(`\n${CYAN}🔍 Verificando estado en vivo en producción (Multi-Locale & AI Agent Discovery)...${RESET}`);

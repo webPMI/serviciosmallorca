@@ -29,7 +29,7 @@ export const fisioterapia_osteopatia_palma_salut_clinica: ServiceItem = {
   phone: "+34 971 758 920",
   whatsapp: "+34 971 758 920",
   email: "info@palmasalutfisioterapia.es",
-  website: "https://palmasalutfisioterapia.es",
+  website: "",
   schedule: "Lunes a Viernes: 08:30 - 20:30",
   image: "/images/services/fisioterapia-osteopatia-palma-salut-clinica.jpg",
   gallery: ["/images/services/fisioterapia-osteopatia-palma-salut-clinica.jpg"],

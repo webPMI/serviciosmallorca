@@ -30,7 +30,6 @@ export const PURE_SALT_YOGA_PORT_ADRIANO: ServiceItem = {
   schedule: "Lunes a Domingo: 08:00 - 22:00",
   image: "/images/sports/pure-salt-yoga-port-adriano.jpg",
   gallery: ["/images/sports/pure-salt-yoga-port-adriano.jpg", "/images/categories/deportes.jpg"],
-  googleMapsUrl: "https://www.google.com/maps?cid=12007081",
   shortDescription: {
     es: "Sesiones de yoga en terraza sobre el acantilado con vistas al puerto deportivo diseñado por Philippe Starck.",
     en: "Cliff-edge terrace yoga sessions overlooking the Philippe Starck designed luxury marina.",
@@ -38,10 +37,10 @@ export const PURE_SALT_YOGA_PORT_ADRIANO: ServiceItem = {
     de: "Klippen-Terrassen-Yoga mit Panoramablick auf den Luxushafen von Philippe Starck.",
   },
   fullDescription: {
-    es: "Pure Salt Yoga & Spa Port Adriano se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Sesiones de yoga en terraza sobre el acantilado con vistas al puerto deportivo diseñado por Philippe Starck. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
-    en: "Pure Salt Yoga & Spa Port Adriano stands out as one of the premier athletic and fitness destinations in Mallorca. Cliff-edge terrace yoga sessions overlooking the Philippe Starck designed luxury marina. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
-    ca: "Pure Salt Yoga & Spa Port Adriano destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Sessions de ioga a la terrassa sobre el penya-segat amb vistes a Port Adriano. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
-    de: "Pure Salt Yoga & Spa Port Adriano zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Klippen-Terrassen-Yoga mit Panoramablick auf den Luxushafen von Philippe Starck. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
+      "es": "Pure Salt Yoga en el hotel 5 estrellas Pure Salt Port Adriano ofrece sesiones de yoga frente al mar sobre los acantilados de El Toro (Calvià), combinando clases al aire libre con acceso al spa y zona de aguas.",
+      "en": "Pure Salt Yoga at 5-star Pure Salt Port Adriano delivers cliffside seaside yoga overlooking the marina, paired with luxury spa and wellness access.",
+      "ca": "Pure Salt Yoga a Port Adriano ofereix ioga amb vistes al mar damunt els penya-segats del Toro i accés a circuit termal.",
+      "de": "Pure Salt Yoga im 5-Sterne-Hotel Pure Salt Port Adriano verbindet Yoga mit Panoramablick über den Yachthafen mit exklusiven Spa-Behandlungen."
   },
   highlights: {
     es: [

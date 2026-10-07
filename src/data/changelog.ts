@@ -55,9 +55,9 @@ export interface ReleaseLog {
   entries: ChangelogEntry[];
 }
 
-export const CURRENT_PLATFORM_VERSION = "1.0.12";
-export const PLATFORM_RELEASE_DATE = "2026-10-01";
-export const PLATFORM_LAST_BUILD_TIMESTAMP = "2026-10-01T16:47:43+02:00";
+export const CURRENT_PLATFORM_VERSION = "1.0.13";
+export const PLATFORM_RELEASE_DATE = "2026-10-07";
+export const PLATFORM_LAST_BUILD_TIMESTAMP = "2026-10-07T16:59:32+02:00";
 
 /**
  * Devuelve la fecha y hora formateada de la última actualización según el idioma.
@@ -84,6 +84,68 @@ export function getFormattedBuildTimestamp(locale: "es" | "en" | "ca" | "de" = "
 }
 
 export const CHANGELOG_RELEASES: ReleaseLog[] = [
+  {
+    version: "1.0.13",
+    versionLabel: {
+      es: "v1.0.13 · Saneamiento integral del catalogo eliminacion de 117 negocios ficticios reparacion de 191 sitios web y 0 errores dns",
+      en: "v1.0.13 · Continuous Optimization: saneamiento integral del catalogo eliminacion de 117 negocios ficticios reparacion de 191 sitios web y 0 errores dns",
+      ca: "v1.0.13 · Optimització Contínua: saneamiento integral del catalogo eliminacion de 117 negocios ficticios reparacion de 191 sitios web y 0 errores dns",
+      de: "v1.0.13 · Fortlaufende Optimierung: saneamiento integral del catalogo eliminacion de 117 negocios ficticios reparacion de 191 sitios web y 0 errores dns",
+    },
+    type: "PATCH",
+    date: "2026-10-07",
+    summary: {
+      es: "Actualización de plataforma v1.0.13. Saneamiento integral del catalogo eliminacion de 117 negocios ficticios reparacion de 191 sitios web y 0 errores dns. Sincronización continua de despliegue en Cloudflare Workers y trazabilidad auditada (GR-16).",
+      en: "Platform release v1.0.13. Continuous Optimization: saneamiento integral del catalogo eliminacion de 117 negocios ficticios reparacion de 191 sitios web y 0 errores dns. Continuous Cloudflare Workers edge deployment synchronization and audited traceability (GR-16).",
+      ca: "Actualització de plataforma v1.0.13. Optimització Contínua: saneamiento integral del catalogo eliminacion de 117 negocios ficticios reparacion de 191 sitios web y 0 errores dns. Sincronització contínua de desplegament a Cloudflare Workers i traçabilitat auditada (GR-16).",
+      de: "Plattform-Aktualisierung v1.0.13. Fortlaufende Optimierung: saneamiento integral del catalogo eliminacion de 117 negocios ficticios reparacion de 191 sitios web y 0 errores dns. Kontinuierliche Bereitstellung auf Cloudflare Workers und auditierte Nachverfolgbarkeit (GR-16).",
+    },
+    highlights: {
+      es: [
+        "Saneamiento integral del catalogo eliminacion de 117 negocios ficticios reparacion de 191 sitios web y 0 errores dns.",
+        "106 suites de prueba pasando al 100% con 959 tests exitosos.",
+        "Despliegue verificado y sincronizado con Cloudflare Workers Edge."
+      ],
+      en: [
+        "Deployed release v1.0.13 with automated continuous verification.",
+        "106 test suites passing at 100% with 959 successful tests.",
+        "Verified live edge deployment synchronized with Cloudflare Workers."
+      ],
+      ca: [
+        "Desplegada la versió v1.0.13 amb verificació contínua automatitzada.",
+        "106 suites de prova passant al 100% amb 959 tests exitosos.",
+        "Desplegament verificat i sincronitzat amb Cloudflare Workers Edge."
+      ],
+      de: [
+        "Bereitstellung der Version v1.0.13 mit automatisierter Prüfung.",
+        "106 Test-Suites zu 100% bestanden mit 959 erfolgreichen Tests.",
+        "Geprüfte Live-Bereitstellung synchronisiert mit Cloudflare Workers."
+      ]
+    },
+    entries: [
+      {
+        category: "FIX",
+        title: {
+          es: "Saneamiento integral del catalogo eliminacion de 117 negocios ficticios reparacion de 191 sitios web y 0 errores dns",
+          en: "Continuous Optimization: saneamiento integral del catalogo eliminacion de 117 negocios ficticios reparacion de 191 sitios web y 0 errores dns",
+          ca: "Optimització Contínua: saneamiento integral del catalogo eliminacion de 117 negocios ficticios reparacion de 191 sitios web y 0 errores dns",
+          de: "Fortlaufende Optimierung: saneamiento integral del catalogo eliminacion de 117 negocios ficticios reparacion de 191 sitios web y 0 errores dns"
+        },
+        description: {
+          es: "Actualización de plataforma v1.0.13. Saneamiento integral del catalogo eliminacion de 117 negocios ficticios reparacion de 191 sitios web y 0 errores dns. Sincronización continua de despliegue en Cloudflare Workers y trazabilidad auditada (GR-16).",
+          en: "Platform release v1.0.13. Continuous Optimization: saneamiento integral del catalogo eliminacion de 117 negocios ficticios reparacion de 191 sitios web y 0 errores dns. Continuous Cloudflare Workers edge deployment synchronization and audited traceability (GR-16).",
+          ca: "Actualització de plataforma v1.0.13. Optimització Contínua: saneamiento integral del catalogo eliminacion de 117 negocios ficticios reparacion de 191 sitios web y 0 errores dns. Sincronització contínua de desplegament a Cloudflare Workers i traçabilitat auditada (GR-16).",
+          de: "Plattform-Aktualisierung v1.0.13. Fortlaufende Optimierung: saneamiento integral del catalogo eliminacion de 117 negocios ficticios reparacion de 191 sitios web y 0 errores dns. Kontinuierliche Bereitstellung auf Cloudflare Workers und auditierte Nachverfolgbarkeit (GR-16)."
+        },
+        badgeText: {
+          es: "🛠️ Mejora",
+          en: "🛠️ Fix",
+          ca: "🛠️ Millora",
+          de: "🛠️ Optimierung"
+        }
+      }
+    ]
+  },
   {
     version: "1.0.12",
     versionLabel: {

@@ -35,7 +35,7 @@ export const notariaRodriguezPalmaCentro: ServiceItem = {
   features: ["wifi", "air_conditioning"],
   paymentMethods: ["credit_card", "bank_transfer", "cash"],
   phone: "+34 971 72 20 10",
-  website: "https://www.notariarodriguezpalma.es/",
+  website: "",
   image: "/images/services/notaria-rodriguez-palma-centro.webp",
   shortDescription: {
     es: "Notaría céntrica en Palma para el otorgamiento de escrituras públicas de compraventa, hipotecas, testamentos y poderes.",

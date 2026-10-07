@@ -30,7 +30,6 @@ export const CAPDEPERA_GOLF_ARTA: ServiceItem = {
   schedule: "Lunes a Domingo: 08:00 - 22:00",
   image: "/images/services/capdepera-golf-arta.jpg",
   gallery: ["/images/services/capdepera-golf-arta.jpg", "/images/categories/deportes.jpg"],
-  googleMapsUrl: "https://www.google.com/maps?cid=12007011",
   shortDescription: {
     es: "Campo de 18 hoyos diseñado por Dan Maples entre valles con el famoso hoyo 15 panorámico.",
     en: "Scenic 18-hole course designed by Dan Maples with the famous 15th hole vista.",
@@ -38,10 +37,10 @@ export const CAPDEPERA_GOLF_ARTA: ServiceItem = {
     de: "18-Loch-Platz von Dan Maples in reizvoller Hügellandschaft mit dem 15. Panoramaloch.",
   },
   fullDescription: {
-    es: "Capdepera Golf se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Campo de 18 hoyos diseñado por Dan Maples entre valles con el famoso hoyo 15 panorámico. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
-    en: "Capdepera Golf stands out as one of the premier athletic and fitness destinations in Mallorca. Scenic 18-hole course designed by Dan Maples with the famous 15th hole vista. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
-    ca: "Capdepera Golf destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Camp de 18 forats dissenyat per Dan Maples entre valls amb el cèlebre forat 15. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
-    de: "Capdepera Golf zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. 18-Loch-Platz von Dan Maples in reizvoller Hügellandschaft mit dem 15. Panoramaloch. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
+      "es": "Inaugurado en 1989 entre las localidades de Artà y Capdepera, Capdepera Golf es uno de los campos de 18 hoyos más apacibles y bellos del levante mallorquín. Diseñado por Dan Maples, combina calles planas con hoyos de montaña espectaculares, culminando en el hoyo 15 con vistas panorámicas al valle y al mar.",
+      "en": "Opened in 1989 between Artà and Capdepera, this 18-hole course designed by Dan Maples is renowned for its scenic beauty and tranquil ambiance, highlighted by the dramatic hilltop 15th hole offering panoramic coastal views.",
+      "ca": "Inaugurat el 1989 entre Artà i Capdepera, aquest camp de 18 forats dissenyat per Dan Maples destaca per la seva harmonia natural i el seu espectacular forat 15 amb vistes panoràmiques.",
+      "de": "Capdepera Golf wurde 1989 von Dan Maples entworfen und gilt als eine der reizvollsten 18-Loch-Anlagen im Osten Mallorcas mit unvergesslichem Blick von Loch 15."
   },
   highlights: {
     es: [

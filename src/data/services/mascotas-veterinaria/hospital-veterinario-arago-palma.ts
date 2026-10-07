@@ -35,7 +35,7 @@ export const hospitalVeterinarioAragoPalma: ServiceItem = {
   features: ["wifi", "air_conditioning", "credit_card"],
   paymentMethods: ["credit_card", "bank_transfer", "cash"],
   phone: "+34 971 47 90 22",
-  website: "https://www.aragohospitalveterinari.com/",
+  website: "",
   image: "/images/services/hospital-veterinario-arago-palma.webp",
   shortDescription: {
     es: "Hospital veterinario de referencia 24h con TAC, UCI y cirugía avanzada.",

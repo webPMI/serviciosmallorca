@@ -27,7 +27,7 @@ export const cellerElMoliPollenca: ServiceItem = {
   phone: "+34 971 53 19 98",
   whatsapp: "+34 971 53 19 98",
   email: "info@elmoli-pollenca.com",
-  website: "https://www.elmoli-pollenca.com",
+  website: "",
   menuUrl: "https://www.elmoli-pollenca.com",
   tags: [
     "zona:alcudia-pollensa",

@@ -27,7 +27,7 @@ export const restauranteYachtClubCalaDor: ServiceItem = {
   phone: "+34 971 64 82 03",
   whatsapp: "+34 971 64 82 03",
   email: "info@yccalador.com",
-  website: "https://yachtclubcalador.com",
+  website: "",
   menuUrl: "https://yachtclubcalador.com",
   tags: [
     "zona:santanyi-migjorn",

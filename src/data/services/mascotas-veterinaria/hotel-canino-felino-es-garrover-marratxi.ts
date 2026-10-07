@@ -29,7 +29,7 @@ export const hotel_canino_felino_es_garrover_marratxi: ServiceItem = {
   phone: "+34 971 790 120",
   whatsapp: "+34 971 790 120",
   email: "info@esgarrovermascotas.es",
-  website: "https://esgarrovermascotas.es",
+  website: "",
   schedule: "Lunes a Sábado: 09:00 - 13:00 y 16:30 - 19:30; Domingo: 10:00 - 13:00",
   image: "/images/services/hotel-canino-felino-es-garrover-marratxi.jpg",
   gallery: ["/images/services/hotel-canino-felino-es-garrover-marratxi.jpg"],

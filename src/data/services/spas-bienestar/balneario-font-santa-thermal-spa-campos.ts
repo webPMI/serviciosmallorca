@@ -29,7 +29,7 @@ export const balneario_font_santa_thermal_spa_campos: ServiceItem = {
   phone: "+34 971 655 016",
   whatsapp: "+34 971 655 016",
   email: "info@fontsantahotelthermalspa.es",
-  website: "https://fontsantahotelthermalspa.es",
+  website: "",
   schedule: "Circuito Termal y Spa: 09:00 - 21:00",
   image: "/images/services/balneario-font-santa-thermal-spa-campos.jpg",
   gallery: ["/images/services/balneario-font-santa-thermal-spa-campos.jpg"],

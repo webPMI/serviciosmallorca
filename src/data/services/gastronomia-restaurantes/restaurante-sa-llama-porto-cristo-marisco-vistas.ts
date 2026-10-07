@@ -29,7 +29,7 @@ export const restaurante_sa_llama_porto_cristo_marisco_vistas: ServiceItem = {
   phone: "+34 971 820 102",
   whatsapp: "+34 971 820 102",
   email: "info@sallamaportocristo.es",
-  website: "https://sallamaportocristo.es",
+  website: "",
   schedule: "Diario: 12:30 - 16:00 y 19:30 - 23:00 (Cerrado Miércoles en Invierno)",
   image: "/images/services/restaurante-sa-llama-porto-cristo-marisco-vistas.jpg",
   gallery: ["/images/services/restaurante-sa-llama-porto-cristo-marisco-vistas.jpg"],

@@ -30,7 +30,6 @@ export const arabella_spa_st_regis_mardavall_calvia: ServiceItem = {
   schedule: "Lunes a Domingo: 08:00 - 20:00",
   image: "/images/spas/arabella-spa-st-regis-mardavall-calvia.jpg",
   gallery: ["/images/spas/arabella-spa-st-regis-mardavall-calvia.jpg", "/images/categories/salud.jpg"],
-  googleMapsUrl: "https://www.google.com/maps?cid=13008016",
   shortDescription: {
     es: "Uno de los spas más grandes de Europa (4.700 m²) con medicina tradicional china, talasoterapia y circuito termal.",
     en: "One of Europe's largest luxury spas (4,700 m²) featuring Traditional Chinese Medicine and thalassotherapy.",

@@ -29,7 +29,7 @@ export const correduria_seguros_serra_palma: ServiceItem = {
   phone: "+34 971 430 400",
   whatsapp: "+34 971 430 400",
   email: "info@seguroserra.es",
-  website: "https://seguroserra.es",
+  website: "",
   schedule: "Lunes a Jueves: 08:30 - 18:00, Viernes: 08:30 - 14:30",
   image: "/images/services/correduria-seguros-serra-palma.jpg",
   gallery: ["/images/services/correduria-seguros-serra-palma.jpg"],

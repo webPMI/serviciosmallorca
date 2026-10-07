@@ -35,7 +35,7 @@ export const notariaAlvaroDelgadoPalma: ServiceItem = {
   features: ["wifi", "air_conditioning"],
   paymentMethods: ["credit_card", "bank_transfer", "cash"],
   phone: "+34 971 71 18 10",
-  website: "https://www.notariaalvarodelgado.es/",
+  website: "",
   image: "/images/services/notaria-alvaro-delgado-palma.webp",
   shortDescription: {
     es: "Despacho notarial céntrico con amplia trayectoria en escrituras de compraventa internacional, hipotecas y testamentos.",

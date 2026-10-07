@@ -30,7 +30,6 @@ export const hospital_quironsalud_palmaplanas: ServiceItem = {
   schedule: "Lunes a Domingo: 08:00 - 20:00",
   image: "/images/services/hospital-quironsalud-palmaplanas.jpg",
   gallery: ["/images/services/hospital-quironsalud-palmaplanas.jpg"],
-  googleMapsUrl: "https://www.google.com/maps?cid=13008000",
   shortDescription: {
     es: "Hospital privado de alta resolución con urgencias 24h, UCI médica, cirugía avanzada y atención internacional multilingüe.",
     en: "High-resolution private hospital featuring 24/7 ER, ICU, advanced surgical suites, and multilingual patient care.",

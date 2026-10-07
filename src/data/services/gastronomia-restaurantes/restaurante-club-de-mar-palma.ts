@@ -27,8 +27,8 @@ export const restauranteClubDeMarPalma: ServiceItem = {
   phone: "+34 971 40 36 11",
   whatsapp: "+34 971 40 36 11",
   email: "info@clubdemar-mallorca.com",
-  website: "https://www.clubdemar-mallorca.com",
-  menuUrl: "https://www.clubdemar-mallorca.com",
+  website: "https://www.clubdemar-mallorca.com/es/restaurante/",
+  menuUrl: "https://www.clubdemar-mallorca.com/es/restaurante/",
   tags: ["zona:palma", "zona:paseo-maritimo", "product:premium", "mod:en-local", "aud:parejas", "temps:todo-el-ano"],
   capabilities: {
     terrace: true,

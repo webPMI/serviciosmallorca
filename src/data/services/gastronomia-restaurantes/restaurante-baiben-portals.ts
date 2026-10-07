@@ -21,7 +21,7 @@ export const restauranteBaibenPortals: ServiceItem = {
   phone: "+34 971 67 55 47",
   whatsapp: "+34 971 67 55 47",
   email: "reservas@baibenportals.com",
-  website: "https://baibenportals.com",
+  website: "",
   coordinates: { lat: 39.5318, lng: 2.5505 },
   schedule: "Lunes a Domingo: 12:00 - 00:00",
   lastVerifiedAt: "2026-08-26",

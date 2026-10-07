@@ -1,7 +1,7 @@
 {
   "name": "servicios-mallorca",
   "type": "module",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "engines": {
     "node": ">=22.6.0"
   },
@@ -13,7 +13,7 @@
     "bump": "node --experimental-strip-types scripts/bump-version.ts",
     "autosave": "node --experimental-strip-types scripts/autosave.ts",
     "autosave:deploy": "node --experimental-strip-types scripts/autosave.ts && npm run deploy",
-    "prepush": "npm run typecheck && npm run validate:taxonomy && npm test && npm run audit:full",
+    "prepush": "npm run typecheck && npm run validate:taxonomy && npm run validate:sports && npm run audit:honesty && npm test && npm run audit:full",
     "preview": "astro preview",
     "astro": "astro",
     "test": "vitest run",
@@ -25,6 +25,9 @@
     "format:check": "prettier --check .",
     "typecheck": "node ./node_modules/typescript/bin/tsc --noEmit",
     "audit:full": "node --experimental-strip-types scripts/run-full-audit.ts",
+    "audit:sector": "node --experimental-strip-types scripts/audit-by-sector.ts",
+    "audit:honesty": "node scripts/audit-data-honesty.mjs",
+    "audit:fake": "node --experimental-strip-types scripts/find-fake-businesses.ts",
     "audit:services": "node --experimental-strip-types scripts/audit-services.ts",
     "audit:refresh": "node --experimental-strip-types scripts/refresh-catalog.ts",
     "add:service": "node --experimental-strip-types scripts/add-service.ts",
@@ -33,6 +36,7 @@
     "discover:sports": "node --experimental-strip-types scripts/discover-businesses.ts --mine --file=scripts/discovery-targets-sports.json",
     "rank:businesses": "node --experimental-strip-types scripts/rank-and-organize-businesses.ts",
     "validate:taxonomy": "node --experimental-strip-types scripts/validate-taxonomy.ts",
+    "validate:sports": "node --experimental-strip-types scripts/validate-sports.ts",
     "ingest:batch": "node --experimental-strip-types scripts/batch-ingest.ts",
     "audit:anomaly": "node --experimental-strip-types scripts/anomaly-audit.ts",
     "audit:images": "node --experimental-strip-types scripts/audit-and-harvest-images.ts",
@@ -41,7 +45,7 @@
     "report:verify": "node --experimental-strip-types scripts/generate-verification-report.ts",
     "curate": "node --experimental-strip-types scripts/curate-business.ts",
     "gate:check": "node --experimental-strip-types -e \"import('./src/lib/verificationPipeline.ts').then(m=>console.log('✅ Verification gate:', m.VERIFICATION_GATE))\"",
-    "check": "npm run lint && npm run typecheck && npm test && npm run validate:taxonomy",
+    "check": "npm run lint && npm run typecheck && npm test && npm run validate:taxonomy && npm run validate:sports",
     "gemini:bridge": "node --experimental-strip-types scripts/gemini-bridge.ts",
     "audit:security": "node --experimental-strip-types scripts/security-audit.ts",
     "prepare": "husky"

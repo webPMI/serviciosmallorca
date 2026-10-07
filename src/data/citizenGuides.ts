@@ -719,7 +719,7 @@ export const CITIZEN_GUIDES: CitizenGuide[] = [
     ],
     relatedServiceCategories: ["motor-transporte", "servicios-profesionales"],
     recommendedServiceSlugs: [
-      "mallorca-taxi-transfer-aeropuerto-palma-service",
+      "mallorca-private-chauffeur-limousine",
       "roig-premium-transfers",
       "autocares-transunion",
     ],
@@ -1057,7 +1057,7 @@ export const CITIZEN_GUIDES: CitizenGuide[] = [
       "bufete-buades-abogados-palma",
       "traducciones-juradas-mallorca-sworn",
       "gestoria-administrativa-asesoria-marroig-palma",
-      "balearic-lawyers-property-tax-palma",
+      "ripoll-mateu-abogados-mallorca-palma",
     ],
     assistanceHeader: {
       title: {

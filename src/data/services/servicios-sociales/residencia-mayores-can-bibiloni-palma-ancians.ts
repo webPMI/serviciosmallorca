@@ -29,7 +29,7 @@ export const residencia_mayores_can_bibiloni_palma_ancians: ServiceItem = {
   phone: "+34 971 737 400",
   whatsapp: "+34 971 737 400",
   email: "info@residenciacanbibiloni.com",
-  website: "https://residenciacanbibiloni.com",
+  website: "",
   schedule: "Recepción: 08:00 - 20:00. Centro de Día: 07:30 - 20:30 (Lunes a Viernes)",
   image: "/images/services/residencia-mayores-can-bibiloni-palma-ancians.jpg",
   gallery: ["/images/services/residencia-mayores-can-bibiloni-palma-ancians.jpg"],

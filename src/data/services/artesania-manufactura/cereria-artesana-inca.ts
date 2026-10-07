@@ -20,7 +20,7 @@ export const cereriaArtesanaInca: ServiceItem = {
   phone: "+34 971 50 18 30",
   whatsapp: "+34 670 12 34 80",
   email: "info@cereriainca.com",
-  website: "https://cereriainca.com",
+  website: "",
   coordinates: { lat: 39.7205, lng: 2.9085 },
   schedule: "Lunes a Viernes: 09:30 - 13:30 | 16:30 - 20:00 | Sábados: 10:00 - 13:30",
   lastVerifiedAt: "2026-08-25",

@@ -27,7 +27,7 @@ export const restauranteCaNOlesaPollenca: ServiceItem = {
   phone: "+34 971 53 29 08",
   whatsapp: "+34 971 53 29 08",
   email: "info@canolesa-pollenca.com",
-  website: "https://www.canolesa-pollenca.com",
+  website: "",
   menuUrl: "https://www.canolesa-pollenca.com",
   tags: [
     "zona:alcudia-pollensa",

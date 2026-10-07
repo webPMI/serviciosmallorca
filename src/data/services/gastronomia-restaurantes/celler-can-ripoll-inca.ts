@@ -20,7 +20,7 @@ export const cellerCanRipoll: ServiceItem = {
   phone: "+34 971 50 00 24",
   whatsapp: "+34 971 50 00 24",
   email: "reserves@cellercanripoll.com",
-  website: "https://cellercanripoll.com",
+  website: "",
   coordinates: { lat: 39.721, lng: 2.909 },
   schedule: "Lunes a Domingo: 13:00 - 16:00 | 20:00 - 23:00 (Miércoles Noche Cerrado)",
   lastVerifiedAt: "2026-08-25",

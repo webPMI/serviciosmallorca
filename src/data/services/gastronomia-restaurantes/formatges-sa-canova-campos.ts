@@ -20,7 +20,7 @@ export const formatgesSaCanova: ServiceItem = {
   phone: "+34 971 65 11 20",
   whatsapp: "+34 628 30 40 50",
   email: "info@sacanova.com",
-  website: "https://formatgessacanova.com",
+  website: "",
   coordinates: { lat: 39.4055, lng: 3.0012 },
   schedule: "Lunes a Sábado: 09:00 - 14:00 | 16:30 - 20:00 (Visitas a la Finca y Quesería)",
   lastVerifiedAt: "2026-08-25",

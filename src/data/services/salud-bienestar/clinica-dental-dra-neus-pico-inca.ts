@@ -29,7 +29,7 @@ export const clinica_dental_dra_neus_pico_inca: ServiceItem = {
   phone: "+34 971 50 12 90",
   whatsapp: "+34 971 50 12 90",
   email: "info@dentalpicomallorca.com",
-  website: "https://dentalpicomallorca.com",
+  website: "",
   schedule: "Lunes a Jueves de 09:30 a 13:30 y 16:00 a 20:00, Viernes de 09:30 a 14:00",
   image: "/images/services/clinica-dental-dra-neus-pico-inca.jpg",
   gallery: ["/images/services/clinica-dental-dra-neus-pico-inca.jpg"],

@@ -30,7 +30,6 @@ export const palma_clinic_international_center: ServiceItem = {
   schedule: "Lunes a Domingo: 08:00 - 20:00",
   image: "/images/services/palma-clinic-international-center.jpg",
   gallery: ["/images/services/palma-clinic-international-center.jpg"],
-  googleMapsUrl: "https://www.google.com/maps?cid=13008003",
   shortDescription: {
     es: "Centro médico internacional privado con especialistas de habla alemana e inglesa y chequeos preventivos integrales.",
     en: "Private international medical center with German and English-speaking doctors and executive health checkups.",

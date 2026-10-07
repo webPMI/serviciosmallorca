@@ -29,7 +29,7 @@ export const studio_botanico_palma_spa_wellness: ServiceItem = {
   phone: "+34 871 113 400",
   whatsapp: "+34 871 113 400",
   email: "info@studiobotanicopalma.com",
-  website: "https://studiobotanicopalma.com",
+  website: "",
   schedule: "Lunes a Sábado: 10:00 - 20:00",
   image: "/images/services/studio-botanico-palma-spa-wellness.jpg",
   gallery: ["/images/services/studio-botanico-palma-spa-wellness.jpg"],

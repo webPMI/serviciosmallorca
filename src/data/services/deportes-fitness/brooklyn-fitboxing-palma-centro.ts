@@ -30,7 +30,6 @@ export const BROOKLYN_FITBOXING_PALMA_CENTRO: ServiceItem = {
   schedule: "Lunes a Domingo: 08:00 - 22:00",
   image: "/images/sports/brooklyn-fitboxing-palma-centro.jpg",
   gallery: ["/images/sports/brooklyn-fitboxing-palma-centro.jpg", "/images/categories/deportes.jpg"],
-  googleMapsUrl: "https://www.google.com/maps?cid=12007045",
   shortDescription: {
     es: "Entrenamiento de fitboxing de alta intensidad sin contacto con sacos sensorizados y música sincronizada.",
     en: "High-intensity non-contact fitboxing with sensor-equipped bags, gamification, and music.",
@@ -38,10 +37,10 @@ export const BROOKLYN_FITBOXING_PALMA_CENTRO: ServiceItem = {
     de: "High-Intensity Fitboxing ohne Körperkontakt mit sensorischen Boxsäcken und Musik.",
   },
   fullDescription: {
-    es: "Brooklyn Fitboxing Palma Centro se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Entrenamiento de fitboxing de alta intensidad sin contacto con sacos sensorizados y música sincronizada. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
-    en: "Brooklyn Fitboxing Palma Centro stands out as one of the premier athletic and fitness destinations in Mallorca. High-intensity non-contact fitboxing with sensor-equipped bags, gamification, and music. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
-    ca: "Brooklyn Fitboxing Palma Centro destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Entrenament de fitboxing d Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
-    de: "Brooklyn Fitboxing Palma Centro zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. High-Intensity Fitboxing ohne Körperkontakt mit sensorischen Boxsäcken und Musik. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
+      "es": "Brooklyn Fitboxing Palma Centro combina rounds de golpeo a saco sensorizado con intervalos de entrenamiento funcional de alta intensidad (HIIT). Sesiones de 47 minutos sin contacto físico, música enérgica y tecnología de gamificación para medir el ritmo y la fuerza.",
+      "en": "Brooklyn Fitboxing Palma Centro merges contactless heavy bag rounds with high-intensity functional training (HIIT). 47-minute workouts set to energetic music with real-time gamified tracking of force and synchronization.",
+      "ca": "Brooklyn Fitboxing Palma Centre combina rondes de sac sensoritzat i exercicis funcionals d'alta intensitat sense contacte físic en sessions de 47 minuts.",
+      "de": "Brooklyn Fitboxing Palma Centro kombiniert Sandsack-Intervalle mit funktionellem Krafttraining ohne Körperkontakt in 47-minütigen Power-Workouts."
   },
   highlights: {
     es: [

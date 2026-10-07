@@ -30,7 +30,6 @@ export const CROSSFIT_TRAMUNTANA_PALMA: ServiceItem = {
   schedule: "Lunes a Domingo: 08:00 - 22:00",
   image: "/images/services/crossfit-tramuntana-palma.jpg",
   gallery: ["/images/services/crossfit-tramuntana-palma.jpg", "/images/categories/deportes.jpg"],
-  googleMapsUrl: "https://www.google.com/maps?cid=12007056",
   shortDescription: {
     es: "Box oficial afiliado de CrossFit en Son Castelló con más de 700 m², Rogue Fitness y Open Box continuo.",
     en: "Official CrossFit affiliate box in Son Castelló offering 700 m², Rogue Fitness gear, and continuous Open Box.",
@@ -38,10 +37,10 @@ export const CROSSFIT_TRAMUNTANA_PALMA: ServiceItem = {
     de: "Offizielle CrossFit-Affiliate-Box in Son Castelló mit 700 m², Rogue-Fitness und Open Box.",
   },
   fullDescription: {
-    es: "CrossFit Tramuntana se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Box oficial afiliado de CrossFit en Son Castelló con más de 700 m², Rogue Fitness y Open Box continuo. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
-    en: "CrossFit Tramuntana stands out as one of the premier athletic and fitness destinations in Mallorca. Official CrossFit affiliate box in Son Castelló offering 700 m², Rogue Fitness gear, and continuous Open Box. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
-    ca: "CrossFit Tramuntana destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Box oficial de CrossFit a Son Castelló amb més de 700 m², material Rogue Fitness i Open Box continu. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
-    de: "CrossFit Tramuntana zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Offizielle CrossFit-Affiliate-Box in Son Castelló mit 700 m², Rogue-Fitness und Open Box. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
+      "es": "CrossFit Tramuntana es un box oficial en el Polígono Son Rossinyol de Palma. Con una sólida comunidad de deportistas, destaca por su metodología técnica en halterofilia, movilidad y sesiones escalables para cualquier condición física.",
+      "en": "CrossFit Tramuntana is an established affiliate box in Palma's Son Rossinyol industrial hub, renowned for structured Olympic lifting coaching, gymnastics fundamentals, and community-driven WODs.",
+      "ca": "CrossFit Tramuntana és un box de referència a Son Rossinyol (Palma), amb gran èmfasi en la tècnica d'halterofília i preparació atlètica integral.",
+      "de": "CrossFit Tramuntana im Gewerbegebiet Son Rossinyol in Palma legt besonderen Wert auf saubere Gewichtheber-Technik und motivierende Gruppen-WODs."
   },
   highlights: {
     es: [

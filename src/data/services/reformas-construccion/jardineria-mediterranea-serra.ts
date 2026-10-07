@@ -20,7 +20,7 @@ export const jardineriaSerra: ServiceItem = {
   phone: "+34 971 79 20 45",
   whatsapp: "+34 680 12 34 89",
   email: "info@jardineriaserra.com",
-  website: "https://jardineriaserra.com",
+  website: "",
   coordinates: { lat: 39.6125, lng: 2.645 },
   schedule: "Lunes a Viernes: 07:30 - 18:00 | Sábados: 08:00 - 13:00 (Urgencias de Poda y Riego)",
   lastVerifiedAt: "2026-08-25",

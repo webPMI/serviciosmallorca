@@ -30,7 +30,6 @@ export const clinica_dental_portals_nous_calvia: ServiceItem = {
   schedule: "Lunes a Domingo: 08:00 - 20:00",
   image: "/images/spas/clinica-dental-portals-nous-calvia.jpg",
   gallery: ["/images/spas/clinica-dental-portals-nous-calvia.jpg", "/images/categories/salud.jpg"],
-  googleMapsUrl: "https://www.google.com/maps?cid=13008011",
   shortDescription: {
     es: "Odontología integral multilingüe para pacientes internacionales con tecnología 3D y sedación consciente.",
     en: "Comprehensive multilingual dentistry for international clientele with 3D scanning and conscious sedation.",

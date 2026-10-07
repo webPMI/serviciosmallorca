@@ -106,7 +106,7 @@ export const electricTattooPalma: ServiceItem = {
   phone: "+34 971 73 89 20",
   whatsapp: "+34 971 73 89 20",
   email: "info@electrictattoopalma.com",
-  website: "https://electrictattoopalma.com",
+  website: "",
   webAccessibility: "active",
   tags: ["zona:santa-catalina", "mod:cita-previa", "product:traditional"],
   shortDescription: {

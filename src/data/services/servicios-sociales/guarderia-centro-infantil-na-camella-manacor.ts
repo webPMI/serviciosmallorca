@@ -29,7 +29,7 @@ export const guarderia_centro_infantil_na_camella_manacor: ServiceItem = {
   phone: "+34 971 550 412",
   whatsapp: "+34 971 550 412",
   email: "info@nacamellamanacor.es",
-  website: "https://nacamellamanacor.es",
+  website: "",
   schedule: "Lunes a Viernes: 07:30 - 17:30 (Abierto todo el año excepto Agosto)",
   image: "/images/services/guarderia-centro-infantil-na-camella-manacor.jpg",
   gallery: ["/images/services/guarderia-centro-infantil-na-camella-manacor.jpg"],

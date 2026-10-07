@@ -92,6 +92,7 @@ export function validateServicesList(services: ServiceItem[]): ValidationResult 
           "t-golf.club",
           "illesbaleares.com",
           "vivagym.es",
+          "viding.es",
           "synergym.es",
           "brooklynfitboxing.com",
           "ime.palma.cat",
@@ -117,6 +118,12 @@ export function validateServicesList(services: ServiceItem[]): ValidationResult 
           "lafiore.com",
           "cncanpicafort.com",
           "cvpa.es",
+          "marratxi.es",
+          "rcnpp.net",
+          "clubdemar-mallorca.com",
+          "ibsalut.es",
+          "sonnet.es",
+          "purobeach.com",
         ].includes(domain);
         const targetIdentifier = isSharedPlatform
           ? `${domain}${parsed.pathname.toLowerCase().replace(/\/$/, "")}`

@@ -30,7 +30,6 @@ export const VALL_D_OR_GOLF_CALADOR: ServiceItem = {
   schedule: "Lunes a Domingo: 08:00 - 22:00",
   image: "/images/services/vall-d-or-golf-calador.jpg",
   gallery: ["/images/services/vall-d-or-golf-calador.jpg", "/images/categories/deportes.jpg"],
-  googleMapsUrl: "https://www.google.com/maps?cid=12007012",
   shortDescription: {
     es: "Campo de 18 hoyos par 71 con vistas panorámicas al mar Mediterráneo y a Portocolom.",
     en: "18-hole par 71 golf course with panoramic Mediterranean views over Portocolom.",
@@ -38,10 +37,10 @@ export const VALL_D_OR_GOLF_CALADOR: ServiceItem = {
     de: "18-Loch Par 71 Golfplatz mit Panoramablick auf das Meer und Portocolom.",
   },
   fullDescription: {
-    es: "Vall d se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Campo de 18 hoyos par 71 con vistas panorámicas al mar Mediterráneo y a Portocolom. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
-    en: "Vall d stands out as one of the premier athletic and fitness destinations in Mallorca. 18-hole par 71 golf course with panoramic Mediterranean views over Portocolom. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
-    ca: "Vall d destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Camp de 18 forats par 71 amb vistes a la mar i a Portocolom. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
-    de: "Vall d zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. 18-Loch Par 71 Golfplatz mit Panoramablick auf das Meer und Portocolom. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
+      "es": "Vall d'Or Golf es un campo de 18 hoyos situado cerca de Cala d'Or y Portocolom. Los primeros 9 hoyos discurren entre colinas y pinos con vistas al mar, mientras que los segundos 9 hoyos bajan hacia la costa con calles onduladas y brisa marina.",
+      "en": "Vall d'Or Golf is an 18-hole course near Cala d'Or and Portocolom offering breathtaking sea vistas. The front nine winds through wooded hills, while the back nine opens towards the Mediterranean.",
+      "ca": "Vall d'Or Golf a prop de Cala d'Or i Portocolom ofereix 18 forats amb vistes al mar, combinant muntanya i carrers oberts a la costa.",
+      "de": "Vall d'Or Golf nahe Cala d'Or und Portocolom bietet 18 abwechslungsreiche Löcher mit herrlichen Ausblicken auf das Mittelmeer."
   },
   highlights: {
     es: [

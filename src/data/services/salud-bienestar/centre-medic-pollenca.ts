@@ -29,7 +29,7 @@ export const centre_medic_pollenca: ServiceItem = {
   phone: "+34 971 53 10 00",
   whatsapp: "+34 971 53 10 00",
   email: "info@centremedicpollenca.com",
-  website: "https://centremedicpollenca.com",
+  website: "",
   schedule: "Lunes a Viernes: 08:00 - 20:00 | Sábado: 09:00 - 13:00 | Domingo: Cerrado",
   image: "/images/services/centre-medic-pollenca.jpg",
   gallery: ["/images/services/centre-medic-pollenca.jpg"],

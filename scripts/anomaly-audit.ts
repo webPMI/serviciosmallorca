@@ -97,8 +97,15 @@ async function main() {
     console.log(`  ${idx + 1}. [${s.category}] ${s.name} (⭐ ${s.rating})`);
   });
   console.log("==================================================\n");
+  if (report.anomaliesFound) {
+    console.error("❌ Auditoría fallida: se detectaron anomalías severas en el catálogo.");
+    process.exit(1);
+  }
 }
 
 if (process.argv[1]?.endsWith("anomaly-audit.ts")) {
-  main().catch(console.error);
+  main().catch((err) => {
+    console.error(err);
+    process.exit(1);
+  });
 }

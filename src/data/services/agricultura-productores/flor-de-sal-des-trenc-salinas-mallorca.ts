@@ -29,7 +29,7 @@ export const flor_de_sal_des_trenc_salinas_mallorca: ServiceItem = {
   phone: "+34 971 655 306",
   whatsapp: "+34 971 655 306",
   email: "info@flordesaltrenc.com",
-  website: "https://flordesaltrenc.com",
+  website: "https://flordesaldestrenc.com",
   schedule: "Lunes a Domingo: 10:00 - 18:00",
   image: "/images/services/flor-de-sal-des-trenc-salinas-mallorca.jpg",
   gallery: ["/images/services/flor-de-sal-des-trenc-salinas-mallorca.jpg"],

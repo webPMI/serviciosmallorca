@@ -20,7 +20,7 @@ export const fornDeLaSoca: ServiceItem = {
   phone: "+34 971 72 26 23",
   whatsapp: "+34 971 72 26 23",
   email: "info@forndelasoca.com",
-  website: "https://forndelasoca.com",
+  website: "",
   coordinates: { lat: 39.5698, lng: 2.6501 },
   schedule: "Lunes a Sábado: 08:30 - 20:00 | Domingo: 09:00 - 14:30",
   lastVerifiedAt: "2026-08-25",

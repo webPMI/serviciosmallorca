@@ -30,7 +30,6 @@ export const PULA_GOLF_RESORT_SON_SERVERA: ServiceItem = {
   schedule: "Lunes a Domingo: 08:00 - 22:00",
   image: "/images/services/pula-golf-resort-son-servera.jpg",
   gallery: ["/images/services/pula-golf-resort-son-servera.jpg", "/images/categories/deportes.jpg"],
-  googleMapsUrl: "https://www.google.com/maps?cid=12007010",
   shortDescription: {
     es: "Sede de 8 torneos del PGA European Tour, rediseñado por José María Olazábal con hotel y spa.",
     en: "Host of 8 PGA European Tour events, redesigned by José María Olazábal with hotel & spa.",
@@ -38,10 +37,10 @@ export const PULA_GOLF_RESORT_SON_SERVERA: ServiceItem = {
     de: "Austragungsort von 8 PGA European Tour Turnieren, von José María Olazábal neu gestaltet mit Hotel & Spa.",
   },
   fullDescription: {
-    es: "Pula Golf Resort se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Sede de 8 torneos del PGA European Tour, rediseñado por José María Olazábal con hotel y spa. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
-    en: "Pula Golf Resort stands out as one of the premier athletic and fitness destinations in Mallorca. Host of 8 PGA European Tour events, redesigned by José María Olazábal with hotel & spa. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
-    ca: "Pula Golf Resort destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Seu de 8 tornejos del PGA European Tour, redissenyat per José María Olazábal a Son Servera. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
-    de: "Pula Golf Resort zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Austragungsort von 8 PGA European Tour Turnieren, von José María Olazábal neu gestaltet mit Hotel & Spa. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
+      "es": "Pula Golf Resort en Son Servera es un campo de campeonato de 18 hoyos remodelado por José María Olazábal, sede del PGA European Tour Mallorca Classic. Su trazado técnico y sus instalaciones con hotel rústico y driving range de dos niveles lo convierten en un destino de primer orden.",
+      "en": "Pula Golf Resort in Son Servera is an 18-hole championship course redesigned by José María Olazábal, home to the European Tour's Mallorca Classic with rustic suites and a two-tier driving range.",
+      "ca": "Pula Golf Resort a Son Servera és un camp de campionat redissenyat per José María Olazábal, seu històrica del circuit europeu.",
+      "de": "Pula Golf Resort in Son Servera wurde von José María Olazábal neu gestaltet und war mehrfach Austragungsort der European Tour Mallorca Classic."
   },
   highlights: {
     es: [

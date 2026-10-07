@@ -29,7 +29,7 @@ export const finca_son_roig_hotel_rural_porreres: ServiceItem = {
   phone: "+34 971 18 20 54",
   whatsapp: "+34 971 18 20 54",
   email: "info@hotelsonroig.com",
-  website: "https://hotelsonroig.com",
+  website: "https://sonroig.com",
   schedule: "Lunes a Domingo: 08:00 - 23:00",
   image: "/images/services/finca-son-roig-hotel-rural-porreres.jpg",
   gallery: ["/images/services/finca-son-roig-hotel-rural-porreres.jpg"],

@@ -29,7 +29,7 @@ export const centre_medic_manacor_grup_policlinica: ServiceItem = {
   phone: "+34 971 84 30 10",
   whatsapp: "+34 971 84 30 10",
   email: "info@centremedicmanacor.com",
-  website: "https://centremedicmanacor.com",
+  website: "",
   schedule: "Lunes a Viernes: 08:00 - 20:30 | Sábado: 08:30 - 13:30 | Domingo: Cerrado",
   image: "/images/services/centre-medic-manacor-grup-policlinica.jpg",
   gallery: ["/images/services/centre-medic-manacor-grup-policlinica.jpg"],

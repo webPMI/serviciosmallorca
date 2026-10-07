@@ -30,7 +30,6 @@ export const juaneda_international_medical_santa_ponsa: ServiceItem = {
   schedule: "Lunes a Domingo: 08:00 - 20:00",
   image: "/images/spas/juaneda-international-medical-santa-ponsa.jpg",
   gallery: ["/images/spas/juaneda-international-medical-santa-ponsa.jpg", "/images/categories/salud.jpg"],
-  googleMapsUrl: "https://www.google.com/maps?cid=13008004",
   shortDescription: {
     es: "Centro médico ambulatorio para residentes y náutica en el suroeste con servicio a domicilio y hoteles.",
     en: "Outpatient medical center for southwest residents and yachting community with house & hotel call service.",

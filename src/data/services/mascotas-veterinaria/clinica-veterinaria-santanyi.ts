@@ -29,7 +29,7 @@ export const clinica_veterinaria_santanyi: ServiceItem = {
   phone: "+34 971 65 37 38",
   whatsapp: "+34 971 65 37 38",
   email: "info@veterinariasantanyi.com",
-  website: "https://veterinariasantanyi.com",
+  website: "",
   schedule: "Lunes a Viernes: 09:30 - 13:30, 16:30 - 19:30, Sábados: 10:00 - 13:00",
   image: "/images/services/clinica-veterinaria-santanyi.jpg",
   gallery: ["/images/services/clinica-veterinaria-santanyi.jpg"],

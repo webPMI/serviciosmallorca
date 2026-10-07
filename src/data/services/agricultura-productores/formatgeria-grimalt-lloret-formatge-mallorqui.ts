@@ -29,7 +29,7 @@ export const formatgeria_grimalt_lloret_formatge_mallorqui: ServiceItem = {
   phone: "+34 971 524 108",
   whatsapp: "+34 971 524 108",
   email: "info@formatgesgrimalt.es",
-  website: "https://formatgesgrimalt.es",
+  website: "",
   schedule: "Lunes a Viernes: 09:00 - 13:30, 16:30 - 19:30; Sábado: 09:00 - 13:30",
   image: "/images/services/formatgeria-grimalt-lloret-formatge-mallorqui.jpg",
   gallery: ["/images/services/formatgeria-grimalt-lloret-formatge-mallorqui.jpg"],

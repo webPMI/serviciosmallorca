@@ -35,7 +35,7 @@ export const vespamallorcaScooterRentalPalma: ServiceItem = {
   features: ["credit_card"],
   paymentMethods: ["credit_card", "bank_transfer", "cash"],
   phone: "+34 971 72 25 10",
-  website: "https://www.vespamallorca.com/",
+  website: "",
   image: "/images/services/vespamallorca-scooter-rental-palma.webp",
   shortDescription: {
     es: "Alquiler oficial de Vespas Primavera y GTS para recorrer las carreteras escénicas y calas de la costa de Mallorca con estilo.",

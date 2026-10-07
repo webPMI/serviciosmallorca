@@ -26,11 +26,10 @@ export const institut_dermatologic_balears_palma: ServiceItem = {
   phone: "+34 971 716 500",
   whatsapp: "+34 971 716 500",
   email: "info@dermatologiabalears.com",
-  website: "https://dermatologiabalears.com",
+  website: "",
   schedule: "Lunes a Domingo: 08:00 - 20:00",
   image: "/images/spas/institut-dermatologic-balears-palma.jpg",
   gallery: ["/images/spas/institut-dermatologic-balears-palma.jpg", "/images/categories/salud.jpg"],
-  googleMapsUrl: "https://www.google.com/maps?cid=13008008",
   shortDescription: {
     es: "Instituto médico dermatológico líder en cáncer de piel, microscopía confocal, dermatología pediátrica y estética.",
     en: "Leading dermatology institute specialized in skin cancer screening, confocal microscopy, and aesthetic laser.",

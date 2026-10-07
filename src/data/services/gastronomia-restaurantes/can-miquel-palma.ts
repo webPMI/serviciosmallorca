@@ -20,7 +20,7 @@ export const canMiquelPalma: ServiceItem = {
   phone: "+34 971 71 85 96",
   whatsapp: "+34 971 71 85 96",
   email: "info@canmiquel.es",
-  website: "https://canmiquel.es",
+  website: "",
   coordinates: { lat: 39.571, lng: 2.6432 },
   schedule: "Lunes a Domingo: 09:00 - 23:30",
   lastVerifiedAt: "2026-08-25",

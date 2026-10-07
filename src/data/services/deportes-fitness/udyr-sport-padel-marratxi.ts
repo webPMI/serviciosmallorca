@@ -30,7 +30,6 @@ export const UDYR_SPORT_PADEL_MARRATXI: ServiceItem = {
   schedule: "Lunes a Domingo: 08:00 - 22:00",
   image: "/images/sports/udyr-sport-padel-marratxi.jpg",
   gallery: ["/images/sports/udyr-sport-padel-marratxi.jpg", "/images/categories/deportes.jpg"],
-  googleMapsUrl: "https://www.google.com/maps?cid=12007016",
   shortDescription: {
     es: "Gran complejo indoor de 10 pistas panorámicas climatizadas, escuela de tecnificación y restaurante.",
     en: "Premier indoor facility with 10 covered climate-controlled courts, pro coaching, and restaurant.",
@@ -38,10 +37,10 @@ export const UDYR_SPORT_PADEL_MARRATXI: ServiceItem = {
     de: "Große Padel-Indoor-Halle mit 10 klimatisierten Panorama-Plätzen, Padel-Schule und Restaurant.",
   },
   fullDescription: {
-    es: "Udyr Sport Pádel Club se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Gran complejo indoor de 10 pistas panorámicas climatizadas, escuela de tecnificación y restaurante. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
-    en: "Udyr Sport Pádel Club stands out as one of the premier athletic and fitness destinations in Mallorca. Premier indoor facility with 10 covered climate-controlled courts, pro coaching, and restaurant. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
-    ca: "Udyr Sport Pádel Club destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Gran complex indoor de 10 pistes panoràmiques climatitzades a Marratxí amb escola i restaurant. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
-    de: "Udyr Sport Pádel Club zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Große Padel-Indoor-Halle mit 10 klimatisierten Panorama-Plätzen, Padel-Schule und Restaurant. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
+      "es": "Udyr Sport Pádel Club es uno de los clubes indoor más populares del Polígono de Marratxí, con 8 pistas de pádel panorámicas cubiertas, climatización, bar cafetería y torneos de fin de semana.",
+      "en": "Udyr Sport Pádel Club in Marratxí features 8 indoor panoramic padel courts, climate control, café lounge, and active local tournaments sheltered from the weather.",
+      "ca": "Udyr Sport Pádel Club al Polígon de Marratxí compta amb 8 pistes indoor panoràmiques, cafeteria i lligues regulars tot l'any.",
+      "de": "Udyr Sport Pádel Club in Marratxí bietet 8 überdachte Panorama-Padelplätze, Hallenklimatisierung und gesellige Wochenendturniere."
   },
   highlights: {
     es: [

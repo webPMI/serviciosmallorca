@@ -30,7 +30,6 @@ export const MALLORCA_BIKE_HIRE_PORT_POLLENSA: ServiceItem = {
   schedule: "Lunes a Domingo: 08:00 - 22:00",
   image: "/images/services/mallorca-bike-hire-port-pollensa.jpg",
   gallery: ["/images/services/mallorca-bike-hire-port-pollensa.jpg", "/images/categories/deportes.jpg"],
-  googleMapsUrl: "https://www.google.com/maps?cid=12007088",
   shortDescription: {
     es: "Centro de alquiler de bicicletas de carretera de carbono de alta gama en el inicio de la ruta a Formentor.",
     en: "High-end carbon road bike rental and cycling hub located at the gateway to Cap de Formentor.",
@@ -38,10 +37,10 @@ export const MALLORCA_BIKE_HIRE_PORT_POLLENSA: ServiceItem = {
     de: "Premium-Carbon-Rennradverleih am Startpunkt der Traumstrecke zum Cap de Formentor.",
   },
   fullDescription: {
-    es: "Mallorca Bike Hire se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Centro de alquiler de bicicletas de carretera de carbono de alta gama en el inicio de la ruta a Formentor. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
-    en: "Mallorca Bike Hire stands out as one of the premier athletic and fitness destinations in Mallorca. High-end carbon road bike rental and cycling hub located at the gateway to Cap de Formentor. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
-    ca: "Mallorca Bike Hire destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Centre de lloguer de bicicletes de carretera de carboni d Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
-    de: "Mallorca Bike Hire zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Premium-Carbon-Rennradverleih am Startpunkt der Traumstrecke zum Cap de Formentor. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
+      "es": "Mallorca Bike Hire es un centro de alquiler ciclista prémium en Port de Pollença, punto de partida ideal para ascender a Formentor, Sa Calobra y el Coll de Femenia. Dispone de flotas actualizadas de bicicletas de carretera con potenciómetro y servicio de entrega en villas.",
+      "en": "Mallorca Bike Hire is a premier cycle rental specialist in Port de Pollença, ideally situated for iconic climbs to Cap de Formentor and Sa Calobra with high-end carbon fleets and villa delivery.",
+      "ca": "Mallorca Bike Hire al Port de Pollença és especialista en lloguer de bicicletes de carretera d'alta gamma per a les grans rutes de Formentor i la Tramuntana.",
+      "de": "Mallorca Bike Hire in Port de Pollença bietet erstklassige Rennradvermietung mit Carbonrädern und Lieferservice für die klassischen Tramuntana-Pässe."
   },
   highlights: {
     es: [

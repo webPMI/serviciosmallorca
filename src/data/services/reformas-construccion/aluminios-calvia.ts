@@ -20,7 +20,7 @@ export const aluminiosCalvia: ServiceItem = {
   phone: "+34 971 69 40 50",
   whatsapp: "+34 659 70 80 90",
   email: "info@aluminioscalvia.com",
-  website: "https://aluminioscalvia.com",
+  website: "",
   coordinates: { lat: 39.5245, lng: 2.5012 },
   schedule: "Lunes a Viernes: 08:00 - 13:00 | 14:30 - 18:00 (Sábados y Domingos Cerrado)",
   lastVerifiedAt: "2026-08-25",

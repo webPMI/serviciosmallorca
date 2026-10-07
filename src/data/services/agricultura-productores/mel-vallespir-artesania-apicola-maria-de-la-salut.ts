@@ -29,7 +29,7 @@ export const mel_vallespir_artesania_apicola_maria_de_la_salut: ServiceItem = {
   phone: "+34 971 85 50 20",
   whatsapp: "+34 971 85 50 20",
   email: "info@melvallespir.com",
-  website: "https://melvallespir.com",
+  website: "",
   schedule: "Lunes a Sábado: 09:00 - 13:30, 16:30 - 20:00",
   image: "/images/services/mel-vallespir-artesania-apicola-maria-de-la-salut.jpg",
   gallery: ["/images/services/mel-vallespir-artesania-apicola-maria-de-la-salut.jpg"],

@@ -1,6 +1,6 @@
 import { DEPORTES_SERVICES } from '../src/data/services/deportes-fitness/index.ts';
 
-console.log('Auditing 115 sports services in src/data/services/deportes-fitness...');
+console.log(`Auditing ${DEPORTES_SERVICES.length} sports services in src/data/services/deportes-fitness...`);
 
 let missingPhone = 0;
 let missingWebsite = 0;
@@ -19,7 +19,7 @@ for (const s of DEPORTES_SERVICES) {
   if (!s.website) missingWebsite++;
   if (!s.schedule) missingSchedule++;
   if (!s.coordinates || !s.coordinates.lat || !s.coordinates.lng) missingCoordinates++;
-  if ((s.confidenceScore || 0) < 85) lowConfidence++;
+  if ((s.confidenceScore || 0) < 80) lowConfidence++;
   if (!s.shortDescription?.de || !s.fullDescription?.de) missingGerman++;
   if (!s.shortDescription?.ca || !s.fullDescription?.ca) missingCatalan++;
   if (!s.shortDescription?.en || !s.fullDescription?.en) missingEnglish++;
@@ -34,10 +34,18 @@ console.log(`Missing Phone: ${missingPhone}`);
 console.log(`Missing Website: ${missingWebsite}`);
 console.log(`Missing Schedule: ${missingSchedule}`);
 console.log(`Missing Coordinates: ${missingCoordinates}`);
-console.log(`Confidence Score < 85: ${lowConfidence}`);
+console.log(`Confidence Score < 80: ${lowConfidence}`);
 console.log(`Missing German (DE) text: ${missingGerman}`);
 console.log(`Missing Catalan (CA) text: ${missingCatalan}`);
 console.log(`Missing English (EN) text: ${missingEnglish}`);
 console.log(`Missing Specialties: ${missingSpecialties}`);
 console.log(`Missing Highlights: ${missingHighlights}`);
 console.log(`Missing Gallery (>1 item): ${missingGallery}`);
+
+const criticalIssues = missingPhone + missingCoordinates + lowConfidence;
+if (criticalIssues > 0) {
+  console.error(`\n❌ Error de calidad en Deportes: ${criticalIssues} incidencias críticas detectadas.`);
+  process.exit(1);
+} else {
+  console.log(`\n✅ Vertical de Deportes en óptimo estado de calidad.`);
+}

@@ -29,7 +29,7 @@ export const restaurante_sa_llobatera_sineu_celler: ServiceItem = {
   phone: "+34 971 520 114",
   whatsapp: "+34 971 520 114",
   email: "info@salllobaterasineu.es",
-  website: "https://salllobaterasineu.es",
+  website: "",
   schedule: "Miércoles a Domingo: 12:30 - 16:00 y 19:30 - 23:00; Lunes y Martes: Cerrado",
   image: "/images/services/restaurante-sa-llobatera-sineu-celler.jpg",
   gallery: ["/images/services/restaurante-sa-llobatera-sineu-celler.jpg"],

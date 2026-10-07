@@ -29,7 +29,7 @@ export const aspace_balears_atencion_integral_marratxi: ServiceItem = {
   phone: "+34 971 794 800",
   whatsapp: "+34 971 794 800",
   email: "info@aspacebalears.org",
-  website: "https://aspacebalears.org",
+  website: "",
   schedule: "Lunes a Viernes: 08:00 - 17:30",
   image: "/images/services/aspace-balears-atencion-integral-marratxi.jpg",
   gallery: ["/images/services/aspace-balears-atencion-integral-marratxi.jpg"],

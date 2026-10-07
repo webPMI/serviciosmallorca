@@ -29,7 +29,7 @@ export const easdib_escola_art_superior_disseny_balears: ServiceItem = {
   phone: "+34 971 72 50 14",
   whatsapp: "+34 971 72 50 14",
   email: "info@easdib.es",
-  website: "https://easdib.es",
+  website: "https://escoladisseny.com",
   schedule: "Lunes a Viernes: 08:30 - 21:00 | Sábado y Domingo: Cerrado",
   image: "/images/services/easdib-escola-art-superior-disseny-balears.jpg",
   gallery: ["/images/services/easdib-escola-art-superior-disseny-balears.jpg"],

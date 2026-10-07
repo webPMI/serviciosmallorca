@@ -29,7 +29,7 @@ export const farmacia_son_caliu_24h_calvia: ServiceItem = {
   phone: "+34 971 680 555",
   whatsapp: "+34 971 680 555",
   email: "info@www.farmaciasoncaliu.com",
-  website: "https://www.farmaciasoncaliu.com",
+  website: "",
   schedule: "Abierto 24 horas los 365 días del año",
   image: "/images/services/farmacia-son-caliu-24h-calvia.jpg",
   gallery: ["/images/services/farmacia-son-caliu-24h-calvia.jpg"],

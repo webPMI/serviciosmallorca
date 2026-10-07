@@ -30,7 +30,6 @@ export const T_GOLF_PALMA_PUNTIRO: ServiceItem = {
   schedule: "Lunes a Domingo: 08:00 - 22:00",
   image: "/images/services/t-golf-palma-puntiro.jpg",
   gallery: ["/images/services/t-golf-palma-puntiro.jpg", "/images/categories/deportes.jpg"],
-  googleMapsUrl: "https://www.google.com/maps?cid=12007006",
   shortDescription: {
     es: "Único campo en Mallorca diseñado por la prestigiosa firma Nicklaus Design (18 hoyos par 71).",
     en: "The only course in Mallorca designed by Nicklaus Design (18 holes par 71).",
@@ -38,10 +37,10 @@ export const T_GOLF_PALMA_PUNTIRO: ServiceItem = {
     de: "Der einzige Platz auf Mallorca von Nicklaus Design (18 Loch Par 71).",
   },
   fullDescription: {
-    es: "T Golf Palma Puntiró se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Único campo en Mallorca diseñado por la prestigiosa firma Nicklaus Design (18 hoyos par 71). Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
-    en: "T Golf Palma Puntiró stands out as one of the premier athletic and fitness destinations in Mallorca. The only course in Mallorca designed by Nicklaus Design (18 holes par 71). Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
-    ca: "T Golf Palma Puntiró destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. L Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
-    de: "T Golf Palma Puntiró zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Der einzige Platz auf Mallorca von Nicklaus Design (18 Loch Par 71). Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
+      "es": "T Golf Palma Puntiró es un campo de 18 hoyos diseñado por la prestigiosa firma Nicklaus Design en el término de Palma. Su trazado respeta la vegetación autóctona de pinos, olivos y algarrobos, ofreciendo un desafío estratégico equilibrado.",
+      "en": "T Golf Palma Puntiró is an 18-hole course crafted by Nicklaus Design near Palma, harmonizing with native wild pine and olive trees while testing course management.",
+      "ca": "T Golf Palma Puntiró compta amb disseny de Nicklaus Design respectant la vegetació mallorquina de pins i oliveres amb un joc tàctic molt atractiu.",
+      "de": "T Golf Palma Puntiró wurde von Nicklaus Design entworfen und schmiegt sich harmonisch in die mediterrane Natur mit Olivenbäumen und strategischen Grüns."
   },
   highlights: {
     es: [

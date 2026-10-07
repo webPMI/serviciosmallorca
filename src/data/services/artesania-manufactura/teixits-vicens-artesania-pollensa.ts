@@ -42,7 +42,7 @@ export const teixitsVicensArtesaniaPollensa: ServiceItem = {
   features: ["parking", "credit_card"],
   paymentMethods: ["credit_card", "bank_transfer", "cash"],
   phone: "+34 971 53 04 50",
-  website: "https://www.teixitsvicens.com/",
+  website: "https://www.teixitsvicens.com",
   image: "/images/services/teixits-vicens-artesania-pollensa.jpg",
   shortDescription: {
     es: "Taller textil familiar fundado en 1854 en Pollença que conserva la técnica tradicional del Ikat para confeccionar telas de lenguas.",

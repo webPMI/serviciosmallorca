@@ -20,7 +20,7 @@ export const electricidadBinissalem: ServiceItem = {
   phone: "+34 971 88 64 20",
   whatsapp: "+34 620 44 55 66",
   email: "info@electricidadbinissalem.com",
-  website: "https://electricidadbinissalem.com",
+  website: "",
   coordinates: { lat: 39.688, lng: 2.842 },
   schedule: "Lunes a Viernes: 08:00 - 18:30 (Servicio de Urgencias Eléctricas 24h)",
   lastVerifiedAt: "2026-08-25",

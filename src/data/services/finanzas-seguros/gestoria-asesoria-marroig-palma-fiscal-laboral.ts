@@ -29,7 +29,7 @@ export const gestoria_asesoria_marroig_palma_fiscal_laboral: ServiceItem = {
   phone: "+34 971 72 82 10",
   whatsapp: "+34 971 72 82 10",
   email: "info@palmasesores.com",
-  website: "https://palmasesores.com",
+  website: "",
   schedule: "Lunes a Viernes: 08:30 - 15:00 (Cita previa para consultas complejas)",
   image: "/images/services/gestoria-asesoria-marroig-palma-fiscal-laboral.jpg",
   gallery: ["/images/services/gestoria-asesoria-marroig-palma-fiscal-laboral.jpg"],

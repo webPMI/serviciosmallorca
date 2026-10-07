@@ -20,7 +20,7 @@ export const carniceriaCanMatas: ServiceItem = {
   phone: "+34 971 63 12 40",
   whatsapp: "+34 689 30 40 50",
   email: "contacto@carnisseriacanmatas.com",
-  website: "https://carnisseriacanmatas.com",
+  website: "",
   coordinates: { lat: 39.7658, lng: 2.716 },
   schedule: "Lunes a Sábado: 08:30 - 14:00 | 17:00 - 20:00 (Domingos Cerrado)",
   lastVerifiedAt: "2026-08-25",

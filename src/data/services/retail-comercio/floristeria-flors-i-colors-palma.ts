@@ -26,7 +26,7 @@ export const floristeriaFlorsIColorsPalma: ServiceItem = {
   phone: "+34 971 22 18 45",
   whatsapp: "+34 620 22 18 45",
   email: "info@florsicolors.com",
-  website: "https://florsicolors.com",
+  website: "",
   schedule: "Lunes a Sábado: 09:00 - 20:00",
   image: "/images/services/floristeria-flors-i-colors-palma.jpg",
   gallery: ["/images/services/floristeria-flors-i-colors-palma.jpg"],

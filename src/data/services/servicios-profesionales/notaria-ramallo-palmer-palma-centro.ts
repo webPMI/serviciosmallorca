@@ -29,7 +29,7 @@ export const notaria_ramallo_palmer_palma_centro: ServiceItem = {
   phone: "+34 971 721 844",
   whatsapp: "+34 971 721 844",
   email: "info@notariapalmer.com",
-  website: "https://notariapalmer.com",
+  website: "",
   schedule: "Lunes a Jueves: 09:00 - 18:00, Viernes: 09:00 - 14:30",
   image: "/images/services/notaria-ramallo-palmer-palma-centro.jpg",
   gallery: ["/images/services/notaria-ramallo-palmer-palma-centro.jpg"],

@@ -27,7 +27,7 @@ export const cellerSonToreoSineu: ServiceItem = {
   phone: "+34 971 52 01 38",
   whatsapp: "+34 971 52 01 38",
   email: "info@cellersontoreo.com",
-  website: "https://www.cellersontoreo.com",
+  website: "",
   menuUrl: "https://www.cellersontoreo.com",
   tags: ["zona:raiguer-pla", "zona:sineu", "product:traditional", "mod:en-local", "aud:familias", "temps:todo-el-ano"],
   capabilities: {

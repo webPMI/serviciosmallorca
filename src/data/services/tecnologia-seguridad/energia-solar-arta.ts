@@ -20,7 +20,7 @@ export const solarArta: ServiceItem = {
   phone: "+34 971 83 50 80",
   whatsapp: "+34 650 30 40 50",
   email: "info@solararta.com",
-  website: "https://solararta.com",
+  website: "",
   coordinates: { lat: 39.694, lng: 3.351 },
   schedule: "Lunes a Viernes: 08:00 - 18:30 (Servicio de Urgencias Eléctricas 24h en Llevant)",
   lastVerifiedAt: "2026-08-25",

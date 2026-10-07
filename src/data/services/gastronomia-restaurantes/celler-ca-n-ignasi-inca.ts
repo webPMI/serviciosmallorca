@@ -34,7 +34,7 @@ export const cellerCaNIgnasiInca: ServiceItem = {
   inVillaService: false,
   features: ["wifi", "credit_card"],
   paymentMethods: ["credit_card", "bank_transfer", "cash"],
-  phone: "+34 971 88 12 34",
+  phone: "+34 971 50 44 42",
   website: "https://www.canignasi.com/",
   image: "/images/services/celler-ca-n-ignasi-inca.webp",
   shortDescription: {

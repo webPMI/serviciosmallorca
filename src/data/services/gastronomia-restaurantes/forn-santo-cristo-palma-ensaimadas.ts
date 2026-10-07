@@ -29,7 +29,7 @@ export const forn_santo_cristo_palma_ensaimadas: ServiceItem = {
   phone: "+34 971 715 373",
   whatsapp: "+34 971 715 373",
   email: "info@www.ensaimadasantocristo.com",
-  website: "https://www.ensaimadasantocristo.com",
+  website: "https://www.hornosantocristo.com",
   schedule: "Lunes a Domingo: 08:30 - 20:30",
   image: "/images/services/forn-santo-cristo-palma-ensaimadas.jpg",
   gallery: ["/images/services/forn-santo-cristo-palma-ensaimadas.jpg"],

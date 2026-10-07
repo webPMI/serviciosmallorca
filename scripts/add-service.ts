@@ -13,57 +13,40 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const SERVICES_DIR = path.resolve(__dirname, "../src/data/services");
 
-export const CATEGORY_TO_SECTOR: Record<string, { folder: string; arrayName: string; sectorId: string }> = {
+export const SECTOR_FOLDER_MAP: Record<string, { folder: string; arrayName: string; sectorId: string }> = {
+  "agricultura-productores": { folder: "agricultura-productores", arrayName: "AGRICULTURA_SERVICES", sectorId: "sector-primario-agroalimentario" },
+  "alojamiento-turismo": { folder: "alojamiento-turismo", arrayName: "ALOJAMIENTO_SERVICES", sectorId: "turismo-alojamiento" },
   "arte-tatuajes": { folder: "arte-tatuajes", arrayName: "TATTOO_SERVICES", sectorId: "arte-estilo-cultura" },
-  "gastronomia-catering": {
-    folder: "gastronomia-restaurantes",
-    arrayName: "RESTAURANT_SERVICES",
-    sectorId: "hosteleria-gastronomia",
-  },
-  "gastronomia-restaurantes": {
-    folder: "gastronomia-restaurantes",
-    arrayName: "RESTAURANT_SERVICES",
-    sectorId: "hosteleria-gastronomia",
-  },
+  "artesania-manufactura": { folder: "artesania-manufactura", arrayName: "ARTESANIA_SERVICES", sectorId: "industria-manufactura-artesania" },
+  "deportes-fitness": { folder: "deportes-fitness", arrayName: "DEPORTES_SERVICES", sectorId: "deportes-aventura-bienestar" },
+  "educacion-formacion": { folder: "educacion-formacion", arrayName: "EDUCACION_SERVICES", sectorId: "educacion-formacion-idiomas" },
+  "entretenimiento-ocio": { folder: "entretenimiento-ocio", arrayName: "ENTRETENIMIENTO_SERVICES", sectorId: "ocio-vida-nocturna" },
+  "finanzas-seguros": { folder: "finanzas-seguros", arrayName: "FINANZAS_SERVICES", sectorId: "finanzas-seguros-banca" },
+  "gastronomia-restaurantes": { folder: "gastronomia-restaurantes", arrayName: "RESTAURANT_SERVICES", sectorId: "hosteleria-gastronomia" },
+  "hogar-limpieza": { folder: "hogar-limpieza", arrayName: "HOGAR_SERVICES", sectorId: "mantenimiento-hogar-comunidades" },
+  "inmobiliaria-villas": { folder: "inmobiliaria-villas", arrayName: "INMOBILIARIA_SERVICES", sectorId: "inmobiliario-fincas" },
+  "jardineria-piscinas": { folder: "jardineria-piscinas", arrayName: "JARDINERIA_SERVICES", sectorId: "jardineria-paisajismo-piscinas" },
+  "mascotas-veterinaria": { folder: "mascotas-veterinaria", arrayName: "MASCOTAS_SERVICES", sectorId: "animales-veterinaria" },
+  "motor-transporte": { folder: "motor-transporte", arrayName: "TRANSPORTE_SERVICES", sectorId: "movilidad-transporte" },
   "nautica-charter": { folder: "nautica-charter", arrayName: "NAUTICA_SERVICES", sectorId: "nautica-maritimo" },
-  "salud-bienestar": { folder: "spas-bienestar", arrayName: "SPAS_SERVICES", sectorId: "salud-bienestar-belleza" },
+  "reformas-construccion": { folder: "reformas-construccion", arrayName: "REFORMAS_SERVICES", sectorId: "construccion-reformas" },
+  "retail-comercio": { folder: "retail-comercio", arrayName: "RETAIL_SERVICES", sectorId: "comercio-retail-tiendas" },
+  "salud-bienestar": { folder: "salud-bienestar", arrayName: "SALUD_SERVICES", sectorId: "salud-bienestar-belleza" },
+  "servicios-profesionales": { folder: "servicios-profesionales", arrayName: "PROFESIONALES_SERVICES", sectorId: "servicios-profesionales-legal" },
+  "servicios-sociales": { folder: "servicios-sociales", arrayName: "SOCIALES_SERVICES", sectorId: "servicios-sociales-comunitarios" },
   "spas-bienestar": { folder: "spas-bienestar", arrayName: "SPAS_SERVICES", sectorId: "salud-bienestar-belleza" },
-  "reformas-hogar": {
-    folder: "reformas-construccion",
-    arrayName: "REFORMAS_SERVICES",
-    sectorId: "construccion-reformas",
-  },
-  "reformas-construccion": {
-    folder: "reformas-construccion",
-    arrayName: "REFORMAS_SERVICES",
-    sectorId: "construccion-reformas",
-  },
-  "servicios-profesionales": {
-    folder: "servicios-profesionales",
-    arrayName: "PROFESIONALES_SERVICES",
-    sectorId: "servicios-profesionales-legal",
-  },
-  "inmobiliaria-villas": {
-    folder: "inmobiliaria-villas",
-    arrayName: "INMOBILIARIA_SERVICES",
-    sectorId: "inmobiliario-fincas",
-  },
-  "motor-transporte": {
-    folder: "motor-transporte",
-    arrayName: "TRANSPORTE_SERVICES",
-    sectorId: "movilidad-transporte",
-  },
-  "jardineria-piscinas": {
-    folder: "jardineria-piscinas",
-    arrayName: "JARDINERIA_SERVICES",
-    sectorId: "jardineria-paisajismo-piscinas",
-  },
-  "tecnologia-seguridad": {
-    folder: "tecnologia-seguridad",
-    arrayName: "SEGURIDAD_SERVICES",
-    sectorId: "tecnologia-seguridad-domotica",
-  },
+  "tecnologia-seguridad": { folder: "tecnologia-seguridad", arrayName: "SEGURIDAD_SERVICES", sectorId: "tecnologia-seguridad-domotica" },
 };
+
+export function resolveSectorForCategory(categoryId: string): { folder: string; arrayName: string; sectorId: string } {
+  if (SECTOR_FOLDER_MAP[categoryId]) return SECTOR_FOLDER_MAP[categoryId];
+  const found = CATEGORIES.find((c) => c.id === categoryId);
+  if (found) {
+    const directMatch = Object.values(SECTOR_FOLDER_MAP).find((s) => s.sectorId === found.sectorId);
+    if (directMatch) return directMatch;
+  }
+  return SECTOR_FOLDER_MAP["servicios-profesionales"];
+}
 
 function toCamelCase(str: string): string {
   return str
@@ -183,11 +166,27 @@ export async function addServices(itemsToAdd: Partial<ServiceItem>[]): Promise<v
     }
 
     const category = item.category || "servicios-profesionales";
-    const sectorConfig = CATEGORY_TO_SECTOR[category] || {
-      folder: "servicios-profesionales",
-      arrayName: "PROFESIONALES_SERVICES",
-      sectorId: "servicios-profesionales-legal",
-    };
+    const sectorConfig = resolveSectorForCategory(category);
+
+    // Validación GR-11: evitar números dummy en ingesta
+    const rawPhone = (item.phone || "").trim();
+    const isDummyPhone =
+      !rawPhone ||
+      /^(?:\+34\s*)?(?:971\s*000|971\s*77\s*12|1234)/.test(rawPhone) ||
+      rawPhone.endsWith("1234") ||
+      rawPhone.endsWith("12345");
+    const safePhone = isDummyPhone ? "" : rawPhone;
+
+    // Validación GR-11/GR-12: rechazar URLs de búsqueda o CIDs sintéticos
+    let safeGoogleMaps = item.googleMapsUrl;
+    if (
+      safeGoogleMaps &&
+      (/maps\/(?:search|place\/\?q=)|\?q=|\/search\/\?api=/i.test(safeGoogleMaps) ||
+        /cid=(?:12007\d+|13008\d+|\d{1,10})(?:&|$)/i.test(safeGoogleMaps))
+    ) {
+      console.warn(`  ⚠️ Eliminando googleMapsUrl sintético/búsqueda en "${item.name}"`);
+      safeGoogleMaps = undefined;
+    }
 
     // Traducción automática si solo se proporcionó español o faltan traducciones
     const esShort = typeof item.shortDescription === "string" ? item.shortDescription : item.shortDescription?.es;
@@ -268,14 +267,13 @@ export async function addServices(itemsToAdd: Partial<ServiceItem>[]): Promise<v
       seasonality: item.seasonality || "year_round",
       isIconicHeritage: item.isIconicHeritage ?? false,
       lastVerifiedAt: item.lastVerifiedAt || today,
-      // GR-11/GR-12: solo se incluyen URLs de Google/Apple/Bing Maps cuando existe ficha real
-      // contrastada. Nunca autogenerar búsquedas genéricas como filler (falsa fidelidad multi-mapa).
-      googleMapsUrl: item.googleMapsUrl,
+      // GR-11/GR-12: solo se incluyen URLs de Google/Apple/Bing Maps cuando existe ficha real contrastada
+      googleMapsUrl: safeGoogleMaps,
       appleMapsUrl: item.appleMapsUrl,
       bingMapsUrl: item.bingMapsUrl,
-      phone: item.phone || "+34 971 000 000",
-      whatsapp: item.whatsapp || item.phone || "+34 971 000 000",
-      email: item.email || `info@${slug}.com`,
+      phone: safePhone,
+      whatsapp: item.whatsapp || safePhone || undefined,
+      email: item.email || undefined,
       website: item.website || "",
       targetAudience: item.targetAudience || ["residentes", "turistas", "expat"],
       languagesSpoken: item.languagesSpoken || ["es", "en", "ca", "de"],

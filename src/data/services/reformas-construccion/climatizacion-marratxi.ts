@@ -20,7 +20,7 @@ export const climaMarratxi: ServiceItem = {
   phone: "+34 971 60 48 90",
   whatsapp: "+34 639 20 30 40",
   email: "info@climatizacionmarratxi.com",
-  website: "https://climatizacionmarratxi.com",
+  website: "",
   coordinates: { lat: 39.619, lng: 2.738 },
   schedule: "Lunes a Viernes: 08:00 - 18:30 (Servicio Técnico y Urgencias de Clima)",
   lastVerifiedAt: "2026-08-25",

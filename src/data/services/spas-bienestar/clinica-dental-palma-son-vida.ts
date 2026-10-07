@@ -26,11 +26,10 @@ export const clinica_dental_palma_son_vida: ServiceItem = {
   phone: "+34 971 790 100",
   whatsapp: "+34 971 790 100",
   email: "info@sonvidadental.com",
-  website: "https://sonvidadental.com",
+  website: "",
   schedule: "Lunes a Domingo: 08:00 - 20:00",
   image: "/images/spas/clinica-dental-palma-son-vida.jpg",
   gallery: ["/images/spas/clinica-dental-palma-son-vida.jpg", "/images/categories/salud.jpg"],
-  googleMapsUrl: "https://www.google.com/maps?cid=13008012",
   shortDescription: {
     es: "Atención dental exclusiva y personalizada en Son Vida, carillas de porcelana ultra-finas y periodoncia.",
     en: "Exclusive dental care in Son Vida featuring ultra-thin porcelain veneers, implants, and periodontics.",

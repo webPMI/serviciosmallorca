@@ -20,7 +20,7 @@ export const carniceriaCanXarrier: ServiceItem = {
   phone: "+34 971 66 50 40",
   whatsapp: "+34 689 70 80 90",
   email: "info@canxarrier.com",
-  website: "https://canxarrier.com",
+  website: "",
   coordinates: { lat: 39.559, lng: 2.894 },
   schedule: "Lunes a Sábado: 08:30 - 14:00 | 17:00 - 20:00 (Domingos Cerrado)",
   lastVerifiedAt: "2026-08-25",

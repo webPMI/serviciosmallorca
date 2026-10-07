@@ -29,7 +29,7 @@ export const agroturismo_finca_sa_rota_de_morell_sineu: ServiceItem = {
   phone: "+34 971 52 03 80",
   whatsapp: "+34 971 52 03 80",
   email: "info@sarotademorell.com",
-  website: "https://sarotademorell.com",
+  website: "",
   schedule: "Abierto todo el año",
   image: "/images/services/agroturismo-finca-sa-rota-de-morell-sineu.jpg",
   gallery: ["/images/services/agroturismo-finca-sa-rota-de-morell-sineu.jpg"],

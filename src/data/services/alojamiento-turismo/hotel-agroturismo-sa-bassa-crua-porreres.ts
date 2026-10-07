@@ -29,7 +29,7 @@ export const hotel_agroturismo_sa_bassa_crua_porreres: ServiceItem = {
   phone: "+34 971 647 810",
   whatsapp: "+34 971 647 810",
   email: "info@sabassacruaagroturismo.es",
-  website: "https://sabassacruaagroturismo.es",
+  website: "",
   schedule: "Recepción: 08:00 - 22:00 (Check-in online disponible)",
   image: "/images/services/hotel-agroturismo-sa-bassa-crua-porreres.jpg",
   gallery: ["/images/services/hotel-agroturismo-sa-bassa-crua-porreres.jpg"],

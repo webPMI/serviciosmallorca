@@ -20,7 +20,7 @@ export const cellerEsCellerPetra: ServiceItem = {
   phone: "+34 971 56 15 16",
   whatsapp: "+34 971 56 15 16",
   email: "reserves@escellerpetra.com",
-  website: "https://escellerpetra.com",
+  website: "",
   coordinates: { lat: 39.614, lng: 3.112 },
   schedule: "Lunes a Domingo: 13:00 - 16:00 | 20:00 - 23:30 (Abierto todos los días)",
   lastVerifiedAt: "2026-08-25",

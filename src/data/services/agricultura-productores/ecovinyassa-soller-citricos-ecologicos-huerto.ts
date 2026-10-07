@@ -29,7 +29,7 @@ export const ecovinyassa_soller_citricos_ecologicos_huerto: ServiceItem = {
   phone: "+34 686 287 400",
   whatsapp: "+34 686 287 400",
   email: "info@savinyassa.com",
-  website: "https://savinyassa.com",
+  website: "https://ecovinyassa.com",
   schedule: "Lunes, Miércoles y Viernes: 10:00 - 15:00 (Con reserva previa)",
   image: "/images/services/ecovinyassa-soller-citricos-ecologicos-huerto.jpg",
   gallery: ["/images/services/ecovinyassa-soller-citricos-ecologicos-huerto.jpg"],

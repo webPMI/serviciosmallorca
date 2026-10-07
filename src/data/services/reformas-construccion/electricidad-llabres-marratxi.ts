@@ -20,7 +20,7 @@ export const electricidadLlabres: ServiceItem = {
   phone: "+34 971 60 22 18",
   whatsapp: "+34 639 55 44 33",
   email: "contacto@electricidadllabres.com",
-  website: "https://electricidadllabres.com",
+  website: "",
   coordinates: { lat: 39.6198, lng: 2.7532 },
   schedule: "Lunes a Viernes: 08:00 - 19:00 | Servicio de Averías Eléctricas Urgentes",
   lastVerifiedAt: "2026-08-25",

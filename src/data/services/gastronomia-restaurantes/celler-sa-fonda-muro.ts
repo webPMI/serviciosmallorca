@@ -27,7 +27,7 @@ export const cellerSaFondaMuro: ServiceItem = {
   phone: "+34 971 53 79 65",
   whatsapp: "+34 971 53 79 65",
   email: "info@safondamuro.com",
-  website: "https://www.safondamuro.com",
+  website: "",
   menuUrl: "https://www.safondamuro.com",
   tags: [
     "zona:alcudia-pollensa",

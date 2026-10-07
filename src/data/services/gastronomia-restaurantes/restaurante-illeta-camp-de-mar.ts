@@ -80,7 +80,7 @@ export const restauranteIlletaCampDeMar: ServiceItem = {
   gallery: ["/images/services/restaurante-illeta-camp-de-mar.jpg"],
   phone: "+34 971 23 58 84",
   whatsapp: "+34971235884",
-  website: "https://restauranteilleta.com",
+  website: "",
   email: "info@restauranteilleta.com",
   webAccessibility: "active",
   tags: ["zona:calvia-andratx", "mod:cita-previa", "product:premium"],

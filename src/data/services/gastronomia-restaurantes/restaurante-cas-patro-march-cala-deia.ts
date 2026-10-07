@@ -29,7 +29,7 @@ export const restaurante_cas_patro_march_cala_deia: ServiceItem = {
   phone: "+34 971 636 023",
   whatsapp: "+34 971 636 023",
   email: "info@caspatromarch.es",
-  website: "https://caspatromarch.es",
+  website: "",
   schedule: "Diario: 12:30 - 18:00 (Mayo a Octubre)",
   image: "/images/services/restaurante-cas-patro-march-cala-deia.jpg",
   gallery: ["/images/services/restaurante-cas-patro-march-cala-deia.jpg"],

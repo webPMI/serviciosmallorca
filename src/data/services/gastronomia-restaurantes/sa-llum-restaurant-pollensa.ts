@@ -35,7 +35,7 @@ export const saLlumRestaurantPollensa: ServiceItem = {
   features: ["wifi", "air_conditioning", "credit_card"],
   paymentMethods: ["credit_card", "bank_transfer", "cash"],
   phone: "+34 971 53 45 10",
-  website: "https://sallumpollensa.com/",
+  website: "",
   image: "/images/services/sa-llum-restaurant-pollensa.webp",
   shortDescription: {
     es: "Restaurante íntimo en el casco histórico de Pollença especializado en carnes a la brasa y productos del huerto local.",

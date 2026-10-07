@@ -29,7 +29,7 @@ export const carpinteria_fusteria_artesanal_mallorca_inca: ServiceItem = {
   phone: "+34 971 501 880",
   whatsapp: "+34 971 501 880",
   email: "info@fusteriamallorquinainca.es",
-  website: "https://fusteriamallorquinainca.es",
+  website: "",
   schedule: "Lunes a Viernes: 07:30 - 17:30",
   image: "/images/services/carpinteria-fusteria-artesanal-mallorca-inca.jpg",
   gallery: ["/images/services/carpinteria-fusteria-artesanal-mallorca-inca.jpg"],

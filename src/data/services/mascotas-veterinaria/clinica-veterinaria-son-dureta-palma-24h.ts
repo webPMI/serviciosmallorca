@@ -33,7 +33,7 @@ export const clinica_veterinaria_son_dureta_palma_24h: ServiceItem = {
   phone: "+34 971 731 012",
   whatsapp: "+34 971 731 012",
   email: "info@vetsondureta.es",
-  website: "https://vetsondureta.es",
+  website: "",
   schedule: "Urgencias 24 horas / 365 días (Consultas: Lunes a Sábado 09:00 - 20:30)",
   image: "/images/services/clinica-veterinaria-son-dureta-palma-24h.jpg",
   gallery: ["/images/services/clinica-veterinaria-son-dureta-palma-24h.jpg"],

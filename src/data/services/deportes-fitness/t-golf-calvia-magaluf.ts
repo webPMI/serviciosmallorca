@@ -30,7 +30,6 @@ export const T_GOLF_CALVIA_MAGALUF: ServiceItem = {
   schedule: "Lunes a Domingo: 08:00 - 22:00",
   image: "/images/services/t-golf-calvia-magaluf.jpg",
   gallery: ["/images/services/t-golf-calvia-magaluf.jpg", "/images/categories/deportes.jpg"],
-  googleMapsUrl: "https://www.google.com/maps?cid=12007005",
   shortDescription: {
     es: "Obra maestra de John Harris completamente renovada con 18 hoyos, 15 lagos y restaurante T-elicious.",
     en: "Masterpiece by John Harris fully restored with 18 holes, 15 lakes, and T-elicious restaurant.",
@@ -38,10 +37,10 @@ export const T_GOLF_CALVIA_MAGALUF: ServiceItem = {
     de: "Meisterwerk von John Harris mit 18 Löchern, 15 Seen und Gourmet-Restaurant T-elicious.",
   },
   fullDescription: {
-    es: "T Golf Calvià se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Obra maestra de John Harris completamente renovada con 18 hoyos, 15 lagos y restaurante T-elicious. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
-    en: "T Golf Calvià stands out as one of the premier athletic and fitness destinations in Mallorca. Masterpiece by John Harris fully restored with 18 holes, 15 lakes, and T-elicious restaurant. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
-    ca: "T Golf Calvià destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Camp de 18 forats dissenyat per John Harris amb 15 llacs i restaurant T-elicious. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
-    de: "T Golf Calvià zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Meisterwerk von John Harris mit 18 Löchern, 15 Seen und Gourmet-Restaurant T-elicious. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
+      "es": "T Golf Calvià (antiguo Golf Poniente) es uno de los campos de 18 hoyos más renombrados de Mallorca tras su completa renovación. Diseñado originalmente por John Harris en 1978, combina lagos, pinos centenarios y una elegante casa club.",
+      "en": "T Golf Calvià is an impeccably restored 18-hole championship venue originally designed by John Harris in 1978, boasting scenic pine forests, natural lakes, and a stylish clubhouse.",
+      "ca": "T Golf Calvià és un camp emblemàtic de 18 forats renovat integralment, amb llacs naturals, pins centenaris i gran prestigi internacional.",
+      "de": "T Golf Calvià ist ein meisterhaft renovierter 18-Loch-Championship-Platz inmitten alter Pinienwälder und Seen mit exklusivem Clubhaus."
   },
   highlights: {
     es: [

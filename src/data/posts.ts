@@ -1104,7 +1104,7 @@ Die Mobilität auf 3.640 km² Inselfläche erfordert hochmoderne Verkehrsinfrast
     coverImage: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1200&q=80",
     tags: ["Transporte", "Movilidad", "Aeropuerto", "AENA", "Mallorca"],
     relatedServiceIds: [
-      "mallorca-taxi-transfer-aeropuerto-palma-service",
+      "mallorca-private-chauffeur-limousine",
       "autocares-transunion",
       "roig-premium-transfers",
     ],

@@ -29,7 +29,7 @@ export const vivers_llinas_campos: ServiceItem = {
   phone: "+34 971 65 04 88",
   whatsapp: "+34 971 65 04 88",
   email: "info@viversllinas.com",
-  website: "https://viversllinas.com",
+  website: "",
   schedule: "Lunes a Viernes: 08:00 - 13:00, 15:00 - 19:00, Sábados: 08:30 - 13:30",
   image: "/images/services/vivers-llinas-campos.jpg",
   gallery: ["/images/services/vivers-llinas-campos.jpg"],

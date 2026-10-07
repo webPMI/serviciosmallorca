@@ -30,7 +30,6 @@ export const clinica_baviera_oftalmologia_palma: ServiceItem = {
   schedule: "Lunes a Domingo: 08:00 - 20:00",
   image: "/images/spas/clinica-baviera-oftalmologia-palma.jpg",
   gallery: ["/images/spas/clinica-baviera-oftalmologia-palma.jpg", "/images/categories/salud.jpg"],
-  googleMapsUrl: "https://www.google.com/maps?cid=13008014",
   shortDescription: {
     es: "Clínica oftalmológica especializada en corrección láser de miopía, hipermetropía, astigmatismo y presbicia.",
     en: "Ophthalmology clinic specialized in laser vision correction for myopia, hyperopia, and presbyopia.",

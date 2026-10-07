@@ -35,7 +35,7 @@ export const carminaShoemakerIncaPalma: ServiceItem = {
   features: ["credit_card"],
   paymentMethods: ["credit_card", "bank_transfer", "cash"],
   phone: "+34 971 50 71 89",
-  website: "https://www.carminashoemaker.com/",
+  website: "https://www.carminashoemaker.com",
   image: "/images/services/carmina-shoemaker-inca-palma.webp",
   shortDescription: {
     es: "Mundialmente reconocidos por sus zapatos artesanos de cosido Goodyear Welted y pieles Cordovan en Inca.",

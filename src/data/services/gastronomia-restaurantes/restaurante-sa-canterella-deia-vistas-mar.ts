@@ -29,7 +29,7 @@ export const restaurante_sa_canterella_deia_vistas_mar: ServiceItem = {
   phone: "+34 971 636 104",
   whatsapp: "+34 971 636 104",
   email: "info@sacanterelladeia.es",
-  website: "https://sacanterelladeia.es",
+  website: "",
   schedule: "Diario: 13:00 - 16:00 y 19:30 - 23:00 (Abril – Octubre)",
   image: "/images/services/restaurante-sa-canterella-deia-vistas-mar.jpg",
   gallery: ["/images/services/restaurante-sa-canterella-deia-vistas-mar.jpg"],

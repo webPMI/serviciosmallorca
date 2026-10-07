@@ -30,7 +30,6 @@ export const BROOKLYN_FITBOXING_SON_HUGO_PALMA: ServiceItem = {
   schedule: "Lunes a Domingo: 08:00 - 22:00",
   image: "/images/sports/brooklyn-fitboxing-son-hugo-palma.jpg",
   gallery: ["/images/sports/brooklyn-fitboxing-son-hugo-palma.jpg", "/images/categories/deportes.jpg"],
-  googleMapsUrl: "https://www.google.com/maps?cid=12007046",
   shortDescription: {
     es: "Centro oficial de Fitboxing en Son Hugo con sacos inteligentes y entrenamientos de 47 minutos.",
     en: "Official Fitboxing center in Son Hugo featuring smart bags and 47-minute workouts.",
@@ -38,10 +37,10 @@ export const BROOKLYN_FITBOXING_SON_HUGO_PALMA: ServiceItem = {
     de: "Fitboxing-Studio in Son Hugo mit intelligenten Boxsäcken und 47-Minuten-Workouts.",
   },
   fullDescription: {
-    es: "Brooklyn Fitboxing Son Hugo se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Centro oficial de Fitboxing en Son Hugo con sacos inteligentes y entrenamientos de 47 minutos. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
-    en: "Brooklyn Fitboxing Son Hugo stands out as one of the premier athletic and fitness destinations in Mallorca. Official Fitboxing center in Son Hugo featuring smart bags and 47-minute workouts. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
-    ca: "Brooklyn Fitboxing Son Hugo destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Centre de Fitboxing a Son Hugo amb sacs intel·ligents i sessions de 47 minuts. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
-    de: "Brooklyn Fitboxing Son Hugo zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Fitboxing-Studio in Son Hugo mit intelligenten Boxsäcken und 47-Minuten-Workouts. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
+      "es": "Brooklyn Fitboxing Son Hugo acerca el método de entrenamiento de intervalos con saco a la zona norte de Palma. Una experiencia dinámica de fitness y coordinación sin golpes entre compañeros, ideal para quemar calorías y tonificar en comunidad.",
+      "en": "Brooklyn Fitboxing Son Hugo brings 47-minute contactless boxing workouts to northern Palma, blending high-energy music, synchronized bag combinations, and real-time biometric metrics.",
+      "ca": "Brooklyn Fitboxing Son Hugo ofereix fitboxing sense contacte al nord de Palma amb rondes dinàmiques i mesurament de rendiment en directe.",
+      "de": "Brooklyn Fitboxing Son Hugo bietet kontaktloses Box-Fitness-Training im Norden von Palma mit sensorischen Boxsäcken und mitreißender Musik."
   },
   highlights: {
     es: [

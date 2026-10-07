@@ -26,11 +26,10 @@ export const clinica_dental_moralejo_ruiz_palma: ServiceItem = {
   phone: "+34 971 713 030",
   whatsapp: "+34 971 713 030",
   email: "info@moralejoyruiz.com",
-  website: "https://moralejoyruiz.com",
+  website: "",
   schedule: "Lunes a Domingo: 08:00 - 20:00",
   image: "/images/spas/clinica-dental-moralejo-ruiz-palma.jpg",
   gallery: ["/images/spas/clinica-dental-moralejo-ruiz-palma.jpg", "/images/categories/salud.jpg"],
-  googleMapsUrl: "https://www.google.com/maps?cid=13008010",
   shortDescription: {
     es: "Clínica odontológica de alta gama especializada en diseño de sonrisa digital, implantes guiados e Invisalign.",
     en: "High-end dental clinic specialized in digital smile design, computer-guided implants, and Invisalign.",

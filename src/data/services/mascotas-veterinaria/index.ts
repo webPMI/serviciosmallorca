@@ -18,9 +18,6 @@ import { hospitalVeterinarioAragoPalma } from "./hospital-veterinario-arago-palm
 import { hospital_veterinario_aragon_palma_24h } from "./hospital-veterinario-aragon-palma-24h.ts";
 import { hospitalVeterinarioCanisMallorca } from "./hospital-veterinario-canis-mallorca.ts";
 import { hotel_canino_felino_es_garrover_marratxi } from "./hotel-canino-felino-es-garrover-marratxi.ts";
-import { mallorcaDogTrainerBehaviour } from "./mallorca-dog-trainer-behaviour.ts";
-import { peluqueria_canina_mallorca_the_dog_spa_palma } from "./peluqueria-canina-mallorca-the-dog-spa-palma.ts";
-import { petSpaGroomingSantaCatalina } from "./pet-spa-grooming-santa-catalina.ts";
 import { residencia_canina_son_fangos_campos } from "./residencia-canina-son-fangos-campos.ts";
 import { residencia_canina_son_gual_palma } from "./residencia-canina-son-gual-palma.ts";
 
@@ -43,9 +40,6 @@ export { hospitalVeterinarioAragoPalma } from "./hospital-veterinario-arago-palm
 export { hospital_veterinario_aragon_palma_24h } from "./hospital-veterinario-aragon-palma-24h.ts";
 export { hospitalVeterinarioCanisMallorca } from "./hospital-veterinario-canis-mallorca.ts";
 export { hotel_canino_felino_es_garrover_marratxi } from "./hotel-canino-felino-es-garrover-marratxi.ts";
-export { mallorcaDogTrainerBehaviour } from "./mallorca-dog-trainer-behaviour.ts";
-export { peluqueria_canina_mallorca_the_dog_spa_palma } from "./peluqueria-canina-mallorca-the-dog-spa-palma.ts";
-export { petSpaGroomingSantaCatalina } from "./pet-spa-grooming-santa-catalina.ts";
 export { residencia_canina_son_fangos_campos } from "./residencia-canina-son-fangos-campos.ts";
 export { residencia_canina_son_gual_palma } from "./residencia-canina-son-gual-palma.ts";
 
@@ -69,9 +63,6 @@ export const MASCOTAS_SERVICES: ServiceItem[] = [
   hospital_veterinario_aragon_palma_24h,
   hospitalVeterinarioCanisMallorca,
   hotel_canino_felino_es_garrover_marratxi,
-  mallorcaDogTrainerBehaviour,
-  peluqueria_canina_mallorca_the_dog_spa_palma,
-  petSpaGroomingSantaCatalina,
   residencia_canina_son_fangos_campos,
   residencia_canina_son_gual_palma,
 ];

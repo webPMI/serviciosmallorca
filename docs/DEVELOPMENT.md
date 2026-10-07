@@ -23,14 +23,18 @@ npm run dev
 
 ## Comandos
 
-| Comando              | Descripción                                                     |
-| -------------------- | --------------------------------------------------------------- |
-| `npm run dev`        | Inicia servidor de desarrollo en `localhost:4321`               |
-| `npm run build`      | Build de producción para Cloudflare Pages (@astrojs/cloudflare) |
-| `npm run preview`    | Vista previa del build de producción edge                       |
-| `npm test`           | Ejecutar tests unitarios (Vitest)                               |
-| `npm run test:watch` | Tests en modo watch                                             |
-| `npm run typecheck`  | TypeScript type checking estricto                               |
+| Comando                 | Descripción                                                                |
+| ----------------------- | -------------------------------------------------------------------------- |
+| `npm run dev`           | Inicia servidor de desarrollo en `localhost:4321`                          |
+| `npm run build`         | Build de producción para Cloudflare Pages (@astrojs/cloudflare)            |
+| `npm run preview`       | Vista previa del build de producción edge                                  |
+| `npm test`              | Ejecutar tests unitarios (Vitest)                                          |
+| `npm run test:watch`    | Tests en modo watch                                                        |
+| `npm run typecheck`     | TypeScript type checking estricto                                          |
+| `npm run prepush`       | Pipeline completo de pre-vuelo (types, taxonomía, tests, audit)            |
+| `npm run audit:sector`  | Auditoría y tablero ejecutivo por sectores ([Guía](SECTOR_AUDIT_GUIDE.md)) |
+| `npm run audit:honesty` | Auditoría de honestidad de datos (GR-11 / GR-12)                           |
+| `npm run audit:fake`    | Detección de teléfonos dummy y datos sintéticos por sector                 |
 
 ## Estructura de Desarrollo
 

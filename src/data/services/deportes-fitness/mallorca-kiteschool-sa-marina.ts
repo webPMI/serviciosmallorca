@@ -30,7 +30,6 @@ export const MALLORCA_KITESCHOOL_SA_MARINA: ServiceItem = {
   schedule: "Lunes a Domingo: 08:00 - 22:00",
   image: "/images/services/mallorca-kiteschool-sa-marina.jpg",
   gallery: ["/images/services/mallorca-kiteschool-sa-marina.jpg", "/images/categories/deportes.jpg"],
-  googleMapsUrl: "https://www.google.com/maps?cid=12007096",
   shortDescription: {
     es: "Escuela oficial IKO de Kitesurf y Wingfoil en el spot con viento térmico más constante de la isla.",
     en: "Official IKO Kitesurfing and Wingfoil academy at the island's most reliable thermal wind spot.",
@@ -38,10 +37,10 @@ export const MALLORCA_KITESCHOOL_SA_MARINA: ServiceItem = {
     de: "Offizielle IKO Kitesurf- und Wingfoil-Schule am windsichersten Thermal-Spot Mallorcas.",
   },
   fullDescription: {
-    es: "Mallorca Kite School Sa Marina se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Escuela oficial IKO de Kitesurf y Wingfoil en el spot con viento térmico más constante de la isla. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
-    en: "Mallorca Kite School Sa Marina stands out as one of the premier athletic and fitness destinations in Mallorca. Official IKO Kitesurfing and Wingfoil academy at the island Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
-    ca: "Mallorca Kite School Sa Marina destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Escola oficial IKO de Kitesurf i Wingfoil a la badia d Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
-    de: "Mallorca Kite School Sa Marina zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Offizielle IKO Kitesurf- und Wingfoil-Schule am windsichersten Thermal-Spot Mallorcas. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
+      "es": "Mallorca Kite School en la playa de Sa Marina (Bahía de Pollença/Alcúdia) es la escuela de kitesurf homologada de referencia en el norte de la isla. Aprovecha los vientos térmicos estables de 'embat' de primavera y verano para cursos de iniciación, foil y alquiler de material.",
+      "en": "Mallorca Kite School at Sa Marina beach (Pollença/Alcúdia Bay) offers certified IKO kitesurfing, wingfoil, and hydrofoil lessons, benefiting from dependable thermal 'embat' winds.",
+      "ca": "Mallorca Kite School a Sa Marina aprofita l'embat tèrmic de la badia de Pollença per a cursos de kitesurf i wingfoil per a tots els nivells.",
+      "de": "Mallorca Kite School am Strand von Sa Marina nutzt die verlässliche Thermik der Bucht von Pollença für Kitesurf- und Wingfoil-Kurse."
   },
   highlights: {
     es: [

@@ -30,7 +30,6 @@ export const CROSSFIT_BLAU_SON_MOIX: ServiceItem = {
   schedule: "Lunes a Domingo: 08:00 - 22:00",
   image: "/images/services/crossfit-blau-son-moix.jpg",
   gallery: ["/images/services/crossfit-blau-son-moix.jpg", "/images/categories/deportes.jpg"],
-  googleMapsUrl: "https://www.google.com/maps?cid=12007064",
   shortDescription: {
     es: "Box funcional en la zona deportiva de Son Moix con enfoque en salud postural, fuerza y resistencia.",
     en: "Functional box in Son Moix sports area focusing on posture health, strength, and endurance.",
@@ -38,10 +37,10 @@ export const CROSSFIT_BLAU_SON_MOIX: ServiceItem = {
     de: "Functional-Box im Sportzentrum Son Moix mit Fokus auf Kraft, Ausdauer und Haltung.",
   },
   fullDescription: {
-    es: "CrossFit Blau se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Box funcional en la zona deportiva de Son Moix con enfoque en salud postural, fuerza y resistencia. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
-    en: "CrossFit Blau stands out as one of the premier athletic and fitness destinations in Mallorca. Functional box in Son Moix sports area focusing on posture health, strength, and endurance. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
-    ca: "CrossFit Blau destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Box funcional a la zona esportiva de Son Moix amb enfocament en força i resistència. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
-    de: "CrossFit Blau zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Functional-Box im Sportzentrum Son Moix mit Fokus auf Kraft, Ausdauer und Haltung. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
+      "es": "CrossFit Blau es un box oficial de entrenamiento funcional situado en la zona deportiva de Son Moix (Palma). Con más de 500 m² de nave diáfana, estructuras de calistenia, remos y assault bikes Concept2 y barras olímpicas, imparte clases dirigidas por entrenadores titulados nivel 2.",
+      "en": "CrossFit Blau is an official affiliate box in Palma's Son Moix sports hub. Featuring over 500 m² of training space, heavy-duty rigs, Concept2 ergs, and Eleiko plates with expert Level 2 coaching for all fitness levels.",
+      "ca": "CrossFit Blau és un box oficial afiliat a Son Moix amb més de 500 m² d'instal·lacions diàfanes, barres olípiques i entrenament funcional dirigit.",
+      "de": "CrossFit Blau ist eine offizielle CrossFit-Box am Sportpark Son Moix in Palma mit über 500 m² Fläche, Top-Equipment und qualifiziertem Coaching."
   },
   highlights: {
     es: [

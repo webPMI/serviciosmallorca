@@ -30,7 +30,6 @@ export const can_alomar_urban_spa_palma: ServiceItem = {
   schedule: "Lunes a Domingo: 08:00 - 20:00",
   image: "/images/spas/can-alomar-urban-spa-palma.jpg",
   gallery: ["/images/spas/can-alomar-urban-spa-palma.jpg", "/images/categories/salud.jpg"],
-  googleMapsUrl: "https://www.google.com/maps?cid=13008023",
   shortDescription: {
     es: "Spa boutique en el Passeig del Born de Palma con piscina mirador en la azotea y tratamientos cosméticos de alta gama.",
     en: "Boutique rooftop urban spa on Palma's Passeig del Born with plunge pool and luxury cosmetic treatments.",

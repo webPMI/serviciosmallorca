@@ -29,7 +29,7 @@ export const gordian_tattoo_palma_custom_ink: ServiceItem = {
   phone: "+34 971 498 220",
   whatsapp: "+34 971 498 220",
   email: "info@gordiantattoo.com",
-  website: "https://gordiantattoo.com",
+  website: "",
   schedule: "Lunes a Viernes: 10:00 - 19:00; Sábado: 10:00 - 15:00",
   image: "/images/services/gordian-tattoo-palma-custom-ink.jpg",
   gallery: ["/images/services/gordian-tattoo-palma-custom-ink.jpg"],

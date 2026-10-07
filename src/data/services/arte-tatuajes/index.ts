@@ -1,8 +1,6 @@
 import type { ServiceItem } from "../types.ts";
 import { boxTattooPiercing } from "./box-tattoo-piercing.ts";
 import { electricTattooPalma } from "./electric-tattoo-palma.ts";
-import { estudio_tattoo_inkspiration_alcudia_art } from "./estudio-tattoo-inkspiration-alcudia-art.ts";
-import { estudio_tatuaje_balear_ink_palma_plaza_patines } from "./estudio-tatuaje-balear-ink-palma-plaza-patines.ts";
 import { goodLuckTattoo } from "./good-luck-tattoo.ts";
 import { gordian_tattoo_palma_custom_ink } from "./gordian-tattoo-palma-custom-ink.ts";
 import { inkEnzoTattooMallorca } from "./ink-enzo-tattoo-mallorca.ts";
@@ -13,8 +11,6 @@ import { urbanSoulTattoo } from "./urban-soul-tattoo.ts";
 
 export { boxTattooPiercing } from "./box-tattoo-piercing.ts";
 export { electricTattooPalma } from "./electric-tattoo-palma.ts";
-export { estudio_tattoo_inkspiration_alcudia_art } from "./estudio-tattoo-inkspiration-alcudia-art.ts";
-export { estudio_tatuaje_balear_ink_palma_plaza_patines } from "./estudio-tatuaje-balear-ink-palma-plaza-patines.ts";
 export { goodLuckTattoo } from "./good-luck-tattoo.ts";
 export { gordian_tattoo_palma_custom_ink } from "./gordian-tattoo-palma-custom-ink.ts";
 export { inkEnzoTattooMallorca } from "./ink-enzo-tattoo-mallorca.ts";
@@ -26,8 +22,6 @@ export { urbanSoulTattoo } from "./urban-soul-tattoo.ts";
 export const TATTOO_SERVICES: ServiceItem[] = [
   boxTattooPiercing,
   electricTattooPalma,
-  estudio_tattoo_inkspiration_alcudia_art,
-  estudio_tatuaje_balear_ink_palma_plaza_patines,
   goodLuckTattoo,
   gordian_tattoo_palma_custom_ink,
   inkEnzoTattooMallorca,

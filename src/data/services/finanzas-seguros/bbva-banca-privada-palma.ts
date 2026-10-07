@@ -29,7 +29,7 @@ export const bbva_banca_privada_palma: ServiceItem = {
   phone: "+34 971 77 40 00",
   whatsapp: "+34 971 77 40 00",
   email: "info@bbvaprivatebanking.com",
-  website: "https://bbvaprivatebanking.com",
+  website: "https://www.bbva.es",
   schedule: "Lunes a Viernes: 08:30 - 16:30",
   image: "/images/services/bbva-banca-privada-palma.jpg",
   gallery: ["/images/services/bbva-banca-privada-palma.jpg"],

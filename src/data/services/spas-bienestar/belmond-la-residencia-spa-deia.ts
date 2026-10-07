@@ -30,7 +30,6 @@ export const belmond_la_residencia_spa_deia: ServiceItem = {
   schedule: "Lunes a Domingo: 08:00 - 20:00",
   image: "/images/spas/belmond-la-residencia-spa-deia.jpg",
   gallery: ["/images/spas/belmond-la-residencia-spa-deia.jpg", "/images/categories/salud.jpg"],
-  googleMapsUrl: "https://www.google.com/maps?cid=13008017",
   shortDescription: {
     es: "Spa galardonado en Deià con tratamientos basados en aceite de oliva local, cítricos de Sóller y vistas a la montaña.",
     en: "Award-winning spa in Deià offering treatments infused with local olive oil and mountain terrace relaxation.",

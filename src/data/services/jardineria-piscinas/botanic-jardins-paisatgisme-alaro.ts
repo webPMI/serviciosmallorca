@@ -29,7 +29,7 @@ export const botanic_jardins_paisatgisme_alaro: ServiceItem = {
   phone: "+34 971 51 04 88",
   whatsapp: "+34 971 51 04 88",
   email: "info@botanicjardineria.com",
-  website: "https://botanicjardineria.com",
+  website: "",
   schedule: "Lunes a Viernes de 07:30 a 16:30",
   image: "/images/services/botanic-jardins-paisatgisme-alaro.jpg",
   gallery: ["/images/services/botanic-jardins-paisatgisme-alaro.jpg"],

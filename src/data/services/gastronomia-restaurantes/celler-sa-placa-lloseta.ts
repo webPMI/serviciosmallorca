@@ -27,7 +27,7 @@ export const cellerSaPlacaLloseta: ServiceItem = {
   phone: "+34 971 51 41 30",
   whatsapp: "+34 971 51 41 30",
   email: "info@cellersaplaca.com",
-  website: "https://www.cellersaplaca.com",
+  website: "",
   menuUrl: "https://www.cellersaplaca.com",
   tags: [
     "zona:raiguer-pla",

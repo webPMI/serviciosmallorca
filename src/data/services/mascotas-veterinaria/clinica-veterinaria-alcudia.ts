@@ -33,7 +33,7 @@ export const clinica_veterinaria_alcudia: ServiceItem = {
   phone: "+34 971 546 541",
   whatsapp: "+34 971 546 541",
   email: "info@veterinariaalcudia.com",
-  website: "https://veterinariaalcudia.com",
+  website: "",
   schedule: "Lunes a Viernes: 09:30 - 13:30, 16:30 - 20:00; Sábado: 10:00 - 13:00",
   features: [
     "Quirófano equipado",

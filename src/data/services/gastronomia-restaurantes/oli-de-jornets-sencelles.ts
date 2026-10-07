@@ -20,7 +20,7 @@ export const oliDeJornets: ServiceItem = {
   phone: "+34 971 87 22 10",
   whatsapp: "+34 971 87 22 10",
   email: "info@olidejornets.com",
-  website: "https://olidejornets.com",
+  website: "",
   coordinates: { lat: 39.645, lng: 2.901 },
   schedule: "Lunes a Viernes: 09:00 - 17:00 | Visitas al Olivar y Almazara con Cita Previa",
   lastVerifiedAt: "2026-08-25",

@@ -29,7 +29,7 @@ export const lycee_francais_de_palma: ServiceItem = {
   phone: "+34 971 772 375",
   whatsapp: "+34 971 772 375",
   email: "info@lyceemallorca.com",
-  website: "https://lyceemallorca.com",
+  website: "https://lfpalma.es",
   schedule: "Lunes a Viernes: 08:30 - 17:00",
   image: "/images/services/lycee-francais-de-palma.jpg",
   gallery: ["/images/services/lycee-francais-de-palma.jpg"],

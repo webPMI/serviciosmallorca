@@ -29,7 +29,7 @@ export const clinica_veterinaria_son_veri_llucmajor: ServiceItem = {
   phone: "+34 971 74 38 20",
   whatsapp: "+34 971 74 38 20",
   email: "info@veterinariasonveri.com",
-  website: "https://veterinariasonveri.com",
+  website: "",
   schedule: "Lunes a Viernes: 09:30 - 13:30, 16:30 - 19:30, Sábados: 10:00 - 13:00",
   image: "/images/services/clinica-veterinaria-son-veri-llucmajor.jpg",
   gallery: ["/images/services/clinica-veterinaria-son-veri-llucmajor.jpg"],

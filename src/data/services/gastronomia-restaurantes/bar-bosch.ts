@@ -20,7 +20,7 @@ export const barBosch: ServiceItem = {
   phone: "+34 971 72 11 31",
   whatsapp: "+34 971 72 11 31",
   email: "info@barbosch.es",
-  website: "https://barbosch.es",
+  website: "",
   coordinates: { lat: 39.5714, lng: 2.6469 },
   schedule: "Lunes a Domingo: 07:30 - 23:30 (Abierto 365 días al año)",
   lastVerifiedAt: "2026-08-25",

@@ -29,7 +29,7 @@ export const celler_sa_cova_inca: ServiceItem = {
   phone: "+34 971 50 17 50",
   whatsapp: "+34 971 50 17 50",
   email: "info@cellersacovainca.com",
-  website: "https://cellersacovainca.com",
+  website: "",
   schedule: "Martes a Domingo: 12:30 - 16:00, 19:30 - 23:00 (Lunes cerrado)",
   image: "/images/services/celler-sa-cova-inca.jpg",
   gallery: ["/images/services/celler-sa-cova-inca.jpg"],

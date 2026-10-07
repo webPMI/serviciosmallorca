@@ -29,7 +29,7 @@ export const formatges_es_pinaro_de_ses_mines_lloseta: ServiceItem = {
   phone: "+34 971 514 820",
   whatsapp: "+34 971 514 820",
   email: "info@espinarodesesmines.com",
-  website: "https://espinarodesesmines.com",
+  website: "",
   schedule: "Lunes a Sábado: 09:30 - 13:30",
   image: "/images/services/formatges-es-pinaro-de-ses-mines-lloseta.jpg",
   gallery: ["/images/services/formatges-es-pinaro-de-ses-mines-lloseta.jpg"],

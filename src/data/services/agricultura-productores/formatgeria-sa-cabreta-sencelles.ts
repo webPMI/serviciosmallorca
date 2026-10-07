@@ -29,7 +29,7 @@ export const formatgeria_sa_cabreta_sencelles: ServiceItem = {
   phone: "+34 670 23 88 12",
   whatsapp: "+34 670 23 88 12",
   email: "info@formatgesacabreta.com",
-  website: "https://formatgesacabreta.com",
+  website: "",
   schedule: "Lunes a Sábado: 09:00 - 13:30, 16:30 - 19:00 | Domingo: 09:30 - 13:00",
   image: "/images/services/formatgeria-sa-cabreta-sencelles.jpg",
   gallery: ["/images/services/formatgeria-sa-cabreta-sencelles.jpg"],

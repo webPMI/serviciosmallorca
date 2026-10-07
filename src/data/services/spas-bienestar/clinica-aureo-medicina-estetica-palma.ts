@@ -30,7 +30,6 @@ export const clinica_aureo_medicina_estetica_palma: ServiceItem = {
   schedule: "Lunes a Domingo: 08:00 - 20:00",
   image: "/images/services/clinica-aureo-medicina-estetica-palma.jpg",
   gallery: ["/images/services/clinica-aureo-medicina-estetica-palma.jpg"],
-  googleMapsUrl: "https://www.google.com/maps?cid=13008007",
   shortDescription: {
     es: "Clínica boutique de medicina estética, armonización facial, dermatología clínica y tecnología láser de vanguardia.",
     en: "Boutique clinic for aesthetic medicine, facial harmonization, clinical dermatology, and cutting-edge lasers.",

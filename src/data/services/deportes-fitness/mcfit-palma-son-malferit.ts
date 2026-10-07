@@ -30,7 +30,6 @@ export const MCFIT_PALMA_SON_MALFERIT: ServiceItem = {
   schedule: "Lunes a Domingo: 08:00 - 22:00",
   image: "/images/sports/mcfit-palma-son-malferit.jpg",
   gallery: ["/images/sports/mcfit-palma-son-malferit.jpg", "/images/categories/deportes.jpg"],
-  googleMapsUrl: "https://www.google.com/maps?cid=12007042",
   shortDescription: {
     es: "Gimnasio de gran formato en Son Malferit con amplia zona de peso libre, jaula cross-training y aparcamiento.",
     en: "Large-scale fitness studio in Son Malferit with vast free-weights area, cross-training cage, and parking.",
@@ -38,10 +37,10 @@ export const MCFIT_PALMA_SON_MALFERIT: ServiceItem = {
     de: "Großes Fitnessstudio in Son Malferit mit weitläufigem Freihantelbereich, Functional-Cage und Parkplatz.",
   },
   fullDescription: {
-    es: "McFit Palma Son Malferit se posiciona como una de las instalaciones deportivas y de bienestar más destacadas de Mallorca. Gimnasio de gran formato en Son Malferit con amplia zona de peso libre, jaula cross-training y aparcamiento. Ofrece equipamiento de primer nivel, entrenadores certificados y un ambiente óptimo durante todo el año para residentes, deportistas de élite y visitantes.",
-    en: "McFit Palma Son Malferit stands out as one of the premier athletic and fitness destinations in Mallorca. Large-scale fitness studio in Son Malferit with vast free-weights area, cross-training cage, and parking. Providing top-tier training equipment, certified coaches, and optimal training conditions year-round for residents, athletes, and visitors.",
-    ca: "McFit Palma Son Malferit destaca com una de les instal·lacions esportives i de benestar més rellevants de Mallorca. Gimnàs de gran format a Son Malferit amb zona de pes lliure, gàbia de cross-training i aparcament. Ofereix equipament d'alt nivell, entrenadors titulats i un ambient immillorable tot l'any per a esportistes i visitants.",
-    de: "McFit Palma Son Malferit zählt zu den führenden Sport- und Fitnesszentren auf Mallorca. Großes Fitnessstudio in Son Malferit mit weitläufigem Freihantelbereich, Functional-Cage und Parkplatz. Ausgestattet mit erstklassigen Trainingsgeräten, qualifizierten Trainern und optimalen Bedingungen für ganzjährigen Sportgenuss auf der Insel.",
+      "es": "McFit Palma Son Malferit es un macro-gimnasio con amplias salas de musculación, jaulas de potencia, zona de cardio y clases dirigidas virtuales y presenciales, con aparcamiento gratuito y horario continuo.",
+      "en": "McFit Palma Son Malferit offers extensive workout spaces, power racks, cardio stations, and guided fitness classes with free parking and extended opening hours.",
+      "ca": "McFit Palma Son Malferit ofereix gran sala de musculació, pes lliure i càrdio amb facilitat d'aparcament i horari continu.",
+      "de": "McFit Palma Son Malferit bietet großzügige Trainingsflächen für Kraft- und Ausdauersportler mit kostenlosen Parkplätzen und flexiblen Öffnungszeiten."
   },
   highlights: {
     es: [

@@ -28,7 +28,7 @@ export const hospitalDeManacorLlevant: ServiceItem = {
   phone: "+34 971 84 70 00",
   whatsapp: "+34 971 84 70 60",
   email: "info@hmanacor.org",
-  website: "https://www.hospitaldemanacor.org",
+  website: "https://ibsalut.es/hospital-manacor",
   menuUrl: "https://www.hospitaldemanacor.org",
   tags: [
     "zona:manacor-llevant",

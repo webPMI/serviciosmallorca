@@ -29,7 +29,7 @@ export const can_sopa_mercat_olivar_palma: ServiceItem = {
   phone: "+34 971 71 28 89",
   whatsapp: "+34 971 71 28 89",
   email: "info@cansopa.com",
-  website: "https://cansopa.com",
+  website: "",
   schedule: "Lunes a Sábado: 07:30 - 15:00 | Domingo: Cerrado",
   image: "/images/services/can-sopa-mercat-olivar-palma.jpg",
   gallery: ["/images/services/can-sopa-mercat-olivar-palma.jpg"],

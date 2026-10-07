@@ -20,7 +20,7 @@ export const fontaneriaPomar: ServiceItem = {
   phone: "+34 971 50 14 22",
   whatsapp: "+34 639 20 10 30",
   email: "contacto@instalacionespomar.com",
-  website: "https://instalacionespomar.com",
+  website: "",
   coordinates: { lat: 39.719, lng: 2.911 },
   schedule: "Lunes a Viernes: 08:00 - 18:30 (Servicio de Urgencias de Fugas y Calderas)",
   lastVerifiedAt: "2026-08-25",

@@ -20,7 +20,7 @@ export const carpinteriaFiol: ServiceItem = {
   phone: "+34 971 60 14 30",
   whatsapp: "+34 620 40 50 60",
   email: "info@carpinteriafiol.com",
-  website: "https://carpinteriafiol.com",
+  website: "",
   coordinates: { lat: 39.5982, lng: 2.7012 },
   schedule: "Lunes a Viernes: 08:00 - 13:00 | 15:00 - 18:30 (Sábados y Domingos Cerrado)",
   lastVerifiedAt: "2026-08-25",
