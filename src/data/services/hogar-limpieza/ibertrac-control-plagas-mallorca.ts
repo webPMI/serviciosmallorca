@@ -27,7 +27,6 @@ export const ibertrac_control_plagas_mallorca: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:premium", "mod:a-domicilio", "aud:familias"],
   phone: "+34 971 43 19 00",
-  whatsapp: "+34 971 43 19 00",
   email: "baleares@ibertrac.com",
   website: "https://ibertrac.com",
   schedule: "Lunes a Viernes de 08:00 a 18:00",

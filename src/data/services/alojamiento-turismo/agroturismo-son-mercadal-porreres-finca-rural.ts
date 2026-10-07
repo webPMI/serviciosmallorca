@@ -27,7 +27,6 @@ export const agroturismo_son_mercadal_porreres_finca_rural: ServiceItem = {
   status: "open",
   tags: ["zona:raiguer-pla", "product:lujo", "mod:cita-previa"],
   phone: "+34 971 647 120",
-  whatsapp: "+34 971 647 120",
   email: "info@sonmercadal.es",
   website: "",
   schedule: "Recepción: 08:30 - 21:00 (Marzo a Noviembre)",

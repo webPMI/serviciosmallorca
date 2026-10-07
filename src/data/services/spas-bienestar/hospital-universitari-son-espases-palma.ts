@@ -26,7 +26,6 @@ export const hospitalUniversitariSonEspasesPalma: ServiceItem = {
   targetAudience: ["residentes", "turistas", "familias", "seniors"],
   languagesSpoken: ["es", "ca", "en", "de", "fr"],
   phone: "+34 871 20 50 00",
-  whatsapp: "+34 871 90 98 71",
   email: "atencioclient.huse@ssib.es",
   website: "https://www.hospitalsonespases.es",
   menuUrl: "https://www.hospitalsonespases.es",

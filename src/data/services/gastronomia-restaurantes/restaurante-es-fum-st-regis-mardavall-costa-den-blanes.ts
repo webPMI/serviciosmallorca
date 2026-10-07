@@ -27,7 +27,6 @@ export const restaurante_es_fum_st_regis_mardavall_costa_den_blanes: ServiceItem
   status: "open",
   tags: ["zona:calvia-andratx", "product:lujo", "mod:cita-previa"],
   phone: "+34 971 629 600",
-  whatsapp: "+34 971 629 600",
   email: "info@www.marriott.com",
   website: "https://www.marriott.com/en-us/hotels/pmixr-the-st-regis-mardavall-mallorca-resort/dining/es-fum/",
   schedule: "Miércoles a Domingo: 19:00 - 22:30 (Marzo a Octubre)",

@@ -18,7 +18,6 @@ export const fornFondoPalma: ServiceItem = {
   address: "Carrer de la Unió, 15, 07001 Palma, Illes Balears (Centro Histórico)",
   zone: "palma",
   phone: "+34 971 71 16 34",
-  whatsapp: "+34 971 71 16 34",
   email: "info@fornfondo.com",
   website: "",
   coordinates: { lat: 39.5715, lng: 2.6488 },

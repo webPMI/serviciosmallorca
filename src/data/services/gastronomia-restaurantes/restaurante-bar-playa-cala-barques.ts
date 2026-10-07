@@ -83,7 +83,6 @@ export const restauranteBarPlayaCalaBarques: ServiceItem = {
   image: "/images/services/restaurante-bar-playa-cala-barques.jpg",
   gallery: ["/images/services/restaurante-bar-playa-cala-barques.jpg"],
   phone: "+34 971 53 04 22",
-  whatsapp: "+34971530422",
   website: "https://barplaya.com",
   email: "info@barplaya.com",
   webAccessibility: "active",

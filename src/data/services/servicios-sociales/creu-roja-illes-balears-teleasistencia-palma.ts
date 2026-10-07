@@ -27,7 +27,6 @@ export const creu_roja_illes_balears_teleasistencia_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:accesible", "mod:walk-in", "aud:seniors"],
   phone: "+34 971 295 000",
-  whatsapp: "+34 971 295 000",
   email: "info@cruzroja.es",
   website: "https://cruzroja.es",
   schedule: "Lunes a Viernes: 08:00 - 20:00 (Urgencias 24h)",

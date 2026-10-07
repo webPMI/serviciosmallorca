@@ -27,7 +27,6 @@ export const l21_gallery_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:lujo", "mod:cita-previa", "aud:b2b"],
   phone: "+34 971 72 32 30",
-  whatsapp: "+34 971 72 32 30",
   email: "info@l21gallery.com",
   website: "https://l21gallery.com",
   schedule: "Martes a Viernes de 10:30 a 14:00 y 16:30 a 20:00, Sábados de 11:00 a 14:00",

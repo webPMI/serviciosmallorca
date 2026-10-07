@@ -25,7 +25,6 @@ export const canNofrePalma: ServiceItem = {
   targetAudience: ["residentes", "turistas", "familias", "gourmets"],
   languagesSpoken: ["es", "ca", "en"],
   phone: "+34 971 46 23 59",
-  whatsapp: "+34 971 46 23 59",
   email: "contacto@cannofre.es",
   website: "https://www.instagram.com/restaurante_can_nofre/",
   menuUrl: "https://www.instagram.com/restaurante_can_nofre/",

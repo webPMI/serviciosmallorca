@@ -13,7 +13,6 @@ export const clubNauticPortocolomService: ServiceItem = {
     lng: 3.2625,
   },
   phone: "+34971824658",
-  whatsapp: "+34971824658",
   email: "info@cnportocolom.com",
   website: "https://www.cnportocolom.com",
   rating: 4.7,

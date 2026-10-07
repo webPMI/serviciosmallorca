@@ -27,7 +27,6 @@ export const trasteros_mallorca_self_storage_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:accesible", "mod:en-local", "aud:familias"],
   phone: "+34 971 43 05 50",
-  whatsapp: "+34 971 43 05 50",
   email: "info@trasterosmallorca.com",
   website: "https://trasterosmallorca.com",
   schedule: "Lunes a Domingo: 06:00 - 23:00 (Acceso 365 días)",

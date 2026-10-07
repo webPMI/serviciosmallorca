@@ -24,7 +24,6 @@ export const arabella_spa_st_regis_mardavall_calvia: ServiceItem = {
   status: "open",
   tags: ["zona:santa-ponsa"],
   phone: "+34 971 629 600",
-  whatsapp: "+34 971 629 600",
   email: "info@marriott.com",
   website: "https://marriott.com/arabella-spa-mardavall",
   schedule: "Lunes a Domingo: 08:00 - 20:00",

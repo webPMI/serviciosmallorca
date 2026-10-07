@@ -24,7 +24,6 @@ export const VALL_D_OR_GOLF_CALADOR: ServiceItem = {
   status: "open",
   tags: ["product:golf", "zona:santanyi"],
   phone: "+34 971 837 001",
-  whatsapp: "+34 971 837 001",
   email: "info@valldorgolf.com",
   website: "https://valldorgolf.com",
   schedule: "Lunes a Domingo: 08:00 - 22:00",

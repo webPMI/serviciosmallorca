@@ -27,7 +27,6 @@ export const institut_oftalmologic_mallorca_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:premium", "mod:en-local", "aud:seniors"],
   phone: "+34 971 72 32 32",
-  whatsapp: "+34 971 72 32 32",
   email: "info@iom.es",
   website: "https://iom.es",
   schedule: "Lunes a Viernes: 08:30 - 20:00 | Sábado y Domingo: Cerrado",

@@ -26,7 +26,6 @@ export const hospitalSonLlatzerPalma: ServiceItem = {
   targetAudience: ["residentes", "turistas", "familias", "seniors"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 871 20 20 00",
-  whatsapp: "+34 871 20 20 00",
   email: "atencioclient.hsll@ssib.es",
   website: "https://www.hsll.es",
   menuUrl: "https://www.hsll.es",

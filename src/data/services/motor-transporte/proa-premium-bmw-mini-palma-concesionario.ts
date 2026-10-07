@@ -27,7 +27,6 @@ export const proa_premium_bmw_mini_palma_concesionario: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:lujo", "mod:walk-in", "aud:expat"],
   phone: "+34 971 432 400",
-  whatsapp: "+34 971 432 400",
   email: "info@proapremium.bmw.es",
   website: "https://www.bmw.es",
   schedule: "Lunes a Viernes: 08:30 - 20:00, Sábado: 10:00 - 13:30",

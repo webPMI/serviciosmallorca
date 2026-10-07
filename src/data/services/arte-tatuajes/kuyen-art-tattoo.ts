@@ -19,6 +19,8 @@ export const kuyenArtTattoo: ServiceItem = {
   verified: true,
   featured: true,
   status: "open",
+
+
   seasonality: "year_round",
   culturalIdentity: "mallorquin_heritage",
   isIconicHeritage: false,
@@ -404,10 +406,11 @@ export const kuyenArtTattoo: ServiceItem = {
     },
   ],
   schedule: "Mar - Vie: 14:00 - 20:00 (Cita previa)",
-  lastVerifiedAt: "2026-08-25",
+  lastVerifiedAt: "2026-10-07",
   verificationStatus: "verified",
-  confidenceScore: 80,
+  confidenceScore: 90,
   sourceCrossReference: {
+
     webPhoneMatch: true,
     mapsPhoneMatch: false,
     addressInMallorca: true,

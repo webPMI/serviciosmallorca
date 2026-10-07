@@ -25,7 +25,6 @@ export const barEspanyaPalma: ServiceItem = {
   targetAudience: ["residentes", "turistas", "parejas", "grupos", "amantes de las tapas"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 72 42 34",
-  whatsapp: "+34 971 72 42 34",
   email: "info@barespanya.es",
   website: "https://www.barespanya.es",
   menuUrl: "https://www.barespanya.es",

@@ -18,7 +18,6 @@ export const restauranteCanPedro: ServiceItem = {
   address: "Carrer del Rector Vives, 4, 07015 Gènova (Palma), Illes Balears",
   zone: "palma",
   phone: "+34 971 40 24 05",
-  whatsapp: "+34 971 40 24 05",
   email: "reservas@canpedro.es",
   website: "https://canpedro.es",
   coordinates: { lat: 39.558, lng: 2.602 },

@@ -24,7 +24,6 @@ export const GOLF_DE_ANDRATX_CAMP_DE_MAR: ServiceItem = {
   status: "open",
   tags: ["product:golf", "zona:santa-ponsa"],
   phone: "+34 971 236 280",
-  whatsapp: "+34 971 236 280",
   email: "info@golfdeandratx.com",
   website: "https://golfdeandratx.com",
   schedule: "Lunes a Domingo: 08:00 - 22:00",

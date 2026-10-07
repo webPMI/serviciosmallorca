@@ -25,7 +25,6 @@ export const saCuinaDeNainaSencelles: ServiceItem = {
   targetAudience: ["residentes", "turistas", "familias", "parejas", "gourmets"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 87 29 92",
-  whatsapp: "+34 971 87 29 92",
   email: "info@sacuinadenaina.com",
   website: "https://www.sacuinadenaina.com",
   menuUrl: "https://www.sacuinadenaina.com",

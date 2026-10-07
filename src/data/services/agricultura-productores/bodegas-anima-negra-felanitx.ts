@@ -27,7 +27,6 @@ export const bodegas_anima_negra_felanitx: ServiceItem = {
   status: "open",
   tags: ["zona:santanyi-migjorn", "product:lujo", "mod:cita-previa"],
   phone: "+34 971 580 882",
-  whatsapp: "+34 971 580 882",
   email: "info@www.animanegra.com",
   website: "https://www.animanegra.com",
   schedule: "Lunes a Viernes: 09:00 - 17:00 (Visitas con reserva previa)",

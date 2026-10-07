@@ -27,7 +27,6 @@ export const porta_mallorquina_real_estate_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:lujo", "mod:cita-previa", "aud:expat"],
   phone: "+34 971 698 240",
-  whatsapp: "+34 971 698 240",
   email: "info@www.porta-mallorquina.es",
   website: "https://www.porta-mallorquina.es",
   schedule: "Lunes a Viernes: 09:30 - 18:30, Sábado: 10:00 - 14:00",

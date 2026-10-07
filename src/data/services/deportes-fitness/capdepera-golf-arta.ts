@@ -24,7 +24,6 @@ export const CAPDEPERA_GOLF_ARTA: ServiceItem = {
   status: "open",
   tags: ["product:golf", "zona:manacor"],
   phone: "+34 971 818 500",
-  whatsapp: "+34 971 818 500",
   email: "info@golfcapdepera.com",
   website: "https://golfcapdepera.com",
   schedule: "Lunes a Domingo: 08:00 - 22:00",

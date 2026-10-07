@@ -27,7 +27,6 @@ export const clinica_veterinaria_felanitx: ServiceItem = {
   status: "open",
   tags: ["zona:felanitx", "product:accesible", "mod:en-local", "aud:familias"],
   phone: "+34 971 58 10 50",
-  whatsapp: "+34 971 58 10 50",
   email: "info@veterinariafelanitx.com",
   website: "",
   schedule: "Lunes a Viernes: 09:30 - 13:00, 16:30 - 19:30",

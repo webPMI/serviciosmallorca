@@ -24,7 +24,6 @@ export const BROOKLYN_FITBOXING_PALMA_CENTRO: ServiceItem = {
   status: "open",
   tags: ["product:boxeo-artes-marciales", "product:fitness-gym", "zona:palma-centro"],
   phone: "+34 971 900 120",
-  whatsapp: "+34 971 900 120",
   email: "info@brooklynfitboxing.com",
   website: "https://brooklynfitboxing.com/palma-centro",
   schedule: "Lunes a Domingo: 08:00 - 22:00",

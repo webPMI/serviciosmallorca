@@ -18,7 +18,6 @@ export const carpinteriaAlaro: ServiceItem = {
   address: "Carrer Escriptor Joan Rosselló de Son Forteza, 77, 07340 Alaró, Illes Balears",
   zone: "raiguer-pla",
   phone: "+34 971 51 02 95",
-  whatsapp: "+34 971 51 02 95",
   email: "info@alaroartenfusta.com",
   website: "https://www.alaroartenfusta.com",
   coordinates: { lat: 39.705, lng: 2.795 },

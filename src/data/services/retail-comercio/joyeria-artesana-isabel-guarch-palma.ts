@@ -27,7 +27,6 @@ export const joyeria_artesana_isabel_guarch_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma-centro", "product:joyeria-artesanal", "mod:walk-in"],
   phone: "+34 971 284 785",
-  whatsapp: "+34 971 284 785",
   email: "info@isabelguarchjoyas.com",
   website: "https://isabelguarch.com",
   schedule: "Lunes a Sábado: 10:30 - 20:00",

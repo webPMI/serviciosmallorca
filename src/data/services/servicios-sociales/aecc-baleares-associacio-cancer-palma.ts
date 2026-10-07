@@ -27,7 +27,6 @@ export const aecc_baleares_associacio_cancer_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:accesible", "mod:en-local", "aud:seniors"],
   phone: "+34 971 28 50 08",
-  whatsapp: "+34 971 28 50 08",
   email: "baleares@asociacioncontraelcancer.es",
   website: "https://asociacioncontraelcancer.es",
   schedule: "Lunes a Jueves de 08:00 a 19:00, Viernes de 08:00 a 15:00",

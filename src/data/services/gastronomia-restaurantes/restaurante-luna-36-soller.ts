@@ -25,7 +25,6 @@ export const restauranteLuna36Soller: ServiceItem = {
   targetAudience: ["residentes", "turistas", "parejas", "gourmets", "amantes de la alta cocina"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 94 21 79",
-  whatsapp: "+34 971 94 21 79",
   email: "info@luna36.es",
   website: "https://luna36.es",
   menuUrl: "https://luna36.es",

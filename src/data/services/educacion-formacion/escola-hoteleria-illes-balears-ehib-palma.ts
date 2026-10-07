@@ -27,7 +27,6 @@ export const escola_hoteleria_illes_balears_ehib_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:premium", "mod:cita-previa", "aud:familias"],
   phone: "+34 971 172 600",
-  whatsapp: "+34 971 172 600",
   email: "info@ehib.es",
   website: "https://ehib.es",
   schedule: "Lunes a Viernes: 08:30 - 20:00",

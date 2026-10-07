@@ -19,7 +19,6 @@ export const restauranteRitziPortals: ServiceItem = {
   address: "Puerto Portals, Local 34, 07181 Portals Nous, Calvià, Illes Balears",
   zone: "calvia-andratx",
   phone: "+34 971 68 41 04",
-  whatsapp: "+34 971 68 41 04",
   email: "info@ritzi-portals.com",
   website: "https://ritzi-portals.com",
   coordinates: { lat: 39.5329, lng: 2.5518 },

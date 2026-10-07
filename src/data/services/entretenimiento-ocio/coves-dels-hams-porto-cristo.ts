@@ -27,7 +27,6 @@ export const coves_dels_hams_porto_cristo: ServiceItem = {
   status: "open",
   tags: ["zona:manacor", "product:familiar", "mod:walk-in"],
   phone: "+34 971 820 987",
-  whatsapp: "+34 971 820 987",
   email: "info@covesdelshams.com",
   website: "https://cuevas-hams.com",
   schedule: "Diario: 10:00 - 17:00",

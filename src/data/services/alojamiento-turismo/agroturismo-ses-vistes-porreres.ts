@@ -27,7 +27,6 @@ export const agroturismo_ses_vistes_porreres: ServiceItem = {
   status: "open",
   tags: ["zona:porreres", "product:lujo", "mod:en-local", "aud:parejas"],
   phone: "+34 971 64 72 10",
-  whatsapp: "+34 971 64 72 10",
   email: "info@sesvistes.com",
   website: "https://sesvistes.com",
   schedule: "Lunes a Domingo: 08:00 - 22:00",

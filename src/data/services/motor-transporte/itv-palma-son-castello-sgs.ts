@@ -27,7 +27,6 @@ export const itv_palma_son_castello_sgs: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:accesible", "mod:en-local", "aud:familias"],
   phone: "+34 971 43 20 40",
-  whatsapp: "+34 971 43 20 40",
   email: "info@serviciositv.es",
   website: "https://serviciositv.es",
   schedule: "Lunes a Viernes: 06:30 - 21:00 | Sábado: 07:30 - 14:00 | Domingo: Cerrado",

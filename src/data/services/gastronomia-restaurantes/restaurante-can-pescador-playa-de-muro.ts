@@ -25,7 +25,6 @@ export const restauranteCanPescadorPlayaDeMuro: ServiceItem = {
   targetAudience: ["residentes", "turistas", "familias", "parejas", "amantes de los arroces"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 89 31 34",
-  whatsapp: "+34 971 89 31 34",
   email: "info@canpescador.es",
   website: "https://canpescador.es",
   menuUrl: "https://canpescador.es",

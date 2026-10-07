@@ -200,7 +200,6 @@ export const caNEduardo: ServiceItem = {
   ],
   authorityProfiles: [],
   phone: "+34 971 72 11 82",
-  whatsapp: "+34 971 72 11 82",
   email: "info@caneduardo.com",
   website: "https://caneduardo.com",
   tags: [

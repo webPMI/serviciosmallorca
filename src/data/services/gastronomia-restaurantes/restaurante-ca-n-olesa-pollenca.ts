@@ -25,7 +25,6 @@ export const restauranteCaNOlesaPollenca: ServiceItem = {
   targetAudience: ["residentes", "turistas", "familias", "parejas", "amantes de las plazas"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 53 29 08",
-  whatsapp: "+34 971 53 29 08",
   email: "info@canolesa-pollenca.com",
   website: "",
   menuUrl: "https://www.canolesa-pollenca.com",

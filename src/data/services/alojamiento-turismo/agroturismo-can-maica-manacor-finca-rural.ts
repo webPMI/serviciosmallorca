@@ -27,7 +27,6 @@ export const agroturismo_can_maica_manacor_finca_rural: ServiceItem = {
   status: "open",
   tags: ["zona:manacor", "product:lujo", "mod:cita-previa"],
   phone: "+34 971 845 012",
-  whatsapp: "+34 971 845 012",
   email: "info@canmaicamanacor.es",
   website: "",
   schedule: "Recepción: 08:30 - 21:00 (Marzo a Noviembre)",

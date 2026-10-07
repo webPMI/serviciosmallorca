@@ -27,7 +27,6 @@ export const clinica_dental_miravet_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:premium", "mod:en-local", "aud:familias"],
   phone: "+34 971 71 63 33",
-  whatsapp: "+34 971 71 63 33",
   email: "info@clinicamiravet.com",
   website: "",
   schedule: "Lunes a Viernes: 09:00 - 13:30, 15:30 - 20:00 | Sábado y Domingo: Cerrado",

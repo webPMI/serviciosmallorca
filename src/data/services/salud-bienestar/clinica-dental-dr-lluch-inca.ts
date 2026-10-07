@@ -27,7 +27,6 @@ export const clinica_dental_dr_lluch_inca: ServiceItem = {
   status: "open",
   tags: ["zona:inca", "product:premium", "mod:en-local", "aud:familias"],
   phone: "+34 971 50 42 30",
-  whatsapp: "+34 971 50 42 30",
   email: "info@clinicalluch.com",
   website: "https://clinicalluch.com",
   schedule: "Lunes a Viernes: 09:00 - 13:30, 16:00 - 20:00",

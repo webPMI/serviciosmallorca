@@ -24,7 +24,6 @@ export const clinica_dr_morano_medicina_estetica_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma-centro"],
   phone: "+34 971 718 120",
-  whatsapp: "+34 971 718 120",
   email: "info@clinicamorano.com",
   website: "",
   schedule: "Lunes a Domingo: 08:00 - 20:00",

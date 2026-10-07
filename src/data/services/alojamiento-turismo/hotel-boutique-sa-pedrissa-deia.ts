@@ -27,7 +27,6 @@ export const hotel_boutique_sa_pedrissa_deia: ServiceItem = {
   status: "open",
   tags: ["zona:deia", "product:lujo", "product:adultos"],
   phone: "+34 971 639 111",
-  whatsapp: "+34 971 639 111",
   email: "info@sapedrissaboutiquehotel.com",
   website: "https://sapedrissa.com",
   schedule: "Recepción 24 horas (Temporada de Marzo a Noviembre)",

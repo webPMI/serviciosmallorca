@@ -18,7 +18,6 @@ export const fornNouMuro: ServiceItem = {
   address: "Carrer de Santa Anna, 26, 07440 Muro (Norte de Mallorca), Illes Balears",
   zone: "alcudia-pollensa",
   phone: "+34 971 53 71 20",
-  whatsapp: "+34 971 53 71 20",
   email: "info@fornnoumuro.com",
   website: "",
   coordinates: { lat: 39.736, lng: 3.056 },

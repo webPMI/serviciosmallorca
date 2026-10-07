@@ -25,7 +25,6 @@ export const restauranteCalDimoniAlgaida: ServiceItem = {
   targetAudience: ["residentes", "turistas", "familias", "grupos", "amantes de las brasas"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 66 50 35",
-  whatsapp: "+34 971 66 50 35",
   email: "info@caldimoni.es",
   website: "https://www.caldimoni.es",
   menuUrl: "https://www.caldimoni.es",

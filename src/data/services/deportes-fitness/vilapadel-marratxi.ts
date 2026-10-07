@@ -27,7 +27,6 @@ export const vilapadel_marratxi: ServiceItem = {
   status: "open",
   tags: ["zona:raiguer-pla", "product:accesible", "mod:en-local", "aud:familias"],
   phone: "+34 971 79 38 38",
-  whatsapp: "+34 971 79 38 38",
   email: "info@vilapadel.com",
   website: "https://vilapadel.com",
   schedule: "Lunes a Domingo: 08:00 - 23:30",

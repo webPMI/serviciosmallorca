@@ -27,7 +27,6 @@ export const centauro_rent_a_car_mallorca_airport: ServiceItem = {
   status: "open",
   tags: ["zona:platja-de-palma", "product:accesible", "mod:en-local", "aud:familias"],
   phone: "+34 971 49 41 60",
-  whatsapp: "+34 971 49 41 60",
   email: "info@centauro.net",
   website: "https://centauro.net",
   schedule: "Lunes a Domingo: 07:00 - 23:00",

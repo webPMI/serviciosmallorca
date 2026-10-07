@@ -23,7 +23,6 @@ export const marinaPortDeMallorca: ServiceItem = {
   targetAudience: ["residentes", "turistas", "expats"],
   languagesSpoken: ["es", "en", "de", "ca"],
   phone: "+34 971 28 46 75",
-  whatsapp: "+34 971 28 46 75",
   email: "info@portdemallorca.com",
   website: "https://portdemallorca.com",
   googleMapsUrl: "https://www.google.com/maps?cid=18293049182394857261",

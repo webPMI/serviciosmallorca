@@ -27,7 +27,6 @@ export const wifibaleares_telecomunicaciones_inca: ServiceItem = {
   status: "open",
   tags: ["zona:inca", "product:accesible", "mod:en-local", "aud:familias"],
   phone: "+34 971 88 60 60",
-  whatsapp: "+34 971 88 60 60",
   email: "info@wifibaleares.com",
   website: "https://wifibaleares.com",
   schedule: "Lunes a Viernes: 09:00 - 14:00, 16:00 - 19:00",

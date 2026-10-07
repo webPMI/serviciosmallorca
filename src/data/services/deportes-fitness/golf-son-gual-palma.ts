@@ -24,7 +24,6 @@ export const GOLF_SON_GUAL_PALMA: ServiceItem = {
   status: "open",
   tags: ["product:golf", "zona:palma-centro"],
   phone: "+34 971 785 888",
-  whatsapp: "+34 971 785 888",
   email: "info@son-gual.com",
   website: "https://son-gual.com",
   schedule: "Lunes a Domingo: 08:00 - 22:00",

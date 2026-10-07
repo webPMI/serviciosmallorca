@@ -27,7 +27,6 @@ export const hotel_convent_de_la_missio_palma_boutique: ServiceItem = {
   status: "open",
   tags: ["zona:palma-centro", "product:lujo", "temps:todo-el-ano"],
   phone: "+34 971 227 347",
-  whatsapp: "+34 971 227 347",
   email: "info@conventdelamissio.com",
   website: "https://conventdelamissio.com",
   schedule: "Recepción 24 horas (Abierto todo el año)",

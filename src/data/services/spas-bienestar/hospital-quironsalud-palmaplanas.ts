@@ -24,7 +24,6 @@ export const hospital_quironsalud_palmaplanas: ServiceItem = {
   status: "open",
   tags: ["zona:palma-centro"],
   phone: "+34 971 918 000",
-  whatsapp: "+34 971 918 000",
   email: "info@quironsalud.es",
   website: "https://quironsalud.es/palmaplanas",
   schedule: "Lunes a Domingo: 08:00 - 20:00",

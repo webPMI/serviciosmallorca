@@ -24,7 +24,6 @@ export const laTerrazaAlcanada: ServiceItem = {
   targetAudience: ["residentes", "turistas", "parejas", "familias", "gourmets"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 54 56 11",
-  whatsapp: "+34 971 54 56 11",
   email: "info@laterrazaalcanada.com",
   website: "https://laterrazaalcanada.com",
   menuUrl: "https://laterrazaalcanada.com",

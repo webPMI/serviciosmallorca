@@ -27,7 +27,6 @@ export const agroturismo_finca_sa_rota_de_morell_sineu: ServiceItem = {
   status: "open",
   tags: ["zona:raiguer-pla", "product:premium", "mod:en-local", "aud:familias"],
   phone: "+34 971 52 03 80",
-  whatsapp: "+34 971 52 03 80",
   email: "info@sarotademorell.com",
   website: "",
   schedule: "Abierto todo el año",

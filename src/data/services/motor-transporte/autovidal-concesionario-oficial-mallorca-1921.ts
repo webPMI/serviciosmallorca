@@ -27,7 +27,6 @@ export const autovidal_concesionario_oficial_mallorca_1921: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:lujo", "mod:walk-in", "aud:expat"],
   phone: "+34 971 433 300",
-  whatsapp: "+34 971 433 300",
   email: "info@autovidal.es",
   website: "https://autovidal.es",
   schedule: "Lunes a Viernes: 08:30 - 20:00, Sábado: 10:00 - 13:30",

@@ -19,7 +19,6 @@ export const restauranteStagierBar: ServiceItem = {
   address: "Carrer d'Espartero, 11, 07013 Santa Catalina, Palma, Illes Balears",
   zone: "palma",
   phone: "+34 971 71 89 22",
-  whatsapp: "+34 971 71 89 22",
   email: "stagierbar@gmail.com",
   website: "https://stagierbar.com",
   coordinates: { lat: 39.5721, lng: 2.6391 },

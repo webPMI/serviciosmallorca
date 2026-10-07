@@ -24,7 +24,6 @@ export const skualoPortoCristo: ServiceItem = {
   targetAudience: ["turistas", "residentes", "familias", "parejas", "expat"],
   languagesSpoken: ["es", "en", "de", "fr", "it", "ca"],
   phone: "+34 971 81 50 94",
-  whatsapp: "+34 971 81 50 94",
   email: "portocristo@skualo.com",
   website: "https://www.instagram.com/skualomallorca/",
   menuUrl: "https://www.instagram.com/skualomallorca/",

@@ -25,7 +25,6 @@ export const barSHostalMontuiri: ServiceItem = {
   targetAudience: ["residentes", "turistas", "ciclistas", "familias", "amantes del pa amb oli"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 64 60 49",
-  whatsapp: "+34 971 64 60 49",
   email: "info@barshostalmontuiri.com",
   website: "https://www.facebook.com/barshostalmontuiri",
   menuUrl: "https://www.facebook.com/barshostalmontuiri",

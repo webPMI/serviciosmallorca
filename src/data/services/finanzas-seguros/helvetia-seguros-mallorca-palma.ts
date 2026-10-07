@@ -27,7 +27,6 @@ export const helvetia_seguros_mallorca_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:premium", "mod:en-local", "aud:expat"],
   phone: "+34 971 77 12 00",
-  whatsapp: "+34 971 77 12 00",
   email: "info@helvetia.es",
   website: "https://helvetia.es",
   schedule: "Lunes a Jueves: 09:00 - 17:30, Viernes: 08:30 - 14:30",

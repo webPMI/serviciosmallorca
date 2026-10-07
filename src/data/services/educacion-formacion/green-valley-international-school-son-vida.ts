@@ -27,7 +27,6 @@ export const green_valley_international_school_son_vida: ServiceItem = {
   status: "open",
   tags: ["zona:son-vida", "product:lujo", "mod:cita-previa"],
   phone: "+34 971 405 000",
-  whatsapp: "+34 971 405 000",
   email: "info@greenvalleyschool.es",
   website: "https://greenvalleyschool.es",
   schedule: "Lunes a Viernes: 08:30 - 16:30",

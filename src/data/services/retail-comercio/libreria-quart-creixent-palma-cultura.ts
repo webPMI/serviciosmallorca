@@ -27,7 +27,6 @@ export const libreria_quart_creixent_palma_cultura: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:accesible", "mod:walk-in", "aud:familias"],
   phone: "+34 971 716 988",
-  whatsapp: "+34 971 716 988",
   email: "info@quartcreixent.cat",
   website: "https://quartcreixent.cat",
   schedule: "Lunes a Viernes: 09:30 - 13:30, 16:30 - 20:00; Sábado: 10:00 - 14:00",

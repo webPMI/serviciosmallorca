@@ -27,7 +27,6 @@ export const banco_sabadell_centro_banca_privada_palma_born: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:lujo", "mod:cita-previa", "aud:expat"],
   phone: "+34 971 72 78 00",
-  whatsapp: "+34 971 72 78 00",
   email: "info@bancsabadell.com",
   website: "https://bancsabadell.com",
   schedule: "Lunes a Viernes: 08:30 - 14:30 | Tardes con cita previa",

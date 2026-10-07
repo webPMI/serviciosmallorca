@@ -3,9 +3,10 @@ import type { ServiceItem } from "../types.ts";
 export const hospitalVeterinarioCanisMallorca: ServiceItem = {
   id: "hospital-veterinario-canis-mallorca",
   slug: "hospital-veterinario-canis-mallorca",
-  name: "Hospital Veterinario Canis Palma 24h",
+  name: "Hospital Veterinario Canis (Palma)",
   category: "clinicas-veterinarias-24h",
   sectorId: "mascotas-veterinaria",
+
   culturalIdentity: "mallorquin_heritage",
   zone: "palma",
   address: "Carrer de Francesc Martí i Móra, 30, 07011 Palma, Illes Balears",

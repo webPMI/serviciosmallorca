@@ -24,7 +24,6 @@ export const clinica_juaneda_miramar_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma-centro"],
   phone: "+34 971 767 000",
-  whatsapp: "+34 971 767 000",
   email: "info@juaneda.es",
   website: "https://juaneda.es/miramar",
   schedule: "Lunes a Domingo: 08:00 - 20:00",

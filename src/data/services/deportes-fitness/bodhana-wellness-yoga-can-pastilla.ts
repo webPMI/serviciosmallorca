@@ -24,7 +24,6 @@ export const BODHANA_WELLNESS_YOGA_CAN_PASTILLA: ServiceItem = {
   status: "open",
   tags: ["product:yoga-pilates", "zona:santanyi"],
   phone: "+34 971 493 456",
-  whatsapp: "+34 971 493 456",
   email: "info@bodhana.com",
   website: "https://bodhana.com/can-pastilla",
   schedule: "Lunes a Domingo: 08:00 - 22:00",

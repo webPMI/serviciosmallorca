@@ -18,7 +18,6 @@ export const cellerCanRipoll: ServiceItem = {
   address: "Carrer de Jaume Armengol, 4, 07300 Inca (Es Raiguer), Illes Balears",
   zone: "raiguer-pla",
   phone: "+34 971 50 00 24",
-  whatsapp: "+34 971 50 00 24",
   email: "reserves@cellercanripoll.com",
   website: "",
   coordinates: { lat: 39.721, lng: 2.909 },

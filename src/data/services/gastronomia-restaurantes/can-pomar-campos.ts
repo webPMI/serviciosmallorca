@@ -18,7 +18,6 @@ export const canPomar: ServiceItem = {
   address: "Plaça Major, 1, 07630 Campos, Illes Balears (Migjorn)",
   zone: "santanyi-migjorn",
   phone: "+34 971 65 00 24",
-  whatsapp: "+34 971 65 00 24",
   email: "info@canpomar.com",
   website: "",
   coordinates: { lat: 39.4312, lng: 3.0185 },

@@ -19,7 +19,6 @@ export const restauranteAromataPalma: ServiceItem = {
   address: "Carrer de la Concepció, 12, 07012 Palma, Illes Balears",
   zone: "palma",
   phone: "+34 971 79 54 94",
-  whatsapp: "+34 971 79 54 94",
   email: "info@aromatarestaurant.com",
   website: "https://aromatarestaurant.com",
   coordinates: { lat: 39.5735, lng: 2.6457 },

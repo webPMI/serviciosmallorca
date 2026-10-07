@@ -27,7 +27,6 @@ export const jardines_de_alfabia_bunyola_patrimonio: ServiceItem = {
   status: "open",
   tags: ["zona:esporles", "product:accesible", "mod:walk-in", "aud:familias"],
   phone: "+34 971 613 158",
-  whatsapp: "+34 971 613 158",
   email: "info@jardinesdealfabia.com",
   website: "https://jardinesdealfabia.com",
   schedule: "Lunes a Domingo: 09:30 - 18:30 (Marzo a Octubre)",

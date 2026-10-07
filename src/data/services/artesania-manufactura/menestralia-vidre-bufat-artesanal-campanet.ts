@@ -27,7 +27,6 @@ export const menestralia_vidre_bufat_artesanal_campanet: ServiceItem = {
   status: "open",
   tags: ["zona:raiguer-pla", "product:vidrio-soplado", "mod:walk-in"],
   phone: "+34 971 516 022",
-  whatsapp: "+34 971 516 022",
   email: "info@menestralia.es",
   website: "https://menestralia.es",
   schedule: "Lunes a Sábado: 09:00 - 18:30; Domingo: 09:30 - 13:30",

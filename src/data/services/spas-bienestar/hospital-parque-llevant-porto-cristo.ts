@@ -26,7 +26,6 @@ export const hospitalParqueLlevantPortoCristo: ServiceItem = {
   targetAudience: ["residentes", "turistas", "expat", "familias", "nautica"],
   languagesSpoken: ["es", "en", "de", "ca", "fr"],
   phone: "+34 971 82 24 00",
-  whatsapp: "+34 971 82 24 00",
   email: "info.llevant@hospitalesparque.es",
   website: "https://www.hospitalesparque.es/llevant",
   menuUrl: "https://www.hospitalesparque.es/llevant",

@@ -25,7 +25,6 @@ export const oftalmedicSalvaPalma: ServiceItem = {
   targetAudience: ["residentes", "turistas", "seniors", "familias"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 73 00 55",
-  whatsapp: "+34 971 73 00 55",
   email: "info@oftalmedicsalva.com",
   website: "",
   menuUrl: "https://www.oftalmedicsalva.com",

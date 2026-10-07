@@ -25,7 +25,6 @@ export const rafaNadalAcademyManacor: ServiceItem = {
   targetAudience: ["tenistas", "atletas", "familias", "jovenes", "turistas"],
   languagesSpoken: ["es", "en", "ca", "de", "fr", "it"],
   phone: "+34 971 84 50 22",
-  whatsapp: "+34 971 84 50 22",
   email: "info@rafanadalacademy.com",
   website: "https://www.rafanadalacademy.com",
   menuUrl: "https://www.rafanadalacademy.com",

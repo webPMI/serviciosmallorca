@@ -19,7 +19,6 @@ export const restauranteEmilioInnobar: ServiceItem = {
   address: "Carrer de la Concepció, 9, 07012 Palma, Illes Balears",
   zone: "palma",
   phone: "+34 971 71 05 85",
-  whatsapp: "+34 971 71 05 85",
   email: "info@emilioinnobar.com",
   website: "",
   coordinates: { lat: 39.5732, lng: 2.6454 },

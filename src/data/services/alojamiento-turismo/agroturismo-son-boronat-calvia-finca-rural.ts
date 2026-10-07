@@ -27,7 +27,6 @@ export const agroturismo_son_boronat_calvia_finca_rural: ServiceItem = {
   status: "open",
   tags: ["zona:calvia-andratx", "product:lujo", "mod:cita-previa"],
   phone: "+34 971 670 120",
-  whatsapp: "+34 971 670 120",
   email: "info@sonboronat.es",
   website: "https://sonboronat.es",
   schedule: "Recepción: 08:30 - 21:30 (Abril a Noviembre)",

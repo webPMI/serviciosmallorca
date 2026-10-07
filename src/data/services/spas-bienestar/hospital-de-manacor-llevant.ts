@@ -26,7 +26,6 @@ export const hospitalDeManacorLlevant: ServiceItem = {
   targetAudience: ["residentes", "turistas", "familias", "seniors"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 84 70 00",
-  whatsapp: "+34 971 84 70 60",
   email: "info@hmanacor.org",
   website: "https://ibsalut.es/hospital-manacor",
   menuUrl: "https://www.hospitaldemanacor.org",

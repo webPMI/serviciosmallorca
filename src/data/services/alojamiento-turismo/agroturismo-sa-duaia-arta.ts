@@ -27,7 +27,6 @@ export const agroturismo_sa_duaia_arta: ServiceItem = {
   status: "open",
   tags: ["zona:arta", "product:lujo", "mod:en-local", "aud:parejas"],
   phone: "+34 971 83 55 52",
-  whatsapp: "+34 971 83 55 52",
   email: "info@saduaia.com",
   website: "https://saduaia.com",
   schedule: "Lunes a Domingo: 08:00 - 23:00",

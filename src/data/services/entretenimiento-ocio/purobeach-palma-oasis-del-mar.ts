@@ -27,7 +27,6 @@ export const purobeach_palma_oasis_del_mar: ServiceItem = {
   status: "open",
   tags: ["zona:can-pastilla", "product:lujo", "temps:verano"],
   phone: "+34 971 744 744",
-  whatsapp: "+34 971 744 744",
   email: "info@purobeachpalmaoasis.com",
   website: "https://purobeach.com/es/beach-club-palma/",
   schedule: "Lunes a Domingo: 11:00 - 22:00 (Temporada Verano)",

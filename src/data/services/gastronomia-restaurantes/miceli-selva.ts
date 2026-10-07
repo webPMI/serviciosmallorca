@@ -24,7 +24,6 @@ export const miceliSelva: ServiceItem = {
   targetAudience: ["residentes", "turistas", "parejas", "gourmets", "familias"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 87 37 84",
-  whatsapp: "+34 971 87 37 84",
   email: "reservas@miceli.es",
   website: "https://www.miceli.es",
   menuUrl: "https://www.miceli.es",

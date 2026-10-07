@@ -27,7 +27,6 @@ export const teixits_riera_lloseta_robes_llengues_1896: ServiceItem = {
   status: "open",
   tags: ["zona:lloseta", "product:premium", "mod:walk-in", "aud:familias"],
   phone: "+34 971 514 034",
-  whatsapp: "+34 971 514 034",
   email: "info@teixitsriera.com",
   website: "https://teixitsriera.com",
   schedule: "Lunes a Viernes: 09:30 - 13:30, 16:30 - 20:00; Sábado: 10:00 - 13:30",

@@ -22,7 +22,6 @@ export const illeslexAbogados: ServiceItem = {
     lng: 2.6482,
   },
   phone: "+34 971 72 80 08",
-  whatsapp: "+34 971 72 80 08",
   email: "info@illeslex.com",
   website: "https://illeslex.com",
   schedule: "Lunes a Jueves: 09:00 - 18:30 | Viernes: 09:00 - 15:00",

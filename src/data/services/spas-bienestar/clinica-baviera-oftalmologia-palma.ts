@@ -24,7 +24,6 @@ export const clinica_baviera_oftalmologia_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma-centro"],
   phone: "+34 971 771 010",
-  whatsapp: "+34 971 771 010",
   email: "info@clinicabaviera.com",
   website: "https://clinicabaviera.com/palma",
   schedule: "Lunes a Domingo: 08:00 - 20:00",

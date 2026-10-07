@@ -27,7 +27,6 @@ export const la_bodeguilla_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma-centro", "product:premium", "mod:en-local", "aud:parejas"],
   phone: "+34 971 71 82 74",
-  whatsapp: "+34 971 71 82 74",
   email: "info@la-bodeguilla.com",
   website: "https://la-bodeguilla.com",
   schedule: "Lunes a Sábado: 13:00 - 16:00, 20:00 - 23:30 (Domingo cerrado)",

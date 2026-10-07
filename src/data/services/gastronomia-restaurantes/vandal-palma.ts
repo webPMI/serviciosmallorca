@@ -198,7 +198,6 @@ export const vandalPalma: ServiceItem = {
   ],
   authorityProfiles: [],
   phone: "+34 871 04 51 74",
-  whatsapp: "+34 871 04 51 74",
   email: "info@vandalpalma.com",
   website: "https://vandalpalma.com",
   tags: [

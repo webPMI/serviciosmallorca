@@ -14,7 +14,6 @@ export const galeriaKewenigService: ServiceItem = {
     lng: 2.6438,
   },
   phone: "+34971716134",
-  whatsapp: "+34971716134",
   email: "palma@kewenig.com",
   website: "https://kewenig.com",
   rating: 4.8,

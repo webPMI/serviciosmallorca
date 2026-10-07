@@ -104,7 +104,6 @@ export const cellerSaPremsa: ServiceItem = {
   ],
   authorityProfiles: [],
   phone: "+34 971 72 35 29",
-  whatsapp: "+34 971 72 35 29",
   email: "info@cellersapremsa.com",
   website: "https://cellersapremsa.com",
   webAccessibility: "active",

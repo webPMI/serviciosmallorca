@@ -25,7 +25,6 @@ export const elBungalowCiudadJardin: ServiceItem = {
   targetAudience: ["residentes", "turistas", "parejas", "familias", "gourmets"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 26 27 38",
-  whatsapp: "+34 971 26 27 38",
   email: "info@rtebungalow.com",
   website: "https://rtebungalow.com",
   menuUrl: "https://rtebungalow.com",

@@ -27,7 +27,6 @@ export const celler_sa_cova_inca: ServiceItem = {
   status: "open",
   tags: ["zona:inca", "product:accesible", "mod:en-local", "aud:familias"],
   phone: "+34 971 50 17 50",
-  whatsapp: "+34 971 50 17 50",
   email: "info@cellersacovainca.com",
   website: "",
   schedule: "Martes a Domingo: 12:30 - 16:00, 19:30 - 23:00 (Lunes cerrado)",

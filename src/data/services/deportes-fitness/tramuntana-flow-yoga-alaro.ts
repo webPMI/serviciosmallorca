@@ -24,7 +24,6 @@ export const TRAMUNTANA_FLOW_YOGA_ALARO: ServiceItem = {
   status: "open",
   tags: ["product:yoga-pilates", "zona:inca"],
   phone: "+34 971 510 999",
-  whatsapp: "+34 971 510 999",
   email: "info@tramuntanaflow.com",
   website: "https://tramuntanaflow.com",
   schedule: "Lunes a Domingo: 08:00 - 22:00",

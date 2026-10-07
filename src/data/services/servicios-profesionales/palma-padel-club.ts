@@ -104,7 +104,6 @@ export const palmaPadelClub: ServiceItem = {
   ],
   authorityProfiles: [],
   phone: "+34 971 25 47 30",
-  whatsapp: "+34 971 25 47 30",
   email: "info@palmapadel.es",
   website: "https://palmapadel.es",
   webAccessibility: "active",

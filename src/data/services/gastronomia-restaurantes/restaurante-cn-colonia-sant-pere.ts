@@ -25,7 +25,6 @@ export const restauranteCnColoniaSantPere: ServiceItem = {
   targetAudience: ["residentes", "turistas", "familias", "parejas", "nauticos"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 58 90 09",
-  whatsapp: "+34 971 58 90 09",
   email: "info@cncoloniasp.com",
   website: "https://cncoloniasp.com",
   menuUrl: "https://delnautico.shop",

@@ -24,7 +24,6 @@ export const ANYTIME_FITNESS_SANTA_CATALINA: ServiceItem = {
   status: "open",
   tags: ["product:fitness-gym", "zona:palma-centro"],
   phone: "+34 871 180 200",
-  whatsapp: "+34 871 180 200",
   email: "info@anytimefitness.es",
   website: "https://anytimefitness.es/santa-catalina",
   schedule: "Lunes a Domingo: 08:00 - 22:00",

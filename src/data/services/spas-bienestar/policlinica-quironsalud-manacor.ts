@@ -24,7 +24,6 @@ export const policlinica_quironsalud_manacor: ServiceItem = {
   status: "open",
   tags: ["zona:manacor"],
   phone: "+34 971 846 600",
-  whatsapp: "+34 971 846 600",
   email: "info@quironsalud.es",
   website: "https://quironsalud.es/manacor",
   schedule: "Lunes a Domingo: 08:00 - 20:00",

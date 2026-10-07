@@ -2,6 +2,7 @@
 import type { ServiceItem } from "../data/services/types";
 import LiveScheduleBadge from "./LiveScheduleBadge.astro";
 import AdSenseSlot from "./AdSenseSlot.astro";
+import { formatWhatsAppLink } from "../lib/whatsappUtils";
 
 interface Props {
   service: ServiceItem;
@@ -10,6 +11,8 @@ interface Props {
 }
 
 const { service, translations, prefix = "/es/" } = Astro.props;
+
+const waUrl = formatWhatsAppLink(service.whatsapp, "Hola, he visto su servicio en Servicios Mallorca");
 ---
 
 <aside class="detail-sidebar">
@@ -20,9 +23,9 @@ const { service, translations, prefix = "/es/" } = Astro.props;
     <div class="contact-buttons-stack">
       <!-- WhatsApp button -->
       {
-        service.whatsapp && (
+        waUrl && (
           <a
-            href={`https://wa.me/${service.whatsapp.replace(/[^0-9]/g, "")}?text=Hola,%20he%20visto%20su%20servicio%20en%20Servicios%20Mallorca`}
+            href={waUrl}
             target="_blank"
             rel="noopener noreferrer"
             class="btn btn-primary btn-full whatsapp-btn"

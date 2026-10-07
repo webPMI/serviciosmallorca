@@ -157,7 +157,6 @@ export const viverosSantaMaria: ServiceItem = {
     },
   ],
   phone: "+34 971 62 06 00",
-  whatsapp: "+34 971 62 06 00",
   email: "info@viverossantamaria.com",
   website: "",
   tags: [

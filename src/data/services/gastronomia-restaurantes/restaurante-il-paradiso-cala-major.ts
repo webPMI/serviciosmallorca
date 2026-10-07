@@ -25,7 +25,6 @@ export const restauranteIlParadisoCalaMajor: ServiceItem = {
   targetAudience: ["residentes", "turistas", "parejas", "gourmets", "celebraciones"],
   languagesSpoken: ["es", "it", "en", "de", "ca"],
   phone: "+34 871 18 07 86",
-  whatsapp: "+34 871 18 07 86",
   email: "reservas@ilparadiso.es",
   website: "https://ilparadiso.es",
   menuUrl: "https://ilparadiso.es",

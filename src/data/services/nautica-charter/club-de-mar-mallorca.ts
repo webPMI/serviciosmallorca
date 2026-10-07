@@ -13,7 +13,6 @@ export const clubDeMarMallorcaService: ServiceItem = {
     lng: 2.6289,
   },
   phone: "+34971403611",
-  whatsapp: "+34971403611",
   email: "info@clubdemar-mallorca.com",
   website: "https://www.clubdemar-mallorca.com",
   rating: 4.8,

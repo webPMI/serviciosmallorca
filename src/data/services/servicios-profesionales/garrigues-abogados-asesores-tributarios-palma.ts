@@ -27,7 +27,6 @@ export const garrigues_abogados_asesores_tributarios_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma-centro", "product:lujo", "mod:cita-previa"],
   phone: "+34 971 213 200",
-  whatsapp: "+34 971 213 200",
   email: "info@www.garrigues.com",
   website: "https://www.garrigues.com",
   schedule: "Lunes a Jueves: 09:00 - 19:30; Viernes: 09:00 - 15:00",

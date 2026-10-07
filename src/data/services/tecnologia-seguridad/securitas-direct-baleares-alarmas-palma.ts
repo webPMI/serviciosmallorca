@@ -27,7 +27,6 @@ export const securitas_direct_baleares_alarmas_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:premium", "mod:a-domicilio", "aud:familias"],
   phone: "+34 971 43 00 50",
-  whatsapp: "+34 971 43 00 50",
   email: "info@securitasdirect.es",
   website: "https://securitasdirect.es",
   schedule: "Lunes a Domingo: 24 Horas",

@@ -3,9 +3,10 @@ import type { ServiceItem } from "../types.ts";
 export const clinica_veterinaria_son_dureta_palma_24h: ServiceItem = {
   id: "clinica-veterinaria-son-dureta-palma-24h",
   slug: "clinica-veterinaria-son-dureta-palma-24h",
-  name: "Clínica Veterinaria Son Dureta Hospital & Urgencias 24h Palma",
+  name: "Clínica Veterinaria Son Dureta (Palma)",
   category: "clinicas-veterinarias-24h",
   sectorId: "mascotas-veterinaria",
+
   subcategories: [
     "urgencias-veterinarias-24h-palma",
     "hospitalizacion-perros-gatos",
@@ -31,7 +32,6 @@ export const clinica_veterinaria_son_dureta_palma_24h: ServiceItem = {
   status: "open",
   tags: ["zona:palma-centro", "product:accesible", "mod:walk-in"],
   phone: "+34 971 731 012",
-  whatsapp: "+34 971 731 012",
   email: "info@vetsondureta.es",
   website: "",
   schedule: "Urgencias 24 horas / 365 días (Consultas: Lunes a Sábado 09:00 - 20:30)",

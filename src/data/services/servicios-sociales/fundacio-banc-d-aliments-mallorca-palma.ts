@@ -27,7 +27,6 @@ export const fundacio_banc_d_aliments_mallorca_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:accesible", "mod:en-local", "aud:seniors"],
   phone: "+34 971 43 03 33",
-  whatsapp: "+34 971 43 03 33",
   email: "info@bancdealimentsdemallorca.org",
   website: "",
   schedule: "Lunes a Viernes de 08:00 a 14:00",

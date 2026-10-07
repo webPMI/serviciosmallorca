@@ -25,7 +25,6 @@ export const sociasYRosselloPalma: ServiceItem = {
   targetAudience: ["arquitectos", "interioristas", "instaladores", "constructores", "propietarios"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 43 00 34",
-  whatsapp: "+34 971 43 00 34",
   email: "info@sociasyrossello.es",
   website: "https://sociasyrossello.es",
   menuUrl: "https://sociasyrossello.es",

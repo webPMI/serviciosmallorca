@@ -27,7 +27,6 @@ export const hasso_rent_a_car_mallorca_aeropuerto: ServiceItem = {
   status: "open",
   tags: ["zona:can-pastilla", "product:accesible", "mod:walk-in", "aud:familias"],
   phone: "+34 971 744 321",
-  whatsapp: "+34 971 744 321",
   email: "info@hasso-rentacar.com",
   website: "https://hasso-rentacar.com",
   schedule: "Lunes a Domingo: 07:00 - 23:00 (Servicio de entrega en aeropuerto 24h)",

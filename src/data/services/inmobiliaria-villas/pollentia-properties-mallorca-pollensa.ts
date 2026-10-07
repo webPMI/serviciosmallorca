@@ -27,7 +27,6 @@ export const pollentia_properties_mallorca_pollensa: ServiceItem = {
   status: "open",
   tags: ["zona:alcudia-pollensa", "product:lujo", "mod:cita-previa", "aud:expat"],
   phone: "+34 971 53 45 85",
-  whatsapp: "+34 971 53 45 85",
   email: "info@pollentiaproperties.com",
   website: "https://pollentiaproperties.com",
   schedule: "Lunes a Viernes de 09:30 a 18:00, Sábados de 10:00 a 13:30",

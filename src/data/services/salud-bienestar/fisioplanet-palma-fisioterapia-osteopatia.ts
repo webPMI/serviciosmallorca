@@ -27,7 +27,6 @@ export const fisioplanet_palma_fisioterapia_osteopatia: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:accesible", "mod:cita-previa", "aud:familias"],
   phone: "+34 971 71 85 86",
-  whatsapp: "+34 971 71 85 86",
   email: "recepcion@fisioplanet.es",
   website: "https://fisioplanet.es",
   schedule: "Lunes a Viernes de 08:30 a 20:30",

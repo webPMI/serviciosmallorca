@@ -27,7 +27,6 @@ export const magatzem_verd_garden_center_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:accesible", "mod:walk-in", "aud:familias"],
   phone: "+34 971 757 000",
-  whatsapp: "+34 971 757 000",
   email: "info@magatzemverd.com",
   website: "https://magatzemverd.com",
   schedule: "Lunes a Sábado: 09:00 - 20:00, Domingo: 10:00 - 14:00",

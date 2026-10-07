@@ -31,10 +31,29 @@ npm run dev
 | `npm test`              | Ejecutar tests unitarios (Vitest)                                          |
 | `npm run test:watch`    | Tests en modo watch                                                        |
 | `npm run typecheck`     | TypeScript type checking estricto                                          |
-| `npm run prepush`       | Pipeline completo de pre-vuelo (types, taxonomía, tests, audit)            |
+| `npm run test:contacts` | Test automatizado de canales de contacto (WhatsApp móvil vs fijo, GR-11)   |
+| `npm run prepush`       | Pipeline completo de pre-vuelo (types, taxonomía, tests, contacts, audit)  |
 | `npm run audit:sector`  | Auditoría y tablero ejecutivo por sectores ([Guía](SECTOR_AUDIT_GUIDE.md)) |
 | `npm run audit:honesty` | Auditoría de honestidad de datos (GR-11 / GR-12)                           |
 | `npm run audit:fake`    | Detección de teléfonos dummy y datos sintéticos por sector                 |
+
+### Testing de Canales de Contacto (General e Individual)
+
+Para auditar y validar la veracidad de números de teléfono y WhatsApp (impidiendo enlaces rotos a líneas fijas como `971` o `871`):
+
+```bash
+# Auditar todo el catálogo (811 servicios):
+npm run test:contacts
+
+# Auditar por sector específico:
+node --experimental-strip-types scripts/test-service-contacts.ts --sector=gastronomia-restaurantes
+
+# Auditar un negocio individual por slug, nombre o ID:
+node --experimental-strip-types scripts/test-service-contacts.ts --slug=bar-espanya-palma
+node --experimental-strip-types scripts/test-service-contacts.ts --name="Bar Bosch"
+node --experimental-strip-types scripts/test-service-contacts.ts --id=urban-soul-tattoo
+```
+
 
 ## Estructura de Desarrollo
 

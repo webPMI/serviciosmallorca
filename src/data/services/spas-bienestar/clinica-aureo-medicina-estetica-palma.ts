@@ -24,7 +24,6 @@ export const clinica_aureo_medicina_estetica_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma-centro"],
   phone: "+34 971 728 080",
-  whatsapp: "+34 971 728 080",
   email: "info@clinicaaureo.com",
   website: "https://clinicaaureo.com",
   schedule: "Lunes a Domingo: 08:00 - 20:00",

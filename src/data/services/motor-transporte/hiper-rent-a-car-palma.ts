@@ -27,7 +27,6 @@ export const hiper_rent_a_car_palma: ServiceItem = {
   status: "open",
   tags: ["zona:can-pastilla", "product:accesible", "mod:en-local", "aud:familias"],
   phone: "+34 971 26 22 23",
-  whatsapp: "+34 971 26 22 23",
   email: "info@hiperrentacar.com",
   website: "https://hiperrentacar.com",
   schedule: "Lunes a Domingo: 07:00 - 23:00",

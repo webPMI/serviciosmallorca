@@ -24,7 +24,6 @@ export const TENNIS_ACADEMY_MALLORCA_PEGUERA: ServiceItem = {
   status: "open",
   tags: ["product:tenis-mallorca", "product:padel-mallorca", "zona:santa-ponsa"],
   phone: "+34 971 686 234",
-  whatsapp: "+34 971 686 234",
   email: "info@tennisacademymallorca.com",
   website: "https://tennisacademymallorca.com",
   schedule: "Lunes a Domingo: 08:00 - 22:00",

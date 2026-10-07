@@ -24,7 +24,6 @@ export const centro_medico_quironsalud_porto_pi: ServiceItem = {
   status: "open",
   tags: ["zona:palma-centro"],
   phone: "+34 971 700 800",
-  whatsapp: "+34 971 700 800",
   email: "info@quironsalud.es",
   website: "https://quironsalud.es/porto-pi",
   schedule: "Lunes a Domingo: 08:00 - 20:00",

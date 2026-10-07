@@ -25,7 +25,6 @@ export const bodegasCanMajoralAlgaida: ServiceItem = {
   targetAudience: ["residentes", "turistas", "parejas", "gourmets", "ecologistas"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 66 58 67",
-  whatsapp: "+34 971 66 58 67",
   email: "info@canmajoral.com",
   website: "https://canmajoral.com",
   menuUrl: "https://canmajoral.com",

@@ -25,7 +25,6 @@ export const hospitalGeneralDePalmaCentro: ServiceItem = {
   targetAudience: ["residentes", "seniors", "familias"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 871 20 50 00",
-  whatsapp: "+34 871 20 50 00",
   email: "info@hospitalsonespases.es",
   website: "https://www.ibsalut.es/hospital-general",
   menuUrl: "https://www.ibsalut.es",

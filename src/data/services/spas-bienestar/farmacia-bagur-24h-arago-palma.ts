@@ -3,9 +3,10 @@ import type { ServiceItem } from "../types.ts";
 export const farmaciaBagur24hAragoPalma: ServiceItem = {
   id: "farmacia-bagur-24h-arago-palma",
   slug: "farmacia-bagur-24h-arago-palma",
-  name: "Farmacia Bagur 24h (Palma - Carrer d'Aragó)",
+  name: "Farmacia Guijarro Bagur (Palma)",
   category: "salud-bienestar",
   sectorId: "salud-bienestar-belleza",
+
   sectors: ["spas-bienestar"],
   zone: "palma",
   address: "Carrer d'Aragó, 70, 07005 Palma, Illes Balears",
@@ -26,7 +27,6 @@ export const farmaciaBagur24hAragoPalma: ServiceItem = {
   targetAudience: ["residentes", "turistas", "familias", "seniors"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 27 25 01",
-  whatsapp: "+34 971 27 25 01",
   email: "info@farmaciaguijarro.com",
   website: "https://www.farmaciaguijarro.com",
   menuUrl: "https://www.farmaciaguijarro.com",

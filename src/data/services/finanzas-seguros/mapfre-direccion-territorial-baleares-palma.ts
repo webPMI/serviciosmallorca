@@ -27,7 +27,6 @@ export const mapfre_direccion_territorial_baleares_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:accesible", "mod:walk-in", "aud:familias"],
   phone: "+34 971 789 200",
-  whatsapp: "+34 971 789 200",
   email: "info@www.mapfre.es",
   website: "https://www.mapfre.es",
   schedule: "Lunes a Viernes: 09:00 - 14:00, 16:00 - 19:00",

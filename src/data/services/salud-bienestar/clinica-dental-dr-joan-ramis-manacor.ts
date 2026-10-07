@@ -27,7 +27,6 @@ export const clinica_dental_dr_joan_ramis_manacor: ServiceItem = {
   status: "open",
   tags: ["zona:manacor", "product:premium", "mod:en-local", "aud:familias"],
   phone: "+34 971 55 58 77",
-  whatsapp: "+34 971 55 58 77",
   website: "",
   schedule: "Lunes a Viernes: 09:00 - 13:30, 16:00 - 20:00 | Sábado y Domingo: Cerrado",
   image: "/images/services/clinica-dental-dr-joan-ramis-manacor.jpg",

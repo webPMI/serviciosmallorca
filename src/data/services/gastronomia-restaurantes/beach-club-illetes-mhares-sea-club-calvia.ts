@@ -27,7 +27,6 @@ export const beach_club_illetes_mhares_sea_club_calvia: ServiceItem = {
   status: "open",
   tags: ["zona:calvia-andratx", "product:bares-playa-chiringuitos", "mod:cita-previa"],
   phone: "+34 971 402 762",
-  whatsapp: "+34 971 402 762",
   email: "info@mharesmallorca.com",
   website: "",
   schedule: "Diario: 11:00 - 23:00 (Temporada: Mayo – Octubre)",

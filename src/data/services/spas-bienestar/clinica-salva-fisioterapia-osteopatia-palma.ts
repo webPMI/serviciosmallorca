@@ -24,7 +24,6 @@ export const clinica_salva_fisioterapia_osteopatia_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma-centro"],
   phone: "+34 971 721 111",
-  whatsapp: "+34 971 721 111",
   email: "info@clinicasalvafisio.com",
   website: "",
   schedule: "Lunes a Domingo: 08:00 - 20:00",

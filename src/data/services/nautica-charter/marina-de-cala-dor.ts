@@ -13,7 +13,6 @@ export const marinaDeCalaDorService: ServiceItem = {
     lng: 3.2268,
   },
   phone: "+34971657070",
-  whatsapp: "+34971657070",
   email: "info@marinacalador.com",
   website: "https://marinacalador.com",
   rating: 4.7,

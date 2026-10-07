@@ -18,7 +18,6 @@ export const bodegaCastellMiquel: ServiceItem = {
   address: "Carretera Alaró-Lloseta, Km 8,7, 07340 Alaró (Serra de Tramuntana), Illes Balears",
   zone: "raiguer-pla",
   phone: "+34 971 51 06 98",
-  whatsapp: "+34 971 51 06 98",
   email: "info@castellmiquel.com",
   website: "https://castellmiquel.com",
   coordinates: { lat: 39.712, lng: 2.8055 },

@@ -27,7 +27,6 @@ export const gestoria_administrativa_fiscal_sampol_inca: ServiceItem = {
   status: "open",
   tags: ["zona:inca", "product:accesible", "mod:en-local", "aud:familias"],
   phone: "+34 971 50 18 50",
-  whatsapp: "+34 971 50 18 50",
   email: "info@gestoriasampol.com",
   website: "https://gestoriasampol.com",
   schedule: "Lunes a Viernes: 08:30 - 14:00, 16:00 - 19:30 | Sábado y Domingo: Cerrado",

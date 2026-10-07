@@ -27,7 +27,6 @@ export const mallorca_gold_luxury_real_estate_palma: ServiceItem = {
   status: "open",
   tags: ["zona:paseo-maritimo", "product:lujo", "mod:cita-previa"],
   phone: "+34 971 452 060",
-  whatsapp: "+34 971 452 060",
   email: "info@mallorcagold.com",
   website: "https://mallorcagold.com",
   schedule: "Lunes a Viernes: 09:30 - 18:30 (Sábados con cita previa)",

@@ -25,7 +25,6 @@ export const restauranteMiramarPortAlcudia: ServiceItem = {
   targetAudience: ["residentes", "turistas", "familias", "parejas", "amantes del pescado"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 54 52 93",
-  whatsapp: "+34 971 54 52 93",
   email: "info@miramaralcudia.com",
   website: "",
   menuUrl: "https://www.miramaralcudia.com",

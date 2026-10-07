@@ -27,7 +27,6 @@ export const bconnected_concept_store_santa_catalina: ServiceItem = {
   status: "open",
   tags: ["zona:santa-catalina", "product:premium", "mod:walk-in", "aud:expat"],
   phone: "+34 971 221 247",
-  whatsapp: "+34 971 221 247",
   email: "info@bconnectedmallorca.com",
   website: "https://bconnectedmallorca.com",
   schedule: "Lunes a Viernes: 10:00 - 19:00, Sábado: 10:00 - 15:00",

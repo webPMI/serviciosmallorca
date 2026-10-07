@@ -79,7 +79,6 @@ export const alcudiamarMarinaResort: ServiceItem = {
   image: "/images/services/alcudiamar-marina-resort.jpg",
   gallery: ["/images/services/alcudiamar-marina-resort.jpg"],
   phone: "+34 971 54 60 00",
-  whatsapp: "+34971546000",
   website: "https://alcudiamar.es/puerto-deportivo",
   email: "info@alcudiamar.es",
   webAccessibility: "active",

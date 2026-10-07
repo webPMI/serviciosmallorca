@@ -27,7 +27,6 @@ export const agroturismo_son_foguero_holistic_retreat_maria: ServiceItem = {
   status: "open",
   tags: ["zona:raiguer-pla", "product:lujo", "mod:cita-previa"],
   phone: "+34 971 853 012",
-  whatsapp: "+34 971 853 012",
   email: "info@sonfoguero.com",
   website: "https://sonfoguero.com",
   schedule: "Recepción: 09:00 - 20:00 (Temporada: Marzo – Noviembre)",

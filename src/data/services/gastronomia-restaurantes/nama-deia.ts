@@ -24,7 +24,6 @@ export const namaDeia: ServiceItem = {
   targetAudience: ["residentes", "turistas", "parejas", "gourmets", "expat"],
   languagesSpoken: ["es", "en", "de", "ca"],
   phone: "+34 971 63 61 02",
-  whatsapp: "+34 971 63 61 02",
   email: "reservations@restaurantnama.com",
   website: "https://restaurantnama.com",
   menuUrl: "https://restaurantnama.com",

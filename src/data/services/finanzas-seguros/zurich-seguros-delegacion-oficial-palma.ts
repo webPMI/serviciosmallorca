@@ -27,7 +27,6 @@ export const zurich_seguros_delegacion_oficial_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:premium", "mod:en-local", "aud:expat"],
   phone: "+34 971 46 09 00",
-  whatsapp: "+34 971 46 09 00",
   email: "info@zurich.es",
   website: "https://zurich.es",
   schedule: "Lunes a Jueves: 09:00 - 18:00 | Viernes: 09:00 - 15:00 | Sábado y Domingo: Cerrado",

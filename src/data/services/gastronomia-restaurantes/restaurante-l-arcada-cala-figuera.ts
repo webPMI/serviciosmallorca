@@ -25,7 +25,6 @@ export const restauranteLArcadaCalaFiguera: ServiceItem = {
   targetAudience: ["residentes", "turistas", "familias", "parejas", "amantes del mar"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 64 50 32",
-  whatsapp: "+34 971 64 50 32",
   email: "info@restaurantlarcada.com",
   website: "https://restaurantlarcada.com",
   menuUrl: "https://restaurantlarcada.com",

@@ -27,7 +27,6 @@ export const agroturismo_sa_talaia_blanca_muro_playa: ServiceItem = {
   status: "open",
   tags: ["zona:muro", "product:lujo", "mod:cita-previa"],
   phone: "+34 971 537 012",
-  whatsapp: "+34 971 537 012",
   email: "info@satalaiablanca.com",
   website: "https://satalaiablanca.com",
   schedule: "Recepción: 08:30 - 21:30 (Abierto todo el año)",

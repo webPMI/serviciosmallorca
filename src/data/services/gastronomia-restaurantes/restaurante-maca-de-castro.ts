@@ -21,7 +21,6 @@ export const restauranteMacaDeCastro: ServiceItem = {
   addressAccuracy: "verified_manual",
   zone: "alcudia-pollensa",
   phone: "+34 971 89 23 91",
-  whatsapp: "+34 971 89 23 91",
   email: "info@macadecastro.com",
   website: "https://macadecastro.com",
   coordinates: { lat: 39.834, lng: 3.1182 },

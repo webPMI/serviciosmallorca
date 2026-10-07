@@ -27,7 +27,6 @@ export const meermin_mallorca_shoes_inca: ServiceItem = {
   status: "open",
   tags: ["zona:raiguer-pla", "product:lujo", "mod:walk-in"],
   phone: "+34 971 501 122",
-  whatsapp: "+34 971 501 122",
   email: "info@meermin.com",
   website: "https://meermin.com",
   schedule: "Lunes a Viernes: 10:00 - 18:00; Sábado: 10:00 - 14:00",

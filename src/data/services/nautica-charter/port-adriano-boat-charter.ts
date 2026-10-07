@@ -104,7 +104,6 @@ export const portAdrianoBoatCharter: ServiceItem = {
   ],
   authorityProfiles: [],
   phone: "+34 971 23 24 94",
-  whatsapp: "+34 971 23 24 94",
   email: "charter@portadriano.com",
   website: "https://portadriano.com",
   webAccessibility: "active",

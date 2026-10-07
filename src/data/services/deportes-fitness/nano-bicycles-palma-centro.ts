@@ -24,7 +24,6 @@ export const NANO_BICYCLES_PALMA_CENTRO: ServiceItem = {
   status: "open",
   tags: ["product:cicloturismo-carretera", "zona:palma-centro"],
   phone: "+34 971 667 333",
-  whatsapp: "+34 971 667 333",
   email: "info@nanobicycles.com",
   website: "https://nanobicycles.com",
   schedule: "Lunes a Domingo: 08:00 - 22:00",

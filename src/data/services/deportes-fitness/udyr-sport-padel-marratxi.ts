@@ -24,7 +24,6 @@ export const UDYR_SPORT_PADEL_MARRATXI: ServiceItem = {
   status: "open",
   tags: ["product:padel-mallorca", "zona:inca"],
   phone: "+34 971 792 000",
-  whatsapp: "+34 971 792 000",
   email: "info@udyrsport.com",
   website: "https://udyrsport.com",
   schedule: "Lunes a Domingo: 08:00 - 22:00",

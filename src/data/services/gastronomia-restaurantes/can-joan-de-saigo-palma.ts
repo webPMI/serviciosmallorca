@@ -25,7 +25,6 @@ export const canJoanDeSAigoPalma: ServiceItem = {
   targetAudience: ["residentes", "turistas", "familias", "parejas", "amantes del dulce"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 71 07 59",
-  whatsapp: "+34 971 71 07 59",
   email: "info@canjoandesaigo.com",
   website: "https://canjoandesaigo.com",
   menuUrl: "https://canjoandesaigo.com",

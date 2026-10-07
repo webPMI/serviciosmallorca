@@ -25,7 +25,6 @@ export const restauranteEsRacoDesPortSoller: ServiceItem = {
   targetAudience: ["residentes", "turistas", "familias", "parejas", "amantes del marisco"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 63 36 39",
-  whatsapp: "+34 971 63 36 39",
   email: "info@esracodesport.com",
   website: "https://www.esracodesport.com",
   menuUrl: "https://www.esracodesport.com",

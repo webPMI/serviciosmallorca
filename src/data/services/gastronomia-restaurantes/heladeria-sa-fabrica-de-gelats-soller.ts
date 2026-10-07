@@ -79,7 +79,6 @@ export const heladeriaSaFabricaDeGelatsSoller: ServiceItem = {
   image: "/images/services/heladeria-sa-fabrica-de-gelats-soller.jpg",
   gallery: ["/images/services/heladeria-sa-fabrica-de-gelats-soller.jpg"],
   phone: "+34 971 63 81 20",
-  whatsapp: "+34971638120",
   website: "",
   email: "info@gelatssoller.com",
   webAccessibility: "active",

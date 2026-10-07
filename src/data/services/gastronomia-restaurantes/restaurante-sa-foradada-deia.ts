@@ -27,7 +27,6 @@ export const restaurante_sa_foradada_deia: ServiceItem = {
   status: "open",
   tags: ["zona:tramuntana", "product:premium", "mod:cita-previa"],
   phone: "+34 971 636 123",
-  whatsapp: "+34 971 636 123",
   email: "info@restaurantesaforadada.com",
   website: "https://restaurantesaforadada.com",
   schedule: "Diario: 12:30 - 18:00 (Abril a Octubre, acceso a pie o en barco)",

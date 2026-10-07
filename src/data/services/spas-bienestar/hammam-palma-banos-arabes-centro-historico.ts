@@ -27,7 +27,6 @@ export const hammam_palma_banos_arabes_centro_historico: ServiceItem = {
   status: "open",
   tags: ["zona:casco-antiguo", "product:lujo", "mod:cita-previa"],
   phone: "+34 971 716 990",
-  whatsapp: "+34 971 716 990",
   email: "info@hammampalma.com",
   website: "https://hammampalma.com",
   schedule: "Martes a Domingo: 10:00 - 22:00 (Turnos cada 2 horas)",

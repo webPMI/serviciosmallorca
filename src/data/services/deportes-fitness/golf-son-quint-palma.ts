@@ -24,7 +24,6 @@ export const GOLF_SON_QUINT_PALMA: ServiceItem = {
   status: "open",
   tags: ["product:golf", "zona:palma-centro"],
   phone: "+34 971 606 175",
-  whatsapp: "+34 971 606 175",
   email: "info@arabellagolfmallorca.com",
   website: "https://arabellagolfmallorca.com/son-quint",
   schedule: "Lunes a Domingo: 08:00 - 22:00",

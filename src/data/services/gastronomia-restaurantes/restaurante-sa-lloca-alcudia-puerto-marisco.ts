@@ -27,7 +27,6 @@ export const restaurante_sa_lloca_alcudia_puerto_marisco: ServiceItem = {
   status: "open",
   tags: ["zona:port-d-alcudia", "product:paellas-arroces", "mod:walk-in"],
   phone: "+34 971 547 810",
-  whatsapp: "+34 971 547 810",
   email: "info@sallocaalcudia.es",
   website: "",
   schedule: "Diario: 12:30 - 16:00 y 19:30 - 23:30 (Cerrado Noviembre)",

@@ -27,7 +27,6 @@ export const clinica_veterinaria_santa_maria_del_cami: ServiceItem = {
   status: "open",
   tags: ["zona:raiguer-pla", "product:premium", "mod:en-local", "aud:familias"],
   phone: "+34 971 62 14 00",
-  whatsapp: "+34 971 62 14 00",
   email: "info@veterinariasantamaria.com",
   website: "https://veterinariasantamaria.com",
   schedule: "Lunes a Viernes: 09:30 - 13:30, 16:30 - 20:00 | Sábado: 10:00 - 13:30 | Domingo: Cerrado",

@@ -25,7 +25,6 @@ export const canTorratPlayaPalma: ServiceItem = {
   targetAudience: ["residentes", "turistas", "familias", "grupos", "amantes de la carne"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 26 20 55",
-  whatsapp: "+34 971 26 20 55",
   email: "info@cantorrat.com",
   website: "https://www.cantorrat.com",
   menuUrl: "https://www.cantorrat.com",

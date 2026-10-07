@@ -27,7 +27,6 @@ export const vidal_asesores_tributarios_abogados_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma-centro", "product:premium", "mod:en-local", "aud:expat"],
   phone: "+34 971 72 80 10",
-  whatsapp: "+34 971 72 80 10",
   email: "info@vidalasesores.com",
   website: "https://vidalasesores.com",
   schedule: "Lunes a Viernes: 08:30 - 18:00",

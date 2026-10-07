@@ -18,7 +18,6 @@ export const clubNauticPortitxol: ServiceItem = {
   address: "Passeig Marítim del Portitxol, s/n, 07006 Palma, Illes Balears",
   zone: "palma",
   phone: "+34 971 27 10 70",
-  whatsapp: "+34 971 27 10 70",
   email: "club@cnportitxol.com",
   website: "https://cnportitxol.com",
   coordinates: { lat: 39.5614, lng: 2.6712 },

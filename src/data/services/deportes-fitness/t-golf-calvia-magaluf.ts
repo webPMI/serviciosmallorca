@@ -24,7 +24,6 @@ export const T_GOLF_CALVIA_MAGALUF: ServiceItem = {
   status: "open",
   tags: ["product:golf", "zona:santa-ponsa"],
   phone: "+34 971 130 148",
-  whatsapp: "+34 971 130 148",
   email: "info@t-golf.club",
   website: "https://t-golf.club/calvia",
   schedule: "Lunes a Domingo: 08:00 - 22:00",

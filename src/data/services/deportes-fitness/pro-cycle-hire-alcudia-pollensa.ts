@@ -24,7 +24,6 @@ export const PRO_CYCLE_HIRE_ALCUDIA_POLLENSA: ServiceItem = {
   status: "open",
   tags: ["product:cicloturismo-carretera", "zona:port-de-pollenca"],
   phone: "+34 971 866 266",
-  whatsapp: "+34 971 866 266",
   email: "info@procyclehire.com",
   website: "https://procyclehire.com",
   schedule: "Lunes a Domingo: 08:00 - 22:00",

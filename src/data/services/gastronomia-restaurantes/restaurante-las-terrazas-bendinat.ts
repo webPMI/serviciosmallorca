@@ -19,7 +19,6 @@ export const restauranteLasTerrazasBendinat: ServiceItem = {
   address: "Hotel Bendinat, Carrer Andrés Ferret Sobrequés, 1, 07181 Portals Nous, Calvià, Illes Balears",
   zone: "calvia-andratx",
   phone: "+34 971 67 61 07",
-  whatsapp: "+34 971 67 61 07",
   email: "restaurante@hotelbendinat.es",
   website: "https://hotelbendinat.es/restaurante-las-terrazas",
   coordinates: { lat: 39.5312, lng: 2.5694 },

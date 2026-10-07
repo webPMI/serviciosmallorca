@@ -27,7 +27,6 @@ export const bodega_son_crespi_santa_maria_vi_de_la_terra: ServiceItem = {
   status: "open",
   tags: ["zona:santa-maria-del-cami", "product:enoturismo", "mod:en-local"],
   phone: "+34 971 621 150",
-  whatsapp: "+34 971 621 150",
   email: "info@soncrespiceller.es",
   website: "",
   schedule: "Lunes a Sábado: 09:00 - 13:30 y 16:30 - 19:30",

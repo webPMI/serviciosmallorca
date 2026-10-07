@@ -13,7 +13,6 @@ export const portDeSollerMarinaService: ServiceItem = {
     lng: 2.6947,
   },
   phone: "+34971633316",
-  whatsapp: "+34971633316",
   email: "marina@portdesoller.com",
   website: "https://www.portsdebalears.com",
   rating: 4.7,

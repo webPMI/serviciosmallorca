@@ -27,7 +27,6 @@ export const pell_cuir_can_garau_inca_1954: ServiceItem = {
   status: "open",
   tags: ["zona:inca", "product:premium", "mod:en-local", "aud:familias"],
   phone: "+34 971 50 08 20",
-  whatsapp: "+34 971 50 08 20",
   email: "info@garauinca.com",
   website: "",
   schedule: "Lunes a Sábado: 09:30 - 13:30, 16:30 - 20:00",

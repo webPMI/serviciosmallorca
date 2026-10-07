@@ -27,7 +27,6 @@ export const taller_mecanic_motos_can_picafort: ServiceItem = {
   status: "open",
   tags: ["zona:alcudia-pollensa", "product:accesible", "mod:en-local", "aud:familias"],
   phone: "+34 971 85 03 33",
-  whatsapp: "+34 971 85 03 33",
   email: "info@motocanpicafort.com",
   website: "",
   schedule: "Lunes a Viernes de 08:00 a 13:00 y 15:00 a 19:00",

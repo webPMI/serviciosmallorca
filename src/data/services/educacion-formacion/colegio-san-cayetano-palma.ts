@@ -27,7 +27,6 @@ export const colegio_san_cayetano_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:lujo", "mod:en-local", "aud:familias"],
   phone: "+34 971 22 05 50",
-  whatsapp: "+34 971 22 05 50",
   email: "info@colegiosancayetano.com",
   website: "https://colegiosancayetano.com",
   schedule: "Lunes a Viernes: 08:30 - 17:00",

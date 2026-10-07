@@ -18,7 +18,6 @@ export const fornDeLaSoca: ServiceItem = {
   address: "Plaça de Cort, 7, 07001 Palma, Illes Balears",
   zone: "palma",
   phone: "+34 971 72 26 23",
-  whatsapp: "+34 971 72 26 23",
   email: "info@forndelasoca.com",
   website: "",
   coordinates: { lat: 39.5698, lng: 2.6501 },

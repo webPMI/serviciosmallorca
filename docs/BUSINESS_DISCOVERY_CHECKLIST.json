@@ -1000,29 +1000,7 @@
     "checked": true,
     "lastUpdatedAt": "2026-09-05"
   },
-  {
-    "id": "electric-tattoo-palma",
-    "slug": "electric-tattoo-palma",
-    "name": "Electric Tattoo Palma",
-    "category": "arte-tatuajes",
-    "categoryLabel": "Arte, Tatuajes & Piercing",
-    "zone": "palma",
-    "zoneLabel": "Palma & Bahía",
-    "website": "https://electrictattoopalma.com",
-    "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Electric+Tattoo+Palma",
-    "appleMapsUrl": "https://maps.apple.com/?q=Electric+Tattoo+Palma",
-    "bingMapsUrl": "https://www.bing.com/maps?q=Electric+Tattoo+Palma",
-    "phone": "+34 971 73 89 20",
-    "whatsapp": "+34 971 73 89 20",
-    "rating": 4.9,
-    "reviewCount": 540,
-    "confidenceScore": 97,
-    "qualityRankScore": 86.8,
-    "status": "indexed",
-    "source": "catalog",
-    "checked": true,
-    "lastUpdatedAt": "2026-08-26"
-  },
+
   {
     "id": "good-luck-tattoo-mallorca",
     "slug": "good-luck-tattoo-mallorca",

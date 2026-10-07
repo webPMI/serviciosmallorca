@@ -27,7 +27,6 @@ export const clinica_veterinaria_pollensa: ServiceItem = {
   status: "open",
   tags: ["zona:pollenca", "product:premium", "mod:en-local", "aud:expat"],
   phone: "+34 971 53 42 18",
-  whatsapp: "+34 971 53 42 18",
   email: "info@veterinariapollensa.es",
   website: "",
   schedule: "Lunes a Viernes: 09:30 - 13:30, 16:30 - 19:30, Sábados: 10:00 - 13:00",

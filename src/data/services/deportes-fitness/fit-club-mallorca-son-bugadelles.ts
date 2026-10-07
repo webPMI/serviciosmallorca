@@ -24,7 +24,6 @@ export const FIT_CLUB_MALLORCA_SON_BUGADELLES: ServiceItem = {
   status: "open",
   tags: ["product:fitness-gym", "product:boxeo-artes-marciales", "zona:santa-ponsa"],
   phone: "+34 971 692 345",
-  whatsapp: "+34 971 692 345",
   email: "info@fitclubmallorca.com",
   website: "https://fitclubmallorca.com",
   schedule: "Lunes a Domingo: 08:00 - 22:00",

@@ -55,9 +55,9 @@ export interface ReleaseLog {
   entries: ChangelogEntry[];
 }
 
-export const CURRENT_PLATFORM_VERSION = "1.0.13";
+export const CURRENT_PLATFORM_VERSION = "1.0.14";
 export const PLATFORM_RELEASE_DATE = "2026-10-07";
-export const PLATFORM_LAST_BUILD_TIMESTAMP = "2026-10-07T16:59:32+02:00";
+export const PLATFORM_LAST_BUILD_TIMESTAMP = "2026-10-07T23:33:09+02:00";
 
 /**
  * Devuelve la fecha y hora formateada de la última actualización según el idioma.
@@ -84,6 +84,68 @@ export function getFormattedBuildTimestamp(locale: "es" | "en" | "ca" | "de" = "
 }
 
 export const CHANGELOG_RELEASES: ReleaseLog[] = [
+  {
+    version: "1.0.14",
+    versionLabel: {
+      es: "v1.0.14 · Blindaje canales WhatsApp móvil vs fijo, testing automatizado, saneamiento de fijos y unificacion canonica de duplicados",
+      en: "v1.0.14 · Continuous Optimization: Blindaje canales WhatsApp móvil vs fijo, testing automatizado, saneamiento de fijos y unificacion canonica de duplicados",
+      ca: "v1.0.14 · Optimització Contínua: Blindaje canales WhatsApp móvil vs fijo, testing automatizado, saneamiento de fijos y unificacion canonica de duplicados",
+      de: "v1.0.14 · Fortlaufende Optimierung: Blindaje canales WhatsApp móvil vs fijo, testing automatizado, saneamiento de fijos y unificacion canonica de duplicados",
+    },
+    type: "PATCH",
+    date: "2026-10-07",
+    summary: {
+      es: "Actualización de plataforma v1.0.14. Blindaje canales WhatsApp móvil vs fijo, testing automatizado, saneamiento de fijos y unificacion canonica de duplicados. Sincronización continua de despliegue en Cloudflare Workers y trazabilidad auditada (GR-16).",
+      en: "Platform release v1.0.14. Continuous Optimization: Blindaje canales WhatsApp móvil vs fijo, testing automatizado, saneamiento de fijos y unificacion canonica de duplicados. Continuous Cloudflare Workers edge deployment synchronization and audited traceability (GR-16).",
+      ca: "Actualització de plataforma v1.0.14. Optimització Contínua: Blindaje canales WhatsApp móvil vs fijo, testing automatizado, saneamiento de fijos y unificacion canonica de duplicados. Sincronització contínua de desplegament a Cloudflare Workers i traçabilitat auditada (GR-16).",
+      de: "Plattform-Aktualisierung v1.0.14. Fortlaufende Optimierung: Blindaje canales WhatsApp móvil vs fijo, testing automatizado, saneamiento de fijos y unificacion canonica de duplicados. Kontinuierliche Bereitstellung auf Cloudflare Workers und auditierte Nachverfolgbarkeit (GR-16).",
+    },
+    highlights: {
+      es: [
+        "Blindaje canales WhatsApp móvil vs fijo, testing automatizado, saneamiento de fijos y unificacion canonica de duplicados.",
+        "106 suites de prueba pasando al 100% con 959 tests exitosos.",
+        "Despliegue verificado y sincronizado con Cloudflare Workers Edge."
+      ],
+      en: [
+        "Deployed release v1.0.14 with automated continuous verification.",
+        "106 test suites passing at 100% with 959 successful tests.",
+        "Verified live edge deployment synchronized with Cloudflare Workers."
+      ],
+      ca: [
+        "Desplegada la versió v1.0.14 amb verificació contínua automatitzada.",
+        "106 suites de prova passant al 100% amb 959 tests exitosos.",
+        "Desplegament verificat i sincronitzat amb Cloudflare Workers Edge."
+      ],
+      de: [
+        "Bereitstellung der Version v1.0.14 mit automatisierter Prüfung.",
+        "106 Test-Suites zu 100% bestanden mit 959 erfolgreichen Tests.",
+        "Geprüfte Live-Bereitstellung synchronisiert mit Cloudflare Workers."
+      ]
+    },
+    entries: [
+      {
+        category: "FIX",
+        title: {
+          es: "Blindaje canales WhatsApp móvil vs fijo, testing automatizado, saneamiento de fijos y unificacion canonica de duplicados",
+          en: "Continuous Optimization: Blindaje canales WhatsApp móvil vs fijo, testing automatizado, saneamiento de fijos y unificacion canonica de duplicados",
+          ca: "Optimització Contínua: Blindaje canales WhatsApp móvil vs fijo, testing automatizado, saneamiento de fijos y unificacion canonica de duplicados",
+          de: "Fortlaufende Optimierung: Blindaje canales WhatsApp móvil vs fijo, testing automatizado, saneamiento de fijos y unificacion canonica de duplicados"
+        },
+        description: {
+          es: "Actualización de plataforma v1.0.14. Blindaje canales WhatsApp móvil vs fijo, testing automatizado, saneamiento de fijos y unificacion canonica de duplicados. Sincronización continua de despliegue en Cloudflare Workers y trazabilidad auditada (GR-16).",
+          en: "Platform release v1.0.14. Continuous Optimization: Blindaje canales WhatsApp móvil vs fijo, testing automatizado, saneamiento de fijos y unificacion canonica de duplicados. Continuous Cloudflare Workers edge deployment synchronization and audited traceability (GR-16).",
+          ca: "Actualització de plataforma v1.0.14. Optimització Contínua: Blindaje canales WhatsApp móvil vs fijo, testing automatizado, saneamiento de fijos y unificacion canonica de duplicados. Sincronització contínua de desplegament a Cloudflare Workers i traçabilitat auditada (GR-16).",
+          de: "Plattform-Aktualisierung v1.0.14. Fortlaufende Optimierung: Blindaje canales WhatsApp móvil vs fijo, testing automatizado, saneamiento de fijos y unificacion canonica de duplicados. Kontinuierliche Bereitstellung auf Cloudflare Workers und auditierte Nachverfolgbarkeit (GR-16)."
+        },
+        badgeText: {
+          es: "🛠️ Mejora",
+          en: "🛠️ Fix",
+          ca: "🛠️ Millora",
+          de: "🛠️ Optimierung"
+        }
+      }
+    ]
+  },
   {
     version: "1.0.13",
     versionLabel: {

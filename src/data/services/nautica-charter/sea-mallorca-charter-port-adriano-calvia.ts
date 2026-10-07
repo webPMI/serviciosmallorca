@@ -27,7 +27,6 @@ export const sea_mallorca_charter_port_adriano_calvia: ServiceItem = {
   status: "open",
   tags: ["zona:port-adriano", "product:lujo", "mod:cita-previa"],
   phone: "+34 971 232 490",
-  whatsapp: "+34 971 232 490",
   email: "info@seamallorcacharter.com",
   website: "https://seamallorcacharter.com",
   schedule: "Lunes a Domingo: 09:00 - 20:00 (Mayo a Octubre)",

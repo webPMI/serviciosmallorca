@@ -27,7 +27,6 @@ export const celler_can_verdura_binissalem_vins_autoctons: ServiceItem = {
   status: "open",
   tags: ["zona:raiguer-pla", "product:enoturismo", "mod:cita-previa"],
   phone: "+34 971 870 120",
-  whatsapp: "+34 971 870 120",
   email: "info@canverdura.com",
   website: "",
   schedule: "Lunes a Viernes: 09:00 - 17:00. Catas con reserva previa.",

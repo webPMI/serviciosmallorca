@@ -27,7 +27,6 @@ export const vivers_llinas_campos: ServiceItem = {
   status: "open",
   tags: ["zona:campos", "product:premium", "mod:en-local", "aud:familias"],
   phone: "+34 971 65 04 88",
-  whatsapp: "+34 971 65 04 88",
   email: "info@viversllinas.com",
   website: "",
   schedule: "Lunes a Viernes: 08:00 - 13:00, 15:00 - 19:00, Sábados: 08:30 - 13:30",

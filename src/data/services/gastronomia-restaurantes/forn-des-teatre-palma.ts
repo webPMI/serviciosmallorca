@@ -18,7 +18,6 @@ export const fornDesTeatre: ServiceItem = {
   address: "Plaça de Weyler, 9, 07001 Palma (Casco Antiguo - Teatre Principal), Illes Balears",
   zone: "palma",
   phone: "+34 971 71 52 54",
-  whatsapp: "+34 971 71 52 54",
   email: "info@forndesteatre.com",
   website: "https://forndesteatre.com",
   coordinates: { lat: 39.5714, lng: 2.6515 },

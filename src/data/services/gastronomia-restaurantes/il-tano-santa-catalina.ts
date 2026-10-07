@@ -18,7 +18,6 @@ export const ilTanoSantaCatalina: ServiceItem = {
   address: "Carrer de la Fàbrica, 30, 07013 Palma, Illes Balears (Santa Catalina)",
   zone: "palma",
   phone: "+34 971 28 34 83",
-  whatsapp: "+34 971 28 34 83",
   email: "santacatalina@iltano.com",
   website: "https://iltano.com",
   coordinates: { lat: 39.5718, lng: 2.6375 },

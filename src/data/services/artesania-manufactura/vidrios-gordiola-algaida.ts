@@ -18,7 +18,6 @@ export const vidriosGordiola: ServiceItem = {
   address: "Carretera Palma-Manacor, Km 19, 07210 Algaida, Illes Balears",
   zone: "raiguer-pla",
   phone: "+34 971 66 50 41",
-  whatsapp: "+34 971 66 50 41",
   email: "info@gordiola.com",
   website: "https://gordiola.com",
   coordinates: { lat: 39.5605, lng: 2.8885 },

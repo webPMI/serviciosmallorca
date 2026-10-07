@@ -19,7 +19,6 @@ export const restauranteDukePalma: ServiceItem = {
   address: "Carrer Soler, 36, 07013 Santa Catalina, Palma, Illes Balears",
   zone: "palma",
   phone: "+34 971 07 17 38",
-  whatsapp: "+34 971 07 17 38",
   email: "hola@dukerestaurant.com",
   website: "https://dukerestaurant.com",
   coordinates: { lat: 39.5714, lng: 2.6385 },

@@ -24,7 +24,6 @@ export const elCastilloDelBosque: ServiceItem = {
   targetAudience: ["residentes", "turistas", "familias", "parejas", "gourmets"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 82 41 44",
-  whatsapp: "+34 971 82 41 44",
   email: "info@elcastillodelbosque.es",
   website: "https://elcastillodelbosque.es/",
   menuUrl: "https://elcastillodelbosque.es/",

@@ -79,7 +79,6 @@ export const reialClubNauticPortPollenca: ServiceItem = {
   image: "/images/services/reial-club-nautic-port-pollenca.jpg",
   gallery: ["/images/services/reial-club-nautic-port-pollenca.jpg"],
   phone: "+34 971 86 46 35",
-  whatsapp: "+34971864635",
   website: "https://rcnpp.es",
   email: "oficina@rcnpp.es",
   webAccessibility: "active",

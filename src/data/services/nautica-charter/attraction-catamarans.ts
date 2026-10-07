@@ -18,7 +18,6 @@ export const attractionCatamarans: ServiceItem = {
   address: "Muelle de Golondrinas, Paseo Marítimo s/n, 07014 Palma, Illes Balears",
   zone: "palma",
   phone: "+34 971 73 70 00",
-  whatsapp: "+34 971 73 70 00",
   email: "info@attractioncatamarans.com",
   website: "https://attractioncatamarans.com",
   coordinates: { lat: 39.5645, lng: 2.6358 },

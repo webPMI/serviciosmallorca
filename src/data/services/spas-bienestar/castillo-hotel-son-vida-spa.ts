@@ -25,7 +25,6 @@ export const castilloHotelSonVidaSpa: ServiceItem = {
   targetAudience: ["residentes", "turistas", "parejas", "golfistas", "wellness"],
   languagesSpoken: ["es", "en", "de", "ca", "fr"],
   phone: "+34 971 49 34 93",
-  whatsapp: "+34 971 49 34 93",
   email: "info.castillomallorca@arabella.com",
   website:
     "https://www.marriott.com/en-us/hotels/pmilc-castillo-hotel-son-vida-a-luxury-collection-hotel-mallorca/overview/",

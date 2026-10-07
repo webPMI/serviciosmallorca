@@ -25,7 +25,6 @@ export const restauranteEsCanyisPortSoller: ServiceItem = {
   targetAudience: ["residentes", "turistas", "parejas", "gourmets", "familias"],
   languagesSpoken: ["es", "ca", "en", "de", "fr"],
   phone: "+34 971 63 14 06",
-  whatsapp: "+34 971 63 14 06",
   email: "info@escanyis.es",
   website: "https://escanyis.es",
   menuUrl: "https://escanyis.es",

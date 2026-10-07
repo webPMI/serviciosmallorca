@@ -14,7 +14,6 @@ export const galeriaPelairesService: ServiceItem = {
     lng: 2.6469,
   },
   phone: "+34971720375",
-  whatsapp: "+34971720375",
   email: "info@pelaires.com",
   website: "https://www.pelaires.com",
   rating: 4.8,

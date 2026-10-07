@@ -24,7 +24,6 @@ export const stayPortDePollenca: ServiceItem = {
   targetAudience: ["residentes", "turistas", "parejas", "familias"],
   languagesSpoken: ["es", "en", "de", "ca"],
   phone: "+34 971 86 40 13",
-  whatsapp: "+34 971 86 40 13",
   email: "stay@stayrestaurant.com",
   website: "https://stayrestaurant.com",
   menuUrl: "https://stayrestaurant.com",

@@ -27,7 +27,6 @@ export const alquiler_scooter_vespa_mallorca_can_pastilla: ServiceItem = {
   status: "open",
   tags: ["zona:palma-centro", "product:accesible", "mod:online"],
   phone: "+34 971 745 012",
-  whatsapp: "+34 971 745 012",
   email: "info@scootermallorca.es",
   website: "https://scootermallorca.es",
   schedule: "Diario: 08:30 - 20:00 (Abril a Octubre)",

@@ -25,7 +25,6 @@ export const fetASollerFabricaGelats: ServiceItem = {
   targetAudience: ["residentes", "turistas", "familias", "gourmets"],
   languagesSpoken: ["es", "ca", "de", "en"],
   phone: "+34 971 63 88 39",
-  whatsapp: "+34 971 63 88 39",
   email: "info@fetasoller.com",
   website: "https://www.fetasoller.com",
   menuUrl: "https://www.fetasoller.com",

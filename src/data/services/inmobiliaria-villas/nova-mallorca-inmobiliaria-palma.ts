@@ -27,7 +27,6 @@ export const nova_mallorca_inmobiliaria_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:premium", "mod:en-local", "aud:familias"],
   phone: "+34 971 77 00 00",
-  whatsapp: "+34 971 77 00 00",
   email: "info@novamallorca.com",
   website: "https://novamallorca.com",
   schedule: "Lunes a Viernes de 09:00 a 19:30",

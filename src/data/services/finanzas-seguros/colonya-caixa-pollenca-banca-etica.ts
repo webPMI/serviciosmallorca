@@ -27,7 +27,6 @@ export const colonya_caixa_pollenca_banca_etica: ServiceItem = {
   status: "open",
   tags: ["zona:pollenca", "product:accesible", "mod:walk-in", "aud:familias"],
   phone: "+34 971 530 000",
-  whatsapp: "+34 971 530 000",
   email: "info@colonya.es",
   website: "https://colonya.es",
   schedule: "Lunes a Viernes: 08:15 - 14:00, Jueves tarde: 16:45 - 19:15",

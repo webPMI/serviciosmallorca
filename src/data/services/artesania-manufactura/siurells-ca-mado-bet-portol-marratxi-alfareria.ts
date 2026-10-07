@@ -27,7 +27,6 @@ export const siurells_ca_mado_bet_portol_marratxi_alfareria: ServiceItem = {
   status: "open",
   tags: ["zona:raiguer-pla", "product:ceramica-balear", "mod:walk-in"],
   phone: "+34 971 601 024",
-  whatsapp: "+34 971 601 024",
   email: "info@siurellscamadobet.es",
   website: "",
   schedule: "Lunes a Viernes: 09:00 - 13:30 y 16:30 - 20:00; Sábado: 09:30 - 13:30",

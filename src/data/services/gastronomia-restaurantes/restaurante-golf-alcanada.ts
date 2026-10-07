@@ -24,7 +24,6 @@ export const restauranteGolfAlcanada: ServiceItem = {
   targetAudience: ["residentes", "turistas", "golfistas", "parejas", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 54 59 44",
-  whatsapp: "+34 971 54 59 44",
   email: "restaurante@golf-alcanada.com",
   website: "https://www.restaurantegolfalcanada.com",
   menuUrl: "https://www.restaurantegolfalcanada.com",

@@ -27,7 +27,6 @@ export const club_de_golf_alcanada_alcudia: ServiceItem = {
   status: "open",
   tags: ["zona:alcudia-pollensa", "product:lujo", "mod:cita-previa"],
   phone: "+34 971 549 560",
-  whatsapp: "+34 971 549 560",
   email: "info@www.golf-alcanada.com",
   website: "https://www.golf-alcanada.com",
   schedule: "Diario: 07:30 - 20:00 (Apertura todo el año)",

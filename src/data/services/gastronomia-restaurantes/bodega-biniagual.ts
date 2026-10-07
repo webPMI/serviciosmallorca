@@ -92,7 +92,6 @@ export const bodegaBiniagual: ServiceItem = {
   image: "/images/services/bodega-biniagual.jpg",
   gallery: ["/images/services/bodega-biniagual.jpg"],
   phone: "+34 971 87 01 11",
-  whatsapp: "+34 971 87 01 11",
   website: "https://finca-biniagual.com",
   email: "info@finca-biniagual.com",
   webAccessibility: "active",

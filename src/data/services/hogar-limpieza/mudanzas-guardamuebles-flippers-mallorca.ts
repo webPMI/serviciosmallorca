@@ -27,7 +27,6 @@ export const mudanzas_guardamuebles_flippers_mallorca: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:premium", "mod:a-domicilio", "aud:b2b"],
   phone: "+34 971 43 00 22",
-  whatsapp: "+34 971 43 00 22",
   email: "mallorca@flippers.es",
   website: "https://flippers.es",
   schedule: "Lunes a Viernes de 08:00 a 18:00",

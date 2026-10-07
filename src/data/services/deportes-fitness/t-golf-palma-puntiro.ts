@@ -24,7 +24,6 @@ export const T_GOLF_PALMA_PUNTIRO: ServiceItem = {
   status: "open",
   tags: ["product:golf", "zona:palma-centro"],
   phone: "+34 971 797 830",
-  whatsapp: "+34 971 797 830",
   email: "info@t-golf.club",
   website: "https://t-golf.club/palma",
   schedule: "Lunes a Domingo: 08:00 - 22:00",

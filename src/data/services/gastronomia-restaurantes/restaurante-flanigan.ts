@@ -18,7 +18,6 @@ export const restauranteFlanigan: ServiceItem = {
   address: "Puerto Portals, Local 16, 07181 Portals Nous, Calvià, Illes Balears",
   zone: "calvia-andratx",
   phone: "+34 971 67 91 91",
-  whatsapp: "+34 971 67 91 91",
   email: "info@flanigan.es",
   website: "https://flanigan.es",
   coordinates: { lat: 39.5323, lng: 2.5512 },

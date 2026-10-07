@@ -27,7 +27,6 @@ export const escuela_vela_calanova_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:accesible", "mod:en-local", "aud:familias"],
   phone: "+34 971 40 36 11",
-  whatsapp: "+34 971 40 36 11",
   email: "info@portcalanova.com",
   website: "https://portcalanova.com",
   schedule: "Lunes a Domingo: 09:00 - 19:00 (Cursos náuticos durante todo el año)",

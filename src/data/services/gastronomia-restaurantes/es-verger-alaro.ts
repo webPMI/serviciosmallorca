@@ -25,7 +25,6 @@ export const esVergerAlaro: ServiceItem = {
   targetAudience: ["residentes", "turistas", "familias", "parejas", "gourmets"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 18 21 26",
-  whatsapp: "+34 971 18 21 26",
   email: "info@esverger.es",
   website: "https://www.instagram.com/esverger_alaro/",
   menuUrl: "https://www.instagram.com/esverger_alaro/",

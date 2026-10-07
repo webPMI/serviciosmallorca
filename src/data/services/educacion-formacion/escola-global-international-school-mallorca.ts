@@ -27,7 +27,6 @@ export const escola_global_international_school_mallorca: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:lujo", "aud:familias", "mod:cita-previa"],
   phone: "+34 971 432 026",
-  whatsapp: "+34 971 432 026",
   email: "info@escolaglobal.com",
   website: "https://www.escolaglobal.com",
   schedule: "Lunes a Viernes: 08:30 - 16:30",

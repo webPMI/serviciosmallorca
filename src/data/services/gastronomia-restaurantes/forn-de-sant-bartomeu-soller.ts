@@ -27,7 +27,6 @@ export const forn_de_sant_bartomeu_soller: ServiceItem = {
   status: "open",
   tags: ["zona:tramuntana", "product:traditional", "mod:walk-in"],
   phone: "+34 971 630 183",
-  whatsapp: "+34 971 630 183",
   email: "info@fornsantbartomeu.com",
   website: "",
   schedule: "Lunes a Sábado: 07:00 - 14:00 y 17:00 - 20:00",

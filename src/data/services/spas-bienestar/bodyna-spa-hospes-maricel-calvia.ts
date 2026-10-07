@@ -24,7 +24,6 @@ export const bodyna_spa_hospes_maricel_calvia: ServiceItem = {
   status: "open",
   tags: ["zona:santa-ponsa"],
   phone: "+34 971 707 744",
-  whatsapp: "+34 971 707 744",
   email: "info@hospes.com",
   website: "https://hospes.com/maricel-bodyna-spa",
   schedule: "Lunes a Domingo: 08:00 - 20:00",

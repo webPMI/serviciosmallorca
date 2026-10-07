@@ -27,7 +27,6 @@ export const oli_soller_cooperativa_agricola_sant_bartomeu: ServiceItem = {
   status: "open",
   tags: ["zona:soller", "product:enoturismo", "mod:walk-in"],
   phone: "+34 971 630 294",
-  whatsapp: "+34 971 630 294",
   email: "info@cooperativasoller.com",
   website: "https://cooperativasoller.com",
   schedule: "Lunes a Viernes: 08:30 - 19:30, Sábados: 09:00 - 14:00",

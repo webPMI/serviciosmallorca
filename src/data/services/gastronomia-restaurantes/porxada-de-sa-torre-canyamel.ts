@@ -25,7 +25,6 @@ export const porxadaDeSaTorreCanyamel: ServiceItem = {
   targetAudience: ["residentes", "turistas", "familias", "gourmets"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 84 13 10",
-  whatsapp: "+34 971 84 13 10",
   email: "info@torredecanyamel.com",
   website: "https://www.torredecanyamel.com/es/gastronomia/porxada-de-sa-torre/",
   menuUrl: "https://www.torredecanyamel.com/es/gastronomia/porxada-de-sa-torre/",

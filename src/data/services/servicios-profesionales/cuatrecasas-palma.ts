@@ -18,7 +18,6 @@ export const cuatrecasasPalma: ServiceItem = {
   address: "Passeig del Born, 15, 07012 Palma, Illes Balears",
   zone: "palma",
   phone: "+34 971 71 80 00",
-  whatsapp: "+34 971 71 80 00",
   email: "palma@cuatrecasas.com",
   website: "https://www.cuatrecasas.com",
   coordinates: { lat: 39.5702, lng: 2.6482 },

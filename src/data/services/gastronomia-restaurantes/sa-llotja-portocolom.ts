@@ -24,7 +24,6 @@ export const saLlotjaPortocolom: ServiceItem = {
   targetAudience: ["residentes", "turistas", "parejas", "gourmets", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 82 51 65",
-  whatsapp: "+34 971 82 51 65",
   email: "info@restaurantsallotjaportocolom.com",
   website: "https://restaurantsallotjaportocolom.com/",
   menuUrl: "https://restaurantsallotjaportocolom.com/",

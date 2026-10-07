@@ -27,7 +27,6 @@ export const fundacio_deixalles_palma_reciclatge_social: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:accesible", "mod:en-local", "aud:familias"],
   phone: "+34 971 47 11 02",
-  whatsapp: "+34 971 47 11 02",
   email: "info@deixalles.org",
   website: "https://deixalles.org",
   schedule: "Lunes a Viernes: 09:00 - 19:00 | Sábado: 09:30 - 14:00 | Domingo: Cerrado",

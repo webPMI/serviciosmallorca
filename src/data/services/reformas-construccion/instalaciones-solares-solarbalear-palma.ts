@@ -27,7 +27,6 @@ export const instalaciones_solares_solarbalear_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:premium", "mod:a-domicilio", "aud:familias"],
   phone: "+34 971 70 82 10",
-  whatsapp: "+34 971 70 82 10",
   email: "info@solarbalear.com",
   website: "https://solarbalear.com",
   schedule: "Lunes a Viernes: 08:00 - 18:30 | Sábado y Domingo: Cerrado",

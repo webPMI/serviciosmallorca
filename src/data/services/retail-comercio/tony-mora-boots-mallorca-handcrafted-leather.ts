@@ -27,7 +27,6 @@ export const tony_mora_boots_mallorca_handcrafted_leather: ServiceItem = {
   status: "open",
   tags: ["zona:alaro", "product:lujo", "mod:walk-in", "aud:expat"],
   phone: "+34 971 510 577",
-  whatsapp: "+34 971 510 577",
   email: "info@tonymora.com",
   website: "https://tonymora.com",
   schedule: "Lunes a Viernes: 09:30 - 18:30, Sábado: 10:00 - 14:00",

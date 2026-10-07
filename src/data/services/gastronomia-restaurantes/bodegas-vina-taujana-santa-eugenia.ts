@@ -25,7 +25,6 @@ export const bodegasVinaTaujanaSantaEugenia: ServiceItem = {
   targetAudience: ["residentes", "turistas", "parejas", "gourmets", "amantes del enoturismo"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 14 44 94",
-  whatsapp: "+34 971 14 44 94",
   email: "vinyataujana@gmail.com",
   website: "https://www.vinyataujana.es",
   menuUrl: "https://www.vinyataujana.es",

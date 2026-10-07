@@ -27,7 +27,6 @@ export const flor_de_sal_des_trenc_salinas_mallorca: ServiceItem = {
   status: "open",
   tags: ["zona:ses-salines", "product:premium", "mod:walk-in", "aud:familias"],
   phone: "+34 971 655 306",
-  whatsapp: "+34 971 655 306",
   email: "info@flordesaltrenc.com",
   website: "https://flordesaldestrenc.com",
   schedule: "Lunes a Domingo: 10:00 - 18:00",

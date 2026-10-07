@@ -26,7 +26,6 @@ export const hospitalComarcalIncaRaiguer: ServiceItem = {
   targetAudience: ["residentes", "turistas", "familias", "seniors", "ciclistas"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 88 85 00",
-  whatsapp: "+34 971 88 85 55",
   email: "hcin_sau@hcin.es",
   website: "https://www.hospitalcomarcalinca.es",
   menuUrl: "https://www.hospitalcomarcalinca.es",

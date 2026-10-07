@@ -27,7 +27,6 @@ export const lottusse_calzado_piel_inca: ServiceItem = {
   status: "open",
   tags: ["zona:raiguer-pla", "product:lujo", "mod:walk-in"],
   phone: "+34 971 507 000",
-  whatsapp: "+34 971 507 000",
   email: "info@lottusse.com",
   website: "https://lottusse.com",
   schedule: "Lunes a Viernes: 09:30 - 19:30; Sábado: 10:00 - 14:00",

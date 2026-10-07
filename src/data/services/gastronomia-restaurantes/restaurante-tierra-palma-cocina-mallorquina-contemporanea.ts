@@ -27,7 +27,6 @@ export const restaurante_tierra_palma_cocina_mallorquina_contemporanea: ServiceI
   status: "open",
   tags: ["zona:palma-centro", "product:cocina-mallorquina", "mod:cita-previa"],
   phone: "+34 971 712 306",
-  whatsapp: "+34 971 712 306",
   email: "info@tierramallorca.com",
   website: "",
   schedule: "Martes a Sábado: 13:00 - 15:30 y 19:30 - 23:00; Lunes y Domingo: Cerrado",

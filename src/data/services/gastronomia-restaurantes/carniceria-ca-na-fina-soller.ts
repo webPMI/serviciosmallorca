@@ -18,7 +18,6 @@ export const carniceriaCaNaFina: ServiceItem = {
   address: "Carrer de Sa Lluna, 42, 07100 Sóller, Illes Balears (Vall de Sóller - Tramuntana)",
   zone: "tramuntana",
   phone: "+34 971 63 08 22",
-  whatsapp: "+34 971 63 08 22",
   email: "info@canafina.com",
   website: "https://canafina.com",
   coordinates: { lat: 39.7668, lng: 2.7162 },

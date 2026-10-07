@@ -25,7 +25,6 @@ export const restauranteEsCruceVilafranca: ServiceItem = {
   targetAudience: ["residentes", "turistas", "familias", "grupos", "amantes de la cocina popular"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 56 00 73",
-  whatsapp: "+34 971 56 00 73",
   email: "info@restaurantescruce.com",
   website: "https://restaurantescruce.com",
   menuUrl: "https://restaurantescruce.com",

@@ -139,12 +139,17 @@ async function main() {
   runCommand("npm run validate:sports", "Sports Facilities Validation");
 
   // 5. Audit Data Honesty
-  logStep(5, 10, "Auditoría de Honestidad de Datos (GR-11 Zero Fake Data)");
+  logStep(5, 11, "Auditoría de Honestidad de Datos (GR-11 Zero Fake Data)");
   runCommand("npm run audit:honesty", "Data Honesty Audit");
 
-  // 6. Test Suites
-  logStep(6, 10, "Batería de Pruebas Unitarias y de Integración");
+  // 6. Test Canales de Contacto (WhatsApp móvil vs fijo)
+  logStep(6, 11, "Auditoría de Canales de Contacto y WhatsApp Móviles");
+  runCommand("npm run test:contacts", "Contact Channels Test");
+
+  // 7. Test Suites
+  logStep(7, 11, "Batería de Pruebas Unitarias y de Integración");
   runCommand("npm test", "Test Suites");
+
 
   // 7. Multi-Auditor Intelligence
   logStep(7, 10, "Auditoría de Inteligencia Multi-Agente");

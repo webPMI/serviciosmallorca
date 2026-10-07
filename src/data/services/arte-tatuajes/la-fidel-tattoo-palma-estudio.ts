@@ -27,7 +27,6 @@ export const la_fidel_tattoo_palma_estudio: ServiceItem = {
   status: "open",
   tags: ["zona:palma-centro", "product:realismo", "mod:cita-previa"],
   phone: "+34 971 724 150",
-  whatsapp: "+34 971 724 150",
   email: "info@lafideltattoo.com",
   website: "",
   schedule: "Lunes a Sábado: 10:30 - 19:30",

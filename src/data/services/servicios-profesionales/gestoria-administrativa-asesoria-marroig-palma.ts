@@ -27,7 +27,6 @@ export const gestoria_administrativa_asesoria_marroig_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma-centro", "product:accesible", "mod:cita-previa"],
   phone: "+34 971 721 110",
-  whatsapp: "+34 971 721 110",
   email: "info@gestoriamarroigpalma.es",
   website: "",
   schedule: "Lunes a Jueves: 08:30 - 17:30, Viernes: 08:30 - 14:30",

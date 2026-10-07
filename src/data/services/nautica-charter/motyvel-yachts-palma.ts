@@ -27,7 +27,6 @@ export const motyvel_yachts_palma: ServiceItem = {
   status: "open",
   tags: ["zona:paseo-maritimo", "product:lujo", "mod:en-local", "aud:expat"],
   phone: "+34 971 45 42 12",
-  whatsapp: "+34 971 45 42 12",
   email: "info@motyvel.com",
   website: "https://motyvel.com",
   schedule: "Lunes a Viernes: 09:00 - 18:30, Sábados con cita previa",

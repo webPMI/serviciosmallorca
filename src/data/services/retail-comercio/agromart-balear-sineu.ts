@@ -27,7 +27,6 @@ export const agromart_balear_sineu: ServiceItem = {
   status: "open",
   tags: ["zona:raiguer-pla", "product:familiar", "mod:en-local", "aud:familias"],
   phone: "+34 971 52 05 50",
-  whatsapp: "+34 971 52 05 50",
   email: "info@agromartbalear.com",
   website: "https://agromartbalear.com",
   schedule: "Lunes a Sábado: 08:30 - 20:30 | Domingo: 09:00 - 14:00",

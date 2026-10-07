@@ -25,7 +25,6 @@ export const bodegaBarahonaCasaManolo: ServiceItem = {
   targetAudience: ["residentes", "turistas", "parejas", "gourmets", "familias"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 64 91 30",
-  whatsapp: "+34 971 64 91 30",
   email: "info@bodegabarahonacasamanolo.es",
   website: "https://bodegabarahonacasamanolo.es",
   menuUrl: "https://bodegabarahonacasamanolo.es",

@@ -27,7 +27,6 @@ export const altafit_palma_gimnasio_centro_deportivo: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:accesible", "mod:walk-in"],
   phone: "+34 971 260 410",
-  whatsapp: "+34 971 260 410",
   email: "info@altafitgymclub.com",
   website: "https://altafitgymclub.com/gimnasios/mallorca-palma/",
   schedule: "Lunes a Viernes: 07:00 - 22:30; Sábado: 09:00 - 19:30; Domingo: 09:00 - 14:30",

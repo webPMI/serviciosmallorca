@@ -27,7 +27,6 @@ export const robotbas_automatizacion_domotica_edificios_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:premium", "mod:cita-previa", "aud:b2b"],
   phone: "+34 971 777 666",
-  whatsapp: "+34 971 777 666",
   email: "info@robotbas.com",
   website: "https://robotbas.com",
   schedule: "Lunes a Viernes: 08:00 - 17:00",

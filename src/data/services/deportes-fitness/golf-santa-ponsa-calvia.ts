@@ -24,7 +24,6 @@ export const GOLF_SANTA_PONSA_CALVIA: ServiceItem = {
   status: "open",
   tags: ["product:golf", "zona:santa-ponsa"],
   phone: "+34 971 690 211",
-  whatsapp: "+34 971 690 211",
   email: "info@golf-santaponsa.com",
   website: "https://golf-santaponsa.com",
   schedule: "Lunes a Domingo: 08:00 - 22:00",

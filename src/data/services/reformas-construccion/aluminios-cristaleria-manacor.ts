@@ -18,7 +18,6 @@ export const aluminiosManacor: ServiceItem = {
   address: "Carrer de ses Parres, 87, 07500 Manacor (Llevant de Mallorca), Illes Balears",
   zone: "manacor-llevant",
   phone: "+34 971 84 51 91",
-  whatsapp: "+34 971 84 51 91",
   email: "info@aluminiosmanacor.com",
   website: "",
   coordinates: { lat: 39.575, lng: 3.21 },

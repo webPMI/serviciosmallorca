@@ -18,7 +18,6 @@ export const roigPremium: ServiceItem = {
   address: "Aeropuerto de Palma de Mallorca (PMI) / Camí de Can Calafat, 07199 Palma, Illes Balears",
   zone: "palma",
   phone: "+34 971 65 71 10",
-  whatsapp: "+34 971 65 71 10",
   email: "rentacar@roig.com",
   website: "https://roig.com",
   coordinates: {

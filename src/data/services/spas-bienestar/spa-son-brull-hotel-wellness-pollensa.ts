@@ -27,7 +27,6 @@ export const spa_son_brull_hotel_wellness_pollensa: ServiceItem = {
   status: "open",
   tags: ["zona:alcudia-pollensa", "product:spa-circuitos-termales", "mod:cita-previa"],
   phone: "+34 971 535 353",
-  whatsapp: "+34 971 535 353",
   email: "info@sonbrull.com",
   website: "https://sonbrull.com",
   schedule: "Diario: 10:00 - 20:00 (Abierto Abril – Noviembre)",

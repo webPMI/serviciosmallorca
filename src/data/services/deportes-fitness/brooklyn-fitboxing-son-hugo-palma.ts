@@ -24,7 +24,6 @@ export const BROOKLYN_FITBOXING_SON_HUGO_PALMA: ServiceItem = {
   status: "open",
   tags: ["product:boxeo-artes-marciales", "product:fitness-gym", "zona:palma-centro"],
   phone: "+34 971 900 130",
-  whatsapp: "+34 971 900 130",
   email: "info@brooklynfitboxing.com",
   website: "https://brooklynfitboxing.com/son-hugo",
   schedule: "Lunes a Domingo: 08:00 - 22:00",

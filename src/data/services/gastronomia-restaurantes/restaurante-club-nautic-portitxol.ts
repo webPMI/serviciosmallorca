@@ -25,7 +25,6 @@ export const restauranteClubNauticPortitxol: ServiceItem = {
   targetAudience: ["residentes", "turistas", "parejas", "familias", "nauticos"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 27 38 68",
-  whatsapp: "+34 971 27 38 68",
   email: "restaurante@cnportitxol.com",
   website: "https://rcnportitxol.com",
   menuUrl: "https://rcnportitxol.com",

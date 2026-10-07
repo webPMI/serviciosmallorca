@@ -27,7 +27,6 @@ export const fisioterapia_osteopatia_fisiomallorca_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:premium", "mod:en-local", "aud:familias"],
   phone: "+34 971 20 55 40",
-  whatsapp: "+34 971 20 55 40",
   email: "info@fisiomallorca.es",
   website: "https://fisiomallorca.es",
   schedule: "Lunes a Viernes: 08:30 - 20:30",

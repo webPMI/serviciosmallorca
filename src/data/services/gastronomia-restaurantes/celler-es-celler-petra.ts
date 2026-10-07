@@ -18,7 +18,6 @@ export const cellerEsCellerPetra: ServiceItem = {
   address: "Carrer de l'Hospital, 46, 07250 Petra (Es Pla de Mallorca), Illes Balears",
   zone: "raiguer-pla",
   phone: "+34 971 56 15 16",
-  whatsapp: "+34 971 56 15 16",
   email: "reserves@escellerpetra.com",
   website: "",
   coordinates: { lat: 39.614, lng: 3.112 },

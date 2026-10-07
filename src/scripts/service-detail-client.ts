@@ -16,6 +16,7 @@ import {
   validateTaxIdOrDocument,
   sanitizeText,
 } from "../lib/ownershipValidation";
+import { formatWhatsAppLink } from "../lib/whatsappUtils";
 import type { ServiceItem } from "../data/services/types";
 
 /** Etiquetas i18n servidas por la isla JSON `#service-static-data` (GR-04). */
@@ -455,9 +456,10 @@ export function initServiceDetailClient() {
       }
 
       const whatsapp = override.whatsapp || merged?.whatsapp;
-      if (whatsapp) {
+      const waUrl = formatWhatsAppLink(whatsapp);
+      if (waUrl) {
         document.querySelectorAll(".btn-contact-whatsapp").forEach((btn) => {
-          btn.setAttribute("href", `https://wa.me/${whatsapp.replace(/[^0-9]/g, "")}`);
+          btn.setAttribute("href", waUrl);
         });
       }
 

@@ -27,7 +27,6 @@ export const gordian_tattoo_palma_custom_ink: ServiceItem = {
   status: "open",
   tags: ["zona:palma-centro", "product:fine-line", "mod:cita-previa"],
   phone: "+34 971 498 220",
-  whatsapp: "+34 971 498 220",
   email: "info@gordiantattoo.com",
   website: "",
   schedule: "Lunes a Viernes: 10:00 - 19:00; Sábado: 10:00 - 15:00",

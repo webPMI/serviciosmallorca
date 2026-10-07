@@ -25,7 +25,6 @@ export const restauranteSaVinyaEsCapdella: ServiceItem = {
   targetAudience: ["residentes", "turistas", "familias", "parejas", "amantes de la naturaleza"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 13 06 48",
-  whatsapp: "+34 971 13 06 48",
   email: "info@escapdella.com",
   website: "https://www.escapdella.com",
   menuUrl: "https://www.escapdella.com",

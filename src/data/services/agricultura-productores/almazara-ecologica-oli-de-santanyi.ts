@@ -27,7 +27,6 @@ export const almazara_ecologica_oli_de_santanyi: ServiceItem = {
   status: "open",
   tags: ["zona:santanyi-migjorn", "product:enoturismo", "mod:cita-previa"],
   phone: "+34 971 163 204",
-  whatsapp: "+34 971 163 204",
   email: "info@olisantanyi.es",
   website: "",
   schedule: "Lunes a Sábado: 09:30 - 14:00 y 16:00 - 19:00",

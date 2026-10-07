@@ -25,7 +25,6 @@ export const restauranteCmSanAntonioCanPastilla: ServiceItem = {
   targetAudience: ["residentes", "turistas", "familias", "parejas", "nauticos"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 74 50 76",
-  whatsapp: "+34 971 74 50 76",
   email: "restaurante@cmsap.com",
   website: "https://www.cmsap.com",
   menuUrl: "https://www.cmsap.com",

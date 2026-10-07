@@ -27,7 +27,6 @@ export const camper_calzado_artesano_inca: ServiceItem = {
   status: "open",
   tags: ["zona:raiguer-pla", "product:premium", "mod:walk-in"],
   phone: "+34 971 888 000",
-  whatsapp: "+34 971 888 000",
   email: "info@www.camper.com",
   website: "https://www.camper.com",
   schedule: "Lunes a Sábado: 10:00 - 20:30",

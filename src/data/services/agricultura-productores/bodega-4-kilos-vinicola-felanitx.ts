@@ -27,7 +27,6 @@ export const bodega_4_kilos_vinicola_felanitx: ServiceItem = {
   status: "open",
   tags: ["zona:santanyi-migjorn", "product:lujo", "mod:cita-previa"],
   phone: "+34 971 582 342",
-  whatsapp: "+34 971 582 342",
   email: "info@4kilos.com",
   website: "https://4kilos.com",
   schedule: "Lunes a Viernes: 09:00 - 16:30 (Visitas concertadas)",

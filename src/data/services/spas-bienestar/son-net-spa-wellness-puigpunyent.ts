@@ -24,7 +24,6 @@ export const son_net_spa_wellness_puigpunyent: ServiceItem = {
   status: "open",
   tags: ["zona:soller"],
   phone: "+34 971 147 000",
-  whatsapp: "+34 971 147 000",
   email: "info@sonnet.es",
   website: "https://sonnet.es/spa",
   schedule: "Lunes a Domingo: 08:00 - 20:00",

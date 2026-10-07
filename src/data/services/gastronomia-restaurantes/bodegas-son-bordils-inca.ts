@@ -25,7 +25,6 @@ export const bodegasSonBordilsInca: ServiceItem = {
   targetAudience: ["residentes", "turistas", "parejas", "gourmets", "amantes de la historia"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 18 22 00",
-  whatsapp: "+34 971 18 22 00",
   email: "bodega@sonbordils.es",
   website: "https://www.sonbordils.es",
   menuUrl: "https://www.sonbordils.es",

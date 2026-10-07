@@ -27,7 +27,6 @@ export const tast_club_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma-centro", "product:lujo", "mod:en-local", "aud:parejas"],
   phone: "+34 971 71 01 50",
-  whatsapp: "+34 971 71 01 50",
   email: "info@tast.com",
   website: "https://tast.com/tast-club",
   schedule: "Lunes a Domingo: 13:00 - 01:00",

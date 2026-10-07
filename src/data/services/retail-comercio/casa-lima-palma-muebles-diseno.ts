@@ -27,7 +27,6 @@ export const casa_lima_palma_muebles_diseno: ServiceItem = {
   status: "open",
   tags: ["zona:palma-centro", "product:lujo", "mod:en-local", "aud:expat"],
   phone: "+34 971 72 20 89",
-  whatsapp: "+34 971 72 20 89",
   email: "info@casa-lima.com",
   website: "https://casa-lima.com",
   schedule: "Lunes a Viernes: 10:30 - 19:00, Sábados: 10:30 - 14:30",

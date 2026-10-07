@@ -27,7 +27,6 @@ export const llibres_ramon_llull_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:premium", "mod:en-local", "aud:familias"],
   phone: "+34 971 72 48 30",
-  whatsapp: "+34 971 72 48 30",
   email: "info@llibresramonllull.com",
   website: "https://llibresramonllull.com",
   schedule: "Lunes a Viernes: 10:00 - 14:00, 16:30 - 20:00 | Sábado: 10:00 - 14:00 | Domingo: Cerrado",

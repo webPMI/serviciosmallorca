@@ -1,7 +1,7 @@
 {
   "name": "servicios-mallorca",
   "type": "module",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "engines": {
     "node": ">=22.6.0"
   },
@@ -13,10 +13,11 @@
     "bump": "node --experimental-strip-types scripts/bump-version.ts",
     "autosave": "node --experimental-strip-types scripts/autosave.ts",
     "autosave:deploy": "node --experimental-strip-types scripts/autosave.ts && npm run deploy",
-    "prepush": "npm run typecheck && npm run validate:taxonomy && npm run validate:sports && npm run audit:honesty && npm test && npm run audit:full",
+    "prepush": "npm run typecheck && npm run validate:taxonomy && npm run validate:sports && npm run audit:honesty && npm run test:contacts && npm test && npm run audit:full",
     "preview": "astro preview",
     "astro": "astro",
     "test": "vitest run",
+    "test:contacts": "node --experimental-strip-types scripts/test-service-contacts.ts --ci",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
     "lint": "eslint .",

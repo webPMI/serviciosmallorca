@@ -27,7 +27,6 @@ export const real_cartuja_valldemossa_museo_chopin: ServiceItem = {
   status: "open",
   tags: ["zona:valldemossa", "product:accesible", "mod:walk-in", "aud:familias"],
   phone: "+34 971 612 106",
-  whatsapp: "+34 971 612 106",
   email: "info@cartoixadevalldemossa.com",
   website: "https://cartoixadevalldemossa.com",
   schedule: "Lunes a Sábado: 10:00 - 17:30, Domingo: 10:00 - 15:00",

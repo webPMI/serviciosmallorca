@@ -27,7 +27,6 @@ export const bbva_banca_privada_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma-centro", "product:lujo", "mod:cita-previa", "aud:b2b"],
   phone: "+34 971 77 40 00",
-  whatsapp: "+34 971 77 40 00",
   email: "info@bbvaprivatebanking.com",
   website: "https://www.bbva.es",
   schedule: "Lunes a Viernes: 08:30 - 16:30",

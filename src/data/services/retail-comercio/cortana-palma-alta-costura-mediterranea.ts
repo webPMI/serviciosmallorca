@@ -27,7 +27,6 @@ export const cortana_palma_alta_costura_mediterranea: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:lujo", "mod:walk-in", "aud:parejas"],
   phone: "+34 971 727 606",
-  whatsapp: "+34 971 727 606",
   email: "info@cortana.es",
   website: "https://cortana.es",
   schedule: "Lunes a Sábado: 10:30 - 14:30, 16:30 - 20:00",

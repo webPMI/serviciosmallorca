@@ -27,7 +27,6 @@ export const gran_hotel_son_net_puigpunyent_palacio: ServiceItem = {
   status: "open",
   tags: ["zona:puigpunyent", "product:lujo", "temps:todo-el-ano"],
   phone: "+34 971 147 000",
-  whatsapp: "+34 971 147 000",
   email: "info@sonnetpalacehotel.com",
   website: "https://sonnet.es",
   schedule: "Recepción 24 horas (Abierto todo el año)",

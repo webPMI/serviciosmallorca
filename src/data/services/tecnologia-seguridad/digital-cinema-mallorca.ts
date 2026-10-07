@@ -18,7 +18,6 @@ export const digitalCinemaMallorca: ServiceItem = {
   address: "Carrer del Gremi de Teixidors, 26, 07009 Palma, Illes Balears (Polígono Son Castelló)",
   zone: "palma",
   phone: "+34 971 77 44 88",
-  whatsapp: "+34 971 77 44 88",
   email: "info@digitalcinema.es",
   website: "https://digitalcinema.es",
   coordinates: { lat: 39.6025, lng: 2.6728 },

@@ -18,7 +18,6 @@ export const oliDeJornets: ServiceItem = {
   address: "Finca Jornets, s/n, 07140 Sencelles (Es Pla de Mallorca), Illes Balears",
   zone: "raiguer-pla",
   phone: "+34 971 87 22 10",
-  whatsapp: "+34 971 87 22 10",
   email: "info@olidejornets.com",
   website: "",
   coordinates: { lat: 39.645, lng: 2.901 },

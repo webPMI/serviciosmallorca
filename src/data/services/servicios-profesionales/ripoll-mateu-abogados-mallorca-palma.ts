@@ -27,7 +27,6 @@ export const ripoll_mateu_abogados_mallorca_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma-centro", "product:premium", "mod:cita-previa"],
   phone: "+34 971 718 010",
-  whatsapp: "+34 971 718 010",
   email: "info@ripollmateu.com",
   website: "",
   schedule: "Lunes a Jueves: 09:00 - 19:00; Viernes: 09:00 - 14:30",

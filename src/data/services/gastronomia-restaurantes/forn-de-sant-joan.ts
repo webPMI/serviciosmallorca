@@ -18,7 +18,6 @@ export const fornDeSantJoan: ServiceItem = {
   address: "Carrer de Sant Joan, 4, 07012 Palma, Illes Balears",
   zone: "palma",
   phone: "+34 971 72 84 22",
-  whatsapp: "+34 971 72 84 22",
   email: "info@fornprojects.com",
   website: "https://forndesantjoan.com",
   coordinates: { lat: 39.5694, lng: 2.6441 },

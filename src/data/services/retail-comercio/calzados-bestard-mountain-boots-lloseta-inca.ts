@@ -27,7 +27,6 @@ export const calzados_bestard_mountain_boots_lloseta_inca: ServiceItem = {
   status: "open",
   tags: ["zona:lloseta", "product:calzado-artesanal", "mod:en-local"],
   phone: "+34 971 514 044",
-  whatsapp: "+34 971 514 044",
   email: "info@bestardbootsmallorca.com",
   website: "https://bestard.com",
   schedule: "Lunes a Viernes: 09:30 - 13:30 y 16:00 - 20:00, Sábados: 09:30 - 13:30",

@@ -24,7 +24,6 @@ export const libreriaAllIOliPalma: ServiceItem = {
   status: "open",
   tags: ["zona:palma-centro", "product:premium", "mod:en-local", "aud:familias", "aud:expat"],
   phone: "+34 971 72 60 41",
-  whatsapp: "+34 971 72 60 41",
   email: "info@libreriaallioli.com",
   website: "",
   schedule: "Lunes a Sábado: 10:00 - 14:00 | 16:30 - 20:00",

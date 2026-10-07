@@ -25,7 +25,6 @@ export const hospitalSantJoanDeDeuPalma: ServiceItem = {
   targetAudience: ["residentes", "seniors", "pacientes_rehabilitacion", "familias"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 26 58 54",
-  whatsapp: "+34 971 26 58 54",
   email: "hospitalmallorca.atu@sjd.es",
   website: "https://www.sjdmallorca.com",
   menuUrl: "https://www.sjdmallorca.com",

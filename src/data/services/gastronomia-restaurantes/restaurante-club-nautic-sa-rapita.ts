@@ -25,7 +25,6 @@ export const restauranteClubNauticSaRapita: ServiceItem = {
   targetAudience: ["residentes", "turistas", "familias", "parejas", "nauticos"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 64 00 01",
-  whatsapp: "+34 971 64 00 01",
   email: "restaurante@cnrapita.com",
   website: "https://cnrapita.com",
   menuUrl: "https://cnrapita.com",

@@ -104,7 +104,6 @@ export const mercatPereGarauPalma: ServiceItem = {
   ],
   authorityProfiles: [],
   phone: "+34 971 275 041",
-  whatsapp: "+34 971 275 041",
   website: "https://palma.cat/mercats",
   email: "mercatspalma@palma.cat",
   webAccessibility: "active",

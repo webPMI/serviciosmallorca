@@ -14,7 +14,6 @@ export const ccaAndratxService: ServiceItem = {
     lng: 2.4208,
   },
   phone: "+34971137770",
-  whatsapp: "+34971137770",
   email: "info@ccandratx.com",
   website: "https://www.ccandratx.com",
   rating: 4.7,

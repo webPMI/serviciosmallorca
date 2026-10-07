@@ -27,7 +27,6 @@ export const canteras_mares_can_burguera_llucmajor: ServiceItem = {
   status: "open",
   tags: ["zona:santanyi", "product:traditional", "mod:en-local", "aud:familias"],
   phone: "+34 971 66 11 44",
-  whatsapp: "+34 971 66 11 44",
   email: "info@canburguera.com",
   website: "",
   schedule: "Lunes a Viernes: 07:30 - 17:30 | Sábado: 08:00 - 13:00 | Domingo: Cerrado",

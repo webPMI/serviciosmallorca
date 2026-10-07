@@ -24,7 +24,6 @@ export const portPetitCalaDor: ServiceItem = {
   targetAudience: ["residentes", "turistas", "parejas", "familias", "gourmets"],
   languagesSpoken: ["es", "fr", "en", "de", "ca"],
   phone: "+34 971 64 30 39",
-  whatsapp: "+34 971 64 30 39",
   email: "info@portpetit.com",
   website: "https://portpetit.com",
   menuUrl: "https://portpetit.com",

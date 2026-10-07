@@ -27,7 +27,6 @@ export const castell_de_bellver_palma_museu: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:familiar", "mod:walk-in"],
   phone: "+34 971 735 065",
-  whatsapp: "+34 971 735 065",
   email: "info@castelldebellver.palma.cat",
   website: "https://castelldebellver.palma.cat",
   schedule: "Martes a Domingo: 10:00 - 18:00 (Domingos entrada gratuita, Lunes cerrado)",

@@ -18,7 +18,6 @@ export const balearicProperties: ServiceItem = {
   address: "Via Pollentia, 3, 07460 Pollença, Illes Balears",
   zone: "alcudia-pollensa",
   phone: "+34 971 53 29 84",
-  whatsapp: "+34 971 53 29 84",
   email: "info@balearic-properties.com",
   website: "https://balearic-properties.com",
   coordinates: { lat: 39.8765, lng: 3.0162 },

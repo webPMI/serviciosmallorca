@@ -19,7 +19,6 @@ export const restauranteBaibenPortals: ServiceItem = {
   address: "Puerto Portals, Local 67, 07181 Portals Nous, Calvià, Illes Balears",
   zone: "calvia-andratx",
   phone: "+34 971 67 55 47",
-  whatsapp: "+34 971 67 55 47",
   email: "reservas@baibenportals.com",
   website: "",
   coordinates: { lat: 39.5318, lng: 2.5505 },

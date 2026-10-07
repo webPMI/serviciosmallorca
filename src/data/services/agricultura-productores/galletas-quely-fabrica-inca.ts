@@ -27,7 +27,6 @@ export const galletas_quely_fabrica_inca: ServiceItem = {
   status: "open",
   tags: ["zona:raiguer-pla", "product:traditional", "mod:walk-in"],
   phone: "+34 971 501 000",
-  whatsapp: "+34 971 501 000",
   email: "info@www.quely.com",
   website: "https://www.quely.com",
   schedule: "Lunes a Viernes: 08:30 - 18:30; Sábado: 09:00 - 13:30",

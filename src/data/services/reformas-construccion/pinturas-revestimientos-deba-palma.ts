@@ -27,7 +27,6 @@ export const pinturas_revestimientos_deba_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:premium", "mod:a-domicilio", "aud:familias"],
   phone: "+34 971 43 15 20",
-  whatsapp: "+34 971 43 15 20",
   email: "info@pinturasdeba.com",
   website: "",
   schedule: "Lunes a Viernes: 08:00 - 18:00",

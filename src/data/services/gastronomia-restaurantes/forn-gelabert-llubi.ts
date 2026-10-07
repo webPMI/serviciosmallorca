@@ -18,7 +18,6 @@ export const fornGelabertLlubi: ServiceItem = {
   address: "Carrer de la Carretera, 18, 07430 Llubí (Es Pla de Mallorca), Illes Balears",
   zone: "raiguer-pla",
   phone: "+34 971 52 20 40",
-  whatsapp: "+34 971 52 20 40",
   email: "info@forngelabert.com",
   website: "",
   coordinates: { lat: 39.6995, lng: 3.005 },

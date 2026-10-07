@@ -27,7 +27,6 @@ export const roedl_and_partner_abogados_asesores_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:lujo", "mod:cita-previa", "aud:expat"],
   phone: "+34 971 716 350",
-  whatsapp: "+34 971 716 350",
   email: "info@roedl.com",
   website: "https://roedl.com",
   schedule: "Lunes a Jueves: 08:30 - 18:00, Viernes: 08:30 - 15:00",

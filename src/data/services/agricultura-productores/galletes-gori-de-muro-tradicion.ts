@@ -27,7 +27,6 @@ export const galletes_gori_de_muro_tradicion: ServiceItem = {
   status: "open",
   tags: ["zona:alcudia-pollensa", "product:traditional", "mod:walk-in"],
   phone: "+34 971 537 120",
-  whatsapp: "+34 971 537 120",
   email: "info@goridemuro.com",
   website: "https://goridemuro.com",
   schedule: "Lunes a Viernes: 08:30 - 14:00 y 16:30 - 20:00; Sábado: 08:30 - 13:30",

@@ -24,7 +24,6 @@ export const institut_dermatologic_balears_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma-centro"],
   phone: "+34 971 716 500",
-  whatsapp: "+34 971 716 500",
   email: "info@dermatologiabalears.com",
   website: "",
   schedule: "Lunes a Domingo: 08:00 - 20:00",

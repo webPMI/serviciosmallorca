@@ -27,7 +27,6 @@ export const coves_del_drach_porto_cristo_cuevas: ServiceItem = {
   status: "open",
   tags: ["zona:manacor", "product:familiar", "mod:walk-in"],
   phone: "+34 971 820 753",
-  whatsapp: "+34 971 820 753",
   email: "info@www.cuevasdeldrach.com",
   website: "https://www.cuevasdeldrach.com",
   schedule: "Lunes a Domingo: 10:00 - 17:00 (Turnos horarios concertados)",

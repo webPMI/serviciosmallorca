@@ -27,7 +27,6 @@ export const rent_march_bike_pollensa_cycling: ServiceItem = {
   status: "open",
   tags: ["zona:port-de-pollenca", "product:premium", "mod:walk-in", "aud:expat"],
   phone: "+34 971 864 784",
-  whatsapp: "+34 971 864 784",
   email: "info@rentmarch.com",
   website: "https://rentmarch.com",
   schedule: "Lunes a Domingo: 08:30 - 13:30, 16:30 - 19:30 (Temporada ciclista)",

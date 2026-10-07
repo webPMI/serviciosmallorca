@@ -25,7 +25,6 @@ export const cellerPagesPalma: ServiceItem = {
   targetAudience: ["residentes", "turistas", "parejas", "familias", "amantes de la cocina tradicional"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 72 60 36",
-  whatsapp: "+34 971 72 60 36",
   email: "info@cellerpages.com",
   website: "https://cellerpages.com",
   menuUrl: "https://cellerpages.com",

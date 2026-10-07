@@ -27,7 +27,6 @@ export const jardins_tramuntana_alaro: ServiceItem = {
   status: "open",
   tags: ["zona:tramuntana", "product:premium", "mod:a-domicilio", "aud:familias"],
   phone: "+34 971 61 06 02",
-  whatsapp: "+34 971 61 06 02",
   email: "info@jardinstramuntana.com",
   website: "https://www.jardinstramuntana.com",
   schedule: "Lunes a Viernes: 08:00 - 17:00 | Sábado y Domingo: Cerrado",

@@ -27,7 +27,6 @@ export const finca_hotel_son_palou_orient_bunyola: ServiceItem = {
   status: "open",
   tags: ["zona:tramuntana", "product:lujo", "mod:en-local", "aud:parejas"],
   phone: "+34 971 14 89 00",
-  whatsapp: "+34 971 14 89 00",
   email: "info@sonpalou.com",
   website: "https://sonpalou.com",
   schedule: "Abierto de Febrero a Noviembre",

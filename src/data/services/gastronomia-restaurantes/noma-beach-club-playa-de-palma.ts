@@ -27,7 +27,6 @@ export const noma_beach_club_playa_de_palma: ServiceItem = {
   status: "open",
   tags: ["zona:platja-de-palma", "product:premium", "mod:walk-in"],
   phone: "+34 871 552 300",
-  whatsapp: "+34 871 552 300",
   email: "info@nomabeachpalma.com",
   website: "",
   schedule: "Diario: 11:00 - 00:30 (Abril a Octubre)",

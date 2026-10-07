@@ -27,7 +27,6 @@ export const club_de_vela_port_d_andratx: ServiceItem = {
   status: "open",
   tags: ["zona:calvia-andratx", "product:lujo", "mod:cita-previa"],
   phone: "+34 971 671 721",
-  whatsapp: "+34 971 671 721",
   email: "info@cvpa.es",
   website: "https://cvpa.es/puerto-deportivo",
   schedule: "Diario: 08:30 - 20:30 (Servicio de marinería 24h)",

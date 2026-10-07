@@ -25,7 +25,6 @@ export const colmadoSantoDomingoPalma: ServiceItem = {
   targetAudience: ["residentes", "turistas", "gourmets", "familias"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 71 48 87",
-  whatsapp: "+34 971 71 48 87",
   email: "info@colmadosantodomingo.com",
   website: "https://colmadosantodomingo.com",
   menuUrl: "https://colmadosantodomingo.com",

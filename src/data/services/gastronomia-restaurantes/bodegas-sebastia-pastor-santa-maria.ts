@@ -25,7 +25,6 @@ export const bodegasSebastiaPastorSantaMaria: ServiceItem = {
   targetAudience: ["residentes", "turistas", "parejas", "gourmets", "amantes del vino"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 62 03 58",
-  whatsapp: "+34 971 62 03 58",
   email: "info@sebastiapastor.com",
   website: "https://www.sebastiapastor.com",
   menuUrl: "https://www.sebastiapastor.com",

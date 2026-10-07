@@ -25,7 +25,6 @@ export const fornSantFrancesc: ServiceItem = {
   targetAudience: ["residentes", "turistas", "familias", "gourmets"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 50 00 12",
-  whatsapp: "+34 971 50 00 12",
   email: "info@fornsantfrancesc.com",
   website: "https://fornsantfrancesc.com",
   menuUrl: "https://fornsantfrancesc.com",

@@ -3,9 +3,10 @@ import type { ServiceItem } from "../types.ts";
 export const farmaciaBalanguera24hPalma: ServiceItem = {
   id: "farmacia-balanguera-24h-palma",
   slug: "farmacia-balanguera-24h-palma",
-  name: "Farmacia Balanguera 24h (Palma)",
+  name: "Farmacia Balanguera (Palma)",
   category: "salud-bienestar",
   sectorId: "salud-bienestar-belleza",
+
   sectors: ["spas-bienestar"],
   zone: "palma",
   address: "Carrer de la Balanguera, 15, 07011 Palma, Illes Balears",
@@ -26,7 +27,6 @@ export const farmaciaBalanguera24hPalma: ServiceItem = {
   targetAudience: ["residentes", "turistas", "familias", "seniors"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 45 87 88",
-  whatsapp: "+34 971 45 87 88",
   email: "info@farmaciabalanguera.com",
   website: "https://www.farmaciabalanguera.com",
   menuUrl: "https://www.farmaciabalanguera.com",

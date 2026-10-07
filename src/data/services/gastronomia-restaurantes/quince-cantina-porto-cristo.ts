@@ -24,7 +24,6 @@ export const quinceCantinaPortoCristo: ServiceItem = {
   targetAudience: ["residentes", "turistas", "parejas", "familias", "gourmets"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 82 18 30",
-  whatsapp: "+34 971 82 18 30",
   email: "info@restaurantequince.com",
   website: "https://www.restaurantequince.com",
   menuUrl: "https://www.restaurantequince.com",

@@ -27,7 +27,6 @@ export const banco_santander_private_banking_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma-centro", "product:lujo", "mod:cita-previa", "aud:expat"],
   phone: "+34 971 72 05 00",
-  whatsapp: "+34 971 72 05 00",
   email: "info@santanderprivatebanking.com",
   website: "https://santanderprivatebanking.com",
   schedule: "Lunes a Viernes: 08:30 - 16:30",

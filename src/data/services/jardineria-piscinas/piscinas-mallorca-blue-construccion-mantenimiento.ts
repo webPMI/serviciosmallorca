@@ -27,7 +27,6 @@ export const piscinas_mallorca_blue_construccion_mantenimiento: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:premium", "mod:cita-previa"],
   phone: "+34 971 478 950",
-  whatsapp: "+34 971 478 950",
   email: "info@piscinasmallorca.com",
   website: "https://piscinasmallorca.com",
   schedule: "Lunes a Viernes: 08:00 - 18:30; Sábado: 09:00 - 13:00",

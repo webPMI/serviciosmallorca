@@ -19,7 +19,6 @@ export const restauranteMarDeNudos: ServiceItem = {
   address: "Moll Vell, Carrer del Moll, 6, 07012 Palma, Illes Balears",
   zone: "palma",
   phone: "+34 971 18 13 00",
-  whatsapp: "+34 971 18 13 00",
   email: "info@mardenudos.com",
   website: "https://mardenudos.com",
   coordinates: { lat: 39.5678, lng: 2.6451 },

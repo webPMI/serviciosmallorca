@@ -27,7 +27,6 @@ export const aubocassa_oli_de_mallorca_manacor: ServiceItem = {
   status: "open",
   tags: ["zona:manacor", "product:lujo", "mod:en-local", "aud:familias"],
   phone: "+34 971 10 03 88",
-  whatsapp: "+34 971 10 03 88",
   email: "info@aubocassa.com",
   website: "https://aubocassa.com",
   schedule: "Lunes a Viernes: 09:00 - 17:00 (Visitas con reserva previa)",

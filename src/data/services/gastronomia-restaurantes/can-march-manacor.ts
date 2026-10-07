@@ -25,7 +25,6 @@ export const canMarchManacor: ServiceItem = {
   targetAudience: ["residentes", "turistas", "parejas", "gourmets"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 55 00 02",
-  whatsapp: "+34 971 55 00 02",
   email: "info@canmarch.com",
   website: "https://canmarch.com",
   menuUrl: "https://canmarch.com",

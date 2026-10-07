@@ -3,9 +3,10 @@ import type { ServiceItem } from "../types.ts";
 export const farmacia_plaza_de_espana_24h_palma: ServiceItem = {
   id: "farmacia-plaza-de-espana-24h-palma",
   slug: "farmacia-plaza-de-espana-24h-palma",
-  name: "Farmacia 24h Plaza de España Palma",
+  name: "Farmacia Plaza de España (Palma)",
   category: "salud-bienestar",
   sectorId: "salud-bienestar-belleza",
+
   subcategories: ["farmacia-24-horas-palma", "ortopedia-analisis-clinicos", "medicamentos-centro-palma"],
   zone: "palma",
   address: "Plaça d'Espanya, 6, 07002 Palma",
@@ -27,7 +28,6 @@ export const farmacia_plaza_de_espana_24h_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma-centro", "product:accesible", "mod:walk-in"],
   phone: "+34 971 751 462",
-  whatsapp: "+34 971 751 462",
   email: "info@www.farmaciaplazaespana.com",
   website: "https://www.farmaciaplazaespana.com",
   schedule: "Abierto 24 horas / 365 días del año (Sin interrupción)",

@@ -158,7 +158,6 @@ export const fibwiTelecomunicaciones: ServiceItem = {
     },
   ],
   phone: "+34 971 57 05 70",
-  whatsapp: "+34 971 57 05 70",
   email: "info@fibwi.com",
   website: "https://fibwi.com",
   tags: [

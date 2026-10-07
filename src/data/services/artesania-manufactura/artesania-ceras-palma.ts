@@ -18,7 +18,6 @@ export const artesaniaCerasPalma: ServiceItem = {
   address: "Carrer del Pes de la Farina, 6, 07001 Palma, Illes Balears (Casco Antiguo - Plaza Mayor)",
   zone: "palma",
   phone: "+34 971 71 42 30",
-  whatsapp: "+34 971 71 42 30",
   email: "info@caxigalos.com",
   website: "",
   coordinates: { lat: 39.5695, lng: 2.6512 },

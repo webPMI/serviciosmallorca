@@ -27,7 +27,6 @@ export const auditorium_de_palma_de_mallorca: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:premium", "mod:en-local", "aud:familias"],
   phone: "+34 971 73 47 35",
-  whatsapp: "+34 971 73 47 35",
   email: "info@auditoriumpalma.com",
   website: "https://auditoriumpalma.com",
   schedule: "Lunes a Domingo: taquilla 10:00 - 14:00, 16:00 - 21:00 | Funciones según eventos",

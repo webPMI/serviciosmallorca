@@ -27,7 +27,6 @@ export const colegio_nuestra_senora_montesion_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:premium", "mod:en-local", "aud:familias"],
   phone: "+34 971 71 21 00",
-  whatsapp: "+34 971 71 21 00",
   email: "secretaria@montesion.org",
   website: "https://montesion.org",
   schedule: "Lunes a Viernes de 08:00 a 17:30",

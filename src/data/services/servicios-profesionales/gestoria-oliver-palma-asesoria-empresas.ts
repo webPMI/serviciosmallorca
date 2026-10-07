@@ -27,7 +27,6 @@ export const gestoria_oliver_palma_asesoria_empresas: ServiceItem = {
   status: "open",
   tags: ["zona:palma-centro", "product:accesible", "mod:cita-previa"],
   phone: "+34 971 750 420",
-  whatsapp: "+34 971 750 420",
   email: "info@gestoriaoliver.com",
   website: "https://gestoriaoliver.com",
   schedule: "Lunes a Viernes: 08:30 - 15:30",

@@ -27,7 +27,6 @@ export const sandberg_estates_real_estate_santa_ponsa: ServiceItem = {
   status: "open",
   tags: ["zona:santa-ponsa", "product:lujo", "mod:cita-previa", "aud:expat"],
   phone: "+34 971 698 123",
-  whatsapp: "+34 971 698 123",
   email: "info@sandberg-estates.com",
   website: "https://sandberg-estates.com",
   schedule: "Lunes a Viernes: 09:30 - 18:30",

@@ -27,7 +27,6 @@ export const arabella_golf_mallorca_son_vida_son_muntaner: ServiceItem = {
   status: "open",
   tags: ["zona:son-vida", "product:lujo", "mod:cita-previa"],
   phone: "+34 971 783 000",
-  whatsapp: "+34 971 783 000",
   email: "info@www.arabellagolfmallorca.com",
   website: "https://www.arabellagolfmallorca.com",
   schedule: "Diario: 07:30 - 20:00 (Horario continuo)",

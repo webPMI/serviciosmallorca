@@ -14,7 +14,6 @@ export const fundacioMiroMallorcaService: ServiceItem = {
     lng: 2.6105,
   },
   phone: "+34971701420",
-  whatsapp: "+34971701420",
   email: "info@miromallorca.com",
   website: "https://miromallorca.com",
   rating: 4.8,

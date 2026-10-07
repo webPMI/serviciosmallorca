@@ -27,7 +27,6 @@ export const aspace_balears_atencion_integral_marratxi: ServiceItem = {
   status: "open",
   tags: ["zona:inca", "product:accesible", "mod:cita-previa", "aud:familias"],
   phone: "+34 971 794 800",
-  whatsapp: "+34 971 794 800",
   email: "info@aspacebalears.org",
   website: "",
   schedule: "Lunes a Viernes: 08:00 - 17:30",

@@ -27,7 +27,6 @@ export const bodega_son_juliana_santa_eugenia: ServiceItem = {
   status: "open",
   tags: ["zona:raiguer-pla", "product:premium", "mod:en-local", "aud:familias"],
   phone: "+34 971 14 44 14",
-  whatsapp: "+34 971 14 44 14",
   email: "info@sonjuliana.com",
   website: "https://sonjuliana.com",
   schedule: "Lunes a Sábado: 10:00 - 18:00 | Domingo: Cerrado",

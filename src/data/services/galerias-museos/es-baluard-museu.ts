@@ -14,7 +14,6 @@ export const esBaluardMuseuService: ServiceItem = {
     lng: 2.6416,
   },
   phone: "+34971908200",
-  whatsapp: "+34971908200",
   email: "museu@esbaluard.org",
   website: "https://www.esbaluard.org",
   rating: 4.6,

@@ -24,7 +24,6 @@ export const PALMA_RACKET_CLUB_SON_RAPINYA: ServiceItem = {
   status: "open",
   tags: ["product:tenis-mallorca", "product:padel-mallorca", "zona:palma-centro"],
   phone: "+34 971 792 500",
-  whatsapp: "+34 971 792 500",
   email: "info@palmaracketclub.com",
   website: "https://palmaracketclub.com",
   schedule: "Lunes a Domingo: 08:00 - 22:00",

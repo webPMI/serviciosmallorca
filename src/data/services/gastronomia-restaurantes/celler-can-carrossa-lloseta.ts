@@ -25,7 +25,6 @@ export const cellerCanCarrossaLloseta: ServiceItem = {
   targetAudience: ["residentes", "turistas", "familias", "gourmets", "amantes de la cocina tradicional"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 51 40 23",
-  whatsapp: "+34 971 51 40 23",
   email: "info@cancarrossa.com",
   website: "https://www.cancarrossa.com",
   menuUrl: "https://www.cancarrossa.com",

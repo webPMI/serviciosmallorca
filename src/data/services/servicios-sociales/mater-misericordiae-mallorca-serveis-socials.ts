@@ -27,7 +27,6 @@ export const mater_misericordiae_mallorca_serveis_socials: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:accesible", "mod:cita-previa", "aud:familias"],
   phone: "+34 971 478 600",
-  whatsapp: "+34 971 478 600",
   email: "info@orgmater.org",
   website: "https://orgmater.org",
   schedule: "Lunes a Viernes: 08:30 - 16:30",

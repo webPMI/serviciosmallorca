@@ -27,7 +27,6 @@ export const disset_consultores_digitales_tecnologia_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:premium", "mod:cita-previa", "aud:b2b"],
   phone: "+34 971 432 200",
-  whatsapp: "+34 971 432 200",
   email: "info@disset.com",
   website: "https://disset.com",
   schedule: "Lunes a Viernes: 09:00 - 18:00",

@@ -27,7 +27,6 @@ export const agroturisme_son_siurana_alcudia: ServiceItem = {
   status: "open",
   tags: ["zona:alcudia-pollensa", "product:premium", "mod:en-local", "aud:parejas"],
   phone: "+34 971 54 96 66",
-  whatsapp: "+34 971 54 96 66",
   email: "info@sonsiurana.com",
   website: "https://sonsiurana.com",
   schedule: "Abierto de Marzo a Noviembre (Recepción 24h)",

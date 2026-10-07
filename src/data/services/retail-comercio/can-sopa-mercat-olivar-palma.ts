@@ -27,7 +27,6 @@ export const can_sopa_mercat_olivar_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:familiar", "mod:en-local", "aud:familias"],
   phone: "+34 971 71 28 89",
-  whatsapp: "+34 971 71 28 89",
   email: "info@cansopa.com",
   website: "",
   schedule: "Lunes a Sábado: 07:30 - 15:00 | Domingo: Cerrado",

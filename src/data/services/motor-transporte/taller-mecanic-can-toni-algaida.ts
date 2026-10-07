@@ -27,7 +27,6 @@ export const taller_mecanic_can_toni_algaida: ServiceItem = {
   status: "open",
   tags: ["zona:raiguer-pla", "product:accesible", "mod:en-local", "aud:familias"],
   phone: "+34 971 66 52 14",
-  whatsapp: "+34 971 66 52 14",
   email: "info@taller-cantoni.com",
   website: "",
   schedule: "Lunes a Viernes: 08:00 - 13:00, 15:00 - 19:00 | Sábado y Domingo: Cerrado",

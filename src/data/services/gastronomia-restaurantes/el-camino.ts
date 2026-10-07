@@ -18,7 +18,6 @@ export const elCaminoPalma: ServiceItem = {
   address: "Carrer de Can Brondo, 4, 07001 Palma, Illes Balears",
   zone: "palma",
   phone: "+34 971 72 04 65",
-  whatsapp: "+34 971 72 04 65",
   email: "info@el-camino.es",
   website: "https://www.elcaminopalma.es",
   coordinates: {

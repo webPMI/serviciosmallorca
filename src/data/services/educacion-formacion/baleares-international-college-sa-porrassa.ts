@@ -27,7 +27,6 @@ export const baleares_international_college_sa_porrassa: ServiceItem = {
   status: "open",
   tags: ["zona:calvia-andratx", "product:lujo", "mod:cita-previa"],
   phone: "+34 971 133 167",
-  whatsapp: "+34 971 133 167",
   email: "info@www.balearesint.net",
   website: "https://www.balearesint.net",
   schedule: "Lunes a Viernes: 08:30 - 17:00",

@@ -27,7 +27,6 @@ export const taller_mecanico_bosom_bosch_car_service_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma-centro", "product:premium", "mod:cita-previa"],
   phone: "+34 971 431 220",
-  whatsapp: "+34 971 431 220",
   email: "info@tallerbosomboschpalma.com",
   website: "",
   schedule: "Lunes a Viernes: 08:00 - 18:00",

@@ -24,7 +24,6 @@ export const institut_balear_oftalmologia_ibo_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma-centro"],
   phone: "+34 971 288 888",
-  whatsapp: "+34 971 288 888",
   email: "info@iboftalmologia.com",
   website: "https://ibo.es",
   schedule: "Lunes a Domingo: 08:00 - 20:00",

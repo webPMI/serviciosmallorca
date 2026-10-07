@@ -25,7 +25,6 @@ export const bodegasSonArtiguesPorreres: ServiceItem = {
   targetAudience: ["residentes", "turistas", "parejas", "gourmets", "amantes del vino artesano"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 18 13 14",
-  whatsapp: "+34 971 18 13 14",
   email: "info@sonartigues.com",
   website: "https://www.sonartigues.com",
   menuUrl: "https://www.sonartigues.com",

@@ -92,7 +92,6 @@ export const bodegasMaciaBatle: ServiceItem = {
   image: "/images/services/bodegas-macia-batle.jpg",
   gallery: ["/images/services/bodegas-macia-batle.jpg"],
   phone: "+34 971 14 00 14",
-  whatsapp: "+34 971 14 00 14",
   website: "https://maciabatle.com",
   email: "bodega@maciabatle.com",
   webAccessibility: "active",

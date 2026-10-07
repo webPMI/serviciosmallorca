@@ -27,7 +27,6 @@ export const finca_ecologica_sa_teulera_petra: ServiceItem = {
   status: "open",
   tags: ["zona:petra", "product:premium", "mod:en-local", "aud:familias"],
   phone: "+34 971 56 12 18",
-  whatsapp: "+34 971 56 12 18",
   email: "info@sateulera.com",
   website: "https://sateulera.com",
   schedule: "Lunes a Sábado: 08:30 - 13:30, 16:30 - 20:00",

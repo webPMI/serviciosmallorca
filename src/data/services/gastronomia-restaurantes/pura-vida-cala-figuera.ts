@@ -24,7 +24,6 @@ export const puraVidaCalaFiguera: ServiceItem = {
   targetAudience: ["residentes", "turistas", "parejas", "expat", "gourmets"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 16 55 71",
-  whatsapp: "+34 971 16 55 71",
   email: "info@puravida-mallorca.com",
   website: "https://www.instagram.com/puravidamallorca/",
   menuUrl: "https://www.instagram.com/puravidamallorca/",

@@ -18,7 +18,6 @@ export const trablisaSeguridad: ServiceItem = {
   address: "Camí dels Reis, s/n, Edifici TRABLISA, Polígon Son Castelló, 07009 Palma, Illes Balears",
   zone: "palma",
   phone: "+34 900 535 961",
-  whatsapp: "+34 971 430 532",
   email: "direccion@trablisa.es",
   website: "https://www.trablisa.es",
   coordinates: {

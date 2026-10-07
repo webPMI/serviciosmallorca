@@ -25,7 +25,6 @@ export const stpShipyardPalma: ServiceItem = {
   targetAudience: ["armadores", "capitanes", "superyates", "empresas", "expat"],
   languagesSpoken: ["es", "en", "de", "ca", "fr", "it"],
   phone: "+34 971 21 47 47",
-  whatsapp: "+34 971 21 47 47",
   email: "info@stp-palma.com",
   website: "https://stp-palma.com",
   menuUrl: "https://stp-palma.com",

@@ -27,7 +27,6 @@ export const palmer_inmobiliaria_mallorca_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:premium", "mod:en-local", "aud:familias"],
   phone: "+34 971 72 33 55",
-  whatsapp: "+34 971 72 33 55",
   email: "info@palmerinmobiliaria.com",
   website: "https://palmerinmobiliaria.com",
   schedule: "Lunes a Viernes: 09:00 - 19:30 | Sábado: 10:00 - 14:00 | Domingo: Cerrado",

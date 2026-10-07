@@ -27,7 +27,6 @@ export const tintoreria_mallorquina_inca: ServiceItem = {
   status: "open",
   tags: ["zona:inca", "product:premium", "mod:en-local", "aud:familias"],
   phone: "+34 971 50 14 30",
-  whatsapp: "+34 971 50 14 30",
   email: "info@tintoreriamallorquina.com",
   website: "",
   schedule: "Lunes a Viernes: 08:30 - 13:30, 16:30 - 19:30 | Sábado: 09:00 - 13:00 | Domingo: Cerrado",

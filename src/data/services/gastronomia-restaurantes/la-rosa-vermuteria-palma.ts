@@ -25,7 +25,6 @@ export const laRosaVermuteriaPalma: ServiceItem = {
   targetAudience: ["residentes", "turistas", "parejas", "amigos", "gourmets"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 77 89 29",
-  whatsapp: "+34 971 77 89 29",
   email: "info@larosatroupe.com",
   website: "https://larosatroupe.com",
   menuUrl: "https://larosatroupe.com",

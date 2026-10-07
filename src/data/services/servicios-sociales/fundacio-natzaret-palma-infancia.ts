@@ -27,7 +27,6 @@ export const fundacio_natzaret_palma_infancia: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:accesible", "mod:en-local", "aud:familias"],
   phone: "+34 971 73 21 34",
-  whatsapp: "+34 971 73 21 34",
   email: "administracio@fundacionatzaret.org",
   website: "https://fundacionatzaret.org",
   schedule: "Lunes a Viernes de 08:30 a 18:30",

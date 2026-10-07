@@ -27,7 +27,6 @@ export const vintage_motors_mallorca_scooter_vespa_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma-centro", "product:accesible", "mod:walk-in"],
   phone: "+34 971 736 845",
-  whatsapp: "+34 971 736 845",
   email: "info@vintagemotorsmallorca.com",
   website: "https://vintagemotors.es",
   schedule: "Lunes a Domingo: 09:00 - 20:00",

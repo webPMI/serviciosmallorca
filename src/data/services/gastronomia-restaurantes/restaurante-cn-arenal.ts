@@ -25,7 +25,6 @@ export const restauranteCnArenal: ServiceItem = {
   targetAudience: ["residentes", "turistas", "familias", "parejas", "nauticos"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 44 04 27",
-  whatsapp: "+34 971 44 04 27",
   email: "restaurante@cnarenal.com",
   website: "",
   menuUrl: "https://www.restauranteclubnauticosarenal.com",

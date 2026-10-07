@@ -31,7 +31,6 @@ export const clinica_veterinaria_alcudia: ServiceItem = {
   status: "open",
   tags: ["zona:alcudia", "product:accesible", "mod:cita-previa", "aud:familias"],
   phone: "+34 971 546 541",
-  whatsapp: "+34 971 546 541",
   email: "info@veterinariaalcudia.com",
   website: "",
   schedule: "Lunes a Viernes: 09:30 - 13:30, 16:30 - 20:00; Sábado: 10:00 - 13:00",

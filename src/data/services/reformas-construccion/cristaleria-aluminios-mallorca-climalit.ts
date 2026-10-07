@@ -27,7 +27,6 @@ export const cristaleria_aluminios_mallorca_climalit: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:premium", "mod:cita-previa"],
   phone: "+34 971 430 500",
-  whatsapp: "+34 971 430 500",
   email: "info@cristaleriamallorca.com",
   website: "https://cristaleriamallorca.com",
   schedule: "Lunes a Viernes: 08:00 - 18:00",

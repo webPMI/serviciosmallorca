@@ -24,7 +24,6 @@ export const F45_TRAINING_PALMA_CENTRO: ServiceItem = {
   status: "open",
   tags: ["product:fitness-gym", "zona:palma-centro"],
   phone: "+34 971 789 450",
-  whatsapp: "+34 971 789 450",
   email: "info@f45training.com",
   website: "https://f45training.com/palma",
   schedule: "Lunes a Domingo: 08:00 - 22:00",

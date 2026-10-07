@@ -27,7 +27,6 @@ export const bodegas_bordoy_campos_sa_rota: ServiceItem = {
   status: "open",
   tags: ["zona:santanyi", "product:premium", "mod:en-local", "aud:familias"],
   phone: "+34 971 87 23 23",
-  whatsapp: "+34 971 87 23 23",
   email: "info@bodegasbordoy.com",
   website: "https://bodegasbordoy.com",
   schedule: "Lunes a Viernes: 09:00 - 17:00 | Sábado con cita previa | Domingo: Cerrado",

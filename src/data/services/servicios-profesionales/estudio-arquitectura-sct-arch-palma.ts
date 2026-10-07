@@ -27,7 +27,6 @@ export const estudio_arquitectura_sct_arch_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:lujo", "mod:cita-previa", "aud:expat"],
   phone: "+34 971 72 66 11",
-  whatsapp: "+34 971 72 66 11",
   email: "info@sctm.es",
   website: "",
   schedule: "Lunes a Viernes: 09:00 - 18:30 | Sábado y Domingo: Cerrado",

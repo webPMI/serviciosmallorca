@@ -27,7 +27,6 @@ export const llibreria_drac_magic_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:premium", "mod:en-local", "aud:familias"],
   phone: "+34 971 71 89 57",
-  whatsapp: "+34 971 71 89 57",
   email: "info@dracmagic.com",
   website: "https://dracmagic.com",
   schedule: "Lunes a Viernes: 10:00 - 13:30, 16:30 - 20:00 | Sábado: 10:00 - 14:00 | Domingo: Cerrado",

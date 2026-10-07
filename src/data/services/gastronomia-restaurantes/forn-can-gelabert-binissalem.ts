@@ -18,7 +18,6 @@ export const fornCanGelabertBinissalem: ServiceItem = {
   address: "Carrer de la Creu, 14, 07350 Binissalem (Es Raiguer), Illes Balears",
   zone: "raiguer-pla",
   phone: "+34 971 51 12 30",
-  whatsapp: "+34 971 51 12 30",
   email: "info@forncangelabert.com",
   website: "",
   coordinates: { lat: 39.689, lng: 2.843 },

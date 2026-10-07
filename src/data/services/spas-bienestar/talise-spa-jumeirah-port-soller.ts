@@ -24,7 +24,6 @@ export const talise_spa_jumeirah_port_soller: ServiceItem = {
   status: "open",
   tags: ["zona:soller"],
   phone: "+34 971 637 888",
-  whatsapp: "+34 971 637 888",
   email: "info@jumeirah.com",
   website: "https://jumeirah.com/port-soller-talise-spa",
   schedule: "Lunes a Domingo: 08:00 - 20:00",

@@ -18,7 +18,6 @@ export const bensDavall: ServiceItem = {
   address: "Ctra. de Deyá, km 56, 07100 Sóller, Illes Balears",
   zone: "tramuntana",
   phone: "+34 971 63 23 81",
-  whatsapp: "+34 971 63 23 81",
   email: "reservas@bensdavall.com",
   website: "https://bensdavall.com",
   coordinates: { lat: 39.7712, lng: 2.6734 },

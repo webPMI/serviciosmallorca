@@ -24,7 +24,6 @@ export const can_alomar_urban_spa_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma-centro"],
   phone: "+34 871 592 002",
-  whatsapp: "+34 871 592 002",
   email: "info@boutiquehotelcanalomar.com",
   website: "https://boutiquehotelcanalomar.com/spa",
   schedule: "Lunes a Domingo: 08:00 - 20:00",

@@ -131,8 +131,6 @@ export const urbanSoulTattoo: ServiceItem = {
   image: "/images/services/urban-soul-tattoo.jpg",
   gallery: [
     "/images/services/urban-soul-tattoo.jpg",
-    "/images/services/box-tattoo-piercing.jpg",
-    "/images/services/electric-tattoo-palma.jpg",
   ],
   phone: "+34 603 60 24 80",
   whatsapp: "+34603602480",

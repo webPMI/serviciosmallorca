@@ -198,7 +198,6 @@ export const caNaToneta: ServiceItem = {
   ],
   authorityProfiles: [],
   phone: "+34 971 51 52 26",
-  whatsapp: "+34 971 51 52 26",
   email: "info@canatoneta.com",
   website: "https://canatoneta.com",
   tags: [

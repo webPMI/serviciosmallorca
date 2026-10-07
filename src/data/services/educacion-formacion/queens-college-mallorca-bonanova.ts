@@ -27,7 +27,6 @@ export const queens_college_mallorca_bonanova: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:lujo", "mod:en-local", "aud:familias"],
   phone: "+34 971 40 10 11",
-  whatsapp: "+34 971 40 10 11",
   email: "info@queenscollege.es",
   website: "https://queenscollege.es",
   schedule: "Lunes a Viernes: 08:30 - 16:30 | Sábado y Domingo: Cerrado",

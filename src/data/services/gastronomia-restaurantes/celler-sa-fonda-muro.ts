@@ -25,7 +25,6 @@ export const cellerSaFondaMuro: ServiceItem = {
   targetAudience: ["residentes", "turistas", "familias", "grupos", "amantes de la cocina tradicional"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 53 79 65",
-  whatsapp: "+34 971 53 79 65",
   email: "info@safondamuro.com",
   website: "",
   menuUrl: "https://www.safondamuro.com",

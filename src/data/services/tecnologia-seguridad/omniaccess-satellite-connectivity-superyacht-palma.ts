@@ -27,7 +27,6 @@ export const omniaccess_satellite_connectivity_superyacht_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:lujo", "mod:cita-previa", "aud:b2b"],
   phone: "+34 971 221 979",
-  whatsapp: "+34 971 221 979",
   email: "info@omniaccess.com",
   website: "https://omniaccess.com",
   schedule: "Lunes a Viernes: 08:30 - 17:30 (Soporte NOC 24/7)",

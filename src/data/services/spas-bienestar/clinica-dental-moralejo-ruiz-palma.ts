@@ -24,7 +24,6 @@ export const clinica_dental_moralejo_ruiz_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma-centro"],
   phone: "+34 971 713 030",
-  whatsapp: "+34 971 713 030",
   email: "info@moralejoyruiz.com",
   website: "",
   schedule: "Lunes a Domingo: 08:00 - 20:00",

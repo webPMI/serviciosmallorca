@@ -79,7 +79,6 @@ export const melchorMascaroConstrucciones: ServiceItem = {
   image: "/images/services/melchor-mascaro-construcciones.jpg",
   gallery: ["/images/services/melchor-mascaro-construcciones.jpg"],
   phone: "+34 971 90 01 89",
-  whatsapp: "+34 971 90 01 89",
   website: "https://www.melchormascaro.com",
   email: "info@melchormascaro.com",
   webAccessibility: "active",

@@ -27,7 +27,6 @@ export const ceramica_sa_roca_llisa_portol: ServiceItem = {
   status: "open",
   tags: ["zona:raiguer-pla", "product:premium", "mod:en-local", "aud:familias"],
   phone: "+34 971 60 12 70",
-  whatsapp: "+34 971 60 12 70",
   email: "info@sarocallisa.com",
   website: "https://sarocallisa.com",
   schedule: "Lunes a Viernes: 08:00 - 13:00, 15:00 - 19:00",

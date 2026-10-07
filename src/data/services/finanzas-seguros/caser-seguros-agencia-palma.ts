@@ -27,7 +27,6 @@ export const caser_seguros_agencia_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma-centro", "product:accesible", "mod:en-local", "aud:familias"],
   phone: "+34 971 72 30 00",
-  whatsapp: "+34 971 72 30 00",
   email: "info@caser.es",
   website: "https://caser.es",
   schedule: "Lunes a Viernes: 09:00 - 18:00",

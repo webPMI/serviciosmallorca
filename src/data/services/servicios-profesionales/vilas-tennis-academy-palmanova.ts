@@ -79,7 +79,6 @@ export const vilasTennisAcademyPalmanova: ServiceItem = {
   image: "/images/services/vilas-tennis-academy-palmanova.jpg",
   gallery: ["/images/services/vilas-tennis-academy-palmanova.jpg"],
   phone: "+34 971 68 15 40",
-  whatsapp: "+34971681540",
   website: "https://vilastennisacademy.com",
   email: "info@vilastennisacademy.com",
   webAccessibility: "active",

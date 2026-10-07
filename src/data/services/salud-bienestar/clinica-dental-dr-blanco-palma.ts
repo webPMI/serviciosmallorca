@@ -27,7 +27,6 @@ export const clinica_dental_dr_blanco_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:premium", "mod:cita-previa", "aud:familias"],
   phone: "+34 971 72 36 26",
-  whatsapp: "+34 971 72 36 26",
   email: "info@clinicadentaldrblanco.com",
   website: "https://clinicadentaldrblanco.com",
   schedule: "Lunes a Viernes de 09:00 a 20:00",

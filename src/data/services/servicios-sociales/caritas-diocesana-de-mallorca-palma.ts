@@ -27,7 +27,6 @@ export const caritas_diocesana_de_mallorca_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma-centro", "product:accesible", "mod:en-local", "aud:familias"],
   phone: "+34 971 71 00 70",
-  whatsapp: "+34 971 71 00 70",
   email: "info@caritasmallorca.org",
   website: "https://caritasmallorca.org",
   schedule: "Lunes a Viernes: 08:30 - 14:30",

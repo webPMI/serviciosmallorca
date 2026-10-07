@@ -25,7 +25,6 @@ export const cellerBarRandaAlgaida: ServiceItem = {
   targetAudience: ["residentes", "turistas", "familias", "ciclistas", "amantes de la cocina tradicional"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 66 09 89",
-  whatsapp: "+34 971 66 09 89",
   email: "info@cellerderanda.com",
   website: "https://www.cellerderanda.com",
   menuUrl: "https://www.cellerderanda.com",

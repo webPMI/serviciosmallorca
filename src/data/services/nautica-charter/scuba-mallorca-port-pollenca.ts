@@ -79,7 +79,6 @@ export const scubaMallorcaPortPollenca: ServiceItem = {
   image: "/images/services/scuba-mallorca-port-pollenca.jpg",
   gallery: ["/images/services/scuba-mallorca-port-pollenca.jpg"],
   phone: "+34 971 86 80 87",
-  whatsapp: "+34971868087",
   website: "https://scubamallorca.com",
   email: "info@scubamallorca.com",
   webAccessibility: "active",

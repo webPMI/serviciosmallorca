@@ -14,7 +14,6 @@ export const galeriaBaroService: ServiceItem = {
     lng: 2.6481,
   },
   phone: "+34971428512",
-  whatsapp: "+34971428512",
   email: "info@barogaleria.com",
   website: "https://barogaleria.com",
   rating: 4.8,

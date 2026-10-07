@@ -27,7 +27,6 @@ export const ebro_jardi_garden_center_inca: ServiceItem = {
   status: "open",
   tags: ["zona:inca", "product:premium", "mod:en-local", "aud:familias"],
   phone: "+34 971 88 02 11",
-  whatsapp: "+34 971 88 02 11",
   email: "info@ebrojardi.com",
   website: "",
   schedule: "Lunes a Sábado: 08:30 - 19:30 | Domingo: 09:30 - 14:00",

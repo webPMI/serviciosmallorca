@@ -104,7 +104,6 @@ export const mercatSantaCatalinaPalma: ServiceItem = {
   ],
   authorityProfiles: [],
   phone: "+34 971 730 710",
-  whatsapp: "+34 971 730 710",
   website: "https://mercatdesantacatalina.com",
   email: "info@mercatdesantacatalina.com",
   webAccessibility: "active",

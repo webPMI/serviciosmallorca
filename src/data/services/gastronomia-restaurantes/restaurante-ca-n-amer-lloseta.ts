@@ -25,7 +25,6 @@ export const restauranteCaNAmerLloseta: ServiceItem = {
   targetAudience: ["residentes", "turistas", "familias", "gourmets", "amantes de la cocina tradicional"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 50 12 61",
-  whatsapp: "+34 971 50 12 61",
   email: "info@celler-canamer.es",
   website: "https://www.celler-canamer.es",
   menuUrl: "https://www.celler-canamer.es",

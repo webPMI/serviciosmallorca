@@ -3,7 +3,7 @@ import { centroVeterinarioPortalsNous } from "./centro-veterinario-portals-nous.
 import { clinica_veterinaria_alcudia } from "./clinica-veterinaria-alcudia.ts";
 import { clinica_veterinaria_algaida_raiguer_pla } from "./clinica-veterinaria-algaida-raiguer-pla.ts";
 import { clinica_veterinaria_felanitx } from "./clinica-veterinaria-felanitx.ts";
-import { clinica_veterinaria_hospital_llevant_manacor } from "./clinica-veterinaria-hospital-llevant-manacor.ts";
+import { hospitalVeterinariMallorcaVeterinarisManacor } from "./clinica-veterinaria-hospital-llevant-manacor.ts";
 import { clinica_veterinaria_manacor_dr_riera } from "./clinica-veterinaria-manacor-dr-riera.ts";
 import { clinica_veterinaria_mediterranea_santa_catalina } from "./clinica-veterinaria-mediterranea-santa-catalina.ts";
 import { clinica_veterinaria_pollensa } from "./clinica-veterinaria-pollensa.ts";
@@ -13,9 +13,7 @@ import { clinicaVeterinariaSollerTramuntana } from "./clinica-veterinaria-soller
 import { clinica_veterinaria_son_dureta_palma_24h } from "./clinica-veterinaria-son-dureta-palma-24h.ts";
 import { clinica_veterinaria_son_veri_llucmajor } from "./clinica-veterinaria-son-veri-llucmajor.ts";
 import { fincaCanPaulinoDogResortLlucmajor } from "./finca-can-paulino-dog-resort-llucmajor.ts";
-import { hospital_veterinari_llevant_manacor_24h } from "./hospital-veterinari-llevant-manacor-24h.ts";
 import { hospitalVeterinarioAragoPalma } from "./hospital-veterinario-arago-palma.ts";
-import { hospital_veterinario_aragon_palma_24h } from "./hospital-veterinario-aragon-palma-24h.ts";
 import { hospitalVeterinarioCanisMallorca } from "./hospital-veterinario-canis-mallorca.ts";
 import { hotel_canino_felino_es_garrover_marratxi } from "./hotel-canino-felino-es-garrover-marratxi.ts";
 import { residencia_canina_son_fangos_campos } from "./residencia-canina-son-fangos-campos.ts";
@@ -25,7 +23,7 @@ export { centroVeterinarioPortalsNous } from "./centro-veterinario-portals-nous.
 export { clinica_veterinaria_alcudia } from "./clinica-veterinaria-alcudia.ts";
 export { clinica_veterinaria_algaida_raiguer_pla } from "./clinica-veterinaria-algaida-raiguer-pla.ts";
 export { clinica_veterinaria_felanitx } from "./clinica-veterinaria-felanitx.ts";
-export { clinica_veterinaria_hospital_llevant_manacor } from "./clinica-veterinaria-hospital-llevant-manacor.ts";
+export { hospitalVeterinariMallorcaVeterinarisManacor } from "./clinica-veterinaria-hospital-llevant-manacor.ts";
 export { clinica_veterinaria_manacor_dr_riera } from "./clinica-veterinaria-manacor-dr-riera.ts";
 export { clinica_veterinaria_mediterranea_santa_catalina } from "./clinica-veterinaria-mediterranea-santa-catalina.ts";
 export { clinica_veterinaria_pollensa } from "./clinica-veterinaria-pollensa.ts";
@@ -35,9 +33,7 @@ export { clinicaVeterinariaSollerTramuntana } from "./clinica-veterinaria-soller
 export { clinica_veterinaria_son_dureta_palma_24h } from "./clinica-veterinaria-son-dureta-palma-24h.ts";
 export { clinica_veterinaria_son_veri_llucmajor } from "./clinica-veterinaria-son-veri-llucmajor.ts";
 export { fincaCanPaulinoDogResortLlucmajor } from "./finca-can-paulino-dog-resort-llucmajor.ts";
-export { hospital_veterinari_llevant_manacor_24h } from "./hospital-veterinari-llevant-manacor-24h.ts";
 export { hospitalVeterinarioAragoPalma } from "./hospital-veterinario-arago-palma.ts";
-export { hospital_veterinario_aragon_palma_24h } from "./hospital-veterinario-aragon-palma-24h.ts";
 export { hospitalVeterinarioCanisMallorca } from "./hospital-veterinario-canis-mallorca.ts";
 export { hotel_canino_felino_es_garrover_marratxi } from "./hotel-canino-felino-es-garrover-marratxi.ts";
 export { residencia_canina_son_fangos_campos } from "./residencia-canina-son-fangos-campos.ts";
@@ -48,7 +44,7 @@ export const MASCOTAS_SERVICES: ServiceItem[] = [
   clinica_veterinaria_alcudia,
   clinica_veterinaria_algaida_raiguer_pla,
   clinica_veterinaria_felanitx,
-  clinica_veterinaria_hospital_llevant_manacor,
+  hospitalVeterinariMallorcaVeterinarisManacor,
   clinica_veterinaria_manacor_dr_riera,
   clinica_veterinaria_mediterranea_santa_catalina,
   clinica_veterinaria_pollensa,
@@ -58,11 +54,10 @@ export const MASCOTAS_SERVICES: ServiceItem[] = [
   clinica_veterinaria_son_dureta_palma_24h,
   clinica_veterinaria_son_veri_llucmajor,
   fincaCanPaulinoDogResortLlucmajor,
-  hospital_veterinari_llevant_manacor_24h,
   hospitalVeterinarioAragoPalma,
-  hospital_veterinario_aragon_palma_24h,
   hospitalVeterinarioCanisMallorca,
   hotel_canino_felino_es_garrover_marratxi,
   residencia_canina_son_fangos_campos,
   residencia_canina_son_gual_palma,
 ];
+

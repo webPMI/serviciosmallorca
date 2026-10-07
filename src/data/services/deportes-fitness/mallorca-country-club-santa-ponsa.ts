@@ -27,7 +27,6 @@ export const mallorca_country_club_santa_ponsa: ServiceItem = {
   status: "open",
   tags: ["zona:santa-ponsa", "product:lujo", "mod:en-local", "aud:expat"],
   phone: "+34 971 69 01 22",
-  whatsapp: "+34 971 69 01 22",
   email: "info@mallorcacountryclub.com",
   website: "https://mallorcacountryclub.com",
   schedule: "Lunes a Domingo: 07:30 - 22:00",

@@ -24,7 +24,6 @@ export const MALLORCA_BIKE_HIRE_PORT_POLLENSA: ServiceItem = {
   status: "open",
   tags: ["product:cicloturismo-carretera", "zona:port-de-pollenca"],
   phone: "+34 971 866 544",
-  whatsapp: "+34 971 866 544",
   email: "info@mallorcabikehire.com",
   website: "https://mallorcabikehire.com",
   schedule: "Lunes a Domingo: 08:00 - 22:00",

@@ -27,7 +27,6 @@ export const fundacio_patronat_obrer_sant_josep_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:accesible", "mod:en-local", "aud:seniors"],
   phone: "+34 971 72 26 40",
-  whatsapp: "+34 971 72 26 40",
   email: "info@patronatobrer.org",
   website: "",
   schedule: "Lunes a Viernes de 08:30 a 17:00",

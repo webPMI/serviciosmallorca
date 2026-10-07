@@ -25,7 +25,6 @@ export const cellerSaPlacaLloseta: ServiceItem = {
   targetAudience: ["residentes", "turistas", "familias", "grupos", "amantes de la cocina tradicional"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 51 41 30",
-  whatsapp: "+34 971 51 41 30",
   email: "info@cellersaplaca.com",
   website: "",
   menuUrl: "https://www.cellersaplaca.com",

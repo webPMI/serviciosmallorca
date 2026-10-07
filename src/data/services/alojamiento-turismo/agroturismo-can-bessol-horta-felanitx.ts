@@ -27,7 +27,6 @@ export const agroturismo_can_bessol_horta_felanitx: ServiceItem = {
   status: "open",
   tags: ["zona:felanitx", "product:familiar", "mod:en-local", "aud:familias"],
   phone: "+34 971 83 70 80",
-  whatsapp: "+34 971 83 70 80",
   email: "info@canbessol.com",
   website: "https://canbessol.com",
   schedule: "Lunes a Domingo: 08:00 - 22:00",

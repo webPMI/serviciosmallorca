@@ -27,7 +27,6 @@ export const fronda_garden_center_mallorca_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:accesible", "mod:walk-in", "aud:familias"],
   phone: "+34 971 278 800",
-  whatsapp: "+34 971 278 800",
   email: "info@www.fronda.com",
   website: "https://www.fronda.com",
   schedule: "Lunes a Sábado: 09:30 - 20:30, Domingo: 10:00 - 14:30",

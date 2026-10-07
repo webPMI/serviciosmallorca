@@ -27,7 +27,6 @@ export const mel_vallespir_artesania_apicola_maria_de_la_salut: ServiceItem = {
   status: "open",
   tags: ["zona:raiguer-pla", "product:premium", "mod:en-local", "aud:familias"],
   phone: "+34 971 85 50 20",
-  whatsapp: "+34 971 85 50 20",
   email: "info@melvallespir.com",
   website: "",
   schedule: "Lunes a Sábado: 09:00 - 13:30, 16:30 - 20:00",

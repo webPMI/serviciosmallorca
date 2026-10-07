@@ -27,7 +27,6 @@ export const rentokil_initial_mallorca_control_plagas: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:premium", "mod:a-domicilio"],
   phone: "+34 971 431 100",
-  whatsapp: "+34 971 431 100",
   email: "info@www.rentokil.com",
   website: "https://www.rentokil.com/es/",
   schedule: "Lunes a Viernes: 08:00 - 18:30 (Urgencias 24h)",

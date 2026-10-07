@@ -14,7 +14,6 @@ export const galeriaMaiorService: ServiceItem = {
     lng: 3.0163,
   },
   phone: "+34971530095",
-  whatsapp: "+34971530095",
   email: "pollenca@galeriamaior.es",
   website: "https://www.galeriamaior.es",
   rating: 4.7,

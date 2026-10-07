@@ -25,7 +25,6 @@ export const cellerSonToreoSineu: ServiceItem = {
   targetAudience: ["residentes", "turistas", "familias", "grupos", "amantes de la historia"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 52 01 38",
-  whatsapp: "+34 971 52 01 38",
   email: "info@cellersontoreo.com",
   website: "",
   menuUrl: "https://www.cellersontoreo.com",

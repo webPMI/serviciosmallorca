@@ -25,7 +25,6 @@ export const restauranteMarIVentBanyalbufar: ServiceItem = {
   targetAudience: ["residentes", "turistas", "parejas", "amantes de la naturaleza", "gourmets"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 61 81 74",
-  whatsapp: "+34 971 61 81 74",
   email: "info@hotelmarivent.com",
   website: "https://www.hotelmarivent.com",
   menuUrl: "https://www.hotelmarivent.com",

@@ -79,7 +79,6 @@ export const megasportCentrePalma: ServiceItem = {
   image: "/images/services/megasport-centre-palma.jpg",
   gallery: ["/images/services/megasport-centre-palma.jpg"],
   phone: "+34 971 76 33 33",
-  whatsapp: "+34971763333",
   website: "https://megasportcentre.com",
   email: "info@megasportcentre.com",
   webAccessibility: "active",

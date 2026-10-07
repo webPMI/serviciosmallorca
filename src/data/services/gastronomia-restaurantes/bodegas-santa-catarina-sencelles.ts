@@ -25,7 +25,6 @@ export const bodegasSantaCatarinaSencelles: ServiceItem = {
   targetAudience: ["residentes", "turistas", "parejas", "gourmets", "amantes del vino"],
   languagesSpoken: ["es", "ca", "en", "de", "sv"],
   phone: "+34 971 13 71 15",
-  whatsapp: "+34 971 13 71 15",
   email: "enoturismo@bodegasantacatarina.com",
   website: "https://www.bodegasantacatarina.com",
   menuUrl: "https://www.bodegasantacatarina.com",

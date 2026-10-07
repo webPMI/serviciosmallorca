@@ -25,7 +25,6 @@ export const restauranteCnPortocolom: ServiceItem = {
   targetAudience: ["residentes", "turistas", "familias", "parejas", "nauticos"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 82 46 90",
-  whatsapp: "+34 971 82 46 90",
   email: "info@cnportocolom.com",
   website: "",
   menuUrl: "https://www.restauranteclubnauticoportocolom.com",

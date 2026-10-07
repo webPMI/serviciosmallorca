@@ -25,7 +25,6 @@ export const cellerSaSiniSantaMaria: ServiceItem = {
   targetAudience: ["residentes", "turistas", "familias", "grupos", "amantes de la repostería casera"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 62 02 52",
-  whatsapp: "+34 971 62 02 52",
   email: "info@cellersasini.net",
   website: "https://cellersasini.net",
   menuUrl: "https://cellersasini.net",

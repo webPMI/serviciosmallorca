@@ -27,7 +27,6 @@ export const yanko_calzado_artesanal_inca: ServiceItem = {
   status: "open",
   tags: ["zona:inca", "product:lujo", "mod:en-local", "aud:expat"],
   phone: "+34 971 50 10 50",
-  whatsapp: "+34 971 50 10 50",
   email: "info@yanko.com",
   website: "https://yanko.com",
   schedule: "Lunes a Viernes: 09:30 - 13:30, 16:00 - 19:30",

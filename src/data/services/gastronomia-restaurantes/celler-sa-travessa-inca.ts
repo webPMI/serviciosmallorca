@@ -79,7 +79,6 @@ export const cellerSaTravessaInca: ServiceItem = {
   image: "/images/services/celler-sa-travessa-inca.jpg",
   gallery: ["/images/services/celler-sa-travessa-inca.jpg"],
   phone: "+34 971 50 00 49",
-  whatsapp: "+34971500049",
   website: "",
   email: "info@satravessa-inca.com",
   webAccessibility: "active",

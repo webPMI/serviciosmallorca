@@ -27,7 +27,6 @@ export const formatges_es_pinaro_de_ses_mines_lloseta: ServiceItem = {
   status: "open",
   tags: ["zona:lloseta", "product:premium", "mod:walk-in", "aud:familias"],
   phone: "+34 971 514 820",
-  whatsapp: "+34 971 514 820",
   email: "info@espinarodesesmines.com",
   website: "",
   schedule: "Lunes a Sábado: 09:30 - 13:30",

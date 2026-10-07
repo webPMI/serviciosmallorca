@@ -27,7 +27,6 @@ export const gestoria_asesoria_marroig_palma_fiscal_laboral: ServiceItem = {
   status: "open",
   tags: ["zona:palma-centro", "product:accesible", "mod:cita-previa"],
   phone: "+34 971 72 82 10",
-  whatsapp: "+34 971 72 82 10",
   email: "info@palmasesores.com",
   website: "",
   schedule: "Lunes a Viernes: 08:30 - 15:00 (Cita previa para consultas complejas)",

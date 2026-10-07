@@ -27,7 +27,6 @@ export const clinica_veterinaria_manacor_dr_riera: ServiceItem = {
   status: "open",
   tags: ["zona:manacor", "product:premium", "mod:en-local", "aud:familias"],
   phone: "+34 971 55 40 88",
-  whatsapp: "+34 971 55 40 88",
   email: "info@veterinariamanacor.com",
   website: "",
   schedule: "Lunes a Viernes: 09:00 - 13:30, 16:30 - 20:00 | Sábado: 09:30 - 13:00 | Domingo: Cerrado",

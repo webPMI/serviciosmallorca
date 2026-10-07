@@ -27,7 +27,6 @@ export const hotel_canino_felino_es_garrover_marratxi: ServiceItem = {
   status: "open",
   tags: ["zona:raiguer-pla", "product:accesible", "mod:cita-previa"],
   phone: "+34 971 790 120",
-  whatsapp: "+34 971 790 120",
   email: "info@esgarrovermascotas.es",
   website: "",
   schedule: "Lunes a Sábado: 09:00 - 13:00 y 16:30 - 19:30; Domingo: 10:00 - 13:00",

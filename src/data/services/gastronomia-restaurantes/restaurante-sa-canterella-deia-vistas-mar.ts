@@ -27,7 +27,6 @@ export const restaurante_sa_canterella_deia_vistas_mar: ServiceItem = {
   status: "open",
   tags: ["zona:tramuntana", "product:cocina-mediterranea", "mod:cita-previa"],
   phone: "+34 971 636 104",
-  whatsapp: "+34 971 636 104",
   email: "info@sacanterelladeia.es",
   website: "",
   schedule: "Diario: 13:00 - 16:00 y 19:30 - 23:00 (Abril – Octubre)",

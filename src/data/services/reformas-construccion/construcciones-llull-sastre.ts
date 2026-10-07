@@ -18,7 +18,6 @@ export const construccionesLlullSastre: ServiceItem = {
   address: "Carrer del Gremi de Sabaters, 21, 07009 Palma, Illes Balears (Polígono Son Castelló)",
   zone: "palma",
   phone: "+34 971 43 14 00",
-  whatsapp: "+34 971 43 14 00",
   email: "info@llullsastre.com",
   website: "https://llullsastre.com",
   coordinates: { lat: 39.6042, lng: 2.6735 },

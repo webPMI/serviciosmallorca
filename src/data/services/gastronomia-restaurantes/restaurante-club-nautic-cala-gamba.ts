@@ -25,7 +25,6 @@ export const restauranteClubNauticCalaGamba: ServiceItem = {
   targetAudience: ["residentes", "turistas", "familias", "parejas", "amantes del marisco"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 26 18 49",
-  whatsapp: "+34 971 26 18 49",
   email: "info@cncg.es",
   website: "https://www.cncg.es",
   menuUrl: "https://www.cncg.es",

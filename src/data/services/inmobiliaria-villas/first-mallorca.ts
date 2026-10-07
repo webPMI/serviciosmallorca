@@ -18,7 +18,6 @@ export const firstMallorca: ServiceItem = {
   address: "Av. Tomás Blanes Tolosa, 4, 07181 Costa d'en Blanes, Calvià, Illes Balears",
   zone: "calvia-andratx",
   phone: "+34 971 67 94 44",
-  whatsapp: "+34 971 67 94 44",
   email: "info@firstmallorca.com",
   website: "https://www.firstmallorca.com",
   coordinates: {

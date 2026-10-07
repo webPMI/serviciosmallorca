@@ -27,7 +27,6 @@ export const hasso_rent_a_car_mallorca: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:accesible", "mod:en-local", "aud:familias"],
   phone: "+34 971 26 38 12",
-  whatsapp: "+34 971 26 38 12",
   email: "info@hasso.com",
   website: "https://hasso.com",
   schedule: "Lunes a Domingo de 07:00 a 23:00 (Servicio Aeropuerto)",

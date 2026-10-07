@@ -24,7 +24,6 @@ export const PISCINAS_OLIMPICAS_SON_HUGO_PALMA: ServiceItem = {
   status: "open",
   tags: ["product:polideportivo", "product:fitness-gym", "zona:palma-centro"],
   phone: "+34 971 764 100",
-  whatsapp: "+34 971 764 100",
   email: "info@ime.palma.cat",
   website: "https://ime.palma.cat/son-hugo",
   schedule: "Lunes a Domingo: 08:00 - 22:00",

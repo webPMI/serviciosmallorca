@@ -27,7 +27,6 @@ export const celler_son_sant_marti_muro_tradicional: ServiceItem = {
   status: "open",
   tags: ["zona:muro", "product:cocina-mallorquina", "mod:walk-in"],
   phone: "+34 971 537 440",
-  whatsapp: "+34 971 537 440",
   email: "info@sonsantmartimuro.es",
   website: "",
   schedule: "Martes a Domingo: 13:00 - 16:00 y 20:00 - 23:30",

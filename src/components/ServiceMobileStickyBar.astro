@@ -1,6 +1,7 @@
 ---
 import type { ServiceItem } from "../data/services/types";
 import type { Locale } from "../i18n";
+import { formatWhatsAppLink } from "../lib/whatsappUtils";
 
 interface Props {
   service: ServiceItem;
@@ -8,11 +9,6 @@ interface Props {
 }
 
 const { service, locale = "es" } = Astro.props;
-
-let cleanWhatsApp = service.whatsapp ? service.whatsapp.replace(/[^0-9]/g, "") : "";
-if (cleanWhatsApp.length === 9 && /^[6789]/.test(cleanWhatsApp)) {
-  cleanWhatsApp = "34" + cleanWhatsApp;
-}
 
 const cleanPhone = service.phone ? service.phone.replace(/[^0-9+]/g, "") : "";
 
@@ -23,16 +19,16 @@ const waTemplates: Record<Locale, string> = {
   de: `Hallo, ich habe ${service.name} auf Servicios Mallorca gesehen und möchte gerne Informationen anfragen.`,
 };
 
-const waText = encodeURIComponent(waTemplates[locale] || waTemplates.es);
+const waUrl = formatWhatsAppLink(service.whatsapp, waTemplates[locale] || waTemplates.es);
 ---
 
 {
-  (cleanWhatsApp || cleanPhone || service.website) && (
+  (waUrl || cleanPhone || service.website) && (
     <aside class="mobile-sticky-bar" aria-label="Acciones Rápidas Móvil">
       <div class="mobile-sticky-container">
-        {cleanWhatsApp ? (
+        {waUrl ? (
           <a
-            href={`https://wa.me/${cleanWhatsApp}?text=${waText}`}
+            href={waUrl}
             target="_blank"
             rel="noopener noreferrer"
             class="mobile-sticky-btn mobile-btn-whatsapp"

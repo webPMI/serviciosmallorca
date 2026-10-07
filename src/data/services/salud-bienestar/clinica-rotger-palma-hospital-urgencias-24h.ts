@@ -3,9 +3,10 @@ import type { ServiceItem } from "../types.ts";
 export const clinica_rotger_palma_hospital_urgencias_24h: ServiceItem = {
   id: "clinica-rotger-palma-hospital-urgencias-24h",
   slug: "clinica-rotger-palma-hospital-urgencias-24h",
-  name: "Clínica Rotger Centro Médico & Hospital Urgencias 24h Palma (Quirónsalud)",
+  name: "Clínica Rotger (Palma - Quirónsalud)",
   category: "salud-bienestar",
   sectorId: "salud-bienestar-belleza",
+
   subcategories: ["hospital-privado-palma", "urgencias-24h-palma", "especialidades-medicas-quironsalud"],
   zone: "palma",
   address: "Carrer de Santiago Rusiñol, 9, 07012 Palma",
@@ -27,7 +28,6 @@ export const clinica_rotger_palma_hospital_urgencias_24h: ServiceItem = {
   status: "open",
   tags: ["zona:palma-centro", "product:accesible", "mod:walk-in"],
   phone: "+34 971 448 500",
-  whatsapp: "+34 971 448 500",
   email: "info@clinicarotger.com",
   website: "https://clinicarotger.com",
   schedule: "Urgencias 24 horas / 365 días (Consultas externas: Lunes a Viernes 08:00 - 20:00)",

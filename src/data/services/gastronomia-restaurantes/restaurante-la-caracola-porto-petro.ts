@@ -25,7 +25,6 @@ export const restauranteLaCaracolaPortoPetro: ServiceItem = {
   targetAudience: ["residentes", "turistas", "familias", "parejas", "nauticos"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 65 72 05",
-  whatsapp: "+34 971 65 72 05",
   email: "info@lacaracolaportopetro.com",
   website: "https://lacaracolaportopetro.com",
   menuUrl: "https://lacaracolaportopetro.com",

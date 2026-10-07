@@ -27,7 +27,6 @@ export const pwc_baleares_asesores_auditores_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma-centro", "product:lujo", "mod:en-local", "aud:b2b"],
   phone: "+34 971 72 45 45",
-  whatsapp: "+34 971 72 45 45",
   email: "info@pwc.es",
   website: "https://pwc.es/es/oficinas/palma-de-mallorca.html",
   schedule: "Lunes a Viernes: 09:00 - 18:30",

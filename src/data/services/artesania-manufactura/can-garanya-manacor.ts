@@ -27,7 +27,6 @@ export const can_garanya_manacor: ServiceItem = {
   status: "open",
   tags: ["zona:manacor", "product:premium", "mod:en-local", "aud:familias"],
   phone: "+34 971 55 01 24",
-  whatsapp: "+34 971 55 01 24",
   email: "info@cangaranya.com",
   website: "https://cangaranya.com",
   schedule: "Lunes a Sábado: 09:30 - 13:30, 16:30 - 20:00",

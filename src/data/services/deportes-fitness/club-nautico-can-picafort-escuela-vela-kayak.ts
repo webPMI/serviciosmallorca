@@ -27,7 +27,6 @@ export const club_nautico_can_picafort_escuela_vela_kayak: ServiceItem = {
   status: "open",
   tags: ["zona:muro", "product:vela-ligera", "mod:cita-previa"],
   phone: "+34 971 850 012",
-  whatsapp: "+34 971 850 012",
   email: "info@cncanpicafort.com",
   website: "https://cncanpicafort.com/escuela-de-vela",
   schedule: "Diario: 08:30 - 20:30 (Abril a Octubre)",

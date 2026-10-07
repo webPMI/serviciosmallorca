@@ -152,7 +152,6 @@ export const puertoPortalsMarina: ServiceItem = {
     },
   ],
   phone: "+34 971 17 11 00",
-  whatsapp: "+34 971 17 11 00",
   email: "marina@puertoportals.com",
   website: "https://puertoportals.com",
   tags: [

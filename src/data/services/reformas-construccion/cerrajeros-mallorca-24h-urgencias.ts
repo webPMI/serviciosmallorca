@@ -3,9 +3,10 @@ import type { ServiceItem } from "../types.ts";
 export const cerrajeros_mallorca_24h_urgencias: ServiceItem = {
   id: "cerrajeros-mallorca-24h-urgencias",
   slug: "cerrajeros-mallorca-24h-urgencias",
-  name: "Cerrajeros Mallorca 24h Aperturas Urgentes & Seguridad",
+  name: "Cerrajeros Mallorca (Palma)",
   category: "reformas-hogar",
   sectorId: "construccion-reformas",
+
   subcategories: ["cerrajero-urgente-palma", "apertura-puertas-sin-romper", "cerraduras-seguridad-antibumping"],
   zone: "palma",
   address: "Carrer de Blanquerna, 30, 07003 Palma",
@@ -27,7 +28,6 @@ export const cerrajeros_mallorca_24h_urgencias: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:accesible", "mod:a-domicilio"],
   phone: "+34 971 719 800",
-  whatsapp: "+34 971 719 800",
   email: "info@cerrajerosmallorca24h.es",
   website: "https://cerrajerosmallorca24h.es",
   schedule: "Servicio de urgencias 24 horas / 365 días (Llegada en 25 min)",

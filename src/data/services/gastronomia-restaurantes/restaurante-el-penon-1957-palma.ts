@@ -25,7 +25,6 @@ export const restauranteElPenon1957Palma: ServiceItem = {
   targetAudience: ["residentes", "turistas", "familias", "parejas", "amantes de las puestas de sol"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 26 04 28",
-  whatsapp: "+34 971 26 04 28",
   email: "info@elpenon1957.com",
   website: "https://www.elpenon1957.com",
   menuUrl: "https://www.elpenon1957.com",

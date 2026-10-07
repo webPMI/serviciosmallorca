@@ -18,7 +18,6 @@ export const cellerCanMarron: ServiceItem = {
   address: "Carrer del Rector Rayó, 7, 07300 Inca (Es Raiguer), Illes Balears",
   zone: "raiguer-pla",
   phone: "+34 971 50 10 50",
-  whatsapp: "+34 971 50 10 50",
   email: "info@cellercanmarron.com",
   website: "",
   coordinates: { lat: 39.722, lng: 2.907 },

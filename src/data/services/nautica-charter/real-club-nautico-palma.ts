@@ -104,7 +104,6 @@ export const realClubNauticoPalma: ServiceItem = {
   ],
   authorityProfiles: [],
   phone: "+34 971 72 68 48",
-  whatsapp: "+34 971 72 68 48",
   email: "club@rcnp.es",
   website: "https://rcnp.es",
   webAccessibility: "active",

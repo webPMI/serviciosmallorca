@@ -27,7 +27,6 @@ export const basic_fit_palma_avenidas_gimnasio: ServiceItem = {
   status: "open",
   tags: ["zona:palma-centro", "product:accesible", "mod:walk-in"],
   phone: "+34 919 490 000",
-  whatsapp: "+34 919 490 000",
   email: "info@www.basic-fit.com",
   website: "https://www.basic-fit.com/es-es/gimnasios/palma-avenidas",
   schedule: "Lunes a Viernes: 06:00 - 22:30; Sábado y Domingo: 09:00 - 19:00",

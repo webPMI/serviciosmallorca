@@ -27,7 +27,6 @@ export const ametlla_de_mallorca_igp_santa_maria: ServiceItem = {
   status: "open",
   tags: ["zona:santa-maria-del-cami", "product:premium", "mod:en-local", "aud:familias"],
   phone: "+34 971 62 15 50",
-  whatsapp: "+34 971 62 15 50",
   email: "info@ametllademallorca.me",
   website: "",
   schedule: "Lunes a Viernes: 08:30 - 14:30",

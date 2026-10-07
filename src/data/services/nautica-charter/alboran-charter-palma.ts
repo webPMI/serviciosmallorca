@@ -27,7 +27,6 @@ export const alboran_charter_palma: ServiceItem = {
   status: "open",
   tags: ["zona:paseo-maritimo", "product:lujo", "mod:en-local", "aud:expat"],
   phone: "+34 971 45 41 87",
-  whatsapp: "+34 971 45 41 87",
   email: "info@alboran-charter.com",
   website: "https://alboran-charter.com",
   schedule: "Lunes a Domingo: 08:30 - 20:00",

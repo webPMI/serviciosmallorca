@@ -27,7 +27,6 @@ export const finca_son_roig_hotel_rural_porreres: ServiceItem = {
   status: "open",
   tags: ["zona:porreres", "product:premium", "mod:en-local", "aud:parejas"],
   phone: "+34 971 18 20 54",
-  whatsapp: "+34 971 18 20 54",
   email: "info@hotelsonroig.com",
   website: "https://sonroig.com",
   schedule: "Lunes a Domingo: 08:00 - 23:00",

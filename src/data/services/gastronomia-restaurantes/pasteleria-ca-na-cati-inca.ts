@@ -27,7 +27,6 @@ export const pasteleria_ca_na_cati_inca: ServiceItem = {
   status: "open",
   tags: ["zona:raiguer-pla", "product:traditional", "mod:walk-in"],
   phone: "+34 971 501 890",
-  whatsapp: "+34 971 501 890",
   email: "info@canacati.com",
   website: "https://canacati.com",
   schedule: "Martes a Sábado: 08:00 - 14:00 y 16:30 - 20:30; Domingo: 08:00 - 14:30",

@@ -27,7 +27,6 @@ export const teatre_principal_de_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:premium", "mod:en-local", "aud:familias"],
   phone: "+34 971 21 97 00",
-  whatsapp: "+34 971 21 97 00",
   email: "info@teatreprincipal.com",
   website: "https://teatreprincipal.com",
   schedule: "Martes a Sábado: taquilla 11:00 - 14:00, 17:00 - 20:00 | Funciones según cartelera",

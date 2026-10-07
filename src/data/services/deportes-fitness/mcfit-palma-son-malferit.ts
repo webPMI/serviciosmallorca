@@ -24,7 +24,6 @@ export const MCFIT_PALMA_SON_MALFERIT: ServiceItem = {
   status: "open",
   tags: ["product:fitness-gym", "zona:palma-centro"],
   phone: "+34 971 777 888",
-  whatsapp: "+34 971 777 888",
   email: "info@mcfit.com",
   website: "https://mcfit.com/son-malferit",
   schedule: "Lunes a Domingo: 08:00 - 22:00",

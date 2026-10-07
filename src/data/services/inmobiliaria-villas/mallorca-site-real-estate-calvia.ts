@@ -27,7 +27,6 @@ export const mallorca_site_real_estate_calvia: ServiceItem = {
   status: "open",
   tags: ["zona:calvia-andratx", "product:lujo", "mod:cita-previa", "aud:expat"],
   phone: "+34 971 71 21 65",
-  whatsapp: "+34 971 71 21 65",
   email: "info@mallorcasite.com",
   website: "https://mallorcasite.com",
   schedule: "Lunes a Viernes de 09:30 a 18:30",

@@ -27,7 +27,6 @@ export const botanic_jardins_paisatgisme_alaro: ServiceItem = {
   status: "open",
   tags: ["zona:raiguer-pla", "product:premium", "mod:a-domicilio", "aud:familias"],
   phone: "+34 971 51 04 88",
-  whatsapp: "+34 971 51 04 88",
   email: "info@botanicjardineria.com",
   website: "",
   schedule: "Lunes a Viernes de 07:30 a 16:30",

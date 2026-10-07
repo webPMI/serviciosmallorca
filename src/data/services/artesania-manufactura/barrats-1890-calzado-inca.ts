@@ -27,7 +27,6 @@ export const barrats_1890_calzado_inca: ServiceItem = {
   status: "open",
   tags: ["zona:raiguer-pla", "product:premium", "mod:walk-in"],
   phone: "+34 971 500 800",
-  whatsapp: "+34 971 500 800",
   email: "info@barrats1890.com",
   website: "https://barrats1890.com",
   schedule: "Lunes a Viernes: 09:30 - 19:30; Sábado: 10:00 - 14:00",

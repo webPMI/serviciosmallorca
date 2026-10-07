@@ -13,7 +13,6 @@ export const ribClubMallorcaService: ServiceItem = {
     lng: 2.5358,
   },
   phone: "+34971676600",
-  whatsapp: "+34971676600",
   email: "mallorca@ribclub.com",
   website: "https://www.ribclub.com",
   rating: 4.9,

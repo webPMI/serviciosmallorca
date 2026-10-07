@@ -27,7 +27,6 @@ export const big_blue_diving_mallorca_palmanova: ServiceItem = {
   status: "open",
   tags: ["zona:palmanova", "product:accesible", "mod:walk-in", "aud:familias"],
   phone: "+34 971 681 686",
-  whatsapp: "+34 971 681 686",
   email: "info@bigbluediving.net",
   website: "https://bigbluediving.net",
   schedule: "Lunes a Domingo: 08:30 - 18:30 (Abril a Noviembre)",

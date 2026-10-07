@@ -27,7 +27,6 @@ export const cuchilleria_ganivets_ordinas_llucmajor: ServiceItem = {
   status: "open",
   tags: ["zona:llucmajor", "product:premium", "mod:en-local", "aud:familias"],
   phone: "+34 971 66 04 12",
-  whatsapp: "+34 971 66 04 12",
   email: "info@ganivetsordinas.com",
   website: "",
   schedule: "Lunes a Viernes: 09:00 - 13:30, 16:30 - 19:30",

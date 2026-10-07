@@ -27,7 +27,6 @@ export const forn_santo_cristo_palma_ensaimadas: ServiceItem = {
   status: "open",
   tags: ["zona:casco-antiguo", "product:traditional", "mod:walk-in"],
   phone: "+34 971 715 373",
-  whatsapp: "+34 971 715 373",
   email: "info@www.ensaimadasantocristo.com",
   website: "https://www.hornosantocristo.com",
   schedule: "Lunes a Domingo: 08:30 - 20:30",

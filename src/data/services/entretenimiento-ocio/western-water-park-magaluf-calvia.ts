@@ -27,7 +27,6 @@ export const western_water_park_magaluf_calvia: ServiceItem = {
   status: "open",
   tags: ["zona:calvia-andratx", "product:familiar", "mod:walk-in"],
   phone: "+34 971 131 203",
-  whatsapp: "+34 971 131 203",
   email: "info@www.westernpark.com",
   website: "https://www.westernpark.com",
   schedule: "Diario: 10:00 - 18:00 (Mayo a Octubre)",

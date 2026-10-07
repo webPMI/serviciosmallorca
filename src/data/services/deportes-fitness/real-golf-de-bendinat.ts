@@ -24,7 +24,6 @@ export const REAL_GOLF_DE_BENDINAT: ServiceItem = {
   status: "open",
   tags: ["product:golf", "zona:santa-ponsa"],
   phone: "+34 971 405 200",
-  whatsapp: "+34 971 405 200",
   email: "info@realgolfbendinat.com",
   website: "https://realgolfbendinat.com",
   schedule: "Lunes a Domingo: 08:00 - 22:00",

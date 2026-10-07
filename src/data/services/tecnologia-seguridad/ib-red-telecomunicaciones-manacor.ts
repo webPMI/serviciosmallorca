@@ -27,7 +27,6 @@ export const ib_red_telecomunicaciones_manacor: ServiceItem = {
   status: "open",
   tags: ["zona:manacor", "product:accesible", "mod:en-local", "aud:familias"],
   phone: "+34 971 94 00 00",
-  whatsapp: "+34 971 94 00 00",
   email: "info@ib-red.com",
   website: "https://ib-red.com",
   schedule: "Lunes a Viernes: 09:00 - 14:00, 16:00 - 19:30 | Sábado: 09:30 - 13:00 | Domingo: Cerrado",

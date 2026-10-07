@@ -24,7 +24,6 @@ export const juaneda_international_medical_santa_ponsa: ServiceItem = {
   status: "open",
   tags: ["zona:santa-ponsa"],
   phone: "+34 971 694 200",
-  whatsapp: "+34 971 694 200",
   email: "info@juaneda.es",
   website: "https://juaneda.es/santa-ponsa",
   schedule: "Lunes a Domingo: 08:00 - 20:00",

@@ -27,7 +27,6 @@ export const galeria_horrach_moya_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:lujo", "mod:en-local", "aud:familias"],
   phone: "+34 971 72 85 85",
-  whatsapp: "+34 971 72 85 85",
   email: "info@horrachmoya.com",
   website: "https://horrachmoya.com",
   schedule: "Lunes a Viernes: 10:00 - 14:00, 16:30 - 20:00 | Sábado: 10:30 - 14:00 | Domingo: Cerrado",

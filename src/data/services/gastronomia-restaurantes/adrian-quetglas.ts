@@ -184,7 +184,6 @@ export const adrianQuetglas: ServiceItem = {
   ],
   authorityProfiles: [],
   phone: "+34 971 78 11 19",
-  whatsapp: "+34 971 78 11 19",
   email: "reservas@adrianquetglas.es",
   website: "https://adrianquetglas.es",
   tags: [

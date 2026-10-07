@@ -24,7 +24,6 @@ export const HUERZELER_BICYCLE_HOLIDAYS_PLAYA_MURO: ServiceItem = {
   status: "open",
   tags: ["product:cicloturismo-carretera", "zona:port-de-pollenca"],
   phone: "+34 971 890 000",
-  whatsapp: "+34 971 890 000",
   email: "info@huerzeler.com",
   website: "https://huerzeler.com/playa-de-muro",
   schedule: "Lunes a Domingo: 08:00 - 22:00",

@@ -25,7 +25,6 @@ export const bodegasVinsMiquelGelabert: ServiceItem = {
   targetAudience: ["residentes", "turistas", "parejas", "gourmets", "alemanes"],
   languagesSpoken: ["es", "ca", "de", "en"],
   phone: "+34 971 82 14 44",
-  whatsapp: "+34 971 82 14 44",
   email: "info@vinsmiquelgelabert.com",
   website: "https://vinsmiquelgelabert.com",
   menuUrl: "https://vinsmiquelgelabert.com",

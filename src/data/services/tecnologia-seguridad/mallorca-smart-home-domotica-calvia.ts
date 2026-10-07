@@ -27,7 +27,6 @@ export const mallorca_smart_home_domotica_calvia: ServiceItem = {
   status: "open",
   tags: ["zona:calvia-andratx", "product:lujo", "mod:cita-previa", "aud:b2b"],
   phone: "+34 971 69 77 15",
-  whatsapp: "+34 971 69 77 15",
   email: "projects@mallorcasmarthome.com",
   website: "https://mallorcasmarthome.com",
   schedule: "Lunes a Viernes de 09:00 a 18:00",

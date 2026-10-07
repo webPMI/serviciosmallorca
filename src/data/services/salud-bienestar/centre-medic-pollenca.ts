@@ -27,7 +27,6 @@ export const centre_medic_pollenca: ServiceItem = {
   status: "open",
   tags: ["zona:pollenca", "product:premium", "mod:en-local", "aud:familias"],
   phone: "+34 971 53 10 00",
-  whatsapp: "+34 971 53 10 00",
   email: "info@centremedicpollenca.com",
   website: "",
   schedule: "Lunes a Viernes: 08:00 - 20:00 | Sábado: 09:00 - 13:00 | Domingo: Cerrado",

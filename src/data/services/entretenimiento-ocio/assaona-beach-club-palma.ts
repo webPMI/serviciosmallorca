@@ -27,7 +27,6 @@ export const assaona_beach_club_palma: ServiceItem = {
   status: "open",
   tags: ["zona:portixol", "product:lujo", "mod:en-local", "aud:parejas"],
   phone: "+34 971 35 96 33",
-  whatsapp: "+34 971 35 96 33",
   email: "info@assaona.com",
   website: "https://assaona.com",
   schedule: "Lunes a Domingo: 10:00 - 23:30",

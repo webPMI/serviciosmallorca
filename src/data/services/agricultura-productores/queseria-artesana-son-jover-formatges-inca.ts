@@ -27,7 +27,6 @@ export const queseria_artesana_son_jover_formatges_inca: ServiceItem = {
   status: "open",
   tags: ["zona:inca", "product:enoturismo", "mod:en-local"],
   phone: "+34 971 504 120",
-  whatsapp: "+34 971 504 120",
   email: "info@formatgessonjover.es",
   website: "",
   schedule: "Lunes a Sábado: 09:00 - 14:00 y 16:30 - 19:30",

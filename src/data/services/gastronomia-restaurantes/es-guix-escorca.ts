@@ -25,7 +25,6 @@ export const esGuixEscorca: ServiceItem = {
   targetAudience: ["residentes", "turistas", "parejas", "familias", "gourmets"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 51 70 92",
-  whatsapp: "+34 971 51 70 92",
   email: "reservas@esguix.com",
   website: "https://esguix.com",
   menuUrl: "https://esguix.com",

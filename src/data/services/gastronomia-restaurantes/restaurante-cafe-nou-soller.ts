@@ -25,7 +25,6 @@ export const restauranteCafeNouSoller: ServiceItem = {
   targetAudience: ["residentes", "turistas", "familias", "amantes de la brasa", "grupos"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 63 00 04",
-  whatsapp: "+34 971 63 00 04",
   email: "info@cafenou.com",
   website: "https://cafenou.com",
   menuUrl: "https://cafenou.com",

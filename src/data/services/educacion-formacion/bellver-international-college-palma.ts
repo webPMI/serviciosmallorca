@@ -27,7 +27,6 @@ export const bellver_international_college_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:lujo", "mod:cita-previa"],
   phone: "+34 971 401 679",
-  whatsapp: "+34 971 401 679",
   email: "info@www.bellvercollege.com",
   website: "https://www.bellvercollege.com",
   schedule: "Lunes a Viernes: 08:30 - 16:30",

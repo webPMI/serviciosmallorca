@@ -24,7 +24,6 @@ export const clinica_dental_portals_nous_calvia: ServiceItem = {
   status: "open",
   tags: ["zona:santa-ponsa"],
   phone: "+34 971 676 000",
-  whatsapp: "+34 971 676 000",
   email: "info@dentalportals.com",
   website: "https://dentalportals.com",
   schedule: "Lunes a Domingo: 08:00 - 20:00",

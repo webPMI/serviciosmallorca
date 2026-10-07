@@ -18,7 +18,6 @@ export const fornCanPacoCampos: ServiceItem = {
   address: "Carrer de Convent, 22, 07630 Campos (Comarca de Migjorn), Illes Balears",
   zone: "santanyi-migjorn",
   phone: "+34 971 65 04 80",
-  whatsapp: "+34 971 65 04 80",
   email: "info@forncanpaco.com",
   website: "",
   coordinates: { lat: 39.431, lng: 3.018 },

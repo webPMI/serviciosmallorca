@@ -27,7 +27,6 @@ export const escola_oficial_idiomes_eoi_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:accesible", "mod:en-local", "aud:familias"],
   phone: "+34 971 42 13 14",
-  whatsapp: "+34 971 42 13 14",
   email: "info@eoipalma.com",
   website: "https://eoipalma.com",
   schedule: "Lunes a Viernes: 08:30 - 21:00 | Sábado y Domingo: Cerrado",

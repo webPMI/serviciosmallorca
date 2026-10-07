@@ -27,7 +27,6 @@ export const fundacio_respiralia_illes_balears_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:accesible", "mod:en-local", "aud:familias"],
   phone: "+34 971 40 15 96",
-  whatsapp: "+34 971 40 15 96",
   email: "info@respiralia.org",
   website: "https://respiralia.org",
   schedule: "Lunes a Viernes: 08:30 - 16:30 | Sábado y Domingo: Cerrado",

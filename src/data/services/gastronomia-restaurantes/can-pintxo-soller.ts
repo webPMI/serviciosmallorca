@@ -24,7 +24,6 @@ export const canPintxoSoller: ServiceItem = {
   targetAudience: ["residentes", "turistas", "parejas", "gourmets"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 63 16 43",
-  whatsapp: "+34 971 63 16 43",
   email: "info@canpintxo.com",
   website: "https://canpintxo.com",
   menuUrl: "https://canpintxo.com",

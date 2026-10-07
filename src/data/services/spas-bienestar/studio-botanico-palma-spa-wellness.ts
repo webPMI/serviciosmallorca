@@ -27,7 +27,6 @@ export const studio_botanico_palma_spa_wellness: ServiceItem = {
   status: "open",
   tags: ["zona:palma-centro", "product:premium", "mod:cita-previa"],
   phone: "+34 871 113 400",
-  whatsapp: "+34 871 113 400",
   email: "info@studiobotanicopalma.com",
   website: "",
   schedule: "Lunes a Sábado: 10:00 - 20:00",

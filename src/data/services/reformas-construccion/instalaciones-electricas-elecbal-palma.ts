@@ -27,7 +27,6 @@ export const instalaciones_electricas_elecbal_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:premium", "mod:a-domicilio", "aud:familias"],
   phone: "+34 971 43 21 00",
-  whatsapp: "+34 971 43 21 00",
   email: "info@elecbal.com",
   website: "https://elecbal.com",
   schedule: "Lunes a Viernes: 07:30 - 16:30",

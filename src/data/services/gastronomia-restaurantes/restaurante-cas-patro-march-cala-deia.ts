@@ -27,7 +27,6 @@ export const restaurante_cas_patro_march_cala_deia: ServiceItem = {
   status: "open",
   tags: ["zona:tramuntana", "product:premium", "mod:cita-previa"],
   phone: "+34 971 636 023",
-  whatsapp: "+34 971 636 023",
   email: "info@caspatromarch.es",
   website: "",
   schedule: "Diario: 12:30 - 18:00 (Mayo a Octubre)",

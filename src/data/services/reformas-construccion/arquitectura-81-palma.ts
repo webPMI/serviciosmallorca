@@ -18,7 +18,6 @@ export const arquitectura81Palma: ServiceItem = {
   address: "Carrer d'Alfons el Magnànim, 81, 07004 Palma, Illes Balears",
   zone: "palma",
   phone: "+34 971 75 81 81",
-  whatsapp: "+34 971 75 81 81",
   email: "estudio@a81.es",
   website: "https://a81.es",
   coordinates: { lat: 39.5824, lng: 2.6542 },

@@ -27,7 +27,6 @@ export const brujula_tecnologias_informacion_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:lujo", "mod:en-local", "aud:b2b"],
   phone: "+34 971 43 45 00",
-  whatsapp: "+34 971 43 45 00",
   email: "info@brujula.es",
   website: "https://brujula.es",
   schedule: "Lunes a Viernes: 08:30 - 18:30",

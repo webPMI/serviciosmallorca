@@ -27,7 +27,6 @@ export const axa_seguros_agencia_exclusiva_palma_jaime_iii: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:premium", "mod:en-local", "aud:expat"],
   phone: "+34 971 71 55 22",
-  whatsapp: "+34 971 71 55 22",
   email: "info@axa.es",
   website: "https://axa.es",
   schedule: "Lunes a Jueves: 09:00 - 18:30 | Viernes: 09:00 - 14:30 | Sábado y Domingo: Cerrado",

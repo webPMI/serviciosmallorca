@@ -27,7 +27,6 @@ export const lucie_hauri_real_estate_santanyi: ServiceItem = {
   status: "open",
   tags: ["zona:santanyi", "product:lujo", "mod:cita-previa", "aud:expat"],
   phone: "+34 971 825 062",
-  whatsapp: "+34 971 825 062",
   email: "info@lucie-hauri.com",
   website: "https://www.lucie-hauri.com",
   schedule: "Lunes a Viernes: 09:30 - 18:00",

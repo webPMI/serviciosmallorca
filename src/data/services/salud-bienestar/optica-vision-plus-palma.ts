@@ -24,7 +24,6 @@ export const optica_vision_plus_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma-centro", "product:premium", "mod:en-local"],
   phone: "+34 971 71 88 75",
-  whatsapp: "+34 971 71 88 75",
   email: "jaimeiii@generaloptica.es",
   website: "https://www.generaloptica.es",
   schedule: "Lunes a Sábado: 09:30 - 20:00",

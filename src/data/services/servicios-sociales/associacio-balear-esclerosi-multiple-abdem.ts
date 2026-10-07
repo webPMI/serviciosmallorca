@@ -27,7 +27,6 @@ export const associacio_balear_esclerosi_multiple_abdem: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:accesible", "mod:en-local", "aud:seniors"],
   phone: "+34 971 75 88 56",
-  whatsapp: "+34 971 75 88 56",
   email: "info@abdem.es",
   website: "https://abdem.es",
   schedule: "Lunes a Viernes: 08:00 - 16:30 | Sábado y Domingo: Cerrado",

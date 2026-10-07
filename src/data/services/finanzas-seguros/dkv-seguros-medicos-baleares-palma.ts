@@ -27,7 +27,6 @@ export const dkv_seguros_medicos_baleares_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:premium", "mod:cita-previa", "aud:expat"],
   phone: "+34 971 721 919",
-  whatsapp: "+34 971 721 919",
   email: "info@dkvseguros.com",
   website: "https://dkvseguros.com",
   schedule: "Lunes a Jueves: 09:00 - 18:00, Viernes: 09:00 - 15:00",

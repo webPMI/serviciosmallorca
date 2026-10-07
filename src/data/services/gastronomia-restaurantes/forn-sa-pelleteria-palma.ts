@@ -18,7 +18,6 @@ export const fornSaPelleteria: ServiceItem = {
   address: "Carrer de la Pelleteria, 4, 07001 Palma (Sa Calatrava - Casco Antiguo), Illes Balears",
   zone: "palma",
   phone: "+34 971 72 15 80",
-  whatsapp: "+34 971 72 15 80",
   email: "info@fornsapelleteria.com",
   website: "",
   coordinates: { lat: 39.5678, lng: 2.6535 },

@@ -27,7 +27,6 @@ export const aqualand_el_arenal_parque_acuatico: ServiceItem = {
   status: "open",
   tags: ["zona:santanyi-migjorn", "product:familiar", "mod:walk-in"],
   phone: "+34 971 440 000",
-  whatsapp: "+34 971 440 000",
   email: "info@www.aqualand.es",
   website: "https://www.aqualand.es/elarenal/",
   schedule: "Diario: 10:00 - 18:00 (Mayo a Octubre)",

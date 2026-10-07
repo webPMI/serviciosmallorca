@@ -27,7 +27,6 @@ export const banca_march_sede_central_palma_banca_privada: ServiceItem = {
   status: "open",
   tags: ["zona:palma-centro", "product:lujo", "mod:cita-previa"],
   phone: "+34 971 779 100",
-  whatsapp: "+34 971 779 100",
   email: "info@bancamarch.es",
   website: "https://bancamarch.es",
   schedule: "Lunes a Viernes: 08:30 - 14:00 (Gestión de Banca Privada con cita previa hasta 18:00)",

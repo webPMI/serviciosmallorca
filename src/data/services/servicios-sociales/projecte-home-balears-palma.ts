@@ -27,7 +27,6 @@ export const projecte_home_balears_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:accesible", "mod:en-local", "aud:familias"],
   phone: "+34 971 79 37 50",
-  whatsapp: "+34 971 79 37 50",
   email: "info@projectehomebalears.org",
   website: "https://projectehomebalears.org",
   schedule: "Lunes a Viernes: 08:30 - 19:30",

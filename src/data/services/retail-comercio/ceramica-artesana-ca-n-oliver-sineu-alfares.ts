@@ -27,7 +27,6 @@ export const ceramica_artesana_ca_n_oliver_sineu_alfares: ServiceItem = {
   status: "open",
   tags: ["zona:raiguer-pla", "product:ceramica-balear", "mod:walk-in"],
   phone: "+34 971 520 045",
-  whatsapp: "+34 971 520 045",
   email: "info@canoliversineu.es",
   website: "",
   schedule: "Lunes a Sábado: 09:30 - 13:30 y 16:30 - 20:00 (Miércoles todo el día por mercado)",

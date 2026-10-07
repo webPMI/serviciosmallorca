@@ -27,7 +27,6 @@ export const purobeach_illetas_calvia: ServiceItem = {
   status: "open",
   tags: ["zona:calvia-andratx", "product:lujo", "mod:en-local", "aud:expat"],
   phone: "+34 971 40 37 10",
-  whatsapp: "+34 971 40 37 10",
   email: "info@purobeach.com",
   website: "https://purobeach.com/es/beach-club-illetas",
   schedule: "Lunes a Domingo: 11:00 - 22:00 (Temporada de Abril a Octubre)",

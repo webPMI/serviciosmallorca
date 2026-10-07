@@ -14,7 +14,6 @@ export const museuSaBassaBlancaService: ServiceItem = {
     lng: 3.1681,
   },
   phone: "+34971546915",
-  whatsapp: "+34971546915",
   email: "visitas@msbb.org",
   website: "https://www.msbb.org",
   rating: 4.8,

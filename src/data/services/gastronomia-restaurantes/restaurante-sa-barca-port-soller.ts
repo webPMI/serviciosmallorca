@@ -25,7 +25,6 @@ export const restauranteSaBarcaPortSoller: ServiceItem = {
   targetAudience: ["residentes", "turistas", "parejas", "gourmets", "familias"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 63 99 43",
-  whatsapp: "+34 971 63 99 43",
   email: "info@sabarcarestaurant.com",
   website: "https://sabarcarestaurant.com",
   menuUrl: "https://sabarcarestaurant.com",

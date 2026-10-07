@@ -27,7 +27,6 @@ export const espacio_home_design_bisbe_campins_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:lujo", "mod:en-local", "aud:familias"],
   phone: "+34 971 72 27 50",
-  whatsapp: "+34 971 72 27 50",
   email: "info@espaciohomedesign.com",
   website: "https://espaciohomedesign.com",
   schedule: "Lunes a Viernes: 10:00 - 19:00 | Sábado: 10:30 - 14:00 | Domingo: Cerrado",

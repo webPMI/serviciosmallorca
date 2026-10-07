@@ -27,7 +27,6 @@ export const inmobiliaria_casas_mallorca_soller: ServiceItem = {
   status: "open",
   tags: ["zona:tramuntana", "product:lujo", "mod:en-local", "aud:expat"],
   phone: "+34 971 63 80 81",
-  whatsapp: "+34 971 63 80 81",
   email: "info@casasmallorca.com",
   website: "https://casasmallorca.com",
   schedule: "Lunes a Viernes: 09:30 - 18:00 | Sábado: 10:00 - 13:00 | Domingo: Cerrado",

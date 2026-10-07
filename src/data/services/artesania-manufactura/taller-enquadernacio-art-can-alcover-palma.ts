@@ -27,7 +27,6 @@ export const taller_enquadernacio_art_can_alcover_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:premium", "mod:en-local", "aud:familias"],
   phone: "+34 971 71 35 40",
-  whatsapp: "+34 971 71 35 40",
   email: "info@enquadernacio-alcover.com",
   website: "",
   schedule: "Lunes a Viernes: 09:00 - 13:30, 16:30 - 19:30 | Sábado y Domingo: Cerrado",

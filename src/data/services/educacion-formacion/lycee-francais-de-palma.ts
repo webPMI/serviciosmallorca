@@ -27,7 +27,6 @@ export const lycee_francais_de_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:lujo", "mod:cita-previa"],
   phone: "+34 971 772 375",
-  whatsapp: "+34 971 772 375",
   email: "info@lyceemallorca.com",
   website: "https://lfpalma.es",
   schedule: "Lunes a Viernes: 08:30 - 17:00",

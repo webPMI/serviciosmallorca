@@ -27,7 +27,6 @@ export const celler_bar_sa_penya_felanitx: ServiceItem = {
   status: "open",
   tags: ["zona:felanitx", "product:accesible", "mod:en-local", "aud:familias"],
   phone: "+34 971 58 05 45",
-  whatsapp: "+34 971 58 05 45",
   email: "info@sapenyafelanitx.com",
   website: "",
   schedule: "Lunes a Domingo: 06:30 - 22:00",

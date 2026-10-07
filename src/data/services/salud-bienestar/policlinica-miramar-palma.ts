@@ -27,7 +27,6 @@ export const policlinica_miramar_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:premium", "mod:en-local", "aud:familias"],
   phone: "+34 971 76 70 00",
-  whatsapp: "+34 971 76 70 00",
   email: "info@quironsalud.es",
   website: "https://quironsalud.es",
   schedule: "Lunes a Domingo: 24 Horas (Urgencias 24/7 y Hospitalización)",

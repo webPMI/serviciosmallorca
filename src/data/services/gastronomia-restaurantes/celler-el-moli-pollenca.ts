@@ -25,7 +25,6 @@ export const cellerElMoliPollenca: ServiceItem = {
   targetAudience: ["residentes", "turistas", "familias", "parejas", "amantes de la cocina tradicional"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 53 19 98",
-  whatsapp: "+34 971 53 19 98",
   email: "info@elmoli-pollenca.com",
   website: "",
   menuUrl: "https://www.elmoli-pollenca.com",

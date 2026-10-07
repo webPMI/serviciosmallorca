@@ -25,7 +25,6 @@ export const cellerSaVinyaBinissalem: ServiceItem = {
   targetAudience: ["residentes", "turistas", "familias", "grupos", "amantes de la cocina tradicional"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 51 13 73",
-  whatsapp: "+34 971 51 13 73",
   email: "info@cellersavinya.com",
   website: "",
   menuUrl: "https://www.cellersavinya.com",

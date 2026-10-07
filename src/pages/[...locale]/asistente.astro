@@ -408,7 +408,16 @@ const topCategories = CATEGORIES.slice(0, 12);
     }
 
     if (reqWhatsapp) {
-      filtered = filtered.filter((s) => Boolean(s.whatsapp));
+      filtered = filtered.filter((s) => {
+        if (!s.whatsapp) return false;
+        const w = s.whatsapp.replace(/[^0-9]/g, "");
+        return (
+          w.startsWith("346") ||
+          w.startsWith("347") ||
+          ((w.startsWith("6") || w.startsWith("7")) && w.length === 9) ||
+          (w.length >= 10 && !w.startsWith("349") && !w.startsWith("348") && !w.startsWith("9") && !w.startsWith("8"))
+        );
+      });
     }
 
     if (reqHistorical) {
@@ -456,8 +465,14 @@ const topCategories = CATEGORIES.slice(0, 12);
             const shortDesc = typeof desc === "string" ? desc.slice(0, 140) + "..." : "";
             const phone = s.phone || "";
             const cleanPhone = phone.replace(/[^0-9+]/g, "");
-            const whatsapp = s.whatsapp || phone;
-            const cleanWa = whatsapp.replace(/[^0-9]/g, "");
+            const waRaw = s.whatsapp ? s.whatsapp.replace(/[^0-9]/g, "") : "";
+            const isWaMobile =
+              waRaw.length >= 9 &&
+              (waRaw.startsWith("346") ||
+                waRaw.startsWith("347") ||
+                ((waRaw.startsWith("6") || waRaw.startsWith("7")) && waRaw.length === 9) ||
+                (waRaw.length >= 10 && !waRaw.startsWith("349") && !waRaw.startsWith("348") && !waRaw.startsWith("9") && !waRaw.startsWith("8")));
+            const cleanWa = isWaMobile ? (waRaw.length === 9 ? "34" + waRaw : waRaw) : null;
 
             return `
               <article class="match-card card hover-lift">
@@ -479,7 +494,7 @@ const topCategories = CATEGORIES.slice(0, 12);
                     👁️ ${currentLocale === "de" ? "Ficha" : currentLocale === "en" ? "View" : "Ver Ficha"}
                   </a>
                   ${
-                    whatsapp
+                    cleanWa
                       ? `<a href="https://wa.me/${cleanWa}?text=Hola!%20Os%20he%20visto%20en%20Servicios%20Mallorca" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm">
                           💬 WhatsApp
                         </a>`

@@ -27,7 +27,6 @@ export const john_taylor_luxury_real_estate_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma-centro", "product:lujo", "mod:en-local", "aud:expat"],
   phone: "+34 971 72 00 12",
-  whatsapp: "+34 971 72 00 12",
   email: "info@john-taylor.com",
   website: "https://john-taylor.com/es/espana/mallorca",
   schedule: "Lunes a Viernes: 09:30 - 18:30, Sábados con cita previa",

@@ -79,7 +79,6 @@ export const restauranteElOlivoDeia: ServiceItem = {
   image: "/images/services/restaurante-el-olivo-deia.jpg",
   gallery: ["/images/services/restaurante-el-olivo-deia.jpg"],
   phone: "+34 971 63 90 11",
-  whatsapp: "+34971639011",
   website: "https://belmond.com/la-residencia-deia/dining/el-olivo",
   email: "elolivo.lrs@belmond.com",
   webAccessibility: "active",

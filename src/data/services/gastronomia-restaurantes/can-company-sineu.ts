@@ -18,7 +18,6 @@ export const canCompany: ServiceItem = {
   address: "Carretera Sineu-Llubí, Km 3,5, 07510 Sineu (Es Pla de Mallorca), Illes Balears",
   zone: "raiguer-pla",
   phone: "+34 971 85 52 14",
-  whatsapp: "+34 971 85 52 14",
   email: "info@cancompany.es",
   website: "https://cancompany.es/restauracion",
   coordinates: { lat: 39.6582, lng: 3.0112 },

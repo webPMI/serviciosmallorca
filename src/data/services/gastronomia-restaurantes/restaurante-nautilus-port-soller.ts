@@ -25,7 +25,6 @@ export const restauranteNautilusPortSoller: ServiceItem = {
   targetAudience: ["residentes", "turistas", "parejas", "gourmets", "amantes de las puestas de sol"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 63 81 86",
-  whatsapp: "+34 971 63 81 86",
   email: "info@nautilus-soller.com",
   website: "https://nautilus-soller.com",
   menuUrl: "https://nautilus-soller.com",

@@ -24,7 +24,6 @@ export const PALACIO_MUNICIPAL_DEPORTES_SON_MOIX: ServiceItem = {
   status: "open",
   tags: ["product:polideportivo", "product:fitness-gym", "zona:palma-centro"],
   phone: "+34 971 764 900",
-  whatsapp: "+34 971 764 900",
   email: "info@ime.palma.cat",
   website: "https://ime.palma.cat/son-moix",
   schedule: "Lunes a Domingo: 08:00 - 22:00",

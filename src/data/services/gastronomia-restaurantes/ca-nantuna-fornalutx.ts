@@ -25,7 +25,6 @@ export const caNantunaFornalutx: ServiceItem = {
   targetAudience: ["residentes", "turistas", "familias", "parejas"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 63 30 68",
-  whatsapp: "+34 971 63 30 68",
   email: "info@canantuna.com",
   website: "https://www.instagram.com/can_antuna/",
   menuUrl: "https://www.instagram.com/can_antuna/",

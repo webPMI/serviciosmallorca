@@ -25,7 +25,6 @@ export const restauranteRcnPortPollenca: ServiceItem = {
   targetAudience: ["residentes", "turistas", "familias", "parejas", "nauticos"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 86 46 35",
-  whatsapp: "+34 971 86 46 35",
   email: "restaurante@rcnpp.net",
   website: "https://www.rcnpp.net/es/restaurante",
   menuUrl: "https://www.rcnpp.net",

@@ -27,7 +27,6 @@ export const balneario_font_santa_thermal_spa_campos: ServiceItem = {
   status: "open",
   tags: ["zona:campos", "product:lujo", "mod:cita-previa"],
   phone: "+34 971 655 016",
-  whatsapp: "+34 971 655 016",
   email: "info@fontsantahotelthermalspa.es",
   website: "",
   schedule: "Circuito Termal y Spa: 09:00 - 21:00",

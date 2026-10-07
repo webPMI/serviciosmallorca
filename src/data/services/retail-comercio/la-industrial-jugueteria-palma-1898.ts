@@ -27,7 +27,6 @@ export const la_industrial_jugueteria_palma_1898: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:accesible", "mod:walk-in", "aud:familias"],
   phone: "+34 971 712 516",
-  whatsapp: "+34 971 712 516",
   email: "info@jugueteslaindustrial.com",
   website: "",
   schedule: "Lunes a Viernes: 10:00 - 13:30, 16:30 - 20:00; Sábado: 10:00 - 14:00",

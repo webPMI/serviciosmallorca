@@ -27,7 +27,6 @@ export const fiatc_seguros_agencia_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:accesible", "mod:en-local", "aud:familias"],
   phone: "+34 971 75 08 00",
-  whatsapp: "+34 971 75 08 00",
   email: "info@fiatc.es",
   website: "https://fiatc.es",
   schedule: "Lunes a Jueves: 08:30 - 17:30, Viernes: 08:30 - 15:00",

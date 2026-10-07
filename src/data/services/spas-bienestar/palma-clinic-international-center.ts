@@ -24,7 +24,6 @@ export const palma_clinic_international_center: ServiceItem = {
   status: "open",
   tags: ["zona:palma-centro"],
   phone: "+34 971 905 202",
-  whatsapp: "+34 971 905 202",
   email: "info@palma-clinic.com",
   website: "https://palma-clinic.com",
   schedule: "Lunes a Domingo: 08:00 - 20:00",

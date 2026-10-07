@@ -19,7 +19,6 @@ export const restauranteMarcFosh: ServiceItem = {
   address: "Carrer de la Missió, 7A, 07003 Palma, Illes Balears (Hotel Convent de la Missió)",
   zone: "palma",
   phone: "+34 971 72 01 14",
-  whatsapp: "+34 971 72 01 14",
   email: "info@marcfosh.com",
   website: "https://marcfosh.com",
   coordinates: { lat: 39.5746, lng: 2.6517 },

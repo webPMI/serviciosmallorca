@@ -18,7 +18,6 @@ export const duranPalma: ServiceItem = {
   address: "Carrer del Camí dels Reis, 100, 07011 Palma, Illes Balears",
   zone: "palma",
   phone: "+34 971 46 00 00",
-  whatsapp: "+34 971 46 00 00",
   email: "atencionalcliente@gduran.com",
   website: "https://gduran.com",
   coordinates: {

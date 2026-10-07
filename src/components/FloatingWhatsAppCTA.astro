@@ -1,6 +1,7 @@
 ---
 import type { ServiceItem } from "../data/services/types";
 import type { Locale } from "../i18n";
+import { formatWhatsAppLink } from "../lib/whatsappUtils";
 
 interface Props {
   service: ServiceItem;
@@ -9,14 +10,6 @@ interface Props {
 
 const { service, locale = "es" } = Astro.props;
 
-const rawPhone = service.whatsapp || service.phone;
-let cleanPhone = rawPhone ? rawPhone.replace(/[^0-9]/g, "") : "";
-
-// Si es un número español estándar de 9 dígitos (empieza por 6, 7, 8 o 9), anteponer prefijo internacional 34
-if (cleanPhone.length === 9 && /^[6789]/.test(cleanPhone)) {
-  cleanPhone = "34" + cleanPhone;
-}
-
 const waTemplates: Record<Locale, string> = {
   es: `Hola, he visto ${service.name} en Servicios Mallorca y me gustaría solicitar información.`,
   en: `Hello, I saw ${service.name} on Servicios Mallorca and would like to request information.`,
@@ -24,7 +17,7 @@ const waTemplates: Record<Locale, string> = {
   de: `Hallo, ich habe ${service.name} auf Servicios Mallorca gesehen und möchte gerne Informationen anfragen.`,
 };
 
-const waText = encodeURIComponent(waTemplates[locale] || waTemplates.es);
+const waUrl = formatWhatsAppLink(service.whatsapp, waTemplates[locale] || waTemplates.es);
 
 const labels: Record<Locale, string> = {
   es: "Contactar por WhatsApp",
@@ -37,10 +30,10 @@ const activeLabel = labels[locale] || labels.es;
 ---
 
 {
-  cleanPhone && (
+  waUrl && (
     <aside class="floating-wa-wrapper" aria-label="WhatsApp Directo">
       <a
-        href={`https://wa.me/${cleanPhone}?text=${waText}`}
+        href={waUrl}
         target="_blank"
         rel="noopener noreferrer"
         class="floating-wa-btn"

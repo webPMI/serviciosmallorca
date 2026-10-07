@@ -25,7 +25,6 @@ export const canBoquetaSoller: ServiceItem = {
   targetAudience: ["residentes", "turistas", "parejas", "gourmets"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 63 83 98",
-  whatsapp: "+34 971 63 83 98",
   email: "info@canboqueta.com",
   website: "https://www.canboqueta.com",
   menuUrl: "https://www.canboqueta.com",

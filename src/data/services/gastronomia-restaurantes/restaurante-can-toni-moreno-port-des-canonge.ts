@@ -25,7 +25,6 @@ export const restauranteCanToniMorenoPortDesCanonge: ServiceItem = {
   targetAudience: ["residentes", "turistas", "familias", "parejas", "senderistas"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 61 04 26",
-  whatsapp: "+34 971 61 04 26",
   website: "",
   tags: [
     "zona:tramuntana",

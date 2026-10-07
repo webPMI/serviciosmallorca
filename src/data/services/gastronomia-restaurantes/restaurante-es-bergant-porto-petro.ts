@@ -25,7 +25,6 @@ export const restauranteEsBergantPortoPetro: ServiceItem = {
   targetAudience: ["residentes", "turistas", "familias", "parejas", "amantes de los arroces"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 64 84 00",
-  whatsapp: "+34 971 64 84 00",
   email: "info@esbergantportopetro.com",
   website: "https://esbergantportopetro.com",
   menuUrl: "https://esbergantportopetro.com",

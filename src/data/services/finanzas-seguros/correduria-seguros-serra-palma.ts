@@ -27,7 +27,6 @@ export const correduria_seguros_serra_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:premium", "mod:cita-previa", "aud:b2b"],
   phone: "+34 971 430 400",
-  whatsapp: "+34 971 430 400",
   email: "info@seguroserra.es",
   website: "",
   schedule: "Lunes a Jueves: 08:30 - 18:00, Viernes: 08:30 - 14:30",

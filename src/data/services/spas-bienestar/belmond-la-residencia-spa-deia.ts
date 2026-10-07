@@ -24,7 +24,6 @@ export const belmond_la_residencia_spa_deia: ServiceItem = {
   status: "open",
   tags: ["zona:soller"],
   phone: "+34 971 639 011",
-  whatsapp: "+34 971 639 011",
   email: "info@belmond.com",
   website: "https://belmond.com/la-residencia-spa",
   schedule: "Lunes a Domingo: 08:00 - 20:00",

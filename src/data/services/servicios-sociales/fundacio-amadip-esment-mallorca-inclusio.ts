@@ -27,7 +27,6 @@ export const fundacio_amadip_esment_mallorca_inclusio: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:accesible", "mod:cita-previa", "aud:seniors"],
   phone: "+34 971 722 250",
-  whatsapp: "+34 971 722 250",
   email: "info@esment.org",
   website: "https://esment.org",
   schedule: "Lunes a Viernes: 08:30 - 17:00",

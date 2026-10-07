@@ -27,7 +27,6 @@ export const bufete_feliu_abogados_asesores_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:lujo", "mod:cita-previa", "aud:expat"],
   phone: "+34 971 71 80 40",
-  whatsapp: "+34 971 71 80 40",
   email: "info@bufetefeliu.com",
   website: "https://bufetefeliu.com",
   schedule: "Lunes a Viernes: 09:00 - 18:30 | Sábado y Domingo: Cerrado",

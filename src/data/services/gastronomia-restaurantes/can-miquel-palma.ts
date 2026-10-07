@@ -18,7 +18,6 @@ export const canMiquelPalma: ServiceItem = {
   address: "Carrer de Montcades, 8, 07012 Palma, Illes Balears (Jaime III)",
   zone: "palma",
   phone: "+34 971 71 85 96",
-  whatsapp: "+34 971 71 85 96",
   email: "info@canmiquel.es",
   website: "",
   coordinates: { lat: 39.571, lng: 2.6432 },

@@ -24,7 +24,6 @@ export const lasOlasSantaPonsa: ServiceItem = {
   targetAudience: ["residentes", "turistas", "parejas", "familias"],
   languagesSpoken: ["es", "en", "de", "ca"],
   phone: "+34 971 69 40 95",
-  whatsapp: "+34 971 69 40 95",
   email: "info@lasolassantaponsa.com",
   website: "https://serviciosmallorca.com/es/servicios/las-olas-santa-ponsa",
   menuUrl: "https://serviciosmallorca.com/es/servicios/las-olas-santa-ponsa",

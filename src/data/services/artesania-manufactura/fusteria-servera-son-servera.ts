@@ -27,7 +27,6 @@ export const fusteria_servera_son_servera: ServiceItem = {
   status: "open",
   tags: ["zona:son-servera", "product:premium", "mod:en-local", "aud:familias"],
   phone: "+34 971 56 71 82",
-  whatsapp: "+34 971 56 71 82",
   email: "info@fusteriaservera.es",
   website: "",
   schedule: "Lunes a Viernes: 07:30 - 15:30",

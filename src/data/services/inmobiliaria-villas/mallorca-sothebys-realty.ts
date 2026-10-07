@@ -158,7 +158,6 @@ export const mallorcaSothebysRealty: ServiceItem = {
     },
   ],
   phone: "+34 971 72 10 00",
-  whatsapp: "+34 971 72 10 00",
   email: "info@mallorcasir.com",
   website: "https://www.mallorcasir.com",
   tags: [

@@ -18,7 +18,6 @@ export const autocaresTransunion: ServiceItem = {
   address: "Carrer del Gremi de Teixidors, 29, 07009 Palma, Illes Balears (Polígono Son Castelló)",
   zone: "palma",
   phone: "+34 971 43 00 00",
-  whatsapp: "+34 971 43 00 00",
   email: "comercial@transunion.com",
   website: "https://transunion.com",
   coordinates: { lat: 39.6012, lng: 2.6714 },

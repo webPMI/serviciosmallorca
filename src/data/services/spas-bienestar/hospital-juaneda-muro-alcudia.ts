@@ -26,7 +26,6 @@ export const hospitalJuanedaMuroAlcudia: ServiceItem = {
   targetAudience: ["residentes", "turistas", "familias", "ciclistas", "expat"],
   languagesSpoken: ["es", "en", "de", "ca", "fr"],
   phone: "+34 971 89 19 00",
-  whatsapp: "+34 971 22 22 22",
   email: "info@juaneda.es",
   website: "https://www.juaneda.es",
   menuUrl: "https://www.juaneda.es",

@@ -27,7 +27,6 @@ export const ies_mallorca_international_school_palma_british: ServiceItem = {
   status: "open",
   tags: ["zona:palma-centro", "product:premium", "mod:cita-previa"],
   phone: "+34 971 799 800",
-  whatsapp: "+34 971 799 800",
   email: "info@mallorcainternationalschool.com",
   website: "https://mallorcainternationalschool.com",
   schedule: "Lunes a Viernes: 08:00 - 17:00 (Septiembre a Junio)",

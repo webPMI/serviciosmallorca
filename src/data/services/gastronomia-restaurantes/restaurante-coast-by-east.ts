@@ -19,7 +19,6 @@ export const restauranteCoastByEast: ServiceItem = {
   address: "Port Adriano, Urbanización El Toro, s/n, 07180 Calvià, Illes Balears",
   zone: "calvia-andratx",
   phone: "+34 971 57 67 76",
-  whatsapp: "+34 971 57 67 76",
   email: "mallorca@east-cosmos.com",
   website: "https://coast-mallorca.com",
   coordinates: { lat: 39.4952, lng: 2.4789 },

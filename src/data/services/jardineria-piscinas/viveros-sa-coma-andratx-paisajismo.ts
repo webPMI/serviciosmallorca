@@ -27,7 +27,6 @@ export const viveros_sa_coma_andratx_paisajismo: ServiceItem = {
   status: "open",
   tags: ["zona:andratx", "product:premium", "mod:walk-in", "aud:expat"],
   phone: "+34 971 136 620",
-  whatsapp: "+34 971 136 620",
   email: "info@viverosacoma.com",
   website: "",
   schedule: "Lunes a Viernes: 08:00 - 18:00, Sábado: 08:30 - 13:30",

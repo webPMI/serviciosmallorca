@@ -18,7 +18,6 @@ export const rataCorner: ServiceItem = {
   address: "Carrer dels Hostals, 17, 07002 Palma, Illes Balears",
   zone: "palma",
   phone: "+34 971 21 46 22",
-  whatsapp: "+34 971 21 46 22",
   email: "hola@ratacorner.com",
   website: "https://ratacorner.com",
   coordinates: { lat: 39.5714, lng: 2.6538 },

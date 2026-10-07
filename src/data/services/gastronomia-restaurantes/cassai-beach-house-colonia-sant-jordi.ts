@@ -24,7 +24,6 @@ export const cassaiBeachHouse: ServiceItem = {
   targetAudience: ["residentes", "turistas", "parejas", "expat", "gourmets"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 65 53 93",
-  whatsapp: "+34 971 65 53 93",
   email: "info@cassaibeachhouse.com",
   website: "https://cassaibeachhouse.com",
   menuUrl: "https://cassaibeachhouse.com",

@@ -27,7 +27,6 @@ export const clinica_veterinaria_mediterranea_santa_catalina: ServiceItem = {
   status: "open",
   tags: ["zona:santa-catalina", "product:premium", "mod:cita-previa"],
   phone: "+34 971 734 512",
-  whatsapp: "+34 971 734 512",
   email: "info@veterinariasantacatalina.es",
   website: "",
   schedule: "Lunes a Viernes: 09:00 - 20:00, Sábados: 10:00 - 14:00 (Urgencias 24h)",

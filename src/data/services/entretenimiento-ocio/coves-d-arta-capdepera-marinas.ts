@@ -27,7 +27,6 @@ export const coves_d_arta_capdepera_marinas: ServiceItem = {
   status: "open",
   tags: ["zona:manacor-llevant", "product:familiar", "mod:walk-in"],
   phone: "+34 971 841 294",
-  whatsapp: "+34 971 841 294",
   email: "info@www.cuevasdearta.com",
   website: "https://www.cuevasdearta.com",
   schedule: "Diario: 10:00 - 17:00 (Noviembre a Abril: 10:00 - 16:00)",

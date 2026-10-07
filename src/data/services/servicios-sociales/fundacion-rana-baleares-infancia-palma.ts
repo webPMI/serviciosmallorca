@@ -27,7 +27,6 @@ export const fundacion_rana_baleares_infancia_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma-centro", "product:accesible", "mod:cita-previa", "aud:familias"],
   phone: "+34 971 72 47 60",
-  whatsapp: "+34 971 72 47 60",
   email: "info@fundacionrana.org",
   website: "https://fundacionrana.org",
   schedule: "Lunes a Viernes: 09:00 - 14:00, 16:00 - 19:00",

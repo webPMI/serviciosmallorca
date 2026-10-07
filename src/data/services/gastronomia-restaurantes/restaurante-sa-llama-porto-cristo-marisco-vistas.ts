@@ -27,7 +27,6 @@ export const restaurante_sa_llama_porto_cristo_marisco_vistas: ServiceItem = {
   status: "open",
   tags: ["zona:manacor", "product:paellas-arroces", "mod:walk-in"],
   phone: "+34 971 820 102",
-  whatsapp: "+34 971 820 102",
   email: "info@sallamaportocristo.es",
   website: "",
   schedule: "Diario: 12:30 - 16:00 y 19:30 - 23:00 (Cerrado Miércoles en Invierno)",

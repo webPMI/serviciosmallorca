@@ -24,7 +24,6 @@ export const MALLORCA_KITESCHOOL_SA_MARINA: ServiceItem = {
   status: "open",
   tags: ["product:deportes-nauticos", "zona:port-de-pollenca"],
   phone: "+34 971 546 789",
-  whatsapp: "+34 971 546 789",
   email: "info@mallorcakiteschool.com",
   website: "https://mallorcakiteschool.com",
   schedule: "Lunes a Domingo: 08:00 - 22:00",

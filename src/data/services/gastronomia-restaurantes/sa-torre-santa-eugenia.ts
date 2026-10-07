@@ -25,7 +25,6 @@ export const saTorreSantaEugenia: ServiceItem = {
   targetAudience: ["residentes", "turistas", "parejas", "gourmets", "alemanes"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 14 40 11",
-  whatsapp: "+34 971 14 40 11",
   email: "info@sa-torre.com",
   website: "https://www.sa-torre.com",
   menuUrl: "https://www.sa-torre.com",

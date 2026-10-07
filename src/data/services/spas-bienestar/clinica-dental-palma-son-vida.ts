@@ -24,7 +24,6 @@ export const clinica_dental_palma_son_vida: ServiceItem = {
   status: "open",
   tags: ["zona:palma-centro"],
   phone: "+34 971 790 100",
-  whatsapp: "+34 971 790 100",
   email: "info@sonvidadental.com",
   website: "",
   schedule: "Lunes a Domingo: 08:00 - 20:00",

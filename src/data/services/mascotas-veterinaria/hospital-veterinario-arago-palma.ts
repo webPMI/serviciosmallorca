@@ -3,7 +3,7 @@ import type { ServiceItem } from "../types.ts";
 export const hospitalVeterinarioAragoPalma: ServiceItem = {
   id: "hospital-veterinario-arago-palma",
   slug: "hospital-veterinario-arago-palma",
-  name: "Hospital Veterinario Aragó 24h",
+  name: "Hospital Veterinario Aragó (Palma)",
   category: "clinicas-veterinarias-24h",
   sectorId: "mascotas-veterinaria",
   culturalIdentity: "mallorquin_heritage",
@@ -21,8 +21,8 @@ export const hospitalVeterinarioAragoPalma: ServiceItem = {
   reviewCountSource: "verified_manual",
   priceRange: "€€€",
   verified: true,
-  confidenceScore: 85,
-  lastVerifiedAt: "2026-09-28",
+  confidenceScore: 90,
+  lastVerifiedAt: "2026-10-07",
   featured: true,
   status: "open",
   tags: ["zona:palma", "product:premium", "temps:todo-el-ano", "mod:en-local"],
@@ -34,8 +34,10 @@ export const hospitalVeterinarioAragoPalma: ServiceItem = {
   inVillaService: false,
   features: ["wifi", "air_conditioning", "credit_card"],
   paymentMethods: ["credit_card", "bank_transfer", "cash"],
-  phone: "+34 971 47 90 22",
-  website: "",
+  phone: "+34 971 47 90 11",
+  email: "info@veterinarioaragon.com",
+  website: "https://veterinarioaragon.com",
+
   image: "/images/services/hospital-veterinario-arago-palma.webp",
   shortDescription: {
     es: "Hospital veterinario de referencia 24h con TAC, UCI y cirugía avanzada.",

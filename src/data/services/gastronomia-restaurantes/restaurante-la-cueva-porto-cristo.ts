@@ -79,7 +79,6 @@ export const restauranteLaCuevaPortoCristo: ServiceItem = {
   image: "/images/services/restaurante-la-cueva-porto-cristo.jpg",
   gallery: ["/images/services/restaurante-la-cueva-porto-cristo.jpg"],
   phone: "+34 971 82 04 15",
-  whatsapp: "+34971820415",
   website: "",
   email: "reservas@lacuevaportocristo.es",
   webAccessibility: "active",

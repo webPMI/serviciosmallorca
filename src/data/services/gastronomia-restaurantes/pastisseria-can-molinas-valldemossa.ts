@@ -25,7 +25,6 @@ export const pastisseriaCanMolinasValldemossa: ServiceItem = {
   targetAudience: ["residentes", "turistas", "familias", "gourmets"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 61 20 56",
-  whatsapp: "+34 971 61 20 56",
   email: "info@canmolinas.com",
   website: "https://canmolinas.com",
   menuUrl: "https://canmolinas.com",

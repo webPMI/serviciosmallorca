@@ -27,7 +27,6 @@ export const colegio_cide_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:accesible", "mod:en-local", "aud:familias"],
   phone: "+34 971 60 64 99",
-  whatsapp: "+34 971 60 64 99",
   email: "cide@cide.es",
   website: "https://cide.es",
   schedule: "Lunes a Viernes de 07:30 a 18:00",

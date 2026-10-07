@@ -25,7 +25,6 @@ export const cellerEsMoliSantanyi: ServiceItem = {
   targetAudience: ["residentes", "turistas", "familias", "parejas", "amantes de las tapas"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 65 34 77",
-  whatsapp: "+34 971 65 34 77",
   email: "info@restaurantesmoli.com",
   website: "https://www.restaurantesmoli.com",
   menuUrl: "https://www.restaurantesmoli.com",

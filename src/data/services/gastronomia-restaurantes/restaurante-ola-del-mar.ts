@@ -19,7 +19,6 @@ export const restauranteOlaDelMar: ServiceItem = {
   address: "Carrer del Vicari Joaquim Fuster, 1, 07006 Portixol, Palma, Illes Balears",
   zone: "palma",
   phone: "+34 971 27 45 38",
-  whatsapp: "+34 971 27 45 38",
   email: "reservas@oladelmar.es",
   website: "https://oladelmar.es",
   coordinates: { lat: 39.5601, lng: 2.6712 },

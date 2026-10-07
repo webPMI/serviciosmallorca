@@ -24,7 +24,6 @@ export const TENNIS_CLUB_INCA_RAIGUER: ServiceItem = {
   status: "open",
   tags: ["product:tenis-mallorca", "product:padel-mallorca", "zona:inca"],
   phone: "+34 871 873 333",
-  whatsapp: "+34 871 873 333",
   email: "info@opensportinca.com",
   website: "https://opensportinca.com",
   schedule: "Lunes a Domingo: 08:00 - 22:00",

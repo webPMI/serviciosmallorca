@@ -25,7 +25,6 @@ export const restauranteCnSEstanyol: ServiceItem = {
   targetAudience: ["residentes", "turistas", "familias", "parejas", "nauticos"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 64 00 36",
-  whatsapp: "+34 971 64 00 36",
   email: "restaurante@cnestanyol.es",
   website: "",
   menuUrl: "https://www.restauranteclubnauticosestanyol.com",

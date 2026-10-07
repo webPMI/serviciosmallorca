@@ -25,7 +25,6 @@ export const clinicaDentalAlomarInca: ServiceItem = {
   targetAudience: ["residentes", "familias", "seniors", "adultos"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 871 91 24 51",
-  whatsapp: "+34 871 91 24 51",
   email: "info@centremedicalomar.es",
   website: "https://centremedicalomar.es",
   menuUrl: "https://centremedicalomar.es",

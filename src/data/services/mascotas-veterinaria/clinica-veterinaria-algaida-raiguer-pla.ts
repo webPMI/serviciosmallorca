@@ -27,7 +27,6 @@ export const clinica_veterinaria_algaida_raiguer_pla: ServiceItem = {
   status: "open",
   tags: ["zona:algaida", "product:accesible", "mod:en-local", "aud:familias"],
   phone: "+34 971 66 58 40",
-  whatsapp: "+34 971 66 58 40",
   email: "info@veterinariaalgaida.com",
   website: "",
   schedule: "Lunes a Viernes: 09:30 - 13:30, 16:30 - 19:30, Sábados: 10:00 - 13:00",

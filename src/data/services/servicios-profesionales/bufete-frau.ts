@@ -18,7 +18,6 @@ export const bufeteFrau: ServiceItem = {
   address: "Carrer de Sant Miquel, 36, 07002 Palma, Illes Balears",
   zone: "palma",
   phone: "+34 971 22 80 36",
-  whatsapp: "+34 971 22 80 36",
   email: "info@bufetefrau.com",
   website: "https://bufetefrau.com",
   coordinates: {

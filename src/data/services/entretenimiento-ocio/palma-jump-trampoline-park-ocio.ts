@@ -27,7 +27,6 @@ export const palma_jump_trampoline_park_ocio: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:familiar", "mod:walk-in", "aud:familias"],
   phone: "+34 971 781 556",
-  whatsapp: "+34 971 781 556",
   email: "info@palmajump.com",
   website: "https://palmajump.com",
   schedule: "Lunes a Domingo: 10:00 - 21:00",

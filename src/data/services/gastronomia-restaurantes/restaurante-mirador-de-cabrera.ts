@@ -25,7 +25,6 @@ export const restauranteMiradorDeCabrera: ServiceItem = {
   targetAudience: ["residentes", "turistas", "parejas", "familias", "gourmets"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 12 33 38",
-  whatsapp: "+34 971 12 33 38",
   email: "info@mirador-de-cabrera.com",
   website: "https://www.mirador-de-cabrera.com",
   menuUrl: "https://www.mirador-de-cabrera.com",

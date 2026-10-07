@@ -24,7 +24,6 @@ export const sieteFuegosSantaPonsa: ServiceItem = {
   targetAudience: ["residentes", "turistas", "parejas", "gourmets", "expat"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 69 18 10",
-  whatsapp: "+34 971 69 18 10",
   email: "info@7fuegos.es",
   website: "https://7fuegos.es",
   menuUrl: "https://7fuegos.es",

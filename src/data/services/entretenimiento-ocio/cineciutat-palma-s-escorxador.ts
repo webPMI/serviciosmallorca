@@ -27,7 +27,6 @@ export const cineciutat_palma_s_escorxador: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:premium", "mod:en-local", "aud:familias"],
   phone: "+34 971 90 28 88",
-  whatsapp: "+34 971 90 28 88",
   email: "info@cineciutat.org",
   website: "https://cineciutat.org",
   schedule: "Lunes a Domingo: 16:30 - 22:30 (Sesiones continuas en V.O.S.E.)",

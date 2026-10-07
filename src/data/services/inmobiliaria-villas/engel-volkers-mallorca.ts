@@ -22,7 +22,6 @@ export const engelVolkersMallorca: ServiceItem = {
     lng: 2.6455,
   },
   phone: "+34 971 23 85 84",
-  whatsapp: "+34 971 23 85 84",
   email: "mallorca@engelvoelkers.com",
   website: "https://www.engelvoelkers.com/es-es/mallorca/",
   schedule: "Lunes a Viernes: 09:30 - 19:30 | Sábados: 10:00 - 14:00",

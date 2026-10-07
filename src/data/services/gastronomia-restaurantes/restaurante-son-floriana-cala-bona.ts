@@ -25,7 +25,6 @@ export const restauranteSonFlorianaCalaBona: ServiceItem = {
   targetAudience: ["residentes", "turistas", "parejas", "gourmets", "alemanes"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 58 60 75",
-  whatsapp: "+34 971 58 60 75",
   email: "sonfloriana@protur.net",
   website: "https://restaurantesonfloriana.com",
   menuUrl: "https://restaurantesonfloriana.com",

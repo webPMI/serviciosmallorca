@@ -24,7 +24,6 @@ export const PULA_GOLF_RESORT_SON_SERVERA: ServiceItem = {
   status: "open",
   tags: ["product:golf", "zona:manacor"],
   phone: "+34 971 817 034",
-  whatsapp: "+34 971 817 034",
   email: "info@pulagolf.com",
   website: "https://pulagolf.com",
   schedule: "Lunes a Domingo: 08:00 - 22:00",

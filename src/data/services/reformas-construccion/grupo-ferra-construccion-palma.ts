@@ -27,7 +27,6 @@ export const grupo_ferra_construccion_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma", "product:lujo", "mod:cita-previa"],
   phone: "+34 971 432 020",
-  whatsapp: "+34 971 432 020",
   email: "info@grupoferra.com",
   website: "https://grupoferra.com",
   schedule: "Lunes a Viernes: 08:00 - 17:00",

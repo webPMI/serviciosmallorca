@@ -1,55 +1,49 @@
 import { describe, expect, it } from "vitest";
+import { formatWhatsAppLink, isValidWhatsAppNumber } from "../../src/lib/whatsappUtils";
 
-describe("💬 FloatingWhatsAppCTA Component & Normalization Suite", () => {
-  function getCleanPhone(rawPhone?: string): string {
-    let clean = rawPhone ? rawPhone.replace(/[^0-9]/g, "") : "";
-    if (clean.length === 9 && /^[6789]/.test(clean)) {
-      clean = "34" + clean;
-    }
-    return clean;
-  }
+describe("💬 FloatingWhatsAppCTA & WhatsApp Utilities Suite", () => {
+  it("valida números móviles españoles y rechaza tajantemente teléfonos fijos", () => {
+    // Móviles válidos (6xx, 7xx)
+    expect(isValidWhatsAppNumber("612 34 56 78")).toBe(true);
+    expect(isValidWhatsAppNumber("+34 612 345 678")).toBe(true);
+    expect(isValidWhatsAppNumber("712345678")).toBe(true);
+    expect(isValidWhatsAppNumber("+34 722 11 22 33")).toBe(true);
 
-  function getWaUrl(phone: string, text: string): string {
-    return `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
-  }
-
-  it("normaliza números locales españoles de 9 dígitos anteponiendo el código de país 34", () => {
-    expect(getCleanPhone("971 12 34 56")).toBe("34971123456");
-    expect(getCleanPhone("612 34 56 78")).toBe("34612345678");
-    expect(getCleanPhone("712345678")).toBe("34712345678");
-    expect(getCleanPhone("871 90 12 34")).toBe("34871901234");
+    // Teléfonos fijos de Baleares y resto de España (971, 871, 9xx, 8xx) deben ser RECHAZADOS
+    expect(isValidWhatsAppNumber("971 12 34 56")).toBe(false);
+    expect(isValidWhatsAppNumber("+34 971 72 42 34")).toBe(false);
+    expect(isValidWhatsAppNumber("871 90 12 34")).toBe(false);
+    expect(isValidWhatsAppNumber("+34 91 123 45 67")).toBe(false);
+    expect(isValidWhatsAppNumber("93 456 78 90")).toBe(false);
   });
 
-  it("mantiene intactos números con prefijo internacional ya incluido", () => {
-    expect(getCleanPhone("+34 971 12 34 56")).toBe("34971123456");
-    expect(getCleanPhone("0034 612 345 678")).toBe("0034612345678");
-    expect(getCleanPhone("+49 170 1234567")).toBe("491701234567");
-    expect(getCleanPhone("+44 7911 123456")).toBe("447911123456");
+  it("acepta números internacionales legítimos con longitud válida", () => {
+    expect(isValidWhatsAppNumber("+49 170 1234567")).toBe(true);
+    expect(isValidWhatsAppNumber("+44 7911 123456")).toBe(true);
+    expect(isValidWhatsAppNumber("+1 555 123 4567")).toBe(true);
   });
 
-  it("retorna string vacío si el teléfono es undefined o vacío sin causar excepciones", () => {
-    expect(getCleanPhone(undefined)).toBe("");
-    expect(getCleanPhone("")).toBe("");
-    expect(getCleanPhone("   ")).toBe("");
+  it("rechaza entradas vacías, undefined o con longitud insuficiente", () => {
+    expect(isValidWhatsAppNumber(undefined)).toBe(false);
+    expect(isValidWhatsAppNumber("")).toBe(false);
+    expect(isValidWhatsAppNumber("   ")).toBe(false);
+    expect(isValidWhatsAppNumber("12345")).toBe(false);
   });
 
-  it("genera la URL de WhatsApp wa.me con codificación de texto limpia para cada idioma", () => {
-    const serviceName = "Can Joan de S'Aigo";
-    const templates = {
-      es: `Hola, he visto ${serviceName} en Servicios Mallorca y me gustaría solicitar información.`,
-      en: `Hello, I saw ${serviceName} on Servicios Mallorca and would like to request information.`,
-      ca: `Hola, he vist ${serviceName} a Servicios Mallorca i voldria demanar informació.`,
-      de: `Hallo, ich habe ${serviceName} auf Servicios Mallorca gesehen und möchte gerne Informationen anfragen.`,
-    };
+  it("formatWhatsAppLink genera URL limpia wa.me solo para números válidos y retorna null para fijos", () => {
+    const serviceName = "Urban Soul Tattoo";
+    const textEs = `Hola, he visto ${serviceName} en Servicios Mallorca y me gustaría solicitar información.`;
 
-    const phone = getCleanPhone("971712649");
-    expect(phone).toBe("34971712649");
+    // Con móvil
+    const urlMobile = formatWhatsAppLink("+34 654 321 987", textEs);
+    expect(urlMobile).toBe(`https://wa.me/34654321987?text=${encodeURIComponent(textEs)}`);
 
-    const urlEs = getWaUrl(phone, templates.es);
-    expect(urlEs).toContain("https://wa.me/34971712649?text=");
-    expect(urlEs).toContain(encodeURIComponent(serviceName));
+    // Con fijo (ej: Bar España) debe retornar null para evitar enlaces rotos
+    const urlLandline = formatWhatsAppLink("+34 971 72 42 34", textEs);
+    expect(urlLandline).toBeNull();
 
-    const urlDe = getWaUrl(phone, templates.de);
-    expect(urlDe).toContain(encodeURIComponent("Hallo"));
+    // Sin número
+    expect(formatWhatsAppLink(undefined, textEs)).toBeNull();
   });
 });
+

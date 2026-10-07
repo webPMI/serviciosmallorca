@@ -27,7 +27,6 @@ export const cesteria_artesana_arta_ses_madones_de_sa_llata: ServiceItem = {
   status: "open",
   tags: ["zona:arta", "product:cesteria-llata", "mod:en-local"],
   phone: "+34 971 835 120",
-  whatsapp: "+34 971 835 120",
   email: "info@artesaniallataarta.es",
   website: "",
   schedule: "Lunes a Sábado: 09:30 - 13:30 y 16:30 - 20:00 (Martes día de mercado)",

@@ -25,7 +25,6 @@ export const restauranteYachtClubCalaDor: ServiceItem = {
   targetAudience: ["residentes", "turistas", "parejas", "familias", "nauticos"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 64 82 03",
-  whatsapp: "+34 971 64 82 03",
   email: "info@yccalador.com",
   website: "",
   menuUrl: "https://yachtclubcalador.com",

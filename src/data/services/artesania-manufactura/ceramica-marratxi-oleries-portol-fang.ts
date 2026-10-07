@@ -27,7 +27,6 @@ export const ceramica_marratxi_oleries_portol_fang: ServiceItem = {
   status: "open",
   tags: ["zona:raiguer-pla", "product:ceramica-balear", "mod:en-local"],
   phone: "+34 971 601 420",
-  whatsapp: "+34 971 601 420",
   email: "info@ceramicaportol.es",
   website: "",
   schedule: "Lunes a Viernes: 09:00 - 13:30 y 15:30 - 19:30, Sábados: 09:30 - 13:30",

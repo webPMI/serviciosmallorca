@@ -25,7 +25,6 @@ export const restauranteSaRoquetaPortixol: ServiceItem = {
   targetAudience: ["residentes", "turistas", "parejas", "gourmets", "amantes del pescado"],
   languagesSpoken: ["es", "ca", "en", "de"],
   phone: "+34 971 24 94 10",
-  whatsapp: "+34 971 24 94 10",
   email: "info@restaurantesaroqueta.com",
   website: "https://www.restaurantesaroqueta.com",
   menuUrl: "https://www.restaurantesaroqueta.com",

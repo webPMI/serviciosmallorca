@@ -18,7 +18,6 @@ export const bigmatVergerMallorca: ServiceItem = {
   address: "Vía Palma, 79, 07500 Manacor, Illes Balears (Exposiciones en Manacor y Felanitx)",
   zone: "manacor-llevant",
   phone: "+34 971 84 31 11",
-  whatsapp: "+34 971 84 31 11",
   email: "manacor@verger.bigmat.es",
   website: "https://bigmatverger.com",
   coordinates: { lat: 39.5678, lng: 3.2012 },

@@ -27,7 +27,6 @@ export const colegio_luis_vives_palma: ServiceItem = {
   status: "open",
   tags: ["zona:palma-centro", "product:premium", "mod:en-local", "aud:familias"],
   phone: "+34 971 75 51 50",
-  whatsapp: "+34 971 75 51 50",
   email: "info@colegioluisvives.es",
   website: "https://colegioluisvives.es",
   schedule: "Lunes a Viernes: 08:30 - 17:00",

@@ -24,7 +24,6 @@ export const hammam_al_andalus_palma_centro: ServiceItem = {
   status: "open",
   tags: ["zona:palma-centro"],
   phone: "+34 971 715 000",
-  whatsapp: "+34 971 715 000",
   email: "info@hammamalandalus.com",
   website: "https://hammamalandalus.com/palma",
   schedule: "Lunes a Domingo: 08:00 - 20:00",

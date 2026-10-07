@@ -3,9 +3,10 @@ import type { ServiceItem } from "../types.ts";
 export const farmaciaPortoPi24hPalma: ServiceItem = {
   id: "farmacia-porto-pi-24h-palma",
   slug: "farmacia-porto-pi-24h-palma",
-  name: "Farmacia Porto Pi 24h (Palma)",
+  name: "Farmacia Porto Pi (Palma)",
   category: "salud-bienestar",
   sectorId: "salud-bienestar-belleza",
+
   sectors: ["spas-bienestar"],
   zone: "palma",
   address: "Avinguda de Joan Miró, 186, 07015 Palma, Illes Balears",
@@ -26,7 +27,6 @@ export const farmaciaPortoPi24hPalma: ServiceItem = {
   targetAudience: ["residentes", "turistas", "familias", "nautica"],
   languagesSpoken: ["es", "ca", "en", "de", "fr"],
   phone: "+34 971 90 90 15",
-  whatsapp: "+34 971 90 90 15",
   email: "info@farmaciaportopi.com",
   website: "https://www.farmaciaportopi.com",
   menuUrl: "https://www.farmaciaportopi.com",

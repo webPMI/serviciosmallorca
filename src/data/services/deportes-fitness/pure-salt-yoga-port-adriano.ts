@@ -24,7 +24,6 @@ export const PURE_SALT_YOGA_PORT_ADRIANO: ServiceItem = {
   status: "open",
   tags: ["product:yoga-pilates", "zona:santa-ponsa"],
   phone: "+34 971 237 323",
-  whatsapp: "+34 971 237 323",
   email: "info@puresaltportadriano.com",
   website: "https://puresaltportadriano.com/yoga",
   schedule: "Lunes a Domingo: 08:00 - 22:00",
